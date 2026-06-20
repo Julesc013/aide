@@ -12,3 +12,4 @@
 - `a2a-agent-card-contract-10`
 - `a2a-agent-card-contract-11`
 - `a2a-agent-card-contract-12`
+- `a2a-agent-card-contract-13`

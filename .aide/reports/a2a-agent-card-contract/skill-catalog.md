@@ -1,4 +1,4 @@
-# A2A Skills
+# A2A Candidate Skills
 
 - `aide.queue.inspect`
 - `aide.evidence.inspect`

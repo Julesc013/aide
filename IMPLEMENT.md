@@ -39,6 +39,35 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01
+
+Completed for review as a bounded repair task.
+
+Changed:
+
+- `core/interop/a2a_agent_card_contract.py`
+- `.aide/protocol/aide-a2a-agent-card-contract.schema.json`
+- `.aide/scripts/tests/test_aide_a2a_agent_card_contract.py`
+- `.aide/interop/a2a/**`
+- `.aide/reports/a2a-agent-card-contract/**`
+- `.aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01/**`
+- `.aide/reports/a2a-agent-card-contract-repair/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The repair adds explicit A2A `1.0.0` specification and `1.0` protocol pins, emits a standards-clean non-publishable A2A AgentCard fixture with one `.invalid` HTTPS JSON-RPC supported interface, omits provider by default, removes legacy top-level URL and extended-card fields, removes unsupported `stateTransitionHistory`, moves AIDE governance fields to outer candidate-skill metadata, and advertises zero official skills while preserving four candidate skills.
+
+The validator and focused tests now fail closed for reintroductions of the eight original material defects. No failed-check evidence was rewritten.
+
+No live A2A endpoint, well-known publication, agent registration, authentication, authorization, task delegation, streaming, push notification runtime, AgentCard signing, worker execution, provider/model/network call, Host Contract, Dominium Bridge, Workbench, Runtime, Service, PatchTransaction apply, branch/worktree automation, GitHub mutation, release, promotion, or target-repository mutation was implemented.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01
+```
+
 ## Work Item: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01
 
 Completed for review as a check task.

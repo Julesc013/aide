@@ -14,8 +14,8 @@
       "No A2A endpoint exists, so no authentication challenge can be issued.",
       "Future authenticated use must bind through AIDE PolicyDecision and CapabilityGrant."
     ],
-    "security": [],
+    "securityRequirements": [],
     "securitySchemes": {}
   },
-  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
+  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01"
 }

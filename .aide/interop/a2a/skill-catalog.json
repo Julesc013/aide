@@ -4,9 +4,10 @@
   "items": [
     {
       "aide_operation_mapping": "aide.queue.inspect",
+      "callable": false,
       "description": "Future read-only queue discovery candidate. No A2A task endpoint exists in this slice.",
+      "endpoint_available": false,
       "examples": [],
-      "id": "aide.queue.inspect",
       "implemented": false,
       "inputModes": [
         "application/json"
@@ -18,17 +19,21 @@
       "requires_future_capability_grant": true,
       "requires_future_policy_decision": true,
       "side_effect_class": "read_only_or_report_only",
+      "skill_id": "aide.queue.inspect",
       "tags": [
         "queue",
         "read-only",
         "projection"
-      ]
+      ],
+      "task_delegation_available": false,
+      "task_submission_available": false
     },
     {
       "aide_operation_mapping": "aide.evidence.inspect",
+      "callable": false,
       "description": "Future read-only evidence discovery candidate. No A2A task endpoint exists in this slice.",
+      "endpoint_available": false,
       "examples": [],
-      "id": "aide.evidence.inspect",
       "implemented": false,
       "inputModes": [
         "application/json"
@@ -40,17 +45,21 @@
       "requires_future_capability_grant": true,
       "requires_future_policy_decision": true,
       "side_effect_class": "read_only_or_report_only",
+      "skill_id": "aide.evidence.inspect",
       "tags": [
         "evidence",
         "read-only",
         "projection"
-      ]
+      ],
+      "task_delegation_available": false,
+      "task_submission_available": false
     },
     {
       "aide_operation_mapping": "aide.capability.inspect",
+      "callable": false,
       "description": "Future read-only capability discovery candidate. No A2A task endpoint exists in this slice.",
+      "endpoint_available": false,
       "examples": [],
-      "id": "aide.capability.inspect",
       "implemented": false,
       "inputModes": [
         "application/json"
@@ -62,17 +71,21 @@
       "requires_future_capability_grant": true,
       "requires_future_policy_decision": true,
       "side_effect_class": "read_only_or_report_only",
+      "skill_id": "aide.capability.inspect",
       "tags": [
         "capability",
         "read-only",
         "projection"
-      ]
+      ],
+      "task_delegation_available": false,
+      "task_submission_available": false
     },
     {
       "aide_operation_mapping": "aide.context.inspect",
+      "callable": false,
       "description": "Future read-only ContextPack discovery candidate. No A2A task endpoint exists in this slice.",
+      "endpoint_available": false,
       "examples": [],
-      "id": "aide.context.inspect",
       "implemented": false,
       "inputModes": [
         "application/json"
@@ -84,13 +97,16 @@
       "requires_future_capability_grant": true,
       "requires_future_policy_decision": true,
       "side_effect_class": "read_only_or_report_only",
+      "skill_id": "aide.context.inspect",
       "tags": [
         "context",
         "read-only",
         "projection"
-      ]
+      ],
+      "task_delegation_available": false,
+      "task_submission_available": false
     }
   ],
-  "schema_version": "aide.a2a-agent-card-contract.skill-catalog.v0",
-  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
+  "schema_version": "aide.a2a-agent-card-contract.candidate-skill-catalog.v0",
+  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01"
 }

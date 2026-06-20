@@ -18,19 +18,14 @@
       "name": "aide-lite",
       "version": "0.1.0"
     },
-    "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
+    "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01"
   },
   "spec": {
     "advisory_contract_ref": "aide://interop/a2a-agent-card-contract-v0",
     "agent_card": {
-      "canonical_truth": [
-        ".aide/queue/index.yaml",
-        ".aide/queue/policy.yaml",
-        "AGENTS.md"
-      ],
       "capabilities": {
+        "extendedAgentCard": false,
         "pushNotifications": false,
-        "stateTransitionHistory": false,
         "streaming": false
       },
       "defaultInputModes": [
@@ -39,121 +34,146 @@
       "defaultOutputModes": [
         "application/json"
       ],
-      "description": "Contract-only AIDE interop identity for future A2A discovery.",
-      "endpoint_implemented": false,
-      "explicit_non_capabilities": {
-        "agent_registration": false,
-        "authentication": false,
-        "live_a2a_endpoint": false,
-        "network_calls": false,
-        "provider_model_calls": false,
-        "target_repository_mutation": false,
-        "task_delegation": false,
-        "worker_execution": false
-      },
-      "name": "AIDE Contract-Only Agent Card Preview",
-      "preview_only": true,
-      "provider": {
-        "organization": "AIDE",
-        "url": null
-      },
-      "schema_version": "aide.interop.a2a_agent_card.contract_projection.v0",
-      "security": [],
-      "securitySchemes": {},
-      "skills": [
+      "description": "Non-publishable A2A 1.0 structural fixture for AIDE interoperability.",
+      "name": "AIDE Contract-Only Agent Card Fixture",
+      "skills": [],
+      "supportedInterfaces": [
         {
-          "aide_operation_mapping": "aide.queue.inspect",
-          "description": "Future read-only queue discovery candidate. No A2A task endpoint exists in this slice.",
-          "examples": [],
-          "id": "aide.queue.inspect",
-          "implemented": false,
-          "inputModes": [
-            "application/json"
-          ],
-          "name": "Inspect AIDE queue projection",
-          "outputModes": [
-            "application/json"
-          ],
-          "requires_future_capability_grant": true,
-          "requires_future_policy_decision": true,
-          "side_effect_class": "read_only_or_report_only",
-          "tags": [
-            "queue",
-            "read-only",
-            "projection"
-          ]
-        },
-        {
-          "aide_operation_mapping": "aide.evidence.inspect",
-          "description": "Future read-only evidence discovery candidate. No A2A task endpoint exists in this slice.",
-          "examples": [],
-          "id": "aide.evidence.inspect",
-          "implemented": false,
-          "inputModes": [
-            "application/json"
-          ],
-          "name": "Inspect AIDE evidence projection",
-          "outputModes": [
-            "application/json"
-          ],
-          "requires_future_capability_grant": true,
-          "requires_future_policy_decision": true,
-          "side_effect_class": "read_only_or_report_only",
-          "tags": [
-            "evidence",
-            "read-only",
-            "projection"
-          ]
-        },
-        {
-          "aide_operation_mapping": "aide.capability.inspect",
-          "description": "Future read-only capability discovery candidate. No A2A task endpoint exists in this slice.",
-          "examples": [],
-          "id": "aide.capability.inspect",
-          "implemented": false,
-          "inputModes": [
-            "application/json"
-          ],
-          "name": "Inspect AIDE capability projection",
-          "outputModes": [
-            "application/json"
-          ],
-          "requires_future_capability_grant": true,
-          "requires_future_policy_decision": true,
-          "side_effect_class": "read_only_or_report_only",
-          "tags": [
-            "capability",
-            "read-only",
-            "projection"
-          ]
-        },
-        {
-          "aide_operation_mapping": "aide.context.inspect",
-          "description": "Future read-only ContextPack discovery candidate. No A2A task endpoint exists in this slice.",
-          "examples": [],
-          "id": "aide.context.inspect",
-          "implemented": false,
-          "inputModes": [
-            "application/json"
-          ],
-          "name": "Inspect AIDE context projection",
-          "outputModes": [
-            "application/json"
-          ],
-          "requires_future_capability_grant": true,
-          "requires_future_policy_decision": true,
-          "side_effect_class": "read_only_or_report_only",
-          "tags": [
-            "context",
-            "read-only",
-            "projection"
-          ]
+          "protocolBinding": "JSONRPC",
+          "protocolVersion": "1.0",
+          "url": "https://aide.invalid/a2a/v1"
         }
       ],
-      "supportsAuthenticatedExtendedCard": false,
-      "url": null,
       "version": "0.1.0"
     },
+    "agent_card_fixture": {
+      "agent_registered": false,
+      "canonical_truth": [
+        ".aide/queue/index.yaml",
+        ".aide/queue/policy.yaml",
+        "AGENTS.md"
+      ],
+      "endpoint_implemented": false,
+      "fixture_interface_url": "https://aide.invalid/a2a/v1",
+      "fixture_only": true,
+      "interface_fixture_only": true,
+      "live_a2a_endpoint": false,
+      "network_target_intentionally_non_live": true,
+      "publishable": false,
+      "schema_version": "aide.interop.a2a_agent_card.fixture_metadata.v0",
+      "task_delegation_available": false,
+      "task_submission_available": false,
+      "well_known_publication_performed": false
+    },
+    "agent_implementation_version": "0.1.0",
+    "callable_skill_count": 0,
+    "candidate_skill_count": 4,
+    "candidate_skill_governance": [
+      {
+        "aide_operation_mapping": "aide.queue.inspect",
+        "callable": false,
+        "description": "Future read-only queue discovery candidate. No A2A task endpoint exists in this slice.",
+        "endpoint_available": false,
+        "examples": [],
+        "implemented": false,
+        "inputModes": [
+          "application/json"
+        ],
+        "name": "Inspect AIDE queue projection",
+        "outputModes": [
+          "application/json"
+        ],
+        "requires_future_capability_grant": true,
+        "requires_future_policy_decision": true,
+        "side_effect_class": "read_only_or_report_only",
+        "skill_id": "aide.queue.inspect",
+        "tags": [
+          "queue",
+          "read-only",
+          "projection"
+        ],
+        "task_delegation_available": false,
+        "task_submission_available": false
+      },
+      {
+        "aide_operation_mapping": "aide.evidence.inspect",
+        "callable": false,
+        "description": "Future read-only evidence discovery candidate. No A2A task endpoint exists in this slice.",
+        "endpoint_available": false,
+        "examples": [],
+        "implemented": false,
+        "inputModes": [
+          "application/json"
+        ],
+        "name": "Inspect AIDE evidence projection",
+        "outputModes": [
+          "application/json"
+        ],
+        "requires_future_capability_grant": true,
+        "requires_future_policy_decision": true,
+        "side_effect_class": "read_only_or_report_only",
+        "skill_id": "aide.evidence.inspect",
+        "tags": [
+          "evidence",
+          "read-only",
+          "projection"
+        ],
+        "task_delegation_available": false,
+        "task_submission_available": false
+      },
+      {
+        "aide_operation_mapping": "aide.capability.inspect",
+        "callable": false,
+        "description": "Future read-only capability discovery candidate. No A2A task endpoint exists in this slice.",
+        "endpoint_available": false,
+        "examples": [],
+        "implemented": false,
+        "inputModes": [
+          "application/json"
+        ],
+        "name": "Inspect AIDE capability projection",
+        "outputModes": [
+          "application/json"
+        ],
+        "requires_future_capability_grant": true,
+        "requires_future_policy_decision": true,
+        "side_effect_class": "read_only_or_report_only",
+        "skill_id": "aide.capability.inspect",
+        "tags": [
+          "capability",
+          "read-only",
+          "projection"
+        ],
+        "task_delegation_available": false,
+        "task_submission_available": false
+      },
+      {
+        "aide_operation_mapping": "aide.context.inspect",
+        "callable": false,
+        "description": "Future read-only ContextPack discovery candidate. No A2A task endpoint exists in this slice.",
+        "endpoint_available": false,
+        "examples": [],
+        "implemented": false,
+        "inputModes": [
+          "application/json"
+        ],
+        "name": "Inspect AIDE context projection",
+        "outputModes": [
+          "application/json"
+        ],
+        "requires_future_capability_grant": true,
+        "requires_future_policy_decision": true,
+        "side_effect_class": "read_only_or_report_only",
+        "skill_id": "aide.context.inspect",
+        "tags": [
+          "context",
+          "read-only",
+          "projection"
+        ],
+        "task_delegation_available": false,
+        "task_submission_available": false
+      }
+    ],
     "conformance_expectations": [
       {
         "description": "agent card JSON parses",
@@ -162,68 +182,74 @@
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "agent card remains preview-only",
+        "description": "agent card contains only standard A2A 1.0 AgentCard fields",
         "id": "a2a-agent-card-contract-02",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "live endpoint URL is absent while endpoint is not implemented",
+        "description": "supportedInterfaces declares one non-live HTTPS fixture interface",
         "id": "a2a-agent-card-contract-03",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "declared skills have stable IDs",
+        "description": "interface protocolVersion matches the outer A2A protocol version pin",
         "id": "a2a-agent-card-contract-04",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "declared skills are not implemented or callable",
+        "description": "candidate skills remain outside the official AgentCard skills array",
         "id": "a2a-agent-card-contract-05",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "security schemes remain empty until authentication exists",
+        "description": "official AgentCard skills array is empty while no endpoint exists",
         "id": "a2a-agent-card-contract-06",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "task delegation remains false",
+        "description": "security schemes remain empty until authentication exists",
         "id": "a2a-agent-card-contract-07",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "worker execution remains false",
+        "description": "task delegation remains false",
         "id": "a2a-agent-card-contract-08",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "provider/model/network calls remain false",
+        "description": "worker execution remains false",
         "id": "a2a-agent-card-contract-09",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "explicit non-capabilities remain present",
+        "description": "provider/model/network calls remain false",
         "id": "a2a-agent-card-contract-10",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "projection is deterministic",
+        "description": "explicit non-capabilities remain present",
         "id": "a2a-agent-card-contract-11",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       },
       {
-        "description": "source interop exports remain unchanged",
+        "description": "projection is deterministic",
         "id": "a2a-agent-card-contract-12",
+        "required_for_acceptance": true,
+        "status": "expected_not_executed_in_build"
+      },
+      {
+        "description": "source interop exports remain unchanged",
+        "id": "a2a-agent-card-contract-13",
         "required_for_acceptance": true,
         "status": "expected_not_executed_in_build"
       }
@@ -231,25 +257,31 @@
     "contract_id": "a2a-agent-card-contract-v0",
     "declared_card_capabilities": {
       "agent_card_projection": true,
-      "authenticated_extended_card": false,
+      "candidate_skill_catalog_projection": true,
+      "extended_agent_card": false,
       "push_notifications": false,
-      "read_only_discovery_candidates": true,
-      "skill_catalog_projection": true,
-      "state_transition_history": false,
-      "streaming": false
+      "standards_clean_agent_card_fixture": true,
+      "streaming": false,
+      "supported_interface_fixture_projection": true
     },
     "explicit_non_capabilities": [
       "live_a2a_endpoint",
+      "publishable_agent_card",
+      "well_known_discovery_publication",
       "agent_registration",
-      "agent_discovery_publication",
-      "task_delegation",
+      "registry_publication",
+      "interface_negotiation_runtime",
       "task_submission",
+      "task_delegation",
       "task_status_runtime",
+      "task_cancellation_runtime",
       "streaming",
       "push_notifications",
-      "state_transition_history_runtime",
+      "extended_agent_card_runtime",
       "authentication",
       "authorization",
+      "security_scheme_implementation",
+      "agent_card_signing",
       "credential_resolution",
       "worker_execution",
       "provider_model_calls",
@@ -275,11 +307,18 @@
       "agent_registered": false,
       "authentication": false,
       "authorization": false,
+      "extended_agent_card": false,
       "live_endpoint": false,
+      "network_access": false,
+      "push_notifications": false,
+      "streaming": false,
+      "task_cancellation_runtime": false,
       "task_delegation": false,
+      "task_status_runtime": false,
       "task_submission": false,
       "worker_execution": false
     },
+    "official_advertised_skill_count": 0,
     "projection_authority": "generated_non_authoritative",
     "reference_id_kind_supported": false,
     "refusal_mappings": [
@@ -333,110 +372,24 @@
         "No A2A endpoint exists, so no authentication challenge can be issued.",
         "Future authenticated use must bind through AIDE PolicyDecision and CapabilityGrant."
       ],
-      "security": [],
+      "securityRequirements": [],
       "securitySchemes": {}
     },
-    "skills": [
-      {
-        "aide_operation_mapping": "aide.queue.inspect",
-        "description": "Future read-only queue discovery candidate. No A2A task endpoint exists in this slice.",
-        "examples": [],
-        "id": "aide.queue.inspect",
-        "implemented": false,
-        "inputModes": [
-          "application/json"
-        ],
-        "name": "Inspect AIDE queue projection",
-        "outputModes": [
-          "application/json"
-        ],
-        "requires_future_capability_grant": true,
-        "requires_future_policy_decision": true,
-        "side_effect_class": "read_only_or_report_only",
-        "tags": [
-          "queue",
-          "read-only",
-          "projection"
-        ]
-      },
-      {
-        "aide_operation_mapping": "aide.evidence.inspect",
-        "description": "Future read-only evidence discovery candidate. No A2A task endpoint exists in this slice.",
-        "examples": [],
-        "id": "aide.evidence.inspect",
-        "implemented": false,
-        "inputModes": [
-          "application/json"
-        ],
-        "name": "Inspect AIDE evidence projection",
-        "outputModes": [
-          "application/json"
-        ],
-        "requires_future_capability_grant": true,
-        "requires_future_policy_decision": true,
-        "side_effect_class": "read_only_or_report_only",
-        "tags": [
-          "evidence",
-          "read-only",
-          "projection"
-        ]
-      },
-      {
-        "aide_operation_mapping": "aide.capability.inspect",
-        "description": "Future read-only capability discovery candidate. No A2A task endpoint exists in this slice.",
-        "examples": [],
-        "id": "aide.capability.inspect",
-        "implemented": false,
-        "inputModes": [
-          "application/json"
-        ],
-        "name": "Inspect AIDE capability projection",
-        "outputModes": [
-          "application/json"
-        ],
-        "requires_future_capability_grant": true,
-        "requires_future_policy_decision": true,
-        "side_effect_class": "read_only_or_report_only",
-        "tags": [
-          "capability",
-          "read-only",
-          "projection"
-        ]
-      },
-      {
-        "aide_operation_mapping": "aide.context.inspect",
-        "description": "Future read-only ContextPack discovery candidate. No A2A task endpoint exists in this slice.",
-        "examples": [],
-        "id": "aide.context.inspect",
-        "implemented": false,
-        "inputModes": [
-          "application/json"
-        ],
-        "name": "Inspect AIDE context projection",
-        "outputModes": [
-          "application/json"
-        ],
-        "requires_future_capability_grant": true,
-        "requires_future_policy_decision": true,
-        "side_effect_class": "read_only_or_report_only",
-        "tags": [
-          "context",
-          "read-only",
-          "projection"
-        ]
-      }
-    ],
     "source_authority": [
       ".aide/queue/index.yaml",
       ".aide/queue/policy.yaml",
       "accepted AIDE protocol and interop reports"
-    ]
+    ],
+    "target_a2a_protocol_version": "1.0",
+    "target_a2a_specification_release": "1.0.0"
   },
   "status": {
     "agent_card_projection_performed": true,
     "agent_registered": false,
     "authentication_implemented": false,
+    "authorization_implemented": false,
     "branch_or_worktree_created": false,
+    "fixture_generation_performed": true,
     "github_mutation_performed": false,
     "live_a2a_endpoint_started": false,
     "model_or_provider_called": false,

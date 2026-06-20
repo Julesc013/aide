@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": true,
-  "description": "Minimal contract-only A2A agent-card projection for AIDE. This schema records static projection, structural validation, inspection, and reporting data only.",
+  "description": "Minimal contract-only A2A 1.0 Agent Card projection for AIDE. This schema records static projection, structural validation, inspection, and reporting data only.",
   "properties": {
     "apiVersion": {
       "const": "aide.dev/v1alpha1",
@@ -27,10 +27,14 @@
       "additionalProperties": true,
       "required": [
         "contract_id",
+        "target_a2a_specification_release",
+        "target_a2a_protocol_version",
+        "agent_implementation_version",
         "agent_card",
+        "agent_card_fixture",
         "declared_card_capabilities",
         "implemented_runtime_capabilities",
-        "skills",
+        "candidate_skill_governance",
         "security",
         "refusal_mappings",
         "conformance_expectations",
@@ -43,10 +47,12 @@
       "required": [
         "agent_card_projection_performed",
         "structural_validation_performed",
+        "fixture_generation_performed",
         "live_a2a_endpoint_started",
         "agent_registered",
         "task_delegation_performed",
         "authentication_implemented",
+        "authorization_implemented",
         "worker_dispatched",
         "model_or_provider_called",
         "network_call_performed",

@@ -1,27 +1,36 @@
 {
+  "callable_skill_count": 0,
+  "candidate_skill_count": 4,
   "contract_id": "a2a-agent-card-contract-v0",
   "declared_card_capabilities": {
     "agent_card_projection": true,
-    "authenticated_extended_card": false,
+    "candidate_skill_catalog_projection": true,
+    "extended_agent_card": false,
     "push_notifications": false,
-    "read_only_discovery_candidates": true,
-    "skill_catalog_projection": true,
-    "state_transition_history": false,
-    "streaming": false
+    "standards_clean_agent_card_fixture": true,
+    "streaming": false,
+    "supported_interface_fixture_projection": true
   },
   "delegation_capability_count": 0,
   "implemented_runtime_capabilities": {
     "agent_registered": false,
     "authentication": false,
     "authorization": false,
+    "extended_agent_card": false,
     "live_endpoint": false,
+    "network_access": false,
+    "push_notifications": false,
+    "streaming": false,
+    "task_cancellation_runtime": false,
     "task_delegation": false,
+    "task_status_runtime": false,
     "task_submission": false,
     "worker_execution": false
   },
   "implemented_skill_count": 0,
   "live_endpoint_count": 0,
+  "official_advertised_skill_count": 0,
   "registered_agent_count": 0,
   "schema_version": "aide.a2a-agent-card-contract.capability-matrix.v0",
-  "skill_count": 4
+  "skill_count": 0
 }

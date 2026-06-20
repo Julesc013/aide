@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01
+
+- Title: Repair A2A 1.0 AgentCard Standards Alignment and Metadata Separation
+- Status: needs_review
+- Objective: repair the eight material A2A standards-alignment defects found by `AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01` without adding live A2A behavior.
+- Scope: A2A helper/schema/tests, regenerated `.aide/interop/a2a/**`, regenerated `.aide/reports/a2a-agent-card-contract/**`, repair task/evidence, repair reports, queue index, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01/task.yaml`.
+- Dependencies: accepted MCP server contract, A2A build at `PASS_WITH_WARNINGS`, failed A2A check at `FAILED_VALIDATION` with eight material findings, and no later repair.
+- Milestones: source chain verified; official AgentCard cleaned; supported interface fixture added; provider/legacy/capability/skill defects repaired; validator and tests hardened; reports and evidence materialized.
+- Blockers: none for this bounded repair. Acceptance remains blocked until independent repair check passes.
+- Verification Intent: run diff checks, Python compile, focused A2A tests, A2A status/project/validate, predecessor validators, task inspect/evidence, broad AIDE validation, independent JSON/probe checks, unsupported command probes, secret scan, and commit-policy validation.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS` and recommend `AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01` only.
+- Notes: This repair preserves failed-check evidence and does not implement endpoint, publication, registration, authentication, authorization, task delegation, worker execution, provider/model/network calls, runtime, host integration, PatchTransaction apply, or target mutation.
+
 ### Plan ID: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01
 
 - Title: Independent Standards and Boundary Check of A2A Agent Card Contract

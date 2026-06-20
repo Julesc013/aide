@@ -2,9 +2,9 @@
 
 - artifact_count: `6`
 
-- `.aide/interop/a2a/agent-card-contract.json` `sha256:1d0c2f7ddff1d90453b20d048f5b0b7e5b356ddad55b9dbe51b82c6299224b69`
-- `.aide/interop/a2a/agent-card.preview.json` `sha256:ca3b8d2a0993eaf1a20fa31ec29866e0dd4267f431ae76f422df961b1161b80c`
-- `.aide/interop/a2a/capability-catalog.json` `sha256:7e53b78f8a7720375353932611f6d06b240982d3882b8abf673b89b2d8f1f08e`
-- `.aide/interop/a2a/skill-catalog.json` `sha256:232cbf3fc8b3a9b42639a511459b7817a38c8d08fd7ca3031225759e683a343e`
-- `.aide/interop/a2a/refusal-catalog.json` `sha256:cc45a32475995d5e7958e770d08bdcd7d5c67d6bd7af37cc4fa8acc1f39564db`
-- `.aide/interop/a2a/conformance-expectations.json` `sha256:7045ba5a7a6dbd7e34f798ecefe6a4a6b47fa4dbf4faa579c2f48cf1971ecd58`
+- `.aide/interop/a2a/agent-card-contract.json` `sha256:d03c4d7a17c04e522c96a247048d677804c703f1e091122820a9008f931a9d05`
+- `.aide/interop/a2a/agent-card.preview.json` `sha256:75a31162bae38281eb07c14e1af3b83b3b7f3f976cf3af2af2416643fc385a62`
+- `.aide/interop/a2a/capability-catalog.json` `sha256:f4f6935a384e9bbd2ef950556a82a51dfbea85e19082bef95e3adcab9d06aa24`
+- `.aide/interop/a2a/skill-catalog.json` `sha256:2bc5359d6f739b4c2a3b2f67b641472f8642048ff7783b60a00fbf0774f9c820`
+- `.aide/interop/a2a/refusal-catalog.json` `sha256:2e4cab062bcae8b0aada554ea5677ddeb24f919cc925e5eb7dd7853de41cc2cb`
+- `.aide/interop/a2a/conformance-expectations.json` `sha256:69a3a64dba64a7262a22e50f9392c689f9b8877775206712cc15e541f1e1ffe5`

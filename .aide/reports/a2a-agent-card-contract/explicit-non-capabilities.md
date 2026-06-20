@@ -1,16 +1,22 @@
 # Explicit Non-Capabilities
 
 - `live_a2a_endpoint`
+- `publishable_agent_card`
+- `well_known_discovery_publication`
 - `agent_registration`
-- `agent_discovery_publication`
-- `task_delegation`
+- `registry_publication`
+- `interface_negotiation_runtime`
 - `task_submission`
+- `task_delegation`
 - `task_status_runtime`
+- `task_cancellation_runtime`
 - `streaming`
 - `push_notifications`
-- `state_transition_history_runtime`
+- `extended_agent_card_runtime`
 - `authentication`
 - `authorization`
+- `security_scheme_implementation`
+- `agent_card_signing`
 - `credential_resolution`
 - `worker_execution`
 - `provider_model_calls`

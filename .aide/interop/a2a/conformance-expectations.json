@@ -1,6 +1,6 @@
 {
   "contract_id": "a2a-agent-card-contract-v0",
-  "count": 12,
+  "count": 13,
   "items": [
     {
       "description": "agent card JSON parses",
@@ -9,72 +9,78 @@
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "agent card remains preview-only",
+      "description": "agent card contains only standard A2A 1.0 AgentCard fields",
       "id": "a2a-agent-card-contract-02",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "live endpoint URL is absent while endpoint is not implemented",
+      "description": "supportedInterfaces declares one non-live HTTPS fixture interface",
       "id": "a2a-agent-card-contract-03",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "declared skills have stable IDs",
+      "description": "interface protocolVersion matches the outer A2A protocol version pin",
       "id": "a2a-agent-card-contract-04",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "declared skills are not implemented or callable",
+      "description": "candidate skills remain outside the official AgentCard skills array",
       "id": "a2a-agent-card-contract-05",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "security schemes remain empty until authentication exists",
+      "description": "official AgentCard skills array is empty while no endpoint exists",
       "id": "a2a-agent-card-contract-06",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "task delegation remains false",
+      "description": "security schemes remain empty until authentication exists",
       "id": "a2a-agent-card-contract-07",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "worker execution remains false",
+      "description": "task delegation remains false",
       "id": "a2a-agent-card-contract-08",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "provider/model/network calls remain false",
+      "description": "worker execution remains false",
       "id": "a2a-agent-card-contract-09",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "explicit non-capabilities remain present",
+      "description": "provider/model/network calls remain false",
       "id": "a2a-agent-card-contract-10",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "projection is deterministic",
+      "description": "explicit non-capabilities remain present",
       "id": "a2a-agent-card-contract-11",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     },
     {
-      "description": "source interop exports remain unchanged",
+      "description": "projection is deterministic",
       "id": "a2a-agent-card-contract-12",
+      "required_for_acceptance": true,
+      "status": "expected_not_executed_in_build"
+    },
+    {
+      "description": "source interop exports remain unchanged",
+      "id": "a2a-agent-card-contract-13",
       "required_for_acceptance": true,
       "status": "expected_not_executed_in_build"
     }
   ],
   "schema_version": "aide.a2a-agent-card-contract.conformance-expectation-catalog.v0",
-  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
+  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01"
 }

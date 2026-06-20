@@ -37,121 +37,308 @@ def validate_record(record: dict) -> list[str]:
     return errors
 
 
+def valid_record() -> dict:
+    return a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
+
+
 class AIDEA2AAgentCardContractTests(unittest.TestCase):
+    def assertInvalid(self, record: dict, needle: str) -> None:
+        self.assertTrue(any(needle in item for item in validate_record(record)), validate_record(record))
+
     def test_01_valid_contract_passes_with_warnings(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
+        record = valid_record()
         errors, warnings = a2a_agent_card_contract.validate_a2a_agent_card_contract_with_schema(record, {})
         self.assertEqual(errors, [])
         self.assertTrue(warnings)
         self.assertEqual(record["kind"], "A2AAgentCardContract")
 
-    def test_02_stable_contract_identity(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        self.assertEqual(record["spec"]["contract_id"], "a2a-agent-card-contract-v0")
-        self.assertEqual(record["spec"]["advisory_contract_ref"], "aide://interop/a2a-agent-card-contract-v0")
-        self.assertFalse(record["spec"]["reference_id_kind_supported"])
+    def test_02_explicit_specification_release_passes(self) -> None:
+        self.assertEqual(valid_record()["spec"]["target_a2a_specification_release"], "1.0.0")
 
-    def test_03_agent_card_is_preview_only(self) -> None:
+    def test_03_explicit_protocol_version_passes(self) -> None:
+        self.assertEqual(valid_record()["spec"]["target_a2a_protocol_version"], "1.0")
+
+    def test_04_missing_protocol_pin_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["target_a2a_protocol_version"]
+        self.assertInvalid(record, "target_a2a_protocol_version")
+
+    def test_05_missing_specification_pin_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["target_a2a_specification_release"]
+        self.assertInvalid(record, "target_a2a_specification_release")
+
+    def test_06_protocol_0_1_0_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["target_a2a_protocol_version"] = "0.1.0"
+        self.assertInvalid(record, "target_a2a_protocol_version")
+
+    def test_07_protocol_latest_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["target_a2a_protocol_version"] = "latest"
+        self.assertInvalid(record, "target_a2a_protocol_version")
+
+    def test_08_interface_protocol_mismatch_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["supportedInterfaces"][0]["protocolVersion"] = "0.3"
+        self.assertInvalid(record, "supportedInterfaces[0].protocolVersion")
+
+    def test_09_agent_version_distinct_from_protocol_version(self) -> None:
+        record = valid_record()
+        self.assertNotEqual(record["spec"]["agent_implementation_version"], record["spec"]["target_a2a_protocol_version"])
+
+    def test_10_standards_clean_fixture_passes(self) -> None:
         card = a2a_agent_card_contract.build_agent_card()
-        self.assertTrue(card["preview_only"])
-        self.assertFalse(card["endpoint_implemented"])
-        self.assertIsNone(card["url"])
+        self.assertEqual(set(card) - a2a_agent_card_contract.OFFICIAL_AGENT_CARD_FIELDS, set())
+        self.assertEqual(validate_record(valid_record()), [])
 
-    def test_04_declared_runtime_capabilities_are_false(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        for value in record["spec"]["implemented_runtime_capabilities"].values():
-            self.assertFalse(value)
+    def test_11_missing_supported_interfaces_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["agent_card"]["supportedInterfaces"]
+        self.assertInvalid(record, "supportedInterfaces")
 
-    def test_05_status_runtime_facts_are_false(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        for field in a2a_agent_card_contract.FALSE_RUNTIME_FIELDS:
-            self.assertFalse(record["status"][field], field)
+    def test_12_empty_supported_interfaces_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["supportedInterfaces"] = []
+        self.assertInvalid(record, "supportedInterfaces")
 
-    def test_06_live_endpoint_true_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["status"]["live_a2a_endpoint_started"] = True
-        self.assertTrue(any("live_a2a_endpoint_started" in item for item in validate_record(record)))
+    def test_13_missing_name_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["agent_card"]["name"]
+        self.assertInvalid(record, "agent_card.name")
 
-    def test_07_agent_registration_true_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["status"]["agent_registered"] = True
-        self.assertTrue(any("agent_registered" in item for item in validate_record(record)))
+    def test_14_missing_description_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["agent_card"]["description"]
+        self.assertInvalid(record, "agent_card.description")
 
-    def test_08_task_delegation_true_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["status"]["task_delegation_performed"] = True
-        self.assertTrue(any("task_delegation_performed" in item for item in validate_record(record)))
+    def test_15_missing_capabilities_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["agent_card"]["capabilities"]
+        self.assertInvalid(record, "agent_card.capabilities")
 
-    def test_09_authentication_true_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["spec"]["security"]["authentication_implemented"] = True
-        self.assertTrue(any("authentication_implemented" in item for item in validate_record(record)))
+    def test_16_missing_default_input_modes_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["agent_card"]["defaultInputModes"]
+        self.assertInvalid(record, "defaultInputModes")
 
-    def test_10_worker_dispatch_true_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["status"]["worker_dispatched"] = True
-        self.assertTrue(any("worker_dispatched" in item for item in validate_record(record)))
+    def test_17_missing_default_output_modes_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["agent_card"]["defaultOutputModes"]
+        self.assertInvalid(record, "defaultOutputModes")
 
-    def test_11_provider_call_true_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["status"]["model_or_provider_called"] = True
-        self.assertTrue(any("model_or_provider_called" in item for item in validate_record(record)))
+    def test_18_missing_skills_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["agent_card"]["skills"]
+        self.assertInvalid(record, "agent_card.skills")
 
-    def test_12_network_call_true_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["status"]["network_call_performed"] = True
-        self.assertTrue(any("network_call_performed" in item for item in validate_record(record)))
+    def test_19_valid_https_fixture_interface_passes(self) -> None:
+        interface = valid_record()["spec"]["agent_card"]["supportedInterfaces"][0]
+        self.assertEqual(interface["url"], "https://aide.invalid/a2a/v1")
+        self.assertEqual(interface["protocolBinding"], "JSONRPC")
+        self.assertEqual(interface["protocolVersion"], "1.0")
 
-    def test_13_live_url_present_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["spec"]["agent_card"]["url"] = "https://example.invalid/a2a"
-        self.assertTrue(any("url" in item for item in validate_record(record)))
+    def test_20_null_interface_url_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["supportedInterfaces"][0]["url"] = None
+        self.assertInvalid(record, "supportedInterfaces[0].url")
 
-    def test_14_security_schemes_must_be_empty(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["spec"]["security"]["securitySchemes"] = {"bearer": {"type": "http"}}
-        self.assertTrue(any("securitySchemes" in item for item in validate_record(record)))
+    def test_21_relative_interface_url_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["supportedInterfaces"][0]["url"] = "/a2a"
+        self.assertInvalid(record, "supportedInterfaces[0].url")
 
-    def test_15_skill_ids_validate(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        for skill in record["spec"]["skills"]:
-            valid, reason = a2a_agent_card_contract.validate_skill_id(skill["id"])
-            self.assertTrue(valid, reason)
+    def test_22_missing_protocol_binding_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["agent_card"]["supportedInterfaces"][0]["protocolBinding"]
+        self.assertInvalid(record, "protocolBinding")
 
-    def test_16_forbidden_skill_operation_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["spec"]["skills"][0]["id"] = "aide.task.dispatch"
-        self.assertTrue(any("forbidden operation segment" in item for item in validate_record(record)))
+    def test_23_missing_protocol_version_fails(self) -> None:
+        record = valid_record()
+        del record["spec"]["agent_card"]["supportedInterfaces"][0]["protocolVersion"]
+        self.assertInvalid(record, "protocolVersion")
 
-    def test_17_duplicate_skill_id_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["spec"]["skills"][1]["id"] = record["spec"]["skills"][0]["id"]
-        self.assertTrue(any("duplicate skill id" in item for item in validate_record(record)))
+    def test_24_non_1_0_protocol_version_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["supportedInterfaces"][0]["protocolVersion"] = "2.0"
+        self.assertInvalid(record, "protocolVersion")
 
-    def test_18_skill_implemented_true_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["spec"]["skills"][0]["implemented"] = True
-        self.assertTrue(any("implemented must be false" in item for item in validate_record(record)))
+    def test_25_duplicate_interface_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["supportedInterfaces"].append(copy.deepcopy(record["spec"]["agent_card"]["supportedInterfaces"][0]))
+        self.assertInvalid(record, "duplicate supported interface")
 
-    def test_19_unknown_required_capability_fails_closed(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        record["spec"]["required_aide_capabilities"].append("aide.runtime.execute")
-        self.assertTrue(any("unknown required AIDE capabilities" in item for item in validate_record(record)))
+    def test_26_live_looking_fixture_url_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["supportedInterfaces"][0]["url"] = "https://example.com/a2a"
+        self.assertInvalid(record, "approved non-live .invalid fixture host")
 
-    def test_20_explicit_non_capabilities_present(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
-        self.assertEqual(record["spec"]["explicit_non_capabilities"], a2a_agent_card_contract.EXPLICIT_NON_CAPABILITIES)
-        self.assertIn("live_a2a_endpoint", record["spec"]["explicit_non_capabilities"])
-        self.assertIn("task_delegation", record["spec"]["explicit_non_capabilities"])
+    def test_27_fixture_url_causes_no_network_activity(self) -> None:
+        record = valid_record()
+        self.assertTrue(record["spec"]["agent_card_fixture"]["network_target_intentionally_non_live"])
+        self.assertFalse(record["status"]["network_call_performed"])
 
-    def test_21_static_interop_preview_consistency(self) -> None:
-        preview = json.loads((REPO_ROOT / ".aide/interop/exports/a2a-agent-card.preview.json").read_text(encoding="utf-8"))
-        card = a2a_agent_card_contract.build_agent_card()
-        self.assertTrue(preview["preview_only"])
-        self.assertFalse(preview["endpoint_implemented"])
-        self.assertFalse(card["endpoint_implemented"])
+    def test_28_top_level_url_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["url"] = None
+        self.assertInvalid(record, "agent_card.url")
 
-    def test_22_projection_is_deterministic(self) -> None:
+    def test_29_top_level_supports_authenticated_extended_card_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["supportsAuthenticatedExtendedCard"] = False
+        self.assertInvalid(record, "supportsAuthenticatedExtendedCard")
+
+    def test_30_top_level_supports_extended_agent_card_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["supportsExtendedAgentCard"] = False
+        self.assertInvalid(record, "supportsExtendedAgentCard")
+
+    def test_31_state_transition_history_capability_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["capabilities"]["stateTransitionHistory"] = False
+        self.assertInvalid(record, "stateTransitionHistory")
+
+    def test_32_extended_agent_card_false_passes(self) -> None:
+        self.assertFalse(valid_record()["spec"]["agent_card"]["capabilities"]["extendedAgentCard"])
+
+    def test_33_capability_true_with_runtime_false_fails(self) -> None:
+        for field in ["streaming", "pushNotifications", "extendedAgentCard"]:
+            record = valid_record()
+            record["spec"]["agent_card"]["capabilities"][field] = True
+            self.assertInvalid(record, field)
+
+    def test_34_omitted_provider_passes(self) -> None:
+        self.assertNotIn("provider", valid_record()["spec"]["agent_card"])
+
+    def test_35_valid_provider_passes_when_present(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["provider"] = {
+            "organization": "AIDE",
+            "url": "https://aide.invalid/provider",
+        }
+        self.assertEqual(validate_record(record), [])
+
+    def test_36_provider_null_url_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["provider"] = {"organization": "AIDE", "url": None}
+        self.assertInvalid(record, "provider.url")
+
+    def test_37_provider_missing_url_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["provider"] = {"organization": "AIDE"}
+        self.assertInvalid(record, "provider.url")
+
+    def test_38_provider_empty_organization_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["provider"] = {"organization": "", "url": "https://aide.invalid/provider"}
+        self.assertInvalid(record, "provider.organization")
+
+    def test_39_empty_official_skills_array_passes(self) -> None:
+        self.assertEqual(valid_record()["spec"]["agent_card"]["skills"], [])
+
+    def test_40_aide_governance_field_inside_agent_skill_fails(self) -> None:
+        record = valid_record()
+        skill = {
+            "id": "aide.queue.inspect",
+            "name": "Inspect",
+            "description": "Bad official skill",
+            "tags": ["queue"],
+            "examples": [],
+            "inputModes": ["application/json"],
+            "outputModes": ["application/json"],
+            "implemented": False,
+        }
+        record["spec"]["agent_card"]["skills"] = [skill]
+        self.assertInvalid(record, "implemented")
+
+    def test_41_unknown_agent_skill_field_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["skills"] = [
+            {
+                "id": "aide.queue.inspect",
+                "name": "Inspect",
+                "description": "Bad official skill",
+                "tags": ["queue"],
+                "examples": [],
+                "inputModes": ["application/json"],
+                "outputModes": ["application/json"],
+                "unknown": True,
+            }
+        ]
+        self.assertInvalid(record, "unknown")
+
+    def test_42_candidate_skills_outside_card_pass(self) -> None:
+        record = valid_record()
+        self.assertEqual(len(record["spec"]["candidate_skill_governance"]), 4)
+        self.assertEqual(record["spec"]["agent_card"]["skills"], [])
+
+    def test_43_candidate_skill_retains_operation_mapping(self) -> None:
+        for skill in valid_record()["spec"]["candidate_skill_governance"]:
+            self.assertEqual(skill["aide_operation_mapping"], skill["skill_id"])
+
+    def test_44_candidate_skill_remains_not_callable(self) -> None:
+        for skill in valid_record()["spec"]["candidate_skill_governance"]:
+            self.assertFalse(skill["implemented"])
+            self.assertFalse(skill["callable"])
+
+    def test_45_official_skill_count_zero_candidate_count_four(self) -> None:
+        record = valid_record()
+        self.assertEqual(record["spec"]["official_advertised_skill_count"], 0)
+        self.assertEqual(record["spec"]["candidate_skill_count"], 4)
+
+    def test_46_no_security_fields_passes(self) -> None:
+        self.assertNotIn("securitySchemes", valid_record()["spec"]["agent_card"])
+        self.assertNotIn("securityRequirements", valid_record()["spec"]["agent_card"])
+
+    def test_47_security_requirement_without_scheme_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["securityRequirements"] = [{"apiKey": []}]
+        self.assertInvalid(record, "securityRequirements")
+
+    def test_48_legacy_top_level_security_field_fails(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["security"] = []
+        self.assertInvalid(record, "agent_card.security")
+
+    def test_49_no_signatures_passes(self) -> None:
+        self.assertNotIn("signatures", valid_record()["spec"]["agent_card"])
+
+    def test_50_hash_is_not_agent_card_signature(self) -> None:
+        record = valid_record()
+        record["spec"]["agent_card"]["signatures"] = [{"signature": "sha256:abc"}]
+        self.assertInvalid(record, "signatures")
+
+    def test_51_no_endpoint_starts(self) -> None:
+        self.assertFalse(valid_record()["status"]["live_a2a_endpoint_started"])
+
+    def test_52_no_registration_occurs(self) -> None:
+        self.assertFalse(valid_record()["status"]["agent_registered"])
+
+    def test_53_no_network_call_occurs(self) -> None:
+        self.assertFalse(valid_record()["status"]["network_call_performed"])
+
+    def test_54_no_task_delegation_occurs(self) -> None:
+        self.assertFalse(valid_record()["status"]["task_delegation_performed"])
+
+    def test_55_no_worker_starts(self) -> None:
+        self.assertFalse(valid_record()["status"]["worker_dispatched"])
+
+    def test_56_no_provider_model_call_occurs(self) -> None:
+        self.assertFalse(valid_record()["status"]["model_or_provider_called"])
+
+    def test_57_no_target_mutation_occurs(self) -> None:
+        self.assertFalse(valid_record()["status"]["repository_target_mutated"])
+
+    def test_58_unsupported_execution_commands_fail_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            copy_a2a_source_files(root)
+            for command in ["start", "serve", "register", "publish", "discover", "send", "delegate", "submit", "stream", "subscribe", "cancel", "authenticate", "connect"]:
+                with self.subTest(command=command):
+                    with self.assertRaises(SystemExit):
+                        aide_lite.main(["--repo-root", str(root), "a2a-agent-card-contract", command])
+
+    def test_59_projection_is_deterministic(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             copy_a2a_source_files(root)
@@ -161,13 +348,15 @@ class AIDEA2AAgentCardContractTests(unittest.TestCase):
             second = (root / a2a_agent_card_contract.AGENT_CARD_CONTRACT_JSON).read_bytes()
         self.assertEqual(first, second)
 
-    def test_23_source_interop_export_artifacts_remain_unchanged(self) -> None:
+    def test_60_predecessor_artifacts_remain_unchanged(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             copy_a2a_source_files(root)
             watched = [
                 root / ".aide/interop/exports/manifest.json",
                 root / ".aide/interop/exports/a2a-agent-card.preview.json",
+                root / ".aide/reports/interop-exports-accept/acceptance-report.json",
+                root / ".aide/reports/mcp-server-contract-accept/acceptance-report.json",
             ]
             before = {path.as_posix(): path.read_bytes() for path in watched if path.exists()}
             report = a2a_agent_card_contract.write_a2a_agent_card_contract_reports(root)
@@ -175,20 +364,13 @@ class AIDEA2AAgentCardContractTests(unittest.TestCase):
         self.assertEqual(before, after)
         self.assertFalse(report["source_artifacts_mutated"])
 
-    def test_24_accepted_predecessor_reports_remain_unchanged(self) -> None:
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            copy_a2a_source_files(root)
-            watched = [
-                root / ".aide/reports/interop-exports-accept/acceptance-report.json",
-                root / ".aide/reports/mcp-server-contract-accept/acceptance-report.json",
-            ]
-            before = {path.as_posix(): path.read_bytes() for path in watched if path.exists()}
-            a2a_agent_card_contract.write_a2a_agent_card_contract_reports(root)
-            after = {path.as_posix(): path.read_bytes() for path in watched if path.exists()}
-        self.assertEqual(before, after)
+    def test_61_explicit_non_capabilities_present(self) -> None:
+        record = valid_record()
+        self.assertEqual(record["spec"]["explicit_non_capabilities"], a2a_agent_card_contract.EXPLICIT_NON_CAPABILITIES)
+        self.assertIn("live_a2a_endpoint", record["spec"]["explicit_non_capabilities"])
+        self.assertIn("task_delegation", record["spec"]["explicit_non_capabilities"])
 
-    def test_25_cli_status_project_validate(self) -> None:
+    def test_62_cli_status_project_validate(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             copy_a2a_source_files(root)
@@ -199,16 +381,7 @@ class AIDEA2AAgentCardContractTests(unittest.TestCase):
             report = json.loads((root / a2a_agent_card_contract.VALIDATION_JSON).read_text(encoding="utf-8"))
             self.assertEqual(report["validation_status"], "PASS_WITH_WARNINGS")
 
-    def test_26_unsupported_execution_commands_fail_closed(self) -> None:
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            copy_a2a_source_files(root)
-            for command in ["start", "serve", "register", "delegate", "send", "connect", "authorize"]:
-                with self.subTest(command=command):
-                    with self.assertRaises(SystemExit):
-                        aide_lite.main(["--repo-root", str(root), "a2a-agent-card-contract", command])
-
-    def test_27_validation_writes_json_reports(self) -> None:
+    def test_63_validation_writes_json_reports(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             copy_a2a_source_files(root)
@@ -217,13 +390,21 @@ class AIDEA2AAgentCardContractTests(unittest.TestCase):
             self.assertTrue((root / a2a_agent_card_contract.ARTIFACT_INDEX_JSON).exists())
             self.assertTrue((root / a2a_agent_card_contract.AGENT_CARD_REPORT_JSON).exists())
 
-    def test_28_mutating_status_combination_fails(self) -> None:
-        record = a2a_agent_card_contract.build_a2a_agent_card_contract(REPO_ROOT)
+    def test_64_mutating_status_combination_fails(self) -> None:
         for field in ["patch_applied", "repository_target_mutated", "github_mutation_performed", "trusted"]:
-            with self.subTest(field=field):
-                bad = copy.deepcopy(record)
-                bad["status"][field] = True
-                self.assertTrue(any(field in item for item in validate_record(bad)))
+            record = valid_record()
+            record["status"][field] = True
+            self.assertInvalid(record, field)
+
+    def test_65_candidate_skill_bad_flags_fail(self) -> None:
+        record = valid_record()
+        record["spec"]["candidate_skill_governance"][0]["callable"] = True
+        self.assertInvalid(record, "callable")
+
+    def test_66_unknown_required_capability_fails_closed(self) -> None:
+        record = valid_record()
+        record["spec"]["required_aide_capabilities"].append("aide.runtime.execute")
+        self.assertInvalid(record, "required_aide_capabilities")
 
 
 if __name__ == "__main__":

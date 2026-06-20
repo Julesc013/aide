@@ -1,21 +1,21 @@
 """Minimal contract-only A2A agent-card projection helpers for AIDE.
 
-This module projects deterministic A2A agent-card contract artifacts and
-reports. It deliberately avoids endpoint startup, registration, task
-delegation, authentication, worker dispatch, provider calls, network access, and
-repository mutation.
+This module projects deterministic A2A Agent Card contract artifacts and
+reports. It deliberately avoids endpoint startup, discovery publication,
+registration, task delegation, authentication, worker dispatch, provider calls,
+network access, and repository mutation.
 """
 
 from __future__ import annotations
 
 import copy
 import hashlib
-import json
 import re
 import shutil
 import tempfile
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 from core.protocol import envelope
 
@@ -23,17 +23,21 @@ from core.protocol import envelope
 API_VERSION = envelope.API_VERSION
 A2A_CONTRACT_SCHEMA_VERSION = "aide.a2a-agent-card-contract.v0"
 PROTOCOL_VERSION = "0.1.0"
+A2A_SPECIFICATION_RELEASE = "1.0.0"
+A2A_PROTOCOL_VERSION = "1.0"
 PRODUCER_NAME = envelope.PRODUCER_NAME
 PRODUCER_VERSION = envelope.PRODUCER_VERSION
 FEATURE_FLAG = "minimal_a2a_agent_card_contract"
-TASK_ID = "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
-RECOMMENDED_NEXT_TASK = "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01"
+TASK_ID = "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01"
+RECOMMENDED_NEXT_TASK = "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01"
 DETERMINISTIC_TIMESTAMP = "2026-06-20T00:00:00+10:00"
 
 CONTRACT_ID = "a2a-agent-card-contract-v0"
 ADVISORY_CONTRACT_REF = "aide://interop/a2a-agent-card-contract-v0"
-AGENT_NAME = "AIDE Contract-Only Agent Card Preview"
+AGENT_NAME = "AIDE Contract-Only Agent Card Fixture"
 AGENT_VERSION = "0.1.0"
+FIXTURE_INTERFACE_URL = "https://aide.invalid/a2a/v1"
+FIXTURE_PROTOCOL_BINDING = "JSONRPC"
 
 SCHEMA_PATH = Path(".aide/protocol/aide-a2a-agent-card-contract.schema.json")
 INTEROP_ROOT = Path(".aide/interop/a2a")
@@ -103,6 +107,8 @@ PROJECTION_ARTIFACTS = [
 ]
 
 SKILL_ID_RE = re.compile(r"^[a-z][a-z0-9]*(?:\.[a-z][a-z0-9_-]*)+$")
+SPEC_RELEASE_RE = re.compile(r"^\d+\.\d+\.\d+$")
+PROTOCOL_VERSION_RE = re.compile(r"^\d+\.\d+$")
 FORBIDDEN_SKILL_ID_PARTS = [
     ".apply",
     ".approve",
@@ -118,11 +124,74 @@ SECRET_LIKE_RE = re.compile(
     re.IGNORECASE,
 )
 
+OFFICIAL_AGENT_CARD_FIELDS = {
+    "name",
+    "description",
+    "supportedInterfaces",
+    "provider",
+    "version",
+    "documentationUrl",
+    "capabilities",
+    "securitySchemes",
+    "securityRequirements",
+    "defaultInputModes",
+    "defaultOutputModes",
+    "skills",
+    "signatures",
+    "iconUrl",
+}
+OFFICIAL_AGENT_SKILL_FIELDS = {
+    "id",
+    "name",
+    "description",
+    "tags",
+    "examples",
+    "inputModes",
+    "outputModes",
+    "securityRequirements",
+}
+OFFICIAL_CAPABILITY_FIELDS = {
+    "streaming",
+    "pushNotifications",
+    "extensions",
+    "extendedAgentCard",
+}
+AIDE_SKILL_GOVERNANCE_FIELDS = {
+    "aide_operation_mapping",
+    "implemented",
+    "callable",
+    "endpoint_available",
+    "task_submission_available",
+    "task_delegation_available",
+    "requires_future_policy_decision",
+    "requires_future_capability_grant",
+    "side_effect_class",
+}
+AIDE_CARD_GOVERNANCE_FIELDS = {
+    "schema_version",
+    "preview_only",
+    "endpoint_implemented",
+    "canonical_truth",
+    "explicit_non_capabilities",
+    "publishable",
+    "agent_registered",
+}
+LEGACY_AGENT_CARD_FIELDS = {
+    "url",
+    "protocolVersion",
+    "preferredTransport",
+    "additionalInterfaces",
+    "supportsAuthenticatedExtendedCard",
+    "supportsExtendedAgentCard",
+    "security",
+}
+
 FALSE_RUNTIME_FIELDS = [
     "live_a2a_endpoint_started",
     "agent_registered",
     "task_delegation_performed",
     "authentication_implemented",
+    "authorization_implemented",
     "worker_dispatched",
     "model_or_provider_called",
     "network_call_performed",
@@ -135,16 +204,22 @@ FALSE_RUNTIME_FIELDS = [
 
 EXPLICIT_NON_CAPABILITIES = [
     "live_a2a_endpoint",
+    "publishable_agent_card",
+    "well_known_discovery_publication",
     "agent_registration",
-    "agent_discovery_publication",
-    "task_delegation",
+    "registry_publication",
+    "interface_negotiation_runtime",
     "task_submission",
+    "task_delegation",
     "task_status_runtime",
+    "task_cancellation_runtime",
     "streaming",
     "push_notifications",
-    "state_transition_history_runtime",
+    "extended_agent_card_runtime",
     "authentication",
     "authorization",
+    "security_scheme_implementation",
+    "agent_card_signing",
     "credential_resolution",
     "worker_execution",
     "provider_model_calls",
@@ -168,9 +243,9 @@ EXPLICIT_NON_CAPABILITIES = [
 ]
 
 VALIDATION_WARNINGS = [
-    "A2A agent-card contract is projection-only; no live endpoint or registration exists.",
-    "Agent-card shape is a local structural subset; full external A2A schema validation remains future work.",
-    "Skills are declared as future read-only discovery candidates only; no task delegation or worker execution exists.",
+    "A2A Agent Card contract is projection-only; no live endpoint or registration exists.",
+    "A2A Agent Card is a standards-clean local fixture; full vendored official A2A schema validation remains future work.",
+    "Candidate skills are retained as AIDE metadata only and are not advertised as official A2A skills.",
     "Authentication, authorization, PolicyDecision, CapabilityGrant, and credential handling are intentionally absent.",
     "Inherited Interop Exports preview-only limitations and prior report/OKF/Reconciler warning debt remain unresolved.",
 ]
@@ -243,12 +318,12 @@ def _compatibility() -> dict[str, Any]:
 def build_declared_card_capabilities() -> dict[str, bool]:
     return {
         "agent_card_projection": True,
-        "skill_catalog_projection": True,
-        "read_only_discovery_candidates": True,
+        "standards_clean_agent_card_fixture": True,
+        "supported_interface_fixture_projection": True,
+        "candidate_skill_catalog_projection": True,
         "streaming": False,
         "push_notifications": False,
-        "state_transition_history": False,
-        "authenticated_extended_card": False,
+        "extended_agent_card": False,
     }
 
 
@@ -258,13 +333,23 @@ def build_implemented_runtime_capabilities() -> dict[str, bool]:
         "agent_registered": False,
         "task_delegation": False,
         "task_submission": False,
+        "task_status_runtime": False,
+        "task_cancellation_runtime": False,
+        "streaming": False,
+        "push_notifications": False,
+        "extended_agent_card": False,
         "authentication": False,
         "authorization": False,
         "worker_execution": False,
+        "network_access": False,
     }
 
 
-def build_skills() -> list[dict[str, Any]]:
+def build_official_skills() -> list[dict[str, Any]]:
+    return []
+
+
+def build_candidate_skills() -> list[dict[str, Any]]:
     skill_specs = [
         (
             "aide.queue.inspect",
@@ -293,7 +378,7 @@ def build_skills() -> list[dict[str, Any]]:
     ]
     return [
         {
-            "id": skill_id,
+            "skill_id": skill_id,
             "name": name,
             "description": description,
             "tags": tags,
@@ -302,6 +387,10 @@ def build_skills() -> list[dict[str, Any]]:
             "outputModes": ["application/json"],
             "aide_operation_mapping": skill_id,
             "implemented": False,
+            "callable": False,
+            "endpoint_available": False,
+            "task_submission_available": False,
+            "task_delegation_available": False,
             "requires_future_policy_decision": True,
             "requires_future_capability_grant": True,
             "side_effect_class": "read_only_or_report_only",
@@ -310,10 +399,20 @@ def build_skills() -> list[dict[str, Any]]:
     ]
 
 
+def build_skills() -> list[dict[str, Any]]:
+    """Return AIDE candidate skill governance records.
+
+    The name is retained for compatibility with existing tests and callers; the
+    records are not official A2A AgentSkill objects.
+    """
+
+    return build_candidate_skills()
+
+
 def build_security() -> dict[str, Any]:
     return {
         "securitySchemes": {},
-        "security": [],
+        "securityRequirements": [],
         "authentication_implemented": False,
         "authorization_implemented": False,
         "credential_resolution_performed": False,
@@ -348,10 +447,11 @@ def build_refusal_mappings() -> list[dict[str, Any]]:
 def build_conformance_expectations() -> list[dict[str, Any]]:
     expectations = [
         "agent card JSON parses",
-        "agent card remains preview-only",
-        "live endpoint URL is absent while endpoint is not implemented",
-        "declared skills have stable IDs",
-        "declared skills are not implemented or callable",
+        "agent card contains only standard A2A 1.0 AgentCard fields",
+        "supportedInterfaces declares one non-live HTTPS fixture interface",
+        "interface protocolVersion matches the outer A2A protocol version pin",
+        "candidate skills remain outside the official AgentCard skills array",
+        "official AgentCard skills array is empty while no endpoint exists",
         "security schemes remain empty until authentication exists",
         "task delegation remains false",
         "worker execution remains false",
@@ -373,43 +473,46 @@ def build_conformance_expectations() -> list[dict[str, Any]]:
 
 def build_agent_card() -> dict[str, Any]:
     return {
-        "schema_version": "aide.interop.a2a_agent_card.contract_projection.v0",
         "name": AGENT_NAME,
-        "description": "Contract-only AIDE interop identity for future A2A discovery.",
+        "description": "Non-publishable A2A 1.0 structural fixture for AIDE interoperability.",
+        "supportedInterfaces": [
+            {
+                "url": FIXTURE_INTERFACE_URL,
+                "protocolBinding": FIXTURE_PROTOCOL_BINDING,
+                "protocolVersion": A2A_PROTOCOL_VERSION,
+            }
+        ],
         "version": AGENT_VERSION,
-        "preview_only": True,
-        "endpoint_implemented": False,
-        "url": None,
-        "provider": {
-            "organization": "AIDE",
-            "url": None,
+        "capabilities": {
+            "streaming": False,
+            "pushNotifications": False,
+            "extendedAgentCard": False,
         },
+        "defaultInputModes": ["application/json"],
+        "defaultOutputModes": ["application/json"],
+        "skills": build_official_skills(),
+    }
+
+
+def build_agent_card_fixture_metadata() -> dict[str, Any]:
+    return {
+        "schema_version": "aide.interop.a2a_agent_card.fixture_metadata.v0",
+        "fixture_only": True,
+        "interface_fixture_only": True,
+        "endpoint_implemented": False,
+        "publishable": False,
+        "network_target_intentionally_non_live": True,
+        "fixture_interface_url": FIXTURE_INTERFACE_URL,
+        "well_known_publication_performed": False,
+        "agent_registered": False,
+        "live_a2a_endpoint": False,
+        "task_submission_available": False,
+        "task_delegation_available": False,
         "canonical_truth": [
             ".aide/queue/index.yaml",
             ".aide/queue/policy.yaml",
             "AGENTS.md",
         ],
-        "capabilities": {
-            "streaming": False,
-            "pushNotifications": False,
-            "stateTransitionHistory": False,
-        },
-        "defaultInputModes": ["application/json"],
-        "defaultOutputModes": ["application/json"],
-        "skills": build_skills(),
-        "securitySchemes": {},
-        "security": [],
-        "supportsAuthenticatedExtendedCard": False,
-        "explicit_non_capabilities": {
-            "live_a2a_endpoint": False,
-            "agent_registration": False,
-            "task_delegation": False,
-            "authentication": False,
-            "worker_execution": False,
-            "provider_model_calls": False,
-            "network_calls": False,
-            "target_repository_mutation": False,
-        },
     }
 
 
@@ -417,6 +520,7 @@ def _contract_status() -> dict[str, bool]:
     status = {
         "agent_card_projection_performed": True,
         "structural_validation_performed": True,
+        "fixture_generation_performed": True,
     }
     status.update({field: False for field in FALSE_RUNTIME_FIELDS})
     return status
@@ -424,14 +528,22 @@ def _contract_status() -> dict[str, bool]:
 
 def build_a2a_agent_card_contract(repo_root: str | Path | None = None) -> dict[str, Any]:
     _root = Path(repo_root) if repo_root is not None else Path(".")
+    candidate_skills = build_candidate_skills()
     spec = {
         "contract_id": CONTRACT_ID,
         "advisory_contract_ref": ADVISORY_CONTRACT_REF,
         "reference_id_kind_supported": False,
+        "target_a2a_specification_release": A2A_SPECIFICATION_RELEASE,
+        "target_a2a_protocol_version": A2A_PROTOCOL_VERSION,
+        "agent_implementation_version": AGENT_VERSION,
         "agent_card": build_agent_card(),
+        "agent_card_fixture": build_agent_card_fixture_metadata(),
         "declared_card_capabilities": build_declared_card_capabilities(),
         "implemented_runtime_capabilities": build_implemented_runtime_capabilities(),
-        "skills": build_skills(),
+        "candidate_skill_governance": candidate_skills,
+        "official_advertised_skill_count": 0,
+        "candidate_skill_count": len(candidate_skills),
+        "callable_skill_count": 0,
         "security": build_security(),
         "refusal_mappings": build_refusal_mappings(),
         "conformance_expectations": build_conformance_expectations(),
@@ -479,6 +591,246 @@ def validate_skill_id(skill_id: str) -> tuple[bool, str]:
     return True, "ok"
 
 
+def _is_absolute_https_url(value: str) -> bool:
+    parsed = urlparse(value)
+    return parsed.scheme == "https" and bool(parsed.netloc) and bool(parsed.path)
+
+
+def _is_fixture_url(value: str) -> bool:
+    parsed = urlparse(value)
+    return parsed.hostname == "aide.invalid" or (parsed.hostname or "").endswith(".invalid")
+
+
+def _add(errors: list[str], path: str, message: str) -> None:
+    errors.append(f"{path}: {message}")
+
+
+def _validate_version_pins(spec: dict[str, Any], errors: list[str]) -> None:
+    release = spec.get("target_a2a_specification_release")
+    protocol = spec.get("target_a2a_protocol_version")
+    if release != A2A_SPECIFICATION_RELEASE or not isinstance(release, str) or not SPEC_RELEASE_RE.match(release):
+        _add(errors, "spec.target_a2a_specification_release", "must be pinned to 1.0.0")
+    if protocol != A2A_PROTOCOL_VERSION or not isinstance(protocol, str) or not PROTOCOL_VERSION_RE.match(protocol):
+        _add(errors, "spec.target_a2a_protocol_version", "must be pinned to 1.0")
+    if protocol in {"0.1.0", "latest"}:
+        _add(errors, "spec.target_a2a_protocol_version", "must not use AIDE version or latest")
+    if spec.get("agent_implementation_version") == protocol:
+        _add(errors, "spec.agent_implementation_version", "must remain distinct from A2A protocol version")
+
+
+def _validate_provider(provider: Any, errors: list[str]) -> None:
+    if provider is None:
+        return
+    if not isinstance(provider, dict):
+        _add(errors, "spec.agent_card.provider", "must be an object when present")
+        return
+    organization = provider.get("organization")
+    url = provider.get("url")
+    if not isinstance(organization, str) or not organization.strip():
+        _add(errors, "spec.agent_card.provider.organization", "must be a non-empty string when provider is present")
+    if not isinstance(url, str) or not url.strip():
+        _add(errors, "spec.agent_card.provider.url", "must be a non-empty absolute URL when provider is present")
+    elif not _is_absolute_https_url(url):
+        _add(errors, "spec.agent_card.provider.url", "must be an absolute HTTPS URL")
+    if isinstance(url, str) and SECRET_LIKE_RE.search(url):
+        _add(errors, "spec.agent_card.provider.url", "must not contain credential-like content")
+
+
+def _validate_supported_interfaces(spec: dict[str, Any], card: dict[str, Any], errors: list[str]) -> None:
+    interfaces = card.get("supportedInterfaces")
+    if not isinstance(interfaces, list) or not interfaces:
+        _add(errors, "spec.agent_card.supportedInterfaces", "must be a non-empty array")
+        return
+    seen: set[tuple[str, str, str]] = set()
+    fixture = spec.get("agent_card_fixture") if isinstance(spec.get("agent_card_fixture"), dict) else {}
+    for index, interface in enumerate(interfaces):
+        path = f"spec.agent_card.supportedInterfaces[{index}]"
+        if not isinstance(interface, dict):
+            _add(errors, path, "must be an object")
+            continue
+        url = interface.get("url")
+        binding = interface.get("protocolBinding")
+        protocol = interface.get("protocolVersion")
+        if not isinstance(url, str) or not url:
+            _add(errors, f"{path}.url", "must be a non-empty absolute HTTPS URL")
+        elif not _is_absolute_https_url(url):
+            _add(errors, f"{path}.url", "must be an absolute HTTPS URL")
+        elif fixture.get("interface_fixture_only") is True and not _is_fixture_url(url):
+            _add(errors, f"{path}.url", "must use an approved non-live .invalid fixture host")
+        if not isinstance(binding, str) or not binding:
+            _add(errors, f"{path}.protocolBinding", "must be a non-empty string")
+        if protocol != spec.get("target_a2a_protocol_version"):
+            _add(errors, f"{path}.protocolVersion", "must match spec.target_a2a_protocol_version")
+        key = (str(url), str(binding), str(protocol))
+        if key in seen:
+            _add(errors, path, "duplicate supported interface entry")
+        seen.add(key)
+
+
+def _validate_capabilities(spec: dict[str, Any], card: dict[str, Any], errors: list[str]) -> None:
+    capabilities = card.get("capabilities")
+    if not isinstance(capabilities, dict):
+        _add(errors, "spec.agent_card.capabilities", "must be an object")
+        return
+    implemented = spec.get("implemented_runtime_capabilities", {})
+    for field in capabilities:
+        if field not in OFFICIAL_CAPABILITY_FIELDS:
+            _add(errors, f"spec.agent_card.capabilities.{field}", "is not an accepted A2A 1.0 capability field")
+    runtime_map = {
+        "streaming": "streaming",
+        "pushNotifications": "push_notifications",
+        "extendedAgentCard": "extended_agent_card",
+    }
+    for field, runtime_field in runtime_map.items():
+        value = capabilities.get(field)
+        if value is not None and not isinstance(value, bool):
+            _add(errors, f"spec.agent_card.capabilities.{field}", "must be a boolean when present")
+        if value is True and implemented.get(runtime_field) is not True:
+            _add(errors, f"spec.agent_card.capabilities.{field}", "cannot be true while corresponding runtime fact is false")
+    if "extensions" in capabilities and not isinstance(capabilities["extensions"], list):
+        _add(errors, "spec.agent_card.capabilities.extensions", "must be an array when present")
+
+
+def _validate_official_skills(spec: dict[str, Any], card: dict[str, Any], errors: list[str]) -> None:
+    skills = card.get("skills")
+    if not isinstance(skills, list):
+        _add(errors, "spec.agent_card.skills", "must be an array")
+        return
+    if skills and spec.get("agent_card_fixture", {}).get("endpoint_implemented") is False:
+        _add(errors, "spec.agent_card.skills", "must remain empty while no A2A endpoint exists")
+    seen: set[str] = set()
+    for index, skill in enumerate(skills):
+        path = f"spec.agent_card.skills[{index}]"
+        if not isinstance(skill, dict):
+            _add(errors, path, "must be an object")
+            continue
+        for field in skill:
+            if field not in OFFICIAL_AGENT_SKILL_FIELDS:
+                if field in AIDE_SKILL_GOVERNANCE_FIELDS:
+                    _add(errors, f"{path}.{field}", "AIDE governance metadata must move to spec.candidate_skill_governance")
+                else:
+                    _add(errors, f"{path}.{field}", "is not an accepted A2A 1.0 AgentSkill field")
+        skill_id = skill.get("id")
+        if skill_id is not None:
+            valid, reason = validate_skill_id(skill_id)
+            if not valid:
+                _add(errors, f"{path}.id", reason)
+            elif skill_id in seen:
+                _add(errors, f"{path}.id", f"duplicate skill id: {skill_id}")
+            else:
+                seen.add(skill_id)
+
+
+def _validate_security(card: dict[str, Any], errors: list[str]) -> None:
+    schemes = card.get("securitySchemes")
+    requirements = card.get("securityRequirements")
+    if schemes not in (None, {}):
+        _add(errors, "spec.agent_card.securitySchemes", "must be omitted or empty until authentication exists")
+    if requirements not in (None, []):
+        if not isinstance(requirements, list):
+            _add(errors, "spec.agent_card.securityRequirements", "must be an array when present")
+        elif not schemes:
+            _add(errors, "spec.agent_card.securityRequirements", "must not reference nonexistent security schemes")
+    if "security" in card:
+        _add(errors, "spec.agent_card.security", "legacy top-level security field is not part of pinned A2A 1.0 AgentCard")
+    if "signatures" in card and card["signatures"]:
+        _add(errors, "spec.agent_card.signatures", "must be omitted or empty; this slice does not generate JWS signatures")
+
+
+def _validate_agent_card(spec: dict[str, Any], errors: list[str]) -> None:
+    card = spec.get("agent_card")
+    if not isinstance(card, dict):
+        _add(errors, "spec.agent_card", "must be an object")
+        return
+    for field in card:
+        if field not in OFFICIAL_AGENT_CARD_FIELDS:
+            if field in LEGACY_AGENT_CARD_FIELDS:
+                _add(errors, f"spec.agent_card.{field}", "legacy field is invalid for A2A 1.0 AgentCard")
+            elif field in AIDE_CARD_GOVERNANCE_FIELDS:
+                _add(errors, f"spec.agent_card.{field}", "AIDE metadata must move to spec.agent_card_fixture")
+            else:
+                _add(errors, f"spec.agent_card.{field}", "is not an accepted A2A 1.0 AgentCard field")
+    for required in ["name", "description", "supportedInterfaces", "version", "capabilities", "defaultInputModes", "defaultOutputModes", "skills"]:
+        if required not in card:
+            _add(errors, f"spec.agent_card.{required}", "required A2A AgentCard field is missing")
+    if not isinstance(card.get("name"), str) or not card.get("name", "").strip():
+        _add(errors, "spec.agent_card.name", "must be a non-empty string")
+    if not isinstance(card.get("description"), str) or not card.get("description", "").strip():
+        _add(errors, "spec.agent_card.description", "must be a non-empty string")
+    if not isinstance(card.get("version"), str) or not card.get("version", "").strip():
+        _add(errors, "spec.agent_card.version", "must be a non-empty agent implementation version")
+    if not isinstance(card.get("defaultInputModes"), list) or not card.get("defaultInputModes"):
+        _add(errors, "spec.agent_card.defaultInputModes", "must be a non-empty array")
+    if not isinstance(card.get("defaultOutputModes"), list) or not card.get("defaultOutputModes"):
+        _add(errors, "spec.agent_card.defaultOutputModes", "must be a non-empty array")
+    _validate_supported_interfaces(spec, card, errors)
+    _validate_provider(card.get("provider"), errors)
+    _validate_capabilities(spec, card, errors)
+    _validate_official_skills(spec, card, errors)
+    _validate_security(card, errors)
+
+
+def _validate_candidate_skills(spec: dict[str, Any], errors: list[str]) -> None:
+    skills = spec.get("candidate_skill_governance")
+    if not isinstance(skills, list) or not skills:
+        _add(errors, "spec.candidate_skill_governance", "must be a non-empty array of AIDE metadata records")
+        return
+    seen: set[str] = set()
+    for index, skill in enumerate(skills):
+        path = f"spec.candidate_skill_governance[{index}]"
+        if not isinstance(skill, dict):
+            _add(errors, path, "must be an object")
+            continue
+        skill_id = skill.get("skill_id")
+        valid, reason = validate_skill_id(skill_id)
+        if not valid:
+            _add(errors, f"{path}.skill_id", reason)
+        elif skill_id in seen:
+            _add(errors, f"{path}.skill_id", f"duplicate skill id: {skill_id}")
+        else:
+            seen.add(skill_id)
+        if skill.get("aide_operation_mapping") != skill_id:
+            _add(errors, f"{path}.aide_operation_mapping", "must match skill_id")
+        for field in ["implemented", "callable", "endpoint_available", "task_submission_available", "task_delegation_available"]:
+            if skill.get(field) is not False:
+                _add(errors, f"{path}.{field}", "must be false for candidate skills in this slice")
+        if skill.get("requires_future_policy_decision") is not True:
+            _add(errors, f"{path}.requires_future_policy_decision", "must be true")
+        if skill.get("requires_future_capability_grant") is not True:
+            _add(errors, f"{path}.requires_future_capability_grant", "must be true")
+    if spec.get("candidate_skill_count") != len(skills):
+        _add(errors, "spec.candidate_skill_count", "must match candidate_skill_governance length")
+    if spec.get("callable_skill_count") != 0:
+        _add(errors, "spec.callable_skill_count", "must remain zero")
+
+
+def _validate_fixture_metadata(spec: dict[str, Any], errors: list[str]) -> None:
+    fixture = spec.get("agent_card_fixture")
+    if not isinstance(fixture, dict):
+        _add(errors, "spec.agent_card_fixture", "must be an object")
+        return
+    required_truths = {
+        "fixture_only": True,
+        "interface_fixture_only": True,
+        "network_target_intentionally_non_live": True,
+    }
+    required_falses = [
+        "endpoint_implemented",
+        "publishable",
+        "well_known_publication_performed",
+        "agent_registered",
+        "live_a2a_endpoint",
+        "task_submission_available",
+        "task_delegation_available",
+    ]
+    for field, expected in required_truths.items():
+        if fixture.get(field) is not expected:
+            _add(errors, f"spec.agent_card_fixture.{field}", f"must be {expected}")
+    for field in required_falses:
+        if fixture.get(field) is not False:
+            _add(errors, f"spec.agent_card_fixture.{field}", "must be false")
+
+
 def validate_a2a_agent_card_contract_with_schema(
     record: dict[str, Any],
     schema: dict[str, Any] | None = None,
@@ -492,92 +844,56 @@ def validate_a2a_agent_card_contract_with_schema(
     spec = record.get("spec") if isinstance(record.get("spec"), dict) else {}
     status = record.get("status") if isinstance(record.get("status"), dict) else {}
     if spec.get("contract_id") != CONTRACT_ID:
-        errors.append("spec.contract_id must be stable a2a-agent-card-contract-v0")
+        _add(errors, "spec.contract_id", "must be stable a2a-agent-card-contract-v0")
     if spec.get("advisory_contract_ref") != ADVISORY_CONTRACT_REF:
-        errors.append("spec.advisory_contract_ref must remain aide://interop/a2a-agent-card-contract-v0")
+        _add(errors, "spec.advisory_contract_ref", "must remain aide://interop/a2a-agent-card-contract-v0")
     if spec.get("reference_id_kind_supported") is not False:
-        errors.append("spec.reference_id_kind_supported must remain false")
+        _add(errors, "spec.reference_id_kind_supported", "must remain false")
+    _validate_version_pins(spec, errors)
     for field in FALSE_RUNTIME_FIELDS:
         if status.get(field) is not False:
-            errors.append(f"status.{field} must be false in the contract-only slice")
+            _add(errors, f"status.{field}", "must be false in the contract-only slice")
     implemented = spec.get("implemented_runtime_capabilities", {})
     if not isinstance(implemented, dict):
-        errors.append("spec.implemented_runtime_capabilities must be an object")
+        _add(errors, "spec.implemented_runtime_capabilities", "must be an object")
         implemented = {}
     for key, value in implemented.items():
         if value is not False:
-            errors.append(f"spec.implemented_runtime_capabilities.{key} must be false")
-    card = spec.get("agent_card")
-    if not isinstance(card, dict):
-        errors.append("spec.agent_card must be an object")
-        card = {}
-    if card.get("preview_only") is not True:
-        errors.append("spec.agent_card.preview_only must be true")
-    if card.get("endpoint_implemented") is not False:
-        errors.append("spec.agent_card.endpoint_implemented must be false")
-    if "url" in card and card.get("url") is not None:
-        errors.append("spec.agent_card.url must be null or omitted until a live endpoint exists")
-    provider = card.get("provider") if isinstance(card.get("provider"), dict) else {}
-    if "url" in provider and provider.get("url") is not None:
-        errors.append("spec.agent_card.provider.url must be null or omitted in this slice")
-    card_capabilities = card.get("capabilities") if isinstance(card.get("capabilities"), dict) else {}
-    for field in ["streaming", "pushNotifications", "stateTransitionHistory"]:
-        if card_capabilities.get(field) is not False:
-            errors.append(f"spec.agent_card.capabilities.{field} must be false")
-    if card.get("supportsAuthenticatedExtendedCard") is not False:
-        errors.append("spec.agent_card.supportsAuthenticatedExtendedCard must be false")
+            _add(errors, f"spec.implemented_runtime_capabilities.{key}", "must be false")
+    _validate_agent_card(spec, errors)
+    _validate_candidate_skills(spec, errors)
+    _validate_fixture_metadata(spec, errors)
     security = spec.get("security") if isinstance(spec.get("security"), dict) else {}
     if security.get("authentication_implemented") is not False:
-        errors.append("spec.security.authentication_implemented must be false")
+        _add(errors, "spec.security.authentication_implemented", "must be false")
     if security.get("authorization_implemented") is not False:
-        errors.append("spec.security.authorization_implemented must be false")
+        _add(errors, "spec.security.authorization_implemented", "must be false")
     if security.get("securitySchemes") not in ({}, None):
-        errors.append("spec.security.securitySchemes must be empty until authentication exists")
-    skills = spec.get("skills")
-    if not isinstance(skills, list) or not skills:
-        errors.append("spec.skills must be a non-empty array")
-        skills = []
-    seen: set[str] = set()
-    for skill in skills:
-        if not isinstance(skill, dict):
-            errors.append("spec.skills entries must be objects")
-            continue
-        skill_id = skill.get("id")
-        valid, reason = validate_skill_id(skill_id)
-        if not valid:
-            errors.append(f"invalid skill id {skill_id!r}: {reason}")
-        elif skill_id in seen:
-            errors.append(f"duplicate skill id: {skill_id}")
-        else:
-            seen.add(skill_id)
-        if skill.get("implemented") is not False:
-            errors.append(f"skill {skill_id!r} implemented must be false")
-        if skill.get("requires_future_policy_decision") is not True:
-            errors.append(f"skill {skill_id!r} must require a future policy decision")
-        if skill.get("requires_future_capability_grant") is not True:
-            errors.append(f"skill {skill_id!r} must require a future capability grant")
+        _add(errors, "spec.security.securitySchemes", "must be empty until authentication exists")
     required = spec.get("required_aide_capabilities", [])
     if not isinstance(required, list):
-        errors.append("spec.required_aide_capabilities must be an array")
+        _add(errors, "spec.required_aide_capabilities", "must be an array")
     elif required:
-        errors.append("unknown required AIDE capabilities fail closed in this slice")
+        _add(errors, "spec.required_aide_capabilities", "unknown required AIDE capabilities fail closed in this slice")
     if spec.get("explicit_non_capabilities") != EXPLICIT_NON_CAPABILITIES:
-        errors.append("spec.explicit_non_capabilities must match helper boundary list")
-    text = stable_json(record)
-    if "http://" in text or "https://" in text:
-        errors.append("contract-only A2A projection must not contain live URL-like endpoints")
+        _add(errors, "spec.explicit_non_capabilities", "must match helper boundary list")
     return errors, warnings
 
 
 def _capability_matrix(contract: dict[str, Any]) -> dict[str, Any]:
     spec = contract["spec"]
+    official_skills = spec["agent_card"].get("skills", [])
+    candidates = spec["candidate_skill_governance"]
     return {
         "schema_version": "aide.a2a-agent-card-contract.capability-matrix.v0",
         "contract_id": CONTRACT_ID,
         "declared_card_capabilities": spec["declared_card_capabilities"],
         "implemented_runtime_capabilities": spec["implemented_runtime_capabilities"],
-        "skill_count": len(spec["skills"]),
-        "implemented_skill_count": sum(1 for skill in spec["skills"] if skill.get("implemented") is True),
+        "skill_count": len(official_skills),
+        "official_advertised_skill_count": len(official_skills),
+        "candidate_skill_count": len(candidates),
+        "callable_skill_count": sum(1 for skill in candidates if skill.get("callable") is True),
+        "implemented_skill_count": sum(1 for skill in candidates if skill.get("implemented") is True),
         "live_endpoint_count": 0,
         "registered_agent_count": 0,
         "delegation_capability_count": 0,
@@ -682,7 +998,7 @@ def write_a2a_agent_card_contract_reports(repo_root: str | Path) -> dict[str, An
     write_json(root / AGENT_CARD_CONTRACT_JSON, contract)
     write_json(root / AGENT_CARD_PREVIEW_JSON, contract["spec"]["agent_card"])
     write_json(root / CAPABILITY_CATALOG_JSON, _capability_matrix(contract))
-    write_json(root / SKILL_CATALOG_JSON, _catalog_file("skill", contract["spec"]["skills"]))
+    write_json(root / SKILL_CATALOG_JSON, _catalog_file("candidate-skill", contract["spec"]["candidate_skill_governance"]))
     write_json(root / REFUSAL_CATALOG_JSON, _catalog_file("refusal", contract["spec"]["refusal_mappings"]))
     write_json(root / CONFORMANCE_EXPECTATIONS_JSON, _catalog_file("conformance-expectation", contract["spec"]["conformance_expectations"]))
 
@@ -695,8 +1011,16 @@ def write_a2a_agent_card_contract_reports(repo_root: str | Path) -> dict[str, An
         "task_id": TASK_ID,
         "status": validation_status,
         "contract_id": CONTRACT_ID,
+        "aide_schema_version": A2A_CONTRACT_SCHEMA_VERSION,
+        "aide_contract_version": PROTOCOL_VERSION,
+        "agent_fixture_version": AGENT_VERSION,
+        "target_a2a_specification_release": A2A_SPECIFICATION_RELEASE,
+        "target_a2a_protocol_version": A2A_PROTOCOL_VERSION,
         "agent_card_name": AGENT_NAME,
-        "skill_count": len(contract["spec"]["skills"]),
+        "skill_count": capability_matrix["official_advertised_skill_count"],
+        "official_advertised_skill_count": capability_matrix["official_advertised_skill_count"],
+        "candidate_skill_count": capability_matrix["candidate_skill_count"],
+        "callable_skill_count": capability_matrix["callable_skill_count"],
         "artifact_count": len(artifacts),
         "live_endpoint_count": 0,
         "registered_agent_count": 0,
@@ -713,8 +1037,8 @@ def write_a2a_agent_card_contract_reports(repo_root: str | Path) -> dict[str, An
     write_text(root / AGENT_CARD_REPORT_MD, render_agent_card_markdown(contract["spec"]["agent_card"]))
     write_json(root / CAPABILITY_MATRIX_JSON, capability_matrix)
     write_text(root / CAPABILITY_MATRIX_MD, render_capability_matrix_markdown(capability_matrix))
-    write_json(root / SKILL_CATALOG_REPORT_JSON, _catalog_file("skill", contract["spec"]["skills"]))
-    write_text(root / SKILL_CATALOG_REPORT_MD, render_catalog_markdown("A2A Skills", contract["spec"]["skills"]))
+    write_json(root / SKILL_CATALOG_REPORT_JSON, _catalog_file("candidate-skill", contract["spec"]["candidate_skill_governance"]))
+    write_text(root / SKILL_CATALOG_REPORT_MD, render_catalog_markdown("A2A Candidate Skills", contract["spec"]["candidate_skill_governance"]))
     write_json(root / SECURITY_BOUNDARY_JSON, _security_boundary(contract))
     write_text(root / SECURITY_BOUNDARY_MD, render_security_boundary_markdown(_security_boundary(contract)))
     write_json(root / REFUSAL_MAPPING_JSON, _catalog_file("refusal", contract["spec"]["refusal_mappings"]))
@@ -746,9 +1070,14 @@ def a2a_agent_card_contract_status(repo_root: str | Path) -> dict[str, Any]:
         "schema_loaded": schema_loaded,
         "contract_valid": not errors,
         "contract_id": contract["spec"].get("contract_id"),
+        "target_a2a_specification_release": contract["spec"].get("target_a2a_specification_release"),
+        "target_a2a_protocol_version": contract["spec"].get("target_a2a_protocol_version"),
         "agent_card_name": contract["spec"].get("agent_card", {}).get("name"),
         "skill_count": matrix["skill_count"],
+        "official_advertised_skill_count": matrix["official_advertised_skill_count"],
+        "candidate_skill_count": matrix["candidate_skill_count"],
         "implemented_skill_count": matrix["implemented_skill_count"],
+        "callable_skill_count": matrix["callable_skill_count"],
         "artifact_count": len(PROJECTION_ARTIFACTS),
         "live_endpoint_count": matrix["live_endpoint_count"],
         "registered_agent_count": matrix["registered_agent_count"],
@@ -798,6 +1127,7 @@ def validate_a2a_agent_card_contract(repo_root: str | Path, *, project: bool = T
         errors.append("source interop export artifacts must remain unchanged")
     if not secret_like_scan_clear:
         errors.append("secret-like value scan found a material projected secret")
+    matrix = _capability_matrix(contract)
     status = "FAILED_VALIDATION" if errors else "PASS_WITH_WARNINGS"
     report = {
         "schema_version": "aide.a2a-agent-card-contract.validation.v0",
@@ -812,8 +1142,16 @@ def validate_a2a_agent_card_contract(repo_root: str | Path, *, project: bool = T
         "schema_helper_alignment_status": "PASS" if schema_file_parsed and not schema_error else "FAILED_VALIDATION",
         "contract_valid": not errors,
         "contract_id": CONTRACT_ID,
+        "aide_schema_version": A2A_CONTRACT_SCHEMA_VERSION,
+        "aide_contract_version": PROTOCOL_VERSION,
+        "agent_fixture_version": AGENT_VERSION,
+        "target_a2a_specification_release": contract["spec"].get("target_a2a_specification_release"),
+        "target_a2a_protocol_version": contract["spec"].get("target_a2a_protocol_version"),
         "agent_card_name": AGENT_NAME,
-        "skill_count": len(contract["spec"].get("skills", [])),
+        "skill_count": matrix["official_advertised_skill_count"],
+        "official_advertised_skill_count": matrix["official_advertised_skill_count"],
+        "candidate_skill_count": matrix["candidate_skill_count"],
+        "callable_skill_count": matrix["callable_skill_count"],
         "artifact_count": len(PROJECTION_ARTIFACTS),
         "runtime_facts_preserved": all(contract["status"].get(field) is False for field in FALSE_RUNTIME_FIELDS),
         "deterministic_projection": deterministic_projection,
@@ -837,15 +1175,22 @@ def render_status_markdown(data: dict[str, Any]) -> str:
         f"- result: `{data.get('validation_status', data.get('status'))}`",
         f"- capability_target: `{FEATURE_FLAG}`",
         f"- contract_id: `{data.get('contract_id')}`",
+        f"- AIDE schema version: `{data.get('aide_schema_version', A2A_CONTRACT_SCHEMA_VERSION)}`",
+        f"- AIDE contract version: `{data.get('aide_contract_version', PROTOCOL_VERSION)}`",
+        f"- agent fixture version: `{data.get('agent_fixture_version', AGENT_VERSION)}`",
+        f"- A2A specification release: `{data.get('target_a2a_specification_release')}`",
+        f"- A2A protocol version: `{data.get('target_a2a_protocol_version')}`",
         f"- agent_card_name: `{data.get('agent_card_name')}`",
-        f"- skill_count: `{data.get('skill_count')}`",
+        f"- official_advertised_skill_count: `{data.get('official_advertised_skill_count')}`",
+        f"- candidate_skill_count: `{data.get('candidate_skill_count')}`",
+        f"- callable_skill_count: `{data.get('callable_skill_count')}`",
         f"- artifact_count: `{data.get('artifact_count')}`",
         f"- live_endpoint_count: `{data.get('live_endpoint_count', 0)}`",
         f"- registered_agent_count: `{data.get('registered_agent_count', 0)}`",
         f"- delegation_capability_count: `{data.get('delegation_capability_count', 0)}`",
         f"- recommended_next_task: `{data.get('recommended_next_task')}`",
         "",
-        "This is a contract-only projection. It does not start or register A2A runtime behavior.",
+        "This is a contract-only projection. It does not start, publish, or register A2A runtime behavior.",
         "",
     ]
     return "\n".join(lines)
@@ -859,8 +1204,14 @@ def render_contract_markdown(contract: dict[str, Any]) -> str:
             "",
             f"- contract_id: `{spec['contract_id']}`",
             f"- advisory_contract_ref: `{spec['advisory_contract_ref']}`",
+            f"- AIDE schema version: `{A2A_CONTRACT_SCHEMA_VERSION}`",
+            f"- AIDE contract version: `{PROTOCOL_VERSION}`",
+            f"- agent fixture version: `{spec['agent_implementation_version']}`",
+            f"- A2A specification release: `{spec['target_a2a_specification_release']}`",
+            f"- A2A protocol version: `{spec['target_a2a_protocol_version']}`",
             f"- agent_card_name: `{spec['agent_card']['name']}`",
-            f"- endpoint_implemented: `{spec['agent_card']['endpoint_implemented']}`",
+            f"- endpoint_implemented: `{spec['agent_card_fixture']['endpoint_implemented']}`",
+            f"- publishable: `{spec['agent_card_fixture']['publishable']}`",
             "",
             "AIDE queue, protocol, evidence, and OKF records remain authoritative. A2A card artifacts are generated projections.",
             "",
@@ -869,15 +1220,18 @@ def render_contract_markdown(contract: dict[str, Any]) -> str:
 
 
 def render_agent_card_markdown(card: dict[str, Any]) -> str:
+    interface = card.get("supportedInterfaces", [{}])[0] if card.get("supportedInterfaces") else {}
     return "\n".join(
         [
             "# A2A Agent Card Projection",
             "",
             f"- name: `{card.get('name')}`",
-            f"- preview_only: `{card.get('preview_only')}`",
-            f"- endpoint_implemented: `{card.get('endpoint_implemented')}`",
-            f"- url: `{card.get('url')}`",
-            f"- skill_count: `{len(card.get('skills', []))}`",
+            f"- version: `{card.get('version')}`",
+            f"- supported_interface_count: `{len(card.get('supportedInterfaces', []))}`",
+            f"- fixture_interface_url: `{interface.get('url')}`",
+            f"- protocolBinding: `{interface.get('protocolBinding')}`",
+            f"- protocolVersion: `{interface.get('protocolVersion')}`",
+            f"- official_advertised_skill_count: `{len(card.get('skills', []))}`",
             "",
         ]
     )
@@ -887,7 +1241,9 @@ def render_capability_matrix_markdown(matrix: dict[str, Any]) -> str:
     lines = [
         "# A2A Capability Matrix",
         "",
-        f"- skill_count: `{matrix['skill_count']}`",
+        f"- official_advertised_skill_count: `{matrix['official_advertised_skill_count']}`",
+        f"- candidate_skill_count: `{matrix['candidate_skill_count']}`",
+        f"- callable_skill_count: `{matrix['callable_skill_count']}`",
         f"- implemented_skill_count: `{matrix['implemented_skill_count']}`",
         f"- live_endpoint_count: `{matrix['live_endpoint_count']}`",
         f"- registered_agent_count: `{matrix['registered_agent_count']}`",
@@ -902,7 +1258,7 @@ def render_catalog_markdown(title: str, items: list[dict[str, Any]]) -> str:
     if not items:
         lines.append("No entries are declared for this projection.")
     for item in items:
-        label = item.get("id") or item.get("name") or item.get("reason_code")
+        label = item.get("skill_id") or item.get("id") or item.get("name") or item.get("reason_code")
         lines.append(f"- `{label}`")
     lines.append("")
     return "\n".join(lines)
@@ -938,6 +1294,11 @@ def render_validation_markdown(report: dict[str, Any]) -> str:
         f"- validation_status: `{report['validation_status']}`",
         f"- schema_file_parsed: `{report['schema_file_parsed']}`",
         f"- contract_valid: `{report['contract_valid']}`",
+        f"- A2A specification release: `{report['target_a2a_specification_release']}`",
+        f"- A2A protocol version: `{report['target_a2a_protocol_version']}`",
+        f"- official_advertised_skill_count: `{report['official_advertised_skill_count']}`",
+        f"- candidate_skill_count: `{report['candidate_skill_count']}`",
+        f"- callable_skill_count: `{report['callable_skill_count']}`",
         f"- deterministic_projection: `{report['deterministic_projection']}`",
         f"- source_artifacts_mutated: `{report['source_artifacts_mutated']}`",
         f"- secret_like_scan_clear: `{report['secret_like_scan_clear']}`",
@@ -968,8 +1329,8 @@ def render_future_work_markdown() -> str:
         [
             "# A2A Agent Card Future Work",
             "",
-            "- Independent check of this A2A agent-card contract slice.",
-            "- Acceptance review if the independent check passes.",
+            "- Independent repair check of this A2A agent-card contract slice.",
+            "- Acceptance review if the independent repair check passes.",
             "- Live A2A endpoint work only after runtime, trust, authorization, and host semantics are separately accepted.",
             "",
         ]
@@ -979,13 +1340,13 @@ def render_future_work_markdown() -> str:
 def render_next_task_prompt() -> str:
     return "\n".join(
         [
-            "# AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01",
-            "# Independent Check of Minimal Contract-Only A2A Agent Card Projection",
+            "# AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01",
+            "# Independent Check of A2A Agent Card Standards Repair",
             "",
             "Use `.aide/queue/index.yaml` as canonical queue truth.",
             "",
-            "Check `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01` without modifying the A2A contract implementation.",
-            "Verify schema/helper alignment, agent-card shape, skill catalogue consistency, security/authentication boundaries, refusal mappings, deterministic projection, source immutability, and explicit non-capabilities.",
+            "Check `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01` without modifying the A2A contract implementation.",
+            "Verify explicit A2A version pins, standards-clean AgentCard shape, supportedInterfaces, fixture-only endpoint metadata, provider omission, legacy-field removal, candidate skill metadata separation, validator hardening, deterministic projection, source immutability, and explicit non-capabilities.",
             "",
             "If no material issue exists, recommend `AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01`.",
             "If a material defect exists, recommend one bounded repair task.",

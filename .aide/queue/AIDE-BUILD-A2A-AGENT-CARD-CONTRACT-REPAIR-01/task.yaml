@@ -1,0 +1,38 @@
+schema_version: aide.queue-task.v0
+task_id: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01
+title: Repair A2A 1.0 AgentCard Standards Alignment and Metadata Separation
+task_type: build_repair
+status: needs_review
+created_at: 2026-06-20
+updated_at: 2026-06-20
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+source_chain:
+  mcp_accept_task: AIDE-ACCEPT-MCP-SERVER-CONTRACT-01
+  a2a_build_task: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01
+  a2a_failed_check_task: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01
+  failed_check_commit: c5de2c769e34269552fced9a105ec5b340eb6704
+objective: Repair the eight material A2A AgentCard standards-alignment defects without adding live A2A behavior.
+allowed_paths:
+  - core/interop/a2a_agent_card_contract.py
+  - .aide/protocol/aide-a2a-agent-card-contract.schema.json
+  - .aide/scripts/tests/test_aide_a2a_agent_card_contract.py
+  - .aide/interop/a2a/**
+  - .aide/reports/a2a-agent-card-contract/**
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01/**
+  - .aide/reports/a2a-agent-card-contract-repair/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+non_goals:
+  - accept_a2a_contract
+  - live_a2a_endpoint
+  - well_known_publication
+  - agent_registration
+  - task_delegation
+  - authentication_or_authorization
+  - worker_execution
+  - provider_model_or_network_calls
+  - host_contract_or_dominium_bridge_or_workbench
+  - patch_apply_or_target_mutation
+recommended_next_task: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01
