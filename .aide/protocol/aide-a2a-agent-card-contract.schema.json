@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Minimal contract-only A2A agent-card projection for AIDE. This schema records static projection, structural validation, inspection, and reporting data only.",
+  "properties": {
+    "apiVersion": {
+      "const": "aide.dev/v1alpha1",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "A2AAgentCardContract"
+      ],
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "required": [
+        "name",
+        "created_at",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "required": [
+        "contract_id",
+        "agent_card",
+        "declared_card_capabilities",
+        "implemented_runtime_capabilities",
+        "skills",
+        "security",
+        "refusal_mappings",
+        "conformance_expectations",
+        "explicit_non_capabilities"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "required": [
+        "agent_card_projection_performed",
+        "structural_validation_performed",
+        "live_a2a_endpoint_started",
+        "agent_registered",
+        "task_delegation_performed",
+        "authentication_implemented",
+        "worker_dispatched",
+        "model_or_provider_called",
+        "network_call_performed",
+        "patch_applied",
+        "repository_target_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "trusted"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE Minimal A2A Agent Card Contract",
+  "type": "object"
+}

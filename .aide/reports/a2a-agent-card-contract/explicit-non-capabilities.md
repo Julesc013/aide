@@ -1,0 +1,33 @@
+# Explicit Non-Capabilities
+
+- `live_a2a_endpoint`
+- `agent_registration`
+- `agent_discovery_publication`
+- `task_delegation`
+- `task_submission`
+- `task_status_runtime`
+- `streaming`
+- `push_notifications`
+- `state_transition_history_runtime`
+- `authentication`
+- `authorization`
+- `credential_resolution`
+- `worker_execution`
+- `provider_model_calls`
+- `network_calls`
+- `patch_transaction_approval`
+- `patch_transaction_apply`
+- `target_repository_mutation`
+- `branch_worktree_automation`
+- `github_mutation`
+- `host_contract`
+- `dominium_bridge`
+- `workbench`
+- `runtime`
+- `service`
+- `scheduler`
+- `leases`
+- `supervisor`
+- `release`
+- `promotion`
+- `production_readiness`

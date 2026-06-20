@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01
+
+- Title: Build Minimal Contract-Only A2A Agent Card Projection
+- Status: needs_review
+- Objective: build `minimal_a2a_agent_card_contract` as a deterministic contract-only A2A agent-card projection after MCP contract acceptance.
+- Scope: A2A schema, helper, thin AIDE Lite dispatch, focused tests, `.aide/interop/a2a/**`, `.aide/reports/a2a-agent-card-contract/**`, queue task/evidence, queue index, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-MCP-SERVER-CONTRACT-01` at `ACCEPTED_WITH_WARNINGS` with `missing_evidence: 0` and recommended next task `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01`.
+- Milestones: source chain verified; A2A schema/helper/CLI/tests added; static inactive agent-card projection generated; skill, capability, refusal, security, conformance, artifact, validation, future-work, and non-capability reports written; evidence complete.
+- Blockers: none. Remaining warnings are no-live-endpoint, no-registration, no-authentication, no-delegation, no-runtime, no-full-external-A2A-schema-validation, and advisory future `aide://interop` ReferenceID debt.
+- Verification Intent: run Git diff checks, Python compile, focused A2A tests, A2A status/project/validate, predecessor validators, task inspect/evidence checks, broad validation, JSON parsing, deterministic projection, source immutability, unsupported-command probes, secret scan, and commit-policy validation.
+- Exit Criteria: task stops at `needs_review` with `PASS_WITH_WARNINGS`, accepts no capability by itself, preserves no-runtime and no-authority boundaries, performs no forbidden operation, and recommends `AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01`.
+- Notes: This build does not implement or authorize a live A2A endpoint, authentication, delegation, worker execution, Host Contract, Dominium Bridge, Workbench, Runtime, Service, provider/model/network calls, PatchTransaction apply, GitHub mutation, release, promotion, or target mutation.
+
 ### Plan ID: AIDE-ACCEPT-MCP-SERVER-CONTRACT-01
 
 - Title: Accept Minimal Contract-Only MCP Projection

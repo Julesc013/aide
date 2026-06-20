@@ -1,0 +1,48 @@
+{
+  "contract_id": "a2a-agent-card-contract-v0",
+  "count": 5,
+  "items": [
+    {
+      "human_action_required": true,
+      "id": "endpoint_not_implemented",
+      "message": "A2A endpoint is not implemented.",
+      "reason_code": "A2A_ENDPOINT_NOT_IMPLEMENTED",
+      "retryable": false,
+      "runtime_status": "not_implemented"
+    },
+    {
+      "human_action_required": true,
+      "id": "agent_not_registered",
+      "message": "AIDE has not registered an A2A agent externally.",
+      "reason_code": "A2A_AGENT_NOT_REGISTERED",
+      "retryable": false,
+      "runtime_status": "not_implemented"
+    },
+    {
+      "human_action_required": true,
+      "id": "task_delegation_not_implemented",
+      "message": "A2A task delegation is not implemented.",
+      "reason_code": "A2A_TASK_DELEGATION_NOT_IMPLEMENTED",
+      "retryable": false,
+      "runtime_status": "not_implemented"
+    },
+    {
+      "human_action_required": true,
+      "id": "authentication_not_implemented",
+      "message": "A2A authentication is not implemented.",
+      "reason_code": "A2A_AUTHENTICATION_NOT_IMPLEMENTED",
+      "retryable": false,
+      "runtime_status": "not_implemented"
+    },
+    {
+      "human_action_required": true,
+      "id": "required_capability_unavailable",
+      "message": "Required AIDE capability is unavailable.",
+      "reason_code": "AIDE_REQUIRED_CAPABILITY_UNAVAILABLE",
+      "retryable": false,
+      "runtime_status": "not_implemented"
+    }
+  ],
+  "schema_version": "aide.a2a-agent-card-contract.refusal-catalog.v0",
+  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
+}

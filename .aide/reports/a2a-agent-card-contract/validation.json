@@ -1,0 +1,31 @@
+{
+  "agent_card_name": "AIDE Contract-Only Agent Card Preview",
+  "artifact_count": 6,
+  "cli_registered": true,
+  "contract_id": "a2a-agent-card-contract-v0",
+  "contract_valid": true,
+  "deterministic_projection": true,
+  "errors": [],
+  "explicit_non_capabilities_preserved": true,
+  "helper_exists": true,
+  "recommended_next_task": "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01",
+  "runtime_facts_preserved": true,
+  "schema_error": null,
+  "schema_exists": true,
+  "schema_file_parsed": true,
+  "schema_helper_alignment_checked": true,
+  "schema_helper_alignment_status": "PASS",
+  "schema_version": "aide.a2a-agent-card-contract.validation.v0",
+  "secret_like_scan_clear": true,
+  "skill_count": 4,
+  "source_artifacts_mutated": false,
+  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "A2A agent-card contract is projection-only; no live endpoint or registration exists.",
+    "Agent-card shape is a local structural subset; full external A2A schema validation remains future work.",
+    "Skills are declared as future read-only discovery candidates only; no task delegation or worker execution exists.",
+    "Authentication, authorization, PolicyDecision, CapabilityGrant, and credential handling are intentionally absent.",
+    "Inherited Interop Exports preview-only limitations and prior report/OKF/Reconciler warning debt remain unresolved."
+  ]
+}

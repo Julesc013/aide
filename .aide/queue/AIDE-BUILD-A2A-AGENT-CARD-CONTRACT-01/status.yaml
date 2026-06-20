@@ -1,0 +1,70 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-20
+summary: Contract-only A2A agent-card projection was built for independent review.
+validation_status: PASS_WITH_WARNINGS
+accepted_capability: null
+capability_target: minimal_a2a_agent_card_contract
+agent_card_projection_performed: true
+structural_validation_performed: true
+live_a2a_endpoint_started: false
+agent_registered: false
+task_delegation_performed: false
+authentication_implemented: false
+worker_dispatched: false
+model_or_provider_called: false
+network_call_performed: false
+patch_applied: false
+repository_target_mutated: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+trusted: false
+recommended_next_task: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01
+reports:
+  - .aide/reports/a2a-agent-card-contract/status.md
+  - .aide/reports/a2a-agent-card-contract/contract.json
+  - .aide/reports/a2a-agent-card-contract/contract.md
+  - .aide/reports/a2a-agent-card-contract/agent-card.json
+  - .aide/reports/a2a-agent-card-contract/agent-card.md
+  - .aide/reports/a2a-agent-card-contract/capability-matrix.json
+  - .aide/reports/a2a-agent-card-contract/capability-matrix.md
+  - .aide/reports/a2a-agent-card-contract/skill-catalog.json
+  - .aide/reports/a2a-agent-card-contract/skill-catalog.md
+  - .aide/reports/a2a-agent-card-contract/security-boundary.json
+  - .aide/reports/a2a-agent-card-contract/security-boundary.md
+  - .aide/reports/a2a-agent-card-contract/refusal-mapping.json
+  - .aide/reports/a2a-agent-card-contract/refusal-mapping.md
+  - .aide/reports/a2a-agent-card-contract/conformance-expectations.json
+  - .aide/reports/a2a-agent-card-contract/conformance-expectations.md
+  - .aide/reports/a2a-agent-card-contract/artifact-index.json
+  - .aide/reports/a2a-agent-card-contract/artifact-index.md
+  - .aide/reports/a2a-agent-card-contract/validation.json
+  - .aide/reports/a2a-agent-card-contract/validation.md
+  - .aide/reports/a2a-agent-card-contract/explicit-non-capabilities.md
+  - .aide/reports/a2a-agent-card-contract/future-work.md
+  - .aide/reports/a2a-agent-card-contract/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/schema-helper-alignment.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/agent-card-projection-review.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/skill-catalogue-review.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/security-refusal-boundary-review.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/determinism-immutability.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/focused-tests.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence/next-task-prompt.md
+warnings:
+  - No live A2A endpoint, registration, authentication, task delegation, worker execution, provider/model/network call, runtime, host integration, or mutation behavior exists.
+  - Full external A2A schema validation remains deferred.
+  - Interop ReferenceID kind remains advisory warning debt.
+blockers: []

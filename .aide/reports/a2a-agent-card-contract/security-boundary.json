@@ -1,0 +1,21 @@
+{
+  "authentication_implemented": false,
+  "authorization_implemented": false,
+  "capability_grant_required_before_runtime": true,
+  "contract_id": "a2a-agent-card-contract-v0",
+  "credential_resolution_performed": false,
+  "policy_decision_required_before_runtime": true,
+  "schema_version": "aide.a2a-agent-card-contract.security-boundary.v0",
+  "security": {
+    "authentication_implemented": false,
+    "authorization_implemented": false,
+    "credential_resolution_performed": false,
+    "notes": [
+      "No A2A endpoint exists, so no authentication challenge can be issued.",
+      "Future authenticated use must bind through AIDE PolicyDecision and CapabilityGrant."
+    ],
+    "security": [],
+    "securitySchemes": {}
+  },
+  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
+}

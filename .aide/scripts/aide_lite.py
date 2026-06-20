@@ -7888,6 +7888,22 @@ def load_mcp_server_contract_module(repo_root: Path):
     return module
 
 
+def load_a2a_agent_card_contract_module(repo_root: Path):
+    module_path = repo_root / "core/interop/a2a_agent_card_contract.py"
+    if not module_path.exists():
+        raise ValueError("A2A agent-card contract module missing: core/interop/a2a_agent_card_contract.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_a2a_agent_card_contract", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("A2A agent-card contract module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -34298,6 +34314,111 @@ def command_mcp_server_contract_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_a2a_agent_card_contract_boundary_lines(data: dict[str, object]) -> None:
+    print(f"live_a2a_endpoint_started: {str(data.get('live_a2a_endpoint_started', False)).lower()}")
+    print(f"agent_registered: {str(data.get('agent_registered', False)).lower()}")
+    print(f"task_delegation_performed: {str(data.get('task_delegation_performed', False)).lower()}")
+    print(f"authentication_implemented: {str(data.get('authentication_implemented', False)).lower()}")
+    print(f"worker_dispatched: {str(data.get('worker_dispatched', False)).lower()}")
+    print(f"model_or_provider_called: {str(data.get('model_or_provider_called', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"patch_applied: {str(data.get('patch_applied', False)).lower()}")
+    print(f"repository_target_mutated: {str(data.get('repository_target_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("live_a2a_endpoint: false")
+    print("a2a_authentication: false")
+    print("a2a_task_delegation: false")
+    print("host_contract_implemented: false")
+    print("dominium_bridge_implemented: false")
+    print("workbench_implemented: false")
+
+
+def command_a2a_agent_card_contract_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    a2a_agent_card_contract = load_a2a_agent_card_contract_module(repo_root)
+    try:
+        data = a2a_agent_card_contract.a2a_agent_card_contract_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite a2a-agent-card-contract status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_a2a_agent_card_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite a2a-agent-card-contract status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"contract_id: {data.get('contract_id')}")
+    print(f"agent_card_name: {data.get('agent_card_name')}")
+    print(f"contract_valid: {str(data.get('contract_valid', False)).lower()}")
+    print(f"skill_count: {data.get('skill_count')}")
+    print(f"implemented_skill_count: {data.get('implemented_skill_count')}")
+    print(f"artifact_count: {data.get('artifact_count')}")
+    print(f"live_endpoint_count: {data.get('live_endpoint_count')}")
+    print(f"registered_agent_count: {data.get('registered_agent_count')}")
+    print(f"delegation_capability_count: {data.get('delegation_capability_count')}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_a2a_agent_card_contract_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_a2a_agent_card_contract_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    a2a_agent_card_contract = load_a2a_agent_card_contract_module(repo_root)
+    try:
+        report = a2a_agent_card_contract.write_a2a_agent_card_contract_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite a2a-agent-card-contract project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_a2a_agent_card_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite a2a-agent-card-contract project")
+    print(f"result: {report.get('status')}")
+    print(f"contract_id: {report.get('contract_id')}")
+    print(f"agent_card_name: {report.get('agent_card_name')}")
+    print(f"skill_count: {report.get('skill_count')}")
+    print(f"artifact_count: {report.get('artifact_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_a2a_agent_card_contract_boundary_lines({})
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_a2a_agent_card_contract_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    a2a_agent_card_contract = load_a2a_agent_card_contract_module(repo_root)
+    try:
+        report = a2a_agent_card_contract.validate_a2a_agent_card_contract(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite a2a-agent-card-contract validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_a2a_agent_card_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite a2a-agent-card-contract validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"contract_valid: {str(report.get('contract_valid', False)).lower()}")
+    print(f"contract_id: {report.get('contract_id')}")
+    print(f"agent_card_name: {report.get('agent_card_name')}")
+    print(f"skill_count: {report.get('skill_count')}")
+    print(f"artifact_count: {report.get('artifact_count')}")
+    print(f"runtime_facts_preserved: {str(report.get('runtime_facts_preserved', False)).lower()}")
+    print(f"deterministic_projection: {str(report.get('deterministic_projection', False)).lower()}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"secret_like_scan_clear: {str(report.get('secret_like_scan_clear', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_a2a_agent_card_contract_boundary_lines({})
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -37782,6 +37903,16 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     mcp_server_contract_subparsers.add_parser("status").set_defaults(handler=command_mcp_server_contract_status)
     mcp_server_contract_subparsers.add_parser("project").set_defaults(handler=command_mcp_server_contract_project)
     mcp_server_contract_subparsers.add_parser("validate").set_defaults(handler=command_mcp_server_contract_validate)
+
+    a2a_agent_card_contract_parser = subparsers.add_parser("a2a-agent-card-contract")
+    a2a_agent_card_contract_parser.set_defaults(handler=command_a2a_agent_card_contract_status)
+    a2a_agent_card_contract_subparsers = a2a_agent_card_contract_parser.add_subparsers(
+        dest="a2a_agent_card_contract_command",
+        required=False,
+    )
+    a2a_agent_card_contract_subparsers.add_parser("status").set_defaults(handler=command_a2a_agent_card_contract_status)
+    a2a_agent_card_contract_subparsers.add_parser("project").set_defaults(handler=command_a2a_agent_card_contract_project)
+    a2a_agent_card_contract_subparsers.add_parser("validate").set_defaults(handler=command_a2a_agent_card_contract_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

@@ -1,0 +1,96 @@
+{
+  "contract_id": "a2a-agent-card-contract-v0",
+  "count": 4,
+  "items": [
+    {
+      "aide_operation_mapping": "aide.queue.inspect",
+      "description": "Future read-only queue discovery candidate. No A2A task endpoint exists in this slice.",
+      "examples": [],
+      "id": "aide.queue.inspect",
+      "implemented": false,
+      "inputModes": [
+        "application/json"
+      ],
+      "name": "Inspect AIDE queue projection",
+      "outputModes": [
+        "application/json"
+      ],
+      "requires_future_capability_grant": true,
+      "requires_future_policy_decision": true,
+      "side_effect_class": "read_only_or_report_only",
+      "tags": [
+        "queue",
+        "read-only",
+        "projection"
+      ]
+    },
+    {
+      "aide_operation_mapping": "aide.evidence.inspect",
+      "description": "Future read-only evidence discovery candidate. No A2A task endpoint exists in this slice.",
+      "examples": [],
+      "id": "aide.evidence.inspect",
+      "implemented": false,
+      "inputModes": [
+        "application/json"
+      ],
+      "name": "Inspect AIDE evidence projection",
+      "outputModes": [
+        "application/json"
+      ],
+      "requires_future_capability_grant": true,
+      "requires_future_policy_decision": true,
+      "side_effect_class": "read_only_or_report_only",
+      "tags": [
+        "evidence",
+        "read-only",
+        "projection"
+      ]
+    },
+    {
+      "aide_operation_mapping": "aide.capability.inspect",
+      "description": "Future read-only capability discovery candidate. No A2A task endpoint exists in this slice.",
+      "examples": [],
+      "id": "aide.capability.inspect",
+      "implemented": false,
+      "inputModes": [
+        "application/json"
+      ],
+      "name": "Inspect AIDE capability projection",
+      "outputModes": [
+        "application/json"
+      ],
+      "requires_future_capability_grant": true,
+      "requires_future_policy_decision": true,
+      "side_effect_class": "read_only_or_report_only",
+      "tags": [
+        "capability",
+        "read-only",
+        "projection"
+      ]
+    },
+    {
+      "aide_operation_mapping": "aide.context.inspect",
+      "description": "Future read-only ContextPack discovery candidate. No A2A task endpoint exists in this slice.",
+      "examples": [],
+      "id": "aide.context.inspect",
+      "implemented": false,
+      "inputModes": [
+        "application/json"
+      ],
+      "name": "Inspect AIDE context projection",
+      "outputModes": [
+        "application/json"
+      ],
+      "requires_future_capability_grant": true,
+      "requires_future_policy_decision": true,
+      "side_effect_class": "read_only_or_report_only",
+      "tags": [
+        "context",
+        "read-only",
+        "projection"
+      ]
+    }
+  ],
+  "schema_version": "aide.a2a-agent-card-contract.skill-catalog.v0",
+  "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
+}
