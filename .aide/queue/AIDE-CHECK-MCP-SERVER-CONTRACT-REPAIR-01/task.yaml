@@ -1,0 +1,136 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01
+title: Check MCP Pagination and Resource-Error Repair
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+task_type: check
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+checked_task_id: AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
+checked_repair_commit: 4907fab451400ed745a84493ae6894cc00f177ad
+original_build_task_id: AIDE-BUILD-MCP-SERVER-CONTRACT-01
+original_build_commit: c8a143f76af585ae3a0cc3004fb5278c57f264e0
+original_failed_check_task_id: AIDE-CHECK-MCP-SERVER-CONTRACT-01
+original_failed_check_commit: 18839ccf9b1ec2b129064b09bfb2c90988e31e63
+summary: >
+  Independently rechecks the MCP server contract repair. The two original
+  material defects are fixed: absent pagination cursors are omitted and the
+  resource-not-found fixture uses -32002. No runtime or MCP serving behavior
+  was introduced.
+accepted_capability: null
+capability_target: minimal_mcp_server_contract
+target_protocol_version: "2025-11-25"
+jsonrpc_version: "2.0"
+material_findings: 0
+recommended_next_task: AIDE-ACCEPT-MCP-SERVER-CONTRACT-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/**
+  - .aide/reports/mcp-server-contract-repair-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/**
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/**
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/**
+  - .aide/reports/mcp-server-contract/**
+  - .aide/reports/mcp-server-contract-check/**
+  - .aide/reports/mcp-server-contract-repair/**
+  - .aide/interop/mcp/**
+  - .aide/interop/exports/**
+  - .aide/protocol/aide-mcp-server-contract.schema.json
+  - core/interop/mcp_server_contract.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_mcp_server_contract.py
+forbidden_paths:
+  - MCP helper changes
+  - MCP schema changes
+  - MCP focused test changes
+  - MCP fixture rewrites
+  - MCP build or repair report rewrites
+  - original failed-check report rewrites
+  - accepted Interop Export artifact rewrites
+  - accepted predecessor protocol rewrites
+  - generated OKF pages
+  - runtime, provider, worker, host, VCS, network, GitHub, release, or target-repository files
+non_capabilities:
+  - no live MCP server
+  - no stdio transport
+  - no Streamable HTTP transport
+  - no endpoint binding
+  - no HTTP handling
+  - no SSE
+  - no MCP sessions
+  - no MCP authorization or OAuth
+  - no resource serving
+  - no prompt serving
+  - no tool execution
+  - no client roots
+  - no sampling
+  - no elicitation
+  - no MCP tasks
+  - no worker dispatch
+  - no provider/model/network calls
+  - no credential resolution
+  - no PatchTransaction approval or apply
+  - no target-repository mutation
+  - no branch/worktree automation
+  - no A2A
+  - no Host Contract
+  - no Dominium Bridge
+  - no Workbench
+  - no Runtime or Service
+  - no release or promotion
+reports:
+  - .aide/reports/mcp-server-contract-repair-check/status.md
+  - .aide/reports/mcp-server-contract-repair-check/check-report.json
+  - .aide/reports/mcp-server-contract-repair-check/check-report.md
+  - .aide/reports/mcp-server-contract-repair-check/source-chain-review.md
+  - .aide/reports/mcp-server-contract-repair-check/pagination-recheck.md
+  - .aide/reports/mcp-server-contract-repair-check/cursor-type-recheck.md
+  - .aide/reports/mcp-server-contract-repair-check/resource-error-recheck.md
+  - .aide/reports/mcp-server-contract-repair-check/custom-refusal-preservation.md
+  - .aide/reports/mcp-server-contract-repair-check/validator-hardening-review.md
+  - .aide/reports/mcp-server-contract-repair-check/json-rpc-regression-review.md
+  - .aide/reports/mcp-server-contract-repair-check/fixture-report-consistency.md
+  - .aide/reports/mcp-server-contract-repair-check/focused-test-review.md
+  - .aide/reports/mcp-server-contract-repair-check/determinism-immutability-review.md
+  - .aide/reports/mcp-server-contract-repair-check/runtime-boundary-review.md
+  - .aide/reports/mcp-server-contract-repair-check/cli-boundary-review.md
+  - .aide/reports/mcp-server-contract-repair-check/findings.md
+  - .aide/reports/mcp-server-contract-repair-check/warning-disposition.md
+  - .aide/reports/mcp-server-contract-repair-check/explicit-non-capabilities.md
+  - .aide/reports/mcp-server-contract-repair-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/failed-check-preservation.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/pagination-fixture-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/cursor-type-scan.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/cursor-probes.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/resource-error-probe.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/custom-refusal-preservation.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/validator-hardening.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/json-rpc-regression.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/fixture-report-consistency.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/focused-tests.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/determinism-immutability.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/interop-export-immutability.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/predecessor-immutability.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/runtime-boundary-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/cli-boundary-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence/next-task-prompt.md
+warnings:
+  - No vendored full official MCP schema validation exists in this slice.
+  - MCP remains contract-only and projection-only with no live server, transport, authorization, serving, invocation, or runtime.
+  - Validator diagnostics identify fixture and field paths; observed invalid types were recorded by the independent injected-case evidence rather than printed in every production validator message.
+blockers: []

@@ -39,6 +39,39 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01
+
+Completed for review as an independent repair check.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/**`
+- `.aide/reports/mcp-server-contract-repair-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS` with zero material findings. The check
+independently verified that absent pagination cursor fields are omitted, present
+cursor values are strings, `resource-not-found-refusal.json` uses `-32002`, and
+custom AIDE refusal codes remain unchanged.
+
+The check also verified temporary invalid cursor/error mutations fail
+validation, JSON-RPC fixture shape remains intact, focused MCP tests pass,
+projection remains deterministic, accepted Interop Export artifacts and failed
+check reports remain unchanged, and no runtime behavior was added.
+
+No MCP helper, schema, focused test, fixture, build report, repair report,
+failed-check report, accepted predecessor artifact, generated OKF page, runtime,
+provider, worker, host, VCS, network, GitHub, release, or target-repository file
+was modified.
+
+Recommended next task:
+
+```text
+AIDE-ACCEPT-MCP-SERVER-CONTRACT-01
+```
+
 ## Work Item: AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
 
 Completed for review as a bounded repair task.

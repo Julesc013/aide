@@ -1,0 +1,68 @@
+{
+  "schema_version": "aide.mcp_server_contract_repair_check.report.v0",
+  "task_id": "AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01",
+  "checked_task_id": "AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01",
+  "checked_repair_commit": "4907fab451400ed745a84493ae6894cc00f177ad",
+  "original_build_task_id": "AIDE-BUILD-MCP-SERVER-CONTRACT-01",
+  "original_build_commit": "c8a143f76af585ae3a0cc3004fb5278c57f264e0",
+  "original_failed_check_task_id": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+  "original_failed_check_commit": "18839ccf9b1ec2b129064b09bfb2c90988e31e63",
+  "result": "PASS_WITH_WARNINGS",
+  "target_protocol_version": "2025-11-25",
+  "jsonrpc_version": "2.0",
+  "material_findings": 0,
+  "original_findings_rechecked": [
+    {
+      "id": "MCP-CHECK-001",
+      "title": "List pagination fixtures use null cursor fields",
+      "recheck_result": "fixed",
+      "evidence": "Independent fixture parsing found no explicit null or non-string cursor/nextCursor values; no-cursor request fixtures omit cursor and no-next-page result fixtures omit nextCursor."
+    },
+    {
+      "id": "MCP-CHECK-002",
+      "title": "Resource-not-found fixture uses the wrong MCP error code",
+      "recheck_result": "fixed",
+      "evidence": "resource-not-found-refusal.json uses error.code -32002; custom AIDE refusal codes -32040, -32041, and -32042 remain unchanged."
+    }
+  ],
+  "independent_fixture_check": "PASS",
+  "jsonrpc_regression_check": "PASS",
+  "validator_injection_check": "PASS",
+  "focused_tests": "65 passed",
+  "mcp_cli_result": "PASS_WITH_WARNINGS",
+  "broad_validate_result": "PASS",
+  "source_chain_verified": true,
+  "repair_evidence_missing": 0,
+  "fixture_count": 15,
+  "resource_count": 10,
+  "tool_count": 7,
+  "prompt_count": 0,
+  "runtime_facts": {
+    "contract_projection_performed": true,
+    "fixture_generation_performed": true,
+    "structural_validation_performed": true,
+    "server_process_started": false,
+    "stdio_transport_started": false,
+    "http_transport_started": false,
+    "http_endpoint_bound": false,
+    "network_call_performed": false,
+    "resource_serving_performed": false,
+    "tool_execution_performed": false,
+    "prompt_serving_performed": false,
+    "authorization_implemented": false,
+    "credential_resolution_performed": false,
+    "worker_dispatched": false,
+    "model_or_provider_called": false,
+    "patch_applied": false,
+    "repository_target_mutated": false,
+    "branch_or_worktree_created": false,
+    "github_mutation_performed": false,
+    "trusted": false
+  },
+  "warnings": [
+    "No vendored full official MCP schema validation exists in this slice.",
+    "MCP remains contract-only and projection-only; no server, transport, authorization, serving, invocation, or runtime exists.",
+    "Production validator diagnostics identify fixture and field paths and the expected rule, while observed invalid types are captured by the independent injected-case evidence."
+  ],
+  "recommended_next_task": "AIDE-ACCEPT-MCP-SERVER-CONTRACT-01"
+}

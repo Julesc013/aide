@@ -1568,6 +1568,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence
     description: Bounded repair for AIDE-CHECK-MCP-SERVER-CONTRACT-01. Fixes only two material MCP standards-alignment defects by omitting absent pagination cursor/nextCursor fields, requiring present cursor fields to be strings, changing resource-not-found-refusal.json to use -32002, preserving custom AIDE refusal codes, hardening focused validation, and adding regressions. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01. Does not accept MCP, erase failed-check evidence, start MCP, implement stdio or Streamable HTTP, bind endpoints, serve resources/prompts, execute tools, implement authorization, dispatch workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
+  - id: AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check MCP Pagination and Resource-Error Repair
+    task: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence
+    description: Independent repair recheck for AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01. Verifies source-chain integrity, failed-check preservation, pagination fixture omission, string-only present cursor values, resource-not-found code -32002, custom AIDE refusal-code preservation, validator regression failures for temporary invalid fixtures, JSON-RPC structure, fixture/report hash consistency, focused tests, deterministic projection, CLI boundaries, and no-runtime facts. Stops at needs_review with PASS_WITH_WARNINGS, zero material findings, and recommends AIDE-ACCEPT-MCP-SERVER-CONTRACT-01. Does not modify MCP helper/schema/tests/fixtures/build or repair reports, rewrite failed evidence, accept MCP, start MCP, implement stdio or Streamable HTTP, bind endpoints, serve resources/prompts, execute tools, implement authorization, dispatch workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01
+
+- Title: Check MCP Pagination and Resource-Error Repair
+- Status: needs_review
+- Objective: independently recheck `AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01` and determine whether the MCP contract slice is ready for acceptance review.
+- Scope: repair-check task packet, task-local evidence, `.aide/reports/mcp-server-contract-repair-check/**`, queue index entry, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/task.yaml`.
+- Dependencies: original MCP build at `PASS_WITH_WARNINGS`, original MCP check at `FAILED_VALIDATION`, MCP repair at `PASS_WITH_WARNINGS`, complete evidence for all source tasks, and repair commit `4907fab451400ed745a84493ae6894cc00f177ad`.
+- Milestones: source chain verified; failed check preserved; pagination and cursor-type repairs independently rechecked; resource-not-found and custom refusals rechecked; temporary regression injection performed; JSON-RPC regression reviewed; focused tests and validators run; warnings classified; reports and evidence written.
+- Blockers: none. Remaining warnings are no-runtime/no-full-schema boundaries.
+- Verification Intent: run Git diff checks, Python compile, focused MCP tests, MCP status/project/validate, predecessor validators, task inspect/evidence checks, broad validation, independent JSON fixture scans, temporary invalid-fixture validator probes, unsupported-operation probes, fixture/report hash checks, immutability checks, secret scan, and commit-policy validation.
+- Exit Criteria: task stops at `needs_review` with `PASS_WITH_WARNINGS`, zero material findings, complete evidence, no forbidden operation, and recommended next task `AIDE-ACCEPT-MCP-SERVER-CONTRACT-01`.
+- Notes: This check does not accept MCP and does not alter MCP helper/schema/tests/fixtures/build or repair reports.
+
 ### Plan ID: AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
 
 - Title: Repair MCP Pagination Fixtures and Resource-Not-Found Mapping
