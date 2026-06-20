@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01
+
+- Title: Full Independent Adversarial Check Of The Offline AIDE-Dominium Seam
+- Status: needs_review
+- Objective: independently check the offline read-only AIDE-Dominium seam v0 build without repairing it or modifying production seam artifacts.
+- Scope: check task/evidence, `.aide/reports/dominium-readonly-seam-v0-check/**`, queue index, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01` at `ACCEPTED_WITH_WARNINGS`, `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01` at `PASS_WITH_WARNINGS`, build commit `a75635478be155ef7bc2b62de4ead3837212bbb8`, and source-task evidence `missing_evidence: 0`.
+- Milestones: baseline verified; independent harness materialized; selected inputs, digests, records, references, capabilities, registries, fixtures, conformance, demo evidence, CLI boundaries, and Dominium immutability checked; reports and evidence materialized.
+- Blockers: none for the check. Material findings block seam acceptance and require bounded repair.
+- Verification Intent: independent harness, existing focused seam tests, task inspect/evidence, JSON parsing, diff checks, broad validation, Dominium immutability check, secret scan, and commit policy.
+- Exit Criteria: stop at `needs_review` with `REQUEST_CHANGES`, do not repair defects, do not modify Dominium or production seam artifacts, and recommend exactly `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01`.
+- Notes: next serialized task is `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01`.
+
 ### Plan ID: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
 
 - Title: Full Offline Read-Only AIDE-Dominium Seam v0

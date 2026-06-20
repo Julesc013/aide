@@ -1,0 +1,967 @@
+{
+  "aide_branch_status": "## main...origin/main\n M .aide/queue/index.yaml\n?? .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/\n?? .aide/reports/dominium-readonly-seam-v0-check/",
+  "aide_head": "a75635478be155ef7bc2b62de4ead3837212bbb8",
+  "build_baseline": {
+    "conformance_expectations": 20,
+    "fixtures": 33,
+    "focused_tests": 108,
+    "projected_records": 42,
+    "selected_dominium_inputs": 17,
+    "source_mutations_after_cli_probe": 0
+  },
+  "checks": [
+    {
+      "details": {
+        "branch": "main",
+        "head": "a75635478be155ef7bc2b62de4ead3837212bbb8",
+        "status": "## main...origin/main\n M .aide/queue/index.yaml\n?? .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/\n?? .aide/reports/dominium-readonly-seam-v0-check/"
+      },
+      "id": "baseline.aide_branch",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "AIDE branch is main"
+    },
+    {
+      "details": {
+        "head": "a75635478be155ef7bc2b62de4ead3837212bbb8"
+      },
+      "id": "baseline.build_commit_ancestor",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Build commit is at HEAD or ancestor"
+    },
+    {
+      "details": {
+        "baseline_remote_main": "623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+        "remote_head": "623ab08ae8c867719d5abc2e60c16a6fbb37b313"
+      },
+      "id": "freshness.remote_main",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Current remote Dominium main recorded"
+    },
+    {
+      "details": {
+        "parsed": [
+          "github.com",
+          "julesc013",
+          "dominium"
+        ],
+        "remote_url": "https://github.com/Julesc013/dominium.git"
+      },
+      "id": "identity.current_remote_url",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Projected repository identity uses canonical host/owner/repo"
+    },
+    {
+      "details": {
+        "observed_error": "required source missing at revision a645ca170101b75085a9ae25e935d28bf3bde527: AGENTS.md"
+      },
+      "id": "identity.lookalike_rejected",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Lookalike repository identity must fail before source inspection"
+    },
+    {
+      "details": {
+        "actual_count": 17,
+        "expected_count": 17
+      },
+      "id": "selected_inputs.exact_set",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Selected input path, role, authority, and required flags match accepted v0 set"
+    },
+    {
+      "details": {
+        "paths": [
+          "AGENTS.md",
+          ".aide/queue/current.toml",
+          "docs/canon/constitution_v1.md",
+          "docs/canon/glossary_v1.md",
+          "contracts/command/command_surface.contract.toml",
+          "contracts/service/service.contract.toml",
+          "contracts/module/module_surface.contract.toml",
+          "contracts/workbench/workbench_surface.contract.toml",
+          "contracts/refusal/refusal_code.registry.json",
+          "contracts/diagnostic/diagnostic_code.registry.json",
+          "contracts/diagnostic/diagnostic_severity.registry.json",
+          "contracts/capability/capability.registry.json",
+          "contracts/project_graph/project_graph_model.contract.toml",
+          "docs/repo/audits/PRESENTATION_CONTRACT_01.md",
+          "docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
+          "docs/development/workbench_validation_slice.md",
+          "docs/development/command_result_view_slice.md"
+        ]
+      },
+      "id": "selected_inputs.hashes",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Selected source byte hashes and sizes recompute from immutable Git objects"
+    },
+    {
+      "details": {
+        "actual": "sha256:44b7ab54ca21b7e3a3e4c1a9a5f6b9684c43208d212c7f3b9865290379200171",
+        "expected": "sha256:44b7ab54ca21b7e3a3e4c1a9a5f6b9684c43208d212c7f3b9865290379200171"
+      },
+      "id": "digest.source_snapshot_recompute",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Source snapshot digest independently recomputes"
+    },
+    {
+      "details": {
+        "actual": "sha256:066af85fac0cf5c152f78a46172f13b9d296797a7b307169a5f3876d073818b8",
+        "expected": "sha256:44d4a4b8a142d88e1ecd3b79a478aea452efb81ee7b116d2b0184f7a927b94a2"
+      },
+      "id": "digest.bundle_self_recompute",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Bundle self digest must be calculated after final validation_summary/status fields"
+    },
+    {
+      "details": {
+        "failures": []
+      },
+      "id": "digest.record_recompute",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "All record digests independently recompute"
+    },
+    {
+      "details": {
+        "actual_digest": "sha256:1b8b1c82c4d84cfda8c683d94fe22789681360aba043c8efb037c9a6d00bbe16",
+        "expected_digest": "sha256:1b8b1c82c4d84cfda8c683d94fe22789681360aba043c8efb037c9a6d00bbe16"
+      },
+      "id": "digest.projection_index_recompute",
+      "outcome": "PASS",
+      "severity": "material",
+      "summary": "Projection index and digest independently recompute"
+    },
+    {
+      "details": {
+        "actual": {
+          "ArtifactReference": 17,
+          "ContextDescriptor": 1,
+          "DiagnosticProjection": 8,
+          "DominiumBridgeManifest": 1,
+          "EventEnvelope": 3,
+          "EvidenceReferenceSet": 1,
+          "HostCapabilitySet": 1,
+          "HostManifest": 1,
+          "RefusalProjection": 8,
+          "WorkspaceDescriptor": 1
+        },
+        "expected": {
+          "ArtifactReference": 17,
+          "ContextDescriptor": 1,
+          "DiagnosticProjection": 8,
+          "DominiumBridgeManifest": 1,
+          "EventEnvelope": 3,
+          "EvidenceReferenceSet": 1,
+          "HostCapabilitySet": 1,
+          "HostManifest": 1,
+          "RefusalProjection": 8,
+          "WorkspaceDescriptor": 1
+        }
+      },
+      "id": "records.cardinality",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Record kind cardinalities match v0 contract"
+    },
+    {
+      "details": {
+        "manifest": {
+          "bundle_id": "dominium-readonly-seam-c92b38602789",
+          "bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+          "capability_target": "dominium_readonly_seam_v0",
+          "projection_authority": "generated_non_authoritative",
+          "protocol_version": "0.1.0",
+          "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+          "record_count": 42,
+          "schema_version": "aide.dominium-readonly-seam.v0",
+          "selected_file_count": 17,
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+          "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01"
+        }
+      },
+      "id": "manifest.counts",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Manifest counts match bundle contents"
+    },
+    {
+      "details": {
+        "missing": []
+      },
+      "id": "records.required_fields",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Kind-specific required fields exist in produced records"
+    },
+    {
+      "details": {
+        "dangling_artifacts": [],
+        "dangling_evidence": [],
+        "event_refs": [
+          "aide://event/dominium-event-01-c92b38602789",
+          "aide://event/dominium-event-02-c92b38602789",
+          "aide://event/dominium-event-03-c92b38602789"
+        ]
+      },
+      "id": "references.closure",
+      "outcome": "PASS",
+      "severity": "material",
+      "summary": "Context/evidence/event references close over projected records"
+    },
+    {
+      "details": {
+        "capabilities": [
+          "dominium.snapshot.read",
+          "dominium.selected_files.hash",
+          "dominium.contract_inventory.project",
+          "dominium.diagnostic_registry.project",
+          "dominium.refusal_registry.project",
+          "dominium.evidence_refs.project",
+          "dominium.event_envelopes.project"
+        ],
+        "forbidden": [
+          "dominium.command.invoke",
+          "dominium.source.write",
+          "dominium.service.start",
+          "dominium.provider.call",
+          "dominium.worker.execute",
+          "dominium.patch.apply"
+        ]
+      },
+      "id": "capabilities.allowlist",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Capability set does not include mutation/dispatch/provider/worker capabilities"
+    },
+    {
+      "details": {
+        "correlations": [
+          "aide://seam-bundle/dominium-readonly-seam-c92b38602789"
+        ],
+        "sequences": [
+          1,
+          2,
+          3
+        ]
+      },
+      "id": "events.semantics",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Event sequences are unique/contiguous and share one correlation ref"
+    },
+    {
+      "details": {
+        "mismatches": [],
+        "native_count": 129,
+        "projected_count": 8,
+        "truncation_explicit": false
+      },
+      "id": "diagnostics.registry_integrity",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Projected diagnostics match native registry fields and severity IDs"
+    },
+    {
+      "details": {
+        "native_count": 129,
+        "projected_count": 8
+      },
+      "id": "diagnostics.truncation_disclosure",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Diagnostic projection truncation is not explicitly recorded in omission summary"
+    },
+    {
+      "details": {
+        "mismatches": [],
+        "native_count": 77,
+        "projected_count": 8,
+        "truncation_explicit": false
+      },
+      "id": "refusals.registry_integrity",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Projected refusals match native registry fields"
+    },
+    {
+      "details": {
+        "native_count": 77,
+        "projected_count": 8
+      },
+      "id": "refusals.truncation_disclosure",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Refusal projection truncation is not explicitly recorded in omission summary"
+    },
+    {
+      "details": {
+        "gaps": [
+          "manifest has no required fields",
+          "SeamRecord.spec has no kind-specific required fields",
+          "source_snapshot has no required subfields",
+          "cross_reference_index has no required subfields",
+          "content_digests has no required subfields",
+          "status has no required subfields"
+        ]
+      },
+      "id": "schema.effectiveness",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Public schema meaningfully constrains v0 seam documents"
+    },
+    {
+      "details": {
+        "fixture_count": 22,
+        "non_replayable": [
+          "absolute_path_escape.json",
+          "broken_evidence_ref.json",
+          "conflicting_ownership.json",
+          "digest_mismatch.json",
+          "duplicate_identity.json",
+          "event_correlation_mismatch.json",
+          "generated_projection_marked_canonical.json",
+          "invalid_diagnostic_severity.json",
+          "invalid_reference_id.json",
+          "invalid_refusal_mapping.json",
+          "missing_required_contract.json",
+          "mutation_capability_claim.json",
+          "non_deterministic_ordering.json",
+          "path_traversal.json",
+          "private_tool_bypass_declaration.json",
+          "provider_network_worker_claim.json",
+          "stale_revision.json",
+          "unknown_required_capability.json",
+          "unsupported_version.json",
+          "workbench_authority_overclaim.json",
+          "wrong_authority_role.json",
+          "wrong_repository_identity.json"
+        ]
+      },
+      "id": "fixtures.negative_replayability",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Negative fixtures are independently replayable without importing production mutators"
+    },
+    {
+      "details": {
+        "distinct_evidence_count": 1,
+        "evidence_paths": [
+          ".aide/reports/dominium-readonly-seam-v0/validation.json"
+        ],
+        "expectation_count": 20
+      },
+      "id": "conformance.independence",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Each conformance expectation has distinct assertion evidence"
+    },
+    {
+      "details": {
+        "elapsed_ms": 0
+      },
+      "id": "demo.elapsed_time",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Demo elapsed time is hard-coded or unmeasured as zero"
+    },
+    {
+      "details": {
+        "forbidden_operation_count": 0
+      },
+      "id": "demo.forbidden_operation_observation",
+      "outcome": "WARN",
+      "severity": "warning",
+      "summary": "Forbidden-operation count is reported as zero without independent instrumentation in the build report"
+    },
+    {
+      "details": {},
+      "id": "negative.mixed_record_revision",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Valid-but-wrong record source revision is accepted"
+    },
+    {
+      "details": {},
+      "id": "negative.snapshot_digest_not_validated",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Snapshot digest fields can be corrupted without validation failure"
+    },
+    {
+      "details": {},
+      "id": "negative.selected_path_substitution",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Production validation rejected selected_path_substitution"
+    },
+    {
+      "details": {},
+      "id": "negative.second_host_capability_set",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Second singleton HostCapabilitySet is accepted"
+    },
+    {
+      "details": {},
+      "id": "negative.dangling_artifact_reference",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Dangling artifact reference is accepted after digest refresh"
+    },
+    {
+      "details": {},
+      "id": "negative.wrong_semantic_owner",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Valid-but-wrong semantic owner is accepted"
+    },
+    {
+      "details": {},
+      "id": "negative.mutation_capability_labeled_readonly",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Forbidden mutation capability is accepted when labeled read_only"
+    },
+    {
+      "details": {},
+      "id": "negative.duplicate_event_sequence",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Duplicate event sequence is accepted because only sorting is checked"
+    },
+    {
+      "details": {},
+      "id": "negative.arbitrary_diagnostic_severity",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Arbitrary diagnostic severity is accepted when severity_valid remains true"
+    },
+    {
+      "details": {},
+      "id": "negative.invented_refusal",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Invented refusal projection is accepted"
+    },
+    {
+      "details": {},
+      "id": "negative.missing_host_id",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "HostManifest required field removal is accepted"
+    },
+    {
+      "details": {
+        "cli_results": [
+          {
+            "command": "status",
+            "elapsed_ms": 5502,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:a4a9b9c2c0cd4090af4d4641f232572693682564db88e45e3818bd4d1fa3f739"
+          },
+          {
+            "command": "snapshot",
+            "elapsed_ms": 5335,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:47de9a41630c588213ae079eb6a03338ab2c5b4dc72607498a77e2e7d09c8da3"
+          },
+          {
+            "command": "project",
+            "elapsed_ms": 8827,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:5dded464d769e7f1fae0693566bad9c9cf8ec6a1d7dc992c5cc29ca56032abeb"
+          },
+          {
+            "command": "validate",
+            "elapsed_ms": 10226,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:8b3053527875ff636aa7c0e625692d1c509e38b034b7b57d99529c45a6a4e99b"
+          },
+          {
+            "command": "diff",
+            "elapsed_ms": 8786,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:355a7089c3defd47831835b1c995c3974351862f9243e2555bb9946b9e888432"
+          },
+          {
+            "command": "demo",
+            "elapsed_ms": 26540,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:24ba015096a0b10733928d07e12cb2b0eba3ab1e7ade9c46daec22b1afdd8a77"
+          },
+          {
+            "command": "run",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:87d92842ed90fefe464bc6020ba5053c542d0c831a7f71ec9ea73ec23e99e8dc"
+          },
+          {
+            "command": "invoke",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:ef989e9bdb917be32f05b14cccc0eb9ca1432dd8716af3831d505b9b71720f6c"
+          },
+          {
+            "command": "execute",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:db60dcd60810dab174b63a360149a9f1d66cccca403cc12ef0475eafca28098a"
+          },
+          {
+            "command": "apply",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:919e01e3632d938c90fed338fbddbb8afc2256786ef85637f8cd33a4d5b4845b"
+          },
+          {
+            "command": "write",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:7cbaa3be0726b9fdf0d4c4b41c8f9116e13bac9ddfe992f333792791af2b7c04"
+          },
+          {
+            "command": "sync",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:7fe78b7eb0ed2057ad4aa09d07c82f747d977b6205e0c61f735bb433e221a448"
+          },
+          {
+            "command": "push",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:d8b8460fc221f40a3f782535b798dd5372f1d45d318bcb5bad98120cacfa5a37"
+          },
+          {
+            "command": "serve",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:504ddf117443f59190ac3299bf7dca99d4b9490909d4f106d8f413f449d69d59"
+          },
+          {
+            "command": "connect",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:1a88420cccec6171cd4723b40456a38622dfcc9a32a6512447df1632270bf6d6"
+          },
+          {
+            "command": "dispatch",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:8e1533b87f2d902ef9b9addd5cf33286c8b90a09890344a4c3b536b7c460fa3a"
+          }
+        ]
+      },
+      "id": "immutability.dominium",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Supported CLI probes did not change Dominium status, refs, index, or selected pinned bytes"
+    },
+    {
+      "details": {
+        "cli_results": [
+          {
+            "command": "run",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:87d92842ed90fefe464bc6020ba5053c542d0c831a7f71ec9ea73ec23e99e8dc"
+          },
+          {
+            "command": "invoke",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:ef989e9bdb917be32f05b14cccc0eb9ca1432dd8716af3831d505b9b71720f6c"
+          },
+          {
+            "command": "execute",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:db60dcd60810dab174b63a360149a9f1d66cccca403cc12ef0475eafca28098a"
+          },
+          {
+            "command": "apply",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:919e01e3632d938c90fed338fbddbb8afc2256786ef85637f8cd33a4d5b4845b"
+          },
+          {
+            "command": "write",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:7cbaa3be0726b9fdf0d4c4b41c8f9116e13bac9ddfe992f333792791af2b7c04"
+          },
+          {
+            "command": "sync",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:7fe78b7eb0ed2057ad4aa09d07c82f747d977b6205e0c61f735bb433e221a448"
+          },
+          {
+            "command": "push",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:d8b8460fc221f40a3f782535b798dd5372f1d45d318bcb5bad98120cacfa5a37"
+          },
+          {
+            "command": "serve",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:504ddf117443f59190ac3299bf7dca99d4b9490909d4f106d8f413f449d69d59"
+          },
+          {
+            "command": "connect",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:1a88420cccec6171cd4723b40456a38622dfcc9a32a6512447df1632270bf6d6"
+          },
+          {
+            "command": "dispatch",
+            "returncode": 2,
+            "stderr": "",
+            "stdout_sha256": "sha256:8e1533b87f2d902ef9b9addd5cf33286c8b90a09890344a4c3b536b7c460fa3a"
+          }
+        ]
+      },
+      "id": "cli.unsupported_refusal",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Unsupported dominium-seam verbs fail closed with refusal exit code"
+    },
+    {
+      "details": {
+        "cli_results": [
+          {
+            "command": "status",
+            "elapsed_ms": 5502,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:a4a9b9c2c0cd4090af4d4641f232572693682564db88e45e3818bd4d1fa3f739"
+          },
+          {
+            "command": "snapshot",
+            "elapsed_ms": 5335,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:47de9a41630c588213ae079eb6a03338ab2c5b4dc72607498a77e2e7d09c8da3"
+          },
+          {
+            "command": "project",
+            "elapsed_ms": 8827,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:5dded464d769e7f1fae0693566bad9c9cf8ec6a1d7dc992c5cc29ca56032abeb"
+          },
+          {
+            "command": "validate",
+            "elapsed_ms": 10226,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:8b3053527875ff636aa7c0e625692d1c509e38b034b7b57d99529c45a6a4e99b"
+          },
+          {
+            "command": "diff",
+            "elapsed_ms": 8786,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:355a7089c3defd47831835b1c995c3974351862f9243e2555bb9946b9e888432"
+          },
+          {
+            "command": "demo",
+            "elapsed_ms": 26540,
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "sha256:24ba015096a0b10733928d07e12cb2b0eba3ab1e7ade9c46daec22b1afdd8a77"
+          }
+        ]
+      },
+      "id": "cli.supported_readonly_commands",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Supported dominium-seam read-only commands run against temp AIDE root"
+    },
+    {
+      "details": {
+        "forbidden_patterns": []
+      },
+      "id": "source.no_network_provider_worker",
+      "outcome": "PASS",
+      "severity": "info",
+      "summary": "Production seam source contains no network/provider/worker/fetch/pull/clone calls"
+    }
+  ],
+  "demo_report_status": "PASS_WITH_WARNINGS",
+  "dominium_pinned_head": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "dominium_remote_main_head": "623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+  "material_finding_count": 18,
+  "material_findings": [
+    {
+      "details": {
+        "observed_error": "required source missing at revision a645ca170101b75085a9ae25e935d28bf3bde527: AGENTS.md"
+      },
+      "id": "identity.lookalike_rejected",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Lookalike repository identity must fail before source inspection"
+    },
+    {
+      "details": {
+        "actual": "sha256:066af85fac0cf5c152f78a46172f13b9d296797a7b307169a5f3876d073818b8",
+        "expected": "sha256:44d4a4b8a142d88e1ecd3b79a478aea452efb81ee7b116d2b0184f7a927b94a2"
+      },
+      "id": "digest.bundle_self_recompute",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Bundle self digest must be calculated after final validation_summary/status fields"
+    },
+    {
+      "details": {
+        "native_count": 129,
+        "projected_count": 8
+      },
+      "id": "diagnostics.truncation_disclosure",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Diagnostic projection truncation is not explicitly recorded in omission summary"
+    },
+    {
+      "details": {
+        "native_count": 77,
+        "projected_count": 8
+      },
+      "id": "refusals.truncation_disclosure",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Refusal projection truncation is not explicitly recorded in omission summary"
+    },
+    {
+      "details": {
+        "gaps": [
+          "manifest has no required fields",
+          "SeamRecord.spec has no kind-specific required fields",
+          "source_snapshot has no required subfields",
+          "cross_reference_index has no required subfields",
+          "content_digests has no required subfields",
+          "status has no required subfields"
+        ]
+      },
+      "id": "schema.effectiveness",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Public schema meaningfully constrains v0 seam documents"
+    },
+    {
+      "details": {
+        "fixture_count": 22,
+        "non_replayable": [
+          "absolute_path_escape.json",
+          "broken_evidence_ref.json",
+          "conflicting_ownership.json",
+          "digest_mismatch.json",
+          "duplicate_identity.json",
+          "event_correlation_mismatch.json",
+          "generated_projection_marked_canonical.json",
+          "invalid_diagnostic_severity.json",
+          "invalid_reference_id.json",
+          "invalid_refusal_mapping.json",
+          "missing_required_contract.json",
+          "mutation_capability_claim.json",
+          "non_deterministic_ordering.json",
+          "path_traversal.json",
+          "private_tool_bypass_declaration.json",
+          "provider_network_worker_claim.json",
+          "stale_revision.json",
+          "unknown_required_capability.json",
+          "unsupported_version.json",
+          "workbench_authority_overclaim.json",
+          "wrong_authority_role.json",
+          "wrong_repository_identity.json"
+        ]
+      },
+      "id": "fixtures.negative_replayability",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Negative fixtures are independently replayable without importing production mutators"
+    },
+    {
+      "details": {
+        "distinct_evidence_count": 1,
+        "evidence_paths": [
+          ".aide/reports/dominium-readonly-seam-v0/validation.json"
+        ],
+        "expectation_count": 20
+      },
+      "id": "conformance.independence",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Each conformance expectation has distinct assertion evidence"
+    },
+    {
+      "details": {
+        "elapsed_ms": 0
+      },
+      "id": "demo.elapsed_time",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Demo elapsed time is hard-coded or unmeasured as zero"
+    },
+    {
+      "details": {},
+      "id": "negative.mixed_record_revision",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Valid-but-wrong record source revision is accepted"
+    },
+    {
+      "details": {},
+      "id": "negative.snapshot_digest_not_validated",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Snapshot digest fields can be corrupted without validation failure"
+    },
+    {
+      "details": {},
+      "id": "negative.second_host_capability_set",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Second singleton HostCapabilitySet is accepted"
+    },
+    {
+      "details": {},
+      "id": "negative.dangling_artifact_reference",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Dangling artifact reference is accepted after digest refresh"
+    },
+    {
+      "details": {},
+      "id": "negative.wrong_semantic_owner",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Valid-but-wrong semantic owner is accepted"
+    },
+    {
+      "details": {},
+      "id": "negative.mutation_capability_labeled_readonly",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Forbidden mutation capability is accepted when labeled read_only"
+    },
+    {
+      "details": {},
+      "id": "negative.duplicate_event_sequence",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Duplicate event sequence is accepted because only sorting is checked"
+    },
+    {
+      "details": {},
+      "id": "negative.arbitrary_diagnostic_severity",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Arbitrary diagnostic severity is accepted when severity_valid remains true"
+    },
+    {
+      "details": {},
+      "id": "negative.invented_refusal",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "Invented refusal projection is accepted"
+    },
+    {
+      "details": {},
+      "id": "negative.missing_host_id",
+      "outcome": "FAIL",
+      "severity": "material",
+      "summary": "HostManifest required field removal is accepted"
+    }
+  ],
+  "negative_results": [
+    {
+      "case": "mixed_record_revision",
+      "production_accepted": true,
+      "summary": "Valid-but-wrong record source revision is accepted"
+    },
+    {
+      "case": "snapshot_digest_not_validated",
+      "production_accepted": true,
+      "summary": "Snapshot digest fields can be corrupted without validation failure"
+    },
+    {
+      "case": "selected_path_substitution",
+      "production_accepted": false,
+      "summary": "Selected path set can be substituted with another valid tracked file"
+    },
+    {
+      "case": "second_host_capability_set",
+      "production_accepted": true,
+      "summary": "Second singleton HostCapabilitySet is accepted"
+    },
+    {
+      "case": "dangling_artifact_reference",
+      "production_accepted": true,
+      "summary": "Dangling artifact reference is accepted after digest refresh"
+    },
+    {
+      "case": "wrong_semantic_owner",
+      "production_accepted": true,
+      "summary": "Valid-but-wrong semantic owner is accepted"
+    },
+    {
+      "case": "mutation_capability_labeled_readonly",
+      "production_accepted": true,
+      "summary": "Forbidden mutation capability is accepted when labeled read_only"
+    },
+    {
+      "case": "duplicate_event_sequence",
+      "production_accepted": true,
+      "summary": "Duplicate event sequence is accepted because only sorting is checked"
+    },
+    {
+      "case": "arbitrary_diagnostic_severity",
+      "production_accepted": true,
+      "summary": "Arbitrary diagnostic severity is accepted when severity_valid remains true"
+    },
+    {
+      "case": "invented_refusal",
+      "production_accepted": true,
+      "summary": "Invented refusal projection is accepted"
+    },
+    {
+      "case": "missing_host_id",
+      "production_accepted": true,
+      "summary": "HostManifest required field removal is accepted"
+    }
+  ],
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.dominium-readonly-seam.check-report.v0",
+  "source_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01",
+  "status": "needs_review",
+  "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+  "validation_report_status": "PASS_WITH_WARNINGS",
+  "warning_count": 1,
+  "warnings": [
+    {
+      "details": {
+        "forbidden_operation_count": 0
+      },
+      "id": "demo.forbidden_operation_observation",
+      "outcome": "WARN",
+      "severity": "warning",
+      "summary": "Forbidden-operation count is reported as zero without independent instrumentation in the build report"
+    }
+  ]
+}

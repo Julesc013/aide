@@ -1,0 +1,60 @@
+{
+  "results": [
+    {
+      "case": "mixed_record_revision",
+      "production_accepted": true,
+      "summary": "Valid-but-wrong record source revision is accepted"
+    },
+    {
+      "case": "snapshot_digest_not_validated",
+      "production_accepted": true,
+      "summary": "Snapshot digest fields can be corrupted without validation failure"
+    },
+    {
+      "case": "selected_path_substitution",
+      "production_accepted": false,
+      "summary": "Selected path set can be substituted with another valid tracked file"
+    },
+    {
+      "case": "second_host_capability_set",
+      "production_accepted": true,
+      "summary": "Second singleton HostCapabilitySet is accepted"
+    },
+    {
+      "case": "dangling_artifact_reference",
+      "production_accepted": true,
+      "summary": "Dangling artifact reference is accepted after digest refresh"
+    },
+    {
+      "case": "wrong_semantic_owner",
+      "production_accepted": true,
+      "summary": "Valid-but-wrong semantic owner is accepted"
+    },
+    {
+      "case": "mutation_capability_labeled_readonly",
+      "production_accepted": true,
+      "summary": "Forbidden mutation capability is accepted when labeled read_only"
+    },
+    {
+      "case": "duplicate_event_sequence",
+      "production_accepted": true,
+      "summary": "Duplicate event sequence is accepted because only sorting is checked"
+    },
+    {
+      "case": "arbitrary_diagnostic_severity",
+      "production_accepted": true,
+      "summary": "Arbitrary diagnostic severity is accepted when severity_valid remains true"
+    },
+    {
+      "case": "invented_refusal",
+      "production_accepted": true,
+      "summary": "Invented refusal projection is accepted"
+    },
+    {
+      "case": "missing_host_id",
+      "production_accepted": true,
+      "summary": "HostManifest required field removal is accepted"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-check-results.v0"
+}

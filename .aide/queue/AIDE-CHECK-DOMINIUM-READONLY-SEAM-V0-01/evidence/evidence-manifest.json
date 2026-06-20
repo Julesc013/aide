@@ -1,0 +1,33 @@
+{
+  "evidence_files": [
+    ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/evidence/tools/check_dominium_seam_independent.py",
+    ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/evidence/independent-check-results.json",
+    ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/evidence/independent-negative-results.json",
+    ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/evidence/source-tree-hashes-before.json",
+    ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/evidence/source-tree-hashes-after.json",
+    ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/evidence/validation.md",
+    ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/evidence/next-task-recommendation.md"
+  ],
+  "report_files": [
+    ".aide/reports/dominium-readonly-seam-v0-check/status.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/check-report.json",
+    ".aide/reports/dominium-readonly-seam-v0-check/check-report.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/source-chain-review.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/identity-freshness-review.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/digest-validation-review.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/registry-fixture-conformance-review.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/immutability-boundary-review.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/material-findings.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/warning-disposition.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/explicit-non-capabilities.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/remaining-risks.md",
+    ".aide/reports/dominium-readonly-seam-v0-check/next-task-prompt.md"
+  ],
+  "result": "REQUEST_CHANGES",
+  "material_finding_count": 18,
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
+  "schema_version": "aide.dominium-readonly-seam.check-evidence-manifest.v0",
+  "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01"
+}
