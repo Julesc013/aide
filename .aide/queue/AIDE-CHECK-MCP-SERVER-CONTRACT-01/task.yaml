@@ -1,0 +1,122 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-MCP-SERVER-CONTRACT-01
+title: Check Minimal Contract-Only MCP Projection
+status: needs_review
+planning_state: check_completed
+result: FAILED_VALIDATION
+task_type: check
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+checked_task_id: AIDE-BUILD-MCP-SERVER-CONTRACT-01
+checked_commit: c8a143f76af585ae3a0cc3004fb5278c57f264e0
+summary: >
+  Independently checks the contract-only MCP projection against the pinned
+  MCP 2025-11-25 and JSON-RPC 2.0 subset. The check found material
+  fixture-alignment defects and therefore does not recommend acceptance.
+accepted_capability: null
+capability_target: minimal_mcp_server_contract
+target_protocol_version: "2025-11-25"
+jsonrpc_version: "2.0"
+material_findings: 2
+recommended_next_task: AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/**
+  - .aide/reports/mcp-server-contract-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/**
+  - .aide/reports/mcp-server-contract/**
+  - .aide/interop/mcp/**
+  - .aide/interop/exports/mcp-manifest.preview.json
+  - .aide/protocol/aide-mcp-server-contract.schema.json
+  - core/interop/mcp_server_contract.py
+  - core/interop/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_mcp_server_contract.py
+  - .aide/queue/index.yaml
+  - .aide/queue/policy.yaml
+  - .aide/profile.yaml
+forbidden_paths:
+  - MCP contract schema changes
+  - MCP helper changes
+  - MCP focused test changes
+  - MCP build fixture or report rewrites
+  - accepted predecessor rewrites
+  - generated OKF pages
+  - runtime, provider, worker, host, VCS, network, or target-repository files
+non_capabilities:
+  - no live MCP server
+  - no stdio transport
+  - no Streamable HTTP transport
+  - no listening endpoint
+  - no resource serving
+  - no prompt serving
+  - no tool execution
+  - no MCP authorization implementation
+  - no credential resolution
+  - no provider, model, Gateway, GitHub, or network call
+  - no worker execution or dispatch
+  - no Host Contract, Dominium Bridge, Workbench, or A2A implementation
+  - no PatchTransaction approval or apply
+  - no branch or worktree automation
+  - no release, promotion, or target repository mutation
+reports:
+  - .aide/reports/mcp-server-contract-check/status.md
+  - .aide/reports/mcp-server-contract-check/check-report.json
+  - .aide/reports/mcp-server-contract-check/check-report.md
+  - .aide/reports/mcp-server-contract-check/source-chain-review.md
+  - .aide/reports/mcp-server-contract-check/schema-helper-review.md
+  - .aide/reports/mcp-server-contract-check/json-rpc-review.md
+  - .aide/reports/mcp-server-contract-check/lifecycle-review.md
+  - .aide/reports/mcp-server-contract-check/version-negotiation-review.md
+  - .aide/reports/mcp-server-contract-check/capability-negotiation-review.md
+  - .aide/reports/mcp-server-contract-check/resource-catalog-review.md
+  - .aide/reports/mcp-server-contract-check/resource-error-review.md
+  - .aide/reports/mcp-server-contract-check/tool-catalog-review.md
+  - .aide/reports/mcp-server-contract-check/tool-refusal-review.md
+  - .aide/reports/mcp-server-contract-check/prompt-catalog-review.md
+  - .aide/reports/mcp-server-contract-check/refusal-mapping-review.md
+  - .aide/reports/mcp-server-contract-check/stdio-expectation-review.md
+  - .aide/reports/mcp-server-contract-check/streamable-http-expectation-review.md
+  - .aide/reports/mcp-server-contract-check/authorization-boundary-review.md
+  - .aide/reports/mcp-server-contract-check/security-boundary-review.md
+  - .aide/reports/mcp-server-contract-check/aide-authority-review.md
+  - .aide/reports/mcp-server-contract-check/conformance-expectation-review.md
+  - .aide/reports/mcp-server-contract-check/determinism-immutability-review.md
+  - .aide/reports/mcp-server-contract-check/cli-boundary-review.md
+  - .aide/reports/mcp-server-contract-check/report-consistency-review.md
+  - .aide/reports/mcp-server-contract-check/findings.md
+  - .aide/reports/mcp-server-contract-check/warning-disposition.md
+  - .aide/reports/mcp-server-contract-check/explicit-non-capabilities.md
+  - .aide/reports/mcp-server-contract-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/schema-helper-alignment.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/json-rpc-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/lifecycle-version-capability-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/resource-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/tool-prompt-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/refusal-transport-authorization-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/security-authority-boundary-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/conformance-expectation-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/determinism-immutability.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/cli-boundary-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/next-task-prompt.md
+warnings:
+  - No vendored full official MCP schema was available; this check used the pinned subset named in the task.
+  - MCP remains contract-only; no live server, transport, authorization, serving, invocation, or runtime exists.
+blockers:
+  - Pagination fixtures use null cursor or nextCursor values where the pinned subset requires omission or string values.
+  - resource-not-found-refusal.json uses -32043 instead of the pinned MCP resource-not-found code -32002.

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-MCP-SERVER-CONTRACT-01
+
+- Title: Check Minimal Contract-Only MCP Projection
+- Status: needs_review
+- Objective: independently check `AIDE-BUILD-MCP-SERVER-CONTRACT-01` against the pinned MCP `2025-11-25` and JSON-RPC `2.0` subset while preserving no-runtime and no-authority boundaries.
+- Scope: check task packet, task-local evidence, `.aide/reports/mcp-server-contract-check/**`, queue index entry, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-MCP-SERVER-CONTRACT-01` at `needs_review` with `PASS_WITH_WARNINGS`, build commit `c8a143f76af585ae3a0cc3004fb5278c57f264e0`, complete evidence, and accepted static interop exports.
+- Milestones: source chain verified; MCP JSON parsed; JSON-RPC, lifecycle, version, capability, resource, tool, prompt, refusal, transport, authorization, security, authority, conformance, determinism, and CLI boundaries reviewed; findings classified; reports and evidence written.
+- Blockers: two material fixture defects block acceptance: null `cursor` or `nextCursor` fields in list fixtures, and resource-not-found error code `-32043` instead of pinned `-32002`.
+- Verification Intent: run diff checks, Python compile, focused MCP tests, MCP status/project/validate, predecessor validators, JSON parsing, direct fixture probes, unsupported-command probes, repeated projection comparison, source immutability check, task inspect/evidence, broad validation, secret scan, and commit-policy validation.
+- Exit Criteria: task stops at `needs_review` with `FAILED_VALIDATION`, preserves build evidence, performs no repair or forbidden operation, and recommends `AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01`.
+- Notes: Acceptance is not recommended until a bounded repair and independent repair check pass.
+
 ### Plan ID: AIDE-ACCEPT-INTEROP-EXPORTS-01
 
 - Title: Accept Static Interop Export Previews

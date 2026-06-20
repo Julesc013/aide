@@ -1,0 +1,93 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-MCP-SERVER-CONTRACT-01
+status: needs_review
+planning_state: check_completed
+result: FAILED_VALIDATION
+review_gate: needs_review
+updated_at: 2026-06-20
+summary: Independent MCP contract check found material fixture-alignment defects.
+validation_status: FAILED_VALIDATION
+checked_task_id: AIDE-BUILD-MCP-SERVER-CONTRACT-01
+checked_commit: c8a143f76af585ae3a0cc3004fb5278c57f264e0
+accepted_capability: null
+capability_target: minimal_mcp_server_contract
+target_protocol_version: "2025-11-25"
+jsonrpc_version: "2.0"
+material_findings: 2
+contract_projection_performed: true
+fixture_generation_performed: true
+structural_validation_performed: true
+server_process_started: false
+stdio_transport_started: false
+http_transport_started: false
+http_endpoint_bound: false
+network_call_performed: false
+resource_serving_performed: false
+tool_execution_performed: false
+prompt_serving_performed: false
+authorization_implemented: false
+credential_resolution_performed: false
+worker_dispatched: false
+model_or_provider_called: false
+patch_applied: false
+repository_target_mutated: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+trusted: false
+recommended_next_task: AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
+reports:
+  - .aide/reports/mcp-server-contract-check/status.md
+  - .aide/reports/mcp-server-contract-check/check-report.json
+  - .aide/reports/mcp-server-contract-check/check-report.md
+  - .aide/reports/mcp-server-contract-check/source-chain-review.md
+  - .aide/reports/mcp-server-contract-check/schema-helper-review.md
+  - .aide/reports/mcp-server-contract-check/json-rpc-review.md
+  - .aide/reports/mcp-server-contract-check/lifecycle-review.md
+  - .aide/reports/mcp-server-contract-check/version-negotiation-review.md
+  - .aide/reports/mcp-server-contract-check/capability-negotiation-review.md
+  - .aide/reports/mcp-server-contract-check/resource-catalog-review.md
+  - .aide/reports/mcp-server-contract-check/resource-error-review.md
+  - .aide/reports/mcp-server-contract-check/tool-catalog-review.md
+  - .aide/reports/mcp-server-contract-check/tool-refusal-review.md
+  - .aide/reports/mcp-server-contract-check/prompt-catalog-review.md
+  - .aide/reports/mcp-server-contract-check/refusal-mapping-review.md
+  - .aide/reports/mcp-server-contract-check/stdio-expectation-review.md
+  - .aide/reports/mcp-server-contract-check/streamable-http-expectation-review.md
+  - .aide/reports/mcp-server-contract-check/authorization-boundary-review.md
+  - .aide/reports/mcp-server-contract-check/security-boundary-review.md
+  - .aide/reports/mcp-server-contract-check/aide-authority-review.md
+  - .aide/reports/mcp-server-contract-check/conformance-expectation-review.md
+  - .aide/reports/mcp-server-contract-check/determinism-immutability-review.md
+  - .aide/reports/mcp-server-contract-check/cli-boundary-review.md
+  - .aide/reports/mcp-server-contract-check/report-consistency-review.md
+  - .aide/reports/mcp-server-contract-check/findings.md
+  - .aide/reports/mcp-server-contract-check/warning-disposition.md
+  - .aide/reports/mcp-server-contract-check/explicit-non-capabilities.md
+  - .aide/reports/mcp-server-contract-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/schema-helper-alignment.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/json-rpc-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/lifecycle-version-capability-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/resource-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/tool-prompt-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/refusal-transport-authorization-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/security-authority-boundary-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/conformance-expectation-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/determinism-immutability.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/cli-boundary-review.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence/next-task-prompt.md
+warnings:
+  - No vendored full official MCP schema was available; full official-schema conformance remains deferred.
+  - Runtime, transport, authorization, serving, invocation, and provider behavior remain intentionally absent.
+blockers:
+  - MCP-CHECK-001: null cursor and nextCursor values appear in list request/result fixtures.
+  - MCP-CHECK-002: resource-not-found-refusal.json uses -32043 instead of -32002.

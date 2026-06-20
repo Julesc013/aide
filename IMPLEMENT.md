@@ -39,6 +39,40 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-MCP-SERVER-CONTRACT-01
+
+Completed for review as an independent check task.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/**`
+- `.aide/reports/mcp-server-contract-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `FAILED_VALIDATION`. The source chain is valid and the build
+evidence reports `missing_evidence: 0`, but independent fixture review found
+two material MCP standards-alignment defects:
+
+- list request/result fixtures emit `null` for optional `cursor` or
+  `nextCursor` fields;
+- `resource-not-found-refusal.json` uses `-32043` instead of the pinned MCP
+  resource-not-found code `-32002`.
+
+The check did not repair the MCP schema, helper, tests, fixtures, build reports,
+or accepted predecessor records. No server, transport, endpoint, authorization,
+resource serving, prompt serving, tool execution, worker dispatch,
+provider/model/network call, PatchTransaction apply, branch/worktree
+automation, GitHub mutation, release, promotion, or target-repository mutation
+occurred.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
+```
+
 ## Work Item: AIDE-ACCEPT-INTEROP-EXPORTS-01
 
 Completed for review as an acceptance task.

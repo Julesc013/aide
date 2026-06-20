@@ -1548,6 +1548,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/evidence
     description: Builds the minimal_mcp_server_contract slice as schema/helper/CLI/tests plus deterministic contract, catalogue, JSON-RPC fixture, transport expectation, authorization expectation, refusal mapping, conformance expectation, and report projections. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-MCP-SERVER-CONTRACT-01. Does not start a live MCP server, implement stdio or Streamable HTTP, bind endpoints, authenticate clients, serve resources, serve prompts, execute tools, dispatch workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, scheduler, leases, supervisor, release, promotion, or production readiness.
+  - id: AIDE-CHECK-MCP-SERVER-CONTRACT-01
+    status: needs_review
+    planning_state: check_completed
+    result: FAILED_VALIDATION
+    title: Check Minimal Contract-Only MCP Projection
+    task: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/evidence
+    description: Check-only review of AIDE-BUILD-MCP-SERVER-CONTRACT-01. Verifies source-chain integrity, JSON-RPC fixture shape, MCP lifecycle and version pinning, capability direction, resource/tool/prompt catalogues, refusal mappings, transport and authorization boundaries, runtime facts, determinism, and evidence completeness. Stops at needs_review with FAILED_VALIDATION after finding two material defects: list fixtures emit null cursor/nextCursor values, and resource-not-found-refusal.json uses -32043 instead of the pinned MCP resource-not-found code -32002. Recommends AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01. Does not repair implementation, modify schema/helper/tests/build fixtures, start MCP, implement stdio or Streamable HTTP, bind endpoints, serve resources/prompts, execute tools, implement authorization, dispatch workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

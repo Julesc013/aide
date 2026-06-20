@@ -1,0 +1,81 @@
+{
+  "schema_version": "aide.mcp_server_contract_check.report.v0",
+  "task_id": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+  "checked_task_id": "AIDE-BUILD-MCP-SERVER-CONTRACT-01",
+  "checked_commit": "c8a143f76af585ae3a0cc3004fb5278c57f264e0",
+  "result": "FAILED_VALIDATION",
+  "target_protocol_version": "2025-11-25",
+  "jsonrpc_version": "2.0",
+  "material_findings": 2,
+  "findings": [
+    {
+      "id": "MCP-CHECK-001",
+      "severity": "material",
+      "title": "List pagination fixtures use null cursor fields",
+      "affected_files": [
+        ".aide/interop/mcp/fixtures/prompts-list-request.json",
+        ".aide/interop/mcp/fixtures/prompts-list-result.json",
+        ".aide/interop/mcp/fixtures/resources-list-request.json",
+        ".aide/interop/mcp/fixtures/resources-list-result.json",
+        ".aide/interop/mcp/fixtures/tools-list-request.json",
+        ".aide/interop/mcp/fixtures/tools-list-result.json"
+      ],
+      "expected": "cursor and nextCursor are omitted or strings under the checked pinned subset",
+      "actual": "cursor and nextCursor are emitted as null",
+      "repair_recommendation": "omit absent cursor fields or emit valid strings only"
+    },
+    {
+      "id": "MCP-CHECK-002",
+      "severity": "material",
+      "title": "Resource-not-found fixture uses the wrong MCP error code",
+      "affected_files": [
+        ".aide/interop/mcp/fixtures/resource-not-found-refusal.json"
+      ],
+      "expected": -32002,
+      "actual": -32043,
+      "repair_recommendation": "use the pinned MCP resource-not-found code or relabel the fixture as a separate AIDE application refusal"
+    }
+  ],
+  "source_chain_verified": true,
+  "interop_acceptance_verified": true,
+  "build_evidence_missing": 0,
+  "json_files_parsed": 32,
+  "schema_parsed": true,
+  "helper_status_result": "PASS_WITH_WARNINGS",
+  "helper_validate_result": "PASS_WITH_WARNINGS",
+  "focused_tests": "41 passed",
+  "resource_count": 10,
+  "tool_count": 7,
+  "prompt_count": 0,
+  "fixture_count": 15,
+  "transport_contract_count": 2,
+  "conformance_expectation_count": 22,
+  "runtime_facts": {
+    "contract_projection_performed": true,
+    "fixture_generation_performed": true,
+    "structural_validation_performed": true,
+    "server_process_started": false,
+    "stdio_transport_started": false,
+    "http_transport_started": false,
+    "http_endpoint_bound": false,
+    "network_call_performed": false,
+    "resource_serving_performed": false,
+    "tool_execution_performed": false,
+    "prompt_serving_performed": false,
+    "authorization_implemented": false,
+    "credential_resolution_performed": false,
+    "worker_dispatched": false,
+    "model_or_provider_called": false,
+    "patch_applied": false,
+    "repository_target_mutated": false,
+    "branch_or_worktree_created": false,
+    "github_mutation_performed": false,
+    "trusted": false
+  },
+  "warnings": [
+    "No vendored full official MCP schema exists in this slice; full official-schema validation remains deferred.",
+    "MCP remains contract-only; no server, transport, authorization, serving, invocation, or runtime exists.",
+    "The advisory aide://interop reference remains warning debt and is not accepted global ReferenceID authority."
+  ],
+  "recommended_next_task": "AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01"
+}
