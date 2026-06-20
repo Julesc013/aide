@@ -1,0 +1,97 @@
+{
+  "schema_version": "aide.mcp_server_contract_accept.report.v0",
+  "task_id": "AIDE-ACCEPT-MCP-SERVER-CONTRACT-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_capability": "minimal_mcp_server_contract",
+  "target_protocol_version": "2025-11-25",
+  "jsonrpc_version": "2.0",
+  "source_chain": [
+    {
+      "task_id": "AIDE-BUILD-MCP-SERVER-CONTRACT-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "c8a143f76af585ae3a0cc3004fb5278c57f264e0",
+      "missing_evidence": 0
+    },
+    {
+      "task_id": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+      "result": "FAILED_VALIDATION",
+      "commit": "18839ccf9b1ec2b129064b09bfb2c90988e31e63",
+      "missing_evidence": 0,
+      "material_findings": 2,
+      "preserved": true
+    },
+    {
+      "task_id": "AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "4907fab451400ed745a84493ae6894cc00f177ad",
+      "missing_evidence": 0
+    },
+    {
+      "task_id": "AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "cec34b1bdb03325008560837d9eab3ebaa15a4f5",
+      "missing_evidence": 0,
+      "material_findings": 0
+    }
+  ],
+  "accepted_scope": [
+    "MCP contract representation",
+    "pinned protocol-version declaration",
+    "JSON-RPC fixture projection",
+    "lifecycle expectation projection",
+    "capability catalogue projection",
+    "resource catalogue projection",
+    "tool catalogue projection",
+    "prompt catalogue projection",
+    "typed refusal projection",
+    "transport expectation projection",
+    "authorization expectation projection",
+    "conformance expectation projection",
+    "structural validation",
+    "deterministic generation",
+    "inspection",
+    "reporting"
+  ],
+  "historical_failure_preserved": true,
+  "pagination_repair_accepted": true,
+  "resource_not_found_code": -32002,
+  "custom_refusal_codes": {
+    "tools-call-refusal.json": -32040,
+    "protocol-version-refusal.json": -32041,
+    "capability-refusal.json": -32042
+  },
+  "fixture_count": 15,
+  "resource_count": 10,
+  "tool_count": 7,
+  "prompt_count": 0,
+  "conformance_expectation_count": 22,
+  "material_findings": 0,
+  "runtime_facts": {
+    "contract_projection_performed": true,
+    "fixture_generation_performed": true,
+    "structural_validation_performed": true,
+    "server_process_started": false,
+    "stdio_transport_started": false,
+    "http_transport_started": false,
+    "http_endpoint_bound": false,
+    "network_call_performed": false,
+    "resource_serving_performed": false,
+    "tool_execution_performed": false,
+    "prompt_serving_performed": false,
+    "authorization_implemented": false,
+    "credential_resolution_performed": false,
+    "worker_dispatched": false,
+    "model_or_provider_called": false,
+    "patch_applied": false,
+    "repository_target_mutated": false,
+    "branch_or_worktree_created": false,
+    "github_mutation_performed": false,
+    "trusted": false
+  },
+  "warnings": [
+    "No vendored full official MCP schema validation exists in this slice.",
+    "MCP remains contract-only and projection-only; no server, transport, authorization, serving, invocation, or runtime exists.",
+    "Future aide://interop ReferenceID authority remains advisory only."
+  ],
+  "recommended_next_task": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
+}

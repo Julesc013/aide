@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-MCP-SERVER-CONTRACT-01
+
+- Title: Accept Minimal Contract-Only MCP Projection
+- Status: needs_review
+- Objective: accept the repaired `minimal_mcp_server_contract` capability as a deterministic contract-only MCP projection after the build, failed-check, repair, and repair-check chain.
+- Scope: acceptance task packet, task-local evidence, `.aide/reports/mcp-server-contract-accept/**`, queue index entry, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-MCP-SERVER-CONTRACT-01` at `PASS_WITH_WARNINGS`, `AIDE-CHECK-MCP-SERVER-CONTRACT-01` preserved at `FAILED_VALIDATION`, `AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01` at `PASS_WITH_WARNINGS`, `AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01` at `PASS_WITH_WARNINGS` with zero material findings, and complete evidence for all four source tasks.
+- Milestones: source chain verified; historical failure preserved; schema/helper and JSON-RPC fixture readiness consolidated; pagination and resource-not-found repairs accepted; catalogues, refusals, transport expectations, authorization expectations, conformance expectations, runtime facts, determinism, immutability, warnings, and non-capabilities reviewed; reports and evidence written.
+- Blockers: none. Remaining warnings are no-runtime, no-full-official-schema-validation, and advisory future `aide://interop` ReferenceID debt.
+- Verification Intent: run Git diff checks, Python compile, focused MCP tests, MCP status/validate, predecessor validators, task inspect/evidence checks, broad validation, JSON parsing, independent fixture scans, validator regression evidence review, unsupported-operation probes, secret scan, and commit-policy validation.
+- Exit Criteria: task stops at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepts only the contract-only projection capability, preserves failed-check evidence, performs no forbidden operation, and recommends `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01`.
+- Notes: This acceptance does not implement or authorize live MCP server behavior.
+
 ### Plan ID: AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01
 
 - Title: Check MCP Pagination and Resource-Error Repair

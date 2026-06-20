@@ -1578,6 +1578,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01/evidence
     description: Independent repair recheck for AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01. Verifies source-chain integrity, failed-check preservation, pagination fixture omission, string-only present cursor values, resource-not-found code -32002, custom AIDE refusal-code preservation, validator regression failures for temporary invalid fixtures, JSON-RPC structure, fixture/report hash consistency, focused tests, deterministic projection, CLI boundaries, and no-runtime facts. Stops at needs_review with PASS_WITH_WARNINGS, zero material findings, and recommends AIDE-ACCEPT-MCP-SERVER-CONTRACT-01. Does not modify MCP helper/schema/tests/fixtures/build or repair reports, rewrite failed evidence, accept MCP, start MCP, implement stdio or Streamable HTTP, bind endpoints, serve resources/prompts, execute tools, implement authorization, dispatch workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
+  - id: AIDE-ACCEPT-MCP-SERVER-CONTRACT-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Minimal Contract-Only MCP Projection
+    task: .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence
+    description: Acceptance gate for the repaired minimal_mcp_server_contract slice. Consolidates the build, failed independent check, bounded repair, and independent repair recheck chain; preserves the original FAILED_VALIDATION evidence for null pagination fields and wrong resource-not-found code; accepts only deterministic MCP 2025-11-25 and JSON-RPC 2.0 contract, catalogue, fixture, refusal, transport expectation, authorization expectation, conformance expectation, structural validation, inspection, and reporting behavior. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01. Does not modify MCP schema/helper/tests/fixtures, rewrite failed evidence, start MCP, implement stdio or Streamable HTTP, bind endpoints, serve resources/prompts, execute tools, implement authorization, dispatch workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

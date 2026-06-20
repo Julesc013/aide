@@ -1,0 +1,101 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-MCP-SERVER-CONTRACT-01
+title: Acceptance Review for Minimal Contract-Only MCP Projection
+task_type: acceptance
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+created_at: 2026-06-20
+updated_at: 2026-06-20
+profile: .aide/profile.yaml
+queue_policy: .aide/queue/policy.yaml
+canonical_queue: .aide/queue/index.yaml
+source_chain:
+  - task_id: AIDE-BUILD-MCP-SERVER-CONTRACT-01
+    result: PASS_WITH_WARNINGS
+    commit: c8a143f76af585ae3a0cc3004fb5278c57f264e0
+    evidence_missing: 0
+  - task_id: AIDE-CHECK-MCP-SERVER-CONTRACT-01
+    result: FAILED_VALIDATION
+    commit: 18839ccf9b1ec2b129064b09bfb2c90988e31e63
+    evidence_missing: 0
+    preserved_failure: true
+  - task_id: AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
+    result: PASS_WITH_WARNINGS
+    commit: 4907fab451400ed745a84493ae6894cc00f177ad
+    evidence_missing: 0
+  - task_id: AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01
+    result: PASS_WITH_WARNINGS
+    commit: cec34b1bdb03325008560837d9eab3ebaa15a4f5
+    evidence_missing: 0
+    material_findings: 0
+accepted_capability: minimal_mcp_server_contract
+accepted_scope:
+  - MCP contract representation
+  - pinned protocol-version declaration
+  - JSON-RPC fixture projection
+  - lifecycle expectation projection
+  - capability, resource, tool, and prompt catalogue projection
+  - typed refusal projection
+  - transport and authorization expectation projection
+  - conformance expectation projection
+  - structural validation
+  - deterministic generation, inspection, and reporting
+explicit_non_capabilities:
+  - live MCP server
+  - MCP process lifecycle
+  - stdio transport
+  - Streamable HTTP transport
+  - HTTP endpoint
+  - SSE
+  - sessions
+  - MCP authentication
+  - OAuth
+  - token handling
+  - resource serving
+  - prompt serving
+  - tool execution
+  - client roots
+  - sampling
+  - elicitation
+  - MCP tasks
+  - authorization implementation
+  - credential resolution
+  - worker execution
+  - provider/model calls
+  - network calls
+  - PatchTransaction approval or apply
+  - target-repository mutation
+  - branch/worktree automation
+  - A2A
+  - Host Contract
+  - Host SDK
+  - Dominium Bridge
+  - Workbench
+  - Runtime or Service
+  - GitHub mutation
+  - release, promotion, or production readiness
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/**
+  - .aide/reports/mcp-server-contract-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide/protocol/aide-mcp-server-contract.schema.json
+  - core/interop/mcp_server_contract.py
+  - core/interop/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_mcp_server_contract.py
+  - .aide/interop/mcp/**
+  - .aide/reports/mcp-server-contract/**
+  - .aide/reports/mcp-server-contract-check/**
+  - .aide/reports/mcp-server-contract-repair/**
+  - .aide/reports/mcp-server-contract-repair-check/**
+  - .aide/interop/exports/**
+review_gate: needs_review
+recommended_next_task: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01
+mutation_authorized: false
+runtime_authorized: false
+network_authorized: false
+github_mutation_authorized: false

@@ -39,6 +39,45 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-MCP-SERVER-CONTRACT-01
+
+Completed for review as an acceptance task.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/**`
+- `.aide/reports/mcp-server-contract-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is
+`minimal_mcp_server_contract`: a deterministic, contract-only projection of the
+pinned MCP `2025-11-25` and JSON-RPC `2.0` subset for AIDE catalogues,
+fixtures, refusal mappings, transport expectations, authorization expectations,
+conformance expectations, structural validation, inspection, and reporting.
+
+The original failed check remains historical evidence. Its two material
+findings were repaired and independently rechecked: absent pagination cursor
+fields are omitted, present cursor values must be strings, and the
+resource-not-found fixture uses `-32002` while custom AIDE refusal codes remain
+unchanged.
+
+No MCP schema, helper, focused test, fixture, build report, failed-check report,
+repair report, repair-check report, accepted Interop Export artifact, runtime,
+provider, worker, host, VCS, network, GitHub, release, or target-repository file
+was modified. No live MCP server, transport, endpoint, authorization, resource
+serving, prompt serving, tool execution, worker dispatch, provider/model call,
+PatchTransaction apply, branch/worktree automation, A2A, Host Contract,
+Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production
+readiness was implemented.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01
+```
+
 ## Work Item: AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01
 
 Completed for review as an independent repair check.

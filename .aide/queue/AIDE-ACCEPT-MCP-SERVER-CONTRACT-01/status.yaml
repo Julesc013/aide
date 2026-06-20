@@ -1,0 +1,103 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-MCP-SERVER-CONTRACT-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-20
+summary: Accepted the minimal contract-only MCP projection with warnings.
+validation_status: PASS
+accepted_capability: minimal_mcp_server_contract
+target_protocol_version: "2025-11-25"
+jsonrpc_version: "2.0"
+source_chain_reviewed: true
+historical_failure_preserved: true
+material_findings: 0
+pagination_repair_accepted: true
+resource_not_found_code_accepted: -32002
+custom_refusal_codes_preserved: true
+contract_projection_performed: true
+fixture_generation_performed: true
+structural_validation_performed: true
+server_process_started: false
+stdio_transport_started: false
+http_transport_started: false
+http_endpoint_bound: false
+network_call_performed: false
+resource_serving_performed: false
+tool_execution_performed: false
+prompt_serving_performed: false
+authorization_implemented: false
+credential_resolution_performed: false
+worker_dispatched: false
+model_or_provider_called: false
+patch_applied: false
+repository_target_mutated: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+trusted: false
+recommended_next_task: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01
+reports:
+  - .aide/reports/mcp-server-contract-accept/status.md
+  - .aide/reports/mcp-server-contract-accept/acceptance-report.json
+  - .aide/reports/mcp-server-contract-accept/acceptance-report.md
+  - .aide/reports/mcp-server-contract-accept/source-chain-review.md
+  - .aide/reports/mcp-server-contract-accept/historical-failure-review.md
+  - .aide/reports/mcp-server-contract-accept/accepted-scope.md
+  - .aide/reports/mcp-server-contract-accept/schema-helper-acceptance.md
+  - .aide/reports/mcp-server-contract-accept/protocol-jsonrpc-review.md
+  - .aide/reports/mcp-server-contract-accept/lifecycle-capability-review.md
+  - .aide/reports/mcp-server-contract-accept/pagination-repair-acceptance.md
+  - .aide/reports/mcp-server-contract-accept/resource-error-repair-acceptance.md
+  - .aide/reports/mcp-server-contract-accept/resource-catalog-acceptance.md
+  - .aide/reports/mcp-server-contract-accept/tool-catalog-acceptance.md
+  - .aide/reports/mcp-server-contract-accept/prompt-catalog-acceptance.md
+  - .aide/reports/mcp-server-contract-accept/refusal-mapping-acceptance.md
+  - .aide/reports/mcp-server-contract-accept/transport-expectation-review.md
+  - .aide/reports/mcp-server-contract-accept/authorization-boundary-review.md
+  - .aide/reports/mcp-server-contract-accept/aide-authority-boundary.md
+  - .aide/reports/mcp-server-contract-accept/runtime-fact-review.md
+  - .aide/reports/mcp-server-contract-accept/conformance-expectation-review.md
+  - .aide/reports/mcp-server-contract-accept/determinism-immutability-review.md
+  - .aide/reports/mcp-server-contract-accept/test-validation-review.md
+  - .aide/reports/mcp-server-contract-accept/warning-disposition.md
+  - .aide/reports/mcp-server-contract-accept/explicit-non-capabilities.md
+  - .aide/reports/mcp-server-contract-accept/remaining-risks.md
+  - .aide/reports/mcp-server-contract-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/baseline.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/accepted-interop-exports-baseline.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/evidence-completeness.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/historical-failure-preservation.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/schema-helper-acceptance.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/protocol-version-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/json-rpc-fixture-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/pagination-repair-acceptance.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/resource-error-code-acceptance.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/custom-refusal-preservation.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/lifecycle-capability-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/resource-catalogue-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/tool-catalogue-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/prompt-catalogue-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/transport-expectation-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/authorization-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/aide-authority-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/runtime-fact-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/conformance-expectation-review.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/focused-tests.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/independent-fixture-scan.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/validator-regression-probes.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/deterministic-projection.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/source-immutability.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-MCP-SERVER-CONTRACT-01/evidence/next-task-prompt.md
+warnings:
+  - No vendored full official MCP schema validation exists in this slice.
+  - No live MCP server, transport, endpoint, session, authorization, resource serving, prompt serving, tool execution, sampling, elicitation, MCP tasks, worker execution, provider/model/network call, runtime, or Service exists.
+  - Future aide://interop ReferenceID authority remains advisory; accepted ReferenceID law is not broadened by this acceptance.
+blockers: []
