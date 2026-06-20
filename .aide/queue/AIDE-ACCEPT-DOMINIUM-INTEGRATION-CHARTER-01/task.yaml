@@ -1,0 +1,107 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
+title: Accept Planning-Only AIDE-Dominium Integration Charter
+task_type: acceptance
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+created_at: 2026-06-21
+updated_at: 2026-06-21
+profile: .aide/profile.yaml
+queue_policy: .aide/queue/policy.yaml
+canonical_queue: .aide/queue/index.yaml
+source_chain:
+  - task_id: AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01
+    result: ACCEPTED_WITH_WARNINGS
+    accepted_capability: minimal_a2a_agent_card_contract
+    evidence_missing: 0
+  - task_id: AIDE-DOMINIUM-INTEGRATION-CHARTER-01
+    result: PASS_WITH_WARNINGS
+    commit: 5b80e4c4c3c400e2a3ccf8d2c42cfb44c3d6aa28
+    evidence_missing: 0
+  - task_id: AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01
+    result: PASS_WITH_WARNINGS
+    commit: 2af8bb2108eb5fdf281105c98429ac4491372ed1
+    evidence_missing: 0
+    material_findings: 0
+accepted_planning_artifact: aide_dominium_integration_charter_v0
+accepted_scope:
+  - semantic ownership decisions
+  - source-of-truth hierarchy
+  - namespace ownership
+  - stable-reference mappings
+  - object mappings
+  - command/result/refusal mappings
+  - diagnostic mappings
+  - evidence mappings
+  - event mappings
+  - transaction composition
+  - Host/Bridge/Provider/Experience boundaries
+  - Workbench non-authority law
+  - compatibility policy
+  - security and authority policy
+  - failure and recovery policy
+  - first read-only seam plan
+  - first validation-slice plan
+  - critical-path DAG
+  - parallel read-only lane plan
+  - turn-size policy
+  - milestone definitions
+explicit_non_capabilities:
+  - Host Contract implementation
+  - Host SDK
+  - Dominium Bridge implementation
+  - bridge conformance
+  - Workbench AIDE module
+  - Workbench AIDE workspace
+  - cross-repo command invocation
+  - local store
+  - local service
+  - event-store runtime
+  - artifact-store runtime
+  - scheduler
+  - leases
+  - supervisor
+  - PrincipalIdentity
+  - AdmissionRecord
+  - PolicyDecision
+  - CapabilityGrant
+  - CapabilityInvocation
+  - ExecutionReceipt
+  - DevelopmentTransaction
+  - PreviewSession
+  - ShadowWorkspace
+  - document preview/apply/rollback
+  - scene preview/apply/undo
+  - provider/model calls
+  - worker execution
+  - network calls
+  - PatchTransaction apply
+  - target mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/**
+  - .aide/reports/dominium-integration-charter-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/**
+  - .aide/reports/dominium-integration-charter/**
+  - .aide/queue/AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01/**
+  - .aide/reports/dominium-integration-charter-check/**
+  - C:/Projects/Dominium/dominium/**
+  - .aide/protocol/**
+  - core/**
+  - .aide/scripts/**
+  - .aide/interop/**
+  - .aide/knowledge/**
+  - .aide/repo/**
+review_gate: needs_review
+recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+mutation_authorized: false
+runtime_authorized: false
+network_authorized: false
+github_mutation_authorized: false

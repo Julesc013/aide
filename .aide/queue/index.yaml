@@ -1658,6 +1658,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01/evidence
     description: Check-only independent review of AIDE-DOMINIUM-INTEGRATION-CHARTER-01. Compares the charter-pinned Dominium snapshot c92b386027890c1bbf14aef6eaafe0357b7b03dd with current remote Dominium main 623ab08ae8c867719d5abc2e60c16a6fbb37b313 using read-only remote/object inspection, classifies the 24-commit delta and changed public docs as warning-class, verifies canonical queue/canon/planning/contract/audit inputs remain unchanged, verifies source chain, ownership, namespaces, mappings, Workbench non-authority, security, recovery, seam, validation slice, DAG, and report consistency, stops at needs_review with PASS_WITH_WARNINGS, and recommends AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01 only. Does not repair the charter, modify Dominium, implement Host Contract, Dominium Bridge, Workbench, runtime, service, provider/model/network calls, workers, preview/apply/rollback, repository mutation, downstream seam tasks, release, or promotion.
+  - id: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Planning-Only AIDE-Dominium Integration Charter
+    task: .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence
+    description: Acceptance/consolidation gate for the planning-only AIDE-Dominium integration charter. Accepts only the planning-contract identity aide_dominium_integration_charter_v0 after verifying the A2A acceptance, charter build, independent remote-freshness/semantic check, zero material findings, current remote Dominium main baseline, ownership, source-of-truth, namespace, mapping, Workbench non-authority, transaction, compatibility, security, recovery, seam, validation-slice, DAG, and warning evidence. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01 only. Does not repair the charter, modify Dominium, materialize downstream seam tasks, implement Host Contract, Dominium Bridge, Workbench, runtime, service, provider/model/network calls, workers, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, promotion, or cross-repository integration.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

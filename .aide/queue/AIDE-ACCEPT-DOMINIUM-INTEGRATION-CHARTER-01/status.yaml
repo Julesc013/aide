@@ -1,0 +1,113 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-21
+summary: Accepted the planning-only AIDE-Dominium integration charter with warnings.
+validation_status: PASS
+accepted_planning_artifact: aide_dominium_integration_charter_v0
+source_chain_reviewed: true
+source_chain_material_findings: 0
+aide_head_at_start: 2af8bb2108eb5fdf281105c98429ac4491372ed1
+aide_branch_status_at_start: "## main...origin/main"
+source_a2a_task: AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01
+source_a2a_result: ACCEPTED_WITH_WARNINGS
+source_a2a_missing_evidence: 0
+source_charter_task: AIDE-DOMINIUM-INTEGRATION-CHARTER-01
+source_charter_result: PASS_WITH_WARNINGS
+source_charter_missing_evidence: 0
+source_charter_commit: 5b80e4c4c3c400e2a3ccf8d2c42cfb44c3d6aa28
+source_check_task: AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01
+source_check_result: PASS_WITH_WARNINGS
+source_check_missing_evidence: 0
+source_check_commit: 2af8bb2108eb5fdf281105c98429ac4491372ed1
+source_check_material_finding_count: 0
+dominium_pinned_head: c92b386027890c1bbf14aef6eaafe0357b7b03dd
+dominium_check_remote_main_head: 623ab08ae8c867719d5abc2e60c16a6fbb37b313
+dominium_current_remote_main_head: 623ab08ae8c867719d5abc2e60c16a6fbb37b313
+dominium_remote_baseline_current: true
+dominium_remote_delta_since_check: false
+dominium_local_branch_status: "## main...origin/main [behind 24]"
+dominium_files_modified: false
+charter_files_modified: false
+check_files_modified: false
+downstream_queue_tasks_materialized: false
+host_contract_implemented: false
+dominium_bridge_implemented: false
+workbench_implemented: false
+runtime_implemented: false
+service_implemented: false
+provider_or_model_called: false
+worker_executed: false
+network_call_performed: false
+patch_transaction_applied: false
+repository_target_mutated: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+reports:
+  - .aide/reports/dominium-integration-charter-accept/status.md
+  - .aide/reports/dominium-integration-charter-accept/acceptance-report.json
+  - .aide/reports/dominium-integration-charter-accept/acceptance-report.md
+  - .aide/reports/dominium-integration-charter-accept/source-chain-review.md
+  - .aide/reports/dominium-integration-charter-accept/remote-freshness-confirmation.md
+  - .aide/reports/dominium-integration-charter-accept/accepted-scope.md
+  - .aide/reports/dominium-integration-charter-accept/source-of-truth-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/semantic-ownership-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/namespace-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/object-mapping-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/command-refusal-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/diagnostic-evidence-event-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/transaction-composition-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/host-bridge-provider-experience-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/workbench-non-authority-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/compatibility-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/security-authority-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/failure-recovery-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/readonly-seam-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/validation-slice-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/task-graph-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/turn-size-policy-acceptance.md
+  - .aide/reports/dominium-integration-charter-accept/warning-disposition.md
+  - .aide/reports/dominium-integration-charter-accept/explicit-non-capabilities.md
+  - .aide/reports/dominium-integration-charter-accept/remaining-risks.md
+  - .aide/reports/dominium-integration-charter-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/baseline.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/evidence-completeness.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/remote-freshness.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/changed-path-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/source-of-truth-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/ownership-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/namespace-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/object-mapping-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/command-refusal-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/diagnostic-evidence-event-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/transaction-composition-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/workbench-authority-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/security-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/failure-recovery-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/seam-and-validation-slice-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/dag-and-dependency-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/downstream-task-absence-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/dominium-immutability-review.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence/next-task-recommendation.md
+warnings:
+  - The accepted artifact is planning-only and is not an executable capability.
+  - Local Dominium main remains behind remote main by 24 commits.
+  - The read-only seam is absent.
+  - Host Contract is absent.
+  - Dominium Bridge is absent.
+  - Workbench integration is absent.
+  - Runtime, service, preview, apply, rollback, worker execution, provider/model calls, and network calls remain absent.
+blockers: []

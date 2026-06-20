@@ -1,0 +1,3 @@
+# Explicit Non-Capabilities
+
+Acceptance does not provide Host Contract implementation, Host SDK, Dominium Bridge implementation, bridge conformance, Workbench AIDE module, Workbench AIDE workspace, cross-repo command invocation, local store, local service, event-store runtime, artifact-store runtime, scheduler, leases, supervisor, PrincipalIdentity, AdmissionRecord, PolicyDecision, CapabilityGrant, CapabilityInvocation, ExecutionReceipt, DevelopmentTransaction, PreviewSession, ShadowWorkspace, document preview/apply/rollback, scene preview/apply/undo, provider/model calls, worker execution, network calls, PatchTransaction apply, target mutation, branch/worktree automation, GitHub mutation, release, or promotion.

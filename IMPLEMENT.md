@@ -39,6 +39,30 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
+
+Completed for review as an acceptance task.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/**`
+- `.aide/reports/dominium-integration-charter-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `ACCEPTED_WITH_WARNINGS`. The accepted planning artifact is `aide_dominium_integration_charter_v0`: the ownership, mapping, compatibility, authority, recovery, and task-sequencing plan for a future AIDE-Dominium integration.
+
+The acceptance verified the A2A predecessor, charter build, and independent check source chain; confirmed `missing_evidence: 0` for source tasks; confirmed check material findings remain zero; confirmed current remote Dominium `main` still equals `623ab08ae8c867719d5abc2e60c16a6fbb37b313`; and preserved warnings that local Dominium is behind remote and that the charter is planning-only.
+
+No charter repair, Dominium modification, downstream queue task materialization, Host Contract, Dominium Bridge, Workbench, runtime, service, provider/model/network call, worker execution, preview, apply, rollback, repository mutation, branch/worktree automation, GitHub mutation, release, promotion, or cross-repository integration was performed or authorized.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+```
+
 ## Work Item: AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01
 
 Completed for review as a check-only task.

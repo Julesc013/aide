@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
+
+- Title: Accept Planning-Only AIDE-Dominium Integration Charter
+- Status: needs_review
+- Objective: accept the planning-only AIDE-Dominium integration charter after consolidating the charter build, independent remote freshness and semantic check, source-chain evidence, and warning disposition.
+- Scope: acceptance task/evidence, `.aide/reports/dominium-integration-charter-accept/**`, queue index, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/task.yaml`.
+- Dependencies: A2A AgentCard acceptance, `AIDE-DOMINIUM-INTEGRATION-CHARTER-01` at `PASS_WITH_WARNINGS`, `AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01` at `PASS_WITH_WARNINGS`, missing evidence zero, zero material findings, charter commit `5b80e4c4c3c400e2a3ccf8d2c42cfb44c3d6aa28`, check commit `2af8bb2108eb5fdf281105c98429ac4491372ed1`, and remote Dominium `main` freshness.
+- Milestones: source chain verified; remote Dominium freshness confirmed; accepted scope, warnings, and non-capabilities recorded; source hierarchy, ownership, namespace, mapping, transaction, Workbench, compatibility, security, recovery, seam, validation-slice, DAG, and turn-size policy accepted; evidence and reports materialized; validation run.
+- Blockers: none. Warnings: charter is planning-only; local Dominium remains behind remote by 24 commits; read-only seam, Host Contract, Bridge, Workbench, runtime, service, preview/apply/rollback, workers, providers, and network behavior remain absent.
+- Verification Intent: parse acceptance JSON, inspect source tasks/evidence, confirm remote Dominium HEAD read-only, run source-chain consistency, ownership, namespace, object-mapping, DAG, dependency, mutation-prerequisite, downstream-task absence, Dominium immutability, secret, broad validation, diff, and commit-policy checks.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted planning artifact `aide_dominium_integration_charter_v0`, no implementation, no Dominium writes, no downstream task materialization, and exactly one next task recommendation.
+- Notes: next serialized task is `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01`.
+
 ### Plan ID: AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01
 
 - Title: Independent Cross-Repository Check Of The AIDE-Dominium Integration Charter

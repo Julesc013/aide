@@ -1,0 +1,99 @@
+{
+  "schema_version": "aide.dominium_integration_charter_accept.report.v0",
+  "task_id": "AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_planning_artifact": "aide_dominium_integration_charter_v0",
+  "correct_interpretation": "AIDE has accepted the ownership, mapping, compatibility, authority, recovery, and task-sequencing plan for a future AIDE-Dominium integration.",
+  "forbidden_interpretation": "AIDE and Dominium are integrated.",
+  "source_chain": [
+    {
+      "task_id": "AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01",
+      "result": "ACCEPTED_WITH_WARNINGS",
+      "missing_evidence": 0,
+      "accepted_capability": "minimal_a2a_agent_card_contract"
+    },
+    {
+      "task_id": "AIDE-DOMINIUM-INTEGRATION-CHARTER-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "5b80e4c4c3c400e2a3ccf8d2c42cfb44c3d6aa28",
+      "missing_evidence": 0
+    },
+    {
+      "task_id": "AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "2af8bb2108eb5fdf281105c98429ac4491372ed1",
+      "missing_evidence": 0,
+      "material_finding_count": 0
+    }
+  ],
+  "dominium_freshness": {
+    "charter_pinned_head": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+    "check_remote_main_head": "623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+    "current_remote_main_head": "623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+    "baseline_current": true,
+    "remote_delta_since_check": false,
+    "local_checkout_current": false,
+    "local_checkout_status": "behind remote main by 24 commits"
+  },
+  "accepted_scope": [
+    "semantic ownership decisions",
+    "source-of-truth hierarchy",
+    "namespace ownership",
+    "stable-reference mappings",
+    "object mappings",
+    "command/result/refusal mappings",
+    "diagnostic mappings",
+    "evidence mappings",
+    "event mappings",
+    "transaction composition",
+    "Host/Bridge/Provider/Experience boundaries",
+    "Workbench non-authority law",
+    "compatibility policy",
+    "security and authority policy",
+    "failure and recovery policy",
+    "first read-only seam plan",
+    "first validation-slice plan",
+    "critical-path DAG",
+    "parallel read-only lane plan",
+    "turn-size policy",
+    "milestone definitions"
+  ],
+  "semantic_owners": {
+    "AIDE": "generic governance, coordination, portable protocol envelopes",
+    "Dominium": "product and domain meaning",
+    "Domino": "deterministic execution, replay, apply, undo, simulation mechanics",
+    "Workbench": "presentation, context capture, preview, approval interaction, apply requests"
+  },
+  "first_readonly_seam_program": [
+    "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01",
+    "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+    "AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01"
+  ],
+  "runtime_facts": {
+    "cross_repository_integration_exists": false,
+    "host_contract_exists": false,
+    "dominium_bridge_exists": false,
+    "workbench_integration_exists": false,
+    "runtime_exists": false,
+    "service_exists": false,
+    "commands_can_be_invoked_cross_repo": false,
+    "mutations_can_be_previewed_or_applied": false,
+    "provider_or_model_called": false,
+    "worker_executed": false,
+    "network_call_performed": false,
+    "repository_target_mutated": false,
+    "branch_or_worktree_created": false,
+    "github_mutation_performed": false,
+    "release_or_promotion_performed": false
+  },
+  "warnings": [
+    "The charter is planning-only and does not prove integration.",
+    "Local Dominium main remains behind remote main by 24 commits.",
+    "The read-only seam is absent.",
+    "Host Contract is absent.",
+    "Dominium Bridge is absent.",
+    "Workbench integration is absent.",
+    "Runtime, service, preview/apply/rollback, worker execution, provider/model calls, and network calls remain absent."
+  ],
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01"
+}
