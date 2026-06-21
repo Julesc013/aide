@@ -1,15 +1,15 @@
 {
   "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "base_bundle_sha256": "sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc",
   "expected_error_codes": [
     "authority.role"
   ],
-  "invalid_bundle_sha256": "sha256:540a6b57142f92f3a4c5229910eacdd46c17d2b108b84f6f9ef4c67f2892e41f",
+  "invalid_bundle_sha256": "sha256:6bc33f5f9822f9d5396e8bbda4abda3bf0f7ddb19c368518981c40541ef0a45f",
   "name": "wrong_authority_role",
   "operations": [
     {
       "op": "replace",
-      "path": "/metadata/authority_role",
+      "path": "/records/host_manifest/metadata/authority_role",
       "value": "canonical_truth"
     }
   ],

@@ -2,171 +2,380 @@
   "aggregate_validation_status": "PASS_WITH_WARNINGS",
   "expectation_count": 23,
   "passed_count": 23,
-  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
   "results": [
     {
+      "assertion_id": "seam.contract.parses",
       "description": "contract parsing",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.contract.parses"
+      ],
+      "expected": {
+        "apiVersion": "aide.dev/v1alpha1",
+        "kind": "DominiumReadonlySeamBundle"
+      },
       "id": "dominium-readonly-seam-01",
-      "observation": "bundle contract parsed",
+      "observed": {
+        "apiVersion": "aide.dev/v1alpha1",
+        "kind": "DominiumReadonlySeamBundle"
+      },
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.identity.unique",
       "description": "stable identity",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.identity.unique"
+      ],
+      "expected": "unique record metadata ids",
       "id": "dominium-readonly-seam-02",
-      "observation": "record identities are unique",
+      "observed": 42,
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.repository.identity_exact",
       "description": "exact repository identity",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.repository.identity_exact"
+      ],
+      "expected": "github.com/julesc013/dominium",
       "id": "dominium-readonly-seam-03",
-      "observation": "repository identity is exact",
+      "observed": "github.com/julesc013/dominium",
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.source.read_only",
       "description": "read-only source access",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.source.read_only"
+      ],
+      "expected": {
+        "git_fetch": false,
+        "git_pull": false
+      },
       "id": "dominium-readonly-seam-04",
-      "observation": "source access is read-only",
+      "observed": {
+        "dominium_command_invocation": false,
+        "dominium_file_write": false,
+        "git_checkout": false,
+        "git_fetch": false,
+        "git_pull": false,
+        "remote_ref_update": false
+      },
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.source.no_writes",
       "description": "no cross-repo writes",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.source.no_writes"
+      ],
+      "expected": false,
       "id": "dominium-readonly-seam-05",
-      "observation": "no Dominium file writes recorded",
+      "observed": false,
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.snapshot.digest",
       "description": "deterministic snapshot",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.snapshot.digest"
+      ],
+      "expected": "sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8",
       "id": "dominium-readonly-seam-06",
-      "observation": "snapshot digest recomputes",
+      "observed": "sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8",
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.projection.digest",
       "description": "deterministic projection",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.projection.digest"
+      ],
+      "expected": "sha256:462607fb7c177bfd3a3ea96901118677eafce54d1a473de92d46af854239ea0d",
       "id": "dominium-readonly-seam-07",
-      "observation": "projection index digest recomputes",
+      "observed": "sha256:462607fb7c177bfd3a3ea96901118677eafce54d1a473de92d46af854239ea0d",
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.source.digest_binding",
       "description": "source digest binding",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.source.digest_binding"
+      ],
+      "expected": "no matching validation errors",
       "id": "dominium-readonly-seam-08",
-      "observation": "no digest.source validation errors",
+      "observed": [],
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.bundle.self_digest",
       "description": "bundle self digest binding",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.bundle.self_digest"
+      ],
+      "expected": "sha256:3b86c84c0379b276e439e6510d56685647b308bb24459afe3edf3c172617f8ed",
       "id": "dominium-readonly-seam-09",
-      "observation": "bundle self digest recomputes",
+      "observed": "sha256:3b86c84c0379b276e439e6510d56685647b308bb24459afe3edf3c172617f8ed",
       "result": "PASS"
     },
     {
-      "description": "mapping completeness",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "assertion_id": "seam.mapping.complete_bounded",
+      "description": "bounded mapping completeness",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.mapping.complete_bounded"
+      ],
+      "expected": [
+        "ArtifactReference",
+        "ContextDescriptor",
+        "DiagnosticProjection",
+        "DominiumBridgeManifest",
+        "EventEnvelope",
+        "EvidenceReferenceSet",
+        "HostCapabilitySet",
+        "HostManifest",
+        "RefusalProjection",
+        "WorkspaceDescriptor"
+      ],
       "id": "dominium-readonly-seam-10",
-      "observation": "all seam kinds are present",
+      "observed": [
+        "ArtifactReference",
+        "ContextDescriptor",
+        "DiagnosticProjection",
+        "DominiumBridgeManifest",
+        "EventEnvelope",
+        "EvidenceReferenceSet",
+        "HostCapabilitySet",
+        "HostManifest",
+        "RefusalProjection",
+        "WorkspaceDescriptor"
+      ],
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.authority.preserved",
       "description": "authority preservation",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.authority.preserved"
+      ],
+      "expected": "no matching validation errors",
       "id": "dominium-readonly-seam-11",
-      "observation": "no authority. validation errors",
+      "observed": [],
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.workbench.non_authority",
       "description": "Workbench non-authority",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.workbench.non_authority"
+      ],
+      "expected": "presentation, context capture, preview, approval interaction, apply requests",
       "id": "dominium-readonly-seam-12",
-      "observation": "Workbench remains non-authoritative",
+      "observed": "presentation, context capture, preview, approval interaction, apply requests",
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.refusal.typed",
       "description": "refusal typing",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.refusal.typed"
+      ],
+      "expected": "no matching validation errors",
       "id": "dominium-readonly-seam-13",
-      "observation": "no refusal. validation errors",
+      "observed": [],
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.diagnostic.typed",
       "description": "diagnostic typing",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.diagnostic.typed"
+      ],
+      "expected": "no matching validation errors",
       "id": "dominium-readonly-seam-14",
-      "observation": "no diagnostic. validation errors",
+      "observed": [],
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.evidence.closed",
       "description": "evidence linkage",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.evidence.closed"
+      ],
+      "expected": "no matching validation errors",
       "id": "dominium-readonly-seam-15",
-      "observation": "no reference.closure validation errors",
+      "observed": [],
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.event.correlated",
       "description": "event correlation",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.event.correlated"
+      ],
+      "expected": "no matching validation errors",
       "id": "dominium-readonly-seam-16",
-      "observation": "no event. validation errors",
+      "observed": [],
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.compatibility.bounded",
       "description": "version compatibility",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.compatibility.bounded"
+      ],
+      "expected": true,
       "id": "dominium-readonly-seam-17",
-      "observation": "read-old/write-current metadata is present",
+      "observed": true,
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.unsupported_operations.refused",
       "description": "unsupported-operation refusal",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.unsupported_operations.refused"
+      ],
+      "expected": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
       "id": "dominium-readonly-seam-18",
-      "observation": "unsupported verbs are routed to the independent repair check",
+      "observed": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.network.absent",
       "description": "no provider/model/network activity",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.network.absent"
+      ],
+      "expected": {
+        "network_call_performed": false,
+        "provider_or_model_called": false
+      },
       "id": "dominium-readonly-seam-19",
-      "observation": "network/provider/model activity absent",
+      "observed": {
+        "branch_or_worktree_created": false,
+        "bridge_runtime_started": false,
+        "bundle_projected": true,
+        "database_opened": false,
+        "dominium_command_invoked": false,
+        "generated_projection_marked_canonical": false,
+        "github_mutation_performed": false,
+        "host_runtime_started": false,
+        "network_call_performed": false,
+        "patch_transaction_applied": false,
+        "preview_or_apply_performed": false,
+        "provider_or_model_called": false,
+        "release_or_promotion_performed": false,
+        "service_started": false,
+        "source_repository_mutated": false,
+        "target_repository_mutated": false,
+        "transport_started": false,
+        "workbench_started": false,
+        "worker_executed": false
+      },
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.worker.absent",
       "description": "no worker execution",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.worker.absent"
+      ],
+      "expected": false,
       "id": "dominium-readonly-seam-20",
-      "observation": "worker execution absent",
+      "observed": false,
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.mutation.absent",
       "description": "no mutation",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.mutation.absent"
+      ],
+      "expected": [
+        "dominium.branch.create",
+        "dominium.command.invoke",
+        "dominium.patch.apply",
+        "dominium.provider.call",
+        "dominium.release.publish",
+        "dominium.service.start",
+        "dominium.source.write",
+        "dominium.worker.execute",
+        "dominium.worktree.create"
+      ],
       "id": "dominium-readonly-seam-21",
-      "observation": "mutation capabilities are forbidden",
+      "observed": [
+        "dominium.branch.create",
+        "dominium.command.invoke",
+        "dominium.patch.apply",
+        "dominium.provider.call",
+        "dominium.release.publish",
+        "dominium.service.start",
+        "dominium.source.write",
+        "dominium.worker.execute",
+        "dominium.worktree.create"
+      ],
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.non_capabilities.preserved",
       "description": "explicit non-capabilities",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.non_capabilities.preserved"
+      ],
+      "expected": [
+        "dominium_command_invocation",
+        "host_runtime",
+        "host_sdk",
+        "workbench_implementation",
+        "bridge_runtime",
+        "service",
+        "database_runtime",
+        "transport",
+        "network_call",
+        "provider_model_call",
+        "worker_execution",
+        "patch_transaction_apply",
+        "preview_apply_rollback",
+        "target_repository_mutation",
+        "branch_worktree_automation",
+        "github_mutation",
+        "release_or_promotion"
+      ],
       "id": "dominium-readonly-seam-22",
-      "observation": "explicit non-capabilities preserved",
+      "observed": [
+        "dominium_command_invocation",
+        "host_runtime",
+        "host_sdk",
+        "workbench_implementation",
+        "bridge_runtime",
+        "service",
+        "database_runtime",
+        "transport",
+        "network_call",
+        "provider_model_call",
+        "worker_execution",
+        "patch_transaction_apply",
+        "preview_apply_rollback",
+        "target_repository_mutation",
+        "branch_worktree_automation",
+        "github_mutation",
+        "release_or_promotion"
+      ],
       "result": "PASS"
     },
     {
+      "assertion_id": "seam.negative_fixtures.replay",
       "description": "replayable negative fixtures",
-      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json#/assertions/seam.negative_fixtures.replay"
+      ],
+      "expected": "all negative fixture expected codes observed",
       "id": "dominium-readonly-seam-23",
-      "observation": "negative fixture replay has a complete base bundle",
+      "observed": [],
       "result": "PASS"
     }
   ],
-  "schema_version": "aide.dominium-readonly-seam.conformance-results.v1",
+  "schema_version": "aide.dominium-readonly-seam.conformance-results.v2",
   "status": "PASS_WITH_WARNINGS",
-  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
 }

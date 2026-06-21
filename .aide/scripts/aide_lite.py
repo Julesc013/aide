@@ -34566,6 +34566,7 @@ def command_dominium_seam_validate(args: argparse.Namespace) -> int:
             repo_root,
             dominium_root=_dominium_root_arg(args),
             revision=_dominium_revision_arg(args),
+            project=False,
         )
     except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
         print("AIDE Lite dominium-seam validate")

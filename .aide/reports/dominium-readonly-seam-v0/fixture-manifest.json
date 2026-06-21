@@ -3,131 +3,131 @@
   "fixtures": [
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/absolute_path_escape.json",
-      "sha256": "sha256:04ef860078e83c846ca2dff60f445a0b11d77089ad76cfe87bade3cea23213dc"
+      "sha256": "sha256:6ab9b21ce47ebce53861282b088a61ff54defdbb00dad8657d73553b71698b07"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/arbitrary_diagnostic_severity.json",
-      "sha256": "sha256:4e66be7d65b525dd429be9537758a5ac46f7ef09fe0c0a3810822c0adba17214"
+      "sha256": "sha256:88598034407e43ad32954e9a47041944e1b84a8e7dd2d1b577a385800000df71"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/broken_evidence_ref.json",
-      "sha256": "sha256:2cab19df0e760858d93e13a94c74bd3bb161dd58b8ec701e1f3976a99afad6d5"
+      "sha256": "sha256:99c6a12f82e42808e70327b9852bd8deb2527a540aea6b927715d3a91ca19485"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/conflicting_ownership.json",
-      "sha256": "sha256:1464bae0642918cc38d56c622eedc701ad2b57a42a631cc21eb23eaff4f24fc5"
+      "sha256": "sha256:ac480d9ce41b053811649313afa897dc9b3930a21a52b02703e08b2b698a47f8"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/dangling_artifact_reference.json",
-      "sha256": "sha256:60654d5236754cf25204b1380159ab6ecc8575bba25fe6342592d571665cfd28"
+      "sha256": "sha256:90297ab4a143d79e3b464ec8665a2c7c263e793977f887f152b235b5733b397f"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/digest_mismatch.json",
-      "sha256": "sha256:37be1a551b79a01ca6419eea4b94096826ec47196c70f5a8c313e51deb82ad9a"
+      "sha256": "sha256:eeef00ad3ae65b9191ae50eeb91d6b9d6240cb844665570a9d10bd44a63d17cc"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/duplicate_event_sequence.json",
-      "sha256": "sha256:19eabe54d88c34efb6cef7305e6e4bbfbcf2d585bcf460bbce72cccf7ac82097"
+      "sha256": "sha256:40b58a9241dc0ed99f21a84969c2ad363bd6c3458aa4f66e0592d617ec9e1070"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/duplicate_identity.json",
-      "sha256": "sha256:db9b1fd87bce50f626642fd20c0ff0c4c3d2fd0b46e1cd94d3635a9bad6d3a8d"
+      "sha256": "sha256:e53cf937c9fce1909bc99644e8a5337488327072ab06ed0cf11490a862a5c852"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/event_correlation_mismatch.json",
-      "sha256": "sha256:57e24777ed101f32c71dd93117594a56182e508951a4d73b709c0550e70a4a19"
+      "sha256": "sha256:85cda1748209ea44b313d68e73db6d60588f8260f80c52dda6a64ba3f9ba61f2"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/generated_projection_marked_canonical.json",
-      "sha256": "sha256:7eb780e8cc062c91353bc6893c4a130acea4cbce21d9cfb9a2fcc14345379dfe"
+      "sha256": "sha256:6b7b0d2fd4dfef90585c3ad95b06be92043038b49d33ac37034cdeffbafb768b"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/invalid_diagnostic_severity.json",
-      "sha256": "sha256:dc17b5776b1e48d9e7db9d4bfbeda598b17db6a5b202ce4305238a5b96cd989f"
+      "sha256": "sha256:66815552de859d001919cf117bfcee5082c2e5f2576aa2507e9b97c40e773a86"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/invalid_reference_id.json",
-      "sha256": "sha256:c7347a2a6359a982c9172b2cb6fa5a95b292703784480d80be6ca6e7b7a6dafa"
+      "sha256": "sha256:689d23b454c5105b64e007d90ca0703ca8032f58fb30cb32b061710965b2df51"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/invalid_refusal_mapping.json",
-      "sha256": "sha256:a396922a81e8ec9a0bb841a1705dafa52df949060acef9ad5d9fb59dce23d440"
+      "sha256": "sha256:4388efd54e34ae9094f03a55a72ca7b1e81a93e0f9ef2dd343eb0fe697cfab66"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/invented_refusal.json",
-      "sha256": "sha256:7a20f52fa9a11970d5cc1290c7055e0303c166f304cc51e0684ad1b13b2e6a17"
+      "sha256": "sha256:1ae98b7edc269917b698bd4b03d2dc4ba16b547fb7cb31eaffdad77fda388b0f"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/missing_host_id.json",
-      "sha256": "sha256:56c6744dc91e202b2d1ca87a6c75ce110159a4639b9b542f91e196b8ba8d2c3f"
+      "sha256": "sha256:8a9fe6f8a9b97b31b2fd0048c198ff151028757b115e3cddb143215fb64e2c9c"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/missing_required_contract.json",
-      "sha256": "sha256:32bc24d4f2926901a7fbb8931c76d51be6f9759b576b9659e66aeccc83860382"
+      "sha256": "sha256:2af297aca36f82404bdd3bd947b57b0d101b8977a9138c2a885af5d922573647"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/mixed_record_revision.json",
-      "sha256": "sha256:7f110d0eabfbf96f15c64811203d50e866351738492898f4fa6ec29e0daa47ca"
+      "sha256": "sha256:1f51c3c8f24034e01c6e84e405b3d8f3ae50934297420249327a4cd3667cb10c"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/mutation_capability_claim.json",
-      "sha256": "sha256:deb5045f3c4b3360cc4b3d2925e7ef69d56fe29fa441c95dbb016b1a9fc21692"
+      "sha256": "sha256:0aa4802f2fd64b5a880f9f17e9472691050215e87d98bb7a5b1b09d15edbef56"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/mutation_capability_labeled_readonly.json",
-      "sha256": "sha256:372b1feeb8d3c284b88fcdbc98512c1ea4d52d82b69da72e0134ed79b21fcc1b"
+      "sha256": "sha256:b42ebf8f803d3d1bd61e9fd06b043c493eb5e816b9b0730e9d711784384339db"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/non_deterministic_ordering.json",
-      "sha256": "sha256:0dbc8932f2e71a7d180f6ee304a84d91a1d72e01309560292d66fd31019d8e65"
+      "sha256": "sha256:b6498672c91aed2b6fd64a4d54a997f371f96fbe139e3ef0f2f5c10e0725ebf0"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/path_traversal.json",
-      "sha256": "sha256:2585e494dd447ca1a14c49e02494c7adeb0ee21763580c17876540c4773e8ad9"
+      "sha256": "sha256:784aeeb6814a5a6aaf546db7e249e78070525ae87806c68269e780a8d8eff70e"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/private_tool_bypass_declaration.json",
-      "sha256": "sha256:e52b913c56fe9c70212714f84337e850c65b04f2fb30843aaaa403c590948f3e"
+      "sha256": "sha256:86cc1c0c3da231c1117e4df64cb096d3b95dc5e7c5ac7d0513add41872487f02"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/provider_network_worker_claim.json",
-      "sha256": "sha256:8c827e515555401bad14ce3579dc421f580d21c93dfca39bbfe57b4695edd41f"
+      "sha256": "sha256:f3082f04ea6db416841c4cd0f6d44d9d1ae0ba29cf3b335f074200ae2ba3ea44"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/second_host_capability_set.json",
-      "sha256": "sha256:ab6ad423f1f4e94fb1d7a935b152645a31ee0819fae41b50e3fbebe87b15ba7c"
+      "sha256": "sha256:1d0ef0d14ac2df60f469f1433f6b0585b78d07f33c9a09aeb6edd391bea37f3a"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/snapshot_digest_not_validated.json",
-      "sha256": "sha256:32de1131daa43e260300ab68f61991d2d7c22c4fa9d307272acb46446a07bc6c"
+      "sha256": "sha256:c5577e76c6998a049804df62892d48b5a7b86e28ebe926906bc356f91df9735a"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/stale_revision.json",
-      "sha256": "sha256:241013733c13bff22a0023a99485d7c20451be310f5d94d751cb3e4850e53c95"
+      "sha256": "sha256:7b496607b97d781e066ee2194018b26708a372ba7786315eca8fdcf8cdaf7df4"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/unknown_required_capability.json",
-      "sha256": "sha256:49c7553bc55d0fe0e114e58d2f9458dce03c4a9f5628b1df5b13b590a5a3147d"
+      "sha256": "sha256:6a1a6cb50c247f9fde476c7a706a4d795378d8e44a0a539e7c25ef378a491efa"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/unsupported_version.json",
-      "sha256": "sha256:01a18546938b3ba62c5c972bf3a7b51f20e6b188ea4663f880329da442b17d5b"
+      "sha256": "sha256:392efe2b4243cec4623bbf22b1e698ff61c2c0358c1f6729870c9ebc1769a785"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/workbench_authority_overclaim.json",
-      "sha256": "sha256:6dab02a9730de0b2a656ae4934fab1a3654d112408559f8de7b1cd5ca2b92e96"
+      "sha256": "sha256:0d18c53cc668e563e15a9bc3e30bd1a80dd5e258aa582bd2435065b46086f69f"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/wrong_authority_role.json",
-      "sha256": "sha256:04b923a522e964c670e824efa69152da49836b824c2a747dc721276cd5952e99"
+      "sha256": "sha256:99286e3818b14c0995be459033821e8a87b387e07a7b398aaed029c40961d005"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/wrong_repository_identity.json",
-      "sha256": "sha256:04a8f50d96883a01d4af025b039452558cf9f46113855f4ef3f195805f254f09"
+      "sha256": "sha256:fe12738d12cd477215f3482f40fb9af43e4f97290c1fc14bd4a97979ff14de02"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/negative/wrong_semantic_owner.json",
-      "sha256": "sha256:b10f3d7ee69efda110df484249c72d817d1302cf352533c7abd08e31a84aa37a"
+      "sha256": "sha256:f888bc81603bc78baddc6968ff9e807b811d1004ea3fc570614098189a94cc95"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/positive/artifact-references.json",
@@ -135,7 +135,7 @@
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/positive/complete-seam-bundle.json",
-      "sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9"
+      "sha256": "sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc"
     },
     {
       "path": ".aide/fixtures/dominium-readonly-seam/positive/context-descriptor.json",

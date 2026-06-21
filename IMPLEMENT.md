@@ -6830,3 +6830,66 @@ policy checks are recorded in the repair task evidence.
   provider/model/network calls, worker execution, preview/apply/rollback, and
   mutation remain absent.
 - Independent repair check is still required before acceptance.
+
+## Work Item: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/protocol/aide-dominium-readonly-seam-v0.schema.json`
+- `core/interop/dominium/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam.py`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam_repair_02.py`
+- `.aide/fixtures/dominium-readonly-seam/**`
+- `.aide/interop/dominium/**`
+- `.aide/reports/dominium-readonly-seam-v0/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair-02/**`
+- `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The independent Repair 01 check left ten targeted material gaps. This second
+repair fixes those gaps without changing the seam's authority boundary or
+advancing to the independent check/acceptance gate.
+
+### Implementation Notes
+
+- Added full diagnostic/refusal registry provenance disclosure, including
+  source path, digest, Git object metadata, source revision, projected IDs,
+  omitted IDs, and truncation disclosure.
+- Replaced the loose public seam schema record references with kind-specific
+  record/spec definitions and false-boundary status constraints.
+- Hardened replayable negative fixtures so expected error codes must all be
+  observed and executable fixture operations are refused.
+- Added assertion-level conformance evidence and preserved aggregate-only
+  conformance as `NOT_PROVEN`.
+- Extended the demo operation ledger with allowed operation counts, required
+  operation families, family descriptions, and instrumentation methods.
+- Added a runtime dependency manifest and isolated cross-process CLI
+  portability proof.
+- Updated the CLI validate path to validate an existing bundle instead of
+  rerunning the full projection when reports already exist.
+
+### Verification
+
+Python compilation, base seam tests, Repair 01 regression tests, Repair 02
+regression tests, live seam project/validate/diff/demo, portability proof,
+Dominium immutability checks, JSON parsing, task evidence checks, broad
+validation, secret-like scan, diff checks, and commit policy checks are
+recorded in the Repair 02 evidence.
+
+### Remaining Issues
+
+- The seam remains offline and read-only.
+- Local Dominium remains clean but behind `origin/main` by 24 commits.
+- Independent Repair 02 check is still required before acceptance.
+- Runtime, Workbench, bridge runtime, service, transport, provider/model/network
+  calls, worker execution, preview/apply/rollback, and mutation remain absent.

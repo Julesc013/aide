@@ -1,0 +1,25 @@
+{
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "schema_version": "aide.dominium-readonly-seam.repair-02-test-summary.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "tests": [
+    {
+      "command": "py -3 -u .aide/scripts/tests/test_aide_dominium_readonly_seam.py -v",
+      "count": 111,
+      "name": "base seam suite",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -u .aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py -v",
+      "count": 20,
+      "name": "repair regression suite",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -u .aide/scripts/tests/test_aide_dominium_readonly_seam_repair_02.py -v",
+      "count": 12,
+      "name": "repair 02 regression suite",
+      "result": "PASS"
+    }
+  ]
+}

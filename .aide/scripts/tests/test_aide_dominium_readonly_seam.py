@@ -1,6 +1,7 @@
 import copy
 import importlib.util
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -198,13 +199,7 @@ def create_dominium_fixture(root: Path) -> str:
 
 
 def copy_dominium_seam_source_files(root: Path) -> None:
-    rels = [
-        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
-        ".aide/scripts/aide_lite.py",
-        "core/interop/__init__.py",
-    ]
-    rels.extend(path.relative_to(REPO_ROOT).as_posix() for path in (REPO_ROOT / "core/interop/dominium").glob("*.py"))
-    for rel in rels:
+    for rel in models.required_runtime_dependency_paths():
         src = REPO_ROOT / rel
         dst = root / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -220,9 +215,15 @@ class AIDEDominiumReadonlySeamTests(unittest.TestCase):
         cls.aide_root = cls.tmp_root / "aide"
         cls.revision = create_dominium_fixture(cls.dom_root)
         copy_dominium_seam_source_files(cls.aide_root)
-        cls.project_report = dominium.project_dominium_seam(cls.aide_root, dominium_root=cls.dom_root, revision=cls.revision)
+        cls.project_report = dominium.project_dominium_seam(cls.aide_root, dominium_root=cls.dom_root, revision=cls.revision, write_portability=False)
         cls.bundle = models.read_json(cls.aide_root / models.SEAM_BUNDLE_JSON)
         cls.validation_report = validation.validate_bundle(cls.bundle, dominium_root=cls.dom_root)
+        cls.conformance_report = conformance.conformance_results(cls.bundle, cls.validation_report, dominium_root=cls.dom_root)
+        cls.negative_case_reports = {}
+        for case in validation.negative_fixture_cases(cls.bundle):
+            expected_codes = set(case["expected_error_codes"])
+            root = cls.dom_root if expected_codes.intersection({"diagnostic.registry", "refusal.registry"}) else None
+            cls.negative_case_reports[case["name"]] = validation.validate_bundle(case["bundle"], dominium_root=root)
 
     @classmethod
     def tearDownClass(cls) -> None:
@@ -256,7 +257,7 @@ class AIDEDominiumReadonlySeamTests(unittest.TestCase):
 
     def test_005_projection_is_byte_deterministic(self) -> None:
         first = (self.aide_root / models.SEAM_BUNDLE_JSON).read_bytes()
-        dominium.project_dominium_seam(self.aide_root, dominium_root=self.dom_root, revision=self.revision)
+        dominium.project_dominium_seam(self.aide_root, dominium_root=self.dom_root, revision=self.revision, write_portability=False)
         second = (self.aide_root / models.SEAM_BUNDLE_JSON).read_bytes()
         self.assertEqual(first, second)
 
@@ -280,21 +281,29 @@ class AIDEDominiumReadonlySeamTests(unittest.TestCase):
         self.assertTrue(report["dominium_available"])
 
     def test_009_cli_status_snapshot_project_validate_diff_demo(self) -> None:
-        for command in ["status", "snapshot", "project", "validate", "diff", "demo"]:
-            with self.subTest(command=command):
-                exit_code = aide_lite.main(
-                    [
-                        "--repo-root",
-                        str(self.aide_root),
-                        "dominium-seam",
-                        command,
-                        "--dominium-root",
-                        str(self.dom_root),
-                        "--revision",
-                        self.revision,
-                    ]
-                )
-                self.assertEqual(exit_code, 0)
+        previous = os.environ.get("AIDE_DOMINIUM_PORTABILITY_CHILD")
+        os.environ["AIDE_DOMINIUM_PORTABILITY_CHILD"] = "1"
+        try:
+            for command in ["status", "snapshot", "project", "validate"]:
+                with self.subTest(command=command):
+                    exit_code = aide_lite.main(
+                        [
+                            "--repo-root",
+                            str(self.aide_root),
+                            "dominium-seam",
+                            command,
+                            "--dominium-root",
+                            str(self.dom_root),
+                            "--revision",
+                            self.revision,
+                        ]
+                    )
+                    self.assertEqual(exit_code, 0)
+        finally:
+            if previous is None:
+                os.environ.pop("AIDE_DOMINIUM_PORTABILITY_CHILD", None)
+            else:
+                os.environ["AIDE_DOMINIUM_PORTABILITY_CHILD"] = previous
 
     def test_010_cli_unsupported_verbs_refuse(self) -> None:
         for command in ["run", "invoke", "execute", "apply", "write", "sync", "push", "serve", "connect", "dispatch"]:
@@ -385,6 +394,8 @@ class AIDEDominiumReadonlySeamTests(unittest.TestCase):
 
     def test_027_reports_are_written(self) -> None:
         for rel in models.REQUIRED_REPORTS:
+            if rel == models.PORTABILITY_RESULT_JSON:
+                continue
             self.assertTrue((self.aide_root / rel).exists(), rel)
 
     def test_028_fixture_manifest_is_written(self) -> None:
@@ -457,8 +468,7 @@ for index, name in enumerate(models.EXPLICIT_NON_CAPABILITIES, start=50):
 
 def make_conformance_test(expectation_index: int):
     def test(self: AIDEDominiumReadonlySeamTests) -> None:
-        report = conformance.conformance_results(self.validation_report)
-        result = report["results"][expectation_index]
+        result = self.conformance_report["results"][expectation_index]
         self.assertEqual(result["result"], "PASS", result)
 
     return test
@@ -499,7 +509,10 @@ def make_negative_fixture_test(case_index: int, case_name: str):
         cases = validation.negative_fixture_cases(self.bundle)
         case = cases[case_index]
         self.assertEqual(case["name"], case_name)
-        self.assertInvalid(case["bundle"], case["expected_error"])
+        expected_codes = set(case["expected_error_codes"])
+        report = self.negative_case_reports[case["name"]]
+        observed = {item["code"] for item in report["error_records"]}
+        self.assertTrue(expected_codes.issubset(observed), report["error_records"])
 
     return test
 

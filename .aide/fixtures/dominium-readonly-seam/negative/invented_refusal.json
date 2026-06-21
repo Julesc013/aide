@@ -1,10 +1,10 @@
 {
   "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "base_bundle_sha256": "sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc",
   "expected_error_codes": [
     "refusal.registry"
   ],
-  "invalid_bundle_sha256": "sha256:f6f531e29f3a6061bcf7a9db186a4150dd552335ab4295f263f9c9959fc934a7",
+  "invalid_bundle_sha256": "sha256:d26096f5c745c56831061b1a4a2dc7ebb7ac50881453b01ecb5b4d5908576730",
   "name": "invented_refusal",
   "operations": [
     {

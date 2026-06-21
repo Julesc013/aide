@@ -2052,3 +2052,14 @@
 - Verification Intent: Python compile checks, focused MCP contract tests, `mcp-server-contract status/project/validate`, predecessor validators, task inspect/evidence, broad validation, JSON parsing, deterministic projection, source immutability, unsupported command probes, secret-like scans, diff checks, and commit policy check.
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, projects static contract/catalogue/fixture/report artifacts, preserves no-runtime and no-authority boundaries, and recommends `AIDE-CHECK-MCP-SERVER-CONTRACT-01`.
 - Notes: This build does not start MCP, implement stdio or Streamable HTTP, authenticate clients, serve resources/prompts, execute tools, dispatch workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, scheduler, leases, supervisor, release, promotion, or production readiness.
+
+### Queue ID: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+
+- Title: Repair Offline Read-Only AIDE-Dominium Seam v0 Second Pass
+- Status: Needs Review
+- Objective: close the ten remaining material gaps from `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01` without broadening the offline read-only seam.
+- Scope: `.aide/protocol/aide-dominium-readonly-seam-v0.schema.json`, `core/interop/dominium/**`, `.aide/scripts/aide_lite.py`, focused seam tests, generated seam reports/fixtures, `.aide/interop/dominium/**`, `.aide/reports/dominium-readonly-seam-v0-repair-02/**`, `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted Dominium integration charter, seam build/check/repair/check source chain, and `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01` recommending this targeted repair.
+- Verification Intent: Python compile, focused seam tests, Repair 01 and Repair 02 regressions, live seam project/validate/diff/demo, portability proof, JSON parsing, Dominium immutability, task inspect/evidence, broad validation, secret-like scan, diff checks, and commit policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, dispositions all ten gaps as repaired pending independent check, preserves explicit non-capabilities, and recommends exactly `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02`.
+- Notes: This repair does not modify Dominium, invoke Dominium commands, implement Host runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, workers, preview/apply/rollback, target mutation, branch/worktree automation, GitHub mutation, release, or promotion.

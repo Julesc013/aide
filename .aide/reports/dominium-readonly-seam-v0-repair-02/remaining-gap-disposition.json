@@ -1,0 +1,89 @@
+{
+  "dispositions": [
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+      "id": "REPAIR02-GAP-01",
+      "material_gap": "allowed_operation_count missing",
+      "repair_summary": "operation_ledger.allowed_operation_count",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+      "id": "REPAIR02-GAP-02",
+      "material_gap": "conformance results lack required independent assertion fields",
+      "repair_summary": "conformance result assertion_id/expected/observed/evidence_refs and sidecar assertions",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/reports/dominium-readonly-seam-v0/portability-result.json",
+      "id": "REPAIR02-GAP-03",
+      "material_gap": "cross-process determinism failed",
+      "repair_summary": "runtime dependency manifest plus isolated two-root CLI portability comparison",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+      "id": "REPAIR02-GAP-04",
+      "material_gap": "diagnostic projection disclosure is incomplete",
+      "repair_summary": "diagnostic registry path, source digest, full Git object, selection and truncation metadata",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+      "id": "REPAIR02-GAP-05",
+      "material_gap": "instrumentation coverage missing",
+      "repair_summary": "operation family coverage methods and descriptions",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+      "id": "REPAIR02-GAP-06",
+      "material_gap": "ledger does not describe every required operation family",
+      "repair_summary": "required operation family list and family descriptions",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_02.py",
+      "id": "REPAIR02-GAP-07",
+      "material_gap": "one or more replayable negative fixtures failed independent replay",
+      "repair_summary": "bounded replay mutators plus expected-code subset validation",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+      "id": "REPAIR02-GAP-08",
+      "material_gap": "public schema does not constrain kind-specific spec fields",
+      "repair_summary": "kind-specific public schema record refs and spec required fields",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+      "id": "REPAIR02-GAP-09",
+      "material_gap": "public schema does not constrain status facts",
+      "repair_summary": "FalseStatus schema constrains non-capability status facts",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "disposition": "repaired_pending_independent_check",
+      "evidence_ref": ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+      "id": "REPAIR02-GAP-10",
+      "material_gap": "refusal projection disclosure is incomplete",
+      "repair_summary": "refusal registry path, source digest, full Git object, selection and truncation metadata",
+      "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    }
+  ],
+  "gap_count": 10,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "schema_version": "aide.dominium-readonly-seam.repair-02-gap-disposition.v0",
+  "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
+}

@@ -1708,6 +1708,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence
     description: Check-only independent repair verification for AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01 at commit 30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd. Uses task-local independent harnesses that do not import production seam validation, production conformance, production negative-fixture mutators, or repair finding-disposition logic as material proof. Stops at needs_review with REQUEST_CHANGES after 10 remaining material gaps and recommends AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02 only. Does not repair the seam, modify production code/schema/tests/fixtures/generated seam outputs/repair reports, mutate Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.
+  - id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+    status: needs_review
+    planning_state: repair_implemented
+    result: PASS_WITH_WARNINGS
+    title: Repair Offline Read-Only AIDE-Dominium Seam v0 Second Pass
+    task: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence
+    description: Targeted second repair of the ten remaining material gaps from AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01. Adds complete diagnostic/refusal registry provenance, kind-specific public schema constraints, false-boundary status constraints, bounded replayable negative fixtures, expectation-specific conformance assertions, operation-family instrumentation with allowed operation counts, runtime dependency manifest, isolated cross-process CLI portability proof, refreshed seam reports, focused regression tests, and consolidated evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02 only. Does not modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

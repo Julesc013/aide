@@ -1,138 +1,161 @@
 {
   "expectations": [
     {
+      "assertion_id": "seam.contract.parses",
       "description": "contract parsing",
       "id": "dominium-readonly-seam-01",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.identity.unique",
       "description": "stable identity",
       "id": "dominium-readonly-seam-02",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.repository.identity_exact",
       "description": "exact repository identity",
       "id": "dominium-readonly-seam-03",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.source.read_only",
       "description": "read-only source access",
       "id": "dominium-readonly-seam-04",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.source.no_writes",
       "description": "no cross-repo writes",
       "id": "dominium-readonly-seam-05",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.snapshot.digest",
       "description": "deterministic snapshot",
       "id": "dominium-readonly-seam-06",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.projection.digest",
       "description": "deterministic projection",
       "id": "dominium-readonly-seam-07",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.source.digest_binding",
       "description": "source digest binding",
       "id": "dominium-readonly-seam-08",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.bundle.self_digest",
       "description": "bundle self digest binding",
       "id": "dominium-readonly-seam-09",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "mapping completeness",
+      "assertion_id": "seam.mapping.complete_bounded",
+      "description": "bounded mapping completeness",
       "id": "dominium-readonly-seam-10",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.authority.preserved",
       "description": "authority preservation",
       "id": "dominium-readonly-seam-11",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.workbench.non_authority",
       "description": "Workbench non-authority",
       "id": "dominium-readonly-seam-12",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.refusal.typed",
       "description": "refusal typing",
       "id": "dominium-readonly-seam-13",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.diagnostic.typed",
       "description": "diagnostic typing",
       "id": "dominium-readonly-seam-14",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.evidence.closed",
       "description": "evidence linkage",
       "id": "dominium-readonly-seam-15",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.event.correlated",
       "description": "event correlation",
       "id": "dominium-readonly-seam-16",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.compatibility.bounded",
       "description": "version compatibility",
       "id": "dominium-readonly-seam-17",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.unsupported_operations.refused",
       "description": "unsupported-operation refusal",
       "id": "dominium-readonly-seam-18",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.network.absent",
       "description": "no provider/model/network activity",
       "id": "dominium-readonly-seam-19",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.worker.absent",
       "description": "no worker execution",
       "id": "dominium-readonly-seam-20",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.mutation.absent",
       "description": "no mutation",
       "id": "dominium-readonly-seam-21",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.non_capabilities.preserved",
       "description": "explicit non-capabilities",
       "id": "dominium-readonly-seam-22",
       "required_for_build": true,
       "status": "declared"
     },
     {
+      "assertion_id": "seam.negative_fixtures.replay",
       "description": "replayable negative fixtures",
       "id": "dominium-readonly-seam-23",
       "required_for_build": true,

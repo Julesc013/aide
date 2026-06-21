@@ -1,0 +1,26 @@
+{
+  "evidence_files": [
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/baseline.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/result.json",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/evidence-manifest.json",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/remaining-gap-disposition.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/validation.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/test-summary.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/dominium-immutability.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/secret-scan.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/changed-files.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/next-task-recommendation.md"
+  ],
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "report_refs": [
+    ".aide/reports/dominium-readonly-seam-v0-repair-02/repair-report.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair-02/remaining-gap-disposition.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair-02/test-summary.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair-02/status.md"
+  ],
+  "schema_version": "aide.task-evidence-manifest.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
+}

@@ -1,16 +1,16 @@
 {
   "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "base_bundle_sha256": "sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc",
   "expected_error_codes": [
     "reference.syntax"
   ],
-  "invalid_bundle_sha256": "sha256:b1b6ff1c083434a73860179fdeeeefdabcc11a54340f561b77a454687edd5807",
+  "invalid_bundle_sha256": "sha256:8c2b433f8be94ba4842af4e96a2224f04681a680a54dc93aa70a548fd5644084",
   "name": "invalid_reference_id",
   "operations": [
     {
       "op": "replace",
       "path": "/records/event_envelopes/0/spec/correlation_ref",
-      "value": "aide://bad/../escape"
+      "value": "not-a-reference"
     }
   ],
   "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",

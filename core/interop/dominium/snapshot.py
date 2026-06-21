@@ -12,7 +12,7 @@ try:  # Python 3.11+
 except ModuleNotFoundError:  # pragma: no cover - retained for portability.
     tomllib = None  # type: ignore[assignment]
 
-from . import identity, integrity, models
+from . import identity, integrity, models, operations
 from .references import is_commit_sha, normalize_repo_path, path_has_symlink_escape, sha256_bytes, stable_id
 
 
@@ -21,13 +21,39 @@ class SnapshotError(ValueError):
 
 
 def _run_git(root: Path, args: list[str], *, text: bool = True) -> subprocess.CompletedProcess[str] | subprocess.CompletedProcess[bytes]:
+    ledger = operations.active_ledger()
+    family, allowed = operations.classify_git_args(args)
     command = ["git", "-C", str(root), *args]
+    operation = "git " + " ".join(args)
+    if ledger is not None and not allowed:
+        ledger.record(
+            operation,
+            family=family,
+            target="Dominium",
+            classification="forbidden_git_refused_before_execution",
+            allowed=False,
+            source="snapshot.git_runner",
+            observation_method=operations.COVERAGE_METHODS.get(family, "git_command_denylist"),
+            return_code=None,
+        )
+        raise SnapshotError(f"forbidden git operation refused before execution: {operation}")
     result = subprocess.run(
         command,
         check=False,
         capture_output=True,
         text=text,
     )
+    if ledger is not None:
+        ledger.record(
+            operation,
+            family=family,
+            target="Dominium",
+            classification="read_only_git_observation" if allowed else "forbidden_git_observation",
+            allowed=allowed,
+            source="snapshot.git_runner",
+            observation_method=operations.COVERAGE_METHODS.get(family, "command_wrapper_observation"),
+            return_code=result.returncode,
+        )
     if result.returncode != 0:
         stderr = result.stderr if isinstance(result.stderr, str) else result.stderr.decode("utf-8", errors="replace")
         raise SnapshotError(f"git {' '.join(args)} failed: {stderr.strip()}")
@@ -154,6 +180,10 @@ def _tree_metadata(root: Path, revision: str, rel_path: str) -> dict[str, Any]:
         "object_type": parts[1] if len(parts) > 1 else "",
         "git_object": parts[2] if len(parts) > 2 else "",
     }
+
+
+def git_object_metadata(root: Path, revision: str, rel_path: str) -> dict[str, Any]:
+    return _tree_metadata(root, revision, rel_path)
 
 
 def _queue_summary(root: Path, revision: str) -> dict[str, Any]:

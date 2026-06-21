@@ -1,0 +1,284 @@
+{
+  "assertions": {
+    "seam.authority.preserved": {
+      "assertion_id": "seam.authority.preserved",
+      "description": "authority preservation",
+      "expected": "no matching validation errors",
+      "observed": [],
+      "result": "PASS"
+    },
+    "seam.bundle.self_digest": {
+      "assertion_id": "seam.bundle.self_digest",
+      "description": "bundle self digest binding",
+      "expected": "sha256:3b86c84c0379b276e439e6510d56685647b308bb24459afe3edf3c172617f8ed",
+      "observed": "sha256:3b86c84c0379b276e439e6510d56685647b308bb24459afe3edf3c172617f8ed",
+      "result": "PASS"
+    },
+    "seam.compatibility.bounded": {
+      "assertion_id": "seam.compatibility.bounded",
+      "description": "version compatibility",
+      "expected": true,
+      "observed": true,
+      "result": "PASS"
+    },
+    "seam.contract.parses": {
+      "assertion_id": "seam.contract.parses",
+      "description": "contract parsing",
+      "expected": {
+        "apiVersion": "aide.dev/v1alpha1",
+        "kind": "DominiumReadonlySeamBundle"
+      },
+      "observed": {
+        "apiVersion": "aide.dev/v1alpha1",
+        "kind": "DominiumReadonlySeamBundle"
+      },
+      "result": "PASS"
+    },
+    "seam.diagnostic.typed": {
+      "assertion_id": "seam.diagnostic.typed",
+      "description": "diagnostic typing",
+      "expected": "no matching validation errors",
+      "observed": [],
+      "result": "PASS"
+    },
+    "seam.event.correlated": {
+      "assertion_id": "seam.event.correlated",
+      "description": "event correlation",
+      "expected": "no matching validation errors",
+      "observed": [],
+      "result": "PASS"
+    },
+    "seam.evidence.closed": {
+      "assertion_id": "seam.evidence.closed",
+      "description": "evidence linkage",
+      "expected": "no matching validation errors",
+      "observed": [],
+      "result": "PASS"
+    },
+    "seam.identity.unique": {
+      "assertion_id": "seam.identity.unique",
+      "description": "stable identity",
+      "expected": "unique record metadata ids",
+      "observed": 42,
+      "result": "PASS"
+    },
+    "seam.mapping.complete_bounded": {
+      "assertion_id": "seam.mapping.complete_bounded",
+      "description": "bounded mapping completeness",
+      "expected": [
+        "ArtifactReference",
+        "ContextDescriptor",
+        "DiagnosticProjection",
+        "DominiumBridgeManifest",
+        "EventEnvelope",
+        "EvidenceReferenceSet",
+        "HostCapabilitySet",
+        "HostManifest",
+        "RefusalProjection",
+        "WorkspaceDescriptor"
+      ],
+      "observed": [
+        "ArtifactReference",
+        "ContextDescriptor",
+        "DiagnosticProjection",
+        "DominiumBridgeManifest",
+        "EventEnvelope",
+        "EvidenceReferenceSet",
+        "HostCapabilitySet",
+        "HostManifest",
+        "RefusalProjection",
+        "WorkspaceDescriptor"
+      ],
+      "result": "PASS"
+    },
+    "seam.mutation.absent": {
+      "assertion_id": "seam.mutation.absent",
+      "description": "no mutation",
+      "expected": [
+        "dominium.branch.create",
+        "dominium.command.invoke",
+        "dominium.patch.apply",
+        "dominium.provider.call",
+        "dominium.release.publish",
+        "dominium.service.start",
+        "dominium.source.write",
+        "dominium.worker.execute",
+        "dominium.worktree.create"
+      ],
+      "observed": [
+        "dominium.branch.create",
+        "dominium.command.invoke",
+        "dominium.patch.apply",
+        "dominium.provider.call",
+        "dominium.release.publish",
+        "dominium.service.start",
+        "dominium.source.write",
+        "dominium.worker.execute",
+        "dominium.worktree.create"
+      ],
+      "result": "PASS"
+    },
+    "seam.negative_fixtures.replay": {
+      "assertion_id": "seam.negative_fixtures.replay",
+      "description": "replayable negative fixtures",
+      "expected": "all negative fixture expected codes observed",
+      "observed": [],
+      "result": "PASS"
+    },
+    "seam.network.absent": {
+      "assertion_id": "seam.network.absent",
+      "description": "no provider/model/network activity",
+      "expected": {
+        "network_call_performed": false,
+        "provider_or_model_called": false
+      },
+      "observed": {
+        "branch_or_worktree_created": false,
+        "bridge_runtime_started": false,
+        "bundle_projected": true,
+        "database_opened": false,
+        "dominium_command_invoked": false,
+        "generated_projection_marked_canonical": false,
+        "github_mutation_performed": false,
+        "host_runtime_started": false,
+        "network_call_performed": false,
+        "patch_transaction_applied": false,
+        "preview_or_apply_performed": false,
+        "provider_or_model_called": false,
+        "release_or_promotion_performed": false,
+        "service_started": false,
+        "source_repository_mutated": false,
+        "target_repository_mutated": false,
+        "transport_started": false,
+        "workbench_started": false,
+        "worker_executed": false
+      },
+      "result": "PASS"
+    },
+    "seam.non_capabilities.preserved": {
+      "assertion_id": "seam.non_capabilities.preserved",
+      "description": "explicit non-capabilities",
+      "expected": [
+        "dominium_command_invocation",
+        "host_runtime",
+        "host_sdk",
+        "workbench_implementation",
+        "bridge_runtime",
+        "service",
+        "database_runtime",
+        "transport",
+        "network_call",
+        "provider_model_call",
+        "worker_execution",
+        "patch_transaction_apply",
+        "preview_apply_rollback",
+        "target_repository_mutation",
+        "branch_worktree_automation",
+        "github_mutation",
+        "release_or_promotion"
+      ],
+      "observed": [
+        "dominium_command_invocation",
+        "host_runtime",
+        "host_sdk",
+        "workbench_implementation",
+        "bridge_runtime",
+        "service",
+        "database_runtime",
+        "transport",
+        "network_call",
+        "provider_model_call",
+        "worker_execution",
+        "patch_transaction_apply",
+        "preview_apply_rollback",
+        "target_repository_mutation",
+        "branch_worktree_automation",
+        "github_mutation",
+        "release_or_promotion"
+      ],
+      "result": "PASS"
+    },
+    "seam.projection.digest": {
+      "assertion_id": "seam.projection.digest",
+      "description": "deterministic projection",
+      "expected": "sha256:462607fb7c177bfd3a3ea96901118677eafce54d1a473de92d46af854239ea0d",
+      "observed": "sha256:462607fb7c177bfd3a3ea96901118677eafce54d1a473de92d46af854239ea0d",
+      "result": "PASS"
+    },
+    "seam.refusal.typed": {
+      "assertion_id": "seam.refusal.typed",
+      "description": "refusal typing",
+      "expected": "no matching validation errors",
+      "observed": [],
+      "result": "PASS"
+    },
+    "seam.repository.identity_exact": {
+      "assertion_id": "seam.repository.identity_exact",
+      "description": "exact repository identity",
+      "expected": "github.com/julesc013/dominium",
+      "observed": "github.com/julesc013/dominium",
+      "result": "PASS"
+    },
+    "seam.snapshot.digest": {
+      "assertion_id": "seam.snapshot.digest",
+      "description": "deterministic snapshot",
+      "expected": "sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8",
+      "observed": "sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8",
+      "result": "PASS"
+    },
+    "seam.source.digest_binding": {
+      "assertion_id": "seam.source.digest_binding",
+      "description": "source digest binding",
+      "expected": "no matching validation errors",
+      "observed": [],
+      "result": "PASS"
+    },
+    "seam.source.no_writes": {
+      "assertion_id": "seam.source.no_writes",
+      "description": "no cross-repo writes",
+      "expected": false,
+      "observed": false,
+      "result": "PASS"
+    },
+    "seam.source.read_only": {
+      "assertion_id": "seam.source.read_only",
+      "description": "read-only source access",
+      "expected": {
+        "git_fetch": false,
+        "git_pull": false
+      },
+      "observed": {
+        "dominium_command_invocation": false,
+        "dominium_file_write": false,
+        "git_checkout": false,
+        "git_fetch": false,
+        "git_pull": false,
+        "remote_ref_update": false
+      },
+      "result": "PASS"
+    },
+    "seam.unsupported_operations.refused": {
+      "assertion_id": "seam.unsupported_operations.refused",
+      "description": "unsupported-operation refusal",
+      "expected": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+      "observed": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+      "result": "PASS"
+    },
+    "seam.workbench.non_authority": {
+      "assertion_id": "seam.workbench.non_authority",
+      "description": "Workbench non-authority",
+      "expected": "presentation, context capture, preview, approval interaction, apply requests",
+      "observed": "presentation, context capture, preview, approval interaction, apply requests",
+      "result": "PASS"
+    },
+    "seam.worker.absent": {
+      "assertion_id": "seam.worker.absent",
+      "description": "no worker execution",
+      "expected": false,
+      "observed": false,
+      "result": "PASS"
+    }
+  },
+  "schema_version": "aide.dominium-readonly-seam.conformance-assertions.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
+}

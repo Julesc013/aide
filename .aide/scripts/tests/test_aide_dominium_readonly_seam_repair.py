@@ -29,7 +29,7 @@ class AIDEDominiumReadonlySeamRepairTests(unittest.TestCase):
         cls.aide_root = cls.tmp_root / "aide"
         cls.revision = base_tests.create_dominium_fixture(cls.dom_root)
         base_tests.copy_dominium_seam_source_files(cls.aide_root)
-        cls.project_report = dominium.project_dominium_seam(cls.aide_root, dominium_root=cls.dom_root, revision=cls.revision)
+        cls.project_report = dominium.project_dominium_seam(cls.aide_root, dominium_root=cls.dom_root, revision=cls.revision, write_portability=False)
         cls.bundle = models.read_json(cls.aide_root / models.SEAM_BUNDLE_JSON)
         cls.validation_report = validation.validate_bundle(cls.bundle, dominium_root=cls.dom_root)
 
@@ -95,12 +95,16 @@ class AIDEDominiumReadonlySeamRepairTests(unittest.TestCase):
                 self.assertEqual(integrity.stable_digest(invalid), fixture["invalid_bundle_sha256"])
                 report = validation.validate_bundle(invalid, dominium_root=self.dom_root)
                 observed = {item["code"] for item in report["error_records"]}
-                self.assertTrue(observed.intersection(set(fixture["expected_error_codes"])), report["error_records"])
+                self.assertTrue(set(fixture["expected_error_codes"]).issubset(observed), report["error_records"])
 
     def test_conformance_results_are_not_aggregate_only(self) -> None:
         conformance = models.read_json(self.aide_root / models.CONFORMANCE_RESULTS_JSON)
-        observations = {item["observation"] for item in conformance["results"]}
-        self.assertGreater(len(observations), 5)
+        assertion_ids = {item["assertion_id"] for item in conformance["results"]}
+        self.assertGreater(len(assertion_ids), 5)
+        for item in conformance["results"]:
+            self.assertIn("expected", item)
+            self.assertIn("observed", item)
+            self.assertIn("evidence_refs", item)
         self.assertEqual(conformance["passed_count"], conformance["expectation_count"])
 
     def test_demo_elapsed_time_is_truthfully_unmeasured(self) -> None:
@@ -176,9 +180,12 @@ class AIDEDominiumReadonlySeamRepairTests(unittest.TestCase):
         self.assertIn("registry_projection_summary", schema["required"])
         self.assertFalse(schema["properties"]["records"]["additionalProperties"])
         self.assertIn("SourceFile", schema["$defs"])
+        self.assertIn("HostManifestSpec", schema["$defs"])
+        self.assertEqual(schema["properties"]["records"]["properties"]["host_manifest"]["$ref"], "#/$defs/HostManifestRecord")
+        self.assertEqual(schema["properties"]["status"]["$ref"], "#/$defs/FalseStatus")
 
     def test_next_task_routes_to_repair_check(self) -> None:
-        self.assertEqual(models.RECOMMENDED_NEXT_TASK, "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01")
+        self.assertEqual(models.RECOMMENDED_NEXT_TASK, "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02")
         self.assertEqual(self.project_report["recommended_next_task"], models.RECOMMENDED_NEXT_TASK)
 
 

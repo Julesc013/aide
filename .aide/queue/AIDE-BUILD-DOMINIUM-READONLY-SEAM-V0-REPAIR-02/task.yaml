@@ -1,0 +1,72 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+title: Repair Offline Read-Only AIDE-Dominium Seam v0 Second Pass
+task_type: repair
+status: needs_review
+planning_state: repair_implemented
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-21
+updated_at: 2026-06-21
+profile: .aide/profile.yaml
+queue_policy: .aide/queue/policy.yaml
+canonical_queue: .aide/queue/index.yaml
+source_check:
+  task_id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+  result: REQUEST_CHANGES
+  commit: bf2b51996c7df0374942ad361ebfbae04c9c1caf
+  material_gap_count: 10
+  evidence_missing: 0
+  recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+capability_target: dominium_readonly_seam_v0
+repair_scope:
+  - diagnostic and refusal registry provenance disclosure
+  - public kind-specific schema constraints
+  - public false-boundary status constraints
+  - replayable negative fixture expected-code proof
+  - expectation-specific conformance assertions
+  - operation ledger allowed counts and family instrumentation
+  - runtime dependency manifest
+  - isolated cross-process CLI portability proof
+  - deterministic projection comparison
+allowed_paths:
+  - .aide/protocol/aide-dominium-readonly-seam-v0.schema.json
+  - core/interop/dominium/**
+  - core/interop/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam_repair_02.py
+  - .aide/fixtures/dominium-readonly-seam/**
+  - .aide/interop/dominium/**
+  - .aide/reports/dominium-readonly-seam-v0/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-02/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - C:/Projects/Dominium/dominium/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/**
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/**
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/**
+  - .aide/reports/dominium-readonly-seam-v0-check/**
+  - .aide/reports/dominium-readonly-seam-v0-repair/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/**
+review_gate: needs_review
+recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+mutation_authorized: false
+runtime_authorized: false
+network_authorized_for_seam: false
+github_mutation_authorized: false
+validation_summary:
+  status: PASS_WITH_WARNINGS
+  material_gaps_repaired: 10
+  selected_dominium_inputs: 17
+  projected_records: 42
+  fixtures: 43
+  conformance_expectations: 23
+  conformance_passed: 23
+  repair02_regression_tests: 12
+  source_mutation_count: 0
+  forbidden_operation_count: 0

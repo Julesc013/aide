@@ -49,7 +49,7 @@ def build_seam_bundle(
     manifest = {
         "bundle_id": bundle_id,
         "bundle_ref": stable_ref("seam-bundle", bundle_id),
-        "task_id": models.TASK_ID,
+        "task_id": models.REPAIR_TASK_ID,
         "capability_target": models.FEATURE_FLAG,
         "source_revision": source_revision,
         "schema_version": models.SCHEMA_VERSION,

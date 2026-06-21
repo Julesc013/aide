@@ -16,8 +16,8 @@ SCHEMA_VERSION = "aide.dominium-readonly-seam.v0"
 PROTOCOL_VERSION = "0.1.0"
 FEATURE_FLAG = "dominium_readonly_seam_v0"
 TASK_ID = "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01"
-REPAIR_TASK_ID = "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
-RECOMMENDED_NEXT_TASK = "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+REPAIR_TASK_ID = "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
+RECOMMENDED_NEXT_TASK = "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
 DETERMINISTIC_TIMESTAMP = "2026-06-21T00:00:00+10:00"
 
 SCHEMA_PATH = Path(".aide/protocol/aide-dominium-readonly-seam-v0.schema.json")
@@ -31,13 +31,16 @@ SOURCE_SNAPSHOT_JSON = REPORT_ROOT / "source-snapshot.json"
 PROJECTION_INDEX_JSON = REPORT_ROOT / "projection-index.json"
 VALIDATION_JSON = REPORT_ROOT / "validation.json"
 CONFORMANCE_RESULTS_JSON = REPORT_ROOT / "conformance-results.json"
+CONFORMANCE_ASSERTIONS_JSON = REPORT_ROOT / "conformance-assertions.json"
 COMPATIBILITY_JSON = REPORT_ROOT / "compatibility.json"
 DEMO_RESULT_JSON = REPORT_ROOT / "demo-result.json"
+PORTABILITY_RESULT_JSON = REPORT_ROOT / "portability-result.json"
 RISKS_MD = REPORT_ROOT / "risks.md"
 EXPLICIT_NON_CAPABILITIES_MD = REPORT_ROOT / "explicit-non-capabilities.md"
 NEXT_TASK_PROMPT_MD = REPORT_ROOT / "next-task-prompt.md"
 DIFF_JSON = REPORT_ROOT / "diff.json"
 FIXTURE_MANIFEST_JSON = REPORT_ROOT / "fixture-manifest.json"
+RUNTIME_DEPENDENCY_MANIFEST_JSON = INTEROP_ROOT / "runtime-dependency-manifest.json"
 
 INTEROP_SEAM_BUNDLE_JSON = INTEROP_ROOT / "seam-bundle.json"
 INTEROP_BRIDGE_MANIFEST_JSON = INTEROP_ROOT / "dominium-bridge-manifest.json"
@@ -50,8 +53,10 @@ REQUIRED_REPORTS = [
     PROJECTION_INDEX_JSON,
     VALIDATION_JSON,
     CONFORMANCE_RESULTS_JSON,
+    CONFORMANCE_ASSERTIONS_JSON,
     COMPATIBILITY_JSON,
     DEMO_RESULT_JSON,
+    PORTABILITY_RESULT_JSON,
     RISKS_MD,
     EXPLICIT_NON_CAPABILITIES_MD,
     NEXT_TASK_PROMPT_MD,
@@ -177,6 +182,22 @@ def false_status(**overrides: Any) -> dict[str, Any]:
     status = {field: False for field in FALSE_STATUS_FIELDS}
     status.update(overrides)
     return status
+
+
+def required_runtime_dependency_paths() -> list[str]:
+    module_root = Path(__file__).resolve().parents[3]
+    dominium_module_root = module_root / "core" / "interop" / "dominium"
+    return [
+        ".aide/scripts/aide_lite.py",
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+        "core/interop/__init__.py",
+        "core/protocol/__init__.py",
+        "core/protocol/envelope.py",
+        *[
+            path.relative_to(module_root).as_posix()
+            for path in sorted(dominium_module_root.glob("*.py"))
+        ],
+    ]
 
 
 def common_metadata(

@@ -1,10 +1,10 @@
 {
   "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "base_bundle_sha256": "sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc",
   "expected_error_codes": [
     "capability.mutation"
   ],
-  "invalid_bundle_sha256": "sha256:fba9090285d116ea4275d26fcf21d675bc4fb263172716caf9167ce53964c496",
+  "invalid_bundle_sha256": "sha256:3d70639c437ba1ae47d8639049da477dc6d6cb4262a6c7044a19b3186aef7a21",
   "name": "mutation_capability_claim",
   "operations": [
     {

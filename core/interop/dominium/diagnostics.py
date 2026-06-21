@@ -66,14 +66,21 @@ def diagnostic_projection_summary(dominium_root: Path, revision: str, projected:
     native_ids = [str(item.get("id") or item.get("code")) for item in native_codes]
     projected_ids = [str(item.get("spec", {}).get("diagnostic_id", "")) for item in projected]
     omitted_ids = native_ids[len(projected_ids) :]
+    source_bytes = snapshot.git_object_bytes(dominium_root, revision, DIAGNOSTIC_REGISTRY)
+    source_meta = snapshot.git_object_metadata(dominium_root, revision, DIAGNOSTIC_REGISTRY)
     return {
+        "path": DIAGNOSTIC_REGISTRY,
         "source_registry_path": DIAGNOSTIC_REGISTRY,
+        "source_registry_sha256": sha256_bytes(source_bytes),
+        "source_registry_git_object": source_meta,
+        "source_revision": revision,
         "selection_policy": "source_order_first_n",
         "selection_limit": limit,
         "native_count": len(native_ids),
         "projected_count": len(projected_ids),
         "omitted_count": len(omitted_ids),
         "projected_ids": projected_ids,
+        "selected_ids_sha256": sha256_bytes(models.stable_json(projected_ids).encode("utf-8")),
         "omitted_ids_sha256": sha256_bytes(models.stable_json(omitted_ids).encode("utf-8")),
         "truncation_disclosed": len(omitted_ids) > 0,
     }

@@ -1,9 +1,39 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$defs": {
+    "ArtifactReferenceRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "ArtifactReference"
+        },
+        "spec": {
+          "$ref": "#/$defs/ArtifactReferenceSpec"
+        }
+      }
+    },
+    "ArtifactReferenceSpec": {
+      "additionalProperties": true,
+      "required": [
+        "artifact_ref",
+        "source_path",
+        "source_role",
+        "authority",
+        "sha256",
+        "size_bytes",
+        "git_object",
+        "source_revision",
+        "identity_is_file_path",
+        "file_path_is_locator"
+      ],
+      "type": "object"
+    },
     "Compatibility": {
       "additionalProperties": true,
       "properties": {
+        "readOldWriteCurrent": {
+          "const": true
+        },
         "requiredCapabilities": {
           "items": {
             "type": "string"
@@ -12,10 +42,215 @@
         }
       },
       "required": [
-        "schema",
-        "readOldWriteCurrent",
+        "schemaVersion",
+        "protocolVersion",
+        "minReaderVersion",
+        "minWriterVersion",
+        "featureFlags",
         "requiredCapabilities",
-        "supportedProtocolRange"
+        "readOldWriteCurrent",
+        "unknownOptionalFields",
+        "unknownRequiredFields"
+      ],
+      "type": "object"
+    },
+    "ContextDescriptorRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "ContextDescriptor"
+        },
+        "spec": {
+          "$ref": "#/$defs/ContextDescriptorSpec"
+        }
+      }
+    },
+    "ContextDescriptorSpec": {
+      "additionalProperties": true,
+      "required": [
+        "context_ref",
+        "artifact_refs",
+        "section_count",
+        "sections",
+        "source_revision_binding",
+        "projection_direction"
+      ],
+      "type": "object"
+    },
+    "DiagnosticProjectionRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "DiagnosticProjection"
+        },
+        "spec": {
+          "$ref": "#/$defs/DiagnosticProjectionSpec"
+        }
+      }
+    },
+    "DiagnosticProjectionSpec": {
+      "additionalProperties": true,
+      "required": [
+        "diagnostic_id",
+        "code",
+        "owner",
+        "severity",
+        "category",
+        "summary",
+        "source_registry",
+        "native_meaning_owned_by",
+        "projection_direction"
+      ],
+      "type": "object"
+    },
+    "Digest": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "DominiumBridgeManifestRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "DominiumBridgeManifest"
+        },
+        "spec": {
+          "$ref": "#/$defs/DominiumBridgeManifestSpec"
+        }
+      }
+    },
+    "DominiumBridgeManifestSpec": {
+      "additionalProperties": true,
+      "required": [
+        "bridge_id",
+        "bridge_runtime_implemented",
+        "mapping_version",
+        "source_of_truth",
+        "ownership",
+        "command_mapping",
+        "compatibility_policy"
+      ],
+      "type": "object"
+    },
+    "EventEnvelopeRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "EventEnvelope"
+        },
+        "spec": {
+          "$ref": "#/$defs/EventEnvelopeSpec"
+        }
+      }
+    },
+    "EventEnvelopeSpec": {
+      "additionalProperties": true,
+      "required": [
+        "event_ref",
+        "event_type",
+        "summary",
+        "sequence",
+        "causation_ref",
+        "correlation_ref",
+        "universal_event_store_implemented"
+      ],
+      "type": "object"
+    },
+    "EvidenceReferenceSetRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "EvidenceReferenceSet"
+        },
+        "spec": {
+          "$ref": "#/$defs/EvidenceReferenceSetSpec"
+        }
+      }
+    },
+    "EvidenceReferenceSetSpec": {
+      "additionalProperties": true,
+      "required": [
+        "evidence_refs",
+        "evidence_count",
+        "native_evidence_meaning_owned_by",
+        "aide_behavior"
+      ],
+      "type": "object"
+    },
+    "FalseStatus": {
+      "additionalProperties": true,
+      "properties": {
+        "branch_or_worktree_created": {
+          "const": false
+        },
+        "bridge_runtime_started": {
+          "const": false
+        },
+        "database_opened": {
+          "const": false
+        },
+        "dominium_command_invoked": {
+          "const": false
+        },
+        "generated_projection_marked_canonical": {
+          "const": false
+        },
+        "github_mutation_performed": {
+          "const": false
+        },
+        "host_runtime_started": {
+          "const": false
+        },
+        "network_call_performed": {
+          "const": false
+        },
+        "patch_transaction_applied": {
+          "const": false
+        },
+        "preview_or_apply_performed": {
+          "const": false
+        },
+        "provider_or_model_called": {
+          "const": false
+        },
+        "release_or_promotion_performed": {
+          "const": false
+        },
+        "service_started": {
+          "const": false
+        },
+        "source_repository_mutated": {
+          "const": false
+        },
+        "target_repository_mutated": {
+          "const": false
+        },
+        "transport_started": {
+          "const": false
+        },
+        "worker_executed": {
+          "const": false
+        },
+        "workbench_started": {
+          "const": false
+        }
+      },
+      "required": [
+        "dominium_command_invoked",
+        "host_runtime_started",
+        "workbench_started",
+        "bridge_runtime_started",
+        "service_started",
+        "database_opened",
+        "transport_started",
+        "network_call_performed",
+        "provider_or_model_called",
+        "worker_executed",
+        "patch_transaction_applied",
+        "preview_or_apply_performed",
+        "target_repository_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "release_or_promotion_performed"
       ],
       "type": "object"
     },
@@ -32,7 +267,51 @@
       ],
       "type": "object"
     },
-    "CommonMetadata": {
+    "HostCapabilitySetRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "HostCapabilitySet"
+        },
+        "spec": {
+          "$ref": "#/$defs/HostCapabilitySetSpec"
+        }
+      }
+    },
+    "HostCapabilitySetSpec": {
+      "additionalProperties": true,
+      "required": [
+        "capabilities",
+        "forbidden_capabilities"
+      ],
+      "type": "object"
+    },
+    "HostManifestRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "HostManifest"
+        },
+        "spec": {
+          "$ref": "#/$defs/HostManifestSpec"
+        }
+      }
+    },
+    "HostManifestSpec": {
+      "additionalProperties": true,
+      "required": [
+        "host_id",
+        "host_kind",
+        "repository_identity",
+        "selected_revision",
+        "supported_surfaces",
+        "registered_dominium_command_count",
+        "registered_validation_command_present",
+        "runtime_dispatch_available"
+      ],
+      "type": "object"
+    },
+    "Metadata": {
       "additionalProperties": true,
       "properties": {
         "authority_role": {
@@ -59,7 +338,12 @@
           ]
         },
         "producer": {
-          "type": "string"
+          "additionalProperties": true,
+          "required": [
+            "name",
+            "version"
+          ],
+          "type": "object"
         },
         "protocol_version": {
           "type": "string"
@@ -93,15 +377,7 @@
       ],
       "type": "object"
     },
-    "ReferenceID": {
-      "pattern": "^aide://[A-Za-z0-9._~-]+/[A-Za-z0-9._~@+=:,-]+$",
-      "type": "string"
-    },
-    "Digest": {
-      "pattern": "^sha256:[0-9a-f]{64}$",
-      "type": "string"
-    },
-    "SeamRecord": {
+    "Record": {
       "additionalProperties": false,
       "properties": {
         "apiVersion": {
@@ -114,21 +390,21 @@
             "WorkspaceDescriptor",
             "ContextDescriptor",
             "ArtifactReference",
-            "EventEnvelope",
             "DiagnosticProjection",
             "RefusalProjection",
             "EvidenceReferenceSet",
+            "EventEnvelope",
             "DominiumBridgeManifest"
           ]
         },
         "metadata": {
-          "$ref": "#/$defs/CommonMetadata"
+          "$ref": "#/$defs/Metadata"
         },
         "spec": {
           "type": "object"
         },
         "status": {
-          "type": "object"
+          "$ref": "#/$defs/FalseStatus"
         }
       },
       "required": [
@@ -137,6 +413,66 @@
         "metadata",
         "spec",
         "status"
+      ],
+      "type": "object"
+    },
+    "ReferenceID": {
+      "pattern": "^aide://[A-Za-z0-9._~-]+/[A-Za-z0-9._~@+=:,-]+$",
+      "type": "string"
+    },
+    "RefusalProjectionRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "RefusalProjection"
+        },
+        "spec": {
+          "$ref": "#/$defs/RefusalProjectionSpec"
+        }
+      }
+    },
+    "RefusalProjectionSpec": {
+      "additionalProperties": true,
+      "required": [
+        "refusal_id",
+        "code",
+        "owner",
+        "category",
+        "summary",
+        "reason",
+        "recovery_action",
+        "diagnostic_codes",
+        "related_commands",
+        "source_registry",
+        "native_meaning_owned_by",
+        "projection_direction"
+      ],
+      "type": "object"
+    },
+    "RegistrySummary": {
+      "additionalProperties": true,
+      "properties": {
+        "source_registry_sha256": {
+          "$ref": "#/$defs/Digest"
+        },
+        "source_registry_git_object": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "path",
+        "source_registry_sha256",
+        "source_registry_git_object",
+        "source_revision",
+        "native_count",
+        "projected_count",
+        "omitted_count",
+        "selection_policy",
+        "selection_limit",
+        "projected_ids",
+        "selected_ids_sha256",
+        "omitted_ids_sha256",
+        "truncation_disclosed"
       ],
       "type": "object"
     },
@@ -169,6 +505,30 @@
         "required",
         "sha256",
         "artifact_ref"
+      ],
+      "type": "object"
+    },
+    "WorkspaceDescriptorRecord": {
+      "$ref": "#/$defs/Record",
+      "properties": {
+        "kind": {
+          "const": "WorkspaceDescriptor"
+        },
+        "spec": {
+          "$ref": "#/$defs/WorkspaceDescriptorSpec"
+        }
+      }
+    },
+    "WorkspaceDescriptorSpec": {
+      "additionalProperties": true,
+      "required": [
+        "workspace_ref",
+        "repository_remote_url_hash",
+        "selected_revision",
+        "branch",
+        "identity_is_file_path",
+        "local_path_is_locator_only",
+        "queue_status"
       ],
       "type": "object"
     }
@@ -241,7 +601,7 @@
       "type": "object"
     },
     "metadata": {
-      "$ref": "#/$defs/CommonMetadata"
+      "$ref": "#/$defs/Metadata"
     },
     "omission_summary": {
       "additionalProperties": true,
@@ -258,45 +618,45 @@
       "properties": {
         "artifact_references": {
           "items": {
-            "$ref": "#/$defs/SeamRecord"
+            "$ref": "#/$defs/ArtifactReferenceRecord"
           },
           "type": "array"
         },
         "context_descriptor": {
-          "$ref": "#/$defs/SeamRecord"
+          "$ref": "#/$defs/ContextDescriptorRecord"
         },
         "diagnostic_projections": {
           "items": {
-            "$ref": "#/$defs/SeamRecord"
+            "$ref": "#/$defs/DiagnosticProjectionRecord"
           },
           "type": "array"
         },
         "dominium_bridge_manifest": {
-          "$ref": "#/$defs/SeamRecord"
+          "$ref": "#/$defs/DominiumBridgeManifestRecord"
         },
         "event_envelopes": {
           "items": {
-            "$ref": "#/$defs/SeamRecord"
+            "$ref": "#/$defs/EventEnvelopeRecord"
           },
           "type": "array"
         },
         "evidence_reference_set": {
-          "$ref": "#/$defs/SeamRecord"
+          "$ref": "#/$defs/EvidenceReferenceSetRecord"
         },
         "host_capability_set": {
-          "$ref": "#/$defs/SeamRecord"
+          "$ref": "#/$defs/HostCapabilitySetRecord"
         },
         "host_manifest": {
-          "$ref": "#/$defs/SeamRecord"
+          "$ref": "#/$defs/HostManifestRecord"
         },
         "refusal_projections": {
           "items": {
-            "$ref": "#/$defs/SeamRecord"
+            "$ref": "#/$defs/RefusalProjectionRecord"
           },
           "type": "array"
         },
         "workspace_descriptor": {
-          "$ref": "#/$defs/SeamRecord"
+          "$ref": "#/$defs/WorkspaceDescriptorRecord"
         }
       },
       "required": [
@@ -314,7 +674,15 @@
       "type": "object"
     },
     "registry_projection_summary": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "diagnostics": {
+          "$ref": "#/$defs/RegistrySummary"
+        },
+        "refusals": {
+          "$ref": "#/$defs/RegistrySummary"
+        }
+      },
       "required": [
         "diagnostics",
         "refusals"
@@ -365,7 +733,7 @@
       "type": "object"
     },
     "status": {
-      "type": "object"
+      "$ref": "#/$defs/FalseStatus"
     },
     "validation_summary": {
       "additionalProperties": true,

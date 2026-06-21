@@ -12,6 +12,10 @@ class FixtureReplayError(ValueError):
     """Raised when a negative fixture patch cannot be replayed."""
 
 
+ALLOWED_OPERATIONS = {"add", "remove", "replace", "append"}
+FORBIDDEN_OPERATION_KEYS = {"callable", "module", "command", "shell", "eval", "exec"}
+
+
 def _pointer_parts(pointer: str) -> list[str]:
     if not pointer.startswith("/"):
         raise FixtureReplayError(f"JSON pointer must start with /: {pointer}")
@@ -36,13 +40,21 @@ def _resolve_parent(document: Any, pointer: str) -> tuple[Any, str]:
 def apply_operations(document: dict[str, Any], operations: list[dict[str, Any]]) -> dict[str, Any]:
     candidate = deepcopy(document)
     for op in operations:
+        if not isinstance(op, dict):
+            raise FixtureReplayError("operation must be an object")
+        if FORBIDDEN_OPERATION_KEYS & set(op):
+            raise FixtureReplayError("operation contains forbidden executable field")
         kind = op["op"]
+        if kind not in ALLOWED_OPERATIONS:
+            raise FixtureReplayError(f"unsupported operation: {kind}")
         parent, key = _resolve_parent(candidate, op["path"])
         if isinstance(parent, list):
             index = len(parent) if key == "-" else int(key)
             if kind == "remove":
                 parent.pop(index)
-            elif kind == "add":
+            elif kind in {"add", "append"}:
+                if kind == "append":
+                    index = len(parent)
                 parent.insert(index, deepcopy(op.get("value")))
             elif kind == "replace":
                 parent[index] = deepcopy(op.get("value"))
@@ -53,6 +65,10 @@ def apply_operations(document: dict[str, Any], operations: list[dict[str, Any]])
                 parent.pop(key, None)
             elif kind in {"add", "replace"}:
                 parent[key] = deepcopy(op.get("value"))
+            elif kind == "append":
+                if key not in parent or not isinstance(parent[key], list):
+                    raise FixtureReplayError("append operation requires an array target")
+                parent[key].append(deepcopy(op.get("value")))
             else:
                 raise FixtureReplayError(f"unsupported object operation: {kind}")
         else:
@@ -85,9 +101,9 @@ def negative_fixture_cases(base_bundle: dict[str, Any]) -> list[dict[str, Any]]:
         fixture("wrong_repository_identity", ["repository.identity"], [{"op": "replace", "path": "/source_snapshot/repository_identity/canonical_identity", "value": "github.com/example/dominium-shadow"}], base_bundle),
         fixture("stale_revision", ["revision.binding"], [{"op": "replace", "path": "/manifest/source_revision", "value": other_rev}], base_bundle),
         fixture("missing_required_contract", ["selected_files.exact_set"], [{"op": "remove", "path": "/source_snapshot/selected_files/0"}], base_bundle),
-        fixture("invalid_reference_id", ["reference.syntax"], [{"op": "replace", "path": "/records/event_envelopes/0/spec/correlation_ref", "value": "aide://bad/../escape"}], base_bundle),
+        fixture("invalid_reference_id", ["reference.syntax"], [{"op": "replace", "path": "/records/event_envelopes/0/spec/correlation_ref", "value": "not-a-reference"}], base_bundle),
         fixture("duplicate_identity", ["identity.duplicate"], [{"op": "replace", "path": "/records/artifact_references/1/metadata/id", "value": base_bundle["records"]["artifact_references"][0]["metadata"]["id"]}], base_bundle),
-        fixture("wrong_authority_role", ["authority.role"], [{"op": "replace", "path": "/metadata/authority_role", "value": "canonical_truth"}], base_bundle),
+        fixture("wrong_authority_role", ["authority.role"], [{"op": "replace", "path": "/records/host_manifest/metadata/authority_role", "value": "canonical_truth"}], base_bundle),
         fixture("generated_projection_marked_canonical", ["authority.canonical_overclaim"], [{"op": "replace", "path": "/status/generated_projection_marked_canonical", "value": True}], base_bundle),
         fixture("path_traversal", ["path.traversal"], [{"op": "replace", "path": "/source_snapshot/selected_files/0/path", "value": "../AGENTS.md"}], base_bundle),
         fixture("absolute_path_escape", ["path.absolute"], [{"op": "replace", "path": "/source_snapshot/selected_files/0/path", "value": "/tmp/AGENTS.md"}], base_bundle),

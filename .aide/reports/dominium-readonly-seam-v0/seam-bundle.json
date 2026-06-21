@@ -59,7 +59,7 @@
       "dominium-refusal-f82bcc96b9eb217d": "sha256:e93d14815daed123cd895e608b5dbed02450f2e312991e8499d520c2e1c291fd",
       "dominium-workspace-c92b38602789": "sha256:41b55380840f114073ebb76927d04c7651d7328985593328998527e3dc97ad51"
     },
-    "seam_bundle_without_self_digest": "sha256:798a9043265cfc257f0eef17691ec87b3fa9694870d48254446d1d1b666868c0",
+    "seam_bundle_without_self_digest": "sha256:3b86c84c0379b276e439e6510d56685647b308bb24459afe3edf3c172617f8ed",
     "source_snapshot": "sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8"
   },
   "cross_reference_index": {
@@ -151,12 +151,12 @@
     "capability_target": "dominium_readonly_seam_v0",
     "projection_authority": "generated_non_authoritative",
     "protocol_version": "0.1.0",
-    "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
+    "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
     "record_count": 42,
     "schema_version": "aide.dominium-readonly-seam.v0",
     "selected_file_count": 17,
     "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-    "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01"
+    "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
   },
   "metadata": {
     "authority_role": "generated_projection_not_canonical_truth",
@@ -222,6 +222,7 @@
       "native_count": 129,
       "omitted_count": 121,
       "omitted_ids_sha256": "sha256:0ac045417b59cb21b4d3aae03b30be958009a5535c5ab6af62af2fe85b779d79",
+      "path": "contracts/diagnostic/diagnostic_code.registry.json",
       "projected_count": 8,
       "projected_ids": [
         "dominium.diagnostic.repo.layout_violation",
@@ -233,9 +234,17 @@
         "dominium.diagnostic.command.unsupported_surface",
         "dominium.diagnostic.capability.missing"
       ],
+      "selected_ids_sha256": "sha256:f70a1e6112aca97a22bb46c1579f425b6d8d8b09ded67356a876b2ad6a6c71b6",
       "selection_limit": 8,
       "selection_policy": "source_order_first_n",
+      "source_registry_git_object": {
+        "git_object": "18c0785fc203c2e68b6de606114f12089f87a815",
+        "mode": "100644",
+        "object_type": "blob"
+      },
       "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
+      "source_registry_sha256": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+      "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
       "truncation_disclosed": true
     },
     "omitted_source_files": "all Dominium files outside the selected seam authority inputs",
@@ -244,6 +253,7 @@
       "native_count": 77,
       "omitted_count": 69,
       "omitted_ids_sha256": "sha256:426206db7961689839a406ea1cfe44cf65c5a44829ea414b5c02b1943d024487",
+      "path": "contracts/refusal/refusal_code.registry.json",
       "projected_count": 8,
       "projected_ids": [
         "dominium.refusal.validation.invalid_target",
@@ -255,9 +265,17 @@
         "dominium.refusal.capability.version_unsupported",
         "dominium.refusal.capability.conflict"
       ],
+      "selected_ids_sha256": "sha256:1485805ca2955298f8b36d4fb8cb1fd49d448940b7137eae5eefe60ee71c573c",
       "selection_limit": 8,
       "selection_policy": "source_order_first_n",
+      "source_registry_git_object": {
+        "git_object": "b46a31b699c70fcb921d1d866a6b4f1b4fb116e0",
+        "mode": "100644",
+        "object_type": "blob"
+      },
       "source_registry_path": "contracts/refusal/refusal_code.registry.json",
+      "source_registry_sha256": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+      "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
       "truncation_disclosed": true
     }
   },
@@ -4602,6 +4620,7 @@
       "native_count": 129,
       "omitted_count": 121,
       "omitted_ids_sha256": "sha256:0ac045417b59cb21b4d3aae03b30be958009a5535c5ab6af62af2fe85b779d79",
+      "path": "contracts/diagnostic/diagnostic_code.registry.json",
       "projected_count": 8,
       "projected_ids": [
         "dominium.diagnostic.repo.layout_violation",
@@ -4613,15 +4632,24 @@
         "dominium.diagnostic.command.unsupported_surface",
         "dominium.diagnostic.capability.missing"
       ],
+      "selected_ids_sha256": "sha256:f70a1e6112aca97a22bb46c1579f425b6d8d8b09ded67356a876b2ad6a6c71b6",
       "selection_limit": 8,
       "selection_policy": "source_order_first_n",
+      "source_registry_git_object": {
+        "git_object": "18c0785fc203c2e68b6de606114f12089f87a815",
+        "mode": "100644",
+        "object_type": "blob"
+      },
       "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
+      "source_registry_sha256": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+      "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
       "truncation_disclosed": true
     },
     "refusals": {
       "native_count": 77,
       "omitted_count": 69,
       "omitted_ids_sha256": "sha256:426206db7961689839a406ea1cfe44cf65c5a44829ea414b5c02b1943d024487",
+      "path": "contracts/refusal/refusal_code.registry.json",
       "projected_count": 8,
       "projected_ids": [
         "dominium.refusal.validation.invalid_target",
@@ -4633,9 +4661,17 @@
         "dominium.refusal.capability.version_unsupported",
         "dominium.refusal.capability.conflict"
       ],
+      "selected_ids_sha256": "sha256:1485805ca2955298f8b36d4fb8cb1fd49d448940b7137eae5eefe60ee71c573c",
       "selection_limit": 8,
       "selection_policy": "source_order_first_n",
+      "source_registry_git_object": {
+        "git_object": "b46a31b699c70fcb921d1d866a6b4f1b4fb116e0",
+        "mode": "100644",
+        "object_type": "blob"
+      },
       "source_registry_path": "contracts/refusal/refusal_code.registry.json",
+      "source_registry_sha256": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+      "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
       "truncation_disclosed": true
     }
   },
