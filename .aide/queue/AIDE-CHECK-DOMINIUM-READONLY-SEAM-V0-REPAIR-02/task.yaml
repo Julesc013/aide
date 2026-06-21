@@ -1,0 +1,29 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+title: Independent Final Verification Of Dominium Read-Only Seam v0 Repair 02
+type: CHECK
+status: needs_review
+result: REQUEST_CHANGES
+review_gate: needs_review
+created_at: 2026-06-21
+updated_at: 2026-06-21
+source_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+source_commit: 1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-02-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide/protocol/aide-dominium-readonly-seam-v0.schema.json
+  - core/interop/dominium/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam*.py
+  - .aide/fixtures/dominium-readonly-seam/**
+  - .aide/interop/dominium/**
+  - .aide/reports/dominium-readonly-seam-v0/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-02/**
+  - C:/Projects/Dominium/dominium/**
+objective: Independently verify Repair 02 without repairing seam implementation.
+recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03

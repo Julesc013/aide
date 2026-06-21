@@ -1,0 +1,2420 @@
+{
+  "assertions": [
+    {
+      "category": "baseline",
+      "description": "AIDE branch is main",
+      "evidence_refs": [
+        "git rev-parse --abbrev-ref HEAD"
+      ],
+      "expected": "main",
+      "id": "baseline.branch",
+      "observed": "main",
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "Repair 02 commit is live HEAD before check outputs",
+      "evidence_refs": [
+        "git rev-parse HEAD"
+      ],
+      "expected": "1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358",
+      "id": "baseline.repair02_head",
+      "observed": "1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358",
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "AIDE worktree clean before check outputs",
+      "evidence_refs": [
+        "git status --short --branch"
+      ],
+      "expected": "## main...origin/main",
+      "id": "baseline.worktree_clean",
+      "observed": "## main...origin/main\n M .aide/queue/index.yaml\n M IMPLEMENT.md\n M PLANS.md\n?? .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/\n?? .aide/reports/dominium-readonly-seam-v0-repair-02-check/",
+      "outcome": "WARN",
+      "severity": "warning",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01 evidence directory has files",
+      "evidence_refs": [
+        ".aide\\queue\\AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01\\evidence"
+      ],
+      "expected": "evidence files present",
+      "id": "baseline.AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01.evidence_present",
+      "observed": [
+        "baseline.md",
+        "changed-files.md",
+        "changed-path-review.md",
+        "command-refusal-review.md",
+        "compatibility-review.md",
+        "dag-and-dependency-review.md",
+        "diagnostic-evidence-event-review.md",
+        "dominium-immutability-review.md",
+        "downstream-task-absence-review.md",
+        "evidence-completeness.md",
+        "failure-recovery-review.md",
+        "namespace-review.md",
+        "next-task-recommendation.md",
+        "no-forbidden-ops.md",
+        "object-mapping-review.md",
+        "ownership-review.md",
+        "remaining-risks.md",
+        "remote-freshness.md",
+        "seam-and-validation-slice-review.md",
+        "secret-scan.md",
+        "security-review.md",
+        "source-chain-review.md",
+        "source-of-truth-review.md",
+        "transaction-composition-review.md",
+        "validation.md",
+        "warning-disposition.md",
+        "workbench-authority-review.md"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01 evidence directory has files",
+      "evidence_refs": [
+        ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence"
+      ],
+      "expected": "evidence files present",
+      "id": "baseline.AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01.evidence_present",
+      "observed": [
+        "baseline.md",
+        "changed-files.md",
+        "dominium-immutability.md",
+        "evidence-manifest.json",
+        "next-task-recommendation.md",
+        "no-forbidden-ops.md",
+        "remaining-risks.md",
+        "result.json",
+        "secret-scan.md",
+        "test-summary.md",
+        "validation.md"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01 evidence directory has files",
+      "evidence_refs": [
+        ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence"
+      ],
+      "expected": "evidence files present",
+      "id": "baseline.AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01.evidence_present",
+      "observed": [
+        "changed-files.md",
+        "evidence-manifest.json",
+        "independent-check-results.json",
+        "independent-negative-results.json",
+        "next-task-recommendation.md",
+        "remaining-risks.md",
+        "source-tree-hashes-after.json",
+        "source-tree-hashes-before.json",
+        "tools",
+        "validation.md"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01 evidence directory has files",
+      "evidence_refs": [
+        ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence"
+      ],
+      "expected": "evidence files present",
+      "id": "baseline.AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01.evidence_present",
+      "observed": [
+        "baseline.md",
+        "changed-files.md",
+        "dominium-immutability.md",
+        "evidence-manifest.json",
+        "finding-disposition.md",
+        "next-task-recommendation.md",
+        "no-forbidden-ops.md",
+        "remaining-risks.md",
+        "result.json",
+        "secret-scan.md",
+        "test-summary.md",
+        "validation.md"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01 evidence directory has files",
+      "evidence_refs": [
+        ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence"
+      ],
+      "expected": "evidence files present",
+      "id": "baseline.AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01.evidence_present",
+      "observed": [
+        "after-tree-state.json",
+        "baseline.md",
+        "before-tree-state.json",
+        "changed-files.md",
+        "evidence-manifest.json",
+        "finding-closure-matrix.json",
+        "independent-conformance-results.json",
+        "independent-negative-results.json",
+        "independent-repair-check.json",
+        "next-task-recommendation.md",
+        "remaining-risks.md",
+        "result.json",
+        "tools",
+        "validation.md"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02 evidence directory has files",
+      "evidence_refs": [
+        ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence"
+      ],
+      "expected": "evidence files present",
+      "id": "baseline.AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02.evidence_present",
+      "observed": [
+        "baseline.md",
+        "changed-files.md",
+        "dominium-immutability.md",
+        "evidence-manifest.json",
+        "next-task-recommendation.md",
+        "no-forbidden-ops.md",
+        "remaining-gap-disposition.md",
+        "remaining-risks.md",
+        "result.json",
+        "secret-scan.md",
+        "test-summary.md",
+        "validation.md"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "Repair 02 baseline counts recompute",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/**",
+        ".aide/reports/dominium-readonly-seam-v0-repair-02/test-summary.json"
+      ],
+      "expected": {
+        "conformance_expectations": 23,
+        "fixtures": 43,
+        "focused_tests": 143,
+        "forbidden_operation_count": 0,
+        "negative_fixtures": 32,
+        "positive_fixtures": 11,
+        "projected_records": 42,
+        "selected_dominium_inputs": 17,
+        "source_mutation_count": 0
+      },
+      "id": "baseline.counts",
+      "observed": {
+        "conformance_expectations": 23,
+        "fixtures": 43,
+        "focused_tests": 143,
+        "forbidden_operation_count": 0,
+        "negative_fixtures": 32,
+        "positive_fixtures": 11,
+        "projected_records": 42,
+        "selected_dominium_inputs": 17,
+        "source_mutation_count": 0
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "schema",
+      "description": "Public schema constrains required kind-specific spec field types",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": "all required kind-specific spec fields have schema properties/type constraints",
+      "id": "schema.kind_specific_spec_types",
+      "observed": {
+        "ArtifactReferenceSpec": [
+          "artifact_ref",
+          "source_path",
+          "source_role",
+          "authority",
+          "sha256",
+          "size_bytes",
+          "git_object",
+          "source_revision",
+          "identity_is_file_path",
+          "file_path_is_locator"
+        ],
+        "ContextDescriptorSpec": [
+          "context_ref",
+          "artifact_refs",
+          "section_count",
+          "sections",
+          "source_revision_binding",
+          "projection_direction"
+        ],
+        "DiagnosticProjectionSpec": [
+          "diagnostic_id",
+          "code",
+          "owner",
+          "severity",
+          "category",
+          "summary",
+          "source_registry",
+          "native_meaning_owned_by",
+          "projection_direction"
+        ],
+        "DominiumBridgeManifestSpec": [
+          "bridge_id",
+          "bridge_runtime_implemented",
+          "mapping_version",
+          "source_of_truth",
+          "ownership",
+          "command_mapping",
+          "compatibility_policy"
+        ],
+        "EventEnvelopeSpec": [
+          "event_ref",
+          "event_type",
+          "summary",
+          "sequence",
+          "causation_ref",
+          "correlation_ref",
+          "universal_event_store_implemented"
+        ],
+        "EvidenceReferenceSetSpec": [
+          "evidence_refs",
+          "evidence_count",
+          "native_evidence_meaning_owned_by",
+          "aide_behavior"
+        ],
+        "HostCapabilitySetSpec": [
+          "capabilities",
+          "forbidden_capabilities"
+        ],
+        "HostManifestSpec": [
+          "host_id",
+          "host_kind",
+          "repository_identity",
+          "selected_revision",
+          "supported_surfaces",
+          "registered_dominium_command_count",
+          "registered_validation_command_present",
+          "runtime_dispatch_available"
+        ],
+        "RefusalProjectionSpec": [
+          "refusal_id",
+          "code",
+          "owner",
+          "category",
+          "summary",
+          "reason",
+          "recovery_action",
+          "diagnostic_codes",
+          "related_commands",
+          "source_registry",
+          "native_meaning_owned_by",
+          "projection_direction"
+        ],
+        "WorkspaceDescriptorSpec": [
+          "workspace_ref",
+          "repository_remote_url_hash",
+          "selected_revision",
+          "branch",
+          "identity_is_file_path",
+          "local_path_is_locator_only",
+          "queue_status"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "schema.effectiveness",
+      "source_gap_id": "REPAIR02-GAP-08"
+    },
+    {
+      "category": "schema",
+      "description": "False-boundary status fields are all required",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": [
+        "dominium_command_invoked",
+        "host_runtime_started",
+        "workbench_started",
+        "bridge_runtime_started",
+        "service_started",
+        "database_opened",
+        "transport_started",
+        "network_call_performed",
+        "provider_or_model_called",
+        "worker_executed",
+        "patch_transaction_applied",
+        "preview_or_apply_performed",
+        "source_repository_mutated",
+        "target_repository_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "release_or_promotion_performed",
+        "generated_projection_marked_canonical"
+      ],
+      "id": "schema.false_boundary_required",
+      "observed": [
+        "source_repository_mutated",
+        "generated_projection_marked_canonical"
+      ],
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-09"
+    },
+    {
+      "category": "schema",
+      "description": "Unknown authority-changing fields cannot bypass public schema validation",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": "bounded extension containers only",
+      "id": "schema.unbounded_authority_fields",
+      "observed": [
+        "#/$defs/ArtifactReferenceSpec",
+        "#/$defs/Compatibility",
+        "#/$defs/ContextDescriptorSpec",
+        "#/$defs/DiagnosticProjectionSpec",
+        "#/$defs/DominiumBridgeManifestSpec",
+        "#/$defs/EventEnvelopeSpec",
+        "#/$defs/EvidenceReferenceSetSpec",
+        "#/$defs/FalseStatus",
+        "#/$defs/Freshness",
+        "#/$defs/HostCapabilitySetSpec",
+        "#/$defs/HostManifestSpec",
+        "#/$defs/Metadata",
+        "#/$defs/Metadata/properties/producer",
+        "#/$defs/RefusalProjectionSpec",
+        "#/$defs/RegistrySummary",
+        "#/$defs/SourceFile",
+        "#/$defs/WorkspaceDescriptorSpec",
+        "#/properties/authority_classification",
+        "#/properties/content_digests",
+        "#/properties/cross_reference_index",
+        "#/properties/manifest",
+        "#/properties/omission_summary",
+        "#/properties/source_snapshot",
+        "#/properties/source_snapshot/properties/repository_identity",
+        "#/properties/validation_summary"
+      ],
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-09"
+    },
+    {
+      "category": "fixtures",
+      "description": "All negative fixtures independently replay deterministically",
+      "evidence_refs": [
+        ".aide/fixtures/dominium-readonly-seam/negative"
+      ],
+      "expected": {
+        "failed_count": 0,
+        "passed_count": 32
+      },
+      "id": "fixtures.independent_replay_all",
+      "observed": {
+        "failed_count": 0,
+        "passed_count": 32
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "fixtures.negative_replayability",
+      "source_gap_id": "REPAIR02-GAP-07"
+    },
+    {
+      "category": "fixtures",
+      "description": "Production fixture replay refuses remove of missing object key",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "remove requires existing target",
+      "id": "fixtures.production_remove_missing",
+      "observed": "parent.pop(key, None) present",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-07"
+    },
+    {
+      "category": "fixtures",
+      "description": "Production fixture replay refuses replace of missing object key",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "replace requires existing target",
+      "id": "fixtures.production_replace_missing",
+      "observed": "dict add/replace share assignment branch",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-07"
+    },
+    {
+      "category": "fixtures",
+      "description": "Production fixture replay rejects negative and noncanonical list indexes before mutation",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "canonical non-negative integer index validation",
+      "id": "fixtures.production_index_strictness",
+      "observed": "int(part) traversal without canonical index check",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-07"
+    },
+    {
+      "category": "registry",
+      "description": "Diagnostic registry provenance recomputes from pinned Dominium Git object",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+        "C:/Projects/Dominium/dominium"
+      ],
+      "expected": "all registry summary fields match source bytes",
+      "id": "registry.diagnostics",
+      "observed": {
+        "all_passed": true,
+        "comparisons": {
+          "native_count": {
+            "expected": 129,
+            "match": true,
+            "observed": 129
+          },
+          "omitted_count": {
+            "expected": 121,
+            "match": true,
+            "observed": 121
+          },
+          "omitted_ids_sha256": {
+            "expected": "sha256:0ac045417b59cb21b4d3aae03b30be958009a5535c5ab6af62af2fe85b779d79",
+            "match": true,
+            "observed": "sha256:0ac045417b59cb21b4d3aae03b30be958009a5535c5ab6af62af2fe85b779d79"
+          },
+          "projected_count": {
+            "expected": 8,
+            "match": true,
+            "observed": 8
+          },
+          "projected_ids": {
+            "expected": [
+              "dominium.diagnostic.repo.layout_violation",
+              "dominium.diagnostic.repo.forbidden_root",
+              "dominium.diagnostic.repo.dependency_direction_violation",
+              "dominium.diagnostic.abi.public_header_violation",
+              "dominium.diagnostic.public_surface.invalid",
+              "dominium.diagnostic.command.invalid_input",
+              "dominium.diagnostic.command.unsupported_surface",
+              "dominium.diagnostic.capability.missing"
+            ],
+            "match": true,
+            "observed": [
+              "dominium.diagnostic.repo.layout_violation",
+              "dominium.diagnostic.repo.forbidden_root",
+              "dominium.diagnostic.repo.dependency_direction_violation",
+              "dominium.diagnostic.abi.public_header_violation",
+              "dominium.diagnostic.public_surface.invalid",
+              "dominium.diagnostic.command.invalid_input",
+              "dominium.diagnostic.command.unsupported_surface",
+              "dominium.diagnostic.capability.missing"
+            ]
+          },
+          "projected_records_match": {
+            "expected": [
+              "dominium.diagnostic.repo.layout_violation",
+              "dominium.diagnostic.repo.forbidden_root",
+              "dominium.diagnostic.repo.dependency_direction_violation",
+              "dominium.diagnostic.abi.public_header_violation",
+              "dominium.diagnostic.public_surface.invalid",
+              "dominium.diagnostic.command.invalid_input",
+              "dominium.diagnostic.command.unsupported_surface",
+              "dominium.diagnostic.capability.missing"
+            ],
+            "match": true,
+            "observed": [
+              "dominium.diagnostic.repo.layout_violation",
+              "dominium.diagnostic.repo.forbidden_root",
+              "dominium.diagnostic.repo.dependency_direction_violation",
+              "dominium.diagnostic.abi.public_header_violation",
+              "dominium.diagnostic.public_surface.invalid",
+              "dominium.diagnostic.command.invalid_input",
+              "dominium.diagnostic.command.unsupported_surface",
+              "dominium.diagnostic.capability.missing"
+            ]
+          },
+          "selected_ids_sha256": {
+            "expected": "sha256:f70a1e6112aca97a22bb46c1579f425b6d8d8b09ded67356a876b2ad6a6c71b6",
+            "match": true,
+            "observed": "sha256:f70a1e6112aca97a22bb46c1579f425b6d8d8b09ded67356a876b2ad6a6c71b6"
+          },
+          "selection_policy": {
+            "expected": "source_order_first_n",
+            "match": true,
+            "observed": "source_order_first_n"
+          },
+          "source_registry_git_object": {
+            "expected": {
+              "git_object": "18c0785fc203c2e68b6de606114f12089f87a815",
+              "mode": "100644",
+              "object_type": "blob"
+            },
+            "match": true,
+            "observed": {
+              "git_object": "18c0785fc203c2e68b6de606114f12089f87a815",
+              "mode": "100644",
+              "object_type": "blob"
+            }
+          },
+          "source_registry_sha256": {
+            "expected": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+            "match": true,
+            "observed": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978"
+          },
+          "truncation_disclosed": {
+            "expected": true,
+            "match": true,
+            "observed": true
+          }
+        },
+        "kind": "diagnostics",
+        "path": "contracts/diagnostic/diagnostic_code.registry.json"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "diagnostics.truncation_disclosure",
+      "source_gap_id": "REPAIR02-GAP-04"
+    },
+    {
+      "category": "registry",
+      "description": "Refusal registry provenance recomputes from pinned Dominium Git object",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+        "C:/Projects/Dominium/dominium"
+      ],
+      "expected": "all registry summary fields match source bytes",
+      "id": "registry.refusals",
+      "observed": {
+        "all_passed": true,
+        "comparisons": {
+          "native_count": {
+            "expected": 77,
+            "match": true,
+            "observed": 77
+          },
+          "omitted_count": {
+            "expected": 69,
+            "match": true,
+            "observed": 69
+          },
+          "omitted_ids_sha256": {
+            "expected": "sha256:426206db7961689839a406ea1cfe44cf65c5a44829ea414b5c02b1943d024487",
+            "match": true,
+            "observed": "sha256:426206db7961689839a406ea1cfe44cf65c5a44829ea414b5c02b1943d024487"
+          },
+          "projected_count": {
+            "expected": 8,
+            "match": true,
+            "observed": 8
+          },
+          "projected_ids": {
+            "expected": [
+              "dominium.refusal.validation.invalid_target",
+              "dominium.refusal.validation.target_unknown",
+              "dominium.refusal.validation.target_kind_unsupported",
+              "dominium.refusal.validation.target_outside_allowed_root",
+              "dominium.refusal.validation.tool_unavailable",
+              "dominium.refusal.capability.missing",
+              "dominium.refusal.capability.version_unsupported",
+              "dominium.refusal.capability.conflict"
+            ],
+            "match": true,
+            "observed": [
+              "dominium.refusal.validation.invalid_target",
+              "dominium.refusal.validation.target_unknown",
+              "dominium.refusal.validation.target_kind_unsupported",
+              "dominium.refusal.validation.target_outside_allowed_root",
+              "dominium.refusal.validation.tool_unavailable",
+              "dominium.refusal.capability.missing",
+              "dominium.refusal.capability.version_unsupported",
+              "dominium.refusal.capability.conflict"
+            ]
+          },
+          "projected_records_match": {
+            "expected": [
+              "dominium.refusal.validation.invalid_target",
+              "dominium.refusal.validation.target_unknown",
+              "dominium.refusal.validation.target_kind_unsupported",
+              "dominium.refusal.validation.target_outside_allowed_root",
+              "dominium.refusal.validation.tool_unavailable",
+              "dominium.refusal.capability.missing",
+              "dominium.refusal.capability.version_unsupported",
+              "dominium.refusal.capability.conflict"
+            ],
+            "match": true,
+            "observed": [
+              "dominium.refusal.validation.invalid_target",
+              "dominium.refusal.validation.target_unknown",
+              "dominium.refusal.validation.target_kind_unsupported",
+              "dominium.refusal.validation.target_outside_allowed_root",
+              "dominium.refusal.validation.tool_unavailable",
+              "dominium.refusal.capability.missing",
+              "dominium.refusal.capability.version_unsupported",
+              "dominium.refusal.capability.conflict"
+            ]
+          },
+          "selected_ids_sha256": {
+            "expected": "sha256:1485805ca2955298f8b36d4fb8cb1fd49d448940b7137eae5eefe60ee71c573c",
+            "match": true,
+            "observed": "sha256:1485805ca2955298f8b36d4fb8cb1fd49d448940b7137eae5eefe60ee71c573c"
+          },
+          "selection_policy": {
+            "expected": "source_order_first_n",
+            "match": true,
+            "observed": "source_order_first_n"
+          },
+          "source_registry_git_object": {
+            "expected": {
+              "git_object": "b46a31b699c70fcb921d1d866a6b4f1b4fb116e0",
+              "mode": "100644",
+              "object_type": "blob"
+            },
+            "match": true,
+            "observed": {
+              "git_object": "b46a31b699c70fcb921d1d866a6b4f1b4fb116e0",
+              "mode": "100644",
+              "object_type": "blob"
+            }
+          },
+          "source_registry_sha256": {
+            "expected": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+            "match": true,
+            "observed": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac"
+          },
+          "truncation_disclosed": {
+            "expected": true,
+            "match": true,
+            "observed": true
+          }
+        },
+        "kind": "refusals",
+        "path": "contracts/refusal/refusal_code.registry.json"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "refusals.truncation_disclosure",
+      "source_gap_id": "REPAIR02-GAP-10"
+    },
+    {
+      "category": "conformance",
+      "description": "Conformance results have required assertion-level fields",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json"
+      ],
+      "expected": "23 complete result rows",
+      "id": "conformance.shape",
+      "observed": {
+        "aggregate_only_not_proven_source_present": true,
+        "assertion_count": 23,
+        "missing_required_fields": [],
+        "network_assertion_uses_status_fields_only": true,
+        "no_write_assertion_uses_self_declared_flag_only": true,
+        "passed_count": 23,
+        "result_count": 23,
+        "unsupported_operation_assertion_uses_next_task_suffix": true
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-02"
+    },
+    {
+      "category": "conformance",
+      "description": "Unsupported-operation refusal assertion proves actual CLI refusals",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py"
+      ],
+      "expected": "assertion exercises unsupported verbs",
+      "id": "conformance.unsupported_operation_semantics",
+      "observed": "assertion source checks recommended next-task suffix",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "conformance.independence",
+      "source_gap_id": "REPAIR02-GAP-02"
+    },
+    {
+      "category": "conformance",
+      "description": "No cross-repository write assertion uses before/after evidence or operation ledger",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py"
+      ],
+      "expected": "before/after or operation-ledger proof",
+      "id": "conformance.no_write_semantics",
+      "observed": "assertion source checks self-declared dominium_file_write flag",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-02"
+    },
+    {
+      "category": "conformance",
+      "description": "No provider/model/network assertion is independently evidenced",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py"
+      ],
+      "expected": "operation guard, dependency review, or bounded instrumentation",
+      "id": "conformance.network_semantics",
+      "observed": "assertion source checks status fields only",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-02"
+    },
+    {
+      "category": "conformance",
+      "description": "Aggregate-only conformance path cannot return PASS",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py"
+      ],
+      "expected": "NOT_PROVEN source path",
+      "id": "conformance.aggregate_fail_closed",
+      "observed": true,
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-02"
+    },
+    {
+      "category": "operation-ledger",
+      "description": "Operation and observation counts reconcile",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "expected": "operation_count len and raw counts reconcile",
+      "id": "operation.count_reconciliation",
+      "observed": {
+        "allowed_operation_count": 858,
+        "complete_raw_trace_present": false,
+        "counts_reconcile": true,
+        "forbidden_injection_count": 0,
+        "forbidden_operation_count": 0,
+        "missing_families": [],
+        "network_remote_verbs_classified_as_git_reads": true,
+        "observation_count": 858,
+        "observed_families": [
+          "git_reads"
+        ],
+        "operation_count": 43,
+        "operation_len": 43,
+        "raw_observation_sample_count": 50,
+        "raw_trace_digest_present": false,
+        "recomputed_observation_count": 858,
+        "required_families": [
+          "git_reads",
+          "filesystem_writes",
+          "branch_worktree_ref_ops",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch",
+          "mutation_apply"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-01"
+    },
+    {
+      "category": "operation-ledger",
+      "description": "Required operation families have coverage entries",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "expected": "all required families covered",
+      "id": "operation.family_coverage",
+      "observed": {
+        "allowed_operation_count": 858,
+        "complete_raw_trace_present": false,
+        "counts_reconcile": true,
+        "forbidden_injection_count": 0,
+        "forbidden_operation_count": 0,
+        "missing_families": [],
+        "network_remote_verbs_classified_as_git_reads": true,
+        "observation_count": 858,
+        "observed_families": [
+          "git_reads"
+        ],
+        "operation_count": 43,
+        "operation_len": 43,
+        "raw_observation_sample_count": 50,
+        "raw_trace_digest_present": false,
+        "recomputed_observation_count": 858,
+        "required_families": [
+          "git_reads",
+          "filesystem_writes",
+          "branch_worktree_ref_ops",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch",
+          "mutation_apply"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-06"
+    },
+    {
+      "category": "operation-ledger",
+      "description": "Aggregated operation ledger includes complete raw trace or digest",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "expected": "complete raw observation trace or raw trace digest",
+      "id": "operation.raw_trace_auditability",
+      "observed": {
+        "allowed_operation_count": 858,
+        "complete_raw_trace_present": false,
+        "counts_reconcile": true,
+        "forbidden_injection_count": 0,
+        "forbidden_operation_count": 0,
+        "missing_families": [],
+        "network_remote_verbs_classified_as_git_reads": true,
+        "observation_count": 858,
+        "observed_families": [
+          "git_reads"
+        ],
+        "operation_count": 43,
+        "operation_len": 43,
+        "raw_observation_sample_count": 50,
+        "raw_trace_digest_present": false,
+        "recomputed_observation_count": 858,
+        "required_families": [
+          "git_reads",
+          "filesystem_writes",
+          "branch_worktree_ref_ops",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch",
+          "mutation_apply"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-05"
+    },
+    {
+      "category": "operation-ledger",
+      "description": "Network Git verbs are not classified as ordinary git_reads",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py"
+      ],
+      "expected": "fetch/pull/clone/push classified as network or remote mutation attempts",
+      "id": "operation.git_network_classification",
+      "observed": {
+        "allowed_operation_count": 858,
+        "complete_raw_trace_present": false,
+        "counts_reconcile": true,
+        "forbidden_injection_count": 0,
+        "forbidden_operation_count": 0,
+        "missing_families": [],
+        "network_remote_verbs_classified_as_git_reads": true,
+        "observation_count": 858,
+        "observed_families": [
+          "git_reads"
+        ],
+        "operation_count": 43,
+        "operation_len": 43,
+        "raw_observation_sample_count": 50,
+        "raw_trace_digest_present": false,
+        "recomputed_observation_count": 858,
+        "required_families": [
+          "git_reads",
+          "filesystem_writes",
+          "branch_worktree_ref_ops",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch",
+          "mutation_apply"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-05"
+    },
+    {
+      "category": "operation-ledger",
+      "description": "Operation-family coverage includes forbidden injection evidence",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "expected": "safe forbidden-operation injections recorded",
+      "id": "operation.injection_evidence",
+      "observed": {
+        "allowed_operation_count": 858,
+        "complete_raw_trace_present": false,
+        "counts_reconcile": true,
+        "forbidden_injection_count": 0,
+        "forbidden_operation_count": 0,
+        "missing_families": [],
+        "network_remote_verbs_classified_as_git_reads": true,
+        "observation_count": 858,
+        "observed_families": [
+          "git_reads"
+        ],
+        "operation_count": 43,
+        "operation_len": 43,
+        "raw_observation_sample_count": 50,
+        "raw_trace_digest_present": false,
+        "recomputed_observation_count": 858,
+        "required_families": [
+          "git_reads",
+          "filesystem_writes",
+          "branch_worktree_ref_ops",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch",
+          "mutation_apply"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-05"
+    },
+    {
+      "category": "runtime-dependency",
+      "description": "Runtime dependency manifest paths and hashes independently verify",
+      "evidence_refs": [
+        ".aide/interop/dominium/runtime-dependency-manifest.json"
+      ],
+      "expected": "all dependency hashes and manifest digest match",
+      "id": "runtime.manifest_hashes",
+      "observed": {
+        "all_paths_valid": true,
+        "declared_dependency_count": 21,
+        "dependency_count": 21,
+        "manifest_digest_match": true,
+        "path_results": [
+          {
+            "exists": true,
+            "path": ".aide/scripts/aide_lite.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/__init__.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/protocol/__init__.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/protocol/envelope.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/__init__.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/bundle.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/conformance.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/contracts.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/diagnostics.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/fixture_replay.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/identity.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/integrity.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/mappings.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/models.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/operations.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/projector.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/references.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/refusals.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/snapshot.py",
+            "repository_relative": true,
+            "sha256_match": true
+          },
+          {
+            "exists": true,
+            "path": "core/interop/dominium/validation.py",
+            "repository_relative": true,
+            "sha256_match": true
+          }
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-03"
+    },
+    {
+      "category": "runtime-dependency",
+      "description": "Serialized manifest includes CLI, dominium package, and envelope import roots",
+      "evidence_refs": [
+        ".aide/interop/dominium/runtime-dependency-manifest.json"
+      ],
+      "expected": "required roots declared",
+      "id": "runtime.import_graph_minimum",
+      "observed": {
+        "aide_lite_declared": true,
+        "declared_dependency_count": 21,
+        "derived_local_imports": [
+          "core.protocol"
+        ],
+        "dominium_package_declared": true,
+        "envelope_declared": true
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-03"
+    },
+    {
+      "category": "portability",
+      "description": "Both isolated roots produced required portable output set",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/portability-result.json"
+      ],
+      "expected": "no required outputs missing",
+      "id": "portability.required_outputs",
+      "observed": [
+        {
+          "extra": [],
+          "missing": [],
+          "root": 0
+        },
+        {
+          "extra": [],
+          "missing": [],
+          "root": 1
+        }
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-03"
+    },
+    {
+      "category": "portability",
+      "description": "Portability copies dependencies from serialized manifest, not production hard-coded list",
+      "evidence_refs": [
+        "core/interop/dominium/bundle.py"
+      ],
+      "expected": "serialized manifest drives copy",
+      "id": "portability.manifest_driven_copy",
+      "observed": {
+        "absolute_path_leak_count": 0,
+        "isolated_cli_roots": 2,
+        "missing_by_root": [
+          {
+            "extra": [],
+            "missing": [],
+            "root": 0
+          },
+          {
+            "extra": [],
+            "missing": [],
+            "root": 1
+          }
+        ],
+        "output_hashes_equal": true,
+        "removes_pythonpath": false,
+        "status": "PASS",
+        "uses_os_environ_copy": true,
+        "uses_production_copy_runtime_dependencies": true,
+        "uses_python_isolated_mode": false
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-03"
+    },
+    {
+      "category": "portability",
+      "description": "Isolated runs remove PYTHONPATH/PYTHONHOME and use isolated mode or equivalent",
+      "evidence_refs": [
+        "core/interop/dominium/bundle.py"
+      ],
+      "expected": "sanitized environment and import isolation",
+      "id": "portability.sanitized_environment",
+      "observed": {
+        "absolute_path_leak_count": 0,
+        "isolated_cli_roots": 2,
+        "missing_by_root": [
+          {
+            "extra": [],
+            "missing": [],
+            "root": 0
+          },
+          {
+            "extra": [],
+            "missing": [],
+            "root": 1
+          }
+        ],
+        "output_hashes_equal": true,
+        "removes_pythonpath": false,
+        "status": "PASS",
+        "uses_os_environ_copy": true,
+        "uses_production_copy_runtime_dependencies": true,
+        "uses_python_isolated_mode": false
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-03"
+    },
+    {
+      "category": "portability",
+      "description": "Portable outputs have no absolute path leaks",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/portability-result.json"
+      ],
+      "expected": 0,
+      "id": "portability.path_leaks",
+      "observed": 0,
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-03"
+    },
+    {
+      "category": "conformance",
+      "description": "All required unsupported seam verbs return typed REFUSED responses",
+      "evidence_refs": [
+        ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\unsupported-operation-probes.json"
+      ],
+      "expected": "typed REFUSED for all unsupported verbs",
+      "id": "cli.unsupported_extended_verbs",
+      "observed": {
+        "all_typed_refusals": false,
+        "not_typed_refusals": [
+          "fetch",
+          "pull",
+          "checkout",
+          "branch",
+          "worktree",
+          "publish"
+        ],
+        "results": [
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: run",
+              "message: dominium-seam run is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "run"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: invoke",
+              "message: dominium-seam invoke is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "invoke"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: execute",
+              "message: dominium-seam execute is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "execute"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: apply",
+              "message: dominium-seam apply is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "apply"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: write",
+              "message: dominium-seam write is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "write"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: sync",
+              "message: dominium-seam sync is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "sync"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: push",
+              "message: dominium-seam push is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "push"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: serve",
+              "message: dominium-seam serve is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "serve"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: connect",
+              "message: dominium-seam connect is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "connect"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: dispatch",
+              "message: dominium-seam dispatch is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "dispatch"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'fetch' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "fetch"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'pull' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "pull"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'checkout' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "checkout"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'branch' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "branch"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'worktree' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "worktree"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'publish' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "publish"
+          }
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "conformance.independence",
+      "source_gap_id": "REPAIR02-GAP-02"
+    },
+    {
+      "category": "source-chain",
+      "description": "Repair 02 records exactly ten repaired-pending-check dispositions",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0-repair-02/remaining-gap-disposition.json"
+      ],
+      "expected": 10,
+      "id": "repair02.disposition_count",
+      "observed": 10,
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "source-chain",
+      "description": "Repair 02 recommends this check",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0-repair-02/repair-report.json"
+      ],
+      "expected": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+      "id": "repair02.recommended_next",
+      "observed": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    },
+    {
+      "category": "dominium",
+      "description": "Dominium state did not change during the independent check",
+      "evidence_refs": [
+        ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\before-dominium-state.json",
+        ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\after-dominium-state.json"
+      ],
+      "expected": {
+        "available": true,
+        "head": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+        "head_returncode": 0,
+        "refs": "a5f1ff2b22adf3a12156f0a463393d646cc9d9e6 refs/heads/canon-spine-boundary-01\n8f7e5adcf9e85833f6a2d8c91b3f90eecb9d34ee refs/heads/checkpoint/canon-spine-8f7e5adc\nc92b386027890c1bbf14aef6eaafe0357b7b03dd refs/heads/main\n8f87251439834fd6a6c72b530372fb3c61d28377 refs/heads/wt/composition-resolver-law-01\nd71e3867a7d871340020ce43aa0cd4a866ea972b refs/heads/wt/document-patch-transaction-runtime-01\nb418253398c42ef55b26713b6b7a9e1b11186ae7 refs/heads/wt/dominium-doctrine-recovery-matrix-01\n748bb98359ad0ac7782365736655166b585aa597 refs/heads/wt/project-graph-service-01\n05b1cf0b62161bdb8787ebc7e2e86c5553e771dd refs/heads/wt/service-conformance-law-01",
+        "refs_returncode": 0,
+        "status": "## main...origin/main [behind 24]",
+        "status_returncode": 0
+      },
+      "id": "dominium.immutability",
+      "observed": {
+        "available": true,
+        "head": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+        "head_returncode": 0,
+        "refs": "a5f1ff2b22adf3a12156f0a463393d646cc9d9e6 refs/heads/canon-spine-boundary-01\n8f7e5adcf9e85833f6a2d8c91b3f90eecb9d34ee refs/heads/checkpoint/canon-spine-8f7e5adc\nc92b386027890c1bbf14aef6eaafe0357b7b03dd refs/heads/main\n8f87251439834fd6a6c72b530372fb3c61d28377 refs/heads/wt/composition-resolver-law-01\nd71e3867a7d871340020ce43aa0cd4a866ea972b refs/heads/wt/document-patch-transaction-runtime-01\nb418253398c42ef55b26713b6b7a9e1b11186ae7 refs/heads/wt/dominium-doctrine-recovery-matrix-01\n748bb98359ad0ac7782365736655166b585aa597 refs/heads/wt/project-graph-service-01\n05b1cf0b62161bdb8787ebc7e2e86c5553e771dd refs/heads/wt/service-conformance-law-01",
+        "refs_returncode": 0,
+        "status": "## main...origin/main [behind 24]",
+        "status_returncode": 0
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": null
+    }
+  ],
+  "baseline_counts": {
+    "conformance_expectations": 23,
+    "fixtures": 43,
+    "focused_tests": 143,
+    "forbidden_operation_count": 0,
+    "negative_fixtures": 32,
+    "positive_fixtures": 11,
+    "projected_records": 42,
+    "selected_dominium_inputs": 17,
+    "source_mutation_count": 0
+  },
+  "material_finding_count": 15,
+  "material_findings": [
+    {
+      "category": "schema",
+      "description": "Public schema constrains required kind-specific spec field types",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": "all required kind-specific spec fields have schema properties/type constraints",
+      "id": "schema.kind_specific_spec_types",
+      "observed": {
+        "ArtifactReferenceSpec": [
+          "artifact_ref",
+          "source_path",
+          "source_role",
+          "authority",
+          "sha256",
+          "size_bytes",
+          "git_object",
+          "source_revision",
+          "identity_is_file_path",
+          "file_path_is_locator"
+        ],
+        "ContextDescriptorSpec": [
+          "context_ref",
+          "artifact_refs",
+          "section_count",
+          "sections",
+          "source_revision_binding",
+          "projection_direction"
+        ],
+        "DiagnosticProjectionSpec": [
+          "diagnostic_id",
+          "code",
+          "owner",
+          "severity",
+          "category",
+          "summary",
+          "source_registry",
+          "native_meaning_owned_by",
+          "projection_direction"
+        ],
+        "DominiumBridgeManifestSpec": [
+          "bridge_id",
+          "bridge_runtime_implemented",
+          "mapping_version",
+          "source_of_truth",
+          "ownership",
+          "command_mapping",
+          "compatibility_policy"
+        ],
+        "EventEnvelopeSpec": [
+          "event_ref",
+          "event_type",
+          "summary",
+          "sequence",
+          "causation_ref",
+          "correlation_ref",
+          "universal_event_store_implemented"
+        ],
+        "EvidenceReferenceSetSpec": [
+          "evidence_refs",
+          "evidence_count",
+          "native_evidence_meaning_owned_by",
+          "aide_behavior"
+        ],
+        "HostCapabilitySetSpec": [
+          "capabilities",
+          "forbidden_capabilities"
+        ],
+        "HostManifestSpec": [
+          "host_id",
+          "host_kind",
+          "repository_identity",
+          "selected_revision",
+          "supported_surfaces",
+          "registered_dominium_command_count",
+          "registered_validation_command_present",
+          "runtime_dispatch_available"
+        ],
+        "RefusalProjectionSpec": [
+          "refusal_id",
+          "code",
+          "owner",
+          "category",
+          "summary",
+          "reason",
+          "recovery_action",
+          "diagnostic_codes",
+          "related_commands",
+          "source_registry",
+          "native_meaning_owned_by",
+          "projection_direction"
+        ],
+        "WorkspaceDescriptorSpec": [
+          "workspace_ref",
+          "repository_remote_url_hash",
+          "selected_revision",
+          "branch",
+          "identity_is_file_path",
+          "local_path_is_locator_only",
+          "queue_status"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "schema.effectiveness",
+      "source_gap_id": "REPAIR02-GAP-08"
+    },
+    {
+      "category": "schema",
+      "description": "False-boundary status fields are all required",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": [
+        "dominium_command_invoked",
+        "host_runtime_started",
+        "workbench_started",
+        "bridge_runtime_started",
+        "service_started",
+        "database_opened",
+        "transport_started",
+        "network_call_performed",
+        "provider_or_model_called",
+        "worker_executed",
+        "patch_transaction_applied",
+        "preview_or_apply_performed",
+        "source_repository_mutated",
+        "target_repository_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "release_or_promotion_performed",
+        "generated_projection_marked_canonical"
+      ],
+      "id": "schema.false_boundary_required",
+      "observed": [
+        "source_repository_mutated",
+        "generated_projection_marked_canonical"
+      ],
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-09"
+    },
+    {
+      "category": "schema",
+      "description": "Unknown authority-changing fields cannot bypass public schema validation",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": "bounded extension containers only",
+      "id": "schema.unbounded_authority_fields",
+      "observed": [
+        "#/$defs/ArtifactReferenceSpec",
+        "#/$defs/Compatibility",
+        "#/$defs/ContextDescriptorSpec",
+        "#/$defs/DiagnosticProjectionSpec",
+        "#/$defs/DominiumBridgeManifestSpec",
+        "#/$defs/EventEnvelopeSpec",
+        "#/$defs/EvidenceReferenceSetSpec",
+        "#/$defs/FalseStatus",
+        "#/$defs/Freshness",
+        "#/$defs/HostCapabilitySetSpec",
+        "#/$defs/HostManifestSpec",
+        "#/$defs/Metadata",
+        "#/$defs/Metadata/properties/producer",
+        "#/$defs/RefusalProjectionSpec",
+        "#/$defs/RegistrySummary",
+        "#/$defs/SourceFile",
+        "#/$defs/WorkspaceDescriptorSpec",
+        "#/properties/authority_classification",
+        "#/properties/content_digests",
+        "#/properties/cross_reference_index",
+        "#/properties/manifest",
+        "#/properties/omission_summary",
+        "#/properties/source_snapshot",
+        "#/properties/source_snapshot/properties/repository_identity",
+        "#/properties/validation_summary"
+      ],
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-09"
+    },
+    {
+      "category": "fixtures",
+      "description": "Production fixture replay refuses remove of missing object key",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "remove requires existing target",
+      "id": "fixtures.production_remove_missing",
+      "observed": "parent.pop(key, None) present",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-07"
+    },
+    {
+      "category": "fixtures",
+      "description": "Production fixture replay refuses replace of missing object key",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "replace requires existing target",
+      "id": "fixtures.production_replace_missing",
+      "observed": "dict add/replace share assignment branch",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-07"
+    },
+    {
+      "category": "fixtures",
+      "description": "Production fixture replay rejects negative and noncanonical list indexes before mutation",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "canonical non-negative integer index validation",
+      "id": "fixtures.production_index_strictness",
+      "observed": "int(part) traversal without canonical index check",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-07"
+    },
+    {
+      "category": "conformance",
+      "description": "Unsupported-operation refusal assertion proves actual CLI refusals",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py"
+      ],
+      "expected": "assertion exercises unsupported verbs",
+      "id": "conformance.unsupported_operation_semantics",
+      "observed": "assertion source checks recommended next-task suffix",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "conformance.independence",
+      "source_gap_id": "REPAIR02-GAP-02"
+    },
+    {
+      "category": "conformance",
+      "description": "No cross-repository write assertion uses before/after evidence or operation ledger",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py"
+      ],
+      "expected": "before/after or operation-ledger proof",
+      "id": "conformance.no_write_semantics",
+      "observed": "assertion source checks self-declared dominium_file_write flag",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-02"
+    },
+    {
+      "category": "conformance",
+      "description": "No provider/model/network assertion is independently evidenced",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py"
+      ],
+      "expected": "operation guard, dependency review, or bounded instrumentation",
+      "id": "conformance.network_semantics",
+      "observed": "assertion source checks status fields only",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-02"
+    },
+    {
+      "category": "operation-ledger",
+      "description": "Aggregated operation ledger includes complete raw trace or digest",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "expected": "complete raw observation trace or raw trace digest",
+      "id": "operation.raw_trace_auditability",
+      "observed": {
+        "allowed_operation_count": 858,
+        "complete_raw_trace_present": false,
+        "counts_reconcile": true,
+        "forbidden_injection_count": 0,
+        "forbidden_operation_count": 0,
+        "missing_families": [],
+        "network_remote_verbs_classified_as_git_reads": true,
+        "observation_count": 858,
+        "observed_families": [
+          "git_reads"
+        ],
+        "operation_count": 43,
+        "operation_len": 43,
+        "raw_observation_sample_count": 50,
+        "raw_trace_digest_present": false,
+        "recomputed_observation_count": 858,
+        "required_families": [
+          "git_reads",
+          "filesystem_writes",
+          "branch_worktree_ref_ops",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch",
+          "mutation_apply"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-05"
+    },
+    {
+      "category": "operation-ledger",
+      "description": "Network Git verbs are not classified as ordinary git_reads",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py"
+      ],
+      "expected": "fetch/pull/clone/push classified as network or remote mutation attempts",
+      "id": "operation.git_network_classification",
+      "observed": {
+        "allowed_operation_count": 858,
+        "complete_raw_trace_present": false,
+        "counts_reconcile": true,
+        "forbidden_injection_count": 0,
+        "forbidden_operation_count": 0,
+        "missing_families": [],
+        "network_remote_verbs_classified_as_git_reads": true,
+        "observation_count": 858,
+        "observed_families": [
+          "git_reads"
+        ],
+        "operation_count": 43,
+        "operation_len": 43,
+        "raw_observation_sample_count": 50,
+        "raw_trace_digest_present": false,
+        "recomputed_observation_count": 858,
+        "required_families": [
+          "git_reads",
+          "filesystem_writes",
+          "branch_worktree_ref_ops",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch",
+          "mutation_apply"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-05"
+    },
+    {
+      "category": "operation-ledger",
+      "description": "Operation-family coverage includes forbidden injection evidence",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "expected": "safe forbidden-operation injections recorded",
+      "id": "operation.injection_evidence",
+      "observed": {
+        "allowed_operation_count": 858,
+        "complete_raw_trace_present": false,
+        "counts_reconcile": true,
+        "forbidden_injection_count": 0,
+        "forbidden_operation_count": 0,
+        "missing_families": [],
+        "network_remote_verbs_classified_as_git_reads": true,
+        "observation_count": 858,
+        "observed_families": [
+          "git_reads"
+        ],
+        "operation_count": 43,
+        "operation_len": 43,
+        "raw_observation_sample_count": 50,
+        "raw_trace_digest_present": false,
+        "recomputed_observation_count": 858,
+        "required_families": [
+          "git_reads",
+          "filesystem_writes",
+          "branch_worktree_ref_ops",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch",
+          "mutation_apply"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-05"
+    },
+    {
+      "category": "portability",
+      "description": "Portability copies dependencies from serialized manifest, not production hard-coded list",
+      "evidence_refs": [
+        "core/interop/dominium/bundle.py"
+      ],
+      "expected": "serialized manifest drives copy",
+      "id": "portability.manifest_driven_copy",
+      "observed": {
+        "absolute_path_leak_count": 0,
+        "isolated_cli_roots": 2,
+        "missing_by_root": [
+          {
+            "extra": [],
+            "missing": [],
+            "root": 0
+          },
+          {
+            "extra": [],
+            "missing": [],
+            "root": 1
+          }
+        ],
+        "output_hashes_equal": true,
+        "removes_pythonpath": false,
+        "status": "PASS",
+        "uses_os_environ_copy": true,
+        "uses_production_copy_runtime_dependencies": true,
+        "uses_python_isolated_mode": false
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-03"
+    },
+    {
+      "category": "portability",
+      "description": "Isolated runs remove PYTHONPATH/PYTHONHOME and use isolated mode or equivalent",
+      "evidence_refs": [
+        "core/interop/dominium/bundle.py"
+      ],
+      "expected": "sanitized environment and import isolation",
+      "id": "portability.sanitized_environment",
+      "observed": {
+        "absolute_path_leak_count": 0,
+        "isolated_cli_roots": 2,
+        "missing_by_root": [
+          {
+            "extra": [],
+            "missing": [],
+            "root": 0
+          },
+          {
+            "extra": [],
+            "missing": [],
+            "root": 1
+          }
+        ],
+        "output_hashes_equal": true,
+        "removes_pythonpath": false,
+        "status": "PASS",
+        "uses_os_environ_copy": true,
+        "uses_production_copy_runtime_dependencies": true,
+        "uses_python_isolated_mode": false
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null,
+      "source_gap_id": "REPAIR02-GAP-03"
+    },
+    {
+      "category": "conformance",
+      "description": "All required unsupported seam verbs return typed REFUSED responses",
+      "evidence_refs": [
+        ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\unsupported-operation-probes.json"
+      ],
+      "expected": "typed REFUSED for all unsupported verbs",
+      "id": "cli.unsupported_extended_verbs",
+      "observed": {
+        "all_typed_refusals": false,
+        "not_typed_refusals": [
+          "fetch",
+          "pull",
+          "checkout",
+          "branch",
+          "worktree",
+          "publish"
+        ],
+        "results": [
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: run",
+              "message: dominium-seam run is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "run"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: invoke",
+              "message: dominium-seam invoke is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "invoke"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: execute",
+              "message: dominium-seam execute is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "execute"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: apply",
+              "message: dominium-seam apply is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "apply"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: write",
+              "message: dominium-seam write is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "write"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: sync",
+              "message: dominium-seam sync is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "sync"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: push",
+              "message: dominium-seam push is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "push"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: serve",
+              "message: dominium-seam serve is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "serve"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: connect",
+              "message: dominium-seam connect is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "connect"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: dispatch",
+              "message: dominium-seam dispatch is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false"
+            ],
+            "typed_refusal": true,
+            "verb": "dispatch"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'fetch' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "fetch"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'pull' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "pull"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'checkout' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "checkout"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'branch' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "branch"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'worktree' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "worktree"
+          },
+          {
+            "exit_code": 2,
+            "preview": [
+              "",
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'publish' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+            ],
+            "typed_refusal": false,
+            "verb": "publish"
+          }
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "conformance.independence",
+      "source_gap_id": "REPAIR02-GAP-02"
+    }
+  ],
+  "no_forbidden_operations_by_check": true,
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.dominium-readonly-seam.repair-02-check-report.v0",
+  "source_commit": "1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358",
+  "source_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "warning_count": 4,
+  "warnings": [
+    "The seam remains offline and read-only.",
+    "Local Dominium remains behind origin/main by 24 commits.",
+    "Draft 2020-12 jsonschema runtime was not installed locally; schema effectiveness was checked by independent schema-source inspection.",
+    "Minimum Python 3.11 runtime was not executed separately in this environment."
+  ]
+}

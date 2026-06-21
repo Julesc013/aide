@@ -1,0 +1,214 @@
+{
+  "diagnostics": {
+    "all_passed": true,
+    "comparisons": {
+      "native_count": {
+        "expected": 129,
+        "match": true,
+        "observed": 129
+      },
+      "omitted_count": {
+        "expected": 121,
+        "match": true,
+        "observed": 121
+      },
+      "omitted_ids_sha256": {
+        "expected": "sha256:0ac045417b59cb21b4d3aae03b30be958009a5535c5ab6af62af2fe85b779d79",
+        "match": true,
+        "observed": "sha256:0ac045417b59cb21b4d3aae03b30be958009a5535c5ab6af62af2fe85b779d79"
+      },
+      "projected_count": {
+        "expected": 8,
+        "match": true,
+        "observed": 8
+      },
+      "projected_ids": {
+        "expected": [
+          "dominium.diagnostic.repo.layout_violation",
+          "dominium.diagnostic.repo.forbidden_root",
+          "dominium.diagnostic.repo.dependency_direction_violation",
+          "dominium.diagnostic.abi.public_header_violation",
+          "dominium.diagnostic.public_surface.invalid",
+          "dominium.diagnostic.command.invalid_input",
+          "dominium.diagnostic.command.unsupported_surface",
+          "dominium.diagnostic.capability.missing"
+        ],
+        "match": true,
+        "observed": [
+          "dominium.diagnostic.repo.layout_violation",
+          "dominium.diagnostic.repo.forbidden_root",
+          "dominium.diagnostic.repo.dependency_direction_violation",
+          "dominium.diagnostic.abi.public_header_violation",
+          "dominium.diagnostic.public_surface.invalid",
+          "dominium.diagnostic.command.invalid_input",
+          "dominium.diagnostic.command.unsupported_surface",
+          "dominium.diagnostic.capability.missing"
+        ]
+      },
+      "projected_records_match": {
+        "expected": [
+          "dominium.diagnostic.repo.layout_violation",
+          "dominium.diagnostic.repo.forbidden_root",
+          "dominium.diagnostic.repo.dependency_direction_violation",
+          "dominium.diagnostic.abi.public_header_violation",
+          "dominium.diagnostic.public_surface.invalid",
+          "dominium.diagnostic.command.invalid_input",
+          "dominium.diagnostic.command.unsupported_surface",
+          "dominium.diagnostic.capability.missing"
+        ],
+        "match": true,
+        "observed": [
+          "dominium.diagnostic.repo.layout_violation",
+          "dominium.diagnostic.repo.forbidden_root",
+          "dominium.diagnostic.repo.dependency_direction_violation",
+          "dominium.diagnostic.abi.public_header_violation",
+          "dominium.diagnostic.public_surface.invalid",
+          "dominium.diagnostic.command.invalid_input",
+          "dominium.diagnostic.command.unsupported_surface",
+          "dominium.diagnostic.capability.missing"
+        ]
+      },
+      "selected_ids_sha256": {
+        "expected": "sha256:f70a1e6112aca97a22bb46c1579f425b6d8d8b09ded67356a876b2ad6a6c71b6",
+        "match": true,
+        "observed": "sha256:f70a1e6112aca97a22bb46c1579f425b6d8d8b09ded67356a876b2ad6a6c71b6"
+      },
+      "selection_policy": {
+        "expected": "source_order_first_n",
+        "match": true,
+        "observed": "source_order_first_n"
+      },
+      "source_registry_git_object": {
+        "expected": {
+          "git_object": "18c0785fc203c2e68b6de606114f12089f87a815",
+          "mode": "100644",
+          "object_type": "blob"
+        },
+        "match": true,
+        "observed": {
+          "git_object": "18c0785fc203c2e68b6de606114f12089f87a815",
+          "mode": "100644",
+          "object_type": "blob"
+        }
+      },
+      "source_registry_sha256": {
+        "expected": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+        "match": true,
+        "observed": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978"
+      },
+      "truncation_disclosed": {
+        "expected": true,
+        "match": true,
+        "observed": true
+      }
+    },
+    "kind": "diagnostics",
+    "path": "contracts/diagnostic/diagnostic_code.registry.json"
+  },
+  "refusals": {
+    "all_passed": true,
+    "comparisons": {
+      "native_count": {
+        "expected": 77,
+        "match": true,
+        "observed": 77
+      },
+      "omitted_count": {
+        "expected": 69,
+        "match": true,
+        "observed": 69
+      },
+      "omitted_ids_sha256": {
+        "expected": "sha256:426206db7961689839a406ea1cfe44cf65c5a44829ea414b5c02b1943d024487",
+        "match": true,
+        "observed": "sha256:426206db7961689839a406ea1cfe44cf65c5a44829ea414b5c02b1943d024487"
+      },
+      "projected_count": {
+        "expected": 8,
+        "match": true,
+        "observed": 8
+      },
+      "projected_ids": {
+        "expected": [
+          "dominium.refusal.validation.invalid_target",
+          "dominium.refusal.validation.target_unknown",
+          "dominium.refusal.validation.target_kind_unsupported",
+          "dominium.refusal.validation.target_outside_allowed_root",
+          "dominium.refusal.validation.tool_unavailable",
+          "dominium.refusal.capability.missing",
+          "dominium.refusal.capability.version_unsupported",
+          "dominium.refusal.capability.conflict"
+        ],
+        "match": true,
+        "observed": [
+          "dominium.refusal.validation.invalid_target",
+          "dominium.refusal.validation.target_unknown",
+          "dominium.refusal.validation.target_kind_unsupported",
+          "dominium.refusal.validation.target_outside_allowed_root",
+          "dominium.refusal.validation.tool_unavailable",
+          "dominium.refusal.capability.missing",
+          "dominium.refusal.capability.version_unsupported",
+          "dominium.refusal.capability.conflict"
+        ]
+      },
+      "projected_records_match": {
+        "expected": [
+          "dominium.refusal.validation.invalid_target",
+          "dominium.refusal.validation.target_unknown",
+          "dominium.refusal.validation.target_kind_unsupported",
+          "dominium.refusal.validation.target_outside_allowed_root",
+          "dominium.refusal.validation.tool_unavailable",
+          "dominium.refusal.capability.missing",
+          "dominium.refusal.capability.version_unsupported",
+          "dominium.refusal.capability.conflict"
+        ],
+        "match": true,
+        "observed": [
+          "dominium.refusal.validation.invalid_target",
+          "dominium.refusal.validation.target_unknown",
+          "dominium.refusal.validation.target_kind_unsupported",
+          "dominium.refusal.validation.target_outside_allowed_root",
+          "dominium.refusal.validation.tool_unavailable",
+          "dominium.refusal.capability.missing",
+          "dominium.refusal.capability.version_unsupported",
+          "dominium.refusal.capability.conflict"
+        ]
+      },
+      "selected_ids_sha256": {
+        "expected": "sha256:1485805ca2955298f8b36d4fb8cb1fd49d448940b7137eae5eefe60ee71c573c",
+        "match": true,
+        "observed": "sha256:1485805ca2955298f8b36d4fb8cb1fd49d448940b7137eae5eefe60ee71c573c"
+      },
+      "selection_policy": {
+        "expected": "source_order_first_n",
+        "match": true,
+        "observed": "source_order_first_n"
+      },
+      "source_registry_git_object": {
+        "expected": {
+          "git_object": "b46a31b699c70fcb921d1d866a6b4f1b4fb116e0",
+          "mode": "100644",
+          "object_type": "blob"
+        },
+        "match": true,
+        "observed": {
+          "git_object": "b46a31b699c70fcb921d1d866a6b4f1b4fb116e0",
+          "mode": "100644",
+          "object_type": "blob"
+        }
+      },
+      "source_registry_sha256": {
+        "expected": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+        "match": true,
+        "observed": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac"
+      },
+      "truncation_disclosed": {
+        "expected": true,
+        "match": true,
+        "observed": true
+      }
+    },
+    "kind": "refusals",
+    "path": "contracts/refusal/refusal_code.registry.json"
+  }
+}

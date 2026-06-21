@@ -1,0 +1,145 @@
+{
+  "import_graph": {
+    "aide_lite_declared": true,
+    "declared_dependency_count": 21,
+    "derived_local_imports": [
+      "core.protocol"
+    ],
+    "dominium_package_declared": true,
+    "envelope_declared": true
+  },
+  "runtime_dependency": {
+    "all_paths_valid": true,
+    "declared_dependency_count": 21,
+    "dependency_count": 21,
+    "manifest_digest_match": true,
+    "path_results": [
+      {
+        "exists": true,
+        "path": ".aide/scripts/aide_lite.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/__init__.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/protocol/__init__.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/protocol/envelope.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/__init__.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/bundle.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/conformance.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/contracts.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/diagnostics.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/fixture_replay.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/identity.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/integrity.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/mappings.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/models.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/operations.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/projector.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/references.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/refusals.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/snapshot.py",
+        "repository_relative": true,
+        "sha256_match": true
+      },
+      {
+        "exists": true,
+        "path": "core/interop/dominium/validation.py",
+        "repository_relative": true,
+        "sha256_match": true
+      }
+    ]
+  }
+}

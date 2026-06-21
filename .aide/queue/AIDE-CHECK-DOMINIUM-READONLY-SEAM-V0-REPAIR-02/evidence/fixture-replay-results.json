@@ -1,0 +1,198 @@
+{
+  "failed_count": 0,
+  "passed_count": 32,
+  "results": [
+    {
+      "errors": [],
+      "name": "absolute_path_escape",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/absolute_path_escape.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "arbitrary_diagnostic_severity",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/arbitrary_diagnostic_severity.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "broken_evidence_ref",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/broken_evidence_ref.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "conflicting_ownership",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/conflicting_ownership.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "dangling_artifact_reference",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/dangling_artifact_reference.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "digest_mismatch",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/digest_mismatch.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "duplicate_event_sequence",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/duplicate_event_sequence.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "duplicate_identity",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/duplicate_identity.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "event_correlation_mismatch",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/event_correlation_mismatch.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "generated_projection_marked_canonical",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/generated_projection_marked_canonical.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "invalid_diagnostic_severity",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/invalid_diagnostic_severity.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "invalid_reference_id",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/invalid_reference_id.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "invalid_refusal_mapping",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/invalid_refusal_mapping.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "invented_refusal",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/invented_refusal.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "missing_host_id",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/missing_host_id.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "missing_required_contract",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/missing_required_contract.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "mixed_record_revision",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/mixed_record_revision.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "mutation_capability_claim",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/mutation_capability_claim.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "mutation_capability_labeled_readonly",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/mutation_capability_labeled_readonly.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "non_deterministic_ordering",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/non_deterministic_ordering.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "path_traversal",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/path_traversal.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "private_tool_bypass_declaration",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/private_tool_bypass_declaration.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "provider_network_worker_claim",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/provider_network_worker_claim.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "second_host_capability_set",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/second_host_capability_set.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "snapshot_digest_not_validated",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/snapshot_digest_not_validated.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "stale_revision",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/stale_revision.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "unknown_required_capability",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/unknown_required_capability.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "unsupported_version",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/unsupported_version.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "workbench_authority_overclaim",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/workbench_authority_overclaim.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "wrong_authority_role",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/wrong_authority_role.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "wrong_repository_identity",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/wrong_repository_identity.json",
+      "status": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "wrong_semantic_owner",
+      "path": ".aide/fixtures/dominium-readonly-seam/negative/wrong_semantic_owner.json",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+status: needs_review
+planning_state: independent_repair_check_completed
+result: REQUEST_CHANGES
+review_gate: needs_review
+updated_at: 2026-06-21
+summary: Independent Repair 02 check completed with 15 material findings.
+validation_status: REQUEST_CHANGES
+source_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+source_commit: 1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358
+material_finding_count: 15
+warning_count: 4
+missing_evidence: 0
+dominium_modified: false
+dominium_command_invoked: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
+warnings:
+  - The seam remains offline and read-only.
+  - Local Dominium remains behind origin/main by 24 commits.
+  - Draft 2020-12 jsonschema runtime was not installed locally; schema effectiveness was checked by independent schema-source inspection.
+  - Minimum Python 3.11 runtime was not executed separately in this environment.
+blockers: []

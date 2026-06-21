@@ -1,0 +1,32 @@
+[
+  {
+    "command": "dominium-seam status",
+    "exit_code": 0,
+    "preview": "AIDE Lite dominium-seam status\r\nresult: PASS_WITH_WARNINGS\r\ncapability_target: dominium_readonly_seam_v0\r\nschema_exists: true\r\nbundle_exists: true\r\ndominium_available: true\r\nsource_revision: c92b386027890c1bbf14aef6eaafe0357b7b03dd\r\nselected_file_count: 17\r\nrecord_count: 42\r\nrecommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\r\ndominium_command_invoked: false\r\nhost_runtime_started: false\r\nworkbench_started: false\r\nbridge_runtime_started: false\r"
+  },
+  {
+    "command": "dominium-seam snapshot",
+    "exit_code": 0,
+    "preview": "AIDE Lite dominium-seam snapshot\r\nresult: PASS\r\nsource_revision: c92b386027890c1bbf14aef6eaafe0357b7b03dd\r\nsource_ref: c92b386027890c1bbf14aef6eaafe0357b7b03dd\r\nselected_file_count: 17\r\nsnapshot_digest: sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8\r\nbehind_origin_main: 24\r\nrecommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\r\ndominium_command_invoked: false\r\nhost_runtime_started: false\r\nworkbench_started: false\r\nbridge_runtime_started: false\r\nservice_started: false\r\ndatabase_opened: false\r"
+  },
+  {
+    "command": "dominium-seam project",
+    "exit_code": 0,
+    "preview": "AIDE Lite dominium-seam project\r\nresult: PASS_WITH_WARNINGS\r\nsource_revision: c92b386027890c1bbf14aef6eaafe0357b7b03dd\r\nselected_file_count: 17\r\nrecord_count: 42\r\nfixture_count: 43\r\nprojection_index_digest: sha256:462607fb7c177bfd3a3ea96901118677eafce54d1a473de92d46af854239ea0d\r\nrecommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\r\ndominium_command_invoked: false\r\nhost_runtime_started: false\r\nworkbench_started: false\r\nbridge_runtime_started: false\r\nservice_started: false\r\ndatabase_opened: false\r"
+  },
+  {
+    "command": "dominium-seam validate",
+    "exit_code": 0,
+    "preview": "AIDE Lite dominium-seam validate\r\nresult: PASS_WITH_WARNINGS\r\nvalidated: true\r\nrecord_count: 42\r\nselected_file_count: 17\r\nerror_count: 0\r\nwarning_count: 4\r\nexplicit_non_capabilities_preserved: true\r\nsource_revision_bound: true\r\nread_only_capability_boundary_preserved: true\r\nrecommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\r\ndominium_command_invoked: false\r\nhost_runtime_started: false\r\nworkbench_started: false\r"
+  },
+  {
+    "command": "dominium-seam diff",
+    "exit_code": 0,
+    "preview": "AIDE Lite dominium-seam diff\r\nresult: PASS\r\nbyte_equal: true\r\ncurrent_sha256: sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc\r\nfresh_sha256: sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc\r\nrecommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\r\ndominium_command_invoked: false\r\nhost_runtime_started: false\r\nworkbench_started: false\r\nbridge_runtime_started: false\r\nservice_started: false\r\ndatabase_opened: false\r\ntransport_started: false\r\nnetwork_call_performed: false\r"
+  },
+  {
+    "command": "dominium-seam demo",
+    "exit_code": 0,
+    "preview": "AIDE Lite dominium-seam demo\r\nresult: PASS_WITH_WARNINGS\r\ninput_revision: c92b386027890c1bbf14aef6eaafe0357b7b03dd\r\nselected_file_count: 17\r\nrecord_count: 42\r\nfixture_count: 43\r\nvalidation_result: PASS_WITH_WARNINGS\r\nsource_mutation_count: 0\r\nforbidden_operation_count: 0\r\nrecommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\r\ndominium_command_invoked: false\r\nhost_runtime_started: false\r\nworkbench_started: false\r\nbridge_runtime_started: false\r"
+  }
+]

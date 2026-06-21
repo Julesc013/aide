@@ -1,0 +1,22 @@
+{
+  "absolute_path_leak_count": 0,
+  "isolated_cli_roots": 2,
+  "missing_by_root": [
+    {
+      "extra": [],
+      "missing": [],
+      "root": 0
+    },
+    {
+      "extra": [],
+      "missing": [],
+      "root": 1
+    }
+  ],
+  "output_hashes_equal": true,
+  "removes_pythonpath": false,
+  "status": "PASS",
+  "uses_os_environ_copy": true,
+  "uses_production_copy_runtime_dependencies": true,
+  "uses_python_isolated_mode": false
+}

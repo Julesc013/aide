@@ -2063,3 +2063,14 @@
 - Verification Intent: Python compile, focused seam tests, Repair 01 and Repair 02 regressions, live seam project/validate/diff/demo, portability proof, JSON parsing, Dominium immutability, task inspect/evidence, broad validation, secret-like scan, diff checks, and commit policy check.
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, dispositions all ten gaps as repaired pending independent check, preserves explicit non-capabilities, and recommends exactly `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02`.
 - Notes: This repair does not modify Dominium, invoke Dominium commands, implement Host runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, workers, preview/apply/rollback, target mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+
+- Title: Independent Final Verification Of Dominium Read-Only Seam v0 Repair 02
+- Status: Needs Review
+- Objective: independently verify Repair 02's registry provenance, public schema, fixture replay, conformance evidence, operation observation, and portability claims without modifying the seam.
+- Scope: `.aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/**`, `.aide/reports/dominium-readonly-seam-v0-repair-02-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted Dominium integration charter, seam build/check/repair/check chain, and `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02` at `1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358`.
+- Verification Intent: task-local independent harness, schema/source inspection, fixture replay, conformance semantic review, operation ledger review, runtime dependency review, portability review, Dominium immutability comparison, focused seam tests, broad validation, diff checks, secret scan, and commit policy check.
+- Exit Criteria: task stops at `needs_review`, records `REQUEST_CHANGES`, preserves historical evidence, and recommends exactly `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`.
+- Notes: This check does not repair implementation, alter seam schemas/code/tests/fixtures/generated seam outputs, modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.

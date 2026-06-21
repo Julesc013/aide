@@ -1,0 +1,275 @@
+{
+  "all_typed_refusals": false,
+  "not_typed_refusals": [
+    "fetch",
+    "pull",
+    "checkout",
+    "branch",
+    "worktree",
+    "publish"
+  ],
+  "results": [
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: run",
+        "message: dominium-seam run is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "run"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: invoke",
+        "message: dominium-seam invoke is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "invoke"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: execute",
+        "message: dominium-seam execute is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "execute"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: apply",
+        "message: dominium-seam apply is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "apply"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: write",
+        "message: dominium-seam write is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "write"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: sync",
+        "message: dominium-seam sync is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "sync"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: push",
+        "message: dominium-seam push is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "push"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: serve",
+        "message: dominium-seam serve is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "serve"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: connect",
+        "message: dominium-seam connect is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "connect"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "AIDE Lite dominium-seam unsupported",
+        "result: REFUSED",
+        "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "operation: dispatch",
+        "message: dominium-seam dispatch is outside the read-only seam boundary",
+        "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false"
+      ],
+      "typed_refusal": true,
+      "verb": "dispatch"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "",
+        "usage: aide_lite.py dominium-seam [-h]",
+        "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+        "                                  ...",
+        "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'fetch' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+      ],
+      "typed_refusal": false,
+      "verb": "fetch"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "",
+        "usage: aide_lite.py dominium-seam [-h]",
+        "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+        "                                  ...",
+        "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'pull' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+      ],
+      "typed_refusal": false,
+      "verb": "pull"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "",
+        "usage: aide_lite.py dominium-seam [-h]",
+        "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+        "                                  ...",
+        "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'checkout' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+      ],
+      "typed_refusal": false,
+      "verb": "checkout"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "",
+        "usage: aide_lite.py dominium-seam [-h]",
+        "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+        "                                  ...",
+        "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'branch' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+      ],
+      "typed_refusal": false,
+      "verb": "branch"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "",
+        "usage: aide_lite.py dominium-seam [-h]",
+        "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+        "                                  ...",
+        "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'worktree' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+      ],
+      "typed_refusal": false,
+      "verb": "worktree"
+    },
+    {
+      "exit_code": 2,
+      "preview": [
+        "",
+        "usage: aide_lite.py dominium-seam [-h]",
+        "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch}",
+        "                                  ...",
+        "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'publish' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch')"
+      ],
+      "typed_refusal": false,
+      "verb": "publish"
+    }
+  ]
+}

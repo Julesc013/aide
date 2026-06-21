@@ -1,0 +1,128 @@
+{
+  "additional_properties_true_locations": [
+    "#/$defs/ArtifactReferenceSpec",
+    "#/$defs/Compatibility",
+    "#/$defs/ContextDescriptorSpec",
+    "#/$defs/DiagnosticProjectionSpec",
+    "#/$defs/DominiumBridgeManifestSpec",
+    "#/$defs/EventEnvelopeSpec",
+    "#/$defs/EvidenceReferenceSetSpec",
+    "#/$defs/FalseStatus",
+    "#/$defs/Freshness",
+    "#/$defs/HostCapabilitySetSpec",
+    "#/$defs/HostManifestSpec",
+    "#/$defs/Metadata",
+    "#/$defs/Metadata/properties/producer",
+    "#/$defs/RefusalProjectionSpec",
+    "#/$defs/RegistrySummary",
+    "#/$defs/SourceFile",
+    "#/$defs/WorkspaceDescriptorSpec",
+    "#/properties/authority_classification",
+    "#/properties/content_digests",
+    "#/properties/cross_reference_index",
+    "#/properties/manifest",
+    "#/properties/omission_summary",
+    "#/properties/source_snapshot",
+    "#/properties/source_snapshot/properties/repository_identity",
+    "#/properties/validation_summary"
+  ],
+  "jsonschema_installed": false,
+  "missing_required_false_boundary_fields": [
+    "source_repository_mutated",
+    "generated_projection_marked_canonical"
+  ],
+  "unconstrained_required_spec_fields": {
+    "ArtifactReferenceSpec": [
+      "artifact_ref",
+      "source_path",
+      "source_role",
+      "authority",
+      "sha256",
+      "size_bytes",
+      "git_object",
+      "source_revision",
+      "identity_is_file_path",
+      "file_path_is_locator"
+    ],
+    "ContextDescriptorSpec": [
+      "context_ref",
+      "artifact_refs",
+      "section_count",
+      "sections",
+      "source_revision_binding",
+      "projection_direction"
+    ],
+    "DiagnosticProjectionSpec": [
+      "diagnostic_id",
+      "code",
+      "owner",
+      "severity",
+      "category",
+      "summary",
+      "source_registry",
+      "native_meaning_owned_by",
+      "projection_direction"
+    ],
+    "DominiumBridgeManifestSpec": [
+      "bridge_id",
+      "bridge_runtime_implemented",
+      "mapping_version",
+      "source_of_truth",
+      "ownership",
+      "command_mapping",
+      "compatibility_policy"
+    ],
+    "EventEnvelopeSpec": [
+      "event_ref",
+      "event_type",
+      "summary",
+      "sequence",
+      "causation_ref",
+      "correlation_ref",
+      "universal_event_store_implemented"
+    ],
+    "EvidenceReferenceSetSpec": [
+      "evidence_refs",
+      "evidence_count",
+      "native_evidence_meaning_owned_by",
+      "aide_behavior"
+    ],
+    "HostCapabilitySetSpec": [
+      "capabilities",
+      "forbidden_capabilities"
+    ],
+    "HostManifestSpec": [
+      "host_id",
+      "host_kind",
+      "repository_identity",
+      "selected_revision",
+      "supported_surfaces",
+      "registered_dominium_command_count",
+      "registered_validation_command_present",
+      "runtime_dispatch_available"
+    ],
+    "RefusalProjectionSpec": [
+      "refusal_id",
+      "code",
+      "owner",
+      "category",
+      "summary",
+      "reason",
+      "recovery_action",
+      "diagnostic_codes",
+      "related_commands",
+      "source_registry",
+      "native_meaning_owned_by",
+      "projection_direction"
+    ],
+    "WorkspaceDescriptorSpec": [
+      "workspace_ref",
+      "repository_remote_url_hash",
+      "selected_revision",
+      "branch",
+      "identity_is_file_path",
+      "local_path_is_locator_only",
+      "queue_status"
+    ]
+  }
+}

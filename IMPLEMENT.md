@@ -6893,3 +6893,43 @@ recorded in the Repair 02 evidence.
 - Independent Repair 02 check is still required before acceptance.
 - Runtime, Workbench, bridge runtime, service, transport, provider/model/network
   calls, worker execution, preview/apply/rollback, and mutation remain absent.
+
+## Work Item: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+
+### Status
+
+Completed as a check-only task and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair-02-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+Repair 02 required a final independent verification before acceptance. The
+check keeps historical evidence intact and does not repair or rewrite the seam.
+
+### Implementation Notes
+
+- Added a task-local independent check harness and consolidated reports.
+- Classified `14` material finding(s), preserving the check-only
+  boundary.
+- Recommended exactly `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`.
+
+### Verification
+
+The task evidence records the independent harness outputs, focused tests,
+Dominium immutability comparison, broad validation, diff checks, secret scan,
+and commit policy check.
+
+### Remaining Issues
+
+- Repair 02 is not accepted.
+- A bounded Repair 03 is required before another acceptance attempt.
+- The seam remains offline and read-only; runtime, Workbench, bridge runtime,
+  service, transport, provider/model/network calls, worker execution,
+  preview/apply/rollback, and mutation remain absent.

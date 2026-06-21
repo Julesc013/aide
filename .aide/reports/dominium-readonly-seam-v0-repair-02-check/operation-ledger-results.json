@@ -1,0 +1,27 @@
+{
+  "allowed_operation_count": 858,
+  "complete_raw_trace_present": false,
+  "counts_reconcile": true,
+  "forbidden_injection_count": 0,
+  "forbidden_operation_count": 0,
+  "missing_families": [],
+  "network_remote_verbs_classified_as_git_reads": true,
+  "observation_count": 858,
+  "observed_families": [
+    "git_reads"
+  ],
+  "operation_count": 43,
+  "operation_len": 43,
+  "raw_observation_sample_count": 50,
+  "raw_trace_digest_present": false,
+  "recomputed_observation_count": 858,
+  "required_families": [
+    "git_reads",
+    "filesystem_writes",
+    "branch_worktree_ref_ops",
+    "network_attempts",
+    "provider_model_attempts",
+    "worker_dispatch",
+    "mutation_apply"
+  ]
+}

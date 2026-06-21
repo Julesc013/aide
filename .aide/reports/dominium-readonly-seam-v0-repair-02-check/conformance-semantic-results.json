@@ -1,0 +1,10 @@
+{
+  "aggregate_only_not_proven_source_present": true,
+  "assertion_count": 23,
+  "missing_required_fields": [],
+  "network_assertion_uses_status_fields_only": true,
+  "no_write_assertion_uses_self_declared_flag_only": true,
+  "passed_count": 23,
+  "result_count": 23,
+  "unsupported_operation_assertion_uses_next_task_suffix": true
+}
