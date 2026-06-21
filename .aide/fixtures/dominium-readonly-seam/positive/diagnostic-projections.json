@@ -72,6 +72,7 @@
         "severity": "error",
         "severity_valid": true,
         "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+        "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
         "summary": "Repository layout does not satisfy the declared layout contract."
       },
       "status": {
@@ -168,6 +169,7 @@
         "severity": "error",
         "severity_valid": true,
         "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+        "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
         "summary": "A forbidden or unreviewed repository root is present."
       },
       "status": {
@@ -264,6 +266,7 @@
         "severity": "error",
         "severity_valid": true,
         "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+        "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
         "summary": "A high-confidence dependency direction violation is present."
       },
       "status": {
@@ -360,6 +363,7 @@
         "severity": "error",
         "severity_valid": true,
         "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+        "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
         "summary": "A public header violates the API/ABI canon."
       },
       "status": {
@@ -456,6 +460,7 @@
         "severity": "error",
         "severity_valid": true,
         "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+        "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
         "summary": "Public surface registry entry is invalid."
       },
       "status": {
@@ -552,6 +557,7 @@
         "severity": "error",
         "severity_valid": true,
         "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+        "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
         "summary": "Command input does not satisfy its declared input schema."
       },
       "status": {
@@ -648,6 +654,7 @@
         "severity": "error",
         "severity_valid": true,
         "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+        "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
         "summary": "Command is not declared for the requested surface."
       },
       "status": {
@@ -744,6 +751,7 @@
         "severity": "error",
         "severity_valid": true,
         "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+        "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
         "summary": "Required capability is missing."
       },
       "status": {

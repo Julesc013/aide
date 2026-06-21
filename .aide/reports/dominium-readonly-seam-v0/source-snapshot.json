@@ -243,9 +243,14 @@
     "remote_ref_update": false
   },
   "repository_identity": {
-    "expected_identity": "Julesc013/dominium",
+    "canonical_identity": "github.com/julesc013/dominium",
+    "expected_identity": "github.com/julesc013/dominium",
+    "host": "github.com",
+    "owner": "julesc013",
     "remote_url": "https://github.com/Julesc013/dominium.git",
-    "root_name": "dominium"
+    "repository": "dominium",
+    "root_name": "dominium",
+    "transport": "https"
   },
   "schema_version": "aide.dominium-readonly-seam.source-snapshot.v0",
   "selected_file_count": 17,
@@ -455,7 +460,7 @@
       "size_bytes": 1537
     }
   ],
-  "snapshot_digest": "sha256:44b7ab54ca21b7e3a3e4c1a9a5f6b9684c43208d212c7f3b9865290379200171",
+  "snapshot_digest": "sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8",
   "source_ref": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
   "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
 }

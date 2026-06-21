@@ -3,119 +3,119 @@
   "records": [
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:ab47672e42986b090f0e3f784fa8ab8e9ff362f6ea61b6fe63ecf45bca9e20f7",
+      "digest": "sha256:d2e89fbdee81fda0b5e5c6623d524378c5d1b6da68edacd308c2910a77c20a78",
       "id": "dominium-artifact-193baf1f31630166",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:588bf8e1e7cf07750836750e233ae6788e58e1b97840cc674b77be2b397023b0",
+      "digest": "sha256:e71342f4e77a8145e3eb7c93e0e21a109b1d7a76ff743fa3fb682d9666e1bf26",
       "id": "dominium-artifact-1ca3928ebe5ea09c",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:116df78f4642af34c80613b9e6bc037224bc6cd667d4dc0b70940ac82badc9d7",
+      "digest": "sha256:5a7f47dc8c7191397227f744b36382a9115330137366cbf7990448ee51c84461",
       "id": "dominium-artifact-22955aed222f6923",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:b225f0ac7d422bb4500c3f4dd62c2da803d265439d763b453b751bbc425cd060",
+      "digest": "sha256:321f2ef17e8ca16bbc8ba01de3bddf0b9492f7f92272cd164ae3e481ae815054",
       "id": "dominium-artifact-27b26552eaf77560",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:695c807e77a7aa31500fdf9eacdb4182713a5811d68c7438f5620d4ad38d5f7a",
+      "digest": "sha256:d0995ebc445b5c2b554ce1a5c035362c55f684c80fe93e440254795271b848ac",
       "id": "dominium-artifact-6282812584cdda17",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:5ff10f7fe87dfdc5bcf0a34ef044bcfba1e7f2f0727cd4253da509fc9631db78",
+      "digest": "sha256:352f72f498dea8ef0069942ead03e9e2c3368c7482bf79868261fac17c90fa7e",
       "id": "dominium-artifact-7384b251ea33143a",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:97eac2365ff6d646c5746648d0f0532f73e102c44f1cbc91d6d6e97bf3a0e4fd",
+      "digest": "sha256:2e54575941d50b24b0d955a598371c2919879e349f6777622f055a4c29d67179",
       "id": "dominium-artifact-7bf977d2d663b729",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:ab697f2683966a0cd77083c47fa0f3242c40355a1ae2e98218fadf11ad39ebee",
+      "digest": "sha256:43c0b825dd5a2c350c6420b3f3b65ead16cc0bb4439583c29218cadf2f234168",
       "id": "dominium-artifact-8e973a56935ee34f",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:a6f4efd73ecfcae1bfb43216e922ffd5c5f7e3513aaaba38635c2a3a5db11729",
+      "digest": "sha256:476bf0a83b822a493836ab5001e6f5adbb5b83706c2e959b619b8223d8ca65fb",
       "id": "dominium-artifact-90741a5cb2622b93",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:ad60692bd4888a29b160d8c80746d9252664f13b25fb41014e60bff57b53b246",
+      "digest": "sha256:5154aae62e122e6aa6e0325011cd329049f2c07817e8fd1f0ed5c137eb34d5c3",
       "id": "dominium-artifact-a50378589202c30f",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:4fb1ed11b53c835d5ddd55130360404ee57566f5b92ae3210baf2274a84dfa70",
+      "digest": "sha256:d6d899a8e905f9040662c829ad871d0ddcff176790fa2a06b68534b4b5118078",
       "id": "dominium-artifact-a54ff182c7e8acf5",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:f39326893296bd038cb829dac29d59c7db6f280d4c42c69fe5be2f51cba62b2c",
+      "digest": "sha256:1a3f49ccfd2e97b71d1f4b2ce45ba67e7ef5419535c0f66535117ec0ae156f47",
       "id": "dominium-artifact-a76625887504a432",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:e60c1e75690a247bc87235cc52a4446cc994a4c8457f2c5bd9f8df6847377641",
+      "digest": "sha256:ac36a7a18965b3d2b1414edd7ce59279db84a368d262207ea1eeff82b003879a",
       "id": "dominium-artifact-b5ca2ee87890eb97",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:e1516376a5b748b805120e9798eab196e5ac23665c6b06634858d4c49f1334d6",
+      "digest": "sha256:7106c4c59dd4221ba7adf38e6812b72ba7324381b6a4f26d87c7c5eed4e71baa",
       "id": "dominium-artifact-c522c1099a502f4f",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:d2beb252444f2b31c96d86e6aa04ec3379e54de6858d60671f37561d8749fbc9",
+      "digest": "sha256:07536205d46cbea597ba3dda83dc591e01e09553b58dff53d6df086e055f7ca6",
       "id": "dominium-artifact-caed69da63d145a6",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:698d0551de6a48e83f1e1b2267ecefcf0240126af3596f7bed45eb9bc1cfe669",
+      "digest": "sha256:57effc1f0d478e93402e9cecd39e8489a0f1eebc7196fd20e6b3efc956afa390",
       "id": "dominium-artifact-e4ae8df918e9736b",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "artifact_reference_to_dominium_source_bytes",
-      "digest": "sha256:2ffc9bb75487efd751c27eddf4f5a0676932bade36d2f3b9a04cff33e87342da",
+      "digest": "sha256:18e2855a041308dc6d2df6387fb5a2efdb1c74a655f868439891deb7a0bd0e75",
       "id": "dominium-artifact-e62370bd92f78dab",
       "kind": "ArtifactReference",
       "semantic_owner": "Dominium"
@@ -129,63 +129,63 @@
     },
     {
       "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
-      "digest": "sha256:cfba6d708c311665da1be0bb683c3c8b9d3b4ad5b7a112329c3b2fef196f4cf3",
+      "digest": "sha256:148441c11fffc3e0f79c6358e5065ea8fac8fa37d451ffe034cde3ec29d80d2d",
       "id": "dominium-diagnostic-0b85e4e2820e5f11",
       "kind": "DiagnosticProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
-      "digest": "sha256:fa66ff6bf4d20e9423cebace0a13bebf9db545a156cc4f4d48cf8beb3b58503d",
+      "digest": "sha256:b1f47fea99403074bb2650a25165a07ee982f9d76481615380701a9eb166d54f",
       "id": "dominium-diagnostic-159bc543e8498c21",
       "kind": "DiagnosticProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
-      "digest": "sha256:f10bece1089f70badc5dee14dc3539b032a3790d7a41cb353ced02e61411cce5",
+      "digest": "sha256:942f73853cfc117a2a1c1d0f60b847476900a2ab144e08416ebb37c1f2c0e855",
       "id": "dominium-diagnostic-3d565de7f7b242b2",
       "kind": "DiagnosticProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
-      "digest": "sha256:26927d21ea5ae7b6365ec257b2f036a99e2a69a4394ca99561a33f049a95f03c",
+      "digest": "sha256:b4e3ea58f9bc7099a991f21067da825abb6885580ce77fd74d13330df3c1b985",
       "id": "dominium-diagnostic-480578d933499011",
       "kind": "DiagnosticProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
-      "digest": "sha256:60d6832edb45d6375ce8d34c9d56b1b142a67166625b2a95a3b3d7466b10ab22",
+      "digest": "sha256:6b49522836bcebdf9d978e09d3389b9bd8613386c1030e6eb51c7dc2cd5393f5",
       "id": "dominium-diagnostic-67f3e776f3a61b74",
       "kind": "DiagnosticProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
-      "digest": "sha256:6e927a153893ba7e3988e23b17a8202d34d33e4e0ebbe38915cddaadc172bd29",
+      "digest": "sha256:7dc8c3db7164bbfa3c748a31ba2d73a864b3924ad6b22a83538eca73e776d16c",
       "id": "dominium-diagnostic-ac5b4f28ee059f61",
       "kind": "DiagnosticProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
-      "digest": "sha256:eaafafc11718695f85b15d67f4b5f9c1f56e57927b6b457e1409c9ce86dd7bb1",
+      "digest": "sha256:6554e33e4a1f5194c60063739390946c17f71e83842172e147c8d498734cf426",
       "id": "dominium-diagnostic-d291fa147b121808",
       "kind": "DiagnosticProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
-      "digest": "sha256:2c74994d3700d47e8b810b82be47eb6077468f72b2943a341ddc81e86b861acf",
+      "digest": "sha256:a6cc9932f264213922fef2d5735ec9b9a673e417dfacfcabbf165b223049bd83",
       "id": "dominium-diagnostic-fc966d0ec2265462",
       "kind": "DiagnosticProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "mapping_version_law_projection",
-      "digest": "sha256:03bf9938caac3f40cfcb7f10df265a549cc5f90863ff2464ad5c4f47f45bf9c1",
+      "digest": "sha256:5354aa607cdd154fc488094cee390ffe703229bf54c1ec5ad69fa89bebc86f3f",
       "id": "dominium-bridge-manifest-readonly-v0",
       "kind": "DominiumBridgeManifest",
       "semantic_owner": "AIDE"
@@ -220,70 +220,70 @@
     },
     {
       "authority_role": "aide_read_only_capability_projection",
-      "digest": "sha256:9fa0fe615ea5bc80a0e2f974db0b9fa9367da3047bb3144f72827907acc7667c",
+      "digest": "sha256:8a7e89ca198608fcb0ccec2e1f0386bbf3924d7e34fc1f4ef0ff181306826f22",
       "id": "dominium-host-capability-set-v0",
       "kind": "HostCapabilitySet",
       "semantic_owner": "AIDE"
     },
     {
       "authority_role": "aide_read_only_host_projection",
-      "digest": "sha256:0a939dcadc507b05c7159a1937ff97aeb2107b2b9966d2cc84cdccd630d3bc1c",
+      "digest": "sha256:43f691d0019a628f2bf07bf60b5ad64f25517359f8cee9221a7b1571e16e2ed1",
       "id": "dominium-host-manifest-v0",
       "kind": "HostManifest",
       "semantic_owner": "AIDE"
     },
     {
       "authority_role": "read_only_projection_of_dominium_refusal_contract",
-      "digest": "sha256:078d527f33fde2b56d09c6915ed813eea37a9f8a9cfcd3dc4f16635f01efc7a5",
+      "digest": "sha256:5734447d52369d7581cfbbc748837a0b34d29cfa8d51ff0c0664f5cc3485680e",
       "id": "dominium-refusal-0712b25deb3739c2",
       "kind": "RefusalProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_refusal_contract",
-      "digest": "sha256:c204d21b6c3af46e63966c7f556999580f0c24af597107de99c92ce16282d589",
+      "digest": "sha256:8a090a3847a871d15fa986cdc63c90daed61b89bfe93dda7cb5ee4104d581174",
       "id": "dominium-refusal-5f558c0702f10e50",
       "kind": "RefusalProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_refusal_contract",
-      "digest": "sha256:e8e56b94488bc61c1cf3e69345a8e67b3d841ed00f279f8b3d3cbc49eeafa734",
+      "digest": "sha256:ec7e0867bb2a28c0508b3e9922436d93ab8ed6132f2ef4459348438d0db106f9",
       "id": "dominium-refusal-689405c9d22a64ef",
       "kind": "RefusalProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_refusal_contract",
-      "digest": "sha256:c4fd455cda902eb9763366ad3fb35da673e61bd21b5d4908cdbf71aef6e3d03d",
+      "digest": "sha256:f4b1d70677ffe3144c173592b8348a817274f24f1bebe0654918d81d47729708",
       "id": "dominium-refusal-8d37682f8819edd8",
       "kind": "RefusalProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_refusal_contract",
-      "digest": "sha256:ae3ae066a2b57a693329cb5091c3b55e93a2a88157f4876a1d1fccd2ceb8c214",
+      "digest": "sha256:a96d8e5428563b041062be3cab7de7933b3ebde8a5fa1e62ce0fb3d63e85f898",
       "id": "dominium-refusal-9511259f07ee6194",
       "kind": "RefusalProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_refusal_contract",
-      "digest": "sha256:631813ad4f284ab5654e5827681d4c2b85620d945115b2c27b4e41cd5af1bbd0",
+      "digest": "sha256:82cc26d43b3e191a8745dd26a4d307056e734d96c5fb8cfd01c75df696cae3f8",
       "id": "dominium-refusal-ccf6a5cbd2fa7641",
       "kind": "RefusalProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_refusal_contract",
-      "digest": "sha256:dbf4f311afccaa257bfd957c5335d00fb688ec612334d7ffc2e23a2154fb2861",
+      "digest": "sha256:02501d71ec83182375e3f56776a5fef563a6b79136ef45630f5dadc8c9a8780a",
       "id": "dominium-refusal-f360b9af04d88fc8",
       "kind": "RefusalProjection",
       "semantic_owner": "Dominium"
     },
     {
       "authority_role": "read_only_projection_of_dominium_refusal_contract",
-      "digest": "sha256:f8bab49fbf6939a4b1bf6ac22b80904102bb7da43e8f39bf254a14a0f9fbc70a",
+      "digest": "sha256:e93d14815daed123cd895e608b5dbed02450f2e312991e8499d520c2e1c291fd",
       "id": "dominium-refusal-f82bcc96b9eb217d",
       "kind": "RefusalProjection",
       "semantic_owner": "Dominium"

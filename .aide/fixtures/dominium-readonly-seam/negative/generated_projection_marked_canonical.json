@@ -1,10 +1,18 @@
 {
-  "expected_error": "generated projection marked canonical",
-  "invalid_bundle_sha256": "sha256:d20111007adf8c82a79dd648dcd8845247a2b1919a8c2668dbcef30ca88291a2",
-  "mutation": "generated_projection_marked_canonical",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "authority.canonical_overclaim"
+  ],
+  "invalid_bundle_sha256": "sha256:38c5ff23e793b8a34dc491ce91b0b280eff6ecb011d26ea5d72470b8aaf870eb",
   "name": "generated_projection_marked_canonical",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/status/generated_projection_marked_canonical",
+      "value": true
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

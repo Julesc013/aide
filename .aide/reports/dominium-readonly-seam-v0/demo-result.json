@@ -1,7 +1,11 @@
 {
   "dominium_status_after": "## main...origin/main [behind 24]",
   "dominium_status_before": "## main...origin/main [behind 24]",
-  "elapsed_ms": 0,
+  "elapsed_time": {
+    "elapsed_ms": null,
+    "reason": "determinism and source immutability are measured; wall-clock timing is intentionally not asserted by the offline demo",
+    "status": "not_measured"
+  },
   "forbidden_operation_count": 0,
   "input_hashes": {
     ".aide/queue/current.toml": "sha256:b478daf3f0c4d12fae1fa126f23894cc85b0769b59491345c60b9345b20c6c6b",
@@ -23,20 +27,69 @@
     "docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md": "sha256:3a25b990130d630be93798e304f9995d0b37363f457327a30f28a7b72204b1d6"
   },
   "input_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "output_hashes": {
-    ".aide/reports/dominium-readonly-seam-v0/projection-index.json": "sha256:1b8b1c82c4d84cfda8c683d94fe22789681360aba043c8efb037c9a6d00bbe16",
-    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json": "sha256:272844e385e15b1dad2ce3cf301848777815068d5b3aff6bdb22ce62d5b52cda",
-    ".aide/reports/dominium-readonly-seam-v0/validation.json": "sha256:82a338bcf6e952b17056114e32968f8caeb3a13d4b7a0e4aa77347c37d440301"
+  "operation_ledger": {
+    "forbidden_operation_count": 0,
+    "observation_count": 6,
+    "observations": [
+      {
+        "allowed": true,
+        "classification": "read_only_observation",
+        "operation": "git status --short --branch",
+        "source": "dominium_readonly_seam_demo",
+        "target": "Dominium"
+      },
+      {
+        "allowed": true,
+        "classification": "read_only_observation",
+        "operation": "git rev-parse",
+        "source": "dominium_readonly_seam_demo",
+        "target": "Dominium"
+      },
+      {
+        "allowed": true,
+        "classification": "read_only_observation",
+        "operation": "git remote get-url",
+        "source": "dominium_readonly_seam_demo",
+        "target": "Dominium"
+      },
+      {
+        "allowed": true,
+        "classification": "read_only_observation",
+        "operation": "git branch --show-current",
+        "source": "dominium_readonly_seam_demo",
+        "target": "Dominium"
+      },
+      {
+        "allowed": true,
+        "classification": "read_only_observation",
+        "operation": "git rev-list --left-right --count",
+        "source": "dominium_readonly_seam_demo",
+        "target": "Dominium"
+      },
+      {
+        "allowed": true,
+        "classification": "read_only_observation",
+        "operation": "git show <revision>:<path>",
+        "source": "dominium_readonly_seam_demo",
+        "target": "Dominium"
+      }
+    ],
+    "schema_version": "aide.dominium-readonly-seam.operation-ledger.v0"
   },
-  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+  "output_hashes": {
+    ".aide/reports/dominium-readonly-seam-v0/projection-index.json": "sha256:462607fb7c177bfd3a3ea96901118677eafce54d1a473de92d46af854239ea0d",
+    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+    ".aide/reports/dominium-readonly-seam-v0/validation.json": "sha256:2d81b79b9cec16d00ebbce7075936e0ef77b56c36b29ade3fe86bac34f4aa41e"
+  },
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
   "record_counts": {
-    "fixtures": 33,
+    "fixtures": 43,
     "records": 42,
     "selected_files": 17
   },
   "schema_version": "aide.dominium-readonly-seam.demo-result.v0",
   "source_mutation_count": 0,
   "status": "PASS_WITH_WARNINGS",
-  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
   "validation_result": "PASS_WITH_WARNINGS"
 }

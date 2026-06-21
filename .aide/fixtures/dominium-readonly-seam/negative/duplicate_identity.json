@@ -1,10 +1,18 @@
 {
-  "expected_error": "duplicate identity",
-  "invalid_bundle_sha256": "sha256:27fac404b5247fc80399bdc23ed14efc0bfd29e83994f991f25fb8c1462add45",
-  "mutation": "duplicate_identity",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "identity.duplicate"
+  ],
+  "invalid_bundle_sha256": "sha256:6312b030c7ebb80acbead02cdda80102cc69d0f2f4a3763ba1852b8d26f0b208",
   "name": "duplicate_identity",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/artifact_references/1/metadata/id",
+      "value": "dominium-artifact-a54ff182c7e8acf5"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

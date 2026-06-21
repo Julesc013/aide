@@ -1,10 +1,21 @@
 {
-  "expected_error": "unknown required capability",
-  "invalid_bundle_sha256": "sha256:718e7ab3181f77b0b0c2f1c8aef1a3d7b65d92a735022231730cd0f2cd4565c0",
-  "mutation": "unknown_required_capability",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "compat.required_capability"
+  ],
+  "invalid_bundle_sha256": "sha256:db851d3134a333a5679ad907be71621e88455dbe037e1cf90894e7cd358af1dd",
   "name": "unknown_required_capability",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "add",
+      "path": "/metadata/compatibility/requiredCapabilities",
+      "value": [
+        "dominium_readonly_seam_v0",
+        "future.required"
+      ]
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

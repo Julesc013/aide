@@ -1,10 +1,18 @@
 {
-  "expected_error": "invalid refusal mapping",
-  "invalid_bundle_sha256": "sha256:3385c8bc824ca2097027d92fbefd1d75b2fba8ef1cf1312f6e0f0aff46afc03e",
-  "mutation": "invalid_refusal_mapping",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "refusal.registry"
+  ],
+  "invalid_bundle_sha256": "sha256:bf271fad3214b36df78d38cc824113433eb273ea536dda13acc3d8d02d325616",
   "name": "invalid_refusal_mapping",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/refusal_projections/0/spec/code",
+      "value": "dominium.refusal.invented"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

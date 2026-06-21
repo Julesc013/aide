@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+
+- Title: Repair Offline Read-Only AIDE-Dominium Seam v0
+- Status: needs_review
+- Objective: repair the 18 material findings from `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01` while preserving the offline, deterministic, read-only seam boundary.
+- Scope: Dominium seam schema, `core/interop/dominium/**`, focused tests, fixtures, `.aide/interop/dominium/**`, `.aide/reports/dominium-readonly-seam-v0/**`, repair reports, repair task/evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01` at `REQUEST_CHANGES`, check commit `692b4b3469e80a67f3f2f98612ec66c86b7394e9`, 18 material findings, missing evidence zero, and recommended next task `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01`.
+- Milestones: exact repository identity implemented; digest finalization repaired; registry truncation disclosure added; public schema tightened; negative fixtures made replayable; conformance checks made expectation-specific; demo timing made truthful with operation ledger; semantic validator hardened for revisions, cardinality, references, owners, capabilities, diagnostics, refusals, events, and required fields; tests and live demo passed; reports/evidence materialized.
+- Blockers: none. Warnings: seam remains offline/read-only; SeamBundle remains projection evidence only; local Dominium remains behind `origin/main` by 24 commits; runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, workers, preview/apply/rollback, and mutation remain absent.
+- Verification Intent: Python compile, original seam tests, repair regression tests, live seam demo, live seam validation, JSON parsing, diff checks, broad validation, task inspect/evidence, Dominium immutability, secret scan, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, no forbidden operation, no Dominium modification, complete repair reports/evidence, and exactly one next task recommendation.
+- Notes: next serialized task is `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01`.
+
 ### Plan ID: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01
 
 - Title: Full Independent Adversarial Check Of The Offline AIDE-Dominium Seam

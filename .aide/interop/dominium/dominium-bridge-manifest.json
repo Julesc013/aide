@@ -91,7 +91,8 @@
         "Workbench views",
         "interop projections"
       ]
-    }
+    },
+    "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
   },
   "status": {
     "branch_or_worktree_created": false,

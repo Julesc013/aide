@@ -6743,3 +6743,66 @@ policy checks are recorded in
   apply, target mutation, branch/worktree automation, A2A, Host Contract,
   Dominium Bridge, Workbench, release, promotion, and production readiness
   remain deferred.
+
+## Work Item: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/protocol/aide-dominium-readonly-seam-v0.schema.json`
+- `core/interop/dominium/**`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam.py`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py`
+- `.aide/fixtures/dominium-readonly-seam/**`
+- `.aide/interop/dominium/**`
+- `.aide/reports/dominium-readonly-seam-v0/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair/**`
+- `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The independent seam check found 18 bounded material defects. This repair fixes
+those defects inside the existing offline read-only seam rather than advancing
+to acceptance or implementing downstream runtime behavior.
+
+### Implementation Notes
+
+- Added exact repository identity parsing and rejection for lookalike remotes.
+- Added shared integrity helpers for source snapshot, record, projection-index,
+  and bundle self-digest finalization.
+- Preserved bounded diagnostic/refusal registry projection while disclosing
+  native counts, projected counts, omitted counts, and omitted-ID digests.
+- Tightened the public schema and semantic validator for record cardinality,
+  required fields, source revision binding, reference closure, semantic owners,
+  read-only capability boundaries, event ordering, and native
+  diagnostic/refusal registry alignment.
+- Replaced compact negative fixture descriptions with replayable JSON-pointer
+  operation fixtures.
+- Made conformance checks expectation-specific instead of aggregate validation
+  propagation.
+- Made demo timing truthful and added a read-only operation observation ledger.
+- Added a focused repair regression suite covering the material findings.
+
+### Verification
+
+Python compile, the original seam test suite, repair regression tests, live seam
+demo, live seam validation, and Dominium immutability checks passed during the
+repair. Final diff, broad validation, task evidence, secret scan, and commit
+policy checks are recorded in the repair task evidence.
+
+### Remaining Issues
+
+- The seam remains offline and read-only.
+- SeamBundle remains generated projection evidence, not canonical Dominium
+  truth.
+- Local Dominium remains clean but behind `origin/main` by 24 commits.
+- Host runtime, Host SDK, Workbench, bridge runtime, service, transport,
+  provider/model/network calls, worker execution, preview/apply/rollback, and
+  mutation remain absent.
+- Independent repair check is still required before acceptance.

@@ -1,0 +1,152 @@
+{
+  "findings": [
+    {
+      "id": "identity.lookalike_rejected",
+      "repair": "Added exact Git remote parser and canonical github.com/julesc013/dominium identity check.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_exact_identity_rejects_lookalikes"
+      ]
+    },
+    {
+      "id": "digest.bundle_self_recompute",
+      "repair": "Added bundle self-digest payload helper and finalization after validation metadata is embedded.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_bundle_self_digest_recomputes",
+        "test_bundle_self_digest_detects_tampering"
+      ]
+    },
+    {
+      "id": "diagnostics.truncation_disclosure",
+      "repair": "Recorded native/projected/omitted diagnostic registry counts and omitted-id digest.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_registry_truncation_is_explicit_for_diagnostics_and_refusals"
+      ]
+    },
+    {
+      "id": "refusals.truncation_disclosure",
+      "repair": "Recorded native/projected/omitted refusal registry counts and omitted-id digest.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_registry_truncation_is_explicit_for_diagnostics_and_refusals"
+      ]
+    },
+    {
+      "id": "schema.effectiveness",
+      "repair": "Replaced permissive schema with stricter Draft 2020-12 bundle, metadata, source, record, and registry requirements.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_schema_is_structurally_effective"
+      ]
+    },
+    {
+      "id": "fixtures.negative_replayability",
+      "repair": "Negative fixtures now store replayable JSON-pointer operations, expected error codes, and base/invalid digests.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_negative_fixtures_are_replayable"
+      ]
+    },
+    {
+      "id": "conformance.independence",
+      "repair": "Conformance results now execute per-expectation predicates instead of propagating aggregate validation.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_conformance_results_are_not_aggregate_only"
+      ]
+    },
+    {
+      "id": "demo.elapsed_time",
+      "repair": "Demo reports elapsed time as intentionally not measured instead of a fake zero millisecond value.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_demo_elapsed_time_is_truthfully_unmeasured"
+      ]
+    },
+    {
+      "id": "negative.mixed_record_revision",
+      "repair": "Validator rejects record, metadata, and spec revision values that diverge from the source snapshot revision.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_mixed_record_revision_is_rejected_after_refinalize"
+      ]
+    },
+    {
+      "id": "negative.snapshot_digest_not_validated",
+      "repair": "Validator recomputes the snapshot digest excluding only the digest field itself.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_snapshot_digest_is_validated"
+      ]
+    },
+    {
+      "id": "negative.second_host_capability_set",
+      "repair": "Validator enforces singleton containers for singleton seam record kinds.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_second_host_capability_set_is_rejected"
+      ]
+    },
+    {
+      "id": "negative.dangling_artifact_reference",
+      "repair": "Validator checks ContextDescriptor and EvidenceReferenceSet references against the cross-reference artifact set.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_dangling_artifact_reference_is_rejected_after_refinalize"
+      ]
+    },
+    {
+      "id": "negative.wrong_semantic_owner",
+      "repair": "Validator enforces semantic and identity owner rules per record kind.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_wrong_semantic_owner_is_rejected_after_refinalize"
+      ]
+    },
+    {
+      "id": "negative.mutation_capability_labeled_readonly",
+      "repair": "Validator enforces exact implemented and forbidden capability sets and rejects mutation IDs in read-only capabilities.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_mutation_capability_labeled_readonly_is_rejected_after_refinalize"
+      ]
+    },
+    {
+      "id": "negative.duplicate_event_sequence",
+      "repair": "Validator requires deterministic contiguous event sequences.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_duplicate_event_sequence_is_rejected_after_refinalize"
+      ]
+    },
+    {
+      "id": "negative.arbitrary_diagnostic_severity",
+      "repair": "Validator compares diagnostic projections against the native Dominium diagnostic and severity registries.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_arbitrary_diagnostic_severity_is_rejected_after_refinalize"
+      ]
+    },
+    {
+      "id": "negative.invented_refusal",
+      "repair": "Validator compares refusal projections against the native Dominium refusal registry.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_invented_refusal_is_rejected_after_refinalize"
+      ]
+    },
+    {
+      "id": "negative.missing_host_id",
+      "repair": "Validator enforces required spec fields per seam record kind.",
+      "status": "REPAIRED",
+      "tests": [
+        "test_missing_host_id_is_rejected_after_refinalize"
+      ]
+    }
+  ],
+  "material_finding_count": 18,
+  "schema_version": "aide.dominium-readonly-seam.finding-disposition.v0",
+  "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01"
+}

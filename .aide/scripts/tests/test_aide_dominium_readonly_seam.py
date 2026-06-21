@@ -389,7 +389,7 @@ class AIDEDominiumReadonlySeamTests(unittest.TestCase):
 
     def test_028_fixture_manifest_is_written(self) -> None:
         manifest = models.read_json(self.aide_root / models.FIXTURE_MANIFEST_JSON)
-        self.assertEqual(manifest["fixture_count"], 33)
+        self.assertEqual(manifest["fixture_count"], 43)
         self.assertTrue(all(item["sha256"].startswith("sha256:") for item in manifest["fixtures"]))
 
 

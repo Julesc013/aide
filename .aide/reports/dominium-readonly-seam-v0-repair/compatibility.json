@@ -1,0 +1,10 @@
+{
+  "read_old_write_current": true,
+  "repair_preserves_public_feature_flag": "dominium_readonly_seam_v0",
+  "schema_version": "aide.dominium-readonly-seam.repair-compatibility.v0",
+  "stable_utf8_json_output": true,
+  "unknown_optional_field_handling": "x_optional_ metadata extensions are tolerated by bundle self-digest payload normalization",
+  "unknown_required_field_refusal": true,
+  "unsupported_version_refusal": true,
+  "windows_path_handling_checked": true
+}

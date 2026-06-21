@@ -1,10 +1,18 @@
 {
-  "expected_error": "event correlation mismatch",
-  "invalid_bundle_sha256": "sha256:d043e244bd0d3f21d617dead89e960bbc201a3ac643ce2359f3909ee8f86fb6d",
-  "mutation": "invalid_reference_id",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "reference.syntax"
+  ],
+  "invalid_bundle_sha256": "sha256:b1b6ff1c083434a73860179fdeeeefdabcc11a54340f561b77a454687edd5807",
   "name": "invalid_reference_id",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/event_envelopes/0/spec/correlation_ref",
+      "value": "aide://bad/../escape"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

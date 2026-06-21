@@ -5,40 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from . import diagnostics, mappings, models, refusals, snapshot
-from .references import sha256_bytes, stable_id, stable_ref
-
-
-def _record_digest(record: dict[str, Any]) -> str:
-    return sha256_bytes(models.stable_json(record).encode("utf-8"))
-
-
-def _record_list(records: dict[str, Any]) -> list[dict[str, Any]]:
-    result: list[dict[str, Any]] = []
-    for value in records.values():
-        if isinstance(value, list):
-            result.extend(value)
-        elif isinstance(value, dict) and value.get("kind"):
-            result.append(value)
-    return sorted(result, key=lambda item: (str(item.get("kind", "")), str(item.get("metadata", {}).get("id", ""))))
-
-
-def _projection_index(records: dict[str, Any]) -> dict[str, Any]:
-    flat = _record_list(records)
-    return {
-        "schema_version": "aide.dominium-readonly-seam.projection-index.v0",
-        "record_count": len(flat),
-        "records": [
-            {
-                "kind": item["kind"],
-                "id": item["metadata"]["id"],
-                "semantic_owner": item["metadata"].get("semantic_owner"),
-                "authority_role": item["metadata"].get("authority_role"),
-                "digest": _record_digest(item),
-            }
-            for item in flat
-        ],
-    }
+from . import diagnostics, integrity, mappings, models, refusals, snapshot
+from .references import stable_ref
 
 
 def build_seam_bundle(
@@ -73,8 +41,10 @@ def build_seam_bundle(
         "event_envelopes": mapped["event_envelopes"],
         "dominium_bridge_manifest": mapped["dominium_bridge_manifest"],
     }
-    flat_records = _record_list(records)
-    projection_index = _projection_index(records)
+    flat_records = integrity.record_list(records)
+    projection_index = integrity.projection_index_for_records(records)
+    diagnostic_summary = diagnostics.diagnostic_projection_summary(dom_root, source_revision, diagnostic_records)
+    refusal_summary = refusals.refusal_projection_summary(dom_root, source_revision, refusal_records)
     bundle_id = f"dominium-readonly-seam-{source_revision[:12]}"
     manifest = {
         "bundle_id": bundle_id,
@@ -113,11 +83,7 @@ def build_seam_bundle(
             "diagnostic_ids": [item["spec"]["diagnostic_id"] for item in records["diagnostic_projections"]],
             "refusal_ids": [item["spec"]["refusal_id"] for item in records["refusal_projections"]],
         },
-        "content_digests": {
-            "source_snapshot": source["snapshot_digest"],
-            "projection_index": sha256_bytes(models.stable_json(projection_index).encode("utf-8")),
-            "records": {item["metadata"]["id"]: _record_digest(item) for item in flat_records},
-        },
+        "content_digests": {},
         "authority_classification": {
             "canonical_authority": ["Dominium source files at pinned Git revision", "AIDE accepted charter and queue task"],
             "projection_only": ["SeamBundle", "reports", "fixtures", "CLI output"],
@@ -133,6 +99,12 @@ def build_seam_bundle(
         "omission_summary": {
             "omitted_source_files": "all Dominium files outside the selected seam authority inputs",
             "reason": "bounded read-only seam v0 context",
+            "diagnostic_registry": diagnostic_summary,
+            "refusal_registry": refusal_summary,
+        },
+        "registry_projection_summary": {
+            "diagnostics": diagnostic_summary,
+            "refusals": refusal_summary,
         },
         "explicit_non_capabilities": list(models.EXPLICIT_NON_CAPABILITIES),
         "status": models.false_status(
@@ -141,9 +113,9 @@ def build_seam_bundle(
             source_repository_mutated=False,
         ),
     }
-    bundle["content_digests"]["seam_bundle_without_self_digest"] = sha256_bytes(models.stable_json(bundle).encode("utf-8"))
+    integrity.finalize_bundle(bundle)
     return bundle
 
 
 def projection_index_for_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
-    return _projection_index(bundle.get("records", {}) if isinstance(bundle.get("records"), dict) else {})
+    return integrity.projection_index_for_records(bundle.get("records", {}) if isinstance(bundle.get("records"), dict) else {})

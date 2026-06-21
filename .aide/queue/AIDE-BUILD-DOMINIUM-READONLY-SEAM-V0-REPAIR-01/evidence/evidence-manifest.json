@@ -1,0 +1,36 @@
+{
+  "evidence": [
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/baseline.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/result.json",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/finding-disposition.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/validation.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/test-summary.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/dominium-immutability.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/secret-scan.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/next-task-recommendation.md"
+  ],
+  "reports": [
+    ".aide/reports/dominium-readonly-seam-v0-repair/status.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/repair-report.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair/repair-report.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/finding-disposition.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair/test-summary.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair/compatibility.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair/identity-repair.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/digest-repair.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/schema-repair.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/reference-cardinality-ownership-repair.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/registry-projection-repair.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/fixture-replay-repair.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/conformance-repair.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/demo-observation-repair.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/remaining-risks.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/explicit-non-capabilities.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair/next-task-prompt.md"
+  ],
+  "schema_version": "aide.dominium-readonly-seam.repair-evidence-manifest.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+}

@@ -1,0 +1,28 @@
+{
+  "commands": [
+    {
+      "command": "py -3 -m compileall core/interop/dominium .aide/scripts/aide_lite.py .aide/scripts/tests/test_aide_dominium_readonly_seam.py .aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py",
+      "result": "PASS",
+      "tests": 20
+    },
+    {
+      "command": "py -3 .aide/scripts/tests/test_aide_dominium_readonly_seam.py",
+      "result": "PASS",
+      "tests": 111
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py dominium-seam demo",
+      "result": "PASS_WITH_WARNINGS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py dominium-seam validate",
+      "result": "PASS_WITH_WARNINGS"
+    }
+  ],
+  "focused_test_count": 131,
+  "schema_version": "aide.dominium-readonly-seam.repair-test-summary.v0"
+}

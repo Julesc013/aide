@@ -13,6 +13,7 @@ SHA256_PREFIX = "sha256:"
 HEX_RE = re.compile(r"^[0-9a-f]{64}$")
 COMMIT_RE = re.compile(r"^[0-9a-f]{40}$")
 SAFE_SEGMENT_RE = re.compile(r"^[A-Za-z0-9._~@+=:, -]+$")
+AIDE_REF_RE = re.compile(r"^aide://(?P<kind>[A-Za-z0-9._~-]+)/(?P<object_id>[A-Za-z0-9._~@+=:,-]+)$")
 
 
 def sha256_bytes(payload: bytes) -> str:
@@ -38,6 +39,21 @@ def stable_id(prefix: str, value: str, *, length: int = 16) -> str:
 
 def stable_ref(kind: str, object_id: str) -> str:
     return f"aide://{kind}/{object_id}"
+
+
+def parse_stable_ref(value: Any) -> tuple[str, str]:
+    if not isinstance(value, str):
+        raise ValueError("ReferenceID must be a string")
+    if "?" in value or "#" in value or "\\" in value:
+        raise ValueError(f"invalid ReferenceID syntax: {value}")
+    match = AIDE_REF_RE.match(value)
+    if not match:
+        raise ValueError(f"invalid ReferenceID syntax: {value}")
+    kind = match.group("kind")
+    object_id = match.group("object_id")
+    if ".." in object_id or "/" in object_id:
+        raise ValueError(f"invalid ReferenceID object id: {value}")
+    return kind, object_id
 
 
 def is_sha256(value: Any) -> bool:

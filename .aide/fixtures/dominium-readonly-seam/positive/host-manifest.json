@@ -66,9 +66,14 @@
     "registered_dominium_command_count": 9,
     "registered_validation_command_present": true,
     "repository_identity": {
-      "expected_identity": "Julesc013/dominium",
+      "canonical_identity": "github.com/julesc013/dominium",
+      "expected_identity": "github.com/julesc013/dominium",
+      "host": "github.com",
+      "owner": "julesc013",
       "remote_url": "https://github.com/Julesc013/dominium.git",
-      "root_name": "dominium"
+      "repository": "dominium",
+      "root_name": "dominium",
+      "transport": "https"
     },
     "runtime_dispatch_available": false,
     "selected_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",

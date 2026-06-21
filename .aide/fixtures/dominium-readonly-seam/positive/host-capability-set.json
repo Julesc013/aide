@@ -135,6 +135,21 @@
         "id": "dominium.patch.apply",
         "implemented_in_this_slice": false,
         "refusal_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "id": "dominium.branch.create",
+        "implemented_in_this_slice": false,
+        "refusal_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "id": "dominium.worktree.create",
+        "implemented_in_this_slice": false,
+        "refusal_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "id": "dominium.release.publish",
+        "implemented_in_this_slice": false,
+        "refusal_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
       }
     ]
   },

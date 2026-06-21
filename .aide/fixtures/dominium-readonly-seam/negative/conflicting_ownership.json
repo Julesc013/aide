@@ -1,10 +1,18 @@
 {
-  "expected_error": "semantic_owner",
-  "invalid_bundle_sha256": "sha256:3e30a8651e7600205208cfbe06c98a7d52b5eeec719396721890e99d570746dc",
-  "mutation": "conflicting_ownership",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "ownership.semantic"
+  ],
+  "invalid_bundle_sha256": "sha256:09f18469a1ff5251a211079a0507c8e9a59ac953765ca25648b47bbaa7ee1262",
   "name": "conflicting_ownership",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/host_manifest/metadata/semantic_owner",
+      "value": "Workbench"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

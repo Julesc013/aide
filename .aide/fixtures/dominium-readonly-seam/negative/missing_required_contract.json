@@ -1,10 +1,17 @@
 {
-  "expected_error": "selected file count",
-  "invalid_bundle_sha256": "sha256:b94c6e5a21c03f4a6cacd8b1c4476f1c0b9cc2ad96bd084422d32fbae53c9e48",
-  "mutation": "missing_required_contract",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "selected_files.exact_set"
+  ],
+  "invalid_bundle_sha256": "sha256:6d5c2a05c81bf564a25b445e45d5a74fa67c48f7045c1b5ebf8770c6d57f38dc",
   "name": "missing_required_contract",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "remove",
+      "path": "/source_snapshot/selected_files/0"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

@@ -9,6 +9,7 @@ from .bundle import (
     run_dominium_seam_demo,
     unsupported_operation_refusal,
 )
+from .models import RECOMMENDED_NEXT_TASK, REPAIR_TASK_ID, TASK_ID
 
 __all__ = [
     "dominium_seam_diff",
@@ -18,4 +19,7 @@ __all__ = [
     "validate_dominium_seam",
     "run_dominium_seam_demo",
     "unsupported_operation_refusal",
+    "RECOMMENDED_NEXT_TASK",
+    "REPAIR_TASK_ID",
+    "TASK_ID",
 ]

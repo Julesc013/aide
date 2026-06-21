@@ -1,10 +1,18 @@
 {
-  "expected_error": "absolute path",
-  "invalid_bundle_sha256": "sha256:3f0a33bc98ba3b03d2c56b34928571a2825cae58cfe510896b5794cd7d62a960",
-  "mutation": "absolute_path_escape",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "path.absolute"
+  ],
+  "invalid_bundle_sha256": "sha256:b927cccfb9c06363930ba53c3143792d2a237365d5416f4b62001af8e5436e4b",
   "name": "absolute_path_escape",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/source_snapshot/selected_files/0/path",
+      "value": "/tmp/AGENTS.md"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

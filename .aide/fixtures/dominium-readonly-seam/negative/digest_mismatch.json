@@ -1,10 +1,18 @@
 {
-  "expected_error": "source digest mismatch",
-  "invalid_bundle_sha256": "sha256:9059bb2b56e12967e325ddd76fc8b2be41c6711c3548cabc1e0f7c1a68303cd8",
-  "mutation": "digest_mismatch",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "digest.source"
+  ],
+  "invalid_bundle_sha256": "sha256:51034654b8defd9016a3d84acdc77ff92ea67daec8c99a040554945b5a1bfc73",
   "name": "digest_mismatch",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/source_snapshot/selected_files/0/sha256",
+      "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

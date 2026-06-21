@@ -74,12 +74,17 @@
         "owner": "tools.validators",
         "projection_direction": "dominium_to_aide_read_only",
         "reason": "The requested validation target is absent, malformed, out of scope, or not registered.",
+        "recovery": {
+          "action": "select_alternative",
+          "summary": "Choose a registered command target, schema, tier, or repository path and rerun."
+        },
         "recovery_action": "select_alternative",
         "refusal_id": "dominium.refusal.validation.invalid_target",
         "related_commands": [
           "dominium.validation.run"
         ],
         "source_registry": "contracts/refusal/refusal_code.registry.json",
+        "source_registry_path": "contracts/refusal/refusal_code.registry.json",
         "summary": "Requested validation target is invalid or out of scope."
       },
       "status": {
@@ -176,12 +181,17 @@
         "owner": "apps.workbench.module.validation",
         "projection_direction": "dominium_to_aide_read_only",
         "reason": "The requested validation suite, target path, or artifact reference is not registered or does not exist.",
+        "recovery": {
+          "action": "select_alternative",
+          "summary": "Choose target all, dominium.validation.run, or the registered contract schema artifact target."
+        },
         "recovery_action": "select_alternative",
         "refusal_id": "dominium.refusal.validation.target_unknown",
         "related_commands": [
           "dominium.validation.run"
         ],
         "source_registry": "contracts/refusal/refusal_code.registry.json",
+        "source_registry_path": "contracts/refusal/refusal_code.registry.json",
         "summary": "Validation target is unknown."
       },
       "status": {
@@ -278,12 +288,17 @@
         "owner": "apps.workbench.module.validation",
         "projection_direction": "dominium_to_aide_read_only",
         "reason": "The command input requested a validation target kind that has no registered command adapter.",
+        "recovery": {
+          "action": "select_alternative",
+          "summary": "Use target_kind validation_suite or contract_schema, or add a reviewed adapter before using another kind."
+        },
         "recovery_action": "select_alternative",
         "refusal_id": "dominium.refusal.validation.target_kind_unsupported",
         "related_commands": [
           "dominium.validation.run"
         ],
         "source_registry": "contracts/refusal/refusal_code.registry.json",
+        "source_registry_path": "contracts/refusal/refusal_code.registry.json",
         "summary": "Validation target kind is unsupported."
       },
       "status": {
@@ -380,12 +395,17 @@
         "owner": "apps.workbench.module.validation",
         "projection_direction": "dominium_to_aide_read_only",
         "reason": "The requested target resolves outside the repository root or outside the allowed roots for the contract_schema slice.",
+        "recovery": {
+          "action": "select_alternative",
+          "summary": "Choose a target under contracts/command or contracts/schema."
+        },
         "recovery_action": "select_alternative",
         "refusal_id": "dominium.refusal.validation.target_outside_allowed_root",
         "related_commands": [
           "dominium.validation.run"
         ],
         "source_registry": "contracts/refusal/refusal_code.registry.json",
+        "source_registry_path": "contracts/refusal/refusal_code.registry.json",
         "summary": "Validation target is outside the allowed root."
       },
       "status": {
@@ -482,12 +502,17 @@
         "owner": "tools.validators",
         "projection_direction": "dominium_to_aide_read_only",
         "reason": "The requested validator or proof command is not available in this repository checkout.",
+        "recovery": {
+          "action": "install_provider",
+          "summary": "Install or restore the owning tool, or choose a command whose implementation is registered."
+        },
         "recovery_action": "install_provider",
         "refusal_id": "dominium.refusal.validation.tool_unavailable",
         "related_commands": [
           "dominium.validation.run"
         ],
         "source_registry": "contracts/refusal/refusal_code.registry.json",
+        "source_registry_path": "contracts/refusal/refusal_code.registry.json",
         "summary": "Requested validation tool is unavailable."
       },
       "status": {
@@ -584,10 +609,15 @@
         "owner": "contracts.capability",
         "projection_direction": "dominium_to_aide_read_only",
         "reason": "A required capability was requested but no available capability or provider satisfies it.",
+        "recovery": {
+          "action": "install_provider",
+          "summary": "Install, enable, or select a provider/capability that satisfies the request."
+        },
         "recovery_action": "install_provider",
         "refusal_id": "dominium.refusal.capability.missing",
         "related_commands": [],
         "source_registry": "contracts/refusal/refusal_code.registry.json",
+        "source_registry_path": "contracts/refusal/refusal_code.registry.json",
         "summary": "Required capability is missing."
       },
       "status": {
@@ -684,10 +714,15 @@
         "owner": "contracts.capability",
         "projection_direction": "dominium_to_aide_read_only",
         "reason": "A capability is present but does not satisfy the requested version or compatibility range.",
+        "recovery": {
+          "action": "select_alternative",
+          "summary": "Select a compatible capability/provider or update the requested capability version."
+        },
         "recovery_action": "select_alternative",
         "refusal_id": "dominium.refusal.capability.version_unsupported",
         "related_commands": [],
         "source_registry": "contracts/refusal/refusal_code.registry.json",
+        "source_registry_path": "contracts/refusal/refusal_code.registry.json",
         "summary": "Capability version is unsupported."
       },
       "status": {
@@ -784,10 +819,15 @@
         "owner": "contracts.capability",
         "projection_direction": "dominium_to_aide_read_only",
         "reason": "Two or more requested or selected capabilities are mutually incompatible by declared policy.",
+        "recovery": {
+          "action": "select_alternative",
+          "summary": "Select a non-conflicting capability set or disable the conflicting feature."
+        },
         "recovery_action": "select_alternative",
         "refusal_id": "dominium.refusal.capability.conflict",
         "related_commands": [],
         "source_registry": "contracts/refusal/refusal_code.registry.json",
+        "source_registry_path": "contracts/refusal/refusal_code.registry.json",
         "summary": "Requested capabilities conflict."
       },
       "status": {

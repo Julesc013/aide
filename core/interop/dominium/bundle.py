@@ -7,7 +7,7 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from . import conformance, models, projector, snapshot, validation
+from . import conformance, fixture_replay, integrity, models, operations, projector, snapshot, validation
 from .references import sha256_bytes, sha256_file
 
 
@@ -60,6 +60,10 @@ def _fixture_manifest(repo_root: Path, files: list[Path]) -> dict[str, Any]:
 def write_fixtures(repo_root: Path, bundle: dict[str, Any]) -> dict[str, Any]:
     positive_root = repo_root / models.FIXTURE_ROOT / "positive"
     negative_root = repo_root / models.FIXTURE_ROOT / "negative"
+    for root in [positive_root, negative_root]:
+        root.mkdir(parents=True, exist_ok=True)
+        for existing in root.glob("*.json"):
+            existing.unlink()
     files: list[Path] = []
     positive_records = {
         "host-manifest.json": bundle["records"]["host_manifest"],
@@ -78,19 +82,9 @@ def write_fixtures(repo_root: Path, bundle: dict[str, Any]) -> dict[str, Any]:
         path = positive_root / name
         models.write_json(path, obj)
         files.append(path)
-    for case in validation.negative_fixture_cases(bundle):
+    for case in fixture_replay.negative_fixture_cases(bundle):
         path = negative_root / f"{case['name']}.json"
-        compact = {
-            "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-            "name": case["name"],
-            "mutation": case.get("mutation", case["name"]),
-            "expected_error": case["expected_error"],
-            "source_bundle_ref": bundle["manifest"]["bundle_ref"],
-            "source_revision": bundle["manifest"]["source_revision"],
-            "invalid_bundle_sha256": sha256_bytes(models.stable_json(case["bundle"]).encode("utf-8")),
-            "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests",
-        }
-        models.write_json(path, compact)
+        models.write_json(path, case)
         files.append(path)
     manifest = _fixture_manifest(repo_root, files)
     models.write_json(repo_root / models.FIXTURE_MANIFEST_JSON, manifest)
@@ -142,17 +136,17 @@ def render_explicit_non_capabilities_markdown() -> str:
 def render_next_task_prompt() -> str:
     return "\n".join(
         [
-            "# AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+            "# AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
             "",
-            "Create and process `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01`.",
+            "Create and process `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01`.",
             "",
             "Use `.aide/queue/index.yaml` as canonical queue truth.",
             "",
-            "Independently check `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01` without modifying the seam implementation.",
-            "Verify contracts, snapshot reader immutability, mappings, SeamBundle determinism, CLI boundaries, fixtures, tests, demo evidence, explicit non-capabilities, and Dominium source immutability.",
+            "Independently check `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01` without modifying the seam implementation.",
+            "Verify all repaired findings from the original seam check, including exact repository identity, digest binding, registry projection disclosure, schema effectiveness, replayable fixtures, independent conformance, truthful demo observation, semantic validation, and Dominium source immutability.",
             "",
             "If no material issue exists, recommend `AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01`.",
-            "If a material defect exists, recommend one bounded repair task.",
+            "If a material defect remains, recommend one bounded follow-up repair task.",
             "",
         ]
     )
@@ -170,8 +164,6 @@ def project_dominium_seam(repo_root: str | Path, *, dominium_root: str | Path | 
     root = Path(repo_root)
     dom_root = _dominium_root(root, dominium_root)
     bundle = projector.build_seam_bundle(root, dom_root, revision=_revision(revision), expected_revision=_revision(revision))
-    projection_index = _write_bundle_reports(root, bundle)
-    fixture_manifest = write_fixtures(root, bundle)
     validation_report = validation.validate_bundle(bundle, dominium_root=dom_root)
     bundle["validation_summary"] = {
         "validation_status": validation_report["validation_status"],
@@ -179,11 +171,22 @@ def project_dominium_seam(repo_root: str | Path, *, dominium_root: str | Path | 
         "error_count": len(validation_report["errors"]),
         "warning_count": len(validation_report["warnings"]),
     }
-    _write_bundle_reports(root, bundle)
+    integrity.finalize_bundle(bundle)
     validation_report = validation.validate_bundle(bundle, dominium_root=dom_root)
-    conformance_report = conformance.conformance_results(validation_report)
+    bundle["validation_summary"] = {
+        "validation_status": validation_report["validation_status"],
+        "validated": validation_report["validated"],
+        "error_count": len(validation_report["errors"]),
+        "warning_count": len(validation_report["warnings"]),
+    }
+    integrity.finalize_bundle(bundle)
+    validation_report = validation.validate_bundle(bundle, dominium_root=dom_root)
+    projection_index = _write_bundle_reports(root, bundle)
+    fixture_manifest = write_fixtures(root, bundle)
+    validation_report = validation.validate_bundle(bundle, dominium_root=dom_root)
+    conformance_report = conformance.conformance_results(bundle, validation_report)
     compatibility = {
-        "schema_version": "aide.dominium-readonly-seam.compatibility.v0",
+        "schema_version": "aide.dominium-readonly-seam.compatibility.v1",
         "status": "PASS",
         "read_old_write_current": True,
         "unknown_optional_field_handling": "preserve_or_ignore_by_owner_contract",
@@ -217,7 +220,7 @@ def project_dominium_seam(repo_root: str | Path, *, dominium_root: str | Path | 
         "selected_file_count": bundle["manifest"]["selected_file_count"],
         "record_count": bundle["manifest"]["record_count"],
         "fixture_count": fixture_manifest["fixture_count"],
-        "projection_index_digest": sha256_bytes(models.stable_json(projection_index).encode("utf-8")),
+        "projection_index_digest": integrity.stable_digest(projection_index),
         "recommended_next_task": models.RECOMMENDED_NEXT_TASK,
         "dominium_command_invoked": False,
         "network_call_performed": False,
@@ -233,7 +236,7 @@ def validate_dominium_seam(repo_root: str | Path, *, dominium_root: str | Path |
     bundle = models.read_json(root / models.SEAM_BUNDLE_JSON)
     report = validation.validate_bundle(bundle, dominium_root=dom_root)
     models.write_json(root / models.VALIDATION_JSON, report)
-    models.write_json(root / models.CONFORMANCE_RESULTS_JSON, conformance.conformance_results(report))
+    models.write_json(root / models.CONFORMANCE_RESULTS_JSON, conformance.conformance_results(bundle, report))
     status = {
         "status": report["validation_status"],
         "source_revision": bundle.get("manifest", {}).get("source_revision", ""),
@@ -279,6 +282,8 @@ def dominium_seam_diff(repo_root: str | Path, *, dominium_root: str | Path | Non
 def run_dominium_seam_demo(repo_root: str | Path, *, dominium_root: str | Path | None = None, revision: str | None = None) -> dict[str, Any]:
     root = Path(repo_root)
     dom_root = _dominium_root(root, dominium_root)
+    ledger = operations.OperationLedger()
+    ledger.record_demo_readonly_flow()
     before_status = snapshot.worktree_status(dom_root)
     before_snapshot = snapshot.build_source_snapshot(dom_root, revision=_revision(revision), expected_revision=_revision(revision))
     projection = project_dominium_seam(root, dominium_root=dom_root, revision=revision)
@@ -289,9 +294,10 @@ def run_dominium_seam_demo(repo_root: str | Path, *, dominium_root: str | Path |
     before_hashes = {item["path"]: item["sha256"] for item in before_snapshot["selected_files"]}
     after_hashes = {item["path"]: item["sha256"] for item in after_snapshot["selected_files"]}
     source_mutation_count = sum(1 for key, value in before_hashes.items() if after_hashes.get(key) != value)
+    operation_report = ledger.as_report()
     result = {
         "schema_version": "aide.dominium-readonly-seam.demo-result.v0",
-        "task_id": models.TASK_ID,
+        "task_id": models.REPAIR_TASK_ID,
         "status": "PASS_WITH_WARNINGS" if validation_report["validation_status"] in {"PASS", "PASS_WITH_WARNINGS"} and diff["byte_equal"] and source_mutation_count == 0 and before_status == after_status else "FAILED_VALIDATION",
         "input_revision": before_snapshot["source_revision"],
         "input_hashes": before_hashes,
@@ -306,9 +312,14 @@ def run_dominium_seam_demo(repo_root: str | Path, *, dominium_root: str | Path |
             "fixtures": projection["fixture_count"],
         },
         "validation_result": validation_report["validation_status"],
-        "elapsed_ms": 0,
+        "elapsed_time": {
+            "status": "not_measured",
+            "elapsed_ms": None,
+            "reason": "determinism and source immutability are measured; wall-clock timing is intentionally not asserted by the offline demo",
+        },
         "source_mutation_count": source_mutation_count,
-        "forbidden_operation_count": 0,
+        "forbidden_operation_count": operation_report["forbidden_operation_count"],
+        "operation_ledger": operation_report,
         "dominium_status_before": before_status,
         "dominium_status_after": after_status,
         "recommended_next_task": models.RECOMMENDED_NEXT_TASK,

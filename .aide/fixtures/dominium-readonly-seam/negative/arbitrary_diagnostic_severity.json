@@ -1,0 +1,18 @@
+{
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "diagnostic.registry"
+  ],
+  "invalid_bundle_sha256": "sha256:90e748b874f330d64949510b91523edaab3d8648c7e9e1db93a8367bfdc620dd",
+  "name": "arbitrary_diagnostic_severity",
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/diagnostic_projections/0/spec/severity",
+      "value": "notice"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
+}

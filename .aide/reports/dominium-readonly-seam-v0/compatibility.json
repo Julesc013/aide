@@ -2,7 +2,7 @@
   "deterministic_key_and_record_ordering": true,
   "posix_repo_relative_paths_checked": true,
   "read_old_write_current": true,
-  "schema_version": "aide.dominium-readonly-seam.compatibility.v0",
+  "schema_version": "aide.dominium-readonly-seam.compatibility.v1",
   "stable_utf8_json_output": true,
   "status": "PASS",
   "unknown_optional_field_handling": "preserve_or_ignore_by_owner_contract",

@@ -1,10 +1,23 @@
 {
-  "expected_error": "mutation capability",
-  "invalid_bundle_sha256": "sha256:1f61f239672c11c41b8eddfb509711922c9dcbc5e96694a3ed89d32d916ec887",
-  "mutation": "mutation_capability_claim",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "capability.mutation"
+  ],
+  "invalid_bundle_sha256": "sha256:fba9090285d116ea4275d26fcf21d675bc4fb263172716caf9167ce53964c496",
   "name": "mutation_capability_claim",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "add",
+      "path": "/records/host_capability_set/spec/capabilities/-",
+      "value": {
+        "id": "dominium.source.write",
+        "implemented_in_this_slice": true,
+        "requires_future_policy_decision": false,
+        "side_effect_class": "read_only"
+      }
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

@@ -71,6 +71,7 @@
         "sha256": "sha256:6268dc7df4b80c8ba421b1894ea6e1251ec461038049623da45b046d5e902b8b",
         "size_bytes": 15573,
         "source_path": "AGENTS.md",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "operator_law"
       },
       "status": {
@@ -165,6 +166,7 @@
         "sha256": "sha256:b478daf3f0c4d12fae1fa126f23894cc85b0769b59491345c60b9345b20c6c6b",
         "size_bytes": 3655,
         "source_path": ".aide/queue/current.toml",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "queue_status"
       },
       "status": {
@@ -259,6 +261,7 @@
         "sha256": "sha256:59c8b3a5f779203e93761c76d23a718e0337ec9d3cf0a513361a0e4ae020e4e0",
         "size_bytes": 7717,
         "source_path": "docs/canon/constitution_v1.md",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "constitution"
       },
       "status": {
@@ -353,6 +356,7 @@
         "sha256": "sha256:3ecfa4ecaa2a13d3db1ddcb4e795f602f75d9f75ef03bc626a406c317033ab93",
         "size_bytes": 13240,
         "source_path": "docs/canon/glossary_v1.md",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "glossary"
       },
       "status": {
@@ -447,6 +451,7 @@
         "sha256": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe",
         "size_bytes": 13530,
         "source_path": "contracts/command/command_surface.contract.toml",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "command_surface"
       },
       "status": {
@@ -541,6 +546,7 @@
         "sha256": "sha256:990f4c65280c41fa50b125001c6c8d04b467d1c14b3bf184850c03bee5eb9d12",
         "size_bytes": 4271,
         "source_path": "contracts/service/service.contract.toml",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "service_surface"
       },
       "status": {
@@ -635,6 +641,7 @@
         "sha256": "sha256:fdd08cac92920d2c1883f41dc6a0e070bdbcddb5a961f041a98d8eff68323b9b",
         "size_bytes": 3609,
         "source_path": "contracts/module/module_surface.contract.toml",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "module_surface"
       },
       "status": {
@@ -729,6 +736,7 @@
         "sha256": "sha256:9b4f402f07adeb48d6346ce257bd3b9b5bdbf1da2aae4add1ee25c04b5f5b0b3",
         "size_bytes": 685,
         "source_path": "contracts/workbench/workbench_surface.contract.toml",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "workbench_surface"
       },
       "status": {
@@ -823,6 +831,7 @@
         "sha256": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
         "size_bytes": 95489,
         "source_path": "contracts/refusal/refusal_code.registry.json",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "refusal_registry"
       },
       "status": {
@@ -917,6 +926,7 @@
         "sha256": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
         "size_bytes": 153162,
         "source_path": "contracts/diagnostic/diagnostic_code.registry.json",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "diagnostic_registry"
       },
       "status": {
@@ -1011,6 +1021,7 @@
         "sha256": "sha256:063b891a50cdcacf327e4bdeafd63a7280b8f9d083f47b14191230b8e92dbc7d",
         "size_bytes": 1148,
         "source_path": "contracts/diagnostic/diagnostic_severity.registry.json",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "diagnostic_severity_registry"
       },
       "status": {
@@ -1105,6 +1116,7 @@
         "sha256": "sha256:af0f6f1ac4ff0cd0be957319b89a7959fd1c92e56c6d6ba29b411b7fb6dd3aea",
         "size_bytes": 35570,
         "source_path": "contracts/capability/capability.registry.json",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "capability_registry"
       },
       "status": {
@@ -1199,6 +1211,7 @@
         "sha256": "sha256:ea40bdf07ec279165f4c3d5ee06036659bdca92d92574d5393b1125450f952ff",
         "size_bytes": 3774,
         "source_path": "contracts/project_graph/project_graph_model.contract.toml",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "project_graph_model"
       },
       "status": {
@@ -1293,6 +1306,7 @@
         "sha256": "sha256:e21cf1355b3c26f34ee317f3c26924e1117b9794cd8bebb5aa5c0c3cfe99fe96",
         "size_bytes": 8154,
         "source_path": "docs/repo/audits/PRESENTATION_CONTRACT_01.md",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "presentation_contract_evidence"
       },
       "status": {
@@ -1387,6 +1401,7 @@
         "sha256": "sha256:3a25b990130d630be93798e304f9995d0b37363f457327a30f28a7b72204b1d6",
         "size_bytes": 6453,
         "source_path": "docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "workbench_validation_evidence"
       },
       "status": {
@@ -1481,6 +1496,7 @@
         "sha256": "sha256:be8b267297f0de2973c96dc98c1188f43455240a436d82e7d041d1dde20547cf",
         "size_bytes": 4721,
         "source_path": "docs/development/workbench_validation_slice.md",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "workbench_validation_plan"
       },
       "status": {
@@ -1575,6 +1591,7 @@
         "sha256": "sha256:3161897ce798b97b200663ad83bc798edbabc908736ea9f5e267675ebff11331",
         "size_bytes": 1537,
         "source_path": "docs/development/command_result_view_slice.md",
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
         "source_role": "command_result_view_plan"
       },
       "status": {

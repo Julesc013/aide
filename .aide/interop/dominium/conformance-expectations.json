@@ -13,110 +13,128 @@
       "status": "declared"
     },
     {
-      "description": "read-only source access",
+      "description": "exact repository identity",
       "id": "dominium-readonly-seam-03",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "no cross-repo writes",
+      "description": "read-only source access",
       "id": "dominium-readonly-seam-04",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "deterministic snapshot",
+      "description": "no cross-repo writes",
       "id": "dominium-readonly-seam-05",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "deterministic projection",
+      "description": "deterministic snapshot",
       "id": "dominium-readonly-seam-06",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "source digest binding",
+      "description": "deterministic projection",
       "id": "dominium-readonly-seam-07",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "mapping completeness",
+      "description": "source digest binding",
       "id": "dominium-readonly-seam-08",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "authority preservation",
+      "description": "bundle self digest binding",
       "id": "dominium-readonly-seam-09",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "Workbench non-authority",
+      "description": "mapping completeness",
       "id": "dominium-readonly-seam-10",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "refusal typing",
+      "description": "authority preservation",
       "id": "dominium-readonly-seam-11",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "diagnostic typing",
+      "description": "Workbench non-authority",
       "id": "dominium-readonly-seam-12",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "evidence linkage",
+      "description": "refusal typing",
       "id": "dominium-readonly-seam-13",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "event correlation",
+      "description": "diagnostic typing",
       "id": "dominium-readonly-seam-14",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "version compatibility",
+      "description": "evidence linkage",
       "id": "dominium-readonly-seam-15",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "unsupported-operation refusal",
+      "description": "event correlation",
       "id": "dominium-readonly-seam-16",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "no provider/model/network activity",
+      "description": "version compatibility",
       "id": "dominium-readonly-seam-17",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "no worker execution",
+      "description": "unsupported-operation refusal",
       "id": "dominium-readonly-seam-18",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "no mutation",
+      "description": "no provider/model/network activity",
       "id": "dominium-readonly-seam-19",
       "required_for_build": true,
       "status": "declared"
     },
     {
-      "description": "explicit non-capabilities",
+      "description": "no worker execution",
       "id": "dominium-readonly-seam-20",
+      "required_for_build": true,
+      "status": "declared"
+    },
+    {
+      "description": "no mutation",
+      "id": "dominium-readonly-seam-21",
+      "required_for_build": true,
+      "status": "declared"
+    },
+    {
+      "description": "explicit non-capabilities",
+      "id": "dominium-readonly-seam-22",
+      "required_for_build": true,
+      "status": "declared"
+    },
+    {
+      "description": "replayable negative fixtures",
+      "id": "dominium-readonly-seam-23",
       "required_for_build": true,
       "status": "declared"
     }

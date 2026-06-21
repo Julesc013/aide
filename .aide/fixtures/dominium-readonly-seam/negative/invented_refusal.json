@@ -1,0 +1,18 @@
+{
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "refusal.registry"
+  ],
+  "invalid_bundle_sha256": "sha256:f6f531e29f3a6061bcf7a9db186a4150dd552335ab4295f263f9c9959fc934a7",
+  "name": "invented_refusal",
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/refusal_projections/0/spec/refusal_id",
+      "value": "dominium.refusal.invented"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
+}

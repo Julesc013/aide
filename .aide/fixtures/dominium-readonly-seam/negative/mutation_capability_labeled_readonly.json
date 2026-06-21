@@ -1,0 +1,18 @@
+{
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "capability.mutation"
+  ],
+  "invalid_bundle_sha256": "sha256:d56437040e8241c73cbc4ab9868c270bfba8d845a8699a15d4a2738e8d301bf4",
+  "name": "mutation_capability_labeled_readonly",
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/host_capability_set/spec/capabilities/0/id",
+      "value": "dominium.patch.apply"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
+}

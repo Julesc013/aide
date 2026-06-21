@@ -1,10 +1,18 @@
 {
-  "expected_error": "status.workbench_started",
-  "invalid_bundle_sha256": "sha256:d7d4b518baef93ad719e18cbcbf5bbd84b2eada4d408ab1355a2c9abf99b1c0e",
-  "mutation": "workbench_authority_overclaim",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "workbench.authority"
+  ],
+  "invalid_bundle_sha256": "sha256:12207ce3be33ea69e93fd20d6e894083a1f3a14c71ea559bbd300bc0c6ede19d",
   "name": "workbench_authority_overclaim",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/workspace_descriptor/status/workbench_started",
+      "value": true
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

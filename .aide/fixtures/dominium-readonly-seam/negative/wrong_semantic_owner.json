@@ -1,0 +1,18 @@
+{
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "ownership.semantic"
+  ],
+  "invalid_bundle_sha256": "sha256:976436fe4155910b163ce2d435a9a363a29bee264a44802c62ffcec171b213f3",
+  "name": "wrong_semantic_owner",
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/artifact_references/0/metadata/semantic_owner",
+      "value": "AIDE"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
+}

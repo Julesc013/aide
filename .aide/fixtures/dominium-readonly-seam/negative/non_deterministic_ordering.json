@@ -1,10 +1,18 @@
 {
-  "expected_error": "event sequence",
-  "invalid_bundle_sha256": "sha256:93ec1076a6d64ac22d1d6791c7c86e62b5fae41b5165c3ebe85d4e9181014717",
-  "mutation": "non_deterministic_ordering",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "event.sequence"
+  ],
+  "invalid_bundle_sha256": "sha256:4708b4299153abbea311bf493b2fe28be8d54692e8e55505d9d42d98cb1ac039",
   "name": "non_deterministic_ordering",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/event_envelopes/0/spec/sequence",
+      "value": 99
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

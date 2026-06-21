@@ -14,53 +14,53 @@
     ]
   },
   "content_digests": {
-    "projection_index": "sha256:1b8b1c82c4d84cfda8c683d94fe22789681360aba043c8efb037c9a6d00bbe16",
+    "projection_index": "sha256:462607fb7c177bfd3a3ea96901118677eafce54d1a473de92d46af854239ea0d",
     "records": {
-      "dominium-artifact-193baf1f31630166": "sha256:ab47672e42986b090f0e3f784fa8ab8e9ff362f6ea61b6fe63ecf45bca9e20f7",
-      "dominium-artifact-1ca3928ebe5ea09c": "sha256:588bf8e1e7cf07750836750e233ae6788e58e1b97840cc674b77be2b397023b0",
-      "dominium-artifact-22955aed222f6923": "sha256:116df78f4642af34c80613b9e6bc037224bc6cd667d4dc0b70940ac82badc9d7",
-      "dominium-artifact-27b26552eaf77560": "sha256:b225f0ac7d422bb4500c3f4dd62c2da803d265439d763b453b751bbc425cd060",
-      "dominium-artifact-6282812584cdda17": "sha256:695c807e77a7aa31500fdf9eacdb4182713a5811d68c7438f5620d4ad38d5f7a",
-      "dominium-artifact-7384b251ea33143a": "sha256:5ff10f7fe87dfdc5bcf0a34ef044bcfba1e7f2f0727cd4253da509fc9631db78",
-      "dominium-artifact-7bf977d2d663b729": "sha256:97eac2365ff6d646c5746648d0f0532f73e102c44f1cbc91d6d6e97bf3a0e4fd",
-      "dominium-artifact-8e973a56935ee34f": "sha256:ab697f2683966a0cd77083c47fa0f3242c40355a1ae2e98218fadf11ad39ebee",
-      "dominium-artifact-90741a5cb2622b93": "sha256:a6f4efd73ecfcae1bfb43216e922ffd5c5f7e3513aaaba38635c2a3a5db11729",
-      "dominium-artifact-a50378589202c30f": "sha256:ad60692bd4888a29b160d8c80746d9252664f13b25fb41014e60bff57b53b246",
-      "dominium-artifact-a54ff182c7e8acf5": "sha256:4fb1ed11b53c835d5ddd55130360404ee57566f5b92ae3210baf2274a84dfa70",
-      "dominium-artifact-a76625887504a432": "sha256:f39326893296bd038cb829dac29d59c7db6f280d4c42c69fe5be2f51cba62b2c",
-      "dominium-artifact-b5ca2ee87890eb97": "sha256:e60c1e75690a247bc87235cc52a4446cc994a4c8457f2c5bd9f8df6847377641",
-      "dominium-artifact-c522c1099a502f4f": "sha256:e1516376a5b748b805120e9798eab196e5ac23665c6b06634858d4c49f1334d6",
-      "dominium-artifact-caed69da63d145a6": "sha256:d2beb252444f2b31c96d86e6aa04ec3379e54de6858d60671f37561d8749fbc9",
-      "dominium-artifact-e4ae8df918e9736b": "sha256:698d0551de6a48e83f1e1b2267ecefcf0240126af3596f7bed45eb9bc1cfe669",
-      "dominium-artifact-e62370bd92f78dab": "sha256:2ffc9bb75487efd751c27eddf4f5a0676932bade36d2f3b9a04cff33e87342da",
-      "dominium-bridge-manifest-readonly-v0": "sha256:03bf9938caac3f40cfcb7f10df265a549cc5f90863ff2464ad5c4f47f45bf9c1",
+      "dominium-artifact-193baf1f31630166": "sha256:d2e89fbdee81fda0b5e5c6623d524378c5d1b6da68edacd308c2910a77c20a78",
+      "dominium-artifact-1ca3928ebe5ea09c": "sha256:e71342f4e77a8145e3eb7c93e0e21a109b1d7a76ff743fa3fb682d9666e1bf26",
+      "dominium-artifact-22955aed222f6923": "sha256:5a7f47dc8c7191397227f744b36382a9115330137366cbf7990448ee51c84461",
+      "dominium-artifact-27b26552eaf77560": "sha256:321f2ef17e8ca16bbc8ba01de3bddf0b9492f7f92272cd164ae3e481ae815054",
+      "dominium-artifact-6282812584cdda17": "sha256:d0995ebc445b5c2b554ce1a5c035362c55f684c80fe93e440254795271b848ac",
+      "dominium-artifact-7384b251ea33143a": "sha256:352f72f498dea8ef0069942ead03e9e2c3368c7482bf79868261fac17c90fa7e",
+      "dominium-artifact-7bf977d2d663b729": "sha256:2e54575941d50b24b0d955a598371c2919879e349f6777622f055a4c29d67179",
+      "dominium-artifact-8e973a56935ee34f": "sha256:43c0b825dd5a2c350c6420b3f3b65ead16cc0bb4439583c29218cadf2f234168",
+      "dominium-artifact-90741a5cb2622b93": "sha256:476bf0a83b822a493836ab5001e6f5adbb5b83706c2e959b619b8223d8ca65fb",
+      "dominium-artifact-a50378589202c30f": "sha256:5154aae62e122e6aa6e0325011cd329049f2c07817e8fd1f0ed5c137eb34d5c3",
+      "dominium-artifact-a54ff182c7e8acf5": "sha256:d6d899a8e905f9040662c829ad871d0ddcff176790fa2a06b68534b4b5118078",
+      "dominium-artifact-a76625887504a432": "sha256:1a3f49ccfd2e97b71d1f4b2ce45ba67e7ef5419535c0f66535117ec0ae156f47",
+      "dominium-artifact-b5ca2ee87890eb97": "sha256:ac36a7a18965b3d2b1414edd7ce59279db84a368d262207ea1eeff82b003879a",
+      "dominium-artifact-c522c1099a502f4f": "sha256:7106c4c59dd4221ba7adf38e6812b72ba7324381b6a4f26d87c7c5eed4e71baa",
+      "dominium-artifact-caed69da63d145a6": "sha256:07536205d46cbea597ba3dda83dc591e01e09553b58dff53d6df086e055f7ca6",
+      "dominium-artifact-e4ae8df918e9736b": "sha256:57effc1f0d478e93402e9cecd39e8489a0f1eebc7196fd20e6b3efc956afa390",
+      "dominium-artifact-e62370bd92f78dab": "sha256:18e2855a041308dc6d2df6387fb5a2efdb1c74a655f868439891deb7a0bd0e75",
+      "dominium-bridge-manifest-readonly-v0": "sha256:5354aa607cdd154fc488094cee390ffe703229bf54c1ec5ad69fa89bebc86f3f",
       "dominium-context-c92b38602789": "sha256:80eb6d9e26efcbf6ae5d84494b725d7149df6683688396a20788ddcb417f3a8e",
-      "dominium-diagnostic-0b85e4e2820e5f11": "sha256:cfba6d708c311665da1be0bb683c3c8b9d3b4ad5b7a112329c3b2fef196f4cf3",
-      "dominium-diagnostic-159bc543e8498c21": "sha256:fa66ff6bf4d20e9423cebace0a13bebf9db545a156cc4f4d48cf8beb3b58503d",
-      "dominium-diagnostic-3d565de7f7b242b2": "sha256:f10bece1089f70badc5dee14dc3539b032a3790d7a41cb353ced02e61411cce5",
-      "dominium-diagnostic-480578d933499011": "sha256:26927d21ea5ae7b6365ec257b2f036a99e2a69a4394ca99561a33f049a95f03c",
-      "dominium-diagnostic-67f3e776f3a61b74": "sha256:60d6832edb45d6375ce8d34c9d56b1b142a67166625b2a95a3b3d7466b10ab22",
-      "dominium-diagnostic-ac5b4f28ee059f61": "sha256:6e927a153893ba7e3988e23b17a8202d34d33e4e0ebbe38915cddaadc172bd29",
-      "dominium-diagnostic-d291fa147b121808": "sha256:eaafafc11718695f85b15d67f4b5f9c1f56e57927b6b457e1409c9ce86dd7bb1",
-      "dominium-diagnostic-fc966d0ec2265462": "sha256:2c74994d3700d47e8b810b82be47eb6077468f72b2943a341ddc81e86b861acf",
+      "dominium-diagnostic-0b85e4e2820e5f11": "sha256:148441c11fffc3e0f79c6358e5065ea8fac8fa37d451ffe034cde3ec29d80d2d",
+      "dominium-diagnostic-159bc543e8498c21": "sha256:b1f47fea99403074bb2650a25165a07ee982f9d76481615380701a9eb166d54f",
+      "dominium-diagnostic-3d565de7f7b242b2": "sha256:942f73853cfc117a2a1c1d0f60b847476900a2ab144e08416ebb37c1f2c0e855",
+      "dominium-diagnostic-480578d933499011": "sha256:b4e3ea58f9bc7099a991f21067da825abb6885580ce77fd74d13330df3c1b985",
+      "dominium-diagnostic-67f3e776f3a61b74": "sha256:6b49522836bcebdf9d978e09d3389b9bd8613386c1030e6eb51c7dc2cd5393f5",
+      "dominium-diagnostic-ac5b4f28ee059f61": "sha256:7dc8c3db7164bbfa3c748a31ba2d73a864b3924ad6b22a83538eca73e776d16c",
+      "dominium-diagnostic-d291fa147b121808": "sha256:6554e33e4a1f5194c60063739390946c17f71e83842172e147c8d498734cf426",
+      "dominium-diagnostic-fc966d0ec2265462": "sha256:a6cc9932f264213922fef2d5735ec9b9a673e417dfacfcabbf165b223049bd83",
       "dominium-event-01-c92b38602789": "sha256:d975f5911ac0606998e88c1190e6e143d1c715aef9c4e042e6063891713a16dd",
       "dominium-event-02-c92b38602789": "sha256:e48d9f3beec1712c4a7da6abd9779c008df01c7b20b409f2e9299eda879959c8",
       "dominium-event-03-c92b38602789": "sha256:c2e60d0ecfbb5f947958f6109d92355fac6960079ab781130fca04aefe046188",
       "dominium-evidence-refs-c92b38602789": "sha256:aa2748a9b1b0798371368c103c1c0758681fc6e4b05d885055c2cb4753ecad90",
-      "dominium-host-capability-set-v0": "sha256:9fa0fe615ea5bc80a0e2f974db0b9fa9367da3047bb3144f72827907acc7667c",
-      "dominium-host-manifest-v0": "sha256:0a939dcadc507b05c7159a1937ff97aeb2107b2b9966d2cc84cdccd630d3bc1c",
-      "dominium-refusal-0712b25deb3739c2": "sha256:078d527f33fde2b56d09c6915ed813eea37a9f8a9cfcd3dc4f16635f01efc7a5",
-      "dominium-refusal-5f558c0702f10e50": "sha256:c204d21b6c3af46e63966c7f556999580f0c24af597107de99c92ce16282d589",
-      "dominium-refusal-689405c9d22a64ef": "sha256:e8e56b94488bc61c1cf3e69345a8e67b3d841ed00f279f8b3d3cbc49eeafa734",
-      "dominium-refusal-8d37682f8819edd8": "sha256:c4fd455cda902eb9763366ad3fb35da673e61bd21b5d4908cdbf71aef6e3d03d",
-      "dominium-refusal-9511259f07ee6194": "sha256:ae3ae066a2b57a693329cb5091c3b55e93a2a88157f4876a1d1fccd2ceb8c214",
-      "dominium-refusal-ccf6a5cbd2fa7641": "sha256:631813ad4f284ab5654e5827681d4c2b85620d945115b2c27b4e41cd5af1bbd0",
-      "dominium-refusal-f360b9af04d88fc8": "sha256:dbf4f311afccaa257bfd957c5335d00fb688ec612334d7ffc2e23a2154fb2861",
-      "dominium-refusal-f82bcc96b9eb217d": "sha256:f8bab49fbf6939a4b1bf6ac22b80904102bb7da43e8f39bf254a14a0f9fbc70a",
+      "dominium-host-capability-set-v0": "sha256:8a7e89ca198608fcb0ccec2e1f0386bbf3924d7e34fc1f4ef0ff181306826f22",
+      "dominium-host-manifest-v0": "sha256:43f691d0019a628f2bf07bf60b5ad64f25517359f8cee9221a7b1571e16e2ed1",
+      "dominium-refusal-0712b25deb3739c2": "sha256:5734447d52369d7581cfbbc748837a0b34d29cfa8d51ff0c0664f5cc3485680e",
+      "dominium-refusal-5f558c0702f10e50": "sha256:8a090a3847a871d15fa986cdc63c90daed61b89bfe93dda7cb5ee4104d581174",
+      "dominium-refusal-689405c9d22a64ef": "sha256:ec7e0867bb2a28c0508b3e9922436d93ab8ed6132f2ef4459348438d0db106f9",
+      "dominium-refusal-8d37682f8819edd8": "sha256:f4b1d70677ffe3144c173592b8348a817274f24f1bebe0654918d81d47729708",
+      "dominium-refusal-9511259f07ee6194": "sha256:a96d8e5428563b041062be3cab7de7933b3ebde8a5fa1e62ce0fb3d63e85f898",
+      "dominium-refusal-ccf6a5cbd2fa7641": "sha256:82cc26d43b3e191a8745dd26a4d307056e734d96c5fb8cfd01c75df696cae3f8",
+      "dominium-refusal-f360b9af04d88fc8": "sha256:02501d71ec83182375e3f56776a5fef563a6b79136ef45630f5dadc8c9a8780a",
+      "dominium-refusal-f82bcc96b9eb217d": "sha256:e93d14815daed123cd895e608b5dbed02450f2e312991e8499d520c2e1c291fd",
       "dominium-workspace-c92b38602789": "sha256:41b55380840f114073ebb76927d04c7651d7328985593328998527e3dc97ad51"
     },
-    "seam_bundle_without_self_digest": "sha256:066af85fac0cf5c152f78a46172f13b9d296797a7b307169a5f3876d073818b8",
-    "source_snapshot": "sha256:44b7ab54ca21b7e3a3e4c1a9a5f6b9684c43208d212c7f3b9865290379200171"
+    "seam_bundle_without_self_digest": "sha256:798a9043265cfc257f0eef17691ec87b3fa9694870d48254446d1d1b666868c0",
+    "source_snapshot": "sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8"
   },
   "cross_reference_index": {
     "artifact_refs": [
@@ -151,7 +151,7 @@
     "capability_target": "dominium_readonly_seam_v0",
     "projection_authority": "generated_non_authoritative",
     "protocol_version": "0.1.0",
-    "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+    "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
     "record_count": 42,
     "schema_version": "aide.dominium-readonly-seam.v0",
     "selected_file_count": 17,
@@ -218,8 +218,48 @@
     "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
   },
   "omission_summary": {
+    "diagnostic_registry": {
+      "native_count": 129,
+      "omitted_count": 121,
+      "omitted_ids_sha256": "sha256:0ac045417b59cb21b4d3aae03b30be958009a5535c5ab6af62af2fe85b779d79",
+      "projected_count": 8,
+      "projected_ids": [
+        "dominium.diagnostic.repo.layout_violation",
+        "dominium.diagnostic.repo.forbidden_root",
+        "dominium.diagnostic.repo.dependency_direction_violation",
+        "dominium.diagnostic.abi.public_header_violation",
+        "dominium.diagnostic.public_surface.invalid",
+        "dominium.diagnostic.command.invalid_input",
+        "dominium.diagnostic.command.unsupported_surface",
+        "dominium.diagnostic.capability.missing"
+      ],
+      "selection_limit": 8,
+      "selection_policy": "source_order_first_n",
+      "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
+      "truncation_disclosed": true
+    },
     "omitted_source_files": "all Dominium files outside the selected seam authority inputs",
-    "reason": "bounded read-only seam v0 context"
+    "reason": "bounded read-only seam v0 context",
+    "refusal_registry": {
+      "native_count": 77,
+      "omitted_count": 69,
+      "omitted_ids_sha256": "sha256:426206db7961689839a406ea1cfe44cf65c5a44829ea414b5c02b1943d024487",
+      "projected_count": 8,
+      "projected_ids": [
+        "dominium.refusal.validation.invalid_target",
+        "dominium.refusal.validation.target_unknown",
+        "dominium.refusal.validation.target_kind_unsupported",
+        "dominium.refusal.validation.target_outside_allowed_root",
+        "dominium.refusal.validation.tool_unavailable",
+        "dominium.refusal.capability.missing",
+        "dominium.refusal.capability.version_unsupported",
+        "dominium.refusal.capability.conflict"
+      ],
+      "selection_limit": 8,
+      "selection_policy": "source_order_first_n",
+      "source_registry_path": "contracts/refusal/refusal_code.registry.json",
+      "truncation_disclosed": true
+    }
   },
   "records": {
     "artifact_references": [
@@ -294,6 +334,7 @@
           "sha256": "sha256:6268dc7df4b80c8ba421b1894ea6e1251ec461038049623da45b046d5e902b8b",
           "size_bytes": 15573,
           "source_path": "AGENTS.md",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "operator_law"
         },
         "status": {
@@ -388,6 +429,7 @@
           "sha256": "sha256:b478daf3f0c4d12fae1fa126f23894cc85b0769b59491345c60b9345b20c6c6b",
           "size_bytes": 3655,
           "source_path": ".aide/queue/current.toml",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "queue_status"
         },
         "status": {
@@ -482,6 +524,7 @@
           "sha256": "sha256:59c8b3a5f779203e93761c76d23a718e0337ec9d3cf0a513361a0e4ae020e4e0",
           "size_bytes": 7717,
           "source_path": "docs/canon/constitution_v1.md",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "constitution"
         },
         "status": {
@@ -576,6 +619,7 @@
           "sha256": "sha256:3ecfa4ecaa2a13d3db1ddcb4e795f602f75d9f75ef03bc626a406c317033ab93",
           "size_bytes": 13240,
           "source_path": "docs/canon/glossary_v1.md",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "glossary"
         },
         "status": {
@@ -670,6 +714,7 @@
           "sha256": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe",
           "size_bytes": 13530,
           "source_path": "contracts/command/command_surface.contract.toml",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "command_surface"
         },
         "status": {
@@ -764,6 +809,7 @@
           "sha256": "sha256:990f4c65280c41fa50b125001c6c8d04b467d1c14b3bf184850c03bee5eb9d12",
           "size_bytes": 4271,
           "source_path": "contracts/service/service.contract.toml",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "service_surface"
         },
         "status": {
@@ -858,6 +904,7 @@
           "sha256": "sha256:fdd08cac92920d2c1883f41dc6a0e070bdbcddb5a961f041a98d8eff68323b9b",
           "size_bytes": 3609,
           "source_path": "contracts/module/module_surface.contract.toml",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "module_surface"
         },
         "status": {
@@ -952,6 +999,7 @@
           "sha256": "sha256:9b4f402f07adeb48d6346ce257bd3b9b5bdbf1da2aae4add1ee25c04b5f5b0b3",
           "size_bytes": 685,
           "source_path": "contracts/workbench/workbench_surface.contract.toml",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "workbench_surface"
         },
         "status": {
@@ -1046,6 +1094,7 @@
           "sha256": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
           "size_bytes": 95489,
           "source_path": "contracts/refusal/refusal_code.registry.json",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "refusal_registry"
         },
         "status": {
@@ -1140,6 +1189,7 @@
           "sha256": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
           "size_bytes": 153162,
           "source_path": "contracts/diagnostic/diagnostic_code.registry.json",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "diagnostic_registry"
         },
         "status": {
@@ -1234,6 +1284,7 @@
           "sha256": "sha256:063b891a50cdcacf327e4bdeafd63a7280b8f9d083f47b14191230b8e92dbc7d",
           "size_bytes": 1148,
           "source_path": "contracts/diagnostic/diagnostic_severity.registry.json",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "diagnostic_severity_registry"
         },
         "status": {
@@ -1328,6 +1379,7 @@
           "sha256": "sha256:af0f6f1ac4ff0cd0be957319b89a7959fd1c92e56c6d6ba29b411b7fb6dd3aea",
           "size_bytes": 35570,
           "source_path": "contracts/capability/capability.registry.json",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "capability_registry"
         },
         "status": {
@@ -1422,6 +1474,7 @@
           "sha256": "sha256:ea40bdf07ec279165f4c3d5ee06036659bdca92d92574d5393b1125450f952ff",
           "size_bytes": 3774,
           "source_path": "contracts/project_graph/project_graph_model.contract.toml",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "project_graph_model"
         },
         "status": {
@@ -1516,6 +1569,7 @@
           "sha256": "sha256:e21cf1355b3c26f34ee317f3c26924e1117b9794cd8bebb5aa5c0c3cfe99fe96",
           "size_bytes": 8154,
           "source_path": "docs/repo/audits/PRESENTATION_CONTRACT_01.md",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "presentation_contract_evidence"
         },
         "status": {
@@ -1610,6 +1664,7 @@
           "sha256": "sha256:3a25b990130d630be93798e304f9995d0b37363f457327a30f28a7b72204b1d6",
           "size_bytes": 6453,
           "source_path": "docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "workbench_validation_evidence"
         },
         "status": {
@@ -1704,6 +1759,7 @@
           "sha256": "sha256:be8b267297f0de2973c96dc98c1188f43455240a436d82e7d041d1dde20547cf",
           "size_bytes": 4721,
           "source_path": "docs/development/workbench_validation_slice.md",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "workbench_validation_plan"
         },
         "status": {
@@ -1798,6 +1854,7 @@
           "sha256": "sha256:3161897ce798b97b200663ad83bc798edbabc908736ea9f5e267675ebff11331",
           "size_bytes": 1537,
           "source_path": "docs/development/command_result_view_slice.md",
+          "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
           "source_role": "command_result_view_plan"
         },
         "status": {
@@ -2108,6 +2165,7 @@
           "severity": "error",
           "severity_valid": true,
           "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+          "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
           "summary": "Repository layout does not satisfy the declared layout contract."
         },
         "status": {
@@ -2204,6 +2262,7 @@
           "severity": "error",
           "severity_valid": true,
           "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+          "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
           "summary": "A forbidden or unreviewed repository root is present."
         },
         "status": {
@@ -2300,6 +2359,7 @@
           "severity": "error",
           "severity_valid": true,
           "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+          "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
           "summary": "A high-confidence dependency direction violation is present."
         },
         "status": {
@@ -2396,6 +2456,7 @@
           "severity": "error",
           "severity_valid": true,
           "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+          "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
           "summary": "A public header violates the API/ABI canon."
         },
         "status": {
@@ -2492,6 +2553,7 @@
           "severity": "error",
           "severity_valid": true,
           "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+          "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
           "summary": "Public surface registry entry is invalid."
         },
         "status": {
@@ -2588,6 +2650,7 @@
           "severity": "error",
           "severity_valid": true,
           "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+          "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
           "summary": "Command input does not satisfy its declared input schema."
         },
         "status": {
@@ -2684,6 +2747,7 @@
           "severity": "error",
           "severity_valid": true,
           "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+          "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
           "summary": "Command is not declared for the requested surface."
         },
         "status": {
@@ -2780,6 +2844,7 @@
           "severity": "error",
           "severity_valid": true,
           "source_registry": "contracts/diagnostic/diagnostic_code.registry.json",
+          "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
           "summary": "Required capability is missing."
         },
         "status": {
@@ -2898,7 +2963,8 @@
             "Workbench views",
             "interop projections"
           ]
-        }
+        },
+        "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
       },
       "status": {
         "branch_or_worktree_created": false,
@@ -3428,6 +3494,21 @@
             "id": "dominium.patch.apply",
             "implemented_in_this_slice": false,
             "refusal_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+          },
+          {
+            "id": "dominium.branch.create",
+            "implemented_in_this_slice": false,
+            "refusal_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+          },
+          {
+            "id": "dominium.worktree.create",
+            "implemented_in_this_slice": false,
+            "refusal_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+          },
+          {
+            "id": "dominium.release.publish",
+            "implemented_in_this_slice": false,
+            "refusal_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
           }
         ]
       },
@@ -3521,9 +3602,14 @@
         "registered_dominium_command_count": 9,
         "registered_validation_command_present": true,
         "repository_identity": {
-          "expected_identity": "Julesc013/dominium",
+          "canonical_identity": "github.com/julesc013/dominium",
+          "expected_identity": "github.com/julesc013/dominium",
+          "host": "github.com",
+          "owner": "julesc013",
           "remote_url": "https://github.com/Julesc013/dominium.git",
-          "root_name": "dominium"
+          "repository": "dominium",
+          "root_name": "dominium",
+          "transport": "https"
         },
         "runtime_dispatch_available": false,
         "selected_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
@@ -3632,12 +3718,17 @@
           "owner": "tools.validators",
           "projection_direction": "dominium_to_aide_read_only",
           "reason": "The requested validation target is absent, malformed, out of scope, or not registered.",
+          "recovery": {
+            "action": "select_alternative",
+            "summary": "Choose a registered command target, schema, tier, or repository path and rerun."
+          },
           "recovery_action": "select_alternative",
           "refusal_id": "dominium.refusal.validation.invalid_target",
           "related_commands": [
             "dominium.validation.run"
           ],
           "source_registry": "contracts/refusal/refusal_code.registry.json",
+          "source_registry_path": "contracts/refusal/refusal_code.registry.json",
           "summary": "Requested validation target is invalid or out of scope."
         },
         "status": {
@@ -3734,12 +3825,17 @@
           "owner": "apps.workbench.module.validation",
           "projection_direction": "dominium_to_aide_read_only",
           "reason": "The requested validation suite, target path, or artifact reference is not registered or does not exist.",
+          "recovery": {
+            "action": "select_alternative",
+            "summary": "Choose target all, dominium.validation.run, or the registered contract schema artifact target."
+          },
           "recovery_action": "select_alternative",
           "refusal_id": "dominium.refusal.validation.target_unknown",
           "related_commands": [
             "dominium.validation.run"
           ],
           "source_registry": "contracts/refusal/refusal_code.registry.json",
+          "source_registry_path": "contracts/refusal/refusal_code.registry.json",
           "summary": "Validation target is unknown."
         },
         "status": {
@@ -3836,12 +3932,17 @@
           "owner": "apps.workbench.module.validation",
           "projection_direction": "dominium_to_aide_read_only",
           "reason": "The command input requested a validation target kind that has no registered command adapter.",
+          "recovery": {
+            "action": "select_alternative",
+            "summary": "Use target_kind validation_suite or contract_schema, or add a reviewed adapter before using another kind."
+          },
           "recovery_action": "select_alternative",
           "refusal_id": "dominium.refusal.validation.target_kind_unsupported",
           "related_commands": [
             "dominium.validation.run"
           ],
           "source_registry": "contracts/refusal/refusal_code.registry.json",
+          "source_registry_path": "contracts/refusal/refusal_code.registry.json",
           "summary": "Validation target kind is unsupported."
         },
         "status": {
@@ -3938,12 +4039,17 @@
           "owner": "apps.workbench.module.validation",
           "projection_direction": "dominium_to_aide_read_only",
           "reason": "The requested target resolves outside the repository root or outside the allowed roots for the contract_schema slice.",
+          "recovery": {
+            "action": "select_alternative",
+            "summary": "Choose a target under contracts/command or contracts/schema."
+          },
           "recovery_action": "select_alternative",
           "refusal_id": "dominium.refusal.validation.target_outside_allowed_root",
           "related_commands": [
             "dominium.validation.run"
           ],
           "source_registry": "contracts/refusal/refusal_code.registry.json",
+          "source_registry_path": "contracts/refusal/refusal_code.registry.json",
           "summary": "Validation target is outside the allowed root."
         },
         "status": {
@@ -4040,12 +4146,17 @@
           "owner": "tools.validators",
           "projection_direction": "dominium_to_aide_read_only",
           "reason": "The requested validator or proof command is not available in this repository checkout.",
+          "recovery": {
+            "action": "install_provider",
+            "summary": "Install or restore the owning tool, or choose a command whose implementation is registered."
+          },
           "recovery_action": "install_provider",
           "refusal_id": "dominium.refusal.validation.tool_unavailable",
           "related_commands": [
             "dominium.validation.run"
           ],
           "source_registry": "contracts/refusal/refusal_code.registry.json",
+          "source_registry_path": "contracts/refusal/refusal_code.registry.json",
           "summary": "Requested validation tool is unavailable."
         },
         "status": {
@@ -4142,10 +4253,15 @@
           "owner": "contracts.capability",
           "projection_direction": "dominium_to_aide_read_only",
           "reason": "A required capability was requested but no available capability or provider satisfies it.",
+          "recovery": {
+            "action": "install_provider",
+            "summary": "Install, enable, or select a provider/capability that satisfies the request."
+          },
           "recovery_action": "install_provider",
           "refusal_id": "dominium.refusal.capability.missing",
           "related_commands": [],
           "source_registry": "contracts/refusal/refusal_code.registry.json",
+          "source_registry_path": "contracts/refusal/refusal_code.registry.json",
           "summary": "Required capability is missing."
         },
         "status": {
@@ -4242,10 +4358,15 @@
           "owner": "contracts.capability",
           "projection_direction": "dominium_to_aide_read_only",
           "reason": "A capability is present but does not satisfy the requested version or compatibility range.",
+          "recovery": {
+            "action": "select_alternative",
+            "summary": "Select a compatible capability/provider or update the requested capability version."
+          },
           "recovery_action": "select_alternative",
           "refusal_id": "dominium.refusal.capability.version_unsupported",
           "related_commands": [],
           "source_registry": "contracts/refusal/refusal_code.registry.json",
+          "source_registry_path": "contracts/refusal/refusal_code.registry.json",
           "summary": "Capability version is unsupported."
         },
         "status": {
@@ -4342,10 +4463,15 @@
           "owner": "contracts.capability",
           "projection_direction": "dominium_to_aide_read_only",
           "reason": "Two or more requested or selected capabilities are mutually incompatible by declared policy.",
+          "recovery": {
+            "action": "select_alternative",
+            "summary": "Select a non-conflicting capability set or disable the conflicting feature."
+          },
           "recovery_action": "select_alternative",
           "refusal_id": "dominium.refusal.capability.conflict",
           "related_commands": [],
           "source_registry": "contracts/refusal/refusal_code.registry.json",
+          "source_registry_path": "contracts/refusal/refusal_code.registry.json",
           "summary": "Requested capabilities conflict."
         },
         "status": {
@@ -4469,6 +4595,48 @@
         "worker_executed": false,
         "workspace_projected": true
       }
+    }
+  },
+  "registry_projection_summary": {
+    "diagnostics": {
+      "native_count": 129,
+      "omitted_count": 121,
+      "omitted_ids_sha256": "sha256:0ac045417b59cb21b4d3aae03b30be958009a5535c5ab6af62af2fe85b779d79",
+      "projected_count": 8,
+      "projected_ids": [
+        "dominium.diagnostic.repo.layout_violation",
+        "dominium.diagnostic.repo.forbidden_root",
+        "dominium.diagnostic.repo.dependency_direction_violation",
+        "dominium.diagnostic.abi.public_header_violation",
+        "dominium.diagnostic.public_surface.invalid",
+        "dominium.diagnostic.command.invalid_input",
+        "dominium.diagnostic.command.unsupported_surface",
+        "dominium.diagnostic.capability.missing"
+      ],
+      "selection_limit": 8,
+      "selection_policy": "source_order_first_n",
+      "source_registry_path": "contracts/diagnostic/diagnostic_code.registry.json",
+      "truncation_disclosed": true
+    },
+    "refusals": {
+      "native_count": 77,
+      "omitted_count": 69,
+      "omitted_ids_sha256": "sha256:426206db7961689839a406ea1cfe44cf65c5a44829ea414b5c02b1943d024487",
+      "projected_count": 8,
+      "projected_ids": [
+        "dominium.refusal.validation.invalid_target",
+        "dominium.refusal.validation.target_unknown",
+        "dominium.refusal.validation.target_kind_unsupported",
+        "dominium.refusal.validation.target_outside_allowed_root",
+        "dominium.refusal.validation.tool_unavailable",
+        "dominium.refusal.capability.missing",
+        "dominium.refusal.capability.version_unsupported",
+        "dominium.refusal.capability.conflict"
+      ],
+      "selection_limit": 8,
+      "selection_policy": "source_order_first_n",
+      "source_registry_path": "contracts/refusal/refusal_code.registry.json",
+      "truncation_disclosed": true
     }
   },
   "source_snapshot": {
@@ -4716,9 +4884,14 @@
       "remote_ref_update": false
     },
     "repository_identity": {
-      "expected_identity": "Julesc013/dominium",
+      "canonical_identity": "github.com/julesc013/dominium",
+      "expected_identity": "github.com/julesc013/dominium",
+      "host": "github.com",
+      "owner": "julesc013",
       "remote_url": "https://github.com/Julesc013/dominium.git",
-      "root_name": "dominium"
+      "repository": "dominium",
+      "root_name": "dominium",
+      "transport": "https"
     },
     "schema_version": "aide.dominium-readonly-seam.source-snapshot.v0",
     "selected_file_count": 17,
@@ -4928,7 +5101,7 @@
         "size_bytes": 1537
       }
     ],
-    "snapshot_digest": "sha256:44b7ab54ca21b7e3a3e4c1a9a5f6b9684c43208d212c7f3b9865290379200171",
+    "snapshot_digest": "sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8",
     "source_ref": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
     "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
   },

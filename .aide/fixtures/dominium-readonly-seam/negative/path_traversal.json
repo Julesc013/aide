@@ -1,10 +1,18 @@
 {
-  "expected_error": "path traversal",
-  "invalid_bundle_sha256": "sha256:ce63ba7dd3161f1e52d11e80605c4339586133d6ff020c9d3681fb20c64aa469",
-  "mutation": "path_traversal",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "path.traversal"
+  ],
+  "invalid_bundle_sha256": "sha256:372503bcc1efe0074d7f43d3ffd972b7694e77bf8b05e2e8c23d4ff0495da4bb",
   "name": "path_traversal",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/source_snapshot/selected_files/0/path",
+      "value": "../AGENTS.md"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

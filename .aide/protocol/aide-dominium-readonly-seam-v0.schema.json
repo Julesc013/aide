@@ -1,8 +1,83 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$defs": {
+    "Compatibility": {
+      "additionalProperties": true,
+      "properties": {
+        "requiredCapabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "schema",
+        "readOldWriteCurrent",
+        "requiredCapabilities",
+        "supportedProtocolRange"
+      ],
+      "type": "object"
+    },
+    "Freshness": {
+      "additionalProperties": true,
+      "required": [
+        "branch",
+        "worktree_status",
+        "local_head",
+        "selected_revision",
+        "fetch_performed",
+        "pull_performed",
+        "checkout_performed"
+      ],
+      "type": "object"
+    },
     "CommonMetadata": {
       "additionalProperties": true,
+      "properties": {
+        "authority_role": {
+          "type": "string"
+        },
+        "compatibility": {
+          "$ref": "#/$defs/Compatibility"
+        },
+        "explicit_non_capabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "freshness": {
+          "$ref": "#/$defs/Freshness"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identity_owner": {
+          "enum": [
+            "AIDE"
+          ]
+        },
+        "producer": {
+          "type": "string"
+        },
+        "protocol_version": {
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "aide.dominium-readonly-seam.v0"
+        },
+        "semantic_owner": {
+          "enum": [
+            "AIDE",
+            "Dominium"
+          ]
+        },
+        "source_revision": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        }
+      },
       "required": [
         "id",
         "schema_version",
@@ -10,18 +85,27 @@
         "producer",
         "source_revision",
         "authority_role",
+        "identity_owner",
+        "semantic_owner",
         "freshness",
         "compatibility",
         "explicit_non_capabilities"
       ],
       "type": "object"
     },
+    "ReferenceID": {
+      "pattern": "^aide://[A-Za-z0-9._~-]+/[A-Za-z0-9._~@+=:,-]+$",
+      "type": "string"
+    },
+    "Digest": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
     "SeamRecord": {
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "apiVersion": {
-          "const": "aide.dev/v1alpha1",
-          "type": "string"
+          "const": "aide.dev/v1alpha1"
         },
         "kind": {
           "enum": [
@@ -35,8 +119,7 @@
             "RefusalProjection",
             "EvidenceReferenceSet",
             "DominiumBridgeManifest"
-          ],
-          "type": "string"
+          ]
         },
         "metadata": {
           "$ref": "#/$defs/CommonMetadata"
@@ -56,60 +139,76 @@
         "status"
       ],
       "type": "object"
+    },
+    "SourceFile": {
+      "additionalProperties": true,
+      "properties": {
+        "artifact_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        },
+        "authority": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "role": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/Digest"
+        }
+      },
+      "required": [
+        "path",
+        "role",
+        "authority",
+        "required",
+        "sha256",
+        "artifact_ref"
+      ],
+      "type": "object"
     }
   },
-  "additionalProperties": true,
+  "additionalProperties": false,
   "description": "Offline read-only AIDE-Dominium seam v0 projection bundle. The bundle records deterministic snapshots, mappings, and validation evidence only; it does not invoke Dominium commands, start services, call providers, execute workers, or mutate repositories.",
   "properties": {
     "apiVersion": {
-      "const": "aide.dev/v1alpha1",
-      "type": "string"
+      "const": "aide.dev/v1alpha1"
     },
-    "kind": {
-      "const": "DominiumReadonlySeamBundle",
-      "type": "string"
-    },
-    "metadata": {
-      "$ref": "#/$defs/CommonMetadata"
-    },
-    "manifest": {
-      "type": "object"
-    },
-    "source_snapshot": {
-      "type": "object"
-    },
-    "records": {
-      "additionalProperties": {
-        "oneOf": [
-          {
-            "$ref": "#/$defs/SeamRecord"
-          },
-          {
-            "items": {
-              "$ref": "#/$defs/SeamRecord"
-            },
-            "type": "array"
-          }
-        ]
-      },
-      "type": "object"
-    },
-    "cross_reference_index": {
+    "authority_classification": {
+      "additionalProperties": true,
+      "required": [
+        "canonical_authority",
+        "projection_only",
+        "conflict_policy"
+      ],
       "type": "object"
     },
     "content_digests": {
+      "additionalProperties": true,
+      "required": [
+        "source_snapshot",
+        "projection_index",
+        "records",
+        "seam_bundle_without_self_digest"
+      ],
       "type": "object"
     },
-    "authority_classification": {
-      "type": "object"
-    },
-    "freshness": {
-      "type": "object"
-    },
-    "validation_summary": {
-      "type": "object"
-    },
-    "omission_summary": {
+    "cross_reference_index": {
+      "additionalProperties": true,
+      "required": [
+        "bundle_ref",
+        "workspace_ref",
+        "context_ref",
+        "artifact_refs",
+        "event_refs",
+        "diagnostic_ids",
+        "refusal_ids"
+      ],
       "type": "object"
     },
     "explicit_non_capabilities": {
@@ -118,7 +217,164 @@
       },
       "type": "array"
     },
+    "freshness": {
+      "$ref": "#/$defs/Freshness"
+    },
+    "kind": {
+      "const": "DominiumReadonlySeamBundle"
+    },
+    "manifest": {
+      "additionalProperties": true,
+      "required": [
+        "bundle_id",
+        "bundle_ref",
+        "task_id",
+        "capability_target",
+        "source_revision",
+        "schema_version",
+        "protocol_version",
+        "record_count",
+        "selected_file_count",
+        "projection_authority",
+        "recommended_next_task"
+      ],
+      "type": "object"
+    },
+    "metadata": {
+      "$ref": "#/$defs/CommonMetadata"
+    },
+    "omission_summary": {
+      "additionalProperties": true,
+      "required": [
+        "omitted_source_files",
+        "reason",
+        "diagnostic_registry",
+        "refusal_registry"
+      ],
+      "type": "object"
+    },
+    "records": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_references": {
+          "items": {
+            "$ref": "#/$defs/SeamRecord"
+          },
+          "type": "array"
+        },
+        "context_descriptor": {
+          "$ref": "#/$defs/SeamRecord"
+        },
+        "diagnostic_projections": {
+          "items": {
+            "$ref": "#/$defs/SeamRecord"
+          },
+          "type": "array"
+        },
+        "dominium_bridge_manifest": {
+          "$ref": "#/$defs/SeamRecord"
+        },
+        "event_envelopes": {
+          "items": {
+            "$ref": "#/$defs/SeamRecord"
+          },
+          "type": "array"
+        },
+        "evidence_reference_set": {
+          "$ref": "#/$defs/SeamRecord"
+        },
+        "host_capability_set": {
+          "$ref": "#/$defs/SeamRecord"
+        },
+        "host_manifest": {
+          "$ref": "#/$defs/SeamRecord"
+        },
+        "refusal_projections": {
+          "items": {
+            "$ref": "#/$defs/SeamRecord"
+          },
+          "type": "array"
+        },
+        "workspace_descriptor": {
+          "$ref": "#/$defs/SeamRecord"
+        }
+      },
+      "required": [
+        "host_manifest",
+        "host_capability_set",
+        "workspace_descriptor",
+        "context_descriptor",
+        "artifact_references",
+        "diagnostic_projections",
+        "refusal_projections",
+        "evidence_reference_set",
+        "event_envelopes",
+        "dominium_bridge_manifest"
+      ],
+      "type": "object"
+    },
+    "registry_projection_summary": {
+      "additionalProperties": true,
+      "required": [
+        "diagnostics",
+        "refusals"
+      ],
+      "type": "object"
+    },
+    "source_snapshot": {
+      "additionalProperties": true,
+      "properties": {
+        "repository_identity": {
+          "additionalProperties": true,
+          "required": [
+            "canonical_identity",
+            "host",
+            "owner",
+            "repository",
+            "transport"
+          ],
+          "type": "object"
+        },
+        "selected_files": {
+          "items": {
+            "$ref": "#/$defs/SourceFile"
+          },
+          "type": "array"
+        },
+        "snapshot_digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "source_revision": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "repository_identity",
+        "source_revision",
+        "selected_file_count",
+        "selected_files",
+        "contract_inventory",
+        "authority_input_inventory",
+        "queue_status",
+        "freshness",
+        "read_only_operations",
+        "snapshot_digest"
+      ],
+      "type": "object"
+    },
     "status": {
+      "type": "object"
+    },
+    "validation_summary": {
+      "additionalProperties": true,
+      "required": [
+        "validation_status",
+        "validated",
+        "error_count",
+        "warning_count"
+      ],
       "type": "object"
     }
   },
@@ -135,6 +391,7 @@
     "freshness",
     "validation_summary",
     "omission_summary",
+    "registry_projection_summary",
     "explicit_non_capabilities",
     "status"
   ],

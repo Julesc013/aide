@@ -12,7 +12,7 @@ try:  # Python 3.11+
 except ModuleNotFoundError:  # pragma: no cover - retained for portability.
     tomllib = None  # type: ignore[assignment]
 
-from . import models
+from . import identity, integrity, models
 from .references import is_commit_sha, normalize_repo_path, path_has_symlink_escape, sha256_bytes, stable_id
 
 
@@ -90,11 +90,11 @@ def local_origin_main(root: Path) -> str | None:
         return None
 
 
-def count_ahead_behind(root: Path, left: str, right: str) -> int:
+def count_ahead_behind(root: Path, left: str, right: str) -> int | None:
     try:
         return int(_git_text(root, ["rev-list", "--count", f"{left}..{right}"]))
     except SnapshotError:
-        return 0
+        return None
 
 
 def git_object_bytes(root: Path, revision: str, rel_path: str) -> bytes:
@@ -174,14 +174,17 @@ def build_source_snapshot(
     *,
     revision: str | None = None,
     expected_revision: str | None = None,
-    expected_repo_identity: str | None = "Julesc013/dominium",
+    expected_repo_identity: str | None = identity.DEFAULT_DOMINIUM_IDENTITY,
     require_clean: bool = True,
 ) -> dict[str, Any]:
     root = Path(dominium_root).resolve()
     assert_git_repo(root)
     url = remote_url(root)
-    if expected_repo_identity and expected_repo_identity.lower() not in url.lower():
-        raise SnapshotError(f"unexpected repository identity: {url}")
+    parsed_identity = (
+        identity.assert_expected_repository_identity(url, expected_identity=expected_repo_identity)
+        if expected_repo_identity
+        else identity.parse_repository_identity(url)
+    )
     dirty = porcelain_status(root)
     if require_clean and dirty:
         raise SnapshotError("dirty authoritative input rejected by read-only seam")
@@ -232,6 +235,7 @@ def build_source_snapshot(
             "root_name": root.name,
             "remote_url": url,
             "expected_identity": expected_repo_identity or "",
+            **parsed_identity.as_dict(),
         },
         "source_revision": resolved,
         "source_ref": revision or "HEAD",
@@ -258,5 +262,5 @@ def build_source_snapshot(
             "dominium_file_write": False,
         },
     }
-    snapshot["snapshot_digest"] = sha256_bytes(models.stable_json(snapshot).encode("utf-8"))
+    integrity.finalize_source_snapshot(snapshot)
     return snapshot

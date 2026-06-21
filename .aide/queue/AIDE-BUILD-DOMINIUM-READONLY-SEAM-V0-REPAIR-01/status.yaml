@@ -1,0 +1,72 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+status: needs_review
+planning_state: repair_implemented
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-21
+summary: Repaired the offline read-only AIDE-Dominium seam v0 material findings from the independent check.
+validation_status: PASS_WITH_WARNINGS
+source_check_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01
+source_check_result: REQUEST_CHANGES
+source_check_commit: 692b4b3469e80a67f3f2f98612ec66c86b7394e9
+source_check_missing_evidence: 0
+material_findings_repaired: 18
+warning_count: 4
+dominium_repository_path: C:/Projects/Dominium/dominium
+dominium_pinned_head: c92b386027890c1bbf14aef6eaafe0357b7b03dd
+dominium_branch_status: "## main...origin/main [behind 24]"
+dominium_command_invoked: false
+dominium_modified: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+selected_dominium_inputs: 17
+projected_records: 42
+fixtures: 43
+focused_tests: 131
+conformance_expectations: 23
+conformance_passed: 23
+source_mutation_count: 0
+forbidden_operation_count: 0
+reports:
+  - .aide/reports/dominium-readonly-seam-v0-repair/status.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/repair-report.json
+  - .aide/reports/dominium-readonly-seam-v0-repair/repair-report.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/finding-disposition.json
+  - .aide/reports/dominium-readonly-seam-v0-repair/test-summary.json
+  - .aide/reports/dominium-readonly-seam-v0-repair/compatibility.json
+  - .aide/reports/dominium-readonly-seam-v0-repair/identity-repair.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/digest-repair.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/schema-repair.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/reference-cardinality-ownership-repair.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/registry-projection-repair.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/fixture-replay-repair.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/conformance-repair.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/demo-observation-repair.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/remaining-risks.md
+  - .aide/reports/dominium-readonly-seam-v0-repair/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/result.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/evidence-manifest.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/finding-disposition.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/test-summary.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/dominium-immutability.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/next-task-recommendation.md
+warnings:
+  - The seam remains offline and read-only.
+  - SeamBundle remains generated projection evidence, not canonical Dominium truth.
+  - Local Dominium remains behind origin/main by 24 commits.
+  - Runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.
+blockers: []

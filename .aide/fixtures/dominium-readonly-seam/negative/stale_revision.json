@@ -1,10 +1,18 @@
 {
-  "expected_error": "source_revision must be commit sha",
-  "invalid_bundle_sha256": "sha256:e96ecd0b2991823d9ce69099b0a63c922549f5389c0dc15b423609a469daac9c",
-  "mutation": "stale_revision",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "revision.binding"
+  ],
+  "invalid_bundle_sha256": "sha256:c52901ef82730c756c1b2aac12093efce03a561e3275bf941bc9cfc42e40650b",
   "name": "stale_revision",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/manifest/source_revision",
+      "value": "0000000000000000000000000000000000000000"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

@@ -1,10 +1,18 @@
 {
-  "expected_error": "command invocation",
-  "invalid_bundle_sha256": "sha256:b142a91dab12208d9bb2b4f5a93f4d9469318e01604f49a093b225511a300562",
-  "mutation": "private_tool_bypass_declaration",
+  "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "base_bundle_sha256": "sha256:0a23724ea0222af068c24a83680009931c00805fde12bd4c7d8ac54f221b21d9",
+  "expected_error_codes": [
+    "command.invocation"
+  ],
+  "invalid_bundle_sha256": "sha256:e94b32d3193113912c85c1cf1818ae6a896742657ad9b44effa05cee09c71d8c",
   "name": "private_tool_bypass_declaration",
-  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
-  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+  "operations": [
+    {
+      "op": "replace",
+      "path": "/records/dominium_bridge_manifest/spec/command_mapping/command_invocation_implemented",
+      "value": true
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v1",
+  "validation_mode": "replay operations against base bundle and validate the resulting bundle"
 }

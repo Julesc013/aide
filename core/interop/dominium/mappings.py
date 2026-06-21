@@ -71,6 +71,9 @@ def host_capability_set(source_snapshot: dict[str, Any]) -> dict[str, Any]:
         "dominium.provider.call",
         "dominium.worker.execute",
         "dominium.patch.apply",
+        "dominium.branch.create",
+        "dominium.worktree.create",
+        "dominium.release.publish",
     ]
     return models.seam_record(
         kind="HostCapabilitySet",
@@ -144,6 +147,7 @@ def artifact_references(source_snapshot: dict[str, Any]) -> list[dict[str, Any]]
                     "source_path": item["path"],
                     "source_role": item["role"],
                     "authority": item["authority"],
+                    "source_revision": revision,
                     "sha256": item["sha256"],
                     "size_bytes": item["size_bytes"],
                     "git_object": item["git_object"],
@@ -255,6 +259,7 @@ def bridge_manifest(source_snapshot: dict[str, Any], command_inventory: dict[str
             "bridge_id": "aide-dominium-readonly-seam-v0",
             "bridge_runtime_implemented": False,
             "mapping_version": "0.1.0",
+            "source_revision": revision,
             "source_of_truth": {
                 "aide": "AIDE queue and accepted protocol/evidence objects",
                 "dominium": "Dominium constitution, glossary, AGENTS.md, command/result/refusal/diagnostic law",
