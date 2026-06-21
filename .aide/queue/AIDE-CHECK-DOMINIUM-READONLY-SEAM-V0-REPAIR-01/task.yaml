@@ -1,0 +1,86 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+title: Independent Check Of The Dominium Read-Only Seam v0 Repair
+task_type: check
+status: needs_review
+planning_state: independent_repair_check_completed
+result: REQUEST_CHANGES
+created_at: 2026-06-21
+updated_at: 2026-06-21
+profile: .aide/profile.yaml
+queue_policy: .aide/queue/policy.yaml
+canonical_queue: .aide/queue/index.yaml
+source_repair:
+  task_id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+  result: PASS_WITH_WARNINGS
+  commit: 30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd
+  evidence_missing: 0
+  recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+source_check:
+  task_id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01
+  result: REQUEST_CHANGES
+  commit: 692b4b3469e80a67f3f2f98612ec66c86b7394e9
+  material_finding_count: 18
+  evidence_missing: 0
+source_build:
+  task_id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+  result: PASS_WITH_WARNINGS
+  commit: a75635478be155ef7bc2b62de4ead3837212bbb8
+  evidence_missing: 0
+capability_target: dominium_readonly_seam_v0
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide/protocol/aide-dominium-readonly-seam-v0.schema.json
+  - core/interop/dominium/**
+  - core/interop/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py
+  - .aide/fixtures/dominium-readonly-seam/**
+  - .aide/interop/dominium/**
+  - .aide/reports/dominium-readonly-seam-v0/**
+  - .aide/reports/dominium-readonly-seam-v0-repair/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/**
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/**
+  - C:/Projects/Dominium/dominium/**
+explicit_non_capabilities:
+  - no Dominium command invocation
+  - no Host runtime
+  - no Host SDK
+  - no Workbench implementation
+  - no bridge runtime
+  - no service
+  - no database runtime
+  - no transport
+  - no network call by seam implementation
+  - no provider/model call
+  - no worker execution
+  - no PatchTransaction apply
+  - no preview/apply/rollback
+  - no target-repository mutation
+  - no branch/worktree automation
+  - no GitHub mutation
+  - no release or promotion
+review_gate: needs_review
+recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+recommended_next_task_if_pass: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+recommended_next_task_if_material_findings: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+check_summary:
+  material_finding_count: 10
+  finding_closure_count: 18
+  finding_closure_open_count: 5
+  dominium_modified: false
+  production_seam_modified: false
+  repair_performed: false
+  acceptance_performed: false
+mutation_authorized: false
+repair_authorized: false
+runtime_authorized: false
+network_authorized_for_seam: false
+github_mutation_authorized: false

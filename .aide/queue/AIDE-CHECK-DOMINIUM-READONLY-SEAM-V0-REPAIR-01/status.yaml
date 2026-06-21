@@ -1,0 +1,81 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+status: needs_review
+planning_state: independent_repair_check_completed
+result: REQUEST_CHANGES
+review_gate: needs_review
+updated_at: 2026-06-21
+summary: Independent repair check found remaining material gaps in the offline AIDE-Dominium read-only seam v0 repair.
+validation_status: REQUEST_CHANGES
+source_repair_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+source_repair_result: PASS_WITH_WARNINGS
+source_repair_commit: 30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd
+source_repair_missing_evidence: 0
+source_check_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01
+source_check_result: REQUEST_CHANGES
+source_check_commit: 692b4b3469e80a67f3f2f98612ec66c86b7394e9
+source_check_material_finding_count: 18
+source_build_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+source_build_commit: a75635478be155ef7bc2b62de4ead3837212bbb8
+material_finding_count: 10
+finding_closure_count: 18
+finding_closure_open_count: 5
+recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+dominium_repository_path: C:/Projects/Dominium/dominium
+dominium_pinned_head: c92b386027890c1bbf14aef6eaafe0357b7b03dd
+dominium_command_invoked: false
+dominium_modified: false
+production_seam_modified: false
+repair_performed: false
+acceptance_performed: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+reports:
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/status.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/check-report.json
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/finding-closure-matrix.json
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/finding-closure-matrix.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/source-chain-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/identity-and-revision-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/digest-integrity-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/schema-contract-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/reference-cardinality-ownership-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/registry-projection-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/fixture-replay-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/conformance-independence-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/demo-operation-ledger-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/determinism-immutability-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/report-consistency-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/new-regression-review.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/warning-disposition.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/explicit-non-capabilities.md
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/tools/check_repaired_seam.py
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/tools/replay_negative_fixtures.py
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/tools/verify_schema_contract.py
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/tools/verify_side_effect_boundary.py
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/before-tree-state.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/after-tree-state.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/independent-repair-check.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/independent-negative-results.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/independent-conformance-results.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/finding-closure-matrix.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/result.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/next-task-recommendation.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/evidence/evidence-manifest.json
+warnings:
+  - The seam remains offline and read-only.
+  - The repair check is independent evidence only, not acceptance.
+  - Local Dominium remains the pinned read-only input and is not mutated.
+blockers:
+  - Seam acceptance is blocked until the remaining material gaps are repaired and independently checked.

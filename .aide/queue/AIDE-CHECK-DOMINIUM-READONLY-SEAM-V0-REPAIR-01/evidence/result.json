@@ -1,0 +1,23 @@
+{
+  "schema_version": "aide.dominium-readonly-seam.repair-check-result.v0",
+  "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
+  "result": "REQUEST_CHANGES",
+  "material_finding_count": 10,
+  "finding_closure_count": 18,
+  "finding_closure_open_count": 5,
+  "source_repair_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
+  "source_repair_commit": "30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd",
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "material_gaps": [
+    "allowed_operation_count missing",
+    "conformance results lack required independent assertion fields",
+    "cross-process determinism failed",
+    "diagnostic projection disclosure is incomplete",
+    "instrumentation coverage missing",
+    "ledger does not describe every required operation family",
+    "one or more replayable negative fixtures failed independent replay",
+    "public schema does not constrain kind-specific spec fields",
+    "public schema does not constrain status facts",
+    "refusal projection disclosure is incomplete"
+  ]
+}

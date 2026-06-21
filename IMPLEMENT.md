@@ -39,6 +39,30 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
+
+Completed for review as a check-only independent repair verification task.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `REQUEST_CHANGES`. The check verified the local repair commit `30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd`, source build/check/repair evidence completeness, and Dominium immutability, then used task-local independent harnesses to review the repaired seam without importing production seam validation, production conformance, production negative-fixture mutators, or repair finding-disposition logic as material proof.
+
+The repair check closed 13 of the 18 original material finding rows and left 5 finding rows open, with 10 material gaps: incomplete diagnostic/refusal projection disclosure, insufficient public schema constraints for kind-specific `spec` fields and status facts, one or more negative fixture replay failures, missing required conformance assertion fields, incomplete operation ledger counts/coverage, and cross-process determinism failure.
+
+No repair, acceptance, production seam modification, generated seam output rewrite, repair report rewrite, Dominium command invocation, Dominium mutation, runtime/workbench/provider/worker behavior, patch apply, target mutation, branch/worktree automation, GitHub mutation, release, or promotion was performed.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+```
+
 ## Work Item: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01
 
 Completed for review as a check-only independent adversarial task.
