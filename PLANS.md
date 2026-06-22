@@ -2107,3 +2107,15 @@
 - Verification Intent: Python compile, focused seam tests through Repair 04, direct regression probes for all 12 findings, live seam status/snapshot/project/validate/diff/demo, portability proof, operation trace recomputation, guard conformance, JSON parsing, Dominium immutability, task inspect/evidence, broad validation, secret-like scan, diff checks, and commit policy check.
 - Exit Criteria: satisfied for repair completion; task stops at `needs_review`, records `PASS_WITH_WARNINGS`, dispositions all 12 findings as repaired pending independent check, preserves historical evidence, and recommends exactly `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04`.
 - Notes: This repair does not accept the seam, modify Dominium, invoke Dominium commands, implement Host runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, workers, preview/apply/rollback, target mutation, branch/worktree automation, GitHub mutation, release, promotion, or the WorkUnit validation slice.
+
+### Queue ID: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+
+- Title: Final Bounded Independent Check Of Dominium Read-Only Seam v0 Repair 04
+- Status: Needs Review
+- Objective: independently verify Repair 04's closure of the exact 12 material findings from `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03` without repairing or modifying the seam.
+- Scope: `.aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/**`, `.aide/reports/dominium-readonly-seam-v0-repair-04-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted Dominium integration charter, seam build/check/repair/check chain, and `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04` at `270b97dc66e477cd37a2f863c8604854a5e90bdf`.
+- Verification Intent: source-chain inspection, independent schema/type/cross-kind checks, extension bypass checks, fixture strictness and negative fixture replay, actual CLI unsupported-operation matrix, Dominium no-write sequence, guard evidence review, operation trace/aggregate recomputation, manifest-driven portability review, regression sampling, full or split seam suites, task inspect/evidence, broad validation, diff checks, secret-like scan, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`; if no material findings remain it records `PASS_WITH_WARNINGS` and recommends exactly `AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01`, otherwise it records `REQUEST_CHANGES` and recommends exactly `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05`.
+- Result: `REQUEST_CHANGES` with 4 material findings and 1 warning. The 12-finding closure matrix records 9 `CLOSED` and 3 `OPEN` dispositions, and the check recommends exactly `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05`.
+- Notes: This check does not repair implementation, alter public schemas/code/tests/fixtures/generated seam outputs/Repair 04 reports, modify Dominium, invoke Dominium product commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, accept the seam, create Repair 05, or begin the WorkUnit validation slice.

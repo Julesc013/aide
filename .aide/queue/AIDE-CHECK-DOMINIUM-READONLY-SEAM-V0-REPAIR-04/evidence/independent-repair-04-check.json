@@ -1,0 +1,2094 @@
+{
+  "assertions": [
+    {
+      "category": "source_chain",
+      "description": "Branch is main and live head is the verified Repair 04 commit.",
+      "evidence_refs": [
+        "git status --short --branch",
+        "git log -1 --format=%H"
+      ],
+      "expected": {
+        "branch": "main",
+        "head": "270b97dc66e477cd37a2f863c8604854a5e90bdf"
+      },
+      "id": "baseline.branch_and_head",
+      "observed": {
+        "head": "270b97dc66e477cd37a2f863c8604854a5e90bdf fix(dominium): repair read-only seam v0 fourth pass",
+        "status": "## main...origin/main\n M .aide/queue/index.yaml\n M PLANS.md\n?? .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/"
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "source_chain",
+      "description": "Repair 03 check and Repair 04 result match expected routing.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/result.json",
+        ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/result.json"
+      ],
+      "expected": {
+        "repair03": "REQUEST_CHANGES/12",
+        "repair04": "PASS_WITH_WARNINGS routes here"
+      },
+      "id": "baseline.repair03_and_repair04_results",
+      "observed": {
+        "repair03": {
+          "check_report": ".aide/reports/dominium-readonly-seam-v0-repair-03-check/check-report.json",
+          "material_finding_count": 12,
+          "next_task_prompt": ".aide/reports/dominium-readonly-seam-v0-repair-03-check/next-task-prompt.md",
+          "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+          "result": "REQUEST_CHANGES",
+          "schema_version": "aide.dominium-readonly-seam.repair-03-check-result.v0",
+          "source_commit": "84a154c2f03b304a987a9f017cc48a0b22c3f6d6",
+          "source_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+          "status": "needs_review",
+          "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+          "warning_count": 3
+        },
+        "repair04": {
+          "dominium_command_invoked": false,
+          "dominium_modified": false,
+          "material_findings_authorized": 12,
+          "material_findings_repaired": 12,
+          "mutation_performed": false,
+          "network_call_performed": false,
+          "provider_or_model_called": false,
+          "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+          "result": "PASS_WITH_WARNINGS",
+          "review_gate": "needs_review",
+          "schema_version": "aide.queue-result.v0",
+          "status": "needs_review",
+          "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+          "worker_executed": false
+        }
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "report_consistency",
+      "description": "Repair 04 has exactly 12 repaired-pending-check finding dispositions matching Repair 03 findings.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0-repair-04/finding-disposition.json"
+      ],
+      "expected": [
+        "schema.kind_specific_defs_present",
+        "schema.authority_extensions_bounded",
+        "fixture.production_requires_value",
+        "fixture.production_rejects_unicode_decimal_indexes",
+        "fixture.production_forbidden_key_set_complete",
+        "conformance.unsupported_uses_actual_cli_dispatch",
+        "conformance.no_write_surrounds_actual_operations",
+        "conformance.guard_evidence_is_exercised",
+        "operation.aggregate_key_preserves_semantics",
+        "operation.guard_report_is_not_static",
+        "portability.required_child_output_set_complete",
+        "cli.unsupported_verbs_typed_refusal"
+      ],
+      "id": "baseline.repair04_disposition_count",
+      "observed": [
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "schema.kind_specific_defs_present"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "schema.authority_extensions_bounded"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "fixture.production_requires_value"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "fixture.production_rejects_unicode_decimal_indexes"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "fixture.production_forbidden_key_set_complete"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "conformance.unsupported_uses_actual_cli_dispatch"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "conformance.no_write_surrounds_actual_operations"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "conformance.guard_evidence_is_exercised"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "operation.aggregate_key_preserves_semantics"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "operation.guard_report_is_not_static"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "portability.required_child_output_set_complete"
+        },
+        {
+          "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+          "evidence_refs": [
+            ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+            ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+          ],
+          "finding_id": "cli.unsupported_verbs_typed_refusal"
+        }
+      ],
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "source_chain",
+      "description": "No downstream Repair 04 check, Repair 05, or acceptance task existed before this check scaffold.",
+      "evidence_refs": [
+        "Test-Path downstream queue directories"
+      ],
+      "expected": {
+        "acceptance": false,
+        "repair_05": false
+      },
+      "id": "baseline.no_downstream_superseding_task",
+      "observed": {
+        "acceptance": false,
+        "check_04": true,
+        "repair_05": false
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "schema",
+      "description": "Schema declares a canonical SeamRecord oneOf with all ten record kinds exactly once.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": {
+        "dangling_refs": [],
+        "draft": "2020-12",
+        "oneOf": [
+          "#/$defs/HostManifestRecord",
+          "#/$defs/HostCapabilitySetRecord",
+          "#/$defs/WorkspaceDescriptorRecord",
+          "#/$defs/ContextDescriptorRecord",
+          "#/$defs/ArtifactReferenceRecord",
+          "#/$defs/DiagnosticProjectionRecord",
+          "#/$defs/RefusalProjectionRecord",
+          "#/$defs/EvidenceReferenceSetRecord",
+          "#/$defs/EventEnvelopeRecord",
+          "#/$defs/DominiumBridgeManifestRecord"
+        ]
+      },
+      "id": "schema.seam_record_union",
+      "observed": {
+        "dangling_refs": [],
+        "draft": "https://json-schema.org/draft/2020-12/schema",
+        "oneOf": [
+          "#/$defs/HostManifestRecord",
+          "#/$defs/HostCapabilitySetRecord",
+          "#/$defs/WorkspaceDescriptorRecord",
+          "#/$defs/ContextDescriptorRecord",
+          "#/$defs/ArtifactReferenceRecord",
+          "#/$defs/DiagnosticProjectionRecord",
+          "#/$defs/RefusalProjectionRecord",
+          "#/$defs/EvidenceReferenceSetRecord",
+          "#/$defs/EventEnvelopeRecord",
+          "#/$defs/DominiumBridgeManifestRecord"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.kind_specific_defs_present"
+    },
+    {
+      "category": "schema",
+      "description": "Each record kind ties kind const, matching spec, and status schema through composition.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": "all ten record defs use allOf with matching kind/spec/status",
+      "id": "schema.kind_composition",
+      "observed": {
+        "ArtifactReference": {
+          "has_allOf": true,
+          "kind_const": "ArtifactReference",
+          "spec_ref": "#/$defs/ArtifactReferenceSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        },
+        "ContextDescriptor": {
+          "has_allOf": true,
+          "kind_const": "ContextDescriptor",
+          "spec_ref": "#/$defs/ContextDescriptorSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        },
+        "DiagnosticProjection": {
+          "has_allOf": true,
+          "kind_const": "DiagnosticProjection",
+          "spec_ref": "#/$defs/DiagnosticProjectionSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        },
+        "DominiumBridgeManifest": {
+          "has_allOf": true,
+          "kind_const": "DominiumBridgeManifest",
+          "spec_ref": "#/$defs/DominiumBridgeManifestSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        },
+        "EventEnvelope": {
+          "has_allOf": true,
+          "kind_const": "EventEnvelope",
+          "spec_ref": "#/$defs/EventEnvelopeSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        },
+        "EvidenceReferenceSet": {
+          "has_allOf": true,
+          "kind_const": "EvidenceReferenceSet",
+          "spec_ref": "#/$defs/EvidenceReferenceSetSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        },
+        "HostCapabilitySet": {
+          "has_allOf": true,
+          "kind_const": "HostCapabilitySet",
+          "spec_ref": "#/$defs/HostCapabilitySetSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        },
+        "HostManifest": {
+          "has_allOf": true,
+          "kind_const": "HostManifest",
+          "spec_ref": "#/$defs/HostManifestSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        },
+        "RefusalProjection": {
+          "has_allOf": true,
+          "kind_const": "RefusalProjection",
+          "spec_ref": "#/$defs/RefusalProjectionSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        },
+        "WorkspaceDescriptor": {
+          "has_allOf": true,
+          "kind_const": "WorkspaceDescriptor",
+          "spec_ref": "#/$defs/WorkspaceDescriptorSpec",
+          "status_ref": "#/$defs/ProjectionStatus"
+        }
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.kind_specific_defs_present"
+    },
+    {
+      "category": "schema",
+      "description": "Cross-kind record/spec substitutions fail independent schema validation.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+        ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json"
+      ],
+      "expected": "all specified cross-kind substitutions fail",
+      "id": "schema.cross_kind_substitutions_fail",
+      "observed": [
+        {
+          "donor_spec": "ContextDescriptor",
+          "errors": [
+            "record[HostManifest].allOf[1].spec: missing required field host_id",
+            "record[HostManifest].allOf[1].spec: missing required field host_kind",
+            "record[HostManifest].allOf[1].spec: missing required field repository_identity",
+            "record[HostManifest].allOf[1].spec: missing required field selected_revision",
+            "record[HostManifest].allOf[1].spec: missing required field supported_surfaces"
+          ],
+          "failed": true,
+          "target_kind": "HostManifest"
+        },
+        {
+          "donor_spec": "HostManifest",
+          "errors": [
+            "record[ContextDescriptor].allOf[1].spec: missing required field context_ref",
+            "record[ContextDescriptor].allOf[1].spec: missing required field artifact_refs",
+            "record[ContextDescriptor].allOf[1].spec: missing required field section_count",
+            "record[ContextDescriptor].allOf[1].spec: missing required field sections",
+            "record[ContextDescriptor].allOf[1].spec: missing required field source_revision_binding"
+          ],
+          "failed": true,
+          "target_kind": "ContextDescriptor"
+        },
+        {
+          "donor_spec": "DiagnosticProjection",
+          "errors": [
+            "record[ArtifactReference].allOf[1].spec: missing required field artifact_ref",
+            "record[ArtifactReference].allOf[1].spec: missing required field source_path",
+            "record[ArtifactReference].allOf[1].spec: missing required field source_role",
+            "record[ArtifactReference].allOf[1].spec: missing required field authority",
+            "record[ArtifactReference].allOf[1].spec: missing required field sha256"
+          ],
+          "failed": true,
+          "target_kind": "ArtifactReference"
+        },
+        {
+          "donor_spec": "RefusalProjection",
+          "errors": [
+            "record[DiagnosticProjection].allOf[0].status: additional properties not allowed: ['diagnostic_typed', 'severity_checked']",
+            "record[DiagnosticProjection].allOf[1].spec: missing required field diagnostic_id",
+            "record[DiagnosticProjection].allOf[1].spec: missing required field severity",
+            "record[DiagnosticProjection].allOf[1].spec: additional properties not allowed: ['diagnostic_codes', 'reason', 'recovery', 'recovery_action', 'refusal_id', 'related_commands', 'source_registry_path']",
+            "record[DiagnosticProjection].allOf[1].status: additional properties not allowed: ['diagnostic_typed', 'severity_checked']"
+          ],
+          "failed": true,
+          "target_kind": "DiagnosticProjection"
+        },
+        {
+          "donor_spec": "ArtifactReference",
+          "errors": [
+            "record[EventEnvelope].allOf[1].spec: missing required field event_ref",
+            "record[EventEnvelope].allOf[1].spec: missing required field event_type",
+            "record[EventEnvelope].allOf[1].spec: missing required field summary",
+            "record[EventEnvelope].allOf[1].spec: missing required field sequence",
+            "record[EventEnvelope].allOf[1].spec: missing required field causation_ref"
+          ],
+          "failed": true,
+          "target_kind": "EventEnvelope"
+        },
+        {
+          "donor_spec": "HostCapabilitySet",
+          "errors": [
+            "record[DominiumBridgeManifest].allOf[1].spec: missing required field bridge_id",
+            "record[DominiumBridgeManifest].allOf[1].spec: missing required field bridge_runtime_implemented",
+            "record[DominiumBridgeManifest].allOf[1].spec: missing required field mapping_version",
+            "record[DominiumBridgeManifest].allOf[1].spec: missing required field source_of_truth",
+            "record[DominiumBridgeManifest].allOf[1].spec: missing required field ownership"
+          ],
+          "failed": true,
+          "target_kind": "DominiumBridgeManifest"
+        }
+      ],
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.kind_specific_defs_present"
+    },
+    {
+      "category": "schema",
+      "description": "Representative required canonical fields have meaningful type, pattern, const, and minimum constraints.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+        ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json"
+      ],
+      "expected": "all representative schema mutations fail",
+      "id": "schema.required_constraints_are_meaningful",
+      "observed": [
+        {
+          "case_id": "commit_sha_pattern",
+          "errors": [
+            "record[WorkspaceDescriptor].allOf[1].spec.selected_revision: pattern mismatch '^[0-9a-f]{40}$': 'not-a-sha'",
+            "record[WorkspaceDescriptor].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "WorkspaceDescriptor"
+        },
+        {
+          "case_id": "sha256_pattern",
+          "errors": [
+            "record[ArtifactReference].allOf[1].spec.sha256: pattern mismatch '^sha256:[0-9a-f]{64}$': 'sha256:nothex'",
+            "record[ArtifactReference].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "ArtifactReference"
+        },
+        {
+          "case_id": "reference_id_pattern",
+          "errors": [
+            "record[ArtifactReference].allOf[1].spec.artifact_ref: pattern mismatch '^aide://[A-Za-z0-9._~-]+/[A-Za-z0-9._~@+=:,-]+$': 'not-a-ref'",
+            "record[ArtifactReference].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "ArtifactReference"
+        },
+        {
+          "case_id": "repo_relative_path",
+          "errors": [
+            "record[ArtifactReference].allOf[1].spec.source_path: pattern mismatch '^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\\\.\\\\.(?:/|$))[^\\\\\\\\]+$': '../escape'",
+            "record[ArtifactReference].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "ArtifactReference"
+        },
+        {
+          "case_id": "nonnegative_count",
+          "errors": [
+            "record[ArtifactReference].allOf[1].spec.size_bytes: minimum 0 violated by -1",
+            "record[ArtifactReference].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "ArtifactReference"
+        },
+        {
+          "case_id": "sequence_minimum",
+          "errors": [
+            "record[EventEnvelope].allOf[1].spec.sequence: minimum 1 violated by 0",
+            "record[EventEnvelope].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "EventEnvelope"
+        },
+        {
+          "case_id": "identity_is_file_path_false",
+          "errors": [
+            "record[WorkspaceDescriptor].allOf[1].spec.identity_is_file_path: expected const False, observed True",
+            "record[WorkspaceDescriptor].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "WorkspaceDescriptor"
+        },
+        {
+          "case_id": "file_path_is_locator_true",
+          "errors": [
+            "record[ArtifactReference].allOf[1].spec.file_path_is_locator: expected const True, observed False",
+            "record[ArtifactReference].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "ArtifactReference"
+        },
+        {
+          "case_id": "runtime_flag_false",
+          "errors": [
+            "record[DominiumBridgeManifest].allOf[1].spec.bridge_runtime_implemented: expected const False, observed True",
+            "record[DominiumBridgeManifest].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "DominiumBridgeManifest"
+        },
+        {
+          "case_id": "apply_status_false",
+          "errors": [
+            "record[HostManifest].allOf[0].status.patch_transaction_applied: expected const False, observed True",
+            "record[HostManifest].allOf[1].status.patch_transaction_applied: expected const False, observed True",
+            "record[HostManifest].allOf[1]: additional properties not allowed: ['apiVersion', 'metadata']"
+          ],
+          "failed": true,
+          "kind": "HostManifest"
+        }
+      ],
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.kind_specific_defs_present"
+    },
+    {
+      "category": "extension_boundary",
+      "description": "Canonical objects are closed; non-false additionalProperties appears only under explicit extension value containers.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": "only ExtensionMap/ExtensionValue open-object surfaces",
+      "id": "schema.open_object_surfaces_bounded",
+      "observed": [
+        "/$defs/ExtensionMap",
+        "/$defs/ExtensionValue/oneOf/5",
+        "/$defs/QueueStatus",
+        "/properties/content_digests/properties/records"
+      ],
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.authority_extensions_bounded"
+    },
+    {
+      "category": "extension_boundary",
+      "description": "Authority-changing extension names and normalized variants fail semantic validation.",
+      "evidence_refs": [
+        "core/interop/dominium/validation.py",
+        "evidence/extension-probes.json"
+      ],
+      "expected": {
+        "all_names_in_validator": true,
+        "all_variants_rejected": true
+      },
+      "id": "extension.authority_names_semantically_refused",
+      "observed": {
+        "names_in_validator": {
+          "admitted": true,
+          "apply_allowed": false,
+          "authoritative": true,
+          "canonical": true,
+          "command_invocation_implemented": true,
+          "mutation_allowed": true,
+          "network_allowed": true,
+          "private_tool_bypass": true,
+          "provider_enabled": true,
+          "release_allowed": false,
+          "runtime_started": true,
+          "trusted": true,
+          "workbench_is_authority": true,
+          "worker_enabled": true
+        },
+        "probe_failures": [
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.authoritative",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "authoritative-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.canonical",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "canonical-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.trusted",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "trusted-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.admitted",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "admitted-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.workbench_is_authority",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "workbench_is_authority-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.runtime_started",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "runtime_started-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.private_tool_bypass",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "private_tool_bypass-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.command_invocation_implemented",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "command_invocation_implemented-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.network_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "network_allowed-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.provider_enabled",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "provider_enabled-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.worker_enabled",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "worker_enabled-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.mutation_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "mutation_allowed-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "apply_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "APPLY_ALLOWED",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.apply_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "apply_allowed-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "release_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "RELEASE_ALLOWED",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.release_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "release_allowed-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          }
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.authority_extensions_bounded"
+    },
+    {
+      "category": "extension_boundary",
+      "description": "Benign metadata extension remains accepted by semantic validation.",
+      "evidence_refs": [
+        "evidence/extension-probes.json"
+      ],
+      "expected": "safe metadata extension does not raise authority-change code",
+      "id": "extension.benign_metadata_allowed",
+      "observed": {
+        "codes": [
+          "digest.projection_index",
+          "digest.record",
+          "digest.bundle_self"
+        ],
+        "extension_key": "safe_metadata_note",
+        "returncode": 0,
+        "status": "FAILED_VALIDATION"
+      },
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay requires explicit value for add, replace, and append while accepting explicit JSON null.",
+      "evidence_refs": [
+        "evidence/fixture-probes.json"
+      ],
+      "expected": {
+        "explicit_null": "pass",
+        "missing_value": "fail"
+      },
+      "id": "fixture.value_presence",
+      "observed": {
+        "explicit_null": {
+          "ok": true,
+          "result": {
+            "items": [
+              {
+                "name": "a"
+              }
+            ],
+            "obj": {
+              "x": null
+            }
+          },
+          "returncode": 0
+        },
+        "missing_value_ops": {
+          "add": {
+            "error": "add operation requires value",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "append": {
+            "error": "append operation requires value",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "replace": {
+            "error": "replace operation requires value",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          }
+        }
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixture.production_requires_value"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Array indexes accept only ASCII canonical non-negative decimal strings.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py",
+        "evidence/fixture-probes.json"
+      ],
+      "expected": {
+        "0": "pass",
+        "bad_indexes": "fail",
+        "no_isdecimal": true
+      },
+      "id": "fixture.ascii_canonical_indexes",
+      "observed": {
+        "bad_indexes": {
+          "": {
+            "error": "array index must be a canonical non-negative decimal string",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          " ": {
+            "error": "array index is not canonical decimal:  ",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "+1": {
+            "error": "array index is not canonical decimal: +1",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "-1": {
+            "error": "array index is not canonical decimal: -1",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "00": {
+            "error": "array index is not canonical decimal: 00",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "01": {
+            "error": "array index is not canonical decimal: 01",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "1.0": {
+            "error": "array index is not canonical decimal: 1.0",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "1e2": {
+            "error": "array index is not canonical decimal: 1e2",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "\\u0661": {
+            "error": "array index is not canonical decimal: \u0661",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          },
+          "\\uff11": {
+            "error": "array index is not canonical decimal: \uff11",
+            "error_type": "FixtureReplayError",
+            "ok": false,
+            "returncode": 0
+          }
+        },
+        "good_indexes": {
+          "0": {
+            "ok": true,
+            "result": {
+              "items": [
+                {}
+              ],
+              "obj": {
+                "x": 1
+              }
+            },
+            "returncode": 0
+          }
+        },
+        "uses_isdecimal": false
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixture.production_rejects_unicode_decimal_indexes"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay rejects every executable or out-of-contract operation key.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py",
+        "evidence/fixture-probes.json"
+      ],
+      "expected": [
+        "import",
+        "args",
+        "kwargs",
+        "callable",
+        "module",
+        "command",
+        "shell",
+        "eval",
+        "exec",
+        "python",
+        "entrypoint",
+        "script",
+        "function",
+        "method",
+        "code"
+      ],
+      "id": "fixture.forbidden_key_set",
+      "observed": {
+        "probe_failures": [],
+        "source_missing": []
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixture.production_forbidden_key_set_complete"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay rejects missing targets, add-existing, append non-array, root mutation, and malformed pointers.",
+      "evidence_refs": [
+        "evidence/fixture-probes.json"
+      ],
+      "expected": "all boundary probes fail",
+      "id": "fixture.boundary_failures",
+      "observed": {
+        "add_existing": {
+          "error": "add target object key already exists: x",
+          "error_type": "FixtureReplayError",
+          "ok": false,
+          "returncode": 0
+        },
+        "append_non_array": {
+          "error": "append operation requires an array target",
+          "error_type": "FixtureReplayError",
+          "ok": false,
+          "returncode": 0
+        },
+        "malformed_pointer": {
+          "error": "malformed JSON pointer escape: /obj/~2",
+          "error_type": "FixtureReplayError",
+          "ok": false,
+          "returncode": 0
+        },
+        "remove_missing": {
+          "error": "remove target object key does not exist: missing",
+          "error_type": "FixtureReplayError",
+          "ok": false,
+          "returncode": 0
+        },
+        "replace_missing": {
+          "error": "replace target object key does not exist: missing",
+          "error_type": "FixtureReplayError",
+          "ok": false,
+          "returncode": 0
+        },
+        "root_mutation": {
+          "error": "JSON pointer must start with /: ",
+          "error_type": "FixtureReplayError",
+          "ok": false,
+          "returncode": 0
+        }
+      },
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Every committed negative fixture independently replays to its recorded invalid payload hash.",
+      "evidence_refs": [
+        ".aide/fixtures/dominium-readonly-seam/negative/**",
+        "evidence/fixture-replay.json"
+      ],
+      "expected": "all negative fixture invalid_bundle_sha256 values match independent replay",
+      "id": "fixture.negative_fixture_digests",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "typed_refusal",
+      "description": "Unsupported and arbitrary dominium-seam verbs return typed refusal through actual CLI parsing and dispatch.",
+      "evidence_refs": [
+        "evidence/unsupported-cli-results.json"
+      ],
+      "expected": {
+        "exit_code": 2,
+        "generic_unknowns": "typed refusal",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION"
+      },
+      "id": "cli.actual_dispatch_unsupported_matrix",
+      "observed": {
+        "failures": [],
+        "generic_fallback_source": true
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "cli.unsupported_verbs_typed_refusal"
+    },
+    {
+      "category": "typed_refusal",
+      "description": "Every typed refusal includes the complete false-boundary field set with false values.",
+      "evidence_refs": [
+        "evidence/unsupported-cli-results.json"
+      ],
+      "expected": [
+        "dominium_command_invoked",
+        "host_runtime_started",
+        "workbench_started",
+        "bridge_runtime_started",
+        "service_started",
+        "database_opened",
+        "transport_started",
+        "network_call_performed",
+        "provider_or_model_called",
+        "worker_executed",
+        "patch_transaction_applied",
+        "preview_or_apply_performed",
+        "source_repository_mutated",
+        "target_repository_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "release_or_promotion_performed",
+        "generated_projection_marked_canonical"
+      ],
+      "id": "cli.false_boundary_exactness",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "cli.unsupported_verbs_typed_refusal"
+    },
+    {
+      "category": "typed_refusal",
+      "description": "Help and known read-only status remain usable; unknown options remain option errors rather than operations.",
+      "evidence_refs": [
+        "evidence/unsupported-cli-results.json"
+      ],
+      "expected": {
+        "help": 0,
+        "status": 0,
+        "unknown_option": "argparse option error"
+      },
+      "id": "cli.known_help_status_and_option_errors",
+      "observed": {
+        "help": 0,
+        "status": 1,
+        "unknown_option": 2,
+        "unknown_stderr": [
+          "usage: aide_lite.py [-h] [--repo-root REPO_ROOT]",
+          "                    {doctor,validate,estimate,snapshot,index,context,map,pack,verify,review-pack,ledger,eval,commit,changelog,github,intent,repo,quality,refactor,roots,tools,install,repair,upgrade,rollback,uninstall,release,task,blocker,wave,checkpoint,capability,transaction,managed-section,scoped-transaction,lifecycle-fixture,contract-envelope,evidence-packet,workunit-queue,worker-run,test-job,reference-id,event-record,okf,reconciler,capability-manifest,conformance-profile,conformance-result,patch-transaction,adapter-manifest,context-pack-v2,mcp-server-contract,a2a-agent-card-contract,dominium-seam,workunit,lifecycle-schema,git,outcome,optimize,route,cache,gateway,provider,export-pack,import-pack,pack-status,adapter,adapt,selftest,test,version,show-config}",
+          "                    ...",
+          "aide_lite.py: error: unrecognized arguments: --unknown-option"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "conformance",
+      "description": "Unsupported-operation conformance consumes actual CLI dispatch evidence, not direct refusal constructor output.",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py",
+        ".aide/interop/dominium/conformance-evidence.json"
+      ],
+      "expected": {
+        "all_typed_refusals": true,
+        "cli_preview": true,
+        "no_direct_helper": true
+      },
+      "id": "conformance.unsupported_cli_evidence",
+      "observed": {
+        "all_typed_refusals": true,
+        "cli_preview": true,
+        "direct_helper_source": false
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.unsupported_uses_actual_cli_dispatch"
+    },
+    {
+      "category": "conformance",
+      "description": "Dominium state is unchanged after actual snapshot/project/validate/diff/demo seam commands run between before/after captures.",
+      "evidence_refs": [
+        "evidence/dominium-state-before.json",
+        "evidence/dominium-state-after.json",
+        "evidence/no-write-sequence.json"
+      ],
+      "expected": {
+        "changed_state": [],
+        "commands": [
+          "snapshot",
+          "project",
+          "validate",
+          "diff",
+          "demo"
+        ]
+      },
+      "id": "conformance.no_write_actual_sequence",
+      "observed": {
+        "actual_ops": [
+          "snapshot",
+          "project",
+          "validate",
+          "diff",
+          "demo"
+        ],
+        "changed_state": [],
+        "command_returncodes": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.no_write_surrounds_actual_operations"
+    },
+    {
+      "category": "guard",
+      "description": "Guard evidence reaches actual guard or dispatcher paths for safe forbidden requests rather than only constructing pass dictionaries.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py",
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+      ],
+      "expected": {
+        "guard_path_reached": true,
+        "required_families": [
+          "branch_worktree_ref_ops",
+          "filesystem_writes",
+          "mutation_apply",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch"
+        ]
+      },
+      "id": "conformance.guard_evidence_exercised",
+      "observed": {
+        "families": [
+          "branch_worktree_ref_ops",
+          "filesystem_writes",
+          "mutation_apply",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch"
+        ],
+        "guard_path_tokens_present": false,
+        "guard_slice": "def exercise_guard(family: str, operation: str) -> dict[str, object]:\n    method = COVERAGE_METHODS.get(family, \"guard\")\n    known_family = family in REQUIRED_FAMILIES\n    execution_prevented = known_family and family != \"git_reads\"\n    guard_invoked = bool(method)\n    state_unchanged = execution_prevented\n    return {\n        \"family\": family,\n        \"attempted_operation\": operation,\n        \"guard_invoked\": guard_invoked,\n        \"execution_prevented\": execution_prevented,\n        \"typed_reason_code\": \"AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY\" if execution_prevented else \"AIDE_DOMINIUM_SEAM_GUARD_NOT_APPLICABLE\",\n        \"state_unchanged\": state_unchanged,\n        \"result\": \"PASS\" if guard_invoked and execution_prevented and state_unchanged else \"FAILED_VALIDATION\",\n        \"evidence_kind\": \"exercised_guard_probe\",\n        \"observation_method\": method,\n    }\n\n\n",
+        "static_pass_literals": false
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.guard_evidence_is_exercised"
+    },
+    {
+      "category": "operation",
+      "description": "Operation guard report is not static pass data and records exercised evidence.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py"
+      ],
+      "expected": "actual guard/dispatcher invocation evidence, no static guard_invoked=True pass dictionary",
+      "id": "operation.guard_report_not_static",
+      "observed": {
+        "guard_path_tokens_present": false,
+        "static_pass_literals": false
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "operation.guard_report_is_not_static"
+    },
+    {
+      "category": "operation",
+      "description": "Operation aggregation preserves target, classification, source, observation method, and allowed distinctions.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py",
+        "evidence/operation-recompute.json"
+      ],
+      "expected": "synthetic same-operation observations remain separate aggregate records",
+      "id": "operation.lossless_aggregate_dimensions",
+      "observed": {
+        "source_key_lossy": false,
+        "synthetic_aggregate": [
+          {
+            "allowed": false,
+            "classification": "write_a",
+            "count": 1,
+            "family": "filesystem_writes",
+            "observation_method": "guard",
+            "operation": "probe",
+            "return_codes": [
+              null
+            ],
+            "source": "one",
+            "target": "A"
+          },
+          {
+            "allowed": false,
+            "classification": "write_b",
+            "count": 1,
+            "family": "filesystem_writes",
+            "observation_method": "guard",
+            "operation": "probe",
+            "return_codes": [
+              null
+            ],
+            "source": "two",
+            "target": "B"
+          },
+          {
+            "allowed": true,
+            "classification": "write_b",
+            "count": 1,
+            "family": "filesystem_writes",
+            "observation_method": "wrapper",
+            "operation": "probe",
+            "return_codes": [
+              0
+            ],
+            "source": "two",
+            "target": "B"
+          }
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "operation.aggregate_key_preserves_semantics"
+    },
+    {
+      "category": "operation",
+      "description": "Raw operation trace has contiguous sequence, valid hash, valid counts, and aggregate counts reconcile.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+        "evidence/operation-recompute.json"
+      ],
+      "expected": "raw trace hash/counts/aggregate all reconcile",
+      "id": "operation.raw_trace_reconciles",
+      "observed": {
+        "aggregate_count_sum": 1226,
+        "aggregate_length": 43,
+        "allowed_plus_forbidden": 1226,
+        "contiguous": true,
+        "ledger_raw_count": 1226,
+        "operation_count": 43,
+        "raw_count": 1226,
+        "recomputed_hash": "sha256:b0229be914e03987595a43098a3064bd28947fef75f02d1e56c73adabb25ad4d",
+        "stored_hash": "sha256:b0229be914e03987595a43098a3064bd28947fef75f02d1e56c73adabb25ad4d"
+      },
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "portability",
+      "description": "Runtime dependency manifest digest, path safety, uniqueness, file hashes, and AST import closure validate independently.",
+      "evidence_refs": [
+        ".aide/interop/dominium/runtime-dependency-manifest.json",
+        "evidence/portability-review.json"
+      ],
+      "expected": {
+        "digest": true,
+        "hashes": true,
+        "missing_ast_imports": [],
+        "path_safe": true,
+        "unique": true
+      },
+      "id": "portability.manifest_valid",
+      "observed": {
+        "bad_hashes": [],
+        "digest_ok": true,
+        "missing_ast_imports": [],
+        "path_safe": true,
+        "unique": true
+      },
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "portability",
+      "description": "Portable output comparison includes exactly the accepted required child output set before hash comparison.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/portability-result.json",
+        "evidence/portability-review.json"
+      ],
+      "expected": [
+        ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+        ".aide/reports/dominium-readonly-seam-v0/source-snapshot.json",
+        ".aide/reports/dominium-readonly-seam-v0/projection-index.json",
+        ".aide/reports/dominium-readonly-seam-v0/validation.json",
+        ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json",
+        ".aide/interop/dominium/conformance-evidence.json",
+        ".aide/reports/dominium-readonly-seam-v0/compatibility.json",
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+        ".aide/reports/dominium-readonly-seam-v0/fixture-manifest.json",
+        ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json",
+        ".aide/interop/dominium/runtime-dependency-manifest.json",
+        ".aide/interop/dominium/seam-bundle.json",
+        ".aide/interop/dominium/dominium-bridge-manifest.json",
+        ".aide/interop/dominium/conformance-expectations.json"
+      ],
+      "id": "portability.required_output_set_complete",
+      "observed": {
+        "current_compared": [
+          ".aide/interop/dominium/conformance-evidence.json",
+          ".aide/interop/dominium/conformance-expectations.json",
+          ".aide/interop/dominium/dominium-bridge-manifest.json",
+          ".aide/interop/dominium/runtime-dependency-manifest.json",
+          ".aide/interop/dominium/seam-bundle.json",
+          ".aide/reports/dominium-readonly-seam-v0/compatibility.json",
+          ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json",
+          ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+          ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+          ".aide/reports/dominium-readonly-seam-v0/fixture-manifest.json",
+          ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json",
+          ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
+          ".aide/reports/dominium-readonly-seam-v0/projection-index.json",
+          ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+          ".aide/reports/dominium-readonly-seam-v0/source-snapshot.json",
+          ".aide/reports/dominium-readonly-seam-v0/validation.json"
+        ],
+        "current_status": "PASS",
+        "independent_sets_complete": true
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "portability.required_child_output_set_complete"
+    },
+    {
+      "category": "portability",
+      "description": "At least two isolated portable roots produce complete deterministic outputs byte-for-byte without local path leaks.",
+      "evidence_refs": [
+        "evidence/portability-review.json"
+      ],
+      "expected": {
+        "bytes_equal": true,
+        "commands": "0",
+        "complete_sets": true,
+        "path_leaks": 0
+      },
+      "id": "portability.fresh_process_determinism",
+      "observed": {
+        "bytes_equal": true,
+        "commands_ok": true,
+        "leak_free": true,
+        "run_heavy": true,
+        "sets_complete": true
+      },
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "regression",
+      "description": "Sampled prior invariants remain closed: identity, digest presence, registry provenance, validation, conformance, and elapsed-time truthfulness.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+        ".aide/reports/dominium-readonly-seam-v0/validation.json",
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+        ".aide/reports/dominium-readonly-seam-v0/conformance-results.json"
+      ],
+      "expected": "sampled invariants remain passing",
+      "id": "regression.sampled_prior_invariants",
+      "observed": {
+        "conformance_ok": true,
+        "demo_truth_ok": true,
+        "digest_ok": true,
+        "identity_ok": true,
+        "provenance_ok": true,
+        "validation_ok": true
+      },
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "non_capabilities",
+      "description": "Explicit non-capabilities and false-boundary status fields preserve the offline read-only boundary.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json"
+      ],
+      "expected": {
+        "explicit_non_capabilities": [
+          "dominium_command_invocation",
+          "host_runtime",
+          "host_sdk",
+          "workbench_implementation",
+          "bridge_runtime",
+          "service",
+          "database_runtime",
+          "transport",
+          "network_call",
+          "provider_model_call",
+          "worker_execution",
+          "patch_transaction_apply",
+          "preview_apply_rollback",
+          "target_repository_mutation",
+          "branch_worktree_automation",
+          "github_mutation",
+          "release_or_promotion"
+        ],
+        "false_fields": [
+          "dominium_command_invoked",
+          "host_runtime_started",
+          "workbench_started",
+          "bridge_runtime_started",
+          "service_started",
+          "database_opened",
+          "transport_started",
+          "network_call_performed",
+          "provider_or_model_called",
+          "worker_executed",
+          "patch_transaction_applied",
+          "preview_or_apply_performed",
+          "source_repository_mutated",
+          "target_repository_mutated",
+          "branch_or_worktree_created",
+          "github_mutation_performed",
+          "release_or_promotion_performed",
+          "generated_projection_marked_canonical"
+        ]
+      },
+      "id": "regression.no_capability_expansion",
+      "observed": {
+        "false_status_ok": true,
+        "missing_noncaps": []
+      },
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "report_consistency",
+      "description": "Repair 04 reports and status agree on 12 repaired-pending-check findings and correct routing.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0-repair-04/finding-disposition.json",
+        ".aide/reports/dominium-readonly-seam-v0-repair-04/repair-report.json",
+        ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+        ".aide/reports/dominium-readonly-seam-v0-repair-04/test-summary.json",
+        ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/status.yaml"
+      ],
+      "expected": "Repair 04 reports are internally consistent and evidence refs exist",
+      "id": "report.repair04_consistency",
+      "observed": {
+        "disposition_count": 12,
+        "ids": [
+          "schema.kind_specific_defs_present",
+          "schema.authority_extensions_bounded",
+          "fixture.production_requires_value",
+          "fixture.production_rejects_unicode_decimal_indexes",
+          "fixture.production_forbidden_key_set_complete",
+          "conformance.unsupported_uses_actual_cli_dispatch",
+          "conformance.no_write_surrounds_actual_operations",
+          "conformance.guard_evidence_is_exercised",
+          "operation.aggregate_key_preserves_semantics",
+          "operation.guard_report_is_not_static",
+          "portability.required_child_output_set_complete",
+          "cli.unsupported_verbs_typed_refusal"
+        ],
+        "missing_evidence_refs": [],
+        "repair_report_next": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+        "self_check_result": "PASS",
+        "status_exists": true,
+        "test_summary_result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    }
+  ],
+  "material_finding_count": 4,
+  "material_findings": [
+    {
+      "category": "extension_boundary",
+      "description": "Canonical objects are closed; non-false additionalProperties appears only under explicit extension value containers.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": "only ExtensionMap/ExtensionValue open-object surfaces",
+      "id": "schema.open_object_surfaces_bounded",
+      "observed": [
+        "/$defs/ExtensionMap",
+        "/$defs/ExtensionValue/oneOf/5",
+        "/$defs/QueueStatus",
+        "/properties/content_digests/properties/records"
+      ],
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.authority_extensions_bounded"
+    },
+    {
+      "category": "extension_boundary",
+      "description": "Authority-changing extension names and normalized variants fail semantic validation.",
+      "evidence_refs": [
+        "core/interop/dominium/validation.py",
+        "evidence/extension-probes.json"
+      ],
+      "expected": {
+        "all_names_in_validator": true,
+        "all_variants_rejected": true
+      },
+      "id": "extension.authority_names_semantically_refused",
+      "observed": {
+        "names_in_validator": {
+          "admitted": true,
+          "apply_allowed": false,
+          "authoritative": true,
+          "canonical": true,
+          "command_invocation_implemented": true,
+          "mutation_allowed": true,
+          "network_allowed": true,
+          "private_tool_bypass": true,
+          "provider_enabled": true,
+          "release_allowed": false,
+          "runtime_started": true,
+          "trusted": true,
+          "workbench_is_authority": true,
+          "worker_enabled": true
+        },
+        "probe_failures": [
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.authoritative",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "authoritative-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.canonical",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "canonical-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.trusted",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "trusted-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.admitted",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "admitted-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.workbench_is_authority",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "workbench_is_authority-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.runtime_started",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "runtime_started-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.private_tool_bypass",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "private_tool_bypass-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.command_invocation_implemented",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "command_invocation_implemented-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.network_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "network_allowed-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.provider_enabled",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "provider_enabled-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.worker_enabled",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "worker_enabled-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.mutation_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "mutation_allowed-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "apply_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "APPLY_ALLOWED",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.apply_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "apply_allowed-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "release_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "RELEASE_ALLOWED",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "safe.release_allowed",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          },
+          {
+            "codes": [
+              "digest.projection_index",
+              "digest.record",
+              "digest.bundle_self"
+            ],
+            "extension_key": "release_allowed-flag",
+            "returncode": 0,
+            "status": "FAILED_VALIDATION"
+          }
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.authority_extensions_bounded"
+    },
+    {
+      "category": "guard",
+      "description": "Guard evidence reaches actual guard or dispatcher paths for safe forbidden requests rather than only constructing pass dictionaries.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py",
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+      ],
+      "expected": {
+        "guard_path_reached": true,
+        "required_families": [
+          "branch_worktree_ref_ops",
+          "filesystem_writes",
+          "mutation_apply",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch"
+        ]
+      },
+      "id": "conformance.guard_evidence_exercised",
+      "observed": {
+        "families": [
+          "branch_worktree_ref_ops",
+          "filesystem_writes",
+          "mutation_apply",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch"
+        ],
+        "guard_path_tokens_present": false,
+        "guard_slice": "def exercise_guard(family: str, operation: str) -> dict[str, object]:\n    method = COVERAGE_METHODS.get(family, \"guard\")\n    known_family = family in REQUIRED_FAMILIES\n    execution_prevented = known_family and family != \"git_reads\"\n    guard_invoked = bool(method)\n    state_unchanged = execution_prevented\n    return {\n        \"family\": family,\n        \"attempted_operation\": operation,\n        \"guard_invoked\": guard_invoked,\n        \"execution_prevented\": execution_prevented,\n        \"typed_reason_code\": \"AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY\" if execution_prevented else \"AIDE_DOMINIUM_SEAM_GUARD_NOT_APPLICABLE\",\n        \"state_unchanged\": state_unchanged,\n        \"result\": \"PASS\" if guard_invoked and execution_prevented and state_unchanged else \"FAILED_VALIDATION\",\n        \"evidence_kind\": \"exercised_guard_probe\",\n        \"observation_method\": method,\n    }\n\n\n",
+        "static_pass_literals": false
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.guard_evidence_is_exercised"
+    },
+    {
+      "category": "operation",
+      "description": "Operation guard report is not static pass data and records exercised evidence.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py"
+      ],
+      "expected": "actual guard/dispatcher invocation evidence, no static guard_invoked=True pass dictionary",
+      "id": "operation.guard_report_not_static",
+      "observed": {
+        "guard_path_tokens_present": false,
+        "static_pass_literals": false
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "operation.guard_report_is_not_static"
+    }
+  ],
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.dominium-readonly-seam.repair-04-check-report.v0",
+  "source_commit": "270b97dc66e477cd37a2f863c8604854a5e90bdf",
+  "source_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "warning_count": 1
+}

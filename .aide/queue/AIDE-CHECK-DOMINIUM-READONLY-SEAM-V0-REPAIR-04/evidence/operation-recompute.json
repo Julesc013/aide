@@ -1,0 +1,605 @@
+{
+  "recomputed_aggregate_sample": [
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git branch --show-current",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd .aide/queue/current.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd AGENTS.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/capability/capability.registry.json",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/command/command_surface.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 14,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/diagnostic/diagnostic_code.registry.json",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/diagnostic/diagnostic_severity.registry.json",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/module/module_surface.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/project_graph/project_graph_model.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 14,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/refusal/refusal_code.registry.json",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/service/service.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/workbench/workbench_surface.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/canon/constitution_v1.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/canon/glossary_v1.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/development/command_result_view_slice.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/development/workbench_validation_slice.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/repo/audits/PRESENTATION_CONTRACT_01.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git remote get-url origin",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git rev-list --count HEAD..origin/main",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git rev-parse --show-toplevel",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git rev-parse HEAD^{commit}",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git rev-parse c92b386027890c1bbf14aef6eaafe0357b7b03dd^{commit}",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git rev-parse origin/main^{commit}",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 57,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:.aide/queue/current.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:AGENTS.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/capability/capability.registry.json",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 47,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/command/command_surface.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 84,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/diagnostic/diagnostic_code.registry.json",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 80,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/diagnostic/diagnostic_severity.registry.json",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/module/module_surface.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/project_graph/project_graph_model.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 84,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/refusal/refusal_code.registry.json",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/service/service.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/workbench/workbench_surface.contract.toml",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/canon/constitution_v1.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/canon/glossary_v1.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/development/command_result_view_slice.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/development/workbench_validation_slice.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/repo/audits/PRESENTATION_CONTRACT_01.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 45,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 12,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git status --porcelain",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    },
+    {
+      "allowed": true,
+      "classification": "read_only_git_observation",
+      "count": 30,
+      "family": "git_reads",
+      "observation_method": "command_wrapper_observation",
+      "operation": "git status --short --branch",
+      "return_codes": [
+        0
+      ],
+      "source": "snapshot.git_runner",
+      "target": "Dominium"
+    }
+  ],
+  "recomputed_hash": "sha256:b0229be914e03987595a43098a3064bd28947fef75f02d1e56c73adabb25ad4d",
+  "synthetic_aggregate": [
+    {
+      "allowed": false,
+      "classification": "write_a",
+      "count": 1,
+      "family": "filesystem_writes",
+      "observation_method": "guard",
+      "operation": "probe",
+      "return_codes": [
+        null
+      ],
+      "source": "one",
+      "target": "A"
+    },
+    {
+      "allowed": false,
+      "classification": "write_b",
+      "count": 1,
+      "family": "filesystem_writes",
+      "observation_method": "guard",
+      "operation": "probe",
+      "return_codes": [
+        null
+      ],
+      "source": "two",
+      "target": "B"
+    },
+    {
+      "allowed": true,
+      "classification": "write_b",
+      "count": 1,
+      "family": "filesystem_writes",
+      "observation_method": "wrapper",
+      "operation": "probe",
+      "return_codes": [
+        0
+      ],
+      "source": "two",
+      "target": "B"
+    }
+  ]
+}

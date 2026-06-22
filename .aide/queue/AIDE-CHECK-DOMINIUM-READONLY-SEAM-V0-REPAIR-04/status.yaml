@@ -1,0 +1,46 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+status: needs_review
+planning_state: independent_check_complete
+result: REQUEST_CHANGES
+review_gate: needs_review
+updated_at: 2026-06-22
+summary: Independent bounded Repair 04 check found material defects and recommends Repair 05.
+validation_status: COMPLETE_WITH_FAILURES
+source_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+source_commit: 270b97dc66e477cd37a2f863c8604854a5e90bdf
+material_findings_under_review: 12
+material_finding_count: 4
+warning_count: 1
+recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+check_only: true
+mutation_authorized: false
+dominium_command_invoked: false
+dominium_modified: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+evidence:
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/result.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/twelve-finding-closure.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/independent-repair-04-check.json
+  - .aide/reports/dominium-readonly-seam-v0-repair-04-check/check-report.json
+  - .aide/reports/dominium-readonly-seam-v0-repair-04-check/twelve-finding-closure.json
+  - .aide/reports/dominium-readonly-seam-v0-repair-04-check/next-task-prompt.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/validation-results.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/remaining-risks.md
+warnings:
+  - cli.known_help_status_and_option_errors: known status probe warning recorded in check-report.json.
+  - combined seam unittest discovery exceeded timeout and was replaced with split module runs.
+  - first repair module has one stale next-task routing assertion against current Repair 04 routing.
+blockers:
+  - schema.open_object_surfaces_bounded
+  - extension.authority_names_semantically_refused
+  - conformance.guard_evidence_exercised
+  - operation.guard_report_not_static

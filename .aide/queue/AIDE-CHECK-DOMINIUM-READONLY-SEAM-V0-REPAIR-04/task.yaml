@@ -1,0 +1,45 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+title: Final Bounded Independent Check Of Dominium Read-Only Seam v0 Repair 04
+type: CHECK
+status: needs_review
+planning_state: independent_check_complete
+result: REQUEST_CHANGES
+review_gate: needs_review
+created_at: 2026-06-22
+updated_at: 2026-06-22
+source_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+source_commit: 270b97dc66e477cd37a2f863c8604854a5e90bdf
+source_check_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
+source_check_commit: 8d5cb86fa7f82d3da9d4856fa43b7102e0f16286
+material_findings_under_review: 12
+material_finding_count: 4
+warning_count: 1
+recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+check_report: .aide/reports/dominium-readonly-seam-v0-repair-04-check/check-report.json
+next_task_prompt: .aide/reports/dominium-readonly-seam-v0-repair-04-check/next-task-prompt.md
+success_result: PASS_WITH_WARNINGS
+failure_result: REQUEST_CHANGES
+success_recommended_next_task: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+failure_recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-04-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide/protocol/aide-dominium-readonly-seam-v0.schema.json
+  - core/interop/dominium/**
+  - core/protocol/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam*.py
+  - .aide/fixtures/dominium-readonly-seam/**
+  - .aide/interop/dominium/**
+  - .aide/reports/dominium-readonly-seam-v0/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-04/**
+  - C:/Projects/Dominium/dominium/**
+mutation_authorized: false
+runtime_authorized: false
+network_authorized_for_seam: false
+github_mutation_authorized: false

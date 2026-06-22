@@ -7062,3 +7062,40 @@ Validation records Python compilation, Repair 04 tests, targeted Repair 03/Repai
 - Independent Repair 04 check is still required before acceptance.
 - Non-Windows platforms were not separately executed in this turn.
 - The seam remains offline and read-only; runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.
+
+## Work Item: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+
+### Status
+
+Completed as a bounded check-only task. The result is `REQUEST_CHANGES` at `needs_review`.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair-04-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+Repair 04 completed with warnings and recommends this independent check. The check remains strict but bounded to the 12 Repair 04 finding closures, sampled prior invariants, report/evidence truthfulness, and no capability expansion.
+
+### Implementation Notes
+
+- Created the check task packet, ExecPlan, prompt, status, and evidence root.
+- Registered the check in `.aide/queue/index.yaml`.
+- Added a task-local independent harness and reports for source-chain, schema, extension, fixture replay, conformance, guard, operation, portability, typed refusal, regression sampling, and Repair 04 report consistency checks.
+- Recorded exactly 12 finding dispositions: 9 `CLOSED` and 3 `OPEN`.
+- Recorded 4 material check failures and selected `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05` as the only next task.
+
+### Verification
+
+Validation records diff checks, Repair 04 commit resolution, compileall, the full independent check harness, split seam test modules after combined unittest timeout, explicit live seam `status/snapshot/project/validate/diff/demo`, task inspect/evidence, broad validation, secret-like scan, and commit policy check. The independent harness intentionally returns `REQUEST_CHANGES` because material defects remain.
+
+### Remaining Issues
+
+- Repair 04 is not accepted.
+- Material findings remain in schema open-object surfaces, authority-changing extension semantic rejection, exercised guard evidence, and guard-report staticness.
+- The first repair unittest module has one stale next-task routing assertion against the current Repair 04 route.
+- Repair 05 remains the selected next task and was not started.

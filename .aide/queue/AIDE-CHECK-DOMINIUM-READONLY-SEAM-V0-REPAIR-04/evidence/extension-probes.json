@@ -1,0 +1,598 @@
+{
+  "authority_probes": [
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "authoritative",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "AUTHORITATIVE",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.authoritative",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "authoritative-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "canonical",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "CANONICAL",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.canonical",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "canonical-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "trusted",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "TRUSTED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.trusted",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "trusted-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "admitted",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "ADMITTED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.admitted",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "admitted-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "workbench_is_authority",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "WORKBENCH_IS_AUTHORITY",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.workbench_is_authority",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "workbench_is_authority-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "runtime_started",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "RUNTIME_STARTED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.runtime_started",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "runtime_started-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "private_tool_bypass",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "PRIVATE_TOOL_BYPASS",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.private_tool_bypass",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "private_tool_bypass-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "command_invocation_implemented",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "COMMAND_INVOCATION_IMPLEMENTED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.command_invocation_implemented",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "command_invocation_implemented-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "network_allowed",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "NETWORK_ALLOWED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.network_allowed",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "network_allowed-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "provider_enabled",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "PROVIDER_ENABLED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.provider_enabled",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "provider_enabled-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "worker_enabled",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "WORKER_ENABLED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.worker_enabled",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "worker_enabled-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "mutation_allowed",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "schema.authority_extension",
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "MUTATION_ALLOWED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.mutation_allowed",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "mutation_allowed-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "apply_allowed",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "APPLY_ALLOWED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.apply_allowed",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "apply_allowed-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "release_allowed",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "RELEASE_ALLOWED",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "safe.release_allowed",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "codes": [
+        "digest.projection_index",
+        "digest.record",
+        "digest.bundle_self"
+      ],
+      "extension_key": "release_allowed-flag",
+      "returncode": 0,
+      "status": "FAILED_VALIDATION"
+    }
+  ],
+  "benign_probe": {
+    "codes": [
+      "digest.projection_index",
+      "digest.record",
+      "digest.bundle_self"
+    ],
+    "extension_key": "safe_metadata_note",
+    "returncode": 0,
+    "status": "FAILED_VALIDATION"
+  }
+}

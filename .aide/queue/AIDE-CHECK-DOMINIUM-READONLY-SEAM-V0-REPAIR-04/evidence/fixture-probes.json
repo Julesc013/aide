@@ -1,0 +1,468 @@
+{
+  "boundary_cases": {
+    "add_existing": {
+      "error": "add target object key already exists: x",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "append_non_array": {
+      "error": "append operation requires an array target",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "malformed_pointer": {
+      "error": "malformed JSON pointer escape: /obj/~2",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "remove_missing": {
+      "error": "remove target object key does not exist: missing",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "replace_missing": {
+      "error": "replace target object key does not exist: missing",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "root_mutation": {
+      "error": "JSON pointer must start with /: ",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    }
+  },
+  "explicit_null": {
+    "ok": true,
+    "result": {
+      "items": [
+        {
+          "name": "a"
+        }
+      ],
+      "obj": {
+        "x": null
+      }
+    },
+    "returncode": 0
+  },
+  "good_indexes": {
+    "0": {
+      "ok": true,
+      "result": {
+        "items": [
+          {}
+        ],
+        "obj": {
+          "x": 1
+        }
+      },
+      "returncode": 0
+    }
+  },
+  "index_results": {
+    "": {
+      "error": "array index must be a canonical non-negative decimal string",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    " ": {
+      "error": "array index is not canonical decimal:  ",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "+1": {
+      "error": "array index is not canonical decimal: +1",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "-1": {
+      "error": "array index is not canonical decimal: -1",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "00": {
+      "error": "array index is not canonical decimal: 00",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "01": {
+      "error": "array index is not canonical decimal: 01",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "1.0": {
+      "error": "array index is not canonical decimal: 1.0",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "1e2": {
+      "error": "array index is not canonical decimal: 1e2",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "\\u0661": {
+      "error": "array index is not canonical decimal: \u0661",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "\\uff11": {
+      "error": "array index is not canonical decimal: \uff11",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    }
+  },
+  "key_results": {
+    "args": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "callable": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "code": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "command": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "entrypoint": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "eval": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "exec": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "function": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "import": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "kwargs": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "method": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "module": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "python": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "script": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "shell": {
+      "error": "operation contains forbidden executable field",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    }
+  },
+  "missing_value_ops": {
+    "add": {
+      "error": "add operation requires value",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "append": {
+      "error": "append operation requires value",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    },
+    "replace": {
+      "error": "replace operation requires value",
+      "error_type": "FixtureReplayError",
+      "ok": false,
+      "returncode": 0
+    }
+  },
+  "negative_fixture_replay": [
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:75a3356fcaba9ecb9fd274c67cb422559b5429cc507e5b339c6fef696d93f66c",
+      "fixture": "absolute_path_escape.json",
+      "observed": "sha256:75a3356fcaba9ecb9fd274c67cb422559b5429cc507e5b339c6fef696d93f66c"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:616090560d1770eeaff86cd629f452e79238a39ed3149d21dd734bd39a56144d",
+      "fixture": "arbitrary_diagnostic_severity.json",
+      "observed": "sha256:616090560d1770eeaff86cd629f452e79238a39ed3149d21dd734bd39a56144d"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:956573fccb4dfca7a025248d5dd4f1de6912ebfe2f2db3c18a40a2dc350a043d",
+      "fixture": "broken_evidence_ref.json",
+      "observed": "sha256:956573fccb4dfca7a025248d5dd4f1de6912ebfe2f2db3c18a40a2dc350a043d"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:3684f699df5d09073a85e64b40d9e94964272c721408381695b2700a5cc8031f",
+      "fixture": "conflicting_ownership.json",
+      "observed": "sha256:3684f699df5d09073a85e64b40d9e94964272c721408381695b2700a5cc8031f"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:2c9d14ba92aa2bbc2c159512df05e23e10210cb257ca977ca25c4e11ae9ba546",
+      "fixture": "dangling_artifact_reference.json",
+      "observed": "sha256:2c9d14ba92aa2bbc2c159512df05e23e10210cb257ca977ca25c4e11ae9ba546"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:bd5ff63187b1e9905bf50349fddaea4bd00e7e9a408b36c170abf83d5ef070fd",
+      "fixture": "digest_mismatch.json",
+      "observed": "sha256:bd5ff63187b1e9905bf50349fddaea4bd00e7e9a408b36c170abf83d5ef070fd"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:e039e67c501e19276a062d0ead4e238f79a8429d526db9730f06cf2213493614",
+      "fixture": "duplicate_event_sequence.json",
+      "observed": "sha256:e039e67c501e19276a062d0ead4e238f79a8429d526db9730f06cf2213493614"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:3e037cb62a98ef27242b55e52bd759d15374a0296a45106db828237e68a0bbe3",
+      "fixture": "duplicate_identity.json",
+      "observed": "sha256:3e037cb62a98ef27242b55e52bd759d15374a0296a45106db828237e68a0bbe3"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:a1fba904a5454fccb71597cc23e9c47274bedec4df05451f91a44bd82c989ffe",
+      "fixture": "event_correlation_mismatch.json",
+      "observed": "sha256:a1fba904a5454fccb71597cc23e9c47274bedec4df05451f91a44bd82c989ffe"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:f1937c1593e480901c3f535cc48b041e6aec46a1ee0494eb89c03eb9055135b6",
+      "fixture": "generated_projection_marked_canonical.json",
+      "observed": "sha256:f1937c1593e480901c3f535cc48b041e6aec46a1ee0494eb89c03eb9055135b6"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:1a8bb63e09a0697373a024be56efaebcd3c108eb0e931e0b83502a191dd71b1f",
+      "fixture": "invalid_diagnostic_severity.json",
+      "observed": "sha256:1a8bb63e09a0697373a024be56efaebcd3c108eb0e931e0b83502a191dd71b1f"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:56467280e04cb1b748617bfca39f6f714888d8ea501337428cd3e3b5e6027898",
+      "fixture": "invalid_reference_id.json",
+      "observed": "sha256:56467280e04cb1b748617bfca39f6f714888d8ea501337428cd3e3b5e6027898"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:266e3b965c97a304ce7db874f962bcd326ea208ffaf8302771cacae7f5d4e9a0",
+      "fixture": "invalid_refusal_mapping.json",
+      "observed": "sha256:266e3b965c97a304ce7db874f962bcd326ea208ffaf8302771cacae7f5d4e9a0"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:77d4261583156e8549d001edc034361f2fa31ad4970415f770421cdeca2c0a3c",
+      "fixture": "invented_refusal.json",
+      "observed": "sha256:77d4261583156e8549d001edc034361f2fa31ad4970415f770421cdeca2c0a3c"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:cae1a77866201aa490fb3774808fa68a8e3c9b383d68ba4c986d0052f61863ef",
+      "fixture": "missing_host_id.json",
+      "observed": "sha256:cae1a77866201aa490fb3774808fa68a8e3c9b383d68ba4c986d0052f61863ef"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:939d7739101a5af62493f0ed65e0a0fd2f84cbc49cdef1ba6d069e2c3dccc6a0",
+      "fixture": "missing_required_contract.json",
+      "observed": "sha256:939d7739101a5af62493f0ed65e0a0fd2f84cbc49cdef1ba6d069e2c3dccc6a0"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:65035a2d6c3f5162d50bf4024339a326642700978febe43ae528496ba31cb0a6",
+      "fixture": "mixed_record_revision.json",
+      "observed": "sha256:65035a2d6c3f5162d50bf4024339a326642700978febe43ae528496ba31cb0a6"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:fc3b9f629bc1ce33452612527a2b700d43108a2676820aeeceeda51878fdbc8f",
+      "fixture": "mutation_capability_claim.json",
+      "observed": "sha256:fc3b9f629bc1ce33452612527a2b700d43108a2676820aeeceeda51878fdbc8f"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:7408dcba86c4d8ab79243b3558052b62b0c2a10582f8771f40924959f762d2c1",
+      "fixture": "mutation_capability_labeled_readonly.json",
+      "observed": "sha256:7408dcba86c4d8ab79243b3558052b62b0c2a10582f8771f40924959f762d2c1"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:a8a80f4e7116ed391cee2113eb1f39803952a5d2f25f9ef6c7e4dc2feb0c7bdb",
+      "fixture": "non_deterministic_ordering.json",
+      "observed": "sha256:a8a80f4e7116ed391cee2113eb1f39803952a5d2f25f9ef6c7e4dc2feb0c7bdb"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:7e6a39e4f8f71bb45a7e2bf8976662cda703a1412f8b37b7f561fe99b6698961",
+      "fixture": "path_traversal.json",
+      "observed": "sha256:7e6a39e4f8f71bb45a7e2bf8976662cda703a1412f8b37b7f561fe99b6698961"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:6c53a4bac1577c1068a5a94a95a19dc3486e6b66243c0e503f7df20c219dc0e1",
+      "fixture": "private_tool_bypass_declaration.json",
+      "observed": "sha256:6c53a4bac1577c1068a5a94a95a19dc3486e6b66243c0e503f7df20c219dc0e1"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:f0585613c108d5fdd07c40165b1b6a0fd04b0e08f034a4ae8603e8ebaf0aa6b6",
+      "fixture": "provider_network_worker_claim.json",
+      "observed": "sha256:f0585613c108d5fdd07c40165b1b6a0fd04b0e08f034a4ae8603e8ebaf0aa6b6"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:a8b4f6f9d1fa4805e3e37817dc1767100c8275a6a038933c992aa9f09d32aebb",
+      "fixture": "second_host_capability_set.json",
+      "observed": "sha256:a8b4f6f9d1fa4805e3e37817dc1767100c8275a6a038933c992aa9f09d32aebb"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:d05833c8b89f76714f5c22f144639fd2928319fd6567b3fac545d0ecba45aa04",
+      "fixture": "snapshot_digest_not_validated.json",
+      "observed": "sha256:d05833c8b89f76714f5c22f144639fd2928319fd6567b3fac545d0ecba45aa04"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:ad0ab1ece069134d642893013fe07383d59fbaa255e10a1181cbb6d6e5b07a8d",
+      "fixture": "stale_revision.json",
+      "observed": "sha256:ad0ab1ece069134d642893013fe07383d59fbaa255e10a1181cbb6d6e5b07a8d"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:c03ade57d3a28f5ed4fd4337fbef5176b06229adc7c6563263e08dcbf4a13fb9",
+      "fixture": "unknown_required_capability.json",
+      "observed": "sha256:c03ade57d3a28f5ed4fd4337fbef5176b06229adc7c6563263e08dcbf4a13fb9"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:abd32665de2021254d703b9609f039657fbc2156b9def4983216a0ea28f56df2",
+      "fixture": "unsupported_version.json",
+      "observed": "sha256:abd32665de2021254d703b9609f039657fbc2156b9def4983216a0ea28f56df2"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:999c8895398aeb8ebea16710926e6b4f166fc765a675d7e296e797b91ad8c742",
+      "fixture": "workbench_authority_overclaim.json",
+      "observed": "sha256:999c8895398aeb8ebea16710926e6b4f166fc765a675d7e296e797b91ad8c742"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:abd810259517a5bc44befd59ab7c9f658714bdb6817ce18105d118669100de09",
+      "fixture": "wrong_authority_role.json",
+      "observed": "sha256:abd810259517a5bc44befd59ab7c9f658714bdb6817ce18105d118669100de09"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:eb5e7bb88da254bd7c30158fd32dc85fd93e142466523b004fd91895634a70a8",
+      "fixture": "wrong_repository_identity.json",
+      "observed": "sha256:eb5e7bb88da254bd7c30158fd32dc85fd93e142466523b004fd91895634a70a8"
+    },
+    {
+      "digest_matches": true,
+      "error": null,
+      "expected": "sha256:5cb692f081ce91ecd28cd354a8b7881420eb86299537247833ed67d0aa97ce17",
+      "fixture": "wrong_semantic_owner.json",
+      "observed": "sha256:5cb692f081ce91ecd28cd354a8b7881420eb86299537247833ed67d0aa97ce17"
+    }
+  ]
+}

@@ -1758,6 +1758,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/prompt.md
     evidence: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence
     description: Targeted Repair 04 for the 12 material findings from AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03: schema union and authority-extension hardening, strict production fixture replay, actual CLI conformance probes, no-write evidence around actual seam operations, exercised guard evidence, semantic operation aggregates, complete portability child output comparison, and arbitrary unsupported-verb typed refusals. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04 only. Does not modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, accept the seam, or begin the WorkUnit validation slice.
+  - id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+    status: needs_review
+    planning_state: independent_check_complete
+    result: REQUEST_CHANGES
+    title: Final Bounded Independent Check Of Dominium Read-Only Seam v0 Repair 04
+    task: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence
+    description: Check-only bounded independent verification for AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04 at commit 270b97dc66e477cd37a2f863c8604854a5e90bdf. Stops at needs_review with REQUEST_CHANGES after finding 4 material defects and recommends exactly AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05. Verifies the exact 12 Repair 04 finding closures, sampled prior invariants, report/evidence consistency, no capability expansion, Dominium immutability, and strict read-only boundary. Does not repair implementation, modify production seam code/schema/tests/fixtures/current seam outputs/Repair 04 reports, mutate Dominium, invoke Dominium product commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, accept the seam, create Repair 05, or begin the WorkUnit validation slice.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked
