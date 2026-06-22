@@ -1,0 +1,50 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+status: needs_review
+planning_state: repair_implemented
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-22
+summary: Repair 04 implemented the bounded fixes for the 12 material findings from AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03 and is stopped for independent review.
+validation_status: PASS_WITH_WARNINGS
+source_check_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
+source_check_result: REQUEST_CHANGES
+source_check_commit: 8d5cb86fa7f82d3da9d4856fa43b7102e0f16286
+source_check_missing_evidence: 0
+material_findings_authorized: 12
+material_findings_repaired: 12
+dominium_command_invoked: false
+dominium_modified: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+evidence:
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/blockers-or-deferrals.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/dominium-immutability.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/evidence-manifest.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/finding-disposition.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/historical-root-hashes-after.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/historical-root-hashes-before.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/historical-root-preservation.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/result.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/secret-scan.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/self-adversarial-check.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/test-summary.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/validation-commands.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/validation-results.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence/validation.md
+warnings:
+  - The seam remains offline and read-only.
+  - This task must stop at needs_review and must not run the Repair 04 check.
+  - Full older Repair 02/03 suites exceeded the interactive timeout because they include full portability checks; targeted subsets plus standalone Repair 04 portability proof passed.
+  - Non-Windows platforms were not separately executed in this turn.
+blockers: []

@@ -7016,3 +7016,49 @@ Validation ran through diff checks, commit resolution, compileall, seam unittest
 
 - Repair 03 is not accepted.
 - Repair 04 remains the selected next task and was not started.
+
+## Work Item: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+
+### Status
+
+Completed with warnings and awaiting independent review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/**`
+- `.aide/protocol/aide-dominium-readonly-seam-v0.schema.json`
+- `core/interop/dominium/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py`
+- `.aide/fixtures/dominium-readonly-seam/**`
+- `.aide/interop/dominium/**`
+- `.aide/reports/dominium-readonly-seam-v0/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair-04/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The live Repair 03 check recorded `REQUEST_CHANGES` with 12 material findings and recommended exactly this repair task. The task remains a bounded repair and does not accept the seam.
+
+### Implementation Notes
+
+- Created the Repair 04 task packet, ExecPlan, prompt, status, and evidence root.
+- Added a `SeamRecord` schema union, bounded extension values, and validation refusal for nested authority-changing extension keys.
+- Tightened fixture replay value requirements, ASCII index parsing, and executable-key rejection.
+- Routed unsupported-operation conformance through actual CLI dispatch, including arbitrary unsupported verbs.
+- Recorded no-write evidence around actual read-only seam operations and guard evidence through exercised guard probes.
+- Made operation aggregation preserve target, classification, source, allowed state, operation family, and observation method.
+- Expanded portability comparison to all 16 required outputs, including conformance evidence, operation trace, and operation guard conformance.
+- Regenerated current seam artifacts and Repair 04 reports while preserving the explicit `needs_review` stop point and `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04` as the only next recommendation.
+
+### Verification
+
+Validation records Python compilation, Repair 04 tests, targeted Repair 03/Repair 02/base seam regression suites, seam project/validate/diff/demo, standalone portability proof, Dominium immutability evidence, historical-root preservation, and task evidence. Full older Repair 02/03 suites were not completed as full-suite commands because their embedded full portability checks exceeded the interactive timeout; targeted non-portability methods plus standalone Repair 04 portability proof passed.
+
+### Remaining Issues
+
+- Independent Repair 04 check is still required before acceptance.
+- Non-Windows platforms were not separately executed in this turn.
+- The seam remains offline and read-only; runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.

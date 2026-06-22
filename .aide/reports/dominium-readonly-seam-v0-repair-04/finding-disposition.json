@@ -1,0 +1,98 @@
+[
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "schema.kind_specific_defs_present"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "schema.authority_extensions_bounded"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "fixture.production_requires_value"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "fixture.production_rejects_unicode_decimal_indexes"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "fixture.production_forbidden_key_set_complete"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "conformance.unsupported_uses_actual_cli_dispatch"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "conformance.no_write_surrounds_actual_operations"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "conformance.guard_evidence_is_exercised"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "operation.aggregate_key_preserves_semantics"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "operation.guard_report_is_not_static"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "portability.required_child_output_set_complete"
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py"
+    ],
+    "finding_id": "cli.unsupported_verbs_typed_refusal"
+  }
+]

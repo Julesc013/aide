@@ -34437,6 +34437,7 @@ def _print_dominium_seam_boundary_lines(data: dict[str, object]) -> None:
     data = _dominium_seam_boundary_data(data)
     for key in [
         "dominium_command_invoked",
+        "generated_projection_marked_canonical",
         "host_runtime_started",
         "workbench_started",
         "bridge_runtime_started",
@@ -38414,8 +38415,46 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     default_root = repo_root_from_script()
+    effective_argv = list(sys.argv[1:] if argv is None else argv)
+    known_dominium_seam_commands = {
+        "status",
+        "snapshot",
+        "project",
+        "validate",
+        "diff",
+        "demo",
+        "run",
+        "invoke",
+        "execute",
+        "apply",
+        "write",
+        "sync",
+        "push",
+        "serve",
+        "connect",
+        "dispatch",
+        "fetch",
+        "pull",
+        "checkout",
+        "branch",
+        "worktree",
+        "publish",
+        "destroy",
+    }
+    if "dominium-seam" in effective_argv:
+        seam_index = effective_argv.index("dominium-seam")
+        if seam_index + 1 < len(effective_argv):
+            operation = effective_argv[seam_index + 1]
+            if operation and not operation.startswith("-") and operation not in known_dominium_seam_commands:
+                repo_root = default_root
+                if "--repo-root" in effective_argv:
+                    root_index = effective_argv.index("--repo-root")
+                    if root_index + 1 < len(effective_argv):
+                        repo_root = Path(effective_argv[root_index + 1])
+                args = argparse.Namespace(repo_root=repo_root, operation=operation, dominium_seam_command=operation)
+                return command_dominium_seam_unsupported(args)
     parser = build_parser(default_root)
-    args = parser.parse_args(argv)
+    args = parser.parse_args(effective_argv)
     args.repo_root = Path(args.repo_root).resolve()
     try:
         return int(args.handler(args))

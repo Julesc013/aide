@@ -59,7 +59,7 @@
       "dominium-refusal-f82bcc96b9eb217d": "sha256:0a20ca382cb1c972d631f4b3b0837dc08ffde18cbf64043da379e228d949f6ef",
       "dominium-workspace-c92b38602789": "sha256:e26f3e26c649cf591a4c93bfde60de7b228c915da855a284a68f3e6ba3bd0cb8"
     },
-    "seam_bundle_without_self_digest": "sha256:a661f1311a3c988ef934cf134ab2fe7b5ccc53f845c97a566c0ef348c1ecde0f",
+    "seam_bundle_without_self_digest": "sha256:32f66eced60fccc6a886b12ccb67ef6f28128e5aec4623725ec4dcb84fa44cd5",
     "source_snapshot": "sha256:607822a1fa0143f0bcd15dfbfd3a18b741a580b533c67a18f394c881621595f8"
   },
   "cross_reference_index": {
@@ -151,12 +151,12 @@
     "capability_target": "dominium_readonly_seam_v0",
     "projection_authority": "generated_non_authoritative",
     "protocol_version": "0.1.0",
-    "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+    "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
     "record_count": 42,
     "schema_version": "aide.dominium-readonly-seam.v0",
     "selected_file_count": 17,
     "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
-    "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
+    "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04"
   },
   "metadata": {
     "authority_role": "generated_projection_not_canonical_truth",

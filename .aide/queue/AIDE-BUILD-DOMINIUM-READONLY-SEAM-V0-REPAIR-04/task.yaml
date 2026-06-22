@@ -1,0 +1,71 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+title: Repair Dominium Read-Only Seam v0 Repair 04
+task_type: repair
+status: needs_review
+planning_state: repair_implemented
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-22
+updated_at: 2026-06-22
+profile: .aide/profile.yaml
+queue_policy: .aide/queue/policy.yaml
+canonical_queue: .aide/queue/index.yaml
+source_check:
+  task_id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
+  result: REQUEST_CHANGES
+  commit: 8d5cb86fa7f82d3da9d4856fa43b7102e0f16286
+  material_finding_count: 12
+  warning_count: 3
+  evidence_missing: 0
+  recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+capability_target: dominium_readonly_seam_v0
+repair_scope:
+  - schema union and authority-extension hardening
+  - strict production fixture replay semantics
+  - actual CLI unsupported-operation conformance evidence
+  - no-write and guard evidence around actual seam operations
+  - operation aggregate semantic preservation
+  - complete portability output comparison
+  - typed refusal for arbitrary unsupported verbs
+allowed_paths:
+  - .aide/protocol/aide-dominium-readonly-seam-v0.schema.json
+  - core/interop/dominium/**
+  - core/protocol/**
+  - core/interop/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam_repair_02.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam_repair_03.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py
+  - .aide/fixtures/dominium-readonly-seam/**
+  - .aide/interop/dominium/**
+  - .aide/reports/dominium-readonly-seam-v0/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-04/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - C:/Projects/Dominium/dominium/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/**
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/**
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/**
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/**
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/**
+  - .aide/reports/dominium-readonly-seam-v0-check/**
+  - .aide/reports/dominium-readonly-seam-v0-repair/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-check/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-02/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-02-check/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-03/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-03-check/**
+review_gate: needs_review
+recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+mutation_authorized: false
+runtime_authorized: false
+network_authorized_for_seam: false
+github_mutation_authorized: false

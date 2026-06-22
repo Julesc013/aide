@@ -110,6 +110,81 @@
       "pattern": "^[0-9a-f]{40}$",
       "type": "string"
     },
+    "BridgeCompatibilityPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "read_old_write_current": {
+          "const": true,
+          "type": "boolean"
+        },
+        "silent_migration": {
+          "const": false,
+          "type": "boolean"
+        },
+        "unknown_optional_fields": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "unknown_required_fields": {
+          "enum": [
+            "refuse"
+          ]
+        }
+      },
+      "required": [
+        "read_old_write_current",
+        "silent_migration",
+        "unknown_optional_fields",
+        "unknown_required_fields"
+      ],
+      "type": "object"
+    },
+    "BridgeOwnershipMap": {
+      "additionalProperties": false,
+      "properties": {
+        "AIDE": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "Dominium": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "Domino": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "Workbench": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      },
+      "required": [
+        "AIDE",
+        "Dominium",
+        "Domino",
+        "Workbench"
+      ],
+      "type": "object"
+    },
+    "BridgeSourceOfTruth": {
+      "additionalProperties": false,
+      "properties": {
+        "aide": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "dominium": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "projection_only": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "aide",
+        "dominium",
+        "projection_only"
+      ],
+      "type": "object"
+    },
     "Compatibility": {
       "additionalProperties": false,
       "properties": {
@@ -394,7 +469,7 @@
           "type": "object"
         },
         "compatibility_policy": {
-          "type": "object"
+          "$ref": "#/$defs/BridgeCompatibilityPolicy"
         },
         "extensions": {
           "$ref": "#/$defs/ExtensionMap"
@@ -403,10 +478,10 @@
           "$ref": "#/$defs/NonEmptyString"
         },
         "ownership": {
-          "type": "object"
+          "$ref": "#/$defs/BridgeOwnershipMap"
         },
         "source_of_truth": {
-          "type": "object"
+          "$ref": "#/$defs/BridgeSourceOfTruth"
         },
         "source_revision": {
           "$ref": "#/$defs/CommitSha"
@@ -550,11 +625,67 @@
       "type": "object"
     },
     "ExtensionMap": {
-      "additionalProperties": true,
+      "additionalProperties": {
+        "$ref": "#/$defs/ExtensionValue"
+      },
       "propertyNames": {
-        "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        "allOf": [
+          {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+          },
+          {
+            "not": {
+              "enum": [
+                "admitted",
+                "authoritative",
+                "canonical",
+                "command",
+                "command_invocation_implemented",
+                "network_allowed",
+                "private_tool_bypass",
+                "provider_enabled",
+                "runtime_started",
+                "trusted",
+                "workbench_is_authority",
+                "mutation_allowed",
+                "worker_enabled"
+              ]
+            }
+          }
+        ]
       },
       "type": "object"
+    },
+    "ExtensionValue": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "items": {
+            "$ref": "#/$defs/ExtensionValue"
+          },
+          "type": "array"
+        },
+        {
+          "additionalProperties": {
+            "$ref": "#/$defs/ExtensionValue"
+          },
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+          },
+          "type": "object"
+        }
+      ]
     },
     "FalseBoundaryStatus": {
       "additionalProperties": false,
@@ -1284,8 +1415,46 @@
       ],
       "type": "object"
     },
+    "SeamRecord": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/HostManifestRecord"
+        },
+        {
+          "$ref": "#/$defs/HostCapabilitySetRecord"
+        },
+        {
+          "$ref": "#/$defs/WorkspaceDescriptorRecord"
+        },
+        {
+          "$ref": "#/$defs/ContextDescriptorRecord"
+        },
+        {
+          "$ref": "#/$defs/ArtifactReferenceRecord"
+        },
+        {
+          "$ref": "#/$defs/DiagnosticProjectionRecord"
+        },
+        {
+          "$ref": "#/$defs/RefusalProjectionRecord"
+        },
+        {
+          "$ref": "#/$defs/EvidenceReferenceSetRecord"
+        },
+        {
+          "$ref": "#/$defs/EventEnvelopeRecord"
+        },
+        {
+          "$ref": "#/$defs/DominiumBridgeManifestRecord"
+        }
+      ]
+    },
     "ReferenceID": {
       "pattern": "^aide://[A-Za-z0-9._~-]+/[A-Za-z0-9._~@+=:,-]+$",
+      "type": "string"
+    },
+    "RemoteUrlHashToken": {
+      "pattern": "^remote-[0-9a-f]{16}$",
       "type": "string"
     },
     "RefusalProjectionRecord": {
@@ -1346,7 +1515,7 @@
           "$ref": "#/$defs/NonEmptyString"
         },
         "recovery_action": {
-          "type": "object"
+          "$ref": "#/$defs/NonEmptyString"
         },
         "refusal_id": {
           "$ref": "#/$defs/NonEmptyString"
@@ -1377,6 +1546,39 @@
         "source_registry",
         "native_meaning_owned_by",
         "projection_direction"
+      ],
+      "type": "object"
+    },
+    "QueueStatus": {
+      "additionalProperties": {
+        "$ref": "#/$defs/NonEmptyString"
+      },
+      "properties": {
+        "alternate_next_task": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "current_task": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "next_task": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "result": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "schema_version": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "status": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      },
+      "required": [
+        "schema_version",
+        "current_task",
+        "next_task",
+        "result",
+        "status"
       ],
       "type": "object"
     },
@@ -1598,10 +1800,10 @@
           "type": "boolean"
         },
         "queue_status": {
-          "type": "object"
+          "$ref": "#/$defs/QueueStatus"
         },
         "repository_remote_url_hash": {
-          "$ref": "#/$defs/NonEmptyString"
+          "$ref": "#/$defs/RemoteUrlHashToken"
         },
         "selected_revision": {
           "$ref": "#/$defs/CommitSha"
@@ -1943,7 +2145,7 @@
           "$ref": "#/$defs/Freshness"
         },
         "queue_status": {
-          "type": "object"
+          "$ref": "#/$defs/QueueStatus"
         },
         "read_only_operations": {
           "additionalProperties": false,

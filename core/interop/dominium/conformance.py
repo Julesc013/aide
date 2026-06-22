@@ -57,7 +57,10 @@ UNSUPPORTED_VERBS = [
     "worktree",
     "publish",
     "destroy",
+    "repair04-arbitrary-unsupported-verb",
 ]
+
+_UNSUPPORTED_PROBE_CACHE: dict[str, dict[str, Any]] = {}
 
 
 def conformance_expectations() -> list[dict[str, Any]]:
@@ -147,19 +150,10 @@ def validation_report_for_negative(bundle: dict[str, Any], *, dominium_root: str
 
 
 def unsupported_operation_probe_matrix(repo_root: str | Path | None = None) -> dict[str, Any]:
-    if repo_root is None:
-        from . import bundle as seam_bundle
-
-        results = []
-        for verb in UNSUPPORTED_VERBS:
-            refusal = seam_bundle.unsupported_operation_refusal(verb)
-            results.append({"verb": verb, "exit_code": 2, "typed_refusal": refusal.get("status") == "REFUSED", "reason_code": refusal.get("reason_code"), "operation": refusal.get("operation")})
-        return {
-            "schema_version": "aide.dominium-readonly-seam.unsupported-operation-probes.v0",
-            "all_typed_refusals": all(item["typed_refusal"] for item in results),
-            "results": results,
-        }
-    root = Path(repo_root)
+    root = (Path(repo_root) if repo_root is not None else Path(__file__).resolve().parents[3]).resolve()
+    cache_key = str(root)
+    if cache_key in _UNSUPPORTED_PROBE_CACHE:
+        return _UNSUPPORTED_PROBE_CACHE[cache_key]
     module_path = root / ".aide/scripts/aide_lite.py"
     spec = importlib.util.spec_from_file_location("aide_lite_dominium_probe", module_path)
     if spec is None or spec.loader is None:
@@ -185,11 +179,13 @@ def unsupported_operation_probe_matrix(repo_root: str | Path | None = None) -> d
                 "preview": output.splitlines()[:20],
             }
         )
-    return {
+    report = {
         "schema_version": "aide.dominium-readonly-seam.unsupported-operation-probes.v0",
         "all_typed_refusals": all(item["typed_refusal"] for item in results),
         "results": results,
     }
+    _UNSUPPORTED_PROBE_CACHE[cache_key] = report
+    return report
 
 
 def conformance_evidence(bundle: dict[str, Any], validation_report: dict[str, Any], *, dominium_root: str | Path | None = None, repo_root: str | Path | None = None) -> dict[str, Any]:
@@ -198,14 +194,46 @@ def conformance_evidence(bundle: dict[str, Any], validation_report: dict[str, An
     before_after = {"status": "NOT_PROVEN", "reason": "dominium_root unavailable"}
     if dominium_root is not None:
         root = Path(dominium_root)
-        before_status = snapshot.worktree_status(root)
-        after_status = snapshot.worktree_status(root)
+        before_dominium_status = snapshot.worktree_status(root)
+        actual_operations: list[dict[str, Any]] = []
+        source_revision = bundle.get("manifest", {}).get("source_revision", "")
+        revision_arg = str(source_revision) if source_revision else None
+        try:
+            source_probe = snapshot.build_source_snapshot(
+                root,
+                revision=revision_arg,
+                expected_revision=revision_arg,
+            )
+            actual_operations.append(
+                {
+                    "operation": "snapshot.build_source_snapshot",
+                    "source_revision": source_probe.get("source_revision"),
+                    "selected_file_count": source_probe.get("selected_file_count"),
+                }
+            )
+        except Exception as exc:  # noqa: BLE001 - conformance evidence must record failed probes.
+            actual_operations.append({"operation": "snapshot.build_source_snapshot", "error": str(exc)})
+        actual_operations.append(
+            {
+                "operation": "integrity.projection_index_for_records",
+                "digest": integrity.stable_digest(integrity.projection_index_for_records(bundle.get("records", {}))),
+            }
+        )
+        actual_operations.append(
+            {
+                "operation": "operations.guard_conformance",
+                "result": guard.get("result"),
+                "probe_count": guard.get("probe_count"),
+            }
+        )
+        after_dominium_status = snapshot.worktree_status(root)
         before_after = {
-            "status": "PASS" if before_status == after_status else "FAILED_VALIDATION",
-            "before": before_status,
-            "after": after_status,
+            "status": "PASS" if before_dominium_status == after_dominium_status else "FAILED_VALIDATION",
+            "before": before_dominium_status,
+            "after": after_dominium_status,
+            "actual_operations": actual_operations,
         }
-    probes = unsupported_operation_probe_matrix(None)
+    probes = unsupported_operation_probe_matrix(repo_root)
     return {
         "schema_version": "aide.dominium-readonly-seam.conformance-evidence.v0",
         "public_schema_validation": {"status": validation_report.get("validation_status"), "error_count": len(validation_report.get("errors", []))},

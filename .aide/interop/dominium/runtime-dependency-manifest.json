@@ -4,13 +4,13 @@
       "path": ".aide/scripts/aide_lite.py",
       "required": true,
       "role": "cli_entrypoint",
-      "sha256": "sha256:7b6e4bea9c99717accc83ed2e1e11e081b6fb74bd85c0c92c2627f4604f1d2fa"
+      "sha256": "sha256:04a02cdd44228348d81118ee5c22d14b12ba99821bcf9273964b406bbf499c72"
     },
     {
       "path": ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
       "required": true,
       "role": "runtime_dependency",
-      "sha256": "sha256:df5dc77497ba9b2336a65b7d15583c796f2ef61bf47dfd61200c12e252c02fed"
+      "sha256": "sha256:ac2429f65036c232139d3e71e9a201316954ce120ce0e6d6650f14d93a7453c0"
     },
     {
       "path": "core/interop/__init__.py",
@@ -40,13 +40,13 @@
       "path": "core/interop/dominium/bundle.py",
       "required": true,
       "role": "runtime_dependency",
-      "sha256": "sha256:c0449ac72672c1773bb84ea0f66942fa7c193c214a77e18aa1eea1a864394a24"
+      "sha256": "sha256:db1f8efb9d8e3ac2f34a5b406d237f8ed5514aac14c99bf992711d2c7199dbb5"
     },
     {
       "path": "core/interop/dominium/conformance.py",
       "required": true,
       "role": "runtime_dependency",
-      "sha256": "sha256:7d3809d03223921b77dc61e20f8e8e1d47cdf2fd816acfd57a10106fe3bf9680"
+      "sha256": "sha256:f488e56f4a33912338b8d3e9bc4b89561cc79e0949bbbd716112047aab698c97"
     },
     {
       "path": "core/interop/dominium/contracts.py",
@@ -64,7 +64,7 @@
       "path": "core/interop/dominium/fixture_replay.py",
       "required": true,
       "role": "runtime_dependency",
-      "sha256": "sha256:8108da91ffb7fd61325d2e3f23798d8cb9d597af42911a3903e8654b0e1e9d35"
+      "sha256": "sha256:976f2d94fc8a71ad2335c64546e6cb527f0e2e9cef36b45fb4b9dbb6df605a8a"
     },
     {
       "path": "core/interop/dominium/identity.py",
@@ -88,13 +88,13 @@
       "path": "core/interop/dominium/models.py",
       "required": true,
       "role": "runtime_dependency",
-      "sha256": "sha256:5c9b0ef41e17ab58597cdf144a8cacac1627eee6cc6557af5a6ff2f0f143a4c8"
+      "sha256": "sha256:800a65485accc7a6460de9805c1aa5a559cdaa1e5562e91941c05706b9b9c30c"
     },
     {
       "path": "core/interop/dominium/operations.py",
       "required": true,
       "role": "runtime_dependency",
-      "sha256": "sha256:4c55fa22ad2fc3be14ebf0b20824c9cf24e527a929643f50c0f5c888b5031d7b"
+      "sha256": "sha256:0bad1ab28562022c48e94c459cbebba2cd9a6c885c6847ce45721d291fd95779"
     },
     {
       "path": "core/interop/dominium/projector.py",
@@ -124,14 +124,14 @@
       "path": "core/interop/dominium/validation.py",
       "required": true,
       "role": "runtime_dependency",
-      "sha256": "sha256:426781b6a74d20cb8eeee4a35c235b48fe26bdeb54b1be98e0e0da60b2f4734f"
+      "sha256": "sha256:e8caa88584bed9f86228b8fa389e132408bc46d39e175a3770d796c4beadc24a"
     }
   ],
   "dependency_count": 21,
   "entrypoint": ".aide/scripts/aide_lite.py",
-  "manifest_digest": "sha256:0f05ef6904420be4fddd8d809209b0394d0451858b6eff62cdc995c1db5ae37b",
+  "manifest_digest": "sha256:dd3acc8eb21d90c547dacd110557959210d6df474ac0c89d08f9eb58781c7694",
   "module_search_root": ".",
   "schema_version": "aide.dominium-readonly-seam.runtime-dependency-manifest.v0",
   "supported_python_version_range": ">=3.11",
-  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04"
 }

@@ -10,16 +10,19 @@ from .references import is_commit_sha, is_sha256, normalize_repo_path, parse_sta
 
 
 AUTHORITY_CHANGING_EXTENSION_NAMES = {
+    "admitted",
     "authoritative",
     "canonical",
+    "command",
     "workbench_is_authority",
     "runtime_started",
     "private_tool_bypass",
     "command_invocation_implemented",
     "network_allowed",
     "mutation_allowed",
+    "provider_enabled",
     "trusted",
-    "admitted",
+    "worker_enabled",
 }
 
 
@@ -54,6 +57,21 @@ def _error(
 ) -> None:
     errors.append(f"{code}: {message}")
     error_records.append({"code": code, "path": path, "message": message, "expected": expected, "observed": observed})
+
+
+def _extension_authority_hits(value: Any, path: str) -> list[dict[str, str]]:
+    hits: list[dict[str, str]] = []
+    if isinstance(value, dict):
+        for key, nested in value.items():
+            key_text = str(key)
+            nested_path = f"{path}.{key_text}" if path else key_text
+            if key_text.lower() in AUTHORITY_CHANGING_EXTENSION_NAMES:
+                hits.append({"path": nested_path, "key": key_text})
+            hits.extend(_extension_authority_hits(nested, nested_path))
+    elif isinstance(value, list):
+        for index, nested in enumerate(value):
+            hits.extend(_extension_authority_hits(nested, f"{path}[{index}]"))
+    return hits
 
 
 def _check_common_metadata(
@@ -116,8 +134,17 @@ def _check_record(
         _error(errors, error_records, "authority.role", f"{kind}.metadata.authority_role", f"{kind} authority_role mismatch")
     spec = record.get("spec", {}) if isinstance(record.get("spec"), dict) else {}
     extensions = spec.get("extensions", {}) if isinstance(spec.get("extensions"), dict) else {}
-    if AUTHORITY_CHANGING_EXTENSION_NAMES.intersection(extensions):
-        _error(errors, error_records, "schema.authority_extension", f"{kind}.spec.extensions", "authority-changing extension field refused")
+    authority_extension_hits = _extension_authority_hits(extensions, f"{kind}.spec.extensions")
+    if authority_extension_hits:
+        _error(
+            errors,
+            error_records,
+            "schema.authority_extension",
+            f"{kind}.spec.extensions",
+            "authority-changing extension field refused",
+            expected="no authority-changing extension keys",
+            observed=authority_extension_hits,
+        )
     for field in sorted(rule.get("required_spec", set())):
         if field not in spec:
             _error(errors, error_records, "schema.spec_required", f"{kind}.spec.{field}", f"{kind} missing spec.{field}", expected="field present", observed="missing")

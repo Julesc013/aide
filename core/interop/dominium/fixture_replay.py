@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import re
 from typing import Any
 
 from . import integrity, models
@@ -13,7 +14,24 @@ class FixtureReplayError(ValueError):
 
 
 ALLOWED_OPERATIONS = {"add", "remove", "replace", "append"}
-FORBIDDEN_OPERATION_KEYS = {"callable", "module", "command", "shell", "eval", "exec", "python", "entrypoint", "script"}
+FORBIDDEN_OPERATION_KEYS = {
+    "args",
+    "callable",
+    "code",
+    "command",
+    "entrypoint",
+    "eval",
+    "exec",
+    "function",
+    "import",
+    "kwargs",
+    "method",
+    "module",
+    "payload_command",
+    "python",
+    "script",
+    "shell",
+}
 
 
 def _pointer_parts(pointer: str) -> list[str]:
@@ -40,10 +58,8 @@ def _canonical_index(value: str, *, allow_dash: bool, limit: int, allow_end: boo
         raise FixtureReplayError("'-' array index is only allowed for add or append")
     if not isinstance(value, str) or value == "":
         raise FixtureReplayError("array index must be a canonical non-negative decimal string")
-    if not value.isdecimal():
+    if not re.fullmatch(r"(0|[1-9][0-9]*)", value):
         raise FixtureReplayError(f"array index is not canonical decimal: {value}")
-    if len(value) > 1 and value.startswith("0"):
-        raise FixtureReplayError(f"array index must not contain leading zeroes: {value}")
     index = int(value)
     maximum = limit if allow_end else limit - 1
     if index < 0 or index > maximum:
@@ -78,6 +94,14 @@ def apply_operations(document: dict[str, Any], operations: list[dict[str, Any]])
         kind = op.get("op")
         if kind not in ALLOWED_OPERATIONS:
             raise FixtureReplayError(f"unsupported operation: {kind}")
+        allowed_keys = {"op", "path"}
+        if kind in {"add", "replace", "append"} and "value" not in op:
+            raise FixtureReplayError(f"{kind} operation requires value")
+        if kind in {"add", "replace", "append"}:
+            allowed_keys.add("value")
+        extra_keys = set(op) - allowed_keys
+        if extra_keys:
+            raise FixtureReplayError(f"operation contains unsupported field: {sorted(extra_keys)[0]}")
         parent, key = _resolve_parent(candidate, op.get("path"))
         if isinstance(parent, list):
             if kind == "remove":

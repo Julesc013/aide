@@ -1,0 +1,50 @@
+{
+  "commands": [
+    {
+      "command": "py -3 -m py_compile .aide/scripts/aide_lite.py core/interop/dominium/*.py .aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/tests/test_aide_dominium_readonly_seam_repair_04.py",
+      "result": "PASS",
+      "tests": 7
+    },
+    {
+      "command": "direct project_dominium_seam(write_portability=False) + validate + diff + demo + portability_check",
+      "demo": "PASS_WITH_WARNINGS",
+      "diff": "PASS",
+      "portability": "PASS",
+      "projection": "PASS_WITH_WARNINGS",
+      "result": "PASS",
+      "validation": "PASS_WITH_WARNINGS"
+    },
+    {
+      "command": "Repair 03 targeted non-portability regression methods",
+      "result": "PASS",
+      "tests": 14
+    },
+    {
+      "command": "Repair 02 targeted non-portability regression methods",
+      "result": "PASS",
+      "tests": 11
+    },
+    {
+      "command": "Base seam targeted regression methods excluding CLI project portability path",
+      "result": "PASS",
+      "tests": 27
+    },
+    {
+      "command": "Full Repair 02 and Repair 03 suites",
+      "result": "TIMEOUT_REPLACED_BY_TARGETED_PLUS_STANDALONE_PORTABILITY",
+      "timeout_seconds": 420
+    }
+  ],
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.dominium-readonly-seam.repair-04.test-summary.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "warning_count": 2,
+  "warnings": [
+    "Full older Repair 02/03 suites include full portability checks and exceeded 420 seconds; targeted non-portability methods plus standalone Repair 04 portability proof were used.",
+    "Non-Windows platforms were not separately executed."
+  ]
+}

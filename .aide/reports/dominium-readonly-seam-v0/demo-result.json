@@ -1,5 +1,5 @@
 {
-  "allowed_operation_count": 874,
+  "allowed_operation_count": 1226,
   "dominium_status_after": "## main...origin/main [behind 24]",
   "dominium_status_before": "## main...origin/main [behind 24]",
   "elapsed_time": {
@@ -30,8 +30,8 @@
   "input_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
   "operation_guard_conformance_ref": ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json",
   "operation_ledger": {
-    "allowed_observation_count": 874,
-    "allowed_operation_count": 874,
+    "allowed_observation_count": 1226,
+    "allowed_operation_count": 1226,
     "coverage": {
       "branch_worktree_ref_ops": {
         "evidence_refs": [
@@ -114,12 +114,12 @@
     },
     "forbidden_observation_count": 0,
     "forbidden_operation_count": 0,
-    "observation_count": 874,
+    "observation_count": 1226,
     "observations": [
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git branch --show-current",
@@ -132,7 +132,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd .aide/queue/current.toml",
@@ -145,7 +145,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd AGENTS.md",
@@ -158,7 +158,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/capability/capability.registry.json",
@@ -171,7 +171,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/command/command_surface.contract.toml",
@@ -184,7 +184,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 6,
+        "count": 14,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/diagnostic/diagnostic_code.registry.json",
@@ -197,7 +197,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/diagnostic/diagnostic_severity.registry.json",
@@ -210,7 +210,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/module/module_surface.contract.toml",
@@ -223,7 +223,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/project_graph/project_graph_model.contract.toml",
@@ -236,7 +236,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 6,
+        "count": 14,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/refusal/refusal_code.registry.json",
@@ -249,7 +249,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/service/service.contract.toml",
@@ -262,7 +262,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/workbench/workbench_surface.contract.toml",
@@ -275,7 +275,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/canon/constitution_v1.md",
@@ -288,7 +288,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/canon/glossary_v1.md",
@@ -301,7 +301,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/development/command_result_view_slice.md",
@@ -314,7 +314,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/development/workbench_validation_slice.md",
@@ -327,7 +327,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/repo/audits/PRESENTATION_CONTRACT_01.md",
@@ -340,7 +340,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
@@ -353,7 +353,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git remote get-url origin",
@@ -366,7 +366,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-list --count HEAD..origin/main",
@@ -379,7 +379,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-parse --show-toplevel",
@@ -392,7 +392,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-parse HEAD^{commit}",
@@ -405,7 +405,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-parse c92b386027890c1bbf14aef6eaafe0357b7b03dd^{commit}",
@@ -418,7 +418,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-parse origin/main^{commit}",
@@ -431,7 +431,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 41,
+        "count": 57,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:.aide/queue/current.toml",
@@ -444,7 +444,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:AGENTS.md",
@@ -457,7 +457,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/capability/capability.registry.json",
@@ -470,7 +470,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 39,
+        "count": 47,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/command/command_surface.contract.toml",
@@ -483,7 +483,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 76,
+        "count": 84,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/diagnostic/diagnostic_code.registry.json",
@@ -496,7 +496,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 72,
+        "count": 80,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/diagnostic/diagnostic_severity.registry.json",
@@ -509,7 +509,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/module/module_surface.contract.toml",
@@ -522,7 +522,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/project_graph/project_graph_model.contract.toml",
@@ -535,7 +535,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 76,
+        "count": 84,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/refusal/refusal_code.registry.json",
@@ -548,7 +548,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/service/service.contract.toml",
@@ -561,7 +561,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/workbench/workbench_surface.contract.toml",
@@ -574,7 +574,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/canon/constitution_v1.md",
@@ -587,7 +587,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/canon/glossary_v1.md",
@@ -600,7 +600,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/development/command_result_view_slice.md",
@@ -613,7 +613,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/development/workbench_validation_slice.md",
@@ -626,7 +626,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/repo/audits/PRESENTATION_CONTRACT_01.md",
@@ -639,7 +639,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
@@ -652,7 +652,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git status --porcelain",
@@ -665,7 +665,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 22,
+        "count": 30,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git status --short --branch",
@@ -690,7 +690,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git branch --show-current",
@@ -703,7 +703,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd .aide/queue/current.toml",
@@ -716,7 +716,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd AGENTS.md",
@@ -729,7 +729,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/capability/capability.registry.json",
@@ -742,7 +742,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/command/command_surface.contract.toml",
@@ -755,7 +755,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 6,
+        "count": 14,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/diagnostic/diagnostic_code.registry.json",
@@ -768,7 +768,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/diagnostic/diagnostic_severity.registry.json",
@@ -781,7 +781,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/module/module_surface.contract.toml",
@@ -794,7 +794,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/project_graph/project_graph_model.contract.toml",
@@ -807,7 +807,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 6,
+        "count": 14,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/refusal/refusal_code.registry.json",
@@ -820,7 +820,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/service/service.contract.toml",
@@ -833,7 +833,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd contracts/workbench/workbench_surface.contract.toml",
@@ -846,7 +846,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/canon/constitution_v1.md",
@@ -859,7 +859,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/canon/glossary_v1.md",
@@ -872,7 +872,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/development/command_result_view_slice.md",
@@ -885,7 +885,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/development/workbench_validation_slice.md",
@@ -898,7 +898,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/repo/audits/PRESENTATION_CONTRACT_01.md",
@@ -911,7 +911,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git ls-tree c92b386027890c1bbf14aef6eaafe0357b7b03dd docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
@@ -924,7 +924,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git remote get-url origin",
@@ -937,7 +937,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-list --count HEAD..origin/main",
@@ -950,7 +950,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-parse --show-toplevel",
@@ -963,7 +963,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-parse HEAD^{commit}",
@@ -976,7 +976,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-parse c92b386027890c1bbf14aef6eaafe0357b7b03dd^{commit}",
@@ -989,7 +989,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git rev-parse origin/main^{commit}",
@@ -1002,7 +1002,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 41,
+        "count": 57,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:.aide/queue/current.toml",
@@ -1015,7 +1015,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:AGENTS.md",
@@ -1028,7 +1028,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/capability/capability.registry.json",
@@ -1041,7 +1041,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 39,
+        "count": 47,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/command/command_surface.contract.toml",
@@ -1054,7 +1054,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 76,
+        "count": 84,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/diagnostic/diagnostic_code.registry.json",
@@ -1067,7 +1067,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 72,
+        "count": 80,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/diagnostic/diagnostic_severity.registry.json",
@@ -1080,7 +1080,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/module/module_surface.contract.toml",
@@ -1093,7 +1093,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/project_graph/project_graph_model.contract.toml",
@@ -1106,7 +1106,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 76,
+        "count": 84,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/refusal/refusal_code.registry.json",
@@ -1119,7 +1119,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/service/service.contract.toml",
@@ -1132,7 +1132,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:contracts/workbench/workbench_surface.contract.toml",
@@ -1145,7 +1145,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/canon/constitution_v1.md",
@@ -1158,7 +1158,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/canon/glossary_v1.md",
@@ -1171,7 +1171,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/development/command_result_view_slice.md",
@@ -1184,7 +1184,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/development/workbench_validation_slice.md",
@@ -1197,7 +1197,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/repo/audits/PRESENTATION_CONTRACT_01.md",
@@ -1210,7 +1210,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 37,
+        "count": 45,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git show c92b386027890c1bbf14aef6eaafe0357b7b03dd:docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
@@ -1223,7 +1223,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 4,
+        "count": 12,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git status --porcelain",
@@ -1236,7 +1236,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 22,
+        "count": 30,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git status --short --branch",
@@ -1247,7 +1247,7 @@
         "target": "Dominium"
       }
     ],
-    "raw_observation_count": 874,
+    "raw_observation_count": 1226,
     "raw_observation_sample": [
       {
         "allowed": true,
@@ -1801,7 +1801,7 @@
       }
     ],
     "raw_trace_ref": "operation-trace.json",
-    "raw_trace_sha256": "sha256:1b06125c362a7da16b1c759c3db76a8693d27e7010c1d846824f1c6658224b02",
+    "raw_trace_sha256": "sha256:b0229be914e03987595a43098a3064bd28947fef75f02d1e56c73adabb25ad4d",
     "required_operation_families": [
       "git_reads",
       "filesystem_writes",
@@ -1816,10 +1816,10 @@
   "operation_trace_ref": ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
   "output_hashes": {
     ".aide/reports/dominium-readonly-seam-v0/projection-index.json": "sha256:b89c95f006387649a3f80af69c1154f66f72a6e427eb6ce8485570ca804c02c6",
-    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json": "sha256:3848d0a75d187386d1626f67b2ef48b01aef75f29407beb30427b546b2580cda",
-    ".aide/reports/dominium-readonly-seam-v0/validation.json": "sha256:c5bc5b7c7faf00409ac8ac4acac55795497c84eba8f93b26c55d46e787ea6e5e"
+    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json": "sha256:189b86153dc8bfee7af8b2aff2e3146b0fb79498ca388d386ffb4237edeb2349",
+    ".aide/reports/dominium-readonly-seam-v0/validation.json": "sha256:939923494fa6836ca3d9c7aec984cf38f0bedfe18a4118083816ca10521da93e"
   },
-  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
   "record_counts": {
     "fixtures": 43,
     "records": 42,
@@ -1828,6 +1828,6 @@
   "schema_version": "aide.dominium-readonly-seam.demo-result.v0",
   "source_mutation_count": 0,
   "status": "PASS_WITH_WARNINGS",
-  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
   "validation_result": "PASS_WITH_WARNINGS"
 }

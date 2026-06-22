@@ -1,0 +1,22 @@
+{
+  "report_root": ".aide/reports/dominium-readonly-seam-v0-repair-04",
+  "reports": [
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/conformance-evidence-convergence.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/explicit-non-capabilities.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/extension-boundary.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/finding-disposition.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/fixture-replay-convergence.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/next-task-prompt.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/operation-auditability-convergence.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/portability-output-convergence.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/remaining-risks.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/repair-report.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/schema-convergence.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/self-adversarial-check.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/status.md",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/test-summary.json",
+    ".aide/reports/dominium-readonly-seam-v0-repair-04/typed-refusal-convergence.md"
+  ],
+  "schema_version": "aide.evidence-manifest.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04"
+}

@@ -1748,6 +1748,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/prompt.md
     evidence: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence
     description: Check-only independent adversarial verification for AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03 at commit 84a154c2f03b304a987a9f017cc48a0b22c3f6d6. Found 12 material assertions, stops at needs_review with REQUEST_CHANGES, and recommends exactly AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04. Does not repair the seam, modify production code/schema/tests/fixtures/current seam outputs/Repair 03 reports, mutate Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, or begin the WorkUnit validation slice.
+  - id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+    status: needs_review
+    planning_state: repair_implemented
+    result: PASS_WITH_WARNINGS
+    title: Repair Dominium Read-Only Seam v0 Repair 04
+    task: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04/evidence
+    description: Targeted Repair 04 for the 12 material findings from AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03: schema union and authority-extension hardening, strict production fixture replay, actual CLI conformance probes, no-write evidence around actual seam operations, exercised guard evidence, semantic operation aggregates, complete portability child output comparison, and arbitrary unsupported-verb typed refusals. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04 only. Does not modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, accept the seam, or begin the WorkUnit validation slice.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

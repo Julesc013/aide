@@ -1,0 +1,16 @@
+{
+  "demo_status": "PASS_WITH_WARNINGS",
+  "guard_probe_count": 6,
+  "material_findings_authorized": 12,
+  "material_findings_repaired": 12,
+  "non_capabilities_preserved": true,
+  "operation_trace_observations": 1226,
+  "portability_status": "PASS",
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.dominium-readonly-seam.repair-04-report.v0",
+  "source_check_commit": "8d5cb86fa7f82d3da9d4856fa43b7102e0f16286",
+  "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "validation_status": "PASS_WITH_WARNINGS"
+}

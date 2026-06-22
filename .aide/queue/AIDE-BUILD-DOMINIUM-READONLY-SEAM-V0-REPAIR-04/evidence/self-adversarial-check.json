@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "finding_id": "schema.kind_specific_defs_present",
+      "passed": true
+    },
+    {
+      "finding_id": "schema.authority_extensions_bounded",
+      "passed": true
+    },
+    {
+      "finding_id": "fixture.production_requires_value",
+      "passed": true
+    },
+    {
+      "finding_id": "fixture.production_rejects_unicode_decimal_indexes",
+      "passed": true
+    },
+    {
+      "finding_id": "fixture.production_forbidden_key_set_complete",
+      "passed": true
+    },
+    {
+      "finding_id": "conformance.unsupported_uses_actual_cli_dispatch",
+      "passed": true
+    },
+    {
+      "finding_id": "conformance.no_write_surrounds_actual_operations",
+      "passed": true
+    },
+    {
+      "finding_id": "conformance.guard_evidence_is_exercised",
+      "passed": true
+    },
+    {
+      "finding_id": "operation.aggregate_key_preserves_semantics",
+      "passed": true
+    },
+    {
+      "finding_id": "operation.guard_report_is_not_static",
+      "passed": true
+    },
+    {
+      "finding_id": "portability.required_child_output_set_complete",
+      "passed": true
+    },
+    {
+      "finding_id": "cli.unsupported_verbs_typed_refusal",
+      "passed": true
+    }
+  ],
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "result": "PASS",
+  "schema_version": "aide.dominium-readonly-seam.repair-04.self-adversarial-check.v0",
+  "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04"
+}

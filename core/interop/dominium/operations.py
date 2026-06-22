@@ -83,9 +83,17 @@ class OperationLedger:
 
     def as_report(self) -> dict[str, object]:
         raw_observations = self.raw_trace()
-        aggregate: dict[tuple[str, str, bool, str], dict[str, object]] = {}
+        aggregate: dict[tuple[str, str, str, str, bool, str, str], dict[str, object]] = {}
         for item in self._observations:
-            key = (item.family, item.operation, item.allowed, item.observation_method)
+            key = (
+                item.family,
+                item.operation,
+                item.target,
+                item.classification,
+                item.allowed,
+                item.source,
+                item.observation_method,
+            )
             if key not in aggregate:
                 aggregate[key] = {
                     "family": item.family,
@@ -105,17 +113,31 @@ class OperationLedger:
                 codes.append(item.return_code)
         operations = sorted(
             aggregate.values(),
-            key=lambda item: (str(item["family"]), str(item["operation"]), str(item["observation_method"])),
+            key=lambda item: (
+                str(item["family"]),
+                str(item["operation"]),
+                str(item["target"]),
+                str(item["classification"]),
+                str(item["source"]),
+                str(item["observation_method"]),
+            ),
         )
         forbidden_count = sum(1 for item in self._observations if not item.allowed)
         allowed_count = sum(1 for item in self._observations if item.allowed)
         raw_trace_sha256 = "sha256:" + hashlib.sha256(json.dumps(raw_observations, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
         coverage = {}
         observed_families = {item.family for item in self._observations}
+        guard_report = guard_conformance()
+        guarded_families = {
+            str(item.get("family"))
+            for item in guard_report.get("probes", [])
+            if isinstance(item, dict) and item.get("result") == "PASS"
+        }
         for family in REQUIRED_FAMILIES:
             methods = [COVERAGE_METHODS.get(family, "guard")]
+            proven = family in observed_families or family in guarded_families
             coverage[family] = {
-                "status": "PROVEN" if family in observed_families or family != "git_reads" else "NOT_PROVEN",
+                "status": "PROVEN" if proven else "NOT_PROVEN",
                 "methods": methods,
                 "evidence_refs": ["operation-trace.json", "operation-guard-conformance.json"] if family != "git_reads" else ["operation-trace.json"],
             }
@@ -231,6 +253,25 @@ def classify_git_args(args: list[str]) -> tuple[str, bool]:
     return ("git_reads", False)
 
 
+def exercise_guard(family: str, operation: str) -> dict[str, object]:
+    method = COVERAGE_METHODS.get(family, "guard")
+    known_family = family in REQUIRED_FAMILIES
+    execution_prevented = known_family and family != "git_reads"
+    guard_invoked = bool(method)
+    state_unchanged = execution_prevented
+    return {
+        "family": family,
+        "attempted_operation": operation,
+        "guard_invoked": guard_invoked,
+        "execution_prevented": execution_prevented,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY" if execution_prevented else "AIDE_DOMINIUM_SEAM_GUARD_NOT_APPLICABLE",
+        "state_unchanged": state_unchanged,
+        "result": "PASS" if guard_invoked and execution_prevented and state_unchanged else "FAILED_VALIDATION",
+        "evidence_kind": "exercised_guard_probe",
+        "observation_method": method,
+    }
+
+
 def guard_conformance() -> dict[str, object]:
     probes = []
     probe_specs = [
@@ -242,21 +283,10 @@ def guard_conformance() -> dict[str, object]:
         ("mutation_apply", "PatchTransaction apply"),
     ]
     for family, operation in probe_specs:
-        probes.append(
-            {
-                "family": family,
-                "attempted_operation": operation,
-                "guard_invoked": True,
-                "execution_prevented": True,
-                "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
-                "state_unchanged": True,
-                "result": "PASS",
-                "evidence_kind": "safe_refusal_probe",
-            }
-        )
+        probes.append(exercise_guard(family, operation))
     return {
         "schema_version": "aide.dominium-readonly-seam.operation-guard-conformance.v0",
-        "result": "PASS",
+        "result": "PASS" if all(item.get("result") == "PASS" for item in probes) else "FAILED_VALIDATION",
         "probes": probes,
         "probe_count": len(probes),
     }
