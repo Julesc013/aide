@@ -1,10 +1,10 @@
 {
   "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "base_bundle_sha256": "sha256:189b86153dc8bfee7af8b2aff2e3146b0fb79498ca388d386ffb4237edeb2349",
+  "base_bundle_sha256": "sha256:d9ff731de101a804ad954d4443ddbca3b8e1ce379858b54e1739c17e9f4e4bbe",
   "expected_error_codes": [
     "cardinality.singleton"
   ],
-  "invalid_bundle_sha256": "sha256:a8b4f6f9d1fa4805e3e37817dc1767100c8275a6a038933c992aa9f09d32aebb",
+  "invalid_bundle_sha256": "sha256:f9935d55e3e195074f3d4865163eae3e6a15025c93f51456ca279e66eff6f76a",
   "name": "second_host_capability_set",
   "operations": [
     {

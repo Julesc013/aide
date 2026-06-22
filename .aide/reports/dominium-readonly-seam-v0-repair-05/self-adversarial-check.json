@@ -1,0 +1,106 @@
+{
+  "primary_assertions": [
+    {
+      "evidence_refs": [
+        "schema-surface-audit.json"
+      ],
+      "expected": {
+        "unclassified_object_count": 0,
+        "unintentionally_open_object_count": 0
+      },
+      "id": "schema.open_object_surfaces_bounded",
+      "observed": {
+        "unclassified_object_count": 0,
+        "unintentionally_open_object_count": 0
+      },
+      "result": "PASS"
+    },
+    {
+      "evidence_refs": [
+        "extension-authority-closure.md"
+      ],
+      "expected": "denied semantic extension variants fail with extension.authority_change and benign variants pass",
+      "id": "extension.authority_names_semantically_refused",
+      "observed": {
+        "benign_ok": true,
+        "failures": []
+      },
+      "result": "PASS"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+      ],
+      "expected": "every required guard family reaches guard and prevents injected executor",
+      "id": "conformance.guard_evidence_exercised",
+      "observed": {
+        "passed_count": 6,
+        "probe_count": 6,
+        "result": "PASS"
+      },
+      "result": "PASS"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+      ],
+      "expected": "nonce-bearing dispatcher report with recomputable digest",
+      "id": "operation.guard_report_is_not_static",
+      "observed": {
+        "nonce": "repair05-self-check",
+        "probe_count": 6,
+        "report_digest_matches": true
+      },
+      "result": "PASS"
+    }
+  ],
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
+  "result": "PASS",
+  "sampled_prior_invariants": [
+    {
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "id": "schema record discrimination",
+      "result": "PASS"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/fixture-manifest.json"
+      ],
+      "id": "fixture strictness",
+      "result": "PASS"
+    },
+    {
+      "evidence_refs": [
+        ".aide/interop/dominium/conformance-evidence.json"
+      ],
+      "id": "actual CLI typed refusal",
+      "result": "PASS"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "id": "no-write proof",
+      "result": "PASS"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/operation-trace.json"
+      ],
+      "id": "operation trace integrity",
+      "result": "PASS"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/portability-result.json"
+      ],
+      "id": "portability complete output set",
+      "result": "PASS"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.repair-05-self-check.v0",
+  "supporting_only": true,
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05"
+}

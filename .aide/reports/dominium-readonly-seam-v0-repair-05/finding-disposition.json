@@ -1,0 +1,38 @@
+[
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      "schema-surface-audit.json"
+    ],
+    "finding_id": "schema.open_object_surfaces_bounded",
+    "original_observed_defect": "Public schema had unclassified/open object surfaces outside explicit extension containers.",
+    "repair_05_change": "Schema surface audit classifies every object as closed canonical, typed dynamic map, or explicit ExtensionMap; generic Record no longer exposes an open spec object."
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      "extension-authority-closure.md"
+    ],
+    "finding_id": "extension.authority_names_semantically_refused",
+    "original_observed_defect": "Authority-changing extension names such as apply_allowed and release_allowed were not semantically refused.",
+    "repair_05_change": "Validation now normalizes extension keys with NFKC/camel/separator tokenization and emits extension.authority_change for denied semantics."
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+    ],
+    "finding_id": "conformance.guard_evidence_exercised",
+    "original_observed_defect": "Guard evidence was not proven through a real dispatcher with injected executor non-execution.",
+    "repair_05_change": "GuardRequest/dispatch_guarded_request now reaches family guards, refuses before executor invocation, and records state digests and typed reasons."
+  },
+  {
+    "disposition": "REPAIRED_PENDING_INDEPENDENT_CHECK",
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+    ],
+    "finding_id": "operation.guard_report_is_not_static",
+    "original_observed_defect": "operation-guard-conformance.json could be assembled from static successful dictionaries.",
+    "repair_05_change": "Guard report is generated from dispatcher decisions, includes nonce-capable request IDs, reconciled counts, and a recomputable report digest."
+  }
+]

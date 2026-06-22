@@ -1,73 +1,205 @@
 {
+  "failed_count": 0,
+  "families": [
+    "branch_worktree_ref_ops",
+    "filesystem_writes",
+    "mutation_apply",
+    "network_attempts",
+    "provider_model_attempts",
+    "worker_dispatch"
+  ],
+  "passed_count": 6,
   "probe_count": 6,
   "probes": [
     {
-      "attempted_operation": "write Dominium source file",
+      "allowed": false,
       "evidence_kind": "exercised_guard_probe",
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/guard-filesystem_writes-repair05"
+      ],
       "execution_prevented": true,
+      "executor_injected": true,
+      "executor_invoked": false,
       "family": "filesystem_writes",
+      "guard_id": "dominium-readonly-seam-filesystem_writes-guard",
       "guard_invoked": true,
+      "guard_reached": true,
+      "message": "write Dominium source file [repair05] refused by Dominium read-only seam guard",
+      "metadata": {
+        "nonce": "repair05"
+      },
       "observation_method": "path_guard_plus_before_after_tree_hash",
+      "operation": "write Dominium source file [repair05]",
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "guard-filesystem_writes-repair05",
+      "requested_effect": "forbidden side effect",
       "result": "PASS",
+      "source": "dominium_readonly_seam_guard_dispatcher",
+      "state_after_digest": "sha256:5f75242946f619189f7fffecad46989f4463c5c8d73674b165cde2fda3effc72",
+      "state_before_digest": "sha256:5f75242946f619189f7fffecad46989f4463c5c8d73674b165cde2fda3effc72",
       "state_unchanged": true,
+      "subprocess_started": false,
+      "target": ".aide/fixtures/dominium-readonly-seam/guard-probe/repair05.txt",
       "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
     },
     {
-      "attempted_operation": "git checkout repair-probe",
+      "allowed": false,
       "evidence_kind": "exercised_guard_probe",
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/guard-branch_worktree_ref_ops-repair05"
+      ],
       "execution_prevented": true,
+      "executor_injected": true,
+      "executor_invoked": false,
       "family": "branch_worktree_ref_ops",
+      "guard_id": "dominium-readonly-seam-branch_worktree_ref_ops-guard",
       "guard_invoked": true,
+      "guard_reached": true,
+      "message": "git checkout repair-probe [repair05] refused by Dominium read-only seam guard",
+      "metadata": {
+        "nonce": "repair05"
+      },
       "observation_method": "git_command_denylist",
+      "operation": "git checkout repair-probe [repair05]",
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "guard-branch_worktree_ref_ops-repair05",
+      "requested_effect": "forbidden side effect",
       "result": "PASS",
+      "source": "dominium_readonly_seam_guard_dispatcher",
+      "state_after_digest": "sha256:2285328e978f801b5f1295518edd0461f83bb76e9d9ac44fe1cd5df78a7df2fe",
+      "state_before_digest": "sha256:2285328e978f801b5f1295518edd0461f83bb76e9d9ac44fe1cd5df78a7df2fe",
       "state_unchanged": true,
+      "subprocess_started": false,
+      "target": "Dominium/branch_worktree_ref_ops/repair05",
       "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
     },
     {
-      "attempted_operation": "git fetch origin",
+      "allowed": false,
       "evidence_kind": "exercised_guard_probe",
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/guard-network_attempts-repair05"
+      ],
       "execution_prevented": true,
+      "executor_injected": true,
+      "executor_invoked": false,
       "family": "network_attempts",
+      "guard_id": "dominium-readonly-seam-network_attempts-guard",
       "guard_invoked": true,
+      "guard_reached": true,
+      "message": "git fetch origin [repair05] refused by Dominium read-only seam guard",
+      "metadata": {
+        "nonce": "repair05"
+      },
       "observation_method": "network_guard_plus_source_scan",
+      "operation": "git fetch origin [repair05]",
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "guard-network_attempts-repair05",
+      "requested_effect": "forbidden side effect",
       "result": "PASS",
+      "source": "dominium_readonly_seam_guard_dispatcher",
+      "state_after_digest": "sha256:6dd506b6b6480a7f2b573510205148c519c3d95b2670e0b598e6bf88335887fc",
+      "state_before_digest": "sha256:6dd506b6b6480a7f2b573510205148c519c3d95b2670e0b598e6bf88335887fc",
       "state_unchanged": true,
+      "subprocess_started": false,
+      "target": "Dominium/network_attempts/repair05",
       "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
     },
     {
-      "attempted_operation": "provider model call",
+      "allowed": false,
       "evidence_kind": "exercised_guard_probe",
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/guard-provider_model_attempts-repair05"
+      ],
       "execution_prevented": true,
+      "executor_injected": true,
+      "executor_invoked": false,
       "family": "provider_model_attempts",
+      "guard_id": "dominium-readonly-seam-provider_model_attempts-guard",
       "guard_invoked": true,
+      "guard_reached": true,
+      "message": "provider model call [repair05] refused by Dominium read-only seam guard",
+      "metadata": {
+        "nonce": "repair05"
+      },
       "observation_method": "dependency_guard_plus_source_scan",
+      "operation": "provider model call [repair05]",
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "guard-provider_model_attempts-repair05",
+      "requested_effect": "forbidden side effect",
       "result": "PASS",
+      "source": "dominium_readonly_seam_guard_dispatcher",
+      "state_after_digest": "sha256:aef79a6e6d2f2b58327f2d805234463106d5c015111840266421b304d43399ca",
+      "state_before_digest": "sha256:aef79a6e6d2f2b58327f2d805234463106d5c015111840266421b304d43399ca",
       "state_unchanged": true,
+      "subprocess_started": false,
+      "target": "Dominium/provider_model_attempts/repair05",
       "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
     },
     {
-      "attempted_operation": "AIDE worker dispatch",
+      "allowed": false,
       "evidence_kind": "exercised_guard_probe",
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/guard-worker_dispatch-repair05"
+      ],
       "execution_prevented": true,
+      "executor_injected": true,
+      "executor_invoked": false,
       "family": "worker_dispatch",
+      "guard_id": "dominium-readonly-seam-worker_dispatch-guard",
       "guard_invoked": true,
+      "guard_reached": true,
+      "message": "AIDE worker dispatch [repair05] refused by Dominium read-only seam guard",
+      "metadata": {
+        "nonce": "repair05"
+      },
       "observation_method": "subprocess_allowlist",
+      "operation": "AIDE worker dispatch [repair05]",
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "guard-worker_dispatch-repair05",
+      "requested_effect": "forbidden side effect",
       "result": "PASS",
+      "source": "dominium_readonly_seam_guard_dispatcher",
+      "state_after_digest": "sha256:b4e69e00beb65d1af327f3866b44c2ced5e9e14eaf8f6502f00972c3cd9b2718",
+      "state_before_digest": "sha256:b4e69e00beb65d1af327f3866b44c2ced5e9e14eaf8f6502f00972c3cd9b2718",
       "state_unchanged": true,
+      "subprocess_started": false,
+      "target": "Dominium/worker_dispatch/repair05",
       "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
     },
     {
-      "attempted_operation": "PatchTransaction apply",
+      "allowed": false,
       "evidence_kind": "exercised_guard_probe",
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/guard-mutation_apply-repair05"
+      ],
       "execution_prevented": true,
+      "executor_injected": true,
+      "executor_invoked": false,
       "family": "mutation_apply",
+      "guard_id": "dominium-readonly-seam-mutation_apply-guard",
       "guard_invoked": true,
+      "guard_reached": true,
+      "message": "PatchTransaction apply [repair05] refused by Dominium read-only seam guard",
+      "metadata": {
+        "nonce": "repair05"
+      },
       "observation_method": "capability_and_command_boundary",
+      "operation": "PatchTransaction apply [repair05]",
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "guard-mutation_apply-repair05",
+      "requested_effect": "forbidden side effect",
       "result": "PASS",
+      "source": "dominium_readonly_seam_guard_dispatcher",
+      "state_after_digest": "sha256:d1652fc7287e0254a13cffbfbd80c402325f56ab72402deec439414af9cdb31d",
+      "state_before_digest": "sha256:d1652fc7287e0254a13cffbfbd80c402325f56ab72402deec439414af9cdb31d",
       "state_unchanged": true,
+      "subprocess_started": false,
+      "target": "Dominium/mutation_apply/repair05",
       "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
     }
   ],
+  "report_digest": "sha256:9d2a364e9396f5b80a411eee837118e475cade710dfca669456784dd93afb622",
   "result": "PASS",
-  "schema_version": "aide.dominium-readonly-seam.operation-guard-conformance.v0"
+  "schema_version": "aide.dominium-readonly-seam.operation-guard-conformance.v0",
+  "unique_request_count": 6
 }

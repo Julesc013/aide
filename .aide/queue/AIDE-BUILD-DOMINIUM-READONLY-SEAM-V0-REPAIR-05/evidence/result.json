@@ -1,0 +1,20 @@
+{
+  "guard_report": ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json",
+  "material_findings_authorized": 4,
+  "material_findings_repaired": 4,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_surface_audit": "schema-surface-audit.json",
+  "schema_version": "aide.dominium-readonly-seam.repair-05-report.v0",
+  "self_adversarial_check": "self-adversarial-check.json",
+  "source_check_commit": "0dd7eabc10508fe4a15965495314a15eeb02e495",
+  "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "status": "needs_review",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
+  "warnings": [
+    "offline read-only seam",
+    "local Dominium may be behind remote",
+    "non-Windows platforms not separately executed",
+    "minimum Python 3.11 not separately executed"
+  ]
+}

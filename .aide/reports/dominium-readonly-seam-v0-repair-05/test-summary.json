@@ -1,0 +1,50 @@
+{
+  "all_individual_modules_passed": true,
+  "combined_discovery_run": false,
+  "modules": [
+    {
+      "duration_seconds": 1.778,
+      "module": "test_aide_dominium_readonly_seam_repair_05.py",
+      "portability_heavy": false,
+      "result": "PASS",
+      "tests": 7
+    },
+    {
+      "duration_seconds": 2.399,
+      "module": "test_aide_dominium_readonly_seam_repair_04.py",
+      "portability_heavy": false,
+      "result": "PASS",
+      "tests": 7
+    },
+    {
+      "duration_seconds": 634.946,
+      "module": "test_aide_dominium_readonly_seam_repair_03.py",
+      "portability_heavy": true,
+      "result": "PASS",
+      "tests": 15
+    },
+    {
+      "duration_seconds": 724.78,
+      "module": "test_aide_dominium_readonly_seam_repair_02.py",
+      "portability_heavy": true,
+      "result": "PASS",
+      "tests": 12
+    },
+    {
+      "duration_seconds": 228.257,
+      "module": "test_aide_dominium_readonly_seam_repair.py",
+      "portability_heavy": false,
+      "result": "PASS",
+      "tests": 20
+    },
+    {
+      "duration_seconds": 334.628,
+      "module": "test_aide_dominium_readonly_seam.py",
+      "portability_heavy": true,
+      "result": "PASS",
+      "tests": 111
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.repair-05-test-summary.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05"
+}

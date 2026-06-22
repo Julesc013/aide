@@ -1,0 +1,506 @@
+{
+  "object_count": 55,
+  "objects": [
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/",
+      "patternProperties": [],
+      "property_count": 15,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/ArtifactReferenceRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/ArtifactReferenceSpec",
+      "patternProperties": [],
+      "property_count": 11,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/CapabilityDeclaration",
+      "patternProperties": [],
+      "property_count": 4,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/BridgeCompatibilityPolicy",
+      "patternProperties": [],
+      "property_count": 4,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/BridgeOwnershipMap",
+      "patternProperties": [],
+      "property_count": 4,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/BridgeSourceOfTruth",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/Compatibility",
+      "patternProperties": [],
+      "property_count": 9,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/ContextDescriptorRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/ContextDescriptorSpec",
+      "patternProperties": [],
+      "property_count": 7,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/ContextDescriptorSpec/properties/sections/items",
+      "patternProperties": [],
+      "property_count": 2,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/DiagnosticProjectionRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/DiagnosticProjectionSpec",
+      "patternProperties": [],
+      "property_count": 11,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/DominiumBridgeManifestRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/DominiumBridgeManifestSpec",
+      "patternProperties": [],
+      "property_count": 9,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/DominiumBridgeManifestSpec/properties/command_mapping",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/EventEnvelopeRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/EventEnvelopeSpec",
+      "patternProperties": [],
+      "property_count": 8,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/EvidenceReferenceSetRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/EvidenceReferenceSetSpec",
+      "patternProperties": [],
+      "property_count": 5,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": "#/$defs/ExtensionValue",
+      "classification": "explicit ExtensionMap",
+      "json_pointer": "/$defs/ExtensionMap",
+      "patternProperties": [],
+      "property_count": 0,
+      "reason": "documented extension container",
+      "value_schema": "#/$defs/ExtensionValue"
+    },
+    {
+      "additionalProperties": "#/$defs/ExtensionValue",
+      "classification": "explicit ExtensionMap",
+      "json_pointer": "/$defs/ExtensionValue/oneOf/5",
+      "patternProperties": [],
+      "property_count": 0,
+      "reason": "documented extension container",
+      "value_schema": "#/$defs/ExtensionValue"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/FalseBoundaryStatus",
+      "patternProperties": [],
+      "property_count": 18,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/FalseStatus",
+      "patternProperties": [],
+      "property_count": 30,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/ForbiddenCapabilityDeclaration",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/Freshness",
+      "patternProperties": [],
+      "property_count": 11,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/HostCapabilitySetRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/HostCapabilitySetSpec",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/HostManifestRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/HostManifestSpec",
+      "patternProperties": [],
+      "property_count": 9,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/Metadata",
+      "patternProperties": [],
+      "property_count": 12,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/Producer",
+      "patternProperties": [],
+      "property_count": 2,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/ProjectionStatus",
+      "patternProperties": [],
+      "property_count": 30,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/Record",
+      "patternProperties": [],
+      "property_count": 4,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/RefusalProjectionRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/RefusalProjectionSpec",
+      "patternProperties": [],
+      "property_count": 13,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/QueueStatus",
+      "patternProperties": [],
+      "property_count": 6,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/RegistrySummary",
+      "patternProperties": [],
+      "property_count": 14,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/RegistrySummary/properties/source_registry_git_object",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/RepositoryIdentity",
+      "patternProperties": [],
+      "property_count": 8,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/SourceFile",
+      "patternProperties": [],
+      "property_count": 10,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/WorkspaceDescriptorRecord/allOf/1",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/$defs/WorkspaceDescriptorSpec",
+      "patternProperties": [],
+      "property_count": 8,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/authority_classification",
+      "patternProperties": [],
+      "property_count": 3,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/content_digests",
+      "patternProperties": [],
+      "property_count": 4,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": "#/$defs/Digest",
+      "classification": "typed dynamic map",
+      "json_pointer": "/properties/content_digests/properties/records",
+      "patternProperties": [],
+      "property_count": 0,
+      "reason": "dynamic keys have constrained values",
+      "value_schema": "#/$defs/Digest"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/cross_reference_index",
+      "patternProperties": [],
+      "property_count": 8,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/manifest",
+      "patternProperties": [],
+      "property_count": 11,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/omission_summary",
+      "patternProperties": [],
+      "property_count": 4,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/records",
+      "patternProperties": [],
+      "property_count": 10,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/registry_projection_summary",
+      "patternProperties": [],
+      "property_count": 2,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/source_snapshot",
+      "patternProperties": [],
+      "property_count": 12,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/source_snapshot/properties/authority_input_inventory/items",
+      "patternProperties": [],
+      "property_count": 4,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/source_snapshot/properties/read_only_operations",
+      "patternProperties": [],
+      "property_count": 6,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    },
+    {
+      "additionalProperties": false,
+      "classification": "closed canonical object",
+      "json_pointer": "/properties/validation_summary",
+      "patternProperties": [],
+      "property_count": 4,
+      "reason": "additionalProperties is false",
+      "value_schema": "closed"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.schema-surface-audit.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
+  "unclassified_object_count": 0,
+  "unclassified_objects": [],
+  "unintentionally_open_object_count": 0,
+  "unintentionally_open_objects": []
+}

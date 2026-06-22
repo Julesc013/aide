@@ -637,16 +637,31 @@
             "not": {
               "enum": [
                 "admitted",
+                "admission_granted",
+                "apply_allowed",
                 "authoritative",
+                "bridge_runtime_started",
                 "canonical",
+                "canonical_authority",
                 "command",
                 "command_invocation_implemented",
+                "direct_tool_invocation",
+                "host_runtime_started",
+                "model_enabled",
                 "network_allowed",
+                "network_enabled",
+                "patch_apply_enabled",
                 "private_tool_bypass",
                 "provider_enabled",
+                "promotion_allowed",
+                "release_allowed",
                 "runtime_started",
+                "runtime_enabled",
+                "service_started",
                 "trusted",
+                "trust_granted",
                 "workbench_is_authority",
+                "workbench_private_tool_access",
                 "mutation_allowed",
                 "worker_enabled"
               ]
@@ -1399,9 +1414,6 @@
         "metadata": {
           "$ref": "#/$defs/Metadata"
         },
-        "spec": {
-          "type": "object"
-        },
         "status": {
           "$ref": "#/$defs/ProjectionStatus"
         }
@@ -1550,9 +1562,7 @@
       "type": "object"
     },
     "QueueStatus": {
-      "additionalProperties": {
-        "$ref": "#/$defs/NonEmptyString"
-      },
+      "additionalProperties": false,
       "properties": {
         "alternate_next_task": {
           "$ref": "#/$defs/NonEmptyString"
@@ -1866,6 +1876,9 @@
         "records": {
           "additionalProperties": {
             "$ref": "#/$defs/Digest"
+          },
+          "propertyNames": {
+            "$ref": "#/$defs/ReferenceID"
           },
           "type": "object"
         },

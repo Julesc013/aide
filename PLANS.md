@@ -2119,3 +2119,15 @@
 - Exit Criteria: task stops at `needs_review`; if no material findings remain it records `PASS_WITH_WARNINGS` and recommends exactly `AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01`, otherwise it records `REQUEST_CHANGES` and recommends exactly `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05`.
 - Result: `REQUEST_CHANGES` with 4 material findings and 1 warning. The 12-finding closure matrix records 9 `CLOSED` and 3 `OPEN` dispositions, and the check recommends exactly `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05`.
 - Notes: This check does not repair implementation, alter public schemas/code/tests/fixtures/generated seam outputs/Repair 04 reports, modify Dominium, invoke Dominium product commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, accept the seam, create Repair 05, or begin the WorkUnit validation slice.
+
+### Queue ID: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+
+- Title: Final Repair Of Dominium Read-Only Seam v0
+- Status: Needs Review
+- Objective: repair only the four material blockers from `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04` without broadening the read-only seam or beginning acceptance.
+- Scope: public seam schema, `core/interop/dominium/**`, focused seam tests, generated seam artifacts, `.aide/reports/dominium-readonly-seam-v0-repair-05/**`, `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: Repair 04 check at `0dd7eabc10508fe4a15965495314a15eeb02e495` with `REQUEST_CHANGES`, 4 material findings, and `missing_evidence: 0`.
+- Verification Intent: schema surface audit, extension denylist matrix, real guard nonce probes, guard report digest recomputation, operation coverage derivation, focused Repair 05 tests, individual seam modules, seam CLI status/snapshot/project/validate/diff/demo, task inspect/evidence, broad validation, secret-like scan, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, repairs all four findings pending independent check, and recommends exactly `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05`.
+- Result: `PASS_WITH_WARNINGS`; four findings are recorded as `REPAIRED_PENDING_INDEPENDENT_CHECK`.
+- Notes: This repair does not accept the seam, create or run the Repair 05 check, begin acceptance, mutate Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, create branches/worktrees, mutate GitHub, release, promote, or begin the WorkUnit validation slice.

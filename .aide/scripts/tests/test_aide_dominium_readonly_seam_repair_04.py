@@ -140,6 +140,9 @@ class DominiumReadonlySeamRepair04Tests(unittest.TestCase):
         guard = operations.guard_conformance()
         self.assertEqual(guard["result"], "PASS")
         self.assertTrue(all(item["evidence_kind"] == "exercised_guard_probe" for item in guard["probes"]))
+        self.assertTrue(all(item["guard_reached"] for item in guard["probes"]))
+        self.assertTrue(all(item["executor_injected"] for item in guard["probes"]))
+        self.assertFalse(any(item["executor_invoked"] for item in guard["probes"]))
         portability_path = ROOT / models.PORTABILITY_RESULT_JSON
         if portability_path.exists():
             portability = load_json(portability_path)

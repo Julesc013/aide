@@ -7099,3 +7099,47 @@ Validation records diff checks, Repair 04 commit resolution, compileall, the ful
 - Material findings remain in schema open-object surfaces, authority-changing extension semantic rejection, exercised guard evidence, and guard-report staticness.
 - The first repair unittest module has one stale next-task routing assertion against the current Repair 04 route.
 - Repair 05 remains the selected next task and was not started.
+
+## Work Item: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+
+### Status
+
+Completed with warnings and awaiting independent review.
+
+### Changed Paths
+
+- `.aide/protocol/aide-dominium-readonly-seam-v0.schema.json`
+- `core/interop/dominium/**`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam*.py`
+- `.aide/fixtures/dominium-readonly-seam/**`
+- `.aide/interop/dominium/**`
+- `.aide/reports/dominium-readonly-seam-v0/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair-05/**`
+- `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The Repair 04 check found exactly four remaining material blockers and recommended this final bounded repair. The repair scope is frozen to those blockers and directly caused regression debt.
+
+### Implementation Notes
+
+- Added a recursive schema surface audit and closed the remaining public schema surface ambiguity by classifying every object as closed canonical, typed dynamic map, or explicit extension container.
+- Added deterministic extension-key normalization and semantic authority-change refusal with `extension.authority_change` while preserving legacy `schema.authority_extension` evidence.
+- Replaced static guard evidence with a real `GuardRequest` and `dispatch_guarded_request` path using injected executor sentinels, before/after state digests, typed refusals, and nonce-bearing proof.
+- Derived operation coverage from actual guard evidence instead of shortcut family status.
+- Updated stale next-task routing assertions and added a focused Repair 05 regression test module.
+- Regenerated current seam artifacts, fixtures, interop outputs, and Repair 05 reports/evidence.
+
+### Verification
+
+Validation records schema audit, focused Repair 05 and Repair 04 tests, seam `project` and `demo`, and the full final validation matrix in task-local evidence. The task stops at `needs_review` with `PASS_WITH_WARNINGS`.
+
+### Remaining Issues
+
+- Independent Repair 05 check is still required before acceptance.
+- Non-Windows platforms were not separately executed.
+- Minimum Python 3.11 was not separately executed.
+- The seam remains offline and read-only; runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.

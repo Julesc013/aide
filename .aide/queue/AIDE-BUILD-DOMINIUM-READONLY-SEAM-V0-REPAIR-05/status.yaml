@@ -1,0 +1,41 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+status: needs_review
+planning_state: repair_implemented
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-23
+summary: Repair 05 repaired the four material blockers from the Repair 04 check and is stopped for independent review.
+validation_status: PASS_WITH_WARNINGS
+source_check_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+source_check_commit: 0dd7eabc10508fe4a15965495314a15eeb02e495
+material_findings_authorized: 4
+material_findings_repaired: 4
+dominium_command_invoked: false
+dominium_modified: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+evidence:
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/finding-disposition.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/result.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/self-adversarial-check.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/test-summary.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/validation-commands.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/validation-results.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/blockers-or-deferrals.md
+warnings:
+  - The seam remains offline and read-only.
+  - Independent Repair 05 check is still required before acceptance.
+  - Non-Windows platforms were not separately executed.
+  - Minimum Python 3.11 was not separately executed.
+blockers: []

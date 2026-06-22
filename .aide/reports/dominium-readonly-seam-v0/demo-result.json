@@ -38,8 +38,14 @@
           "operation-trace.json",
           "operation-guard-conformance.json"
         ],
+        "guard_ids": [
+          "dominium-readonly-seam-branch_worktree_ref_ops-guard"
+        ],
         "methods": [
           "git_command_denylist"
+        ],
+        "request_ids": [
+          "guard-branch_worktree_ref_ops-repair05"
         ],
         "status": "PROVEN"
       },
@@ -48,8 +54,14 @@
           "operation-trace.json",
           "operation-guard-conformance.json"
         ],
+        "guard_ids": [
+          "dominium-readonly-seam-filesystem_writes-guard"
+        ],
         "methods": [
           "path_guard_plus_before_after_tree_hash"
+        ],
+        "request_ids": [
+          "guard-filesystem_writes-repair05"
         ],
         "status": "PROVEN"
       },
@@ -57,9 +69,11 @@
         "evidence_refs": [
           "operation-trace.json"
         ],
+        "guard_ids": [],
         "methods": [
           "command_wrapper_observation"
         ],
+        "request_ids": [],
         "status": "PROVEN"
       },
       "mutation_apply": {
@@ -67,8 +81,14 @@
           "operation-trace.json",
           "operation-guard-conformance.json"
         ],
+        "guard_ids": [
+          "dominium-readonly-seam-mutation_apply-guard"
+        ],
         "methods": [
           "capability_and_command_boundary"
+        ],
+        "request_ids": [
+          "guard-mutation_apply-repair05"
         ],
         "status": "PROVEN"
       },
@@ -77,8 +97,14 @@
           "operation-trace.json",
           "operation-guard-conformance.json"
         ],
+        "guard_ids": [
+          "dominium-readonly-seam-network_attempts-guard"
+        ],
         "methods": [
           "network_guard_plus_source_scan"
+        ],
+        "request_ids": [
+          "guard-network_attempts-repair05"
         ],
         "status": "PROVEN"
       },
@@ -87,8 +113,14 @@
           "operation-trace.json",
           "operation-guard-conformance.json"
         ],
+        "guard_ids": [
+          "dominium-readonly-seam-provider_model_attempts-guard"
+        ],
         "methods": [
           "dependency_guard_plus_source_scan"
+        ],
+        "request_ids": [
+          "guard-provider_model_attempts-repair05"
         ],
         "status": "PROVEN"
       },
@@ -97,8 +129,14 @@
           "operation-trace.json",
           "operation-guard-conformance.json"
         ],
+        "guard_ids": [
+          "dominium-readonly-seam-worker_dispatch-guard"
+        ],
         "methods": [
           "subprocess_allowlist"
+        ],
+        "request_ids": [
+          "guard-worker_dispatch-repair05"
         ],
         "status": "PROVEN"
       }
@@ -1816,10 +1854,10 @@
   "operation_trace_ref": ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
   "output_hashes": {
     ".aide/reports/dominium-readonly-seam-v0/projection-index.json": "sha256:b89c95f006387649a3f80af69c1154f66f72a6e427eb6ce8485570ca804c02c6",
-    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json": "sha256:189b86153dc8bfee7af8b2aff2e3146b0fb79498ca388d386ffb4237edeb2349",
-    ".aide/reports/dominium-readonly-seam-v0/validation.json": "sha256:939923494fa6836ca3d9c7aec984cf38f0bedfe18a4118083816ca10521da93e"
+    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json": "sha256:d9ff731de101a804ad954d4443ddbca3b8e1ce379858b54e1739c17e9f4e4bbe",
+    ".aide/reports/dominium-readonly-seam-v0/validation.json": "sha256:d554f687500fcbdd0699cc0564ff6972eed55109c1e2d4c0efed5bc64dd31cf3"
   },
-  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
   "record_counts": {
     "fixtures": 43,
     "records": 42,
@@ -1828,6 +1866,6 @@
   "schema_version": "aide.dominium-readonly-seam.demo-result.v0",
   "source_mutation_count": 0,
   "status": "PASS_WITH_WARNINGS",
-  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
   "validation_result": "PASS_WITH_WARNINGS"
 }

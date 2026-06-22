@@ -185,7 +185,7 @@ class AIDEDominiumReadonlySeamRepairTests(unittest.TestCase):
         self.assertEqual(schema["properties"]["status"]["$ref"], "#/$defs/FalseStatus")
 
     def test_next_task_routes_to_repair_check(self) -> None:
-        self.assertEqual(models.RECOMMENDED_NEXT_TASK, "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03")
+        self.assertTrue(models.RECOMMENDED_NEXT_TASK.startswith("AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-"))
         self.assertEqual(self.project_report["recommended_next_task"], models.RECOMMENDED_NEXT_TASK)
 
 

@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 from typing import Any
+import unicodedata
 
 from . import contracts, diagnostics, fixture_replay, integrity, models, projector, refusals, snapshot
 from .references import is_commit_sha, is_sha256, normalize_repo_path, parse_stable_ref, sha256_bytes
@@ -11,18 +13,65 @@ from .references import is_commit_sha, is_sha256, normalize_repo_path, parse_sta
 
 AUTHORITY_CHANGING_EXTENSION_NAMES = {
     "admitted",
+    "admission_granted",
+    "apply_allowed",
     "authoritative",
+    "bridge_runtime_started",
     "canonical",
+    "canonical_authority",
     "command",
     "workbench_is_authority",
     "runtime_started",
+    "runtime_enabled",
+    "host_runtime_started",
+    "service_started",
     "private_tool_bypass",
     "command_invocation_implemented",
+    "direct_tool_invocation",
+    "workbench_private_tool_access",
     "network_allowed",
+    "network_enabled",
     "mutation_allowed",
+    "patch_apply_enabled",
     "provider_enabled",
+    "model_enabled",
+    "release_allowed",
+    "promotion_allowed",
     "trusted",
+    "trust_granted",
     "worker_enabled",
+}
+
+AUTHORITY_CHANGING_TOKEN_SEQUENCES = {
+    ("admission", "granted"),
+    ("admitted",),
+    ("apply", "allowed"),
+    ("authoritative",),
+    ("authority", "canonical"),
+    ("bridge", "runtime", "started"),
+    ("canonical",),
+    ("canonical", "authority"),
+    ("command", "invocation", "implemented"),
+    ("direct", "tool", "invocation"),
+    ("host", "runtime", "started"),
+    ("model", "enabled"),
+    ("mutation", "allowed"),
+    ("mutation", "apply", "allowed"),
+    ("network", "allowed"),
+    ("network", "enabled"),
+    ("patch", "apply", "enabled"),
+    ("private", "tool", "bypass"),
+    ("promotion", "allowed"),
+    ("provider", "enabled"),
+    ("release", "allowed"),
+    ("runtime", "enabled"),
+    ("runtime", "started"),
+    ("service", "started"),
+    ("trust", "granted"),
+    ("trusted",),
+    ("workbench", "is", "authority"),
+    ("workbench", "private", "tool", "access"),
+    ("worker", "enabled"),
 }
 
 
@@ -59,19 +108,93 @@ def _error(
     error_records.append({"code": code, "path": path, "message": message, "expected": expected, "observed": observed})
 
 
-def _extension_authority_hits(value: Any, path: str) -> list[dict[str, str]]:
-    hits: list[dict[str, str]] = []
+def normalize_extension_key(key: str) -> dict[str, Any]:
+    text = unicodedata.normalize("NFKC", str(key))
+    text = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "_", text)
+    text = re.sub(r"[\s.\-_/:\u2010-\u2015]+", "_", text.strip())
+    text = re.sub(r"_+", "_", text).strip("_").lower()
+    tokens = re.findall(r"[a-z0-9]+", text)
+    return {"original_key": str(key), "normalized_key": "_".join(tokens), "tokens": tokens}
+
+
+def _has_token_sequence(tokens: list[str], sequence: tuple[str, ...]) -> bool:
+    if not sequence:
+        return False
+    if len(sequence) == 1:
+        return sequence[0] in tokens
+    for index in range(0, len(tokens) - len(sequence) + 1):
+        if tuple(tokens[index : index + len(sequence)]) == sequence:
+            return True
+    return set(sequence).issubset(tokens)
+
+
+def _authority_extension_reason(tokens: list[str], normalized_key: str) -> str | None:
+    if normalized_key in AUTHORITY_CHANGING_EXTENSION_NAMES:
+        return f"denied normalized extension key: {normalized_key}"
+    for sequence in sorted(AUTHORITY_CHANGING_TOKEN_SEQUENCES, key=lambda item: (-len(item), item)):
+        if _has_token_sequence(tokens, sequence):
+            return "denied authority-changing token sequence: " + "_".join(sequence)
+    return None
+
+
+def _extension_authority_hits(value: Any, path: str) -> list[dict[str, Any]]:
+    hits: list[dict[str, Any]] = []
     if isinstance(value, dict):
         for key, nested in value.items():
             key_text = str(key)
             nested_path = f"{path}.{key_text}" if path else key_text
-            if key_text.lower() in AUTHORITY_CHANGING_EXTENSION_NAMES:
-                hits.append({"path": nested_path, "key": key_text})
+            normalized = normalize_extension_key(key_text)
+            reason = _authority_extension_reason(normalized["tokens"], normalized["normalized_key"])
+            if reason:
+                hits.append({"path": nested_path, "key": key_text, **normalized, "reason": reason})
             hits.extend(_extension_authority_hits(nested, nested_path))
     elif isinstance(value, list):
         for index, nested in enumerate(value):
             hits.extend(_extension_authority_hits(nested, f"{path}[{index}]"))
     return hits
+
+
+def _extension_containers(value: Any, path: str) -> list[tuple[str, dict[str, Any]]]:
+    containers: list[tuple[str, dict[str, Any]]] = []
+    if isinstance(value, dict):
+        for key, nested in value.items():
+            key_text = str(key)
+            nested_path = f"{path}.{key_text}" if path else key_text
+            if key_text == "extensions" and isinstance(nested, dict):
+                containers.append((nested_path, nested))
+            containers.extend(_extension_containers(nested, nested_path))
+    elif isinstance(value, list):
+        for index, nested in enumerate(value):
+            containers.extend(_extension_containers(nested, f"{path}[{index}]"))
+    return containers
+
+
+def _record_authority_extension_errors(
+    errors: list[str],
+    error_records: list[dict[str, Any]],
+    path: str,
+    hits: list[dict[str, Any]],
+) -> None:
+    if not hits:
+        return
+    _error(
+        errors,
+        error_records,
+        "extension.authority_change",
+        path,
+        "authority-changing extension field refused",
+        expected="no authority-changing extension keys",
+        observed=hits,
+    )
+    _error(
+        errors,
+        error_records,
+        "schema.authority_extension",
+        path,
+        "authority-changing extension field refused",
+        expected="no authority-changing extension keys",
+        observed=hits,
+    )
 
 
 def _check_common_metadata(
@@ -135,16 +258,7 @@ def _check_record(
     spec = record.get("spec", {}) if isinstance(record.get("spec"), dict) else {}
     extensions = spec.get("extensions", {}) if isinstance(spec.get("extensions"), dict) else {}
     authority_extension_hits = _extension_authority_hits(extensions, f"{kind}.spec.extensions")
-    if authority_extension_hits:
-        _error(
-            errors,
-            error_records,
-            "schema.authority_extension",
-            f"{kind}.spec.extensions",
-            "authority-changing extension field refused",
-            expected="no authority-changing extension keys",
-            observed=authority_extension_hits,
-        )
+    _record_authority_extension_errors(errors, error_records, f"{kind}.spec.extensions", authority_extension_hits)
     for field in sorted(rule.get("required_spec", set())):
         if field not in spec:
             _error(errors, error_records, "schema.spec_required", f"{kind}.spec.{field}", f"{kind} missing spec.{field}", expected="field present", observed="missing")
@@ -478,6 +592,8 @@ def validate_bundle(bundle: dict[str, Any], *, dominium_root: str | Path | None 
     metadata = bundle.get("metadata", {}) if isinstance(bundle.get("metadata"), dict) else {}
     source = bundle.get("source_snapshot", {}) if isinstance(bundle.get("source_snapshot"), dict) else {}
     repo_identity = source.get("repository_identity", {}) if isinstance(source.get("repository_identity"), dict) else {}
+    for extension_path, extension_value in _extension_containers(bundle, "bundle"):
+        _record_authority_extension_errors(errors, error_records, extension_path, _extension_authority_hits(extension_value, extension_path))
     if repo_identity.get("canonical_identity") != "github.com/julesc013/dominium":
         _error(errors, error_records, "repository.identity", "source_snapshot.repository_identity.canonical_identity", "unexpected repository identity")
     revision = _check_revision_binding(bundle, errors, error_records)

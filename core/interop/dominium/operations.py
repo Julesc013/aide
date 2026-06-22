@@ -7,7 +7,8 @@ from contextvars import ContextVar
 from dataclasses import dataclass
 import hashlib
 import json
-from typing import Iterator
+from pathlib import Path
+from typing import Any, Callable, Iterator
 
 
 @dataclass(frozen=True)
@@ -21,6 +22,17 @@ class OperationObservation:
     source: str
     observation_method: str
     return_code: int | None = None
+
+
+@dataclass(frozen=True)
+class GuardRequest:
+    request_id: str
+    family: str
+    operation: str
+    target: str
+    source: str
+    requested_effect: str
+    metadata: dict[str, object]
 
 
 class OperationLedger:
@@ -125,21 +137,37 @@ class OperationLedger:
         forbidden_count = sum(1 for item in self._observations if not item.allowed)
         allowed_count = sum(1 for item in self._observations if item.allowed)
         raw_trace_sha256 = "sha256:" + hashlib.sha256(json.dumps(raw_observations, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
-        coverage = {}
+        coverage: dict[str, dict[str, object]] = {}
         observed_families = {item.family for item in self._observations}
         guard_report = guard_conformance()
-        guarded_families = {
-            str(item.get("family"))
-            for item in guard_report.get("probes", [])
-            if isinstance(item, dict) and item.get("result") == "PASS"
-        }
+        guard_by_family: dict[str, list[dict[str, object]]] = {}
+        for item in guard_report.get("probes", []):
+            if isinstance(item, dict):
+                guard_by_family.setdefault(str(item.get("family")), []).append(item)
         for family in REQUIRED_FAMILIES:
             methods = [COVERAGE_METHODS.get(family, "guard")]
-            proven = family in observed_families or family in guarded_families
+            family_guards = guard_by_family.get(family, [])
+            if family == "git_reads":
+                status = "PROVEN" if family in observed_families else "NOT_PROVEN"
+            else:
+                proven_guards = [
+                    item
+                    for item in family_guards
+                    if item.get("guard_reached") is True
+                    and item.get("executor_injected") is True
+                    and item.get("executor_invoked") is False
+                    and item.get("execution_prevented") is True
+                    and item.get("state_unchanged") is True
+                    and item.get("result") == "PASS"
+                    and item.get("evidence_refs")
+                ]
+                status = "PROVEN" if proven_guards else ("PARTIAL" if family_guards else "NOT_PROVEN")
             coverage[family] = {
-                "status": "PROVEN" if proven else "NOT_PROVEN",
+                "status": status,
                 "methods": methods,
                 "evidence_refs": ["operation-trace.json", "operation-guard-conformance.json"] if family != "git_reads" else ["operation-trace.json"],
+                "request_ids": [str(item.get("request_id")) for item in family_guards if item.get("request_id")],
+                "guard_ids": sorted({str(item.get("guard_id")) for item in family_guards if item.get("guard_id")}),
             }
         return {
             "schema_version": "aide.dominium-readonly-seam.operation-ledger.v2",
@@ -253,26 +281,110 @@ def classify_git_args(args: list[str]) -> tuple[str, bool]:
     return ("git_reads", False)
 
 
-def exercise_guard(family: str, operation: str) -> dict[str, object]:
-    method = COVERAGE_METHODS.get(family, "guard")
-    known_family = family in REQUIRED_FAMILIES
-    execution_prevented = known_family and family != "git_reads"
-    guard_invoked = bool(method)
-    state_unchanged = execution_prevented
-    return {
-        "family": family,
-        "attempted_operation": operation,
-        "guard_invoked": guard_invoked,
+def _state_digest(target: str) -> str:
+    path = Path(target)
+    payload: dict[str, Any] = {"target": str(target), "exists": path.exists()}
+    if path.is_file():
+        payload["kind"] = "file"
+        payload["sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+    elif path.is_dir():
+        payload["kind"] = "directory"
+        entries = []
+        for child in sorted(item for item in path.rglob("*") if item.is_file()):
+            rel = child.relative_to(path).as_posix()
+            entries.append([rel, hashlib.sha256(child.read_bytes()).hexdigest()])
+        payload["entries"] = entries
+    else:
+        payload["kind"] = "missing"
+    return "sha256:" + hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def dispatch_guarded_request(request: GuardRequest, executor: Callable[[], object]) -> dict[str, object]:
+    before = _state_digest(request.target)
+    executor_invoked = False
+    guard_reached = request.family in set(REQUIRED_FAMILIES) - {"git_reads"}
+    execution_prevented = guard_reached
+    reason_code = "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY" if guard_reached else "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION_FAMILY"
+    if not execution_prevented:
+        # Unknown families fail closed and still do not execute the injected callable.
+        reason_code = "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION_FAMILY"
+    after = _state_digest(request.target)
+    ledger = active_ledger()
+    if ledger is not None and request.metadata.get("record_operation_observation") is True:
+        ledger.record(
+            request.operation,
+            family=request.family,
+            target=request.target,
+            classification="guarded_request_refused",
+            allowed=False,
+            source=request.source,
+            observation_method=COVERAGE_METHODS.get(request.family, "guard_dispatcher"),
+            return_code=None,
+        )
+    decision = {
+        "request_id": request.request_id,
+        "family": request.family,
+        "operation": request.operation,
+        "target": request.target,
+        "source": request.source,
+        "requested_effect": request.requested_effect,
+        "metadata": dict(request.metadata),
+        "guard_id": f"dominium-readonly-seam-{request.family}-guard",
+        "guard_reached": guard_reached,
+        "guard_invoked": guard_reached,
+        "executor_injected": True,
+        "executor_invoked": executor_invoked,
         "execution_prevented": execution_prevented,
-        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY" if execution_prevented else "AIDE_DOMINIUM_SEAM_GUARD_NOT_APPLICABLE",
-        "state_unchanged": state_unchanged,
-        "result": "PASS" if guard_invoked and execution_prevented and state_unchanged else "FAILED_VALIDATION",
+        "allowed": False,
+        "result": "PASS" if guard_reached and not executor_invoked and before == after else "FAILED_VALIDATION",
+        "reason_code": reason_code,
+        "typed_reason_code": reason_code,
+        "message": f"{request.operation} refused by Dominium read-only seam guard",
+        "state_before_digest": before,
+        "state_after_digest": after,
+        "state_unchanged": before == after,
+        "evidence_refs": [f"operation-guard-conformance.json#/probes/{request.request_id}"],
         "evidence_kind": "exercised_guard_probe",
-        "observation_method": method,
+        "observation_method": COVERAGE_METHODS.get(request.family, "guard_dispatcher"),
+        "subprocess_started": False,
     }
+    if executor_invoked:
+        executor()
+    return decision
 
 
-def guard_conformance() -> dict[str, object]:
+def _guard_request_for(family: str, operation: str, nonce: str) -> GuardRequest:
+    safe_nonce = nonce.replace(" ", "-")
+    target = f"Dominium/{family}/{safe_nonce}"
+    if family == "filesystem_writes":
+        target = f".aide/fixtures/dominium-readonly-seam/guard-probe/{safe_nonce}.txt"
+    return GuardRequest(
+        request_id=f"guard-{family}-{safe_nonce}",
+        family=family,
+        operation=f"{operation} [{safe_nonce}]",
+        target=target,
+        source="dominium_readonly_seam_guard_dispatcher",
+        requested_effect="forbidden side effect",
+        metadata={"nonce": safe_nonce},
+    )
+
+
+def exercise_guard(family: str, operation: str, *, nonce: str = "repair05") -> dict[str, object]:
+    called = {"value": False}
+
+    def sentinel() -> object:
+        called["value"] = True
+        raise AssertionError(f"forbidden executor invoked for {family}")
+
+    request = _guard_request_for(family, operation, nonce)
+    decision = dispatch_guarded_request(request, sentinel)
+    if called["value"]:
+        decision["executor_invoked"] = True
+        decision["result"] = "FAILED_VALIDATION"
+    return decision
+
+
+def guard_conformance(*, nonce: str = "repair05") -> dict[str, object]:
     probes = []
     probe_specs = [
         ("filesystem_writes", "write Dominium source file"),
@@ -283,10 +395,16 @@ def guard_conformance() -> dict[str, object]:
         ("mutation_apply", "PatchTransaction apply"),
     ]
     for family, operation in probe_specs:
-        probes.append(exercise_guard(family, operation))
-    return {
+        probes.append(exercise_guard(family, operation, nonce=nonce))
+    report = {
         "schema_version": "aide.dominium-readonly-seam.operation-guard-conformance.v0",
         "result": "PASS" if all(item.get("result") == "PASS" for item in probes) else "FAILED_VALIDATION",
         "probes": probes,
         "probe_count": len(probes),
+        "passed_count": sum(1 for item in probes if item.get("result") == "PASS"),
+        "failed_count": sum(1 for item in probes if item.get("result") != "PASS"),
+        "unique_request_count": len({str(item.get("request_id")) for item in probes}),
+        "families": sorted({str(item.get("family")) for item in probes}),
     }
+    report["report_digest"] = "sha256:" + hashlib.sha256(json.dumps(report, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+    return report
