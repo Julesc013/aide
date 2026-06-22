@@ -1,0 +1,19 @@
+{
+  "focused_tests_passed": 158,
+  "forbidden_operation_count": 0,
+  "historical_root_preservation": "PASS",
+  "material_findings_authorized": 15,
+  "material_findings_repaired": 15,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.dominium-readonly-seam.repair-03-result.v0",
+  "source_mutation_count": 0,
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "The seam remains offline and read-only.",
+    "Local Dominium remains behind origin/main by 24 commits.",
+    "Independent Repair 03 check has not yet run.",
+    "Non-Windows platforms were not separately executed in this turn."
+  ]
+}

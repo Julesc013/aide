@@ -16,8 +16,8 @@ SCHEMA_VERSION = "aide.dominium-readonly-seam.v0"
 PROTOCOL_VERSION = "0.1.0"
 FEATURE_FLAG = "dominium_readonly_seam_v0"
 TASK_ID = "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01"
-REPAIR_TASK_ID = "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
-RECOMMENDED_NEXT_TASK = "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
+REPAIR_TASK_ID = "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
+RECOMMENDED_NEXT_TASK = "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
 DETERMINISTIC_TIMESTAMP = "2026-06-21T00:00:00+10:00"
 
 SCHEMA_PATH = Path(".aide/protocol/aide-dominium-readonly-seam-v0.schema.json")
@@ -35,12 +35,15 @@ CONFORMANCE_ASSERTIONS_JSON = REPORT_ROOT / "conformance-assertions.json"
 COMPATIBILITY_JSON = REPORT_ROOT / "compatibility.json"
 DEMO_RESULT_JSON = REPORT_ROOT / "demo-result.json"
 PORTABILITY_RESULT_JSON = REPORT_ROOT / "portability-result.json"
+OPERATION_TRACE_JSON = REPORT_ROOT / "operation-trace.json"
+OPERATION_GUARD_CONFORMANCE_JSON = REPORT_ROOT / "operation-guard-conformance.json"
 RISKS_MD = REPORT_ROOT / "risks.md"
 EXPLICIT_NON_CAPABILITIES_MD = REPORT_ROOT / "explicit-non-capabilities.md"
 NEXT_TASK_PROMPT_MD = REPORT_ROOT / "next-task-prompt.md"
 DIFF_JSON = REPORT_ROOT / "diff.json"
 FIXTURE_MANIFEST_JSON = REPORT_ROOT / "fixture-manifest.json"
 RUNTIME_DEPENDENCY_MANIFEST_JSON = INTEROP_ROOT / "runtime-dependency-manifest.json"
+CONFORMANCE_EVIDENCE_JSON = INTEROP_ROOT / "conformance-evidence.json"
 
 INTEROP_SEAM_BUNDLE_JSON = INTEROP_ROOT / "seam-bundle.json"
 INTEROP_BRIDGE_MANIFEST_JSON = INTEROP_ROOT / "dominium-bridge-manifest.json"
@@ -57,6 +60,8 @@ REQUIRED_REPORTS = [
     COMPATIBILITY_JSON,
     DEMO_RESULT_JSON,
     PORTABILITY_RESULT_JSON,
+    OPERATION_TRACE_JSON,
+    OPERATION_GUARD_CONFORMANCE_JSON,
     RISKS_MD,
     EXPLICIT_NON_CAPABILITIES_MD,
     NEXT_TASK_PROMPT_MD,
@@ -128,10 +133,12 @@ FALSE_STATUS_FIELDS = [
     "worker_executed",
     "patch_transaction_applied",
     "preview_or_apply_performed",
+    "source_repository_mutated",
     "target_repository_mutated",
     "branch_or_worktree_created",
     "github_mutation_performed",
     "release_or_promotion_performed",
+    "generated_projection_marked_canonical",
 ]
 
 WARNING_MESSAGES = [

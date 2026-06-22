@@ -34448,6 +34448,7 @@ def _print_dominium_seam_boundary_lines(data: dict[str, object]) -> None:
         "worker_executed",
         "patch_transaction_applied",
         "preview_or_apply_performed",
+        "source_repository_mutated",
         "target_repository_mutated",
         "branch_or_worktree_created",
         "github_mutation_performed",
@@ -38178,7 +38179,25 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
         command_parser = dominium_seam_subparsers.add_parser(name)
         add_dominium_source_args(command_parser)
         command_parser.set_defaults(handler=handler)
-    for name in ["run", "invoke", "execute", "apply", "write", "sync", "push", "serve", "connect", "dispatch"]:
+    for name in [
+        "run",
+        "invoke",
+        "execute",
+        "apply",
+        "write",
+        "sync",
+        "push",
+        "serve",
+        "connect",
+        "dispatch",
+        "fetch",
+        "pull",
+        "checkout",
+        "branch",
+        "worktree",
+        "publish",
+        "destroy",
+    ]:
         command_parser = dominium_seam_subparsers.add_parser(name)
         command_parser.set_defaults(handler=command_dominium_seam_unsupported, operation=name)
 

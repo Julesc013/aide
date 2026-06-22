@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import ast
 import shutil
 import json
 import os
@@ -78,18 +79,113 @@ def write_runtime_dependency_manifest(repo_root: str | Path) -> dict[str, Any]:
     return manifest
 
 
-def _copy_runtime_dependencies(source_root: Path, target_root: Path) -> None:
-    for entry in _runtime_dependency_entries(source_root):
+def _validate_manifest_entry(entry: dict[str, Any], seen: set[str]) -> str:
+    rel = str(entry.get("path", ""))
+    path = Path(rel)
+    if not rel or path.is_absolute() or ".." in path.parts or "\\" in rel:
+        raise ValueError(f"unsafe runtime dependency path: {rel}")
+    if rel in seen:
+        raise ValueError(f"duplicate runtime dependency path: {rel}")
+    seen.add(rel)
+    return rel
+
+
+def _validate_runtime_dependency_manifest(source_root: Path, manifest: dict[str, Any]) -> list[dict[str, Any]]:
+    payload = {key: value for key, value in manifest.items() if key != "manifest_digest"}
+    if manifest.get("manifest_digest") != integrity.stable_digest(payload):
+        raise ValueError("runtime dependency manifest digest mismatch")
+    seen: set[str] = set()
+    entries = []
+    for raw_entry in manifest.get("dependencies", []):
+        if not isinstance(raw_entry, dict):
+            raise ValueError("runtime dependency entry must be an object")
+        rel = _validate_manifest_entry(raw_entry, seen)
+        path = source_root / rel
+        if not path.exists() or not path.is_file():
+            raise FileNotFoundError(f"runtime dependency missing: {rel}")
+        if raw_entry.get("sha256") != sha256_file(path):
+            raise ValueError(f"runtime dependency hash mismatch: {rel}")
+        entries.append(dict(raw_entry))
+    if int(manifest.get("dependency_count", -1)) != len(entries):
+        raise ValueError("runtime dependency manifest count mismatch")
+    return entries
+
+
+def load_runtime_dependency_manifest(repo_root: Path) -> dict[str, Any]:
+    path = repo_root / models.RUNTIME_DEPENDENCY_MANIFEST_JSON
+    if not path.exists():
+        return write_runtime_dependency_manifest(repo_root)
+    manifest = models.read_json(path)
+    _validate_runtime_dependency_manifest(repo_root, manifest)
+    return manifest
+
+
+def _copy_runtime_dependencies_from_manifest(source_root: Path, target_root: Path, manifest: dict[str, Any]) -> None:
+    entries = _validate_runtime_dependency_manifest(source_root, manifest)
+    for entry in entries:
         rel = entry["path"]
         src = source_root / rel
         dst = target_root / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, dst)
+        if sha256_file(dst) != entry["sha256"]:
+            raise ValueError(f"copied runtime dependency hash mismatch: {rel}")
+
+
+def _copy_runtime_dependencies(source_root: Path, target_root: Path) -> None:
+    manifest = load_runtime_dependency_manifest(source_root)
+    _copy_runtime_dependencies_from_manifest(source_root, target_root, manifest)
+
+
+def local_import_closure(repo_root: str | Path) -> dict[str, Any]:
+    root = Path(repo_root)
+    declared = {str(item["path"]) for item in load_runtime_dependency_manifest(root).get("dependencies", []) if isinstance(item, dict)}
+    start_paths = [
+        ".aide/scripts/aide_lite.py",
+        "core/protocol/envelope.py",
+        *[path.relative_to(root).as_posix() for path in sorted((root / "core/interop/dominium").glob("*.py"))],
+    ]
+    derived: set[str] = set()
+    dynamic_imports: list[str] = []
+    for rel in start_paths:
+        path = root / rel
+        if not path.exists():
+            continue
+        derived.add(rel)
+        tree = ast.parse(path.read_text(encoding="utf-8"))
+        for node in ast.walk(tree):
+            module = ""
+            if isinstance(node, ast.ImportFrom) and node.module:
+                module = node.module
+            elif isinstance(node, ast.Import):
+                for alias in node.names:
+                    module = alias.name
+                    if module.startswith("core."):
+                        derived.add(module.replace(".", "/") + ".py")
+            if module.startswith("core."):
+                derived.add(module.replace(".", "/") + ".py")
+            if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id == "__import__":
+                dynamic_imports.append(rel)
+    derived = {rel for rel in derived if (root / rel).exists() and rel.startswith(("core/", ".aide/scripts/"))}
+    return {
+        "schema_version": "aide.dominium-readonly-seam.import-closure.v0",
+        "declared_dependencies": sorted(declared),
+        "derived_dependencies": sorted(derived),
+        "missing_declarations": sorted(derived - declared),
+        "unused_declarations": sorted(declared - derived),
+        "dynamic_imports": sorted(set(dynamic_imports)),
+        "optional_imports": ["tomllib"],
+        "undeclared_dependency_count": len(derived - declared),
+    }
 
 
 def _run_portable_cli_sequence(repo_root: Path, dominium_root: Path, revision: str | None, commands: list[str], cwd: Path) -> list[dict[str, Any]]:
     env = os.environ.copy()
+    env.pop("PYTHONPATH", None)
+    env.pop("PYTHONHOME", None)
+    env.pop("PYTHONUSERBASE", None)
     env["AIDE_DOMINIUM_PORTABILITY_CHILD"] = "1"
+    env["PYTHONNOUSERSITE"] = "1"
     script = r"""
 import contextlib
 import hashlib
@@ -140,6 +236,7 @@ sys.exit(0 if all(item["returncode"] == 0 for item in results) else 1)
 """
     argv = [
         sys.executable,
+        "-I",
         "-c",
         script,
         str(repo_root),
@@ -192,6 +289,7 @@ def _path_leak_count(repo_root: Path, forbidden_needles: list[str]) -> int:
 def portability_check(repo_root: str | Path, *, dominium_root: str | Path, revision: str | None = None) -> dict[str, Any]:
     source_root = Path(repo_root)
     dom_root = Path(dominium_root)
+    manifest = load_runtime_dependency_manifest(source_root)
     comparison_paths = [
         models.SEAM_BUNDLE_JSON,
         models.SOURCE_SNAPSHOT_JSON,
@@ -212,26 +310,43 @@ def portability_check(repo_root: str | Path, *, dominium_root: str | Path, revis
         roots = [base / "portable-a", base / "portable-b"]
         command_results: list[dict[str, Any]] = []
         output_hashes: list[dict[str, str]] = []
-        for temp_root in roots:
-            _copy_runtime_dependencies(source_root, temp_root)
+        required_sets = []
+        for index, temp_root in enumerate(roots):
+            _copy_runtime_dependencies_from_manifest(source_root, temp_root, manifest)
             cwd = base / f"cwd-{temp_root.name}"
             cwd.mkdir()
-            command_results.extend(_run_portable_cli_sequence(temp_root, dom_root, revision, ["status", "snapshot", "project", "validate", "diff", "demo"], cwd))
+            old_hashseed = os.environ.get("PYTHONHASHSEED")
+            os.environ["PYTHONHASHSEED"] = str(index + 1)
+            try:
+                command_results.extend(_run_portable_cli_sequence(temp_root, dom_root, revision, ["status", "snapshot", "project", "validate", "diff", "demo"], cwd))
+            finally:
+                if old_hashseed is None:
+                    os.environ.pop("PYTHONHASHSEED", None)
+                else:
+                    os.environ["PYTHONHASHSEED"] = old_hashseed
             output_hashes.append(_relative_output_hashes(temp_root, comparison_paths))
+            required_sets.append(sorted(path.as_posix() for path in comparison_paths if (temp_root / path).exists()))
         byte_equal = output_hashes[0] == output_hashes[1]
+        required_output_set_equal = required_sets[0] == required_sets[1] == sorted(path.as_posix() for path in comparison_paths)
         forbidden_needles = [str(source_root.resolve()), str(base.resolve()), os.path.expanduser("~")]
         path_leak_count = sum(_path_leak_count(root, forbidden_needles) for root in roots)
+        closure = local_import_closure(source_root)
         result = {
             "schema_version": "aide.dominium-readonly-seam.portability-result.v0",
             "task_id": models.REPAIR_TASK_ID,
-            "status": "PASS" if byte_equal and path_leak_count == 0 and all(item["returncode"] == 0 for item in command_results) else "FAILED_VALIDATION",
+            "status": "PASS" if byte_equal and required_output_set_equal and path_leak_count == 0 and closure["undeclared_dependency_count"] == 0 and all(item["returncode"] == 0 for item in command_results) else "FAILED_VALIDATION",
             "isolated_cli_roots": 2,
             "commands": command_results,
             "compared_outputs": [path.as_posix() for path in comparison_paths],
+            "required_output_sets": required_sets,
+            "required_output_set_equal": required_output_set_equal,
             "output_hashes_equal": byte_equal,
             "output_hashes": output_hashes,
             "absolute_path_leak_count": path_leak_count,
-            "dependency_manifest": runtime_dependency_manifest(source_root),
+            "dependency_manifest": manifest,
+            "import_closure": closure,
+            "undeclared_dependency_count": closure["undeclared_dependency_count"],
+            "sanitized_environment": {"PYTHONPATH_removed": True, "PYTHONHOME_removed": True, "PYTHONNOUSERSITE": "1", "python_isolated_mode": True},
             "recommended_next_task": models.RECOMMENDED_NEXT_TASK,
         }
         return result
@@ -340,14 +455,14 @@ def render_explicit_non_capabilities_markdown() -> str:
 def render_next_task_prompt() -> str:
     return "\n".join(
         [
-            "# AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+            "# AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
             "",
-            "Create and process `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02`.",
+            "Create and process `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`.",
             "",
             "Use `.aide/queue/index.yaml` as canonical queue truth.",
             "",
-            "Independently check `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02` without modifying the seam implementation.",
-            "Verify the ten remaining material gaps from `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01`, including registry provenance, kind-specific schema constraints, replayable negative fixtures, expectation-specific conformance evidence, operation-family instrumentation, and isolated CLI portability.",
+            "Independently check `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03` without modifying the seam implementation.",
+            "Verify the 15 Repair 02 findings are closed, including public schema hardening, strict fixture replay, conformance evidence, complete operation auditability, manifest-driven portability, and typed unsupported-operation refusals.",
             "",
             "If no material issue exists, recommend `AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01`.",
             "If a material defect remains, recommend one bounded follow-up repair task.",
@@ -396,6 +511,7 @@ def project_dominium_seam(
     validation_report = validation.validate_bundle(bundle, dominium_root=dom_root)
     conformance_report = conformance.conformance_results(bundle, validation_report, dominium_root=dom_root)
     conformance_assertion_report = conformance.conformance_assertions(bundle, validation_report, dominium_root=dom_root)
+    conformance_evidence = conformance.conformance_evidence(bundle, validation_report, dominium_root=dom_root, repo_root=root)
     compatibility = {
         "schema_version": "aide.dominium-readonly-seam.compatibility.v1",
         "status": "PASS",
@@ -410,6 +526,7 @@ def project_dominium_seam(
     models.write_json(root / models.VALIDATION_JSON, validation_report)
     models.write_json(root / models.CONFORMANCE_RESULTS_JSON, conformance_report)
     models.write_json(root / models.CONFORMANCE_ASSERTIONS_JSON, conformance_assertion_report)
+    models.write_json(root / models.CONFORMANCE_EVIDENCE_JSON, conformance_evidence)
     models.write_json(root / models.COMPATIBILITY_JSON, compatibility)
     if write_portability and os.environ.get("AIDE_DOMINIUM_PORTABILITY_CHILD") != "1":
         models.write_json(root / models.PORTABILITY_RESULT_JSON, portability_check(root, dominium_root=dom_root, revision=revision))
@@ -505,6 +622,13 @@ def run_dominium_seam_demo(repo_root: str | Path, *, dominium_root: str | Path |
     after_hashes = {item["path"]: item["sha256"] for item in after_snapshot["selected_files"]}
     source_mutation_count = sum(1 for key, value in before_hashes.items() if after_hashes.get(key) != value)
     operation_report = ledger.as_report()
+    raw_trace = {
+        "schema_version": "aide.dominium-readonly-seam.operation-trace.v0",
+        "task_id": models.REPAIR_TASK_ID,
+        "observations": ledger.raw_trace(),
+    }
+    raw_trace["raw_trace_sha256"] = operation_report["raw_trace_sha256"]
+    guard_report = operations.guard_conformance()
     result = {
         "schema_version": "aide.dominium-readonly-seam.demo-result.v0",
         "task_id": models.REPAIR_TASK_ID,
@@ -537,11 +661,15 @@ def run_dominium_seam_demo(repo_root: str | Path, *, dominium_root: str | Path |
         "allowed_operation_count": operation_report["allowed_operation_count"],
         "forbidden_operation_count": operation_report["forbidden_operation_count"],
         "operation_ledger": operation_report,
+        "operation_trace_ref": models.OPERATION_TRACE_JSON.as_posix(),
+        "operation_guard_conformance_ref": models.OPERATION_GUARD_CONFORMANCE_JSON.as_posix(),
         "dominium_status_before": before_status,
         "dominium_status_after": after_status,
         "recommended_next_task": models.RECOMMENDED_NEXT_TASK,
     }
     models.write_json(root / models.DEMO_RESULT_JSON, result)
+    models.write_json(root / models.OPERATION_TRACE_JSON, raw_trace)
+    models.write_json(root / models.OPERATION_GUARD_CONFORMANCE_JSON, guard_report)
     models.write_text(
         root / models.STATUS_MD,
         render_status_markdown(
@@ -608,4 +736,5 @@ def unsupported_operation_refusal(operation: str) -> dict[str, Any]:
         "message": f"dominium-seam {operation} is outside the read-only seam boundary",
         "retryable": False,
         "recommended_next_task": models.RECOMMENDED_NEXT_TASK,
+        **models.false_status(),
     }

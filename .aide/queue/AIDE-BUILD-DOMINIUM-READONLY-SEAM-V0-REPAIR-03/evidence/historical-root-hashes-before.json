@@ -1,0 +1,913 @@
+{
+  "schema_version": "aide.dominium-readonly-seam.repair-03.historical-root-hashes.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "phase": "before",
+  "generated_at": "2026-06-22",
+  "roots": [
+    {
+      "root": ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01",
+      "exists": true,
+      "file_count": 15,
+      "files": [
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\baseline.md",
+          "sha256": "sha256:b4c2d1c0cbb6dfa2190b40c485f90a36b822a12c63a9ebe81711ad733c13fdaa"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\changed-files.md",
+          "sha256": "sha256:ba2a4971273acbea14f357941ca1856866bc15118e3b46c4364ae812c303ad0a"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\dominium-immutability.md",
+          "sha256": "sha256:82d1402da0cf05e4f549715631288927905fd56fd1a80d3c73ff6bc657c53c72"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\evidence-manifest.json",
+          "sha256": "sha256:0617d20be1006a32d9116fca1b87a376d9ed7d4621054c62ed6313103bc86412"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\next-task-recommendation.md",
+          "sha256": "sha256:2d7fbb52698f26b91e7321569d342402a8c92b81c0fb0716f6c0bb666f84ea30"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\no-forbidden-ops.md",
+          "sha256": "sha256:611ff705c0e49b9c9c5bc2deece27d5e4da7fd9c97ee1433229ca7929cd97df3"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\remaining-risks.md",
+          "sha256": "sha256:ff00050e45d5f30c467421436f5437e66d11a65bfbb99ff59b0fab194c1e1238"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\result.json",
+          "sha256": "sha256:0e7c378a4b34323a15666ac5a2fda5e5c58284e5720c965a54af811d859d2da7"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\secret-scan.md",
+          "sha256": "sha256:8ef2efed69d16d5c603cb3f853e6d616dbfad8485b2a5b5e2051f3b0d9de5b0a"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\test-summary.md",
+          "sha256": "sha256:079104d5585bc0555ce5d3a95d3238effaf5808682609be553f9ec3ca33a90e0"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\validation.md",
+          "sha256": "sha256:d06889b81676ea795bf1b7ed61f4f21c3c48551be9eb8bde97327121e787e83a"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\ExecPlan.md",
+          "sha256": "sha256:15236c72859c771cd980d1ce275b91c1b25027924043d4491c0d83d5eba991d6"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\prompt.md",
+          "sha256": "sha256:d451360f8f5f79603f9101ee7de7edcbc85b0cef270e78fe51fa231103a4addc"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\status.yaml",
+          "sha256": "sha256:115321e9d32910ebe2c5493038129404ea9fd3f33b269778d26b0c964fbb95f0"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01\\task.yaml",
+          "sha256": "sha256:0994ded7dc05a9c9c7f66b4bb0b89fbb45f88ca5c574ab7931954c25da89fcfa"
+        }
+      ]
+    },
+    {
+      "root": ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+      "exists": true,
+      "file_count": 14,
+      "files": [
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\changed-files.md",
+          "sha256": "sha256:bfc60e1a6e10a5a380c3565885708033ce168c54fef6eca54f1671e3022f9e93"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\evidence-manifest.json",
+          "sha256": "sha256:4e4113849c24743dca2c51649a0663e92da6fb87dc961bfd1cec8c35bcb697cd"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\independent-check-results.json",
+          "sha256": "sha256:f79013c85ae89ff3d9eec113b466915a75cc06bfe4054fc16eea85d915cdc899"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\independent-negative-results.json",
+          "sha256": "sha256:6985c8739244f99a0ef752cce3e2e270039f6345efebbe04476015755b469633"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\next-task-recommendation.md",
+          "sha256": "sha256:a46a07b0558d66ce291647c84030c06427e1485fd3fd8874c920655ce024aaa6"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\remaining-risks.md",
+          "sha256": "sha256:6fba5f466e541609c2658192daea24d1c1c0e3f759c4028fdd221a9f86c96958"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\source-tree-hashes-after.json",
+          "sha256": "sha256:26cc3f05c8fce67d2523e5b7cc163a11772a82ed4de7d846e763866841e33ce2"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\source-tree-hashes-before.json",
+          "sha256": "sha256:26cc3f05c8fce67d2523e5b7cc163a11772a82ed4de7d846e763866841e33ce2"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\tools\\check_dominium_seam_independent.py",
+          "sha256": "sha256:663f9010b16f3d674a8d3197d8e07d01f4cfbcfeb4b42b611dd544a9a7f8695e"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\evidence\\validation.md",
+          "sha256": "sha256:a89f0a112de74a367ed7760f8139927c4f59423e8bd34bfd5fac3d4d7da30fd6"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\ExecPlan.md",
+          "sha256": "sha256:fc5968fff14f8a3aef60ba7e67a2b6a67e176f3cfca59a08afc6b28849f94b91"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\prompt.md",
+          "sha256": "sha256:672530b03a2f60586b97353009133cace5e1fccab59092da9ad7ec805af9e465"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\status.yaml",
+          "sha256": "sha256:d1509866404fbf4aba3cf9fa427280d10a260d6095b0934caec5639f443ad921"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01\\task.yaml",
+          "sha256": "sha256:7adaede668fbfc6f535f23543a1c5a9f89b18e48b36ca6fac8b611b8adb5e188"
+        }
+      ]
+    },
+    {
+      "root": ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
+      "exists": true,
+      "file_count": 16,
+      "files": [
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\baseline.md",
+          "sha256": "sha256:05e1ef9019a2a05cc70df434aafe2dc40c76780faacfbb6770c48a82b4724945"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\changed-files.md",
+          "sha256": "sha256:c5a86445cf7e08cca517293c31c3d4b7c7a4a7c5d5c8503bd3ba576d917b006c"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\dominium-immutability.md",
+          "sha256": "sha256:2270572b4ae66d964d8dda01f03923b210a99b989d1be5819309b5b16ded7970"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\evidence-manifest.json",
+          "sha256": "sha256:fd8800d7c9d53c7509c9fea9a1a2d4a6fc4c7cdab05bbb88102acf654adef2c7"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\finding-disposition.md",
+          "sha256": "sha256:e9bf3c28d185af71b85d894230f55d10bde3e0343b27c2062cd50b9d52de0502"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\next-task-recommendation.md",
+          "sha256": "sha256:297b730aa33f9dd913346a844fc3f5f7f529be8b6940a66c7c491117c4cc5285"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\no-forbidden-ops.md",
+          "sha256": "sha256:afbadf4ea8fec0dcd6d4b54a0dbe3d5297c533fcb99aa5326cb402cd8d09a464"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\remaining-risks.md",
+          "sha256": "sha256:28eee7ea96f89577b6718102a075485ae6cb59197c1976f58eb95c007b82f2e6"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\result.json",
+          "sha256": "sha256:28a698bd809c2841457800137db2a6adcc5365a88455fe638b3d0fbf5df8c15d"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\secret-scan.md",
+          "sha256": "sha256:ffc53543202ca161dd700bb9fdf6d1569e7cd0ba76f5ac0b80de4d0731319145"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\test-summary.md",
+          "sha256": "sha256:ae401fcda75a8edc96b980d2e78af5d8445d9e05f372e8d3bfa96115531fe2ed"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\validation.md",
+          "sha256": "sha256:af6dd9d2c44b50311908a363bcc8fcfb8428592f214cfb2881d28b7926ff0027"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\ExecPlan.md",
+          "sha256": "sha256:8ca105bacd7df2e3db9f77cfe80942779e8b485ceff8cffe218ea4d31344839a"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\prompt.md",
+          "sha256": "sha256:76b04007f431ef2b233b913f3a81646bb5cf2b3d3263ebb862963e1d8cc49a7c"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\status.yaml",
+          "sha256": "sha256:e8978f4d31bd859052be4148e754baab2ec6a9200d62a5ffaa5758c096ef1069"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\task.yaml",
+          "sha256": "sha256:2ca15c92abaa9d89649f01ed3b6c363d05e50d85067abb78c7f1f15da19c4567"
+        }
+      ]
+    },
+    {
+      "root": ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01",
+      "exists": true,
+      "file_count": 21,
+      "files": [
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\after-tree-state.json",
+          "sha256": "sha256:ea330ea79e9328f8b08154744d199df7c1ed7a214d7324e951edd769cf26230a"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\baseline.md",
+          "sha256": "sha256:57a2626724b49d59a8fbd288ccc8bd1b60663b33376ce42cc99a581f9d74de9d"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\before-tree-state.json",
+          "sha256": "sha256:ea330ea79e9328f8b08154744d199df7c1ed7a214d7324e951edd769cf26230a"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\changed-files.md",
+          "sha256": "sha256:1589d0f5e92b27dc7e18ebdddf036c1a0c07269181d576a406d633a07d696898"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\evidence-manifest.json",
+          "sha256": "sha256:b0b75e7cafa98f49a18f2c8aa963ddd3241860e4bfe463cec43229673f4458c7"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\finding-closure-matrix.json",
+          "sha256": "sha256:e3c329d4a899feb21c6e1e657694d661fe605d9fe11ee4b064e2708ab6d741d7"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\independent-conformance-results.json",
+          "sha256": "sha256:e9a5752c46014372442ee6de721a6e40882df9a90c01bff47539c03063f4c167"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\independent-negative-results.json",
+          "sha256": "sha256:dbace3f653494f5404b61b83972e0555fa13ab3cdd3917ada485f9f126f73565"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\independent-repair-check.json",
+          "sha256": "sha256:b06d5f69bf698cf7c0a5f3ccf4162958cb97910b4f3cd45ef7098f7cb9a7e967"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\next-task-recommendation.md",
+          "sha256": "sha256:4ea2eb9219ebd88a38ef1b0221f142bb3f76ddd6b49b3fad4ec3e6ee201b6ae9"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\remaining-risks.md",
+          "sha256": "sha256:36d3b747ddd0744fb06463454fddff2ae958554b330c1a2ffc4f6a3438312fd6"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\result.json",
+          "sha256": "sha256:495f4b2de394f1c7caee31a2739c76282237b8031f0adfc7e9a65917f05ebd68"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\tools\\check_repaired_seam.py",
+          "sha256": "sha256:90dc9468849d0851dcd1a3bcb938de29673b027d6c2587723d97c7d542cb7cd3"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\tools\\replay_negative_fixtures.py",
+          "sha256": "sha256:d3f58c74a0fc334cdb07c5e5a03d878938a90c3a4bbc1b2790ae51376f68ade2"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\tools\\verify_schema_contract.py",
+          "sha256": "sha256:b5487194fe867508382f16c0723090178241f1d33a11f0599f76eb7277390c99"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\tools\\verify_side_effect_boundary.py",
+          "sha256": "sha256:fb80d302366368c73e5d92fb08d90ab3402fe188853a3d8550ae41c94f237c22"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\evidence\\validation.md",
+          "sha256": "sha256:e1ff923dbb6d56c22feea3883a40a4cb5c545fa6fea5d34c3a97bcab893e5669"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\ExecPlan.md",
+          "sha256": "sha256:9116cb25f93c2649d4bbedc3f294dd4f6edbb3da44b8f79b1377e8e21e1229be"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\prompt.md",
+          "sha256": "sha256:017a315986c2f230f6f0ed34b7e77b237e2029ec1a5c3d53f9d97168f162c5c4"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\status.yaml",
+          "sha256": "sha256:c9ca44d4d96baf0c1fb8995ba567627ca575299c0ba97daafe86f4bcf52c69bd"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01\\task.yaml",
+          "sha256": "sha256:661de2cd10129e22bcc8f7f10c22da076bb6f5219c9d44deae580253af7643b9"
+        }
+      ]
+    },
+    {
+      "root": ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+      "exists": true,
+      "file_count": 16,
+      "files": [
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\baseline.md",
+          "sha256": "sha256:772230d6500460077cc04dd6b6dcee7314a7cf9de989f0386a342f9133f7b8e7"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\changed-files.md",
+          "sha256": "sha256:5450c495f713040efe335efd447fabed8d38a65dd0b0dd44c06c543f134d9866"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\dominium-immutability.md",
+          "sha256": "sha256:4504f3f60e82c317f838e8986319572f9409b3a36a4f4ca2decae35812dbe7a1"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\evidence-manifest.json",
+          "sha256": "sha256:4ee3582cbe4c159064b28d7bb198c53e7c6415567ecf7d1774cd626e5672309b"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\next-task-recommendation.md",
+          "sha256": "sha256:ddfead07b7673b4d145f3a32cba5c777e1bf80797ea985841f06f72eb3f4e6e3"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\no-forbidden-ops.md",
+          "sha256": "sha256:56a8e6b0ee851e340df2622b9c294799e83a292e4698b26be8e59055211a7e76"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\remaining-gap-disposition.md",
+          "sha256": "sha256:3aa7dd331ce60be02e64e6ab61845dc985291a670c0966313cdcac56b972380f"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\remaining-risks.md",
+          "sha256": "sha256:e35c1ffb5901c8b142162d7a17a73c0aab9f5048a529557f83dd0fb84e9ea060"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\result.json",
+          "sha256": "sha256:5ff5fcbd1283d7168ee575c1b34cf5bf5582d896d7e8bf939ed26c6d3ef6fb83"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\secret-scan.md",
+          "sha256": "sha256:aae34f8a8a3ec303d2c34162b95918e6f743af988bbac1a421ded17bc5c2ac19"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\test-summary.md",
+          "sha256": "sha256:354cf24bace668e6a123a64507e83bb52f9ff1381784865493b2c1c70447498f"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\validation.md",
+          "sha256": "sha256:7d9bcf6c241164c75bd9cf8e7ff56ebbe27492a626201e6ab2b2e88069c2080e"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\ExecPlan.md",
+          "sha256": "sha256:4dda2b8f7287df4ec4541bbcb0615e13d03bb617347ea63fbb1e7605c0189e81"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\prompt.md",
+          "sha256": "sha256:cd0544e276ccafccd11b27833f26f8556d3af1143aeb64ef769b001acbaeb943"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\status.yaml",
+          "sha256": "sha256:98a5ebb62433ebd5e6dbd17da64abad6eaa2b7f5ba4dcf410493fb74c5dffffc"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\task.yaml",
+          "sha256": "sha256:b786cdd6c79a39ff447855b1f3b8af48bd1520d6aa7ae108ae3b0376da5fcd51"
+        }
+      ]
+    },
+    {
+      "root": ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+      "exists": true,
+      "file_count": 34,
+      "files": [
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\after-dominium-state.json",
+          "sha256": "sha256:673ba3e5f54e04178dcc9839f7e9fd29773de5c9991928904658aae5e1a3eb42"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\before-dominium-state.json",
+          "sha256": "sha256:673ba3e5f54e04178dcc9839f7e9fd29773de5c9991928904658aae5e1a3eb42"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\changed-files.md",
+          "sha256": "sha256:5b1a01b672eca90eb7e74e6ace8c6ab3e438543ab551c823f36bc7b256c77587"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\conformance-semantic-results.json",
+          "sha256": "sha256:21041787dcd3a166227436ea655bb1cd9493b33e04346f5bb61c08b1639ab71f"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\dependency-closure-results.json",
+          "sha256": "sha256:33a4ff4bb4a756b4d9cbf56758280625509fa31b4df75119f471057488d1e8f4"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\dominium-seam-cli-results.json",
+          "sha256": "sha256:3197df19e0820c43d2f920d4f9000e56865a83b90749b4986577acd3884c95e6"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\evidence-manifest.json",
+          "sha256": "sha256:b0741509a8434287d73b9e665af15ae36b8b93def2b9be89abe3156be06bb1f2"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\five-finding-closure.json",
+          "sha256": "sha256:4fb0643ef118d07e315905b1ded8cf6af4a0d0417b6be63f3f9806cc074d2ecf"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\fixture-replay-results.json",
+          "sha256": "sha256:2ae8b46d1d95c942b273778fd0ec54420d3bd463f29ea11745e97ae810b3efed"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\independent-repair-02-check.json",
+          "sha256": "sha256:1547a6667d60f8b6ee25d52c02cc3759fc300d0465a59fc4b1e9a2af8597abbd"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\next-task-recommendation.md",
+          "sha256": "sha256:941385f2903c12efe2c5d2ca0c157835623fbbe08f618792e0ed2a6f7d84e60a"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\no-forbidden-ops.md",
+          "sha256": "sha256:d28968531b9acbd5347b219d1918e7eb4b5857253bb5d47e4becf563bba2eaf3"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\operation-ledger-results.json",
+          "sha256": "sha256:f4ed5280962876961884b4f71def4206827ea6fbd7aa105651472b8da881dae1"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\portability-results.json",
+          "sha256": "sha256:cd1083135dfa37ecf396ef62caa3f1e95ba0921a92d4a72ba0cd78c9c17918e3"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\remaining-risks.md",
+          "sha256": "sha256:179e9b09a9218d854e9e22b385ecb363a24f4a19bdafd20f456a2b81195d97bc"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\result.json",
+          "sha256": "sha256:00bf1a96d5aadb3d6fc06063146727bef656a2eede00fa9d8df49569d7ec99ad"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\schema-negative-results.json",
+          "sha256": "sha256:8c6d13d4836736bcd689066973f049c948cee9fd6ba3722cb643a8fbacda4d4e"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\secret-scan.md",
+          "sha256": "sha256:80ff8bf7e7522a054759f912ca87cb3b9b699745d10800b6d2de3674f9f0e5b1"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\ten-gap-closure.json",
+          "sha256": "sha256:f67cfd4b9bbbe15a2f1f964103a942c90c57aa67c7beaabb3d3d589707ea7606"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\tools\\check_repair_02.py",
+          "sha256": "sha256:1d2c90cb4a078f951e93f0ea455305569f9790387e7602f16a62f6584ebcba4d"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\tools\\replay_all_negative_fixtures.py",
+          "sha256": "sha256:c28b20a58cbeaa66802c9a9dda5e7127ebcbd7d88c2195bfe44501deb4da10e8"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\tools\\verify_conformance_semantics.py",
+          "sha256": "sha256:c28b20a58cbeaa66802c9a9dda5e7127ebcbd7d88c2195bfe44501deb4da10e8"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\tools\\verify_cross_process_determinism.py",
+          "sha256": "sha256:c28b20a58cbeaa66802c9a9dda5e7127ebcbd7d88c2195bfe44501deb4da10e8"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\tools\\verify_dominium_immutability.py",
+          "sha256": "sha256:c28b20a58cbeaa66802c9a9dda5e7127ebcbd7d88c2195bfe44501deb4da10e8"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\tools\\verify_operation_ledger.py",
+          "sha256": "sha256:c28b20a58cbeaa66802c9a9dda5e7127ebcbd7d88c2195bfe44501deb4da10e8"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\tools\\verify_portable_dependency_closure.py",
+          "sha256": "sha256:c28b20a58cbeaa66802c9a9dda5e7127ebcbd7d88c2195bfe44501deb4da10e8"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\tools\\verify_public_schema.py",
+          "sha256": "sha256:c28b20a58cbeaa66802c9a9dda5e7127ebcbd7d88c2195bfe44501deb4da10e8"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\tools\\verify_registry_provenance.py",
+          "sha256": "sha256:c28b20a58cbeaa66802c9a9dda5e7127ebcbd7d88c2195bfe44501deb4da10e8"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\unsupported-operation-probes.json",
+          "sha256": "sha256:3f3dd633796f19967f1342fe65732d275ecea58c7a7c6fdeeb71bba695c2b72d"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\evidence\\validation.md",
+          "sha256": "sha256:c9471899dde2eb23102e35858c20381bf5512b874f554a342020744a54498f72"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\ExecPlan.md",
+          "sha256": "sha256:a322b22818bf4016633f353a91ab90e85b8cc0f2434d53deab95a7beb288a2f6"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\prompt.md",
+          "sha256": "sha256:b258aedd17bc2635642784485dd629e14fa51c42a6997717101b469321eab3a5"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\status.yaml",
+          "sha256": "sha256:1894819c166b4ca9ea61ae3f063f6d9de0ab6f038fbda6750c15e4a6fdf45e53"
+        },
+        {
+          "path": ".aide\\queue\\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02\\task.yaml",
+          "sha256": "sha256:85639e0f23b3088577aaf1b195bc9076c14d55832cb923c28638b9f19487d9d4"
+        }
+      ]
+    },
+    {
+      "root": ".aide/reports/dominium-readonly-seam-v0-check",
+      "exists": true,
+      "file_count": 13,
+      "files": [
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\check-report.json",
+          "sha256": "sha256:f79013c85ae89ff3d9eec113b466915a75cc06bfe4054fc16eea85d915cdc899"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\check-report.md",
+          "sha256": "sha256:a58f7a7b762952649e70dc1c9d04817465f07f9e72b134f89a53563a03543c50"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\digest-validation-review.md",
+          "sha256": "sha256:c4e695c67e0a13a81ae97ec5ca019ed58cc46a4c11bba627e343f8acba5772af"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\explicit-non-capabilities.md",
+          "sha256": "sha256:9b63be10af7d0b35567d7271e093d3c22510c2d5e8e0685e8de9df4d3d146996"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\identity-freshness-review.md",
+          "sha256": "sha256:961a1ff508054d551c7148fbb3fa5da04fa369b8abaaf3fa130b02613a344f94"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\immutability-boundary-review.md",
+          "sha256": "sha256:7ca8b7dc26bf04453106fff70463e60c4123ab38a1694eb1f25fab3dcea4f14c"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\material-findings.md",
+          "sha256": "sha256:e5f3a691f0cae3c6560556010b5821a45fc480560e6360aff951fbf307c2015c"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\next-task-prompt.md",
+          "sha256": "sha256:9faf70f9a74b3ae0442139da6e5b989a9ab1b816cfed19fa4d3fee08d7363e22"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\registry-fixture-conformance-review.md",
+          "sha256": "sha256:882dda0625484fa98257ecd88e5a9e469eb026b8bc03e62c646a8bbe0ff60b0c"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\remaining-risks.md",
+          "sha256": "sha256:bb311e60ccc27c4d26d9726bc3ed60e9c7fed8a6a47d347c50647db924763286"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\source-chain-review.md",
+          "sha256": "sha256:dcd071ea04ab2a172ea48884168a3ee2f1a95838e7de7930d5d76ddeb803f2f8"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\status.md",
+          "sha256": "sha256:ba6e0255cf4768c99f9aa78e04b976fee37704d8c975b22b7784e661d76285f0"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-check\\warning-disposition.md",
+          "sha256": "sha256:1f35de8df63fb2fa29065aa8d2f023b0b0cf517ddb2b8507679905747f933906"
+        }
+      ]
+    },
+    {
+      "root": ".aide/reports/dominium-readonly-seam-v0-repair",
+      "exists": true,
+      "file_count": 17,
+      "files": [
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\compatibility.json",
+          "sha256": "sha256:868bac88aec5e13641d34694ee69cfa70021182cf457e2af70245995979cb0f6"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\conformance-repair.md",
+          "sha256": "sha256:eed0ddd271c6bcea05f3f510733c5ca3cf4067490130e74692c93f53fdd2efd8"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\demo-observation-repair.md",
+          "sha256": "sha256:654d50a3db72dddbdc68f0374c7ece46e23bd4a7ab542b61d989d737ef887788"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\digest-repair.md",
+          "sha256": "sha256:50398cca3f35d9a9eda1fe6a9fb6594f0fc5cca6ce6dfbd8b551220ea8fc4495"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\explicit-non-capabilities.md",
+          "sha256": "sha256:bb3a69a4e195ec09e8f90b7886fe00959557679b97ee4d920d405d0a8ab352cc"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\finding-disposition.json",
+          "sha256": "sha256:c957bbbe5a88cb774b13fa2c0b2a31c7aa2745c2581ce9672d3979c307f1e0fe"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\fixture-replay-repair.md",
+          "sha256": "sha256:c22e736d6329720afb244f47c0f0f2abd30fbd9865f13cdbcf7ac0d148047b7e"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\identity-repair.md",
+          "sha256": "sha256:5b4ac69c9e6da4963bfb7722ffa086921c1814d8cda3a2bfa4a42318f8d847d9"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\next-task-prompt.md",
+          "sha256": "sha256:fca05bd2020a75a2740806d08ff9fcfd0b8bec22e9674129361435c55e8ec225"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\reference-cardinality-ownership-repair.md",
+          "sha256": "sha256:6e077c30a2d450112de3cd57a70c3d3fc0aefd28820d0974989bcca09cda823f"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\registry-projection-repair.md",
+          "sha256": "sha256:cb6c500ba70927d7916395b3a7b268059322d3cf7192987e5748e017e413ab24"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\remaining-risks.md",
+          "sha256": "sha256:bb838b174f9af76ac5913971c2d7b6614d37883d43c7a42d9434af08a7e222a1"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\repair-report.json",
+          "sha256": "sha256:5579df25d234dbc50997c3407c290f50519a430876f2d765a8810ea8516c70a2"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\repair-report.md",
+          "sha256": "sha256:9a495d34ec7f671072349a1922fe376045c20d0987d9a5ce369ac64d1fe9fe97"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\schema-repair.md",
+          "sha256": "sha256:c5f3382b27f54b041fc01e77a7c275cfc742e8240a066983904d68d169b14c49"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\status.md",
+          "sha256": "sha256:e57d22112fc578152681b53d824208531b11d1d9fed1fec527fac637892c432d"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair\\test-summary.json",
+          "sha256": "sha256:f03d15e3266499e0e3e349df9dd63f63b59d7dad33d9ca1c89410cbff69ddd72"
+        }
+      ]
+    },
+    {
+      "root": ".aide/reports/dominium-readonly-seam-v0-repair-check",
+      "exists": true,
+      "file_count": 19,
+      "files": [
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\check-report.json",
+          "sha256": "sha256:b06d5f69bf698cf7c0a5f3ccf4162958cb97910b4f3cd45ef7098f7cb9a7e967"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\conformance-independence-review.md",
+          "sha256": "sha256:375f696c3bb8d9244fdebaf5cd40cbdb10bad65b99c7554b3bb7b46dc9d4e3af"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\demo-operation-ledger-review.md",
+          "sha256": "sha256:b39e099662fff4a5d9ac66f0147079efc385a9c5a1d1268696ad378eb8261eff"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\determinism-immutability-review.md",
+          "sha256": "sha256:271ebfd32e0aa37cdc3c93083032408cbc54bc65d7dda75d31c7ee9538627d59"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\digest-integrity-review.md",
+          "sha256": "sha256:a6f1afda7577acc9ec2949af49c956558f14ce7e45a2a267294ad9fda1d33b5b"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\explicit-non-capabilities.md",
+          "sha256": "sha256:86620a91ae29d42fe8f62855f0b0e22815e93accd2ce69bcfc66976227a7acf8"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\finding-closure-matrix.json",
+          "sha256": "sha256:e3c329d4a899feb21c6e1e657694d661fe605d9fe11ee4b064e2708ab6d741d7"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\finding-closure-matrix.md",
+          "sha256": "sha256:82f1e49a833e75f67cf44921468269d4f3a0b230df8e31a7fdc3c0156bc45abf"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\fixture-replay-review.md",
+          "sha256": "sha256:4dfef05b0f71129d84330ea2a7a315f3daf3c59138433c46c3c6b12bb0ec0f6e"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\identity-and-revision-review.md",
+          "sha256": "sha256:5fa6877683a6923622b51d1debd63ab3b0382911cd917cec4f52048612ddc80a"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\new-regression-review.md",
+          "sha256": "sha256:5febc8e67079e05473de06855411695adb8b87238f7fc8dfbe9a7551be4711d6"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\next-task-prompt.md",
+          "sha256": "sha256:9f600f69191ac4c2e6a60e0553ae0d8277967cab208d9dc114f66af469d3ded4"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\reference-cardinality-ownership-review.md",
+          "sha256": "sha256:87770c08508b69532aeab024a4f4df33385896a349fcbcc9b28a87775c9ab1b8"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\registry-projection-review.md",
+          "sha256": "sha256:94e0d6fed123e4ec7b178b99a9af162b7eaad0960c6607b7e8746d4c12d3300c"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\report-consistency-review.md",
+          "sha256": "sha256:4abae6870311a73a92cb54d252204106fdab20e4b9024be67253176f80a06915"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\schema-contract-review.md",
+          "sha256": "sha256:d7323c4b9f84db01c05cc9dbb70a488400d24e5f95590e84330a73627fce06a4"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\source-chain-review.md",
+          "sha256": "sha256:27372896f927841970284c3ccaac4b26b6fab1d53fadc03d45f96fa3134de6c3"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\status.md",
+          "sha256": "sha256:f33d0ad78619ea50611b3e7cedc5914f1a43d66feef20dd5f6adfc4fa7e94ac8"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-check\\warning-disposition.md",
+          "sha256": "sha256:e9ddcc85394c3888acfce1b602cf9423e51cfaf443f128b053503e321338e955"
+        }
+      ]
+    },
+    {
+      "root": ".aide/reports/dominium-readonly-seam-v0-repair-02",
+      "exists": true,
+      "file_count": 13,
+      "files": [
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\conformance-evidence-repair.md",
+          "sha256": "sha256:c54f017ae05da1dc5f22f9b5f749d086ccbcf8414317c568fc604ffd693f2120"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\explicit-non-capabilities.md",
+          "sha256": "sha256:e236ed9779737e64f506d157e052fa14348d150fd825fe6816a0d9d40f686054"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\fixture-replay-repair.md",
+          "sha256": "sha256:32c2cb1055ff04c35911d541a6cb32d1c55b958dde4e616c91bdee96f7b4ebee"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\next-task-prompt.md",
+          "sha256": "sha256:c57aa35efeafb035f879a5846109166dd8570d4d9a0f1bb11e9cd6a02eb0ba30"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\operation-ledger-repair.md",
+          "sha256": "sha256:8845b2b19876aa9bedbc1fdeeaf101bf81349122a6afa3f1c116371e478c123a"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\portability-determinism-repair.md",
+          "sha256": "sha256:eeffc066861a8daa97284e94100288d0535cb8b884a177d27c67d03f60362fa8"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\registry-provenance-repair.md",
+          "sha256": "sha256:978b9cb6494876745e80ca29629e0a41eb54e1c48cb10f7ef14dfaec74c8817c"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\remaining-gap-disposition.json",
+          "sha256": "sha256:e5f689372c5726c2680733e8eb9a08b61c1bb7d37337a67f6e8e854a5a2c0958"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\remaining-risks.md",
+          "sha256": "sha256:3db057ab1a0b17e0a5c21c9dadc4d870be6c03e627dfa075726f96fea9554da9"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\repair-report.json",
+          "sha256": "sha256:207b2f73a701298cfa64f4b699a3700e60f569877dcfa5b1937d4958864bf9f2"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\schema-status-repair.md",
+          "sha256": "sha256:e8df192d459d369f4b6759e196e9549e99d85b567349bd46c2fbb441ea72bbb0"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\status.md",
+          "sha256": "sha256:0ecb607badbd02309e4480c77d5ab72a9fe8cbe44c32883113ab5b2e1b837d06"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02\\test-summary.json",
+          "sha256": "sha256:976547800909af477522addd6d0635bd4708b6095d78590d69a9f7969ca98957"
+        }
+      ]
+    },
+    {
+      "root": ".aide/reports/dominium-readonly-seam-v0-repair-02-check",
+      "exists": true,
+      "file_count": 29,
+      "files": [
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\check-report.json",
+          "sha256": "sha256:1547a6667d60f8b6ee25d52c02cc3759fc300d0465a59fc4b1e9a2af8597abbd"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\conformance-semantic-results.json",
+          "sha256": "sha256:21041787dcd3a166227436ea655bb1cd9493b33e04346f5bb61c08b1639ab71f"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\conformance-semantic-review.md",
+          "sha256": "sha256:ec4cacb04ae56301be588d8800f16cdaadf8cf958ccd70a18be041f531de9d4f"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\conformance-shape-review.md",
+          "sha256": "sha256:01fe03af43bfbe20643f9943209d13253f2a8924b5e37dcb2f8a903793de9cac"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\dominium-immutability-review.md",
+          "sha256": "sha256:5a0378173916c5a9b72f5d11453dab9bf47da6bfdd834e49b22a952aaca93ac7"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\explicit-non-capabilities.md",
+          "sha256": "sha256:6aab0d075a7abaf0c109fb8caa543a5b2d58c4a06a6c216ac272d8538b1a6df2"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\five-finding-closure.json",
+          "sha256": "sha256:752f59a9b3696d5251bbc9c7cddd637c6305512e0b0a07f49fc2188d5c4bb621"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\five-finding-closure.md",
+          "sha256": "sha256:78ba6a8d34d66c343e4dae7a52d325ceffa1e18982ec3248d079bebe7aa55ca6"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\fixture-replay-results.json",
+          "sha256": "sha256:2ae8b46d1d95c942b273778fd0ec54420d3bd463f29ea11745e97ae810b3efed"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\fixture-replay-review.md",
+          "sha256": "sha256:c652a9c7b28040726f74158e15b00cc570b636741e27a3c7e5257283c3af9f63"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\new-regression-review.md",
+          "sha256": "sha256:060db4efb6a55675c8c2c4772c00a315a5e3e82e82d5f6dfcc9dbb80c7c321d2"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\next-task-prompt.md",
+          "sha256": "sha256:7f2952d00af0ec58460af5202d756199c1166e7707693b2282cf3368b5b9b7ef"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\operation-ledger-results.json",
+          "sha256": "sha256:f4ed5280962876961884b4f71def4206827ea6fbd7aa105651472b8da881dae1"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\operation-ledger-review.md",
+          "sha256": "sha256:580657a9393217afccc572827bb7a3e469d59a9d310ca0574f79b163e44204ba"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\portability-determinism-review.md",
+          "sha256": "sha256:fa9c5ccfa17b57cb5bd1cccb3bc366e9b6e7564b0f8f2c253ceaac746bed22be"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\portability-results.json",
+          "sha256": "sha256:cd1083135dfa37ecf396ef62caa3f1e95ba0921a92d4a72ba0cd78c9c17918e3"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\registry-provenance-results.json",
+          "sha256": "sha256:f7d9539d034b464bf0c70f77d1e74431a0b749551233f628cb68451462bdb894"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\registry-provenance-review.md",
+          "sha256": "sha256:b4660dc39d3c7902bf8c04920aaf711ebed071b9d07dc229dd0bc224dfd41c3b"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\report-consistency-review.md",
+          "sha256": "sha256:ef78586645e3d4281563e45443cc184a17f3ed34cc95ae0231b8c6741a9cadb7"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\runtime-dependency-results.json",
+          "sha256": "sha256:33a4ff4bb4a756b4d9cbf56758280625509fa31b4df75119f471057488d1e8f4"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\runtime-dependency-review.md",
+          "sha256": "sha256:413754af94076b9ca8e62fbab06d82155e411fee8c6b1d07c31e306ae821d4b9"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\schema-contract-review.md",
+          "sha256": "sha256:63892b26390a446095c6b448e8a356678c9eea6effc62d1ce540fb45b3263289"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\schema-negative-results.json",
+          "sha256": "sha256:8c6d13d4836736bcd689066973f049c948cee9fd6ba3722cb643a8fbacda4d4e"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\source-chain-review.md",
+          "sha256": "sha256:df50e5cb8a9ad7712c0578d96d9e9c8a47dc3cc9ab40415431b2ddc32535740f"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\status.md",
+          "sha256": "sha256:79ae16887282c8dde2163a1179d2f10fa3dd5e70658ff48269ab9ece665ed066"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\ten-gap-closure.json",
+          "sha256": "sha256:54127b9552e63c86fb444fe73c55b95b5aa092e29065f7e1be4206a139e8af91"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\ten-gap-closure.md",
+          "sha256": "sha256:944f0b3ee619c217d7276caf2e496d2304e6bb7bba9a2419aa60264775c49ed9"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\unsupported-operation-probes.json",
+          "sha256": "sha256:3f3dd633796f19967f1342fe65732d275ecea58c7a7c6fdeeb71bba695c2b72d"
+        },
+        {
+          "path": ".aide\\reports\\dominium-readonly-seam-v0-repair-02-check\\warning-disposition.md",
+          "sha256": "sha256:8281b96f2170f1b3ab8d8880ed25e36453095c7896962f6276287cb80e59be34"
+        }
+      ]
+    }
+  ]
+}

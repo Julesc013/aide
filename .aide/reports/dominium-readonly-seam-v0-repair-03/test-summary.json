@@ -1,0 +1,12 @@
+{
+  "focused_repair03_tests": 15,
+  "notable_suites": [
+    "test_aide_dominium_readonly_seam.py",
+    "test_aide_dominium_readonly_seam_repair.py",
+    "test_aide_dominium_readonly_seam_repair_02.py",
+    "test_aide_dominium_readonly_seam_repair_03.py"
+  ],
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "result": "PASS",
+  "schema_version": "aide.dominium-readonly-seam.repair-03-test-summary.v0"
+}

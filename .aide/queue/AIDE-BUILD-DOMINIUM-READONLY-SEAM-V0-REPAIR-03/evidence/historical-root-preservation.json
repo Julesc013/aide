@@ -1,0 +1,7 @@
+{
+  "schema_version": "aide.dominium-readonly-seam.repair-03.historical-root-preservation.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "result": "PASS",
+  "changed_historical_files": [],
+  "changed_historical_file_count": 0
+}

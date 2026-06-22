@@ -6933,3 +6933,51 @@ and commit policy check.
 - The seam remains offline and read-only; runtime, Workbench, bridge runtime,
   service, transport, provider/model/network calls, worker execution,
   preview/apply/rollback, and mutation remain absent.
+
+## Work Item: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
+
+### Status
+
+Completed with warnings and awaiting independent review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/**`
+- `.aide/protocol/aide-dominium-readonly-seam-v0.schema.json`
+- `core/interop/dominium/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam_repair_03.py`
+- `.aide/fixtures/dominium-readonly-seam/**`
+- `.aide/interop/dominium/**`
+- `.aide/reports/dominium-readonly-seam-v0/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair-03/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The live Repair 02 check recorded `REQUEST_CHANGES` with 15 material findings and recommended exactly this repair task. The task scaffold exists so implementation, validation, and evidence can proceed through the filesystem queue rather than from chat-only instructions.
+
+### Implementation Notes
+
+- Created the task packet, ExecPlan, prompt, and baseline evidence.
+- Registered the task in `.aide/queue/index.yaml`.
+- Hardened public schema typing, false-boundary status fields, and extension rejection for authority-changing claims.
+- Tightened fixture replay semantics for pointer validation, canonical array indexes, add/remove/replace/append behavior, and executable-content rejection.
+- Added evidence-bearing conformance output, a complete operation trace, guard-conformance evidence, and richer Git operation classification.
+- Made portability manifest-driven, hash-checked, environment-isolated, and validated against import-closure and local-path leak checks.
+- Extended typed unsupported-operation refusals across the read-only seam CLI surface and regenerated seam artifacts/reports.
+- Preserved the explicit stop point: `needs_review`, with `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03` as the only next recommendation.
+
+### Verification
+
+The task evidence records Python compilation, the base seam suite, Repair 01, Repair 02, and Repair 03 focused suites, seam `status/snapshot/project/validate/diff/demo`, unsupported-operation probes, Dominium immutability checks, historical-root preservation, broad validation, secret-like scan, and diff checks.
+
+### Remaining Issues
+
+- Independent Repair 03 check is still required before acceptance.
+- Local Dominium remains clean but behind `origin/main` by 24 commits.
+- Non-Windows platforms were not separately executed in this turn.
+- The seam remains offline and read-only; runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.

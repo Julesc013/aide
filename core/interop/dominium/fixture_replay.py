@@ -13,13 +13,42 @@ class FixtureReplayError(ValueError):
 
 
 ALLOWED_OPERATIONS = {"add", "remove", "replace", "append"}
-FORBIDDEN_OPERATION_KEYS = {"callable", "module", "command", "shell", "eval", "exec"}
+FORBIDDEN_OPERATION_KEYS = {"callable", "module", "command", "shell", "eval", "exec", "python", "entrypoint", "script"}
 
 
 def _pointer_parts(pointer: str) -> list[str]:
+    if not isinstance(pointer, str):
+        raise FixtureReplayError("JSON pointer path must be a string")
     if not pointer.startswith("/"):
         raise FixtureReplayError(f"JSON pointer must start with /: {pointer}")
-    return [part.replace("~1", "/").replace("~0", "~") for part in pointer.split("/")[1:]]
+    parts = pointer.split("/")[1:]
+    decoded: list[str] = []
+    for part in parts:
+        index = 0
+        while index < len(part):
+            if part[index] == "~" and (index + 1 >= len(part) or part[index + 1] not in {"0", "1"}):
+                raise FixtureReplayError(f"malformed JSON pointer escape: {pointer}")
+            index += 1
+        decoded.append(part.replace("~1", "/").replace("~0", "~"))
+    return decoded
+
+
+def _canonical_index(value: str, *, allow_dash: bool, limit: int, allow_end: bool) -> int:
+    if value == "-":
+        if allow_dash:
+            return limit
+        raise FixtureReplayError("'-' array index is only allowed for add or append")
+    if not isinstance(value, str) or value == "":
+        raise FixtureReplayError("array index must be a canonical non-negative decimal string")
+    if not value.isdecimal():
+        raise FixtureReplayError(f"array index is not canonical decimal: {value}")
+    if len(value) > 1 and value.startswith("0"):
+        raise FixtureReplayError(f"array index must not contain leading zeroes: {value}")
+    index = int(value)
+    maximum = limit if allow_end else limit - 1
+    if index < 0 or index > maximum:
+        raise FixtureReplayError(f"array index out of range: {value}")
+    return index
 
 
 def _resolve_parent(document: Any, pointer: str) -> tuple[Any, str]:
@@ -29,8 +58,10 @@ def _resolve_parent(document: Any, pointer: str) -> tuple[Any, str]:
     current = document
     for part in parts[:-1]:
         if isinstance(current, list):
-            current = current[int(part)]
+            current = current[_canonical_index(part, allow_dash=False, limit=len(current), allow_end=False)]
         elif isinstance(current, dict):
+            if part not in current:
+                raise FixtureReplayError(f"missing intermediate object key: {part}")
             current = current[part]
         else:
             raise FixtureReplayError(f"cannot traverse through non-container at {part}")
@@ -44,26 +75,38 @@ def apply_operations(document: dict[str, Any], operations: list[dict[str, Any]])
             raise FixtureReplayError("operation must be an object")
         if FORBIDDEN_OPERATION_KEYS & set(op):
             raise FixtureReplayError("operation contains forbidden executable field")
-        kind = op["op"]
+        kind = op.get("op")
         if kind not in ALLOWED_OPERATIONS:
             raise FixtureReplayError(f"unsupported operation: {kind}")
-        parent, key = _resolve_parent(candidate, op["path"])
+        parent, key = _resolve_parent(candidate, op.get("path"))
         if isinstance(parent, list):
-            index = len(parent) if key == "-" else int(key)
             if kind == "remove":
+                index = _canonical_index(key, allow_dash=False, limit=len(parent), allow_end=False)
                 parent.pop(index)
-            elif kind in {"add", "append"}:
-                if kind == "append":
-                    index = len(parent)
+            elif kind == "add":
+                index = _canonical_index(key, allow_dash=True, limit=len(parent), allow_end=True)
                 parent.insert(index, deepcopy(op.get("value")))
             elif kind == "replace":
+                index = _canonical_index(key, allow_dash=False, limit=len(parent), allow_end=False)
                 parent[index] = deepcopy(op.get("value"))
+            elif kind == "append":
+                if key != "-":
+                    _canonical_index(key, allow_dash=False, limit=len(parent), allow_end=True)
+                parent.append(deepcopy(op.get("value")))
             else:
                 raise FixtureReplayError(f"unsupported list operation: {kind}")
         elif isinstance(parent, dict):
             if kind == "remove":
-                parent.pop(key, None)
-            elif kind in {"add", "replace"}:
+                if key not in parent:
+                    raise FixtureReplayError(f"remove target object key does not exist: {key}")
+                parent.pop(key)
+            elif kind == "add":
+                if key in parent:
+                    raise FixtureReplayError(f"add target object key already exists: {key}")
+                parent[key] = deepcopy(op.get("value"))
+            elif kind == "replace":
+                if key not in parent:
+                    raise FixtureReplayError(f"replace target object key does not exist: {key}")
                 parent[key] = deepcopy(op.get("value"))
             elif kind == "append":
                 if key not in parent or not isinstance(parent[key], list):
@@ -108,7 +151,7 @@ def negative_fixture_cases(base_bundle: dict[str, Any]) -> list[dict[str, Any]]:
         fixture("path_traversal", ["path.traversal"], [{"op": "replace", "path": "/source_snapshot/selected_files/0/path", "value": "../AGENTS.md"}], base_bundle),
         fixture("absolute_path_escape", ["path.absolute"], [{"op": "replace", "path": "/source_snapshot/selected_files/0/path", "value": "/tmp/AGENTS.md"}], base_bundle),
         fixture("digest_mismatch", ["digest.source"], [{"op": "replace", "path": "/source_snapshot/selected_files/0/sha256", "value": "sha256:" + "0" * 64}], base_bundle),
-        fixture("unknown_required_capability", ["compat.required_capability"], [{"op": "add", "path": "/metadata/compatibility/requiredCapabilities", "value": [models.FEATURE_FLAG, "future.required"]}], base_bundle),
+        fixture("unknown_required_capability", ["compat.required_capability"], [{"op": "replace", "path": "/metadata/compatibility/requiredCapabilities", "value": [models.FEATURE_FLAG, "future.required"]}], base_bundle),
         fixture("unsupported_version", ["schema.version"], [{"op": "replace", "path": "/records/host_manifest/metadata/schema_version", "value": "future"}], base_bundle),
         fixture("conflicting_ownership", ["ownership.semantic"], [{"op": "replace", "path": "/records/host_manifest/metadata/semantic_owner", "value": "Workbench"}], base_bundle),
         fixture("workbench_authority_overclaim", ["workbench.authority"], [{"op": "replace", "path": "/records/workspace_descriptor/status/workbench_started", "value": True}], base_bundle),

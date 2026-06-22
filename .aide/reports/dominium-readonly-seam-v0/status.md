@@ -9,6 +9,6 @@
 - dominium_command_invoked: `false`
 - network_call_performed: `false`
 - mutation_performed: `false`
-- recommended_next_task: `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02`
+- recommended_next_task: `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`
 
 Offline read-only projection only. It is not a Host runtime, bridge runtime, Workbench implementation, service, transport, preview/apply/rollback, or mutation capability.

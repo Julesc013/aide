@@ -1,0 +1,23 @@
+# Validation Commands
+
+- `git status --short --branch`
+- `py -3 .aide/scripts/aide_lite.py git plan`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id <predecessor>`
+- `git show -s --format="%H %s" <six predecessor commits>`
+- `py -3 -m compileall core/interop/dominium core/protocol .aide/scripts/tests`
+- `py -3 .aide/scripts/tests/test_aide_dominium_readonly_seam.py`
+- `py -3 .aide/scripts/tests/test_aide_dominium_readonly_seam_repair.py`
+- `py -3 .aide/scripts/tests/test_aide_dominium_readonly_seam_repair_02.py`
+- `py -3 .aide/scripts/tests/test_aide_dominium_readonly_seam_repair_03.py`
+- `py -3 .aide/scripts/aide_lite.py dominium-seam status`
+- `py -3 .aide/scripts/aide_lite.py dominium-seam snapshot`
+- `py -3 .aide/scripts/aide_lite.py dominium-seam project`
+- `py -3 .aide/scripts/aide_lite.py dominium-seam validate`
+- `py -3 .aide/scripts/aide_lite.py dominium-seam diff`
+- `py -3 .aide/scripts/aide_lite.py dominium-seam demo`
+- `Repair 03 unsupported-operation probe matrix`
+- `Repair 03 historical root preservation check`
+- `rg secret-like scan over changed repair surfaces`
+- `git diff --check`
+- `git diff --cached --check`
+- `py -3 .aide/scripts/aide_lite.py validate`

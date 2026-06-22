@@ -1,0 +1,22 @@
+{
+  "evidence_files": [
+    "baseline.md",
+    "blockers-or-deferrals.md",
+    "changed-files.md",
+    "dominium-immutability.md",
+    "historical-root-hashes-after.json",
+    "historical-root-hashes-before.json",
+    "historical-root-preservation.json",
+    "no-forbidden-ops.md",
+    "remaining-risks.md",
+    "result.json",
+    "secret-scan.md",
+    "test-summary.md",
+    "unsupported-operation-probes.json",
+    "validation-commands.md",
+    "validation-results.md",
+    "validation.md"
+  ],
+  "schema_version": "aide.evidence-manifest.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
+}

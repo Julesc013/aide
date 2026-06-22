@@ -1,5 +1,5 @@
 {
-  "allowed_operation_count": 858,
+  "allowed_operation_count": 874,
   "dominium_status_after": "## main...origin/main [behind 24]",
   "dominium_status_before": "## main...origin/main [behind 24]",
   "elapsed_time": {
@@ -28,16 +28,80 @@
     "docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md": "sha256:3a25b990130d630be93798e304f9995d0b37363f457327a30f28a7b72204b1d6"
   },
   "input_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "operation_guard_conformance_ref": ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json",
   "operation_ledger": {
-    "allowed_operation_count": 858,
+    "allowed_observation_count": 874,
+    "allowed_operation_count": 874,
     "coverage": {
-      "branch_worktree_ref_ops": true,
-      "filesystem_writes": true,
-      "git_reads": true,
-      "mutation_apply": true,
-      "network_attempts": true,
-      "provider_model_attempts": true,
-      "worker_dispatch": true
+      "branch_worktree_ref_ops": {
+        "evidence_refs": [
+          "operation-trace.json",
+          "operation-guard-conformance.json"
+        ],
+        "methods": [
+          "git_command_denylist"
+        ],
+        "status": "PROVEN"
+      },
+      "filesystem_writes": {
+        "evidence_refs": [
+          "operation-trace.json",
+          "operation-guard-conformance.json"
+        ],
+        "methods": [
+          "path_guard_plus_before_after_tree_hash"
+        ],
+        "status": "PROVEN"
+      },
+      "git_reads": {
+        "evidence_refs": [
+          "operation-trace.json"
+        ],
+        "methods": [
+          "command_wrapper_observation"
+        ],
+        "status": "PROVEN"
+      },
+      "mutation_apply": {
+        "evidence_refs": [
+          "operation-trace.json",
+          "operation-guard-conformance.json"
+        ],
+        "methods": [
+          "capability_and_command_boundary"
+        ],
+        "status": "PROVEN"
+      },
+      "network_attempts": {
+        "evidence_refs": [
+          "operation-trace.json",
+          "operation-guard-conformance.json"
+        ],
+        "methods": [
+          "network_guard_plus_source_scan"
+        ],
+        "status": "PROVEN"
+      },
+      "provider_model_attempts": {
+        "evidence_refs": [
+          "operation-trace.json",
+          "operation-guard-conformance.json"
+        ],
+        "methods": [
+          "dependency_guard_plus_source_scan"
+        ],
+        "status": "PROVEN"
+      },
+      "worker_dispatch": {
+        "evidence_refs": [
+          "operation-trace.json",
+          "operation-guard-conformance.json"
+        ],
+        "methods": [
+          "subprocess_allowlist"
+        ],
+        "status": "PROVEN"
+      }
     },
     "coverage_methods": {
       "branch_worktree_ref_ops": "git_command_denylist",
@@ -48,8 +112,9 @@
       "provider_model_attempts": "dependency_guard_plus_source_scan",
       "worker_dispatch": "subprocess_allowlist"
     },
+    "forbidden_observation_count": 0,
     "forbidden_operation_count": 0,
-    "observation_count": 858,
+    "observation_count": 874,
     "observations": [
       {
         "allowed": true,
@@ -600,7 +665,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 6,
+        "count": 22,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git status --short --branch",
@@ -1171,7 +1236,7 @@
       {
         "allowed": true,
         "classification": "read_only_git_observation",
-        "count": 6,
+        "count": 22,
         "family": "git_reads",
         "observation_method": "command_wrapper_observation",
         "operation": "git status --short --branch",
@@ -1182,6 +1247,7 @@
         "target": "Dominium"
       }
     ],
+    "raw_observation_count": 874,
     "raw_observation_sample": [
       {
         "allowed": true,
@@ -1734,6 +1800,8 @@
         "target": "Dominium"
       }
     ],
+    "raw_trace_ref": "operation-trace.json",
+    "raw_trace_sha256": "sha256:1b06125c362a7da16b1c759c3db76a8693d27e7010c1d846824f1c6658224b02",
     "required_operation_families": [
       "git_reads",
       "filesystem_writes",
@@ -1743,14 +1811,15 @@
       "worker_dispatch",
       "mutation_apply"
     ],
-    "schema_version": "aide.dominium-readonly-seam.operation-ledger.v1"
+    "schema_version": "aide.dominium-readonly-seam.operation-ledger.v2"
   },
+  "operation_trace_ref": ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
   "output_hashes": {
-    ".aide/reports/dominium-readonly-seam-v0/projection-index.json": "sha256:462607fb7c177bfd3a3ea96901118677eafce54d1a473de92d46af854239ea0d",
-    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json": "sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc",
-    ".aide/reports/dominium-readonly-seam-v0/validation.json": "sha256:8b575d43532cf378c31af92b982fcf47e8cfe4f88a285a5063abe492c96babbc"
+    ".aide/reports/dominium-readonly-seam-v0/projection-index.json": "sha256:b89c95f006387649a3f80af69c1154f66f72a6e427eb6ce8485570ca804c02c6",
+    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json": "sha256:3848d0a75d187386d1626f67b2ef48b01aef75f29407beb30427b546b2580cda",
+    ".aide/reports/dominium-readonly-seam-v0/validation.json": "sha256:c5bc5b7c7faf00409ac8ac4acac55795497c84eba8f93b26c55d46e787ea6e5e"
   },
-  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
   "record_counts": {
     "fixtures": 43,
     "records": 42,
@@ -1759,6 +1828,6 @@
   "schema_version": "aide.dominium-readonly-seam.demo-result.v0",
   "source_mutation_count": 0,
   "status": "PASS_WITH_WARNINGS",
-  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
   "validation_result": "PASS_WITH_WARNINGS"
 }

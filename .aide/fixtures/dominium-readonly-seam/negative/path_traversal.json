@@ -1,10 +1,10 @@
 {
   "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "base_bundle_sha256": "sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc",
+  "base_bundle_sha256": "sha256:3848d0a75d187386d1626f67b2ef48b01aef75f29407beb30427b546b2580cda",
   "expected_error_codes": [
     "path.traversal"
   ],
-  "invalid_bundle_sha256": "sha256:1b31b5770ad50fcd6f55059c7e2fb70987670dd5a9a808945f0e2dc03a537271",
+  "invalid_bundle_sha256": "sha256:72d82636d82b3292bdd27b12bdaab530227c12a704e87a34140d09782df0a048",
   "name": "path_traversal",
   "operations": [
     {

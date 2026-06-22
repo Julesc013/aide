@@ -1,0 +1,258 @@
+[
+  {
+    "changed_files": [
+      ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_03.py"
+    ],
+    "finding_id": "schema.kind_specific_spec_types",
+    "generated_evidence": [
+      "schema-hardening.md"
+    ],
+    "original_observed_behavior": "Public schema required fields without explicit kind-specific type constraints.",
+    "remaining_limitation": "Draft 2020-12 validation is represented structurally and by focused source inspection; external jsonschema runtime is not required by this task.",
+    "repair_approach": "Added explicit Draft 2020-12-safe spec properties, reusable defs, allOf record binding, and focused schema tests.",
+    "tests": [
+      "test_schema_has_explicit_kind_specific_spec_properties",
+      "test_schema_uses_allof_for_kind_discrimination"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/models.py",
+      ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+      ".aide/scripts/aide_lite.py"
+    ],
+    "finding_id": "schema.false_boundary_required",
+    "generated_evidence": [
+      "schema-hardening.md"
+    ],
+    "original_observed_behavior": "Public schema omitted required false-boundary fields and did not include source_repository_mutated everywhere.",
+    "remaining_limitation": "Positive projection facts remain separate status fields.",
+    "repair_approach": "Made model, schema, CLI boundary output, and generated statuses require every false-boundary field as const false.",
+    "tests": [
+      "test_false_boundary_status_requires_every_false_field"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+      "core/interop/dominium/validation.py"
+    ],
+    "finding_id": "schema.unbounded_authority_fields",
+    "generated_evidence": [
+      "schema-hardening.md"
+    ],
+    "original_observed_behavior": "Canonical schema objects exposed unbounded additionalProperties surfaces.",
+    "remaining_limitation": "General extension payload values remain opaque compatibility data, not authority.",
+    "repair_approach": "Closed canonical spec objects, added explicit extensions containers, and made semantic validation refuse authority-changing extension names.",
+    "tests": [
+      "test_authority_changing_extensions_are_refused_semantically"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/fixture_replay.py"
+    ],
+    "finding_id": "fixtures.production_remove_missing",
+    "generated_evidence": [
+      "fixture-replay-hardening.md"
+    ],
+    "original_observed_behavior": "Fixture replay used permissive missing-key removal.",
+    "remaining_limitation": "No filesystem/process/network execution exists in replay.",
+    "repair_approach": "Remove now requires an existing object key or valid in-range array index.",
+    "tests": [
+      "test_fixture_replay_rejects_missing_object_targets"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/fixture_replay.py"
+    ],
+    "finding_id": "fixtures.production_replace_missing",
+    "generated_evidence": [
+      "fixture-replay-hardening.md"
+    ],
+    "original_observed_behavior": "Fixture replay shared add and replace assignment semantics.",
+    "remaining_limitation": "Existing fixtures were adjusted where they had used add as replacement.",
+    "repair_approach": "Replace now requires an existing target and add refuses existing object keys.",
+    "tests": [
+      "test_fixture_replay_rejects_missing_object_targets"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/fixture_replay.py"
+    ],
+    "finding_id": "fixtures.production_index_strictness",
+    "generated_evidence": [
+      "fixture-replay-hardening.md"
+    ],
+    "original_observed_behavior": "Fixture replay accepted noncanonical or unsafe array indexes through int conversion.",
+    "remaining_limitation": "Pointer support remains intentionally small.",
+    "repair_approach": "Array indexes now require canonical non-negative decimals, with dash only for add/append.",
+    "tests": [
+      "test_fixture_replay_rejects_noncanonical_array_indexes",
+      "test_fixture_replay_rejects_root_and_executable_metadata"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/conformance.py",
+      ".aide/scripts/aide_lite.py",
+      ".aide/scripts/tests/test_aide_dominium_readonly_seam_repair_03.py"
+    ],
+    "finding_id": "conformance.unsupported_operation_semantics",
+    "generated_evidence": [
+      "conformance-evidence-hardening.md"
+    ],
+    "original_observed_behavior": "Unsupported-operation conformance inferred refusal from next-task naming.",
+    "remaining_limitation": "Projection-time conformance uses bounded direct refusal evidence; actual CLI dispatch is proven by focused tests and validation evidence.",
+    "repair_approach": "Conformance evidence now records unsupported verb probe results and Repair 03 tests exercise actual CLI dispatch for every required verb.",
+    "tests": [
+      "test_conformance_evidence_is_explicit_and_missing_aggregate_is_not_proven",
+      "test_extended_unsupported_cli_verbs_are_typed_refusals"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/conformance.py",
+      "core/interop/dominium/bundle.py"
+    ],
+    "finding_id": "conformance.no_write_semantics",
+    "generated_evidence": [
+      "conformance-evidence-hardening.md"
+    ],
+    "original_observed_behavior": "No-write claims relied too much on self-declared bundle fields.",
+    "remaining_limitation": "Dominium remains an already-present local checkout; freshness warning is preserved.",
+    "repair_approach": "Conformance evidence records Dominium before/after state and demo records source_mutation_count 0.",
+    "tests": [
+      "test_conformance_evidence_is_explicit_and_missing_aggregate_is_not_proven"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/conformance.py",
+      "core/interop/dominium/operations.py",
+      "core/interop/dominium/bundle.py"
+    ],
+    "finding_id": "conformance.network_semantics",
+    "generated_evidence": [
+      "operation-auditability.md"
+    ],
+    "original_observed_behavior": "Network/provider/worker/mutation claims lacked guard evidence.",
+    "remaining_limitation": "Guard probes are safe refusal evidence, not executed forbidden operations.",
+    "repair_approach": "Added operation guard conformance artifact and made assertions consume guard evidence for network, provider/model, worker, and mutation families.",
+    "tests": [
+      "test_guard_conformance_artifact_covers_all_required_families"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/operations.py",
+      "core/interop/dominium/bundle.py"
+    ],
+    "finding_id": "operation.raw_trace_auditability",
+    "generated_evidence": [
+      "operation-auditability.md"
+    ],
+    "original_observed_behavior": "Operation ledger retained only an aggregate/sample view.",
+    "remaining_limitation": "A sample remains only as a labeled convenience field.",
+    "repair_approach": "Added complete operation-trace.json, raw trace digest, raw counts, and recomputable aggregate fields.",
+    "tests": [
+      "test_operation_trace_is_complete_and_recomputable"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/operations.py"
+    ],
+    "finding_id": "operation.git_network_classification",
+    "generated_evidence": [
+      "operation-auditability.md"
+    ],
+    "original_observed_behavior": "Remote Git verbs were classified as ordinary git_reads.",
+    "remaining_limitation": "Allowed read-only Git commands remain status, rev-parse, remote get-url, branch --show-current, rev-list, show, and ls-tree.",
+    "repair_approach": "Classified fetch/pull/clone/push/ls-remote as network_attempts and branch/ref/history mutations as branch_worktree_ref_ops.",
+    "tests": [
+      "test_git_operation_classification_refuses_remote_and_ref_mutations"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/operations.py",
+      "core/interop/dominium/bundle.py"
+    ],
+    "finding_id": "operation.injection_evidence",
+    "generated_evidence": [
+      "operation-auditability.md"
+    ],
+    "original_observed_behavior": "Forbidden-operation family evidence was not separated from the main success ledger.",
+    "remaining_limitation": "Main demo can still report forbidden_operation_count 0.",
+    "repair_approach": "Added operation-guard-conformance.json with safe refusal probes per forbidden family.",
+    "tests": [
+      "test_guard_conformance_artifact_covers_all_required_families"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/bundle.py"
+    ],
+    "finding_id": "portability.manifest_driven_copy",
+    "generated_evidence": [
+      "portability-isolation.md"
+    ],
+    "original_observed_behavior": "Portable copy used the in-memory dependency list directly.",
+    "remaining_limitation": "The in-memory generator still creates the manifest before serialized copy.",
+    "repair_approach": "Serialized runtime-dependency-manifest.json now drives copy with digest, path, duplicate, and hash validation.",
+    "tests": [
+      "test_manifest_validation_refuses_hash_mismatch_and_path_escape",
+      "test_import_closure_has_no_missing_required_dependencies"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      "core/interop/dominium/bundle.py"
+    ],
+    "finding_id": "portability.sanitized_environment",
+    "generated_evidence": [
+      "portability-isolation.md"
+    ],
+    "original_observed_behavior": "Portable subprocesses did not remove PYTHONPATH/PYTHONHOME or use isolated mode.",
+    "remaining_limitation": "Portability subprocesses are local test processes, not AIDE workers.",
+    "repair_approach": "Portable subprocesses remove unsafe Python environment variables, set PYTHONNOUSERSITE, run with -I, use unrelated cwd, compare required output sets, and verify import closure.",
+    "tests": [
+      "test_portability_uses_sanitized_isolated_environment"
+    ],
+    "validation_result": "PASS"
+  },
+  {
+    "changed_files": [
+      ".aide/scripts/aide_lite.py",
+      "core/interop/dominium/bundle.py"
+    ],
+    "finding_id": "cli.unsupported_extended_verbs",
+    "generated_evidence": [
+      "typed-refusal-hardening.md"
+    ],
+    "original_observed_behavior": "fetch, pull, checkout, branch, worktree, publish, and unknown verbs fell through argparse.",
+    "remaining_limitation": "Help/version behavior is unchanged.",
+    "repair_approach": "Registered extended unsupported verbs plus destroy through one typed refusal handler preserving false-boundary output.",
+    "tests": [
+      "test_extended_unsupported_cli_verbs_are_typed_refusals"
+    ],
+    "validation_result": "PASS"
+  }
+]

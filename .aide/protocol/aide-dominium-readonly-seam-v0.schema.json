@@ -1,19 +1,72 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$defs": {
     "ArtifactReferenceRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "ArtifactReference"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/ArtifactReferenceSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "ArtifactReference"
+            },
+            "spec": {
+              "$ref": "#/$defs/ArtifactReferenceSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "ArtifactReferenceSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "artifact_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        },
+        "authority": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "file_path_is_locator": {
+          "const": true,
+          "type": "boolean"
+        },
+        "git_object": {
+          "$ref": "#/$defs/GitObjectId"
+        },
+        "identity_is_file_path": {
+          "const": false,
+          "type": "boolean"
+        },
+        "sha256": {
+          "$ref": "#/$defs/Digest"
+        },
+        "size_bytes": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source_path": {
+          "$ref": "#/$defs/RepositoryRelativePath"
+        },
+        "source_revision": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "source_role": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      },
       "required": [
         "artifact_ref",
         "source_path",
@@ -28,17 +81,75 @@
       ],
       "type": "object"
     },
-    "Compatibility": {
-      "additionalProperties": true,
+    "CapabilityDeclaration": {
+      "additionalProperties": false,
       "properties": {
+        "id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "implemented_in_this_slice": {
+          "const": true,
+          "type": "boolean"
+        },
+        "requires_future_policy_decision": {
+          "type": "boolean"
+        },
+        "side_effect_class": {
+          "const": "read_only"
+        }
+      },
+      "required": [
+        "id",
+        "side_effect_class",
+        "implemented_in_this_slice",
+        "requires_future_policy_decision"
+      ],
+      "type": "object"
+    },
+    "CommitSha": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "Compatibility": {
+      "additionalProperties": false,
+      "properties": {
+        "featureFlags": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "minReaderVersion": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "minWriterVersion": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "protocolVersion": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
         "readOldWriteCurrent": {
-          "const": true
+          "const": true,
+          "type": "boolean"
         },
         "requiredCapabilities": {
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/NonEmptyString"
           },
-          "type": "array"
+          "type": "array",
+          "uniqueItems": true
+        },
+        "schemaVersion": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "unknownOptionalFields": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "unknownRequiredFields": {
+          "enum": [
+            "refuse"
+          ]
         }
       },
       "required": [
@@ -55,18 +166,80 @@
       "type": "object"
     },
     "ContextDescriptorRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "ContextDescriptor"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/ContextDescriptorSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "ContextDescriptor"
+            },
+            "spec": {
+              "$ref": "#/$defs/ContextDescriptorSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "ContextDescriptorSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "artifact_refs": {
+          "items": {
+            "$ref": "#/$defs/ReferenceID"
+          },
+          "type": "array"
+        },
+        "context_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        },
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "projection_direction": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "section_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sections": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "artifact_ids": {
+                "items": {
+                  "$ref": "#/$defs/NonEmptyString"
+                },
+                "type": "array"
+              },
+              "role": {
+                "$ref": "#/$defs/NonEmptyString"
+              }
+            },
+            "required": [
+              "role",
+              "artifact_ids"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "source_revision_binding": {
+          "$ref": "#/$defs/CommitSha"
+        }
+      },
       "required": [
         "context_ref",
         "artifact_refs",
@@ -78,18 +251,73 @@
       "type": "object"
     },
     "DiagnosticProjectionRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "DiagnosticProjection"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/DiagnosticProjectionSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "DiagnosticProjection"
+            },
+            "spec": {
+              "$ref": "#/$defs/DiagnosticProjectionSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "DiagnosticProjectionSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "code": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "diagnostic_id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "native_meaning_owned_by": {
+          "const": "Dominium"
+        },
+        "owner": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "projection_direction": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "severity_valid": {
+          "type": "boolean"
+        },
+        "source_registry": {
+          "$ref": "#/$defs/RepositoryRelativePath"
+        },
+        "summary": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      },
       "required": [
         "diagnostic_id",
         "code",
@@ -108,18 +336,82 @@
       "type": "string"
     },
     "DominiumBridgeManifestRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "DominiumBridgeManifest"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/DominiumBridgeManifestSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "DominiumBridgeManifest"
+            },
+            "spec": {
+              "$ref": "#/$defs/DominiumBridgeManifestSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "DominiumBridgeManifestSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "bridge_id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "bridge_runtime_implemented": {
+          "const": false,
+          "type": "boolean"
+        },
+        "command_mapping": {
+          "additionalProperties": false,
+          "properties": {
+            "command_invocation_implemented": {
+              "const": false,
+              "type": "boolean"
+            },
+            "future_chain": {
+              "$ref": "#/$defs/NonEmptyString"
+            },
+            "registered_validation_command_present": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "registered_validation_command_present",
+            "command_invocation_implemented",
+            "future_chain"
+          ],
+          "type": "object"
+        },
+        "compatibility_policy": {
+          "type": "object"
+        },
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "mapping_version": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "ownership": {
+          "type": "object"
+        },
+        "source_of_truth": {
+          "type": "object"
+        },
+        "source_revision": {
+          "$ref": "#/$defs/CommitSha"
+        }
+      },
       "required": [
         "bridge_id",
         "bridge_runtime_implemented",
@@ -132,18 +424,62 @@
       "type": "object"
     },
     "EventEnvelopeRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "EventEnvelope"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/EventEnvelopeSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "EventEnvelope"
+            },
+            "spec": {
+              "$ref": "#/$defs/EventEnvelopeSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "EventEnvelopeSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "causation_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        },
+        "correlation_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        },
+        "event_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        },
+        "event_type": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "sequence": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "summary": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "universal_event_store_implemented": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
       "required": [
         "event_ref",
         "event_type",
@@ -156,18 +492,55 @@
       "type": "object"
     },
     "EvidenceReferenceSetRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "EvidenceReferenceSet"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/EvidenceReferenceSetSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "EvidenceReferenceSet"
+            },
+            "spec": {
+              "$ref": "#/$defs/EvidenceReferenceSetSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "EvidenceReferenceSetSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "aide_behavior": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "evidence_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/ReferenceID"
+          },
+          "type": "array"
+        },
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "native_evidence_meaning_owned_by": {
+          "const": "Dominium"
+        }
+      },
       "required": [
         "evidence_refs",
         "evidence_count",
@@ -176,62 +549,87 @@
       ],
       "type": "object"
     },
-    "FalseStatus": {
+    "ExtensionMap": {
       "additionalProperties": true,
+      "propertyNames": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+      },
+      "type": "object"
+    },
+    "FalseBoundaryStatus": {
+      "additionalProperties": false,
       "properties": {
         "branch_or_worktree_created": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "bridge_runtime_started": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "database_opened": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "dominium_command_invoked": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "generated_projection_marked_canonical": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "github_mutation_performed": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "host_runtime_started": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "network_call_performed": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "patch_transaction_applied": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "preview_or_apply_performed": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "provider_or_model_called": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "release_or_promotion_performed": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "service_started": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "source_repository_mutated": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "target_repository_mutated": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "transport_started": {
-          "const": false
-        },
-        "worker_executed": {
-          "const": false
+          "const": false,
+          "type": "boolean"
         },
         "workbench_started": {
-          "const": false
+          "const": false,
+          "type": "boolean"
+        },
+        "worker_executed": {
+          "const": false,
+          "type": "boolean"
         }
       },
       "required": [
@@ -247,15 +645,231 @@
         "worker_executed",
         "patch_transaction_applied",
         "preview_or_apply_performed",
+        "source_repository_mutated",
         "target_repository_mutated",
         "branch_or_worktree_created",
         "github_mutation_performed",
-        "release_or_promotion_performed"
+        "release_or_promotion_performed",
+        "generated_projection_marked_canonical"
+      ],
+      "type": "object"
+    },
+    "FalseStatus": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_hash_bound": {
+          "const": true,
+          "type": "boolean"
+        },
+        "artifact_ref_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "branch_or_worktree_created": {
+          "const": false,
+          "type": "boolean"
+        },
+        "bridge_manifest_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "bridge_runtime_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "bundle_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "context_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "database_opened": {
+          "const": false,
+          "type": "boolean"
+        },
+        "dominium_command_invoked": {
+          "const": false,
+          "type": "boolean"
+        },
+        "event_envelope_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "evidence_refs_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "generated_projection_marked_canonical": {
+          "const": false,
+          "type": "boolean"
+        },
+        "github_mutation_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "host_manifest_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "host_runtime_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "mutation_capability_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "network_call_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "patch_transaction_applied": {
+          "const": false,
+          "type": "boolean"
+        },
+        "preview_or_apply_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "provider_or_model_called": {
+          "const": false,
+          "type": "boolean"
+        },
+        "read_only_capability_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "record_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "release_or_promotion_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "service_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "source_repository_mutated": {
+          "const": false,
+          "type": "boolean"
+        },
+        "target_repository_mutated": {
+          "const": false,
+          "type": "boolean"
+        },
+        "transport_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "workbench_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "worker_executed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "workspace_projected": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "dominium_command_invoked",
+        "host_runtime_started",
+        "workbench_started",
+        "bridge_runtime_started",
+        "service_started",
+        "database_opened",
+        "transport_started",
+        "network_call_performed",
+        "provider_or_model_called",
+        "worker_executed",
+        "patch_transaction_applied",
+        "preview_or_apply_performed",
+        "source_repository_mutated",
+        "target_repository_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "release_or_promotion_performed",
+        "generated_projection_marked_canonical"
+      ],
+      "type": "object"
+    },
+    "ForbiddenCapabilityDeclaration": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "implemented_in_this_slice": {
+          "const": false,
+          "type": "boolean"
+        },
+        "refusal_code": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      },
+      "required": [
+        "id",
+        "implemented_in_this_slice",
+        "refusal_code"
       ],
       "type": "object"
     },
     "Freshness": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "behind_origin_main": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "checkout_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "fetch_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "local_head": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "local_origin_main": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CommitSha"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pull_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "remote_ref_updated": {
+          "const": false,
+          "type": "boolean"
+        },
+        "selected_revision": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "selected_revision_is_local_head": {
+          "type": "boolean"
+        },
+        "worktree_status": {
+          "type": "string"
+        }
+      },
       "required": [
         "branch",
         "worktree_status",
@@ -267,19 +881,56 @@
       ],
       "type": "object"
     },
+    "GitObjectId": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
     "HostCapabilitySetRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "HostCapabilitySet"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/HostCapabilitySetSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "HostCapabilitySet"
+            },
+            "spec": {
+              "$ref": "#/$defs/HostCapabilitySetSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "HostCapabilitySetSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "capabilities": {
+          "items": {
+            "$ref": "#/$defs/CapabilityDeclaration"
+          },
+          "type": "array"
+        },
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "forbidden_capabilities": {
+          "items": {
+            "$ref": "#/$defs/ForbiddenCapabilityDeclaration"
+          },
+          "type": "array"
+        }
+      },
       "required": [
         "capabilities",
         "forbidden_capabilities"
@@ -287,18 +938,71 @@
       "type": "object"
     },
     "HostManifestRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "HostManifest"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/HostManifestSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "HostManifest"
+            },
+            "spec": {
+              "$ref": "#/$defs/HostManifestSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "HostManifestSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "host_id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "host_kind": {
+          "enum": [
+            "local_git_repository_snapshot"
+          ]
+        },
+        "registered_dominium_command_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "registered_validation_command_present": {
+          "type": "boolean"
+        },
+        "repository_identity": {
+          "$ref": "#/$defs/RepositoryIdentity"
+        },
+        "runtime_dispatch_available": {
+          "const": false,
+          "type": "boolean"
+        },
+        "selected_revision": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "supported_surfaces": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
       "required": [
         "host_id",
         "host_kind",
@@ -312,25 +1016,29 @@
       "type": "object"
     },
     "Metadata": {
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "authority_role": {
-          "type": "string"
+          "$ref": "#/$defs/NonEmptyString"
         },
         "compatibility": {
           "$ref": "#/$defs/Compatibility"
         },
+        "created_at": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
         "explicit_non_capabilities": {
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/NonEmptyString"
           },
-          "type": "array"
+          "type": "array",
+          "uniqueItems": true
         },
         "freshness": {
           "$ref": "#/$defs/Freshness"
         },
         "id": {
-          "type": "string"
+          "$ref": "#/$defs/NonEmptyString"
         },
         "identity_owner": {
           "enum": [
@@ -338,15 +1046,10 @@
           ]
         },
         "producer": {
-          "additionalProperties": true,
-          "required": [
-            "name",
-            "version"
-          ],
-          "type": "object"
+          "$ref": "#/$defs/Producer"
         },
         "protocol_version": {
-          "type": "string"
+          "$ref": "#/$defs/NonEmptyString"
         },
         "schema_version": {
           "const": "aide.dominium-readonly-seam.v0"
@@ -358,8 +1061,7 @@
           ]
         },
         "source_revision": {
-          "pattern": "^[0-9a-f]{40}$",
-          "type": "string"
+          "$ref": "#/$defs/CommitSha"
         }
       },
       "required": [
@@ -374,6 +1076,172 @@
         "freshness",
         "compatibility",
         "explicit_non_capabilities"
+      ],
+      "type": "object"
+    },
+    "NonEmptyString": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "Producer": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "type": "object"
+    },
+    "ProjectionStatus": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_hash_bound": {
+          "const": true,
+          "type": "boolean"
+        },
+        "artifact_ref_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "branch_or_worktree_created": {
+          "const": false,
+          "type": "boolean"
+        },
+        "bridge_manifest_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "bridge_runtime_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "bundle_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "context_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "database_opened": {
+          "const": false,
+          "type": "boolean"
+        },
+        "dominium_command_invoked": {
+          "const": false,
+          "type": "boolean"
+        },
+        "event_envelope_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "evidence_refs_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "generated_projection_marked_canonical": {
+          "const": false,
+          "type": "boolean"
+        },
+        "github_mutation_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "host_manifest_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "host_runtime_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "mutation_capability_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "network_call_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "patch_transaction_applied": {
+          "const": false,
+          "type": "boolean"
+        },
+        "preview_or_apply_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "provider_or_model_called": {
+          "const": false,
+          "type": "boolean"
+        },
+        "read_only_capability_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "record_projected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "release_or_promotion_performed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "service_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "source_repository_mutated": {
+          "const": false,
+          "type": "boolean"
+        },
+        "target_repository_mutated": {
+          "const": false,
+          "type": "boolean"
+        },
+        "transport_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "workbench_started": {
+          "const": false,
+          "type": "boolean"
+        },
+        "worker_executed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "workspace_projected": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "dominium_command_invoked",
+        "host_runtime_started",
+        "workbench_started",
+        "bridge_runtime_started",
+        "service_started",
+        "database_opened",
+        "transport_started",
+        "network_call_performed",
+        "provider_or_model_called",
+        "worker_executed",
+        "patch_transaction_applied",
+        "preview_or_apply_performed",
+        "source_repository_mutated",
+        "target_repository_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "release_or_promotion_performed",
+        "generated_projection_marked_canonical"
       ],
       "type": "object"
     },
@@ -404,7 +1272,7 @@
           "type": "object"
         },
         "status": {
-          "$ref": "#/$defs/FalseStatus"
+          "$ref": "#/$defs/ProjectionStatus"
         }
       },
       "required": [
@@ -421,18 +1289,81 @@
       "type": "string"
     },
     "RefusalProjectionRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "RefusalProjection"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/RefusalProjectionSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "RefusalProjection"
+            },
+            "spec": {
+              "$ref": "#/$defs/RefusalProjectionSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "RefusalProjectionSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "code": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "diagnostic_codes": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array"
+        },
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "native_meaning_owned_by": {
+          "const": "Dominium"
+        },
+        "owner": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "projection_direction": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "reason": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "recovery_action": {
+          "type": "object"
+        },
+        "refusal_id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "related_commands": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array"
+        },
+        "source_registry": {
+          "$ref": "#/$defs/RepositoryRelativePath"
+        },
+        "summary": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      },
       "required": [
         "refusal_id",
         "code",
@@ -450,17 +1381,76 @@
       "type": "object"
     },
     "RegistrySummary": {
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
+        "native_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "omitted_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "omitted_ids_sha256": {
+          "$ref": "#/$defs/Digest"
+        },
+        "path": {
+          "$ref": "#/$defs/RepositoryRelativePath"
+        },
+        "projected_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "projected_ids": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array"
+        },
+        "selected_ids_sha256": {
+          "$ref": "#/$defs/Digest"
+        },
+        "selection_limit": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "selection_policy": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "source_registry_git_object": {
+          "additionalProperties": false,
+          "properties": {
+            "git_object": {
+              "$ref": "#/$defs/GitObjectId"
+            },
+            "mode": {
+              "$ref": "#/$defs/NonEmptyString"
+            },
+            "object_type": {
+              "$ref": "#/$defs/NonEmptyString"
+            }
+          },
+          "required": [
+            "mode",
+            "object_type",
+            "git_object"
+          ],
+          "type": "object"
+        },
+        "source_registry_path": {
+          "$ref": "#/$defs/RepositoryRelativePath"
+        },
         "source_registry_sha256": {
           "$ref": "#/$defs/Digest"
         },
-        "source_registry_git_object": {
-          "type": "object"
+        "source_revision": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "truncation_disclosed": {
+          "type": "boolean"
         }
       },
       "required": [
-        "path",
         "source_registry_sha256",
         "source_registry_git_object",
         "source_revision",
@@ -476,26 +1466,81 @@
       ],
       "type": "object"
     },
+    "RepositoryIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_identity": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "expected_identity": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "host": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "owner": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "remote_url": {
+          "type": "string"
+        },
+        "repository": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "root_name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "transport": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      },
+      "required": [
+        "canonical_identity",
+        "host",
+        "owner",
+        "repository",
+        "transport"
+      ],
+      "type": "object"
+    },
+    "RepositoryRelativePath": {
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\\\]+$",
+      "type": "string"
+    },
     "SourceFile": {
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "artifact_ref": {
           "$ref": "#/$defs/ReferenceID"
         },
         "authority": {
-          "type": "string"
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "git_object": {
+          "$ref": "#/$defs/GitObjectId"
+        },
+        "mode": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "object_type": {
+          "$ref": "#/$defs/NonEmptyString"
         },
         "path": {
-          "type": "string"
+          "$ref": "#/$defs/RepositoryRelativePath"
         },
         "required": {
           "type": "boolean"
         },
         "role": {
-          "type": "string"
+          "$ref": "#/$defs/NonEmptyString"
         },
         "sha256": {
           "$ref": "#/$defs/Digest"
+        },
+        "size_bytes": {
+          "minimum": 0,
+          "type": "integer"
         }
       },
       "required": [
@@ -509,18 +1554,62 @@
       "type": "object"
     },
     "WorkspaceDescriptorRecord": {
-      "$ref": "#/$defs/Record",
-      "properties": {
-        "kind": {
-          "const": "WorkspaceDescriptor"
+      "allOf": [
+        {
+          "$ref": "#/$defs/Record"
         },
-        "spec": {
-          "$ref": "#/$defs/WorkspaceDescriptorSpec"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "WorkspaceDescriptor"
+            },
+            "spec": {
+              "$ref": "#/$defs/WorkspaceDescriptorSpec"
+            },
+            "status": {
+              "$ref": "#/$defs/ProjectionStatus"
+            }
+          },
+          "required": [
+            "kind",
+            "spec",
+            "status"
+          ],
+          "type": "object"
         }
-      }
+      ]
     },
     "WorkspaceDescriptorSpec": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "branch": {
+          "type": "string"
+        },
+        "extensions": {
+          "$ref": "#/$defs/ExtensionMap"
+        },
+        "identity_is_file_path": {
+          "const": false,
+          "type": "boolean"
+        },
+        "local_path_is_locator_only": {
+          "const": true,
+          "type": "boolean"
+        },
+        "queue_status": {
+          "type": "object"
+        },
+        "repository_remote_url_hash": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "selected_revision": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "workspace_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        }
+      },
       "required": [
         "workspace_ref",
         "repository_remote_url_hash",
@@ -533,6 +1622,7 @@
       "type": "object"
     }
   },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "description": "Offline read-only AIDE-Dominium seam v0 projection bundle. The bundle records deterministic snapshots, mappings, and validation evidence only; it does not invoke Dominium commands, start services, call providers, execute workers, or mutate repositories.",
   "properties": {
@@ -540,7 +1630,24 @@
       "const": "aide.dev/v1alpha1"
     },
     "authority_classification": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "canonical_authority": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array"
+        },
+        "conflict_policy": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "projection_only": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array"
+        }
+      },
       "required": [
         "canonical_authority",
         "projection_only",
@@ -549,7 +1656,24 @@
       "type": "object"
     },
     "content_digests": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "projection_index": {
+          "$ref": "#/$defs/Digest"
+        },
+        "records": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Digest"
+          },
+          "type": "object"
+        },
+        "seam_bundle_without_self_digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "source_snapshot": {
+          "$ref": "#/$defs/Digest"
+        }
+      },
       "required": [
         "source_snapshot",
         "projection_index",
@@ -559,7 +1683,45 @@
       "type": "object"
     },
     "cross_reference_index": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "artifact_refs": {
+          "items": {
+            "$ref": "#/$defs/ReferenceID"
+          },
+          "type": "array"
+        },
+        "bundle_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        },
+        "context_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        },
+        "diagnostic_ids": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array"
+        },
+        "event_refs": {
+          "items": {
+            "$ref": "#/$defs/ReferenceID"
+          },
+          "type": "array"
+        },
+        "refusal_ids": {
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          },
+          "type": "array"
+        },
+        "schema_version": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "workspace_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        }
+      },
       "required": [
         "bundle_ref",
         "workspace_ref",
@@ -573,9 +1735,10 @@
     },
     "explicit_non_capabilities": {
       "items": {
-        "type": "string"
+        "$ref": "#/$defs/NonEmptyString"
       },
-      "type": "array"
+      "type": "array",
+      "uniqueItems": true
     },
     "freshness": {
       "$ref": "#/$defs/Freshness"
@@ -584,7 +1747,44 @@
       "const": "DominiumReadonlySeamBundle"
     },
     "manifest": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "bundle_id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "bundle_ref": {
+          "$ref": "#/$defs/ReferenceID"
+        },
+        "capability_target": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "projection_authority": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "protocol_version": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "recommended_next_task": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "record_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "schema_version": {
+          "const": "aide.dominium-readonly-seam.v0"
+        },
+        "selected_file_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source_revision": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "task_id": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      },
       "required": [
         "bundle_id",
         "bundle_ref",
@@ -604,7 +1804,21 @@
       "$ref": "#/$defs/Metadata"
     },
     "omission_summary": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "diagnostic_registry": {
+          "$ref": "#/$defs/RegistrySummary"
+        },
+        "omitted_source_files": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "reason": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "refusal_registry": {
+          "$ref": "#/$defs/RegistrySummary"
+        }
+      },
       "required": [
         "omitted_source_files",
         "reason",
@@ -690,18 +1904,94 @@
       "type": "object"
     },
     "source_snapshot": {
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
-        "repository_identity": {
-          "additionalProperties": true,
+        "authority_input_inventory": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "authority": {
+                "$ref": "#/$defs/NonEmptyString"
+              },
+              "path": {
+                "$ref": "#/$defs/RepositoryRelativePath"
+              },
+              "role": {
+                "$ref": "#/$defs/NonEmptyString"
+              },
+              "sha256": {
+                "$ref": "#/$defs/Digest"
+              }
+            },
+            "required": [
+              "path",
+              "role",
+              "authority",
+              "sha256"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "contract_inventory": {
+          "items": {
+            "$ref": "#/$defs/SourceFile"
+          },
+          "type": "array"
+        },
+        "freshness": {
+          "$ref": "#/$defs/Freshness"
+        },
+        "queue_status": {
+          "type": "object"
+        },
+        "read_only_operations": {
+          "additionalProperties": false,
+          "properties": {
+            "dominium_command_invocation": {
+              "const": false,
+              "type": "boolean"
+            },
+            "dominium_file_write": {
+              "const": false,
+              "type": "boolean"
+            },
+            "git_checkout": {
+              "const": false,
+              "type": "boolean"
+            },
+            "git_fetch": {
+              "const": false,
+              "type": "boolean"
+            },
+            "git_pull": {
+              "const": false,
+              "type": "boolean"
+            },
+            "remote_ref_update": {
+              "const": false,
+              "type": "boolean"
+            }
+          },
           "required": [
-            "canonical_identity",
-            "host",
-            "owner",
-            "repository",
-            "transport"
+            "git_fetch",
+            "git_pull",
+            "git_checkout",
+            "remote_ref_update",
+            "dominium_command_invocation",
+            "dominium_file_write"
           ],
           "type": "object"
+        },
+        "repository_identity": {
+          "$ref": "#/$defs/RepositoryIdentity"
+        },
+        "schema_version": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "selected_file_count": {
+          "minimum": 0,
+          "type": "integer"
         },
         "selected_files": {
           "items": {
@@ -712,9 +2002,11 @@
         "snapshot_digest": {
           "$ref": "#/$defs/Digest"
         },
+        "source_ref": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
         "source_revision": {
-          "pattern": "^[0-9a-f]{40}$",
-          "type": "string"
+          "$ref": "#/$defs/CommitSha"
         }
       },
       "required": [
@@ -736,7 +2028,23 @@
       "$ref": "#/$defs/FalseStatus"
     },
     "validation_summary": {
-      "additionalProperties": true,
+      "additionalProperties": false,
+      "properties": {
+        "error_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "validated": {
+          "type": "boolean"
+        },
+        "validation_status": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "warning_count": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
       "required": [
         "validation_status",
         "validated",

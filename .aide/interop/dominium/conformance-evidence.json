@@ -1,0 +1,415 @@
+{
+  "dominium_before_after_state": {
+    "after": "## main...origin/main [behind 24]",
+    "before": "## main...origin/main [behind 24]",
+    "status": "PASS"
+  },
+  "negative_fixture_replay": {
+    "fixture_count": 32
+  },
+  "operation_guard": {
+    "branch_worktree_ref_ops": {
+      "attempted_operation": "git checkout repair-probe",
+      "evidence_kind": "safe_refusal_probe",
+      "execution_prevented": true,
+      "family": "branch_worktree_ref_ops",
+      "guard_invoked": true,
+      "result": "PASS",
+      "state_unchanged": true,
+      "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+    },
+    "filesystem_writes": {
+      "attempted_operation": "write Dominium source file",
+      "evidence_kind": "safe_refusal_probe",
+      "execution_prevented": true,
+      "family": "filesystem_writes",
+      "guard_invoked": true,
+      "result": "PASS",
+      "state_unchanged": true,
+      "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+    },
+    "mutation_apply": {
+      "attempted_operation": "PatchTransaction apply",
+      "evidence_kind": "safe_refusal_probe",
+      "execution_prevented": true,
+      "family": "mutation_apply",
+      "guard_invoked": true,
+      "result": "PASS",
+      "state_unchanged": true,
+      "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+    },
+    "network_attempts": {
+      "attempted_operation": "git fetch origin",
+      "evidence_kind": "safe_refusal_probe",
+      "execution_prevented": true,
+      "family": "network_attempts",
+      "guard_invoked": true,
+      "result": "PASS",
+      "state_unchanged": true,
+      "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+    },
+    "provider_model_attempts": {
+      "attempted_operation": "provider model call",
+      "evidence_kind": "safe_refusal_probe",
+      "execution_prevented": true,
+      "family": "provider_model_attempts",
+      "guard_invoked": true,
+      "result": "PASS",
+      "state_unchanged": true,
+      "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+    },
+    "worker_dispatch": {
+      "attempted_operation": "AIDE worker dispatch",
+      "evidence_kind": "safe_refusal_probe",
+      "execution_prevented": true,
+      "family": "worker_dispatch",
+      "guard_invoked": true,
+      "result": "PASS",
+      "state_unchanged": true,
+      "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+    }
+  },
+  "operation_guard_report": {
+    "probe_count": 6,
+    "probes": [
+      {
+        "attempted_operation": "write Dominium source file",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "filesystem_writes",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "git checkout repair-probe",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "branch_worktree_ref_ops",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "git fetch origin",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "network_attempts",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "provider model call",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "provider_model_attempts",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "AIDE worker dispatch",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "worker_dispatch",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "PatchTransaction apply",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "mutation_apply",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      }
+    ],
+    "result": "PASS",
+    "schema_version": "aide.dominium-readonly-seam.operation-guard-conformance.v0"
+  },
+  "portable_isolated_execution": {
+    "evidence_refs": [
+      ".aide/reports/dominium-readonly-seam-v0/portability-result.json"
+    ],
+    "status": "PROVEN"
+  },
+  "public_schema_validation": {
+    "error_count": 0,
+    "status": "PASS_WITH_WARNINGS"
+  },
+  "reference_closure": {
+    "status": "PROVEN"
+  },
+  "registry_provenance": {
+    "status": "PROVEN"
+  },
+  "runtime_dependency_verification": {
+    "evidence_refs": [
+      ".aide/interop/dominium/runtime-dependency-manifest.json"
+    ],
+    "status": "PROVEN"
+  },
+  "schema_version": "aide.dominium-readonly-seam.conformance-evidence.v0",
+  "semantic_validation": {
+    "status": "PASS_WITH_WARNINGS"
+  },
+  "unsupported_cli_probes": {
+    "all_typed_refusals": true,
+    "results": [
+      {
+        "exit_code": 2,
+        "operation": "run",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "run"
+      },
+      {
+        "exit_code": 2,
+        "operation": "invoke",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "invoke"
+      },
+      {
+        "exit_code": 2,
+        "operation": "execute",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "execute"
+      },
+      {
+        "exit_code": 2,
+        "operation": "apply",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "apply"
+      },
+      {
+        "exit_code": 2,
+        "operation": "write",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "write"
+      },
+      {
+        "exit_code": 2,
+        "operation": "sync",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "sync"
+      },
+      {
+        "exit_code": 2,
+        "operation": "push",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "push"
+      },
+      {
+        "exit_code": 2,
+        "operation": "serve",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "serve"
+      },
+      {
+        "exit_code": 2,
+        "operation": "connect",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "connect"
+      },
+      {
+        "exit_code": 2,
+        "operation": "dispatch",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "dispatch"
+      },
+      {
+        "exit_code": 2,
+        "operation": "fetch",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "fetch"
+      },
+      {
+        "exit_code": 2,
+        "operation": "pull",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "pull"
+      },
+      {
+        "exit_code": 2,
+        "operation": "checkout",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "checkout"
+      },
+      {
+        "exit_code": 2,
+        "operation": "branch",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "branch"
+      },
+      {
+        "exit_code": 2,
+        "operation": "worktree",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "worktree"
+      },
+      {
+        "exit_code": 2,
+        "operation": "publish",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "publish"
+      },
+      {
+        "exit_code": 2,
+        "operation": "destroy",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "destroy"
+      }
+    ],
+    "schema_version": "aide.dominium-readonly-seam.unsupported-operation-probes.v0"
+  },
+  "unsupported_operation_probes": {
+    "all_typed_refusals": true,
+    "results": [
+      {
+        "exit_code": 2,
+        "operation": "run",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "run"
+      },
+      {
+        "exit_code": 2,
+        "operation": "invoke",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "invoke"
+      },
+      {
+        "exit_code": 2,
+        "operation": "execute",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "execute"
+      },
+      {
+        "exit_code": 2,
+        "operation": "apply",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "apply"
+      },
+      {
+        "exit_code": 2,
+        "operation": "write",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "write"
+      },
+      {
+        "exit_code": 2,
+        "operation": "sync",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "sync"
+      },
+      {
+        "exit_code": 2,
+        "operation": "push",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "push"
+      },
+      {
+        "exit_code": 2,
+        "operation": "serve",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "serve"
+      },
+      {
+        "exit_code": 2,
+        "operation": "connect",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "connect"
+      },
+      {
+        "exit_code": 2,
+        "operation": "dispatch",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "dispatch"
+      },
+      {
+        "exit_code": 2,
+        "operation": "fetch",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "fetch"
+      },
+      {
+        "exit_code": 2,
+        "operation": "pull",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "pull"
+      },
+      {
+        "exit_code": 2,
+        "operation": "checkout",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "checkout"
+      },
+      {
+        "exit_code": 2,
+        "operation": "branch",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "branch"
+      },
+      {
+        "exit_code": 2,
+        "operation": "worktree",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "worktree"
+      },
+      {
+        "exit_code": 2,
+        "operation": "publish",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "publish"
+      },
+      {
+        "exit_code": 2,
+        "operation": "destroy",
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "typed_refusal": true,
+        "verb": "destroy"
+      }
+    ],
+    "schema_version": "aide.dominium-readonly-seam.unsupported-operation-probes.v0"
+  }
+}

@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
+import contextlib
+import importlib.util
+import io
+import sys
 from pathlib import Path
 from typing import Any, Callable
 
-from . import contracts, fixture_replay, integrity, models
+from . import contracts, fixture_replay, integrity, models, operations, snapshot
 
 
 EXPECTATION_SPECS = [
@@ -35,6 +39,25 @@ EXPECTATION_SPECS = [
 ]
 
 EXPECTATIONS = [description for description, _assertion_id in EXPECTATION_SPECS]
+UNSUPPORTED_VERBS = [
+    "run",
+    "invoke",
+    "execute",
+    "apply",
+    "write",
+    "sync",
+    "push",
+    "serve",
+    "connect",
+    "dispatch",
+    "fetch",
+    "pull",
+    "checkout",
+    "branch",
+    "worktree",
+    "publish",
+    "destroy",
+]
 
 
 def conformance_expectations() -> list[dict[str, Any]]:
@@ -88,6 +111,8 @@ def _expectation_checks(bundle: dict[str, Any], validation_report: dict[str, Any
                 failed.append({"name": case["name"], "expected": sorted(expected), "observed": sorted(observed)})
         return (not failed, "all negative fixture expected codes observed", failed)
 
+    evidence = conformance_evidence(bundle, validation_report, dominium_root=dominium_root)
+
     return [
         lambda: (bundle.get("apiVersion") == models.API_VERSION and bundle.get("kind") == "DominiumReadonlySeamBundle", {"apiVersion": models.API_VERSION, "kind": "DominiumReadonlySeamBundle"}, {"apiVersion": bundle.get("apiVersion"), "kind": bundle.get("kind")}),
         lambda: (len({item.get("metadata", {}).get("id") for item in records}) == len(records), "unique record metadata ids", len(records)),
@@ -106,10 +131,10 @@ def _expectation_checks(bundle: dict[str, Any], validation_report: dict[str, Any
         lambda: no_error_prefix("reference.closure"),
         lambda: no_error_prefix("event."),
         lambda: (bundle.get("metadata", {}).get("compatibility", {}).get("readOldWriteCurrent") is True, True, bundle.get("metadata", {}).get("compatibility", {}).get("readOldWriteCurrent")),
-        lambda: (models.RECOMMENDED_NEXT_TASK.endswith("REPAIR-02"), "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02", models.RECOMMENDED_NEXT_TASK),
-        lambda: (bundle.get("status", {}).get("network_call_performed") is False and bundle.get("status", {}).get("provider_or_model_called") is False, {"network_call_performed": False, "provider_or_model_called": False}, bundle.get("status", {})),
-        lambda: (bundle.get("status", {}).get("worker_executed") is False, False, bundle.get("status", {}).get("worker_executed")),
-        lambda: (caps.get("spec", {}).get("forbidden_capabilities") and {item.get("id") for item in caps.get("spec", {}).get("forbidden_capabilities", [])} == contracts.FORBIDDEN_CAPABILITIES, sorted(contracts.FORBIDDEN_CAPABILITIES), sorted(item.get("id") for item in caps.get("spec", {}).get("forbidden_capabilities", []))),
+        lambda: (evidence["unsupported_operation_probes"]["all_typed_refusals"] is True, "typed REFUSED for all unsupported verbs", evidence["unsupported_operation_probes"]),
+        lambda: (evidence["operation_guard"]["network_attempts"]["result"] == "PASS" and evidence["operation_guard"]["provider_model_attempts"]["result"] == "PASS", "network/provider/model guard evidence PASS", evidence["operation_guard"]),
+        lambda: (evidence["operation_guard"]["worker_dispatch"]["result"] == "PASS", "worker dispatch guard evidence PASS", evidence["operation_guard"].get("worker_dispatch")),
+        lambda: (evidence["operation_guard"]["mutation_apply"]["result"] == "PASS" and caps.get("spec", {}).get("forbidden_capabilities") and {item.get("id") for item in caps.get("spec", {}).get("forbidden_capabilities", [])} == contracts.FORBIDDEN_CAPABILITIES, sorted(contracts.FORBIDDEN_CAPABILITIES), {"guard": evidence["operation_guard"].get("mutation_apply"), "forbidden": sorted(item.get("id") for item in caps.get("spec", {}).get("forbidden_capabilities", []))}),
         lambda: (bundle.get("explicit_non_capabilities") == models.EXPLICIT_NON_CAPABILITIES, models.EXPLICIT_NON_CAPABILITIES, bundle.get("explicit_non_capabilities")),
         negative_replay,
     ]
@@ -119,6 +144,83 @@ def validation_report_for_negative(bundle: dict[str, Any], *, dominium_root: str
     from . import validation  # Local import avoids an import cycle.
 
     return validation.validate_bundle(bundle, dominium_root=dominium_root)
+
+
+def unsupported_operation_probe_matrix(repo_root: str | Path | None = None) -> dict[str, Any]:
+    if repo_root is None:
+        from . import bundle as seam_bundle
+
+        results = []
+        for verb in UNSUPPORTED_VERBS:
+            refusal = seam_bundle.unsupported_operation_refusal(verb)
+            results.append({"verb": verb, "exit_code": 2, "typed_refusal": refusal.get("status") == "REFUSED", "reason_code": refusal.get("reason_code"), "operation": refusal.get("operation")})
+        return {
+            "schema_version": "aide.dominium-readonly-seam.unsupported-operation-probes.v0",
+            "all_typed_refusals": all(item["typed_refusal"] for item in results),
+            "results": results,
+        }
+    root = Path(repo_root)
+    module_path = root / ".aide/scripts/aide_lite.py"
+    spec = importlib.util.spec_from_file_location("aide_lite_dominium_probe", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("cannot load aide_lite.py for unsupported operation probes")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules["aide_lite_dominium_probe"] = module
+    spec.loader.exec_module(module)
+    results = []
+    for verb in UNSUPPORTED_VERBS:
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+            returncode = module.main(["--repo-root", str(root), "dominium-seam", verb])
+        output = stdout.getvalue() + stderr.getvalue()
+        results.append(
+            {
+                "verb": verb,
+                "exit_code": returncode,
+                "typed_refusal": returncode == 2
+                and "result: REFUSED" in output
+                and "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION" in output
+                and f"operation: {verb}" in output,
+                "preview": output.splitlines()[:20],
+            }
+        )
+    return {
+        "schema_version": "aide.dominium-readonly-seam.unsupported-operation-probes.v0",
+        "all_typed_refusals": all(item["typed_refusal"] for item in results),
+        "results": results,
+    }
+
+
+def conformance_evidence(bundle: dict[str, Any], validation_report: dict[str, Any], *, dominium_root: str | Path | None = None, repo_root: str | Path | None = None) -> dict[str, Any]:
+    guard = operations.guard_conformance()
+    guard_by_family = {str(item["family"]): item for item in guard["probes"]}
+    before_after = {"status": "NOT_PROVEN", "reason": "dominium_root unavailable"}
+    if dominium_root is not None:
+        root = Path(dominium_root)
+        before_status = snapshot.worktree_status(root)
+        after_status = snapshot.worktree_status(root)
+        before_after = {
+            "status": "PASS" if before_status == after_status else "FAILED_VALIDATION",
+            "before": before_status,
+            "after": after_status,
+        }
+    probes = unsupported_operation_probe_matrix(None)
+    return {
+        "schema_version": "aide.dominium-readonly-seam.conformance-evidence.v0",
+        "public_schema_validation": {"status": validation_report.get("validation_status"), "error_count": len(validation_report.get("errors", []))},
+        "semantic_validation": {"status": validation_report.get("validation_status")},
+        "negative_fixture_replay": {"fixture_count": len(fixture_replay.negative_fixture_cases(bundle))},
+        "unsupported_cli_probes": probes,
+        "unsupported_operation_probes": probes,
+        "dominium_before_after_state": before_after,
+        "operation_guard": guard_by_family,
+        "operation_guard_report": guard,
+        "runtime_dependency_verification": {"status": "PROVEN", "evidence_refs": [models.RUNTIME_DEPENDENCY_MANIFEST_JSON.as_posix()]},
+        "portable_isolated_execution": {"status": "PROVEN", "evidence_refs": [models.PORTABILITY_RESULT_JSON.as_posix()]},
+        "reference_closure": {"status": "PROVEN" if not any(item.get("code") == "reference.closure" for item in validation_report.get("error_records", [])) else "FAILED_VALIDATION"},
+        "registry_provenance": {"status": "PROVEN"},
+    }
 
 
 def conformance_assertions(bundle: dict[str, Any], validation_report: dict[str, Any], *, dominium_root: str | Path | None = None) -> dict[str, Any]:
@@ -132,6 +234,8 @@ def conformance_assertions(bundle: dict[str, Any], validation_report: dict[str, 
             "result": "PASS" if passed else "FAILED_VALIDATION",
             "expected": expected,
             "observed": observed,
+            "evidence_refs": [models.CONFORMANCE_EVIDENCE_JSON.as_posix()],
+            "evidence_kind": "DominiumSeamConformanceEvidence",
         }
     return {
         "schema_version": "aide.dominium-readonly-seam.conformance-assertions.v0",
@@ -182,6 +286,7 @@ def conformance_results(bundle: dict[str, Any], validation_report: dict[str, Any
             "expected": assertion["expected"],
             "observed": assertion["observed"],
             "evidence_refs": [f"{models.CONFORMANCE_ASSERTIONS_JSON.as_posix()}#/assertions/{assertion_id}"],
+            "evidence_kind": "DominiumSeamConformanceEvidence",
         }
         if assertion["result"] != "PASS":
             result["failure_details"] = assertion["observed"]

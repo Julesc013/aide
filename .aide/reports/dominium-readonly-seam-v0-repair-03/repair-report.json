@@ -1,0 +1,11 @@
+{
+  "closed_finding_count": 15,
+  "material_finding_count": 15,
+  "non_capabilities_preserved": true,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.dominium-readonly-seam.repair-03-report.v0",
+  "source_check_result": "REQUEST_CHANGES",
+  "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
+}

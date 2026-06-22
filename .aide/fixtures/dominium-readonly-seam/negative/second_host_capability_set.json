@@ -1,10 +1,10 @@
 {
   "base_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
-  "base_bundle_sha256": "sha256:992842c0d3b775cdb69b67a4bda1d8c352eea12a76f6d4aa9327f2927e08eebc",
+  "base_bundle_sha256": "sha256:3848d0a75d187386d1626f67b2ef48b01aef75f29407beb30427b546b2580cda",
   "expected_error_codes": [
     "cardinality.singleton"
   ],
-  "invalid_bundle_sha256": "sha256:1afa7a2aa546896faa443d131d37059453f0f015400be583479f79232bc12171",
+  "invalid_bundle_sha256": "sha256:cfb93147b4d53ddf4b047275466563b44f6387a29b2e3aa13d56f363e6525835",
   "name": "second_host_capability_set",
   "operations": [
     {
@@ -171,6 +171,7 @@
             "bridge_runtime_started": false,
             "database_opened": false,
             "dominium_command_invoked": false,
+            "generated_projection_marked_canonical": false,
             "github_mutation_performed": false,
             "host_runtime_started": false,
             "mutation_capability_count": 0,
@@ -182,6 +183,7 @@
             "record_projected": true,
             "release_or_promotion_performed": false,
             "service_started": false,
+            "source_repository_mutated": false,
             "target_repository_mutated": false,
             "transport_started": false,
             "workbench_started": false,
@@ -348,6 +350,7 @@
             "bridge_runtime_started": false,
             "database_opened": false,
             "dominium_command_invoked": false,
+            "generated_projection_marked_canonical": false,
             "github_mutation_performed": false,
             "host_runtime_started": false,
             "mutation_capability_count": 0,
@@ -359,6 +362,7 @@
             "record_projected": true,
             "release_or_promotion_performed": false,
             "service_started": false,
+            "source_repository_mutated": false,
             "target_repository_mutated": false,
             "transport_started": false,
             "workbench_started": false,

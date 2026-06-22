@@ -9,6 +9,20 @@ from . import contracts, diagnostics, fixture_replay, integrity, models, project
 from .references import is_commit_sha, is_sha256, normalize_repo_path, parse_stable_ref, sha256_bytes
 
 
+AUTHORITY_CHANGING_EXTENSION_NAMES = {
+    "authoritative",
+    "canonical",
+    "workbench_is_authority",
+    "runtime_started",
+    "private_tool_bypass",
+    "command_invocation_implemented",
+    "network_allowed",
+    "mutation_allowed",
+    "trusted",
+    "admitted",
+}
+
+
 class ValidationFailure(ValueError):
     """Raised for validation defects that should fail closed."""
 
@@ -101,6 +115,9 @@ def _check_record(
     if metadata.get("authority_role") != rule.get("authority_role"):
         _error(errors, error_records, "authority.role", f"{kind}.metadata.authority_role", f"{kind} authority_role mismatch")
     spec = record.get("spec", {}) if isinstance(record.get("spec"), dict) else {}
+    extensions = spec.get("extensions", {}) if isinstance(spec.get("extensions"), dict) else {}
+    if AUTHORITY_CHANGING_EXTENSION_NAMES.intersection(extensions):
+        _error(errors, error_records, "schema.authority_extension", f"{kind}.spec.extensions", "authority-changing extension field refused")
     for field in sorted(rule.get("required_spec", set())):
         if field not in spec:
             _error(errors, error_records, "schema.spec_required", f"{kind}.spec.{field}", f"{kind} missing spec.{field}", expected="field present", observed="missing")
