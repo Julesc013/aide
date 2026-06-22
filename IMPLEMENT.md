@@ -7183,3 +7183,40 @@ Validation records the independent harness passing with `PASS_WITH_WARNINGS`, ze
 - The seam remains offline and read-only.
 - The local Dominium checkout remains behind remote `origin/main`.
 - Non-Windows platforms and minimum Python 3.11 were not separately executed.
+
+## Work Item: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+
+### Status
+
+Completed with accepted warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/**`
+- `.aide/reports/dominium-readonly-seam-v0-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The final Repair 05 independent check reported `PASS_WITH_WARNINGS`, `material_finding_count: 0`, and `missing_evidence: 0`, satisfying the zero-finding gate for acceptance.
+
+### Implementation Notes
+
+- Created the acceptance task packet, ExecPlan, prompt, status, and evidence root.
+- Accepted only `dominium_readonly_seam_v0` as an offline deterministic read-only projection capability.
+- Preserved historical failed checks and the full repair lineage.
+- Recorded final schema, evidence, portability, safety, test-validation, warning, and non-capability reviews.
+- Generated the next WorkUnit validation slice prompt but did not create or begin that task.
+
+### Verification
+
+Validation records final Repair 05 check success, current seam validation and conformance warnings, portability pass, fixture count, demo no-mutation result, Dominium clean state, task inspect/evidence, broad validation, JSON parsing, secret-like scan, diff checks, and commit-policy check.
+
+### Remaining Issues
+
+- The WorkUnit validation slice is not implemented.
+- The seam remains offline and read-only.
+- Runtime, Workbench, provider/model, worker, mutation, preview/apply, and target-repository behavior remain absent.
+- Non-Windows platforms and minimum Python 3.11 were not separately executed.

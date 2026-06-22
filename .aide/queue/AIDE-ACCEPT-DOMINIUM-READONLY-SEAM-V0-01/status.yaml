@@ -1,0 +1,40 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-23
+summary: Accepted dominium_readonly_seam_v0 as an offline deterministic read-only projection capability.
+validation_status: PASS_WITH_WARNINGS
+source_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+source_commit: cfecdd3f4802b3571919e8e0f8b3d12dd1c19229
+accepted_capability: dominium_readonly_seam_v0
+missing_evidence: 0
+material_finding_count: 0
+recommended_next_task: AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+dominium_modified: false
+production_modified: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+evidence:
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/evidence/baseline.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/evidence/source-chain.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/evidence/validation-results.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/evidence/remaining-risks.md
+warnings:
+  - The seam remains offline and read-only.
+  - Pinned local Dominium is behind remote origin/main.
+  - Non-Windows platforms were not separately executed.
+  - Minimum Python 3.11 was not separately executed.
+  - External Draft 2020-12 validator unavailable.
+  - Host/runtime/Workbench functionality is intentionally absent.
+blockers: []

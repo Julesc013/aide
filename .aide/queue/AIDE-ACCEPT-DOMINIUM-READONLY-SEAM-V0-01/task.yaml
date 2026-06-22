@@ -1,0 +1,52 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+title: Accept Dominium Read-Only Seam v0
+type: acceptance
+status: needs_review
+created_at: 2026-06-23
+source_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+source_commit: cfecdd3f4802b3571919e8e0f8b3d12dd1c19229
+accepted_capability: dominium_readonly_seam_v0
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/**
+  - .aide/reports/dominium-readonly-seam-v0-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide/protocol/aide-dominium-readonly-seam-v0.schema.json
+  - core/interop/dominium/**
+  - core/protocol/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam*.py
+  - .aide/fixtures/dominium-readonly-seam/**
+  - .aide/interop/dominium/**
+  - .aide/reports/dominium-readonly-seam-v0/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-05/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-05-check/**
+  - Dominium
+objective: >
+  Accept only the offline deterministic Dominium read-only seam v0 capability,
+  preserve historical failed checks, record warnings and non-capabilities, and
+  route to the WorkUnit validation slice prompt without beginning it.
+review_gate: needs_review
+recommended_next_task: AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+non_capabilities:
+  - no Dominium command invocation
+  - no live Host Contract runtime
+  - no Host SDK runtime
+  - no Workbench module
+  - no bridge runtime
+  - no service
+  - no database runtime
+  - no network transport
+  - no provider/model calls
+  - no worker execution
+  - no PatchTransaction apply
+  - no DevelopmentTransaction
+  - no PreviewSession
+  - no preview/apply/rollback
+  - no target repository mutation
+  - no branch/worktree automation
+  - no GitHub mutation
+  - no release or promotion

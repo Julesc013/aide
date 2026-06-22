@@ -1,0 +1,37 @@
+{
+  "accepted_capability": "dominium_readonly_seam_v0",
+  "accepted_meaning": "AIDE can deterministically inspect a pinned, already-present Dominium repository through an offline read-only seam and project validated host, capability, workspace, context, artifact, diagnostic, refusal, evidence, event, and bridge records without invoking Dominium commands or mutating Dominium.",
+  "forbidden_interpretations": [
+    "AIDE and Dominium have a live runtime bridge.",
+    "AIDE can invoke Dominium commands.",
+    "Workbench integration exists.",
+    "AIDE can apply mutations."
+  ],
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "schema_version": "aide.dominium-readonly-seam.acceptance-report.v0",
+  "source_check_commit": "cfecdd3f4802b3571919e8e0f8b3d12dd1c19229",
+  "source_check_result": "PASS_WITH_WARNINGS",
+  "source_check_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
+  "status": "needs_review",
+  "task_id": "AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01",
+  "validation_summary": {
+    "conformance_expectations_passed": "23/23",
+    "demo_status": "PASS_WITH_WARNINGS",
+    "dominium_modified": false,
+    "fixture_count": 43,
+    "portability_status": "PASS",
+    "record_count": 42,
+    "seam_validation_status": "PASS_WITH_WARNINGS"
+  },
+  "warnings": [
+    "The seam remains offline and read-only.",
+    "Pinned local Dominium is behind remote origin/main.",
+    "Non-Windows platforms were not separately executed.",
+    "Minimum Python 3.11 was not separately executed.",
+    "External Draft 2020-12 validator unavailable.",
+    "Host/runtime/Workbench functionality is intentionally absent."
+  ]
+}

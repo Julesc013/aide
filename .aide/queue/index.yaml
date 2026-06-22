@@ -1788,6 +1788,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/prompt.md
     evidence: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence
     description: Check-only independent verification of AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05 at commit 05cb2b82980d1dbb9fb18524f0ba191a460b7962. Stops at needs_review with PASS_WITH_WARNINGS after closing all four Repair 05 source findings, recording material_finding_count 0 and missing_evidence 0, preserving production and Dominium immutability, and recommending exactly AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01. Does not repair implementation, alter public schemas/code/tests/fixtures/generated seam outputs/Repair 05 reports, modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, accept the seam, or begin the WorkUnit validation slice.
+  - id: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Dominium Read-Only Seam v0
+    task: .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/evidence
+    description: Acceptance/consolidation gate for dominium_readonly_seam_v0. Accepts only the offline deterministic read-only projection capability after Repair 05 check reported PASS_WITH_WARNINGS with material_finding_count 0 and missing_evidence 0. Preserves all historical failed checks, records explicit warnings and non-capabilities, stops at needs_review with ACCEPTED_WITH_WARNINGS, and recommends exactly AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01. Does not repair implementation, alter public schemas/code/tests/fixtures/generated seam outputs/Repair 05 reports/check reports, modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, or begin the WorkUnit validation slice.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

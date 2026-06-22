@@ -2143,3 +2143,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01`.
 - Result: `PASS_WITH_WARNINGS`; all four source findings are `CLOSED`.
 - Notes: This check does not repair implementation, alter public schemas/code/tests/fixtures/generated seam outputs/Repair 05 reports, modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, create branches/worktrees, mutate GitHub, release, promote, accept the seam, or begin the WorkUnit validation slice.
+
+### Queue ID: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+
+- Title: Accept Dominium Read-Only Seam v0
+- Status: Needs Review
+- Objective: accept only `dominium_readonly_seam_v0` after the final Repair 05 independent check reported zero material findings.
+- Scope: `.aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/**`, `.aide/reports/dominium-readonly-seam-v0-accept/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: Repair 05 check commit `cfecdd3f4802b3571919e8e0f8b3d12dd1c19229`, `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and a clean worktree.
+- Verification Intent: source-chain review, historical failure preservation, accepted scope review, final schema/evidence/portability/safety review, task inspect/evidence, broad validation, JSON parsing, secret-like scan, Dominium clean-state check, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts `dominium_readonly_seam_v0`, preserves explicit non-capabilities, and recommends exactly `AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01`.
+- Result: `ACCEPTED_WITH_WARNINGS`; next task prompt generated only.
+- Notes: This acceptance does not modify seam implementation, alter public schemas/code/tests/fixtures/generated seam outputs/Repair 05 reports/check reports, modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, create branches/worktrees, mutate GitHub, release, promote, or begin the WorkUnit validation slice.
