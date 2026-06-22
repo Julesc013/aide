@@ -1738,6 +1738,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/prompt.md
     evidence: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence
     description: Targeted Repair 03 for the 15 material findings from AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02: public schema typing and false-boundary hardening, strict fixture replay, evidence-bearing conformance, complete operation trace and guard evidence, manifest-driven portability isolation, and extended typed unsupported-operation refusals. Stops at needs_review and recommends AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03 only. Does not modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, or begin the WorkUnit validation slice.
+  - id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
+    status: needs_review
+    planning_state: independent_check_complete
+    result: REQUEST_CHANGES
+    title: Independent Final Check Of Dominium Read-Only Seam v0 Repair 03
+    task: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence
+    description: Check-only independent adversarial verification for AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03 at commit 84a154c2f03b304a987a9f017cc48a0b22c3f6d6. Found 12 material assertions, stops at needs_review with REQUEST_CHANGES, and recommends exactly AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04. Does not repair the seam, modify production code/schema/tests/fixtures/current seam outputs/Repair 03 reports, mutate Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, or begin the WorkUnit validation slice.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

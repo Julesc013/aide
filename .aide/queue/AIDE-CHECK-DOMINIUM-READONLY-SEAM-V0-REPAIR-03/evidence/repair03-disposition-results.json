@@ -1,0 +1,20 @@
+{
+  "finding_ids": [
+    "schema.kind_specific_spec_types",
+    "schema.false_boundary_required",
+    "schema.unbounded_authority_fields",
+    "fixtures.production_remove_missing",
+    "fixtures.production_replace_missing",
+    "fixtures.production_index_strictness",
+    "conformance.unsupported_operation_semantics",
+    "conformance.no_write_semantics",
+    "conformance.network_semantics",
+    "operation.raw_trace_auditability",
+    "operation.git_network_classification",
+    "operation.injection_evidence",
+    "portability.manifest_driven_copy",
+    "portability.sanitized_environment",
+    "cli.unsupported_extended_verbs"
+  ],
+  "row_count": 15
+}

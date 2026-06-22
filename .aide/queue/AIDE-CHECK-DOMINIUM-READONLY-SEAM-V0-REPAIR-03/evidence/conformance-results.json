@@ -1,0 +1,72 @@
+{
+  "adjacent_no_write_statuses": true,
+  "guard_report": {
+    "probe_count": 6,
+    "probes": [
+      {
+        "attempted_operation": "write Dominium source file",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "filesystem_writes",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "git checkout repair-probe",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "branch_worktree_ref_ops",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "git fetch origin",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "network_attempts",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "provider model call",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "provider_model_attempts",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "AIDE worker dispatch",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "worker_dispatch",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      },
+      {
+        "attempted_operation": "PatchTransaction apply",
+        "evidence_kind": "safe_refusal_probe",
+        "execution_prevented": true,
+        "family": "mutation_apply",
+        "guard_invoked": true,
+        "result": "PASS",
+        "state_unchanged": true,
+        "typed_reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY"
+      }
+    ],
+    "result": "PASS",
+    "schema_version": "aide.dominium-readonly-seam.operation-guard-conformance.v0"
+  },
+  "result_count": 23,
+  "uses_direct_helper": true
+}

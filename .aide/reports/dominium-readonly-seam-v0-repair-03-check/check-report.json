@@ -1,0 +1,2409 @@
+{
+  "assertions": [
+    {
+      "category": "source_chain",
+      "description": "Every required source-chain commit resolves locally.",
+      "evidence_refs": [
+        "git show --no-patch source-chain"
+      ],
+      "expected": {
+        "original_build": "a75635478be155ef7bc2b62de4ead3837212bbb8",
+        "original_check": "692b4b3469e80a67f3f2f98612ec66c86b7394e9",
+        "repair_01": "30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd",
+        "repair_01_check": "bf2b51996c7df0374942ad361ebfbae04c9c1caf",
+        "repair_02": "1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358",
+        "repair_02_check": "20c08ed4852d1af42ff03cd0bac632325892e885",
+        "repair_03": "84a154c2f03b304a987a9f017cc48a0b22c3f6d6"
+      },
+      "id": "source_chain.commits_resolve",
+      "observed": {
+        "original_build": {
+          "output": "a75635478be155ef7bc2b62de4ead3837212bbb8 feat(dominium): build read-only seam v0",
+          "requested": "a75635478be155ef7bc2b62de4ead3837212bbb8",
+          "returncode": 0
+        },
+        "original_check": {
+          "output": "692b4b3469e80a67f3f2f98612ec66c86b7394e9 audit(dominium): check read-only seam v0",
+          "requested": "692b4b3469e80a67f3f2f98612ec66c86b7394e9",
+          "returncode": 0
+        },
+        "repair_01": {
+          "output": "30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd fix(dominium): repair read-only seam v0",
+          "requested": "30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd",
+          "returncode": 0
+        },
+        "repair_01_check": {
+          "output": "bf2b51996c7df0374942ad361ebfbae04c9c1caf audit(dominium): check read-only seam repair",
+          "requested": "bf2b51996c7df0374942ad361ebfbae04c9c1caf",
+          "returncode": 0
+        },
+        "repair_02": {
+          "output": "1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358 fix(dominium): repair read-only seam v0 second pass",
+          "requested": "1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358",
+          "returncode": 0
+        },
+        "repair_02_check": {
+          "output": "20c08ed4852d1af42ff03cd0bac632325892e885 audit(dominium): check read-only seam repair 02",
+          "requested": "20c08ed4852d1af42ff03cd0bac632325892e885",
+          "returncode": 0
+        },
+        "repair_03": {
+          "output": "84a154c2f03b304a987a9f017cc48a0b22c3f6d6 fix(dominium): repair read-only seam v0 third pass",
+          "requested": "84a154c2f03b304a987a9f017cc48a0b22c3f6d6",
+          "returncode": 0
+        }
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "source_chain",
+      "description": "AIDE branch is main and worktree was clean before check outputs.",
+      "evidence_refs": [
+        "git status --short --branch"
+      ],
+      "expected": "## main...origin/main",
+      "id": "source_chain.branch_main_clean_at_check_start",
+      "observed": "## main...origin/main\n M .aide/queue/index.yaml\n M IMPLEMENT.md\n M PLANS.md\n?? .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/\n?? .aide/reports/dominium-readonly-seam-v0-repair-03-check/",
+      "outcome": "FAIL",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "source_chain",
+      "description": "Repair 03 result is PASS/PASS_WITH_WARNINGS and recommends this check.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/result.json"
+      ],
+      "expected": {
+        "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+        "result": "PASS or PASS_WITH_WARNINGS"
+      },
+      "id": "source_chain.repair03_routes_here",
+      "observed": {
+        "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "source_chain",
+      "description": "Repair 02 check remains REQUEST_CHANGES with exactly 15 material findings.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02/evidence/result.json"
+      ],
+      "expected": {
+        "material_finding_count": 15,
+        "result": "REQUEST_CHANGES"
+      },
+      "id": "source_chain.repair02_findings_count",
+      "observed": {
+        "material_finding_count": 15,
+        "result": "REQUEST_CHANGES"
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "schema",
+      "description": "Public schema declares Draft 2020-12 and has resolvable internal refs.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "dangling_refs": []
+      },
+      "id": "schema.draft_2020_12_and_refs",
+      "observed": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "dangling_refs": []
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "schema",
+      "description": "Every false-boundary field is represented as boolean const false in the public schema.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": {
+        "branch_or_worktree_created": "required boolean const false",
+        "bridge_runtime_started": "required boolean const false",
+        "database_opened": "required boolean const false",
+        "dominium_command_invoked": "required boolean const false",
+        "generated_projection_marked_canonical": "required boolean const false",
+        "github_mutation_performed": "required boolean const false",
+        "host_runtime_started": "required boolean const false",
+        "network_call_performed": "required boolean const false",
+        "patch_transaction_applied": "required boolean const false",
+        "preview_or_apply_performed": "required boolean const false",
+        "provider_or_model_called": "required boolean const false",
+        "release_or_promotion_performed": "required boolean const false",
+        "service_started": "required boolean const false",
+        "source_repository_mutated": "required boolean const false",
+        "target_repository_mutated": "required boolean const false",
+        "transport_started": "required boolean const false",
+        "workbench_started": "required boolean const false",
+        "worker_executed": "required boolean const false"
+      },
+      "id": "schema.false_boundaries_const_false",
+      "observed": {
+        "branch_or_worktree_created": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "bridge_runtime_started": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "database_opened": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "dominium_command_invoked": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "generated_projection_marked_canonical": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "github_mutation_performed": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "host_runtime_started": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "network_call_performed": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "patch_transaction_applied": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "preview_or_apply_performed": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "provider_or_model_called": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "release_or_promotion_performed": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "service_started": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "source_repository_mutated": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "target_repository_mutated": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "transport_started": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "workbench_started": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        },
+        "worker_executed": {
+          "has_boolean_const_false": true,
+          "in_required": true,
+          "occurrences": 3
+        }
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.false_boundary_required"
+    },
+    {
+      "category": "schema",
+      "description": "Public schema has kind-specific record/spec definitions and allOf/oneOf discrimination markers.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": {
+        "allOf": true,
+        "oneOf": true,
+        "required_kinds": [
+          "HostManifest",
+          "HostCapabilitySet",
+          "WorkspaceDescriptor",
+          "ContextDescriptor",
+          "ArtifactReference",
+          "DiagnosticProjection",
+          "RefusalProjection",
+          "EvidenceReferenceSet",
+          "EventEnvelope",
+          "DominiumBridgeManifest"
+        ]
+      },
+      "id": "schema.kind_specific_defs_present",
+      "observed": {
+        "allOf": true,
+        "oneOf": false,
+        "required_kinds_present": {
+          "ArtifactReference": true,
+          "ContextDescriptor": true,
+          "DiagnosticProjection": true,
+          "DominiumBridgeManifest": true,
+          "EventEnvelope": true,
+          "EvidenceReferenceSet": true,
+          "HostCapabilitySet": true,
+          "HostManifest": true,
+          "RefusalProjection": true,
+          "WorkspaceDescriptor": true
+        }
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.kind_specific_spec_types"
+    },
+    {
+      "category": "schema",
+      "description": "Unbounded objects are limited to extension/compatibility surfaces and authority-changing extension names are semantically refused.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+        "core/interop/dominium/validation.py"
+      ],
+      "expected": {
+        "additionalProperties_true_only_in_extensions": true,
+        "authority_names_semantically_rejected": true
+      },
+      "id": "schema.authority_extensions_bounded",
+      "observed": {
+        "additionalProperties_true_paths": [
+          "/$defs/ExtensionMap"
+        ],
+        "authority_names_in_validation": false
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.unbounded_authority_fields"
+    },
+    {
+      "category": "schema",
+      "description": "Current committed SeamBundle is the Repair 03 bundle and carries expected source identity.",
+      "evidence_refs": [
+        ".aide/interop/dominium/seam-bundle.json"
+      ],
+      "expected": {
+        "kind": "DominiumReadonlySeamBundle",
+        "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+        "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
+      },
+      "id": "schema.current_bundle_has_expected_identity",
+      "observed": {
+        "kind": "DominiumReadonlySeamBundle",
+        "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+        "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "fixture_replay",
+      "description": "All committed negative fixtures independently replay to their recorded invalid bundle digest.",
+      "evidence_refs": [
+        ".aide/fixtures/dominium-readonly-seam/negative/**"
+      ],
+      "expected": "all negative fixture invalid_bundle_sha256 values match independent replay",
+      "id": "fixture.committed_negative_replay_digest",
+      "observed": {
+        "failures": [],
+        "fixture_count": 32
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay must require value for add, replace, and append rather than inserting null.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "explicit value-presence guard for add/replace/append",
+      "id": "fixture.production_requires_value",
+      "observed": "production uses op.get(\"value\") without a value-presence guard",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixtures.production_index_strictness"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay must accept only ASCII canonical decimal indexes.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "ASCII decimal regex; Unicode decimal digits rejected",
+      "id": "fixture.production_rejects_unicode_decimal_indexes",
+      "observed": "production uses str.isdecimal(), which accepts Unicode decimal digits",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixtures.production_index_strictness"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay must reject import, args, and kwargs operation keys in addition to executable fields.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": [
+        "import",
+        "args",
+        "kwargs"
+      ],
+      "id": "fixture.production_forbidden_key_set_complete",
+      "observed": "missing one or more required forbidden keys",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixtures.production_index_strictness"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay rejects remove of a missing object key.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "missing remove target raises FixtureReplayError",
+      "id": "fixture.production_remove_missing_refused",
+      "observed": true,
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixtures.production_remove_missing"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay rejects replace of a missing object key.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "missing replace target raises FixtureReplayError",
+      "id": "fixture.production_replace_missing_refused",
+      "observed": true,
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixtures.production_replace_missing"
+    },
+    {
+      "category": "conformance",
+      "description": "Unsupported-operation conformance must consume actual CLI dispatch evidence, not direct helper output.",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py",
+        ".aide/interop/dominium/conformance-evidence.json"
+      ],
+      "expected": "actual CLI dispatch evidence in conformance evidence",
+      "id": "conformance.unsupported_uses_actual_cli_dispatch",
+      "observed": "production conformance calls unsupported_operation_probe_matrix(None), which uses direct refusal helper",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.unsupported_operation_semantics"
+    },
+    {
+      "category": "conformance",
+      "description": "No-write conformance must compare Dominium state around actual seam operations.",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py",
+        ".aide/interop/dominium/conformance-evidence.json"
+      ],
+      "expected": "before state, then snapshot/project/validate/diff/demo, then after state",
+      "id": "conformance.no_write_surrounds_actual_operations",
+      "observed": "production conformance captures adjacent before/after worktree statuses with no seam operation between them",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.no_write_semantics"
+    },
+    {
+      "category": "conformance",
+      "description": "Network/provider/worker/mutation conformance must consume exercised guard evidence.",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py",
+        "core/interop/dominium/operations.py",
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+      ],
+      "expected": "safe attempted invocation reaches a guard/dispatcher and records execution-prevented evidence",
+      "id": "conformance.guard_evidence_is_exercised",
+      "observed": "operation guard report is produced by a static dictionary; no guard dispatcher is exercised",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.network_semantics"
+    },
+    {
+      "category": "conformance",
+      "description": "Conformance result structure and counts are internally consistent.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json"
+      ],
+      "expected": {
+        "passed_count": 23,
+        "shape": true,
+        "unique_assertions": true
+      },
+      "id": "conformance.result_structure",
+      "observed": {
+        "actual_passed_count": 23,
+        "reported_passed_count": 23,
+        "shape": true,
+        "unique_assertions": true
+      },
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "operation",
+      "description": "Complete operation trace digest recomputes from the raw trace.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "expected": {
+        "raw_count": 874,
+        "raw_trace_sha256": "sha256:1b06125c362a7da16b1c759c3db76a8693d27e7010c1d846824f1c6658224b02"
+      },
+      "id": "operation.raw_trace_digest_recomputes",
+      "observed": {
+        "raw_count": 874,
+        "recomputed": "sha256:1b06125c362a7da16b1c759c3db76a8693d27e7010c1d846824f1c6658224b02"
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "operation.raw_trace_auditability"
+    },
+    {
+      "category": "operation",
+      "description": "Git classifier source separates remote/network verbs and branch/ref/worktree/history mutations.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py"
+      ],
+      "expected": [
+        "REMOTE_GIT_FORMS",
+        "BRANCH_WORKTREE_REF_FORMS",
+        "network_attempts",
+        "branch_worktree_ref_ops"
+      ],
+      "id": "operation.git_classifier_source_covers_remote_and_ref_mutations",
+      "observed": "required classifier tokens present",
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "operation.git_network_classification"
+    },
+    {
+      "category": "operation",
+      "description": "Operation aggregation key must preserve target, classification, and source distinctions or be explicitly lossless.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py",
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "expected": "aggregation key includes family, operation, target, classification, allowed, source, and observation method or stores a lossless nested breakdown",
+      "id": "operation.aggregate_key_preserves_semantics",
+      "observed": "aggregate key omits target, classification, and source",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "operation.raw_trace_auditability"
+    },
+    {
+      "category": "operation",
+      "description": "Guard report must be generated by exercised guard paths, not static pass dictionaries.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py",
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+      ],
+      "expected": "actual guard/dispatcher invocation per forbidden family",
+      "id": "operation.guard_report_is_not_static",
+      "observed": {
+        "families": [
+          "branch_worktree_ref_ops",
+          "filesystem_writes",
+          "mutation_apply",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch"
+        ],
+        "static_guard_dictionary": true
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "operation.injection_evidence"
+    },
+    {
+      "category": "operation",
+      "description": "Operation guard report covers required forbidden families.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+      ],
+      "expected": [
+        "branch_worktree_ref_ops",
+        "filesystem_writes",
+        "mutation_apply",
+        "network_attempts",
+        "provider_model_attempts",
+        "worker_dispatch"
+      ],
+      "id": "operation.guard_families_present",
+      "observed": [
+        "branch_worktree_ref_ops",
+        "filesystem_writes",
+        "mutation_apply",
+        "network_attempts",
+        "provider_model_attempts",
+        "worker_dispatch"
+      ],
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "runtime_manifest",
+      "description": "Serialized runtime manifest digest, paths, uniqueness, existence, and per-file hashes validate.",
+      "evidence_refs": [
+        ".aide/interop/dominium/runtime-dependency-manifest.json"
+      ],
+      "expected": "valid manifest digest and all dependency entry hashes",
+      "id": "manifest.digest_and_entries_validate",
+      "observed": {
+        "bad_entries": [],
+        "digest_ok": true
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "portability.manifest_driven_copy"
+    },
+    {
+      "category": "runtime_manifest",
+      "description": "Required local imports derived independently from AST are declared in the serialized manifest.",
+      "evidence_refs": [
+        ".aide/interop/dominium/runtime-dependency-manifest.json",
+        "core/interop/dominium/**",
+        "core/protocol/envelope.py"
+      ],
+      "expected": "no missing required local import declarations",
+      "id": "manifest.ast_import_closure_declared",
+      "observed": {
+        "derived": [
+          ".aide/scripts/aide_lite.py",
+          "core/interop/dominium/__init__.py",
+          "core/interop/dominium/bundle.py",
+          "core/interop/dominium/conformance.py",
+          "core/interop/dominium/contracts.py",
+          "core/interop/dominium/diagnostics.py",
+          "core/interop/dominium/fixture_replay.py",
+          "core/interop/dominium/identity.py",
+          "core/interop/dominium/integrity.py",
+          "core/interop/dominium/mappings.py",
+          "core/interop/dominium/models.py",
+          "core/interop/dominium/operations.py",
+          "core/interop/dominium/projector.py",
+          "core/interop/dominium/references.py",
+          "core/interop/dominium/refusals.py",
+          "core/interop/dominium/snapshot.py",
+          "core/interop/dominium/validation.py",
+          "core/protocol/envelope.py"
+        ],
+        "missing": []
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    },
+    {
+      "category": "portability",
+      "description": "Portability proof compares the complete required child output set.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/portability-result.json"
+      ],
+      "expected": [
+        ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+        ".aide/reports/dominium-readonly-seam-v0/source-snapshot.json",
+        ".aide/reports/dominium-readonly-seam-v0/projection-index.json",
+        ".aide/reports/dominium-readonly-seam-v0/validation.json",
+        ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json",
+        ".aide/interop/dominium/conformance-evidence.json",
+        ".aide/reports/dominium-readonly-seam-v0/compatibility.json",
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+        ".aide/reports/dominium-readonly-seam-v0/fixture-manifest.json",
+        ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json",
+        ".aide/interop/dominium/runtime-dependency-manifest.json",
+        ".aide/interop/dominium/seam-bundle.json",
+        ".aide/interop/dominium/dominium-bridge-manifest.json",
+        ".aide/interop/dominium/conformance-expectations.json"
+      ],
+      "id": "portability.required_child_output_set_complete",
+      "observed": {
+        "compared_outputs": [
+          ".aide/interop/dominium/conformance-expectations.json",
+          ".aide/interop/dominium/dominium-bridge-manifest.json",
+          ".aide/interop/dominium/runtime-dependency-manifest.json",
+          ".aide/interop/dominium/seam-bundle.json",
+          ".aide/reports/dominium-readonly-seam-v0/compatibility.json",
+          ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json",
+          ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+          ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+          ".aide/reports/dominium-readonly-seam-v0/fixture-manifest.json",
+          ".aide/reports/dominium-readonly-seam-v0/projection-index.json",
+          ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+          ".aide/reports/dominium-readonly-seam-v0/source-snapshot.json",
+          ".aide/reports/dominium-readonly-seam-v0/validation.json"
+        ],
+        "missing_from_compared_outputs": [
+          ".aide/interop/dominium/conformance-evidence.json",
+          ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
+          ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "portability.sanitized_environment"
+    },
+    {
+      "category": "portability",
+      "description": "Portability result records sanitized isolated Python subprocess environment.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/portability-result.json"
+      ],
+      "expected": {
+        "PYTHONHOME_removed": true,
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONPATH_removed": true,
+        "isolated_cli_roots": ">=2",
+        "output_hashes_equal": true,
+        "python_isolated_mode": true
+      },
+      "id": "portability.environment_sanitized",
+      "observed": {
+        "isolated_cli_roots": 2,
+        "output_hashes_equal": true,
+        "sanitized_environment": {
+          "PYTHONHOME_removed": true,
+          "PYTHONNOUSERSITE": "1",
+          "PYTHONPATH_removed": true,
+          "python_isolated_mode": true
+        }
+      },
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": "portability.sanitized_environment"
+    },
+    {
+      "category": "portability",
+      "description": "Portability result reports zero absolute-path leaks.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/portability-result.json"
+      ],
+      "expected": 0,
+      "id": "portability.no_absolute_path_leaks_reported",
+      "observed": 0,
+      "outcome": "PASS",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "typed_refusal",
+      "description": "All required and arbitrary unsupported dominium-seam verbs return typed refusal through actual CLI parsing.",
+      "evidence_refs": [
+        "evidence/unsupported-operation-results.json"
+      ],
+      "expected": {
+        "all_false_boundaries": true,
+        "exit_code": 2,
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "result": "REFUSED"
+      },
+      "id": "cli.unsupported_verbs_typed_refusal",
+      "observed": {
+        "failures": [
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: run",
+              "message: dominium-seam run is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "run"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: invoke",
+              "message: dominium-seam invoke is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "invoke"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: execute",
+              "message: dominium-seam execute is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "execute"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: apply",
+              "message: dominium-seam apply is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "apply"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: write",
+              "message: dominium-seam write is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "write"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: sync",
+              "message: dominium-seam sync is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "sync"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: push",
+              "message: dominium-seam push is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "push"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: serve",
+              "message: dominium-seam serve is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "serve"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: connect",
+              "message: dominium-seam connect is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "connect"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: dispatch",
+              "message: dominium-seam dispatch is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "dispatch"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: fetch",
+              "message: dominium-seam fetch is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "fetch"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: pull",
+              "message: dominium-seam pull is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "pull"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: checkout",
+              "message: dominium-seam checkout is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "checkout"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: branch",
+              "message: dominium-seam branch is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "branch"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: worktree",
+              "message: dominium-seam worktree is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "worktree"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: publish",
+              "message: dominium-seam publish is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "publish"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: destroy",
+              "message: dominium-seam destroy is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "destroy"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "dominium_command_invoked",
+              "host_runtime_started",
+              "workbench_started",
+              "bridge_runtime_started",
+              "service_started",
+              "database_opened",
+              "transport_started",
+              "network_call_performed",
+              "provider_or_model_called",
+              "worker_executed",
+              "patch_transaction_applied",
+              "preview_or_apply_performed",
+              "source_repository_mutated",
+              "target_repository_mutated",
+              "branch_or_worktree_created",
+              "github_mutation_performed",
+              "release_or_promotion_performed",
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch,fetch,pull,checkout,branch,worktree,publish,destroy}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'obliterate' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch', 'fetch', 'pull', 'checkout', 'branch', 'worktree', 'publish', 'destroy')"
+            ],
+            "stdout_preview": [],
+            "typed_refusal": false,
+            "verb": "obliterate"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "dominium_command_invoked",
+              "host_runtime_started",
+              "workbench_started",
+              "bridge_runtime_started",
+              "service_started",
+              "database_opened",
+              "transport_started",
+              "network_call_performed",
+              "provider_or_model_called",
+              "worker_executed",
+              "patch_transaction_applied",
+              "preview_or_apply_performed",
+              "source_repository_mutated",
+              "target_repository_mutated",
+              "branch_or_worktree_created",
+              "github_mutation_performed",
+              "release_or_promotion_performed",
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch,fetch,pull,checkout,branch,worktree,publish,destroy}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'demolish' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch', 'fetch', 'pull', 'checkout', 'branch', 'worktree', 'publish', 'destroy')"
+            ],
+            "stdout_preview": [],
+            "typed_refusal": false,
+            "verb": "demolish"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "dominium_command_invoked",
+              "host_runtime_started",
+              "workbench_started",
+              "bridge_runtime_started",
+              "service_started",
+              "database_opened",
+              "transport_started",
+              "network_call_performed",
+              "provider_or_model_called",
+              "worker_executed",
+              "patch_transaction_applied",
+              "preview_or_apply_performed",
+              "source_repository_mutated",
+              "target_repository_mutated",
+              "branch_or_worktree_created",
+              "github_mutation_performed",
+              "release_or_promotion_performed",
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch,fetch,pull,checkout,branch,worktree,publish,destroy}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'teleport' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch', 'fetch', 'pull', 'checkout', 'branch', 'worktree', 'publish', 'destroy')"
+            ],
+            "stdout_preview": [],
+            "typed_refusal": false,
+            "verb": "teleport"
+          }
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "cli.unsupported_extended_verbs"
+    },
+    {
+      "category": "typed_refusal",
+      "description": "Help and known read-only status command remain usable.",
+      "evidence_refs": [
+        "evidence/unsupported-operation-results.json"
+      ],
+      "expected": {
+        "help": 0,
+        "status": 0
+      },
+      "id": "cli.help_and_readonly_status_usable",
+      "observed": {
+        "help": 0,
+        "status": 1
+      },
+      "outcome": "FAIL",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "dominium_immutability",
+      "description": "Dominium state remains unchanged after supported seam command sequence.",
+      "evidence_refs": [
+        "evidence/dominium-state-before.json",
+        "evidence/dominium-state-after.json"
+      ],
+      "expected": {
+        "changed_state_keys": [],
+        "command_returncodes": 0
+      },
+      "id": "dominium.state_unchanged_after_supported_sequence",
+      "observed": {
+        "changed_state_keys": [],
+        "command_returncodes": {
+          "demo": 1,
+          "diff": 1,
+          "project": 1,
+          "snapshot": 1,
+          "status": 1,
+          "validate": 1
+        }
+      },
+      "outcome": "FAIL",
+      "severity": "WARNING",
+      "source_finding_id": null
+    },
+    {
+      "category": "repair03_report_integrity",
+      "description": "Repair 03 finding disposition has exactly the 15 source finding IDs.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0-repair-03/finding-disposition.json"
+      ],
+      "expected": [
+        "schema.kind_specific_spec_types",
+        "schema.false_boundary_required",
+        "schema.unbounded_authority_fields",
+        "fixtures.production_remove_missing",
+        "fixtures.production_replace_missing",
+        "fixtures.production_index_strictness",
+        "conformance.unsupported_operation_semantics",
+        "conformance.no_write_semantics",
+        "conformance.network_semantics",
+        "operation.raw_trace_auditability",
+        "operation.git_network_classification",
+        "operation.injection_evidence",
+        "portability.manifest_driven_copy",
+        "portability.sanitized_environment",
+        "cli.unsupported_extended_verbs"
+      ],
+      "id": "repair03.disposition_has_exact_15_rows",
+      "observed": [
+        "schema.kind_specific_spec_types",
+        "schema.false_boundary_required",
+        "schema.unbounded_authority_fields",
+        "fixtures.production_remove_missing",
+        "fixtures.production_replace_missing",
+        "fixtures.production_index_strictness",
+        "conformance.unsupported_operation_semantics",
+        "conformance.no_write_semantics",
+        "conformance.network_semantics",
+        "operation.raw_trace_auditability",
+        "operation.git_network_classification",
+        "operation.injection_evidence",
+        "portability.manifest_driven_copy",
+        "portability.sanitized_environment",
+        "cli.unsupported_extended_verbs"
+      ],
+      "outcome": "PASS",
+      "severity": "MATERIAL",
+      "source_finding_id": null
+    }
+  ],
+  "material_finding_count": 12,
+  "material_findings": [
+    {
+      "category": "schema",
+      "description": "Public schema has kind-specific record/spec definitions and allOf/oneOf discrimination markers.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+      ],
+      "expected": {
+        "allOf": true,
+        "oneOf": true,
+        "required_kinds": [
+          "HostManifest",
+          "HostCapabilitySet",
+          "WorkspaceDescriptor",
+          "ContextDescriptor",
+          "ArtifactReference",
+          "DiagnosticProjection",
+          "RefusalProjection",
+          "EvidenceReferenceSet",
+          "EventEnvelope",
+          "DominiumBridgeManifest"
+        ]
+      },
+      "id": "schema.kind_specific_defs_present",
+      "observed": {
+        "allOf": true,
+        "oneOf": false,
+        "required_kinds_present": {
+          "ArtifactReference": true,
+          "ContextDescriptor": true,
+          "DiagnosticProjection": true,
+          "DominiumBridgeManifest": true,
+          "EventEnvelope": true,
+          "EvidenceReferenceSet": true,
+          "HostCapabilitySet": true,
+          "HostManifest": true,
+          "RefusalProjection": true,
+          "WorkspaceDescriptor": true
+        }
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.kind_specific_spec_types"
+    },
+    {
+      "category": "schema",
+      "description": "Unbounded objects are limited to extension/compatibility surfaces and authority-changing extension names are semantically refused.",
+      "evidence_refs": [
+        ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json",
+        "core/interop/dominium/validation.py"
+      ],
+      "expected": {
+        "additionalProperties_true_only_in_extensions": true,
+        "authority_names_semantically_rejected": true
+      },
+      "id": "schema.authority_extensions_bounded",
+      "observed": {
+        "additionalProperties_true_paths": [
+          "/$defs/ExtensionMap"
+        ],
+        "authority_names_in_validation": false
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "schema.unbounded_authority_fields"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay must require value for add, replace, and append rather than inserting null.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "explicit value-presence guard for add/replace/append",
+      "id": "fixture.production_requires_value",
+      "observed": "production uses op.get(\"value\") without a value-presence guard",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixtures.production_index_strictness"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay must accept only ASCII canonical decimal indexes.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": "ASCII decimal regex; Unicode decimal digits rejected",
+      "id": "fixture.production_rejects_unicode_decimal_indexes",
+      "observed": "production uses str.isdecimal(), which accepts Unicode decimal digits",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixtures.production_index_strictness"
+    },
+    {
+      "category": "fixture_replay",
+      "description": "Production replay must reject import, args, and kwargs operation keys in addition to executable fields.",
+      "evidence_refs": [
+        "core/interop/dominium/fixture_replay.py"
+      ],
+      "expected": [
+        "import",
+        "args",
+        "kwargs"
+      ],
+      "id": "fixture.production_forbidden_key_set_complete",
+      "observed": "missing one or more required forbidden keys",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "fixtures.production_index_strictness"
+    },
+    {
+      "category": "conformance",
+      "description": "Unsupported-operation conformance must consume actual CLI dispatch evidence, not direct helper output.",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py",
+        ".aide/interop/dominium/conformance-evidence.json"
+      ],
+      "expected": "actual CLI dispatch evidence in conformance evidence",
+      "id": "conformance.unsupported_uses_actual_cli_dispatch",
+      "observed": "production conformance calls unsupported_operation_probe_matrix(None), which uses direct refusal helper",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.unsupported_operation_semantics"
+    },
+    {
+      "category": "conformance",
+      "description": "No-write conformance must compare Dominium state around actual seam operations.",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py",
+        ".aide/interop/dominium/conformance-evidence.json"
+      ],
+      "expected": "before state, then snapshot/project/validate/diff/demo, then after state",
+      "id": "conformance.no_write_surrounds_actual_operations",
+      "observed": "production conformance captures adjacent before/after worktree statuses with no seam operation between them",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.no_write_semantics"
+    },
+    {
+      "category": "conformance",
+      "description": "Network/provider/worker/mutation conformance must consume exercised guard evidence.",
+      "evidence_refs": [
+        "core/interop/dominium/conformance.py",
+        "core/interop/dominium/operations.py",
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+      ],
+      "expected": "safe attempted invocation reaches a guard/dispatcher and records execution-prevented evidence",
+      "id": "conformance.guard_evidence_is_exercised",
+      "observed": "operation guard report is produced by a static dictionary; no guard dispatcher is exercised",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "conformance.network_semantics"
+    },
+    {
+      "category": "operation",
+      "description": "Operation aggregation key must preserve target, classification, and source distinctions or be explicitly lossless.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py",
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json"
+      ],
+      "expected": "aggregation key includes family, operation, target, classification, allowed, source, and observation method or stores a lossless nested breakdown",
+      "id": "operation.aggregate_key_preserves_semantics",
+      "observed": "aggregate key omits target, classification, and source",
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "operation.raw_trace_auditability"
+    },
+    {
+      "category": "operation",
+      "description": "Guard report must be generated by exercised guard paths, not static pass dictionaries.",
+      "evidence_refs": [
+        "core/interop/dominium/operations.py",
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+      ],
+      "expected": "actual guard/dispatcher invocation per forbidden family",
+      "id": "operation.guard_report_is_not_static",
+      "observed": {
+        "families": [
+          "branch_worktree_ref_ops",
+          "filesystem_writes",
+          "mutation_apply",
+          "network_attempts",
+          "provider_model_attempts",
+          "worker_dispatch"
+        ],
+        "static_guard_dictionary": true
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "operation.injection_evidence"
+    },
+    {
+      "category": "portability",
+      "description": "Portability proof compares the complete required child output set.",
+      "evidence_refs": [
+        ".aide/reports/dominium-readonly-seam-v0/portability-result.json"
+      ],
+      "expected": [
+        ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+        ".aide/reports/dominium-readonly-seam-v0/source-snapshot.json",
+        ".aide/reports/dominium-readonly-seam-v0/projection-index.json",
+        ".aide/reports/dominium-readonly-seam-v0/validation.json",
+        ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+        ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json",
+        ".aide/interop/dominium/conformance-evidence.json",
+        ".aide/reports/dominium-readonly-seam-v0/compatibility.json",
+        ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+        ".aide/reports/dominium-readonly-seam-v0/fixture-manifest.json",
+        ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
+        ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json",
+        ".aide/interop/dominium/runtime-dependency-manifest.json",
+        ".aide/interop/dominium/seam-bundle.json",
+        ".aide/interop/dominium/dominium-bridge-manifest.json",
+        ".aide/interop/dominium/conformance-expectations.json"
+      ],
+      "id": "portability.required_child_output_set_complete",
+      "observed": {
+        "compared_outputs": [
+          ".aide/interop/dominium/conformance-expectations.json",
+          ".aide/interop/dominium/dominium-bridge-manifest.json",
+          ".aide/interop/dominium/runtime-dependency-manifest.json",
+          ".aide/interop/dominium/seam-bundle.json",
+          ".aide/reports/dominium-readonly-seam-v0/compatibility.json",
+          ".aide/reports/dominium-readonly-seam-v0/conformance-assertions.json",
+          ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+          ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+          ".aide/reports/dominium-readonly-seam-v0/fixture-manifest.json",
+          ".aide/reports/dominium-readonly-seam-v0/projection-index.json",
+          ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+          ".aide/reports/dominium-readonly-seam-v0/source-snapshot.json",
+          ".aide/reports/dominium-readonly-seam-v0/validation.json"
+        ],
+        "missing_from_compared_outputs": [
+          ".aide/interop/dominium/conformance-evidence.json",
+          ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
+          ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "portability.sanitized_environment"
+    },
+    {
+      "category": "typed_refusal",
+      "description": "All required and arbitrary unsupported dominium-seam verbs return typed refusal through actual CLI parsing.",
+      "evidence_refs": [
+        "evidence/unsupported-operation-results.json"
+      ],
+      "expected": {
+        "all_false_boundaries": true,
+        "exit_code": 2,
+        "reason_code": "AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+        "result": "REFUSED"
+      },
+      "id": "cli.unsupported_verbs_typed_refusal",
+      "observed": {
+        "failures": [
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: run",
+              "message: dominium-seam run is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "run"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: invoke",
+              "message: dominium-seam invoke is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "invoke"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: execute",
+              "message: dominium-seam execute is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "execute"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: apply",
+              "message: dominium-seam apply is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "apply"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: write",
+              "message: dominium-seam write is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "write"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: sync",
+              "message: dominium-seam sync is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "sync"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: push",
+              "message: dominium-seam push is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "push"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: serve",
+              "message: dominium-seam serve is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "serve"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: connect",
+              "message: dominium-seam connect is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "connect"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: dispatch",
+              "message: dominium-seam dispatch is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "dispatch"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: fetch",
+              "message: dominium-seam fetch is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "fetch"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: pull",
+              "message: dominium-seam pull is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "pull"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: checkout",
+              "message: dominium-seam checkout is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "checkout"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: branch",
+              "message: dominium-seam branch is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "branch"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: worktree",
+              "message: dominium-seam worktree is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "worktree"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: publish",
+              "message: dominium-seam publish is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "publish"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [],
+            "stdout_preview": [
+              "AIDE Lite dominium-seam unsupported",
+              "result: REFUSED",
+              "reason_code: AIDE_DOMINIUM_SEAM_UNSUPPORTED_OPERATION",
+              "operation: destroy",
+              "message: dominium-seam destroy is outside the read-only seam boundary",
+              "recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+              "dominium_command_invoked: false",
+              "host_runtime_started: false",
+              "workbench_started: false",
+              "bridge_runtime_started: false",
+              "service_started: false",
+              "database_opened: false",
+              "transport_started: false",
+              "network_call_performed: false",
+              "provider_or_model_called: false",
+              "worker_executed: false",
+              "patch_transaction_applied: false",
+              "preview_or_apply_performed: false",
+              "source_repository_mutated: false",
+              "target_repository_mutated: false"
+            ],
+            "typed_refusal": true,
+            "verb": "destroy"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "dominium_command_invoked",
+              "host_runtime_started",
+              "workbench_started",
+              "bridge_runtime_started",
+              "service_started",
+              "database_opened",
+              "transport_started",
+              "network_call_performed",
+              "provider_or_model_called",
+              "worker_executed",
+              "patch_transaction_applied",
+              "preview_or_apply_performed",
+              "source_repository_mutated",
+              "target_repository_mutated",
+              "branch_or_worktree_created",
+              "github_mutation_performed",
+              "release_or_promotion_performed",
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch,fetch,pull,checkout,branch,worktree,publish,destroy}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'obliterate' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch', 'fetch', 'pull', 'checkout', 'branch', 'worktree', 'publish', 'destroy')"
+            ],
+            "stdout_preview": [],
+            "typed_refusal": false,
+            "verb": "obliterate"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "dominium_command_invoked",
+              "host_runtime_started",
+              "workbench_started",
+              "bridge_runtime_started",
+              "service_started",
+              "database_opened",
+              "transport_started",
+              "network_call_performed",
+              "provider_or_model_called",
+              "worker_executed",
+              "patch_transaction_applied",
+              "preview_or_apply_performed",
+              "source_repository_mutated",
+              "target_repository_mutated",
+              "branch_or_worktree_created",
+              "github_mutation_performed",
+              "release_or_promotion_performed",
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch,fetch,pull,checkout,branch,worktree,publish,destroy}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'demolish' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch', 'fetch', 'pull', 'checkout', 'branch', 'worktree', 'publish', 'destroy')"
+            ],
+            "stdout_preview": [],
+            "typed_refusal": false,
+            "verb": "demolish"
+          },
+          {
+            "all_false_boundaries": false,
+            "missing_false_boundaries": [
+              "dominium_command_invoked",
+              "host_runtime_started",
+              "workbench_started",
+              "bridge_runtime_started",
+              "service_started",
+              "database_opened",
+              "transport_started",
+              "network_call_performed",
+              "provider_or_model_called",
+              "worker_executed",
+              "patch_transaction_applied",
+              "preview_or_apply_performed",
+              "source_repository_mutated",
+              "target_repository_mutated",
+              "branch_or_worktree_created",
+              "github_mutation_performed",
+              "release_or_promotion_performed",
+              "generated_projection_marked_canonical"
+            ],
+            "returncode": 2,
+            "stderr_preview": [
+              "usage: aide_lite.py dominium-seam [-h]",
+              "                                  {status,snapshot,project,validate,diff,demo,run,invoke,execute,apply,write,sync,push,serve,connect,dispatch,fetch,pull,checkout,branch,worktree,publish,destroy}",
+              "                                  ...",
+              "aide_lite.py dominium-seam: error: argument dominium_seam_command: invalid choice: 'teleport' (choose from 'status', 'snapshot', 'project', 'validate', 'diff', 'demo', 'run', 'invoke', 'execute', 'apply', 'write', 'sync', 'push', 'serve', 'connect', 'dispatch', 'fetch', 'pull', 'checkout', 'branch', 'worktree', 'publish', 'destroy')"
+            ],
+            "stdout_preview": [],
+            "typed_refusal": false,
+            "verb": "teleport"
+          }
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "MATERIAL",
+      "source_finding_id": "cli.unsupported_extended_verbs"
+    }
+  ],
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.dominium-readonly-seam.repair-03-check-report.v0",
+  "source_commit": "84a154c2f03b304a987a9f017cc48a0b22c3f6d6",
+  "source_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "warning_count": 3
+}

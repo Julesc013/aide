@@ -1,0 +1,64 @@
+{
+  "commits": {
+    "original_build": {
+      "output": "a75635478be155ef7bc2b62de4ead3837212bbb8 feat(dominium): build read-only seam v0",
+      "requested": "a75635478be155ef7bc2b62de4ead3837212bbb8",
+      "returncode": 0
+    },
+    "original_check": {
+      "output": "692b4b3469e80a67f3f2f98612ec66c86b7394e9 audit(dominium): check read-only seam v0",
+      "requested": "692b4b3469e80a67f3f2f98612ec66c86b7394e9",
+      "returncode": 0
+    },
+    "repair_01": {
+      "output": "30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd fix(dominium): repair read-only seam v0",
+      "requested": "30931ba1f17b1bc4d9d2b9b12ef18133831ad8fd",
+      "returncode": 0
+    },
+    "repair_01_check": {
+      "output": "bf2b51996c7df0374942ad361ebfbae04c9c1caf audit(dominium): check read-only seam repair",
+      "requested": "bf2b51996c7df0374942ad361ebfbae04c9c1caf",
+      "returncode": 0
+    },
+    "repair_02": {
+      "output": "1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358 fix(dominium): repair read-only seam v0 second pass",
+      "requested": "1e8889eeb6cbee55ef9f4b42f6bf5d29405b4358",
+      "returncode": 0
+    },
+    "repair_02_check": {
+      "output": "20c08ed4852d1af42ff03cd0bac632325892e885 audit(dominium): check read-only seam repair 02",
+      "requested": "20c08ed4852d1af42ff03cd0bac632325892e885",
+      "returncode": 0
+    },
+    "repair_03": {
+      "output": "84a154c2f03b304a987a9f017cc48a0b22c3f6d6 fix(dominium): repair read-only seam v0 third pass",
+      "requested": "84a154c2f03b304a987a9f017cc48a0b22c3f6d6",
+      "returncode": 0
+    }
+  },
+  "git_status": "## main...origin/main\n M .aide/queue/index.yaml\n M IMPLEMENT.md\n M PLANS.md\n?? .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/\n?? .aide/reports/dominium-readonly-seam-v0-repair-03-check/",
+  "repair02_result": {
+    "material_finding_count": 15,
+    "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+    "result": "REQUEST_CHANGES"
+  },
+  "repair03_result": {
+    "focused_tests_passed": 158,
+    "forbidden_operation_count": 0,
+    "historical_root_preservation": "PASS",
+    "material_findings_authorized": 15,
+    "material_findings_repaired": 15,
+    "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+    "result": "PASS_WITH_WARNINGS",
+    "schema_version": "aide.dominium-readonly-seam.repair-03-result.v0",
+    "source_mutation_count": 0,
+    "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+    "validation_status": "PASS_WITH_WARNINGS",
+    "warnings": [
+      "The seam remains offline and read-only.",
+      "Local Dominium remains behind origin/main by 24 commits.",
+      "Independent Repair 03 check has not yet run.",
+      "Non-Windows platforms were not separately executed in this turn."
+    ]
+  }
+}

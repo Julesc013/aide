@@ -1,0 +1,23 @@
+# Validation Commands
+
+- `git status --short --branch`
+- `git diff --check`
+- `git diff --cached --check`
+- `git rev-parse 84a154c`
+- `git show --no-patch --format=fuller 84a154c`
+- `py -3 -m compileall core\interop\dominium core\protocol .aide\scripts\tests`
+- `py -3 -m unittest discover -s .aide\scripts\tests -p "test_aide_dominium_readonly_seam*.py"`
+- `py -3 .aide\scripts\aide_lite.py dominium-seam status`
+- `py -3 .aide\scripts\aide_lite.py dominium-seam snapshot`
+- `py -3 .aide\scripts\aide_lite.py dominium-seam project`
+- `py -3 .aide\scripts\aide_lite.py dominium-seam validate`
+- `py -3 .aide\scripts\aide_lite.py dominium-seam diff`
+- `py -3 .aide\scripts\aide_lite.py dominium-seam demo`
+- `py -3 .aide\queue\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03\evidence\tools\check_repair_03.py`
+- `py -3 .aide\scripts\aide_lite.py task inspect --task-id AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`
+- `py -3 .aide\scripts\aide_lite.py task evidence --task-id AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`
+- `py -3 .aide\scripts\aide_lite.py task inspect --task-id AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`
+- `py -3 .aide\scripts\aide_lite.py task evidence --task-id AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`
+- `py -3 .aide\scripts\aide_lite.py validate`
+- `rg -n "(secret|token|api[_-]?key|BEGIN PRIVATE KEY|sk-ant|openai_api_key|anthropic_api_key)" .aide\queue\AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03 .aide\reports\dominium-readonly-seam-v0-repair-03-check`
+- `py -3 .aide\scripts\aide_lite.py commit check --latest`

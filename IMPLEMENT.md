@@ -6981,3 +6981,38 @@ The task evidence records Python compilation, the base seam suite, Repair 01, Re
 - Local Dominium remains clean but behind `origin/main` by 24 commits.
 - Non-Windows platforms were not separately executed in this turn.
 - The seam remains offline and read-only; runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.
+
+## Work Item: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
+
+### Status
+
+Completed as a bounded check-only task. The result is `REQUEST_CHANGES` at `needs_review`.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair-03-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+Repair 03 completed with warnings and recommends this independent check. The check must remain adversarial and cannot use the Repair 03 disposition report as its own proof.
+
+### Implementation Notes
+
+- Created the check task packet, ExecPlan, prompt, and baseline evidence.
+- Registered the check in `.aide/queue/index.yaml`.
+- Preserved the strict check-only boundary and the two possible serialized next tasks: acceptance if no material defects remain, or Repair 04 if any material defect remains.
+- Added independent task-local harnesses and reports for source-chain, schema, fixture replay, conformance, operation trace, guard probes, runtime manifest, portability, typed refusal, and Dominium immutability checks.
+- Recorded 12 material assertions and selected `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04` as the only next task.
+
+### Verification
+
+Validation ran through diff checks, commit resolution, compileall, seam unittest discovery, seam CLI commands, independent Repair 03 check harness, task inspect/evidence, broad validation, secret-like scan, and commit policy check. The independent harness intentionally returned `REQUEST_CHANGES` because material findings remain.
+
+### Remaining Issues
+
+- Repair 03 is not accepted.
+- Repair 04 remains the selected next task and was not started.

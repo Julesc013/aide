@@ -1,0 +1,99 @@
+{
+  "additional_properties_true": [
+    "/$defs/ExtensionMap"
+  ],
+  "dangling_refs": [],
+  "false_boundaries": {
+    "branch_or_worktree_created": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "bridge_runtime_started": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "database_opened": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "dominium_command_invoked": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "generated_projection_marked_canonical": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "github_mutation_performed": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "host_runtime_started": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "network_call_performed": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "patch_transaction_applied": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "preview_or_apply_performed": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "provider_or_model_called": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "release_or_promotion_performed": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "service_started": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "source_repository_mutated": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "target_repository_mutated": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "transport_started": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "workbench_started": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    },
+    "worker_executed": {
+      "has_boolean_const_false": true,
+      "in_required": true,
+      "occurrences": 3
+    }
+  },
+  "schema_path": ".aide/protocol/aide-dominium-readonly-seam-v0.schema.json"
+}

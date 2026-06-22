@@ -1,0 +1,13 @@
+{
+  "schema_version": "aide.dominium-readonly-seam.repair-03-check-result.v0",
+  "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "source_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03",
+  "source_commit": "84a154c2f03b304a987a9f017cc48a0b22c3f6d6",
+  "result": "REQUEST_CHANGES",
+  "status": "needs_review",
+  "material_finding_count": 12,
+  "warning_count": 3,
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04",
+  "check_report": ".aide/reports/dominium-readonly-seam-v0-repair-03-check/check-report.json",
+  "next_task_prompt": ".aide/reports/dominium-readonly-seam-v0-repair-03-check/next-task-prompt.md"
+}

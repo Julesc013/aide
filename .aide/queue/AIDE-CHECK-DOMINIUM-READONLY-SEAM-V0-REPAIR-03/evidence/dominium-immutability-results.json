@@ -1,0 +1,375 @@
+{
+  "after": {
+    "available": true,
+    "branch": {
+      "preview": [
+        "main"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:6403203dd5a0867eb14d104ee8a73730bd72dd9ad92e78d996a6dba0a5dcfc01"
+    },
+    "config": {
+      "preview": [
+        "file:C:/Program Files/Git/etc/gitconfig\thttp.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt",
+        "file:C:/Program Files/Git/etc/gitconfig\thttp.sslbackend=openssl",
+        "file:C:/Program Files/Git/etc/gitconfig\tdiff.astextplain.textconv=astextplain",
+        "file:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.clean=git-lfs clean -- %f",
+        "file:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.smudge=git-lfs smudge -- %f",
+        "file:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.process=git-lfs filter-process",
+        "file:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.required=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tcredential.helper=manager",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.editor=\"C:\\\\Program Files\\\\Microsoft VS Code\\\\Code.exe\" --wait",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.longpaths=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.autocrlf=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.fscache=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.symlinks=false",
+        "file:C:/Program Files/Git/etc/gitconfig\tpull.rebase=false",
+        "file:C:/Program Files/Git/etc/gitconfig\tcredential.https://dev.azure.com.usehttppath=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tinit.defaultbranch=master",
+        "file:C:/Users/Jules/.gitconfig\tuser.name=Jules Carboni",
+        "file:C:/Users/Jules/.gitconfig\tuser.email=30209022+Julesc013@users.noreply.github.com",
+        "file:C:/Users/Jules/.gitconfig\tfilter.lfs.process=git-lfs filter-process",
+        "file:C:/Users/Jules/.gitconfig\tfilter.lfs.required=true"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:9f8a4191b31325632f9cc9473590146583798debc2d9d2ad9111cced01fe379b"
+    },
+    "head": {
+      "preview": [
+        "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:ba62e9ae3d728e241e4e2b12db940d33aece3830bd3085b4b4c9575932676e85"
+    },
+    "index_hash": {
+      "preview": [
+        "100644 6c02ada601ecb9e9df676b48dde1fff0e2b1f3ca 0\t.agentignore",
+        "100644 feac772bb798c6612875b1877b8b32b97b9a4d2a 0\t.aide.local.example/README.md",
+        "100644 603df1d68489f46fbb4c8e0bfcef9901ac4c4edd 0\t.aide.local.example/cache/README.md",
+        "100644 4239b7d78ff17ec74311647fb62de35b9e2c635d 0\t.aide.local.example/config.example.yaml",
+        "100644 0c52f0ad3a8b8ee72a0180cd0d439d716fb031db 0\t.aide.local.example/ledgers/README.md",
+        "100644 e03658556e5ff2f8e8c89ea07df54fcce9e419e3 0\t.aide.local.example/traces/README.md",
+        "100644 8b1a05403c32c5ba61dafe8b3718225e8bf6c88b 0\t.aide/adapters/targets.yaml",
+        "100644 fd7ff9678b50379b1c351b34e5a6ba2ed31c6bad 0\t.aide/adapters/templates/AGENTS.md.template",
+        "100644 4514a74cee13065ca236b1f0bb3ceb3a934cb0d2 0\t.aide/adapters/templates/CLAUDE.md.template",
+        "100644 899cd0b0e7736a8d4212654ca7be76b46569759a 0\t.aide/adapters/templates/aider.conf.yml.template",
+        "100644 7a3d10876b4c4f422acb346ac7dd7f43de5f7144 0\t.aide/adapters/templates/clinerules.template",
+        "100644 d66ec8de4addb93f1a17c16d0da113fc386bcfdf 0\t.aide/adapters/templates/continue-checks.template.md",
+        "100644 f9b32478baf626e550858c416422e27caf624dd1 0\t.aide/adapters/templates/cursor-rule.template.md",
+        "100644 45215cc0cf0069fa8da749e4c31154aa91698952 0\t.aide/adapters/templates/windsurf-rule.template.md",
+        "100644 64ddd139f7b7400c5bf8235fba8ee255c8f109cf 0\t.aide/cache/README.md",
+        "100644 4734f066124f8111d238fe8073dfaf4dc91a7d95 0\t.aide/cache/key-policy.yaml",
+        "100644 833f69a6952119999f392fbe8a695d5f65d7514a 0\t.aide/cache/latest-cache-keys.json",
+        "100644 099993174a97d2087e81da138890391a0945dc9c 0\t.aide/cache/latest-cache-keys.md",
+        "100644 241769a13fd91729d243b52c0c07a1c42c22d894 0\t.aide/changelog/CHANGELOG.preview.md",
+        "100644 3853bab34233487afe34ef65a1c262ea534f3511 0\t.aide/changelog/README.md"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:848cbc30615837c637497805c839158251e748dd55cdb9964916473c5b66f20a"
+    },
+    "label": "after",
+    "path": "C:\\Projects\\Dominium\\dominium",
+    "refs_hash": {
+      "preview": [
+        "refs/heads/canon-spine-boundary-01 a5f1ff2b22adf3a12156f0a463393d646cc9d9e6",
+        "refs/heads/checkpoint/canon-spine-8f7e5adc 8f7e5adcf9e85833f6a2d8c91b3f90eecb9d34ee",
+        "refs/heads/main c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+        "refs/heads/wt/composition-resolver-law-01 8f87251439834fd6a6c72b530372fb3c61d28377",
+        "refs/heads/wt/document-patch-transaction-runtime-01 d71e3867a7d871340020ce43aa0cd4a866ea972b",
+        "refs/heads/wt/dominium-doctrine-recovery-matrix-01 b418253398c42ef55b26713b6b7a9e1b11186ae7",
+        "refs/heads/wt/project-graph-service-01 748bb98359ad0ac7782365736655166b585aa597",
+        "refs/heads/wt/service-conformance-law-01 05b1cf0b62161bdb8787ebc7e2e86c5553e771dd",
+        "refs/remotes/origin/HEAD 623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+        "refs/remotes/origin/main 623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+        "refs/remotes/origin/recovery/mega-13cb8ca7 13cb8ca7dcd6440c5f605f27f680684b9257153d",
+        "refs/tags/canon-clean-2 fa51b25836fa385dbd3dfb00a536a5720224d760",
+        "refs/tags/safety/mega-13cb8ca7 13cb8ca7dcd6440c5f605f27f680684b9257153d"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:6d441cf369ebf30e6b4bb0d463f3220c060110d790469694eb6463209d2da213"
+    },
+    "status_porcelain": {
+      "preview": [],
+      "returncode": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "status_short": {
+      "preview": [
+        "## main...origin/main [behind 24]"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:a622d6acfabeb39f933fc5bdde0782630ac97201ee546dfa921845712d207a2e"
+    },
+    "tracked_tree": {
+      "preview": [
+        "100644 blob 6c02ada601ecb9e9df676b48dde1fff0e2b1f3ca\t.agentignore",
+        "100644 blob feac772bb798c6612875b1877b8b32b97b9a4d2a\t.aide.local.example/README.md",
+        "100644 blob 603df1d68489f46fbb4c8e0bfcef9901ac4c4edd\t.aide.local.example/cache/README.md",
+        "100644 blob 4239b7d78ff17ec74311647fb62de35b9e2c635d\t.aide.local.example/config.example.yaml",
+        "100644 blob 0c52f0ad3a8b8ee72a0180cd0d439d716fb031db\t.aide.local.example/ledgers/README.md",
+        "100644 blob e03658556e5ff2f8e8c89ea07df54fcce9e419e3\t.aide.local.example/traces/README.md",
+        "100644 blob 8b1a05403c32c5ba61dafe8b3718225e8bf6c88b\t.aide/adapters/targets.yaml",
+        "100644 blob fd7ff9678b50379b1c351b34e5a6ba2ed31c6bad\t.aide/adapters/templates/AGENTS.md.template",
+        "100644 blob 4514a74cee13065ca236b1f0bb3ceb3a934cb0d2\t.aide/adapters/templates/CLAUDE.md.template",
+        "100644 blob 899cd0b0e7736a8d4212654ca7be76b46569759a\t.aide/adapters/templates/aider.conf.yml.template",
+        "100644 blob 7a3d10876b4c4f422acb346ac7dd7f43de5f7144\t.aide/adapters/templates/clinerules.template",
+        "100644 blob d66ec8de4addb93f1a17c16d0da113fc386bcfdf\t.aide/adapters/templates/continue-checks.template.md",
+        "100644 blob f9b32478baf626e550858c416422e27caf624dd1\t.aide/adapters/templates/cursor-rule.template.md",
+        "100644 blob 45215cc0cf0069fa8da749e4c31154aa91698952\t.aide/adapters/templates/windsurf-rule.template.md",
+        "100644 blob 64ddd139f7b7400c5bf8235fba8ee255c8f109cf\t.aide/cache/README.md",
+        "100644 blob 4734f066124f8111d238fe8073dfaf4dc91a7d95\t.aide/cache/key-policy.yaml",
+        "100644 blob 833f69a6952119999f392fbe8a695d5f65d7514a\t.aide/cache/latest-cache-keys.json",
+        "100644 blob 099993174a97d2087e81da138890391a0945dc9c\t.aide/cache/latest-cache-keys.md",
+        "100644 blob 241769a13fd91729d243b52c0c07a1c42c22d894\t.aide/changelog/CHANGELOG.preview.md",
+        "100644 blob 3853bab34233487afe34ef65a1c262ea534f3511\t.aide/changelog/README.md"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:f9a5c5e131cd6ae32e5dbf98b1351dab070acdac1bca6ac0cdf95dd806e5bb97"
+    }
+  },
+  "before": {
+    "available": true,
+    "branch": {
+      "preview": [
+        "main"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:6403203dd5a0867eb14d104ee8a73730bd72dd9ad92e78d996a6dba0a5dcfc01"
+    },
+    "config": {
+      "preview": [
+        "file:C:/Program Files/Git/etc/gitconfig\thttp.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt",
+        "file:C:/Program Files/Git/etc/gitconfig\thttp.sslbackend=openssl",
+        "file:C:/Program Files/Git/etc/gitconfig\tdiff.astextplain.textconv=astextplain",
+        "file:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.clean=git-lfs clean -- %f",
+        "file:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.smudge=git-lfs smudge -- %f",
+        "file:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.process=git-lfs filter-process",
+        "file:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.required=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tcredential.helper=manager",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.editor=\"C:\\\\Program Files\\\\Microsoft VS Code\\\\Code.exe\" --wait",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.longpaths=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.autocrlf=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.fscache=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tcore.symlinks=false",
+        "file:C:/Program Files/Git/etc/gitconfig\tpull.rebase=false",
+        "file:C:/Program Files/Git/etc/gitconfig\tcredential.https://dev.azure.com.usehttppath=true",
+        "file:C:/Program Files/Git/etc/gitconfig\tinit.defaultbranch=master",
+        "file:C:/Users/Jules/.gitconfig\tuser.name=Jules Carboni",
+        "file:C:/Users/Jules/.gitconfig\tuser.email=30209022+Julesc013@users.noreply.github.com",
+        "file:C:/Users/Jules/.gitconfig\tfilter.lfs.process=git-lfs filter-process",
+        "file:C:/Users/Jules/.gitconfig\tfilter.lfs.required=true"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:9f8a4191b31325632f9cc9473590146583798debc2d9d2ad9111cced01fe379b"
+    },
+    "head": {
+      "preview": [
+        "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:ba62e9ae3d728e241e4e2b12db940d33aece3830bd3085b4b4c9575932676e85"
+    },
+    "index_hash": {
+      "preview": [
+        "100644 6c02ada601ecb9e9df676b48dde1fff0e2b1f3ca 0\t.agentignore",
+        "100644 feac772bb798c6612875b1877b8b32b97b9a4d2a 0\t.aide.local.example/README.md",
+        "100644 603df1d68489f46fbb4c8e0bfcef9901ac4c4edd 0\t.aide.local.example/cache/README.md",
+        "100644 4239b7d78ff17ec74311647fb62de35b9e2c635d 0\t.aide.local.example/config.example.yaml",
+        "100644 0c52f0ad3a8b8ee72a0180cd0d439d716fb031db 0\t.aide.local.example/ledgers/README.md",
+        "100644 e03658556e5ff2f8e8c89ea07df54fcce9e419e3 0\t.aide.local.example/traces/README.md",
+        "100644 8b1a05403c32c5ba61dafe8b3718225e8bf6c88b 0\t.aide/adapters/targets.yaml",
+        "100644 fd7ff9678b50379b1c351b34e5a6ba2ed31c6bad 0\t.aide/adapters/templates/AGENTS.md.template",
+        "100644 4514a74cee13065ca236b1f0bb3ceb3a934cb0d2 0\t.aide/adapters/templates/CLAUDE.md.template",
+        "100644 899cd0b0e7736a8d4212654ca7be76b46569759a 0\t.aide/adapters/templates/aider.conf.yml.template",
+        "100644 7a3d10876b4c4f422acb346ac7dd7f43de5f7144 0\t.aide/adapters/templates/clinerules.template",
+        "100644 d66ec8de4addb93f1a17c16d0da113fc386bcfdf 0\t.aide/adapters/templates/continue-checks.template.md",
+        "100644 f9b32478baf626e550858c416422e27caf624dd1 0\t.aide/adapters/templates/cursor-rule.template.md",
+        "100644 45215cc0cf0069fa8da749e4c31154aa91698952 0\t.aide/adapters/templates/windsurf-rule.template.md",
+        "100644 64ddd139f7b7400c5bf8235fba8ee255c8f109cf 0\t.aide/cache/README.md",
+        "100644 4734f066124f8111d238fe8073dfaf4dc91a7d95 0\t.aide/cache/key-policy.yaml",
+        "100644 833f69a6952119999f392fbe8a695d5f65d7514a 0\t.aide/cache/latest-cache-keys.json",
+        "100644 099993174a97d2087e81da138890391a0945dc9c 0\t.aide/cache/latest-cache-keys.md",
+        "100644 241769a13fd91729d243b52c0c07a1c42c22d894 0\t.aide/changelog/CHANGELOG.preview.md",
+        "100644 3853bab34233487afe34ef65a1c262ea534f3511 0\t.aide/changelog/README.md"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:848cbc30615837c637497805c839158251e748dd55cdb9964916473c5b66f20a"
+    },
+    "label": "before",
+    "path": "C:\\Projects\\Dominium\\dominium",
+    "refs_hash": {
+      "preview": [
+        "refs/heads/canon-spine-boundary-01 a5f1ff2b22adf3a12156f0a463393d646cc9d9e6",
+        "refs/heads/checkpoint/canon-spine-8f7e5adc 8f7e5adcf9e85833f6a2d8c91b3f90eecb9d34ee",
+        "refs/heads/main c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+        "refs/heads/wt/composition-resolver-law-01 8f87251439834fd6a6c72b530372fb3c61d28377",
+        "refs/heads/wt/document-patch-transaction-runtime-01 d71e3867a7d871340020ce43aa0cd4a866ea972b",
+        "refs/heads/wt/dominium-doctrine-recovery-matrix-01 b418253398c42ef55b26713b6b7a9e1b11186ae7",
+        "refs/heads/wt/project-graph-service-01 748bb98359ad0ac7782365736655166b585aa597",
+        "refs/heads/wt/service-conformance-law-01 05b1cf0b62161bdb8787ebc7e2e86c5553e771dd",
+        "refs/remotes/origin/HEAD 623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+        "refs/remotes/origin/main 623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+        "refs/remotes/origin/recovery/mega-13cb8ca7 13cb8ca7dcd6440c5f605f27f680684b9257153d",
+        "refs/tags/canon-clean-2 fa51b25836fa385dbd3dfb00a536a5720224d760",
+        "refs/tags/safety/mega-13cb8ca7 13cb8ca7dcd6440c5f605f27f680684b9257153d"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:6d441cf369ebf30e6b4bb0d463f3220c060110d790469694eb6463209d2da213"
+    },
+    "status_porcelain": {
+      "preview": [],
+      "returncode": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "status_short": {
+      "preview": [
+        "## main...origin/main [behind 24]"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:a622d6acfabeb39f933fc5bdde0782630ac97201ee546dfa921845712d207a2e"
+    },
+    "tracked_tree": {
+      "preview": [
+        "100644 blob 6c02ada601ecb9e9df676b48dde1fff0e2b1f3ca\t.agentignore",
+        "100644 blob feac772bb798c6612875b1877b8b32b97b9a4d2a\t.aide.local.example/README.md",
+        "100644 blob 603df1d68489f46fbb4c8e0bfcef9901ac4c4edd\t.aide.local.example/cache/README.md",
+        "100644 blob 4239b7d78ff17ec74311647fb62de35b9e2c635d\t.aide.local.example/config.example.yaml",
+        "100644 blob 0c52f0ad3a8b8ee72a0180cd0d439d716fb031db\t.aide.local.example/ledgers/README.md",
+        "100644 blob e03658556e5ff2f8e8c89ea07df54fcce9e419e3\t.aide.local.example/traces/README.md",
+        "100644 blob 8b1a05403c32c5ba61dafe8b3718225e8bf6c88b\t.aide/adapters/targets.yaml",
+        "100644 blob fd7ff9678b50379b1c351b34e5a6ba2ed31c6bad\t.aide/adapters/templates/AGENTS.md.template",
+        "100644 blob 4514a74cee13065ca236b1f0bb3ceb3a934cb0d2\t.aide/adapters/templates/CLAUDE.md.template",
+        "100644 blob 899cd0b0e7736a8d4212654ca7be76b46569759a\t.aide/adapters/templates/aider.conf.yml.template",
+        "100644 blob 7a3d10876b4c4f422acb346ac7dd7f43de5f7144\t.aide/adapters/templates/clinerules.template",
+        "100644 blob d66ec8de4addb93f1a17c16d0da113fc386bcfdf\t.aide/adapters/templates/continue-checks.template.md",
+        "100644 blob f9b32478baf626e550858c416422e27caf624dd1\t.aide/adapters/templates/cursor-rule.template.md",
+        "100644 blob 45215cc0cf0069fa8da749e4c31154aa91698952\t.aide/adapters/templates/windsurf-rule.template.md",
+        "100644 blob 64ddd139f7b7400c5bf8235fba8ee255c8f109cf\t.aide/cache/README.md",
+        "100644 blob 4734f066124f8111d238fe8073dfaf4dc91a7d95\t.aide/cache/key-policy.yaml",
+        "100644 blob 833f69a6952119999f392fbe8a695d5f65d7514a\t.aide/cache/latest-cache-keys.json",
+        "100644 blob 099993174a97d2087e81da138890391a0945dc9c\t.aide/cache/latest-cache-keys.md",
+        "100644 blob 241769a13fd91729d243b52c0c07a1c42c22d894\t.aide/changelog/CHANGELOG.preview.md",
+        "100644 blob 3853bab34233487afe34ef65a1c262ea534f3511\t.aide/changelog/README.md"
+      ],
+      "returncode": 0,
+      "sha256": "sha256:f9a5c5e131cd6ae32e5dbf98b1351dab070acdac1bca6ac0cdf95dd806e5bb97"
+    }
+  },
+  "changed_keys": [],
+  "commands": [
+    {
+      "command": "status",
+      "returncode": 1,
+      "stderr_preview": [],
+      "stdout_preview": [
+        "AIDE Lite dominium-seam status",
+        "result: FAIL",
+        "reason: write_text() got an unexpected keyword argument 'newline'",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false",
+        "transport_started: false",
+        "network_call_performed: false",
+        "provider_or_model_called: false"
+      ]
+    },
+    {
+      "command": "snapshot",
+      "returncode": 1,
+      "stderr_preview": [],
+      "stdout_preview": [
+        "AIDE Lite dominium-seam snapshot",
+        "result: FAIL",
+        "reason: write_text() got an unexpected keyword argument 'newline'",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false",
+        "transport_started: false",
+        "network_call_performed: false",
+        "provider_or_model_called: false"
+      ]
+    },
+    {
+      "command": "project",
+      "returncode": 1,
+      "stderr_preview": [],
+      "stdout_preview": [
+        "AIDE Lite dominium-seam project",
+        "result: FAIL",
+        "reason: write_text() got an unexpected keyword argument 'newline'",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false",
+        "transport_started: false",
+        "network_call_performed: false",
+        "provider_or_model_called: false"
+      ]
+    },
+    {
+      "command": "validate",
+      "returncode": 1,
+      "stderr_preview": [],
+      "stdout_preview": [
+        "AIDE Lite dominium-seam validate",
+        "result: FAIL",
+        "reason: write_text() got an unexpected keyword argument 'newline'",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false",
+        "transport_started: false",
+        "network_call_performed: false",
+        "provider_or_model_called: false"
+      ]
+    },
+    {
+      "command": "diff",
+      "returncode": 1,
+      "stderr_preview": [],
+      "stdout_preview": [
+        "AIDE Lite dominium-seam diff",
+        "result: FAIL",
+        "reason: write_text() got an unexpected keyword argument 'newline'",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false",
+        "transport_started: false",
+        "network_call_performed: false",
+        "provider_or_model_called: false"
+      ]
+    },
+    {
+      "command": "demo",
+      "returncode": 1,
+      "stderr_preview": [],
+      "stdout_preview": [
+        "AIDE Lite dominium-seam demo",
+        "result: FAIL",
+        "reason: write_text() got an unexpected keyword argument 'newline'",
+        "dominium_command_invoked: false",
+        "host_runtime_started: false",
+        "workbench_started: false",
+        "bridge_runtime_started: false",
+        "service_started: false",
+        "database_opened: false",
+        "transport_started: false",
+        "network_call_performed: false",
+        "provider_or_model_called: false"
+      ]
+    }
+  ]
+}

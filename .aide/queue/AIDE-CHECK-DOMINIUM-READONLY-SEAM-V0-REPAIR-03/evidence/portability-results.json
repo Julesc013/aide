@@ -1,0 +1,9 @@
+{
+  "absolute_path_leak_count": 0,
+  "environment_ok": true,
+  "missing_required_outputs": [
+    ".aide/interop/dominium/conformance-evidence.json",
+    ".aide/reports/dominium-readonly-seam-v0/operation-trace.json",
+    ".aide/reports/dominium-readonly-seam-v0/operation-guard-conformance.json"
+  ]
+}

@@ -1,0 +1,41 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
+status: needs_review
+planning_state: independent_check_complete
+result: REQUEST_CHANGES
+review_gate: needs_review
+updated_at: 2026-06-22
+summary: Independent Repair 03 check completed with 12 material findings and recommends Repair 04.
+validation_status: PASS_WITH_WARNINGS
+source_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
+source_commit: 84a154c2f03b304a987a9f017cc48a0b22c3f6d6
+source_check_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
+source_check_commit: 20c08ed4852d1af42ff03cd0bac632325892e885
+material_finding_count: 12
+warning_count: 3
+missing_evidence: 0
+dominium_modified: false
+dominium_command_invoked: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+evidence:
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/result.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/independent-repair-03-check.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03/evidence/fifteen-finding-closure.json
+  - .aide/reports/dominium-readonly-seam-v0-repair-03-check/check-report.json
+  - .aide/reports/dominium-readonly-seam-v0-repair-03-check/next-task-prompt.md
+warnings:
+  - The check is adversarial and check-only; it did not repair implementation.
+  - Non-Windows platforms and minimum Python 3.11 were not separately executed.
+blockers: []
