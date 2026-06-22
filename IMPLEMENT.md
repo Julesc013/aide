@@ -7143,3 +7143,43 @@ Validation records schema audit, focused Repair 05 and Repair 04 tests, seam `pr
 - Non-Windows platforms were not separately executed.
 - Minimum Python 3.11 was not separately executed.
 - The seam remains offline and read-only; runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.
+
+## Work Item: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/**`
+- `.aide/reports/dominium-readonly-seam-v0-repair-05-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+Repair 05 completed with warnings and recommends this independent bounded check. The check scope is frozen to the four Repair 05 source findings, critical previously closed invariants, evidence truthfulness, production immutability, Dominium immutability, and next-task routing.
+
+### Implementation Notes
+
+- Created the Repair 05 check task packet, ExecPlan, prompt, status, and evidence root.
+- Added an evidence-local independent harness without using the production schema audit helper for expected results.
+- Verified schema surfaces with zero unclassified objects and zero unintended open objects.
+- Verified 80 authority-changing extension variants fail with `extension.authority_change` and 20 benign variants pass.
+- Exercised the actual guard dispatcher for all six forbidden guard families with sentinel executors and nonce-bearing evidence.
+- Recomputed guard report counts and digests and verified nonce-sensitive report changes.
+- Sampled schema discrimination, fixture strictness, arbitrary unsupported CLI refusal, no-write evidence, raw operation trace auditability, and portability output completeness.
+- Recorded production tree hashes before and after check execution.
+
+### Verification
+
+Validation records the independent harness passing with `PASS_WITH_WARNINGS`, zero material findings, all four findings closed, production tree unchanged, Dominium clean, and the acceptance task as the only next recommendation. Final diff, compile, task evidence, broad validation, JSON, secret-like, and commit-policy checks are recorded in task evidence.
+
+### Remaining Issues
+
+- Acceptance has not yet been processed.
+- The seam remains offline and read-only.
+- The local Dominium checkout remains behind remote `origin/main`.
+- Non-Windows platforms and minimum Python 3.11 were not separately executed.

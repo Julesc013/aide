@@ -1,0 +1,223 @@
+{
+  "fixture_strictness": {
+    "explicit_null_value_preserved": true,
+    "negative_results": [
+      {
+        "error": "add operation requires value",
+        "name": "missing_add_value",
+        "passed": true
+      },
+      {
+        "error": "array index is not canonical decimal: \u0661",
+        "name": "unicode_index",
+        "passed": true
+      },
+      {
+        "error": "array index is not canonical decimal: 01",
+        "name": "ambiguous_index",
+        "passed": true
+      },
+      {
+        "error": "operation contains forbidden executable field",
+        "name": "forbidden_key",
+        "passed": true
+      },
+      {
+        "error": "JSON pointer must start with /: ",
+        "name": "root_mutation",
+        "passed": true
+      },
+      {
+        "error": "append operation requires an array target",
+        "name": "append_non_array",
+        "passed": true
+      }
+    ],
+    "passed": true,
+    "schema_version": "aide.dominium-readonly-seam.fixture-strictness-sample.v0"
+  },
+  "no_write": {
+    "actual_operation_count": 3,
+    "after": "## main...origin/main [behind 24]",
+    "before": "## main...origin/main [behind 24]",
+    "dominium_status": "## main...origin/main [behind 24]",
+    "passed": true,
+    "schema_version": "aide.dominium-readonly-seam.no-write-sample.v0",
+    "status": "PASS"
+  },
+  "operation_trace": {
+    "allowed_count": 1226,
+    "forbidden_count": 0,
+    "operation_count": 43,
+    "passed": true,
+    "raw_digest": "sha256:b0229be914e03987595a43098a3064bd28947fef75f02d1e56c73adabb25ad4d",
+    "raw_observation_count": 1226,
+    "recorded_allowed_count": 1226,
+    "recorded_forbidden_count": 0,
+    "recorded_operation_count": 43,
+    "recorded_raw_digest": "sha256:b0229be914e03987595a43098a3064bd28947fef75f02d1e56c73adabb25ad4d",
+    "schema_version": "aide.dominium-readonly-seam.operation-trace-sample.v0",
+    "sequence_contiguous": true
+  },
+  "portability": {
+    "absolute_path_leak_count": 0,
+    "output_hashes_equal": true,
+    "passed": true,
+    "required_output_set_equal": true,
+    "schema_version": "aide.dominium-readonly-seam.portability-sample.v0",
+    "set_results": [
+      {
+        "extra_required_check": [],
+        "missing": [],
+        "output_count": 16,
+        "passed": true,
+        "root": 0
+      },
+      {
+        "extra_required_check": [],
+        "missing": [],
+        "output_count": 16,
+        "passed": true,
+        "root": 1
+      }
+    ],
+    "status": "PASS",
+    "undeclared_dependency_count": 0
+  },
+  "schema_discrimination": {
+    "all_expected_kinds_present": true,
+    "bundle_kinds": [
+      "ArtifactReference",
+      "ContextDescriptor",
+      "DiagnosticProjection",
+      "DominiumBridgeManifest",
+      "EventEnvelope",
+      "EvidenceReferenceSet",
+      "HostCapabilitySet",
+      "HostManifest",
+      "RefusalProjection",
+      "WorkspaceDescriptor"
+    ],
+    "expected_kind_count": 10,
+    "passed": true,
+    "schema_version": "aide.dominium-readonly-seam.schema-discrimination-sample.v0",
+    "seam_record_oneOf_count": 10,
+    "substitutions": [
+      {
+        "donor_kind": "ContextDescriptor",
+        "error_codes": [
+          "digest.bundle_self",
+          "digest.projection_index",
+          "digest.record",
+          "schema.spec_required",
+          "spec.required"
+        ],
+        "passed": true,
+        "status": "FAILED_VALIDATION",
+        "target_kind": "HostManifest"
+      },
+      {
+        "donor_kind": "HostManifest",
+        "error_codes": [
+          "digest.bundle_self",
+          "digest.projection_index",
+          "digest.record",
+          "schema.spec_required",
+          "spec.required"
+        ],
+        "passed": true,
+        "status": "FAILED_VALIDATION",
+        "target_kind": "ContextDescriptor"
+      },
+      {
+        "donor_kind": "DiagnosticProjection",
+        "error_codes": [
+          "digest.bundle_self",
+          "digest.projection_index",
+          "digest.record",
+          "schema.spec_required",
+          "spec.required"
+        ],
+        "passed": true,
+        "status": "FAILED_VALIDATION",
+        "target_kind": "ArtifactReference"
+      },
+      {
+        "donor_kind": "RefusalProjection",
+        "error_codes": [
+          "digest.bundle_self",
+          "digest.projection_index",
+          "digest.record",
+          "schema.spec_required",
+          "spec.required"
+        ],
+        "passed": true,
+        "status": "FAILED_VALIDATION",
+        "target_kind": "DiagnosticProjection"
+      },
+      {
+        "donor_kind": "ArtifactReference",
+        "error_codes": [
+          "digest.bundle_self",
+          "digest.projection_index",
+          "digest.record",
+          "event.correlation",
+          "event.sequence",
+          "reference.closure",
+          "reference.syntax",
+          "schema.spec_required",
+          "spec.required"
+        ],
+        "passed": true,
+        "status": "FAILED_VALIDATION",
+        "target_kind": "EventEnvelope"
+      },
+      {
+        "donor_kind": "HostCapabilitySet",
+        "error_codes": [
+          "bridge.runtime",
+          "command.invocation",
+          "digest.bundle_self",
+          "digest.projection_index",
+          "digest.record",
+          "schema.spec_required",
+          "spec.required",
+          "workbench.authority"
+        ],
+        "passed": true,
+        "status": "FAILED_VALIDATION",
+        "target_kind": "DominiumBridgeManifest"
+      }
+    ]
+  },
+  "unsupported_cli": {
+    "passed": true,
+    "results": [
+      {
+        "has_operation": true,
+        "has_reason": true,
+        "has_refused": true,
+        "passed": true,
+        "returncode": 2,
+        "verb": "phaseb-unknown-operation"
+      },
+      {
+        "has_operation": true,
+        "has_reason": true,
+        "has_refused": true,
+        "passed": true,
+        "returncode": 2,
+        "verb": "future-operation"
+      },
+      {
+        "has_operation": true,
+        "has_reason": true,
+        "has_refused": true,
+        "passed": true,
+        "returncode": 2,
+        "verb": "xyzzy"
+      }
+    ],
+    "schema_version": "aide.dominium-readonly-seam.unsupported-cli-sample.v0"
+  }
+}

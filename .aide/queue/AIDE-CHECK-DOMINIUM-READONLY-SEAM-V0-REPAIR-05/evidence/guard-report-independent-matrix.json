@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "all_probe_fields_pass": true,
+    "counts_reconcile": true,
+    "report_a_contains_nonce": true,
+    "report_a_digest_recomputes": true,
+    "report_b_contains_nonce": true,
+    "report_b_digest_recomputes": true,
+    "report_digest_changes_with_nonce": true,
+    "static_report_a_cannot_satisfy_nonce_b": true
+  },
+  "passed": true,
+  "report_a_summary": {
+    "failed_count": 0,
+    "passed_count": 6,
+    "probe_count": 6,
+    "report_digest": "sha256:63e2eef39ba690278237cb3b9b22c6adac2c241c61bdc2fa8623160586ef7202"
+  },
+  "report_b_summary": {
+    "failed_count": 0,
+    "passed_count": 6,
+    "probe_count": 6,
+    "report_digest": "sha256:6144a5629ec112349dab5e9549be16387debb04d4e9c464e4eafd0fd67b8c6c0"
+  },
+  "schema_version": "aide.dominium-readonly-seam.independent-guard-report-matrix.v0"
+}

@@ -1,0 +1,2251 @@
+{
+  "benign_count": 20,
+  "benign_passed": true,
+  "benign_results": [
+    {
+      "authority_error_count": 0,
+      "key": "vendor.color",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "documentation.note",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "ui.group",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "source.annotation",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "vendor.color",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "documentation.note",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "ui.group",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "source.annotation",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "vendor.color",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "documentation.note",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "ui.group",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "source.annotation",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "vendor.color",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "documentation.note",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "ui.group",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "source.annotation",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "vendor.color",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "documentation.note",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "ui.group",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 0,
+      "key": "source.annotation",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    }
+  ],
+  "denied_count": 80,
+  "denied_passed": true,
+  "denied_results": [
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "authoritative",
+            "normalized_key": "authoritative",
+            "original_key": "authoritative",
+            "path": "bundle.metadata.extensions.authoritative",
+            "reason": "denied normalized extension key: authoritative",
+            "tokens": [
+              "authoritative"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "authoritative",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "canonicalAuthority",
+            "normalized_key": "canonical_authority",
+            "original_key": "canonicalAuthority",
+            "path": "bundle.metadata.extensions.canonicalAuthority",
+            "reason": "denied normalized extension key: canonical_authority",
+            "tokens": [
+              "canonical",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "canonicalAuthority",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "workbench.is-authority",
+            "normalized_key": "workbench_is_authority",
+            "original_key": "workbench.is-authority",
+            "path": "bundle.metadata.extensions.workbench.is-authority",
+            "reason": "denied normalized extension key: workbench_is_authority",
+            "tokens": [
+              "workbench",
+              "is",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "workbench.is-authority",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "runtime.enabled",
+            "normalized_key": "runtime_enabled",
+            "original_key": "runtime.enabled",
+            "path": "bundle.metadata.extensions.runtime.enabled",
+            "reason": "denied normalized extension key: runtime_enabled",
+            "tokens": [
+              "runtime",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "runtime.enabled",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "hostRuntimeStarted",
+            "normalized_key": "host_runtime_started",
+            "original_key": "hostRuntimeStarted",
+            "path": "bundle.metadata.extensions.hostRuntimeStarted",
+            "reason": "denied normalized extension key: host_runtime_started",
+            "tokens": [
+              "host",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "hostRuntimeStarted",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "bridge/runtime/started",
+            "normalized_key": "bridge_runtime_started",
+            "original_key": "bridge/runtime/started",
+            "path": "bundle.metadata.extensions.bridge/runtime/started",
+            "reason": "denied normalized extension key: bridge_runtime_started",
+            "tokens": [
+              "bridge",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "bridge/runtime/started",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "network_allowed",
+            "normalized_key": "network_allowed",
+            "original_key": "network_allowed",
+            "path": "bundle.metadata.extensions.network_allowed",
+            "reason": "denied normalized extension key: network_allowed",
+            "tokens": [
+              "network",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "network_allowed",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "provider.enabled",
+            "normalized_key": "provider_enabled",
+            "original_key": "provider.enabled",
+            "path": "bundle.metadata.extensions.provider.enabled",
+            "reason": "denied normalized extension key: provider_enabled",
+            "tokens": [
+              "provider",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "provider.enabled",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "modelEnabled",
+            "normalized_key": "model_enabled",
+            "original_key": "modelEnabled",
+            "path": "bundle.metadata.extensions.modelEnabled",
+            "reason": "denied normalized extension key: model_enabled",
+            "tokens": [
+              "model",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "modelEnabled",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "worker-enabled",
+            "normalized_key": "worker_enabled",
+            "original_key": "worker-enabled",
+            "path": "bundle.metadata.extensions.worker-enabled",
+            "reason": "denied normalized extension key: worker_enabled",
+            "tokens": [
+              "worker",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "worker-enabled",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "mutation.apply.allowed",
+            "normalized_key": "mutation_apply_allowed",
+            "original_key": "mutation.apply.allowed",
+            "path": "bundle.metadata.extensions.mutation.apply.allowed",
+            "reason": "denied authority-changing token sequence: mutation_apply_allowed",
+            "tokens": [
+              "mutation",
+              "apply",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "mutation.apply.allowed",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "patchApplyEnabled",
+            "normalized_key": "patch_apply_enabled",
+            "original_key": "patchApplyEnabled",
+            "path": "bundle.metadata.extensions.patchApplyEnabled",
+            "reason": "denied normalized extension key: patch_apply_enabled",
+            "tokens": [
+              "patch",
+              "apply",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "patchApplyEnabled",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "releaseAllowed",
+            "normalized_key": "release_allowed",
+            "original_key": "releaseAllowed",
+            "path": "bundle.metadata.extensions.releaseAllowed",
+            "reason": "denied normalized extension key: release_allowed",
+            "tokens": [
+              "release",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "releaseAllowed",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "promotion_allowed",
+            "normalized_key": "promotion_allowed",
+            "original_key": "promotion_allowed",
+            "path": "bundle.metadata.extensions.promotion_allowed",
+            "reason": "denied normalized extension key: promotion_allowed",
+            "tokens": [
+              "promotion",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "promotion_allowed",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "private_tool_bypass",
+            "normalized_key": "private_tool_bypass",
+            "original_key": "private_tool_bypass",
+            "path": "bundle.metadata.extensions.private_tool_bypass",
+            "reason": "denied normalized extension key: private_tool_bypass",
+            "tokens": [
+              "private",
+              "tool",
+              "bypass"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "private_tool_bypass",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "normalized_key": "trusted",
+            "original_key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "path": "bundle.metadata.extensions.\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "reason": "denied normalized extension key: trusted",
+            "tokens": [
+              "trusted"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+      "location": "bundle_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "authoritative",
+            "normalized_key": "authoritative",
+            "original_key": "authoritative",
+            "path": "bundle.extensions.authoritative",
+            "reason": "denied normalized extension key: authoritative",
+            "tokens": [
+              "authoritative"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "authoritative",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "canonicalAuthority",
+            "normalized_key": "canonical_authority",
+            "original_key": "canonicalAuthority",
+            "path": "bundle.extensions.canonicalAuthority",
+            "reason": "denied normalized extension key: canonical_authority",
+            "tokens": [
+              "canonical",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "canonicalAuthority",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "workbench.is-authority",
+            "normalized_key": "workbench_is_authority",
+            "original_key": "workbench.is-authority",
+            "path": "bundle.extensions.workbench.is-authority",
+            "reason": "denied normalized extension key: workbench_is_authority",
+            "tokens": [
+              "workbench",
+              "is",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "workbench.is-authority",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "runtime.enabled",
+            "normalized_key": "runtime_enabled",
+            "original_key": "runtime.enabled",
+            "path": "bundle.extensions.runtime.enabled",
+            "reason": "denied normalized extension key: runtime_enabled",
+            "tokens": [
+              "runtime",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "runtime.enabled",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "hostRuntimeStarted",
+            "normalized_key": "host_runtime_started",
+            "original_key": "hostRuntimeStarted",
+            "path": "bundle.extensions.hostRuntimeStarted",
+            "reason": "denied normalized extension key: host_runtime_started",
+            "tokens": [
+              "host",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "hostRuntimeStarted",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "bridge/runtime/started",
+            "normalized_key": "bridge_runtime_started",
+            "original_key": "bridge/runtime/started",
+            "path": "bundle.extensions.bridge/runtime/started",
+            "reason": "denied normalized extension key: bridge_runtime_started",
+            "tokens": [
+              "bridge",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "bridge/runtime/started",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "network_allowed",
+            "normalized_key": "network_allowed",
+            "original_key": "network_allowed",
+            "path": "bundle.extensions.network_allowed",
+            "reason": "denied normalized extension key: network_allowed",
+            "tokens": [
+              "network",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "network_allowed",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "provider.enabled",
+            "normalized_key": "provider_enabled",
+            "original_key": "provider.enabled",
+            "path": "bundle.extensions.provider.enabled",
+            "reason": "denied normalized extension key: provider_enabled",
+            "tokens": [
+              "provider",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "provider.enabled",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "modelEnabled",
+            "normalized_key": "model_enabled",
+            "original_key": "modelEnabled",
+            "path": "bundle.extensions.modelEnabled",
+            "reason": "denied normalized extension key: model_enabled",
+            "tokens": [
+              "model",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "modelEnabled",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "worker-enabled",
+            "normalized_key": "worker_enabled",
+            "original_key": "worker-enabled",
+            "path": "bundle.extensions.worker-enabled",
+            "reason": "denied normalized extension key: worker_enabled",
+            "tokens": [
+              "worker",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "worker-enabled",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "mutation.apply.allowed",
+            "normalized_key": "mutation_apply_allowed",
+            "original_key": "mutation.apply.allowed",
+            "path": "bundle.extensions.mutation.apply.allowed",
+            "reason": "denied authority-changing token sequence: mutation_apply_allowed",
+            "tokens": [
+              "mutation",
+              "apply",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "mutation.apply.allowed",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "patchApplyEnabled",
+            "normalized_key": "patch_apply_enabled",
+            "original_key": "patchApplyEnabled",
+            "path": "bundle.extensions.patchApplyEnabled",
+            "reason": "denied normalized extension key: patch_apply_enabled",
+            "tokens": [
+              "patch",
+              "apply",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "patchApplyEnabled",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "releaseAllowed",
+            "normalized_key": "release_allowed",
+            "original_key": "releaseAllowed",
+            "path": "bundle.extensions.releaseAllowed",
+            "reason": "denied normalized extension key: release_allowed",
+            "tokens": [
+              "release",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "releaseAllowed",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "promotion_allowed",
+            "normalized_key": "promotion_allowed",
+            "original_key": "promotion_allowed",
+            "path": "bundle.extensions.promotion_allowed",
+            "reason": "denied normalized extension key: promotion_allowed",
+            "tokens": [
+              "promotion",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "promotion_allowed",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "private_tool_bypass",
+            "normalized_key": "private_tool_bypass",
+            "original_key": "private_tool_bypass",
+            "path": "bundle.extensions.private_tool_bypass",
+            "reason": "denied normalized extension key: private_tool_bypass",
+            "tokens": [
+              "private",
+              "tool",
+              "bypass"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "private_tool_bypass",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "normalized_key": "trusted",
+            "original_key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "path": "bundle.extensions.\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "reason": "denied normalized extension key: trusted",
+            "tokens": [
+              "trusted"
+            ]
+          }
+        ],
+        "path": "bundle.extensions"
+      },
+      "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+      "location": "bundle_root",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "authoritative",
+            "normalized_key": "authoritative",
+            "original_key": "authoritative",
+            "path": "bundle.records.host_manifest.metadata.extensions.authoritative",
+            "reason": "denied normalized extension key: authoritative",
+            "tokens": [
+              "authoritative"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "authoritative",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "canonicalAuthority",
+            "normalized_key": "canonical_authority",
+            "original_key": "canonicalAuthority",
+            "path": "bundle.records.host_manifest.metadata.extensions.canonicalAuthority",
+            "reason": "denied normalized extension key: canonical_authority",
+            "tokens": [
+              "canonical",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "canonicalAuthority",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "workbench.is-authority",
+            "normalized_key": "workbench_is_authority",
+            "original_key": "workbench.is-authority",
+            "path": "bundle.records.host_manifest.metadata.extensions.workbench.is-authority",
+            "reason": "denied normalized extension key: workbench_is_authority",
+            "tokens": [
+              "workbench",
+              "is",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "workbench.is-authority",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "runtime.enabled",
+            "normalized_key": "runtime_enabled",
+            "original_key": "runtime.enabled",
+            "path": "bundle.records.host_manifest.metadata.extensions.runtime.enabled",
+            "reason": "denied normalized extension key: runtime_enabled",
+            "tokens": [
+              "runtime",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "runtime.enabled",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "hostRuntimeStarted",
+            "normalized_key": "host_runtime_started",
+            "original_key": "hostRuntimeStarted",
+            "path": "bundle.records.host_manifest.metadata.extensions.hostRuntimeStarted",
+            "reason": "denied normalized extension key: host_runtime_started",
+            "tokens": [
+              "host",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "hostRuntimeStarted",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "bridge/runtime/started",
+            "normalized_key": "bridge_runtime_started",
+            "original_key": "bridge/runtime/started",
+            "path": "bundle.records.host_manifest.metadata.extensions.bridge/runtime/started",
+            "reason": "denied normalized extension key: bridge_runtime_started",
+            "tokens": [
+              "bridge",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "bridge/runtime/started",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "network_allowed",
+            "normalized_key": "network_allowed",
+            "original_key": "network_allowed",
+            "path": "bundle.records.host_manifest.metadata.extensions.network_allowed",
+            "reason": "denied normalized extension key: network_allowed",
+            "tokens": [
+              "network",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "network_allowed",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "provider.enabled",
+            "normalized_key": "provider_enabled",
+            "original_key": "provider.enabled",
+            "path": "bundle.records.host_manifest.metadata.extensions.provider.enabled",
+            "reason": "denied normalized extension key: provider_enabled",
+            "tokens": [
+              "provider",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "provider.enabled",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "modelEnabled",
+            "normalized_key": "model_enabled",
+            "original_key": "modelEnabled",
+            "path": "bundle.records.host_manifest.metadata.extensions.modelEnabled",
+            "reason": "denied normalized extension key: model_enabled",
+            "tokens": [
+              "model",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "modelEnabled",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "worker-enabled",
+            "normalized_key": "worker_enabled",
+            "original_key": "worker-enabled",
+            "path": "bundle.records.host_manifest.metadata.extensions.worker-enabled",
+            "reason": "denied normalized extension key: worker_enabled",
+            "tokens": [
+              "worker",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "worker-enabled",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "mutation.apply.allowed",
+            "normalized_key": "mutation_apply_allowed",
+            "original_key": "mutation.apply.allowed",
+            "path": "bundle.records.host_manifest.metadata.extensions.mutation.apply.allowed",
+            "reason": "denied authority-changing token sequence: mutation_apply_allowed",
+            "tokens": [
+              "mutation",
+              "apply",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "mutation.apply.allowed",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "patchApplyEnabled",
+            "normalized_key": "patch_apply_enabled",
+            "original_key": "patchApplyEnabled",
+            "path": "bundle.records.host_manifest.metadata.extensions.patchApplyEnabled",
+            "reason": "denied normalized extension key: patch_apply_enabled",
+            "tokens": [
+              "patch",
+              "apply",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "patchApplyEnabled",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "releaseAllowed",
+            "normalized_key": "release_allowed",
+            "original_key": "releaseAllowed",
+            "path": "bundle.records.host_manifest.metadata.extensions.releaseAllowed",
+            "reason": "denied normalized extension key: release_allowed",
+            "tokens": [
+              "release",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "releaseAllowed",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "promotion_allowed",
+            "normalized_key": "promotion_allowed",
+            "original_key": "promotion_allowed",
+            "path": "bundle.records.host_manifest.metadata.extensions.promotion_allowed",
+            "reason": "denied normalized extension key: promotion_allowed",
+            "tokens": [
+              "promotion",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "promotion_allowed",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "private_tool_bypass",
+            "normalized_key": "private_tool_bypass",
+            "original_key": "private_tool_bypass",
+            "path": "bundle.records.host_manifest.metadata.extensions.private_tool_bypass",
+            "reason": "denied normalized extension key: private_tool_bypass",
+            "tokens": [
+              "private",
+              "tool",
+              "bypass"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "private_tool_bypass",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 1,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "normalized_key": "trusted",
+            "original_key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "path": "bundle.records.host_manifest.metadata.extensions.\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "reason": "denied normalized extension key: trusted",
+            "tokens": [
+              "trusted"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.metadata.extensions"
+      },
+      "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+      "location": "record_metadata",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "authoritative",
+            "normalized_key": "authoritative",
+            "original_key": "authoritative",
+            "path": "bundle.records.host_manifest.spec.extensions.authoritative",
+            "reason": "denied normalized extension key: authoritative",
+            "tokens": [
+              "authoritative"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "authoritative",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "canonicalAuthority",
+            "normalized_key": "canonical_authority",
+            "original_key": "canonicalAuthority",
+            "path": "bundle.records.host_manifest.spec.extensions.canonicalAuthority",
+            "reason": "denied normalized extension key: canonical_authority",
+            "tokens": [
+              "canonical",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "canonicalAuthority",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "workbench.is-authority",
+            "normalized_key": "workbench_is_authority",
+            "original_key": "workbench.is-authority",
+            "path": "bundle.records.host_manifest.spec.extensions.workbench.is-authority",
+            "reason": "denied normalized extension key: workbench_is_authority",
+            "tokens": [
+              "workbench",
+              "is",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "workbench.is-authority",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "runtime.enabled",
+            "normalized_key": "runtime_enabled",
+            "original_key": "runtime.enabled",
+            "path": "bundle.records.host_manifest.spec.extensions.runtime.enabled",
+            "reason": "denied normalized extension key: runtime_enabled",
+            "tokens": [
+              "runtime",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "runtime.enabled",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "hostRuntimeStarted",
+            "normalized_key": "host_runtime_started",
+            "original_key": "hostRuntimeStarted",
+            "path": "bundle.records.host_manifest.spec.extensions.hostRuntimeStarted",
+            "reason": "denied normalized extension key: host_runtime_started",
+            "tokens": [
+              "host",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "hostRuntimeStarted",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "bridge/runtime/started",
+            "normalized_key": "bridge_runtime_started",
+            "original_key": "bridge/runtime/started",
+            "path": "bundle.records.host_manifest.spec.extensions.bridge/runtime/started",
+            "reason": "denied normalized extension key: bridge_runtime_started",
+            "tokens": [
+              "bridge",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "bridge/runtime/started",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "network_allowed",
+            "normalized_key": "network_allowed",
+            "original_key": "network_allowed",
+            "path": "bundle.records.host_manifest.spec.extensions.network_allowed",
+            "reason": "denied normalized extension key: network_allowed",
+            "tokens": [
+              "network",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "network_allowed",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "provider.enabled",
+            "normalized_key": "provider_enabled",
+            "original_key": "provider.enabled",
+            "path": "bundle.records.host_manifest.spec.extensions.provider.enabled",
+            "reason": "denied normalized extension key: provider_enabled",
+            "tokens": [
+              "provider",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "provider.enabled",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "modelEnabled",
+            "normalized_key": "model_enabled",
+            "original_key": "modelEnabled",
+            "path": "bundle.records.host_manifest.spec.extensions.modelEnabled",
+            "reason": "denied normalized extension key: model_enabled",
+            "tokens": [
+              "model",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "modelEnabled",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "worker-enabled",
+            "normalized_key": "worker_enabled",
+            "original_key": "worker-enabled",
+            "path": "bundle.records.host_manifest.spec.extensions.worker-enabled",
+            "reason": "denied normalized extension key: worker_enabled",
+            "tokens": [
+              "worker",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "worker-enabled",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "mutation.apply.allowed",
+            "normalized_key": "mutation_apply_allowed",
+            "original_key": "mutation.apply.allowed",
+            "path": "bundle.records.host_manifest.spec.extensions.mutation.apply.allowed",
+            "reason": "denied authority-changing token sequence: mutation_apply_allowed",
+            "tokens": [
+              "mutation",
+              "apply",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "mutation.apply.allowed",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "patchApplyEnabled",
+            "normalized_key": "patch_apply_enabled",
+            "original_key": "patchApplyEnabled",
+            "path": "bundle.records.host_manifest.spec.extensions.patchApplyEnabled",
+            "reason": "denied normalized extension key: patch_apply_enabled",
+            "tokens": [
+              "patch",
+              "apply",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "patchApplyEnabled",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "releaseAllowed",
+            "normalized_key": "release_allowed",
+            "original_key": "releaseAllowed",
+            "path": "bundle.records.host_manifest.spec.extensions.releaseAllowed",
+            "reason": "denied normalized extension key: release_allowed",
+            "tokens": [
+              "release",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "releaseAllowed",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "promotion_allowed",
+            "normalized_key": "promotion_allowed",
+            "original_key": "promotion_allowed",
+            "path": "bundle.records.host_manifest.spec.extensions.promotion_allowed",
+            "reason": "denied normalized extension key: promotion_allowed",
+            "tokens": [
+              "promotion",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "promotion_allowed",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "private_tool_bypass",
+            "normalized_key": "private_tool_bypass",
+            "original_key": "private_tool_bypass",
+            "path": "bundle.records.host_manifest.spec.extensions.private_tool_bypass",
+            "reason": "denied normalized extension key: private_tool_bypass",
+            "tokens": [
+              "private",
+              "tool",
+              "bypass"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "private_tool_bypass",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "normalized_key": "trusted",
+            "original_key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "path": "bundle.records.host_manifest.spec.extensions.\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "reason": "denied normalized extension key: trusted",
+            "tokens": [
+              "trusted"
+            ]
+          }
+        ],
+        "path": "bundle.records.host_manifest.spec.extensions"
+      },
+      "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+      "location": "record_spec",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "authoritative",
+            "normalized_key": "authoritative",
+            "original_key": "authoritative",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.authoritative",
+            "reason": "denied normalized extension key: authoritative",
+            "tokens": [
+              "authoritative"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "authoritative",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "canonicalAuthority",
+            "normalized_key": "canonical_authority",
+            "original_key": "canonicalAuthority",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.canonicalAuthority",
+            "reason": "denied normalized extension key: canonical_authority",
+            "tokens": [
+              "canonical",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "canonicalAuthority",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "workbench.is-authority",
+            "normalized_key": "workbench_is_authority",
+            "original_key": "workbench.is-authority",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.workbench.is-authority",
+            "reason": "denied normalized extension key: workbench_is_authority",
+            "tokens": [
+              "workbench",
+              "is",
+              "authority"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "workbench.is-authority",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "runtime.enabled",
+            "normalized_key": "runtime_enabled",
+            "original_key": "runtime.enabled",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.runtime.enabled",
+            "reason": "denied normalized extension key: runtime_enabled",
+            "tokens": [
+              "runtime",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "runtime.enabled",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "hostRuntimeStarted",
+            "normalized_key": "host_runtime_started",
+            "original_key": "hostRuntimeStarted",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.hostRuntimeStarted",
+            "reason": "denied normalized extension key: host_runtime_started",
+            "tokens": [
+              "host",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "hostRuntimeStarted",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "bridge/runtime/started",
+            "normalized_key": "bridge_runtime_started",
+            "original_key": "bridge/runtime/started",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.bridge/runtime/started",
+            "reason": "denied normalized extension key: bridge_runtime_started",
+            "tokens": [
+              "bridge",
+              "runtime",
+              "started"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "bridge/runtime/started",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "network_allowed",
+            "normalized_key": "network_allowed",
+            "original_key": "network_allowed",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.network_allowed",
+            "reason": "denied normalized extension key: network_allowed",
+            "tokens": [
+              "network",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "network_allowed",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "provider.enabled",
+            "normalized_key": "provider_enabled",
+            "original_key": "provider.enabled",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.provider.enabled",
+            "reason": "denied normalized extension key: provider_enabled",
+            "tokens": [
+              "provider",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "provider.enabled",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "modelEnabled",
+            "normalized_key": "model_enabled",
+            "original_key": "modelEnabled",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.modelEnabled",
+            "reason": "denied normalized extension key: model_enabled",
+            "tokens": [
+              "model",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "modelEnabled",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "worker-enabled",
+            "normalized_key": "worker_enabled",
+            "original_key": "worker-enabled",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.worker-enabled",
+            "reason": "denied normalized extension key: worker_enabled",
+            "tokens": [
+              "worker",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "worker-enabled",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "mutation.apply.allowed",
+            "normalized_key": "mutation_apply_allowed",
+            "original_key": "mutation.apply.allowed",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.mutation.apply.allowed",
+            "reason": "denied authority-changing token sequence: mutation_apply_allowed",
+            "tokens": [
+              "mutation",
+              "apply",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "mutation.apply.allowed",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "patchApplyEnabled",
+            "normalized_key": "patch_apply_enabled",
+            "original_key": "patchApplyEnabled",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.patchApplyEnabled",
+            "reason": "denied normalized extension key: patch_apply_enabled",
+            "tokens": [
+              "patch",
+              "apply",
+              "enabled"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "patchApplyEnabled",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "releaseAllowed",
+            "normalized_key": "release_allowed",
+            "original_key": "releaseAllowed",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.releaseAllowed",
+            "reason": "denied normalized extension key: release_allowed",
+            "tokens": [
+              "release",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "releaseAllowed",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "promotion_allowed",
+            "normalized_key": "promotion_allowed",
+            "original_key": "promotion_allowed",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.promotion_allowed",
+            "reason": "denied normalized extension key: promotion_allowed",
+            "tokens": [
+              "promotion",
+              "allowed"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "promotion_allowed",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "private_tool_bypass",
+            "normalized_key": "private_tool_bypass",
+            "original_key": "private_tool_bypass",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.private_tool_bypass",
+            "reason": "denied normalized extension key: private_tool_bypass",
+            "tokens": [
+              "private",
+              "tool",
+              "bypass"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "private_tool_bypass",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    },
+    {
+      "authority_error_count": 2,
+      "first_error": {
+        "code": "extension.authority_change",
+        "expected": "no authority-changing extension keys",
+        "message": "authority-changing extension field refused",
+        "observed": [
+          {
+            "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "normalized_key": "trusted",
+            "original_key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "path": "bundle.metadata.extensions.vendor.note.extensions.\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+            "reason": "denied normalized extension key: trusted",
+            "tokens": [
+              "trusted"
+            ]
+          }
+        ],
+        "path": "bundle.metadata.extensions"
+      },
+      "key": "\uff54\uff52\uff55\uff53\uff54\uff45\uff44",
+      "location": "nested_extension",
+      "passed": true,
+      "status": "FAILED_VALIDATION"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.independent-extension-matrix.v0"
+}

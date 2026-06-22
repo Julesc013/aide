@@ -2131,3 +2131,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, repairs all four findings pending independent check, and recommends exactly `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05`.
 - Result: `PASS_WITH_WARNINGS`; four findings are recorded as `REPAIRED_PENDING_INDEPENDENT_CHECK`.
 - Notes: This repair does not accept the seam, create or run the Repair 05 check, begin acceptance, mutate Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, create branches/worktrees, mutate GitHub, release, promote, or begin the WorkUnit validation slice.
+
+### Queue ID: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+
+- Title: Final Independent Check Of Dominium Read-Only Seam Repair 05
+- Status: Needs Review
+- Objective: independently verify Repair 05's closure of the four material findings from `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04` without repairing or modifying the seam.
+- Scope: `.aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/**`, `.aide/reports/dominium-readonly-seam-v0-repair-05-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: Repair 05 build commit `05cb2b82980d1dbb9fb18524f0ba191a460b7962`, `missing_evidence: 0`, clean worktree, and route to this check.
+- Verification Intent: evidence-local independent harness, schema surface traversal, production validation subprocess extension matrix, direct guard dispatcher probes, guard report digest recomputation, critical regression sampling, production tree hash comparison, Dominium immutability, task inspect/evidence, broad validation, diff checks, secret-like scan, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01`.
+- Result: `PASS_WITH_WARNINGS`; all four source findings are `CLOSED`.
+- Notes: This check does not repair implementation, alter public schemas/code/tests/fixtures/generated seam outputs/Repair 05 reports, modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, create branches/worktrees, mutate GitHub, release, promote, accept the seam, or begin the WorkUnit validation slice.

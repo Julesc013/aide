@@ -1,0 +1,477 @@
+{
+  "assertions": [
+    {
+      "category": "schema",
+      "description": "Every public schema object is closed, typed dynamic, or an explicit ExtensionMap.",
+      "evidence_refs": [
+        "evidence/schema-surface-independent-audit.json"
+      ],
+      "expected": {
+        "unclassified_object_count": 0,
+        "unintentionally_open_object_count": 0
+      },
+      "id": "phaseb.schema.open_object_surfaces_bounded",
+      "observed": {
+        "extension_ref_count": 10,
+        "unclassified_object_count": 0,
+        "unintentionally_open_object_count": 0
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": "schema.open_object_surfaces_bounded"
+    },
+    {
+      "category": "extension",
+      "description": "Denied authority-changing extension key variants fail with extension.authority_change while benign keys pass.",
+      "evidence_refs": [
+        "evidence/extension-authority-independent-matrix.json"
+      ],
+      "expected": {
+        "benign_passed": true,
+        "denied_passed": true
+      },
+      "id": "phaseb.extension.authority_names_semantically_refused",
+      "observed": {
+        "benign_count": 20,
+        "benign_passed": true,
+        "denied_count": 80,
+        "denied_passed": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": "extension.authority_names_semantically_refused"
+    },
+    {
+      "category": "guard",
+      "description": "Actual guard dispatcher reaches every forbidden guard family without invoking sentinel executors.",
+      "evidence_refs": [
+        "evidence/guard-dispatch-independent-matrix.json"
+      ],
+      "expected": {
+        "failed_count": 0,
+        "probe_count": 6
+      },
+      "id": "phaseb.conformance.guard_evidence_exercised",
+      "observed": {
+        "failed_count": 0,
+        "probe_count": 6
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": "conformance.guard_evidence_exercised"
+    },
+    {
+      "category": "guard_report",
+      "description": "Guard conformance report counts and digest recompute and change with nonce-bearing probes.",
+      "evidence_refs": [
+        "evidence/guard-report-independent-matrix.json"
+      ],
+      "expected": "digest recomputes and changes with nonce",
+      "id": "phaseb.operation.guard_report_not_static",
+      "observed": {
+        "all_probe_fields_pass": true,
+        "counts_reconcile": true,
+        "report_a_contains_nonce": true,
+        "report_a_digest_recomputes": true,
+        "report_b_contains_nonce": true,
+        "report_b_digest_recomputes": true,
+        "report_digest_changes_with_nonce": true,
+        "static_report_a_cannot_satisfy_nonce_b": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": "operation.guard_report_not_static"
+    },
+    {
+      "category": "regression",
+      "description": "Critical prior invariant sample: schema_discrimination.",
+      "evidence_refs": [
+        "evidence/regression-sampling.json"
+      ],
+      "expected": true,
+      "id": "phaseb.regression.schema_discrimination",
+      "observed": {
+        "all_expected_kinds_present": true,
+        "bundle_kinds": [
+          "ArtifactReference",
+          "ContextDescriptor",
+          "DiagnosticProjection",
+          "DominiumBridgeManifest",
+          "EventEnvelope",
+          "EvidenceReferenceSet",
+          "HostCapabilitySet",
+          "HostManifest",
+          "RefusalProjection",
+          "WorkspaceDescriptor"
+        ],
+        "expected_kind_count": 10,
+        "passed": true,
+        "schema_version": "aide.dominium-readonly-seam.schema-discrimination-sample.v0",
+        "seam_record_oneOf_count": 10,
+        "substitutions": [
+          {
+            "donor_kind": "ContextDescriptor",
+            "error_codes": [
+              "digest.bundle_self",
+              "digest.projection_index",
+              "digest.record",
+              "schema.spec_required",
+              "spec.required"
+            ],
+            "passed": true,
+            "status": "FAILED_VALIDATION",
+            "target_kind": "HostManifest"
+          },
+          {
+            "donor_kind": "HostManifest",
+            "error_codes": [
+              "digest.bundle_self",
+              "digest.projection_index",
+              "digest.record",
+              "schema.spec_required",
+              "spec.required"
+            ],
+            "passed": true,
+            "status": "FAILED_VALIDATION",
+            "target_kind": "ContextDescriptor"
+          },
+          {
+            "donor_kind": "DiagnosticProjection",
+            "error_codes": [
+              "digest.bundle_self",
+              "digest.projection_index",
+              "digest.record",
+              "schema.spec_required",
+              "spec.required"
+            ],
+            "passed": true,
+            "status": "FAILED_VALIDATION",
+            "target_kind": "ArtifactReference"
+          },
+          {
+            "donor_kind": "RefusalProjection",
+            "error_codes": [
+              "digest.bundle_self",
+              "digest.projection_index",
+              "digest.record",
+              "schema.spec_required",
+              "spec.required"
+            ],
+            "passed": true,
+            "status": "FAILED_VALIDATION",
+            "target_kind": "DiagnosticProjection"
+          },
+          {
+            "donor_kind": "ArtifactReference",
+            "error_codes": [
+              "digest.bundle_self",
+              "digest.projection_index",
+              "digest.record",
+              "event.correlation",
+              "event.sequence",
+              "reference.closure",
+              "reference.syntax",
+              "schema.spec_required",
+              "spec.required"
+            ],
+            "passed": true,
+            "status": "FAILED_VALIDATION",
+            "target_kind": "EventEnvelope"
+          },
+          {
+            "donor_kind": "HostCapabilitySet",
+            "error_codes": [
+              "bridge.runtime",
+              "command.invocation",
+              "digest.bundle_self",
+              "digest.projection_index",
+              "digest.record",
+              "schema.spec_required",
+              "spec.required",
+              "workbench.authority"
+            ],
+            "passed": true,
+            "status": "FAILED_VALIDATION",
+            "target_kind": "DominiumBridgeManifest"
+          }
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "regression",
+      "description": "Critical prior invariant sample: fixture_strictness.",
+      "evidence_refs": [
+        "evidence/regression-sampling.json"
+      ],
+      "expected": true,
+      "id": "phaseb.regression.fixture_strictness",
+      "observed": {
+        "explicit_null_value_preserved": true,
+        "negative_results": [
+          {
+            "error": "add operation requires value",
+            "name": "missing_add_value",
+            "passed": true
+          },
+          {
+            "error": "array index is not canonical decimal: \u0661",
+            "name": "unicode_index",
+            "passed": true
+          },
+          {
+            "error": "array index is not canonical decimal: 01",
+            "name": "ambiguous_index",
+            "passed": true
+          },
+          {
+            "error": "operation contains forbidden executable field",
+            "name": "forbidden_key",
+            "passed": true
+          },
+          {
+            "error": "JSON pointer must start with /: ",
+            "name": "root_mutation",
+            "passed": true
+          },
+          {
+            "error": "append operation requires an array target",
+            "name": "append_non_array",
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "schema_version": "aide.dominium-readonly-seam.fixture-strictness-sample.v0"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "regression",
+      "description": "Critical prior invariant sample: unsupported_cli.",
+      "evidence_refs": [
+        "evidence/regression-sampling.json"
+      ],
+      "expected": true,
+      "id": "phaseb.regression.unsupported_cli",
+      "observed": {
+        "passed": true,
+        "results": [
+          {
+            "has_operation": true,
+            "has_reason": true,
+            "has_refused": true,
+            "passed": true,
+            "returncode": 2,
+            "verb": "phaseb-unknown-operation"
+          },
+          {
+            "has_operation": true,
+            "has_reason": true,
+            "has_refused": true,
+            "passed": true,
+            "returncode": 2,
+            "verb": "future-operation"
+          },
+          {
+            "has_operation": true,
+            "has_reason": true,
+            "has_refused": true,
+            "passed": true,
+            "returncode": 2,
+            "verb": "xyzzy"
+          }
+        ],
+        "schema_version": "aide.dominium-readonly-seam.unsupported-cli-sample.v0"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "regression",
+      "description": "Critical prior invariant sample: no_write.",
+      "evidence_refs": [
+        "evidence/regression-sampling.json"
+      ],
+      "expected": true,
+      "id": "phaseb.regression.no_write",
+      "observed": {
+        "actual_operation_count": 3,
+        "after": "## main...origin/main [behind 24]",
+        "before": "## main...origin/main [behind 24]",
+        "dominium_status": "## main...origin/main [behind 24]",
+        "passed": true,
+        "schema_version": "aide.dominium-readonly-seam.no-write-sample.v0",
+        "status": "PASS"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "regression",
+      "description": "Critical prior invariant sample: operation_trace.",
+      "evidence_refs": [
+        "evidence/regression-sampling.json"
+      ],
+      "expected": true,
+      "id": "phaseb.regression.operation_trace",
+      "observed": {
+        "allowed_count": 1226,
+        "forbidden_count": 0,
+        "operation_count": 43,
+        "passed": true,
+        "raw_digest": "sha256:b0229be914e03987595a43098a3064bd28947fef75f02d1e56c73adabb25ad4d",
+        "raw_observation_count": 1226,
+        "recorded_allowed_count": 1226,
+        "recorded_forbidden_count": 0,
+        "recorded_operation_count": 43,
+        "recorded_raw_digest": "sha256:b0229be914e03987595a43098a3064bd28947fef75f02d1e56c73adabb25ad4d",
+        "schema_version": "aide.dominium-readonly-seam.operation-trace-sample.v0",
+        "sequence_contiguous": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "regression",
+      "description": "Critical prior invariant sample: portability.",
+      "evidence_refs": [
+        "evidence/regression-sampling.json"
+      ],
+      "expected": true,
+      "id": "phaseb.regression.portability",
+      "observed": {
+        "absolute_path_leak_count": 0,
+        "output_hashes_equal": true,
+        "passed": true,
+        "required_output_set_equal": true,
+        "schema_version": "aide.dominium-readonly-seam.portability-sample.v0",
+        "set_results": [
+          {
+            "extra_required_check": [],
+            "missing": [],
+            "output_count": 16,
+            "passed": true,
+            "root": 0
+          },
+          {
+            "extra_required_check": [],
+            "missing": [],
+            "output_count": 16,
+            "passed": true,
+            "root": 1
+          }
+        ],
+        "status": "PASS",
+        "undeclared_dependency_count": 0
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "immutability",
+      "description": "Production seam surfaces are byte-identical before and after the check.",
+      "evidence_refs": [
+        "evidence/production-tree-before.json",
+        "evidence/production-tree-after.json"
+      ],
+      "expected": "sha256:69a740cf54b53ce129bf6e8160a2cd110796eca029489a7a1a41fbc7338b47ef",
+      "id": "phaseb.production_tree_unchanged",
+      "observed": "sha256:69a740cf54b53ce129bf6e8160a2cd110796eca029489a7a1a41fbc7338b47ef",
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    }
+  ],
+  "four_finding_dispositions": [
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        "evidence/schema-surface-independent-audit.json"
+      ],
+      "expected": "all matching assertions PASS",
+      "finding_id": "schema.open_object_surfaces_bounded",
+      "independent_test": [
+        "phaseb.schema.open_object_surfaces_bounded"
+      ],
+      "observed": [
+        "PASS"
+      ],
+      "original_observed_defect": "Repair 04 check found unbounded/open public schema object surfaces.",
+      "repair_05_change": "Repair 05 tightened schema object surfaces and added schema surface audit evidence."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        "evidence/extension-authority-independent-matrix.json"
+      ],
+      "expected": "all matching assertions PASS",
+      "finding_id": "extension.authority_names_semantically_refused",
+      "independent_test": [
+        "phaseb.extension.authority_names_semantically_refused"
+      ],
+      "observed": [
+        "PASS"
+      ],
+      "original_observed_defect": "Repair 04 check found authority-changing extension name variants not semantically refused.",
+      "repair_05_change": "Repair 05 added deterministic extension key normalization and recursive semantic refusal."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        "evidence/guard-dispatch-independent-matrix.json"
+      ],
+      "expected": "all matching assertions PASS",
+      "finding_id": "conformance.guard_evidence_exercised",
+      "independent_test": [
+        "phaseb.conformance.guard_evidence_exercised"
+      ],
+      "observed": [
+        "PASS"
+      ],
+      "original_observed_defect": "Repair 04 check found guard evidence was not proven by exercised guard paths.",
+      "repair_05_change": "Repair 05 added a guard dispatcher with sentinel executors and state digests."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        "evidence/guard-report-independent-matrix.json"
+      ],
+      "expected": "all matching assertions PASS",
+      "finding_id": "operation.guard_report_not_static",
+      "independent_test": [
+        "phaseb.operation.guard_report_not_static"
+      ],
+      "observed": [
+        "PASS"
+      ],
+      "original_observed_defect": "Repair 04 check found guard report could be static rather than derived from runtime probes.",
+      "repair_05_change": "Repair 05 generated guard conformance reports from nonce-bearing dispatcher probes with recomputed digest."
+    }
+  ],
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "production_after_digest": "sha256:69a740cf54b53ce129bf6e8160a2cd110796eca029489a7a1a41fbc7338b47ef",
+  "production_before_digest": "sha256:69a740cf54b53ce129bf6e8160a2cd110796eca029489a7a1a41fbc7338b47ef",
+  "production_tree_unchanged": true,
+  "recommended_next_task": "AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.dominium-readonly-seam.repair-05-check.v0",
+  "source_commit": "05cb2b82980d1dbb9fb18524f0ba191a460b7962",
+  "source_task": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
+  "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05",
+  "warnings": [
+    "offline/read-only seam",
+    "local Dominium behind remote",
+    "non-Windows platforms not separately executed",
+    "minimum Python 3.11 not separately executed",
+    "external Draft 2020-12 validator unavailable"
+  ]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "disposition": "CLOSED",
+    "evidence_refs": [
+      "evidence/schema-surface-independent-audit.json"
+    ],
+    "expected": "all matching assertions PASS",
+    "finding_id": "schema.open_object_surfaces_bounded",
+    "independent_test": [
+      "phaseb.schema.open_object_surfaces_bounded"
+    ],
+    "observed": [
+      "PASS"
+    ],
+    "original_observed_defect": "Repair 04 check found unbounded/open public schema object surfaces.",
+    "repair_05_change": "Repair 05 tightened schema object surfaces and added schema surface audit evidence."
+  },
+  {
+    "disposition": "CLOSED",
+    "evidence_refs": [
+      "evidence/extension-authority-independent-matrix.json"
+    ],
+    "expected": "all matching assertions PASS",
+    "finding_id": "extension.authority_names_semantically_refused",
+    "independent_test": [
+      "phaseb.extension.authority_names_semantically_refused"
+    ],
+    "observed": [
+      "PASS"
+    ],
+    "original_observed_defect": "Repair 04 check found authority-changing extension name variants not semantically refused.",
+    "repair_05_change": "Repair 05 added deterministic extension key normalization and recursive semantic refusal."
+  },
+  {
+    "disposition": "CLOSED",
+    "evidence_refs": [
+      "evidence/guard-dispatch-independent-matrix.json"
+    ],
+    "expected": "all matching assertions PASS",
+    "finding_id": "conformance.guard_evidence_exercised",
+    "independent_test": [
+      "phaseb.conformance.guard_evidence_exercised"
+    ],
+    "observed": [
+      "PASS"
+    ],
+    "original_observed_defect": "Repair 04 check found guard evidence was not proven by exercised guard paths.",
+    "repair_05_change": "Repair 05 added a guard dispatcher with sentinel executors and state digests."
+  },
+  {
+    "disposition": "CLOSED",
+    "evidence_refs": [
+      "evidence/guard-report-independent-matrix.json"
+    ],
+    "expected": "all matching assertions PASS",
+    "finding_id": "operation.guard_report_not_static",
+    "independent_test": [
+      "phaseb.operation.guard_report_not_static"
+    ],
+    "observed": [
+      "PASS"
+    ],
+    "original_observed_defect": "Repair 04 check found guard report could be static rather than derived from runtime probes.",
+    "repair_05_change": "Repair 05 generated guard conformance reports from nonce-bearing dispatcher probes with recomputed digest."
+  }
+]

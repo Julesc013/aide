@@ -1,0 +1,106 @@
+{
+  "failed_count": 0,
+  "nonce": "phaseb-direct-nonce",
+  "passed": true,
+  "passed_count": 6,
+  "probe_count": 6,
+  "probes": [
+    {
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/phaseb-filesystem_writes-phaseb-direct-nonce"
+      ],
+      "execution_prevented": true,
+      "executor_called_by_sentinel": false,
+      "executor_invoked": false,
+      "family": "filesystem_writes",
+      "guard_reached": true,
+      "nonce_present": true,
+      "passed": true,
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "phaseb-filesystem_writes-phaseb-direct-nonce",
+      "result": "PASS",
+      "state_unchanged": true
+    },
+    {
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/phaseb-branch_worktree_ref_ops-phaseb-direct-nonce"
+      ],
+      "execution_prevented": true,
+      "executor_called_by_sentinel": false,
+      "executor_invoked": false,
+      "family": "branch_worktree_ref_ops",
+      "guard_reached": true,
+      "nonce_present": true,
+      "passed": true,
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "phaseb-branch_worktree_ref_ops-phaseb-direct-nonce",
+      "result": "PASS",
+      "state_unchanged": true
+    },
+    {
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/phaseb-network_attempts-phaseb-direct-nonce"
+      ],
+      "execution_prevented": true,
+      "executor_called_by_sentinel": false,
+      "executor_invoked": false,
+      "family": "network_attempts",
+      "guard_reached": true,
+      "nonce_present": true,
+      "passed": true,
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "phaseb-network_attempts-phaseb-direct-nonce",
+      "result": "PASS",
+      "state_unchanged": true
+    },
+    {
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/phaseb-provider_model_attempts-phaseb-direct-nonce"
+      ],
+      "execution_prevented": true,
+      "executor_called_by_sentinel": false,
+      "executor_invoked": false,
+      "family": "provider_model_attempts",
+      "guard_reached": true,
+      "nonce_present": true,
+      "passed": true,
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "phaseb-provider_model_attempts-phaseb-direct-nonce",
+      "result": "PASS",
+      "state_unchanged": true
+    },
+    {
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/phaseb-worker_dispatch-phaseb-direct-nonce"
+      ],
+      "execution_prevented": true,
+      "executor_called_by_sentinel": false,
+      "executor_invoked": false,
+      "family": "worker_dispatch",
+      "guard_reached": true,
+      "nonce_present": true,
+      "passed": true,
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "phaseb-worker_dispatch-phaseb-direct-nonce",
+      "result": "PASS",
+      "state_unchanged": true
+    },
+    {
+      "evidence_refs": [
+        "operation-guard-conformance.json#/probes/phaseb-mutation_apply-phaseb-direct-nonce"
+      ],
+      "execution_prevented": true,
+      "executor_called_by_sentinel": false,
+      "executor_invoked": false,
+      "family": "mutation_apply",
+      "guard_reached": true,
+      "nonce_present": true,
+      "passed": true,
+      "reason_code": "AIDE_DOMINIUM_SEAM_READ_ONLY_BOUNDARY",
+      "request_id": "phaseb-mutation_apply-phaseb-direct-nonce",
+      "result": "PASS",
+      "state_unchanged": true
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.independent-guard-matrix.v0"
+}

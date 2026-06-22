@@ -1,0 +1,51 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+title: Final Independent Check Of Dominium Read-Only Seam Repair 05
+type: check
+status: running
+created_at: 2026-06-23
+source_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+source_commit: 05cb2b82980d1dbb9fb18524f0ba191a460b7962
+source_check_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+source_check_commit: 0dd7eabc10508fe4a15965495314a15eeb02e495
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-05-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide/protocol/aide-dominium-readonly-seam-v0.schema.json
+  - core/interop/dominium/**
+  - core/protocol/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam*.py
+  - .aide/fixtures/dominium-readonly-seam/**
+  - .aide/interop/dominium/**
+  - .aide/reports/dominium-readonly-seam-v0/**
+  - .aide/reports/dominium-readonly-seam-v0-repair-05/**
+  - Dominium
+objective: >
+  Independently verify the four Repair 05 source findings, sample critical
+  previously closed seam invariants, confirm no production drift or Dominium
+  mutation, and route either to acceptance or Repair 06.
+material_scope:
+  - schema.open_object_surfaces_bounded
+  - extension.authority_names_semantically_refused
+  - conformance.guard_evidence_exercised
+  - operation.guard_report_not_static
+review_gate: needs_review
+recommended_successor_on_pass: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+recommended_successor_on_failure: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-06
+non_capabilities:
+  - no production repair
+  - no Dominium command invocation
+  - no runtime bridge
+  - no network-backed seam operation
+  - no provider or model call
+  - no worker execution
+  - no PatchTransaction apply
+  - no target mutation
+  - no branch or worktree automation
+  - no GitHub mutation
+  - no release or promotion

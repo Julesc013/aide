@@ -1,0 +1,48 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-23
+summary: Independent Repair 05 check closed all four source findings and recommends acceptance.
+validation_status: PASS_WITH_WARNINGS
+source_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05
+source_commit: 05cb2b82980d1dbb9fb18524f0ba191a460b7962
+source_check_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04
+source_check_commit: 0dd7eabc10508fe4a15965495314a15eeb02e495
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+dominium_modified: false
+production_modified: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+evidence:
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/independent_repair05_check.py
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/independent-check-results.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/production-tree-before.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/production-tree-after.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/schema-surface-independent-audit.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/extension-authority-independent-matrix.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/guard-dispatch-independent-matrix.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/guard-report-independent-matrix.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/regression-sampling.json
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/validation-commands.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/validation-results.md
+  - .aide/queue/AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05/evidence/validation.md
+warnings:
+  - The seam remains offline and read-only.
+  - Local Dominium is behind remote origin/main.
+  - Non-Windows platforms were not separately executed.
+  - Minimum Python 3.11 was not separately executed.
+  - External Draft 2020-12 validator unavailable.
+blockers: []
