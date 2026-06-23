@@ -1798,6 +1798,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/evidence
     description: Acceptance/consolidation gate for dominium_readonly_seam_v0. Accepts only the offline deterministic read-only projection capability after Repair 05 check reported PASS_WITH_WARNINGS with material_finding_count 0 and missing_evidence 0. Preserves all historical failed checks, records explicit warnings and non-capabilities, stops at needs_review with ACCEPTED_WITH_WARNINGS, and recommends exactly AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01. Does not repair implementation, alter public schemas/code/tests/fixtures/generated seam outputs/Repair 05 reports/check reports, modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, apply patches, mutate repositories, create branches/worktrees, mutate GitHub, release, promote, or begin the WorkUnit validation slice.
+  - id: AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+    status: needs_review
+    planning_state: implemented
+    result: PASS_WITH_WARNINGS
+    title: Build Dominium WorkUnit Validation Slice
+    task: .aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/evidence
+    description: First post-seam bounded vertical slice proving ContextDescriptor to ContextPack to WorkUnit to a registered local read-only dominium.validation.run capability invocation against a temporary fixture workspace, then projecting a typed result through EvidencePacket, EventRecord, and deterministic read-only projection outputs. Stops at needs_review with PASS_WITH_WARNINGS, records exactly one invocation, no arbitrary shell fallback, no private tool bypass, no broad Dominium dispatch, no provider/model/network/worker behavior, no Workbench apply, no preview/apply, no PatchTransaction apply, no repository mutation, and recommends exactly AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

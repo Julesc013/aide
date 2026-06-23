@@ -1,0 +1,21 @@
+# Explicit Non-Capabilities
+
+- `arbitrary_shell_command`
+- `private_tool_call`
+- `broad_dominium_command_dispatch`
+- `unbounded_dominium_command_invocation`
+- `provider_model_call`
+- `network_call`
+- `worker_execution`
+- `workbench_implementation`
+- `workbench_apply`
+- `preview_or_apply`
+- `patch_transaction_apply`
+- `service_runtime`
+- `database_runtime`
+- `durable_state_owner`
+- `source_repository_mutation`
+- `target_repository_mutation`
+- `branch_worktree_automation`
+- `github_mutation`
+- `release_or_promotion`

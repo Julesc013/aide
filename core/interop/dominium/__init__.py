@@ -10,6 +10,13 @@ from .bundle import (
     unsupported_operation_refusal,
 )
 from .models import RECOMMENDED_NEXT_TASK, REPAIR_TASK_ID, TASK_ID
+from .workunit_validation import (
+    CAPABILITY_ID as WORKUNIT_VALIDATION_CAPABILITY_ID,
+    CHECK_TASK_ID as WORKUNIT_VALIDATION_CHECK_TASK_ID,
+    run_slice as run_dominium_workunit_validation_slice,
+    status as dominium_workunit_validation_status,
+    validate_slice_reports as validate_dominium_workunit_validation_slice,
+)
 
 __all__ = [
     "dominium_seam_diff",
@@ -19,6 +26,11 @@ __all__ = [
     "validate_dominium_seam",
     "run_dominium_seam_demo",
     "unsupported_operation_refusal",
+    "dominium_workunit_validation_status",
+    "run_dominium_workunit_validation_slice",
+    "validate_dominium_workunit_validation_slice",
+    "WORKUNIT_VALIDATION_CAPABILITY_ID",
+    "WORKUNIT_VALIDATION_CHECK_TASK_ID",
     "RECOMMENDED_NEXT_TASK",
     "REPAIR_TASK_ID",
     "TASK_ID",

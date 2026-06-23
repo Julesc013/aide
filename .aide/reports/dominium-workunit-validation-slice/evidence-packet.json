@@ -1,0 +1,133 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "ep-7f1c47f837b51f31",
+    "name": "Dominium validation run evidence",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/dominium-workunit-validation-slice/evidence-packet.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/dominium-workunit-validation-slice/context-descriptor.json",
+        "role": "context_descriptor",
+        "sha256": "sha256:0b6a60eaa6dcd23e4a41ae94d50f5660417c3fd9bcf33012f14ef90256729e66"
+      },
+      {
+        "path": ".aide/reports/dominium-workunit-validation-slice/context-pack.json",
+        "role": "context_pack",
+        "sha256": "sha256:7d58483b599a58a90ad3ee7470c0d75ae07f1df686f54cd0855b23f6177c7801"
+      },
+      {
+        "path": ".aide/reports/dominium-workunit-validation-slice/workunit.json",
+        "role": "workunit",
+        "sha256": "sha256:6dac0f42de5c3736da3d90f7b143b51cb59eb3c9a2a3de1f61478b9373b28e89"
+      },
+      {
+        "path": ".aide/reports/dominium-workunit-validation-slice/capability-registry.json",
+        "role": "capability_registry",
+        "sha256": "sha256:32cabbe2098a5c06aca4ccd80605005abfdc8ed5f00cb0aab4fcaa8c07624dbf"
+      },
+      {
+        "path": ".aide/reports/dominium-workunit-validation-slice/invocation-result.json",
+        "role": "invocation_result",
+        "sha256": "sha256:ce921505747c8b2f3537489b1b5531fa390661850a1def2127dd1f02fa2b654a"
+      }
+    ],
+    "capability_label": "minimal_evidence_packet_schema",
+    "claims": [
+      {
+        "id": "registered_capability_lookup",
+        "status": "supported",
+        "summary": "The WorkUnit references the single admitted dominium.validation.run capability."
+      },
+      {
+        "id": "exactly_one_invocation",
+        "status": "supported",
+        "summary": "The registered adapter was invoked exactly once."
+      },
+      {
+        "id": "workspace_state_unchanged",
+        "status": "supported",
+        "summary": "The temporary fixture workspace digest was unchanged by the invocation."
+      },
+      {
+        "id": "no_forbidden_paths",
+        "status": "supported",
+        "summary": "Forbidden execution and mutation surfaces stayed false."
+      }
+    ],
+    "evidence_ref": "aide://evidence/dominium-validation-run-readonly",
+    "explicit_non_capabilities": [
+      "arbitrary_shell_command",
+      "private_tool_call",
+      "broad_dominium_command_dispatch",
+      "unbounded_dominium_command_invocation",
+      "provider_model_call",
+      "network_call",
+      "worker_execution",
+      "workbench_implementation",
+      "workbench_apply",
+      "preview_or_apply",
+      "patch_transaction_apply",
+      "service_runtime",
+      "database_runtime",
+      "durable_state_owner",
+      "source_repository_mutation",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "risks": [],
+    "source_task_id": "AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01",
+    "source_task_kind": "build",
+    "subject": {
+      "id": "dominium.validation.run",
+      "ref": "aide://capability/dominium-validation-run-readonly",
+      "type": "capability"
+    },
+    "validations": [
+      {
+        "command": "dominium.validation.run registered adapter invocation",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "fixture workspace before/after digest comparison",
+        "status": "PASS"
+      }
+    ],
+    "warnings": [
+      "This slice uses a temporary fixture workspace because no local Dominium checkout is present in the AIDE repository.",
+      "The invocation is a bounded read-only capability adapter, not a general Dominium command runner."
+    ]
+  },
+  "status": {
+    "phase": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "Temporary fixture workspace path is intentionally repo-local and deterministic."
+    ]
+  }
+}

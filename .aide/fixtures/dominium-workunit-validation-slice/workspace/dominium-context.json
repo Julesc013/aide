@@ -1,0 +1,9 @@
+{
+  "context_ref": "aide://context/dominium-workunit-validation-context",
+  "queue_alternate_next_task": "WORKBENCH-SHELL-READONLY-01",
+  "queue_current_task": "PROJECTION-CONFORMANCE-01",
+  "read_only": true,
+  "schema_version": "dominium.context.fixture.v1",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_surface": "dominium.validation.run"
+}

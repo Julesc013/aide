@@ -39,6 +39,50 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+
+Completed for review as a bounded build task.
+
+Changed:
+
+- `core/interop/dominium/workunit_validation.py`
+- `core/interop/dominium/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_dominium_workunit_validation_slice.py`
+- `.aide/fixtures/dominium-workunit-validation-slice/**`
+- `.aide/reports/dominium-workunit-validation-slice/**`
+- `.aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The build adds a narrow Dominium WorkUnit
+validation slice that creates a temporary fixture workspace, projects a
+ContextDescriptor and ContextPack, builds a WorkUnit, performs exactly one
+registered local read-only `dominium.validation.run` capability invocation, and
+records the typed result as EvidencePacket, EventRecord, and deterministic
+read-only projection evidence.
+
+The adapter intentionally refuses unsupported capability IDs with typed refusal
+data and does not provide a shell fallback, private tool bypass, broad Dominium
+dispatcher, provider/model/network call, worker execution, Workbench behavior,
+Service runtime, preview/apply/rollback, PatchTransaction apply, repository
+mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+Verification passed for compile, focused WorkUnit validation tests,
+`dominium-workunit-validation status/run/validate`, task inspect/evidence,
+WorkUnit inspect, diff checks, broad `aide_lite.py validate`, and the latest
+Repair 04/05 Dominium seam suites. The full historical
+`test_aide_dominium_readonly_seam*.py` discovery and four older exact-pattern
+historical seam modules timed out under bounded reruns, so those are recorded as
+warning-class unproven checks rather than passes.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+```
+
 ## Work Item: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
 
 Completed for review as a check-only independent repair verification task.

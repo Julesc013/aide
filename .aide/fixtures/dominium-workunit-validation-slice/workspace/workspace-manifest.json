@@ -1,0 +1,17 @@
+{
+  "capability_id": "dominium.validation.run",
+  "mutation_allowed": false,
+  "network_allowed": false,
+  "pinned_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "provider_or_model_allowed": false,
+  "read_only": true,
+  "schema_version": "aide.dominium-workunit-validation.workspace.v1",
+  "shell_allowed": false,
+  "worker_allowed": false,
+  "workspace_files": [
+    "workspace-manifest.json",
+    "validation-request.json",
+    "dominium-context.json"
+  ],
+  "workspace_kind": "temporary_fixture_workspace"
+}

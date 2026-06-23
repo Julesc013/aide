@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+
+- Title: Build Dominium WorkUnit Validation Slice
+- Status: needs_review
+- Objective: prove the first real post-seam operation shape by routing a Dominium fixture context through ContextDescriptor, ContextPack, WorkUnit, a registered `dominium.validation.run` capability, typed result, EvidencePacket, EventRecord, and read-only projection.
+- Scope: bounded Dominium WorkUnit validation adapter, thin CLI commands, temporary fixture workspace, generated validation slice reports, focused tests, queue task evidence, queue index, and execution log.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01` at `ACCEPTED_WITH_WARNINGS` with `missing_evidence: 0` and recommended next task `AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01`.
+- Milestones: predecessor gate checked; fixture workspace generated; one registered read-only capability invocation implemented; ContextDescriptor, ContextPack, WorkUnit, EvidencePacket, EventRecord, projection, report, validation, and tests materialized; task evidence written.
+- Blockers: none. Warnings: the target is a temporary fixture workspace, not a live Dominium checkout; this is not a Workbench, Service, trust/grant, preview/apply, rollback, worker, provider, network, or general Dominium command runner.
+- Verification Intent: focused compile and unit tests, live `dominium-workunit-validation status/run/validate`, task inspect/evidence, diff checks, and broad AIDE validation.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, exactly one `dominium.validation.run` invocation, no forbidden boundary crossing, no mutation, complete evidence, and next task exactly `AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01`.
+- Notes: next serialized task is `AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01`.
+
 ### Plan ID: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
 
 - Title: Independent Check Of The Dominium Read-Only Seam v0 Repair

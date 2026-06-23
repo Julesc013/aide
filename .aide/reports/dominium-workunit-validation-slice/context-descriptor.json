@@ -1,0 +1,83 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "ContextDescriptor",
+  "metadata": {
+    "authority_role": "temporary_fixture_context_projection",
+    "created_at": "2026-06-23T00:00:00+10:00",
+    "explicit_non_capabilities": [
+      "arbitrary_shell_command",
+      "private_tool_call",
+      "broad_dominium_command_dispatch",
+      "unbounded_dominium_command_invocation",
+      "provider_model_call",
+      "network_call",
+      "worker_execution",
+      "workbench_implementation",
+      "workbench_apply",
+      "preview_or_apply",
+      "patch_transaction_apply",
+      "service_runtime",
+      "database_runtime",
+      "durable_state_owner",
+      "source_repository_mutation",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "id": "dominium-workunit-validation-context",
+    "identity_owner": "AIDE",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "semantic_owner": "AIDE",
+    "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
+  },
+  "spec": {
+    "context_ref": "aide://context/dominium-workunit-validation-context",
+    "pinned_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+    "registered_capability_id": "dominium.validation.run",
+    "source_refs": [
+      {
+        "path": ".aide/fixtures/dominium-workunit-validation-slice/workspace/workspace-manifest.json",
+        "role": "context_source",
+        "sha256": "sha256:cbc561fd90bf5aaa315920f8d6cd39d6c5ccc68de1ea015f3b41c5a46f1965e8"
+      },
+      {
+        "path": ".aide/fixtures/dominium-workunit-validation-slice/workspace/validation-request.json",
+        "role": "context_source",
+        "sha256": "sha256:a646f91d2cffabcf8ea742ebe58aad279ba87b7eed461603eccc07aa7dbb3969"
+      },
+      {
+        "path": ".aide/fixtures/dominium-workunit-validation-slice/workspace/dominium-context.json",
+        "role": "context_source",
+        "sha256": "sha256:2206a19e505bb057356ed8b6a2d7f9a039dba9cecac8f804e0e911e7d9abf061"
+      }
+    ],
+    "validation_request": ".aide/fixtures/dominium-workunit-validation-slice/workspace/validation-request.json",
+    "workspace_kind": "temporary_fixture_workspace",
+    "workspace_manifest": ".aide/fixtures/dominium-workunit-validation-slice/workspace/workspace-manifest.json"
+  },
+  "status": {
+    "arbitrary_shell_command_executed": false,
+    "branch_or_worktree_created": false,
+    "broad_dispatch_used": false,
+    "context_projected": true,
+    "database_opened": false,
+    "dominium_validation_run_invoked": false,
+    "github_mutation_performed": false,
+    "network_call_performed": false,
+    "patch_transaction_applied": false,
+    "preview_or_apply_performed": false,
+    "private_tool_called": false,
+    "provider_or_model_called": false,
+    "release_or_promotion_performed": false,
+    "service_started": false,
+    "source_repository_mutated": false,
+    "target_repository_mutated": false,
+    "workbench_apply_performed": false,
+    "workbench_started": false,
+    "worker_executed": false
+  }
+}

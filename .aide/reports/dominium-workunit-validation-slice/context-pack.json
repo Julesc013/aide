@@ -1,0 +1,265 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "ContextPack",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "context_pack_v2",
+        "dominium_workunit_validation_slice_v1"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "context_pack_v2"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "2026-06-23T00:00:00+10:00",
+    "id": "dominium-workunit-validation-slice-01",
+    "name": "Dominium WorkUnit Validation Slice ContextPack",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/dominium-workunit-validation-slice/context-pack.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.context-pack.v2",
+  "spec": {
+    "allowed_paths": [
+      "core/interop/dominium/workunit_validation.py",
+      ".aide/reports/dominium-workunit-validation-slice/**",
+      ".aide/fixtures/dominium-workunit-validation-slice/**"
+    ],
+    "context_descriptor_ref": "aide://context/dominium-workunit-validation-context",
+    "context_pack_ref": "aide://context-pack/dominium-workunit-validation-slice-01",
+    "explicit_non_capabilities": [
+      "arbitrary_shell_command",
+      "private_tool_call",
+      "broad_dominium_command_dispatch",
+      "unbounded_dominium_command_invocation",
+      "provider_model_call",
+      "network_call",
+      "worker_execution",
+      "workbench_implementation",
+      "workbench_apply",
+      "preview_or_apply",
+      "patch_transaction_apply",
+      "service_runtime",
+      "database_runtime",
+      "durable_state_owner",
+      "source_repository_mutation",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "forbidden_paths": [
+      ".git/**",
+      ".aide.local/**",
+      ".env",
+      "secrets/**",
+      "credentials/**"
+    ],
+    "purpose": "bounded_dominium_workunit_validation_invocation",
+    "registered_capability_id": "dominium.validation.run",
+    "registered_capability_ref": "aide://capability/dominium-validation-run-readonly",
+    "required_capability_refs": [
+      "aide://capability/dominium-validation-run-readonly"
+    ],
+    "required_evidence_refs": [
+      "aide://evidence/dominium-validation-run-readonly"
+    ],
+    "sections": [
+      {
+        "id": "dominium_context",
+        "item_count": 1,
+        "source_refs": [
+          "aide://context/dominium-workunit-validation-context"
+        ]
+      },
+      {
+        "id": "work_unit",
+        "item_count": 1,
+        "source_refs": [
+          "aide://workunit/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01"
+        ]
+      },
+      {
+        "id": "capability",
+        "item_count": 1,
+        "source_refs": [
+          "aide://capability/dominium-validation-run-readonly"
+        ]
+      },
+      {
+        "id": "evidence",
+        "item_count": 1,
+        "source_refs": [
+          "aide://evidence/dominium-validation-run-readonly"
+        ]
+      }
+    ],
+    "source_refs": [
+      {
+        "exists": true,
+        "kind": "source",
+        "path": "core/interop/dominium/workunit_validation.py",
+        "ref": "aide://source/workunit-validation",
+        "role": "slice_input",
+        "sha256": "sha256:5d8844c2e02fdb52f14aff55bbdf75b044a55f2188579b562fd06def059d9b2d"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": "core/interop/dominium/__init__.py",
+        "ref": "aide://source/--init--",
+        "role": "slice_input",
+        "sha256": "sha256:3fd07f60658ce3265dfdbf11e21351cd5e2f3bd6e1fba98764e13718329a3062"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": "core/protocol/envelope.py",
+        "ref": "aide://source/envelope",
+        "role": "slice_input",
+        "sha256": "sha256:cce43f1a5b415c37bf2324721c4fbb907bf1a509189f2e0f6fa49ccbda7c9fa7"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": "core/protocol/workunit.py",
+        "ref": "aide://source/workunit",
+        "role": "slice_input",
+        "sha256": "sha256:f4a74b2d54552244bf1657cbeaad80b164a8bb57e37fb8c388677484086e0311"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": "core/protocol/evidence_packet.py",
+        "ref": "aide://source/evidence-packet",
+        "role": "slice_input",
+        "sha256": "sha256:fc908b646f209bafaf5c645a5622344e3b75afd6a92e869f6cf12de93a840f22"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": "core/protocol/event_record.py",
+        "ref": "aide://source/event-record",
+        "role": "slice_input",
+        "sha256": "sha256:4ed2e1b61d10d52a83e9062539acc4c821ffbc0ad04bd577c52dd42a9f61a4e2"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": "core/protocol/reference_id.py",
+        "ref": "aide://source/reference-id",
+        "role": "slice_input",
+        "sha256": "sha256:c22d6a802b9d33d3a904aff2713e2ca812a725ddc04e12589c4600de8da69677"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/protocol/aide-workunit.schema.json",
+        "ref": "aide://source/aide-workunit.schema",
+        "role": "slice_input",
+        "sha256": "sha256:de82b312e2859191d8dac4153f25ae29237d1e4065a5d4a9837ea52d95dab964"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/protocol/aide-context-pack-v2.schema.json",
+        "ref": "aide://source/aide-context-pack-v2.schema",
+        "role": "slice_input",
+        "sha256": "sha256:c7839a5e0888839431032c3fc3ff2bcd7d563d2485be056635ae90ae94ff06eb"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/protocol/aide-evidence-packet.schema.json",
+        "ref": "aide://source/aide-evidence-packet.schema",
+        "role": "slice_input",
+        "sha256": "sha256:516afb76aa7ebcdf641d00a6afc79ae057bad5c83d8eed8e02fc02b492cce26f"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/protocol/aide-event-record.schema.json",
+        "ref": "aide://source/aide-event-record.schema",
+        "role": "slice_input",
+        "sha256": "sha256:f8f7b9882dcdb4f92a3d281fb9003a44739ccf373cf5ef6c1307ab42736d9698"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/queue/AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01/status.yaml",
+        "ref": "aide://source/status",
+        "role": "slice_input",
+        "sha256": "sha256:b7987553134f4c307e528ba91bd0777f31d8ab26f84fd407a0b06dd0c471b2ba"
+      },
+      {
+        "exists": true,
+        "kind": "report",
+        "path": ".aide/reports/dominium-readonly-seam-v0-accept/acceptance-report.json",
+        "ref": "aide://report/acceptance-report",
+        "role": "slice_input",
+        "sha256": "sha256:2540b2ad2ff5f62470a8ca4d7053ef9079b4ea7b2f44a75cb78db8418c864734"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/fixtures/dominium-workunit-validation-slice/workspace/workspace-manifest.json",
+        "ref": "aide://source/workspace-manifest",
+        "role": "slice_input",
+        "sha256": "sha256:cbc561fd90bf5aaa315920f8d6cd39d6c5ccc68de1ea015f3b41c5a46f1965e8"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/fixtures/dominium-workunit-validation-slice/workspace/validation-request.json",
+        "ref": "aide://source/validation-request",
+        "role": "slice_input",
+        "sha256": "sha256:a646f91d2cffabcf8ea742ebe58aad279ba87b7eed461603eccc07aa7dbb3969"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/fixtures/dominium-workunit-validation-slice/workspace/dominium-context.json",
+        "ref": "aide://source/dominium-context",
+        "role": "slice_input",
+        "sha256": "sha256:2206a19e505bb057356ed8b6a2d7f9a039dba9cecac8f804e0e911e7d9abf061"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/fixtures/dominium-workunit-validation-slice/expected-result.json",
+        "ref": "aide://source/expected-result",
+        "role": "slice_input",
+        "sha256": "sha256:2af54ca936772b3222223c05f4b9394d1295a8f4a8fb02b1a4145ff2aaf9c235"
+      },
+      {
+        "exists": true,
+        "kind": "source",
+        "path": ".aide/fixtures/dominium-workunit-validation-slice/expected-refusal.json",
+        "ref": "aide://source/expected-refusal",
+        "role": "slice_input",
+        "sha256": "sha256:447927161ead970d87f613ca8786c01412cc1e5fe1c6bf54d62386bb4ae98458"
+      }
+    ],
+    "work_unit_ref": "aide://workunit/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01"
+  },
+  "status": {
+    "agent_started": false,
+    "command_executed": false,
+    "embedding_performed": false,
+    "model_call_performed": false,
+    "network_call_performed": false,
+    "patch_applied": false,
+    "repository_mutated": false,
+    "trusted": false,
+    "validation_performed": true,
+    "validation_status": "PASS_WITH_WARNINGS",
+    "worker_started": false
+  }
+}

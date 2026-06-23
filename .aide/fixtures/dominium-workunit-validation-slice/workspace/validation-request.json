@@ -1,0 +1,18 @@
+{
+  "allowed_side_effects": [],
+  "forbidden_fallbacks": [
+    "arbitrary_shell",
+    "private_tool",
+    "broad_dispatch",
+    "provider_model_call",
+    "network_call",
+    "worker_execution",
+    "mutation"
+  ],
+  "mode": "read_only",
+  "operation": "dominium.validation.run",
+  "revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "schema_version": "dominium.validation.request.fixture.v1",
+  "target": "all",
+  "workspace_kind": "temporary_fixture_workspace"
+}

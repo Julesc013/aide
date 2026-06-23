@@ -1,0 +1,82 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+title: Build Dominium WorkUnit Validation Slice
+type: build
+status: needs_review
+planning_state: implemented
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-23
+updated_at: 2026-06-23
+source_task: AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01
+source_result: ACCEPTED_WITH_WARNINGS
+capability_target: dominium_workunit_validation_slice_v1
+authorized_capability: dominium.validation.run
+authorized_invocation_count: 1
+authorized_target: temporary_fixture_workspace
+authorized_mode: local_read_only
+objective: >
+  Prove the first real cross-repository operation shape after the accepted
+  Dominium read-only seam by routing a ContextDescriptor and ContextPack through
+  a WorkUnit into exactly one registered local read-only
+  dominium.validation.run capability invocation, then projecting the typed
+  result into EvidencePacket and EventRecord records.
+allowed_paths:
+  - core/interop/dominium/workunit_validation.py
+  - core/interop/dominium/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_dominium_workunit_validation_slice.py
+  - .aide/fixtures/dominium-workunit-validation-slice/**
+  - .aide/reports/dominium-workunit-validation-slice/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - Dominium
+  - C:/Projects/Dominium/**
+  - .aide/queue/AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/**
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/**
+  - .aide/reports/dominium-readonly-seam-v0/**
+  - .aide/reports/dominium-readonly-seam-v0-accept/**
+non_capabilities:
+  - no arbitrary shell command execution
+  - no private tool call
+  - no broad Dominium command dispatch
+  - no unbounded Dominium command invocation
+  - no provider or model call
+  - no worker execution
+  - no Workbench implementation
+  - no Workbench apply behavior
+  - no PatchTransaction apply
+  - no DevelopmentTransaction
+  - no PreviewSession
+  - no service runtime
+  - no durable database state owner
+  - no source repository mutation
+  - no target repository mutation
+  - no branch or worktree automation
+  - no GitHub mutation
+  - no release or promotion
+required_outputs:
+  - .aide/fixtures/dominium-workunit-validation-slice/workspace/workspace-manifest.json
+  - .aide/fixtures/dominium-workunit-validation-slice/workspace/validation-request.json
+  - .aide/fixtures/dominium-workunit-validation-slice/workspace/dominium-context.json
+  - .aide/reports/dominium-workunit-validation-slice/context-descriptor.json
+  - .aide/reports/dominium-workunit-validation-slice/context-pack.json
+  - .aide/reports/dominium-workunit-validation-slice/workunit.json
+  - .aide/reports/dominium-workunit-validation-slice/capability-registry.json
+  - .aide/reports/dominium-workunit-validation-slice/invocation-result.json
+  - .aide/reports/dominium-workunit-validation-slice/evidence-packet.json
+  - .aide/reports/dominium-workunit-validation-slice/event-record.json
+  - .aide/reports/dominium-workunit-validation-slice/projection.json
+  - .aide/reports/dominium-workunit-validation-slice/slice-report.json
+  - .aide/reports/dominium-workunit-validation-slice/validation.json
+recommended_next_task: AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+mutation_authorized: false
+runtime_authorized: false
+network_authorized: false
+provider_or_model_authorized: false
+worker_authorized: false
+workbench_apply_authorized: false
+github_mutation_authorized: false
