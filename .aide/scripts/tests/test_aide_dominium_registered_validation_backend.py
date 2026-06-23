@@ -142,7 +142,7 @@ class DominiumRegisteredValidationBackendTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             dom = Path(tmp) / "dominium"
             revision = create_dominium_fixture(dom)
-            fake = FakeRunner(stdout=success_stdout())
+            fake = FakeRunner(stdout=refused_stdout(), returncode=1)
             result = backend.run_backend(
                 REPO_ROOT,
                 dominium_root=dom,
@@ -152,6 +152,15 @@ class DominiumRegisteredValidationBackendTests(unittest.TestCase):
                 write_reports=False,
             )
             self.assertEqual(result["process_call_count"], 1)
+            self.assertEqual(result["launcher_call_count"], 1)
+            self.assertEqual(result["proposed_capability_label"], "dominium_registered_validation_command_boundary_invocation_v0")
+            self.assertTrue(result["process_started"])
+            self.assertTrue(result["structured_output_parsed"])
+            self.assertEqual(result["registered_command_boundary_reached"], "proven")
+            self.assertEqual(result["service_adapter_boundary_reached"], "unproven")
+            self.assertFalse(result["aggregate_validation_executed"])
+            self.assertFalse(result["aggregate_validation_succeeded"])
+            self.assertEqual(result["mutation_observation"], "none_detected_within_probe_coverage")
             self.assertEqual(len(fake.calls), 1)
             call = fake.calls[0]
             self.assertEqual(call["argv"][0], str(Path(sys.executable).resolve()))
@@ -242,6 +251,9 @@ class DominiumRegisteredValidationBackendTests(unittest.TestCase):
             self.assertEqual(nonzero["reason_code"], backend.REFUSAL_CODES["nonzero_exit"])
             self.assertTrue(nonzero["dominium_stdout_json_parsed"])
             self.assertEqual(nonzero["dominium_command_result"]["status"], "refused")
+            self.assertEqual(nonzero["domain_outcome"], "typed_refusal")
+            self.assertEqual(nonzero["service_adapter_boundary_reached"], "unproven")
+            self.assertFalse(nonzero["aggregate_validation_succeeded"])
 
     def test_digest_mismatch_causes_zero_process_calls(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

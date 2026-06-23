@@ -1,0 +1,19 @@
+{
+  "schema_version": "aide.dominium-registered-validation-relabel.report.v1",
+  "task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01",
+  "status": "PASS_WITH_WARNINGS",
+  "superseded_capability_label": "live_dominium_validation_command_readonly_v0",
+  "proposed_capability_label": "dominium_registered_validation_command_boundary_invocation_v0",
+  "process_started": true,
+  "launcher_call_count": 1,
+  "structured_output_parsed": true,
+  "registered_command_boundary_reached": "proven",
+  "service_adapter_boundary_reached": "unproven",
+  "domain_outcome": "typed_refusal",
+  "aggregate_validation_executed": false,
+  "aggregate_validation_succeeded": false,
+  "mutation_observation": "none_detected_within_probe_coverage",
+  "live_dominium_command_rerun": false,
+  "dominium_modified": false,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01"
+}

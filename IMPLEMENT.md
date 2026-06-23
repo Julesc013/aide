@@ -39,6 +39,48 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
+
+Completed with warnings and awaiting independent review.
+
+Changed:
+
+- `core/interop/dominium/registered_validation_backend.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_dominium_registered_validation_backend.py`
+- `.aide/reports/dominium-registered-validation-backend/**`
+- `.aide/reports/dominium-registered-validation-backend-relabel/**`
+- `.aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The active capability label is now:
+
+```text
+dominium_registered_validation_command_boundary_invocation_v0
+```
+
+The prior label `live_dominium_validation_command_readonly_v0` is preserved as
+superseded or historical data only. Active reports now separate process start,
+launcher call count, structured output parsing, registered command boundary,
+service-adapter boundary, aggregate-validation execution, aggregate-validation
+success, typed refusal, and probe-scoped mutation observation.
+
+The active reports were regenerated from saved invocation artifacts. The live
+Dominium CLI was not rerun and the Dominium checkout remained unchanged.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
+```
+
+No capability acceptance, generic provider extraction, provider/model/network
+call, worker runtime, Service, Workbench implementation, preview/apply/rollback,
+repository mutation, branch/worktree automation, GitHub mutation, release, or
+promotion was performed.
+
 ## Work Item: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
 
 Completed as a check-only task and awaiting review.

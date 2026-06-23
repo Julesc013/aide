@@ -31,17 +31,17 @@
       {
         "path": ".aide/reports/dominium-registered-validation-backend/context-descriptor.json",
         "role": "context_descriptor",
-        "sha256": "sha256:c4f2e1154f6a4934c8d10ee9c29cc5ee31dadff095149e46feb3aa17d29d14e3"
+        "sha256": "sha256:d198c8bad2fbb2b49eae7f035d2b02e130b569de12293f85fbcff2407efcd947"
       },
       {
         "path": ".aide/reports/dominium-registered-validation-backend/context-pack.json",
         "role": "context_pack",
-        "sha256": "sha256:88f699a6c29ae983d25e703a644fe310240ae722026c8e2f2823ec6d46e39673"
+        "sha256": "sha256:5fef232732582f8f0cd31adb33b8a0d3da14a3aae29abb5b11a008c5569d1afc"
       },
       {
         "path": ".aide/reports/dominium-registered-validation-backend/invocation-result.json",
         "role": "invocation_result",
-        "sha256": "sha256:97cca924c6b813f769accdcb5256b5c26ab53798ca9a55b41df7058d0c490093"
+        "sha256": "sha256:3909c89dee3beffb6daf8265dc3a8f36c53f77bb4b2c4639fc5a916e3a37fa77"
       }
     ],
     "authorized_invocation_count": 1,
@@ -75,12 +75,19 @@
       "release_or_promotion"
     ],
     "implementation_scope": "exactly-one-readonly-dominium-validation-cli-process",
+    "mutation_observation": "none_detected_within_probe_coverage",
     "predecessors": [
       "AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01"
     ],
-    "proposed_capability_label": "live_dominium_validation_command_readonly_v0",
+    "probe_coverage": [
+      "git_revision",
+      "git_porcelain_status",
+      "git_tracked_tree_digest",
+      "command_implementation_digests"
+    ],
+    "proposed_capability_label": "dominium_registered_validation_command_boundary_invocation_v0",
     "registered_capability_id": "dominium.validation.run",
-    "registered_capability_ref": "aide://capability/dominium-validation-run-live-readonly",
+    "registered_capability_ref": "aide://capability/dominium-registered-validation-command-boundary-invocation",
     "scope": {
       "allowed_paths": [
         "core/interop/dominium/registered_validation_backend.py",
@@ -114,6 +121,7 @@
       "registered_capability_id": "dominium.validation.run"
     },
     "stop_state": "needs_review",
+    "supersedes_capability_label": "live_dominium_validation_command_readonly_v0",
     "task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
     "title": "Build Dominium Registered Validation Backend",
     "validation": {

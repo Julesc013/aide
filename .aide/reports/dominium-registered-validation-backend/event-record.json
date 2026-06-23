@@ -117,7 +117,8 @@
       "event_log_appended": false,
       "invocation_count": 1,
       "projection_only": true,
-      "proposed_capability_label": "live_dominium_validation_command_readonly_v0",
+      "proposed_capability_label": "dominium_registered_validation_command_boundary_invocation_v0",
+      "supersedes_capability_label": "live_dominium_validation_command_readonly_v0",
       "task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
     },
     "payload_contract": "minimal_open_payload",

@@ -1,17 +1,14 @@
-# Dominium Registered Validation Backend
+# Dominium Registered Validation Backend Relabel
 
 - status: `PASS_WITH_WARNINGS`
-- capability_id: `dominium.validation.run`
+- superseded_capability_label: `live_dominium_validation_command_readonly_v0`
 - proposed_capability_label: `dominium_registered_validation_command_boundary_invocation_v0`
-- supersedes_capability_label: `live_dominium_validation_command_readonly_v0`
-- process_call_count: `1`
 - launcher_call_count: `1`
 - registered_command_boundary_reached: `proven`
 - service_adapter_boundary_reached: `unproven`
 - aggregate_validation_executed: `false`
 - aggregate_validation_succeeded: `false`
 - mutation_observation: `none_detected_within_probe_coverage`
-- dominium_command_status: `refused`
-- result_origin: `dominium_stdout_json`
-- checkout_state_unchanged: `true`
+- live_dominium_command_rerun: `false`
+- dominium_modified: `false`
 - recommended_next_task: `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01`

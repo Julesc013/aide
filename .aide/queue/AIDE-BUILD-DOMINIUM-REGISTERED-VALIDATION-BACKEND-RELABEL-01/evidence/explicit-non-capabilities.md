@@ -1,0 +1,22 @@
+# Explicit Non-Capabilities
+
+- no execution behavior change
+- no live Dominium command rerun
+- no aggregate validation repair
+- no aggregate validation execution claim
+- no aggregate validation success claim
+- no service-adapter boundary acceptance
+- no general Dominium command runner
+- no generic registered-process provider
+- no provider or model call
+- no network call
+- no worker runtime
+- no Service or Commander
+- no Workbench implementation
+- no preview, apply, or rollback
+- no PatchTransaction apply
+- no source repository mutation
+- no target repository mutation
+- no branch or worktree automation
+- no GitHub mutation
+- no release or promotion

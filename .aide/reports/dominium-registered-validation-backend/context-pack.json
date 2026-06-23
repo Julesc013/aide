@@ -5,7 +5,7 @@
     "compatibility": {
       "featureFlags": [
         "context_pack_v2",
-        "live_dominium_validation_command_readonly_v0"
+        "dominium_registered_validation_command_boundary_invocation_v0"
       ],
       "minReaderVersion": "0.1.0",
       "minWriterVersion": "0.1.0",
@@ -53,10 +53,10 @@
       "github_mutation",
       "release_or_promotion"
     ],
-    "proposed_capability_label": "live_dominium_validation_command_readonly_v0",
+    "proposed_capability_label": "dominium_registered_validation_command_boundary_invocation_v0",
     "purpose": "bounded_live_dominium_validation_command_invocation",
     "registered_capability_id": "dominium.validation.run",
-    "registered_capability_ref": "aide://capability/dominium-validation-run-live-readonly",
+    "registered_capability_ref": "aide://capability/dominium-registered-validation-command-boundary-invocation",
     "sections": [
       {
         "id": "dominium_context",
@@ -76,7 +76,7 @@
         "id": "capability",
         "item_count": 1,
         "source_refs": [
-          "aide://capability/dominium-validation-run-live-readonly"
+          "aide://capability/dominium-registered-validation-command-boundary-invocation"
         ]
       },
       {
@@ -169,16 +169,22 @@
         "sha256": "sha256:d1bb9531421e60e878e2e2e35262a1a602d7587646e001c3762e87f6e4c37766"
       }
     ],
+    "supersedes_capability_label": "live_dominium_validation_command_readonly_v0",
     "work_unit_ref": "aide://workunit/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
   },
   "status": {
     "agent_started": false,
+    "aggregate_validation_executed": false,
+    "aggregate_validation_succeeded": false,
     "command_executed": true,
     "embedding_performed": false,
     "model_call_performed": false,
+    "mutation_observation": "none_detected_within_probe_coverage",
     "network_call_performed": false,
     "patch_applied": false,
+    "registered_command_boundary_reached": "proven",
     "repository_mutated": false,
+    "service_adapter_boundary_reached": "unproven",
     "trusted": false,
     "validation_performed": true,
     "validation_status": "PASS_WITH_WARNINGS",

@@ -15,7 +15,7 @@
       "schemaVersion": "0.1.0"
     },
     "createdAt": "deterministic",
-    "id": "ep-590ecf92c0254e95",
+    "id": "ep-e3d2401155bbed02",
     "name": "Dominium registered validation backend evidence",
     "producer": {
       "name": "aide-lite",
@@ -30,27 +30,27 @@
       {
         "path": ".aide/reports/dominium-registered-validation-backend/context-descriptor.json",
         "role": "context_descriptor",
-        "sha256": "sha256:c4f2e1154f6a4934c8d10ee9c29cc5ee31dadff095149e46feb3aa17d29d14e3"
+        "sha256": "sha256:d198c8bad2fbb2b49eae7f035d2b02e130b569de12293f85fbcff2407efcd947"
       },
       {
         "path": ".aide/reports/dominium-registered-validation-backend/context-pack.json",
         "role": "context_pack",
-        "sha256": "sha256:88f699a6c29ae983d25e703a644fe310240ae722026c8e2f2823ec6d46e39673"
+        "sha256": "sha256:5fef232732582f8f0cd31adb33b8a0d3da14a3aae29abb5b11a008c5569d1afc"
       },
       {
         "path": ".aide/reports/dominium-registered-validation-backend/workunit.json",
         "role": "workunit",
-        "sha256": "sha256:a194f7b7c989214ad439a28a9d0977f919fcdce91aa7eee5842e8f7599e76d75"
+        "sha256": "sha256:59fc2b85108f0f76b285eaa7ea26c260a504579b1f548fed1ad43a01ff890373"
       },
       {
         "path": ".aide/reports/dominium-registered-validation-backend/capability-descriptor.json",
         "role": "capability_descriptor",
-        "sha256": "sha256:fc817883489ebb4450b440c70b66212bd14906477c96a03d4eb17feeea1de78a"
+        "sha256": "sha256:3c239cbfcd610618c8e4a6248bfbfe490a470306b7b11a0836e2c213029a23d1"
       },
       {
         "path": ".aide/reports/dominium-registered-validation-backend/invocation-result.json",
         "role": "invocation_result",
-        "sha256": "sha256:97cca924c6b813f769accdcb5256b5c26ab53798ca9a55b41df7058d0c490093"
+        "sha256": "sha256:3909c89dee3beffb6daf8265dc3a8f36c53f77bb4b2c4639fc5a916e3a37fa77"
       }
     ],
     "capability_label": "minimal_evidence_packet_schema",
@@ -111,7 +111,7 @@
     "source_task_kind": "build",
     "subject": {
       "id": "dominium.validation.run",
-      "ref": "aide://capability/dominium-validation-run-live-readonly",
+      "ref": "aide://capability/dominium-registered-validation-command-boundary-invocation",
       "type": "capability"
     },
     "validations": [
@@ -123,7 +123,7 @@
     ],
     "warnings": [
       "The capability label remains proposed until independent check and acceptance.",
-      "A typed Dominium refusal is acceptable proof of reaching the live command boundary when stdout JSON is valid."
+      "A typed Dominium refusal is proof of the registered command result path, not proof of aggregate validation success."
     ]
   },
   "status": {

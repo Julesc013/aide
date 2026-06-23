@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
+
+- Title: Build Dominium Registered Validation Backend Relabel
+- Status: needs_review
+- Objective: repair the overbroad active registered-validation capability label and related boundary projections without changing execution behavior.
+- Scope: registered-validation backend code, focused CLI/test output, active registered-validation reports, relabel task/evidence, queue index, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01` at `REQUEST_CHANGES`, `missing_evidence: 0`, and material finding `capability_label.overclaims_observed_boundary`.
+- Milestones: predecessor evidence inspected; active label changed to `dominium_registered_validation_command_boundary_invocation_v0`; boundary facts separated; active reports regenerated from saved invocation artifacts; task evidence written.
+- Blockers: none. Warnings: historical predecessor evidence still contains the superseded label; local Dominium remains behind `origin/main`; service-adapter entry is not accepted.
+- Verification Intent: focused compile/tests, backend report validation, task inspect/evidence, active-label scan, local-path/secret scans, broad validation, diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, no live Dominium command rerun, preserved historical evidence, and next task exactly `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01`.
+- Notes: this task does not accept the capability or build a generic provider.
+
 ### Plan ID: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
 
 - Title: Check Dominium Registered Validation Backend

@@ -34764,6 +34764,12 @@ def command_dominium_workunit_validation_validate(args: argparse.Namespace) -> i
 
 
 def _print_dominium_registered_validation_boundary_lines(data: dict[str, object]) -> None:
+    print(f"launcher_call_count: {data.get('launcher_call_count', '')}")
+    print(f"registered_command_boundary_reached: {data.get('registered_command_boundary_reached', '')}")
+    print(f"service_adapter_boundary_reached: {data.get('service_adapter_boundary_reached', '')}")
+    print(f"aggregate_validation_executed: {str(data.get('aggregate_validation_executed', False)).lower()}")
+    print(f"aggregate_validation_succeeded: {str(data.get('aggregate_validation_succeeded', False)).lower()}")
+    print(f"mutation_observation: {data.get('mutation_observation', '')}")
     print(f"arbitrary_shell_command_executed: {str(data.get('arbitrary_shell_command_executed', False)).lower()}")
     print(f"private_tool_called: {str(data.get('private_tool_called', False)).lower()}")
     print(f"broad_dispatch_used: {str(data.get('broad_dispatch_used', False)).lower()}")
