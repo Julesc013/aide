@@ -1,0 +1,43 @@
+{
+  "acceptance_state": "accepted_with_warnings",
+  "accepted": true,
+  "accepted_capability": "dominium_registered_validation_command_boundary_invocation_v0",
+  "accepted_with_warnings": true,
+  "capability_class": "bounded_process_invocation",
+  "capability_ref": "aide://capability/dominium-registered-validation-command-boundary-invocation",
+  "checked": true,
+  "explicit_non_capabilities": [
+    "aggregate_validation_success",
+    "aggregate_validation_execution",
+    "service_adapter_entry",
+    "all_internal_dominium_boundaries_reached",
+    "general_dominium_command_runner",
+    "generic_registered_process_provider",
+    "worker_execution",
+    "service_runtime",
+    "provider_model_call",
+    "network_call",
+    "preview_or_apply",
+    "rollback",
+    "source_repository_mutation",
+    "target_repository_mutation"
+  ],
+  "observed_boundary_facts": {
+    "aggregate_validation_executed": false,
+    "aggregate_validation_succeeded": false,
+    "domain_outcome": "typed_refusal",
+    "launcher_call_count": 1,
+    "mutation_observation": "none_detected_within_probe_coverage",
+    "registered_command_boundary_reached": "proven",
+    "service_adapter_boundary_reached": "unproven",
+    "structured_output_parsed": true
+  },
+  "projection_scope": "task_local_acceptance_projection",
+  "schema_version": "aide.accepted-capability-projection.v1",
+  "source_reports": [
+    ".aide/reports/dominium-registered-validation-backend/validation.json",
+    ".aide/reports/dominium-registered-validation-backend-relabel-check/check-report.json",
+    ".aide/reports/dominium-registered-validation-backend-accept/acceptance-report.json"
+  ],
+  "task_id": "AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
+}

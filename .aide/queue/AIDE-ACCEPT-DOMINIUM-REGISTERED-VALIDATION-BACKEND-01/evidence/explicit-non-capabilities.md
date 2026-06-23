@@ -1,0 +1,22 @@
+# Explicit Non-Capabilities
+
+- `aggregate_validation_success`
+- `aggregate_validation_execution`
+- `service_adapter_entry`
+- `all_internal_dominium_boundaries_reached`
+- `universal_read_only_guarantee_outside_declared_probe_coverage`
+- `broad_dominium_command_dispatch`
+- `general_dominium_command_runner`
+- `generic_registered_process_provider`
+- `worker_execution`
+- `service_runtime`
+- `provider_model_call`
+- `network_call`
+- `preview_or_apply`
+- `rollback`
+- `patch_transaction_apply`
+- `source_repository_mutation`
+- `target_repository_mutation`
+- `branch_worktree_automation`
+- `github_mutation`
+- `release_or_promotion`

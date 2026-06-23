@@ -39,6 +39,50 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+
+Completed as acceptance-only metadata work and awaiting review.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/**`
+- `.aide/reports/dominium-registered-validation-backend-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is exactly:
+
+```text
+dominium_registered_validation_command_boundary_invocation_v0
+```
+
+This accepts one narrowly registered Dominium validation command-boundary
+invocation through one bounded local process boundary with repository preflight,
+exact argv, `shell=False`, environment constraints, timeout, typed result or
+refusal capture, declared state-probe comparison, evidence, and event
+projection.
+
+Preserved warnings:
+
+- the observed domain outcome was a typed refusal;
+- aggregate validation did not succeed and aggregate validation execution is not accepted;
+- service-adapter entry is not accepted without independent Dominium-produced evidence;
+- mutation observation is limited to declared probe coverage;
+- local Dominium remains clean but behind `origin/main`.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+```
+
+No implementation code, active backend reports, predecessor evidence, Dominium
+files, live Dominium invocation, generic provider behavior, provider/model/network
+call, worker runtime, Service, Workbench implementation, preview/apply/rollback,
+repository mutation, branch/worktree automation, GitHub mutation, release, or
+promotion was performed.
+
 ## Work Item: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
 
 Completed as a check-only task and awaiting review.

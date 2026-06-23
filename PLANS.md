@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+
+- Title: Accept Dominium Registered Validation Backend
+- Status: needs_review
+- Objective: accept only the checked and relabeled Dominium registered validation command-boundary invocation capability.
+- Scope: acceptance task/evidence, `.aide/reports/dominium-registered-validation-backend-accept/**`, queue index, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01`, `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01`, `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01` at commit `78e24e2`, and `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01` at commit `3954459` with `PASS_WITH_WARNINGS`, `missing_evidence: 0`, and `material_finding_count: 0`.
+- Milestones: source chain reviewed; accepted capability recorded; warning and non-capability boundaries preserved; task-local accepted capability projection written; next task prompt generated.
+- Blockers: none. Warnings: typed refusal is the observed domain outcome; aggregate validation execution and success remain unaccepted; service-adapter entry remains unaccepted; mutation observation is limited to declared probe coverage.
+- Verification Intent: JSON parsing, task inspect/evidence, backend validation, broad validation, local-path and secret-like scans, Dominium clean-state inspection, diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted capability exactly `dominium_registered_validation_command_boundary_invocation_v0`, and next task exactly `AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01`.
+- Notes: no implementation, refactor, live Dominium rerun, generic provider acceptance, runtime, worker, provider/model/network, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion is authorized by this acceptance.
+
 ### Plan ID: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
 
 - Title: Check Dominium Registered Validation Backend Relabel

@@ -1,0 +1,76 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+title: Accept Dominium Registered Validation Backend
+type: acceptance
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-24
+updated_at: 2026-06-24
+source_build_task: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+source_check_task: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+source_relabel_build_task: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
+source_relabel_build_commit: 78e24e2
+source_relabel_check_task: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
+source_relabel_check_commit: 3954459
+accepted_capability: dominium_registered_validation_command_boundary_invocation_v0
+accepted_capability_label_source: .aide/reports/dominium-registered-validation-backend-relabel-check/check-report.json
+objective: >
+  Accept only the precise registered Dominium validation command-boundary
+  invocation capability after the bounded relabel and independent relabel check.
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/**
+  - .aide/reports/dominium-registered-validation-backend-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/interop/dominium/**
+  - core/execution/**
+  - core/protocol/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/reports/dominium-registered-validation-backend/**
+  - .aide/reports/dominium-registered-validation-backend-check/**
+  - .aide/reports/dominium-registered-validation-backend-relabel/**
+  - .aide/reports/dominium-registered-validation-backend-relabel-check/**
+  - Dominium
+  - <dominium-root>/**
+accepted_meaning: >
+  AIDE has evidence that one narrowly registered Dominium validation command can
+  be invoked through one bounded local process boundary, with repository
+  preflight, exact argv, shell=False, environment constraints, timeout, typed
+  result or refusal capture, declared state-probe comparison, evidence, and
+  event projection.
+accepted_warnings:
+  - observed_domain_outcome_was_typed_refusal
+  - aggregate_validation_did_not_succeed
+  - aggregate_validation_execution_not_accepted
+  - service_adapter_entry_not_accepted_without_independent_domain_evidence
+  - local_dominium_checkout_clean_but_behind_origin_main
+forbidden_interpretations:
+  - aggregate_validation_success
+  - aggregate_validation_execution
+  - service_adapter_entry
+  - all_internal_dominium_boundaries_reached
+  - universal_read_only_guarantee_outside_declared_probe_coverage
+  - general_dominium_command_runner
+  - generic_registered_process_provider
+  - worker_execution
+  - Service or runtime integration
+  - provider or model calls
+  - network calls
+  - preview, apply, or rollback
+  - source or target repository mutation
+  - branch or worktree automation
+  - GitHub mutation
+  - release or promotion
+recommended_next_task: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+mutation_authorized: false
+runtime_authorized: false
+network_authorized: false
+provider_or_model_authorized: false
+worker_authorized: false
+workbench_apply_authorized: false
+github_mutation_authorized: false

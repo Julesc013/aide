@@ -1868,6 +1868,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/evidence
     description: Check-only independent review of AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01. Verifies the active label dominium_registered_validation_command_boundary_invocation_v0, confirms the superseded label appears only as historical or superseded data, preserves source build/check evidence integrity, verifies active boundary claim separation and typed refusal semantics, confirms no aggregate-validation success or service-adapter acceptance claim, and recommends exactly AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01. Does not repair implementation, rerun the live Dominium CLI, mutate Dominium, broaden dispatch, implement generic provider behavior, call providers/models/network, run workers, preview/apply/rollback, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.
+  - id: AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+    status: needs_review
+    planning_state: acceptance_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Dominium Registered Validation Backend
+    task: .aide/queue/AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/evidence
+    description: Acceptance-only gate for the Dominium registered validation backend chain. Accepts exactly dominium_registered_validation_command_boundary_invocation_v0 after the relabel check reported PASS_WITH_WARNINGS, missing_evidence 0, and material_finding_count 0. Preserves warnings that the observed domain outcome was a typed refusal, aggregate validation did not succeed and is not accepted as executed, service-adapter entry is not accepted without independent Dominium evidence, mutation observation is limited to declared probe coverage, and local Dominium remains behind origin/main. Recommends exactly AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01. Does not implement or refactor execution code, rerun the live Dominium CLI, mutate Dominium, broaden dispatch, accept a generic provider, call providers/models/network, run workers, preview/apply/rollback, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked
