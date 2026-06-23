@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+
+- Title: Accept Dominium WorkUnit Validation Slice
+- Status: needs_review
+- Objective: accept only the checked `fixture_backed_dominium_validation_adapter` capability and route to the next build that can prove live Dominium-owned validation command execution.
+- Scope: acceptance task/evidence, `.aide/reports/dominium-workunit-validation-slice-accept/**`, queue index, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01` and `AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01` at `PASS_WITH_WARNINGS`, source check commit `630e28f15db4041727f0fba1468e5b98e7c9d147`, source missing evidence zero, source material findings zero, and accepted capability label `fixture_backed_dominium_validation_adapter`.
+- Milestones: source chain reviewed; warnings preserved; capability boundary recorded; acceptance reports and evidence materialized; queue index and root logs updated.
+- Blockers: none. Warnings: this does not accept live Dominium-owned command execution, general dispatch, Workbench, Service/runtime, workers, providers/models/network, preview/apply/rollback, mutation, GitHub, release, or promotion.
+- Verification Intent: task inspect/evidence for build, check, and acceptance; secret/path scan; diff checks; broad AIDE validation; commit policy.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted capability exactly `fixture_backed_dominium_validation_adapter`, and next task exactly `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01`.
+- Notes: next serialized task is `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01`.
+
 ### Plan ID: AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
 
 - Title: Check Dominium WorkUnit Validation Slice

@@ -1818,6 +1818,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/evidence
     description: Check-only independent review of AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01 at commit 8d8f511c77388b96118eb530f5361090b66911c1. Stops at needs_review with PASS_WITH_WARNINGS and material_finding_count 0 after proving exactly one fixture-backed local adapter executor call, zero executor calls for unsupported and malformed requests, independent workspace digest stability, deterministic clean reruns, typed result/refusal behavior, evidence/event reference consistency, no leakage, and false execution/mutation boundaries. Clarifies the achieved capability as fixture_backed_dominium_validation_adapter, not live Dominium-owned command execution, and recommends exactly AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01.
+  - id: AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+    status: needs_review
+    planning_state: acceptance_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Dominium WorkUnit Validation Slice
+    task: .aide/queue/AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/evidence
+    description: Acceptance gate for the Dominium WorkUnit validation slice. Accepts exactly fixture_backed_dominium_validation_adapter after the build and independent check both reported PASS_WITH_WARNINGS, missing_evidence 0, and material_finding_count 0. Preserves warnings that the target is a temporary fixture workspace, the executor is local_fixture_callable, live Dominium command execution remains unproven, portability is not separately proven, and older historical seam modules timed out. Does not accept live Dominium validation, general command execution, Workbench, Service/runtime, workers, providers/models/network, preview/apply/rollback, mutation, GitHub, release, or promotion. Recommends exactly AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked
