@@ -1808,6 +1808,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/evidence
     description: First post-seam bounded vertical slice proving ContextDescriptor to ContextPack to WorkUnit to a registered local read-only dominium.validation.run capability invocation against a temporary fixture workspace, then projecting a typed result through EvidencePacket, EventRecord, and deterministic read-only projection outputs. Stops at needs_review with PASS_WITH_WARNINGS, records exactly one invocation, no arbitrary shell fallback, no private tool bypass, no broad Dominium dispatch, no provider/model/network/worker behavior, no Workbench apply, no preview/apply, no PatchTransaction apply, no repository mutation, and recommends exactly AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01.
+  - id: AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check Dominium WorkUnit Validation Slice
+    task: .aide/queue/AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/evidence
+    description: Check-only independent review of AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01 at commit 8d8f511c77388b96118eb530f5361090b66911c1. Stops at needs_review with PASS_WITH_WARNINGS and material_finding_count 0 after proving exactly one fixture-backed local adapter executor call, zero executor calls for unsupported and malformed requests, independent workspace digest stability, deterministic clean reruns, typed result/refusal behavior, evidence/event reference consistency, no leakage, and false execution/mutation boundaries. Clarifies the achieved capability as fixture_backed_dominium_validation_adapter, not live Dominium-owned command execution, and recommends exactly AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

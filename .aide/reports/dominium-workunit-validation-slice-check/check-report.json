@@ -1,0 +1,257 @@
+{
+  "accepted_capability_label": "fixture_backed_dominium_validation_adapter",
+  "assertions": [
+    {
+      "description": "Source declares the underlying executor as a fixture-backed local callable.",
+      "evidence_refs": [
+        "core/interop/dominium/workunit_validation.py"
+      ],
+      "expected": true,
+      "id": "authority.fixture_backed_adapter_declared",
+      "observed": true,
+      "outcome": "PASS"
+    },
+    {
+      "description": "Source does not invoke a Dominium-owned executable or command implementation.",
+      "evidence_refs": [
+        "core/interop/dominium/workunit_validation.py"
+      ],
+      "expected": false,
+      "id": "authority.no_live_dominium_executor",
+      "observed": false,
+      "outcome": "PASS"
+    },
+    {
+      "description": "The success executor function was independently instrumented and entered once for a clean supported request.",
+      "evidence_refs": [
+        "core/interop/dominium/workunit_validation.py"
+      ],
+      "expected": 1,
+      "id": "executor.clean_success_entered_once",
+      "observed": 1,
+      "outcome": "PASS"
+    },
+    {
+      "description": "Supported request returns a typed fixture-backed success result.",
+      "evidence_refs": [
+        ".aide/fixtures/dominium-workunit-validation-slice/workspace/validation-request.json"
+      ],
+      "expected": "PASS/local_fixture_callable",
+      "id": "result.typed_fixture_success",
+      "observed": {
+        "result": "PASS",
+        "underlying_executor": "local_fixture_callable"
+      },
+      "outcome": "PASS"
+    },
+    {
+      "description": "Before/after workspace digests are independently recomputed and unchanged.",
+      "evidence_refs": [
+        ".aide/fixtures/dominium-workunit-validation-slice/workspace"
+      ],
+      "expected": "sha256:7a961c7362e36a04f92204060f4447c39f56f52b870afde7e0ed3e81b313f532",
+      "id": "state.fixture_workspace_unchanged",
+      "observed": "sha256:7a961c7362e36a04f92204060f4447c39f56f52b870afde7e0ed3e81b313f532",
+      "outcome": "PASS"
+    },
+    {
+      "description": "Unsupported capabilities return typed refusal and do not enter the success executor.",
+      "evidence_refs": [
+        "core/interop/dominium/workunit_validation.py"
+      ],
+      "expected": {
+        "executor_count": 1,
+        "result": "REFUSED"
+      },
+      "id": "refusal.unsupported_no_executor",
+      "observed": {
+        "executor_count": 1,
+        "result": "REFUSED"
+      },
+      "outcome": "PASS"
+    },
+    {
+      "description": "Malformed registered requests return typed refusal and do not enter the success executor.",
+      "evidence_refs": [
+        "core/interop/dominium/workunit_validation.py"
+      ],
+      "expected": {
+        "executor_count": 1,
+        "result": "REFUSED"
+      },
+      "id": "refusal.malformed_request_no_executor",
+      "observed": {
+        "executor_count": 1,
+        "reason_code": "AIDE_DOMINIUM_WORKUNIT_VALIDATION_INVALID_REQUEST",
+        "result": "REFUSED"
+      },
+      "outcome": "PASS"
+    },
+    {
+      "description": "Success result includes hashes derived from fixture input bytes.",
+      "evidence_refs": [
+        ".aide/fixtures/dominium-workunit-validation-slice/workspace/validation-request.json"
+      ],
+      "expected": "changed hash after benign metadata",
+      "id": "result.hash_derived_from_fixture_input",
+      "observed": {
+        "changed": "sha256:645c0bbb33f1af45f30d3c3ebfebdd459441a06753c3a401cf3faeffe9fc5dc2",
+        "original": "sha256:a646f91d2cffabcf8ea742ebe58aad279ba87b7eed461603eccc07aa7dbb3969"
+      },
+      "outcome": "PASS"
+    },
+    {
+      "description": "Two clean runs produce identical semantic projection JSON.",
+      "evidence_refs": [
+        ".aide/reports/dominium-workunit-validation-slice/projection.json"
+      ],
+      "expected": true,
+      "id": "determinism.semantic_projection_equal",
+      "observed": true,
+      "outcome": "PASS"
+    },
+    {
+      "description": "Two clean runs produce identical deterministic output hashes and CLI streams.",
+      "evidence_refs": [
+        ".aide/reports/dominium-workunit-validation-slice"
+      ],
+      "expected": true,
+      "id": "determinism.output_hashes_equal",
+      "observed": true,
+      "outcome": "PASS"
+    },
+    {
+      "description": "Generated build reports and fixtures do not leak local absolute paths or secret-like values.",
+      "evidence_refs": [
+        ".aide/reports/dominium-workunit-validation-slice",
+        ".aide/fixtures/dominium-workunit-validation-slice"
+      ],
+      "expected": [],
+      "id": "leak_scan.no_absolute_paths_or_secrets",
+      "observed": [],
+      "outcome": "PASS"
+    },
+    {
+      "description": "ContextDescriptor identifies the registered capability.",
+      "evidence_refs": [
+        ".aide\\reports\\dominium-workunit-validation-slice\\context-descriptor.json"
+      ],
+      "expected": "dominium.validation.run",
+      "id": "record.context_descriptor_valid",
+      "observed": "dominium.validation.run",
+      "outcome": "PASS"
+    },
+    {
+      "description": "ContextPack identifies the registered capability.",
+      "evidence_refs": [
+        ".aide\\reports\\dominium-workunit-validation-slice\\context-pack.json"
+      ],
+      "expected": "dominium.validation.run",
+      "id": "record.context_pack_valid",
+      "observed": "dominium.validation.run",
+      "outcome": "PASS"
+    },
+    {
+      "description": "WorkUnit records a single authorized invocation.",
+      "evidence_refs": [
+        ".aide\\reports\\dominium-workunit-validation-slice\\workunit.json"
+      ],
+      "expected": 1,
+      "id": "record.workunit_valid",
+      "observed": 1,
+      "outcome": "PASS"
+    },
+    {
+      "description": "EvidencePacket claims match independently observed invocation behavior.",
+      "evidence_refs": [
+        ".aide\\reports\\dominium-workunit-validation-slice\\evidence-packet.json",
+        ".aide\\reports\\dominium-workunit-validation-slice\\invocation-result.json"
+      ],
+      "expected": "supported/1",
+      "id": "evidence.claims_match_behavior",
+      "observed": {
+        "claim": "supported",
+        "invocation_count": 1
+      },
+      "outcome": "PASS"
+    },
+    {
+      "description": "EventRecord causation, correlation, subject, and evidence refs resolve to generated records.",
+      "evidence_refs": [
+        ".aide\\reports\\dominium-workunit-validation-slice\\event-record.json"
+      ],
+      "expected": true,
+      "id": "event.refs_resolve",
+      "observed": true,
+      "outcome": "PASS"
+    },
+    {
+      "description": "Forbidden boundary fields remain boolean false in the invocation result.",
+      "evidence_refs": [
+        ".aide\\reports\\dominium-workunit-validation-slice\\invocation-result.json"
+      ],
+      "expected": "all false",
+      "id": "boundary.false_fields_complete",
+      "observed": {
+        "arbitrary_shell_command_executed": false,
+        "branch_or_worktree_created": false,
+        "broad_dispatch_used": false,
+        "github_mutation_performed": false,
+        "network_call_performed": false,
+        "patch_transaction_applied": false,
+        "preview_or_apply_performed": false,
+        "private_tool_called": false,
+        "provider_or_model_called": false,
+        "release_or_promotion_performed": false,
+        "source_repository_mutated": false,
+        "target_repository_mutated": false,
+        "workbench_apply_performed": false,
+        "worker_executed": false
+      },
+      "outcome": "PASS"
+    },
+    {
+      "description": "Build status distinguishes fixture-backed adapter execution from live Dominium command execution.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/status.yaml"
+      ],
+      "expected": true,
+      "id": "authority.warning_is_precise",
+      "observed": true,
+      "outcome": "PASS"
+    }
+  ],
+  "first_cli_stdout_sha256": "sha256:ebac5e93390cde329a536fbd4eb51ac6d3ea6dd1e970803cd6b7162d34079a30",
+  "first_run_hashes": {
+    "context_pack_sha256": "sha256:7d58483b599a58a90ad3ee7470c0d75ae07f1df686f54cd0855b23f6177c7801",
+    "event_record_sha256": "sha256:5e451df36451be83ebc50d1aafee02f93c3509c26fb4672ebcf756a7addf7b2a",
+    "evidence_packet_sha256": "sha256:b75a4e2c3a84901e8410598592365ccd0b0d92de4188f03cbb91b1bc4093ebd8",
+    "invocation_result_sha256": "sha256:ce921505747c8b2f3537489b1b5531fa390661850a1def2127dd1f02fa2b654a",
+    "projection_sha256": "sha256:5844130d7f1d37998de13ee422891a17179b1d95e4467c7d8a993f497113adb8",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "sha256:ebac5e93390cde329a536fbd4eb51ac6d3ea6dd1e970803cd6b7162d34079a30",
+    "workunit_sha256": "sha256:06ec582ed00bb7beae4afab1ca589f80ae636d34aa46c9d48b73524b8cc2612c"
+  },
+  "fixture_backed_adapter_execution_proven": true,
+  "live_dominium_command_execution_proven": false,
+  "material_finding_count": 0,
+  "next_task": "AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.dominium-workunit-validation-slice-check.v1",
+  "second_run_hashes": {
+    "context_pack_sha256": "sha256:7d58483b599a58a90ad3ee7470c0d75ae07f1df686f54cd0855b23f6177c7801",
+    "event_record_sha256": "sha256:5e451df36451be83ebc50d1aafee02f93c3509c26fb4672ebcf756a7addf7b2a",
+    "evidence_packet_sha256": "sha256:b75a4e2c3a84901e8410598592365ccd0b0d92de4188f03cbb91b1bc4093ebd8",
+    "invocation_result_sha256": "sha256:ce921505747c8b2f3537489b1b5531fa390661850a1def2127dd1f02fa2b654a",
+    "projection_sha256": "sha256:5844130d7f1d37998de13ee422891a17179b1d95e4467c7d8a993f497113adb8",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "sha256:ebac5e93390cde329a536fbd4eb51ac6d3ea6dd1e970803cd6b7162d34079a30",
+    "workunit_sha256": "sha256:06ec582ed00bb7beae4afab1ca589f80ae636d34aa46c9d48b73524b8cc2612c"
+  },
+  "source_commit": "8d8f511c77388b96118eb530f5361090b66911c1",
+  "source_task_id": "AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01",
+  "task_id": "AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01",
+  "warnings": [
+    "The checked capability is fixture_backed_dominium_validation_adapter, not live Dominium command execution."
+  ]
+}

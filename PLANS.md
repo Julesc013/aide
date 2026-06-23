@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+
+- Title: Check Dominium WorkUnit Validation Slice
+- Status: needs_review
+- Objective: independently verify the WorkUnit validation slice and decide whether it proves fixture-backed adapter execution or live Dominium-owned command execution.
+- Scope: check task/evidence, `.aide/reports/dominium-workunit-validation-slice-check/**`, queue index, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01` at `PASS_WITH_WARNINGS`, source commit `8d8f511c77388b96118eb530f5361090b66911c1`, and source task `missing_evidence: 0`.
+- Milestones: baseline checked; independent harness written; executor call counting, unsupported and malformed refusal probes, digest recomputation, determinism, leakage scan, evidence/event reference checks, and authority classification completed.
+- Blockers: none. Warning: the achieved capability is `fixture_backed_dominium_validation_adapter`; live Dominium-owned command execution is not proven.
+- Verification Intent: independent task-local harness, task inspect/evidence, diff checks, broad AIDE validation, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, zero material findings, preserved warning, and next task exactly `AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01`.
+- Notes: acceptance must preserve the fixture-backed capability label.
+
 ### Plan ID: AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
 
 - Title: Build Dominium WorkUnit Validation Slice
