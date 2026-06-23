@@ -1,0 +1,138 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkUnit",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_workunit_queue_v1"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_workunit_queue_v1"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "wu-9f1304d1390baa7c",
+    "name": "Build Dominium Registered Validation Backend",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/task.yaml"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.workunit-queue.v1",
+  "spec": {
+    "acceptance_review": false,
+    "artifacts": [
+      {
+        "path": ".aide/reports/dominium-registered-validation-backend/context-descriptor.json",
+        "role": "context_descriptor",
+        "sha256": "sha256:c4f2e1154f6a4934c8d10ee9c29cc5ee31dadff095149e46feb3aa17d29d14e3"
+      },
+      {
+        "path": ".aide/reports/dominium-registered-validation-backend/context-pack.json",
+        "role": "context_pack",
+        "sha256": "sha256:88f699a6c29ae983d25e703a644fe310240ae722026c8e2f2823ec6d46e39673"
+      },
+      {
+        "path": ".aide/reports/dominium-registered-validation-backend/invocation-result.json",
+        "role": "invocation_result",
+        "sha256": "sha256:97cca924c6b813f769accdcb5256b5c26ab53798ca9a55b41df7058d0c490093"
+      }
+    ],
+    "authorized_invocation_count": 1,
+    "authorizes_implementation": true,
+    "capability_label": "minimal_workunit_queue_v1",
+    "check_only": false,
+    "dependencies": [],
+    "evidence_requirements": [
+      ".aide/reports/dominium-registered-validation-backend/invocation-result.json",
+      ".aide/reports/dominium-registered-validation-backend/evidence-packet.json",
+      ".aide/reports/dominium-registered-validation-backend/event-record.json"
+    ],
+    "explicit_non_capabilities": [
+      "arbitrary_shell_command",
+      "private_tool_call",
+      "broad_dominium_command_dispatch",
+      "general_dominium_command_runner",
+      "provider_model_call",
+      "network_call",
+      "worker_execution",
+      "workbench_apply",
+      "service_runtime",
+      "durable_database_state",
+      "preview_or_apply",
+      "rollback",
+      "patch_transaction_apply",
+      "source_repository_mutation",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "implementation_scope": "exactly-one-readonly-dominium-validation-cli-process",
+    "predecessors": [
+      "AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01"
+    ],
+    "proposed_capability_label": "live_dominium_validation_command_readonly_v0",
+    "registered_capability_id": "dominium.validation.run",
+    "registered_capability_ref": "aide://capability/dominium-validation-run-live-readonly",
+    "scope": {
+      "allowed_paths": [
+        "core/interop/dominium/registered_validation_backend.py",
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_aide_dominium_registered_validation_backend.py",
+        ".aide/reports/dominium-registered-validation-backend/**",
+        ".aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/**"
+      ],
+      "forbidden_operations": [
+        "arbitrary_shell_command",
+        "private_tool_call",
+        "broad_dominium_command_dispatch",
+        "general_dominium_command_runner",
+        "provider_model_call",
+        "network_call",
+        "worker_execution",
+        "workbench_apply",
+        "service_runtime",
+        "durable_database_state",
+        "preview_or_apply",
+        "rollback",
+        "patch_transaction_apply",
+        "source_repository_mutation",
+        "target_repository_mutation",
+        "branch_worktree_automation",
+        "github_mutation",
+        "release_or_promotion"
+      ],
+      "forbidden_paths": [],
+      "invocation_limit": 1,
+      "registered_capability_id": "dominium.validation.run"
+    },
+    "stop_state": "needs_review",
+    "task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+    "title": "Build Dominium Registered Validation Backend",
+    "validation": {
+      "commands": [
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py dominium-registered-validation run",
+          "exit_code": 0,
+          "notes": "Invokes exactly one allowlisted Dominium validation CLI process.",
+          "status": "PASS_WITH_WARNINGS"
+        }
+      ]
+    },
+    "work_type": "build"
+  },
+  "status": {
+    "phase": "needs_review",
+    "result": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

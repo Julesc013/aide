@@ -1,0 +1,137 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "ep-590ecf92c0254e95",
+    "name": "Dominium registered validation backend evidence",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/dominium-registered-validation-backend/evidence-packet.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/dominium-registered-validation-backend/context-descriptor.json",
+        "role": "context_descriptor",
+        "sha256": "sha256:c4f2e1154f6a4934c8d10ee9c29cc5ee31dadff095149e46feb3aa17d29d14e3"
+      },
+      {
+        "path": ".aide/reports/dominium-registered-validation-backend/context-pack.json",
+        "role": "context_pack",
+        "sha256": "sha256:88f699a6c29ae983d25e703a644fe310240ae722026c8e2f2823ec6d46e39673"
+      },
+      {
+        "path": ".aide/reports/dominium-registered-validation-backend/workunit.json",
+        "role": "workunit",
+        "sha256": "sha256:a194f7b7c989214ad439a28a9d0977f919fcdce91aa7eee5842e8f7599e76d75"
+      },
+      {
+        "path": ".aide/reports/dominium-registered-validation-backend/capability-descriptor.json",
+        "role": "capability_descriptor",
+        "sha256": "sha256:fc817883489ebb4450b440c70b66212bd14906477c96a03d4eb17feeea1de78a"
+      },
+      {
+        "path": ".aide/reports/dominium-registered-validation-backend/invocation-result.json",
+        "role": "invocation_result",
+        "sha256": "sha256:97cca924c6b813f769accdcb5256b5c26ab53798ca9a55b41df7058d0c490093"
+      }
+    ],
+    "capability_label": "minimal_evidence_packet_schema",
+    "claims": [
+      {
+        "id": "registered_capability_lookup",
+        "status": "supported",
+        "summary": "The WorkUnit references the single admitted dominium.validation.run capability."
+      },
+      {
+        "id": "exactly_one_process_invocation",
+        "status": "supported",
+        "summary": "The allowlisted Dominium CLI process was spawned exactly once."
+      },
+      {
+        "id": "dominium_stdout_json_origin",
+        "status": "supported",
+        "summary": "The AIDE result was derived from Dominium stdout JSON."
+      },
+      {
+        "id": "fixture_callable_not_executor",
+        "status": "supported",
+        "summary": "The accepted fixture callable was not used as this backend executor."
+      },
+      {
+        "id": "dominium_checkout_unchanged",
+        "status": "supported",
+        "summary": "Before and after Dominium state digests match."
+      },
+      {
+        "id": "typed_dominium_refusal",
+        "status": "supported",
+        "summary": "Dominium returned a typed refusal through the command boundary."
+      }
+    ],
+    "explicit_non_capabilities": [
+      "arbitrary_shell_command",
+      "private_tool_call",
+      "broad_dominium_command_dispatch",
+      "general_dominium_command_runner",
+      "provider_model_call",
+      "network_call",
+      "worker_execution",
+      "workbench_apply",
+      "service_runtime",
+      "durable_database_state",
+      "preview_or_apply",
+      "rollback",
+      "patch_transaction_apply",
+      "source_repository_mutation",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "risks": [],
+    "source_task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+    "source_task_kind": "build",
+    "subject": {
+      "id": "dominium.validation.run",
+      "ref": "aide://capability/dominium-validation-run-live-readonly",
+      "type": "capability"
+    },
+    "validations": [
+      {
+        "command": "registered Dominium validation backend",
+        "exit_code": 0,
+        "status": "PASS_WITH_WARNINGS"
+      }
+    ],
+    "warnings": [
+      "The capability label remains proposed until independent check and acceptance.",
+      "A typed Dominium refusal is acceptable proof of reaching the live command boundary when stdout JSON is valid."
+    ]
+  },
+  "status": {
+    "phase": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "Local Dominium checkout is pinned and clean but behind origin/main."
+    ]
+  }
+}

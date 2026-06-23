@@ -39,6 +39,54 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+
+Completed for review as a bounded build task.
+
+Changed:
+
+- `.aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/**`
+- `.aide/reports/dominium-registered-validation-backend/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `core/interop/dominium/registered_validation_backend.py`
+- `core/interop/dominium/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_dominium_registered_validation_backend.py`
+
+This task builds a separate registered validation backend so the accepted
+`fixture_backed_dominium_validation_adapter` remains unchanged. The intended
+proof is one shell-free subprocess invocation of the Dominium-owned
+`dominium.validation.run` CLI boundary against a pinned clean local checkout,
+with normalized AIDE evidence and no Dominium mutation.
+
+Result:
+
+```text
+PASS_WITH_WARNINGS
+```
+
+The backend entered the Dominium CLI process exactly once and parsed stdout JSON
+from `dominium.validation.run`. Dominium returned a typed refusal because the
+aggregate validation suite service is not bound in this Workbench validation
+slice. That proves the live command boundary and service-adapter path were
+reached; it does not prove successful aggregate validation.
+
+Validation:
+
+- focused fake-runner tests passed, 7 tests;
+- report-only backend validation passed with `PASS_WITH_WARNINGS`;
+- strict report/evidence local-path and secret-like scan found 0 findings;
+- Dominium remained clean and unchanged;
+- broad `aide_lite.py validate` passed.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+```
+
 ## Work Item: AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
 
 Completed for review as an acceptance task.

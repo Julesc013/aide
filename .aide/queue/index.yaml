@@ -1828,6 +1828,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01/evidence
     description: Acceptance gate for the Dominium WorkUnit validation slice. Accepts exactly fixture_backed_dominium_validation_adapter after the build and independent check both reported PASS_WITH_WARNINGS, missing_evidence 0, and material_finding_count 0. Preserves warnings that the target is a temporary fixture workspace, the executor is local_fixture_callable, live Dominium command execution remains unproven, portability is not separately proven, and older historical seam modules timed out. Does not accept live Dominium validation, general command execution, Workbench, Service/runtime, workers, providers/models/network, preview/apply/rollback, mutation, GitHub, release, or promotion. Recommends exactly AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01.
+  - id: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+    status: needs_review
+    planning_state: implemented
+    result: PASS_WITH_WARNINGS
+    title: Build Dominium Registered Validation Backend
+    task: .aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/evidence
+    description: Build the first live Dominium-owned validation command proof after accepting the fixture-backed adapter. Invokes apps/workbench/module/validation/cli.py through an exact allowlisted shell-free subprocess argv exactly once against a pinned clean local Dominium checkout, validates stdout JSON from dominium.validation.run, normalizes typed Dominium result or refusal into AIDE EvidencePacket/EventRecord/projection evidence, preserves source state, and recommends exactly AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01. Does not implement broad Dominium dispatch, Workbench behavior, Service/runtime, workers, providers/models/network, preview/apply/rollback, mutation, GitHub, release, or promotion.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

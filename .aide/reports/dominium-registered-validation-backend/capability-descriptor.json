@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "allowed_argv_template": [
+    "<python>",
+    "apps/workbench/module/validation/cli.py",
+    "--repo-root",
+    "<pinned-dominium-root>",
+    "--target",
+    "all",
+    "--profile",
+    "FAST",
+    "--surface",
+    "aide",
+    "--mode",
+    "dry_run"
+  ],
+  "allowed_targets": [
+    "all"
+  ],
+  "broad_dispatch_allowed": false,
+  "capability_ref": "aide://capability/dominium-validation-run-live-readonly",
+  "executor": "dominium_cli_process",
+  "fixture_callable_used_as_executor": false,
+  "id": "dominium.validation.run",
+  "invocation_limit": 1,
+  "kind": "CapabilityDescriptor",
+  "mode": "read_only",
+  "mutation_allowed": false,
+  "network_allowed": false,
+  "private_tool_allowed": false,
+  "proposed_capability_label": "live_dominium_validation_command_readonly_v0",
+  "provider_or_model_allowed": false,
+  "schema_version": "aide.dominium-registered-validation.capability-descriptor.v1",
+  "shell_allowed": false,
+  "side_effect_class": "read_only",
+  "task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+  "workbench_apply_allowed": false,
+  "worker_allowed": false
+}

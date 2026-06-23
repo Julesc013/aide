@@ -7924,6 +7924,16 @@ def load_dominium_workunit_validation_module(repo_root: Path):
     return importlib.import_module("core.interop.dominium.workunit_validation")
 
 
+def load_dominium_registered_validation_backend_module(repo_root: Path):
+    module_path = repo_root / "core/interop/dominium/registered_validation_backend.py"
+    if not module_path.exists():
+        raise ValueError("Dominium registered validation backend module missing: core/interop/dominium/registered_validation_backend.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.interop.dominium.registered_validation_backend")
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -34753,6 +34763,99 @@ def command_dominium_workunit_validation_validate(args: argparse.Namespace) -> i
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_dominium_registered_validation_boundary_lines(data: dict[str, object]) -> None:
+    print(f"arbitrary_shell_command_executed: {str(data.get('arbitrary_shell_command_executed', False)).lower()}")
+    print(f"private_tool_called: {str(data.get('private_tool_called', False)).lower()}")
+    print(f"broad_dispatch_used: {str(data.get('broad_dispatch_used', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"provider_or_model_called: {str(data.get('provider_or_model_called', False)).lower()}")
+    print(f"worker_executed: {str(data.get('worker_executed', False)).lower()}")
+    print(f"workbench_apply_performed: {str(data.get('workbench_apply_performed', False)).lower()}")
+    print(f"preview_or_apply_performed: {str(data.get('preview_or_apply_performed', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"source_repository_mutated: {str(data.get('source_repository_mutated', False)).lower()}")
+    print(f"target_repository_mutated: {str(data.get('target_repository_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_dominium_registered_validation_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_dominium_registered_validation_backend_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite dominium-registered-validation status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_registered_validation_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-registered-validation status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_id: {data.get('capability_id')}")
+    print(f"proposed_capability_label: {data.get('proposed_capability_label')}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_dominium_registered_validation_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_dominium_registered_validation_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_dominium_registered_validation_backend_module(repo_root)
+    dominium_root = args.dominium_root if getattr(args, "dominium_root", "") else None
+    expected_revision = args.expected_revision if getattr(args, "expected_revision", "") else None
+    try:
+        report = module.run_backend(
+            repo_root,
+            dominium_root=dominium_root,
+            expected_revision=expected_revision,
+            timeout_seconds=args.timeout_seconds,
+        )
+    except Exception as exc:  # noqa: BLE001 - bounded invocation must fail closed.
+        print("AIDE Lite dominium-registered-validation run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_registered_validation_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-registered-validation run")
+    print(f"result: {report.get('validation_status') or report.get('status')}")
+    print(f"capability_id: {report.get('capability_id')}")
+    print(f"proposed_capability_label: {report.get('proposed_capability_label')}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"actual_dominium_cli_process_spawned: {str(report.get('actual_dominium_cli_process_spawned', False)).lower()}")
+    print(f"dominium_stdout_json_parsed: {str(report.get('dominium_stdout_json_parsed', False)).lower()}")
+    print(f"checkout_state_unchanged: {str(report.get('checkout_state_unchanged', False)).lower()}")
+    print(f"result_origin: {report.get('result_origin')}")
+    print(f"recommended_next_task: {module.CHECK_TASK_ID}")
+    _print_dominium_registered_validation_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_registered_validation_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_dominium_registered_validation_backend_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite dominium-registered-validation validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_registered_validation_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-registered-validation validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"dominium_command_status: {report.get('dominium_command_status')}")
+    print(f"checkout_state_unchanged: {str(report.get('checkout_state_unchanged', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_registered_validation_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -38304,6 +38407,33 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     dominium_workunit_validation_subparsers.add_parser("status").set_defaults(handler=command_dominium_workunit_validation_status)
     dominium_workunit_validation_subparsers.add_parser("run").set_defaults(handler=command_dominium_workunit_validation_run)
     dominium_workunit_validation_subparsers.add_parser("validate").set_defaults(handler=command_dominium_workunit_validation_validate)
+
+    dominium_registered_validation_parser = subparsers.add_parser("dominium-registered-validation")
+    dominium_registered_validation_parser.set_defaults(handler=command_dominium_registered_validation_status)
+    dominium_registered_validation_subparsers = dominium_registered_validation_parser.add_subparsers(
+        dest="dominium_registered_validation_command",
+        required=False,
+    )
+    dominium_registered_validation_subparsers.add_parser("status").set_defaults(handler=command_dominium_registered_validation_status)
+    dominium_registered_validation_run_parser = dominium_registered_validation_subparsers.add_parser("run")
+    dominium_registered_validation_run_parser.add_argument(
+        "--dominium-root",
+        default="",
+        help="Already-present local Dominium checkout. Defaults to the sibling C:/Projects/Dominium/dominium-style location.",
+    )
+    dominium_registered_validation_run_parser.add_argument(
+        "--expected-revision",
+        default="",
+        help="Exact pinned Dominium revision to require before invocation. Defaults to observed local HEAD before invocation.",
+    )
+    dominium_registered_validation_run_parser.add_argument(
+        "--timeout-seconds",
+        type=float,
+        default=30.0,
+        help="Bounded timeout for the single Dominium validation CLI process.",
+    )
+    dominium_registered_validation_run_parser.set_defaults(handler=command_dominium_registered_validation_run)
+    dominium_registered_validation_subparsers.add_parser("validate").set_defaults(handler=command_dominium_registered_validation_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

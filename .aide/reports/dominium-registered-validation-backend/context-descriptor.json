@@ -1,0 +1,70 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "ContextDescriptor",
+  "metadata": {
+    "authority_role": "pinned_dominium_checkout_observation",
+    "created_at": "2026-06-23T00:00:00+10:00",
+    "id": "dominium-registered-validation-context",
+    "identity_owner": "AIDE",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "semantic_owner": "AIDE",
+    "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
+  },
+  "spec": {
+    "command_boundary": [
+      "apps/workbench/module/validation/cli.py",
+      "run_validation_command",
+      "ValidationServiceAdapter"
+    ],
+    "command_id": "dominium.validation.run",
+    "context_ref": "aide://context/dominium-registered-validation-context",
+    "explicit_non_capabilities": [
+      "arbitrary_shell_command",
+      "private_tool_call",
+      "broad_dominium_command_dispatch",
+      "general_dominium_command_runner",
+      "provider_model_call",
+      "network_call",
+      "worker_execution",
+      "workbench_apply",
+      "service_runtime",
+      "durable_database_state",
+      "preview_or_apply",
+      "rollback",
+      "patch_transaction_apply",
+      "source_repository_mutation",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "pinned_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+    "read_only": true,
+    "repository_identity": "github.com/Julesc013/dominium"
+  },
+  "status": {
+    "arbitrary_shell_command_executed": false,
+    "branch_or_worktree_created": false,
+    "broad_dispatch_used": false,
+    "context_projected": true,
+    "database_opened": false,
+    "dominium_checkout_unchanged": true,
+    "dominium_cli_process_invoked": true,
+    "github_mutation_performed": false,
+    "network_call_performed": false,
+    "patch_transaction_applied": false,
+    "preview_or_apply_performed": false,
+    "private_tool_called": false,
+    "provider_or_model_called": false,
+    "release_or_promotion_performed": false,
+    "service_started": false,
+    "source_repository_mutated": false,
+    "target_repository_mutated": false,
+    "workbench_apply_performed": false,
+    "workbench_started": false,
+    "worker_executed": false
+  }
+}

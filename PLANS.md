@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+
+- Title: Build Dominium Registered Validation Backend
+- Status: needs_review
+- Objective: prove exactly one bounded local read-only invocation of Dominium's registered `dominium.validation.run` command through the Dominium CLI, command boundary, and `ValidationServiceAdapter`.
+- Scope: add a separate AIDE registered validation backend, AIDE Lite command wiring, focused fake-runner tests, task-local evidence, deterministic reports, and queue/root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01` at `ACCEPTED_WITH_WARNINGS`, with accepted capability exactly `fixture_backed_dominium_validation_adapter` and live Dominium command execution still unaccepted.
+- Milestones: predecessor state reviewed; backend implemented; tests added; one live Dominium CLI invocation completed; reports and evidence written; validation completed.
+- Blockers: none. Warnings: local Dominium checkout is behind `origin/main` and is used as the pinned clean revision rather than refreshed or mutated; Dominium returned a typed refusal for target `all` because aggregate validation suite service is not bound.
+- Verification Intent: focused fake-runner unit tests, one live Dominium CLI invocation through the new backend, backend validation, broad AIDE validation, diff checks, and commit policy.
+- Exit Criteria: stopped at `needs_review` with completed evidence, proposed capability `live_dominium_validation_command_readonly_v0`, unchanged Dominium state, and next task exactly `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01`.
+- Notes: the proposed capability remains unaccepted until independent check and acceptance.
+
 ### Plan ID: AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
 
 - Title: Accept Dominium WorkUnit Validation Slice

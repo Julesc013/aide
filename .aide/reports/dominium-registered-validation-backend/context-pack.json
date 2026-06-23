@@ -1,0 +1,187 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "ContextPack",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "context_pack_v2",
+        "live_dominium_validation_command_readonly_v0"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "context_pack_v2"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "2026-06-23T00:00:00+10:00",
+    "id": "dominium-registered-validation-backend-01",
+    "name": "Dominium Registered Validation Backend ContextPack",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/dominium-registered-validation-backend/context-pack.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.context-pack.v2",
+  "spec": {
+    "allowed_paths": [
+      "core/interop/dominium/registered_validation_backend.py",
+      ".aide/reports/dominium-registered-validation-backend/**"
+    ],
+    "context_descriptor_ref": "aide://context/dominium-registered-validation-context",
+    "context_pack_ref": "aide://context-pack/dominium-registered-validation-backend-01",
+    "explicit_non_capabilities": [
+      "arbitrary_shell_command",
+      "private_tool_call",
+      "broad_dominium_command_dispatch",
+      "general_dominium_command_runner",
+      "provider_model_call",
+      "network_call",
+      "worker_execution",
+      "workbench_apply",
+      "service_runtime",
+      "durable_database_state",
+      "preview_or_apply",
+      "rollback",
+      "patch_transaction_apply",
+      "source_repository_mutation",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "proposed_capability_label": "live_dominium_validation_command_readonly_v0",
+    "purpose": "bounded_live_dominium_validation_command_invocation",
+    "registered_capability_id": "dominium.validation.run",
+    "registered_capability_ref": "aide://capability/dominium-validation-run-live-readonly",
+    "sections": [
+      {
+        "id": "dominium_context",
+        "item_count": 1,
+        "source_refs": [
+          "aide://context/dominium-registered-validation-context"
+        ]
+      },
+      {
+        "id": "work_unit",
+        "item_count": 1,
+        "source_refs": [
+          "aide://workunit/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
+        ]
+      },
+      {
+        "id": "capability",
+        "item_count": 1,
+        "source_refs": [
+          "aide://capability/dominium-validation-run-live-readonly"
+        ]
+      },
+      {
+        "id": "evidence",
+        "item_count": 1,
+        "source_refs": [
+          "aide://evidence/dominium-registered-validation-backend"
+        ]
+      }
+    ],
+    "source_refs": [
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "apps/workbench/module/validation/cli.py",
+        "ref": "aide://source/cli",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:f78a613e435e6bb2eddd58d92332a452d486e245ba020c0b5bda82a139ec2a89"
+      },
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "apps/workbench/module/validation/command.py",
+        "ref": "aide://source/command",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:50880759686e64470f4cb3dc77a37867fd314152e7e58d12c117f17ebf342e70"
+      },
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "apps/workbench/module/validation/service_adapter.py",
+        "ref": "aide://source/service-adapter",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:43ebfbba6a8f042577ef62c262ba53d02d26d14decc635c8a10eacfdfa6cf684"
+      },
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "contracts/command/validation_run_input.schema.json",
+        "ref": "aide://source/validation-run-input.schema",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:0ac88f7e83b44f83900be1322ca662edab5e9b9258abe62c0c2373ae113c3dde"
+      },
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "contracts/command/validation_run_result.schema.json",
+        "ref": "aide://source/validation-run-result.schema",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:6b84ebe953a2f0b8c112e760ff90d50a830d9409e8086a472a3607b8f99108b0"
+      },
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "contracts/schema/validation_result.schema.json",
+        "ref": "aide://source/validation-result.schema",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:703e54f14e32a67928729124a651f28091eabb0b73c06cf0c36ca7787641eebb"
+      },
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "contracts/command/command_surface.contract.toml",
+        "ref": "aide://source/command-surface.contract",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe"
+      },
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "contracts/refusal/refusal_code.registry.json",
+        "ref": "aide://source/refusal-code.registry",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac"
+      },
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "contracts/diagnostic/diagnostic_code.registry.json",
+        "ref": "aide://source/diagnostic-code.registry",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978"
+      },
+      {
+        "exists_at_pinned_revision": true,
+        "kind": "source",
+        "path": "contracts/action/validation_actions.registry.json",
+        "ref": "aide://source/validation-actions.registry",
+        "role": "dominium_command_boundary",
+        "sha256": "sha256:d1bb9531421e60e878e2e2e35262a1a602d7587646e001c3762e87f6e4c37766"
+      }
+    ],
+    "work_unit_ref": "aide://workunit/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
+  },
+  "status": {
+    "agent_started": false,
+    "command_executed": true,
+    "embedding_performed": false,
+    "model_call_performed": false,
+    "network_call_performed": false,
+    "patch_applied": false,
+    "repository_mutated": false,
+    "trusted": false,
+    "validation_performed": true,
+    "validation_status": "PASS_WITH_WARNINGS",
+    "worker_started": false
+  }
+}

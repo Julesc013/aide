@@ -1,0 +1,251 @@
+{
+  "arbitrary_shell_command_executed": false,
+  "branch_or_worktree_created": false,
+  "broad_dispatch_used": false,
+  "capability_id": "dominium.validation.run",
+  "database_opened": false,
+  "github_mutation_performed": false,
+  "kind": "DominiumRegisteredValidationBackendReport",
+  "network_call_performed": false,
+  "patch_transaction_applied": false,
+  "preview_or_apply_performed": false,
+  "private_tool_called": false,
+  "proposed_capability_label": "live_dominium_validation_command_readonly_v0",
+  "provider_or_model_called": false,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+  "release_or_promotion_performed": false,
+  "result": {
+    "actual_dominium_cli_process_spawned": true,
+    "after_state": {
+      "clean": true,
+      "command_implementation_digests": {
+        "apps/workbench/module/validation/cli.py": "sha256:f78a613e435e6bb2eddd58d92332a452d486e245ba020c0b5bda82a139ec2a89",
+        "apps/workbench/module/validation/command.py": "sha256:50880759686e64470f4cb3dc77a37867fd314152e7e58d12c117f17ebf342e70",
+        "apps/workbench/module/validation/service_adapter.py": "sha256:43ebfbba6a8f042577ef62c262ba53d02d26d14decc635c8a10eacfdfa6cf684",
+        "contracts/action/validation_actions.registry.json": "sha256:d1bb9531421e60e878e2e2e35262a1a602d7587646e001c3762e87f6e4c37766",
+        "contracts/command/command_surface.contract.toml": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe",
+        "contracts/command/validation_run_input.schema.json": "sha256:0ac88f7e83b44f83900be1322ca662edab5e9b9258abe62c0c2373ae113c3dde",
+        "contracts/command/validation_run_result.schema.json": "sha256:6b84ebe953a2f0b8c112e760ff90d50a830d9409e8086a472a3607b8f99108b0",
+        "contracts/diagnostic/diagnostic_code.registry.json": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+        "contracts/refusal/refusal_code.registry.json": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+        "contracts/schema/validation_result.schema.json": "sha256:703e54f14e32a67928729124a651f28091eabb0b73c06cf0c36ca7787641eebb"
+      },
+      "git_head_available": true,
+      "normalized_remote_url": "https://github.com/Julesc013/dominium.git",
+      "porcelain_status": "",
+      "remote_url": "https://github.com/Julesc013/dominium.git",
+      "repository_present": true,
+      "revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+      "short_branch_status": "## main...origin/main [behind 24]",
+      "status_available": true,
+      "tracked_tree_digest": "sha256:0a8f7f5cab967fcad21cd54f298c55872f5d10125c0874e0b80830d6bf920323"
+    },
+    "allowlisted_process_call": {
+      "argv": [
+        "<python>",
+        "<dominium-root>\\apps\\workbench\\module\\validation\\cli.py",
+        "--repo-root",
+        "<dominium-root>",
+        "--target",
+        "all",
+        "--profile",
+        "FAST",
+        "--surface",
+        "aide",
+        "--mode",
+        "dry_run"
+      ],
+      "cwd": "<dominium-root>",
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "0",
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONUTF8": "1"
+      },
+      "shell": false,
+      "timeout": 30.0
+    },
+    "arbitrary_shell_command_executed": false,
+    "argv_template": [
+      "<python>",
+      "apps/workbench/module/validation/cli.py",
+      "--repo-root",
+      "<pinned-dominium-root>",
+      "--target",
+      "all",
+      "--profile",
+      "FAST",
+      "--surface",
+      "aide",
+      "--mode",
+      "dry_run"
+    ],
+    "before_state": {
+      "clean": true,
+      "command_implementation_digests": {
+        "apps/workbench/module/validation/cli.py": "sha256:f78a613e435e6bb2eddd58d92332a452d486e245ba020c0b5bda82a139ec2a89",
+        "apps/workbench/module/validation/command.py": "sha256:50880759686e64470f4cb3dc77a37867fd314152e7e58d12c117f17ebf342e70",
+        "apps/workbench/module/validation/service_adapter.py": "sha256:43ebfbba6a8f042577ef62c262ba53d02d26d14decc635c8a10eacfdfa6cf684",
+        "contracts/action/validation_actions.registry.json": "sha256:d1bb9531421e60e878e2e2e35262a1a602d7587646e001c3762e87f6e4c37766",
+        "contracts/command/command_surface.contract.toml": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe",
+        "contracts/command/validation_run_input.schema.json": "sha256:0ac88f7e83b44f83900be1322ca662edab5e9b9258abe62c0c2373ae113c3dde",
+        "contracts/command/validation_run_result.schema.json": "sha256:6b84ebe953a2f0b8c112e760ff90d50a830d9409e8086a472a3607b8f99108b0",
+        "contracts/diagnostic/diagnostic_code.registry.json": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+        "contracts/refusal/refusal_code.registry.json": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+        "contracts/schema/validation_result.schema.json": "sha256:703e54f14e32a67928729124a651f28091eabb0b73c06cf0c36ca7787641eebb"
+      },
+      "git_head_available": true,
+      "normalized_remote_url": "https://github.com/Julesc013/dominium.git",
+      "porcelain_status": "",
+      "remote_url": "https://github.com/Julesc013/dominium.git",
+      "repository_present": true,
+      "revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+      "short_branch_status": "## main...origin/main [behind 24]",
+      "status_available": true,
+      "tracked_tree_digest": "sha256:0a8f7f5cab967fcad21cd54f298c55872f5d10125c0874e0b80830d6bf920323"
+    },
+    "branch_or_worktree_created": false,
+    "broad_dispatch_used": false,
+    "capability_id": "dominium.validation.run",
+    "checkout_state_unchanged": true,
+    "constructed_success_result": false,
+    "database_opened": false,
+    "dominium_command_result": {
+      "command_id": "dominium.validation.run",
+      "diagnostics": [
+        {
+          "code": "DOM-EVIDENCE-MISSING",
+          "command_id": "dominium.validation.run",
+          "message": "aggregate validation suite service is not bound in the Workbench validation slice",
+          "refusal_code": "dominium.refusal.validation.tool_unavailable",
+          "severity": "error"
+        }
+      ],
+      "evidence": [
+        "contracts/command/validation_run_input.schema.json",
+        "contracts/refusal/refusal_code.registry.json",
+        "contracts/diagnostic/diagnostic_code.registry.json"
+      ],
+      "payload": {
+        "command_version": "0.1.0",
+        "evidence_packet": {
+          "artifact_refs": [],
+          "command_id": "dominium.validation.run",
+          "diagnostic_codes": [
+            "DOM-EVIDENCE-MISSING"
+          ],
+          "evidence_id": "evidence.dominium.validation.run.c94f99230e005a81",
+          "proof": [
+            "contracts/command/validation_run_input.schema.json",
+            "contracts/refusal/refusal_code.registry.json",
+            "contracts/diagnostic/diagnostic_code.registry.json"
+          ],
+          "run_id": "dominium.validation.run.c94f99230e005a81",
+          "status": "refused",
+          "subject_id": "dominium.validation.run",
+          "subject_kind": "command",
+          "summary": "Validation command refused: aggregate validation suite service is not bound in the Workbench validation slice"
+        },
+        "refusal": {
+          "code": "dominium.refusal.validation.tool_unavailable",
+          "diagnostics": [
+            {
+              "code": "DOM-EVIDENCE-MISSING",
+              "command_id": "dominium.validation.run",
+              "message": "aggregate validation suite service is not bound in the Workbench validation slice",
+              "refusal_code": "dominium.refusal.validation.tool_unavailable",
+              "severity": "error"
+            }
+          ],
+          "evidence_reference": "contracts/evidence/evidence_packet.schema.json",
+          "reason": "aggregate validation suite service is not bound in the Workbench validation slice",
+          "recovery": {
+            "action": "inspect_evidence",
+            "summary": "Inspect the service adapter evidence and rerun after the validation service is available."
+          },
+          "refusal_id": "dominium.refusal.validation.tool_unavailable"
+        },
+        "request": {
+          "artifact_ref": "",
+          "capabilities": [],
+          "continue_on_fail": false,
+          "emit_reports": false,
+          "mode": "dry_run",
+          "profile": "FAST",
+          "required_capabilities": [],
+          "suite_id": "validate.all",
+          "surface": "aide",
+          "target": "all",
+          "target_kind": "validation_suite",
+          "target_path": ""
+        },
+        "schema_version": "dominium.workbench.validation_slice.result.v1",
+        "summary_counts": {
+          "diagnostics": 1,
+          "errors": 1,
+          "warnings": 0
+        },
+        "validation_report": null,
+        "validation_status": "refused"
+      },
+      "run_id": "dominium.validation.run.c94f99230e005a81",
+      "status": "refused",
+      "summary": "Validation command refused: aggregate validation suite service is not bound in the Workbench validation slice"
+    },
+    "dominium_stdout_json_parsed": true,
+    "environment_constraints": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "0",
+      "PYTHONNOUSERSITE": "1",
+      "PYTHONUTF8": "1"
+    },
+    "fixture_callable_used_as_executor": false,
+    "github_mutation_performed": false,
+    "kind": "DominiumRegisteredValidationInvocationResult",
+    "message": "Dominium validation command returned a typed refusal.",
+    "network_call_performed": false,
+    "patch_transaction_applied": false,
+    "preview_or_apply_performed": false,
+    "private_tool_called": false,
+    "process_call_count": 1,
+    "proposed_capability_label": "live_dominium_validation_command_readonly_v0",
+    "provider_or_model_called": false,
+    "reason_code": "AIDE_DOMINIUM_REGISTERED_VALIDATION_NONZERO_EXIT",
+    "release_or_promotion_performed": false,
+    "result": "REFUSED",
+    "result_origin": "dominium_stdout_json",
+    "returncode": 1,
+    "run_validation_command_boundary_reached": true,
+    "schema_version": "aide.dominium-registered-validation.invocation-result.v1",
+    "service_adapter_boundary_reached": true,
+    "service_started": false,
+    "source_repository_mutated": false,
+    "status": "REFUSED",
+    "stderr": {
+      "byte_count": 0,
+      "excerpt": "",
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "byte_count": 3025,
+      "excerpt": "{\n  \"command_id\": \"dominium.validation.run\",\n  \"diagnostics\": [\n    {\n      \"code\": \"DOM-EVIDENCE-MISSING\",\n      \"command_id\": \"dominium.validation.run\",\n      \"message\": \"aggregate validation suite service is not bound in the Workbench validation slice\",\n      \"refusal_code\": \"dominium.refusal.validation.tool_unavailable\",\n      \"severity\": \"error\"\n    }\n  ],\n  \"evidence\": [\n    \"contracts/command/validation_run_input.schema.json\",\n    \"contracts/refusal/refusal_code.registry.json\",\n    \"contracts/diagnostic/diagnostic_code.registry.json\"\n  ],\n  \"payload\": {\n    \"command_version\": \"0.1.0\",\n    \"evidence_packet\": {\n      \"artifact_refs\": [],\n      \"command_id\": \"dominium.validation.run\",\n      \"diagnostic_codes\": [\n        \"DOM-EVIDENCE-MISSING\"\n      ],\n      \"evidence_id\": \"evidence.dom",
+      "sha256": "sha256:b01860a1b277cc1b0662e60f5b7e89db879b43d5df453d18f4d5c6b6ad4955d1"
+    },
+    "target_repository_mutated": false,
+    "task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+    "typed_refusal": true,
+    "typed_result": false,
+    "workbench_apply_performed": false,
+    "workbench_started": false,
+    "worker_executed": false
+  },
+  "schema_version": "aide.dominium-registered-validation.backend-report.v1",
+  "service_started": false,
+  "source_repository_mutated": false,
+  "status": "PASS_WITH_WARNINGS",
+  "target_repository_mutated": false,
+  "task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+  "workbench_apply_performed": false,
+  "workbench_started": false,
+  "worker_executed": false
+}

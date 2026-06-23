@@ -17,6 +17,13 @@ from .workunit_validation import (
     status as dominium_workunit_validation_status,
     validate_slice_reports as validate_dominium_workunit_validation_slice,
 )
+from .registered_validation_backend import (
+    CAPABILITY_ID as REGISTERED_VALIDATION_CAPABILITY_ID,
+    CHECK_TASK_ID as REGISTERED_VALIDATION_CHECK_TASK_ID,
+    run_backend as run_dominium_registered_validation_backend,
+    status as dominium_registered_validation_status,
+    validate_reports as validate_dominium_registered_validation_backend,
+)
 
 __all__ = [
     "dominium_seam_diff",
@@ -29,8 +36,13 @@ __all__ = [
     "dominium_workunit_validation_status",
     "run_dominium_workunit_validation_slice",
     "validate_dominium_workunit_validation_slice",
+    "dominium_registered_validation_status",
+    "run_dominium_registered_validation_backend",
+    "validate_dominium_registered_validation_backend",
     "WORKUNIT_VALIDATION_CAPABILITY_ID",
     "WORKUNIT_VALIDATION_CHECK_TASK_ID",
+    "REGISTERED_VALIDATION_CAPABILITY_ID",
+    "REGISTERED_VALIDATION_CHECK_TASK_ID",
     "RECOMMENDED_NEXT_TASK",
     "REPAIR_TASK_ID",
     "TASK_ID",
