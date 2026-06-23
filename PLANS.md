@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+
+- Title: Check Dominium Registered Validation Backend
+- Status: needs_review
+- Objective: independently verify the registered Dominium validation backend and decide whether the proposed capability label is precise enough for acceptance.
+- Scope: check task/evidence, `.aide/reports/dominium-registered-validation-backend-check/**`, queue index, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01` at commit `1206980e8897ba6031d2d142743d9cac53be1817` with result `PASS_WITH_WARNINGS` and missing evidence zero.
+- Milestones: source reports reviewed; Dominium CLI/command/service source inspected; independent harness run; process, typed refusal, state safety, evidence, scrub, and authority-label assertions recorded.
+- Blockers: acceptance is blocked by one material authority-label finding.
+- Verification Intent: task-local independent harness, task inspect/evidence, Dominium clean-state check, diff checks, broad validation, and commit policy.
+- Exit Criteria: stop at `needs_review` with `REQUEST_CHANGES`, `material_finding_count: 1`, proven capability `dominium_registered_validation_command_boundary_readonly_v0`, and next task exactly `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01`.
+- Notes: the check does not repair the backend or rerun the live Dominium CLI.
+
 ### Plan ID: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
 
 - Title: Build Dominium Registered Validation Backend

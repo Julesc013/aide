@@ -1,0 +1,16 @@
+{
+  "findings": [
+    {
+      "expected": "dominium_registered_validation_command_boundary_readonly_v0",
+      "id": "capability_label.overclaims_observed_boundary",
+      "observed": "live_dominium_validation_command_readonly_v0",
+      "repair": "Relabel proposed capability and generated surfaces to dominium_registered_validation_command_boundary_readonly_v0 without changing the underlying evidence.",
+      "severity": "material",
+      "source_assertion_id": "authority.proposed_capability_label_precise",
+      "status": "OPEN",
+      "summary": "The build proposes a label that can be read as successful live validation, while the observed proof is a registered command-boundary invocation that returned a typed refusal."
+    }
+  ],
+  "material_finding_count": 1,
+  "task_id": "AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
+}

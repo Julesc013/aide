@@ -1838,6 +1838,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/evidence
     description: Build the first live Dominium-owned validation command proof after accepting the fixture-backed adapter. Invokes apps/workbench/module/validation/cli.py through an exact allowlisted shell-free subprocess argv exactly once against a pinned clean local Dominium checkout, validates stdout JSON from dominium.validation.run, normalizes typed Dominium result or refusal into AIDE EvidencePacket/EventRecord/projection evidence, preserves source state, and recommends exactly AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01. Does not implement broad Dominium dispatch, Workbench behavior, Service/runtime, workers, providers/models/network, preview/apply/rollback, mutation, GitHub, release, or promotion.
+  - id: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+    status: needs_review
+    planning_state: check_completed
+    result: REQUEST_CHANGES
+    title: Check Dominium Registered Validation Backend
+    task: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/evidence
+    description: Check-only independent review of AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01 at commit 1206980e8897ba6031d2d142743d9cac53be1817. Proves the live registered Dominium command boundary, typed refusal origin, no-fixture executor claim, service-adapter refusal path, no mutation, and scrubbed evidence. Records REQUEST_CHANGES with one material authority-label finding because the proposed label live_dominium_validation_command_readonly_v0 overclaims the observed boundary; recommends exactly AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01. Does not repair implementation, rerun the live Dominium CLI, mutate Dominium, broaden dispatch, implement Workbench/Service/runtime, call providers/models/network, run workers, preview/apply/rollback, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

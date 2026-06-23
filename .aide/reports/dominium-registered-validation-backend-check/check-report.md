@@ -1,0 +1,18 @@
+# Check Report
+
+- `baseline.source_task_ready`: `PASS` (material)
+- `baseline.no_downstream_acceptance_or_repair_exists`: `PASS` (material)
+- `process.exactly_one_allowlisted_cli_call`: `PASS` (material)
+- `process.environment_constraints`: `PASS` (material)
+- `result.origin_and_refusal_are_dominium_stdout`: `PASS` (material)
+- `executor.fixture_callable_not_used`: `PASS` (material)
+- `dominium.service_adapter_refusal_path_corroborated`: `PASS` (material)
+- `dominium.aide_boundary_boolean_is_too_broad_for_generic_reuse`: `WARN` (warning)
+- `result.no_successful_aggregate_validation_claim`: `PASS` (material)
+- `authority.proposed_capability_label_precise`: `FAIL` (material)
+- `state.dominium_unchanged`: `PASS` (material)
+- `boundary.false_fields_are_false`: `PASS` (material)
+- `evidence.records_resolve`: `PASS` (material)
+- `reports.required_build_reports_exist`: `PASS` (material)
+- `scrub.no_report_path_or_secret_leak`: `PASS` (material)
+- `scrub.source_contains_temporary_local_fallback`: `WARN` (warning)

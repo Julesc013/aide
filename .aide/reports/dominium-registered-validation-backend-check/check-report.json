@@ -1,0 +1,355 @@
+{
+  "assertions": [
+    {
+      "category": "baseline",
+      "description": "Source build task is at the expected review gate with complete evidence.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/status.yaml"
+      ],
+      "expected": {
+        "missing_evidence": 0,
+        "recommended_next_task": "AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "id": "baseline.source_task_ready",
+      "observed": {
+        "missing_evidence": 0,
+        "recommended_next_task": "AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "No acceptance, relabel repair, or genericization task already supersedes this check.",
+      "evidence_refs": [
+        ".aide/queue/index.yaml"
+      ],
+      "expected": false,
+      "id": "baseline.no_downstream_acceptance_or_repair_exists",
+      "observed": {
+        "AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01": false,
+        "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01": false,
+        "AIDE-BUILD-REGISTERED-PROCESS-CAPABILITY-BACKEND-V0-01": false
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "process",
+      "description": "Build evidence records one shell-free allowlisted Dominium CLI process call with the exact read-only argv.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend/invocation-result.json"
+      ],
+      "expected": {
+        "argv": [
+          "<python>",
+          "<dominium-root>\\apps\\workbench\\module\\validation\\cli.py",
+          "--repo-root",
+          "<dominium-root>",
+          "--target",
+          "all",
+          "--profile",
+          "FAST",
+          "--surface",
+          "aide",
+          "--mode",
+          "dry_run"
+        ],
+        "process_call_count": 1,
+        "shell": false
+      },
+      "id": "process.exactly_one_allowlisted_cli_call",
+      "observed": {
+        "argv": [
+          "<python>",
+          "<dominium-root>\\apps\\workbench\\module\\validation\\cli.py",
+          "--repo-root",
+          "<dominium-root>",
+          "--target",
+          "all",
+          "--profile",
+          "FAST",
+          "--surface",
+          "aide",
+          "--mode",
+          "dry_run"
+        ],
+        "process_call_count": 1,
+        "shell": false
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "process",
+      "description": "The recorded process environment contains the required Python isolation constraints.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend/invocation-result.json"
+      ],
+      "expected": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "0",
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONUTF8": "1"
+      },
+      "id": "process.environment_constraints",
+      "observed": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "0",
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONUTF8": "1"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "result",
+      "description": "The normalized AIDE result is derived from Dominium stdout JSON and preserves the typed Dominium refusal.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend/invocation-result.json"
+      ],
+      "expected": {
+        "command_id": "dominium.validation.run",
+        "origin": "dominium_stdout_json",
+        "refusal_code": "dominium.refusal.validation.tool_unavailable",
+        "status": "refused"
+      },
+      "id": "result.origin_and_refusal_are_dominium_stdout",
+      "observed": {
+        "command_id": "dominium.validation.run",
+        "constructed_success_result": false,
+        "origin": "dominium_stdout_json",
+        "refusal_code": "dominium.refusal.validation.tool_unavailable",
+        "returncode": 1,
+        "status": "refused"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "executor",
+      "description": "This backend does not use the accepted fixture callable as its executor.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend/invocation-result.json",
+        "core/interop/dominium/registered_validation_backend.py"
+      ],
+      "expected": false,
+      "id": "executor.fixture_callable_not_used",
+      "observed": {
+        "report_flag": false,
+        "source_contains_local_fixture_callable": false
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "dominium_boundary",
+      "description": "The typed refusal is corroborated by Dominium CLI, command, and service adapter source rather than only by AIDE booleans.",
+      "evidence_refs": [
+        "<dominium-root>/apps/workbench/module/validation/cli.py",
+        "<dominium-root>/apps/workbench/module/validation/command.py",
+        "<dominium-root>/apps/workbench/module/validation/service_adapter.py",
+        ".aide/reports/dominium-registered-validation-backend/invocation-result.json"
+      ],
+      "expected": true,
+      "id": "dominium.service_adapter_refusal_path_corroborated",
+      "observed": true,
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "dominium_boundary",
+      "description": "The AIDE adapter's boundary booleans are broader than a generic proof rule, although this invocation is corroborated by Dominium source.",
+      "evidence_refs": [
+        "core/interop/dominium/registered_validation_backend.py"
+      ],
+      "expected": false,
+      "id": "dominium.aide_boundary_boolean_is_too_broad_for_generic_reuse",
+      "observed": true,
+      "outcome": "WARN",
+      "severity": "warning",
+      "source_finding_id": null
+    },
+    {
+      "category": "authority",
+      "description": "Reports do not claim successful aggregate validation; they record a typed refusal for the unavailable aggregate validation suite.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend/validation.json",
+        ".aide/reports/dominium-registered-validation-backend/invocation-result.json"
+      ],
+      "expected": {
+        "dominium_command_status": "refused",
+        "successful_aggregate_validation": false
+      },
+      "id": "result.no_successful_aggregate_validation_claim",
+      "observed": {
+        "dominium_result_status": "refused",
+        "summary": "Validation command refused: aggregate validation suite service is not bound in the Workbench validation slice",
+        "validation_command_status": "refused"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "authority",
+      "description": "The proposed capability label must name the observed command-boundary proof rather than imply successful live validation.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend/validation.json",
+        ".aide/reports/dominium-registered-validation-backend/capability-descriptor.json"
+      ],
+      "expected": "dominium_registered_validation_command_boundary_readonly_v0",
+      "id": "authority.proposed_capability_label_precise",
+      "observed": "live_dominium_validation_command_readonly_v0",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "state",
+      "description": "Dominium revision, clean status, tracked tree digest, and command implementation digests remain unchanged.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend/invocation-result.json",
+        "<dominium-root> git status/rev-parse/ls-files"
+      ],
+      "expected": true,
+      "id": "state.dominium_unchanged",
+      "observed": {
+        "clean_match": true,
+        "current_branch_status": "## main...origin/main [behind 24]",
+        "implementation_digest_match": true,
+        "revision_match": true,
+        "tracked_tree_digest_match": true
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "boundary",
+      "description": "Typed result/refusal false-boundary fields emitted by this backend remain boolean false.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend/invocation-result.json"
+      ],
+      "expected": "all emitted false-boundary fields false",
+      "id": "boundary.false_fields_are_false",
+      "observed": {
+        "branch_or_worktree_created": false,
+        "database_opened": false,
+        "github_mutation_performed": false,
+        "network_call_performed": false,
+        "patch_transaction_applied": false,
+        "preview_or_apply_performed": false,
+        "provider_or_model_called": false,
+        "release_or_promotion_performed": false,
+        "service_started": false,
+        "source_repository_mutated": false,
+        "target_repository_mutated": false,
+        "workbench_started": false,
+        "worker_executed": false
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "evidence",
+      "description": "EvidencePacket artifacts and EventRecord references resolve to generated build records.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend/evidence-packet.json",
+        ".aide/reports/dominium-registered-validation-backend/event-record.json"
+      ],
+      "expected": true,
+      "id": "evidence.records_resolve",
+      "observed": {
+        "artifact_count": 5,
+        "artifacts_exist": true,
+        "event_refs_ok": true
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "reports",
+      "description": "All expected build report files are present.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend"
+      ],
+      "expected": [],
+      "id": "reports.required_build_reports_exist",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "scrub",
+      "description": "Generated build reports do not leak local absolute paths or secret-like values.",
+      "evidence_refs": [
+        ".aide/reports/dominium-registered-validation-backend"
+      ],
+      "expected": [],
+      "id": "scrub.no_report_path_or_secret_leak",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "scrub",
+      "description": "The backend source still contains a temporary local Dominium discovery fallback; this is warning-class for the build and must not move into generic infrastructure.",
+      "evidence_refs": [
+        "core/interop/dominium/registered_validation_backend.py"
+      ],
+      "expected": false,
+      "id": "scrub.source_contains_temporary_local_fallback",
+      "observed": true,
+      "outcome": "WARN",
+      "severity": "warning",
+      "source_finding_id": null
+    }
+  ],
+  "dominium_command_status": "refused",
+  "findings": [
+    {
+      "expected": "dominium_registered_validation_command_boundary_readonly_v0",
+      "id": "capability_label.overclaims_observed_boundary",
+      "observed": "live_dominium_validation_command_readonly_v0",
+      "repair": "Relabel proposed capability and generated surfaces to dominium_registered_validation_command_boundary_readonly_v0 without changing the underlying evidence.",
+      "severity": "material",
+      "source_assertion_id": "authority.proposed_capability_label_precise",
+      "status": "OPEN",
+      "summary": "The build proposes a label that can be read as successful live validation, while the observed proof is a registered command-boundary invocation that returned a typed refusal."
+    }
+  ],
+  "fixture_callable_used_as_executor": false,
+  "live_dominium_command_boundary_proven": true,
+  "material_finding_count": 1,
+  "missing_evidence": 0,
+  "process_call_count": 1,
+  "proven_capability": "dominium_registered_validation_command_boundary_readonly_v0",
+  "recommended_next_task": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01",
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.dominium-registered-validation-backend-check.v1",
+  "source_commit": "1206980e8897ba6031d2d142743d9cac53be1817",
+  "source_proposed_capability": "live_dominium_validation_command_readonly_v0",
+  "source_task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+  "successful_aggregate_validation_proven": false,
+  "task_id": "AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+  "warnings": [
+    "AIDE marks command/service boundaries reached whenever parsed Dominium JSON exists; genericization should use adapter-specific evidence instead.",
+    "The Dominium backend source contains a temporary local checkout fallback; generic process infrastructure must not inherit it.",
+    "Dominium returned a typed refusal because aggregate validation suite service is not bound in this Workbench validation slice.",
+    "The local Dominium checkout is pinned and clean but remains behind origin/main."
+  ]
+}
