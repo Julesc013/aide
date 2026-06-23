@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
+
+- Title: Check Dominium Registered Validation Backend Relabel
+- Status: needs_review
+- Objective: independently verify the bounded relabel task and decide whether precise acceptance may proceed.
+- Scope: check task/evidence, `.aide/reports/dominium-registered-validation-backend-relabel-check/**`, queue index, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01` at commit `78e24e2`, result `PASS_WITH_WARNINGS`, and `missing_evidence: 0`.
+- Milestones: active label scan completed; historical evidence integrity checked; boundary claims reviewed; no-overclaiming review completed; validation completed.
+- Blockers: none. Warnings: this check does not accept the capability; historical evidence still contains the superseded label; local Dominium remains behind `origin/main`.
+- Verification Intent: evidence-local independent checker, focused tests, backend validation, task inspect/evidence, leakage scans, broad validation, diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, and next task exactly `AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01`.
+- Notes: no implementation, report repair, or live Dominium invocation is authorized by this check.
+
 ### Plan ID: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
 
 - Title: Build Dominium Registered Validation Backend Relabel

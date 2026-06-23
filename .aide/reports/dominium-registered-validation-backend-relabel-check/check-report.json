@@ -1,0 +1,168 @@
+{
+  "assertions": [
+    {
+      "expected": "dominium_registered_validation_command_boundary_invocation_v0",
+      "item": "invocation-result.active_label",
+      "observed": "dominium_registered_validation_command_boundary_invocation_v0",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": "dominium_registered_validation_command_boundary_invocation_v0",
+      "item": "validation.active_label",
+      "observed": "dominium_registered_validation_command_boundary_invocation_v0",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": "dominium_registered_validation_command_boundary_invocation_v0",
+      "item": "capability-descriptor.active_label",
+      "observed": "dominium_registered_validation_command_boundary_invocation_v0",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": "dominium_registered_validation_command_boundary_invocation_v0",
+      "item": "projection.active_label",
+      "observed": "dominium_registered_validation_command_boundary_invocation_v0",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": [],
+      "item": "active.old_label_not_misused",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": [],
+      "item": "historical.predecessor_evidence_unchanged",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": true,
+      "item": "boundary.process_started",
+      "observed": {
+        "invocation": true,
+        "validation": true
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": 1,
+      "item": "boundary.launcher_call_count",
+      "observed": {
+        "invocation": 1,
+        "validation": 1
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": true,
+      "item": "boundary.structured_output_parsed",
+      "observed": {
+        "invocation": true,
+        "validation": true
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": "proven",
+      "item": "boundary.registered_command_boundary_reached",
+      "observed": {
+        "invocation": "proven",
+        "validation": "proven"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": "unproven",
+      "item": "boundary.service_adapter_boundary_reached",
+      "observed": {
+        "invocation": "unproven",
+        "validation": "unproven"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": "typed_refusal",
+      "item": "boundary.domain_outcome",
+      "observed": {
+        "invocation": "typed_refusal",
+        "validation": "typed_refusal"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": false,
+      "item": "boundary.aggregate_validation_executed",
+      "observed": {
+        "invocation": false,
+        "validation": false
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": false,
+      "item": "boundary.aggregate_validation_succeeded",
+      "observed": {
+        "invocation": false,
+        "validation": false
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": "none_detected_within_probe_coverage",
+      "item": "boundary.mutation_observation",
+      "observed": {
+        "invocation": "none_detected_within_probe_coverage",
+        "validation": "none_detected_within_probe_coverage"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": {
+        "refusal_code": "dominium.refusal.validation.tool_unavailable",
+        "status": "refused"
+      },
+      "item": "domain.typed_refusal_preserved",
+      "observed": {
+        "refusal_code": "dominium.refusal.validation.tool_unavailable",
+        "status": "refused"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "expected": [],
+      "item": "scrub.no_local_paths_or_secret_like_tokens",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material"
+    }
+  ],
+  "checked_capability_label": "dominium_registered_validation_command_boundary_invocation_v0",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.dominium-registered-validation-relabel-check.v1",
+  "source_task": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01",
+  "task_id": "AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01",
+  "warnings": [
+    "Historical predecessor evidence intentionally retains the old label.",
+    "This check does not accept the capability."
+  ]
+}

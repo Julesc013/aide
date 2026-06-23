@@ -1858,6 +1858,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/evidence
     description: Bounded relabel repair for the Dominium registered validation backend. Supersedes the overbroad live_dominium_validation_command_readonly_v0 active label with dominium_registered_validation_command_boundary_invocation_v0, separates process, transport, registered-command, service-adapter, aggregate-validation, and probe-scoped mutation facts, refreshes active registered-validation reports from existing invocation artifacts without rerunning the live Dominium CLI, preserves historical evidence, and recommends exactly AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01. Does not change execution behavior, mutate Dominium, broaden dispatch, implement a generic provider, call providers/models/network, run workers, start Service/Workbench, preview/apply/rollback, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.
+  - id: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check Dominium Registered Validation Backend Relabel
+    task: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01/evidence
+    description: Check-only independent review of AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01. Verifies the active label dominium_registered_validation_command_boundary_invocation_v0, confirms the superseded label appears only as historical or superseded data, preserves source build/check evidence integrity, verifies active boundary claim separation and typed refusal semantics, confirms no aggregate-validation success or service-adapter acceptance claim, and recommends exactly AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01. Does not repair implementation, rerun the live Dominium CLI, mutate Dominium, broaden dispatch, implement generic provider behavior, call providers/models/network, run workers, preview/apply/rollback, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked
