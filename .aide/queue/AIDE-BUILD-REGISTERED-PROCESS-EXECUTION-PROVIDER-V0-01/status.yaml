@@ -1,0 +1,58 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+status: needs_review
+planning_state: implemented
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-24
+summary: Built a generic registered process execution provider v0 and adapted Dominium over it without accepting the provider.
+validation_status: PASS_WITH_WARNINGS
+source_accept_task: AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+source_accept_commit: 0754363
+source_accept_result: ACCEPTED_WITH_WARNINGS
+accepted_source_capability: dominium_registered_validation_command_boundary_invocation_v0
+proposed_capability: registered_process_execution_provider_v0
+missing_evidence: 0
+material_finding_count: 0
+generic_provider_domain_scan_findings: 0
+dominium_parity_preserved: true
+live_dominium_command_rerun: false
+dominium_modified: false
+arbitrary_shell_command_executed: false
+private_tool_called: false
+broad_dispatch_used: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+workbench_apply_performed: false
+preview_or_apply_performed: false
+patch_transaction_applied: false
+source_repository_mutated: false
+target_repository_mutated: false
+aide_repository_task_scoped_mutation_performed: true
+dominium_or_target_repository_mutated: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+provider_accepted: false
+recommended_next_task: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+evidence:
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/architecture-boundary.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/generic-vs-domain-ownership.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/extracted-components.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/compatibility-and-parity.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/genericity-scan.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/conformance-matrix.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/validation-results.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/next-task-prompt.md
+warnings:
+  - The provider is proposed only and requires an independent check before acceptance.
+  - Full child-process-tree termination, persistent idempotency, resource quotas, streaming artifact storage, and non-Git state providers are not implemented in v0.
+  - The live Dominium command was not rerun; parity is fixture and report validation based.
+blockers: []

@@ -19,7 +19,15 @@ from collections.abc import Callable, Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
+from core.execution.registered_process import (
+    DecoderResult,
+    PreconditionResult,
+    RegisteredProcessExecutionProvider,
+    RegisteredProcessSpec,
+)
 from core.protocol import envelope, event_record, evidence_packet, reference_id, workunit
+from core.protocol.execution_receipt import CapabilityOutcome, ProcessExecutionReceipt
+from core.protocol.process_invocation import ArgumentToken, CapabilityBinding, CapabilityInvocation
 
 
 TASK_ID = "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
@@ -584,109 +592,215 @@ def parse_dominium_stdout(stdout: str) -> tuple[dict[str, Any] | None, str | Non
     return parsed, None
 
 
-def invoke_registered_validation(
-    request: Mapping[str, Any],
-    *,
-    runner: Runner | CountingRunner | None = None,
-) -> dict[str, Any]:
-    dominium_root = Path(str(request.get("dominium_root", ""))).resolve()
-    before_state = capture_dominium_state(dominium_root) if dominium_root.exists() else {"repository_present": False}
-    preflight = _preflight_error(request, before_state)
-    if preflight is not None:
-        code, message = preflight
-        result = {
-            **refusal(request=request, reason_code=code, message=message, process_call_count=0),
-            "before_state": before_state,
-            "after_state": before_state,
-            "checkout_state_unchanged": True,
-        }
-        return _boundary_classification(result)
+class DominiumStateProbe:
+    coverage = STATE_PROBE_COVERAGE
 
-    active_runner = runner if isinstance(runner, CountingRunner) else CountingRunner(runner)
-    stdout = ""
-    stderr = ""
-    returncode: int | None = None
-    dominium_result: dict[str, Any] | None = None
-    parse_error: str | None = None
-    try:
-        completed = active_runner(
-            [str(item) for item in request["argv"]],
-            dominium_root,
-            sanitized_environment(),
-            float(request.get("timeout_seconds") or DEFAULT_TIMEOUT_SECONDS),
+    def __init__(self, root: Path):
+        self.root = root
+
+    def capture(self) -> Mapping[str, Any]:
+        if self.root.exists():
+            return capture_dominium_state(self.root)
+        return {"repository_present": False}
+
+    def mutation_observation(
+        self,
+        before_state: Mapping[str, Any],
+        after_state: Mapping[str, Any],
+    ) -> str:
+        if (
+            before_state.get("revision") == after_state.get("revision")
+            and before_state.get("porcelain_status") == after_state.get("porcelain_status")
+            and before_state.get("tracked_tree_digest") == after_state.get("tracked_tree_digest")
+            and before_state.get("command_implementation_digests") == after_state.get("command_implementation_digests")
+        ):
+            return "none_detected_within_probe_coverage"
+        return "mutation_detected_within_probe_coverage"
+
+
+class DominiumPrecondition:
+    def __init__(self, request: Mapping[str, Any]):
+        self.request = request
+
+    def check(
+        self,
+        invocation: CapabilityInvocation,
+        binding: CapabilityBinding,
+        spec: RegisteredProcessSpec,
+        before_state: Mapping[str, Any],
+    ) -> PreconditionResult:
+        preflight = _preflight_error(self.request, before_state)
+        if preflight is None:
+            return PreconditionResult(True)
+        code, message = preflight
+        return PreconditionResult(False, code, message)
+
+
+class DominiumOutputDecoder:
+    decoder_id = "dominium.validation.run-json-v0"
+
+    def decode(self, stdout: str, stderr: str, returncode: int | None) -> DecoderResult:
+        parsed, parse_error = parse_dominium_stdout(stdout)
+        if parse_error:
+            return DecoderResult(
+                "refused",
+                "none",
+                domain_result=parsed,
+                reason_code=parse_error,
+                message="Dominium validation command stdout did not contain expected command JSON.",
+            )
+        if parsed and parsed.get("status") == "refused":
+            return DecoderResult("decoded", "typed_refusal", domain_result=parsed, refusal=parsed)
+        return DecoderResult("decoded", "typed_result", domain_result=parsed or {})
+
+
+class DominiumStreamScrubber:
+    scrubber_id = "dominium-report-stream-scrubber-v0"
+
+    def __init__(self, request: Mapping[str, Any]):
+        self.dominium_root = str(request.get("dominium_root", ""))
+        self.python_executable = str(request.get("python_executable", ""))
+
+    def scrub(self, text: str) -> str:
+        return scrub_string(text, dominium_root=self.dominium_root, python_executable=self.python_executable)
+
+
+def build_registered_process_spec(request: Mapping[str, Any]) -> RegisteredProcessSpec:
+    argv = [str(item) for item in request.get("argv", [])]
+    executable = argv[0] if argv else ""
+    return RegisteredProcessSpec(
+        capability_ref=CAPABILITY_REF,
+        executable=executable,
+        argument_plan=[ArgumentToken("literal", item) for item in argv[1:]],
+        working_directory=str(Path(str(request.get("dominium_root", ""))).resolve()),
+        timeout_seconds=float(request.get("timeout_seconds") or DEFAULT_TIMEOUT_SECONDS),
+        environment=sanitized_environment(),
+        decoder_id=DominiumOutputDecoder.decoder_id,
+        state_probe_id="dominium-git-state-probe-v0",
+        mutation_policy="none_detected_within_probe_coverage",
+        scrubber_id=DominiumStreamScrubber.scrubber_id,
+        provider_spec_ref="aide://provider-spec/dominium-registered-validation-command-boundary-v0",
+        conformance_profile_ref="aide://conformance-profile/dominium-registered-validation-command-boundary-v0",
+        metadata={
+            "argv_template": list(request.get("argv_template", [])),
+            "target": request.get("target"),
+            "profile": request.get("profile"),
+            "surface": request.get("surface"),
+            "mode": request.get("mode"),
+        },
+    )
+
+
+def _dominium_reason_code(reason_code: str, receipt: ProcessExecutionReceipt, outcome: CapabilityOutcome) -> str:
+    if reason_code in set(REFUSAL_CODES.values()):
+        return reason_code
+    if reason_code == "missing_executable":
+        return REFUSAL_CODES["cli_missing"]
+    if reason_code == "digest_mismatch":
+        return REFUSAL_CODES["digest_mismatch"]
+    if reason_code == "invalid_spec":
+        return REFUSAL_CODES["invalid_request"]
+    if receipt.timed_out or reason_code == "timeout":
+        return REFUSAL_CODES["timeout"]
+    return reason_code or REFUSAL_CODES["invalid_request"]
+
+
+def _receipt_launch(receipt: ProcessExecutionReceipt) -> dict[str, Any] | None:
+    launch = receipt.metadata.get("launch") if isinstance(receipt.metadata, Mapping) else None
+    if not isinstance(launch, Mapping):
+        return None
+    environment_constraints = {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONUTF8": "1",
+        "PYTHONHASHSEED": "0",
+    }
+    return {
+        "argv": [str(item) for item in launch.get("argv", [])],
+        "cwd": str(launch.get("cwd", "")),
+        "env": environment_constraints,
+        "environment_manifest_digest": launch.get("environment_manifest_digest", ""),
+        "timeout": launch.get("timeout"),
+        "shell": False,
+    }
+
+
+def _result_from_provider(
+    *,
+    request: Mapping[str, Any],
+    receipt: ProcessExecutionReceipt,
+    outcome: CapabilityOutcome,
+) -> dict[str, Any]:
+    before_state = dict(receipt.metadata.get("before_state", {})) if isinstance(receipt.metadata, Mapping) else {}
+    after_state = dict(receipt.metadata.get("after_state", {})) if isinstance(receipt.metadata, Mapping) else {}
+    dominium_result = dict(outcome.domain_result or {})
+    stdout_excerpt = str(receipt.stdout.get("excerpt", "")) if isinstance(receipt.stdout, Mapping) else ""
+    stderr_excerpt = str(receipt.stderr.get("excerpt", "")) if isinstance(receipt.stderr, Mapping) else ""
+    state_changed = receipt.mutation_observation != "none_detected_within_probe_coverage"
+    if receipt.launcher_call_count == 0:
+        result = refusal(
+            request=request,
+            reason_code=_dominium_reason_code(outcome.reason_code, receipt, outcome),
+            message=outcome.message or "Registered process preflight refused launch.",
+            process_call_count=0,
+            dominium_result=dominium_result or None,
+            returncode=receipt.return_code,
+            stdout=stdout_excerpt,
+            stderr=stderr_excerpt,
         )
-        stdout = str(completed.stdout or "")
-        stderr = str(completed.stderr or "")
-        returncode = int(completed.returncode)
-        dominium_result, parse_error = parse_dominium_stdout(stdout)
-    except subprocess.TimeoutExpired as exc:
-        stdout = str(exc.stdout or "")
-        stderr = str(exc.stderr or "")
+    elif receipt.timed_out:
         result = refusal(
             request=request,
             reason_code=REFUSAL_CODES["timeout"],
             message="Dominium validation command timed out.",
-            process_call_count=len(active_runner.calls),
+            process_call_count=receipt.launcher_call_count,
             returncode=None,
-            stdout=stdout,
-            stderr=stderr,
+            stdout=stdout_excerpt,
+            stderr=stderr_excerpt,
         )
-        result["before_state"] = before_state
-        result["after_state"] = capture_dominium_state(dominium_root)
-        result["checkout_state_unchanged"] = result["before_state"] == result["after_state"]
-        return _boundary_classification(result)
-
-    after_state = capture_dominium_state(dominium_root)
-    state_changed = (
-        before_state.get("revision") != after_state.get("revision")
-        or before_state.get("porcelain_status") != after_state.get("porcelain_status")
-        or before_state.get("tracked_tree_digest") != after_state.get("tracked_tree_digest")
-        or before_state.get("command_implementation_digests") != after_state.get("command_implementation_digests")
-    )
-    call_count = len(active_runner.calls)
-    if state_changed:
+    elif state_changed:
         result = refusal(
             request=request,
             reason_code=REFUSAL_CODES["unexpected_mutation"],
             message="Dominium checkout state changed during read-only validation command invocation.",
-            process_call_count=call_count,
-            dominium_result=dominium_result,
-            returncode=returncode,
-            stdout=stdout,
-            stderr=stderr,
+            process_call_count=receipt.launcher_call_count,
+            dominium_result=dominium_result or None,
+            returncode=receipt.return_code,
+            stdout=stdout_excerpt,
+            stderr=stderr_excerpt,
         )
-    elif parse_error:
+    elif outcome.reason_code:
         result = refusal(
             request=request,
-            reason_code=parse_error,
-            message="Dominium validation command stdout did not contain the expected command JSON.",
-            process_call_count=call_count,
-            dominium_result=dominium_result,
-            returncode=returncode,
-            stdout=stdout,
-            stderr=stderr,
+            reason_code=_dominium_reason_code(outcome.reason_code, receipt, outcome),
+            message=outcome.message or "Dominium validation command stdout did not contain the expected command JSON.",
+            process_call_count=receipt.launcher_call_count,
+            dominium_result=dominium_result or None,
+            returncode=receipt.return_code,
+            stdout=stdout_excerpt,
+            stderr=stderr_excerpt,
         )
-    elif returncode not in (0, None) and dominium_result and dominium_result.get("status") != "refused":
+    elif receipt.return_code not in (0, None) and dominium_result.get("status") != "refused":
         result = refusal(
             request=request,
             reason_code=REFUSAL_CODES["nonzero_exit"],
             message="Dominium validation command exited nonzero without a typed Dominium refusal status.",
-            process_call_count=call_count,
+            process_call_count=receipt.launcher_call_count,
             dominium_result=dominium_result,
-            returncode=returncode,
-            stdout=stdout,
-            stderr=stderr,
+            returncode=receipt.return_code,
+            stdout=stdout_excerpt,
+            stderr=stderr_excerpt,
         )
-    elif returncode not in (0, None):
+    elif receipt.return_code not in (0, None):
         result = refusal(
             request=request,
             reason_code=REFUSAL_CODES["nonzero_exit"],
             message="Dominium validation command returned a typed refusal.",
-            process_call_count=call_count,
+            process_call_count=receipt.launcher_call_count,
             dominium_result=dominium_result,
-            returncode=returncode,
-            stdout=stdout,
-            stderr=stderr,
+            returncode=receipt.return_code,
+            stdout=stdout_excerpt,
+            stderr=stderr_excerpt,
         )
     else:
         result = {
@@ -699,41 +813,71 @@ def invoke_registered_validation(
             "status": "PASS",
             "reason_code": "",
             "message": "Dominium validation command returned typed JSON output.",
-            "process_call_count": call_count,
-            "actual_dominium_cli_process_spawned": call_count == 1,
+            "process_call_count": receipt.launcher_call_count,
+            "actual_dominium_cli_process_spawned": receipt.launcher_call_count == 1,
             "fixture_callable_used_as_executor": False,
             "result_origin": "dominium_stdout_json",
             "constructed_success_result": False,
-            "returncode": returncode,
-            "stdout": stream_summary(stdout),
-            "stderr": stream_summary(stderr),
+            "returncode": receipt.return_code,
+            "stdout": dict(receipt.stdout),
+            "stderr": dict(receipt.stderr),
             "dominium_stdout_json_parsed": True,
-            "dominium_command_result": dict(dominium_result or {}),
+            "dominium_command_result": dominium_result,
             "typed_refusal": False,
             "typed_result": True,
             "service_adapter_boundary_reached": "unproven",
             "run_validation_command_boundary_reached": "proven",
             **_false_boundary(),
         }
+    result["stdout"] = dict(receipt.stdout)
+    result["stderr"] = dict(receipt.stderr)
     result["before_state"] = before_state
     result["after_state"] = after_state
     result["checkout_state_unchanged"] = not state_changed
-    environment_constraints = {
+    result["allowlisted_process_call"] = _receipt_launch(receipt)
+    result["argv_template"] = request.get("argv_template")
+    result["environment_constraints"] = {
         "PYTHONDONTWRITEBYTECODE": "1",
         "PYTHONNOUSERSITE": "1",
         "PYTHONUTF8": "1",
         "PYTHONHASHSEED": "0",
     }
-    if active_runner.calls:
-        call = dict(active_runner.calls[0])
-        env = call.get("env", {}) if isinstance(call.get("env"), dict) else {}
-        call["env"] = {key: env.get(key) for key in environment_constraints}
-        result["allowlisted_process_call"] = call
-    else:
-        result["allowlisted_process_call"] = None
-    result["argv_template"] = request.get("argv_template")
-    result["environment_constraints"] = environment_constraints
+    result["process_execution_receipt"] = receipt.to_dict()
+    result["capability_outcome"] = outcome.to_dict()
     return _boundary_classification(result)
+
+
+def invoke_registered_validation(
+    request: Mapping[str, Any],
+    *,
+    runner: Runner | CountingRunner | None = None,
+) -> dict[str, Any]:
+    dominium_root = Path(str(request.get("dominium_root", ""))).resolve()
+    spec = build_registered_process_spec(request)
+    invocation = CapabilityInvocation(
+        invocation_ref="aide://invocation/dominium-registered-validation-command-boundary-01",
+        capability_ref=CAPABILITY_REF,
+        values={"capability_id": CAPABILITY_ID},
+    )
+    binding = CapabilityBinding(
+        capability_ref=CAPABILITY_REF,
+        provider_id=RegisteredProcessExecutionProvider.provider_id,
+        provider_spec_ref=spec.provider_spec_ref,
+        provider_spec=spec,
+        decoder_id=spec.decoder_id,
+        state_probe_id=spec.state_probe_id,
+        scrubber_id=spec.scrubber_id,
+        conformance_profile_ref=spec.conformance_profile_ref,
+    )
+    provider = RegisteredProcessExecutionProvider(
+        runner=runner,
+        precondition=DominiumPrecondition(request),
+        state_probe=DominiumStateProbe(dominium_root),
+        output_decoder=DominiumOutputDecoder(),
+        stream_scrubber=DominiumStreamScrubber(request),
+    )
+    receipt, outcome = provider.execute(invocation, binding)
+    return _result_from_provider(request=request, receipt=receipt, outcome=outcome)
 
 
 def scrub_string(value: str, *, dominium_root: str = "", python_executable: str = "") -> str:

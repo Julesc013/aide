@@ -10,6 +10,8 @@ __all__ = [
     "event_record",
     "evidence_packet",
     "patch_transaction",
+    "process_invocation",
+    "execution_receipt",
     "reference_id",
     "test_job",
     "worker_run",

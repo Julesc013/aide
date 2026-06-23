@@ -1878,6 +1878,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01/evidence
     description: Acceptance-only gate for the Dominium registered validation backend chain. Accepts exactly dominium_registered_validation_command_boundary_invocation_v0 after the relabel check reported PASS_WITH_WARNINGS, missing_evidence 0, and material_finding_count 0. Preserves warnings that the observed domain outcome was a typed refusal, aggregate validation did not succeed and is not accepted as executed, service-adapter entry is not accepted without independent Dominium evidence, mutation observation is limited to declared probe coverage, and local Dominium remains behind origin/main. Recommends exactly AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01. Does not implement or refactor execution code, rerun the live Dominium CLI, mutate Dominium, broaden dispatch, accept a generic provider, call providers/models/network, run workers, preview/apply/rollback, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.
+  - id: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+    status: needs_review
+    planning_state: implemented
+    result: PASS_WITH_WARNINGS
+    title: Build Registered Process Execution Provider v0
+    task: .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence
+    description: Build task that extracts the reusable registered-process execution mechanics from the accepted Dominium registered validation command-boundary proof into a domain-neutral RegisteredProcessExecutionProvider v0. Adds neutral invocation, binding, receipt, outcome, provider, precondition, probe, decoder, scrubber, and fake-runner seams; refactors the Dominium registered validation backend into a thin adapter; preserves the accepted Dominium typed-refusal parity without rerunning the live Dominium command; and recommends exactly AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01. Stops at needs_review with PASS_WITH_WARNINGS and does not accept the provider, implement a generic arbitrary-command CLI, mutate Dominium or target repositories, call providers/models/network, run workers, start Service/Workbench/runtime, preview/apply/rollback, create branches/worktrees, mutate GitHub, release, or promote.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

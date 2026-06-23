@@ -1,0 +1,67 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+title: Build Registered Process Execution Provider v0
+type: build
+status: needs_review
+planning_state: implemented
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-24
+updated_at: 2026-06-24
+source_accept_task: AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
+source_accept_commit: 0754363
+source_accept_result: ACCEPTED_WITH_WARNINGS
+accepted_source_capability: dominium_registered_validation_command_boundary_invocation_v0
+proposed_capability: registered_process_execution_provider_v0
+objective: >
+  Extract reusable registered-process execution mechanics from the accepted
+  Dominium proof into a domain-neutral provider while preserving Dominium
+  behavior through a thin adapter.
+allowed_paths:
+  - core/execution/**
+  - core/protocol/process_invocation.py
+  - core/protocol/execution_receipt.py
+  - core/protocol/__init__.py
+  - core/interop/dominium/registered_validation_backend.py
+  - .aide/scripts/tests/test_aide_registered_process_provider.py
+  - .aide/scripts/tests/test_aide_dominium_registered_validation_backend.py
+  - .aide/reports/registered-process-execution-provider-v0/**
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide/reports/dominium-registered-validation-backend/**
+  - .aide/reports/dominium-registered-validation-backend-accept/**
+  - .aide/reports/dominium-registered-validation-backend-relabel/**
+  - .aide/reports/dominium-registered-validation-backend-relabel-check/**
+  - Dominium
+  - <dominium-root>/**
+aide_repository_task_scoped_mutation_authorized: true
+dominium_or_target_repository_mutation_authorized: false
+live_dominium_command_rerun_authorized: false
+provider_acceptance_authorized: false
+runtime_authorized: false
+network_authorized: false
+provider_or_model_authorized: false
+worker_authorized: false
+workbench_apply_authorized: false
+github_mutation_authorized: false
+recommended_next_task: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+explicit_non_capabilities:
+  - universal_execution_ontology
+  - arbitrary_command_runner
+  - generic_command_cli
+  - live_dominium_command_rerun
+  - provider_acceptance
+  - child_process_tree_termination
+  - persistent_idempotency
+  - resource_quota_enforcement
+  - streaming_artifact_storage
+  - non_git_state_providers
+  - runtime_service
+  - worker_execution
+  - provider_model_network_calls
+  - preview_apply_rollback
+  - repository_mutation
+  - branch_worktree_github_release_behavior

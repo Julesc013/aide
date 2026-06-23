@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+
+- Title: Build Registered Process Execution Provider v0
+- Status: needs_review
+- Objective: extract reusable registered-process execution mechanics from the accepted Dominium registered validation command-boundary proof into a domain-neutral provider while preserving Dominium behavior through a thin adapter.
+- Scope: neutral execution/protocol modules, Dominium registered-validation adapter refactor, focused provider and Dominium parity tests, `.aide/reports/registered-process-execution-provider-v0/**`, task/evidence, queue index, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01` at commit `0754363`, result `ACCEPTED_WITH_WARNINGS`, accepted capability exactly `dominium_registered_validation_command_boundary_invocation_v0`.
+- Milestones: generic protocol records added; registered process provider implemented with injected preflight, state probe, output decoder, scrubber, and runner ports; Dominium backend adapted over the provider; focused conformance and parity tests added; task evidence and reports materialized.
+- Blockers: none. Warnings: provider is proposed only; full child-process-tree termination, persistent idempotency, resource quotas, streaming artifact storage, and non-Git state providers are not implemented in v0; live Dominium command was not rerun.
+- Verification Intent: Python compile, focused generic-provider tests, focused Dominium parity tests, backend report validation, schema/JSON parsing, genericity and leakage scans, task inspect/evidence, broad validation, Dominium clean-state inspection, diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, proposed capability `registered_process_execution_provider_v0`, no provider acceptance, and next task exactly `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01`.
+- Notes: this task does not implement a universal execution ontology, arbitrary-command runner, generic command CLI, runtime, worker, provider/model/network behavior, preview/apply/rollback, repository apply behavior, branch/worktree automation, GitHub mutation, release, or promotion.
+
 ### Plan ID: AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
 
 - Title: Accept Dominium Registered Validation Backend

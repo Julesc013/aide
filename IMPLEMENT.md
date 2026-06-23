@@ -39,6 +39,55 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+
+Completed with warnings and awaiting independent review.
+
+Changed:
+
+- `core/protocol/process_invocation.py`
+- `core/protocol/execution_receipt.py`
+- `core/protocol/__init__.py`
+- `core/execution/**`
+- `core/interop/dominium/registered_validation_backend.py`
+- `.aide/scripts/tests/test_aide_registered_process_provider.py`
+- `.aide/scripts/tests/test_aide_dominium_registered_validation_backend.py`
+- `.aide/reports/registered-process-execution-provider-v0/**`
+- `.aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The proposed capability is:
+
+```text
+registered_process_execution_provider_v0
+```
+
+The provider introduces neutral CapabilityInvocation, CapabilityBinding,
+ExecutionProvider, RegisteredProcessExecutionProvider, OutputDecoder,
+CapabilityOutcome, ProcessExecutionReceipt, and evidence/event projection
+shapes. The generic provider owns shell-free bounded process launch mechanics,
+preconditions, timeout, controlled environment, state probes, stream scrubbing,
+decoder invocation, neutral receipts, and fake-runner test seams.
+
+The Dominium registered validation backend is now a thin domain adapter over
+the generic provider. The accepted observable boundary is preserved: one
+launcher call, exact argv, `shell=False`, typed Dominium refusal semantics,
+declared probe-scoped no-mutation observation, and no aggregate-validation
+success claim. The live Dominium command was not rerun.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+```
+
+This build does not accept the provider, implement a universal execution
+ontology, arbitrary-command CLI, runtime, worker, provider/model/network
+behavior, preview/apply/rollback, target-repository mutation, branch/worktree
+automation, GitHub mutation, release, or promotion.
+
 ## Work Item: AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
 
 Completed as acceptance-only metadata work and awaiting review.

@@ -1,0 +1,45 @@
+{
+  "dominium_adapter_parity_preserved": true,
+  "explicit_non_capabilities": [
+    "universal_execution_ontology",
+    "arbitrary_command_runner",
+    "generic_command_cli",
+    "live_dominium_command_rerun",
+    "provider_acceptance",
+    "child_process_tree_termination",
+    "persistent_idempotency",
+    "resource_quota_enforcement",
+    "streaming_artifact_storage",
+    "non_git_state_providers",
+    "runtime_service",
+    "worker_execution",
+    "provider_model_network_calls",
+    "preview_apply_rollback",
+    "repository_mutation",
+    "branch_worktree_github_release_behavior"
+  ],
+  "generic_components": [
+    "core/protocol/process_invocation.py",
+    "core/protocol/execution_receipt.py",
+    "core/execution/provider.py",
+    "core/execution/registered_process.py"
+  ],
+  "generic_provider_domain_scan_findings": 0,
+  "kind": "RegisteredProcessExecutionProviderBuildReport",
+  "live_dominium_command_rerun": false,
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "next_task": "AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01",
+  "provider_accepted": false,
+  "proposed_capability": "registered_process_execution_provider_v0",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.registered-process-execution-provider-v0.build-report.v1",
+  "source_accept_commit": "0754363",
+  "source_accept_task": "AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01",
+  "task_id": "AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01",
+  "warnings": [
+    "The provider is proposed only and requires an independent check before acceptance.",
+    "Full child-process-tree termination, persistent idempotency, resource quotas, streaming artifact storage, and non-Git state providers are not implemented in v0.",
+    "The live Dominium command was not rerun; parity is fixture and report validation based."
+  ]
+}
