@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
+
+- Title: Accept ExecutionHost Contract v0
+- Status: needs_review
+- Objective: accept exactly `execution_host_contract_v0` as a projection-only contract after the build and check gates passed with warnings and zero material findings.
+- Scope: acceptance task/evidence, `.aide/reports/execution-host-contract-accept/**`, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01` and `AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01`, both complete with missing evidence `0`; check material finding count `0`.
+- Milestones: predecessor evidence reviewed; accepted capability boundary recorded; warnings preserved; explicit non-capabilities recorded; acceptance reports and task evidence written.
+- Blockers: none. LocalProcessExecutionHost remains a separate next build task.
+- Verification Intent: predecessor task inspect/evidence, acceptance task inspect/evidence, ExecutionHost validate, broad validation, local-path and secret-like scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted capability exactly `execution_host_contract_v0`, missing evidence `0`, and next task exactly `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01`.
+- Notes: this acceptance does not accept or implement live ExecutionHost, LocalProcessExecutionHost, worker execution, Service/runtime, Workbench, provider/model/network calls, preview/apply/rollback, repository mutation, GitHub mutation, release, or promotion.
+
 ### Plan ID: AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
 
 - Title: Check ExecutionHost Contract v0

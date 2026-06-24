@@ -39,6 +39,42 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
+
+Completed as an acceptance-only consolidation and awaiting review.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01/**`
+- `.aide/reports/execution-host-contract-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Accepted exactly:
+
+```text
+execution_host_contract_v0
+```
+
+The accepted scope is projection-only: ExecutionHost descriptor, run binding,
+event, artifact, approval, usage, v0 operation vocabulary, false-boundary
+fields, explicit non-capabilities, and the AIDE Lite
+`execution-host status/project/validate` projection surface.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+```
+
+No live ExecutionHost, LocalProcessExecutionHost, RemoteExecutionHost, worker
+execution, worker harness, scheduler, provider/model/network call,
+Service/runtime behavior, Workbench behavior, PreviewSession,
+DevelopmentTransaction, PatchTransaction apply, repository mutation,
+branch/worktree mutation, GitHub mutation, release, or promotion was accepted
+or implemented.
+
 ## Work Item: AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
 
 Completed with warnings and awaiting acceptance review.

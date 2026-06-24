@@ -1,0 +1,75 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
+title: Accept ExecutionHost Contract v0
+type: accept
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Accept exactly the projection-only ExecutionHost contract v0 after the build
+  and independent check passed with warnings and zero material findings.
+accepted_capability: execution_host_contract_v0
+accepted_scope:
+  - projection-only ExecutionHostDescriptor
+  - projection-only ExecutionHostRunBinding
+  - projection-only ExecutionHostEvent
+  - projection-only ExecutionHostArtifact
+  - projection-only ExecutionHostApproval
+  - projection-only ExecutionHostUsage
+  - v0 worker/session operation vocabulary
+  - false-boundary field set
+  - explicit non-capabilities
+  - AIDE Lite execution-host status/project/validate projection surface
+authorizes_implementation: false
+check_only: false
+acceptance_only: true
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
+  - AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01/**
+  - .aide/reports/execution-host-contract-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/protocol/execution_host.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-execution-host.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_execution_host_contract.py
+  - .aide/reports/execution-host-contract/**
+  - .aide/reports/execution-host-contract-check/**
+  - core/execution/**
+  - core/interop/**
+  - hosts/**
+  - .aide.local/**
+explicit_non_capabilities:
+  - live ExecutionHost
+  - LocalProcessExecutionHost
+  - RemoteExecutionHost
+  - worker execution
+  - worker harness
+  - scheduler
+  - Service/runtime behavior
+  - Workbench behavior
+  - provider/model calls
+  - network calls
+  - PreviewSession
+  - DevelopmentTransaction
+  - PatchTransaction apply
+  - repository mutation
+  - branch/worktree mutation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - ExecutionHost contract v0 is projection-only.
+  - The check had reduced independence because it ran in the same Codex thread as the source build.
+  - Full external Draft 2020-12 validation was not separately installed.
+  - Python launcher selection differs when nested under Python on this host; check evidence used the active interpreter and scrubbed it.
+recommended_next_task: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01

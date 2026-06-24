@@ -1,0 +1,82 @@
+{
+  "accepted_capability": "execution_host_contract_v0",
+  "accepted_scope": [
+    "projection-only ExecutionHostDescriptor",
+    "projection-only ExecutionHostRunBinding",
+    "projection-only ExecutionHostEvent",
+    "projection-only ExecutionHostArtifact",
+    "projection-only ExecutionHostApproval",
+    "projection-only ExecutionHostUsage",
+    "v0 worker/session operation vocabulary",
+    "false-boundary field set",
+    "explicit non-capabilities",
+    "AIDE Lite execution-host status/project/validate projection surface"
+  ],
+  "assertions": [
+    {
+      "category": "baseline",
+      "description": "Build task result is PASS_WITH_WARNINGS with missing evidence zero.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/status.yaml"
+      ],
+      "expected": "PASS_WITH_WARNINGS and missing_evidence 0",
+      "id": "acceptance.build_gate_complete",
+      "observed": "PASS_WITH_WARNINGS, missing_evidence 0",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "baseline",
+      "description": "Check task result is PASS_WITH_WARNINGS with material findings zero and missing evidence zero.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01/status.yaml",
+        ".aide/reports/execution-host-contract-check/check-report.json"
+      ],
+      "expected": "PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0",
+      "id": "acceptance.check_gate_complete",
+      "observed": "PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "scope",
+      "description": "Accepted capability label is narrow and projection-only.",
+      "evidence_refs": [
+        ".aide/reports/execution-host-contract/validation.json",
+        ".aide/reports/execution-host-contract-check/check-report.json"
+      ],
+      "expected": "execution_host_contract_v0",
+      "id": "acceptance.label_exact",
+      "observed": "execution_host_contract_v0",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "boundary",
+      "description": "Acceptance preserves explicit non-capabilities and does not accept live host behavior.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01/task.yaml",
+        ".aide/reports/execution-host-contract-accept/explicit-non-capabilities.md"
+      ],
+      "expected": "no live host, worker, runtime, provider/model/network, preview/apply, mutation, GitHub, release, or promotion capability accepted",
+      "id": "acceptance.non_capabilities_preserved",
+      "observed": "explicit non-capabilities preserved",
+      "outcome": "PASS",
+      "severity": "material"
+    }
+  ],
+  "check_task": "AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01",
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+  "report_type": "execution_host_contract_acceptance",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "schema_version": "aide.execution-host-contract-acceptance.v0",
+  "source_task": "AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01",
+  "task_id": "AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01",
+  "warnings": [
+    "ExecutionHost contract v0 is projection-only.",
+    "The check had reduced independence because it ran in the same Codex thread as the source build.",
+    "Full external Draft 2020-12 validation was not separately installed.",
+    "Python launcher selection differs when nested under Python on this host; check evidence used the active interpreter and scrubbed it."
+  ]
+}
