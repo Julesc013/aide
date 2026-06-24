@@ -1898,6 +1898,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence
     description: Check-only independent review of AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01 at commit 2137af3a68cc50a06b57fe1fd5ee5bc3af8e0924. Confirms source build evidence completeness, generic provider/protocol domain-scan cleanliness, no committed absolute-path or secret-like leakage in source build reports/evidence, and Dominium parity preservation, but records REQUEST_CHANGES with five material provider safety findings: mismatched bindings launch, receipt launch accounting is cumulative or stale across provider reuse, decoder failures report complete axes, state-probe failures report complete typed results, and cancellation is neither implemented nor declared. Recommends exactly AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01. Does not repair implementation, accept the provider, rerun the live Dominium command, mutate Dominium or target repositories, call providers/models/network, run workers, start Service/Workbench/runtime, preview/apply/rollback, create branches/worktrees, mutate GitHub, release, or promote.
+  - id: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Repair Registered Process Execution Provider v0 Safety Findings
+    task: .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/evidence
+    description: Bounded repair for the five material safety findings from AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01. Adds pre-launch binding/provider/spec coherence checks, per-invocation launch accounting and metadata, incomplete validation/evidence axes for decoder and timeout failures, fail-closed state-probe failure handling without typed domain result preservation, and an explicit process-cancellation v0 non-capability. Preserves Dominium registered-validation parity through focused tests, stops at needs_review with PASS_WITH_WARNINGS, and recommends exactly AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01. Does not accept the provider, implement cancellation, add Omnigent/ExecutionHost/new adapters, rerun the live Dominium command, mutate Dominium or target repositories, call providers/models/network, run workers, start Service/Workbench/runtime, preview/apply/rollback, create branches/worktrees, mutate GitHub, release, or promote.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

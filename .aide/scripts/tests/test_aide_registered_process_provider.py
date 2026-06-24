@@ -12,7 +12,9 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from core.execution.registered_process import (
+    CANCELLATION_SUPPORTED,
     DecoderResult,
+    EXPLICIT_NON_CAPABILITIES,
     PreconditionResult,
     RegisteredProcessExecutionProvider,
     RegisteredProcessSpec,
@@ -139,6 +141,52 @@ def invocation() -> CapabilityInvocation:
 
 
 class RegisteredProcessProviderTests(unittest.TestCase):
+    def test_binding_mismatch_fails_closed_before_launch(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            executable = root / "tool.py"
+            executable.write_text("print('ok')\n", encoding="utf-8")
+            spec = make_spec(executable, root)
+
+            capability_runner = FakeRunner(stdout='{"status": "ok"}')
+            capability_receipt, capability_outcome = RegisteredProcessExecutionProvider(
+                runner=capability_runner,
+                state_probe=SequenceProbe(),
+                output_decoder=StatusDecoder(),
+            ).execute(invocation(), binding(spec).__class__(
+                capability_ref="aide://capability/different",
+                provider_id=RegisteredProcessExecutionProvider.provider_id,
+                provider_spec_ref=spec.provider_spec_ref,
+                provider_spec=spec,
+                decoder_id=spec.decoder_id,
+                state_probe_id=spec.state_probe_id,
+                scrubber_id=spec.scrubber_id,
+                conformance_profile_ref=spec.conformance_profile_ref,
+            ))
+            self.assertEqual(capability_runner.calls, [])
+            self.assertEqual(capability_receipt.launcher_call_count, 0)
+            self.assertEqual(capability_outcome.reason_code, "binding_mismatch")
+
+            provider_runner = FakeRunner(stdout='{"status": "ok"}')
+            provider_receipt, provider_outcome = RegisteredProcessExecutionProvider(
+                runner=provider_runner,
+                state_probe=SequenceProbe(),
+                output_decoder=StatusDecoder(),
+            ).execute(invocation(), binding(spec).__class__(
+                capability_ref=spec.capability_ref,
+                provider_id="wrong-provider",
+                provider_spec_ref=spec.provider_spec_ref,
+                provider_spec=spec,
+                decoder_id=spec.decoder_id,
+                state_probe_id=spec.state_probe_id,
+                scrubber_id=spec.scrubber_id,
+                conformance_profile_ref=spec.conformance_profile_ref,
+            ))
+            self.assertEqual(provider_runner.calls, [])
+            self.assertEqual(provider_receipt.launcher_call_count, 0)
+            self.assertEqual(provider_receipt.provider_ref, RegisteredProcessExecutionProvider.provider_id)
+            self.assertEqual(provider_outcome.reason_code, "binding_mismatch")
+
     def test_preflight_refusals_and_invalid_specs_do_not_launch(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -222,6 +270,46 @@ class RegisteredProcessProviderTests(unittest.TestCase):
             self.assertEqual(first["argv_digest"], receipt2.to_dict()["argv_digest"])
             self.assertEqual(first["redacted_environment_manifest_digest"], receipt2.to_dict()["redacted_environment_manifest_digest"])
 
+    def test_reused_provider_receipts_are_per_invocation(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            executable = root / "tool.py"
+            executable.write_text("print('ok')\n", encoding="utf-8")
+            runner = FakeRunner(stdout='{"status": "ok"}')
+            provider = RegisteredProcessExecutionProvider(
+                runner=runner,
+                precondition=StaticPrecondition(),
+                state_probe=SequenceProbe(),
+                output_decoder=StatusDecoder(),
+                stream_scrubber=ReplacementScrubber(),
+            )
+            first = make_spec(executable, root)
+            second = RegisteredProcessSpec(
+                capability_ref=first.capability_ref,
+                executable=first.executable,
+                argument_plan=[ArgumentToken("literal", "--second")],
+                working_directory=first.working_directory,
+                timeout_seconds=first.timeout_seconds,
+                environment=first.environment,
+                decoder_id=first.decoder_id,
+                state_probe_id=first.state_probe_id,
+                mutation_policy=first.mutation_policy,
+                scrubber_id=first.scrubber_id,
+                provider_spec_ref=first.provider_spec_ref,
+                conformance_profile_ref=first.conformance_profile_ref,
+                executable_digest=first.executable_digest,
+            )
+            first_receipt, _ = provider.execute(invocation(), binding(first))
+            second_receipt, _ = provider.execute(
+                CapabilityInvocation("aide://invocation/test-registered-process-02", first.capability_ref),
+                binding(second),
+            )
+            self.assertEqual(len(runner.calls), 2)
+            self.assertEqual(first_receipt.launcher_call_count, 1)
+            self.assertEqual(second_receipt.launcher_call_count, 1)
+            self.assertIn("--second", second_receipt.metadata["launch"]["argv"])
+            self.assertNotIn("--mode", second_receipt.metadata["launch"]["argv"])
+
     def test_timeout_and_decoder_outcomes_are_separate_from_process_outcome(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -259,6 +347,8 @@ class RegisteredProcessProviderTests(unittest.TestCase):
                 output_decoder=StatusDecoder(raise_error=True),
             ).execute(invocation(), binding(spec))
             self.assertEqual(exception_outcome.decoder_outcome, "exception")
+            self.assertEqual(exception_outcome.validation_outcome, "incomplete")
+            self.assertEqual(exception_outcome.evidence_completeness, "incomplete")
 
     def test_state_probe_mutation_failure_partial_coverage_and_scrubbing(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -266,7 +356,7 @@ class RegisteredProcessProviderTests(unittest.TestCase):
             executable = root / "tool.py"
             executable.write_text("print('ok')\n", encoding="utf-8")
             spec = make_spec(executable, root)
-            secret = "sk-testsecret0000000000000000"
+            secret = "dummy-redaction-token-value"
             runner = FakeRunner(stdout=f'{{"status": "ok", "path": "{root}", "token": "{secret}"}}')
             receipt, outcome = RegisteredProcessExecutionProvider(
                 runner=runner,
@@ -289,6 +379,20 @@ class RegisteredProcessProviderTests(unittest.TestCase):
                 output_decoder=StatusDecoder(),
             ).execute(invocation(), binding(spec))
             self.assertTrue(failure_receipt.mutation_observation.startswith("probe_failure:"))
+
+            _, failure_outcome = RegisteredProcessExecutionProvider(
+                runner=FakeRunner(stdout='{"status": "ok"}'),
+                state_probe=SequenceProbe(fail_mutation=True),
+                output_decoder=StatusDecoder(),
+            ).execute(invocation(), binding(spec))
+            self.assertEqual(failure_outcome.reason_code, "state_probe_failure")
+            self.assertEqual(failure_outcome.domain_outcome, "none")
+            self.assertEqual(failure_outcome.validation_outcome, "incomplete")
+            self.assertEqual(failure_outcome.evidence_completeness, "incomplete")
+
+    def test_process_cancellation_is_explicitly_not_supported_in_v0(self) -> None:
+        self.assertFalse(CANCELLATION_SUPPORTED)
+        self.assertIn("process_cancellation", EXPLICIT_NON_CAPABILITIES)
 
     def test_generic_provider_sources_do_not_embed_domain_names(self) -> None:
         generic_paths = [REPO_ROOT / "core/execution/registered_process.py", REPO_ROOT / "core/execution/provider.py"]

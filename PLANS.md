@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+
+- Title: Repair Registered Process Execution Provider v0 Safety Findings
+- Status: needs_review
+- Objective: repair the five material safety findings from `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01` without accepting or widening the provider.
+- Scope: generic provider safety behavior, focused provider regression tests, repair reports, task/evidence, queue index, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01` at commit `e1ae28892c34e66ac03e61f89efe635efa0641e0`, result `REQUEST_CHANGES`, with five material findings.
+- Milestones: repair task materialized; pre-launch binding coherence checks added; per-invocation launch receipts fixed; decoder and state-probe failure axes made incomplete/fail-closed; process cancellation declared unsupported; focused provider and Dominium parity tests passed; task evidence and reports written.
+- Blockers: provider acceptance remains blocked until an independent repair check passes.
+- Verification Intent: Python compile, focused provider tests, focused Dominium parity tests, genericity scans, JSON parsing, task inspect/evidence, broad validation, leakage scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, provider still unaccepted, and next task exactly `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01`.
+- Notes: this task does not implement cancellation, accept the provider, add Omnigent/ExecutionHost behavior, rerun the live Dominium command, mutate Dominium or target repositories, call provider/model/network services, run workers, start runtime/Workbench behavior, preview/apply/rollback, mutate GitHub, release, or promote.
+
 ### Plan ID: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 
 - Title: Check Registered Process Execution Provider v0

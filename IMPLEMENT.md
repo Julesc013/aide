@@ -39,6 +39,45 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+
+Completed with warnings and awaiting independent repair check.
+
+Changed:
+
+- `core/execution/registered_process.py`
+- `.aide/scripts/tests/test_aide_registered_process_provider.py`
+- `.aide/reports/registered-process-execution-provider-v0-repair/**`
+- `.aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The repair closes the five material findings from
+`AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01`:
+
+- mismatched capability/provider/spec bindings now fail closed before launch;
+- valid launch receipts now report current invocation launch count and metadata;
+- decoder exceptions and undecoded outcomes no longer report complete
+  validation/evidence axes;
+- state-probe failures fail closed without preserving typed domain results;
+- process cancellation is explicitly declared unsupported in v0.
+
+Focused provider tests and Dominium parity tests pass. The provider remains
+proposed and unaccepted.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+```
+
+No provider acceptance, cancellation implementation, live Dominium command
+rerun, Dominium or target-repository mutation, provider/model/network call,
+worker runtime, Service, Workbench implementation, preview/apply/rollback,
+branch/worktree automation, GitHub mutation, release, or promotion was
+performed.
+
 ## Work Item: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 
 Completed as a check-only independent review and awaiting repair.

@@ -26,6 +26,8 @@ PROVIDER_ID = "registered_process_execution_provider_v0"
 TRANSPORT_REFUSED = "transport_refused"
 TRANSPORT_STARTED = "transport_started"
 TRANSPORT_TIMEOUT = "transport_timeout"
+CANCELLATION_SUPPORTED = False
+EXPLICIT_NON_CAPABILITIES = ("process_cancellation",)
 
 
 class CompletedProcessLike(Protocol):
@@ -283,12 +285,13 @@ def _zero_receipt(
     mutation_observation: str,
     probe_coverage: Sequence[str],
     reason: str,
+    provider_ref: str | None = None,
 ) -> ProcessExecutionReceipt:
     argv = spec.argv() if spec.executable else []
     return ProcessExecutionReceipt(
         capability_ref=invocation.capability_ref,
         invocation_ref=invocation.invocation_ref,
-        provider_ref=binding.provider_id,
+        provider_ref=provider_ref or binding.provider_id,
         launcher_call_count=0,
         executable_identity=_executable_identity(spec),
         executable_digest=spec.executable_digest,
@@ -314,6 +317,52 @@ def _zero_receipt(
             "launch": None,
         },
     )
+
+
+def _binding_errors(
+    invocation: CapabilityInvocation,
+    binding: CapabilityBinding,
+    spec: RegisteredProcessSpec,
+    provider_id: str,
+) -> list[str]:
+    errors: list[str] = []
+    if binding.provider_id != provider_id:
+        errors.append("binding provider_id does not match this provider")
+    if spec.provider_ref != provider_id:
+        errors.append("spec provider_ref does not match this provider")
+    if invocation.capability_ref != binding.capability_ref:
+        errors.append("invocation capability_ref does not match binding capability_ref")
+    if binding.capability_ref != spec.capability_ref:
+        errors.append("binding capability_ref does not match spec capability_ref")
+    if binding.provider_spec_ref and spec.provider_spec_ref and binding.provider_spec_ref != spec.provider_spec_ref:
+        errors.append("binding provider_spec_ref does not match spec provider_spec_ref")
+    if binding.decoder_id and binding.decoder_id != spec.decoder_id:
+        errors.append("binding decoder_id does not match spec decoder_id")
+    if binding.state_probe_id and binding.state_probe_id != spec.state_probe_id:
+        errors.append("binding state_probe_id does not match spec state_probe_id")
+    if binding.scrubber_id and binding.scrubber_id != spec.scrubber_id:
+        errors.append("binding scrubber_id does not match spec scrubber_id")
+    if (
+        binding.conformance_profile_ref
+        and spec.conformance_profile_ref
+        and binding.conformance_profile_ref != spec.conformance_profile_ref
+    ):
+        errors.append("binding conformance_profile_ref does not match spec conformance_profile_ref")
+    return errors
+
+
+def _probe_failure_reason(state: Mapping[str, Any]) -> str:
+    if "probe_error" not in state:
+        return ""
+    detail = str(state.get("probe_error") or "unknown")
+    message = str(state.get("message") or "")
+    return f"probe_failure:{detail}" + (f":{message}" if message else "")
+
+
+def _validation_and_evidence_axes(*, decoder_result: DecoderResult, probe_failed: bool, timed_out: bool) -> tuple[str, str]:
+    if probe_failed or timed_out or decoder_result.decoder_outcome != "decoded":
+        return "incomplete", "incomplete"
+    return "complete", "complete"
 
 
 class RegisteredProcessExecutionProvider:
@@ -377,6 +426,29 @@ class RegisteredProcessExecutionProvider:
             )
 
         before_state = self._capture_state()
+        before_probe_failure = _probe_failure_reason(before_state)
+        if before_probe_failure:
+            receipt = _zero_receipt(
+                invocation=invocation,
+                binding=binding,
+                spec=spec,
+                before_state=before_state,
+                after_state=before_state,
+                mutation_observation=before_probe_failure,
+                probe_coverage=self._coverage(),
+                reason=before_probe_failure,
+                provider_ref=self.provider_id,
+            )
+            return receipt, CapabilityOutcome(
+                TRANSPORT_REFUSED,
+                "not_started",
+                "not_decoded",
+                "none",
+                "state_probe_failure",
+                "incomplete",
+                reason_code="state_probe_failure",
+                message=before_probe_failure,
+            )
         validation_errors = spec.validate()
         if validation_errors:
             message = "; ".join(validation_errors)
@@ -389,6 +461,7 @@ class RegisteredProcessExecutionProvider:
                 mutation_observation="none_detected_within_probe_coverage",
                 probe_coverage=self._coverage(),
                 reason=message,
+                provider_ref=self.provider_id,
             )
             return receipt, CapabilityOutcome(
                 TRANSPORT_REFUSED,
@@ -398,6 +471,31 @@ class RegisteredProcessExecutionProvider:
                 "invalid_spec",
                 "incomplete",
                 reason_code="invalid_spec",
+                message=message,
+            )
+
+        binding_errors = _binding_errors(invocation, binding, spec, self.provider_id)
+        if binding_errors:
+            message = "; ".join(binding_errors)
+            receipt = _zero_receipt(
+                invocation=invocation,
+                binding=binding,
+                spec=spec,
+                before_state=before_state,
+                after_state=before_state,
+                mutation_observation="none_detected_within_probe_coverage",
+                probe_coverage=self._coverage(),
+                reason=message,
+                provider_ref=self.provider_id,
+            )
+            return receipt, CapabilityOutcome(
+                TRANSPORT_REFUSED,
+                "not_started",
+                "not_decoded",
+                "none",
+                "binding_mismatch",
+                "incomplete",
+                reason_code="binding_mismatch",
                 message=message,
             )
 
@@ -412,6 +510,7 @@ class RegisteredProcessExecutionProvider:
                 mutation_observation="none_detected_within_probe_coverage",
                 probe_coverage=self._coverage(),
                 reason="registered executable is missing",
+                provider_ref=self.provider_id,
             )
             return receipt, CapabilityOutcome(
                 TRANSPORT_REFUSED,
@@ -435,6 +534,7 @@ class RegisteredProcessExecutionProvider:
                 mutation_observation="none_detected_within_probe_coverage",
                 probe_coverage=self._coverage(),
                 reason="registered executable digest mismatch",
+                provider_ref=self.provider_id,
             )
             return receipt, CapabilityOutcome(
                 TRANSPORT_REFUSED,
@@ -458,6 +558,7 @@ class RegisteredProcessExecutionProvider:
                 mutation_observation="none_detected_within_probe_coverage",
                 probe_coverage=self._coverage(),
                 reason=precondition.message,
+                provider_ref=self.provider_id,
             )
             return receipt, CapabilityOutcome(
                 TRANSPORT_REFUSED,
@@ -477,16 +578,15 @@ class RegisteredProcessExecutionProvider:
         returncode: int | None = None
         timed_out = False
         environment_manifest = _environment_manifest(spec.environment)
-        self.launches.append(
-            {
-                "argv": list(argv),
-                "cwd": str(cwd),
-                "environment_manifest": environment_manifest,
-                "environment_manifest_digest": digest_json(environment_manifest),
-                "timeout": spec.timeout_seconds,
-                "shell": False,
-            }
-        )
+        launch_record = {
+            "argv": list(argv),
+            "cwd": str(cwd),
+            "environment_manifest": environment_manifest,
+            "environment_manifest_digest": digest_json(environment_manifest),
+            "timeout": spec.timeout_seconds,
+            "shell": False,
+        }
+        self.launches.append(launch_record)
         try:
             completed = self.runner(argv, cwd, dict(spec.environment), spec.timeout_seconds)
             stdout = str(completed.stdout or "")
@@ -497,15 +597,29 @@ class RegisteredProcessExecutionProvider:
             stderr = str(exc.stderr or "")
             timed_out = True
 
+        probe_failed = False
         try:
             after_state = self._capture_state()
-            mutation_observation = self.state_probe.mutation_observation(before_state, after_state)
+            after_probe_failure = _probe_failure_reason(after_state)
+            if after_probe_failure:
+                probe_failed = True
+                mutation_observation = after_probe_failure
+            else:
+                mutation_observation = self.state_probe.mutation_observation(before_state, after_state)
         except Exception as exc:  # pragma: no cover - defensive fallback
             after_state = {}
+            probe_failed = True
             mutation_observation = f"probe_failure:{type(exc).__name__}"
 
         decoder_result: DecoderResult
-        if timed_out:
+        if probe_failed:
+            decoder_result = DecoderResult(
+                "not_decoded",
+                "none",
+                reason_code="state_probe_failure",
+                message=mutation_observation,
+            )
+        elif timed_out:
             decoder_result = DecoderResult("not_decoded", "none", reason_code="timeout", message="registered process timed out")
         else:
             try:
@@ -514,11 +628,16 @@ class RegisteredProcessExecutionProvider:
                 decoder_result = DecoderResult("exception", "none", reason_code="decoder_exception", message=str(exc))
 
         process_outcome = "timed_out" if timed_out else ("exit_zero" if returncode == 0 else "exit_nonzero")
+        validation_outcome, evidence_completeness = _validation_and_evidence_axes(
+            decoder_result=decoder_result,
+            probe_failed=probe_failed,
+            timed_out=timed_out,
+        )
         receipt = ProcessExecutionReceipt(
             capability_ref=invocation.capability_ref,
             invocation_ref=invocation.invocation_ref,
-            provider_ref=binding.provider_id,
-            launcher_call_count=len(self.launches),
+            provider_ref=self.provider_id,
+            launcher_call_count=1,
             executable_identity=_executable_identity(spec),
             executable_digest=executable_digest,
             argv_digest=digest_json(argv),
@@ -540,7 +659,7 @@ class RegisteredProcessExecutionProvider:
             metadata={
                 "before_state": dict(before_state),
                 "after_state": dict(after_state),
-                "launch": self.launches[0] if self.launches else None,
+                "launch": launch_record,
             },
         )
         outcome = CapabilityOutcome(
@@ -548,8 +667,8 @@ class RegisteredProcessExecutionProvider:
             process_outcome,
             decoder_result.decoder_outcome,
             decoder_result.domain_outcome,
-            "complete",
-            "complete",
+            validation_outcome,
+            evidence_completeness,
             reason_code=decoder_result.reason_code,
             message=decoder_result.message,
             domain_result=decoder_result.domain_result,

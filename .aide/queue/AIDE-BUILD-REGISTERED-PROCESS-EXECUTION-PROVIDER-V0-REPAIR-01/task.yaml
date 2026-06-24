@@ -1,0 +1,71 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+title: Repair Registered Process Execution Provider v0 Safety Findings
+type: build
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-24
+updated_at: 2026-06-24
+source_check_task: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+source_check_commit: e1ae28892c34e66ac03e61f89efe635efa0641e0
+source_check_result: REQUEST_CHANGES
+source_build_task: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+source_build_commit: 2137af3a68cc50a06b57fe1fd5ee5bc3af8e0924
+source_build_result: PASS_WITH_WARNINGS
+proposed_capability: registered_process_execution_provider_v0
+objective: >
+  Repair only the five material provider safety findings from the independent
+  registered-process provider check while preserving Dominium parity and
+  leaving the provider unaccepted.
+allowed_paths:
+  - core/execution/registered_process.py
+  - .aide/scripts/tests/test_aide_registered_process_provider.py
+  - .aide/scripts/tests/test_aide_dominium_registered_validation_backend.py
+  - .aide/reports/registered-process-execution-provider-v0-repair/**
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/**
+  - .aide/reports/registered-process-execution-provider-v0-check/**
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence/**
+  - .aide/reports/dominium-registered-validation-backend/**
+  - Dominium
+  - <dominium-root>/**
+aide_repository_task_scoped_mutation_authorized: true
+dominium_or_target_repository_mutation_authorized: false
+live_dominium_command_rerun_authorized: false
+provider_acceptance_authorized: false
+runtime_authorized: false
+network_authorized: false
+provider_or_model_authorized: false
+worker_authorized: false
+workbench_apply_authorized: false
+github_mutation_authorized: false
+recommended_next_task: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+required_findings_to_repair:
+  - binding.mismatch_launches_process
+  - receipt.launch_accounting_is_cumulative_or_stale
+  - decoder.failure_marked_complete
+  - state_probe.failure_not_failed_closed
+  - cancellation.not_implemented_or_declared
+explicit_non_capabilities:
+  - provider_acceptance
+  - universal_execution_ontology
+  - arbitrary_command_runner
+  - generic_command_cli
+  - process_cancellation
+  - child_process_tree_termination
+  - persistent_idempotency
+  - resource_quota_enforcement
+  - streaming_artifact_storage
+  - non_git_state_providers
+  - runtime_service
+  - worker_execution
+  - provider_model_network_calls
+  - preview_apply_rollback
+  - repository_mutation
+  - branch_worktree_github_release_behavior

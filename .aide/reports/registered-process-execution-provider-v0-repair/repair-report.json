@@ -1,0 +1,43 @@
+{
+  "dominium_modified": false,
+  "generic_provider_domain_scan_findings": 0,
+  "implementation_repaired": true,
+  "kind": "RegisteredProcessExecutionProviderRepairReport",
+  "live_dominium_command_rerun": false,
+  "material_finding_count": 0,
+  "provider_accepted": false,
+  "recommended_next_task": "AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01",
+  "repaired_findings": [
+    {
+      "finding_id": "binding.mismatch_launches_process",
+      "repair": "Pre-launch binding, provider, capability, decoder, probe, scrubber, spec, and conformance coherence validation now refuses mismatches with zero launches."
+    },
+    {
+      "finding_id": "receipt.launch_accounting_is_cumulative_or_stale",
+      "repair": "Launch receipts now report one launcher call for the current invocation and store the current launch record instead of cumulative or first-launch metadata."
+    },
+    {
+      "finding_id": "decoder.failure_marked_complete",
+      "repair": "Decoder exceptions and undecoded outcomes now produce incomplete validation and evidence axes."
+    },
+    {
+      "finding_id": "state_probe.failure_not_failed_closed",
+      "repair": "State-probe capture or mutation-observation failures now fail closed, skip domain decoding, and return no typed domain result."
+    },
+    {
+      "finding_id": "cancellation.not_implemented_or_declared",
+      "repair": "Process cancellation remains unimplemented and is now explicitly declared as a v0 non-capability."
+    }
+  ],
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.registered-process-execution-provider-v0.repair-report.v1",
+  "source_check_result": "REQUEST_CHANGES",
+  "source_check_task": "AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01",
+  "task_id": "AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "The provider remains proposed and unaccepted.",
+    "Process cancellation is declared unsupported in v0 rather than implemented.",
+    "Future independent repair check is still required before reuse proof resumes."
+  ]
+}
