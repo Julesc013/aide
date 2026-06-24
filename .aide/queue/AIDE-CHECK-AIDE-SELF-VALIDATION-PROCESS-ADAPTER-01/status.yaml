@@ -1,0 +1,14 @@
+schema_version: aide.task-status.v0
+id: AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-24
+material_finding_count: 0
+missing_evidence: 0
+accepted: false
+source_build_task: AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+source_build_commit: d9cb3df8dbb9274b618956d6069666f4f4274528
+provider_status: proposed_unaccepted
+recommended_next_task: AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01

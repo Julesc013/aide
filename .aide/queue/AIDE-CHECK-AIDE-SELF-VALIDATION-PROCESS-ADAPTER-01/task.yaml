@@ -1,0 +1,81 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+title: Check AIDE Self-Validation Process Adapter
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-24
+updated_at: 2026-06-24
+source_build_task: AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+source_build_commit: d9cb3df8dbb9274b618956d6069666f4f4274528
+source_build_result: PASS_WITH_WARNINGS
+source_provider_status: proposed_unaccepted
+objective: >
+  Independently check the AIDE self-validation process adapter build without
+  repairing implementation or accepting the proposed RegisteredProcessExecutionProvider v0.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/**
+  - .aide/reports/aide-self-validation-process-adapter-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/registered_process.py
+  - core/protocol/process_invocation.py
+  - core/protocol/execution_receipt.py
+  - core/interop/aide/**
+  - core/interop/dominium/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_self_validation_process_adapter.py
+  - .aide/reports/aide-self-validation-process-adapter/**
+  - .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/**
+  - Dominium
+check_only: true
+implementation_repair_authorized: false
+provider_acceptance_authorized: false
+eureka_adapter_authorized: false
+runtime_authorized: false
+network_authorized: false
+provider_or_model_authorized: false
+worker_authorized: false
+workbench_apply_authorized: false
+github_mutation_authorized: false
+required_checks:
+  - provider_core_unchanged
+  - adapter_thin_aide_specific
+  - exact_argv_and_shell_false
+  - exactly_one_launcher_call
+  - zero_launch_refusal_matrix
+  - recursion_absent
+  - axes_separated
+  - stdout_origin
+  - workspace_unchanged
+  - generated_report_no_churn
+  - deterministic_receipt_projection
+  - no_absolute_paths_or_secrets
+  - generic_provider_and_dominium_parity_tests
+  - provider_proposed_unaccepted
+  - non_capabilities_preserved
+explicit_non_capabilities:
+  - implementation_repair
+  - provider_acceptance
+  - eureka_adapter_build
+  - arbitrary_command_runner
+  - generic_command_cli
+  - provider_core_mutation
+  - dominium_adapter_mutation
+  - service_runtime
+  - worker_execution
+  - provider_model_network_calls
+  - preview_apply_rollback
+  - repository_mutation
+  - branch_worktree_github_release_behavior
+required_result_values:
+  - PASS
+  - PASS_WITH_WARNINGS
+  - REQUEST_CHANGES
+  - FAILED_VALIDATION
+  - BLOCKED
+recommended_next_task: AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01

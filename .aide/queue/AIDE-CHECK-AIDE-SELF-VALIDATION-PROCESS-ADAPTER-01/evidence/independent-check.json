@@ -1,0 +1,964 @@
+{
+  "assertions": [
+    {
+      "category": "baseline",
+      "description": "Check starts from the source build commit.",
+      "evidence_refs": [
+        "git rev-parse HEAD"
+      ],
+      "expected": "d9cb3df8dbb9274b618956d6069666f4f4274528",
+      "id": "baseline.head_is_source_commit",
+      "observed": "d9cb3df8dbb9274b618956d6069666f4f4274528",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "source",
+      "description": "Source build did not change generic provider or neutral receipt/invocation protocol files.",
+      "evidence_refs": [
+        "git diff-tree d9cb3df"
+      ],
+      "expected": "no provider/protocol core files in source build diff",
+      "id": "source.provider_core_not_changed",
+      "observed": [
+        ".aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/ExecPlan.md",
+        ".aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence/changed-files.md",
+        ".aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence/remaining-risks.md",
+        ".aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence/validation.md",
+        ".aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/prompt.md",
+        ".aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/status.yaml",
+        ".aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml",
+        ".aide/queue/index.yaml",
+        ".aide/reports/aide-self-validation-process-adapter/adapter-report.json",
+        ".aide/reports/aide-self-validation-process-adapter/adapter-report.md",
+        ".aide/reports/aide-self-validation-process-adapter/capability-descriptor.json",
+        ".aide/reports/aide-self-validation-process-adapter/capability-outcome.json",
+        ".aide/reports/aide-self-validation-process-adapter/context-descriptor.json",
+        ".aide/reports/aide-self-validation-process-adapter/context-pack.json",
+        ".aide/reports/aide-self-validation-process-adapter/event-record.json",
+        ".aide/reports/aide-self-validation-process-adapter/evidence-packet.json",
+        ".aide/reports/aide-self-validation-process-adapter/execution-receipt.json",
+        ".aide/reports/aide-self-validation-process-adapter/explicit-non-capabilities.md",
+        ".aide/reports/aide-self-validation-process-adapter/invocation-request.json",
+        ".aide/reports/aide-self-validation-process-adapter/invocation-result.json",
+        ".aide/reports/aide-self-validation-process-adapter/next-task-prompt.md",
+        ".aide/reports/aide-self-validation-process-adapter/projection.json",
+        ".aide/reports/aide-self-validation-process-adapter/status.md",
+        ".aide/reports/aide-self-validation-process-adapter/validation.json",
+        ".aide/reports/aide-self-validation-process-adapter/warning-disposition.md",
+        ".aide/reports/aide-self-validation-process-adapter/workunit.json",
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_aide_self_validation_process_adapter.py",
+        "IMPLEMENT.md",
+        "PLANS.md",
+        "core/interop/aide/__init__.py",
+        "core/interop/aide/self_validation_process_adapter.py"
+      ],
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "baseline",
+      "description": "Source build status records PASS_WITH_WARNINGS, missing_evidence 0, and provider proposed/unaccepted.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/status.yaml"
+      ],
+      "expected": "PASS_WITH_WARNINGS, missing_evidence 0, provider proposed_unaccepted",
+      "id": "baseline.source_status_pass_with_warnings",
+      "observed": "schema_version: aide.task-status.v0\nid: AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01\nstatus: needs_review\nplanning_state: implementation_completed\nresult: PASS_WITH_WARNINGS\nreview_gate: needs_review\nupdated_at: 2026-06-24\nmaterial_finding_count: 0\nmissing_evidence: 0\naccepted: false\nproposed_capability_label: aide_self_validation_process_adapter_v0\nprovider_status: proposed_unaccepted\nprocess_call_count: 1\nworkspace_state_unchanged: true\nrecommended_next_task: AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01\n",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "report",
+      "description": "Source build validation report is internally clean.",
+      "evidence_refs": [
+        ".aide/reports/aide-self-validation-process-adapter/validation.json"
+      ],
+      "expected": {
+        "missing_evidence": 0,
+        "validation_errors": [],
+        "validation_status": "PASS_WITH_WARNINGS"
+      },
+      "id": "report.validation_clean",
+      "observed": {
+        "aide_validate_status": "PASS",
+        "arbitrary_shell_command_executed": false,
+        "branch_or_worktree_created": false,
+        "broad_dispatch_used": false,
+        "capability_id": "aide.self.validate",
+        "database_opened": false,
+        "github_mutation_performed": false,
+        "kind": "AideSelfValidationProcessValidation",
+        "missing_evidence": 0,
+        "mutation_observation": "none_detected_within_probe_coverage",
+        "network_call_performed": false,
+        "patch_transaction_applied": false,
+        "preview_or_apply_performed": false,
+        "private_tool_called": false,
+        "process_call_count": 1,
+        "proposed_capability_label": "aide_self_validation_process_adapter_v0",
+        "provider_or_model_called": false,
+        "provider_ref": "registered_process_execution_provider_v0",
+        "recommended_next_task": "AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+        "release_or_promotion_performed": false,
+        "result_origin": "aide_lite_validate_stdout",
+        "schema_version": "aide.self-validation-process.validation.v1",
+        "service_started": false,
+        "source_repository_mutated": false,
+        "status": "PASS_WITH_WARNINGS",
+        "target_repository_mutated": false,
+        "task_id": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+        "validated": true,
+        "validation_errors": [],
+        "validation_status": "PASS_WITH_WARNINGS",
+        "warnings": [
+          "RegisteredProcessExecutionProvider v0 remains proposed and unaccepted.",
+          "This proves AIDE self reuse only; a second external domain proof remains required.",
+          "The adapter allows preexisting task-local dirty state and proves no additional state change across the process."
+        ],
+        "workbench_apply_performed": false,
+        "workbench_started": false,
+        "worker_executed": false,
+        "workspace_state_unchanged": true
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "source",
+      "description": "Adapter uses RegisteredProcessExecutionProvider and does not define or fork it.",
+      "evidence_refs": [
+        "core/interop/aide/self_validation_process_adapter.py"
+      ],
+      "expected": "uses provider, does not define provider",
+      "id": "source.adapter_uses_provider_without_defining_provider",
+      "observed": {
+        "adapter_contains_provider_use": true,
+        "adapter_defines_provider": false,
+        "adapter_mentions_dominium": true,
+        "adapter_mentions_eureka": true,
+        "adapter_shell_true": false,
+        "aide_lite_has_adapter_command": true,
+        "aide_lite_validate_dispatch_mentions_adapter_run": true,
+        "domain_behavior_reference_findings": []
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "source",
+      "description": "Adapter source is AIDE-specific and has no Dominium or Eureka behavior branches.",
+      "evidence_refs": [
+        "core/interop/aide/self_validation_process_adapter.py"
+      ],
+      "expected": "no Dominium/Eureka behavior references outside explicit non-capability names",
+      "id": "source.adapter_aide_specific",
+      "observed": {
+        "adapter_contains_provider_use": true,
+        "adapter_defines_provider": false,
+        "adapter_mentions_dominium": true,
+        "adapter_mentions_eureka": true,
+        "adapter_shell_true": false,
+        "aide_lite_has_adapter_command": true,
+        "aide_lite_validate_dispatch_mentions_adapter_run": true,
+        "domain_behavior_reference_findings": []
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "source",
+      "description": "Adapter source does not enable shell=True.",
+      "evidence_refs": [
+        "core/interop/aide/self_validation_process_adapter.py"
+      ],
+      "expected": false,
+      "id": "source.no_shell_true",
+      "observed": false,
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "process",
+      "description": "Committed receipt records exact allowlisted AIDE Lite validate argv and shell false.",
+      "evidence_refs": [
+        ".aide/reports/aide-self-validation-process-adapter/execution-receipt.json"
+      ],
+      "expected": {
+        "argv_suffix": [
+          "<aide-root>\\.aide\\scripts\\aide_lite.py",
+          "validate"
+        ],
+        "launcher_call_count": 1,
+        "shell": false
+      },
+      "id": "process.exact_argv_shell_false",
+      "observed": {
+        "after_state_ref": "sha256:4a01a159cbeb92cf49d7a90f64633d54db58c0dcc63bb6be3dfb598a9d2c3b38",
+        "argv_digest": "sha256:2bd18f62f2abc3c0524a16e16e39127dbc9c1c286ca85f226ec7d5d8984c4708",
+        "before_state_ref": "sha256:4a01a159cbeb92cf49d7a90f64633d54db58c0dcc63bb6be3dfb598a9d2c3b38",
+        "cancelled": false,
+        "capability_ref": "aide://capability/aide-self-validation-process-adapter-v0",
+        "decoder_ref": "aide.self.validate-stdout-v0",
+        "ended_at": "deterministic",
+        "executable_digest": "sha256:3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd",
+        "executable_identity": "python",
+        "invocation_ref": "aide://invocation/aide-self-validation-process-adapter-01",
+        "launcher_call_count": 1,
+        "metadata": {
+          "after_state": {
+            "clean": false,
+            "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/prompt.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/status.yaml\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.json\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.md\n?? .aide/reports/aide-self-validation-process-adapter/capability-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/capability-outcome.json\n?? .aide/reports/aide-self-validation-process-adapter/context-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/context-pack.json\n?? .aide/reports/aide-self-validation-process-adapter/event-record.json\n?? .aide/reports/aide-self-validation-process-adapter/evidence-packet.json\n?? .aide/reports/aide-self-validation-process-adapter/execution-receipt.json\n?? .aide/reports/aide-self-validation-process-adapter/explicit-non-capabilities.md\n?? .aide/reports/aide-self-validation-process-adapter/invocation-request.json\n?? .aide/reports/aide-self-validation-process-adapter/invocation-result.json\n?? .aide/reports/aide-self-validation-process-adapter/next-task-prompt.md\n?? .aide/reports/aide-self-validation-process-adapter/projection.json\n?? .aide/reports/aide-self-validation-process-adapter/status.md\n?? .aide/reports/aide-self-validation-process-adapter/validation.json\n?? .aide/reports/aide-self-validation-process-adapter/warning-disposition.md\n?? .aide/reports/aide-self-validation-process-adapter/workunit.json\n?? .aide/scripts/tests/test_aide_self_validation_process_adapter.py\n?? core/interop/aide/__init__.py\n?? core/interop/aide/self_validation_process_adapter.py",
+            "porcelain_status_digest": "sha256:f166baede940d8c98d8963a627ff057b7a47977bc0316ce5780e3ec0eae3bc3c",
+            "repository_present": true,
+            "revision": "f30ab5cf3006b0f978fb7159d41e1a888b885981",
+            "revision_error": "",
+            "selected_source_digests": {
+              ".aide/scripts/aide_lite.py": "sha256:57940d3f6003f2662e115b48e33a58d4cb5d01cd39de8bca269f0af581070a35",
+              "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+              "core/interop/aide/self_validation_process_adapter.py": "sha256:33bc0e8bfb728d5227e0905b1264d38372e28d5b04686a9e9298bf136e5e8259",
+              "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+              "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+            },
+            "tracked_tree_digest": "sha256:b4e60c8ee1844fa3f1033f07add0adbd08b223c1de826acf30033e0b4dad33cd",
+            "tracked_tree_observed": true
+          },
+          "before_state": {
+            "clean": false,
+            "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/prompt.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/status.yaml\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.json\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.md\n?? .aide/reports/aide-self-validation-process-adapter/capability-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/capability-outcome.json\n?? .aide/reports/aide-self-validation-process-adapter/context-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/context-pack.json\n?? .aide/reports/aide-self-validation-process-adapter/event-record.json\n?? .aide/reports/aide-self-validation-process-adapter/evidence-packet.json\n?? .aide/reports/aide-self-validation-process-adapter/execution-receipt.json\n?? .aide/reports/aide-self-validation-process-adapter/explicit-non-capabilities.md\n?? .aide/reports/aide-self-validation-process-adapter/invocation-request.json\n?? .aide/reports/aide-self-validation-process-adapter/invocation-result.json\n?? .aide/reports/aide-self-validation-process-adapter/next-task-prompt.md\n?? .aide/reports/aide-self-validation-process-adapter/projection.json\n?? .aide/reports/aide-self-validation-process-adapter/status.md\n?? .aide/reports/aide-self-validation-process-adapter/validation.json\n?? .aide/reports/aide-self-validation-process-adapter/warning-disposition.md\n?? .aide/reports/aide-self-validation-process-adapter/workunit.json\n?? .aide/scripts/tests/test_aide_self_validation_process_adapter.py\n?? core/interop/aide/__init__.py\n?? core/interop/aide/self_validation_process_adapter.py",
+            "porcelain_status_digest": "sha256:f166baede940d8c98d8963a627ff057b7a47977bc0316ce5780e3ec0eae3bc3c",
+            "repository_present": true,
+            "revision": "f30ab5cf3006b0f978fb7159d41e1a888b885981",
+            "revision_error": "",
+            "selected_source_digests": {
+              ".aide/scripts/aide_lite.py": "sha256:57940d3f6003f2662e115b48e33a58d4cb5d01cd39de8bca269f0af581070a35",
+              "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+              "core/interop/aide/self_validation_process_adapter.py": "sha256:33bc0e8bfb728d5227e0905b1264d38372e28d5b04686a9e9298bf136e5e8259",
+              "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+              "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+            },
+            "tracked_tree_digest": "sha256:b4e60c8ee1844fa3f1033f07add0adbd08b223c1de826acf30033e0b4dad33cd",
+            "tracked_tree_observed": true
+          },
+          "launch": {
+            "argv": [
+              "<python>",
+              "<aide-root>\\.aide\\scripts\\aide_lite.py",
+              "validate"
+            ],
+            "cwd": "<aide-root>",
+            "environment_manifest": {
+              "keys": [
+                "COMSPEC",
+                "PATH",
+                "PATHEXT",
+                "PYTHONDONTWRITEBYTECODE",
+                "PYTHONHASHSEED",
+                "PYTHONNOUSERSITE",
+                "PYTHONUTF8",
+                "SYSTEMROOT",
+                "SystemDrive",
+                "TEMP",
+                "TMP",
+                "USERPROFILE",
+                "WINDIR"
+              ],
+              "value_digests": {
+                "COMSPEC": "sha256:fd21f9d5853baaeda38d52ebc1f92c0e2457b89a52e3869270290e6ccdf638a0",
+                "PATH": "sha256:4af73944d5a4e8d4aaedc8d88b3bd87258577c90c169126d87b67c2d366ba445",
+                "PATHEXT": "sha256:7977c2b879d035c731c55c0ba304b0adf1f332fa278338f12c6b7425fae02241",
+                "PYTHONDONTWRITEBYTECODE": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+                "PYTHONHASHSEED": "sha256:94664180e5190a6c6dc2ba6e2d7944081d2dd0e0151a9ff07f62c8865eeb9389",
+                "PYTHONNOUSERSITE": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+                "PYTHONUTF8": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+                "SYSTEMROOT": "sha256:cd1d43ac38aee601acb6ce88ad8c7d056f0275ca13355aa36cfa801e9ffabfa4",
+                "SystemDrive": "sha256:1176329923408cc1c1a7761fb7294b5be8612536c5243855124ea0493d64381b",
+                "TEMP": "sha256:d02c86aaee52939138ab555840211e9a92ef8f2f6823f82fa7b83752f9ebc2f4",
+                "TMP": "sha256:d02c86aaee52939138ab555840211e9a92ef8f2f6823f82fa7b83752f9ebc2f4",
+                "USERPROFILE": "sha256:0ab0bbdea326f4be4731e926e557fe789a8d42f704fa34694138284871983f98",
+                "WINDIR": "sha256:cd1d43ac38aee601acb6ce88ad8c7d056f0275ca13355aa36cfa801e9ffabfa4"
+              }
+            },
+            "environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+            "shell": false,
+            "timeout": 120.0
+          }
+        },
+        "mutation_observation": "none_detected_within_probe_coverage",
+        "probe_coverage": [
+          "git_revision",
+          "git_porcelain_status",
+          "git_tracked_tree_digest",
+          "selected_source_digests"
+        ],
+        "provider_ref": "registered_process_execution_provider_v0",
+        "redacted_environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+        "return_code": 0,
+        "shell": false,
+        "started_at": "deterministic",
+        "stderr": {
+          "byte_count": 0,
+          "excerpt": "",
+          "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "byte_count": 4832338,
+          "excerpt": "AIDE Lite validate\nstatus: PASS\n- PASS required file: .aide/policies/token-budget.yaml\n- PASS required file: .aide/memory/project-state.md\n- PASS required file: .aide/memory/decisions.md\n- PASS required file: .aide/memory/open-risks.md\n- PASS required file: .aide/prompts/compact-task.md\n- PASS required file: .aide/prompts/evidence-review.md\n- PASS required file: .aide/prompts/codex-token-mode.md\n- PASS required file: .aide/context/ignore.yaml\n- PASS context compiler config exists: .aide/context/compiler.yaml\n- PASS context compiler config exists: .aide/context/priority.yaml\n- PASS context compiler config exists: .aide/context/excerpt-policy.yaml\n- PASS verifier config exists: .aide/policies/verification.yaml\n- PASS verifier config exists: .aide/verification/evidence-packet.template.md\n- PA",
+          "sha256": "sha256:7574744f5c2262109db95848af958497f3cb2cb8c0e70e179c30ea656985d954"
+        },
+        "timed_out": false,
+        "working_directory_ref": "sha256:0366f8c755db01a31ee8514c6d73fb3921b55a65205022dbb13cee3b1dd9d6ba"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "process",
+      "description": "Transport, process, decoder, domain, validation, and evidence axes remain distinct.",
+      "evidence_refs": [
+        ".aide/reports/aide-self-validation-process-adapter/capability-outcome.json"
+      ],
+      "expected": "started/exit_zero/decoded/typed_result/complete/complete",
+      "id": "process.axes_separated",
+      "observed": {
+        "decoder_outcome": "decoded",
+        "domain_outcome": "typed_result",
+        "domain_result": {
+          "command_id": "aide_lite.validate",
+          "first_line": "AIDE Lite validate",
+          "line_count": 60904,
+          "source": "aide_lite_validate_stdout",
+          "status": "PASS"
+        },
+        "evidence_completeness": "complete",
+        "message": "",
+        "process_outcome": "exit_zero",
+        "reason_code": "",
+        "refusal": {},
+        "transport_outcome": "transport_started",
+        "validation_outcome": "complete"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "result",
+      "description": "Successful outcome originates from AIDE Lite validate stdout, not constructed success.",
+      "evidence_refs": [
+        ".aide/reports/aide-self-validation-process-adapter/invocation-result.json"
+      ],
+      "expected": {
+        "constructed_success_result": false,
+        "origin": "aide_lite_validate_stdout",
+        "status": "PASS"
+      },
+      "id": "result.stdout_origin",
+      "observed": {
+        "actual_aide_validate_process_spawned": true,
+        "adapter_role": "thin_declarative_aide_self_adapter",
+        "after_state": {
+          "clean": false,
+          "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/prompt.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/status.yaml\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.json\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.md\n?? .aide/reports/aide-self-validation-process-adapter/capability-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/capability-outcome.json\n?? .aide/reports/aide-self-validation-process-adapter/context-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/context-pack.json\n?? .aide/reports/aide-self-validation-process-adapter/event-record.json\n?? .aide/reports/aide-self-validation-process-adapter/evidence-packet.json\n?? .aide/reports/aide-self-validation-process-adapter/execution-receipt.json\n?? .aide/reports/aide-self-validation-process-adapter/explicit-non-capabilities.md\n?? .aide/reports/aide-self-validation-process-adapter/invocation-request.json\n?? .aide/reports/aide-self-validation-process-adapter/invocation-result.json\n?? .aide/reports/aide-self-validation-process-adapter/next-task-prompt.md\n?? .aide/reports/aide-self-validation-process-adapter/projection.json\n?? .aide/reports/aide-self-validation-process-adapter/status.md\n?? .aide/reports/aide-self-validation-process-adapter/validation.json\n?? .aide/reports/aide-self-validation-process-adapter/warning-disposition.md\n?? .aide/reports/aide-self-validation-process-adapter/workunit.json\n?? .aide/scripts/tests/test_aide_self_validation_process_adapter.py\n?? core/interop/aide/__init__.py\n?? core/interop/aide/self_validation_process_adapter.py",
+          "porcelain_status_digest": "sha256:f166baede940d8c98d8963a627ff057b7a47977bc0316ce5780e3ec0eae3bc3c",
+          "repository_present": true,
+          "revision": "f30ab5cf3006b0f978fb7159d41e1a888b885981",
+          "revision_error": "",
+          "selected_source_digests": {
+            ".aide/scripts/aide_lite.py": "sha256:57940d3f6003f2662e115b48e33a58d4cb5d01cd39de8bca269f0af581070a35",
+            "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+            "core/interop/aide/self_validation_process_adapter.py": "sha256:33bc0e8bfb728d5227e0905b1264d38372e28d5b04686a9e9298bf136e5e8259",
+            "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+            "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+          },
+          "tracked_tree_digest": "sha256:b4e60c8ee1844fa3f1033f07add0adbd08b223c1de826acf30033e0b4dad33cd",
+          "tracked_tree_observed": true
+        },
+        "aide_validate_result": {
+          "command_id": "aide_lite.validate",
+          "first_line": "AIDE Lite validate",
+          "line_count": 60904,
+          "source": "aide_lite_validate_stdout",
+          "status": "PASS"
+        },
+        "aide_validate_stdout_parsed": true,
+        "allowlisted_process_call": {
+          "argv": [
+            "<python>",
+            "<aide-root>\\.aide\\scripts\\aide_lite.py",
+            "validate"
+          ],
+          "cwd": "<aide-root>",
+          "env_constraints": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONUTF8": "1"
+          },
+          "environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+          "shell": false,
+          "timeout": 120.0
+        },
+        "arbitrary_shell_command_executed": false,
+        "argv_template": [
+          "<python>",
+          ".aide/scripts/aide_lite.py",
+          "validate"
+        ],
+        "before_state": {
+          "clean": false,
+          "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/prompt.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/status.yaml\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.json\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.md\n?? .aide/reports/aide-self-validation-process-adapter/capability-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/capability-outcome.json\n?? .aide/reports/aide-self-validation-process-adapter/context-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/context-pack.json\n?? .aide/reports/aide-self-validation-process-adapter/event-record.json\n?? .aide/reports/aide-self-validation-process-adapter/evidence-packet.json\n?? .aide/reports/aide-self-validation-process-adapter/execution-receipt.json\n?? .aide/reports/aide-self-validation-process-adapter/explicit-non-capabilities.md\n?? .aide/reports/aide-self-validation-process-adapter/invocation-request.json\n?? .aide/reports/aide-self-validation-process-adapter/invocation-result.json\n?? .aide/reports/aide-self-validation-process-adapter/next-task-prompt.md\n?? .aide/reports/aide-self-validation-process-adapter/projection.json\n?? .aide/reports/aide-self-validation-process-adapter/status.md\n?? .aide/reports/aide-self-validation-process-adapter/validation.json\n?? .aide/reports/aide-self-validation-process-adapter/warning-disposition.md\n?? .aide/reports/aide-self-validation-process-adapter/workunit.json\n?? .aide/scripts/tests/test_aide_self_validation_process_adapter.py\n?? core/interop/aide/__init__.py\n?? core/interop/aide/self_validation_process_adapter.py",
+          "porcelain_status_digest": "sha256:f166baede940d8c98d8963a627ff057b7a47977bc0316ce5780e3ec0eae3bc3c",
+          "repository_present": true,
+          "revision": "f30ab5cf3006b0f978fb7159d41e1a888b885981",
+          "revision_error": "",
+          "selected_source_digests": {
+            ".aide/scripts/aide_lite.py": "sha256:57940d3f6003f2662e115b48e33a58d4cb5d01cd39de8bca269f0af581070a35",
+            "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+            "core/interop/aide/self_validation_process_adapter.py": "sha256:33bc0e8bfb728d5227e0905b1264d38372e28d5b04686a9e9298bf136e5e8259",
+            "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+            "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+          },
+          "tracked_tree_digest": "sha256:b4e60c8ee1844fa3f1033f07add0adbd08b223c1de826acf30033e0b4dad33cd",
+          "tracked_tree_observed": true
+        },
+        "branch_or_worktree_created": false,
+        "broad_dispatch_used": false,
+        "capability_id": "aide.self.validate",
+        "capability_outcome": {
+          "decoder_outcome": "decoded",
+          "domain_outcome": "typed_result",
+          "domain_result": {
+            "command_id": "aide_lite.validate",
+            "first_line": "AIDE Lite validate",
+            "line_count": 60904,
+            "source": "aide_lite_validate_stdout",
+            "status": "PASS"
+          },
+          "evidence_completeness": "complete",
+          "message": "",
+          "process_outcome": "exit_zero",
+          "reason_code": "",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "complete"
+        },
+        "constructed_success_result": false,
+        "database_opened": false,
+        "environment_constraints": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": "0",
+          "PYTHONNOUSERSITE": "1",
+          "PYTHONUTF8": "1"
+        },
+        "github_mutation_performed": false,
+        "kind": "AideSelfValidationProcessInvocationResult",
+        "message": "AIDE Lite validate returned PASS.",
+        "mutation_observation": "none_detected_within_probe_coverage",
+        "network_call_performed": false,
+        "patch_transaction_applied": false,
+        "preview_or_apply_performed": false,
+        "private_tool_called": false,
+        "probe_coverage": [
+          "git_revision",
+          "git_porcelain_status",
+          "git_tracked_tree_digest",
+          "selected_source_digests"
+        ],
+        "process_call_count": 1,
+        "process_execution_receipt": {
+          "after_state_ref": "sha256:4a01a159cbeb92cf49d7a90f64633d54db58c0dcc63bb6be3dfb598a9d2c3b38",
+          "argv_digest": "sha256:2bd18f62f2abc3c0524a16e16e39127dbc9c1c286ca85f226ec7d5d8984c4708",
+          "before_state_ref": "sha256:4a01a159cbeb92cf49d7a90f64633d54db58c0dcc63bb6be3dfb598a9d2c3b38",
+          "cancelled": false,
+          "capability_ref": "aide://capability/aide-self-validation-process-adapter-v0",
+          "decoder_ref": "aide.self.validate-stdout-v0",
+          "ended_at": "deterministic",
+          "executable_digest": "sha256:3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd",
+          "executable_identity": "python",
+          "invocation_ref": "aide://invocation/aide-self-validation-process-adapter-01",
+          "launcher_call_count": 1,
+          "metadata": {
+            "after_state": {
+              "clean": false,
+              "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/prompt.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/status.yaml\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.json\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.md\n?? .aide/reports/aide-self-validation-process-adapter/capability-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/capability-outcome.json\n?? .aide/reports/aide-self-validation-process-adapter/context-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/context-pack.json\n?? .aide/reports/aide-self-validation-process-adapter/event-record.json\n?? .aide/reports/aide-self-validation-process-adapter/evidence-packet.json\n?? .aide/reports/aide-self-validation-process-adapter/execution-receipt.json\n?? .aide/reports/aide-self-validation-process-adapter/explicit-non-capabilities.md\n?? .aide/reports/aide-self-validation-process-adapter/invocation-request.json\n?? .aide/reports/aide-self-validation-process-adapter/invocation-result.json\n?? .aide/reports/aide-self-validation-process-adapter/next-task-prompt.md\n?? .aide/reports/aide-self-validation-process-adapter/projection.json\n?? .aide/reports/aide-self-validation-process-adapter/status.md\n?? .aide/reports/aide-self-validation-process-adapter/validation.json\n?? .aide/reports/aide-self-validation-process-adapter/warning-disposition.md\n?? .aide/reports/aide-self-validation-process-adapter/workunit.json\n?? .aide/scripts/tests/test_aide_self_validation_process_adapter.py\n?? core/interop/aide/__init__.py\n?? core/interop/aide/self_validation_process_adapter.py",
+              "porcelain_status_digest": "sha256:f166baede940d8c98d8963a627ff057b7a47977bc0316ce5780e3ec0eae3bc3c",
+              "repository_present": true,
+              "revision": "f30ab5cf3006b0f978fb7159d41e1a888b885981",
+              "revision_error": "",
+              "selected_source_digests": {
+                ".aide/scripts/aide_lite.py": "sha256:57940d3f6003f2662e115b48e33a58d4cb5d01cd39de8bca269f0af581070a35",
+                "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+                "core/interop/aide/self_validation_process_adapter.py": "sha256:33bc0e8bfb728d5227e0905b1264d38372e28d5b04686a9e9298bf136e5e8259",
+                "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+                "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+              },
+              "tracked_tree_digest": "sha256:b4e60c8ee1844fa3f1033f07add0adbd08b223c1de826acf30033e0b4dad33cd",
+              "tracked_tree_observed": true
+            },
+            "before_state": {
+              "clean": false,
+              "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/prompt.md\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/status.yaml\n?? .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.json\n?? .aide/reports/aide-self-validation-process-adapter/adapter-report.md\n?? .aide/reports/aide-self-validation-process-adapter/capability-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/capability-outcome.json\n?? .aide/reports/aide-self-validation-process-adapter/context-descriptor.json\n?? .aide/reports/aide-self-validation-process-adapter/context-pack.json\n?? .aide/reports/aide-self-validation-process-adapter/event-record.json\n?? .aide/reports/aide-self-validation-process-adapter/evidence-packet.json\n?? .aide/reports/aide-self-validation-process-adapter/execution-receipt.json\n?? .aide/reports/aide-self-validation-process-adapter/explicit-non-capabilities.md\n?? .aide/reports/aide-self-validation-process-adapter/invocation-request.json\n?? .aide/reports/aide-self-validation-process-adapter/invocation-result.json\n?? .aide/reports/aide-self-validation-process-adapter/next-task-prompt.md\n?? .aide/reports/aide-self-validation-process-adapter/projection.json\n?? .aide/reports/aide-self-validation-process-adapter/status.md\n?? .aide/reports/aide-self-validation-process-adapter/validation.json\n?? .aide/reports/aide-self-validation-process-adapter/warning-disposition.md\n?? .aide/reports/aide-self-validation-process-adapter/workunit.json\n?? .aide/scripts/tests/test_aide_self_validation_process_adapter.py\n?? core/interop/aide/__init__.py\n?? core/interop/aide/self_validation_process_adapter.py",
+              "porcelain_status_digest": "sha256:f166baede940d8c98d8963a627ff057b7a47977bc0316ce5780e3ec0eae3bc3c",
+              "repository_present": true,
+              "revision": "f30ab5cf3006b0f978fb7159d41e1a888b885981",
+              "revision_error": "",
+              "selected_source_digests": {
+                ".aide/scripts/aide_lite.py": "sha256:57940d3f6003f2662e115b48e33a58d4cb5d01cd39de8bca269f0af581070a35",
+                "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+                "core/interop/aide/self_validation_process_adapter.py": "sha256:33bc0e8bfb728d5227e0905b1264d38372e28d5b04686a9e9298bf136e5e8259",
+                "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+                "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+              },
+              "tracked_tree_digest": "sha256:b4e60c8ee1844fa3f1033f07add0adbd08b223c1de826acf30033e0b4dad33cd",
+              "tracked_tree_observed": true
+            },
+            "launch": {
+              "argv": [
+                "<python>",
+                "<aide-root>\\.aide\\scripts\\aide_lite.py",
+                "validate"
+              ],
+              "cwd": "<aide-root>",
+              "environment_manifest": {
+                "keys": [
+                  "COMSPEC",
+                  "PATH",
+                  "PATHEXT",
+                  "PYTHONDONTWRITEBYTECODE",
+                  "PYTHONHASHSEED",
+                  "PYTHONNOUSERSITE",
+                  "PYTHONUTF8",
+                  "SYSTEMROOT",
+                  "SystemDrive",
+                  "TEMP",
+                  "TMP",
+                  "USERPROFILE",
+                  "WINDIR"
+                ],
+                "value_digests": {
+                  "COMSPEC": "sha256:fd21f9d5853baaeda38d52ebc1f92c0e2457b89a52e3869270290e6ccdf638a0",
+                  "PATH": "sha256:4af73944d5a4e8d4aaedc8d88b3bd87258577c90c169126d87b67c2d366ba445",
+                  "PATHEXT": "sha256:7977c2b879d035c731c55c0ba304b0adf1f332fa278338f12c6b7425fae02241",
+                  "PYTHONDONTWRITEBYTECODE": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+                  "PYTHONHASHSEED": "sha256:94664180e5190a6c6dc2ba6e2d7944081d2dd0e0151a9ff07f62c8865eeb9389",
+                  "PYTHONNOUSERSITE": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+                  "PYTHONUTF8": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+                  "SYSTEMROOT": "sha256:cd1d43ac38aee601acb6ce88ad8c7d056f0275ca13355aa36cfa801e9ffabfa4",
+                  "SystemDrive": "sha256:1176329923408cc1c1a7761fb7294b5be8612536c5243855124ea0493d64381b",
+                  "TEMP": "sha256:d02c86aaee52939138ab555840211e9a92ef8f2f6823f82fa7b83752f9ebc2f4",
+                  "TMP": "sha256:d02c86aaee52939138ab555840211e9a92ef8f2f6823f82fa7b83752f9ebc2f4",
+                  "USERPROFILE": "sha256:0ab0bbdea326f4be4731e926e557fe789a8d42f704fa34694138284871983f98",
+                  "WINDIR": "sha256:cd1d43ac38aee601acb6ce88ad8c7d056f0275ca13355aa36cfa801e9ffabfa4"
+                }
+              },
+              "environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+              "shell": false,
+              "timeout": 120.0
+            }
+          },
+          "mutation_observation": "none_detected_within_probe_coverage",
+          "probe_coverage": [
+            "git_revision",
+            "git_porcelain_status",
+            "git_tracked_tree_digest",
+            "selected_source_digests"
+          ],
+          "provider_ref": "registered_process_execution_provider_v0",
+          "redacted_environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+          "return_code": 0,
+          "shell": false,
+          "started_at": "deterministic",
+          "stderr": {
+            "byte_count": 0,
+            "excerpt": "",
+            "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout": {
+            "byte_count": 4832338,
+            "excerpt": "AIDE Lite validate\nstatus: PASS\n- PASS required file: .aide/policies/token-budget.yaml\n- PASS required file: .aide/memory/project-state.md\n- PASS required file: .aide/memory/decisions.md\n- PASS required file: .aide/memory/open-risks.md\n- PASS required file: .aide/prompts/compact-task.md\n- PASS required file: .aide/prompts/evidence-review.md\n- PASS required file: .aide/prompts/codex-token-mode.md\n- PASS required file: .aide/context/ignore.yaml\n- PASS context compiler config exists: .aide/context/compiler.yaml\n- PASS context compiler config exists: .aide/context/priority.yaml\n- PASS context compiler config exists: .aide/context/excerpt-policy.yaml\n- PASS verifier config exists: .aide/policies/verification.yaml\n- PASS verifier config exists: .aide/verification/evidence-packet.template.md\n- PA",
+            "sha256": "sha256:7574744f5c2262109db95848af958497f3cb2cb8c0e70e179c30ea656985d954"
+          },
+          "timed_out": false,
+          "working_directory_ref": "sha256:0366f8c755db01a31ee8514c6d73fb3921b55a65205022dbb13cee3b1dd9d6ba"
+        },
+        "proposed_capability_label": "aide_self_validation_process_adapter_v0",
+        "provider_core_changed_by_task": false,
+        "provider_or_model_called": false,
+        "provider_ref": "registered_process_execution_provider_v0",
+        "reason_code": "",
+        "release_or_promotion_performed": false,
+        "result": "PASS",
+        "result_origin": "aide_lite_validate_stdout",
+        "returncode": 0,
+        "schema_version": "aide.self-validation-process.invocation-result.v1",
+        "service_started": false,
+        "source_repository_mutated": false,
+        "status": "PASS",
+        "stderr": {
+          "byte_count": 0,
+          "excerpt": "",
+          "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "byte_count": 4832338,
+          "excerpt": "AIDE Lite validate\nstatus: PASS\n- PASS required file: .aide/policies/token-budget.yaml\n- PASS required file: .aide/memory/project-state.md\n- PASS required file: .aide/memory/decisions.md\n- PASS required file: .aide/memory/open-risks.md\n- PASS required file: .aide/prompts/compact-task.md\n- PASS required file: .aide/prompts/evidence-review.md\n- PASS required file: .aide/prompts/codex-token-mode.md\n- PASS required file: .aide/context/ignore.yaml\n- PASS context compiler config exists: .aide/context/compiler.yaml\n- PASS context compiler config exists: .aide/context/priority.yaml\n- PASS context compiler config exists: .aide/context/excerpt-policy.yaml\n- PASS verifier config exists: .aide/policies/verification.yaml\n- PASS verifier config exists: .aide/verification/evidence-packet.template.md\n- PA",
+          "sha256": "sha256:7574744f5c2262109db95848af958497f3cb2cb8c0e70e179c30ea656985d954"
+        },
+        "target_repository_mutated": false,
+        "task_id": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+        "typed_refusal": false,
+        "typed_result": true,
+        "workbench_apply_performed": false,
+        "workbench_started": false,
+        "worker_executed": false,
+        "workspace_state_unchanged": true
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "state",
+      "description": "Before and after state evidence is identical within declared probe coverage.",
+      "evidence_refs": [
+        ".aide/reports/aide-self-validation-process-adapter/execution-receipt.json"
+      ],
+      "expected": "before_state_ref == after_state_ref and no mutation observed",
+      "id": "state.workspace_unchanged",
+      "observed": {
+        "after": "sha256:4a01a159cbeb92cf49d7a90f64633d54db58c0dcc63bb6be3dfb598a9d2c3b38",
+        "before": "sha256:4a01a159cbeb92cf49d7a90f64633d54db58c0dcc63bb6be3dfb598a9d2c3b38",
+        "mutation": "none_detected_within_probe_coverage"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "determinism",
+      "description": "Projection digest recomputes from canonical JSON.",
+      "evidence_refs": [
+        ".aide/reports/aide-self-validation-process-adapter/projection.json"
+      ],
+      "expected": "sha256:82f904499d3ae0cf584e597ad4ba948ef963a644bdc1f188793dfb0111b13ad5",
+      "id": "determinism.projection_digest",
+      "observed": "sha256:82f904499d3ae0cf584e597ad4ba948ef963a644bdc1f188793dfb0111b13ad5",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "behavior",
+      "description": "Independent fake-runner success path launches exactly once with exact argv.",
+      "evidence_refs": [
+        "independent fake-runner harness"
+      ],
+      "expected": "one fake-runner call ending in .aide/scripts/aide_lite.py validate",
+      "id": "behavior.fake_runner_success_once",
+      "observed": {
+        "argv_matches": true,
+        "call_count": 1,
+        "calls": [
+          {
+            "argv": [
+              "<python>",
+              "<fixture-root>\\.aide\\scripts\\aide_lite.py",
+              "validate"
+            ],
+            "cwd": "<fixture-root>",
+            "env_keys": [
+              "COMSPEC",
+              "PATH",
+              "PATHEXT",
+              "PYTHONDONTWRITEBYTECODE",
+              "PYTHONHASHSEED",
+              "PYTHONNOUSERSITE",
+              "PYTHONUTF8",
+              "SYSTEMROOT",
+              "SystemDrive",
+              "TEMP",
+              "TMP",
+              "USERPROFILE",
+              "WINDIR"
+            ],
+            "shell": false,
+            "timeout": 120.0
+          }
+        ],
+        "process_call_count": 1,
+        "result": "PASS"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "behavior",
+      "description": "Invalid capability, workspace, revision, executable, digest, and binding cases launch zero processes.",
+      "evidence_refs": [
+        "independent fake-runner harness"
+      ],
+      "expected": {
+        "digest_mismatch": 0,
+        "invalid_binding": 0,
+        "missing_executable": 0,
+        "missing_workspace": 0,
+        "unsupported": 0,
+        "wrong_revision": 0
+      },
+      "id": "behavior.zero_launch_refusals",
+      "observed": {
+        "digest_mismatch": {
+          "calls": [],
+          "process_call_count": 0,
+          "reason_code": "AIDE_SELF_VALIDATION_DIGEST_MISMATCH"
+        },
+        "invalid_binding": {
+          "calls": [],
+          "process_call_count": 0,
+          "reason_code": "binding_mismatch"
+        },
+        "missing_executable": {
+          "calls": [],
+          "process_call_count": 0,
+          "reason_code": "AIDE_SELF_VALIDATION_INVALID_REQUEST"
+        },
+        "missing_workspace": {
+          "calls": [],
+          "process_call_count": 0,
+          "reason_code": "AIDE_SELF_VALIDATION_REPOSITORY_MISSING"
+        },
+        "unsupported": {
+          "calls": [],
+          "process_call_count": 0,
+          "reason_code": "AIDE_SELF_VALIDATION_UNSUPPORTED_CAPABILITY"
+        },
+        "wrong_revision": {
+          "calls": [],
+          "process_call_count": 0,
+          "reason_code": "AIDE_SELF_VALIDATION_REVISION_MISMATCH"
+        }
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "churn",
+      "description": "Report-only adapter validation leaves source build reports unchanged.",
+      "evidence_refs": [
+        "py -3 .aide/scripts/aide_lite.py aide-self-validation-process-adapter validate"
+      ],
+      "expected": {
+        "build_report_diff": [],
+        "returncode": 0
+      },
+      "id": "churn.report_validate_no_churn",
+      "observed": {
+        "after_diff": [],
+        "before_diff": [],
+        "returncode": 0
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "recursion",
+      "description": "Direct AIDE Lite validate succeeds and does not dispatch the self-validation adapter run command.",
+      "evidence_refs": [
+        "py -3 .aide/scripts/aide_lite.py validate"
+      ],
+      "expected": "status PASS and no self-validation adapter run string",
+      "id": "recursion.direct_validate_not_recursive",
+      "observed": {
+        "argv": [
+          "<absolute-path>",
+          ".aide/scripts/aide_lite.py",
+          "validate"
+        ],
+        "returncode": 0,
+        "stderr_excerpt": "",
+        "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_excerpt": "AIDE Lite validate\nstatus: PASS\n- PASS required file: .aide/policies/token-budget.yaml\n- PASS required file: .aide/memory/project-state.md\n- PASS required file: .aide/memory/decisions.md\n- PASS required file: .aide/memory/open-risks.md\n- PASS required file: .aide/prompts/compact-task.md\n- PASS required file: .aide/prompts/evidence-review.md\n- PASS required file: .aide/prompts/codex-token-mode.md\n- PASS required file: .aide/context/ignore.yaml\n- PASS context compiler config exists: .aide/context/compiler.yaml\n- PASS context compiler config exists: .aide/context/priority.yaml\n- PASS context compiler config exists: .aide/context/excerpt-policy.yaml\n- PASS verifier config exists: .aide/policies/verification.yaml\n- PASS verifier config exists: .aide/verification/evidence-packet.template.md\n- PASS verifier config exists: .aide/verification/review-packet.template.md\n- PASS verifier config exists: .aide/verification/review-decision-policy.yaml\n- PASS verifier config exists: .aide/verification/diff-scope-policy.yaml\n- PASS verifier config exists: .aide/verification/file-reference-policy.yaml\n- PASS verifier config exists: .aide/verification/secret-scan-policy.yaml\n- PASS token ledger artifa",
+        "stdout_sha256": "sha256:7574744f5c2262109db95848af958497f3cb2cb8c0e70e179c30ea656985d954"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "hygiene",
+      "description": "Committed source build reports and evidence contain no absolute local paths or secret-like values.",
+      "evidence_refs": [
+        ".aide/reports/aide-self-validation-process-adapter",
+        ".aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01"
+      ],
+      "expected": [],
+      "id": "hygiene.no_committed_build_leaks",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "boundary",
+      "description": "Provider and adapter capability remain proposed and unaccepted.",
+      "evidence_refs": [
+        ".aide/reports/aide-self-validation-process-adapter/capability-descriptor.json"
+      ],
+      "expected": {
+        "accepted": false,
+        "provider_acceptance_claimed": false
+      },
+      "id": "boundary.provider_not_accepted",
+      "observed": {
+        "accepted": false,
+        "allowed_argv_template": [
+          "<python>",
+          ".aide/scripts/aide_lite.py",
+          "validate"
+        ],
+        "broad_dispatch_allowed": false,
+        "capability_ref": "aide://capability/aide-self-validation-process-adapter-v0",
+        "executor": "aide_lite_validate_process",
+        "id": "aide.self.validate",
+        "invocation_limit": 1,
+        "kind": "CapabilityDescriptor",
+        "mode": "bounded_registered_process_invocation",
+        "mutation_allowed": false,
+        "mutation_observation": "none_detected_within_probe_coverage",
+        "network_allowed": false,
+        "private_tool_allowed": false,
+        "probe_coverage": [
+          "git_revision",
+          "git_porcelain_status",
+          "git_tracked_tree_digest",
+          "selected_source_digests"
+        ],
+        "proposed_capability_label": "aide_self_validation_process_adapter_v0",
+        "provider_acceptance_claimed": false,
+        "provider_core_changed_by_task": false,
+        "provider_or_model_allowed": false,
+        "provider_ref": "registered_process_execution_provider_v0",
+        "read_only_guarantee": false,
+        "same_conformance_family": "registered-process-provider-v0",
+        "schema_version": "aide.self-validation-process.capability-descriptor.v1",
+        "shared_outcome_model": true,
+        "shared_receipt_model": true,
+        "shell_allowed": false,
+        "task_id": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+        "workbench_apply_allowed": false,
+        "worker_allowed": false
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "boundary",
+      "description": "Provider-level non-capabilities remain explicit in provider repair evidence.",
+      "evidence_refs": [
+        ".aide/reports/registered-process-execution-provider-v0-repair/explicit-non-capabilities.md"
+      ],
+      "expected": [
+        "process_cancellation",
+        "child_process_tree_termination",
+        "persistent_idempotency",
+        "resource_quota_enforcement",
+        "streaming_artifact_storage",
+        "non_git_state_providers"
+      ],
+      "id": "boundary.provider_non_capabilities_preserved",
+      "observed": "# Explicit Non-Capabilities\n\n- `provider_acceptance`\n- `universal_execution_ontology`\n- `arbitrary_command_runner`\n- `generic_command_cli`\n- `process_cancellation`\n- `child_process_tree_termination`\n- `persistent_idempotency`\n- `resource_quota_enforcement`\n- `streaming_artifact_storage`\n- `non_git_state_providers`\n- `runtime_service`\n- `worker_execution`\n- `provider_model_network_calls`\n- `preview_apply_rollback`\n- `repository_mutation`\n- `branch_worktree_github_release_behavior`\n\nProcess cancellation is declared unsupported in v0. The receipt keeps a\n`cancelled` field for future compatibility, but this repair does not implement\nactive cancellation or child-process-tree termination.\n",
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "category": "regression",
+      "description": "Self adapter, generic provider, and Dominium parity focused tests pass.",
+      "evidence_refs": [
+        "focused unittest commands"
+      ],
+      "expected": "all focused tests return 0",
+      "id": "regression.focused_tests_pass",
+      "observed": [
+        {
+          "argv": [
+            "<absolute-path>",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            ".aide/scripts/tests",
+            "-p",
+            "test_aide_self_validation_process_adapter.py"
+          ],
+          "returncode": 0,
+          "stderr_excerpt": ".....\n----------------------------------------------------------------------\nRan 5 tests in 6.450s\n\nOK\n",
+          "stderr_sha256": "sha256:e2a271f6f0b6f9602230e251a1918005c9bc017e331fe79b590d26d25929ad49",
+          "stdout_excerpt": "",
+          "stdout_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "<absolute-path>",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            ".aide/scripts/tests",
+            "-p",
+            "test_aide_registered_process_provider.py"
+          ],
+          "returncode": 0,
+          "stderr_excerpt": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.037s\n\nOK\n",
+          "stderr_sha256": "sha256:7c5860e4840dca48969a3f05b38885e180e487f941055b6219af44b4e5e22a60",
+          "stdout_excerpt": "",
+          "stdout_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "<absolute-path>",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            ".aide/scripts/tests",
+            "-p",
+            "test_aide_dominium_registered_validation_backend.py"
+          ],
+          "returncode": 0,
+          "stderr_excerpt": ".......\n----------------------------------------------------------------------\nRan 7 tests in 12.820s\n\nOK\n",
+          "stderr_sha256": "sha256:6c9ae08759dc03a554ee33063d4712ee7db3792b4bc47eeee61c3453b4164e34",
+          "stdout_excerpt": "",
+          "stdout_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "outcome": "PASS",
+      "severity": "material"
+    }
+  ],
+  "explicit_non_capabilities": [
+    "implementation_repair",
+    "provider_acceptance",
+    "eureka_adapter_build",
+    "arbitrary_command_runner",
+    "generic_command_cli",
+    "provider_core_mutation",
+    "service_runtime",
+    "worker_execution",
+    "provider_model_network_calls",
+    "preview_apply_rollback",
+    "repository_mutation",
+    "branch_worktree_github_release_behavior"
+  ],
+  "kind": "AideSelfValidationProcessAdapterCheckReport",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.self-validation-process-adapter-check.v1",
+  "source_commit": "d9cb3df8dbb9274b618956d6069666f4f4274528",
+  "source_task_id": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+  "warnings": [
+    "RegisteredProcessExecutionProvider v0 remains proposed and unaccepted.",
+    "Eureka remains required as the unrelated external-domain provider reuse proof.",
+    "The source build allowed preexisting task-local dirty state and proved no additional state change across the process boundary.",
+    "The independent harness uses its current Python executable for nested Python subprocesses to avoid WindowsApps py launcher drift; shell validation commands are recorded separately."
+  ]
+}

@@ -1938,6 +1938,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence
     description: Build task proving AIDE self reuse of the proposed RegisteredProcessExecutionProvider v0 without changing provider core. Adds a thin AIDE self-validation process adapter, AIDE Lite status/run/validate command surface, focused fake-runner tests, and complete task-local reports/evidence. The single successful live invocation runs the exact allowlisted AIDE Lite validate process through the shared provider, emits ProcessExecutionReceipt and CapabilityOutcome records, proves unchanged workspace state within declared probe coverage, and stops at needs_review with PASS_WITH_WARNINGS. Recommends exactly AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01. Does not accept the provider, implement a generic command runner, add Eureka, mutate Dominium or target repositories, call providers/models/network, run workers, start Service/Workbench/runtime, preview/apply/rollback, create branches/worktrees, mutate GitHub, release, or promote.
+  - id: AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check AIDE Self-Validation Process Adapter
+    task: .aide/queue/AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/evidence
+    description: Check-only independent review of AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01 at commit d9cb3df8dbb9274b618956d6069666f4f4274528. Confirms provider core remained unchanged, the adapter remains thin and AIDE-specific, the committed receipt records exact AIDE Lite validate argv with shell false, one valid fake-runner path launches exactly once, invalid capability/workspace/revision/executable/digest/binding cases launch zero processes, success originates from AIDE Lite validate stdout, direct validate does not recursively invoke the adapter, report validation leaves no source-report churn, focused self/provider/Dominium tests pass, reports are scrubbed, and provider status remains proposed and unaccepted. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01. Does not repair implementation, accept the provider, build Eureka, mutate provider core, mutate Dominium or target repositories, call providers/models/network, run workers, start Service/Workbench/runtime, preview/apply/rollback, create branches/worktrees, mutate GitHub, release, or promote.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

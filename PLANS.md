@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+
+- Title: Check AIDE Self-Validation Process Adapter
+- Status: needs_review
+- Objective: independently check the AIDE self-validation adapter build without repairing implementation or accepting the proposed `RegisteredProcessExecutionProvider v0`.
+- Scope: check task/evidence, `.aide/reports/aide-self-validation-process-adapter-check/**`, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01` at commit `d9cb3df8dbb9274b618956d6069666f4f4274528`, result `PASS_WITH_WARNINGS`, with provider still proposed and unaccepted.
+- Milestones: source build and reports reviewed; provider core diff checked unchanged; adapter source scan completed; independent fake-runner behavior probes passed; direct recursion/no-churn probes passed; source projection digest recomputed; focused self/provider/Dominium tests passed; provider non-capabilities and proposed-only boundary reconfirmed.
+- Blockers: provider acceptance remains blocked until a second external-domain proof, currently Eureka, is built and checked.
+- Verification Intent: independent check harness, adapter report validation, direct AIDE Lite validation recursion probe, focused unit tests, task inspect/evidence, broad validation, local-path and secret-like scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, provider still unaccepted, and next task exactly `AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01`.
+- Notes: this task does not repair implementation, accept the provider, build Eureka, implement arbitrary-command execution, mutate provider core, mutate Dominium or target repositories, call provider/model/network services, run workers, start runtime/Workbench behavior, preview/apply/rollback, mutate GitHub, create branches/worktrees, release, or promote.
+
 ### Plan ID: AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
 
 - Title: Build AIDE Self-Validation Process Adapter
