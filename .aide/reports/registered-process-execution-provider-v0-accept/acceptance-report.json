@@ -1,0 +1,22 @@
+{
+  "schema_version": "aide.registered-process-provider-acceptance.v1",
+  "task_id": "AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_capability": "registered_process_execution_provider_v0",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "source_chain": [
+    "AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01",
+    "AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+    "AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01"
+  ],
+  "warnings": [
+    "cancellation remains explicitly unsupported in v0",
+    "child-process-tree termination is not implemented",
+    "persistent idempotency is not implemented",
+    "resource quotas and streaming artifact storage are not implemented",
+    "non-Git state providers are not proven",
+    "Eureka selected command used an implicit public-alpha smoke schema"
+  ],
+  "recommended_next_task": "AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01"
+}

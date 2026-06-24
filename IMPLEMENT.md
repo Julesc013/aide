@@ -39,6 +39,44 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+
+Completed as an acceptance-only consolidation and awaiting review.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/**`
+- `.aide/reports/registered-process-execution-provider-v0-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Accepted exactly:
+
+```text
+registered_process_execution_provider_v0
+```
+
+The accepted scope is deterministic, pre-registered, shell-free local process
+capability execution with immutable specs, precondition checks, bounded
+timeout/output capture, stream scrubbing, state-probe hooks, decoder hooks,
+`ProcessExecutionReceipt`, `CapabilityOutcome`, and fail-closed behavior.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
+```
+
+Warnings remain for unsupported cancellation, child-process-tree termination,
+persistent idempotency, resource quotas, streaming artifact storage, unproven
+non-Git state providers, and Eureka's implicit public-alpha smoke schema.
+
+No arbitrary command execution, worker execution, ExecutionHost,
+provider/model/network call, Service/runtime behavior, Workbench behavior,
+preview/apply/rollback, repository mutation, branch/worktree automation, GitHub
+mutation, release, or promotion was accepted or implemented.
+
 ## Work Item: AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01
 
 Completed as a check-only independent review and awaiting review.

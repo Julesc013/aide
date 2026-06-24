@@ -1,0 +1,32 @@
+{
+  "schema_version": "aide.accepted-capability.v1",
+  "task_id": "AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01",
+  "accepted_capability": "registered_process_execution_provider_v0",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_scope": [
+    "deterministic registered local process capability execution",
+    "immutable process specs",
+    "shell-free launch",
+    "precondition checks",
+    "bounded timeout and output summaries",
+    "stream scrubbing",
+    "state-probe and decoder hooks",
+    "ProcessExecutionReceipt",
+    "CapabilityOutcome",
+    "fail-closed invalid and unsafe paths"
+  ],
+  "not_accepted": [
+    "arbitrary command execution",
+    "worker execution",
+    "ExecutionHost",
+    "provider/model/network calls",
+    "Service/runtime behavior",
+    "Workbench behavior",
+    "preview/apply/rollback",
+    "repository mutation",
+    "branch/worktree automation",
+    "GitHub mutation",
+    "release or promotion"
+  ],
+  "recommended_next_task": "AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01"
+}

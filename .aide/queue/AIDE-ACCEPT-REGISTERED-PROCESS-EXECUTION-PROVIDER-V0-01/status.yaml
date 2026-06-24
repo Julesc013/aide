@@ -1,0 +1,12 @@
+schema_version: aide.task-status.v0
+id: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+accepted: true
+accepted_capability: registered_process_execution_provider_v0
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01

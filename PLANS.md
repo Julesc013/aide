@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+
+- Title: Accept Registered Process Execution Provider v0
+- Status: needs_review
+- Objective: accept exactly `registered_process_execution_provider_v0` after Dominium, AIDE self-validation, and Eureka reuse proofs all passed with warnings and zero material findings.
+- Scope: acceptance packet, acceptance reports, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01`, `AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01`, and `AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01` all completed with zero material findings and missing evidence zero.
+- Milestones: proof chain reviewed; accepted capability boundary recorded; warnings and non-capabilities preserved; acceptance reports written; queue routing updated; validation run.
+- Blockers: none for this acceptance gate. ExecutionHost remains a separate next build task.
+- Verification Intent: task inspect/evidence, broad AIDE validation, local path and secret-like scans over the acceptance surfaces, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted capability exactly `registered_process_execution_provider_v0`, missing evidence `0`, and next task exactly `AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01`.
+- Notes: this task does not implement or accept arbitrary command execution, worker execution, ExecutionHost, provider/model/network calls, Service/runtime behavior, Workbench behavior, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
 ### Plan ID: AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01
 
 - Title: Check Eureka Read-Only Process Adapter

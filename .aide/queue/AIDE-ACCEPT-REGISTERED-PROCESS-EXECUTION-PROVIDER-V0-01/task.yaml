@@ -1,0 +1,65 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+title: Accept Registered Process Execution Provider v0
+type: accept
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Accept the generic registered process execution provider v0 after Dominium,
+  AIDE self-validation, and Eureka reuse proofs all passed with warnings and
+  zero material findings.
+accepted_capability: registered_process_execution_provider_v0
+accepted_scope: deterministic_registered_shell_free_process_capability_execution
+check_only: false
+acceptance_only: true
+implementation_authorized: false
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+  - AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+  - AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/**
+  - .aide/reports/registered-process-execution-provider-v0-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/**
+  - core/protocol/**
+  - core/interop/**
+  - .aide/scripts/**
+  - .aide/scripts/tests/**
+accepted_meaning: >
+  AIDE has an accepted generic provider for deterministic, pre-registered,
+  shell-free local process capability execution with immutable specs,
+  precondition checks, bounded timeout/output capture, stream scrubbing,
+  state-probe hooks, decoder hooks, ProcessExecutionReceipt, CapabilityOutcome,
+  and fail-closed behavior.
+not_accepted:
+  - arbitrary shell execution
+  - generic command runner
+  - worker execution
+  - ExecutionHost
+  - provider/model calls
+  - network behavior
+  - Service/runtime behavior
+  - Workbench behavior
+  - preview/apply/rollback
+  - repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - cancellation remains explicitly unsupported in v0
+  - child-process-tree termination is not implemented
+  - persistent idempotency is not implemented
+  - resource quotas and streaming artifact storage are not implemented
+  - non-Git state providers are not proven
+  - Eureka selected command used an implicit public-alpha smoke schema
+recommended_next_task: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01

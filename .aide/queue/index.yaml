@@ -1968,6 +1968,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01/evidence
     description: Check-only independent review of AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01 at commit 961add0. Confirms provider core and neutral protocol files were unchanged, provider core contains no Eureka-specific branches, selected Eureka command evidence originates from Eureka public-alpha smoke JSON, exactly one shell-free launcher call is recorded, state remains unchanged within declared Git probe coverage, cross-adapter provider reuse holds across Dominium/AIDE/Eureka, focused regressions and broad validation pass, committed evidence is scrubbed, and provider remains proposed and unaccepted. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01. Does not repair implementation, accept the provider, rerun the live Eureka command, mutate provider core, mutate Eureka or Dominium, call providers/models/network, run workers, start Service/Workbench/runtime, preview/apply/rollback, create branches/worktrees, mutate GitHub, release, or promote.
+  - id: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+    status: needs_review
+    planning_state: acceptance_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Registered Process Execution Provider v0
+    task: .aide/queue/AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence
+    description: Acceptance-only consolidation for RegisteredProcessExecutionProvider v0 after Dominium, AIDE self-validation, and Eureka reuse proofs passed with warnings, material_finding_count 0, and missing_evidence 0. Accepts exactly registered_process_execution_provider_v0 for deterministic pre-registered shell-free local process capability execution with immutable specs, precondition checks, bounded timeout/output capture, stream scrubbing, state-probe hooks, decoder hooks, ProcessExecutionReceipt, CapabilityOutcome, and fail-closed behavior. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01. Does not accept arbitrary command execution, worker execution, ExecutionHost, provider/model/network calls, Service/runtime behavior, Workbench behavior, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked
