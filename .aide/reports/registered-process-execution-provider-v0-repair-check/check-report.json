@@ -1,0 +1,136 @@
+{
+  "branch_or_worktree_created": false,
+  "dominium_modified": false,
+  "findings": [],
+  "five_source_findings_closed": true,
+  "github_mutation_performed": false,
+  "implementation_repaired": true,
+  "kind": "RegisteredProcessExecutionProviderRepairCheckReport",
+  "live_dominium_command_rerun": false,
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "network_call_performed": false,
+  "observations": {
+    "behavior": {
+      "before_probe_failure": {
+        "calls": 0,
+        "evidence_completeness": "incomplete",
+        "launcher_call_count": 0,
+        "reason_code": "state_probe_failure",
+        "validation_outcome": "state_probe_failure"
+      },
+      "binding_capability_mismatch": {
+        "calls": 0,
+        "evidence_completeness": "incomplete",
+        "launcher_call_count": 0,
+        "reason_code": "binding_mismatch"
+      },
+      "binding_provider_mismatch": {
+        "calls": 0,
+        "launcher_call_count": 0,
+        "provider_ref_is_current_provider": true,
+        "reason_code": "binding_mismatch"
+      },
+      "cancellation": {
+        "cancellation_supported": false,
+        "process_cancellation_declared_non_capability": true
+      },
+      "decoder_failure": {
+        "decoder_outcome": "exception",
+        "domain_outcome": "none",
+        "domain_result": {},
+        "evidence_completeness": "incomplete",
+        "message": "decoder failed",
+        "process_outcome": "exit_zero",
+        "reason_code": "decoder_exception",
+        "refusal": {},
+        "transport_outcome": "transport_started",
+        "validation_outcome": "incomplete"
+      },
+      "invalid_spec": {
+        "calls": 0,
+        "launcher_call_count": 0,
+        "reason_code": "invalid_spec"
+      },
+      "precondition_refusal": {
+        "calls": 0,
+        "launcher_call_count": 0,
+        "reason_code": "wrong_workspace_identity"
+      },
+      "repeat_invocation": {
+        "first_receipt_launcher_call_count": 1,
+        "runner_call_count": 2,
+        "second_receipt_has_current_argument": true,
+        "second_receipt_launcher_call_count": 1
+      },
+      "state_probe_failure": {
+        "calls": 1,
+        "mutation_observation_is_failure": true,
+        "outcome": {
+          "decoder_outcome": "not_decoded",
+          "domain_outcome": "none",
+          "domain_result": {},
+          "evidence_completeness": "incomplete",
+          "message": "probe_failure:RuntimeError",
+          "process_outcome": "exit_zero",
+          "reason_code": "state_probe_failure",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "incomplete"
+        }
+      },
+      "timeout": {
+        "cancelled": false,
+        "outcome": {
+          "decoder_outcome": "not_decoded",
+          "domain_outcome": "none",
+          "domain_result": {},
+          "evidence_completeness": "incomplete",
+          "message": "registered process timed out",
+          "process_outcome": "timed_out",
+          "reason_code": "timeout",
+          "refusal": {},
+          "transport_outcome": "transport_timeout",
+          "validation_outcome": "incomplete"
+        },
+        "timed_out": true
+      },
+      "valid_invocation": {
+        "domain_outcome": "typed_refusal",
+        "launch_has_manifest_digest": true,
+        "launch_has_raw_env": false,
+        "launcher_call_count": 1,
+        "mutation_observation": "none_detected_within_probe_coverage",
+        "probe_coverage": [
+          "tracked"
+        ],
+        "runner_call_count": 1,
+        "runner_shell": false,
+        "shell": false,
+        "stdout_scrubbed": true
+      }
+    },
+    "committed_leaks": {
+      "absolute_path_match_count": 0,
+      "sensitive_match_count": 0
+    },
+    "genericity": {
+      "forbidden_match_count": 0,
+      "matches": []
+    }
+  },
+  "preview_or_apply_performed": false,
+  "provider_accepted": false,
+  "provider_or_model_called": false,
+  "recommended_next_task": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+  "release_or_promotion_performed": false,
+  "result": "PASS_WITH_WARNINGS",
+  "runtime_started": false,
+  "schema_version": "aide.registered-process-execution-provider-v0.repair-check-report.v1",
+  "source_repair_commit": "7f043d09ae0c5bbb73d68ad293e6dafaaaa8ddd6",
+  "source_task_id": "AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01",
+  "target_repository_mutated": false,
+  "task_id": "AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "worker_executed": false
+}

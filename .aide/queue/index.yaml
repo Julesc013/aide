@@ -1918,6 +1918,16 @@ items:
     prompt: .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/prompt.md
     evidence: .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence
     description: Docs-only tentative synthesis of the attached AIDE product-vision and roadmap architecture notes. Adds advisory planning documentation for AIDE as universal development control plane, compatibility kernel, governance fabric, and living project twin; records Omnigent as a replaceable ExecutionHost package candidate; separates role-specific extension interfaces and capability execution from worker execution; and preserves TranslationReceipt, knowledge-fabric, Project Twin, and preview-first mutation as future planning concepts. Stops at needs_review with PASS_WITH_WARNINGS and recommends exactly AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01. Does not accept the registered-process provider, create or run the repair check, implement ExecutionHost/Omnigent/Workbench/runtime/worker/provider/model/network/MCP/A2A/ACP behavior, preview/apply/rollback, mutate Dominium or target repositories, create branches/worktrees, mutate GitHub, release, or promote.
+  - id: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check Registered Process Execution Provider v0 Repair
+    task: .aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/evidence
+    description: Check-only independent repair review of AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01 at commit 7f043d09ae0c5bbb73d68ad293e6dafaaaa8ddd6. Confirms all five material provider safety findings are closed by behavior evidence: binding mismatches launch zero processes, launch accounting and metadata are per invocation, decoder failures mark validation and evidence incomplete, state-probe failures fail closed without typed domain result preservation, and process cancellation is explicitly unsupported in v0. Reconfirms genericity, Dominium parity, scrubbed reports, and proposed-only provider status. Stops at needs_review with PASS_WITH_WARNINGS and recommends exactly AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01. Does not repair implementation, accept the provider, rerun the live Dominium command, mutate Dominium or target repositories, call providers/models/network, run workers, start Service/Workbench/runtime, preview/apply/rollback, create branches/worktrees, mutate GitHub, release, or promote.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

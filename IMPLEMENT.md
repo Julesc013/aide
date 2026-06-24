@@ -39,6 +39,42 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+
+Completed as a check-only independent repair review and awaiting review.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/**`
+- `.aide/reports/registered-process-execution-provider-v0-repair-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The check found zero remaining material findings from the repaired
+registered-process provider. Independent behavior evidence confirms:
+
+- binding mismatches launch zero processes;
+- valid launch accounting and launch metadata are per invocation;
+- decoder failures mark validation/evidence incomplete;
+- state-probe failures fail closed without typed domain result preservation;
+- process cancellation is explicitly unsupported in v0.
+
+The check also reconfirms generic provider source cleanliness, Dominium parity,
+scrubbed task/report surfaces, and proposed-only provider status.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+```
+
+No implementation repair, provider acceptance, cancellation implementation, live
+Dominium command rerun, Dominium or target-repository mutation,
+provider/model/network call, worker runtime, Service, Workbench implementation,
+preview/apply/rollback, branch/worktree automation, GitHub mutation, release, or
+promotion was performed.
+
 ## Work Item: AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01
 
 Completed as a docs-only tentative synthesis and awaiting review.

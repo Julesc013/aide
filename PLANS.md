@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+
+- Title: Check Registered Process Execution Provider v0 Repair
+- Status: needs_review
+- Objective: independently check the bounded provider repair without repairing implementation or accepting the proposed provider.
+- Scope: check task/evidence, `.aide/reports/registered-process-execution-provider-v0-repair-check/**`, queue index, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01` at commit `7f043d09ae0c5bbb73d68ad293e6dafaaaa8ddd6`, result `PASS_WITH_WARNINGS`, provider proposed and unaccepted.
+- Milestones: repair task reviewed; task-local independent behavior harness added; five source findings rechecked; genericity, process safety, result-axis, Dominium parity, and no-overclaiming evidence recorded; report and queue routing written.
+- Blockers: provider acceptance remains blocked until reuse proofs pass. The next reuse proof is the AIDE self-validation process adapter.
+- Verification Intent: independent repair harness, Python compile, focused provider tests, focused Dominium parity tests, report JSON parsing, broad validation, task inspect/evidence, local-path and secret-like scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, provider still unaccepted, and next task exactly `AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01`.
+- Notes: this task does not repair implementation, accept the provider, implement cancellation, add new adapters, rerun the live Dominium command, mutate Dominium or target repositories, call provider/model/network services, run workers, start runtime/Workbench behavior, preview/apply/rollback, mutate GitHub, create branches/worktrees, release, or promote.
+
 ### Plan ID: AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01
 
 - Title: Tentative Product Vision And Roadmap Synthesis
