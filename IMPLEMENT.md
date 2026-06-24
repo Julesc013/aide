@@ -39,6 +39,44 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+
+Completed as a check-only independent review and awaiting repair.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/**`
+- `.aide/reports/registered-process-execution-provider-v0-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `REQUEST_CHANGES`. The check confirms source build evidence
+completeness, generic provider/protocol domain-scan cleanliness, no committed
+absolute-path or secret-like leakage in source build reports/evidence, and
+Dominium parity preservation.
+
+It records five material provider safety findings:
+
+- mismatched capability/provider bindings still launch a process;
+- receipt launcher accounting and launch metadata are cumulative or stale when
+  a provider instance is reused;
+- decoder exceptions report complete validation and evidence axes;
+- state-probe failures can still report a complete typed result;
+- cancellation is neither implemented nor declared as an explicit
+  non-capability.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+```
+
+No implementation repair, provider acceptance, live Dominium rerun, Dominium or
+target-repository mutation, provider/model/network call, worker runtime,
+Service, Workbench implementation, preview/apply/rollback, branch/worktree
+automation, GitHub mutation, release, or promotion was performed.
+
 ## Work Item: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 
 Completed with warnings and awaiting independent review.

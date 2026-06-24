@@ -1,0 +1,64 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+title: Check Registered Process Execution Provider v0
+type: check
+status: needs_review
+planning_state: check_completed
+result: REQUEST_CHANGES
+review_gate: needs_review
+created_at: 2026-06-24
+updated_at: 2026-06-24
+source_build_task: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+source_build_commit: 2137af3a68cc50a06b57fe1fd5ee5bc3af8e0924
+source_build_result: PASS_WITH_WARNINGS
+proposed_capability_checked: registered_process_execution_provider_v0
+objective: >
+  Independently check the generic RegisteredProcessExecutionProvider v0 build
+  for genericity, process safety, result-axis separation, Dominium parity, and
+  honest non-capability boundaries without repairing implementation.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/**
+  - .aide/reports/registered-process-execution-provider-v0-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/**
+  - core/protocol/process_invocation.py
+  - core/protocol/execution_receipt.py
+  - core/protocol/__init__.py
+  - core/interop/dominium/registered_validation_backend.py
+  - .aide/reports/registered-process-execution-provider-v0/**
+  - .aide/reports/dominium-registered-validation-backend/**
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/**
+  - Dominium
+  - <dominium-root>/**
+implementation_repair_authorized: false
+provider_acceptance_authorized: false
+live_dominium_command_rerun_authorized: false
+dominium_or_target_repository_mutation_authorized: false
+network_authorized: false
+provider_or_model_authorized: false
+worker_authorized: false
+runtime_authorized: false
+workbench_apply_authorized: false
+github_mutation_authorized: false
+recommended_next_task: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+material_finding_count: 5
+explicit_non_capabilities_preserved:
+  - universal_execution_ontology
+  - arbitrary_command_runner
+  - generic_command_cli
+  - live_dominium_command_rerun
+  - provider_acceptance
+  - child_process_tree_termination
+  - persistent_idempotency
+  - resource_quota_enforcement
+  - streaming_artifact_storage
+  - non_git_state_providers
+  - runtime_service
+  - worker_execution
+  - provider_model_network_calls
+  - preview_apply_rollback
+  - repository_mutation
+  - branch_worktree_github_release_behavior

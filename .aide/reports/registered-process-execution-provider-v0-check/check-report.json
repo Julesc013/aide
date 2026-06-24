@@ -1,0 +1,255 @@
+{
+  "findings": [
+    {
+      "evidence": {
+        "capability_mismatch_calls": 1,
+        "capability_mismatch_outcome": {
+          "decoder_outcome": "decoded",
+          "domain_outcome": "typed_result",
+          "domain_result": {
+            "status": "ok"
+          },
+          "evidence_completeness": "complete",
+          "message": "",
+          "process_outcome": "exit_zero",
+          "reason_code": "",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "complete"
+        },
+        "wrong_provider_calls": 1,
+        "wrong_provider_outcome": {
+          "decoder_outcome": "decoded",
+          "domain_outcome": "typed_result",
+          "domain_result": {
+            "status": "ok"
+          },
+          "evidence_completeness": "complete",
+          "message": "",
+          "process_outcome": "exit_zero",
+          "reason_code": "",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "complete"
+        },
+        "wrong_provider_receipt_provider_ref": "wrong-provider"
+      },
+      "finding_id": "binding.mismatch_launches_process",
+      "severity": "material",
+      "summary": "Mismatched capability/provider bindings still launch a process instead of failing closed before launch."
+    },
+    {
+      "evidence": {
+        "first_receipt_launcher_call_count": 1,
+        "runner_call_count": 2,
+        "second_receipt_launch_argv": [
+          "tool.py",
+          "--first"
+        ],
+        "second_receipt_launcher_call_count": 2
+      },
+      "finding_id": "receipt.launch_accounting_is_cumulative_or_stale",
+      "severity": "material",
+      "summary": "Receipt launcher accounting and launch metadata are not per-invocation when a provider instance is reused."
+    },
+    {
+      "evidence": {
+        "calls": 1,
+        "mutation_observation": "none_detected_within_probe_coverage",
+        "outcome": {
+          "decoder_outcome": "exception",
+          "domain_outcome": "none",
+          "domain_result": {},
+          "evidence_completeness": "complete",
+          "message": "decoder failed",
+          "process_outcome": "exit_zero",
+          "reason_code": "decoder_exception",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "complete"
+        }
+      },
+      "finding_id": "decoder.failure_marked_complete",
+      "severity": "material",
+      "summary": "Decoder exceptions are represented, but validation and evidence axes still report complete."
+    },
+    {
+      "evidence": {
+        "calls": 1,
+        "mutation_observation": "probe_failure:RuntimeError",
+        "outcome": {
+          "decoder_outcome": "decoded",
+          "domain_outcome": "typed_result",
+          "domain_result": {
+            "status": "ok"
+          },
+          "evidence_completeness": "complete",
+          "message": "",
+          "process_outcome": "exit_zero",
+          "reason_code": "",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "complete"
+        }
+      },
+      "finding_id": "state_probe.failure_not_failed_closed",
+      "severity": "material",
+      "summary": "State-probe failure is recorded in the receipt but the outcome still reports a complete typed result."
+    },
+    {
+      "evidence": {
+        "explicit_non_capabilities_mentions_cancellation": false
+      },
+      "finding_id": "cancellation.not_implemented_or_declared",
+      "severity": "material",
+      "summary": "The receipt has a cancelled field, but cancellation support is neither implemented nor listed as an explicit non-capability."
+    }
+  ],
+  "implementation_repaired": false,
+  "kind": "RegisteredProcessExecutionProviderCheckReport",
+  "live_dominium_command_rerun": false,
+  "material_finding_count": 5,
+  "missing_evidence": 0,
+  "observations": {
+    "behavior": {
+      "binding_mismatch": {
+        "capability_mismatch_calls": 1,
+        "capability_mismatch_outcome": {
+          "decoder_outcome": "decoded",
+          "domain_outcome": "typed_result",
+          "domain_result": {
+            "status": "ok"
+          },
+          "evidence_completeness": "complete",
+          "message": "",
+          "process_outcome": "exit_zero",
+          "reason_code": "",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "complete"
+        },
+        "wrong_provider_calls": 1,
+        "wrong_provider_outcome": {
+          "decoder_outcome": "decoded",
+          "domain_outcome": "typed_result",
+          "domain_result": {
+            "status": "ok"
+          },
+          "evidence_completeness": "complete",
+          "message": "",
+          "process_outcome": "exit_zero",
+          "reason_code": "",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "complete"
+        },
+        "wrong_provider_receipt_provider_ref": "wrong-provider"
+      },
+      "decoder_failure": {
+        "calls": 1,
+        "mutation_observation": "none_detected_within_probe_coverage",
+        "outcome": {
+          "decoder_outcome": "exception",
+          "domain_outcome": "none",
+          "domain_result": {},
+          "evidence_completeness": "complete",
+          "message": "decoder failed",
+          "process_outcome": "exit_zero",
+          "reason_code": "decoder_exception",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "complete"
+        }
+      },
+      "environment_redaction": {
+        "launch_has_manifest_digest": true,
+        "launch_has_raw_env": false
+      },
+      "invalid_spec_zero_launch": {
+        "calls": 0,
+        "launcher_call_count": 0,
+        "reason_code": "invalid_spec"
+      },
+      "precondition_zero_launch": {
+        "calls": 0,
+        "launcher_call_count": 0,
+        "reason_code": "precondition_refused"
+      },
+      "probe_failure": {
+        "calls": 1,
+        "mutation_observation": "probe_failure:RuntimeError",
+        "outcome": {
+          "decoder_outcome": "decoded",
+          "domain_outcome": "typed_result",
+          "domain_result": {
+            "status": "ok"
+          },
+          "evidence_completeness": "complete",
+          "message": "",
+          "process_outcome": "exit_zero",
+          "reason_code": "",
+          "refusal": {},
+          "transport_outcome": "transport_started",
+          "validation_outcome": "complete"
+        }
+      },
+      "repeat_invocation": {
+        "first_receipt_launcher_call_count": 1,
+        "runner_call_count": 2,
+        "second_receipt_launch_argv": [
+          "tool.py",
+          "--first"
+        ],
+        "second_receipt_launcher_call_count": 2
+      },
+      "timeout": {
+        "outcome": {
+          "decoder_outcome": "not_decoded",
+          "domain_outcome": "none",
+          "domain_result": {},
+          "evidence_completeness": "complete",
+          "message": "registered process timed out",
+          "process_outcome": "timed_out",
+          "reason_code": "timeout",
+          "refusal": {},
+          "transport_outcome": "transport_timeout",
+          "validation_outcome": "complete"
+        },
+        "timed_out": true
+      }
+    },
+    "committed_leaks": {
+      "absolute_path_match_count": 0,
+      "sensitive_match_count": 0
+    },
+    "dominium_parity": {
+      "aggregate_validation_executed": false,
+      "aggregate_validation_succeeded": false,
+      "allowlisted_shell": false,
+      "domain_outcome": "typed_refusal",
+      "dominium_status": "refused",
+      "launcher_call_count": 1,
+      "mismatches": {},
+      "mutation_observation": "none_detected_within_probe_coverage",
+      "process_call_count": 1,
+      "registered_command_boundary_reached": "proven",
+      "service_adapter_boundary_reached": "unproven",
+      "validation_status": "PASS_WITH_WARNINGS"
+    },
+    "genericity": {
+      "forbidden_match_count": 0,
+      "matches": []
+    },
+    "source_commit": {
+      "source_commit_present": true
+    }
+  },
+  "proposed_capability_checked": "registered_process_execution_provider_v0",
+  "provider_accepted": false,
+  "recommended_next_task": "AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01",
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.registered-process-execution-provider-v0.check-report.v1",
+  "source_commit": "2137af3a68cc50a06b57fe1fd5ee5bc3af8e0924",
+  "source_task_id": "AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01",
+  "task_id": "AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01"
+}

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+
+- Title: Check Registered Process Execution Provider v0
+- Status: needs_review
+- Objective: independently check the proposed `registered_process_execution_provider_v0` for genericity, process safety, result-axis separation, Dominium parity, and honest non-capability boundaries.
+- Scope: check task/evidence, `.aide/reports/registered-process-execution-provider-v0-check/**`, queue index, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01` at commit `2137af3a68cc50a06b57fe1fd5ee5bc3af8e0924`, result `PASS_WITH_WARNINGS`, proposed capability `registered_process_execution_provider_v0`.
+- Milestones: source build reviewed; independent behavior harness run; genericity and leakage scans completed; Dominium parity reviewed; five material findings recorded; repair prompt generated.
+- Blockers: provider acceptance and second-adapter proof are blocked by material provider safety findings.
+- Verification Intent: independent harness, focused provider tests, focused Dominium parity tests, backend validation, task inspect/evidence, local-path and secret-like scans, broad validation, Dominium status, diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `REQUEST_CHANGES`, `material_finding_count: 5`, and next task exactly `AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01`.
+- Notes: this check does not repair implementation, accept the provider, rerun the live Dominium command, mutate Dominium or target repositories, call provider/model/network services, run workers, start runtime/Workbench behavior, preview/apply/rollback, mutate GitHub, release, or promote.
+
 ### Plan ID: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 
 - Title: Build Registered Process Execution Provider v0
