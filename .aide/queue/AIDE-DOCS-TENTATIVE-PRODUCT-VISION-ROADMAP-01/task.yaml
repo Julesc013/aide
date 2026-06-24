@@ -1,0 +1,71 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01
+title: Tentative Product Vision And Roadmap Synthesis
+type: docs
+status: needs_review
+planning_state: docs_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-24
+updated_at: 2026-06-24
+objective: >
+  Materialize the attached architecture synthesis as tentative, non-authoritative
+  planning documentation while preserving the current registered-process provider
+  repair-check gate as the next executable queue step.
+allowed_paths:
+  - docs/planning/product-vision/**
+  - .aide/reports/tentative-product-vision-roadmap/**
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+forbidden_paths:
+  - core/**
+  - .aide/protocol/**
+  - .aide/policies/**
+  - .aide/queue/AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01/**
+  - .aide/reports/registered-process-execution-provider-v0-repair/**
+  - Dominium
+  - <dominium-root>/**
+source_inputs:
+  - attachment_b3573f2f_product_vision_synthesis
+  - attachment_abfefc96_kernel_and_omnigent_refinement
+  - attachment_67ecff41_end_state_refinement
+  - attachment_f1d86931_foundation_assessment
+live_baseline:
+  current_provider_repair_task: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+  current_provider_repair_result: PASS_WITH_WARNINGS
+  provider_accepted: false
+  recommended_next_task: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+aide_repository_task_scoped_mutation_authorized: true
+implementation_authorized: false
+provider_acceptance_authorized: false
+runtime_authorized: false
+network_authorized: false
+provider_or_model_authorized: false
+worker_authorized: false
+workbench_authorized: false
+preview_apply_authorized: false
+github_mutation_authorized: false
+branch_or_worktree_authorized: false
+release_or_promotion_authorized: false
+target_repository_mutation_authorized: false
+dominium_mutation_authorized: false
+recommended_next_task: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+explicit_non_capabilities:
+  - provider_acceptance
+  - execution_host_contract
+  - omnigent_admission
+  - live_mcp_a2a_acp_behavior
+  - runtime_service
+  - worker_execution
+  - provider_model_network_calls
+  - workbench_implementation
+  - preview_session_implementation
+  - development_transaction_apply
+  - patch_transaction_apply
+  - rollback_execution
+  - target_repository_mutation
+  - dominium_mutation
+  - branch_worktree_github_release_behavior

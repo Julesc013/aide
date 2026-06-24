@@ -1,0 +1,43 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01
+status: needs_review
+planning_state: docs_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-24
+summary: >
+  Materialized the attached AIDE product-vision synthesis as tentative planning
+  documentation while preserving the registered-process provider repair check as
+  the next executable queue gate.
+validation_status: PASS_WITH_WARNINGS
+provider_accepted: false
+implementation_changed: false
+recommended_next_task: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+runtime_started: false
+workbench_apply_performed: false
+preview_or_apply_performed: false
+patch_transaction_applied: false
+target_repository_mutated: false
+dominium_modified: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+evidence:
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/baseline.md
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/source-synthesis.md
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/authority-boundary.md
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/changed-files.md
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/validation-results.md
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/validation.md
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/evidence/next-task-prompt.md
+warnings:
+  - This is tentative planning documentation, not accepted product policy.
+  - External protocol and Omnigent details were not reverified in this docs-only task.
+  - The registered-process provider remains proposed and unaccepted.
+blockers: []

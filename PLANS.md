@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01
+
+- Title: Tentative Product Vision And Roadmap Synthesis
+- Status: needs_review
+- Objective: materialize the attached AIDE product-vision synthesis as tentative, non-authoritative planning documentation while preserving the registered-process provider repair check as the next executable queue gate.
+- Scope: `docs/planning/product-vision/**`, `.aide/reports/tentative-product-vision-roadmap/**`, `.aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md`.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01/task.yaml`.
+- Dependencies: attached architecture synthesis notes plus live `AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01` evidence showing `PASS_WITH_WARNINGS`, provider unaccepted, and next task exactly `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01`.
+- Milestones: tentative product definition recorded; role taxonomy captured; capability execution separated from worker execution; extension-package, TranslationReceipt, knowledge-fabric, Project Twin, and preview-first mutation candidates documented; live roadmap anchored to the provider repair check; task evidence written.
+- Blockers: none for this docs task. Provider acceptance, second-adapter proof, ExecutionHost work, Omnigent integration, Workbench, runtime, preview/apply, and product hero workflows remain blocked on future reviewed queue tasks.
+- Verification Intent: task inspect/evidence, broad validation, local-path scan, secret-like scan, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, no implementation changes, and next task exactly `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01`.
+- Notes: this document is advisory and tentative. It does not accept the registered-process provider, create or process the repair check, implement ExecutionHost, admit Omnigent, run workers, start runtime/Workbench behavior, call provider/model/network services, implement live MCP/A2A/ACP behavior, preview/apply/rollback, mutate Dominium or target repositories, mutate GitHub, create branches/worktrees, release, or promote.
+
 ### Plan ID: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
 
 - Title: Repair Registered Process Execution Provider v0 Safety Findings
