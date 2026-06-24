@@ -1,0 +1,18 @@
+{
+  "decoder_outcome": "decoded",
+  "domain_outcome": "typed_result",
+  "domain_result": {
+    "command_id": "aide_lite.validate",
+    "first_line": "AIDE Lite validate",
+    "line_count": 60904,
+    "source": "aide_lite_validate_stdout",
+    "status": "PASS"
+  },
+  "evidence_completeness": "complete",
+  "message": "",
+  "process_outcome": "exit_zero",
+  "reason_code": "",
+  "refusal": {},
+  "transport_outcome": "transport_started",
+  "validation_outcome": "complete"
+}

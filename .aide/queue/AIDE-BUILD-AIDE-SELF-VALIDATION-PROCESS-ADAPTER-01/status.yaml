@@ -1,0 +1,15 @@
+schema_version: aide.task-status.v0
+id: AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-24
+material_finding_count: 0
+missing_evidence: 0
+accepted: false
+proposed_capability_label: aide_self_validation_process_adapter_v0
+provider_status: proposed_unaccepted
+process_call_count: 1
+workspace_state_unchanged: true
+recommended_next_task: AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01

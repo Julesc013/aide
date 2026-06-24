@@ -1,0 +1,1 @@
+"""AIDE self-interop adapters."""

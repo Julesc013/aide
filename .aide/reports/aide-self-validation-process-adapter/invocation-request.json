@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "<python>",
+    "<aide-root>\\.aide\\scripts\\aide_lite.py",
+    "validate"
+  ],
+  "argv_template": [
+    "<python>",
+    ".aide/scripts/aide_lite.py",
+    "validate"
+  ],
+  "capability_id": "aide.self.validate",
+  "expected_capability_id": "aide.self.validate",
+  "expected_digests": {
+    ".aide/scripts/aide_lite.py": "sha256:57940d3f6003f2662e115b48e33a58d4cb5d01cd39de8bca269f0af581070a35",
+    "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+    "core/interop/aide/self_validation_process_adapter.py": "sha256:33bc0e8bfb728d5227e0905b1264d38372e28d5b04686a9e9298bf136e5e8259",
+    "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+    "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+  },
+  "expected_revision": "f30ab5cf3006b0f978fb7159d41e1a888b885981",
+  "preexisting_dirty_state_allowed": true,
+  "proposed_capability_label": "aide_self_validation_process_adapter_v0",
+  "python_executable": "<python>",
+  "repo_root": "<aide-root>",
+  "schema_version": "aide.self-validation-process.invocation-request.v1",
+  "script_path": "<aide-root>\\.aide\\scripts\\aide_lite.py",
+  "shell": false,
+  "task_id": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+  "timeout_seconds": 120.0
+}

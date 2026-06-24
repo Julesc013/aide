@@ -1,0 +1,144 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "ep-e895579097424a4a",
+    "name": "AIDE self-validation process adapter evidence",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/aide-self-validation-process-adapter/evidence-packet.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/aide-self-validation-process-adapter/context-descriptor.json",
+        "role": "context_descriptor",
+        "sha256": "sha256:9fb359ed65e5d866217891b4e0a9d12119ab525e1a37fd50bc5cac1cf4e9421a"
+      },
+      {
+        "path": ".aide/reports/aide-self-validation-process-adapter/context-pack.json",
+        "role": "context_pack",
+        "sha256": "sha256:2d446b6592b88dde6e7d3693d63c1e63027cf63329f5f1320642ec984874e465"
+      },
+      {
+        "path": ".aide/reports/aide-self-validation-process-adapter/workunit.json",
+        "role": "workunit",
+        "sha256": "sha256:d8785fa2c84a7f419b87b8a19c53bfa96389c59b01c4cd85be5cfb3e8709645b"
+      },
+      {
+        "path": ".aide/reports/aide-self-validation-process-adapter/capability-descriptor.json",
+        "role": "capability_descriptor",
+        "sha256": "sha256:5a3cec6b5669eecd51ffaa35056a400b1367b8f5580e829937a6c5233a9e02f5"
+      },
+      {
+        "path": ".aide/reports/aide-self-validation-process-adapter/invocation-result.json",
+        "role": "invocation_result",
+        "sha256": "sha256:f009dd907d0f17d8c4d83922f6a182147256f24aafd1ce67fc1ea15d1b180cf7"
+      },
+      {
+        "path": ".aide/reports/aide-self-validation-process-adapter/execution-receipt.json",
+        "role": "execution_receipt",
+        "sha256": "sha256:c1f84b9ed4a153c69b68314cc04219b3c59a8a9cd02224d6e3e94b18b68749a9"
+      },
+      {
+        "path": ".aide/reports/aide-self-validation-process-adapter/capability-outcome.json",
+        "role": "capability_outcome",
+        "sha256": "sha256:6b888a2ea583a46f8591c9837bfe37789cba34d4d1f31773a3531a8a542cc30d"
+      }
+    ],
+    "capability_label": "minimal_evidence_packet_schema",
+    "claims": [
+      {
+        "id": "registered_provider_reused",
+        "status": "supported",
+        "summary": "The adapter invokes the unchanged RegisteredProcessExecutionProvider v0."
+      },
+      {
+        "id": "exactly_one_process_invocation",
+        "status": "supported",
+        "summary": "The allowlisted AIDE Lite validate process was spawned exactly once."
+      },
+      {
+        "id": "stdout_result_origin",
+        "status": "supported",
+        "summary": "The AIDE result was derived from AIDE Lite validate stdout."
+      },
+      {
+        "id": "shared_receipt_model",
+        "status": "supported",
+        "summary": "The adapter emits the shared ProcessExecutionReceipt model."
+      },
+      {
+        "id": "workspace_state_unchanged",
+        "status": "supported",
+        "summary": "Before and after AIDE state evidence match within declared probe coverage."
+      }
+    ],
+    "explicit_non_capabilities": [
+      "registered_process_provider_acceptance",
+      "arbitrary_command_runner",
+      "generic_command_cli",
+      "provider_core_mutation",
+      "dominium_adapter_mutation",
+      "eureka_adapter",
+      "service_runtime",
+      "worker_execution",
+      "provider_model_call",
+      "network_call",
+      "workbench_behavior",
+      "preview_or_apply",
+      "rollback",
+      "patch_transaction_apply",
+      "source_repository_mutation",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "risks": [],
+    "source_task_id": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+    "source_task_kind": "build",
+    "subject": {
+      "id": "aide.self.validate",
+      "ref": "aide://capability/aide-self-validation-process-adapter-v0",
+      "type": "capability"
+    },
+    "validations": [
+      {
+        "command": "AIDE self-validation process adapter",
+        "exit_code": 0,
+        "status": "PASS_WITH_WARNINGS"
+      }
+    ],
+    "warnings": [
+      "The registered-process provider remains proposed and unaccepted.",
+      "This adapter proves AIDE self reuse, not a second external domain.",
+      "The invocation allows preexisting task-local dirty state but requires no change across the process boundary."
+    ]
+  },
+  "status": {
+    "phase": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "Eureka reuse proof remains required before provider acceptance."
+    ]
+  }
+}

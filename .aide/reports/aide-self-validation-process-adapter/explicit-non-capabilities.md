@@ -1,0 +1,21 @@
+# Explicit Non-Capabilities
+
+- `registered_process_provider_acceptance`
+- `arbitrary_command_runner`
+- `generic_command_cli`
+- `provider_core_mutation`
+- `dominium_adapter_mutation`
+- `eureka_adapter`
+- `service_runtime`
+- `worker_execution`
+- `provider_model_call`
+- `network_call`
+- `workbench_behavior`
+- `preview_or_apply`
+- `rollback`
+- `patch_transaction_apply`
+- `source_repository_mutation`
+- `target_repository_mutation`
+- `branch_worktree_automation`
+- `github_mutation`
+- `release_or_promotion`

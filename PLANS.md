@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+
+- Title: Build AIDE Self-Validation Process Adapter
+- Status: needs_review
+- Objective: prove reuse of the proposed `RegisteredProcessExecutionProvider v0` by adding a thin AIDE self-validation adapter that invokes AIDE Lite validate through the shared provider.
+- Scope: `core/interop/aide/**`, one AIDE Lite command wrapper, focused fake-runner tests, `.aide/reports/aide-self-validation-process-adapter/**`, task evidence, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01`, result `PASS_WITH_WARNINGS`, with provider still proposed and unaccepted pending reuse proofs.
+- Milestones: missing task surface materialized; thin adapter added over the unchanged provider; AIDE Lite status/run/validate commands added; fake-runner tests passed; one allowlisted AIDE Lite validate process invocation recorded; receipt/outcome/evidence/projection reports written; report-only validation passed.
+- Blockers: provider acceptance remains blocked until an independent self-adapter check passes and a second external-domain reuse proof, currently Eureka, is built and checked.
+- Verification Intent: focused fake-runner tests, adapter run and report validation, Python compile, focused provider/Dominium regression tests, broad AIDE Lite validation, task inspect/evidence, local-path and secret-like scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `missing_evidence: 0`, `process_call_count: 1`, provider still unaccepted, and next task exactly `AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01`.
+- Notes: this task does not accept the provider, implement a generic command runner, change provider core, add Eureka behavior, mutate Dominium or target repositories, call provider/model/network services, run workers, start runtime/Workbench behavior, preview/apply/rollback, mutate GitHub, create branches/worktrees, release, or promote.
+
 ### Plan ID: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
 
 - Title: Check Registered Process Execution Provider v0 Repair

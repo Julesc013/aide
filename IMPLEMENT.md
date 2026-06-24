@@ -39,6 +39,49 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+
+Completed with warnings and awaiting independent check.
+
+Changed:
+
+- `core/interop/aide/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_self_validation_process_adapter.py`
+- `.aide/reports/aide-self-validation-process-adapter/**`
+- `.aide/queue/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The build adds a thin AIDE self-validation adapter over the unchanged proposed
+`RegisteredProcessExecutionProvider v0`. The successful proof invokes the exact
+allowlisted AIDE Lite validate process through the shared provider and records:
+
+- `ProcessExecutionReceipt`;
+- `CapabilityOutcome`;
+- typed result mapping from AIDE Lite validate stdout;
+- before/after AIDE state evidence with no mutation observed within declared
+  probe coverage;
+- EvidencePacket, EventRecord, projection, and human-readable reports.
+
+Focused fake-runner tests cover exact argv, required environment constraints,
+exactly-one process accounting, zero-launch unsupported and wrong-revision
+refusals, timeout/malformed/nonzero mappings, deterministic projections,
+scrubbing, and mutation detection.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
+```
+
+The provider remains proposed and unaccepted. This build does not implement a
+generic command runner, mutate provider core, add Eureka behavior, mutate
+Dominium or target repositories, call provider/model/network services, run
+workers, start Service or Workbench behavior, preview/apply/rollback, mutate
+GitHub, create branches/worktrees, release, or promote.
+
 ## Work Item: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
 
 Completed as a check-only independent repair review and awaiting review.

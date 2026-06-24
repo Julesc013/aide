@@ -1,0 +1,162 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EventRecord",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_event_record_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_event_record_schema",
+        "minimal_reference_id_scheme"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "event-record-e2b36379dee28689",
+    "name": "EvidencePacketRecorded",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/aide-self-validation-process-adapter/event-record.json",
+    "title": "EvidencePacketRecorded"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.event-record.v0",
+  "spec": {
+    "active_apply": false,
+    "actor": {
+      "kind": "source",
+      "name": "aide-lite",
+      "ref": "aide://source/aide-lite"
+    },
+    "adapter_manifest_implemented": false,
+    "append_only_runtime_store_implemented": false,
+    "async_execution_implemented": false,
+    "branch_worktree_automation": false,
+    "capability_label": "minimal_event_record_schema",
+    "capability_manifest_implemented": false,
+    "causation": {
+      "fragment": null,
+      "id": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+      "kind": "workunit",
+      "ref": "aide://workunit/AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01"
+    },
+    "commander_implemented": false,
+    "conformance_profile_implemented": false,
+    "context_pack_v2_implemented": false,
+    "correlation": {
+      "fragment": null,
+      "id": "aide-self-validation-process-adapter-01",
+      "kind": "context-pack",
+      "ref": "aide://context-pack/aide-self-validation-process-adapter-01"
+    },
+    "database_state_implemented": false,
+    "event_family_status": "reserved_or_supported_for_schema",
+    "event_ref": "aide://event/EVT-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01",
+    "event_sourcing_runtime_implemented": false,
+    "event_type": "EvidencePacketRecorded",
+    "event_type_required": true,
+    "evidence_refs": [
+      "aide://evidence/aide-self-validation-process-adapter"
+    ],
+    "explicit_non_capabilities": [
+      "event_sourcing_runtime",
+      "append_only_runtime_store",
+      "runtime_event_log",
+      "state_reconstruction",
+      "scheduler",
+      "leases",
+      "supervisor",
+      "test_broker_runtime",
+      "async_execution",
+      "worker_execution",
+      "service",
+      "commander",
+      "okf_knowledge_bundle",
+      "reconciler",
+      "capability_manifest",
+      "conformance_profile",
+      "patch_transaction",
+      "adapter_manifest",
+      "context_pack_v2",
+      "runtime_reference_registry",
+      "resolver_service",
+      "database_state",
+      "provider_adapters",
+      "branch_worktree_automation",
+      "target_apply",
+      "active_apply",
+      "rollback_execution",
+      "uninstall_execution",
+      "release",
+      "promotion",
+      "github_mutation",
+      "gateway_calls",
+      "network_calls",
+      "model_provider_calls",
+      "target_repo_mutation",
+      "broad_autonomous_runtime",
+      "production_readiness",
+      "release_readiness"
+    ],
+    "gateway_calls": false,
+    "github_mutation": false,
+    "leases_implemented": false,
+    "model_provider_calls": false,
+    "network_calls": false,
+    "occurred_at": "2026-06-24T00:00:00+10:00",
+    "okf_knowledge_bundle_implemented": false,
+    "patch_transaction_implemented": false,
+    "payload": {
+      "capability_id": "aide.self.validate",
+      "event_log_appended": false,
+      "invocation_count": 1,
+      "projection_only": true,
+      "proposed_capability_label": "aide_self_validation_process_adapter_v0",
+      "provider_ref": "registered_process_execution_provider_v0",
+      "task_id": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01"
+    },
+    "payload_contract": "minimal_open_payload",
+    "production_readiness": false,
+    "projection_only": true,
+    "provider_adapter_implemented": false,
+    "reconciler_implemented": false,
+    "recorded": false,
+    "release": false,
+    "release_readiness": false,
+    "report_refs": [
+      "aide://report/aide-self-validation-process-adapter"
+    ],
+    "resolver_service_implemented": false,
+    "runtime_event_log_implemented": false,
+    "runtime_reference_registry_implemented": false,
+    "scheduler_implemented": false,
+    "sequence": 1,
+    "service_implemented": false,
+    "state_reconstruction_implemented": false,
+    "subject": {
+      "kind": "evidence",
+      "ref": "aide://evidence/aide-self-validation-process-adapter"
+    },
+    "supervisor_implemented": false,
+    "target_apply": false,
+    "target_repo_mutation": false,
+    "test_broker_runtime_implemented": false,
+    "worker_execution_implemented": false
+  },
+  "status": {
+    "phase": "metadata_only",
+    "projection_only": true,
+    "recorded": false,
+    "result": "PASS",
+    "valid": true,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}
