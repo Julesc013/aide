@@ -39,6 +39,50 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
+
+Completed with warnings and awaiting independent check.
+
+Changed:
+
+- `core/protocol/execution_host.py`
+- `core/protocol/__init__.py`
+- `.aide/protocol/aide-execution-host.schema.json`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_execution_host_contract.py`
+- `.aide/reports/execution-host-contract/**`
+- `.aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The build defines projection-only records for:
+
+- `ExecutionHostDescriptor`
+- `ExecutionHostRunBinding`
+- `ExecutionHostEvent`
+- `ExecutionHostArtifact`
+- `ExecutionHostApproval`
+- `ExecutionHostUsage`
+
+The contract reserves the v0 operation vocabulary for future host work and
+records `registered_process_execution_provider_v0` as a distinct deterministic
+capability-execution provider rather than collapsing it into worker/session
+execution.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
+```
+
+No live ExecutionHost, LocalProcessExecutionHost, RemoteExecutionHost, worker
+execution, worker harness, scheduler, provider/model/network call,
+Service/runtime behavior, Workbench behavior, PreviewSession,
+DevelopmentTransaction, PatchTransaction apply, repository mutation,
+branch/worktree mutation, GitHub mutation, release, or promotion was
+implemented.
+
 ## Work Item: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 
 Completed as an acceptance-only consolidation and awaiting review.

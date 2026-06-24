@@ -1,0 +1,70 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
+title: Build ExecutionHost Contract v0
+type: build
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Build a provider-neutral, projection-only ExecutionHost contract v0 for
+  bounded worker/session execution hosts while keeping deterministic capability
+  execution distinct.
+capability_label: execution_host_contract_v0
+accepted_predecessor: registered_process_execution_provider_v0
+authorizes_implementation: true
+check_only: false
+acceptance_only: false
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
+allowed_paths:
+  - core/protocol/execution_host.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-execution-host.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_execution_host_contract.py
+  - .aide/reports/execution-host-contract/**
+  - .aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/**
+  - core/interop/**
+  - hosts/**
+  - .aide.local/**
+implemented:
+  - projection-only ExecutionHostDescriptor
+  - projection-only ExecutionHostRunBinding
+  - projection-only ExecutionHostEvent
+  - projection-only ExecutionHostArtifact
+  - projection-only ExecutionHostApproval
+  - projection-only ExecutionHostUsage
+  - AIDE Lite execution-host status/project/validate commands
+  - focused helper/schema/CLI tests
+explicit_non_capabilities:
+  - live ExecutionHost
+  - LocalProcessExecutionHost
+  - RemoteExecutionHost
+  - worker execution
+  - worker harness
+  - provider/model calls
+  - network calls
+  - Service/runtime behavior
+  - Workbench behavior
+  - PreviewSession
+  - DevelopmentTransaction
+  - PatchTransaction apply
+  - repository mutation
+  - branch/worktree mutation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - ExecutionHost contract v0 is projection-only.
+  - Worker/session execution remains separate from deterministic capability execution.
+  - LocalProcessExecutionHost is deferred until after independent check and acceptance.
+recommended_next_task: AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01

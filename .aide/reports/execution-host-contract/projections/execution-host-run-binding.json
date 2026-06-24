@@ -1,0 +1,87 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "ExecutionHostRunBinding",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "execution_host_contract_v0"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "execution_host_contract_v0",
+        "registered_process_execution_provider_v0"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "execution-host-run-binding-contract-v0",
+    "name": "ExecutionHostRunBinding v0",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/protocol/aide-execution-host.schema.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.execution-host-contract.v0",
+  "spec": {
+    "binding_id": "aide://execution-host-binding/contract-v0",
+    "branch_worktree_mutation_performed": false,
+    "capability_label": "execution_host_contract_v0",
+    "context_refs": [],
+    "execution_host_runtime_implemented": false,
+    "execution_started": false,
+    "explicit_non_capabilities": [
+      "live_execution_host",
+      "local_process_execution_host",
+      "remote_execution_host",
+      "worker_execution",
+      "worker_harness",
+      "worker_process_start",
+      "worker_lease",
+      "scheduler",
+      "supervisor",
+      "provider_model_calls",
+      "network_calls",
+      "service_runtime",
+      "workbench_runtime",
+      "preview_session",
+      "development_transaction",
+      "patch_transaction_apply",
+      "repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "github_mutation_performed": false,
+    "host_ref": "aide://execution-host/contract-v0",
+    "local_process_execution_host_implemented": false,
+    "network_calls_performed": false,
+    "preview_apply_implemented": false,
+    "provider_model_calls_performed": false,
+    "release_or_promotion_performed": false,
+    "remote_execution_host_implemented": false,
+    "repository_mutation_performed": false,
+    "run_ref": "aide://execution-host-run/contract-v0",
+    "scheduler_enqueued": false,
+    "scheduler_implemented": false,
+    "service_runtime_implemented": false,
+    "supervisor_implemented": false,
+    "workbench_runtime_implemented": false,
+    "worker_execution_implemented": false,
+    "worker_lease_created": false,
+    "worker_process_started": false,
+    "workunit_ref": "AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01"
+  },
+  "status": {
+    "projection_only": true,
+    "recorded": false,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "Run binding is a contract projection; no run is created."
+    ]
+  }
+}

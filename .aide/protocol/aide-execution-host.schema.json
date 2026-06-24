@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Projection-only AIDE ExecutionHost contract v0. Defines bounded worker/session host records without implementing live execution.",
+  "oneOf": [
+    {
+      "properties": {
+        "kind": {
+          "const": "ExecutionHostDescriptor"
+        }
+      }
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ExecutionHostRunBinding"
+        }
+      }
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ExecutionHostEvent"
+        }
+      }
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ExecutionHostArtifact"
+        }
+      }
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ExecutionHostApproval"
+        }
+      }
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ExecutionHostUsage"
+        }
+      }
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ExecutionHostContractProjectionReport"
+        }
+      }
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ExecutionHostContractValidationReport"
+        }
+      }
+    }
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "ExecutionHostDescriptor",
+        "ExecutionHostRunBinding",
+        "ExecutionHostEvent",
+        "ExecutionHostArtifact",
+        "ExecutionHostApproval",
+        "ExecutionHostUsage",
+        "ExecutionHostContractProjectionReport",
+        "ExecutionHostContractValidationReport"
+      ],
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "properties": {
+        "compatibility": {
+          "additionalProperties": true,
+          "properties": {
+            "featureFlags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "minReaderVersion": {
+              "type": "string"
+            },
+            "minWriterVersion": {
+              "type": "string"
+            },
+            "protocolVersion": {
+              "type": "string"
+            },
+            "requiredCapabilities": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "schemaVersion": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "protocolVersion",
+            "minReaderVersion",
+            "minWriterVersion",
+            "featureFlags"
+          ],
+          "type": "object"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "producer": {
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ],
+          "type": "object"
+        },
+        "sourcePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "properties": {
+        "artifact_ref": {
+          "type": "string"
+        },
+        "binding_id": {
+          "type": "string"
+        },
+        "capability_execution_distinct": {
+          "type": "boolean"
+        },
+        "capability_label": {
+          "type": "string"
+        },
+        "context_refs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "event_ref": {
+          "type": "string"
+        },
+        "event_type": {
+          "type": "string"
+        },
+        "execution_started": {
+          "type": "boolean"
+        },
+        "explicit_non_capabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "host_id": {
+          "type": "string"
+        },
+        "host_kind": {
+          "type": "string"
+        },
+        "host_ref": {
+          "type": "string"
+        },
+        "limits": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "measured": {
+          "type": "boolean"
+        },
+        "meters": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "operation_names": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "payload": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "projection_only": {
+          "type": "boolean"
+        },
+        "run_ref": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": "integer"
+        },
+        "supported_operations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "transport_modes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "usage_ref": {
+          "type": "string"
+        },
+        "worker_process_started": {
+          "type": "boolean"
+        },
+        "workunit_ref": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "properties": {
+        "projection_only": {
+          "type": "boolean"
+        },
+        "recorded": {
+          "type": "boolean"
+        },
+        "validated": {
+          "type": "boolean"
+        },
+        "validation_errors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "validation_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "validated",
+        "projection_only",
+        "validation_errors",
+        "validation_warnings"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE ExecutionHost Contract v0",
+  "type": "object"
+}

@@ -1978,6 +1978,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01/evidence
     description: Acceptance-only consolidation for RegisteredProcessExecutionProvider v0 after Dominium, AIDE self-validation, and Eureka reuse proofs passed with warnings, material_finding_count 0, and missing_evidence 0. Accepts exactly registered_process_execution_provider_v0 for deterministic pre-registered shell-free local process capability execution with immutable specs, precondition checks, bounded timeout/output capture, stream scrubbing, state-probe hooks, decoder hooks, ProcessExecutionReceipt, CapabilityOutcome, and fail-closed behavior. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01. Does not accept arbitrary command execution, worker execution, ExecutionHost, provider/model/network calls, Service/runtime behavior, Workbench behavior, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+  - id: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Build ExecutionHost Contract v0
+    task: .aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/evidence
+    description: Build task for provider-neutral, projection-only ExecutionHost contract v0. Adds ExecutionHostDescriptor, ExecutionHostRunBinding, ExecutionHostEvent, ExecutionHostArtifact, ExecutionHostApproval, and ExecutionHostUsage projections, a Draft 2020-12 schema, helper validation, AIDE Lite execution-host status/project/validate commands, focused tests, and generated reports. Preserves the separation between deterministic capability execution and bounded worker/session execution. Stops at needs_review with PASS_WITH_WARNINGS and recommends exactly AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01. Does not implement a live ExecutionHost, LocalProcessExecutionHost, RemoteExecutionHost, worker execution, worker harness, scheduler, Service/runtime behavior, Workbench behavior, provider/model/network calls, PreviewSession, DevelopmentTransaction, PatchTransaction apply, repository mutation, branch/worktree mutation, GitHub mutation, release, or promotion.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
+
+- Title: Build ExecutionHost Contract v0
+- Status: needs_review
+- Objective: define the provider-neutral ExecutionHost contract v0 as projection-only protocol work while keeping worker/session execution distinct from deterministic capability execution.
+- Scope: `core/protocol/execution_host.py`, `.aide/protocol/aide-execution-host.schema.json`, AIDE Lite `execution-host` status/project/validate commands, focused tests, generated reports, queue packet/evidence, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01` accepted `registered_process_execution_provider_v0` with warnings.
+- Milestones: existing protocol patterns inspected; projection-only helper and schema added; CLI commands wired; focused tests added and passing; reports generated; queue evidence materialized; final validation pending.
+- Blockers: none. LocalProcessExecutionHost and live worker execution remain explicitly deferred.
+- Verification Intent: focused ExecutionHost tests, command status/project/validate, compileall, registered provider and WorkerRun regressions, task inspect/evidence, broad validation, leak scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, missing evidence `0`, and next task exactly `AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01`.
+- Notes: this task does not implement a live host, LocalProcessExecutionHost, worker execution, provider/model/network calls, Service/runtime behavior, Workbench behavior, preview/apply/rollback, repository mutation, branch/worktree mutation, GitHub mutation, release, or promotion.
+
 ### Plan ID: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 
 - Title: Accept Registered Process Execution Provider v0

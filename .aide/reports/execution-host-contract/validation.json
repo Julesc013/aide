@@ -1,0 +1,286 @@
+{
+  "accepted_provider_capability": "registered_process_execution_provider_v0",
+  "alignment_errors": [],
+  "alignment_warnings": [],
+  "api_version": "aide.dev/v1alpha1",
+  "branch_worktree_mutation_performed": false,
+  "capability_execution_distinct": true,
+  "capability_label": "execution_host_contract_v0",
+  "execution_host_runtime_implemented": false,
+  "explicit_non_capabilities_preserved": true,
+  "forbidden_operations_preserved": {
+    "branch_worktree_automation": true,
+    "development_transaction": true,
+    "github_mutation": true,
+    "live_execution_host": true,
+    "local_process_execution_host": true,
+    "network_calls": true,
+    "patch_transaction_apply": true,
+    "preview_session": true,
+    "provider_model_calls": true,
+    "release_or_promotion": true,
+    "remote_execution_host": true,
+    "repository_mutation": true,
+    "scheduler": true,
+    "service_runtime": true,
+    "supervisor": true,
+    "workbench_runtime": true,
+    "worker_execution": true,
+    "worker_harness": true,
+    "worker_lease": true,
+    "worker_process_start": true
+  },
+  "future_work": [
+    {
+      "reason": "independent review of projection-only contract, schema, helper validation, CLI, reports, tests, and non-capability boundaries",
+      "task": "AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01"
+    },
+    {
+      "reason": "accept the contract only after check and any required repair",
+      "task": "AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01"
+    },
+    {
+      "reason": "first live local reference host after contract acceptance",
+      "task": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    }
+  ],
+  "github_mutation_performed": false,
+  "kind": "ExecutionHostContractValidationReport",
+  "local_process_execution_host_implemented": false,
+  "network_calls_performed": false,
+  "operation_names": [
+    "attach",
+    "collect_artifacts",
+    "create_run",
+    "finish",
+    "interrupt",
+    "probe",
+    "reconcile",
+    "resolve_runtime_approval",
+    "send_input",
+    "stream_events"
+  ],
+  "preview_apply_implemented": false,
+  "projection_only_truthful": true,
+  "protocol_version": "0.1.0",
+  "provider_model_calls_performed": false,
+  "recommended_next_task": "AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01",
+  "record_kinds": [
+    "ExecutionHostApproval",
+    "ExecutionHostArtifact",
+    "ExecutionHostDescriptor",
+    "ExecutionHostEvent",
+    "ExecutionHostRunBinding",
+    "ExecutionHostUsage"
+  ],
+  "release_or_promotion_performed": false,
+  "remote_execution_host_implemented": false,
+  "report_type": "execution_host_contract_validation",
+  "repository_mutation_performed": false,
+  "runtime_validation_results": [
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-descriptor.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-run-binding.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-event.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-artifact.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-approval.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-usage.json",
+      "result": "PASS",
+      "schema_valid": true
+    }
+  ],
+  "scheduler_implemented": false,
+  "schema_file_exists": true,
+  "schema_file_loaded": true,
+  "schema_file_parsed": true,
+  "schema_file_path": ".aide/protocol/aide-execution-host.schema.json",
+  "schema_helper_alignment_checked": true,
+  "schema_helper_alignment_status": "PASS",
+  "schema_validation_executed": true,
+  "schema_validation_limitations": [
+    "Local subset validator supports type, enum, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Kind-specific schema discrimination is supported structurally by oneOf and enforced by the helper validator."
+  ],
+  "schema_validation_mode": "minimal_json_schema_subset",
+  "schema_version": "aide.execution-host-contract-validation.v0",
+  "service_runtime_implemented": false,
+  "status": "PASS_WITH_WARNINGS",
+  "supervisor_implemented": false,
+  "supported_kinds": [
+    "ExecutionHostApproval",
+    "ExecutionHostArtifact",
+    "ExecutionHostContractProjectionReport",
+    "ExecutionHostContractValidationReport",
+    "ExecutionHostDescriptor",
+    "ExecutionHostEvent",
+    "ExecutionHostRunBinding",
+    "ExecutionHostUsage"
+  ],
+  "task_id": "AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01",
+  "unfinished_work": [
+    {
+      "item": "live_execution_host",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "local_process_execution_host",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "remote_execution_host",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "worker_execution",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "worker_harness",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "worker_process_start",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "worker_lease",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "scheduler",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "supervisor",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "provider_model_calls",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "network_calls",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "service_runtime",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "workbench_runtime",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "preview_session",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "development_transaction",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "patch_transaction_apply",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "repository_mutation",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "branch_worktree_automation",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "github_mutation",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    },
+    {
+      "item": "release_or_promotion",
+      "reason": "intentionally deferred beyond the projection-only ExecutionHost contract v0 slice"
+    }
+  ],
+  "unknown_optional_fields_tolerated": true,
+  "unknown_required_capability_fails_closed": true,
+  "validation_errors": [],
+  "validation_results": [
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-descriptor.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-run-binding.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-event.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-artifact.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-approval.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/execution-host-contract/projections/execution-host-usage.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    }
+  ],
+  "warnings": [
+    "ExecutionHost contract v0 is projection-only and does not implement a live host.",
+    "Worker/session execution remains separate from deterministic capability execution.",
+    "LocalProcessExecutionHost is intentionally deferred to the next build after independent check and acceptance."
+  ],
+  "workbench_runtime_implemented": false,
+  "worker_execution_implemented": false,
+  "worker_lease_created": false,
+  "worker_process_started": false,
+  "worker_session_contract_defined": true
+}

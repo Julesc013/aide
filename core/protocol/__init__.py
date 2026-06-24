@@ -8,6 +8,7 @@ __all__ = [
     "context_pack_v2",
     "envelope",
     "event_record",
+    "execution_host",
     "evidence_packet",
     "patch_transaction",
     "process_invocation",
