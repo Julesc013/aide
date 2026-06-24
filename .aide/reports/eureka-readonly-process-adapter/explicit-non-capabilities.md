@@ -1,0 +1,21 @@
+# Explicit Non-Capabilities
+
+- `registered_process_provider_acceptance`
+- `arbitrary_command_runner`
+- `generic_command_cli`
+- `provider_core_mutation`
+- `eureka_repository_mutation`
+- `eureka_public_launch`
+- `eureka_source_fanout`
+- `downloads_uploads_install_execution`
+- `provider_model_call`
+- `network_call`
+- `worker_execution`
+- `service_runtime`
+- `workbench_behavior`
+- `preview_or_apply`
+- `rollback`
+- `patch_transaction_apply`
+- `branch_worktree_automation`
+- `github_mutation`
+- `release_or_promotion`

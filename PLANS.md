@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01
+
+- Title: Build Eureka Read-Only Process Adapter
+- Status: needs_review
+- Objective: prove a third reuse case for the proposed `RegisteredProcessExecutionProvider v0` by invoking one existing Eureka-owned deterministic read-only JSON command through a thin Eureka adapter.
+- Scope: `core/interop/eureka/**`, the AIDE Lite command shim, focused tests, `.aide/reports/eureka-readonly-process-adapter/**`, task-local evidence, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01` result `PASS_WITH_WARNINGS`, provider still proposed and unaccepted, and a clean local Eureka checkout at the recorded pinned revision.
+- Milestones: baseline and command-selection evidence recorded; thin adapter implemented; AIDE Lite status/run/validate surface added; focused fake-runner tests pass; one live Eureka process invocation completed; reports and task evidence materialized.
+- Blockers: none for this build gate. Provider acceptance remains blocked until this build receives an independent check.
+- Verification Intent: focused compile/unit tests, one live adapter run, adapter report validation, generic provider and existing adapter regression tests, broad AIDE validation, local-path and secret-like scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `missing_evidence: 0`, provider still proposed and unaccepted, and next task exactly `AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01`.
+- Notes: the requested `scripts/validate_public_alpha_readonly.py --json` command is absent in the pinned local Eureka checkout. This build selects `scripts/public_alpha_smoke.py --json` as the narrowest existing Eureka-owned read-only JSON command and records that as a warning, not as the requested schema proof.
+
 ### Plan ID: AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
 
 - Title: Check AIDE Self-Validation Process Adapter

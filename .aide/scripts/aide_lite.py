@@ -7944,6 +7944,16 @@ def load_aide_self_validation_process_adapter_module(repo_root: Path):
     return importlib.import_module("core.interop.aide.self_validation_process_adapter")
 
 
+def load_eureka_readonly_process_adapter_module(repo_root: Path):
+    module_path = repo_root / "core/interop/eureka/public_alpha_readonly_process_adapter.py"
+    if not module_path.exists():
+        raise ValueError("Eureka read-only process adapter module missing: core/interop/eureka/public_alpha_readonly_process_adapter.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.interop.eureka.public_alpha_readonly_process_adapter")
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -34968,6 +34978,108 @@ def command_aide_self_validation_process_adapter_validate(args: argparse.Namespa
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_eureka_readonly_process_adapter_boundary_lines(data: dict[str, object]) -> None:
+    print(f"provider_ref: {data.get('provider_ref', '')}")
+    print(f"process_call_count: {data.get('process_call_count', '')}")
+    print(f"workspace_state_unchanged: {str(data.get('workspace_state_unchanged', False)).lower()}")
+    print(f"mutation_observation: {data.get('mutation_observation', '')}")
+    print(f"result_origin: {data.get('result_origin', '')}")
+    print(f"requested_command_available: {str(data.get('requested_command_available', False)).lower()}")
+    print(f"selected_command: {data.get('selected_command', '')}")
+    print(f"arbitrary_shell_command_executed: {str(data.get('arbitrary_shell_command_executed', False)).lower()}")
+    print(f"private_tool_called: {str(data.get('private_tool_called', False)).lower()}")
+    print(f"broad_dispatch_used: {str(data.get('broad_dispatch_used', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"provider_or_model_called: {str(data.get('provider_or_model_called', False)).lower()}")
+    print(f"worker_executed: {str(data.get('worker_executed', False)).lower()}")
+    print(f"workbench_apply_performed: {str(data.get('workbench_apply_performed', False)).lower()}")
+    print(f"preview_or_apply_performed: {str(data.get('preview_or_apply_performed', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"source_repository_mutated: {str(data.get('source_repository_mutated', False)).lower()}")
+    print(f"target_repository_mutated: {str(data.get('target_repository_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_eureka_readonly_process_adapter_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_eureka_readonly_process_adapter_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite aide-eureka-readonly-process-adapter status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_eureka_readonly_process_adapter_boundary_lines({})
+        return 1
+    print("AIDE Lite aide-eureka-readonly-process-adapter status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_id: {data.get('capability_id')}")
+    print(f"proposed_capability_label: {data.get('proposed_capability_label')}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_eureka_readonly_process_adapter_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_eureka_readonly_process_adapter_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_eureka_readonly_process_adapter_module(repo_root)
+    eureka_root = args.eureka_root if getattr(args, "eureka_root", "") else None
+    expected_revision = args.expected_revision if getattr(args, "expected_revision", "") else None
+    try:
+        report = module.run_adapter(
+            repo_root,
+            eureka_root=eureka_root,
+            expected_revision=expected_revision,
+            timeout_seconds=args.timeout_seconds,
+        )
+    except Exception as exc:  # noqa: BLE001 - bounded invocation must fail closed.
+        print("AIDE Lite aide-eureka-readonly-process-adapter run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_eureka_readonly_process_adapter_boundary_lines({})
+        return 1
+    print("AIDE Lite aide-eureka-readonly-process-adapter run")
+    print(f"result: {report.get('validation_status') or report.get('status')}")
+    print(f"capability_id: {report.get('capability_id')}")
+    print(f"proposed_capability_label: {report.get('proposed_capability_label')}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"actual_eureka_process_spawned: {str(report.get('actual_eureka_process_spawned', False)).lower()}")
+    print(f"eureka_json_parsed: {str(report.get('eureka_json_parsed', False)).lower()}")
+    eureka_result = report.get("eureka_result") if isinstance(report.get("eureka_result"), dict) else {}
+    print(f"eureka_status: {report.get('eureka_status') or eureka_result.get('status')}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"result_origin: {report.get('result_origin')}")
+    print(f"recommended_next_task: {module.CHECK_TASK_ID}")
+    _print_eureka_readonly_process_adapter_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_eureka_readonly_process_adapter_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_eureka_readonly_process_adapter_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite aide-eureka-readonly-process-adapter validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_eureka_readonly_process_adapter_boundary_lines({})
+        return 1
+    print("AIDE Lite aide-eureka-readonly-process-adapter validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"eureka_status: {report.get('eureka_status')}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_eureka_readonly_process_adapter_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -38531,7 +38643,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     dominium_registered_validation_run_parser.add_argument(
         "--dominium-root",
         default="",
-        help="Already-present local Dominium checkout. Defaults to the sibling C:/Projects/Dominium/dominium-style location.",
+        help="Already-present local Dominium checkout. Defaults to a sibling Dominium checkout when discoverable.",
     )
     dominium_registered_validation_run_parser.add_argument(
         "--expected-revision",
@@ -38568,6 +38680,33 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     aide_self_validation_process_run_parser.set_defaults(handler=command_aide_self_validation_process_adapter_run)
     aide_self_validation_process_subparsers.add_parser("validate").set_defaults(handler=command_aide_self_validation_process_adapter_validate)
+
+    eureka_readonly_process_parser = subparsers.add_parser("aide-eureka-readonly-process-adapter")
+    eureka_readonly_process_parser.set_defaults(handler=command_eureka_readonly_process_adapter_status)
+    eureka_readonly_process_subparsers = eureka_readonly_process_parser.add_subparsers(
+        dest="eureka_readonly_process_command",
+        required=False,
+    )
+    eureka_readonly_process_subparsers.add_parser("status").set_defaults(handler=command_eureka_readonly_process_adapter_status)
+    eureka_readonly_process_run_parser = eureka_readonly_process_subparsers.add_parser("run")
+    eureka_readonly_process_run_parser.add_argument(
+        "--eureka-root",
+        default="",
+        help="Already-present local Eureka checkout. Defaults to a sibling Eureka checkout when discoverable.",
+    )
+    eureka_readonly_process_run_parser.add_argument(
+        "--expected-revision",
+        default="",
+        help="Exact pinned Eureka revision to require before invocation. Defaults to observed local HEAD before invocation.",
+    )
+    eureka_readonly_process_run_parser.add_argument(
+        "--timeout-seconds",
+        type=float,
+        default=120.0,
+        help="Bounded timeout for the single Eureka read-only process.",
+    )
+    eureka_readonly_process_run_parser.set_defaults(handler=command_eureka_readonly_process_adapter_run)
+    eureka_readonly_process_subparsers.add_parser("validate").set_defaults(handler=command_eureka_readonly_process_adapter_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

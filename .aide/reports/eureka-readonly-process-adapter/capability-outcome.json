@@ -1,0 +1,187 @@
+{
+  "decoder_outcome": "decoded",
+  "domain_outcome": "typed_result",
+  "domain_result": {
+    "checks": [
+      {
+        "code": "ok",
+        "expected": "200 JSON with public_alpha mode, disabled local-path capabilities, and no private path leakage",
+        "message": "Check passed.",
+        "name": "status",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/status"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON source registry listing",
+        "message": "Check passed.",
+        "name": "source list",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/sources"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON deterministic query plan",
+        "message": "Check passed.",
+        "name": "query plan",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/query-plan?q=Windows+7+apps"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON deterministic search results",
+        "message": "Check passed.",
+        "name": "search",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/search?q=synthetic"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON local public-search status with disabled live/download/upload/local-path capabilities",
+        "message": "Check passed.",
+        "name": "public search status",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/v1/status"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON governed local-index-only public-search results",
+        "message": "Check passed.",
+        "name": "public search",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/v1/search?q=windows+7+apps"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON governed public-search query plan",
+        "message": "Check passed.",
+        "name": "public query plan",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/v1/query-plan?q=windows+7+apps"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON archive-resolution eval report",
+        "message": "Check passed.",
+        "name": "archive resolution evals",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/evals/archive-resolution"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "local index path",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/index/status?index_path=D%3A%2Fprivate%2Feureka-index.sqlite3"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "run store root",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/runs?run_store_root=D%3A%2Fprivate%2Feureka-runs"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "task store root",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/tasks?task_store_root=D%3A%2Fprivate%2Feureka-tasks"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "memory store root",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/memories?memory_store_root=D%3A%2Fprivate%2Feureka-memory"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "bundle path inspection",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/inspect/bundle?bundle_path=D%3A%2Fprivate%2Feureka-bundle.zip"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "stored export root",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/stored?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&store_root=D%3A%2Fprivate%2Feureka-store"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "arbitrary output path",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/status?output=D%3A%2Fprivate%2Foutput.json"
+      },
+      {
+        "code": "route_disabled_in_public_alpha",
+        "expected": "403 JSON blocked response with code route_disabled_in_public_alpha",
+        "message": "Check passed.",
+        "name": "fixture byte fetch",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/fetch?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&representation_id=rep.synthetic-demo-app.source"
+      },
+      {
+        "code": "forbidden_parameter",
+        "expected": "400 JSON public-search error response with code forbidden_parameter",
+        "message": "Check passed.",
+        "name": "public search arbitrary url",
+        "observed_status": 400,
+        "passed": true,
+        "route": "/api/v1/search?q=archive&url=https%3A%2F%2Fexample.invalid%2F"
+      },
+      {
+        "code": "live_probes_disabled",
+        "expected": "400 JSON public-search error response with code live_probes_disabled",
+        "message": "Check passed.",
+        "name": "public search live probe",
+        "observed_status": 400,
+        "passed": true,
+        "route": "/api/v1/search?q=archive&live_probe=1"
+      }
+    ],
+    "command_id": "eureka.public-alpha-readonly.validate",
+    "failed_checks": 0,
+    "mode": "public_alpha",
+    "passed_checks": 18,
+    "raw_status": "passed",
+    "requested_command_available": false,
+    "source_command": "scripts/public_alpha_smoke.py",
+    "source_schema": "public_alpha_smoke.implicit_v0",
+    "status": "valid",
+    "total_checks": 18
+  },
+  "evidence_completeness": "complete",
+  "message": "",
+  "process_outcome": "exit_zero",
+  "reason_code": "",
+  "refusal": {},
+  "transport_outcome": "transport_started",
+  "validation_outcome": "complete"
+}

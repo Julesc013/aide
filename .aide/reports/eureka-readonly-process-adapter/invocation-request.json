@@ -1,0 +1,32 @@
+{
+  "argv": [
+    "<python>",
+    "<eureka-root>\\scripts\\public_alpha_smoke.py",
+    "--json"
+  ],
+  "argv_template": [
+    "<python>",
+    "scripts/public_alpha_smoke.py",
+    "--json"
+  ],
+  "capability_id": "eureka.public-alpha-readonly.validate",
+  "eureka_root": "<eureka-root>",
+  "expected_capability_id": "eureka.public-alpha-readonly.validate",
+  "expected_digests": {
+    "scripts/public_alpha_smoke.py": "sha256:1af6f1efb3c9c773091c924521516993af9bd425bc5a4502afb47b98b58a1e37",
+    "tools/release/public_alpha_smoke.py": "sha256:801a7913d67a632c8adfc215efda2ca83343eab99a0fe6514d06ace3ffbaee2a"
+  },
+  "expected_remote_url": "https://github.com/Julesc013/eureka.git",
+  "expected_revision": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "proposed_capability_label": "eureka_public_alpha_readonly_validation_process_adapter_v0",
+  "python_executable": "<python>",
+  "repo_root": "<aide-root>",
+  "requested_command": "scripts/validate_public_alpha_readonly.py",
+  "schema_version": "aide.eureka-readonly-process.invocation-request.v1",
+  "script_path": "<eureka-root>\\scripts\\public_alpha_smoke.py",
+  "selected_command": "scripts/public_alpha_smoke.py",
+  "selected_command_reason": "requested validator absent in pinned local checkout; selected existing public-alpha safe-mode JSON smoke command",
+  "shell": false,
+  "task_id": "AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01",
+  "timeout_seconds": 120.0
+}

@@ -1,0 +1,53 @@
+{
+  "artifacts": [
+    {
+      "path": ".aide/reports/eureka-readonly-process-adapter/context-descriptor.json",
+      "role": "context_descriptor"
+    },
+    {
+      "path": ".aide/reports/eureka-readonly-process-adapter/capability-descriptor.json",
+      "role": "capability_descriptor"
+    },
+    {
+      "path": ".aide/reports/eureka-readonly-process-adapter/invocation-result.json",
+      "role": "invocation_result"
+    }
+  ],
+  "context_descriptor_ref": "aide://context/eureka-readonly-process-adapter",
+  "context_pack_ref": "aide://context-pack/eureka-readonly-process-adapter-01",
+  "kind": "ContextPack",
+  "provider_reuse_claim": {
+    "provider_core": "registered_process_execution_provider_v0",
+    "provider_core_changed_by_task": false,
+    "shared_outcome_model": true,
+    "shared_receipt_model": true
+  },
+  "schema_version": "aide.eureka-readonly-process.context-pack.v1",
+  "status": {
+    "arbitrary_shell_command_executed": false,
+    "branch_or_worktree_created": false,
+    "broad_dispatch_used": false,
+    "database_opened": false,
+    "github_mutation_performed": false,
+    "mutation_observation": "none_detected_within_probe_coverage",
+    "network_call_performed": false,
+    "patch_transaction_applied": false,
+    "preview_or_apply_performed": false,
+    "private_tool_called": false,
+    "process_call_count": 1,
+    "provider_or_model_called": false,
+    "release_or_promotion_performed": false,
+    "service_started": false,
+    "source_repository_mutated": false,
+    "target_repository_mutated": false,
+    "trusted": false,
+    "validation_performed": true,
+    "validation_status": "PASS_WITH_WARNINGS",
+    "workbench_apply_performed": false,
+    "workbench_started": false,
+    "worker_executed": false,
+    "workspace_state_unchanged": true
+  },
+  "task_id": "AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01",
+  "workunit_ref": "aide://workunit/AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01"
+}

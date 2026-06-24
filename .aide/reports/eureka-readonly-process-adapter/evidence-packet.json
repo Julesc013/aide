@@ -1,0 +1,145 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "ep-015bd21f9de5c59d",
+    "name": "Eureka read-only process adapter evidence",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/eureka-readonly-process-adapter/evidence-packet.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/context-descriptor.json",
+        "role": "context_descriptor",
+        "sha256": "sha256:29f44aa2e7aa4ba82a3e372b11bd8768ea51edb4302514f081fad377f8190522"
+      },
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/context-pack.json",
+        "role": "context_pack",
+        "sha256": "sha256:ed216e65e64df65a795b5d9539f81d69f4e8a07b9e2e8a90dad8560a5059a223"
+      },
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/workunit.json",
+        "role": "workunit",
+        "sha256": "sha256:809672c59cbcb22e92803e72eb71ae6b9690062a671ac96b8fb9ac794c808afb"
+      },
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/capability-descriptor.json",
+        "role": "capability_descriptor",
+        "sha256": "sha256:c59592ab5f6a8bafa67fe216b03c5b15c9c143e137e2ed4bbbfd49ed75e3686e"
+      },
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/invocation-result.json",
+        "role": "invocation_result",
+        "sha256": "sha256:b29c2dcce38ed850dc866bd915e4dc231755ce648c710a1bff70772370013cc5"
+      },
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/execution-receipt.json",
+        "role": "execution_receipt",
+        "sha256": "sha256:35abd26f8687434973ab2a96d6379916cbdd224d26781848d8234990275361d2"
+      },
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/capability-outcome.json",
+        "role": "capability_outcome",
+        "sha256": "sha256:655940acb31dfef9dd16f07721d6f27e5c99b0d059927762a0d7d52a2e76f3e0"
+      }
+    ],
+    "capability_label": "minimal_evidence_packet_schema",
+    "claims": [
+      {
+        "id": "registered_provider_reused",
+        "status": "supported",
+        "summary": "The adapter invokes the unchanged RegisteredProcessExecutionProvider v0."
+      },
+      {
+        "id": "exactly_one_process_invocation",
+        "status": "supported",
+        "summary": "The allowlisted Eureka read-only process was spawned exactly once."
+      },
+      {
+        "id": "stdout_json_result_origin",
+        "status": "supported",
+        "summary": "The AIDE result was derived from Eureka command JSON stdout."
+      },
+      {
+        "id": "shared_receipt_model",
+        "status": "supported",
+        "summary": "The adapter emits the shared ProcessExecutionReceipt model."
+      },
+      {
+        "id": "workspace_state_unchanged",
+        "status": "supported",
+        "summary": "Before and after Eureka state evidence match within declared probe coverage."
+      }
+    ],
+    "explicit_non_capabilities": [
+      "registered_process_provider_acceptance",
+      "arbitrary_command_runner",
+      "generic_command_cli",
+      "provider_core_mutation",
+      "eureka_repository_mutation",
+      "eureka_public_launch",
+      "eureka_source_fanout",
+      "downloads_uploads_install_execution",
+      "provider_model_call",
+      "network_call",
+      "worker_execution",
+      "service_runtime",
+      "workbench_behavior",
+      "preview_or_apply",
+      "rollback",
+      "patch_transaction_apply",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "risks": [],
+    "source_task_id": "AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01",
+    "source_task_kind": "build",
+    "subject": {
+      "id": "eureka.public-alpha-readonly.validate",
+      "ref": "aide://capability/eureka-public-alpha-readonly-process-adapter-v0",
+      "type": "capability"
+    },
+    "validations": [
+      {
+        "command": "Eureka read-only process adapter",
+        "exit_code": 0,
+        "status": "PASS_WITH_WARNINGS"
+      }
+    ],
+    "warnings": [
+      "RegisteredProcessExecutionProvider v0 remains proposed and unaccepted.",
+      "Requested scripts/validate_public_alpha_readonly.py is absent in this local Eureka checkout.",
+      "Selected command is scripts/public_alpha_smoke.py --json.",
+      "Mutation observation is limited to declared Git probe coverage."
+    ]
+  },
+  "status": {
+    "phase": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "Independent Eureka adapter check remains required before provider acceptance."
+    ]
+  }
+}

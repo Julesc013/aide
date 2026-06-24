@@ -39,6 +39,42 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01
+
+Completed with warnings and awaiting independent check.
+
+Changed:
+
+- `core/interop/eureka/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_eureka_readonly_process_adapter.py`
+- `.aide/reports/eureka-readonly-process-adapter/**`
+- `.aide/queue/AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The build adds a thin Eureka public-alpha read-only process adapter over the
+unchanged proposed `RegisteredProcessExecutionProvider v0`. It deliberately
+does not edit provider core, neutral process protocol files, the accepted AIDE
+self-validation adapter, the Dominium adapter, or the Eureka checkout.
+
+The requested `scripts/validate_public_alpha_readonly.py --json` command is not
+present in the pinned local Eureka checkout. The build therefore selects
+`scripts/public_alpha_smoke.py --json` as the narrowest existing Eureka-owned
+read-only JSON command and records that substitution as a warning.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01
+```
+
+No provider acceptance, generic arbitrary-command interface, provider/model or
+network call, worker execution, Service/runtime, Workbench behavior,
+preview/apply/rollback, source or target repository mutation, branch/worktree
+automation, GitHub mutation, release, or promotion was performed.
+
 ## Work Item: AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
 
 Completed as a check-only independent review and awaiting review.

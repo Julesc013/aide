@@ -1,0 +1,597 @@
+{
+  "actual_eureka_process_spawned": true,
+  "adapter_role": "thin_eureka_public_alpha_readonly_process_adapter",
+  "after_state": {
+    "clean": true,
+    "porcelain_status": "",
+    "porcelain_status_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "remote_error": "",
+    "remote_url": "https://github.com/Julesc013/eureka.git",
+    "repository_present": true,
+    "revision": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+    "revision_error": "",
+    "selected_command_digests": {
+      "scripts/public_alpha_smoke.py": "sha256:1af6f1efb3c9c773091c924521516993af9bd425bc5a4502afb47b98b58a1e37",
+      "tools/release/public_alpha_smoke.py": "sha256:801a7913d67a632c8adfc215efda2ca83343eab99a0fe6514d06ace3ffbaee2a"
+    },
+    "tracked_tree_digest": "sha256:c48df543a83801b5f9338140332f96b5bc051e9dd261a1c99cbe3d086f693dac",
+    "tracked_tree_observed": true
+  },
+  "allowlisted_process_call": {
+    "argv": [
+      "<python>",
+      "<eureka-root>\\scripts\\public_alpha_smoke.py",
+      "--json"
+    ],
+    "cwd": "<eureka-root>",
+    "env_constraints": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "0",
+      "PYTHONNOUSERSITE": "1",
+      "PYTHONUTF8": "1"
+    },
+    "environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+    "shell": false,
+    "timeout": 120.0
+  },
+  "arbitrary_shell_command_executed": false,
+  "argv_template": [
+    "<python>",
+    "scripts/public_alpha_smoke.py",
+    "--json"
+  ],
+  "before_state": {
+    "clean": true,
+    "porcelain_status": "",
+    "porcelain_status_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "remote_error": "",
+    "remote_url": "https://github.com/Julesc013/eureka.git",
+    "repository_present": true,
+    "revision": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+    "revision_error": "",
+    "selected_command_digests": {
+      "scripts/public_alpha_smoke.py": "sha256:1af6f1efb3c9c773091c924521516993af9bd425bc5a4502afb47b98b58a1e37",
+      "tools/release/public_alpha_smoke.py": "sha256:801a7913d67a632c8adfc215efda2ca83343eab99a0fe6514d06ace3ffbaee2a"
+    },
+    "tracked_tree_digest": "sha256:c48df543a83801b5f9338140332f96b5bc051e9dd261a1c99cbe3d086f693dac",
+    "tracked_tree_observed": true
+  },
+  "branch_or_worktree_created": false,
+  "broad_dispatch_used": false,
+  "capability_id": "eureka.public-alpha-readonly.validate",
+  "capability_outcome": {
+    "decoder_outcome": "decoded",
+    "domain_outcome": "typed_result",
+    "domain_result": {
+      "checks": [
+        {
+          "code": "ok",
+          "expected": "200 JSON with public_alpha mode, disabled local-path capabilities, and no private path leakage",
+          "message": "Check passed.",
+          "name": "status",
+          "observed_status": 200,
+          "passed": true,
+          "route": "/api/status"
+        },
+        {
+          "code": "ok",
+          "expected": "200 JSON source registry listing",
+          "message": "Check passed.",
+          "name": "source list",
+          "observed_status": 200,
+          "passed": true,
+          "route": "/api/sources"
+        },
+        {
+          "code": "ok",
+          "expected": "200 JSON deterministic query plan",
+          "message": "Check passed.",
+          "name": "query plan",
+          "observed_status": 200,
+          "passed": true,
+          "route": "/api/query-plan?q=Windows+7+apps"
+        },
+        {
+          "code": "ok",
+          "expected": "200 JSON deterministic search results",
+          "message": "Check passed.",
+          "name": "search",
+          "observed_status": 200,
+          "passed": true,
+          "route": "/api/search?q=synthetic"
+        },
+        {
+          "code": "ok",
+          "expected": "200 JSON local public-search status with disabled live/download/upload/local-path capabilities",
+          "message": "Check passed.",
+          "name": "public search status",
+          "observed_status": 200,
+          "passed": true,
+          "route": "/api/v1/status"
+        },
+        {
+          "code": "ok",
+          "expected": "200 JSON governed local-index-only public-search results",
+          "message": "Check passed.",
+          "name": "public search",
+          "observed_status": 200,
+          "passed": true,
+          "route": "/api/v1/search?q=windows+7+apps"
+        },
+        {
+          "code": "ok",
+          "expected": "200 JSON governed public-search query plan",
+          "message": "Check passed.",
+          "name": "public query plan",
+          "observed_status": 200,
+          "passed": true,
+          "route": "/api/v1/query-plan?q=windows+7+apps"
+        },
+        {
+          "code": "ok",
+          "expected": "200 JSON archive-resolution eval report",
+          "message": "Check passed.",
+          "name": "archive resolution evals",
+          "observed_status": 200,
+          "passed": true,
+          "route": "/api/evals/archive-resolution"
+        },
+        {
+          "code": "local_path_parameters_blocked",
+          "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+          "message": "Check passed.",
+          "name": "local index path",
+          "observed_status": 403,
+          "passed": true,
+          "route": "/api/index/status?index_path=D%3A%2Fprivate%2Feureka-index.sqlite3"
+        },
+        {
+          "code": "local_path_parameters_blocked",
+          "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+          "message": "Check passed.",
+          "name": "run store root",
+          "observed_status": 403,
+          "passed": true,
+          "route": "/api/runs?run_store_root=D%3A%2Fprivate%2Feureka-runs"
+        },
+        {
+          "code": "local_path_parameters_blocked",
+          "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+          "message": "Check passed.",
+          "name": "task store root",
+          "observed_status": 403,
+          "passed": true,
+          "route": "/api/tasks?task_store_root=D%3A%2Fprivate%2Feureka-tasks"
+        },
+        {
+          "code": "local_path_parameters_blocked",
+          "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+          "message": "Check passed.",
+          "name": "memory store root",
+          "observed_status": 403,
+          "passed": true,
+          "route": "/api/memories?memory_store_root=D%3A%2Fprivate%2Feureka-memory"
+        },
+        {
+          "code": "local_path_parameters_blocked",
+          "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+          "message": "Check passed.",
+          "name": "bundle path inspection",
+          "observed_status": 403,
+          "passed": true,
+          "route": "/api/inspect/bundle?bundle_path=D%3A%2Fprivate%2Feureka-bundle.zip"
+        },
+        {
+          "code": "local_path_parameters_blocked",
+          "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+          "message": "Check passed.",
+          "name": "stored export root",
+          "observed_status": 403,
+          "passed": true,
+          "route": "/api/stored?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&store_root=D%3A%2Fprivate%2Feureka-store"
+        },
+        {
+          "code": "local_path_parameters_blocked",
+          "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+          "message": "Check passed.",
+          "name": "arbitrary output path",
+          "observed_status": 403,
+          "passed": true,
+          "route": "/api/status?output=D%3A%2Fprivate%2Foutput.json"
+        },
+        {
+          "code": "route_disabled_in_public_alpha",
+          "expected": "403 JSON blocked response with code route_disabled_in_public_alpha",
+          "message": "Check passed.",
+          "name": "fixture byte fetch",
+          "observed_status": 403,
+          "passed": true,
+          "route": "/api/fetch?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&representation_id=rep.synthetic-demo-app.source"
+        },
+        {
+          "code": "forbidden_parameter",
+          "expected": "400 JSON public-search error response with code forbidden_parameter",
+          "message": "Check passed.",
+          "name": "public search arbitrary url",
+          "observed_status": 400,
+          "passed": true,
+          "route": "/api/v1/search?q=archive&url=https%3A%2F%2Fexample.invalid%2F"
+        },
+        {
+          "code": "live_probes_disabled",
+          "expected": "400 JSON public-search error response with code live_probes_disabled",
+          "message": "Check passed.",
+          "name": "public search live probe",
+          "observed_status": 400,
+          "passed": true,
+          "route": "/api/v1/search?q=archive&live_probe=1"
+        }
+      ],
+      "command_id": "eureka.public-alpha-readonly.validate",
+      "failed_checks": 0,
+      "mode": "public_alpha",
+      "passed_checks": 18,
+      "raw_status": "passed",
+      "requested_command_available": false,
+      "source_command": "scripts/public_alpha_smoke.py",
+      "source_schema": "public_alpha_smoke.implicit_v0",
+      "status": "valid",
+      "total_checks": 18
+    },
+    "evidence_completeness": "complete",
+    "message": "",
+    "process_outcome": "exit_zero",
+    "reason_code": "",
+    "refusal": {},
+    "transport_outcome": "transport_started",
+    "validation_outcome": "complete"
+  },
+  "constructed_success_result": false,
+  "database_opened": false,
+  "environment_constraints": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONUTF8": "1"
+  },
+  "eureka_json_parsed": true,
+  "eureka_result": {
+    "checks": [
+      {
+        "code": "ok",
+        "expected": "200 JSON with public_alpha mode, disabled local-path capabilities, and no private path leakage",
+        "message": "Check passed.",
+        "name": "status",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/status"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON source registry listing",
+        "message": "Check passed.",
+        "name": "source list",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/sources"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON deterministic query plan",
+        "message": "Check passed.",
+        "name": "query plan",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/query-plan?q=Windows+7+apps"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON deterministic search results",
+        "message": "Check passed.",
+        "name": "search",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/search?q=synthetic"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON local public-search status with disabled live/download/upload/local-path capabilities",
+        "message": "Check passed.",
+        "name": "public search status",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/v1/status"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON governed local-index-only public-search results",
+        "message": "Check passed.",
+        "name": "public search",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/v1/search?q=windows+7+apps"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON governed public-search query plan",
+        "message": "Check passed.",
+        "name": "public query plan",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/v1/query-plan?q=windows+7+apps"
+      },
+      {
+        "code": "ok",
+        "expected": "200 JSON archive-resolution eval report",
+        "message": "Check passed.",
+        "name": "archive resolution evals",
+        "observed_status": 200,
+        "passed": true,
+        "route": "/api/evals/archive-resolution"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "local index path",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/index/status?index_path=D%3A%2Fprivate%2Feureka-index.sqlite3"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "run store root",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/runs?run_store_root=D%3A%2Fprivate%2Feureka-runs"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "task store root",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/tasks?task_store_root=D%3A%2Fprivate%2Feureka-tasks"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "memory store root",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/memories?memory_store_root=D%3A%2Fprivate%2Feureka-memory"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "bundle path inspection",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/inspect/bundle?bundle_path=D%3A%2Fprivate%2Feureka-bundle.zip"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "stored export root",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/stored?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&store_root=D%3A%2Fprivate%2Feureka-store"
+      },
+      {
+        "code": "local_path_parameters_blocked",
+        "expected": "403 JSON blocked response with code local_path_parameters_blocked",
+        "message": "Check passed.",
+        "name": "arbitrary output path",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/status?output=D%3A%2Fprivate%2Foutput.json"
+      },
+      {
+        "code": "route_disabled_in_public_alpha",
+        "expected": "403 JSON blocked response with code route_disabled_in_public_alpha",
+        "message": "Check passed.",
+        "name": "fixture byte fetch",
+        "observed_status": 403,
+        "passed": true,
+        "route": "/api/fetch?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&representation_id=rep.synthetic-demo-app.source"
+      },
+      {
+        "code": "forbidden_parameter",
+        "expected": "400 JSON public-search error response with code forbidden_parameter",
+        "message": "Check passed.",
+        "name": "public search arbitrary url",
+        "observed_status": 400,
+        "passed": true,
+        "route": "/api/v1/search?q=archive&url=https%3A%2F%2Fexample.invalid%2F"
+      },
+      {
+        "code": "live_probes_disabled",
+        "expected": "400 JSON public-search error response with code live_probes_disabled",
+        "message": "Check passed.",
+        "name": "public search live probe",
+        "observed_status": 400,
+        "passed": true,
+        "route": "/api/v1/search?q=archive&live_probe=1"
+      }
+    ],
+    "command_id": "eureka.public-alpha-readonly.validate",
+    "failed_checks": 0,
+    "mode": "public_alpha",
+    "passed_checks": 18,
+    "raw_status": "passed",
+    "requested_command_available": false,
+    "source_command": "scripts/public_alpha_smoke.py",
+    "source_schema": "public_alpha_smoke.implicit_v0",
+    "status": "valid",
+    "total_checks": 18
+  },
+  "github_mutation_performed": false,
+  "kind": "EurekaReadonlyProcessInvocationResult",
+  "message": "Eureka public-alpha smoke command returned a valid read-only result.",
+  "mutation_observation": "none_detected_within_probe_coverage",
+  "network_call_performed": false,
+  "patch_transaction_applied": false,
+  "preview_or_apply_performed": false,
+  "private_tool_called": false,
+  "probe_coverage": [
+    "git_revision",
+    "git_porcelain_status",
+    "git_tracked_tree_digest",
+    "selected_command_digests"
+  ],
+  "process_call_count": 1,
+  "process_execution_receipt": {
+    "after_state_ref": "sha256:75e1d57505c50d777b42233f3e0a2a821f479ea2bf9785a714c08b23feef1305",
+    "argv_digest": "sha256:ad39d8e6cb1782201a7578cc9b89259bbe0b82870d559094aebf3e3ed643bf8e",
+    "before_state_ref": "sha256:75e1d57505c50d777b42233f3e0a2a821f479ea2bf9785a714c08b23feef1305",
+    "cancelled": false,
+    "capability_ref": "aide://capability/eureka-public-alpha-readonly-process-adapter-v0",
+    "decoder_ref": "eureka.public-alpha-smoke-json-v0",
+    "ended_at": "deterministic",
+    "executable_digest": "sha256:3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd",
+    "executable_identity": "python",
+    "invocation_ref": "aide://invocation/eureka-readonly-process-adapter-01",
+    "launcher_call_count": 1,
+    "metadata": {
+      "after_state": {
+        "clean": true,
+        "porcelain_status": "",
+        "porcelain_status_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "remote_error": "",
+        "remote_url": "https://github.com/Julesc013/eureka.git",
+        "repository_present": true,
+        "revision": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+        "revision_error": "",
+        "selected_command_digests": {
+          "scripts/public_alpha_smoke.py": "sha256:1af6f1efb3c9c773091c924521516993af9bd425bc5a4502afb47b98b58a1e37",
+          "tools/release/public_alpha_smoke.py": "sha256:801a7913d67a632c8adfc215efda2ca83343eab99a0fe6514d06ace3ffbaee2a"
+        },
+        "tracked_tree_digest": "sha256:c48df543a83801b5f9338140332f96b5bc051e9dd261a1c99cbe3d086f693dac",
+        "tracked_tree_observed": true
+      },
+      "before_state": {
+        "clean": true,
+        "porcelain_status": "",
+        "porcelain_status_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "remote_error": "",
+        "remote_url": "https://github.com/Julesc013/eureka.git",
+        "repository_present": true,
+        "revision": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+        "revision_error": "",
+        "selected_command_digests": {
+          "scripts/public_alpha_smoke.py": "sha256:1af6f1efb3c9c773091c924521516993af9bd425bc5a4502afb47b98b58a1e37",
+          "tools/release/public_alpha_smoke.py": "sha256:801a7913d67a632c8adfc215efda2ca83343eab99a0fe6514d06ace3ffbaee2a"
+        },
+        "tracked_tree_digest": "sha256:c48df543a83801b5f9338140332f96b5bc051e9dd261a1c99cbe3d086f693dac",
+        "tracked_tree_observed": true
+      },
+      "launch": {
+        "argv": [
+          "<python>",
+          "<eureka-root>\\scripts\\public_alpha_smoke.py",
+          "--json"
+        ],
+        "cwd": "<eureka-root>",
+        "environment_manifest": {
+          "keys": [
+            "COMSPEC",
+            "PATH",
+            "PATHEXT",
+            "PYTHONDONTWRITEBYTECODE",
+            "PYTHONHASHSEED",
+            "PYTHONNOUSERSITE",
+            "PYTHONUTF8",
+            "SYSTEMROOT",
+            "SystemDrive",
+            "TEMP",
+            "TMP",
+            "USERPROFILE",
+            "WINDIR"
+          ],
+          "value_digests": {
+            "COMSPEC": "sha256:fd21f9d5853baaeda38d52ebc1f92c0e2457b89a52e3869270290e6ccdf638a0",
+            "PATH": "sha256:4af73944d5a4e8d4aaedc8d88b3bd87258577c90c169126d87b67c2d366ba445",
+            "PATHEXT": "sha256:7977c2b879d035c731c55c0ba304b0adf1f332fa278338f12c6b7425fae02241",
+            "PYTHONDONTWRITEBYTECODE": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+            "PYTHONHASHSEED": "sha256:94664180e5190a6c6dc2ba6e2d7944081d2dd0e0151a9ff07f62c8865eeb9389",
+            "PYTHONNOUSERSITE": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+            "PYTHONUTF8": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+            "SYSTEMROOT": "sha256:cd1d43ac38aee601acb6ce88ad8c7d056f0275ca13355aa36cfa801e9ffabfa4",
+            "SystemDrive": "sha256:1176329923408cc1c1a7761fb7294b5be8612536c5243855124ea0493d64381b",
+            "TEMP": "sha256:d02c86aaee52939138ab555840211e9a92ef8f2f6823f82fa7b83752f9ebc2f4",
+            "TMP": "sha256:d02c86aaee52939138ab555840211e9a92ef8f2f6823f82fa7b83752f9ebc2f4",
+            "USERPROFILE": "sha256:0ab0bbdea326f4be4731e926e557fe789a8d42f704fa34694138284871983f98",
+            "WINDIR": "sha256:cd1d43ac38aee601acb6ce88ad8c7d056f0275ca13355aa36cfa801e9ffabfa4"
+          }
+        },
+        "environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+        "shell": false,
+        "timeout": 120.0
+      }
+    },
+    "mutation_observation": "none_detected_within_probe_coverage",
+    "probe_coverage": [
+      "git_revision",
+      "git_porcelain_status",
+      "git_tracked_tree_digest",
+      "selected_command_digests"
+    ],
+    "provider_ref": "registered_process_execution_provider_v0",
+    "redacted_environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+    "return_code": 0,
+    "shell": false,
+    "started_at": "deterministic",
+    "stderr": {
+      "byte_count": 0,
+      "excerpt": "",
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "byte_count": 5888,
+      "excerpt": "{\n  \"checks\": [\n    {\n      \"code\": \"ok\",\n      \"expected\": \"200 JSON with public_alpha mode, disabled local-path capabilities, and no private path leakage\",\n      \"message\": \"Check passed.\",\n      \"name\": \"status\",\n      \"observed_status\": 200,\n      \"passed\": true,\n      \"route\": \"/api/status\"\n    },\n    {\n      \"code\": \"ok\",\n      \"expected\": \"200 JSON source registry listing\",\n      \"message\": \"Check passed.\",\n      \"name\": \"source list\",\n      \"observed_status\": 200,\n      \"passed\": true,\n      \"route\": \"/api/sources\"\n    },\n    {\n      \"code\": \"ok\",\n      \"expected\": \"200 JSON deterministic query plan\",\n      \"message\": \"Check passed.\",\n      \"name\": \"query plan\",\n      \"observed_status\": 200,\n      \"passed\": true,\n      \"route\": \"/api/query-plan?q=Windows+7+apps\"\n    },\n    {\n      ",
+      "sha256": "sha256:7fe4d8ef3d7f536820d779e1cfd953d48bb17695d3b9044e84d80e5bc2d5f97b"
+    },
+    "timed_out": false,
+    "working_directory_ref": "sha256:f485bf70c25786f2a2f2cfc59d6503d4a3024367c40fc6d3b0880671a3d0e315"
+  },
+  "proposed_capability_label": "eureka_public_alpha_readonly_validation_process_adapter_v0",
+  "provider_core_changed_by_task": false,
+  "provider_or_model_called": false,
+  "provider_ref": "registered_process_execution_provider_v0",
+  "reason_code": "",
+  "release_or_promotion_performed": false,
+  "requested_command": "scripts/validate_public_alpha_readonly.py",
+  "result": "PASS",
+  "result_origin": "eureka_public_alpha_smoke_json",
+  "returncode": 0,
+  "schema_version": "aide.eureka-readonly-process.invocation-result.v1",
+  "selected_command": "scripts/public_alpha_smoke.py",
+  "selected_command_reason": "requested validator absent in pinned local checkout; selected existing public-alpha safe-mode JSON smoke command",
+  "service_started": false,
+  "source_repository_mutated": false,
+  "status": "PASS",
+  "stderr": {
+    "byte_count": 0,
+    "excerpt": "",
+    "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "byte_count": 5888,
+    "excerpt": "{\n  \"checks\": [\n    {\n      \"code\": \"ok\",\n      \"expected\": \"200 JSON with public_alpha mode, disabled local-path capabilities, and no private path leakage\",\n      \"message\": \"Check passed.\",\n      \"name\": \"status\",\n      \"observed_status\": 200,\n      \"passed\": true,\n      \"route\": \"/api/status\"\n    },\n    {\n      \"code\": \"ok\",\n      \"expected\": \"200 JSON source registry listing\",\n      \"message\": \"Check passed.\",\n      \"name\": \"source list\",\n      \"observed_status\": 200,\n      \"passed\": true,\n      \"route\": \"/api/sources\"\n    },\n    {\n      \"code\": \"ok\",\n      \"expected\": \"200 JSON deterministic query plan\",\n      \"message\": \"Check passed.\",\n      \"name\": \"query plan\",\n      \"observed_status\": 200,\n      \"passed\": true,\n      \"route\": \"/api/query-plan?q=Windows+7+apps\"\n    },\n    {\n      ",
+    "sha256": "sha256:7fe4d8ef3d7f536820d779e1cfd953d48bb17695d3b9044e84d80e5bc2d5f97b"
+  },
+  "target_repository_mutated": false,
+  "task_id": "AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01",
+  "typed_refusal": false,
+  "typed_result": true,
+  "workbench_apply_performed": false,
+  "workbench_started": false,
+  "worker_executed": false,
+  "workspace_state_unchanged": true
+}

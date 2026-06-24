@@ -1,0 +1,151 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkUnit",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_workunit_queue_v1"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_workunit_queue_v1"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "wu-a78bbb33bf2946d1",
+    "name": "Build Eureka Read-Only Process Adapter",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/queue/AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01/task.yaml"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.workunit-queue.v1",
+  "spec": {
+    "acceptance_review": false,
+    "artifacts": [
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/context-descriptor.json",
+        "role": "context_descriptor"
+      },
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/context-pack.json",
+        "role": "context_pack"
+      },
+      {
+        "path": ".aide/reports/eureka-readonly-process-adapter/invocation-result.json",
+        "role": "invocation_result"
+      }
+    ],
+    "authorizes_implementation": true,
+    "capability_label": "minimal_workunit_queue_v1",
+    "check_only": false,
+    "dependencies": [],
+    "evidence_requirements": [
+      ".aide/reports/eureka-readonly-process-adapter/invocation-result.json",
+      ".aide/reports/eureka-readonly-process-adapter/execution-receipt.json",
+      ".aide/reports/eureka-readonly-process-adapter/capability-outcome.json",
+      ".aide/reports/eureka-readonly-process-adapter/evidence-packet.json",
+      ".aide/reports/eureka-readonly-process-adapter/event-record.json"
+    ],
+    "explicit_non_capabilities": [
+      "registered_process_provider_acceptance",
+      "arbitrary_command_runner",
+      "generic_command_cli",
+      "provider_core_mutation",
+      "eureka_repository_mutation",
+      "eureka_public_launch",
+      "eureka_source_fanout",
+      "downloads_uploads_install_execution",
+      "provider_model_call",
+      "network_call",
+      "worker_execution",
+      "service_runtime",
+      "workbench_behavior",
+      "preview_or_apply",
+      "rollback",
+      "patch_transaction_apply",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "implementation_scope": "thin-eureka-readonly-adapter-over-registered-process-provider-v0",
+    "predecessors": [
+      "AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01"
+    ],
+    "scope": {
+      "allowed_paths": [
+        "core/interop/eureka/**",
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_aide_eureka_readonly_process_adapter.py",
+        ".aide/reports/eureka-readonly-process-adapter/**",
+        ".aide/queue/AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01/**",
+        ".aide/queue/index.yaml",
+        "PLANS.md",
+        "IMPLEMENT.md"
+      ],
+      "forbidden_operations": [
+        "registered_process_provider_acceptance",
+        "arbitrary_command_runner",
+        "generic_command_cli",
+        "provider_core_mutation",
+        "eureka_repository_mutation",
+        "eureka_public_launch",
+        "eureka_source_fanout",
+        "downloads_uploads_install_execution",
+        "provider_model_call",
+        "network_call",
+        "worker_execution",
+        "service_runtime",
+        "workbench_behavior",
+        "preview_or_apply",
+        "rollback",
+        "patch_transaction_apply",
+        "branch_worktree_automation",
+        "github_mutation",
+        "release_or_promotion"
+      ],
+      "forbidden_paths": [
+        "core/execution/registered_process.py",
+        "core/protocol/process_invocation.py",
+        "core/protocol/execution_receipt.py",
+        "core/interop/aide/**",
+        "core/interop/dominium/**",
+        "<eureka-root>/**"
+      ],
+      "invocation_limit": 1,
+      "registered_capability_id": "eureka.public-alpha-readonly.validate"
+    },
+    "stop_state": "needs_review",
+    "task_id": "AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01",
+    "title": "Build Eureka Read-Only Process Adapter",
+    "validation": {
+      "commands": [
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py aide-eureka-readonly-process-adapter run",
+          "exit_code": 0,
+          "notes": "Invokes exactly one allowlisted Eureka public-alpha smoke process.",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_eureka_readonly_process_adapter.py",
+          "exit_code": 0,
+          "notes": "Focused fake-runner Eureka adapter tests.",
+          "status": "PASS"
+        }
+      ]
+    },
+    "work_type": "build"
+  },
+  "status": {
+    "phase": "needs_review",
+    "result": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

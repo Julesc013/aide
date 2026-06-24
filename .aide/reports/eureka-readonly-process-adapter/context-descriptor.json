@@ -1,0 +1,45 @@
+{
+  "context_ref": "aide://context/eureka-readonly-process-adapter",
+  "explicit_non_capabilities": [
+    "registered_process_provider_acceptance",
+    "arbitrary_command_runner",
+    "generic_command_cli",
+    "provider_core_mutation",
+    "eureka_repository_mutation",
+    "eureka_public_launch",
+    "eureka_source_fanout",
+    "downloads_uploads_install_execution",
+    "provider_model_call",
+    "network_call",
+    "worker_execution",
+    "service_runtime",
+    "workbench_behavior",
+    "preview_or_apply",
+    "rollback",
+    "patch_transaction_apply",
+    "branch_worktree_automation",
+    "github_mutation",
+    "release_or_promotion"
+  ],
+  "kind": "ContextDescriptor",
+  "repository": {
+    "identity": "Julesc013/eureka",
+    "kind": "external-eureka",
+    "local_checkout_path_committed": false,
+    "remote_url": "https://github.com/Julesc013/eureka.git",
+    "revision": "e582028b1db977e28ba6ddc0ed284ca6ccf48234"
+  },
+  "schema_version": "aide.eureka-readonly-process.context-descriptor.v1",
+  "scope": {
+    "capability_id": "eureka.public-alpha-readonly.validate",
+    "proposed_capability_label": "eureka_public_alpha_readonly_validation_process_adapter_v0",
+    "provider_ref": "registered_process_execution_provider_v0",
+    "requested_command": "scripts/validate_public_alpha_readonly.py",
+    "selected_command": "scripts/public_alpha_smoke.py"
+  },
+  "source_digests": {
+    "scripts/public_alpha_smoke.py": "sha256:1af6f1efb3c9c773091c924521516993af9bd425bc5a4502afb47b98b58a1e37",
+    "tools/release/public_alpha_smoke.py": "sha256:801a7913d67a632c8adfc215efda2ca83343eab99a0fe6514d06ace3ffbaee2a"
+  },
+  "task_id": "AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01"
+}
