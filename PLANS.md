@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
+
+- Title: Check ExecutionHost Contract v0
+- Status: needs_review
+- Objective: independently check `AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01` without repairing implementation.
+- Scope: check task/evidence, `.aide/reports/execution-host-contract-check/**`, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01` at commit `4a1f1aa`, result `PASS_WITH_WARNINGS`, missing evidence `0`.
+- Milestones: queue truth verified; source helper/schema/CLI/tests/reports inspected; independent harness passed; warnings preserved; reports and evidence written.
+- Blockers: none. Live host and LocalProcessExecutionHost remain deferred until acceptance.
+- Verification Intent: independent harness, direct ExecutionHost CLI commands, focused ExecutionHost tests, task inspect/evidence, broad validation, local-path and secret-like scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, material finding count `0`, missing evidence `0`, and next task exactly `AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01`.
+- Notes: this check has reduced independence because the same Codex thread built the source task; it does not implement or accept live ExecutionHost, LocalProcessExecutionHost, worker execution, Service/runtime, Workbench, provider/model/network calls, preview/apply/rollback, mutation, GitHub, release, or promotion.
+
 ### Plan ID: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
 
 - Title: Build ExecutionHost Contract v0
@@ -78,7 +92,7 @@
 - Scope: `core/protocol/execution_host.py`, `.aide/protocol/aide-execution-host.schema.json`, AIDE Lite `execution-host` status/project/validate commands, focused tests, generated reports, queue packet/evidence, queue index routing, and focused root log updates.
 - Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/task.yaml`.
 - Dependencies: `AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01` accepted `registered_process_execution_provider_v0` with warnings.
-- Milestones: existing protocol patterns inspected; projection-only helper and schema added; CLI commands wired; focused tests added and passing; reports generated; queue evidence materialized; final validation pending.
+- Milestones: existing protocol patterns inspected; projection-only helper and schema added; CLI commands wired; focused tests added and passing; reports generated; queue evidence materialized; final validation and commit policy passed.
 - Blockers: none. LocalProcessExecutionHost and live worker execution remain explicitly deferred.
 - Verification Intent: focused ExecutionHost tests, command status/project/validate, compileall, registered provider and WorkerRun regressions, task inspect/evidence, broad validation, leak scans, diff checks, staged diff checks, and commit policy.
 - Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, missing evidence `0`, and next task exactly `AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01`.

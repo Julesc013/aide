@@ -1,0 +1,370 @@
+{
+  "assertions": [
+    {
+      "category": "baseline",
+      "description": "Source build task is complete with missing evidence zero.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01/status.yaml"
+      ],
+      "expected": "needs_review PASS_WITH_WARNINGS missing_evidence 0 and recommended check task",
+      "id": "baseline.source_task_complete",
+      "observed": {
+        "capability_label": "execution_host_contract_v0",
+        "id": "AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01",
+        "material_finding_count": "0",
+        "missing_evidence": "0",
+        "planning_state": "implementation_completed",
+        "recommended_next_task": "AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01",
+        "result": "PASS_WITH_WARNINGS",
+        "review_gate": "needs_review",
+        "schema_version": "aide.task-status.v0",
+        "status": "needs_review",
+        "updated_at": "2026-06-25"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "baseline",
+      "description": "No acceptance or LocalProcessExecutionHost task already supersedes this check.",
+      "evidence_refs": [
+        ".aide/queue"
+      ],
+      "expected": "no downstream task directories",
+      "id": "baseline.no_superseding_task",
+      "observed": {
+        "accept_dir_exists": false
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "scope",
+      "description": "Source commit did not modify forbidden runtime, interop, host, or local-state paths.",
+      "evidence_refs": [
+        "git show --name-only --pretty=format: 4a1f1aa"
+      ],
+      "expected": "no forbidden changed paths",
+      "id": "scope.source_commit_forbidden_paths",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "schema",
+      "description": "Schema enumerates and oneOf-discriminates all ExecutionHost record/report kinds.",
+      "evidence_refs": [
+        ".aide/protocol/aide-execution-host.schema.json"
+      ],
+      "expected": [
+        "ExecutionHostApproval",
+        "ExecutionHostArtifact",
+        "ExecutionHostContractProjectionReport",
+        "ExecutionHostContractValidationReport",
+        "ExecutionHostDescriptor",
+        "ExecutionHostEvent",
+        "ExecutionHostRunBinding",
+        "ExecutionHostUsage"
+      ],
+      "id": "schema.kind_discrimination",
+      "observed": {
+        "kind_enum": [
+          "ExecutionHostApproval",
+          "ExecutionHostArtifact",
+          "ExecutionHostContractProjectionReport",
+          "ExecutionHostContractValidationReport",
+          "ExecutionHostDescriptor",
+          "ExecutionHostEvent",
+          "ExecutionHostRunBinding",
+          "ExecutionHostUsage"
+        ],
+        "oneOf_consts": [
+          "ExecutionHostApproval",
+          "ExecutionHostArtifact",
+          "ExecutionHostContractProjectionReport",
+          "ExecutionHostContractValidationReport",
+          "ExecutionHostDescriptor",
+          "ExecutionHostEvent",
+          "ExecutionHostRunBinding",
+          "ExecutionHostUsage"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "schema",
+      "description": "Schema requires the canonical envelope fields.",
+      "evidence_refs": [
+        ".aide/protocol/aide-execution-host.schema.json"
+      ],
+      "expected": [
+        "apiVersion",
+        "kind",
+        "metadata",
+        "spec",
+        "status"
+      ],
+      "id": "schema.required_surface",
+      "observed": [
+        "apiVersion",
+        "kind",
+        "metadata",
+        "spec",
+        "status"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "projection",
+      "description": "Exactly six ExecutionHost record projections are present.",
+      "evidence_refs": [
+        ".aide/reports/execution-host-contract/projection-report.json"
+      ],
+      "expected": [
+        "ExecutionHostApproval",
+        "ExecutionHostArtifact",
+        "ExecutionHostDescriptor",
+        "ExecutionHostEvent",
+        "ExecutionHostRunBinding",
+        "ExecutionHostUsage"
+      ],
+      "id": "projection.complete_record_set",
+      "observed": {
+        "count": 6,
+        "kinds": [
+          "ExecutionHostApproval",
+          "ExecutionHostArtifact",
+          "ExecutionHostDescriptor",
+          "ExecutionHostEvent",
+          "ExecutionHostRunBinding",
+          "ExecutionHostUsage"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "projection",
+      "description": "Projection records preserve non-capabilities and false boundary fields.",
+      "evidence_refs": [
+        ".aide/reports/execution-host-contract/projections/execution-host-descriptor.json",
+        ".aide/reports/execution-host-contract/projections/execution-host-run-binding.json",
+        ".aide/reports/execution-host-contract/projections/execution-host-event.json",
+        ".aide/reports/execution-host-contract/projections/execution-host-artifact.json",
+        ".aide/reports/execution-host-contract/projections/execution-host-approval.json",
+        ".aide/reports/execution-host-contract/projections/execution-host-usage.json"
+      ],
+      "expected": "all projections projection_only with complete non-capabilities and false boundary fields",
+      "id": "projection.false_boundary_set",
+      "observed": {},
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "contract",
+      "description": "Descriptor keeps deterministic capability execution distinct from worker/session execution.",
+      "evidence_refs": [
+        ".aide/reports/execution-host-contract/projections/execution-host-descriptor.json"
+      ],
+      "expected": "capability distinct, provider ref accepted provider, worker session contract true",
+      "id": "contract.capability_distinction",
+      "observed": {
+        "capability_execution_distinct": true,
+        "capability_provider_ref": "registered_process_execution_provider_v0",
+        "worker_session_contract": true
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "contract",
+      "description": "Descriptor records the expected v0 worker/session operation names.",
+      "evidence_refs": [
+        ".aide/reports/execution-host-contract/projections/execution-host-descriptor.json"
+      ],
+      "expected": [
+        "attach",
+        "collect_artifacts",
+        "create_run",
+        "finish",
+        "interrupt",
+        "probe",
+        "reconcile",
+        "resolve_runtime_approval",
+        "send_input",
+        "stream_events"
+      ],
+      "id": "contract.operation_set",
+      "observed": [
+        "attach",
+        "collect_artifacts",
+        "create_run",
+        "finish",
+        "interrupt",
+        "probe",
+        "reconcile",
+        "resolve_runtime_approval",
+        "send_input",
+        "stream_events"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "source",
+      "description": "ExecutionHost protocol helper imports no process, network, or transport modules.",
+      "evidence_refs": [
+        "core/protocol/execution_host.py"
+      ],
+      "expected": "no forbidden imports",
+      "id": "source.no_runtime_imports",
+      "observed": {
+        "forbidden_found": [],
+        "imports": [
+          "__future__",
+          "copy",
+          "core",
+          "hashlib",
+          "pathlib",
+          "typing"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "source",
+      "description": "ExecutionHost protocol helper contains no direct runtime/process/network call tokens.",
+      "evidence_refs": [
+        "core/protocol/execution_host.py"
+      ],
+      "expected": "no runtime call tokens",
+      "id": "source.no_runtime_call_tokens",
+      "observed": {
+        "forbidden_tokens_found": []
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "cli",
+      "description": "AIDE Lite execution-host status/project/validate succeed and print projection-only boundary lines.",
+      "evidence_refs": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "expected": "three commands exit 0 and print false/non-call boundaries",
+      "id": "cli.projection_only_commands",
+      "observed": {
+        "boundary_lines_present": true,
+        "good_cli": true
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "cli",
+      "description": "AIDE Lite parser rejects execution-host run; no live host run command is present.",
+      "evidence_refs": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "expected": "nonzero argparse invalid choice",
+      "id": "cli.live_run_rejected",
+      "observed": {
+        "returncode": 2,
+        "stderr": "usage: aide_lite.py execution-host [-h] {status,project,validate} ...\naide_lite.py execution-host: error: argument execution_host_command: invalid choice: 'run' (choose from 'status', 'project', 'validate')\n"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "report",
+      "description": "Build validation report truthfully records projection-only pass with warnings and next check routing.",
+      "evidence_refs": [
+        ".aide/reports/execution-host-contract/validation.json"
+      ],
+      "expected": "PASS_WITH_WARNINGS projection-only and recommends check",
+      "id": "report.validation_truthful",
+      "observed": {
+        "execution_host_runtime_implemented": false,
+        "projection_only_truthful": true,
+        "recommended_next_task": "AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01",
+        "status": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "determinism",
+      "description": "ExecutionHost CLI status/project/validate leave watched source and report bytes unchanged.",
+      "evidence_refs": [
+        "core/protocol/execution_host.py",
+        "core/protocol/__init__.py",
+        ".aide/protocol/aide-execution-host.schema.json",
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_aide_execution_host_contract.py",
+        ".aide/reports/execution-host-contract/status.md",
+        ".aide/reports/execution-host-contract/projection-report.json",
+        ".aide/reports/execution-host-contract/validation.json",
+        ".aide/reports/execution-host-contract/validation.md"
+      ],
+      "expected": "no watched file hash changes",
+      "id": "determinism.commands_no_report_churn",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "hygiene",
+      "description": "Build and check surfaces scanned so far contain no absolute local paths or secret-like values.",
+      "evidence_refs": [
+        ".aide/reports/execution-host-contract",
+        ".aide/queue/AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01",
+        ".aide/queue/AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01"
+      ],
+      "expected": "no absolute path or secret-like matches",
+      "id": "hygiene.no_absolute_paths_or_secrets",
+      "observed": {
+        "absolute_path_matches": [],
+        "secret_like_matches": []
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": null
+    }
+  ],
+  "check_only": true,
+  "explicit_non_capabilities_preserved": true,
+  "implementation_repaired": false,
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01",
+  "report_type": "execution_host_contract_check",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.execution-host-contract-check.v0",
+  "source_commit": "4a1f1aa",
+  "source_task": "AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01",
+  "task_id": "AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01",
+  "warnings": [
+    "Reduced independence: this check ran in the same Codex thread as the source build.",
+    "ExecutionHost contract v0 remains projection-only and does not implement a live host.",
+    "Full external Draft 2020-12 validation is not separately installed or required by this bounded check.",
+    "Python launcher selection differs when nested under Python on this host, so CLI probes use the active interpreter path and scrub it from evidence."
+  ]
+}

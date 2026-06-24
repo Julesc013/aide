@@ -1,0 +1,76 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
+title: Check ExecutionHost Contract v0
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Independently check AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01 for a
+  provider-neutral, projection-only ExecutionHost contract v0 without repairing
+  implementation.
+capability_label_under_review: execution_host_contract_v0
+source_task: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
+source_commit: 4a1f1aa
+authorizes_implementation: false
+check_only: true
+acceptance_only: false
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01/**
+  - .aide/reports/execution-host-contract-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/protocol/execution_host.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-execution-host.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_execution_host_contract.py
+  - .aide/reports/execution-host-contract/**
+  - core/execution/**
+  - core/interop/**
+  - hosts/**
+  - .aide.local/**
+check_focus:
+  - source task complete with missing_evidence 0
+  - schema and helper contract alignment
+  - six projection records validate structurally
+  - provider-neutral ExecutionHost contract boundary
+  - deterministic capability execution remains distinct from worker/session execution
+  - AIDE Lite execution-host status/project/validate are projection-only
+  - parser rejects live execution-host run command
+  - explicit non-capabilities and false-boundary fields remain preserved
+  - no implementation repair or live host behavior introduced by this check
+explicit_non_capabilities:
+  - live ExecutionHost
+  - LocalProcessExecutionHost
+  - RemoteExecutionHost
+  - worker execution
+  - worker harness
+  - scheduler
+  - Service/runtime behavior
+  - Workbench behavior
+  - provider/model calls
+  - network calls
+  - PreviewSession
+  - DevelopmentTransaction
+  - PatchTransaction apply
+  - repository mutation
+  - branch/worktree mutation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - This check has reduced independence because the same Codex thread also built the source task.
+  - ExecutionHost contract v0 is projection-only.
+  - Full Draft 2020-12 validation remains outside this bounded check; the build uses a local subset validator plus helper validation.
+recommended_next_task: AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
+recommended_next_task_on_pass: AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
+recommended_next_task_on_failure: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-REPAIR-01

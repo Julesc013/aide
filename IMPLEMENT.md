@@ -39,6 +39,47 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
+
+Completed with warnings and awaiting acceptance review.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01/**`
+- `.aide/reports/execution-host-contract-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The check independently reviewed `AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01`
+at commit `4a1f1aa` and found zero material findings. It verified the
+projection-only contract boundary, schema kind discrimination, six projection
+records, capability-execution separation, operation vocabulary, false-boundary
+fields, explicit non-capabilities, CLI status/project/validate behavior,
+parser rejection of `execution-host run`, report truthfulness, deterministic
+reruns, and leak hygiene.
+
+Accepted warnings:
+
+- reduced independence because the same Codex thread also built the source task;
+- projection-only contract with no live host;
+- no separate external Draft 2020-12 validator installation;
+- nested Python launcher selection differs on this host, so the harness used the
+  active interpreter path and scrubbed it from evidence.
+
+Recommended next task:
+
+```text
+AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
+```
+
+No implementation was repaired. No live ExecutionHost, LocalProcessExecutionHost,
+RemoteExecutionHost, worker execution, worker harness, scheduler,
+provider/model/network call, Service/runtime behavior, Workbench behavior,
+PreviewSession, DevelopmentTransaction, PatchTransaction apply, repository
+mutation, branch/worktree mutation, GitHub mutation, release, or promotion was
+implemented or accepted.
+
 ## Work Item: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
 
 Completed with warnings and awaiting independent check.

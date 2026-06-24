@@ -1,0 +1,12 @@
+schema_version: aide.task-status.v0
+id: AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+source_task: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
+source_commit: 4a1f1aa
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
