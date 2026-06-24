@@ -2460,3 +2460,14 @@
 - Verification Intent: focused fake-runner tests, one bounded live fixture worker run, local host validate command, compile checks, provider/ExecutionHost regressions, task inspect/evidence, broad validation, diff checks, secret-like scan, and commit-policy check.
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `local_process_execution_host_v0`, preserves no arbitrary command/provider/network/mutation behavior, and recommends exactly `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01`.
 - Notes: This build does not implement a generic worker harness, autonomous AI worker, remote ExecutionHost, scheduler, supervisor, leases, durable Service/runtime, Workbench behavior, provider/model/network calls, PreviewSession, DevelopmentTransaction, PatchTransaction apply, repository mutation, branch/worktree mutation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+
+- Title: Check LocalProcessExecutionHost v0
+- Status: Needs Review
+- Objective: independently check `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01` without repairing implementation.
+- Scope: `.aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01/**`, `.aide/reports/local-process-execution-host-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source build commit `e62d5961fa6af6be54e2254ad4006843a169e9c0`, `PASS_WITH_WARNINGS`, `missing_evidence: 0`, clean worktree, and route to this check.
+- Verification Intent: source build evidence review, independent source/report inspection harness, fixture scope review, exact process boundary review, workspace containment review, event/artifact/lifecycle truth review, no-overclaiming review, source tests, provider/ExecutionHost/AIDE/Dominium/Eureka regression tests, broad validation, diff checks, path/secret scan, task inspect/evidence, and commit-policy check.
+- Exit Criteria: task stops at `needs_review` with `REQUEST_CHANGES`, records 6 material findings, `missing_evidence: 0`, and recommends exactly `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01`.
+- Notes: This check does not repair implementation, accept the capability, create the acceptance task, advance to trust/service/MCP work, implement runtime/workbench/provider/worker behavior, mutate repositories, create branches/worktrees, call GitHub, release, or promote.

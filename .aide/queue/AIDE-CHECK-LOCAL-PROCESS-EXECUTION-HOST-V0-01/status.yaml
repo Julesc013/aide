@@ -1,0 +1,12 @@
+schema_version: aide.task-status.v0
+id: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+status: needs_review
+planning_state: check_completed
+result: REQUEST_CHANGES
+review_gate: needs_review
+updated_at: 2026-06-25
+source_task: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+source_commit: e62d5961fa6af6be54e2254ad4006843a169e9c0
+material_finding_count: 6
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01

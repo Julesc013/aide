@@ -1,0 +1,329 @@
+{
+  "assertions": [
+    {
+      "category": "baseline",
+      "description": "Source build task is complete and ready for check.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/status.yaml"
+      ],
+      "expected": "needs_review PASS_WITH_WARNINGS missing_evidence 0",
+      "id": "baseline.source_task_complete",
+      "observed": {
+        "missing_evidence_zero": true,
+        "recommended_check": true,
+        "result_has_pass_with_warnings": true,
+        "status_has_needs_review": true
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "baseline",
+      "description": "Live HEAD and origin/main match the source build commit.",
+      "evidence_refs": [
+        "git rev-parse HEAD",
+        "git rev-parse origin/main",
+        "git status --short --branch"
+      ],
+      "expected": "e62d5961fa6af6be54e2254ad4006843a169e9c0",
+      "id": "baseline.live_head_matches_source_commit",
+      "observed": {
+        "HEAD": "e62d5961fa6af6be54e2254ad4006843a169e9c0",
+        "origin/main": "e62d5961fa6af6be54e2254ad4006843a169e9c0",
+        "status": "## main...origin/main\n M .aide/queue/index.yaml\n M IMPLEMENT.md\n M PLANS.md\n?? .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01/\n?? .aide/reports/local-process-execution-host-check/"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "scope",
+      "description": "Source build did not modify accepted registered-process provider core or accepted ExecutionHost contract files.",
+      "evidence_refs": [
+        "git show --name-only --pretty=format: e62d5961fa6af6be54e2254ad4006843a169e9c0"
+      ],
+      "expected": "no provider core or accepted contract source changes",
+      "id": "scope.source_did_not_change_provider_core",
+      "observed": [
+        ".aide/fixtures/local-process-execution-host/reference_worker.py",
+        ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/ExecPlan.md",
+        ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/changed-files.md",
+        ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/remaining-risks.md",
+        ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/summary.md",
+        ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/validation.md",
+        ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/prompt.md",
+        ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/status.yaml",
+        ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/task.yaml",
+        ".aide/queue/index.yaml",
+        ".aide/reports/local-process-execution-host/capability-outcome.json",
+        ".aide/reports/local-process-execution-host/event-record.json",
+        ".aide/reports/local-process-execution-host/evidence-packet.json",
+        ".aide/reports/local-process-execution-host/execution-receipt.json",
+        ".aide/reports/local-process-execution-host/explicit-non-capabilities.md",
+        ".aide/reports/local-process-execution-host/host-artifact.json",
+        ".aide/reports/local-process-execution-host/host-descriptor.json",
+        ".aide/reports/local-process-execution-host/host-event.json",
+        ".aide/reports/local-process-execution-host/host-report.json",
+        ".aide/reports/local-process-execution-host/host-report.md",
+        ".aide/reports/local-process-execution-host/host-usage.json",
+        ".aide/reports/local-process-execution-host/invocation-request.json",
+        ".aide/reports/local-process-execution-host/next-task-prompt.md",
+        ".aide/reports/local-process-execution-host/projection.json",
+        ".aide/reports/local-process-execution-host/run-binding.json",
+        ".aide/reports/local-process-execution-host/run-result.json",
+        ".aide/reports/local-process-execution-host/status.md",
+        ".aide/reports/local-process-execution-host/validation.json",
+        ".aide/reports/local-process-execution-host/warning-disposition.md",
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py",
+        "IMPLEMENT.md",
+        "PLANS.md",
+        "core/execution/local_process_host.py"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "process",
+      "description": "The successful run records one allowlisted shell-free launch with constrained environment and bounded timeout.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/run-result.json"
+      ],
+      "expected": "process_call_count 1, shell false, timeout 30, exact fixture argv template",
+      "id": "process.exact_allowlisted_launch",
+      "observed": {
+        "argv_template": [
+          "<python>",
+          ".aide/fixtures/local-process-execution-host/reference_worker.py",
+          "--run-id",
+          "aide://execution-host-run/local-process-reference-01",
+          "--workunit-ref",
+          "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+          "--json"
+        ],
+        "env_constraints": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": "0",
+          "PYTHONNOUSERSITE": "1",
+          "PYTHONUTF8": "1"
+        },
+        "process_call_count": 1,
+        "shell": false,
+        "timeout": 30.0
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "fixture",
+      "description": "Focused tests cover unsupported capability and bad preconditions causing zero process calls.",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "unsupported capability, wrong revision, digest mismatch launch zero processes",
+      "id": "fixture.unsupported_capability_zero_launch_tested",
+      "observed": {
+        "digest_mismatch_zero": true,
+        "unsupported_capability_test": true,
+        "wrong_revision_zero": true
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "workspace",
+      "description": "The live run uses the source checkout as working directory and does not prove a disposable worker workspace.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/run-result.json",
+        ".aide/reports/local-process-execution-host/invocation-request.json",
+        "core/execution/local_process_host.py"
+      ],
+      "expected": "worker process cwd is a disposable or isolated worker workspace, not the canonical source checkout",
+      "id": "workspace.disposable_workspace_not_proven",
+      "observed": {
+        "allowlisted_process_cwd": "<aide-root>",
+        "invocation_repo_root": "<aide-root>",
+        "source_has_temp_workspace": false
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "workspace",
+      "description": "The source task does not prove path traversal, symlink, or reparse-point escape rejection.",
+      "evidence_refs": [
+        "core/execution/local_process_host.py",
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "negative tests or implementation checks for path traversal and link/reparse escape",
+      "id": "workspace.escape_guards_not_proven",
+      "observed": {
+        "source_mentions_reparse": false,
+        "source_mentions_symlink": false,
+        "tests_have_escape_cases": false
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "event",
+      "description": "The build records one synthesized host event and aggregate event_count, not a retained raw event stream with malformed/non-monotonic fail-closed checks.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/host-event.json",
+        ".aide/reports/local-process-execution-host/run-result.json"
+      ],
+      "expected": "raw fixture events retained or referenced, monotonic event validation, malformed/non-monotonic failure tests",
+      "id": "event.raw_event_stream_not_proven",
+      "observed": {
+        "event_is_synthetic_single": true,
+        "host_event": {
+          "delivered": true,
+          "event_ref": "aide://execution-host-event/local-process-reference-0001",
+          "event_type": "RunObserved",
+          "kind": "ExecutionHostEvent",
+          "payload": {
+            "process_call_count": 1,
+            "result": "PASS",
+            "result_origin": "reference_worker_json",
+            "workspace_state_unchanged": true
+          },
+          "run_ref": "aide://execution-host-run/local-process-reference-01",
+          "runtime_event_store_implemented": false,
+          "schema_version": "aide.local-process-execution-host.event.v0",
+          "sequence": 1,
+          "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+        },
+        "malformed_event_tests": false,
+        "reference_worker_event_count": 3,
+        "translation_receipt_mentions": false
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "artifact",
+      "description": "The build records stdout metadata but does not persist or validate worker-produced artifact paths in a contained workspace.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/host-artifact.json",
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "content-addressed artifact payload/metadata with contained path and unexpected artifact classification",
+      "id": "artifact.content_addressed_worker_artifacts_not_proven",
+      "observed": {
+        "artifact_persisted": false,
+        "host_artifact": {
+          "artifact_ref": "aide://execution-host-artifact/local-process-reference-stdout",
+          "artifact_role": "stdout",
+          "byte_count": 483,
+          "digest": "sha256:1962cc7b0255ea2a0c4cb68d2da41769ea700c5de65cf8faa509b9d29e7e8ec3",
+          "kind": "ExecutionHostArtifact",
+          "media_type": "application/json",
+          "persisted": false,
+          "run_ref": "aide://execution-host-run/local-process-reference-01",
+          "schema_version": "aide.local-process-execution-host.artifact.v0",
+          "streaming_artifact_store_implemented": false,
+          "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+        },
+        "streaming_artifact_store_implemented": false,
+        "unexpected_artifact_tests": false
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "lifecycle",
+      "description": "The build does not validate legal WorkerRun lifecycle transitions or typed refusals for unsupported lifecycle operations.",
+      "evidence_refs": [
+        "core/execution/local_process_host.py",
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "legal transitions among proposed/creating/ready/running/completing/completed/failed/timed_out/cancelled/reconciliation_required",
+      "id": "lifecycle.state_machine_not_proven",
+      "observed": {
+        "descriptor_supported_operations": [
+          "probe",
+          "create_run",
+          "stream_events",
+          "collect_artifacts",
+          "finish",
+          "reconcile"
+        ],
+        "source_mentions_reconciliation": false,
+        "tests_have_lifecycle_cases": false
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "result_axis",
+      "description": "Process receipt, fixture worker result, evidence, and capability acceptance are represented separately.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/execution-receipt.json",
+        ".aide/reports/local-process-execution-host/run-result.json"
+      ],
+      "expected": "separate receipt/outcome/result/evidence fields",
+      "id": "outcome.axes_partially_separated",
+      "observed": {
+        "provider_ref": "registered_process_execution_provider_v0",
+        "receipt_result_kind": null,
+        "run_result_origin": "reference_worker_json",
+        "validation_status": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "no_overclaiming",
+      "description": "Host descriptor advertises stream_events, collect_artifacts, finish, and reconcile although the source proof is a single synchronous fixture process with synthesized reports.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/host-descriptor.json"
+      ],
+      "expected": "descriptor only claims operations independently exercised or marks them unimplemented",
+      "id": "no_overclaiming.supported_operations_exceed_proof",
+      "observed": {
+        "supported_operations": [
+          "probe",
+          "create_run",
+          "stream_events",
+          "collect_artifacts",
+          "finish",
+          "reconcile"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "category": "regression",
+      "description": "Regression commands run during this check passed.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/validation-results.md"
+      ],
+      "expected": "local host, provider, ExecutionHost, AIDE self, Dominium registered backend, Eureka process adapter tests and broad validation pass",
+      "id": "regression.validation_commands_passed",
+      "observed": "Recorded in validation-results.md",
+      "outcome": "PASS",
+      "severity": "material",
+      "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    }
+  ],
+  "material_finding_count": 6,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.local-process-execution-host-check.report.v0",
+  "source_commit": "e62d5961fa6af6be54e2254ad4006843a169e9c0",
+  "source_task": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+  "task_id": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+}

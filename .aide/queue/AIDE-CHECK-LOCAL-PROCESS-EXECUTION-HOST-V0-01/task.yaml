@@ -1,0 +1,68 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+title: Check LocalProcessExecutionHost v0
+type: check
+status: needs_review
+planning_state: check_completed
+result: REQUEST_CHANGES
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Independently check AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01 for a
+  bounded local process ExecutionHost reference implementation without
+  repairing implementation.
+capability_label_under_review: local_process_execution_host_v0
+source_task: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+source_commit: e62d5961fa6af6be54e2254ad4006843a169e9c0
+authorizes_implementation: false
+check_only: true
+acceptance_only: false
+material_finding_count: 6
+missing_evidence: 0
+predecessors:
+  - AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01/**
+  - .aide/reports/local-process-execution-host-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/local_process_host.py
+  - core/execution/registered_process.py
+  - core/protocol/execution_host.py
+  - .aide/protocol/aide-execution-host.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_local_process_execution_host.py
+  - .aide/fixtures/local-process-execution-host/**
+  - .aide/reports/local-process-execution-host/**
+  - .aide.local/**
+check_focus:
+  - source build baseline and queue evidence
+  - fixture-only scope
+  - exact process boundary
+  - workspace containment
+  - event and artifact truth
+  - lifecycle and result-axis separation
+  - no overclaiming before acceptance
+explicit_non_capabilities:
+  - implementation repair
+  - acceptance
+  - arbitrary command execution
+  - general worker harness
+  - provider/model calls
+  - network calls
+  - Service/runtime behavior
+  - Workbench behavior
+  - preview/apply/rollback
+  - repository mutation
+  - branch/worktree mutation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - This check was run in the same Codex session family as the source build, so independence is bounded to source inspection, task-local harnessing, and regression commands.
+  - Source tests and broad validation pass; material findings are about unsupported capability claims and missing containment/event/artifact/lifecycle proof.
+recommended_next_task: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+recommended_next_task_on_pass: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+recommended_next_task_on_failure: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01

@@ -8089,3 +8089,56 @@ task-local evidence before commit.
 - Cancellation, durable idempotency, streaming artifact storage, resource quotas,
   worker leases, scheduler, supervisor, Service/runtime, and Workbench behavior
   remain unimplemented.
+
+## Work Item: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+
+### Status
+
+Completed with `REQUEST_CHANGES` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01/**`
+- `.aide/reports/local-process-execution-host-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The source build passed its own tests and broad validation, but the requested
+check boundary is stronger than the source proof. It requires disposable
+workspace containment, escape guards, event-stream truth, artifact integrity,
+lifecycle validation, and no-overclaiming before acceptance can proceed.
+
+### Implementation Notes
+
+- Created the check task packet, ExecPlan, prompt, status, evidence root, and
+  check reports.
+- Added a task-local independent source-inspection harness that reads source
+  task packets and generated reports without importing production
+  `core.execution.local_process_host`.
+- Recorded six material findings:
+  - disposable worker workspace not proven;
+  - path traversal, symlink, and reparse-point escape guards not proven;
+  - raw event stream and malformed/non-monotonic failure handling not proven;
+  - worker artifact path containment and persisted content-addressed artifact
+    truth not proven;
+  - WorkerRun lifecycle transition validation not proven;
+  - advertised supported operations exceed the exercised source proof.
+- Stopped the serialized wave before acceptance or later trust/service/MCP work.
+
+### Verification
+
+Validation passed for the source local host tests, registered-process provider
+tests, ExecutionHost contract tests, AIDE self-validation adapter tests,
+Dominium registered validation backend tests, Eureka readonly process adapter
+tests, source task inspect/evidence, local host validation, broad AIDE
+validation, diff checks, and path/secret scan of check evidence.
+
+### Remaining Issues
+
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` is required before
+  local process ExecutionHost acceptance.
+- The later trust, local Service, durable WorkerRun, and read-only MCP stdio
+  phases were not started.
