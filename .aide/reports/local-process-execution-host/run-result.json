@@ -1,0 +1,295 @@
+{
+  "after_state": {
+    "clean": false,
+    "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n M IMPLEMENT.md\n M PLANS.md\n?? .aide/fixtures/local-process-execution-host/reference_worker.py\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/changed-files.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/remaining-risks.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/summary.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/prompt.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/status.yaml\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/task.yaml\n?? .aide/reports/local-process-execution-host/capability-outcome.json\n?? .aide/reports/local-process-execution-host/event-record.json\n?? .aide/reports/local-process-execution-host/evidence-packet.json\n?? .aide/reports/local-process-execution-host/execution-receipt.json\n?? .aide/reports/local-process-execution-host/explicit-non-capabilities.md\n?? .aide/reports/local-process-execution-host/host-artifact.json\n?? .aide/reports/local-process-execution-host/host-descriptor.json\n?? .aide/reports/local-process-execution-host/host-event.json\n?? .aide/reports/local-process-execution-host/host-report.json\n?? .aide/reports/local-process-execution-host/host-report.md\n?? .aide/reports/local-process-execution-host/host-usage.json\n?? .aide/reports/local-process-execution-host/invocation-request.json\n?? .aide/reports/local-process-execution-host/next-task-prompt.md\n?? .aide/reports/local-process-execution-host/projection.json\n?? .aide/reports/local-process-execution-host/run-binding.json\n?? .aide/reports/local-process-execution-host/run-result.json\n?? .aide/reports/local-process-execution-host/status.md\n?? .aide/reports/local-process-execution-host/validation.json\n?? .aide/reports/local-process-execution-host/warning-disposition.md\n?? .aide/scripts/tests/test_aide_local_process_execution_host.py\n?? core/execution/local_process_host.py",
+    "porcelain_status_digest": "sha256:58de6c419117b4539c428e8dbfa6bc58866d391caf13a8fb46b828715aad8a11",
+    "repository_present": true,
+    "revision": "76f2adcc13dfba7ee019619ddc270c56d8c3f197",
+    "revision_error": "",
+    "selected_source_digests": {
+      ".aide/fixtures/local-process-execution-host/reference_worker.py": "sha256:540523f21369ab0f4c666e288b4ac08c0354ab3a59403b0e8e3080dbb564ddf9",
+      ".aide/scripts/aide_lite.py": "sha256:65a0ddce0679b3d99257d4a3382b8018b3655bd13b4a29b5a59956edfb57a22a",
+      "core/execution/local_process_host.py": "sha256:5953f0c5d095935d4cb39021c36d848944d6e60d387a124062536e625508d5db",
+      "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+      "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+      "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+    },
+    "tracked_tree_digest": "sha256:3c110900b6ac4720e1780965f4f909d8228b8d39467cbc142dcec6ca97eaf39d",
+    "tracked_tree_observed": true
+  },
+  "allowlisted_process_call": {
+    "argv": [
+      "<python>",
+      "<aide-root>\\.aide\\fixtures\\local-process-execution-host\\reference_worker.py",
+      "--run-id",
+      "aide://execution-host-run/local-process-reference-01",
+      "--workunit-ref",
+      "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+      "--json"
+    ],
+    "cwd": "<aide-root>",
+    "env_constraints": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "0",
+      "PYTHONNOUSERSITE": "1",
+      "PYTHONUTF8": "1"
+    },
+    "environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+    "shell": false,
+    "timeout": 30.0
+  },
+  "arbitrary_shell_command_executed": false,
+  "argv_template": [
+    "<python>",
+    ".aide/fixtures/local-process-execution-host/reference_worker.py",
+    "--run-id",
+    "aide://execution-host-run/local-process-reference-01",
+    "--workunit-ref",
+    "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+    "--json"
+  ],
+  "before_state": {
+    "clean": false,
+    "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n M IMPLEMENT.md\n M PLANS.md\n?? .aide/fixtures/local-process-execution-host/reference_worker.py\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/changed-files.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/remaining-risks.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/summary.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/prompt.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/status.yaml\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/task.yaml\n?? .aide/reports/local-process-execution-host/capability-outcome.json\n?? .aide/reports/local-process-execution-host/event-record.json\n?? .aide/reports/local-process-execution-host/evidence-packet.json\n?? .aide/reports/local-process-execution-host/execution-receipt.json\n?? .aide/reports/local-process-execution-host/explicit-non-capabilities.md\n?? .aide/reports/local-process-execution-host/host-artifact.json\n?? .aide/reports/local-process-execution-host/host-descriptor.json\n?? .aide/reports/local-process-execution-host/host-event.json\n?? .aide/reports/local-process-execution-host/host-report.json\n?? .aide/reports/local-process-execution-host/host-report.md\n?? .aide/reports/local-process-execution-host/host-usage.json\n?? .aide/reports/local-process-execution-host/invocation-request.json\n?? .aide/reports/local-process-execution-host/next-task-prompt.md\n?? .aide/reports/local-process-execution-host/projection.json\n?? .aide/reports/local-process-execution-host/run-binding.json\n?? .aide/reports/local-process-execution-host/run-result.json\n?? .aide/reports/local-process-execution-host/status.md\n?? .aide/reports/local-process-execution-host/validation.json\n?? .aide/reports/local-process-execution-host/warning-disposition.md\n?? .aide/scripts/tests/test_aide_local_process_execution_host.py\n?? core/execution/local_process_host.py",
+    "porcelain_status_digest": "sha256:58de6c419117b4539c428e8dbfa6bc58866d391caf13a8fb46b828715aad8a11",
+    "repository_present": true,
+    "revision": "76f2adcc13dfba7ee019619ddc270c56d8c3f197",
+    "revision_error": "",
+    "selected_source_digests": {
+      ".aide/fixtures/local-process-execution-host/reference_worker.py": "sha256:540523f21369ab0f4c666e288b4ac08c0354ab3a59403b0e8e3080dbb564ddf9",
+      ".aide/scripts/aide_lite.py": "sha256:65a0ddce0679b3d99257d4a3382b8018b3655bd13b4a29b5a59956edfb57a22a",
+      "core/execution/local_process_host.py": "sha256:5953f0c5d095935d4cb39021c36d848944d6e60d387a124062536e625508d5db",
+      "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+      "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+      "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+    },
+    "tracked_tree_digest": "sha256:3c110900b6ac4720e1780965f4f909d8228b8d39467cbc142dcec6ca97eaf39d",
+    "tracked_tree_observed": true
+  },
+  "bounded_worker_session_executed": true,
+  "branch_or_worktree_created": false,
+  "broad_dispatch_used": false,
+  "capability_id": "aide.local-process-host.reference-worker.run",
+  "capability_outcome": {
+    "decoder_outcome": "decoded",
+    "domain_outcome": "typed_result",
+    "domain_result": {
+      "artifact_count": 1,
+      "command_id": "aide.local-process-host.reference-worker.run",
+      "event_count": 3,
+      "network_call_performed": false,
+      "preview_or_apply_performed": false,
+      "provider_or_model_called": false,
+      "release_or_promotion_performed": false,
+      "repository_mutation_performed": false,
+      "run_id": "aide://execution-host-run/local-process-reference-01",
+      "source_command": ".aide/fixtures/local-process-execution-host/reference_worker.py",
+      "source_schema": "aide.local-process-reference-worker-result.v0",
+      "status": "PASS",
+      "worker_kind": "local_reference_worker",
+      "workunit_ref": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    "evidence_completeness": "complete",
+    "message": "",
+    "process_outcome": "exit_zero",
+    "reason_code": "",
+    "refusal": {},
+    "transport_outcome": "transport_started",
+    "validation_outcome": "complete"
+  },
+  "constructed_success_result": false,
+  "database_opened": false,
+  "environment_constraints": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONUTF8": "1"
+  },
+  "github_mutation_performed": false,
+  "host_role": "bounded_local_process_reference_execution_host",
+  "kind": "LocalProcessExecutionHostRunResult",
+  "local_process_execution_host_implemented": true,
+  "message": "Local process reference worker returned a typed PASS result.",
+  "mutation_observation": "none_detected_within_probe_coverage",
+  "network_call_performed": false,
+  "patch_transaction_applied": false,
+  "preview_or_apply_performed": false,
+  "private_tool_called": false,
+  "probe_coverage": [
+    "git_revision",
+    "git_porcelain_status",
+    "git_tracked_tree_digest",
+    "selected_source_digests"
+  ],
+  "process_call_count": 1,
+  "process_execution_receipt": {
+    "after_state_ref": "sha256:fa878219d926be162fc1f72304e919f3d097fc4adff8b5b8fa4459b452d2e900",
+    "argv_digest": "sha256:2a3feaac57b7cfca1254a7ac2f50ca9f8618f5a3dbedda85f94a3322635bdb3e",
+    "before_state_ref": "sha256:fa878219d926be162fc1f72304e919f3d097fc4adff8b5b8fa4459b452d2e900",
+    "cancelled": false,
+    "capability_ref": "aide://capability/local-process-execution-host-reference-worker-v0",
+    "decoder_ref": "aide.local-process-reference-worker-json-v0",
+    "ended_at": "deterministic",
+    "executable_digest": "sha256:3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd",
+    "executable_identity": "python",
+    "invocation_ref": "aide://invocation/local-process-execution-host-reference-worker-01",
+    "launcher_call_count": 1,
+    "metadata": {
+      "after_state": {
+        "clean": false,
+        "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n M IMPLEMENT.md\n M PLANS.md\n?? .aide/fixtures/local-process-execution-host/reference_worker.py\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/changed-files.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/remaining-risks.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/summary.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/prompt.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/status.yaml\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/task.yaml\n?? .aide/reports/local-process-execution-host/capability-outcome.json\n?? .aide/reports/local-process-execution-host/event-record.json\n?? .aide/reports/local-process-execution-host/evidence-packet.json\n?? .aide/reports/local-process-execution-host/execution-receipt.json\n?? .aide/reports/local-process-execution-host/explicit-non-capabilities.md\n?? .aide/reports/local-process-execution-host/host-artifact.json\n?? .aide/reports/local-process-execution-host/host-descriptor.json\n?? .aide/reports/local-process-execution-host/host-event.json\n?? .aide/reports/local-process-execution-host/host-report.json\n?? .aide/reports/local-process-execution-host/host-report.md\n?? .aide/reports/local-process-execution-host/host-usage.json\n?? .aide/reports/local-process-execution-host/invocation-request.json\n?? .aide/reports/local-process-execution-host/next-task-prompt.md\n?? .aide/reports/local-process-execution-host/projection.json\n?? .aide/reports/local-process-execution-host/run-binding.json\n?? .aide/reports/local-process-execution-host/run-result.json\n?? .aide/reports/local-process-execution-host/status.md\n?? .aide/reports/local-process-execution-host/validation.json\n?? .aide/reports/local-process-execution-host/warning-disposition.md\n?? .aide/scripts/tests/test_aide_local_process_execution_host.py\n?? core/execution/local_process_host.py",
+        "porcelain_status_digest": "sha256:58de6c419117b4539c428e8dbfa6bc58866d391caf13a8fb46b828715aad8a11",
+        "repository_present": true,
+        "revision": "76f2adcc13dfba7ee019619ddc270c56d8c3f197",
+        "revision_error": "",
+        "selected_source_digests": {
+          ".aide/fixtures/local-process-execution-host/reference_worker.py": "sha256:540523f21369ab0f4c666e288b4ac08c0354ab3a59403b0e8e3080dbb564ddf9",
+          ".aide/scripts/aide_lite.py": "sha256:65a0ddce0679b3d99257d4a3382b8018b3655bd13b4a29b5a59956edfb57a22a",
+          "core/execution/local_process_host.py": "sha256:5953f0c5d095935d4cb39021c36d848944d6e60d387a124062536e625508d5db",
+          "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+          "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+          "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+        },
+        "tracked_tree_digest": "sha256:3c110900b6ac4720e1780965f4f909d8228b8d39467cbc142dcec6ca97eaf39d",
+        "tracked_tree_observed": true
+      },
+      "before_state": {
+        "clean": false,
+        "porcelain_status": "M .aide/queue/index.yaml\n M .aide/scripts/aide_lite.py\n M IMPLEMENT.md\n M PLANS.md\n?? .aide/fixtures/local-process-execution-host/reference_worker.py\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/ExecPlan.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/changed-files.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/remaining-risks.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/summary.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence/validation.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/prompt.md\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/status.yaml\n?? .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/task.yaml\n?? .aide/reports/local-process-execution-host/capability-outcome.json\n?? .aide/reports/local-process-execution-host/event-record.json\n?? .aide/reports/local-process-execution-host/evidence-packet.json\n?? .aide/reports/local-process-execution-host/execution-receipt.json\n?? .aide/reports/local-process-execution-host/explicit-non-capabilities.md\n?? .aide/reports/local-process-execution-host/host-artifact.json\n?? .aide/reports/local-process-execution-host/host-descriptor.json\n?? .aide/reports/local-process-execution-host/host-event.json\n?? .aide/reports/local-process-execution-host/host-report.json\n?? .aide/reports/local-process-execution-host/host-report.md\n?? .aide/reports/local-process-execution-host/host-usage.json\n?? .aide/reports/local-process-execution-host/invocation-request.json\n?? .aide/reports/local-process-execution-host/next-task-prompt.md\n?? .aide/reports/local-process-execution-host/projection.json\n?? .aide/reports/local-process-execution-host/run-binding.json\n?? .aide/reports/local-process-execution-host/run-result.json\n?? .aide/reports/local-process-execution-host/status.md\n?? .aide/reports/local-process-execution-host/validation.json\n?? .aide/reports/local-process-execution-host/warning-disposition.md\n?? .aide/scripts/tests/test_aide_local_process_execution_host.py\n?? core/execution/local_process_host.py",
+        "porcelain_status_digest": "sha256:58de6c419117b4539c428e8dbfa6bc58866d391caf13a8fb46b828715aad8a11",
+        "repository_present": true,
+        "revision": "76f2adcc13dfba7ee019619ddc270c56d8c3f197",
+        "revision_error": "",
+        "selected_source_digests": {
+          ".aide/fixtures/local-process-execution-host/reference_worker.py": "sha256:540523f21369ab0f4c666e288b4ac08c0354ab3a59403b0e8e3080dbb564ddf9",
+          ".aide/scripts/aide_lite.py": "sha256:65a0ddce0679b3d99257d4a3382b8018b3655bd13b4a29b5a59956edfb57a22a",
+          "core/execution/local_process_host.py": "sha256:5953f0c5d095935d4cb39021c36d848944d6e60d387a124062536e625508d5db",
+          "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+          "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+          "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+        },
+        "tracked_tree_digest": "sha256:3c110900b6ac4720e1780965f4f909d8228b8d39467cbc142dcec6ca97eaf39d",
+        "tracked_tree_observed": true
+      },
+      "launch": {
+        "argv": [
+          "<python>",
+          "<aide-root>\\.aide\\fixtures\\local-process-execution-host\\reference_worker.py",
+          "--run-id",
+          "aide://execution-host-run/local-process-reference-01",
+          "--workunit-ref",
+          "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+          "--json"
+        ],
+        "cwd": "<aide-root>",
+        "environment_manifest": {
+          "keys": [
+            "COMSPEC",
+            "PATH",
+            "PATHEXT",
+            "PYTHONDONTWRITEBYTECODE",
+            "PYTHONHASHSEED",
+            "PYTHONNOUSERSITE",
+            "PYTHONUTF8",
+            "SYSTEMROOT",
+            "SystemDrive",
+            "TEMP",
+            "TMP",
+            "USERPROFILE",
+            "WINDIR"
+          ],
+          "value_digests": {
+            "COMSPEC": "sha256:fd21f9d5853baaeda38d52ebc1f92c0e2457b89a52e3869270290e6ccdf638a0",
+            "PATH": "sha256:4af73944d5a4e8d4aaedc8d88b3bd87258577c90c169126d87b67c2d366ba445",
+            "PATHEXT": "sha256:7977c2b879d035c731c55c0ba304b0adf1f332fa278338f12c6b7425fae02241",
+            "PYTHONDONTWRITEBYTECODE": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+            "PYTHONHASHSEED": "sha256:94664180e5190a6c6dc2ba6e2d7944081d2dd0e0151a9ff07f62c8865eeb9389",
+            "PYTHONNOUSERSITE": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+            "PYTHONUTF8": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
+            "SYSTEMROOT": "sha256:cd1d43ac38aee601acb6ce88ad8c7d056f0275ca13355aa36cfa801e9ffabfa4",
+            "SystemDrive": "sha256:1176329923408cc1c1a7761fb7294b5be8612536c5243855124ea0493d64381b",
+            "TEMP": "sha256:d02c86aaee52939138ab555840211e9a92ef8f2f6823f82fa7b83752f9ebc2f4",
+            "TMP": "sha256:d02c86aaee52939138ab555840211e9a92ef8f2f6823f82fa7b83752f9ebc2f4",
+            "USERPROFILE": "sha256:0ab0bbdea326f4be4731e926e557fe789a8d42f704fa34694138284871983f98",
+            "WINDIR": "sha256:cd1d43ac38aee601acb6ce88ad8c7d056f0275ca13355aa36cfa801e9ffabfa4"
+          }
+        },
+        "environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+        "shell": false,
+        "timeout": 30.0
+      }
+    },
+    "mutation_observation": "none_detected_within_probe_coverage",
+    "probe_coverage": [
+      "git_revision",
+      "git_porcelain_status",
+      "git_tracked_tree_digest",
+      "selected_source_digests"
+    ],
+    "provider_ref": "registered_process_execution_provider_v0",
+    "redacted_environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+    "return_code": 0,
+    "shell": false,
+    "started_at": "deterministic",
+    "stderr": {
+      "byte_count": 0,
+      "excerpt": "",
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "byte_count": 483,
+      "excerpt": "{\"artifact_count\": 1, \"event_count\": 3, \"network_call_performed\": false, \"preview_or_apply_performed\": false, \"provider_or_model_called\": false, \"release_or_promotion_performed\": false, \"repository_mutation_performed\": false, \"run_id\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.local-process-reference-worker-result.v0\", \"status\": \"PASS\", \"worker_kind\": \"local_reference_worker\", \"workunit_ref\": \"AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01\"}\n",
+      "sha256": "sha256:1962cc7b0255ea2a0c4cb68d2da41769ea700c5de65cf8faa509b9d29e7e8ec3"
+    },
+    "timed_out": false,
+    "working_directory_ref": "sha256:0366f8c755db01a31ee8514c6d73fb3921b55a65205022dbb13cee3b1dd9d6ba"
+  },
+  "proposed_capability_label": "local_process_execution_host_v0",
+  "provider_core_changed_by_task": false,
+  "provider_or_model_called": false,
+  "provider_ref": "registered_process_execution_provider_v0",
+  "reason_code": "",
+  "reference_worker_json_parsed": true,
+  "reference_worker_process_started": true,
+  "reference_worker_result": {
+    "artifact_count": 1,
+    "command_id": "aide.local-process-host.reference-worker.run",
+    "event_count": 3,
+    "network_call_performed": false,
+    "preview_or_apply_performed": false,
+    "provider_or_model_called": false,
+    "release_or_promotion_performed": false,
+    "repository_mutation_performed": false,
+    "run_id": "aide://execution-host-run/local-process-reference-01",
+    "source_command": ".aide/fixtures/local-process-execution-host/reference_worker.py",
+    "source_schema": "aide.local-process-reference-worker-result.v0",
+    "status": "PASS",
+    "worker_kind": "local_reference_worker",
+    "workunit_ref": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+  },
+  "release_or_promotion_performed": false,
+  "result": "PASS",
+  "result_origin": "reference_worker_json",
+  "returncode": 0,
+  "schema_version": "aide.local-process-execution-host.run-result.v0",
+  "service_started": false,
+  "source_repository_mutated": false,
+  "status": "PASS",
+  "stderr": {
+    "byte_count": 0,
+    "excerpt": "",
+    "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "byte_count": 483,
+    "excerpt": "{\"artifact_count\": 1, \"event_count\": 3, \"network_call_performed\": false, \"preview_or_apply_performed\": false, \"provider_or_model_called\": false, \"release_or_promotion_performed\": false, \"repository_mutation_performed\": false, \"run_id\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.local-process-reference-worker-result.v0\", \"status\": \"PASS\", \"worker_kind\": \"local_reference_worker\", \"workunit_ref\": \"AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01\"}\n",
+    "sha256": "sha256:1962cc7b0255ea2a0c4cb68d2da41769ea700c5de65cf8faa509b9d29e7e8ec3"
+  },
+  "target_repository_mutated": false,
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+  "typed_refusal": false,
+  "typed_result": true,
+  "workbench_apply_performed": false,
+  "workbench_started": false,
+  "workspace_state_unchanged": true
+}

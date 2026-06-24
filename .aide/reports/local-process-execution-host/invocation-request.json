@@ -1,0 +1,40 @@
+{
+  "argv": [
+    "<python>",
+    "<aide-root>\\.aide\\fixtures\\local-process-execution-host\\reference_worker.py",
+    "--run-id",
+    "aide://execution-host-run/local-process-reference-01",
+    "--workunit-ref",
+    "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+    "--json"
+  ],
+  "argv_template": [
+    "<python>",
+    ".aide/fixtures/local-process-execution-host/reference_worker.py",
+    "--run-id",
+    "aide://execution-host-run/local-process-reference-01",
+    "--workunit-ref",
+    "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+    "--json"
+  ],
+  "capability_id": "aide.local-process-host.reference-worker.run",
+  "expected_capability_id": "aide.local-process-host.reference-worker.run",
+  "expected_digests": {
+    ".aide/fixtures/local-process-execution-host/reference_worker.py": "sha256:540523f21369ab0f4c666e288b4ac08c0354ab3a59403b0e8e3080dbb564ddf9",
+    ".aide/scripts/aide_lite.py": "sha256:65a0ddce0679b3d99257d4a3382b8018b3655bd13b4a29b5a59956edfb57a22a",
+    "core/execution/local_process_host.py": "sha256:5953f0c5d095935d4cb39021c36d848944d6e60d387a124062536e625508d5db",
+    "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+    "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+    "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+  },
+  "expected_revision": "76f2adcc13dfba7ee019619ddc270c56d8c3f197",
+  "fixture_worker_path": "<aide-root>\\.aide\\fixtures\\local-process-execution-host\\reference_worker.py",
+  "preexisting_dirty_state_allowed": true,
+  "proposed_capability_label": "local_process_execution_host_v0",
+  "python_executable": "<python>",
+  "repo_root": "<aide-root>",
+  "schema_version": "aide.local-process-execution-host.invocation-request.v0",
+  "shell": false,
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+  "timeout_seconds": 30.0
+}

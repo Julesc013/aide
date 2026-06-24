@@ -8041,3 +8041,51 @@ Validation records final Repair 05 check success, current seam validation and co
 - The seam remains offline and read-only.
 - Runtime, Workbench, provider/model, worker, mutation, preview/apply, and target-repository behavior remain absent.
 - Non-Windows platforms and minimum Python 3.11 were not separately executed.
+
+## Work Item: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+
+### Status
+
+Completed with warnings and awaiting independent review.
+
+### Changed Paths
+
+- `core/execution/local_process_host.py`
+- `.aide/fixtures/local-process-execution-host/reference_worker.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_local_process_execution_host.py`
+- `.aide/reports/local-process-execution-host/**`
+- `.aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The accepted ExecutionHost contract was projection-only. This build adds the
+smallest live reference host slice: one exact local reference worker process
+launched through the accepted registered-process provider.
+
+### Implementation Notes
+
+- Added `core/execution/local_process_host.py` as a bounded reference
+  LocalProcessExecutionHost.
+- Added one committed deterministic fixture worker.
+- Added AIDE Lite `local-process-execution-host status/run/validate` commands.
+- Used `RegisteredProcessExecutionProvider v0` unchanged for shell-free process launch, receipt, outcome, stream summaries, timeout handling, and state probing.
+- Generated descriptor, run binding, event, artifact, usage, receipt, outcome, evidence, EventRecord, projection, validation, and human-readable reports.
+- Added focused fake-runner tests for exact argv/environment, zero-launch refusals, typed refusals, mutation detection, deterministic projection, and scrubbing.
+
+### Verification
+
+Initial validation passed for focused tests, compile checks, the live bounded
+host run, and local host report validation. Final validation is recorded in
+task-local evidence before commit.
+
+### Remaining Issues
+
+- Independent check is still required before acceptance.
+- The host is a bounded reference fixture only, not a generic worker harness.
+- Cancellation, durable idempotency, streaming artifact storage, resource quotas,
+  worker leases, scheduler, supervisor, Service/runtime, and Workbench behavior
+  remain unimplemented.

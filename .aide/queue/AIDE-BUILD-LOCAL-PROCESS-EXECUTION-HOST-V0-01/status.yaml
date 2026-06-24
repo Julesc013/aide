@@ -1,0 +1,17 @@
+schema_version: aide.task-status.v0
+id: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+proposed_capability_label: local_process_execution_host_v0
+material_finding_count: 0
+missing_evidence: 0
+process_call_count: 1
+local_process_execution_host_implemented: true
+reference_worker_process_started: true
+bounded_worker_session_executed: true
+workspace_state_unchanged: true
+mutation_observation: none_detected_within_probe_coverage
+recommended_next_task: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01

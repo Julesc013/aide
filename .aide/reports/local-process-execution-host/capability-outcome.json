@@ -1,0 +1,27 @@
+{
+  "decoder_outcome": "decoded",
+  "domain_outcome": "typed_result",
+  "domain_result": {
+    "artifact_count": 1,
+    "command_id": "aide.local-process-host.reference-worker.run",
+    "event_count": 3,
+    "network_call_performed": false,
+    "preview_or_apply_performed": false,
+    "provider_or_model_called": false,
+    "release_or_promotion_performed": false,
+    "repository_mutation_performed": false,
+    "run_id": "aide://execution-host-run/local-process-reference-01",
+    "source_command": ".aide/fixtures/local-process-execution-host/reference_worker.py",
+    "source_schema": "aide.local-process-reference-worker-result.v0",
+    "status": "PASS",
+    "worker_kind": "local_reference_worker",
+    "workunit_ref": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+  },
+  "evidence_completeness": "complete",
+  "message": "",
+  "process_outcome": "exit_zero",
+  "reason_code": "",
+  "refusal": {},
+  "transport_outcome": "transport_started",
+  "validation_outcome": "complete"
+}

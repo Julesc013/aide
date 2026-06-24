@@ -1,0 +1,17 @@
+{
+  "delivered": true,
+  "event_ref": "aide://execution-host-event/local-process-reference-0001",
+  "event_type": "RunObserved",
+  "kind": "ExecutionHostEvent",
+  "payload": {
+    "process_call_count": 1,
+    "result": "PASS",
+    "result_origin": "reference_worker_json",
+    "workspace_state_unchanged": true
+  },
+  "run_ref": "aide://execution-host-run/local-process-reference-01",
+  "runtime_event_store_implemented": false,
+  "schema_version": "aide.local-process-execution-host.event.v0",
+  "sequence": 1,
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+}

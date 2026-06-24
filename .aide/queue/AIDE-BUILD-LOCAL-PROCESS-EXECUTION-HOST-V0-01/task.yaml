@@ -1,0 +1,80 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+title: Build LocalProcessExecutionHost v0
+type: build
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Build the first bounded LocalProcessExecutionHost v0 reference implementation
+  over the accepted RegisteredProcessExecutionProvider v0 and accepted
+  projection-only ExecutionHost contract v0.
+authorizes_implementation: true
+check_only: false
+acceptance_only: false
+predecessors:
+  - AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
+accepted_predecessor_capabilities:
+  - registered_process_execution_provider_v0
+  - execution_host_contract_v0
+proposed_capability_label: local_process_execution_host_v0
+material_finding_count: 0
+missing_evidence: 0
+allowed_paths:
+  - core/execution/local_process_host.py
+  - .aide/fixtures/local-process-execution-host/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_local_process_execution_host.py
+  - .aide/reports/local-process-execution-host/**
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/registered_process.py
+  - core/protocol/execution_host.py
+  - .aide/protocol/aide-execution-host.schema.json
+  - core/interop/dominium/**
+  - core/interop/eureka/**
+  - core/interop/aide/**
+  - hosts/**
+  - .aide.local/**
+implementation_scope:
+  - bounded local reference worker process
+  - exact allowlisted argv
+  - shell false process execution through RegisteredProcessExecutionProvider v0
+  - deterministic host descriptor, run binding, event, artifact, usage, receipt, outcome, evidence, and projection reports
+  - state probe before and after the child process within declared coverage
+  - focused fake-runner tests
+explicit_non_capabilities:
+  - arbitrary command runner
+  - generic worker harness
+  - autonomous agent worker
+  - remote ExecutionHost
+  - worker lease
+  - scheduler
+  - supervisor
+  - Service/runtime behavior
+  - Workbench behavior
+  - provider/model calls
+  - network calls
+  - PreviewSession
+  - DevelopmentTransaction
+  - PatchTransaction apply
+  - source repository mutation
+  - target repository mutation
+  - branch/worktree mutation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - This is a bounded local reference worker only, not a general worker harness.
+  - Cancellation, durable idempotency, streaming artifact storage, resource quotas, leases, scheduler, and Service runtime remain unimplemented.
+  - The accepted ExecutionHost contract remains projection-only; this task adds a reference implementation report pending independent check and acceptance.
+validation_commands:
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_local_process_execution_host.py
+  - py -3 .aide/scripts/aide_lite.py local-process-execution-host run
+  - py -3 .aide/scripts/aide_lite.py local-process-execution-host validate
+recommended_next_task: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01

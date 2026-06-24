@@ -1,0 +1,120 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "ep-f46ea030650b9e15",
+    "name": "local_process_execution_host_v0",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/task.yaml"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/local-process-execution-host/host-descriptor.json",
+        "role": "host_descriptor",
+        "sha256": "sha256:4da7382a0eb98a0f76dba84b1a9de355efc2453b21c7a1edb9acec890663d9aa"
+      },
+      {
+        "path": ".aide/reports/local-process-execution-host/run-result.json",
+        "role": "run_result",
+        "sha256": "sha256:c7ab4e0c3bccc4a96fe5ccd8403f389f31a4b8b8cced92e8cdefcf87f58d2a8c"
+      },
+      {
+        "path": ".aide/reports/local-process-execution-host/execution-receipt.json",
+        "role": "execution_receipt",
+        "sha256": "sha256:8850ea9ca41afa1f79e0d78ab455f20496b65cd1c2b5f64db70d97dcc22522e4"
+      }
+    ],
+    "capability_label": "minimal_evidence_packet_schema",
+    "claims": [
+      {
+        "id": "exactly_one_reference_worker_process",
+        "status": "supported",
+        "summary": "One allowlisted local reference worker process was launched."
+      },
+      {
+        "id": "workspace_state_unchanged",
+        "status": "supported",
+        "summary": "AIDE state probe observed no mutation within declared coverage."
+      },
+      {
+        "id": "no_arbitrary_command_runner",
+        "status": "supported",
+        "summary": "The host exposes only one fixture worker argv shape."
+      }
+    ],
+    "explicit_non_capabilities": [
+      "arbitrary_command_runner",
+      "generic_worker_harness",
+      "autonomous_agent_worker",
+      "remote_execution_host",
+      "worker_lease",
+      "scheduler",
+      "supervisor",
+      "service_runtime",
+      "workbench_runtime",
+      "provider_model_call",
+      "network_call",
+      "preview_or_apply",
+      "rollback",
+      "patch_transaction_apply",
+      "source_repository_mutation",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion",
+      "persistent_idempotency",
+      "process_cancellation",
+      "streaming_artifact_store"
+    ],
+    "risks": [],
+    "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+    "source_task_kind": "build",
+    "subject": {
+      "id": "local_process_execution_host_v0",
+      "type": "capability"
+    },
+    "validations": [
+      {
+        "command": "py -3 .aide/scripts/aide_lite.py local-process-execution-host run",
+        "exit_code": 0,
+        "status": "PASS_WITH_WARNINGS"
+      },
+      {
+        "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_local_process_execution_host.py",
+        "exit_code": 0,
+        "status": "PASS"
+      }
+    ],
+    "warnings": [
+      "This is a bounded local reference worker only, not a general worker harness or scheduler.",
+      "Cancellation, durable idempotency, streaming artifacts, and resource quotas remain unimplemented."
+    ]
+  },
+  "status": {
+    "phase": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "Reference worker fixture proves local process host mechanics only."
+    ]
+  }
+}

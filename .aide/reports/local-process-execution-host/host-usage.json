@@ -1,0 +1,19 @@
+{
+  "kind": "ExecutionHostUsage",
+  "limits": {
+    "network_calls": 0,
+    "processes": 1,
+    "provider_model_calls": 0
+  },
+  "measured": true,
+  "meters": {
+    "events": 3,
+    "network_calls": 0,
+    "processes": 1,
+    "provider_model_calls": 0
+  },
+  "run_ref": "aide://execution-host-run/local-process-reference-01",
+  "schema_version": "aide.local-process-execution-host.usage.v0",
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+  "usage_ref": "aide://execution-host-usage/local-process-reference-01"
+}

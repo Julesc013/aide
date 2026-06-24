@@ -7970,6 +7970,16 @@ def load_eureka_readonly_process_adapter_module(repo_root: Path):
     return importlib.import_module("core.interop.eureka.public_alpha_readonly_process_adapter")
 
 
+def load_local_process_execution_host_module(repo_root: Path):
+    module_path = repo_root / "core/execution/local_process_host.py"
+    if not module_path.exists():
+        raise ValueError("LocalProcessExecutionHost module missing: core/execution/local_process_host.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.execution.local_process_host")
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -35193,6 +35203,104 @@ def command_eureka_readonly_process_adapter_validate(args: argparse.Namespace) -
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_local_process_execution_host_boundary_lines(data: dict[str, object]) -> None:
+    print(f"provider_ref: {data.get('provider_ref', '')}")
+    print(f"process_call_count: {data.get('process_call_count', '')}")
+    print(f"local_process_execution_host_implemented: {str(data.get('local_process_execution_host_implemented', False)).lower()}")
+    print(f"reference_worker_process_started: {str(data.get('reference_worker_process_started', False)).lower()}")
+    print(f"bounded_worker_session_executed: {str(data.get('bounded_worker_session_executed', False)).lower()}")
+    print(f"workspace_state_unchanged: {str(data.get('workspace_state_unchanged', False)).lower()}")
+    print(f"mutation_observation: {data.get('mutation_observation', '')}")
+    print(f"result_origin: {data.get('result_origin', '')}")
+    print(f"arbitrary_shell_command_executed: {str(data.get('arbitrary_shell_command_executed', False)).lower()}")
+    print(f"private_tool_called: {str(data.get('private_tool_called', False)).lower()}")
+    print(f"broad_dispatch_used: {str(data.get('broad_dispatch_used', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"provider_or_model_called: {str(data.get('provider_or_model_called', False)).lower()}")
+    print(f"workbench_apply_performed: {str(data.get('workbench_apply_performed', False)).lower()}")
+    print(f"preview_or_apply_performed: {str(data.get('preview_or_apply_performed', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"source_repository_mutated: {str(data.get('source_repository_mutated', False)).lower()}")
+    print(f"target_repository_mutated: {str(data.get('target_repository_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_local_process_execution_host_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_process_execution_host_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite local-process-execution-host status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_process_execution_host_boundary_lines({})
+        return 1
+    print("AIDE Lite local-process-execution-host status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_id: {data.get('capability_id')}")
+    print(f"proposed_capability_label: {data.get('proposed_capability_label')}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_local_process_execution_host_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_local_process_execution_host_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_process_execution_host_module(repo_root)
+    expected_revision = args.expected_revision if getattr(args, "expected_revision", "") else None
+    try:
+        report = module.run_host(
+            repo_root,
+            expected_revision=expected_revision,
+            timeout_seconds=args.timeout_seconds,
+        )
+    except Exception as exc:  # noqa: BLE001 - bounded invocation must fail closed.
+        print("AIDE Lite local-process-execution-host run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_process_execution_host_boundary_lines({})
+        return 1
+    print("AIDE Lite local-process-execution-host run")
+    print(f"result: {report.get('validation_status') or report.get('status')}")
+    print(f"capability_id: {report.get('capability_id')}")
+    print(f"proposed_capability_label: {report.get('proposed_capability_label')}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"reference_worker_process_started: {str(report.get('reference_worker_process_started', False)).lower()}")
+    print(f"reference_worker_json_parsed: {str(report.get('reference_worker_json_parsed', False)).lower()}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"result_origin: {report.get('result_origin')}")
+    print(f"recommended_next_task: {module.CHECK_TASK_ID}")
+    _print_local_process_execution_host_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_local_process_execution_host_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_process_execution_host_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite local-process-execution-host validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_process_execution_host_boundary_lines({})
+        return 1
+    print("AIDE Lite local-process-execution-host validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"reference_worker_process_started: {str(report.get('reference_worker_process_started', False)).lower()}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_process_execution_host_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -38834,6 +38942,28 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     eureka_readonly_process_run_parser.set_defaults(handler=command_eureka_readonly_process_adapter_run)
     eureka_readonly_process_subparsers.add_parser("validate").set_defaults(handler=command_eureka_readonly_process_adapter_validate)
+
+    local_process_host_parser = subparsers.add_parser("local-process-execution-host")
+    local_process_host_parser.set_defaults(handler=command_local_process_execution_host_status)
+    local_process_host_subparsers = local_process_host_parser.add_subparsers(
+        dest="local_process_host_command",
+        required=False,
+    )
+    local_process_host_subparsers.add_parser("status").set_defaults(handler=command_local_process_execution_host_status)
+    local_process_host_run_parser = local_process_host_subparsers.add_parser("run")
+    local_process_host_run_parser.add_argument(
+        "--expected-revision",
+        default="",
+        help="Exact pinned AIDE revision to require before invocation. Defaults to observed local HEAD before invocation.",
+    )
+    local_process_host_run_parser.add_argument(
+        "--timeout-seconds",
+        type=float,
+        default=30.0,
+        help="Bounded timeout for the single local reference worker process.",
+    )
+    local_process_host_run_parser.set_defaults(handler=command_local_process_execution_host_run)
+    local_process_host_subparsers.add_parser("validate").set_defaults(handler=command_local_process_execution_host_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

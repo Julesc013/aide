@@ -1,0 +1,24 @@
+# Explicit Non-Capabilities
+
+- arbitrary_command_runner
+- generic_worker_harness
+- autonomous_agent_worker
+- remote_execution_host
+- worker_lease
+- scheduler
+- supervisor
+- service_runtime
+- workbench_runtime
+- provider_model_call
+- network_call
+- preview_or_apply
+- rollback
+- patch_transaction_apply
+- source_repository_mutation
+- target_repository_mutation
+- branch_worktree_automation
+- github_mutation
+- release_or_promotion
+- persistent_idempotency
+- process_cancellation
+- streaming_artifact_store

@@ -2449,3 +2449,14 @@
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts `dominium_readonly_seam_v0`, preserves explicit non-capabilities, and recommends exactly `AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01`.
 - Result: `ACCEPTED_WITH_WARNINGS`; next task prompt generated only.
 - Notes: This acceptance does not modify seam implementation, alter public schemas/code/tests/fixtures/generated seam outputs/Repair 05 reports/check reports, modify Dominium, invoke Dominium commands, implement runtime/workbench/provider/worker behavior, create branches/worktrees, mutate GitHub, release, promote, or begin the WorkUnit validation slice.
+
+### Queue ID: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+
+- Title: Build LocalProcessExecutionHost v0
+- Status: Needs Review
+- Objective: build the first bounded local process ExecutionHost reference slice over the accepted RegisteredProcessExecutionProvider v0 and accepted projection-only ExecutionHost contract v0.
+- Scope: `core/execution/local_process_host.py`, `.aide/fixtures/local-process-execution-host/**`, `.aide/scripts/aide_lite.py`, focused local process host tests, generated reports, queue evidence, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01` with `ACCEPTED_WITH_WARNINGS`, `missing_evidence: 0`, and `registered_process_execution_provider_v0` already accepted.
+- Verification Intent: focused fake-runner tests, one bounded live fixture worker run, local host validate command, compile checks, provider/ExecutionHost regressions, task inspect/evidence, broad validation, diff checks, secret-like scan, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `local_process_execution_host_v0`, preserves no arbitrary command/provider/network/mutation behavior, and recommends exactly `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01`.
+- Notes: This build does not implement a generic worker harness, autonomous AI worker, remote ExecutionHost, scheduler, supervisor, leases, durable Service/runtime, Workbench behavior, provider/model/network calls, PreviewSession, DevelopmentTransaction, PatchTransaction apply, repository mutation, branch/worktree mutation, GitHub mutation, release, or promotion.

@@ -2008,6 +2008,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01/evidence
     description: Acceptance-only consolidation for ExecutionHost contract v0. Accepts exactly execution_host_contract_v0 as a projection-only contract after build and check passed with warnings, zero material findings, and missing_evidence 0. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01. Does not accept or implement live ExecutionHost, LocalProcessExecutionHost, RemoteExecutionHost, worker execution, worker harness, scheduler, Service/runtime behavior, Workbench behavior, provider/model/network calls, PreviewSession, DevelopmentTransaction, PatchTransaction apply, repository mutation, branch/worktree mutation, GitHub mutation, release, or promotion.
+  - id: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Build LocalProcessExecutionHost v0
+    task: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence
+    description: Build task for the first bounded LocalProcessExecutionHost v0 reference slice. Launches exactly one committed local reference worker fixture through the accepted RegisteredProcessExecutionProvider v0 with shell=false, sanitized environment, bounded timeout, typed result/refusal mapping, state probe evidence, ProcessExecutionReceipt, ExecutionHost descriptor/run/event/artifact/usage reports, EvidencePacket, EventRecord, and deterministic projection. Stops at needs_review with PASS_WITH_WARNINGS and recommends exactly AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01. Does not implement arbitrary command execution, generic worker harness, autonomous AI worker, remote ExecutionHost, worker leases, scheduler, supervisor, Service/runtime behavior, Workbench behavior, provider/model/network calls, PreviewSession, DevelopmentTransaction, PatchTransaction apply, source or target repository mutation, branch/worktree mutation, GitHub mutation, release, or promotion.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked
