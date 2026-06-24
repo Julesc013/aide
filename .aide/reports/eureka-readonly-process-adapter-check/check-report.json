@@ -1,0 +1,32 @@
+{
+  "schema_version": "aide.eureka-readonly-process-adapter-check.v1",
+  "task_id": "AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01",
+  "source_task_id": "AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01",
+  "source_commit": "961add0",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "capability_id": "eureka.public-alpha-readonly.validate",
+  "proposed_capability_label": "eureka_public_alpha_readonly_validation_process_adapter_v0",
+  "observed": {
+    "process_call_count": 1,
+    "launcher_call_count": 1,
+    "shell": false,
+    "return_code": 0,
+    "result_origin": "eureka_public_alpha_smoke_json",
+    "eureka_status": "valid",
+    "selected_schema": "public_alpha_smoke.implicit_v0",
+    "workspace_state_unchanged": true,
+    "mutation_observation": "none_detected_within_probe_coverage",
+    "provider_core_changed": false,
+    "provider_contains_eureka_branch": false,
+    "committed_local_path_or_secret_leak": false
+  },
+  "warnings": [
+    "requested scripts/validate_public_alpha_readonly.py is absent in the pinned local Eureka checkout",
+    "selected scripts/public_alpha_smoke.py emits public_alpha_smoke.implicit_v0 rather than public_alpha_readonly_validation.v0",
+    "mutation proof is limited to declared Git probe coverage",
+    "RegisteredProcessExecutionProvider v0 remains proposed and unaccepted"
+  ],
+  "recommended_next_task": "AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01"
+}

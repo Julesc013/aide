@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01
+
+- Title: Check Eureka Read-Only Process Adapter
+- Status: needs_review
+- Objective: independently check the Eureka adapter build without repairing implementation or accepting `RegisteredProcessExecutionProvider v0`.
+- Scope: check task/evidence, `.aide/reports/eureka-readonly-process-adapter-check/**`, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01` at commit `961add0`, result `PASS_WITH_WARNINGS`, with provider still proposed and unaccepted.
+- Milestones: source build reviewed; live command evidence inspected without rerunning Eureka; provider immutability and genericity checked; cross-adapter reuse matrix recorded; focused regressions and broad validation passed; warnings preserved.
+- Blockers: none for this check. Provider acceptance remains a separate acceptance-only gate.
+- Verification Intent: source report validation, provider-core diff and identifier scans, external checkout read-only status, focused Eureka/provider/AIDE/Dominium tests, broad validation, leak scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, provider still unaccepted, and next task exactly `AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01`.
+- Notes: this check does not repair implementation, accept the provider, rerun the live Eureka process, implement arbitrary-command execution, mutate provider core, mutate external repositories, call provider/model/network services, run workers, start runtime/Workbench behavior, preview/apply/rollback, mutate GitHub, create branches/worktrees, release, or promote.
+
 ### Plan ID: AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01
 
 - Title: Build Eureka Read-Only Process Adapter

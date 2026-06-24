@@ -1,0 +1,14 @@
+schema_version: aide.task-status.v0
+id: AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+material_finding_count: 0
+missing_evidence: 0
+accepted: false
+provider_status: proposed_unaccepted
+source_task: AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01
+source_commit: 961add0
+recommended_next_task: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01

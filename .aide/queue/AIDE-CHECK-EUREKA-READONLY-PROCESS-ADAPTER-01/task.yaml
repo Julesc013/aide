@@ -1,0 +1,48 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01
+title: Check Eureka Read-Only Process Adapter
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Independently check AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01 without
+  repairing implementation or accepting RegisteredProcessExecutionProvider v0.
+source_task: AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01
+source_commit: 961add0
+check_only: true
+implementation_authorized: false
+accepted: false
+provider_acceptance_authorized: false
+material_finding_count: 0
+missing_evidence: 0
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01/**
+  - .aide/reports/eureka-readonly-process-adapter-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/registered_process.py
+  - core/protocol/process_invocation.py
+  - core/protocol/execution_receipt.py
+  - core/interop/eureka/**
+  - core/interop/aide/**
+  - core/interop/dominium/**
+  - .aide/reports/eureka-readonly-process-adapter/**
+  - .aide/queue/AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01/**
+result_detail:
+  capability_id: eureka.public-alpha-readonly.validate
+  proposed_capability_label: eureka_public_alpha_readonly_validation_process_adapter_v0
+  source_result: PASS_WITH_WARNINGS
+  check_result: PASS_WITH_WARNINGS
+  material_findings: 0
+warnings:
+  - requested scripts/validate_public_alpha_readonly.py is absent in the pinned local Eureka checkout
+  - selected scripts/public_alpha_smoke.py emits public_alpha_smoke.implicit_v0 rather than public_alpha_readonly_validation.v0
+  - mutation proof remains limited to declared Git probe coverage
+  - RegisteredProcessExecutionProvider v0 remains proposed and unaccepted
+recommended_next_task: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
