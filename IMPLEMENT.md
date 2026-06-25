@@ -8581,3 +8581,47 @@ task-local evidence.
 - `AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01` is required before acceptance.
 - Service remains local, no-network, single-machine, at-least-once only, and
   does not execute workers or enforce trust.
+
+## Work Item: AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/**`
+- `.aide/reports/local-service-foundation-v0-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The Local Service foundation build stopped at `needs_review` and required an
+independent check before acceptance. This task verifies the proposed capability
+without modifying production code or source build reports.
+
+### Implementation Notes
+
+- Added a check task packet, check reports, and an evidence-local harness.
+- The harness independently exercised fresh temporary SQLite/object/event,
+  cursor, idempotency, artifact, persistence, future-migration, corruption, and
+  CLI boundary behavior.
+- The check preserved no-network, no-worker, no-enforcement, no-MCP,
+  no-Workbench, no-provider/model, no-preview/apply, no-mutation boundaries.
+
+### Verification
+
+The independent harness produced `PASS_WITH_WARNINGS`, zero material findings,
+and `missing_evidence: 0`. Focused local service tests, public local-service
+commands, source/check task inspect and evidence, broad validation, diff checks,
+local-state boundary checks, and leak scans are recorded in task-local evidence.
+
+### Remaining Issues
+
+- `AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01` is required before the
+  capability is accepted.
+- Scheduler, worker execution, capability execution, trust enforcement, MCP,
+  Workbench, exactly-once delivery, provider/model calls, preview/apply, and
+  rollback remain non-capabilities.

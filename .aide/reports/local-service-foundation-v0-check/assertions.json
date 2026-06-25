@@ -1,0 +1,229 @@
+[
+  {
+    "category": "source-chain",
+    "description": "Source build task reports the expected capability, result, evidence, and route.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01/task.yaml",
+      ".aide/queue/AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01/status.yaml",
+      ".aide/reports/local-service-foundation-v0/validation.json"
+    ],
+    "expected": {
+      "missing_evidence": 0,
+      "next": "AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01",
+      "result": "PASS_WITH_WARNINGS"
+    },
+    "id": "source.task_chain",
+    "observed": {
+      "missing_evidence": 0,
+      "next": "AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01",
+      "result": "PASS_WITH_WARNINGS",
+      "validated": true
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "cli",
+    "description": "Public init-fixture CLI succeeds, uses temp state, preserves git status, and keeps false boundaries false.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": {
+      "false_boundaries": true,
+      "git_status_unchanged": true,
+      "returncode": 0,
+      "state_root_is_temp": true
+    },
+    "id": "cli.init_fixture_boundary",
+    "observed": {
+      "false_boundaries": true,
+      "git_status_unchanged": true,
+      "returncode": 0,
+      "stderr": ""
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "migrations",
+    "description": "Migrations are deterministic and idempotent.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": {
+      "tables": [
+        "artifact_metadata",
+        "cursors",
+        "events",
+        "idempotency",
+        "migrations",
+        "objects"
+      ],
+      "version": 1
+    },
+    "id": "migrations.idempotent_schema",
+    "observed": {
+      "tables": [
+        "artifact_metadata",
+        "cursors",
+        "events",
+        "idempotency",
+        "migrations",
+        "objects",
+        "sqlite_sequence"
+      ],
+      "versions": [
+        1,
+        1
+      ]
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "objects",
+    "description": "Object put/get/list works and stale resource versions fail closed.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": true,
+    "id": "objects.versioned_put_get_list",
+    "observed": {
+      "conflict_refused": true,
+      "listed": 1,
+      "version": 1
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "events",
+    "description": "Object/event commit is atomic, event sequences are monotonic, and cursors can resume.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": {
+      "cursor": 2,
+      "sequences": [
+        1,
+        2
+      ]
+    },
+    "id": "events.atomic_monotonic_cursor",
+    "observed": {
+      "cursor": {
+        "cursor_ref": "aide://cursor/check",
+        "last_sequence": 2
+      },
+      "rollback_absent": true,
+      "rollback_refused": true,
+      "sequences": [
+        1,
+        2
+      ]
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "idempotency",
+    "description": "Idempotency duplicate reuses the result and conflicting requests fail closed.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": true,
+    "id": "idempotency.duplicate_conflict",
+    "observed": {
+      "conflict_refused": true,
+      "duplicate": "duplicate",
+      "first": "recorded"
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "artifacts",
+    "description": "Artifacts are content-addressed, deduplicated, digest-checked, and path-contained.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": true,
+    "id": "artifacts.cas_integrity",
+    "observed": {
+      "deduplicated": true,
+      "digest": "sha256:e2538400a48a2143a336bb1193d9bba6069866f13176236d077a7a01e35fb4fe",
+      "digest_mismatch": true,
+      "metadata": {
+        "digest": "sha256:e2538400a48a2143a336bb1193d9bba6069866f13176236d077a7a01e35fb4fe",
+        "media_type": "text/plain",
+        "relative_path": "check.txt",
+        "size": 20
+      },
+      "traversal": true
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "restart",
+    "description": "Objects and events persist across close/reopen.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": true,
+    "id": "restart.persistence",
+    "observed": {
+      "events_persisted": true,
+      "object_persisted": true
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "migrations",
+    "description": "Future schema versions fail closed.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": "future_migration",
+    "id": "migrations.future_refusal",
+    "observed": "future_migration",
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "health",
+    "description": "Corrupted SQLite state is refused.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": true,
+    "id": "health.corruption_refusal",
+    "observed": true,
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "local-state",
+    "description": "The check does not create committed or ignored live Service state under .aide.local/service.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence/independent_local_service_check.py"
+    ],
+    "expected": "absent",
+    "id": "local_state.absent",
+    "observed": "absent",
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  }
+]

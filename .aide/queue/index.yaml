@@ -2349,3 +2349,13 @@ items:
   prompt: .aide/queue/AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01/prompt.md
   evidence: .aide/queue/AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01/evidence
   description: Build task for local_service_foundation_v0. Adds a local no-network SQLite Service foundation with migrations, objects, trust-bearing events, artifact metadata, idempotency records, subscription cursors, filesystem content-addressed artifact payloads, fixture-only AIDE Lite commands, focused tests, and reports under .aide/reports/local-service-foundation-v0. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01. Does not implement network API, HTTP, sockets, scheduler, worker execution, capability execution, trust enforcement, MCP, Workbench, distributed locking, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+- id: AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01
+  status: needs_review
+  planning_state: check_completed
+  result: PASS_WITH_WARNINGS
+  title: Check Local Service Foundation v0
+  task: .aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence
+  description: Check-only independent review of AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01. Verifies local state remains ignored and uncommitted, migrations are deterministic and idempotent, future migrations are refused, object/event writes are atomic, resource-version conflicts fail closed, event sequences are monotonic with at-least-once-only delivery, cursors resume, idempotency duplicate/conflict behavior works, artifacts are content-addressed and path-contained, restart persistence works, corruption is refused, false runtime boundaries remain false, focused tests and broad validation pass, and reports are scrubbed. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01. Does not repair implementation, accept the capability, implement network API, scheduler, worker execution, capability execution, trust enforcement, MCP, Workbench, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

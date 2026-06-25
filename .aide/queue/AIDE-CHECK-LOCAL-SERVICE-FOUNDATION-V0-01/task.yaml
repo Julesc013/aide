@@ -1,0 +1,54 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01
+title: Check Local Service Foundation v0
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Independently verify AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01 without
+  repairing implementation or accepting local_service_foundation_v0.
+checked_task: AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01
+checked_capability: local_service_foundation_v0
+accepted_capability: null
+authorizes_implementation: false
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/**
+  - .aide/reports/local-service-foundation-v0-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/service/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_local_service_foundation.py
+  - .aide/reports/local-service-foundation-v0/**
+  - .aide.local/**
+explicit_non_capabilities:
+  - implementation repair
+  - capability acceptance
+  - network API
+  - scheduler
+  - worker execution
+  - capability execution
+  - trust enforcement
+  - MCP runtime
+  - Workbench runtime
+  - exactly-once delivery
+  - provider/model calls
+  - preview/apply/rollback
+  - repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - Check uses production service modules as the system under test but does not repair them.
+  - Service remains local, single-machine, no-network, and at-least-once only.
+recommended_next_task: AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01

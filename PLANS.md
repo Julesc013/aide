@@ -2585,3 +2585,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `local_service_foundation_v0`, preserves no-network/no-worker/no-enforcement boundaries, and recommends exactly `AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: This build does not implement network API, HTTP, sockets, scheduler, worker execution, capability execution, trust enforcement, MCP, Workbench, distributed locking, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01
+
+- Title: Check Local Service Foundation v0
+- Status: Needs Review
+- Objective: independently verify `AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01` without repairing implementation or accepting `local_service_foundation_v0`.
+- Scope: `.aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/**`, `.aide/reports/local-service-foundation-v0-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source build commit `e2f44abf27aa594f00cdb28648598a15f96c36bc`, `PASS_WITH_WARNINGS`, `missing_evidence: 0`, and route to this check.
+- Verification Intent: evidence-local independent harness, non-writing local-service CLI probe, focused local service tests, source/check task inspect/evidence, broad validation, local-state boundary check, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: This check does not repair implementation, accept the capability, implement network API, scheduler, worker execution, capability execution, trust enforcement, MCP, Workbench, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
