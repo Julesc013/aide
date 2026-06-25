@@ -1,0 +1,72 @@
+{
+  "findings": [
+    {
+      "check_assertions": [
+        "workspace.disposable_workspace_report"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "local_host.disposable_workspace_not_proven",
+      "open_assertions": []
+    },
+    {
+      "check_assertions": [
+        "workspace.path_probe_matrix",
+        "workspace.test_matrix_incomplete"
+      ],
+      "disposition": "OPEN",
+      "finding_id": "local_host.path_escape_not_proven",
+      "open_assertions": [
+        "workspace.path_probe_matrix",
+        "workspace.test_matrix_incomplete"
+      ]
+    },
+    {
+      "check_assertions": [
+        "events.duplicate_terminal_reason",
+        "events.raw_stream_persisted",
+        "events.test_matrix_incomplete"
+      ],
+      "disposition": "OPEN",
+      "finding_id": "local_host.raw_event_stream_not_proven",
+      "open_assertions": [
+        "events.duplicate_terminal_reason",
+        "events.test_matrix_incomplete"
+      ]
+    },
+    {
+      "check_assertions": [
+        "artifacts.persisted_content_addressed",
+        "artifacts.test_matrix_incomplete"
+      ],
+      "disposition": "OPEN",
+      "finding_id": "local_host.content_addressed_artifacts_not_proven",
+      "open_assertions": [
+        "artifacts.test_matrix_incomplete"
+      ]
+    },
+    {
+      "check_assertions": [
+        "lifecycle.completed_projection",
+        "lifecycle.cancelled_terminal_missing",
+        "lifecycle.test_matrix_incomplete"
+      ],
+      "disposition": "OPEN",
+      "finding_id": "local_host.workerrun_lifecycle_not_proven",
+      "open_assertions": [
+        "lifecycle.cancelled_terminal_missing",
+        "lifecycle.test_matrix_incomplete"
+      ]
+    },
+    {
+      "check_assertions": [
+        "descriptor.operation_scope"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "local_host.descriptor_overclaims_operations",
+      "open_assertions": []
+    }
+  ],
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.local-process-execution-host.repair-01-closure.v0",
+  "task_id": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+}

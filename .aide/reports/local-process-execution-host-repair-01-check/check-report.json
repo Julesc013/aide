@@ -1,0 +1,502 @@
+{
+  "assertions": [
+    {
+      "category": "baseline",
+      "description": "Repair 01 reports PASS_WITH_WARNINGS, zero material findings, and recommends this check.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host-repair-01/repair-report.json"
+      ],
+      "expected": {
+        "material_finding_count": 0,
+        "recommended_next_task": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "id": "baseline.source_result",
+      "observed": {
+        "material_finding_count": 0,
+        "recommended_next_task": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "baseline"
+    },
+    {
+      "category": "baseline",
+      "description": "Repair 01 provides exactly six source-finding dispositions.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host-repair-01/finding-disposition.json"
+      ],
+      "expected": [
+        "local_host.disposable_workspace_not_proven",
+        "local_host.path_escape_not_proven",
+        "local_host.raw_event_stream_not_proven",
+        "local_host.content_addressed_artifacts_not_proven",
+        "local_host.workerrun_lifecycle_not_proven",
+        "local_host.descriptor_overclaims_operations"
+      ],
+      "id": "baseline.six_dispositions",
+      "observed": [
+        "local_host.disposable_workspace_not_proven",
+        "local_host.path_escape_not_proven",
+        "local_host.raw_event_stream_not_proven",
+        "local_host.content_addressed_artifacts_not_proven",
+        "local_host.workerrun_lifecycle_not_proven",
+        "local_host.descriptor_overclaims_operations"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "baseline"
+    },
+    {
+      "category": "baseline",
+      "description": "Repair commit does not modify provider core, accepted ExecutionHost contract, interop domains, hosts, or .aide.local.",
+      "evidence_refs": [
+        "git diff --name-only HEAD^ HEAD"
+      ],
+      "expected": [],
+      "id": "baseline.forbidden_paths_unchanged",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "baseline"
+    },
+    {
+      "category": "workspace",
+      "description": "Generated evidence shows a staged worker in a disposable workspace outside the source checkout and cleanup removed.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/run-result.json"
+      ],
+      "expected": {
+        "cleanup_removed": true,
+        "workspace_root_inside_source": false
+      },
+      "id": "workspace.disposable_workspace_report",
+      "observed": {
+        "workspace_cleanup": {
+          "cleanup_attempted": true,
+          "removed": true,
+          "retained_debug": false,
+          "workspace_ref": "aide://workspace/local-process/reference-01"
+        },
+        "workspace_stage": {
+          "allowed_members": [
+            "artifacts/result.json",
+            "inputs/context-pack.json",
+            "inputs/workunit.json",
+            "worker/reference_worker.py"
+          ],
+          "input_members": [
+            "inputs/workunit.json",
+            "inputs/context-pack.json"
+          ],
+          "source_worker_digest": "sha256:e39b2869922fa8ec46cad33b1c3aa00bbe83346baa274632bdf55ad18c85bb3f",
+          "staged_worker_digest": "sha256:e39b2869922fa8ec46cad33b1c3aa00bbe83346baa274632bdf55ad18c85bb3f",
+          "staged_worker_member": "worker/reference_worker.py",
+          "workspace_ref": "aide://workspace/local-process/reference-01",
+          "workspace_root_inside_source": false
+        }
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.disposable_workspace_not_proven"
+    },
+    {
+      "category": "workspace",
+      "description": "Containment helper rejects traversal, absolute paths, and symlink escape when exercised directly.",
+      "evidence_refs": [
+        "core/execution/local_process_host.py"
+      ],
+      "expected": "all probed unsafe members refused",
+      "id": "workspace.path_probe_matrix",
+      "observed": {
+        "../outside": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_TRAVERSAL",
+        "/outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_ESCAPE",
+        "C:\\outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_ABSOLUTE",
+        "link/file.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_SYMLINK_ESCAPE",
+        "nested-link/link/file.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_SYMLINK_ESCAPE",
+        "nested/../../outside": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_TRAVERSAL"
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "local_host.path_escape_not_proven"
+    },
+    {
+      "category": "workspace",
+      "description": "Focused tests do not cover the full required path containment matrix.",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "nested traversal, Windows absolute path, nested symlink, reparse practical note, safe artifact directory, and TOCTOU revalidation evidence",
+      "id": "workspace.test_matrix_incomplete",
+      "observed": {
+        "missing_test_tokens": [
+          "nested/../../",
+          "C:\\\\",
+          "nested symlink",
+          "reparse",
+          "TOCTOU",
+          "safe artifact"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "local_host.path_escape_not_proven"
+    },
+    {
+      "category": "events",
+      "description": "A second terminal event must produce the typed duplicate_terminal_event refusal rather than a generic post-terminal refusal.",
+      "evidence_refs": [
+        "core/execution/local_process_host.py"
+      ],
+      "expected": "AIDE_LOCAL_PROCESS_HOST_DUPLICATE_TERMINAL_EVENT",
+      "id": "events.duplicate_terminal_reason",
+      "observed": "AIDE_LOCAL_PROCESS_HOST_EVENT_AFTER_TERMINAL",
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "local_host.raw_event_stream_not_proven"
+    },
+    {
+      "category": "events",
+      "description": "Raw NDJSON event stream is persisted and digest-addressed.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/run-result.json",
+        ".aide/reports/local-process-execution-host/raw-events/sha256/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26.ndjson"
+      ],
+      "expected": {
+        "digest_matches": true,
+        "persisted": true
+      },
+      "id": "events.raw_stream_persisted",
+      "observed": {
+        "artifact": {
+          "artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+          "byte_count": 1706,
+          "media_type": "application/x-ndjson",
+          "path": ".aide/reports/local-process-execution-host/raw-events/sha256/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26.ndjson",
+          "persisted": true,
+          "sha256": "sha256:d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26"
+        },
+        "digest_matches": true
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.raw_event_stream_not_proven"
+    },
+    {
+      "category": "events",
+      "description": "Focused tests do not cover the full required fail-closed event stream matrix.",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "all required event failure fixtures covered",
+      "id": "events.test_matrix_incomplete",
+      "observed": {
+        "missing_test_tokens": [
+          "duplicate terminal",
+          "missing sequence",
+          "truncated",
+          "invalid artifact",
+          "timeout before terminal",
+          "multiple terminal"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "local_host.raw_event_stream_not_proven"
+    },
+    {
+      "category": "artifacts",
+      "description": "Declared worker artifact is persisted under a sha256-addressed path with matching digest.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/host-artifacts.json"
+      ],
+      "expected": {
+        "content_addressed": true,
+        "digest_matches": true
+      },
+      "id": "artifacts.persisted_content_addressed",
+      "observed": [
+        {
+          "artifact_ref": "aide://artifact/local-process-worker/1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05",
+          "byte_count": 234,
+          "content_addressed": true,
+          "media_type": "application/json",
+          "path": ".aide/reports/local-process-execution-host/artifacts/sha256/1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05.json",
+          "persisted": true,
+          "sha256": "sha256:1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05",
+          "source_member": "artifacts/result.json"
+        }
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.content_addressed_artifacts_not_proven"
+    },
+    {
+      "category": "artifacts",
+      "description": "Focused tests do not cover the full required artifact integrity matrix.",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "all required artifact integrity fixtures covered",
+      "id": "artifacts.test_matrix_incomplete",
+      "observed": {
+        "missing_test_tokens": [
+          "artifact_size_mismatch",
+          "directory instead",
+          "link/reparse",
+          "duplicate identical",
+          "same path with different content",
+          "partial artifact",
+          "oversized"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "local_host.content_addressed_artifacts_not_proven"
+    },
+    {
+      "category": "lifecycle",
+      "description": "Successful live run projects a completed WorkerRun from validated events.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/worker-run.json"
+      ],
+      "expected": {
+        "final_state": "completed",
+        "worker_run.state": "completed"
+      },
+      "id": "lifecycle.completed_projection",
+      "observed": {
+        "lifecycle": {
+          "allowed_terminal_states": [
+            "completed",
+            "failed",
+            "timed_out"
+          ],
+          "final_state": "completed",
+          "initial_state": "proposed",
+          "kind": "WorkerRunLifecycle",
+          "reconciliation_required_supported": false,
+          "run_ref": "aide://execution-host-run/local-process-reference-01",
+          "schema_version": "aide.local-process-execution-host.workerrun-lifecycle.v0",
+          "transitions": [
+            {
+              "event": "run_created",
+              "from": "proposed",
+              "to": "creating"
+            },
+            {
+              "event": "run_started",
+              "from": "creating",
+              "to": "ready"
+            },
+            {
+              "event": "run_started",
+              "from": "ready",
+              "to": "running"
+            },
+            {
+              "event": "worker_message",
+              "from": "running",
+              "to": "running"
+            },
+            {
+              "event": "artifact_produced",
+              "from": "running",
+              "to": "running"
+            },
+            {
+              "event": "usage_updated",
+              "from": "running",
+              "to": "running"
+            },
+            {
+              "event": "run_completed",
+              "from": "running",
+              "to": "completing"
+            },
+            {
+              "event": "run_completed",
+              "from": "completing",
+              "to": "completed"
+            }
+          ]
+        },
+        "worker_run": {
+          "host_ref": "aide://execution-host/local-process/reference-v0",
+          "initial_state": "proposed",
+          "kind": "WorkerRun",
+          "reason_code": "",
+          "reconciliation_required_supported": false,
+          "result": "PASS",
+          "run_ref": "aide://execution-host-run/local-process-reference-01",
+          "schema_version": "aide.local-process-execution-host.worker-run.v0",
+          "state": "completed",
+          "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+          "transitions": [
+            {
+              "event": "run_created",
+              "from": "proposed",
+              "to": "creating"
+            },
+            {
+              "event": "run_started",
+              "from": "creating",
+              "to": "ready"
+            },
+            {
+              "event": "run_started",
+              "from": "ready",
+              "to": "running"
+            },
+            {
+              "event": "worker_message",
+              "from": "running",
+              "to": "running"
+            },
+            {
+              "event": "artifact_produced",
+              "from": "running",
+              "to": "running"
+            },
+            {
+              "event": "usage_updated",
+              "from": "running",
+              "to": "running"
+            },
+            {
+              "event": "run_completed",
+              "from": "running",
+              "to": "completing"
+            },
+            {
+              "event": "run_completed",
+              "from": "completing",
+              "to": "completed"
+            }
+          ],
+          "workunit_ref": "aide://workunit/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+        }
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.workerrun_lifecycle_not_proven"
+    },
+    {
+      "category": "lifecycle",
+      "description": "The required compact lifecycle names cancelled as a terminal state, but the repair projection omits it.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/run-result.json",
+        "core/execution/local_process_host.py"
+      ],
+      "expected": [
+        "completed",
+        "failed",
+        "timed_out",
+        "cancelled"
+      ],
+      "id": "lifecycle.cancelled_terminal_missing",
+      "observed": [
+        "completed",
+        "failed",
+        "timed_out"
+      ],
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "local_host.workerrun_lifecycle_not_proven"
+    },
+    {
+      "category": "lifecycle",
+      "description": "Focused tests do not cover every required allowed transition and representative invalid terminal/reconciliation cases.",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "all required lifecycle transition tests covered",
+      "id": "lifecycle.test_matrix_incomplete",
+      "observed": {
+        "missing_test_tokens": [
+          "creating -> ready",
+          "ready -> running",
+          "running -> timed_out",
+          "running -> reconciliation_required",
+          "terminal_state_transition",
+          "cancelled"
+        ]
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": "local_host.workerrun_lifecycle_not_proven"
+    },
+    {
+      "category": "descriptor",
+      "description": "Host descriptor advertises only proven public operations and marks previously overclaimed operations unsupported.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/host-descriptor.json"
+      ],
+      "expected": {
+        "supported_operations": [
+          "probe",
+          "create_run"
+        ],
+        "unsupported_contains": [
+          "stream_events",
+          "collect_artifacts",
+          "finish",
+          "reconcile"
+        ]
+      },
+      "id": "descriptor.operation_scope",
+      "observed": {
+        "supported_operations": [
+          "probe",
+          "create_run"
+        ],
+        "unsupported_operations": [
+          "attach",
+          "send_input",
+          "stream_events",
+          "resolve_runtime_approval",
+          "interrupt",
+          "pause",
+          "resume",
+          "cancel",
+          "collect_artifacts",
+          "finish",
+          "reconcile"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.descriptor_overclaims_operations"
+    }
+  ],
+  "material_finding_count": 7,
+  "missing_evidence": 0,
+  "open_source_findings": {
+    "local_host.content_addressed_artifacts_not_proven": [
+      "artifacts.test_matrix_incomplete"
+    ],
+    "local_host.path_escape_not_proven": [
+      "workspace.path_probe_matrix",
+      "workspace.test_matrix_incomplete"
+    ],
+    "local_host.raw_event_stream_not_proven": [
+      "events.duplicate_terminal_reason",
+      "events.test_matrix_incomplete"
+    ],
+    "local_host.workerrun_lifecycle_not_proven": [
+      "lifecycle.cancelled_terminal_missing",
+      "lifecycle.test_matrix_incomplete"
+    ]
+  },
+  "recommended_next_task": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02",
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.local-process-execution-host.repair-01-check.v0",
+  "source_commit": "cc9d65ce08f7e704a7b95bb2329f8b85d76316b3",
+  "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+  "task_id": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+  "warnings": [
+    "The check invokes production helper functions as the system under test but does not modify implementation.",
+    "Windows reparse-point fixture execution is only practical when the platform exposes such a fixture."
+  ]
+}

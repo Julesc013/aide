@@ -2482,3 +2482,14 @@
 - Verification Intent: compile checks, focused local-host repair tests, one live staged fixture worker run, local-host report validation, task inspect/evidence, broad validation, diff checks, path/secret scan, and commit-policy check.
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, closes all six findings pending independent check, proposes `local_process_execution_host_fixture_v0`, and recommends exactly `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01`.
 - Notes: This repair does not modify `RegisteredProcessExecutionProvider v0`, the accepted ExecutionHost contract, protocol schemas, interop domains, hosts, `.aide.local`, Service/runtime, Workbench, provider/model/network behavior, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+
+- Title: Check LocalProcessExecutionHost v0 Repair 01
+- Status: Needs Review
+- Objective: independently verify Repair 01's closure of the six material findings from `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01` without repairing implementation.
+- Scope: `.aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/**`, `.aide/reports/local-process-execution-host-repair-01-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: Repair 01 commit `cc9d65ce08f7e704a7b95bb2329f8b85d76316b3`, `PASS_WITH_WARNINGS`, `missing_evidence: 0`, clean worktree, and route to this check.
+- Verification Intent: source-chain review, latest repair diff scope check, evidence-local harness, generated report inspection, direct production-as-SUT probes, focused tests, provider/ExecutionHost regressions, local host validation, broad validation, diff checks, path/secret scan, task inspect/evidence, and commit-policy check.
+- Exit Criteria: task stops at `needs_review` with `REQUEST_CHANGES`, records seven material assertions across four still-open source findings, `missing_evidence: 0`, and recommends exactly `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02`.
+- Notes: This check does not repair implementation, accept the capability, create Repair 02, continue to trust/Service/MCP work, modify provider core, alter accepted ExecutionHost contract, mutate source reports, create `.aide.local` Service state, implement runtime/workbench/provider/worker behavior, mutate repositories, create branches/worktrees, call GitHub, release, or promote.

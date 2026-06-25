@@ -8196,3 +8196,48 @@ is recorded in task-local evidence before commit.
   local process ExecutionHost acceptance.
 - This remains `local_process_execution_host_fixture_v0`; it is not a generic
   worker harness or Service/runtime implementation.
+
+## Work Item: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+
+### Status
+
+Completed with `REQUEST_CHANGES` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/**`
+- `.aide/reports/local-process-execution-host-repair-01-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The repair build materially improved the fixture host, but acceptance requires
+an independent check of the exact six original findings. The check remained
+strictly check-only and did not repair implementation.
+
+### Implementation Notes
+
+- Added a check task packet, status, prompt, ExecPlan, and evidence-local
+  harness.
+- Verified source chain, source result, six repair dispositions, and latest
+  repair diff scope.
+- Confirmed two source findings are closed: disposable workspace evidence and
+  descriptor operation scope.
+- Recorded seven material assertions across four open source findings:
+  path containment, raw event stream, artifact integrity, and WorkerRun
+  lifecycle.
+- Stopped the serialized wave before acceptance, trust, Service, durable
+  WorkerRun, or MCP work.
+
+### Verification
+
+The evidence-local harness produced `REQUEST_CHANGES` with
+`material_finding_count: 7` and `missing_evidence: 0`. Final validation is
+recorded in task-local evidence before commit.
+
+### Remaining Issues
+
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02` is required before
+  LocalProcessExecutionHost v0 acceptance.
