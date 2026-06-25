@@ -39,6 +39,46 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+
+Completed as an acceptance-only consolidation and awaiting review.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01/**`
+- `.aide/reports/local-process-execution-host-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Accepted capability:
+
+```text
+local_process_execution_host_fixture_v0
+```
+
+Accepted meaning:
+
+```text
+bounded fixture-backed LocalProcessExecutionHost v0 reference capability
+```
+
+The acceptance preserves the complete source chain, including the historical
+`REQUEST_CHANGES` check records, and records `ACCEPTED_WITH_WARNINGS`,
+`material_finding_count: 0`, and `missing_evidence: 0`.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+```
+
+This acceptance did not repair implementation, accept arbitrary command
+execution, accept a generic worker harness, start autonomous AI worker behavior,
+create Service/runtime or Workbench/MCP behavior, call provider/model/network
+surfaces, implement preview/apply/rollback, mutate repositories, create
+branches/worktrees, call GitHub, release, or promote.
+
 ## Work Item: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
 
 Completed as a check-only review and awaiting acceptance.

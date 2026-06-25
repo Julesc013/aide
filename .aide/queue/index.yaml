@@ -2299,3 +2299,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/prompt.md
   evidence: .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence
   description: Check-only review of AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02. Independently verifies all seven material assertions from AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01 are closed: portable path classification, complete containment matrix evidence, duplicate terminal classification, event-stream matrix evidence, artifact matrix evidence, cancelled lifecycle terminal state, and lifecycle transition matrix evidence. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01. Does not repair implementation, modify provider core, alter accepted ExecutionHost contract, mutate source repair reports, create Service state, start Workbench/MCP/provider/model/network behavior, mutate repositories, create branches/worktrees, call GitHub, release, or promote.
+- id: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept LocalProcessExecutionHost v0
+  task: .aide/queue/AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence
+  description: Acceptance-only consolidation for LocalProcessExecutionHost v0 after Repair 02 build and independent check passed with warnings, material_finding_count 0, and missing_evidence 0. Accepts exactly local_process_execution_host_fixture_v0 as a bounded fixture-backed reference slice that launches exactly one allowlisted local reference worker through the accepted RegisteredProcessExecutionProvider v0, stages a disposable workspace, preserves raw event evidence, persists verified content-addressed fixture artifacts, and projects WorkerRun lifecycle state. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01. Does not accept arbitrary command execution, generic worker harness, autonomous AI workers, Service/runtime behavior, Workbench/MCP behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

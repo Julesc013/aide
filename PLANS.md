@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+
+- Title: Accept LocalProcessExecutionHost v0
+- Status: needs_review
+- Objective: accept exactly `local_process_execution_host_fixture_v0` after Repair 02 build and independent check completed with warnings, zero material findings, and missing evidence zero.
+- Scope: acceptance task/evidence, `.aide/reports/local-process-execution-host-accept/**`, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02` at `e57fb7d0b6c18b6847e27082db09b135593e6974`, result `PASS_WITH_WARNINGS`, material finding count `0`, missing evidence `0`; `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02` at `4c995fc3b4d3718a0ae1c45d9b17a6a0bf074e4b`, result `PASS_WITH_WARNINGS`, material finding count `0`, missing evidence `0`.
+- Milestones: source chain reviewed; accepted capability boundary recorded; historical failed checks preserved; warnings and non-capabilities recorded; acceptance reports and task evidence written.
+- Blockers: none. Trust and authorization remains a separate next build task.
+- Verification Intent: predecessor task inspect/evidence, acceptance task inspect/evidence, LocalProcessExecutionHost validate, focused LocalProcessExecutionHost tests, broad validation, local-path and secret-like scans, diff checks, staged diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted capability exactly `local_process_execution_host_fixture_v0`, missing evidence `0`, and next task exactly `AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01`.
+- Notes: this acceptance does not accept arbitrary command execution, a generic worker harness, autonomous AI worker behavior, Service/runtime behavior, Workbench/MCP behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
 ### Plan ID: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
 
 - Title: Check LocalProcessExecutionHost v0 Repair 02

@@ -1,0 +1,30 @@
+{
+  "accepted_capability": "local_process_execution_host_fixture_v0",
+  "accepted_meaning": "bounded fixture-backed LocalProcessExecutionHost v0 reference capability",
+  "not_accepted": [
+    "arbitrary command execution",
+    "generic worker harness",
+    "autonomous AI worker",
+    "remote ExecutionHost",
+    "Service/runtime behavior",
+    "Workbench behavior",
+    "MCP behavior",
+    "provider/model calls",
+    "network calls",
+    "PreviewSession",
+    "DevelopmentTransaction",
+    "PatchTransaction apply",
+    "public process cancellation API",
+    "durable idempotency",
+    "scheduler",
+    "process-tree management",
+    "resource quotas",
+    "streaming artifact store",
+    "source repository mutation",
+    "target repository mutation",
+    "branch/worktree automation",
+    "GitHub mutation",
+    "release or promotion"
+  ],
+  "schema_version": "aide.local-process-execution-host-acceptance.v0"
+}

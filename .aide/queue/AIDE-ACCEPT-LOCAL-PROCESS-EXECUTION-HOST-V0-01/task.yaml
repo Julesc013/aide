@@ -1,0 +1,93 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+title: Accept LocalProcessExecutionHost v0
+type: accept
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Accept exactly the bounded fixture-backed LocalProcessExecutionHost v0
+  reference slice after the build, repairs, and independent Repair 02 check
+  passed with warnings and zero material findings.
+accepted_capability: local_process_execution_host_fixture_v0
+accepted_scope:
+  - fixture-backed LocalProcessExecutionHost reference slice
+  - exactly one allowlisted local reference worker launch through RegisteredProcessExecutionProvider v0
+  - disposable workspace staging and containment checks
+  - fail-closed raw NDJSON event stream parsing
+  - verified content-addressed raw event and worker artifact evidence
+  - WorkerRun lifecycle projection including completed, failed, timed_out, cancelled, and reconciliation_required terminal states
+  - ExecutionHost descriptor and create_run boundary narrowed to implemented probe/create_run fixture behavior
+  - deterministic report and projection generation for the fixture slice
+authorizes_implementation: false
+check_only: false
+acceptance_only: true
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+  - AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+  - AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+  - AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+  - AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+  - AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01/**
+  - .aide/reports/local-process-execution-host-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/**
+  - core/protocol/**
+  - core/interop/**
+  - hosts/**
+  - .aide/scripts/**
+  - .aide/scripts/tests/**
+  - .aide/reports/local-process-execution-host/**
+  - .aide/reports/local-process-execution-host-check/**
+  - .aide/reports/local-process-execution-host-repair-01/**
+  - .aide/reports/local-process-execution-host-repair-01-check/**
+  - .aide/reports/local-process-execution-host-repair-02/**
+  - .aide/reports/local-process-execution-host-repair-02-check/**
+  - .aide.local/**
+accepted_meaning: >
+  AIDE has accepted a bounded fixture-backed LocalProcessExecutionHost v0
+  reference capability that stages a disposable workspace, launches exactly one
+  allowlisted local reference worker through the accepted registered-process
+  provider, preserves raw event evidence, persists verified content-addressed
+  fixture artifacts, projects WorkerRun lifecycle state, and preserves the
+  source checkout within declared probe coverage.
+explicit_non_capabilities:
+  - arbitrary command execution
+  - generic worker harness
+  - autonomous AI worker
+  - remote ExecutionHost
+  - Service/runtime behavior
+  - Workbench behavior
+  - MCP behavior
+  - provider/model calls
+  - network calls
+  - PreviewSession
+  - DevelopmentTransaction
+  - PatchTransaction apply
+  - public process cancellation API
+  - durable idempotency
+  - scheduler
+  - process-tree management
+  - resource quotas
+  - streaming artifact store
+  - source repository mutation
+  - target repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - LocalProcessExecutionHost v0 remains fixture-backed.
+  - Public process cancellation remains unsupported in v0.
+  - Durable idempotency, process-tree termination, resource quotas, and streaming artifact storage remain future work.
+  - Reparse-point practical fixture coverage remains platform-dependent.
+recommended_next_task: AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
