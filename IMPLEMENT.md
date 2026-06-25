@@ -8486,3 +8486,47 @@ and broad validation passed.
 - Live identity, credentials, live policy engine, live grants, runtime
   enforcement, Service/runtime behavior, and transaction approval remain out of
   scope.
+
+## Work Item: AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+
+### Status
+
+Completed with `ACCEPTED_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/**`
+- `.aide/reports/trust-authorization-contract-v0-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The trust contract build and independent check both reported
+`PASS_WITH_WARNINGS`, zero material findings, and complete evidence. This
+acceptance consolidates the achieved capability without broadening it into live
+enforcement or runtime behavior.
+
+### Implementation Notes
+
+- Added an acceptance task packet, evidence, reports, and an evidence-local
+  acceptance review script.
+- Accepted exactly `trust_and_authorization_contract_v0` as projection-only.
+- Preserved non-capabilities for identity, credentials, OIDC/IAM, live policy
+  engine, live grants, runtime enforcement, Service/runtime behavior, worker
+  execution, transaction approval, provider/model/network calls, mutation,
+  GitHub behavior, release, and promotion.
+- Routed next work to `AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01`.
+
+### Verification
+
+The acceptance review script produced `ACCEPTED_WITH_WARNINGS` with zero
+material findings and `missing_evidence: 0`. Final task inspect/evidence, trust
+validation, broad validation, leak scans, diff checks, and commit-policy check
+are recorded in task-local evidence.
+
+### Remaining Issues
+
+- Local Service foundation remains unbuilt and is the next serialized task.
+- Runtime enforcement and live trust infrastructure remain future work.

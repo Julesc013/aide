@@ -1,0 +1,71 @@
+{
+  "accepted_capability": "trust_and_authorization_contract_v0",
+  "accepted_meaning": "projection_only_trust_and_authorization_contract_v0",
+  "assertions": [
+    {
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/status.yaml"
+      ],
+      "expected": "source build PASS_WITH_WARNINGS, proposed capability exact, missing_evidence 0",
+      "id": "acceptance.source_build_passed",
+      "observed": {
+        "ok": true
+      },
+      "outcome": "PASS",
+      "severity": "none"
+    },
+    {
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/status.yaml",
+        ".aide/reports/trust-authorization-contract-v0-check/check-report.json"
+      ],
+      "expected": "check PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0",
+      "id": "acceptance.independent_check_passed",
+      "observed": {
+        "report_ok": true,
+        "status_ok": true
+      },
+      "outcome": "PASS",
+      "severity": "none"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/validation.json"
+      ],
+      "expected": "projection-only truthful and all live capability boundary fields false",
+      "id": "acceptance.boundary_exactness",
+      "observed": {
+        "false_boundaries_ok": true,
+        "projection_only_truthful": true
+      },
+      "outcome": "PASS",
+      "severity": "none"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/validation.json",
+        ".aide/reports/trust-authorization-contract-v0/projection-report.json",
+        ".aide/reports/trust-authorization-contract-v0-check/check-report.json"
+      ],
+      "expected": "no secret-like values in acceptance source reports",
+      "id": "acceptance.no_secret_like_values",
+      "observed": {
+        "secret_hits": []
+      },
+      "outcome": "PASS",
+      "severity": "none"
+    }
+  ],
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "schema_version": "aide.trust-authorization-contract-acceptance.v0",
+  "source_build_task_id": "AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01",
+  "source_check_task_id": "AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01",
+  "task_id": "AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01",
+  "warnings": [
+    "Accepted capability is projection-only.",
+    "Runtime enforcement and live trust infrastructure remain future work."
+  ]
+}

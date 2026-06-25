@@ -2561,3 +2561,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01`.
 - Result: `PASS_WITH_WARNINGS`; no material findings.
 - Notes: This check does not repair implementation, accept the capability, implement live identity, credentials, OIDC/IAM, live policy engine, live grants, runtime enforcement, worker execution, transaction approval, Service/runtime behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+
+- Title: Accept Trust And Authorization Contract v0
+- Status: Needs Review
+- Objective: accept exactly `trust_and_authorization_contract_v0` after the build and independent check both passed with warnings and zero material findings.
+- Scope: `.aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/**`, `.aide/reports/trust-authorization-contract-v0-accept/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: trust build commit `6a94811b1473b50a8c32f190400b42a3e5fc7b1b`, trust check commit `cdb531d3de2c30b242f6d9a7854dd5c758a02280`, zero material findings, and complete evidence.
+- Verification Intent: source-chain review, exact accepted label review, boundary false-flag review, source report scrub scan, source/check task inspect and evidence, trust validate, broad validation, diff checks, leak scans, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only projection-only `trust_and_authorization_contract_v0`, and recommends exactly `AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01`.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Notes: This acceptance does not accept live identity, credentials, OIDC/IAM, live policy engine, live grants, runtime enforcement, worker execution, transaction approval, Service/runtime behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

@@ -1,0 +1,29 @@
+schema_version: aide.task-status.v0
+id: AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+accepted_capability: trust_and_authorization_contract_v0
+accepted_meaning: projection_only_trust_and_authorization_contract_v0
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01
+evidence:
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/baseline.md
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/acceptance_review.py
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/acceptance-review.json
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/acceptance-review.md
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/validation-results.md
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/blockers-or-deferrals.md
+  - .aide/queue/AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/next-task-prompt.md
+warnings:
+  - Accepted capability is projection-only.
+  - Runtime enforcement and live trust infrastructure remain future work.
+blockers: []
