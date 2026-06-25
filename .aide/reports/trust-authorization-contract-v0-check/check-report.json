@@ -1,0 +1,445 @@
+{
+  "artifact_hashes": {
+    ".aide/protocol/aide-admission-record.schema.json": "sha256:e4fa9957893d80fd22efcc08009ece954ea30b2f9a03828f5b80243426c25e7a",
+    ".aide/protocol/aide-authorization-evaluation.schema.json": "sha256:39250dd1317e1519be6f8bd133fcab680247f8ec07ba73c3abcb9fb98c01cd25",
+    ".aide/protocol/aide-capability-grant.schema.json": "sha256:2acb8bef405e04ce94e07e3bb5e0060512d05ddb46b194bad2d8c6ff490d1dc1",
+    ".aide/protocol/aide-delegation-record.schema.json": "sha256:5859072067daf0455f923ea2cd1e941e036aff5145d2bf9afeb6693f9059fb6b",
+    ".aide/protocol/aide-policy-decision.schema.json": "sha256:10df0440dbd3d2d42270786810cc616d012fb4e2f2bc173a476a07d5a2b99673",
+    ".aide/protocol/aide-principal.schema.json": "sha256:3736847d9738269e6bc41229c97c9c4a8a772b6da82c4fc4ebef1372e34a4070",
+    ".aide/protocol/aide-revocation-record.schema.json": "sha256:9fb3e33bfb26751e06fc092287be16186c075d00af46663f3657bc76fb2fac39",
+    ".aide/reports/trust-authorization-contract-v0/projection-report.json": "sha256:2ea4ebd2ceeff72dc3ac6c8da638b5960d099e6a0bd2dd8032cc9271d8d555a5",
+    ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json": "sha256:54d585c2362f9ee8debd1f3f147f7deeeed2207b9a299b6eeee43f6fab4f4e91",
+    ".aide/reports/trust-authorization-contract-v0/projections/authorization-evaluation.json": "sha256:3cdfc35a0f73d6a737ead1d4a132f2a2ab15e259625815b10edc7b4ee542253b",
+    ".aide/reports/trust-authorization-contract-v0/projections/capability-grant.json": "sha256:ab74597f97d7b82ae9a8186e88d2efbd43a170bea01747f13c2e49c478e2217c",
+    ".aide/reports/trust-authorization-contract-v0/projections/delegation-record.json": "sha256:b02a2526c3360817973d825cf336ee053d69a09ffc3f71ed79115c086e5669a3",
+    ".aide/reports/trust-authorization-contract-v0/projections/policy-decision.json": "sha256:2feff9701f60a2038c03b019d182e8769d428e05698dc45bb66218f0071ae3f7",
+    ".aide/reports/trust-authorization-contract-v0/projections/principal.json": "sha256:9f60824e2fa735657acb24ff8190330c19c67e4d7705b1da319c6bb2a88191de",
+    ".aide/reports/trust-authorization-contract-v0/projections/revocation-record.json": "sha256:efde1fc1524a0c2c8a45aee9ae0bcdba20a333cfea5f4c24350807d04caad006",
+    ".aide/reports/trust-authorization-contract-v0/validation.json": "sha256:7fb11261f22a45d1ffd75513a23117f5dff27063c88104486b53a048429d64d7",
+    ".aide/scripts/tests/test_aide_trust_authorization_contract.py": "sha256:b5f26fe7bdd1f9e752a9ecf493e9640ffec6d7d1ee851dac767dfceca27d9117",
+    "core/protocol/trust_authorization.py": "sha256:dceffc8a5d60ceef6a473e64d0063bbdfc1f722e24e92206b52e4f8b17b65d9a"
+  },
+  "assertions": [
+    {
+      "category": "baseline",
+      "description": "Source build task reports PASS_WITH_WARNINGS, missing_evidence 0, and the expected next task.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/status.yaml"
+      ],
+      "expected": "source status contains PASS_WITH_WARNINGS, missing_evidence 0, and this check as next task",
+      "id": "baseline.source_task_passed",
+      "observed": "markers present",
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "schema",
+      "description": "Every schema and projection has matching kind, Draft 2020-12 schema metadata, capability label, and projection-only status.",
+      "evidence_refs": [
+        ".aide/protocol/aide-principal.schema.json",
+        ".aide/protocol/aide-admission-record.schema.json",
+        ".aide/protocol/aide-policy-decision.schema.json",
+        ".aide/protocol/aide-capability-grant.schema.json",
+        ".aide/protocol/aide-delegation-record.schema.json",
+        ".aide/protocol/aide-revocation-record.schema.json",
+        ".aide/protocol/aide-authorization-evaluation.schema.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/principal.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/policy-decision.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/capability-grant.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/delegation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/revocation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/authorization-evaluation.json"
+      ],
+      "expected": {
+        "AdmissionRecord": true,
+        "AuthorizationEvaluation": true,
+        "CapabilityGrant": true,
+        "DelegationRecord": true,
+        "PolicyDecision": true,
+        "Principal": true,
+        "RevocationRecord": true
+      },
+      "id": "schema.projection_alignment",
+      "observed": {
+        "AdmissionRecord": true,
+        "AuthorizationEvaluation": true,
+        "CapabilityGrant": true,
+        "DelegationRecord": true,
+        "PolicyDecision": true,
+        "Principal": true,
+        "RevocationRecord": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "references",
+      "description": "All projected reference fields use stable aide:// references.",
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/projections/principal.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/policy-decision.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/capability-grant.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/delegation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/revocation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/authorization-evaluation.json"
+      ],
+      "expected": "all refs match aide:// and at least 20 refs are observed",
+      "id": "refs.stable_aide_refs",
+      "observed": {
+        "bad_refs": [],
+        "ref_count": 40
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "security",
+      "description": "Committed schemas, projections, reports, helper source, and focused tests contain no secret-like values or credential payload keys.",
+      "evidence_refs": [
+        ".aide/protocol/aide-principal.schema.json",
+        ".aide/protocol/aide-admission-record.schema.json",
+        ".aide/protocol/aide-policy-decision.schema.json",
+        ".aide/protocol/aide-capability-grant.schema.json",
+        ".aide/protocol/aide-delegation-record.schema.json",
+        ".aide/protocol/aide-revocation-record.schema.json",
+        ".aide/protocol/aide-authorization-evaluation.schema.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/principal.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/policy-decision.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/capability-grant.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/delegation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/revocation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/authorization-evaluation.json",
+        ".aide/reports/trust-authorization-contract-v0/projection-report.json",
+        ".aide/reports/trust-authorization-contract-v0/validation.json",
+        "core/protocol/trust_authorization.py",
+        ".aide/scripts/tests/test_aide_trust_authorization_contract.py"
+      ],
+      "expected": "no secret-like values and no credential payload keys",
+      "id": "security.no_embedded_credentials_or_secrets",
+      "observed": {
+        "disallowed_key_hits": [],
+        "secret_hits": []
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "security",
+      "description": "Committed trust artifacts contain no local absolute path leakage.",
+      "evidence_refs": [
+        ".aide/protocol/aide-principal.schema.json",
+        ".aide/protocol/aide-admission-record.schema.json",
+        ".aide/protocol/aide-policy-decision.schema.json",
+        ".aide/protocol/aide-capability-grant.schema.json",
+        ".aide/protocol/aide-delegation-record.schema.json",
+        ".aide/protocol/aide-revocation-record.schema.json",
+        ".aide/protocol/aide-authorization-evaluation.schema.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/principal.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/policy-decision.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/capability-grant.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/delegation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/revocation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/authorization-evaluation.json",
+        ".aide/reports/trust-authorization-contract-v0/projection-report.json",
+        ".aide/reports/trust-authorization-contract-v0/validation.json",
+        "core/protocol/trust_authorization.py",
+        ".aide/scripts/tests/test_aide_trust_authorization_contract.py"
+      ],
+      "expected": "no local absolute path matches",
+      "id": "security.no_local_absolute_paths",
+      "observed": {
+        "absolute_path_hits": []
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "admission",
+      "description": "Admission and authorization evaluation bind the same exact implementation digest and include mismatch refusal coverage.",
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/authorization-evaluation.json",
+        ".aide/reports/trust-authorization-contract-v0/validation.json"
+      ],
+      "expected": "sha256 digests present, evaluation digest matches admission digest, mismatch refusal exists",
+      "id": "admission.exact_digest_binding",
+      "observed": {
+        "evaluation_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "implementation_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "manifest_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "mismatch_refusal_present": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "authority",
+      "description": "Admission, conformance, policy, and grant records remain separate records linked by refs.",
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/policy-decision.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/capability-grant.json"
+      ],
+      "expected": "admission carries conformance refs; grant links policy and admission by refs; policy does not embed grant",
+      "id": "authority.declaration_conformance_admission_policy_grant_separation",
+      "observed": {
+        "admission_has_conformance_profile_refs": true,
+        "admission_has_conformance_result_refs": true,
+        "grant_admission_refs": [
+          "aide://admission/local-process-host-fixture"
+        ],
+        "grant_policy_decision_ref": "aide://policy-decision/local-process-host-allow",
+        "policy_decision_ref": "aide://policy-decision/local-process-host-allow"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "fixtures",
+      "description": "The validation report covers the complete required negative refusal matrix.",
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/validation.json"
+      ],
+      "expected": [
+        "principal_unknown",
+        "principal_inactive",
+        "implementation_not_admitted",
+        "implementation_digest_mismatch",
+        "capability_not_admitted",
+        "policy_denied",
+        "approval_required",
+        "grant_missing",
+        "grant_inactive",
+        "grant_expired",
+        "grant_revoked",
+        "grant_exhausted",
+        "workspace_scope_mismatch",
+        "resource_scope_mismatch",
+        "execution_mode_not_granted",
+        "effect_not_granted",
+        "network_not_granted",
+        "secret_not_granted",
+        "delegation_not_allowed",
+        "delegation_scope_widening",
+        "delegation_expired",
+        "required_feature_unsupported"
+      ],
+      "id": "fixtures.complete_negative_refusal_matrix",
+      "observed": {
+        "extra": [],
+        "missing": [],
+        "observed": [
+          "principal_unknown",
+          "principal_inactive",
+          "implementation_not_admitted",
+          "implementation_digest_mismatch",
+          "capability_not_admitted",
+          "policy_denied",
+          "approval_required",
+          "grant_missing",
+          "grant_inactive",
+          "grant_expired",
+          "grant_revoked",
+          "grant_exhausted",
+          "workspace_scope_mismatch",
+          "resource_scope_mismatch",
+          "execution_mode_not_granted",
+          "effect_not_granted",
+          "network_not_granted",
+          "secret_not_granted",
+          "delegation_not_allowed",
+          "delegation_scope_widening",
+          "delegation_expired",
+          "required_feature_unsupported"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "authority",
+      "description": "Scope, delegation, revocation, expiry, and use-budget failures have stable fail-closed reason coverage.",
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/validation.json"
+      ],
+      "expected": [
+        "delegation_expired",
+        "delegation_not_allowed",
+        "delegation_scope_widening",
+        "effect_not_granted",
+        "execution_mode_not_granted",
+        "grant_exhausted",
+        "grant_expired",
+        "grant_revoked",
+        "network_not_granted",
+        "resource_scope_mismatch",
+        "secret_not_granted",
+        "workspace_scope_mismatch"
+      ],
+      "id": "authority.scope_delegation_revocation_expiry_budget_fail_closed",
+      "observed": {
+        "budget_codes_present": [
+          "grant_exhausted",
+          "grant_expired",
+          "grant_revoked"
+        ],
+        "delegation_codes_present": [
+          "delegation_expired",
+          "delegation_not_allowed",
+          "delegation_scope_widening"
+        ],
+        "scope_codes_present": [
+          "effect_not_granted",
+          "execution_mode_not_granted",
+          "network_not_granted",
+          "resource_scope_mismatch",
+          "secret_not_granted",
+          "workspace_scope_mismatch"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "authority",
+      "description": "Runtime approval remains distinct from transaction approval and unknown required features fail closed.",
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/validation.json"
+      ],
+      "expected": "runtime/transaction approval distinction true; required_feature_unsupported and approval_required covered",
+      "id": "authority.runtime_transaction_and_required_feature_boundaries",
+      "observed": {
+        "approval_required_present": true,
+        "required_feature_unsupported_present": true,
+        "runtime_approval_distinct_from_transaction_approval": true,
+        "unknown_required_capability_fails_closed": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "boundary",
+      "description": "All live identity, grants, policy engine, enforcement, runtime, worker, provider, network, mutation, release, and approval flags remain false.",
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/validation.json",
+        ".aide/reports/trust-authorization-contract-v0/projection-report.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/principal.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/policy-decision.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/capability-grant.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/delegation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/revocation-record.json",
+        ".aide/reports/trust-authorization-contract-v0/projections/authorization-evaluation.json"
+      ],
+      "expected": "all boundary booleans false and projection_only_truthful true",
+      "id": "boundary.no_runtime_or_capability_overclaim",
+      "observed": {
+        "false_boundary_failures": {},
+        "projection_only_truthful": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "validation",
+      "description": "Build validation report says every schema, helper, and projection row passed.",
+      "evidence_refs": [
+        ".aide/reports/trust-authorization-contract-v0/validation.json"
+      ],
+      "expected": "schema_helper_alignment_status PASS and seven PASS rows",
+      "id": "validation.schema_helper_projection_alignment",
+      "observed": {
+        "row_count": 7,
+        "rows": [
+          {
+            "errors": [],
+            "helper_valid": true,
+            "kind": "Principal",
+            "path": ".aide/reports/trust-authorization-contract-v0/projections/principal.json",
+            "result": "PASS",
+            "schema_valid": true
+          },
+          {
+            "errors": [],
+            "helper_valid": true,
+            "kind": "AdmissionRecord",
+            "path": ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json",
+            "result": "PASS",
+            "schema_valid": true
+          },
+          {
+            "errors": [],
+            "helper_valid": true,
+            "kind": "PolicyDecision",
+            "path": ".aide/reports/trust-authorization-contract-v0/projections/policy-decision.json",
+            "result": "PASS",
+            "schema_valid": true
+          },
+          {
+            "errors": [],
+            "helper_valid": true,
+            "kind": "CapabilityGrant",
+            "path": ".aide/reports/trust-authorization-contract-v0/projections/capability-grant.json",
+            "result": "PASS",
+            "schema_valid": true
+          },
+          {
+            "errors": [],
+            "helper_valid": true,
+            "kind": "DelegationRecord",
+            "path": ".aide/reports/trust-authorization-contract-v0/projections/delegation-record.json",
+            "result": "PASS",
+            "schema_valid": true
+          },
+          {
+            "errors": [],
+            "helper_valid": true,
+            "kind": "RevocationRecord",
+            "path": ".aide/reports/trust-authorization-contract-v0/projections/revocation-record.json",
+            "result": "PASS",
+            "schema_valid": true
+          },
+          {
+            "errors": [],
+            "helper_valid": true,
+            "kind": "AuthorizationEvaluation",
+            "path": ".aide/reports/trust-authorization-contract-v0/projections/authorization-evaluation.json",
+            "result": "PASS",
+            "schema_valid": true
+          }
+        ],
+        "schema_helper_alignment_status": "PASS"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    }
+  ],
+  "checked_capability": "trust_and_authorization_contract_v0",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.trust-authorization-contract-check.v0",
+  "source_task_id": "AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01",
+  "task_id": "AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01",
+  "warnings": [
+    "Trust and authorization contract v0 remains projection-only.",
+    "No live identity, credential, policy, grant, Service, or enforcement runtime is accepted by this check."
+  ]
+}

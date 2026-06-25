@@ -8438,3 +8438,51 @@ recorded in task-local evidence before commit.
 
 - `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02` is required before
   LocalProcessExecutionHost v0 acceptance.
+
+## Work Item: AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/**`
+- `.aide/reports/trust-authorization-contract-v0-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The trust contract build stopped at `needs_review` with projection-only trust
+and authorization records. Acceptance requires an independent check of the
+authority boundaries, negative refusal matrix, deterministic projections, and
+non-capability claims.
+
+### Implementation Notes
+
+- Added a check-only task packet and evidence-local independent harness.
+- Reviewed source build status, schema/projection alignment, stable AIDE refs,
+  exact digest binding, authority-record separation, scope/delegation bounds,
+  revocation/expiry/use-budget fail-closed refusal coverage, and runtime versus
+  transaction approval separation.
+- Confirmed all live identity, credential, policy engine, live grant, runtime
+  enforcement, Service, worker, provider/model, network, mutation, release, and
+  promotion flags remain false.
+- Preserved projection-only warnings and routed to the acceptance task.
+
+### Verification
+
+The independent harness produced `PASS_WITH_WARNINGS` with 12 passing
+assertions, `material_finding_count: 0`, and `missing_evidence: 0`. Focused
+trust tests, trust status/validate, compileall, deterministic projection rerun,
+and broad validation passed.
+
+### Remaining Issues
+
+- `AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01` is required before the
+  trust contract is accepted.
+- Live identity, credentials, live policy engine, live grants, runtime
+  enforcement, Service/runtime behavior, and transaction approval remain out of
+  scope.

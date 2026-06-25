@@ -2549,3 +2549,15 @@
 - Verification Intent: source-chain review, latest repair diff scope check, evidence-local harness, generated report inspection, direct production-as-SUT probes, focused tests, provider/ExecutionHost regressions, local host validation, broad validation, diff checks, path/secret scan, task inspect/evidence, and commit-policy check.
 - Exit Criteria: task stops at `needs_review` with `REQUEST_CHANGES`, records seven material assertions across four still-open source findings, `missing_evidence: 0`, and recommends exactly `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02`.
 - Notes: This check does not repair implementation, accept the capability, create Repair 02, continue to trust/Service/MCP work, modify provider core, alter accepted ExecutionHost contract, mutate source reports, create `.aide.local` Service state, implement runtime/workbench/provider/worker behavior, mutate repositories, create branches/worktrees, call GitHub, release, or promote.
+
+### Queue ID: AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+
+- Title: Check Trust And Authorization Contract v0
+- Status: Needs Review
+- Objective: independently verify `AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01` without repairing implementation or accepting the capability.
+- Scope: `.aide/queue/AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/**`, `.aide/reports/trust-authorization-contract-v0-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: trust contract build commit `6a94811b1473b50a8c32f190400b42a3e5fc7b1b`, `PASS_WITH_WARNINGS`, `missing_evidence: 0`, and route to this check.
+- Verification Intent: independent data-only harness, stable AIDE ref review, credential/secret/path scan, exact-digest admission review, authority separation review, complete negative refusal matrix review, schema/projection alignment, deterministic projection rerun, focused tests, broad validation, task inspect/evidence, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01`.
+- Result: `PASS_WITH_WARNINGS`; no material findings.
+- Notes: This check does not repair implementation, accept the capability, implement live identity, credentials, OIDC/IAM, live policy engine, live grants, runtime enforcement, worker execution, transaction approval, Service/runtime behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
