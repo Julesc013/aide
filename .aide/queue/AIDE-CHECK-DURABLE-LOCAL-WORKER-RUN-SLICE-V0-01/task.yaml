@@ -1,0 +1,62 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+title: Check Durable Local WorkerRun Slice v0
+type: check
+status: needs_review
+planning_state: check_completed
+result: REQUEST_CHANGES
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Independently check AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+  without repairing implementation. Verify that the durable local WorkerRun
+  slice composes accepted local trust, local Service persistence, accepted
+  LocalProcessExecutionHost fixture behavior, evidence, events, artifacts,
+  idempotency, and explicit non-capabilities truthfully.
+source_task: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+proposed_capability_under_review: durable_local_worker_run_slice_v0
+accepted_capability: null
+authorizes_implementation: false
+material_finding_count: 1
+missing_evidence: 0
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/**
+  - .aide/reports/durable-local-worker-run-slice-v0-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/service/durable_worker_run.py
+  - core/service/local_trust_enforcement.py
+  - core/service/sqlite_store.py
+  - core/execution/local_process_host.py
+  - core/execution/registered_process.py
+  - core/protocol/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/reports/durable-local-worker-run-slice-v0/**
+  - .aide/reports/local-process-execution-host/**
+  - .aide/reports/local-trust-enforcement-v0/**
+  - .aide/reports/local-service-foundation-v0/**
+  - .aide.local/**
+explicit_non_capabilities:
+  - production implementation repair
+  - accepted capability promotion
+  - general worker harness
+  - autonomous AI worker
+  - remote ExecutionHost
+  - scheduler
+  - leases
+  - persistent background Service
+  - Workbench runtime
+  - MCP runtime
+  - provider/model calls
+  - network calls
+  - preview/apply/rollback
+  - transaction approval
+  - repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+recommended_next_task: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01

@@ -1,0 +1,19 @@
+{
+  "raw_event": {
+    "artifact_ref": "aide://artifact/local-process-event-stream/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2",
+    "byte_count": 1706,
+    "media_type": "application/x-ndjson",
+    "path": ".aide/reports/local-process-execution-host/raw-events/sha256/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2.ndjson",
+    "persisted": true,
+    "sha256": "sha256:436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2"
+  },
+  "raw_event_sha_observed": "sha256:436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2",
+  "worker_artifacts": [
+    {
+      "expected": "sha256:dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5",
+      "matches": true,
+      "observed": "sha256:dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5",
+      "path": ".aide/reports/local-process-execution-host/artifacts/sha256/dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5.json"
+    }
+  ]
+}

@@ -2657,3 +2657,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `durable_local_worker_run_slice_v0`, persists WorkUnit/WorkerRun/outcome/evidence/event observations through temporary local Service state, and recommends exactly `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: This build is fixture-backed and local only. It does not implement a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent background Service, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+
+- Title: Check Durable Local WorkerRun Slice v0
+- Status: Needs Review
+- Objective: independently verify `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01` without repairing implementation or accepting `durable_local_worker_run_slice_v0`.
+- Scope: `.aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/**`, `.aide/reports/durable-local-worker-run-slice-v0-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source build commit `164b77b53b1d41933dd870b019ade0ae4a044b8c`, `PASS_WITH_WARNINGS`, `missing_evidence: 0`, and route to this check.
+- Verification Intent: evidence-local independent harness, fresh `write_reports=False` fixture run, direct SQLite/event/artifact inspection, source report consistency review, false-boundary/source scan, focused durable tests, broad validation, diff checks, leak scans, task inspect/evidence, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records the independent check result, and recommends either acceptance or a bounded repair task.
+- Result: `REQUEST_CHANGES`.
+- Notes: One material finding remains: EventRecord payload result is `null` while the fixture report records `host_result: PASS`. The next task is `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`.

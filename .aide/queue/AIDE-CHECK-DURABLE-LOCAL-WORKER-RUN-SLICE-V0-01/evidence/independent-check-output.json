@@ -1,0 +1,429 @@
+{
+  "assertions": [
+    {
+      "category": "source_chain",
+      "description": "Build task reports PASS_WITH_WARNINGS with no missing evidence.",
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json",
+        ".aide/reports/durable-local-worker-run-slice-v0/validation.json"
+      ],
+      "expected": {
+        "status": "PASS_WITH_WARNINGS",
+        "validated": true
+      },
+      "id": "source_task_complete",
+      "observed": {
+        "status": "PASS_WITH_WARNINGS",
+        "validated": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "runtime_observation",
+      "description": "Fresh task-local fixture run launches exactly one accepted local reference host process.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/independent-check-output.json"
+      ],
+      "expected": {
+        "process_call_count": 1,
+        "reference_worker_process_started": true
+      },
+      "id": "fresh_fixture_one_process",
+      "observed": {
+        "process_call_count": 1,
+        "reference_worker_process_started": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "authority",
+      "description": "Fresh fixture records allowed local authorization and one-use grant consumption.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/independent-check-output.json"
+      ],
+      "expected": {
+        "authorization_result": "allowed",
+        "trust_grant_consumed": true
+      },
+      "id": "authorization_before_launch",
+      "observed": {
+        "authorization_result": "allowed",
+        "trust_grant_consumed": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "persistence",
+      "description": "Temporary local Service state contains expected objects, events, idempotency rows, and artifact metadata.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/sqlite-summary.json"
+      ],
+      "expected": {
+        "artifact_metadata": 2,
+        "events": 6,
+        "idempotency_at_least": 2,
+        "object_kinds_subset": [
+          "AdmissionRecord",
+          "AuthorizationEvaluation",
+          "CapabilityGrant",
+          "EventRecord",
+          "EvidencePacket",
+          "ExecutionHostOutcome",
+          "PolicyDecision",
+          "Principal",
+          "WorkUnit",
+          "WorkerRun"
+        ]
+      },
+      "id": "sqlite_persistence",
+      "observed": {
+        "counts": {
+          "artifact_metadata": 2,
+          "cursors": 0,
+          "events": 6,
+          "idempotency": 2,
+          "migrations": 1,
+          "objects": 11
+        },
+        "object_kinds": [
+          "AdmissionRecord",
+          "AuthorizationEvaluation",
+          "CapabilityGrant",
+          "DelegationRecord",
+          "EventRecord",
+          "EvidencePacket",
+          "ExecutionHostOutcome",
+          "PolicyDecision",
+          "Principal",
+          "WorkUnit",
+          "WorkerRun"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "events",
+      "description": "Temporary local Service events are contiguous and semantically ordered.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/sqlite-summary.json"
+      ],
+      "expected": {
+        "event_types": [
+          "trust.authorization_evaluated",
+          "trust.grant_consumed",
+          "durable_worker_run.workunit_recorded",
+          "durable_worker_run.started",
+          "durable_worker_run.completed",
+          "durable_worker_run.evidence_recorded"
+        ],
+        "sequences": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "id": "event_sequence",
+      "observed": {
+        "event_types": [
+          "trust.authorization_evaluated",
+          "trust.grant_consumed",
+          "durable_worker_run.workunit_recorded",
+          "durable_worker_run.started",
+          "durable_worker_run.completed",
+          "durable_worker_run.evidence_recorded"
+        ],
+        "sequences": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "idempotency",
+      "description": "Fresh fixture records idempotent replay without a second host launch.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/independent-check-output.json"
+      ],
+      "expected": {
+        "host_call_count_after_replay": 1,
+        "idempotent_replay_no_second_host_launch": true
+      },
+      "id": "idempotent_replay",
+      "observed": {
+        "host_call_count_after_replay": 1,
+        "idempotent_replay_no_second_host_launch": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "artifacts",
+      "description": "Raw event stream and worker artifact paths exist and hashes match declared digests.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/artifact-integrity.json"
+      ],
+      "expected": {
+        "hashes_match": true,
+        "raw_event_exists": true
+      },
+      "id": "artifact_integrity",
+      "observed": {
+        "raw_event_exists": true,
+        "raw_event_sha_matches": true,
+        "worker_integrity": [
+          {
+            "expected": "sha256:dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5",
+            "matches": true,
+            "observed": "sha256:dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5",
+            "path": ".aide/reports/local-process-execution-host/artifacts/sha256/dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5.json"
+          }
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "events",
+      "description": "Raw event stream is parseable NDJSON and contains worker lifecycle events.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/raw-events/sha256/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2.ndjson"
+      ],
+      "expected": {
+        "parseable": true,
+        "run_completed": true,
+        "run_started": true
+      },
+      "id": "raw_event_stream_semantics",
+      "observed": {
+        "events": [
+          "run_created",
+          "run_started",
+          "worker_message",
+          "artifact_produced",
+          "usage_updated",
+          "run_completed"
+        ],
+        "line_count": 6
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "non_capabilities",
+      "description": "Fresh fixture keeps all explicit false-boundary fields boolean false.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/independent-check-output.json"
+      ],
+      "expected": {
+        "arbitrary_command_executed": false,
+        "autonomous_ai_worker_started": false,
+        "branch_worktree_automation_performed": false,
+        "development_transaction_created": false,
+        "general_worker_harness_implemented": false,
+        "github_mutation_performed": false,
+        "lease_created": false,
+        "mcp_runtime_started": false,
+        "network_calls_performed": false,
+        "patch_transaction_applied": false,
+        "persistent_background_service_started": false,
+        "preview_session_created": false,
+        "provider_model_calls_performed": false,
+        "release_or_promotion_performed": false,
+        "remote_execution_host_started": false,
+        "repository_mutation_performed": false,
+        "scheduler_started": false,
+        "transaction_approval_performed": false,
+        "workbench_runtime_started": false
+      },
+      "id": "false_boundaries",
+      "observed": {
+        "arbitrary_command_executed": false,
+        "autonomous_ai_worker_started": false,
+        "branch_worktree_automation_performed": false,
+        "development_transaction_created": false,
+        "general_worker_harness_implemented": false,
+        "github_mutation_performed": false,
+        "lease_created": false,
+        "mcp_runtime_started": false,
+        "network_calls_performed": false,
+        "patch_transaction_applied": false,
+        "persistent_background_service_started": false,
+        "preview_session_created": false,
+        "provider_model_calls_performed": false,
+        "release_or_promotion_performed": false,
+        "remote_execution_host_started": false,
+        "repository_mutation_performed": false,
+        "scheduler_started": false,
+        "transaction_approval_performed": false,
+        "workbench_runtime_started": false
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "read_only_safety",
+      "description": "Fresh fixture reports unchanged material source snapshot and checkout.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/independent-check-output.json"
+      ],
+      "expected": {
+        "source_checkout_unchanged": true,
+        "source_snapshot_unchanged": true
+      },
+      "id": "source_state_unchanged",
+      "observed": {
+        "source_checkout_unchanged": true,
+        "source_snapshot_unchanged": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "evidence",
+      "description": "EvidencePacket claims and artifact references match source fixture report.",
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/evidence-packet.json",
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json"
+      ],
+      "expected": {
+        "host_raw_event_stream_sha_matches": true,
+        "validated": true
+      },
+      "id": "evidence_packet_consistency",
+      "observed": {
+        "artifact_roles": [
+          "fixture_report",
+          "projection",
+          "host_raw_event_stream"
+        ],
+        "validated": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "evidence_truthfulness",
+      "description": "EventRecord payload should preserve the observed host result from the durable WorkerRun fixture report.",
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/event-record.json",
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json"
+      ],
+      "expected": {
+        "event_payload_result": "PASS"
+      },
+      "id": "event_record_result_consistency",
+      "observed": {
+        "event_payload_result": null,
+        "event_status_result": "PASS",
+        "fixture_host_result": "PASS"
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null
+    },
+    {
+      "category": "evidence",
+      "description": "Committed durable reports and build task evidence contain no local absolute path or secret-like leak.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/leak-scan.json"
+      ],
+      "expected": [],
+      "id": "report_scrubbed",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    }
+  ],
+  "fresh_fixture_summary": {
+    "authorization_result": "allowed",
+    "host_result": "PASS",
+    "idempotent_replay_no_second_host_launch": true,
+    "process_call_count": 1,
+    "reference_worker_process_started": true,
+    "service_event_sequences": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "service_event_types": [
+      "trust.authorization_evaluated",
+      "trust.grant_consumed",
+      "durable_worker_run.workunit_recorded",
+      "durable_worker_run.started",
+      "durable_worker_run.completed",
+      "durable_worker_run.evidence_recorded"
+    ],
+    "service_objects_persisted": [
+      "event_record",
+      "evidence_packet",
+      "host_outcome",
+      "worker_run",
+      "workunit"
+    ],
+    "source_snapshot_unchanged": true,
+    "status": "PASS_WITH_WARNINGS",
+    "trust_grant_consumed": true
+  },
+  "material_finding_count": 1,
+  "material_findings": [
+    {
+      "category": "evidence_truthfulness",
+      "description": "EventRecord payload should preserve the observed host result from the durable WorkerRun fixture report.",
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/event-record.json",
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json"
+      ],
+      "expected": {
+        "event_payload_result": "PASS"
+      },
+      "id": "event_record_result_consistency",
+      "observed": {
+        "event_payload_result": null,
+        "event_status_result": "PASS",
+        "fixture_host_result": "PASS"
+      },
+      "outcome": "FAIL",
+      "severity": "material",
+      "source_finding_id": null
+    }
+  ],
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+  "result": "REQUEST_CHANGES",
+  "schema_version": "aide.durable-local-worker-run.check.v0",
+  "source_task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "warnings": [
+    "The checked capability remains fixture-backed.",
+    "The check did not repair production implementation.",
+    "No general worker harness, scheduler, persistent daemon, Workbench/MCP runtime, provider/model call, network call, preview, apply, rollback, or repository mutation is accepted."
+  ]
+}

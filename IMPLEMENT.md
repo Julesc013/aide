@@ -8869,3 +8869,48 @@ task-local evidence.
   Workbench/MCP runtime, provider/model calls, network calls,
   preview/apply/rollback, transaction approval, repository mutation, GitHub
   mutation, release, or promotion.
+
+## Work Item: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+
+### Status
+
+Completed with `REQUEST_CHANGES` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/**`
+- `.aide/reports/durable-local-worker-run-slice-v0-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The durable local WorkerRun build was complete, warning-bearing, and routed to
+an independent check. The check needed to verify durable Service persistence,
+host process accounting, idempotency, artifacts, evidence, EventRecord
+truthfulness, and non-capability boundaries without repairing implementation.
+
+### Implementation Notes
+
+- Added a check task packet and independent task-local harness.
+- Ran a fresh durable fixture as the system under test with `write_reports=False`.
+- Independently inspected temporary SQLite objects, events, idempotency rows,
+  artifact metadata, raw event stream integrity, false-boundary values, and
+  committed report consistency.
+- Preserved the failed evidence and routed to a bounded repair task.
+
+### Verification
+
+The independent harness recorded `REQUEST_CHANGES`, `material_finding_count: 1`,
+and `missing_evidence: 0`. The fresh fixture still proved one process call,
+authorization before launch, grant consumption, monotonic events, idempotent
+replay without a second launch, artifact integrity, and false-boundary
+preservation.
+
+### Remaining Issues
+
+- `event_record_result_consistency`: `.aide/reports/durable-local-worker-run-slice-v0/fixture-report.json`
+  records `host_result: PASS`, but `.aide/reports/durable-local-worker-run-slice-v0/event-record.json`
+  records `spec.payload.result: null`.
+- Next task: `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`.

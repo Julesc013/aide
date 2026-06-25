@@ -1,0 +1,146 @@
+{
+  "artifact_metadata": [
+    {
+      "digest": "sha256:702b42830518c14d92d23ac68ae4dd66325a47e7371b579db8fa2dff3f3d5a12",
+      "media_type": "application/json",
+      "relative_path": "artifacts/sha256/70/702b42830518c14d92d23ac68ae4dd66325a47e7371b579db8fa2dff3f3d5a12",
+      "size": 3402
+    },
+    {
+      "digest": "sha256:ba344e7d5cc173d0c61a0d0cb37a790662dd4ffc0d75f77c914edf764cc215c6",
+      "media_type": "application/json",
+      "relative_path": "artifacts/sha256/ba/ba344e7d5cc173d0c61a0d0cb37a790662dd4ffc0d75f77c914edf764cc215c6",
+      "size": 1810
+    }
+  ],
+  "counts": {
+    "artifact_metadata": 2,
+    "cursors": 0,
+    "events": 6,
+    "idempotency": 2,
+    "migrations": 1,
+    "objects": 11
+  },
+  "events": [
+    {
+      "digest": "sha256:6f5aca61f3bd477a39965ad06fe20ce62f36d259e86c867a269464105a7a9114",
+      "event_ref": "aide://event/local-trust-evaluation/durable-worker-run-authorization",
+      "event_type": "trust.authorization_evaluated",
+      "sequence": 1,
+      "subject_ref": "aide://authorization-evaluation/fixture"
+    },
+    {
+      "digest": "sha256:4edfeb945914e6014c3dac7fe8d1624ed73c5a002496873c8c8cfccca709f9f8",
+      "event_ref": "aide://event/local-trust-grant-consumed/durable-worker-run-authorization",
+      "event_type": "trust.grant_consumed",
+      "sequence": 2,
+      "subject_ref": "aide://grant/local-process-host-one-use"
+    },
+    {
+      "digest": "sha256:5c58e189955b837505923309a2e499f6626bf12321ba7cc5648eb3b0cef705d5",
+      "event_ref": "aide://event/durable-local-worker-run/workunit-recorded",
+      "event_type": "durable_worker_run.workunit_recorded",
+      "sequence": 3,
+      "subject_ref": "aide://workunit/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01"
+    },
+    {
+      "digest": "sha256:a68925b1e8ff7ed495b6ce8a201815aa7db5dd07b03bcc38e35c56d80df715ca",
+      "event_ref": "aide://event/durable-local-worker-run/started",
+      "event_type": "durable_worker_run.started",
+      "sequence": 4,
+      "subject_ref": "aide://worker-run/durable-local-worker-run-slice-v0"
+    },
+    {
+      "digest": "sha256:bd3f4a78abbf5b1aea7ac18858fdf89a4de5b5927d44df72819c1abb3315bdad",
+      "event_ref": "aide://event/durable-local-worker-run/completed",
+      "event_type": "durable_worker_run.completed",
+      "sequence": 5,
+      "subject_ref": "aide://worker-run/durable-local-worker-run-slice-v0"
+    },
+    {
+      "digest": "sha256:93299a2b1a1b52f04cd60feebdd7055bfd6c473f52b6f4299ca674f680420a23",
+      "event_ref": "aide://event/durable-local-worker-run/evidence-recorded",
+      "event_type": "durable_worker_run.evidence_recorded",
+      "sequence": 6,
+      "subject_ref": "aide://evidence/durable-local-worker-run-slice-v0"
+    }
+  ],
+  "idempotency": [
+    {
+      "key": "durable-local-worker-run-slice-v0",
+      "request_digest": "sha256:2b7977a0b28f0432b0489d2e66ffb7281f80cb99b3c85b1857cc377dfbbf758a",
+      "result_ref": "aide://worker-run/durable-local-worker-run-slice-v0"
+    },
+    {
+      "key": "durable-worker-run-authorization",
+      "request_digest": "sha256:802469cd3988193d1302bed4a985f2467fb77ce2aafa2f5a07cdf21de15714c1",
+      "result_ref": "aide://authorization-evaluation/fixture"
+    }
+  ],
+  "objects": [
+    {
+      "digest": "sha256:3867046cc049ba38f8f521c4545def85c48b6063378648f0929d79135b279e89",
+      "kind": "AdmissionRecord",
+      "ref": "aide://admission/local-process-host-fixture"
+    },
+    {
+      "digest": "sha256:63816c381b3b4c09249d1cc2a3226d08757f4d21cabfb99b60fe6ecf8b9230b6",
+      "kind": "AuthorizationEvaluation",
+      "ref": "aide://authorization-evaluation/fixture"
+    },
+    {
+      "digest": "sha256:f44071eede99aff51d645ef71e14f1b7d4f55466c19bfbc0059093c67d60676f",
+      "kind": "DelegationRecord",
+      "ref": "aide://delegation/local-process-host-fixture"
+    },
+    {
+      "digest": "sha256:e889c08616708804d78a2c66974b2cdd2a0e9b1093503c779e460b3fdc81065e",
+      "kind": "EventRecord",
+      "ref": "aide://event/EVT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0"
+    },
+    {
+      "digest": "sha256:871d5b06946da13f301de094800b11d32c5ae743c024dee4d800bac53a133fd9",
+      "kind": "EvidencePacket",
+      "ref": "aide://evidence/durable-local-worker-run-slice-v0"
+    },
+    {
+      "digest": "sha256:61d2f20c565574586e8c7e9678b2b8d2fcba12c473d72e2a1d4fed99241c8624",
+      "kind": "ExecutionHostOutcome",
+      "ref": "aide://execution-host-outcome/durable-local-worker-run-slice-v0"
+    },
+    {
+      "digest": "sha256:b5f55d00681cc011def42735444b621dad00bb4c8c7925cd1cbee4c4b9f1bea2",
+      "kind": "CapabilityGrant",
+      "ref": "aide://grant/local-process-host-one-use"
+    },
+    {
+      "digest": "sha256:417098b298766acbe0b3fa589528e7359ee729338c08e3365c83fda6ea941ad7",
+      "kind": "PolicyDecision",
+      "ref": "aide://policy-decision/local-process-host-allow"
+    },
+    {
+      "digest": "sha256:09a8edc028be696eed7c53a09370edd68ae5f645644ee1e8e20b9831cf593525",
+      "kind": "Principal",
+      "ref": "aide://principal/human-fixture"
+    },
+    {
+      "digest": "sha256:717075b06a861c991e3221470b59128b301b5a489706265ed95e3e037aa0872d",
+      "kind": "WorkerRun",
+      "ref": "aide://worker-run/durable-local-worker-run-slice-v0"
+    },
+    {
+      "digest": "sha256:f7f212e884c49d9d063a35f0d0f1a351f64c19465d57de61a1d6cab31010867f",
+      "kind": "WorkUnit",
+      "ref": "aide://workunit/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01"
+    }
+  ],
+  "tables": [
+    "artifact_metadata",
+    "cursors",
+    "events",
+    "idempotency",
+    "migrations",
+    "objects",
+    "sqlite_sequence"
+  ]
+}
