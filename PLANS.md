@@ -2621,3 +2621,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `local_trust_enforcement_v0`, preserves local-only/no-external-authority boundaries, and recommends exactly `AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: This build does not implement external IAM, credentials, secrets, OIDC, remote policy engines, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01
+
+- Title: Check Local Trust Enforcement v0
+- Status: Needs Review
+- Objective: independently verify `AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01` without repairing implementation or accepting `local_trust_enforcement_v0`.
+- Scope: `.aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/**`, `.aide/reports/local-trust-enforcement-v0-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source build commit `d4b9db64938423aea46b31882e8b5aeb887fa79d`, `PASS_WITH_WARNINGS`, `missing_evidence: 0`, and route to this check.
+- Verification Intent: evidence-local independent harness, direct SQLite inspection, public local-trust fixture probe, refusal-matrix review, false-boundary/source scan, focused tests, broad validation, diff checks, leak scans, task inspect/evidence, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: This check does not repair implementation, accept the capability, implement external IAM, credentials, secrets, OIDC, remote policy engines, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

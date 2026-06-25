@@ -1,0 +1,354 @@
+[
+  {
+    "category": "source-chain",
+    "description": "Source build task reports the expected capability, result, evidence, and route.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/task.yaml",
+      ".aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/status.yaml",
+      ".aide/reports/local-trust-enforcement-v0/validation.json",
+      ".aide/reports/local-trust-enforcement-v0/fixture-report.json"
+    ],
+    "expected": {
+      "missing_evidence": 0,
+      "next": "AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01",
+      "result": "PASS_WITH_WARNINGS",
+      "validated": true
+    },
+    "id": "source.task_chain",
+    "observed": {
+      "fixture_status": "PASS_WITH_WARNINGS",
+      "missing_evidence": 0,
+      "recommended_next_task": "AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01",
+      "status_result": "PASS_WITH_WARNINGS",
+      "task_result": "PASS_WITH_WARNINGS",
+      "task_status": "needs_review",
+      "validation_status": "PASS_WITH_WARNINGS",
+      "validation_validated": true
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "enforcement",
+    "description": "Allowed authorization evaluation persists and consumes the one-use grant.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py"
+    ],
+    "expected": {
+      "evaluation_result": "allowed",
+      "grant_status": "consumed",
+      "remaining_uses": 0
+    },
+    "id": "enforcement.allowed_consumes_grant",
+    "observed": {
+      "evaluation_result": "allowed",
+      "grant_consumed": true,
+      "grant_remaining_uses": 0,
+      "sqlite_grant_remaining_uses": 0,
+      "sqlite_grant_status": "consumed"
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "enforcement",
+    "description": "Idempotent replay adds no second event and a second final-use attempt fails closed.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py"
+    ],
+    "expected": {
+      "event_sequences": [
+        1,
+        2
+      ],
+      "idempotency_count": 1,
+      "second_final_use_refused": true
+    },
+    "id": "enforcement.final_use_and_idempotency",
+    "observed": {
+      "concurrent_final_use_refused": true,
+      "idempotent_replay_no_second_event": true,
+      "sqlite_event_sequences": [
+        1,
+        2
+      ],
+      "sqlite_idempotency_count": 1
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "persistence",
+    "description": "SQLite persistence contains the expected trust objects, monotonic events, and grant-consumption event.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py"
+    ],
+    "expected": {
+      "event_types": [
+        "trust.authorization_evaluated",
+        "trust.grant_consumed"
+      ],
+      "object_kinds": [
+        "AdmissionRecord",
+        "AuthorizationEvaluation",
+        "CapabilityGrant",
+        "DelegationRecord",
+        "PolicyDecision",
+        "Principal"
+      ]
+    },
+    "id": "persistence.sqlite_objects_events",
+    "observed": {
+      "evaluation_reason_codes": [],
+      "evaluation_result": "allowed",
+      "event_sequences": [
+        1,
+        2
+      ],
+      "event_subjects": [
+        "aide://authorization-evaluation/fixture",
+        "aide://grant/local-process-host-one-use"
+      ],
+      "event_types": [
+        "trust.authorization_evaluated",
+        "trust.grant_consumed"
+      ],
+      "grant_remaining_uses": 0,
+      "grant_status": "consumed",
+      "grant_version": 2,
+      "idempotency_count": 1,
+      "idempotency_keys": [
+        "local-trust-fixture"
+      ],
+      "object_count": 6,
+      "object_kinds": [
+        "AdmissionRecord",
+        "AuthorizationEvaluation",
+        "CapabilityGrant",
+        "DelegationRecord",
+        "PolicyDecision",
+        "Principal"
+      ],
+      "tables": [
+        "artifact_metadata",
+        "cursors",
+        "events",
+        "idempotency",
+        "migrations",
+        "objects",
+        "sqlite_sequence"
+      ]
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "refusal-matrix",
+    "description": "Negative authorization matrix covers every expected refusal code and each fixture carries its own code.",
+    "evidence_refs": [
+      "core/protocol/trust_authorization.py",
+      ".aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py"
+    ],
+    "expected": [
+      "approval_required",
+      "capability_not_admitted",
+      "delegation_expired",
+      "delegation_not_allowed",
+      "delegation_scope_widening",
+      "effect_not_granted",
+      "execution_mode_not_granted",
+      "grant_exhausted",
+      "grant_expired",
+      "grant_inactive",
+      "grant_missing",
+      "grant_revoked",
+      "implementation_digest_mismatch",
+      "implementation_not_admitted",
+      "network_not_granted",
+      "policy_denied",
+      "principal_inactive",
+      "principal_unknown",
+      "required_feature_unsupported",
+      "resource_scope_mismatch",
+      "secret_not_granted",
+      "workspace_scope_mismatch"
+    ],
+    "id": "refusal.matrix_complete",
+    "observed": {
+      "codes": [
+        "approval_required",
+        "capability_not_admitted",
+        "delegation_expired",
+        "delegation_not_allowed",
+        "delegation_scope_widening",
+        "effect_not_granted",
+        "execution_mode_not_granted",
+        "grant_exhausted",
+        "grant_expired",
+        "grant_inactive",
+        "grant_missing",
+        "grant_revoked",
+        "implementation_digest_mismatch",
+        "implementation_not_admitted",
+        "network_not_granted",
+        "policy_denied",
+        "principal_inactive",
+        "principal_unknown",
+        "required_feature_unsupported",
+        "resource_scope_mismatch",
+        "secret_not_granted",
+        "workspace_scope_mismatch"
+      ],
+      "self_refs": {
+        "approval_required": true,
+        "capability_not_admitted": true,
+        "delegation_expired": true,
+        "delegation_not_allowed": true,
+        "delegation_scope_widening": true,
+        "effect_not_granted": true,
+        "execution_mode_not_granted": true,
+        "grant_exhausted": true,
+        "grant_expired": true,
+        "grant_inactive": true,
+        "grant_missing": true,
+        "grant_revoked": true,
+        "implementation_digest_mismatch": true,
+        "implementation_not_admitted": true,
+        "network_not_granted": true,
+        "policy_denied": true,
+        "principal_inactive": true,
+        "principal_unknown": true,
+        "required_feature_unsupported": true,
+        "resource_scope_mismatch": true,
+        "secret_not_granted": true,
+        "workspace_scope_mismatch": true
+      }
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "authority-boundary",
+    "description": "False-boundary fields remain false and local-trust implementation does not launch processes or use network clients.",
+    "evidence_refs": [
+      "core/service/local_trust_enforcement.py",
+      ".aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py"
+    ],
+    "expected": {
+      "all_false": true,
+      "forbidden_source_hits": []
+    },
+    "id": "boundary.false_no_external_execution",
+    "observed": {
+      "boundary_values": {
+        "branch_worktree_mutation_performed": false,
+        "credentials_embedded": false,
+        "external_iam_implemented": false,
+        "github_mutation_performed": false,
+        "network_calls_performed": false,
+        "preview_apply_implemented": false,
+        "process_launch_performed": false,
+        "provider_model_calls_performed": false,
+        "release_or_promotion_performed": false,
+        "repository_mutation_performed": false,
+        "secrets_embedded": false,
+        "transaction_approval_implemented": false,
+        "worker_execution_performed": false
+      },
+      "source_scan": {
+        "forbidden_hits": [],
+        "passed": true
+      }
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "determinism",
+    "description": "Two clean fixture runs produce identical semantic reports.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py"
+    ],
+    "expected": true,
+    "id": "determinism.fixture_semantics",
+    "observed": {
+      "digest_1": "sha256:dec1d5dd14781380e5d8bd5d3605bcfafdcc8d2c62f20079de9868a5908b59f1",
+      "digest_2": "sha256:dec1d5dd14781380e5d8bd5d3605bcfafdcc8d2c62f20079de9868a5908b59f1"
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "cli",
+    "description": "Public local-trust fixture command succeeds and reports the same false boundaries.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py"
+    ],
+    "expected": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout_contains": "all true"
+    },
+    "id": "cli.fixture_boundary",
+    "observed": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout_contains": {
+        "capability": true,
+        "network_false": true,
+        "process_false": true,
+        "result": true,
+        "worker_false": true
+      }
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "cleanliness",
+    "description": "Check harness and public fixture do not create unexpected checkout churn beyond the check task outputs.",
+    "evidence_refs": [
+      ".aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py"
+    ],
+    "expected": {
+      "status_after_cli": "same or only check outputs",
+      "status_after_sut_fixture": "?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/ExecPlan.md\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/prompt.md\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/status.yaml\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/task.yaml\n"
+    },
+    "id": "cleanliness.git_status_unchanged",
+    "observed": {
+      "after_cli": "?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/ExecPlan.md\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/prompt.md\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/status.yaml\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/task.yaml\n",
+      "after_sut_fixture": "?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/ExecPlan.md\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/prompt.md\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/status.yaml\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/task.yaml\n",
+      "before": "?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/ExecPlan.md\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/independent_local_trust_check.py\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/prompt.md\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/status.yaml\n?? .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/task.yaml\n"
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  },
+  {
+    "category": "report-integrity",
+    "description": "Committed source reports contain no local absolute checkout paths or secret-like assignments.",
+    "evidence_refs": [
+      ".aide/reports/local-trust-enforcement-v0/**"
+    ],
+    "expected": {
+      "leaks": [],
+      "scrubbed": true
+    },
+    "id": "reports.source_reports_scrubbed",
+    "observed": {
+      "leaks": [],
+      "scrubbed": true
+    },
+    "outcome": "PASS",
+    "severity": "material",
+    "source_finding_id": null
+  }
+]

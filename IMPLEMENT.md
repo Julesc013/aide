@@ -8723,3 +8723,49 @@ task-local evidence.
   authorization, worker execution, transaction approval, provider/model calls,
   network calls, preview/apply/rollback, and repository mutation remain
   non-capabilities.
+
+## Work Item: AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/**`
+- `.aide/reports/local-trust-enforcement-v0-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The local trust enforcement build proposed the first local enforcement slice
+over the accepted trust contracts and accepted local Service foundation. This
+check independently verifies that the slice behaves as claimed before any
+acceptance task can consolidate the capability.
+
+### Implementation Notes
+
+- Added an independent check task packet and report set.
+- Added an evidence-local harness that uses the local-trust module as the
+  system under test but directly inspects the resulting SQLite state, event
+  rows, idempotency records, refusal matrix, false-boundary fields, CLI output,
+  determinism, and source report scrub status.
+- Recorded no material findings and routed to acceptance.
+
+### Verification
+
+The independent harness passed with 10 material assertions, zero material
+findings, and `missing_evidence: 0`. Final focused tests, broad validation,
+task inspect/evidence, diff checks, leak scans, and commit-policy validation
+are recorded in task-local evidence.
+
+### Remaining Issues
+
+- `AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01` is required before this proposed
+  capability is accepted.
+- External IAM, credentials, secrets, OIDC, remote policy engines, process
+  launch, worker execution, transaction approval, provider/model calls, network
+  calls, preview/apply/rollback, repository mutation, GitHub mutation, release,
+  and promotion remain non-capabilities.
