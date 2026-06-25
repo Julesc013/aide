@@ -1,0 +1,30 @@
+schema_version: aide.task-status.v0
+id: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+source_task: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+source_commit: e57fb7d0b6c18b6847e27082db09b135593e6974
+source_result: PASS_WITH_WARNINGS
+source_material_finding_count: 0
+source_missing_evidence: 0
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+evidence:
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/check_local_process_host_repair_02.py
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/summary.md
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/validation-commands.md
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/validation-results.md
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/blockers-or-deferrals.md
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/next-task-prompt.md
+warnings:
+  - LocalProcessExecutionHost remains fixture-backed and proposed/unaccepted.
+  - Public process cancellation remains unsupported in v0.
+  - Reparse-point practical fixture coverage remains platform-dependent.
+blockers: []

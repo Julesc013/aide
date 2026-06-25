@@ -1,0 +1,38 @@
+{
+  "findings": [
+    {
+      "assertions": [
+        "workspace.path_probe_matrix",
+        "workspace.test_matrix_complete"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "local_host.path_escape_not_proven"
+    },
+    {
+      "assertions": [
+        "events.duplicate_terminal_reason",
+        "events.test_matrix_complete"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "local_host.raw_event_stream_not_proven"
+    },
+    {
+      "assertions": [
+        "artifacts.test_matrix_complete"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "local_host.content_addressed_artifacts_not_proven"
+    },
+    {
+      "assertions": [
+        "lifecycle.cancelled_terminal_present",
+        "lifecycle.test_matrix_complete"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "local_host.workerrun_lifecycle_not_proven"
+    }
+  ],
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.local-process-execution-host.repair-02-closure.v0",
+  "task_id": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
+}

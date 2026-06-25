@@ -1,0 +1,45 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+title: Check LocalProcessExecutionHost v0 Repair 02
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Independently verify whether
+  AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02 closes the seven
+  material assertions from AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01.
+authorizes_implementation: false
+check_only: true
+acceptance_only: false
+source_task: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+source_commit: e57fb7d0b6c18b6847e27082db09b135593e6974
+source_result: PASS_WITH_WARNINGS
+source_material_finding_count: 0
+source_missing_evidence: 0
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/**
+  - .aide/reports/local-process-execution-host-repair-02-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/local_process_host.py
+  - .aide/scripts/tests/test_aide_local_process_execution_host.py
+  - core/execution/registered_process.py
+  - core/protocol/execution_host.py
+  - .aide/protocol/aide-execution-host.schema.json
+  - .aide/fixtures/local-process-execution-host/**
+  - .aide/reports/local-process-execution-host/**
+  - .aide/reports/local-process-execution-host-repair-02/**
+  - core/interop/dominium/**
+  - core/interop/eureka/**
+  - core/interop/aide/**
+  - hosts/**
+  - .aide.local/**
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01

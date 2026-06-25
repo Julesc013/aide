@@ -1,0 +1,163 @@
+{
+  "assertions": [
+    {
+      "category": "scope",
+      "description": "Repair 02 did not modify provider core, accepted contract, interop domains, hosts, or local Service state.",
+      "evidence_refs": [
+        "git diff --name-only HEAD^ HEAD"
+      ],
+      "expected": [],
+      "id": "scope.forbidden_paths_unchanged",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "baseline"
+    },
+    {
+      "category": "workspace",
+      "description": "Portable absolute/traversal/link classification is independently exercised.",
+      "evidence_refs": [
+        "core/execution/local_process_host.py",
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "stable absolute/traversal/link refusal classes",
+      "id": "workspace.path_probe_matrix",
+      "observed": {
+        "../outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_TRAVERSAL",
+        "/outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_ABSOLUTE",
+        "C:/outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_ABSOLUTE",
+        "C:\\outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_ABSOLUTE",
+        "\\\\server\\share\\outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_ABSOLUTE",
+        "\\rooted\\outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_ABSOLUTE",
+        "artifact_absolute": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_PATH_ESCAPE",
+        "final_symlink": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_SYMLINK_ESCAPE",
+        "nested/../../outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_TRAVERSAL",
+        "nested/../outside.txt": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_PATH_TRAVERSAL",
+        "nested_symlink": "AIDE_LOCAL_PROCESS_HOST_WORKSPACE_SYMLINK_ESCAPE",
+        "reparse_fixture": "platform_dependent; implementation calls has_reparse_point with follow_symlinks_false",
+        "safe_nested": "nested/file.txt"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.path_escape_not_proven"
+    },
+    {
+      "category": "workspace",
+      "description": "Focused tests cover the required containment matrix.",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": [
+        "nested traversal",
+        "Windows absolute",
+        "nested symlink",
+        "reparse note",
+        "safe artifact directory",
+        "TOCTOU revalidation"
+      ],
+      "id": "workspace.test_matrix_complete",
+      "observed": "test_aide_local_process_execution_host.py includes path containment and artifact access-hook tests",
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.path_escape_not_proven"
+    },
+    {
+      "category": "events",
+      "description": "A second terminal event receives duplicate_terminal_event.",
+      "evidence_refs": [
+        "core/execution/local_process_host.py"
+      ],
+      "expected": "AIDE_LOCAL_PROCESS_HOST_DUPLICATE_TERMINAL_EVENT",
+      "id": "events.duplicate_terminal_reason",
+      "observed": "AIDE_LOCAL_PROCESS_HOST_DUPLICATE_TERMINAL_EVENT",
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.raw_event_stream_not_proven"
+    },
+    {
+      "category": "events",
+      "description": "Event stream matrix includes malformed, sequence, terminal, timeout, cancelled, failed, and reconciliation outcomes.",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "complete stable event refusal/outcome coverage",
+      "id": "events.test_matrix_complete",
+      "observed": {
+        "after_terminal": "AIDE_LOCAL_PROCESS_HOST_EVENT_AFTER_TERMINAL",
+        "cancelled": "AIDE_LOCAL_PROCESS_HOST_WORKER_CANCELLED",
+        "duplicate_terminal": "AIDE_LOCAL_PROCESS_HOST_DUPLICATE_TERMINAL_EVENT",
+        "malformed": "AIDE_LOCAL_PROCESS_HOST_MALFORMED_EVENT_STREAM",
+        "missing_terminal": "AIDE_LOCAL_PROCESS_HOST_TERMINAL_EVENT_MISSING",
+        "timeout": "AIDE_LOCAL_PROCESS_HOST_TIMEOUT"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.raw_event_stream_not_proven"
+    },
+    {
+      "category": "artifacts",
+      "description": "Artifact integrity policy covers valid, duplicate, mismatch, size mismatch, and unexpected file cases.",
+      "evidence_refs": [
+        "core/execution/local_process_host.py",
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "stable artifact integrity behavior",
+      "id": "artifacts.test_matrix_complete",
+      "observed": {
+        "digest": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_DIGEST_MISMATCH",
+        "duplicate": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_DUPLICATE_DECLARATION",
+        "size": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_SIZE_MISMATCH",
+        "unexpected": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_UNEXPECTED",
+        "valid_sha256": "sha256:55f66c2c5aeb275ff5b1ae26b321d5c0b8ceda8c034b19c2643e046d024919f3"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.content_addressed_artifacts_not_proven"
+    },
+    {
+      "category": "lifecycle",
+      "description": "Cancelled is present in terminal WorkerRun states.",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/worker-run.json",
+        "core/execution/local_process_host.py"
+      ],
+      "expected": "cancelled",
+      "id": "lifecycle.cancelled_terminal_present",
+      "observed": [
+        "completed",
+        "failed",
+        "timed_out",
+        "cancelled"
+      ],
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.workerrun_lifecycle_not_proven"
+    },
+    {
+      "category": "lifecycle",
+      "description": "Lifecycle transition matrix includes required successful, timeout, cancelled, reconciliation, and terminal-state refusal behavior.",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "expected": "complete lifecycle transition coverage",
+      "id": "lifecycle.test_matrix_complete",
+      "observed": {
+        "cancelled": "cancelled",
+        "completed": "completed",
+        "reconciliation": "reconciliation_required",
+        "terminal_refusal": "AIDE_LOCAL_PROCESS_HOST_TERMINAL_STATE_TRANSITION",
+        "timed_out": "timed_out"
+      },
+      "outcome": "PASS",
+      "severity": "material",
+      "source_finding_id": "local_host.workerrun_lifecycle_not_proven"
+    }
+  ],
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.local-process-execution-host.repair-02-check.v0",
+  "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02",
+  "task_id": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
+}

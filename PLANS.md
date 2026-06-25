@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+
+- Title: Check LocalProcessExecutionHost v0 Repair 02
+- Status: needs_review
+- Objective: independently verify Repair 02 closure of the seven material assertions from `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01`.
+- Scope: check task packet/evidence, check reports, queue index routing, and focused root log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/task.yaml`.
+- Dependencies: `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02` at `e57fb7d0b6c18b6847e27082db09b135593e6974`, result `PASS_WITH_WARNINGS`, material finding count `0`, missing evidence `0`.
+- Milestones: source chain checked; forbidden-path scope checked; task-local harness exercised path, event, artifact, and lifecycle behavior; all four still-open source findings marked closed; next task prompt generated.
+- Blockers: none. Acceptance remains a separate next task.
+- Verification Intent: independent harness, task inspect/evidence, focused local-process tests, regression tests, broad validation, diff checks, path/secret scans, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and next task exactly `AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01`.
+- Notes: this check does not repair implementation or accept `local_process_execution_host_fixture_v0`.
+
 ### Plan ID: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
 
 - Title: Repair LocalProcessExecutionHost v0 Repair 01 Check Findings
