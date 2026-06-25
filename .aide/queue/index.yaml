@@ -2389,3 +2389,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence
   description: Check-only independent review of AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01. Verifies source-chain consistency, accepted trust contract and local Service use, persisted AuthorizationEvaluation, one-use grant consumption, idempotent replay, second final-use refusal, SQLite object/event/idempotency evidence, complete refusal matrix, deterministic fixture semantics, public local-trust fixture CLI boundaries, scrubbed source reports, and no process launch or external authority behavior. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01. Does not repair implementation, accept the capability, implement external IAM, credentials, secrets, OIDC, remote policy engine, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+- id: AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept Local Trust Enforcement v0
+  task: .aide/queue/AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence
+  description: Acceptance-only consolidation for local_trust_enforcement_v0 after the build and independent check both passed with warnings, material_finding_count 0, and missing_evidence 0. Accepts exactly local_trust_enforcement_v0 as deterministic local authorization evaluation over accepted trust records with accepted local Service persistence, AuthorizationEvaluation and trust events, one-use grant consumption, idempotent replay, and second final-use refusal. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01. Does not accept external IAM, credentials, secrets, OIDC, remote policy engine, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

@@ -1,0 +1,63 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01
+title: Accept Local Trust Enforcement v0
+type: accept
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Accept only local_trust_enforcement_v0 after the build and independent check
+  both passed with warnings, zero material findings, and complete evidence.
+authorizes_implementation: false
+accepted_capability: local_trust_enforcement_v0
+accepted_meaning: >
+  AIDE can deterministically evaluate accepted local trust records, persist an
+  AuthorizationEvaluation and trust events through the accepted local Service
+  foundation, consume a one-use grant in a local SQLite transaction, and refuse
+  a second final-use attempt.
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01
+  - AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01/**
+  - .aide/reports/local-trust-enforcement-v0-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/service/**
+  - core/protocol/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_local_trust_enforcement.py
+  - .aide/reports/local-trust-enforcement-v0/**
+  - .aide/reports/local-trust-enforcement-v0-check/**
+  - core/execution/**
+  - core/interop/**
+  - hosts/**
+  - .aide.local/**
+explicit_non_capabilities:
+  - external IAM
+  - credentials
+  - secrets
+  - OIDC
+  - remote policy engine
+  - process launch
+  - worker execution
+  - transaction approval
+  - provider/model calls
+  - network calls
+  - preview/apply/rollback
+  - repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - Accepted capability is local, deterministic, and fixture-backed.
+  - It does not implement external identity, credentials, secrets, OIDC/IAM, remote policy, worker execution, or transaction approval.
+  - It does not launch processes or perform network, provider/model, preview/apply, repository, GitHub, release, or promotion behavior.
+recommended_next_task: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01

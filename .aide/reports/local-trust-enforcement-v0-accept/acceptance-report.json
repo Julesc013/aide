@@ -1,0 +1,90 @@
+{
+  "accepted_capability": "local_trust_enforcement_v0",
+  "accepted_meaning": "deterministic_local_trust_evaluation_persistence_and_one_use_grant_consumption_v0",
+  "assertions": [
+    {
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/status.yaml",
+        ".aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/task.yaml"
+      ],
+      "expected": {
+        "capability": "local_trust_enforcement_v0",
+        "missing_evidence": 0,
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "id": "acceptance.source_build_passed",
+      "observed": {
+        "capability": "local_trust_enforcement_v0",
+        "missing_evidence": 0,
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01/status.yaml",
+        ".aide/reports/local-trust-enforcement-v0-check/check-report.json"
+      ],
+      "expected": {
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "next": "AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "id": "acceptance.independent_check_passed",
+      "observed": {
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "next": "AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/local-trust-enforcement-v0/validation.json",
+        ".aide/reports/local-trust-enforcement-v0/fixture-report.json",
+        ".aide/reports/local-trust-enforcement-v0-check/check-report.json"
+      ],
+      "expected": "validated local deterministic enforcement with false authority boundaries",
+      "id": "acceptance.boundary_exactness",
+      "observed": {
+        "false_boundaries_ok": true,
+        "grant_consumed": true,
+        "second_final_use_refused": true,
+        "validated": true
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/local-trust-enforcement-v0/validation.json",
+        ".aide/reports/local-trust-enforcement-v0/fixture-report.json",
+        ".aide/reports/local-trust-enforcement-v0-check/check-report.json"
+      ],
+      "expected": "no secret-like values or local absolute checkout paths in source acceptance reports",
+      "id": "acceptance.no_secret_or_path_leak",
+      "observed": {
+        "leaks": []
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    }
+  ],
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "schema_version": "aide.local-trust-enforcement-acceptance.v0",
+  "source_build_task_id": "AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01",
+  "source_check_task_id": "AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01",
+  "task_id": "AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01",
+  "warnings": [
+    "Accepted capability is local, deterministic, and fixture-backed.",
+    "External identity, credentials, secrets, OIDC/IAM, remote policy engines, worker execution, and transaction approval remain non-capabilities.",
+    "Process launch, network, provider/model, preview/apply, repository, GitHub, release, and promotion behavior remain non-capabilities."
+  ]
+}

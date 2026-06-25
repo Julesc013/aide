@@ -8769,3 +8769,50 @@ are recorded in task-local evidence.
   launch, worker execution, transaction approval, provider/model calls, network
   calls, preview/apply/rollback, repository mutation, GitHub mutation, release,
   and promotion remain non-capabilities.
+
+## Work Item: AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01
+
+### Status
+
+Completed with `ACCEPTED_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01/**`
+- `.aide/reports/local-trust-enforcement-v0-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The local trust enforcement build and independent check both passed with
+warnings, zero material findings, and complete evidence. This task consolidates
+the exact accepted capability without broadening it into external identity,
+worker execution, transaction approval, network behavior, or mutation.
+
+### Implementation Notes
+
+- Added an acceptance task packet, evidence, reports, and accepted boundary.
+- Accepted exactly `local_trust_enforcement_v0`.
+- Preserved explicit non-capabilities for external IAM, credentials, secrets,
+  OIDC, remote policy engines, process launch, worker execution, transaction
+  approval, provider/model calls, network calls, preview/apply/rollback,
+  repository mutation, GitHub mutation, release, and promotion.
+- Routed next work to `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
+
+### Verification
+
+Acceptance evidence records `ACCEPTED_WITH_WARNINGS`, zero material findings,
+and `missing_evidence: 0`. Final source build/check/accept task inspect and
+evidence, local-trust validation, broad validation, scoped leak scans, diff
+checks, and commit-policy validation are recorded in task-local evidence.
+
+### Remaining Issues
+
+- Durable local WorkerRun integration is the next serialized build gate.
+- External IAM, credentials, secrets, OIDC, remote policy engines, process
+  launch, worker execution beyond accepted fixture-host proof, transaction
+  approval, provider/model calls, network calls, preview/apply/rollback,
+  repository mutation, GitHub mutation, release, and promotion remain future
+  work.

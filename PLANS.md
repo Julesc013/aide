@@ -2633,3 +2633,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: This check does not repair implementation, accept the capability, implement external IAM, credentials, secrets, OIDC, remote policy engines, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01
+
+- Title: Accept Local Trust Enforcement v0
+- Status: Needs Review
+- Objective: accept exactly `local_trust_enforcement_v0` after the build and independent check both passed with warnings and zero material findings.
+- Scope: `.aide/queue/AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01/**`, `.aide/reports/local-trust-enforcement-v0-accept/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source build commit `d4b9db64938423aea46b31882e8b5aeb887fa79d`, source check commit `18296e078cd6fbafa1622c0f61ff5bd16fec0b1d`, zero material findings, and complete evidence.
+- Verification Intent: source build/check inspect and evidence, local-trust validation, broad validation, diff checks, scoped leak scans, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `local_trust_enforcement_v0`, and recommends exactly `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Notes: This acceptance does not accept external IAM, credentials, secrets, OIDC, remote policy engines, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
