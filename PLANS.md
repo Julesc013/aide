@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+
+- Title: Build Trust And Authorization Contract v0
+- Status: needs_review
+- Objective: define `trust_and_authorization_contract_v0` as a portable projection-only contract for principals, exact implementation admission, policy decisions, bounded capability grants, delegation, revocation, and deterministic authorization evaluation.
+- Scope: trust authorization protocol helper, seven schema files, AIDE Lite `trust` status/project/validate commands, focused tests, generated reports, queue evidence, and root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01`, result `ACCEPTED_WITH_WARNINGS`, accepted capability `local_process_execution_host_fixture_v0`.
+- Milestones: trust record builders added; schema/helper validation added; refusal-code matrix covers all required codes; AIDE Lite `trust` CLI added; focused tests pass; reports and evidence written.
+- Blockers: none for the build. Independent check remains required before acceptance.
+- Verification Intent: focused trust contract tests, direct trust CLI status/project/validate, compile checks, registered-process/ExecutionHost/LocalProcess regressions, task inspect/evidence, broad validation, diff checks, path/secret scans, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, proposed capability `trust_and_authorization_contract_v0`, missing evidence `0`, and next task exactly `AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01`.
+- Notes: this build does not implement live identity, credentials, secrets, OIDC/IAM, live policy engine, live grants, runtime enforcement, worker execution, transaction approval, Service/runtime behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
 ### Plan ID: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
 
 - Title: Accept LocalProcessExecutionHost v0

@@ -15,6 +15,7 @@ __all__ = [
     "execution_receipt",
     "reference_id",
     "test_job",
+    "trust_authorization",
     "worker_run",
     "workunit",
     "workunit_cli",

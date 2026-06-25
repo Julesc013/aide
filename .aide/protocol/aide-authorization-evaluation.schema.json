@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Projection-only AuthorizationEvaluation record for AIDE trust and authorization contract v0.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "const": "AuthorizationEvaluation",
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "properties": {
+        "compatibility": {
+          "type": "object"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "producer": {
+          "type": "object"
+        },
+        "sourcePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "required": [
+        "evaluation_ref",
+        "principal_ref",
+        "admission_ref",
+        "policy_decision_ref",
+        "grant_ref",
+        "delegation_ref",
+        "revocation_refs",
+        "requested_operation",
+        "checks",
+        "result",
+        "reason_codes",
+        "evidence_refs",
+        "created_at"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "properties": {
+        "projection_only": {
+          "type": "boolean"
+        },
+        "validated": {
+          "type": "boolean"
+        },
+        "validation_errors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "validation_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "validated",
+        "projection_only",
+        "validation_errors",
+        "validation_warnings"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE AuthorizationEvaluation schema",
+  "type": "object"
+}

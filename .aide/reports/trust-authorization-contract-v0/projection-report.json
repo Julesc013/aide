@@ -1,0 +1,196 @@
+{
+  "branch_worktree_mutation_performed": false,
+  "capability_label": "trust_and_authorization_contract_v0",
+  "credentials_embedded": false,
+  "explicit_non_capabilities": [
+    "live_identity_provider",
+    "live_policy_engine",
+    "live_capability_grants",
+    "credential_storage",
+    "secret_storage",
+    "oidc_iam_integration",
+    "runtime_enforcement",
+    "worker_execution",
+    "transaction_approval",
+    "service_runtime",
+    "provider_model_calls",
+    "network_calls",
+    "preview_apply_runtime",
+    "repository_mutation",
+    "branch_worktree_automation",
+    "github_mutation",
+    "release_or_promotion"
+  ],
+  "fixture_matrix": {
+    "all_required_refusal_codes_covered": true,
+    "negative_evaluation_reason_codes": {
+      "approval_required": [
+        "approval_required"
+      ],
+      "capability_not_admitted": [
+        "capability_not_admitted"
+      ],
+      "delegation_expired": [
+        "delegation_expired"
+      ],
+      "delegation_not_allowed": [
+        "delegation_not_allowed"
+      ],
+      "delegation_scope_widening": [
+        "delegation_scope_widening"
+      ],
+      "effect_not_granted": [
+        "effect_not_granted"
+      ],
+      "execution_mode_not_granted": [
+        "execution_mode_not_granted"
+      ],
+      "grant_exhausted": [
+        "grant_exhausted"
+      ],
+      "grant_expired": [
+        "grant_expired"
+      ],
+      "grant_inactive": [
+        "grant_inactive"
+      ],
+      "grant_missing": [
+        "grant_missing"
+      ],
+      "grant_revoked": [
+        "grant_revoked"
+      ],
+      "implementation_digest_mismatch": [
+        "implementation_digest_mismatch"
+      ],
+      "implementation_not_admitted": [
+        "implementation_not_admitted"
+      ],
+      "network_not_granted": [
+        "network_not_granted"
+      ],
+      "policy_denied": [
+        "policy_denied"
+      ],
+      "principal_inactive": [
+        "principal_inactive"
+      ],
+      "principal_unknown": [
+        "principal_unknown"
+      ],
+      "required_feature_unsupported": [
+        "required_feature_unsupported"
+      ],
+      "resource_scope_mismatch": [
+        "resource_scope_mismatch"
+      ],
+      "secret_not_granted": [
+        "secret_not_granted"
+      ],
+      "workspace_scope_mismatch": [
+        "workspace_scope_mismatch"
+      ]
+    },
+    "positive_records": {
+      "admission": "AdmissionRecord",
+      "authorization_evaluation": "AuthorizationEvaluation",
+      "capability_grant": "CapabilityGrant",
+      "delegation": "DelegationRecord",
+      "policy_decision": "PolicyDecision",
+      "principal": "Principal",
+      "revocation": "RevocationRecord"
+    },
+    "required_refusal_codes": [
+      "principal_unknown",
+      "principal_inactive",
+      "implementation_not_admitted",
+      "implementation_digest_mismatch",
+      "capability_not_admitted",
+      "policy_denied",
+      "approval_required",
+      "grant_missing",
+      "grant_inactive",
+      "grant_expired",
+      "grant_revoked",
+      "grant_exhausted",
+      "workspace_scope_mismatch",
+      "resource_scope_mismatch",
+      "execution_mode_not_granted",
+      "effect_not_granted",
+      "network_not_granted",
+      "secret_not_granted",
+      "delegation_not_allowed",
+      "delegation_scope_widening",
+      "delegation_expired",
+      "required_feature_unsupported"
+    ]
+  },
+  "github_mutation_performed": false,
+  "kind": "TrustAuthorizationProjectionReport",
+  "live_grants_implemented": false,
+  "live_identity_implemented": false,
+  "live_policy_engine_implemented": false,
+  "network_calls_performed": false,
+  "oidc_iam_implemented": false,
+  "preview_apply_implemented": false,
+  "projection_only": true,
+  "projections_written": [
+    ".aide/reports/trust-authorization-contract-v0/projections/principal.json",
+    ".aide/reports/trust-authorization-contract-v0/projections/admission-record.json",
+    ".aide/reports/trust-authorization-contract-v0/projections/policy-decision.json",
+    ".aide/reports/trust-authorization-contract-v0/projections/capability-grant.json",
+    ".aide/reports/trust-authorization-contract-v0/projections/delegation-record.json",
+    ".aide/reports/trust-authorization-contract-v0/projections/revocation-record.json",
+    ".aide/reports/trust-authorization-contract-v0/projections/authorization-evaluation.json"
+  ],
+  "provider_model_calls_performed": false,
+  "recommended_next_task": "AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01",
+  "record_kinds_written": [
+    "AdmissionRecord",
+    "AuthorizationEvaluation",
+    "CapabilityGrant",
+    "DelegationRecord",
+    "PolicyDecision",
+    "Principal",
+    "RevocationRecord"
+  ],
+  "release_or_promotion_performed": false,
+  "report_type": "trust_authorization_contract_projection",
+  "repository_mutation_performed": false,
+  "required_refusal_codes": [
+    "principal_unknown",
+    "principal_inactive",
+    "implementation_not_admitted",
+    "implementation_digest_mismatch",
+    "capability_not_admitted",
+    "policy_denied",
+    "approval_required",
+    "grant_missing",
+    "grant_inactive",
+    "grant_expired",
+    "grant_revoked",
+    "grant_exhausted",
+    "workspace_scope_mismatch",
+    "resource_scope_mismatch",
+    "execution_mode_not_granted",
+    "effect_not_granted",
+    "network_not_granted",
+    "secret_not_granted",
+    "delegation_not_allowed",
+    "delegation_scope_widening",
+    "delegation_expired",
+    "required_feature_unsupported"
+  ],
+  "runtime_enforcement_implemented": false,
+  "schema_version": "aide.trust-authorization-contract-projection.v0",
+  "secrets_embedded": false,
+  "service_runtime_implemented": false,
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01",
+  "transaction_approval_implemented": false,
+  "warnings": [
+    "Trust and authorization contract v0 is projection-only.",
+    "No live identity provider, credential store, policy engine, grant store, Service, or runtime enforcement is implemented."
+  ],
+  "worker_execution_implemented": false
+}

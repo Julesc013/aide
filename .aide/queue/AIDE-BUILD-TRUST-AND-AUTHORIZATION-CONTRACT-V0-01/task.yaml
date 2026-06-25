@@ -1,0 +1,68 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+title: Build Trust And Authorization Contract v0
+type: build
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Define portable, projection-only trust and authorization contracts required
+  before AIDE can authorize non-fixture capabilities or WorkerRuns.
+proposed_capability: trust_and_authorization_contract_v0
+accepted_capability: null
+authorizes_implementation: true
+projection_only: true
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+allowed_paths:
+  - core/protocol/trust_authorization.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-principal.schema.json
+  - .aide/protocol/aide-admission-record.schema.json
+  - .aide/protocol/aide-policy-decision.schema.json
+  - .aide/protocol/aide-capability-grant.schema.json
+  - .aide/protocol/aide-delegation-record.schema.json
+  - .aide/protocol/aide-revocation-record.schema.json
+  - .aide/protocol/aide-authorization-evaluation.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_trust_authorization_contract.py
+  - .aide/reports/trust-authorization-contract-v0/**
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/**
+  - core/interop/**
+  - hosts/**
+  - .aide.local/**
+  - .aide/reports/local-process-execution-host/**
+  - .aide/reports/local-process-execution-host-accept/**
+  - .aide/reports/local-process-execution-host-repair-02-check/**
+explicit_non_capabilities:
+  - live identity provider
+  - live policy engine
+  - live grants
+  - credentials
+  - secrets
+  - OIDC/IAM
+  - runtime enforcement
+  - worker execution
+  - transaction approval
+  - Service/runtime behavior
+  - provider/model calls
+  - network calls
+  - preview/apply/rollback
+  - repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - Trust and authorization contract v0 is projection-only.
+  - No live identity, credential, policy, grant, Service, or enforcement runtime is implemented.
+recommended_next_task: AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01

@@ -2309,3 +2309,13 @@ items:
   prompt: .aide/queue/AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01/prompt.md
   evidence: .aide/queue/AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01/evidence
   description: Acceptance-only consolidation for LocalProcessExecutionHost v0 after Repair 02 build and independent check passed with warnings, material_finding_count 0, and missing_evidence 0. Accepts exactly local_process_execution_host_fixture_v0 as a bounded fixture-backed reference slice that launches exactly one allowlisted local reference worker through the accepted RegisteredProcessExecutionProvider v0, stages a disposable workspace, preserves raw event evidence, persists verified content-addressed fixture artifacts, and projects WorkerRun lifecycle state. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01. Does not accept arbitrary command execution, generic worker harness, autonomous AI workers, Service/runtime behavior, Workbench/MCP behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+- id: AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+  status: needs_review
+  planning_state: implementation_completed
+  result: PASS_WITH_WARNINGS
+  title: Build Trust And Authorization Contract v0
+  task: .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence
+  description: Build task for projection-only trust and authorization contract v0. Adds Principal, AdmissionRecord, PolicyDecision, CapabilityGrant, DelegationRecord, RevocationRecord, and AuthorizationEvaluation records; seven Draft 2020-12 schema files; helper validation and deterministic authorization-evaluation fixtures; AIDE Lite trust status/project/validate commands; focused tests; and reports under .aide/reports/trust-authorization-contract-v0. Stops at needs_review with PASS_WITH_WARNINGS, proposed capability trust_and_authorization_contract_v0, missing_evidence 0, and recommends exactly AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01. Does not implement live identity, credentials, secrets, OIDC/IAM, live policy engine, live grants, runtime enforcement, worker execution, transaction approval, Service/runtime behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

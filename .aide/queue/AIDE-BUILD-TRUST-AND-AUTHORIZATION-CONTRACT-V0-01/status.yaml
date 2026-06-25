@@ -1,0 +1,35 @@
+schema_version: aide.task-status.v0
+id: AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+proposed_capability: trust_and_authorization_contract_v0
+accepted_capability: null
+projection_only: true
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+evidence:
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/trust-model.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/admission-vs-conformance.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/policy-decision-model.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/grant-model.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/delegation-and-revocation.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/authorization-evaluation.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/refusal-code-registry.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/state-machines.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/fixture-matrix.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/validation-results.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/evidence/next-task-prompt.md
+warnings:
+  - Trust and authorization contract v0 is projection-only.
+  - Live enforcement, credentials, Service, and runtime grants are not implemented.
+blockers: []

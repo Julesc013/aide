@@ -1,0 +1,102 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "AdmissionRecord",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "trust_and_authorization_contract_v0"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "trust_and_authorization_contract_v0"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "admission-fixture",
+    "name": "Fixture Admission",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ""
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.trust-authorization-contract.v0",
+  "spec": {
+    "admission_ref": "aide://admission/local-process-host-fixture",
+    "admitted_at": "deterministic",
+    "admitted_capability_refs": [
+      "aide://capability/local_process_execution_host_fixture_v0"
+    ],
+    "branch_worktree_mutation_performed": false,
+    "capability_label": "trust_and_authorization_contract_v0",
+    "conformance_profile_refs": [
+      "aide://conformance-profile/local-process-host-v0"
+    ],
+    "conformance_result_refs": [
+      "aide://conformance-result/local-process-host-v0"
+    ],
+    "constraints": {
+      "fixture_only": true
+    },
+    "credentials_embedded": false,
+    "decision": "admitted_with_constraints",
+    "expires_at": "never",
+    "explicit_non_capabilities": [
+      "live_identity_provider",
+      "live_policy_engine",
+      "live_capability_grants",
+      "credential_storage",
+      "secret_storage",
+      "oidc_iam_integration",
+      "runtime_enforcement",
+      "worker_execution",
+      "transaction_approval",
+      "service_runtime",
+      "provider_model_calls",
+      "network_calls",
+      "preview_apply_runtime",
+      "repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "github_mutation_performed": false,
+    "implementation_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "implementation_version": "0.1.0",
+    "known_limitations": [
+      "no public cancellation API"
+    ],
+    "live_grants_implemented": false,
+    "live_identity_implemented": false,
+    "live_policy_engine_implemented": false,
+    "manifest_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "network_calls_performed": false,
+    "oidc_iam_implemented": false,
+    "preview_apply_implemented": false,
+    "provider_model_calls_performed": false,
+    "release_or_promotion_performed": false,
+    "repository_mutation_performed": false,
+    "revocation_refs": [],
+    "runtime_enforcement_implemented": false,
+    "secrets_embedded": false,
+    "service_runtime_implemented": false,
+    "subject_kind": "execution_host",
+    "subject_ref": "aide://execution-host/local-process-fixture",
+    "supported_protocol_range": ">=0.1.0 <1.0.0",
+    "transaction_approval_implemented": false,
+    "warnings": [
+      "fixture-backed reference host only"
+    ],
+    "worker_execution_implemented": false
+  },
+  "status": {
+    "projection_only": true,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

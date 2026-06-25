@@ -1,0 +1,108 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "CapabilityGrant",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "trust_and_authorization_contract_v0"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "trust_and_authorization_contract_v0"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "capability-grant-fixture",
+    "name": "Fixture Capability Grant",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ""
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.trust-authorization-contract.v0",
+  "spec": {
+    "admission_refs": [
+      "aide://admission/local-process-host-fixture"
+    ],
+    "allowed_effects": [
+      "read",
+      "write_disposable_workspace",
+      "persist_evidence"
+    ],
+    "allowed_resource_patterns": [
+      "aide://resource/workspace-fixture/*"
+    ],
+    "allowed_resource_refs": [
+      "aide://resource/workspace-fixture"
+    ],
+    "branch_worktree_mutation_performed": false,
+    "capability_label": "trust_and_authorization_contract_v0",
+    "capability_ref": "aide://capability/local_process_execution_host_fixture_v0",
+    "created_at": "deterministic",
+    "credentials_embedded": false,
+    "delegation_ref": "aide://delegation/local-process-host-fixture",
+    "expires_at": "never",
+    "explicit_non_capabilities": [
+      "live_identity_provider",
+      "live_policy_engine",
+      "live_capability_grants",
+      "credential_storage",
+      "secret_storage",
+      "oidc_iam_integration",
+      "runtime_enforcement",
+      "worker_execution",
+      "transaction_approval",
+      "service_runtime",
+      "provider_model_calls",
+      "network_calls",
+      "preview_apply_runtime",
+      "repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "github_mutation_performed": false,
+    "grant_ref": "aide://grant/local-process-host-one-use",
+    "live_grants_implemented": false,
+    "live_identity_implemented": false,
+    "live_policy_engine_implemented": false,
+    "mode": "execute",
+    "network_calls_performed": false,
+    "network_constraints": {
+      "network_allowed": false
+    },
+    "oidc_iam_implemented": false,
+    "parent_grant_ref": null,
+    "policy_decision_ref": "aide://policy-decision/local-process-host-allow",
+    "preview_apply_implemented": false,
+    "principal_ref": "aide://principal/human-fixture",
+    "provider_model_calls_performed": false,
+    "release_or_promotion_performed": false,
+    "remaining_uses": 1,
+    "repository_mutation_performed": false,
+    "runtime_enforcement_implemented": false,
+    "secret_constraints": {
+      "secret_access_allowed": false
+    },
+    "secrets_embedded": false,
+    "service_runtime_implemented": false,
+    "status": "active",
+    "transaction_approval_implemented": false,
+    "use_budget": {
+      "max_uses": 1
+    },
+    "worker_execution_implemented": false,
+    "workspace_ref": "aide://workspace/source"
+  },
+  "status": {
+    "projection_only": true,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

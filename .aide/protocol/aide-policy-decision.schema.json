@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Projection-only PolicyDecision record for AIDE trust and authorization contract v0.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "const": "PolicyDecision",
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "properties": {
+        "compatibility": {
+          "type": "object"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "producer": {
+          "type": "object"
+        },
+        "sourcePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "required": [
+        "decision_ref",
+        "principal_ref",
+        "capability_ref",
+        "workspace_ref",
+        "target_resource_refs",
+        "requested_mode",
+        "input_digest",
+        "policy_bundle_ref",
+        "policy_bundle_digest",
+        "evaluator",
+        "decision",
+        "reason_codes",
+        "constraints",
+        "obligations",
+        "evidence_refs",
+        "created_at",
+        "expires_at"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "properties": {
+        "projection_only": {
+          "type": "boolean"
+        },
+        "validated": {
+          "type": "boolean"
+        },
+        "validation_errors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "validation_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "validated",
+        "projection_only",
+        "validation_errors",
+        "validation_warnings"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE PolicyDecision schema",
+  "type": "object"
+}

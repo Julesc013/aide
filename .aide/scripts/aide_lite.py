@@ -7712,6 +7712,22 @@ def load_execution_host_module(repo_root: Path):
     return module
 
 
+def load_trust_authorization_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/trust_authorization.py"
+    if not module_path.exists():
+        raise ValueError("Trust authorization module missing: core/protocol/trust_authorization.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_trust_authorization", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("Trust authorization module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_test_job_module(repo_root: Path):
     module_path = repo_root / "core/protocol/test_job.py"
     if not module_path.exists():
@@ -33062,6 +33078,94 @@ def command_execution_host_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_trust_boundary_lines(data: dict[str, object]) -> None:
+    print(f"projection_only: {str(data.get('projection_only', True)).lower()}")
+    print(f"live_identity_implemented: {str(data.get('live_identity_implemented', False)).lower()}")
+    print(f"live_policy_engine_implemented: {str(data.get('live_policy_engine_implemented', False)).lower()}")
+    print(f"live_grants_implemented: {str(data.get('live_grants_implemented', False)).lower()}")
+    print(f"credentials_embedded: {str(data.get('credentials_embedded', False)).lower()}")
+    print(f"secrets_embedded: {str(data.get('secrets_embedded', False)).lower()}")
+    print(f"oidc_iam_implemented: {str(data.get('oidc_iam_implemented', False)).lower()}")
+    print(f"runtime_enforcement_implemented: {str(data.get('runtime_enforcement_implemented', False)).lower()}")
+    print(f"worker_execution_implemented: {str(data.get('worker_execution_implemented', False)).lower()}")
+    print(f"transaction_approval_implemented: {str(data.get('transaction_approval_implemented', False)).lower()}")
+    print(f"service_runtime_implemented: {str(data.get('service_runtime_implemented', False)).lower()}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print(f"preview_apply_implemented: {str(data.get('preview_apply_implemented', False)).lower()}")
+    print(f"repository_mutation_performed: {str(data.get('repository_mutation_performed', False)).lower()}")
+    print(f"branch_worktree_mutation_performed: {str(data.get('branch_worktree_mutation_performed', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_trust_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_trust_authorization_module(repo_root)
+    try:
+        data = protocol.trust_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite trust status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite trust status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_trust_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_trust_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_trust_authorization_module(repo_root)
+    try:
+        report = protocol.project_trust_authorization_contract(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite trust project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite trust project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"all_required_refusal_codes_covered: {str(report.get('fixture_matrix', {}).get('all_required_refusal_codes_covered', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_trust_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_trust_authorization_module(repo_root)
+    try:
+        report = protocol.trust_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite trust validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite trust validate")
+    print(f"result: {report.get('status')}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"projection_only_truthful: {str(report.get('projection_only_truthful', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"unknown_optional_fields_tolerated: {str(report.get('unknown_optional_fields_tolerated', False)).lower()}")
+    print(f"unknown_required_capability_fails_closed: {str(report.get('unknown_required_capability_fails_closed', False)).lower()}")
+    print(f"all_required_refusal_codes_covered: {str(report.get('all_required_refusal_codes_covered', False)).lower()}")
+    print(f"no_secret_values_embedded: {str(report.get('no_secret_values_embedded', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_test_job_boundary_lines(data: dict[str, object]) -> None:
     print(f"test_broker_runtime_implemented: {str(data.get('test_broker_runtime_implemented', False)).lower()}")
     print(f"async_test_execution_implemented: {str(data.get('async_test_execution_implemented', False)).lower()}")
@@ -38679,6 +38783,20 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     execution_host_project_parser.set_defaults(handler=command_execution_host_project)
     execution_host_subparsers.add_parser("validate").set_defaults(handler=command_execution_host_validate)
+
+    trust_parser = subparsers.add_parser("trust")
+    trust_parser.set_defaults(handler=command_trust_status)
+    trust_subparsers = trust_parser.add_subparsers(dest="trust_command", required=False)
+    trust_subparsers.add_parser("status").set_defaults(handler=command_trust_status)
+    trust_project_parser = trust_subparsers.add_parser("project")
+    trust_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["contract-projection"],
+        help="Projection source for the trust and authorization contract v0 slice.",
+    )
+    trust_project_parser.set_defaults(handler=command_trust_project)
+    trust_subparsers.add_parser("validate").set_defaults(handler=command_trust_validate)
 
     test_job_parser = subparsers.add_parser("test-job")
     test_job_parser.set_defaults(handler=command_test_job_status)

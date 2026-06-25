@@ -39,6 +39,62 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+
+Completed as a projection-only build and awaiting independent check.
+
+Changed:
+
+- `core/protocol/trust_authorization.py`
+- `core/protocol/__init__.py`
+- `.aide/protocol/aide-principal.schema.json`
+- `.aide/protocol/aide-admission-record.schema.json`
+- `.aide/protocol/aide-policy-decision.schema.json`
+- `.aide/protocol/aide-capability-grant.schema.json`
+- `.aide/protocol/aide-delegation-record.schema.json`
+- `.aide/protocol/aide-revocation-record.schema.json`
+- `.aide/protocol/aide-authorization-evaluation.schema.json`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_trust_authorization_contract.py`
+- `.aide/reports/trust-authorization-contract-v0/**`
+- `.aide/queue/AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Implemented:
+
+- projection-only `Principal`, `AdmissionRecord`, `PolicyDecision`,
+  `CapabilityGrant`, `DelegationRecord`, `RevocationRecord`, and
+  `AuthorizationEvaluation` records;
+- exact-digest admission fields and explicit conformance/admission separation;
+- policy and grant separation;
+- narrowing-only delegation and revocation projection fields;
+- deterministic authorization-evaluation fixtures with stable refusal codes;
+- seven schema files and helper/schema alignment checks;
+- AIDE Lite `trust status`, `trust project`, and `trust validate` commands;
+- focused tests and generated reports.
+
+Result:
+
+```text
+PASS_WITH_WARNINGS
+proposed_capability: trust_and_authorization_contract_v0
+missing_evidence: 0
+```
+
+Recommended next task:
+
+```text
+AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+```
+
+No live identity, credentials, secrets, OIDC/IAM, live policy engine, live
+grants, runtime enforcement, worker execution, transaction approval,
+Service/runtime behavior, provider/model/network calls, preview/apply/rollback,
+repository mutation, branch/worktree automation, GitHub mutation, release, or
+promotion was implemented.
+
 ## Work Item: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
 
 Completed as an acceptance-only consolidation and awaiting review.

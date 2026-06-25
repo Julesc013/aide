@@ -1,0 +1,118 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "AuthorizationEvaluation",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "trust_and_authorization_contract_v0"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "trust_and_authorization_contract_v0"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "authorization-evaluation-fixture",
+    "name": "Fixture Authorization Evaluation",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ""
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.trust-authorization-contract.v0",
+  "spec": {
+    "admission_ref": "aide://admission/local-process-host-fixture",
+    "branch_worktree_mutation_performed": false,
+    "capability_label": "trust_and_authorization_contract_v0",
+    "checks": {
+      "capability_admitted": true,
+      "delegation_valid": true,
+      "effect_allowed": true,
+      "exact_implementation_admitted": true,
+      "grant_exists_and_active": true,
+      "implementation_digest_matches": true,
+      "mode_matches": true,
+      "network_allowed": true,
+      "not_expired": true,
+      "not_revoked": true,
+      "policy_allows": true,
+      "principal_active": true,
+      "required_features_supported": true,
+      "resource_scope_matches": true,
+      "secrets_allowed": true,
+      "uses_remain": true,
+      "workspace_matches": true
+    },
+    "created_at": "deterministic",
+    "credentials_embedded": false,
+    "delegation_ref": "aide://delegation/local-process-host-fixture",
+    "evaluation_ref": "aide://authorization-evaluation/fixture",
+    "evidence_refs": [
+      "aide://evidence/authorization-evaluation-fixture"
+    ],
+    "explicit_non_capabilities": [
+      "live_identity_provider",
+      "live_policy_engine",
+      "live_capability_grants",
+      "credential_storage",
+      "secret_storage",
+      "oidc_iam_integration",
+      "runtime_enforcement",
+      "worker_execution",
+      "transaction_approval",
+      "service_runtime",
+      "provider_model_calls",
+      "network_calls",
+      "preview_apply_runtime",
+      "repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "github_mutation_performed": false,
+    "grant_ref": "aide://grant/local-process-host-one-use",
+    "live_grants_implemented": false,
+    "live_identity_implemented": false,
+    "live_policy_engine_implemented": false,
+    "network_calls_performed": false,
+    "oidc_iam_implemented": false,
+    "policy_decision_ref": "aide://policy-decision/local-process-host-allow",
+    "preview_apply_implemented": false,
+    "principal_ref": "aide://principal/human-fixture",
+    "provider_model_calls_performed": false,
+    "reason_codes": [],
+    "release_or_promotion_performed": false,
+    "repository_mutation_performed": false,
+    "requested_operation": {
+      "capability_ref": "aide://capability/local_process_execution_host_fixture_v0",
+      "effect": "read",
+      "implementation_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "mode": "execute",
+      "network_required": false,
+      "required_features": [
+        "trust_and_authorization_contract_v0"
+      ],
+      "resource_ref": "aide://resource/workspace-fixture",
+      "secret_required": false,
+      "workspace_ref": "aide://workspace/source"
+    },
+    "result": "allowed",
+    "revocation_refs": [],
+    "runtime_enforcement_implemented": false,
+    "secrets_embedded": false,
+    "service_runtime_implemented": false,
+    "transaction_approval_implemented": false,
+    "worker_execution_implemented": false
+  },
+  "status": {
+    "projection_only": true,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}
