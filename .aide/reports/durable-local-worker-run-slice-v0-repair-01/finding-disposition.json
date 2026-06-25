@@ -1,0 +1,25 @@
+{
+  "schema_version": "aide.durable-local-worker-run.repair-01.finding-disposition.v0",
+  "task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+  "source_check_task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "dispositions": [
+    {
+      "finding_id": "event_record_result_consistency",
+      "original_observed": {
+        "fixture_host_result": "PASS",
+        "event_payload_result": null
+      },
+      "repair_change": "EventRecord payload result now falls back to host_result when built from the normalized durable fixture report.",
+      "observed_after_repair": {
+        "fixture_host_result": "PASS",
+        "event_payload_result": "PASS",
+        "event_status_result": "PASS"
+      },
+      "disposition": "CLOSED_PENDING_INDEPENDENT_RECHECK"
+    }
+  ],
+  "recommended_next_task": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01"
+}

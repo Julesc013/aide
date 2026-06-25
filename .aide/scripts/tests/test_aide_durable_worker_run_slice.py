@@ -116,6 +116,8 @@ class DurableLocalWorkerRunSliceTests(unittest.TestCase):
             self.assertFalse(report["network_calls_performed"])
             self.assertFalse(report["provider_model_calls_performed"])
             self.assertFalse(report["repository_mutation_performed"])
+            event_record = durable_worker_run.build_event_record(report)
+            self.assertEqual(event_record["spec"]["payload"]["result"], "PASS")
 
     def test_validation_rejects_missing_durable_evidence(self) -> None:
         validation = durable_worker_run.validate_fixture_report(

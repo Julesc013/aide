@@ -393,7 +393,7 @@ def build_event_record(host_result: Mapping[str, Any]) -> dict[str, Any]:
             "workunit_ref": WORKUNIT_REF,
             "host_ref": local_process_host.HOST_REF,
             "host_run_ref": local_process_host.RUN_REF,
-            "result": host_result.get("result"),
+            "result": host_result.get("result", host_result.get("host_result")),
             "process_call_count": host_result.get("process_call_count"),
             "durably_recorded": True,
             "fixture_backed": True,

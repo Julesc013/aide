@@ -2669,3 +2669,15 @@
 - Exit Criteria: task stops at `needs_review`, records the independent check result, and recommends either acceptance or a bounded repair task.
 - Result: `REQUEST_CHANGES`.
 - Notes: One material finding remains: EventRecord payload result is `null` while the fixture report records `host_result: PASS`. The next task is `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`.
+
+### Queue ID: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
+
+- Title: Build Durable Local WorkerRun Slice v0 Repair 01
+- Status: Needs Review
+- Objective: repair only `event_record_result_consistency` from the durable local WorkerRun check.
+- Scope: `core/service/durable_worker_run.py`, `.aide/scripts/tests/test_aide_durable_worker_run_slice.py`, `.aide/reports/durable-local-worker-run-slice-v0/**`, `.aide/reports/durable-local-worker-run-slice-v0-repair-01/**`, `.aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source check commit `e51b46279e6091425d5531334bd78f1514a7569f`, `REQUEST_CHANGES`, `material_finding_count: 1`, and `missing_evidence: 0`.
+- Verification Intent: regenerate durable fixture reports, assert fixture `host_result` equals EventRecord payload `result`, run focused durable tests, durable validation, compileall, task inspect/evidence, broad validation, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, closes the repaired finding pending independent recheck, and recommends exactly `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: The repair preserves the observed host result in EventRecord payloads without widening the durable WorkerRun slice into a general worker harness or runtime.

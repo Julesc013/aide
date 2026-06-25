@@ -118,7 +118,7 @@
       "host_ref": "aide://execution-host/local-process/reference-v0",
       "host_run_ref": "aide://execution-host-run/local-process-reference-01",
       "process_call_count": 1,
-      "result": null,
+      "result": "PASS",
       "workunit_ref": "aide://workunit/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01"
     },
     "payload_contract": "minimal_open_payload",

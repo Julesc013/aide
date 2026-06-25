@@ -1,0 +1,59 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
+title: Build Durable Local WorkerRun Slice v0 Repair 01
+type: repair
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Repair the single material finding from
+  AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01:
+  event_record_result_consistency.
+source_task: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+finding_ids:
+  - event_record_result_consistency
+proposed_capability_under_repair: durable_local_worker_run_slice_v0
+accepted_capability: null
+authorizes_implementation: true
+material_finding_count: 0
+missing_evidence: 0
+allowed_paths:
+  - core/service/durable_worker_run.py
+  - .aide/scripts/tests/test_aide_durable_worker_run_slice.py
+  - .aide/reports/durable-local-worker-run-slice-v0/**
+  - .aide/reports/durable-local-worker-run-slice-v0-repair-01/**
+  - .aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/service/local_trust_enforcement.py
+  - core/service/sqlite_store.py
+  - core/execution/local_process_host.py
+  - core/execution/registered_process.py
+  - core/protocol/**
+  - .aide/scripts/aide_lite.py
+  - .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/**
+  - .aide/reports/durable-local-worker-run-slice-v0-check/**
+  - .aide.local/**
+explicit_non_capabilities:
+  - general worker harness
+  - autonomous AI worker
+  - remote ExecutionHost
+  - scheduler
+  - leases
+  - persistent background Service
+  - Workbench runtime
+  - MCP runtime
+  - provider/model calls
+  - network calls
+  - preview/apply/rollback
+  - transaction approval
+  - repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+recommended_next_task: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01

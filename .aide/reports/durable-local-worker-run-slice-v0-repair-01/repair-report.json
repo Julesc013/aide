@@ -1,0 +1,35 @@
+{
+  "schema_version": "aide.durable-local-worker-run.repair-01.report.v0",
+  "task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+  "source_check_task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "repaired_findings": [
+    "event_record_result_consistency"
+  ],
+  "observed": {
+    "fixture_host_result": "PASS",
+    "event_payload_result": "PASS",
+    "event_status_result": "PASS"
+  },
+  "explicit_non_capabilities": [
+    "general_worker_harness",
+    "autonomous_ai_worker",
+    "remote_execution_host",
+    "scheduler",
+    "leases",
+    "persistent_background_service",
+    "workbench_runtime",
+    "mcp_runtime",
+    "provider_model_calls",
+    "network_calls",
+    "preview_apply_rollback",
+    "transaction_approval",
+    "repository_mutation",
+    "branch_worktree_automation",
+    "github_mutation",
+    "release_or_promotion"
+  ],
+  "recommended_next_task": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01"
+}

@@ -2419,3 +2419,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence
   description: Check-only independent review of AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01. Verifies source-chain consistency, one fixture host process, authorization before launch, one-use grant consumption, temporary local Service persistence, WorkUnit/WorkerRun/host-outcome/EvidencePacket/EventRecord observations, monotonic local events, idempotency, artifact integrity, raw event stream evidence, explicit false boundaries, and scrubbed reports. Stops at needs_review with REQUEST_CHANGES, material_finding_count 1, missing_evidence 0, and recommends exactly AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01 because EventRecord payload result is null while the fixture report records host_result PASS. Does not repair implementation, accept the capability, implement a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+- id: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
+  status: needs_review
+  planning_state: implementation_completed
+  result: PASS_WITH_WARNINGS
+  title: Build Durable Local WorkerRun Slice v0 Repair 01
+  task: .aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/evidence
+  description: Bounded repair for the single material finding from AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01. Closes event_record_result_consistency by preserving the observed host result when building durable WorkerRun EventRecord payloads from normalized fixture reports; adds a focused regression; regenerates durable WorkerRun reports; stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01. Does not implement a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

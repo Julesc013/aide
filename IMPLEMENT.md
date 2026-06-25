@@ -8914,3 +8914,50 @@ preservation.
   records `host_result: PASS`, but `.aide/reports/durable-local-worker-run-slice-v0/event-record.json`
   records `spec.payload.result: null`.
 - Next task: `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`.
+
+## Work Item: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `core/service/durable_worker_run.py`
+- `.aide/scripts/tests/test_aide_durable_worker_run_slice.py`
+- `.aide/reports/durable-local-worker-run-slice-v0/**`
+- `.aide/reports/durable-local-worker-run-slice-v0-repair-01/**`
+- `.aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The independent durable WorkerRun check found that the committed EventRecord
+payload dropped the observed host result, even though the fixture report and
+EventRecord status both recorded `PASS`.
+
+### Implementation Notes
+
+- Updated EventRecord payload generation to use the live host result when
+  available and fall back to normalized fixture-report `host_result`.
+- Added a focused regression assertion that `build_event_record(report)`
+  preserves `PASS`.
+- Regenerated durable WorkerRun reports and added repair evidence/reports.
+
+### Verification
+
+The regenerated fixture report records `host_result: PASS`; the regenerated
+EventRecord records `spec.payload.result: PASS`. Focused tests, durable
+validation, and compileall passed before final validation.
+
+### Remaining Issues
+
+- Independent repair check remains required before accepting
+  `durable_local_worker_run_slice_v0`.
+- The durable WorkerRun slice remains fixture-backed and does not implement a
+  general worker harness, autonomous AI worker, scheduler, leases, persistent
+  daemon, Workbench/MCP runtime, provider/model calls, network calls,
+  preview/apply/rollback, transaction approval, repository mutation, GitHub
+  mutation, release, or promotion.
