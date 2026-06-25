@@ -8816,3 +8816,56 @@ checks, and commit-policy validation are recorded in task-local evidence.
   approval, provider/model calls, network calls, preview/apply/rollback,
   repository mutation, GitHub mutation, release, and promotion remain future
   work.
+
+## Work Item: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `core/service/durable_worker_run.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_durable_worker_run_slice.py`
+- `.aide/reports/durable-local-worker-run-slice-v0/**`
+- `.aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The accepted local Service, local trust enforcement, registered process
+provider, and fixture LocalProcessExecutionHost needed one composed vertical
+slice that records a WorkerRun observation durably before the system moves
+toward broader worker-runtime work.
+
+### Implementation Notes
+
+- Added `core/service/durable_worker_run.py` as a narrow composition layer over
+  existing accepted components.
+- Added `durable-worker-run status`, `fixture`, `validate`, and
+  `reset-fixture` AIDE Lite commands.
+- Persisted WorkUnit, WorkerRun, host outcome, EvidencePacket, EventRecord,
+  monotonic local Service events, idempotency, and content-addressed artifact
+  metadata into temporary local Service state.
+- Added focused tests using a fake runner and ran one live fixture command for
+  committed reports.
+- Routed next work to `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
+
+### Verification
+
+Focused durable WorkerRun tests, compileall, the live durable-worker-run
+fixture and validation commands, and regression checks are recorded in
+task-local evidence.
+
+### Remaining Issues
+
+- Independent check and acceptance remain required before
+  `durable_local_worker_run_slice_v0` is accepted.
+- This remains fixture-backed and local only. It does not implement a general
+  worker harness, autonomous AI worker, scheduler, leases, persistent daemon,
+  Workbench/MCP runtime, provider/model calls, network calls,
+  preview/apply/rollback, transaction approval, repository mutation, GitHub
+  mutation, release, or promotion.

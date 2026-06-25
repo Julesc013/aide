@@ -1,0 +1,163 @@
+{
+  "accepted_capabilities_used": [
+    "local_service_foundation_v0",
+    "local_trust_enforcement_v0",
+    "registered_process_execution_provider_v0",
+    "local_process_execution_host_fixture_v0"
+  ],
+  "arbitrary_command_executed": false,
+  "artifact_metadata": [
+    {
+      "byte_count": 3393,
+      "deduplicated": false,
+      "digest": "sha256:2bbefac0965e64ca00756f6f915220e7e4b10baee8c46afe719d8bf9ae484e97",
+      "name": "fixture-report.json",
+      "relative_path": "artifacts/sha256/2b/2bbefac0965e64ca00756f6f915220e7e4b10baee8c46afe719d8bf9ae484e97"
+    },
+    {
+      "byte_count": 1810,
+      "deduplicated": false,
+      "digest": "sha256:ba344e7d5cc173d0c61a0d0cb37a790662dd4ffc0d75f77c914edf764cc215c6",
+      "name": "projection.json",
+      "relative_path": "artifacts/sha256/ba/ba344e7d5cc173d0c61a0d0cb37a790662dd4ffc0d75f77c914edf764cc215c6"
+    }
+  ],
+  "authorization_evaluation_ref": "aide://authorization-evaluation/fixture",
+  "authorization_result": "allowed",
+  "autonomous_ai_worker_started": false,
+  "branch_worktree_automation_performed": false,
+  "development_transaction_created": false,
+  "explicit_non_capabilities": [
+    "general_worker_harness",
+    "autonomous_ai_worker",
+    "remote_execution_host",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "persistent_background_service",
+    "workbench_runtime",
+    "mcp_runtime",
+    "provider_model_calls",
+    "network_calls",
+    "preview_session",
+    "development_transaction",
+    "patch_transaction_apply",
+    "transaction_approval",
+    "repository_mutation",
+    "branch_worktree_automation",
+    "github_mutation",
+    "release_or_promotion"
+  ],
+  "fixture_state_removed": true,
+  "general_worker_harness_implemented": false,
+  "github_mutation_performed": false,
+  "host_call_count_after_replay": 1,
+  "host_result": "PASS",
+  "idempotency_status": "recorded",
+  "idempotent_replay_no_second_host_launch": true,
+  "idempotent_replay_status": "duplicate",
+  "lease_created": false,
+  "local_state_committed": false,
+  "mcp_runtime_started": false,
+  "network_calls_performed": false,
+  "patch_transaction_applied": false,
+  "persistent_background_service_started": false,
+  "porcelain_status_digest_unchanged": true,
+  "preview_session_created": false,
+  "process_call_count": 1,
+  "proposed_capability_label": "durable_local_worker_run_slice_v0",
+  "provider_model_calls_performed": false,
+  "raw_event_stream_artifact": {
+    "artifact_ref": "aide://artifact/local-process-event-stream/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2",
+    "byte_count": 1706,
+    "media_type": "application/x-ndjson",
+    "path": ".aide/reports/local-process-execution-host/raw-events/sha256/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2.ndjson",
+    "persisted": true,
+    "sha256": "sha256:436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2"
+  },
+  "recommended_next_task": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "reference_worker_process_started": true,
+  "release_or_promotion_performed": false,
+  "remote_execution_host_started": false,
+  "reopened_artifact_metadata": [
+    {
+      "digest": "sha256:2bbefac0965e64ca00756f6f915220e7e4b10baee8c46afe719d8bf9ae484e97",
+      "media_type": "application/json",
+      "relative_path": "artifacts/sha256/2b/2bbefac0965e64ca00756f6f915220e7e4b10baee8c46afe719d8bf9ae484e97",
+      "size": 3393
+    },
+    {
+      "digest": "sha256:ba344e7d5cc173d0c61a0d0cb37a790662dd4ffc0d75f77c914edf764cc215c6",
+      "media_type": "application/json",
+      "relative_path": "artifacts/sha256/ba/ba344e7d5cc173d0c61a0d0cb37a790662dd4ffc0d75f77c914edf764cc215c6",
+      "size": 1810
+    }
+  ],
+  "reopened_event_kind": "EventRecord",
+  "reopened_event_sequences": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "reopened_evidence_kind": "EvidencePacket",
+  "reopened_worker_run_kind": "WorkerRun",
+  "reopened_workunit_kind": "WorkUnit",
+  "repository_mutation_performed": false,
+  "runtime_state_root": "temporary",
+  "scheduler_started": false,
+  "schema_version": "aide.durable-local-worker-run.fixture-report.v0",
+  "service_event_sequences": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "service_event_types": [
+    "trust.authorization_evaluated",
+    "trust.grant_consumed",
+    "durable_worker_run.workunit_recorded",
+    "durable_worker_run.started",
+    "durable_worker_run.completed",
+    "durable_worker_run.evidence_recorded"
+  ],
+  "service_objects_persisted": [
+    "event_record",
+    "evidence_packet",
+    "host_outcome",
+    "worker_run",
+    "workunit"
+  ],
+  "source_checkout_unchanged": true,
+  "source_snapshot_unchanged": true,
+  "status": "PASS_WITH_WARNINGS",
+  "supervisor_started": false,
+  "task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "transaction_approval_performed": false,
+  "trust_grant_consumed": true,
+  "warning_count": 4,
+  "warnings": [
+    "Fixture-backed durable WorkerRun recording only.",
+    "Uses temporary local Service state by default; no persistent daemon or .aide.local state is created.",
+    "No general worker harness, scheduler, leases, cancellation, or Workbench runtime is implemented.",
+    "The accepted LocalProcessExecutionHost fixture remains the only process launch path."
+  ],
+  "workbench_runtime_started": false,
+  "worker_artifacts": [
+    {
+      "artifact_ref": "aide://artifact/local-process-worker/dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5",
+      "byte_count": 234,
+      "content_addressed": true,
+      "media_type": "application/json",
+      "path": ".aide/reports/local-process-execution-host/artifacts/sha256/dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5.json",
+      "persisted": true,
+      "sha256": "sha256:dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5",
+      "source_member": "artifacts/result.json"
+    }
+  ],
+  "workspace_state_unchanged": true
+}

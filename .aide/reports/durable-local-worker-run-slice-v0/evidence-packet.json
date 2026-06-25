@@ -1,0 +1,129 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "ep-durable-local-worker-run-v0",
+    "name": "durable_local_worker_run_slice_v0",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/task.yaml"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json",
+        "role": "fixture_report"
+      },
+      {
+        "path": ".aide/reports/durable-local-worker-run-slice-v0/projection.json",
+        "role": "projection"
+      },
+      {
+        "artifact_ref": "aide://artifact/local-process-event-stream/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2",
+        "byte_count": 1706,
+        "media_type": "application/x-ndjson",
+        "path": ".aide/reports/local-process-execution-host/raw-events/sha256/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2.ndjson",
+        "persisted": true,
+        "role": "host_raw_event_stream",
+        "sha256": "sha256:436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2"
+      }
+    ],
+    "capability_label": "minimal_evidence_packet_schema",
+    "claims": [
+      {
+        "id": "local_trust_authorized",
+        "status": "supported",
+        "summary": "A local AuthorizationEvaluation allowed the fixture host capability before host invocation."
+      },
+      {
+        "id": "one_fixture_host_process",
+        "status": "supported",
+        "summary": "Exactly one accepted local reference host process was launched."
+      },
+      {
+        "id": "service_persisted_worker_run",
+        "status": "supported",
+        "summary": "The WorkerRun observation and related evidence were persisted through the local Service store."
+      },
+      {
+        "id": "source_state_unchanged",
+        "status": "supported",
+        "summary": "The accepted host state probe observed no source mutation."
+      },
+      {
+        "id": "idempotent_replay_no_second_launch",
+        "status": "supported",
+        "summary": "The local Service idempotency row returns the existing result without relaunching the fixture host."
+      }
+    ],
+    "explicit_non_capabilities": [
+      "general_worker_harness",
+      "autonomous_ai_worker",
+      "remote_execution_host",
+      "scheduler",
+      "leases",
+      "supervisor",
+      "persistent_background_service",
+      "workbench_runtime",
+      "mcp_runtime",
+      "provider_model_calls",
+      "network_calls",
+      "preview_session",
+      "development_transaction",
+      "patch_transaction_apply",
+      "transaction_approval",
+      "repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "risks": [],
+    "source_task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+    "source_task_kind": "build",
+    "subject": {
+      "id": "durable_local_worker_run_slice_v0",
+      "type": "capability"
+    },
+    "validations": [
+      {
+        "command": "py -3 .aide/scripts/aide_lite.py durable-worker-run fixture",
+        "exit_code": 0,
+        "status": "PASS_WITH_WARNINGS"
+      },
+      {
+        "command": "py -3 .aide/scripts/aide_lite.py durable-worker-run validate",
+        "exit_code": 0,
+        "status": "PASS_WITH_WARNINGS"
+      }
+    ],
+    "warnings": [
+      "Fixture-backed local WorkerRun recording only; no general worker harness, scheduler, leases, provider/model call, or Workbench runtime.",
+      "State is temporary by default and committed reports contain only scrubbed deterministic summaries."
+    ]
+  },
+  "status": {
+    "phase": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "Durable WorkerRun slice uses the accepted local reference worker fixture."
+    ]
+  }
+}

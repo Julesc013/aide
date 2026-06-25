@@ -1,0 +1,21 @@
+# Explicit Non-Capabilities
+
+- general_worker_harness
+- autonomous_ai_worker
+- remote_execution_host
+- scheduler
+- leases
+- supervisor
+- persistent_background_service
+- workbench_runtime
+- mcp_runtime
+- provider_model_calls
+- network_calls
+- preview_session
+- development_transaction
+- patch_transaction_apply
+- transaction_approval
+- repository_mutation
+- branch_worktree_automation
+- github_mutation
+- release_or_promotion

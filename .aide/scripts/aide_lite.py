@@ -7760,6 +7760,22 @@ def load_local_trust_enforcement_module(repo_root: Path):
     return module
 
 
+def load_durable_worker_run_module(repo_root: Path):
+    module_path = repo_root / "core/service/durable_worker_run.py"
+    if not module_path.exists():
+        raise ValueError("Durable WorkerRun module missing: core/service/durable_worker_run.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_durable_worker_run", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("Durable WorkerRun module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_test_job_module(repo_root: Path):
     module_path = repo_root / "core/protocol/test_job.py"
     if not module_path.exists():
@@ -33421,6 +33437,113 @@ def command_local_trust_reset_fixture(args: argparse.Namespace) -> int:
     return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_durable_worker_run_boundary_lines(data: dict[str, object]) -> None:
+    print(f"arbitrary_command_executed: {str(data.get('arbitrary_command_executed', False)).lower()}")
+    print(f"general_worker_harness_implemented: {str(data.get('general_worker_harness_implemented', False)).lower()}")
+    print(f"autonomous_ai_worker_started: {str(data.get('autonomous_ai_worker_started', False)).lower()}")
+    print(f"remote_execution_host_started: {str(data.get('remote_execution_host_started', False)).lower()}")
+    print(f"scheduler_started: {str(data.get('scheduler_started', False)).lower()}")
+    print(f"lease_created: {str(data.get('lease_created', False)).lower()}")
+    print(f"persistent_background_service_started: {str(data.get('persistent_background_service_started', False)).lower()}")
+    print(f"workbench_runtime_started: {str(data.get('workbench_runtime_started', False)).lower()}")
+    print(f"mcp_runtime_started: {str(data.get('mcp_runtime_started', False)).lower()}")
+    print(f"provider_model_calls_performed: {str(data.get('provider_model_calls_performed', False)).lower()}")
+    print(f"network_calls_performed: {str(data.get('network_calls_performed', False)).lower()}")
+    print(f"preview_session_created: {str(data.get('preview_session_created', False)).lower()}")
+    print(f"development_transaction_created: {str(data.get('development_transaction_created', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"transaction_approval_performed: {str(data.get('transaction_approval_performed', False)).lower()}")
+    print(f"repository_mutation_performed: {str(data.get('repository_mutation_performed', False)).lower()}")
+    print(f"branch_worktree_automation_performed: {str(data.get('branch_worktree_automation_performed', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_durable_worker_run_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_durable_worker_run_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - durable WorkerRun status must fail closed.
+        print("AIDE Lite durable-worker-run status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_durable_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite durable-worker-run status")
+    print(f"result: {data.get('status')}")
+    print(f"proposed_capability_label: {data.get('proposed_capability_label')}")
+    print(f"report_exists: {str(data.get('report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_durable_worker_run_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_durable_worker_run_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_durable_worker_run_module(repo_root)
+    try:
+        report = module.fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - durable WorkerRun fixture must fail closed.
+        print("AIDE Lite durable-worker-run fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_durable_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite durable-worker-run fixture")
+    print(f"result: {report.get('status')}")
+    print(f"proposed_capability_label: {report.get('proposed_capability_label')}")
+    print(f"authorization_result: {report.get('authorization_result')}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"reference_worker_process_started: {str(report.get('reference_worker_process_started', False)).lower()}")
+    print(f"service_event_sequences: {report.get('service_event_sequences')}")
+    print(f"idempotent_replay_no_second_host_launch: {str(report.get('idempotent_replay_no_second_host_launch', False)).lower()}")
+    print(f"source_snapshot_unchanged: {str(report.get('source_snapshot_unchanged', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_durable_worker_run_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_durable_worker_run_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_durable_worker_run_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - durable WorkerRun validation must fail closed.
+        print("AIDE Lite durable-worker-run validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_durable_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite durable-worker-run validate")
+    print(f"result: {report.get('status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_durable_worker_run_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_durable_worker_run_reset_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_durable_worker_run_module(repo_root)
+    try:
+        report = module.reset_fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - durable WorkerRun reset must fail closed.
+        print("AIDE Lite durable-worker-run reset-fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_durable_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite durable-worker-run reset-fixture")
+    print(f"result: {report.get('status')}")
+    print(f"removed_report_dir: {str(report.get('removed_report_dir', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_durable_worker_run_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_test_job_boundary_lines(data: dict[str, object]) -> None:
     print(f"test_broker_runtime_implemented: {str(data.get('test_broker_runtime_implemented', False)).lower()}")
     print(f"async_test_execution_implemented: {str(data.get('async_test_execution_implemented', False)).lower()}")
@@ -39069,6 +39192,14 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     local_trust_subparsers.add_parser("fixture").set_defaults(handler=command_local_trust_fixture)
     local_trust_subparsers.add_parser("validate").set_defaults(handler=command_local_trust_validate)
     local_trust_subparsers.add_parser("reset-fixture").set_defaults(handler=command_local_trust_reset_fixture)
+
+    durable_worker_run_parser = subparsers.add_parser("durable-worker-run")
+    durable_worker_run_parser.set_defaults(handler=command_durable_worker_run_status)
+    durable_worker_run_subparsers = durable_worker_run_parser.add_subparsers(dest="durable_worker_run_command", required=False)
+    durable_worker_run_subparsers.add_parser("status").set_defaults(handler=command_durable_worker_run_status)
+    durable_worker_run_subparsers.add_parser("fixture").set_defaults(handler=command_durable_worker_run_fixture)
+    durable_worker_run_subparsers.add_parser("validate").set_defaults(handler=command_durable_worker_run_validate)
+    durable_worker_run_subparsers.add_parser("reset-fixture").set_defaults(handler=command_durable_worker_run_reset_fixture)
 
     test_job_parser = subparsers.add_parser("test-job")
     test_job_parser.set_defaults(handler=command_test_job_status)

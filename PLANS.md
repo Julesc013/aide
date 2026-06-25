@@ -2645,3 +2645,15 @@
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `local_trust_enforcement_v0`, and recommends exactly `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Notes: This acceptance does not accept external IAM, credentials, secrets, OIDC, remote policy engines, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+
+- Title: Build Durable Local WorkerRun Slice v0
+- Status: Needs Review
+- Objective: compose accepted local Service, accepted trust contracts, accepted local trust enforcement, accepted RegisteredProcessExecutionProvider v0, and accepted LocalProcessExecutionHost fixture behavior into the first durable local WorkerRun recording slice.
+- Scope: `core/service/durable_worker_run.py`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_durable_worker_run_slice.py`, `.aide/reports/durable-local-worker-run-slice-v0/**`, `.aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted `local_service_foundation_v0`, `trust_and_authorization_contract_v0`, `local_trust_enforcement_v0`, `registered_process_execution_provider_v0`, and `local_process_execution_host_fixture_v0`.
+- Verification Intent: focused durable WorkerRun tests, durable-worker-run fixture/status/validate commands, local trust/local Service/local process regressions, compileall, task inspect/evidence, broad validation, scoped leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `durable_local_worker_run_slice_v0`, persists WorkUnit/WorkerRun/outcome/evidence/event observations through temporary local Service state, and recommends exactly `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: This build is fixture-backed and local only. It does not implement a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent background Service, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
