@@ -2449,3 +2449,13 @@ items:
   prompt: .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/prompt.md
   evidence: .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence
   description: Acceptance-only consolidation for durable_local_worker_run_slice_v0 after the build, initial check, Repair 01, and independent repair check completed with the original EventRecord result consistency finding closed, material_finding_count 0, and missing_evidence 0. Accepts exactly durable_local_worker_run_slice_v0 as a fixture-backed local durable WorkerRun recording slice using accepted local Service, trust, registered-process, and LocalProcessExecutionHost fixture behavior. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01. Does not accept a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+- id: AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01
+  status: needs_review
+  planning_state: plan_completed
+  result: PASS_WITH_WARNINGS
+  title: Plan Distribution And Update Protocol v1
+  task: .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence
+  description: Plan-only distribution/update protocol v1 reconciliation over existing Q43-Q48 install, repair, upgrade, rollback/uninstall, release bundle, and release-draft foundations. Defines the dependency graph, v0/Q43-Q48 compatibility map, authority/source-of-truth map, ownership taxonomy, lifecycle state machines, migration rules, refusal registry, artifact/source/channel model, rollout rings, fixture/conformance matrix, security and preservation invariants, public release gates, and exact first build task. Stops at needs_review with PASS_WITH_WARNINGS and recommends exactly AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01. Does not implement install/update/repair/rollback/uninstall apply, release publication, Git tags, GitHub Releases, uploads, network calls, provider/model calls, target repository mutation, branch/worktree automation, CI installation, Workbench/MCP runtime, source-change preview/apply/rollback, or promotion.

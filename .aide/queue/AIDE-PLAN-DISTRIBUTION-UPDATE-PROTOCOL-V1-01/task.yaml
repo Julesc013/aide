@@ -1,0 +1,154 @@
+schema_version: aide.queue-task.v0
+id: AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01
+title: Plan Distribution And Update Protocol v1
+status: needs_review
+planning_state: plan_completed
+result: PASS_WITH_WARNINGS
+task_type: plan
+created_at: 2026-06-25
+updated_at: 2026-06-25
+review_gate: needs_review
+plan_only: true
+authorizes_implementation: false
+source_material:
+  - live .aide/queue/index.yaml routing from AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+  - user-provided 2026-06-25 distribution and update protocol direction
+  - existing Q43 install planning surfaces
+  - existing Q44 repair/doctor surfaces
+  - existing Q45 upgrade planning surfaces
+  - existing Q46 rollback and uninstall planning surfaces
+  - existing Q47 local release bundle surfaces
+  - existing Q48 GitHub Release draft surfaces
+objective: >
+  Reconcile and normalize AIDE distribution/update protocol v1 over the
+  existing Q43-Q48 foundation without replacing it, implementing apply, or
+  widening release/publication authority.
+current_serialized_next_task: AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01
+recommended_next_task: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
+summary: >
+  Defines an executable dependency graph, compatibility map, source-of-truth
+  map, lifecycle state machines, ownership taxonomy, migration rules, refusal
+  registry, artifact/source/channel model, rollout rings, fixture/conformance
+  matrix, security invariants, public release gates, and exact first build task
+  for AIDE Lite distribution/update protocol v1.
+planning_decisions:
+  - Build v1 as reconciliation and normalization over Q43-Q48, not a rewrite.
+  - Keep Q43-Q48 latest-* outputs as source-repo evidence, never target truth.
+  - Promote DistributionManifest v1 first because ProjectLock, OwnershipLedger, InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, and UpdateReceipt all need a stable distribution identity.
+  - Keep install/update/repair/rollback/uninstall apply behavior out of this planning task.
+  - Require every v1 build to have independent check and acceptance before downstream v1 objects depend on it.
+  - Treat the AIDE source repository as a source and fixture author, not an installed target.
+  - Require an AIDE self-consumer fixture before real-project canaries.
+future_candidate_sequence:
+  - AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
+  - AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+  - AIDE-BUILD-PROJECT-LOCK-V0-01
+  - AIDE-CHECK-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+  - AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+  - AIDE-BUILD-INSTALL-RECORD-V0-01
+  - AIDE-BUILD-MIGRATION-RECORD-V0-01
+  - AIDE-BUILD-UPDATE-PLAN-V1-01
+  - AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+  - AIDE-BUILD-UPDATE-RECEIPT-V0-01
+  - AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+  - AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+non_capabilities:
+  - no install apply
+  - no update apply
+  - no repair apply
+  - no rollback apply
+  - no uninstall apply
+  - no release publication
+  - no Git tag creation
+  - no GitHub Release creation
+  - no upload
+  - no network call
+  - no provider/model call
+  - no target repository mutation
+  - no branch/worktree automation
+  - no CI installation
+  - no Workbench runtime
+  - no MCP runtime
+  - no preview/apply/rollback for source changes
+  - no promotion
+allowed_paths:
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/**
+  - .aide/reports/distribution-update-protocol-v1-plan/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - AGENTS.md
+  - .aide/queue/README.md
+  - .aide/queue/policy.yaml
+  - .aide/profile.yaml
+  - docs/reference/source-of-truth.md
+  - docs/reference/aide-install-model.md
+  - docs/reference/aide-repair-model.md
+  - docs/reference/aide-upgrade-model.md
+  - docs/reference/aide-rollback-uninstall.md
+  - docs/reference/aide-lite-release-bundle.md
+  - docs/reference/github-release-draft.md
+  - .aide/install/**
+  - .aide/repair/**
+  - .aide/upgrade/**
+  - .aide/rollback/**
+  - .aide/uninstall/**
+  - .aide/release/**
+  - .aide/export/aide-lite-pack-v0/**
+forbidden_paths:
+  - .aide/install/**
+  - .aide/repair/**
+  - .aide/upgrade/**
+  - .aide/rollback/**
+  - .aide/uninstall/**
+  - .aide/release/**
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/scripts/aide_lite.py
+  - core/**
+  - tests/**
+  - docs/reference/**
+  - target repositories
+  - .aide.local/**
+reports:
+  - .aide/reports/distribution-update-protocol-v1-plan/status.md
+  - .aide/reports/distribution-update-protocol-v1-plan/plan-report.json
+  - .aide/reports/distribution-update-protocol-v1-plan/distribution-object-dependency-graph.md
+  - .aide/reports/distribution-update-protocol-v1-plan/q43-q48-to-v1-compatibility-map.md
+  - .aide/reports/distribution-update-protocol-v1-plan/authority-source-of-truth-map.md
+  - .aide/reports/distribution-update-protocol-v1-plan/ownership-taxonomy.md
+  - .aide/reports/distribution-update-protocol-v1-plan/lifecycle-state-machines.md
+  - .aide/reports/distribution-update-protocol-v1-plan/migration-rules.md
+  - .aide/reports/distribution-update-protocol-v1-plan/refusal-code-registry.md
+  - .aide/reports/distribution-update-protocol-v1-plan/artifact-source-channel-model.md
+  - .aide/reports/distribution-update-protocol-v1-plan/rollout-ring-model.md
+  - .aide/reports/distribution-update-protocol-v1-plan/fixture-conformance-matrix.md
+  - .aide/reports/distribution-update-protocol-v1-plan/security-preservation-invariants.md
+  - .aide/reports/distribution-update-protocol-v1-plan/public-release-gates.md
+  - .aide/reports/distribution-update-protocol-v1-plan/first-build-task.md
+  - .aide/reports/distribution-update-protocol-v1-plan/explicit-non-capabilities.md
+  - .aide/reports/distribution-update-protocol-v1-plan/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/baseline.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/existing-foundation-inventory.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/scope-and-laws.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/dependency-graph-review.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/compatibility-map-review.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/changed-files.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/validation-results.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/validation.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/evidence/next-task-prompt.md
+warnings:
+  - This task is planning evidence only.
+  - Q43-Q48 generated latest-* outputs remain source-repo evidence and are not target truth.
+  - Existing release artifacts are local preview/no-publish outputs.
+  - Real project canaries were not inspected live in this task.
+blockers: []

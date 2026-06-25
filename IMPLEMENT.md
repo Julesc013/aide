@@ -9053,3 +9053,52 @@ and diff checks are recorded in the task-local evidence.
   ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime,
   provider/model calls, network calls, preview/apply/rollback, transaction
   approval, repository mutation, GitHub mutation, release, or promotion.
+
+## Work Item: AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/**`
+- `.aide/reports/distribution-update-protocol-v1-plan/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The durable local WorkerRun slice is accepted, and live queue truth routes next
+to distribution/update planning. The plan normalizes existing Q43-Q48 install,
+repair, upgrade, rollback/uninstall, release bundle, and release-draft work
+instead of replacing it with a greenfield distribution design.
+
+### Implementation Notes
+
+- Added the plan-only task packet and reports.
+- Inventoried existing no-apply/no-publish Q43-Q48 surfaces.
+- Defined the distribution object dependency graph, compatibility map,
+  source-of-truth map, ownership taxonomy, lifecycle state machines, migration
+  rules, refusal registry, artifact/source/channel model, rollout rings,
+  fixture matrix, security invariants, and public release gates.
+- Selected `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01` as the exact first build
+  task because downstream lock, ledger, record, plan, rollback, and receipt
+  objects require a stable distribution identity.
+
+### Verification
+
+Install, repair, upgrade, rollback, uninstall, release-bundle, and release-draft
+status/validation commands passed in their existing no-apply/no-publish modes.
+Task inspect/evidence, broad validation, diff checks, and scoped leak checks are
+recorded in the task-local evidence.
+
+### Remaining Issues
+
+- This task is planning only and does not accept public release readiness.
+- Real ScreenSave, Eureka, and Dominium canary installation/update behavior was
+  not executed in this task.
+- All install/update/repair/rollback/uninstall apply, release publication,
+  GitHub mutation, target repository mutation, Workbench/MCP runtime, and
+  source-change preview/apply/rollback behavior remains unimplemented.

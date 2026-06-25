@@ -2705,3 +2705,15 @@
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `durable_local_worker_run_slice_v0`, and recommends exactly `AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01`.
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Notes: This acceptance is fixture-backed and local only. It does not accept a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01
+
+- Title: Plan Distribution And Update Protocol v1
+- Status: Needs Review
+- Objective: reconcile AIDE distribution/update protocol v1 over the existing Q43-Q48 install, repair, upgrade, rollback/uninstall, release bundle, and release-draft foundations.
+- Scope: `.aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/**`, `.aide/reports/distribution-update-protocol-v1-plan/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted `durable_local_worker_run_slice_v0`, Q43 install planning, Q44 repair planning, Q45 upgrade planning, Q46 rollback/uninstall planning, Q47 local release bundle, and Q48 local release draft.
+- Verification Intent: Q43-Q48 status and validation commands, release status and draft-status, task inspect/evidence, broad validation, diff checks, leak scans, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, authorizes no implementation or apply behavior, and recommends exactly `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: This is a plan-only normalization task. It does not implement install/update/repair/rollback/uninstall apply, release publication, Git tags, GitHub Releases, uploads, network calls, provider/model calls, target repository mutation, branch/worktree automation, Workbench/MCP runtime, source-change preview/apply/rollback, or promotion.

@@ -1,0 +1,129 @@
+{
+  "schema_version": "aide.distribution-update-protocol-v1.plan-report.v0",
+  "task_id": "AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01",
+  "result": "PASS_WITH_WARNINGS",
+  "plan_only": true,
+  "recommended_next_task": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01",
+  "current_foundation": {
+    "install_q43": {
+      "status": "present",
+      "validation": "PASS",
+      "operations": 462,
+      "conflicts": 458,
+      "no_apply": true
+    },
+    "repair_q44": {
+      "status": "present",
+      "validation": "PASS",
+      "operations": 11,
+      "conflicts": 0,
+      "no_apply": true
+    },
+    "upgrade_q45": {
+      "status": "present",
+      "validation": "PASS",
+      "planned_updates": 5,
+      "planned_skips": 8,
+      "planned_preservations": 209,
+      "planned_conflicts": 209,
+      "no_apply": true
+    },
+    "rollback_q46": {
+      "status": "present",
+      "validation": "PASS",
+      "future_actions": 5,
+      "preservations": 224,
+      "no_apply": true
+    },
+    "uninstall_q46": {
+      "status": "present",
+      "validation": "PASS",
+      "future_removal_candidates": 233,
+      "preservations": 885,
+      "unknown_ownership_count": 672,
+      "no_apply": true
+    },
+    "release_bundle_q47": {
+      "bundle_id": "aide-lite-pack-v0-2b2a00f7c4628311",
+      "validation": "PASS",
+      "artifact_count": 11,
+      "no_publish": true
+    },
+    "release_draft_q48": {
+      "draft_id": "aide-lite-pack-v0-github-draft-2b2a00f7c4628311",
+      "validation": "PASS",
+      "asset_count": 12,
+      "publication_status": "local_draft_no_publish",
+      "no_publish": true
+    }
+  },
+  "v1_objects": [
+    {
+      "id": "DistributionManifest",
+      "version": "v1",
+      "order": 1,
+      "first_build_task": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01"
+    },
+    {
+      "id": "ProjectLock",
+      "version": "v0",
+      "order": 2
+    },
+    {
+      "id": "OwnershipLedger",
+      "version": "v1",
+      "order": 3
+    },
+    {
+      "id": "InstallRecord",
+      "version": "v0",
+      "order": 4
+    },
+    {
+      "id": "MigrationRecord",
+      "version": "v0",
+      "order": 5
+    },
+    {
+      "id": "UpdatePlan",
+      "version": "v1",
+      "order": 6
+    },
+    {
+      "id": "RollbackBundle",
+      "version": "v0",
+      "order": 7
+    },
+    {
+      "id": "UpdateReceipt",
+      "version": "v0",
+      "order": 8
+    }
+  ],
+  "frozen_laws": [
+    "unknown_ownership_blocks_automatic_apply",
+    "install_does_not_imply_admission",
+    "conformance_does_not_imply_authorization",
+    "approved_plan_cannot_expand_scope_during_apply",
+    "project_owned_data_is_never_silently_overwritten_or_deleted",
+    "managed_sections_require_exact_managed_section_identity",
+    "source_generated_aide_state_is_not_target_truth",
+    "every_update_has_preimage_postimage_evidence_and_rollback_path",
+    "aide_source_repo_is_not_installed_target_fixture"
+  ],
+  "non_capabilities": {
+    "install_apply": false,
+    "update_apply": false,
+    "repair_apply": false,
+    "rollback_apply": false,
+    "uninstall_apply": false,
+    "release_publication": false,
+    "git_tag_created": false,
+    "github_release_created": false,
+    "upload_performed": false,
+    "network_call_performed": false,
+    "provider_model_call_performed": false,
+    "target_repository_mutated": false,
+    "branch_worktree_automation_performed": false
+  }
+}
