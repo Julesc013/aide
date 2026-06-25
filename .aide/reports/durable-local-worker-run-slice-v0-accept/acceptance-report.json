@@ -1,0 +1,117 @@
+{
+  "accepted_capability": "durable_local_worker_run_slice_v0",
+  "accepted_meaning": "fixture_backed_local_durable_worker_run_recording_v0",
+  "assertions": [
+    {
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/status.yaml",
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json"
+      ],
+      "expected": {
+        "capability": "durable_local_worker_run_slice_v0",
+        "missing_evidence": 0,
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "id": "acceptance.source_build_passed",
+      "observed": {
+        "capability": "durable_local_worker_run_slice_v0",
+        "missing_evidence": 0,
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/status.yaml",
+        ".aide/reports/durable-local-worker-run-slice-v0-check/check-report.json"
+      ],
+      "expected": {
+        "material_finding_count": 1,
+        "missing_evidence": 0,
+        "next": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+        "result": "REQUEST_CHANGES"
+      },
+      "id": "acceptance.original_check_preserved",
+      "observed": {
+        "material_finding_count": 1,
+        "missing_evidence": 0,
+        "next": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+        "result": "REQUEST_CHANGES"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/status.yaml",
+        ".aide/reports/durable-local-worker-run-slice-v0-repair-01-check/check-report.json"
+      ],
+      "expected": {
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "next": "AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "id": "acceptance.repair_check_passed",
+      "observed": {
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "next": "AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json",
+        ".aide/reports/durable-local-worker-run-slice-v0/event-record.json",
+        ".aide/reports/durable-local-worker-run-slice-v0-repair-01-check/check-report.json"
+      ],
+      "expected": {
+        "event_payload_result": "PASS",
+        "fixture_host_result": "PASS"
+      },
+      "id": "acceptance.event_record_result_consistency_closed",
+      "observed": {
+        "event_payload_result": "PASS",
+        "fixture_host_result": "PASS"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json",
+        ".aide/reports/durable-local-worker-run-slice-v0-repair-01-check/check-report.json"
+      ],
+      "expected": "fixture-backed local durable WorkerRun recording with false authority boundaries",
+      "id": "acceptance.boundary_exactness",
+      "observed": {
+        "fixture_backed": true,
+        "idempotent_replay_no_second_host_launch": true,
+        "process_call_count": 1,
+        "source_checkout_unchanged": true,
+        "workspace_state_unchanged": true
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    }
+  ],
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "schema_version": "aide.durable-local-worker-run-acceptance.v0",
+  "source_build_task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "source_check_task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "source_repair_check_task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+  "source_repair_task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+  "task_id": "AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "warnings": [
+    "Accepted capability is fixture-backed and local only.",
+    "Temporary local Service state is used by default; persistent daemon and .aide.local state are not accepted.",
+    "General worker harness, autonomous worker runtime, scheduler, leases, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, repository mutation, GitHub mutation, release, and promotion remain non-capabilities."
+  ]
+}

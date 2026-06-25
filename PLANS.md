@@ -2693,3 +2693,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: This check closes only the repair finding. It does not accept a general worker harness, autonomous worker, scheduler, daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+
+- Title: Accept Durable Local WorkerRun Slice v0
+- Status: Needs Review
+- Objective: accept exactly `durable_local_worker_run_slice_v0` after the build, initial independent check, Repair 01, and independent repair check preserved the failed history and closed the single material finding.
+- Scope: `.aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/**`, `.aide/reports/durable-local-worker-run-slice-v0-accept/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`, `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`, `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`, and `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`.
+- Verification Intent: source-chain review, durable WorkerRun validation, source/check/repair task inspect/evidence, broad validation, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `durable_local_worker_run_slice_v0`, and recommends exactly `AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01`.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Notes: This acceptance is fixture-backed and local only. It does not accept a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

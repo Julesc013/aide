@@ -9008,3 +9008,48 @@ durable validation, task inspect/evidence, and broad validation passed.
   Workbench/MCP runtime, provider/model calls, network calls,
   preview/apply/rollback, transaction approval, repository mutation, GitHub
   mutation, release, or promotion.
+
+## Work Item: AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+
+### Status
+
+Completed with `ACCEPTED_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/**`
+- `.aide/reports/durable-local-worker-run-slice-v0-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The durable WorkerRun source chain had completed the required build, check,
+repair, and independent repair check sequence. The repair check verified the
+single original material finding was closed, preserved failed-check evidence,
+and routed to acceptance.
+
+### Implementation Notes
+
+- Added an acceptance-only task packet and acceptance reports.
+- Accepted exactly `durable_local_worker_run_slice_v0`.
+- Preserved the narrow accepted boundary: fixture-backed local durable WorkerRun
+  recording through accepted local Service, trust, registered-process, and
+  LocalProcessExecutionHost fixture slices.
+- Routed next queue work to a bounded distribution/update protocol planning
+  task because the 25 June 2026 handoff's earlier local-trust gate reference is
+  stale relative to live queue truth.
+
+### Verification
+
+Durable WorkerRun validation, task inspect/evidence checks, broad validation,
+and diff checks are recorded in the task-local evidence.
+
+### Remaining Issues
+
+- The accepted capability remains fixture-backed and local only.
+- It does not implement a general worker harness, autonomous AI worker, remote
+  ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime,
+  provider/model calls, network calls, preview/apply/rollback, transaction
+  approval, repository mutation, GitHub mutation, release, or promotion.

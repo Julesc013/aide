@@ -2439,3 +2439,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/evidence
   description: Check-only independent review of AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01. Verifies the original check had exactly one material finding, Repair 01 reports PASS_WITH_WARNINGS with no missing evidence, the durable WorkerRun EventRecord payload result now preserves the fixture host_result PASS, source and focused tests cover the normalized report case, false-boundary fields remain false, source/workspace unchanged claims remain true, and committed reports remain scrubbed. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01. Does not repair implementation, accept the capability, implement a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+- id: AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept Durable Local WorkerRun Slice v0
+  task: .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence
+  description: Acceptance-only consolidation for durable_local_worker_run_slice_v0 after the build, initial check, Repair 01, and independent repair check completed with the original EventRecord result consistency finding closed, material_finding_count 0, and missing_evidence 0. Accepts exactly durable_local_worker_run_slice_v0 as a fixture-backed local durable WorkerRun recording slice using accepted local Service, trust, registered-process, and LocalProcessExecutionHost fixture behavior. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01. Does not accept a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

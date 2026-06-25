@@ -1,0 +1,29 @@
+schema_version: aide.task-status.v0
+id: AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+accepted_capability: durable_local_worker_run_slice_v0
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01
+evidence:
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/baseline.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/acceptance-review.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/accepted-boundary.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/check-chain.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/validation-results.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/next-task-prompt.md
+warnings:
+  - Accepted capability is fixture-backed and local only.
+  - It uses temporary local Service state by default and does not create persistent .aide.local state.
+  - It proves durable recording of a bounded local WorkerRun slice, not a general worker harness or autonomous worker runtime.
+  - The accepted LocalProcessExecutionHost fixture remains the only process launch path.
+blockers: []

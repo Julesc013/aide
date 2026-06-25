@@ -1,0 +1,75 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+title: Accept Durable Local WorkerRun Slice v0
+type: accept
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Accept only durable_local_worker_run_slice_v0 after the build, initial
+  independent check, Repair 01, and independent repair check completed with no
+  remaining material findings and complete evidence.
+authorizes_implementation: false
+accepted_capability: durable_local_worker_run_slice_v0
+accepted_meaning: >
+  AIDE can compose the accepted local Service foundation, accepted trust
+  contracts, accepted local trust enforcement, accepted RegisteredProcessExecutionProvider v0,
+  and accepted LocalProcessExecutionHost fixture behavior to durably record a
+  bounded fixture-backed local WorkerRun into temporary local Service state,
+  including WorkUnit, WorkerRun, host outcome, EvidencePacket, EventRecord,
+  monotonic local events, idempotency, and artifact metadata while proving
+  replay does not launch a second host run.
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+  - AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
+  - AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
+  - AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/**
+  - .aide/reports/durable-local-worker-run-slice-v0-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/service/**
+  - core/protocol/**
+  - core/execution/**
+  - core/interop/**
+  - hosts/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_durable_worker_run_slice.py
+  - .aide/reports/durable-local-worker-run-slice-v0/**
+  - .aide/reports/durable-local-worker-run-slice-v0-check/**
+  - .aide/reports/durable-local-worker-run-slice-v0-repair-01/**
+  - .aide/reports/durable-local-worker-run-slice-v0-repair-01-check/**
+  - .aide.local/**
+explicit_non_capabilities:
+  - general worker harness
+  - autonomous AI worker
+  - remote ExecutionHost
+  - scheduler
+  - leases
+  - persistent background Service daemon
+  - Workbench runtime
+  - MCP runtime
+  - provider/model calls
+  - network calls
+  - PreviewSession
+  - DevelopmentTransaction
+  - preview/apply/rollback
+  - transaction approval
+  - source or target repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - Accepted capability is fixture-backed and local only.
+  - It uses temporary local Service state by default and does not create persistent .aide.local state.
+  - It proves durable recording of a bounded local WorkerRun slice, not a general worker harness or autonomous worker runtime.
+  - The accepted LocalProcessExecutionHost fixture remains the only process launch path.
+recommended_next_task: AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01
