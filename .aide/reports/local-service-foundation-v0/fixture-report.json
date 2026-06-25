@@ -1,0 +1,73 @@
+{
+  "artifact_deduplicated": true,
+  "artifact_digest": "sha256:f853fda81e36e2a8fabb79fa13664850c49428eaf00c9e56ef1fb4998108499d",
+  "artifact_digest_mismatch_refused": true,
+  "artifact_metadata": {
+    "digest": "sha256:f853fda81e36e2a8fabb79fa13664850c49428eaf00c9e56ef1fb4998108499d",
+    "media_type": "application/json",
+    "relative_path": "fixture.json",
+    "size": 23
+  },
+  "artifact_path_traversal_refused": true,
+  "artifact_write_read": true,
+  "atomic_object_event_committed": true,
+  "atomic_object_event_sequence": 1,
+  "branch_worktree_mutation_performed": false,
+  "capability_execution_implemented": false,
+  "capability_label": "local_service_foundation_v0",
+  "corruption_refused": true,
+  "cursor_acknowledgment": {
+    "cursor_ref": "aide://cursor/local-service-fixture",
+    "last_sequence": 2
+  },
+  "distributed_locking_implemented": false,
+  "event_delivery_semantics": "at_least_once",
+  "event_sequences": [
+    1,
+    2
+  ],
+  "fixture_state_removed": true,
+  "future_migration_refused": true,
+  "github_mutation_performed": false,
+  "health": {
+    "database_opened": true,
+    "network_listener_opened": false,
+    "schema_version": 1,
+    "single_writer": true,
+    "status": "PASS"
+  },
+  "idempotency_conflict_refused": true,
+  "idempotency_duplicate": {
+    "idempotency_key": "fixture-key",
+    "result_ref": "aide://result/local-service-fixture",
+    "status": "duplicate"
+  },
+  "idempotency_first": {
+    "idempotency_key": "fixture-key",
+    "result_ref": "aide://result/local-service-fixture",
+    "status": "recorded"
+  },
+  "local_state_committed": false,
+  "mcp_implemented": false,
+  "migration_idempotent": true,
+  "monotonic_events": true,
+  "network_listener_opened": false,
+  "object_put_get_list": true,
+  "preview_apply_implemented": false,
+  "provider_model_calls_performed": false,
+  "recommended_next_task": "AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01",
+  "release_or_promotion_performed": false,
+  "reopen_persistence": true,
+  "repository_mutation_performed": false,
+  "resource_version_conflict_refused": true,
+  "rollback_on_error": true,
+  "runtime_state_root": "temporary",
+  "scheduler_implemented": false,
+  "schema_version": 1,
+  "source_checkout_unchanged": true,
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01",
+  "trust_enforcement_implemented": false,
+  "workbench_implemented": false,
+  "worker_execution_implemented": false
+}

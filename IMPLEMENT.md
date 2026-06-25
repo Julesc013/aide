@@ -8530,3 +8530,54 @@ are recorded in task-local evidence.
 
 - Local Service foundation remains unbuilt and is the next serialized task.
 - Runtime enforcement and live trust infrastructure remain future work.
+
+## Work Item: AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `core/service/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_local_service_foundation.py`
+- `.aide/reports/local-service-foundation-v0/**`
+- `.aide/queue/AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+After accepting projection-only trust contracts, AIDE needs a small durable local
+coordination substrate before trust enforcement or durable WorkerRun slices. The
+build implements local storage primitives only, without network or runtime
+authority expansion.
+
+### Implementation Notes
+
+- Added `core/service` with SQLite migrations, object storage, monotonic events,
+  cursor acknowledgments, idempotency records, artifact metadata, and a local
+  content-addressed artifact store.
+- Added fixture-only `aide_lite.py local-service` commands for status,
+  init-fixture, fixture, validate, and reset-fixture.
+- Added focused tests for migrations, version conflicts, atomic object/event
+  writes, event reads, cursors, idempotency, artifact integrity, persistence,
+  corruption refusal, boundary flags, and CLI fixture initialization.
+- Generated local-service reports under
+  `.aide/reports/local-service-foundation-v0/`.
+
+### Verification
+
+Focused local service tests pass. `local-service init-fixture`, `fixture`,
+`status`, and `validate` report `PASS_WITH_WARNINGS`. Final compileall,
+regression tests, task inspect/evidence, broad validation, local-state boundary
+checks, leak scans, diff checks, and commit-policy validation are recorded in
+task-local evidence.
+
+### Remaining Issues
+
+- `AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01` is required before acceptance.
+- Service remains local, no-network, single-machine, at-least-once only, and
+  does not execute workers or enforce trust.

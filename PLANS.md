@@ -2573,3 +2573,15 @@
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only projection-only `trust_and_authorization_contract_v0`, and recommends exactly `AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01`.
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Notes: This acceptance does not accept live identity, credentials, OIDC/IAM, live policy engine, live grants, runtime enforcement, worker execution, transaction approval, Service/runtime behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01
+
+- Title: Build Local Service Foundation v0
+- Status: Needs Review
+- Objective: build the smallest local, durable, no-network AIDE Service foundation with SQLite object/event/idempotency/cursor storage and filesystem content-addressed artifacts.
+- Scope: `core/service/**`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_local_service_foundation.py`, `.aide/reports/local-service-foundation-v0/**`, `.aide/queue/AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted `trust_and_authorization_contract_v0` from `AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01`.
+- Verification Intent: focused local service tests, fixture init/run/status/validate commands, compileall, local-process/trust regressions, task inspect/evidence, broad validation, local-state boundary check, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `local_service_foundation_v0`, preserves no-network/no-worker/no-enforcement boundaries, and recommends exactly `AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: This build does not implement network API, HTTP, sockets, scheduler, worker execution, capability execution, trust enforcement, MCP, Workbench, distributed locking, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

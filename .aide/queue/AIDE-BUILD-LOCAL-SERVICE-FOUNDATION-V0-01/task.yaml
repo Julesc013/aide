@@ -1,0 +1,61 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01
+title: Build Local Service Foundation v0
+type: build
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Build the smallest local, durable, no-network AIDE Service foundation with
+  SQLite object/event/idempotency/cursor storage and filesystem
+  content-addressed artifacts.
+proposed_capability: local_service_foundation_v0
+accepted_capability: null
+authorizes_implementation: true
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+allowed_paths:
+  - core/service/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_local_service_foundation.py
+  - .aide/reports/local-service-foundation-v0/**
+  - .aide/queue/AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide.local/**
+  - core/execution/**
+  - core/interop/**
+  - hosts/**
+  - .aide/reports/trust-authorization-contract-v0/**
+  - .aide/reports/trust-authorization-contract-v0-check/**
+  - .aide/reports/trust-authorization-contract-v0-accept/**
+explicit_non_capabilities:
+  - network API
+  - HTTP server
+  - socket listener
+  - scheduler
+  - worker execution
+  - capability execution
+  - trust enforcement
+  - MCP runtime
+  - Workbench runtime
+  - distributed locking
+  - exactly-once delivery
+  - provider/model calls
+  - preview/apply/rollback
+  - repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - Local Service foundation v0 is single-machine and no-network.
+  - Event delivery is at-least-once only.
+  - Runtime state remains ignored and uncommitted under .aide.local/service when used outside fixtures.
+recommended_next_task: AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01
