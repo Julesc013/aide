@@ -2359,3 +2359,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/evidence
   description: Check-only independent review of AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01. Verifies local state remains ignored and uncommitted, migrations are deterministic and idempotent, future migrations are refused, object/event writes are atomic, resource-version conflicts fail closed, event sequences are monotonic with at-least-once-only delivery, cursors resume, idempotency duplicate/conflict behavior works, artifacts are content-addressed and path-contained, restart persistence works, corruption is refused, false runtime boundaries remain false, focused tests and broad validation pass, and reports are scrubbed. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01. Does not repair implementation, accept the capability, implement network API, scheduler, worker execution, capability execution, trust enforcement, MCP, Workbench, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+- id: AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept Local Service Foundation v0
+  task: .aide/queue/AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01/evidence
+  description: Acceptance-only consolidation for local_service_foundation_v0 after the build and independent check both passed with warnings, material_finding_count 0, and missing_evidence 0. Accepts exactly local_service_foundation_v0 as a local, no-network, single-machine object, event, artifact, idempotency, and cursor store suitable for later bounded runtime slices. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01. Does not accept scheduler, worker execution, capability execution, authorization enforcement, network API, MCP runtime, Workbench runtime, distributed state, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

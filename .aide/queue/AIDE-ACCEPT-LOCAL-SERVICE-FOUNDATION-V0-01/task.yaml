@@ -1,0 +1,60 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01
+title: Accept Local Service Foundation v0
+type: accept
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Accept only local_service_foundation_v0 after the build and independent check
+  both passed with warnings, zero material findings, and complete evidence.
+authorizes_implementation: false
+accepted_capability: local_service_foundation_v0
+accepted_meaning: >
+  AIDE has a local, no-network, single-machine object, event, artifact,
+  idempotency, and cursor store suitable for later bounded runtime slices.
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01
+  - AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01/**
+  - .aide/reports/local-service-foundation-v0-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/service/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_local_service_foundation.py
+  - .aide/reports/local-service-foundation-v0/**
+  - .aide/reports/local-service-foundation-v0-check/**
+  - core/execution/**
+  - core/interop/**
+  - hosts/**
+  - .aide.local/**
+explicit_non_capabilities:
+  - scheduler
+  - worker execution
+  - capability execution
+  - authorization enforcement
+  - network API
+  - MCP runtime
+  - Workbench runtime
+  - distributed state
+  - exactly-once delivery
+  - provider/model calls
+  - preview/apply/rollback
+  - repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - Accepted capability is local, no-network, and single-machine.
+  - Event delivery is at-least-once only.
+  - Runtime scheduling, trust enforcement, worker execution, and interoperability surfaces remain future work.
+recommended_next_task: AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01

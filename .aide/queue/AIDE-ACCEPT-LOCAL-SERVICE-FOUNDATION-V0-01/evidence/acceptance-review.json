@@ -1,0 +1,88 @@
+{
+  "accepted_capability": "local_service_foundation_v0",
+  "accepted_meaning": "local_no_network_single_machine_object_event_artifact_idempotency_cursor_store_v0",
+  "assertions": [
+    {
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01/status.yaml",
+        ".aide/queue/AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01/task.yaml"
+      ],
+      "expected": {
+        "capability": "local_service_foundation_v0",
+        "missing_evidence": 0,
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "id": "acceptance.source_build_passed",
+      "observed": {
+        "capability": "local_service_foundation_v0",
+        "missing_evidence": 0,
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01/status.yaml",
+        ".aide/reports/local-service-foundation-v0-check/check-report.json"
+      ],
+      "expected": {
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "next": "AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "id": "acceptance.independent_check_passed",
+      "observed": {
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "next": "AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/local-service-foundation-v0/validation.json",
+        ".aide/reports/local-service-foundation-v0/fixture-report.json"
+      ],
+      "expected": "validated local no-network service, false runtime boundaries, at_least_once delivery only",
+      "id": "acceptance.boundary_exactness",
+      "observed": {
+        "event_delivery_semantics": "at_least_once",
+        "false_boundaries_ok": true,
+        "validated": true
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    },
+    {
+      "evidence_refs": [
+        ".aide/reports/local-service-foundation-v0/validation.json",
+        ".aide/reports/local-service-foundation-v0/fixture-report.json",
+        ".aide/reports/local-service-foundation-v0-check/check-report.json"
+      ],
+      "expected": "no secret-like values in source acceptance reports",
+      "id": "acceptance.no_secret_like_values",
+      "observed": {
+        "secret_hits": []
+      },
+      "outcome": "PASS",
+      "severity": "material"
+    }
+  ],
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "schema_version": "aide.local-service-foundation-acceptance.v0",
+  "source_build_task_id": "AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01",
+  "source_check_task_id": "AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01",
+  "task_id": "AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01",
+  "warnings": [
+    "Accepted capability is local, no-network, and single-machine.",
+    "Event delivery is at-least-once only.",
+    "Runtime scheduling, trust enforcement, worker execution, and interoperability surfaces remain future work."
+  ]
+}

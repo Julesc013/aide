@@ -8625,3 +8625,47 @@ local-state boundary checks, and leak scans are recorded in task-local evidence.
 - Scheduler, worker execution, capability execution, trust enforcement, MCP,
   Workbench, exactly-once delivery, provider/model calls, preview/apply, and
   rollback remain non-capabilities.
+
+## Work Item: AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01
+
+### Status
+
+Completed with `ACCEPTED_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01/**`
+- `.aide/reports/local-service-foundation-v0-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The Local Service foundation build and independent check both passed with
+warnings, zero material findings, and complete evidence. This acceptance
+consolidates the exact achieved capability without broadening it into runtime
+scheduling, enforcement, or interoperability behavior.
+
+### Implementation Notes
+
+- Added an acceptance task packet, evidence, reports, and acceptance review.
+- Accepted exactly `local_service_foundation_v0`.
+- Preserved explicit non-capabilities for scheduler, worker execution,
+  capability execution, authorization enforcement, network API, MCP, Workbench,
+  distributed state, exactly-once delivery, provider/model calls,
+  preview/apply/rollback, mutation, GitHub behavior, release, and promotion.
+- Routed next work to `AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01`.
+
+### Verification
+
+The acceptance review produced `ACCEPTED_WITH_WARNINGS`, zero material findings,
+and `missing_evidence: 0`. Final source/check/accept task inspect and evidence,
+local-service validation, broad validation, leak scans, diff checks, and
+commit-policy check are recorded in task-local evidence.
+
+### Remaining Issues
+
+- Local trust enforcement is the next serialized task.
+- Worker execution, scheduling, MCP, Workbench, provider/model calls,
+  preview/apply/rollback, and distributed state remain future work.

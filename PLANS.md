@@ -2597,3 +2597,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: This check does not repair implementation, accept the capability, implement network API, scheduler, worker execution, capability execution, trust enforcement, MCP, Workbench, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01
+
+- Title: Accept Local Service Foundation v0
+- Status: Needs Review
+- Objective: accept exactly `local_service_foundation_v0` after the build and independent check both passed with warnings and zero material findings.
+- Scope: `.aide/queue/AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01/**`, `.aide/reports/local-service-foundation-v0-accept/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source build commit `e2f44abf27aa594f00cdb28648598a15f96c36bc`, source check commit `ee3d518ec4a3351bcfeea795560d86652a9d6dc1`, zero material findings, and complete evidence.
+- Verification Intent: acceptance review, source build/check inspect and evidence, local-service validation, broad validation, local-state boundary check, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `local_service_foundation_v0`, and recommends exactly `AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01`.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Notes: This acceptance does not accept scheduler, worker execution, capability execution, authorization enforcement, network API, MCP runtime, Workbench runtime, distributed state, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
