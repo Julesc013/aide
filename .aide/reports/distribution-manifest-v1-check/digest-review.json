@@ -1,0 +1,64 @@
+{
+  "independent_distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+  "independent_manifest_payload_digest": "sha256:3822baea7c7a8689911a587a43f6f2a7339cdbec45dbfefa7fbdafc65a0b9de9",
+  "mutation_probes": [
+    {
+      "case": "recommended_next_task",
+      "category": "status",
+      "distribution_digest_changed": true,
+      "expected_identity_change": false,
+      "payload_digest_changed": true
+    },
+    {
+      "case": "status_status",
+      "category": "status",
+      "distribution_digest_changed": true,
+      "expected_identity_change": false,
+      "payload_digest_changed": true
+    },
+    {
+      "case": "proposed_capability",
+      "category": "status",
+      "distribution_digest_changed": true,
+      "expected_identity_change": false,
+      "payload_digest_changed": true
+    },
+    {
+      "case": "implementation_boolean",
+      "category": "status",
+      "distribution_digest_changed": true,
+      "expected_identity_change": false,
+      "payload_digest_changed": true
+    },
+    {
+      "case": "operational_warning",
+      "category": "spec",
+      "distribution_digest_changed": true,
+      "expected_identity_change": true,
+      "payload_digest_changed": true
+    },
+    {
+      "case": "distribution_identity",
+      "category": "metadata",
+      "distribution_digest_changed": true,
+      "expected_identity_change": true,
+      "payload_digest_changed": true
+    },
+    {
+      "case": "artifact_digest",
+      "category": "artifact",
+      "distribution_digest_changed": true,
+      "expected_identity_change": true,
+      "payload_digest_changed": true
+    },
+    {
+      "case": "component_digest",
+      "category": "component",
+      "distribution_digest_changed": true,
+      "expected_identity_change": true,
+      "payload_digest_changed": true
+    }
+  ],
+  "source_distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+  "source_manifest_payload_digest": "sha256:3822baea7c7a8689911a587a43f6f2a7339cdbec45dbfefa7fbdafc65a0b9de9"
+}

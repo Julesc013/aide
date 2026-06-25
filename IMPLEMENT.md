@@ -9158,3 +9158,57 @@ task-local evidence.
 - Signature verification, SBOM generation, install/update apply, release
   publication, target mutation, Workbench/MCP runtime, provider/model calls, and
   promotion remain unimplemented.
+
+## Work Item: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
+
+### Status
+
+Completed with `REQUEST_CHANGES` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/**`
+- `.aide/reports/distribution-manifest-v1-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The DistributionManifest v1 build proposed a new distribution identity object
+over Q47 local release evidence. A check-only gate was required before any
+acceptance or downstream ProjectLock work could depend on that identity.
+
+### Implementation Notes
+
+- Added a check-only task packet and report set.
+- Added a task-local independent harness that recomputes digests without using
+  the production digest helper as authority.
+- Exercised the live manifest helper as the system under test for adversarial
+  schema, digest, component, artifact, checksum, protocol, and contamination
+  probes.
+- Preserved the check boundary; no production code, schema, fixture, or source
+  report was repaired.
+
+### Verification
+
+The independent harness recorded `REQUEST_CHANGES`,
+`material_finding_count: 9`, `missing_evidence: 0`, and routed to
+`AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01`.
+
+### Remaining Issues
+
+- `schema.optional_extension_boundary_missing`
+- `identity.mutable_status_changes_distribution_digest`
+- `component.graph_integrity_not_validated`
+- `artifact.integrity_metadata_not_validated`
+- `path.preaccess_validation_order_violation`
+- `checksum.value_not_verified`
+- `protocol.range_semantics_incomplete`
+- `contamination.forbidden_members_silently_filtered`
+- `fixture.required_coverage_incomplete`
+
+No implementation repair, DistributionManifest acceptance, ProjectLock work,
+install/update/repair/rollback/uninstall apply, release publication, target
+mutation, Workbench/MCP runtime, provider/model call, source-change
+preview/apply/rollback, or promotion was performed.

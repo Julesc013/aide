@@ -1,0 +1,65 @@
+schema_version: aide.task-status.v0
+id: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
+status: needs_review
+planning_state: check_completed
+result: REQUEST_CHANGES
+review_gate: needs_review
+updated_at: 2026-06-26
+source_task: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
+source_commit: ad975887910f6a7238ef076ce2fef0fd43687e37
+proposed_capability: distribution_manifest_v1
+accepted_capability: null
+material_finding_count: 9
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+implementation_repaired: false
+distribution_manifest_accepted: false
+project_lock_started: false
+install_apply_executed: false
+upgrade_apply_executed: false
+repair_apply_executed: false
+rollback_apply_executed: false
+uninstall_apply_executed: false
+release_publication_performed: false
+target_repository_mutated: false
+branch_worktree_automation_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+evidence:
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/source-build-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/schema-helper-alignment.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/extension-compatibility-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/immutable-identity-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/independent-digest-recomputation.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/component-graph-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/artifact-integrity-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/path-preaccess-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/checksum-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/protocol-range-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/q47-source-mapping-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/status-vs-spec-authority.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/signature-sbom-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/contamination-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/fixture-coverage-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/no-overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/validation-results.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/distribution-manifest-v1-check/check-report.json
+  - .aide/reports/distribution-manifest-v1-check/check-report.md
+  - .aide/reports/distribution-manifest-v1-check/digest-review.json
+  - .aide/reports/distribution-manifest-v1-check/component-graph-review.json
+  - .aide/reports/distribution-manifest-v1-check/artifact-integrity-review.json
+  - .aide/reports/distribution-manifest-v1-check/checksum-review.json
+  - .aide/reports/distribution-manifest-v1-check/protocol-range-review.json
+  - .aide/reports/distribution-manifest-v1-check/q47-mapping-review.json
+  - .aide/reports/distribution-manifest-v1-check/compatibility-review.json
+  - .aide/reports/distribution-manifest-v1-check/material-findings.json
+  - .aide/reports/distribution-manifest-v1-check/status.md
+  - .aide/reports/distribution-manifest-v1-check/next-task-prompt.md
+blockers: []

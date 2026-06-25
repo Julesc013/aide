@@ -2469,3 +2469,13 @@ items:
   prompt: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/prompt.md
   evidence: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence
   description: Build task for proposed distribution_manifest_v1. Adds a Draft 2020-12 DistributionManifest schema, deterministic helper, valid/invalid fixture corpus, AIDE Lite distribution-manifest status/project/validate commands, focused tests, and reports under .aide/reports/distribution-manifest-v1. The projection normalizes existing Q47 local release-bundle evidence into distribution identity, component/artifact inventory, protocol compatibility, checksum/provenance references, signature/SBOM placeholders, deterministic digests, and source-contamination refusals while treating Q48 release drafts as publication-review evidence only. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01. Does not implement install/update/repair/rollback/uninstall apply, release publication, Git tags, GitHub Releases, uploads, target repository mutation, branch/worktree automation, network calls, provider/model calls, Workbench/MCP runtime, source-change preview/apply/rollback, or promotion.
+- id: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
+  status: needs_review
+  planning_state: check_completed
+  result: REQUEST_CHANGES
+  title: Check DistributionManifest v1
+  task: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence
+  description: Check-only independent review of AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01 at ad975887910f6a7238ef076ce2fef0fd43687e37. Independently recomputes distribution digests, probes schema extension behavior, identity/status coupling, component graph closure, artifact metadata integrity, pre-access path safety, checksum value verification, protocol range semantics, source contamination handling, fixture coverage, Q47/Q48 mapping, and explicit non-capabilities. Stops at needs_review with REQUEST_CHANGES, material_finding_count 9, missing_evidence 0, and recommends exactly AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01. Does not repair implementation, accept DistributionManifest v1, begin ProjectLock v0, execute install/update/repair/rollback/uninstall apply, publish releases, create tags, upload artifacts, mutate targets, call network/provider/model services, start Workbench/MCP runtime, preview/apply/rollback source changes, or promote.

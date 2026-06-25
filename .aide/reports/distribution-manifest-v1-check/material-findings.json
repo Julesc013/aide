@@ -1,0 +1,119 @@
+{
+  "findings": [
+    {
+      "category": "schema",
+      "evidence_refs": [
+        "schema-helper-alignment.md",
+        "extension-compatibility-review.md"
+      ],
+      "expected": "Unknown optional extension fields should be preserved or tolerated through an explicit extension surface.",
+      "id": "schema.optional_extension_boundary_missing",
+      "observed": "The root, metadata, spec, status, protocol, component, checksum, provenance, SBOM, and signature objects are closed with no extensions map; metadata optional extension would be rejected by schema.",
+      "severity": "material",
+      "source_finding_id": null,
+      "summary": "Closed canonical schema objects do not provide an explicit optional extension map."
+    },
+    {
+      "category": "identity",
+      "evidence_refs": [
+        "immutable-identity-review.md",
+        "status-vs-spec-authority.md",
+        "digest-review.json"
+      ],
+      "expected": "Distribution identity should bind immutable distribution declaration, not review routing or implementation state.",
+      "id": "identity.mutable_status_changes_distribution_digest",
+      "observed": "Changing only these status fields changed the payload/distribution digest: recommended_next_task, status_status, proposed_capability, implementation_boolean",
+      "severity": "material",
+      "source_finding_id": null,
+      "summary": "Mutable status and queue/controller fields are included in portable distribution identity."
+    },
+    {
+      "category": "component",
+      "evidence_refs": [
+        "component-graph-review.md",
+        "component-graph-review.json"
+      ],
+      "expected": "Corrupted component digests, missing artifact refs, unknown dependencies, duplicate component IDs, and cycles should fail closed.",
+      "id": "component.graph_integrity_not_validated",
+      "observed": "The following malformed cases validated successfully: corrupt_component_content_digest, missing_artifact_ref, unknown_component_dependency, duplicate_component_id_different_ref, dependency_cycle",
+      "severity": "material",
+      "source_finding_id": null,
+      "summary": "Semantic component graph validation does not prove content digest, artifact-ref closure, dependency closure, or component_id uniqueness."
+    },
+    {
+      "category": "artifact",
+      "evidence_refs": [
+        "artifact-integrity-review.md",
+        "artifact-integrity-review.json"
+      ],
+      "expected": "Byte counts, media type, and compression declarations should be validated for included local archive artifacts.",
+      "id": "artifact.integrity_metadata_not_validated",
+      "observed": "The following malformed cases validated successfully: wrong_byte_count, wrong_media_type, wrong_compression_format",
+      "severity": "material",
+      "source_finding_id": null,
+      "summary": "Artifact validation does not fully compare committed metadata with actual artifact bytes and type."
+    },
+    {
+      "category": "path_safety",
+      "evidence_refs": [
+        "path-preaccess-review.md"
+      ],
+      "expected": "Malformed source artifact paths should be rejected before exists/stat/open/hash or traversal.",
+      "id": "path.preaccess_validation_order_violation",
+      "observed": "Source inspection shows path existence/stat/hash operations occur before any containment or forbidden-member validation in the release artifact projector.",
+      "severity": "material",
+      "source_finding_id": null,
+      "summary": "Release artifact projection touches filesystem paths before semantic path validation."
+    },
+    {
+      "category": "checksum",
+      "evidence_refs": [
+        "checksum-review.md",
+        "checksum-review.json"
+      ],
+      "expected": "Checksum validation should verify algorithm, key uniqueness, and value equality with the artifact content digest.",
+      "id": "checksum.value_not_verified",
+      "observed": "A probe checksum manifest with the same artifact basename and a wrong digest value validated successfully.",
+      "severity": "material",
+      "source_finding_id": null,
+      "summary": "Checksum validation accepts a checksum entry with the correct name but the wrong digest value."
+    },
+    {
+      "category": "compatibility",
+      "evidence_refs": [
+        "protocol-range-review.md",
+        "protocol-range-review.json"
+      ],
+      "expected": "Ranges should prove v1 inclusion, min <= max, required reader/writer fields, and coherent component constraints.",
+      "id": "protocol.range_semantics_incomplete",
+      "observed": "The following malformed compatibility cases validated successfully: lower_bound_above_v1, missing_min, missing_reader_version, missing_writer_version, incompatible_component_constraints",
+      "severity": "material",
+      "source_finding_id": null,
+      "summary": "Protocol range validation does not enforce lower bounds, reader/writer fields, or component compatibility constraints."
+    },
+    {
+      "category": "contamination",
+      "evidence_refs": [
+        "contamination-review.md"
+      ],
+      "expected": "A contaminated distribution source should emit explicit contamination/refusal evidence or define a separate filtered-export proof boundary.",
+      "id": "contamination.forbidden_members_silently_filtered",
+      "observed": "Source inspection shows directory inventory continues past forbidden members rather than recording a refusal.",
+      "severity": "material",
+      "source_finding_id": null,
+      "summary": "Local-directory distribution inventory silently skips forbidden source-state members."
+    },
+    {
+      "category": "fixture",
+      "evidence_refs": [
+        "fixture-coverage-review.md"
+      ],
+      "expected": "Required direct fixtures should exist for the distribution manifest contract and known risk matrix.",
+      "id": "fixture.required_coverage_incomplete",
+      "observed": "Missing fixture cases: duplicate-component-id, malformed-digest, wrong-component-digest, wrong-payload-digest, wrong-distribution-digest, missing-artifact-ref, missing-dependency, dependency-cycle, unsupported-source, unknown-optional-feature, unsupported-protocol-range, inverted-protocol-range, forbidden-member, source-contamination, checksum-missing, checksum-wrong-value, checksum-basename-collision, signature-placeholder, false-signature-verification, missing-sbom, unknown-optional-extension-round-trip",
+      "severity": "material",
+      "source_finding_id": null,
+      "summary": "The committed fixture corpus does not cover required adversarial cases."
+    }
+  ]
+}

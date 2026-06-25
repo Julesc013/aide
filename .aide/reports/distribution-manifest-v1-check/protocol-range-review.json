@@ -1,0 +1,34 @@
+{
+  "behavior_probes": [
+    {
+      "case": "lower_bound_above_v1",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    },
+    {
+      "case": "missing_min",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    },
+    {
+      "case": "missing_reader_version",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    },
+    {
+      "case": "missing_writer_version",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    },
+    {
+      "case": "incompatible_component_constraints",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    }
+  ]
+}

@@ -2729,3 +2729,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `distribution_manifest_v1`, and recommends exactly `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: This build does not implement install/update/repair/rollback/uninstall apply, release publication, Git tags, GitHub Releases, uploads, target repository mutation, branch/worktree automation, network calls, provider/model calls, Workbench/MCP runtime, source-change preview/apply/rollback, or promotion.
+
+### Queue ID: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
+
+- Title: Check DistributionManifest v1
+- Status: Needs Review
+- Objective: independently verify `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01` without repairing implementation, accepting `distribution_manifest_v1`, or beginning `ProjectLock v0`.
+- Scope: `.aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/**`, `.aide/reports/distribution-manifest-v1-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source build commit `ad975887910f6a7238ef076ce2fef0fd43687e37`, result `PASS_WITH_WARNINGS`, and missing evidence `0`.
+- Verification Intent: task-local independent harness, schema/helper/source review, digest recomputation, component/artifact/checksum/path/protocol probes, fixture coverage review, focused tests, task inspect/evidence, broad validation, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records the independent check result, and recommends either acceptance or a bounded repair task.
+- Result: `REQUEST_CHANGES`.
+- Notes: Nine material findings remain. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01`.

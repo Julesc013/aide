@@ -1,0 +1,70 @@
+{
+  "behavior_probes": [
+    {
+      "case": "wrong_checksum_value_same_name",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "checksum_file_digest": "sha256:d11f91599bbf13c39872b815b99a88063c50de8fcdf91aee76a09282bac2db06",
+  "included_archive_artifacts": [
+    {
+      "artifact_content_digest": "583d5ac82800450cd6473a4568a7c8c2111435413614969f71f8ae3de76ae720",
+      "artifact_ref": "aide://distribution/artifact/CHANGELOG.preview.md",
+      "basename": "CHANGELOG.preview.md",
+      "checksum_entry_present": true,
+      "checksum_matches_artifact": true,
+      "checksum_value": "583d5ac82800450cd6473a4568a7c8c2111435413614969f71f8ae3de76ae720"
+    },
+    {
+      "artifact_content_digest": "51cc5473d4f14fab1ca5d96646c8933d5e9122eedf52f3e48c158eac52a06456",
+      "artifact_ref": "aide://distribution/artifact/RELEASE_NOTES.preview.md",
+      "basename": "RELEASE_NOTES.preview.md",
+      "checksum_entry_present": true,
+      "checksum_matches_artifact": true,
+      "checksum_value": "51cc5473d4f14fab1ca5d96646c8933d5e9122eedf52f3e48c158eac52a06456"
+    },
+    {
+      "artifact_content_digest": "258c0ce9200c24c86fa237ace0df6ef58a9d9567cfb35956a464f56f48b9fc3a",
+      "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0.tar.gz",
+      "basename": "aide-lite-pack-v0.tar.gz",
+      "checksum_entry_present": true,
+      "checksum_matches_artifact": true,
+      "checksum_value": "258c0ce9200c24c86fa237ace0df6ef58a9d9567cfb35956a464f56f48b9fc3a"
+    },
+    {
+      "artifact_content_digest": "5ea124268b5c0448c906cedab9d7d62d1424ae2749cd0547acad44964f610761",
+      "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0.zip",
+      "basename": "aide-lite-pack-v0.zip",
+      "checksum_entry_present": true,
+      "checksum_matches_artifact": true,
+      "checksum_value": "5ea124268b5c0448c906cedab9d7d62d1424ae2749cd0547acad44964f610761"
+    },
+    {
+      "artifact_content_digest": "6176f03b047465dea6919e8d2958ba0bb7217bc7940791f71cad7b45bef0458f",
+      "artifact_ref": "aide://distribution/artifact/install.md",
+      "basename": "install.md",
+      "checksum_entry_present": true,
+      "checksum_matches_artifact": true,
+      "checksum_value": "6176f03b047465dea6919e8d2958ba0bb7217bc7940791f71cad7b45bef0458f"
+    },
+    {
+      "artifact_content_digest": "a63b444ba7b528b9528e7e0e096a505ba01c91aca700c026f76c883bc39a8870",
+      "artifact_ref": "aide://distribution/artifact/manifest.yaml",
+      "basename": "manifest.yaml",
+      "checksum_entry_present": true,
+      "checksum_matches_artifact": true,
+      "checksum_value": "a63b444ba7b528b9528e7e0e096a505ba01c91aca700c026f76c883bc39a8870"
+    },
+    {
+      "artifact_content_digest": "9394a6d96edd7ac64cbc70f4b7664d42f541c1a507ca1215a943ff7897ebc3c3",
+      "artifact_ref": "aide://distribution/artifact/release-provenance.json",
+      "basename": "release-provenance.json",
+      "checksum_entry_present": true,
+      "checksum_matches_artifact": true,
+      "checksum_value": "9394a6d96edd7ac64cbc70f4b7664d42f541c1a507ca1215a943ff7897ebc3c3"
+    }
+  ],
+  "manifest_checksum_digest": "sha256:d11f91599bbf13c39872b815b99a88063c50de8fcdf91aee76a09282bac2db06"
+}

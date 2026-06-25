@@ -1,0 +1,40 @@
+{
+  "extension_boundary_finding": true,
+  "protocol_review": {
+    "behavior_probes": [
+      {
+        "case": "lower_bound_above_v1",
+        "codes": [],
+        "errors": [],
+        "valid": true
+      },
+      {
+        "case": "missing_min",
+        "codes": [],
+        "errors": [],
+        "valid": true
+      },
+      {
+        "case": "missing_reader_version",
+        "codes": [],
+        "errors": [],
+        "valid": true
+      },
+      {
+        "case": "missing_writer_version",
+        "codes": [],
+        "errors": [],
+        "valid": true
+      },
+      {
+        "case": "incompatible_component_constraints",
+        "codes": [],
+        "errors": [],
+        "valid": true
+      }
+    ]
+  },
+  "schema_closed_object_count": 12,
+  "schema_extension_paths": [],
+  "unknown_optional_extensions_supported": false
+}

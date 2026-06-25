@@ -1,0 +1,43 @@
+{
+  "artifact_count": 12,
+  "behavior_probes": [
+    {
+      "case": "corrupt_component_content_digest",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    },
+    {
+      "case": "missing_artifact_ref",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    },
+    {
+      "case": "unknown_component_dependency",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    },
+    {
+      "case": "duplicate_component_id_different_ref",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    },
+    {
+      "case": "dependency_cycle",
+      "codes": [],
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "component_count": 1,
+  "component_digest_recomputations": [
+    {
+      "component_ref": "aide://distribution/component/aide-lite-pack-v0",
+      "expected": "sha256:985fb5f4e1179ebfb593f1a26ffaf049c8309c9e0ef5b8b8bf102c67db604744",
+      "observed": "sha256:985fb5f4e1179ebfb593f1a26ffaf049c8309c9e0ef5b8b8bf102c67db604744"
+    }
+  ]
+}
