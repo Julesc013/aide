@@ -2681,3 +2681,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, closes the repaired finding pending independent recheck, and recommends exactly `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: The repair preserves the observed host result in EventRecord payloads without widening the durable WorkerRun slice into a general worker harness or runtime.
+
+### Queue ID: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
+
+- Title: Check Durable Local WorkerRun Slice v0 Repair 01
+- Status: Needs Review
+- Objective: independently verify that Repair 01 closes `event_record_result_consistency` without repairing implementation or accepting `durable_local_worker_run_slice_v0`.
+- Scope: `.aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/**`, `.aide/reports/durable-local-worker-run-slice-v0-repair-01-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source repair commit `bedbe57a16db2d0720e0163fbc959282b18a64ed`, source check `REQUEST_CHANGES`, one material finding, and Repair 01 `PASS_WITH_WARNINGS`.
+- Verification Intent: independent task-local harness, source report consistency review, source/test text inspection, false-boundary checks, focused durable tests, durable validation, broad validation, task inspect/evidence, leak scan, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: This check closes only the repair finding. It does not accept a general worker harness, autonomous worker, scheduler, daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

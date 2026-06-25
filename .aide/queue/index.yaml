@@ -2429,3 +2429,13 @@ items:
   prompt: .aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/prompt.md
   evidence: .aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/evidence
   description: Bounded repair for the single material finding from AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01. Closes event_record_result_consistency by preserving the observed host result when building durable WorkerRun EventRecord payloads from normalized fixture reports; adds a focused regression; regenerates durable WorkerRun reports; stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01. Does not implement a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+- id: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
+  status: needs_review
+  planning_state: check_completed
+  result: PASS_WITH_WARNINGS
+  title: Check Durable Local WorkerRun Slice v0 Repair 01
+  task: .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/evidence
+  description: Check-only independent review of AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01. Verifies the original check had exactly one material finding, Repair 01 reports PASS_WITH_WARNINGS with no missing evidence, the durable WorkerRun EventRecord payload result now preserves the fixture host_result PASS, source and focused tests cover the normalized report case, false-boundary fields remain false, source/workspace unchanged claims remain true, and committed reports remain scrubbed. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01. Does not repair implementation, accept the capability, implement a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

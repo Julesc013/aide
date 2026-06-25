@@ -1,0 +1,11 @@
+{
+  "hit_count": 0,
+  "hits": [],
+  "scanned_roots": [
+    ".aide/reports/durable-local-worker-run-slice-v0",
+    ".aide/reports/durable-local-worker-run-slice-v0-repair-01",
+    ".aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/evidence"
+  ],
+  "schema_version": "aide.leak-scan.summary.v0",
+  "task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01"
+}

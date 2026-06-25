@@ -1,0 +1,17 @@
+{
+  "disposition": "CLOSED",
+  "evidence_refs": [
+    ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/evidence/independent-check-output.json",
+    ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json",
+    ".aide/reports/durable-local-worker-run-slice-v0/event-record.json"
+  ],
+  "expected": "EventRecord payload result preserves fixture host_result.",
+  "observed": {
+    "event_payload_result": "PASS",
+    "event_status_result": "PASS",
+    "fixture_host_result": "PASS"
+  },
+  "schema_version": "aide.finding-disposition.v0",
+  "source_finding_id": "event_record_result_consistency",
+  "task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01"
+}

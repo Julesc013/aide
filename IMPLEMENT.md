@@ -8961,3 +8961,50 @@ validation, and compileall passed before final validation.
   daemon, Workbench/MCP runtime, provider/model calls, network calls,
   preview/apply/rollback, transaction approval, repository mutation, GitHub
   mutation, release, or promotion.
+
+## Work Item: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/**`
+- `.aide/reports/durable-local-worker-run-slice-v0-repair-01-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The durable WorkerRun repair claimed to close the single material finding from
+the independent check. A separate check was needed to verify the closure without
+repairing implementation or accepting the capability.
+
+### Implementation Notes
+
+- Added a check-only task packet and independent task-local harness.
+- Verified the source check recorded exactly one material finding.
+- Verified Repair 01 records `PASS_WITH_WARNINGS`, `material_finding_count: 0`,
+  `missing_evidence: 0`, and this check as its next task.
+- Verified the durable WorkerRun EventRecord payload result now matches the
+  fixture report `host_result: PASS`.
+- Verified source/test coverage for the normalized `host_result` case.
+- Verified false-boundary and source/workspace unchanged claims remain narrow.
+
+### Verification
+
+The independent harness recorded `PASS_WITH_WARNINGS`,
+`material_finding_count: 0`, and `missing_evidence: 0`. Focused durable tests,
+durable validation, task inspect/evidence, and broad validation passed.
+
+### Remaining Issues
+
+- `durable_local_worker_run_slice_v0` remains unaccepted until the acceptance
+  task runs.
+- The slice remains fixture-backed and does not implement a general worker
+  harness, autonomous AI worker, scheduler, leases, persistent daemon,
+  Workbench/MCP runtime, provider/model calls, network calls,
+  preview/apply/rollback, transaction approval, repository mutation, GitHub
+  mutation, release, or promotion.

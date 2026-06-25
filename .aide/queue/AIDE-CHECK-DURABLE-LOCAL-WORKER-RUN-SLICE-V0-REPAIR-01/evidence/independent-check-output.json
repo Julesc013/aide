@@ -1,0 +1,260 @@
+{
+  "assertions": [
+    {
+      "category": "source_chain",
+      "description": "The source check recorded exactly one material finding and routed to Repair 01.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01/evidence/independent-check-output.json"
+      ],
+      "expected": {
+        "material_finding_count": 1,
+        "material_findings": [
+          "event_record_result_consistency"
+        ],
+        "recommended_next_task": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01"
+      },
+      "id": "baseline_single_material_finding",
+      "observed": {
+        "material_finding_count": 1,
+        "material_findings": [
+          "event_record_result_consistency"
+        ],
+        "recommended_next_task": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "source_chain",
+      "description": "Repair 01 reports PASS_WITH_WARNINGS, no material findings, no missing evidence, and this repair check as next.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/status.yaml"
+      ],
+      "expected": {
+        "material_finding_count": "0",
+        "missing_evidence": "0",
+        "recommended_next_task": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "id": "repair_task_complete",
+      "observed": {
+        "material_finding_count": "0",
+        "missing_evidence": "0",
+        "recommended_next_task": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+        "result": "PASS_WITH_WARNINGS"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "finding_closure",
+      "description": "Repair 01 disposition names exactly the source finding and reports no extra material findings.",
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0-repair-01/repair-report.json"
+      ],
+      "expected": {
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "repaired_findings": [
+          "event_record_result_consistency"
+        ]
+      },
+      "id": "repair_report_closes_exact_finding",
+      "observed": {
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "repaired_findings": [
+          "event_record_result_consistency"
+        ]
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": "event_record_result_consistency"
+    },
+    {
+      "category": "evidence_truthfulness",
+      "description": "The EventRecord payload result now preserves the fixture host result.",
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json",
+        ".aide/reports/durable-local-worker-run-slice-v0/event-record.json"
+      ],
+      "expected": {
+        "event_payload_result": "PASS",
+        "event_status_result": "PASS",
+        "fixture_host_result": "PASS"
+      },
+      "id": "event_record_result_consistency_closed",
+      "observed": {
+        "event_payload_result": "PASS",
+        "event_status_result": "PASS",
+        "fixture_host_result": "PASS"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": "event_record_result_consistency"
+    },
+    {
+      "category": "event_semantics",
+      "description": "The EventRecord payload still points at the expected WorkUnit and fixture host run with one process call.",
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/event-record.json"
+      ],
+      "expected": {
+        "durably_recorded": true,
+        "fixture_backed": true,
+        "process_call_count": 1
+      },
+      "id": "event_payload_semantics_preserved",
+      "observed": {
+        "durably_recorded": true,
+        "fixture_backed": true,
+        "host_ref": "aide://execution-host/local-process/reference-v0",
+        "host_run_ref": "aide://execution-host-run/local-process-reference-01",
+        "process_call_count": 1,
+        "workunit_ref": "aide://workunit/AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "implementation_inspection",
+      "description": "Source now falls back from live result to normalized host_result when building EventRecord payloads.",
+      "evidence_refs": [
+        "core/service/durable_worker_run.py"
+      ],
+      "expected": "result fallback from result to host_result",
+      "id": "source_fallback_handles_normalized_report",
+      "observed": {
+        "source_hash": "sha256:02d3d98d911e4e80a8a192b7faa536debb067e22edd7b4a2cce15b7ef0202034"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": "event_record_result_consistency"
+    },
+    {
+      "category": "test_coverage",
+      "description": "Focused test coverage asserts build_event_record(report) preserves PASS in the payload.",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_aide_durable_worker_run_slice.py"
+      ],
+      "expected": "test asserts EventRecord payload result equals PASS",
+      "id": "focused_regression_present",
+      "observed": {
+        "test_hash": "sha256:6eedcb70cca7236a96560be6a7d01b5d0df3b1d9a6336cff5ea60f163d643ba1"
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": "event_record_result_consistency"
+    },
+    {
+      "category": "non_capabilities",
+      "description": "Repair 01 did not widen the durable WorkerRun false-boundary set.",
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json"
+      ],
+      "expected": {
+        "autonomous_ai_worker_started": false,
+        "branch_worktree_automation_performed": false,
+        "development_transaction_created": false,
+        "general_worker_harness_implemented": false,
+        "github_mutation_performed": false,
+        "lease_created": false,
+        "mcp_runtime_started": false,
+        "network_calls_performed": false,
+        "patch_transaction_applied": false,
+        "persistent_background_service_started": false,
+        "preview_session_created": false,
+        "provider_model_calls_performed": false,
+        "release_or_promotion_performed": false,
+        "remote_execution_host_started": false,
+        "repository_mutation_performed": false,
+        "scheduler_started": false,
+        "transaction_approval_performed": false,
+        "workbench_runtime_started": false
+      },
+      "id": "false_boundaries_remain_false",
+      "observed": {
+        "autonomous_ai_worker_started": false,
+        "branch_worktree_automation_performed": false,
+        "development_transaction_created": false,
+        "general_worker_harness_implemented": false,
+        "github_mutation_performed": false,
+        "lease_created": false,
+        "mcp_runtime_started": false,
+        "network_calls_performed": false,
+        "patch_transaction_applied": false,
+        "persistent_background_service_started": false,
+        "preview_session_created": false,
+        "provider_model_calls_performed": false,
+        "release_or_promotion_performed": false,
+        "remote_execution_host_started": false,
+        "repository_mutation_performed": false,
+        "scheduler_started": false,
+        "transaction_approval_performed": false,
+        "workbench_runtime_started": false
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "read_only_safety",
+      "description": "The durable WorkerRun fixture still reports unchanged source and workspace state.",
+      "evidence_refs": [
+        ".aide/reports/durable-local-worker-run-slice-v0/fixture-report.json"
+      ],
+      "expected": {
+        "source_checkout_unchanged": true,
+        "source_snapshot_unchanged": true,
+        "workspace_state_unchanged": true
+      },
+      "id": "source_state_still_unchanged",
+      "observed": {
+        "source_checkout_unchanged": true,
+        "source_snapshot_unchanged": true,
+        "workspace_state_unchanged": true
+      },
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    },
+    {
+      "category": "evidence",
+      "description": "Committed durable WorkerRun reports and Repair 01 evidence contain no local absolute paths or credential assignments.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01/evidence/leak-scan.json"
+      ],
+      "expected": [],
+      "id": "committed_reports_scrubbed",
+      "observed": [],
+      "outcome": "PASS",
+      "severity": "none",
+      "source_finding_id": null
+    }
+  ],
+  "closed_findings": [
+    "event_record_result_consistency"
+  ],
+  "material_finding_count": 0,
+  "material_findings": [],
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "repair_task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.durable-local-worker-run.repair-01-check.v0",
+  "source_build_task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "source_check_task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01",
+  "source_hashes": {
+    ".aide/scripts/tests/test_aide_durable_worker_run_slice.py": "sha256:6eedcb70cca7236a96560be6a7d01b5d0df3b1d9a6336cff5ea60f163d643ba1",
+    "core/service/durable_worker_run.py": "sha256:02d3d98d911e4e80a8a192b7faa536debb067e22edd7b4a2cce15b7ef0202034"
+  },
+  "task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01",
+  "warnings": [
+    "durable_local_worker_run_slice_v0 remains fixture-backed.",
+    "This check does not accept the capability.",
+    "No general worker harness, autonomous worker, scheduler, daemon, Workbench/MCP runtime, provider/model call, network call, preview, apply, rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion is accepted."
+  ]
+}
