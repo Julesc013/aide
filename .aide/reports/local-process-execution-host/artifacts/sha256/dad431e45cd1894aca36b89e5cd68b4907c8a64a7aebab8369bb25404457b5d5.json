@@ -1,0 +1,6 @@
+{
+  "fixture_version": "local-process-reference-worker-v0-repair-01",
+  "result": "PASS",
+  "run_ref": "aide://execution-host-run/local-process-reference-01",
+  "workunit_ref": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
+}

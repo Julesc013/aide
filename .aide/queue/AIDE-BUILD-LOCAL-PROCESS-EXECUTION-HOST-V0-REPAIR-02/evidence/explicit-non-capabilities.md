@@ -1,0 +1,27 @@
+# Explicit Non-Capabilities
+
+- arbitrary command runner
+- generic worker harness
+- autonomous agent worker
+- remote execution host
+- worker lease
+- scheduler
+- supervisor
+- Service runtime
+- Workbench runtime
+- provider/model call
+- network call
+- preview/apply
+- rollback
+- PatchTransaction apply
+- source repository mutation by worker
+- target repository mutation
+- branch/worktree automation
+- GitHub mutation
+- release or promotion
+- persistent idempotency
+- public process cancellation
+- streaming artifact store
+- resource quotas
+- durable local Service
+- MCP/A2A/ACP endpoint

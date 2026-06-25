@@ -32,8 +32,8 @@
   "result": "PASS",
   "run_ref": "aide://execution-host-run/local-process-reference-01",
   "schema_version": "aide.local-process-execution-host.run-binding.v0",
-  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02",
   "worker_process_started": true,
   "workspace_ref": "aide://workspace/local-process/reference-01",
-  "workunit_ref": "aide://workunit/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+  "workunit_ref": "aide://workunit/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
 }

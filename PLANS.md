@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+
+- Title: Repair LocalProcessExecutionHost v0 Repair 01 Check Findings
+- Status: needs_review
+- Objective: repair the seven material assertions from `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` without redesigning the bounded fixture-backed LocalProcessExecutionHost.
+- Scope: deterministic path classification, duplicate-terminal event classification, artifact declaration/persistence hardening, WorkerRun lifecycle constants/transitions, focused tests, generated local-process reports, queue evidence, and root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/task.yaml`.
+- Dependencies: `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01`, result `REQUEST_CHANGES`, material finding count `7`, missing evidence `0`, recommended next task `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02`.
+- Milestones: portable lexical path classifier added; duplicate terminal classification corrected; artifact duplicate/revalidation/persistence policy added; WorkerRun cancelled/reconciliation lifecycle coverage added; focused behavioral matrix expanded; live fixture reports regenerated.
+- Blockers: none for the build. Independent check remains required before acceptance.
+- Verification Intent: focused LocalProcessExecutionHost unittest, live local-process fixture run, local-process report validation, task inspect/evidence, broad validation, diff checks, path/secret scans, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and next task exactly `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02`.
+- Notes: this repair does not modify `RegisteredProcessExecutionProvider v0`, the accepted ExecutionHost contract, protocol schemas, provider/model/network behavior, Service, Workbench/MCP, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
 ### Plan ID: AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
 
 - Title: Accept ExecutionHost Contract v0

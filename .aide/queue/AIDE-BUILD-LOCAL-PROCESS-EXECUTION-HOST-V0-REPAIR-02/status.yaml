@@ -1,0 +1,48 @@
+schema_version: aide.task-status.v0
+id: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+source_task: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+source_result: REQUEST_CHANGES
+source_material_finding_count: 7
+source_missing_evidence: 0
+proposed_capability: local_process_execution_host_fixture_v0
+material_finding_count: 0
+missing_evidence: 0
+provider_core_changed: false
+execution_host_contract_changed: false
+fixture_worker_changed: false
+local_service_state_created: false
+network_call_performed: false
+provider_or_model_called: false
+arbitrary_command_executed: false
+workbench_or_mcp_started: false
+preview_or_apply_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+recommended_next_task: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+evidence:
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/repair-summary.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/path-classification.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/event-stream-matrix.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/artifact-integrity.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/lifecycle-model.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/validation-commands.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/validation-results.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/blockers-or-deferrals.md
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence/next-task-prompt.md
+warnings:
+  - LocalProcessExecutionHost remains a deterministic fixture-backed reference host.
+  - Public process cancellation remains unsupported in v0; run_cancelled is only parsed/projected as an observed outcome.
+  - Reparse-point practical fixture coverage is platform-dependent.
+  - No Service, Workbench, MCP, provider/model/network, preview/apply/rollback, or arbitrary worker capability is implemented.
+blockers: []

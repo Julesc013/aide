@@ -15,13 +15,13 @@
       "schemaVersion": "0.1.0"
     },
     "createdAt": "deterministic",
-    "id": "ep-468ed8ebc2018b26",
+    "id": "ep-1416f3dca7c04415",
     "name": "local_process_execution_host_fixture_v0",
     "producer": {
       "name": "aide-lite",
       "version": "0.1.0"
     },
-    "sourcePath": ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/task.yaml"
+    "sourcePath": ".aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/task.yaml"
   },
   "protocol_version": "0.1.0",
   "schema_version": "aide.evidence-packet.v0",
@@ -33,23 +33,23 @@
         "media_type": "application/json",
         "path": ".aide/reports/local-process-execution-host/host-descriptor.json",
         "role": "host_descriptor",
-        "sha256": "sha256:4b771277376a0aa8e018f49cb0d14bd10a3498f624eef69be6b99ade47a9042a"
+        "sha256": "sha256:cc50a05b309cdf065b71a3e8902346815e8880148b6e4bbea036706a8da6f32c"
       },
       {
         "artifact_ref": "aide://artifact/.aide/reports/local-process-execution-host/run-result.json",
-        "byte_count": 23497,
+        "byte_count": 24783,
         "media_type": "application/json",
         "path": ".aide/reports/local-process-execution-host/run-result.json",
         "role": "run_result",
-        "sha256": "sha256:5a6ce298e7f031453e53c2f0a521bca0867a5f39be5fc90b2a2596ee238d4759"
+        "sha256": "sha256:bcebe1f5d3196a9231c209b5f403466e85614e07ae2e36b3677e5cc515cbd7c6"
       },
       {
         "artifact_ref": "aide://artifact/.aide/reports/local-process-execution-host/execution-receipt.json",
-        "byte_count": 8546,
+        "byte_count": 8410,
         "media_type": "application/json",
         "path": ".aide/reports/local-process-execution-host/execution-receipt.json",
         "role": "execution_receipt",
-        "sha256": "sha256:e116c6423334bf08e97a092627c3bf28829227b82eaef8e2366f92b94a6c0da3"
+        "sha256": "sha256:c50856917e2c8939581eeee8688d3cf3e48028cfb515067b6207e28f7950ff18"
       },
       {
         "artifact_ref": "aide://artifact/.aide/reports/local-process-execution-host/worker-run.json",
@@ -57,7 +57,7 @@
         "media_type": "application/json",
         "path": ".aide/reports/local-process-execution-host/worker-run.json",
         "role": "worker_run",
-        "sha256": "sha256:6aba339ec011291d3ed64db24cd5436d36833ddc65550c4b8edb378c7b257b0f"
+        "sha256": "sha256:dbf1bbd5c56ea0adbeb1ff7ef5c3426d3cce17bb1d95382d0d38f4c19bf013ba"
       }
     ],
     "capability_label": "minimal_evidence_packet_schema",
@@ -118,7 +118,7 @@
       "streaming_artifact_store"
     ],
     "risks": [],
-    "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+    "source_task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02",
     "source_task_kind": "build",
     "subject": {
       "id": "local_process_execution_host_fixture_v0",

@@ -1,0 +1,60 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+title: Repair LocalProcessExecutionHost v0 Repair 01 Check Findings
+type: build
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Repair the seven remaining material assertions from
+  AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01 without redesigning or
+  broadening the bounded fixture-backed LocalProcessExecutionHost v0.
+authorizes_implementation: true
+check_only: false
+acceptance_only: false
+source_task: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+source_result: REQUEST_CHANGES
+source_material_finding_count: 7
+source_missing_evidence: 0
+proposed_capability: local_process_execution_host_fixture_v0
+material_finding_count: 0
+missing_evidence: 0
+allowed_paths:
+  - core/execution/local_process_host.py
+  - .aide/scripts/tests/test_aide_local_process_execution_host.py
+  - .aide/reports/local-process-execution-host/**
+  - .aide/reports/local-process-execution-host-repair-02/**
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/registered_process.py
+  - core/protocol/execution_host.py
+  - .aide/protocol/aide-execution-host.schema.json
+  - .aide/fixtures/local-process-execution-host/**
+  - core/interop/dominium/**
+  - core/interop/eureka/**
+  - core/interop/aide/**
+  - hosts/**
+  - .aide.local/**
+repair_scope:
+  - workspace.path_probe_matrix
+  - workspace.test_matrix_incomplete
+  - events.duplicate_terminal_reason
+  - events.test_matrix_incomplete
+  - artifacts.test_matrix_incomplete
+  - lifecycle.cancelled_terminal_missing
+  - lifecycle.test_matrix_incomplete
+closed_findings_preserved:
+  - local_host.disposable_workspace_not_proven
+  - local_host.descriptor_overclaims_operations
+open_findings_targeted:
+  - local_host.path_escape_not_proven
+  - local_host.raw_event_stream_not_proven
+  - local_host.content_addressed_artifacts_not_proven
+  - local_host.workerrun_lifecycle_not_proven
+recommended_next_task: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02

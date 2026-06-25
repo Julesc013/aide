@@ -9,12 +9,12 @@
         "event_sequence": 4,
         "media_type": "application/json",
         "path": "artifacts/result.json",
-        "sha256": "sha256:1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05"
+        "sha256": "sha256:dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5"
       }
     ],
     "command_id": "aide.local-process-host.reference-worker.run",
     "event_count": 6,
-    "raw_event_stream_digest": "sha256:d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+    "raw_event_stream_digest": "sha256:436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2",
     "run_id": "aide://execution-host-run/local-process-reference-01",
     "source_command": "worker/reference_worker.py",
     "source_schema": "aide.fixture-worker.events.v0",
@@ -24,7 +24,23 @@
       "allowed_terminal_states": [
         "completed",
         "failed",
-        "timed_out"
+        "timed_out",
+        "cancelled"
+      ],
+      "allowed_transitions": [
+        "completing->completed",
+        "completing->failed",
+        "creating->failed",
+        "creating->ready",
+        "proposed->creating",
+        "ready->failed",
+        "ready->running",
+        "reconciliation_required->failed",
+        "running->cancelled",
+        "running->completing",
+        "running->failed",
+        "running->reconciliation_required",
+        "running->timed_out"
       ],
       "final_state": "completed",
       "initial_state": "proposed",
@@ -32,6 +48,18 @@
       "reconciliation_required_supported": false,
       "run_ref": "aide://execution-host-run/local-process-reference-01",
       "schema_version": "aide.local-process-execution-host.workerrun-lifecycle.v0",
+      "states": [
+        "proposed",
+        "creating",
+        "ready",
+        "running",
+        "completing",
+        "completed",
+        "failed",
+        "timed_out",
+        "cancelled",
+        "reconciliation_required"
+      ],
       "transitions": [
         {
           "event": "run_created",
@@ -75,7 +103,7 @@
         }
       ]
     },
-    "workunit_ref": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+    "workunit_ref": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
   },
   "evidence_completeness": "complete",
   "message": "",

@@ -20,6 +20,7 @@ import tempfile
 from dataclasses import dataclass
 from collections.abc import Callable, Mapping, Sequence
 from pathlib import Path
+from pathlib import PurePosixPath, PureWindowsPath
 from typing import Any
 
 from core.execution.registered_process import (
@@ -33,10 +34,10 @@ from core.protocol.execution_receipt import ProcessExecutionReceipt
 from core.protocol.process_invocation import ArgumentToken, CapabilityBinding, CapabilityInvocation
 
 
-TASK_ID = "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
-SOURCE_TASK_ID = "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
-SOURCE_CHECK_TASK_ID = "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
-CHECK_TASK_ID = "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+TASK_ID = "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
+SOURCE_TASK_ID = "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+SOURCE_CHECK_TASK_ID = "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+CHECK_TASK_ID = "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
 ACCEPTED_CONTRACT_TASK_ID = "AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01"
 ACCEPTED_PROVIDER = "registered_process_execution_provider_v0"
 CAPABILITY_ID = "aide.local-process-host.reference-worker.run"
@@ -45,9 +46,9 @@ PROPOSED_CAPABILITY_LABEL = "local_process_execution_host_fixture_v0"
 HOST_REF = "aide://execution-host/local-process/reference-v0"
 RUN_REF = "aide://execution-host-run/local-process-reference-01"
 WORKUNIT_REF = f"aide://workunit/{TASK_ID}"
-EVIDENCE_REF = "aide://evidence/local-process-execution-host-v0-repair-01"
-REPORT_REF = "aide://report/local-process-execution-host-v0-repair-01"
-EVENT_REF = "aide://event/EVT-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+EVIDENCE_REF = "aide://evidence/local-process-execution-host-v0-repair-02"
+REPORT_REF = "aide://report/local-process-execution-host-v0-repair-02"
+EVENT_REF = "aide://event/EVT-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
 WORKSPACE_REF = "aide://workspace/local-process/reference-01"
 DETERMINISTIC_TIMESTAMP = "2026-06-25T00:00:00+10:00"
 DEFAULT_TIMEOUT_SECONDS = 30.0
@@ -87,7 +88,7 @@ ALLOWED_WORKSPACE_MEMBERS = {
 }
 
 REPORT_ROOT = Path(".aide/reports/local-process-execution-host")
-REPAIR_REPORT_ROOT = Path(".aide/reports/local-process-execution-host-repair-01")
+REPAIR_REPORT_ROOT = Path(".aide/reports/local-process-execution-host-repair-02")
 STATUS_MD = REPORT_ROOT / "status.md"
 HOST_DESCRIPTOR_JSON = REPORT_ROOT / "host-descriptor.json"
 RUN_BINDING_JSON = REPORT_ROOT / "run-binding.json"
@@ -233,19 +234,72 @@ REFUSAL_CODES = {
     "event_after_terminal": "AIDE_LOCAL_PROCESS_HOST_EVENT_AFTER_TERMINAL",
     "invalid_lifecycle_transition": "AIDE_LOCAL_PROCESS_HOST_INVALID_LIFECYCLE_TRANSITION",
     "terminal_state_transition": "AIDE_LOCAL_PROCESS_HOST_TERMINAL_STATE_TRANSITION",
+    "reconciliation_required": "AIDE_LOCAL_PROCESS_HOST_RECONCILIATION_REQUIRED",
     "artifact_path_escape": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_PATH_ESCAPE",
     "artifact_link_rejected": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_LINK_REJECTED",
     "artifact_digest_mismatch": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_DIGEST_MISMATCH",
     "artifact_size_mismatch": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_SIZE_MISMATCH",
     "artifact_missing": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_MISSING",
     "artifact_unexpected": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_UNEXPECTED",
+    "artifact_duplicate_declaration": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_DUPLICATE_DECLARATION",
     "artifact_oversized": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_OVERSIZED",
+    "artifact_persistence_failed": "AIDE_LOCAL_PROCESS_HOST_ARTIFACT_PERSISTENCE_FAILED",
     "timeout": "AIDE_LOCAL_PROCESS_HOST_TIMEOUT",
     "nonzero_exit": "AIDE_LOCAL_PROCESS_HOST_NONZERO_EXIT",
     "empty_output": "AIDE_LOCAL_PROCESS_HOST_EMPTY_OUTPUT",
     "worker_failed": "AIDE_LOCAL_PROCESS_HOST_WORKER_FAILED",
+    "worker_cancelled": "AIDE_LOCAL_PROCESS_HOST_WORKER_CANCELLED",
     "unexpected_mutation": "AIDE_LOCAL_PROCESS_HOST_UNEXPECTED_REPOSITORY_MUTATION",
 }
+
+WORKER_RUN_STATES = [
+    "proposed",
+    "creating",
+    "ready",
+    "running",
+    "completing",
+    "completed",
+    "failed",
+    "timed_out",
+    "cancelled",
+    "reconciliation_required",
+]
+TERMINAL_WORKER_RUN_STATES = ["completed", "failed", "timed_out", "cancelled"]
+ALLOWED_WORKER_RUN_TRANSITIONS = {
+    ("proposed", "creating"),
+    ("creating", "ready"),
+    ("creating", "failed"),
+    ("ready", "running"),
+    ("ready", "failed"),
+    ("running", "completing"),
+    ("running", "failed"),
+    ("running", "timed_out"),
+    ("running", "cancelled"),
+    ("running", "reconciliation_required"),
+    ("completing", "completed"),
+    ("completing", "failed"),
+    ("reconciliation_required", "failed"),
+}
+
+SUPPORTED_EVENT_KINDS = {
+    "run_created",
+    "run_started",
+    "worker_message",
+    "artifact_produced",
+    "usage_updated",
+    "run_completed",
+    "run_failed",
+    "run_timed_out",
+    "run_cancelled",
+    "reconciliation_required",
+}
+TERMINAL_EVENT_KINDS = {
+    "run_completed",
+    "run_failed",
+    "run_timed_out",
+    "run_cancelled",
+}
+BOUNDARY_EVENT_KINDS = TERMINAL_EVENT_KINDS | {"reconciliation_required"}
 
 FINDING_IDS = [
     "local_host.disposable_workspace_not_proven",
@@ -257,6 +311,8 @@ FINDING_IDS = [
 ]
 
 Runner = Callable[[Sequence[str], Path, Mapping[str, str], float], subprocess.CompletedProcess[str]]
+ArtifactAccessHook = Callable[[Path], None]
+ARTIFACT_ACCESS_HOOK: ArtifactAccessHook | None = None
 
 
 class LocalProcessHostError(Exception):
@@ -421,8 +477,39 @@ def has_reparse_point(path: Path) -> bool:
     return bool(attrs & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0))
 
 
+def _member_parts(member: str) -> tuple[str, ...]:
+    normalized = member.replace("\\", "/")
+    return tuple(part for part in normalized.split("/") if part != "")
+
+
+def _member_is_absolute(member: str) -> bool:
+    if not member:
+        return False
+    posix = PurePosixPath(member)
+    windows = PureWindowsPath(member)
+    return bool(
+        posix.is_absolute()
+        or windows.is_absolute()
+        or windows.drive
+        or windows.root
+        or member.startswith("/")
+        or member.startswith("\\")
+    )
+
+
 def _path_parts_have_escape(parts: Sequence[str]) -> bool:
     return any(part in ("", ".", "..") for part in parts)
+
+
+def _validate_member_lexically(member: str, *, artifact: bool = False) -> tuple[Path, tuple[str, ...]]:
+    if not isinstance(member, str) or not member:
+        raise LocalProcessHostError("artifact_path_escape" if artifact else "workspace_path_traversal", "Workspace member must be a non-empty relative path.")
+    if _member_is_absolute(member):
+        raise LocalProcessHostError("artifact_path_escape" if artifact else "workspace_path_absolute", "Workspace member must be relative.")
+    parts = _member_parts(member)
+    if not parts or _path_parts_have_escape(parts):
+        raise LocalProcessHostError("artifact_path_escape" if artifact else "workspace_path_traversal", "Workspace member contains traversal.")
+    return Path(*parts), parts
 
 
 def resolve_workspace_member(
@@ -433,18 +520,14 @@ def resolve_workspace_member(
     regular_file: bool = False,
     artifact: bool = False,
 ) -> Path:
-    member_path = Path(member)
-    if member_path.is_absolute() or re.match(r"^[A-Za-z]:", member):
-        raise LocalProcessHostError("artifact_path_escape" if artifact else "workspace_path_absolute", "Workspace member must be relative.")
-    if _path_parts_have_escape(member_path.parts):
-        raise LocalProcessHostError("artifact_path_escape" if artifact else "workspace_path_traversal", "Workspace member contains traversal.")
+    member_path, parts = _validate_member_lexically(member, artifact=artifact)
     root = workspace_root.resolve()
     current = root
-    for part in member_path.parts:
+    for part in parts:
         current = current / part
+        if current.is_symlink():
+            raise LocalProcessHostError("artifact_link_rejected" if artifact else "workspace_symlink_escape", "Workspace symlink path is rejected.")
         if current.exists():
-            if current.is_symlink():
-                raise LocalProcessHostError("artifact_link_rejected" if artifact else "workspace_symlink_escape", "Workspace symlink path is rejected.")
             if has_reparse_point(current):
                 raise LocalProcessHostError("artifact_link_rejected" if artifact else "workspace_reparse_point_escape", "Workspace reparse point path is rejected.")
     candidate = (root / member_path).resolve(strict=False)
@@ -615,6 +698,7 @@ def parse_fixture_event_stream(stdout: str, returncode: int | None) -> ParsedEve
     if not raw:
         raise _event_reason("empty_output", "Worker emitted no event stream.")
     events: list[dict[str, Any]] = []
+    boundary_seen = False
     terminal_seen = False
     terminal_kind = ""
     terminal_payload: dict[str, Any] = {}
@@ -628,8 +712,6 @@ def parse_fixture_event_stream(stdout: str, returncode: int | None) -> ParsedEve
             raise _event_reason("malformed_event_stream", f"Event line {line_number} is not JSON.") from exc
         if not isinstance(event, dict):
             raise _event_reason("malformed_event_stream", f"Event line {line_number} is not an object.")
-        if terminal_seen:
-            raise _event_reason("event_after_terminal", "Worker emitted an event after a terminal event.")
         if event.get("schema_version") != FIXTURE_EVENT_SCHEMA:
             raise _event_reason("malformed_event_stream", "Event schema_version mismatch.")
         if event.get("run_ref") != RUN_REF:
@@ -646,11 +728,17 @@ def parse_fixture_event_stream(stdout: str, returncode: int | None) -> ParsedEve
         seen_sequences.add(sequence)
         last_sequence = sequence
         kind = event.get("event_kind")
-        if kind not in {"run_created", "run_started", "worker_message", "artifact_produced", "usage_updated", "run_completed", "run_failed", "run_timed_out"}:
+        if kind not in SUPPORTED_EVENT_KINDS:
             raise _event_reason("malformed_event_stream", "Worker event_kind is unsupported.")
         payload = event.get("payload")
         if not isinstance(payload, dict):
             raise _event_reason("malformed_event_stream", "Worker event payload must be an object.")
+        if terminal_seen:
+            if kind in TERMINAL_EVENT_KINDS:
+                raise _event_reason("duplicate_terminal_event", "Worker emitted a second terminal event.")
+            raise _event_reason("event_after_terminal", "Worker emitted a nonterminal event after a terminal event.")
+        if boundary_seen:
+            raise _event_reason("event_after_terminal", "Worker emitted an event after a boundary event.")
         if kind == "artifact_produced":
             declaration = {
                 "path": payload.get("path"),
@@ -662,19 +750,19 @@ def parse_fixture_event_stream(stdout: str, returncode: int | None) -> ParsedEve
             if not isinstance(declaration["path"], str) or not isinstance(declaration["byte_count"], int) or not isinstance(declaration["sha256"], str):
                 raise _event_reason("malformed_event_stream", "Artifact event declaration is incomplete.")
             artifact_declarations.append(declaration)
-        if kind in {"run_completed", "run_failed", "run_timed_out"}:
+        if kind in TERMINAL_EVENT_KINDS:
             terminal_seen = True
             terminal_kind = kind
             terminal_payload = payload
+        elif kind == "reconciliation_required":
+            boundary_seen = True
+            terminal_kind = kind
+            terminal_payload = payload
         events.append(event)
-    if not terminal_seen:
+    if not terminal_seen and terminal_kind != "reconciliation_required":
         raise _event_reason("terminal_event_missing", "Worker event stream has no terminal event.")
     if terminal_kind == "run_completed" and returncode not in (0, None):
         raise _event_reason("nonzero_exit", "Worker process returned nonzero despite completed event.")
-    if terminal_kind == "run_failed":
-        raise _event_reason("worker_failed", "Worker emitted run_failed.")
-    if terminal_kind == "run_timed_out":
-        raise _event_reason("timeout", "Worker emitted run_timed_out.")
     return ParsedEventStream(raw_text=raw + "\n", events=events, artifact_declarations=artifact_declarations, terminal_event_kind=terminal_kind, terminal_payload=terminal_payload)
 
 
@@ -684,6 +772,14 @@ def parse_reference_worker_stdout(stdout: str, returncode: int | None) -> tuple[
         parsed = parse_fixture_event_stream(stdout, returncode)
     except LocalProcessHostError as exc:
         return None, exc.reason_code, "typed_refusal"
+    if parsed.terminal_event_kind == "run_failed":
+        return None, REFUSAL_CODES["worker_failed"], "typed_refusal"
+    if parsed.terminal_event_kind == "run_timed_out":
+        return None, REFUSAL_CODES["timeout"], "typed_refusal"
+    if parsed.terminal_event_kind == "run_cancelled":
+        return None, REFUSAL_CODES["worker_cancelled"], "typed_refusal"
+    if parsed.terminal_event_kind == "reconciliation_required":
+        return None, REFUSAL_CODES["reconciliation_required"], "typed_refusal"
     normalized = {
         "command_id": CAPABILITY_ID,
         "source_command": STAGED_WORKER_MEMBER,
@@ -704,13 +800,17 @@ def validate_lifecycle(events: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
 
     def transition(event_kind: str, new_state: str) -> None:
         nonlocal state
-        if state in {"completed", "failed", "timed_out"}:
+        if state in TERMINAL_WORKER_RUN_STATES:
             raise LocalProcessHostError("terminal_state_transition", "WorkerRun transitioned after terminal state.")
+        if (state, new_state) not in ALLOWED_WORKER_RUN_TRANSITIONS:
+            raise LocalProcessHostError("invalid_lifecycle_transition", f"WorkerRun transition {state} -> {new_state} is not allowed.")
         transitions.append({"from": state, "event": event_kind, "to": new_state})
         state = new_state
 
     for event in events:
         kind = str(event.get("event_kind"))
+        if state in TERMINAL_WORKER_RUN_STATES:
+            raise LocalProcessHostError("terminal_state_transition", "WorkerRun transitioned after terminal state.")
         if kind == "run_created":
             if state != "proposed":
                 raise LocalProcessHostError("invalid_lifecycle_transition", "run_created must start from proposed.")
@@ -737,9 +837,17 @@ def validate_lifecycle(events: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
             if state != "running":
                 raise LocalProcessHostError("invalid_lifecycle_transition", "run_timed_out must start from running.")
             transition(kind, "timed_out")
+        elif kind == "run_cancelled":
+            if state != "running":
+                raise LocalProcessHostError("invalid_lifecycle_transition", "run_cancelled must start from running.")
+            transition(kind, "cancelled")
+        elif kind == "reconciliation_required":
+            if state != "running":
+                raise LocalProcessHostError("invalid_lifecycle_transition", "reconciliation_required must start from running.")
+            transition(kind, "reconciliation_required")
         else:
             raise LocalProcessHostError("invalid_lifecycle_transition", f"Unsupported lifecycle event: {kind}")
-    if state not in {"completed", "failed", "timed_out"}:
+    if state not in set(TERMINAL_WORKER_RUN_STATES) | {"reconciliation_required"}:
         raise LocalProcessHostError("terminal_event_missing", "WorkerRun lifecycle has no terminal state.")
     return {
         "schema_version": "aide.local-process-execution-host.workerrun-lifecycle.v0",
@@ -749,7 +857,9 @@ def validate_lifecycle(events: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
         "final_state": state,
         "transitions": transitions,
         "reconciliation_required_supported": False,
-        "allowed_terminal_states": ["completed", "failed", "timed_out"],
+        "states": list(WORKER_RUN_STATES),
+        "allowed_transitions": [f"{start}->{end}" for start, end in sorted(ALLOWED_WORKER_RUN_TRANSITIONS)],
+        "allowed_terminal_states": list(TERMINAL_WORKER_RUN_STATES),
     }
 
 
@@ -770,6 +880,14 @@ class LocalReferenceWorkerOutputDecoder:
                 reason_code=exc.reason_code,
                 message=str(exc),
             )
+        if parsed.terminal_event_kind == "run_failed":
+            return DecoderResult("refused", "typed_refusal", domain_result={}, refusal={"reason_code": REFUSAL_CODES["worker_failed"], "message": "Worker emitted run_failed."}, reason_code=REFUSAL_CODES["worker_failed"], message="Worker emitted run_failed.")
+        if parsed.terminal_event_kind == "run_timed_out":
+            return DecoderResult("refused", "typed_refusal", domain_result={}, refusal={"reason_code": REFUSAL_CODES["timeout"], "message": "Worker emitted run_timed_out."}, reason_code=REFUSAL_CODES["timeout"], message="Worker emitted run_timed_out.")
+        if parsed.terminal_event_kind == "run_cancelled":
+            return DecoderResult("refused", "typed_refusal", domain_result={}, refusal={"reason_code": REFUSAL_CODES["worker_cancelled"], "message": "Worker emitted run_cancelled."}, reason_code=REFUSAL_CODES["worker_cancelled"], message="Worker emitted run_cancelled.")
+        if parsed.terminal_event_kind == "reconciliation_required":
+            return DecoderResult("refused", "typed_refusal", domain_result={}, refusal={"reason_code": REFUSAL_CODES["reconciliation_required"], "message": "Worker requires reconciliation before completion."}, reason_code=REFUSAL_CODES["reconciliation_required"], message="Worker requires reconciliation before completion.")
         normalized = {
             "command_id": CAPABILITY_ID,
             "source_command": STAGED_WORKER_MEMBER,
@@ -912,13 +1030,69 @@ def persist_raw_event_stream(repo_root: Path, raw_text: str) -> dict[str, Any]:
     }
 
 
+def set_artifact_access_hook(hook: ArtifactAccessHook | None) -> None:
+    global ARTIFACT_ACCESS_HOOK
+    ARTIFACT_ACCESS_HOOK = hook
+
+
+def _read_verified_artifact_bytes(path: Path) -> bytes:
+    if path.is_symlink() or has_reparse_point(path):
+        raise LocalProcessHostError("artifact_link_rejected", "Worker artifact link or reparse point is rejected.")
+    if not path.is_file():
+        raise LocalProcessHostError("artifact_link_rejected", "Worker artifact must be a regular file.")
+    flags = os.O_RDONLY
+    nofollow = getattr(os, "O_NOFOLLOW", 0)
+    if nofollow:
+        flags |= nofollow
+    try:
+        fd = os.open(path, flags)
+    except OSError as exc:
+        raise LocalProcessHostError("artifact_link_rejected", "Worker artifact could not be opened without following links.") from exc
+    try:
+        opened_stat = os.fstat(fd)
+        if not stat.S_ISREG(opened_stat.st_mode):
+            raise LocalProcessHostError("artifact_link_rejected", "Worker artifact handle is not a regular file.")
+        chunks: list[bytes] = []
+        while True:
+            chunk = os.read(fd, 1024 * 1024)
+            if not chunk:
+                break
+            chunks.append(chunk)
+        return b"".join(chunks)
+    finally:
+        os.close(fd)
+
+
+def _persist_verified_payload(target: Path, payload: bytes, expected_digest: str) -> None:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    temp_target = target.with_name(target.name + ".tmp")
+    try:
+        with temp_target.open("wb") as handle:
+            handle.write(payload)
+            handle.flush()
+            try:
+                os.fsync(handle.fileno())
+            except OSError:
+                pass
+        if sha256_bytes(payload) != expected_digest or sha256_file(temp_target) != expected_digest:
+            raise LocalProcessHostError("artifact_persistence_failed", "Persisted worker artifact digest mismatch.")
+        temp_target.replace(target)
+    except Exception:
+        temp_target.unlink(missing_ok=True)
+        raise
+
+
 def persist_worker_artifact(repo_root: Path, workspace_root: Path, declaration: Mapping[str, Any]) -> dict[str, Any]:
     member = str(declaration.get("path", ""))
     source = resolve_workspace_member(workspace_root, member, must_exist=True, regular_file=True, artifact=True)
-    size = source.stat().st_size
+    if ARTIFACT_ACCESS_HOOK is not None:
+        ARTIFACT_ACCESS_HOOK(source)
+    source = resolve_workspace_member(workspace_root, member, must_exist=True, regular_file=True, artifact=True)
+    payload = _read_verified_artifact_bytes(source)
+    size = len(payload)
     if size > MAX_WORKER_ARTIFACT_BYTES:
         raise LocalProcessHostError("artifact_oversized", "Worker artifact exceeds fixture limit.")
-    actual_digest = sha256_file(source)
+    actual_digest = sha256_bytes(payload)
     expected_digest = str(declaration.get("sha256", ""))
     if actual_digest != expected_digest:
         raise LocalProcessHostError("artifact_digest_mismatch", "Worker artifact digest mismatch.")
@@ -926,10 +1100,9 @@ def persist_worker_artifact(repo_root: Path, workspace_root: Path, declaration: 
         raise LocalProcessHostError("artifact_size_mismatch", "Worker artifact byte_count mismatch.")
     member_target = Path("artifacts/sha256") / f"{actual_digest.removeprefix('sha256:')}{source.suffix or '.bin'}"
     target = repo_root / REPORT_ROOT / member_target
-    target.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(source, target)
+    _persist_verified_payload(target, payload, actual_digest)
     if sha256_file(target) != actual_digest:
-        raise LocalProcessHostError("artifact_digest_mismatch", "Persisted worker artifact digest mismatch.")
+        raise LocalProcessHostError("artifact_persistence_failed", "Persisted worker artifact digest mismatch.")
     return {
         "artifact_ref": f"aide://artifact/local-process-worker/{actual_digest.removeprefix('sha256:')}",
         "source_member": member,
@@ -943,7 +1116,13 @@ def persist_worker_artifact(repo_root: Path, workspace_root: Path, declaration: 
 
 
 def collect_worker_artifacts(repo_root: Path, workspace_root: Path, declarations: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
-    declared_members = {str(declaration.get("path", "")) for declaration in declarations}
+    declared_list = [str(declaration.get("path", "")) for declaration in declarations]
+    seen_members: set[str] = set()
+    for member in declared_list:
+        if member in seen_members:
+            raise LocalProcessHostError("artifact_duplicate_declaration", "Worker artifact member was declared more than once.")
+        seen_members.add(member)
+    declared_members = set(declared_list)
     allowed = set(ALLOWED_WORKSPACE_MEMBERS) | declared_members
     unexpected: list[str] = []
     for path in workspace_root.rglob("*"):

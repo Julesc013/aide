@@ -16,7 +16,7 @@
       "schemaVersion": "0.1.0"
     },
     "createdAt": "deterministic",
-    "id": "event-record-c694f0ad03f9e670",
+    "id": "event-record-608fcb590d164cd4",
     "name": "ExecutionHostRunRecorded",
     "producer": {
       "name": "aide-lite",
@@ -57,12 +57,12 @@
     },
     "database_state_implemented": false,
     "event_family_status": "future_event_type",
-    "event_ref": "aide://event/EVT-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+    "event_ref": "aide://event/EVT-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02",
     "event_sourcing_runtime_implemented": false,
     "event_type": "ExecutionHostRunRecorded",
     "event_type_required": false,
     "evidence_refs": [
-      "aide://evidence/local-process-execution-host-v0-repair-01"
+      "aide://evidence/local-process-execution-host-v0-repair-02"
     ],
     "explicit_non_capabilities": [
       "event_sourcing_runtime",
@@ -129,7 +129,7 @@
     "release": false,
     "release_readiness": false,
     "report_refs": [
-      "aide://report/local-process-execution-host-v0-repair-01"
+      "aide://report/local-process-execution-host-v0-repair-02"
     ],
     "resolver_service_implemented": false,
     "runtime_event_log_implemented": false,
@@ -140,7 +140,7 @@
     "state_reconstruction_implemented": false,
     "subject": {
       "kind": "queue-task",
-      "ref": "aide://queue-task/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+      "ref": "aide://queue-task/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
     },
     "supervisor_implemented": false,
     "target_apply": false,

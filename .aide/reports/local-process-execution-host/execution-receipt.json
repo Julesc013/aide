@@ -1,7 +1,7 @@
 {
-  "after_state_ref": "sha256:398a7e4fff7fa32d22a64caa6d68ac718e06f3aa44404cbfdf61fce7b46ba6ad",
-  "argv_digest": "sha256:574f55c3798280d6d6f6d80f0df0ad780557b0f37280d3e7d285de92f70e10c7",
-  "before_state_ref": "sha256:398a7e4fff7fa32d22a64caa6d68ac718e06f3aa44404cbfdf61fce7b46ba6ad",
+  "after_state_ref": "sha256:00a3dad08ff7664580802e222d14dcc8264ef92f7a0d9168a33c45163973360e",
+  "argv_digest": "sha256:857a670ce9f5e60c80f7ea003eae78921c292f252e5bd01d8c0480cf059f600a",
+  "before_state_ref": "sha256:00a3dad08ff7664580802e222d14dcc8264ef92f7a0d9168a33c45163973360e",
   "cancelled": false,
   "capability_ref": "aide://capability/local-process-execution-host-reference-worker-v0",
   "decoder_ref": "aide.local-process-reference-worker-ndjson-v0",
@@ -13,38 +13,38 @@
   "metadata": {
     "after_state": {
       "clean": false,
-      "porcelain_status": "M .aide/fixtures/local-process-execution-host/reference_worker.py\n M .aide/scripts/tests/test_aide_local_process_execution_host.py\n M core/execution/local_process_host.py",
-      "porcelain_status_digest": "sha256:7e1a96d5208cc5cdb141058fb86044ae1a7be1062dac8b1544268e6f1df2cd09",
+      "porcelain_status": "M .aide/scripts/tests/test_aide_local_process_execution_host.py\n M core/execution/local_process_host.py",
+      "porcelain_status_digest": "sha256:9c2d3ac46f9b13e7bebab5fb1a430c26183e2ca59fd5514c6202b2db8ba217f0",
       "repository_present": true,
-      "revision": "43848e9d76c2b59527925d9412c70cfd29d51506",
+      "revision": "b8d69b3c991b9a20d13ec5b33a12014b17e504bd",
       "revision_error": "",
       "selected_source_digests": {
         ".aide/fixtures/local-process-execution-host/reference_worker.py": "sha256:e39b2869922fa8ec46cad33b1c3aa00bbe83346baa274632bdf55ad18c85bb3f",
         ".aide/scripts/aide_lite.py": "sha256:65a0ddce0679b3d99257d4a3382b8018b3655bd13b4a29b5a59956edfb57a22a",
-        "core/execution/local_process_host.py": "sha256:edc44cfa435b6f6bd2f17bbca3538c37d762ae67d3b1cc8bf738d1e4213c25ec",
+        "core/execution/local_process_host.py": "sha256:d82652fceb0c679436f64f8236f826ec72bdb92cef1db3fb1f39fe305d1e5d0a",
         "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
         "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
         "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
       },
-      "tracked_tree_digest": "sha256:35010b7c19632429fab2ec36cf12052c0853704f175a3e841052f75c09a7cbd2",
+      "tracked_tree_digest": "sha256:f99d9222d2b706e58b36ae094f5b53143111554b611baab4fbcd27883342bb49",
       "tracked_tree_observed": true
     },
     "before_state": {
       "clean": false,
-      "porcelain_status": "M .aide/fixtures/local-process-execution-host/reference_worker.py\n M .aide/scripts/tests/test_aide_local_process_execution_host.py\n M core/execution/local_process_host.py",
-      "porcelain_status_digest": "sha256:7e1a96d5208cc5cdb141058fb86044ae1a7be1062dac8b1544268e6f1df2cd09",
+      "porcelain_status": "M .aide/scripts/tests/test_aide_local_process_execution_host.py\n M core/execution/local_process_host.py",
+      "porcelain_status_digest": "sha256:9c2d3ac46f9b13e7bebab5fb1a430c26183e2ca59fd5514c6202b2db8ba217f0",
       "repository_present": true,
-      "revision": "43848e9d76c2b59527925d9412c70cfd29d51506",
+      "revision": "b8d69b3c991b9a20d13ec5b33a12014b17e504bd",
       "revision_error": "",
       "selected_source_digests": {
         ".aide/fixtures/local-process-execution-host/reference_worker.py": "sha256:e39b2869922fa8ec46cad33b1c3aa00bbe83346baa274632bdf55ad18c85bb3f",
         ".aide/scripts/aide_lite.py": "sha256:65a0ddce0679b3d99257d4a3382b8018b3655bd13b4a29b5a59956edfb57a22a",
-        "core/execution/local_process_host.py": "sha256:edc44cfa435b6f6bd2f17bbca3538c37d762ae67d3b1cc8bf738d1e4213c25ec",
+        "core/execution/local_process_host.py": "sha256:d82652fceb0c679436f64f8236f826ec72bdb92cef1db3fb1f39fe305d1e5d0a",
         "core/execution/registered_process.py": "sha256:28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
         "core/protocol/execution_receipt.py": "sha256:966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
         "core/protocol/process_invocation.py": "sha256:aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
       },
-      "tracked_tree_digest": "sha256:35010b7c19632429fab2ec36cf12052c0853704f175a3e841052f75c09a7cbd2",
+      "tracked_tree_digest": "sha256:f99d9222d2b706e58b36ae094f5b53143111554b611baab4fbcd27883342bb49",
       "tracked_tree_observed": true
     },
     "launch": {
@@ -54,7 +54,7 @@
         "--run-id",
         "aide://execution-host-run/local-process-reference-01",
         "--workunit-ref",
-        "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+        "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02",
         "--event-stream"
       ],
       "cwd": "<workspace>",
@@ -76,7 +76,7 @@
         ],
         "value_digests": {
           "COMSPEC": "sha256:fd21f9d5853baaeda38d52ebc1f92c0e2457b89a52e3869270290e6ccdf638a0",
-          "PATH": "sha256:4af73944d5a4e8d4aaedc8d88b3bd87258577c90c169126d87b67c2d366ba445",
+          "PATH": "sha256:29f88430d9dfeeb81302cfaa2b87b930d31eeea1012b8f621f1eea98b57ceff9",
           "PATHEXT": "sha256:7977c2b879d035c731c55c0ba304b0adf1f332fa278338f12c6b7425fae02241",
           "PYTHONDONTWRITEBYTECODE": "sha256:ee0ce7db9ce2f1d4d2e01f0e96d73fa2399a99d825d8a9898947539a8d8e1742",
           "PYTHONHASHSEED": "sha256:94664180e5190a6c6dc2ba6e2d7944081d2dd0e0151a9ff07f62c8865eeb9389",
@@ -90,7 +90,7 @@
           "WINDIR": "sha256:cd1d43ac38aee601acb6ce88ad8c7d056f0275ca13355aa36cfa801e9ffabfa4"
         }
       },
-      "environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+      "environment_manifest_digest": "sha256:848c92aad14a1c5e97d2d194b4e577c645a0b5c9a7b3bea541e1c4ede7fc468a",
       "shell": false,
       "timeout": 30.0
     }
@@ -103,7 +103,7 @@
     "selected_source_digests"
   ],
   "provider_ref": "registered_process_execution_provider_v0",
-  "redacted_environment_manifest_digest": "sha256:aa1ccb4343024d7ba93622d9c75fb196d5336150b52b6843a56c33a903bd149b",
+  "redacted_environment_manifest_digest": "sha256:848c92aad14a1c5e97d2d194b4e577c645a0b5c9a7b3bea541e1c4ede7fc468a",
   "return_code": 0,
   "shell": false,
   "started_at": "deterministic",
@@ -114,9 +114,9 @@
   },
   "stdout": {
     "byte_count": 1706,
-    "excerpt": "{\"event_kind\": \"run_created\", \"payload\": {\"workunit_ref\": \"AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 1, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"run_started\", \"payload\": {\"worker_kind\": \"local_reference_worker\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 2, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"worker_message\", \"payload\": {\"message\": \"fixture worker executed\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 3, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"artifact_produced\", \"payload\": {\"byte_count\": 234, \"media_type\": \"application/json\", \"path\": \"artifacts/result.json\", \"sha256\": \"sha256:1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 4, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"usage_updated\", \"payload\": {\"artifacts\": 1, \"events\": 6, \"processes\": 1}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 5, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"run_completed\", \"payload\": {\"result\": \"PASS\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 6, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n",
-    "sha256": "sha256:d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26"
+    "excerpt": "{\"event_kind\": \"run_created\", \"payload\": {\"workunit_ref\": \"AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 1, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"run_started\", \"payload\": {\"worker_kind\": \"local_reference_worker\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 2, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"worker_message\", \"payload\": {\"message\": \"fixture worker executed\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 3, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"artifact_produced\", \"payload\": {\"byte_count\": 234, \"media_type\": \"application/json\", \"path\": \"artifacts/result.json\", \"sha256\": \"sha256:dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 4, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"usage_updated\", \"payload\": {\"artifacts\": 1, \"events\": 6, \"processes\": 1}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 5, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n{\"event_kind\": \"run_completed\", \"payload\": {\"result\": \"PASS\"}, \"run_ref\": \"aide://execution-host-run/local-process-reference-01\", \"schema_version\": \"aide.fixture-worker.events.v0\", \"sequence\": 6, \"timestamp\": \"2026-06-25T00:00:00+10:00\"}\n",
+    "sha256": "sha256:436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2"
   },
   "timed_out": false,
-  "working_directory_ref": "sha256:1dfa1483cac086bc901dff4966e5391493b9302202f9635b0a39323d5a55a4f1"
+  "working_directory_ref": "sha256:962ea90edae43351305f0e96ac3cb596b7f9d5a88cad07255d83f3f92084f71c"
 }

@@ -3,11 +3,11 @@
   "event_ref": "aide://execution-host-event/local-process-reference-0001",
   "event_type": "run_created",
   "kind": "ExecutionHostEvent",
-  "payload_digest": "sha256:4cb7cbf2bc695545d840b5f5604a0d9bc6fa7185f1dec78eb22318f18e9ae939",
-  "raw_event_stream_artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+  "payload_digest": "sha256:634b40a27965d655594732129980d230833a91dcb95bd82317ad4d87a281acb0",
+  "raw_event_stream_artifact_ref": "aide://artifact/local-process-event-stream/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2",
   "run_ref": "aide://execution-host-run/local-process-reference-01",
   "runtime_event_store_implemented": false,
   "schema_version": "aide.local-process-execution-host.event.v0",
   "sequence": 1,
-  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
 }

@@ -39,6 +39,65 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+
+Completed as a bounded repair build and awaiting independent check.
+
+Changed:
+
+- `core/execution/local_process_host.py`
+- `.aide/scripts/tests/test_aide_local_process_execution_host.py`
+- `.aide/reports/local-process-execution-host/**`
+- `.aide/reports/local-process-execution-host-repair-02/**`
+- `.aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Repair 02 targets the seven material assertions from
+`AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` and preserves the
+already-closed disposable workspace and descriptor-scope findings.
+
+Implemented:
+
+- deterministic lexical path classification for POSIX, Windows drive, UNC, and
+  rooted Windows path forms before filesystem resolution;
+- stable separation of absolute, traversal, workspace escape, symlink/reparse,
+  artifact path, and artifact link refusals;
+- duplicate terminal event classification as
+  `AIDE_LOCAL_PROCESS_HOST_DUPLICATE_TERMINAL_EVENT`;
+- explicit WorkerRun state, terminal-state, and transition constants including
+  `cancelled` and `reconciliation_required`;
+- duplicate artifact declaration refusal;
+- final artifact access revalidation and verified-byte content-addressed report
+  persistence through temporary files and atomic replacement;
+- expanded focused behavioral tests for path containment, event streams,
+  artifact integrity, and lifecycle transitions.
+
+Validation run so far:
+
+- `py -3 -m unittest discover -s .aide/scripts/tests -p "test_aide_local_process_execution_host.py"`: `PASS`
+- `py -3 .aide/scripts/aide_lite.py local-process-execution-host run`: `PASS_WITH_WARNINGS`
+- `py -3 .aide/scripts/aide_lite.py local-process-execution-host validate`: `PASS_WITH_WARNINGS`
+
+The proposed capability remains:
+
+```text
+local_process_execution_host_fixture_v0
+```
+
+Recommended next task:
+
+```text
+AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+```
+
+No `RegisteredProcessExecutionProvider v0`, accepted ExecutionHost contract,
+protocol schema, fixture worker, interop domain, host adapter, `.aide.local`
+Service state, provider/model/network behavior, Workbench/MCP behavior,
+preview/apply/rollback, repository mutation, branch/worktree automation, GitHub
+mutation, release, or promotion was implemented or modified.
+
 ## Work Item: AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
 
 Completed as an acceptance-only consolidation and awaiting review.

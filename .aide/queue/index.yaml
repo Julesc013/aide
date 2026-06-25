@@ -2279,3 +2279,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/evidence
   description: Check-only review of AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01. Confirms disposable workspace evidence and narrowed descriptor scope, but records seven material assertions across four still-open source findings: path containment behavior/evidence, raw event duplicate-terminal behavior and matrix evidence, artifact matrix evidence, and WorkerRun lifecycle semantics/matrix evidence. Stops at needs_review with REQUEST_CHANGES, missing_evidence 0, and recommends AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02. Does not repair implementation, modify provider core, alter accepted ExecutionHost contract, mutate source reports, create Service state, start Workbench/MCP/provider/model/network behavior, mutate repositories, create branches/worktrees, call GitHub, release, or promote.
+- id: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
+  status: needs_review
+  planning_state: implementation_completed
+  result: PASS_WITH_WARNINGS
+  title: Repair LocalProcessExecutionHost v0 Repair 02
+  task: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02/evidence
+  description: Bounded repair build for the seven material assertions from AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01. Adds deterministic cross-platform lexical workspace path classification, duplicate-terminal event classification, explicit cancelled/reconciliation lifecycle modeling, duplicate artifact declaration refusal, final artifact access revalidation, atomic verified-byte report persistence, and expanded focused behavioral matrices for containment, events, artifacts, and lifecycle. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, proposed capability local_process_execution_host_fixture_v0, and recommends AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02. Does not modify RegisteredProcessExecutionProvider v0, accepted ExecutionHost contract, protocol schemas, interop domains, hosts, .aide.local Service state, provider/model/network behavior, Workbench/MCP behavior, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

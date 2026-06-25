@@ -1,24 +1,24 @@
 {
   "artifacts": [
     {
-      "artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+      "artifact_ref": "aide://artifact/local-process-event-stream/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2",
       "byte_count": 1706,
       "media_type": "application/x-ndjson",
-      "path": ".aide/reports/local-process-execution-host/raw-events/sha256/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26.ndjson",
+      "path": ".aide/reports/local-process-execution-host/raw-events/sha256/436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2.ndjson",
       "persisted": true,
-      "sha256": "sha256:d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26"
+      "sha256": "sha256:436e840d13d53e9628524e31ad72fdbcb0af8bc07767b6c328e4976085bde1e2"
     },
     {
-      "artifact_ref": "aide://artifact/local-process-worker/1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05",
+      "artifact_ref": "aide://artifact/local-process-worker/dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5",
       "byte_count": 234,
       "content_addressed": true,
       "media_type": "application/json",
-      "path": ".aide/reports/local-process-execution-host/artifacts/sha256/1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05.json",
+      "path": ".aide/reports/local-process-execution-host/artifacts/sha256/dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5.json",
       "persisted": true,
-      "sha256": "sha256:1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05",
+      "sha256": "sha256:dad431e45cd1894aca36b89e5cd68b4907c8a64a7aebab8369bb25404457b5d5",
       "source_member": "artifacts/result.json"
     }
   ],
   "schema_version": "aide.local-process-execution-host.artifacts.v0",
-  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
 }

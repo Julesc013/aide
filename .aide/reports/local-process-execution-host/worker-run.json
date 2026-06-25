@@ -8,7 +8,7 @@
   "run_ref": "aide://execution-host-run/local-process-reference-01",
   "schema_version": "aide.local-process-execution-host.worker-run.v0",
   "state": "completed",
-  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02",
   "transitions": [
     {
       "event": "run_created",
@@ -51,5 +51,5 @@
       "to": "completed"
     }
   ],
-  "workunit_ref": "aide://workunit/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+  "workunit_ref": "aide://workunit/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
 }
