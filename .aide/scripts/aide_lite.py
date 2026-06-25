@@ -7744,6 +7744,22 @@ def load_local_service_module(repo_root: Path):
     return module
 
 
+def load_local_trust_enforcement_module(repo_root: Path):
+    module_path = repo_root / "core/service/local_trust_enforcement.py"
+    if not module_path.exists():
+        raise ValueError("Local trust enforcement module missing: core/service/local_trust_enforcement.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_local_trust_enforcement", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("Local trust enforcement module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_test_job_module(repo_root: Path):
     module_path = repo_root / "core/protocol/test_job.py"
     if not module_path.exists():
@@ -33305,6 +33321,106 @@ def command_local_service_reset_fixture(args: argparse.Namespace) -> int:
     return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_local_trust_boundary_lines(data: dict[str, object]) -> None:
+    print(f"external_iam_implemented: {str(data.get('external_iam_implemented', False)).lower()}")
+    print(f"credentials_embedded: {str(data.get('credentials_embedded', False)).lower()}")
+    print(f"secrets_embedded: {str(data.get('secrets_embedded', False)).lower()}")
+    print(f"network_calls_performed: {str(data.get('network_calls_performed', False)).lower()}")
+    print(f"process_launch_performed: {str(data.get('process_launch_performed', False)).lower()}")
+    print(f"worker_execution_performed: {str(data.get('worker_execution_performed', False)).lower()}")
+    print(f"transaction_approval_implemented: {str(data.get('transaction_approval_implemented', False)).lower()}")
+    print(f"provider_model_calls_performed: {str(data.get('provider_model_calls_performed', False)).lower()}")
+    print(f"preview_apply_implemented: {str(data.get('preview_apply_implemented', False)).lower()}")
+    print(f"repository_mutation_performed: {str(data.get('repository_mutation_performed', False)).lower()}")
+    print(f"branch_worktree_mutation_performed: {str(data.get('branch_worktree_mutation_performed', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_local_trust_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_trust_enforcement_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - local trust status must fail closed.
+        print("AIDE Lite local-trust status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite local-trust status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"report_exists: {str(data.get('report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_local_trust_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_local_trust_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_trust_enforcement_module(repo_root)
+    try:
+        report = module.fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - local trust fixture must fail closed.
+        print("AIDE Lite local-trust fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite local-trust fixture")
+    print(f"result: {report.get('status')}")
+    print(f"capability_label: {report.get('capability_label')}")
+    print(f"evaluation_result: {report.get('evaluation_result')}")
+    print(f"grant_consumed: {str(report.get('grant_consumed', False)).lower()}")
+    print(f"concurrent_final_use_refused: {str(report.get('concurrent_final_use_refused', False)).lower()}")
+    print(f"idempotent_replay_no_second_event: {str(report.get('idempotent_replay_no_second_event', False)).lower()}")
+    print(f"all_required_refusal_codes_covered: {str(report.get('all_required_refusal_codes_covered', False)).lower()}")
+    print(f"process_launch_count: {report.get('process_launch_count')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_local_trust_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_trust_enforcement_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation must fail closed.
+        print("AIDE Lite local-trust validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite local-trust validate")
+    print(f"result: {report.get('status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_local_trust_reset_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_trust_enforcement_module(repo_root)
+    try:
+        report = module.reset_fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - reset must fail closed.
+        print("AIDE Lite local-trust reset-fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite local-trust reset-fixture")
+    print(f"result: {report.get('status')}")
+    print(f"removed_report_dir: {str(report.get('removed_report_dir', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_test_job_boundary_lines(data: dict[str, object]) -> None:
     print(f"test_broker_runtime_implemented: {str(data.get('test_broker_runtime_implemented', False)).lower()}")
     print(f"async_test_execution_implemented: {str(data.get('async_test_execution_implemented', False)).lower()}")
@@ -38945,6 +39061,14 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     local_service_subparsers.add_parser("fixture").set_defaults(handler=command_local_service_fixture)
     local_service_subparsers.add_parser("validate").set_defaults(handler=command_local_service_validate)
     local_service_subparsers.add_parser("reset-fixture").set_defaults(handler=command_local_service_reset_fixture)
+
+    local_trust_parser = subparsers.add_parser("local-trust")
+    local_trust_parser.set_defaults(handler=command_local_trust_status)
+    local_trust_subparsers = local_trust_parser.add_subparsers(dest="local_trust_command", required=False)
+    local_trust_subparsers.add_parser("status").set_defaults(handler=command_local_trust_status)
+    local_trust_subparsers.add_parser("fixture").set_defaults(handler=command_local_trust_fixture)
+    local_trust_subparsers.add_parser("validate").set_defaults(handler=command_local_trust_validate)
+    local_trust_subparsers.add_parser("reset-fixture").set_defaults(handler=command_local_trust_reset_fixture)
 
     test_job_parser = subparsers.add_parser("test-job")
     test_job_parser.set_defaults(handler=command_test_job_status)

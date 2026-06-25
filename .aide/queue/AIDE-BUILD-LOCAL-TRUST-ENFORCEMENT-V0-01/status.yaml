@@ -1,0 +1,32 @@
+schema_version: aide.task-status.v0
+id: AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+proposed_capability: local_trust_enforcement_v0
+accepted_capability: null
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01
+evidence:
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/enforcement-boundary.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/algorithm.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/refusal-matrix.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/grant-consumption.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/concurrency-idempotency.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/persistence.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/test-matrix.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/validation-results.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/evidence/next-task-prompt.md
+warnings:
+  - Local trust enforcement v0 is deterministic and local only.
+  - No external IAM, credentials, secrets, remote policy engine, worker execution, or transaction approval is implemented.
+blockers: []

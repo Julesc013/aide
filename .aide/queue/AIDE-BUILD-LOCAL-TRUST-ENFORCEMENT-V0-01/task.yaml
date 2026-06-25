@@ -1,0 +1,64 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01
+title: Build Local Trust Enforcement v0
+type: build
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Implement deterministic local authorization evaluation and persistence over
+  the accepted trust and authorization contract and accepted local Service
+  foundation.
+proposed_capability: local_trust_enforcement_v0
+accepted_capability: null
+authorizes_implementation: true
+material_finding_count: 0
+missing_evidence: 0
+predecessors:
+  - AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
+  - AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01
+allowed_paths:
+  - core/service/local_trust_enforcement.py
+  - core/service/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_local_trust_enforcement.py
+  - .aide/reports/local-trust-enforcement-v0/**
+  - .aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .aide.local/**
+  - core/execution/**
+  - core/interop/**
+  - hosts/**
+  - .aide/reports/trust-authorization-contract-v0/**
+  - .aide/reports/trust-authorization-contract-v0-check/**
+  - .aide/reports/trust-authorization-contract-v0-accept/**
+  - .aide/reports/local-service-foundation-v0/**
+  - .aide/reports/local-service-foundation-v0-check/**
+  - .aide/reports/local-service-foundation-v0-accept/**
+explicit_non_capabilities:
+  - external IAM
+  - credentials
+  - secrets
+  - OIDC
+  - remote policy engine
+  - process launch
+  - worker execution
+  - transaction approval
+  - provider/model calls
+  - network calls
+  - preview/apply/rollback
+  - repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - Local trust enforcement v0 is deterministic and local only.
+  - It evaluates and persists fixture trust records over local Service state only.
+  - No external identity, credentials, secrets, remote policy engine, worker execution, or transaction approval is implemented.
+recommended_next_task: AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01

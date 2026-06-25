@@ -2609,3 +2609,15 @@
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `local_service_foundation_v0`, and recommends exactly `AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01`.
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Notes: This acceptance does not accept scheduler, worker execution, capability execution, authorization enforcement, network API, MCP runtime, Workbench runtime, distributed state, exactly-once delivery, provider/model calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+
+### Queue ID: AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01
+
+- Title: Build Local Trust Enforcement v0
+- Status: Needs Review
+- Objective: implement deterministic local authorization evaluation and persistence over accepted trust records and the accepted local Service foundation.
+- Scope: `core/service/local_trust_enforcement.py`, `core/service/__init__.py`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_local_trust_enforcement.py`, `.aide/reports/local-trust-enforcement-v0/**`, `.aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted `trust_and_authorization_contract_v0` and accepted `local_service_foundation_v0`.
+- Verification Intent: focused local trust tests, local-trust fixture/status/validate commands, trust/local-service regressions, compileall, task inspect/evidence, broad validation, local-state boundary check, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `local_trust_enforcement_v0`, preserves local-only/no-external-authority boundaries, and recommends exactly `AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: This build does not implement external IAM, credentials, secrets, OIDC, remote policy engines, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

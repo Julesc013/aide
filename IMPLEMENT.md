@@ -8669,3 +8669,57 @@ commit-policy check are recorded in task-local evidence.
 - Local trust enforcement is the next serialized task.
 - Worker execution, scheduling, MCP, Workbench, provider/model calls,
   preview/apply/rollback, and distributed state remain future work.
+
+## Work Item: AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `core/service/local_trust_enforcement.py`
+- `core/service/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_local_trust_enforcement.py`
+- `.aide/reports/local-trust-enforcement-v0/**`
+- `.aide/queue/AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The accepted trust contract is projection-only, and the accepted local Service
+does not enforce authorization. This task adds the first deterministic local
+enforcement slice by evaluating trust records, persisting the decision, and
+consuming a one-use grant through local Service state.
+
+### Implementation Notes
+
+- Added `core/service/local_trust_enforcement.py`.
+- Reused `trust_authorization.evaluate_authorization` rather than duplicating
+  policy/refusal logic.
+- Persisted support records, AuthorizationEvaluation, evaluation event,
+  grant-consumption event, and idempotency record in a local SQLite transaction.
+- Added AIDE Lite `local-trust status`, `fixture`, `validate`, and
+  `reset-fixture` commands.
+- Added focused tests for allowed evaluation, idempotent replay, final-use
+  exhaustion, refusal matrix coverage, restart persistence, and false
+  process/network/worker/provider boundaries.
+
+### Verification
+
+Focused local trust tests pass. `local-trust fixture`, `status`, and
+`validate` report `PASS_WITH_WARNINGS`. Final compileall, trust/local-service
+regressions, task inspect/evidence, broad validation, local-state boundary
+checks, leak scans, diff checks, and commit-policy validation are recorded in
+task-local evidence.
+
+### Remaining Issues
+
+- `AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01` is required before acceptance.
+- External IAM, credentials, secrets, OIDC, remote policy engines, distributed
+  authorization, worker execution, transaction approval, provider/model calls,
+  network calls, preview/apply/rollback, and repository mutation remain
+  non-capabilities.

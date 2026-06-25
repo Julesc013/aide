@@ -1,0 +1,37 @@
+{
+  "branch_worktree_mutation_performed": false,
+  "capability_label": "local_trust_enforcement_v0",
+  "checks": {
+    "concurrent_final_use_refused": true,
+    "evaluation_allowed": true,
+    "events_monotonic": true,
+    "false_boundaries": true,
+    "grant_consumed": true,
+    "idempotent_replay": true,
+    "no_process_launch": true,
+    "persisted_evaluation": true,
+    "required_refusal_codes_covered": true,
+    "source_snapshot_unchanged": true
+  },
+  "credentials_embedded": false,
+  "external_iam_implemented": false,
+  "github_mutation_performed": false,
+  "network_calls_performed": false,
+  "preview_apply_implemented": false,
+  "process_launch_performed": false,
+  "provider_model_calls_performed": false,
+  "recommended_next_task": "AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01",
+  "release_or_promotion_performed": false,
+  "repository_mutation_performed": false,
+  "secrets_embedded": false,
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01",
+  "transaction_approval_implemented": false,
+  "validated": true,
+  "validation_errors": [],
+  "warnings": [
+    "Local trust enforcement v0 is deterministic and local only.",
+    "No process launch, worker execution, external IAM, credentials, secrets, network, or transaction approval is implemented."
+  ],
+  "worker_execution_performed": false
+}
