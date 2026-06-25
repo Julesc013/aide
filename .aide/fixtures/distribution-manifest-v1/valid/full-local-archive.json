@@ -1,0 +1,382 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "DistributionManifest",
+  "metadata": {
+    "build_implementation": "aide-lite release bundle q47",
+    "channel": "canary",
+    "distribution_ref": "aide://distribution/aide-lite-pack-v0",
+    "format_version": "1.0.0",
+    "name": "aide-lite-pack-v0",
+    "product": "AIDE Lite",
+    "projection_implementation": "core/protocol/distribution_manifest.py",
+    "release_id": "aide-lite-pack-v0-2b2a00f7c4628311",
+    "release_version": "v0",
+    "source_revision": "2b2a00f7c462831170dc8de21834e1e5ec91708d",
+    "source_tree_digest": "2d9b7fb3851060caf8e39fbce72d934004a6ce23a8701d6077c1e917cd0853ac",
+    "timestamp_classification": "q47_observed_build_metadata_projected_deterministically"
+  },
+  "schema_version": "aide.distribution-manifest.v1",
+  "spec": {
+    "artifacts": [
+      {
+        "archive_member": null,
+        "artifact_id": "CHANGELOG.preview.md",
+        "artifact_ref": "aide://distribution/artifact/CHANGELOG.preview.md",
+        "byte_count": 10796,
+        "checksum_ref": "aide://distribution/checksums/q47-release-dist-core-artifacts",
+        "compression_format": null,
+        "content_digest": "sha256:583d5ac82800450cd6473a4568a7c8c2111435413614969f71f8ae3de76ae720",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "changelog_preview_copy",
+        "media_type": "text/markdown",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/CHANGELOG.preview.md",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "RELEASE_NOTES.preview.md",
+        "artifact_ref": "aide://distribution/artifact/RELEASE_NOTES.preview.md",
+        "byte_count": 7711,
+        "checksum_ref": "aide://distribution/checksums/q47-release-dist-core-artifacts",
+        "compression_format": null,
+        "content_digest": "sha256:51cc5473d4f14fab1ca5d96646c8933d5e9122eedf52f3e48c158eac52a06456",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "release_notes_preview_copy",
+        "media_type": "text/markdown",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/RELEASE_NOTES.preview.md",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "SHA256SUMS.txt",
+        "artifact_ref": "aide://distribution/artifact/SHA256SUMS.txt",
+        "byte_count": 690,
+        "checksum_ref": null,
+        "compression_format": null,
+        "content_digest": "sha256:60bfac6c8e912d1ad1f7929a55c820e2ef2edcaf340d6b8b9675402b1ee1291a",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "sha256sums_text",
+        "media_type": "text/plain",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/SHA256SUMS.txt",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "aide-lite-pack-v0-directory",
+        "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0-directory",
+        "byte_count": 2951467,
+        "checksum_ref": null,
+        "compression_format": null,
+        "content_digest": "sha256:75e5f7ed744b58f2869b8af30ffe9ab23c0865899c318319c14fb44886a8a907",
+        "directory_file_count": 829,
+        "excluded_reason": "",
+        "included": true,
+        "kind": "local_directory",
+        "media_type": "application/vnd.aide.directory",
+        "portable_role": "validated_export_pack_directory",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/export/aide-lite-pack-v0",
+        "source_kind": "local_directory",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "aide-lite-pack-v0.checksums.json",
+        "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0.checksums.json",
+        "byte_count": 1200,
+        "checksum_ref": null,
+        "compression_format": null,
+        "content_digest": "sha256:d11f91599bbf13c39872b815b99a88063c50de8fcdf91aee76a09282bac2db06",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "checksums",
+        "media_type": "application/json",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "aide-lite-pack-v0.tar.gz",
+        "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0.tar.gz",
+        "byte_count": 493160,
+        "checksum_ref": "aide://distribution/checksums/q47-release-dist-core-artifacts",
+        "compression_format": "tar.gz",
+        "content_digest": "sha256:258c0ce9200c24c86fa237ace0df6ef58a9d9567cfb35956a464f56f48b9fc3a",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "tar_gz_archive",
+        "media_type": "application/gzip",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/aide-lite-pack-v0.tar.gz",
+        "source_kind": "local_tar_gz",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "aide-lite-pack-v0.zip",
+        "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0.zip",
+        "byte_count": 747612,
+        "checksum_ref": "aide://distribution/checksums/q47-release-dist-core-artifacts",
+        "compression_format": "zip",
+        "content_digest": "sha256:5ea124268b5c0448c906cedab9d7d62d1424ae2749cd0547acad44964f610761",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "zip_archive",
+        "media_type": "application/zip",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/aide-lite-pack-v0.zip",
+        "source_kind": "local_zip",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "install.md",
+        "artifact_ref": "aide://distribution/artifact/install.md",
+        "byte_count": 1251,
+        "checksum_ref": "aide://distribution/checksums/q47-release-dist-core-artifacts",
+        "compression_format": null,
+        "content_digest": "sha256:6176f03b047465dea6919e8d2958ba0bb7217bc7940791f71cad7b45bef0458f",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "install_notes",
+        "media_type": "text/markdown",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/install.md",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "manifest.yaml",
+        "artifact_ref": "aide://distribution/artifact/manifest.yaml",
+        "byte_count": 1406,
+        "checksum_ref": "aide://distribution/checksums/q47-release-dist-core-artifacts",
+        "compression_format": null,
+        "content_digest": "sha256:a63b444ba7b528b9528e7e0e096a505ba01c91aca700c026f76c883bc39a8870",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "manifest",
+        "media_type": "application/yaml",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/manifest.yaml",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "release-provenance.json",
+        "artifact_ref": "aide://distribution/artifact/release-provenance.json",
+        "byte_count": 1440,
+        "checksum_ref": "aide://distribution/checksums/q47-release-dist-core-artifacts",
+        "compression_format": null,
+        "content_digest": "sha256:9394a6d96edd7ac64cbc70f4b7664d42f541c1a507ca1215a943ff7897ebc3c3",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "provenance_report",
+        "media_type": "application/json",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/release-provenance.json",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "release-validation.json",
+        "artifact_ref": "aide://distribution/artifact/release-validation.json",
+        "byte_count": 3418,
+        "checksum_ref": null,
+        "compression_format": null,
+        "content_digest": "sha256:746317110fd2e5cc0a6fcd41715839045d11232ce0b5e011a6658d56166528af",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "validation_report",
+        "media_type": "application/json",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/release-validation.json",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "release-validation.md",
+        "artifact_ref": "aide://distribution/artifact/release-validation.md",
+        "byte_count": 239,
+        "checksum_ref": null,
+        "compression_format": null,
+        "content_digest": "sha256:df35747cfd0d9361cf1dfd5d36a185bceb5e4939f0f892bb7dbb97da16040aae",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "validation_report",
+        "media_type": "text/markdown",
+        "portable_role": "release_bundle_artifact",
+        "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+        "relative_source_location": ".aide/release/dist/release-validation.md",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      }
+    ],
+    "checksums": {
+      "algorithm": "sha256",
+      "checksum_manifest_path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+      "checksum_manifest_ref": "aide://distribution/checksums/q47-release-dist-core-artifacts",
+      "manifest_digest": "sha256:d11f91599bbf13c39872b815b99a88063c50de8fcdf91aee76a09282bac2db06"
+    },
+    "components": [
+      {
+        "artifact_refs": [
+          "aide://distribution/artifact/CHANGELOG.preview.md",
+          "aide://distribution/artifact/RELEASE_NOTES.preview.md",
+          "aide://distribution/artifact/SHA256SUMS.txt",
+          "aide://distribution/artifact/aide-lite-pack-v0-directory",
+          "aide://distribution/artifact/aide-lite-pack-v0.checksums.json",
+          "aide://distribution/artifact/aide-lite-pack-v0.tar.gz",
+          "aide://distribution/artifact/aide-lite-pack-v0.zip",
+          "aide://distribution/artifact/install.md",
+          "aide://distribution/artifact/manifest.yaml",
+          "aide://distribution/artifact/release-provenance.json",
+          "aide://distribution/artifact/release-validation.json",
+          "aide://distribution/artifact/release-validation.md"
+        ],
+        "compatibility_constraints": {
+          "min_reader_version": "1.0.0",
+          "min_writer_version": "1.0.0"
+        },
+        "component_id": "aide-lite-pack-v0",
+        "component_ref": "aide://distribution/component/aide-lite-pack-v0",
+        "content_digest": "sha256:985fb5f4e1179ebfb593f1a26ffaf049c8309c9e0ef5b8b8bf102c67db604744",
+        "dependencies": [],
+        "kind": "aide_lite_portable_pack",
+        "protocol_requirements": [
+          "distribution_manifest_v1",
+          "portable_release_bundle_v0"
+        ],
+        "required": true,
+        "target_role": "aide_lite_distribution_input",
+        "version": "v0"
+      }
+    ],
+    "explicit_non_capabilities": [
+      "install_apply",
+      "update_apply",
+      "repair_apply",
+      "rollback_apply",
+      "uninstall_apply",
+      "release_publication",
+      "git_tag_creation",
+      "github_release_creation",
+      "upload",
+      "network_call",
+      "provider_model_call",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "workbench_runtime",
+      "mcp_runtime",
+      "source_change_preview_apply_rollback",
+      "promotion"
+    ],
+    "known_limitations": [
+      "Local Q47 release artifacts are preview/no-publish evidence.",
+      "Q47 provenance records dirty-state preview metadata.",
+      "No public release, signature verification, SBOM generation, install apply, or update apply is implemented."
+    ],
+    "protocol": {
+      "compatibility_declarations": [
+        "DistributionManifest does not encode target ownership.",
+        "GitHub Release draft evidence is publication-review material only.",
+        "Q43-Q48 latest outputs are source-repo evidence, not target truth."
+      ],
+      "min_reader_version": "1.0.0",
+      "min_writer_version": "1.0.0",
+      "optional_features": [
+        "github_release_draft_publication_review_v0",
+        "sbom_reference_placeholder_v0",
+        "signature_placeholder_v0"
+      ],
+      "protocol_range": {
+        "max": "1.x",
+        "min": "1.0.0"
+      },
+      "required_features": [
+        "distribution_manifest_v1",
+        "portable_release_bundle_v0",
+        "sha256_digest_canonical_json_v1"
+      ],
+      "required_migrations": []
+    },
+    "provenance": {
+      "no_publish": true,
+      "preview_only": true,
+      "provenance_path": ".aide/release/dist/release-provenance.json",
+      "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
+      "source_repo_local_path_suppressed": true
+    },
+    "sbom_refs": [
+      {
+        "reason": "Q47 local bundle does not generate an SBOM artifact.",
+        "sbom_ref": "aide://distribution/sbom/unavailable",
+        "status": "unavailable"
+      }
+    ],
+    "signature_records": [
+      {
+        "reason": "Q47 local bundle is not signed.",
+        "signature_ref": "aide://distribution/signature/unsigned-placeholder",
+        "status": "unsigned",
+        "verified": false
+      }
+    ],
+    "source": {
+      "q47_dirty_state": true,
+      "q47_source_repo_value_suppressed": true,
+      "q48_publication_draft_is_distribution_truth": false,
+      "source_kind": "local_zip",
+      "source_paths": {
+        "export_pack": ".aide/export/aide-lite-pack-v0",
+        "release_assets": ".aide/release/dist/release-assets.json",
+        "release_bundle": ".aide/release/latest-release-bundle.json",
+        "release_checksums": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+        "release_manifest": ".aide/release/dist/manifest.yaml",
+        "release_provenance": ".aide/release/dist/release-provenance.json"
+      },
+      "source_ref": "aide://release-bundle/q47/aide-lite-pack-v0"
+    }
+  },
+  "status": {
+    "distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+    "install_apply_implemented": false,
+    "manifest_payload_digest": "sha256:3822baea7c7a8689911a587a43f6f2a7339cdbec45dbfefa7fbdafc65a0b9de9",
+    "network_calls_implemented": false,
+    "proposed_capability": "distribution_manifest_v1",
+    "provider_model_calls_implemented": false,
+    "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01",
+    "release_publication_implemented": false,
+    "repair_apply_implemented": false,
+    "rollback_apply_implemented": false,
+    "source_state_contamination_detected": false,
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "uninstall_apply_implemented": false,
+    "update_apply_implemented": false
+  }
+}

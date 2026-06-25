@@ -1,0 +1,179 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "DistributionManifest",
+  "metadata": {
+    "build_implementation": "fixture",
+    "channel": "dev",
+    "distribution_ref": "aide://distribution/fixture-minimal",
+    "format_version": "1.0.0",
+    "name": "fixture-minimal",
+    "product": "AIDE Lite",
+    "projection_implementation": "core/protocol/distribution_manifest.py",
+    "release_id": "fixture-minimal-1",
+    "release_version": "fixture",
+    "source_revision": "fixture",
+    "source_tree_digest": "fixture",
+    "timestamp_classification": "fixture-timestamp:distribution-manifest-v1"
+  },
+  "schema_version": "aide.distribution-manifest.v1",
+  "spec": {
+    "artifacts": [
+      {
+        "archive_member": null,
+        "artifact_id": "minimal.json",
+        "artifact_ref": "aide://distribution/artifact/minimal.json",
+        "byte_count": 2,
+        "checksum_ref": "aide://distribution/checksums/fixture",
+        "compression_format": null,
+        "content_digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "manifest_fixture",
+        "media_type": "application/json",
+        "portable_role": "fixture",
+        "provenance_ref": "aide://distribution/provenance/fixture",
+        "relative_source_location": ".aide/fixtures/distribution-manifest-v1/source/minimal.json",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      },
+      {
+        "archive_member": null,
+        "artifact_id": "minimal.json",
+        "artifact_ref": "aide://distribution/artifact/minimal.json",
+        "byte_count": 2,
+        "checksum_ref": "aide://distribution/checksums/fixture",
+        "compression_format": null,
+        "content_digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "excluded_reason": "",
+        "included": true,
+        "kind": "manifest_fixture",
+        "media_type": "application/json",
+        "portable_role": "fixture",
+        "provenance_ref": "aide://distribution/provenance/fixture",
+        "relative_source_location": ".aide/fixtures/distribution-manifest-v1/source/minimal.json",
+        "source_kind": "local_file",
+        "target_treatment": "distribution_input_only_not_ownership_authority"
+      }
+    ],
+    "checksums": {
+      "algorithm": "sha256",
+      "checksum_manifest_path": ".aide/fixtures/distribution-manifest-v1/source/checksums.json",
+      "checksum_manifest_ref": "aide://distribution/checksums/fixture",
+      "manifest_digest": "sha256:b1515ba1a41794d8d81ce2c74334c39b5c2396b7e87d83377d7a6c451fad041d"
+    },
+    "components": [
+      {
+        "artifact_refs": [
+          "aide://distribution/artifact/minimal.json"
+        ],
+        "compatibility_constraints": {
+          "min_reader_version": "1.0.0",
+          "min_writer_version": "1.0.0"
+        },
+        "component_id": "aide-lite-pack-v0",
+        "component_ref": "aide://distribution/component/aide-lite-pack-v0",
+        "content_digest": "sha256:4b75cf900baaf62fef315005e40e8e5c607586e33337a922c3fd67f4a87b24d9",
+        "dependencies": [],
+        "kind": "aide_lite_portable_pack",
+        "protocol_requirements": [
+          "distribution_manifest_v1",
+          "portable_release_bundle_v0"
+        ],
+        "required": true,
+        "target_role": "aide_lite_distribution_input",
+        "version": "v0"
+      }
+    ],
+    "explicit_non_capabilities": [
+      "install_apply",
+      "update_apply",
+      "repair_apply",
+      "rollback_apply",
+      "uninstall_apply",
+      "release_publication",
+      "git_tag_creation",
+      "github_release_creation",
+      "upload",
+      "network_call",
+      "provider_model_call",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "workbench_runtime",
+      "mcp_runtime",
+      "source_change_preview_apply_rollback",
+      "promotion"
+    ],
+    "known_limitations": [
+      "fixture"
+    ],
+    "protocol": {
+      "compatibility_declarations": [
+        "fixture only"
+      ],
+      "min_reader_version": "1.0.0",
+      "min_writer_version": "1.0.0",
+      "optional_features": [
+        "github_release_draft_publication_review_v0",
+        "sbom_reference_placeholder_v0",
+        "signature_placeholder_v0"
+      ],
+      "protocol_range": {
+        "max": "1.x",
+        "min": "1.0.0"
+      },
+      "required_features": [
+        "distribution_manifest_v1",
+        "portable_release_bundle_v0",
+        "sha256_digest_canonical_json_v1"
+      ],
+      "required_migrations": []
+    },
+    "provenance": {
+      "no_publish": true,
+      "preview_only": true,
+      "provenance_path": ".aide/fixtures/distribution-manifest-v1/source/provenance.json",
+      "provenance_ref": "aide://distribution/provenance/fixture",
+      "source_repo_local_path_suppressed": false
+    },
+    "sbom_refs": [
+      {
+        "reason": "fixture",
+        "sbom_ref": "aide://distribution/sbom/unavailable",
+        "status": "unavailable"
+      }
+    ],
+    "signature_records": [
+      {
+        "reason": "fixture",
+        "signature_ref": "aide://distribution/signature/unsigned-placeholder",
+        "status": "unsigned",
+        "verified": false
+      }
+    ],
+    "source": {
+      "q47_dirty_state": false,
+      "q47_source_repo_value_suppressed": false,
+      "q48_publication_draft_is_distribution_truth": false,
+      "source_kind": "local_zip",
+      "source_paths": {},
+      "source_ref": "aide://release-bundle/fixture"
+    }
+  },
+  "status": {
+    "distribution_digest": "sha256:351e208974f57c9a9dfa1a5b5ffb1e1c2f312707f36f31779211038a63fbf773",
+    "install_apply_implemented": false,
+    "manifest_payload_digest": "sha256:d998ad74768c91be0bb22326dcbc3046baf3f6d19a0932ce7a03a1c319a3703c",
+    "network_calls_implemented": false,
+    "proposed_capability": "distribution_manifest_v1",
+    "provider_model_calls_implemented": false,
+    "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01",
+    "release_publication_implemented": false,
+    "repair_apply_implemented": false,
+    "rollback_apply_implemented": false,
+    "source_state_contamination_detected": false,
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "uninstall_apply_implemented": false,
+    "update_apply_implemented": false
+  }
+}

@@ -2717,3 +2717,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, authorizes no implementation or apply behavior, and recommends exactly `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: This is a plan-only normalization task. It does not implement install/update/repair/rollback/uninstall apply, release publication, Git tags, GitHub Releases, uploads, network calls, provider/model calls, target repository mutation, branch/worktree automation, Workbench/MCP runtime, source-change preview/apply/rollback, or promotion.
+
+### Queue ID: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
+
+- Title: Build DistributionManifest v1
+- Status: Needs Review
+- Objective: build the first `DistributionManifest v1` protocol slice over existing Q47 local release-bundle evidence.
+- Scope: `.aide/protocol/aide-distribution-manifest-v1.schema.json`, `core/protocol/distribution_manifest.py`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_distribution_manifest_v1.py`, `.aide/fixtures/distribution-manifest-v1/**`, `.aide/reports/distribution-manifest-v1/**`, `.aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted distribution/update protocol v1 plan and existing Q47 release bundle artifacts.
+- Verification Intent: focused DistributionManifest tests, `distribution-manifest status/project/validate`, schema/helper validation, task inspect/evidence, broad validation, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `distribution_manifest_v1`, and recommends exactly `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: This build does not implement install/update/repair/rollback/uninstall apply, release publication, Git tags, GitHub Releases, uploads, target repository mutation, branch/worktree automation, network calls, provider/model calls, Workbench/MCP runtime, source-change preview/apply/rollback, or promotion.

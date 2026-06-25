@@ -7872,6 +7872,22 @@ def load_capability_manifest_module(repo_root: Path):
     return module
 
 
+def load_distribution_manifest_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/distribution_manifest.py"
+    if not module_path.exists():
+        raise ValueError("DistributionManifest module missing: core/protocol/distribution_manifest.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_distribution_manifest", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("DistributionManifest module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_conformance_profile_module(repo_root: Path):
     module_path = repo_root / "core/protocol/conformance_profile.py"
     if not module_path.exists():
@@ -34247,6 +34263,110 @@ def command_capability_manifest_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_distribution_manifest_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'distribution_manifest_v1')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"repair_apply_implemented: {str(data.get('repair_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"branch_worktree_automation_implemented: {str(data.get('branch_worktree_automation_implemented', False)).lower()}")
+    print(f"network_calls_implemented: {str(data.get('network_calls_implemented', False)).lower()}")
+    print(f"provider_model_calls_implemented: {str(data.get('provider_model_calls_implemented', False)).lower()}")
+    print("github_release_creation_implemented: false")
+    print("git_tag_creation_implemented: false")
+    print("upload_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("mcp_runtime_implemented: false")
+    print("source_change_preview_apply_rollback_implemented: false")
+    print("promotion_implemented: false")
+
+
+def command_distribution_manifest_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_manifest_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite distribution-manifest status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-manifest status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"q47_release_bundle_exists: {str(data.get('q47_release_bundle_exists', False)).lower()}")
+    print(f"manifest_report_exists: {str(data.get('manifest_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_distribution_manifest_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_distribution_manifest_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_manifest_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite distribution-manifest project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-manifest project")
+    print(f"result: {report.get('status')}")
+    print(f"manifest_path: {report.get('manifest_path')}")
+    print(f"component_count: {report.get('component_count')}")
+    print(f"artifact_count: {report.get('artifact_count')}")
+    print(f"distribution_digest: {report.get('distribution_digest')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_distribution_manifest_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_distribution_manifest_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_manifest_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite distribution-manifest validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-manifest validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "manifest_generated",
+        "manifest_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "reordered_input_same_digest",
+        "q47_release_bundle_mapped",
+        "q48_not_distribution_truth",
+        "install_apply_not_implemented",
+        "release_publication_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "absolute_local_paths_suppressed",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_distribution_manifest_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
     print("profile_only: true")
     print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
@@ -39278,6 +39398,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     capability_manifest_subparsers.add_parser("status").set_defaults(handler=command_capability_manifest_status)
     capability_manifest_subparsers.add_parser("project").set_defaults(handler=command_capability_manifest_project)
     capability_manifest_subparsers.add_parser("validate").set_defaults(handler=command_capability_manifest_validate)
+
+    distribution_manifest_parser = subparsers.add_parser("distribution-manifest")
+    distribution_manifest_parser.set_defaults(handler=command_distribution_manifest_status)
+    distribution_manifest_subparsers = distribution_manifest_parser.add_subparsers(dest="distribution_manifest_command", required=False)
+    distribution_manifest_subparsers.add_parser("status").set_defaults(handler=command_distribution_manifest_status)
+    distribution_manifest_subparsers.add_parser("project").set_defaults(handler=command_distribution_manifest_project)
+    distribution_manifest_subparsers.add_parser("validate").set_defaults(handler=command_distribution_manifest_validate)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)

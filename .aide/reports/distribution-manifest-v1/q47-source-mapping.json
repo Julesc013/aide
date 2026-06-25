@@ -1,0 +1,18 @@
+{
+  "distribution_truth": {
+    "distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+    "manifest": ".aide/reports/distribution-manifest-v1/manifest.json"
+  },
+  "q47_inputs": {
+    "export_pack": ".aide/export/aide-lite-pack-v0",
+    "release_assets": ".aide/release/dist/release-assets.json",
+    "release_bundle": ".aide/release/latest-release-bundle.json",
+    "release_checksums": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+    "release_manifest": ".aide/release/dist/manifest.yaml",
+    "release_provenance": ".aide/release/dist/release-provenance.json"
+  },
+  "q48_treatment": "publication_review_evidence_only",
+  "schema_version": "aide.distribution-q47-source-mapping.v1",
+  "source_generated_target_truth_copied": false,
+  "source_repo_absolute_path_suppressed": true
+}

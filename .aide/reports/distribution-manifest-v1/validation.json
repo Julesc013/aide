@@ -1,0 +1,353 @@
+{
+  "checks": {
+    "absolute_local_paths_suppressed": true,
+    "cli_registered": true,
+    "fixture_matrix_passed": true,
+    "helper_exists": true,
+    "install_apply_not_implemented": true,
+    "manifest_generated": true,
+    "manifest_valid": true,
+    "network_calls_not_implemented": true,
+    "provider_model_calls_not_implemented": true,
+    "q47_release_bundle_mapped": true,
+    "q48_not_distribution_truth": true,
+    "release_publication_not_implemented": true,
+    "reordered_input_same_digest": true,
+    "schema_alignment": true,
+    "schema_exists": true,
+    "target_repository_mutation_not_implemented": true
+  },
+  "errors": [],
+  "explicit_non_capabilities": [
+    "install_apply",
+    "update_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "release_publication",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "target_repository_mutation",
+    "branch_worktree_automation",
+    "workbench_runtime",
+    "mcp_runtime",
+    "source_change_preview_apply_rollback",
+    "promotion"
+  ],
+  "fixture_results": [
+    {
+      "case_id": "full-local-archive",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/valid/full-local-archive.json"
+    },
+    {
+      "case_id": "local-directory",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/valid/local-directory.json"
+    },
+    {
+      "case_id": "minimal-unsigned",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/valid/minimal-unsigned.json"
+    },
+    {
+      "case_id": "reordered-input",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/valid/reordered-input.json"
+    },
+    {
+      "case_id": "absolute-path",
+      "expected_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/absolute-path.json"
+    },
+    {
+      "case_id": "aide-local-member",
+      "expected_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/aide-local-member.json"
+    },
+    {
+      "case_id": "duplicate-artifact",
+      "expected_refusal_codes": [
+        "distribution.duplicate_artifact"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.duplicate_artifact"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/duplicate-artifact.json"
+    },
+    {
+      "case_id": "duplicate-component",
+      "expected_refusal_codes": [
+        "distribution.duplicate_component"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.duplicate_component"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/duplicate-component.json"
+    },
+    {
+      "case_id": "false-verified-signature",
+      "expected_refusal_codes": [
+        "distribution.signature_unverified"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.signature_unverified"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/false-verified-signature.json"
+    },
+    {
+      "case_id": "forbidden-source-report-member",
+      "expected_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/forbidden-source-report-member.json"
+    },
+    {
+      "case_id": "incompatible-migration",
+      "expected_refusal_codes": [
+        "distribution.incompatible_migration"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.incompatible_migration"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/incompatible-migration.json"
+    },
+    {
+      "case_id": "missing-checksum",
+      "expected_refusal_codes": [
+        "distribution.missing_checksum"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.missing_checksum"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/missing-checksum.json"
+    },
+    {
+      "case_id": "missing-digest",
+      "expected_refusal_codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/missing-digest.json"
+    },
+    {
+      "case_id": "sbom-generated-claim",
+      "expected_refusal_codes": [
+        "distribution.sbom_unavailable"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.sbom_unavailable"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/sbom-generated-claim.json"
+    },
+    {
+      "case_id": "traversal-path",
+      "expected_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/traversal-path.json"
+    },
+    {
+      "case_id": "unknown-required-feature",
+      "expected_refusal_codes": [
+        "distribution.unknown_required_feature"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unknown_required_feature"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/unknown-required-feature.json"
+    },
+    {
+      "case_id": "unsupported-protocol",
+      "expected_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/unsupported-protocol.json"
+    },
+    {
+      "case_id": "unsupported-source-kind",
+      "expected_refusal_codes": [
+        "distribution.unsupported_source_kind"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unsupported_source_kind"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/unsupported-source-kind.json"
+    },
+    {
+      "case_id": "wrong-artifact-digest",
+      "expected_refusal_codes": [
+        "distribution.artifact_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.artifact_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/wrong-artifact-digest.json"
+    },
+    {
+      "case_id": "wrong-manifest-digest",
+      "expected_refusal_codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/wrong-manifest-digest.json"
+    }
+  ],
+  "manifest_validation": {
+    "error_count": 0,
+    "errors": [],
+    "refusal_codes": [],
+    "status": "PASS",
+    "valid": true,
+    "warnings": []
+  },
+  "project_report": {
+    "artifact_count": 12,
+    "component_count": 1,
+    "distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+    "explicit_non_capabilities": [
+      "install_apply",
+      "update_apply",
+      "repair_apply",
+      "rollback_apply",
+      "uninstall_apply",
+      "release_publication",
+      "git_tag_creation",
+      "github_release_creation",
+      "upload",
+      "network_call",
+      "provider_model_call",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "workbench_runtime",
+      "mcp_runtime",
+      "source_change_preview_apply_rollback",
+      "promotion"
+    ],
+    "manifest_path": ".aide/reports/distribution-manifest-v1/manifest.json",
+    "manifest_payload_digest": "sha256:3822baea7c7a8689911a587a43f6f2a7339cdbec45dbfefa7fbdafc65a0b9de9",
+    "proposed_capability": "distribution_manifest_v1",
+    "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01",
+    "schema_version": "aide.distribution-manifest-project-report.v1",
+    "source_artifacts_mutated": false,
+    "status": "PASS_WITH_WARNINGS",
+    "warnings": [
+      "Local Q47 release artifacts are preview/no-publish evidence.",
+      "Q47 provenance records dirty-state preview metadata.",
+      "No public release, signature verification, SBOM generation, install apply, or update apply is implemented."
+    ]
+  },
+  "proposed_capability": "distribution_manifest_v1",
+  "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01",
+  "schema_alignment_errors": [],
+  "schema_version": "aide.distribution-manifest-validation.v1",
+  "status": "PASS_WITH_WARNINGS",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "DistributionManifest v1 is proposed until independent check and acceptance.",
+    "Q47 release artifacts remain local preview/no-publish evidence.",
+    "No signature verification or SBOM generation is claimed."
+  ]
+}

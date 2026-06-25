@@ -1,0 +1,81 @@
+{
+  "distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+  "immutable_artifact_digest_set": [
+    {
+      "artifact_ref": "aide://distribution/artifact/CHANGELOG.preview.md",
+      "byte_count": 10796,
+      "content_digest": "sha256:583d5ac82800450cd6473a4568a7c8c2111435413614969f71f8ae3de76ae720",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/RELEASE_NOTES.preview.md",
+      "byte_count": 7711,
+      "content_digest": "sha256:51cc5473d4f14fab1ca5d96646c8933d5e9122eedf52f3e48c158eac52a06456",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/SHA256SUMS.txt",
+      "byte_count": 690,
+      "content_digest": "sha256:60bfac6c8e912d1ad1f7929a55c820e2ef2edcaf340d6b8b9675402b1ee1291a",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0-directory",
+      "byte_count": 2951467,
+      "content_digest": "sha256:75e5f7ed744b58f2869b8af30ffe9ab23c0865899c318319c14fb44886a8a907",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0.checksums.json",
+      "byte_count": 1200,
+      "content_digest": "sha256:d11f91599bbf13c39872b815b99a88063c50de8fcdf91aee76a09282bac2db06",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0.tar.gz",
+      "byte_count": 493160,
+      "content_digest": "sha256:258c0ce9200c24c86fa237ace0df6ef58a9d9567cfb35956a464f56f48b9fc3a",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0.zip",
+      "byte_count": 747612,
+      "content_digest": "sha256:5ea124268b5c0448c906cedab9d7d62d1424ae2749cd0547acad44964f610761",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/install.md",
+      "byte_count": 1251,
+      "content_digest": "sha256:6176f03b047465dea6919e8d2958ba0bb7217bc7940791f71cad7b45bef0458f",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/manifest.yaml",
+      "byte_count": 1406,
+      "content_digest": "sha256:a63b444ba7b528b9528e7e0e096a505ba01c91aca700c026f76c883bc39a8870",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/release-provenance.json",
+      "byte_count": 1440,
+      "content_digest": "sha256:9394a6d96edd7ac64cbc70f4b7664d42f541c1a507ca1215a943ff7897ebc3c3",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/release-validation.json",
+      "byte_count": 3418,
+      "content_digest": "sha256:746317110fd2e5cc0a6fcd41715839045d11232ce0b5e011a6658d56166528af",
+      "included": true
+    },
+    {
+      "artifact_ref": "aide://distribution/artifact/release-validation.md",
+      "byte_count": 239,
+      "content_digest": "sha256:df35747cfd0d9361cf1dfd5d36a185bceb5e4939f0f892bb7dbb97da16040aae",
+      "included": true
+    }
+  ],
+  "manifest_payload_digest": "sha256:3822baea7c7a8689911a587a43f6f2a7339cdbec45dbfefa7fbdafc65a0b9de9",
+  "reordered_input_distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+  "reordered_input_same_digest": true,
+  "schema_version": "aide.distribution-digest-vectors.v1"
+}

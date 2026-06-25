@@ -1,0 +1,611 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aide.dev/schemas/aide-distribution-manifest-v1.schema.json",
+  "title": "AIDE DistributionManifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "apiVersion",
+    "kind",
+    "schema_version",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "const": "aide.dev/v1alpha1"
+    },
+    "kind": {
+      "type": "string",
+      "const": "DistributionManifest"
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "aide.distribution-manifest.v1"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "distribution_ref",
+        "name",
+        "product",
+        "format_version",
+        "release_id",
+        "release_version",
+        "channel",
+        "source_revision",
+        "source_tree_digest",
+        "build_implementation",
+        "projection_implementation",
+        "timestamp_classification"
+      ],
+      "properties": {
+        "distribution_ref": {
+          "type": "string",
+          "pattern": "^aide://distribution/[A-Za-z0-9_.-]+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "product": {
+          "type": "string",
+          "minLength": 1
+        },
+        "format_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "release_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "release_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel": {
+          "type": "string",
+          "enum": [
+            "dev",
+            "canary",
+            "edge",
+            "stable",
+            "lts"
+          ]
+        },
+        "source_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_tree_digest": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build_implementation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "projection_implementation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timestamp_classification": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "protocol",
+        "components",
+        "artifacts",
+        "checksums",
+        "provenance",
+        "sbom_refs",
+        "signature_records",
+        "known_limitations",
+        "explicit_non_capabilities"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "protocol": {
+          "$ref": "#/$defs/protocol"
+        },
+        "components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/component"
+          }
+        },
+        "artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/artifact"
+          }
+        },
+        "checksums": {
+          "$ref": "#/$defs/checksums"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "sbom_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sbom"
+          }
+        },
+        "signature_records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/signature"
+          }
+        },
+        "known_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "explicit_non_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "proposed_capability",
+        "manifest_payload_digest",
+        "distribution_digest",
+        "source_state_contamination_detected",
+        "install_apply_implemented",
+        "update_apply_implemented",
+        "repair_apply_implemented",
+        "rollback_apply_implemented",
+        "uninstall_apply_implemented",
+        "release_publication_implemented",
+        "target_repository_mutation_implemented",
+        "network_calls_implemented",
+        "provider_model_calls_implemented",
+        "recommended_next_task"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "FAILED_VALIDATION"
+          ]
+        },
+        "proposed_capability": {
+          "type": "string",
+          "const": "distribution_manifest_v1"
+        },
+        "manifest_payload_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "distribution_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "source_state_contamination_detected": {
+          "type": "boolean"
+        },
+        "install_apply_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "update_apply_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "repair_apply_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "rollback_apply_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "uninstall_apply_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "release_publication_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "target_repository_mutation_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "network_calls_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "provider_model_calls_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "recommended_next_task": {
+          "type": "string",
+          "const": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_kind",
+        "source_ref",
+        "source_paths",
+        "q47_dirty_state",
+        "q47_source_repo_value_suppressed",
+        "q48_publication_draft_is_distribution_truth"
+      ],
+      "properties": {
+        "source_kind": {
+          "type": "string",
+          "enum": [
+            "local_directory",
+            "local_zip",
+            "local_tar_gz"
+          ]
+        },
+        "source_ref": {
+          "type": "string",
+          "pattern": "^aide://"
+        },
+        "source_paths": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[^\\\\:]+$"
+          }
+        },
+        "q47_dirty_state": {
+          "type": "boolean"
+        },
+        "q47_source_repo_value_suppressed": {
+          "type": "boolean"
+        },
+        "q48_publication_draft_is_distribution_truth": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol_range",
+        "min_reader_version",
+        "min_writer_version",
+        "required_features",
+        "optional_features",
+        "required_migrations",
+        "compatibility_declarations"
+      ],
+      "properties": {
+        "protocol_range": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "string"
+            },
+            "max": {
+              "type": "string"
+            }
+          }
+        },
+        "min_reader_version": {
+          "type": "string"
+        },
+        "min_writer_version": {
+          "type": "string"
+        },
+        "required_features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "optional_features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_migrations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "compatibility_declarations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_ref",
+        "component_id",
+        "kind",
+        "version",
+        "required",
+        "content_digest",
+        "artifact_refs",
+        "protocol_requirements",
+        "target_role",
+        "compatibility_constraints",
+        "dependencies"
+      ],
+      "properties": {
+        "component_ref": {
+          "type": "string",
+          "pattern": "^aide://distribution/component/[A-Za-z0-9_.-]+$"
+        },
+        "component_id": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "protocol_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "target_role": {
+          "type": "string"
+        },
+        "compatibility_constraints": {
+          "type": "object"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "artifact_ref",
+        "artifact_id",
+        "kind",
+        "source_kind",
+        "media_type",
+        "byte_count",
+        "content_digest",
+        "relative_source_location",
+        "portable_role",
+        "target_treatment",
+        "checksum_ref",
+        "provenance_ref",
+        "included",
+        "excluded_reason"
+      ],
+      "properties": {
+        "artifact_ref": {
+          "type": "string",
+          "pattern": "^aide://distribution/artifact/[A-Za-z0-9_.-]+$"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "source_kind": {
+          "type": "string"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "byte_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "relative_source_location": {
+          "type": "string",
+          "pattern": "^[^\\\\:]+$"
+        },
+        "archive_member": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "portable_role": {
+          "type": "string"
+        },
+        "target_treatment": {
+          "type": "string",
+          "const": "distribution_input_only_not_ownership_authority"
+        },
+        "compression_format": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "checksum_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provenance_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "included": {
+          "type": "boolean"
+        },
+        "excluded_reason": {
+          "type": "string"
+        }
+      }
+    },
+    "checksums": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checksum_manifest_ref",
+        "checksum_manifest_path",
+        "algorithm",
+        "manifest_digest"
+      ],
+      "properties": {
+        "checksum_manifest_ref": {
+          "type": "string"
+        },
+        "checksum_manifest_path": {
+          "type": "string"
+        },
+        "algorithm": {
+          "type": "string",
+          "const": "sha256"
+        },
+        "manifest_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provenance_ref",
+        "provenance_path",
+        "preview_only",
+        "no_publish",
+        "source_repo_local_path_suppressed"
+      ],
+      "properties": {
+        "provenance_ref": {
+          "type": "string"
+        },
+        "provenance_path": {
+          "type": "string"
+        },
+        "preview_only": {
+          "type": "boolean"
+        },
+        "no_publish": {
+          "type": "boolean"
+        },
+        "source_repo_local_path_suppressed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "sbom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sbom_ref",
+        "status",
+        "reason"
+      ],
+      "properties": {
+        "sbom_ref": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signature_ref",
+        "status",
+        "verified",
+        "reason"
+      ],
+      "properties": {
+        "signature_ref": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

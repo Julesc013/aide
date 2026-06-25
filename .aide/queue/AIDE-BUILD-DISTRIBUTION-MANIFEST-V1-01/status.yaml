@@ -1,0 +1,49 @@
+schema_version: aide.task-status.v0
+id: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+proposed_capability: distribution_manifest_v1
+accepted_capability: null
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
+install_apply_executed: false
+upgrade_apply_executed: false
+repair_apply_executed: false
+rollback_apply_executed: false
+uninstall_apply_executed: false
+release_publication_performed: false
+target_repository_mutated: false
+branch_worktree_automation_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+evidence:
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/q47-source-mapping.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/object-model.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/digest-canonicalization.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/component-artifact-model.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/protocol-compatibility.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/signature-sbom-boundary.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/source-contamination-boundary.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/refusal-matrix.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/fixture-matrix.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/validation-results.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/distribution-manifest-v1/status.md
+  - .aide/reports/distribution-manifest-v1/manifest.json
+  - .aide/reports/distribution-manifest-v1/validation.json
+  - .aide/reports/distribution-manifest-v1/digest-vectors.json
+  - .aide/reports/distribution-manifest-v1/q47-source-mapping.json
+  - .aide/reports/distribution-manifest-v1/artifact-index.json
+  - .aide/reports/distribution-manifest-v1/component-index.json
+blockers: []

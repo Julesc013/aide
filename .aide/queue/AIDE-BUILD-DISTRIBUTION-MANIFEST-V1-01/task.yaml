@@ -1,0 +1,109 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
+title: Build DistributionManifest v1
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+created_at: 2026-06-25
+updated_at: 2026-06-25
+review_gate: needs_review
+source_material:
+  - .aide/queue/AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01/task.yaml
+  - .aide/reports/distribution-update-protocol-v1-plan/first-build-task.md
+  - .aide/reports/distribution-update-protocol-v1-plan/q43-q48-to-v1-compatibility-map.md
+  - existing Q47 local release bundle artifacts
+  - existing Q48 GitHub Release draft boundary
+objective: >
+  Build the first DistributionManifest v1 protocol slice over existing
+  Q47/Q48 release evidence without implementing install/update apply,
+  publication, target mutation, or release promotion.
+proposed_capability: distribution_manifest_v1
+recommended_next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
+accepted_capability: null
+authorizes_implementation: true
+material_finding_count: 0
+missing_evidence: 0
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/**
+  - .aide/reports/distribution-manifest-v1/**
+  - .aide/protocol/aide-distribution-manifest-v1.schema.json
+  - .aide/fixtures/distribution-manifest-v1/**
+  - core/protocol/distribution_manifest.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_distribution_manifest_v1.py
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - AGENTS.md
+  - .aide/queue/README.md
+  - .aide/queue/policy.yaml
+  - .aide/profile.yaml
+  - docs/reference/source-of-truth.md
+  - .aide/reports/distribution-update-protocol-v1-plan/**
+  - .aide/release/**
+  - .aide/export/aide-lite-pack-v0/**
+forbidden_paths:
+  - .aide/install/**
+  - .aide/repair/**
+  - .aide/upgrade/**
+  - .aide/rollback/**
+  - .aide/uninstall/**
+  - .aide.local/**
+  - target repositories
+non_capabilities:
+  - no install apply
+  - no update apply
+  - no repair apply
+  - no rollback apply
+  - no uninstall apply
+  - no release publication
+  - no Git tag creation
+  - no GitHub Release creation
+  - no upload
+  - no network call
+  - no provider/model call
+  - no target repository mutation
+  - no branch/worktree automation
+  - no Workbench runtime
+  - no MCP runtime
+  - no source-change preview/apply/rollback
+  - no promotion
+evidence:
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/q47-source-mapping.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/object-model.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/digest-canonicalization.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/component-artifact-model.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/protocol-compatibility.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/signature-sbom-boundary.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/source-contamination-boundary.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/refusal-matrix.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/fixture-matrix.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/validation-commands.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/validation-results.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/distribution-manifest-v1/status.md
+  - .aide/reports/distribution-manifest-v1/manifest.json
+  - .aide/reports/distribution-manifest-v1/manifest.md
+  - .aide/reports/distribution-manifest-v1/validation.json
+  - .aide/reports/distribution-manifest-v1/validation.md
+  - .aide/reports/distribution-manifest-v1/digest-vectors.json
+  - .aide/reports/distribution-manifest-v1/q47-source-mapping.json
+  - .aide/reports/distribution-manifest-v1/q47-source-mapping.md
+  - .aide/reports/distribution-manifest-v1/artifact-index.json
+  - .aide/reports/distribution-manifest-v1/artifact-index.md
+  - .aide/reports/distribution-manifest-v1/component-index.json
+  - .aide/reports/distribution-manifest-v1/component-index.md
+  - .aide/reports/distribution-manifest-v1/fixture-matrix.md
+  - .aide/reports/distribution-manifest-v1/non-capabilities.md
+warnings:
+  - DistributionManifest v1 remains proposed until independent check and acceptance.
+  - Existing release artifacts are local preview/no-publish outputs.
+blockers: []

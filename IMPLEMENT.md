@@ -9102,3 +9102,59 @@ recorded in the task-local evidence.
 - All install/update/repair/rollback/uninstall apply, release publication,
   GitHub mutation, target repository mutation, Workbench/MCP runtime, and
   source-change preview/apply/rollback behavior remains unimplemented.
+
+## Work Item: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting review.
+
+### Changed Paths
+
+- `.aide/protocol/aide-distribution-manifest-v1.schema.json`
+- `core/protocol/distribution_manifest.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_distribution_manifest_v1.py`
+- `.aide/fixtures/distribution-manifest-v1/**`
+- `.aide/reports/distribution-manifest-v1/**`
+- `.aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The accepted distribution/update protocol v1 plan selected
+`DistributionManifest v1` as the first build dependency. Downstream ProjectLock,
+OwnershipLedger, InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle,
+and UpdateReceipt objects need stable distribution identity before apply behavior
+can be safely designed.
+
+### Implementation Notes
+
+- Added a Draft 2020-12 schema for `DistributionManifest`.
+- Added `core/protocol/distribution_manifest.py` for deterministic projection,
+  canonical digest calculation, validation, fixture generation, and report
+  writing.
+- Added AIDE Lite `distribution-manifest status`, `project`, and `validate`
+  commands.
+- Generated valid and invalid fixture corpus covering source kinds, protocol
+  ranges, required features, migrations, forbidden members, duplicates, digests,
+  checksums, signatures, SBOM claims, and reordered input.
+- Projected existing Q47 release bundle evidence into distribution identity and
+  treated Q48 release-draft material as publication-review evidence only.
+
+### Verification
+
+Focused tests pass. `distribution-manifest status`, `project`, and `validate`
+pass with warnings and `error_count: 0`. Broader validation is recorded in
+task-local evidence.
+
+### Remaining Issues
+
+- `distribution_manifest_v1` remains proposed until independent check and
+  acceptance.
+- Existing Q47 release artifacts remain local preview/no-publish evidence.
+- Signature verification, SBOM generation, install/update apply, release
+  publication, target mutation, Workbench/MCP runtime, provider/model calls, and
+  promotion remain unimplemented.
