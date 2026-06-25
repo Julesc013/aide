@@ -2,7 +2,8 @@
   "arbitrary_shell_command_executed": false,
   "branch_or_worktree_created": false,
   "broad_dispatch_used": false,
-  "capability_execution_distinct": true,
+  "cancellation_supported": false,
+  "capability_id": "aide.local-process-host.reference-worker.run",
   "database_opened": false,
   "explicit_non_capabilities": [
     "arbitrary_command_runner",
@@ -28,37 +29,46 @@
     "process_cancellation",
     "streaming_artifact_store"
   ],
-  "general_worker_harness_implemented": false,
   "github_mutation_performed": false,
-  "host_kind": "local_process",
   "host_ref": "aide://execution-host/local-process/reference-v0",
   "kind": "ExecutionHostDescriptor",
-  "local_process_execution_host_implemented": true,
   "network_call_performed": false,
+  "operation_scope_note": "Only probe and create_run are public host operations in this fixture slice; event parsing and artifact collection are internal proof steps for create_run.",
   "patch_transaction_applied": false,
+  "persistent_idempotency_supported": false,
   "preview_or_apply_performed": false,
   "private_tool_called": false,
-  "proposed_capability_label": "local_process_execution_host_v0",
+  "proposed_capability_label": "local_process_execution_host_fixture_v0",
   "provider_or_model_called": false,
   "provider_ref": "registered_process_execution_provider_v0",
-  "reference_worker_only": true,
   "release_or_promotion_performed": false,
+  "resource_quotas_supported": false,
   "schema_version": "aide.local-process-execution-host.descriptor.v0",
+  "service_runtime_started": false,
   "service_started": false,
   "source_repository_mutated": false,
+  "streaming_artifact_store_supported": false,
   "supported_operations": [
     "probe",
-    "create_run",
+    "create_run"
+  ],
+  "target_repository_mutated": false,
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+  "unsupported_operations": [
+    "attach",
+    "send_input",
     "stream_events",
+    "resolve_runtime_approval",
+    "interrupt",
+    "pause",
+    "resume",
+    "cancel",
     "collect_artifacts",
     "finish",
     "reconcile"
   ],
-  "target_repository_mutated": false,
-  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
-  "transport_modes": [
-    "stdio"
-  ],
   "workbench_apply_performed": false,
-  "workbench_started": false
+  "workbench_started": false,
+  "workspace_mode": "disposable_temp_workspace",
+  "workspace_ref": "aide://workspace/local-process/reference-01"
 }

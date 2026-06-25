@@ -3,19 +3,79 @@
   "domain_outcome": "typed_result",
   "domain_result": {
     "artifact_count": 1,
+    "artifact_declarations": [
+      {
+        "byte_count": 234,
+        "event_sequence": 4,
+        "media_type": "application/json",
+        "path": "artifacts/result.json",
+        "sha256": "sha256:1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05"
+      }
+    ],
     "command_id": "aide.local-process-host.reference-worker.run",
-    "event_count": 3,
-    "network_call_performed": false,
-    "preview_or_apply_performed": false,
-    "provider_or_model_called": false,
-    "release_or_promotion_performed": false,
-    "repository_mutation_performed": false,
+    "event_count": 6,
+    "raw_event_stream_digest": "sha256:d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
     "run_id": "aide://execution-host-run/local-process-reference-01",
-    "source_command": ".aide/fixtures/local-process-execution-host/reference_worker.py",
-    "source_schema": "aide.local-process-reference-worker-result.v0",
+    "source_command": "worker/reference_worker.py",
+    "source_schema": "aide.fixture-worker.events.v0",
     "status": "PASS",
-    "worker_kind": "local_reference_worker",
-    "workunit_ref": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    "terminal_event_kind": "run_completed",
+    "worker_run_lifecycle": {
+      "allowed_terminal_states": [
+        "completed",
+        "failed",
+        "timed_out"
+      ],
+      "final_state": "completed",
+      "initial_state": "proposed",
+      "kind": "WorkerRunLifecycle",
+      "reconciliation_required_supported": false,
+      "run_ref": "aide://execution-host-run/local-process-reference-01",
+      "schema_version": "aide.local-process-execution-host.workerrun-lifecycle.v0",
+      "transitions": [
+        {
+          "event": "run_created",
+          "from": "proposed",
+          "to": "creating"
+        },
+        {
+          "event": "run_started",
+          "from": "creating",
+          "to": "ready"
+        },
+        {
+          "event": "run_started",
+          "from": "ready",
+          "to": "running"
+        },
+        {
+          "event": "worker_message",
+          "from": "running",
+          "to": "running"
+        },
+        {
+          "event": "artifact_produced",
+          "from": "running",
+          "to": "running"
+        },
+        {
+          "event": "usage_updated",
+          "from": "running",
+          "to": "running"
+        },
+        {
+          "event": "run_completed",
+          "from": "running",
+          "to": "completing"
+        },
+        {
+          "event": "run_completed",
+          "from": "completing",
+          "to": "completed"
+        }
+      ]
+    },
+    "workunit_ref": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
   },
   "evidence_completeness": "complete",
   "message": "",

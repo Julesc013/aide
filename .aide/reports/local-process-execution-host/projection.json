@@ -38,21 +38,44 @@
   "preview_or_apply_performed": false,
   "private_tool_called": false,
   "process_call_count": 1,
-  "proposed_capability_label": "local_process_execution_host_v0",
+  "proposed_capability_label": "local_process_execution_host_fixture_v0",
   "provider_or_model_called": false,
   "provider_ref": "registered_process_execution_provider_v0",
-  "recommended_next_task": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+  "raw_event_stream_digest": "sha256:d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+  "recommended_next_task": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
   "reference_worker_process_started": true,
   "release_or_promotion_performed": false,
-  "result_origin": "reference_worker_json",
+  "result_origin": "fixture_worker_ndjson_event_stream",
   "run_ref": "aide://execution-host-run/local-process-reference-01",
   "schema_version": "aide.local-process-execution-host.projection.v0",
   "service_started": false,
   "source_repository_mutated": false,
   "status": "PASS_WITH_WARNINGS",
+  "supported_operations": [
+    "probe",
+    "create_run"
+  ],
   "target_repository_mutated": false,
-  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01",
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+  "unsupported_operations": [
+    "attach",
+    "send_input",
+    "stream_events",
+    "resolve_runtime_approval",
+    "interrupt",
+    "pause",
+    "resume",
+    "cancel",
+    "collect_artifacts",
+    "finish",
+    "reconcile"
+  ],
   "workbench_apply_performed": false,
   "workbench_started": false,
+  "worker_artifact_digests": [
+    "sha256:1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05"
+  ],
+  "worker_run_state": "completed",
+  "workspace_ref": "aide://workspace/local-process/reference-01",
   "workspace_state_unchanged": true
 }

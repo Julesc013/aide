@@ -1,0 +1,178 @@
+{
+  "finding_count": 6,
+  "findings": [
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/run-result.json",
+        ".aide/reports/local-process-execution-host/invocation-request.json"
+      ],
+      "finding_id": "local_host.disposable_workspace_not_proven",
+      "observed": {
+        "allowed_members": [
+          "artifacts/result.json",
+          "inputs/context-pack.json",
+          "inputs/workunit.json",
+          "worker/reference_worker.py"
+        ],
+        "input_members": [
+          "inputs/workunit.json",
+          "inputs/context-pack.json"
+        ],
+        "source_worker_digest": "sha256:e39b2869922fa8ec46cad33b1c3aa00bbe83346baa274632bdf55ad18c85bb3f",
+        "staged_worker_digest": "sha256:e39b2869922fa8ec46cad33b1c3aa00bbe83346baa274632bdf55ad18c85bb3f",
+        "staged_worker_member": "worker/reference_worker.py",
+        "workspace_ref": "aide://workspace/local-process/reference-01",
+        "workspace_root_inside_source": false
+      },
+      "repair_change": "The reference worker is copied into a temporary disposable workspace outside the checkout and invoked with cwd set to that workspace."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/run-result.json",
+        ".aide/scripts/tests/test_aide_local_process_execution_host.py"
+      ],
+      "finding_id": "local_host.path_escape_not_proven",
+      "observed": {
+        "allowed_members": [
+          "artifacts/result.json",
+          "inputs/context-pack.json",
+          "inputs/workunit.json",
+          "worker/reference_worker.py"
+        ]
+      },
+      "repair_change": "Workspace members and artifacts use a containment resolver that rejects absolute, traversal, symlink, and reparse paths."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/host-events.json",
+        ".aide/reports/local-process-execution-host/raw-events/sha256/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26.ndjson"
+      ],
+      "finding_id": "local_host.raw_event_stream_not_proven",
+      "observed": {
+        "artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+        "byte_count": 1706,
+        "media_type": "application/x-ndjson",
+        "path": ".aide/reports/local-process-execution-host/raw-events/sha256/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26.ndjson",
+        "persisted": true,
+        "sha256": "sha256:d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26"
+      },
+      "repair_change": "The worker emits NDJSON events; parsing is fail-closed and the raw stream is persisted as content-addressed evidence."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/host-artifacts.json"
+      ],
+      "finding_id": "local_host.content_addressed_artifacts_not_proven",
+      "observed": [
+        {
+          "artifact_ref": "aide://artifact/local-process-worker/1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05",
+          "byte_count": 234,
+          "content_addressed": true,
+          "media_type": "application/json",
+          "path": ".aide/reports/local-process-execution-host/artifacts/sha256/1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05.json",
+          "persisted": true,
+          "sha256": "sha256:1aa1e0a91a6ec1a45852e213d2cbcda372996806728daa320123a17d6fcaac05",
+          "source_member": "artifacts/result.json"
+        }
+      ],
+      "repair_change": "Declared worker artifacts are verified for path, size, digest, and copied to sha256-addressed report storage."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/worker-run.json",
+        ".aide/reports/local-process-execution-host/host-events.json"
+      ],
+      "finding_id": "local_host.workerrun_lifecycle_not_proven",
+      "observed": {
+        "allowed_terminal_states": [
+          "completed",
+          "failed",
+          "timed_out"
+        ],
+        "final_state": "completed",
+        "initial_state": "proposed",
+        "kind": "WorkerRunLifecycle",
+        "reconciliation_required_supported": false,
+        "run_ref": "aide://execution-host-run/local-process-reference-01",
+        "schema_version": "aide.local-process-execution-host.workerrun-lifecycle.v0",
+        "transitions": [
+          {
+            "event": "run_created",
+            "from": "proposed",
+            "to": "creating"
+          },
+          {
+            "event": "run_started",
+            "from": "creating",
+            "to": "ready"
+          },
+          {
+            "event": "run_started",
+            "from": "ready",
+            "to": "running"
+          },
+          {
+            "event": "worker_message",
+            "from": "running",
+            "to": "running"
+          },
+          {
+            "event": "artifact_produced",
+            "from": "running",
+            "to": "running"
+          },
+          {
+            "event": "usage_updated",
+            "from": "running",
+            "to": "running"
+          },
+          {
+            "event": "run_completed",
+            "from": "running",
+            "to": "completing"
+          },
+          {
+            "event": "run_completed",
+            "from": "completing",
+            "to": "completed"
+          }
+        ]
+      },
+      "repair_change": "WorkerRun state transitions are computed from the event stream with invalid transitions rejected."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        ".aide/reports/local-process-execution-host/host-descriptor.json"
+      ],
+      "finding_id": "local_host.descriptor_overclaims_operations",
+      "observed": {
+        "supported_operations": [
+          "probe",
+          "create_run"
+        ],
+        "unsupported_operations": [
+          "attach",
+          "send_input",
+          "stream_events",
+          "resolve_runtime_approval",
+          "interrupt",
+          "pause",
+          "resume",
+          "cancel",
+          "collect_artifacts",
+          "finish",
+          "reconcile"
+        ]
+      },
+      "repair_change": "The descriptor exposes only probe and create_run and records all other ExecutionHost operations as unsupported."
+    }
+  ],
+  "schema_version": "aide.local-process-execution-host.finding-disposition.v0",
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+}

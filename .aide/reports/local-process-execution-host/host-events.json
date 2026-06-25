@@ -1,0 +1,84 @@
+{
+  "events": [
+    {
+      "delivered": true,
+      "event_ref": "aide://execution-host-event/local-process-reference-0001",
+      "event_type": "run_created",
+      "kind": "ExecutionHostEvent",
+      "payload_digest": "sha256:4cb7cbf2bc695545d840b5f5604a0d9bc6fa7185f1dec78eb22318f18e9ae939",
+      "raw_event_stream_artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+      "run_ref": "aide://execution-host-run/local-process-reference-01",
+      "runtime_event_store_implemented": false,
+      "schema_version": "aide.local-process-execution-host.event.v0",
+      "sequence": 1,
+      "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+    },
+    {
+      "delivered": true,
+      "event_ref": "aide://execution-host-event/local-process-reference-0002",
+      "event_type": "run_started",
+      "kind": "ExecutionHostEvent",
+      "payload_digest": "sha256:77f7ba7eb163d8a4543578eae41aa0060bf7f6fb7ade71beb5b5629951d89c72",
+      "raw_event_stream_artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+      "run_ref": "aide://execution-host-run/local-process-reference-01",
+      "runtime_event_store_implemented": false,
+      "schema_version": "aide.local-process-execution-host.event.v0",
+      "sequence": 2,
+      "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+    },
+    {
+      "delivered": true,
+      "event_ref": "aide://execution-host-event/local-process-reference-0003",
+      "event_type": "worker_message",
+      "kind": "ExecutionHostEvent",
+      "payload_digest": "sha256:890f71226cb8ce0c2b56e5b8958c4d0350371beb2ac857d1cf302ce05d0300ce",
+      "raw_event_stream_artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+      "run_ref": "aide://execution-host-run/local-process-reference-01",
+      "runtime_event_store_implemented": false,
+      "schema_version": "aide.local-process-execution-host.event.v0",
+      "sequence": 3,
+      "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+    },
+    {
+      "delivered": true,
+      "event_ref": "aide://execution-host-event/local-process-reference-0004",
+      "event_type": "artifact_produced",
+      "kind": "ExecutionHostEvent",
+      "payload_digest": "sha256:67da0cb7598eb8c10d411d21b2730dcaf7e915030af2f15e3303938abcc5f528",
+      "raw_event_stream_artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+      "run_ref": "aide://execution-host-run/local-process-reference-01",
+      "runtime_event_store_implemented": false,
+      "schema_version": "aide.local-process-execution-host.event.v0",
+      "sequence": 4,
+      "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+    },
+    {
+      "delivered": true,
+      "event_ref": "aide://execution-host-event/local-process-reference-0005",
+      "event_type": "usage_updated",
+      "kind": "ExecutionHostEvent",
+      "payload_digest": "sha256:391ed95fd628de2ecdfb2dd8631cf6dca241246cc2176b1ac15f5c2844e4fbad",
+      "raw_event_stream_artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+      "run_ref": "aide://execution-host-run/local-process-reference-01",
+      "runtime_event_store_implemented": false,
+      "schema_version": "aide.local-process-execution-host.event.v0",
+      "sequence": 5,
+      "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+    },
+    {
+      "delivered": true,
+      "event_ref": "aide://execution-host-event/local-process-reference-0006",
+      "event_type": "run_completed",
+      "kind": "ExecutionHostEvent",
+      "payload_digest": "sha256:7a9ef39888f0b5691338828b2940498822a3b6103cf55591a310328a51983e50",
+      "raw_event_stream_artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+      "run_ref": "aide://execution-host-run/local-process-reference-01",
+      "runtime_event_store_implemented": false,
+      "schema_version": "aide.local-process-execution-host.event.v0",
+      "sequence": 6,
+      "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+    }
+  ],
+  "schema_version": "aide.local-process-execution-host.events.v0",
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+}

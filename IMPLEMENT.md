@@ -8142,3 +8142,57 @@ validation, diff checks, and path/secret scan of check evidence.
   local process ExecutionHost acceptance.
 - The later trust, local Service, durable WorkerRun, and read-only MCP stdio
   phases were not started.
+
+## Work Item: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting independent repair check.
+
+### Changed Paths
+
+- `core/execution/local_process_host.py`
+- `.aide/fixtures/local-process-execution-host/reference_worker.py`
+- `.aide/scripts/tests/test_aide_local_process_execution_host.py`
+- `.aide/reports/local-process-execution-host/**`
+- `.aide/reports/local-process-execution-host-repair-01/**`
+- `.aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The independent check found that the source local process host build proved one
+process launch but did not materially prove disposable workspace containment,
+escape rejection, raw event truth, content-addressed artifact persistence,
+WorkerRun lifecycle validation, or an accurately bounded host descriptor.
+
+### Implementation Notes
+
+- Staged the committed reference worker into a disposable temporary workspace
+  outside the source checkout before invoking it.
+- Changed the fixture output from a single JSON object to an NDJSON event
+  stream and added fail-closed event parsing.
+- Persisted the raw event stream and declared worker artifact under
+  content-addressed report paths.
+- Added path containment checks for absolute paths, traversal, symlinks, and
+  visible Windows reparse points.
+- Added WorkerRun lifecycle transition validation from raw events.
+- Narrowed the descriptor to `probe` and `create_run`, with all other
+  ExecutionHost operations explicitly unsupported.
+- Kept `RegisteredProcessExecutionProvider v0` and the accepted ExecutionHost
+  contract unchanged.
+
+### Verification
+
+Initial repair verification passed for compile checks, focused local-host tests,
+and one live `aide_lite.py local-process-execution-host run`. Final validation
+is recorded in task-local evidence before commit.
+
+### Remaining Issues
+
+- `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` is required before
+  local process ExecutionHost acceptance.
+- This remains `local_process_execution_host_fixture_v0`; it is not a generic
+  worker harness or Service/runtime implementation.

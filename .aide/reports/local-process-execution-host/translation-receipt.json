@@ -1,0 +1,13 @@
+{
+  "artifact_count": 1,
+  "event_count": 6,
+  "lossless_raw_trace_preserved": true,
+  "raw_trace_sha256": "sha256:d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+  "schema_version": "aide.local-process-execution-host.translation-receipt.v0",
+  "source_schema": "aide.fixture-worker.events.v0",
+  "target_records": [
+    "ExecutionHostEvent",
+    "ExecutionHostArtifact",
+    "WorkerRunLifecycle"
+  ]
+}

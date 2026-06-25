@@ -1,13 +1,12 @@
 {
-  "artifact_ref": "aide://execution-host-artifact/local-process-reference-stdout",
-  "artifact_role": "stdout",
-  "byte_count": 483,
-  "digest": "sha256:1962cc7b0255ea2a0c4cb68d2da41769ea700c5de65cf8faa509b9d29e7e8ec3",
+  "artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+  "byte_count": 1706,
   "kind": "ExecutionHostArtifact",
-  "media_type": "application/json",
-  "persisted": false,
+  "media_type": "application/x-ndjson",
+  "path": ".aide/reports/local-process-execution-host/raw-events/sha256/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26.ndjson",
+  "persisted": true,
   "run_ref": "aide://execution-host-run/local-process-reference-01",
   "schema_version": "aide.local-process-execution-host.artifact.v0",
-  "streaming_artifact_store_implemented": false,
-  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+  "sha256": "sha256:d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
 }

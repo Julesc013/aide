@@ -1,0 +1,27 @@
+schema_version: aide.task-status.v0
+id: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-25
+source_check: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+source_check_result: REQUEST_CHANGES
+source_material_finding_count: 6
+material_finding_count: 0
+missing_evidence: 0
+proposed_capability_label: local_process_execution_host_fixture_v0
+process_call_count: 1
+local_process_execution_host_implemented: true
+reference_worker_process_started: true
+bounded_worker_session_executed: true
+workspace_state_unchanged: true
+mutation_observation: none_detected_within_probe_coverage
+closed_findings:
+  - local_host.disposable_workspace_not_proven
+  - local_host.path_escape_not_proven
+  - local_host.raw_event_stream_not_proven
+  - local_host.content_addressed_artifacts_not_proven
+  - local_host.workerrun_lifecycle_not_proven
+  - local_host.descriptor_overclaims_operations
+recommended_next_task: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01

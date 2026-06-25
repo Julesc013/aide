@@ -1,0 +1,21 @@
+# Explicit Non-Capabilities
+
+- arbitrary command runner
+- generic worker harness
+- autonomous agent worker
+- remote ExecutionHost
+- worker lease
+- scheduler
+- supervisor
+- Service/runtime behavior
+- Workbench behavior
+- provider/model calls
+- network calls
+- PreviewSession
+- DevelopmentTransaction
+- PatchTransaction apply
+- source repository mutation
+- target repository mutation
+- branch/worktree mutation
+- GitHub mutation
+- release or promotion

@@ -1,17 +1,13 @@
 {
   "delivered": true,
   "event_ref": "aide://execution-host-event/local-process-reference-0001",
-  "event_type": "RunObserved",
+  "event_type": "run_created",
   "kind": "ExecutionHostEvent",
-  "payload": {
-    "process_call_count": 1,
-    "result": "PASS",
-    "result_origin": "reference_worker_json",
-    "workspace_state_unchanged": true
-  },
+  "payload_digest": "sha256:4cb7cbf2bc695545d840b5f5604a0d9bc6fa7185f1dec78eb22318f18e9ae939",
+  "raw_event_stream_artifact_ref": "aide://artifact/local-process-event-stream/d8da259d5171782860263ae5e11185f24bfd3ec468dda8fbea87667409323e26",
   "run_ref": "aide://execution-host-run/local-process-reference-01",
   "runtime_event_store_implemented": false,
   "schema_version": "aide.local-process-execution-host.event.v0",
   "sequence": 1,
-  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
 }

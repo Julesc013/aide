@@ -1,0 +1,90 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+title: Repair LocalProcessExecutionHost v0
+type: repair
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+created_at: 2026-06-25
+updated_at: 2026-06-25
+objective: >
+  Close the six material findings from
+  AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01 while preserving the bounded
+  fixture-backed local process host boundary and leaving provider and
+  ExecutionHost contract core unchanged.
+authorizes_implementation: true
+check_only: false
+acceptance_only: false
+predecessors:
+  - AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01
+source_check_commit: 43848e9d76c2b59527925d9412c70cfd29d51506
+source_check_result: REQUEST_CHANGES
+source_material_finding_count: 6
+source_missing_evidence: 0
+proposed_capability_label: local_process_execution_host_fixture_v0
+material_finding_count: 0
+missing_evidence: 0
+allowed_paths:
+  - core/execution/local_process_host.py
+  - .aide/fixtures/local-process-execution-host/reference_worker.py
+  - .aide/scripts/tests/test_aide_local_process_execution_host.py
+  - .aide/reports/local-process-execution-host/**
+  - .aide/reports/local-process-execution-host-repair-01/**
+  - .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - core/execution/registered_process.py
+  - core/protocol/execution_host.py
+  - .aide/protocol/aide-execution-host.schema.json
+  - core/interop/dominium/**
+  - core/interop/eureka/**
+  - core/interop/aide/**
+  - hosts/**
+  - .aide.local/**
+closed_findings:
+  - local_host.disposable_workspace_not_proven
+  - local_host.path_escape_not_proven
+  - local_host.raw_event_stream_not_proven
+  - local_host.content_addressed_artifacts_not_proven
+  - local_host.workerrun_lifecycle_not_proven
+  - local_host.descriptor_overclaims_operations
+implementation_scope:
+  - disposable temporary worker workspace outside the source checkout
+  - exact allowlisted staged fixture argv through RegisteredProcessExecutionProvider v0
+  - fail-closed NDJSON event stream parsing
+  - persisted content-addressed raw event stream evidence
+  - persisted content-addressed worker artifact evidence
+  - WorkerRun lifecycle transition validation
+  - narrowed host descriptor operations
+explicit_non_capabilities:
+  - arbitrary command runner
+  - generic worker harness
+  - autonomous agent worker
+  - remote ExecutionHost
+  - worker lease
+  - scheduler
+  - supervisor
+  - Service/runtime behavior
+  - Workbench behavior
+  - provider/model calls
+  - network calls
+  - PreviewSession
+  - DevelopmentTransaction
+  - PatchTransaction apply
+  - source repository mutation
+  - target repository mutation
+  - branch/worktree mutation
+  - GitHub mutation
+  - release or promotion
+warnings:
+  - This remains a bounded local reference worker fixture, not a general worker harness.
+  - Cancellation, durable idempotency, streaming artifact storage, resource quotas, leases, scheduler, and Service runtime remain unimplemented.
+  - RegisteredProcessExecutionProvider v0 and the accepted ExecutionHost contract were not modified by this repair.
+validation_commands:
+  - py -3 -m py_compile core/execution/local_process_host.py .aide/fixtures/local-process-execution-host/reference_worker.py .aide/scripts/tests/test_aide_local_process_execution_host.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_local_process_execution_host.py
+  - py -3 .aide/scripts/aide_lite.py local-process-execution-host run
+recommended_next_task: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01

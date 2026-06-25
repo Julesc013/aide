@@ -2259,3 +2259,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence
   description: Aggregate mechanical Track B B1 barrier check. Confirms accepted self-management charter, GovernanceFinding report convention, DocKnowledgeTruthReconciler, GeneratedOutputLedger, and ReportIndex; verifies all required component evidence has missing_evidence 0; records zero errors and zero blockers; preserves accepted warning debt; authorizes Track B pause and Track A resumption at live queue gate AIDE-ACCEPT-CAPABILITY-MANIFEST-01. Stops at needs_review with PASS_WITH_WARNINGS. Does not execute Track A, start Track B B2, repair warnings, regenerate artifacts, move reports, rewrite references, mutate branches, call provider/model/Gateway/GitHub/network services, publish releases, or mutate target repos.
+- id: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
+  status: needs_review
+  planning_state: implementation_completed
+  result: PASS_WITH_WARNINGS
+  title: Repair LocalProcessExecutionHost v0
+  task: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01/evidence
+  description: Repair build for six material findings from AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01. Adds disposable workspace staging, path escape guards, fail-closed NDJSON event stream parsing, content-addressed raw event and worker artifact evidence, WorkerRun lifecycle validation, and a narrowed probe/create_run descriptor. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, proposed capability local_process_execution_host_fixture_v0, and recommends AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01. Does not modify RegisteredProcessExecutionProvider v0, accepted ExecutionHost contract, protocol schemas, interop domains, hosts, .aide.local Service state, provider/model/network behavior, Workbench behavior, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.

@@ -1,0 +1,55 @@
+{
+  "host_ref": "aide://execution-host/local-process/reference-v0",
+  "initial_state": "proposed",
+  "kind": "WorkerRun",
+  "reason_code": "",
+  "reconciliation_required_supported": false,
+  "result": "PASS",
+  "run_ref": "aide://execution-host-run/local-process-reference-01",
+  "schema_version": "aide.local-process-execution-host.worker-run.v0",
+  "state": "completed",
+  "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01",
+  "transitions": [
+    {
+      "event": "run_created",
+      "from": "proposed",
+      "to": "creating"
+    },
+    {
+      "event": "run_started",
+      "from": "creating",
+      "to": "ready"
+    },
+    {
+      "event": "run_started",
+      "from": "ready",
+      "to": "running"
+    },
+    {
+      "event": "worker_message",
+      "from": "running",
+      "to": "running"
+    },
+    {
+      "event": "artifact_produced",
+      "from": "running",
+      "to": "running"
+    },
+    {
+      "event": "usage_updated",
+      "from": "running",
+      "to": "running"
+    },
+    {
+      "event": "run_completed",
+      "from": "running",
+      "to": "completing"
+    },
+    {
+      "event": "run_completed",
+      "from": "completing",
+      "to": "completed"
+    }
+  ],
+  "workunit_ref": "aide://workunit/AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+}
