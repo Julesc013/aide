@@ -1,0 +1,25 @@
+{
+  "schema_version": "aide.turn-allowed-paths.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "allowed_paths": [
+    ".aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01/**",
+    ".aide/reports/distribution-manifest-v1/**",
+    ".aide/fixtures/distribution-manifest-v1/**",
+    ".aide/protocol/aide-distribution-manifest-v1.schema.json",
+    "core/protocol/distribution_manifest.py",
+    ".aide/scripts/tests/test_aide_distribution_manifest_v1.py",
+    ".aide/queue/index.yaml",
+    "PLANS.md",
+    "IMPLEMENT.md"
+  ],
+  "forbidden_paths": [
+    ".aide/reports/distribution-manifest-v1-check/**",
+    ".aide/release/dist/**",
+    ".aide/export/aide-lite-pack-v0/**",
+    ".aide/scripts/aide_lite.py"
+  ],
+  "notes": [
+    "Q47/Q48 release evidence may be read but not rewritten.",
+    "ProjectLock v0 files are out of scope."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "aide.campaign-state.v0",
+  "campaign": "distribution_manifest_v1",
+  "current_task": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "serialized_sequence": [
+    "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+    "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+    "AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01",
+    "AIDE-BUILD-PROJECT-LOCK-V0-01"
+  ],
+  "authoritative_mutation_lane": "current_task_only",
+  "read_only_lanes": [
+    "schema review",
+    "digest recomputation",
+    "component graph review",
+    "path security review",
+    "fixture coverage review"
+  ],
+  "gate_state": "repair_needs_review",
+  "project_lock_started": false,
+  "distribution_manifest_accepted": false
+}

@@ -21,8 +21,9 @@
       },
       "component_id": "aide-lite-pack-v0",
       "component_ref": "aide://distribution/component/aide-lite-pack-v0",
-      "content_digest": "sha256:985fb5f4e1179ebfb593f1a26ffaf049c8309c9e0ef5b8b8bf102c67db604744",
+      "content_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
       "dependencies": [],
+      "extensions": {},
       "kind": "aide_lite_portable_pack",
       "protocol_requirements": [
         "distribution_manifest_v1",

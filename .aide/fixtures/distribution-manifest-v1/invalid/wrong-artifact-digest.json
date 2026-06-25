@@ -54,8 +54,9 @@
         },
         "component_id": "aide-lite-pack-v0",
         "component_ref": "aide://distribution/component/aide-lite-pack-v0",
-        "content_digest": "sha256:4b75cf900baaf62fef315005e40e8e5c607586e33337a922c3fd67f4a87b24d9",
+        "content_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
         "dependencies": [],
+        "extensions": {},
         "kind": "aide_lite_portable_pack",
         "protocol_requirements": [
           "distribution_manifest_v1",
@@ -142,9 +143,9 @@
     }
   },
   "status": {
-    "distribution_digest": "sha256:8d608db26fc42aa5434dcd307eae7c867c08fd2b3073acad7e48e26ace3d4663",
+    "distribution_digest": "sha256:c1e7524cafb6455b086e7305ee3ab18a45e73a3d5e5186674903cea62c29346c",
     "install_apply_implemented": false,
-    "manifest_payload_digest": "sha256:ef9e24f27f5214b6591bb7f0c97f4d07c760d8c54ed7960bfd33774c61cc6344",
+    "manifest_payload_digest": "sha256:be255abe67bef2d7b4ba527caf90543f0b1fafd08af99eed41411f8e46e14ea7",
     "network_calls_implemented": false,
     "proposed_capability": "distribution_manifest_v1",
     "provider_model_calls_implemented": false,

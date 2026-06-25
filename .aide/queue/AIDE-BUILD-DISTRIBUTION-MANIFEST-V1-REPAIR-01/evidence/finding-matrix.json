@@ -1,0 +1,115 @@
+{
+  "schema_version": "aide.finding-matrix.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "findings": [
+    {
+      "finding_id": "schema.optional_extension_boundary_missing",
+      "required_behavior": "Explicit extension maps exist at canonical object levels and optional extensions survive schema validation, canonicalization, and serialization.",
+      "implementation_location": [
+        ".aide/protocol/aide-distribution-manifest-v1.schema.json",
+        "core/protocol/distribution_manifest.py"
+      ],
+      "negative_test": "unknown direct property remains rejected outside explicit extensions map",
+      "positive_test": "unknown optional extension map value validates and survives round-trip",
+      "evidence_artifact": "schema-extension-oracle.md",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "finding_id": "identity.mutable_status_changes_distribution_digest",
+      "required_behavior": "Mutable status and queue/controller fields do not affect manifest_payload_digest or distribution_digest; immutable spec/metadata/artifact changes do.",
+      "implementation_location": [
+        "core/protocol/distribution_manifest.py",
+        ".aide/scripts/tests/test_aide_distribution_manifest_v1.py"
+      ],
+      "negative_test": "status.status, recommended_next_task, proposed_capability, and non-capability booleans changed only",
+      "positive_test": "metadata identity, artifact digest, and component digest changed",
+      "evidence_artifact": "identity-oracle.md",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "finding_id": "component.graph_integrity_not_validated",
+      "required_behavior": "Component refs and ids are unique, component content digests recompute, artifact refs and dependencies close, and dependency cycles fail.",
+      "implementation_location": [
+        "core/protocol/distribution_manifest.py",
+        ".aide/scripts/tests/test_aide_distribution_manifest_v1.py"
+      ],
+      "negative_test": "corrupt digest, missing artifact, excluded artifact, unknown dependency, duplicate id, self dependency, dependency cycle",
+      "positive_test": "generated component closes over all included artifacts",
+      "evidence_artifact": "component-graph-oracle.md",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "finding_id": "artifact.integrity_metadata_not_validated",
+      "required_behavior": "Included local artifacts validate path, regular file status, byte count, content digest, media type, compression type, checksum ref, and provenance ref.",
+      "implementation_location": [
+        "core/protocol/distribution_manifest.py",
+        ".aide/scripts/tests/test_aide_distribution_manifest_v1.py"
+      ],
+      "negative_test": "wrong byte_count, wrong media_type, wrong compression_format",
+      "positive_test": "Q47 included local artifacts recompute successfully",
+      "evidence_artifact": "artifact-integrity-oracle.md",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "finding_id": "path.preaccess_validation_order_violation",
+      "required_behavior": "Release artifact records reject absolute, traversal, UNC, drive, and forbidden paths before stat/open/hash.",
+      "implementation_location": [
+        "core/protocol/distribution_manifest.py",
+        ".aide/scripts/tests/test_aide_distribution_manifest_v1.py"
+      ],
+      "negative_test": "malformed release record path cannot trigger filesystem probe",
+      "positive_test": "valid relative release path is hashed after containment validation",
+      "evidence_artifact": "path-preaccess-oracle.md",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "finding_id": "checksum.value_not_verified",
+      "required_behavior": "Checksum manifest algorithm, digest, exact checksum key, value equality, and basename-collision behavior are validated.",
+      "implementation_location": [
+        "core/protocol/distribution_manifest.py",
+        ".aide/scripts/tests/test_aide_distribution_manifest_v1.py"
+      ],
+      "negative_test": "correct checksum name with wrong value and basename collision",
+      "positive_test": "Q47 checksum values match artifact content digests",
+      "evidence_artifact": "checksum-oracle.md",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "finding_id": "protocol.range_semantics_incomplete",
+      "required_behavior": "Protocol min/max, v1 inclusion, reader/writer versions, component constraints, unknown required features, optional features, and migrations are enforced.",
+      "implementation_location": [
+        "core/protocol/distribution_manifest.py",
+        ".aide/scripts/tests/test_aide_distribution_manifest_v1.py"
+      ],
+      "negative_test": "min above v1, max below v1, missing min, missing reader/writer, malformed versions, incompatible component constraints",
+      "positive_test": "1.0.0 through 1.x with reader/writer 1.0.0 passes",
+      "evidence_artifact": "protocol-range-oracle.md",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "finding_id": "contamination.forbidden_members_silently_filtered",
+      "required_behavior": "Local-directory inventory records forbidden members and validation fails with contamination evidence instead of silently filtering.",
+      "implementation_location": [
+        "core/protocol/distribution_manifest.py",
+        ".aide/scripts/tests/test_aide_distribution_manifest_v1.py"
+      ],
+      "negative_test": "directory containing .aide.local or source report member fails",
+      "positive_test": "clean Q47 export-pack inventory passes",
+      "evidence_artifact": "contamination-oracle.md",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "finding_id": "fixture.required_coverage_incomplete",
+      "required_behavior": "Committed fixture corpus contains direct valid/invalid fixtures for the required adversarial matrix.",
+      "implementation_location": [
+        "core/protocol/distribution_manifest.py",
+        ".aide/fixtures/distribution-manifest-v1/**",
+        ".aide/reports/distribution-manifest-v1/fixture-matrix.md"
+      ],
+      "negative_test": "required invalid fixture list exists and fails with expected codes",
+      "positive_test": "required valid fixture list exists and passes",
+      "evidence_artifact": "fixture-coverage-oracle.md",
+      "completion_state": "closed_pending_independent_check"
+    }
+  ]
+}

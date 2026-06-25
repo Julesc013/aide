@@ -1,0 +1,42 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+title: Build DistributionManifest v1 Repair 01
+status: needs_review
+planning_state: implementation_completed
+task_type: build_repair
+source_task: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
+source_check_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
+source_check_result: REQUEST_CHANGES
+material_finding_count: 9
+result: PASS_WITH_WARNINGS
+material_finding_count_after_repair: 0
+missing_evidence: 0
+recommended_next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01/**
+  - .aide/reports/distribution-manifest-v1/**
+  - .aide/fixtures/distribution-manifest-v1/**
+  - .aide/protocol/aide-distribution-manifest-v1.schema.json
+  - core/protocol/distribution_manifest.py
+  - .aide/scripts/tests/test_aide_distribution_manifest_v1.py
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_behaviors:
+  - install_apply
+  - update_apply
+  - repair_apply
+  - rollback_apply
+  - uninstall_apply
+  - release_publication
+  - git_tag_creation
+  - github_release_creation
+  - artifact_upload
+  - target_repository_mutation
+  - branch_worktree_automation
+  - network_call
+  - provider_model_call
+  - workbench_or_mcp_runtime
+  - source_change_preview_apply_rollback
+  - promotion
+stop_condition: needs_review

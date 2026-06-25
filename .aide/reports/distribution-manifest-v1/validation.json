@@ -75,6 +75,33 @@
       "path": ".aide/fixtures/distribution-manifest-v1/valid/reordered-input.json"
     },
     {
+      "case_id": "signature-placeholder",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/valid/signature-placeholder.json"
+    },
+    {
+      "case_id": "unknown-optional-extension-round-trip",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/valid/unknown-optional-extension-round-trip.json"
+    },
+    {
+      "case_id": "unknown-optional-feature",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/valid/unknown-optional-feature.json"
+    },
+    {
       "case_id": "absolute-path",
       "expected_refusal_codes": [
         "distribution.forbidden_member",
@@ -107,17 +134,86 @@
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/aide-local-member.json"
     },
     {
+      "case_id": "checksum-basename-collision",
+      "expected_refusal_codes": [
+        "distribution.checksum_basename_collision"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.checksum_basename_collision",
+        "distribution.component_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/checksum-basename-collision.json"
+    },
+    {
+      "case_id": "checksum-missing",
+      "expected_refusal_codes": [
+        "distribution.missing_checksum"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.missing_checksum"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/checksum-missing.json"
+    },
+    {
+      "case_id": "checksum-wrong-value",
+      "expected_refusal_codes": [
+        "distribution.checksum_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.checksum_digest_mismatch",
+        "distribution.component_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/checksum-wrong-value.json"
+    },
+    {
+      "case_id": "dependency-cycle",
+      "expected_refusal_codes": [
+        "distribution.component_dependency_cycle"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.component_dependency_cycle",
+        "distribution.component_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/dependency-cycle.json"
+    },
+    {
       "case_id": "duplicate-artifact",
       "expected_refusal_codes": [
         "distribution.duplicate_artifact"
       ],
       "expected_result": "FAILED_VALIDATION",
       "observed_refusal_codes": [
+        "distribution.checksum_basename_collision",
         "distribution.duplicate_artifact"
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/duplicate-artifact.json"
+    },
+    {
+      "case_id": "duplicate-component-id",
+      "expected_refusal_codes": [
+        "distribution.duplicate_component_id"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.duplicate_component_id"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/duplicate-component-id.json"
     },
     {
       "case_id": "duplicate-component",
@@ -126,11 +222,25 @@
       ],
       "expected_result": "FAILED_VALIDATION",
       "observed_refusal_codes": [
-        "distribution.duplicate_component"
+        "distribution.duplicate_component",
+        "distribution.duplicate_component_id"
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/duplicate-component.json"
+    },
+    {
+      "case_id": "false-signature-verification",
+      "expected_refusal_codes": [
+        "distribution.signature_unverified"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.signature_unverified"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/false-signature-verification.json"
     },
     {
       "case_id": "false-verified-signature",
@@ -144,6 +254,22 @@
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/false-verified-signature.json"
+    },
+    {
+      "case_id": "forbidden-member",
+      "expected_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/forbidden-member.json"
     },
     {
       "case_id": "forbidden-source-report-member",
@@ -175,6 +301,48 @@
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/incompatible-migration.json"
     },
     {
+      "case_id": "inverted-protocol-range",
+      "expected_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/inverted-protocol-range.json"
+    },
+    {
+      "case_id": "malformed-digest",
+      "expected_refusal_codes": [
+        "distribution.artifact_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.artifact_digest_mismatch",
+        "distribution.checksum_digest_mismatch",
+        "distribution.component_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/malformed-digest.json"
+    },
+    {
+      "case_id": "missing-artifact-ref",
+      "expected_refusal_codes": [
+        "distribution.missing_artifact_ref"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.component_digest_mismatch",
+        "distribution.missing_artifact_ref"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/missing-artifact-ref.json"
+    },
+    {
       "case_id": "missing-checksum",
       "expected_refusal_codes": [
         "distribution.missing_checksum"
@@ -186,6 +354,20 @@
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/missing-checksum.json"
+    },
+    {
+      "case_id": "missing-dependency",
+      "expected_refusal_codes": [
+        "distribution.missing_component_dependency"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.component_digest_mismatch",
+        "distribution.missing_component_dependency"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/missing-dependency.json"
     },
     {
       "case_id": "missing-digest",
@@ -201,6 +383,19 @@
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/missing-digest.json"
     },
     {
+      "case_id": "missing-sbom",
+      "expected_refusal_codes": [
+        "distribution.sbom_unavailable"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.sbom_unavailable"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/missing-sbom.json"
+    },
+    {
       "case_id": "sbom-generated-claim",
       "expected_refusal_codes": [
         "distribution.sbom_unavailable"
@@ -212,6 +407,19 @@
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/sbom-generated-claim.json"
+    },
+    {
+      "case_id": "source-contamination",
+      "expected_refusal_codes": [
+        "distribution.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/source-contamination.json"
     },
     {
       "case_id": "traversal-path",
@@ -243,6 +451,19 @@
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/unknown-required-feature.json"
     },
     {
+      "case_id": "unsupported-protocol-range",
+      "expected_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/unsupported-protocol-range.json"
+    },
+    {
       "case_id": "unsupported-protocol",
       "expected_refusal_codes": [
         "distribution.unsupported_protocol_range"
@@ -269,17 +490,58 @@
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/unsupported-source-kind.json"
     },
     {
+      "case_id": "unsupported-source",
+      "expected_refusal_codes": [
+        "distribution.unsupported_source_kind"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unsupported_source_kind"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/unsupported-source.json"
+    },
+    {
       "case_id": "wrong-artifact-digest",
       "expected_refusal_codes": [
         "distribution.artifact_digest_mismatch"
       ],
       "expected_result": "FAILED_VALIDATION",
       "observed_refusal_codes": [
-        "distribution.artifact_digest_mismatch"
+        "distribution.artifact_digest_mismatch",
+        "distribution.checksum_digest_mismatch",
+        "distribution.component_digest_mismatch"
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/wrong-artifact-digest.json"
+    },
+    {
+      "case_id": "wrong-component-digest",
+      "expected_refusal_codes": [
+        "distribution.component_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.component_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/wrong-component-digest.json"
+    },
+    {
+      "case_id": "wrong-distribution-digest",
+      "expected_refusal_codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/wrong-distribution-digest.json"
     },
     {
       "case_id": "wrong-manifest-digest",
@@ -293,6 +555,19 @@
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/wrong-manifest-digest.json"
+    },
+    {
+      "case_id": "wrong-payload-digest",
+      "expected_refusal_codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/wrong-payload-digest.json"
     }
   ],
   "manifest_validation": {
@@ -306,7 +581,7 @@
   "project_report": {
     "artifact_count": 12,
     "component_count": 1,
-    "distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+    "distribution_digest": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
     "explicit_non_capabilities": [
       "install_apply",
       "update_apply",
@@ -327,7 +602,7 @@
       "promotion"
     ],
     "manifest_path": ".aide/reports/distribution-manifest-v1/manifest.json",
-    "manifest_payload_digest": "sha256:3822baea7c7a8689911a587a43f6f2a7339cdbec45dbfefa7fbdafc65a0b9de9",
+    "manifest_payload_digest": "sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2",
     "proposed_capability": "distribution_manifest_v1",
     "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01",
     "schema_version": "aide.distribution-manifest-project-report.v1",

@@ -96,6 +96,9 @@
         "timestamp_classification": {
           "type": "string",
           "minLength": 1
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     },
@@ -164,6 +167,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     },
@@ -250,11 +256,21 @@
         "recommended_next_task": {
           "type": "string",
           "const": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
+    },
+    "extensions": {
+      "$ref": "#/$defs/extensions"
     }
   },
   "$defs": {
+    "extensions": {
+      "type": "object",
+      "additionalProperties": true
+    },
     "source": {
       "type": "object",
       "additionalProperties": false,
@@ -295,6 +311,9 @@
         "q48_publication_draft_is_distribution_truth": {
           "type": "boolean",
           "const": false
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     },
@@ -324,6 +343,9 @@
             },
             "max": {
               "type": "string"
+            },
+            "extensions": {
+              "$ref": "#/$defs/extensions"
             }
           }
         },
@@ -356,6 +378,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     },
@@ -419,12 +444,15 @@
           "items": {
             "type": "string"
           }
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     },
     "artifact": {
       "type": "object",
-      "additionalProperties": true,
+      "additionalProperties": false,
       "required": [
         "artifact_ref",
         "artifact_id",
@@ -506,6 +534,36 @@
         },
         "excluded_reason": {
           "type": "string"
+        },
+        "directory_file_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "directory_forbidden_member_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "directory_forbidden_members": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "reason"
+            ],
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     },
@@ -532,6 +590,9 @@
         "manifest_digest": {
           "type": "string",
           "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     },
@@ -560,6 +621,9 @@
         },
         "source_repo_local_path_suppressed": {
           "type": "boolean"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     },
@@ -580,6 +644,9 @@
         },
         "reason": {
           "type": "string"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     },
@@ -604,6 +671,9 @@
         },
         "reason": {
           "type": "string"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
         }
       }
     }

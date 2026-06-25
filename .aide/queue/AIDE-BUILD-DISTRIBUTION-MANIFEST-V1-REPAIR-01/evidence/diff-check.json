@@ -1,0 +1,7 @@
+{
+  "schema_version": "aide.diff-check.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "git_diff_check": "PASS",
+  "git_diff_cached_check": "PASS",
+  "historical_check_churn_restored": true
+}

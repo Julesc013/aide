@@ -1,0 +1,16 @@
+{
+  "schema_version": "aide.test-results.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "focused_unittest": {
+    "command": "py -3 -m unittest discover -s .aide/scripts/tests -p \"test_aide_distribution_manifest_v1.py\"",
+    "result": "PASS",
+    "tests_run": 18
+  },
+  "distribution_manifest_validate": {
+    "command": "py -3 .aide/scripts/aide_lite.py distribution-manifest validate",
+    "result": "PASS_WITH_WARNINGS",
+    "error_count": 0,
+    "manifest_valid": true,
+    "fixture_matrix_passed": true
+  }
+}

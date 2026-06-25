@@ -1,0 +1,19 @@
+{
+  "schema_version": "aide.validation-commands.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "commands": [
+    "git diff --check",
+    "git diff --cached --check",
+    "py -3 -m json.tool .aide/protocol/aide-distribution-manifest-v1.schema.json > $null",
+    "py -3 -m compileall core/protocol .aide/scripts/tests",
+    "py -3 -m unittest discover -s .aide/scripts/tests -p \"test_aide_distribution_manifest_v1.py\"",
+    "py -3 .aide/scripts/aide_lite.py distribution-manifest status",
+    "py -3 .aide/scripts/aide_lite.py distribution-manifest project",
+    "py -3 .aide/scripts/aide_lite.py distribution-manifest validate",
+    "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+    "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+    "py -3 .aide/scripts/aide_lite.py validate",
+    "targeted local absolute path scan",
+    "targeted secret-like scan"
+  ]
+}

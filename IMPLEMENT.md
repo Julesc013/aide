@@ -9212,3 +9212,60 @@ No implementation repair, DistributionManifest acceptance, ProjectLock work,
 install/update/repair/rollback/uninstall apply, release publication, target
 mutation, Workbench/MCP runtime, provider/model call, source-change
 preview/apply/rollback, or promotion was performed.
+
+## Work Item: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+
+### Status
+
+Completed with `PASS_WITH_WARNINGS` and awaiting independent repair check.
+
+### Changed Paths
+
+- `.aide/protocol/aide-distribution-manifest-v1.schema.json`
+- `core/protocol/distribution_manifest.py`
+- `.aide/scripts/tests/test_aide_distribution_manifest_v1.py`
+- `.aide/fixtures/distribution-manifest-v1/**`
+- `.aide/reports/distribution-manifest-v1/**`
+- `.aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The independent check found nine material defects in the proposed
+DistributionManifest v1 identity. The repair closes only those defects and
+preserves the review boundary before acceptance or ProjectLock work.
+
+### Implementation Notes
+
+- Added task-local turn context, allowed paths, finding matrix, validation
+  plan, stop conditions, and campaign state before production edits.
+- Added explicit `extensions` schema surfaces while keeping canonical objects
+  closed.
+- Removed mutable `status` from distribution identity digest input.
+- Added component content-digest recomputation, artifact-ref closure,
+  component-id uniqueness, dependency closure, and cycle detection.
+- Added local artifact byte-count, digest, media-type, compression, checksum,
+  and path-containment validation.
+- Rejected malformed release artifact paths before filesystem access.
+- Added checksum value comparison and basename-collision checks.
+- Added exact protocol range and reader/writer compatibility validation.
+- Changed local-directory inventory to record forbidden members as
+  contamination rather than silently filtering.
+- Expanded the committed fixture corpus for the required repair matrix.
+
+### Verification
+
+Focused DistributionManifest tests and `distribution-manifest validate` pass
+with warnings and `error_count: 0`. Broad validation is recorded in task-local
+evidence.
+
+### Remaining Issues
+
+- `distribution_manifest_v1` remains proposed until independent repair check
+  and acceptance.
+- ProjectLock v0 has not started.
+- Install/update/repair/rollback/uninstall apply, release publication, target
+  mutation, Workbench/MCP runtime, provider/model calls, source-change
+  preview/apply/rollback, and promotion remain unimplemented.

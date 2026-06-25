@@ -1,0 +1,21 @@
+{
+  "schema_version": "aide.non-capabilities.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "false_boundaries": {
+    "distribution_manifest_accepted": false,
+    "project_lock_started": false,
+    "install_apply_implemented": false,
+    "update_apply_implemented": false,
+    "repair_apply_implemented": false,
+    "rollback_apply_implemented": false,
+    "uninstall_apply_implemented": false,
+    "release_publication_implemented": false,
+    "target_repository_mutation_implemented": false,
+    "network_calls_implemented": false,
+    "provider_model_calls_implemented": false,
+    "workbench_runtime_implemented": false,
+    "mcp_runtime_implemented": false,
+    "source_change_preview_apply_rollback_implemented": false,
+    "promotion_implemented": false
+  }
+}

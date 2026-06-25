@@ -6,7 +6,7 @@
 - helper_exists: true
 - q47_release_bundle_exists: true
 - manifest_report_exists: true
-- validation_report_exists: false
+- validation_report_exists: true
 - recommended_next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
 
 ## Non-Capabilities

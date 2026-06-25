@@ -3,8 +3,8 @@
 - distribution_ref: `aide://distribution/aide-lite-pack-v0`
 - release_id: `aide-lite-pack-v0-2b2a00f7c4628311`
 - channel: `canary`
-- manifest_payload_digest: `sha256:3822baea7c7a8689911a587a43f6f2a7339cdbec45dbfefa7fbdafc65a0b9de9`
-- distribution_digest: `sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f`
+- manifest_payload_digest: `sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2`
+- distribution_digest: `sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569`
 - component_count: 1
 - artifact_count: 12
 - q48_publication_draft_is_distribution_truth: false
@@ -17,7 +17,7 @@
 - `CHANGELOG.preview.md`: changelog_preview_copy sha256:583d5ac82800450cd6473a4568a7c8c2111435413614969f71f8ae3de76ae720
 - `RELEASE_NOTES.preview.md`: release_notes_preview_copy sha256:51cc5473d4f14fab1ca5d96646c8933d5e9122eedf52f3e48c158eac52a06456
 - `SHA256SUMS.txt`: sha256sums_text sha256:60bfac6c8e912d1ad1f7929a55c820e2ef2edcaf340d6b8b9675402b1ee1291a
-- `aide-lite-pack-v0-directory`: local_directory sha256:75e5f7ed744b58f2869b8af30ffe9ab23c0865899c318319c14fb44886a8a907
+- `aide-lite-pack-v0-directory`: local_directory sha256:070caaebff339ff89004463a6aef3b9d61c0bfce082d8fc0343df8a9316eefc7
 - `aide-lite-pack-v0.checksums.json`: checksums sha256:d11f91599bbf13c39872b815b99a88063c50de8fcdf91aee76a09282bac2db06
 - `aide-lite-pack-v0.tar.gz`: tar_gz_archive sha256:258c0ce9200c24c86fa237ace0df6ef58a9d9567cfb35956a464f56f48b9fc3a
 - `aide-lite-pack-v0.zip`: zip_archive sha256:5ea124268b5c0448c906cedab9d7d62d1424ae2749cd0547acad44964f610761

@@ -1,0 +1,14 @@
+{
+  "schema_version": "aide.turn-stop-conditions.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "stop_at": "needs_review",
+  "hard_stops": [
+    "attempted ProjectLock v0 implementation",
+    "install/update/repair/rollback/uninstall apply behavior requested or needed",
+    "release publication, tag, upload, or GitHub mutation requested or needed",
+    "network, provider/model, Workbench/MCP runtime, or target mutation required",
+    "a material finding cannot be mapped to a testable disposition"
+  ],
+  "success_next_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "failure_next_task": "manual_review_required_before_next_repair"
+}

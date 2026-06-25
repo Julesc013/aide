@@ -2741,3 +2741,15 @@
 - Exit Criteria: task stops at `needs_review`, records the independent check result, and recommends either acceptance or a bounded repair task.
 - Result: `REQUEST_CHANGES`.
 - Notes: Nine material findings remain. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01`.
+
+### Queue ID: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+
+- Title: Build DistributionManifest v1 Repair 01
+- Status: Needs Review
+- Objective: repair exactly the nine material findings from `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01` without accepting `distribution_manifest_v1` or beginning `ProjectLock v0`.
+- Scope: `.aide/protocol/aide-distribution-manifest-v1.schema.json`, `core/protocol/distribution_manifest.py`, `.aide/scripts/tests/test_aide_distribution_manifest_v1.py`, `.aide/fixtures/distribution-manifest-v1/**`, `.aide/reports/distribution-manifest-v1/**`, `.aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source check `REQUEST_CHANGES`, `material_finding_count: 9`, and `missing_evidence: 0`.
+- Verification Intent: freeze a task-local turn context and finding matrix before production edits; run focused DistributionManifest tests, `distribution-manifest validate`, schema JSON parsing, task inspect/evidence, broad AIDE validation, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, closes the nine findings pending independent recheck, and recommends exactly `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: The repair adds explicit extension surfaces, status-independent identity, stricter graph/artifact/checksum/protocol/path/contamination validation, and expanded fixture coverage. No install/update apply, release publication, target mutation, acceptance, or ProjectLock work is authorized.

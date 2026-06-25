@@ -1,0 +1,14 @@
+{
+  "schema_version": "aide.path-scan.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "result": "PASS",
+  "scanned_surfaces": [
+    ".aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+    ".aide/reports/distribution-manifest-v1",
+    ".aide/protocol/aide-distribution-manifest-v1.schema.json",
+    "core/protocol/distribution_manifest.py",
+    ".aide/scripts/tests/test_aide_distribution_manifest_v1.py"
+  ],
+  "machine_path_hits": 0,
+  "note": "Intentional fixture literals such as C:/tmp are test data and are not machine-local paths."
+}

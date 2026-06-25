@@ -27,6 +27,12 @@
         "compression_format": null,
         "content_digest": "sha256:583d5ac82800450cd6473a4568a7c8c2111435413614969f71f8ae3de76ae720",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "changelog_preview_copy",
         "media_type": "text/markdown",
@@ -45,6 +51,12 @@
         "compression_format": null,
         "content_digest": "sha256:51cc5473d4f14fab1ca5d96646c8933d5e9122eedf52f3e48c158eac52a06456",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "release_notes_preview_copy",
         "media_type": "text/markdown",
@@ -63,6 +75,12 @@
         "compression_format": null,
         "content_digest": "sha256:60bfac6c8e912d1ad1f7929a55c820e2ef2edcaf340d6b8b9675402b1ee1291a",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "sha256sums_text",
         "media_type": "text/plain",
@@ -76,12 +94,15 @@
         "archive_member": null,
         "artifact_id": "aide-lite-pack-v0-directory",
         "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0-directory",
-        "byte_count": 2951467,
+        "byte_count": 2951837,
         "checksum_ref": null,
         "compression_format": null,
-        "content_digest": "sha256:75e5f7ed744b58f2869b8af30ffe9ab23c0865899c318319c14fb44886a8a907",
-        "directory_file_count": 829,
+        "content_digest": "sha256:070caaebff339ff89004463a6aef3b9d61c0bfce082d8fc0343df8a9316eefc7",
+        "directory_file_count": 830,
+        "directory_forbidden_member_count": 0,
+        "directory_forbidden_members": [],
         "excluded_reason": "",
+        "extensions": {},
         "included": true,
         "kind": "local_directory",
         "media_type": "application/vnd.aide.directory",
@@ -100,6 +121,12 @@
         "compression_format": null,
         "content_digest": "sha256:d11f91599bbf13c39872b815b99a88063c50de8fcdf91aee76a09282bac2db06",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "checksums",
         "media_type": "application/json",
@@ -118,6 +145,12 @@
         "compression_format": "tar.gz",
         "content_digest": "sha256:258c0ce9200c24c86fa237ace0df6ef58a9d9567cfb35956a464f56f48b9fc3a",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "tar_gz_archive",
         "media_type": "application/gzip",
@@ -136,6 +169,12 @@
         "compression_format": "zip",
         "content_digest": "sha256:5ea124268b5c0448c906cedab9d7d62d1424ae2749cd0547acad44964f610761",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "zip_archive",
         "media_type": "application/zip",
@@ -154,6 +193,12 @@
         "compression_format": null,
         "content_digest": "sha256:6176f03b047465dea6919e8d2958ba0bb7217bc7940791f71cad7b45bef0458f",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "install_notes",
         "media_type": "text/markdown",
@@ -172,6 +217,12 @@
         "compression_format": null,
         "content_digest": "sha256:a63b444ba7b528b9528e7e0e096a505ba01c91aca700c026f76c883bc39a8870",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "manifest",
         "media_type": "application/yaml",
@@ -190,6 +241,12 @@
         "compression_format": null,
         "content_digest": "sha256:9394a6d96edd7ac64cbc70f4b7664d42f541c1a507ca1215a943ff7897ebc3c3",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "provenance_report",
         "media_type": "application/json",
@@ -208,6 +265,12 @@
         "compression_format": null,
         "content_digest": "sha256:746317110fd2e5cc0a6fcd41715839045d11232ce0b5e011a6658d56166528af",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "validation_report",
         "media_type": "application/json",
@@ -226,6 +289,12 @@
         "compression_format": null,
         "content_digest": "sha256:df35747cfd0d9361cf1dfd5d36a185bceb5e4939f0f892bb7dbb97da16040aae",
         "excluded_reason": "",
+        "extensions": {
+          "path_validation": {
+            "reason": "",
+            "valid": true
+          }
+        },
         "included": true,
         "kind": "validation_report",
         "media_type": "text/markdown",
@@ -264,8 +333,9 @@
         },
         "component_id": "aide-lite-pack-v0",
         "component_ref": "aide://distribution/component/aide-lite-pack-v0",
-        "content_digest": "sha256:985fb5f4e1179ebfb593f1a26ffaf049c8309c9e0ef5b8b8bf102c67db604744",
+        "content_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
         "dependencies": [],
+        "extensions": {},
         "kind": "aide_lite_portable_pack",
         "protocol_requirements": [
           "distribution_manifest_v1",
@@ -363,9 +433,9 @@
     }
   },
   "status": {
-    "distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+    "distribution_digest": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
     "install_apply_implemented": false,
-    "manifest_payload_digest": "sha256:3822baea7c7a8689911a587a43f6f2a7339cdbec45dbfefa7fbdafc65a0b9de9",
+    "manifest_payload_digest": "sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2",
     "network_calls_implemented": false,
     "proposed_capability": "distribution_manifest_v1",
     "provider_model_calls_implemented": false,

@@ -1,0 +1,27 @@
+{
+  "schema_version": "aide.turn-context.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "current_gate": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "source_task": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01",
+  "source_check_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01",
+  "source_check_result": "REQUEST_CHANGES",
+  "source_check_commit": "dd3f47ea0b4d90f86ca6b4ae93b06aae81cb54f1",
+  "source_build_commit": "ad975887910f6a7238ef076ce2fef0fd43687e37",
+  "material_findings": 9,
+  "canonical_queue": ".aide/queue/index.yaml",
+  "primary_contracts": [
+    ".aide/queue/policy.yaml",
+    ".aide/protocol/aide-distribution-manifest-v1.schema.json",
+    "core/protocol/distribution_manifest.py"
+  ],
+  "non_capabilities": [
+    "ProjectLock v0",
+    "DistributionManifest v1 acceptance",
+    "install/update/repair/rollback/uninstall apply",
+    "release publication",
+    "target repository mutation",
+    "network/provider/model calls",
+    "Workbench/MCP runtime",
+    "source-change preview/apply/rollback"
+  ]
+}

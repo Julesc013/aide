@@ -98,13 +98,24 @@ REFUSAL_CODES = [
     "distribution.manifest_invalid",
     "distribution.manifest_digest_mismatch",
     "distribution.duplicate_component",
+    "distribution.duplicate_component_id",
     "distribution.duplicate_artifact",
     "distribution.artifact_digest_mismatch",
+    "distribution.artifact_byte_count_mismatch",
+    "distribution.artifact_media_type_mismatch",
+    "distribution.artifact_compression_mismatch",
     "distribution.unsupported_protocol_range",
     "distribution.unknown_required_feature",
     "distribution.unsupported_source_kind",
     "distribution.forbidden_member",
     "distribution.source_state_contamination",
+    "distribution.component_digest_mismatch",
+    "distribution.missing_artifact_ref",
+    "distribution.excluded_artifact_ref",
+    "distribution.missing_component_dependency",
+    "distribution.component_dependency_cycle",
+    "distribution.checksum_digest_mismatch",
+    "distribution.checksum_basename_collision",
     "distribution.signature_unverified",
     "distribution.sbom_unavailable",
     "distribution.missing_checksum",
@@ -190,7 +201,7 @@ def is_absolute_or_traversal(value: str) -> bool:
     rel = normalize_rel(value)
     if not rel:
         return True
-    if rel.startswith("/") or re.match(r"^[A-Za-z]:/", rel):
+    if rel.startswith("/") or re.match(r"^[A-Za-z]:/", rel) or rel.startswith("//"):
         return True
     parts = [part for part in rel.split("/") if part]
     return any(part == ".." for part in parts)
@@ -200,6 +211,8 @@ def forbidden_member_reason(value: str) -> str | None:
     rel = normalize_rel(value)
     if is_absolute_or_traversal(rel):
         return "absolute_or_traversal_path"
+    if rel.startswith(".aide.local.example/") or "/.aide.local.example/" in rel:
+        return None
     if rel in FORBIDDEN_MEMBER_EXACT:
         return "forbidden_exact_member"
     for prefix in FORBIDDEN_MEMBER_PREFIXES:
@@ -226,6 +239,37 @@ def media_type_for(path: str, kind: str) -> str:
     if kind == "local_directory":
         return "application/vnd.aide.directory"
     return "application/octet-stream"
+
+
+def compression_format_for(path: str) -> str | None:
+    if path.endswith(".zip"):
+        return "zip"
+    if path.endswith(".tar.gz"):
+        return "tar.gz"
+    return None
+
+
+def source_kind_for(path: str) -> str:
+    if path.endswith(".zip"):
+        return "local_zip"
+    if path.endswith(".tar.gz"):
+        return "local_tar_gz"
+    return "local_file"
+
+
+def safe_artifact_path(root: Path, relative_path: str) -> Path | None:
+    rel = normalize_rel(relative_path)
+    if forbidden_member_reason(rel):
+        return None
+    candidate = root / rel
+    try:
+        resolved_root = root.resolve()
+        resolved_candidate = candidate.resolve(strict=False)
+        if resolved_candidate == resolved_root or resolved_root not in resolved_candidate.parents:
+            return None
+    except OSError:
+        return None
+    return candidate
 
 
 def artifact_ref(asset_id: str) -> str:
@@ -260,34 +304,42 @@ def load_release_inputs(repo_root: str | Path) -> dict[str, Any]:
     }
 
 
-def directory_inventory_digest(path: Path) -> tuple[int, int, str]:
+def directory_inventory_digest(path: Path) -> tuple[int, int, str, list[dict[str, str]]]:
     entries: list[dict[str, Any]] = []
+    forbidden_members: list[dict[str, str]] = []
     total_bytes = 0
     for child in sorted(path.rglob("*")):
         if not child.is_file():
             continue
         rel = child.relative_to(path).as_posix()
-        if forbidden_member_reason(rel):
+        forbidden = forbidden_member_reason(rel)
+        if forbidden:
+            forbidden_members.append({"path": rel, "reason": forbidden})
             continue
         size = child.stat().st_size
         total_bytes += size
         entries.append({"path": rel, "byte_count": size, "sha256": sha256_file(child)})
     digest = sha256_digest(canonical_json_bytes(entries))
-    return len(entries), total_bytes, digest
+    return len(entries), total_bytes, digest, forbidden_members
 
 
 def _artifact_from_release_record(repo_root: Path, record: dict[str, Any]) -> dict[str, Any]:
     path = normalize_rel(str(record.get("path", "")))
-    absolute = repo_root / path
-    byte_count = absolute.stat().st_size if absolute.exists() else int(record.get("size_bytes") or 0)
-    actual_hash = sha256_file(absolute) if absolute.exists() else str(record.get("sha256", ""))
+    safe_path = safe_artifact_path(repo_root, path)
+    path_valid = safe_path is not None
+    if path_valid and safe_path is not None and safe_path.exists():
+        byte_count = safe_path.stat().st_size
+        actual_hash = sha256_file(safe_path)
+    else:
+        byte_count = int(record.get("size_bytes") or 0)
+        actual_hash = str(record.get("sha256", ""))
     name = str(record.get("asset_id") or Path(path).name)
     kind = str(record.get("kind") or "release_artifact")
     return {
         "artifact_ref": artifact_ref(name),
         "artifact_id": name,
         "kind": kind,
-        "source_kind": "local_zip" if name.endswith(".zip") else "local_tar_gz" if name.endswith(".tar.gz") else "local_file",
+        "source_kind": source_kind_for(name),
         "media_type": media_type_for(path, kind),
         "byte_count": byte_count,
         "content_digest": f"sha256:{actual_hash}",
@@ -295,16 +347,22 @@ def _artifact_from_release_record(repo_root: Path, record: dict[str, Any]) -> di
         "archive_member": None,
         "portable_role": "release_bundle_artifact",
         "target_treatment": "distribution_input_only_not_ownership_authority",
-        "compression_format": "zip" if name.endswith(".zip") else "tar.gz" if name.endswith(".tar.gz") else None,
+        "compression_format": compression_format_for(name),
         "checksum_ref": "aide://distribution/checksums/q47-release-dist-core-artifacts",
         "provenance_ref": "aide://distribution/provenance/q47-release-provenance",
         "included": bool(record.get("included", True)),
         "excluded_reason": "" if record.get("included", True) else str(record.get("reason", "")),
+        "extensions": {
+            "path_validation": {
+                "valid": path_valid,
+                "reason": "" if path_valid else (forbidden_member_reason(path) or "path_not_contained"),
+            }
+        },
     }
 
 
 def _directory_artifact(repo_root: Path) -> dict[str, Any]:
-    count, total_bytes, digest = directory_inventory_digest(repo_root / EXPORT_PACK_ROOT)
+    count, total_bytes, digest, forbidden_members = directory_inventory_digest(repo_root / EXPORT_PACK_ROOT)
     return {
         "artifact_ref": artifact_ref("aide-lite-pack-v0-directory"),
         "artifact_id": "aide-lite-pack-v0-directory",
@@ -323,6 +381,9 @@ def _directory_artifact(repo_root: Path) -> dict[str, Any]:
         "included": True,
         "excluded_reason": "",
         "directory_file_count": count,
+        "directory_forbidden_member_count": len(forbidden_members),
+        "directory_forbidden_members": forbidden_members,
+        "extensions": {},
     }
 
 
@@ -340,39 +401,49 @@ def component_digest(component_payload: dict[str, Any]) -> str:
     return sha256_digest(canonical_json_bytes(component_payload))
 
 
+def component_digest_payload(component: dict[str, Any], artifact_by_ref: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    artifact_refs = sorted(str(ref) for ref in component.get("artifact_refs", []) if isinstance(ref, str))
+    artifact_digests = []
+    for ref in artifact_refs:
+        artifact = artifact_by_ref.get(ref)
+        if artifact and artifact.get("included") is True:
+            artifact_digests.append({"artifact_ref": ref, "content_digest": str(artifact.get("content_digest", ""))})
+    return {
+        "component_id": str(component.get("component_id", "")),
+        "kind": str(component.get("kind", "")),
+        "version": str(component.get("version", "")),
+        "required": bool(component.get("required", False)),
+        "artifact_refs": artifact_refs,
+        "artifact_digests": sorted(artifact_digests, key=lambda item: item["artifact_ref"]),
+        "protocol_requirements": sorted(str(item) for item in component.get("protocol_requirements", []) if isinstance(item, str)),
+        "target_role": str(component.get("target_role", "")),
+        "compatibility_constraints": copy.deepcopy(component.get("compatibility_constraints", {})),
+        "dependencies": sorted(str(item) for item in component.get("dependencies", []) if isinstance(item, str)),
+    }
+
+
 def build_components(artifacts: list[dict[str, Any]]) -> list[dict[str, Any]]:
     artifact_refs = [str(item["artifact_ref"]) for item in artifacts if item.get("included") is True]
-    payload = {
+    artifact_by_ref = {str(item.get("artifact_ref")): item for item in artifacts if isinstance(item, dict)}
+    component = {
+        "component_ref": component_ref("aide-lite-pack-v0"),
         "component_id": "aide-lite-pack-v0",
+        "kind": "aide_lite_portable_pack",
+        "version": "v0",
+        "required": True,
+        "content_digest": "",
         "artifact_refs": sorted(artifact_refs),
-        "artifact_digests": sorted(
-            (
-                {"artifact_ref": str(item["artifact_ref"]), "content_digest": str(item["content_digest"])}
-                for item in artifacts
-                if item.get("included") is True
-            ),
-            key=lambda item: item["artifact_ref"],
-        ),
         "protocol_requirements": ["distribution_manifest_v1", "portable_release_bundle_v0"],
+        "target_role": "aide_lite_distribution_input",
+        "compatibility_constraints": {
+            "min_reader_version": PROTOCOL_VERSION,
+            "min_writer_version": PROTOCOL_VERSION,
+        },
+        "dependencies": [],
+        "extensions": {},
     }
-    return [
-        {
-            "component_ref": component_ref("aide-lite-pack-v0"),
-            "component_id": "aide-lite-pack-v0",
-            "kind": "aide_lite_portable_pack",
-            "version": "v0",
-            "required": True,
-            "content_digest": component_digest(payload),
-            "artifact_refs": sorted(artifact_refs),
-            "protocol_requirements": ["distribution_manifest_v1", "portable_release_bundle_v0"],
-            "target_role": "aide_lite_distribution_input",
-            "compatibility_constraints": {
-                "min_reader_version": PROTOCOL_VERSION,
-                "min_writer_version": PROTOCOL_VERSION,
-            },
-            "dependencies": [],
-        }
-    ]
+    component["content_digest"] = component_digest(component_digest_payload(component, artifact_by_ref))
+    return [component]
 
 
 def build_distribution_manifest(repo_root: str | Path, *, source_kind: str = "local_zip") -> dict[str, Any]:
@@ -504,10 +575,7 @@ def canonicalize_manifest(manifest: dict[str, Any]) -> dict[str, Any]:
 
 def manifest_payload_for_digest(manifest: dict[str, Any]) -> dict[str, Any]:
     data = canonicalize_manifest(manifest)
-    status = data.get("status")
-    if isinstance(status, dict):
-        status["manifest_payload_digest"] = ""
-        status["distribution_digest"] = ""
+    data.pop("status", None)
     spec = data.get("spec")
     if isinstance(spec, dict):
         spec.pop("signature_records", None)
@@ -660,6 +728,52 @@ def _protocol_major(value: str) -> int | None:
     return int(match.group(1))
 
 
+def _semver_tuple(value: str) -> tuple[int, int, int] | None:
+    match = re.match(r"^(\d+)\.(\d+)\.(\d+)$", value)
+    if not match:
+        return None
+    return tuple(int(part) for part in match.groups())  # type: ignore[return-value]
+
+
+def _range_max_tuple(value: str) -> tuple[int, int, int] | None:
+    wildcard = re.match(r"^(\d+)\.x$", value)
+    if wildcard:
+        major = int(wildcard.group(1))
+        return (major, 999999, 999999)
+    return _semver_tuple(value)
+
+
+def protocol_range_includes_current(protocol: dict[str, Any]) -> bool:
+    protocol_range = protocol.get("protocol_range") if isinstance(protocol.get("protocol_range"), dict) else {}
+    minimum = _semver_tuple(str(protocol_range.get("min", "")))
+    maximum = _range_max_tuple(str(protocol_range.get("max", "")))
+    current = _semver_tuple(PROTOCOL_VERSION)
+    reader = _semver_tuple(str(protocol.get("min_reader_version", "")))
+    writer = _semver_tuple(str(protocol.get("min_writer_version", "")))
+    if minimum is None or maximum is None or current is None or reader is None or writer is None:
+        return False
+    if minimum > maximum:
+        return False
+    if not (minimum <= current <= maximum):
+        return False
+    if reader > current or writer > current:
+        return False
+    return True
+
+
+def compatibility_constraints_include_current(constraints: Any) -> bool:
+    if not isinstance(constraints, dict):
+        return False
+    current = _semver_tuple(PROTOCOL_VERSION)
+    if current is None:
+        return False
+    reader = _semver_tuple(str(constraints.get("min_reader_version", "")))
+    writer = _semver_tuple(str(constraints.get("min_writer_version", "")))
+    if reader is None or writer is None:
+        return False
+    return reader <= current and writer <= current
+
+
 def validate_distribution_manifest_object(
     manifest: dict[str, Any] | None,
     *,
@@ -690,11 +804,8 @@ def validate_distribution_manifest_object(
     if source.get("source_kind") not in SUPPORTED_SOURCE_KINDS:
         _add_error(errors, "distribution.unsupported_source_kind", "unsupported source_kind")
     protocol = spec.get("protocol") if isinstance(spec.get("protocol"), dict) else {}
-    protocol_range = protocol.get("protocol_range") if isinstance(protocol.get("protocol_range"), dict) else {}
-    max_value = str(protocol_range.get("max", ""))
-    max_major = _protocol_major(max_value)
-    if max_major is None or max_major < SUPPORTED_PROTOCOL_MAJOR:
-        _add_error(errors, "distribution.unsupported_protocol_range", "protocol range does not include v1 readers")
+    if not protocol_range_includes_current(protocol):
+        _add_error(errors, "distribution.unsupported_protocol_range", "protocol range, reader version, or writer version does not include v1")
     for feature in protocol.get("required_features", []) if isinstance(protocol.get("required_features"), list) else []:
         if feature not in SUPPORTED_REQUIRED_FEATURES and feature not in SUPPORTED_OPTIONAL_FEATURES:
             _add_error(errors, "distribution.unknown_required_feature", f"unknown required feature: {feature}")
@@ -712,54 +823,127 @@ def validate_distribution_manifest_object(
     if not isinstance(artifacts, list) or not artifacts:
         _add_error(errors, "distribution.manifest_invalid", "artifacts must be a non-empty array")
         artifacts = []
-    component_ids: set[str] = set()
-    for component in components:
-        if not isinstance(component, dict):
-            _add_error(errors, "distribution.manifest_invalid", "component entries must be objects")
-            continue
-        ref = str(component.get("component_ref", ""))
-        if not ref:
-            _add_error(errors, "distribution.manifest_invalid", "component_ref is required")
-        if ref in component_ids:
-            _add_error(errors, "distribution.duplicate_component", f"duplicate component_ref: {ref}")
-        component_ids.add(ref)
     root = Path(repo_root) if repo_root is not None else None
-    artifact_ids: set[str] = set()
-    checksum_names = _checksum_names(spec, root)
+    checksum_spec = spec.get("checksums") if isinstance(spec.get("checksums"), dict) else {}
+    checksum_entries = _checksum_entries(spec, root)
+    if checksum_spec.get("algorithm") != "sha256":
+        _add_error(errors, "distribution.manifest_invalid", "checksum algorithm must be sha256")
+    checksum_path_value = checksum_spec.get("checksum_manifest_path")
+    if root is not None and isinstance(checksum_path_value, str):
+        checksum_path = safe_artifact_path(root, checksum_path_value)
+        if checksum_path is None:
+            _add_error(errors, "distribution.forbidden_member", f"{checksum_path_value}: forbidden checksum manifest path")
+        elif checksum_path.exists():
+            expected_manifest_digest = f"sha256:{sha256_file(checksum_path)}"
+            if checksum_spec.get("manifest_digest") != expected_manifest_digest:
+                _add_error(errors, "distribution.checksum_digest_mismatch", "checksum manifest digest mismatch")
+    artifact_refs_seen: set[str] = set()
+    artifact_by_ref: dict[str, dict[str, Any]] = {}
+    checksum_artifact_names: dict[str, list[str]] = {}
     for artifact in artifacts:
         if not isinstance(artifact, dict):
             _add_error(errors, "distribution.manifest_invalid", "artifact entries must be objects")
             continue
         ref = str(artifact.get("artifact_ref", ""))
-        if ref in artifact_ids:
+        if ref in artifact_refs_seen:
             _add_error(errors, "distribution.duplicate_artifact", f"duplicate artifact_ref: {ref}")
-        artifact_ids.add(ref)
+        artifact_refs_seen.add(ref)
+        artifact_by_ref[ref] = artifact
         rel = str(artifact.get("relative_source_location", ""))
         forbidden = forbidden_member_reason(rel)
         if forbidden:
             _add_error(errors, "distribution.forbidden_member", f"{rel}: {forbidden}")
             _add_error(errors, "distribution.source_state_contamination", f"{rel}: forbidden distribution member")
-        if artifact.get("checksum_ref") and checksum_names is not None:
+        if int(artifact.get("directory_forbidden_member_count") or 0) > 0:
+            _add_error(errors, "distribution.source_state_contamination", f"{rel}: local directory contains forbidden members")
+        content_digest_value = str(artifact.get("content_digest", ""))
+        if not re.match(r"^sha256:[0-9a-f]{64}$", content_digest_value):
+            _add_error(errors, "distribution.artifact_digest_mismatch", f"artifact digest has invalid format: {rel}")
+        if artifact.get("checksum_ref"):
             name = Path(normalize_rel(rel)).name
-            if name not in checksum_names:
+            checksum_artifact_names.setdefault(name, []).append(ref)
+            if checksum_entries is not None and name not in checksum_entries:
                 _add_error(errors, "distribution.missing_checksum", f"missing checksum entry for {name}")
+            elif checksum_entries is not None and checksum_entries.get(name) != content_digest_value.removeprefix("sha256:"):
+                _add_error(errors, "distribution.checksum_digest_mismatch", f"checksum value mismatch for {name}")
         if artifact.get("content_digest") == "sha256:" + "0" * 64:
             _add_error(errors, "distribution.artifact_digest_mismatch", f"artifact digest is the zero digest: {rel}")
         if require_artifact_files and root is not None and artifact.get("source_kind") != "local_directory":
-            artifact_path = root / normalize_rel(rel)
+            artifact_path = safe_artifact_path(root, rel)
+            if artifact_path is None:
+                _add_error(errors, "distribution.forbidden_member", f"{rel}: path is not contained")
+                continue
             if not artifact_path.exists():
                 _add_error(errors, "distribution.manifest_invalid", f"artifact file missing: {rel}")
+            elif artifact_path.is_symlink() or not artifact_path.is_file():
+                _add_error(errors, "distribution.manifest_invalid", f"artifact is not a regular file: {rel}")
             else:
+                actual_size = artifact_path.stat().st_size
+                if int(artifact.get("byte_count") or -1) != actual_size:
+                    _add_error(errors, "distribution.artifact_byte_count_mismatch", f"artifact byte_count mismatch: {rel}")
                 actual = f"sha256:{sha256_file(artifact_path)}"
                 if actual != artifact.get("content_digest"):
                     _add_error(errors, "distribution.artifact_digest_mismatch", f"artifact digest mismatch: {rel}")
+                expected_media_type = media_type_for(rel, str(artifact.get("kind", "")))
+                if artifact.get("media_type") != expected_media_type:
+                    _add_error(errors, "distribution.artifact_media_type_mismatch", f"artifact media_type mismatch: {rel}")
+                expected_compression = compression_format_for(rel)
+                if artifact.get("compression_format") != expected_compression:
+                    _add_error(errors, "distribution.artifact_compression_mismatch", f"artifact compression_format mismatch: {rel}")
+    for name, refs in checksum_artifact_names.items():
+        if len(refs) > 1:
+            _add_error(errors, "distribution.checksum_basename_collision", f"checksum basename collision for {name}")
+    component_refs_seen: set[str] = set()
+    component_ids_seen: set[str] = set()
+    dependency_graph: dict[str, list[str]] = {}
+    for component in components:
+        if not isinstance(component, dict):
+            _add_error(errors, "distribution.manifest_invalid", "component entries must be objects")
+            continue
+        ref = str(component.get("component_ref", ""))
+        component_id = str(component.get("component_id", ""))
+        if not ref:
+            _add_error(errors, "distribution.manifest_invalid", "component_ref is required")
+        if ref in component_refs_seen:
+            _add_error(errors, "distribution.duplicate_component", f"duplicate component_ref: {ref}")
+        component_refs_seen.add(ref)
+        if component_id in component_ids_seen:
+            _add_error(errors, "distribution.duplicate_component_id", f"duplicate component_id: {component_id}")
+        component_ids_seen.add(component_id)
+        if not compatibility_constraints_include_current(component.get("compatibility_constraints")):
+            _add_error(errors, "distribution.unsupported_protocol_range", f"component compatibility does not include v1: {ref}")
+        for requirement in component.get("protocol_requirements", []) if isinstance(component.get("protocol_requirements"), list) else []:
+            if requirement not in SUPPORTED_REQUIRED_FEATURES and requirement not in SUPPORTED_OPTIONAL_FEATURES:
+                _add_error(errors, "distribution.unknown_required_feature", f"unknown component protocol requirement: {requirement}")
+        for artifact_ref_value in component.get("artifact_refs", []) if isinstance(component.get("artifact_refs"), list) else []:
+            artifact_ref_string = str(artifact_ref_value)
+            artifact_record = artifact_by_ref.get(artifact_ref_string)
+            if artifact_record is None:
+                _add_error(errors, "distribution.missing_artifact_ref", f"component references missing artifact: {artifact_ref_string}")
+            elif artifact_record.get("included") is not True:
+                _add_error(errors, "distribution.excluded_artifact_ref", f"component references excluded artifact: {artifact_ref_string}")
+        dependencies = [str(item) for item in component.get("dependencies", []) if isinstance(item, str)] if isinstance(component.get("dependencies"), list) else []
+        dependency_graph[ref] = dependencies
+        for dependency in dependencies:
+            if dependency not in component_refs_seen and not any(isinstance(other, dict) and other.get("component_ref") == dependency for other in components):
+                _add_error(errors, "distribution.missing_component_dependency", f"component dependency is missing: {dependency}")
+            if dependency == ref:
+                _add_error(errors, "distribution.component_dependency_cycle", f"component depends on itself: {ref}")
+        expected_component_digest = component_digest(component_digest_payload(component, artifact_by_ref))
+        if component.get("content_digest") != expected_component_digest:
+            _add_error(errors, "distribution.component_digest_mismatch", f"component digest mismatch: {ref}")
+    for cycle in component_dependency_cycles(dependency_graph):
+        _add_error(errors, "distribution.component_dependency_cycle", f"component dependency cycle: {' -> '.join(cycle)}")
     for signature in spec.get("signature_records", []) if isinstance(spec.get("signature_records"), list) else []:
         if not isinstance(signature, dict):
             _add_error(errors, "distribution.signature_unverified", "signature record must be an object")
             continue
         if signature.get("verified") is True or signature.get("status") == "verified":
             _add_error(errors, "distribution.signature_unverified", "verified signature claims are not supported by this slice")
-    for sbom in spec.get("sbom_refs", []) if isinstance(spec.get("sbom_refs"), list) else []:
+    sbom_refs = spec.get("sbom_refs", []) if isinstance(spec.get("sbom_refs"), list) else []
+    if not sbom_refs:
+        _add_error(errors, "distribution.sbom_unavailable", "SBOM status must be explicitly unavailable or placeholder")
+    for sbom in sbom_refs:
         if isinstance(sbom, dict) and sbom.get("status") not in {"unavailable", "placeholder"}:
             _add_error(errors, "distribution.sbom_unavailable", "generated SBOM claims are not supported by this slice")
     expected_payload = manifest_payload_digest(manifest)
@@ -771,7 +955,31 @@ def validate_distribution_manifest_object(
     return _validation_result(errors, warnings)
 
 
-def _checksum_names(spec: dict[str, Any], root: Path | None) -> set[str] | None:
+def component_dependency_cycles(graph: dict[str, list[str]]) -> list[list[str]]:
+    cycles: list[list[str]] = []
+    visiting: set[str] = set()
+    visited: set[str] = set()
+
+    def visit(node: str, stack: list[str]) -> None:
+        if node in visiting:
+            if node in stack:
+                cycles.append(stack[stack.index(node) :] + [node])
+            return
+        if node in visited:
+            return
+        visiting.add(node)
+        for dependency in graph.get(node, []):
+            if dependency in graph:
+                visit(dependency, stack + [dependency])
+        visiting.remove(node)
+        visited.add(node)
+
+    for component in sorted(graph):
+        visit(component, [component])
+    return cycles
+
+
+def _checksum_entries(spec: dict[str, Any], root: Path | None) -> dict[str, str] | None:
     checksums = spec.get("checksums")
     if not isinstance(checksums, dict):
         return None
@@ -779,7 +987,9 @@ def _checksum_names(spec: dict[str, Any], root: Path | None) -> set[str] | None:
     if not isinstance(path, str):
         return None
     if root is not None:
-        checksum_path = root / normalize_rel(path)
+        checksum_path = safe_artifact_path(root, path)
+        if checksum_path is None:
+            return None
         if checksum_path.exists():
             try:
                 data = read_json(checksum_path)
@@ -787,9 +997,9 @@ def _checksum_names(spec: dict[str, Any], root: Path | None) -> set[str] | None:
                 return None
             checksum_map = data.get("checksums")
             if isinstance(checksum_map, dict):
-                return {str(key) for key in checksum_map}
+                return {str(key): str(value) for key, value in checksum_map.items()}
     if "fixture" in path:
-        return {"minimal.json"}
+        return {"minimal.json": sha256_bytes(b"{}")}
     return None
 
 
@@ -1039,18 +1249,36 @@ INVALID_FIXTURE_EXPECTATIONS = {
     "aide-local-member": ["distribution.forbidden_member", "distribution.source_state_contamination"],
     "duplicate-artifact": ["distribution.duplicate_artifact"],
     "duplicate-component": ["distribution.duplicate_component"],
+    "duplicate-component-id": ["distribution.duplicate_component_id"],
+    "checksum-basename-collision": ["distribution.checksum_basename_collision"],
+    "checksum-missing": ["distribution.missing_checksum"],
+    "checksum-wrong-value": ["distribution.checksum_digest_mismatch"],
+    "dependency-cycle": ["distribution.component_dependency_cycle"],
+    "false-signature-verification": ["distribution.signature_unverified"],
     "false-verified-signature": ["distribution.signature_unverified"],
+    "forbidden-member": ["distribution.forbidden_member", "distribution.source_state_contamination"],
     "forbidden-source-report-member": ["distribution.forbidden_member", "distribution.source_state_contamination"],
     "incompatible-migration": ["distribution.incompatible_migration"],
+    "inverted-protocol-range": ["distribution.unsupported_protocol_range"],
+    "malformed-digest": ["distribution.artifact_digest_mismatch"],
+    "missing-artifact-ref": ["distribution.missing_artifact_ref"],
     "missing-checksum": ["distribution.missing_checksum"],
+    "missing-dependency": ["distribution.missing_component_dependency"],
     "missing-digest": ["distribution.manifest_digest_mismatch"],
+    "missing-sbom": ["distribution.sbom_unavailable"],
     "sbom-generated-claim": ["distribution.sbom_unavailable"],
+    "source-contamination": ["distribution.source_state_contamination"],
     "traversal-path": ["distribution.forbidden_member", "distribution.source_state_contamination"],
     "unknown-required-feature": ["distribution.unknown_required_feature"],
     "unsupported-protocol": ["distribution.unsupported_protocol_range"],
+    "unsupported-protocol-range": ["distribution.unsupported_protocol_range"],
+    "unsupported-source": ["distribution.unsupported_source_kind"],
     "unsupported-source-kind": ["distribution.unsupported_source_kind"],
     "wrong-artifact-digest": ["distribution.artifact_digest_mismatch"],
+    "wrong-component-digest": ["distribution.component_digest_mismatch"],
+    "wrong-distribution-digest": ["distribution.manifest_digest_mismatch"],
     "wrong-manifest-digest": ["distribution.manifest_digest_mismatch"],
+    "wrong-payload-digest": ["distribution.manifest_digest_mismatch"],
 }
 
 
@@ -1067,28 +1295,54 @@ def write_fixture_corpus(repo_root: str | Path) -> None:
     local_dir = build_distribution_manifest(root, source_kind="local_directory")
     write_json(valid_root / "local-directory.json", local_dir)
     write_json(valid_root / "reordered-input.json", reordered_manifest(full))
+    unknown_optional_feature = copy.deepcopy(minimal)
+    add_unknown_optional_feature(unknown_optional_feature)
+    write_json(valid_root / "unknown-optional-feature.json", finalize_manifest(unknown_optional_feature))
+    unknown_optional_extension = copy.deepcopy(minimal)
+    add_optional_extensions(unknown_optional_extension)
+    write_json(valid_root / "unknown-optional-extension-round-trip.json", finalize_manifest(unknown_optional_extension))
+    signature_placeholder = copy.deepcopy(minimal)
+    write_json(valid_root / "signature-placeholder.json", finalize_manifest(signature_placeholder))
     invalid_cases = {
         "absolute-path": lambda m: set_artifact_path(m, "C:/tmp/aide-lite-pack-v0.zip"),
         "aide-local-member": lambda m: set_artifact_path(m, ".aide.local/state.sqlite"),
+        "checksum-basename-collision": checksum_basename_collision,
+        "checksum-missing": missing_checksum,
+        "checksum-wrong-value": checksum_wrong_value,
+        "dependency-cycle": component_dependency_cycle,
         "duplicate-artifact": duplicate_first_artifact,
         "duplicate-component": duplicate_first_component,
+        "duplicate-component-id": duplicate_component_id,
+        "false-signature-verification": false_verified_signature,
         "false-verified-signature": false_verified_signature,
+        "forbidden-member": lambda m: set_artifact_path(m, ".env"),
         "forbidden-source-report-member": lambda m: set_artifact_path(m, ".aide/reports/latest-report.json"),
         "incompatible-migration": add_incompatible_migration,
+        "inverted-protocol-range": inverted_protocol_range,
+        "malformed-digest": malformed_digest,
+        "missing-artifact-ref": missing_artifact_ref,
         "missing-checksum": missing_checksum,
+        "missing-dependency": missing_component_dependency,
         "missing-digest": remove_manifest_digest,
+        "missing-sbom": missing_sbom,
         "sbom-generated-claim": sbom_generated_claim,
+        "source-contamination": source_contamination,
         "traversal-path": lambda m: set_artifact_path(m, "../outside.txt"),
         "unknown-required-feature": add_unknown_required_feature,
         "unsupported-protocol": unsupported_protocol,
+        "unsupported-protocol-range": unsupported_protocol_range,
+        "unsupported-source": unsupported_source_kind,
         "unsupported-source-kind": unsupported_source_kind,
         "wrong-artifact-digest": wrong_artifact_digest,
+        "wrong-component-digest": wrong_component_digest,
+        "wrong-distribution-digest": wrong_distribution_digest,
         "wrong-manifest-digest": wrong_manifest_digest,
+        "wrong-payload-digest": wrong_payload_digest,
     }
     for name, mutator in invalid_cases.items():
         case = copy.deepcopy(minimal)
         mutator(case)
-        if name not in {"missing-digest", "wrong-manifest-digest"}:
+        if name not in {"missing-digest", "wrong-manifest-digest", "wrong-payload-digest", "wrong-distribution-digest"}:
             case = finalize_manifest(case)
         write_json(invalid_root / f"{name}.json", case)
 
@@ -1107,6 +1361,43 @@ def duplicate_first_artifact(manifest: dict[str, Any]) -> None:
 
 def duplicate_first_component(manifest: dict[str, Any]) -> None:
     manifest["spec"]["components"].append(copy.deepcopy(manifest["spec"]["components"][0]))
+
+
+def duplicate_component_id(manifest: dict[str, Any]) -> None:
+    duplicate = copy.deepcopy(manifest["spec"]["components"][0])
+    duplicate["component_ref"] = component_ref("aide-lite-pack-v0-copy")
+    manifest["spec"]["components"].append(duplicate)
+
+
+def missing_artifact_ref(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["components"][0]["artifact_refs"].append("aide://distribution/artifact/missing")
+
+
+def excluded_artifact_ref(manifest: dict[str, Any]) -> None:
+    artifact = first_artifact(manifest)
+    artifact["included"] = False
+    artifact["excluded_reason"] = "fixture exclusion"
+
+
+def missing_component_dependency(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["components"][0]["dependencies"].append("aide://distribution/component/missing")
+
+
+def component_dependency_cycle(manifest: dict[str, Any]) -> None:
+    ref = manifest["spec"]["components"][0]["component_ref"]
+    manifest["spec"]["components"][0]["dependencies"].append(ref)
+
+
+def checksum_basename_collision(manifest: dict[str, Any]) -> None:
+    second = copy.deepcopy(first_artifact(manifest))
+    second["artifact_ref"] = artifact_ref("nested-minimal")
+    second["relative_source_location"] = "nested/minimal.json"
+    manifest["spec"]["artifacts"].append(second)
+    manifest["spec"]["components"][0]["artifact_refs"].append(second["artifact_ref"])
+
+
+def checksum_wrong_value(manifest: dict[str, Any]) -> None:
+    first_artifact(manifest)["content_digest"] = sha256_digest(b"changed")
 
 
 def false_verified_signature(manifest: dict[str, Any]) -> None:
@@ -1130,24 +1421,72 @@ def sbom_generated_claim(manifest: dict[str, Any]) -> None:
     manifest["spec"]["sbom_refs"] = [{"sbom_ref": "aide://distribution/sbom/fake", "status": "generated"}]
 
 
+def missing_sbom(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["sbom_refs"] = []
+
+
 def add_unknown_required_feature(manifest: dict[str, Any]) -> None:
     manifest["spec"]["protocol"]["required_features"].append("future.required.feature")
+
+
+def add_unknown_optional_feature(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["protocol"]["optional_features"].append("future.optional.feature")
+
+
+def add_optional_extensions(manifest: dict[str, Any]) -> None:
+    manifest["metadata"]["extensions"] = {"operator.note": {"value": "preserve"}}
+    manifest["spec"]["protocol"]["extensions"] = {"future.optional": {"enabled": True}}
+    manifest["spec"]["components"][0]["extensions"] = {"component.optional": 7}
 
 
 def unsupported_protocol(manifest: dict[str, Any]) -> None:
     manifest["spec"]["protocol"]["protocol_range"] = {"min": "0.1.0", "max": "0.x"}
 
 
+def unsupported_protocol_range(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["protocol"]["protocol_range"] = {"min": "2.0.0", "max": "3.x"}
+
+
+def inverted_protocol_range(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["protocol"]["protocol_range"] = {"min": "1.0.0", "max": "0.9.0"}
+
+
 def unsupported_source_kind(manifest: dict[str, Any]) -> None:
     manifest["spec"]["source"]["source_kind"] = "remote_http"
+
+
+def malformed_digest(manifest: dict[str, Any]) -> None:
+    first_artifact(manifest)["content_digest"] = "sha256:not-a-valid-digest"
 
 
 def wrong_artifact_digest(manifest: dict[str, Any]) -> None:
     first_artifact(manifest)["content_digest"] = "sha256:" + "0" * 64
 
 
+def wrong_component_digest(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["components"][0]["content_digest"] = "sha256:" + "2" * 64
+
+
 def wrong_manifest_digest(manifest: dict[str, Any]) -> None:
     manifest["status"]["manifest_payload_digest"] = "sha256:" + "1" * 64
+
+
+def wrong_payload_digest(manifest: dict[str, Any]) -> None:
+    manifest["status"]["manifest_payload_digest"] = "sha256:" + "3" * 64
+
+
+def wrong_distribution_digest(manifest: dict[str, Any]) -> None:
+    manifest["status"]["distribution_digest"] = "sha256:" + "4" * 64
+
+
+def source_contamination(manifest: dict[str, Any]) -> None:
+    artifact = first_artifact(manifest)
+    artifact["source_kind"] = "local_directory"
+    artifact["kind"] = "local_directory"
+    artifact["media_type"] = media_type_for("", "local_directory")
+    artifact["directory_file_count"] = 0
+    artifact["directory_forbidden_member_count"] = 1
+    artifact["directory_forbidden_members"] = [{"path": ".aide.local/state.sqlite", "reason": "forbidden_prefix:.aide.local/"}]
 
 
 def render_status_md(data: dict[str, Any]) -> str:

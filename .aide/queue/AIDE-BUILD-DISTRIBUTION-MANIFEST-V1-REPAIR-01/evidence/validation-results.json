@@ -1,0 +1,65 @@
+{
+  "schema_version": "aide.validation-results.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "results": [
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --cached --check",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -m json.tool .aide/protocol/aide-distribution-manifest-v1.schema.json > $null",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -m compileall core/protocol .aide/scripts/tests",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p \"test_aide_distribution_manifest_v1.py\"",
+      "result": "PASS",
+      "observed": "18 tests passed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py distribution-manifest status",
+      "result": "PASS_WITH_WARNINGS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py distribution-manifest project",
+      "result": "PASS_WITH_WARNINGS",
+      "observed": "source_artifacts_mutated: false"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py distribution-manifest validate",
+      "result": "PASS_WITH_WARNINGS",
+      "observed": "error_count: 0"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+      "result": "PASS",
+      "observed": "classification: complete; missing_evidence: 0"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+      "result": "PASS",
+      "observed": "missing evidence list empty"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "result": "PASS"
+    },
+    {
+      "command": "targeted local absolute path scan",
+      "result": "PASS",
+      "observed": "no C:/Users, C:/Projects, C:/Downloads, or backslash variants found in repair surfaces"
+    },
+    {
+      "command": "targeted secret-like scan",
+      "result": "PASS",
+      "observed": "no api key, secret key, token, password assignment, or bearer token pattern found in repair surfaces"
+    }
+  ]
+}

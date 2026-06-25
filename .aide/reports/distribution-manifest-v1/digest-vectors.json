@@ -1,5 +1,5 @@
 {
-  "distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+  "distribution_digest": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
   "immutable_artifact_digest_set": [
     {
       "artifact_ref": "aide://distribution/artifact/CHANGELOG.preview.md",
@@ -21,8 +21,8 @@
     },
     {
       "artifact_ref": "aide://distribution/artifact/aide-lite-pack-v0-directory",
-      "byte_count": 2951467,
-      "content_digest": "sha256:75e5f7ed744b58f2869b8af30ffe9ab23c0865899c318319c14fb44886a8a907",
+      "byte_count": 2951837,
+      "content_digest": "sha256:070caaebff339ff89004463a6aef3b9d61c0bfce082d8fc0343df8a9316eefc7",
       "included": true
     },
     {
@@ -74,8 +74,8 @@
       "included": true
     }
   ],
-  "manifest_payload_digest": "sha256:3822baea7c7a8689911a587a43f6f2a7339cdbec45dbfefa7fbdafc65a0b9de9",
-  "reordered_input_distribution_digest": "sha256:c8570f85df5d6c1ab5718be3bd93c510ef478a4962bcbb7e2fab11d810422c1f",
+  "manifest_payload_digest": "sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2",
+  "reordered_input_distribution_digest": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
   "reordered_input_same_digest": true,
   "schema_version": "aide.distribution-digest-vectors.v1"
 }

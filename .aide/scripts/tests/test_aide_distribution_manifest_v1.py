@@ -8,6 +8,7 @@ import tempfile
 import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
+from unittest import mock
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -133,6 +134,187 @@ class AIDEDistributionManifestV1Tests(unittest.TestCase):
         manifest = distribution_manifest.build_distribution_manifest(REPO_ROOT)
         reordered = distribution_manifest.reordered_manifest(manifest)
         self.assertEqual(manifest["status"]["distribution_digest"], reordered["status"]["distribution_digest"])
+
+    def test_status_fields_do_not_affect_distribution_identity(self) -> None:
+        manifest = distribution_manifest.minimal_fixture_manifest()
+        base_payload = manifest["status"]["manifest_payload_digest"]
+        base_distribution = manifest["status"]["distribution_digest"]
+        status_mutations = [
+            ("recommended_next_task", "AIDE-SOME-FUTURE-TASK"),
+            ("status", "PASS"),
+            ("proposed_capability", "distribution_manifest_v1_proposed_alias"),
+            ("install_apply_implemented", False),
+        ]
+        for field, value in status_mutations:
+            with self.subTest(field=field):
+                mutated = copy.deepcopy(manifest)
+                mutated["status"][field] = value
+                mutated = distribution_manifest.finalize_manifest(mutated)
+                self.assertEqual(base_payload, mutated["status"]["manifest_payload_digest"])
+                self.assertEqual(base_distribution, mutated["status"]["distribution_digest"])
+
+    def test_spec_and_metadata_fields_affect_distribution_identity(self) -> None:
+        manifest = distribution_manifest.minimal_fixture_manifest()
+        base_distribution = manifest["status"]["distribution_digest"]
+        mutations = [
+            lambda m: m["metadata"].__setitem__("release_id", "fixture-minimal-2"),
+            lambda m: m["spec"]["artifacts"][0].__setitem__("content_digest", "sha256:" + "1" * 64),
+            lambda m: m["spec"]["components"][0].__setitem__("content_digest", "sha256:" + "2" * 64),
+        ]
+        for mutator in mutations:
+            mutated = copy.deepcopy(manifest)
+            mutator(mutated)
+            mutated = distribution_manifest.finalize_manifest(mutated)
+            self.assertNotEqual(base_distribution, mutated["status"]["distribution_digest"])
+
+    def test_optional_extensions_survive_round_trip(self) -> None:
+        manifest = distribution_manifest.minimal_fixture_manifest()
+        manifest["metadata"]["extensions"] = {"operator.note": {"value": "preserve"}}
+        manifest["spec"]["protocol"]["extensions"] = {"future.optional": {"enabled": True}}
+        manifest["spec"]["components"][0]["extensions"] = {"component.optional": 7}
+        manifest = distribution_manifest.finalize_manifest(manifest)
+        result = distribution_manifest.validate_distribution_manifest_object(manifest)
+        self.assertTrue(result["valid"], result)
+        self.assertEqual(manifest["metadata"]["extensions"]["operator.note"]["value"], "preserve")
+        self.assertEqual(manifest["spec"]["protocol"]["extensions"]["future.optional"]["enabled"], True)
+
+    def test_component_graph_integrity_is_validated(self) -> None:
+        cases = [
+            ("distribution.component_digest_mismatch", distribution_manifest.wrong_component_digest),
+            ("distribution.missing_artifact_ref", distribution_manifest.missing_artifact_ref),
+            ("distribution.excluded_artifact_ref", distribution_manifest.excluded_artifact_ref),
+            ("distribution.missing_component_dependency", distribution_manifest.missing_component_dependency),
+            ("distribution.duplicate_component_id", distribution_manifest.duplicate_component_id),
+            ("distribution.component_dependency_cycle", distribution_manifest.component_dependency_cycle),
+        ]
+        for expected, mutator in cases:
+            with self.subTest(expected=expected):
+                manifest = distribution_manifest.minimal_fixture_manifest()
+                mutator(manifest)
+                manifest = distribution_manifest.finalize_manifest(manifest)
+                result = distribution_manifest.validate_distribution_manifest_object(manifest)
+                self.assertIn(expected, result["refusal_codes"])
+
+    def test_artifact_metadata_integrity_is_validated_against_files(self) -> None:
+        root = self.make_repo()
+        manifest = distribution_manifest.build_distribution_manifest(root)
+        mutations = [
+            ("distribution.artifact_byte_count_mismatch", lambda a: a.__setitem__("byte_count", int(a["byte_count"]) + 1)),
+            ("distribution.artifact_media_type_mismatch", lambda a: a.__setitem__("media_type", "application/x-wrong")),
+            ("distribution.artifact_compression_mismatch", lambda a: a.__setitem__("compression_format", "wrong")),
+        ]
+        for expected, mutator in mutations:
+            with self.subTest(expected=expected):
+                case = copy.deepcopy(manifest)
+                artifact = next(item for item in case["spec"]["artifacts"] if item["source_kind"] != "local_directory")
+                mutator(artifact)
+                case = distribution_manifest.finalize_manifest(case)
+                result = distribution_manifest.validate_distribution_manifest_object(case, repo_root=root, require_artifact_files=True)
+                self.assertIn(expected, result["refusal_codes"])
+
+    def test_release_artifact_path_is_validated_before_filesystem_access(self) -> None:
+        record = {
+            "asset_id": "outside.zip",
+            "included": True,
+            "kind": "zip_archive",
+            "path": "C:/outside/outside.zip",
+            "sha256": "0" * 64,
+            "size_bytes": 1,
+        }
+        with mock.patch("pathlib.Path.exists", side_effect=AssertionError("exists called before path validation")):
+            artifact = distribution_manifest._artifact_from_release_record(Path("C:/repo"), record)
+        self.assertEqual(artifact["relative_source_location"], "C:/outside/outside.zip")
+        self.assertFalse(artifact["extensions"]["path_validation"]["valid"])
+
+    def test_checksum_values_and_basename_collisions_are_validated(self) -> None:
+        root = self.make_repo()
+        manifest = distribution_manifest.build_distribution_manifest(root)
+        checksum_path = root / distribution_manifest.RELEASE_CHECKSUMS_JSON
+        checksums = distribution_manifest.read_json(checksum_path)
+        checksums["checksums"]["aide-lite-pack-v0.zip"] = "0" * 64
+        distribution_manifest.write_json(checksum_path, checksums)
+        result = distribution_manifest.validate_distribution_manifest_object(manifest, repo_root=root, require_artifact_files=True)
+        self.assertIn("distribution.checksum_digest_mismatch", result["refusal_codes"])
+
+        collision = distribution_manifest.minimal_fixture_manifest()
+        second = copy.deepcopy(collision["spec"]["artifacts"][0])
+        second["artifact_ref"] = distribution_manifest.artifact_ref("nested-minimal")
+        second["relative_source_location"] = "nested/minimal.json"
+        collision["spec"]["artifacts"].append(second)
+        collision["spec"]["components"][0]["artifact_refs"].append(second["artifact_ref"])
+        collision = distribution_manifest.finalize_manifest(collision)
+        result = distribution_manifest.validate_distribution_manifest_object(collision)
+        self.assertIn("distribution.checksum_basename_collision", result["refusal_codes"])
+
+    def test_protocol_range_semantics_are_enforced(self) -> None:
+        cases = [
+            ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"]["protocol_range"].__setitem__("min", "2.0.0")),
+            ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"]["protocol_range"].__setitem__("max", "0.x")),
+            ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"]["protocol_range"].pop("min", None)),
+            ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"].pop("min_reader_version", None)),
+            ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"].pop("min_writer_version", None)),
+            ("distribution.unsupported_protocol_range", lambda m: m["spec"]["components"][0]["compatibility_constraints"].__setitem__("min_reader_version", "2.0.0")),
+        ]
+        for expected, mutator in cases:
+            with self.subTest(expected=expected):
+                manifest = distribution_manifest.minimal_fixture_manifest()
+                mutator(manifest)
+                manifest = distribution_manifest.finalize_manifest(manifest)
+                result = distribution_manifest.validate_distribution_manifest_object(manifest)
+                self.assertIn(expected, result["refusal_codes"])
+
+    def test_forbidden_directory_member_records_contamination(self) -> None:
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        root = Path(temp.name)
+        target = root / distribution_manifest.EXPORT_PACK_ROOT / ".aide.local" / "state.sqlite"
+        target.parent.mkdir(parents=True)
+        target.write_text("state", encoding="utf-8")
+        artifact = distribution_manifest._directory_artifact(root)
+        self.assertGreater(artifact["directory_forbidden_member_count"], 0)
+        manifest = distribution_manifest.minimal_fixture_manifest()
+        manifest["spec"]["artifacts"] = [artifact]
+        manifest["spec"]["components"] = distribution_manifest.build_components([artifact])
+        manifest = distribution_manifest.finalize_manifest(manifest)
+        result = distribution_manifest.validate_distribution_manifest_object(manifest)
+        self.assertIn("distribution.source_state_contamination", result["refusal_codes"])
+
+    def test_fixture_corpus_contains_required_repair_cases(self) -> None:
+        root = self.make_repo()
+        distribution_manifest.write_fixture_corpus(root)
+        required_valid = {
+            "minimal-unsigned",
+            "full-local-archive",
+            "local-directory",
+            "reordered-input",
+            "unknown-optional-feature",
+            "unknown-optional-extension-round-trip",
+            "signature-placeholder",
+        }
+        required_invalid = {
+            "duplicate-component-id",
+            "malformed-digest",
+            "wrong-component-digest",
+            "wrong-payload-digest",
+            "wrong-distribution-digest",
+            "missing-artifact-ref",
+            "missing-dependency",
+            "dependency-cycle",
+            "unsupported-source",
+            "unsupported-protocol-range",
+            "inverted-protocol-range",
+            "forbidden-member",
+            "source-contamination",
+            "checksum-missing",
+            "checksum-wrong-value",
+            "checksum-basename-collision",
+            "false-signature-verification",
+            "missing-sbom",
+        }
+        valid_names = {path.stem for path in (root / distribution_manifest.FIXTURE_ROOT / "valid").glob("*.json")}
+        invalid_names = {path.stem for path in (root / distribution_manifest.FIXTURE_ROOT / "invalid").glob("*.json")}
+        self.assertTrue(required_valid.issubset(valid_names), required_valid - valid_names)
+        self.assertTrue(required_invalid.issubset(invalid_names), required_invalid - invalid_names)
 
     def test_project_and_validate_write_reports_and_fixture_corpus(self) -> None:
         root = self.make_repo()

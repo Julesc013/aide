@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+status: needs_review
+classification: complete
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+source_check_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
+next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+notes:
+  - Repair task started from live queue truth after REQUEST_CHANGES on DistributionManifest v1 check.
+  - Turn protocol artifacts are required before production edits.
+  - Exactly nine prior material findings were repaired pending independent recheck.
+  - ProjectLock v0 was not started and DistributionManifest v1 was not accepted.

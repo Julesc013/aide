@@ -1,0 +1,31 @@
+{
+  "schema_version": "aide.validation-plan.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "focused_tests": [
+    "py -3 -m unittest .aide.scripts.tests.test_aide_distribution_manifest_v1",
+    "py -3 .aide/scripts/aide_lite.py distribution-manifest project",
+    "py -3 .aide/scripts/aide_lite.py distribution-manifest validate"
+  ],
+  "broad_validation": [
+    "git diff --check",
+    "git diff --cached --check",
+    "py -3 -m compileall core/protocol .aide/scripts/tests",
+    "py -3 -m unittest discover -s .aide/scripts/tests -p \"test_aide_distribution_manifest_v1.py\"",
+    "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+    "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+    "py -3 .aide/scripts/aide_lite.py validate",
+    "py -3 .aide/scripts/aide_lite.py commit check --latest"
+  ],
+  "evidence_outputs": [
+    "changed-files.md",
+    "validation-commands.json",
+    "validation-results.json",
+    "test-results.json",
+    "diff-check.json",
+    "path-scan.json",
+    "secret-scan.json",
+    "non-capabilities.json",
+    "source-chain.json",
+    "next-task-prompt.md"
+  ]
+}

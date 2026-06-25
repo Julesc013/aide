@@ -2479,3 +2479,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01/evidence
   description: Check-only independent review of AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01 at ad975887910f6a7238ef076ce2fef0fd43687e37. Independently recomputes distribution digests, probes schema extension behavior, identity/status coupling, component graph closure, artifact metadata integrity, pre-access path safety, checksum value verification, protocol range semantics, source contamination handling, fixture coverage, Q47/Q48 mapping, and explicit non-capabilities. Stops at needs_review with REQUEST_CHANGES, material_finding_count 9, missing_evidence 0, and recommends exactly AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01. Does not repair implementation, accept DistributionManifest v1, begin ProjectLock v0, execute install/update/repair/rollback/uninstall apply, publish releases, create tags, upload artifacts, mutate targets, call network/provider/model services, start Workbench/MCP runtime, preview/apply/rollback source changes, or promote.
+- id: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+  status: needs_review
+  planning_state: implementation_completed
+  result: PASS_WITH_WARNINGS
+  title: Build DistributionManifest v1 Repair 01
+  task: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01/evidence
+  description: Bounded repair for the nine material findings from AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01. Adds task-local turn context, finding matrix, allowed paths, validation plan, stop conditions, and campaign state before production edits; repairs explicit optional extension surfaces, status-independent distribution identity, component graph and digest validation, artifact metadata validation, pre-access path containment, checksum value and collision validation, protocol range semantics, source-contamination reporting, and direct fixture coverage. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01. Does not accept DistributionManifest v1, begin ProjectLock v0, implement install/update/repair/rollback/uninstall apply, publish releases, create tags, upload artifacts, mutate targets, call network/provider/model services, start Workbench/MCP runtime, preview/apply/rollback source changes, or promote.
