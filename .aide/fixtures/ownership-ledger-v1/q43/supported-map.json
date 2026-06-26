@@ -1,0 +1,79 @@
+{
+  "errors": [],
+  "extensions": {},
+  "no_apply": true,
+  "records": [
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "evidence_record",
+      "v1_ownership_class": "evidence_only"
+    },
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "local_only",
+      "v1_ownership_class": "local_only"
+    },
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "managed_aide_file",
+      "v1_ownership_class": "vendor_managed_file"
+    },
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "managed_aide_section",
+      "v1_ownership_class": "vendor_managed_section"
+    },
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "never_touch",
+      "v1_ownership_class": "never_touch"
+    },
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "preserved_legacy",
+      "v1_ownership_class": "preserved_legacy"
+    },
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "runtime_generated",
+      "v1_ownership_class": "runtime_generated"
+    },
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "target_generated",
+      "v1_ownership_class": "project_generated"
+    },
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "target_overlay",
+      "v1_ownership_class": "project_overlay"
+    },
+    {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "target_project_file",
+      "v1_ownership_class": "project_owned"
+    },
+    {
+      "disposition": "manual_review_required",
+      "requires_manual_review": true,
+      "source_class": "unknown",
+      "v1_ownership_class": "unknown"
+    }
+  ],
+  "refusal_codes": [],
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.ownership-ledger.q43-migration.v1",
+  "source_schema": "aide.install-ownership-ledger.v0",
+  "target_repository_mutation_implemented": false,
+  "target_schema": "aide.ownership-ledger.v1"
+}

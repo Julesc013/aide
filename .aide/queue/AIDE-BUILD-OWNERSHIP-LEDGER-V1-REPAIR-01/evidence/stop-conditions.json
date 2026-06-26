@@ -1,0 +1,13 @@
+{
+  "stop_at": "needs_review",
+  "success_result": ["PASS", "PASS_WITH_WARNINGS"],
+  "required_material_finding_count": 0,
+  "required_missing_evidence": 0,
+  "required_next_task": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01",
+  "forbidden_next_tasks": [
+    "AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01",
+    "AIDE-BUILD-INSTALL-RECORD-V0-01",
+    "AIDE-BUILD-MIGRATION-RECORD-V0-01",
+    "AIDE-BUILD-UPDATE-PLAN-V1-01"
+  ]
+}

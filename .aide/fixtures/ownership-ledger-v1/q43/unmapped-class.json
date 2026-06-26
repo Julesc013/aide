@@ -1,0 +1,26 @@
+{
+  "errors": [
+    {
+      "code": "ownership.migration_unmapped",
+      "message": "unmapped Q43 ownership class: future.unmapped"
+    }
+  ],
+  "extensions": {},
+  "no_apply": true,
+  "records": [
+    {
+      "disposition": "unmapped",
+      "requires_manual_review": true,
+      "source_class": "future.unmapped",
+      "v1_ownership_class": null
+    }
+  ],
+  "refusal_codes": [
+    "ownership.migration_unmapped"
+  ],
+  "result": "FAILED_VALIDATION",
+  "schema_version": "aide.ownership-ledger.q43-migration.v1",
+  "source_schema": "aide.install-ownership-ledger.v0",
+  "target_repository_mutation_implemented": false,
+  "target_schema": "aide.ownership-ledger.v1"
+}

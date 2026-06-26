@@ -9612,3 +9612,48 @@ validators, and broad `aide_lite.py validate`.
 The next serialized task is
 `AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01`. No production implementation was
 repaired in this check task.
+
+## Work Item: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+
+### Summary
+
+Completed the bounded repair for the five OwnershipLedger v1 material findings
+and stopped at the independent repair-check gate.
+
+### Implementation Notes
+
+- Added task-local turn context, finding matrix, allowed paths, validation plan,
+  stop conditions, and campaign state before production edits.
+- Expanded OwnershipLedger records with file-entry fields for owner, source,
+  digest, observed target digest, portability role, preservation policy,
+  operation constraints, platform/case notes, deterministic observation times,
+  and supersession refs.
+- Expanded managed-section records with containing file, section identity,
+  marker format, marker/content digests, preimage requirements, update
+  constraints, and manual-outside-only preservation policy.
+- Added semantic validation for missing owners, vendor source refs, observed
+  digest mismatch, distribution mutability, missing evidence, unresolved
+  symlink/reparse entries, duplicate target paths, case-fold collisions,
+  file-section conflicts, overlapping sections, nested ambiguity, and section
+  marker/identity failures.
+- Added deterministic Q43 ownership-class migration projection and
+  `ownership-ledger migrate-q43`.
+- Expanded the fixture corpus with direct valid class fixtures, managed-section
+  preservation fixture, Q43 migration fixtures, and invalid direct cases for the
+  repaired refusal behavior.
+- Generated OwnershipLedger Repair 01 report matrices and next-task routing.
+
+### Verification
+
+Focused OwnershipLedger tests pass. `ownership-ledger status`, `project`,
+`validate`, and `migrate-q43` pass with warnings; ProjectLock and
+DistributionManifest regression validation pass with warnings; broad
+`aide_lite.py validate` passes.
+
+### Remaining Issues
+
+OwnershipLedger v1 remains proposed until independent Repair 01 check and
+acceptance. InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle,
+distribution apply, canaries, target mutation, release publication, runtime,
+provider/model calls, Workbench/MCP behavior, preview/apply/rollback, and
+promotion were not started.

@@ -1,0 +1,8 @@
+schema_version: aide.task-status.v0
+id: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+status: needs_review
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01
+updated_at: 2026-06-26T00:00:00Z

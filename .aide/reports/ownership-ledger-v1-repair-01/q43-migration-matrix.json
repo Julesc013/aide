@@ -1,0 +1,76 @@
+{
+  "cases": [
+    {
+      "case_id": "q43-manual-review-map",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/q43/manual-review-map.json"
+    },
+    {
+      "case_id": "q43-supported-map",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/q43/supported-map.json"
+    },
+    {
+      "case_id": "q43-unmapped-class",
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership.migration_unmapped"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/q43/unmapped-class.json"
+    }
+  ],
+  "migration_map": {
+    "evidence_record": {
+      "disposition": "mapped",
+      "ownership_class": "evidence_only"
+    },
+    "local_only": {
+      "disposition": "mapped",
+      "ownership_class": "local_only"
+    },
+    "managed_aide_file": {
+      "disposition": "mapped",
+      "ownership_class": "vendor_managed_file"
+    },
+    "managed_aide_section": {
+      "disposition": "mapped",
+      "ownership_class": "vendor_managed_section"
+    },
+    "never_touch": {
+      "disposition": "mapped",
+      "ownership_class": "never_touch"
+    },
+    "preserved_legacy": {
+      "disposition": "mapped",
+      "ownership_class": "preserved_legacy"
+    },
+    "runtime_generated": {
+      "disposition": "mapped",
+      "ownership_class": "runtime_generated"
+    },
+    "target_generated": {
+      "disposition": "mapped",
+      "ownership_class": "project_generated"
+    },
+    "target_overlay": {
+      "disposition": "mapped",
+      "ownership_class": "project_overlay"
+    },
+    "target_project_file": {
+      "disposition": "mapped",
+      "ownership_class": "project_owned"
+    },
+    "unknown": {
+      "disposition": "manual_review_required",
+      "ownership_class": "unknown"
+    }
+  }
+}

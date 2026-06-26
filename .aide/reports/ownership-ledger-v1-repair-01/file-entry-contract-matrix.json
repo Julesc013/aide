@@ -1,0 +1,189 @@
+{
+  "cases": [
+    {
+      "case_id": "class-evidence_only",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-evidence_only.json"
+    },
+    {
+      "case_id": "class-local_only",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-local_only.json"
+    },
+    {
+      "case_id": "class-never_touch",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-never_touch.json"
+    },
+    {
+      "case_id": "class-preserved_legacy",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-preserved_legacy.json"
+    },
+    {
+      "case_id": "class-project_generated",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-project_generated.json"
+    },
+    {
+      "case_id": "class-project_overlay",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-project_overlay.json"
+    },
+    {
+      "case_id": "class-project_owned",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-project_owned.json"
+    },
+    {
+      "case_id": "class-runtime_generated",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-runtime_generated.json"
+    },
+    {
+      "case_id": "class-unknown",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-unknown.json"
+    },
+    {
+      "case_id": "class-vendor_managed_file",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-vendor_managed_file.json"
+    },
+    {
+      "case_id": "class-vendor_managed_section",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-vendor_managed_section.json"
+    },
+    {
+      "case_id": "owner-missing",
+      "expected_refusal_codes": [
+        "ownership_ledger.owner_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.owner_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/owner-missing.json"
+    },
+    {
+      "case_id": "project-owned-mutable",
+      "expected_refusal_codes": [
+        "ownership_ledger.mutable_by_distribution_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.mutable_by_distribution_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/project-owned-mutable.json"
+    },
+    {
+      "case_id": "reparse-path",
+      "expected_refusal_codes": [
+        "ownership_ledger.reparse_point_unresolved"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.reparse_point_unresolved"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/reparse-path.json"
+    },
+    {
+      "case_id": "symlink-path",
+      "expected_refusal_codes": [
+        "ownership_ledger.symlink_unresolved"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.symlink_unresolved"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/symlink-path.json"
+    },
+    {
+      "case_id": "vendor-observed-digest-mismatch",
+      "expected_refusal_codes": [
+        "ownership_ledger.observed_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.observed_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/vendor-observed-digest-mismatch.json"
+    },
+    {
+      "case_id": "vendor-source-missing",
+      "expected_refusal_codes": [
+        "ownership_ledger.vendor_source_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.vendor_source_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/vendor-source-missing.json"
+    }
+  ],
+  "fields": [
+    "entry_ref",
+    "target_relative_path",
+    "owner_ref",
+    "source_distribution_ref",
+    "source_component_ref",
+    "installed_content_digest",
+    "observed_target_digest",
+    "portable_role",
+    "mutable_by_distribution",
+    "preserve_policy",
+    "operation_constraints",
+    "platform_notes",
+    "case_sensitivity_notes",
+    "first_observed_at",
+    "last_verified_at",
+    "prior_entry_ref",
+    "superseded_by_ref"
+  ]
+}

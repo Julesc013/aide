@@ -34591,9 +34591,12 @@ def command_ownership_ledger_validate(args: argparse.Namespace) -> int:
         "ledger_generated",
         "ledger_valid",
         "fixture_matrix_passed",
+        "q43_migration_passed",
         "project_lock_accepted",
         "project_lock_digest_bound",
         "taxonomy_complete",
+        "file_entry_contract_complete",
+        "managed_section_contract_complete",
         "unknown_blocks_apply",
         "never_touch_blocks_apply",
         "install_apply_not_implemented",
@@ -34607,6 +34610,28 @@ def command_ownership_ledger_validate(args: argparse.Namespace) -> int:
     print(f"recommended_next_task: {report.get('recommended_next_task')}")
     _print_ownership_ledger_boundary_lines(report)
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_ownership_ledger_migrate_q43(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_ownership_ledger_module(repo_root)
+    source_classes = getattr(args, "source_class", None)
+    try:
+        report = module.migrate_q43(repo_root, source_classes)
+    except Exception as exc:  # noqa: BLE001 - migration reports must fail closed.
+        print("AIDE Lite ownership-ledger migrate-q43")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_ownership_ledger_boundary_lines({})
+        return 1
+    print("AIDE Lite ownership-ledger migrate-q43")
+    print(f"result: {report.get('result')}")
+    print(f"record_count: {len(report.get('records', []))}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"no_apply: {str(report.get('no_apply', False)).lower()}")
+    print("target_repository_mutation_implemented: false")
+    _print_ownership_ledger_boundary_lines({"proposed_capability": "ownership_ledger_v1"})
+    return 0 if report.get("result") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
 def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
@@ -39661,6 +39686,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     ownership_ledger_subparsers.add_parser("status").set_defaults(handler=command_ownership_ledger_status)
     ownership_ledger_subparsers.add_parser("project").set_defaults(handler=command_ownership_ledger_project)
     ownership_ledger_subparsers.add_parser("validate").set_defaults(handler=command_ownership_ledger_validate)
+    ownership_ledger_migrate_q43_parser = ownership_ledger_subparsers.add_parser("migrate-q43")
+    ownership_ledger_migrate_q43_parser.add_argument("--source-class", action="append", default=None)
+    ownership_ledger_migrate_q43_parser.set_defaults(handler=command_ownership_ledger_migrate_q43)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)

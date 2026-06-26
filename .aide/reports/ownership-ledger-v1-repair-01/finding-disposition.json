@@ -1,0 +1,58 @@
+{
+  "findings": [
+    {
+      "disposition": "CLOSED_PENDING_CHECK",
+      "finding_id": "ownership.file_entry_contract_incomplete",
+      "repair": "expanded record projection with owner/source/digest/portability/preservation/timing/supersession fields plus semantic validation",
+      "tests": [
+        "owner-missing",
+        "vendor-source-missing",
+        "vendor-observed-digest-mismatch",
+        "project-owned-mutable",
+        "symlink-path",
+        "reparse-path"
+      ]
+    },
+    {
+      "disposition": "CLOSED_PENDING_CHECK",
+      "finding_id": "ownership.managed_section_contract_incomplete",
+      "repair": "added managed-section marker, section-content, preimage, update, and surrounding-content preservation fields with conflict fixtures",
+      "tests": [
+        "managed-section-missing-section-identity",
+        "managed-section-marker-identity-mismatch",
+        "managed-section-duplicate-markers",
+        "managed-section-overlap",
+        "managed-section-nested-no-precedence"
+      ]
+    },
+    {
+      "disposition": "CLOSED_PENDING_CHECK",
+      "finding_id": "ownership.q43_migration_missing",
+      "repair": "added deterministic Q43 ownership-class migration projection and CLI",
+      "tests": [
+        "q43-supported-map",
+        "q43-manual-review-map",
+        "q43-unmapped-class"
+      ]
+    },
+    {
+      "disposition": "CLOSED_PENDING_CHECK",
+      "finding_id": "ownership.conflict_model_incomplete",
+      "repair": "added duplicate target, case-fold, file-section, section overlap, nested ambiguity, missing evidence, source mismatch, and link refusal validation",
+      "tests": [
+        "duplicate-target-path",
+        "case-fold-collision",
+        "file-section-conflict",
+        "evidence-missing"
+      ]
+    },
+    {
+      "disposition": "CLOSED_PENDING_CHECK",
+      "finding_id": "ownership.fixture_coverage_incomplete",
+      "repair": "expanded valid and invalid fixture corpus to direct repaired behaviors and all ownership classes",
+      "tests": [
+        "fixture matrix"
+      ]
+    }
+  ]
+}

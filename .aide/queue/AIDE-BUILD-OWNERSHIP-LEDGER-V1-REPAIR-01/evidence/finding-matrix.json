@@ -1,0 +1,49 @@
+{
+  "findings": [
+    {
+      "id": "ownership.file_entry_contract_incomplete",
+      "required_behavior": "file entries carry owner, source, digest, portability, preservation, timing, and supersession fields with semantic validation",
+      "implementation_location": "core/protocol/ownership_ledger.py",
+      "negative_test": "missing owner, vendor source, mutable project entry, digest mismatch, symlink/reparse unresolved",
+      "positive_test": "all ownership classes have explicit file-entry fields",
+      "evidence_artifact": ".aide/reports/ownership-ledger-v1-repair-01/file-entry-contract-matrix.json",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "id": "ownership.managed_section_contract_incomplete",
+      "required_behavior": "managed sections carry containing file, section identity, marker format, marker/content digests, preimage requirements, update constraints, and outside-content preservation policy",
+      "implementation_location": "core/protocol/ownership_ledger.py",
+      "negative_test": "missing identity, identity mismatch, duplicate markers, overlap, nested ambiguity, file-section conflict",
+      "positive_test": "valid managed section passes with manual outside-only preservation",
+      "evidence_artifact": ".aide/reports/ownership-ledger-v1-repair-01/managed-section-contract-matrix.json",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "id": "ownership.q43_migration_missing",
+      "required_behavior": "Q43 ownership classes migrate deterministically into v1 classes, ambiguous classes route to manual review, and unmapped classes fail closed",
+      "implementation_location": "core/protocol/ownership_ledger.py and .aide/scripts/aide_lite.py",
+      "negative_test": "unmapped Q43 class returns ownership.migration_unmapped and CLI exits nonzero",
+      "positive_test": "supported Q43 class map produces deterministic migration report",
+      "evidence_artifact": ".aide/reports/ownership-ledger-v1-repair-01/q43-migration-matrix.json",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "id": "ownership.conflict_model_incomplete",
+      "required_behavior": "duplicate target paths, case-fold collisions, section overlaps, file-section authority conflicts, nested ambiguity, source mismatches, missing evidence, and unresolved links fail closed",
+      "implementation_location": "core/protocol/ownership_ledger.py",
+      "negative_test": "duplicate path and case-fold path fixtures fail validation",
+      "positive_test": "distinct records across ownership classes validate when non-conflicting",
+      "evidence_artifact": ".aide/reports/ownership-ledger-v1-repair-01/conflict-model-matrix.json",
+      "completion_state": "closed_pending_independent_check"
+    },
+    {
+      "id": "ownership.fixture_coverage_incomplete",
+      "required_behavior": "fixture corpus has direct valid/invalid cases for each repaired behavior",
+      "implementation_location": ".aide/fixtures/ownership-ledger-v1/** and focused tests",
+      "negative_test": "fixture matrix refuses every direct invalid case with expected subset",
+      "positive_test": "valid class and managed-section fixtures pass",
+      "evidence_artifact": ".aide/reports/ownership-ledger-v1-repair-01/fixture-coverage-matrix.json",
+      "completion_state": "closed_pending_independent_check"
+    }
+  ]
+}

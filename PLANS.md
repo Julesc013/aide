@@ -2861,3 +2861,15 @@
 - Exit Criteria: task stops at `needs_review`, records the independent check result, and recommends either acceptance or a bounded repair task.
 - Result: `REQUEST_CHANGES`.
 - Notes: Five material findings remain. The next serialized task is exactly `AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01`. OwnershipLedger acceptance, InstallRecord, MigrationRecord, UpdatePlan, and RollbackBundle remain blocked.
+
+### Queue ID: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+
+- Title: Build OwnershipLedger v1 Repair 01
+- Status: Needs Review
+- Objective: repair exactly the five material findings from `AIDE-CHECK-OWNERSHIP-LEDGER-V1-01` without accepting OwnershipLedger v1 or beginning InstallRecord, MigrationRecord, UpdatePlan, rollback, apply, canary, release, runtime, or target-repository work.
+- Scope: `.aide/protocol/aide-ownership-ledger-v1.schema.json`, `core/protocol/ownership_ledger.py`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_ownership_ledger_v1.py`, `.aide/fixtures/ownership-ledger-v1/**`, `.aide/reports/ownership-ledger-v1/**`, `.aide/reports/ownership-ledger-v1-repair-01/**`, `.aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-CHECK-OWNERSHIP-LEDGER-V1-01`, result `REQUEST_CHANGES`, `material_finding_count: 5`, and `missing_evidence: 0`.
+- Verification Intent: focused OwnershipLedger tests, OwnershipLedger status/project/validate/migrate-q43, ProjectLock and DistributionManifest regression validation, task inspect/evidence, broad validation, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, closes the five findings pending independent repair check, and recommends exactly `AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: The repair keeps OwnershipLedger metadata-only and no-apply. OwnershipLedger acceptance, InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, apply engine, canaries, target mutation, release publication, runtime, provider/model calls, and promotion remain blocked pending independent repair check.

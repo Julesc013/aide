@@ -53,7 +53,7 @@
     {
       "authority": "target_project",
       "automatic_apply_allowed": false,
-      "blocks_automatic_apply": false,
+      "blocks_automatic_apply": true,
       "class_id": "runtime_generated",
       "delete_allowed": false,
       "description": "Runtime/local generated state outside committed distribution truth.",
@@ -83,7 +83,7 @@
     {
       "authority": "target_project",
       "automatic_apply_allowed": false,
-      "blocks_automatic_apply": false,
+      "blocks_automatic_apply": true,
       "class_id": "preserved_legacy",
       "delete_allowed": false,
       "description": "Legacy or pre-existing target state preserved unless manually migrated.",

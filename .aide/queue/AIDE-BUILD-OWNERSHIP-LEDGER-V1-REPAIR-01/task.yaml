@@ -1,0 +1,40 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+title: Build OwnershipLedger v1 Repair 01
+type: build
+status: needs_review
+planning_state: implementation_completed
+source_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+proposed_capability: ownership_ledger_v1
+recommended_next_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01
+allowed_paths:
+  - .aide/protocol/aide-ownership-ledger-v1.schema.json
+  - core/protocol/ownership_ledger.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_ownership_ledger_v1.py
+  - .aide/fixtures/ownership-ledger-v1/**
+  - .aide/reports/ownership-ledger-v1/**
+  - .aide/reports/ownership-ledger-v1-repair-01/**
+  - .aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_capabilities:
+  - install_truth
+  - install_apply
+  - update_apply
+  - repair_apply
+  - rollback_apply
+  - uninstall_apply
+  - target_repository_mutation
+  - release_publication
+  - network_call
+  - provider_model_call
+  - workbench_runtime
+  - mcp_runtime
+  - source_change_preview_apply_rollback
+  - promotion
+description: Bounded repair for the five material findings from AIDE-CHECK-OWNERSHIP-LEDGER-V1-01. Expands file-entry and managed-section record contracts, adds deterministic Q43 migration projection and CLI, strengthens conflict validation, expands fixture coverage, and stops at needs_review with the next task AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01.

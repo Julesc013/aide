@@ -1,0 +1,11 @@
+{
+  "task_id": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01",
+  "source_check_task": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-01",
+  "source_result": "REQUEST_CHANGES",
+  "material_finding_count": 5,
+  "repo_truth_out_ranks_prompt": true,
+  "canonical_queue": ".aide/queue/index.yaml",
+  "current_gate": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01",
+  "stop_at": "needs_review",
+  "recommended_next_task": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01"
+}

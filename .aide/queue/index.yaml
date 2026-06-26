@@ -2579,3 +2579,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence
   description: Check-only independent review of AIDE-BUILD-OWNERSHIP-LEDGER-V1-01 at 37bb014ce3f43e0818fa391c03fb86ac012d34ad. Verifies schema/helper/projection alignment, class behavior, file-entry model, managed-section model, Q43 migration, path safety, conflict behavior, fixture coverage, no-overclaiming, and validation evidence. Stops at needs_review with REQUEST_CHANGES, material_finding_count 5, missing_evidence 0, and recommends exactly AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01 because file-entry fields, managed-section fields, Q43 migration, conflict detection, and fixture coverage are incomplete. Does not repair implementation, accept OwnershipLedger v1, begin InstallRecord, mutate targets, publish releases, call network/provider/model services, or start runtime work.
+- id: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+  status: needs_review
+  planning_state: implementation_completed
+  result: PASS_WITH_WARNINGS
+  title: Build OwnershipLedger v1 Repair 01
+  task: .aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01/evidence
+  description: Bounded repair for the five material findings from AIDE-CHECK-OWNERSHIP-LEDGER-V1-01. Adds task-local turn context, finding matrix, allowed paths, validation plan, stop conditions, and campaign state before production edits; expands file-entry ownership/digest/portability/preservation/timing/supersession fields, managed-section marker/preimage/update/surrounding-content fields, Q43 ownership migration projection and CLI, conflict validation for duplicate/case/file-section/section/link/source/evidence cases, and direct fixture coverage. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01. Does not accept OwnershipLedger v1, begin InstallRecord, MigrationRecord, UpdatePlan, apply engine, canaries, target mutation, release publication, network/provider/model services, Workbench/MCP runtime, source-change preview/apply/rollback, or promotion.

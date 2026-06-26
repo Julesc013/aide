@@ -71,22 +71,32 @@ class AIDEOwnershipLedgerV1Tests(unittest.TestCase):
         project_lock.project(root)
         return root
 
-    def test_schema_file_exists_and_parses(self) -> None:
+    def test_schema_file_exists_and_declares_repaired_contract(self) -> None:
         schema = ownership_ledger.load_schema(REPO_ROOT)
         self.assertEqual(schema["title"], "AIDE OwnershipLedger v1")
         self.assertEqual(schema["properties"]["kind"]["const"], "OwnershipLedger")
-        self.assertIn("metadata", schema["required"])
-        self.assertIn("spec", schema["required"])
-        self.assertIn("status", schema["required"])
-        self.assertIn("extensions", schema["required"])
+        self.assertIn("q43_migration_policy", schema["$defs"]["spec"]["required"])
+        record_required = set(schema["$defs"]["record"]["required"])
+        for field in ownership_ledger.FILE_ENTRY_FIELDS + ownership_ledger.MANAGED_SECTION_FIELDS:
+            self.assertIn(field, record_required)
+        self.assertIn("symlink", schema["$defs"]["record"]["properties"]["path_kind"]["enum"])
+        self.assertIn("reparse_point", schema["$defs"]["record"]["properties"]["path_kind"]["enum"])
 
-    def test_build_binds_accepted_project_lock(self) -> None:
+    def test_build_binds_accepted_project_lock_and_emits_full_record_contract(self) -> None:
         root = self.make_repo()
         lock = ownership_ledger.load_project_lock(root)
         ledger = ownership_ledger.build_ownership_ledger(root)
         self.assertEqual(ledger["kind"], "OwnershipLedger")
         self.assertEqual(ledger["metadata"]["project_lock_digest"], lock["status"]["project_lock_digest"])
         self.assertTrue(ownership_ledger.project_lock_is_accepted(root, lock))
+        for record in ledger["spec"]["records"]:
+            for field in ownership_ledger.FILE_ENTRY_FIELDS:
+                self.assertIn(field, record, record["record_id"])
+            if record["path_kind"] == "managed_section":
+                for field in ownership_ledger.MANAGED_SECTION_FIELDS:
+                    self.assertIn(field, record, record["record_id"])
+                self.assertEqual(record["section_identity"], record["managed_section_identity"])
+                self.assertEqual(record["surrounding_content_preservation_policy"], "manual_outside_only")
         self.assertFalse(ledger["status"]["install_apply_implemented"])
         self.assertFalse(ledger["status"]["admission_implemented"])
         self.assertFalse(ledger["status"]["authorization_implemented"])
@@ -108,11 +118,21 @@ class AIDEOwnershipLedgerV1Tests(unittest.TestCase):
             ("ownership_ledger.duplicate_record", lambda d: d["spec"]["records"].append(copy.deepcopy(d["spec"]["records"][0]))),
             ("ownership_ledger.record_class_unknown", lambda d: d["spec"]["records"][0].__setitem__("ownership_class", "mystery")),
             ("ownership_ledger.vendor_digest_missing", lambda d: d["spec"]["records"][0].__setitem__("content_digest", None)),
+            ("ownership_ledger.owner_missing", lambda d: d["spec"]["records"][0].__setitem__("owner_ref", "")),
+            ("ownership_ledger.vendor_source_missing", lambda d: d["spec"]["records"][0].__setitem__("source_distribution_ref", None)),
+            ("ownership_ledger.observed_digest_mismatch", lambda d: d["spec"]["records"][0].__setitem__("observed_target_digest", "sha256:" + "1" * 64)),
+            ("ownership_ledger.mutable_by_distribution_forbidden", lambda d: next(r for r in d["spec"]["records"] if r["ownership_class"] == "project_owned").__setitem__("mutable_by_distribution", True)),
+            ("ownership_ledger.evidence_missing", lambda d: d["spec"]["records"][0].__setitem__("evidence_refs", [])),
             ("ownership_ledger.managed_section_identity_missing", lambda d: d["spec"]["records"][2].__setitem__("managed_section_identity", None)),
+            ("ownership_ledger.section_identity_missing", lambda d: d["spec"]["records"][2].__setitem__("section_identity", None)),
+            ("ownership_ledger.section_identity_mismatch", lambda d: d["spec"]["records"][2].__setitem__("section_identity", "AIDE-GENERATED:other")),
+            ("ownership_ledger.section_marker_duplicate", lambda d: d["spec"]["records"][2]["extensions"].__setitem__("marker_occurrences", {"start": 2, "end": 1})),
             ("ownership_ledger.automatic_apply_forbidden", lambda d: next(r for r in d["spec"]["records"] if r["ownership_class"] == "unknown").__setitem__("apply_allowed", True)),
             ("ownership_ledger.absolute_path_forbidden", lambda d: d["spec"]["records"][0].__setitem__("target_path", "C:/outside/file.txt")),
             ("ownership_ledger.path_traversal_forbidden", lambda d: d["spec"]["records"][0].__setitem__("target_path", "../outside/file.txt")),
             ("ownership_ledger.source_state_contamination", lambda d: d["spec"]["records"][0].__setitem__("target_path", ".aide/context/latest-task-packet.md")),
+            ("ownership_ledger.symlink_unresolved", lambda d: d["spec"]["records"][0].__setitem__("path_kind", "symlink")),
+            ("ownership_ledger.reparse_point_unresolved", lambda d: d["spec"]["records"][0].__setitem__("path_kind", "reparse_point")),
             ("ownership_ledger.unknown_required_feature", lambda d: d["spec"]["required_features"].append("future.required.ownership")),
             ("ownership_ledger.extension_required_unknown", lambda d: d["spec"]["extensions"].__setitem__("requires.future", {"enabled": True})),
         ]
@@ -122,7 +142,44 @@ class AIDEOwnershipLedgerV1Tests(unittest.TestCase):
                 mutator(ledger)
                 ledger = ownership_ledger.finalize_ownership_ledger(ledger)
                 result = ownership_ledger.validate_ownership_ledger_object(ledger, lock=lock, require_project_lock_acceptance=False)
-                self.assertIn(expected, result["refusal_codes"])
+                self.assertIn(expected, result["refusal_codes"], result)
+
+    def test_conflict_model_rejects_path_case_and_section_conflicts(self) -> None:
+        lock = project_lock.minimal_fixture_lock()
+        base = ownership_ledger.minimal_fixture_ledger()
+        conflict_cases = {
+            "ownership_ledger.path_collision": ownership_ledger.add_record_case(
+                base,
+                ownership_ledger.ownership_record("project-owned-cli-copy", "project_owned", ".aide/scripts/aide_lite.py"),
+            ),
+            "ownership_ledger.case_collision": ownership_ledger.add_record_case(
+                base,
+                ownership_ledger.ownership_record("project-owned-readme-case", "project_owned", "readme.md"),
+            ),
+            "ownership_ledger.file_section_conflict": ownership_ledger.add_record_case(
+                base,
+                ownership_ledger.ownership_record("project-owned-agents", "project_owned", "AGENTS.md"),
+            ),
+        }
+        for expected, ledger in conflict_cases.items():
+            with self.subTest(expected=expected):
+                result = ownership_ledger.validate_ownership_ledger_object(
+                    ownership_ledger.finalize_ownership_ledger(ledger),
+                    lock=lock,
+                    require_project_lock_acceptance=False,
+                )
+                self.assertIn(expected, result["refusal_codes"], result)
+
+    def test_q43_migration_maps_supported_manual_and_unmapped_classes(self) -> None:
+        supported = ownership_ledger.migrate_q43_classes(["managed_aide_file", "target_project_file", "unknown"])
+        self.assertEqual(supported["result"], "PASS_WITH_WARNINGS")
+        records = {record["source_class"]: record for record in supported["records"]}
+        self.assertEqual(records["managed_aide_file"]["v1_ownership_class"], "vendor_managed_file")
+        self.assertEqual(records["target_project_file"]["v1_ownership_class"], "project_owned")
+        self.assertTrue(records["unknown"]["requires_manual_review"])
+        unmapped = ownership_ledger.migrate_q43_classes(["future.unmapped"])
+        self.assertEqual(unmapped["result"], "FAILED_VALIDATION")
+        self.assertIn("ownership.migration_unmapped", unmapped["refusal_codes"])
 
     def test_unknown_optional_features_and_extensions_are_preserved(self) -> None:
         ledger = ownership_ledger.minimal_fixture_ledger()
@@ -141,17 +198,27 @@ class AIDEOwnershipLedgerV1Tests(unittest.TestCase):
     def test_fixture_corpus_contains_required_cases_and_validate_passes(self) -> None:
         root = self.make_repo()
         ownership_ledger.write_fixture_corpus(root)
-        required_valid = {"minimal-valid-ledger", "extension-round-trip", "reordered-records-valid"}
+        required_valid = {
+            "minimal-valid-ledger",
+            "extension-round-trip",
+            "reordered-records-valid",
+            "managed-section-manual-outside-preserved",
+        } | {f"class-{class_id}" for class_id in ownership_ledger.OWNERSHIP_CLASSES}
         required_invalid = set(ownership_ledger.EXPECTED_INVALID_REFUSALS)
+        required_q43 = {"supported-map", "manual-review-map", "unmapped-class"}
         valid_names = {path.stem for path in (root / ownership_ledger.FIXTURE_ROOT / "valid").glob("*.json")}
         invalid_names = {path.stem for path in (root / ownership_ledger.FIXTURE_ROOT / "invalid").glob("*.json")}
+        q43_names = {path.stem for path in (root / ownership_ledger.FIXTURE_ROOT / "q43").glob("*.json")}
         self.assertTrue(required_valid.issubset(valid_names), required_valid - valid_names)
         self.assertTrue(required_invalid.issubset(invalid_names), required_invalid - invalid_names)
+        self.assertTrue(required_q43.issubset(q43_names), required_q43 - q43_names)
         validation = ownership_ledger.validate(root)
         self.assertEqual(validation["validation_status"], "PASS_WITH_WARNINGS", validation["errors"])
         self.assertTrue(validation["checks"]["fixture_matrix_passed"])
+        self.assertTrue(validation["checks"]["q43_migration_passed"])
+        self.assertTrue((root / ".aide/reports/ownership-ledger-v1-repair-01/repair-report.json").exists())
 
-    def test_project_and_cli_status_project_validate(self) -> None:
+    def test_project_and_cli_status_project_validate_migrate_q43(self) -> None:
         root = self.make_repo()
         report = ownership_ledger.project(root)
         self.assertEqual(report["status"], "PASS_WITH_WARNINGS")
@@ -161,6 +228,7 @@ class AIDEOwnershipLedgerV1Tests(unittest.TestCase):
             ["--repo-root", str(root), "ownership-ledger", "status"],
             ["--repo-root", str(root), "ownership-ledger", "project"],
             ["--repo-root", str(root), "ownership-ledger", "validate"],
+            ["--repo-root", str(root), "ownership-ledger", "migrate-q43"],
         ]:
             parsed = parser.parse_args(command)
             output = io.StringIO()
@@ -172,6 +240,17 @@ class AIDEOwnershipLedgerV1Tests(unittest.TestCase):
             self.assertIn("admission_implemented: false", output.getvalue())
             self.assertIn("authorization_implemented: false", output.getvalue())
             self.assertIn("target_repository_mutation_implemented: false", output.getvalue())
+
+    def test_cli_migrate_q43_unmapped_fails_without_mutation_claim(self) -> None:
+        root = self.make_repo()
+        parser = aide_lite.build_parser(REPO_ROOT)
+        parsed = parser.parse_args(["--repo-root", str(root), "ownership-ledger", "migrate-q43", "--source-class", "future.unmapped"])
+        output = io.StringIO()
+        with redirect_stdout(output):
+            result = parsed.handler(parsed)
+        self.assertEqual(result, 1, output.getvalue())
+        self.assertIn("result: FAILED_VALIDATION", output.getvalue())
+        self.assertIn("target_repository_mutation_implemented: false", output.getvalue())
 
     def test_cli_rejects_apply_or_runtime_subcommands(self) -> None:
         parser = aide_lite.build_parser(REPO_ROOT)

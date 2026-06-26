@@ -1,0 +1,19 @@
+{
+  "errors": [],
+  "extensions": {},
+  "no_apply": true,
+  "records": [
+    {
+      "disposition": "manual_review_required",
+      "requires_manual_review": true,
+      "source_class": "unknown",
+      "v1_ownership_class": "unknown"
+    }
+  ],
+  "refusal_codes": [],
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.ownership-ledger.q43-migration.v1",
+  "source_schema": "aide.install-ownership-ledger.v0",
+  "target_repository_mutation_implemented": false,
+  "target_schema": "aide.ownership-ledger.v1"
+}

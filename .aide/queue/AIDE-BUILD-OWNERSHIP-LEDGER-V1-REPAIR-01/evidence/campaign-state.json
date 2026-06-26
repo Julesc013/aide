@@ -1,0 +1,10 @@
+{
+  "campaign": "distribution-update-protocol-v1",
+  "current_wave": "OwnershipLedger v1 Repair 01",
+  "state": "needs_review",
+  "previous_gate": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-01",
+  "next_gate_on_success": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01",
+  "next_gate_on_failure": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-02",
+  "serialized_queue": true,
+  "mutation_lane_count": 1
+}

@@ -1,0 +1,22 @@
+# Explicit Non-Capabilities
+
+- install truth
+- install plan
+- install apply
+- update apply
+- repair apply
+- rollback apply
+- uninstall apply
+- admission
+- authorization
+- target repository mutation
+- release publication
+- Git tag creation
+- GitHub release creation
+- upload
+- network call
+- provider/model call
+- Workbench runtime
+- MCP runtime
+- source-change preview/apply/rollback
+- promotion

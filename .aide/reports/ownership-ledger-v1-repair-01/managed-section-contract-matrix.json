@@ -1,0 +1,119 @@
+{
+  "cases": [
+    {
+      "case_id": "managed-section-manual-outside-preserved",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/managed-section-manual-outside-preserved.json"
+    },
+    {
+      "case_id": "file-section-conflict",
+      "expected_refusal_codes": [
+        "ownership_ledger.file_section_conflict"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.file_section_conflict",
+        "ownership_ledger.path_collision"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/file-section-conflict.json"
+    },
+    {
+      "case_id": "managed-section-duplicate-markers",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_marker_duplicate"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.section_marker_duplicate"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-duplicate-markers.json"
+    },
+    {
+      "case_id": "managed-section-identity-missing",
+      "expected_refusal_codes": [
+        "ownership_ledger.managed_section_identity_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.managed_section_identity_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-identity-missing.json"
+    },
+    {
+      "case_id": "managed-section-marker-identity-mismatch",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_identity_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.section_identity_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-marker-identity-mismatch.json"
+    },
+    {
+      "case_id": "managed-section-missing-section-identity",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_identity_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.section_identity_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-missing-section-identity.json"
+    },
+    {
+      "case_id": "managed-section-nested-no-precedence",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_overlap",
+        "ownership_ledger.nested_ownership_ambiguity"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.nested_ownership_ambiguity",
+        "ownership_ledger.path_collision",
+        "ownership_ledger.section_overlap"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-nested-no-precedence.json"
+    },
+    {
+      "case_id": "managed-section-overlap",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_overlap"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.path_collision",
+        "ownership_ledger.section_overlap"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-overlap.json"
+    }
+  ],
+  "fields": [
+    "containing_file_path",
+    "section_identity",
+    "marker_format",
+    "start_marker_digest",
+    "end_marker_digest",
+    "section_content_digest",
+    "surrounding_content_preservation_policy",
+    "preimage_requirements",
+    "update_constraints"
+  ]
+}

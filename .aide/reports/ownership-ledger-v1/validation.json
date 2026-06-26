@@ -3,19 +3,109 @@
     "admission_not_implemented": true,
     "authorization_not_implemented": true,
     "cli_registered": true,
+    "file_entry_contract_complete": true,
     "fixture_matrix_passed": true,
     "helper_exists": true,
     "install_apply_not_implemented": true,
     "ledger_generated": true,
     "ledger_valid": true,
+    "managed_section_contract_complete": true,
+    "migrate_q43_cli_registered": true,
     "never_touch_blocks_apply": true,
     "project_lock_accepted": true,
     "project_lock_digest_bound": true,
+    "q43_migration_passed": true,
     "schema_exists": true,
     "target_repository_mutation_not_implemented": true,
     "taxonomy_complete": true,
     "unknown_blocks_apply": true,
     "update_apply_not_implemented": true
+  },
+  "contract_matrix": {
+    "file_entry_fields": [
+      "entry_ref",
+      "target_relative_path",
+      "owner_ref",
+      "source_distribution_ref",
+      "source_component_ref",
+      "installed_content_digest",
+      "observed_target_digest",
+      "portable_role",
+      "mutable_by_distribution",
+      "preserve_policy",
+      "operation_constraints",
+      "platform_notes",
+      "case_sensitivity_notes",
+      "first_observed_at",
+      "last_verified_at",
+      "prior_entry_ref",
+      "superseded_by_ref"
+    ],
+    "managed_section_fields": [
+      "containing_file_path",
+      "section_identity",
+      "marker_format",
+      "start_marker_digest",
+      "end_marker_digest",
+      "section_content_digest",
+      "surrounding_content_preservation_policy",
+      "preimage_requirements",
+      "update_constraints"
+    ],
+    "ownership_classes": [
+      "vendor_managed_file",
+      "vendor_managed_section",
+      "project_owned",
+      "project_overlay",
+      "project_generated",
+      "runtime_generated",
+      "local_only",
+      "evidence_only",
+      "preserved_legacy",
+      "unknown",
+      "never_touch"
+    ],
+    "refusal_codes": [
+      "ownership_ledger.missing",
+      "ownership_ledger.invalid",
+      "ownership_ledger.project_lock_not_accepted",
+      "ownership_ledger.project_lock_digest_mismatch",
+      "ownership_ledger.missing_taxonomy_class",
+      "ownership_ledger.unknown_taxonomy_class",
+      "ownership_ledger.duplicate_record",
+      "ownership_ledger.record_class_unknown",
+      "ownership_ledger.file_entry_contract_missing",
+      "ownership_ledger.owner_missing",
+      "ownership_ledger.vendor_digest_missing",
+      "ownership_ledger.vendor_source_missing",
+      "ownership_ledger.observed_digest_mismatch",
+      "ownership_ledger.mutable_by_distribution_forbidden",
+      "ownership_ledger.managed_section_identity_missing",
+      "ownership_ledger.section_identity_missing",
+      "ownership_ledger.section_identity_mismatch",
+      "ownership_ledger.section_marker_duplicate",
+      "ownership_ledger.section_overlap",
+      "ownership_ledger.nested_ownership_ambiguity",
+      "ownership_ledger.file_section_conflict",
+      "ownership_ledger.path_collision",
+      "ownership_ledger.case_collision",
+      "ownership_ledger.source_component_mismatch",
+      "ownership_ledger.source_distribution_mismatch",
+      "ownership_ledger.evidence_missing",
+      "ownership_ledger.symlink_unresolved",
+      "ownership_ledger.reparse_point_unresolved",
+      "ownership_ledger.unknown_allows_apply",
+      "ownership_ledger.never_touch_allows_apply",
+      "ownership_ledger.automatic_apply_forbidden",
+      "ownership_ledger.absolute_path_forbidden",
+      "ownership_ledger.path_traversal_forbidden",
+      "ownership_ledger.source_state_contamination",
+      "ownership_ledger.unknown_required_feature",
+      "ownership_ledger.extension_required_unknown",
+      "ownership_ledger.digest_mismatch",
+      "ownership_ledger.fixture_failure",
+      "ownership.migration_unmapped"
+    ]
   },
   "errors": [],
   "explicit_non_capabilities": [
@@ -42,12 +132,108 @@
   ],
   "fixture_results": [
     {
+      "case_id": "class-evidence_only",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-evidence_only.json"
+    },
+    {
+      "case_id": "class-local_only",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-local_only.json"
+    },
+    {
+      "case_id": "class-never_touch",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-never_touch.json"
+    },
+    {
+      "case_id": "class-preserved_legacy",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-preserved_legacy.json"
+    },
+    {
+      "case_id": "class-project_generated",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-project_generated.json"
+    },
+    {
+      "case_id": "class-project_overlay",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-project_overlay.json"
+    },
+    {
+      "case_id": "class-project_owned",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-project_owned.json"
+    },
+    {
+      "case_id": "class-runtime_generated",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-runtime_generated.json"
+    },
+    {
+      "case_id": "class-unknown",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-unknown.json"
+    },
+    {
+      "case_id": "class-vendor_managed_file",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-vendor_managed_file.json"
+    },
+    {
+      "case_id": "class-vendor_managed_section",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/class-vendor_managed_section.json"
+    },
+    {
       "case_id": "extension-round-trip",
       "expected_result": "PASS",
       "observed_refusal_codes": [],
       "observed_result": "PASS_WITH_WARNINGS",
       "passed": true,
       "path": ".aide/fixtures/ownership-ledger-v1/valid/extension-round-trip.json"
+    },
+    {
+      "case_id": "managed-section-manual-outside-preserved",
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/valid/managed-section-manual-outside-preserved.json"
     },
     {
       "case_id": "minimal-valid-ledger",
@@ -72,11 +258,25 @@
       ],
       "expected_result": "FAILED_VALIDATION",
       "observed_refusal_codes": [
-        "ownership_ledger.absolute_path_forbidden"
+        "ownership_ledger.absolute_path_forbidden",
+        "ownership_ledger.file_entry_contract_missing"
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/ownership-ledger-v1/invalid/absolute-path.json"
+    },
+    {
+      "case_id": "case-fold-collision",
+      "expected_refusal_codes": [
+        "ownership_ledger.case_collision"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.case_collision"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/case-fold-collision.json"
     },
     {
       "case_id": "duplicate-record",
@@ -92,6 +292,32 @@
       "path": ".aide/fixtures/ownership-ledger-v1/invalid/duplicate-record.json"
     },
     {
+      "case_id": "duplicate-target-path",
+      "expected_refusal_codes": [
+        "ownership_ledger.path_collision"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.path_collision"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/duplicate-target-path.json"
+    },
+    {
+      "case_id": "evidence-missing",
+      "expected_refusal_codes": [
+        "ownership_ledger.evidence_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.evidence_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/evidence-missing.json"
+    },
+    {
       "case_id": "extension-required-unknown",
       "expected_refusal_codes": [
         "ownership_ledger.extension_required_unknown"
@@ -105,6 +331,33 @@
       "path": ".aide/fixtures/ownership-ledger-v1/invalid/extension-required-unknown.json"
     },
     {
+      "case_id": "file-section-conflict",
+      "expected_refusal_codes": [
+        "ownership_ledger.file_section_conflict"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.file_section_conflict",
+        "ownership_ledger.path_collision"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/file-section-conflict.json"
+    },
+    {
+      "case_id": "managed-section-duplicate-markers",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_marker_duplicate"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.section_marker_duplicate"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-duplicate-markers.json"
+    },
+    {
       "case_id": "managed-section-identity-missing",
       "expected_refusal_codes": [
         "ownership_ledger.managed_section_identity_missing"
@@ -116,6 +369,62 @@
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-identity-missing.json"
+    },
+    {
+      "case_id": "managed-section-marker-identity-mismatch",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_identity_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.section_identity_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-marker-identity-mismatch.json"
+    },
+    {
+      "case_id": "managed-section-missing-section-identity",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_identity_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.section_identity_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-missing-section-identity.json"
+    },
+    {
+      "case_id": "managed-section-nested-no-precedence",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_overlap",
+        "ownership_ledger.nested_ownership_ambiguity"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.nested_ownership_ambiguity",
+        "ownership_ledger.path_collision",
+        "ownership_ledger.section_overlap"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-nested-no-precedence.json"
+    },
+    {
+      "case_id": "managed-section-overlap",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_overlap"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.path_collision",
+        "ownership_ledger.section_overlap"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-overlap.json"
     },
     {
       "case_id": "missing-taxonomy-class",
@@ -145,6 +454,19 @@
       "path": ".aide/fixtures/ownership-ledger-v1/invalid/never-touch-allows-apply.json"
     },
     {
+      "case_id": "owner-missing",
+      "expected_refusal_codes": [
+        "ownership_ledger.owner_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.owner_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/owner-missing.json"
+    },
+    {
       "case_id": "project-lock-digest-mismatch",
       "expected_refusal_codes": [
         "ownership_ledger.project_lock_digest_mismatch"
@@ -158,17 +480,83 @@
       "path": ".aide/fixtures/ownership-ledger-v1/invalid/project-lock-digest-mismatch.json"
     },
     {
+      "case_id": "project-owned-mutable",
+      "expected_refusal_codes": [
+        "ownership_ledger.mutable_by_distribution_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.mutable_by_distribution_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/project-owned-mutable.json"
+    },
+    {
+      "case_id": "reparse-path",
+      "expected_refusal_codes": [
+        "ownership_ledger.reparse_point_unresolved"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.reparse_point_unresolved"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/reparse-path.json"
+    },
+    {
+      "case_id": "section-absolute-path",
+      "expected_refusal_codes": [
+        "ownership_ledger.absolute_path_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.absolute_path_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/section-absolute-path.json"
+    },
+    {
+      "case_id": "section-traversal-path",
+      "expected_refusal_codes": [
+        "ownership_ledger.path_traversal_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.path_traversal_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/section-traversal-path.json"
+    },
+    {
       "case_id": "source-latest-path",
       "expected_refusal_codes": [
         "ownership_ledger.source_state_contamination"
       ],
       "expected_result": "FAILED_VALIDATION",
       "observed_refusal_codes": [
+        "ownership_ledger.file_entry_contract_missing",
         "ownership_ledger.source_state_contamination"
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/ownership-ledger-v1/invalid/source-latest-path.json"
+    },
+    {
+      "case_id": "symlink-path",
+      "expected_refusal_codes": [
+        "ownership_ledger.symlink_unresolved"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.symlink_unresolved"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/symlink-path.json"
     },
     {
       "case_id": "traversal-path",
@@ -177,6 +565,7 @@
       ],
       "expected_result": "FAILED_VALIDATION",
       "observed_refusal_codes": [
+        "ownership_ledger.file_entry_contract_missing",
         "ownership_ledger.path_traversal_forbidden"
       ],
       "observed_result": "FAILED_VALIDATION",
@@ -248,11 +637,63 @@
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/ownership-ledger-v1/invalid/vendor-digest-missing.json"
+    },
+    {
+      "case_id": "vendor-observed-digest-mismatch",
+      "expected_refusal_codes": [
+        "ownership_ledger.observed_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.observed_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/vendor-observed-digest-mismatch.json"
+    },
+    {
+      "case_id": "vendor-source-missing",
+      "expected_refusal_codes": [
+        "ownership_ledger.vendor_source_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.vendor_source_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/vendor-source-missing.json"
+    },
+    {
+      "case_id": "q43-manual-review-map",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/q43/manual-review-map.json"
+    },
+    {
+      "case_id": "q43-supported-map",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/q43/supported-map.json"
+    },
+    {
+      "case_id": "q43-unmapped-class",
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership.migration_unmapped"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/q43/unmapped-class.json"
     }
   ],
   "ledger_validation": {
     "errors": [],
-    "ownership_ledger_digest": "sha256:a7c005b549fc66c97373377cf24c28d551f1ffd3fa79370cd76708c935083b08",
+    "ownership_ledger_digest": "sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284",
     "refusal_codes": [],
     "result": "PASS_WITH_WARNINGS",
     "valid": true,
@@ -263,10 +704,10 @@
     "authorization_implemented": false,
     "install_apply_implemented": false,
     "ledger_path": ".aide/reports/ownership-ledger-v1/ownership-ledger.json",
-    "ownership_ledger_digest": "sha256:a7c005b549fc66c97373377cf24c28d551f1ffd3fa79370cd76708c935083b08",
+    "ownership_ledger_digest": "sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284",
     "project_lock_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
     "proposed_capability": "ownership_ledger_v1",
-    "recommended_next_task": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-01",
+    "recommended_next_task": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01",
     "record_count": 12,
     "source_artifacts_mutated": false,
     "status": "PASS_WITH_WARNINGS",
@@ -275,11 +716,91 @@
     "update_apply_implemented": false
   },
   "proposed_capability": "ownership_ledger_v1",
-  "recommended_next_task": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-01",
+  "q43_migration": {
+    "errors": [],
+    "extensions": {},
+    "no_apply": true,
+    "records": [
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "evidence_record",
+        "v1_ownership_class": "evidence_only"
+      },
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "local_only",
+        "v1_ownership_class": "local_only"
+      },
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "managed_aide_file",
+        "v1_ownership_class": "vendor_managed_file"
+      },
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "managed_aide_section",
+        "v1_ownership_class": "vendor_managed_section"
+      },
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "never_touch",
+        "v1_ownership_class": "never_touch"
+      },
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "preserved_legacy",
+        "v1_ownership_class": "preserved_legacy"
+      },
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "runtime_generated",
+        "v1_ownership_class": "runtime_generated"
+      },
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "target_generated",
+        "v1_ownership_class": "project_generated"
+      },
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "target_overlay",
+        "v1_ownership_class": "project_overlay"
+      },
+      {
+        "disposition": "mapped",
+        "requires_manual_review": false,
+        "source_class": "target_project_file",
+        "v1_ownership_class": "project_owned"
+      },
+      {
+        "disposition": "manual_review_required",
+        "requires_manual_review": true,
+        "source_class": "unknown",
+        "v1_ownership_class": "unknown"
+      }
+    ],
+    "refusal_codes": [],
+    "result": "PASS_WITH_WARNINGS",
+    "schema_version": "aide.ownership-ledger.q43-migration.v1",
+    "source_schema": "aide.install-ownership-ledger.v0",
+    "target_repository_mutation_implemented": false,
+    "target_schema": "aide.ownership-ledger.v1"
+  },
+  "recommended_next_task": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01",
   "schema_version": "aide.ownership-ledger.v1",
   "validation_status": "PASS_WITH_WARNINGS",
   "warnings": [
-    "OwnershipLedger v1 is proposed until independent check and acceptance.",
-    "OwnershipLedger records ownership only and performs no apply or target mutation."
+    "OwnershipLedger v1 is proposed until independent repair check and acceptance.",
+    "OwnershipLedger records ownership only and performs no apply or target mutation.",
+    "Q43 migration is a deterministic projection only, not an install-state mutation."
   ]
 }

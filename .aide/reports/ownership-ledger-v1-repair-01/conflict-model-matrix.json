@@ -1,0 +1,87 @@
+{
+  "cases": [
+    {
+      "case_id": "case-fold-collision",
+      "expected_refusal_codes": [
+        "ownership_ledger.case_collision"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.case_collision"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/case-fold-collision.json"
+    },
+    {
+      "case_id": "duplicate-target-path",
+      "expected_refusal_codes": [
+        "ownership_ledger.path_collision"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.path_collision"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/duplicate-target-path.json"
+    },
+    {
+      "case_id": "evidence-missing",
+      "expected_refusal_codes": [
+        "ownership_ledger.evidence_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.evidence_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/evidence-missing.json"
+    },
+    {
+      "case_id": "file-section-conflict",
+      "expected_refusal_codes": [
+        "ownership_ledger.file_section_conflict"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.file_section_conflict",
+        "ownership_ledger.path_collision"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/file-section-conflict.json"
+    },
+    {
+      "case_id": "managed-section-nested-no-precedence",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_overlap",
+        "ownership_ledger.nested_ownership_ambiguity"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.nested_ownership_ambiguity",
+        "ownership_ledger.path_collision",
+        "ownership_ledger.section_overlap"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-nested-no-precedence.json"
+    },
+    {
+      "case_id": "managed-section-overlap",
+      "expected_refusal_codes": [
+        "ownership_ledger.section_overlap"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "ownership_ledger.path_collision",
+        "ownership_ledger.section_overlap"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/ownership-ledger-v1/invalid/managed-section-overlap.json"
+    }
+  ]
+}
