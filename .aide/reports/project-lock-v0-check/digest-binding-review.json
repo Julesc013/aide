@@ -1,0 +1,10 @@
+{
+  "project_lock_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+  "independent_digest_matches": true,
+  "distribution_digest_binding_matches": true,
+  "manifest_payload_digest_binding_matches": true,
+  "status_changes_identity": false,
+  "recommended_next_task_changes_identity": false,
+  "selected_channel_changes_identity": false,
+  "semantic_spec_changes_identity": true
+}

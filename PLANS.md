@@ -2813,3 +2813,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `project_lock_v0`, and recommends exactly `AIDE-CHECK-PROJECT-LOCK-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: ProjectLock v0 does not implement install truth, install/update apply, admission, authorization, target mutation, release publication, network/provider calls, runtime, or OwnershipLedger v1.
+
+### Queue ID: AIDE-CHECK-PROJECT-LOCK-V0-01
+
+- Title: Check ProjectLock v0
+- Status: Needs Review
+- Objective: independently verify the proposed `project_lock_v0` build without repairing implementation, accepting ProjectLock, or beginning OwnershipLedger work.
+- Scope: `.aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/**`, `.aide/reports/project-lock-v0-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source build commit `1d42adf882c31a73966963f2842271db805cdbe2`, result `PASS_WITH_WARNINGS`, and missing evidence `0`.
+- Verification Intent: independent digest recomputation, identity-boundary probes, accepted DistributionManifest binding review, component selection and dependency review, fixture corpus review, CLI validation/refusal probes, focused tests, broad validation, task inspect/evidence, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records the independent check result, and recommends either acceptance or a bounded repair task.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: Zero material findings remain. The next serialized task is exactly `AIDE-ACCEPT-PROJECT-LOCK-V0-01`. OwnershipLedger v1 remains blocked until ProjectLock acceptance is complete.

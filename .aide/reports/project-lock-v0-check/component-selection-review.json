@@ -1,0 +1,13 @@
+{
+  "selected_component_count": 1,
+  "selected_components": [
+    {
+      "component_ref": "aide://distribution/component/aide-lite-pack-v0",
+      "exists_in_manifest": true,
+      "component_digest_matches": true,
+      "artifact_refs_resolve": true,
+      "dependencies_resolve": true
+    }
+  ],
+  "result": "PASS"
+}

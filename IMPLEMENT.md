@@ -9484,3 +9484,34 @@ not implement install truth, install/update apply, admission, authorization,
 target mutation, release publication, network/provider calls, runtime, or
 OwnershipLedger v1. The next serialized task is
 `AIDE-CHECK-PROJECT-LOCK-V0-01`.
+
+## Work Item: AIDE-CHECK-PROJECT-LOCK-V0-01
+
+### Summary
+
+Independently checked the proposed `project_lock_v0` build.
+
+### Implementation Notes
+
+- Added the check-only queue task and ProjectLock check reports.
+- Recomputed ProjectLock identity with a check-local canonicalizer.
+- Verified mutable status, queue routing, and selected channel are outside
+  ProjectLock identity while semantic lock fields remain identity-bound.
+- Verified the selected accepted DistributionManifest digest, manifest payload
+  digest, selected component digest, selected artifact refs, and dependency
+  closure.
+- Reviewed the valid/invalid fixture corpus and explicit non-capability
+  boundary.
+
+### Verification
+
+Validation includes source task inspect/evidence, the check-local digest and
+fixture probe, focused ProjectLock tests, broad `aide_lite.py validate`, task
+inspect/evidence for the check task, diff checks, and commit-policy check.
+
+### Remaining Issues
+
+ProjectLock v0 remains unaccepted until `AIDE-ACCEPT-PROJECT-LOCK-V0-01`.
+The check does not implement or accept install truth, install/update apply,
+admission, authorization, target mutation, release publication, runtime, or
+OwnershipLedger v1.

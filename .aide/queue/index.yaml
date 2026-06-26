@@ -2539,3 +2539,13 @@ items:
   prompt: .aide/queue/AIDE-BUILD-PROJECT-LOCK-V0-01/prompt.md
   evidence: .aide/queue/AIDE-BUILD-PROJECT-LOCK-V0-01/evidence
   description: Build task for proposed project_lock_v0 after DistributionManifest v1 acceptance. Adds a Draft 2020-12 ProjectLock schema, deterministic helper, AIDE Lite project-lock status/project/validate commands, fixture corpus, focused tests, and reports under .aide/reports/project-lock-v0. Binds selected distribution ref, distribution digest, manifest payload digest, selected component digests, selected artifact refs, and dependency closure while treating channel as informational and preserving optional extensions. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-PROJECT-LOCK-V0-01. Does not implement install truth, install/update/apply, admission, authorization, target mutation, release publication, network/provider calls, runtime, or OwnershipLedger v1.
+- id: AIDE-CHECK-PROJECT-LOCK-V0-01
+  status: needs_review
+  planning_state: check_completed
+  result: PASS_WITH_WARNINGS
+  title: Check ProjectLock v0
+  task: .aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/evidence
+  description: Check-only independent review of AIDE-BUILD-PROJECT-LOCK-V0-01 at 1d42adf882c31a73966963f2842271db805cdbe2. Recomputes ProjectLock identity, verifies status and queue routing are outside identity, confirms channel is informational, verifies accepted DistributionManifest digest and payload digest bindings, checks selected component digest/artifact/dependency closure, reviews fixture outcomes, exercises project-lock validate, and verifies explicit non-capabilities. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-PROJECT-LOCK-V0-01. Does not repair implementation, accept ProjectLock v0, begin OwnershipLedger v1, implement install/update/apply, mutate targets, publish releases, call network/provider/model services, or start runtime work.

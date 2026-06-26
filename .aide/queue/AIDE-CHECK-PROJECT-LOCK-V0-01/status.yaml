@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-PROJECT-LOCK-V0-01
+status: needs_review
+classification: complete
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+checked_capability: project_lock_v0
+material_finding_count: 0
+missing_evidence: 0
+source_task: AIDE-BUILD-PROJECT-LOCK-V0-01
+source_commit: 1d42adf882c31a73966963f2842271db805cdbe2
+next_task: AIDE-ACCEPT-PROJECT-LOCK-V0-01
+notes:
+  - Independent check found no material ProjectLock v0 defects.
+  - Warnings remain because ProjectLock v0 is proposed until acceptance and implements no install/apply/admission/authorization behavior.
+  - OwnershipLedger v1 was not started.

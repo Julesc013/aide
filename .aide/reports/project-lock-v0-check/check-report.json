@@ -1,0 +1,72 @@
+{
+  "task_id": "AIDE-CHECK-PROJECT-LOCK-V0-01",
+  "source_task": "AIDE-BUILD-PROJECT-LOCK-V0-01",
+  "source_commit": "1d42adf882c31a73966963f2842271db805cdbe2",
+  "checked_capability": "project_lock_v0",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-ACCEPT-PROJECT-LOCK-V0-01",
+  "assertions": [
+    {
+      "id": "project_lock.digest.identity_boundary",
+      "category": "digest",
+      "outcome": "PASS",
+      "severity": "material",
+      "expected": "Mutable status, queue routing, and channel fields do not change identity; semantic lock fields do.",
+      "observed": "Status, recommended_next_task, and selected_channel left the digest unchanged; project identity, selected distribution digest, component digest, and policy overlay refs changed it.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/evidence/independent-probe.json",
+        ".aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/evidence/digest-binding-review.md"
+      ]
+    },
+    {
+      "id": "project_lock.distribution_binding",
+      "category": "authority",
+      "outcome": "PASS",
+      "severity": "material",
+      "expected": "ProjectLock binds an accepted DistributionManifest by digest and payload digest.",
+      "observed": "Distribution digest and manifest payload digest matched the accepted DistributionManifest.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/evidence/independent-probe.json"
+      ]
+    },
+    {
+      "id": "project_lock.component_selection",
+      "category": "component_graph",
+      "outcome": "PASS",
+      "severity": "material",
+      "expected": "Selected component, artifact refs, and dependencies resolve.",
+      "observed": "The selected AIDE Lite pack component resolved with matching digest, artifact refs, and dependencies.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/evidence/component-selection-review.md"
+      ]
+    },
+    {
+      "id": "project_lock.fixture_corpus",
+      "category": "fixtures",
+      "outcome": "PASS",
+      "severity": "material",
+      "expected": "Valid fixtures pass and invalid fixtures fail with expected refusal subsets.",
+      "observed": "8 valid and 20 invalid fixtures matched expectations.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/evidence/fixture-corpus-review.md"
+      ]
+    },
+    {
+      "id": "project_lock.non_capabilities",
+      "category": "boundary",
+      "outcome": "PASS",
+      "severity": "material",
+      "expected": "No install/apply/admission/authorization/target mutation behavior is implemented.",
+      "observed": "Capability flags remain false and project-lock apply is not an exposed command.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/evidence/non-capability-review.md"
+      ]
+    }
+  ],
+  "warnings": [
+    "ProjectLock v0 remains proposed until acceptance.",
+    "ProjectLock v0 does not implement install truth, install/update/apply, admission, authorization, target mutation, or OwnershipLedger behavior."
+  ]
+}

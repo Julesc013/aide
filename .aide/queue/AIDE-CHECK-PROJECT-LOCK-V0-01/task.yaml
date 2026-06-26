@@ -1,0 +1,68 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-PROJECT-LOCK-V0-01
+title: Check ProjectLock v0
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+checked_capability: project_lock_v0
+material_finding_count: 0
+missing_evidence: 0
+depends_on:
+  - AIDE-BUILD-PROJECT-LOCK-V0-01
+recommended_next_task: AIDE-ACCEPT-PROJECT-LOCK-V0-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/**
+    - .aide/reports/project-lock-v0-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .aide/protocol/aide-project-lock-v0.schema.json
+    - core/protocol/project_lock.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_project_lock_v0.py
+    - .aide/fixtures/project-lock-v0/**
+    - .aide/reports/project-lock-v0/**
+    - release archive artifacts
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+evidence:
+  required:
+    - baseline.md
+    - source-build-review.md
+    - independent-probe.json
+    - digest-binding-review.md
+    - component-selection-review.md
+    - fixture-corpus-review.md
+    - non-capability-review.md
+    - validation.md
+    - next-task-prompt.md
+non_capabilities:
+  - implementation repair
+  - ProjectLock acceptance
+  - OwnershipLedger
+  - InstallRecord
+  - install truth
+  - install apply
+  - update apply
+  - repair apply
+  - rollback apply
+  - uninstall apply
+  - admission
+  - authorization
+  - target repository mutation
+  - release publication
+  - Git tag
+  - GitHub Release
+  - upload
+  - network call
+  - provider/model call
+  - Workbench/MCP runtime
+notes:
+  - Check-only task; no ProjectLock implementation files were modified.
+  - Independent probe recomputed the ProjectLock digest and selected distribution bindings without importing production helper code.
+  - Stops at needs_review and recommends exactly AIDE-ACCEPT-PROJECT-LOCK-V0-01.

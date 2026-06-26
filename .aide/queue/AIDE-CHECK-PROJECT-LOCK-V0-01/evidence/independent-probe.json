@@ -1,0 +1,48 @@
+{
+  "schema_draft_2020_12": true,
+  "schema_kind_const": true,
+  "schema_has_explicit_extensions": true,
+  "distribution_acceptance": {
+    "result": "ACCEPTED_WITH_WARNINGS",
+    "accepted_capability": "distribution_manifest_v1",
+    "recommended_next_task": "AIDE-BUILD-PROJECT-LOCK-V0-01"
+  },
+  "base_project_lock_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+  "lock_digest_matches_independent": true,
+  "distribution_digest_binding_matches": true,
+  "manifest_payload_binding_matches": true,
+  "identity_mutation_changes_digest": {
+    "status_status": false,
+    "recommended_next_task": false,
+    "selected_channel": false,
+    "project_identity": true,
+    "selected_distribution_digest": true,
+    "component_digest": true,
+    "policy_overlay_ref": true
+  },
+  "fixture_counts": {
+    "valid": 8,
+    "invalid": 20
+  },
+  "failed_fixture_expectations": [],
+  "component_checks": [
+    {
+      "component_ref": "aide://distribution/component/aide-lite-pack-v0",
+      "exists_in_manifest": true,
+      "component_digest_matches": true,
+      "artifact_refs_resolve": true,
+      "dependencies_resolve": true
+    }
+  ],
+  "cli_validate_returncode": 0,
+  "cli_apply_refusal_returncode": 2,
+  "cli_apply_refusal_kind": "argparse_invalid_choice",
+  "non_capability_flags_false": {
+    "install_apply_implemented": true,
+    "update_apply_implemented": true,
+    "target_repository_mutation_implemented": true,
+    "admission_implemented": true,
+    "authorization_implemented": true
+  },
+  "path_scan_note": "Initial drive-pattern scan matched aide:// URI schemes, not local absolute paths."
+}
