@@ -1,0 +1,106 @@
+{
+  "schema_version": "aide.finding_matrix.v0",
+  "task_id": "AIDE-BUILD-PROJECT-LOCK-V0-01",
+  "mode": "oracle_first_build",
+  "findings": [
+    {
+      "finding_id": "project_lock.accepted_manifest_binding",
+      "required_behavior": "Lock binds an accepted DistributionManifest distribution digest and manifest payload digest.",
+      "implementation_location": "core/protocol/project_lock.py",
+      "positive_tests": [
+        "full valid lock"
+      ],
+      "negative_tests": [
+        "manifest digest mismatch",
+        "payload digest mismatch",
+        "manifest not accepted"
+      ],
+      "evidence_file": "digest-binding.md",
+      "status": "closed_pending_check",
+      "remaining_risk": "independent recomputation required"
+    },
+    {
+      "finding_id": "project_lock.component_selection",
+      "required_behavior": "Required components selected; optional components explicitly selected or omitted; component digests and artifact refs match manifest.",
+      "implementation_location": "core/protocol/project_lock.py",
+      "positive_tests": [
+        "optional selected",
+        "optional omitted"
+      ],
+      "negative_tests": [
+        "missing required component",
+        "optional ambiguous",
+        "component digest mismatch",
+        "unknown component"
+      ],
+      "evidence_file": "component-selection.md",
+      "status": "closed_pending_check",
+      "remaining_risk": "independent graph review required"
+    },
+    {
+      "finding_id": "project_lock.dependency_closure",
+      "required_behavior": "Dependency closure is complete and cycles fail closed.",
+      "implementation_location": "core/protocol/project_lock.py",
+      "positive_tests": [
+        "required closure"
+      ],
+      "negative_tests": [
+        "unsatisfied dependency",
+        "dependency cycle"
+      ],
+      "evidence_file": "dependency-closure.md",
+      "status": "closed_pending_check",
+      "remaining_risk": "independent closure recomputation required"
+    },
+    {
+      "finding_id": "project_lock.channel_vs_digest",
+      "required_behavior": "Channel is informational while digests remain authoritative.",
+      "implementation_location": "core/protocol/project_lock.py",
+      "positive_tests": [
+        "channel changed digest unchanged"
+      ],
+      "negative_tests": [
+        "channel changed with digest drift"
+      ],
+      "evidence_file": "channel-vs-digest-boundary.md",
+      "status": "closed_pending_check",
+      "remaining_risk": "independent identity probe required"
+    },
+    {
+      "finding_id": "project_lock.contamination_and_overlay_boundary",
+      "required_behavior": "Reject source latest outputs, source reports, .aide.local, absolute/traversal paths, secret-like paths, and source-owned overlays.",
+      "implementation_location": "core/protocol/project_lock.py",
+      "positive_tests": [
+        "safe empty overlay lists"
+      ],
+      "negative_tests": [
+        "absolute path",
+        "traversal path",
+        "secret-like field",
+        "source latest reference",
+        "source report reference",
+        ".aide.local reference",
+        "target overlay invalid"
+      ],
+      "evidence_file": "source-contamination-boundary.md",
+      "status": "closed_pending_check",
+      "remaining_risk": "independent path/secret scan required"
+    },
+    {
+      "finding_id": "project_lock.extension_boundary",
+      "required_behavior": "Unknown optional extensions/features are preserved and tolerated; unknown required features/extensions fail closed.",
+      "implementation_location": "core/protocol/project_lock.py",
+      "positive_tests": [
+        "unknown optional feature preserved",
+        "extension round trip"
+      ],
+      "negative_tests": [
+        "unknown required feature",
+        "required extension"
+      ],
+      "evidence_file": "extension-boundary.md",
+      "status": "closed_pending_check",
+      "remaining_risk": "independent round-trip validation required"
+    }
+  ]
+}

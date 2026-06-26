@@ -1,0 +1,404 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aide.dev/schemas/aide-project-lock-v0.schema.json",
+  "title": "AIDE ProjectLock v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "apiVersion",
+    "kind",
+    "schema_version",
+    "metadata",
+    "spec",
+    "status",
+    "extensions"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "const": "aide.dev/v1alpha1"
+    },
+    "kind": {
+      "type": "string",
+      "const": "ProjectLock"
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "aide.project-lock.v0"
+    },
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "spec": {
+      "$ref": "#/$defs/spec"
+    },
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "extensions": {
+      "$ref": "#/$defs/extensions"
+    }
+  },
+  "$defs": {
+    "extensions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "ref": {
+      "type": "string",
+      "pattern": "^aide://[A-Za-z0-9_./:-]+$"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project_lock_ref",
+        "project_ref",
+        "project_identity",
+        "project_profile",
+        "lock_revision",
+        "selected_distribution_ref",
+        "selected_distribution_digest",
+        "manifest_payload_digest",
+        "selected_channel",
+        "created_from",
+        "created_at_classification",
+        "prior_lock_ref",
+        "superseded_by_ref",
+        "extensions"
+      ],
+      "properties": {
+        "project_lock_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "project_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "project_identity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "project_profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lock_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "selected_distribution_ref": {
+          "type": "string",
+          "pattern": "^aide://distribution/[A-Za-z0-9_.-]+$"
+        },
+        "selected_distribution_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "manifest_payload_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "selected_channel": {
+          "type": "string",
+          "enum": [
+            "dev",
+            "canary",
+            "edge",
+            "stable",
+            "lts"
+          ]
+        },
+        "created_from": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at_classification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prior_lock_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "superseded_by_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selected_components",
+        "omitted_optional_components",
+        "required_component_closure",
+        "bridge_package_selections",
+        "host_package_selections",
+        "policy_overlay_refs",
+        "knowledge_overlay_refs",
+        "compatibility_range",
+        "install_mode",
+        "target_platform_profile",
+        "warnings",
+        "explicit_non_capabilities",
+        "required_features",
+        "optional_features",
+        "extensions"
+      ],
+      "properties": {
+        "selected_components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/selected_component"
+          }
+        },
+        "omitted_optional_components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/omitted_component"
+          }
+        },
+        "required_component_closure": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bridge_package_selections": {
+          "type": "array"
+        },
+        "host_package_selections": {
+          "type": "array"
+        },
+        "policy_overlay_refs": {
+          "type": "array"
+        },
+        "knowledge_overlay_refs": {
+          "type": "array"
+        },
+        "compatibility_range": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "string"
+            },
+            "max": {
+              "type": "string"
+            },
+            "extensions": {
+              "$ref": "#/$defs/extensions"
+            }
+          }
+        },
+        "install_mode": {
+          "type": "string",
+          "enum": [
+            "metadata_only_no_apply",
+            "portable_pack_selection_only_no_apply"
+          ]
+        },
+        "target_platform_profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "explicit_non_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "optional_features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "selected_component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_ref",
+        "component_id",
+        "selected_digest",
+        "required",
+        "source_distribution_ref",
+        "dependencies",
+        "protocol_requirements",
+        "selected_artifact_refs",
+        "compatibility_constraints",
+        "extensions"
+      ],
+      "properties": {
+        "component_ref": {
+          "type": "string",
+          "pattern": "^aide://distribution/component/[A-Za-z0-9_.-]+$"
+        },
+        "component_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "selected_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "source_distribution_ref": {
+          "type": "string",
+          "pattern": "^aide://distribution/[A-Za-z0-9_.-]+$"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "protocol_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "selected_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^aide://distribution/artifact/[A-Za-z0-9_.-]+$"
+          }
+        },
+        "compatibility_constraints": {
+          "type": "object"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "omitted_component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_ref",
+        "component_id",
+        "reason",
+        "extensions"
+      ],
+      "properties": {
+        "component_ref": {
+          "type": "string",
+          "pattern": "^aide://distribution/component/[A-Za-z0-9_.-]+$"
+        },
+        "component_id": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "proposed_capability",
+        "project_lock_digest",
+        "validation_result",
+        "recommended_next_task",
+        "install_apply_implemented",
+        "update_apply_implemented",
+        "target_repository_mutation_implemented",
+        "admission_implemented",
+        "authorization_implemented",
+        "extensions"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "FAILED_VALIDATION"
+          ]
+        },
+        "proposed_capability": {
+          "type": "string",
+          "const": "project_lock_v0"
+        },
+        "project_lock_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "validation_result": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "FAILED_VALIDATION"
+          ]
+        },
+        "recommended_next_task": {
+          "type": "string",
+          "const": "AIDE-CHECK-PROJECT-LOCK-V0-01"
+        },
+        "install_apply_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "update_apply_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "target_repository_mutation_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "admission_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "authorization_implemented": {
+          "type": "boolean",
+          "const": false
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    }
+  }
+}

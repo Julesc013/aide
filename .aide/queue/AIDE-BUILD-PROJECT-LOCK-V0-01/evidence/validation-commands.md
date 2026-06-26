@@ -1,0 +1,31 @@
+# Validation Commands
+
+- `git status --short --branch`
+- `py -3 -c import json; json.load(open(r".aide/protocol/aide-project-lock-v0.schema.json", encoding="utf-8")); print("schema-ok")`
+- `py -3 -m py_compile core/protocol/project_lock.py .aide/scripts/aide_lite.py`
+- `py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_project_lock_v0.py`
+- `py -3 .aide/scripts/aide_lite.py project-lock status`
+- `py -3 .aide/scripts/aide_lite.py project-lock project`
+- `py -3 .aide/scripts/aide_lite.py project-lock validate`
+- `py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_distribution_manifest_v1.py`
+- `py -3 .aide/scripts/aide_lite.py distribution-manifest validate`
+- `py -3 .aide/scripts/aide_lite.py install status`
+- `py -3 .aide/scripts/aide_lite.py install validate`
+- `py -3 .aide/scripts/aide_lite.py repair status`
+- `py -3 .aide/scripts/aide_lite.py repair validate`
+- `py -3 .aide/scripts/aide_lite.py upgrade status`
+- `py -3 .aide/scripts/aide_lite.py upgrade validate`
+- `py -3 .aide/scripts/aide_lite.py upgrade compatibility`
+- `py -3 .aide/scripts/aide_lite.py rollback status`
+- `py -3 .aide/scripts/aide_lite.py rollback validate`
+- `py -3 .aide/scripts/aide_lite.py uninstall status`
+- `py -3 .aide/scripts/aide_lite.py uninstall validate`
+- `py -3 .aide/scripts/aide_lite.py release status`
+- `py -3 .aide/scripts/aide_lite.py release validate`
+- `py -3 .aide/scripts/aide_lite.py release draft-status`
+- `py -3 .aide/scripts/aide_lite.py release draft-validate`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-PROJECT-LOCK-V0-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-PROJECT-LOCK-V0-01`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `git diff --check`
+- `git diff --cached --check`

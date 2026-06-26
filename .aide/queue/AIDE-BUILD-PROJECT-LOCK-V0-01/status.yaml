@@ -1,0 +1,15 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-PROJECT-LOCK-V0-01
+status: needs_review
+classification: complete
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+proposed_capability: project_lock_v0
+material_finding_count: 0
+missing_evidence: 0
+source_acceptance_task: AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+next_task: AIDE-CHECK-PROJECT-LOCK-V0-01
+notes:
+  - Added ProjectLock v0 schema, helper, CLI commands, fixtures, tests, reports, and task evidence.
+  - No install/update/apply, target mutation, admission, authorization, publication, network, provider/model, runtime, or OwnershipLedger work is implemented.
+  - Stops at needs_review for independent check.

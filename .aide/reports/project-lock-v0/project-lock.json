@@ -1,0 +1,120 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "extensions": {},
+  "kind": "ProjectLock",
+  "metadata": {
+    "created_at_classification": "deterministic_projection_not_wall_clock",
+    "created_from": "accepted_distribution_manifest_v1",
+    "extensions": {},
+    "lock_revision": "0",
+    "manifest_payload_digest": "sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2",
+    "prior_lock_ref": null,
+    "project_identity": "julesc013/aide",
+    "project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+    "project_profile": "aide-self-hosting",
+    "project_ref": "aide://project/aide-self",
+    "selected_channel": "canary",
+    "selected_distribution_digest": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+    "selected_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+    "superseded_by_ref": null
+  },
+  "schema_version": "aide.project-lock.v0",
+  "spec": {
+    "bridge_package_selections": [],
+    "compatibility_range": {
+      "max": "1.x",
+      "min": "1.0.0"
+    },
+    "explicit_non_capabilities": [
+      "admission",
+      "authorization",
+      "git_tag_creation",
+      "github_release_creation",
+      "install_apply",
+      "install_plan",
+      "install_truth",
+      "mcp_runtime",
+      "network_call",
+      "promotion",
+      "provider_model_call",
+      "release_publication",
+      "repair_apply",
+      "rollback_apply",
+      "source_change_preview_apply_rollback",
+      "target_repository_mutation",
+      "uninstall_apply",
+      "update_apply",
+      "upload",
+      "workbench_runtime"
+    ],
+    "extensions": {},
+    "host_package_selections": [],
+    "install_mode": "portable_pack_selection_only_no_apply",
+    "knowledge_overlay_refs": [],
+    "omitted_optional_components": [],
+    "optional_features": [
+      "knowledge_overlay_refs_v0",
+      "project_overlay_refs_v0"
+    ],
+    "policy_overlay_refs": [],
+    "required_component_closure": [
+      "aide://distribution/component/aide-lite-pack-v0"
+    ],
+    "required_features": [
+      "distribution_manifest_v1",
+      "project_lock_v0",
+      "sha256_digest_canonical_json_v1"
+    ],
+    "selected_components": [
+      {
+        "compatibility_constraints": {
+          "min_reader_version": "1.0.0",
+          "min_writer_version": "1.0.0"
+        },
+        "component_id": "aide-lite-pack-v0",
+        "component_ref": "aide://distribution/component/aide-lite-pack-v0",
+        "dependencies": [],
+        "extensions": {},
+        "protocol_requirements": [
+          "distribution_manifest_v1",
+          "portable_release_bundle_v0"
+        ],
+        "required": true,
+        "selected_artifact_refs": [
+          "aide://distribution/artifact/CHANGELOG.preview.md",
+          "aide://distribution/artifact/RELEASE_NOTES.preview.md",
+          "aide://distribution/artifact/SHA256SUMS.txt",
+          "aide://distribution/artifact/aide-lite-pack-v0-directory",
+          "aide://distribution/artifact/aide-lite-pack-v0.checksums.json",
+          "aide://distribution/artifact/aide-lite-pack-v0.tar.gz",
+          "aide://distribution/artifact/aide-lite-pack-v0.zip",
+          "aide://distribution/artifact/install.md",
+          "aide://distribution/artifact/manifest.yaml",
+          "aide://distribution/artifact/release-provenance.json",
+          "aide://distribution/artifact/release-validation.json",
+          "aide://distribution/artifact/release-validation.md"
+        ],
+        "selected_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "source_distribution_ref": "aide://distribution/aide-lite-pack-v0"
+      }
+    ],
+    "target_platform_profile": "portable-local-no-apply",
+    "warnings": [
+      "Channel is informational; digests are authoritative.",
+      "ProjectLock selects an accepted DistributionManifest but does not install it."
+    ]
+  },
+  "status": {
+    "admission_implemented": false,
+    "authorization_implemented": false,
+    "extensions": {},
+    "install_apply_implemented": false,
+    "project_lock_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+    "proposed_capability": "project_lock_v0",
+    "recommended_next_task": "AIDE-CHECK-PROJECT-LOCK-V0-01",
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "update_apply_implemented": false,
+    "validation_result": "PASS_WITH_WARNINGS"
+  }
+}

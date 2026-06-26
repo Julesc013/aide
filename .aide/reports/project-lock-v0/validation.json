@@ -1,0 +1,441 @@
+{
+  "checks": {
+    "absolute_local_paths_suppressed": true,
+    "admission_not_implemented": true,
+    "authorization_not_implemented": true,
+    "channel_informational": true,
+    "cli_registered": true,
+    "component_selection_complete": true,
+    "distribution_manifest_accepted": true,
+    "fixture_matrix_passed": true,
+    "helper_exists": true,
+    "install_apply_not_implemented": true,
+    "lock_generated": true,
+    "lock_valid": true,
+    "manifest_payload_digest_bound": true,
+    "schema_alignment": true,
+    "schema_exists": true,
+    "selected_distribution_digest_bound": true,
+    "target_repository_mutation_not_implemented": true,
+    "update_apply_not_implemented": true
+  },
+  "errors": [],
+  "explicit_non_capabilities": [
+    "install_truth",
+    "install_plan",
+    "install_apply",
+    "update_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "admission",
+    "authorization",
+    "target_repository_mutation",
+    "release_publication",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "workbench_runtime",
+    "mcp_runtime",
+    "source_change_preview_apply_rollback",
+    "promotion"
+  ],
+  "fixture_results": [
+    {
+      "case_id": "channel-changed-digest-unchanged",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/valid/channel-changed-digest-unchanged.json"
+    },
+    {
+      "case_id": "extension-round-trip",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/valid/extension-round-trip.json"
+    },
+    {
+      "case_id": "full-valid-lock",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/valid/full-valid-lock.json"
+    },
+    {
+      "case_id": "minimal-valid-lock",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/valid/minimal-valid-lock.json"
+    },
+    {
+      "case_id": "optional-component-omitted",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/valid/optional-component-omitted.json"
+    },
+    {
+      "case_id": "optional-component-selected",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/valid/optional-component-selected.json"
+    },
+    {
+      "case_id": "reordered-deterministic-lock",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/valid/reordered-deterministic-lock.json"
+    },
+    {
+      "case_id": "unknown-optional-feature-preserved",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/valid/unknown-optional-feature-preserved.json"
+    },
+    {
+      "case_id": "absolute-path",
+      "expected_refusal_codes": [
+        "project_lock.absolute_path_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.absolute_path_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/absolute-path.json"
+    },
+    {
+      "case_id": "aide-local-reference",
+      "expected_refusal_codes": [
+        "project_lock.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/aide-local-reference.json"
+    },
+    {
+      "case_id": "channel-changed-unapproved-digest",
+      "expected_refusal_codes": [
+        "project_lock.digest_mismatch",
+        "project_lock.channel_digest_drift"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.channel_digest_drift",
+        "project_lock.digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/channel-changed-unapproved-digest.json"
+    },
+    {
+      "case_id": "component-digest-mismatch",
+      "expected_refusal_codes": [
+        "project_lock.component_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.component_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/component-digest-mismatch.json"
+    },
+    {
+      "case_id": "dependency-cycle",
+      "expected_refusal_codes": [
+        "project_lock.dependency_cycle",
+        "project_lock.dependency_unsatisfied"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.dependency_cycle",
+        "project_lock.dependency_unsatisfied"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/dependency-cycle.json"
+    },
+    {
+      "case_id": "extension-required-unknown",
+      "expected_refusal_codes": [
+        "project_lock.extension_required_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.extension_required_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/extension-required-unknown.json"
+    },
+    {
+      "case_id": "manifest-digest-mismatch",
+      "expected_refusal_codes": [
+        "project_lock.digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/manifest-digest-mismatch.json"
+    },
+    {
+      "case_id": "manifest-not-accepted",
+      "expected_refusal_codes": [
+        "project_lock.manifest_not_accepted"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.manifest_not_accepted"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/manifest-not-accepted.json"
+    },
+    {
+      "case_id": "manifest-payload-digest-mismatch",
+      "expected_refusal_codes": [
+        "project_lock.payload_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.payload_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/manifest-payload-digest-mismatch.json"
+    },
+    {
+      "case_id": "missing-required-component",
+      "expected_refusal_codes": [
+        "project_lock.required_component_omitted"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.required_component_omitted"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/missing-required-component.json"
+    },
+    {
+      "case_id": "optional-component-ambiguous",
+      "expected_refusal_codes": [
+        "project_lock.optional_component_ambiguous"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.optional_component_ambiguous"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/optional-component-ambiguous.json"
+    },
+    {
+      "case_id": "secret-like-field",
+      "expected_refusal_codes": [
+        "project_lock.secret_or_credential_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.secret_or_credential_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/secret-like-field.json"
+    },
+    {
+      "case_id": "source-latest-reference",
+      "expected_refusal_codes": [
+        "project_lock.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/source-latest-reference.json"
+    },
+    {
+      "case_id": "source-report-reference",
+      "expected_refusal_codes": [
+        "project_lock.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/source-report-reference.json"
+    },
+    {
+      "case_id": "target-overlay-invalid",
+      "expected_refusal_codes": [
+        "project_lock.target_overlay_invalid"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.target_overlay_invalid"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/target-overlay-invalid.json"
+    },
+    {
+      "case_id": "traversal-path",
+      "expected_refusal_codes": [
+        "project_lock.path_traversal_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.path_traversal_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/traversal-path.json"
+    },
+    {
+      "case_id": "unknown-component",
+      "expected_refusal_codes": [
+        "project_lock.component_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.component_missing",
+        "project_lock.dependency_unsatisfied",
+        "project_lock.required_component_omitted"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/unknown-component.json"
+    },
+    {
+      "case_id": "unknown-required-feature",
+      "expected_refusal_codes": [
+        "project_lock.unknown_required_feature"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.unknown_required_feature"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/unknown-required-feature.json"
+    },
+    {
+      "case_id": "unsatisfied-dependency",
+      "expected_refusal_codes": [
+        "project_lock.dependency_unsatisfied"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.dependency_unsatisfied"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/unsatisfied-dependency.json"
+    },
+    {
+      "case_id": "unsupported-protocol",
+      "expected_refusal_codes": [
+        "project_lock.protocol_incompatible"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "project_lock.protocol_incompatible"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/project-lock-v0/invalid/unsupported-protocol.json"
+    }
+  ],
+  "lock_validation": {
+    "error_count": 0,
+    "errors": [],
+    "refusal_codes": [],
+    "status": "PASS",
+    "valid": true,
+    "warnings": []
+  },
+  "project_report": {
+    "explicit_non_capabilities": [
+      "install_truth",
+      "install_plan",
+      "install_apply",
+      "update_apply",
+      "repair_apply",
+      "rollback_apply",
+      "uninstall_apply",
+      "admission",
+      "authorization",
+      "target_repository_mutation",
+      "release_publication",
+      "git_tag_creation",
+      "github_release_creation",
+      "upload",
+      "network_call",
+      "provider_model_call",
+      "workbench_runtime",
+      "mcp_runtime",
+      "source_change_preview_apply_rollback",
+      "promotion"
+    ],
+    "manifest_payload_digest": "sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2",
+    "project_lock_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+    "project_lock_path": ".aide/reports/project-lock-v0/project-lock.json",
+    "proposed_capability": "project_lock_v0",
+    "recommended_next_task": "AIDE-CHECK-PROJECT-LOCK-V0-01",
+    "schema_version": "aide.project-lock-project-report.v0",
+    "selected_component_count": 1,
+    "selected_distribution_digest": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+    "source_artifacts_mutated": false,
+    "status": "PASS_WITH_WARNINGS",
+    "warnings": [
+      "Channel is informational; digests are authoritative.",
+      "ProjectLock selects an accepted DistributionManifest but does not install it."
+    ]
+  },
+  "proposed_capability": "project_lock_v0",
+  "recommended_next_task": "AIDE-CHECK-PROJECT-LOCK-V0-01",
+  "schema_alignment_errors": [],
+  "schema_version": "aide.project-lock-validation.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "ProjectLock v0 is proposed until independent check and acceptance.",
+    "ProjectLock selects an accepted DistributionManifest but performs no install or target mutation."
+  ]
+}

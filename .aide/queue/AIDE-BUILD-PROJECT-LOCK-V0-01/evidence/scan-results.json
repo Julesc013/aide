@@ -1,0 +1,8 @@
+{
+  "json_errors": [],
+  "json_parse_passed": true,
+  "path_leak_hits": [],
+  "path_leak_scan_passed": true,
+  "secret_like_hits": [],
+  "secret_like_scan_passed": true
+}

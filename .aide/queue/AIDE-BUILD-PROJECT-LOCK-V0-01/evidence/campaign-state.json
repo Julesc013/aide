@@ -1,0 +1,13 @@
+{
+  "schema_version": "aide.campaign_state.v0",
+  "campaign": "distribution-update-protocol-v1-wave",
+  "current_task": "AIDE-BUILD-PROJECT-LOCK-V0-01",
+  "predecessor": "AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01",
+  "current_result": "PASS_WITH_WARNINGS",
+  "next_task": "AIDE-CHECK-PROJECT-LOCK-V0-01",
+  "downstream_blocked_until": [
+    "AIDE-CHECK-PROJECT-LOCK-V0-01",
+    "AIDE-ACCEPT-PROJECT-LOCK-V0-01"
+  ],
+  "ownership_ledger_started": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "aide.stop_conditions.v0",
+  "task_id": "AIDE-BUILD-PROJECT-LOCK-V0-01",
+  "stop_at": "needs_review",
+  "stop_if": [
+    "validation failure",
+    "dirty unrelated worktree",
+    "missing evidence",
+    "material finding count nonzero",
+    "scope violation",
+    "request to start OwnershipLedger before check and acceptance",
+    "apply/publication/target mutation required"
+  ]
+}

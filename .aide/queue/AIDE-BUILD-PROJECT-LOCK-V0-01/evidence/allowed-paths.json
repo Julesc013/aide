@@ -1,0 +1,27 @@
+{
+  "schema_version": "aide.allowed_paths.v0",
+  "task_id": "AIDE-BUILD-PROJECT-LOCK-V0-01",
+  "allowed_paths": [
+    ".aide/protocol/aide-project-lock-v0.schema.json",
+    "core/protocol/project_lock.py",
+    ".aide/scripts/aide_lite.py",
+    ".aide/scripts/tests/test_aide_project_lock_v0.py",
+    ".aide/fixtures/project-lock-v0/**",
+    ".aide/reports/project-lock-v0/**",
+    ".aide/queue/AIDE-BUILD-PROJECT-LOCK-V0-01/**",
+    ".aide/queue/index.yaml",
+    "PLANS.md",
+    "IMPLEMENT.md"
+  ],
+  "forbidden_paths": [
+    "ProjectLock acceptance task",
+    "OwnershipLedger files",
+    "InstallRecord files",
+    "Q43-Q48 implementation",
+    "release archive artifacts",
+    "target repositories",
+    ".aide.local/**",
+    "Workbench/MCP/runtime surfaces",
+    "provider/model/worker surfaces"
+  ]
+}

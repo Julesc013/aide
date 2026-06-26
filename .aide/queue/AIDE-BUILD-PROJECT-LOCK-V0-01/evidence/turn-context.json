@@ -1,0 +1,29 @@
+{
+  "schema_version": "aide.self_hosted_turn_context.v0",
+  "task_id": "AIDE-BUILD-PROJECT-LOCK-V0-01",
+  "phase": "build",
+  "generated_at_classification": "fixture-timestamp:project-lock-v0-build",
+  "objective": "Build ProjectLock v0 as a target-owned exact selection of one accepted DistributionManifest and selected components.",
+  "source_acceptance_task": "AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01",
+  "source_capability": "distribution_manifest_v1",
+  "proposed_capability": "project_lock_v0",
+  "stop_gate": "needs_review",
+  "next_task": "AIDE-CHECK-PROJECT-LOCK-V0-01",
+  "non_capabilities": [
+    "install apply",
+    "update apply",
+    "repair apply",
+    "rollback apply",
+    "uninstall apply",
+    "install truth",
+    "install plan",
+    "admission",
+    "authorization",
+    "target repository mutation",
+    "release publication",
+    "network",
+    "provider/model calls",
+    "Workbench/MCP runtime",
+    "OwnershipLedger"
+  ]
+}

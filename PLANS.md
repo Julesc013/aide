@@ -2801,3 +2801,15 @@
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `distribution_manifest_v1`, and recommends exactly `AIDE-BUILD-PROJECT-LOCK-V0-01`.
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Notes: ProjectLock v0 is now the next serialized task, but it has not been started in the acceptance task.
+
+### Queue ID: AIDE-BUILD-PROJECT-LOCK-V0-01
+
+- Title: Build ProjectLock v0
+- Status: Needs Review
+- Objective: build `ProjectLock v0` as the target-owned exact selection of one accepted DistributionManifest and selected components.
+- Scope: `.aide/protocol/aide-project-lock-v0.schema.json`, `core/protocol/project_lock.py`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_project_lock_v0.py`, `.aide/fixtures/project-lock-v0/**`, `.aide/reports/project-lock-v0/**`, `.aide/queue/AIDE-BUILD-PROJECT-LOCK-V0-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted `distribution_manifest_v1`.
+- Verification Intent: focused ProjectLock tests, `project-lock status/project/validate`, DistributionManifest regression tests and validate, Q43-Q48 no-apply/no-publish validators, task inspect/evidence, broad validation, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `project_lock_v0`, and recommends exactly `AIDE-CHECK-PROJECT-LOCK-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: ProjectLock v0 does not implement install truth, install/update apply, admission, authorization, target mutation, release publication, network/provider calls, runtime, or OwnershipLedger v1.

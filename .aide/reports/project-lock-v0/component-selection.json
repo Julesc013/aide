@@ -1,0 +1,37 @@
+{
+  "omitted_optional_components": [],
+  "schema_version": "aide.project-lock-component-selection.v0",
+  "selected_components": [
+    {
+      "compatibility_constraints": {
+        "min_reader_version": "1.0.0",
+        "min_writer_version": "1.0.0"
+      },
+      "component_id": "aide-lite-pack-v0",
+      "component_ref": "aide://distribution/component/aide-lite-pack-v0",
+      "dependencies": [],
+      "extensions": {},
+      "protocol_requirements": [
+        "distribution_manifest_v1",
+        "portable_release_bundle_v0"
+      ],
+      "required": true,
+      "selected_artifact_refs": [
+        "aide://distribution/artifact/CHANGELOG.preview.md",
+        "aide://distribution/artifact/RELEASE_NOTES.preview.md",
+        "aide://distribution/artifact/SHA256SUMS.txt",
+        "aide://distribution/artifact/aide-lite-pack-v0-directory",
+        "aide://distribution/artifact/aide-lite-pack-v0.checksums.json",
+        "aide://distribution/artifact/aide-lite-pack-v0.tar.gz",
+        "aide://distribution/artifact/aide-lite-pack-v0.zip",
+        "aide://distribution/artifact/install.md",
+        "aide://distribution/artifact/manifest.yaml",
+        "aide://distribution/artifact/release-provenance.json",
+        "aide://distribution/artifact/release-validation.json",
+        "aide://distribution/artifact/release-validation.md"
+      ],
+      "selected_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+      "source_distribution_ref": "aide://distribution/aide-lite-pack-v0"
+    }
+  ]
+}

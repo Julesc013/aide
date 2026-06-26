@@ -1,0 +1,6 @@
+{
+  "required_component_closure": [
+    "aide://distribution/component/aide-lite-pack-v0"
+  ],
+  "schema_version": "aide.project-lock-dependency-closure.v0"
+}

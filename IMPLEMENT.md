@@ -9448,3 +9448,39 @@ JSON parsing, path and secret scans, diff checks, and commit-policy check.
 ProjectLock v0 was not started in this acceptance task. The next serialized
 task is `AIDE-BUILD-PROJECT-LOCK-V0-01`.
 source-change preview/apply/rollback, and promotion remain blocked.
+
+## Work Item: AIDE-BUILD-PROJECT-LOCK-V0-01
+
+### Summary
+
+Built the proposed `project_lock_v0` protocol slice.
+
+### Implementation Notes
+
+- Added a Draft 2020-12 ProjectLock schema with explicit extension maps.
+- Added `core/protocol/project_lock.py` for deterministic lock projection,
+  digesting, fixture generation, validation, reports, and non-capability
+  boundaries.
+- Added `project-lock status`, `project-lock project`, and `project-lock
+  validate` AIDE Lite commands.
+- Added focused ProjectLock tests and a valid/invalid fixture corpus covering
+  digest binding, accepted DistributionManifest binding, component selection,
+  optional component explicitness, dependency closure, channel versus digest
+  authority, overlay/path/secret/source-state refusals, unknown required
+  features, and extension round-trip.
+
+### Verification
+
+Validation receipts record focused ProjectLock tests, ProjectLock
+status/project/validate, DistributionManifest regression validation, Q43-Q48
+no-apply/no-publish validators, task inspect/evidence, broad
+`aide_lite.py validate`, JSON parsing, path and secret scans, diff checks, and
+commit-policy check.
+
+### Remaining Issues
+
+ProjectLock v0 remains proposed until independent check and acceptance. It does
+not implement install truth, install/update apply, admission, authorization,
+target mutation, release publication, network/provider calls, runtime, or
+OwnershipLedger v1. The next serialized task is
+`AIDE-CHECK-PROJECT-LOCK-V0-01`.

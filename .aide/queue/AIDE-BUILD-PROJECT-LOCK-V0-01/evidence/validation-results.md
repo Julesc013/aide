@@ -1,0 +1,37 @@
+# Validation Results
+
+- `git status --short --branch`: 0 (0.121s)
+- `py -3 -c import json; json.load(open(r".aide/protocol/aide-project-lock-v0.schema.json", encoding="utf-8")); print("schema-ok")`: 0 (0.239s)
+- `py -3 -m py_compile core/protocol/project_lock.py .aide/scripts/aide_lite.py`: 0 (10.475s)
+- `py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_project_lock_v0.py`: 0 (20.127s)
+- `py -3 .aide/scripts/aide_lite.py project-lock status`: 0 (1.033s)
+- `py -3 .aide/scripts/aide_lite.py project-lock project`: 0 (1.136s)
+- `py -3 .aide/scripts/aide_lite.py project-lock validate`: 0 (1.226s)
+- `py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_distribution_manifest_v1.py`: 0 (39.845s)
+- `py -3 .aide/scripts/aide_lite.py distribution-manifest validate`: 0 (3.776s)
+- `py -3 .aide/scripts/aide_lite.py install status`: 0 (0.998s)
+- `py -3 .aide/scripts/aide_lite.py install validate`: 0 (1.371s)
+- `py -3 .aide/scripts/aide_lite.py repair status`: 0 (0.947s)
+- `py -3 .aide/scripts/aide_lite.py repair validate`: 0 (1.019s)
+- `py -3 .aide/scripts/aide_lite.py upgrade status`: 0 (0.994s)
+- `py -3 .aide/scripts/aide_lite.py upgrade validate`: 0 (1.241s)
+- `py -3 .aide/scripts/aide_lite.py upgrade compatibility`: 0 (0.936s)
+- `py -3 .aide/scripts/aide_lite.py rollback status`: 0 (0.983s)
+- `py -3 .aide/scripts/aide_lite.py rollback validate`: 0 (0.993s)
+- `py -3 .aide/scripts/aide_lite.py uninstall status`: 0 (0.976s)
+- `py -3 .aide/scripts/aide_lite.py uninstall validate`: 0 (1.339s)
+- `py -3 .aide/scripts/aide_lite.py release status`: 0 (0.933s)
+- `py -3 .aide/scripts/aide_lite.py release validate`: 0 (6.708s)
+- `py -3 .aide/scripts/aide_lite.py release draft-status`: 0 (1.013s)
+- `py -3 .aide/scripts/aide_lite.py release draft-validate`: 0 (0.976s)
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-PROJECT-LOCK-V0-01`: 0 (0.981s)
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-PROJECT-LOCK-V0-01`: 0 (0.938s)
+- `py -3 .aide/scripts/aide_lite.py validate`: 0 (10.329s)
+- `git diff --check`: 0 (0.174s)
+- `git diff --cached --check`: 0 (0.062s)
+
+- all_commands_passed: true
+- json_parse_passed: true
+- path_leak_scan_passed: true
+- secret_like_scan_passed: true
+- runner: powershell_direct_invocation_shell_false

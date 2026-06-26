@@ -1,0 +1,22 @@
+{
+  "schema_version": "aide.validation_plan.v0",
+  "task_id": "AIDE-BUILD-PROJECT-LOCK-V0-01",
+  "commands": [
+    "schema JSON parse",
+    "py_compile / compileall",
+    "focused ProjectLock tests",
+    "project-lock status",
+    "project-lock project",
+    "project-lock validate",
+    "DistributionManifest tests and validate",
+    "Q43-Q48 no-apply/no-publish validators",
+    "task inspect/evidence",
+    "broad aide_lite.py validate",
+    "JSON parsing",
+    "path/secret scans",
+    "git diff --check",
+    "git diff --cached --check",
+    "commit check --latest"
+  ],
+  "pass_condition": "all required commands pass with missing_evidence 0"
+}

@@ -1,0 +1,56 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-PROJECT-LOCK-V0-01
+title: Build ProjectLock v0
+type: build
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+proposed_capability: project_lock_v0
+material_finding_count: 0
+missing_evidence: 0
+depends_on:
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+recommended_next_task: AIDE-CHECK-PROJECT-LOCK-V0-01
+scope:
+  allowed_paths:
+    - .aide/protocol/aide-project-lock-v0.schema.json
+    - core/protocol/project_lock.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_project_lock_v0.py
+    - .aide/fixtures/project-lock-v0/**
+    - .aide/reports/project-lock-v0/**
+    - .aide/queue/AIDE-BUILD-PROJECT-LOCK-V0-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .aide/local/**
+    - .aide.local/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+    - release archive artifacts
+non_capabilities:
+  - install apply
+  - update apply
+  - repair apply
+  - rollback apply
+  - uninstall apply
+  - install truth
+  - install plan
+  - admission
+  - authorization
+  - target repository mutation
+  - release publication
+  - Git tag
+  - GitHub Release
+  - upload
+  - network call
+  - provider/model call
+  - Workbench/MCP runtime
+  - OwnershipLedger
+notes:
+  - Build task only; stop at needs_review.
+  - ProjectLock v0 selects an accepted DistributionManifest by digest and component selection.
+  - Downstream check and acceptance remain required before OwnershipLedger work.

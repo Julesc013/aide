@@ -7888,6 +7888,22 @@ def load_distribution_manifest_module(repo_root: Path):
     return module
 
 
+def load_project_lock_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/project_lock.py"
+    if not module_path.exists():
+        raise ValueError("ProjectLock module missing: core/protocol/project_lock.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_project_lock", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ProjectLock module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_conformance_profile_module(repo_root: Path):
     module_path = repo_root / "core/protocol/conformance_profile.py"
     if not module_path.exists():
@@ -34367,6 +34383,112 @@ def command_distribution_manifest_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_project_lock_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'project_lock_v0')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"admission_implemented: {str(data.get('admission_implemented', False)).lower()}")
+    print(f"authorization_implemented: {str(data.get('authorization_implemented', False)).lower()}")
+    print("install_truth_implemented: false")
+    print("install_plan_implemented: false")
+    print("release_publication_implemented: false")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("mcp_runtime_implemented: false")
+    print("promotion_implemented: false")
+
+
+def command_project_lock_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_project_lock_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite project-lock status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_project_lock_boundary_lines({})
+        return 1
+    print("AIDE Lite project-lock status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"distribution_manifest_report_exists: {str(data.get('distribution_manifest_report_exists', False)).lower()}")
+    print(f"distribution_acceptance_report_exists: {str(data.get('distribution_acceptance_report_exists', False)).lower()}")
+    print(f"project_lock_report_exists: {str(data.get('project_lock_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_project_lock_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_project_lock_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_project_lock_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite project-lock project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_project_lock_boundary_lines({})
+        return 1
+    print("AIDE Lite project-lock project")
+    print(f"result: {report.get('status')}")
+    print(f"project_lock_path: {report.get('project_lock_path')}")
+    print(f"selected_component_count: {report.get('selected_component_count')}")
+    print(f"selected_distribution_digest: {report.get('selected_distribution_digest')}")
+    print(f"manifest_payload_digest: {report.get('manifest_payload_digest')}")
+    print(f"project_lock_digest: {report.get('project_lock_digest')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_project_lock_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_project_lock_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_project_lock_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite project-lock validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_project_lock_boundary_lines({})
+        return 1
+    print("AIDE Lite project-lock validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "lock_generated",
+        "lock_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "distribution_manifest_accepted",
+        "selected_distribution_digest_bound",
+        "manifest_payload_digest_bound",
+        "component_selection_complete",
+        "channel_informational",
+        "install_apply_not_implemented",
+        "update_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "admission_not_implemented",
+        "authorization_not_implemented",
+        "absolute_local_paths_suppressed",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_project_lock_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
     print("profile_only: true")
     print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
@@ -39405,6 +39527,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     distribution_manifest_subparsers.add_parser("status").set_defaults(handler=command_distribution_manifest_status)
     distribution_manifest_subparsers.add_parser("project").set_defaults(handler=command_distribution_manifest_project)
     distribution_manifest_subparsers.add_parser("validate").set_defaults(handler=command_distribution_manifest_validate)
+
+    project_lock_parser = subparsers.add_parser("project-lock")
+    project_lock_parser.set_defaults(handler=command_project_lock_status)
+    project_lock_subparsers = project_lock_parser.add_subparsers(dest="project_lock_command", required=False)
+    project_lock_subparsers.add_parser("status").set_defaults(handler=command_project_lock_status)
+    project_lock_subparsers.add_parser("project").set_defaults(handler=command_project_lock_project)
+    project_lock_subparsers.add_parser("validate").set_defaults(handler=command_project_lock_validate)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)
