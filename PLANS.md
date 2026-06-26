@@ -2897,3 +2897,15 @@
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `ownership_ledger_v1`, and recommends exactly `AIDE-BUILD-INSTALL-RECORD-V0-01`.
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Notes: OwnershipLedger v1 is accepted only as target ownership classification and preservation metadata. InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt, DistributionApplyEngine, canaries, release publication, target mutation, target scan authority, runtime, provider/model calls, Workbench, Commander, preview/apply/rollback, and promotion remain blocked.
+
+### Queue ID: AIDE-DISTRIBUTION-SAFETY-WAVE-01
+
+- Title: Plan Distribution Safety Wave 01
+- Status: Needs Review
+- Objective: create the serialized distribution-safety wave plan after accepted DistributionManifest v1, ProjectLock v0, and OwnershipLedger v1.
+- Scope: `.aide/queue/AIDE-DISTRIBUTION-SAFETY-WAVE-01/**`, `.aide/reports/distribution-safety-wave-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01`, `AIDE-ACCEPT-PROJECT-LOCK-V0-01`, and `AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01`.
+- Verification Intent: JSON/YAML parse, task inspect/evidence, broad AIDE validation, generated-artifact path and secret-like scans, source-output misuse scan, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `missing_evidence: 0`, and recommends exactly `AIDE-BUILD-INSTALL-RECORD-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: This is a wave-control task only. InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt, DistributionApplyEngine, self-consumer fixture, project canaries, archive canary, public readiness, target mutation, release publication, provider/model/network calls, runtime, Workbench, Commander, Omnigent, and branch/worktree automation remain future queue work.

@@ -1,0 +1,87 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DISTRIBUTION-SAFETY-WAVE-01
+title: Plan Distribution Safety Wave 01
+type: wave-control
+status: needs_review
+planning_state: wave_plan_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-INSTALL-RECORD-V0-01
+depends_on:
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-DISTRIBUTION-SAFETY-WAVE-01/**
+    - .aide/reports/distribution-safety-wave-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .aide/protocol/**
+    - core/protocol/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/fixtures/**
+    - .aide/release/dist/**
+    - .aide.local/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+authority:
+  planning_and_queue_materialization_only: true
+  implementation_authorized: false
+  remote_mutation_authorized: false
+  provider_model_network_calls_authorized: false
+  release_publication_authorized: false
+  target_repo_mutation_authorized: false
+wave:
+  mission: Build the serialized distribution-safety substrate for safe install, update, rollback, uninstall, and public canary readiness planning.
+  current_foundation:
+    - distribution_manifest_v1
+    - project_lock_v0
+    - ownership_ledger_v1
+  first_next_task: AIDE-BUILD-INSTALL-RECORD-V0-01
+evidence:
+  required:
+    - live-truth-review.md
+    - scope-authority.md
+    - dependency-review.md
+    - wave-task-graph.md
+    - validation-commands.md
+    - validation-results.md
+    - validation.md
+    - safety-scans.md
+    - changed-files.md
+    - remaining-risks.md
+    - blockers-deferrals.md
+    - next-task-routing.md
+non_capabilities:
+  - install apply to real targets
+  - update apply to real targets
+  - migration apply to real targets
+  - rollback apply to real targets
+  - uninstall apply to real targets
+  - target repository mutation
+  - ScreenSave mutation
+  - Eureka mutation
+  - Dominium mutation
+  - release archive creation
+  - Git tag
+  - GitHub Release
+  - upload
+  - public release
+  - provider/model/network calls
+  - Omnigent
+  - Workbench runtime
+  - Commander
+  - live A2A delegation
+  - branch/worktree automation
+  - InstallRecord implementation
+notes:
+  - This wave-control task does not implement InstallRecord or downstream protocol objects.
+  - The wave is serialized through build/check/accept gates with repair routing.
+  - The next concrete task prompt is materialized for AIDE-BUILD-INSTALL-RECORD-V0-01.

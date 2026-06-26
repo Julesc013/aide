@@ -9732,3 +9732,40 @@ post-commit commit-policy check as the final gate for the completed commit.
 
 InstallRecord v0 has not been started. The next serialized task is
 `AIDE-BUILD-INSTALL-RECORD-V0-01`.
+
+## Work Item: AIDE-DISTRIBUTION-SAFETY-WAVE-01
+
+### Summary
+
+Materialized the Distribution Safety Wave controller and stopped before
+InstallRecord implementation.
+
+### Implementation Notes
+
+- Added the wave-control queue task, status, ExecPlan, prompt, and task-local
+  evidence.
+- Added distribution-safety wave reports covering the dependency map, object
+  responsibility map, no-apply/no-publish boundary, validation matrix,
+  repair-routing matrix, stop-condition matrix, canary ordering rationale, wave
+  summary, and next-task prompt.
+- Confirmed live repo truth shows `main` and `origin/main` both at the accepted
+  OwnershipLedger commit, so the wave can start from accepted local and origin
+  truth.
+- Preserved the wave as planning and queue materialization only. InstallRecord,
+  MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt,
+  DistributionApplyEngine, self-consumer fixture, ScreenSave/Eureka/Dominium
+  canaries, local canary archive, public readiness, target mutation, release
+  publication, provider/model/network calls, runtime, Workbench, Commander,
+  Omnigent, and branch/worktree automation were not started.
+
+### Verification
+
+Validation receipts record generated JSON/YAML parsing, task inspect/evidence,
+broad `aide_lite.py validate`, generated-report and evidence scans for local
+paths, secret-like material, and source-output misuse, diff checks, and
+post-commit commit-policy check.
+
+### Remaining Issues
+
+The wave controller stops at `needs_review`. The next serialized task is
+`AIDE-BUILD-INSTALL-RECORD-V0-01`.

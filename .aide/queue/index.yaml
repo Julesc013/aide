@@ -2609,3 +2609,13 @@ items:
   prompt: .aide/queue/AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01/prompt.md
   evidence: .aide/queue/AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01/evidence
   description: Acceptance-only task for ownership_ledger_v1 after the build/check/repair/repair-check chain closed with zero material findings and zero missing evidence. Accepts only OwnershipLedger v1 as target ownership classification and preservation metadata over accepted DistributionManifest v1 and ProjectLock v0, including ownership classes, file-entry and managed-section contracts, Q43 projection-only migration, conflict/refusal model, fixture coverage, warnings, explicit non-capabilities, and downstream-use constraints. Stops at needs_review with ACCEPTED_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-BUILD-INSTALL-RECORD-V0-01. Does not modify implementation, begin InstallRecord/MigrationRecord/UpdatePlan/RollbackBundle/UpdateReceipt/DistributionApplyEngine, mutate targets, scan targets, publish releases, create tags, upload artifacts, call network/provider/model services, start Workbench/Commander/runtime work, implement source-change preview/apply/rollback, or promote.
+- id: AIDE-DISTRIBUTION-SAFETY-WAVE-01
+  status: needs_review
+  planning_state: wave_plan_completed
+  result: PASS_WITH_WARNINGS
+  title: Plan Distribution Safety Wave 01
+  task: .aide/queue/AIDE-DISTRIBUTION-SAFETY-WAVE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-DISTRIBUTION-SAFETY-WAVE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-DISTRIBUTION-SAFETY-WAVE-01/prompt.md
+  evidence: .aide/queue/AIDE-DISTRIBUTION-SAFETY-WAVE-01/evidence
+  description: Wave-control planning task that serializes the distribution safety path after accepted DistributionManifest v1, ProjectLock v0, and OwnershipLedger v1. Produces the dependency map, object responsibility map, no-apply/no-publish boundary, validation matrix, repair-routing matrix, stop-condition matrix, canary rationale, and next concrete prompt for AIDE-BUILD-INSTALL-RECORD-V0-01. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and does not implement InstallRecord or downstream protocol objects, apply behavior, target mutation, release archives, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, or project canaries.
