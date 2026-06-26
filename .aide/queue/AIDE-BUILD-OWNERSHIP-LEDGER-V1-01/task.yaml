@@ -1,0 +1,55 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+title: Build OwnershipLedger v1
+type: build
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+proposed_capability: ownership_ledger_v1
+material_finding_count: 0
+missing_evidence: 0
+depends_on:
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+recommended_next_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+scope:
+  allowed_paths:
+    - .aide/protocol/aide-ownership-ledger-v1.schema.json
+    - core/protocol/ownership_ledger.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_ownership_ledger_v1.py
+    - .aide/fixtures/ownership-ledger-v1/**
+    - .aide/reports/ownership-ledger-v1/**
+    - .aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - release archive artifacts
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+non_capabilities:
+  - install truth
+  - install plan
+  - install apply
+  - update apply
+  - repair apply
+  - rollback apply
+  - uninstall apply
+  - admission
+  - authorization
+  - target repository mutation
+  - release publication
+  - Git tag
+  - GitHub Release
+  - upload
+  - network call
+  - provider/model call
+  - Workbench/MCP runtime
+  - InstallRecord
+  - UpdatePlan
+notes:
+  - Build task only; stop at needs_review.
+  - OwnershipLedger v1 binds accepted ProjectLock v0 and records ownership taxonomy, path records, and no-apply boundaries.
+  - Downstream check and acceptance remain required before InstallRecord or UpdatePlan work.

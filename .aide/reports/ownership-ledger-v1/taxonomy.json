@@ -1,0 +1,114 @@
+{
+  "taxonomy": [
+    {
+      "authority": "aide_distribution",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": false,
+      "class_id": "vendor_managed_file",
+      "delete_allowed": false,
+      "description": "AIDE-distributed file with exact source digest authority.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "aide_distribution",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": false,
+      "class_id": "vendor_managed_section",
+      "delete_allowed": false,
+      "description": "AIDE-distributed managed section inside a host file.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "target_project",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": true,
+      "class_id": "project_owned",
+      "delete_allowed": false,
+      "description": "Target project file that AIDE must not overwrite silently.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "target_project",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": false,
+      "class_id": "project_overlay",
+      "delete_allowed": false,
+      "description": "Target-owned overlay that configures an AIDE distribution.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "target_project",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": false,
+      "class_id": "project_generated",
+      "delete_allowed": false,
+      "description": "Target-local generated projection that is recreated in target context.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "target_project",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": false,
+      "class_id": "runtime_generated",
+      "delete_allowed": false,
+      "description": "Runtime/local generated state outside committed distribution truth.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "target_project",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": true,
+      "class_id": "local_only",
+      "delete_allowed": false,
+      "description": "Local operator state that is never distribution truth.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "target_project",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": false,
+      "class_id": "evidence_only",
+      "delete_allowed": false,
+      "description": "Evidence records preserved for audit, not source distribution content.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "target_project",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": false,
+      "class_id": "preserved_legacy",
+      "delete_allowed": false,
+      "description": "Legacy or pre-existing target state preserved unless manually migrated.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "target_project",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": true,
+      "class_id": "unknown",
+      "delete_allowed": false,
+      "description": "Observed path without sufficient ownership proof; blocks automatic apply.",
+      "extensions": {},
+      "overwrite_allowed": false
+    },
+    {
+      "authority": "target_project",
+      "automatic_apply_allowed": false,
+      "blocks_automatic_apply": true,
+      "class_id": "never_touch",
+      "delete_allowed": false,
+      "description": "Path class that AIDE distribution apply must never modify.",
+      "extensions": {},
+      "overwrite_allowed": false
+    }
+  ]
+}

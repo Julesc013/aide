@@ -1,0 +1,7 @@
+{
+  "current_gate": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-01",
+  "previous_gate": "AIDE-ACCEPT-PROJECT-LOCK-V0-01",
+  "next_gate": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-01",
+  "status": "needs_review",
+  "result": "PASS_WITH_WARNINGS"
+}

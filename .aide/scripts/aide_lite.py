@@ -7904,6 +7904,22 @@ def load_project_lock_module(repo_root: Path):
     return module
 
 
+def load_ownership_ledger_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/ownership_ledger.py"
+    if not module_path.exists():
+        raise ValueError("OwnershipLedger module missing: core/protocol/ownership_ledger.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_ownership_ledger", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("OwnershipLedger module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_conformance_profile_module(repo_root: Path):
     module_path = repo_root / "core/protocol/conformance_profile.py"
     if not module_path.exists():
@@ -34489,6 +34505,110 @@ def command_project_lock_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_ownership_ledger_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'ownership_ledger_v1')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"admission_implemented: {str(data.get('admission_implemented', False)).lower()}")
+    print(f"authorization_implemented: {str(data.get('authorization_implemented', False)).lower()}")
+    print("install_truth_implemented: false")
+    print("install_plan_implemented: false")
+    print("release_publication_implemented: false")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("mcp_runtime_implemented: false")
+    print("promotion_implemented: false")
+
+
+def command_ownership_ledger_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_ownership_ledger_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite ownership-ledger status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_ownership_ledger_boundary_lines({})
+        return 1
+    print("AIDE Lite ownership-ledger status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"project_lock_report_exists: {str(data.get('project_lock_report_exists', False)).lower()}")
+    print(f"project_lock_acceptance_report_exists: {str(data.get('project_lock_acceptance_report_exists', False)).lower()}")
+    print(f"ownership_ledger_report_exists: {str(data.get('ownership_ledger_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_ownership_ledger_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_ownership_ledger_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_ownership_ledger_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite ownership-ledger project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_ownership_ledger_boundary_lines({})
+        return 1
+    print("AIDE Lite ownership-ledger project")
+    print(f"result: {report.get('status')}")
+    print(f"ledger_path: {report.get('ledger_path')}")
+    print(f"record_count: {report.get('record_count')}")
+    print(f"taxonomy_count: {report.get('taxonomy_count')}")
+    print(f"project_lock_digest: {report.get('project_lock_digest')}")
+    print(f"ownership_ledger_digest: {report.get('ownership_ledger_digest')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_ownership_ledger_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_ownership_ledger_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_ownership_ledger_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite ownership-ledger validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_ownership_ledger_boundary_lines({})
+        return 1
+    print("AIDE Lite ownership-ledger validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "ledger_generated",
+        "ledger_valid",
+        "fixture_matrix_passed",
+        "project_lock_accepted",
+        "project_lock_digest_bound",
+        "taxonomy_complete",
+        "unknown_blocks_apply",
+        "never_touch_blocks_apply",
+        "install_apply_not_implemented",
+        "update_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "admission_not_implemented",
+        "authorization_not_implemented",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_ownership_ledger_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
     print("profile_only: true")
     print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
@@ -39534,6 +39654,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     project_lock_subparsers.add_parser("status").set_defaults(handler=command_project_lock_status)
     project_lock_subparsers.add_parser("project").set_defaults(handler=command_project_lock_project)
     project_lock_subparsers.add_parser("validate").set_defaults(handler=command_project_lock_validate)
+
+    ownership_ledger_parser = subparsers.add_parser("ownership-ledger")
+    ownership_ledger_parser.set_defaults(handler=command_ownership_ledger_status)
+    ownership_ledger_subparsers = ownership_ledger_parser.add_subparsers(dest="ownership_ledger_command", required=False)
+    ownership_ledger_subparsers.add_parser("status").set_defaults(handler=command_ownership_ledger_status)
+    ownership_ledger_subparsers.add_parser("project").set_defaults(handler=command_ownership_ledger_project)
+    ownership_ledger_subparsers.add_parser("validate").set_defaults(handler=command_ownership_ledger_validate)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)

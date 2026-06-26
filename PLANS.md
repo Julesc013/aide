@@ -2837,3 +2837,15 @@
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `project_lock_v0`, and recommends exactly `AIDE-BUILD-OWNERSHIP-LEDGER-V1-01`.
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Notes: OwnershipLedger v1 is now the next serialized build task. Install truth, apply behavior, admission, authorization, target mutation, release publication, runtime, and downstream distribution objects remain blocked.
+
+### Queue ID: AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+
+- Title: Build OwnershipLedger v1
+- Status: Needs Review
+- Objective: build proposed `ownership_ledger_v1` after accepted ProjectLock v0.
+- Scope: `.aide/protocol/aide-ownership-ledger-v1.schema.json`, `core/protocol/ownership_ledger.py`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_ownership_ledger_v1.py`, `.aide/fixtures/ownership-ledger-v1/**`, `.aide/reports/ownership-ledger-v1/**`, `.aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted `project_lock_v0`.
+- Verification Intent: focused OwnershipLedger tests, OwnershipLedger status/project/validate, ProjectLock regression validation, broad validation, task inspect/evidence, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `ownership_ledger_v1`, and recommends exactly `AIDE-CHECK-OWNERSHIP-LEDGER-V1-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: OwnershipLedger v1 records ownership taxonomy and no-apply authority only. Install truth, install/update apply, admission, authorization, target mutation, release publication, runtime, InstallRecord, and UpdatePlan remain blocked.

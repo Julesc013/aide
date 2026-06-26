@@ -1,0 +1,36 @@
+{
+  "matrix": [
+    {
+      "id": "ownership.accepted_project_lock_binding",
+      "required_behavior": "Ledger binds accepted ProjectLock digest.",
+      "implementation_location": "core/protocol/ownership_ledger.py",
+      "positive_test": "test_build_binds_accepted_project_lock",
+      "negative_test": "project-lock-digest-mismatch",
+      "completion_state": "closed_pending_check"
+    },
+    {
+      "id": "ownership.taxonomy_complete",
+      "required_behavior": "All eleven ownership classes are present.",
+      "implementation_location": "core/protocol/ownership_ledger.py",
+      "positive_test": "test_taxonomy_contains_exact_required_classes",
+      "negative_test": "missing-taxonomy-class",
+      "completion_state": "closed_pending_check"
+    },
+    {
+      "id": "ownership.no_apply_boundary",
+      "required_behavior": "Unknown and never_touch records block automatic apply; all records are no-apply.",
+      "implementation_location": "core/protocol/ownership_ledger.py",
+      "positive_test": "test_validation_rejects_material_ownership_defects",
+      "negative_test": "unknown-allows-apply, never-touch-allows-apply",
+      "completion_state": "closed_pending_check"
+    },
+    {
+      "id": "ownership.path_safety",
+      "required_behavior": "Absolute, traversal, and source latest paths fail validation.",
+      "implementation_location": "core/protocol/ownership_ledger.py",
+      "positive_test": "test_validation_rejects_material_ownership_defects",
+      "negative_test": "absolute-path, traversal-path, source-latest-path",
+      "completion_state": "closed_pending_check"
+    }
+  ]
+}

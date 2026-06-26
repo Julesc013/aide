@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aide.dev/schemas/aide-ownership-ledger-v1.schema.json",
+  "title": "AIDE OwnershipLedger v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["apiVersion", "kind", "schema_version", "metadata", "spec", "status", "extensions"],
+  "properties": {
+    "apiVersion": {"type": "string", "const": "aide.dev/v1alpha1"},
+    "kind": {"type": "string", "const": "OwnershipLedger"},
+    "schema_version": {"type": "string", "const": "aide.ownership-ledger.v1"},
+    "metadata": {"$ref": "#/$defs/metadata"},
+    "spec": {"$ref": "#/$defs/spec"},
+    "status": {"$ref": "#/$defs/status"},
+    "extensions": {"$ref": "#/$defs/extensions"}
+  },
+  "$defs": {
+    "extensions": {"type": "object", "additionalProperties": true},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "ref": {"type": "string", "pattern": "^aide://[A-Za-z0-9_./:-]+$"},
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ledger_ref", "project_ref", "project_identity", "project_lock_ref", "project_lock_digest", "selected_distribution_digest", "manifest_payload_digest", "ownership_profile", "ledger_revision", "created_from", "created_at_classification", "extensions"],
+      "properties": {
+        "ledger_ref": {"$ref": "#/$defs/ref"},
+        "project_ref": {"$ref": "#/$defs/ref"},
+        "project_identity": {"type": "string", "minLength": 1},
+        "project_lock_ref": {"$ref": "#/$defs/ref"},
+        "project_lock_digest": {"$ref": "#/$defs/digest"},
+        "selected_distribution_digest": {"$ref": "#/$defs/digest"},
+        "manifest_payload_digest": {"$ref": "#/$defs/digest"},
+        "ownership_profile": {"type": "string", "minLength": 1},
+        "ledger_revision": {"type": "string", "minLength": 1},
+        "created_from": {"type": "string", "minLength": 1},
+        "created_at_classification": {"type": "string", "minLength": 1},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_features", "optional_features", "taxonomy", "records", "unknown_ownership_policy", "managed_section_policy", "explicit_non_capabilities", "extensions"],
+      "properties": {
+        "required_features": {"type": "array", "items": {"type": "string"}},
+        "optional_features": {"type": "array", "items": {"type": "string"}},
+        "taxonomy": {"type": "array", "items": {"$ref": "#/$defs/taxonomy_entry"}},
+        "records": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+        "unknown_ownership_policy": {"type": "object", "additionalProperties": false, "required": ["blocks_automatic_apply", "requires_manual_review", "extensions"], "properties": {"blocks_automatic_apply": {"type": "boolean", "const": true}, "requires_manual_review": {"type": "boolean", "const": true}, "extensions": {"$ref": "#/$defs/extensions"}}},
+        "managed_section_policy": {"type": "object", "additionalProperties": false, "required": ["requires_exact_section_identity", "manual_outside_only", "extensions"], "properties": {"requires_exact_section_identity": {"type": "boolean", "const": true}, "manual_outside_only": {"type": "boolean", "const": true}, "extensions": {"$ref": "#/$defs/extensions"}}},
+        "explicit_non_capabilities": {"type": "array", "items": {"type": "string"}},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "taxonomy_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["class_id", "authority", "automatic_apply_allowed", "overwrite_allowed", "delete_allowed", "blocks_automatic_apply", "description", "extensions"],
+      "properties": {
+        "class_id": {"type": "string"},
+        "authority": {"type": "string", "minLength": 1},
+        "automatic_apply_allowed": {"type": "boolean", "const": false},
+        "overwrite_allowed": {"type": "boolean", "const": false},
+        "delete_allowed": {"type": "boolean", "const": false},
+        "blocks_automatic_apply": {"type": "boolean"},
+        "description": {"type": "string", "minLength": 1},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_id", "ownership_class", "path_kind", "target_path", "section_id", "source_ref", "content_digest", "managed_section_identity", "authority", "mutation_policy", "apply_allowed", "overwrite_allowed", "delete_allowed", "evidence_refs", "extensions"],
+      "properties": {
+        "record_id": {"type": "string", "minLength": 1},
+        "ownership_class": {"type": "string"},
+        "path_kind": {"type": "string", "enum": ["file", "managed_section", "glob", "directory", "artifact_ref"]},
+        "target_path": {"type": "string", "minLength": 1},
+        "section_id": {"type": ["string", "null"]},
+        "source_ref": {"type": ["string", "null"]},
+        "content_digest": {"anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]},
+        "managed_section_identity": {"type": ["string", "null"]},
+        "authority": {"type": "string", "minLength": 1},
+        "mutation_policy": {"type": "string", "const": "no_apply_metadata_only"},
+        "apply_allowed": {"type": "boolean", "const": false},
+        "overwrite_allowed": {"type": "boolean", "const": false},
+        "delete_allowed": {"type": "boolean", "const": false},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "validation_result", "proposed_capability", "recommended_next_task", "ownership_ledger_digest", "install_apply_implemented", "update_apply_implemented", "target_repository_mutation_implemented", "admission_implemented", "authorization_implemented", "extensions"],
+      "properties": {
+        "status": {"type": "string", "enum": ["PASS", "PASS_WITH_WARNINGS", "FAILED_VALIDATION"]},
+        "validation_result": {"type": "string", "enum": ["PASS", "PASS_WITH_WARNINGS", "FAILED_VALIDATION"]},
+        "proposed_capability": {"type": "string", "const": "ownership_ledger_v1"},
+        "recommended_next_task": {"type": "string", "const": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-01"},
+        "ownership_ledger_digest": {"$ref": "#/$defs/digest"},
+        "install_apply_implemented": {"type": "boolean", "const": false},
+        "update_apply_implemented": {"type": "boolean", "const": false},
+        "target_repository_mutation_implemented": {"type": "boolean", "const": false},
+        "admission_implemented": {"type": "boolean", "const": false},
+        "authorization_implemented": {"type": "boolean", "const": false},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "stop_at": "needs_review",
+  "stop_if": [
+    "focused tests fail",
+    "ownership-ledger validate fails",
+    "task evidence is missing",
+    "broad validation fails",
+    "diff check fails",
+    "worktree has unrelated dirty files"
+  ]
+}

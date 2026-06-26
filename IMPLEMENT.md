@@ -9545,3 +9545,36 @@ commit-policy check.
 
 OwnershipLedger v1 has not been started in this acceptance task. The next
 serialized task is `AIDE-BUILD-OWNERSHIP-LEDGER-V1-01`.
+
+## Work Item: AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+
+### Summary
+
+Built the proposed `ownership_ledger_v1` protocol slice.
+
+### Implementation Notes
+
+- Added a Draft 2020-12 OwnershipLedger schema with explicit extension maps.
+- Added `core/protocol/ownership_ledger.py` for deterministic ledger projection,
+  digesting, taxonomy validation, fixture generation, validation, reports, and
+  non-capability boundaries.
+- Added `ownership-ledger status`, `ownership-ledger project`, and
+  `ownership-ledger validate` AIDE Lite commands.
+- Added focused tests and a valid/invalid fixture corpus covering ProjectLock
+  binding, taxonomy completeness, duplicate records, unknown classes, vendor
+  digest requirements, managed-section identity, unknown/never-touch no-apply
+  policy, unsafe paths, source latest contamination, unknown required features,
+  and required extension rejection.
+
+### Verification
+
+Initial validation passed focused OwnershipLedger tests, py_compile, and
+`ownership-ledger validate`. Final validation receipts are recorded in task
+evidence.
+
+### Remaining Issues
+
+OwnershipLedger v1 remains proposed until independent check and acceptance. It
+does not implement install truth, install/update apply, admission,
+authorization, target mutation, release publication, runtime, InstallRecord, or
+UpdatePlan.

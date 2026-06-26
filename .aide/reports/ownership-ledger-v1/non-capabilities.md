@@ -1,0 +1,22 @@
+# Non-Capabilities
+
+- install_truth
+- install_plan
+- install_apply
+- update_apply
+- repair_apply
+- rollback_apply
+- uninstall_apply
+- admission
+- authorization
+- target_repository_mutation
+- release_publication
+- git_tag_creation
+- github_release_creation
+- upload
+- network_call
+- provider_model_call
+- workbench_runtime
+- mcp_runtime
+- source_change_preview_apply_rollback
+- promotion
