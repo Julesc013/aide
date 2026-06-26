@@ -2825,3 +2825,15 @@
 - Exit Criteria: task stops at `needs_review`, records the independent check result, and recommends either acceptance or a bounded repair task.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: Zero material findings remain. The next serialized task is exactly `AIDE-ACCEPT-PROJECT-LOCK-V0-01`. OwnershipLedger v1 remains blocked until ProjectLock acceptance is complete.
+
+### Queue ID: AIDE-ACCEPT-PROJECT-LOCK-V0-01
+
+- Title: Accept ProjectLock v0
+- Status: Needs Review
+- Objective: accept exactly `project_lock_v0` after the build and independent check both reported zero material findings and zero missing evidence.
+- Scope: `.aide/queue/AIDE-ACCEPT-PROJECT-LOCK-V0-01/**`, `.aide/reports/project-lock-v0-accept/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-PROJECT-LOCK-V0-01` and `AIDE-CHECK-PROJECT-LOCK-V0-01`.
+- Verification Intent: source-chain review, accepted-boundary review, explicit non-capability review, ProjectLock validation, task inspect/evidence, broad validation, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `project_lock_v0`, and recommends exactly `AIDE-BUILD-OWNERSHIP-LEDGER-V1-01`.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Notes: OwnershipLedger v1 is now the next serialized build task. Install truth, apply behavior, admission, authorization, target mutation, release publication, runtime, and downstream distribution objects remain blocked.

@@ -2549,3 +2549,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-PROJECT-LOCK-V0-01/evidence
   description: Check-only independent review of AIDE-BUILD-PROJECT-LOCK-V0-01 at 1d42adf882c31a73966963f2842271db805cdbe2. Recomputes ProjectLock identity, verifies status and queue routing are outside identity, confirms channel is informational, verifies accepted DistributionManifest digest and payload digest bindings, checks selected component digest/artifact/dependency closure, reviews fixture outcomes, exercises project-lock validate, and verifies explicit non-capabilities. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-PROJECT-LOCK-V0-01. Does not repair implementation, accept ProjectLock v0, begin OwnershipLedger v1, implement install/update/apply, mutate targets, publish releases, call network/provider/model services, or start runtime work.
+- id: AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept ProjectLock v0
+  task: .aide/queue/AIDE-ACCEPT-PROJECT-LOCK-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-PROJECT-LOCK-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-PROJECT-LOCK-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-PROJECT-LOCK-V0-01/evidence
+  description: Acceptance-only task for project_lock_v0 after the ProjectLock build and independent check both reported zero material findings and zero missing evidence. Accepts only ProjectLock v0 as a target-owned distribution selection and binding object for accepted DistributionManifest digest, manifest payload digest, selected component digests, selected artifact refs, dependency closure, informational channel, and explicit extension/feature boundaries. Stops at needs_review with ACCEPTED_WITH_WARNINGS, missing_evidence 0, and recommends exactly AIDE-BUILD-OWNERSHIP-LEDGER-V1-01. Does not modify implementation, begin OwnershipLedger v1, accept install truth, implement install/update/apply, mutate targets, publish releases, call network/provider/model services, or start runtime work.

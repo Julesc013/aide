@@ -9515,3 +9515,33 @@ ProjectLock v0 remains unaccepted until `AIDE-ACCEPT-PROJECT-LOCK-V0-01`.
 The check does not implement or accept install truth, install/update apply,
 admission, authorization, target mutation, release publication, runtime, or
 OwnershipLedger v1.
+
+## Work Item: AIDE-ACCEPT-PROJECT-LOCK-V0-01
+
+### Summary
+
+Accepted exactly `project_lock_v0` with warnings.
+
+### Implementation Notes
+
+- Added the acceptance-only queue task and acceptance reports.
+- Accepted ProjectLock v0 only as a target-owned distribution selection and
+  binding object.
+- Recorded the accepted boundary for accepted DistributionManifest digest,
+  manifest payload digest, selected component digest, selected artifact refs,
+  dependency closure, informational channel, optional extension preservation,
+  and required feature/extension refusal.
+- Preserved non-capabilities for install truth, install/update/apply, admission,
+  authorization, target mutation, release publication, runtime, OwnershipLedger,
+  InstallRecord, and downstream distribution behavior.
+
+### Verification
+
+Validation includes source build/check task inspection, ProjectLock validation,
+task inspect/evidence, broad `aide_lite.py validate`, diff checks, and
+commit-policy check.
+
+### Remaining Issues
+
+OwnershipLedger v1 has not been started in this acceptance task. The next
+serialized task is `AIDE-BUILD-OWNERSHIP-LEDGER-V1-01`.

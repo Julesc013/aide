@@ -1,0 +1,65 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-PROJECT-LOCK-V0-01
+title: Accept ProjectLock v0
+type: accept
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+accepted_capability: project_lock_v0
+missing_evidence: 0
+depends_on:
+  - AIDE-BUILD-PROJECT-LOCK-V0-01
+  - AIDE-CHECK-PROJECT-LOCK-V0-01
+recommended_next_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-ACCEPT-PROJECT-LOCK-V0-01/**
+    - .aide/reports/project-lock-v0-accept/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .aide/protocol/aide-project-lock-v0.schema.json
+    - core/protocol/project_lock.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_project_lock_v0.py
+    - .aide/fixtures/project-lock-v0/**
+    - .aide/reports/project-lock-v0/**
+    - .aide/reports/project-lock-v0-check/**
+    - release archive artifacts
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+evidence:
+  required:
+    - source-chain-review.md
+    - accepted-boundary.md
+    - non-capabilities.md
+    - changed-files.md
+    - remaining-risks.md
+    - validation.md
+    - next-task-prompt.md
+non_capabilities:
+  - install truth
+  - install plan
+  - install apply
+  - update apply
+  - repair apply
+  - rollback apply
+  - uninstall apply
+  - admission
+  - authorization
+  - target repository mutation
+  - release publication
+  - Git tag
+  - GitHub Release
+  - upload
+  - network call
+  - provider/model call
+  - Workbench/MCP runtime
+  - OwnershipLedger
+notes:
+  - Acceptance-only task; no implementation files were modified.
+  - Accepts only project_lock_v0 as a target-owned distribution selection and binding object.
+  - Stops at needs_review and recommends exactly AIDE-BUILD-OWNERSHIP-LEDGER-V1-01.

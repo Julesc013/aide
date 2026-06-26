@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-PROJECT-LOCK-V0-01
+status: needs_review
+classification: complete
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+accepted_capability: project_lock_v0
+missing_evidence: 0
+source_build_task: AIDE-BUILD-PROJECT-LOCK-V0-01
+source_check_task: AIDE-CHECK-PROJECT-LOCK-V0-01
+next_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+notes:
+  - ProjectLock v0 accepted only as the lock/selection object described by the build and independent check.
+  - Install truth, apply behavior, admission, authorization, target mutation, runtime, and OwnershipLedger behavior remain non-capabilities.
