@@ -2509,3 +2509,13 @@ items:
   prompt: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02/prompt.md
   evidence: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence
   description: Bounded repair for the four remaining material findings from AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01. Adds task-local turn context, finding matrix, allowed paths, validation plan, stop conditions, and campaign state before production edits; repairs future-major protocol range rejection, files/ target-root contamination classification, directory forbidden-member reporting, and direct future-major protocol fixtures. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02. Does not accept DistributionManifest v1, begin ProjectLock v0, begin OwnershipLedger v1, implement install/update/repair/rollback/uninstall apply, publish releases, create tags, upload artifacts, mutate targets, call network/provider/model services, start Workbench/MCP runtime, preview/apply/rollback source changes, or promote.
+- id: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+  status: needs_review
+  planning_state: check_completed
+  result: PASS_WITH_WARNINGS
+  title: Check DistributionManifest v1 Repair 02
+  task: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence
+  description: Check-only independent review of AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02 at 24753ef84fed5613f8a276ef7bfb4ddd58d6d7d3. Verifies future-major protocol rejection, files/ target-root contamination classification, directory forbidden-member recording, future-major fixture coverage, Repair 01 regression closure, Q47/Q48 boundary, and explicit non-capabilities. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01. Does not repair implementation, accept DistributionManifest v1, begin ProjectLock v0, mutate targets, publish releases, call network/provider/model services, start runtime work, or promote.

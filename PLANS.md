@@ -2777,3 +2777,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: Future-major protocol ranges now fail closed, `files/` export-pack members are checked against target-root classification, directory forbidden members are recorded, and direct future-major invalid fixtures exist. DistributionManifest acceptance and ProjectLock remain blocked pending independent repair check.
+
+### Queue ID: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+
+- Title: Check DistributionManifest v1 Repair 02
+- Status: Needs Review
+- Objective: independently verify that `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02` closed the four remaining material findings without repairing implementation, accepting `distribution_manifest_v1`, or beginning ProjectLock v0.
+- Scope: `.aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/**`, `.aide/reports/distribution-manifest-v1-repair-02-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source repair commit `24753ef84fed5613f8a276ef7bfb4ddd58d6d7d3`, result `PASS_WITH_WARNINGS`, `material_finding_count: 0`, and `missing_evidence: 0`.
+- Verification Intent: check-local future-major protocol probes, `files/` target-root contamination probes, directory contamination fixture, future-major fixture file exercise, Repair 01 regression review, Q47/Q48 boundary review, no-overclaiming review, validation commands, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records the independent repair-check result, and recommends either acceptance or Repair 03.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: Zero material findings remain. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01`. ProjectLock v0 remains blocked until acceptance is complete and committed.

@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+status: needs_review
+classification: complete
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+source_task: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+next_task: AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+notes:
+  - Independent check-only task for Repair 02.
+  - No implementation repair, DistributionManifest acceptance, or ProjectLock work is authorized.
+  - Zero material findings remain; acceptance is the next serialized gate.

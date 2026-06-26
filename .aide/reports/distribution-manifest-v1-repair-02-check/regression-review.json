@@ -1,0 +1,11 @@
+{
+  "build_validation_commands_passed": true,
+  "fixture_matrix_passed": true,
+  "manifest_validation_passed": true,
+  "passed": true,
+  "q47_release_bundle_mapped": true,
+  "q48_not_distribution_truth": true,
+  "repair_missing_evidence_zero": true,
+  "repair_report_material_findings_zero": true,
+  "schema_version": "aide.check.regression-review.v1"
+}

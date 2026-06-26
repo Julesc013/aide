@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "expected_forbidden": true,
+      "expected_target_member": ".aide.local/state.sqlite",
+      "member": "files/.aide.local/state.sqlite",
+      "observed": {
+        "packaging_prefix": "files",
+        "reason": "forbidden_prefix:.aide.local/",
+        "refusal_code": "distribution.forbidden_member",
+        "source_member": "files/.aide.local/state.sqlite",
+        "target_member": ".aide.local/state.sqlite",
+        "view": "target_root_member"
+      },
+      "passed": true
+    },
+    {
+      "expected_forbidden": true,
+      "expected_target_member": ".env",
+      "member": "files/.env",
+      "observed": {
+        "packaging_prefix": "files",
+        "reason": "forbidden_exact_member",
+        "refusal_code": "distribution.forbidden_member",
+        "source_member": "files/.env",
+        "target_member": ".env",
+        "view": "target_root_member"
+      },
+      "passed": true
+    },
+    {
+      "expected_forbidden": true,
+      "expected_target_member": ".aide/reports/report.json",
+      "member": "files/.aide/reports/report.json",
+      "observed": {
+        "packaging_prefix": "files",
+        "reason": "forbidden_prefix:.aide/reports/",
+        "refusal_code": "distribution.forbidden_member",
+        "source_member": "files/.aide/reports/report.json",
+        "target_member": ".aide/reports/report.json",
+        "view": "target_root_member"
+      },
+      "passed": true
+    },
+    {
+      "expected_forbidden": true,
+      "expected_target_member": ".aide/context/latest-task-packet.md",
+      "member": "files/.aide/context/latest-task-packet.md",
+      "observed": {
+        "packaging_prefix": "files",
+        "reason": "forbidden_prefix:.aide/context/latest-",
+        "refusal_code": "distribution.forbidden_member",
+        "source_member": "files/.aide/context/latest-task-packet.md",
+        "target_member": ".aide/context/latest-task-packet.md",
+        "view": "target_root_member"
+      },
+      "passed": true
+    },
+    {
+      "expected_forbidden": true,
+      "expected_target_member": ".aide/install/latest-install-plan.json",
+      "member": "files/.aide/install/latest-install-plan.json",
+      "observed": {
+        "packaging_prefix": "files",
+        "reason": "forbidden_prefix:.aide/install/latest-",
+        "refusal_code": "distribution.forbidden_member",
+        "source_member": "files/.aide/install/latest-install-plan.json",
+        "target_member": ".aide/install/latest-install-plan.json",
+        "view": "target_root_member"
+      },
+      "passed": true
+    },
+    {
+      "expected_forbidden": true,
+      "expected_target_member": "raw-prompt.txt",
+      "member": "files/raw-prompt.txt",
+      "observed": {
+        "packaging_prefix": "files",
+        "reason": "forbidden_exact_member",
+        "refusal_code": "distribution.forbidden_member",
+        "source_member": "files/raw-prompt.txt",
+        "target_member": "raw-prompt.txt",
+        "view": "target_root_member"
+      },
+      "passed": true
+    },
+    {
+      "expected_forbidden": true,
+      "expected_target_member": "raw-response.txt",
+      "member": "files/raw-response.txt",
+      "observed": {
+        "packaging_prefix": "files",
+        "reason": "forbidden_exact_member",
+        "refusal_code": "distribution.forbidden_member",
+        "source_member": "files/raw-response.txt",
+        "target_member": "raw-response.txt",
+        "view": "target_root_member"
+      },
+      "passed": true
+    },
+    {
+      "expected_forbidden": true,
+      "expected_target_member": "secrets/token.txt",
+      "member": "files/secrets/token.txt",
+      "observed": {
+        "packaging_prefix": "files",
+        "reason": "forbidden_prefix:secrets/",
+        "refusal_code": "distribution.forbidden_member",
+        "source_member": "files/secrets/token.txt",
+        "target_member": "secrets/token.txt",
+        "view": "target_root_member"
+      },
+      "passed": true
+    },
+    {
+      "expected_forbidden": false,
+      "member": "files/src/main.py",
+      "observed": null,
+      "passed": true
+    },
+    {
+      "expected_forbidden": false,
+      "member": "files/docs/reference.md",
+      "observed": null,
+      "passed": true
+    },
+    {
+      "expected_forbidden": true,
+      "expected_target_member": "payload/.env",
+      "member": "payload/.env",
+      "observed": {
+        "packaging_prefix": "",
+        "reason": "secret_like_member",
+        "refusal_code": "distribution.forbidden_member",
+        "source_member": "payload/.env",
+        "target_member": "payload/.env",
+        "view": "source_member"
+      },
+      "passed": true
+    }
+  ],
+  "schema_version": "aide.check.contamination-review.v1"
+}

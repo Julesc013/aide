@@ -1,0 +1,359 @@
+{
+  "all_commands_passed": true,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "duration_seconds": 0.132,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "## main...origin/main [ahead 1]\n M .aide/queue/index.yaml\n M IMPLEMENT.md\n M PLANS.md\n?? .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/\n?? .aide/reports/distribution-manifest-v1-repair-02-check/\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        "-m",
+        "py_compile",
+        "core/protocol/distribution_manifest.py",
+        ".aide/scripts/tests/test_aide_distribution_manifest_v1.py",
+        ".aide/scripts/aide_lite.py"
+      ],
+      "duration_seconds": 1.098,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": ""
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".aide/scripts/tests",
+        "-p",
+        "test_aide_distribution_manifest_v1.py"
+      ],
+      "duration_seconds": 54.502,
+      "returncode": 0,
+      "stderr_excerpt": "....................\n----------------------------------------------------------------------\nRan 20 tests in 52.696s\n\nOK\n",
+      "stdout_excerpt": ""
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "distribution-manifest",
+        "validate"
+      ],
+      "duration_seconds": 2.645,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite distribution-manifest validate\nresult: PASS_WITH_WARNINGS\nschema_exists: true\nhelper_exists: true\ncli_registered: true\nmanifest_generated: true\nmanifest_valid: true\nschema_alignment: true\nfixture_matrix_passed: true\nreordered_input_same_digest: true\nq47_release_bundle_mapped: true\nq48_not_distribution_truth: true\ninstall_apply_not_implemented: true\nrelease_publication_not_implemented: true\ntarget_repository_mutation_not_implemented: true\nabsolute_local_paths_suppressed: true\nerror_count: 0\nrecommended_next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01\nproposed_capability: distribution_manifest_v1\ninstall_apply_implemented: false\nupdate_apply_implemented: false\nrepair_apply_implemented: false\nrollback_apply_implemented: false\nuninstall_apply_implemented: false\nrelease_publication_implemented: false\ntarget_repository_mutation_implemented: false\nbranch_worktree_automation_implemented: false\nnetwork_calls_implemented: false\nprovider_model_calls_implemented: false\ngithub_release_creation_implemented: false\ngit_tag_creation_implemented: false\nupload_implemented: false\nworkbench_runtime_implemented: false\nmcp_runtime_implemented: false\nsource_change_preview_apply_rollback_implemented: false\npromotion_implemented: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "install",
+        "status"
+      ],
+      "duration_seconds": 1.218,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite install status\nobservation: present\nplan: present\ndry_run: present\noperations: 462\nconflicts: 458\nmandatory_migration_candidates: 0\nno_apply: true\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "install",
+        "validate"
+      ],
+      "duration_seconds": 1.374,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "e_allowed\": true\n- PASS .aide/install/latest-install-dry-run.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/install/latest-install-dry-run.md excludes forbidden phrase: install_applied\n- PASS .aide/install/latest-install-dry-run.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/install/latest-install-dry-run.md excludes forbidden phrase: migration_applied\n- PASS .aide/install/latest-install-dry-run.md excludes forbidden phrase: target_mutation: true\n- PASS .aide/install/latest-ownership-ledger.example.json excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/install/latest-ownership-ledger.example.json excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/install/latest-ownership-ledger.example.json excludes forbidden phrase: \"automatic\": true\n- PASS .aide/install/latest-ownership-ledger.example.json excludes forbidden phrase: install_applied\n- PASS .aide/install/latest-ownership-ledger.example.json excludes forbidden phrase: overwrite_applied\n- PASS .aide/install/latest-ownership-ledger.example.json excludes forbidden phrase: migration_applied\n- PASS .aide/install/latest-ownership-ledger.example.json excludes forbidden phrase: target_mutation: true\n- PASS .aide/install/latest-conflict-report.json excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/install/latest-conflict-report.json excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/install/latest-conflict-report.json excludes forbidden phrase: \"automatic\": true\n- PASS .aide/install/latest-conflict-report.json excludes forbidden phrase: install_applied\n- PASS .aide/install/latest-conflict-report.json excludes forbidden phrase: overwrite_applied\n- PASS .aide/install/latest-conflict-report.json excludes forbidden phrase: migration_applied\n- PASS .aide/install/latest-conflict-report.json excludes forbidden phrase: target_mutation: true\n- PASS .aide/install/latest-conflict-report.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/install/latest-conflict-report.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/install/latest-conflict-report.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/install/latest-conflict-report.md excludes forbidden phrase: install_applied\n- PASS .aide/install/latest-conflict-report.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/install/latest-conflict-report.md excludes forbidden phrase: migration_applied\n- PASS .aide/install/latest-conflict-report.md excludes forbidden phrase: target_mutation: true\n- PASS .aide/install/latest-preservation-report.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/install/latest-preservation-report.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/install/latest-preservation-report.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/install/latest-preservation-report.md excludes forbidden phrase: install_applied\n- PASS .aide/install/latest-preservation-report.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/install/latest-preservation-report.md excludes forbidden phrase: migration_applied\n- PASS .aide/install/latest-preservation-report.md excludes forbidden phrase: target_mutation: true\n- PASS .aide/install/latest-verification-plan.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/install/latest-verification-plan.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/install/latest-verification-plan.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/install/latest-verification-plan.md excludes forbidden phrase: install_applied\n- PASS .aide/install/latest-verification-plan.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/install/latest-verification-plan.md excludes forbidden phrase: migration_applied\n- PASS .aide/install/latest-verification-plan.md excludes forbidden phrase: target_mutation: true\nno_apply: true\ntarget_mutation: false\noverwrite_allowed_default: false\nmigration_automatic: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "repair",
+        "status"
+      ],
+      "duration_seconds": 1.143,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite repair status\nobservation: present\ndiagnosis: present\nplan: present\ndry_run: present\noperations: 11\nconflicts: 0\nno_apply: true\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "repair",
+        "validate"
+      ],
+      "duration_seconds": 1.118,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "e/repair/latest-repair-dry-run.json excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/repair/latest-repair-dry-run.json excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/repair/latest-repair-dry-run.json excludes forbidden phrase: \"delete_allowed\": true\n- PASS .aide/repair/latest-repair-dry-run.json excludes forbidden phrase: \"automatic\": true\n- PASS .aide/repair/latest-repair-dry-run.json excludes forbidden phrase: repair_applied\n- PASS .aide/repair/latest-repair-dry-run.json excludes forbidden phrase: overwrite_applied\n- PASS .aide/repair/latest-repair-dry-run.json excludes forbidden phrase: delete_applied\n- PASS .aide/repair/latest-repair-dry-run.json excludes forbidden phrase: target_mutation: true\n- PASS .aide/repair/latest-repair-dry-run.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/repair/latest-repair-dry-run.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/repair/latest-repair-dry-run.md excludes forbidden phrase: \"delete_allowed\": true\n- PASS .aide/repair/latest-repair-dry-run.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/repair/latest-repair-dry-run.md excludes forbidden phrase: repair_applied\n- PASS .aide/repair/latest-repair-dry-run.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/repair/latest-repair-dry-run.md excludes forbidden phrase: delete_applied\n- PASS .aide/repair/latest-repair-dry-run.md excludes forbidden phrase: target_mutation: true\n- PASS .aide/repair/latest-doctor-repair-report.json excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/repair/latest-doctor-repair-report.json excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/repair/latest-doctor-repair-report.json excludes forbidden phrase: \"delete_allowed\": true\n- PASS .aide/repair/latest-doctor-repair-report.json excludes forbidden phrase: \"automatic\": true\n- PASS .aide/repair/latest-doctor-repair-report.json excludes forbidden phrase: repair_applied\n- PASS .aide/repair/latest-doctor-repair-report.json excludes forbidden phrase: overwrite_applied\n- PASS .aide/repair/latest-doctor-repair-report.json excludes forbidden phrase: delete_applied\n- PASS .aide/repair/latest-doctor-repair-report.json excludes forbidden phrase: target_mutation: true\n- PASS .aide/repair/latest-doctor-repair-report.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/repair/latest-doctor-repair-report.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/repair/latest-doctor-repair-report.md excludes forbidden phrase: \"delete_allowed\": true\n- PASS .aide/repair/latest-doctor-repair-report.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/repair/latest-doctor-repair-report.md excludes forbidden phrase: repair_applied\n- PASS .aide/repair/latest-doctor-repair-report.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/repair/latest-doctor-repair-report.md excludes forbidden phrase: delete_applied\n- PASS .aide/repair/latest-doctor-repair-report.md excludes forbidden phrase: target_mutation: true\n- PASS .aide/repair/latest-repair-verification-plan.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/repair/latest-repair-verification-plan.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/repair/latest-repair-verification-plan.md excludes forbidden phrase: \"delete_allowed\": true\n- PASS .aide/repair/latest-repair-verification-plan.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/repair/latest-repair-verification-plan.md excludes forbidden phrase: repair_applied\n- PASS .aide/repair/latest-repair-verification-plan.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/repair/latest-repair-verification-plan.md excludes forbidden phrase: delete_applied\n- PASS .aide/repair/latest-repair-verification-plan.md excludes forbidden phrase: target_mutation: true\nno_apply: true\ntarget_mutation: false\noverwrite_allowed_default: false\ndelete_allowed_default: false\nmigration_automatic: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "upgrade",
+        "status"
+      ],
+      "duration_seconds": 1.182,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite upgrade status\ncurrent_observation: present\nsource_observation: present\ncomparison: present\nplan: present\ndry_run: present\nplanned_updates: 5\nplanned_skips: 8\nplanned_preservations: 209\nplanned_conflicts: 209\nno_apply: true\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "upgrade",
+        "validate"
+      ],
+      "duration_seconds": 1.387,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "den phrase: \"delete_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-conflict-report.json excludes forbidden phrase: \"automatic\": true\n- PASS .aide/upgrade/latest-upgrade-conflict-report.json excludes forbidden phrase: upgrade_applied\n- PASS .aide/upgrade/latest-upgrade-conflict-report.json excludes forbidden phrase: overwrite_applied\n- PASS .aide/upgrade/latest-upgrade-conflict-report.json excludes forbidden phrase: delete_applied\n- PASS .aide/upgrade/latest-upgrade-conflict-report.json excludes forbidden phrase: target_mutation: true\n- PASS .aide/upgrade/latest-upgrade-conflict-report.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-conflict-report.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-conflict-report.md excludes forbidden phrase: \"delete_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-conflict-report.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/upgrade/latest-upgrade-conflict-report.md excludes forbidden phrase: upgrade_applied\n- PASS .aide/upgrade/latest-upgrade-conflict-report.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/upgrade/latest-upgrade-conflict-report.md excludes forbidden phrase: delete_applied\n- PASS .aide/upgrade/latest-upgrade-conflict-report.md excludes forbidden phrase: target_mutation: true\n- PASS .aide/upgrade/latest-upgrade-migration-report.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-migration-report.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-migration-report.md excludes forbidden phrase: \"delete_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-migration-report.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/upgrade/latest-upgrade-migration-report.md excludes forbidden phrase: upgrade_applied\n- PASS .aide/upgrade/latest-upgrade-migration-report.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/upgrade/latest-upgrade-migration-report.md excludes forbidden phrase: delete_applied\n- PASS .aide/upgrade/latest-upgrade-migration-report.md excludes forbidden phrase: target_mutation: true\n- PASS .aide/upgrade/latest-upgrade-compatibility-report.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-compatibility-report.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-compatibility-report.md excludes forbidden phrase: \"delete_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-compatibility-report.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/upgrade/latest-upgrade-compatibility-report.md excludes forbidden phrase: upgrade_applied\n- PASS .aide/upgrade/latest-upgrade-compatibility-report.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/upgrade/latest-upgrade-compatibility-report.md excludes forbidden phrase: delete_applied\n- PASS .aide/upgrade/latest-upgrade-compatibility-report.md excludes forbidden phrase: target_mutation: true\n- PASS .aide/upgrade/latest-upgrade-verification-plan.md excludes forbidden phrase: \"apply_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-verification-plan.md excludes forbidden phrase: \"overwrite_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-verification-plan.md excludes forbidden phrase: \"delete_allowed\": true\n- PASS .aide/upgrade/latest-upgrade-verification-plan.md excludes forbidden phrase: \"automatic\": true\n- PASS .aide/upgrade/latest-upgrade-verification-plan.md excludes forbidden phrase: upgrade_applied\n- PASS .aide/upgrade/latest-upgrade-verification-plan.md excludes forbidden phrase: overwrite_applied\n- PASS .aide/upgrade/latest-upgrade-verification-plan.md excludes forbidden phrase: delete_applied\n- PASS .aide/upgrade/latest-upgrade-verification-plan.md excludes forbidden phrase: target_mutation: true\nno_apply: true\ntarget_mutation: false\noverwrite_allowed_default: false\ndelete_allowed_default: false\nmigration_automatic: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "upgrade",
+        "compatibility"
+      ],
+      "duration_seconds": 1.116,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite upgrade compatibility\npath: .aide/upgrade/latest-upgrade-compatibility-report.md\nunsupported_count: 8\nunknown_count: 0\nno_apply: true\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "rollback",
+        "status"
+      ],
+      "duration_seconds": 1.09,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite rollback status\nobservation: present\nplan: present\ndry_run: present\nfuture_actions: 5\npreservations: 224\nblockers: 0\nno_apply: true\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "rollback",
+        "validate"
+      ],
+      "duration_seconds": 1.267,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "eld: delete_allowed\n- PASS rollback operation contains required field: managed_section_removal_allowed\n- PASS rollback operation contains required field: apply_allowed\n- PASS rollback operation contains required field: validation_required\n- PASS rollback operation contains required field: rollback_hint\n- PASS rollback operation rollback-op-a2f986faf3c5 apply_allowed false\n- PASS rollback operation rollback-op-a2f986faf3c5 overwrite_allowed false\n- PASS rollback operation rollback-op-a2f986faf3c5 delete_allowed false\n- PASS rollback operation rollback-op-a2f986faf3c5 managed_section_removal_allowed false\n- PASS rollback preserves target-specific or local/secret path: .aide/tools/tool-risk.schema.json\n- PASS rollback operation contains required field: operation_id\n- PASS rollback operation contains required field: rollback_class\n- PASS rollback operation contains required field: target_path\n- PASS rollback operation contains required field: previous_source_ref\n- PASS rollback operation contains required field: current_state_ref\n- PASS rollback operation contains required field: action\n- PASS rollback operation contains required field: reason\n- PASS rollback operation contains required field: preserve_target_state\n- PASS rollback operation contains required field: overwrite_allowed\n- PASS rollback operation contains required field: delete_allowed\n- PASS rollback operation contains required field: managed_section_removal_allowed\n- PASS rollback operation contains required field: apply_allowed\n- PASS rollback operation contains required field: validation_required\n- PASS rollback operation contains required field: rollback_hint\n- PASS rollback operation rollback-op-7ade1d1e6b7f apply_allowed false\n- PASS rollback operation rollback-op-7ade1d1e6b7f overwrite_allowed false\n- PASS rollback operation rollback-op-7ade1d1e6b7f delete_allowed false\n- PASS rollback operation rollback-op-7ade1d1e6b7f managed_section_removal_allowed false\n- PASS rollback preserves target-specific or local/secret path: .aide/tools/tool-wrap-plan.schema.json\n- PASS rollback operation contains required field: operation_id\n- PASS rollback operation contains required field: rollback_class\n- PASS rollback operation contains required field: target_path\n- PASS rollback operation contains required field: previous_source_ref\n- PASS rollback operation contains required field: current_state_ref\n- PASS rollback operation contains required field: action\n- PASS rollback operation contains required field: reason\n- PASS rollback operation contains required field: preserve_target_state\n- PASS rollback operation contains required field: overwrite_allowed\n- PASS rollback operation contains required field: delete_allowed\n- PASS rollback operation contains required field: managed_section_removal_allowed\n- PASS rollback operation contains required field: apply_allowed\n- PASS rollback operation contains required field: validation_required\n- PASS rollback operation contains required field: rollback_hint\n- PASS rollback operation rollback-op-d3af19deee07 apply_allowed false\n- PASS rollback operation rollback-op-d3af19deee07 overwrite_allowed false\n- PASS rollback operation rollback-op-d3af19deee07 delete_allowed false\n- PASS rollback operation rollback-op-d3af19deee07 managed_section_removal_allowed false\n- PASS rollback dry-run contains required field: plan_id\n- PASS rollback dry-run contains required field: operations\n- PASS rollback dry-run contains required field: planned_restores\n- PASS rollback dry-run contains required field: planned_removals\n- PASS rollback dry-run contains required field: planned_skips\n- PASS rollback dry-run contains required field: planned_preservations\n- PASS rollback dry-run contains required field: blocking_issues\n- PASS rollback dry-run contains required field: no_apply\n- PASS rollback dry-run no_apply true\nno_apply: true\ntarget_mutation: false\noverwrite_allowed_default: false\ndelete_allowed_default: false\nmanaged_section_removal_allowed_default: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "uninstall",
+        "status"
+      ],
+      "duration_seconds": 1.144,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite uninstall status\nobservation: present\nplan: present\ndry_run: present\nfuture_removal_candidates: 233\npreservations: 885\nunknown_ownership_count: 672\nblockers: 0\nno_apply: true\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "uninstall",
+        "validate"
+      ],
+      "duration_seconds": 1.674,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "nstall operation contains required field: uninstall_class\n- PASS uninstall operation contains required field: target_path\n- PASS uninstall operation contains required field: ownership_class\n- PASS uninstall operation contains required field: action\n- PASS uninstall operation contains required field: reason\n- PASS uninstall operation contains required field: preserve_target_state\n- PASS uninstall operation contains required field: delete_allowed\n- PASS uninstall operation contains required field: managed_section_removal_allowed\n- PASS uninstall operation contains required field: apply_allowed\n- PASS uninstall operation contains required field: validation_required\n- PASS uninstall operation contains required field: recovery_hint\n- PASS uninstall operation uninstall-op-4bb6d1c68de8 apply_allowed false\n- PASS uninstall operation uninstall-op-4bb6d1c68de8 delete_allowed false\n- PASS uninstall operation uninstall-op-4bb6d1c68de8 managed_section_removal_allowed false\n- PASS uninstall plan forbids blanket .aide deletion\n- PASS uninstall operation contains required field: operation_id\n- PASS uninstall operation contains required field: uninstall_class\n- PASS uninstall operation contains required field: target_path\n- PASS uninstall operation contains required field: ownership_class\n- PASS uninstall operation contains required field: action\n- PASS uninstall operation contains required field: reason\n- PASS uninstall operation contains required field: preserve_target_state\n- PASS uninstall operation contains required field: delete_allowed\n- PASS uninstall operation contains required field: managed_section_removal_allowed\n- PASS uninstall operation contains required field: apply_allowed\n- PASS uninstall operation contains required field: validation_required\n- PASS uninstall operation contains required field: recovery_hint\n- PASS uninstall operation uninstall-op-dd5291813337 apply_allowed false\n- PASS uninstall operation uninstall-op-dd5291813337 delete_allowed false\n- PASS uninstall operation uninstall-op-dd5291813337 managed_section_removal_allowed false\n- PASS uninstall plan forbids blanket .aide deletion\n- PASS uninstall operation contains required field: operation_id\n- PASS uninstall operation contains required field: uninstall_class\n- PASS uninstall operation contains required field: target_path\n- PASS uninstall operation contains required field: ownership_class\n- PASS uninstall operation contains required field: action\n- PASS uninstall operation contains required field: reason\n- PASS uninstall operation contains required field: preserve_target_state\n- PASS uninstall operation contains required field: delete_allowed\n- PASS uninstall operation contains required field: managed_section_removal_allowed\n- PASS uninstall operation contains required field: apply_allowed\n- PASS uninstall operation contains required field: validation_required\n- PASS uninstall operation contains required field: recovery_hint\n- PASS uninstall operation uninstall-op-caa8b55545ff apply_allowed false\n- PASS uninstall operation uninstall-op-caa8b55545ff delete_allowed false\n- PASS uninstall operation uninstall-op-caa8b55545ff managed_section_removal_allowed false\n- PASS uninstall plan forbids blanket .aide deletion\n- PASS uninstall plan rejects blanket .aide deletion\n- PASS uninstall dry-run contains required field: plan_id\n- PASS uninstall dry-run contains required field: operations\n- PASS uninstall dry-run contains required field: future_removal_candidates\n- PASS uninstall dry-run contains required field: planned_skips\n- PASS uninstall dry-run contains required field: planned_preservations\n- PASS uninstall dry-run contains required field: blocking_issues\n- PASS uninstall dry-run contains required field: unknown_ownership_count\n- PASS uninstall dry-run contains required field: no_apply\n- PASS uninstall dry-run no_apply true\nno_apply: true\ntarget_mutation: false\ndelete_allowed_default: false\nmanaged_section_removal_allowed_default: false\nblanket_aide_deletion: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "release",
+        "status"
+      ],
+      "duration_seconds": 1.118,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite release status\nbundle_id: aide-lite-pack-v0-2b2a00f7c4628311\nartifact_count: 11\nvalidation_result: PASS\nzip: .aide/release/dist/aide-lite-pack-v0.zip\ntar_gz: .aide/release/dist/aide-lite-pack-v0.tar.gz\nno_publish: true\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "release",
+        "validate"
+      ],
+      "duration_seconds": 6.481,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "release policy .aide/policies/release-versioning.yaml contains anchor: aide-lite-pack-v0\n- PASS release policy .aide/policies/release-versioning.yaml contains anchor: do not invent SemVer\n- PASS release policy .aide/policies/release-versioning.yaml contains anchor: aide-lite-pack-v0.zip\n- PASS release schema is object: .aide/release/release-bundle.schema.json\n- PASS release schema declares required fields: .aide/release/release-bundle.schema.json\n- PASS release schema is object: .aide/release/release-asset.schema.json\n- PASS release schema declares required fields: .aide/release/release-asset.schema.json\n- PASS release schema is object: .aide/release/release-manifest.schema.json\n- PASS release schema declares required fields: .aide/release/release-manifest.schema.json\n- PASS release schema is object: .aide/release/release-checksums.schema.json\n- PASS release schema declares required fields: .aide/release/release-checksums.schema.json\n- PASS release schema is object: .aide/release/release-provenance.schema.json\n- PASS release schema declares required fields: .aide/release/release-provenance.schema.json\n- PASS release schema is object: .aide/release/release-validation.schema.json\n- PASS release schema declares required fields: .aide/release/release-validation.schema.json\n- PASS release schema is object: .aide/release/release-bundle-report.schema.json\n- PASS release schema declares required fields: .aide/release/release-bundle-report.schema.json\n- PASS release schema is object: .aide/release/release-install-notes.schema.json\n- PASS release schema declares required fields: .aide/release/release-install-notes.schema.json\n- PASS release generated output exists: .aide/release/dist/aide-lite-pack-v0.zip\n- PASS release generated output exists: .aide/release/dist/aide-lite-pack-v0.tar.gz\n- PASS release generated output exists: .aide/release/dist/aide-lite-pack-v0.checksums.json\n- PASS release generated output exists: .aide/release/dist/SHA256SUMS.txt\n- PASS release generated output exists: .aide/release/dist/manifest.yaml\n- PASS release generated output exists: .aide/release/dist/install.md\n- PASS release generated output exists: .aide/release/dist/CHANGELOG.preview.md\n- PASS release generated output exists: .aide/release/dist/RELEASE_NOTES.preview.md\n- PASS release generated output exists: .aide/release/dist/release-validation.json\n- PASS release generated output exists: .aide/release/dist/release-validation.md\n- PASS release generated output exists: .aide/release/dist/release-provenance.json\n- PASS release generated output exists: .aide/release/dist/release-assets.json\n- PASS release artifact exists: .aide/release/dist/aide-lite-pack-v0.zip\n- PASS release artifact exists: .aide/release/dist/aide-lite-pack-v0.tar.gz\n- PASS release artifact exists: .aide/release/dist/aide-lite-pack-v0.checksums.json\n- PASS release artifact exists: .aide/release/dist/SHA256SUMS.txt\n- PASS release artifact exists: .aide/release/dist/manifest.yaml\n- PASS release artifact exists: .aide/release/dist/install.md\n- PASS release artifact exists: .aide/release/dist/CHANGELOG.preview.md\n- PASS release artifact exists: .aide/release/dist/RELEASE_NOTES.preview.md\n- PASS release artifact exists: .aide/release/dist/release-validation.json\n- PASS release artifact exists: .aide/release/dist/release-validation.md\n- PASS release artifact exists: .aide/release/dist/release-provenance.json\n- PASS release artifact exists: .aide/release/dist/release-assets.json\n- PASS release checksums validate\n- PASS fixture extraction .aide/release/dist/aide-lite-pack-v0.zip: PASS\n- PASS fixture extraction .aide/release/dist/aide-lite-pack-v0.tar.gz: PASS\n- PASS forbidden paths absent from archives\n- PASS pack-status compatible for release bundle: DIRTY_SOURCE_RECORDED\n- PASS latest release bundle is preview-only\n- PASS latest release bundle is no-publish\n- PASS latest release bundle validation passed\nno_publish: true\ntag_created: false\ngithub_release_created: false\nupload_performed: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "release",
+        "draft-status"
+      ],
+      "duration_seconds": 1.199,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite release draft-status\ndraft_id: aide-lite-pack-v0-github-draft-2b2a00f7c4628311\nsuggested_tag: aide-lite-pack-v0-draft-2b2a00f7c4628311\nasset_count: 12\nvalidation_result: PASS\npublication_status: local_draft_no_publish\nno_publish: true\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "release",
+        "draft-validate"
+      ],
+      "duration_seconds": 1.153,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "ease draft policy .aide/policies/release-checklist.yaml contains anchor: validation gates\n- PASS github release draft policy .aide/policies/release-checklist.yaml contains anchor: security gates\n- PASS github release draft policy .aide/policies/release-checklist.yaml contains anchor: manual review items\n- PASS github release schema is object: .aide/release/github-release-draft.schema.json\n- PASS github release schema declares required fields: .aide/release/github-release-draft.schema.json\n- PASS github release schema is object: .aide/release/github-release-asset.schema.json\n- PASS github release schema declares required fields: .aide/release/github-release-asset.schema.json\n- PASS github release schema is object: .aide/release/github-release-upload-plan.schema.json\n- PASS github release schema declares required fields: .aide/release/github-release-upload-plan.schema.json\n- PASS github release schema is object: .aide/release/github-release-checklist.schema.json\n- PASS github release schema declares required fields: .aide/release/github-release-checklist.schema.json\n- PASS github release schema is object: .aide/release/github-release-publication-boundary.schema.json\n- PASS github release schema declares required fields: .aide/release/github-release-publication-boundary.schema.json\n- PASS github release schema is object: .aide/release/github-release-draft-validation.schema.json\n- PASS github release schema declares required fields: .aide/release/github-release-draft-validation.schema.json\n- PASS github release draft output exists: .aide/release/github-release-draft.md\n- PASS github release draft output exists: .aide/release/github-release-draft.json\n- PASS github release draft output exists: .aide/release/github-release-assets.json\n- PASS github release draft output exists: .aide/release/github-release-upload-plan.md\n- PASS github release draft output exists: .aide/release/github-release-upload-plan.json\n- PASS github release draft output exists: .aide/release/github-release-checklist.md\n- PASS github release draft output exists: .aide/release/github-release-checklist.json\n- PASS github release draft output exists: .aide/release/github-release-publication-boundary.md\n- PASS github release draft output exists: .aide/release/github-release-draft-validation.json\n- PASS github release draft output exists: .aide/release/github-release-draft-validation.md\n- PASS github release draft output exists: .aide/release/latest-github-release-draft.md\n- PASS github release draft output exists: .aide/release/latest-github-release-draft.json\n- PASS github release draft preview_only true\n- PASS github release draft no_publish true\n- PASS github release draft publication status is local draft\n- PASS suggested tag is draft-only\n- PASS release draft body contains boundary marker: tag_created: no\n- PASS release draft body contains boundary marker: github_release_created: no\n- PASS release draft body contains boundary marker: upload_performed: no\n- PASS release draft body contains boundary marker: network_api_call: no\n- PASS github release assets are listed\n- PASS required release draft assets are present\n- PASS release draft asset checksums match\n- PASS upload plan no_upload true\n- PASS upload plan no_publish true\n- PASS upload plan blocks create_git_tag\n- PASS upload plan blocks create_github_release\n- PASS upload plan blocks upload_release_asset\n- PASS upload plan blocks call_network\n- PASS publication checklist no_publish true\n- PASS publication checklist includes manual release body review\n- PASS publication boundary tag_created false\n- PASS publication boundary github_release_created false\n- PASS publication boundary upload_performed false\n- PASS publication boundary network_api_call false\n- PASS publication boundary branch_mutation false\n- PASS publication boundary active_ci_installed false\n- PASS publication boundary no_publish true\nno_publish: true\ntag_created: false\ngithub_release_created: false\nupload_performed: false\nnetwork_api_call: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02"
+      ],
+      "duration_seconds": 1.135,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite task inspect\ntask_id: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02\nstatus: needs_review\nclassification: partial\ntask_yaml: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/task.yaml\nstatus_yaml: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/status.yaml\nevidence_dir: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence\nevidence_files: 15\nmissing_evidence: 2\nrecovery_suggestion: continue_from_status_and_evidence\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "evidence",
+        "--task-id",
+        "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02"
+      ],
+      "duration_seconds": 1.132,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite task evidence\ntask_id: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02\navailable:\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/baseline.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/changed-files.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/directory-contamination-review.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/fixture-coverage-review.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/four-finding-check-matrix.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/future-major-protocol-review.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/next-task-prompt.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/no-overclaiming-review.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/q47-q48-boundary-review.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/regression-review.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/source-repair-review.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/target-root-contamination-review.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/validation-commands.md\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/validation-results.json\n- .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence/validation-results.md\nmissing:\n- validation.md\n- remaining-risks.md\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "duration_seconds": 11.872,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "ifecycle schema validator does not import jsonschema\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-status.json\n- PASS Lifecycle schema report parses as JSON object: .aide/reports/lifecycle-schema-status.json\n- PASS Lifecycle schema report has schema_version: .aide/reports/lifecycle-schema-status.json\n- PASS Lifecycle schema report target mutation false: .aide/reports/lifecycle-schema-status.json\n- PASS Lifecycle schema report branch/worktree mutation false: .aide/reports/lifecycle-schema-status.json\n- PASS Lifecycle schema report network calls none: .aide/reports/lifecycle-schema-status.json\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-status.md\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-status.md report mode\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-status.md review gate: needs_review\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-status.md target repo mutation: prohibited\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-status.md network calls: prohibited\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-validation.json\n- PASS Lifecycle schema report parses as JSON object: .aide/reports/lifecycle-schema-validation.json\n- PASS Lifecycle schema report has schema_version: .aide/reports/lifecycle-schema-validation.json\n- PASS Lifecycle schema report target mutation false: .aide/reports/lifecycle-schema-validation.json\n- PASS Lifecycle schema report branch/worktree mutation false: .aide/reports/lifecycle-schema-validation.json\n- PASS Lifecycle schema report network calls none: .aide/reports/lifecycle-schema-validation.json\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-validation.md\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md report mode\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md review gate: needs_review\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md target repo mutation: prohibited\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md network calls: prohibited\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report parses as JSON object: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report has schema_version: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report target mutation false: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report branch/worktree mutation false: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report network calls none: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-fixture-validation.md\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md report mode\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md review gate: needs_review\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md target repo mutation: prohibited\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md network calls: prohibited\n- PASS project state tokens: 739 <= 1600\n- PASS latest task packet tokens: 1387\n- PASS review packet tokens: 2132\n- PASS repo map records: 1017\n- PASS test map mappings: 876\n- PASS context index is readable\n- PASS latest context packet tokens: 486\n- PASS AGENTS token-survival managed section is current\n- PASS no obvious secrets in token-survival files\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "duration_seconds": 0.135,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "duration_seconds": 0.081,
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": ""
+    }
+  ],
+  "json_parse": [
+    {
+      "parsed": true,
+      "path": ".aide/reports/distribution-manifest-v1-repair-02-check/check-report.json"
+    },
+    {
+      "parsed": true,
+      "path": ".aide/reports/distribution-manifest-v1-repair-02-check/material-findings.json"
+    },
+    {
+      "parsed": true,
+      "path": ".aide/reports/distribution-manifest-v1-repair-02-check/protocol-range-review.json"
+    },
+    {
+      "parsed": true,
+      "path": ".aide/reports/distribution-manifest-v1-repair-02-check/contamination-review.json"
+    },
+    {
+      "parsed": true,
+      "path": ".aide/reports/distribution-manifest-v1-repair-02-check/directory-contamination-review.json"
+    },
+    {
+      "parsed": true,
+      "path": ".aide/reports/distribution-manifest-v1-repair-02-check/fixture-coverage-review.json"
+    },
+    {
+      "parsed": true,
+      "path": ".aide/reports/distribution-manifest-v1-repair-02-check/regression-review.json"
+    }
+  ],
+  "json_parse_passed": true,
+  "path_leak_hits": [],
+  "path_leak_scan_passed": true,
+  "schema_version": "aide.validation-results.v0",
+  "secret_like_hits": [],
+  "secret_like_scan_passed": true,
+  "task_id": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02"
+}

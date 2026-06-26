@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "contamination": true,
+    "directory_contamination": true,
+    "fixture_coverage": true,
+    "protocol_range": true,
+    "regression": true
+  },
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.distribution-manifest-v1-repair-02-check.report.v1",
+  "source_commit": "24753ef84fed5613f8a276ef7bfb4ddd58d6d7d3",
+  "source_task": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02",
+  "task_id": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02",
+  "validation": {
+    "all_commands_passed": true,
+    "json_parse_passed": true,
+    "path_leak_scan_passed": true,
+    "secret_like_scan_passed": true
+  },
+  "warnings": [
+    "DistributionManifest v1 remains unaccepted in this check task.",
+    "ProjectLock v0 was not started."
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "no_explicit_future_major_support": true,
+  "passed": true,
+  "rows": [
+    {
+      "case_id": "current-v1",
+      "expected_valid": true,
+      "independent_expected_valid": true,
+      "observed_refusal_codes": [],
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "case_id": "current-exact",
+      "expected_valid": true,
+      "independent_expected_valid": true,
+      "observed_refusal_codes": [],
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "case_id": "lower-0-9",
+      "expected_valid": true,
+      "independent_expected_valid": true,
+      "observed_refusal_codes": [],
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "case_id": "future-max-2x",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "case_id": "future-max-2-0-0",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "case_id": "future-min-2-0-0",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "case_id": "max-below-current",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "case_id": "min-above-current",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "case_id": "malformed-max",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "case_id": "missing-min",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "case_id": "inverted",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "case_id": "component-future",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "case_id": "unknown-future-feature",
+      "expected_valid": false,
+      "independent_expected_valid": false,
+      "observed_refusal_codes": [
+        "distribution.unknown_required_feature"
+      ],
+      "observed_valid": false,
+      "passed": true
+    }
+  ],
+  "schema_version": "aide.check.protocol-range-review.v1"
+}

@@ -1,0 +1,38 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+title: Check DistributionManifest v1 Repair 02
+status: needs_review
+planning_state: check_completed
+task_type: check
+source_task: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+source_commit: 24753ef84fed5613f8a276ef7bfb4ddd58d6d7d3
+source_result: PASS_WITH_WARNINGS
+source_material_finding_count: 0
+source_missing_evidence: 0
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/**
+  - .aide/reports/distribution-manifest-v1-repair-02-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_behaviors:
+  - implementation_repair
+  - distribution_manifest_acceptance
+  - projectlock_start
+  - install_apply
+  - update_apply
+  - repair_apply
+  - rollback_apply
+  - uninstall_apply
+  - release_publication
+  - target_repository_mutation
+  - network_call
+  - provider_model_call
+  - worker_execution
+  - workbench_or_mcp_runtime
+  - promotion
+stop_condition: needs_review

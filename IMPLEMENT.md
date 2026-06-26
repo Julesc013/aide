@@ -9379,4 +9379,41 @@ DistributionManifest v1 remains proposed until independent Repair 02 check and
 acceptance. ProjectLock v0, OwnershipLedger v1, install/update apply, release
 publication, target mutation, Workbench/MCP runtime, provider/model calls,
 worker execution, preview/apply/rollback, and promotion were not started.
+
+## Work Item: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+
+### Summary
+
+Completed the independent check-only review for Repair 02.
+
+### Implementation Notes
+
+- Added the check task packet and reports without modifying implementation,
+  schema, fixture, helper, or test code.
+- Used a check-local protocol range expectation to verify current v1 ranges,
+  exact `1.0.0`, lower `0.9.0`, future-major maxima, malformed ranges,
+  inverted ranges, min above current, component future-major constraints, and
+  unknown required future-major features.
+- Independently checked `files/` target-root contamination classification,
+  allowed controls, and unknown-prefix behavior.
+- Built a temporary directory contamination fixture and verified forbidden
+  members remain recorded with source member, target member, packaging prefix,
+  reason, and refusal code.
+- Verified the four future-major invalid fixtures exist, are mentioned by
+  tests, load from disk, and fail with `distribution.unsupported_protocol_range`.
+- Rechecked Repair 01 regression surfaces, Q47/Q48 boundaries, and explicit
+  non-capabilities.
+
+### Verification
+
+Validation receipts record passing focused DistributionManifest tests,
+DistributionManifest validate, Q43-Q48 no-apply/no-publish validators, task
+inspect/evidence, broad `aide_lite.py validate`, JSON parsing, path and secret
+scans, diff checks, and commit-policy check.
+
+### Remaining Issues
+
+DistributionManifest v1 is still not accepted in this check task. The next
+serialized task is `AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01`; ProjectLock v0
+remains blocked until acceptance is complete.
 source-change preview/apply/rollback, and promotion remain blocked.

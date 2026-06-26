@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "case_id": "protocol-range-max-2x",
+      "exists": true,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/protocol-range-max-2x.json",
+      "test_mentions_fixture": true
+    },
+    {
+      "case_id": "protocol-range-max-2-0-0",
+      "exists": true,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/protocol-range-max-2-0-0.json",
+      "test_mentions_fixture": true
+    },
+    {
+      "case_id": "protocol-range-min-2-0-0",
+      "exists": true,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/protocol-range-min-2-0-0.json",
+      "test_mentions_fixture": true
+    },
+    {
+      "case_id": "component-protocol-future-major",
+      "exists": true,
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/component-protocol-future-major.json",
+      "test_mentions_fixture": true
+    }
+  ],
+  "schema_version": "aide.check.fixture-coverage-review.v1"
+}

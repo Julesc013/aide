@@ -1,0 +1,31 @@
+# Validation Results
+
+- `git status --short --branch`: 0 (0.132s)
+- `py -3 -m py_compile core/protocol/distribution_manifest.py .aide/scripts/tests/test_aide_distribution_manifest_v1.py .aide/scripts/aide_lite.py`: 0 (1.098s)
+- `py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_distribution_manifest_v1.py`: 0 (54.502s)
+- `py -3 .aide/scripts/aide_lite.py distribution-manifest validate`: 0 (2.645s)
+- `py -3 .aide/scripts/aide_lite.py install status`: 0 (1.218s)
+- `py -3 .aide/scripts/aide_lite.py install validate`: 0 (1.374s)
+- `py -3 .aide/scripts/aide_lite.py repair status`: 0 (1.143s)
+- `py -3 .aide/scripts/aide_lite.py repair validate`: 0 (1.118s)
+- `py -3 .aide/scripts/aide_lite.py upgrade status`: 0 (1.182s)
+- `py -3 .aide/scripts/aide_lite.py upgrade validate`: 0 (1.387s)
+- `py -3 .aide/scripts/aide_lite.py upgrade compatibility`: 0 (1.116s)
+- `py -3 .aide/scripts/aide_lite.py rollback status`: 0 (1.09s)
+- `py -3 .aide/scripts/aide_lite.py rollback validate`: 0 (1.267s)
+- `py -3 .aide/scripts/aide_lite.py uninstall status`: 0 (1.144s)
+- `py -3 .aide/scripts/aide_lite.py uninstall validate`: 0 (1.674s)
+- `py -3 .aide/scripts/aide_lite.py release status`: 0 (1.118s)
+- `py -3 .aide/scripts/aide_lite.py release validate`: 0 (6.481s)
+- `py -3 .aide/scripts/aide_lite.py release draft-status`: 0 (1.199s)
+- `py -3 .aide/scripts/aide_lite.py release draft-validate`: 0 (1.153s)
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02`: 0 (1.135s)
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02`: 0 (1.132s)
+- `py -3 .aide/scripts/aide_lite.py validate`: 0 (11.872s)
+- `git diff --check`: 0 (0.135s)
+- `git diff --cached --check`: 0 (0.081s)
+
+- all_commands_passed: true
+- json_parse_passed: true
+- path_leak_scan_passed: true
+- secret_like_scan_passed: true
