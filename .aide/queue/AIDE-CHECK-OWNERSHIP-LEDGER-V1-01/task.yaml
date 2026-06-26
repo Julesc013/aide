@@ -1,0 +1,48 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+title: Check OwnershipLedger v1
+type: check
+status: needs_review
+planning_state: check_completed
+result: REQUEST_CHANGES
+checked_capability: ownership_ledger_v1
+source_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+source_commit: 37bb014ce3f43e0818fa391c03fb86ac012d34ad
+material_finding_count: 5
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/**
+    - .aide/reports/ownership-ledger-v1-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .aide/protocol/aide-ownership-ledger-v1.schema.json
+    - core/protocol/ownership_ledger.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_ownership_ledger_v1.py
+    - .aide/fixtures/ownership-ledger-v1/**
+    - .aide/reports/ownership-ledger-v1/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+non_capabilities:
+  - implementation repair
+  - OwnershipLedger acceptance
+  - InstallRecord build
+  - MigrationRecord build
+  - install apply
+  - update apply
+  - repair apply
+  - rollback apply
+  - uninstall apply
+  - target repository mutation
+  - release publication
+  - network call
+  - provider/model call
+notes:
+  - Independent check found five material findings against the requested OwnershipLedger v1 acceptance oracle.
+  - The wave stops before OwnershipLedger acceptance and before InstallRecord.

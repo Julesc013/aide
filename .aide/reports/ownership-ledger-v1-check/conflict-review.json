@@ -1,0 +1,16 @@
+{
+  "result": "FAILED_VALIDATION",
+  "material_finding_id": "ownership.conflict_model_incomplete",
+  "probes": [
+    {
+      "probe": "duplicate target_path with different record_id",
+      "observed_valid": true,
+      "expected_valid": false
+    },
+    {
+      "probe": "case-fold collision Readme.md vs README.md",
+      "observed_valid": true,
+      "expected_valid": false
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# Validation Commands
+
+- `git status --short --branch`
+- `git rev-parse HEAD`
+- `git log -8 --oneline`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-OWNERSHIP-LEDGER-V1-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-OWNERSHIP-LEDGER-V1-01`
+- `py -3 .aide/scripts/aide_lite.py ownership-ledger status`
+- `py -3 .aide/scripts/aide_lite.py ownership-ledger project`
+- `py -3 .aide/scripts/aide_lite.py ownership-ledger validate`
+- `py -3 .aide/scripts/aide_lite.py ownership-ledger migrate-q43`
+- check-local Python probe for digest, required field presence, duplicate target path, unknown apply, and case collision
+- `py -3 -m py_compile core/protocol/ownership_ledger.py .aide/scripts/aide_lite.py`
+- `py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_ownership_ledger_v1.py`
+- `py -3 .aide/scripts/aide_lite.py distribution-manifest validate`
+- `py -3 .aide/scripts/aide_lite.py project-lock validate`
+- `py -3 .aide/scripts/aide_lite.py install validate`
+- `py -3 .aide/scripts/aide_lite.py repair validate`
+- `py -3 .aide/scripts/aide_lite.py upgrade validate`
+- `py -3 .aide/scripts/aide_lite.py rollback validate`
+- `py -3 .aide/scripts/aide_lite.py uninstall validate`
+- `py -3 .aide/scripts/aide_lite.py release validate`
+- `py -3 .aide/scripts/aide_lite.py release draft-validate`
+- `py -3 .aide/scripts/aide_lite.py validate`

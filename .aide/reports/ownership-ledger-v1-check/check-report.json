@@ -1,0 +1,76 @@
+{
+  "schema_version": "aide.check-report.v0",
+  "task_id": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-01",
+  "source_task": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-01",
+  "source_commit": "37bb014ce3f43e0818fa391c03fb86ac012d34ad",
+  "result": "REQUEST_CHANGES",
+  "checked_capability": "ownership_ledger_v1",
+  "material_finding_count": 5,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01",
+  "assertions": [
+    {
+      "id": "schema.helper.compact_alignment",
+      "category": "schema",
+      "outcome": "PASS_WITH_WARNINGS",
+      "severity": "warning",
+      "expected": "Schema and helper align for current compact implementation.",
+      "observed": "Current helper output conforms to current schema, but the model is below the requested check oracle.",
+      "evidence_refs": [".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/schema-helper-alignment.md"]
+    },
+    {
+      "id": "ownership.file_entry_contract_incomplete",
+      "category": "file_entry",
+      "outcome": "FAIL",
+      "severity": "material",
+      "expected": "Required file-entry fields are present and semantically checked.",
+      "observed": "The implementation emits compact records and omits required ownership, digest, portability, preservation, timing, and supersession fields.",
+      "evidence_refs": [".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/file-entry-review.md"]
+    },
+    {
+      "id": "ownership.managed_section_contract_incomplete",
+      "category": "managed_section",
+      "outcome": "FAIL",
+      "severity": "material",
+      "expected": "Managed-section records include marker, content, preservation, preimage, and update constraints and reject marker conflicts.",
+      "observed": "Only compact section identity fields exist; required fields and conflict fixtures are absent.",
+      "evidence_refs": [".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/managed-section-review.md"]
+    },
+    {
+      "id": "ownership.q43_migration_missing",
+      "category": "migration",
+      "outcome": "FAIL",
+      "severity": "material",
+      "expected": "Q43 ownership class migration is deterministic and exposed for validation.",
+      "observed": "`ownership-ledger migrate-q43` is not a registered subcommand, and no Q43 migration helper or fixture corpus exists.",
+      "evidence_refs": [".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/q43-migration-review.md"]
+    },
+    {
+      "id": "ownership.conflict_model_incomplete",
+      "category": "conflict",
+      "outcome": "FAIL",
+      "severity": "material",
+      "expected": "Path collisions, case collisions, section overlaps, and ownership conflicts fail closed.",
+      "observed": "Duplicate target paths and case-fold collisions validate with no refusal.",
+      "evidence_refs": [".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/conflict-model-review.md"]
+    },
+    {
+      "id": "ownership.fixture_coverage_incomplete",
+      "category": "fixtures",
+      "outcome": "FAIL",
+      "severity": "material",
+      "expected": "Required direct fixture corpus exists for class, path, section, migration, and conflict behavior.",
+      "observed": "The source corpus covers compact cases but lacks required direct fixtures for several material behaviors.",
+      "evidence_refs": [".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/fixture-coverage-review.md"]
+    },
+    {
+      "id": "ownership.no_overclaiming",
+      "category": "boundary",
+      "outcome": "PASS",
+      "severity": "info",
+      "expected": "No apply, target mutation, release, network, provider, model, or runtime behavior is implemented or claimed.",
+      "observed": "No forbidden behavior was observed.",
+      "evidence_refs": [".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/no-overclaiming-review.md"]
+    }
+  ]
+}

@@ -2849,3 +2849,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, proposes `ownership_ledger_v1`, and recommends exactly `AIDE-CHECK-OWNERSHIP-LEDGER-V1-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: OwnershipLedger v1 records ownership taxonomy and no-apply authority only. Install truth, install/update apply, admission, authorization, target mutation, release publication, runtime, InstallRecord, and UpdatePlan remain blocked.
+
+### Queue ID: AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+
+- Title: Check OwnershipLedger v1
+- Status: Needs Review
+- Objective: independently verify the proposed `ownership_ledger_v1` build without repairing implementation, accepting OwnershipLedger, or beginning InstallRecord.
+- Scope: `.aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/**`, `.aide/reports/ownership-ledger-v1-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source build commit `37bb014ce3f43e0818fa391c03fb86ac012d34ad`, result `PASS_WITH_WARNINGS`, and missing evidence `0`.
+- Verification Intent: source-chain review, schema/helper inspection, check-local digest recomputation, file-entry field probe, managed-section field probe, Q43 migration CLI probe, duplicate target and case-collision probes, fixture coverage review, focused tests, Q43-Q48 validators, broad validation, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records the independent check result, and recommends either acceptance or a bounded repair task.
+- Result: `REQUEST_CHANGES`.
+- Notes: Five material findings remain. The next serialized task is exactly `AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01`. OwnershipLedger acceptance, InstallRecord, MigrationRecord, UpdatePlan, and RollbackBundle remain blocked.

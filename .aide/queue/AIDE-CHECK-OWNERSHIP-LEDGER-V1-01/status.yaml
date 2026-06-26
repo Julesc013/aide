@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: REQUEST_CHANGES
+checked_capability: ownership_ledger_v1
+source_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+source_commit: 37bb014ce3f43e0818fa391c03fb86ac012d34ad
+material_finding_count: 5
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+notes:
+  - Independent probes found incomplete file entry model, incomplete managed-section model, missing Q43 migration, missing path/section conflict checks, and incomplete fixture coverage.
+  - Focused tests and broad validation pass, but they do not cover the missing acceptance criteria.
+  - The serialized wave stops before acceptance, InstallRecord, MigrationRecord, UpdatePlan, and RollbackBundle work.

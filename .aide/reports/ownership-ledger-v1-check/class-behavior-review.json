@@ -1,0 +1,21 @@
+{
+  "result": "PASS_WITH_WARNINGS",
+  "classes_present": [
+    "vendor_managed_file",
+    "vendor_managed_section",
+    "project_owned",
+    "project_overlay",
+    "project_generated",
+    "runtime_generated",
+    "local_only",
+    "evidence_only",
+    "preserved_legacy",
+    "unknown",
+    "never_touch"
+  ],
+  "notes": [
+    "Class enumeration is complete.",
+    "No-apply booleans are false in generated records.",
+    "Downstream semantics are incomplete because file, managed-section, migration, and conflict models are incomplete."
+  ]
+}

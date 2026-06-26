@@ -1,0 +1,24 @@
+{
+  "result": "FAILED_VALIDATION",
+  "material_finding_id": "ownership.managed_section_contract_incomplete",
+  "observed_missing_fields": [
+    "containing_file_path",
+    "section_identity",
+    "marker_format",
+    "start_marker_digest",
+    "end_marker_digest",
+    "section_content_digest",
+    "surrounding_content_preservation_policy",
+    "preimage_requirements",
+    "update_constraints"
+  ],
+  "missing_fixture_cases": [
+    "missing markers",
+    "duplicate markers",
+    "overlapping sections",
+    "nested sections",
+    "identity mismatch",
+    "manual outside text preserved",
+    "file and section ownership conflict"
+  ]
+}

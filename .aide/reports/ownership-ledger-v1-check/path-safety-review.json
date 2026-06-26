@@ -1,0 +1,9 @@
+{
+  "result": "PASS_WITH_WARNINGS",
+  "passed": [
+    "absolute path refusal",
+    "traversal path refusal",
+    "source latest contamination refusal"
+  ],
+  "material_gap": "Path collision and case-fold collision checks are absent; see conflict-review.json."
+}

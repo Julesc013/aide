@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "observed": [
+    "explicit extensions maps exist",
+    "unknown optional feature is tolerated with warning",
+    "unknown required feature fails closed",
+    "requires.* extension keys fail closed"
+  ]
+}

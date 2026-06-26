@@ -1,0 +1,24 @@
+{
+  "result": "FAILED_VALIDATION",
+  "material_finding_id": "ownership.fixture_coverage_incomplete",
+  "source_valid_fixture_count": 3,
+  "source_invalid_fixture_count": 14,
+  "missing_required_fixtures": [
+    "vendor-managed file matching digest",
+    "vendor-managed file drift",
+    "managed section missing markers",
+    "managed section duplicate markers",
+    "managed section overlapping",
+    "managed section identity mismatch",
+    "manual text outside managed section preserved",
+    "case-fold collision",
+    "path collision",
+    "symlink path",
+    "reparse path",
+    "nested ownership conflict",
+    "Q43 migration complete",
+    "Q43 migration manual-review",
+    "Q43 migration unknown",
+    "Q43 migration unmapped"
+  ]
+}

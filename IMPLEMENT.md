@@ -9578,3 +9578,37 @@ OwnershipLedger v1 remains proposed until independent check and acceptance. It
 does not implement install truth, install/update apply, admission,
 authorization, target mutation, release publication, runtime, InstallRecord, or
 UpdatePlan.
+
+## Work Item: AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+
+### Summary
+
+Independently checked the proposed `ownership_ledger_v1` build and returned
+`REQUEST_CHANGES`.
+
+### Implementation Notes
+
+- Added the check-only queue task and OwnershipLedger check reports.
+- Recomputed the OwnershipLedger digest independently and confirmed the current
+  compact source projection is deterministic.
+- Verified the eleven ownership classes are present and no apply behavior is
+  implemented.
+- Found five material gaps against the requested downstream oracle:
+  incomplete file-entry fields, incomplete managed-section fields, missing Q43
+  migration, incomplete conflict detection, and incomplete fixture coverage.
+- Stopped the serialized wave before acceptance, InstallRecord, MigrationRecord,
+  UpdatePlan, and RollbackBundle.
+
+### Verification
+
+Validation included source task inspect/evidence, OwnershipLedger
+status/project/validate, the failing `migrate-q43` CLI probe, check-local field
+and collision probes, py_compile, focused OwnershipLedger tests, predecessor
+DistributionManifest and ProjectLock validation, Q43-Q48 no-apply/no-publish
+validators, and broad `aide_lite.py validate`.
+
+### Remaining Issues
+
+The next serialized task is
+`AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01`. No production implementation was
+repaired in this check task.

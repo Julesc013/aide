@@ -1,0 +1,46 @@
+{
+  "material_finding_count": 5,
+  "recommended_next_task": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01",
+  "findings": [
+    {
+      "id": "ownership.file_entry_contract_incomplete",
+      "severity": "material",
+      "summary": "File entries omit required ownership, digest, portability, preservation, timing, and supersession fields.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/file-entry-review.md"
+      ]
+    },
+    {
+      "id": "ownership.managed_section_contract_incomplete",
+      "severity": "material",
+      "summary": "Managed-section records omit marker, section-content, preimage, update, and surrounding-content preservation fields and lack marker conflict fixtures.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/managed-section-review.md"
+      ]
+    },
+    {
+      "id": "ownership.q43_migration_missing",
+      "severity": "material",
+      "summary": "Q43 ownership migration is not implemented or exposed by the CLI.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/q43-migration-review.md"
+      ]
+    },
+    {
+      "id": "ownership.conflict_model_incomplete",
+      "severity": "material",
+      "summary": "Duplicate target paths and case-fold path collisions validate with no refusal, and the broader conflict model is absent.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/conflict-model-review.md"
+      ]
+    },
+    {
+      "id": "ownership.fixture_coverage_incomplete",
+      "severity": "material",
+      "summary": "The fixture corpus lacks required direct cases for managed-section conflicts, path collisions, Q43 migration, and several ownership classes.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence/fixture-coverage-review.md"
+      ]
+    }
+  ]
+}

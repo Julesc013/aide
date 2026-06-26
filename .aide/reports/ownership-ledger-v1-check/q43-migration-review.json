@@ -1,0 +1,10 @@
+{
+  "result": "FAILED_VALIDATION",
+  "material_finding_id": "ownership.q43_migration_missing",
+  "observed": {
+    "cli_subcommand_exists": false,
+    "helper_migration_exists": false,
+    "fixture_coverage_exists": false
+  },
+  "expected": "Deterministic Q43 migration with mapped, manual-review, unknown, and unmapped fail-closed cases."
+}

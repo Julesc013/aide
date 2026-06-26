@@ -2569,3 +2569,13 @@ items:
   prompt: .aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-01/prompt.md
   evidence: .aide/queue/AIDE-BUILD-OWNERSHIP-LEDGER-V1-01/evidence
   description: Build task for proposed ownership_ledger_v1 after ProjectLock v0 acceptance. Adds a Draft 2020-12 OwnershipLedger schema, deterministic helper, AIDE Lite ownership-ledger status/project/validate commands, taxonomy and record reports, focused tests, fixture corpus, and task evidence. Binds the accepted ProjectLock digest and records the ownership taxonomy for vendor-managed files, managed sections, project-owned files, project overlays, generated state, local/runtime state, evidence-only records, preserved legacy state, unknown ownership, and never-touch paths. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-OWNERSHIP-LEDGER-V1-01. Does not implement install truth, install/update/apply, admission, authorization, target mutation, release publication, network/provider calls, runtime, InstallRecord, or UpdatePlan.
+- id: AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+  status: needs_review
+  planning_state: check_completed
+  result: REQUEST_CHANGES
+  title: Check OwnershipLedger v1
+  task: .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-01/evidence
+  description: Check-only independent review of AIDE-BUILD-OWNERSHIP-LEDGER-V1-01 at 37bb014ce3f43e0818fa391c03fb86ac012d34ad. Verifies schema/helper/projection alignment, class behavior, file-entry model, managed-section model, Q43 migration, path safety, conflict behavior, fixture coverage, no-overclaiming, and validation evidence. Stops at needs_review with REQUEST_CHANGES, material_finding_count 5, missing_evidence 0, and recommends exactly AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01 because file-entry fields, managed-section fields, Q43 migration, conflict detection, and fixture coverage are incomplete. Does not repair implementation, accept OwnershipLedger v1, begin InstallRecord, mutate targets, publish releases, call network/provider/model services, or start runtime work.
