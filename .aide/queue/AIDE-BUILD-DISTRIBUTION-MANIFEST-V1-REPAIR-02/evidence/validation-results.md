@@ -1,0 +1,34 @@
+# Validation Results
+
+- `git status --short --branch`: 0 (0.146s)
+- `py -3 -m json.tool .aide/protocol/aide-distribution-manifest-v1.schema.json`: 0 (0.389s)
+- `py -3 -m py_compile core/protocol/distribution_manifest.py .aide/scripts/aide_lite.py .aide/scripts/tests/test_aide_distribution_manifest_v1.py`: 0 (0.9s)
+- `py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_distribution_manifest_v1.py`: 0 (51.835s)
+- `py -3 .aide/scripts/aide_lite.py distribution-manifest status`: 0 (1.145s)
+- `py -3 .aide/scripts/aide_lite.py distribution-manifest project`: 0 (2.478s)
+- `py -3 .aide/scripts/aide_lite.py distribution-manifest validate`: 0 (2.851s)
+- `py -3 .aide/scripts/aide_lite.py install status`: 0 (1.231s)
+- `py -3 .aide/scripts/aide_lite.py install validate`: 0 (1.44s)
+- `py -3 .aide/scripts/aide_lite.py repair status`: 0 (1.169s)
+- `py -3 .aide/scripts/aide_lite.py repair validate`: 0 (1.116s)
+- `py -3 .aide/scripts/aide_lite.py upgrade status`: 0 (1.153s)
+- `py -3 .aide/scripts/aide_lite.py upgrade validate`: 0 (1.382s)
+- `py -3 .aide/scripts/aide_lite.py upgrade compatibility`: 0 (2.758s)
+- `py -3 .aide/scripts/aide_lite.py rollback status`: 0 (1.759s)
+- `py -3 .aide/scripts/aide_lite.py rollback validate`: 0 (1.274s)
+- `py -3 .aide/scripts/aide_lite.py uninstall status`: 0 (1.296s)
+- `py -3 .aide/scripts/aide_lite.py uninstall validate`: 0 (1.795s)
+- `py -3 .aide/scripts/aide_lite.py release status`: 0 (1.215s)
+- `py -3 .aide/scripts/aide_lite.py release validate`: 0 (11.676s)
+- `py -3 .aide/scripts/aide_lite.py release draft-status`: 0 (1.155s)
+- `py -3 .aide/scripts/aide_lite.py release draft-validate`: 0 (1.183s)
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02`: 0 (1.024s)
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02`: 0 (1.019s)
+- `py -3 .aide/scripts/aide_lite.py validate`: 0 (26.475s)
+- `git diff --check`: 0 (0.147s)
+- `git diff --cached --check`: 0 (0.067s)
+
+- all_commands_passed: true
+- json_parse_passed: true
+- path_leak_scan_passed: true
+- secret_like_scan_passed: true

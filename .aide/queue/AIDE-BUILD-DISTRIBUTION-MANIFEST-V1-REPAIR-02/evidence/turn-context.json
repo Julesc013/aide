@@ -1,0 +1,11 @@
+{
+  "schema_version": "aide.turn-context.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02",
+  "source_check_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+  "source_check_result": "REQUEST_CHANGES",
+  "source_commit": "17e8d578894aeab9ea3203454c26c2941573b9dd",
+  "branch": "main",
+  "origin_main_aligned_at_start": true,
+  "objective": "Repair the four remaining DistributionManifest v1 material findings and stop at needs_review.",
+  "next_task_on_success": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02"
+}

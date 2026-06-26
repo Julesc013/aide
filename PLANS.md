@@ -2765,3 +2765,15 @@
 - Exit Criteria: task stops at `needs_review`, records the independent repair-check result, and recommends either acceptance or a bounded Repair 02 task.
 - Result: `REQUEST_CHANGES`.
 - Notes: Four material findings remain. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02`. DistributionManifest acceptance, ProjectLock v0, OwnershipLedger v1, and InstallRecord v0 remain blocked.
+
+### Queue ID: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+
+- Title: Build DistributionManifest v1 Repair 02
+- Status: Needs Review
+- Objective: repair exactly the four remaining material findings from `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01` without accepting `distribution_manifest_v1` or beginning ProjectLock, OwnershipLedger, InstallRecord, apply, release, target mutation, runtime, provider, worker, or promotion work.
+- Scope: `.aide/protocol/aide-distribution-manifest-v1.schema.json`, `core/protocol/distribution_manifest.py`, `.aide/scripts/tests/test_aide_distribution_manifest_v1.py`, `.aide/fixtures/distribution-manifest-v1/**`, `.aide/reports/distribution-manifest-v1/**`, `.aide/reports/distribution-manifest-v1-repair-02/**`, `.aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01`, result `REQUEST_CHANGES`, `material_finding_count: 4`, and `missing_evidence: 0`.
+- Verification Intent: focused DistributionManifest tests, DistributionManifest status/project/validate, Q43-Q48 no-apply validators, broad AIDE validation, report JSON parsing, leak scans, diff checks, task inspect/evidence, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and recommends exactly `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: Future-major protocol ranges now fail closed, `files/` export-pack members are checked against target-root classification, directory forbidden members are recorded, and direct future-major invalid fixtures exist. DistributionManifest acceptance and ProjectLock remain blocked pending independent repair check.

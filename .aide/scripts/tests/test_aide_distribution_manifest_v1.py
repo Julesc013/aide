@@ -250,10 +250,13 @@ class AIDEDistributionManifestV1Tests(unittest.TestCase):
         cases = [
             ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"]["protocol_range"].__setitem__("min", "2.0.0")),
             ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"]["protocol_range"].__setitem__("max", "0.x")),
+            ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"]["protocol_range"].__setitem__("max", "2.x")),
+            ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"]["protocol_range"].__setitem__("max", "2.0.0")),
             ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"]["protocol_range"].pop("min", None)),
             ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"].pop("min_reader_version", None)),
             ("distribution.unsupported_protocol_range", lambda m: m["spec"]["protocol"].pop("min_writer_version", None)),
             ("distribution.unsupported_protocol_range", lambda m: m["spec"]["components"][0]["compatibility_constraints"].__setitem__("min_reader_version", "2.0.0")),
+            ("distribution.unsupported_protocol_range", lambda m: m["spec"]["components"][0]["compatibility_constraints"].__setitem__("max_reader_version", "2.x")),
         ]
         for expected, mutator in cases:
             with self.subTest(expected=expected):
@@ -263,15 +266,76 @@ class AIDEDistributionManifestV1Tests(unittest.TestCase):
                 result = distribution_manifest.validate_distribution_manifest_object(manifest)
                 self.assertIn(expected, result["refusal_codes"])
 
+        valid = distribution_manifest.minimal_fixture_manifest()
+        valid["spec"]["protocol"]["protocol_range"] = {"min": "1.0.0", "max": "1.x"}
+        valid = distribution_manifest.finalize_manifest(valid)
+        self.assertTrue(distribution_manifest.validate_distribution_manifest_object(valid)["valid"])
+
+    def test_files_packaging_prefix_classifies_target_root_members(self) -> None:
+        forbidden_cases = {
+            "files/.aide.local/state.sqlite": ("forbidden_prefix:.aide.local/", ".aide.local/state.sqlite"),
+            "files/.env": ("forbidden_exact_member", ".env"),
+            "files/raw-prompt.txt": ("forbidden_exact_member", "raw-prompt.txt"),
+            "files/raw-response.txt": ("forbidden_exact_member", "raw-response.txt"),
+            "files/.aide/context/latest-task-packet.md": ("forbidden_prefix:.aide/context/latest-", ".aide/context/latest-task-packet.md"),
+            "files/.aide/reports/distribution-manifest-v1/manifest.json": ("forbidden_prefix:.aide/reports/", ".aide/reports/distribution-manifest-v1/manifest.json"),
+            "files/.aide/repo/latest-inventory.json": ("forbidden_prefix:.aide/repo/latest-", ".aide/repo/latest-inventory.json"),
+            "files/.aide/roots/latest-classification.json": ("forbidden_prefix:.aide/roots/latest-", ".aide/roots/latest-classification.json"),
+            "files/.aide/tools/latest-tools.json": ("forbidden_prefix:.aide/tools/latest-", ".aide/tools/latest-tools.json"),
+            "files/.aide/install/latest-plan.json": ("forbidden_prefix:.aide/install/latest-", ".aide/install/latest-plan.json"),
+            "files/.aide/repair/latest-plan.json": ("forbidden_prefix:.aide/repair/latest-", ".aide/repair/latest-plan.json"),
+            "files/.aide/upgrade/latest-plan.json": ("forbidden_prefix:.aide/upgrade/latest-", ".aide/upgrade/latest-plan.json"),
+            "files/.aide/rollback/latest-plan.json": ("forbidden_prefix:.aide/rollback/latest-", ".aide/rollback/latest-plan.json"),
+            "files/.aide/uninstall/latest-plan.json": ("forbidden_prefix:.aide/uninstall/latest-", ".aide/uninstall/latest-plan.json"),
+            "files/logs/run.log": ("forbidden_prefix:logs/", "logs/run.log"),
+            "files/.cache/cache.bin": ("forbidden_prefix:.cache/", ".cache/cache.bin"),
+            "files/secrets/token.txt": ("forbidden_prefix:secrets/", "secrets/token.txt"),
+        }
+        for member, (reason, target_member) in forbidden_cases.items():
+            with self.subTest(member=member):
+                classification = distribution_manifest.forbidden_member_classification(member)
+                self.assertIsNotNone(classification)
+                assert classification is not None
+                self.assertEqual(classification["reason"], reason)
+                self.assertEqual(classification["target_member"], target_member)
+                self.assertEqual(classification["packaging_prefix"], "files")
+
+        self.assertIsNone(distribution_manifest.forbidden_member_classification("files/src/main.py"))
+        self.assertIsNone(distribution_manifest.forbidden_member_classification("files/docs/reference.md"))
+        payload = distribution_manifest.forbidden_member_classification("payload/.env")
+        self.assertIsNotNone(payload)
+        assert payload is not None
+        self.assertEqual(payload["packaging_prefix"], "")
+        self.assertEqual(payload["target_member"], "payload/.env")
+
     def test_forbidden_directory_member_records_contamination(self) -> None:
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
         root = Path(temp.name)
-        target = root / distribution_manifest.EXPORT_PACK_ROOT / ".aide.local" / "state.sqlite"
-        target.parent.mkdir(parents=True)
-        target.write_text("state", encoding="utf-8")
+        members = {
+            "files/.aide.local/state.sqlite": "state",
+            "files/.env": "TOKEN=fixture",
+            "files/.aide/reports/report.json": "{}",
+            "files/.aide/context/latest-context-packet.md": "context",
+            "files/src/allowed.py": "print('ok')\n",
+        }
+        for rel, text in members.items():
+            target = root / distribution_manifest.EXPORT_PACK_ROOT / rel
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(text, encoding="utf-8")
+        inventory = distribution_manifest.directory_inventory_report(root / distribution_manifest.EXPORT_PACK_ROOT)
+        forbidden_paths = {item["path"] for item in inventory["forbidden_members"]}
+        allowed_paths = {item["path"] for item in inventory["allowed_members"]}
+        self.assertIn("files/.aide.local/state.sqlite", forbidden_paths)
+        self.assertIn("files/.env", forbidden_paths)
+        self.assertIn("files/.aide/reports/report.json", forbidden_paths)
+        self.assertIn("files/.aide/context/latest-context-packet.md", forbidden_paths)
+        self.assertIn("files/src/allowed.py", allowed_paths)
+        self.assertTrue(inventory["source_state_contamination_detected"])
         artifact = distribution_manifest._directory_artifact(root)
         self.assertGreater(artifact["directory_forbidden_member_count"], 0)
+        artifact_paths = {item["path"] for item in artifact["directory_forbidden_members"]}
+        self.assertIn("files/.aide.local/state.sqlite", artifact_paths)
         manifest = distribution_manifest.minimal_fixture_manifest()
         manifest["spec"]["artifacts"] = [artifact]
         manifest["spec"]["components"] = distribution_manifest.build_components([artifact])
@@ -302,6 +366,10 @@ class AIDEDistributionManifestV1Tests(unittest.TestCase):
             "dependency-cycle",
             "unsupported-source",
             "unsupported-protocol-range",
+            "protocol-range-max-2x",
+            "protocol-range-max-2-0-0",
+            "protocol-range-min-2-0-0",
+            "component-protocol-future-major",
             "inverted-protocol-range",
             "forbidden-member",
             "source-contamination",
@@ -315,6 +383,22 @@ class AIDEDistributionManifestV1Tests(unittest.TestCase):
         invalid_names = {path.stem for path in (root / distribution_manifest.FIXTURE_ROOT / "invalid").glob("*.json")}
         self.assertTrue(required_valid.issubset(valid_names), required_valid - valid_names)
         self.assertTrue(required_invalid.issubset(invalid_names), required_invalid - invalid_names)
+
+    def test_future_major_protocol_fixture_files_fail(self) -> None:
+        root = self.make_repo()
+        distribution_manifest.write_fixture_corpus(root)
+        for case_id in [
+            "protocol-range-max-2x",
+            "protocol-range-max-2-0-0",
+            "protocol-range-min-2-0-0",
+            "component-protocol-future-major",
+        ]:
+            with self.subTest(case_id=case_id):
+                fixture = distribution_manifest.read_json(
+                    root / distribution_manifest.FIXTURE_ROOT / "invalid" / f"{case_id}.json"
+                )
+                result = distribution_manifest.validate_distribution_manifest_object(fixture)
+                self.assertIn("distribution.unsupported_protocol_range", result["refusal_codes"])
 
     def test_project_and_validate_write_reports_and_fixture_corpus(self) -> None:
         root = self.make_repo()

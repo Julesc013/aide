@@ -9328,4 +9328,55 @@ broad `aide_lite.py validate`, diff checks, and leak scans.
 DistributionManifest acceptance, ProjectLock v0, OwnershipLedger v1,
 InstallRecord v0, install/update/repair/rollback/uninstall apply, release
 publication, target mutation, Workbench/MCP runtime, provider/model calls,
+worker execution, and promotion remain blocked pending Repair 02.
+
+## Work Item: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+
+### Summary
+
+Completed the bounded second repair for DistributionManifest v1 after the
+Repair 01 check left four material findings open.
+
+### Implementation Notes
+
+- Added the Repair 02 queue task, status, ExecPlan, prompt, task-local turn
+  context, finding matrix, allowed paths, validation plan, stop conditions, and
+  campaign state.
+- Tightened protocol-range validation so v1 rejects future-major maximums such
+  as `2.x` and `2.0.0` unless a future reviewed contract explicitly supports
+  them.
+- Added component-level future-major compatibility rejection through optional
+  `max_reader_version`, `max_writer_version`, and `protocol_range` checks.
+- Added target-root classification for the accepted `files/` package prefix so
+  `files/.aide.local/**`, `files/.env`, generated `.aide/context/latest-*`,
+  generated `.aide/reports/**`, generated latest state, logs, caches, secrets,
+  and raw prompt/response members are rejected against their installed view.
+- Preserved exact allowed packaged report-reference files already present in
+  the current Q47 preview pack while keeping generated report trees forbidden.
+- Added structured directory inventory reporting so forbidden members are
+  retained in contamination evidence instead of disappearing from the clean
+  digest input.
+- Added direct invalid fixtures for future-major protocol cases:
+  `protocol-range-max-2x`, `protocol-range-max-2-0-0`,
+  `protocol-range-min-2-0-0`, and `component-protocol-future-major`.
+- Added focused tests for protocol semantics, `files/` target-root
+  classification, nested directory contamination, and future-major fixture
+  validation.
+- Generated Repair 02 reports for protocol range, contamination
+  classification, directory contamination, fixture coverage, finding
+  disposition, status, and next-task routing.
+
+### Verification
+
+Initial compile and focused DistributionManifest tests passed after a narrow
+allowlist was added for the current Q47 preview pack's exact packaged report
+reference records. Full validation is recorded with the task evidence and final
+task report.
+
+### Remaining Issues
+
+DistributionManifest v1 remains proposed until independent Repair 02 check and
+acceptance. ProjectLock v0, OwnershipLedger v1, install/update apply, release
+publication, target mutation, Workbench/MCP runtime, provider/model calls,
+worker execution, preview/apply/rollback, and promotion were not started.
 source-change preview/apply/rollback, and promotion remain blocked.

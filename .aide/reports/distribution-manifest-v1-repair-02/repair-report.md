@@ -1,0 +1,12 @@
+# Repair Report
+
+- schema_version: aide.distribution-manifest-v1-repair-02.report.v1
+- task_id: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+- result: PASS_WITH_WARNINGS
+- material_finding_count: 0
+- missing_evidence: 0
+- finding_count: 4
+- closed_findings: ['protocol.future_major_not_implicitly_accepted', 'contamination.forbidden_path_classification_complete', 'contamination.directory_forbidden_members_recorded', 'fixture.future_major_protocol_fixture_present']
+- open_findings: []
+- recommended_next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+- warnings: ['DistributionManifest v1 remains proposed pending independent repair check and acceptance.', 'Existing Q47 release artifacts remain local preview/no-publish evidence.', 'Install/update/repair/rollback/uninstall apply and release publication remain non-capabilities.']

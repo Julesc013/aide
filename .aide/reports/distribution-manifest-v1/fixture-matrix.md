@@ -14,6 +14,7 @@
 | checksum-basename-collision | FAILED_VALIDATION | distribution.checksum_basename_collision |
 | checksum-missing | FAILED_VALIDATION | distribution.missing_checksum |
 | checksum-wrong-value | FAILED_VALIDATION | distribution.checksum_digest_mismatch |
+| component-protocol-future-major | FAILED_VALIDATION | distribution.unsupported_protocol_range |
 | dependency-cycle | FAILED_VALIDATION | distribution.component_dependency_cycle |
 | duplicate-artifact | FAILED_VALIDATION | distribution.duplicate_artifact |
 | duplicate-component-id | FAILED_VALIDATION | distribution.duplicate_component_id |
@@ -30,6 +31,9 @@
 | missing-dependency | FAILED_VALIDATION | distribution.missing_component_dependency |
 | missing-digest | FAILED_VALIDATION | distribution.manifest_digest_mismatch |
 | missing-sbom | FAILED_VALIDATION | distribution.sbom_unavailable |
+| protocol-range-max-2-0-0 | FAILED_VALIDATION | distribution.unsupported_protocol_range |
+| protocol-range-max-2x | FAILED_VALIDATION | distribution.unsupported_protocol_range |
+| protocol-range-min-2-0-0 | FAILED_VALIDATION | distribution.unsupported_protocol_range |
 | sbom-generated-claim | FAILED_VALIDATION | distribution.sbom_unavailable |
 | source-contamination | FAILED_VALIDATION | distribution.source_state_contamination |
 | traversal-path | FAILED_VALIDATION | distribution.forbidden_member, distribution.source_state_contamination |

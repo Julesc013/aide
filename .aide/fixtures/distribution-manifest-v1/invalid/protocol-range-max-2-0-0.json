@@ -26,22 +26,14 @@
         "checksum_ref": "aide://distribution/checksums/fixture",
         "compression_format": null,
         "content_digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "directory_file_count": 0,
-        "directory_forbidden_member_count": 1,
-        "directory_forbidden_members": [
-          {
-            "path": ".aide.local/state.sqlite",
-            "reason": "forbidden_prefix:.aide.local/"
-          }
-        ],
         "excluded_reason": "",
         "included": true,
-        "kind": "local_directory",
-        "media_type": "application/vnd.aide.directory",
+        "kind": "manifest_fixture",
+        "media_type": "application/json",
         "portable_role": "fixture",
         "provenance_ref": "aide://distribution/provenance/fixture",
         "relative_source_location": ".aide/fixtures/distribution-manifest-v1/source/minimal.json",
-        "source_kind": "local_directory",
+        "source_kind": "local_file",
         "target_treatment": "distribution_input_only_not_ownership_authority"
       }
     ],
@@ -109,7 +101,7 @@
         "signature_placeholder_v0"
       ],
       "protocol_range": {
-        "max": "1.x",
+        "max": "2.0.0",
         "min": "1.0.0"
       },
       "required_features": [
@@ -151,9 +143,9 @@
     }
   },
   "status": {
-    "distribution_digest": "sha256:c06555bc3fb979c0092a0f99b3c1e4bdaece15f2bba98c163ea360d80c024674",
+    "distribution_digest": "sha256:862dc5749e79a9df7267403c481ae7c7f4b55daac47ba1f619786c5624cdc224",
     "install_apply_implemented": false,
-    "manifest_payload_digest": "sha256:d43b20bbc4fa6fe2e4d429c8568682e500c0420b1fdff4e33896ee92c6b5fbf2",
+    "manifest_payload_digest": "sha256:350cbac460be0a71aca95f5d836764ab8a304d2ac4ecf3c3991cf97ab5bccc1e",
     "network_calls_implemented": false,
     "proposed_capability": "distribution_manifest_v1",
     "provider_model_calls_implemented": false,
@@ -161,7 +153,7 @@
     "release_publication_implemented": false,
     "repair_apply_implemented": false,
     "rollback_apply_implemented": false,
-    "source_state_contamination_detected": true,
+    "source_state_contamination_detected": false,
     "status": "PASS_WITH_WARNINGS",
     "target_repository_mutation_implemented": false,
     "uninstall_apply_implemented": false,

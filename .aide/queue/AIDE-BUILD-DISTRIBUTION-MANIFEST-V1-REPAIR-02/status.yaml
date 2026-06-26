@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+status: needs_review
+classification: complete
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+source_check_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+notes:
+  - Repair task started from live queue truth after REQUEST_CHANGES on Repair 01 check.
+  - Exactly four remaining material findings were repaired pending independent recheck.
+  - DistributionManifest acceptance, ProjectLock v0, OwnershipLedger v1, and InstallRecord v0 remain blocked.

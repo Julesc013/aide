@@ -1,0 +1,26 @@
+{
+  "schema_version": "aide.allowed-paths.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02",
+  "allowed_paths": [
+    ".aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02/**",
+    ".aide/reports/distribution-manifest-v1/**",
+    ".aide/reports/distribution-manifest-v1-repair-02/**",
+    ".aide/fixtures/distribution-manifest-v1/**",
+    ".aide/protocol/aide-distribution-manifest-v1.schema.json",
+    "core/protocol/distribution_manifest.py",
+    ".aide/scripts/tests/test_aide_distribution_manifest_v1.py",
+    ".aide/scripts/aide_lite.py",
+    ".aide/queue/index.yaml",
+    "PLANS.md",
+    "IMPLEMENT.md"
+  ],
+  "forbidden_paths": [
+    "ProjectLock implementation or schema files",
+    "OwnershipLedger implementation or schema files",
+    "InstallRecord implementation or schema files",
+    "Q43-Q48 apply implementations",
+    "release archive artifacts",
+    "target repositories",
+    ".aide.local/**"
+  ]
+}

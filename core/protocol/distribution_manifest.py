@@ -66,6 +66,7 @@ SUPPORTED_OPTIONAL_FEATURES = {
 }
 SUPPORTED_MIGRATIONS: set[str] = set()
 SUPPORTED_PROTOCOL_MAJOR = 1
+SUPPORTED_DISTRIBUTION_PACKAGE_PREFIXES = ("files/",)
 
 FORBIDDEN_MEMBER_PREFIXES = (
     ".aide.local/",
@@ -90,6 +91,12 @@ FORBIDDEN_MEMBER_EXACT = {
     ".env",
     "raw-prompt.txt",
     "raw-response.txt",
+}
+ALLOWED_DISTRIBUTION_REPORT_MEMBERS = {
+    ".aide/reports/aide-commit-message-standard.md",
+    ".aide/reports/aide-task-resumption-standard.md",
+    ".aide/reports/aide-workunit-recovery-standard.md",
+    ".aide/reports/file-quality-ledger.schema.json",
 }
 SECRET_LIKE_RE = re.compile(r"(^|/)(secret|secrets|credential|credentials|token|tokens|\.env)(/|$)", re.IGNORECASE)
 
@@ -169,7 +176,8 @@ def sha256_file(path: Path) -> str:
 
 def write_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text, encoding="utf-8", newline="\n")
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(text)
 
 
 def write_json(path: Path, data: dict[str, Any]) -> None:
@@ -207,11 +215,13 @@ def is_absolute_or_traversal(value: str) -> bool:
     return any(part == ".." for part in parts)
 
 
-def forbidden_member_reason(value: str) -> str | None:
-    rel = normalize_rel(value)
+def _forbidden_member_reason_for_normalized(rel: str) -> str | None:
+    rel = normalize_rel(rel)
     if is_absolute_or_traversal(rel):
         return "absolute_or_traversal_path"
-    if rel.startswith(".aide.local.example/") or "/.aide.local.example/" in rel:
+    if rel == ".aide.local.example" or rel.startswith(".aide.local.example/") or "/.aide.local.example/" in rel:
+        return None
+    if rel in ALLOWED_DISTRIBUTION_REPORT_MEMBERS:
         return None
     if rel in FORBIDDEN_MEMBER_EXACT:
         return "forbidden_exact_member"
@@ -221,6 +231,47 @@ def forbidden_member_reason(value: str) -> str | None:
     if SECRET_LIKE_RE.search(rel):
         return "secret_like_member"
     return None
+
+
+def _member_classification_views(value: str) -> list[dict[str, str]]:
+    source_member = normalize_rel(value)
+    views: list[dict[str, str]] = []
+    for prefix in SUPPORTED_DISTRIBUTION_PACKAGE_PREFIXES:
+        if source_member.startswith(prefix):
+            views.append(
+                {
+                    "source_member": source_member,
+                    "target_member": source_member[len(prefix) :],
+                    "packaging_prefix": prefix.rstrip("/"),
+                    "view": "target_root_member",
+                }
+            )
+    views.append(
+        {
+            "source_member": source_member,
+            "target_member": source_member,
+            "packaging_prefix": "",
+            "view": "source_member",
+        }
+    )
+    return views
+
+
+def forbidden_member_classification(value: str) -> dict[str, str] | None:
+    for view in _member_classification_views(value):
+        reason = _forbidden_member_reason_for_normalized(view["target_member"])
+        if reason:
+            return {
+                **view,
+                "reason": reason,
+                "refusal_code": "distribution.forbidden_member",
+            }
+    return None
+
+
+def forbidden_member_reason(value: str) -> str | None:
+    classification = forbidden_member_classification(value)
+    return classification["reason"] if classification else None
 
 
 def media_type_for(path: str, kind: str) -> str:
@@ -304,7 +355,7 @@ def load_release_inputs(repo_root: str | Path) -> dict[str, Any]:
     }
 
 
-def directory_inventory_digest(path: Path) -> tuple[int, int, str, list[dict[str, str]]]:
+def directory_inventory_report(path: Path) -> dict[str, Any]:
     entries: list[dict[str, Any]] = []
     forbidden_members: list[dict[str, str]] = []
     total_bytes = 0
@@ -312,15 +363,43 @@ def directory_inventory_digest(path: Path) -> tuple[int, int, str, list[dict[str
         if not child.is_file():
             continue
         rel = child.relative_to(path).as_posix()
-        forbidden = forbidden_member_reason(rel)
+        forbidden = forbidden_member_classification(rel)
         if forbidden:
-            forbidden_members.append({"path": rel, "reason": forbidden})
+            forbidden_members.append(
+                {
+                    "path": rel,
+                    "reason": forbidden["reason"],
+                    "source_member": forbidden["source_member"],
+                    "target_member": forbidden["target_member"],
+                    "packaging_prefix": forbidden["packaging_prefix"],
+                    "refusal_code": forbidden["refusal_code"],
+                }
+            )
             continue
         size = child.stat().st_size
         total_bytes += size
         entries.append({"path": rel, "byte_count": size, "sha256": sha256_file(child)})
     digest = sha256_digest(canonical_json_bytes(entries))
-    return len(entries), total_bytes, digest, forbidden_members
+    return {
+        "schema_version": "aide.distribution-directory-inventory.v1",
+        "directory": "local_distribution_source",
+        "file_count": len(entries),
+        "total_bytes": total_bytes,
+        "directory_digest": digest,
+        "allowed_members": entries,
+        "forbidden_members": forbidden_members,
+        "forbidden_member_count": len(forbidden_members),
+        "source_state_contamination_detected": bool(forbidden_members),
+    }
+
+
+def directory_inventory_digest(path: Path) -> tuple[int, int, str, list[dict[str, str]]]:
+    report = directory_inventory_report(path)
+    forbidden_members = [
+        {"path": item["path"], "reason": item["reason"]}
+        for item in report["forbidden_members"]
+    ]
+    return int(report["file_count"]), int(report["total_bytes"]), str(report["directory_digest"]), forbidden_members
 
 
 def _artifact_from_release_record(repo_root: Path, record: dict[str, Any]) -> dict[str, Any]:
@@ -615,6 +694,11 @@ def distribution_digest(manifest: dict[str, Any]) -> str:
 def finalize_manifest(manifest: dict[str, Any]) -> dict[str, Any]:
     data = canonicalize_manifest(manifest)
     status = data.setdefault("status", {})
+    artifacts = data.get("spec", {}).get("artifacts", []) if isinstance(data.get("spec"), dict) else []
+    status["source_state_contamination_detected"] = any(
+        isinstance(artifact, dict) and int(artifact.get("directory_forbidden_member_count") or 0) > 0
+        for artifact in artifacts
+    )
     status["manifest_payload_digest"] = manifest_payload_digest(data)
     status["distribution_digest"] = distribution_digest(data)
     return data
@@ -743,14 +827,30 @@ def _range_max_tuple(value: str) -> tuple[int, int, int] | None:
     return _semver_tuple(value)
 
 
+def _range_bound_major(value: str) -> int | None:
+    wildcard = re.match(r"^(\d+)\.x$", value)
+    if wildcard:
+        return int(wildcard.group(1))
+    parsed = _semver_tuple(value)
+    return parsed[0] if parsed else None
+
+
+def _max_bound_is_supported_major(value: str) -> bool:
+    return _range_bound_major(value) == SUPPORTED_PROTOCOL_MAJOR
+
+
 def protocol_range_includes_current(protocol: dict[str, Any]) -> bool:
     protocol_range = protocol.get("protocol_range") if isinstance(protocol.get("protocol_range"), dict) else {}
-    minimum = _semver_tuple(str(protocol_range.get("min", "")))
-    maximum = _range_max_tuple(str(protocol_range.get("max", "")))
+    minimum_value = str(protocol_range.get("min", ""))
+    maximum_value = str(protocol_range.get("max", ""))
+    minimum = _semver_tuple(minimum_value)
+    maximum = _range_max_tuple(maximum_value)
     current = _semver_tuple(PROTOCOL_VERSION)
     reader = _semver_tuple(str(protocol.get("min_reader_version", "")))
     writer = _semver_tuple(str(protocol.get("min_writer_version", "")))
     if minimum is None or maximum is None or current is None or reader is None or writer is None:
+        return False
+    if not _max_bound_is_supported_major(maximum_value):
         return False
     if minimum > maximum:
         return False
@@ -771,7 +871,27 @@ def compatibility_constraints_include_current(constraints: Any) -> bool:
     writer = _semver_tuple(str(constraints.get("min_writer_version", "")))
     if reader is None or writer is None:
         return False
-    return reader <= current and writer <= current
+    if reader > current or writer > current:
+        return False
+    for key in ("max_reader_version", "max_writer_version"):
+        if key in constraints:
+            value = str(constraints.get(key, ""))
+            maximum = _range_max_tuple(value)
+            if maximum is None or not _max_bound_is_supported_major(value):
+                return False
+            if current > maximum:
+                return False
+    component_range = constraints.get("protocol_range")
+    if isinstance(component_range, dict):
+        if not protocol_range_includes_current(
+            {
+                "protocol_range": component_range,
+                "min_reader_version": constraints.get("min_reader_version"),
+                "min_writer_version": constraints.get("min_writer_version"),
+            }
+        ):
+            return False
+    return True
 
 
 def validate_distribution_manifest_object(
@@ -1260,6 +1380,7 @@ INVALID_FIXTURE_EXPECTATIONS = {
     "forbidden-source-report-member": ["distribution.forbidden_member", "distribution.source_state_contamination"],
     "incompatible-migration": ["distribution.incompatible_migration"],
     "inverted-protocol-range": ["distribution.unsupported_protocol_range"],
+    "component-protocol-future-major": ["distribution.unsupported_protocol_range"],
     "malformed-digest": ["distribution.artifact_digest_mismatch"],
     "missing-artifact-ref": ["distribution.missing_artifact_ref"],
     "missing-checksum": ["distribution.missing_checksum"],
@@ -1271,6 +1392,9 @@ INVALID_FIXTURE_EXPECTATIONS = {
     "traversal-path": ["distribution.forbidden_member", "distribution.source_state_contamination"],
     "unknown-required-feature": ["distribution.unknown_required_feature"],
     "unsupported-protocol": ["distribution.unsupported_protocol_range"],
+    "protocol-range-max-2-0-0": ["distribution.unsupported_protocol_range"],
+    "protocol-range-max-2x": ["distribution.unsupported_protocol_range"],
+    "protocol-range-min-2-0-0": ["distribution.unsupported_protocol_range"],
     "unsupported-protocol-range": ["distribution.unsupported_protocol_range"],
     "unsupported-source": ["distribution.unsupported_source_kind"],
     "unsupported-source-kind": ["distribution.unsupported_source_kind"],
@@ -1319,6 +1443,7 @@ def write_fixture_corpus(repo_root: str | Path) -> None:
         "forbidden-source-report-member": lambda m: set_artifact_path(m, ".aide/reports/latest-report.json"),
         "incompatible-migration": add_incompatible_migration,
         "inverted-protocol-range": inverted_protocol_range,
+        "component-protocol-future-major": component_protocol_future_major,
         "malformed-digest": malformed_digest,
         "missing-artifact-ref": missing_artifact_ref,
         "missing-checksum": missing_checksum,
@@ -1330,6 +1455,9 @@ def write_fixture_corpus(repo_root: str | Path) -> None:
         "traversal-path": lambda m: set_artifact_path(m, "../outside.txt"),
         "unknown-required-feature": add_unknown_required_feature,
         "unsupported-protocol": unsupported_protocol,
+        "protocol-range-max-2-0-0": protocol_range_max_2_0_0,
+        "protocol-range-max-2x": protocol_range_max_2x,
+        "protocol-range-min-2-0-0": protocol_range_min_2_0_0,
         "unsupported-protocol-range": unsupported_protocol_range,
         "unsupported-source": unsupported_source_kind,
         "unsupported-source-kind": unsupported_source_kind,
@@ -1447,8 +1575,31 @@ def unsupported_protocol_range(manifest: dict[str, Any]) -> None:
     manifest["spec"]["protocol"]["protocol_range"] = {"min": "2.0.0", "max": "3.x"}
 
 
+def protocol_range_max_2x(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["protocol"]["protocol_range"] = {"min": "1.0.0", "max": "2.x"}
+
+
+def protocol_range_max_2_0_0(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["protocol"]["protocol_range"] = {"min": "1.0.0", "max": "2.0.0"}
+
+
+def protocol_range_min_2_0_0(manifest: dict[str, Any]) -> None:
+    manifest["spec"]["protocol"]["protocol_range"] = {"min": "2.0.0", "max": "2.x"}
+
+
 def inverted_protocol_range(manifest: dict[str, Any]) -> None:
     manifest["spec"]["protocol"]["protocol_range"] = {"min": "1.0.0", "max": "0.9.0"}
+
+
+def component_protocol_future_major(manifest: dict[str, Any]) -> None:
+    component = manifest["spec"]["components"][0]
+    component["compatibility_constraints"]["max_reader_version"] = "2.x"
+    artifact_by_ref = {
+        str(artifact.get("artifact_ref")): artifact
+        for artifact in manifest["spec"].get("artifacts", [])
+        if isinstance(artifact, dict)
+    }
+    component["content_digest"] = component_digest(component_digest_payload(component, artifact_by_ref))
 
 
 def unsupported_source_kind(manifest: dict[str, Any]) -> None:

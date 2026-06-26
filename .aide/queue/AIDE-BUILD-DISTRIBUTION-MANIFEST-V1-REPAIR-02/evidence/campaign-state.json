@@ -1,0 +1,18 @@
+{
+  "schema_version": "aide.campaign-state.v0",
+  "campaign": "distribution-manifest-v1-repair-wave",
+  "current_task": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02",
+  "state": "needs_review",
+  "completed_gates": [
+    "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01",
+    "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01",
+    "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01",
+    "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01"
+  ],
+  "blocked_until_success": [
+    "AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01",
+    "AIDE-BUILD-PROJECT-LOCK-V0-01",
+    "AIDE-BUILD-OWNERSHIP-LEDGER-V1-01"
+  ],
+  "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02"
+}

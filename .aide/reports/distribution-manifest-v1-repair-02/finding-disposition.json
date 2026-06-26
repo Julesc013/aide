@@ -1,0 +1,55 @@
+{
+  "dispositions": [
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        "protocol-range-matrix.json"
+      ],
+      "expected": "finding closed with direct positive and negative evidence",
+      "finding_id": "protocol.future_major_not_implicitly_accepted",
+      "independent_test": "protocol-range-matrix.json",
+      "observed": "closed",
+      "original_observed_defect": "Recorded in AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01 material findings.",
+      "repair_02_change": "Bounded DistributionManifest v1 helper, fixture, and test repair."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        "contamination-classification.json"
+      ],
+      "expected": "finding closed with direct positive and negative evidence",
+      "finding_id": "contamination.forbidden_path_classification_complete",
+      "independent_test": "contamination-classification.json",
+      "observed": "closed",
+      "original_observed_defect": "Recorded in AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01 material findings.",
+      "repair_02_change": "Bounded DistributionManifest v1 helper, fixture, and test repair."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        "directory-contamination-report.json"
+      ],
+      "expected": "finding closed with direct positive and negative evidence",
+      "finding_id": "contamination.directory_forbidden_members_recorded",
+      "independent_test": "directory-contamination-report.json",
+      "observed": "closed",
+      "original_observed_defect": "Recorded in AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01 material findings.",
+      "repair_02_change": "Bounded DistributionManifest v1 helper, fixture, and test repair."
+    },
+    {
+      "disposition": "CLOSED",
+      "evidence_refs": [
+        "fixture-coverage-matrix.json"
+      ],
+      "expected": "finding closed with direct positive and negative evidence",
+      "finding_id": "fixture.future_major_protocol_fixture_present",
+      "independent_test": "fixture-coverage-matrix.json",
+      "observed": "closed",
+      "original_observed_defect": "Recorded in AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01 material findings.",
+      "repair_02_change": "Bounded DistributionManifest v1 helper, fixture, and test repair."
+    }
+  ],
+  "material_finding_count": 0,
+  "schema_version": "aide.finding-disposition.v1",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02"
+}

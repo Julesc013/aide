@@ -2499,3 +2499,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01/evidence
   description: Check-only independent review of AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01 at 77ac6c2facddbd343479e269b841070602d5f047. Verifies the nine repaired findings for extension boundary, status-independent identity, component graph integrity, artifact integrity, pre-access path safety, checksum value verification, protocol range semantics, contamination handling, and fixture coverage. Stops at needs_review with REQUEST_CHANGES, material_finding_count 4, missing_evidence 0, and recommends exactly AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02 because future-major protocol ranges are accepted, export-pack target-root forbidden members under files/ are not classified, nested forbidden directory members are not recorded, and the future-major protocol fixture is missing. Does not repair implementation, accept DistributionManifest v1, begin ProjectLock v0, execute install/update/repair/rollback/uninstall apply, publish releases, create tags, upload artifacts, mutate targets, call network/provider/model services, start Workbench/MCP runtime, preview/apply/rollback source changes, or promote.
+- id: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+  status: needs_review
+  planning_state: implementation_completed
+  result: PASS_WITH_WARNINGS
+  title: Build DistributionManifest v1 Repair 02
+  task: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence
+  description: Bounded repair for the four remaining material findings from AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01. Adds task-local turn context, finding matrix, allowed paths, validation plan, stop conditions, and campaign state before production edits; repairs future-major protocol range rejection, files/ target-root contamination classification, directory forbidden-member reporting, and direct future-major protocol fixtures. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02. Does not accept DistributionManifest v1, begin ProjectLock v0, begin OwnershipLedger v1, implement install/update/repair/rollback/uninstall apply, publish releases, create tags, upload artifacts, mutate targets, call network/provider/model services, start Workbench/MCP runtime, preview/apply/rollback source changes, or promote.

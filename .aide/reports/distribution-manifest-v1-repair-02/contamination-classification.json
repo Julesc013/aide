@@ -1,0 +1,305 @@
+{
+  "files_prefix_checked_as_target_root": true,
+  "forbidden_count": 35,
+  "passed": true,
+  "rows": [
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide.local/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide.local/state.sqlite",
+      "target_member": ".aide.local/state.sqlite"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_exact_member",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".env",
+      "target_member": ".env"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_exact_member",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "raw-prompt.txt",
+      "target_member": "raw-prompt.txt"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_exact_member",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "raw-response.txt",
+      "target_member": "raw-response.txt"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/context/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/context/latest-task-packet.md",
+      "target_member": ".aide/context/latest-task-packet.md"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/reports/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/reports/distribution-manifest-v1/manifest.json",
+      "target_member": ".aide/reports/distribution-manifest-v1/manifest.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/repo/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/repo/latest-inventory.json",
+      "target_member": ".aide/repo/latest-inventory.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/roots/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/roots/latest-classification.json",
+      "target_member": ".aide/roots/latest-classification.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/tools/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/tools/latest-tools.json",
+      "target_member": ".aide/tools/latest-tools.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/install/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/install/latest-plan.json",
+      "target_member": ".aide/install/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/repair/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/repair/latest-plan.json",
+      "target_member": ".aide/repair/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/upgrade/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/upgrade/latest-plan.json",
+      "target_member": ".aide/upgrade/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/rollback/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/rollback/latest-plan.json",
+      "target_member": ".aide/rollback/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.aide/uninstall/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".aide/uninstall/latest-plan.json",
+      "target_member": ".aide/uninstall/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:logs/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "logs/run.log",
+      "target_member": "logs/run.log"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:.cache/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": ".cache/cache.bin",
+      "target_member": ".cache/cache.bin"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "forbidden_prefix:secrets/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "secrets/token.txt",
+      "target_member": "secrets/token.txt"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide.local/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide.local/state.sqlite",
+      "target_member": ".aide.local/state.sqlite"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_exact_member",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.env",
+      "target_member": ".env"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_exact_member",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/raw-prompt.txt",
+      "target_member": "raw-prompt.txt"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_exact_member",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/raw-response.txt",
+      "target_member": "raw-response.txt"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/context/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/context/latest-task-packet.md",
+      "target_member": ".aide/context/latest-task-packet.md"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/reports/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/reports/distribution-manifest-v1/manifest.json",
+      "target_member": ".aide/reports/distribution-manifest-v1/manifest.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/repo/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/repo/latest-inventory.json",
+      "target_member": ".aide/repo/latest-inventory.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/roots/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/roots/latest-classification.json",
+      "target_member": ".aide/roots/latest-classification.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/tools/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/tools/latest-tools.json",
+      "target_member": ".aide/tools/latest-tools.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/install/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/install/latest-plan.json",
+      "target_member": ".aide/install/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/repair/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/repair/latest-plan.json",
+      "target_member": ".aide/repair/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/upgrade/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/upgrade/latest-plan.json",
+      "target_member": ".aide/upgrade/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/rollback/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/rollback/latest-plan.json",
+      "target_member": ".aide/rollback/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.aide/uninstall/latest-",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.aide/uninstall/latest-plan.json",
+      "target_member": ".aide/uninstall/latest-plan.json"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:logs/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/logs/run.log",
+      "target_member": "logs/run.log"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:.cache/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/.cache/cache.bin",
+      "target_member": ".cache/cache.bin"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "files",
+      "reason": "forbidden_prefix:secrets/",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "files/secrets/token.txt",
+      "target_member": "secrets/token.txt"
+    },
+    {
+      "forbidden": false,
+      "packaging_prefix": "",
+      "reason": null,
+      "refusal_code": null,
+      "source_member": "files/src/main.py",
+      "target_member": "files/src/main.py"
+    },
+    {
+      "forbidden": false,
+      "packaging_prefix": "",
+      "reason": null,
+      "refusal_code": null,
+      "source_member": "files/docs/reference.md",
+      "target_member": "files/docs/reference.md"
+    },
+    {
+      "forbidden": true,
+      "packaging_prefix": "",
+      "reason": "secret_like_member",
+      "refusal_code": "distribution.forbidden_member",
+      "source_member": "payload/.env",
+      "target_member": "payload/.env"
+    }
+  ],
+  "schema_version": "aide.distribution-manifest-v1-repair-02.contamination-classification.v1",
+  "unknown_prefix_silently_stripped": false
+}

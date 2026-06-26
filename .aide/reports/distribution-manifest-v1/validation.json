@@ -175,6 +175,19 @@
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/checksum-wrong-value.json"
     },
     {
+      "case_id": "component-protocol-future-major",
+      "expected_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/component-protocol-future-major.json"
+    },
+    {
       "case_id": "dependency-cycle",
       "expected_refusal_codes": [
         "distribution.component_dependency_cycle"
@@ -394,6 +407,45 @@
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
       "path": ".aide/fixtures/distribution-manifest-v1/invalid/missing-sbom.json"
+    },
+    {
+      "case_id": "protocol-range-max-2-0-0",
+      "expected_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/protocol-range-max-2-0-0.json"
+    },
+    {
+      "case_id": "protocol-range-max-2x",
+      "expected_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/protocol-range-max-2x.json"
+    },
+    {
+      "case_id": "protocol-range-min-2-0-0",
+      "expected_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/distribution-manifest-v1/invalid/protocol-range-min-2-0-0.json"
     },
     {
       "case_id": "sbom-generated-claim",

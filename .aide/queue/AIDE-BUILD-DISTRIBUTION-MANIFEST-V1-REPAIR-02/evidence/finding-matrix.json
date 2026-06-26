@@ -1,0 +1,42 @@
+{
+  "findings": [
+    {
+      "completion_state": "closed_pending_independent_check",
+      "evidence_artifact": ".aide/reports/distribution-manifest-v1-repair-02/protocol-range-matrix.json",
+      "finding_id": "protocol.future_major_not_implicitly_accepted",
+      "implementation_location": "core/protocol/distribution_manifest.py",
+      "negative_test": "protocol-range-max-2x.json, protocol-range-max-2-0-0.json, protocol-range-min-2-0-0.json",
+      "positive_test": "minimal-unsigned.json with protocol_range max 1.x",
+      "required_behavior": "Future-major protocol ranges such as 2.x or 2.0.0 fail with distribution.unsupported_protocol_range unless explicitly supported."
+    },
+    {
+      "completion_state": "closed_pending_independent_check",
+      "evidence_artifact": ".aide/reports/distribution-manifest-v1-repair-02/contamination-classification.json",
+      "finding_id": "contamination.forbidden_path_classification_complete",
+      "implementation_location": "core/protocol/distribution_manifest.py",
+      "negative_test": "files/.aide.local/state.sqlite and files/.aide/context/latest-task-packet.md",
+      "positive_test": "files/src/main.py and payload/.env are not silently prefix-stripped",
+      "required_behavior": "Forbidden members under the accepted files/ packaging prefix are classified against their target-root view."
+    },
+    {
+      "completion_state": "closed_pending_independent_check",
+      "evidence_artifact": ".aide/reports/distribution-manifest-v1-repair-02/directory-contamination-report.json",
+      "finding_id": "contamination.directory_forbidden_members_recorded",
+      "implementation_location": "core/protocol/distribution_manifest.py",
+      "negative_test": "temporary export pack containing files/.aide.local/state.sqlite",
+      "positive_test": "files/src/allowed.py remains classified as allowed",
+      "required_behavior": "Directory inventory reports forbidden members and causes source-state contamination instead of producing a clean digest."
+    },
+    {
+      "completion_state": "closed_pending_independent_check",
+      "evidence_artifact": ".aide/reports/distribution-manifest-v1-repair-02/fixture-coverage-matrix.json",
+      "finding_id": "fixture.future_major_protocol_fixture_present",
+      "implementation_location": ".aide/fixtures/distribution-manifest-v1/invalid",
+      "negative_test": "future-major invalid fixture files",
+      "positive_test": "fixture matrix records expected refusal code",
+      "required_behavior": "Fixture corpus contains direct invalid future-major protocol fixtures that fail with distribution.unsupported_protocol_range."
+    }
+  ],
+  "schema_version": "aide.finding-matrix.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02"
+}
