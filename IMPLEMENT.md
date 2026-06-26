@@ -9269,3 +9269,63 @@ evidence.
 - Install/update/repair/rollback/uninstall apply, release publication, target
   mutation, Workbench/MCP runtime, provider/model calls, source-change
   preview/apply/rollback, and promotion remain unimplemented.
+
+## Work Item: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+
+### Status
+
+Completed with `REQUEST_CHANGES` and stopped the serialized distribution wave.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01/**`
+- `.aide/reports/distribution-manifest-v1-repair-01-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+Repair 01 reported all nine DistributionManifest v1 check findings closed, but
+the queue required independent repair verification before acceptance or
+ProjectLock v0 work could begin.
+
+### Implementation Notes
+
+- Added a check-only queue task and report directory.
+- Added a task-local independent checker that recomputes digests, probes
+  extension and identity behavior, exercises component/artifact/checksum/path
+  validation, and checks protocol range, contamination, fixture coverage, Q47
+  mapping, and non-capability claims.
+- Corrected the check harness during the task so its own allowed outputs and
+  source literals were not counted as material implementation defects.
+- Preserved the check boundary; no production code, schema, fixture, manifest
+  report, Q43-Q48 implementation, acceptance task, ProjectLock task, target
+  repository, release publication, or apply behavior was changed.
+
+### Verification
+
+The independent check recorded `REQUEST_CHANGES`, `material_finding_count: 4`,
+`missing_evidence: 0`, and recommends exactly
+`AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02`.
+
+Validation receipts recorded passing focused DistributionManifest tests,
+DistributionManifest status/project/validate, Q43-Q48 validation/status
+commands, release validation, release draft validation, task inspect/evidence,
+broad `aide_lite.py validate`, diff checks, and leak scans.
+
+### Remaining Issues
+
+- `protocol.future_major_not_implicitly_accepted`: `protocol_range.max: 2.x`
+  is accepted for v1 without explicit future-major support.
+- `contamination.forbidden_path_classification_complete`: forbidden target-root
+  export-pack members under `files/` are not fully classified.
+- `contamination.directory_forbidden_members_recorded`: nested forbidden
+  directory members under `files/` are not recorded as contamination.
+- `fixture.future_major_protocol_fixture_present`: the fixture corpus has no
+  direct invalid future-major protocol-range fixture.
+
+DistributionManifest acceptance, ProjectLock v0, OwnershipLedger v1,
+InstallRecord v0, install/update/repair/rollback/uninstall apply, release
+publication, target mutation, Workbench/MCP runtime, provider/model calls,
+source-change preview/apply/rollback, and promotion remain blocked.

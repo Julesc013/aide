@@ -1,0 +1,22 @@
+# Checksum Value Review
+
+```json
+{
+  "checksum_file": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+  "included_names": [
+    "CHANGELOG.preview.md",
+    "RELEASE_NOTES.preview.md",
+    "aide-lite-pack-v0.tar.gz",
+    "aide-lite-pack-v0.zip",
+    "install.md",
+    "manifest.yaml",
+    "release-provenance.json"
+  ],
+  "missing_codes": [
+    "distribution.missing_checksum"
+  ],
+  "wrong_value_codes": [
+    "distribution.checksum_digest_mismatch"
+  ]
+}
+```

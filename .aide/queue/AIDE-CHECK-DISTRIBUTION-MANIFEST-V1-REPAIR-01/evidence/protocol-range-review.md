@@ -1,0 +1,37 @@
+# Protocol Range Review
+
+```json
+{
+  "future_major_codes": [],
+  "protocol_probe_codes": {
+    "protocol.component_incompatible_refuses": [
+      "distribution.component_digest_mismatch",
+      "distribution.unsupported_protocol_range"
+    ],
+    "protocol.inverted_range_refuses": [
+      "distribution.unsupported_protocol_range"
+    ],
+    "protocol.malformed_range_refuses": [
+      "distribution.unsupported_protocol_range"
+    ],
+    "protocol.max_below_v1_refuses": [
+      "distribution.unsupported_protocol_range"
+    ],
+    "protocol.min_above_v1_refuses": [
+      "distribution.unsupported_protocol_range"
+    ],
+    "protocol.missing_reader_refuses": [
+      "distribution.unsupported_protocol_range"
+    ],
+    "protocol.missing_writer_refuses": [
+      "distribution.unsupported_protocol_range"
+    ],
+    "protocol.unknown_required_feature_refuses": [
+      "distribution.unknown_required_feature"
+    ],
+    "protocol.unsupported_migration_refuses": [
+      "distribution.incompatible_migration"
+    ]
+  }
+}
+```

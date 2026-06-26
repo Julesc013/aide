@@ -1,0 +1,30 @@
+# Identity Boundary Review
+
+```json
+{
+  "base_distribution": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+  "base_payload": "sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2",
+  "independent_distribution": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+  "independent_payload": "sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2",
+  "spec_mutations": {
+    "artifact.byte_count": "sha256:5e773ee4cc9674acbc370be5e621a2a3fa3ae0bc4aa25c946f39232296d0bdb4",
+    "artifact.digest": "sha256:b950035011c868b8374d292e8faf2f81dfa513c86f8dbe161e4c7ee905714f73",
+    "artifact.included_set": "sha256:a31376e9732c156ad44b0611d12dd5c7b916bc152c76a96ec7a53ed879d844e0",
+    "component.digest": "sha256:9d78d7733a8bce2fc722bfe914bc3812c1837627995eaad0b03b9588328e258e",
+    "metadata.distribution_ref": "sha256:4cc0e0c7e829a176c5d6bb51851cb1771d82410ca8c585d9d2c3b863866dd7c1",
+    "metadata.release_id": "sha256:287f77c1815bc6dadec0b71b9ab0bc5765379f9d1ac8834c54479e0d76808d29",
+    "metadata.source_revision": "sha256:4cd4399cfe109fa8816c7761163ad1cdedc9b30b79ff4416f26df6b5a9367f4d",
+    "metadata.source_tree_digest": "sha256:7c0a116c5c5f713f46cc94b59667f1a0a98f188d6e5e252bc4b8a1c2012790b3",
+    "protocol.range": "sha256:034d25b31075e0e223f5b75c35f01a0e8de8c46757d412f60814472ba570ce21",
+    "protocol.required_feature": "sha256:2802a0b92e8694a90e45d41f25a3061a2f4a5221de3ecb08b6b0bc002a719ba6",
+    "protocol.required_migration": "sha256:6af7d72bf90b9906878209d27e5a27515fc8e2bdd30e2d1f650cdcb22e632c4d"
+  },
+  "status_mutations": {
+    "status.proposed_capability": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+    "status.recommended_next_task": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+    "status.status": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+    "status.validation_boolean": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+    "status.warning_extension": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569"
+  }
+}
+```

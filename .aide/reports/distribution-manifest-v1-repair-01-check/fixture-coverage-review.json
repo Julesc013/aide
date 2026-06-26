@@ -1,0 +1,226 @@
+{
+  "future_major_fixtures": [],
+  "invalid_results": {
+    ".aide.local": {
+      "codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "valid": false
+    },
+    "absolute path": {
+      "codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "valid": false
+    },
+    "checksum basename collision": {
+      "codes": [
+        "distribution.checksum_basename_collision",
+        "distribution.component_digest_mismatch"
+      ],
+      "valid": false
+    },
+    "checksum missing": {
+      "codes": [
+        "distribution.missing_checksum"
+      ],
+      "valid": false
+    },
+    "checksum wrong value": {
+      "codes": [
+        "distribution.checksum_digest_mismatch",
+        "distribution.component_digest_mismatch"
+      ],
+      "valid": false
+    },
+    "dependency cycle": {
+      "codes": [
+        "distribution.component_dependency_cycle",
+        "distribution.component_digest_mismatch"
+      ],
+      "valid": false
+    },
+    "duplicate artifact_ref": {
+      "codes": [
+        "distribution.checksum_basename_collision",
+        "distribution.duplicate_artifact"
+      ],
+      "valid": false
+    },
+    "duplicate component_id": {
+      "codes": [
+        "distribution.duplicate_component_id"
+      ],
+      "valid": false
+    },
+    "duplicate component_ref": {
+      "codes": [
+        "distribution.duplicate_component",
+        "distribution.duplicate_component_id"
+      ],
+      "valid": false
+    },
+    "false signature verification": {
+      "codes": [
+        "distribution.signature_unverified"
+      ],
+      "valid": false
+    },
+    "forbidden member": {
+      "codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "valid": false
+    },
+    "incompatible migration": {
+      "codes": [
+        "distribution.incompatible_migration"
+      ],
+      "valid": false
+    },
+    "inverted protocol range": {
+      "codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "valid": false
+    },
+    "malformed digest": {
+      "codes": [
+        "distribution.artifact_digest_mismatch",
+        "distribution.checksum_digest_mismatch",
+        "distribution.component_digest_mismatch"
+      ],
+      "valid": false
+    },
+    "missing SBOM": {
+      "codes": [
+        "distribution.sbom_unavailable"
+      ],
+      "valid": false
+    },
+    "missing artifact ref": {
+      "codes": [
+        "distribution.component_digest_mismatch",
+        "distribution.missing_artifact_ref"
+      ],
+      "valid": false
+    },
+    "missing dependency": {
+      "codes": [
+        "distribution.component_digest_mismatch",
+        "distribution.missing_component_dependency"
+      ],
+      "valid": false
+    },
+    "missing digest": {
+      "codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "valid": false
+    },
+    "signature placeholder false verified": {
+      "codes": [
+        "distribution.signature_unverified"
+      ],
+      "valid": false
+    },
+    "source contamination": {
+      "codes": [
+        "distribution.source_state_contamination"
+      ],
+      "valid": false
+    },
+    "source report member": {
+      "codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "valid": false
+    },
+    "traversal": {
+      "codes": [
+        "distribution.forbidden_member",
+        "distribution.missing_checksum",
+        "distribution.source_state_contamination"
+      ],
+      "valid": false
+    },
+    "unknown required feature": {
+      "codes": [
+        "distribution.unknown_required_feature"
+      ],
+      "valid": false
+    },
+    "unsupported protocol range": {
+      "codes": [
+        "distribution.unsupported_protocol_range"
+      ],
+      "valid": false
+    },
+    "unsupported source kind": {
+      "codes": [
+        "distribution.unsupported_source_kind"
+      ],
+      "valid": false
+    },
+    "wrong artifact digest": {
+      "codes": [
+        "distribution.artifact_digest_mismatch",
+        "distribution.checksum_digest_mismatch",
+        "distribution.component_digest_mismatch"
+      ],
+      "valid": false
+    },
+    "wrong component digest": {
+      "codes": [
+        "distribution.component_digest_mismatch"
+      ],
+      "valid": false
+    },
+    "wrong distribution digest": {
+      "codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "valid": false
+    },
+    "wrong manifest payload digest": {
+      "codes": [
+        "distribution.manifest_digest_mismatch"
+      ],
+      "valid": false
+    }
+  },
+  "valid_results": {
+    "full Q47/local archive": {
+      "codes": [],
+      "valid": true
+    },
+    "local directory": {
+      "codes": [],
+      "valid": true
+    },
+    "minimal valid unsigned": {
+      "codes": [],
+      "valid": true
+    },
+    "reordered equivalent": {
+      "codes": [],
+      "valid": true
+    },
+    "unknown optional extension round-trip": {
+      "codes": [],
+      "valid": true
+    },
+    "unknown optional feature": {
+      "codes": [],
+      "valid": true
+    }
+  }
+}

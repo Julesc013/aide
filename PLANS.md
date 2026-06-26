@@ -2753,3 +2753,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, closes the nine findings pending independent recheck, and recommends exactly `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: The repair adds explicit extension surfaces, status-independent identity, stricter graph/artifact/checksum/protocol/path/contamination validation, and expanded fixture coverage. No install/update apply, release publication, target mutation, acceptance, or ProjectLock work is authorized.
+
+### Queue ID: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01
+
+- Title: Check DistributionManifest v1 Repair 01
+- Status: Needs Review
+- Objective: independently verify that `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01` closes the nine prior material findings without repairing implementation, accepting `distribution_manifest_v1`, or beginning `ProjectLock v0`.
+- Scope: `.aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01/**`, `.aide/reports/distribution-manifest-v1-repair-01-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: source repair commit `77ac6c2facddbd343479e269b841070602d5f047`, result `PASS_WITH_WARNINGS`, and missing evidence `0`.
+- Verification Intent: task-local independent harness, nine-finding matrix review, extension/identity/component/artifact/path/checksum/protocol/contamination/fixture probes, Q47 mapping regression, focused tests, Q43-Q48 validation/status commands, task inspect/evidence, broad validation, diff checks, leak scans, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records the independent repair-check result, and recommends either acceptance or a bounded Repair 02 task.
+- Result: `REQUEST_CHANGES`.
+- Notes: Four material findings remain. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02`. DistributionManifest acceptance, ProjectLock v0, OwnershipLedger v1, and InstallRecord v0 remain blocked.
