@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+status: needs_review
+classification: acceptance_completed
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+accepted_capability: ownership_ledger_v1
+material_finding_count: 0
+missing_evidence: 0
+source_build_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+source_check_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+source_repair_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+source_repair_check_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01
+next_task: AIDE-BUILD-INSTALL-RECORD-V0-01
+notes:
+  - OwnershipLedger v1 accepted only as ownership classification, contract, projection, and validation metadata.
+  - The accepted ledger does not authorize install/update/repair/rollback/uninstall apply, target mutation, target scan authority, real canaries, release publication, runtime, or provider/model/network calls.
+  - Downstream objects may cite OwnershipLedger v1 but may not infer vendor ownership from absent paths or override preservation classes without a later reviewed policy.

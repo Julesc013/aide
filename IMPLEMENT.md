@@ -9692,3 +9692,43 @@ Final task evidence records outer validation, diff checks, and commit policy.
 
 OwnershipLedger v1 remains proposed until the acceptance-only task completes.
 The next serialized task is `AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01`.
+
+## Work Item: AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+
+### Summary
+
+Accepted exactly `ownership_ledger_v1` with warnings and stopped before
+downstream distribution objects.
+
+### Implementation Notes
+
+- Added the acceptance-only queue task and acceptance reports.
+- Accepted OwnershipLedger v1 only as target ownership classification and
+  preservation metadata over accepted DistributionManifest v1 and ProjectLock
+  v0.
+- Recorded the accepted boundary for eleven ownership classes, file-entry
+  contract fields, managed-section contract fields, Q43 projection-only
+  migration behavior, conflict/refusal model, fixture coverage, warnings, and
+  explicit non-capabilities.
+- Added `ownership-ledger-downstream-use.md` so later distribution objects know
+  what they may cite and what they must not infer.
+- Preserved non-capabilities for install/update/repair/rollback/uninstall
+  apply, migration apply, target scan authority, target mutation, project
+  canaries, release readiness, release publication, tags, uploads, GitHub
+  Releases, runtime, worker execution, provider/model/network behavior,
+  Workbench, Commander, preview/apply/rollback, branch/worktree automation, and
+  promotion.
+
+### Verification
+
+Validation receipts record JSON parsing, compileall, focused OwnershipLedger
+tests, OwnershipLedger status/project/validate/migrate-q43, DistributionManifest
+and ProjectLock regression validation, Q43-Q48 no-apply/no-publish validators,
+task inspect/evidence for source and acceptance tasks, broad
+`aide_lite.py validate`, path and secret-like scans, diff checks, and
+post-commit commit-policy check as the final gate for the completed commit.
+
+### Remaining Issues
+
+InstallRecord v0 has not been started. The next serialized task is
+`AIDE-BUILD-INSTALL-RECORD-V0-01`.

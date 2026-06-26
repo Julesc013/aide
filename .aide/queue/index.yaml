@@ -2599,3 +2599,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01/evidence
   description: Check-only independent review of AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01 at d466004625bdd8d17998ad325bb6b124e236562c. Verifies the exact five repaired findings for file-entry contract completeness, managed-section contract completeness, Q43 migration, conflict model, and fixture coverage. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01. Does not repair implementation, accept OwnershipLedger v1, begin InstallRecord/MigrationRecord/UpdatePlan/RollbackBundle, mutate targets, publish releases, call network/provider/model services, start Workbench/MCP runtime, implement source-change preview/apply/rollback, or promote.
+- id: AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept OwnershipLedger v1
+  task: .aide/queue/AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01/evidence
+  description: Acceptance-only task for ownership_ledger_v1 after the build/check/repair/repair-check chain closed with zero material findings and zero missing evidence. Accepts only OwnershipLedger v1 as target ownership classification and preservation metadata over accepted DistributionManifest v1 and ProjectLock v0, including ownership classes, file-entry and managed-section contracts, Q43 projection-only migration, conflict/refusal model, fixture coverage, warnings, explicit non-capabilities, and downstream-use constraints. Stops at needs_review with ACCEPTED_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-BUILD-INSTALL-RECORD-V0-01. Does not modify implementation, begin InstallRecord/MigrationRecord/UpdatePlan/RollbackBundle/UpdateReceipt/DistributionApplyEngine, mutate targets, scan targets, publish releases, create tags, upload artifacts, call network/provider/model services, start Workbench/Commander/runtime work, implement source-change preview/apply/rollback, or promote.

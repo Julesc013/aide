@@ -1,0 +1,83 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+title: Accept OwnershipLedger v1
+type: accept
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+accepted_capability: ownership_ledger_v1
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-INSTALL-RECORD-V0-01
+depends_on:
+  - AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
+  - AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
+  - AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+  - AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01/**
+    - .aide/reports/ownership-ledger-v1-acceptance/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .aide/protocol/aide-ownership-ledger-v1.schema.json
+    - core/protocol/ownership_ledger.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_ownership_ledger_v1.py
+    - .aide/fixtures/ownership-ledger-v1/**
+    - .aide/reports/ownership-ledger-v1/**
+    - .aide/reports/ownership-ledger-v1-check/**
+    - .aide/reports/ownership-ledger-v1-repair-01/**
+    - .aide/reports/ownership-ledger-v1-repair-01-check/**
+    - .aide/release/dist/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+evidence:
+  required:
+    - source-chain-review.md
+    - accepted-ownership-classes.md
+    - accepted-contracts.md
+    - q43-migration-boundary.md
+    - conflict-refusal-model.md
+    - fixture-coverage.md
+    - warning-disposition.md
+    - explicit-non-capabilities.md
+    - downstream-use-boundary.md
+    - changed-files.md
+    - remaining-risks.md
+    - validation-commands.md
+    - validation-results.md
+    - validation.md
+    - next-task-prompt.md
+non_capabilities:
+  - install apply
+  - update apply
+  - migration apply
+  - repair apply
+  - rollback apply
+  - uninstall apply
+  - target repository mutation
+  - target scan authority
+  - real project canary
+  - public release readiness
+  - release publication
+  - Git tag
+  - GitHub Release
+  - upload
+  - network call
+  - provider/model call
+  - worker execution
+  - Workbench runtime
+  - Commander
+  - PreviewSession
+  - DevelopmentTransaction apply
+  - PatchTransaction apply
+  - branch/worktree automation
+notes:
+  - Acceptance-only task; no OwnershipLedger implementation files were modified.
+  - Accepts ownership_ledger_v1 only as target ownership classification and preservation metadata.
+  - Stops at needs_review and recommends exactly AIDE-BUILD-INSTALL-RECORD-V0-01.
