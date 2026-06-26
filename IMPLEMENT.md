@@ -9416,4 +9416,35 @@ scans, diff checks, and commit-policy check.
 DistributionManifest v1 is still not accepted in this check task. The next
 serialized task is `AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01`; ProjectLock v0
 remains blocked until acceptance is complete.
+
+## Work Item: AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+
+### Summary
+
+Accepted exactly `distribution_manifest_v1` with warnings.
+
+### Implementation Notes
+
+- Added the acceptance-only queue task and acceptance reports.
+- Accepted DistributionManifest v1 only as stable, deterministic, portable
+  distribution identity and metadata for one local AIDE distribution.
+- Recorded the accepted boundary for components, artifacts, digests, protocol
+  ranges, compatibility boundaries, provenance references, placeholder SBOM and
+  signature boundaries, source-contamination handling, and explicit
+  non-capabilities.
+- Preserved non-capabilities for ProjectLock, OwnershipLedger, InstallRecord,
+  migration/update/rollback objects, install/update apply, target mutation,
+  public release readiness, release publication, signatures, SBOM generation,
+  network, provider/model calls, worker execution, and Workbench/MCP runtime.
+
+### Verification
+
+Validation receipts record DistributionManifest validation, Q43-Q48 no-apply
+and no-publish validators, task inspect/evidence, broad `aide_lite.py validate`,
+JSON parsing, path and secret scans, diff checks, and commit-policy check.
+
+### Remaining Issues
+
+ProjectLock v0 was not started in this acceptance task. The next serialized
+task is `AIDE-BUILD-PROJECT-LOCK-V0-01`.
 source-change preview/apply/rollback, and promotion remain blocked.

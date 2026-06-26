@@ -1,0 +1,38 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+title: Accept DistributionManifest v1
+status: needs_review
+planning_state: acceptance_completed
+task_type: accept
+source_build_task: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
+source_repair_task: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+source_check_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+source_check_result: PASS_WITH_WARNINGS
+source_material_finding_count: 0
+source_missing_evidence: 0
+accepted_capability: distribution_manifest_v1
+result: ACCEPTED_WITH_WARNINGS
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-PROJECT-LOCK-V0-01
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01/**
+  - .aide/reports/distribution-manifest-v1-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_behaviors:
+  - implementation_change
+  - projectlock_start
+  - install_apply
+  - update_apply
+  - repair_apply
+  - rollback_apply
+  - uninstall_apply
+  - release_publication
+  - target_repository_mutation
+  - network_call
+  - provider_model_call
+  - worker_execution
+  - workbench_or_mcp_runtime
+  - promotion
+stop_condition: needs_review

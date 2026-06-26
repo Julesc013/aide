@@ -2789,3 +2789,15 @@
 - Exit Criteria: task stops at `needs_review`, records the independent repair-check result, and recommends either acceptance or Repair 03.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: Zero material findings remain. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01`. ProjectLock v0 remains blocked until acceptance is complete and committed.
+
+### Queue ID: AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+
+- Title: Accept DistributionManifest v1
+- Status: Needs Review
+- Objective: accept exactly `distribution_manifest_v1` after the full build/check/repair/check chain closed with zero material findings and zero missing evidence.
+- Scope: `.aide/queue/AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01/**`, `.aide/reports/distribution-manifest-v1-accept/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02`, result `PASS_WITH_WARNINGS`, `material_finding_count: 0`, and `missing_evidence: 0`.
+- Verification Intent: acceptance source-chain review, accepted boundary review, digest/extension/contamination/Q47 boundary review, explicit non-capability review, task inspect/evidence, DistributionManifest validation, broad validation, no-apply/no-publish validators, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `distribution_manifest_v1`, and recommends exactly `AIDE-BUILD-PROJECT-LOCK-V0-01`.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Notes: ProjectLock v0 is now the next serialized task, but it has not been started in the acceptance task.

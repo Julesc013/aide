@@ -1,0 +1,5 @@
+# Digest Boundary
+
+- manifest_payload_digest: sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2
+- distribution_digest: sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569
+- status_mutable_identity_boundary: status fields are outside manifest_payload_digest

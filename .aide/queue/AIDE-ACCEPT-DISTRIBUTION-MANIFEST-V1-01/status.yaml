@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+status: needs_review
+classification: complete
+result: ACCEPTED_WITH_WARNINGS
+accepted_capability: distribution_manifest_v1
+missing_evidence: 0
+source_check_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
+next_task: AIDE-BUILD-PROJECT-LOCK-V0-01
+notes:
+  - Acceptance-only task.
+  - No DistributionManifest implementation changes or ProjectLock work are authorized.
+  - Accepted exactly distribution_manifest_v1 with warnings.

@@ -2519,3 +2519,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/prompt.md
   evidence: .aide/queue/AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02/evidence
   description: Check-only independent review of AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02 at 24753ef84fed5613f8a276ef7bfb4ddd58d6d7d3. Verifies future-major protocol rejection, files/ target-root contamination classification, directory forbidden-member recording, future-major fixture coverage, Repair 01 regression closure, Q47/Q48 boundary, and explicit non-capabilities. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01. Does not repair implementation, accept DistributionManifest v1, begin ProjectLock v0, mutate targets, publish releases, call network/provider/model services, start runtime work, or promote.
+- id: AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept DistributionManifest v1
+  task: .aide/queue/AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01/evidence
+  description: Acceptance-only task for distribution_manifest_v1 after Repair 02 independent check passed with zero material findings and zero missing evidence. Accepts only stable, deterministic, portable DistributionManifest v1 identity and metadata for one local AIDE distribution, including components, artifacts, digests, protocol ranges, compatibility boundaries, provenance references, placeholder SBOM/signature boundaries, source-contamination handling, and explicit non-capabilities. Stops at needs_review with ACCEPTED_WITH_WARNINGS, missing_evidence 0, and recommends exactly AIDE-BUILD-PROJECT-LOCK-V0-01. Does not modify implementation, begin ProjectLock v0, accept install/update/apply/publication/target mutation/signature/SBOM/network/provider/runtime behavior, or promote.

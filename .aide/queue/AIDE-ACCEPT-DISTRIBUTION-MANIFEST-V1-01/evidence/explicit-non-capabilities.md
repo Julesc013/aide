@@ -1,0 +1,27 @@
+# Explicit Non-Capabilities
+
+- ProjectLock
+- OwnershipLedger
+- InstallRecord
+- MigrationRecord
+- UpdatePlan
+- RollbackBundle
+- UpdateReceipt
+- install apply
+- update apply
+- repair apply
+- rollback apply
+- uninstall apply
+- target repository mutation
+- public release readiness
+- release publication
+- Git tags
+- GitHub Releases
+- uploads
+- signature verification
+- SBOM generation
+- network
+- provider/model calls
+- worker execution
+- Workbench/MCP runtime
+- promotion

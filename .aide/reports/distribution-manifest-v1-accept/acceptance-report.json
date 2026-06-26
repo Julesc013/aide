@@ -1,0 +1,52 @@
+{
+  "accepted_capability": "distribution_manifest_v1",
+  "accepted_meaning": "stable deterministic portable DistributionManifest v1 identity and metadata for one local AIDE distribution",
+  "distribution_digest": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+  "explicit_non_capabilities": [
+    "ProjectLock",
+    "OwnershipLedger",
+    "InstallRecord",
+    "MigrationRecord",
+    "UpdatePlan",
+    "RollbackBundle",
+    "UpdateReceipt",
+    "install apply",
+    "update apply",
+    "repair apply",
+    "rollback apply",
+    "uninstall apply",
+    "target repository mutation",
+    "public release readiness",
+    "release publication",
+    "Git tags",
+    "GitHub Releases",
+    "uploads",
+    "signature verification",
+    "SBOM generation",
+    "network",
+    "provider/model calls",
+    "worker execution",
+    "Workbench/MCP runtime",
+    "promotion"
+  ],
+  "manifest_payload_digest": "sha256:7975e74342c5e01b28b6ad4c5a9e8f512417cd838619a855ff53702bdc8137f2",
+  "recommended_next_task": "AIDE-BUILD-PROJECT-LOCK-V0-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "schema_version": "aide.distribution-manifest-v1.acceptance-report.v1",
+  "source_check_result": "PASS_WITH_WARNINGS",
+  "source_check_task": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02",
+  "source_material_finding_count": 0,
+  "source_missing_evidence": 0,
+  "task_id": "AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01",
+  "validation": {
+    "all_commands_passed": true,
+    "json_parse_passed": true,
+    "path_leak_scan_passed": true,
+    "secret_like_scan_passed": true
+  },
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Q47 release artifacts remain local preview/no-publish evidence.",
+    "DistributionManifest v1 is metadata and identity only; downstream lock and apply objects remain unaccepted."
+  ]
+}
