@@ -1,0 +1,117 @@
+{
+  "commands": [
+    {
+      "command": [
+        "py",
+        "-3",
+        "-m",
+        "compileall",
+        "core/protocol",
+        ".aide/scripts/tests"
+      ],
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "Listing 'core/protocol'...\nCompiling 'core/protocol\\\\ownership_ledger.py'...\nListing '.aide/scripts/tests'...\nCompiling '.aide/scripts/tests\\\\test_aide_ownership_ledger_v1.py'...\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".aide/scripts/tests",
+        "-p",
+        "test_aide_ownership_ledger_v1.py"
+      ],
+      "returncode": 0,
+      "stderr_excerpt": "...........\n----------------------------------------------------------------------\nRan 11 tests in 34.955s\n\nOK\n",
+      "stdout_excerpt": ""
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "ownership-ledger",
+        "status"
+      ],
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite ownership-ledger status\nresult: PASS_WITH_WARNINGS\nschema_exists: true\nhelper_exists: true\nproject_lock_report_exists: true\nproject_lock_acceptance_report_exists: true\nownership_ledger_report_exists: true\nvalidation_report_exists: true\nrecommended_next_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01\nproposed_capability: ownership_ledger_v1\ninstall_apply_implemented: false\nupdate_apply_implemented: false\ntarget_repository_mutation_implemented: false\nadmission_implemented: false\nauthorization_implemented: false\ninstall_truth_implemented: false\ninstall_plan_implemented: false\nrelease_publication_implemented: false\nnetwork_calls_implemented: false\nprovider_model_calls_implemented: false\nworkbench_runtime_implemented: false\nmcp_runtime_implemented: false\npromotion_implemented: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "ownership-ledger",
+        "project"
+      ],
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite ownership-ledger project\nresult: PASS_WITH_WARNINGS\nledger_path: .aide/reports/ownership-ledger-v1/ownership-ledger.json\nrecord_count: 12\ntaxonomy_count: 11\nproject_lock_digest: sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57\nownership_ledger_digest: sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284\nsource_artifacts_mutated: false\nrecommended_next_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01\nproposed_capability: ownership_ledger_v1\ninstall_apply_implemented: false\nupdate_apply_implemented: false\ntarget_repository_mutation_implemented: false\nadmission_implemented: false\nauthorization_implemented: false\ninstall_truth_implemented: false\ninstall_plan_implemented: false\nrelease_publication_implemented: false\nnetwork_calls_implemented: false\nprovider_model_calls_implemented: false\nworkbench_runtime_implemented: false\nmcp_runtime_implemented: false\npromotion_implemented: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "ownership-ledger",
+        "validate"
+      ],
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite ownership-ledger validate\nresult: PASS_WITH_WARNINGS\nschema_exists: true\nhelper_exists: true\ncli_registered: true\nledger_generated: true\nledger_valid: true\nfixture_matrix_passed: true\nq43_migration_passed: true\nproject_lock_accepted: true\nproject_lock_digest_bound: true\ntaxonomy_complete: true\nfile_entry_contract_complete: true\nmanaged_section_contract_complete: true\nunknown_blocks_apply: true\nnever_touch_blocks_apply: true\ninstall_apply_not_implemented: true\nupdate_apply_not_implemented: true\ntarget_repository_mutation_not_implemented: true\nadmission_not_implemented: true\nauthorization_not_implemented: true\nerror_count: 0\nrecommended_next_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01\nproposed_capability: ownership_ledger_v1\ninstall_apply_implemented: false\nupdate_apply_implemented: false\ntarget_repository_mutation_implemented: false\nadmission_implemented: false\nauthorization_implemented: false\ninstall_truth_implemented: false\ninstall_plan_implemented: false\nrelease_publication_implemented: false\nnetwork_calls_implemented: false\nprovider_model_calls_implemented: false\nworkbench_runtime_implemented: false\nmcp_runtime_implemented: false\npromotion_implemented: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "ownership-ledger",
+        "migrate-q43"
+      ],
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite ownership-ledger migrate-q43\nresult: PASS_WITH_WARNINGS\nrecord_count: 11\nerror_count: 0\nno_apply: true\ntarget_repository_mutation_implemented: false\nproposed_capability: ownership_ledger_v1\ninstall_apply_implemented: false\nupdate_apply_implemented: false\ntarget_repository_mutation_implemented: false\nadmission_implemented: false\nauthorization_implemented: false\ninstall_truth_implemented: false\ninstall_plan_implemented: false\nrelease_publication_implemented: false\nnetwork_calls_implemented: false\nprovider_model_calls_implemented: false\nworkbench_runtime_implemented: false\nmcp_runtime_implemented: false\npromotion_implemented: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "project-lock",
+        "validate"
+      ],
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite project-lock validate\nresult: PASS_WITH_WARNINGS\nschema_exists: true\nhelper_exists: true\ncli_registered: true\nlock_generated: true\nlock_valid: true\nschema_alignment: true\nfixture_matrix_passed: true\ndistribution_manifest_accepted: true\nselected_distribution_digest_bound: true\nmanifest_payload_digest_bound: true\ncomponent_selection_complete: true\nchannel_informational: true\ninstall_apply_not_implemented: true\nupdate_apply_not_implemented: true\ntarget_repository_mutation_not_implemented: true\nadmission_not_implemented: true\nauthorization_not_implemented: true\nabsolute_local_paths_suppressed: true\nerror_count: 0\nrecommended_next_task: AIDE-CHECK-PROJECT-LOCK-V0-01\nproposed_capability: project_lock_v0\ninstall_apply_implemented: false\nupdate_apply_implemented: false\ntarget_repository_mutation_implemented: false\nadmission_implemented: false\nauthorization_implemented: false\ninstall_truth_implemented: false\ninstall_plan_implemented: false\nrelease_publication_implemented: false\nnetwork_calls_implemented: false\nprovider_model_calls_implemented: false\nworkbench_runtime_implemented: false\nmcp_runtime_implemented: false\npromotion_implemented: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "distribution-manifest",
+        "validate"
+      ],
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": "AIDE Lite distribution-manifest validate\nresult: PASS_WITH_WARNINGS\nschema_exists: true\nhelper_exists: true\ncli_registered: true\nmanifest_generated: true\nmanifest_valid: true\nschema_alignment: true\nfixture_matrix_passed: true\nreordered_input_same_digest: true\nq47_release_bundle_mapped: true\nq48_not_distribution_truth: true\ninstall_apply_not_implemented: true\nrelease_publication_not_implemented: true\ntarget_repository_mutation_not_implemented: true\nabsolute_local_paths_suppressed: true\nerror_count: 0\nrecommended_next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01\nproposed_capability: distribution_manifest_v1\ninstall_apply_implemented: false\nupdate_apply_implemented: false\nrepair_apply_implemented: false\nrollback_apply_implemented: false\nuninstall_apply_implemented: false\nrelease_publication_implemented: false\ntarget_repository_mutation_implemented: false\nbranch_worktree_automation_implemented: false\nnetwork_calls_implemented: false\nprovider_model_calls_implemented: false\ngithub_release_creation_implemented: false\ngit_tag_creation_implemented: false\nupload_implemented: false\nworkbench_runtime_implemented: false\nmcp_runtime_implemented: false\nsource_change_preview_apply_rollback_implemented: false\npromotion_implemented: false\n"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "returncode": 0,
+      "stderr_excerpt": "",
+      "stdout_excerpt": " schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md review gate: needs_review\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md target repo mutation: prohibited\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md network calls: prohibited\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report parses as JSON object: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report has schema_version: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report target mutation false: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report branch/worktree mutation false: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report network calls none: .aide/reports/lifecycle-schema-fixture-validation.json\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-fixture-validation.md\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md report mode\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md review gate: needs_review\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md target repo mutation: prohibited\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md network calls: prohibited\n- PASS project state tokens: 739 <= 1600\n- PASS latest task packet tokens: 1387\n- PASS review packet tokens: 2132\n- PASS repo map records: 1017\n- PASS test map mappings: 876\n- PASS context index is readable\n- PASS latest context packet tokens: 486\n- PASS AGENTS token-survival managed section is current\n- PASS no obvious secrets in token-survival files\n"
+    }
+  ],
+  "status": "PASS"
+}

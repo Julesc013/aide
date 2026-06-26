@@ -1,0 +1,156 @@
+{
+  "assertions": [
+    {
+      "category": "baseline",
+      "description": "baseline exact_five_findings",
+      "evidence_refs": [
+        ".aide/reports/ownership-ledger-v1-check/material-findings.json",
+        ".aide/reports/ownership-ledger-v1-repair-01/finding-disposition.json"
+      ],
+      "expected": "source findings and repair dispositions match the five known ids",
+      "id": "baseline.exact_five_findings",
+      "observed": "source=['ownership.file_entry_contract_incomplete', 'ownership.managed_section_contract_incomplete', 'ownership.q43_migration_missing', 'ownership.conflict_model_incomplete', 'ownership.fixture_coverage_incomplete']; repair=['ownership.file_entry_contract_incomplete', 'ownership.managed_section_contract_incomplete', 'ownership.q43_migration_missing', 'ownership.conflict_model_incomplete', 'ownership.fixture_coverage_incomplete']; repair_material=0",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": null
+    },
+    {
+      "category": "finding_closure",
+      "description": "file_entry contract_fields_present",
+      "evidence_refs": [
+        ".aide/reports/ownership-ledger-v1/ownership-ledger.json",
+        ".aide/reports/ownership-ledger-v1-repair-01/file-entry-contract-matrix.json"
+      ],
+      "expected": "all file-entry fields present and target_relative_path mirrors target_path",
+      "id": "file_entry.contract_fields_present",
+      "observed": "{\"evidence-only-queue-evidence\": [], \"local-only-operator-state\": [], \"never-touch-git\": [], \"preserved-legacy-state\": [], \"project-generated-context\": [], \"project-overlay-policy\": [], \"project-owned-readme\": [], \"runtime-generated-local-state\": [], \"unknown-unclassified\": [], \"vendor-file-aide-lite-cli\": [], \"vendor-file-project-lock-schema\": [], \"vendor-section-agents-summary\": []}",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": "ownership.file_entry_contract_incomplete"
+    },
+    {
+      "category": "finding_closure",
+      "description": "managed_section contract_fields_present",
+      "evidence_refs": [
+        ".aide/reports/ownership-ledger-v1/ownership-ledger.json",
+        ".aide/reports/ownership-ledger-v1-repair-01/managed-section-contract-matrix.json"
+      ],
+      "expected": "managed-section records have marker/preimage/update/preservation fields and matching identities",
+      "id": "managed_section.contract_fields_present",
+      "observed": "{\"vendor-section-agents-summary\": []}",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": "ownership.managed_section_contract_incomplete"
+    },
+    {
+      "category": "finding_closure",
+      "description": "fixtures required_cases_pass",
+      "evidence_refs": [
+        ".aide/reports/ownership-ledger-v1/validation.json",
+        ".aide/reports/ownership-ledger-v1-repair-01/fixture-coverage-matrix.json"
+      ],
+      "expected": "all required valid, invalid, conflict, path, and Q43 fixtures are present and pass with expected refusal subsets",
+      "id": "fixtures.required_cases_pass",
+      "observed": "missing=[]; failing=[]; missing_refusals=[]",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": "ownership.fixture_coverage_incomplete"
+    },
+    {
+      "category": "finding_closure",
+      "description": "q43 migration_projection_complete",
+      "evidence_refs": [
+        ".aide/reports/ownership-ledger-v1/q43-migration.json",
+        ".aide/reports/ownership-ledger-v1/validation.json",
+        ".aide/reports/ownership-ledger-v1-repair-01/q43-migration-matrix.json"
+      ],
+      "expected": "known Q43 classes map, unknown requires manual review, unmapped fails closed, no apply",
+      "id": "q43.migration_projection_complete",
+      "observed": "{\"errors\": [], \"extensions\": {}, \"no_apply\": true, \"records\": [{\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"evidence_record\", \"v1_ownership_class\": \"evidence_only\"}, {\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"local_only\", \"v1_ownership_class\": \"local_only\"}, {\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"managed_aide_file\", \"v1_ownership_class\": \"vendor_managed_file\"}, {\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"managed_aide_section\", \"v1_ownership_class\": \"vendor_managed_section\"}, {\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"never_touch\", \"v1_ownership_class\": \"never_touch\"}, {\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"preserved_legacy\", \"v1_ownership_class\": \"preserved_legacy\"}, {\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"runtime_generated\", \"v1_ownership_class\": \"runtime_generated\"}, {\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"target_generated\", \"v1_ownership_class\": \"project_generated\"}, {\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"target_overlay\", \"v1_ownership_class\": \"project_overlay\"}, {\"disposition\": \"mapped\", \"requires_manual_review\": false, \"source_class\": \"target_project_file\", \"v1_ownership_class\": \"project_owned\"}, {\"disposition\": \"manual_review_required\", \"requires_manual_review\": true, \"source_class\": \"unknown\", \"v1_ownership_class\": \"unknown\"}], \"refusal_codes\": [], \"result\": \"PASS_WITH_WARNINGS\", \"schema_version\": \"aide.ownership-ledger.q43-migration.v1\", \"source_schema\": \"aide.install-ownership-ledger.v0\", \"target_repository_mutation_implemented\": false, \"target_schema\": \"aide.ownership-ledger.v1\"}",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": "ownership.q43_migration_missing"
+    },
+    {
+      "category": "finding_closure",
+      "description": "managed_section project_owned_mutable_refuses",
+      "evidence_refs": [
+        "check-local direct SUT probe"
+      ],
+      "expected": "project-owned managed-section mutation refuses with mutable_by_distribution_forbidden",
+      "id": "managed_section.project_owned_mutable_refuses",
+      "observed": "[\"ownership_ledger.digest_mismatch\", \"ownership_ledger.missing_taxonomy_class\", \"ownership_ledger.mutable_by_distribution_forbidden\"]",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": "ownership.managed_section_contract_incomplete"
+    },
+    {
+      "category": "finding_closure",
+      "description": "conflict_model required_refusals_present",
+      "evidence_refs": [
+        ".aide/reports/ownership-ledger-v1/validation.json",
+        ".aide/reports/ownership-ledger-v1-repair-01/conflict-model-matrix.json"
+      ],
+      "expected": "required path, case, file/section, overlap, nested, evidence, and link conflicts fail closed",
+      "id": "conflict_model.required_refusals_present",
+      "observed": "missing_conflict_refusals=[]",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": "ownership.conflict_model_incomplete"
+    },
+    {
+      "category": "schema",
+      "description": "schema contract_alignment",
+      "evidence_refs": [
+        ".aide/protocol/aide-ownership-ledger-v1.schema.json"
+      ],
+      "expected": "schema requires repaired fields and explicit extension maps",
+      "id": "schema.contract_alignment",
+      "observed": "missing_required=[]",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": null
+    },
+    {
+      "category": "boundary",
+      "description": "non_capabilities no_apply_boundary",
+      "evidence_refs": [
+        ".aide/reports/ownership-ledger-v1/validation.json",
+        ".aide/reports/ownership-ledger-v1-repair-01/repair-report.json"
+      ],
+      "expected": "no apply, mutation, admission, authorization, publication, runtime, network, provider/model, or promotion behavior",
+      "id": "non_capabilities.no_apply_boundary",
+      "observed": "non_caps=['install_truth', 'install_plan', 'install_apply', 'update_apply', 'repair_apply', 'rollback_apply', 'uninstall_apply', 'admission', 'authorization', 'target_repository_mutation', 'release_publication', 'git_tag_creation', 'github_release_creation', 'upload', 'network_call', 'provider_model_call', 'workbench_runtime', 'mcp_runtime', 'source_change_preview_apply_rollback', 'promotion']; project_flags={'admission_implemented': False, 'authorization_implemented': False, 'install_apply_implemented': False, 'ledger_path': '.aide/reports/ownership-ledger-v1/ownership-ledger.json', 'ownership_ledger_digest': 'sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284', 'project_lock_digest': 'sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57', 'proposed_capability': 'ownership_ledger_v1', 'recommended_next_task': 'AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01', 'record_count': 12, 'source_artifacts_mutated': False, 'status': 'PASS_WITH_WARNINGS', 'target_repository_mutation_implemented': False, 'taxonomy_count': 11, 'update_apply_implemented': False}",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": null
+    },
+    {
+      "category": "validation",
+      "description": "validation commands_pass",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01/evidence/validation-results.md"
+      ],
+      "expected": "focused and broad validation commands pass",
+      "id": "validation.commands_pass",
+      "observed": "[{\"command\": [\"py\", \"-3\", \"-m\", \"compileall\", \"core/protocol\", \".aide/scripts/tests\"], \"returncode\": 0, \"stderr_excerpt\": \"\", \"stdout_excerpt\": \"Listing 'core/protocol'...\\nCompiling 'core/protocol\\\\\\\\ownership_ledger.py'...\\nListing '.aide/scripts/tests'...\\nCompiling '.aide/scripts/tests\\\\\\\\test_aide_ownership_ledger_v1.py'...\\n\"}, {\"command\": [\"py\", \"-3\", \"-m\", \"unittest\", \"discover\", \"-s\", \".aide/scripts/tests\", \"-p\", \"test_aide_ownership_ledger_v1.py\"], \"returncode\": 0, \"stderr_excerpt\": \"...........\\n----------------------------------------------------------------------\\nRan 11 tests in 34.955s\\n\\nOK\\n\", \"stdout_excerpt\": \"\"}, {\"command\": [\"py\", \"-3\", \".aide/scripts/aide_lite.py\", \"ownership-ledger\", \"status\"], \"returncode\": 0, \"stderr_excerpt\": \"\", \"stdout_excerpt\": \"AIDE Lite ownership-ledger status\\nresult: PASS_WITH_WARNINGS\\nschema_exists: true\\nhelper_exists: true\\nproject_lock_report_exists: true\\nproject_lock_acceptance_report_exists: true\\nownership_ledger_report_exists: true\\nvalidation_report_exists: true\\nrecommended_next_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01\\nproposed_capability: ownership_ledger_v1\\ninstall_apply_implemented: false\\nupdate_apply_implemented: false\\ntarget_repository_mutation_implemented: false\\nadmission_implemented: false\\nauthorization_implemented: false\\ninstall_truth_implemented: false\\ninstall_plan_implemented: false\\nrelease_publication_implemented: false\\nnetwork_calls_implemented: false\\nprovider_model_calls_implemented: false\\nworkbench_runtime_implemented: false\\nmcp_runtime_implemented: false\\npromotion_implemented: false\\n\"}, {\"command\": [\"py\", \"-3\", \".aide/scripts/aide_lite.py\", \"ownership-ledger\", \"project\"], \"returncode\": 0, \"stderr_excerpt\": \"\", \"stdout_excerpt\": \"AIDE Lite ownership-ledger project\\nresult: PASS_WITH_WARNINGS\\nledger_path: .aide/reports/ownership-ledger-v1/ownership-ledger.json\\nrecord_count: 12\\ntaxonomy_count: 11\\nproject_lock_digest: sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57\\nownership_ledger_digest: sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284\\nsource_artifacts_mutated: false\\nrecommended_next_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01\\nproposed_capability: ownership_ledger_v1\\ninstall_apply_implemented: false\\nupdate_apply_implemented: false\\ntarget_repository_mutation_implemented: false\\nadmission_implemented: false\\nauthorization_implemented: false\\ninstall_truth_implemented: false\\ninstall_plan_implemented: false\\nrelease_publication_implemented: false\\nnetwork_calls_implemented: false\\nprovider_model_calls_implemented: false\\nworkbench_runtime_implemented: false\\nmcp_runtime_implemented: false\\npromotion_implemented: false\\n\"}, {\"command\": [\"py\", \"-3\", \".aide/scripts/aide_lite.py\", \"ownership-ledger\", \"validate\"], \"returncode\": 0, \"stderr_excerpt\": \"\", \"stdout_excerpt\": \"AIDE Lite ownership-ledger validate\\nresult: PASS_WITH_WARNINGS\\nschema_exists: true\\nhelper_exists: true\\ncli_registered: true\\nledger_generated: true\\nledger_valid: true\\nfixture_matrix_passed: true\\nq43_migration_passed: true\\nproject_lock_accepted: true\\nproject_lock_digest_bound: true\\ntaxonomy_complete: true\\nfile_entry_contract_complete: true\\nmanaged_section_contract_complete: true\\nunknown_blocks_apply: true\\nnever_touch_blocks_apply: true\\ninstall_apply_not_implemented: true\\nupdate_apply_not_implemented: true\\ntarget_repository_mutation_not_implemented: true\\nadmission_not_implemented: true\\nauthorization_not_implemented: true\\nerror_count: 0\\nrecommended_next_task: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01\\nproposed_capability: ownership_ledger_v1\\ninstall_apply_implemented: false\\nupdate_apply_implemented: false\\ntarget_repository_mutation_implemented: false\\nadmission_implemented: false\\nauthorization_implemented: false\\ninstall_truth_implemented: false\\ninstall_plan_implemented: false\\nrelease_publication_implemented: false\\nnetwork_calls_implemented: false\\nprovider_model_calls_implemented: false\\nworkbench_runtime_implemented: false\\nmcp_runtime_implemented: false\\npromotion_implemented: false\\n\"}, {\"command\": [\"py\", \"-3\", \".aide/scripts/aide_lite.py\", \"ownership-ledger\", \"migrate-q43\"], \"returncode\": 0, \"stderr_excerpt\": \"\", \"stdout_excerpt\": \"AIDE Lite ownership-ledger migrate-q43\\nresult: PASS_WITH_WARNINGS\\nrecord_count: 11\\nerror_count: 0\\nno_apply: true\\ntarget_repository_mutation_implemented: false\\nproposed_capability: ownership_ledger_v1\\ninstall_apply_implemented: false\\nupdate_apply_implemented: false\\ntarget_repository_mutation_implemented: false\\nadmission_implemented: false\\nauthorization_implemented: false\\ninstall_truth_implemented: false\\ninstall_plan_implemented: false\\nrelease_publication_implemented: false\\nnetwork_calls_implemented: false\\nprovider_model_calls_implemented: false\\nworkbench_runtime_implemented: false\\nmcp_runtime_implemented: false\\npromotion_implemented: false\\n\"}, {\"command\": [\"py\", \"-3\", \".aide/scripts/aide_lite.py\", \"project-lock\", \"validate\"], \"returncode\": 0, \"stderr_excerpt\": \"\", \"stdout_excerpt\": \"AIDE Lite project-lock validate\\nresult: PASS_WITH_WARNINGS\\nschema_exists: true\\nhelper_exists: true\\ncli_registered: true\\nlock_generated: true\\nlock_valid: true\\nschema_alignment: true\\nfixture_matrix_passed: true\\ndistribution_manifest_accepted: true\\nselected_distribution_digest_bound: true\\nmanifest_payload_digest_bound: true\\ncomponent_selection_complete: true\\nchannel_informational: true\\ninstall_apply_not_implemented: true\\nupdate_apply_not_implemented: true\\ntarget_repository_mutation_not_implemented: true\\nadmission_not_implemented: true\\nauthorization_not_implemented: true\\nabsolute_local_paths_suppressed: true\\nerror_count: 0\\nrecommended_next_task: AIDE-CHECK-PROJECT-LOCK-V0-01\\nproposed_capability: project_lock_v0\\ninstall_apply_implemented: false\\nupdate_apply_implemented: false\\ntarget_repository_mutation_implemented: false\\nadmission_implemented: false\\nauthorization_implemented: false\\ninstall_truth_implemented: false\\ninstall_plan_implemented: false\\nrelease_publication_implemented: false\\nnetwork_calls_implemented: false\\nprovider_model_calls_implemented: false\\nworkbench_runtime_implemented: false\\nmcp_runtime_implemented: false\\npromotion_implemented: false\\n\"}, {\"command\": [\"py\", \"-3\", \".aide/scripts/aide_lite.py\", \"distribution-manifest\", \"validate\"], \"returncode\": 0, \"stderr_excerpt\": \"\", \"stdout_excerpt\": \"AIDE Lite distribution-manifest validate\\nresult: PASS_WITH_WARNINGS\\nschema_exists: true\\nhelper_exists: true\\ncli_registered: true\\nmanifest_generated: true\\nmanifest_valid: true\\nschema_alignment: true\\nfixture_matrix_passed: true\\nreordered_input_same_digest: true\\nq47_release_bundle_mapped: true\\nq48_not_distribution_truth: true\\ninstall_apply_not_implemented: true\\nrelease_publication_not_implemented: true\\ntarget_repository_mutation_not_implemented: true\\nabsolute_local_paths_suppressed: true\\nerror_count: 0\\nrecommended_next_task: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01\\nproposed_capability: distribution_manifest_v1\\ninstall_apply_implemented: false\\nupdate_apply_implemented: false\\nrepair_apply_implemented: false\\nrollback_apply_implemented: false\\nuninstall_apply_implemented: false\\nrelease_publication_implemented: false\\ntarget_repository_mutation_implemented: false\\nbranch_worktree_automation_implemented: false\\nnetwork_calls_implemented: false\\nprovider_model_calls_implemented: false\\ngithub_release_creation_implemented: false\\ngit_tag_creation_implemented: false\\nupload_implemented: false\\nworkbench_runtime_implemented: false\\nmcp_runtime_implemented: false\\nsource_change_preview_apply_rollback_implemented: false\\npromotion_implemented: false\\n\"}, {\"command\": [\"py\", \"-3\", \".aide/scripts/aide_lite.py\", \"validate\"], \"returncode\": 0, \"stderr_excerpt\": \"\", \"stdout_excerpt\": \" schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md review gate: needs_review\\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md target repo mutation: prohibited\\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md network calls: prohibited\\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-fixture-validation.json\\n- PASS Lifecycle schema report parses as JSON object: .aide/reports/lifecycle-schema-fixture-validation.json\\n- PASS Lifecycle schema report has schema_version: .aide/reports/lifecycle-schema-fixture-validation.json\\n- PASS Lifecycle schema report target mutation false: .aide/reports/lifecycle-schema-fixture-validation.json\\n- PASS Lifecycle schema report branch/worktree mutation false: .aide/reports/lifecycle-schema-fixture-validation.json\\n- PASS Lifecycle schema report network calls none: .aide/reports/lifecycle-schema-fixture-validation.json\\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-fixture-validation.md\\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md report mode\\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md review gate: needs_review\\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md target repo mutation: prohibited\\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md network calls: prohibited\\n- PASS project state tokens: 739 <= 1600\\n- PASS latest task packet tokens: 1387\\n- PASS review packet tokens: 2132\\n- PASS repo map records: 1017\\n- PASS test map mappings: 876\\n- PASS context index is readable\\n- PASS latest context packet tokens: 486\\n- PASS AGENTS token-survival managed section is current\\n- PASS no obvious secrets in token-survival files\\n\"}]",
+      "outcome": "PASS",
+      "severity": "info",
+      "source_finding_id": null
+    }
+  ],
+  "checked_capability": "ownership_ledger_v1",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.ownership-ledger-v1.repair-01-check.v0",
+  "source_commit": "d466004625bdd8d17998ad325bb6b124e236562c",
+  "source_task": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01",
+  "task_id": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01",
+  "warnings": [
+    "OwnershipLedger v1 remains proposed until acceptance.",
+    "OwnershipLedger is ownership truth only and does not implement install truth or apply behavior.",
+    "Q43 migration remains a projection-only mapping, not a target mutation."
+  ]
+}

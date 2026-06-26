@@ -2873,3 +2873,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, closes the five findings pending independent repair check, and recommends exactly `AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: The repair keeps OwnershipLedger metadata-only and no-apply. OwnershipLedger acceptance, InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, apply engine, canaries, target mutation, release publication, runtime, provider/model calls, and promotion remain blocked pending independent repair check.
+
+### Queue ID: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01
+
+- Title: Check OwnershipLedger v1 Repair 01
+- Status: Needs Review
+- Objective: independently verify the five repaired findings from `AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01` without repairing implementation, accepting OwnershipLedger v1, or beginning downstream distribution objects.
+- Scope: `.aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01/**`, `.aide/reports/ownership-ledger-v1-repair-01-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01`, result `PASS_WITH_WARNINGS`, `material_finding_count: 0`, and `missing_evidence: 0`.
+- Verification Intent: source-chain review, check-local closure harness, file-entry and managed-section contract probes, Q43 migration review, conflict-model review, fixture coverage review, focused OwnershipLedger tests, OwnershipLedger status/project/validate/migrate-q43, ProjectLock and DistributionManifest regression validation, broad validation, task inspect/evidence, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records the independent repair-check result, and recommends either acceptance or a bounded Repair 02 task.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: Zero material findings remain. The next serialized task is exactly `AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01`. OwnershipLedger remains proposed; InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, distribution apply, canaries, target mutation, release publication, runtime, provider/model calls, Workbench/MCP behavior, preview/apply/rollback, and promotion remain blocked pending acceptance.

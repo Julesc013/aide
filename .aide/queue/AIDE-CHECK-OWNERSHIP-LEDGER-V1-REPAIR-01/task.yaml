@@ -1,0 +1,58 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01
+title: Check OwnershipLedger v1 Repair 01
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+checked_capability: ownership_ledger_v1
+source_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+source_commit: d466004625bdd8d17998ad325bb6b124e236562c
+allowed_results:
+  - PASS
+  - PASS_WITH_WARNINGS
+  - REQUEST_CHANGES
+  - BLOCKED
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01/**
+    - .aide/reports/ownership-ledger-v1-repair-01-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .aide/protocol/aide-ownership-ledger-v1.schema.json
+    - core/protocol/ownership_ledger.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_ownership_ledger_v1.py
+    - .aide/fixtures/ownership-ledger-v1/**
+    - .aide/reports/ownership-ledger-v1/**
+    - .aide/reports/ownership-ledger-v1-repair-01/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+description: Independent check-only review of AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01. Verifies the five repaired findings for file-entry contract completeness, managed-section contract completeness, Q43 migration, conflict model, fixture coverage, evidence consistency, and explicit no-apply/non-capability boundaries. Does not repair implementation, accept OwnershipLedger v1, begin InstallRecord/MigrationRecord/UpdatePlan/RollbackBundle, mutate targets, publish releases, call network/provider/model services, start runtime work, or promote.
+non_capabilities:
+  - implementation repair
+  - OwnershipLedger acceptance
+  - InstallRecord build
+  - MigrationRecord build
+  - UpdatePlan build
+  - RollbackBundle build
+  - install apply
+  - update apply
+  - repair apply
+  - rollback apply
+  - uninstall apply
+  - target repository mutation
+  - release publication
+  - network call
+  - provider/model call
+  - Workbench runtime
+  - MCP runtime
+  - source-change preview/apply/rollback
+  - promotion

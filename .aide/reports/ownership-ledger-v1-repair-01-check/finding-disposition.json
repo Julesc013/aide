@@ -1,0 +1,40 @@
+{
+  "findings": [
+    {
+      "assertions": [
+        "file_entry.contract_fields_present"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "ownership.file_entry_contract_incomplete"
+    },
+    {
+      "assertions": [
+        "managed_section.contract_fields_present",
+        "managed_section.project_owned_mutable_refuses"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "ownership.managed_section_contract_incomplete"
+    },
+    {
+      "assertions": [
+        "q43.migration_projection_complete"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "ownership.q43_migration_missing"
+    },
+    {
+      "assertions": [
+        "conflict_model.required_refusals_present"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "ownership.conflict_model_incomplete"
+    },
+    {
+      "assertions": [
+        "fixtures.required_cases_pass"
+      ],
+      "disposition": "CLOSED",
+      "finding_id": "ownership.fixture_coverage_incomplete"
+    }
+  ]
+}

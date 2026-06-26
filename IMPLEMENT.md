@@ -9657,3 +9657,38 @@ acceptance. InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle,
 distribution apply, canaries, target mutation, release publication, runtime,
 provider/model calls, Workbench/MCP behavior, preview/apply/rollback, and
 promotion were not started.
+
+## Work Item: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01
+
+### Summary
+
+Completed the independent Repair 01 check for OwnershipLedger v1 and stopped at
+the acceptance gate.
+
+### Implementation Notes
+
+- Added the check-only queue task and check report directory.
+- Verified the five source findings exactly match the five Repair 01
+  dispositions.
+- Ran a check-local harness that independently reviews committed reports,
+  recomputes check-local digests, inspects schema alignment, exercises direct
+  repaired SUT probes, and verifies fixture/refusal coverage.
+- Confirmed file-entry contract fields, managed-section contract fields, Q43
+  migration projection, conflict-model refusals, and fixture coverage are
+  closed.
+- Preserved explicit non-capabilities: no implementation repair, no acceptance,
+  no InstallRecord/MigrationRecord/UpdatePlan/RollbackBundle, no apply behavior,
+  no target mutation, no publication, no network/provider/model behavior, no
+  runtime, and no promotion.
+
+### Verification
+
+The independent harness passed focused OwnershipLedger tests,
+`ownership-ledger status/project/validate/migrate-q43`, ProjectLock and
+DistributionManifest regression validation, and broad `aide_lite.py validate`.
+Final task evidence records outer validation, diff checks, and commit policy.
+
+### Remaining Issues
+
+OwnershipLedger v1 remains proposed until the acceptance-only task completes.
+The next serialized task is `AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01`.

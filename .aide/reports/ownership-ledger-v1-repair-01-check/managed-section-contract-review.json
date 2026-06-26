@@ -1,0 +1,11 @@
+{
+  "direct_probe_refusal_codes": [
+    "ownership_ledger.digest_mismatch",
+    "ownership_ledger.missing_taxonomy_class",
+    "ownership_ledger.mutable_by_distribution_forbidden"
+  ],
+  "missing_fields_by_record": {
+    "vendor-section-agents-summary": []
+  },
+  "status": "PASS"
+}

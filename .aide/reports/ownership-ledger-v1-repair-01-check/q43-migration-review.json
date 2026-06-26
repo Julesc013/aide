@@ -1,0 +1,71 @@
+{
+  "migration_classes": {
+    "evidence_record": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "evidence_record",
+      "v1_ownership_class": "evidence_only"
+    },
+    "local_only": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "local_only",
+      "v1_ownership_class": "local_only"
+    },
+    "managed_aide_file": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "managed_aide_file",
+      "v1_ownership_class": "vendor_managed_file"
+    },
+    "managed_aide_section": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "managed_aide_section",
+      "v1_ownership_class": "vendor_managed_section"
+    },
+    "never_touch": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "never_touch",
+      "v1_ownership_class": "never_touch"
+    },
+    "preserved_legacy": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "preserved_legacy",
+      "v1_ownership_class": "preserved_legacy"
+    },
+    "runtime_generated": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "runtime_generated",
+      "v1_ownership_class": "runtime_generated"
+    },
+    "target_generated": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "target_generated",
+      "v1_ownership_class": "project_generated"
+    },
+    "target_overlay": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "target_overlay",
+      "v1_ownership_class": "project_overlay"
+    },
+    "target_project_file": {
+      "disposition": "mapped",
+      "requires_manual_review": false,
+      "source_class": "target_project_file",
+      "v1_ownership_class": "project_owned"
+    },
+    "unknown": {
+      "disposition": "manual_review_required",
+      "requires_manual_review": true,
+      "source_class": "unknown",
+      "v1_ownership_class": "unknown"
+    }
+  },
+  "status": "PASS"
+}

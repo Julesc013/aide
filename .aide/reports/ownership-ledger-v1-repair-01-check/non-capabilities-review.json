@@ -1,0 +1,41 @@
+{
+  "non_capabilities": [
+    "install_truth",
+    "install_plan",
+    "install_apply",
+    "update_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "admission",
+    "authorization",
+    "target_repository_mutation",
+    "release_publication",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "workbench_runtime",
+    "mcp_runtime",
+    "source_change_preview_apply_rollback",
+    "promotion"
+  ],
+  "project_report": {
+    "admission_implemented": false,
+    "authorization_implemented": false,
+    "install_apply_implemented": false,
+    "ledger_path": ".aide/reports/ownership-ledger-v1/ownership-ledger.json",
+    "ownership_ledger_digest": "sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284",
+    "project_lock_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+    "proposed_capability": "ownership_ledger_v1",
+    "recommended_next_task": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01",
+    "record_count": 12,
+    "source_artifacts_mutated": false,
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "taxonomy_count": 11,
+    "update_apply_implemented": false
+  },
+  "status": "PASS"
+}

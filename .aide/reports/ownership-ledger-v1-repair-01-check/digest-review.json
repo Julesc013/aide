@@ -1,0 +1,7 @@
+{
+  "ledger_canonical_digest_check_local": "sha256:8229ce0cbae10f8bf3367e81947a0d8e5afdc931eab3e3e9cb9797c9aedc5e58",
+  "ledger_file_digest": "sha256:f75c665bcf5d1e177b017cfe872e4d49889b3024fa61628a4ec4afd26a7668b6",
+  "repair_report_file_digest": "sha256:c048842db447d23df8a938ff3b677929650947c58bd1089993d6c68418d90cbc",
+  "status": "PASS",
+  "validation_file_digest": "sha256:e72a7d8119e1f53ffdda30e1520b86413b7288abfaf1600d9c8397f4ac99debe"
+}

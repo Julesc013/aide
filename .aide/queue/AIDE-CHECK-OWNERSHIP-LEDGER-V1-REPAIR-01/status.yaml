@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+source_task: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
+source_commit: d466004625bdd8d17998ad325bb6b124e236562c
+checked_capability: ownership_ledger_v1
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+notes:
+  - Independent repair check passed with zero material findings and zero missing evidence.
+  - All five Repair 01 closure dispositions are independently verified as CLOSED.
+  - Implementation repair, acceptance, downstream distribution objects, apply behavior, target mutation, publication, runtime, and provider/model/network behavior are out of scope.
