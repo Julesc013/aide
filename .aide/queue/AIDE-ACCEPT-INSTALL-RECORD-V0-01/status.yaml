@@ -1,0 +1,15 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-INSTALL-RECORD-V0-01
+status: needs_review
+classification: acceptance_completed
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+accepted_capability: install_record_v0
+accepted_build_commit: 7a0abf5a85ff8442f65237e5824f831b4176f252
+accepted_check_commit: e22cda0a6557b7445769f17bf2d7902348d863b4
+next_task: AIDE-BUILD-MIGRATION-RECORD-V0-01
+notes:
+  - InstallRecord v0 is accepted as a no-apply install-state record capability.
+  - Acceptance does not authorize install, update, migration, rollback, uninstall, target mutation, target scan, release, upload, provider/model/network, runtime, or canary work.

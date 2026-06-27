@@ -1,0 +1,37 @@
+{
+  "schema_version": "aide.install-record-acceptance-report.v0",
+  "task_id": "AIDE-ACCEPT-INSTALL-RECORD-V0-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_capability": "install_record_v0",
+  "accepted_build_commit": "7a0abf5a85ff8442f65237e5824f831b4176f252",
+  "accepted_check_commit": "e22cda0a6557b7445769f17bf2d7902348d863b4",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-MIGRATION-RECORD-V0-01",
+  "accepted_scope": [
+    "protocol_schema",
+    "helper_projection",
+    "semantic_validation",
+    "cli_status_project_validate",
+    "fixture_corpus",
+    "focused_tests",
+    "source_evidence_reports"
+  ],
+  "non_capabilities": [
+    "install_apply",
+    "update_apply",
+    "migration_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "target_repository_mutation",
+    "target_scan_authority",
+    "release_archive_creation",
+    "public_release_readiness",
+    "provider_model_network_calls",
+    "runtime_or_canary_work"
+  ],
+  "implementation_files_changed_by_acceptance": false,
+  "install_record_started_migration": false,
+  "source_generated_output_became_target_truth": false
+}

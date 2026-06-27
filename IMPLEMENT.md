@@ -9835,3 +9835,36 @@ check.
 
 InstallRecord v0 remains proposed until acceptance. The next serialized task is
 `AIDE-ACCEPT-INSTALL-RECORD-V0-01`.
+
+## Work Item: AIDE-ACCEPT-INSTALL-RECORD-V0-01
+
+### Summary
+
+Accepted InstallRecord v0 as a no-apply install-state record capability.
+
+### Implementation Notes
+
+- Confirmed the build/check chain completed with `material_finding_count: 0`
+  and `missing_evidence: 0`.
+- Accepted only `install_record_v0` as protocol schema, helper/projection,
+  semantic validation, CLI status/project/validate commands, fixture corpus,
+  focused tests, and source evidence reports.
+- Added acceptance reports and downstream-use guidance under
+  `.aide/reports/install-record-v0-acceptance/**`.
+- Did not modify InstallRecord implementation, DistributionManifest
+  implementation, ProjectLock implementation, OwnershipLedger implementation,
+  release archives, target repos, provider/model/network surfaces,
+  branch/worktree automation, or apply behavior.
+
+### Verification
+
+Validation receipts record JSON parse, compileall, focused InstallRecord tests,
+`install-record status`, `install-record project`, `install-record validate`,
+predecessor regression validation, Q43-Q48 no-apply/no-publish validators,
+broad `aide_lite.py validate`, task inspect/evidence, path and secret-like
+scans, source-output misuse scan, diff checks, and commit-policy check.
+
+### Remaining Issues
+
+MigrationRecord v0 has not been started. The next serialized task is
+`AIDE-BUILD-MIGRATION-RECORD-V0-01`.

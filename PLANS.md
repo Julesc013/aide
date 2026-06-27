@@ -2933,3 +2933,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `material_finding_count: 0`, records `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-INSTALL-RECORD-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: Zero material findings remain. InstallRecord v0 remains proposed until acceptance. MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt, DistributionApplyEngine, target mutation, release publication, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, and canaries remain blocked pending acceptance.
+
+### Queue ID: AIDE-ACCEPT-INSTALL-RECORD-V0-01
+
+- Title: Accept InstallRecord v0
+- Status: Needs Review
+- Objective: accept exactly `install_record_v0` after the build/check chain closed with zero material findings and zero missing evidence.
+- Scope: `.aide/queue/AIDE-ACCEPT-INSTALL-RECORD-V0-01/**`, `.aide/reports/install-record-v0-acceptance/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-INSTALL-RECORD-V0-01` and `AIDE-CHECK-INSTALL-RECORD-V0-01`.
+- Verification Intent: source-chain review, accepted contract boundary review, warning review, explicit non-capability review, downstream-use report, InstallRecord validation, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, task inspect/evidence, broad validation, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `install_record_v0`, and recommends exactly `AIDE-BUILD-MIGRATION-RECORD-V0-01`.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Notes: InstallRecord v0 is accepted only as no-apply install-state metadata. MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt, DistributionApplyEngine, canaries, release publication, target mutation, target scan authority, runtime, provider/model calls, Workbench, Commander, preview/apply/rollback, and promotion remain blocked.

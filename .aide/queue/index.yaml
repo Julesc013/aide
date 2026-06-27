@@ -2639,3 +2639,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-INSTALL-RECORD-V0-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-INSTALL-RECORD-V0-01/evidence
   description: Check-only independent review of AIDE-BUILD-INSTALL-RECORD-V0-01 at 7a0abf5a85ff8442f65237e5824f831b4176f252. Verifies InstallRecord v0 schema/helper/CLI/fixture/test/report coverage, predecessor bindings to accepted DistributionManifest v1, ProjectLock v0, and OwnershipLedger v1, fail-closed behavior for missing or mismatched refs, unknown installed refs, apply claims, mutation claims, unsafe paths, source-output misuse, unknown required features/extensions, and missing evidence. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-INSTALL-RECORD-V0-01. Does not repair implementation, accept InstallRecord v0, begin MigrationRecord/UpdatePlan/RollbackBundle/UpdateReceipt/DistributionApplyEngine, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start Workbench/Commander/runtime work, implement source-change apply, or promote.
+- id: AIDE-ACCEPT-INSTALL-RECORD-V0-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept InstallRecord v0
+  task: .aide/queue/AIDE-ACCEPT-INSTALL-RECORD-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-INSTALL-RECORD-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-INSTALL-RECORD-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-INSTALL-RECORD-V0-01/evidence
+  description: Acceptance-only task for install_record_v0 after the build/check chain closed with zero material findings and zero missing evidence. Accepts only InstallRecord v0 as no-apply install-state metadata, including schema, helper projection, semantic validation, CLI status/project/validate commands, fixture corpus, focused tests, source evidence reports, warnings, explicit non-capabilities, and downstream-use constraints. Stops at needs_review with ACCEPTED_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-BUILD-MIGRATION-RECORD-V0-01. Does not modify implementation, begin MigrationRecord/UpdatePlan/RollbackBundle/UpdateReceipt/DistributionApplyEngine, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start Workbench/Commander/runtime work, implement source-change apply, or promote.
