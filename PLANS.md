@@ -2957,3 +2957,14 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `material_finding_count: 0`, records `missing_evidence: 0`, and recommends exactly `AIDE-CHECK-MIGRATION-RECORD-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: MigrationRecord v0 records migration decisions only. It does not implement migration apply, install/update apply, rollback/uninstall apply, target scan authority, target mutation, release publication, provider/model/network calls, runtime, Workbench, Commander, Omnigent, or canaries.
+
+### Queue ID: AIDE-CHECK-MIGRATION-RECORD-V0-01
+
+- Title: Check MigrationRecord v0
+- Status: Needs Review
+- Objective: independently verify the proposed MigrationRecord v0 build without repairing implementation, accepting the capability, or beginning UpdatePlan.
+- Scope: `.aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-01/**`, `.aide/reports/migration-record-v0-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-MIGRATION-RECORD-V0-01` at `91ab45763130e609d46353fc3e9ca8933a16e532`.
+- Result: `REQUEST_CHANGES`.
+- Findings: `migration_record.fixture_report_absolute_paths`.
+- Notes: The next serialized task is exactly `AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01`.

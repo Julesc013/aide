@@ -2659,3 +2659,13 @@ items:
   prompt: .aide/queue/AIDE-BUILD-MIGRATION-RECORD-V0-01/prompt.md
   evidence: .aide/queue/AIDE-BUILD-MIGRATION-RECORD-V0-01/evidence
   description: Build task for MigrationRecord v0 as a no-apply protocol/helper/projection/validation slice after accepted InstallRecord v0. Adds schema, helper, CLI commands, fixtures, focused tests, reports, and evidence. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-MIGRATION-RECORD-V0-01. Does not perform migration/install/update/rollback/uninstall apply, target scan authority, target mutation, release archive generation, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, source-change apply, branch/worktree automation, or canaries.
+- id: AIDE-CHECK-MIGRATION-RECORD-V0-01
+  status: needs_review
+  planning_state: check_completed
+  result: REQUEST_CHANGES
+  title: Check MigrationRecord v0
+  task: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-01/evidence
+  description: Check-only independent review of AIDE-BUILD-MIGRATION-RECORD-V0-01 at 91ab45763130e609d46353fc3e9ca8933a16e532. Finds one material report-safety issue: generated fixture matrix and validation reports include local absolute fixture paths. Stops at needs_review with REQUEST_CHANGES, material_finding_count 1, missing_evidence 0, and recommends exactly AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01. Does not repair implementation, accept MigrationRecord v0, begin UpdatePlan, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, or promote.

@@ -9906,3 +9906,27 @@ check.
 
 MigrationRecord v0 remains proposed until independent check and acceptance. The
 next serialized task is `AIDE-CHECK-MIGRATION-RECORD-V0-01`.
+
+## Work Item: AIDE-CHECK-MIGRATION-RECORD-V0-01
+
+### Summary
+
+Independently checked MigrationRecord v0 and requested changes.
+
+### Implementation Notes
+
+- Checked commit `91ab45763130e609d46353fc3e9ca8933a16e532`.
+- Found one material report-safety issue: generated fixture matrix and
+  validation reports contain local absolute fixture paths.
+- Did not repair implementation, accept MigrationRecord v0, begin UpdatePlan,
+  mutate targets, publish releases, call provider/model/network services, or
+  start runtime/canary work.
+
+### Verification
+
+Validation confirmed the build commands pass, but the report path leak scan
+fails.
+
+### Remaining Issues
+
+The next serialized task is `AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01`.

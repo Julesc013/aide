@@ -1,0 +1,18 @@
+{
+  "schema_version": "aide.migration-record-check-finding-matrix.v0",
+  "task_id": "AIDE-CHECK-MIGRATION-RECORD-V0-01",
+  "checked_task": "AIDE-BUILD-MIGRATION-RECORD-V0-01",
+  "checked_commit": "91ab45763130e609d46353fc3e9ca8933a16e532",
+  "result": "REQUEST_CHANGES",
+  "material_finding_count": 1,
+  "missing_evidence": 0,
+  "findings": [
+    {
+      "id": "migration_record.fixture_report_absolute_paths",
+      "severity": "material",
+      "summary": "Generated MigrationRecord fixture matrix and validation reports contain local absolute fixture paths.",
+      "required_repair": "Render fixture result paths as repo-relative paths and regenerate MigrationRecord reports."
+    }
+  ],
+  "recommended_next_task": "AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01"
+}
