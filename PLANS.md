@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+
+- Title: Accept RollbackBundle v0
+- Status: needs_review
+- Objective: accept exactly `rollback_bundle_v0` as a no-apply rollback-preparation contract after build and check completed with zero material findings and zero missing evidence.
+- Scope: acceptance task/evidence, `.aide/reports/rollback-bundle-v0-acceptance/**`, queue index routing, and focused root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-ROLLBACK-BUNDLE-V0-01` at `f0436853b00d5cd0bfa98425541b6e939e678b53`; `AIDE-CHECK-ROLLBACK-BUNDLE-V0-01` at `daf32a5cada7635d9e6d0967186f5c6819fef130`, result `PASS_WITH_WARNINGS`, material finding count `0`, missing evidence `0`.
+- Milestones: source build/check chain reviewed; accepted capability boundary recorded; predecessor dependencies and modeled fields accepted; reverse operation classes accepted; limitation and fail-closed model accepted; warning dispositions recorded; downstream-use boundary recorded; explicit non-capabilities preserved.
+- Blockers: none. UpdateReceipt remains a separate next build task.
+- Verification Intent: predecessor task inspect/evidence, focused RollbackBundle tests, RollbackBundle status/project/validate, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad validation, acceptance task inspect/evidence, safety scans, diff checks, staged diff checks, and commit-policy check.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted capability exactly `rollback_bundle_v0`, missing evidence `0`, and next task exactly `AIDE-BUILD-UPDATE-RECEIPT-V0-01`.
+- Notes: this acceptance does not implement rollback apply, update apply, install apply, migration apply, uninstall apply, target scan authority, target repository mutation, release archive creation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, UpdateReceipt, DistributionApplyEngine, self-consumer fixture, project canaries, or promotion.
+
 ### Plan ID: AIDE-CHECK-ROLLBACK-BUNDLE-V0-01
 
 - Title: Check RollbackBundle v0

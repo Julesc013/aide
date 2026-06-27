@@ -1,0 +1,90 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+title: Accept RollbackBundle v0
+type: acceptance
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+accepted_capability: rollback_bundle_v0
+recommended_next_task: AIDE-BUILD-UPDATE-RECEIPT-V0-01
+accepted_commits:
+  build: f0436853b00d5cd0bfa98425541b6e939e678b53
+  check: daf32a5cada7635d9e6d0967186f5c6819fef130
+depends_on:
+  - AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+  - AIDE-CHECK-ROLLBACK-BUNDLE-V0-01
+  - AIDE-ACCEPT-UPDATE-PLAN-V1-01
+  - AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+  - AIDE-ACCEPT-INSTALL-RECORD-V0-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01/**
+    - .aide/reports/rollback-bundle-v0-acceptance/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/**
+    - .aide/queue/AIDE-CHECK-ROLLBACK-BUNDLE-V0-01/**
+    - .aide/reports/rollback-bundle-v0/**
+    - .aide/reports/rollback-bundle-v0-check/**
+    - .aide/protocol/aide-rollback-bundle-v0.schema.json
+    - core/protocol/rollback_bundle.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_rollback_bundle_v0.py
+    - .aide/fixtures/rollback-bundle-v0/**
+  forbidden_paths:
+    - .aide/release/dist/**
+    - .aide.local/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+    - .aide/protocol/aide-update-receipt-v0.schema.json
+    - core/protocol/update_receipt.py
+evidence:
+  required:
+    - live-truth-review.md
+    - allowed-paths.md
+    - acceptance-summary.md
+    - accepted-contract.md
+    - warning-dispositions.md
+    - downstream-use-boundary.md
+    - validation-commands.md
+    - validation-results.md
+    - validation.md
+    - safety-scans.md
+    - changed-files.md
+    - remaining-risks.md
+    - next-task-routing.md
+non_capabilities:
+  - rollback apply
+  - update apply
+  - install apply
+  - migration apply
+  - uninstall apply
+  - target repository mutation
+  - target scan authority
+  - real project canary
+  - release archive creation
+  - public release readiness
+  - Git tag
+  - GitHub Release
+  - upload
+  - provider/model/network calls
+  - Workbench runtime
+  - Commander
+  - Omnigent
+  - branch/worktree automation
+  - UpdateReceipt
+  - DistributionApplyEngine
+  - self-consumer fixture
+notes:
+  - Acceptance admits only RollbackBundle v0 as a no-apply rollback-preparation contract.
+  - UpdateReceipt remains future work until the next serialized build task.
+  - No RollbackBundle implementation files are modified by this acceptance.

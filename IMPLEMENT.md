@@ -39,6 +39,53 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+
+Completed as an acceptance-only consolidation and awaiting review.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01/**`
+- `.aide/reports/rollback-bundle-v0-acceptance/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Accepted capability:
+
+```text
+rollback_bundle_v0
+```
+
+Accepted:
+
+- predecessor dependencies on DistributionManifest, ProjectLock, OwnershipLedger, InstallRecord, MigrationRecord, and UpdatePlan;
+- required RollbackBundle modeled fields;
+- reverse operation classes for managed file/section preimage restoration, added managed item removal, ProjectLock/InstallRecord/OwnershipLedger restore metadata, project output regeneration, manual review, rollback unavailable, and refusal;
+- limitation model for explicit manual-review, rollback-unavailable, and refusal records;
+- fail-closed semantics for missing refs, mismatches, missing preimages, digest mismatch, unsafe ownership, missing evidence, authority claims, unsafe paths, unknown required features, source-output misuse, and target mutation claims.
+
+Warnings accepted:
+
+- same-session independence is reduced, but no implementation repair was performed;
+- some reverse operation classes are represented through fixtures rather than the live projection because the accepted UpdatePlan has no added managed items.
+
+Result:
+
+```text
+ACCEPTED_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+```
+
+Recommended next task:
+
+```text
+AIDE-BUILD-UPDATE-RECEIPT-V0-01
+```
+
+No RollbackBundle implementation, DistributionManifest implementation, ProjectLock implementation, OwnershipLedger implementation, InstallRecord implementation, MigrationRecord implementation, or UpdatePlan implementation was changed. UpdateReceipt, DistributionApplyEngine, self-consumer fixture, canaries, target mutation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, branch/worktree automation, and apply behavior were not started by this acceptance.
+
 ## Work Item: AIDE-CHECK-ROLLBACK-BUNDLE-V0-01
 
 Completed as a check-only independent review and awaiting acceptance.

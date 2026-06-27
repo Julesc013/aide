@@ -1,0 +1,25 @@
+{
+  "schema_version": "aide.rollback-bundle-v0-acceptance.validation-summary.v0",
+  "task_id": "AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01",
+  "accepted_capability": "rollback_bundle_v0",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "accepted_commits": {
+    "build": "f0436853b00d5cd0bfa98425541b6e939e678b53",
+    "check": "daf32a5cada7635d9e6d0967186f5c6819fef130"
+  },
+  "recommended_next_task": "AIDE-BUILD-UPDATE-RECEIPT-V0-01",
+  "accepted_boundary": "no-apply rollback-preparation only",
+  "validation_passed": true,
+  "task_inspect_missing_evidence": 0,
+  "safety_scans_passed": true,
+  "implementation_changed": false,
+  "update_receipt_started": false,
+  "distribution_apply_engine_started": false,
+  "self_consumer_fixture_started": false,
+  "canaries_started": false,
+  "target_repository_mutation": false,
+  "release_publication": false,
+  "provider_model_network_calls": false
+}
