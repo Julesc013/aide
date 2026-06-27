@@ -9980,3 +9980,32 @@ task inspect/evidence, and diff checks passed.
 
 MigrationRecord v0 remains proposed until acceptance. The next serialized task
 is `AIDE-ACCEPT-MIGRATION-RECORD-V0-01`.
+
+## Work Item: AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+
+### Summary
+
+Accepted MigrationRecord v0 as no-apply migration decision metadata.
+
+### Implementation Notes
+
+- Confirmed the build/check/repair/repair-check chain completed with zero
+  material findings and zero missing evidence.
+- Accepted only schema, helper/projection, semantic validation, CLI commands,
+  fixture corpus, focused tests, source evidence reports, and the path-rendering
+  repair.
+- Added acceptance reports and downstream-use guidance.
+- Did not modify implementation, begin UpdatePlan, perform migration apply,
+  mutate targets, publish releases, call provider/model/network services, or
+  start runtime/canary work.
+
+### Verification
+
+Validation receipts record focused tests, MigrationRecord validation, path scan,
+Q43-Q48 no-apply/no-publish validators, broad validation, task
+inspect/evidence, diff checks, and commit-policy check.
+
+### Remaining Issues
+
+UpdatePlan v1 has not been started. The next serialized task is
+`AIDE-BUILD-UPDATE-PLAN-V1-01`.

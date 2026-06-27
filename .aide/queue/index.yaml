@@ -2689,3 +2689,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01/evidence
   description: Check-only independent review of AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01 at d9b5b849ff16a172dfc5344ca2ee7c1c46c2fd5d. Verifies migration_record.fixture_report_absolute_paths is closed by repo-relative fixture result paths and focused regression coverage. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-MIGRATION-RECORD-V0-01. Does not repair implementation, accept MigrationRecord v0, begin UpdatePlan, mutate targets, publish releases, call provider/model/network services, start runtime work, or promote.
+- id: AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept MigrationRecord v0
+  task: .aide/queue/AIDE-ACCEPT-MIGRATION-RECORD-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-MIGRATION-RECORD-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-MIGRATION-RECORD-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-MIGRATION-RECORD-V0-01/evidence
+  description: Acceptance-only task for migration_record_v0 after build/check/repair/repair-check closed with zero material findings and zero missing evidence. Accepts only MigrationRecord v0 as no-apply migration decision metadata, including schema, helper projection, semantic validation, CLI commands, fixture corpus, focused tests, repair for repo-relative fixture result paths, source evidence reports, warnings, explicit non-capabilities, and downstream-use constraints. Stops at needs_review with ACCEPTED_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-BUILD-UPDATE-PLAN-V1-01. Does not modify implementation, begin UpdatePlan/RollbackBundle/UpdateReceipt/DistributionApplyEngine, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, or promote.

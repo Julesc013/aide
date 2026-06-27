@@ -1,0 +1,30 @@
+{
+  "schema_version": "aide.migration-record-acceptance-report.v0",
+  "task_id": "AIDE-ACCEPT-MIGRATION-RECORD-V0-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_capability": "migration_record_v0",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-BUILD-UPDATE-PLAN-V1-01",
+  "accepted_scope": [
+    "protocol_schema",
+    "helper_projection",
+    "semantic_validation",
+    "cli_status_project_validate",
+    "fixture_corpus",
+    "focused_tests",
+    "source_evidence_reports"
+  ],
+  "non_capabilities": [
+    "migration_apply",
+    "install_apply",
+    "update_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "target_repository_mutation",
+    "target_scan_authority",
+    "release_publication",
+    "provider_model_network_calls"
+  ],
+  "source_generated_output_became_target_truth": false
+}

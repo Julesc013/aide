@@ -2987,3 +2987,12 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: The next serialized task is exactly `AIDE-ACCEPT-MIGRATION-RECORD-V0-01`.
+
+### Queue ID: AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+
+- Title: Accept MigrationRecord v0
+- Status: Needs Review
+- Objective: accept exactly `migration_record_v0` after build/check/repair/repair-check closed with zero material findings and zero missing evidence.
+- Scope: `.aide/queue/AIDE-ACCEPT-MIGRATION-RECORD-V0-01/**`, `.aide/reports/migration-record-v0-acceptance/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Notes: MigrationRecord v0 is accepted only as no-apply migration decision metadata. The next serialized task is exactly `AIDE-BUILD-UPDATE-PLAN-V1-01`.
