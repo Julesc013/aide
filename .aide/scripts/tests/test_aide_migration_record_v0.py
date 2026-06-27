@@ -172,6 +172,9 @@ class AIDEMigrationRecordV0Tests(unittest.TestCase):
         self.assertEqual(validation["validation_status"], "PASS_WITH_WARNINGS", validation["errors"])
         self.assertTrue(validation["checks"]["fixture_matrix_passed"])
         self.assertTrue(validation["checks"]["install_record_accepted"])
+        for item in validation["fixture_results"]:
+            self.assertFalse(Path(item["path"]).is_absolute(), item)
+            self.assertTrue(item["path"].startswith(".aide/fixtures/migration-record-v0/"), item)
 
     def test_project_and_cli_status_project_validate(self) -> None:
         root = self.make_repo()

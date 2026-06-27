@@ -9930,3 +9930,27 @@ fails.
 ### Remaining Issues
 
 The next serialized task is `AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01`.
+
+## Work Item: AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01
+
+### Summary
+
+Repaired MigrationRecord v0 report path leakage.
+
+### Implementation Notes
+
+- Added repo-relative fixture result path rendering in `core/protocol/migration_record.py`.
+- Added a focused test assertion that fixture result paths are not absolute and remain under `.aide/fixtures/migration-record-v0/`.
+- Regenerated MigrationRecord fixture matrix and validation reports.
+- Did not accept MigrationRecord v0, perform migration apply, mutate targets, publish releases, call provider/model/network services, or start runtime/canary work.
+
+### Verification
+
+Compileall, focused MigrationRecord tests, `migration-record project`,
+`migration-record validate`, and corrected local absolute path scan passed.
+
+### Remaining Issues
+
+MigrationRecord v0 remains proposed until independent repair check and
+acceptance. The next serialized task is
+`AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01`.

@@ -546,14 +546,21 @@ EXPECTED_INVALID_REFUSALS = {
 }
 
 
-def evaluate_fixture(path: Path, expected_result: str, expected_refusals: list[str], source: dict[str, Any]) -> dict[str, Any]:
+def display_path(path: Path, repo_root: str | Path = ".") -> str:
+    try:
+        return str(path.resolve().relative_to(Path(repo_root).resolve())).replace("\\", "/")
+    except ValueError:
+        return str(path).replace("\\", "/")
+
+
+def evaluate_fixture(path: Path, expected_result: str, expected_refusals: list[str], source: dict[str, Any], repo_root: str | Path = ".") -> dict[str, Any]:
     record = load_json(path)
     result = validate_migration_record_object(record, source_object=source, require_install_record_acceptance=False)
     observed = result["status"]
     refusal_codes = result["refusal_codes"]
     passed = observed == expected_result and all(code in refusal_codes for code in expected_refusals)
     return {
-        "path": str(path).replace("\\", "/"),
+        "path": display_path(path, repo_root),
         "case_id": path.stem,
         "expected_result": expected_result,
         "expected_refusal_codes": expected_refusals,
@@ -570,9 +577,9 @@ def fixture_matrix(repo_root: str | Path = ".") -> dict[str, Any]:
     source = install_record.finalize_install_record(source)
     results = []
     for path in sorted((root / FIXTURE_ROOT / "valid").glob("*.json")):
-        results.append(evaluate_fixture(path, "PASS_WITH_WARNINGS", [], source))
+        results.append(evaluate_fixture(path, "PASS_WITH_WARNINGS", [], source, root))
     for path in sorted((root / FIXTURE_ROOT / "invalid").glob("*.json")):
-        results.append(evaluate_fixture(path, "FAILED_VALIDATION", EXPECTED_INVALID_REFUSALS[path.stem], source))
+        results.append(evaluate_fixture(path, "FAILED_VALIDATION", EXPECTED_INVALID_REFUSALS[path.stem], source, root))
     return {"schema_version": "aide.migration-record-fixture-matrix.v0", "fixture_results": results}
 
 

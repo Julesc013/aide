@@ -1,0 +1,13 @@
+{
+  "schema_version": "aide.migration-record-repair-report.v0",
+  "task_id": "AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01",
+  "result": "PASS_WITH_WARNINGS",
+  "closed_findings": [
+    "migration_record.fixture_report_absolute_paths"
+  ],
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01",
+  "migration_apply_started": false,
+  "target_repository_mutation_started": false
+}

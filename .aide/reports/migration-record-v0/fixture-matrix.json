@@ -7,7 +7,7 @@
       "observed_refusal_codes": [],
       "observed_result": "PASS_WITH_WARNINGS",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/valid/manual-review-ambiguous.json"
+      "path": ".aide/fixtures/migration-record-v0/valid/manual-review-ambiguous.json"
     },
     {
       "case_id": "no-op-compatibility",
@@ -16,7 +16,7 @@
       "observed_refusal_codes": [],
       "observed_result": "PASS_WITH_WARNINGS",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/valid/no-op-compatibility.json"
+      "path": ".aide/fixtures/migration-record-v0/valid/no-op-compatibility.json"
     },
     {
       "case_id": "optional-extension-preserved",
@@ -25,7 +25,7 @@
       "observed_refusal_codes": [],
       "observed_result": "PASS_WITH_WARNINGS",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/valid/optional-extension-preserved.json"
+      "path": ".aide/fixtures/migration-record-v0/valid/optional-extension-preserved.json"
     },
     {
       "case_id": "ambiguous-without-manual-review",
@@ -38,7 +38,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/ambiguous-without-manual-review.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/ambiguous-without-manual-review.json"
     },
     {
       "case_id": "apply-claim",
@@ -51,7 +51,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/apply-claim.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/apply-claim.json"
     },
     {
       "case_id": "destructive-without-rollback",
@@ -64,7 +64,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/destructive-without-rollback.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/destructive-without-rollback.json"
     },
     {
       "case_id": "extension-required-unknown",
@@ -77,7 +77,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/extension-required-unknown.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/extension-required-unknown.json"
     },
     {
       "case_id": "missing-input-digest",
@@ -90,7 +90,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/missing-input-digest.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/missing-input-digest.json"
     },
     {
       "case_id": "missing-source-object",
@@ -104,7 +104,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/missing-source-object.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/missing-source-object.json"
     },
     {
       "case_id": "output-digest-mismatch",
@@ -117,7 +117,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/output-digest-mismatch.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/output-digest-mismatch.json"
     },
     {
       "case_id": "source-latest-output",
@@ -130,7 +130,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/source-latest-output.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/source-latest-output.json"
     },
     {
       "case_id": "source-output-target-truth",
@@ -143,7 +143,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/source-output-target-truth.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/source-output-target-truth.json"
     },
     {
       "case_id": "unknown-required-feature",
@@ -156,7 +156,7 @@
       ],
       "observed_result": "FAILED_VALIDATION",
       "passed": true,
-      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/unknown-required-feature.json"
+      "path": ".aide/fixtures/migration-record-v0/invalid/unknown-required-feature.json"
     }
   ],
   "schema_version": "aide.migration-record-fixture-matrix.v0"
