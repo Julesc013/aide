@@ -2921,3 +2921,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `material_finding_count: 0`, records `missing_evidence: 0`, and recommends exactly `AIDE-CHECK-INSTALL-RECORD-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: InstallRecord v0 records install-state metadata only. It does not implement install apply, target scan authority, target mutation, release publication, provider/model/network calls, runtime, Workbench, Commander, Omnigent, or canaries.
+
+### Queue ID: AIDE-CHECK-INSTALL-RECORD-V0-01
+
+- Title: Check InstallRecord v0
+- Status: Needs Review
+- Objective: independently verify the proposed InstallRecord v0 build without repairing implementation, accepting the capability, or beginning MigrationRecord.
+- Scope: `.aide/queue/AIDE-CHECK-INSTALL-RECORD-V0-01/**`, `.aide/reports/install-record-v0-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-INSTALL-RECORD-V0-01`, result `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and checked commit `7a0abf5a85ff8442f65237e5824f831b4176f252`.
+- Verification Intent: source-chain review, schema/helper/CLI/test/report inspection, fixture matrix review, focused InstallRecord tests, InstallRecord status/project/validate, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `material_finding_count: 0`, records `missing_evidence: 0`, and recommends exactly `AIDE-ACCEPT-INSTALL-RECORD-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: Zero material findings remain. InstallRecord v0 remains proposed until acceptance. MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt, DistributionApplyEngine, target mutation, release publication, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, and canaries remain blocked pending acceptance.

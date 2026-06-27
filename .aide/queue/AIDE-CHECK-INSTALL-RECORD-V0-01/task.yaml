@@ -1,0 +1,75 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-INSTALL-RECORD-V0-01
+title: Check InstallRecord v0
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-INSTALL-RECORD-V0-01
+checked_commit: 7a0abf5a85ff8442f65237e5824f831b4176f252
+depends_on:
+  - AIDE-BUILD-INSTALL-RECORD-V0-01
+  - AIDE-DISTRIBUTION-SAFETY-WAVE-01
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-INSTALL-RECORD-V0-01/**
+    - .aide/reports/install-record-v0-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-BUILD-INSTALL-RECORD-V0-01/**
+    - .aide/reports/install-record-v0/**
+    - .aide/protocol/aide-install-record-v0.schema.json
+    - core/protocol/install_record.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_install_record_v0.py
+    - .aide/fixtures/install-record-v0/**
+  forbidden_paths:
+    - .aide/release/dist/**
+    - .aide.local/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+evidence:
+  required:
+    - live-truth-review.md
+    - allowed-paths.md
+    - check-matrix.md
+    - validation-commands.md
+    - validation-results.md
+    - safety-scans.md
+    - changed-files.md
+    - remaining-risks.md
+    - next-task-routing.md
+non_capabilities:
+  - implementation repair
+  - acceptance
+  - install apply
+  - update apply
+  - migration apply
+  - rollback apply
+  - uninstall apply
+  - target repository mutation
+  - target scan authority
+  - release archive creation
+  - Git tag
+  - GitHub Release
+  - upload
+  - provider/model/network calls
+  - Workbench runtime
+  - Commander
+  - Omnigent
+  - worker execution
+  - PreviewSession apply
+  - DevelopmentTransaction apply
+  - PatchTransaction apply
+notes:
+  - Independent check of InstallRecord v0 build output at 7a0abf5a85ff8442f65237e5824f831b4176f252.
+  - Check did not modify InstallRecord implementation, schema, CLI, fixtures, or tests.

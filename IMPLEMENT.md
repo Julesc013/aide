@@ -9805,3 +9805,33 @@ scans, source-output misuse scan, diff checks, and commit-policy check.
 
 InstallRecord v0 remains proposed until independent check and acceptance. The
 next serialized task is `AIDE-CHECK-INSTALL-RECORD-V0-01`.
+
+## Work Item: AIDE-CHECK-INSTALL-RECORD-V0-01
+
+### Summary
+
+Independently checked InstallRecord v0 build output.
+
+### Implementation Notes
+
+- Checked commit `7a0abf5a85ff8442f65237e5824f831b4176f252`.
+- Verified schema, helper, CLI, tests, generated reports, fixture matrix, and task evidence from `AIDE-BUILD-INSTALL-RECORD-V0-01`.
+- Confirmed InstallRecord v0 models the required record fields and binds accepted DistributionManifest, ProjectLock, and OwnershipLedger refs/digests.
+- Confirmed fail-closed coverage for missing or mismatched predecessor refs, unknown installed component/file-entry/managed-section refs, apply authority claims, target mutation claims, unknown required features/extensions, absolute paths, traversal paths, source latest output misuse, source output as target truth, and missing evidence.
+- Confirmed unknown optional features/extensions are tolerated and preserved.
+- Wrote `.aide/queue/AIDE-CHECK-INSTALL-RECORD-V0-01/**` and `.aide/reports/install-record-v0-check/**`.
+- Did not modify InstallRecord implementation, DistributionManifest implementation, ProjectLock implementation, OwnershipLedger implementation, release archives, target repos, provider/model/network surfaces, branch/worktree automation, or apply behavior.
+
+### Verification
+
+Validation receipts record JSON parse, compileall, focused InstallRecord tests,
+`install-record status`, `install-record project`, `install-record validate`,
+predecessor regression validation, Q43-Q48 no-apply/no-publish validators,
+broad `aide_lite.py validate`, build and check task inspect/evidence, path and
+secret-like scans, source-output misuse scan, diff checks, and commit-policy
+check.
+
+### Remaining Issues
+
+InstallRecord v0 remains proposed until acceptance. The next serialized task is
+`AIDE-ACCEPT-INSTALL-RECORD-V0-01`.

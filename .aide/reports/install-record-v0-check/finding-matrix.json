@@ -1,0 +1,24 @@
+{
+  "schema_version": "aide.install-record-check-finding-matrix.v0",
+  "task_id": "AIDE-CHECK-INSTALL-RECORD-V0-01",
+  "checked_task": "AIDE-BUILD-INSTALL-RECORD-V0-01",
+  "checked_commit": "7a0abf5a85ff8442f65237e5824f831b4176f252",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "findings": [],
+  "warnings": [
+    {
+      "id": "install_record.proposed_until_acceptance",
+      "severity": "warning",
+      "disposition": "accepted_for_check",
+      "summary": "InstallRecord v0 remains proposed until the acceptance task completes."
+    },
+    {
+      "id": "install_record.no_apply_boundary",
+      "severity": "warning",
+      "disposition": "boundary_preserved",
+      "summary": "InstallRecord v0 records install state metadata only and has no install apply authority."
+    }
+  ]
+}
