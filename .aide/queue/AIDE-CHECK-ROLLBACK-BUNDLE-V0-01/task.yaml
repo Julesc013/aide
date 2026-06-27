@@ -1,0 +1,81 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-ROLLBACK-BUNDLE-V0-01
+title: Check RollbackBundle v0
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+checked_commit: f0436853b00d5cd0bfa98425541b6e939e678b53
+depends_on:
+  - AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+  - AIDE-ACCEPT-UPDATE-PLAN-V1-01
+  - AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+  - AIDE-ACCEPT-INSTALL-RECORD-V0-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-ROLLBACK-BUNDLE-V0-01/**
+    - .aide/reports/rollback-bundle-v0-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/**
+    - .aide/reports/rollback-bundle-v0/**
+    - .aide/protocol/aide-rollback-bundle-v0.schema.json
+    - core/protocol/rollback_bundle.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_rollback_bundle_v0.py
+    - .aide/fixtures/rollback-bundle-v0/**
+  forbidden_paths:
+    - .aide/release/dist/**
+    - .aide.local/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+evidence:
+  required:
+    - live-truth-review.md
+    - allowed-paths.md
+    - check-matrix.md
+    - independent-probe-summary.md
+    - validation-commands.md
+    - validation-results.md
+    - safety-scans.md
+    - changed-files.md
+    - remaining-risks.md
+    - next-task-routing.md
+non_capabilities:
+  - implementation repair
+  - acceptance
+  - install apply
+  - update apply
+  - migration apply
+  - repair apply
+  - rollback apply
+  - uninstall apply
+  - target repository mutation
+  - target scan authority
+  - real project canary
+  - release archive creation
+  - public release readiness
+  - Git tag
+  - GitHub Release
+  - upload
+  - provider/model/network calls
+  - Workbench runtime
+  - Commander
+  - Omnigent
+  - branch/worktree automation
+  - UpdateReceipt
+  - DistributionApplyEngine
+notes:
+  - Check-only independent review of RollbackBundle v0 build output at f0436853b00d5cd0bfa98425541b6e939e678b53.
+  - Check did not modify RollbackBundle implementation, schema, CLI, fixtures, or tests.
+  - UpdateReceipt remains blocked until RollbackBundle acceptance completes.

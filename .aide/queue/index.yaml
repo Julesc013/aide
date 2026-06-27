@@ -2739,3 +2739,13 @@ items:
   prompt: .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/prompt.md
   evidence: .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/evidence
   description: Builds proposed rollback_bundle_v0 after accepted UpdatePlan v1. Adds RollbackBundle schema/helper/CLI/fixtures/tests/reports, binds accepted UpdatePlan and predecessor DistributionManifest, ProjectLock, OwnershipLedger, and InstallRecord refs/digests, validates reverse operation classes and fail-closed refusal behavior, records no-apply rollback-preparation metadata only, and stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-ROLLBACK-BUNDLE-V0-01. Does not perform rollback/update/install/migration/uninstall apply, mutate or scan target repos, start UpdateReceipt or DistributionApplyEngine, mutate canaries, create releases/tags/uploads/GitHub Releases, call provider/model/network services, automate branches/worktrees, or promote.
+- id: AIDE-CHECK-ROLLBACK-BUNDLE-V0-01
+  status: needs_review
+  planning_state: check_completed
+  result: PASS_WITH_WARNINGS
+  title: Check RollbackBundle v0
+  task: .aide/queue/AIDE-CHECK-ROLLBACK-BUNDLE-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-ROLLBACK-BUNDLE-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-ROLLBACK-BUNDLE-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-ROLLBACK-BUNDLE-V0-01/evidence
+  description: Check-only independent review of AIDE-BUILD-ROLLBACK-BUNDLE-V0-01 at f0436853b00d5cd0bfa98425541b6e939e678b53. Verifies RollbackBundle v0 schema/helper/CLI/fixture/test/report coverage, source task evidence, predecessor bindings to accepted DistributionManifest v1, ProjectLock v0, OwnershipLedger v1, InstallRecord v0, MigrationRecord v0, and UpdatePlan v1, no-apply/no-mutation rollback-preparation semantics, reverse operation classes, fail-closed behavior, optional extension tolerance, required feature refusal, and report/evidence hygiene. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01. Does not repair implementation, accept RollbackBundle v0, begin UpdateReceipt/DistributionApplyEngine, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, or promote.

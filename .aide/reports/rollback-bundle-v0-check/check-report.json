@@ -1,0 +1,19 @@
+{
+  "schema_version": "aide.rollback-bundle-v0-check-report.v0",
+  "task_id": "AIDE-CHECK-ROLLBACK-BUNDLE-V0-01",
+  "checked_task": "AIDE-BUILD-ROLLBACK-BUNDLE-V0-01",
+  "checked_commit": "f0436853b00d5cd0bfa98425541b6e939e678b53",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "recommended_next_task": "AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01",
+  "material_findings": [],
+  "warnings": [
+    "RollbackBundle v0 remains proposed until acceptance.",
+    "Same-session independence is reduced, though no implementation repair was performed.",
+    "Some reverse operation classes are represented and validated through fixtures rather than the live projection because the current accepted UpdatePlan source does not contain added managed file or added managed section operations."
+  ],
+  "implementation_changed": false,
+  "downstream_started": false,
+  "explicit_non_capabilities_preserved": true
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "aide.rollback-bundle-v0-check-validation-summary.v0",
+  "task_id": "AIDE-CHECK-ROLLBACK-BUNDLE-V0-01",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "checked_commit": "f0436853b00d5cd0bfa98425541b6e939e678b53",
+  "checked_task": "AIDE-BUILD-ROLLBACK-BUNDLE-V0-01",
+  "validation": {
+    "schema_helper_cli_fixtures_tests_reports": "PASS",
+    "source_task_evidence": "PASS",
+    "required_fields": "PASS",
+    "reverse_operation_classes": "PASS_WITH_WARNINGS",
+    "fail_closed_semantics": "PASS",
+    "optional_extensions": "PASS",
+    "unknown_required_features": "PASS",
+    "predecessor_compatibility": "PASS_WITH_WARNINGS",
+    "no_apply_no_mutation": "PASS",
+    "report_evidence_hygiene": "PASS",
+    "downstream_not_started": "PASS"
+  },
+  "recommended_next_task": "AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01"
+}

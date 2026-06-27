@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-ROLLBACK-BUNDLE-V0-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+checked_commit: f0436853b00d5cd0bfa98425541b6e939e678b53
+checked_task: AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+proposed_capability: rollback_bundle_v0
+next_task: AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+notes:
+  - RollbackBundle v0 build directly models the no-apply rollback-preparation contract and fail-closed validation cases.
+  - Warnings are boundary and representational warnings only; RollbackBundle v0 remains proposed until acceptance.
+  - No implementation files changed during this check.

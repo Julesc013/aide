@@ -39,6 +39,51 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-ROLLBACK-BUNDLE-V0-01
+
+Completed as a check-only independent review and awaiting acceptance.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-ROLLBACK-BUNDLE-V0-01/**`
+- `.aide/reports/rollback-bundle-v0-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Checked:
+
+- source build commit `f0436853b00d5cd0bfa98425541b6e939e678b53`;
+- source task status, evidence, and routing;
+- RollbackBundle schema, helper, CLI commands, fixtures, tests, and reports;
+- predecessor compatibility for DistributionManifest, ProjectLock, OwnershipLedger, InstallRecord, MigrationRecord, and UpdatePlan;
+- required metadata/spec fields in schema and generated projection;
+- reverse operation class representation in schema and fixtures;
+- fail-closed behavior for missing target project, candidate lock, install record, distribution mismatches, unsafe ownership classes, evidence, authority claims, unsafe paths, unknown required features, and source-output misuse;
+- report and evidence hygiene for local absolute paths, credential-like material, and source-output-as-target-truth.
+
+Result:
+
+```text
+PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+```
+
+Warnings:
+
+- RollbackBundle v0 remains proposed until acceptance.
+- Same-session independence is reduced, though no implementation repair was performed.
+- Some reverse operation classes are represented and validated through fixtures rather than the live projection because the current accepted UpdatePlan source has no added managed file or added managed section operations.
+
+Recommended next task:
+
+```text
+AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+```
+
+No RollbackBundle implementation, schema, CLI, fixture, test, or source report file was changed. UpdateReceipt, DistributionApplyEngine, self-consumer fixture, canaries, target mutation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, branch/worktree automation, and apply behavior were not started.
+
 ## Work Item: AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
 
 Completed as a no-apply rollback-preparation build and awaiting independent check.
