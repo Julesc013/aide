@@ -1,0 +1,15 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+checked_commit: d9b5b849ff16a172dfc5344ca2ee7c1c46c2fd5d
+checked_task: AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01
+closed_findings:
+  - migration_record.fixture_report_absolute_paths
+next_task: AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+notes:
+  - Repair check found no remaining local absolute fixture paths in MigrationRecord generated reports.

@@ -1,0 +1,14 @@
+{
+  "schema_version": "aide.migration-record-repair-check-finding-matrix.v0",
+  "task_id": "AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01",
+  "checked_task": "AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01",
+  "checked_commit": "d9b5b849ff16a172dfc5344ca2ee7c1c46c2fd5d",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "closed_findings": [
+    "migration_record.fixture_report_absolute_paths"
+  ],
+  "findings": [],
+  "recommended_next_task": "AIDE-ACCEPT-MIGRATION-RECORD-V0-01"
+}

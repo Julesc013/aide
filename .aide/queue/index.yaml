@@ -2679,3 +2679,13 @@ items:
   prompt: .aide/queue/AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01/prompt.md
   evidence: .aide/queue/AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01/evidence
   description: Bounded repair for migration_record.fixture_report_absolute_paths. Renders generated fixture result paths as repo-relative paths, adds a focused regression assertion, regenerates MigrationRecord reports, and stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01. Does not accept MigrationRecord v0, perform migration apply, mutate targets, publish releases, call provider/model/network services, start runtime work, or promote.
+- id: AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01
+  status: needs_review
+  planning_state: check_completed
+  result: PASS_WITH_WARNINGS
+  title: Check MigrationRecord v0 Repair 01
+  task: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01/evidence
+  description: Check-only independent review of AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01 at d9b5b849ff16a172dfc5344ca2ee7c1c46c2fd5d. Verifies migration_record.fixture_report_absolute_paths is closed by repo-relative fixture result paths and focused regression coverage. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-MIGRATION-RECORD-V0-01. Does not repair implementation, accept MigrationRecord v0, begin UpdatePlan, mutate targets, publish releases, call provider/model/network services, start runtime work, or promote.

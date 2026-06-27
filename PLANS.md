@@ -2977,3 +2977,13 @@
 - Scope: `core/protocol/migration_record.py`, `.aide/scripts/tests/test_aide_migration_record_v0.py`, `.aide/reports/migration-record-v0/**`, `.aide/queue/AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01/**`, `.aide/reports/migration-record-v0-repair-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: Generated fixture result paths are now repo-relative. The next serialized task is exactly `AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01`.
+
+### Queue ID: AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01
+
+- Title: Check MigrationRecord v0 Repair 01
+- Status: Needs Review
+- Objective: independently verify closure of `migration_record.fixture_report_absolute_paths`.
+- Scope: `.aide/queue/AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01/**`, `.aide/reports/migration-record-v0-repair-01-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Result: `PASS_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: The next serialized task is exactly `AIDE-ACCEPT-MIGRATION-RECORD-V0-01`.
