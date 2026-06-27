@@ -39,6 +39,50 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+
+Completed as a no-apply rollback-preparation build and awaiting independent check.
+
+Changed:
+
+- `core/protocol/rollback_bundle.py`
+- `.aide/protocol/aide-rollback-bundle-v0.schema.json`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_rollback_bundle_v0.py`
+- `.aide/fixtures/rollback-bundle-v0/**`
+- `.aide/reports/rollback-bundle-v0/**`
+- `.aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Implemented:
+
+- RollbackBundle v0 schema and deterministic helper/projection report.
+- Binding to accepted UpdatePlan v1 and predecessor DistributionManifest, ProjectLock, OwnershipLedger, and InstallRecord refs/digests.
+- Reverse-operation vocabulary for managed file and managed section preimage restoration, added managed item removal, ProjectLock/InstallRecord/OwnershipLedger restore metadata, project output regeneration, manual review, rollback unavailable, and refusal.
+- Semantic validation that fails closed for missing predecessor refs, predecessor mismatches, missing preimages, preimage digest mismatch, unsafe reverse ownership, missing evidence, unknown required features, unsafe paths, source-output misuse, apply authority claims, target mutation claims, and digest mismatch.
+- Fixture coverage for required valid and invalid cases.
+- AIDE Lite `rollback-bundle status`, `rollback-bundle project`, and `rollback-bundle validate` commands.
+- Generated status, projection, validation, fixture matrix, reverse-operation summary, limitations, and no-apply boundary reports.
+
+Result:
+
+```text
+PASS_WITH_WARNINGS
+proposed_capability: rollback_bundle_v0
+material_finding_count: 0
+missing_evidence: 0
+```
+
+Recommended next task:
+
+```text
+AIDE-CHECK-ROLLBACK-BUNDLE-V0-01
+```
+
+No rollback apply, update apply, install apply, migration apply, uninstall apply, target scan authority, target repository mutation, release archive creation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, project canary, UpdateReceipt, DistributionApplyEngine, or promotion was implemented.
+
 ## Work Item: AIDE-ACCEPT-UPDATE-PLAN-V1-01
 
 Completed as an acceptance-only consolidation and awaiting review.

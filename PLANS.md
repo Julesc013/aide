@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+
+- Title: Build RollbackBundle v0
+- Status: needs_review
+- Objective: build `rollback_bundle_v0` as a no-apply rollback-preparation protocol slice after accepted UpdatePlan v1.
+- Scope: RollbackBundle schema, helper/projection/validation logic, AIDE Lite `rollback-bundle` CLI commands, fixture corpus, focused tests, generated reports, queue evidence, queue routing, and focused root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/task.yaml`.
+- Dependencies: accepted DistributionManifest v1, ProjectLock v0, OwnershipLedger v1, InstallRecord v0, MigrationRecord v0, and UpdatePlan v1.
+- Milestones: predecessor gate verified; schema/helper added; reverse-operation vocabulary added; fail-closed semantic validator added; focused fixture corpus added; CLI commands added; generated reports written; queue evidence materialized; validation and commit policy passed.
+- Blockers: none for the build. Independent check remains required before acceptance.
+- Verification Intent: JSON/YAML parse, compileall, focused RollbackBundle tests, `rollback-bundle status/project/validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad AIDE validation, task inspect/evidence, report/evidence path and secret scans, diff checks, staged diff checks, and commit-policy check.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, proposed capability exactly `rollback_bundle_v0`, and next task exactly `AIDE-CHECK-ROLLBACK-BUNDLE-V0-01`.
+- Notes: this build does not implement rollback apply, update apply, install apply, migration apply, uninstall apply, target scan authority, target repository mutation, release archive creation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, real project canaries, DistributionApplyEngine, UpdateReceipt, or promotion.
+
 ### Plan ID: AIDE-ACCEPT-UPDATE-PLAN-V1-01
 
 - Title: Accept UpdatePlan v1

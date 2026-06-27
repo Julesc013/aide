@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+status: needs_review
+classification: build_completed
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+proposed_capability: rollback_bundle_v0
+material_finding_count: 0
+missing_evidence: 0
+next_task: AIDE-CHECK-ROLLBACK-BUNDLE-V0-01
+notes:
+  - RollbackBundle v0 is proposed only as no-apply rollback-preparation metadata.
+  - No rollback, update, install, migration, or uninstall apply behavior was implemented.
+  - UpdateReceipt, DistributionApplyEngine, target mutation, release publication, provider/model/network calls, canaries, and branch/worktree automation were not started.

@@ -1,0 +1,657 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "extensions": {},
+  "kind": "RollbackBundle",
+  "metadata": {
+    "candidate_distribution_digest": "sha256:d58c533fd233e57c1a1cf6ef482a76a5a0d1158106a4f3ae8c5376b8418f0b63",
+    "candidate_distribution_ref": "aide://distribution/fixture-minimal",
+    "candidate_project_lock_digest": "sha256:12a52afb3f687e3e588bff48b77897ae9a50ae2737af139d84baefdf25203be9",
+    "candidate_project_lock_ref": "aide://project-lock/fixture-minimal",
+    "created_at": "fixture-timestamp:rollback-bundle-v0",
+    "created_by": "aide-self-hosting-fixture",
+    "extensions": {},
+    "prior_ownership_ledger_digest": "sha256:de12996adcf9206fa838f5ec226b9974225a1b1eaf950d447bcc25a29d695e1a",
+    "prior_ownership_ledger_ref": "aide://ownership-ledger/fixture",
+    "prior_project_lock_digest": "sha256:12a52afb3f687e3e588bff48b77897ae9a50ae2737af139d84baefdf25203be9",
+    "prior_project_lock_ref": "aide://project-lock/fixture-minimal",
+    "prior_rollback_bundle_ref": null,
+    "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+    "source_distribution_digest": "sha256:d58c533fd233e57c1a1cf6ef482a76a5a0d1158106a4f3ae8c5376b8418f0b63",
+    "source_distribution_ref": "aide://distribution/fixture-minimal",
+    "superseded_by_ref": null,
+    "target_project_identity": "fixture/project",
+    "target_project_ref": "aide://project/fixture",
+    "update_plan_digest": "sha256:613f82a41fc9e6e94f8aaaa567619d232bf73394f3551e23be5880da3f01556f",
+    "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+  },
+  "schema_version": "aide.rollback-bundle.v0",
+  "spec": {
+    "evidence_refs": [
+      "aide://evidence/rollback-bundle-v0/source-projection"
+    ],
+    "explicit_non_capabilities": [
+      "install_apply",
+      "update_apply",
+      "migration_apply",
+      "repair_apply",
+      "rollback_apply",
+      "uninstall_apply",
+      "target_repository_mutation",
+      "target_scan_authority",
+      "release_archive_creation",
+      "release_publication",
+      "git_tag_creation",
+      "github_release_creation",
+      "upload",
+      "network_call",
+      "provider_model_call",
+      "workbench_runtime",
+      "commander",
+      "omnigent",
+      "worker_execution",
+      "preview_session_apply",
+      "development_transaction_apply",
+      "patch_transaction_apply",
+      "branch_worktree_automation",
+      "real_project_canary"
+    ],
+    "extensions": {},
+    "integrity_checks": [
+      "canonical rollback bundle digest",
+      "preimage digest equality to UpdatePlan operation preimages",
+      "no source latest output as target truth"
+    ],
+    "limitations": [
+      {
+        "disposition": "future apply tasks must be separately accepted",
+        "evidence_refs": [
+          "aide://evidence/rollback-bundle-v0/source-projection"
+        ],
+        "extensions": {},
+        "limitation_class": "no_apply_authority",
+        "limitation_ref": "aide://rollback-bundle/limitation/no-apply-authority"
+      },
+      {
+        "disposition": "UpdatePlan conflicts remain fail-closed and are not rollback actions.",
+        "evidence_refs": [
+          "aide://evidence/rollback-bundle-v0/source-projection"
+        ],
+        "extensions": {},
+        "limitation_class": "manual_review_required",
+        "limitation_ref": "aide://rollback-bundle/limitation/update-plan-conflicts"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/rollback-bundle-v0/source-projection"
+        ],
+        "extensions": {},
+        "limitation_class": "source_output_misuse",
+        "limitation_ref": ".aide/context/latest-task-packet.md"
+      }
+    ],
+    "managed_file_preimages": [
+      {
+        "artifact_kind": "managed_file_preimage",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/vendor-file-project-lock-schema",
+        "ownership_class": "vendor_managed_file",
+        "ownership_entry_ref": "aide://ownership-entry/vendor-file-project-lock-schema",
+        "postimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "preimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "preimage_ref": "aide://rollback-bundle/preimage/vendor-file-project-lock-schema",
+        "section_identity": null,
+        "target_relative_path": ".aide/protocol/aide-project-lock-v0.schema.json"
+      },
+      {
+        "artifact_kind": "managed_file_preimage",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/vendor-file-aide-lite-cli",
+        "ownership_class": "vendor_managed_file",
+        "ownership_entry_ref": "aide://ownership-entry/vendor-file-aide-lite-cli",
+        "postimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "preimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "preimage_ref": "aide://rollback-bundle/preimage/vendor-file-aide-lite-cli",
+        "section_identity": null,
+        "target_relative_path": ".aide/scripts/aide_lite.py"
+      }
+    ],
+    "managed_section_preimages": [
+      {
+        "artifact_kind": "managed_section_preimage",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/vendor-section-agents-summary",
+        "ownership_class": "vendor_managed_section",
+        "ownership_entry_ref": "aide://ownership-entry/vendor-section-agents-summary",
+        "postimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "preimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "preimage_ref": "aide://rollback-bundle/preimage/vendor-section-agents-summary",
+        "section_identity": null,
+        "target_relative_path": "AGENTS.md"
+      }
+    ],
+    "manual_review_items": [
+      {
+        "extensions": {},
+        "item_ref": "aide://update-plan/conflict/never-touch-git",
+        "reason": "never_touch_refusal",
+        "required": true
+      },
+      {
+        "extensions": {},
+        "item_ref": "aide://update-plan/conflict/unknown-unclassified",
+        "reason": "manual_review_required",
+        "required": true
+      }
+    ],
+    "operation_rollback_map": [
+      {
+        "disposition": "fail_closed_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/runtime-generated-local-state",
+        "source_operation_ref": "aide://update-plan/operation/runtime-generated-local-state"
+      },
+      {
+        "disposition": "prepared_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "regenerate_project_output",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/project-generated-context",
+        "source_operation_ref": "aide://update-plan/operation/project-generated-context"
+      },
+      {
+        "disposition": "fail_closed_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/preserved-legacy-state",
+        "source_operation_ref": "aide://update-plan/operation/preserved-legacy-state"
+      },
+      {
+        "disposition": "fail_closed_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/project-overlay-policy",
+        "source_operation_ref": "aide://update-plan/operation/project-overlay-policy"
+      },
+      {
+        "disposition": "prepared_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "restore_managed_file_preimage",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/vendor-file-project-lock-schema",
+        "source_operation_ref": "aide://update-plan/operation/vendor-file-project-lock-schema"
+      },
+      {
+        "disposition": "fail_closed_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/evidence-only-queue-evidence",
+        "source_operation_ref": "aide://update-plan/operation/evidence-only-queue-evidence"
+      },
+      {
+        "disposition": "prepared_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "restore_managed_file_preimage",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/vendor-file-aide-lite-cli",
+        "source_operation_ref": "aide://update-plan/operation/vendor-file-aide-lite-cli"
+      },
+      {
+        "disposition": "fail_closed_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "refuse",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/never-touch-git",
+        "source_operation_ref": "aide://update-plan/operation/never-touch-git"
+      },
+      {
+        "disposition": "prepared_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "restore_managed_section_preimage",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/vendor-section-agents-summary",
+        "source_operation_ref": "aide://update-plan/operation/vendor-section-agents-summary"
+      },
+      {
+        "disposition": "fail_closed_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/project-owned-readme",
+        "source_operation_ref": "aide://update-plan/operation/project-owned-readme"
+      },
+      {
+        "disposition": "fail_closed_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/local-only-operator-state",
+        "source_operation_ref": "aide://update-plan/operation/local-only-operator-state"
+      },
+      {
+        "disposition": "fail_closed_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/unknown-unclassified",
+        "source_operation_ref": "aide://update-plan/operation/unknown-unclassified"
+      },
+      {
+        "disposition": "prepared_no_apply",
+        "evidence_refs": [
+          "aide://evidence/rollback-bundle-v0/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "restore_project_lock",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/restore-project-lock",
+        "source_operation_ref": "aide://update-plan/metadata/restore-project-lock"
+      },
+      {
+        "disposition": "prepared_no_apply",
+        "evidence_refs": [
+          "aide://evidence/rollback-bundle-v0/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "restore_install_record",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/restore-install-record",
+        "source_operation_ref": "aide://update-plan/metadata/restore-install-record"
+      },
+      {
+        "disposition": "prepared_no_apply",
+        "evidence_refs": [
+          "aide://evidence/rollback-bundle-v0/source-projection"
+        ],
+        "extensions": {},
+        "reverse_operation_class": "restore_ownership_ledger",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/restore-ownership-ledger",
+        "source_operation_ref": "aide://update-plan/metadata/restore-ownership-ledger"
+      }
+    ],
+    "optional_features": [
+      "manual_review_item_v0",
+      "rollback_unavailable_limitation_v0"
+    ],
+    "preimage_artifact_refs": [
+      "aide://rollback-bundle/preimage/restore-install-record",
+      "aide://rollback-bundle/preimage/restore-ownership-ledger",
+      "aide://rollback-bundle/preimage/restore-project-lock",
+      "aide://rollback-bundle/preimage/vendor-file-aide-lite-cli",
+      "aide://rollback-bundle/preimage/vendor-file-project-lock-schema",
+      "aide://rollback-bundle/preimage/vendor-section-agents-summary"
+    ],
+    "prior_install_record_digests": [
+      "sha256:9c01b638175319a2c8fe5bcd8e3711b07ae49a1e6789da75ab3ddb9d63f79231"
+    ],
+    "prior_install_record_refs": [
+      "aide://install-record/minimal"
+    ],
+    "required_features": [
+      "rollback_bundle_v0",
+      "distribution_manifest_v1",
+      "project_lock_v0",
+      "ownership_ledger_v1",
+      "install_record_v0",
+      "update_plan_v1",
+      "sha256_digest_canonical_json_v1",
+      "no_apply_rollback_bundle_v0"
+    ],
+    "reverse_operations": [
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": true,
+        "ownership_class": "runtime_generated",
+        "ownership_entry_ref": "aide://ownership-entry/runtime-generated-local-state",
+        "postimage_digest": "",
+        "preimage_artifact_ref": null,
+        "preimage_digest": "",
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/runtime-generated-local-state",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/runtime-generated-local-state",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide.local/**",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": false,
+        "ownership_class": "project_generated",
+        "ownership_entry_ref": "aide://ownership-entry/project-generated-context",
+        "postimage_digest": "",
+        "preimage_artifact_ref": null,
+        "preimage_digest": "",
+        "reverse_operation_class": "regenerate_project_output",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/project-generated-context",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/project-generated-context",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/context/generated/context-pack.json",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": true,
+        "ownership_class": "preserved_legacy",
+        "ownership_entry_ref": "aide://ownership-entry/preserved-legacy-state",
+        "postimage_digest": "",
+        "preimage_artifact_ref": null,
+        "preimage_digest": "",
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/preserved-legacy-state",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/preserved-legacy-state",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/legacy/**",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": true,
+        "ownership_class": "project_overlay",
+        "ownership_entry_ref": "aide://ownership-entry/project-overlay-policy",
+        "postimage_digest": "",
+        "preimage_artifact_ref": null,
+        "preimage_digest": "",
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/project-overlay-policy",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/project-overlay-policy",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/project-overlays/policy.yaml",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": false,
+        "ownership_class": "vendor_managed_file",
+        "ownership_entry_ref": "aide://ownership-entry/vendor-file-project-lock-schema",
+        "postimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "preimage_artifact_ref": "aide://rollback-bundle/preimage/vendor-file-project-lock-schema",
+        "preimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "reverse_operation_class": "restore_managed_file_preimage",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/vendor-file-project-lock-schema",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/vendor-file-project-lock-schema",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/protocol/aide-project-lock-v0.schema.json",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": true,
+        "ownership_class": "evidence_only",
+        "ownership_entry_ref": "aide://ownership-entry/evidence-only-queue-evidence",
+        "postimage_digest": "",
+        "preimage_artifact_ref": null,
+        "preimage_digest": "",
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/evidence-only-queue-evidence",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/evidence-only-queue-evidence",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/queue/**/evidence/**",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": false,
+        "ownership_class": "vendor_managed_file",
+        "ownership_entry_ref": "aide://ownership-entry/vendor-file-aide-lite-cli",
+        "postimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "preimage_artifact_ref": "aide://rollback-bundle/preimage/vendor-file-aide-lite-cli",
+        "preimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "reverse_operation_class": "restore_managed_file_preimage",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/vendor-file-aide-lite-cli",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/vendor-file-aide-lite-cli",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/scripts/aide_lite.py",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": true,
+        "ownership_class": "never_touch",
+        "ownership_entry_ref": "aide://ownership-entry/never-touch-git",
+        "postimage_digest": "",
+        "preimage_artifact_ref": null,
+        "preimage_digest": "",
+        "reverse_operation_class": "refuse",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/never-touch-git",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/never-touch-git",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".git/**",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": false,
+        "ownership_class": "vendor_managed_section",
+        "ownership_entry_ref": "aide://ownership-entry/vendor-section-agents-summary",
+        "postimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "preimage_artifact_ref": "aide://rollback-bundle/preimage/vendor-section-agents-summary",
+        "preimage_digest": "sha256:7e2c27b25ac5ca86f8ec2948c9982d831ea03f8a3d91ed854d298b80683d5a08",
+        "reverse_operation_class": "restore_managed_section_preimage",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/vendor-section-agents-summary",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/vendor-section-agents-summary",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": "AGENTS.md",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": true,
+        "ownership_class": "project_owned",
+        "ownership_entry_ref": "aide://ownership-entry/project-owned-readme",
+        "postimage_digest": "",
+        "preimage_artifact_ref": null,
+        "preimage_digest": "",
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/project-owned-readme",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/project-owned-readme",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": "README.md",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": true,
+        "ownership_class": "local_only",
+        "ownership_entry_ref": "aide://ownership-entry/local-only-operator-state",
+        "postimage_digest": "",
+        "preimage_artifact_ref": null,
+        "preimage_digest": "",
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/local-only-operator-state",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/local-only-operator-state",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": "local-only/**",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": true,
+        "ownership_class": "unknown",
+        "ownership_entry_ref": "aide://ownership-entry/unknown-unclassified",
+        "postimage_digest": "",
+        "preimage_artifact_ref": null,
+        "preimage_digest": "",
+        "reverse_operation_class": "manual_review_required",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/unknown-unclassified",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/operation/unknown-unclassified",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": "unclassified/**",
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/rollback-bundle-v0/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": false,
+        "ownership_class": "metadata_only",
+        "ownership_entry_ref": null,
+        "postimage_digest": "sha256:12a52afb3f687e3e588bff48b77897ae9a50ae2737af139d84baefdf25203be9",
+        "preimage_artifact_ref": "aide://rollback-bundle/preimage/restore-project-lock",
+        "preimage_digest": "sha256:12a52afb3f687e3e588bff48b77897ae9a50ae2737af139d84baefdf25203be9",
+        "restore_ref": "aide://project-lock/fixture-minimal",
+        "reverse_operation_class": "restore_project_lock",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/restore-project-lock",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/metadata/restore-project-lock",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": null,
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/rollback-bundle-v0/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": false,
+        "ownership_class": "metadata_only",
+        "ownership_entry_ref": null,
+        "postimage_digest": "sha256:9c01b638175319a2c8fe5bcd8e3711b07ae49a1e6789da75ab3ddb9d63f79231",
+        "preimage_artifact_ref": "aide://rollback-bundle/preimage/restore-install-record",
+        "preimage_digest": "sha256:9c01b638175319a2c8fe5bcd8e3711b07ae49a1e6789da75ab3ddb9d63f79231",
+        "restore_ref": "aide://install-record/minimal",
+        "reverse_operation_class": "restore_install_record",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/restore-install-record",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/metadata/restore-install-record",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": null,
+        "target_repository_mutation_performed": false
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/rollback-bundle-v0/source-projection"
+        ],
+        "extensions": {},
+        "manual_review_required": false,
+        "ownership_class": "metadata_only",
+        "ownership_entry_ref": null,
+        "postimage_digest": "sha256:de12996adcf9206fa838f5ec226b9974225a1b1eaf950d447bcc25a29d695e1a",
+        "preimage_artifact_ref": "aide://rollback-bundle/preimage/restore-ownership-ledger",
+        "preimage_digest": "sha256:de12996adcf9206fa838f5ec226b9974225a1b1eaf950d447bcc25a29d695e1a",
+        "restore_ref": "aide://ownership-ledger/fixture",
+        "reverse_operation_class": "restore_ownership_ledger",
+        "reverse_operation_ref": "aide://rollback-bundle/reverse-operation/restore-ownership-ledger",
+        "rollback_apply_implemented": false,
+        "source_operation_ref": "aide://update-plan/metadata/restore-ownership-ledger",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": null,
+        "target_repository_mutation_performed": false
+      }
+    ],
+    "risk_class": "medium",
+    "source_output_used_as_target_truth": false,
+    "target_repository_mutation_performed": false,
+    "validation_plan": [
+      "validate accepted UpdatePlan binding and predecessor refs",
+      "validate every reverse operation remains no-apply metadata",
+      "validate preimage digest and evidence refs before any future apply-capable task"
+    ]
+  },
+  "status": {
+    "branch_worktree_automation_implemented": false,
+    "commander_implemented": false,
+    "extensions": {},
+    "install_apply_implemented": false,
+    "migration_apply_implemented": false,
+    "network_calls_implemented": false,
+    "omnigent_implemented": false,
+    "proposed_capability": "rollback_bundle_v0",
+    "provider_model_calls_implemented": false,
+    "recommended_next_task": "AIDE-CHECK-ROLLBACK-BUNDLE-V0-01",
+    "release_publication_implemented": false,
+    "repair_apply_implemented": false,
+    "rollback_apply_implemented": false,
+    "rollback_bundle_digest": "sha256:b5c9201f0f04b002f42a7b683363f86ff129ac0c7022650b2f24ede41faa2eb4",
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "target_scan_authority_implemented": false,
+    "uninstall_apply_implemented": false,
+    "update_apply_implemented": false,
+    "validation_result": "PASS_WITH_WARNINGS",
+    "workbench_runtime_implemented": false
+  }
+}

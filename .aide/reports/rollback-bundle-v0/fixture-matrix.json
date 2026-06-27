@@ -1,0 +1,338 @@
+{
+  "fixture_results": [
+    {
+      "case_id": "conflict-only-rollback-bundle",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/conflict-only-rollback-bundle.json"
+    },
+    {
+      "case_id": "install-record-restore-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/install-record-restore-plan.json"
+    },
+    {
+      "case_id": "managed-file-preimage-rollback-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/managed-file-preimage-rollback-plan.json"
+    },
+    {
+      "case_id": "managed-section-preimage-rollback-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/managed-section-preimage-rollback-plan.json"
+    },
+    {
+      "case_id": "manual-review-limitation",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/manual-review-limitation.json"
+    },
+    {
+      "case_id": "mixed-managed-file-and-section-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/mixed-managed-file-and-section-plan.json"
+    },
+    {
+      "case_id": "no-op-rollback-bundle",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/no-op-rollback-bundle.json"
+    },
+    {
+      "case_id": "optional-extensions-preservation",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/optional-extensions-preservation.json"
+    },
+    {
+      "case_id": "ownership-ledger-restore-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/ownership-ledger-restore-plan.json"
+    },
+    {
+      "case_id": "project-lock-restore-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/project-lock-restore-plan.json"
+    },
+    {
+      "case_id": "remove-added-managed-file-reverse-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/remove-added-managed-file-reverse-plan.json"
+    },
+    {
+      "case_id": "remove-added-managed-section-reverse-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/remove-added-managed-section-reverse-plan.json"
+    },
+    {
+      "case_id": "rollback-unavailable-limitation",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/valid/rollback-unavailable-limitation.json"
+    },
+    {
+      "case_id": "absolute-path",
+      "expected_refusal_codes": [
+        "rollback_bundle.absolute_path_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.absolute_path_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/absolute-path.json"
+    },
+    {
+      "case_id": "missing-ownership-ledger",
+      "expected_refusal_codes": [
+        "rollback_bundle.ownership_ledger_missing",
+        "rollback_bundle.ownership_ledger_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.ownership_ledger_mismatch",
+        "rollback_bundle.ownership_ledger_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/missing-ownership-ledger.json"
+    },
+    {
+      "case_id": "missing-preimage",
+      "expected_refusal_codes": [
+        "rollback_bundle.preimage_artifact_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.preimage_artifact_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/missing-preimage.json"
+    },
+    {
+      "case_id": "missing-prior-lock",
+      "expected_refusal_codes": [
+        "rollback_bundle.project_lock_missing",
+        "rollback_bundle.project_lock_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.project_lock_mismatch",
+        "rollback_bundle.project_lock_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/missing-prior-lock.json"
+    },
+    {
+      "case_id": "missing-rollback-evidence",
+      "expected_refusal_codes": [
+        "rollback_bundle.reverse_operation_evidence_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.reverse_operation_evidence_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/missing-rollback-evidence.json"
+    },
+    {
+      "case_id": "missing-update-plan-ref",
+      "expected_refusal_codes": [
+        "rollback_bundle.update_plan_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.update_plan_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/missing-update-plan-ref.json"
+    },
+    {
+      "case_id": "preimage-digest-mismatch",
+      "expected_refusal_codes": [
+        "rollback_bundle.preimage_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.preimage_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/preimage-digest-mismatch.json"
+    },
+    {
+      "case_id": "reverse-local-only-mutation",
+      "expected_refusal_codes": [
+        "rollback_bundle.local_only_reverse_mutation"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.local_only_reverse_mutation",
+        "rollback_bundle.preimage_artifact_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/reverse-local-only-mutation.json"
+    },
+    {
+      "case_id": "reverse-never-touch-mutation",
+      "expected_refusal_codes": [
+        "rollback_bundle.never_touch_reverse_mutation"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.never_touch_reverse_mutation",
+        "rollback_bundle.preimage_artifact_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/reverse-never-touch-mutation.json"
+    },
+    {
+      "case_id": "reverse-project-owned-mutation",
+      "expected_refusal_codes": [
+        "rollback_bundle.project_owned_reverse_mutation"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.preimage_artifact_missing",
+        "rollback_bundle.project_owned_reverse_mutation"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/reverse-project-owned-mutation.json"
+    },
+    {
+      "case_id": "rollback-apply-authority-claim",
+      "expected_refusal_codes": [
+        "rollback_bundle.rollback_apply_authority_claimed"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.rollback_apply_authority_claimed"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/rollback-apply-authority-claim.json"
+    },
+    {
+      "case_id": "source-latest-as-target-truth",
+      "expected_refusal_codes": [
+        "rollback_bundle.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/source-latest-as-target-truth.json"
+    },
+    {
+      "case_id": "target-mutation-authority-claim",
+      "expected_refusal_codes": [
+        "rollback_bundle.target_mutation_claimed"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.target_mutation_claimed"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/target-mutation-authority-claim.json"
+    },
+    {
+      "case_id": "traversal-path",
+      "expected_refusal_codes": [
+        "rollback_bundle.path_traversal_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.path_traversal_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/traversal-path.json"
+    },
+    {
+      "case_id": "unknown-ownership-reverse-operation",
+      "expected_refusal_codes": [
+        "rollback_bundle.unknown_ownership_reverse_operation"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.preimage_artifact_missing",
+        "rollback_bundle.unknown_ownership_reverse_operation"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/unknown-ownership-reverse-operation.json"
+    },
+    {
+      "case_id": "unknown-required-feature",
+      "expected_refusal_codes": [
+        "rollback_bundle.unknown_required_feature"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "rollback_bundle.unknown_required_feature"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/rollback-bundle-v0/invalid/unknown-required-feature.json"
+    }
+  ],
+  "schema_version": "aide.rollback-bundle-fixture-matrix.v0"
+}

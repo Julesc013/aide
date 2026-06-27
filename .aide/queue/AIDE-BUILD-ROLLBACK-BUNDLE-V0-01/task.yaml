@@ -1,0 +1,76 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+title: Build RollbackBundle v0
+status: needs_review
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+capability_label: rollback_bundle_v0
+wave: AIDE-DISTRIBUTION-SAFETY-WAVE-03
+dependencies:
+  - AIDE-ACCEPT-UPDATE-PLAN-V1-01
+  - AIDE-BUILD-UPDATE-PLAN-V1-01
+  - AIDE-CHECK-UPDATE-PLAN-V1-01
+accepted_predecessor_capabilities:
+  - distribution_manifest_v1
+  - project_lock_v0
+  - ownership_ledger_v1
+  - install_record_v0
+  - migration_record_v0
+  - update_plan_v1
+objective: Build RollbackBundle v0 as a no-apply rollback-preparation protocol slice after accepted UpdatePlan v1.
+allowed_paths:
+  - .aide/protocol/aide-rollback-bundle-v0.schema.json
+  - core/protocol/rollback_bundle.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_rollback_bundle_v0.py
+  - .aide/fixtures/rollback-bundle-v0/**
+  - .aide/reports/rollback-bundle-v0/**
+  - .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_scope:
+  - rollback_apply
+  - update_apply
+  - install_apply
+  - migration_apply
+  - uninstall_apply
+  - target_repo_mutation
+  - target_repo_scan_authority
+  - release_archive_creation
+  - tag_upload_github_release
+  - provider_model_network_calls
+  - distribution_apply_engine
+  - update_receipt
+  - canaries
+  - branch_worktree_automation
+outputs:
+  - .aide/protocol/aide-rollback-bundle-v0.schema.json
+  - core/protocol/rollback_bundle.py
+  - .aide/scripts/tests/test_aide_rollback_bundle_v0.py
+  - .aide/fixtures/rollback-bundle-v0/**
+  - .aide/reports/rollback-bundle-v0/**
+  - .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+validation:
+  - py -3 -m py_compile core/protocol/rollback_bundle.py .aide/scripts/tests/test_aide_rollback_bundle_v0.py .aide/scripts/aide_lite.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p "test_aide_rollback_bundle_v0.py"
+  - py -3 .aide/scripts/aide_lite.py rollback-bundle status
+  - py -3 .aide/scripts/aide_lite.py rollback-bundle project
+  - py -3 .aide/scripts/aide_lite.py rollback-bundle validate
+  - predecessor regression validation
+  - Q43-Q48 no-apply/no-publish validators
+  - py -3 .aide/scripts/aide_lite.py validate
+  - task inspect/evidence
+  - path and secret-like scans
+  - git diff --check
+  - git diff --cached --check
+  - commit check --latest
+result_summary:
+  proposed_capability: rollback_bundle_v0
+  material_finding_count: 0
+  missing_evidence: 0
+  next_task: AIDE-CHECK-ROLLBACK-BUNDLE-V0-01

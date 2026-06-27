@@ -2729,3 +2729,13 @@ items:
   prompt: .aide/queue/AIDE-ACCEPT-UPDATE-PLAN-V1-01/prompt.md
   evidence: .aide/queue/AIDE-ACCEPT-UPDATE-PLAN-V1-01/evidence
   description: Acceptance-only task for update_plan_v1 after the build/check chain closed with zero material findings and zero missing evidence. Accepts only UpdatePlan v1 as a no-apply dry-run distribution update planning contract, including accepted operation classes, conflict/manual-review model, fail-closed semantics, predecessor dependency model, warnings, explicit non-capabilities, and downstream-use boundary. Stops at needs_review with ACCEPTED_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-BUILD-ROLLBACK-BUNDLE-V0-01. Does not modify implementation, begin RollbackBundle/UpdateReceipt/DistributionApplyEngine, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, or promote.
+- id: AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+  status: needs_review
+  planning_state: build_completed
+  result: PASS_WITH_WARNINGS
+  title: Build RollbackBundle v0
+  task: .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-ROLLBACK-BUNDLE-V0-01/evidence
+  description: Builds proposed rollback_bundle_v0 after accepted UpdatePlan v1. Adds RollbackBundle schema/helper/CLI/fixtures/tests/reports, binds accepted UpdatePlan and predecessor DistributionManifest, ProjectLock, OwnershipLedger, and InstallRecord refs/digests, validates reverse operation classes and fail-closed refusal behavior, records no-apply rollback-preparation metadata only, and stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-ROLLBACK-BUNDLE-V0-01. Does not perform rollback/update/install/migration/uninstall apply, mutate or scan target repos, start UpdateReceipt or DistributionApplyEngine, mutate canaries, create releases/tags/uploads/GitHub Releases, call provider/model/network services, automate branches/worktrees, or promote.
