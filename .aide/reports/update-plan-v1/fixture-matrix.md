@@ -1,0 +1,33 @@
+# UpdatePlan v1 Fixture Matrix
+
+| Case | Expected | Observed | Codes | Pass |
+| --- | --- | --- | --- | --- |
+| conflict-only-plan | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| legacy-preservation | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| local-only-preservation | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| managed-file-add | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| managed-file-update | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| managed-section-add | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| managed-section-update | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| manual-review-item | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| migration-dependent-plan | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| no-op-update | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| optional-extension-preserved | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| project-owned-preservation | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| absolute-path | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.absolute_path_forbidden | true |
+| apply-claim | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.apply_authority_claimed | true |
+| case-collision | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.case_collision | true |
+| extension-required-unknown | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.extension_required_unknown | true |
+| local-only-overwrite | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.local_only_overwrite | true |
+| mismatched-distribution | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.distribution_mismatch | true |
+| mismatched-ownership-ledger | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.ownership_ledger_mismatch | true |
+| mismatched-project-lock | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.project_lock_mismatch | true |
+| missing-rollback-requirement | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.rollback_requirement_missing | true |
+| never-touch-update | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.never_touch_target | true |
+| path-traversal | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.path_traversal_forbidden | true |
+| project-owned-overwrite | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.project_owned_overwrite | true |
+| source-output-target-truth | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.source_output_as_target_truth | true |
+| symlink-reparse-uncertainty | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.symlink_reparse_uncertain | true |
+| target-mutation-claim | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.target_mutation_claimed | true |
+| unknown-ownership-auto-update | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.unknown_ownership | true |
+| unknown-required-feature | FAILED_VALIDATION | FAILED_VALIDATION | update_plan.unknown_required_feature | true |

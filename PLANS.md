@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-UPDATE-PLAN-V1-01
+
+- Title: Build UpdatePlan v1
+- Status: needs_review
+- Objective: build `update_plan_v1` as a no-apply dry-run distribution update planning protocol slice after accepted MigrationRecord v0.
+- Scope: UpdatePlan schema, helper/projection/validation logic, AIDE Lite `update-plan` CLI commands, fixture corpus, focused tests, generated reports, queue evidence, queue routing, and focused root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-UPDATE-PLAN-V1-01/task.yaml`.
+- Dependencies: accepted DistributionManifest v1, ProjectLock v0, OwnershipLedger v1, InstallRecord v0, and MigrationRecord v0.
+- Milestones: predecessor gate verified; schema/helper added; fail-closed semantic validator added; focused fixture corpus added; CLI commands added; generated reports written; queue evidence materialized; validation and commit policy passed.
+- Blockers: none for the build. Independent check remains required before acceptance.
+- Verification Intent: JSON/YAML parse, compileall, focused UpdatePlan tests, `update-plan status/project/validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad AIDE validation, task inspect/evidence, report/evidence path and secret scans, diff checks, staged diff checks, and commit-policy check.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, proposed capability `update_plan_v1`, and next task exactly `AIDE-CHECK-UPDATE-PLAN-V1-01`.
+- Notes: this build does not implement update apply, install apply, migration apply, repair apply, rollback apply, uninstall apply, target scan authority, target repository mutation, release archive creation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, real project canaries, or promotion.
+
 ### Plan ID: AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
 
 - Title: Build Trust And Authorization Contract v0

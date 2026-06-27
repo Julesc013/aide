@@ -7952,6 +7952,22 @@ def load_migration_record_module(repo_root: Path):
     return module
 
 
+def load_update_plan_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/update_plan.py"
+    if not module_path.exists():
+        raise ValueError("UpdatePlan module missing: core/protocol/update_plan.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_update_plan", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("UpdatePlan module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_conformance_profile_module(repo_root: Path):
     module_path = repo_root / "core/protocol/conformance_profile.py"
     if not module_path.exists():
@@ -34882,6 +34898,117 @@ def command_migration_record_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_update_plan_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'update_plan_v1')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"migration_apply_implemented: {str(data.get('migration_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"target_scan_authority_implemented: {str(data.get('target_scan_authority_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("commander_implemented: false")
+    print("omnigent_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_update_plan_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_plan_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite update-plan status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_plan_boundary_lines({})
+        return 1
+    print("AIDE Lite update-plan status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"install_record_acceptance_report_exists: {str(data.get('install_record_acceptance_report_exists', False)).lower()}")
+    print(f"migration_record_acceptance_report_exists: {str(data.get('migration_record_acceptance_report_exists', False)).lower()}")
+    print(f"update_plan_projection_exists: {str(data.get('update_plan_projection_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_update_plan_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_update_plan_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_plan_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite update-plan project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_plan_boundary_lines({})
+        return 1
+    print("AIDE Lite update-plan project")
+    print(f"result: {report.get('status')}")
+    print(f"update_plan_path: {report.get('update_plan_path')}")
+    print(f"update_plan_digest: {report.get('update_plan_digest')}")
+    print(f"planned_operation_count: {report.get('planned_operation_count')}")
+    print(f"managed_file_update_count: {report.get('managed_file_update_count')}")
+    print(f"managed_section_update_count: {report.get('managed_section_update_count')}")
+    print(f"preserved_path_count: {report.get('preserved_path_count')}")
+    print(f"conflict_count: {report.get('conflict_count')}")
+    print(f"risk_class: {report.get('risk_class')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_update_plan_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_update_plan_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_plan_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite update-plan validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_plan_boundary_lines({})
+        return 1
+    print("AIDE Lite update-plan validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "update_plan_generated",
+        "update_plan_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "install_record_accepted",
+        "migration_record_accepted",
+        "distribution_ref_bound",
+        "current_project_lock_bound",
+        "candidate_project_lock_bound",
+        "ownership_ledger_bound",
+        "install_record_bound",
+        "migration_record_bound",
+        "update_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "source_output_not_target_truth",
+    ]:
+        if key in checks:
+            print(f"{key}: {str(checks.get(key)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_update_plan_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
     print("profile_only: true")
     print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
@@ -39951,6 +40078,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     migration_record_subparsers.add_parser("status").set_defaults(handler=command_migration_record_status)
     migration_record_subparsers.add_parser("project").set_defaults(handler=command_migration_record_project)
     migration_record_subparsers.add_parser("validate").set_defaults(handler=command_migration_record_validate)
+
+    update_plan_parser = subparsers.add_parser("update-plan")
+    update_plan_parser.set_defaults(handler=command_update_plan_status)
+    update_plan_subparsers = update_plan_parser.add_subparsers(dest="update_plan_command", required=False)
+    update_plan_subparsers.add_parser("status").set_defaults(handler=command_update_plan_status)
+    update_plan_subparsers.add_parser("project").set_defaults(handler=command_update_plan_project)
+    update_plan_subparsers.add_parser("validate").set_defaults(handler=command_update_plan_validate)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)

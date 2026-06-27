@@ -39,6 +39,63 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-UPDATE-PLAN-V1-01
+
+Completed as a no-apply dry-run planning build and awaiting independent check.
+
+Changed:
+
+- `core/protocol/update_plan.py`
+- `.aide/protocol/aide-update-plan-v1.schema.json`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_update_plan_v1.py`
+- `.aide/fixtures/update-plan-v1/**`
+- `.aide/reports/update-plan-v1/**`
+- `.aide/queue/AIDE-BUILD-UPDATE-PLAN-V1-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Implemented:
+
+- UpdatePlan v1 schema and deterministic helper/projection report;
+- binding to accepted DistributionManifest, ProjectLock, OwnershipLedger,
+  InstallRecord, and MigrationRecord refs/digests;
+- planned operation vocabulary for managed files, managed sections,
+  preservation, regeneration, manual review, and refusal;
+- semantic validation that fails closed for unknown ownership, never-touch
+  updates, project-owned/local-only/project-overlay/runtime/evidence-only
+  overwrite attempts, case collisions, symlink/reparse uncertainty, unsafe
+  paths, predecessor mismatches, missing rollback requirements, unknown
+  required features/extensions, source-output-as-target-truth, apply claims,
+  and target mutation claims;
+- fixture coverage for required positive and negative cases;
+- AIDE Lite `update-plan status`, `update-plan project`, and
+  `update-plan validate` commands;
+- generated status, projection, validation, fixture matrix, conflict summary,
+  and no-apply boundary reports.
+
+Result:
+
+```text
+PASS_WITH_WARNINGS
+proposed_capability: update_plan_v1
+material_finding_count: 0
+missing_evidence: 0
+```
+
+Recommended next task:
+
+```text
+AIDE-CHECK-UPDATE-PLAN-V1-01
+```
+
+No update apply, install apply, migration apply, repair apply, rollback apply,
+uninstall apply, target scan authority, target repository mutation, release
+archive creation, release publication, tags, uploads, GitHub Releases,
+provider/model/network calls, runtime, Workbench, Commander, Omnigent,
+branch/worktree automation, project canary, or promotion was implemented.
+
 ## Work Item: AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
 
 Completed as a projection-only build and awaiting independent check.

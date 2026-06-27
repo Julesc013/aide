@@ -1,0 +1,404 @@
+{
+  "checks": {
+    "candidate_project_lock_bound": true,
+    "cli_registered": true,
+    "current_project_lock_bound": true,
+    "distribution_ref_bound": true,
+    "fixture_matrix_passed": true,
+    "helper_exists": true,
+    "install_apply_not_implemented": true,
+    "install_record_accepted": true,
+    "install_record_bound": true,
+    "migration_apply_not_implemented": true,
+    "migration_record_accepted": true,
+    "migration_record_bound": true,
+    "ownership_ledger_bound": true,
+    "release_publication_not_implemented": true,
+    "rollback_apply_not_implemented": true,
+    "schema_alignment": true,
+    "schema_exists": true,
+    "source_output_not_target_truth": true,
+    "target_repository_mutation_not_implemented": true,
+    "target_scan_authority_not_implemented": true,
+    "update_apply_not_implemented": true,
+    "update_plan_generated": true,
+    "update_plan_valid": true
+  },
+  "errors": [],
+  "explicit_non_capabilities": [
+    "install_apply",
+    "update_apply",
+    "migration_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "target_repository_mutation",
+    "target_scan_authority",
+    "release_archive_creation",
+    "release_publication",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "workbench_runtime",
+    "commander",
+    "omnigent",
+    "worker_execution",
+    "preview_session_apply",
+    "development_transaction_apply",
+    "patch_transaction_apply",
+    "branch_worktree_automation",
+    "real_project_canary"
+  ],
+  "fixture_results": [
+    {
+      "case_id": "conflict-only-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/conflict-only-plan.json"
+    },
+    {
+      "case_id": "legacy-preservation",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/legacy-preservation.json"
+    },
+    {
+      "case_id": "local-only-preservation",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/local-only-preservation.json"
+    },
+    {
+      "case_id": "managed-file-add",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/managed-file-add.json"
+    },
+    {
+      "case_id": "managed-file-update",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/managed-file-update.json"
+    },
+    {
+      "case_id": "managed-section-add",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/managed-section-add.json"
+    },
+    {
+      "case_id": "managed-section-update",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/managed-section-update.json"
+    },
+    {
+      "case_id": "manual-review-item",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/manual-review-item.json"
+    },
+    {
+      "case_id": "migration-dependent-plan",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/migration-dependent-plan.json"
+    },
+    {
+      "case_id": "no-op-update",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/no-op-update.json"
+    },
+    {
+      "case_id": "optional-extension-preserved",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/optional-extension-preserved.json"
+    },
+    {
+      "case_id": "project-owned-preservation",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/valid/project-owned-preservation.json"
+    },
+    {
+      "case_id": "absolute-path",
+      "expected_refusal_codes": [
+        "update_plan.absolute_path_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.absolute_path_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/absolute-path.json"
+    },
+    {
+      "case_id": "apply-claim",
+      "expected_refusal_codes": [
+        "update_plan.apply_authority_claimed"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.apply_authority_claimed"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/apply-claim.json"
+    },
+    {
+      "case_id": "case-collision",
+      "expected_refusal_codes": [
+        "update_plan.case_collision"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.case_collision"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/case-collision.json"
+    },
+    {
+      "case_id": "extension-required-unknown",
+      "expected_refusal_codes": [
+        "update_plan.extension_required_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.extension_required_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/extension-required-unknown.json"
+    },
+    {
+      "case_id": "local-only-overwrite",
+      "expected_refusal_codes": [
+        "update_plan.local_only_overwrite"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.local_only_overwrite"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/local-only-overwrite.json"
+    },
+    {
+      "case_id": "mismatched-distribution",
+      "expected_refusal_codes": [
+        "update_plan.distribution_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.distribution_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/mismatched-distribution.json"
+    },
+    {
+      "case_id": "mismatched-ownership-ledger",
+      "expected_refusal_codes": [
+        "update_plan.ownership_ledger_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.ownership_ledger_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/mismatched-ownership-ledger.json"
+    },
+    {
+      "case_id": "mismatched-project-lock",
+      "expected_refusal_codes": [
+        "update_plan.project_lock_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.project_lock_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/mismatched-project-lock.json"
+    },
+    {
+      "case_id": "missing-rollback-requirement",
+      "expected_refusal_codes": [
+        "update_plan.rollback_requirement_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.rollback_requirement_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/missing-rollback-requirement.json"
+    },
+    {
+      "case_id": "never-touch-update",
+      "expected_refusal_codes": [
+        "update_plan.never_touch_target"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.never_touch_target"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/never-touch-update.json"
+    },
+    {
+      "case_id": "path-traversal",
+      "expected_refusal_codes": [
+        "update_plan.path_traversal_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.path_traversal_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/path-traversal.json"
+    },
+    {
+      "case_id": "project-owned-overwrite",
+      "expected_refusal_codes": [
+        "update_plan.project_owned_overwrite"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.project_owned_overwrite"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/project-owned-overwrite.json"
+    },
+    {
+      "case_id": "source-output-target-truth",
+      "expected_refusal_codes": [
+        "update_plan.source_output_as_target_truth"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.source_output_as_target_truth"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/source-output-target-truth.json"
+    },
+    {
+      "case_id": "symlink-reparse-uncertainty",
+      "expected_refusal_codes": [
+        "update_plan.symlink_reparse_uncertain"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.symlink_reparse_uncertain"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/symlink-reparse-uncertainty.json"
+    },
+    {
+      "case_id": "target-mutation-claim",
+      "expected_refusal_codes": [
+        "update_plan.target_mutation_claimed"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.target_mutation_claimed"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/target-mutation-claim.json"
+    },
+    {
+      "case_id": "unknown-ownership-auto-update",
+      "expected_refusal_codes": [
+        "update_plan.unknown_ownership"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.unknown_ownership"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/unknown-ownership-auto-update.json"
+    },
+    {
+      "case_id": "unknown-required-feature",
+      "expected_refusal_codes": [
+        "update_plan.unknown_required_feature"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "update_plan.unknown_required_feature"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/update-plan-v1/invalid/unknown-required-feature.json"
+    }
+  ],
+  "proposed_capability": "update_plan_v1",
+  "recommended_next_task": "AIDE-CHECK-UPDATE-PLAN-V1-01",
+  "schema_alignment_errors": [],
+  "schema_version": "aide.update-plan-validation.v1",
+  "status": "PASS_WITH_WARNINGS",
+  "update_plan_validation": {
+    "error_count": 0,
+    "errors": [],
+    "refusal_codes": [],
+    "status": "PASS_WITH_WARNINGS",
+    "valid": true,
+    "warnings": []
+  },
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "UpdatePlan v1 is proposed until independent check and acceptance.",
+    "UpdatePlan records dry-run planning metadata only and performs no update apply.",
+    "RollbackBundle remains a future dependency before any fixture apply engine work."
+  ]
+}
