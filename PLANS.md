@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-UPDATE-PLAN-V1-01
+
+- Title: Accept UpdatePlan v1
+- Status: needs_review
+- Objective: accept exactly `update_plan_v1` as a no-apply dry-run distribution update planning contract after build and check completed with zero material findings and zero missing evidence.
+- Scope: acceptance task/evidence, `.aide/reports/update-plan-v1-acceptance/**`, queue index routing, and focused root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-UPDATE-PLAN-V1-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-UPDATE-PLAN-V1-01` at `b773e2d9ca3063242d817642a5f587712847936b`; `AIDE-CHECK-UPDATE-PLAN-V1-01` at `3baa24eceb06e934d85c7ba3d4a283a22915c197`, result `PASS_WITH_WARNINGS`, material finding count `0`, missing evidence `0`.
+- Milestones: source build/check chain reviewed; accepted capability boundary recorded; operation classes accepted; conflict/manual-review and fail-closed model accepted; downstream-use boundary recorded; explicit non-capabilities preserved.
+- Blockers: none. RollbackBundle remains a separate next build task.
+- Verification Intent: predecessor task inspect/evidence, focused UpdatePlan tests, UpdatePlan status/project/validate, broad validation, acceptance task inspect/evidence, safety scans, diff checks, staged diff checks, and commit-policy check.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted capability exactly `update_plan_v1`, missing evidence `0`, and next task exactly `AIDE-BUILD-ROLLBACK-BUNDLE-V0-01`.
+- Notes: this acceptance does not implement update apply, install apply, migration apply, repair apply, rollback apply, uninstall apply, target scan authority, target repository mutation, release archive creation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, DistributionApplyEngine, project canaries, or promotion.
+
 ### Plan ID: AIDE-CHECK-UPDATE-PLAN-V1-01
 
 - Title: Check UpdatePlan v1

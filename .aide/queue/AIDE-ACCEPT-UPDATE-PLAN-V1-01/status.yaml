@@ -1,0 +1,17 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-UPDATE-PLAN-V1-01
+status: needs_review
+classification: acceptance_completed
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+accepted_capability: update_plan_v1
+accepted_commits:
+  build: b773e2d9ca3063242d817642a5f587712847936b
+  check: 3baa24eceb06e934d85c7ba3d4a283a22915c197
+next_task: AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
+notes:
+  - UpdatePlan v1 is accepted only as a dry-run distribution update planning contract.
+  - No implementation files changed during acceptance.
+  - RollbackBundle v0 is the next serialized build task.

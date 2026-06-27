@@ -2719,3 +2719,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-UPDATE-PLAN-V1-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-UPDATE-PLAN-V1-01/evidence
   description: Check-only independent review of AIDE-BUILD-UPDATE-PLAN-V1-01 at b773e2d9ca3063242d817642a5f587712847936b. Verifies UpdatePlan v1 schema/helper/CLI/fixture/test/report coverage, predecessor bindings to accepted DistributionManifest v1, ProjectLock v0, OwnershipLedger v1, InstallRecord v0, and MigrationRecord v0, dry-run/no-apply semantics, operation class support, fail-closed behavior, fixture coverage, optional extension tolerance, required feature refusal, warning-class unknown and never-touch conflicts, and report/evidence hygiene. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-UPDATE-PLAN-V1-01. Does not repair implementation, accept UpdatePlan v1, begin RollbackBundle/UpdateReceipt/DistributionApplyEngine, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, or promote.
+- id: AIDE-ACCEPT-UPDATE-PLAN-V1-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept UpdatePlan v1
+  task: .aide/queue/AIDE-ACCEPT-UPDATE-PLAN-V1-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-UPDATE-PLAN-V1-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-UPDATE-PLAN-V1-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-UPDATE-PLAN-V1-01/evidence
+  description: Acceptance-only task for update_plan_v1 after the build/check chain closed with zero material findings and zero missing evidence. Accepts only UpdatePlan v1 as a no-apply dry-run distribution update planning contract, including accepted operation classes, conflict/manual-review model, fail-closed semantics, predecessor dependency model, warnings, explicit non-capabilities, and downstream-use boundary. Stops at needs_review with ACCEPTED_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-BUILD-ROLLBACK-BUNDLE-V0-01. Does not modify implementation, begin RollbackBundle/UpdateReceipt/DistributionApplyEngine, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, or promote.

@@ -1,0 +1,21 @@
+{
+  "schema_version": "aide.update-plan-v1-acceptance.validation-summary.v0",
+  "task_id": "AIDE-ACCEPT-UPDATE-PLAN-V1-01",
+  "accepted_capability": "update_plan_v1",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "accepted_commits": {
+    "build": "b773e2d9ca3063242d817642a5f587712847936b",
+    "check": "3baa24eceb06e934d85c7ba3d4a283a22915c197"
+  },
+  "recommended_next_task": "AIDE-BUILD-ROLLBACK-BUNDLE-V0-01",
+  "accepted_boundary": "dry-run distribution update planning only",
+  "implementation_changed": false,
+  "rollback_bundle_started": false,
+  "update_receipt_started": false,
+  "distribution_apply_engine_started": false,
+  "target_repository_mutation": false,
+  "release_publication": false,
+  "provider_model_network_calls": false
+}

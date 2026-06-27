@@ -1,0 +1,21 @@
+# Validation Commands
+
+- `git status --short --branch`
+- `py -3 .aide\scripts\aide_lite.py task inspect --task-id AIDE-BUILD-UPDATE-PLAN-V1-01`
+- `py -3 .aide\scripts\aide_lite.py task evidence --task-id AIDE-BUILD-UPDATE-PLAN-V1-01`
+- `py -3 .aide\scripts\aide_lite.py task inspect --task-id AIDE-CHECK-UPDATE-PLAN-V1-01`
+- `py -3 .aide\scripts\aide_lite.py task evidence --task-id AIDE-CHECK-UPDATE-PLAN-V1-01`
+- `py -3 -m compileall -q core\protocol\update_plan.py .aide\scripts\tests\test_aide_update_plan_v1.py .aide\scripts\aide_lite.py`
+- `py -3 -m unittest discover -s .aide\scripts\tests -p test_aide_update_plan_v1.py`
+- `py -3 .aide\scripts\aide_lite.py update-plan status`
+- `py -3 .aide\scripts\aide_lite.py update-plan project`
+- `py -3 .aide\scripts\aide_lite.py update-plan validate`
+- `py -3 .aide\scripts\aide_lite.py validate`
+- acceptance report/evidence local absolute path scan
+- acceptance report/evidence secret-like assignment scan
+- acceptance report/evidence source-output misuse scan
+- `py -3 .aide\scripts\aide_lite.py task inspect --task-id AIDE-ACCEPT-UPDATE-PLAN-V1-01`
+- `py -3 .aide\scripts\aide_lite.py task evidence --task-id AIDE-ACCEPT-UPDATE-PLAN-V1-01`
+- `git diff --check`
+- `git diff --cached --check`
+- `py -3 .aide\scripts\aide_lite.py commit check --latest`
