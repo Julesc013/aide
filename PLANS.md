@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-UPDATE-PLAN-V1-01
+
+- Title: Check UpdatePlan v1
+- Status: needs_review
+- Objective: independently verify the proposed `update_plan_v1` build without repairing implementation, accepting the capability, or beginning RollbackBundle work.
+- Scope: check-local queue packet/evidence, `.aide/reports/update-plan-v1-check/**`, queue index routing, and focused root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-UPDATE-PLAN-V1-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-UPDATE-PLAN-V1-01` at `b773e2d9ca3063242d817642a5f587712847936b`, result `PASS_WITH_WARNINGS`, `material_finding_count: 0`, and `missing_evidence: 0`.
+- Milestones: live queue truth verified; source build task/evidence inspected; UpdatePlan schema/helper/CLI/tests/fixtures/reports checked; independent operation-class and fail-closed probes passed; predecessor regressions passed; safety scans passed; task evidence materialized.
+- Blockers: none. UpdatePlan acceptance remains a separate next task.
+- Verification Intent: compileall, focused UpdatePlan tests, `update-plan status/project/validate`, predecessor status/project/validate commands, Q43-Q48 no-apply/no-publish validators, broad AIDE validation, source task inspect/evidence, independent semantic probe, safety scans, diff checks, staged diff checks, and commit-policy check.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and next task exactly `AIDE-ACCEPT-UPDATE-PLAN-V1-01`.
+- Notes: this check does not repair implementation, accept UpdatePlan v1, begin RollbackBundle, UpdateReceipt, DistributionApplyEngine, self-consumer fixture, canaries, apply behavior, target mutation, release publication, provider/model/network calls, runtime, branch/worktree automation, or promotion.
+
 ### Plan ID: AIDE-BUILD-UPDATE-PLAN-V1-01
 
 - Title: Build UpdatePlan v1

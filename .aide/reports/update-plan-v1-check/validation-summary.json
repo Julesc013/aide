@@ -1,0 +1,42 @@
+{
+  "schema_version": "aide.update-plan-v1-check.validation-summary.v0",
+  "task_id": "AIDE-CHECK-UPDATE-PLAN-V1-01",
+  "checked_task": "AIDE-BUILD-UPDATE-PLAN-V1-01",
+  "checked_commit": "b773e2d9ca3063242d817642a5f587712847936b",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "proposed_capability": "update_plan_v1",
+  "recommended_next_task": "AIDE-ACCEPT-UPDATE-PLAN-V1-01",
+  "update_plan_digest": "sha256:85d86b21de065bb973d45e88fbc9e605d7920ed36b648033ddc67b1b219ab371",
+  "operation_class_count": 15,
+  "positive_operation_class_probes": 15,
+  "fail_closed_probes": 23,
+  "fixture_case_count": 29,
+  "validation_error_count": 0,
+  "warnings": [
+    "UpdatePlan v1 remains proposed until acceptance.",
+    "Same-session independence is reduced.",
+    "Standalone PyYAML is unavailable but AIDE-native YAML validation passed.",
+    "Unknown and never-touch live conflicts are fail-closed warning-class conflicts."
+  ],
+  "non_capabilities_preserved": [
+    "install_apply",
+    "update_apply",
+    "migration_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "target_repository_mutation",
+    "target_scan_authority",
+    "release_publication",
+    "git_tag",
+    "github_release",
+    "upload",
+    "provider_model_network_calls",
+    "runtime",
+    "branch_worktree_automation",
+    "canaries",
+    "distribution_apply_engine"
+  ]
+}

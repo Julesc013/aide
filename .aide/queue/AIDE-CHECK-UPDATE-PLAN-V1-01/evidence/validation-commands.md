@@ -1,0 +1,45 @@
+# Validation Commands
+
+- `git status --short --branch`
+- `git rev-parse HEAD`
+- `git rev-parse origin/main`
+- `git rev-list --left-right --count origin/main...HEAD`
+- `git log -8 --oneline`
+- `py -3 -m compileall -q core\protocol\update_plan.py .aide\scripts\tests\test_aide_update_plan_v1.py .aide\scripts\aide_lite.py`
+- `py -3 -m unittest discover -s .aide\scripts\tests -p test_aide_update_plan_v1.py`
+- `py -3 .aide\scripts\aide_lite.py update-plan status`
+- `py -3 .aide\scripts\aide_lite.py update-plan project`
+- `py -3 .aide\scripts\aide_lite.py update-plan validate`
+- `py -3 .aide\scripts\aide_lite.py distribution-manifest status`
+- `py -3 .aide\scripts\aide_lite.py distribution-manifest project`
+- `py -3 .aide\scripts\aide_lite.py distribution-manifest validate`
+- `py -3 .aide\scripts\aide_lite.py project-lock status`
+- `py -3 .aide\scripts\aide_lite.py project-lock project`
+- `py -3 .aide\scripts\aide_lite.py project-lock validate`
+- `py -3 .aide\scripts\aide_lite.py ownership-ledger status`
+- `py -3 .aide\scripts\aide_lite.py ownership-ledger project`
+- `py -3 .aide\scripts\aide_lite.py ownership-ledger validate`
+- `py -3 .aide\scripts\aide_lite.py ownership-ledger migrate-q43`
+- `py -3 .aide\scripts\aide_lite.py install-record status`
+- `py -3 .aide\scripts\aide_lite.py install-record project`
+- `py -3 .aide\scripts\aide_lite.py install-record validate`
+- `py -3 .aide\scripts\aide_lite.py migration-record status`
+- `py -3 .aide\scripts\aide_lite.py migration-record project`
+- `py -3 .aide\scripts\aide_lite.py migration-record validate`
+- `py -3 .aide\scripts\aide_lite.py install validate`
+- `py -3 .aide\scripts\aide_lite.py repair validate`
+- `py -3 .aide\scripts\aide_lite.py upgrade validate`
+- `py -3 .aide\scripts\aide_lite.py rollback validate`
+- `py -3 .aide\scripts\aide_lite.py uninstall validate`
+- `py -3 .aide\scripts\aide_lite.py release validate`
+- `py -3 .aide\scripts\aide_lite.py release draft-validate`
+- `py -3 .aide\scripts\aide_lite.py validate`
+- `py -3 .aide\scripts\aide_lite.py task inspect --task-id AIDE-BUILD-UPDATE-PLAN-V1-01`
+- `py -3 .aide\scripts\aide_lite.py task evidence --task-id AIDE-BUILD-UPDATE-PLAN-V1-01`
+- check-local Python semantic probe over UpdatePlan schema/helper/reports/fixtures
+- report/evidence local absolute path scan
+- report/evidence secret-like assignment scan
+- report/evidence source-output misuse scan
+- `git diff --check`
+- `git diff --cached --check`
+- `py -3 .aide\scripts\aide_lite.py commit check --latest`

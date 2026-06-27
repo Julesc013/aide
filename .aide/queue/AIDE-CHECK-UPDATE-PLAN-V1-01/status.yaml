@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-UPDATE-PLAN-V1-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+checked_commit: b773e2d9ca3063242d817642a5f587712847936b
+checked_task: AIDE-BUILD-UPDATE-PLAN-V1-01
+proposed_capability: update_plan_v1
+next_task: AIDE-ACCEPT-UPDATE-PLAN-V1-01
+notes:
+  - UpdatePlan v1 build directly models the dry-run update planning contract and fail-closed validation cases.
+  - Warnings are boundary and environment warnings only; UpdatePlan v1 remains proposed until acceptance.
+  - No implementation files changed during this check.
