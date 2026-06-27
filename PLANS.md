@@ -2945,3 +2945,15 @@
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `install_record_v0`, and recommends exactly `AIDE-BUILD-MIGRATION-RECORD-V0-01`.
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Notes: InstallRecord v0 is accepted only as no-apply install-state metadata. MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt, DistributionApplyEngine, canaries, release publication, target mutation, target scan authority, runtime, provider/model calls, Workbench, Commander, preview/apply/rollback, and promotion remain blocked.
+
+### Queue ID: AIDE-BUILD-MIGRATION-RECORD-V0-01
+
+- Title: Build MigrationRecord v0
+- Status: Needs Review
+- Objective: build MigrationRecord v0 as a no-apply protocol/helper/projection/validation slice after accepted InstallRecord v0.
+- Scope: `.aide/queue/AIDE-BUILD-MIGRATION-RECORD-V0-01/**`, `.aide/protocol/aide-migration-record-v0.schema.json`, `core/protocol/migration_record.py`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_migration_record_v0.py`, `.aide/fixtures/migration-record-v0/**`, `.aide/reports/migration-record-v0/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-ACCEPT-INSTALL-RECORD-V0-01`.
+- Verification Intent: JSON parse, compileall, focused MigrationRecord tests, `migration-record status/project/validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad AIDE validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `material_finding_count: 0`, records `missing_evidence: 0`, and recommends exactly `AIDE-CHECK-MIGRATION-RECORD-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: MigrationRecord v0 records migration decisions only. It does not implement migration apply, install/update apply, rollback/uninstall apply, target scan authority, target mutation, release publication, provider/model/network calls, runtime, Workbench, Commander, Omnigent, or canaries.

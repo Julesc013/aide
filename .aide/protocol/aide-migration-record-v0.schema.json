@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIDE MigrationRecord v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "apiVersion",
+    "kind",
+    "schema_version",
+    "metadata",
+    "spec",
+    "status",
+    "extensions"
+  ],
+  "properties": {
+    "apiVersion": {"type": "string", "const": "aide.dev/v1"},
+    "kind": {"type": "string", "const": "MigrationRecord"},
+    "schema_version": {"type": "string", "const": "aide.migration-record.v0"},
+    "metadata": {"$ref": "#/$defs/metadata"},
+    "spec": {"$ref": "#/$defs/spec"},
+    "status": {"$ref": "#/$defs/status"},
+    "extensions": {"$ref": "#/$defs/extensions"}
+  },
+  "$defs": {
+    "extensions": {"type": "object", "additionalProperties": true},
+    "ref": {"type": "string", "minLength": 1},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "migration_record_ref",
+        "source_object_ref",
+        "source_object_kind",
+        "source_schema_version",
+        "target_schema_version",
+        "input_digest",
+        "output_digest",
+        "created_at",
+        "created_by",
+        "prior_migration_record_ref",
+        "superseded_by_ref",
+        "extensions"
+      ],
+      "properties": {
+        "migration_record_ref": {"$ref": "#/$defs/ref"},
+        "source_object_ref": {"$ref": "#/$defs/ref"},
+        "source_object_kind": {"type": "string", "minLength": 1},
+        "source_schema_version": {"type": "string", "minLength": 1},
+        "target_schema_version": {"type": "string", "minLength": 1},
+        "input_digest": {"$ref": "#/$defs/digest"},
+        "output_digest": {"$ref": "#/$defs/digest"},
+        "created_at": {"type": "string", "minLength": 1},
+        "created_by": {"type": "string", "minLength": 1},
+        "prior_migration_record_ref": {"type": ["string", "null"]},
+        "superseded_by_ref": {"type": ["string", "null"]},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "migration_kind",
+        "migration_plan_ref",
+        "field_mapping_summary",
+        "unknown_field_disposition",
+        "manual_review_items",
+        "risk_class",
+        "validation_refs",
+        "rollback_requirements",
+        "evidence_refs",
+        "explicit_non_capabilities",
+        "required_features",
+        "optional_features",
+        "destructive_migration",
+        "ambiguous_migration",
+        "source_output_used_as_target_truth",
+        "extensions"
+      ],
+      "properties": {
+        "migration_kind": {"type": "string", "enum": ["no_op_compatibility_record", "schema_projection_record", "manual_review_record"]},
+        "migration_plan_ref": {"$ref": "#/$defs/ref"},
+        "field_mapping_summary": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+        "unknown_field_disposition": {"type": "string", "enum": ["preserve_optional_fail_required", "manual_review", "refuse_unknown_required"]},
+        "manual_review_items": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+        "risk_class": {"type": "string", "enum": ["low", "medium", "high", "blocked"]},
+        "validation_refs": {"type": "array", "items": {"type": "string"}},
+        "rollback_requirements": {"type": "array", "items": {"type": "string"}},
+        "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "explicit_non_capabilities": {"type": "array", "items": {"type": "string"}},
+        "required_features": {"type": "array", "items": {"type": "string"}},
+        "optional_features": {"type": "array", "items": {"type": "string"}},
+        "destructive_migration": {"type": "boolean"},
+        "ambiguous_migration": {"type": "boolean"},
+        "source_output_used_as_target_truth": {"type": "boolean"},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "status",
+        "validation_result",
+        "proposed_capability",
+        "recommended_next_task",
+        "migration_record_digest",
+        "migration_apply_implemented",
+        "target_repository_mutation_implemented",
+        "extensions"
+      ],
+      "properties": {
+        "status": {"type": "string"},
+        "validation_result": {"type": "string"},
+        "proposed_capability": {"type": "string", "const": "migration_record_v0"},
+        "recommended_next_task": {"type": "string"},
+        "migration_record_digest": {"$ref": "#/$defs/digest"},
+        "migration_apply_implemented": {"type": "boolean"},
+        "target_repository_mutation_implemented": {"type": "boolean"},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    }
+  }
+}

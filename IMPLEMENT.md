@@ -9868,3 +9868,41 @@ scans, source-output misuse scan, diff checks, and commit-policy check.
 
 MigrationRecord v0 has not been started. The next serialized task is
 `AIDE-BUILD-MIGRATION-RECORD-V0-01`.
+
+## Work Item: AIDE-BUILD-MIGRATION-RECORD-V0-01
+
+### Summary
+
+Built MigrationRecord v0 as a no-apply distribution-safety protocol slice.
+
+### Implementation Notes
+
+- Added the MigrationRecord v0 schema, helper, CLI commands, fixture corpus,
+  focused tests, generated reports, queue packet, and task-local evidence.
+- MigrationRecord binds accepted InstallRecord v0 by source object ref, source
+  schema version, input digest, and deterministic output digest.
+- The record models migration kind, migration plan ref, field mapping summary,
+  unknown field disposition, manual review items, risk class, validation refs,
+  rollback requirements, evidence refs, explicit non-capabilities, required and
+  optional features, no-apply status, and extension maps.
+- Semantic validation fails closed for missing source object, missing input
+  digest, output digest mismatch, unknown required features/extensions,
+  destructive migration without rollback requirements, ambiguous migration
+  without manual review, source latest output misuse, source output as target
+  truth, missing evidence, apply authority claims, target mutation claims, and
+  digest mismatch.
+- Unknown optional features and extensions are preserved and tolerated.
+
+### Verification
+
+Validation receipts record compileall, focused MigrationRecord tests,
+`migration-record status`, `migration-record project`, `migration-record
+validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish
+validators, broad `aide_lite.py validate`, task inspect/evidence, path and
+secret-like scans, source-output misuse scan, diff checks, and commit-policy
+check.
+
+### Remaining Issues
+
+MigrationRecord v0 remains proposed until independent check and acceptance. The
+next serialized task is `AIDE-CHECK-MIGRATION-RECORD-V0-01`.

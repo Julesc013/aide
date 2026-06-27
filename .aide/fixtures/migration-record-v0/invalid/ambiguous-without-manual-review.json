@@ -1,0 +1,89 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "extensions": {},
+  "kind": "MigrationRecord",
+  "metadata": {
+    "created_at": "fixture-timestamp:migration-record-v0",
+    "created_by": "fixture",
+    "extensions": {},
+    "input_digest": "sha256:9c01b638175319a2c8fe5bcd8e3711b07ae49a1e6789da75ab3ddb9d63f79231",
+    "migration_record_ref": "aide://migration-record/minimal",
+    "output_digest": "sha256:9c01b638175319a2c8fe5bcd8e3711b07ae49a1e6789da75ab3ddb9d63f79231",
+    "prior_migration_record_ref": null,
+    "source_object_kind": "InstallRecord",
+    "source_object_ref": "aide://install-record/minimal",
+    "source_schema_version": "aide.install-record.v0",
+    "superseded_by_ref": null,
+    "target_schema_version": "aide.install-record.v0"
+  },
+  "schema_version": "aide.migration-record.v0",
+  "spec": {
+    "ambiguous_migration": true,
+    "destructive_migration": false,
+    "evidence_refs": [
+      "aide://evidence/migration-record-v0/source-projection"
+    ],
+    "explicit_non_capabilities": [
+      "install_apply",
+      "update_apply",
+      "migration_apply",
+      "repair_apply",
+      "rollback_apply",
+      "uninstall_apply",
+      "target_repository_mutation",
+      "target_scan_authority",
+      "release_archive_creation",
+      "release_publication",
+      "git_tag_creation",
+      "github_release_creation",
+      "upload",
+      "network_call",
+      "provider_model_call",
+      "workbench_runtime",
+      "commander",
+      "omnigent",
+      "worker_execution",
+      "preview_session_apply",
+      "development_transaction_apply",
+      "patch_transaction_apply",
+      "branch_worktree_automation"
+    ],
+    "extensions": {},
+    "field_mapping_summary": [
+      {
+        "disposition": "preserve",
+        "source_field": "root",
+        "target_field": "root"
+      }
+    ],
+    "manual_review_items": [],
+    "migration_kind": "no_op_compatibility_record",
+    "migration_plan_ref": "aide://migration-plan/minimal",
+    "optional_features": [],
+    "required_features": [
+      "migration_record_v0",
+      "install_record_v0",
+      "sha256_digest_canonical_json_v1",
+      "no_apply_migration_record_v0"
+    ],
+    "risk_class": "low",
+    "rollback_requirements": [
+      "record source digest; no apply performed"
+    ],
+    "source_output_used_as_target_truth": false,
+    "unknown_field_disposition": "preserve_optional_fail_required",
+    "validation_refs": [
+      "aide://validation/migration-record-v0/fixture"
+    ]
+  },
+  "status": {
+    "extensions": {},
+    "migration_apply_implemented": false,
+    "migration_record_digest": "sha256:853d8a1db9a3ffac7ddf52b36098ac343516715b3bddfb5b7ae0e0fbb21e7fff",
+    "proposed_capability": "migration_record_v0",
+    "recommended_next_task": "AIDE-CHECK-MIGRATION-RECORD-V0-01",
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "validation_result": "PASS_WITH_WARNINGS"
+  }
+}

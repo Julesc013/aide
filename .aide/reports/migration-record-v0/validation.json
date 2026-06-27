@@ -1,0 +1,223 @@
+{
+  "checks": {
+    "cli_registered": true,
+    "fixture_matrix_passed": true,
+    "helper_exists": true,
+    "input_digest_bound": true,
+    "install_record_accepted": true,
+    "migration_apply_not_implemented": true,
+    "migration_record_generated": true,
+    "migration_record_valid": true,
+    "output_digest_bound": true,
+    "release_publication_not_implemented": true,
+    "schema_alignment": true,
+    "schema_exists": true,
+    "source_output_not_target_truth": true,
+    "source_ref_bound": true,
+    "target_repository_mutation_not_implemented": true
+  },
+  "errors": [],
+  "explicit_non_capabilities": [
+    "install_apply",
+    "update_apply",
+    "migration_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "target_repository_mutation",
+    "target_scan_authority",
+    "release_archive_creation",
+    "release_publication",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "workbench_runtime",
+    "commander",
+    "omnigent",
+    "worker_execution",
+    "preview_session_apply",
+    "development_transaction_apply",
+    "patch_transaction_apply",
+    "branch_worktree_automation"
+  ],
+  "fixture_results": [
+    {
+      "case_id": "manual-review-ambiguous",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/valid/manual-review-ambiguous.json"
+    },
+    {
+      "case_id": "no-op-compatibility",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/valid/no-op-compatibility.json"
+    },
+    {
+      "case_id": "optional-extension-preserved",
+      "expected_refusal_codes": [],
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/valid/optional-extension-preserved.json"
+    },
+    {
+      "case_id": "ambiguous-without-manual-review",
+      "expected_refusal_codes": [
+        "migration_record.ambiguous_without_manual_review"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.ambiguous_without_manual_review"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/ambiguous-without-manual-review.json"
+    },
+    {
+      "case_id": "apply-claim",
+      "expected_refusal_codes": [
+        "migration_record.apply_authority_claimed"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.apply_authority_claimed"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/apply-claim.json"
+    },
+    {
+      "case_id": "destructive-without-rollback",
+      "expected_refusal_codes": [
+        "migration_record.destructive_without_rollback"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.destructive_without_rollback"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/destructive-without-rollback.json"
+    },
+    {
+      "case_id": "extension-required-unknown",
+      "expected_refusal_codes": [
+        "migration_record.extension_required_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.extension_required_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/extension-required-unknown.json"
+    },
+    {
+      "case_id": "missing-input-digest",
+      "expected_refusal_codes": [
+        "migration_record.input_digest_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.input_digest_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/missing-input-digest.json"
+    },
+    {
+      "case_id": "missing-source-object",
+      "expected_refusal_codes": [
+        "migration_record.source_object_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.source_object_mismatch",
+        "migration_record.source_object_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/missing-source-object.json"
+    },
+    {
+      "case_id": "output-digest-mismatch",
+      "expected_refusal_codes": [
+        "migration_record.output_digest_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.output_digest_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/output-digest-mismatch.json"
+    },
+    {
+      "case_id": "source-latest-output",
+      "expected_refusal_codes": [
+        "migration_record.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/source-latest-output.json"
+    },
+    {
+      "case_id": "source-output-target-truth",
+      "expected_refusal_codes": [
+        "migration_record.source_output_as_target_truth"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.source_output_as_target_truth"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/source-output-target-truth.json"
+    },
+    {
+      "case_id": "unknown-required-feature",
+      "expected_refusal_codes": [
+        "migration_record.unknown_required_feature"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "migration_record.unknown_required_feature"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": "C:/Projects/AIDE/aide/.aide/fixtures/migration-record-v0/invalid/unknown-required-feature.json"
+    }
+  ],
+  "migration_record_validation": {
+    "error_count": 0,
+    "errors": [],
+    "refusal_codes": [],
+    "status": "PASS_WITH_WARNINGS",
+    "valid": true,
+    "warnings": []
+  },
+  "proposed_capability": "migration_record_v0",
+  "recommended_next_task": "AIDE-CHECK-MIGRATION-RECORD-V0-01",
+  "schema_alignment_errors": [],
+  "schema_version": "aide.migration-record-validation.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "MigrationRecord v0 is proposed until independent check and acceptance.",
+    "MigrationRecord records migration decisions only and performs no apply."
+  ]
+}

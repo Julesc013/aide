@@ -1,0 +1,105 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "extensions": {},
+  "kind": "MigrationRecord",
+  "metadata": {
+    "created_at": "fixture-timestamp:migration-record-v0",
+    "created_by": "aide-self-hosting-fixture",
+    "extensions": {},
+    "input_digest": "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71",
+    "migration_record_ref": "aide://migration-record/install-record-v0/no-op-compatibility",
+    "output_digest": "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71",
+    "prior_migration_record_ref": null,
+    "source_object_kind": "InstallRecord",
+    "source_object_ref": "aide://install-record/aide-self-install-record-v0",
+    "source_schema_version": "aide.install-record.v0",
+    "superseded_by_ref": null,
+    "target_schema_version": "aide.install-record.v0"
+  },
+  "schema_version": "aide.migration-record.v0",
+  "spec": {
+    "ambiguous_migration": false,
+    "destructive_migration": false,
+    "evidence_refs": [
+      "aide://evidence/migration-record-v0/source-projection"
+    ],
+    "explicit_non_capabilities": [
+      "install_apply",
+      "update_apply",
+      "migration_apply",
+      "repair_apply",
+      "rollback_apply",
+      "uninstall_apply",
+      "target_repository_mutation",
+      "target_scan_authority",
+      "release_archive_creation",
+      "release_publication",
+      "git_tag_creation",
+      "github_release_creation",
+      "upload",
+      "network_call",
+      "provider_model_call",
+      "workbench_runtime",
+      "commander",
+      "omnigent",
+      "worker_execution",
+      "preview_session_apply",
+      "development_transaction_apply",
+      "patch_transaction_apply",
+      "branch_worktree_automation"
+    ],
+    "extensions": {},
+    "field_mapping_summary": [
+      {
+        "disposition": "preserve",
+        "reason": "Accepted InstallRecord v0 is already at target schema for this record.",
+        "source_field": "InstallRecord v0",
+        "target_field": "InstallRecord v0"
+      }
+    ],
+    "manual_review_items": [],
+    "migration_kind": "no_op_compatibility_record",
+    "migration_plan_ref": "aide://migration-plan/install-record-v0/no-op-compatibility",
+    "optional_features": [
+      "no_op_compatibility_record_v0"
+    ],
+    "required_features": [
+      "migration_record_v0",
+      "install_record_v0",
+      "sha256_digest_canonical_json_v1",
+      "no_apply_migration_record_v0"
+    ],
+    "risk_class": "low",
+    "rollback_requirements": [
+      "No apply is performed; rollback requirement is to preserve source object digest and evidence refs."
+    ],
+    "source_output_used_as_target_truth": false,
+    "unknown_field_disposition": "preserve_optional_fail_required",
+    "validation_refs": [
+      "aide://validation/migration-record-v0/schema",
+      "aide://validation/migration-record-v0/no-apply-boundary"
+    ]
+  },
+  "status": {
+    "branch_worktree_automation_implemented": false,
+    "commander_implemented": false,
+    "extensions": {},
+    "install_apply_implemented": false,
+    "migration_apply_implemented": false,
+    "migration_record_digest": "sha256:21825df095ae26b7c1e5969712bf4a856b50e5d86b6c3c732df5d96fba0d29dc",
+    "network_calls_implemented": false,
+    "omnigent_implemented": false,
+    "proposed_capability": "migration_record_v0",
+    "provider_model_calls_implemented": false,
+    "recommended_next_task": "AIDE-CHECK-MIGRATION-RECORD-V0-01",
+    "release_publication_implemented": false,
+    "rollback_apply_implemented": false,
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "target_scan_authority_implemented": false,
+    "uninstall_apply_implemented": false,
+    "update_apply_implemented": false,
+    "validation_result": "PASS_WITH_WARNINGS",
+    "workbench_runtime_implemented": false
+  }
+}

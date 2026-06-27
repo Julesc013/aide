@@ -1,0 +1,6 @@
+{
+  "input_digest": "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71",
+  "output_digest": "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71",
+  "schema_version": "aide.migration-record-source-binding.v0",
+  "source_object_ref": "aide://install-record/aide-self-install-record-v0"
+}

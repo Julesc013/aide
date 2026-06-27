@@ -1,0 +1,65 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-MIGRATION-RECORD-V0-01
+title: Build MigrationRecord v0
+type: build
+status: needs_review
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-CHECK-MIGRATION-RECORD-V0-01
+depends_on:
+  - AIDE-ACCEPT-INSTALL-RECORD-V0-01
+  - AIDE-DISTRIBUTION-SAFETY-WAVE-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-BUILD-MIGRATION-RECORD-V0-01/**
+    - .aide/protocol/aide-migration-record-v0.schema.json
+    - core/protocol/migration_record.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_migration_record_v0.py
+    - .aide/fixtures/migration-record-v0/**
+    - .aide/reports/migration-record-v0/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .aide/release/dist/**
+    - .aide.local/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+evidence:
+  required:
+    - live-truth-review.md
+    - allowed-paths.md
+    - implementation-summary.md
+    - contract-summary.md
+    - validation-commands.md
+    - validation-results.md
+    - validation.md
+    - safety-scans.md
+    - changed-files.md
+    - remaining-risks.md
+    - next-task-routing.md
+non_capabilities:
+  - migration apply
+  - install apply
+  - update apply
+  - rollback apply
+  - uninstall apply
+  - target repository mutation
+  - target scan authority
+  - release archive creation
+  - Git tag
+  - GitHub Release
+  - upload
+  - provider/model/network calls
+  - Workbench runtime
+  - Commander
+  - Omnigent
+  - branch/worktree automation
+notes:
+  - MigrationRecord v0 records migration decisions only.
+  - It does not apply migrations, mutate targets, scan targets, publish releases, or start downstream UpdatePlan work.

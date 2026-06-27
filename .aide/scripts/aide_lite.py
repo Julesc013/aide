@@ -7936,6 +7936,22 @@ def load_install_record_module(repo_root: Path):
     return module
 
 
+def load_migration_record_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/migration_record.py"
+    if not module_path.exists():
+        raise ValueError("MigrationRecord module missing: core/protocol/migration_record.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_migration_record", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("MigrationRecord module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_conformance_profile_module(repo_root: Path):
     module_path = repo_root / "core/protocol/conformance_profile.py"
     if not module_path.exists():
@@ -34761,6 +34777,111 @@ def command_install_record_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_migration_record_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'migration_record_v0')}")
+    print(f"migration_apply_implemented: {str(data.get('migration_apply_implemented', False)).lower()}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"target_scan_authority_implemented: {str(data.get('target_scan_authority_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("commander_implemented: false")
+    print("omnigent_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_migration_record_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_migration_record_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite migration-record status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_migration_record_boundary_lines({})
+        return 1
+    print("AIDE Lite migration-record status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"install_record_acceptance_report_exists: {str(data.get('install_record_acceptance_report_exists', False)).lower()}")
+    print(f"migration_record_report_exists: {str(data.get('migration_record_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_migration_record_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_migration_record_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_migration_record_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite migration-record project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_migration_record_boundary_lines({})
+        return 1
+    print("AIDE Lite migration-record project")
+    print(f"result: {report.get('status')}")
+    print(f"migration_record_path: {report.get('migration_record_path')}")
+    print(f"migration_record_digest: {report.get('migration_record_digest')}")
+    print(f"source_object_ref: {report.get('source_object_ref')}")
+    print(f"source_schema_version: {report.get('source_schema_version')}")
+    print(f"target_schema_version: {report.get('target_schema_version')}")
+    print(f"migration_kind: {report.get('migration_kind')}")
+    print(f"risk_class: {report.get('risk_class')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_migration_record_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_migration_record_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_migration_record_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite migration-record validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_migration_record_boundary_lines({})
+        return 1
+    print("AIDE Lite migration-record validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "migration_record_generated",
+        "migration_record_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "install_record_accepted",
+        "source_ref_bound",
+        "input_digest_bound",
+        "output_digest_bound",
+        "migration_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "source_output_not_target_truth",
+        "release_publication_not_implemented",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_migration_record_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
     print("profile_only: true")
     print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
@@ -39823,6 +39944,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     install_record_subparsers.add_parser("status").set_defaults(handler=command_install_record_status)
     install_record_subparsers.add_parser("project").set_defaults(handler=command_install_record_project)
     install_record_subparsers.add_parser("validate").set_defaults(handler=command_install_record_validate)
+
+    migration_record_parser = subparsers.add_parser("migration-record")
+    migration_record_parser.set_defaults(handler=command_migration_record_status)
+    migration_record_subparsers = migration_record_parser.add_subparsers(dest="migration_record_command", required=False)
+    migration_record_subparsers.add_parser("status").set_defaults(handler=command_migration_record_status)
+    migration_record_subparsers.add_parser("project").set_defaults(handler=command_migration_record_project)
+    migration_record_subparsers.add_parser("validate").set_defaults(handler=command_migration_record_validate)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)
