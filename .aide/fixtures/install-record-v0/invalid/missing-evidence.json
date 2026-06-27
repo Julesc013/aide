@@ -1,0 +1,121 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "extensions": {},
+  "kind": "InstallRecord",
+  "metadata": {
+    "created_at": "fixture-timestamp:install-record-v0",
+    "created_by": "fixture",
+    "created_from": "fixture_projection",
+    "extensions": {},
+    "install_record_ref": "aide://install-record/minimal",
+    "ownership_ledger_digest": "sha256:de12996adcf9206fa838f5ec226b9974225a1b1eaf950d447bcc25a29d695e1a",
+    "ownership_ledger_ref": "aide://ownership-ledger/fixture",
+    "prior_install_record_ref": null,
+    "project_lock_digest": "sha256:12a52afb3f687e3e588bff48b77897ae9a50ae2737af139d84baefdf25203be9",
+    "project_lock_ref": "aide://project-lock/fixture-minimal",
+    "source_distribution_digest": "sha256:d58c533fd233e57c1a1cf6ef482a76a5a0d1158106a4f3ae8c5376b8418f0b63",
+    "source_distribution_ref": "aide://distribution/fixture-minimal",
+    "superseded_by_ref": null,
+    "target_project_identity": "fixture/project",
+    "target_project_ref": "aide://project/fixture"
+  },
+  "schema_version": "aide.install-record.v0",
+  "spec": {
+    "evidence_refs": [],
+    "explicit_non_capabilities": [
+      "branch_worktree_automation",
+      "commander",
+      "development_transaction_apply",
+      "git_tag_creation",
+      "github_release_creation",
+      "install_apply",
+      "migration_apply",
+      "network_call",
+      "omnigent",
+      "patch_transaction_apply",
+      "preview_session_apply",
+      "provider_model_call",
+      "release_archive_creation",
+      "release_publication",
+      "repair_apply",
+      "rollback_apply",
+      "target_repository_mutation",
+      "target_scan_authority",
+      "uninstall_apply",
+      "update_apply",
+      "upload",
+      "workbench_runtime",
+      "worker_execution"
+    ],
+    "extensions": {},
+    "install_mode": "observed_fresh_no_apply",
+    "install_source": "fixture_projection",
+    "installed_component_refs": [
+      "aide://distribution/component/aide-lite-pack-v0"
+    ],
+    "installed_file_entry_refs": [
+      "aide://ownership-entry/evidence-only-queue-evidence",
+      "aide://ownership-entry/local-only-operator-state",
+      "aide://ownership-entry/never-touch-git",
+      "aide://ownership-entry/preserved-legacy-state",
+      "aide://ownership-entry/project-generated-context",
+      "aide://ownership-entry/project-overlay-policy",
+      "aide://ownership-entry/project-owned-readme",
+      "aide://ownership-entry/runtime-generated-local-state",
+      "aide://ownership-entry/unknown-unclassified",
+      "aide://ownership-entry/vendor-file-aide-lite-cli",
+      "aide://ownership-entry/vendor-file-project-lock-schema"
+    ],
+    "installed_managed_section_refs": [
+      "aide://ownership-entry/vendor-section-agents-summary"
+    ],
+    "observed_existing_state": {
+      "extensions": {},
+      "observed_paths": [
+        ".aide.local/**",
+        ".aide/context/generated/context-pack.json",
+        ".aide/legacy/**",
+        ".aide/project-overlays/policy.yaml",
+        ".aide/protocol/aide-project-lock-v0.schema.json",
+        ".aide/queue/**/evidence/**",
+        ".aide/scripts/aide_lite.py",
+        ".git/**",
+        "AGENTS.md",
+        "README.md",
+        "local-only/**",
+        "unclassified/**"
+      ],
+      "source_output_used_as_target_truth": false,
+      "state_kind": "fresh_fixture_no_apply",
+      "target_repository_mutation_performed": false
+    },
+    "optional_features": [],
+    "required_features": [
+      "distribution_manifest_v1",
+      "install_record_v0",
+      "ownership_ledger_v1",
+      "project_lock_v0",
+      "sha256_digest_canonical_json_v1"
+    ],
+    "validation_refs": [
+      "aide://validation/install-record-v0/fixture"
+    ],
+    "warnings": []
+  },
+  "status": {
+    "extensions": {},
+    "install_apply_implemented": false,
+    "install_record_digest": "sha256:6aa238bf68e12bc6e9c652b0a30cfc0de5d4058a81d5d230296008ac5cb1be2a",
+    "migration_apply_implemented": false,
+    "proposed_capability": "install_record_v0",
+    "recommended_next_task": "AIDE-CHECK-INSTALL-RECORD-V0-01",
+    "release_publication_implemented": false,
+    "rollback_apply_implemented": false,
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "target_scan_authority_implemented": false,
+    "uninstall_apply_implemented": false,
+    "update_apply_implemented": false,
+    "validation_result": "PASS_WITH_WARNINGS"
+  }
+}

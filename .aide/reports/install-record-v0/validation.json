@@ -1,0 +1,403 @@
+{
+  "checks": {
+    "cli_registered": true,
+    "component_refs_known": true,
+    "distribution_ref_bound": true,
+    "file_entry_refs_known": true,
+    "fixture_matrix_passed": true,
+    "helper_exists": true,
+    "install_apply_not_implemented": true,
+    "install_record_generated": true,
+    "install_record_valid": true,
+    "managed_section_refs_known": true,
+    "migration_apply_not_implemented": true,
+    "ownership_ledger_accepted": true,
+    "ownership_ledger_digest_bound": true,
+    "project_lock_digest_bound": true,
+    "release_publication_not_implemented": true,
+    "rollback_apply_not_implemented": true,
+    "schema_alignment": true,
+    "schema_exists": true,
+    "source_output_not_target_truth": true,
+    "target_repository_mutation_not_implemented": true,
+    "target_scan_authority_not_implemented": true,
+    "uninstall_apply_not_implemented": true,
+    "update_apply_not_implemented": true
+  },
+  "errors": [],
+  "explicit_non_capabilities": [
+    "install_apply",
+    "update_apply",
+    "migration_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "target_repository_mutation",
+    "target_scan_authority",
+    "release_archive_creation",
+    "release_publication",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "workbench_runtime",
+    "commander",
+    "omnigent",
+    "worker_execution",
+    "preview_session_apply",
+    "development_transaction_apply",
+    "patch_transaction_apply",
+    "branch_worktree_automation"
+  ],
+  "fixture_results": [
+    {
+      "case_id": "existing-observed-install",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/existing-observed-install.json"
+    },
+    {
+      "case_id": "fresh-observed-install",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/fresh-observed-install.json"
+    },
+    {
+      "case_id": "managed-file-observation",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/managed-file-observation.json"
+    },
+    {
+      "case_id": "managed-section-observation",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/managed-section-observation.json"
+    },
+    {
+      "case_id": "optional-extension-preserved",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/optional-extension-preserved.json"
+    },
+    {
+      "case_id": "warning-only-partial-observation",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/warning-only-partial-observation.json"
+    },
+    {
+      "case_id": "absolute-path",
+      "expected_refusal_codes": [
+        "install_record.absolute_path_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.absolute_path_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/absolute-path.json"
+    },
+    {
+      "case_id": "apply-claim",
+      "expected_refusal_codes": [
+        "install_record.apply_authority_claimed"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.apply_authority_claimed"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/apply-claim.json"
+    },
+    {
+      "case_id": "extension-required-unknown",
+      "expected_refusal_codes": [
+        "install_record.extension_required_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.extension_required_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/extension-required-unknown.json"
+    },
+    {
+      "case_id": "missing-distribution",
+      "expected_refusal_codes": [
+        "install_record.distribution_missing",
+        "install_record.distribution_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.distribution_mismatch",
+        "install_record.distribution_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/missing-distribution.json"
+    },
+    {
+      "case_id": "missing-evidence",
+      "expected_refusal_codes": [
+        "install_record.evidence_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.evidence_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/missing-evidence.json"
+    },
+    {
+      "case_id": "missing-lock",
+      "expected_refusal_codes": [
+        "install_record.project_lock_missing",
+        "install_record.project_lock_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.project_lock_mismatch",
+        "install_record.project_lock_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/missing-lock.json"
+    },
+    {
+      "case_id": "missing-ownership-ledger",
+      "expected_refusal_codes": [
+        "install_record.ownership_ledger_missing",
+        "install_record.ownership_ledger_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.ownership_ledger_mismatch",
+        "install_record.ownership_ledger_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/missing-ownership-ledger.json"
+    },
+    {
+      "case_id": "ownership-ledger-mismatch",
+      "expected_refusal_codes": [
+        "install_record.ownership_ledger_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.ownership_ledger_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/ownership-ledger-mismatch.json"
+    },
+    {
+      "case_id": "project-lock-mismatch",
+      "expected_refusal_codes": [
+        "install_record.project_lock_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.project_lock_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/project-lock-mismatch.json"
+    },
+    {
+      "case_id": "source-latest-output",
+      "expected_refusal_codes": [
+        "install_record.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/source-latest-output.json"
+    },
+    {
+      "case_id": "source-mismatch",
+      "expected_refusal_codes": [
+        "install_record.distribution_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.distribution_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/source-mismatch.json"
+    },
+    {
+      "case_id": "source-output-target-truth",
+      "expected_refusal_codes": [
+        "install_record.source_output_as_target_truth"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.source_output_as_target_truth"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/source-output-target-truth.json"
+    },
+    {
+      "case_id": "target-mutation-claim",
+      "expected_refusal_codes": [
+        "install_record.target_mutation_claimed"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.target_mutation_claimed"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/target-mutation-claim.json"
+    },
+    {
+      "case_id": "traversal-path",
+      "expected_refusal_codes": [
+        "install_record.path_traversal_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.path_traversal_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/traversal-path.json"
+    },
+    {
+      "case_id": "unknown-component-ref",
+      "expected_refusal_codes": [
+        "install_record.component_ref_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.component_ref_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/unknown-component-ref.json"
+    },
+    {
+      "case_id": "unknown-managed-section-ref",
+      "expected_refusal_codes": [
+        "install_record.managed_section_ref_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.managed_section_ref_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/unknown-managed-section-ref.json"
+    },
+    {
+      "case_id": "unknown-ownership-entry-ref",
+      "expected_refusal_codes": [
+        "install_record.ownership_entry_ref_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.ownership_entry_ref_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/unknown-ownership-entry-ref.json"
+    },
+    {
+      "case_id": "unknown-required-feature",
+      "expected_refusal_codes": [
+        "install_record.unknown_required_feature"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.unknown_required_feature"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/unknown-required-feature.json"
+    }
+  ],
+  "install_record_validation": {
+    "error_count": 0,
+    "errors": [],
+    "refusal_codes": [],
+    "status": "PASS_WITH_WARNINGS",
+    "valid": true,
+    "warnings": []
+  },
+  "project_report": {
+    "explicit_non_capabilities": [
+      "install_apply",
+      "update_apply",
+      "migration_apply",
+      "repair_apply",
+      "rollback_apply",
+      "uninstall_apply",
+      "target_repository_mutation",
+      "target_scan_authority",
+      "release_archive_creation",
+      "release_publication",
+      "git_tag_creation",
+      "github_release_creation",
+      "upload",
+      "network_call",
+      "provider_model_call",
+      "workbench_runtime",
+      "commander",
+      "omnigent",
+      "worker_execution",
+      "preview_session_apply",
+      "development_transaction_apply",
+      "patch_transaction_apply",
+      "branch_worktree_automation"
+    ],
+    "install_record_digest": "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71",
+    "install_record_path": ".aide/reports/install-record-v0/install-record.json",
+    "installed_component_count": 1,
+    "installed_file_entry_count": 11,
+    "installed_managed_section_count": 1,
+    "proposed_capability": "install_record_v0",
+    "recommended_next_task": "AIDE-CHECK-INSTALL-RECORD-V0-01",
+    "schema_version": "aide.install-record-project-report.v0",
+    "source_artifacts_mutated": false,
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "warnings": [
+      "InstallRecord v0 records install state metadata only and performs no install apply.",
+      "Observed paths come from accepted OwnershipLedger projection, not a target scan authority."
+    ]
+  },
+  "proposed_capability": "install_record_v0",
+  "recommended_next_task": "AIDE-CHECK-INSTALL-RECORD-V0-01",
+  "schema_alignment_errors": [],
+  "schema_version": "aide.install-record-validation.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "InstallRecord v0 is proposed until independent check and acceptance.",
+    "InstallRecord records install metadata only and performs no install or target mutation."
+  ]
+}

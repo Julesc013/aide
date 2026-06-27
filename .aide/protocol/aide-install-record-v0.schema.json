@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aide.dev/schemas/aide-install-record-v0.schema.json",
+  "title": "AIDE InstallRecord v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "apiVersion",
+    "kind",
+    "schema_version",
+    "metadata",
+    "spec",
+    "status",
+    "extensions"
+  ],
+  "properties": {
+    "apiVersion": {"type": "string", "const": "aide.dev/v1alpha1"},
+    "kind": {"type": "string", "const": "InstallRecord"},
+    "schema_version": {"type": "string", "const": "aide.install-record.v0"},
+    "metadata": {"$ref": "#/$defs/metadata"},
+    "spec": {"$ref": "#/$defs/spec"},
+    "status": {"$ref": "#/$defs/status"},
+    "extensions": {"$ref": "#/$defs/extensions"}
+  },
+  "$defs": {
+    "extensions": {"type": "object", "additionalProperties": true},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "ref": {"type": "string", "pattern": "^aide://[A-Za-z0-9_.:/-]+$"},
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "install_record_ref",
+        "target_project_ref",
+        "target_project_identity",
+        "source_distribution_ref",
+        "source_distribution_digest",
+        "project_lock_ref",
+        "project_lock_digest",
+        "ownership_ledger_ref",
+        "ownership_ledger_digest",
+        "created_at",
+        "created_by",
+        "created_from",
+        "prior_install_record_ref",
+        "superseded_by_ref",
+        "extensions"
+      ],
+      "properties": {
+        "install_record_ref": {"$ref": "#/$defs/ref"},
+        "target_project_ref": {"$ref": "#/$defs/ref"},
+        "target_project_identity": {"type": "string", "minLength": 1},
+        "source_distribution_ref": {"$ref": "#/$defs/ref"},
+        "source_distribution_digest": {"$ref": "#/$defs/digest"},
+        "project_lock_ref": {"$ref": "#/$defs/ref"},
+        "project_lock_digest": {"$ref": "#/$defs/digest"},
+        "ownership_ledger_ref": {"$ref": "#/$defs/ref"},
+        "ownership_ledger_digest": {"$ref": "#/$defs/digest"},
+        "created_at": {"type": "string", "minLength": 1},
+        "created_by": {"type": "string", "minLength": 1},
+        "created_from": {"type": "string", "minLength": 1},
+        "prior_install_record_ref": {"type": ["string", "null"]},
+        "superseded_by_ref": {"type": ["string", "null"]},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "install_mode",
+        "install_source",
+        "observed_existing_state",
+        "installed_component_refs",
+        "installed_file_entry_refs",
+        "installed_managed_section_refs",
+        "validation_refs",
+        "evidence_refs",
+        "warnings",
+        "explicit_non_capabilities",
+        "required_features",
+        "optional_features",
+        "extensions"
+      ],
+      "properties": {
+        "install_mode": {"type": "string", "enum": ["observed_fresh_no_apply", "observed_existing_no_apply", "metadata_only_no_apply"]},
+        "install_source": {"type": "string", "enum": ["accepted_distribution_manifest", "accepted_project_lock", "accepted_ownership_ledger", "fixture_projection"]},
+        "observed_existing_state": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["state_kind", "observed_paths", "source_output_used_as_target_truth", "target_repository_mutation_performed", "extensions"],
+          "properties": {
+            "state_kind": {"type": "string"},
+            "observed_paths": {"type": "array", "items": {"type": "string"}},
+            "source_output_used_as_target_truth": {"type": "boolean", "const": false},
+            "target_repository_mutation_performed": {"type": "boolean", "const": false},
+            "extensions": {"$ref": "#/$defs/extensions"}
+          }
+        },
+        "installed_component_refs": {"type": "array", "items": {"type": "string"}},
+        "installed_file_entry_refs": {"type": "array", "items": {"type": "string"}},
+        "installed_managed_section_refs": {"type": "array", "items": {"type": "string"}},
+        "validation_refs": {"type": "array", "items": {"type": "string"}},
+        "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "warnings": {"type": "array", "items": {"type": "string"}},
+        "explicit_non_capabilities": {"type": "array", "items": {"type": "string"}},
+        "required_features": {"type": "array", "items": {"type": "string"}},
+        "optional_features": {"type": "array", "items": {"type": "string"}},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "validation_result",
+        "proposed_capability",
+        "recommended_next_task",
+        "install_record_digest",
+        "install_apply_implemented",
+        "update_apply_implemented",
+        "migration_apply_implemented",
+        "rollback_apply_implemented",
+        "uninstall_apply_implemented",
+        "target_repository_mutation_implemented",
+        "target_scan_authority_implemented",
+        "release_publication_implemented",
+        "extensions"
+      ],
+      "properties": {
+        "status": {"type": "string", "enum": ["PASS", "PASS_WITH_WARNINGS", "FAILED_VALIDATION"]},
+        "validation_result": {"type": "string", "enum": ["PASS", "PASS_WITH_WARNINGS", "FAILED_VALIDATION"]},
+        "proposed_capability": {"type": "string", "const": "install_record_v0"},
+        "recommended_next_task": {"type": "string", "const": "AIDE-CHECK-INSTALL-RECORD-V0-01"},
+        "install_record_digest": {"$ref": "#/$defs/digest"},
+        "install_apply_implemented": {"type": "boolean", "const": false},
+        "update_apply_implemented": {"type": "boolean", "const": false},
+        "migration_apply_implemented": {"type": "boolean", "const": false},
+        "rollback_apply_implemented": {"type": "boolean", "const": false},
+        "uninstall_apply_implemented": {"type": "boolean", "const": false},
+        "target_repository_mutation_implemented": {"type": "boolean", "const": false},
+        "target_scan_authority_implemented": {"type": "boolean", "const": false},
+        "release_publication_implemented": {"type": "boolean", "const": false},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      }
+    }
+  }
+}

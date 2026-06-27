@@ -9769,3 +9769,39 @@ post-commit commit-policy check.
 
 The wave controller stops at `needs_review`. The next serialized task is
 `AIDE-BUILD-INSTALL-RECORD-V0-01`.
+
+## Work Item: AIDE-BUILD-INSTALL-RECORD-V0-01
+
+### Summary
+
+Built InstallRecord v0 as a no-apply distribution-safety protocol slice.
+
+### Implementation Notes
+
+- Added the InstallRecord v0 schema, helper, CLI commands, fixture corpus,
+  focused tests, generated reports, queue packet, and task-local evidence.
+- InstallRecord binds the accepted DistributionManifest, ProjectLock, and
+  OwnershipLedger by refs and digests.
+- The record models install mode/source, observed existing state, installed
+  component refs, installed file-entry refs, installed managed-section refs,
+  validation refs, evidence refs, warnings, explicit non-capabilities,
+  deterministic creator/timestamp metadata, and extension maps.
+- Semantic validation fails closed for missing predecessor refs, predecessor
+  mismatches, unknown installed refs, apply authority claims, target mutation
+  claims, unknown required features, absolute paths, traversal paths,
+  source-output misuse, missing evidence, digest mismatch, and unknown required
+  extensions.
+- Unknown optional features and extensions are preserved and tolerated.
+
+### Verification
+
+Validation receipts record compileall, focused InstallRecord tests,
+`install-record status`, `install-record project`, `install-record validate`,
+predecessor regression validation, Q43-Q48 no-apply/no-publish validators,
+broad `aide_lite.py validate`, task inspect/evidence, path and secret-like
+scans, source-output misuse scan, diff checks, and commit-policy check.
+
+### Remaining Issues
+
+InstallRecord v0 remains proposed until independent check and acceptance. The
+next serialized task is `AIDE-CHECK-INSTALL-RECORD-V0-01`.

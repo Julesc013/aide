@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-INSTALL-RECORD-V0-01
+status: needs_review
+classification: build_completed
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+proposed_capability: install_record_v0
+next_task: AIDE-CHECK-INSTALL-RECORD-V0-01
+notes:
+  - InstallRecord v0 is proposed until independent check and acceptance.
+  - No apply behavior, target mutation, release publication, or provider/model/network behavior was started.

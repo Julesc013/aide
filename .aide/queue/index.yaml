@@ -2619,3 +2619,13 @@ items:
   prompt: .aide/queue/AIDE-DISTRIBUTION-SAFETY-WAVE-01/prompt.md
   evidence: .aide/queue/AIDE-DISTRIBUTION-SAFETY-WAVE-01/evidence
   description: Wave-control planning task that serializes the distribution safety path after accepted DistributionManifest v1, ProjectLock v0, and OwnershipLedger v1. Produces the dependency map, object responsibility map, no-apply/no-publish boundary, validation matrix, repair-routing matrix, stop-condition matrix, canary rationale, and next concrete prompt for AIDE-BUILD-INSTALL-RECORD-V0-01. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and does not implement InstallRecord or downstream protocol objects, apply behavior, target mutation, release archives, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, or project canaries.
+- id: AIDE-BUILD-INSTALL-RECORD-V0-01
+  status: needs_review
+  planning_state: build_completed
+  result: PASS_WITH_WARNINGS
+  title: Build InstallRecord v0
+  task: .aide/queue/AIDE-BUILD-INSTALL-RECORD-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-INSTALL-RECORD-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-INSTALL-RECORD-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-INSTALL-RECORD-V0-01/evidence
+  description: Build task for InstallRecord v0 as a no-apply protocol/helper/projection/validation slice. Adds schema, helper, CLI commands, fixtures, focused tests, reports, and evidence. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-INSTALL-RECORD-V0-01. Does not perform install/update/migration/rollback/uninstall apply, target scan authority, target mutation, release archive generation, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, worker execution, source-change apply, branch/worktree automation, or canaries.

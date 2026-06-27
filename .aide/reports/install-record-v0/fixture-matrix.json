@@ -1,0 +1,293 @@
+{
+  "fixture_results": [
+    {
+      "case_id": "existing-observed-install",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/existing-observed-install.json"
+    },
+    {
+      "case_id": "fresh-observed-install",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/fresh-observed-install.json"
+    },
+    {
+      "case_id": "managed-file-observation",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/managed-file-observation.json"
+    },
+    {
+      "case_id": "managed-section-observation",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/managed-section-observation.json"
+    },
+    {
+      "case_id": "optional-extension-preserved",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/optional-extension-preserved.json"
+    },
+    {
+      "case_id": "warning-only-partial-observation",
+      "expected_result": "PASS_WITH_WARNINGS",
+      "observed_refusal_codes": [],
+      "observed_result": "PASS_WITH_WARNINGS",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/valid/warning-only-partial-observation.json"
+    },
+    {
+      "case_id": "absolute-path",
+      "expected_refusal_codes": [
+        "install_record.absolute_path_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.absolute_path_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/absolute-path.json"
+    },
+    {
+      "case_id": "apply-claim",
+      "expected_refusal_codes": [
+        "install_record.apply_authority_claimed"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.apply_authority_claimed"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/apply-claim.json"
+    },
+    {
+      "case_id": "extension-required-unknown",
+      "expected_refusal_codes": [
+        "install_record.extension_required_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.extension_required_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/extension-required-unknown.json"
+    },
+    {
+      "case_id": "missing-distribution",
+      "expected_refusal_codes": [
+        "install_record.distribution_missing",
+        "install_record.distribution_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.distribution_mismatch",
+        "install_record.distribution_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/missing-distribution.json"
+    },
+    {
+      "case_id": "missing-evidence",
+      "expected_refusal_codes": [
+        "install_record.evidence_missing"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.evidence_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/missing-evidence.json"
+    },
+    {
+      "case_id": "missing-lock",
+      "expected_refusal_codes": [
+        "install_record.project_lock_missing",
+        "install_record.project_lock_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.project_lock_mismatch",
+        "install_record.project_lock_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/missing-lock.json"
+    },
+    {
+      "case_id": "missing-ownership-ledger",
+      "expected_refusal_codes": [
+        "install_record.ownership_ledger_missing",
+        "install_record.ownership_ledger_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.ownership_ledger_mismatch",
+        "install_record.ownership_ledger_missing"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/missing-ownership-ledger.json"
+    },
+    {
+      "case_id": "ownership-ledger-mismatch",
+      "expected_refusal_codes": [
+        "install_record.ownership_ledger_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.ownership_ledger_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/ownership-ledger-mismatch.json"
+    },
+    {
+      "case_id": "project-lock-mismatch",
+      "expected_refusal_codes": [
+        "install_record.project_lock_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.project_lock_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/project-lock-mismatch.json"
+    },
+    {
+      "case_id": "source-latest-output",
+      "expected_refusal_codes": [
+        "install_record.source_state_contamination"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.source_state_contamination"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/source-latest-output.json"
+    },
+    {
+      "case_id": "source-mismatch",
+      "expected_refusal_codes": [
+        "install_record.distribution_mismatch"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.distribution_mismatch"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/source-mismatch.json"
+    },
+    {
+      "case_id": "source-output-target-truth",
+      "expected_refusal_codes": [
+        "install_record.source_output_as_target_truth"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.source_output_as_target_truth"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/source-output-target-truth.json"
+    },
+    {
+      "case_id": "target-mutation-claim",
+      "expected_refusal_codes": [
+        "install_record.target_mutation_claimed"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.target_mutation_claimed"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/target-mutation-claim.json"
+    },
+    {
+      "case_id": "traversal-path",
+      "expected_refusal_codes": [
+        "install_record.path_traversal_forbidden"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.path_traversal_forbidden"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/traversal-path.json"
+    },
+    {
+      "case_id": "unknown-component-ref",
+      "expected_refusal_codes": [
+        "install_record.component_ref_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.component_ref_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/unknown-component-ref.json"
+    },
+    {
+      "case_id": "unknown-managed-section-ref",
+      "expected_refusal_codes": [
+        "install_record.managed_section_ref_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.managed_section_ref_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/unknown-managed-section-ref.json"
+    },
+    {
+      "case_id": "unknown-ownership-entry-ref",
+      "expected_refusal_codes": [
+        "install_record.ownership_entry_ref_unknown"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.ownership_entry_ref_unknown"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/unknown-ownership-entry-ref.json"
+    },
+    {
+      "case_id": "unknown-required-feature",
+      "expected_refusal_codes": [
+        "install_record.unknown_required_feature"
+      ],
+      "expected_result": "FAILED_VALIDATION",
+      "observed_refusal_codes": [
+        "install_record.unknown_required_feature"
+      ],
+      "observed_result": "FAILED_VALIDATION",
+      "passed": true,
+      "path": ".aide/fixtures/install-record-v0/invalid/unknown-required-feature.json"
+    }
+  ],
+  "schema_version": "aide.install-record-fixture-matrix.v0"
+}

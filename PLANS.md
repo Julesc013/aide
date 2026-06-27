@@ -2909,3 +2909,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `missing_evidence: 0`, and recommends exactly `AIDE-BUILD-INSTALL-RECORD-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: This is a wave-control task only. InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt, DistributionApplyEngine, self-consumer fixture, project canaries, archive canary, public readiness, target mutation, release publication, provider/model/network calls, runtime, Workbench, Commander, Omnigent, and branch/worktree automation remain future queue work.
+
+### Queue ID: AIDE-BUILD-INSTALL-RECORD-V0-01
+
+- Title: Build InstallRecord v0
+- Status: Needs Review
+- Objective: build InstallRecord v0 as a no-apply protocol/helper/projection/validation slice.
+- Scope: `.aide/queue/AIDE-BUILD-INSTALL-RECORD-V0-01/**`, `.aide/protocol/aide-install-record-v0.schema.json`, `core/protocol/install_record.py`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_install_record_v0.py`, `.aide/fixtures/install-record-v0/**`, `.aide/reports/install-record-v0/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-DISTRIBUTION-SAFETY-WAVE-01`, accepted DistributionManifest v1, accepted ProjectLock v0, and accepted OwnershipLedger v1.
+- Verification Intent: JSON parse, compileall, focused InstallRecord tests, `install-record status/project/validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad AIDE validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `material_finding_count: 0`, records `missing_evidence: 0`, and recommends exactly `AIDE-CHECK-INSTALL-RECORD-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: InstallRecord v0 records install-state metadata only. It does not implement install apply, target scan authority, target mutation, release publication, provider/model/network calls, runtime, Workbench, Commander, Omnigent, or canaries.

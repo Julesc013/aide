@@ -7920,6 +7920,22 @@ def load_ownership_ledger_module(repo_root: Path):
     return module
 
 
+def load_install_record_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/install_record.py"
+    if not module_path.exists():
+        raise ValueError("InstallRecord module missing: core/protocol/install_record.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_install_record", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("InstallRecord module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_conformance_profile_module(repo_root: Path):
     module_path = repo_root / "core/protocol/conformance_profile.py"
     if not module_path.exists():
@@ -34634,6 +34650,117 @@ def command_ownership_ledger_migrate_q43(args: argparse.Namespace) -> int:
     return 0 if report.get("result") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_install_record_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'install_record_v0')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"migration_apply_implemented: {str(data.get('migration_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"target_scan_authority_implemented: {str(data.get('target_scan_authority_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("commander_implemented: false")
+    print("omnigent_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_install_record_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_install_record_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite install-record status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_install_record_boundary_lines({})
+        return 1
+    print("AIDE Lite install-record status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"ownership_ledger_acceptance_report_exists: {str(data.get('ownership_ledger_acceptance_report_exists', False)).lower()}")
+    print(f"install_record_report_exists: {str(data.get('install_record_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_install_record_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_install_record_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_install_record_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite install-record project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_install_record_boundary_lines({})
+        return 1
+    print("AIDE Lite install-record project")
+    print(f"result: {report.get('status')}")
+    print(f"install_record_path: {report.get('install_record_path')}")
+    print(f"install_record_digest: {report.get('install_record_digest')}")
+    print(f"installed_component_count: {report.get('installed_component_count')}")
+    print(f"installed_file_entry_count: {report.get('installed_file_entry_count')}")
+    print(f"installed_managed_section_count: {report.get('installed_managed_section_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_install_record_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_install_record_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_install_record_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite install-record validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_install_record_boundary_lines({})
+        return 1
+    print("AIDE Lite install-record validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "install_record_generated",
+        "install_record_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "ownership_ledger_accepted",
+        "distribution_ref_bound",
+        "project_lock_digest_bound",
+        "ownership_ledger_digest_bound",
+        "component_refs_known",
+        "file_entry_refs_known",
+        "managed_section_refs_known",
+        "install_apply_not_implemented",
+        "update_apply_not_implemented",
+        "migration_apply_not_implemented",
+        "rollback_apply_not_implemented",
+        "uninstall_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "target_scan_authority_not_implemented",
+        "release_publication_not_implemented",
+        "source_output_not_target_truth",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_install_record_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
     print("profile_only: true")
     print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
@@ -39689,6 +39816,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     ownership_ledger_migrate_q43_parser = ownership_ledger_subparsers.add_parser("migrate-q43")
     ownership_ledger_migrate_q43_parser.add_argument("--source-class", action="append", default=None)
     ownership_ledger_migrate_q43_parser.set_defaults(handler=command_ownership_ledger_migrate_q43)
+
+    install_record_parser = subparsers.add_parser("install-record")
+    install_record_parser.set_defaults(handler=command_install_record_status)
+    install_record_subparsers = install_record_parser.add_subparsers(dest="install_record_command", required=False)
+    install_record_subparsers.add_parser("status").set_defaults(handler=command_install_record_status)
+    install_record_subparsers.add_parser("project").set_defaults(handler=command_install_record_project)
+    install_record_subparsers.add_parser("validate").set_defaults(handler=command_install_record_validate)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)

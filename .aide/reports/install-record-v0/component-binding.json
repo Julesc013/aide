@@ -1,0 +1,6 @@
+{
+  "installed_component_refs": [
+    "aide://distribution/component/aide-lite-pack-v0"
+  ],
+  "schema_version": "aide.install-record-component-binding.v0"
+}

@@ -1,0 +1,19 @@
+{
+  "installed_file_entry_refs": [
+    "aide://ownership-entry/evidence-only-queue-evidence",
+    "aide://ownership-entry/local-only-operator-state",
+    "aide://ownership-entry/never-touch-git",
+    "aide://ownership-entry/preserved-legacy-state",
+    "aide://ownership-entry/project-generated-context",
+    "aide://ownership-entry/project-overlay-policy",
+    "aide://ownership-entry/project-owned-readme",
+    "aide://ownership-entry/runtime-generated-local-state",
+    "aide://ownership-entry/unknown-unclassified",
+    "aide://ownership-entry/vendor-file-aide-lite-cli",
+    "aide://ownership-entry/vendor-file-project-lock-schema"
+  ],
+  "installed_managed_section_refs": [
+    "aide://ownership-entry/vendor-section-agents-summary"
+  ],
+  "schema_version": "aide.install-record-ownership-entry-binding.v0"
+}
