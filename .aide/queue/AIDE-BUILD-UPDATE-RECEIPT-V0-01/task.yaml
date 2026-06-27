@@ -1,0 +1,81 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-UPDATE-RECEIPT-V0-01
+title: Build UpdateReceipt v0
+status: needs_review
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+capability_label: update_receipt_v0
+wave: AIDE-DISTRIBUTION-SAFETY-WAVE-04
+dependencies:
+  - AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+  - AIDE-ACCEPT-UPDATE-PLAN-V1-01
+  - AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+  - AIDE-ACCEPT-INSTALL-RECORD-V0-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+accepted_predecessor_capabilities:
+  - distribution_manifest_v1
+  - project_lock_v0
+  - ownership_ledger_v1
+  - install_record_v0
+  - migration_record_v0
+  - update_plan_v1
+  - rollback_bundle_v0
+objective: Build UpdateReceipt v0 as a no-apply update-execution receipt protocol slice after accepted RollbackBundle v0.
+allowed_paths:
+  - .aide/protocol/aide-update-receipt-v0.schema.json
+  - core/protocol/update_receipt.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_update_receipt_v0.py
+  - .aide/fixtures/update-receipt-v0/**
+  - .aide/reports/update-receipt-v0/**
+  - .aide/queue/AIDE-BUILD-UPDATE-RECEIPT-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_scope:
+  - update_apply
+  - install_apply
+  - migration_apply
+  - rollback_apply
+  - uninstall_apply
+  - target_repo_mutation
+  - target_repo_scan_authority
+  - release_archive_creation
+  - tag_upload_github_release
+  - provider_model_network_calls
+  - distribution_apply_engine
+  - self_consumer_fixture
+  - canaries
+  - branch_worktree_automation
+outputs:
+  - .aide/protocol/aide-update-receipt-v0.schema.json
+  - core/protocol/update_receipt.py
+  - .aide/scripts/tests/test_aide_update_receipt_v0.py
+  - .aide/fixtures/update-receipt-v0/**
+  - .aide/reports/update-receipt-v0/**
+  - .aide/queue/AIDE-BUILD-UPDATE-RECEIPT-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+validation:
+  - py -3 -m py_compile core/protocol/update_receipt.py .aide/scripts/tests/test_aide_update_receipt_v0.py .aide/scripts/aide_lite.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p "test_aide_update_receipt_v0.py"
+  - py -3 .aide/scripts/aide_lite.py update-receipt status
+  - py -3 .aide/scripts/aide_lite.py update-receipt project
+  - py -3 .aide/scripts/aide_lite.py update-receipt validate
+  - predecessor regression validation
+  - Q43-Q48 no-apply/no-publish validators
+  - py -3 .aide/scripts/aide_lite.py validate
+  - task inspect/evidence
+  - path and secret-like scans
+  - git diff --check
+  - git diff --cached --check
+  - commit check --latest
+result_summary:
+  proposed_capability: update_receipt_v0
+  material_finding_count: 0
+  missing_evidence: 0
+  next_task: AIDE-CHECK-UPDATE-RECEIPT-V0-01

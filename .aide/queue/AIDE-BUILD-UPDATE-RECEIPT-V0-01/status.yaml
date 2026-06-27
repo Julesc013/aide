@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-UPDATE-RECEIPT-V0-01
+status: needs_review
+classification: build_completed
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+proposed_capability: update_receipt_v0
+material_finding_count: 0
+missing_evidence: 0
+next_task: AIDE-CHECK-UPDATE-RECEIPT-V0-01
+notes:
+  - UpdateReceipt v0 is proposed only as no-apply update-execution receipt metadata.
+  - No update, install, migration, rollback, repair, or uninstall apply behavior was implemented.
+  - DistributionApplyEngine, self-consumer fixture, canaries, target mutation, release publication, provider/model/network calls, and branch/worktree automation were not started.

@@ -39,6 +39,59 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-UPDATE-RECEIPT-V0-01
+
+Completed as a build task and awaiting review.
+
+Changed:
+
+- `.aide/protocol/aide-update-receipt-v0.schema.json`
+- `core/protocol/update_receipt.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_update_receipt_v0.py`
+- `.aide/fixtures/update-receipt-v0/**`
+- `.aide/reports/update-receipt-v0/**`
+- `.aide/queue/AIDE-BUILD-UPDATE-RECEIPT-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Built proposed capability:
+
+```text
+update_receipt_v0
+```
+
+Implemented:
+
+- deterministic UpdateReceipt projection bound to accepted UpdatePlan and RollbackBundle refs/digests;
+- no-apply receipt operation classes for managed file/section receipt records, preservation receipts, migration/lock/ownership/install metadata receipts, validation receipts, manual-review/refusal receipts, failed-operation records, and RollbackBundle references;
+- skipped-operation reasons and fail-closed validation for missing refs, unplanned operations, unsafe ownership changes, digest mismatches, missing artifacts, missing validation or approval, authority claims, unsafe paths, source-output misuse, and unknown required features;
+- fixture coverage for valid and invalid receipt cases;
+- `update-receipt status`, `update-receipt project`, and `update-receipt validate` CLI commands.
+
+Result:
+
+```text
+PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+```
+
+Non-capabilities preserved:
+
+- no update, install, migration, rollback, repair, or uninstall apply;
+- no target repository mutation or scan authority;
+- no release archive, tag, upload, or GitHub Release;
+- no provider/model/network calls;
+- no DistributionApplyEngine, self-consumer fixture, or canary.
+
+Next task:
+
+```text
+AIDE-CHECK-UPDATE-RECEIPT-V0-01
+```
+
 ## Work Item: AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
 
 Completed as an acceptance-only consolidation and awaiting review.

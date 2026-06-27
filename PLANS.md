@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-UPDATE-RECEIPT-V0-01
+
+- Title: Build UpdateReceipt v0
+- Status: needs_review
+- Objective: build proposed `update_receipt_v0` as a no-apply update-execution receipt contract after accepted RollbackBundle v0.
+- Scope: UpdateReceipt schema/helper/CLI/fixtures/tests/reports, task packet/evidence, queue routing, and root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-UPDATE-RECEIPT-V0-01/task.yaml`.
+- Dependencies: accepted DistributionManifest v1, ProjectLock v0, OwnershipLedger v1, InstallRecord v0, MigrationRecord v0, UpdatePlan v1, and RollbackBundle v0.
+- Milestones: schema/helper added; CLI commands added; fixture matrix generated; focused tests pass; reports generated; build packet written.
+- Blockers: none for the build task.
+- Verification Intent: focused UpdateReceipt tests, `update-receipt status/project/validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad AIDE validation, task inspect/evidence, path and secret-like scans, diff checks, and commit policy check.
+- Exit Criteria: `PASS_WITH_WARNINGS`, material finding count `0`, missing evidence `0`, and next task exactly `AIDE-CHECK-UPDATE-RECEIPT-V0-01`.
+- Notes: UpdateReceipt v0 records future execution receipts only; it does not authorize execution, perform apply behavior, mutate targets, publish releases, start DistributionApplyEngine, or call provider/model/network services.
+
 ### Plan ID: AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
 
 - Title: Accept RollbackBundle v0

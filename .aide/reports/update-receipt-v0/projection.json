@@ -1,0 +1,903 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "extensions": {},
+  "kind": "UpdateReceipt",
+  "metadata": {
+    "candidate_distribution_digest": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+    "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+    "created_at": "fixture-timestamp:update-receipt-v0",
+    "created_by": "aide-self-hosting-fixture",
+    "extensions": {},
+    "new_ownership_ledger_digest": "sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284",
+    "new_ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+    "new_project_lock_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+    "new_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+    "old_project_lock_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+    "old_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+    "prior_ownership_ledger_digest": "sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284",
+    "prior_ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+    "prior_update_receipt_ref": null,
+    "rollback_bundle_digest": "sha256:9c53cf199c7e66f6679c150df8647d60a72073e6dcd558925e67bee455d935d6",
+    "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+    "source_distribution_digest": "sha256:29f51ed29e1fb1474fdc05cad7a0cb577d9fa5c572a753b6f1c58316d3c2b569",
+    "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+    "superseded_by_ref": null,
+    "target_project_identity": "julesc013/aide",
+    "target_project_ref": "aide://project/aide-self",
+    "update_plan_digest": "sha256:85d86b21de065bb973d45e88fbc9e605d7920ed36b648033ddc67b1b219ab371",
+    "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+    "update_receipt_ref": "aide://update-receipt/aide-self-no-apply-update-receipt-v0"
+  },
+  "schema_version": "aide.update-receipt.v0",
+  "spec": {
+    "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+    "artifact_refs": [
+      "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+      "aide://update-receipt/artifact/install-record-updated",
+      "aide://update-receipt/artifact/lock-updated",
+      "aide://update-receipt/artifact/migration-recorded",
+      "aide://update-receipt/artifact/ownership-ledger-updated",
+      "aide://update-receipt/artifact/rollback-bundle-referenced",
+      "aide://update-receipt/artifact/validation-run",
+      "aide://update-receipt/artifact/vendor-file-aide-lite-cli",
+      "aide://update-receipt/artifact/vendor-file-project-lock-schema",
+      "aide://update-receipt/artifact/vendor-section-agents-summary"
+    ],
+    "changed_file_refs": [
+      {
+        "artifact_ref": "aide://update-receipt/artifact/vendor-file-project-lock-schema",
+        "changed_file_ref": "aide://update-receipt/artifact/vendor-file-project-lock-schema",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/vendor-file-project-lock-schema",
+        "postimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "preimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "target_relative_path": ".aide/protocol/aide-project-lock-v0.schema.json"
+      },
+      {
+        "artifact_ref": "aide://update-receipt/artifact/vendor-file-aide-lite-cli",
+        "changed_file_ref": "aide://update-receipt/artifact/vendor-file-aide-lite-cli",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/vendor-file-aide-lite-cli",
+        "postimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "preimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "target_relative_path": ".aide/scripts/aide_lite.py"
+      }
+    ],
+    "changed_section_refs": [
+      {
+        "artifact_ref": "aide://update-receipt/artifact/vendor-section-agents-summary",
+        "changed_section_ref": "aide://update-receipt/artifact/vendor-section-agents-summary",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/vendor-section-agents-summary",
+        "postimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "preimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "target_relative_path": "AGENTS.md"
+      }
+    ],
+    "evidence_refs": [
+      "aide://evidence/update-receipt-v0/source-projection"
+    ],
+    "execution_environment": {
+      "execution_mode": "no_apply_fixture_receipt",
+      "extensions": {},
+      "fixture_only": true,
+      "network_calls_performed": false,
+      "provider_model_calls_performed": false,
+      "target_repository_mutation_performed": false
+    },
+    "executor_ref": "aide://executor/aide-fixture-no-apply",
+    "explicit_non_capabilities": [
+      "install_apply",
+      "update_apply",
+      "migration_apply",
+      "repair_apply",
+      "rollback_apply",
+      "uninstall_apply",
+      "target_repository_mutation",
+      "target_scan_authority",
+      "release_archive_creation",
+      "release_publication",
+      "git_tag_creation",
+      "github_release_creation",
+      "upload",
+      "network_call",
+      "provider_model_call",
+      "workbench_runtime",
+      "commander",
+      "omnigent",
+      "worker_execution",
+      "preview_session_apply",
+      "development_transaction_apply",
+      "patch_transaction_apply",
+      "branch_worktree_automation",
+      "real_project_canary",
+      "distribution_apply_engine"
+    ],
+    "extensions": {},
+    "failed_operations": [],
+    "limitations": [
+      {
+        "disposition": "future apply engines must be separately accepted before receipts can be produced from real execution",
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "limitation_class": "no_apply_authority",
+        "limitation_ref": "aide://update-receipt/limitation/no-apply-authority"
+      },
+      {
+        "disposition": "skipped operations are receipt facts only and do not authorize retries",
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "limitation_class": "skipped_operations_recorded",
+        "limitation_ref": "aide://update-receipt/limitation/skipped-operations"
+      }
+    ],
+    "new_install_record_ref": "aide://install-record/aide-self-update-receipt-v0/no-apply-recorded",
+    "operation_receipts": [
+      {
+        "approval_ref": null,
+        "authorization_claimed": false,
+        "changed_artifact_ref": null,
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "preserve_runtime_generated",
+        "operation_receipt_class": "runtime_generated_preserved",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/runtime-generated-local-state",
+        "operation_ref": "aide://update-plan/operation/runtime-generated-local-state",
+        "ownership_class": "runtime_generated",
+        "ownership_entry_ref": "aide://ownership-entry/runtime-generated-local-state",
+        "postimage_digest": "",
+        "preimage_digest": "",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide.local/**",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/runtime-generated-local-state"
+      },
+      {
+        "approval_ref": null,
+        "authorization_claimed": false,
+        "changed_artifact_ref": null,
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "regenerate_project_output",
+        "operation_receipt_class": "validation_skipped",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/project-generated-context",
+        "operation_ref": "aide://update-plan/operation/project-generated-context",
+        "ownership_class": "project_generated",
+        "ownership_entry_ref": "aide://ownership-entry/project-generated-context",
+        "postimage_digest": "",
+        "preimage_digest": "",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/context/generated/context-pack.json",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": null
+      },
+      {
+        "approval_ref": null,
+        "authorization_claimed": false,
+        "changed_artifact_ref": null,
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "preserve_legacy",
+        "operation_receipt_class": "legacy_preserved",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/preserved-legacy-state",
+        "operation_ref": "aide://update-plan/operation/preserved-legacy-state",
+        "ownership_class": "preserved_legacy",
+        "ownership_entry_ref": "aide://ownership-entry/preserved-legacy-state",
+        "postimage_digest": "",
+        "preimage_digest": "",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/legacy/**",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/preserved-legacy-state"
+      },
+      {
+        "approval_ref": null,
+        "authorization_claimed": false,
+        "changed_artifact_ref": null,
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "preserve_project_overlay",
+        "operation_receipt_class": "project_overlay_preserved",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/project-overlay-policy",
+        "operation_ref": "aide://update-plan/operation/project-overlay-policy",
+        "ownership_class": "project_overlay",
+        "ownership_entry_ref": "aide://ownership-entry/project-overlay-policy",
+        "postimage_digest": "",
+        "preimage_digest": "",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/project-overlays/policy.yaml",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/project-overlay-policy"
+      },
+      {
+        "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+        "authorization_claimed": false,
+        "changed_artifact_ref": "aide://update-receipt/artifact/vendor-file-project-lock-schema",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "update_managed_file",
+        "operation_receipt_class": "managed_file_updated",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/vendor-file-project-lock-schema",
+        "operation_ref": "aide://update-plan/operation/vendor-file-project-lock-schema",
+        "ownership_class": "vendor_managed_file",
+        "ownership_entry_ref": "aide://ownership-entry/vendor-file-project-lock-schema",
+        "postimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "preimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/protocol/aide-project-lock-v0.schema.json",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/vendor-file-project-lock-schema"
+      },
+      {
+        "approval_ref": null,
+        "authorization_claimed": false,
+        "changed_artifact_ref": null,
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "preserve_evidence_only",
+        "operation_receipt_class": "evidence_only_preserved",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/evidence-only-queue-evidence",
+        "operation_ref": "aide://update-plan/operation/evidence-only-queue-evidence",
+        "ownership_class": "evidence_only",
+        "ownership_entry_ref": "aide://ownership-entry/evidence-only-queue-evidence",
+        "postimage_digest": "",
+        "preimage_digest": "",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/queue/**/evidence/**",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/evidence-only-queue-evidence"
+      },
+      {
+        "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+        "authorization_claimed": false,
+        "changed_artifact_ref": "aide://update-receipt/artifact/vendor-file-aide-lite-cli",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "update_managed_file",
+        "operation_receipt_class": "managed_file_updated",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/vendor-file-aide-lite-cli",
+        "operation_ref": "aide://update-plan/operation/vendor-file-aide-lite-cli",
+        "ownership_class": "vendor_managed_file",
+        "ownership_entry_ref": "aide://ownership-entry/vendor-file-aide-lite-cli",
+        "postimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "preimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".aide/scripts/aide_lite.py",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/vendor-file-aide-lite-cli"
+      },
+      {
+        "approval_ref": null,
+        "authorization_claimed": false,
+        "changed_artifact_ref": null,
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "refuse",
+        "operation_receipt_class": "never_touch_preserved",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/never-touch-git",
+        "operation_ref": "aide://update-plan/operation/never-touch-git",
+        "ownership_class": "never_touch",
+        "ownership_entry_ref": "aide://ownership-entry/never-touch-git",
+        "postimage_digest": "",
+        "preimage_digest": "",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": ".git/**",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/never-touch-git"
+      },
+      {
+        "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+        "authorization_claimed": false,
+        "changed_artifact_ref": "aide://update-receipt/artifact/vendor-section-agents-summary",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "update_managed_section",
+        "operation_receipt_class": "managed_section_updated",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/vendor-section-agents-summary",
+        "operation_ref": "aide://update-plan/operation/vendor-section-agents-summary",
+        "ownership_class": "vendor_managed_section",
+        "ownership_entry_ref": "aide://ownership-entry/vendor-section-agents-summary",
+        "postimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "preimage_digest": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": "AGENTS.md",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/vendor-section-agents-summary"
+      },
+      {
+        "approval_ref": null,
+        "authorization_claimed": false,
+        "changed_artifact_ref": null,
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "preserve_project_owned",
+        "operation_receipt_class": "project_owned_preserved",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/project-owned-readme",
+        "operation_ref": "aide://update-plan/operation/project-owned-readme",
+        "ownership_class": "project_owned",
+        "ownership_entry_ref": "aide://ownership-entry/project-owned-readme",
+        "postimage_digest": "",
+        "preimage_digest": "",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": "README.md",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/project-owned-readme"
+      },
+      {
+        "approval_ref": null,
+        "authorization_claimed": false,
+        "changed_artifact_ref": null,
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "preserve_local_only",
+        "operation_receipt_class": "local_only_preserved",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/local-only-operator-state",
+        "operation_ref": "aide://update-plan/operation/local-only-operator-state",
+        "ownership_class": "local_only",
+        "ownership_entry_ref": "aide://ownership-entry/local-only-operator-state",
+        "postimage_digest": "",
+        "preimage_digest": "",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": "local-only/**",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/local-only-operator-state"
+      },
+      {
+        "approval_ref": null,
+        "authorization_claimed": false,
+        "changed_artifact_ref": null,
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "manual_review_required",
+        "operation_receipt_class": "operation_refused",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/unknown-unclassified",
+        "operation_ref": "aide://update-plan/operation/unknown-unclassified",
+        "ownership_class": "unknown",
+        "ownership_entry_ref": "aide://ownership-entry/unknown-unclassified",
+        "postimage_digest": "",
+        "preimage_digest": "",
+        "source_output_used_as_target_truth": false,
+        "target_relative_path": "unclassified/**",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/unknown-unclassified"
+      },
+      {
+        "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+        "authorization_claimed": false,
+        "changed_artifact_ref": "aide://update-receipt/artifact/migration-recorded",
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "metadata_recorded",
+        "operation_receipt_class": "migration_recorded",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/migration-recorded",
+        "operation_ref": "aide://update-receipt/metadata/migration-recorded",
+        "ownership_class": "metadata_only",
+        "ownership_entry_ref": null,
+        "postimage_digest": "sha256:21825df095ae26b7c1e5969712bf4a856b50e5d86b6c3c732df5d96fba0d29dc",
+        "preimage_digest": "sha256:21825df095ae26b7c1e5969712bf4a856b50e5d86b6c3c732df5d96fba0d29dc",
+        "source_output_used_as_target_truth": false,
+        "source_ref": "aide://migration-record/install-record-v0/no-op-compatibility",
+        "target_relative_path": null,
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/migration-recorded"
+      },
+      {
+        "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+        "authorization_claimed": false,
+        "changed_artifact_ref": "aide://update-receipt/artifact/lock-updated",
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "metadata_recorded",
+        "operation_receipt_class": "lock_updated",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/lock-updated",
+        "operation_ref": "aide://update-receipt/metadata/lock-updated",
+        "ownership_class": "metadata_only",
+        "ownership_entry_ref": null,
+        "postimage_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+        "preimage_digest": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+        "source_output_used_as_target_truth": false,
+        "source_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+        "target_relative_path": null,
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/lock-updated"
+      },
+      {
+        "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+        "authorization_claimed": false,
+        "changed_artifact_ref": "aide://update-receipt/artifact/ownership-ledger-updated",
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "metadata_recorded",
+        "operation_receipt_class": "ownership_ledger_updated",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/ownership-ledger-updated",
+        "operation_ref": "aide://update-receipt/metadata/ownership-ledger-updated",
+        "ownership_class": "metadata_only",
+        "ownership_entry_ref": null,
+        "postimage_digest": "sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284",
+        "preimage_digest": "sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284",
+        "source_output_used_as_target_truth": false,
+        "source_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+        "target_relative_path": null,
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/ownership-ledger-updated"
+      },
+      {
+        "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+        "authorization_claimed": false,
+        "changed_artifact_ref": "aide://update-receipt/artifact/install-record-updated",
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "metadata_recorded",
+        "operation_receipt_class": "install_record_updated",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/install-record-updated",
+        "operation_ref": "aide://update-receipt/metadata/install-record-updated",
+        "ownership_class": "metadata_only",
+        "ownership_entry_ref": null,
+        "postimage_digest": "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71",
+        "preimage_digest": "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71",
+        "source_output_used_as_target_truth": false,
+        "source_ref": "aide://install-record/aide-self-install-record-v0",
+        "target_relative_path": null,
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/install-record-updated"
+      },
+      {
+        "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+        "authorization_claimed": false,
+        "changed_artifact_ref": "aide://update-receipt/artifact/validation-run",
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "metadata_recorded",
+        "operation_receipt_class": "validation_run",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/validation-run",
+        "operation_ref": "aide://update-receipt/metadata/validation-run",
+        "ownership_class": "metadata_only",
+        "ownership_entry_ref": null,
+        "postimage_digest": "sha256:9c53cf199c7e66f6679c150df8647d60a72073e6dcd558925e67bee455d935d6",
+        "preimage_digest": "sha256:9c53cf199c7e66f6679c150df8647d60a72073e6dcd558925e67bee455d935d6",
+        "source_output_used_as_target_truth": false,
+        "source_ref": "aide://validation/update-receipt-v0/project",
+        "target_relative_path": null,
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/validation-run"
+      },
+      {
+        "approval_ref": "aide://approval/update-receipt-v0/fixture-review",
+        "authorization_claimed": false,
+        "changed_artifact_ref": "aide://update-receipt/artifact/rollback-bundle-referenced",
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "operation_class": "metadata_recorded",
+        "operation_receipt_class": "rollback_bundle_referenced",
+        "operation_receipt_ref": "aide://update-receipt/operation-receipt/rollback-bundle-referenced",
+        "operation_ref": "aide://update-receipt/metadata/rollback-bundle-referenced",
+        "ownership_class": "metadata_only",
+        "ownership_entry_ref": null,
+        "postimage_digest": "sha256:9c53cf199c7e66f6679c150df8647d60a72073e6dcd558925e67bee455d935d6",
+        "preimage_digest": "sha256:9c53cf199c7e66f6679c150df8647d60a72073e6dcd558925e67bee455d935d6",
+        "source_output_used_as_target_truth": false,
+        "source_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+        "target_relative_path": null,
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/rollback-bundle-referenced"
+      }
+    ],
+    "optional_features": [
+      "validation_skipped_with_warning_v0",
+      "manual_review_skipped_operation_v0"
+    ],
+    "postimage_digests": {
+      "aide://update-plan/operation/vendor-file-aide-lite-cli": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+      "aide://update-plan/operation/vendor-file-project-lock-schema": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+      "aide://update-plan/operation/vendor-section-agents-summary": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+      "aide://update-receipt/metadata/install-record-updated": "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71",
+      "aide://update-receipt/metadata/lock-updated": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+      "aide://update-receipt/metadata/migration-recorded": "sha256:21825df095ae26b7c1e5969712bf4a856b50e5d86b6c3c732df5d96fba0d29dc",
+      "aide://update-receipt/metadata/ownership-ledger-updated": "sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284",
+      "aide://update-receipt/metadata/rollback-bundle-referenced": "sha256:9c53cf199c7e66f6679c150df8647d60a72073e6dcd558925e67bee455d935d6",
+      "aide://update-receipt/metadata/validation-run": "sha256:9c53cf199c7e66f6679c150df8647d60a72073e6dcd558925e67bee455d935d6"
+    },
+    "preimage_digests": {
+      "aide://update-plan/operation/vendor-file-aide-lite-cli": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+      "aide://update-plan/operation/vendor-file-project-lock-schema": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+      "aide://update-plan/operation/vendor-section-agents-summary": "sha256:e334b1f111bae51513511a37f49b2b0bc028ea4d943c148eff0e04693449d2b5",
+      "aide://update-receipt/metadata/install-record-updated": "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71",
+      "aide://update-receipt/metadata/lock-updated": "sha256:a872bf91db42a04e3a9ca5e7db1fe23a5d81cf7eb101ece326114a533727dc57",
+      "aide://update-receipt/metadata/migration-recorded": "sha256:21825df095ae26b7c1e5969712bf4a856b50e5d86b6c3c732df5d96fba0d29dc",
+      "aide://update-receipt/metadata/ownership-ledger-updated": "sha256:f432a6492d05297831df3da2e5e044176d5aaab5874508c644ed1a6e1c182284",
+      "aide://update-receipt/metadata/rollback-bundle-referenced": "sha256:9c53cf199c7e66f6679c150df8647d60a72073e6dcd558925e67bee455d935d6",
+      "aide://update-receipt/metadata/validation-run": "sha256:9c53cf199c7e66f6679c150df8647d60a72073e6dcd558925e67bee455d935d6"
+    },
+    "prior_install_record_digests": [
+      "sha256:833f4c78284853460a0be489baacae3c9874be5ffab7ccdd6e66dc743d410c71"
+    ],
+    "prior_install_record_refs": [
+      "aide://install-record/aide-self-install-record-v0"
+    ],
+    "required_features": [
+      "update_receipt_v0",
+      "distribution_manifest_v1",
+      "project_lock_v0",
+      "ownership_ledger_v1",
+      "install_record_v0",
+      "update_plan_v1",
+      "rollback_bundle_v0",
+      "sha256_digest_canonical_json_v1",
+      "no_apply_update_receipt_v0"
+    ],
+    "risk_class": "medium",
+    "skipped_operations": [
+      {
+        "disposition": "recorded_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/runtime-generated-local-state",
+        "reason": "runtime_generated",
+        "skipped_operation_ref": "aide://update-receipt/skipped/runtime-generated-local-state"
+      },
+      {
+        "disposition": "recorded_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/project-overlay-policy",
+        "reason": "project_overlay",
+        "skipped_operation_ref": "aide://update-receipt/skipped/project-overlay-policy"
+      },
+      {
+        "disposition": "recorded_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/evidence-only-queue-evidence",
+        "reason": "evidence_only",
+        "skipped_operation_ref": "aide://update-receipt/skipped/evidence-only-queue-evidence"
+      },
+      {
+        "disposition": "recorded_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/never-touch-git",
+        "reason": "never_touch",
+        "skipped_operation_ref": "aide://update-receipt/skipped/never-touch-git"
+      },
+      {
+        "disposition": "recorded_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/project-owned-readme",
+        "reason": "project_owned",
+        "skipped_operation_ref": "aide://update-receipt/skipped/project-owned-readme"
+      },
+      {
+        "disposition": "recorded_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/local-only-operator-state",
+        "reason": "local_only",
+        "skipped_operation_ref": "aide://update-receipt/skipped/local-only-operator-state"
+      },
+      {
+        "disposition": "recorded_no_apply",
+        "evidence_refs": [
+          "aide://evidence/ownership-ledger-v1/source-projection"
+        ],
+        "extensions": {},
+        "operation_ref": "aide://update-plan/operation/unknown-unclassified",
+        "reason": "unknown_ownership",
+        "skipped_operation_ref": "aide://update-receipt/skipped/unknown-unclassified"
+      }
+    ],
+    "source_output_used_as_target_truth": false,
+    "target_repository_mutation_performed": false,
+    "validation_results": [
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/update-plan-binding"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/rollback-bundle-binding"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/no-apply-boundary"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/runtime-generated-local-state"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/preserved-legacy-state"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/project-overlay-policy"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/vendor-file-project-lock-schema"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/evidence-only-queue-evidence"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/vendor-file-aide-lite-cli"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/never-touch-git"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/vendor-section-agents-summary"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/project-owned-readme"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/local-only-operator-state"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/unknown-unclassified"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/migration-recorded"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/lock-updated"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/ownership-ledger-updated"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/install-record-updated"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/validation-run"
+      },
+      {
+        "evidence_refs": [
+          "aide://evidence/update-receipt-v0/source-projection"
+        ],
+        "extensions": {},
+        "result": "PASS_WITH_WARNINGS",
+        "target_repository_mutation_performed": false,
+        "update_apply_implemented": false,
+        "validation_result_ref": "aide://update-receipt/validation/rollback-bundle-referenced"
+      }
+    ],
+    "warnings": [
+      "UpdateReceipt v0 is proposed until independent check and acceptance.",
+      "Receipt records no-apply fixture execution metadata only."
+    ]
+  },
+  "status": {
+    "branch_worktree_automation_implemented": false,
+    "commander_implemented": false,
+    "distribution_apply_engine_started": false,
+    "extensions": {},
+    "install_apply_implemented": false,
+    "migration_apply_implemented": false,
+    "network_calls_implemented": false,
+    "omnigent_implemented": false,
+    "proposed_capability": "update_receipt_v0",
+    "provider_model_calls_implemented": false,
+    "receipt_authorization_claimed": false,
+    "recommended_next_task": "AIDE-CHECK-UPDATE-RECEIPT-V0-01",
+    "release_publication_implemented": false,
+    "release_readiness_claimed": false,
+    "repair_apply_implemented": false,
+    "rollback_apply_implemented": false,
+    "status": "PASS_WITH_WARNINGS",
+    "target_repository_mutation_implemented": false,
+    "target_scan_authority_implemented": false,
+    "uninstall_apply_implemented": false,
+    "update_apply_implemented": false,
+    "update_receipt_digest": "sha256:be2f5c2cfc1f80f32f2bbdc121bc223d4c2aaebfb6f33720e1e12e9fa183d761",
+    "validation_result": "PASS_WITH_WARNINGS",
+    "workbench_runtime_implemented": false
+  }
+}

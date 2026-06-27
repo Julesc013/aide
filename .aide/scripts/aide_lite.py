@@ -7984,6 +7984,22 @@ def load_rollback_bundle_module(repo_root: Path):
     return module
 
 
+def load_update_receipt_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/update_receipt.py"
+    if not module_path.exists():
+        raise ValueError("UpdateReceipt module missing: core/protocol/update_receipt.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_update_receipt", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("UpdateReceipt module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_conformance_profile_module(repo_root: Path):
     module_path = repo_root / "core/protocol/conformance_profile.py"
     if not module_path.exists():
@@ -35138,6 +35154,125 @@ def command_rollback_bundle_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_update_receipt_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'update_receipt_v0')}")
+    print(f"receipt_authorization_claimed: {str(data.get('receipt_authorization_claimed', False)).lower()}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"migration_apply_implemented: {str(data.get('migration_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"target_scan_authority_implemented: {str(data.get('target_scan_authority_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print(f"release_readiness_claimed: {str(data.get('release_readiness_claimed', False)).lower()}")
+    print(f"distribution_apply_engine_started: {str(data.get('distribution_apply_engine_started', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("commander_implemented: false")
+    print("omnigent_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_update_receipt_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_receipt_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite update-receipt status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_receipt_boundary_lines({})
+        return 1
+    print("AIDE Lite update-receipt status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"rollback_bundle_acceptance_report_exists: {str(data.get('rollback_bundle_acceptance_report_exists', False)).lower()}")
+    print(f"update_receipt_projection_exists: {str(data.get('update_receipt_projection_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_update_receipt_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_update_receipt_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_receipt_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite update-receipt project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_receipt_boundary_lines({})
+        return 1
+    print("AIDE Lite update-receipt project")
+    print(f"result: {report.get('status')}")
+    print(f"update_receipt_path: {report.get('update_receipt_path')}")
+    print(f"update_receipt_digest: {report.get('update_receipt_digest')}")
+    print(f"operation_receipt_count: {report.get('operation_receipt_count')}")
+    print(f"skipped_operation_count: {report.get('skipped_operation_count')}")
+    print(f"failed_operation_count: {report.get('failed_operation_count')}")
+    print(f"changed_file_ref_count: {report.get('changed_file_ref_count')}")
+    print(f"changed_section_ref_count: {report.get('changed_section_ref_count')}")
+    print(f"risk_class: {report.get('risk_class')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_update_receipt_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_update_receipt_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_receipt_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite update-receipt validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_receipt_boundary_lines({})
+        return 1
+    print("AIDE Lite update-receipt validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "update_receipt_generated",
+        "update_receipt_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "rollback_bundle_accepted",
+        "update_plan_bound",
+        "rollback_bundle_bound",
+        "source_distribution_bound",
+        "candidate_distribution_bound",
+        "old_project_lock_bound",
+        "new_project_lock_bound",
+        "ownership_ledger_bound",
+        "install_record_bound",
+        "update_apply_not_implemented",
+        "install_apply_not_implemented",
+        "migration_apply_not_implemented",
+        "rollback_apply_not_implemented",
+        "uninstall_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "distribution_apply_engine_not_started",
+        "source_output_not_target_truth",
+    ]:
+        if key in checks:
+            print(f"{key}: {str(checks.get(key)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_update_receipt_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
     print("profile_only: true")
     print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
@@ -40221,6 +40356,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     rollback_bundle_subparsers.add_parser("status").set_defaults(handler=command_rollback_bundle_status)
     rollback_bundle_subparsers.add_parser("project").set_defaults(handler=command_rollback_bundle_project)
     rollback_bundle_subparsers.add_parser("validate").set_defaults(handler=command_rollback_bundle_validate)
+
+    update_receipt_parser = subparsers.add_parser("update-receipt")
+    update_receipt_parser.set_defaults(handler=command_update_receipt_status)
+    update_receipt_subparsers = update_receipt_parser.add_subparsers(dest="update_receipt_command", required=False)
+    update_receipt_subparsers.add_parser("status").set_defaults(handler=command_update_receipt_status)
+    update_receipt_subparsers.add_parser("project").set_defaults(handler=command_update_receipt_project)
+    update_receipt_subparsers.add_parser("validate").set_defaults(handler=command_update_receipt_validate)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)
