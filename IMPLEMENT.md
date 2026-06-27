@@ -39,6 +39,60 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-UPDATE-RECEIPT-V0-01
+
+Completed as a check-only task and awaiting review.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-UPDATE-RECEIPT-V0-01/**`
+- `.aide/reports/update-receipt-v0-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Checked capability:
+
+```text
+update_receipt_v0
+```
+
+Verified:
+
+- source build task exists, is complete at `needs_review`, and has `missing_evidence: 0`;
+- schema, helper, CLI commands, fixtures, focused tests, reports, queue packet, and evidence exist;
+- UpdateReceipt is update-execution receipt metadata only and claims no apply, authorization, target mutation, release readiness, provider/model/network, or DistributionApplyEngine capability;
+- predecessor compatibility with DistributionManifest, ProjectLock, OwnershipLedger, InstallRecord, MigrationRecord, UpdatePlan, and RollbackBundle remains green;
+- fail-closed handling, optional extension tolerance, unknown required feature refusal, unsafe path refusal, source-output boundary, and no-apply/no-publish boundaries remain intact.
+
+Result:
+
+```text
+PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+```
+
+Warnings:
+
+- UpdateReceipt remains proposed until acceptance.
+- Some operation receipt classes and skipped-operation reasons are schema/helper validated but not each represented by a distinct positive fixture row.
+- The check reused the same local checkout lineage as the build, but performed no implementation repair.
+
+Non-capabilities preserved:
+
+- no update, install, migration, rollback, repair, or uninstall apply;
+- no target repository mutation or scan authority;
+- no release archive, tag, upload, or GitHub Release;
+- no provider/model/network calls;
+- no DistributionApplyEngine, self-consumer fixture, or canary.
+
+Next task:
+
+```text
+AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+```
+
 ## Work Item: AIDE-BUILD-UPDATE-RECEIPT-V0-01
 
 Completed as a build task and awaiting review.

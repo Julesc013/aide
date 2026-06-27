@@ -1,0 +1,33 @@
+{
+  "schema_version": "aide.update-receipt-v0-check.validation-summary.v0",
+  "task_id": "AIDE-CHECK-UPDATE-RECEIPT-V0-01",
+  "result": "PASS_WITH_WARNINGS",
+  "checked_commit": "d1dde59ed2be5c9df6c08bbba3792ac0512ccd6b",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "implementation_changed": false,
+  "validation": {
+    "json_schema_parse": "PASS",
+    "py_compile": "PASS",
+    "compileall": "PASS",
+    "focused_update_receipt_tests": "PASS",
+    "update_receipt_status": "PASS_WITH_WARNINGS",
+    "update_receipt_project": "PASS_WITH_WARNINGS",
+    "update_receipt_validate": "PASS_WITH_WARNINGS",
+    "predecessor_regressions": "PASS_WITH_WARNINGS",
+    "q43_q48_no_apply_no_publish": "PASS",
+    "broad_aide_validate": "PASS",
+    "source_task_inspect_evidence": "PASS",
+    "path_scan": "PASS",
+    "secret_like_scan": "PASS",
+    "source_output_misuse_scan": "PASS",
+    "downstream_start_scan": "PASS",
+    "git_diff_check": "PASS",
+    "git_diff_cached_check": "PASS"
+  },
+  "warnings": [
+    "Some operation receipt classes and skipped-operation reasons are schema/helper validated but not each represented by a distinct positive fixture row.",
+    "UpdateReceipt remains proposed until acceptance."
+  ],
+  "recommended_next_task": "AIDE-ACCEPT-UPDATE-RECEIPT-V0-01"
+}

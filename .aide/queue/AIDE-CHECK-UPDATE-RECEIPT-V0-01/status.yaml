@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-UPDATE-RECEIPT-V0-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+checked_capability: update_receipt_v0
+material_finding_count: 0
+missing_evidence: 0
+implementation_changed: false
+build_commit_checked: d1dde59ed2be5c9df6c08bbba3792ac0512ccd6b
+next_task: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+warnings:
+  - UpdateReceipt v0 remains proposed until the separate acceptance task completes.
+  - Some operation receipt classes and skipped-operation reasons are schema/helper validated but not each represented by a distinct positive fixture row.
+  - The check reused the same local checkout lineage as the build, but performed no implementation repair.
+notes:
+  - No material findings were found.
+  - No missing evidence was found.
+  - DistributionApplyEngine, self-consumer fixture, canaries, target mutation, release publication, provider/model/network calls, branch/worktree automation, and apply behavior were not started.

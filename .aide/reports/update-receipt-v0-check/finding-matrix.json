@@ -1,0 +1,25 @@
+{
+  "schema_version": "aide.update-receipt-v0-check.finding-matrix.v0",
+  "task_id": "AIDE-CHECK-UPDATE-RECEIPT-V0-01",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "findings": [],
+  "warnings": [
+    {
+      "id": "update_receipt.fixture_granularity_warning",
+      "severity": "warning",
+      "summary": "Some supported operation receipt classes and skipped-operation reasons are validator-covered rather than each having a distinct positive fixture row.",
+      "material": false,
+      "disposition": "acceptable_for_check; consider optional fixture broadening in future repair or hardening work"
+    },
+    {
+      "id": "update_receipt.proposed_until_acceptance",
+      "severity": "warning",
+      "summary": "UpdateReceipt v0 is checked but remains unaccepted until the separate acceptance task completes.",
+      "material": false,
+      "disposition": "expected review-gate state"
+    }
+  ],
+  "recommended_next_task": "AIDE-ACCEPT-UPDATE-RECEIPT-V0-01"
+}

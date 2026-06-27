@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-UPDATE-RECEIPT-V0-01
+
+- Title: Check UpdateReceipt v0
+- Status: needs_review
+- Objective: independently verify proposed `update_receipt_v0` without repairing implementation, accepting the capability, or starting DistributionApplyEngine.
+- Scope: check-local queue packet/evidence, `.aide/reports/update-receipt-v0-check/**`, queue index routing, and focused root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-UPDATE-RECEIPT-V0-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-UPDATE-RECEIPT-V0-01` at `d1dde59ed2be5c9df6c08bbba3792ac0512ccd6b`, result `PASS_WITH_WARNINGS`, `material_finding_count: 0`, and `missing_evidence: 0`.
+- Milestones: live queue truth verified; source build task/evidence inspected; UpdateReceipt schema/helper/CLI/tests/fixtures/reports checked; predecessor regressions passed; no-apply/no-mutation boundary verified; safety scans passed; task evidence materialized.
+- Blockers: none. UpdateReceipt acceptance remains a separate next task.
+- Verification Intent: compileall, focused UpdateReceipt tests, `update-receipt status/project/validate`, predecessor status/project/validate commands, Q43-Q48 no-apply/no-publish validators, broad AIDE validation, source task inspect/evidence, coverage and hygiene scans, diff checks, staged diff checks, and commit-policy check.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and next task exactly `AIDE-ACCEPT-UPDATE-RECEIPT-V0-01`.
+- Notes: this check does not repair implementation, accept UpdateReceipt v0, begin DistributionApplyEngine, self-consumer fixture, canaries, apply behavior, target mutation, release publication, provider/model/network calls, runtime, branch/worktree automation, or promotion.
+
 ### Plan ID: AIDE-BUILD-UPDATE-RECEIPT-V0-01
 
 - Title: Build UpdateReceipt v0
