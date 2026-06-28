@@ -1,0 +1,62 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+title: Build More Infinite Research canary profile v0
+type: build
+status: needs_review
+planning_state: build_completed
+result: PARTIAL
+wave: AIDE-DISTRIBUTION-PRODUCTIZATION-WAVE-01
+profile_label: more_infinite_research_canary_profile_v0
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+depends_on:
+  - AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/**
+    - .aide/reports/canary-profiles/more-infinite-research-v0/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01/**
+    - .aide/reports/distribution-product-status/**
+  forbidden_paths:
+    - core/**
+    - .aide/scripts/**
+    - .aide/fixtures/**
+    - .aide.local/**
+    - .aide/release/dist/**
+    - .github/**
+    - C:/Projects/more-infinite-research/**
+    - target repositories
+forbidden_scope:
+  - implementation_change
+  - distribution_behavior_change
+  - target_mutation
+  - real_target_apply
+  - shadow_apply
+  - release_artifact_generation
+  - release_publication
+  - package_source_implementation
+  - provider_model_calls
+  - branch_worktree_automation
+  - push
+  - external_repo_mutation
+result_summary:
+  result: PARTIAL
+  material_finding_count: 0
+  missing_evidence: 0
+  target_repository: Julesc013/more-infinite-research
+  target_source_type: public_metadata
+  local_target_found: false
+  local_target_canary_readiness: false
+  source_info_json_version: 1.2.10
+  latest_github_release: 1.2.9
+  release_source_version_status: source_version_ahead_of_latest_github_release
+  warning_debt:
+    - Local MIR checkout path is not configured.
+    - Local clean/dirty state cannot be verified.
+    - Lua and Factorio validation executables are not configured.
+    - Shadow apply, real apply, branch/worktree automation, release generation, and publication remain non-capabilities.

@@ -3289,3 +3289,15 @@
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: Accepts only the read-only projection boundary, not a new execution/apply capability. Real target apply, source repo self-apply, canary readiness, public release readiness, archive generation, package-source readiness, shadow apply readiness, branch/worktree apply readiness, provider/model/network readiness, live runtime, and external repo mutation remain non-capabilities. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01`.
+
+### Queue ID: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+
+- Title: Build More Infinite Research canary profile v0
+- Status: Needs Review
+- Objective: build a read-only canary profile for `Julesc013/more-infinite-research` after the operator prioritized MIR before ScreenSave for immediate practical downstream canary work.
+- Scope: `.aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/**`, `.aide/reports/canary-profiles/more-infinite-research-v0/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted `distribution_product_status_projection_v0` and operator authorization to use public MIR metadata if a local target path is unavailable.
+- Verification Intent: accepted predecessor task inspect/evidence, local target availability check, public metadata inspection, JSON parse, broad AIDE validation, task inspect/evidence, path and secret scans, source-output scan, diff checks, and commit-policy check.
+- Result: `PARTIAL`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: No local MIR checkout was found under `C:/Projects`, so the profile is public-metadata-only and does not claim local target canary readiness. It records Factorio mod identity, source/release version drift, public file inventory, ownership classification candidates, validation candidates, blockers, and explicit non-capabilities. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01`.

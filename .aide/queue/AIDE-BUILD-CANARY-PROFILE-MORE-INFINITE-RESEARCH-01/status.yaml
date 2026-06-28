@@ -1,0 +1,15 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+status: needs_review
+classification: build_completed
+planning_state: build_completed
+result: PARTIAL
+profile_label: more_infinite_research_canary_profile_v0
+material_finding_count: 0
+missing_evidence: 0
+next_task: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+notes:
+  - Built a public-metadata-only More Infinite Research canary profile after no local target checkout was found.
+  - The profile records Factorio mod metadata, public file inventory, source/release version drift, ownership classification candidates, validation candidates, blockers, and explicit non-capabilities.
+  - Result is PARTIAL because local target availability, clean/dirty state, local ownership, and local validation cannot be verified without a configured checkout path.
+  - No target repository, AIDE implementation, distribution behavior, release artifact, branch, worktree, provider/model, or push mutation was performed.
