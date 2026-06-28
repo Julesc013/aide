@@ -10726,3 +10726,25 @@ Compile checks, focused routing text test, self-consumer fixture test, Distribut
 ### Remaining Issues
 
 Product-status projection remains a separate follow-up. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.
+
+## Work Item: AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+
+### Summary
+
+Built the distribution product-status projection with warnings.
+
+### Implementation Notes
+
+- Added `distribution-product status` as a read-only AIDE Lite command that generates `.aide/reports/distribution-product-status/current.json` and `current.md`.
+- Added a small projection helper that reads accepted local queue/report evidence for `distribution_apply_engine_v0`, `aide_self_consumer_fixture_v0`, and `distribution_apply_routing_text_repair_v0`.
+- Added focused projection coverage in `.aide/scripts/tests/test_aide_distribution_product_status_projection.py`.
+- Generated a compact operator view for accepted distribution capabilities, accepted boundaries, fixture-only surfaces, warning debt, explicit non-capabilities, canary readiness, release readiness, package-source readiness, shadow apply readiness, branch/worktree apply readiness, and next distribution tasks.
+- Did not modify DistributionApplyEngine execution semantics, fixtures, accepted protocol schemas, accepted capability semantics, release/package artifacts, external projects, branches, worktrees, provider/model/network behavior, or runtime behavior.
+
+### Verification
+
+Compile checks, focused projection test, `distribution-product status`, JSON parse and required-key check, Markdown heading check, DistributionApply status/plan/verify, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, safety scans, diff checks, and commit-policy validation were run or recorded.
+
+### Remaining Issues
+
+The projection is built but requires independent check and acceptance. ScreenSave, Eureka, Dominium, and Carbon canary profiles, local archive canary, public readiness, package-source verification, shadow apply, real target apply, and branch/worktree apply remain future reviewed tasks. The next serialized task is exactly `AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.

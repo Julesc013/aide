@@ -1,0 +1,15 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+status: needs_review
+classification: build_completed
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+next_task: AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+notes:
+  - Built a compact read-only distribution product-status projection with JSON and Markdown outputs.
+  - Added a read-only distribution-product status CLI command that writes the projection from accepted queue/report evidence.
+  - Projection reports accepted distribution_apply_engine_v0, accepted aide_self_consumer_fixture_v0, and accepted distribution_apply_routing_text_repair_v0.
+  - Real target apply, source repo self-apply, canary readiness, public release readiness, package-source readiness, shadow apply, provider/model/network calls, runtime, branch/worktree automation, push, and external repo mutation remain false/not ready.
+  - No DistributionApplyEngine execution semantics, fixtures, accepted protocol schemas, accepted capability semantics, release/package artifacts, external projects, branches, worktrees, or provider/model/network behavior were changed.

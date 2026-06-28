@@ -1,0 +1,29 @@
+{
+  "schema_version": "aide.distribution-product-status-projection.validation-summary.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+  "result": "PASS_WITH_WARNINGS",
+  "projection_id": "distribution_product_status_v0",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "json_report": ".aide/reports/distribution-product-status/current.json",
+  "markdown_report": ".aide/reports/distribution-product-status/current.md",
+  "command": "distribution-product status",
+  "accepted_capabilities": [
+    "distribution_apply_engine_v0",
+    "aide_self_consumer_fixture_v0"
+  ],
+  "accepted_boundaries": [
+    "distribution_apply_routing_text_repair_v0"
+  ],
+  "real_target_apply_readiness": false,
+  "aide_source_repo_self_apply_readiness": false,
+  "canary_readiness": false,
+  "public_release_readiness": false,
+  "package_source_readiness": false,
+  "shadow_apply_readiness": false,
+  "branch_worktree_apply_readiness": false,
+  "provider_model_network_readiness": false,
+  "live_runtime_readiness": false,
+  "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+  "commit_check_latest_passed": true
+}

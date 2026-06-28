@@ -1,0 +1,259 @@
+{
+  "accepted": {
+    "boundaries": [
+      {
+        "accepted_capability": null,
+        "id": "distribution_apply_routing_text_repair_v0",
+        "operator_routing_text_repair": true,
+        "result": "accepted_with_warnings",
+        "routes_to": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+        "source_ref": ".aide/reports/distribution-apply-routing-text-repair-acceptance/validation-summary.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "fixture_only": true,
+        "id": "distribution_apply_engine_v0",
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "result": "accepted_with_warnings",
+        "source_ref": ".aide/reports/distribution-apply-engine-v0-acceptance/validation-summary.json",
+        "temp_workspace_only": true
+      },
+      {
+        "fixture_only": true,
+        "id": "aide_self_consumer_fixture_v0",
+        "material_finding_count": 0,
+        "missing_evidence": 0,
+        "result": "accepted_with_warnings",
+        "self_consumer_fixture_only": true,
+        "source_ref": ".aide/reports/aide-self-consumer-fixture-v0-acceptance/validation-summary.json"
+      }
+    ]
+  },
+  "canaries": {
+    "aide_self_consumer": {
+      "accepted_fixture_capability": "aide_self_consumer_fixture_v0",
+      "canary_readiness": false,
+      "fixture_status": "accepted_with_warnings",
+      "readiness_status": "fixture_proof_accepted_not_project_canary"
+    },
+    "carbon": {
+      "next_task": null,
+      "readiness": false,
+      "status": "not_configured"
+    },
+    "dominium": {
+      "next_task": "AIDE-BUILD-CANARY-PROFILE-DOMINIUM-01",
+      "readiness": false,
+      "status": "not_started"
+    },
+    "eureka": {
+      "next_task": "AIDE-BUILD-CANARY-PROFILE-EUREKA-01",
+      "readiness": false,
+      "status": "not_started"
+    },
+    "screensave": {
+      "next_task": "AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01",
+      "readiness": false,
+      "status": "not_started"
+    }
+  },
+  "current": {
+    "current_executable_gate": "fixture-only DistributionApplyEngine v0 plus accepted AIDE self-consumer fixture proof",
+    "current_gate": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+    "local_public_private_divergence": {
+      "note": "No local queue artifact independently verifies public GitHub divergence for this projection.",
+      "status": "unknown"
+    },
+    "next_task": "AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+    "wave": "Distribution Productization Wave 01"
+  },
+  "explicit_non_capabilities": [
+    "real target apply",
+    "AIDE source repo self-apply",
+    "external repo mutation",
+    "ScreenSave/Eureka/Dominium/Carbon canary readiness",
+    "public release/publication",
+    "release artifact generation",
+    "network fetching",
+    "package source fetching",
+    "provider/model calls",
+    "branch/worktree automation",
+    "automatic update apply",
+    "automatic push",
+    "automatic merge",
+    "live runtime",
+    "Workbench runtime",
+    "Commander/Mobile runtime"
+  ],
+  "fixture_only_capabilities": [
+    {
+      "boundary": "fixture-only temp-workspace-only apply execution",
+      "id": "distribution_apply_engine_v0"
+    },
+    {
+      "boundary": "fixture-only AIDE-like installed target proof surface",
+      "id": "aide_self_consumer_fixture_v0"
+    }
+  ],
+  "latest_self_consumer_fixture_status": {
+    "accepted_capability": "aide_self_consumer_fixture_v0",
+    "fixture_structure_accepted": true,
+    "offline_operation_proof_accepted": true,
+    "result": "ACCEPTED_WITH_WARNINGS",
+    "source_vs_installed_target_separation_accepted": true
+  },
+  "latest_validation_summary": {
+    "aide_self_consumer_fixture_acceptance": {
+      "material_finding_count": 0,
+      "missing_evidence": 0,
+      "result": "ACCEPTED_WITH_WARNINGS"
+    },
+    "distribution_apply_engine_acceptance": {
+      "material_finding_count": 0,
+      "missing_evidence": 0,
+      "result": "ACCEPTED_WITH_WARNINGS"
+    },
+    "routing_text_repair_acceptance": {
+      "material_finding_count": 0,
+      "missing_evidence": 0,
+      "result": "ACCEPTED_WITH_WARNINGS"
+    }
+  },
+  "projection": {
+    "generated_at": "2026-06-28T16:16:21Z",
+    "id": "distribution_product_status_v0",
+    "producer": "aide_lite.py distribution-product status",
+    "producer_version": "q24.existing-tool-adapter-compiler.v0",
+    "source_refs": [
+      {
+        "exists": true,
+        "kind": "queue_index",
+        "path": ".aide/queue/index.yaml",
+        "required": true
+      },
+      {
+        "exists": true,
+        "kind": "accepted_task_status",
+        "path": ".aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01/status.yaml",
+        "required": true
+      },
+      {
+        "exists": true,
+        "kind": "accepted_capability_summary",
+        "path": ".aide/reports/distribution-apply-engine-v0-acceptance/validation-summary.json",
+        "required": true
+      },
+      {
+        "exists": true,
+        "kind": "accepted_task_status",
+        "path": ".aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/status.yaml",
+        "required": true
+      },
+      {
+        "exists": true,
+        "kind": "accepted_capability_summary",
+        "path": ".aide/reports/aide-self-consumer-fixture-v0-acceptance/validation-summary.json",
+        "required": true
+      },
+      {
+        "exists": true,
+        "kind": "accepted_task_status",
+        "path": ".aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/status.yaml",
+        "required": true
+      },
+      {
+        "exists": true,
+        "kind": "accepted_boundary_summary",
+        "path": ".aide/reports/distribution-apply-routing-text-repair-acceptance/validation-summary.json",
+        "required": true
+      }
+    ]
+  },
+  "proposed_or_pending_distribution_capabilities": [
+    {
+      "id": "distribution_product_status_v0",
+      "status": "built_pending_check"
+    },
+    {
+      "id": "canary_profile_screensave_v0",
+      "status": "not_started"
+    },
+    {
+      "id": "canary_profile_eureka_v0",
+      "status": "not_started"
+    },
+    {
+      "id": "canary_profile_dominium_v0",
+      "status": "not_started"
+    },
+    {
+      "id": "aide_lite_canary_archive_v0",
+      "status": "not_started"
+    },
+    {
+      "id": "local_archive_source_v0",
+      "status": "not_started"
+    },
+    {
+      "id": "shadow_update_apply_v0",
+      "status": "not_started"
+    }
+  ],
+  "readiness": {
+    "aide_source_repo_self_apply": false,
+    "automatic_merge": false,
+    "automatic_push": false,
+    "automatic_update_apply": false,
+    "branch_worktree_apply": false,
+    "branch_worktree_automation": false,
+    "commander_mobile_runtime": false,
+    "external_repo_mutation": false,
+    "live_runtime": false,
+    "network_fetching": false,
+    "package_source": false,
+    "provider_model_network": false,
+    "public_canary": false,
+    "public_release": false,
+    "real_target_apply": false,
+    "release_artifact_generation": false,
+    "shadow_apply": false,
+    "stable_release": false,
+    "workbench_runtime": false
+  },
+  "readiness_status": {
+    "branch_worktree_apply": "not_ready",
+    "package_source": "not_ready",
+    "public_canary": "not_ready",
+    "real_target_apply": "not_ready",
+    "release": "not_ready",
+    "shadow_apply": "not_ready",
+    "stable_release": "not_ready"
+  },
+  "recommended_next_tasks": [
+    "AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+    "AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+    "AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01",
+    "AIDE-CHECK-CANARY-PROFILE-SCREENSAVE-01",
+    "AIDE-ACCEPT-CANARY-PROFILE-SCREENSAVE-01"
+  ],
+  "warning_debt": [
+    {
+      "description": "This product-status projection build still requires independent check and acceptance.",
+      "id": "distribution_product_status_projection_unchecked",
+      "next_task": "AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+      "severity": "warning"
+    },
+    {
+      "description": "ScreenSave, Eureka, Dominium, and Carbon canary profile readiness are not accepted.",
+      "id": "canary_profiles_not_started",
+      "severity": "warning"
+    },
+    {
+      "description": "Local archive canary, public canary readiness, package-source verification, and shadow apply remain future tasks.",
+      "id": "archive_public_readiness_not_started",
+      "severity": "warning"
+    }
+  ]
+}

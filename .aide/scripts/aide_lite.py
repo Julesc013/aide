@@ -26,6 +26,7 @@ import tarfile
 import tempfile
 import zipfile
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
 
@@ -35312,6 +35313,393 @@ def _print_distribution_apply_boundary_lines(data: dict[str, object]) -> None:
 SELF_CONSUMER_FIXTURE_ACCEPTANCE_SUMMARY_PATH = Path(".aide/reports/aide-self-consumer-fixture-v0-acceptance/validation-summary.json")
 DISTRIBUTION_PRODUCT_STATUS_PROJECTION_TASK_ID = "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
 DEFAULT_DISTRIBUTION_APPLY_PLAN_SCENARIO = "managed-file-update"
+DISTRIBUTION_PRODUCT_STATUS_JSON_PATH = Path(".aide/reports/distribution-product-status/current.json")
+DISTRIBUTION_PRODUCT_STATUS_MD_PATH = Path(".aide/reports/distribution-product-status/current.md")
+DISTRIBUTION_PRODUCT_STATUS_TASK_ID = "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+DISTRIBUTION_PRODUCT_STATUS_CHECK_TASK_ID = "AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+DISTRIBUTION_PRODUCT_STATUS_ACCEPT_TASK_ID = "AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+
+
+def _read_report_json(repo_root: Path, rel_path: str) -> dict[str, object]:
+    path = repo_root / rel_path
+    if not path.exists():
+        return {}
+    try:
+        return read_json_file(path)
+    except Exception:  # noqa: BLE001 - product status must classify missing or malformed source truth conservatively.
+        return {}
+
+
+def _source_ref(repo_root: Path, rel_path: str, kind: str, required: bool = True) -> dict[str, object]:
+    return {
+        "path": rel_path,
+        "kind": kind,
+        "required": required,
+        "exists": (repo_root / rel_path).exists(),
+    }
+
+
+def build_distribution_product_status_projection(repo_root: Path) -> dict[str, object]:
+    engine_summary_path = ".aide/reports/distribution-apply-engine-v0-acceptance/validation-summary.json"
+    self_consumer_summary_path = ".aide/reports/aide-self-consumer-fixture-v0-acceptance/validation-summary.json"
+    routing_summary_path = ".aide/reports/distribution-apply-routing-text-repair-acceptance/validation-summary.json"
+    engine = _read_report_json(repo_root, engine_summary_path)
+    self_consumer = _read_report_json(repo_root, self_consumer_summary_path)
+    routing = _read_report_json(repo_root, routing_summary_path)
+
+    source_refs = [
+        _source_ref(repo_root, ".aide/queue/index.yaml", "queue_index"),
+        _source_ref(repo_root, ".aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01/status.yaml", "accepted_task_status"),
+        _source_ref(repo_root, engine_summary_path, "accepted_capability_summary"),
+        _source_ref(repo_root, ".aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/status.yaml", "accepted_task_status"),
+        _source_ref(repo_root, self_consumer_summary_path, "accepted_capability_summary"),
+        _source_ref(repo_root, ".aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/status.yaml", "accepted_task_status"),
+        _source_ref(repo_root, routing_summary_path, "accepted_boundary_summary"),
+    ]
+
+    accepted_capabilities: list[dict[str, object]] = []
+    if engine.get("accepted_capability") == "distribution_apply_engine_v0":
+        accepted_capabilities.append(
+            {
+                "id": "distribution_apply_engine_v0",
+                "result": str(engine.get("result", "unknown")).lower(),
+                "fixture_only": bool(engine.get("fixture_only", True)),
+                "temp_workspace_only": bool(engine.get("temp_workspace_only", True)),
+                "material_finding_count": engine.get("material_finding_count", "unknown"),
+                "missing_evidence": engine.get("missing_evidence", "unknown"),
+                "source_ref": engine_summary_path,
+            }
+        )
+    if self_consumer.get("accepted_capability") == "aide_self_consumer_fixture_v0":
+        accepted_capabilities.append(
+            {
+                "id": "aide_self_consumer_fixture_v0",
+                "result": str(self_consumer.get("result", "unknown")).lower(),
+                "fixture_only": True,
+                "self_consumer_fixture_only": True,
+                "material_finding_count": self_consumer.get("material_finding_count", "unknown"),
+                "missing_evidence": self_consumer.get("missing_evidence", "unknown"),
+                "source_ref": self_consumer_summary_path,
+            }
+        )
+
+    accepted_boundaries: list[dict[str, object]] = []
+    if routing.get("accepted_boundary_label") == "distribution_apply_routing_text_repair_v0":
+        accepted_boundaries.append(
+            {
+                "id": "distribution_apply_routing_text_repair_v0",
+                "result": str(routing.get("result", "unknown")).lower(),
+                "accepted_capability": routing.get("accepted_capability"),
+                "operator_routing_text_repair": bool(routing.get("operator_routing_text_repair_accepted", True)),
+                "routes_to": routing.get("recommended_next_task", DISTRIBUTION_PRODUCT_STATUS_TASK_ID),
+                "source_ref": routing_summary_path,
+            }
+        )
+
+    explicit_non_capabilities = [
+        "real target apply",
+        "AIDE source repo self-apply",
+        "external repo mutation",
+        "ScreenSave/Eureka/Dominium/Carbon canary readiness",
+        "public release/publication",
+        "release artifact generation",
+        "network fetching",
+        "package source fetching",
+        "provider/model calls",
+        "branch/worktree automation",
+        "automatic update apply",
+        "automatic push",
+        "automatic merge",
+        "live runtime",
+        "Workbench runtime",
+        "Commander/Mobile runtime",
+    ]
+    warning_debt = [
+        {
+            "id": "distribution_product_status_projection_unchecked",
+            "severity": "warning",
+            "description": "This product-status projection build still requires independent check and acceptance.",
+            "next_task": DISTRIBUTION_PRODUCT_STATUS_CHECK_TASK_ID,
+        },
+        {
+            "id": "canary_profiles_not_started",
+            "severity": "warning",
+            "description": "ScreenSave, Eureka, Dominium, and Carbon canary profile readiness are not accepted.",
+        },
+        {
+            "id": "archive_public_readiness_not_started",
+            "severity": "warning",
+            "description": "Local archive canary, public canary readiness, package-source verification, and shadow apply remain future tasks.",
+        },
+    ]
+    recommended_next_tasks = [
+        DISTRIBUTION_PRODUCT_STATUS_CHECK_TASK_ID,
+        DISTRIBUTION_PRODUCT_STATUS_ACCEPT_TASK_ID,
+        "AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01",
+        "AIDE-CHECK-CANARY-PROFILE-SCREENSAVE-01",
+        "AIDE-ACCEPT-CANARY-PROFILE-SCREENSAVE-01",
+    ]
+
+    readiness = {
+        "real_target_apply": False,
+        "aide_source_repo_self_apply": False,
+        "external_repo_mutation": False,
+        "public_release": False,
+        "release_artifact_generation": False,
+        "package_source": False,
+        "network_fetching": False,
+        "shadow_apply": False,
+        "branch_worktree_apply": False,
+        "branch_worktree_automation": False,
+        "provider_model_network": False,
+        "live_runtime": False,
+        "automatic_update_apply": False,
+        "automatic_push": False,
+        "automatic_merge": False,
+        "workbench_runtime": False,
+        "commander_mobile_runtime": False,
+        "public_canary": False,
+        "stable_release": False,
+    }
+    return {
+        "projection": {
+            "id": "distribution_product_status_v0",
+            "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+            "producer": "aide_lite.py distribution-product status",
+            "producer_version": GENERATOR_VERSION,
+            "source_refs": source_refs,
+        },
+        "current": {
+            "wave": "Distribution Productization Wave 01",
+            "current_gate": DISTRIBUTION_PRODUCT_STATUS_TASK_ID,
+            "current_executable_gate": "fixture-only DistributionApplyEngine v0 plus accepted AIDE self-consumer fixture proof",
+            "next_task": DISTRIBUTION_PRODUCT_STATUS_CHECK_TASK_ID,
+            "local_public_private_divergence": {
+                "status": "unknown",
+                "note": "No local queue artifact independently verifies public GitHub divergence for this projection.",
+            },
+        },
+        "accepted": {
+            "capabilities": accepted_capabilities,
+            "boundaries": accepted_boundaries,
+        },
+        "proposed_or_pending_distribution_capabilities": [
+            {"id": "distribution_product_status_v0", "status": "built_pending_check"},
+            {"id": "canary_profile_screensave_v0", "status": "not_started"},
+            {"id": "canary_profile_eureka_v0", "status": "not_started"},
+            {"id": "canary_profile_dominium_v0", "status": "not_started"},
+            {"id": "aide_lite_canary_archive_v0", "status": "not_started"},
+            {"id": "local_archive_source_v0", "status": "not_started"},
+            {"id": "shadow_update_apply_v0", "status": "not_started"},
+        ],
+        "fixture_only_capabilities": [
+            {
+                "id": "distribution_apply_engine_v0",
+                "boundary": "fixture-only temp-workspace-only apply execution",
+            },
+            {
+                "id": "aide_self_consumer_fixture_v0",
+                "boundary": "fixture-only AIDE-like installed target proof surface",
+            },
+        ],
+        "readiness": readiness,
+        "readiness_status": {
+            "release": "not_ready",
+            "real_target_apply": "not_ready",
+            "package_source": "not_ready",
+            "shadow_apply": "not_ready",
+            "branch_worktree_apply": "not_ready",
+            "public_canary": "not_ready",
+            "stable_release": "not_ready",
+        },
+        "canaries": {
+            "aide_self_consumer": {
+                "fixture_status": str(self_consumer.get("result", "unknown")).lower(),
+                "accepted_fixture_capability": self_consumer.get("accepted_capability"),
+                "canary_readiness": False,
+                "readiness_status": "fixture_proof_accepted_not_project_canary",
+            },
+            "screensave": {"status": "not_started", "readiness": False, "next_task": "AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01"},
+            "eureka": {"status": "not_started", "readiness": False, "next_task": "AIDE-BUILD-CANARY-PROFILE-EUREKA-01"},
+            "dominium": {"status": "not_started", "readiness": False, "next_task": "AIDE-BUILD-CANARY-PROFILE-DOMINIUM-01"},
+            "carbon": {"status": "not_configured", "readiness": False, "next_task": None},
+        },
+        "explicit_non_capabilities": explicit_non_capabilities,
+        "warning_debt": warning_debt,
+        "latest_validation_summary": {
+            "distribution_apply_engine_acceptance": {
+                "result": engine.get("result", "unknown"),
+                "material_finding_count": engine.get("material_finding_count", "unknown"),
+                "missing_evidence": engine.get("missing_evidence", "unknown"),
+            },
+            "aide_self_consumer_fixture_acceptance": {
+                "result": self_consumer.get("result", "unknown"),
+                "material_finding_count": self_consumer.get("material_finding_count", "unknown"),
+                "missing_evidence": self_consumer.get("missing_evidence", "unknown"),
+            },
+            "routing_text_repair_acceptance": {
+                "result": routing.get("result", "unknown"),
+                "material_finding_count": routing.get("material_finding_count", "unknown"),
+                "missing_evidence": routing.get("missing_evidence", "unknown"),
+            },
+        },
+        "latest_self_consumer_fixture_status": {
+            "result": self_consumer.get("result", "unknown"),
+            "accepted_capability": self_consumer.get("accepted_capability", "unknown"),
+            "fixture_structure_accepted": bool(self_consumer.get("fixture_structure_accepted", False)),
+            "offline_operation_proof_accepted": bool(self_consumer.get("offline_operation_proof_accepted", False)),
+            "source_vs_installed_target_separation_accepted": bool(
+                self_consumer.get("source_vs_installed_target_separation_accepted", False)
+            ),
+        },
+        "recommended_next_tasks": recommended_next_tasks,
+    }
+
+
+def render_distribution_product_status_markdown(report: dict[str, object]) -> str:
+    accepted = report.get("accepted", {}) if isinstance(report.get("accepted"), dict) else {}
+    capabilities = accepted.get("capabilities", []) if isinstance(accepted, dict) else []
+    boundaries = accepted.get("boundaries", []) if isinstance(accepted, dict) else []
+    readiness = report.get("readiness", {}) if isinstance(report.get("readiness"), dict) else {}
+    canaries = report.get("canaries", {}) if isinstance(report.get("canaries"), dict) else {}
+    projection = report.get("projection", {}) if isinstance(report.get("projection"), dict) else {}
+    current = report.get("current", {}) if isinstance(report.get("current"), dict) else {}
+    latest = report.get("latest_validation_summary", {}) if isinstance(report.get("latest_validation_summary"), dict) else {}
+    non_caps = report.get("explicit_non_capabilities", [])
+    warning_debt = report.get("warning_debt", [])
+    next_tasks = report.get("recommended_next_tasks", [])
+    source_refs = projection.get("source_refs", []) if isinstance(projection, dict) else []
+
+    capability_lines = [
+        f"- `{item.get('id')}`: {item.get('result')} ({item.get('source_ref')})"
+        for item in capabilities
+        if isinstance(item, dict)
+    ] or ["- none"]
+    boundary_lines = [
+        f"- `{item.get('id')}`: routes to `{item.get('routes_to')}`"
+        for item in boundaries
+        if isinstance(item, dict)
+    ] or ["- none"]
+    fixture_lines = [
+        f"- `{item.get('id')}`: {item.get('boundary')}"
+        for item in report.get("fixture_only_capabilities", [])
+        if isinstance(item, dict)
+    ] or ["- none"]
+    non_cap_lines = [f"- {item}" for item in non_caps if isinstance(item, str)] or ["- none"]
+    readiness_lines = [
+        f"- `{key}`: {str(value).lower()}"
+        for key, value in sorted(readiness.items())
+    ] or ["- none"]
+    canary_lines = [
+        f"- `{key}`: {value.get('status', value.get('readiness_status', 'unknown'))}; readiness={str(value.get('readiness', value.get('canary_readiness', False))).lower()}"
+        for key, value in sorted(canaries.items())
+        if isinstance(value, dict)
+    ] or ["- none"]
+    warning_lines = [
+        f"- `{item.get('id')}`: {item.get('description')}"
+        for item in warning_debt
+        if isinstance(item, dict)
+    ] or ["- none"]
+    latest_lines = [
+        f"- `{key}`: result={value.get('result')}, material_findings={value.get('material_finding_count')}, missing_evidence={value.get('missing_evidence')}"
+        for key, value in sorted(latest.items())
+        if isinstance(value, dict)
+    ] or ["- none"]
+    next_task_lines = [f"{index}. `{task}`" for index, task in enumerate(next_tasks, start=1) if isinstance(task, str)] or ["1. none"]
+    source_lines = [
+        f"- `{item.get('path')}`: exists={str(item.get('exists')).lower()}, kind={item.get('kind')}"
+        for item in source_refs
+        if isinstance(item, dict)
+    ] or ["- none"]
+
+    return f"""# Distribution Product Status
+
+## Current gate
+
+- wave: `{current.get('wave')}`
+- current gate: `{current.get('current_gate')}`
+- current executable gate: `{current.get('current_executable_gate')}`
+- next task: `{current.get('next_task')}`
+- generated at: `{projection.get('generated_at')}`
+- producer: `{projection.get('producer')}`
+
+## Accepted capabilities and boundaries
+
+{chr(10).join(capability_lines)}
+{chr(10).join(boundary_lines)}
+
+## Fixture-only boundaries
+
+{chr(10).join(fixture_lines)}
+
+## Explicit non-capabilities
+
+{chr(10).join(non_cap_lines)}
+
+## Readiness matrix
+
+{chr(10).join(readiness_lines)}
+
+## Canary readiness
+
+{chr(10).join(canary_lines)}
+
+## Warning debt
+
+{chr(10).join(warning_lines)}
+
+## Latest validation
+
+{chr(10).join(latest_lines)}
+
+## Next recommended tasks
+
+{chr(10).join(next_task_lines)}
+
+## Source refs
+
+{chr(10).join(source_lines)}
+"""
+
+
+def write_distribution_product_status_reports(repo_root: Path) -> dict[str, object]:
+    report = build_distribution_product_status_projection(repo_root)
+    write_text_if_changed(repo_root / DISTRIBUTION_PRODUCT_STATUS_JSON_PATH, stable_json_text(report))
+    write_text_if_changed(repo_root / DISTRIBUTION_PRODUCT_STATUS_MD_PATH, render_distribution_product_status_markdown(report))
+    return report
+
+
+def command_distribution_product_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    try:
+        report = write_distribution_product_status_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - product status projection must fail closed.
+        print("AIDE Lite distribution-product status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        return 1
+    current = report.get("current", {}) if isinstance(report.get("current"), dict) else {}
+    accepted = report.get("accepted", {}) if isinstance(report.get("accepted"), dict) else {}
+    capabilities = accepted.get("capabilities", []) if isinstance(accepted, dict) else []
+    boundaries = accepted.get("boundaries", []) if isinstance(accepted, dict) else []
+    readiness = report.get("readiness", {}) if isinstance(report.get("readiness"), dict) else {}
+    print("AIDE Lite distribution-product status")
+    print("result: PASS_WITH_WARNINGS")
+    print(f"projection_json: {DISTRIBUTION_PRODUCT_STATUS_JSON_PATH}")
+    print(f"projection_md: {DISTRIBUTION_PRODUCT_STATUS_MD_PATH}")
+    print(f"current_gate: {current.get('current_gate')}")
+    print(f"next_task: {current.get('next_task')}")
+    print("accepted_capabilities: " + ",".join(item.get("id", "") for item in capabilities if isinstance(item, dict)))
+    print("accepted_boundaries: " + ",".join(item.get("id", "") for item in boundaries if isinstance(item, dict)))
+    print(f"real_target_apply_readiness: {str(readiness.get('real_target_apply', False)).lower()}")
+    print(f"aide_source_repo_self_apply_readiness: {str(readiness.get('aide_source_repo_self_apply', False)).lower()}")
+    print(f"canary_readiness: {str(any(bool(value.get('readiness', value.get('canary_readiness', False))) for value in report.get('canaries', {}).values() if isinstance(value, dict))).lower()}")
+    print(f"public_release_readiness: {str(readiness.get('public_release', False)).lower()}")
+    print(f"package_source_readiness: {str(readiness.get('package_source', False)).lower()}")
+    print(f"provider_model_network_readiness: {str(readiness.get('provider_model_network', False)).lower()}")
+    print(f"branch_worktree_automation_readiness: {str(readiness.get('branch_worktree_automation', False)).lower()}")
+    print(f"warning_debt_count: {len(report.get('warning_debt', []))}")
+    return 0
 
 
 def _distribution_apply_routing_text_data(repo_root: Path, data: dict[str, object]) -> dict[str, object]:
@@ -40557,6 +40945,11 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     distribution_apply_run_parser.add_argument("--mode", required=True, choices=["apply-temp"])
     distribution_apply_run_parser.set_defaults(handler=command_distribution_apply_run)
     distribution_apply_subparsers.add_parser("verify").set_defaults(handler=command_distribution_apply_verify)
+
+    distribution_product_parser = subparsers.add_parser("distribution-product")
+    distribution_product_parser.set_defaults(handler=command_distribution_product_status)
+    distribution_product_subparsers = distribution_product_parser.add_subparsers(dest="distribution_product_command", required=False)
+    distribution_product_subparsers.add_parser("status").set_defaults(handler=command_distribution_product_status)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)
