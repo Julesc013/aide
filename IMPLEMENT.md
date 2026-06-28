@@ -10773,3 +10773,28 @@ Compile check, focused projection test, `distribution-product status`, JSON pars
 ### Remaining Issues
 
 The projection is built and checked but requires acceptance. ScreenSave, Eureka, Dominium, and Carbon canary profiles, local archive canary, public readiness, package-source verification, shadow apply, real target apply, and branch/worktree apply remain future reviewed tasks. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.
+
+## Work Item: AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+
+### Summary
+
+Accepted the distribution product-status projection with warnings.
+
+### Implementation Notes
+
+- Accepted boundary label `distribution_product_status_projection_v0`.
+- Recorded `accepted_capability: null` and `projection_kind: read_only_projection_only`.
+- Accepted only the compact read-only operator projection, generated `current.json`, generated `current.md`, and read-only `distribution-product status` command surface from the built/check chain.
+- Confirmed build and check tasks are complete with `PASS_WITH_WARNINGS`, material finding count `0`, and missing evidence `0`.
+- Confirmed the projection represents `distribution_apply_engine_v0`, `aide_self_consumer_fixture_v0`, and `distribution_apply_routing_text_repair_v0`.
+- Confirmed acceptance routing recommends `AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01`.
+- Confirmed readiness remains false/not-ready for real target apply, source repo self-apply, public release, package source, shadow apply, branch/worktree apply, provider/model/network, live runtime, and ScreenSave/Eureka/Dominium/Carbon canaries.
+- Did not modify implementation, projection behavior, focused tests, fixtures, DistributionApplyEngine behavior, accepted protocol schemas, accepted capability semantics, release/package artifacts, target repositories, branches, worktrees, provider/model/network behavior, or runtime behavior.
+
+### Verification
+
+Compile check, focused projection test, `distribution-product status`, JSON parse and required-key check, Markdown heading check, DistributionApply status/plan/verify, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, safety scans, diff checks, and commit-policy validation passed.
+
+### Remaining Issues
+
+ScreenSave, Eureka, Dominium, and Carbon canary profiles, local archive canary, public readiness, package-source verification, shadow apply, real target apply, and branch/worktree apply remain future reviewed tasks. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01`.

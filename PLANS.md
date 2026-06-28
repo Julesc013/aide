@@ -3277,3 +3277,15 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: Confirms the projection contains the required machine-readable and operator-facing shape, represents accepted distribution capabilities and boundaries, routes to this check task, recommends acceptance and ScreenSave profile build, and preserves false/not-ready readiness for real target apply, source repo self-apply, release, package source, shadow apply, branch/worktree apply, provider/model/network, runtime, and canaries. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.
+
+### Queue ID: AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+
+- Title: Accept distribution product-status projection
+- Status: Needs Review
+- Objective: accept `distribution_product_status_projection_v0` as a read-only distribution-productization operator projection.
+- Scope: `.aide/queue/AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01/**`, `.aide/reports/distribution-product-status-acceptance/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01` at `6ed90e96`, `AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01` at `20000b44`, accepted `distribution_apply_engine_v0`, accepted `aide_self_consumer_fixture_v0`, and accepted `distribution_apply_routing_text_repair_v0`.
+- Verification Intent: compile check, focused projection test, `distribution-product status`, JSON parse and heading checks, `distribution-apply status/plan/verify`, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, safety scans, diff checks, and commit-policy check.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: Accepts only the read-only projection boundary, not a new execution/apply capability. Real target apply, source repo self-apply, canary readiness, public release readiness, archive generation, package-source readiness, shadow apply readiness, branch/worktree apply readiness, provider/model/network readiness, live runtime, and external repo mutation remain non-capabilities. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01`.

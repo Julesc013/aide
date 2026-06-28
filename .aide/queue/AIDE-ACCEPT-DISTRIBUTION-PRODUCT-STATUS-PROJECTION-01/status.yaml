@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+status: needs_review
+classification: acceptance_completed
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+accepted_boundary_label: distribution_product_status_projection_v0
+accepted_capability: null
+projection_kind: read_only_projection_only
+material_finding_count: 0
+missing_evidence: 0
+accepted_commits:
+  build: 6ed90e96
+  check: 20000b44
+next_task: AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01
+notes:
+  - Accepted the distribution product-status projection only as a read-only operator projection.
+  - Acceptance covers generated current.json/current.md, the read-only distribution-product status command, accepted distribution capability/boundary visibility, explicit non-capabilities, warning debt, and readiness status reporting.
+  - No execution/apply capability, real target apply, AIDE source repo self-apply, canary readiness, public release readiness, archive generation, package-source readiness, shadow apply readiness, provider/model/network readiness, live runtime readiness, branch/worktree automation, push, or external repo mutation was accepted.
+  - No implementation, projection behavior, focused test, fixture, DistributionApplyEngine, protocol schema, accepted capability semantic, release/package artifact, or external project mutation was performed.
