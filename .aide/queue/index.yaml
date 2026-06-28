@@ -2859,3 +2859,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01/evidence
   description: Check-only independent review of AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01 at 4eefb8aed30fd3c1b296e4d91ad11c4c2b51f33a. Verifies the fixture corpus, lifecycle scenario coverage, focused test coverage, source-vs-installed-target boundary, target-owned state preservation, DistributionApplyEngine accepted context/UpdatePlan/RollbackBundle/predecessor/UpdateReceipt/refusal boundaries, canonical fixture preservation, Q43-Q48 no-apply/no-publish boundaries, broad validation, task evidence, and overclaiming guards. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01. Does not repair implementation, accept the fixture, perform real target apply, source repo apply, target scanning, project canaries, release generation/publication, tag/upload/GitHub Release creation, provider/model/network calls, branch/worktree automation, external repo mutation, or push.
+- id: AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept AIDE self-consumer fixture v0
+  task: .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/evidence
+  description: Acceptance-only task for aide_self_consumer_fixture_v0 after build and independent check completed with PASS_WITH_WARNINGS, material_finding_count 0, and missing_evidence 0. Accepts only the fixture corpus, self-consumer lifecycle proof surface, source-vs-installed-target distinction, target-owned state preservation, offline fixture operation, and DistributionApplyEngine-backed accepted context/UpdatePlan/RollbackBundle/UpdateReceipt/refusal/canonical-fixture-preservation boundaries. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01 because stale distribution-apply routing/status text remains warning debt. Does not repair implementation, modify fixtures, perform real target apply, source repo self-apply, target scanning, canary readiness, release generation/publication, tag/upload/GitHub Release creation, provider/model/network calls, branch/worktree automation, external repo mutation, or push.

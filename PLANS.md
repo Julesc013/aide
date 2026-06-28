@@ -3205,3 +3205,15 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: The check verifies fixture structure, lifecycle coverage, source-vs-installed-target separation, target-owned preservation, DistributionApplyEngine binding/receipt/refusal boundaries, canonical fixture preservation, and overclaiming guards. The next serialized task is exactly `AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
+
+### Queue ID: AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+
+- Title: Accept AIDE self-consumer fixture v0
+- Status: Needs Review
+- Objective: accept exactly `aide_self_consumer_fixture_v0` after build and independent check closed with zero material findings and zero missing evidence.
+- Scope: `.aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**`, `.aide/reports/aide-self-consumer-fixture-v0-acceptance/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01` at `4eefb8aed30fd3c1b296e4d91ad11c4c2b51f33a`, `AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01` at `04a81445f0b1d0192444c162d666f4eced46b34b`, and accepted DistributionApplyEngine/UpdateReceipt/RollbackBundle/UpdatePlan/MigrationRecord/InstallRecord/OwnershipLedger/ProjectLock/DistributionManifest chain.
+- Verification Intent: focused self-consumer fixture tests, DistributionApplyEngine verify, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence for build/check/acceptance tasks, leak scans, diff checks, and commit-policy check.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: Accepts only the fixture/proof surface and preserves all non-capabilities around real target apply, source repo self-apply, canaries, release readiness, provider/model/network calls, push, and branch/worktree automation. Stale DistributionApplyEngine routing/status text remains warning debt; the next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.

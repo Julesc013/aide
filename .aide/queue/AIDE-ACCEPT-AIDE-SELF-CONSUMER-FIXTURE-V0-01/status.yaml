@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+status: needs_review
+classification: acceptance_completed
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+accepted_capability: aide_self_consumer_fixture_v0
+material_finding_count: 0
+missing_evidence: 0
+accepted_commits:
+  build: 4eefb8aed30fd3c1b296e4d91ad11c4c2b51f33a
+  check: 04a81445f0b1d0192444c162d666f4eced46b34b
+next_task: AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+notes:
+  - AIDE self-consumer fixture v0 is accepted only as a fixture-only proof surface.
+  - Acceptance covers the fixture corpus, lifecycle proofs, source-vs-installed-target distinction, target-owned state preservation, offline operation, and DistributionApplyEngine-backed binding/receipt/refusal boundaries.
+  - Stale DistributionApplyEngine routing/status text remains visible and is accepted only as warning debt.
+  - No real target apply, AIDE source repo self-apply, canary readiness, public release readiness, release artifact generation, release publication, provider/model/network call, branch/worktree automation, push, or external project mutation was started.

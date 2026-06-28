@@ -10631,3 +10631,26 @@ Focused self-consumer fixture tests, structured fixture review, canonical fixtur
 ### Remaining Issues
 
 The self-consumer fixture is ready for the separate acceptance gate. The next serialized task is exactly `AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
+
+## Work Item: AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+
+### Summary
+
+Accepted AIDE self-consumer fixture v0 with warnings.
+
+### Implementation Notes
+
+- Verified the self-consumer fixture build and independent check tasks are complete.
+- Accepted `aide_self_consumer_fixture_v0` only as a fixture-only proof surface.
+- Recorded accepted fixture corpus, lifecycle proofs, source-vs-installed-target distinction, target-owned preservation, offline operation, and DistributionApplyEngine-backed binding/receipt/refusal boundaries.
+- Classified stale `distribution-apply status/plan/verify` routing/status text as non-material warning debt.
+- Recorded explicit non-capabilities for real target apply, AIDE source repo self-apply, canary readiness, public release readiness, release generation/publication, provider/model/network calls, external repo mutation, push, and branch/worktree automation.
+- Did not modify fixtures, DistributionApplyEngine implementation, target repositories, release artifacts, canaries, branches, or worktrees.
+
+### Verification
+
+Focused self-consumer fixture tests, DistributionApplyEngine verification, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, path and credential-pattern scans, source-output scan, diff checks, and commit-policy validation passed.
+
+### Remaining Issues
+
+Stale DistributionApplyEngine routing/status text should be repaired next. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.
