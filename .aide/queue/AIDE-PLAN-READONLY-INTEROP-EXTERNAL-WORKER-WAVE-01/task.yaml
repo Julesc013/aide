@@ -1,0 +1,26 @@
+schema_version: aide.queue-task.v0
+id: AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01
+title: Plan read-only interop and external worker proof wave
+type: plan
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-INTEROP-WORKER-WAVE-01
+depends_on:
+  - AIDE-PLAN-DISTRIBUTION-PACKAGE-SHADOW-CANARY-WAVE-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01/**
+    - .aide/reports/readonly-interop-external-worker-wave/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+forbidden_scope:
+  - live_server_exposure
+  - mutation_tools
+  - worker_launch
+  - provider_model_calls
+  - network_calls
+  - target_mutation
+  - branch_worktree_automation
+recommended_next_task: AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01

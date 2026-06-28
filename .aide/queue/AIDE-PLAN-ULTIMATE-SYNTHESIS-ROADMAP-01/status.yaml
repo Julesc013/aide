@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01
+status: needs_review
+classification: queue_seed_completed
+planning_state: queue_seed_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+next_task: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+notes:
+  - Tentatively materialized the missing queue surfaces discussed in the June 28 synthesis chat.
+  - Preserved existing live queue truth and did not duplicate already-materialized ownership and distribution records.
+  - Added pending tasks for MIR inputs/check/accept, MIR validation/update planning, Structure Intelligence, distribution package/shadow/canary planning, read-only interop/external worker planning, preview/native planning, and future requirements intake.
+  - No downstream implementation, cleanup, file movement, target mutation, release action, provider/model call, branch/worktree automation, or push was performed.

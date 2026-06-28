@@ -1,0 +1,34 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+title: Record More Infinite Research canary inputs
+type: build
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-DISTRIBUTION-PRODUCTIZATION-WAVE-01
+depends_on:
+  - AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01/**
+    - .aide/reports/canary-profiles/more-infinite-research-inputs/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/**
+    - .aide/reports/canary-profiles/more-infinite-research-v0/**
+  forbidden_paths:
+    - C:/Projects/more-infinite-research/**
+    - target repositories
+    - .aide.local/**
+    - .github/**
+forbidden_scope:
+  - target_mutation
+  - clone
+  - apply
+  - release_generation
+  - release_publication
+  - provider_model_calls
+  - branch_worktree_automation
+recommended_next_task: AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01

@@ -1,0 +1,32 @@
+schema_version: aide.queue-task.v0
+id: AIDE-PLAN-STRUCTURE-INTELLIGENCE-SPINE-01
+title: Plan Structure Intelligence spine
+type: plan
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-STRUCTURE-INTELLIGENCE-WAVE-01
+depends_on:
+  - AIDE-BUILD-MIR-UPDATE-WORKFLOW-V0-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-PLAN-STRUCTURE-INTELLIGENCE-SPINE-01/**
+    - .aide/reports/structure-intelligence-spine/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/reports/**
+    - docs/planning/repository-structure/**
+    - docs/reference/aide-self-management.md
+    - governance/root-authority.md
+forbidden_scope:
+  - cleanup_apply
+  - file_move
+  - file_delete
+  - reference_rewrite
+  - source_truth_promotion
+  - target_mutation
+  - release_work
+  - provider_model_calls
+recommended_next_task: AIDE-BUILD-STRUCTURE-INTELLIGENCE-PROJECTION-01

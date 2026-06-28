@@ -1,0 +1,34 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+title: Check More Infinite Research canary profile v0
+type: check
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-DISTRIBUTION-PRODUCTIZATION-WAVE-01
+depends_on:
+  - AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+  - AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/**
+    - .aide/reports/canary-profiles/more-infinite-research-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/**
+    - .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01/**
+    - .aide/reports/canary-profiles/more-infinite-research-v0/**
+  forbidden_paths:
+    - C:/Projects/more-infinite-research/**
+    - target repositories
+    - .aide.local/**
+forbidden_scope:
+  - implementation_change
+  - target_mutation
+  - apply
+  - release_generation
+  - release_publication
+  - provider_model_calls
+recommended_next_task: AIDE-ACCEPT-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01

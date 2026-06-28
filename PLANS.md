@@ -3301,3 +3301,15 @@
 - Result: `PARTIAL`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: No local MIR checkout was found under `C:/Projects`, so the profile is public-metadata-only and does not claim local target canary readiness. It records Factorio mod identity, source/release version drift, public file inventory, ownership classification candidates, validation candidates, blockers, and explicit non-capabilities. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01`.
+
+### Queue ID: AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01
+
+- Title: Plan ultimate synthesis roadmap queue seed
+- Status: Needs Review
+- Objective: tentatively materialize the missing queue surfaces discussed in the June 28 synthesis chat while preserving live queue truth and review-gated boundaries.
+- Scope: `.aide/queue/AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01/**`, the new pending queue task directories, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01` and the already-materialized distribution/ownership/product-status queue chain.
+- Verification Intent: queue index inspection, task inspect/evidence for this seed task, task status, broad validation, diff checks, and generated-report churn cleanup.
+- Result: `PASS_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: This is a queue-shaping task only. It adds tentative pending tasks for MIR inputs/profile gates, MIR validation/update planning, Structure Intelligence, distribution package/shadow/canary planning, read-only interop/external worker planning, preview/native planning, and future requirements intake. It does not implement downstream tasks, alter queue policy, mutate target repositories, move/delete files, apply updates, publish releases, call providers/models, automate branches/worktrees, or promote candidates into committed roadmap capability. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01`.

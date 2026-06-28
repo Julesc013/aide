@@ -1,0 +1,25 @@
+schema_version: aide.queue-task.v0
+id: AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01
+title: Plan preview transaction and native experience wave
+type: plan
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-PREVIEW-NATIVE-WAVE-01
+depends_on:
+  - AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01/**
+    - .aide/reports/preview-transaction-native-wave/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+forbidden_scope:
+  - apply_capability
+  - real_preview_runtime
+  - target_mutation
+  - ui_product_claim
+  - branch_worktree_automation
+  - provider_model_calls
+recommended_next_task: AIDE-PLAN-FUTURE-REQUIREMENTS-INTAKE-01

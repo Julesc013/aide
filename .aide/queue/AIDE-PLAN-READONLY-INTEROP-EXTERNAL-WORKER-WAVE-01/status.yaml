@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01
+status: pending
+classification: tentative_planned
+planning_state: tentative_planned
+result: null
+next_task: AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01
+notes:
+  - Tentative queue surface created by AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01.

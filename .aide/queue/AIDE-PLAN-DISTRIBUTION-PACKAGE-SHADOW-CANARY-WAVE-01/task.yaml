@@ -1,0 +1,27 @@
+schema_version: aide.queue-task.v0
+id: AIDE-PLAN-DISTRIBUTION-PACKAGE-SHADOW-CANARY-WAVE-01
+title: Plan distribution package, shadow update, and canary wave
+type: plan
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-DISTRIBUTION-PRODUCTIZATION-WAVE-02
+depends_on:
+  - AIDE-ACCEPT-STRUCTURE-INTELLIGENCE-PROJECTION-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-PLAN-DISTRIBUTION-PACKAGE-SHADOW-CANARY-WAVE-01/**
+    - .aide/reports/distribution-package-shadow-canary-wave/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+forbidden_scope:
+  - network_fetching
+  - release_publication
+  - artifact_upload
+  - tag_creation
+  - target_mutation
+  - real_target_apply
+  - branch_worktree_automation
+  - provider_model_calls
+recommended_next_task: AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01

@@ -1,0 +1,24 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-STRUCTURE-INTELLIGENCE-PROJECTION-01
+title: Check Structure Intelligence projection
+type: check
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-STRUCTURE-INTELLIGENCE-WAVE-01
+depends_on:
+  - AIDE-BUILD-STRUCTURE-INTELLIGENCE-PROJECTION-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-STRUCTURE-INTELLIGENCE-PROJECTION-01/**
+    - .aide/reports/structure-intelligence-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+forbidden_scope:
+  - implementation_change
+  - cleanup_apply
+  - source_truth_promotion
+  - target_mutation
+  - release_work
+recommended_next_task: AIDE-ACCEPT-STRUCTURE-INTELLIGENCE-PROJECTION-01

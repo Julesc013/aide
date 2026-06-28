@@ -1,0 +1,70 @@
+schema_version: aide.queue-task.v0
+id: AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01
+title: Plan ultimate synthesis roadmap queue seed
+type: plan
+status: needs_review
+planning_state: queue_seed_completed
+result: PASS_WITH_WARNINGS
+wave: AIDE-ULTIMATE-SYNTHESIS-WAVE-01
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+depends_on:
+  - AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01/**
+    - .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01/**
+    - .aide/queue/AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/**
+    - .aide/queue/AIDE-ACCEPT-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/**
+    - .aide/queue/AIDE-BUILD-MIR-VALIDATION-PROFILE-V0-01/**
+    - .aide/queue/AIDE-BUILD-MIR-UPDATE-WORKFLOW-V0-01/**
+    - .aide/queue/AIDE-PLAN-STRUCTURE-INTELLIGENCE-SPINE-01/**
+    - .aide/queue/AIDE-BUILD-STRUCTURE-INTELLIGENCE-PROJECTION-01/**
+    - .aide/queue/AIDE-CHECK-STRUCTURE-INTELLIGENCE-PROJECTION-01/**
+    - .aide/queue/AIDE-ACCEPT-STRUCTURE-INTELLIGENCE-PROJECTION-01/**
+    - .aide/queue/AIDE-PLAN-DISTRIBUTION-PACKAGE-SHADOW-CANARY-WAVE-01/**
+    - .aide/queue/AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01/**
+    - .aide/queue/AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01/**
+    - .aide/queue/AIDE-PLAN-FUTURE-REQUIREMENTS-INTAKE-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/**
+    - .aide/reports/**
+    - docs/reference/**
+    - ROADMAP.md
+  forbidden_paths:
+    - core/**
+    - .aide/scripts/**
+    - .aide/policies/**
+    - .aide.local/**
+    - .github/**
+    - target repositories
+forbidden_scope:
+  - implementation_change
+  - queue_policy_change
+  - cleanup_apply
+  - file_move
+  - file_delete
+  - reference_rewrite
+  - generated_output_source_truth_change
+  - target_mutation
+  - real_target_apply
+  - shadow_apply
+  - release_artifact_generation
+  - release_publication
+  - provider_model_calls
+  - branch_worktree_automation
+  - push
+result_summary:
+  result: PASS_WITH_WARNINGS
+  material_finding_count: 0
+  missing_evidence: 0
+  queue_entries_added: 14
+  queue_entries_pending: 13
+  next_task: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+  warning_debt:
+    - New entries are tentative queue routing surfaces, not accepted capabilities.
+    - ROADMAP.md was not promoted because this batch is candidate planning, not committed roadmap truth.

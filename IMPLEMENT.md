@@ -10823,3 +10823,27 @@ Accepted predecessor task inspect/evidence, local target availability checks, pu
 ### Remaining Issues
 
 The result is `PARTIAL` because a local MIR checkout path is not configured, local clean/dirty state is unknown, and Lua/Factorio validation executables are not configured. The next task is exactly `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01`.
+
+## Work Item: AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01
+
+### Summary
+
+Seeded tentative queue surfaces for the synthesized AIDE roadmap and future requirements intake.
+
+### Implementation Notes
+
+- Added `AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01` as the auditable queue-shaping task for this batch.
+- Added pending MIR follow-up tasks for inputs, independent check, acceptance, validation profile, and no-apply update workflow.
+- Added pending Structure Intelligence tasks for spine planning, projection build, independent check, and acceptance.
+- Added pending wave-planning tasks for distribution package/shadow/canary work, read-only interop/external worker proof, preview/transaction/native experience sequencing, and future requirements intake.
+- Recorded the detailed not-yet-materialized candidate jobs in the task-local tentative task register instead of prematurely creating implementation packets.
+- Preserved already-materialized OwnershipLedger, distribution manifest/lock/records, product-status projection, and MIR public-metadata profile work instead of duplicating it.
+- Did not update `ROADMAP.md` because this batch is tentative queue routing, not committed public roadmap truth.
+
+### Verification
+
+Queue status, task inspection/evidence, broad validation, and diff checks are recorded in task-local evidence after validation.
+
+### Remaining Issues
+
+The new entries are tentative queue routing surfaces. They do not authorize downstream implementation, cleanup, file movement, target mutation, update apply, release generation/publication, provider/model calls, branch/worktree automation, or push. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01`.

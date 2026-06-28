@@ -1,0 +1,25 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-MIR-UPDATE-WORKFLOW-V0-01
+title: Build MIR update workflow v0
+type: build
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-DISTRIBUTION-PRODUCTIZATION-WAVE-01
+depends_on:
+  - AIDE-BUILD-MIR-VALIDATION-PROFILE-V0-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-BUILD-MIR-UPDATE-WORKFLOW-V0-01/**
+    - .aide/reports/canary-profiles/more-infinite-research-update-workflow/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+forbidden_scope:
+  - target_mutation
+  - apply
+  - release_generation
+  - release_publication
+  - provider_model_calls
+  - branch_worktree_automation
+recommended_next_task: AIDE-PLAN-STRUCTURE-INTELLIGENCE-SPINE-01

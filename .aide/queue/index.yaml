@@ -2939,3 +2939,143 @@ items:
   prompt: .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/prompt.md
   evidence: .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/evidence
   description: Builds a read-only public-metadata More Infinite Research canary profile after the operator prioritized MIR before ScreenSave and no local target checkout was found under C:/Projects. Records Factorio mod identity, info.json version 1.2.10, latest observed GitHub release 1.2.9, public file inventory, ownership classification candidates, validation candidates, source/release drift, blockers, and explicit non-capabilities. Stops at needs_review with PARTIAL, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01. Does not mutate MIR, clone MIR, perform real target apply, shadow apply, release generation/publication, mod portal upload, GitHub Release publication, package-source fetching, provider/model calls, branch/worktree automation, external repo mutation, AIDE distribution behavior changes, or push.
+- id: AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01
+  status: needs_review
+  planning_state: queue_seed_completed
+  result: PASS_WITH_WARNINGS
+  title: Plan ultimate synthesis roadmap queue seed
+  task: .aide/queue/AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01/evidence
+  description: Tentatively materializes the missing queue surfaces discussed in the June 28 synthesis chat as pending, review-gated work. Preserves live queue truth, avoids duplicating already-materialized ownership/distribution tasks, records the synthesized task register, and prepares future requirements intake. Stops at needs_review with PASS_WITH_WARNINGS. Does not implement downstream tasks, mutate external repositories, perform cleanup, move/delete files, apply updates, publish releases, call providers/models, automate branches/worktrees, or promote roadmap candidates to committed capabilities.
+- id: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Record More Infinite Research canary inputs
+  task: .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01/evidence
+  description: Records the missing MIR local target checkout path and validation prerequisites after the public-metadata profile returned PARTIAL. The task may classify provided inputs and prerequisites, but it must not clone, mutate, apply updates, publish, push, or call providers/models. It should route to AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01 only when local target availability and validation prerequisites are sufficiently recorded.
+- id: AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Check More Infinite Research canary profile v0
+  task: .aide/queue/AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/evidence
+  description: Independent check of the MIR canary profile after the inputs task resolves or explicitly preserves the local-target blocker. Check-only, no MIR mutation, no release work, no apply, no branch/worktree automation, and no provider/model calls.
+- id: AIDE-ACCEPT-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Accept More Infinite Research canary profile v0
+  task: .aide/queue/AIDE-ACCEPT-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/evidence
+  description: Acceptance-only gate for the MIR canary profile after build/input/check evidence is complete. Accepts only read-only canary profile readiness boundaries and explicit warning debt. Does not accept update apply, release readiness, target mutation, or external repository automation.
+- id: AIDE-BUILD-MIR-VALIDATION-PROFILE-V0-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Build MIR validation profile v0
+  task: .aide/queue/AIDE-BUILD-MIR-VALIDATION-PROFILE-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-MIR-VALIDATION-PROFILE-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-MIR-VALIDATION-PROFILE-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-MIR-VALIDATION-PROFILE-V0-01/evidence
+  description: Builds a read-only validation profile for More Infinite Research after the canary profile is accepted or explicitly accepted with local-target warning debt. Records validation commands, prerequisites, refusal conditions, and evidence expectations. Does not run release publishing, apply updates, mutate MIR, or call providers/models.
+- id: AIDE-BUILD-MIR-UPDATE-WORKFLOW-V0-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Build MIR update workflow v0
+  task: .aide/queue/AIDE-BUILD-MIR-UPDATE-WORKFLOW-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-MIR-UPDATE-WORKFLOW-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-MIR-UPDATE-WORKFLOW-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-MIR-UPDATE-WORKFLOW-V0-01/evidence
+  description: Builds a no-apply MIR update workflow plan using accepted distribution safety records and the MIR validation profile. Observe/assist only: inspect, report, plan, validate, and recommend. No apply, publish, push, merge, delete, history rewrite, external repo mutation, provider/model calls, or release generation.
+- id: AIDE-PLAN-STRUCTURE-INTELLIGENCE-SPINE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Plan Structure Intelligence spine
+  task: .aide/queue/AIDE-PLAN-STRUCTURE-INTELLIGENCE-SPINE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-STRUCTURE-INTELLIGENCE-SPINE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-STRUCTURE-INTELLIGENCE-SPINE-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-STRUCTURE-INTELLIGENCE-SPINE-01/evidence
+  description: Plans Structure Intelligence as the connection between Track B root authority, repo intelligence, generated-output/report-index evidence, OwnershipLedger, distribution/update records, and ContextPack guidance. Report-only planning; no cleanup, file moves, deletes, reference rewrites, alias application, source-truth promotion, target mutation, branch mutation, release work, or provider/model calls.
+- id: AIDE-BUILD-STRUCTURE-INTELLIGENCE-PROJECTION-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Build Structure Intelligence projection
+  task: .aide/queue/AIDE-BUILD-STRUCTURE-INTELLIGENCE-PROJECTION-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-STRUCTURE-INTELLIGENCE-PROJECTION-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-STRUCTURE-INTELLIGENCE-PROJECTION-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-STRUCTURE-INTELLIGENCE-PROJECTION-01/evidence
+  description: Builds a report-only Structure Intelligence projection over roots, file kinds, ownership classes, generated/report/evidence surfaces, path authority warnings, and known migration/alias candidates. Projection-only; no moves, deletes, rewrites, cleanup, generated source-truth promotion, target mutation, branch mutation, release work, or provider/model calls.
+- id: AIDE-CHECK-STRUCTURE-INTELLIGENCE-PROJECTION-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Check Structure Intelligence projection
+  task: .aide/queue/AIDE-CHECK-STRUCTURE-INTELLIGENCE-PROJECTION-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-STRUCTURE-INTELLIGENCE-PROJECTION-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-STRUCTURE-INTELLIGENCE-PROJECTION-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-STRUCTURE-INTELLIGENCE-PROJECTION-01/evidence
+  description: Independent check of the Structure Intelligence projection. Verifies it is grounded in accepted reports and does not overclaim cleanup, apply, deletion, movement, source-truth promotion, target mutation, or release readiness.
+- id: AIDE-ACCEPT-STRUCTURE-INTELLIGENCE-PROJECTION-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Accept Structure Intelligence projection
+  task: .aide/queue/AIDE-ACCEPT-STRUCTURE-INTELLIGENCE-PROJECTION-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-STRUCTURE-INTELLIGENCE-PROJECTION-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-STRUCTURE-INTELLIGENCE-PROJECTION-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-STRUCTURE-INTELLIGENCE-PROJECTION-01/evidence
+  description: Acceptance-only gate for the Structure Intelligence projection as read-only operator and ContextPack guidance. Does not accept StructureTransaction, migration apply, path alias application, root cleanup, file moves, file deletes, generated-output source-truth changes, target mutation, or release readiness.
+- id: AIDE-PLAN-DISTRIBUTION-PACKAGE-SHADOW-CANARY-WAVE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Plan distribution package, shadow update, and canary wave
+  task: .aide/queue/AIDE-PLAN-DISTRIBUTION-PACKAGE-SHADOW-CANARY-WAVE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-DISTRIBUTION-PACKAGE-SHADOW-CANARY-WAVE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-DISTRIBUTION-PACKAGE-SHADOW-CANARY-WAVE-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-DISTRIBUTION-PACKAGE-SHADOW-CANARY-WAVE-01/evidence
+  description: Plans the package-source/verifier, shadow-update, self-update fixture, and downstream canary waves after accepted distribution product-status and MIR inputs/profile work. Covers local archive source, GitHub release source, signed metadata verifier, package provenance verifier, shadow update apply, rollback proof, and canary ordering. Planning-only; no network fetching, release publication, artifact upload, target mutation, branch/worktree automation, or provider/model calls.
+- id: AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Plan read-only interop and external worker proof wave
+  task: .aide/queue/AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-READONLY-INTEROP-EXTERNAL-WORKER-WAVE-01/evidence
+  description: Plans read-only MCP service, ACP projection, A2A discovery-only, and first external worker proof sequencing, including Omnigent adapter/session/event/evidence/conformance candidates. Planning-only; no live server exposure, mutation tool, worker launch, provider/model call, network call, target mutation, branch/worktree automation, or external service dependency.
+- id: AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Plan preview transaction and native experience wave
+  task: .aide/queue/AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-PREVIEW-TRANSACTION-AND-NATIVE-EXPERIENCE-WAVE-01/evidence
+  description: Plans DevelopmentTransaction, StructureTransaction, PreviewSession, ShadowWorkspace, document preview/apply/rollback, and initial Workbench/native projection experiences. Planning-only; no apply-capable transaction, no real preview/apply runtime, no target mutation, no UI product claim, no branch/worktree automation, and no provider/model calls.
+- id: AIDE-PLAN-FUTURE-REQUIREMENTS-INTAKE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Plan future requirements intake and synthesis alignment
+  task: .aide/queue/AIDE-PLAN-FUTURE-REQUIREMENTS-INTAKE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-FUTURE-REQUIREMENTS-INTAKE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-FUTURE-REQUIREMENTS-INTAKE-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-FUTURE-REQUIREMENTS-INTAKE-01/evidence
+  description: Creates the future intake surface for additional tasks, jobs, constraints, and requirements so they can be reconciled against the synthesized queue, live repo truth, and roadmap boundaries before implementation. Planning-only; no implementation, policy mutation, queue policy mutation, target mutation, release work, branch/worktree automation, or provider/model calls.
