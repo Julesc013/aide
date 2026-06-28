@@ -1,0 +1,27 @@
+{
+  "schema_version": "aide.distribution-apply-engine-v0-repair-01-check.finding-matrix.v0",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "findings": [
+    {
+      "finding_id": "distribution_apply_engine.update_plan_binding_not_enforced",
+      "status": "closed",
+      "evidence": "missing-update-plan-binding refuses with distribution_apply_engine.update_plan_binding_missing before temp workspace execution"
+    },
+    {
+      "finding_id": "distribution_apply_engine.rollback_bundle_binding_not_enforced",
+      "status": "closed",
+      "evidence": "missing-rollback-bundle-binding refuses with distribution_apply_engine.rollback_bundle_binding_missing before temp workspace execution"
+    },
+    {
+      "finding_id": "distribution_apply_engine.predecessor_mismatch_not_refused",
+      "status": "closed",
+      "evidence": "predecessor mismatch scenarios refuse with distribution_apply_engine.predecessor_mismatch before temp workspace execution"
+    },
+    {
+      "finding_id": "distribution_apply_engine.run_without_accepted_context",
+      "status": "closed",
+      "evidence": "run-without-accepted-context refuses with distribution_apply_engine.accepted_context_missing before temp workspace execution"
+    }
+  ]
+}

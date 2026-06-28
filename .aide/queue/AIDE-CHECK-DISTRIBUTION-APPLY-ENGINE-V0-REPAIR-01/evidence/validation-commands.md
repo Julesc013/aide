@@ -1,0 +1,25 @@
+# Validation Commands
+
+- `py -3 -m compileall core/distribution .aide/scripts/tests/test_aide_distribution_apply_engine_v0.py`
+- `py -3 .aide/scripts/tests/test_aide_distribution_apply_engine_v0.py`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply status`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply plan --scenario managed-file-update`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario managed-file-update --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply verify`
+- independent adversarial scenario and validator probes
+- predecessor protocol validations through UpdateReceipt
+- `py -3 .aide/scripts/aide_lite.py install validate`
+- `py -3 .aide/scripts/aide_lite.py repair validate`
+- `py -3 .aide/scripts/aide_lite.py upgrade validate`
+- `py -3 .aide/scripts/aide_lite.py rollback validate`
+- `py -3 .aide/scripts/aide_lite.py uninstall validate`
+- `py -3 .aide/scripts/aide_lite.py release validate`
+- `py -3 .aide/scripts/aide_lite.py release draft-validate`
+- `py -3 .aide/scripts/aide_lite.py release publication-boundary`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`
+- path, credential-pattern, and source-output misuse scans over changed check reports/evidence
+- `git diff --check`
+- `git diff --cached --check`
+- `py -3 .aide/scripts/aide_lite.py commit check --latest`

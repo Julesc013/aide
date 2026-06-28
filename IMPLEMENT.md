@@ -10540,3 +10540,26 @@ Focused tests, compile checks, `distribution-apply status/plan/run/verify`, and 
 ### Remaining Issues
 
 DistributionApplyEngine v0 remains proposed until independent repair-check and acceptance. The next serialized task is `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`.
+
+## Work Item: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+
+### Summary
+
+Independently checked DistributionApplyEngine v0 repair 01.
+
+### Implementation Notes
+
+- Confirmed the repair task exists, is complete, and stopped at `needs_review`.
+- Verified `core/distribution/apply_context.py` exists and is used by `core/distribution/apply_engine.py`.
+- Verified accepted context validation runs before temp workspace setup, operation execution, rollback verification, and successful UpdateReceipt fixture output.
+- Verified committed adversarial scenarios for missing UpdatePlan binding, missing RollbackBundle binding, RollbackBundle/UpdatePlan mismatch, predecessor mismatches, and missing accepted context.
+- Verified direct validator probes for non-accepted context, operation-not-in-UpdatePlan, and operation-lacking-RollbackBundle-coverage.
+- Did not modify implementation, accept DistributionApplyEngine v0, begin self-consumer fixture or canaries, mutate targets, publish releases, call provider/model/network services, or automate branches/worktrees.
+
+### Verification
+
+Focused tests, `distribution-apply status/plan/run/verify`, adversarial probes, predecessor regressions, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, path and credential-pattern scans, source-output misuse scan, diff checks, and commit-policy validation passed.
+
+### Remaining Issues
+
+DistributionApplyEngine v0 is ready for the separate acceptance gate. The next serialized task is `AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01`.

@@ -3157,3 +3157,15 @@
 - Verification Intent: compile checks, focused DistributionApplyEngine tests, `distribution-apply status/plan/run/verify`, adversarial context-binding scenario runs, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: DistributionApplyEngine v0 now refuses missing UpdatePlan binding, missing RollbackBundle binding, RollbackBundle/UpdatePlan mismatch, predecessor ref mismatches, and missing accepted context before temp workspace execution or successful UpdateReceipt fixture output. The next serialized task is exactly `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`.
+
+### Queue ID: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+
+- Title: Check DistributionApplyEngine v0 repair 01
+- Status: Needs Review
+- Objective: independently verify closure of the four DistributionApplyEngine v0 accepted-context binding findings.
+- Scope: `.aide/queue/AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01/**`, `.aide/reports/distribution-apply-engine-v0-repair-01-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01` at `6f33d405c69e1adf43eda3426704e2964f87da42`.
+- Verification Intent: focused DistributionApplyEngine tests, `distribution-apply status/plan/run/verify`, committed adversarial fixture probes, direct accepted-context validator probes, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Result: `PASS_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: The repair closes the original four material findings and preserves fixture-only/temp-workspace-only boundaries. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01`.

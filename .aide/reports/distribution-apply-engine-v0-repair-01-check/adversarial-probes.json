@@ -1,0 +1,30 @@
+{
+  "schema_version": "aide.distribution-apply-engine-v0-repair-01-check.adversarial-probes.v0",
+  "committed_fixture_probe_count": 9,
+  "direct_validator_probe_count": 3,
+  "committed_fixture_common_result": {
+    "status": "FAILED_VALIDATION",
+    "update_receipt_generated": false,
+    "operation_count": 0,
+    "temp_workspace_digest_before": null,
+    "canonical_fixture_unchanged": true,
+    "real_target_repo_modified": false,
+    "source_repo_apply_occurred": false
+  },
+  "committed_fixture_scenarios": {
+    "missing-update-plan-binding": "distribution_apply_engine.update_plan_binding_missing",
+    "missing-rollback-bundle-binding": "distribution_apply_engine.rollback_bundle_binding_missing",
+    "mismatched-update-plan-rollback-bundle": "distribution_apply_engine.update_plan_rollback_bundle_mismatch",
+    "predecessor-source-distribution-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "predecessor-project-lock-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "predecessor-ownership-ledger-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "predecessor-install-record-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "predecessor-migration-record-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "run-without-accepted-context": "distribution_apply_engine.accepted_context_missing"
+  },
+  "direct_validator_probes": {
+    "context-not-accepted": "distribution_apply_engine.accepted_context_not_accepted",
+    "operation-not-in-update-plan": "distribution_apply_engine.operation_not_in_update_plan",
+    "operation-lacks-rollback-coverage": "distribution_apply_engine.operation_lacks_rollback_coverage"
+  }
+}

@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+checked_task: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+checked_commit: 6f33d405c69e1adf43eda3426704e2964f87da42
+material_finding_count: 0
+missing_evidence: 0
+implementation_files_changed: false
+next_task: AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01
+notes:
+  - The four material findings from AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01 are closed by the accepted-context gate.
+  - Missing UpdatePlan binding, missing RollbackBundle binding, UpdatePlan/RollbackBundle mismatch, predecessor mismatch, and missing accepted context refuse before temp workspace execution.
+  - Direct validator probes also confirmed not-accepted context, operation-not-in-UpdatePlan, and operation-lacking-RollbackBundle-coverage refusals.
+  - Refusal cases do not emit successful UpdateReceipt fixture output, execute operations, mutate canonical fixtures, mutate real targets, or apply to the source repo.
+  - No implementation repair, acceptance, self-consumer fixture, canary, release, provider/model/network call, target mutation, source repo apply, or external repo mutation was started.
