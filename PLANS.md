@@ -3122,3 +3122,15 @@
 - Scope: `.aide/queue/AIDE-ACCEPT-MIGRATION-RECORD-V0-01/**`, `.aide/reports/migration-record-v0-acceptance/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Notes: MigrationRecord v0 is accepted only as no-apply migration decision metadata. The next serialized task is exactly `AIDE-BUILD-UPDATE-PLAN-V1-01`.
+
+### Queue ID: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+
+- Title: Build DistributionApplyEngine v0
+- Status: Needs Review
+- Objective: build `distribution_apply_engine_v0` as the first fixture-only, temp-workspace-only executor in the distribution chain after accepted UpdateReceipt v0.
+- Scope: `core/distribution/**`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_distribution_apply_engine_v0.py`, `.aide/fixtures/distribution-apply-engine-v0/**`, `.aide/reports/distribution-apply-engine-v0/**`, `.aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: accepted DistributionManifest v1, ProjectLock v0, OwnershipLedger v1, InstallRecord v0, MigrationRecord v0, UpdatePlan v1, RollbackBundle v0, and UpdateReceipt v0.
+- Verification Intent: syntax checks, focused DistributionApplyEngine tests, `distribution-apply status/plan/run/verify`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad AIDE validation, task inspect/evidence, canonical fixture preservation checks, temp workspace isolation checks, report/evidence scans, diff checks, and commit-policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `material_finding_count: 0`, records `missing_evidence: 0`, and recommends exactly `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01`.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: DistributionApplyEngine v0 mutates only copied temporary fixture workspaces. It does not implement real target apply, source repo self-update, release publication, external repo mutation, self-consumer fixture, canary work, provider/model/network calls, or branch/worktree automation.

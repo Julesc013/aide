@@ -1,0 +1,69 @@
+{
+  "canonical_fixture_must_remain_unchanged": true,
+  "expected_refusal_code": "distribution_apply_engine.project_overlay_overwrite_refused",
+  "expected_result": "FAILED_VALIDATION",
+  "explicit_non_capabilities": [
+    "real_target_apply",
+    "source_repo_apply",
+    "release_apply",
+    "public_release",
+    "target_repo_scan_authority",
+    "screensave_mutation",
+    "eureka_mutation",
+    "dominium_mutation",
+    "external_repo_mutation",
+    "release_archive_creation",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "branch_worktree_automation",
+    "self_consumer_fixture",
+    "real_project_canary"
+  ],
+  "fixture_only": true,
+  "initial_files": {
+    "evidence/proof.txt": "evidence only\n",
+    "legacy/config.ini": "legacy=true\n",
+    "local-only/settings.json": "{\"local\": true}\n",
+    "managed/app.txt": "old managed file\n",
+    "managed/remove.txt": "remove me\n",
+    "never-touch/locked.txt": "locked\n",
+    "overlay/config.json": "{\"overlay\": true}\n",
+    "project/readme.md": "project owned content\n",
+    "runtime/cache.txt": "runtime output\n",
+    "sections/config.txt": "prefix\n# AIDE:BEGIN settings\nold section\n# AIDE:END settings\nsuffix\n",
+    "unknown/file.txt": "unknown\n"
+  },
+  "operations": [
+    {
+      "evidence_refs": [
+        "aide://evidence/distribution-apply-engine-v0/project-overlay-overwrite-refusal"
+      ],
+      "operation_class": "update_managed_file",
+      "operation_ref": "aide://update-plan/operation/project-overlay-overwrite-refusal",
+      "ownership_class": "project_overlay",
+      "postimage": "bad\n",
+      "postimage_digest": "sha256:1d7a363ce12430881ec56c9cf1409c49c491043618e598c356e2959040872f5a",
+      "preimage": "{\"overlay\": true}\n",
+      "preimage_digest": "sha256:40adb521a42300036952c5b1ebff9efc24d6ccb2ae7713be00a0935eb5a8b6df",
+      "rollback_covered": true,
+      "rollback_requirement_ref": "aide://rollback-requirement/project-overlay-overwrite-refusal",
+      "target_relative_path": "overlay/config.json"
+    }
+  ],
+  "ownership_ledger_ref": "aide://ownership-ledger/aide-self-ownership-ledger-v1",
+  "project_lock_ref": "aide://project-lock/aide-self-lock-v0",
+  "required_features": [
+    "distribution_apply_engine_v0",
+    "fixture_only",
+    "temp_workspace_only"
+  ],
+  "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+  "scenario_id": "project-overlay-overwrite-refusal",
+  "schema_version": "aide.distribution-apply-scenario.v0",
+  "source_distribution_ref": "aide://distribution/aide-lite-self-fixture",
+  "temp_workspace_only": true,
+  "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+}

@@ -1,0 +1,17 @@
+{
+  "accepted_update_receipt_required": true,
+  "expected_refusal_code": null,
+  "expected_result": "PASS_WITH_WARNINGS",
+  "fixture_only": true,
+  "operation_classes": [
+    "update_managed_file"
+  ],
+  "operation_count": 1,
+  "real_target_apply": false,
+  "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01",
+  "scenario_id": "managed-file-update",
+  "schema_version": "aide.distribution-apply-plan.v0",
+  "source_repo_apply": false,
+  "temp_workspace_only": true,
+  "update_receipt_accepted": true
+}

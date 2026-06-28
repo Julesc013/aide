@@ -1,0 +1,103 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+title: Build DistributionApplyEngine v0
+status: needs_review
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+capability_label: distribution_apply_engine_v0
+wave: AIDE-DISTRIBUTION-SAFETY-WAVE-04C
+dependencies:
+  - AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+  - AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+  - AIDE-ACCEPT-UPDATE-PLAN-V1-01
+  - AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+  - AIDE-ACCEPT-INSTALL-RECORD-V0-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+accepted_predecessor_capabilities:
+  - distribution_manifest_v1
+  - project_lock_v0
+  - ownership_ledger_v1
+  - install_record_v0
+  - migration_record_v0
+  - update_plan_v1
+  - rollback_bundle_v0
+  - update_receipt_v0
+objective: Build DistributionApplyEngine v0 as a fixture-only, temp-workspace-only executor for accepted distribution update plan fixtures.
+allowed_paths:
+  - core/distribution/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_distribution_apply_engine_v0.py
+  - .aide/fixtures/distribution-apply-engine-v0/**
+  - .aide/reports/distribution-apply-engine-v0/**
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_scope:
+  - real_target_apply
+  - source_repo_apply
+  - target_repo_mutation
+  - target_repo_scan_authority
+  - release_archive_creation
+  - tag_upload_github_release
+  - provider_model_network_calls
+  - self_consumer_fixture
+  - screensave_mutation
+  - eureka_mutation
+  - dominium_mutation
+  - external_repo_mutation
+  - branch_worktree_automation
+outputs:
+  - core/distribution/apply_engine.py
+  - core/distribution/temp_workspace.py
+  - core/distribution/operation_executor.py
+  - core/distribution/rollback_verifier.py
+  - core/distribution/apply_reports.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_distribution_apply_engine_v0.py
+  - .aide/fixtures/distribution-apply-engine-v0/**
+  - .aide/reports/distribution-apply-engine-v0/**
+  - .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+validation:
+  - py -3 -m py_compile core/distribution/apply_engine.py core/distribution/temp_workspace.py core/distribution/operation_executor.py core/distribution/rollback_verifier.py core/distribution/apply_reports.py .aide/scripts/tests/test_aide_distribution_apply_engine_v0.py .aide/scripts/aide_lite.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p "test_aide_distribution_apply_engine_v0.py"
+  - py -3 .aide/scripts/aide_lite.py distribution-apply status
+  - py -3 .aide/scripts/aide_lite.py distribution-apply plan --scenario managed-file-update
+  - py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario managed-file-update --mode apply-temp
+  - py -3 .aide/scripts/aide_lite.py distribution-apply verify
+  - predecessor regression validation
+  - Q43-Q48 no-apply/no-publish validators
+  - py -3 .aide/scripts/aide_lite.py validate
+  - task inspect/evidence
+  - canonical fixture unchanged check
+  - temp workspace isolation check
+  - path and credential-pattern scans
+  - git diff --check
+  - git diff --cached --check
+  - commit check --latest
+result_summary:
+  proposed_capability: distribution_apply_engine_v0
+  material_finding_count: 0
+  missing_evidence: 0
+  fixture_only: true
+  temp_workspace_only: true
+  scenario_count: 37
+  positive_scenario_count: 17
+  negative_scenario_count: 20
+  canonical_fixture_unchanged: true
+  temp_workspace_retained: false
+  rollback_verified: true
+  update_receipt_generated: true
+  real_target_repo_modified: false
+  source_repo_apply_occurred: false
+  external_repo_touched: false
+  release_publication_occurred: false
+  network_calls_occurred: false
+  provider_model_calls_occurred: false
+  next_task: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01

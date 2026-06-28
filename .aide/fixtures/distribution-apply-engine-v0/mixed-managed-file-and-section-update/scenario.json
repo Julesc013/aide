@@ -1,0 +1,86 @@
+{
+  "canonical_fixture_must_remain_unchanged": true,
+  "expected_refusal_code": null,
+  "expected_result": "PASS_WITH_WARNINGS",
+  "explicit_non_capabilities": [
+    "real_target_apply",
+    "source_repo_apply",
+    "release_apply",
+    "public_release",
+    "target_repo_scan_authority",
+    "screensave_mutation",
+    "eureka_mutation",
+    "dominium_mutation",
+    "external_repo_mutation",
+    "release_archive_creation",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "branch_worktree_automation",
+    "self_consumer_fixture",
+    "real_project_canary"
+  ],
+  "fixture_only": true,
+  "initial_files": {
+    "evidence/proof.txt": "evidence only\n",
+    "legacy/config.ini": "legacy=true\n",
+    "local-only/settings.json": "{\"local\": true}\n",
+    "managed/app.txt": "old managed file\n",
+    "managed/remove.txt": "remove me\n",
+    "never-touch/locked.txt": "locked\n",
+    "overlay/config.json": "{\"overlay\": true}\n",
+    "project/readme.md": "project owned content\n",
+    "runtime/cache.txt": "runtime output\n",
+    "sections/config.txt": "prefix\n# AIDE:BEGIN settings\nold section\n# AIDE:END settings\nsuffix\n",
+    "unknown/file.txt": "unknown\n"
+  },
+  "operations": [
+    {
+      "evidence_refs": [
+        "aide://evidence/distribution-apply-engine-v0/mixed-managed-file-and-section-update-file"
+      ],
+      "operation_class": "update_managed_file",
+      "operation_ref": "aide://update-plan/operation/mixed-managed-file-and-section-update-file",
+      "ownership_class": "vendor_managed_file",
+      "postimage": "mixed file\n",
+      "postimage_digest": "sha256:9d063f7cfd844c9391a263bb36ef79f0aca2c18c3c662de2d6fb5eb307bf0884",
+      "preimage": "old managed file\n",
+      "preimage_digest": "sha256:5a36ecbe1e599858d196807a41b6559056d225a46a79a3d46ecdff324ed2dc63",
+      "rollback_covered": true,
+      "rollback_requirement_ref": "aide://rollback-requirement/mixed-managed-file-and-section-update-file",
+      "target_relative_path": "managed/app.txt"
+    },
+    {
+      "evidence_refs": [
+        "aide://evidence/distribution-apply-engine-v0/mixed-managed-file-and-section-update-section"
+      ],
+      "operation_class": "update_managed_section",
+      "operation_ref": "aide://update-plan/operation/mixed-managed-file-and-section-update-section",
+      "ownership_class": "vendor_managed_section",
+      "postimage": "prefix\n# AIDE:BEGIN settings\nmixed section\n# AIDE:END settings\nsuffix\n",
+      "postimage_digest": "sha256:76ab84714e79f1479349a911d28bbc407ca561772a686861a087225fc695a700",
+      "preimage": "prefix\n# AIDE:BEGIN settings\nold section\n# AIDE:END settings\nsuffix\n",
+      "preimage_digest": "sha256:565e365777cc51d7430ecd7dabd93a83ef9d4ab4fb3b45bf86f4f364af193c69",
+      "rollback_covered": true,
+      "rollback_requirement_ref": "aide://rollback-requirement/mixed-managed-file-and-section-update-section",
+      "section_content": "mixed section",
+      "section_identity": "settings",
+      "target_relative_path": "sections/config.txt"
+    }
+  ],
+  "ownership_ledger_ref": "aide://ownership-ledger/aide-self-ownership-ledger-v1",
+  "project_lock_ref": "aide://project-lock/aide-self-lock-v0",
+  "required_features": [
+    "distribution_apply_engine_v0",
+    "fixture_only",
+    "temp_workspace_only"
+  ],
+  "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+  "scenario_id": "mixed-managed-file-and-section-update",
+  "schema_version": "aide.distribution-apply-scenario.v0",
+  "source_distribution_ref": "aide://distribution/aide-lite-self-fixture",
+  "temp_workspace_only": true,
+  "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+}

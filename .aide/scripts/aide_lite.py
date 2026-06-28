@@ -8000,6 +8000,22 @@ def load_update_receipt_module(repo_root: Path):
     return module
 
 
+def load_distribution_apply_module(repo_root: Path):
+    module_path = repo_root / "core/distribution/apply_engine.py"
+    if not module_path.exists():
+        raise ValueError("DistributionApplyEngine module missing: core/distribution/apply_engine.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_distribution_apply_engine", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("DistributionApplyEngine module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def load_conformance_profile_module(repo_root: Path):
     module_path = repo_root / "core/protocol/conformance_profile.py"
     if not module_path.exists():
@@ -35273,6 +35289,128 @@ def command_update_receipt_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_distribution_apply_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'distribution_apply_engine_v0')}")
+    print(f"fixture_only: {str(data.get('fixture_only', True)).lower()}")
+    print(f"temp_workspace_only: {str(data.get('temp_workspace_only', True)).lower()}")
+    print(f"real_target_apply_implemented: {str(data.get('real_target_apply_implemented', False)).lower()}")
+    print(f"source_repo_apply_implemented: {str(data.get('source_repo_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print(f"self_consumer_fixture_started: {str(data.get('self_consumer_fixture_started', False)).lower()}")
+    print(f"canaries_started: {str(data.get('canaries_started', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_distribution_apply_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_apply_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite distribution-apply status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_apply_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-apply status")
+    print(f"result: {data.get('status')}")
+    print(f"scenario_count: {data.get('scenario_count')}")
+    print(f"positive_scenario_count: {data.get('positive_scenario_count')}")
+    print(f"negative_scenario_count: {data.get('negative_scenario_count')}")
+    print(f"update_receipt_accepted: {str(data.get('update_receipt_accepted', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_distribution_apply_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_distribution_apply_plan(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_apply_module(repo_root)
+    try:
+        report = module.plan(repo_root, scenario_id=args.scenario)
+    except Exception as exc:  # noqa: BLE001 - plan reports must fail closed.
+        print("AIDE Lite distribution-apply plan")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_apply_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-apply plan")
+    print("result: PASS_WITH_WARNINGS")
+    print(f"scenario_id: {report.get('scenario_id')}")
+    print(f"operation_count: {report.get('operation_count')}")
+    print(f"expected_result: {report.get('expected_result')}")
+    print(f"expected_refusal_code: {report.get('expected_refusal_code') or 'none'}")
+    print(f"update_receipt_accepted: {str(report.get('update_receipt_accepted', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_distribution_apply_boundary_lines(report)
+    return 0
+
+
+def command_distribution_apply_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_apply_module(repo_root)
+    try:
+        report = module.run(repo_root, scenario_id=args.scenario, mode=args.mode)
+    except Exception as exc:  # noqa: BLE001 - fixture runs must fail closed.
+        print("AIDE Lite distribution-apply run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_apply_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-apply run")
+    print(f"result: {report.get('status')}")
+    print(f"scenario_id: {report.get('scenario_id')}")
+    print(f"refusal_code: {report.get('refusal_code') or 'none'}")
+    print(f"passed: {str(report.get('passed', False)).lower()}")
+    print(f"update_receipt_generated: {str(report.get('update_receipt_generated', False)).lower()}")
+    print(f"rollback_verified: {str(report.get('rollback_verified', False)).lower()}")
+    print(f"canonical_fixture_unchanged: {str(report.get('canonical_fixture_unchanged', False)).lower()}")
+    print(f"temp_workspace_retained: {str(report.get('temp_workspace_retained', False)).lower()}")
+    print(f"real_target_repo_modified: {str(report.get('real_target_repo_modified', False)).lower()}")
+    _print_distribution_apply_boundary_lines(report)
+    return 0 if report.get("passed") else 1
+
+
+def command_distribution_apply_verify(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_apply_module(repo_root)
+    try:
+        report = module.verify(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite distribution-apply verify")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_apply_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-apply verify")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "fixture_only",
+        "temp_workspace_only",
+        "update_receipt_accepted",
+        "fixture_matrix_passed",
+        "canonical_fixture_unchanged",
+        "source_repo_apply_occurred",
+        "real_target_repo_modified",
+        "external_repo_touched",
+        "release_publication_occurred",
+        "network_calls_occurred",
+        "provider_model_calls_occurred",
+    ]:
+        if key in checks:
+            print(f"{key}: {str(checks.get(key)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"material_finding_count: {report.get('material_finding_count')}")
+    print(f"missing_evidence: {report.get('missing_evidence')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_distribution_apply_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
     print("profile_only: true")
     print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
@@ -40363,6 +40501,19 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     update_receipt_subparsers.add_parser("status").set_defaults(handler=command_update_receipt_status)
     update_receipt_subparsers.add_parser("project").set_defaults(handler=command_update_receipt_project)
     update_receipt_subparsers.add_parser("validate").set_defaults(handler=command_update_receipt_validate)
+
+    distribution_apply_parser = subparsers.add_parser("distribution-apply")
+    distribution_apply_parser.set_defaults(handler=command_distribution_apply_status)
+    distribution_apply_subparsers = distribution_apply_parser.add_subparsers(dest="distribution_apply_command", required=False)
+    distribution_apply_subparsers.add_parser("status").set_defaults(handler=command_distribution_apply_status)
+    distribution_apply_plan_parser = distribution_apply_subparsers.add_parser("plan")
+    distribution_apply_plan_parser.add_argument("--scenario", required=True)
+    distribution_apply_plan_parser.set_defaults(handler=command_distribution_apply_plan)
+    distribution_apply_run_parser = distribution_apply_subparsers.add_parser("run")
+    distribution_apply_run_parser.add_argument("--scenario", required=True)
+    distribution_apply_run_parser.add_argument("--mode", required=True, choices=["apply-temp"])
+    distribution_apply_run_parser.set_defaults(handler=command_distribution_apply_run)
+    distribution_apply_subparsers.add_parser("verify").set_defaults(handler=command_distribution_apply_verify)
 
     conformance_profile_parser = subparsers.add_parser("conformance-profile")
     conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)

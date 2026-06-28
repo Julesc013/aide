@@ -10468,3 +10468,26 @@ inspect/evidence, diff checks, and commit-policy check.
 
 UpdatePlan v1 has not been started. The next serialized task is
 `AIDE-BUILD-UPDATE-PLAN-V1-01`.
+
+## Work Item: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+
+### Summary
+
+Built DistributionApplyEngine v0 as a fixture-only, temp-workspace-only executor.
+
+### Implementation Notes
+
+- Added `core/distribution/**` helpers for temp workspace isolation, operation execution, rollback verification, report rendering, and the build-level apply engine coordinator.
+- Added `distribution-apply status`, `distribution-apply plan`, `distribution-apply run --mode apply-temp`, and `distribution-apply verify` commands to `.aide/scripts/aide_lite.py`.
+- Added a 37-scenario fixture corpus covering managed file operations, managed section operations, preservation behavior, rollback success, UpdateReceipt-shaped fixture output, canonical fixture preservation, and fail-closed refusal cases.
+- Added focused tests for scenario coverage, temp execution, negative refusal codes, rollback verification, canonical fixture preservation, and CLI boundary behavior.
+- Generated reports under `.aide/reports/distribution-apply-engine-v0/` and task-local evidence under `.aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01/evidence/`.
+- Did not run an independent check or acceptance. Did not perform real target apply, source repo self-apply, target repo mutation, release publication, provider/model/network calls, self-consumer fixture work, canary work, or branch/worktree automation.
+
+### Verification
+
+Syntax checks, focused DistributionApplyEngine tests, `distribution-apply status/plan/run/verify`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad `aide_lite.py validate`, task inspect/evidence, path and credential-pattern scans, source-output misuse scan, diff checks, and commit-policy validation passed.
+
+### Remaining Issues
+
+DistributionApplyEngine v0 remains proposed until independent check and acceptance. The next serialized task is `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01`.

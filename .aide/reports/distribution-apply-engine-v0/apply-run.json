@@ -1,0 +1,98 @@
+{
+  "canonical_fixture_digest_after": "sha256:a0d155eef2415ce068acf45bd97ea91092ed919c47a791464559b9813f5acc5d",
+  "canonical_fixture_digest_before": "sha256:a0d155eef2415ce068acf45bd97ea91092ed919c47a791464559b9813f5acc5d",
+  "canonical_fixture_unchanged": true,
+  "expected_refusal_code": null,
+  "expected_result": "PASS_WITH_WARNINGS",
+  "external_repo_touched": false,
+  "network_calls_occurred": false,
+  "operation_results": [
+    {
+      "operation_ref": "aide://update-plan/operation/managed-file-update",
+      "postimage_digest": "sha256:3ab1df88fcef78ccc2b0b0cc9591e52335329b0d19fd8d7e7ac734fcbffb810c",
+      "preimage_digest": "sha256:5a36ecbe1e599858d196807a41b6559056d225a46a79a3d46ecdff324ed2dc63",
+      "receipt_class": "managed_file_updated",
+      "status": "APPLIED_TEMP",
+      "target_relative_path": "managed/app.txt"
+    }
+  ],
+  "passed": true,
+  "provider_model_calls_occurred": false,
+  "real_target_repo_modified": false,
+  "refusal_code": null,
+  "release_publication_occurred": false,
+  "rollback_report": {
+    "refusal_code": null,
+    "rollback_verified": true,
+    "status": "PASS_WITH_WARNINGS"
+  },
+  "rollback_verified": true,
+  "scenario_id": "managed-file-update",
+  "schema_version": "aide.distribution-apply-run.v0",
+  "source_repo_apply_occurred": false,
+  "status": "PASS_WITH_WARNINGS",
+  "temp_workspace_digest_after_apply": "sha256:720b7fcc433f6f0862c32e33dc615691a8a50f33060bd153bbf57f765a2ee526",
+  "temp_workspace_digest_after_rollback": "sha256:f11a12a875238a6a3b8926b942834c42f00e586dd963809a48c8f1e79fe180eb",
+  "temp_workspace_digest_before": "sha256:f11a12a875238a6a3b8926b942834c42f00e586dd963809a48c8f1e79fe180eb",
+  "temp_workspace_only": true,
+  "temp_workspace_retained": false,
+  "update_receipt_generated": true,
+  "update_receipt_output": {
+    "apiVersion": "aide.dev/v0",
+    "kind": "UpdateReceipt",
+    "metadata": {
+      "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+      "target_project_ref": "aide://target-project/temp-fixture-workspace",
+      "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+      "update_receipt_ref": "aide://update-receipt/distribution-apply-engine-v0/managed-file-update"
+    },
+    "schema_version": "aide.update-receipt.v0.fixture-output",
+    "spec": {
+      "explicit_non_capabilities": [
+        "real_target_apply",
+        "source_repo_apply",
+        "release_apply",
+        "public_release",
+        "target_repo_scan_authority",
+        "screensave_mutation",
+        "eureka_mutation",
+        "dominium_mutation",
+        "external_repo_mutation",
+        "release_archive_creation",
+        "git_tag_creation",
+        "github_release_creation",
+        "upload",
+        "network_call",
+        "provider_model_call",
+        "branch_worktree_automation",
+        "self_consumer_fixture",
+        "real_project_canary"
+      ],
+      "operation_receipts": [
+        {
+          "operation_receipt_class": "managed_file_updated",
+          "operation_ref": "aide://update-plan/operation/managed-file-update",
+          "postimage_digest": "sha256:3ab1df88fcef78ccc2b0b0cc9591e52335329b0d19fd8d7e7ac734fcbffb810c",
+          "preimage_digest": "sha256:5a36ecbe1e599858d196807a41b6559056d225a46a79a3d46ecdff324ed2dc63",
+          "target_relative_path": "managed/app.txt",
+          "target_repository_mutation_performed": false,
+          "update_apply_authority_claimed": false
+        }
+      ],
+      "validation_results": [
+        {
+          "fixture_only": true,
+          "result": "PASS_WITH_WARNINGS",
+          "temp_workspace_only": true,
+          "validation_result_ref": "aide://validation/distribution-apply-engine-v0/managed-file-update"
+        }
+      ]
+    },
+    "status": {
+      "release_publication_implemented": false,
+      "source_repo_apply_implemented": false,
+      "target_repository_mutation_implemented": false,
+      "update_apply_implemented": false
+    }
+  }
+}

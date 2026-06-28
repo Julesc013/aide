@@ -1,0 +1,67 @@
+{
+  "canonical_fixture_must_remain_unchanged": true,
+  "expected_refusal_code": null,
+  "expected_result": "PASS_WITH_WARNINGS",
+  "explicit_non_capabilities": [
+    "real_target_apply",
+    "source_repo_apply",
+    "release_apply",
+    "public_release",
+    "target_repo_scan_authority",
+    "screensave_mutation",
+    "eureka_mutation",
+    "dominium_mutation",
+    "external_repo_mutation",
+    "release_archive_creation",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "branch_worktree_automation",
+    "self_consumer_fixture",
+    "real_project_canary"
+  ],
+  "fixture_only": true,
+  "initial_files": {
+    "evidence/proof.txt": "evidence only\n",
+    "legacy/config.ini": "legacy=true\n",
+    "local-only/settings.json": "{\"local\": true}\n",
+    "managed/app.txt": "old managed file\n",
+    "managed/remove.txt": "remove me\n",
+    "never-touch/locked.txt": "locked\n",
+    "overlay/config.json": "{\"overlay\": true}\n",
+    "project/readme.md": "project owned content\n",
+    "runtime/cache.txt": "runtime output\n",
+    "sections/config.txt": "prefix\n# AIDE:BEGIN settings\nold section\n# AIDE:END settings\nsuffix\n",
+    "unknown/file.txt": "unknown\n"
+  },
+  "operations": [
+    {
+      "evidence_refs": [
+        "aide://evidence/distribution-apply-engine-v0/evidence-only-preservation"
+      ],
+      "operation_class": "preserve_evidence_only",
+      "operation_ref": "aide://update-plan/operation/evidence-only-preservation",
+      "ownership_class": "evidence_only",
+      "preimage": "evidence only\n",
+      "preimage_digest": "sha256:642e533c8a60f23506fb5c2344f3b38f21499cdac5cf175e1af5787a5ceb32fa",
+      "rollback_covered": true,
+      "rollback_requirement_ref": "aide://rollback-requirement/evidence-only-preservation",
+      "target_relative_path": "evidence/proof.txt"
+    }
+  ],
+  "ownership_ledger_ref": "aide://ownership-ledger/aide-self-ownership-ledger-v1",
+  "project_lock_ref": "aide://project-lock/aide-self-lock-v0",
+  "required_features": [
+    "distribution_apply_engine_v0",
+    "fixture_only",
+    "temp_workspace_only"
+  ],
+  "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+  "scenario_id": "evidence-only-preservation",
+  "schema_version": "aide.distribution-apply-scenario.v0",
+  "source_distribution_ref": "aide://distribution/aide-lite-self-fixture",
+  "temp_workspace_only": true,
+  "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+}
