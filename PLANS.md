@@ -3313,3 +3313,15 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: This is a queue-shaping task only. It adds tentative pending tasks for MIR inputs/profile gates, MIR validation/update planning, Structure Intelligence, distribution package/shadow/canary planning, read-only interop/external worker planning, preview/native planning, and future requirements intake. It does not implement downstream tasks, alter queue policy, mutate target repositories, move/delete files, apply updates, publish releases, call providers/models, automate branches/worktrees, or promote candidates into committed roadmap capability. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01`.
+
+### Queue ID: AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01
+
+- Title: Plan Project Intelligence spine
+- Status: Needs Review
+- Objective: document the June 28 Project Intelligence handoff and seed grouped tentative queue waves without displacing live queue order.
+- Scope: `.aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01/**`, grouped pending Project Intelligence queue packets, `.aide/queue/index.yaml`, `docs/planning/project-intelligence-spine.md`, `DOCUMENTATION.md`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01` and live Structure Intelligence queue entries.
+- Verification Intent: queue/index inspection, duplicate-sensitive search for existing ownership/distribution tasks, task inspect/evidence for this seed task, task status, broad validation, diff checks, generated-report churn cleanup, and commit-policy check.
+- Result: `PASS_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: This is a planning and queue-shaping task only. It adds a tentative Project Intelligence spine document and grouped pending waves for naming/authority, ProjectGraph foundation, semantic records, health observers, ProjectGraph-driven ContextPack, Workbench views, and safe refactoring plus scale modes. It preserves the MIR input task as the current executable next task and does not implement ProjectGraph, enforce naming policy, move/delete files, create roots, rewrite references, apply aliases, mutate targets, generate releases, call providers/models, use network services, automate branches/worktrees, or push.

@@ -1,0 +1,27 @@
+schema_version: aide.queue-task.v0
+id: AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01
+title: Plan safe refactoring recipes and scale modes
+type: plan
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-PROJECT-INTELLIGENCE-WAVE-01
+depends_on:
+  - AIDE-PLAN-PROJECT-INTELLIGENCE-WORKBENCH-VIEWS-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01/**
+    - .aide/reports/project-intelligence/refactoring-and-scale/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+forbidden_scope:
+  - refactor_apply
+  - service_runtime
+  - network_requirement
+  - file_move
+  - file_delete
+  - reference_rewrite
+  - target_mutation
+  - provider_model_calls
+recommended_next_task: null

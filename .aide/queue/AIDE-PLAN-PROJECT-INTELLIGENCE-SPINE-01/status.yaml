@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01
+status: needs_review
+classification: queue_seed_completed
+planning_state: queue_seed_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+next_task: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+notes:
+  - Documented the June 28 Project Intelligence handoff as a tentative planning spine.
+  - Added grouped pending queue waves for naming and authority, ProjectGraph foundation, semantic records, health observers, ProjectGraph-driven ContextPack, Workbench views, and safe refactoring plus scale-mode planning.
+  - Preserved the existing MIR input task as the next executable queue task.
+  - No implementation, cleanup, file movement, root creation, target mutation, release action, provider/model call, network call, branch/worktree automation, or push was performed.

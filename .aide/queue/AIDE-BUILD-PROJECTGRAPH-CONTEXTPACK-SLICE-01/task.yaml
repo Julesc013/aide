@@ -1,0 +1,26 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01
+title: Build ProjectGraph-driven ContextPack slice
+type: build
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-PROJECT-INTELLIGENCE-WAVE-01
+depends_on:
+  - AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01/**
+    - .aide/reports/project-intelligence/contextpack-slice/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+forbidden_scope:
+  - context_truth_replacement
+  - implementation_apply
+  - file_move
+  - file_delete
+  - reference_rewrite
+  - target_mutation
+  - provider_model_calls
+recommended_next_task: AIDE-PLAN-PROJECT-INTELLIGENCE-WORKBENCH-VIEWS-01

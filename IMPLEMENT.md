@@ -10847,3 +10847,27 @@ Queue status, task inspection/evidence, broad validation, and diff checks are re
 ### Remaining Issues
 
 The new entries are tentative queue routing surfaces. They do not authorize downstream implementation, cleanup, file movement, target mutation, update apply, release generation/publication, provider/model calls, branch/worktree automation, or push. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01`.
+
+## Work Item: AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01
+
+### Summary
+
+Documented and queued the tentative Project Intelligence spine.
+
+### Implementation Notes
+
+- Added `docs/planning/project-intelligence-spine.md` as the durable planning document for the June 28 Project Intelligence handoff.
+- Added `AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01` as the auditable queue seed for this batch.
+- Added grouped pending queue waves for naming/path authority, ProjectGraph foundation, semantic records, project health observers, ProjectGraph-driven ContextPack selection, Workbench views, and safe refactoring plus scale modes.
+- Captured detailed named jobs in task-local evidence without prematurely creating every implementation packet.
+- Preserved existing OwnershipLedger and distribution/update work instead of duplicating it.
+- Preserved `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01` as the current executable next task.
+- Did not update `ROADMAP.md` because this batch is tentative queue planning, not committed public roadmap truth.
+
+### Verification
+
+Queue status, task inspection/evidence, broad validation, and diff checks are recorded in task-local evidence after validation.
+
+### Remaining Issues
+
+The new entries are tentative queue planning surfaces. They do not authorize ProjectGraph implementation, naming enforcement, file movement, root creation, target mutation, update apply, release generation/publication, provider/model calls, network calls, branch/worktree automation, or push.

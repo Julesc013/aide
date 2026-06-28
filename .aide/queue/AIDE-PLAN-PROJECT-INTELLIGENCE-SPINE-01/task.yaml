@@ -1,0 +1,74 @@
+schema_version: aide.queue-task.v0
+id: AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01
+title: Plan Project Intelligence spine
+type: plan
+status: needs_review
+planning_state: queue_seed_completed
+result: PASS_WITH_WARNINGS
+wave: AIDE-PROJECT-INTELLIGENCE-WAVE-01
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+depends_on:
+  - AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01/**
+    - .aide/queue/AIDE-BUILD-PROJECT-INTELLIGENCE-NAMING-AUTHORITY-WAVE-01/**
+    - .aide/queue/AIDE-BUILD-PROJECT-GRAPH-FOUNDATION-WAVE-01/**
+    - .aide/queue/AIDE-BUILD-PROJECT-SEMANTIC-RECORDS-WAVE-01/**
+    - .aide/queue/AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01/**
+    - .aide/queue/AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01/**
+    - .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-WORKBENCH-VIEWS-01/**
+    - .aide/queue/AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01/**
+    - .aide/queue/index.yaml
+    - docs/planning/project-intelligence-spine.md
+    - DOCUMENTATION.md
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/**
+    - .aide/reports/**
+    - .aide/repo/**
+    - .aide/refactors/**
+    - .aide/roots/**
+    - docs/planning/repository-structure/**
+    - docs/reference/**
+    - governance/**
+  forbidden_paths:
+    - core/**
+    - .aide/scripts/**
+    - .aide/policies/**
+    - .aide.local/**
+    - .github/**
+    - target repositories
+forbidden_scope:
+  - implementation_change
+  - queue_policy_change
+  - cleanup_apply
+  - file_move
+  - file_delete
+  - root_creation
+  - alias_apply
+  - reference_rewrite
+  - generated_output_source_truth_change
+  - target_mutation
+  - install_update_apply
+  - repair_apply
+  - release_artifact_generation
+  - release_publication
+  - provider_model_calls
+  - network_calls
+  - branch_worktree_automation
+  - push
+result_summary:
+  result: PASS_WITH_WARNINGS
+  material_finding_count: 0
+  missing_evidence: 0
+  queue_entries_added: 8
+  queue_entries_pending: 7
+  next_task_preserved: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01
+  warning_debt:
+    - New entries are tentative planning surfaces, not accepted capabilities.
+    - Detailed Project Intelligence jobs are captured in task-local evidence and grouped into bounded future waves.
+    - ROADMAP.md was not promoted because this batch is candidate planning, not committed public roadmap truth.

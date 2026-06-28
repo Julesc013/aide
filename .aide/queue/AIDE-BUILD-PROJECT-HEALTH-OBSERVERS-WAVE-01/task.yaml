@@ -1,0 +1,26 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01
+title: Build Project Intelligence health observers wave
+type: build
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-PROJECT-INTELLIGENCE-WAVE-01
+depends_on:
+  - AIDE-BUILD-PROJECT-SEMANTIC-RECORDS-WAVE-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01/**
+    - .aide/reports/project-intelligence/health-observers/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+forbidden_scope:
+  - automatic_repair
+  - optimization_apply
+  - file_move
+  - file_delete
+  - reference_rewrite
+  - target_mutation
+  - provider_model_calls
+recommended_next_task: AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01

@@ -3079,3 +3079,83 @@ items:
   prompt: .aide/queue/AIDE-PLAN-FUTURE-REQUIREMENTS-INTAKE-01/prompt.md
   evidence: .aide/queue/AIDE-PLAN-FUTURE-REQUIREMENTS-INTAKE-01/evidence
   description: Creates the future intake surface for additional tasks, jobs, constraints, and requirements so they can be reconciled against the synthesized queue, live repo truth, and roadmap boundaries before implementation. Planning-only; no implementation, policy mutation, queue policy mutation, target mutation, release work, branch/worktree automation, or provider/model calls.
+- id: AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01
+  status: needs_review
+  planning_state: queue_seed_completed
+  result: PASS_WITH_WARNINGS
+  title: Plan Project Intelligence spine
+  task: .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01/evidence
+  description: Documents the June 28 Project Intelligence handoff as a tentative queue-governed planning spine that extends Structure Intelligence into ProjectGraph, semantic records, health observers, ContextPack selection, Workbench views, safe refactoring recipes, and scale modes. Stops at needs_review with PASS_WITH_WARNINGS and preserves the MIR input task as the current executable next task. Does not implement ProjectGraph, enforce naming policy, move/delete files, create roots, rewrite references, apply aliases, mutate targets, generate releases, call providers/models, use network services, automate branches/worktrees, or push.
+- id: AIDE-BUILD-PROJECT-INTELLIGENCE-NAMING-AUTHORITY-WAVE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Build Project Intelligence naming and authority wave
+  task: .aide/queue/AIDE-BUILD-PROJECT-INTELLIGENCE-NAMING-AUTHORITY-WAVE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-PROJECT-INTELLIGENCE-NAMING-AUTHORITY-WAVE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-PROJECT-INTELLIGENCE-NAMING-AUTHORITY-WAVE-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-PROJECT-INTELLIGENCE-NAMING-AUTHORITY-WAVE-01/evidence
+  description: Builds report-only naming, path reservation, path authority, file kind, directory contract, NameDecision, and PathDecision planning records for Project Intelligence after Structure Intelligence projection acceptance. No policy enforcement, file moves, deletes, root creation, reference rewrites, target mutation, release work, branch/worktree automation, network calls, or provider/model calls.
+- id: AIDE-BUILD-PROJECT-GRAPH-FOUNDATION-WAVE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Build ProjectGraph foundation wave
+  task: .aide/queue/AIDE-BUILD-PROJECT-GRAPH-FOUNDATION-WAVE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-PROJECT-GRAPH-FOUNDATION-WAVE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-PROJECT-GRAPH-FOUNDATION-WAVE-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-PROJECT-GRAPH-FOUNDATION-WAVE-01/evidence
+  description: Builds a report-only ProjectGraphSnapshot foundation over existing deterministic repo, queue, evidence, ownership, generated-output, report, and distribution surfaces. Projection-only; no RepoGraph or OKF replacement, source-truth promotion, movement, deletion, reference rewrite, target mutation, release work, branch/worktree automation, network call, or provider/model call.
+- id: AIDE-BUILD-PROJECT-SEMANTIC-RECORDS-WAVE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Build Project Intelligence semantic records wave
+  task: .aide/queue/AIDE-BUILD-PROJECT-SEMANTIC-RECORDS-WAVE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-PROJECT-SEMANTIC-RECORDS-WAVE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-PROJECT-SEMANTIC-RECORDS-WAVE-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-PROJECT-SEMANTIC-RECORDS-WAVE-01/evidence
+  description: Builds report-only semantic records for symbols, purpose, contracts, usage, doc/code claims, comment truth status, and reuse opportunities. No automatic refactor, optimization apply, doc truth promotion, file move/delete, reference rewrite, target mutation, release work, branch/worktree automation, network call, or provider/model call.
+- id: AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Build Project Intelligence health observers wave
+  task: .aide/queue/AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01/evidence
+  description: Builds no-apply observers for queue health, evidence lifecycle, schema lifecycle, code structure, doc structure, reference usage, naming and placement, complexity, and performance. Advisory only; no automatic repair, optimization apply, file moves, deletes, reference rewrites, target mutation, release work, branch/worktree automation, network calls, or provider/model calls.
+- id: AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Build ProjectGraph-driven ContextPack slice
+  task: .aide/queue/AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01/evidence
+  description: Builds a narrow ProjectGraph-driven ContextPack slice carrying allowed roots, forbidden roots, likely paths, symbols, contracts, tests, doc claims, warnings, and evidence requirements. Does not replace current ContextPack truth, implement runtime services, move/delete files, rewrite references, mutate targets, publish releases, automate branches/worktrees, use network services, or call providers/models.
+- id: AIDE-PLAN-PROJECT-INTELLIGENCE-WORKBENCH-VIEWS-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Plan Project Intelligence Workbench views
+  task: .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-WORKBENCH-VIEWS-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-WORKBENCH-VIEWS-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-WORKBENCH-VIEWS-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-WORKBENCH-VIEWS-01/evidence
+  description: Plans Workbench Project Intelligence views for human tree, authority, lifecycle, impact, risk, migration preview, before/after tree, reference impact, and rollback plan. Planning-only; no UI implementation, Workbench product claim, live runtime, target mutation, release work, branch/worktree automation, network call, or provider/model call.
+- id: AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01
+  status: pending
+  planning_state: tentative_planned
+  result: null
+  title: Plan safe refactoring recipes and scale modes
+  task: .aide/queue/AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01/task.yaml
+  exec_plan: .aide/queue/AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01/prompt.md
+  evidence: .aide/queue/AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01/evidence
+  description: Plans safe refactoring recipes and USB/offline, workstation, LAN, enterprise, cloud, and supercomputer scale modes for Project Intelligence. Planning-only; no refactor apply, service runtime requirement, network requirement, file moves, deletes, reference rewrites, target mutation, release work, branch/worktree automation, or provider/model calls.

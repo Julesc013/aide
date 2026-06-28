@@ -1,0 +1,26 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-PROJECT-GRAPH-FOUNDATION-WAVE-01
+title: Build ProjectGraph foundation wave
+type: build
+status: pending
+planning_state: tentative_planned
+result: null
+wave: AIDE-PROJECT-INTELLIGENCE-WAVE-01
+depends_on:
+  - AIDE-BUILD-PROJECT-INTELLIGENCE-NAMING-AUTHORITY-WAVE-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-BUILD-PROJECT-GRAPH-FOUNDATION-WAVE-01/**
+    - .aide/reports/project-intelligence/project-graph-foundation/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+forbidden_scope:
+  - implementation_apply
+  - source_truth_promotion
+  - file_move
+  - file_delete
+  - reference_rewrite
+  - target_mutation
+  - provider_model_calls
+recommended_next_task: AIDE-BUILD-PROJECT-SEMANTIC-RECORDS-WAVE-01
