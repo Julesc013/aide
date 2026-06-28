@@ -1,0 +1,21 @@
+# Validation Commands
+
+- `git status --short --branch`
+- `git rev-parse HEAD`
+- `git rev-parse origin/main`
+- `git log -8 --oneline`
+- `py -3 -m py_compile core/distribution/apply_engine.py core/distribution/temp_workspace.py core/distribution/operation_executor.py core/distribution/rollback_verifier.py core/distribution/apply_reports.py .aide/scripts/tests/test_aide_distribution_apply_engine_v0.py .aide/scripts/aide_lite.py`
+- `py -3 -m unittest discover -s .aide/scripts/tests -p "test_aide_distribution_apply_engine_v0.py"`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply status`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply plan --scenario managed-file-update`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario managed-file-update --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply verify`
+- predecessor regression validation for DistributionManifest, ProjectLock, OwnershipLedger, InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, and UpdateReceipt
+- Q43-Q48 no-apply/no-publish validators
+- `py -3 .aide/scripts/aide_lite.py validate`
+- isolated adversarial probe script
+- task inspect/evidence for this check task
+- path, credential-pattern, and source-output misuse scans
+- `git diff --check`
+- `git diff --cached --check`
+- `py -3 .aide/scripts/aide_lite.py commit check --latest`

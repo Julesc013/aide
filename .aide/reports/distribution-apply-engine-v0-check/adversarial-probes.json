@@ -1,0 +1,67 @@
+{
+  "schema_version": "aide.distribution-apply-engine-v0-check-probes.v0",
+  "probe_count": 6,
+  "material_probe_count": 6,
+  "probes": [
+    {
+      "probe": "check-probe-missing-update-plan-ref",
+      "expected_refusal_code": "distribution_apply_engine.missing_update_plan_ref_refused",
+      "observed_status": "PASS_WITH_WARNINGS",
+      "observed_refusal_code": null,
+      "update_receipt_generated": true,
+      "rollback_verified": true,
+      "canonical_fixture_unchanged": true,
+      "material": true
+    },
+    {
+      "probe": "check-probe-missing-rollback-bundle-ref",
+      "expected_refusal_code": "distribution_apply_engine.missing_rollback_bundle_ref_refused",
+      "observed_status": "PASS_WITH_WARNINGS",
+      "observed_refusal_code": null,
+      "update_receipt_generated": true,
+      "rollback_verified": true,
+      "canonical_fixture_unchanged": true,
+      "material": true
+    },
+    {
+      "probe": "check-probe-source-distribution-mismatch",
+      "expected_refusal_code": "distribution_apply_engine.source_distribution_mismatch_refused",
+      "observed_status": "PASS_WITH_WARNINGS",
+      "observed_refusal_code": null,
+      "update_receipt_generated": true,
+      "rollback_verified": true,
+      "canonical_fixture_unchanged": true,
+      "material": true
+    },
+    {
+      "probe": "check-probe-project-lock-mismatch",
+      "expected_refusal_code": "distribution_apply_engine.project_lock_mismatch_refused",
+      "observed_status": "PASS_WITH_WARNINGS",
+      "observed_refusal_code": null,
+      "update_receipt_generated": true,
+      "rollback_verified": true,
+      "canonical_fixture_unchanged": true,
+      "material": true
+    },
+    {
+      "probe": "check-probe-ownership-ledger-mismatch",
+      "expected_refusal_code": "distribution_apply_engine.ownership_ledger_mismatch_refused",
+      "observed_status": "PASS_WITH_WARNINGS",
+      "observed_refusal_code": null,
+      "update_receipt_generated": true,
+      "rollback_verified": true,
+      "canonical_fixture_unchanged": true,
+      "material": true
+    },
+    {
+      "probe": "check-probe-run-without-update-receipt-acceptance-report",
+      "expected_refusal_code": "distribution_apply_engine.update_receipt_acceptance_missing",
+      "observed_status": "PASS_WITH_WARNINGS",
+      "observed_refusal_code": null,
+      "update_receipt_generated": true,
+      "rollback_verified": true,
+      "canonical_fixture_unchanged": true,
+      "material": true
+    }
+  ]
+}

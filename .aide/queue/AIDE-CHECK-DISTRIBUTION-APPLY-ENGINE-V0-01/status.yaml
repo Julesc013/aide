@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: REQUEST_CHANGES
+checked_task: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+checked_commit: 84015c6964eefdc4e3a0c15f7ad67f5b17651b31
+material_finding_count: 4
+missing_evidence: 0
+implementation_files_changed: false
+next_task: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+notes:
+  - Normal build validation, focused tests, CLI status/plan/run/verify, predecessor regressions, Q43-Q48 boundary validation, and broad validation pass.
+  - Independent adversarial probes found missing fail-closed enforcement for UpdatePlan binding, RollbackBundle binding, predecessor ref mismatches, and accepted-context requirements.
+  - DistributionApplyEngine v0 is not accepted.
+  - No implementation repair was performed by this check.
+  - No self-consumer fixture, canary, release, provider/model/network call, real target apply, source repo apply, or external repo mutation was started.

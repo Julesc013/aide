@@ -10491,3 +10491,29 @@ Syntax checks, focused DistributionApplyEngine tests, `distribution-apply status
 ### Remaining Issues
 
 DistributionApplyEngine v0 remains proposed until independent check and acceptance. The next serialized task is `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01`.
+
+## Work Item: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01
+
+### Summary
+
+Independently checked DistributionApplyEngine v0 and requested changes.
+
+### Implementation Notes
+
+- Verified the build task exists, is complete, and stopped at `needs_review`.
+- Confirmed the normal fixture matrix, focused tests, CLI commands, predecessor regressions, Q43-Q48 boundaries, and broad validation pass.
+- Ran adversarial probes for missing `update_plan_ref`, missing `rollback_bundle_ref`, mismatched source distribution, mismatched project lock, mismatched ownership ledger, and missing accepted UpdateReceipt context.
+- Recorded four material findings:
+  - `distribution_apply_engine.update_plan_binding_not_enforced`
+  - `distribution_apply_engine.rollback_bundle_binding_not_enforced`
+  - `distribution_apply_engine.predecessor_mismatch_not_refused`
+  - `distribution_apply_engine.run_without_accepted_context`
+- Did not modify implementation, accept DistributionApplyEngine v0, begin self-consumer fixture work, mutate targets, publish releases, call provider/model/network services, or automate branches/worktrees.
+
+### Verification
+
+Syntax checks, focused tests, `distribution-apply status/plan/run/verify`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, adversarial binding probes, path and credential-pattern scans, source-output misuse scan, diff checks, and commit-policy validation were run or recorded.
+
+### Remaining Issues
+
+DistributionApplyEngine v0 must be repaired and rechecked before acceptance. The next serialized task is `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`.

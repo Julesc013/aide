@@ -3134,3 +3134,15 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, records `material_finding_count: 0`, records `missing_evidence: 0`, and recommends exactly `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01`.
 - Result: `PASS_WITH_WARNINGS`.
 - Notes: DistributionApplyEngine v0 mutates only copied temporary fixture workspaces. It does not implement real target apply, source repo self-update, release publication, external repo mutation, self-consumer fixture, canary work, provider/model/network calls, or branch/worktree automation.
+
+### Queue ID: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01
+
+- Title: Check DistributionApplyEngine v0
+- Status: Needs Review
+- Objective: independently verify the proposed DistributionApplyEngine v0 build before acceptance.
+- Scope: `.aide/queue/AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01/**`, `.aide/reports/distribution-apply-engine-v0-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01` at `84015c6964eefdc4e3a0c15f7ad67f5b17651b31`.
+- Verification Intent: syntax checks, focused DistributionApplyEngine tests, `distribution-apply status/plan/run/verify`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, adversarial binding probes, leak scans, diff checks, and commit-policy check.
+- Result: `REQUEST_CHANGES`.
+- Findings: `distribution_apply_engine.update_plan_binding_not_enforced`, `distribution_apply_engine.rollback_bundle_binding_not_enforced`, `distribution_apply_engine.predecessor_mismatch_not_refused`, and `distribution_apply_engine.run_without_accepted_context`.
+- Notes: DistributionApplyEngine v0 is not accepted. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`.

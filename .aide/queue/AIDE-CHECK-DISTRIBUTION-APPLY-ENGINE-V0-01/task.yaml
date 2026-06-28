@@ -1,0 +1,89 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01
+title: Check DistributionApplyEngine v0
+status: needs_review
+planning_state: check_completed
+result: REQUEST_CHANGES
+task_type: check
+capability_label: distribution_apply_engine_v0
+wave: AIDE-DISTRIBUTION-SAFETY-WAVE-05B
+checked_task: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+checked_commit: 84015c6964eefdc4e3a0c15f7ad67f5b17651b31
+dependencies:
+  - AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+  - AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+  - AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+  - AIDE-ACCEPT-UPDATE-PLAN-V1-01
+  - AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+  - AIDE-ACCEPT-INSTALL-RECORD-V0-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+objective: Independently verify the proposed DistributionApplyEngine v0 build as fixture-only, temp-workspace-only, plan-bound, rollback-bound, receipt-producing, rollback-verified execution.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01/**
+  - .aide/reports/distribution-apply-engine-v0-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_scope:
+  - implementation_repair
+  - acceptance
+  - real_target_apply
+  - source_repo_apply
+  - target_repo_mutation
+  - target_repo_scan_authority
+  - release_archive_creation
+  - tag_upload_github_release
+  - provider_model_network_calls
+  - self_consumer_fixture
+  - screensave_mutation
+  - eureka_mutation
+  - dominium_mutation
+  - external_repo_mutation
+  - branch_worktree_automation
+material_findings:
+  - id: distribution_apply_engine.update_plan_binding_not_enforced
+    severity: material
+    summary: Execution can proceed and emit a receipt when update_plan_ref is absent.
+  - id: distribution_apply_engine.rollback_bundle_binding_not_enforced
+    severity: material
+    summary: Execution can proceed and emit a receipt when rollback_bundle_ref is absent.
+  - id: distribution_apply_engine.predecessor_mismatch_not_refused
+    severity: material
+    summary: Execution can proceed when source distribution, project lock, or ownership ledger refs are mismatched.
+  - id: distribution_apply_engine.run_without_accepted_context
+    severity: material
+    summary: Scenario execution can proceed without proving accepted UpdateReceipt context exists for the repo root.
+result_summary:
+  material_finding_count: 4
+  missing_evidence: 0
+  implementation_files_changed: false
+  normal_fixture_validation_passed: true
+  adversarial_probe_count: 6
+  adversarial_probe_material_count: 6
+  real_target_repo_modified: false
+  source_repo_apply_occurred: false
+  external_repo_touched: false
+  release_publication_occurred: false
+  network_calls_occurred: false
+  provider_model_calls_occurred: false
+  self_consumer_fixture_started: false
+  canaries_started: false
+  next_task: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+validation:
+  - py -3 -m py_compile core/distribution/apply_engine.py core/distribution/temp_workspace.py core/distribution/operation_executor.py core/distribution/rollback_verifier.py core/distribution/apply_reports.py .aide/scripts/tests/test_aide_distribution_apply_engine_v0.py .aide/scripts/aide_lite.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p "test_aide_distribution_apply_engine_v0.py"
+  - py -3 .aide/scripts/aide_lite.py distribution-apply status
+  - py -3 .aide/scripts/aide_lite.py distribution-apply plan --scenario managed-file-update
+  - py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario managed-file-update --mode apply-temp
+  - py -3 .aide/scripts/aide_lite.py distribution-apply verify
+  - predecessor regression validation
+  - Q43-Q48 no-apply/no-publish validators
+  - py -3 .aide/scripts/aide_lite.py validate
+  - adversarial binding probes
+  - report and evidence path scans
+  - credential-pattern scans
+  - git diff --check
+  - git diff --cached --check
+  - commit check --latest

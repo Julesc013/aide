@@ -1,0 +1,44 @@
+{
+  "schema_version": "aide.distribution-apply-engine-v0-check-report.v0",
+  "task_id": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01",
+  "result": "REQUEST_CHANGES",
+  "checked_task": "AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01",
+  "checked_commit": "84015c6964eefdc4e3a0c15f7ad67f5b17651b31",
+  "material_finding_count": 4,
+  "missing_evidence": 0,
+  "implementation_files_changed": false,
+  "normal_validation_passed": true,
+  "material_findings": [
+    {
+      "id": "distribution_apply_engine.update_plan_binding_not_enforced",
+      "severity": "material",
+      "summary": "Execution can proceed and emit receipt output when update_plan_ref is absent."
+    },
+    {
+      "id": "distribution_apply_engine.rollback_bundle_binding_not_enforced",
+      "severity": "material",
+      "summary": "Execution can proceed and emit receipt output when rollback_bundle_ref is absent."
+    },
+    {
+      "id": "distribution_apply_engine.predecessor_mismatch_not_refused",
+      "severity": "material",
+      "summary": "Execution can proceed when source distribution, project lock, or ownership ledger refs are mismatched."
+    },
+    {
+      "id": "distribution_apply_engine.run_without_accepted_context",
+      "severity": "material",
+      "summary": "Scenario execution can proceed without accepted UpdateReceipt context."
+    }
+  ],
+  "next_task": "AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01",
+  "non_capabilities_preserved": {
+    "real_target_apply": false,
+    "source_repo_apply": false,
+    "target_repo_mutation": false,
+    "release_publication": false,
+    "provider_model_network_calls": false,
+    "self_consumer_fixture_started": false,
+    "canaries_started": false,
+    "pushed": false
+  }
+}

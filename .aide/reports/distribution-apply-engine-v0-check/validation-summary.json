@@ -1,0 +1,21 @@
+{
+  "schema_version": "aide.validation-summary.v0",
+  "task_id": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01",
+  "result": "REQUEST_CHANGES",
+  "passed": [
+    "py_compile",
+    "focused_distribution_apply_engine_tests",
+    "distribution_apply_status",
+    "distribution_apply_plan",
+    "distribution_apply_run_apply_temp",
+    "distribution_apply_verify",
+    "predecessor_regression_validation",
+    "q43_q48_no_apply_no_publish_validators",
+    "broad_aide_validate"
+  ],
+  "failed_semantic_checks": [
+    "adversarial_binding_probes"
+  ],
+  "material_finding_count": 4,
+  "missing_evidence": 0
+}

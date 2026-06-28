@@ -1,0 +1,36 @@
+{
+  "schema_version": "aide.finding-matrix.v0",
+  "task_id": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01",
+  "material_finding_count": 4,
+  "missing_evidence": 0,
+  "findings": [
+    {
+      "id": "distribution_apply_engine.update_plan_binding_not_enforced",
+      "severity": "material",
+      "probe_refs": ["check-probe-missing-update-plan-ref"],
+      "repair_required": true
+    },
+    {
+      "id": "distribution_apply_engine.rollback_bundle_binding_not_enforced",
+      "severity": "material",
+      "probe_refs": ["check-probe-missing-rollback-bundle-ref"],
+      "repair_required": true
+    },
+    {
+      "id": "distribution_apply_engine.predecessor_mismatch_not_refused",
+      "severity": "material",
+      "probe_refs": [
+        "check-probe-source-distribution-mismatch",
+        "check-probe-project-lock-mismatch",
+        "check-probe-ownership-ledger-mismatch"
+      ],
+      "repair_required": true
+    },
+    {
+      "id": "distribution_apply_engine.run_without_accepted_context",
+      "severity": "material",
+      "probe_refs": ["check-probe-run-without-update-receipt-acceptance-report"],
+      "repair_required": true
+    }
+  ]
+}
