@@ -3181,3 +3181,15 @@
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: DistributionApplyEngine v0 is accepted only as fixture-only, temp-workspace-only execution with accepted context, UpdatePlan, RollbackBundle, predecessor-match, refusal-code, operation-class, fixture-scenario, rollback verification, canonical-fixture preservation, and UpdateReceipt fixture-output boundaries. The next serialized task is exactly `AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
+
+### Queue ID: AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+
+- Title: Build AIDE self-consumer fixture v0
+- Status: Needs Review
+- Objective: build `aide_self_consumer_fixture_v0` as a fixture-only AIDE-like installed target proof surface after accepted DistributionApplyEngine v0.
+- Scope: `.aide/fixtures/aide-self-consumer-fixture-v0/**`, `.aide/reports/aide-self-consumer-fixture-v0/**`, `.aide/scripts/tests/test_aide_self_consumer_fixture_v0.py`, `.aide/queue/AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01` and accepted DistributionManifest, ProjectLock, OwnershipLedger, InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, and UpdateReceipt chain.
+- Verification Intent: focused self-consumer fixture test, DistributionApplyEngine fixture verification, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Result: `PASS_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: The fixture proves fresh install, profile generation, upgrade, same-version idempotence, target-owned-state preservation, rollback, uninstall, offline operation, and source/target separation as committed fixture data. It does not perform real target apply, source repo apply, project canaries, release publication, provider/model/network calls, branch/worktree automation, independent check, or acceptance. The next serialized task is exactly `AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.

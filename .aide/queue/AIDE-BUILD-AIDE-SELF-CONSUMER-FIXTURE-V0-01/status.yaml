@@ -1,0 +1,15 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+status: needs_review
+classification: build_completed
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+proposed_capability: aide_self_consumer_fixture_v0
+material_finding_count: 0
+missing_evidence: 0
+next_task: AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+notes:
+  - Built a fixture-only self-consumer proof surface for an AIDE-like installed target.
+  - The fixture proves fresh install, profile generation, upgrade, same-version idempotence, target-owned-state preservation, rollback, uninstall, offline operation, and source/target separation as committed data.
+  - The AIDE source repository is not treated as the installed target.
+  - No real target apply, source repo apply, canary work, release publication, provider/model/network call, external repo mutation, or branch/worktree automation was started.

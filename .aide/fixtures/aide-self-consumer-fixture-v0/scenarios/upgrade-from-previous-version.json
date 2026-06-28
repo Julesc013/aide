@@ -1,0 +1,28 @@
+{
+  "schema_version": "aide.self-consumer-fixture.scenario.v0",
+  "scenario_id": "upgrade-from-previous-version",
+  "lifecycle_phase": "upgrade",
+  "expected_result": "PASS_WITH_WARNINGS",
+  "proof_points": [
+    "upgrade_from_previous_version",
+    "update_plan_bound",
+    "rollback_bundle_bound",
+    "predecessor_refs_bound",
+    "update_receipt_expected",
+    "rollback_expected",
+    "target_owned_state_preserved"
+  ],
+  "from_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+  "to_distribution_ref": "aide://distribution/aide-lite-pack-v0-next-fixture",
+  "update_plan_ref": "aide://update-plan/aide-self-consumer-fixture-v0/upgrade-from-previous-version",
+  "rollback_bundle_ref": "aide://rollback-bundle/aide-self-consumer-fixture-v0/upgrade-from-previous-version",
+  "expected_update_receipt_ref": "aide://update-receipt/aide-self-consumer-fixture-v0/upgrade-from-previous-version",
+  "target_fixture_only": true,
+  "temp_workspace_only": true,
+  "source_repo_as_target": false,
+  "source_repo_apply_occurred": false,
+  "real_target_repo_modified": false,
+  "network_calls_occurred": false,
+  "provider_model_calls_occurred": false,
+  "release_publication_occurred": false
+}

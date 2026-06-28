@@ -1,0 +1,36 @@
+{
+  "schema_version": "aide.self-consumer-fixture.ownership-map.v0",
+  "fixture_id": "aide-self-consumer-fixture-v0",
+  "ownership_classes": [
+    "vendor_managed_file",
+    "vendor_managed_section",
+    "project_owned",
+    "project_overlay",
+    "project_generated",
+    "runtime_generated",
+    "local_only",
+    "evidence_only",
+    "preserved_legacy",
+    "unknown",
+    "never_touch"
+  ],
+  "automatic_apply_blocked_for": [
+    "project_owned",
+    "project_overlay",
+    "project_generated",
+    "runtime_generated",
+    "local_only",
+    "evidence_only",
+    "preserved_legacy",
+    "unknown",
+    "never_touch"
+  ],
+  "target_owned_preservation_examples": [
+    ".aide/memory/project-state.md",
+    ".aide/queue/target-local-task/status.yaml",
+    ".aide/evidence/target-local-proof.md",
+    ".aide.local/cache/state.json",
+    "AGENTS.md#manual-content",
+    "README.md"
+  ]
+}

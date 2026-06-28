@@ -1,0 +1,24 @@
+{
+  "schema_version": "aide.self-consumer-fixture.state.v0",
+  "state_id": "installed-target-after-v1",
+  "state_kind": "synthetic_installed_target",
+  "target_ref": "aide://fixture-target/aide-self-consumer-v0",
+  "source_repo_is_target": false,
+  "updated_vendor_managed_paths": [
+    ".aide/profile.yaml",
+    ".aide/commands/catalog.yaml",
+    "AGENTS.md#aide-managed-section"
+  ],
+  "preserved_target_owned_paths": [
+    ".aide/memory/project-state.md",
+    ".aide/queue/target-local-task/status.yaml",
+    ".aide/evidence/target-local-proof.md",
+    ".aide.local/cache/state.json",
+    "AGENTS.md#manual-content",
+    "README.md"
+  ],
+  "rollback_bundle_ref": "aide://rollback-bundle/aide-self-consumer-fixture-v0/upgrade-from-previous-version",
+  "update_receipt_ref": "aide://update-receipt/aide-self-consumer-fixture-v0/upgrade-from-previous-version",
+  "network_required": false,
+  "provider_model_required": false
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "aide.self-consumer-fixture.lifecycle-matrix.v0",
+  "fixture_id": "aide-self-consumer-fixture-v0",
+  "phases": [
+    "fresh_install",
+    "profile_generation",
+    "upgrade",
+    "idempotence",
+    "preservation",
+    "rollback",
+    "uninstall",
+    "offline",
+    "source_target_separation"
+  ],
+  "phase_to_scenario": {
+    "fresh_install": "fresh-install",
+    "profile_generation": "profile-generation",
+    "upgrade": "upgrade-from-previous-version",
+    "idempotence": "same-version-idempotence",
+    "preservation": "target-owned-state-preservation",
+    "rollback": "rollback-after-upgrade",
+    "uninstall": "uninstall-preserves-target-state",
+    "offline": "offline-operation",
+    "source_target_separation": "source-repo-confusion-refusal"
+  },
+  "all_scenarios_are_fixture_only": true,
+  "all_scenarios_are_offline": true,
+  "real_target_apply_authorized": false,
+  "source_repo_apply_authorized": false
+}

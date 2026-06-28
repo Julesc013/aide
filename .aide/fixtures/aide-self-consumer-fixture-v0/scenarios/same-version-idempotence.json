@@ -1,0 +1,22 @@
+{
+  "schema_version": "aide.self-consumer-fixture.scenario.v0",
+  "scenario_id": "same-version-idempotence",
+  "lifecycle_phase": "idempotence",
+  "expected_result": "PASS_WITH_WARNINGS",
+  "proof_points": [
+    "same_version_idempotence",
+    "no_op_update",
+    "no_unplanned_changes",
+    "update_receipt_expected",
+    "target_owned_state_preserved"
+  ],
+  "planned_operation_count": 0,
+  "target_fixture_only": true,
+  "temp_workspace_only": true,
+  "source_repo_as_target": false,
+  "source_repo_apply_occurred": false,
+  "real_target_repo_modified": false,
+  "network_calls_occurred": false,
+  "provider_model_calls_occurred": false,
+  "release_publication_occurred": false
+}

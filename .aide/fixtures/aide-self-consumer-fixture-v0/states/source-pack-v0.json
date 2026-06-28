@@ -1,0 +1,30 @@
+{
+  "schema_version": "aide.self-consumer-fixture.state.v0",
+  "state_id": "source-pack-v0",
+  "state_kind": "source_pack",
+  "distribution_ref": "aide://distribution/aide-lite-pack-v0",
+  "source_repo_is_target": false,
+  "source_repo_identity_exported_to_target": false,
+  "source_generated_state_exported_as_target_truth": false,
+  "contains_raw_prompts": false,
+  "contains_raw_responses": false,
+  "contains_secrets": false,
+  "contains_aide_local_state": false,
+  "files": [
+    {
+      "path": ".aide/profile.yaml",
+      "ownership_class": "vendor_managed_file",
+      "purpose": "target-local profile template"
+    },
+    {
+      "path": ".aide/commands/catalog.yaml",
+      "ownership_class": "vendor_managed_file",
+      "purpose": "portable command catalog template"
+    },
+    {
+      "path": "AGENTS.md",
+      "ownership_class": "vendor_managed_section",
+      "purpose": "managed AIDE adapter section only"
+    }
+  ]
+}

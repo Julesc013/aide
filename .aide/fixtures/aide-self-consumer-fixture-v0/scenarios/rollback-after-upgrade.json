@@ -1,0 +1,23 @@
+{
+  "schema_version": "aide.self-consumer-fixture.scenario.v0",
+  "scenario_id": "rollback-after-upgrade",
+  "lifecycle_phase": "rollback",
+  "expected_result": "PASS_WITH_WARNINGS",
+  "proof_points": [
+    "rollback",
+    "rollback_bundle_available",
+    "preimage_digest_bound",
+    "rollback_verification_expected",
+    "target_owned_state_preserved"
+  ],
+  "rollback_bundle_ref": "aide://rollback-bundle/aide-self-consumer-fixture-v0/upgrade-from-previous-version",
+  "expected_rollback_receipt_ref": "aide://rollback-receipt/aide-self-consumer-fixture-v0/rollback-after-upgrade",
+  "target_fixture_only": true,
+  "temp_workspace_only": true,
+  "source_repo_as_target": false,
+  "source_repo_apply_occurred": false,
+  "real_target_repo_modified": false,
+  "network_calls_occurred": false,
+  "provider_model_calls_occurred": false,
+  "release_publication_occurred": false
+}

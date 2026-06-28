@@ -1,0 +1,99 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+title: Build AIDE self-consumer fixture v0
+status: needs_review
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+capability_label: aide_self_consumer_fixture_v0
+wave: AIDE-DISTRIBUTION-SAFETY-WAVE-06A
+dependencies:
+  - AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01
+  - AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+  - AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+  - AIDE-ACCEPT-UPDATE-PLAN-V1-01
+  - AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+  - AIDE-ACCEPT-INSTALL-RECORD-V0-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+objective: Build a fixture-only AIDE self-consumer proof surface without treating the AIDE source repository as an installed target.
+allowed_paths:
+  - .aide/fixtures/aide-self-consumer-fixture-v0/**
+  - .aide/reports/aide-self-consumer-fixture-v0/**
+  - .aide/scripts/tests/test_aide_self_consumer_fixture_v0.py
+  - .aide/queue/AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_scope:
+  - real_target_apply
+  - source_repo_apply
+  - install_apply
+  - update_apply_against_real_target
+  - migration_apply
+  - rollback_apply_against_real_target
+  - repair_apply
+  - uninstall_apply
+  - target_repo_mutation
+  - target_repo_scan_authority
+  - release_apply
+  - release_archive_creation
+  - public_release_readiness
+  - tag_upload_github_release
+  - provider_model_network_calls
+  - screensave_mutation
+  - eureka_mutation
+  - dominium_mutation
+  - external_repo_mutation
+  - branch_worktree_automation
+  - check_task
+  - acceptance_task
+outputs:
+  - .aide/fixtures/aide-self-consumer-fixture-v0/**
+  - .aide/reports/aide-self-consumer-fixture-v0/**
+  - .aide/scripts/tests/test_aide_self_consumer_fixture_v0.py
+  - .aide/queue/AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+validation:
+  - py -3 -m py_compile .aide/scripts/tests/test_aide_self_consumer_fixture_v0.py
+  - py -3 .aide/scripts/tests/test_aide_self_consumer_fixture_v0.py
+  - py -3 .aide/scripts/aide_lite.py distribution-apply verify
+  - py -3 .aide/scripts/aide_lite.py install validate
+  - py -3 .aide/scripts/aide_lite.py upgrade validate
+  - py -3 .aide/scripts/aide_lite.py rollback validate
+  - py -3 .aide/scripts/aide_lite.py uninstall validate
+  - py -3 .aide/scripts/aide_lite.py release validate
+  - py -3 .aide/scripts/aide_lite.py release draft-validate
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - path and credential-pattern scans
+  - git diff --check
+  - git diff --cached --check
+  - py -3 .aide/scripts/aide_lite.py commit check --latest
+result_summary:
+  proposed_capability: aide_self_consumer_fixture_v0
+  material_finding_count: 0
+  missing_evidence: 0
+  fixture_only: true
+  temp_workspace_only: true
+  scenario_count: 9
+  fresh_install_proof: true
+  profile_generation_proof: true
+  upgrade_from_previous_version_proof: true
+  same_version_idempotence_proof: true
+  target_owned_state_preservation_proof: true
+  rollback_proof: true
+  uninstall_proof: true
+  offline_operation_proof: true
+  source_repo_not_target_proof: true
+  real_target_repo_modified: false
+  source_repo_apply_occurred: false
+  external_repo_touched: false
+  release_publication_occurred: false
+  network_calls_occurred: false
+  provider_model_calls_occurred: false
+  next_task: AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01

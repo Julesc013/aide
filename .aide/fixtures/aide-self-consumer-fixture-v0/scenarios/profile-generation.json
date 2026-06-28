@@ -1,0 +1,27 @@
+{
+  "schema_version": "aide.self-consumer-fixture.scenario.v0",
+  "scenario_id": "profile-generation",
+  "lifecycle_phase": "profile_generation",
+  "expected_result": "PASS_WITH_WARNINGS",
+  "proof_points": [
+    "profile_generation",
+    "target_identity_generated",
+    "source_identity_excluded",
+    "source_generated_state_not_target_truth",
+    "offline_operation"
+  ],
+  "generated_profile": {
+    "profile_id": "aide-self-consumer-target",
+    "profile_mode": "installed-target-fixture",
+    "repo_identity_source": "target-local-fixture",
+    "source_repo_identity_copied": false
+  },
+  "target_fixture_only": true,
+  "temp_workspace_only": true,
+  "source_repo_as_target": false,
+  "source_repo_apply_occurred": false,
+  "real_target_repo_modified": false,
+  "network_calls_occurred": false,
+  "provider_model_calls_occurred": false,
+  "release_publication_occurred": false
+}

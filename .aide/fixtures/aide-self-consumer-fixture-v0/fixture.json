@@ -1,0 +1,64 @@
+{
+  "schema_version": "aide.self-consumer-fixture.v0",
+  "fixture_id": "aide-self-consumer-fixture-v0",
+  "result": "PASS_WITH_WARNINGS",
+  "proposed_capability": "aide_self_consumer_fixture_v0",
+  "depends_on": [
+    "distribution_apply_engine_v0",
+    "update_receipt_v0",
+    "rollback_bundle_v0",
+    "update_plan_v1",
+    "migration_record_v0",
+    "install_record_v0",
+    "ownership_ledger_v1",
+    "project_lock_v0",
+    "distribution_manifest_v1"
+  ],
+  "target_model": {
+    "target_ref": "aide://fixture-target/aide-self-consumer-v0",
+    "target_kind": "synthetic_aide_lite_consumer",
+    "source_repo_is_target": false,
+    "source_repo_identity_excluded": true,
+    "source_generated_state_is_target_truth": false,
+    "fixture_only": true,
+    "temp_workspace_only": true,
+    "offline_required": true
+  },
+  "scenario_ids": [
+    "fresh-install",
+    "profile-generation",
+    "upgrade-from-previous-version",
+    "same-version-idempotence",
+    "target-owned-state-preservation",
+    "rollback-after-upgrade",
+    "uninstall-preserves-target-state",
+    "offline-operation",
+    "source-repo-confusion-refusal"
+  ],
+  "required_lifecycle_proofs": [
+    "fresh_install",
+    "profile_generation",
+    "upgrade_from_previous_version",
+    "same_version_idempotence",
+    "target_owned_state_preservation",
+    "rollback",
+    "uninstall",
+    "offline_operation",
+    "source_repo_not_target"
+  ],
+  "explicit_non_capabilities": [
+    "real_target_apply",
+    "source_repo_apply",
+    "release_apply",
+    "public_release_readiness",
+    "target_repo_scan_authority",
+    "screensave_mutation",
+    "eureka_mutation",
+    "dominium_mutation",
+    "external_repo_mutation",
+    "provider_model_network_calls",
+    "branch_worktree_automation",
+    "canary_execution"
+  ],
+  "recommended_next_task": "AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01"
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "aide.self-consumer-fixture.scenario.v0",
+  "scenario_id": "fresh-install",
+  "lifecycle_phase": "fresh_install",
+  "expected_result": "PASS_WITH_WARNINGS",
+  "proof_points": [
+    "fresh_install",
+    "target_local_profile_created",
+    "ownership_ledger_seeded",
+    "install_record_seeded",
+    "source_repo_not_target",
+    "offline_operation"
+  ],
+  "planned_operations": [
+    {
+      "operation_class": "add_vendor_managed_file",
+      "target_path": ".aide/profile.yaml",
+      "apply_authority_claimed": false
+    },
+    {
+      "operation_class": "add_vendor_managed_section",
+      "target_path": "AGENTS.md#aide-managed-section",
+      "apply_authority_claimed": false
+    }
+  ],
+  "target_fixture_only": true,
+  "temp_workspace_only": true,
+  "source_repo_as_target": false,
+  "source_repo_apply_occurred": false,
+  "real_target_repo_modified": false,
+  "network_calls_occurred": false,
+  "provider_model_calls_occurred": false,
+  "release_publication_occurred": false
+}

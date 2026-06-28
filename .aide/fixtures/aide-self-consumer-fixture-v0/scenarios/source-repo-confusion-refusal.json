@@ -1,0 +1,23 @@
+{
+  "schema_version": "aide.self-consumer-fixture.scenario.v0",
+  "scenario_id": "source-repo-confusion-refusal",
+  "lifecycle_phase": "source_target_separation",
+  "expected_result": "BLOCKED",
+  "expected_refusal_code": "aide_self_consumer_fixture.source_repo_target_confusion_refused",
+  "proof_points": [
+    "source_repo_not_target",
+    "source_repo_apply_refused",
+    "source_generated_state_not_target_truth",
+    "real_target_repo_modified_false"
+  ],
+  "attempted_target_ref": "aide://source-repo/aide",
+  "refusal_reason": "AIDE source repository cannot be treated as the installed self-consumer target fixture.",
+  "target_fixture_only": true,
+  "temp_workspace_only": true,
+  "source_repo_as_target": false,
+  "source_repo_apply_occurred": false,
+  "real_target_repo_modified": false,
+  "network_calls_occurred": false,
+  "provider_model_calls_occurred": false,
+  "release_publication_occurred": false
+}

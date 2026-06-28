@@ -1,0 +1,33 @@
+{
+  "schema_version": "aide.self-consumer-fixture.scenario.v0",
+  "scenario_id": "uninstall-preserves-target-state",
+  "lifecycle_phase": "uninstall",
+  "expected_result": "PASS_WITH_WARNINGS",
+  "proof_points": [
+    "uninstall",
+    "vendor_managed_removal_planned",
+    "target_owned_state_preserved",
+    "blanket_aide_deletion_forbidden",
+    "manual_content_preserved"
+  ],
+  "removal_candidates": [
+    ".aide/commands/catalog.yaml",
+    "AGENTS.md#aide-managed-section"
+  ],
+  "preserved_paths": [
+    ".aide/memory/project-state.md",
+    ".aide/queue/target-local-task/status.yaml",
+    ".aide/evidence/target-local-proof.md",
+    ".aide.local/cache/state.json",
+    "AGENTS.md#manual-content",
+    "README.md"
+  ],
+  "target_fixture_only": true,
+  "temp_workspace_only": true,
+  "source_repo_as_target": false,
+  "source_repo_apply_occurred": false,
+  "real_target_repo_modified": false,
+  "network_calls_occurred": false,
+  "provider_model_calls_occurred": false,
+  "release_publication_occurred": false
+}

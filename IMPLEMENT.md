@@ -10586,3 +10586,26 @@ Focused DistributionApplyEngine tests, `distribution-apply status/plan/run/verif
 ### Remaining Issues
 
 DistributionApplyEngine v0 remains fixture-only and temp-workspace-only. The next serialized task is exactly `AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
+
+## Work Item: AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+
+### Summary
+
+Built the AIDE self-consumer fixture v0.
+
+### Implementation Notes
+
+- Added a fixture-only AIDE-like installed target corpus under `.aide/fixtures/aide-self-consumer-fixture-v0/`.
+- Added lifecycle scenarios for fresh install, profile generation, upgrade from previous version, same-version idempotence, target-owned-state preservation, rollback, uninstall, offline operation, and source-repo confusion refusal.
+- Added reports under `.aide/reports/aide-self-consumer-fixture-v0/`.
+- Added focused fixture validation in `.aide/scripts/tests/test_aide_self_consumer_fixture_v0.py`.
+- Added the build task packet and evidence under `.aide/queue/AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01/`.
+- Did not implement real target apply, source repo apply, canary work, release publication, provider/model/network calls, external repo mutation, branch/worktree automation, independent check, or acceptance.
+
+### Verification
+
+Focused fixture tests, DistributionApplyEngine fixture verification, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, path and credential-pattern scans, source-output misuse scan, diff checks, and commit-policy validation are recorded in the task evidence.
+
+### Remaining Issues
+
+The self-consumer fixture remains a fixture/proof surface until independent check and acceptance. The next serialized task is exactly `AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
