@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+checked_task: AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+checked_commit: 4eefb8aed30fd3c1b296e4d91ad11c4c2b51f33a
+material_finding_count: 0
+missing_evidence: 0
+implementation_files_changed: false
+fixture_files_changed: false
+next_task: AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+notes:
+  - The built fixture corpus exists under .aide/fixtures/aide-self-consumer-fixture-v0 and remains fixture-only.
+  - Focused tests and structured review cover fresh install, profile generation, upgrade, same-version idempotence, rollback, uninstall/preserve, offline operation, and source-vs-installed-target separation.
+  - DistributionApplyEngine v0 remains the accepted fixture-only/temp-workspace-only apply boundary and still enforces accepted context, UpdatePlan, RollbackBundle, predecessor, and success-receipt suppression rules.
+  - Canonical fixture hashes are unchanged by distribution-apply plan/run/verify validation.
+  - No implementation repair, fixture mutation, acceptance, real target apply, source repo apply, canary work, release publication, provider/model/network call, external repo mutation, push, or branch/worktree automation was started.

@@ -1,0 +1,108 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+title: Check AIDE self-consumer fixture v0
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+task_type: check
+capability_label: aide_self_consumer_fixture_v0
+wave: AIDE-DISTRIBUTION-SAFETY-WAVE-06B
+checked_task: AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+checked_commit: 4eefb8aed30fd3c1b296e4d91ad11c4c2b51f33a
+dependencies:
+  - AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01
+  - AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+  - AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01
+  - AIDE-ACCEPT-UPDATE-PLAN-V1-01
+  - AIDE-ACCEPT-MIGRATION-RECORD-V0-01
+  - AIDE-ACCEPT-INSTALL-RECORD-V0-01
+  - AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
+  - AIDE-ACCEPT-PROJECT-LOCK-V0-01
+  - AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
+objective: Independently verify the AIDE self-consumer fixture v0 without modifying the fixture or widening distribution apply authority.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+  - .aide/reports/aide-self-consumer-fixture-v0-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_scope:
+  - implementation_repair
+  - fixture_implementation_change
+  - acceptance
+  - real_target_apply
+  - source_repo_apply
+  - install_apply
+  - update_apply_against_real_target
+  - migration_apply
+  - rollback_apply_against_real_target
+  - repair_apply
+  - uninstall_apply
+  - target_repo_mutation
+  - target_repo_scan_authority
+  - release_archive_creation
+  - public_release_readiness
+  - tag_upload_github_release
+  - provider_model_network_calls
+  - screensave_canary
+  - eureka_canary
+  - dominium_canary
+  - screensave_mutation
+  - eureka_mutation
+  - dominium_mutation
+  - external_repo_mutation
+  - branch_worktree_automation
+reviewed_surfaces:
+  - .aide/fixtures/aide-self-consumer-fixture-v0/**
+  - .aide/reports/aide-self-consumer-fixture-v0/**
+  - .aide/scripts/tests/test_aide_self_consumer_fixture_v0.py
+  - .aide/queue/AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+result_summary:
+  material_finding_count: 0
+  missing_evidence: 0
+  implementation_files_changed: false
+  fixture_files_changed: false
+  fixture_structure_verified: true
+  lifecycle_coverage_verified: true
+  source_target_separation_verified: true
+  target_owned_state_preservation_verified: true
+  update_plan_binding_verified_via_distribution_apply_engine: true
+  rollback_bundle_binding_verified_via_distribution_apply_engine: true
+  accepted_context_binding_verified_via_distribution_apply_engine: true
+  successful_update_receipt_only_on_success_verified: true
+  refusal_success_receipt_suppression_verified: true
+  canonical_fixture_preservation_verified: true
+  q43_q48_boundary_validations_passed: true
+  broad_validate_passed: true
+  real_target_repo_modified: false
+  source_repo_apply_occurred: false
+  external_repo_touched: false
+  release_publication_occurred: false
+  network_calls_occurred: false
+  provider_model_calls_occurred: false
+  next_task: AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+validation:
+  - py -3 -m py_compile .aide/scripts/tests/test_aide_self_consumer_fixture_v0.py
+  - py -3 .aide/scripts/tests/test_aide_self_consumer_fixture_v0.py
+  - structured fixture JSON review
+  - canonical fixture hash preservation before and after distribution-apply plan/run/verify
+  - py -3 .aide/scripts/aide_lite.py distribution-apply status
+  - py -3 .aide/scripts/aide_lite.py distribution-apply plan --scenario managed-file-update
+  - py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario managed-file-update --mode apply-temp
+  - py -3 .aide/scripts/aide_lite.py distribution-apply verify
+  - py -3 .aide/scripts/aide_lite.py install validate
+  - py -3 .aide/scripts/aide_lite.py upgrade validate
+  - py -3 .aide/scripts/aide_lite.py rollback validate
+  - py -3 .aide/scripts/aide_lite.py uninstall validate
+  - py -3 .aide/scripts/aide_lite.py release validate
+  - py -3 .aide/scripts/aide_lite.py release draft-validate
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - path and credential-pattern scans
+  - git diff --check
+  - git diff --cached --check
+  - commit check --latest

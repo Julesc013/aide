@@ -3193,3 +3193,15 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: The fixture proves fresh install, profile generation, upgrade, same-version idempotence, target-owned-state preservation, rollback, uninstall, offline operation, and source/target separation as committed fixture data. It does not perform real target apply, source repo apply, project canaries, release publication, provider/model/network calls, branch/worktree automation, independent check, or acceptance. The next serialized task is exactly `AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
+
+### Queue ID: AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+
+- Title: Check AIDE self-consumer fixture v0
+- Status: Needs Review
+- Objective: independently verify `aide_self_consumer_fixture_v0` before acceptance.
+- Scope: `.aide/queue/AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**`, `.aide/reports/aide-self-consumer-fixture-v0-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01` at `4eefb8aed30fd3c1b296e4d91ad11c4c2b51f33a` and accepted DistributionApplyEngine/UpdateReceipt/RollbackBundle/UpdatePlan/MigrationRecord/InstallRecord/OwnershipLedger/ProjectLock/DistributionManifest chain.
+- Verification Intent: focused self-consumer fixture tests, structured fixture review, canonical fixture hash preservation, `distribution-apply status/plan/run/verify`, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence for build and check tasks, leak scans, diff checks, and commit-policy check.
+- Result: `PASS_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: The check verifies fixture structure, lifecycle coverage, source-vs-installed-target separation, target-owned preservation, DistributionApplyEngine binding/receipt/refusal boundaries, canonical fixture preservation, and overclaiming guards. The next serialized task is exactly `AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
