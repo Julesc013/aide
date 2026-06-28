@@ -10798,3 +10798,28 @@ Compile check, focused projection test, `distribution-product status`, JSON pars
 ### Remaining Issues
 
 ScreenSave, Eureka, Dominium, and Carbon canary profiles, local archive canary, public readiness, package-source verification, shadow apply, real target apply, and branch/worktree apply remain future reviewed tasks. The next serialized task is exactly `AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01`.
+
+## Work Item: AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01
+
+### Summary
+
+Built a partial read-only canary profile for More Infinite Research.
+
+### Implementation Notes
+
+- Confirmed the accepted distribution product-status projection task is complete and already needs no action.
+- Honored the operator-prioritized pivot from ScreenSave to `Julesc013/more-infinite-research` without rewriting the accepted projection history.
+- Checked for a local MIR checkout under `C:/Projects`; no local target path was found.
+- Used read-only public metadata inspection because the local path was unavailable and the operator prompt authorized that fallback.
+- Recorded Factorio mod metadata from `info.json`, including version `1.2.10`, Factorio version `2.1`, and dependencies on `base >= 2.0`, optional `space-age`, and optional `Better_Robots_Extended`.
+- Recorded latest observed GitHub release `1.2.9`, making source/release version drift explicit for future review.
+- Recorded public file inventory, ownership classification candidates, validation candidates, blockers, and explicit non-capabilities.
+- Did not mutate MIR, clone MIR, apply updates, generate releases, publish, create branches/worktrees, call providers/models, change AIDE distribution behavior, or push.
+
+### Verification
+
+Accepted predecessor task inspect/evidence, local target availability checks, public metadata inspection, JSON parse, broad validation, task inspect/evidence, safety scans, diff checks, and commit-policy validation were run or recorded.
+
+### Remaining Issues
+
+The result is `PARTIAL` because a local MIR checkout path is not configured, local clean/dirty state is unknown, and Lua/Factorio validation executables are not configured. The next task is exactly `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01`.

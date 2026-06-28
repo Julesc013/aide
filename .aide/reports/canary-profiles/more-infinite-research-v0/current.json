@@ -1,0 +1,240 @@
+{
+  "schema_version": "aide.canary-profile.v0",
+  "profile_id": "more_infinite_research_canary_profile_v0",
+  "generated_at": "2026-06-29T00:00:00+10:00",
+  "result": "PARTIAL",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "target": {
+    "name": "more-infinite-research",
+    "repository": "Julesc013/more-infinite-research",
+    "repository_url": "https://github.com/Julesc013/more-infinite-research",
+    "default_branch": "main",
+    "project_type": "factorio_mod",
+    "primary_language": "Lua",
+    "target_source_type": "public_metadata",
+    "target_availability": "partial",
+    "local_target_path": null,
+    "local_target_found": false,
+    "local_target_dirty_state": "not_available",
+    "source_revision": "unknown_without_local_checkout"
+  },
+  "operator_priority": {
+    "reason": "Operator prioritized More Infinite Research before ScreenSave for immediate practical downstream canary work.",
+    "supersedes_previous_operator_priority": "AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01",
+    "does_not_rewrite_accepted_projection_history": true
+  },
+  "network_inspection": {
+    "performed": true,
+    "reason": "No local target path was configured or found under C:/Projects; the operator prompt authorized public metadata inspection in that case.",
+    "mutation": false,
+    "provider_or_model_calls": false
+  },
+  "source_refs": [
+    {
+      "kind": "github_repo_api",
+      "url": "https://api.github.com/repos/Julesc013/more-infinite-research"
+    },
+    {
+      "kind": "github_raw_info_json",
+      "url": "https://raw.githubusercontent.com/Julesc013/more-infinite-research/main/info.json"
+    },
+    {
+      "kind": "github_latest_release_api",
+      "url": "https://api.github.com/repos/Julesc013/more-infinite-research/releases/latest"
+    },
+    {
+      "kind": "github_tree_api",
+      "url": "https://api.github.com/repos/Julesc013/more-infinite-research/git/trees/main?recursive=1"
+    },
+    {
+      "kind": "factorio_mod_structure_docs",
+      "url": "https://lua-api.factorio.com/latest/auxiliary/mod-structure.html"
+    }
+  ],
+  "public_repo_metadata": {
+    "public": true,
+    "language": "Lua",
+    "pushed_at": "2026-06-27T15:57:37Z",
+    "updated_at": "2026-06-27T15:57:41Z",
+    "size": 233,
+    "stargazers": 1,
+    "forks": 3,
+    "open_issues": 3
+  },
+  "factorio_mod_metadata": {
+    "name": "more-infinite-research",
+    "version": "1.2.10",
+    "title": "More Infinite Research",
+    "author": "Julesc013",
+    "factorio_version": "2.1",
+    "dependencies": [
+      "base >= 2.0",
+      "? space-age",
+      "? Better_Robots_Extended"
+    ],
+    "description_summary": "Adds infinite productivity research and Space Age productivity technologies where missing."
+  },
+  "release_source_version_comparison": {
+    "source_info_json_version": "1.2.10",
+    "latest_github_release": "1.2.9",
+    "latest_github_release_published_at": "2025-10-30T07:26:20Z",
+    "status": "source_version_ahead_of_latest_github_release",
+    "requires_operator_review": true
+  },
+  "file_inventory": {
+    "entry_points": [
+      "data.lua",
+      "data-updates.lua",
+      "settings.lua"
+    ],
+    "metadata": [
+      "info.json",
+      "README.md",
+      "LICENSE",
+      "TODO.txt",
+      "thumbnail.png"
+    ],
+    "configuration": [
+      "defaults.lua"
+    ],
+    "locale": [
+      "locale/da/.gitkeep",
+      "locale/de-CH/.gitkeep",
+      "locale/de/more-infinite-research.cfg",
+      "locale/el/.gitkeep",
+      "locale/en/more-infinite-research.cfg",
+      "locale/es/more-infinite-research.cfg",
+      "locale/fi/.gitkeep",
+      "locale/fr/more-infinite-research.cfg",
+      "locale/is/.gitkeep",
+      "locale/it/more-infinite-research.cfg",
+      "locale/nl/more-infinite-research.cfg",
+      "locale/pl/more-infinite-research.cfg",
+      "locale/pt-BR/more-infinite-research.cfg",
+      "locale/ru/more-infinite-research.cfg",
+      "locale/sk/.gitkeep",
+      "locale/sv/.gitkeep",
+      "locale/uk/.gitkeep",
+      "locale/zh-CN/more-infinite-research.cfg"
+    ],
+    "prototypes": [
+      "prototypes/base-tech-extensions.lua",
+      "prototypes/compat-better-robots.lua",
+      "prototypes/config.lua",
+      "prototypes/max-level-control.lua",
+      "prototypes/tech-gen.lua",
+      "prototypes/util.lua",
+      "prototypes/weapon-speed-adjustments.lua"
+    ]
+  },
+  "ownership_classification": {
+    "project_owned": [
+      "README.md",
+      "LICENSE",
+      "TODO.txt",
+      "info.json",
+      "thumbnail.png",
+      "data.lua",
+      "data-updates.lua",
+      "settings.lua",
+      "defaults.lua",
+      "locale/**",
+      "prototypes/**"
+    ],
+    "generated_or_regenerable": [],
+    "vendor_managed_candidate": [],
+    "local_only": [
+      "unknown_without_local_checkout"
+    ],
+    "evidence_only": [
+      ".aide/reports/canary-profiles/more-infinite-research-v0/**",
+      ".aide/queue/AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01/evidence/**"
+    ],
+    "protected": [
+      "info.json",
+      "LICENSE",
+      "README.md",
+      "thumbnail.png",
+      "release tags",
+      "published release assets"
+    ],
+    "unknown": [
+      "local untracked files",
+      "local ignored files",
+      "local generated release artifacts",
+      "Factorio runtime output"
+    ],
+    "never_touch": [
+      ".git/**",
+      ".aide.local/**",
+      "credentials",
+      "Factorio user data",
+      "published release assets"
+    ]
+  },
+  "validation_profile_candidates": {
+    "probable_commands": [
+      "parse info.json as JSON",
+      "validate Factorio mod name/version/factorio_version fields",
+      "check Lua syntax when a Lua interpreter is configured",
+      "check locale key coverage",
+      "check defaults.lua/settings.lua relationship",
+      "check release/source version drift",
+      "dry-run package zip naming only after explicit archive task authorization"
+    ],
+    "missing_validation_dependencies": [
+      "local MIR checkout path",
+      "Lua executable configuration",
+      "Factorio executable or headless validation configuration",
+      "release/mod portal credentials intentionally out of scope"
+    ]
+  },
+  "readiness": {
+    "canary_profile": "partial",
+    "local_target_canary": false,
+    "shadow_apply": false,
+    "real_target_apply": false,
+    "release_generation": false,
+    "release_publication": false,
+    "branch_worktree_automation": false,
+    "provider_model_network": false
+  },
+  "blockers": {
+    "to_check_profile": [
+      "local target checkout path is not configured",
+      "local clean/dirty state cannot be verified"
+    ],
+    "to_shadow_apply": [
+      "shadow apply capability is not accepted",
+      "local target checkout path is missing",
+      "UpdatePlan/RollbackBundle for MIR are not built",
+      "ownership ledger is public-metadata-only"
+    ],
+    "to_real_apply": [
+      "real target apply is not accepted",
+      "branch/worktree automation is not accepted",
+      "human review gate remains required"
+    ],
+    "to_public_release": [
+      "public release readiness is false",
+      "package/release artifact generation is not authorized",
+      "GitHub Release and mod portal publication are not authorized"
+    ]
+  },
+  "explicit_non_capabilities": [
+    "no MIR mutation",
+    "no real target apply",
+    "no shadow apply",
+    "no release generation",
+    "no release publication",
+    "no mod portal upload",
+    "no GitHub Release publication",
+    "no branch/worktree automation",
+    "no provider/model calls",
+    "no package-source fetching",
+    "no automatic version bump",
+    "no automatic zip publish"
+  ],
+  "recommended_next_task": "AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-INPUTS-01"
+}
