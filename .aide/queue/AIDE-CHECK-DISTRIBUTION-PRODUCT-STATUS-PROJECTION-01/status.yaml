@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+checked_task: AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+checked_commit: 6ed90e96
+material_finding_count: 0
+missing_evidence: 0
+implementation_files_changed: false
+projection_behavior_changed: false
+test_files_changed: false
+fixture_files_changed: false
+next_task: AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+notes:
+  - Independently verified the built distribution product-status projection exists, parses, and includes the required JSON shape and Markdown headings.
+  - Verified accepted distribution_apply_engine_v0, accepted aide_self_consumer_fixture_v0, and accepted boundary distribution_apply_routing_text_repair_v0 are represented.
+  - Verified readiness remains false/not-ready for real target apply, source repo self-apply, public release, package source, shadow apply, branch/worktree apply, provider/model/network, live runtime, and ScreenSave/Eureka/Dominium/Carbon canaries.
+  - No implementation, projection behavior, focused test, fixture, target repo, canary, release artifact, provider/model/network, branch/worktree, push, or external repo mutation was performed.

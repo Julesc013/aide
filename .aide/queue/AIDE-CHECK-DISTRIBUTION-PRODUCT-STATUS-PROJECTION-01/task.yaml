@@ -1,0 +1,95 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+title: Check distribution product-status projection
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+wave: AIDE-DISTRIBUTION-PRODUCTIZATION-WAVE-01
+checked_task: AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+checked_commit: 6ed90e96
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+depends_on:
+  - AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+  - AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01
+  - AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01/**
+    - .aide/reports/distribution-product-status-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01/**
+    - .aide/reports/distribution-product-status/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_distribution_product_status_projection.py
+    - .aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01/**
+    - .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+    - .aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**
+    - .aide/reports/distribution-apply-engine-v0-acceptance/**
+    - .aide/reports/aide-self-consumer-fixture-v0-acceptance/**
+    - .aide/reports/distribution-apply-routing-text-repair-acceptance/**
+  forbidden_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_distribution_product_status_projection.py
+    - .aide/reports/distribution-product-status/current.json
+    - .aide/reports/distribution-product-status/current.md
+    - core/distribution/**
+    - .aide/fixtures/aide-self-consumer-fixture-v0/**
+    - .aide/fixtures/distribution-apply-engine-v0/**
+    - .aide.local/**
+    - .aide/release/dist/**
+    - .github/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+    - Carbon
+forbidden_scope:
+  - implementation_change
+  - projection_behavior_change
+  - behavior_broadening
+  - new_accepted_capability
+  - real_target_apply
+  - aide_source_repo_self_apply
+  - source_repo_apply
+  - canary_inventory
+  - canary_readiness
+  - release_artifact_generation
+  - release_publication
+  - public_release_readiness
+  - package_source_implementation
+  - provider_model_network_calls
+  - branch_worktree_automation
+  - external_repo_mutation
+  - push
+check_surface:
+  build_task_complete: true
+  build_result: PASS_WITH_WARNINGS
+  build_material_finding_count: 0
+  build_missing_evidence: 0
+  current_json_exists: true
+  current_markdown_exists: true
+  json_required_keys_present: true
+  markdown_required_headings_present: true
+  accepted_capability_distribution_apply_engine_v0_present: true
+  accepted_capability_aide_self_consumer_fixture_v0_present: true
+  accepted_boundary_distribution_apply_routing_text_repair_v0_present: true
+  next_task_routes_to_check: true
+  downstream_acceptance_and_screensave_tasks_recommended: true
+  explicit_non_capabilities_preserved: true
+  no_external_project_inventory: true
+  no_release_archive_created: true
+result_summary:
+  result: PASS_WITH_WARNINGS
+  material_finding_count: 0
+  missing_evidence: 0
+  warning_debt:
+    - Product-status projection remains built but not accepted until the acceptance gate completes.
+    - ScreenSave, Eureka, Dominium, and Carbon canary profiles are not started.
+    - Local archive canary, public readiness, package-source verification, shadow apply, real target apply, and branch/worktree apply remain future reviewed tasks.

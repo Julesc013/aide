@@ -3265,3 +3265,15 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: The projection summarizes accepted capabilities, accepted boundaries, fixture-only status, warning debt, explicit non-capabilities, canary readiness, release readiness, package-source readiness, shadow apply readiness, and next distribution tasks. It does not create a new accepted capability, broaden apply behavior, perform real target apply, start canary inventory, generate or publish releases, implement package sources, call provider/model/network services, automate branches/worktrees, or mutate external repositories. The next serialized task is exactly `AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.
+
+### Queue ID: AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+
+- Title: Check distribution product-status projection
+- Status: Needs Review
+- Objective: independently verify `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.
+- Scope: `.aide/queue/AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01/**`, `.aide/reports/distribution-product-status-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01` at `6ed90e96`, accepted `distribution_apply_engine_v0`, accepted `aide_self_consumer_fixture_v0`, and accepted `distribution_apply_routing_text_repair_v0`.
+- Verification Intent: compile check, focused projection test, `distribution-product status`, JSON parse and required-key check, Markdown heading check, `distribution-apply status/plan/verify`, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, safety scans, diff checks, and commit-policy check.
+- Result: `PASS_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: Confirms the projection contains the required machine-readable and operator-facing shape, represents accepted distribution capabilities and boundaries, routes to this check task, recommends acceptance and ScreenSave profile build, and preserves false/not-ready readiness for real target apply, source repo self-apply, release, package source, shadow apply, branch/worktree apply, provider/model/network, runtime, and canaries. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.
