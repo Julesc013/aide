@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01
+status: needs_review
+classification: acceptance_completed
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+accepted_capability: distribution_apply_engine_v0
+material_finding_count: 0
+missing_evidence: 0
+accepted_commits:
+  build: 84015c6964eefdc4e3a0c15f7ad67f5b17651b31
+  check: f705f9656f7433170784f6c3bc1fbcafe4e1825d
+  repair: 6f33d405c69e1adf43eda3426704e2964f87da42
+  repair_check: a5563afdebbef582d8aee501c4b047aab3335b14
+next_task: AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+notes:
+  - DistributionApplyEngine v0 is accepted only as fixture-only and temp-workspace-only distribution execution.
+  - Accepted execution requires accepted predecessor context, UpdatePlan binding, RollbackBundle binding, and predecessor ref matching before temp workspace execution.
+  - The repaired engine refuses missing/mismatched context before operation execution and suppresses successful UpdateReceipt output on refusal.
+  - No implementation repair, self-consumer fixture, canary, real target apply, source repo apply, release, provider/model/network call, external repo mutation, or branch/worktree automation was started.

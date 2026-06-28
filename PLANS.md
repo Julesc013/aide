@@ -3169,3 +3169,15 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: The repair closes the original four material findings and preserves fixture-only/temp-workspace-only boundaries. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01`.
+
+### Queue ID: AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01
+
+- Title: Accept DistributionApplyEngine v0
+- Status: Needs Review
+- Objective: accept exactly `distribution_apply_engine_v0` after build/check/repair/repair-check closed with zero material findings and zero missing evidence.
+- Scope: `.aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01/**`, `.aide/reports/distribution-apply-engine-v0-acceptance/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01` at `84015c6964eefdc4e3a0c15f7ad67f5b17651b31`, `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01` at `f705f9656f7433170784f6c3bc1fbcafe4e1825d`, `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01` at `6f33d405c69e1adf43eda3426704e2964f87da42`, and `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01` at `a5563afdebbef582d8aee501c4b047aab3335b14`.
+- Verification Intent: focused DistributionApplyEngine tests, `distribution-apply status/plan/run/verify`, adversarial context scenario checks, predecessor validation through UpdateReceipt, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: DistributionApplyEngine v0 is accepted only as fixture-only, temp-workspace-only execution with accepted context, UpdatePlan, RollbackBundle, predecessor-match, refusal-code, operation-class, fixture-scenario, rollback verification, canonical-fixture preservation, and UpdateReceipt fixture-output boundaries. The next serialized task is exactly `AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.

@@ -1,0 +1,36 @@
+{
+  "schema_version": "aide.distribution-apply-engine-v0-acceptance.predecessor-chain.v0",
+  "task_id": "AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "predecessors": [
+    {
+      "task_id": "AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "84015c6964eefdc4e3a0c15f7ad67f5b17651b31",
+      "material_finding_count": 0,
+      "missing_evidence": 0
+    },
+    {
+      "task_id": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01",
+      "result": "REQUEST_CHANGES",
+      "commit": "f705f9656f7433170784f6c3bc1fbcafe4e1825d",
+      "material_finding_count": 4,
+      "missing_evidence": 0
+    },
+    {
+      "task_id": "AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "6f33d405c69e1adf43eda3426704e2964f87da42",
+      "material_finding_count": 0,
+      "missing_evidence": 0
+    },
+    {
+      "task_id": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "a5563afdebbef582d8aee501c4b047aab3335b14",
+      "material_finding_count": 0,
+      "missing_evidence": 0
+    }
+  ],
+  "recommended_next_task": "AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01"
+}

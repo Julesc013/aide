@@ -10563,3 +10563,26 @@ Focused tests, `distribution-apply status/plan/run/verify`, adversarial probes, 
 ### Remaining Issues
 
 DistributionApplyEngine v0 is ready for the separate acceptance gate. The next serialized task is `AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01`.
+
+## Work Item: AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01
+
+### Summary
+
+Accepted DistributionApplyEngine v0 with warnings.
+
+### Implementation Notes
+
+- Verified the build/check/repair/repair-check chain exists and remains complete.
+- Accepted the repaired DistributionApplyEngine v0 only as fixture-only, temp-workspace-only distribution execution.
+- Recorded accepted context-binding enforcement, UpdatePlan binding, RollbackBundle binding, predecessor-match enforcement, refusal reason codes, allowed operation classes, fixture scenarios, canonical-fixture preservation, temp-workspace isolation, rollback verification, and UpdateReceipt-shaped fixture output.
+- Recorded explicit non-capabilities for real target apply, source repo apply, release apply, public release readiness, target repo scan authority, ScreenSave/Eureka/Dominium mutation, external repo mutation, provider/model/network calls, branch/worktree automation, self-consumer fixture, and canaries.
+- Wrote acceptance reports under `.aide/reports/distribution-apply-engine-v0-acceptance/` and task-local evidence under `.aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01/evidence/`.
+- Did not modify DistributionApplyEngine implementation, start self-consumer fixture work, start canaries, mutate targets, publish releases, call provider/model/network services, or automate branches/worktrees.
+
+### Verification
+
+Focused DistributionApplyEngine tests, `distribution-apply status/plan/run/verify`, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, path and credential-pattern scans, source-output misuse scan, diff checks, and commit-policy validation are recorded in the acceptance task evidence.
+
+### Remaining Issues
+
+DistributionApplyEngine v0 remains fixture-only and temp-workspace-only. The next serialized task is exactly `AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
