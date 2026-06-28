@@ -1,0 +1,31 @@
+{
+  "schema_version": "aide.distribution-apply-routing-text-repair-acceptance.validation-summary.v0",
+  "task_id": "AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_boundary_label": "distribution_apply_routing_text_repair_v0",
+  "accepted_capability": null,
+  "accepted_commits": {
+    "build": "febdee7e",
+    "check": "5e01e701"
+  },
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "build_result": "PASS_WITH_WARNINGS",
+  "check_result": "PASS_WITH_WARNINGS",
+  "operator_routing_text_repair_accepted": true,
+  "status_routes_to": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+  "plan_routes_to": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+  "verify_routes_to": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+  "accepted_fixture_capability_visible": "aide_self_consumer_fixture_v0",
+  "bare_plan_default_view_accepted": true,
+  "product_status_projection_accepted": false,
+  "real_target_apply_accepted": false,
+  "source_repo_self_apply_accepted": false,
+  "canary_readiness_accepted": false,
+  "public_release_readiness_accepted": false,
+  "package_source_readiness_accepted": false,
+  "provider_model_network_calls_accepted": false,
+  "branch_worktree_automation_accepted": false,
+  "commit_check_latest_passed": true,
+  "recommended_next_task": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+}

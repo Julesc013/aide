@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+status: needs_review
+classification: acceptance_completed
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+accepted_boundary_label: distribution_apply_routing_text_repair_v0
+accepted_capability: null
+material_finding_count: 0
+missing_evidence: 0
+accepted_commits:
+  build: febdee7e
+  check: 5e01e701
+next_task: AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+notes:
+  - Accepted only the operator-facing DistributionApply routing/status text repair boundary.
+  - Acceptance covers corrected distribution-apply status/plan/verify routing to AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01, accepted fixture capability visibility, bare non-mutating default plan output, and preserved explicit non-capabilities.
+  - No product-status projection, real target apply, source repo self-apply, canary readiness, release readiness, package source readiness, runtime/provider behavior, branch/worktree automation, push, or external repo mutation was accepted.
+  - No implementation, test, fixture, DistributionApplyEngine, accepted protocol schema, or accepted capability semantic change was performed.

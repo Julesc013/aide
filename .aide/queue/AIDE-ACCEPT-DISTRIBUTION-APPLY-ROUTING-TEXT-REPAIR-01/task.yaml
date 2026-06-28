@@ -1,0 +1,91 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+title: Accept DistributionApply routing text repair
+type: acceptance
+status: needs_review
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+wave: AIDE-DISTRIBUTION-PRODUCTIZATION-WAVE-01
+accepted_boundary_label: distribution_apply_routing_text_repair_v0
+accepted_capability: null
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+accepted_commits:
+  build: febdee7e
+  check: 5e01e701
+depends_on:
+  - AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+  - AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+  - AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**
+    - .aide/reports/distribution-apply-routing-text-repair-acceptance/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**
+    - .aide/reports/distribution-apply-routing-text-repair/**
+    - .aide/queue/AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**
+    - .aide/reports/distribution-apply-routing-text-repair-check/**
+    - .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+    - .aide/reports/aide-self-consumer-fixture-v0-acceptance/**
+  forbidden_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_distribution_apply_routing_text_repair.py
+    - .aide/scripts/tests/test_aide_self_consumer_fixture_v0.py
+    - core/distribution/**
+    - .aide/fixtures/aide-self-consumer-fixture-v0/**
+    - .aide/fixtures/distribution-apply-engine-v0/**
+    - .aide.local/**
+    - .aide/release/dist/**
+    - .github/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+    - Carbon
+forbidden_scope:
+  - implementation_change
+  - test_change
+  - fixture_change
+  - behavior_broadening
+  - new_runtime_capability
+  - new_distribution_apply_capability
+  - real_target_apply
+  - aide_source_repo_self_apply
+  - source_repo_apply
+  - canary_readiness
+  - release_artifact_generation
+  - release_publication
+  - public_release_readiness
+  - package_source_implementation
+  - provider_model_network_calls
+  - branch_worktree_automation
+  - external_repo_mutation
+  - push
+accepted_surface:
+  boundary_label: distribution_apply_routing_text_repair_v0
+  operator_routing_text_repair: true
+  distribution_apply_status_routes_to_product_status_projection: true
+  distribution_apply_plan_routes_to_product_status_projection: true
+  distribution_apply_verify_routes_to_product_status_projection: true
+  accepted_fixture_capability_visible: aide_self_consumer_fixture_v0
+  bare_non_mutating_default_plan_output: true
+  explicit_non_capabilities_preserved: true
+result_summary:
+  result: ACCEPTED_WITH_WARNINGS
+  material_finding_count: 0
+  missing_evidence: 0
+  accepted_boundary_label: distribution_apply_routing_text_repair_v0
+  accepted_capability: null
+  product_status_projection_accepted: false
+  real_target_apply_accepted: false
+  source_repo_self_apply_accepted: false
+  canary_readiness_accepted: false
+  public_release_readiness_accepted: false
+  package_source_readiness_accepted: false
+  provider_model_network_calls_accepted: false
+  branch_worktree_automation_accepted: false

@@ -10702,3 +10702,27 @@ Compile checks, focused routing text test, self-consumer fixture test, Distribut
 ### Remaining Issues
 
 DistributionApplyEngine remains fixture-only/temp-workspace-only, and product-status projection remains a separate follow-up. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.
+
+## Work Item: AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+
+### Summary
+
+Accepted the DistributionApply routing text repair with warnings.
+
+### Implementation Notes
+
+- Accepted boundary label `distribution_apply_routing_text_repair_v0`.
+- Accepted only the operator-facing `distribution-apply status`, `distribution-apply plan`, and `distribution-apply verify` routing/status text repair.
+- Confirmed build and check tasks are complete with `PASS_WITH_WARNINGS`, material finding count `0`, and missing evidence `0`.
+- Confirmed command output routes to `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01` and identifies `accepted_fixture_capability: aide_self_consumer_fixture_v0`.
+- Confirmed bare `distribution-apply plan` renders the non-mutating `managed-file-update` default view.
+- Recorded explicit non-capabilities for product-status projection, real target apply, source repo self-apply, canary readiness, release readiness, package source readiness, public release, branch/worktree automation, runtime/provider behavior, provider/model/network calls, push, and external repo mutation.
+- Did not modify implementation, tests, fixtures, DistributionApplyEngine behavior, accepted protocol schemas, accepted capability semantics, target repositories, release artifacts, branches, or worktrees.
+
+### Verification
+
+Compile checks, focused routing text test, self-consumer fixture test, DistributionApply status/plan/verify, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, path and credential-pattern scans, source-output scan, overclaim scan, diff checks, and commit-policy validation passed.
+
+### Remaining Issues
+
+Product-status projection remains a separate follow-up. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.

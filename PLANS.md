@@ -3241,3 +3241,15 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: Confirms status, plan, and verify route to `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`, identify `aide_self_consumer_fixture_v0`, and preserve all non-capabilities. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.
+
+### Queue ID: AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+
+- Title: Accept DistributionApply routing text repair
+- Status: Needs Review
+- Objective: accept the verified operator-facing routing/status repair as `distribution_apply_routing_text_repair_v0`.
+- Scope: `.aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**`, `.aide/reports/distribution-apply-routing-text-repair-acceptance/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01` at `febdee7e`, `AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01` at `5e01e701`, and `AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
+- Verification Intent: compile checks, focused routing-text test, self-consumer fixture test, `distribution-apply status/plan/verify`, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Result: `ACCEPTED_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: Accepts only the routing/status text boundary, not product-status projection or a new distribution apply capability. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.
