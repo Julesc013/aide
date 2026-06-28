@@ -1,0 +1,23 @@
+# Validation Commands
+
+- `py -3 -m compileall core/distribution .aide/scripts/tests/test_aide_distribution_apply_engine_v0.py`
+- `py -3 .aide/scripts/tests/test_aide_distribution_apply_engine_v0.py`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply status`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply plan --scenario managed-file-update`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario managed-file-update --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply verify`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario missing-update-plan-binding --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario missing-rollback-bundle-binding --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario mismatched-update-plan-rollback-bundle --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario predecessor-source-distribution-mismatch --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario predecessor-project-lock-mismatch --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario predecessor-ownership-ledger-mismatch --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario predecessor-install-record-mismatch --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario predecessor-migration-record-mismatch --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py distribution-apply run --scenario run-without-accepted-context --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`
+- `git diff --check`
+- `git diff --cached --check`
+- `py -3 .aide/scripts/aide_lite.py commit check --latest`

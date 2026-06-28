@@ -30,26 +30,39 @@ def copy_file(root: Path, rel: str) -> None:
     target.write_bytes(source.read_bytes())
 
 
-def copy_inputs(root: Path) -> None:
+def copy_inputs(root: Path, *, include_acceptance_reports: bool = True) -> None:
     for rel in [
         ".aide/scripts/aide_lite.py",
         "core/distribution/__init__.py",
+        "core/distribution/apply_context.py",
         "core/distribution/apply_engine.py",
         "core/distribution/apply_reports.py",
         "core/distribution/operation_executor.py",
         "core/distribution/rollback_verifier.py",
         "core/distribution/temp_workspace.py",
+    ]:
+        copy_file(root, rel)
+    if not include_acceptance_reports:
+        return
+    for rel in [
+        ".aide/reports/distribution-manifest-v1-accept/acceptance-report.json",
+        ".aide/reports/project-lock-v0-accept/acceptance-report.json",
+        ".aide/reports/ownership-ledger-v1-acceptance/acceptance-report.json",
+        ".aide/reports/install-record-v0-acceptance/acceptance-report.json",
+        ".aide/reports/migration-record-v0-acceptance/acceptance-report.json",
+        ".aide/reports/update-plan-v1-acceptance/validation-summary.json",
+        ".aide/reports/rollback-bundle-v0-acceptance/validation-summary.json",
         ".aide/reports/update-receipt-v0-acceptance/validation-summary.json",
     ]:
         copy_file(root, rel)
 
 
 class AIDEDistributionApplyEngineV0Tests(unittest.TestCase):
-    def make_repo(self) -> Path:
+    def make_repo(self, *, include_acceptance_reports: bool = True) -> Path:
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
         root = Path(temp.name)
-        copy_inputs(root)
+        copy_inputs(root, include_acceptance_reports=include_acceptance_reports)
         return root
 
     def test_status_is_fixture_only_and_temp_workspace_only(self) -> None:
@@ -102,6 +115,44 @@ class AIDEDistributionApplyEngineV0Tests(unittest.TestCase):
                 self.assertTrue(result["passed"], result)
                 self.assertFalse(result["real_target_repo_modified"], result)
                 self.assertFalse(result["source_repo_apply_occurred"], result)
+
+    def test_context_binding_regressions_fail_before_execution(self) -> None:
+        root = self.make_repo()
+        context_scenarios = {
+            "missing-update-plan-binding": "distribution_apply_engine.update_plan_binding_missing",
+            "missing-rollback-bundle-binding": "distribution_apply_engine.rollback_bundle_binding_missing",
+            "mismatched-update-plan-rollback-bundle": "distribution_apply_engine.update_plan_rollback_bundle_mismatch",
+            "predecessor-source-distribution-mismatch": "distribution_apply_engine.predecessor_mismatch",
+            "predecessor-project-lock-mismatch": "distribution_apply_engine.predecessor_mismatch",
+            "predecessor-ownership-ledger-mismatch": "distribution_apply_engine.predecessor_mismatch",
+            "predecessor-install-record-mismatch": "distribution_apply_engine.predecessor_mismatch",
+            "predecessor-migration-record-mismatch": "distribution_apply_engine.predecessor_mismatch",
+            "run-without-accepted-context": "distribution_apply_engine.accepted_context_missing",
+        }
+        for scenario_id, expected in context_scenarios.items():
+            with self.subTest(scenario_id=scenario_id):
+                result = apply_engine.execute_scenario(root, scenario_id)
+                self.assertEqual(result["status"], "FAILED_VALIDATION", result)
+                self.assertEqual(result["refusal_code"], expected, result)
+                self.assertTrue(result["passed"], result)
+                self.assertFalse(result["accepted_context_valid"], result)
+                self.assertFalse(result["update_receipt_generated"], result)
+                self.assertEqual(result["operation_results"], [], result)
+                self.assertIsNone(result["temp_workspace_digest_before"], result)
+                self.assertTrue(result["canonical_fixture_unchanged"], result)
+                self.assertFalse(result["real_target_repo_modified"], result)
+                self.assertFalse(result["source_repo_apply_occurred"], result)
+
+    def test_missing_acceptance_reports_refuse_before_execution(self) -> None:
+        root = self.make_repo(include_acceptance_reports=False)
+        result = apply_engine.execute_scenario(root, "managed-file-update")
+        self.assertEqual(result["status"], "FAILED_VALIDATION", result)
+        self.assertEqual(result["refusal_code"], "distribution_apply_engine.accepted_context_missing", result)
+        self.assertFalse(result["accepted_context_valid"], result)
+        self.assertFalse(result["update_receipt_generated"], result)
+        self.assertEqual(result["operation_results"], [], result)
+        self.assertIsNone(result["temp_workspace_digest_before"], result)
+        self.assertTrue(result["canonical_fixture_unchanged"], result)
 
     def test_verify_writes_reports_and_passes_with_warnings(self) -> None:
         root = self.make_repo()

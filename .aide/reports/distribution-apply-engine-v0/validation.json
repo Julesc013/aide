@@ -1,16 +1,20 @@
 {
   "canonical_fixture_unchanged": true,
   "checks": {
+    "accepted_context_gate_enforced": true,
     "canonical_fixture_unchanged": true,
     "external_repo_touched": false,
     "fixture_matrix_passed": true,
     "fixture_only": true,
     "network_calls_occurred": false,
+    "predecessor_mismatch_refused": true,
     "provider_model_calls_occurred": false,
     "real_target_repo_modified": false,
     "release_publication_occurred": false,
+    "rollback_bundle_binding_enforced": true,
     "source_repo_apply_occurred": false,
     "temp_workspace_only": true,
+    "update_plan_binding_enforced": true,
     "update_receipt_accepted": true
   },
   "errors": [],
@@ -37,6 +41,15 @@
   "material_finding_count": 0,
   "missing_evidence": 0,
   "negative_scenarios": [
+    "missing-update-plan-binding",
+    "missing-rollback-bundle-binding",
+    "mismatched-update-plan-rollback-bundle",
+    "predecessor-source-distribution-mismatch",
+    "predecessor-project-lock-mismatch",
+    "predecessor-ownership-ledger-mismatch",
+    "predecessor-install-record-mismatch",
+    "predecessor-migration-record-mismatch",
+    "run-without-accepted-context",
     "unknown-ownership-refusal",
     "never-touch-refusal",
     "project-owned-overwrite-refusal",
@@ -80,8 +93,45 @@
   "proposed_capability": "distribution_apply_engine_v0",
   "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01",
   "representative_run": {
-    "canonical_fixture_digest_after": "sha256:a0d155eef2415ce068acf45bd97ea91092ed919c47a791464559b9813f5acc5d",
-    "canonical_fixture_digest_before": "sha256:a0d155eef2415ce068acf45bd97ea91092ed919c47a791464559b9813f5acc5d",
+    "accepted_context": {
+      "accepted": true,
+      "context": {
+        "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+        "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+        "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+        "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+        "install_record_refs": [
+          "aide://install-record/aide-self-install-record-v0"
+        ],
+        "migration_record_refs": [
+          "aide://migration-record/install-record-v0/no-op-compatibility"
+        ],
+        "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+        "required": true,
+        "required_bindings": {
+          "predecessors": true,
+          "rollback_bundle": true,
+          "update_plan": true
+        },
+        "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+        "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+        "rollback_operation_refs": [
+          "aide://update-plan/operation/managed-file-update"
+        ],
+        "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+        "status": "accepted_with_warnings",
+        "target_project_ref": "aide://project/aide-self",
+        "update_plan_operation_refs": [
+          "aide://update-plan/operation/managed-file-update"
+        ],
+        "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+      },
+      "message": null,
+      "refusal_code": null
+    },
+    "accepted_context_valid": true,
+    "canonical_fixture_digest_after": "sha256:a85412dc3d7f5a6eb50bc28d54e93fe8e43e749a17f96c07585d705eb37036a7",
+    "canonical_fixture_digest_before": "sha256:a85412dc3d7f5a6eb50bc28d54e93fe8e43e749a17f96c07585d705eb37036a7",
     "canonical_fixture_unchanged": true,
     "expected_refusal_code": null,
     "expected_result": "PASS_WITH_WARNINGS",
@@ -179,8 +229,45 @@
   },
   "scenario_results": [
     {
-      "canonical_fixture_digest_after": "sha256:572d0d1d8121bc07212a93dc520786f6e1088e5ece4309b04d68d0f2d5a381b1",
-      "canonical_fixture_digest_before": "sha256:572d0d1d8121bc07212a93dc520786f6e1088e5ece4309b04d68d0f2d5a381b1",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/absolute-path-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/absolute-path-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:6033d4b6fa69f7e8e290a54ecb05f2ed754fb7489e87016ffa3eae90f6675e17",
+      "canonical_fixture_digest_before": "sha256:6033d4b6fa69f7e8e290a54ecb05f2ed754fb7489e87016ffa3eae90f6675e17",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.absolute_path_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -266,8 +353,41 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:d0b46a1bac9e8ca5a2380c3eeb50fb88301840a7e401f398bd712c4f38c1cfd3",
-      "canonical_fixture_digest_before": "sha256:d0b46a1bac9e8ca5a2380c3eeb50fb88301840a7e401f398bd712c4f38c1cfd3",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:70ab174759521f7c772458e5e57aabd8c98b61b78942830c889e890beebbe53a",
+      "canonical_fixture_digest_before": "sha256:70ab174759521f7c772458e5e57aabd8c98b61b78942830c889e890beebbe53a",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.canonical_fixture_mutation_detected",
       "expected_result": "FAILED_VALIDATION",
@@ -298,8 +418,41 @@
       "update_receipt_output": null
     },
     {
-      "canonical_fixture_digest_after": "sha256:c278403e4e2fbfba092d76539cdf90e1ba2f2e176b8751866971086971f9dd21",
-      "canonical_fixture_digest_before": "sha256:c278403e4e2fbfba092d76539cdf90e1ba2f2e176b8751866971086971f9dd21",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:a1da6f94b49621e421e060431cc7b6fff8f962e339795e0e7b2913c91e2c9a30",
+      "canonical_fixture_digest_before": "sha256:a1da6f94b49621e421e060431cc7b6fff8f962e339795e0e7b2913c91e2c9a30",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -377,8 +530,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:685a89bef20a242a385a04e6e4b618f126ce1914c216e03f84fab52ca973e7d9",
-      "canonical_fixture_digest_before": "sha256:685a89bef20a242a385a04e6e4b618f126ce1914c216e03f84fab52ca973e7d9",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/case-collision-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/case-collision-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:289299553886b60676cfa755f29021947c57471f0420c6a93d9f644ca8fb78c8",
+      "canonical_fixture_digest_before": "sha256:289299553886b60676cfa755f29021947c57471f0420c6a93d9f644ca8fb78c8",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.case_collision_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -409,8 +599,45 @@
       "update_receipt_output": null
     },
     {
-      "canonical_fixture_digest_after": "sha256:7afcf7f9170ff222afee01d9108d6b67fdf6730a1da0a95ca9ead89223910275",
-      "canonical_fixture_digest_before": "sha256:7afcf7f9170ff222afee01d9108d6b67fdf6730a1da0a95ca9ead89223910275",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/evidence-only-overwrite-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/evidence-only-overwrite-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:243755125880719ebed0b368763459258dcd23b9a00e9ac1bc4446455f97a95d",
+      "canonical_fixture_digest_before": "sha256:243755125880719ebed0b368763459258dcd23b9a00e9ac1bc4446455f97a95d",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.evidence_only_overwrite_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -496,8 +723,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:c416007428c332b1c5146116bdee7297e9d702294f11db43a03764b2c30ade0b",
-      "canonical_fixture_digest_before": "sha256:c416007428c332b1c5146116bdee7297e9d702294f11db43a03764b2c30ade0b",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/evidence-only-preservation"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/evidence-only-preservation"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:5f2d0b51c6224d1fb78de9430d7468b6a03d94dc520ebb4afcbc597836d5e072",
+      "canonical_fixture_digest_before": "sha256:5f2d0b51c6224d1fb78de9430d7468b6a03d94dc520ebb4afcbc597836d5e072",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -594,8 +858,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:bee8a9ff37c6b3241cf5f1da8b0c1e9845a88ba5547b57cfdadff9a3e5a8f0ca",
-      "canonical_fixture_digest_before": "sha256:bee8a9ff37c6b3241cf5f1da8b0c1e9845a88ba5547b57cfdadff9a3e5a8f0ca",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/legacy-preservation"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/legacy-preservation"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:4994daaac83df49f0d8f960a0eaf4b6ab7398f1629e9a581ee8e0ba0d6abb710",
+      "canonical_fixture_digest_before": "sha256:4994daaac83df49f0d8f960a0eaf4b6ab7398f1629e9a581ee8e0ba0d6abb710",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -692,8 +993,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:19ec9e8db0583b9909adb8aa45cb93fb2595368600f9d3a8d0df2a1000d3d8e4",
-      "canonical_fixture_digest_before": "sha256:19ec9e8db0583b9909adb8aa45cb93fb2595368600f9d3a8d0df2a1000d3d8e4",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/local-only-overwrite-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/local-only-overwrite-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:fd194a12a85043ec883609df140584f0492dac1c976f413e10c7f23191b36b61",
+      "canonical_fixture_digest_before": "sha256:fd194a12a85043ec883609df140584f0492dac1c976f413e10c7f23191b36b61",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.local_only_overwrite_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -779,8 +1117,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:0ce7d38c78245f7f432bc2302b0edd7e75b33547aa0f00a34e2c7141f859a5e9",
-      "canonical_fixture_digest_before": "sha256:0ce7d38c78245f7f432bc2302b0edd7e75b33547aa0f00a34e2c7141f859a5e9",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/local-only-preservation"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/local-only-preservation"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:988d6c26d3e1cbd3c2f907db6db95297fb0d734983e13c53dbfdd86a2c983650",
+      "canonical_fixture_digest_before": "sha256:988d6c26d3e1cbd3c2f907db6db95297fb0d734983e13c53dbfdd86a2c983650",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -877,8 +1252,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:18198eed59683240241f238962a8a074ebd875938422964d2ccfde30a346b494",
-      "canonical_fixture_digest_before": "sha256:18198eed59683240241f238962a8a074ebd875938422964d2ccfde30a346b494",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/managed-file-add"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/managed-file-add"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:94524cb0074733694b592509f5d57ae5a27ce2f6ec0a38bc49deac7a7c6acedb",
+      "canonical_fixture_digest_before": "sha256:94524cb0074733694b592509f5d57ae5a27ce2f6ec0a38bc49deac7a7c6acedb",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -975,8 +1387,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:f387e7a0912bf252685b822001cc292af73eb3e6605171a248ba5579c861c79e",
-      "canonical_fixture_digest_before": "sha256:f387e7a0912bf252685b822001cc292af73eb3e6605171a248ba5579c861c79e",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/managed-file-remove"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/managed-file-remove"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:2b0e80159bfc8857c9f56452754a9c0dcaabb4bbeaeaeef3bb837ccc4919d0d5",
+      "canonical_fixture_digest_before": "sha256:2b0e80159bfc8857c9f56452754a9c0dcaabb4bbeaeaeef3bb837ccc4919d0d5",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -1073,8 +1522,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:a0d155eef2415ce068acf45bd97ea91092ed919c47a791464559b9813f5acc5d",
-      "canonical_fixture_digest_before": "sha256:a0d155eef2415ce068acf45bd97ea91092ed919c47a791464559b9813f5acc5d",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/managed-file-update"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/managed-file-update"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:a85412dc3d7f5a6eb50bc28d54e93fe8e43e749a17f96c07585d705eb37036a7",
+      "canonical_fixture_digest_before": "sha256:a85412dc3d7f5a6eb50bc28d54e93fe8e43e749a17f96c07585d705eb37036a7",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -1171,8 +1657,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:407659414f885eaf738eb46dc40fa46dd5b8c9fe1de55859d52df34b8b66871f",
-      "canonical_fixture_digest_before": "sha256:407659414f885eaf738eb46dc40fa46dd5b8c9fe1de55859d52df34b8b66871f",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/managed-section-add"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/managed-section-add"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:ef25eebf477d7d3a2861547bf2fef3fefa65403531f39bc9ee2507f12273f30e",
+      "canonical_fixture_digest_before": "sha256:ef25eebf477d7d3a2861547bf2fef3fefa65403531f39bc9ee2507f12273f30e",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -1269,8 +1792,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:e1b091753f83b57e36811b057b313360cf58475f2ad687ecc7c54367160f744e",
-      "canonical_fixture_digest_before": "sha256:e1b091753f83b57e36811b057b313360cf58475f2ad687ecc7c54367160f744e",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/managed-section-remove"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/managed-section-remove"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:2734312cb70229b8d7bd6c487daa5dbf08cd171abe0488eecd169cdec052896b",
+      "canonical_fixture_digest_before": "sha256:2734312cb70229b8d7bd6c487daa5dbf08cd171abe0488eecd169cdec052896b",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -1367,8 +1927,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:89d92fb96a73cc1e7b47d56e39333794f95676d23ebb75e1e24a5bef67e92316",
-      "canonical_fixture_digest_before": "sha256:89d92fb96a73cc1e7b47d56e39333794f95676d23ebb75e1e24a5bef67e92316",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/managed-section-update"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/managed-section-update"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:164441ac3a8fb9b635419526f1a277350e59702b19e37ae6aa6eb8b20fe62152",
+      "canonical_fixture_digest_before": "sha256:164441ac3a8fb9b635419526f1a277350e59702b19e37ae6aa6eb8b20fe62152",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -1465,8 +2062,114 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:b0cc64ac92386f54a18fadcf1a80e1dad4d94eca9cf1b7c0c41278d20cb472e1",
-      "canonical_fixture_digest_before": "sha256:b0cc64ac92386f54a18fadcf1a80e1dad4d94eca9cf1b7c0c41278d20cb472e1",
+      "accepted_context": {
+        "accepted": false,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/mismatched",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/mismatched-update-plan-rollback-bundle"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/mismatched-update-plan-rollback-bundle"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": "rollback bundle is not bound to the selected update plan",
+        "refusal_code": "distribution_apply_engine.update_plan_rollback_bundle_mismatch"
+      },
+      "accepted_context_valid": false,
+      "canonical_fixture_digest_after": "sha256:da8b21865f61676fdd2a1ae87b35a9d5f24418607c21ed8cfd3f841e88b4dc4c",
+      "canonical_fixture_digest_before": "sha256:da8b21865f61676fdd2a1ae87b35a9d5f24418607c21ed8cfd3f841e88b4dc4c",
+      "canonical_fixture_unchanged": true,
+      "expected_refusal_code": "distribution_apply_engine.update_plan_rollback_bundle_mismatch",
+      "expected_result": "FAILED_VALIDATION",
+      "external_repo_touched": false,
+      "network_calls_occurred": false,
+      "operation_results": [],
+      "passed": true,
+      "provider_model_calls_occurred": false,
+      "real_target_repo_modified": false,
+      "refusal_code": "distribution_apply_engine.update_plan_rollback_bundle_mismatch",
+      "release_publication_occurred": false,
+      "rollback_report": {
+        "refusal_code": null,
+        "rollback_verified": false,
+        "status": "NOT_RUN"
+      },
+      "rollback_verified": false,
+      "scenario_id": "mismatched-update-plan-rollback-bundle",
+      "schema_version": "aide.distribution-apply-run.v0",
+      "source_repo_apply_occurred": false,
+      "status": "FAILED_VALIDATION",
+      "temp_workspace_digest_after_apply": null,
+      "temp_workspace_digest_after_rollback": null,
+      "temp_workspace_digest_before": null,
+      "temp_workspace_only": true,
+      "temp_workspace_retained": false,
+      "update_receipt_generated": false,
+      "update_receipt_output": null
+    },
+    {
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/missing-preimage-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/missing-preimage-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:58e49784b6a371b37785671afc58d61094cdd705ae1f26a0e0482fa2378284e3",
+      "canonical_fixture_digest_before": "sha256:58e49784b6a371b37785671afc58d61094cdd705ae1f26a0e0482fa2378284e3",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.missing_preimage_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -1552,8 +2255,113 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:4e5d0c83ae266ecf9fb5beba3f8c84c9c4c4c84fb1d1ce48c4a4db0faf26e0b1",
-      "canonical_fixture_digest_before": "sha256:4e5d0c83ae266ecf9fb5beba3f8c84c9c4c4c84fb1d1ce48c4a4db0faf26e0b1",
+      "accepted_context": {
+        "accepted": false,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/missing-rollback-bundle-binding"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/missing-rollback-bundle-binding"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": "scenario is missing rollback_bundle_ref",
+        "refusal_code": "distribution_apply_engine.rollback_bundle_binding_missing"
+      },
+      "accepted_context_valid": false,
+      "canonical_fixture_digest_after": "sha256:eb358f2caa7de2531e8a4e6fe2217bd6ff5bf902828139ae71c54a19e30fc4b5",
+      "canonical_fixture_digest_before": "sha256:eb358f2caa7de2531e8a4e6fe2217bd6ff5bf902828139ae71c54a19e30fc4b5",
+      "canonical_fixture_unchanged": true,
+      "expected_refusal_code": "distribution_apply_engine.rollback_bundle_binding_missing",
+      "expected_result": "FAILED_VALIDATION",
+      "external_repo_touched": false,
+      "network_calls_occurred": false,
+      "operation_results": [],
+      "passed": true,
+      "provider_model_calls_occurred": false,
+      "real_target_repo_modified": false,
+      "refusal_code": "distribution_apply_engine.rollback_bundle_binding_missing",
+      "release_publication_occurred": false,
+      "rollback_report": {
+        "refusal_code": null,
+        "rollback_verified": false,
+        "status": "NOT_RUN"
+      },
+      "rollback_verified": false,
+      "scenario_id": "missing-rollback-bundle-binding",
+      "schema_version": "aide.distribution-apply-run.v0",
+      "source_repo_apply_occurred": false,
+      "status": "FAILED_VALIDATION",
+      "temp_workspace_digest_after_apply": null,
+      "temp_workspace_digest_after_rollback": null,
+      "temp_workspace_digest_before": null,
+      "temp_workspace_only": true,
+      "temp_workspace_retained": false,
+      "update_receipt_generated": false,
+      "update_receipt_output": null
+    },
+    {
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/missing-rollback-requirement-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/missing-rollback-requirement-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:af48771cd6d07a4fb38ed9f46188308b100440048c280d829d5bc2678d48c305",
+      "canonical_fixture_digest_before": "sha256:af48771cd6d07a4fb38ed9f46188308b100440048c280d829d5bc2678d48c305",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.missing_rollback_requirement_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -1639,8 +2447,115 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:515635a6a8b98527e3ef9e91fd9b57feca6609fa750a1ee12cc8282c63b7ab82",
-      "canonical_fixture_digest_before": "sha256:515635a6a8b98527e3ef9e91fd9b57feca6609fa750a1ee12cc8282c63b7ab82",
+      "accepted_context": {
+        "accepted": false,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/missing-update-plan-binding"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/missing-update-plan-binding"
+          ]
+        },
+        "message": "scenario is missing update_plan_ref",
+        "refusal_code": "distribution_apply_engine.update_plan_binding_missing"
+      },
+      "accepted_context_valid": false,
+      "canonical_fixture_digest_after": "sha256:00c6af06f31a901c3dedc989ef84ac21f6bc7fe19788cdeeea818f748eafc5e2",
+      "canonical_fixture_digest_before": "sha256:00c6af06f31a901c3dedc989ef84ac21f6bc7fe19788cdeeea818f748eafc5e2",
+      "canonical_fixture_unchanged": true,
+      "expected_refusal_code": "distribution_apply_engine.update_plan_binding_missing",
+      "expected_result": "FAILED_VALIDATION",
+      "external_repo_touched": false,
+      "network_calls_occurred": false,
+      "operation_results": [],
+      "passed": true,
+      "provider_model_calls_occurred": false,
+      "real_target_repo_modified": false,
+      "refusal_code": "distribution_apply_engine.update_plan_binding_missing",
+      "release_publication_occurred": false,
+      "rollback_report": {
+        "refusal_code": null,
+        "rollback_verified": false,
+        "status": "NOT_RUN"
+      },
+      "rollback_verified": false,
+      "scenario_id": "missing-update-plan-binding",
+      "schema_version": "aide.distribution-apply-run.v0",
+      "source_repo_apply_occurred": false,
+      "status": "FAILED_VALIDATION",
+      "temp_workspace_digest_after_apply": null,
+      "temp_workspace_digest_after_rollback": null,
+      "temp_workspace_digest_before": null,
+      "temp_workspace_only": true,
+      "temp_workspace_retained": false,
+      "update_receipt_generated": false,
+      "update_receipt_output": null
+    },
+    {
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/mixed-managed-file-and-section-update-file",
+            "aide://update-plan/operation/mixed-managed-file-and-section-update-section"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/mixed-managed-file-and-section-update-file",
+            "aide://update-plan/operation/mixed-managed-file-and-section-update-section"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:4e00cc9b334bbab3dc247d215ef2cb54f106d5e8c9c9bd96b480287d59a1a11e",
+      "canonical_fixture_digest_before": "sha256:4e00cc9b334bbab3dc247d215ef2cb54f106d5e8c9c9bd96b480287d59a1a11e",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -1754,8 +2669,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:23e600dd001e8f34f9db64025b0050aec16862ff095b00141252c7e4a3d90737",
-      "canonical_fixture_digest_before": "sha256:23e600dd001e8f34f9db64025b0050aec16862ff095b00141252c7e4a3d90737",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/never-touch-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/never-touch-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:7458ad957580d0e71a9def6265411a97826abd50a6a5c29efad4544470a021e7",
+      "canonical_fixture_digest_before": "sha256:7458ad957580d0e71a9def6265411a97826abd50a6a5c29efad4544470a021e7",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.never_touch_update_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -1841,8 +2793,41 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:3ce2e39b94a974f6d685827e8e8d1b19cd0d6a1deaf6de6a7efac7549ff60f41",
-      "canonical_fixture_digest_before": "sha256:3ce2e39b94a974f6d685827e8e8d1b19cd0d6a1deaf6de6a7efac7549ff60f41",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:b462e9229d436b2f1b5fe6d90b1f44cd89527e274552a374d3b71911c93b737f",
+      "canonical_fixture_digest_before": "sha256:b462e9229d436b2f1b5fe6d90b1f44cd89527e274552a374d3b71911c93b737f",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -1920,8 +2905,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:83a7f0bd80c4b61e3e83236c4076852817712942b56697722979e10a22a642de",
-      "canonical_fixture_digest_before": "sha256:83a7f0bd80c4b61e3e83236c4076852817712942b56697722979e10a22a642de",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/operation-lacking-rollback-coverage-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/operation-lacking-rollback-coverage-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:14bad6991b43c66192fd66fc3c871ba62f337f5fae198bbaf5dbf65f1b931493",
+      "canonical_fixture_digest_before": "sha256:14bad6991b43c66192fd66fc3c871ba62f337f5fae198bbaf5dbf65f1b931493",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.operation_lacking_rollback_coverage_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -2007,8 +3029,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:d7d9e128cc13ab4e36a1cc6e48dcb072c27bbc9f186f970fbc70161a524859b0",
-      "canonical_fixture_digest_before": "sha256:d7d9e128cc13ab4e36a1cc6e48dcb072c27bbc9f186f970fbc70161a524859b0",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/operation-not-in-plan-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/operation-not-in-plan-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:8f34867a7a0d9ce6bb8fc8017bf6d95f555159f856227c326780369047ccb5e2",
+      "canonical_fixture_digest_before": "sha256:8f34867a7a0d9ce6bb8fc8017bf6d95f555159f856227c326780369047ccb5e2",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.operation_not_in_plan_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -2094,8 +3153,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:acf6f94d5cb0d7b9eec743285ae82708d28d041d71aea02e1e6a489402f86927",
-      "canonical_fixture_digest_before": "sha256:acf6f94d5cb0d7b9eec743285ae82708d28d041d71aea02e1e6a489402f86927",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/path-traversal-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/path-traversal-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:8077890d80d097b827334a2aafeb5dc815fe4bbee9421bc73c02fd20be58c0ed",
+      "canonical_fixture_digest_before": "sha256:8077890d80d097b827334a2aafeb5dc815fe4bbee9421bc73c02fd20be58c0ed",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.path_traversal_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -2181,8 +3277,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:a8262952b2ed51b202253449f7db7689aef7f8ef8a7a6a023f4bd7a5c13e0ed7",
-      "canonical_fixture_digest_before": "sha256:a8262952b2ed51b202253449f7db7689aef7f8ef8a7a6a023f4bd7a5c13e0ed7",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/postimage-digest-mismatch-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/postimage-digest-mismatch-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:6840d251ecb4a792d4772344472bb0817bf31b4eb92d46f8b179769d7bca166f",
+      "canonical_fixture_digest_before": "sha256:6840d251ecb4a792d4772344472bb0817bf31b4eb92d46f8b179769d7bca166f",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.postimage_digest_mismatch_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -2268,8 +3401,390 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:58d5fed6ad84dc3bf89ed4104ee5f123567bd8d04017c351d8f762ef277d4806",
-      "canonical_fixture_digest_before": "sha256:58d5fed6ad84dc3bf89ed4104ee5f123567bd8d04017c351d8f762ef277d4806",
+      "accepted_context": {
+        "accepted": false,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/mismatched"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/predecessor-install-record-mismatch"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/predecessor-install-record-mismatch"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": "accepted context install_record_refs mismatch",
+        "refusal_code": "distribution_apply_engine.predecessor_mismatch"
+      },
+      "accepted_context_valid": false,
+      "canonical_fixture_digest_after": "sha256:0fc323bcc4aa14198aa4a5283765fb08d1f087c6726aecbeb5da17179e3ce920",
+      "canonical_fixture_digest_before": "sha256:0fc323bcc4aa14198aa4a5283765fb08d1f087c6726aecbeb5da17179e3ce920",
+      "canonical_fixture_unchanged": true,
+      "expected_refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "expected_result": "FAILED_VALIDATION",
+      "external_repo_touched": false,
+      "network_calls_occurred": false,
+      "operation_results": [],
+      "passed": true,
+      "provider_model_calls_occurred": false,
+      "real_target_repo_modified": false,
+      "refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "release_publication_occurred": false,
+      "rollback_report": {
+        "refusal_code": null,
+        "rollback_verified": false,
+        "status": "NOT_RUN"
+      },
+      "rollback_verified": false,
+      "scenario_id": "predecessor-install-record-mismatch",
+      "schema_version": "aide.distribution-apply-run.v0",
+      "source_repo_apply_occurred": false,
+      "status": "FAILED_VALIDATION",
+      "temp_workspace_digest_after_apply": null,
+      "temp_workspace_digest_after_rollback": null,
+      "temp_workspace_digest_before": null,
+      "temp_workspace_only": true,
+      "temp_workspace_retained": false,
+      "update_receipt_generated": false,
+      "update_receipt_output": null
+    },
+    {
+      "accepted_context": {
+        "accepted": false,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/mismatched"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/predecessor-migration-record-mismatch"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/predecessor-migration-record-mismatch"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": "accepted context migration_record_refs mismatch",
+        "refusal_code": "distribution_apply_engine.predecessor_mismatch"
+      },
+      "accepted_context_valid": false,
+      "canonical_fixture_digest_after": "sha256:5da969949cf0918246109d0150f01107e21f0339dcdef3fe2c490c6274728115",
+      "canonical_fixture_digest_before": "sha256:5da969949cf0918246109d0150f01107e21f0339dcdef3fe2c490c6274728115",
+      "canonical_fixture_unchanged": true,
+      "expected_refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "expected_result": "FAILED_VALIDATION",
+      "external_repo_touched": false,
+      "network_calls_occurred": false,
+      "operation_results": [],
+      "passed": true,
+      "provider_model_calls_occurred": false,
+      "real_target_repo_modified": false,
+      "refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "release_publication_occurred": false,
+      "rollback_report": {
+        "refusal_code": null,
+        "rollback_verified": false,
+        "status": "NOT_RUN"
+      },
+      "rollback_verified": false,
+      "scenario_id": "predecessor-migration-record-mismatch",
+      "schema_version": "aide.distribution-apply-run.v0",
+      "source_repo_apply_occurred": false,
+      "status": "FAILED_VALIDATION",
+      "temp_workspace_digest_after_apply": null,
+      "temp_workspace_digest_after_rollback": null,
+      "temp_workspace_digest_before": null,
+      "temp_workspace_only": true,
+      "temp_workspace_retained": false,
+      "update_receipt_generated": false,
+      "update_receipt_output": null
+    },
+    {
+      "accepted_context": {
+        "accepted": false,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/mismatched",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/predecessor-ownership-ledger-mismatch"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/predecessor-ownership-ledger-mismatch"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": "scenario and context disagree for ownership_ledger_ref",
+        "refusal_code": "distribution_apply_engine.predecessor_mismatch"
+      },
+      "accepted_context_valid": false,
+      "canonical_fixture_digest_after": "sha256:9c5ec51c0b3bd2b8efd6b4dfa0fe4a1ced9033a9040505a87f3020484f1c9e75",
+      "canonical_fixture_digest_before": "sha256:9c5ec51c0b3bd2b8efd6b4dfa0fe4a1ced9033a9040505a87f3020484f1c9e75",
+      "canonical_fixture_unchanged": true,
+      "expected_refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "expected_result": "FAILED_VALIDATION",
+      "external_repo_touched": false,
+      "network_calls_occurred": false,
+      "operation_results": [],
+      "passed": true,
+      "provider_model_calls_occurred": false,
+      "real_target_repo_modified": false,
+      "refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "release_publication_occurred": false,
+      "rollback_report": {
+        "refusal_code": null,
+        "rollback_verified": false,
+        "status": "NOT_RUN"
+      },
+      "rollback_verified": false,
+      "scenario_id": "predecessor-ownership-ledger-mismatch",
+      "schema_version": "aide.distribution-apply-run.v0",
+      "source_repo_apply_occurred": false,
+      "status": "FAILED_VALIDATION",
+      "temp_workspace_digest_after_apply": null,
+      "temp_workspace_digest_after_rollback": null,
+      "temp_workspace_digest_before": null,
+      "temp_workspace_only": true,
+      "temp_workspace_retained": false,
+      "update_receipt_generated": false,
+      "update_receipt_output": null
+    },
+    {
+      "accepted_context": {
+        "accepted": false,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/mismatched",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/predecessor-project-lock-mismatch"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/predecessor-project-lock-mismatch"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": "scenario and context disagree for current_project_lock_ref",
+        "refusal_code": "distribution_apply_engine.predecessor_mismatch"
+      },
+      "accepted_context_valid": false,
+      "canonical_fixture_digest_after": "sha256:27c77d96a192b1c157128c9feae865e2301c8a8ac74bb84f2012b57ddab7621d",
+      "canonical_fixture_digest_before": "sha256:27c77d96a192b1c157128c9feae865e2301c8a8ac74bb84f2012b57ddab7621d",
+      "canonical_fixture_unchanged": true,
+      "expected_refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "expected_result": "FAILED_VALIDATION",
+      "external_repo_touched": false,
+      "network_calls_occurred": false,
+      "operation_results": [],
+      "passed": true,
+      "provider_model_calls_occurred": false,
+      "real_target_repo_modified": false,
+      "refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "release_publication_occurred": false,
+      "rollback_report": {
+        "refusal_code": null,
+        "rollback_verified": false,
+        "status": "NOT_RUN"
+      },
+      "rollback_verified": false,
+      "scenario_id": "predecessor-project-lock-mismatch",
+      "schema_version": "aide.distribution-apply-run.v0",
+      "source_repo_apply_occurred": false,
+      "status": "FAILED_VALIDATION",
+      "temp_workspace_digest_after_apply": null,
+      "temp_workspace_digest_after_rollback": null,
+      "temp_workspace_digest_before": null,
+      "temp_workspace_only": true,
+      "temp_workspace_retained": false,
+      "update_receipt_generated": false,
+      "update_receipt_output": null
+    },
+    {
+      "accepted_context": {
+        "accepted": false,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/predecessor-source-distribution-mismatch"
+          ],
+          "source_distribution_ref": "aide://distribution/mismatched",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/predecessor-source-distribution-mismatch"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": "scenario and context disagree for source_distribution_ref",
+        "refusal_code": "distribution_apply_engine.predecessor_mismatch"
+      },
+      "accepted_context_valid": false,
+      "canonical_fixture_digest_after": "sha256:788cca69f5f8f5bee3942fa62827beda3d60a78d613097ce1bf2e2be54652188",
+      "canonical_fixture_digest_before": "sha256:788cca69f5f8f5bee3942fa62827beda3d60a78d613097ce1bf2e2be54652188",
+      "canonical_fixture_unchanged": true,
+      "expected_refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "expected_result": "FAILED_VALIDATION",
+      "external_repo_touched": false,
+      "network_calls_occurred": false,
+      "operation_results": [],
+      "passed": true,
+      "provider_model_calls_occurred": false,
+      "real_target_repo_modified": false,
+      "refusal_code": "distribution_apply_engine.predecessor_mismatch",
+      "release_publication_occurred": false,
+      "rollback_report": {
+        "refusal_code": null,
+        "rollback_verified": false,
+        "status": "NOT_RUN"
+      },
+      "rollback_verified": false,
+      "scenario_id": "predecessor-source-distribution-mismatch",
+      "schema_version": "aide.distribution-apply-run.v0",
+      "source_repo_apply_occurred": false,
+      "status": "FAILED_VALIDATION",
+      "temp_workspace_digest_after_apply": null,
+      "temp_workspace_digest_after_rollback": null,
+      "temp_workspace_digest_before": null,
+      "temp_workspace_only": true,
+      "temp_workspace_retained": false,
+      "update_receipt_generated": false,
+      "update_receipt_output": null
+    },
+    {
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/preimage-digest-mismatch-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/preimage-digest-mismatch-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:27cbd035d53658ffc97a0cc9053cd878ee9ab3e66744259aedc5e185af747ad7",
+      "canonical_fixture_digest_before": "sha256:27cbd035d53658ffc97a0cc9053cd878ee9ab3e66744259aedc5e185af747ad7",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.preimage_digest_mismatch_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -2355,8 +3870,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:f704a4e48708b460efced922918f99ff2499381b9064817ab73885fb35aed110",
-      "canonical_fixture_digest_before": "sha256:f704a4e48708b460efced922918f99ff2499381b9064817ab73885fb35aed110",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/project-overlay-overwrite-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/project-overlay-overwrite-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:59cd14d60806f795caa40d194ba4ac23139407e105a348f42df6dd3cdf4f013e",
+      "canonical_fixture_digest_before": "sha256:59cd14d60806f795caa40d194ba4ac23139407e105a348f42df6dd3cdf4f013e",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.project_overlay_overwrite_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -2442,8 +3994,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:66358ecdd8f6c3845fdee95810c10608100d35acbcb3f772eeab51e4fdbcd5fa",
-      "canonical_fixture_digest_before": "sha256:66358ecdd8f6c3845fdee95810c10608100d35acbcb3f772eeab51e4fdbcd5fa",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/project-overlay-preservation"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/project-overlay-preservation"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:fd3d9e9121e03d4d12b1649eab66e7a42e9e5c7fc22291067953fbd1ce7457bf",
+      "canonical_fixture_digest_before": "sha256:fd3d9e9121e03d4d12b1649eab66e7a42e9e5c7fc22291067953fbd1ce7457bf",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -2540,8 +4129,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:5b70b7c6b76fc6edf4e9902dffd528b85296ede777af463fe2db79ab5efada6a",
-      "canonical_fixture_digest_before": "sha256:5b70b7c6b76fc6edf4e9902dffd528b85296ede777af463fe2db79ab5efada6a",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/project-owned-overwrite-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/project-owned-overwrite-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:5035feb73ff63448fb77abb202f34ad47eec0c720ac53ae9ea96c06eba6a178e",
+      "canonical_fixture_digest_before": "sha256:5035feb73ff63448fb77abb202f34ad47eec0c720ac53ae9ea96c06eba6a178e",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.project_owned_overwrite_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -2627,8 +4253,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:24941abb6cf273b37735533e21e3b5ea6e7414b48ec5d6c3199bd2060272bb0c",
-      "canonical_fixture_digest_before": "sha256:24941abb6cf273b37735533e21e3b5ea6e7414b48ec5d6c3199bd2060272bb0c",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/project-owned-preservation"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/project-owned-preservation"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:bc2a6c693ede9e58ecf4bcdfe37d0e57cd7979ead889759fd4eecae4c004095b",
+      "canonical_fixture_digest_before": "sha256:bc2a6c693ede9e58ecf4bcdfe37d0e57cd7979ead889759fd4eecae4c004095b",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -2725,8 +4388,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:73c1b92c54a387ad0721b9b974277a253d84a4f6d60dd1a0093db1a81551b7aa",
-      "canonical_fixture_digest_before": "sha256:73c1b92c54a387ad0721b9b974277a253d84a4f6d60dd1a0093db1a81551b7aa",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/rollback-digest-mismatch-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/rollback-digest-mismatch-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:40fb431acf5b558551487823b26d33016045fc304fc8a0e32b2a5fba8e7195dd",
+      "canonical_fixture_digest_before": "sha256:40fb431acf5b558551487823b26d33016045fc304fc8a0e32b2a5fba8e7195dd",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.rollback_digest_mismatch_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -2823,8 +4523,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:ea05816ca015d47e4cf878b32143d4a0b88d602078847db8eb471a6afde190cb",
-      "canonical_fixture_digest_before": "sha256:ea05816ca015d47e4cf878b32143d4a0b88d602078847db8eb471a6afde190cb",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/rollback-success"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/rollback-success"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:4de222dca18a8a4099d988fa7956271740dad77ba32c3afd583c545571cdbb86",
+      "canonical_fixture_digest_before": "sha256:4de222dca18a8a4099d988fa7956271740dad77ba32c3afd583c545571cdbb86",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -2921,8 +4658,84 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:1e2f739061eceed3faaaa0f528aa877406fa61b6f2f962b5556d2b055f8679e2",
-      "canonical_fixture_digest_before": "sha256:1e2f739061eceed3faaaa0f528aa877406fa61b6f2f962b5556d2b055f8679e2",
+      "accepted_context": {
+        "accepted": false,
+        "context": {},
+        "message": "accepted context is required before fixture execution",
+        "refusal_code": "distribution_apply_engine.accepted_context_missing"
+      },
+      "accepted_context_valid": false,
+      "canonical_fixture_digest_after": "sha256:61b7d9ff19c6fe3ea999244b850a4371e621d20959b66f072c83e0c1ccedc899",
+      "canonical_fixture_digest_before": "sha256:61b7d9ff19c6fe3ea999244b850a4371e621d20959b66f072c83e0c1ccedc899",
+      "canonical_fixture_unchanged": true,
+      "expected_refusal_code": "distribution_apply_engine.accepted_context_missing",
+      "expected_result": "FAILED_VALIDATION",
+      "external_repo_touched": false,
+      "network_calls_occurred": false,
+      "operation_results": [],
+      "passed": true,
+      "provider_model_calls_occurred": false,
+      "real_target_repo_modified": false,
+      "refusal_code": "distribution_apply_engine.accepted_context_missing",
+      "release_publication_occurred": false,
+      "rollback_report": {
+        "refusal_code": null,
+        "rollback_verified": false,
+        "status": "NOT_RUN"
+      },
+      "rollback_verified": false,
+      "scenario_id": "run-without-accepted-context",
+      "schema_version": "aide.distribution-apply-run.v0",
+      "source_repo_apply_occurred": false,
+      "status": "FAILED_VALIDATION",
+      "temp_workspace_digest_after_apply": null,
+      "temp_workspace_digest_after_rollback": null,
+      "temp_workspace_digest_before": null,
+      "temp_workspace_only": true,
+      "temp_workspace_retained": false,
+      "update_receipt_generated": false,
+      "update_receipt_output": null
+    },
+    {
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/runtime-generated-overwrite-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/runtime-generated-overwrite-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:5349ff5cb90cd4f0d94eab5a896e042ceb75dd095a45444f3627e53d091efb86",
+      "canonical_fixture_digest_before": "sha256:5349ff5cb90cd4f0d94eab5a896e042ceb75dd095a45444f3627e53d091efb86",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.runtime_generated_overwrite_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -3008,8 +4821,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:50ce65dcb4a9625eb87472021f130b21ebc3441b896fdbe7bb74700cecaed656",
-      "canonical_fixture_digest_before": "sha256:50ce65dcb4a9625eb87472021f130b21ebc3441b896fdbe7bb74700cecaed656",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/runtime-generated-preservation"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/runtime-generated-preservation"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:0c5fc9420648501d2477358fc4a4adf776f941454be7f0ea60d483652e4a905b",
+      "canonical_fixture_digest_before": "sha256:0c5fc9420648501d2477358fc4a4adf776f941454be7f0ea60d483652e4a905b",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",
@@ -3106,8 +4956,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:04770138036c6197a54933c1a116993e377ccec21cb7853eb9a2c2e98b9b748e",
-      "canonical_fixture_digest_before": "sha256:04770138036c6197a54933c1a116993e377ccec21cb7853eb9a2c2e98b9b748e",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/symlink-reparse-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/symlink-reparse-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:09ad0795199ba7b583bd0976c484c02cdd1e12d4a4ae9dae3dabd663749dfc98",
+      "canonical_fixture_digest_before": "sha256:09ad0795199ba7b583bd0976c484c02cdd1e12d4a4ae9dae3dabd663749dfc98",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.symlink_reparse_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -3193,8 +5080,45 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:3dc9a4125e88ec52c779a904910a03306d45f4be00be2c6cc260324ad62d5b35",
-      "canonical_fixture_digest_before": "sha256:3dc9a4125e88ec52c779a904910a03306d45f4be00be2c6cc260324ad62d5b35",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/unknown-ownership-refusal"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/unknown-ownership-refusal"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:38fd81e40a24337c8137bef3276faa1c999015c96e23f89f1e4fa9d60f619fea",
+      "canonical_fixture_digest_before": "sha256:38fd81e40a24337c8137bef3276faa1c999015c96e23f89f1e4fa9d60f619fea",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.unknown_ownership_update_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -3280,8 +5204,41 @@
       }
     },
     {
-      "canonical_fixture_digest_after": "sha256:1608bf99c84c84e8a3b20f98a852535048c63069c4593e1e5f37e11fdc86a53e",
-      "canonical_fixture_digest_before": "sha256:1608bf99c84c84e8a3b20f98a852535048c63069c4593e1e5f37e11fdc86a53e",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:f965e55ccd83d9cb6ea1712e3e838fa04cf5c6b78036c2dd74962c09f58fdf02",
+      "canonical_fixture_digest_before": "sha256:f965e55ccd83d9cb6ea1712e3e838fa04cf5c6b78036c2dd74962c09f58fdf02",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": "distribution_apply_engine.unknown_required_feature_refused",
       "expected_result": "FAILED_VALIDATION",
@@ -3312,8 +5269,45 @@
       "update_receipt_output": null
     },
     {
-      "canonical_fixture_digest_after": "sha256:05a7639466bc615e25537d229ead5ecb14b6073a9a02dfa8347b3b626e0aace1",
-      "canonical_fixture_digest_before": "sha256:05a7639466bc615e25537d229ead5ecb14b6073a9a02dfa8347b3b626e0aace1",
+      "accepted_context": {
+        "accepted": true,
+        "context": {
+          "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+          "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+          "install_record_refs": [
+            "aide://install-record/aide-self-install-record-v0"
+          ],
+          "migration_record_refs": [
+            "aide://migration-record/install-record-v0/no-op-compatibility"
+          ],
+          "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+          "required": true,
+          "required_bindings": {
+            "predecessors": true,
+            "rollback_bundle": true,
+            "update_plan": true
+          },
+          "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+          "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+          "rollback_operation_refs": [
+            "aide://update-plan/operation/update-receipt-generation"
+          ],
+          "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+          "status": "accepted_with_warnings",
+          "target_project_ref": "aide://project/aide-self",
+          "update_plan_operation_refs": [
+            "aide://update-plan/operation/update-receipt-generation"
+          ],
+          "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+        },
+        "message": null,
+        "refusal_code": null
+      },
+      "accepted_context_valid": true,
+      "canonical_fixture_digest_after": "sha256:a9b09d74746b862e8646e764491fb6d3b7ad56d2b53acd552ba0e132976082b8",
+      "canonical_fixture_digest_before": "sha256:a9b09d74746b862e8646e764491fb6d3b7ad56d2b53acd552ba0e132976082b8",
       "canonical_fixture_unchanged": true,
       "expected_refusal_code": null,
       "expected_result": "PASS_WITH_WARNINGS",

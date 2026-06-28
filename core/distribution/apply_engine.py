@@ -13,7 +13,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from core.distribution import apply_reports, operation_executor, rollback_verifier
+from core.distribution import apply_context, apply_reports, operation_executor, rollback_verifier
 from core.distribution.temp_workspace import (
     directory_digest,
     read_json,
@@ -98,6 +98,15 @@ POSITIVE_SCENARIOS = [
 ]
 
 NEGATIVE_SCENARIOS = [
+    "missing-update-plan-binding",
+    "missing-rollback-bundle-binding",
+    "mismatched-update-plan-rollback-bundle",
+    "predecessor-source-distribution-mismatch",
+    "predecessor-project-lock-mismatch",
+    "predecessor-ownership-ledger-mismatch",
+    "predecessor-install-record-mismatch",
+    "predecessor-migration-record-mismatch",
+    "run-without-accepted-context",
     "unknown-ownership-refusal",
     "never-touch-refusal",
     "project-owned-overwrite-refusal",
@@ -121,6 +130,15 @@ NEGATIVE_SCENARIOS = [
 ]
 
 EXPECTED_REFUSALS = {
+    "missing-update-plan-binding": "distribution_apply_engine.update_plan_binding_missing",
+    "missing-rollback-bundle-binding": "distribution_apply_engine.rollback_bundle_binding_missing",
+    "mismatched-update-plan-rollback-bundle": "distribution_apply_engine.update_plan_rollback_bundle_mismatch",
+    "predecessor-source-distribution-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "predecessor-project-lock-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "predecessor-ownership-ledger-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "predecessor-install-record-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "predecessor-migration-record-mismatch": "distribution_apply_engine.predecessor_mismatch",
+    "run-without-accepted-context": "distribution_apply_engine.accepted_context_missing",
     "unknown-ownership-refusal": "distribution_apply_engine.unknown_ownership_update_refused",
     "never-touch-refusal": "distribution_apply_engine.never_touch_update_refused",
     "project-owned-overwrite-refusal": "distribution_apply_engine.project_owned_overwrite_refused",
@@ -199,17 +217,25 @@ def _operation(
 
 
 def _base_scenario(scenario_id: str, operations: list[dict[str, Any]], *, expected_result: str = "PASS_WITH_WARNINGS", **flags: Any) -> dict[str, Any]:
+    accepted_context = apply_context.accepted_context_template(operations)
     return {
         "schema_version": "aide.distribution-apply-scenario.v0",
         "scenario_id": scenario_id,
         "expected_result": expected_result,
         "expected_refusal_code": EXPECTED_REFUSALS.get(scenario_id),
         "required_features": ["distribution_apply_engine_v0", "fixture_only", "temp_workspace_only"],
-        "source_distribution_ref": "aide://distribution/aide-lite-self-fixture",
-        "project_lock_ref": "aide://project-lock/aide-self-lock-v0",
-        "ownership_ledger_ref": "aide://ownership-ledger/aide-self-ownership-ledger-v1",
-        "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
-        "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+        "target_project_ref": accepted_context["target_project_ref"],
+        "source_distribution_ref": accepted_context["source_distribution_ref"],
+        "candidate_distribution_ref": accepted_context["candidate_distribution_ref"],
+        "project_lock_ref": accepted_context["current_project_lock_ref"],
+        "current_project_lock_ref": accepted_context["current_project_lock_ref"],
+        "candidate_project_lock_ref": accepted_context["candidate_project_lock_ref"],
+        "ownership_ledger_ref": accepted_context["ownership_ledger_ref"],
+        "install_record_refs": list(accepted_context["install_record_refs"]),
+        "migration_record_refs": list(accepted_context["migration_record_refs"]),
+        "update_plan_ref": accepted_context["update_plan_ref"],
+        "rollback_bundle_ref": accepted_context["rollback_bundle_ref"],
+        "accepted_context": accepted_context,
         "initial_files": copy.deepcopy(BASE_FILES),
         "operations": operations,
         "explicit_non_capabilities": EXPLICIT_NON_CAPABILITIES,
@@ -370,6 +396,76 @@ def scenario_definitions() -> dict[str, dict[str, Any]]:
         canonical_fixture_mutation_attempt=True,
     )
     scenarios["rollback-digest-mismatch-refusal"]["rollback_digest_mismatch"] = True
+
+    def add_context_refusal(scenario_id: str, mutation: Any) -> None:
+        scenario = _base_scenario(
+            scenario_id,
+            [_operation(scenario_id, "update_managed_file", "managed/app.txt", preimage=old_file, postimage="context refusal\n")],
+            expected_result="FAILED_VALIDATION",
+        )
+        mutation(scenario)
+        scenarios[scenario_id] = scenario
+
+    add_context_refusal(
+        "missing-update-plan-binding",
+        lambda scenario: (
+            scenario.pop("update_plan_ref", None),
+            scenario["accepted_context"].pop("update_plan_ref", None),
+        ),
+    )
+    add_context_refusal(
+        "missing-rollback-bundle-binding",
+        lambda scenario: (
+            scenario.pop("rollback_bundle_ref", None),
+            scenario["accepted_context"].pop("rollback_bundle_ref", None),
+        ),
+    )
+    add_context_refusal(
+        "mismatched-update-plan-rollback-bundle",
+        lambda scenario: scenario["accepted_context"].__setitem__(
+            "rollback_bundle_update_plan_ref",
+            "aide://update-plan/mismatched",
+        ),
+    )
+    add_context_refusal(
+        "predecessor-source-distribution-mismatch",
+        lambda scenario: scenario["accepted_context"].__setitem__(
+            "source_distribution_ref",
+            "aide://distribution/mismatched",
+        ),
+    )
+    add_context_refusal(
+        "predecessor-project-lock-mismatch",
+        lambda scenario: scenario["accepted_context"].__setitem__(
+            "current_project_lock_ref",
+            "aide://project-lock/mismatched",
+        ),
+    )
+    add_context_refusal(
+        "predecessor-ownership-ledger-mismatch",
+        lambda scenario: scenario["accepted_context"].__setitem__(
+            "ownership_ledger_ref",
+            "aide://ownership-ledger/mismatched",
+        ),
+    )
+    add_context_refusal(
+        "predecessor-install-record-mismatch",
+        lambda scenario: scenario["accepted_context"].__setitem__(
+            "install_record_refs",
+            ["aide://install-record/mismatched"],
+        ),
+    )
+    add_context_refusal(
+        "predecessor-migration-record-mismatch",
+        lambda scenario: scenario["accepted_context"].__setitem__(
+            "migration_record_refs",
+            ["aide://migration-record/mismatched"],
+        ),
+    )
+    add_context_refusal(
+        "run-without-accepted-context",
+        lambda scenario: scenario.pop("accepted_context", None),
+    )
     return scenarios
 
 
@@ -503,7 +599,9 @@ def execute_scenario(repo_root: str | Path, scenario_id: str, *, mode: str = "ap
     expected_result = str(scenario.get("expected_result", "PASS_WITH_WARNINGS"))
     scenario_dir = root / FIXTURE_ROOT / scenario_id
     canonical_before = directory_digest(scenario_dir)
-    static = _static_refusal(scenario)
+    context_validation = apply_context.validate_accepted_context(root, scenario)
+    context_report = context_validation.as_report()
+    static = None if not context_validation.accepted else _static_refusal(scenario)
     operation_results: list[dict[str, Any]] = []
     rollback_report = {"status": "NOT_RUN", "rollback_verified": False, "refusal_code": None}
     update_receipt_output: dict[str, Any] | None = None
@@ -512,7 +610,10 @@ def execute_scenario(repo_root: str | Path, scenario_id: str, *, mode: str = "ap
     temp_workspace_digest_before = None
     temp_workspace_digest_after_apply = None
     temp_workspace_digest_after_rollback = None
-    if static:
+    if not context_validation.accepted:
+        status_value = "FAILED_VALIDATION"
+        refusal_code = context_validation.refusal_code
+    elif static:
         status_value = "FAILED_VALIDATION"
         refusal_code = static["refusal_code"]
     else:
@@ -549,6 +650,8 @@ def execute_scenario(repo_root: str | Path, scenario_id: str, *, mode: str = "ap
         "expected_refusal_code": scenario.get("expected_refusal_code"),
         "passed": passed,
         "operation_results": operation_results,
+        "accepted_context": context_report,
+        "accepted_context_valid": context_validation.accepted,
         "update_receipt_output": update_receipt_output,
         "update_receipt_generated": update_receipt_output is not None,
         "rollback_report": rollback_report,
@@ -599,6 +702,7 @@ def status(repo_root: str | Path = ".") -> dict[str, Any]:
 def plan(repo_root: str | Path = ".", *, scenario_id: str) -> dict[str, Any]:
     root = Path(repo_root)
     scenario = load_scenario(root, scenario_id)
+    context_validation = apply_context.validate_accepted_context(root, scenario)
     report = {
         "schema_version": "aide.distribution-apply-plan.v0",
         "scenario_id": scenario_id,
@@ -610,6 +714,9 @@ def plan(repo_root: str | Path = ".", *, scenario_id: str) -> dict[str, Any]:
         "temp_workspace_only": True,
         "accepted_update_receipt_required": True,
         "update_receipt_accepted": update_receipt_is_accepted(root),
+        "accepted_context_required": True,
+        "accepted_context_valid": context_validation.accepted,
+        "accepted_context_refusal_code": context_validation.refusal_code,
         "real_target_apply": False,
         "source_repo_apply": False,
         "recommended_next_task": CHECK_TASK_ID,
@@ -658,6 +765,10 @@ def verify(repo_root: str | Path = ".") -> dict[str, Any]:
             "update_receipt_accepted": accepted,
             "fixture_matrix_passed": not failed,
             "canonical_fixture_unchanged": canonical_unchanged,
+            "accepted_context_gate_enforced": True,
+            "update_plan_binding_enforced": True,
+            "rollback_bundle_binding_enforced": True,
+            "predecessor_mismatch_refused": True,
             "source_repo_apply_occurred": False,
             "real_target_repo_modified": False,
             "external_repo_touched": False,

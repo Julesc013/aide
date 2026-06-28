@@ -24,8 +24,11 @@
 | managed-section-add | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
 | managed-section-remove | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
 | managed-section-update | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| mismatched-update-plan-rollback-bundle | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.update_plan_rollback_bundle_mismatch | true |
 | missing-preimage-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.missing_preimage_refused | true |
+| missing-rollback-bundle-binding | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.rollback_bundle_binding_missing | true |
 | missing-rollback-requirement-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.missing_rollback_requirement_refused | true |
+| missing-update-plan-binding | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.update_plan_binding_missing | true |
 | mixed-managed-file-and-section-update | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
 | never-touch-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.never_touch_update_refused | true |
 | no-op-update | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
@@ -33,6 +36,11 @@
 | operation-not-in-plan-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.operation_not_in_plan_refused | true |
 | path-traversal-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.path_traversal_refused | true |
 | postimage-digest-mismatch-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.postimage_digest_mismatch_refused | true |
+| predecessor-install-record-mismatch | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.predecessor_mismatch | true |
+| predecessor-migration-record-mismatch | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.predecessor_mismatch | true |
+| predecessor-ownership-ledger-mismatch | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.predecessor_mismatch | true |
+| predecessor-project-lock-mismatch | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.predecessor_mismatch | true |
+| predecessor-source-distribution-mismatch | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.predecessor_mismatch | true |
 | preimage-digest-mismatch-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.preimage_digest_mismatch_refused | true |
 | project-overlay-overwrite-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.project_overlay_overwrite_refused | true |
 | project-overlay-preservation | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
@@ -40,6 +48,7 @@
 | project-owned-preservation | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
 | rollback-digest-mismatch-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.rollback_digest_mismatch_refused | true |
 | rollback-success | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
+| run-without-accepted-context | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.accepted_context_missing | true |
 | runtime-generated-overwrite-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.runtime_generated_overwrite_refused | true |
 | runtime-generated-preservation | PASS_WITH_WARNINGS | PASS_WITH_WARNINGS | none | true |
 | symlink-reparse-refusal | FAILED_VALIDATION | FAILED_VALIDATION | distribution_apply_engine.symlink_reparse_refused | true |

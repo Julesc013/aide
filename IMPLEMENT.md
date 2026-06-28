@@ -10517,3 +10517,26 @@ Syntax checks, focused tests, `distribution-apply status/plan/run/verify`, prede
 ### Remaining Issues
 
 DistributionApplyEngine v0 must be repaired and rechecked before acceptance. The next serialized task is `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`.
+
+## Work Item: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+
+### Summary
+
+Repaired DistributionApplyEngine v0 accepted-context binding enforcement.
+
+### Implementation Notes
+
+- Added `core/distribution/apply_context.py` as an internal accepted context validator.
+- Required fixture execution to validate accepted DistributionManifest, ProjectLock, OwnershipLedger, InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, and UpdateReceipt reports before execution.
+- Updated scenario generation so every executable scenario carries accepted context refs matching the accepted UpdatePlan/RollbackBundle chain.
+- Added adversarial scenarios for missing UpdatePlan binding, missing RollbackBundle binding, RollbackBundle/UpdatePlan mismatch, predecessor ref mismatches, and missing accepted context.
+- Updated focused tests to prove context refusals happen before temp workspace execution and suppress successful UpdateReceipt fixture output.
+- Did not accept DistributionApplyEngine v0, start repair-check, begin self-consumer fixture or canaries, mutate targets, publish releases, call provider/model/network services, or automate branches/worktrees.
+
+### Verification
+
+Focused tests, compile checks, `distribution-apply status/plan/run/verify`, and explicit adversarial context scenario runs passed with zero material findings and zero missing evidence. Final task inspect/evidence, broad validation, safety scans, diff checks, and commit-policy validation are recorded in the repair task evidence.
+
+### Remaining Issues
+
+DistributionApplyEngine v0 remains proposed until independent repair-check and acceptance. The next serialized task is `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`.

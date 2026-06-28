@@ -2809,3 +2809,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01/evidence
   description: Check-only independent review of AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01 at 84015c6964eefdc4e3a0c15f7ad67f5b17651b31. Normal fixture validation, focused tests, distribution-apply status/plan/run/verify, predecessor regressions, Q43-Q48 boundaries, and broad validation pass, but adversarial probes find missing fail-closed enforcement for UpdatePlan binding, RollbackBundle binding, predecessor ref mismatches, and accepted-context requirements. Stops at needs_review with REQUEST_CHANGES, material_finding_count 4, missing_evidence 0, and recommends exactly AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01. Does not repair implementation, accept DistributionApplyEngine v0, begin self-consumer fixture or canaries, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, automate branches/worktrees, or promote.
+- id: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+  status: needs_review
+  planning_state: repair_completed
+  result: PASS_WITH_WARNINGS
+  title: Repair DistributionApplyEngine v0 accepted context binding
+  task: .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01/evidence
+  description: Repairs the four material findings from AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01 by adding an accepted context gate before fixture execution. DistributionApplyEngine v0 now refuses missing UpdatePlan binding, missing RollbackBundle binding, RollbackBundle/UpdatePlan mismatch, predecessor ref mismatches, and missing accepted context before temp workspace execution or successful UpdateReceipt fixture output. Adds context-binding fixtures, focused regression tests, reports, and evidence. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01. Does not accept DistributionApplyEngine v0, start repair-check as this task state, begin self-consumer fixture or canaries, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, automate branches/worktrees, or promote.

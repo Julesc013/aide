@@ -1,0 +1,27 @@
+{
+  "schema_version": "aide.distribution-apply-engine-v0-repair-01.finding-closure.v0",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "closures": [
+    {
+      "finding_id": "distribution_apply_engine.update_plan_binding_not_enforced",
+      "status": "repaired",
+      "reason_code": "distribution_apply_engine.update_plan_binding_missing"
+    },
+    {
+      "finding_id": "distribution_apply_engine.rollback_bundle_binding_not_enforced",
+      "status": "repaired",
+      "reason_code": "distribution_apply_engine.rollback_bundle_binding_missing"
+    },
+    {
+      "finding_id": "distribution_apply_engine.predecessor_mismatch_not_refused",
+      "status": "repaired",
+      "reason_code": "distribution_apply_engine.predecessor_mismatch"
+    },
+    {
+      "finding_id": "distribution_apply_engine.run_without_accepted_context",
+      "status": "repaired",
+      "reason_code": "distribution_apply_engine.accepted_context_missing"
+    }
+  ]
+}

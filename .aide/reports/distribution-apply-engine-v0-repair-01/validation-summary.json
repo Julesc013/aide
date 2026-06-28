@@ -1,0 +1,18 @@
+{
+  "schema_version": "aide.distribution-apply-engine-v0-repair-01.validation-summary.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "focused_tests_passed": true,
+  "distribution_apply_verify_result": "PASS_WITH_WARNINGS",
+  "adversarial_context_runs_passed": true,
+  "canonical_fixture_unchanged": true,
+  "real_target_repo_modified": false,
+  "source_repo_apply_occurred": false,
+  "external_repo_touched": false,
+  "release_publication_occurred": false,
+  "network_calls_occurred": false,
+  "provider_model_calls_occurred": false,
+  "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01"
+}

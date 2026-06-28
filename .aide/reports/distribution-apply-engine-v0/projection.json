@@ -1,4 +1,7 @@
 {
+  "accepted_context_refusal_code": null,
+  "accepted_context_required": true,
+  "accepted_context_valid": true,
   "accepted_update_receipt_required": true,
   "expected_refusal_code": null,
   "expected_result": "PASS_WITH_WARNINGS",

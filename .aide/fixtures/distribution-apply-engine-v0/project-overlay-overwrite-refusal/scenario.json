@@ -1,5 +1,39 @@
 {
+  "accepted_context": {
+    "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+    "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+    "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+    "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+    "install_record_refs": [
+      "aide://install-record/aide-self-install-record-v0"
+    ],
+    "migration_record_refs": [
+      "aide://migration-record/install-record-v0/no-op-compatibility"
+    ],
+    "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+    "required": true,
+    "required_bindings": {
+      "predecessors": true,
+      "rollback_bundle": true,
+      "update_plan": true
+    },
+    "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+    "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+    "rollback_operation_refs": [
+      "aide://update-plan/operation/project-overlay-overwrite-refusal"
+    ],
+    "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+    "status": "accepted_with_warnings",
+    "target_project_ref": "aide://project/aide-self",
+    "update_plan_operation_refs": [
+      "aide://update-plan/operation/project-overlay-overwrite-refusal"
+    ],
+    "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+  },
+  "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+  "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
   "canonical_fixture_must_remain_unchanged": true,
+  "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
   "expected_refusal_code": "distribution_apply_engine.project_overlay_overwrite_refused",
   "expected_result": "FAILED_VALIDATION",
   "explicit_non_capabilities": [
@@ -36,6 +70,12 @@
     "sections/config.txt": "prefix\n# AIDE:BEGIN settings\nold section\n# AIDE:END settings\nsuffix\n",
     "unknown/file.txt": "unknown\n"
   },
+  "install_record_refs": [
+    "aide://install-record/aide-self-install-record-v0"
+  ],
+  "migration_record_refs": [
+    "aide://migration-record/install-record-v0/no-op-compatibility"
+  ],
   "operations": [
     {
       "evidence_refs": [
@@ -53,8 +93,8 @@
       "target_relative_path": "overlay/config.json"
     }
   ],
-  "ownership_ledger_ref": "aide://ownership-ledger/aide-self-ownership-ledger-v1",
-  "project_lock_ref": "aide://project-lock/aide-self-lock-v0",
+  "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+  "project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
   "required_features": [
     "distribution_apply_engine_v0",
     "fixture_only",
@@ -63,7 +103,8 @@
   "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
   "scenario_id": "project-overlay-overwrite-refusal",
   "schema_version": "aide.distribution-apply-scenario.v0",
-  "source_distribution_ref": "aide://distribution/aide-lite-self-fixture",
+  "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+  "target_project_ref": "aide://project/aide-self",
   "temp_workspace_only": true,
   "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
 }

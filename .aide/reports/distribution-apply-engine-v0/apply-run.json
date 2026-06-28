@@ -1,6 +1,43 @@
 {
-  "canonical_fixture_digest_after": "sha256:a0d155eef2415ce068acf45bd97ea91092ed919c47a791464559b9813f5acc5d",
-  "canonical_fixture_digest_before": "sha256:a0d155eef2415ce068acf45bd97ea91092ed919c47a791464559b9813f5acc5d",
+  "accepted_context": {
+    "accepted": true,
+    "context": {
+      "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+      "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+      "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+      "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+      "install_record_refs": [
+        "aide://install-record/aide-self-install-record-v0"
+      ],
+      "migration_record_refs": [
+        "aide://migration-record/install-record-v0/no-op-compatibility"
+      ],
+      "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+      "required": true,
+      "required_bindings": {
+        "predecessors": true,
+        "rollback_bundle": true,
+        "update_plan": true
+      },
+      "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+      "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+      "rollback_operation_refs": [
+        "aide://update-plan/operation/managed-file-update"
+      ],
+      "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+      "status": "accepted_with_warnings",
+      "target_project_ref": "aide://project/aide-self",
+      "update_plan_operation_refs": [
+        "aide://update-plan/operation/managed-file-update"
+      ],
+      "update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1"
+    },
+    "message": null,
+    "refusal_code": null
+  },
+  "accepted_context_valid": true,
+  "canonical_fixture_digest_after": "sha256:a85412dc3d7f5a6eb50bc28d54e93fe8e43e749a17f96c07585d705eb37036a7",
+  "canonical_fixture_digest_before": "sha256:a85412dc3d7f5a6eb50bc28d54e93fe8e43e749a17f96c07585d705eb37036a7",
   "canonical_fixture_unchanged": true,
   "expected_refusal_code": null,
   "expected_result": "PASS_WITH_WARNINGS",

@@ -1,0 +1,108 @@
+{
+  "accepted_context": {
+    "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+    "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+    "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+    "distribution_manifest_ref": "aide://distribution/aide-lite-pack-v0",
+    "install_record_refs": [
+      "aide://install-record/aide-self-install-record-v0"
+    ],
+    "migration_record_refs": [
+      "aide://migration-record/install-record-v0/no-op-compatibility"
+    ],
+    "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+    "required": true,
+    "required_bindings": {
+      "predecessors": true,
+      "rollback_bundle": true,
+      "update_plan": true
+    },
+    "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+    "rollback_bundle_update_plan_ref": "aide://update-plan/aide-self-no-apply-update-plan-v1",
+    "rollback_operation_refs": [
+      "aide://update-plan/operation/missing-update-plan-binding"
+    ],
+    "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+    "status": "accepted_with_warnings",
+    "target_project_ref": "aide://project/aide-self",
+    "update_plan_operation_refs": [
+      "aide://update-plan/operation/missing-update-plan-binding"
+    ]
+  },
+  "candidate_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+  "candidate_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+  "canonical_fixture_must_remain_unchanged": true,
+  "current_project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+  "expected_refusal_code": "distribution_apply_engine.update_plan_binding_missing",
+  "expected_result": "FAILED_VALIDATION",
+  "explicit_non_capabilities": [
+    "real_target_apply",
+    "source_repo_apply",
+    "release_apply",
+    "public_release",
+    "target_repo_scan_authority",
+    "screensave_mutation",
+    "eureka_mutation",
+    "dominium_mutation",
+    "external_repo_mutation",
+    "release_archive_creation",
+    "git_tag_creation",
+    "github_release_creation",
+    "upload",
+    "network_call",
+    "provider_model_call",
+    "branch_worktree_automation",
+    "self_consumer_fixture",
+    "real_project_canary"
+  ],
+  "fixture_only": true,
+  "initial_files": {
+    "evidence/proof.txt": "evidence only\n",
+    "legacy/config.ini": "legacy=true\n",
+    "local-only/settings.json": "{\"local\": true}\n",
+    "managed/app.txt": "old managed file\n",
+    "managed/remove.txt": "remove me\n",
+    "never-touch/locked.txt": "locked\n",
+    "overlay/config.json": "{\"overlay\": true}\n",
+    "project/readme.md": "project owned content\n",
+    "runtime/cache.txt": "runtime output\n",
+    "sections/config.txt": "prefix\n# AIDE:BEGIN settings\nold section\n# AIDE:END settings\nsuffix\n",
+    "unknown/file.txt": "unknown\n"
+  },
+  "install_record_refs": [
+    "aide://install-record/aide-self-install-record-v0"
+  ],
+  "migration_record_refs": [
+    "aide://migration-record/install-record-v0/no-op-compatibility"
+  ],
+  "operations": [
+    {
+      "evidence_refs": [
+        "aide://evidence/distribution-apply-engine-v0/missing-update-plan-binding"
+      ],
+      "operation_class": "update_managed_file",
+      "operation_ref": "aide://update-plan/operation/missing-update-plan-binding",
+      "ownership_class": "vendor_managed_file",
+      "postimage": "context refusal\n",
+      "postimage_digest": "sha256:07fe5824aa38e61c25bbce79fd588d2defc5fb20d80ba3e53e2008216e5ee4c4",
+      "preimage": "old managed file\n",
+      "preimage_digest": "sha256:5a36ecbe1e599858d196807a41b6559056d225a46a79a3d46ecdff324ed2dc63",
+      "rollback_covered": true,
+      "rollback_requirement_ref": "aide://rollback-requirement/missing-update-plan-binding",
+      "target_relative_path": "managed/app.txt"
+    }
+  ],
+  "ownership_ledger_ref": "aide://ownership-ledger/aide-self-project-lock-v0",
+  "project_lock_ref": "aide://project-lock/aide-self-aide-lite-pack-v0",
+  "required_features": [
+    "distribution_apply_engine_v0",
+    "fixture_only",
+    "temp_workspace_only"
+  ],
+  "rollback_bundle_ref": "aide://rollback-bundle/aide-self-no-apply-rollback-bundle-v0",
+  "scenario_id": "missing-update-plan-binding",
+  "schema_version": "aide.distribution-apply-scenario.v0",
+  "source_distribution_ref": "aide://distribution/aide-lite-pack-v0",
+  "target_project_ref": "aide://project/aide-self",
+  "temp_workspace_only": true
+}

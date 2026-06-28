@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+status: needs_review
+classification: repair_completed
+planning_state: repair_completed
+result: PASS_WITH_WARNINGS
+repaired_capability: distribution_apply_engine_v0
+repaired_task: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+source_check_task: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01
+material_finding_count: 0
+missing_evidence: 0
+implementation_files_changed: true
+next_task: AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+notes:
+  - Added an internal AcceptedDistributionApplyContext validator and required it before any temp workspace execution.
+  - Missing UpdatePlan binding, missing RollbackBundle binding, RollbackBundle/UpdatePlan mismatch, predecessor mismatches, and missing accepted context now fail closed before operation execution.
+  - Refused context scenarios do not emit successful UpdateReceipt fixture output and do not mutate temp workspaces beyond fixture setup.
+  - DistributionApplyEngine remains fixture-only and temp-workspace-only.
+  - No acceptance, repair-check, self-consumer fixture, canary, release, provider/model/network call, real target apply, source repo apply, or external repo mutation was started.

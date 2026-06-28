@@ -3146,3 +3146,14 @@
 - Result: `REQUEST_CHANGES`.
 - Findings: `distribution_apply_engine.update_plan_binding_not_enforced`, `distribution_apply_engine.rollback_bundle_binding_not_enforced`, `distribution_apply_engine.predecessor_mismatch_not_refused`, and `distribution_apply_engine.run_without_accepted_context`.
 - Notes: DistributionApplyEngine v0 is not accepted. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`.
+
+### Queue ID: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01
+
+- Title: Repair DistributionApplyEngine v0 accepted context binding
+- Status: Needs Review
+- Objective: repair the four material context-binding findings from `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01`.
+- Scope: `core/distribution/**`, `.aide/scripts/tests/test_aide_distribution_apply_engine_v0.py`, `.aide/fixtures/distribution-apply-engine-v0/**`, `.aide/reports/distribution-apply-engine-v0/**`, `.aide/reports/distribution-apply-engine-v0-repair-01/**`, `.aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01` at `f705f9656f7433170784f6c3bc1fbcafe4e1825d`.
+- Verification Intent: compile checks, focused DistributionApplyEngine tests, `distribution-apply status/plan/run/verify`, adversarial context-binding scenario runs, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Result: `PASS_WITH_WARNINGS`.
+- Notes: DistributionApplyEngine v0 now refuses missing UpdatePlan binding, missing RollbackBundle binding, RollbackBundle/UpdatePlan mismatch, predecessor ref mismatches, and missing accepted context before temp workspace execution or successful UpdateReceipt fixture output. The next serialized task is exactly `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`.

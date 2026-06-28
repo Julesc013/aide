@@ -1,0 +1,22 @@
+{
+  "schema_version": "aide.distribution-apply-engine-v0-repair-01.summary.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01",
+  "result": "PASS_WITH_WARNINGS",
+  "repaired_capability": "distribution_apply_engine_v0",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "findings_repaired": [
+    "distribution_apply_engine.update_plan_binding_not_enforced",
+    "distribution_apply_engine.rollback_bundle_binding_not_enforced",
+    "distribution_apply_engine.predecessor_mismatch_not_refused",
+    "distribution_apply_engine.run_without_accepted_context"
+  ],
+  "accepted_context_required": true,
+  "update_plan_binding_enforced": true,
+  "rollback_bundle_binding_enforced": true,
+  "predecessor_mismatch_refused": true,
+  "successful_update_receipt_suppressed_on_refusal": true,
+  "fixture_only": true,
+  "temp_workspace_only": true,
+  "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01"
+}

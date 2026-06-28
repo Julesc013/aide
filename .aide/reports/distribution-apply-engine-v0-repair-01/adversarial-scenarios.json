@@ -1,0 +1,23 @@
+{
+  "schema_version": "aide.distribution-apply-engine-v0-repair-01.adversarial-scenarios.v0",
+  "scenario_count": 9,
+  "scenarios": [
+    "missing-update-plan-binding",
+    "missing-rollback-bundle-binding",
+    "mismatched-update-plan-rollback-bundle",
+    "predecessor-source-distribution-mismatch",
+    "predecessor-project-lock-mismatch",
+    "predecessor-ownership-ledger-mismatch",
+    "predecessor-install-record-mismatch",
+    "predecessor-migration-record-mismatch",
+    "run-without-accepted-context"
+  ],
+  "expected_common_behavior": {
+    "status": "FAILED_VALIDATION",
+    "update_receipt_generated": false,
+    "operation_results": [],
+    "canonical_fixture_unchanged": true,
+    "real_target_repo_modified": false,
+    "source_repo_apply_occurred": false
+  }
+}
