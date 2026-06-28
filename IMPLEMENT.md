@@ -10677,3 +10677,28 @@ Focused routing text tests, self-consumer fixture tests, DistributionApply statu
 ### Remaining Issues
 
 DistributionApplyEngine remains fixture-only/temp-workspace-only, and the product-status projection remains a separate follow-up. The next serialized task is exactly `AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.
+
+## Work Item: AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+
+### Summary
+
+Independently checked the DistributionApply routing text repair.
+
+### Implementation Notes
+
+- Verified `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01` exists, is complete, and stopped at `needs_review`.
+- Verified build result `PASS_WITH_WARNINGS`, material finding count `0`, and missing evidence `0`.
+- Verified build changed files are within authorized scope.
+- Verified `distribution-apply status`, `distribution-apply plan`, and `distribution-apply verify` route to `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.
+- Verified command output identifies `accepted_fixture_capability: aide_self_consumer_fixture_v0`.
+- Verified bare `distribution-apply plan` renders a non-mutating default plan view.
+- Verified false boundary flags remain for real target apply, source repo self-apply, canary readiness, public release readiness, provider/model/network calls, and branch/worktree automation.
+- Did not modify implementation, tests, fixtures, target repositories, release artifacts, branches, worktrees, or accepted capability semantics.
+
+### Verification
+
+Compile checks, focused routing text test, self-consumer fixture test, DistributionApply status/plan/verify, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, path and credential-pattern scans, source-output scan, diff checks, and commit-policy validation passed.
+
+### Remaining Issues
+
+DistributionApplyEngine remains fixture-only/temp-workspace-only, and product-status projection remains a separate follow-up. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.

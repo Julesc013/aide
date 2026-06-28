@@ -1,0 +1,81 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+title: Check DistributionApply routing text repair
+type: check
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+wave: AIDE-DISTRIBUTION-PRODUCTIZATION-WAVE-01
+checked_task: AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+checked_commit: febdee7e
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+depends_on:
+  - AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+  - AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**
+    - .aide/reports/distribution-apply-routing-text-repair-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**
+    - .aide/reports/distribution-apply-routing-text-repair/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_distribution_apply_routing_text_repair.py
+    - .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+    - .aide/reports/aide-self-consumer-fixture-v0-acceptance/**
+  forbidden_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_distribution_apply_routing_text_repair.py
+    - core/distribution/**
+    - .aide/fixtures/aide-self-consumer-fixture-v0/**
+    - .aide/fixtures/distribution-apply-engine-v0/**
+    - .aide.local/**
+    - .aide/release/dist/**
+    - .github/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+    - Carbon
+forbidden_scope:
+  - implementation_change
+  - behavior_broadening
+  - new_accepted_capability
+  - real_target_apply
+  - aide_source_repo_self_apply
+  - source_repo_apply
+  - canary_readiness
+  - release_artifact_generation
+  - release_publication
+  - public_release_readiness
+  - package_source_implementation
+  - provider_model_network_calls
+  - branch_worktree_automation
+  - external_repo_mutation
+  - push
+check_surface:
+  build_task_complete: true
+  build_result: PASS_WITH_WARNINGS
+  build_material_finding_count: 0
+  build_missing_evidence: 0
+  changed_files_within_authorized_scope: true
+  status_routes_to_product_status_projection: true
+  plan_routes_to_product_status_projection: true
+  verify_routes_to_product_status_projection: true
+  accepted_fixture_capability_visible: aide_self_consumer_fixture_v0
+  bare_plan_default_view_confirmed: true
+  stale_routing_removed: true
+  explicit_non_capabilities_preserved: true
+result_summary:
+  result: PASS_WITH_WARNINGS
+  material_finding_count: 0
+  missing_evidence: 0
+  warning_debt:
+    - DistributionApplyEngine remains fixture-only/temp-workspace-only.
+    - Product-status projection is still a future task.
+    - Canary profiles, local archive canary, public readiness, package-source verification, shadow apply, and real apply remain deferred.

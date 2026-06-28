@@ -3229,3 +3229,15 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: Repairs CLI operator routing only; it does not modify core DistributionApplyEngine behavior, fixtures, target repos, canaries, releases, provider/model/network behavior, branch/worktree automation, or accepted capability semantics. The next serialized task is exactly `AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.
+
+### Queue ID: AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+
+- Title: Check DistributionApply routing text repair
+- Status: Needs Review
+- Objective: independently verify `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.
+- Scope: `.aide/queue/AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**`, `.aide/reports/distribution-apply-routing-text-repair-check/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01` at `febdee7e` and `AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
+- Verification Intent: compile checks, focused routing-text test, self-consumer fixture test, `distribution-apply status/plan/verify`, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Result: `PASS_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: Confirms status, plan, and verify route to `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`, identify `aide_self_consumer_fixture_v0`, and preserve all non-capabilities. The next serialized task is exactly `AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.

@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+status: needs_review
+classification: check_completed
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+checked_task: AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+checked_commit: febdee7e
+material_finding_count: 0
+missing_evidence: 0
+implementation_files_changed: false
+test_files_changed: false
+fixture_files_changed: false
+next_task: AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+notes:
+  - Independently verified the routing text repair task exists, is complete, and has zero material findings and zero missing evidence.
+  - Verified distribution-apply status, plan, and verify route to AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01.
+  - Verified command output identifies accepted_fixture_capability aide_self_consumer_fixture_v0 and preserves false no-apply/no-release/no-canary/no-network/no-branch boundary flags.
+  - No implementation, test, fixture, target repo, canary, release artifact, provider/model/network, branch/worktree, push, or external repo mutation was performed.
