@@ -1,0 +1,17 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+status: needs_review
+classification: acceptance_completed
+planning_state: acceptance_completed
+result: ACCEPTED_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+accepted_capability: update_receipt_v0
+accepted_commits:
+  build: d1dde59ed2be5c9df6c08bbba3792ac0512ccd6b
+  check: a1012b412fece5e93ff9870427784c254b20ced7
+next_task: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+notes:
+  - UpdateReceipt v0 is accepted only as no-apply update-execution receipt metadata.
+  - No implementation files changed during acceptance.
+  - DistributionApplyEngine v0 is the next serialized build task and was not started.

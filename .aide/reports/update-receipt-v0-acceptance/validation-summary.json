@@ -1,0 +1,13 @@
+{
+  "schema_version": "aide.update-receipt-v0-acceptance.validation-summary.v0",
+  "task_id": "AIDE-ACCEPT-UPDATE-RECEIPT-V0-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_capability": "update_receipt_v0",
+  "build_commit": "d1dde59ed2be5c9df6c08bbba3792ac0512ccd6b",
+  "check_commit": "a1012b412fece5e93ff9870427784c254b20ced7",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "implementation_changed": false,
+  "distribution_apply_engine_started": false,
+  "recommended_next_task": "AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01"
+}

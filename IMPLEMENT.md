@@ -39,6 +39,58 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+
+Completed as an acceptance-only consolidation and awaiting review.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-UPDATE-RECEIPT-V0-01/**`
+- `.aide/reports/update-receipt-v0-acceptance/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+Accepted capability:
+
+```text
+update_receipt_v0
+```
+
+Accepted:
+
+- predecessor dependencies on DistributionManifest, ProjectLock, OwnershipLedger, InstallRecord, MigrationRecord, UpdatePlan, and RollbackBundle;
+- operation receipt classes for managed file/section receipts, preservation receipts, migration/lock/ownership/install metadata, validation records, manual-review/refusal/failure records, and RollbackBundle references;
+- skipped-operation reasons for manual review, digest mismatches, unknown or protected ownership, symlink/reparse uncertainty, case collisions, missing rollback or approval, validation failure, policy refusal, unsupported operations, and unknown required features;
+- fail-closed semantics for missing refs, unplanned operations, unsafe ownership changes, digest mismatches, missing artifacts, missing validation or approval, authority claims, unsafe paths, source-output misuse, release readiness claims, and unknown required features.
+
+Result:
+
+```text
+ACCEPTED_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+```
+
+Warnings:
+
+- Some operation receipt classes and skipped-operation reasons remain schema/helper validated rather than each having a distinct positive fixture row.
+- The independent check reused the same local checkout lineage as the build but did not repair implementation.
+
+Non-capabilities preserved:
+
+- no update, install, migration, rollback, repair, or uninstall apply;
+- no target repository mutation or scan authority;
+- no release archive, tag, upload, or GitHub Release;
+- no provider/model/network calls;
+- no DistributionApplyEngine, self-consumer fixture, or canary.
+
+Next task:
+
+```text
+AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
+```
+
 ## Work Item: AIDE-CHECK-UPDATE-RECEIPT-V0-01
 
 Completed as a check-only task and awaiting review.

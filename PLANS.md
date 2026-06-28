@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+
+- Title: Accept UpdateReceipt v0
+- Status: needs_review
+- Objective: accept exactly `update_receipt_v0` as a no-apply update-execution receipt contract after build and check completed with zero material findings and zero missing evidence.
+- Scope: acceptance task/evidence, `.aide/reports/update-receipt-v0-acceptance/**`, queue index routing, and focused root execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-UPDATE-RECEIPT-V0-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-UPDATE-RECEIPT-V0-01` at `d1dde59ed2be5c9df6c08bbba3792ac0512ccd6b`; `AIDE-CHECK-UPDATE-RECEIPT-V0-01` at `a1012b412fece5e93ff9870427784c254b20ced7`, result `PASS_WITH_WARNINGS`, material finding count `0`, missing evidence `0`.
+- Milestones: source build/check chain reviewed; accepted operation receipt classes recorded; accepted skipped-operation reasons recorded; accepted fail-closed and predecessor model recorded; warning dispositions recorded; downstream-use boundary recorded; explicit non-capabilities preserved.
+- Blockers: none. DistributionApplyEngine remains a separate next build task.
+- Verification Intent: predecessor task inspect/evidence, focused UpdateReceipt tests, UpdateReceipt status/project/validate, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad validation, acceptance task inspect/evidence, safety scans, diff checks, staged diff checks, and commit-policy check.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted capability exactly `update_receipt_v0`, missing evidence `0`, and next task exactly `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01`.
+- Notes: this acceptance does not implement update apply, install apply, migration apply, rollback apply, repair apply, uninstall apply, target scan authority, target repository mutation, release archive creation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, DistributionApplyEngine, self-consumer fixture, project canaries, or promotion.
+
 ### Plan ID: AIDE-CHECK-UPDATE-RECEIPT-V0-01
 
 - Title: Check UpdateReceipt v0

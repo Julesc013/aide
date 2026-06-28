@@ -2779,3 +2779,13 @@ items:
   prompt: .aide/queue/AIDE-CHECK-UPDATE-RECEIPT-V0-01/prompt.md
   evidence: .aide/queue/AIDE-CHECK-UPDATE-RECEIPT-V0-01/evidence
   description: Check-only independent review of AIDE-BUILD-UPDATE-RECEIPT-V0-01 at d1dde59ed2be5c9df6c08bbba3792ac0512ccd6b. Verifies UpdateReceipt v0 schema/helper/CLI/fixture/test/report coverage, source build task evidence, predecessor bindings to accepted DistributionManifest v1, ProjectLock v0, OwnershipLedger v1, InstallRecord v0, MigrationRecord v0, UpdatePlan v1, and RollbackBundle v0, no-apply/no-mutation receipt semantics, operation receipt classes, skipped-operation reasons, fail-closed behavior, optional extension tolerance, required feature refusal, and report/evidence hygiene. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-ACCEPT-UPDATE-RECEIPT-V0-01. Does not repair implementation, accept UpdateReceipt v0, begin DistributionApplyEngine/self-consumer fixture/canaries, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, automate branches/worktrees, or promote.
+- id: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
+  status: needs_review
+  planning_state: acceptance_completed
+  result: ACCEPTED_WITH_WARNINGS
+  title: Accept UpdateReceipt v0
+  task: .aide/queue/AIDE-ACCEPT-UPDATE-RECEIPT-V0-01/task.yaml
+  exec_plan: .aide/queue/AIDE-ACCEPT-UPDATE-RECEIPT-V0-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-ACCEPT-UPDATE-RECEIPT-V0-01/prompt.md
+  evidence: .aide/queue/AIDE-ACCEPT-UPDATE-RECEIPT-V0-01/evidence
+  description: Acceptance-only task for update_receipt_v0 after the build/check chain closed with zero material findings and zero missing evidence. Accepts only UpdateReceipt v0 as a no-apply update-execution receipt contract, including accepted operation receipt classes, skipped-operation reasons, fail-closed semantics, predecessor dependency model, warning dispositions, explicit non-capabilities, and downstream-use boundary. Stops at needs_review with ACCEPTED_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01. Does not modify implementation, begin DistributionApplyEngine/self-consumer fixture/canaries, mutate targets, scan targets, publish releases, create tags, upload artifacts, call provider/model/network services, start runtime work, implement source-change apply, automate branches/worktrees, or promote.
