@@ -2869,3 +2869,13 @@ items:
   prompt: .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/prompt.md
   evidence: .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/evidence
   description: Acceptance-only task for aide_self_consumer_fixture_v0 after build and independent check completed with PASS_WITH_WARNINGS, material_finding_count 0, and missing_evidence 0. Accepts only the fixture corpus, self-consumer lifecycle proof surface, source-vs-installed-target distinction, target-owned state preservation, offline fixture operation, and DistributionApplyEngine-backed accepted context/UpdatePlan/RollbackBundle/UpdateReceipt/refusal/canonical-fixture-preservation boundaries. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends exactly AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01 because stale distribution-apply routing/status text remains warning debt. Does not repair implementation, modify fixtures, perform real target apply, source repo self-apply, target scanning, canary readiness, release generation/publication, tag/upload/GitHub Release creation, provider/model/network calls, branch/worktree automation, external repo mutation, or push.
+- id: AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+  status: needs_review
+  planning_state: build_completed
+  result: PASS_WITH_WARNINGS
+  title: Repair DistributionApply routing text after self-consumer acceptance
+  task: .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/task.yaml
+  exec_plan: .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/prompt.md
+  evidence: .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/evidence
+  description: Repairs operator-facing distribution-apply status, plan, and verify routing text after aide_self_consumer_fixture_v0 acceptance. The CLI now identifies accepted fixture capability aide_self_consumer_fixture_v0, preserves false boundary flags for real target apply, source repo self-apply, canary readiness, public release readiness, provider/model/network calls, and branch/worktree automation, and routes to AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01. Stops at needs_review with PASS_WITH_WARNINGS, material_finding_count 0, missing_evidence 0, and recommends exactly AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01. Does not change core DistributionApplyEngine behavior, modify fixtures, accept a new capability, perform real target apply, source repo self-apply, canary work, release generation/publication, package source implementation, provider/model/network calls, branch/worktree automation, external repo mutation, or push.

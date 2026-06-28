@@ -10654,3 +10654,26 @@ Focused self-consumer fixture tests, DistributionApplyEngine verification, Q43-Q
 ### Remaining Issues
 
 Stale DistributionApplyEngine routing/status text should be repaired next. The next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.
+
+## Work Item: AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+
+### Summary
+
+Repaired DistributionApply operator routing text after self-consumer fixture acceptance.
+
+### Implementation Notes
+
+- Added a CLI routing overlay in `.aide/scripts/aide_lite.py` that reads the accepted self-consumer fixture summary and updates `distribution-apply status`, `distribution-apply plan`, and `distribution-apply verify` output.
+- The commands now identify `aide_self_consumer_fixture_v0` as accepted and route to `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`.
+- Added explicit command output lines for self-consumer fixture acceptance, accepted fixture capability, canary readiness, and public release readiness.
+- Allowed bare `distribution-apply plan` to render a non-mutating default plan view using `managed-file-update`.
+- Added focused routing text coverage in `.aide/scripts/tests/test_aide_distribution_apply_routing_text_repair.py`.
+- Did not modify core DistributionApplyEngine behavior, canonical fixtures, target repositories, release artifacts, canaries, branches, worktrees, or accepted capability semantics.
+
+### Verification
+
+Focused routing text tests, self-consumer fixture tests, DistributionApply status/plan/verify, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, path and credential-pattern scans, source-output scan, diff checks, and commit-policy validation passed.
+
+### Remaining Issues
+
+DistributionApplyEngine remains fixture-only/temp-workspace-only, and the product-status projection remains a separate follow-up. The next serialized task is exactly `AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.

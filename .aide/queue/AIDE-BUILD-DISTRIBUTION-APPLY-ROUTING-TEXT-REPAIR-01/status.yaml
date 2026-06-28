@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+status: needs_review
+classification: build_completed
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+material_finding_count: 0
+missing_evidence: 0
+next_task: AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+notes:
+  - Repaired operator-facing distribution-apply status, plan, and verify CLI routing text after self-consumer fixture acceptance.
+  - The commands now identify accepted fixture capability aide_self_consumer_fixture_v0 and route to AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01.
+  - Boundary flags remain false for real target apply, source repo self-apply, canary readiness, public release readiness, provider/model/network calls, and branch/worktree automation.
+  - No core DistributionApplyEngine behavior, canonical fixture, target repo, canary, release artifact, provider/model/network, branch/worktree, push, or external repo mutation was performed.

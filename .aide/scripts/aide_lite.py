@@ -35293,15 +35293,54 @@ def _print_distribution_apply_boundary_lines(data: dict[str, object]) -> None:
     print(f"proposed_capability: {data.get('proposed_capability', 'distribution_apply_engine_v0')}")
     print(f"fixture_only: {str(data.get('fixture_only', True)).lower()}")
     print(f"temp_workspace_only: {str(data.get('temp_workspace_only', True)).lower()}")
+    print(f"aide_self_consumer_fixture_accepted: {str(data.get('aide_self_consumer_fixture_accepted', False)).lower()}")
+    if data.get("accepted_fixture_capability"):
+        print(f"accepted_fixture_capability: {data.get('accepted_fixture_capability')}")
     print(f"real_target_apply_implemented: {str(data.get('real_target_apply_implemented', False)).lower()}")
     print(f"source_repo_apply_implemented: {str(data.get('source_repo_apply_implemented', False)).lower()}")
     print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
     print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
     print(f"self_consumer_fixture_started: {str(data.get('self_consumer_fixture_started', False)).lower()}")
     print(f"canaries_started: {str(data.get('canaries_started', False)).lower()}")
+    print(f"canary_readiness: {str(data.get('canary_readiness', False)).lower()}")
+    print(f"public_release_readiness: {str(data.get('public_release_readiness', False)).lower()}")
     print("network_calls_implemented: false")
     print("provider_model_calls_implemented: false")
     print("branch_worktree_automation_implemented: false")
+
+
+SELF_CONSUMER_FIXTURE_ACCEPTANCE_SUMMARY_PATH = Path(".aide/reports/aide-self-consumer-fixture-v0-acceptance/validation-summary.json")
+DISTRIBUTION_PRODUCT_STATUS_PROJECTION_TASK_ID = "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+DEFAULT_DISTRIBUTION_APPLY_PLAN_SCENARIO = "managed-file-update"
+
+
+def _distribution_apply_routing_text_data(repo_root: Path, data: dict[str, object]) -> dict[str, object]:
+    routed = dict(data)
+    acceptance_path = repo_root / SELF_CONSUMER_FIXTURE_ACCEPTANCE_SUMMARY_PATH
+    acceptance = {}
+    if acceptance_path.exists():
+        try:
+            acceptance = read_json_file(acceptance_path)
+        except Exception:  # noqa: BLE001 - stale routing repair must fail conservatively.
+            acceptance = {}
+    accepted_capability = acceptance.get("accepted_capability") if isinstance(acceptance, dict) else None
+    result = acceptance.get("result") if isinstance(acceptance, dict) else None
+    if accepted_capability == "aide_self_consumer_fixture_v0" and result in {"ACCEPTED", "ACCEPTED_WITH_WARNINGS"}:
+        routed["aide_self_consumer_fixture_accepted"] = True
+        routed["accepted_fixture_capability"] = accepted_capability
+        routed["self_consumer_fixture_started"] = True
+        routed["recommended_next_task"] = DISTRIBUTION_PRODUCT_STATUS_PROJECTION_TASK_ID
+        routed["routing_source"] = str(SELF_CONSUMER_FIXTURE_ACCEPTANCE_SUMMARY_PATH)
+    else:
+        routed.setdefault("aide_self_consumer_fixture_accepted", False)
+    routed.setdefault("real_target_apply_implemented", False)
+    routed.setdefault("source_repo_apply_implemented", False)
+    routed.setdefault("target_repository_mutation_implemented", False)
+    routed.setdefault("release_publication_implemented", False)
+    routed.setdefault("canaries_started", False)
+    routed.setdefault("canary_readiness", False)
+    routed.setdefault("public_release_readiness", False)
+    return routed
 
 
 def command_distribution_apply_status(args: argparse.Namespace) -> int:
@@ -35315,6 +35354,7 @@ def command_distribution_apply_status(args: argparse.Namespace) -> int:
         print(f"reason: {exc}")
         _print_distribution_apply_boundary_lines({})
         return 1
+    data = _distribution_apply_routing_text_data(repo_root, data)
     print("AIDE Lite distribution-apply status")
     print(f"result: {data.get('status')}")
     print(f"scenario_count: {data.get('scenario_count')}")
@@ -35329,14 +35369,16 @@ def command_distribution_apply_status(args: argparse.Namespace) -> int:
 def command_distribution_apply_plan(args: argparse.Namespace) -> int:
     repo_root = Path(args.repo_root)
     module = load_distribution_apply_module(repo_root)
+    scenario_id = args.scenario or DEFAULT_DISTRIBUTION_APPLY_PLAN_SCENARIO
     try:
-        report = module.plan(repo_root, scenario_id=args.scenario)
+        report = module.plan(repo_root, scenario_id=scenario_id)
     except Exception as exc:  # noqa: BLE001 - plan reports must fail closed.
         print("AIDE Lite distribution-apply plan")
         print("result: FAIL")
         print(f"reason: {exc}")
         _print_distribution_apply_boundary_lines({})
         return 1
+    report = _distribution_apply_routing_text_data(repo_root, report)
     print("AIDE Lite distribution-apply plan")
     print("result: PASS_WITH_WARNINGS")
     print(f"scenario_id: {report.get('scenario_id')}")
@@ -35385,6 +35427,7 @@ def command_distribution_apply_verify(args: argparse.Namespace) -> int:
         print(f"reason: {exc}")
         _print_distribution_apply_boundary_lines({})
         return 1
+    report = _distribution_apply_routing_text_data(repo_root, report)
     print("AIDE Lite distribution-apply verify")
     print(f"result: {report.get('validation_status')}")
     checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
@@ -40507,7 +40550,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     distribution_apply_subparsers = distribution_apply_parser.add_subparsers(dest="distribution_apply_command", required=False)
     distribution_apply_subparsers.add_parser("status").set_defaults(handler=command_distribution_apply_status)
     distribution_apply_plan_parser = distribution_apply_subparsers.add_parser("plan")
-    distribution_apply_plan_parser.add_argument("--scenario", required=True)
+    distribution_apply_plan_parser.add_argument("--scenario", required=False)
     distribution_apply_plan_parser.set_defaults(handler=command_distribution_apply_plan)
     distribution_apply_run_parser = distribution_apply_subparsers.add_parser("run")
     distribution_apply_run_parser.add_argument("--scenario", required=True)

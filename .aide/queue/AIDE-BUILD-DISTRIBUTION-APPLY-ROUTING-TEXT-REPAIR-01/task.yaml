@@ -1,0 +1,89 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+title: Repair DistributionApply routing text after self-consumer acceptance
+type: build
+status: needs_review
+planning_state: build_completed
+result: PASS_WITH_WARNINGS
+wave: AIDE-DISTRIBUTION-PRODUCTIZATION-WAVE-01
+material_finding_count: 0
+missing_evidence: 0
+recommended_next_task: AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+depends_on:
+  - AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01
+  - AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+  - AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_distribution_apply_routing_text_repair.py
+    - .aide/reports/distribution-apply-routing-text-repair/**
+    - .aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01/**
+    - .aide/queue/AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+    - .aide/queue/AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+    - .aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/**
+    - .aide/reports/distribution-apply-engine-v0-acceptance/**
+    - .aide/reports/aide-self-consumer-fixture-v0/**
+    - .aide/reports/aide-self-consumer-fixture-v0-check/**
+    - .aide/reports/aide-self-consumer-fixture-v0-acceptance/**
+  forbidden_paths:
+    - core/distribution/**
+    - .aide/fixtures/aide-self-consumer-fixture-v0/**
+    - .aide/fixtures/distribution-apply-engine-v0/**
+    - .aide.local/**
+    - .aide/release/dist/**
+    - .github/**
+    - target repositories
+    - ScreenSave
+    - Eureka
+    - Dominium
+    - Carbon
+forbidden_scope:
+  - behavior_broadening
+  - new_accepted_capability
+  - real_target_apply
+  - aide_source_repo_self_apply
+  - source_repo_apply
+  - canary_readiness
+  - screensave_mutation
+  - eureka_mutation
+  - dominium_mutation
+  - carbon_mutation
+  - external_repo_mutation
+  - release_artifact_generation
+  - release_publication
+  - public_release_readiness
+  - package_source_implementation
+  - provider_model_network_calls
+  - branch_worktree_automation
+  - push
+repair_surface:
+  cli_routing_text_repaired: true
+  distribution_apply_status_routes_current_state: true
+  distribution_apply_plan_routes_current_state: true
+  distribution_apply_verify_routes_current_state: true
+  accepted_fixture_capability_identified: aide_self_consumer_fixture_v0
+  recommended_next_task: AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01
+  focused_test_added: true
+  bare_plan_command_supported_as_non_mutating_default_view: true
+result_summary:
+  result: PASS_WITH_WARNINGS
+  material_finding_count: 0
+  missing_evidence: 0
+  stale_operator_routing_text_fixed: true
+  real_target_apply_implemented: false
+  source_repo_apply_implemented: false
+  canary_readiness: false
+  public_release_readiness: false
+  provider_model_network_calls: false
+  branch_worktree_automation: false
+  warning_debt:
+    - DistributionApplyEngine remains fixture-only/temp-workspace-only.
+    - Distribution product-status projection is still a future task.
+    - Core DistributionApplyEngine fixture reports remain engine-owned; this task repairs CLI operator routing text only.

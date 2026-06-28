@@ -3217,3 +3217,15 @@
 - Result: `ACCEPTED_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: Accepts only the fixture/proof surface and preserves all non-capabilities around real target apply, source repo self-apply, canaries, release readiness, provider/model/network calls, push, and branch/worktree automation. Stale DistributionApplyEngine routing/status text remains warning debt; the next serialized task is exactly `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.
+
+### Queue ID: AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01
+
+- Title: Repair DistributionApply routing text after self-consumer acceptance
+- Status: Needs Review
+- Objective: repair stale operator-facing `distribution-apply status`, `distribution-apply plan`, and `distribution-apply verify` routing text after `aide_self_consumer_fixture_v0` acceptance.
+- Scope: `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_distribution_apply_routing_text_repair.py`, `.aide/reports/distribution-apply-routing-text-repair/**`, `.aide/queue/AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01`, `AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01`, `AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01`, and `AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01`.
+- Verification Intent: compile check, focused routing-text test, self-consumer fixture test, `distribution-apply status/plan/verify`, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, leak scans, diff checks, and commit-policy check.
+- Result: `PASS_WITH_WARNINGS`.
+- Findings: material_finding_count `0`; missing_evidence `0`.
+- Notes: Repairs CLI operator routing only; it does not modify core DistributionApplyEngine behavior, fixtures, target repos, canaries, releases, provider/model/network behavior, branch/worktree automation, or accepted capability semantics. The next serialized task is exactly `AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`.

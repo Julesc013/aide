@@ -1,0 +1,21 @@
+{
+  "schema_version": "aide.distribution-apply-routing-text-repair.validation-summary.v0",
+  "task_id": "AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01",
+  "result": "PASS_WITH_WARNINGS",
+  "material_finding_count": 0,
+  "missing_evidence": 0,
+  "stale_operator_routing_text_fixed": true,
+  "status_routes_to": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+  "plan_routes_to": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+  "verify_routes_to": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01",
+  "accepted_fixture_capability_identified": "aide_self_consumer_fixture_v0",
+  "bare_plan_default_scenario": "managed-file-update",
+  "real_target_apply_implemented": false,
+  "source_repo_apply_implemented": false,
+  "canary_readiness": false,
+  "public_release_readiness": false,
+  "provider_model_network_calls": false,
+  "branch_worktree_automation": false,
+  "commit_check_latest_passed": true,
+  "recommended_next_task": "AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01"
+}
