@@ -5,6 +5,7 @@
     "Validation and evidence requirements are explicit."
   ],
   "allowed_paths": [
+    ".aide/changelog/**",
     ".aide/queue/<workunit>/**"
   ],
   "dependencies": [
@@ -16,7 +17,8 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md"
+    "intent-compiler-report.md",
+    "preflight-or-blocker-report.md"
   ],
   "forbidden_paths": [
     ".git/**",
@@ -28,19 +30,21 @@
     "raw response logs",
     "target repositories unless target-local queue authorizes work"
   ],
-  "idempotency": "prompt_hash:3a5aa29b4b50071703fb1fc5be934bdab1bf4849fdee7967f653350f69ae3add; status:draft; compile_only:true",
+  "idempotency": "prompt_hash:d94b3f2c8901d2810281abeba25c890373ffebb3fcceccf7f53c33e4912a3f78; status:draft; compile_only:true",
   "implementation_outline": [
     "Reconcile repo state before editing.",
-    "draft the smallest safe WorkUnit after repo-state preflight",
+    "write blocker report and require reviewed authorization before mutation",
     "Stop at review gates and record evidence before execution."
   ],
   "non_goals": [
     "no raw prompt execution",
     "no provider/model/network calls",
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly"
+    "do not execute raw prompt directly",
+    "do not mutate target repositories from AIDE source repo",
+    "do not publish releases, tags, or assets from prompt alone"
   ],
-  "objective": "Normalize prompt into a bounded rollback WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+  "objective": "Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
   "output_schema": ".aide/intake/workunit-draft.schema.json",
   "preflight": [
     "git status --short",
@@ -48,16 +52,17 @@
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-  "risk_class": "governance",
+  "risk_class": "release",
   "schema_version": "aide.workunit-draft.v0",
-  "sizing_class": "two_shot",
+  "sizing_class": "blocked",
   "status": "draft",
-  "task_class": "rollback",
-  "title": "Rollback WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
+  "task_class": "release",
+  "title": "Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation",
   "validation": [
     "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py changelog validate",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-  "workunit_id": "draft-rollback-3a5aa29b4b50"
+  "workunit_id": "draft-release-d94b3f2c8901"
 }

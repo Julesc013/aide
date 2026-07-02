@@ -1,14 +1,15 @@
 {
   "allowed_path_hints": [
+    ".aide/changelog/**",
     ".aide/queue/<workunit>/**"
   ],
-  "blocked": false,
-  "blocker_reason": "",
+  "blocked": true,
+  "blocker_reason": "write blocker report and require reviewed authorization before mutation",
   "branch_state_refs": [
     "current_branch:main",
     "current_role:canonical",
     "workflow:trunk_without_dev",
-    "worktree_dirty:false"
+    "worktree_dirty:true"
   ],
   "canonical_sources": [
     ".aide/policies/intent.yaml",
@@ -25,7 +26,8 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md"
+    "intent-compiler-report.md",
+    "preflight-or-blocker-report.md"
   ],
   "forbidden_path_hints": [
     ".git/**",
@@ -39,26 +41,30 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Normalize prompt into a bounded rollback WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
-  "next_action": "draft the smallest safe WorkUnit after repo-state preflight",
+  "interpreted_goal": "Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
+  "next_action": "write blocker report and require reviewed authorization before mutation",
   "notes": [
     "deterministic_local: true",
     "provider_or_model_calls: none",
     "network_calls: none",
     "task_execution: false",
-    "raw_long_prompt_storage: false"
+    "raw_long_prompt_storage: false",
+    "flag:repeated_prompt",
+    "flag:target_repo_prompt"
   ],
-  "raw_prompt_excerpt": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01: implement a real lifecycle-fixture temp-workspace runner with commands lifecycle-fixture status, lifecycle-fixture run --scenario install-managed-section --mode apply-temp, and lifecycle-fixture ve...",
-  "raw_prompt_hash": "3a5aa29b4b50071703fb1fc5be934bdab1bf4849fdee7967f653350f69ae3add",
+  "raw_prompt_excerpt": "Ingest the operator 2026-07-02 AIDE planning roadmap TODO update as advisory planning evidence. Synthesize it against the current synced local queue truth, preserve the trust-first preservation-first product definition, record the four s...",
+  "raw_prompt_hash": "d94b3f2c8901d2810281abeba25c890373ffebb3fcceccf7f53c33e4912a3f78",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly"
+    "do not execute raw prompt directly",
+    "do not mutate target repositories from AIDE source repo",
+    "do not publish releases, tags, or assets from prompt alone"
   ],
   "repo_state_refs": [
     ".aide/context/latest-context-packet.md",
     ".aide/context/latest-review-packet.md",
     ".aide/context/latest-task-packet.md",
-    ".aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/status.yaml",
+    ".aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01/status.yaml",
     ".aide/queue/index.yaml",
     ".aide/repo/file-inventory.json",
     ".aide/repo/latest-repo-intelligence.md",
@@ -66,10 +72,10 @@
     ".aide/reports/file-quality-summary.md"
   ],
   "requires_split": true,
-  "risk_class": "governance",
+  "risk_class": "release",
   "safe_to_execute": false,
   "schema_version": "aide.intent-packet.v0",
-  "sizing_class": "two_shot",
+  "sizing_class": "blocked",
   "suggested_workunit": {
     "acceptance": [
       "WorkUnit scope is bounded and repo-grounded.",
@@ -77,6 +83,7 @@
       "Validation and evidence requirements are explicit."
     ],
     "allowed_paths": [
+      ".aide/changelog/**",
       ".aide/queue/<workunit>/**"
     ],
     "dependencies": [
@@ -88,7 +95,8 @@
       "changed-files.md",
       "validation.md",
       "remaining-risks.md",
-      "intent-compiler-report.md"
+      "intent-compiler-report.md",
+      "preflight-or-blocker-report.md"
     ],
     "forbidden_paths": [
       ".git/**",
@@ -100,19 +108,21 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:3a5aa29b4b50071703fb1fc5be934bdab1bf4849fdee7967f653350f69ae3add; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:d94b3f2c8901d2810281abeba25c890373ffebb3fcceccf7f53c33e4912a3f78; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
-      "draft the smallest safe WorkUnit after repo-state preflight",
+      "write blocker report and require reviewed authorization before mutation",
       "Stop at review gates and record evidence before execution."
     ],
     "non_goals": [
       "no raw prompt execution",
       "no provider/model/network calls",
       "do not bypass queue, branch, evidence, or policy state",
-      "do not execute raw prompt directly"
+      "do not execute raw prompt directly",
+      "do not mutate target repositories from AIDE source repo",
+      "do not publish releases, tags, or assets from prompt alone"
     ],
-    "objective": "Normalize prompt into a bounded rollback WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+    "objective": "Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -120,22 +130,24 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-    "risk_class": "governance",
+    "risk_class": "release",
     "schema_version": "aide.workunit-draft.v0",
-    "sizing_class": "two_shot",
+    "sizing_class": "blocked",
     "status": "draft",
-    "task_class": "rollback",
-    "title": "Rollback WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
+    "task_class": "release",
+    "title": "Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation",
     "validation": [
       "git diff --check",
+      "py -3 .aide/scripts/aide_lite.py changelog validate",
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-rollback-3a5aa29b4b50"
+    "workunit_id": "draft-release-d94b3f2c8901"
   },
-  "task_class": "rollback",
+  "task_class": "release",
   "validation_hints": [
     "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py changelog validate",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ]
 }

@@ -2,9 +2,9 @@
 
 - command: `task-os command status registry`
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
+- repo_root: `D:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `9fcd637b06105c2d15d3cefd00982c147a24a2bd`
+- current_commit: `5c8e423803b3cb330b5f2c9b11b807f29ceee6e3`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -81,8 +81,8 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
-- latest_indexed_task_status: needs_review
+- latest_indexed_task_id: AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01
+- latest_indexed_task_status: pending
 - latest_task_packet_id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
 - latest_task_packet_status: needs_review
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
