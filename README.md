@@ -1,6 +1,5 @@
 # AIDE
 
-![coverage](https://badgen.net/static/coverage/not%20much/F73)
 ![code style](https://badgen.net/static/code%20style/mine/999)
 ![coverage](https://badgen.net/static/coverage/Sure,%20here's%20the%20computed%20value%20you%20asked%20for/08C)
 
