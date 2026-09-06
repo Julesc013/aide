@@ -1,9 +1,9 @@
 # Managed Section Fixture Plan
 
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `5314c36cbe2762352b1ddf8fb170d6af4d07b004`
+- repo_root: `D:/Projects/AIDE/aide`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - command: `managed-section fixture-plan`
 - mode: fixture_only
 - report_only: true

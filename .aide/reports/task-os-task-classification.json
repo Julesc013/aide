@@ -1,13 +1,13 @@
 {
   "blockers": [],
   "command": "task classify",
-  "current_branch": "main",
-  "current_commit": "6eb0e6a9d0405a85ba11b743954493f924648c18",
+  "current_branch": "task/aide-continuous-worker-pilot-01",
+  "current_commit": "c39f47ea3cdb2f8359722906f3f486f3c8af19b7",
   "generated_at": "deterministic",
-  "latest_task_id": "AIDE-TASK-OS-STATUS-REPAIR-01",
-  "latest_task_status": "needs_review",
-  "lifecycle_state": "done_local",
-  "next_recommended_action": "AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning - AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.",
+  "latest_task_id": "AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01",
+  "latest_task_status": "blocked",
+  "lifecycle_state": "blocked_repairable",
+  "next_recommended_action": "continue current report-only task",
   "no_apply_boundary": {
     "branch_mutation": false,
     "branch_worktree_apply": false,
@@ -22,7 +22,7 @@
     "target_mutation": false,
     "task_execution": false
   },
-  "repo_root": "C:/Projects/AIDE/aide",
+  "repo_root": "D:/Projects/AIDE/aide",
   "schema_version": "aide.task-os-task-classification.v0",
   "warnings": [
     "deferred_target_work",

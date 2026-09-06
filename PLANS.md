@@ -3325,3 +3325,16 @@
 - Result: `PASS_WITH_WARNINGS`.
 - Findings: material_finding_count `0`; missing_evidence `0`.
 - Notes: This is a planning and queue-shaping task only. It adds a tentative Project Intelligence spine document and grouped pending waves for naming/authority, ProjectGraph foundation, semantic records, health observers, ProjectGraph-driven ContextPack, Workbench views, and safe refactoring plus scale modes. It preserves the MIR input task as the current executable next task and does not implement ProjectGraph, enforce naming policy, move/delete files, create roots, rewrite references, apply aliases, mutate targets, generate releases, call providers/models, use network services, automate branches/worktrees, or push.
+
+### AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01
+
+- Status: local prototype validated; full live qualification and activation incomplete.
+- Plan: [AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01](.aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/ExecPlan.md).
+- Scope: separate bounded Codex coordinator, persistence, process ownership, controls and fault qualification.
+- Exit: two real admitted tasks with independent assurance and legitimate integration; not yet demonstrated.
+
+### AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
+
+- Status: active execution authorized 2026-09-06.
+- Plan: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/ExecPlan.md.
+- Objective: full FacMan 0.1 Beta1 engineering/package completion, exact integration, honest human gates.

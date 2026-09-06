@@ -2,9 +2,9 @@
 
 - command: `task classify`
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
+- repo_root: `D:/Projects/AIDE/aide`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Classification
 
-- latest_task_id: `AIDE-TASK-OS-STATUS-REPAIR-01`
-- latest_task_status: `needs_review`
-- lifecycle_state: `done_local`
+- latest_task_id: `AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01`
+- latest_task_status: `blocked`
+- lifecycle_state: `blocked_repairable`
 
 ## Warnings
 
@@ -30,4 +30,4 @@
 
 ## Next Recommended Action
 
-- AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning - AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
+- continue current report-only task

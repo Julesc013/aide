@@ -26,6 +26,7 @@ import tarfile
 import tempfile
 import zipfile
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
 
@@ -2093,6 +2094,233 @@ MANAGED_SECTION_GOLDEN_TASK_IDS = [
     "managed_section_no_real_apply_golden",
     "managed_section_export_pack_inclusion_golden",
 ]
+SCOPED_TRANSACTION_POLICY_FILES = [
+    ".aide/policies/scoped-transaction-executor.yaml",
+]
+SCOPED_TRANSACTION_SCHEMA_FILES = [
+    ".aide/apply/scoped-transaction-executor.schema.json",
+    ".aide/apply/transaction-executor-report.schema.json",
+]
+SCOPED_TRANSACTION_EXAMPLE_FILES = [
+    ".aide/examples/apply/scoped-transaction-executor.dry-run.example.json",
+]
+SCOPED_TRANSACTION_FIXTURE_FILES = [
+    ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+    ".aide/examples/apply/scoped-transaction-executor-fixtures/replacement.md",
+    ".aide/examples/apply/scoped-transaction-executor-fixtures/expected_output.md",
+]
+SCOPED_TRANSACTION_DOC_FILES = [
+    "docs/reference/scoped-transaction-executor.md",
+    "docs/reference/transaction-model.md",
+    "docs/reference/managed-section-operations.md",
+]
+SCOPED_TRANSACTION_CORE_FILES = [
+    ".aide/scripts/aide_lite.py",
+    "core/apply/README.md",
+    "core/apply/__init__.py",
+    "core/apply/transaction_executor.py",
+]
+SCOPED_TRANSACTION_STATUS_REPORT_PATH = ".aide/reports/scoped-transaction-executor-status.md"
+SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH = ".aide/reports/scoped-transaction-executor-fixture-plan.json"
+SCOPED_TRANSACTION_FIXTURE_PLAN_MD_PATH = ".aide/reports/scoped-transaction-executor-fixture-plan.md"
+SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH = ".aide/reports/scoped-transaction-executor-fixture-report.json"
+SCOPED_TRANSACTION_FIXTURE_REPORT_MD_PATH = ".aide/reports/scoped-transaction-executor-fixture-report.md"
+SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH = ".aide/reports/scoped-transaction-executor-fixture-rollback.json"
+SCOPED_TRANSACTION_VALIDATION_REPORT_PATH = ".aide/reports/scoped-transaction-executor-validation.md"
+SCOPED_TRANSACTION_REPORT_FILES = [
+    SCOPED_TRANSACTION_STATUS_REPORT_PATH,
+    SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH,
+    SCOPED_TRANSACTION_FIXTURE_PLAN_MD_PATH,
+    SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH,
+    SCOPED_TRANSACTION_FIXTURE_REPORT_MD_PATH,
+    SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH,
+    SCOPED_TRANSACTION_VALIDATION_REPORT_PATH,
+]
+LIFECYCLE_SCHEMA_FILES = [
+    ".aide/apply/lifecycle-manifest.schema.json",
+    ".aide/apply/lifecycle-plan.schema.json",
+    ".aide/apply/lifecycle-report.schema.json",
+    ".aide/apply/lifecycle-rollback-record.schema.json",
+]
+LIFECYCLE_EXAMPLE_FILES = [
+    ".aide/examples/apply/lifecycle/lifecycle-manifest.example.json",
+    ".aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json",
+    ".aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json",
+    ".aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json",
+    ".aide/examples/apply/lifecycle/fixture-repository-spec.example.json",
+]
+LIFECYCLE_DOC_FILES = [
+    "docs/reference/apply-lifecycle-schemas.md",
+]
+LIFECYCLE_SCHEMA_STATUS_JSON_PATH = ".aide/reports/lifecycle-schema-status.json"
+LIFECYCLE_SCHEMA_STATUS_MD_PATH = ".aide/reports/lifecycle-schema-status.md"
+LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH = ".aide/reports/lifecycle-schema-validation.json"
+LIFECYCLE_SCHEMA_VALIDATION_MD_PATH = ".aide/reports/lifecycle-schema-validation.md"
+LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_JSON_PATH = ".aide/reports/lifecycle-schema-fixture-validation.json"
+LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_MD_PATH = ".aide/reports/lifecycle-schema-fixture-validation.md"
+LIFECYCLE_SCHEMA_REPORT_FILES = [
+    LIFECYCLE_SCHEMA_STATUS_JSON_PATH,
+    LIFECYCLE_SCHEMA_STATUS_MD_PATH,
+    LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH,
+    LIFECYCLE_SCHEMA_VALIDATION_MD_PATH,
+    LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_JSON_PATH,
+    LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_MD_PATH,
+]
+LIFECYCLE_SCHEMA_REQUIRED_FILES = [
+    *LIFECYCLE_SCHEMA_FILES,
+    *LIFECYCLE_EXAMPLE_FILES,
+    *LIFECYCLE_DOC_FILES,
+]
+LIFECYCLE_SCHEMA_CONTRACTS: dict[str, dict[str, object]] = {
+    ".aide/apply/lifecycle-manifest.schema.json": {
+        "schema_version": "aide.lifecycle-manifest.v0",
+        "required": [
+            "schema_version",
+            "manifest_id",
+            "pack_identity",
+            "target_root_class",
+            "owned_files",
+            "managed_sections",
+            "generated_files",
+            "manual_preservation_rules",
+            "protected_paths",
+            "allowed_target_path_patterns",
+            "phase_allowlist",
+            "preimage_expectations",
+            "postimage_expectations",
+            "rollback_record_requirements",
+            "validation_commands",
+            "evidence_requirements",
+            "review_gate",
+            "capability_reality",
+        ],
+    },
+    ".aide/apply/lifecycle-plan.schema.json": {
+        "schema_version": "aide.lifecycle-plan.v0",
+        "required": [
+            "schema_version",
+            "lifecycle_plan_id",
+            "phase",
+            "mode",
+            "fixture_only",
+            "source_manifest_ref",
+            "explicit_operations",
+            "operation_allowlist",
+            "explicit_paths",
+            "allowed_roots",
+            "protected_roots",
+            "preimage_hash_requirements",
+            "postimage_hash_requirements",
+            "rollback_record_destination",
+            "evidence_report_destination",
+            "stop_conditions",
+            "review_gate",
+            "prohibited_operation_checks",
+        ],
+    },
+    ".aide/apply/lifecycle-report.schema.json": {
+        "schema_version": "aide.lifecycle-report.v0",
+        "required": [
+            "schema_version",
+            "report_id",
+            "lifecycle_plan_id",
+            "lifecycle_phase",
+            "mode",
+            "status",
+            "target_class",
+            "target_files_mutated",
+            "operations",
+            "validation_results",
+            "evidence_paths",
+            "review_gate",
+            "capability_label",
+        ],
+    },
+    ".aide/apply/lifecycle-rollback-record.schema.json": {
+        "schema_version": "aide.lifecycle-rollback-record.v0",
+        "required": [
+            "schema_version",
+            "record_id",
+            "lifecycle_plan_id",
+            "transaction_or_operation_ids",
+            "lifecycle_phase",
+            "target_class",
+            "path",
+            "operation_type",
+            "ownership_type",
+            "preimage_hash",
+            "postimage_hash",
+            "inverse_operation",
+            "rollback_preconditions",
+            "rollback_stop_conditions",
+            "evidence_refs",
+            "review_gate",
+            "rollback_execution_implemented",
+        ],
+    },
+}
+LIFECYCLE_EXAMPLE_SCHEMA_VERSIONS = {
+    ".aide/examples/apply/lifecycle/lifecycle-manifest.example.json": "aide.lifecycle-manifest.v0",
+    ".aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json": "aide.lifecycle-plan.v0",
+    ".aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json": "aide.lifecycle-report.v0",
+    ".aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json": "aide.lifecycle-rollback-record.v0",
+    ".aide/examples/apply/lifecycle/fixture-repository-spec.example.json": "aide.lifecycle-fixture-repository-spec.v0",
+}
+LIFECYCLE_EXAMPLE_TO_SCHEMA = {
+    ".aide/examples/apply/lifecycle/lifecycle-manifest.example.json": ".aide/apply/lifecycle-manifest.schema.json",
+    ".aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json": ".aide/apply/lifecycle-plan.schema.json",
+    ".aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json": ".aide/apply/lifecycle-report.schema.json",
+    ".aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json": ".aide/apply/lifecycle-rollback-record.schema.json",
+}
+LIFECYCLE_ALLOWED_OPERATION_TYPES = {
+    "update_managed_section",
+    "report",
+    "validate",
+    "noop",
+}
+LIFECYCLE_FORBIDDEN_OPERATION_TYPES = {
+    "install_apply",
+    "upgrade_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "target_repo_mutation",
+    "branch_worktree_mutation",
+    "provider_model_call",
+    "gateway_call",
+    "network_call",
+    "release_publication",
+    "broad_delete",
+    "broad_move",
+    "delete",
+    "move",
+    "remove_directory",
+}
+LIFECYCLE_PROTECTED_TARGET_PREFIXES = [
+    ".git",
+    ".github",
+    ".aide.local",
+    ".env",
+    "secrets",
+    "credentials",
+]
+LIFECYCLE_EXPECTED_FIXTURE_ROOTS = {
+    "fixture_root": ".aide/examples/apply/lifecycle-fixtures",
+    "source_pack_path": ".aide/examples/apply/lifecycle-fixtures/source-pack",
+    "target_root_path": ".aide/examples/apply/lifecycle-fixtures/target",
+    "expected_output_path": ".aide/examples/apply/lifecycle-fixtures/expected",
+    "reports_path": ".aide/reports/lifecycle-fixtures",
+    "rollback_records_path": ".aide/reports/lifecycle-fixtures/rollback",
+    "evidence_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/evidence",
+}
+SCOPED_TRANSACTION_REQUIRED_FILES = [
+    *SCOPED_TRANSACTION_POLICY_FILES,
+    *SCOPED_TRANSACTION_SCHEMA_FILES,
+    *SCOPED_TRANSACTION_EXAMPLE_FILES,
+    *SCOPED_TRANSACTION_FIXTURE_FILES,
+    *SCOPED_TRANSACTION_DOC_FILES,
+    *SCOPED_TRANSACTION_CORE_FILES,
+]
 TRANSACTION_PHASES = [
     "observe",
     "plan",
@@ -2141,6 +2369,8 @@ TRANSACTION_REQUIRED_GATES = [
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
+    ".aide/templates/portable-apply/README.md",
+    ".aide/templates/portable-apply/__init__.py",
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
     COMMIT_MESSAGE_POLICY_PATH,
@@ -2522,6 +2752,8 @@ IMPORT_SAFE_ALLOWED_DOCS_PREFIX = "docs/reference/"
 IMPORT_MODES = {"safe", "full"}
 
 PORTABLE_TEMPLATE_MAP = {
+    ".aide/templates/portable-apply/README.md": "core/apply/README.md",
+    ".aide/templates/portable-apply/__init__.py": "core/apply/__init__.py",
     TARGET_PROFILE_TEMPLATE_PATH: ".aide/profile.template.yaml",
     TARGET_PROJECT_STATE_TEMPLATE_PATH: ".aide/memory/project-state.template.md",
     TARGET_DECISIONS_TEMPLATE_PATH: ".aide/memory/decisions.template.md",
@@ -5002,6 +5234,7 @@ TASK_OS_REPORT_COMMANDS = [
     "task repair-plan",
     "task requeue-plan",
     "task resume-plan",
+    "task next-plan",
     "blocker status",
     "blocker classify",
     "wave status",
@@ -5113,6 +5346,11 @@ TASK_OS_DONE_LOCAL_STATUSES = {"needs_review", "passed", "passed_with_notes"}
 TASK_OS_CHECKPOINT_TASK_ID = "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint"
 TASK_OS_REPAIR_TASK_ID = "AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair"
 TASK_OS_APPLY_TASK_LABEL = "AIDE-APPLY-00 - Transaction Model"
+TASK_OS_APPLY_02_TASK_ID = "AIDE-APPLY-02-scoped-transaction-executor-v0"
+TASK_OS_APPLY_02_REPAIR_TASK_ID = "AIDE-APPLY-02-REPAIR-01"
+TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID = "AIDE-CHECK-APPLY-02-RECHECK-01"
+TASK_OS_STATUS_REPAIR_TASK_ID = "AIDE-TASK-OS-STATUS-REPAIR-01"
+TASK_OS_LIFECYCLE_PLAN_TASK_LABEL = "AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning"
 
 
 def task_os_done_local(status: str) -> bool:
@@ -5133,11 +5371,74 @@ def task_os_status_from_context(context: dict[str, object], task_id: str) -> str
     return "missing"
 
 
+def task_os_task_from_context(context: dict[str, object], task_id: str) -> dict[str, object] | None:
+    tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    for task in tasks:
+        if isinstance(task, dict) and str(task.get("id", "")) == task_id:
+            return task
+    prefix_matches = [
+        task
+        for task in tasks
+        if isinstance(task, dict) and str(task.get("id", "")).startswith(f"{task_id}-")
+    ]
+    return prefix_matches[0] if len(prefix_matches) == 1 and isinstance(prefix_matches[0], dict) else None
+
+
+def task_os_planning_state_from_context(context: dict[str, object], task_id: str) -> str:
+    task = task_os_task_from_context(context, task_id)
+    return str(task.get("planning_state", "missing")) if task else "missing"
+
+
+def task_os_apply_02_accepted_with_notes(context: dict[str, object]) -> bool:
+    return (
+        task_os_planning_state_from_context(context, TASK_OS_APPLY_02_TASK_ID) == "accepted_with_notes"
+        and task_os_planning_state_from_context(context, TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID) == "accepted_with_notes"
+        and task_os_done_local(task_os_status_from_context(context, TASK_OS_APPLY_02_TASK_ID))
+        and task_os_done_local(task_os_status_from_context(context, TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID))
+    )
+
+
 def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
     xos01_status = task_os_status_from_context(context, "X-OS-01-aide-task-os-report-only-commands")
     xos02_status = task_os_status_from_context(context, "X-OS-02-capability-reality-ledger-v0")
     checkpoint_status = task_os_status_from_context(context, TASK_OS_CHECKPOINT_TASK_ID)
     repair_status = task_os_status_from_context(context, TASK_OS_REPAIR_TASK_ID)
+    apply02_status = task_os_status_from_context(context, TASK_OS_APPLY_02_TASK_ID)
+    apply02_repair_status = task_os_status_from_context(context, TASK_OS_APPLY_02_REPAIR_TASK_ID)
+    apply02_recheck_status = task_os_status_from_context(context, TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID)
+    status_repair_status = task_os_status_from_context(context, TASK_OS_STATUS_REPAIR_TASK_ID)
+    apply02_accepted_with_notes = task_os_apply_02_accepted_with_notes(context)
+    post_apply_fields = {
+        "aide_apply_02_status": apply02_status,
+        "aide_apply_02_repair_status": apply02_repair_status,
+        "aide_check_apply_02_recheck_status": apply02_recheck_status,
+        "aide_task_os_status_repair_status": status_repair_status,
+        "aide_apply_lifecycle_plan_ready": False,
+        "lifecycle_apply_authorized": False,
+    }
+    if apply02_accepted_with_notes and not task_os_done_local(status_repair_status):
+        return {
+            "task": f"{TASK_OS_STATUS_REPAIR_TASK_ID} - Task OS Current and Latest-Task Reporting Repair",
+            "reason": "AIDE-QUEUE-CLOSURE-02 selected Task OS current/latest truth repair before apply lifecycle planning can become the next runnable WorkUnit.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
+        }
+    if apply02_accepted_with_notes and task_os_done_local(status_repair_status):
+        return {
+            "task": TASK_OS_LIFECYCLE_PLAN_TASK_LABEL,
+            "reason": "AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
+            "aide_apply_lifecycle_plan_ready": True,
+        }
     if not task_os_done_local(xos01_status):
         return {
             "task": "X-OS-01 - Task OS Report-Only Commands",
@@ -5147,6 +5448,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             "checkpoint_status": checkpoint_status,
             "repair_status": repair_status,
             "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
         }
     if not task_os_done_local(xos02_status):
         return {
@@ -5157,6 +5459,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             "checkpoint_status": checkpoint_status,
             "repair_status": repair_status,
             "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
         }
     if not task_os_done_local(checkpoint_status):
         return {
@@ -5167,6 +5470,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             "checkpoint_status": checkpoint_status,
             "repair_status": repair_status,
             "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
         }
     if not task_os_done_local(repair_status):
         return {
@@ -5177,6 +5481,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             "checkpoint_status": checkpoint_status,
             "repair_status": repair_status,
             "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
         }
     return {
         "task": TASK_OS_APPLY_TASK_LABEL,
@@ -5186,6 +5491,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
         "checkpoint_status": checkpoint_status,
         "repair_status": repair_status,
         "aide_apply_00_next_packet_ready": True,
+        **post_apply_fields,
     }
 
 
@@ -5214,6 +5520,7 @@ def task_os_no_apply_boundary() -> dict[str, object]:
 def task_os_source_files() -> list[str]:
     return [
         ".aide/queue/index.yaml",
+        ".aide/queue/current.toml",
         LATEST_PACKET_PATH,
         ".aide/reports/current-aide-roadmap.md",
         ".aide/reports/target-work-deferral.md",
@@ -5224,6 +5531,31 @@ def task_os_source_files() -> list[str]:
         *TASK_OS_SCHEMA_FILES,
         *TASK_OS_LEDGER_SCHEMA_FILES,
     ]
+
+
+def task_os_current_toml_ref(repo_root: Path) -> dict[str, str]:
+    path = repo_root / ".aide/queue/current.toml"
+    if not path.exists():
+        return {
+            "current_toml_state": "absent",
+            "current_task_raw": "",
+            "current_task_id": "",
+            "current_task_status": "absent",
+        }
+    text = read_text(path)
+    raw = ""
+    for key in ["task_id", "id", "task"]:
+        match = re.search(rf"^\s*{re.escape(key)}\s*=\s*['\"]?([^'\"\n#]+)", text, re.MULTILINE)
+        if match:
+            raw = match.group(1).strip()
+            break
+    resolved = resolve_task_id(repo_root, raw) if raw else ""
+    return {
+        "current_toml_state": "present",
+        "current_task_raw": raw,
+        "current_task_id": resolved,
+        "current_task_status": task_status_value(repo_root, resolved) if resolved else "missing",
+    }
 
 
 def task_os_context(repo_root: Path) -> dict[str, object]:
@@ -5261,6 +5593,10 @@ def task_os_context(repo_root: Path) -> dict[str, object]:
                 "warnings": task_os_warning_counts(status_text),
             }
         )
+    current_toml = task_os_current_toml_ref(repo_root)
+    latest_indexed_task = enriched[-1] if enriched else {}
+    latest_indexed_task_id = str(latest_indexed_task.get("id", "")) if isinstance(latest_indexed_task, dict) else ""
+    latest_indexed_task_status = str(latest_indexed_task.get("status", "missing")) if latest_indexed_task_id else "missing"
     latest_raw, latest_resolved = task_os_latest_task_ref(repo_root)
     latest_status = task_status_value(repo_root, latest_resolved) if latest_resolved else "missing"
     target_deferral_path = repo_root / ".aide/reports/target-work-deferral.md"
@@ -5276,6 +5612,12 @@ def task_os_context(repo_root: Path) -> dict[str, object]:
         "repo_root": normalize_rel(repo_root),
         "current_branch": git_current_branch_name(repo_root),
         "current_commit": safe_git_head_commit(repo_root),
+        "current_toml_state": current_toml.get("current_toml_state", "unknown"),
+        "current_task_raw": current_toml.get("current_task_raw", ""),
+        "current_task_id": current_toml.get("current_task_id", ""),
+        "current_task_status": current_toml.get("current_task_status", "unknown"),
+        "latest_indexed_task_id": latest_indexed_task_id,
+        "latest_indexed_task_status": latest_indexed_task_status,
         "latest_task_raw": latest_raw,
         "latest_task_id": latest_resolved or latest_raw,
         "latest_task_status": latest_status,
@@ -5338,9 +5680,19 @@ def task_os_render_command_status(context: dict[str, object]) -> str:
             "",
             "- command_surface: registered",
             "- no_apply_boundary: enforced_by_report",
+            f"- current_toml_state: {context.get('current_toml_state', 'unknown')}",
+            f"- current_task_id: {context.get('current_task_id', '') or 'none'}",
+            f"- current_task_status: {context.get('current_task_status', 'unknown')}",
+            f"- latest_indexed_task_id: {context.get('latest_indexed_task_id', '') or 'none'}",
+            f"- latest_indexed_task_status: {context.get('latest_indexed_task_status', 'unknown')}",
+            f"- latest_task_packet_id: {context.get('latest_task_id', '') or 'none'}",
+            f"- latest_task_packet_status: {context.get('latest_task_status', 'unknown')}",
+            f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
             f"- next_recommended_action: {selection.get('task', 'review current task evidence')}",
             f"- next_recommended_reason: {selection.get('reason', '')}",
             f"- aide_apply_00_next_packet_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}",
+            f"- aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}",
+            f"- lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}",
             "",
         ]
     )
@@ -5349,10 +5701,25 @@ def task_os_render_command_status(context: dict[str, object]) -> str:
 
 def task_os_render_task_status(context: dict[str, object]) -> str:
     tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Task Status", "task status", context)
     lines.extend(
         [
-            "## Latest Task",
+            "## Current And Latest Truth",
+            "",
+            f"- current_toml_state: {context.get('current_toml_state', 'unknown')}",
+            f"- current_task_raw: `{context.get('current_task_raw', '') or 'none'}`",
+            f"- current_task_id: `{context.get('current_task_id', '') or 'none'}`",
+            f"- current_task_status: `{context.get('current_task_status', 'unknown')}`",
+            f"- latest_indexed_task_id: `{context.get('latest_indexed_task_id', '') or 'none'}`",
+            f"- latest_indexed_task_status: `{context.get('latest_indexed_task_status', 'unknown')}`",
+            f"- latest_task_packet_raw: `{context.get('latest_task_raw', '') or 'unknown'}`",
+            f"- latest_task_packet_id: `{context.get('latest_task_id', '') or 'unknown'}`",
+            f"- latest_task_packet_status: `{context.get('latest_task_status', '') or 'unknown'}`",
+            f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
+            f"- selected_next_workunit_reason: {selection.get('reason', '')}",
+            "",
+            "## Latest Task Packet",
             "",
             f"- latest_task_raw: `{context.get('latest_task_raw', '') or 'unknown'}`",
             f"- latest_task_id: `{context.get('latest_task_id', '') or 'unknown'}`",
@@ -5388,7 +5755,7 @@ def task_os_render_task_status(context: dict[str, object]) -> str:
             "",
             "## Next Recommended Action",
             "",
-            f"- {task_os_next_action_text(context)}",
+            f"- {selection.get('task', 'review current task evidence')} - {selection.get('reason', '')}",
             "",
         ]
     )
@@ -5666,15 +6033,25 @@ def task_os_render_wave_status(context: dict[str, object]) -> str:
 
 
 def task_os_render_wave_plan(context: dict[str, object]) -> str:
+    selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Wave Plan", "wave plan", context)
     lines.extend(
         [
-            "## Planned Sequence",
+            "## Current Selected Next WorkUnit",
+            "",
+            f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
+            f"- reason: {selection.get('reason', '')}",
+            f"- aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}",
+            f"- lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}",
+            "",
+            "## Historical Foundation Sequence",
             "",
             "1. X-OS-01 - Task OS Report-Only Commands",
             "2. X-OS-02 - Capability Reality Ledger v0",
             "3. AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint",
             "4. AIDE-APPLY-00 - Transaction Model, only after checkpoint",
+            "",
+            "This sequence is historical foundation context after AIDE-APPLY-02 accepted-with-notes state. It is not the current selected next WorkUnit when Task OS status truth selects AIDE-APPLY-LIFECYCLE-PLAN-01.",
             "",
             "## Dependencies",
             "",
@@ -5877,16 +6254,30 @@ def write_task_os_next_plan(repo_root: Path) -> WriteResult:
             "",
             "## Readiness Snapshot",
             "",
+            f"- current_toml_state: {context.get('current_toml_state', 'unknown')}",
+            f"- current_task_id: {context.get('current_task_id', '') or 'none'}",
+            f"- current_task_status: {context.get('current_task_status', 'unknown')}",
+            f"- latest_indexed_task_id: {context.get('latest_indexed_task_id', '') or 'none'}",
+            f"- latest_indexed_task_status: {context.get('latest_indexed_task_status', 'unknown')}",
+            f"- latest_task_packet_id: {context.get('latest_task_id', '') or 'none'}",
+            f"- latest_task_packet_status: {context.get('latest_task_status', 'unknown')}",
             f"- x_os_01_status: {selection.get('x_os_01_status', 'unknown')}",
             f"- x_os_02_status: {selection.get('x_os_02_status', 'unknown')}",
             f"- aide_check_os_01_status: {selection.get('checkpoint_status', 'unknown')}",
             f"- aide_fix_os_03_status: {selection.get('repair_status', 'unknown')}",
+            f"- aide_apply_02_status: {selection.get('aide_apply_02_status', 'unknown')}",
+            f"- aide_apply_02_repair_status: {selection.get('aide_apply_02_repair_status', 'unknown')}",
+            f"- aide_check_apply_02_recheck_status: {selection.get('aide_check_apply_02_recheck_status', 'unknown')}",
+            f"- aide_task_os_status_repair_status: {selection.get('aide_task_os_status_repair_status', 'unknown')}",
             f"- aide_apply_00_next_packet_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}",
+            f"- aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}",
+            f"- lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}",
             "",
             "## Boundary",
             "",
             "- no apply behavior is authorized by this next plan",
             "- selecting AIDE-APPLY-00 authorizes only the next reviewed queue packet, not transactional apply execution",
+            "- selecting AIDE-APPLY-LIFECYCLE-PLAN-01 authorizes only planning, not lifecycle apply execution",
             "",
         ]
     )
@@ -7206,6 +7597,1419 @@ def write_all_managed_section_reports(repo_root: Path) -> None:
     write_managed_section_status_outputs(repo_root)
     write_managed_section_fixture_plan_outputs(repo_root)
     write_managed_section_fixture_validation_outputs(repo_root)
+
+
+def load_scoped_transaction_executor_module(repo_root: Path):
+    module_path = repo_root / "core/apply/transaction_executor.py"
+    if not module_path.exists():
+        raise ValueError("scoped transaction executor module missing: core/apply/transaction_executor.py")
+    spec = importlib.util.spec_from_file_location("aide_core_scoped_transaction_executor", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("scoped transaction executor module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_lifecycle_fixture_runner_module(repo_root: Path):
+    module_path = repo_root / "core/apply/lifecycle_fixture_runner.py"
+    if not module_path.exists():
+        raise ValueError("lifecycle fixture runner module missing: core/apply/lifecycle_fixture_runner.py")
+    spec = importlib.util.spec_from_file_location("aide_core_lifecycle_fixture_runner", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("lifecycle fixture runner module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_contract_envelope_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/envelope.py"
+    if not module_path.exists():
+        raise ValueError("contract envelope module missing: core/protocol/envelope.py")
+    spec = importlib.util.spec_from_file_location("aide_core_contract_envelope", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("contract envelope module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_evidence_packet_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/evidence_packet.py"
+    if not module_path.exists():
+        raise ValueError("EvidencePacket module missing: core/protocol/evidence_packet.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_evidence_packet", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("EvidencePacket module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_workunit_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/workunit.py"
+    if not module_path.exists():
+        raise ValueError("WorkUnit module missing: core/protocol/workunit.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_workunit", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("WorkUnit module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_workunit_cli_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/workunit_cli.py"
+    if not module_path.exists():
+        raise ValueError("WorkUnit CLI module missing: core/protocol/workunit_cli.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_workunit_cli", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("WorkUnit CLI module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_worker_run_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/worker_run.py"
+    if not module_path.exists():
+        raise ValueError("WorkerRun module missing: core/protocol/worker_run.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_worker_run", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("WorkerRun module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_execution_host_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/execution_host.py"
+    if not module_path.exists():
+        raise ValueError("ExecutionHost module missing: core/protocol/execution_host.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_execution_host", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ExecutionHost module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_trust_authorization_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/trust_authorization.py"
+    if not module_path.exists():
+        raise ValueError("Trust authorization module missing: core/protocol/trust_authorization.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_trust_authorization", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("Trust authorization module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_local_service_module(repo_root: Path):
+    module_path = repo_root / "core/service/local_service.py"
+    if not module_path.exists():
+        raise ValueError("Local Service module missing: core/service/local_service.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_local_service", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("Local Service module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_local_trust_enforcement_module(repo_root: Path):
+    module_path = repo_root / "core/service/local_trust_enforcement.py"
+    if not module_path.exists():
+        raise ValueError("Local trust enforcement module missing: core/service/local_trust_enforcement.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_local_trust_enforcement", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("Local trust enforcement module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_durable_worker_run_module(repo_root: Path):
+    module_path = repo_root / "core/service/durable_worker_run.py"
+    if not module_path.exists():
+        raise ValueError("Durable WorkerRun module missing: core/service/durable_worker_run.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_durable_worker_run", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("Durable WorkerRun module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_test_job_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/test_job.py"
+    if not module_path.exists():
+        raise ValueError("TestJob module missing: core/protocol/test_job.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_test_job", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("TestJob module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_reference_id_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/reference_id.py"
+    if not module_path.exists():
+        raise ValueError("ReferenceID module missing: core/protocol/reference_id.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_reference_id", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ReferenceID module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_event_record_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/event_record.py"
+    if not module_path.exists():
+        raise ValueError("EventRecord module missing: core/protocol/event_record.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_event_record", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("EventRecord module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_okf_bundle_module(repo_root: Path):
+    module_path = repo_root / "core/knowledge/okf_bundle.py"
+    if not module_path.exists():
+        raise ValueError("OKF bundle module missing: core/knowledge/okf_bundle.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_okf_bundle", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("OKF bundle module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_reconciler_reports_module(repo_root: Path):
+    module_path = repo_root / "core/reconciler/reconciler_reports.py"
+    if not module_path.exists():
+        raise ValueError("Reconciler reports module missing: core/reconciler/reconciler_reports.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_reconciler_reports", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("Reconciler reports module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_capability_manifest_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/capability_manifest.py"
+    if not module_path.exists():
+        raise ValueError("CapabilityManifest module missing: core/protocol/capability_manifest.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_capability_manifest", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("CapabilityManifest module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_distribution_manifest_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/distribution_manifest.py"
+    if not module_path.exists():
+        raise ValueError("DistributionManifest module missing: core/protocol/distribution_manifest.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_distribution_manifest", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("DistributionManifest module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_project_lock_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/project_lock.py"
+    if not module_path.exists():
+        raise ValueError("ProjectLock module missing: core/protocol/project_lock.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_project_lock", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ProjectLock module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_ownership_ledger_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/ownership_ledger.py"
+    if not module_path.exists():
+        raise ValueError("OwnershipLedger module missing: core/protocol/ownership_ledger.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_ownership_ledger", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("OwnershipLedger module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_install_record_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/install_record.py"
+    if not module_path.exists():
+        raise ValueError("InstallRecord module missing: core/protocol/install_record.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_install_record", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("InstallRecord module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_migration_record_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/migration_record.py"
+    if not module_path.exists():
+        raise ValueError("MigrationRecord module missing: core/protocol/migration_record.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_migration_record", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("MigrationRecord module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_update_plan_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/update_plan.py"
+    if not module_path.exists():
+        raise ValueError("UpdatePlan module missing: core/protocol/update_plan.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_update_plan", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("UpdatePlan module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_rollback_bundle_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/rollback_bundle.py"
+    if not module_path.exists():
+        raise ValueError("RollbackBundle module missing: core/protocol/rollback_bundle.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_rollback_bundle", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("RollbackBundle module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_update_receipt_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/update_receipt.py"
+    if not module_path.exists():
+        raise ValueError("UpdateReceipt module missing: core/protocol/update_receipt.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_update_receipt", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("UpdateReceipt module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_distribution_apply_module(repo_root: Path):
+    module_path = repo_root / "core/distribution/apply_engine.py"
+    if not module_path.exists():
+        raise ValueError("DistributionApplyEngine module missing: core/distribution/apply_engine.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_distribution_apply_engine", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("DistributionApplyEngine module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_conformance_profile_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/conformance_profile.py"
+    if not module_path.exists():
+        raise ValueError("ConformanceProfile module missing: core/protocol/conformance_profile.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_conformance_profile", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ConformanceProfile module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_conformance_result_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/conformance_result.py"
+    if not module_path.exists():
+        raise ValueError("ConformanceResult module missing: core/protocol/conformance_result.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_conformance_result", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ConformanceResult module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_patch_transaction_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/patch_transaction.py"
+    if not module_path.exists():
+        raise ValueError("PatchTransaction module missing: core/protocol/patch_transaction.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_patch_transaction", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("PatchTransaction module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_adapter_manifest_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/adapter_manifest.py"
+    if not module_path.exists():
+        raise ValueError("AdapterManifest module missing: core/protocol/adapter_manifest.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_adapter_manifest", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("AdapterManifest module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_context_pack_v2_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/context_pack_v2.py"
+    if not module_path.exists():
+        raise ValueError("ContextPack v2 module missing: core/protocol/context_pack_v2.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_context_pack_v2", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ContextPack v2 module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_mcp_server_contract_module(repo_root: Path):
+    module_path = repo_root / "core/interop/mcp_server_contract.py"
+    if not module_path.exists():
+        raise ValueError("MCP server contract module missing: core/interop/mcp_server_contract.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_mcp_server_contract", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("MCP server contract module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_a2a_agent_card_contract_module(repo_root: Path):
+    module_path = repo_root / "core/interop/a2a_agent_card_contract.py"
+    if not module_path.exists():
+        raise ValueError("A2A agent-card contract module missing: core/interop/a2a_agent_card_contract.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_a2a_agent_card_contract", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("A2A agent-card contract module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_dominium_readonly_seam_module(repo_root: Path):
+    module_path = repo_root / "core/interop/dominium/__init__.py"
+    if not module_path.exists():
+        raise ValueError("Dominium read-only seam module missing: core/interop/dominium/__init__.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.interop.dominium")
+
+
+def load_dominium_workunit_validation_module(repo_root: Path):
+    module_path = repo_root / "core/interop/dominium/workunit_validation.py"
+    if not module_path.exists():
+        raise ValueError("Dominium WorkUnit validation module missing: core/interop/dominium/workunit_validation.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.interop.dominium.workunit_validation")
+
+
+def load_dominium_registered_validation_backend_module(repo_root: Path):
+    module_path = repo_root / "core/interop/dominium/registered_validation_backend.py"
+    if not module_path.exists():
+        raise ValueError("Dominium registered validation backend module missing: core/interop/dominium/registered_validation_backend.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.interop.dominium.registered_validation_backend")
+
+
+def load_aide_self_validation_process_adapter_module(repo_root: Path):
+    module_path = repo_root / "core/interop/aide/self_validation_process_adapter.py"
+    if not module_path.exists():
+        raise ValueError("AIDE self-validation process adapter module missing: core/interop/aide/self_validation_process_adapter.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.interop.aide.self_validation_process_adapter")
+
+
+def load_eureka_readonly_process_adapter_module(repo_root: Path):
+    module_path = repo_root / "core/interop/eureka/public_alpha_readonly_process_adapter.py"
+    if not module_path.exists():
+        raise ValueError("Eureka read-only process adapter module missing: core/interop/eureka/public_alpha_readonly_process_adapter.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.interop.eureka.public_alpha_readonly_process_adapter")
+
+
+def load_local_process_execution_host_module(repo_root: Path):
+    module_path = repo_root / "core/execution/local_process_host.py"
+    if not module_path.exists():
+        raise ValueError("LocalProcessExecutionHost module missing: core/execution/local_process_host.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.execution.local_process_host")
+
+
+def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
+    return {
+        "schema_version": "aide.scoped-transaction-executor-status.v0",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "mode": "report_only",
+        "task_id": "AIDE-APPLY-02-scoped-transaction-executor-v0",
+        "implemented": {
+            "policy": all((repo_root / rel).exists() for rel in SCOPED_TRANSACTION_POLICY_FILES),
+            "schemas": all((repo_root / rel).exists() for rel in SCOPED_TRANSACTION_SCHEMA_FILES),
+            "examples": all((repo_root / rel).exists() for rel in SCOPED_TRANSACTION_EXAMPLE_FILES),
+            "fixtures": all((repo_root / rel).exists() for rel in SCOPED_TRANSACTION_FIXTURE_FILES),
+            "core_module": (repo_root / "core/apply/transaction_executor.py").exists(),
+            "commands": True,
+            "target_repo_capable": False,
+            "broad_active_repo_apply": False,
+            "production_ready": False,
+            "release_ready": False,
+        },
+        "allowed_operation_types": ["update_managed_section", "report", "validate", "noop"],
+        "capability_reality": {
+            "implemented": True,
+            "tested": True,
+            "fixture_tested": True,
+            "review_gated": True,
+            "production_ready": False,
+            "release_ready": False,
+        },
+        "review_gate": "needs_review",
+        "next_checkpoint": "AIDE-CHECK-APPLY-02",
+    }
+
+
+def scoped_transaction_fixture_texts(repo_root: Path) -> tuple[str, str, str]:
+    fixture_root = repo_root / ".aide/examples/apply/scoped-transaction-executor-fixtures"
+    return (
+        read_text(fixture_root / "valid_input.md"),
+        read_text(fixture_root / "replacement.md"),
+        read_text(fixture_root / "expected_output.md"),
+    )
+
+
+def scoped_transaction_fixture_plan_data(repo_root: Path) -> dict[str, object]:
+    executor = load_scoped_transaction_executor_module(repo_root)
+    managed_module = load_managed_sections_module(repo_root)
+    valid_text, replacement, expected_text = scoped_transaction_fixture_texts(repo_root)
+    fixture_path = ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md"
+    patch = managed_module.build_managed_section_patch(valid_text, "aide-scoped-fixture-section", replacement, path=fixture_path)
+    planned_text = str(patch.get("after_text", ""))
+    expected_hash = executor.compute_text_hash(expected_text)
+    return {
+        "schema_version": executor.PLAN_SCHEMA_VERSION,
+        "example": True,
+        "transaction_id": "scoped-transaction-executor-fixture",
+        "mode": "dry-run",
+        "generated_at": "deterministic",
+        "allowed_roots": [
+            ".aide/examples/apply/scoped-transaction-executor-fixtures",
+            ".aide/reports",
+        ],
+        "protected_roots": [
+            ".git",
+            ".github",
+            ".aide.local",
+            ".env",
+            "secrets",
+            "credentials",
+        ],
+        "allowed_operation_types": ["update_managed_section", "report", "validate", "noop"],
+        "report_path": SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH,
+        "rollback_record_path": SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH,
+        "operations": [
+            {
+                "operation_id": "op-scoped-managed-section-fixture",
+                "operation_type": "update_managed_section",
+                "path": fixture_path,
+                "section_name": "aide-scoped-fixture-section",
+                "replacement_content": replacement,
+                "expected_preimage_hash": executor.compute_text_hash(valid_text),
+                "expected_postimage_hash": expected_hash,
+                "planned_postimage_matches_expected_fixture": planned_text == expected_text,
+            }
+        ],
+        "boundaries": {
+            "dry_run_no_target_mutation": True,
+            "install_apply": False,
+            "upgrade_apply": False,
+            "repair_apply": False,
+            "rollback_uninstall_apply": False,
+            "target_repo_mutation": False,
+            "branch_worktree_mutation": False,
+            "merge": False,
+            "push": False,
+            "promotion": False,
+            "release_publication": False,
+            "github_mutation": False,
+            "provider_model_calls": "none",
+            "gateway_calls": "none",
+            "network_calls": "none",
+            "broad_active_repo_apply": False,
+        },
+    }
+
+
+def render_scoped_transaction_header(title: str, command: str, repo_root: Path, mode: str = "report_only") -> list[str]:
+    return [
+        f"# {title}",
+        "",
+        "- generated_at: deterministic",
+        f"- repo_root: `{repo_root.as_posix()}`",
+        f"- current_branch: `{git_current_branch_name(repo_root)}`",
+        f"- current_commit: `{git_commit_id(repo_root)}`",
+        f"- command: `{command}`",
+        f"- mode: {mode}",
+        "- scoped_transaction_executor: true",
+        "- review_gate: needs_review",
+        "- production_ready: false",
+        "- release_ready: false",
+        "- target_repo_mutation: false",
+        "- branch_mutation: false",
+        "- worktree_mutation: false",
+        "- provider_or_model_calls: none",
+        "- Gateway calls: none",
+        "- network_calls: none",
+        "- broad_active_repo_apply: false",
+        "",
+    ]
+
+
+def render_scoped_transaction_status(data: dict[str, object], repo_root: Path) -> str:
+    lines = render_scoped_transaction_header("Scoped Transaction Executor Status", "scoped-transaction status", repo_root)
+    lines.extend(["## Summary", ""])
+    implemented = data.get("implemented", {}) if isinstance(data.get("implemented"), dict) else {}
+    for key in ["policy", "schemas", "examples", "fixtures", "core_module", "commands", "target_repo_capable", "broad_active_repo_apply", "production_ready", "release_ready"]:
+        lines.append(f"- {key}: {str(implemented.get(key, False)).lower()}")
+    lines.extend(["", "## Allowed Operation Types", ""])
+    for operation_type in data.get("allowed_operation_types", []) if isinstance(data.get("allowed_operation_types"), list) else []:
+        lines.append(f"- {operation_type}")
+    lines.extend([
+        "",
+        "## Forbidden Operations",
+        "",
+        "- install apply: prohibited",
+        "- upgrade apply: prohibited",
+        "- repair apply: prohibited",
+        "- rollback/uninstall apply: prohibited",
+        "- target repo mutation: prohibited",
+        "- branch/worktree mutation: prohibited",
+        "- merge: prohibited",
+        "- push: prohibited",
+        "- promotion: prohibited",
+        "- release publication: prohibited",
+        "- GitHub mutation: prohibited",
+        "- provider/model calls: prohibited",
+        "- Gateway calls: prohibited",
+        "- network calls: prohibited",
+        "- broad active-repo apply: prohibited",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def render_scoped_transaction_fixture_plan(plan: dict[str, object], repo_root: Path) -> str:
+    lines = render_scoped_transaction_header("Scoped Transaction Executor Fixture Plan", "scoped-transaction fixture-plan", repo_root, "dry-run")
+    lines.extend(["## Plan", "", f"- transaction_id: {plan.get('transaction_id')}", f"- mode: {plan.get('mode')}", "- dry-run target mutation: false", ""])
+    lines.extend(["## Operations", ""])
+    for operation in plan.get("operations", []) if isinstance(plan.get("operations"), list) else []:
+        if isinstance(operation, dict):
+            lines.append(f"- {operation.get('operation_id')}: type={operation.get('operation_type')}; path={operation.get('path')}; preimage hash required=true; postimage verification=true")
+    lines.extend(["", "## Records", "", f"- report_path: {plan.get('report_path')}", f"- rollback_record_path: {plan.get('rollback_record_path')}", "- staged-change record expected: true", "- rollback-compatible record expected: true", ""])
+    return "\n".join(lines)
+
+
+def render_scoped_transaction_fixture_report(report: dict[str, object], repo_root: Path) -> str:
+    lines = render_scoped_transaction_header("Scoped Transaction Executor Fixture Report", "scoped-transaction fixture-verify", repo_root, str(report.get("mode", "dry_run")))
+    lines.extend(["## Result", "", f"- status: {report.get('status')}", f"- result: {report.get('result')}", f"- target_files_mutated: {str(report.get('target_files_mutated', False)).lower()}", ""])
+    lines.extend(["## Operations", ""])
+    for operation in report.get("operations", []) if isinstance(report.get("operations"), list) else []:
+        if isinstance(operation, dict):
+            lines.append(f"- {operation.get('operation_id')}: status={operation.get('status')}; path={operation.get('path')}; preimage hash={operation.get('preimage_hash', '')}; postimage verification={operation.get('postimage_verification', '')}")
+    lines.extend(["", "## Records", "", f"- staged-change count: {len(report.get('staged_changes', [])) if isinstance(report.get('staged_changes'), list) else 0}", "- rollback-compatible record: true", "- review gate: needs_review", ""])
+    return "\n".join(lines)
+
+
+def scoped_transaction_fixture_verification_checks(repo_root: Path, plan: dict[str, object] | None = None, report: dict[str, object] | None = None) -> list[Check]:
+    checks = validate_scoped_transaction_files(repo_root, require_reports=False)
+    executor = load_scoped_transaction_executor_module(repo_root)
+    plan = plan or scoped_transaction_fixture_plan_data(repo_root)
+    fixture_path = repo_root / ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md"
+    before_text = read_text(fixture_path)
+    report = report or executor.execute_transaction_plan(plan, repo_root)
+    after_text = read_text(fixture_path)
+    check_pass(checks, report.get("status") == "PASS", "Scoped transaction fixture dry-run report passes")
+    check_pass(checks, before_text == after_text, "Scoped transaction dry-run produces no file mutation")
+    check_pass(checks, report.get("target_files_mutated") is False, "Scoped transaction dry-run target_files_mutated false")
+    staged_changes = report.get("staged_changes", []) if isinstance(report.get("staged_changes"), list) else []
+    check_pass(checks, bool(staged_changes), "Scoped transaction staged-change record is generated")
+    rollback = report.get("rollback_record", {}) if isinstance(report.get("rollback_record"), dict) else {}
+    check_pass(checks, bool(rollback.get("preimages")), "Scoped transaction rollback-compatible preimage record generated")
+    check_pass(checks, rollback.get("apply_allowed") is False, "Scoped transaction rollback record apply disabled")
+    check_pass(checks, rollback.get("rollback_execution") is False, "Scoped transaction rollback execution disabled")
+    capability = report.get("capability_reality", {}) if isinstance(report.get("capability_reality"), dict) else {}
+    check_pass(checks, capability.get("production_ready") is False, "Scoped transaction capability label is not production-ready")
+    check_pass(checks, capability.get("release_ready") is False, "Scoped transaction capability label is not release-ready")
+    boundaries = report.get("boundaries", {}) if isinstance(report.get("boundaries"), dict) else {}
+    for key in ["install_apply", "upgrade_apply", "repair_apply", "rollback_uninstall_apply", "target_repo_mutation", "merge", "push", "promotion", "release_publication", "github_mutation", "broad_active_repo_apply"]:
+        check_pass(checks, boundaries.get(key) is False, f"Scoped transaction boundary false: {key}")
+    check_pass(checks, boundaries.get("branch_worktree_mutation") is False, "Scoped transaction boundary false: branch/worktree mutation")
+    for key in ["provider_model_calls", "gateway_calls", "network_calls"]:
+        check_pass(checks, boundaries.get(key) == "none", f"Scoped transaction boundary none: {key}")
+    return checks
+
+
+def render_scoped_transaction_validation(checks: list[Check], repo_root: Path) -> str:
+    result = result_from_checks(checks)
+    lines = render_scoped_transaction_header("Scoped Transaction Executor Validation", "scoped-transaction validate", repo_root)
+    lines.extend(["## Result", "", f"- result: {result}", f"- checks: {len(checks)}", "- report mode: true", "- dry-run no file mutation: true", ""])
+    lines.extend(["## Checks", ""])
+    for check in checks:
+        lines.append(f"- {check.severity} {check.message}")
+    lines.extend([
+        "",
+        "## Boundary",
+        "",
+        "- install apply: prohibited",
+        "- upgrade apply: prohibited",
+        "- repair apply: prohibited",
+        "- rollback/uninstall apply: prohibited",
+        "- target repo mutation: prohibited",
+        "- branch/worktree mutation: prohibited",
+        "- merge: prohibited",
+        "- push: prohibited",
+        "- promotion: prohibited",
+        "- release publication: prohibited",
+        "- GitHub mutation: prohibited",
+        "- provider/model calls: prohibited",
+        "- Gateway calls: prohibited",
+        "- network calls: prohibited",
+        "- broad active-repo apply: prohibited",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def write_scoped_transaction_status_outputs(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    data = scoped_transaction_status_data(repo_root)
+    status_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_STATUS_REPORT_PATH, render_scoped_transaction_status(data, repo_root))
+    return status_result, data
+
+
+def write_scoped_transaction_fixture_plan_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    plan = scoped_transaction_fixture_plan_data(repo_root)
+    json_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_PLAN_MD_PATH, render_scoped_transaction_fixture_plan(plan, repo_root))
+    return json_result, md_result, plan
+
+
+def latest_scoped_transaction_fixture_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH
+    if not path.exists():
+        return None
+    try:
+        return json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return None
+
+
+def write_scoped_transaction_fixture_report_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, WriteResult, dict[str, object], dict[str, object]]:
+    executor = load_scoped_transaction_executor_module(repo_root)
+    plan = latest_scoped_transaction_fixture_plan(repo_root)
+    if plan is None:
+        _json_result, _md_result, plan = write_scoped_transaction_fixture_plan_outputs(repo_root)
+    report = executor.execute_transaction_plan(plan, repo_root)
+    json_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH, stable_json_text(report))
+    rollback = report.get("rollback_record", {}) if isinstance(report.get("rollback_record"), dict) else {}
+    rollback_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH, stable_json_text(rollback))
+    md_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_REPORT_MD_PATH, render_scoped_transaction_fixture_report(report, repo_root))
+    return json_result, md_result, rollback_result, plan, report
+
+
+def write_scoped_transaction_validation_outputs(repo_root: Path) -> tuple[WriteResult, list[Check]]:
+    write_scoped_transaction_status_outputs(repo_root)
+    write_scoped_transaction_fixture_plan_outputs(repo_root)
+    _json_result, _md_result, _rollback_result, plan, report = write_scoped_transaction_fixture_report_outputs(repo_root)
+    checks = scoped_transaction_fixture_verification_checks(repo_root, plan, report)
+    result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_VALIDATION_REPORT_PATH, render_scoped_transaction_validation(checks, repo_root))
+    return result, checks
+
+
+def validate_scoped_transaction_files(repo_root: Path, require_reports: bool = False) -> list[Check]:
+    checks: list[Check] = []
+    for rel in SCOPED_TRANSACTION_REQUIRED_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Scoped transaction required file exists: {rel}")
+    for rel in SCOPED_TRANSACTION_SCHEMA_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, data.get("type") == "object", f"Scoped transaction schema root object: {rel}")
+            check_pass(checks, isinstance(data.get("required"), list), f"Scoped transaction schema declares required fields: {rel}")
+        except (OSError, json.JSONDecodeError) as exc:
+            checks.append(Check("FAIL", f"Scoped transaction schema malformed {rel}: {exc}"))
+    policy_text = "\n".join(read_text(repo_root / rel) for rel in SCOPED_TRANSACTION_POLICY_FILES if (repo_root / rel).exists())
+    for marker in [
+        "update_managed_section",
+        "preimage_hash_required_before_mutation: true",
+        "postimage_verification_required: true",
+        "rollback_compatible_record_required: true",
+        "dry_run_no_target_mutation: true",
+        "apply_mode_must_be_explicit: true",
+        "install_apply: true",
+        "upgrade_apply: true",
+        "repair_apply: true",
+        "rollback_uninstall_apply: true",
+        "target_repo_mutation: true",
+        "branch_worktree_mutation: true",
+        "provider_model_calls: true",
+        "gateway_calls: true",
+        "network_calls: true",
+        "broad_active_repo_apply: true",
+    ]:
+        check_pass(checks, marker in policy_text, f"Scoped transaction policy marker present: {marker}")
+    for rel in SCOPED_TRANSACTION_EXAMPLE_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, data.get("schema_version") == "aide.scoped-transaction-plan.v0", f"Scoped transaction example schema_version: {rel}")
+            check_pass(checks, data.get("example") is True, f"Scoped transaction example marked example: {rel}")
+            text = read_text(path)
+            check_pass(checks, '"target_repo_mutation": true' not in text, f"Scoped transaction example omits target mutation true: {rel}")
+            check_pass(checks, '"network_calls": true' not in text, f"Scoped transaction example omits network calls true: {rel}")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"Scoped transaction example malformed {rel}: {exc}"))
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in [
+        "add_parser(" + '"scoped-transaction"',
+        "add_parser(" + '"status"',
+        "add_parser(" + '"validate"',
+        "add_parser(" + '"fixture-plan"',
+        "add_parser(" + '"fixture-verify"',
+        "add_parser(" + '"run"',
+    ]:
+        check_pass(checks, literal in script_text, f"Scoped transaction parser registered: {literal}")
+    if require_reports:
+        for rel in SCOPED_TRANSACTION_REPORT_FILES:
+            path = repo_root / rel
+            check_pass(checks, path.exists(), f"Scoped transaction report exists: {rel}")
+            if not path.exists():
+                continue
+            if rel.endswith(".json"):
+                try:
+                    data = json.loads(read_text(path))
+                    check_pass(checks, bool(data.get("schema_version")), f"Scoped transaction JSON schema_version: {rel}")
+                    text = stable_json_text(data)
+                    for forbidden in ['"target_repo_mutation": true', '"branch_worktree_mutation": true', '"broad_active_repo_apply": true']:
+                        check_pass(checks, forbidden not in text, f"Scoped transaction JSON omits forbidden marker: {rel} {forbidden}")
+                except (OSError, json.JSONDecodeError, TypeError) as exc:
+                    checks.append(Check("FAIL", f"Scoped transaction JSON malformed {rel}: {exc}"))
+                continue
+            text = read_text(path)
+            for marker in ["scoped_transaction_executor", "review_gate: needs_review", "production_ready: false", "release_ready: false", "target_repo_mutation: false", "branch_mutation: false", "network_calls: none"]:
+                check_pass(checks, marker in text, f"Scoped transaction report contains boundary marker: {rel} {marker}")
+    return checks
+
+
+def write_all_scoped_transaction_reports(repo_root: Path) -> None:
+    write_scoped_transaction_status_outputs(repo_root)
+    write_scoped_transaction_fixture_plan_outputs(repo_root)
+    write_scoped_transaction_fixture_report_outputs(repo_root)
+    write_scoped_transaction_validation_outputs(repo_root)
+
+
+def lifecycle_schema_status_data(repo_root: Path) -> dict[str, object]:
+    return {
+        "schema_version": "aide.lifecycle-schema-status.v0",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "mode": "report_only",
+        "task_id": "AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01",
+        "schemas_present": all((repo_root / rel).exists() for rel in LIFECYCLE_SCHEMA_FILES),
+        "examples_present": all((repo_root / rel).exists() for rel in LIFECYCLE_EXAMPLE_FILES),
+        "validator_present": True,
+        "jsonschema_dependency_required": False,
+        "lifecycle_apply_implemented": False,
+        "lifecycle_apply_executed": False,
+        "fixture_targets_materialized": False,
+        "target_repo_mutation": False,
+        "branch_worktree_mutation": False,
+        "provider_or_model_calls": "none",
+        "gateway_calls": "none",
+        "network_calls": "none",
+        "production_ready": False,
+        "release_ready": False,
+        "review_gate": "needs_review",
+        "next_task": "AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01",
+    }
+
+
+def lifecycle_read_json(repo_root: Path, rel: str, checks: list[Check], label: str) -> dict[str, object] | None:
+    path = repo_root / rel
+    if not path.exists():
+        checks.append(Check("FAIL", f"{label} missing: {rel}"))
+        return None
+    try:
+        data = json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError) as exc:
+        checks.append(Check("FAIL", f"{label} malformed JSON: {rel}: {exc}"))
+        return None
+    if not isinstance(data, dict):
+        checks.append(Check("FAIL", f"{label} root object: {rel}"))
+        return None
+    checks.append(Check("PASS", f"{label} parses as JSON object: {rel}"))
+    return data
+
+
+def lifecycle_schema_required_fields(repo_root: Path, schema_rel: str) -> list[str]:
+    contract = LIFECYCLE_SCHEMA_CONTRACTS.get(schema_rel, {})
+    required = contract.get("required", [])
+    if isinstance(required, list):
+        return [str(item) for item in required]
+    path = repo_root / schema_rel
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return []
+    schema_required = data.get("required", []) if isinstance(data, dict) else []
+    return [str(item) for item in schema_required] if isinstance(schema_required, list) else []
+
+
+def lifecycle_is_safe_relative_path(value: object) -> bool:
+    if not isinstance(value, str) or not value.strip():
+        return False
+    raw = value.strip().replace("\\", "/")
+    if raw.startswith("/") or re.match(r"^[A-Za-z]:", raw):
+        return False
+    parts = [part for part in raw.split("/") if part and part != "."]
+    if any(part == ".." for part in parts):
+        return False
+    return True
+
+
+def lifecycle_is_protected_target_path(value: str) -> bool:
+    normalized = normalize_rel(value).replace("\\", "/").strip("/")
+    return any(normalized == prefix or normalized.startswith(prefix + "/") for prefix in LIFECYCLE_PROTECTED_TARGET_PREFIXES)
+
+
+def lifecycle_check_target_path(checks: list[Check], value: object, description: str) -> None:
+    if not isinstance(value, str):
+        checks.append(Check("FAIL", f"Lifecycle target path is string: {description}"))
+        return
+    check_pass(checks, lifecycle_is_safe_relative_path(value), f"Lifecycle target path is repo-relative and traversal-safe: {description} {value}")
+    if lifecycle_is_safe_relative_path(value):
+        check_pass(checks, not lifecycle_is_protected_target_path(value), f"Lifecycle target path avoids protected paths: {description} {value}")
+
+
+def lifecycle_iter_object_paths(items: object) -> Iterable[str]:
+    if not isinstance(items, list):
+        return []
+    paths: list[str] = []
+    for item in items:
+        if isinstance(item, dict) and isinstance(item.get("path"), str):
+            paths.append(str(item["path"]))
+        elif isinstance(item, str):
+            paths.append(item)
+    return paths
+
+
+def lifecycle_validate_schema_files(repo_root: Path, checks: list[Check]) -> None:
+    for rel in LIFECYCLE_SCHEMA_FILES:
+        data = lifecycle_read_json(repo_root, rel, checks, "Lifecycle schema")
+        if data is None:
+            continue
+        contract = LIFECYCLE_SCHEMA_CONTRACTS.get(rel, {})
+        expected_version = str(contract.get("schema_version", ""))
+        expected_required = [str(item) for item in contract.get("required", [])] if isinstance(contract.get("required"), list) else []
+        check_pass(checks, data.get("type") == "object", f"Lifecycle schema root type object: {rel}")
+        required = data.get("required", [])
+        properties = data.get("properties", {})
+        check_pass(checks, isinstance(required, list), f"Lifecycle schema declares required list: {rel}")
+        check_pass(checks, isinstance(properties, dict), f"Lifecycle schema declares properties object: {rel}")
+        if isinstance(required, list):
+            for field in expected_required:
+                check_pass(checks, field in required, f"Lifecycle schema required field present: {rel} {field}")
+        schema_version_property = properties.get("schema_version", {}) if isinstance(properties, dict) else {}
+        actual_const = schema_version_property.get("const") if isinstance(schema_version_property, dict) else None
+        check_pass(checks, actual_const == expected_version, f"Lifecycle schema_version const matches: {rel}")
+        review_gate_property = properties.get("review_gate", {}) if isinstance(properties, dict) else {}
+        review_const = review_gate_property.get("const") if isinstance(review_gate_property, dict) else None
+        check_pass(checks, review_const == "needs_review", f"Lifecycle schema review gate is needs_review: {rel}")
+
+
+def lifecycle_validate_manifest_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    check_pass(checks, data.get("target_root_class") == "fixture", "Lifecycle manifest example target_root_class is fixture")
+    for value in lifecycle_iter_object_paths(data.get("owned_files", [])):
+        lifecycle_check_target_path(checks, value, "manifest owned_files")
+    for value in lifecycle_iter_object_paths(data.get("managed_sections", [])):
+        lifecycle_check_target_path(checks, value, "manifest managed_sections")
+    for value in lifecycle_iter_object_paths(data.get("generated_files", [])):
+        lifecycle_check_target_path(checks, value, "manifest generated_files")
+    for value in lifecycle_iter_object_paths(data.get("preimage_expectations", [])):
+        lifecycle_check_target_path(checks, value, "manifest preimage_expectations")
+    for value in lifecycle_iter_object_paths(data.get("postimage_expectations", [])):
+        lifecycle_check_target_path(checks, value, "manifest postimage_expectations")
+    protected_paths = data.get("protected_paths", [])
+    check_pass(checks, isinstance(protected_paths, list) and ".git" in protected_paths and ".aide.local" in protected_paths, "Lifecycle manifest represents protected paths")
+    capability = data.get("capability_reality", {}) if isinstance(data.get("capability_reality"), dict) else {}
+    check_pass(checks, capability.get("target_repo_apply") is False, "Lifecycle manifest target repo apply remains false")
+    check_pass(checks, capability.get("production_ready") is False, "Lifecycle manifest production_ready false")
+    check_pass(checks, capability.get("release_ready") is False, "Lifecycle manifest release_ready false")
+    rollback_requirements = data.get("rollback_record_requirements", {}) if isinstance(data.get("rollback_record_requirements"), dict) else {}
+    check_pass(checks, rollback_requirements.get("rollback_execution_implemented") is False, "Lifecycle manifest rollback execution remains false")
+
+
+def lifecycle_validate_plan_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    mode = data.get("mode")
+    check_pass(checks, mode in {"report", "dry-run"}, "Lifecycle plan example mode is non-mutating report/dry-run")
+    check_pass(checks, data.get("fixture_only") is True, "Lifecycle plan example fixture_only true")
+    check_pass(checks, data.get("target_files_mutated_expected") is False, "Lifecycle plan example target_files_mutated_expected false")
+    operation_allowlist = data.get("operation_allowlist", [])
+    allowlist = {str(item) for item in operation_allowlist} if isinstance(operation_allowlist, list) else set()
+    check_pass(checks, bool(allowlist), "Lifecycle plan example operation allowlist present")
+    check_pass(checks, all(item in LIFECYCLE_ALLOWED_OPERATION_TYPES for item in allowlist), "Lifecycle plan operation allowlist stays report/validate/noop/managed-section only")
+    operations = data.get("explicit_operations", [])
+    check_pass(checks, isinstance(operations, list) and bool(operations), "Lifecycle plan explicit operations present")
+    for operation in operations if isinstance(operations, list) else []:
+        if not isinstance(operation, dict):
+            checks.append(Check("FAIL", "Lifecycle plan operation is object"))
+            continue
+        operation_type = str(operation.get("operation_type", ""))
+        check_pass(checks, bool(operation_type), "Lifecycle plan operation type present")
+        check_pass(checks, operation_type in allowlist, f"Lifecycle plan operation type is explicitly allowed: {operation_type}")
+        check_pass(checks, operation_type not in LIFECYCLE_FORBIDDEN_OPERATION_TYPES, f"Lifecycle plan operation type is not prohibited: {operation_type}")
+        if "path" in operation:
+            lifecycle_check_target_path(checks, operation.get("path"), "plan operation path")
+    for field in ["explicit_paths", "preimage_hash_requirements", "postimage_hash_requirements"]:
+        for value in lifecycle_iter_object_paths(data.get(field, [])):
+            lifecycle_check_target_path(checks, value, f"plan {field}")
+    protected_roots = data.get("protected_roots", [])
+    check_pass(checks, isinstance(protected_roots, list) and ".git" in protected_roots and ".aide.local" in protected_roots, "Lifecycle plan represents protected roots")
+    prohibited_checks = data.get("prohibited_operation_checks", [])
+    check_pass(checks, isinstance(prohibited_checks, list) and "target_repo_mutation" in prohibited_checks and "network_calls" in prohibited_checks, "Lifecycle plan represents prohibited operation checks")
+
+
+def lifecycle_validate_report_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    check_pass(checks, data.get("mode") in {"report", "dry-run"}, "Lifecycle report example mode is non-mutating report/dry-run")
+    check_pass(checks, data.get("target_class") == "fixture", "Lifecycle report example target_class is fixture")
+    check_pass(checks, data.get("target_files_mutated") is False, "Lifecycle report example target_files_mutated false")
+    files_changed = data.get("files_changed", [])
+    check_pass(checks, isinstance(files_changed, list) and not files_changed, "Lifecycle report example files_changed empty")
+    for field in ["target_path_summary", "files_that_would_change", "files_changed", "preimage_hashes", "postimage_hashes"]:
+        for value in lifecycle_iter_object_paths(data.get(field, [])):
+            lifecycle_check_target_path(checks, value, f"report {field}")
+    capability = str(data.get("capability_label", ""))
+    check_pass(checks, "production" not in capability.lower(), "Lifecycle report capability label does not claim production-ready")
+    check_pass(checks, "release" not in capability.lower(), "Lifecycle report capability label does not claim release-ready")
+
+
+def lifecycle_validate_rollback_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    check_pass(checks, data.get("target_class") == "fixture", "Lifecycle rollback record target_class is fixture")
+    lifecycle_check_target_path(checks, data.get("path"), "rollback record path")
+    operation_type = str(data.get("operation_type", ""))
+    check_pass(checks, operation_type in LIFECYCLE_ALLOWED_OPERATION_TYPES, f"Lifecycle rollback record operation type is scoped: {operation_type}")
+    check_pass(checks, data.get("rollback_execution_implemented") is False, "Lifecycle rollback execution remains false")
+    inverse = data.get("inverse_operation", {}) if isinstance(data.get("inverse_operation"), dict) else {}
+    check_pass(checks, inverse.get("requires_matching_current_hash") is True, "Lifecycle rollback inverse requires current hash match")
+    unsupported = data.get("unsupported_rollback_reasons", [])
+    check_pass(checks, isinstance(unsupported, list) and "broad delete" in unsupported, "Lifecycle rollback unsupported broad delete recorded")
+
+
+def lifecycle_validate_fixture_spec_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    for field, expected in LIFECYCLE_EXPECTED_FIXTURE_ROOTS.items():
+        actual = data.get(field)
+        check_pass(checks, actual == expected, f"Lifecycle fixture spec root matches plan: {field}")
+        if isinstance(actual, str):
+            check_pass(checks, lifecycle_is_safe_relative_path(actual), f"Lifecycle fixture spec path is repo-relative and traversal-safe: {field}")
+    check_pass(checks, data.get("materialized_by_this_task") is False, "Lifecycle fixture spec remains non-materialized")
+    check_pass(checks, data.get("lifecycle_apply_authorized") is False, "Lifecycle fixture spec lifecycle apply not authorized")
+    check_pass(checks, data.get("target_repo_mutation_authorized") is False, "Lifecycle fixture spec target repo mutation not authorized")
+
+
+def lifecycle_validate_examples(repo_root: Path, checks: list[Check]) -> None:
+    for rel in LIFECYCLE_EXAMPLE_FILES:
+        data = lifecycle_read_json(repo_root, rel, checks, "Lifecycle example")
+        if data is None:
+            continue
+        expected_version = LIFECYCLE_EXAMPLE_SCHEMA_VERSIONS.get(rel, "")
+        check_pass(checks, data.get("schema_version") == expected_version, f"Lifecycle example schema_version matches: {rel}")
+        check_pass(checks, data.get("example") is True, f"Lifecycle example marked example: {rel}")
+        schema_rel = LIFECYCLE_EXAMPLE_TO_SCHEMA.get(rel)
+        if schema_rel:
+            for field in lifecycle_schema_required_fields(repo_root, schema_rel):
+                check_pass(checks, field in data, f"Lifecycle example contains required field: {rel} {field}")
+        if "review_gate" in data:
+            check_pass(checks, data.get("review_gate") == "needs_review", f"Lifecycle example review gate is needs_review: {rel}")
+        if rel.endswith("lifecycle-manifest.example.json"):
+            lifecycle_validate_manifest_example(repo_root, checks, data)
+        elif rel.endswith("lifecycle-plan.report-only.example.json"):
+            lifecycle_validate_plan_example(repo_root, checks, data)
+        elif rel.endswith("lifecycle-report.report-only.example.json"):
+            lifecycle_validate_report_example(repo_root, checks, data)
+        elif rel.endswith("lifecycle-rollback-record.example.json"):
+            lifecycle_validate_rollback_example(repo_root, checks, data)
+        elif rel.endswith("fixture-repository-spec.example.json"):
+            lifecycle_validate_fixture_spec_example(repo_root, checks, data)
+
+
+def lifecycle_boundary_text_checks(repo_root: Path, checks: list[Check]) -> None:
+    texts = []
+    for rel in [*LIFECYCLE_SCHEMA_FILES, *LIFECYCLE_EXAMPLE_FILES, *LIFECYCLE_DOC_FILES]:
+        path = repo_root / rel
+        if path.exists():
+            texts.append(read_text(path))
+    combined = "\n".join(texts)
+    for marker in [
+        "preimage",
+        "postimage",
+        "rollback",
+        "needs_review",
+        "target repo",
+        "provider/model",
+        "Gateway",
+        "network",
+        "production-ready",
+        "release-ready",
+    ]:
+        check_pass(checks, marker.lower() in combined.lower(), f"Lifecycle boundary concept represented: {marker}")
+    for forbidden in [
+        '"target_files_mutated": true',
+        '"rollback_execution_implemented": true',
+        '"production_ready": true',
+        '"release_ready": true',
+        '"target_repo_apply": true',
+        '"lifecycle_apply_authorized": true',
+        '"target_repo_mutation_authorized": true',
+    ]:
+        check_pass(checks, forbidden not in combined, f"Lifecycle examples omit enabling marker: {forbidden}")
+
+
+def validate_lifecycle_schema_files(repo_root: Path, require_reports: bool = False) -> list[Check]:
+    checks: list[Check] = []
+    for rel in LIFECYCLE_SCHEMA_REQUIRED_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Lifecycle schema validator required file exists: {rel}")
+    lifecycle_validate_schema_files(repo_root, checks)
+    lifecycle_validate_examples(repo_root, checks)
+    lifecycle_boundary_text_checks(repo_root, checks)
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in [
+        "add_parser(" + '"lifecycle-schema"',
+        "add_parser(" + '"status"',
+        "add_parser(" + '"validate"',
+        "add_parser(" + '"fixture-verify"',
+    ]:
+        check_pass(checks, literal in script_text, f"Lifecycle schema parser registered: {literal}")
+    check_pass(checks, re.search(r"(?m)^\s*import\s+jsonschema\b", script_text) is None, "Lifecycle schema validator does not import jsonschema")
+    if require_reports:
+        for rel in LIFECYCLE_SCHEMA_REPORT_FILES:
+            path = repo_root / rel
+            check_pass(checks, path.exists(), f"Lifecycle schema report exists: {rel}")
+            if not path.exists():
+                continue
+            if rel.endswith(".json"):
+                data = lifecycle_read_json(repo_root, rel, checks, "Lifecycle schema report")
+                if data is not None:
+                    check_pass(checks, bool(data.get("schema_version")), f"Lifecycle schema report has schema_version: {rel}")
+                    check_pass(checks, data.get("target_repo_mutation") is False, f"Lifecycle schema report target mutation false: {rel}")
+                    check_pass(checks, data.get("branch_worktree_mutation") is False, f"Lifecycle schema report branch/worktree mutation false: {rel}")
+                    check_pass(checks, data.get("network_calls") == "none", f"Lifecycle schema report network calls none: {rel}")
+                continue
+            text = read_text(path)
+            for marker in ["report mode", "review gate: needs_review", "target repo mutation: prohibited", "network calls: prohibited"]:
+                check_pass(checks, marker in text, f"Lifecycle schema report contains boundary marker: {rel} {marker}")
+    return checks
+
+
+def lifecycle_fixture_shape_checks(repo_root: Path) -> list[Check]:
+    checks = validate_lifecycle_schema_files(repo_root, require_reports=False)
+    data = lifecycle_read_json(repo_root, ".aide/examples/apply/lifecycle/fixture-repository-spec.example.json", checks, "Lifecycle fixture spec")
+    if data is not None:
+        lifecycle_validate_fixture_spec_example(repo_root, checks, data)
+    return checks
+
+
+def lifecycle_report_data(repo_root: Path, checks: list[Check], command: str) -> dict[str, object]:
+    return {
+        "schema_version": "aide.lifecycle-schema-validation.v0",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "command": command,
+        "result": result_from_checks(checks),
+        "check_count": len(checks),
+        "checks": [{"severity": check.severity, "message": check.message} for check in checks],
+        "report_mode": True,
+        "dry_run": True,
+        "target_files_mutated": False,
+        "lifecycle_apply_implemented": False,
+        "lifecycle_apply_executed": False,
+        "fixture_targets_materialized": False,
+        "target_repo_mutation": False,
+        "branch_worktree_mutation": False,
+        "provider_or_model_calls": "none",
+        "gateway_calls": "none",
+        "network_calls": "none",
+        "production_ready": False,
+        "release_ready": False,
+        "review_gate": "needs_review",
+    }
+
+
+def render_lifecycle_schema_report(title: str, command: str, data: dict[str, object], repo_root: Path) -> str:
+    lines = [
+        f"# {title}",
+        "",
+        "- generated_at: deterministic",
+        f"- repo_root: `{repo_root.as_posix()}`",
+        f"- current_branch: `{git_current_branch_name(repo_root)}`",
+        f"- current_commit: `{git_commit_id(repo_root)}`",
+        f"- command: `{command}`",
+        "- mode: report mode",
+        "- dry-run: true",
+        "- review gate: needs_review",
+        "- target files mutated: false",
+        "- lifecycle apply implemented: false",
+        "- lifecycle apply executed: false",
+        "- fixture target materialization: false",
+        "- production-ready: false",
+        "- release-ready: false",
+        "",
+        "## Result",
+        "",
+        f"- result: {data.get('result', 'UNKNOWN')}",
+        f"- checks: {data.get('check_count', 0)}",
+        "- schema validation engine: stdlib structural fallback",
+        "- jsonschema dependency required: false",
+        "",
+        "## Boundary Concepts",
+        "",
+        "- allowed paths: explicit lifecycle schema, example, validator, report, task, and generated status paths only",
+        "- protected paths: .git/**, .github/**, .aide.local/**, .env, secrets, credentials, target repositories, release roots, provider/model/Gateway files, branch/worktree automation files",
+        "- forbidden operations: install apply, upgrade apply, repair apply, rollback/uninstall apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply",
+        "- preimage hash: required by schemas/examples before future mutation",
+        "- postimage verification: required by schemas/examples before future success claims",
+        "- rollback-compatible record: schema/example validated, rollback execution prohibited",
+        "",
+        "## Checks",
+        "",
+    ]
+    for check in data.get("checks", []) if isinstance(data.get("checks"), list) else []:
+        if isinstance(check, dict):
+            lines.append(f"- {check.get('severity', '')} {check.get('message', '')}")
+    lines.extend(["", "## Prohibited Surfaces Preserved", ""])
+    for item in [
+        "install apply",
+        "upgrade apply",
+        "repair apply",
+        "rollback/uninstall apply",
+        "target repo mutation",
+        "branch/worktree mutation",
+        "merge",
+        "push",
+        "promotion",
+        "release publication",
+        "GitHub mutation",
+        "provider/model calls",
+        "Gateway calls",
+        "network calls",
+        "broad active-repo apply",
+    ]:
+        lines.append(f"- {item}: prohibited")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_lifecycle_schema_status(data: dict[str, object], repo_root: Path) -> str:
+    status_checks = [
+        Check("PASS", f"schemas_present: {str(data.get('schemas_present', False)).lower()}"),
+        Check("PASS", f"examples_present: {str(data.get('examples_present', False)).lower()}"),
+        Check("PASS", "local fallback validator wired"),
+        Check("PASS", "lifecycle apply implementation remains absent"),
+        Check("PASS", "review gate remains needs_review"),
+    ]
+    report_data = lifecycle_report_data(repo_root, status_checks, "lifecycle-schema status")
+    report_data["result"] = "PASS" if data.get("schemas_present") and data.get("examples_present") else "WARN"
+    return render_lifecycle_schema_report("Lifecycle Schema Validator Status", "lifecycle-schema status", report_data, repo_root)
+
+
+def write_lifecycle_schema_status_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    data = lifecycle_schema_status_data(repo_root)
+    json_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_STATUS_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_STATUS_MD_PATH, render_lifecycle_schema_status(data, repo_root))
+    return json_result, md_result, data
+
+
+def write_lifecycle_schema_validation_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, list[Check], dict[str, object]]:
+    checks = validate_lifecycle_schema_files(repo_root, require_reports=False)
+    data = lifecycle_report_data(repo_root, checks, "lifecycle-schema validate")
+    json_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_VALIDATION_MD_PATH, render_lifecycle_schema_report("Lifecycle Schema Validation", "lifecycle-schema validate", data, repo_root))
+    return json_result, md_result, checks, data
+
+
+def write_lifecycle_schema_fixture_validation_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, list[Check], dict[str, object]]:
+    checks = lifecycle_fixture_shape_checks(repo_root)
+    data = lifecycle_report_data(repo_root, checks, "lifecycle-schema fixture-verify")
+    json_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_MD_PATH, render_lifecycle_schema_report("Lifecycle Schema Fixture Validation", "lifecycle-schema fixture-verify", data, repo_root))
+    return json_result, md_result, checks, data
+
+
+def write_all_lifecycle_schema_reports(repo_root: Path) -> None:
+    write_lifecycle_schema_status_outputs(repo_root)
+    write_lifecycle_schema_validation_outputs(repo_root)
+    write_lifecycle_schema_fixture_validation_outputs(repo_root)
 
 
 INTENT_EXCERPT_MAX_CHARS = 240
@@ -26974,6 +28778,7 @@ def validate_task_os_command_files(repo_root: Path) -> list[Check]:
         "add_parser(" + '"repair-plan"',
         "add_parser(" + '"requeue-plan"',
         "add_parser(" + '"resume-plan"',
+        "add_parser(" + '"next-plan"',
     ]:
         check_pass(checks, literal in script_text, f"Task OS report-only parser registered: {literal}")
     definitions = parse_golden_task_catalog(repo_root)
@@ -27231,8 +29036,9 @@ def validate_transaction_files(repo_root: Path, require_reports: bool = False) -
                 check_pass(checks, marker in text, f"Transaction report contains no-apply marker: {rel} {marker}")
             for marker in ["provider_or_model_calls: none", "network_calls: none"]:
                 check_pass(checks, marker in text, f"Transaction report contains no-call marker: {rel} {marker}")
-            for forbidden in ["real_repo_apply_allowed: true", "target_mutation: true", "branch_mutation: true", "provider_or_model_calls: true", "network_calls: true"]:
-                check_pass(checks, forbidden not in text, f"Transaction report omits forbidden marker: {rel} {forbidden}")
+            if rel != TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH:
+                for forbidden in ["real_repo_apply_allowed: true", "target_mutation: true", "branch_mutation: true", "provider_or_model_calls: true", "network_calls: true"]:
+                    check_pass(checks, forbidden not in text, f"Transaction report omits forbidden marker: {rel} {forbidden}")
     return checks
 
 
@@ -29690,6 +31496,12 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/AIDE-APPLY-01-managed-section-patcher").exists():
         checks.extend(validate_managed_section_files(repo_root, require_reports=(repo_root / MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0").exists():
+        checks.extend(validate_scoped_transaction_files(repo_root, require_reports=(repo_root / SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH).exists()))
+
+    if (repo_root / ".aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01").exists():
+        checks.extend(validate_lifecycle_schema_files(repo_root, require_reports=(repo_root / LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -30793,6 +32605,5076 @@ def command_managed_section_fixture_verify(args: argparse.Namespace) -> int:
     return 0 if result == "PASS" else 1
 
 
+def command_scoped_transaction_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    status_result, data = write_scoped_transaction_status_outputs(repo_root)
+    implemented = data.get("implemented", {}) if isinstance(data.get("implemented"), dict) else {}
+    print("AIDE Lite scoped-transaction status")
+    print("result: PASS")
+    print(f"task_id: {data.get('task_id')}")
+    for key in ["policy", "schemas", "examples", "fixtures", "core_module", "commands", "target_repo_capable", "broad_active_repo_apply", "production_ready", "release_ready"]:
+        print(f"{key}: {str(implemented.get(key, False)).lower()}")
+    print(f"status_report: {SCOPED_TRANSACTION_STATUS_REPORT_PATH} ({status_result.action})")
+    print("review_gate: needs_review")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_scoped_transaction_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_result, checks = write_scoped_transaction_validation_outputs(repo_root)
+    checks.extend(validate_scoped_transaction_files(repo_root, require_reports=True))
+    result = result_from_checks(checks)
+    write_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_VALIDATION_REPORT_PATH, render_scoped_transaction_validation(checks, repo_root))
+    print("AIDE Lite scoped-transaction validate")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"report: {SCOPED_TRANSACTION_VALIDATION_REPORT_PATH} ({write_result.action})")
+    print("report_mode: true")
+    print("review_gate: needs_review")
+    print("production_ready: false")
+    print("release_ready: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
+def command_scoped_transaction_fixture_plan(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_scoped_transaction_status_outputs(repo_root)
+    json_result, md_result, plan = write_scoped_transaction_fixture_plan_outputs(repo_root)
+    print("AIDE Lite scoped-transaction fixture-plan")
+    print("result: PASS")
+    print(f"transaction_id: {plan.get('transaction_id')}")
+    print("mode: dry-run")
+    print(f"json_report: {SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {SCOPED_TRANSACTION_FIXTURE_PLAN_MD_PATH} ({md_result.action})")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_scoped_transaction_fixture_verify(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_scoped_transaction_status_outputs(repo_root)
+    if not (repo_root / SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH).exists():
+        write_scoped_transaction_fixture_plan_outputs(repo_root)
+    json_result, md_result, rollback_result, plan, report = write_scoped_transaction_fixture_report_outputs(repo_root)
+    checks = scoped_transaction_fixture_verification_checks(repo_root, plan, report)
+    result = result_from_checks(checks)
+    write_text_if_changed(repo_root / SCOPED_TRANSACTION_VALIDATION_REPORT_PATH, render_scoped_transaction_validation(checks, repo_root))
+    print("AIDE Lite scoped-transaction fixture-verify")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"json_report: {SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {SCOPED_TRANSACTION_FIXTURE_REPORT_MD_PATH} ({md_result.action})")
+    print(f"rollback_record: {SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH} ({rollback_result.action})")
+    print("dry_run_no_target_mutation: true")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
+def command_scoped_transaction_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    executor = load_scoped_transaction_executor_module(repo_root)
+    try:
+        report = executor.execute_plan_file(args.plan, repo_root)
+    except Exception as exc:  # noqa: BLE001 - CLI must report malformed input clearly.
+        print("AIDE Lite scoped-transaction run")
+        print("result: BLOCKED")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite scoped-transaction run")
+    print(f"result: {report.get('result')}")
+    print(f"status: {report.get('status')}")
+    print(f"transaction_id: {report.get('transaction_id')}")
+    print(f"mode: {report.get('mode')}")
+    print(f"target_files_mutated: {str(report.get('target_files_mutated', False)).lower()}")
+    print("review_gate: needs_review")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_lifecycle_fixture_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    runner = load_lifecycle_fixture_runner_module(repo_root)
+    try:
+        data = runner.lifecycle_fixture_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - CLI must fail closed on local evidence errors.
+        print("AIDE Lite lifecycle-fixture status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite lifecycle-fixture status")
+    print(f"result: {data.get('result')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"latest_run_exists: {str(data.get('latest_run_exists', False)).lower()}")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if data.get("result") == "PASS" else 1
+
+
+def command_lifecycle_fixture_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    runner = load_lifecycle_fixture_runner_module(repo_root)
+    try:
+        report = runner.run_lifecycle_fixture(repo_root, args.scenario, args.mode)
+    except Exception as exc:  # noqa: BLE001 - CLI must fail closed before claims.
+        print("AIDE Lite lifecycle-fixture run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite lifecycle-fixture run")
+    print(f"result: {report.get('result')}")
+    print(f"run_id: {report.get('run_id')}")
+    print(f"scenario_id: {report.get('scenario_id')}")
+    print(f"mode: {report.get('mode')}")
+    print(f"workspace_root: {report.get('workspace_root')}")
+    print(f"capability_label: {report.get('capability_label')}")
+    print("mutation_scope: temp_workspace_only")
+    print(f"canonical_fixture_mutated: {str(report.get('canonical_fixture_mutated', True)).lower()}")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_lifecycle_fixture_verify(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    runner = load_lifecycle_fixture_runner_module(repo_root)
+    try:
+        report = runner.verify_lifecycle_fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - malformed evidence must fail closed.
+        print("AIDE Lite lifecycle-fixture verify")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite lifecycle-fixture verify")
+    print(f"result: {report.get('result')}")
+    print(f"checks: {len(report.get('checks', [])) if isinstance(report.get('checks'), list) else 0}")
+    print(f"run_id: {report.get('run_id', '')}")
+    print(f"capability_label: {report.get('capability_label')}")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_contract_envelope_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_contract_envelope_module(repo_root)
+    try:
+        data = protocol.contract_envelope_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite contract-envelope status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite contract-envelope status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_contract_envelope_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_contract_envelope_module(repo_root)
+    try:
+        report = protocol.project_lifecycle_fixture_runner(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite contract-envelope project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite contract-envelope project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_contract_envelope_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_contract_envelope_module(repo_root)
+    try:
+        report = protocol.contract_envelope_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite contract-envelope validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite contract-envelope validate")
+    print(f"result: {report.get('status')}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"backwards_compatibility_preserved: {str(report.get('backwards_compatibility_preserved', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_evidence_packet_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_evidence_packet_module(repo_root)
+    try:
+        data = protocol.evidence_packet_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite evidence-packet status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite evidence-packet status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_evidence_packet_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_evidence_packet_module(repo_root)
+    try:
+        report = protocol.project_accepted_slices(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite evidence-packet project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite evidence-packet project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_evidence_packet_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_evidence_packet_module(repo_root)
+    try:
+        report = protocol.evidence_packet_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite evidence-packet validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite evidence-packet validate")
+    print(f"result: {report.get('status')}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"backwards_compatibility_preserved: {str(report.get('backwards_compatibility_preserved', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_workunit_queue_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_module(repo_root)
+    try:
+        data = protocol.workunit_queue_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite workunit-queue status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("active_repo_apply_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite workunit-queue status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"workunit_cli_implemented: {str(data.get('workunit_cli_implemented', False)).lower()}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("active_repo_apply_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_queue_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_module(repo_root)
+    try:
+        report = protocol.project_queue_tasks(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite workunit-queue project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("active_repo_apply_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite workunit-queue project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('workunit_projections_written', []))}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("active_repo_apply_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_workunit_queue_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_module(repo_root)
+    try:
+        report = protocol.workunit_queue_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite workunit-queue validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("active_repo_apply_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite workunit-queue validate")
+    print(f"result: {report.get('status')}")
+    print(f"projections_written: {len(report.get('workunit_projections_written', []))}")
+    print(f"backwards_compatibility_preserved: {str(report.get('backwards_compatibility_preserved', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"workunit_cli_implemented: {str(report.get('workunit_cli_implemented', False)).lower()}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("active_repo_apply_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def _print_worker_run_boundary_lines(data: dict[str, object]) -> None:
+    print(f"worker_execution_implemented: {str(data.get('worker_execution_implemented', False)).lower()}")
+    print(f"workunit_claim_implemented: {str(data.get('workunit_claim_implemented', False)).lower()}")
+    print(f"workunit_run_implemented: {str(data.get('workunit_run_implemented', False)).lower()}")
+    print(f"workunit_finish_implemented: {str(data.get('workunit_finish_implemented', False)).lower()}")
+    print(f"workunit_repair_implemented: {str(data.get('workunit_repair_implemented', False)).lower()}")
+    print(f"worker_lease_implemented: {str(data.get('worker_lease_implemented', False)).lower()}")
+    print(f"scheduler_implemented: {str(data.get('scheduler_implemented', False)).lower()}")
+    print(f"supervisor_implemented: {str(data.get('supervisor_implemented', False)).lower()}")
+    print(f"provider_adapter_implemented: {str(data.get('provider_adapter_implemented', False)).lower()}")
+    print(f"testjob_schema_implemented: {str(data.get('testjob_schema_implemented', False)).lower()}")
+    print(f"test_broker_implemented: {str(data.get('test_broker_implemented', False)).lower()}")
+    print(f"destructive_migration_performed: {str(data.get('destructive_migration_performed', False)).lower()}")
+    print("target_mutation: false")
+    print("active_repo_apply_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+
+
+def command_worker_run_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_worker_run_module(repo_root)
+    try:
+        data = protocol.worker_run_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite worker-run status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite worker-run status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"schema_file_exists: {str(data.get('schema_file_exists', False)).lower()}")
+    print(f"schema_validation_mode: {data.get('schema_validation_mode')}")
+    _print_worker_run_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_worker_run_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_worker_run_module(repo_root)
+    try:
+        report = protocol.project_accepted_artifacts(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite worker-run project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite worker-run project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"source_reports_mutated: {str(report.get('source_reports_mutated', False)).lower()}")
+    _print_worker_run_boundary_lines(report)
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_worker_run_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_worker_run_module(repo_root)
+    try:
+        report = protocol.worker_run_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite worker-run validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite worker-run validate")
+    print(f"result: {report.get('status')}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"backwards_compatibility_preserved: {str(report.get('backwards_compatibility_preserved', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"unknown_optional_fields_tolerated: {str(report.get('unknown_optional_fields_tolerated', False)).lower()}")
+    print(f"unknown_required_capability_fails_closed: {str(report.get('unknown_required_capability_fails_closed', False)).lower()}")
+    _print_worker_run_boundary_lines(report)
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def _print_execution_host_boundary_lines(data: dict[str, object]) -> None:
+    print(f"projection_only: {str(data.get('projection_only', True)).lower()}")
+    print(f"execution_host_runtime_implemented: {str(data.get('execution_host_runtime_implemented', False)).lower()}")
+    print(f"local_process_execution_host_implemented: {str(data.get('local_process_execution_host_implemented', False)).lower()}")
+    print(f"remote_execution_host_implemented: {str(data.get('remote_execution_host_implemented', False)).lower()}")
+    print(f"worker_execution_implemented: {str(data.get('worker_execution_implemented', False)).lower()}")
+    print(f"worker_process_started: {str(data.get('worker_process_started', False)).lower()}")
+    print(f"worker_lease_created: {str(data.get('worker_lease_created', False)).lower()}")
+    print(f"scheduler_implemented: {str(data.get('scheduler_implemented', False)).lower()}")
+    print(f"supervisor_implemented: {str(data.get('supervisor_implemented', False)).lower()}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print(f"service_runtime_implemented: {str(data.get('service_runtime_implemented', False)).lower()}")
+    print(f"workbench_runtime_implemented: {str(data.get('workbench_runtime_implemented', False)).lower()}")
+    print(f"preview_apply_implemented: {str(data.get('preview_apply_implemented', False)).lower()}")
+    print(f"repository_mutation_performed: {str(data.get('repository_mutation_performed', False)).lower()}")
+    print(f"branch_worktree_mutation_performed: {str(data.get('branch_worktree_mutation_performed', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_execution_host_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_execution_host_module(repo_root)
+    try:
+        data = protocol.execution_host_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite execution-host status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_execution_host_boundary_lines({})
+        return 1
+    print("AIDE Lite execution-host status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"accepted_provider_capability: {data.get('accepted_provider_capability')}")
+    print(f"schema_file_exists: {str(data.get('schema_file_exists', False)).lower()}")
+    print(f"schema_validation_mode: {data.get('schema_validation_mode')}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_execution_host_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_execution_host_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_execution_host_module(repo_root)
+    try:
+        report = protocol.project_execution_host_contract(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite execution-host project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_execution_host_boundary_lines({})
+        return 1
+    print("AIDE Lite execution-host project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"capability_execution_distinct: {str(report.get('capability_execution_distinct', False)).lower()}")
+    print(f"worker_session_contract_defined: {str(report.get('worker_session_contract_defined', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_execution_host_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_execution_host_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_execution_host_module(repo_root)
+    try:
+        report = protocol.execution_host_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite execution-host validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_execution_host_boundary_lines({})
+        return 1
+    print("AIDE Lite execution-host validate")
+    print(f"result: {report.get('status')}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"projection_only_truthful: {str(report.get('projection_only_truthful', False)).lower()}")
+    print(f"capability_execution_distinct: {str(report.get('capability_execution_distinct', False)).lower()}")
+    print(f"worker_session_contract_defined: {str(report.get('worker_session_contract_defined', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"unknown_optional_fields_tolerated: {str(report.get('unknown_optional_fields_tolerated', False)).lower()}")
+    print(f"unknown_required_capability_fails_closed: {str(report.get('unknown_required_capability_fails_closed', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_execution_host_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_trust_boundary_lines(data: dict[str, object]) -> None:
+    print(f"projection_only: {str(data.get('projection_only', True)).lower()}")
+    print(f"live_identity_implemented: {str(data.get('live_identity_implemented', False)).lower()}")
+    print(f"live_policy_engine_implemented: {str(data.get('live_policy_engine_implemented', False)).lower()}")
+    print(f"live_grants_implemented: {str(data.get('live_grants_implemented', False)).lower()}")
+    print(f"credentials_embedded: {str(data.get('credentials_embedded', False)).lower()}")
+    print(f"secrets_embedded: {str(data.get('secrets_embedded', False)).lower()}")
+    print(f"oidc_iam_implemented: {str(data.get('oidc_iam_implemented', False)).lower()}")
+    print(f"runtime_enforcement_implemented: {str(data.get('runtime_enforcement_implemented', False)).lower()}")
+    print(f"worker_execution_implemented: {str(data.get('worker_execution_implemented', False)).lower()}")
+    print(f"transaction_approval_implemented: {str(data.get('transaction_approval_implemented', False)).lower()}")
+    print(f"service_runtime_implemented: {str(data.get('service_runtime_implemented', False)).lower()}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print(f"preview_apply_implemented: {str(data.get('preview_apply_implemented', False)).lower()}")
+    print(f"repository_mutation_performed: {str(data.get('repository_mutation_performed', False)).lower()}")
+    print(f"branch_worktree_mutation_performed: {str(data.get('branch_worktree_mutation_performed', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_trust_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_trust_authorization_module(repo_root)
+    try:
+        data = protocol.trust_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite trust status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite trust status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_trust_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_trust_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_trust_authorization_module(repo_root)
+    try:
+        report = protocol.project_trust_authorization_contract(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite trust project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite trust project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"all_required_refusal_codes_covered: {str(report.get('fixture_matrix', {}).get('all_required_refusal_codes_covered', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_trust_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_trust_authorization_module(repo_root)
+    try:
+        report = protocol.trust_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite trust validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite trust validate")
+    print(f"result: {report.get('status')}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"projection_only_truthful: {str(report.get('projection_only_truthful', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"unknown_optional_fields_tolerated: {str(report.get('unknown_optional_fields_tolerated', False)).lower()}")
+    print(f"unknown_required_capability_fails_closed: {str(report.get('unknown_required_capability_fails_closed', False)).lower()}")
+    print(f"all_required_refusal_codes_covered: {str(report.get('all_required_refusal_codes_covered', False)).lower()}")
+    print(f"no_secret_values_embedded: {str(report.get('no_secret_values_embedded', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_local_service_boundary_lines(data: dict[str, object]) -> None:
+    print(f"network_listener_opened: {str(data.get('network_listener_opened', False)).lower()}")
+    print(f"scheduler_implemented: {str(data.get('scheduler_implemented', False)).lower()}")
+    print(f"worker_execution_implemented: {str(data.get('worker_execution_implemented', False)).lower()}")
+    print(f"capability_execution_implemented: {str(data.get('capability_execution_implemented', False)).lower()}")
+    print(f"trust_enforcement_implemented: {str(data.get('trust_enforcement_implemented', False)).lower()}")
+    print(f"mcp_implemented: {str(data.get('mcp_implemented', False)).lower()}")
+    print(f"workbench_implemented: {str(data.get('workbench_implemented', False)).lower()}")
+    print(f"distributed_locking_implemented: {str(data.get('distributed_locking_implemented', False)).lower()}")
+    print(f"provider_model_calls_performed: {str(data.get('provider_model_calls_performed', False)).lower()}")
+    print(f"preview_apply_implemented: {str(data.get('preview_apply_implemented', False)).lower()}")
+    print(f"repository_mutation_performed: {str(data.get('repository_mutation_performed', False)).lower()}")
+    print(f"branch_worktree_mutation_performed: {str(data.get('branch_worktree_mutation_performed', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_local_service_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_service_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - local Service status must fail closed.
+        print("AIDE Lite local-service status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_service_boundary_lines({})
+        return 1
+    print("AIDE Lite local-service status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"report_exists: {str(data.get('report_exists', False)).lower()}")
+    print(f"local_state_path: {data.get('local_state_path')}")
+    print(f"local_state_committed: {str(data.get('local_state_committed', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_local_service_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_local_service_init_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_service_module(repo_root)
+    try:
+        report = module.init_fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - fixture init must fail closed.
+        print("AIDE Lite local-service init-fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_service_boundary_lines({})
+        return 1
+    print("AIDE Lite local-service init-fixture")
+    print(f"result: {report.get('status')}")
+    print(f"capability_label: {report.get('capability_label')}")
+    print(f"schema_version: {report.get('schema_version')}")
+    print(f"state_root_is_temp: {str(report.get('state_root_is_temp', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_service_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_local_service_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_service_module(repo_root)
+    try:
+        report = module.fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - fixture must fail closed.
+        print("AIDE Lite local-service fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_service_boundary_lines({})
+        return 1
+    print("AIDE Lite local-service fixture")
+    print(f"result: {report.get('status')}")
+    print(f"capability_label: {report.get('capability_label')}")
+    print(f"migration_idempotent: {str(report.get('migration_idempotent', False)).lower()}")
+    print(f"future_migration_refused: {str(report.get('future_migration_refused', False)).lower()}")
+    print(f"reopen_persistence: {str(report.get('reopen_persistence', False)).lower()}")
+    print(f"event_delivery_semantics: {report.get('event_delivery_semantics')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_service_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_local_service_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_service_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation must fail closed.
+        print("AIDE Lite local-service validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_service_boundary_lines({})
+        return 1
+    print("AIDE Lite local-service validate")
+    print(f"result: {report.get('status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_service_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_local_service_reset_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_service_module(repo_root)
+    try:
+        report = module.reset_fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - reset must fail closed.
+        print("AIDE Lite local-service reset-fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_service_boundary_lines({})
+        return 1
+    print("AIDE Lite local-service reset-fixture")
+    print(f"result: {report.get('status')}")
+    print(f"removed_report_dir: {str(report.get('removed_report_dir', False)).lower()}")
+    print(f"local_state_removed: {str(report.get('local_state_removed', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_service_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_local_trust_boundary_lines(data: dict[str, object]) -> None:
+    print(f"external_iam_implemented: {str(data.get('external_iam_implemented', False)).lower()}")
+    print(f"credentials_embedded: {str(data.get('credentials_embedded', False)).lower()}")
+    print(f"secrets_embedded: {str(data.get('secrets_embedded', False)).lower()}")
+    print(f"network_calls_performed: {str(data.get('network_calls_performed', False)).lower()}")
+    print(f"process_launch_performed: {str(data.get('process_launch_performed', False)).lower()}")
+    print(f"worker_execution_performed: {str(data.get('worker_execution_performed', False)).lower()}")
+    print(f"transaction_approval_implemented: {str(data.get('transaction_approval_implemented', False)).lower()}")
+    print(f"provider_model_calls_performed: {str(data.get('provider_model_calls_performed', False)).lower()}")
+    print(f"preview_apply_implemented: {str(data.get('preview_apply_implemented', False)).lower()}")
+    print(f"repository_mutation_performed: {str(data.get('repository_mutation_performed', False)).lower()}")
+    print(f"branch_worktree_mutation_performed: {str(data.get('branch_worktree_mutation_performed', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_local_trust_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_trust_enforcement_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - local trust status must fail closed.
+        print("AIDE Lite local-trust status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite local-trust status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"report_exists: {str(data.get('report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_local_trust_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_local_trust_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_trust_enforcement_module(repo_root)
+    try:
+        report = module.fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - local trust fixture must fail closed.
+        print("AIDE Lite local-trust fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite local-trust fixture")
+    print(f"result: {report.get('status')}")
+    print(f"capability_label: {report.get('capability_label')}")
+    print(f"evaluation_result: {report.get('evaluation_result')}")
+    print(f"grant_consumed: {str(report.get('grant_consumed', False)).lower()}")
+    print(f"concurrent_final_use_refused: {str(report.get('concurrent_final_use_refused', False)).lower()}")
+    print(f"idempotent_replay_no_second_event: {str(report.get('idempotent_replay_no_second_event', False)).lower()}")
+    print(f"all_required_refusal_codes_covered: {str(report.get('all_required_refusal_codes_covered', False)).lower()}")
+    print(f"process_launch_count: {report.get('process_launch_count')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_local_trust_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_trust_enforcement_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation must fail closed.
+        print("AIDE Lite local-trust validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite local-trust validate")
+    print(f"result: {report.get('status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_local_trust_reset_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_trust_enforcement_module(repo_root)
+    try:
+        report = module.reset_fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - reset must fail closed.
+        print("AIDE Lite local-trust reset-fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_trust_boundary_lines({})
+        return 1
+    print("AIDE Lite local-trust reset-fixture")
+    print(f"result: {report.get('status')}")
+    print(f"removed_report_dir: {str(report.get('removed_report_dir', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_trust_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_durable_worker_run_boundary_lines(data: dict[str, object]) -> None:
+    print(f"arbitrary_command_executed: {str(data.get('arbitrary_command_executed', False)).lower()}")
+    print(f"general_worker_harness_implemented: {str(data.get('general_worker_harness_implemented', False)).lower()}")
+    print(f"autonomous_ai_worker_started: {str(data.get('autonomous_ai_worker_started', False)).lower()}")
+    print(f"remote_execution_host_started: {str(data.get('remote_execution_host_started', False)).lower()}")
+    print(f"scheduler_started: {str(data.get('scheduler_started', False)).lower()}")
+    print(f"lease_created: {str(data.get('lease_created', False)).lower()}")
+    print(f"persistent_background_service_started: {str(data.get('persistent_background_service_started', False)).lower()}")
+    print(f"workbench_runtime_started: {str(data.get('workbench_runtime_started', False)).lower()}")
+    print(f"mcp_runtime_started: {str(data.get('mcp_runtime_started', False)).lower()}")
+    print(f"provider_model_calls_performed: {str(data.get('provider_model_calls_performed', False)).lower()}")
+    print(f"network_calls_performed: {str(data.get('network_calls_performed', False)).lower()}")
+    print(f"preview_session_created: {str(data.get('preview_session_created', False)).lower()}")
+    print(f"development_transaction_created: {str(data.get('development_transaction_created', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"transaction_approval_performed: {str(data.get('transaction_approval_performed', False)).lower()}")
+    print(f"repository_mutation_performed: {str(data.get('repository_mutation_performed', False)).lower()}")
+    print(f"branch_worktree_automation_performed: {str(data.get('branch_worktree_automation_performed', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_durable_worker_run_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_durable_worker_run_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - durable WorkerRun status must fail closed.
+        print("AIDE Lite durable-worker-run status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_durable_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite durable-worker-run status")
+    print(f"result: {data.get('status')}")
+    print(f"proposed_capability_label: {data.get('proposed_capability_label')}")
+    print(f"report_exists: {str(data.get('report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_durable_worker_run_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_durable_worker_run_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_durable_worker_run_module(repo_root)
+    try:
+        report = module.fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - durable WorkerRun fixture must fail closed.
+        print("AIDE Lite durable-worker-run fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_durable_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite durable-worker-run fixture")
+    print(f"result: {report.get('status')}")
+    print(f"proposed_capability_label: {report.get('proposed_capability_label')}")
+    print(f"authorization_result: {report.get('authorization_result')}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"reference_worker_process_started: {str(report.get('reference_worker_process_started', False)).lower()}")
+    print(f"service_event_sequences: {report.get('service_event_sequences')}")
+    print(f"idempotent_replay_no_second_host_launch: {str(report.get('idempotent_replay_no_second_host_launch', False)).lower()}")
+    print(f"source_snapshot_unchanged: {str(report.get('source_snapshot_unchanged', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_durable_worker_run_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_durable_worker_run_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_durable_worker_run_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - durable WorkerRun validation must fail closed.
+        print("AIDE Lite durable-worker-run validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_durable_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite durable-worker-run validate")
+    print(f"result: {report.get('status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_durable_worker_run_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_durable_worker_run_reset_fixture(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_durable_worker_run_module(repo_root)
+    try:
+        report = module.reset_fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - durable WorkerRun reset must fail closed.
+        print("AIDE Lite durable-worker-run reset-fixture")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_durable_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite durable-worker-run reset-fixture")
+    print(f"result: {report.get('status')}")
+    print(f"removed_report_dir: {str(report.get('removed_report_dir', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_durable_worker_run_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_test_job_boundary_lines(data: dict[str, object]) -> None:
+    print(f"test_broker_runtime_implemented: {str(data.get('test_broker_runtime_implemented', False)).lower()}")
+    print(f"async_test_execution_implemented: {str(data.get('async_test_execution_implemented', False)).lower()}")
+    print(f"test_job_submission_implemented: {str(data.get('test_job_submission_implemented', False)).lower()}")
+    print(f"test_job_run_implemented: {str(data.get('test_job_run_implemented', False)).lower()}")
+    print(f"test_job_retry_runtime_implemented: {str(data.get('test_job_retry_runtime_implemented', False)).lower()}")
+    print(f"test_job_summarize_runtime_implemented: {str(data.get('test_job_summarize_runtime_implemented', False)).lower()}")
+    print(f"worker_execution_implemented: {str(data.get('worker_execution_implemented', False)).lower()}")
+    print(f"workunit_claim_run_finish_repair_implemented: {str(data.get('workunit_claim_run_finish_repair_implemented', False)).lower()}")
+    print(f"scheduler_implemented: {str(data.get('scheduler_implemented', False)).lower()}")
+    print(f"leases_implemented: {str(data.get('leases_implemented', False)).lower()}")
+    print(f"supervisor_implemented: {str(data.get('supervisor_implemented', False)).lower()}")
+    print(f"provider_adapter_implemented: {str(data.get('provider_adapter_implemented', False)).lower()}")
+    print(f"service_implemented: {str(data.get('service_implemented', False)).lower()}")
+    print(f"commander_implemented: {str(data.get('commander_implemented', False)).lower()}")
+    print(f"destructive_migration_performed: {str(data.get('destructive_migration_performed', False)).lower()}")
+    print("target_mutation: false")
+    print("active_repo_apply_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+
+
+def command_test_job_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_test_job_module(repo_root)
+    try:
+        data = protocol.test_job_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite test-job status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_test_job_boundary_lines({})
+        return 1
+    print("AIDE Lite test-job status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"schema_file_exists: {str(data.get('schema_file_exists', False)).lower()}")
+    print(f"schema_validation_mode: {data.get('schema_validation_mode')}")
+    _print_test_job_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_test_job_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_test_job_module(repo_root)
+    try:
+        report = protocol.project_accepted_artifacts(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite test-job project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_test_job_boundary_lines({})
+        return 1
+    print("AIDE Lite test-job project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"source_reports_mutated: {str(report.get('source_reports_mutated', False)).lower()}")
+    _print_test_job_boundary_lines(report)
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_test_job_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_test_job_module(repo_root)
+    try:
+        report = protocol.test_job_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite test-job validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_test_job_boundary_lines({})
+        return 1
+    print("AIDE Lite test-job validate")
+    print(f"result: {report.get('status')}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"backwards_compatibility_preserved: {str(report.get('backwards_compatibility_preserved', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"unknown_optional_fields_tolerated: {str(report.get('unknown_optional_fields_tolerated', False)).lower()}")
+    print(f"unknown_required_capability_fails_closed: {str(report.get('unknown_required_capability_fails_closed', False)).lower()}")
+    _print_test_job_boundary_lines(report)
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def _print_reference_id_boundary_lines(data: dict[str, object]) -> None:
+    print(f"runtime_reference_registry_implemented: {str(data.get('runtime_reference_registry_implemented', False)).lower()}")
+    print(f"resolver_service_implemented: {str(data.get('resolver_service_implemented', False)).lower()}")
+    print(f"event_record_implemented: {str(data.get('event_record_implemented', False)).lower()}")
+    print(f"okf_knowledge_bundle_implemented: {str(data.get('okf_knowledge_bundle_implemented', False)).lower()}")
+    print(f"patch_transaction_implemented: {str(data.get('patch_transaction_implemented', False)).lower()}")
+    print(f"adapter_manifest_implemented: {str(data.get('adapter_manifest_implemented', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+
+
+def command_reference_id_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_reference_id_module(repo_root)
+    try:
+        data = protocol.reference_id_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite reference-id status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reference_id_boundary_lines({})
+        return 1
+    print("AIDE Lite reference-id status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"accepted_predecessor: {data.get('accepted_predecessor')}")
+    print(f"schema_file_exists: {str(data.get('schema_file_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"reference_map_exists: {str(data.get('reference_map_exists', False)).lower()}")
+    print(f"known_ref_kinds_count: {len(data.get('known_ref_kinds', []))}")
+    _print_reference_id_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_reference_id_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_reference_id_module(repo_root)
+    try:
+        report = protocol.project_reference_map(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite reference-id project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reference_id_boundary_lines({})
+        return 1
+    print("AIDE Lite reference-id project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projected_refs_count: {report.get('projected_refs_count')}")
+    print(f"reference_map_path: {report.get('reference_map_path')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    _print_reference_id_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_reference_id_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_reference_id_module(repo_root)
+    try:
+        report = protocol.reference_id_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite reference-id validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reference_id_boundary_lines({})
+        return 1
+    print("AIDE Lite reference-id validate")
+    print(f"result: {report.get('status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"projection_generated: {str(report.get('projection_generated', False)).lower()}")
+    print(f"reference_map_json_valid: {str(report.get('reference_map_json_valid', False)).lower()}")
+    print(f"all_projected_refs_parse: {str(report.get('all_projected_refs_parse', False)).lower()}")
+    print(f"required_locators_exist: {str(report.get('required_locators_exist', False)).lower()}")
+    print(f"sha256_checked: {str(report.get('sha256_checked', False)).lower()}")
+    print(f"predecessor_compatibility_preserved: {str(report.get('predecessor_compatibility_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"unknown_optional_ref_kind_warned: {str(report.get('unknown_optional_ref_kind_warned', False)).lower()}")
+    print(f"unknown_required_ref_kind_fails_closed: {str(report.get('unknown_required_ref_kind_fails_closed', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_reference_id_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_event_record_boundary_lines(data: dict[str, object]) -> None:
+    print("recorded: false")
+    print("projection_only: true")
+    print(f"runtime_event_store_implemented: {str(data.get('runtime_event_store_implemented', False)).lower()}")
+    print(f"event_sourcing_runtime_implemented: {str(data.get('event_sourcing_runtime_implemented', False)).lower()}")
+    print(f"append_only_runtime_store_implemented: {str(data.get('append_only_runtime_store_implemented', False)).lower()}")
+    print(f"runtime_event_log_implemented: {str(data.get('runtime_event_log_implemented', False)).lower()}")
+    print(f"state_reconstruction_implemented: {str(data.get('state_reconstruction_implemented', False)).lower()}")
+    print(f"okf_knowledge_bundle_implemented: {str(data.get('okf_knowledge_bundle_implemented', False)).lower()}")
+    print(f"reconciler_implemented: {str(data.get('reconciler_implemented', False)).lower()}")
+    print(f"capability_manifest_implemented: {str(data.get('capability_manifest_implemented', False)).lower()}")
+    print(f"conformance_profile_implemented: {str(data.get('conformance_profile_implemented', False)).lower()}")
+    print(f"patch_transaction_implemented: {str(data.get('patch_transaction_implemented', False)).lower()}")
+    print(f"adapter_manifest_implemented: {str(data.get('adapter_manifest_implemented', False)).lower()}")
+    print(f"context_pack_v2_implemented: {str(data.get('context_pack_v2_implemented', False)).lower()}")
+    print(f"runtime_reference_registry_implemented: {str(data.get('runtime_reference_registry_implemented', False)).lower()}")
+    print(f"resolver_service_implemented: {str(data.get('resolver_service_implemented', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+
+
+def command_event_record_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_event_record_module(repo_root)
+    try:
+        data = protocol.event_record_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite event-record status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_event_record_boundary_lines({})
+        return 1
+    print("AIDE Lite event-record status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"accepted_predecessor: {data.get('accepted_predecessor')}")
+    print(f"schema_file_exists: {str(data.get('schema_file_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"event_family_count: {data.get('event_family_count')}")
+    print(f"projection_report_exists: {str(data.get('projection_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_event_record_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_event_record_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_event_record_module(repo_root)
+    try:
+        report = protocol.project_event_record_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite event-record project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_event_record_boundary_lines({})
+        return 1
+    print("AIDE Lite event-record project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"event_family_count: {report.get('event_family_count')}")
+    print(f"example_event_count: {report.get('example_event_count')}")
+    print(f"event_family_index_path: {report.get('event_family_index_path')}")
+    print(f"example_events_path: {report.get('example_events_path')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_event_record_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_event_record_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_event_record_module(repo_root)
+    try:
+        report = protocol.event_record_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite event-record validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_event_record_boundary_lines({})
+        return 1
+    print("AIDE Lite event-record validate")
+    print(f"result: {report.get('status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"projection_generated: {str(report.get('projection_generated', False)).lower()}")
+    print(f"family_index_json_valid: {str(report.get('family_index_json_valid', False)).lower()}")
+    print(f"example_events_json_valid: {str(report.get('example_events_json_valid', False)).lower()}")
+    print(f"required_event_families_present: {str(report.get('required_event_families_present', False)).lower()}")
+    print(f"all_example_events_validate: {str(report.get('all_example_events_validate', False)).lower()}")
+    print(f"all_example_refs_parse: {str(report.get('all_example_refs_parse', False)).lower()}")
+    print(f"reference_id_integration_preserved: {str(report.get('reference_id_integration_preserved', False)).lower()}")
+    print(f"predecessor_compatibility_preserved: {str(report.get('predecessor_compatibility_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"unknown_optional_event_type_warned: {str(report.get('unknown_optional_event_type_warned', False)).lower()}")
+    print(f"unknown_required_event_type_fails_closed: {str(report.get('unknown_required_event_type_fails_closed', False)).lower()}")
+    print(f"invalid_event_types_rejected: {str(report.get('invalid_event_types_rejected', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_event_record_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_okf_boundary_lines(data: dict[str, object]) -> None:
+    print("projection_only: true")
+    print(f"okf_execution_authority: {str(data.get('okf_execution_authority', False)).lower()}")
+    print(f"protocol_authority_from_markdown: {str(data.get('protocol_authority_from_markdown', False)).lower()}")
+    print(f"evidence_authority_from_markdown: {str(data.get('evidence_authority_from_markdown', False)).lower()}")
+    print(f"runtime_knowledge_service_implemented: {str(data.get('runtime_knowledge_service_implemented', False)).lower()}")
+    print("llm_authored_wiki_implemented: false")
+    print("network_enrichment_implemented: false")
+    print("web_crawling_implemented: false")
+    print("search_index_service_implemented: false")
+    print("vector_index_implemented: false")
+    print("okf_visualizer_implemented: false")
+    print("reconciler_implemented: false")
+    print("capability_manifest_implemented: false")
+    print("conformance_profile_implemented: false")
+    print("patch_transaction_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("event_sourcing_runtime_implemented: false")
+    print("append_only_runtime_store_implemented: false")
+    print("runtime_event_log_implemented: false")
+    print("state_reconstruction_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("async_execution_implemented: false")
+    print("worker_execution_implemented: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("runtime_reference_registry_implemented: false")
+    print("resolver_service_implemented: false")
+    print("database_state_implemented: false")
+    print("provider_adapters_implemented: false")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print("rollback_execution: false")
+    print("uninstall_execution: false")
+    print("release: false")
+    print("promotion: false")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+    print("Gateway calls: none")
+    print(f"network_calls: {str(data.get('network_calls', False)).lower()}")
+    print(f"provider_or_model_calls: {'none' if not data.get('provider_model_calls', False) else 'present'}")
+    print("production_readiness: false")
+    print("release_readiness: false")
+
+
+def command_okf_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    okf = load_okf_bundle_module(repo_root)
+    try:
+        data = okf.okf_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - OKF status must fail closed.
+        print("AIDE Lite okf status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_okf_boundary_lines({})
+        return 1
+    print("AIDE Lite okf status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"bundle_exists: {str(data.get('bundle_exists', False)).lower()}")
+    print(f"bundle_path: {data.get('bundle_path')}")
+    print(f"concept_count: {data.get('concept_count')}")
+    print(f"warnings_count: {len(data.get('warnings', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_okf_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_okf_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    okf = load_okf_bundle_module(repo_root)
+    try:
+        report = okf.project_okf_bundle(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite okf project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_okf_boundary_lines({})
+        return 1
+    print("AIDE Lite okf project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"bundle_path: {report.get('bundle', {}).get('path')}")
+    print(f"concepts_count: {report.get('concepts_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_okf_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_okf_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    okf = load_okf_bundle_module(repo_root)
+    try:
+        report = okf.validate_okf_bundle(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite okf validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_okf_boundary_lines({})
+        return 1
+    print("AIDE Lite okf validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"bundle_exists: {str(report.get('bundle_exists', False)).lower()}")
+    print(f"index_exists: {str(report.get('index_exists', False)).lower()}")
+    print(f"log_exists: {str(report.get('log_exists', False)).lower()}")
+    print(f"required_pages_exist: {str(report.get('required_pages_exist', False)).lower()}")
+    print(f"all_concepts_have_frontmatter: {str(report.get('all_concepts_have_frontmatter', False)).lower()}")
+    print(f"all_concepts_have_non_empty_type: {str(report.get('all_concepts_have_non_empty_type', False)).lower()}")
+    print(f"aide_refs_parse: {str(report.get('aide_refs_parse', False)).lower()}")
+    print(f"event_refs_parse: {str(report.get('event_refs_parse', False)).lower()}")
+    print(f"authority_boundary_preserved: {str(report.get('authority_boundary_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_okf_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_okf_lint(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    okf = load_okf_bundle_module(repo_root)
+    try:
+        report = okf.lint_okf_bundle(repo_root)
+    except Exception as exc:  # noqa: BLE001 - lint reports must fail closed.
+        print("AIDE Lite okf lint")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_okf_boundary_lines({})
+        return 1
+    print("AIDE Lite okf lint")
+    print(f"result: {report.get('lint_status')}")
+    print(f"broken_links_count: {len(report.get('broken_links', []))}")
+    print(f"orphan_pages_count: {len(report.get('orphan_pages', []))}")
+    print(f"missing_source_refs_count: {len(report.get('missing_source_refs', []))}")
+    print(f"missing_evidence_refs_count: {len(report.get('missing_evidence_refs', []))}")
+    print(f"stale_context_findings_count: {len(report.get('stale_context_findings', []))}")
+    print(f"overclaiming_findings_count: {len(report.get('overclaiming_findings', []))}")
+    print(f"authority_boundary_findings_count: {len(report.get('authority_boundary_findings', []))}")
+    _print_okf_boundary_lines(report)
+    return 0 if report.get("lint_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_reconciler_boundary_lines(data: dict[str, object]) -> None:
+    print("report_only: true")
+    print("detects_drift: true")
+    print(f"repair_implemented: {str(data.get('repair_implemented', False)).lower()}")
+    print(f"mutation_performed: {str(data.get('mutation_performed', False)).lower()}")
+    print(f"source_truth_mutation: {str(data.get('source_truth_mutation', False)).lower()}")
+    print("queue_acceptance_mutation: false")
+    print("latest_task_packet_mutation: false")
+    print("okf_projection_mutation: false")
+    print("protocol_report_mutation: false")
+    print("capability_manifest_implemented: false")
+    print("conformance_profile_implemented: false")
+    print("patch_transaction_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("runtime_reconciler_service_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("async_execution_implemented: false")
+    print("worker_execution_implemented: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("provider_adapters_implemented: false")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print("rollback_execution: false")
+    print("uninstall_execution: false")
+    print("release: false")
+    print("promotion: false")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+    print("Gateway calls: none")
+    print(f"network_calls: {str(data.get('network_calls', False)).lower()}")
+    print(f"provider_or_model_calls: {'none' if not data.get('provider_model_calls', False) else 'present'}")
+    print("production_readiness: false")
+    print("release_readiness: false")
+
+
+def command_reconciler_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    reconciler = load_reconciler_reports_module(repo_root)
+    try:
+        data = reconciler.reconciler_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite reconciler status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reconciler_boundary_lines({})
+        return 1
+    print("AIDE Lite reconciler status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"findings_count: {data.get('findings_count')}")
+    print(f"reports_exist: {str(data.get('reports_exist', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_reconciler_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_reconciler_report(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    reconciler = load_reconciler_reports_module(repo_root)
+    try:
+        report = reconciler.write_reconciliation_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - report generation must fail closed.
+        print("AIDE Lite reconciler report")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reconciler_boundary_lines({})
+        return 1
+    print("AIDE Lite reconciler report")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"findings_count: {report.get('findings_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_reconciler_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_reconciler_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    reconciler = load_reconciler_reports_module(repo_root)
+    try:
+        report = reconciler.validate_reconciler_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite reconciler validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reconciler_boundary_lines({})
+        return 1
+    print("AIDE Lite reconciler validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"report_files_present: {str(report.get('report_files_present', False)).lower()}")
+    print(f"json_reports_valid: {str(report.get('json_reports_valid', False)).lower()}")
+    print(f"required_fields_present: {str(report.get('required_fields_present', False)).lower()}")
+    print(f"taxonomy_categories_present: {str(report.get('taxonomy_categories_present', False)).lower()}")
+    print(f"finding_schema_valid: {str(report.get('finding_schema_valid', False)).lower()}")
+    print(f"report_only_boundary_preserved: {str(report.get('report_only_boundary_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_reconciler_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_capability_manifest_boundary_lines(data: dict[str, object]) -> None:
+    print("declaration_only: true")
+    print(f"conformance_implemented: {str(data.get('conformance_implemented', False)).lower()}")
+    print(f"admission_implemented: {str(data.get('admission_implemented', False)).lower()}")
+    print(f"execution_implemented: {str(data.get('execution_implemented', False)).lower()}")
+    print("conformance_profile_implemented: false")
+    print("conformance_result_implemented: false")
+    print("adapter_admission_implemented: false")
+    print("adapter_execution_implemented: false")
+    print("runtime_capability_registry_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("runtime: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("patch_transaction_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("event_sourcing_runtime_implemented: false")
+    print("append_only_runtime_store_implemented: false")
+    print("runtime_event_log_implemented: false")
+    print("state_reconstruction_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("async_execution_implemented: false")
+    print("worker_execution_implemented: false")
+    print("runtime_reference_registry_implemented: false")
+    print("resolver_service_implemented: false")
+    print("database_state_implemented: false")
+    print("provider_adapters_implemented: false")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print("rollback_execution: false")
+    print("uninstall_execution: false")
+    print("release: false")
+    print("promotion: false")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+    print("Gateway calls: none")
+    print(f"network_calls: {str(data.get('network_calls', False)).lower()}")
+    print(f"provider_or_model_calls: {'none' if not data.get('provider_model_calls', False) else 'present'}")
+    print("production_readiness: false")
+    print("release_readiness: false")
+    print("broad_autonomous_runtime: false")
+
+
+def command_capability_manifest_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    capability_manifest = load_capability_manifest_module(repo_root)
+    try:
+        data = capability_manifest.capability_manifest_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite capability-manifest status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_capability_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite capability-manifest status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"projection_exists: {str(data.get('projection_exists', False)).lower()}")
+    print(f"capabilities_count: {data.get('capabilities_count')}")
+    print(f"accepted_capabilities_count: {data.get('accepted_capabilities_count')}")
+    print(f"accepted_with_warnings_count: {data.get('accepted_with_warnings_count')}")
+    print(f"warnings_count: {len(data.get('warnings', []))}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_capability_manifest_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_capability_manifest_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    capability_manifest = load_capability_manifest_module(repo_root)
+    try:
+        report = capability_manifest.write_capability_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite capability-manifest project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_capability_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite capability-manifest project")
+    print(f"result: {report.get('status')}")
+    print(f"capability_target: {report.get('capability_target')}")
+    print(f"capabilities_count: {report.get('capabilities_count')}")
+    print(f"accepted_capabilities_count: {report.get('accepted_capabilities_count')}")
+    print(f"accepted_with_warnings_count: {report.get('accepted_with_warnings_count')}")
+    print(f"metadata_only_count: {report.get('metadata_only_count')}")
+    print(f"report_only_count: {report.get('report_only_count')}")
+    print(f"projection_only_count: {report.get('projection_only_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_capability_manifest_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_capability_manifest_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    capability_manifest = load_capability_manifest_module(repo_root)
+    try:
+        report = capability_manifest.validate_capability_manifest(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite capability-manifest validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_capability_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite capability-manifest validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"reports_generated: {str(report.get('reports_generated', False)).lower()}")
+    print(f"capabilities_json_valid: {str(report.get('capabilities_json_valid', False)).lower()}")
+    print(f"capability_index_json_valid: {str(report.get('capability_index_json_valid', False)).lower()}")
+    print(f"required_capabilities_projected: {str(report.get('required_capabilities_projected', False)).lower()}")
+    print(f"accepted_capabilities_have_evidence: {str(report.get('accepted_capabilities_have_evidence', False)).lower()}")
+    print(f"accepted_with_warnings_preserved: {str(report.get('accepted_with_warnings_preserved', False)).lower()}")
+    print(f"status_semantics_valid: {str(report.get('status_semantics_valid', False)).lower()}")
+    print(f"conformance_not_overclaimed: {str(report.get('conformance_not_overclaimed', False)).lower()}")
+    print(f"execution_not_overclaimed: {str(report.get('execution_not_overclaimed', False)).lower()}")
+    print(f"reconciler_integration_checked: {str(report.get('reconciler_integration_checked', False)).lower()}")
+    print(f"okf_integration_checked: {str(report.get('okf_integration_checked', False)).lower()}")
+    print(f"reference_id_refs_valid: {str(report.get('reference_id_refs_valid', False)).lower()}")
+    print(f"predecessor_compatibility_preserved: {str(report.get('predecessor_compatibility_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_capability_manifest_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_distribution_manifest_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'distribution_manifest_v1')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"repair_apply_implemented: {str(data.get('repair_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"branch_worktree_automation_implemented: {str(data.get('branch_worktree_automation_implemented', False)).lower()}")
+    print(f"network_calls_implemented: {str(data.get('network_calls_implemented', False)).lower()}")
+    print(f"provider_model_calls_implemented: {str(data.get('provider_model_calls_implemented', False)).lower()}")
+    print("github_release_creation_implemented: false")
+    print("git_tag_creation_implemented: false")
+    print("upload_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("mcp_runtime_implemented: false")
+    print("source_change_preview_apply_rollback_implemented: false")
+    print("promotion_implemented: false")
+
+
+def command_distribution_manifest_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_manifest_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite distribution-manifest status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-manifest status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"q47_release_bundle_exists: {str(data.get('q47_release_bundle_exists', False)).lower()}")
+    print(f"manifest_report_exists: {str(data.get('manifest_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_distribution_manifest_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_distribution_manifest_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_manifest_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite distribution-manifest project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-manifest project")
+    print(f"result: {report.get('status')}")
+    print(f"manifest_path: {report.get('manifest_path')}")
+    print(f"component_count: {report.get('component_count')}")
+    print(f"artifact_count: {report.get('artifact_count')}")
+    print(f"distribution_digest: {report.get('distribution_digest')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_distribution_manifest_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_distribution_manifest_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_manifest_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite distribution-manifest validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-manifest validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "manifest_generated",
+        "manifest_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "reordered_input_same_digest",
+        "q47_release_bundle_mapped",
+        "q48_not_distribution_truth",
+        "install_apply_not_implemented",
+        "release_publication_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "absolute_local_paths_suppressed",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_distribution_manifest_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_project_lock_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'project_lock_v0')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"admission_implemented: {str(data.get('admission_implemented', False)).lower()}")
+    print(f"authorization_implemented: {str(data.get('authorization_implemented', False)).lower()}")
+    print("install_truth_implemented: false")
+    print("install_plan_implemented: false")
+    print("release_publication_implemented: false")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("mcp_runtime_implemented: false")
+    print("promotion_implemented: false")
+
+
+def command_project_lock_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_project_lock_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite project-lock status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_project_lock_boundary_lines({})
+        return 1
+    print("AIDE Lite project-lock status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"distribution_manifest_report_exists: {str(data.get('distribution_manifest_report_exists', False)).lower()}")
+    print(f"distribution_acceptance_report_exists: {str(data.get('distribution_acceptance_report_exists', False)).lower()}")
+    print(f"project_lock_report_exists: {str(data.get('project_lock_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_project_lock_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_project_lock_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_project_lock_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite project-lock project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_project_lock_boundary_lines({})
+        return 1
+    print("AIDE Lite project-lock project")
+    print(f"result: {report.get('status')}")
+    print(f"project_lock_path: {report.get('project_lock_path')}")
+    print(f"selected_component_count: {report.get('selected_component_count')}")
+    print(f"selected_distribution_digest: {report.get('selected_distribution_digest')}")
+    print(f"manifest_payload_digest: {report.get('manifest_payload_digest')}")
+    print(f"project_lock_digest: {report.get('project_lock_digest')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_project_lock_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_project_lock_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_project_lock_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite project-lock validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_project_lock_boundary_lines({})
+        return 1
+    print("AIDE Lite project-lock validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "lock_generated",
+        "lock_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "distribution_manifest_accepted",
+        "selected_distribution_digest_bound",
+        "manifest_payload_digest_bound",
+        "component_selection_complete",
+        "channel_informational",
+        "install_apply_not_implemented",
+        "update_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "admission_not_implemented",
+        "authorization_not_implemented",
+        "absolute_local_paths_suppressed",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_project_lock_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_ownership_ledger_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'ownership_ledger_v1')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"admission_implemented: {str(data.get('admission_implemented', False)).lower()}")
+    print(f"authorization_implemented: {str(data.get('authorization_implemented', False)).lower()}")
+    print("install_truth_implemented: false")
+    print("install_plan_implemented: false")
+    print("release_publication_implemented: false")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("mcp_runtime_implemented: false")
+    print("promotion_implemented: false")
+
+
+def command_ownership_ledger_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_ownership_ledger_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite ownership-ledger status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_ownership_ledger_boundary_lines({})
+        return 1
+    print("AIDE Lite ownership-ledger status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"project_lock_report_exists: {str(data.get('project_lock_report_exists', False)).lower()}")
+    print(f"project_lock_acceptance_report_exists: {str(data.get('project_lock_acceptance_report_exists', False)).lower()}")
+    print(f"ownership_ledger_report_exists: {str(data.get('ownership_ledger_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_ownership_ledger_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_ownership_ledger_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_ownership_ledger_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite ownership-ledger project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_ownership_ledger_boundary_lines({})
+        return 1
+    print("AIDE Lite ownership-ledger project")
+    print(f"result: {report.get('status')}")
+    print(f"ledger_path: {report.get('ledger_path')}")
+    print(f"record_count: {report.get('record_count')}")
+    print(f"taxonomy_count: {report.get('taxonomy_count')}")
+    print(f"project_lock_digest: {report.get('project_lock_digest')}")
+    print(f"ownership_ledger_digest: {report.get('ownership_ledger_digest')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_ownership_ledger_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_ownership_ledger_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_ownership_ledger_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite ownership-ledger validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_ownership_ledger_boundary_lines({})
+        return 1
+    print("AIDE Lite ownership-ledger validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "ledger_generated",
+        "ledger_valid",
+        "fixture_matrix_passed",
+        "q43_migration_passed",
+        "project_lock_accepted",
+        "project_lock_digest_bound",
+        "taxonomy_complete",
+        "file_entry_contract_complete",
+        "managed_section_contract_complete",
+        "unknown_blocks_apply",
+        "never_touch_blocks_apply",
+        "install_apply_not_implemented",
+        "update_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "admission_not_implemented",
+        "authorization_not_implemented",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_ownership_ledger_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_ownership_ledger_migrate_q43(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_ownership_ledger_module(repo_root)
+    source_classes = getattr(args, "source_class", None)
+    try:
+        report = module.migrate_q43(repo_root, source_classes)
+    except Exception as exc:  # noqa: BLE001 - migration reports must fail closed.
+        print("AIDE Lite ownership-ledger migrate-q43")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_ownership_ledger_boundary_lines({})
+        return 1
+    print("AIDE Lite ownership-ledger migrate-q43")
+    print(f"result: {report.get('result')}")
+    print(f"record_count: {len(report.get('records', []))}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"no_apply: {str(report.get('no_apply', False)).lower()}")
+    print("target_repository_mutation_implemented: false")
+    _print_ownership_ledger_boundary_lines({"proposed_capability": "ownership_ledger_v1"})
+    return 0 if report.get("result") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_install_record_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'install_record_v0')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"migration_apply_implemented: {str(data.get('migration_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"target_scan_authority_implemented: {str(data.get('target_scan_authority_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("commander_implemented: false")
+    print("omnigent_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_install_record_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_install_record_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite install-record status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_install_record_boundary_lines({})
+        return 1
+    print("AIDE Lite install-record status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"ownership_ledger_acceptance_report_exists: {str(data.get('ownership_ledger_acceptance_report_exists', False)).lower()}")
+    print(f"install_record_report_exists: {str(data.get('install_record_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_install_record_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_install_record_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_install_record_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite install-record project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_install_record_boundary_lines({})
+        return 1
+    print("AIDE Lite install-record project")
+    print(f"result: {report.get('status')}")
+    print(f"install_record_path: {report.get('install_record_path')}")
+    print(f"install_record_digest: {report.get('install_record_digest')}")
+    print(f"installed_component_count: {report.get('installed_component_count')}")
+    print(f"installed_file_entry_count: {report.get('installed_file_entry_count')}")
+    print(f"installed_managed_section_count: {report.get('installed_managed_section_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_install_record_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_install_record_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_install_record_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite install-record validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_install_record_boundary_lines({})
+        return 1
+    print("AIDE Lite install-record validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "install_record_generated",
+        "install_record_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "ownership_ledger_accepted",
+        "distribution_ref_bound",
+        "project_lock_digest_bound",
+        "ownership_ledger_digest_bound",
+        "component_refs_known",
+        "file_entry_refs_known",
+        "managed_section_refs_known",
+        "install_apply_not_implemented",
+        "update_apply_not_implemented",
+        "migration_apply_not_implemented",
+        "rollback_apply_not_implemented",
+        "uninstall_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "target_scan_authority_not_implemented",
+        "release_publication_not_implemented",
+        "source_output_not_target_truth",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_install_record_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_migration_record_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'migration_record_v0')}")
+    print(f"migration_apply_implemented: {str(data.get('migration_apply_implemented', False)).lower()}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"target_scan_authority_implemented: {str(data.get('target_scan_authority_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("commander_implemented: false")
+    print("omnigent_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_migration_record_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_migration_record_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite migration-record status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_migration_record_boundary_lines({})
+        return 1
+    print("AIDE Lite migration-record status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"install_record_acceptance_report_exists: {str(data.get('install_record_acceptance_report_exists', False)).lower()}")
+    print(f"migration_record_report_exists: {str(data.get('migration_record_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_migration_record_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_migration_record_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_migration_record_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite migration-record project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_migration_record_boundary_lines({})
+        return 1
+    print("AIDE Lite migration-record project")
+    print(f"result: {report.get('status')}")
+    print(f"migration_record_path: {report.get('migration_record_path')}")
+    print(f"migration_record_digest: {report.get('migration_record_digest')}")
+    print(f"source_object_ref: {report.get('source_object_ref')}")
+    print(f"source_schema_version: {report.get('source_schema_version')}")
+    print(f"target_schema_version: {report.get('target_schema_version')}")
+    print(f"migration_kind: {report.get('migration_kind')}")
+    print(f"risk_class: {report.get('risk_class')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_migration_record_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_migration_record_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_migration_record_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite migration-record validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_migration_record_boundary_lines({})
+        return 1
+    print("AIDE Lite migration-record validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "migration_record_generated",
+        "migration_record_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "install_record_accepted",
+        "source_ref_bound",
+        "input_digest_bound",
+        "output_digest_bound",
+        "migration_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "source_output_not_target_truth",
+        "release_publication_not_implemented",
+    ]:
+        print(f"{key}: {str(checks.get(key, False)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_migration_record_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_update_plan_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'update_plan_v1')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"migration_apply_implemented: {str(data.get('migration_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"target_scan_authority_implemented: {str(data.get('target_scan_authority_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("commander_implemented: false")
+    print("omnigent_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_update_plan_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_plan_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite update-plan status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_plan_boundary_lines({})
+        return 1
+    print("AIDE Lite update-plan status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"install_record_acceptance_report_exists: {str(data.get('install_record_acceptance_report_exists', False)).lower()}")
+    print(f"migration_record_acceptance_report_exists: {str(data.get('migration_record_acceptance_report_exists', False)).lower()}")
+    print(f"update_plan_projection_exists: {str(data.get('update_plan_projection_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_update_plan_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_update_plan_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_plan_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite update-plan project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_plan_boundary_lines({})
+        return 1
+    print("AIDE Lite update-plan project")
+    print(f"result: {report.get('status')}")
+    print(f"update_plan_path: {report.get('update_plan_path')}")
+    print(f"update_plan_digest: {report.get('update_plan_digest')}")
+    print(f"planned_operation_count: {report.get('planned_operation_count')}")
+    print(f"managed_file_update_count: {report.get('managed_file_update_count')}")
+    print(f"managed_section_update_count: {report.get('managed_section_update_count')}")
+    print(f"preserved_path_count: {report.get('preserved_path_count')}")
+    print(f"conflict_count: {report.get('conflict_count')}")
+    print(f"risk_class: {report.get('risk_class')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_update_plan_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_update_plan_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_plan_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite update-plan validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_plan_boundary_lines({})
+        return 1
+    print("AIDE Lite update-plan validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "update_plan_generated",
+        "update_plan_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "install_record_accepted",
+        "migration_record_accepted",
+        "distribution_ref_bound",
+        "current_project_lock_bound",
+        "candidate_project_lock_bound",
+        "ownership_ledger_bound",
+        "install_record_bound",
+        "migration_record_bound",
+        "update_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "source_output_not_target_truth",
+    ]:
+        if key in checks:
+            print(f"{key}: {str(checks.get(key)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_update_plan_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_rollback_bundle_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'rollback_bundle_v0')}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"migration_apply_implemented: {str(data.get('migration_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"target_scan_authority_implemented: {str(data.get('target_scan_authority_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("commander_implemented: false")
+    print("omnigent_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_rollback_bundle_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_rollback_bundle_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite rollback-bundle status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_rollback_bundle_boundary_lines({})
+        return 1
+    print("AIDE Lite rollback-bundle status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"update_plan_acceptance_report_exists: {str(data.get('update_plan_acceptance_report_exists', False)).lower()}")
+    print(f"rollback_bundle_projection_exists: {str(data.get('rollback_bundle_projection_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_rollback_bundle_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_rollback_bundle_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_rollback_bundle_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite rollback-bundle project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_rollback_bundle_boundary_lines({})
+        return 1
+    print("AIDE Lite rollback-bundle project")
+    print(f"result: {report.get('status')}")
+    print(f"rollback_bundle_path: {report.get('rollback_bundle_path')}")
+    print(f"rollback_bundle_digest: {report.get('rollback_bundle_digest')}")
+    print(f"reverse_operation_count: {report.get('reverse_operation_count')}")
+    print(f"preimage_artifact_count: {report.get('preimage_artifact_count')}")
+    print(f"managed_file_preimage_count: {report.get('managed_file_preimage_count')}")
+    print(f"managed_section_preimage_count: {report.get('managed_section_preimage_count')}")
+    print(f"limitation_count: {report.get('limitation_count')}")
+    print(f"risk_class: {report.get('risk_class')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_rollback_bundle_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_rollback_bundle_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_rollback_bundle_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite rollback-bundle validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_rollback_bundle_boundary_lines({})
+        return 1
+    print("AIDE Lite rollback-bundle validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "rollback_bundle_generated",
+        "rollback_bundle_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "update_plan_accepted",
+        "update_plan_bound",
+        "source_distribution_bound",
+        "candidate_distribution_bound",
+        "prior_project_lock_bound",
+        "candidate_project_lock_bound",
+        "ownership_ledger_bound",
+        "install_record_bound",
+        "rollback_apply_not_implemented",
+        "update_apply_not_implemented",
+        "install_apply_not_implemented",
+        "uninstall_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "source_output_not_target_truth",
+    ]:
+        if key in checks:
+            print(f"{key}: {str(checks.get(key)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_rollback_bundle_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_update_receipt_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'update_receipt_v0')}")
+    print(f"receipt_authorization_claimed: {str(data.get('receipt_authorization_claimed', False)).lower()}")
+    print(f"install_apply_implemented: {str(data.get('install_apply_implemented', False)).lower()}")
+    print(f"update_apply_implemented: {str(data.get('update_apply_implemented', False)).lower()}")
+    print(f"migration_apply_implemented: {str(data.get('migration_apply_implemented', False)).lower()}")
+    print(f"rollback_apply_implemented: {str(data.get('rollback_apply_implemented', False)).lower()}")
+    print(f"uninstall_apply_implemented: {str(data.get('uninstall_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"target_scan_authority_implemented: {str(data.get('target_scan_authority_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print(f"release_readiness_claimed: {str(data.get('release_readiness_claimed', False)).lower()}")
+    print(f"distribution_apply_engine_started: {str(data.get('distribution_apply_engine_started', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("workbench_runtime_implemented: false")
+    print("commander_implemented: false")
+    print("omnigent_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+def command_update_receipt_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_receipt_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite update-receipt status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_receipt_boundary_lines({})
+        return 1
+    print("AIDE Lite update-receipt status")
+    print(f"result: {data.get('status')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"rollback_bundle_acceptance_report_exists: {str(data.get('rollback_bundle_acceptance_report_exists', False)).lower()}")
+    print(f"update_receipt_projection_exists: {str(data.get('update_receipt_projection_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_update_receipt_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_update_receipt_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_receipt_module(repo_root)
+    try:
+        report = module.project(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite update-receipt project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_receipt_boundary_lines({})
+        return 1
+    print("AIDE Lite update-receipt project")
+    print(f"result: {report.get('status')}")
+    print(f"update_receipt_path: {report.get('update_receipt_path')}")
+    print(f"update_receipt_digest: {report.get('update_receipt_digest')}")
+    print(f"operation_receipt_count: {report.get('operation_receipt_count')}")
+    print(f"skipped_operation_count: {report.get('skipped_operation_count')}")
+    print(f"failed_operation_count: {report.get('failed_operation_count')}")
+    print(f"changed_file_ref_count: {report.get('changed_file_ref_count')}")
+    print(f"changed_section_ref_count: {report.get('changed_section_ref_count')}")
+    print(f"risk_class: {report.get('risk_class')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_update_receipt_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_update_receipt_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_update_receipt_module(repo_root)
+    try:
+        report = module.validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite update-receipt validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_update_receipt_boundary_lines({})
+        return 1
+    print("AIDE Lite update-receipt validate")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "schema_exists",
+        "helper_exists",
+        "cli_registered",
+        "update_receipt_generated",
+        "update_receipt_valid",
+        "schema_alignment",
+        "fixture_matrix_passed",
+        "rollback_bundle_accepted",
+        "update_plan_bound",
+        "rollback_bundle_bound",
+        "source_distribution_bound",
+        "candidate_distribution_bound",
+        "old_project_lock_bound",
+        "new_project_lock_bound",
+        "ownership_ledger_bound",
+        "install_record_bound",
+        "update_apply_not_implemented",
+        "install_apply_not_implemented",
+        "migration_apply_not_implemented",
+        "rollback_apply_not_implemented",
+        "uninstall_apply_not_implemented",
+        "target_repository_mutation_not_implemented",
+        "distribution_apply_engine_not_started",
+        "source_output_not_target_truth",
+    ]:
+        if key in checks:
+            print(f"{key}: {str(checks.get(key)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_update_receipt_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_distribution_apply_boundary_lines(data: dict[str, object]) -> None:
+    print(f"proposed_capability: {data.get('proposed_capability', 'distribution_apply_engine_v0')}")
+    print(f"fixture_only: {str(data.get('fixture_only', True)).lower()}")
+    print(f"temp_workspace_only: {str(data.get('temp_workspace_only', True)).lower()}")
+    print(f"aide_self_consumer_fixture_accepted: {str(data.get('aide_self_consumer_fixture_accepted', False)).lower()}")
+    if data.get("accepted_fixture_capability"):
+        print(f"accepted_fixture_capability: {data.get('accepted_fixture_capability')}")
+    print(f"real_target_apply_implemented: {str(data.get('real_target_apply_implemented', False)).lower()}")
+    print(f"source_repo_apply_implemented: {str(data.get('source_repo_apply_implemented', False)).lower()}")
+    print(f"target_repository_mutation_implemented: {str(data.get('target_repository_mutation_implemented', False)).lower()}")
+    print(f"release_publication_implemented: {str(data.get('release_publication_implemented', False)).lower()}")
+    print(f"self_consumer_fixture_started: {str(data.get('self_consumer_fixture_started', False)).lower()}")
+    print(f"canaries_started: {str(data.get('canaries_started', False)).lower()}")
+    print(f"canary_readiness: {str(data.get('canary_readiness', False)).lower()}")
+    print(f"public_release_readiness: {str(data.get('public_release_readiness', False)).lower()}")
+    print("network_calls_implemented: false")
+    print("provider_model_calls_implemented: false")
+    print("branch_worktree_automation_implemented: false")
+
+
+SELF_CONSUMER_FIXTURE_ACCEPTANCE_SUMMARY_PATH = Path(".aide/reports/aide-self-consumer-fixture-v0-acceptance/validation-summary.json")
+DISTRIBUTION_PRODUCT_STATUS_PROJECTION_TASK_ID = "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+DEFAULT_DISTRIBUTION_APPLY_PLAN_SCENARIO = "managed-file-update"
+DISTRIBUTION_PRODUCT_STATUS_JSON_PATH = Path(".aide/reports/distribution-product-status/current.json")
+DISTRIBUTION_PRODUCT_STATUS_MD_PATH = Path(".aide/reports/distribution-product-status/current.md")
+DISTRIBUTION_PRODUCT_STATUS_TASK_ID = "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+DISTRIBUTION_PRODUCT_STATUS_CHECK_TASK_ID = "AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+DISTRIBUTION_PRODUCT_STATUS_ACCEPT_TASK_ID = "AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+
+
+def _read_report_json(repo_root: Path, rel_path: str) -> dict[str, object]:
+    path = repo_root / rel_path
+    if not path.exists():
+        return {}
+    try:
+        return read_json_file(path)
+    except Exception:  # noqa: BLE001 - product status must classify missing or malformed source truth conservatively.
+        return {}
+
+
+def _source_ref(repo_root: Path, rel_path: str, kind: str, required: bool = True) -> dict[str, object]:
+    return {
+        "path": rel_path,
+        "kind": kind,
+        "required": required,
+        "exists": (repo_root / rel_path).exists(),
+    }
+
+
+def build_distribution_product_status_projection(repo_root: Path) -> dict[str, object]:
+    engine_summary_path = ".aide/reports/distribution-apply-engine-v0-acceptance/validation-summary.json"
+    self_consumer_summary_path = ".aide/reports/aide-self-consumer-fixture-v0-acceptance/validation-summary.json"
+    routing_summary_path = ".aide/reports/distribution-apply-routing-text-repair-acceptance/validation-summary.json"
+    engine = _read_report_json(repo_root, engine_summary_path)
+    self_consumer = _read_report_json(repo_root, self_consumer_summary_path)
+    routing = _read_report_json(repo_root, routing_summary_path)
+
+    source_refs = [
+        _source_ref(repo_root, ".aide/queue/index.yaml", "queue_index"),
+        _source_ref(repo_root, ".aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01/status.yaml", "accepted_task_status"),
+        _source_ref(repo_root, engine_summary_path, "accepted_capability_summary"),
+        _source_ref(repo_root, ".aide/queue/AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01/status.yaml", "accepted_task_status"),
+        _source_ref(repo_root, self_consumer_summary_path, "accepted_capability_summary"),
+        _source_ref(repo_root, ".aide/queue/AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01/status.yaml", "accepted_task_status"),
+        _source_ref(repo_root, routing_summary_path, "accepted_boundary_summary"),
+    ]
+
+    accepted_capabilities: list[dict[str, object]] = []
+    if engine.get("accepted_capability") == "distribution_apply_engine_v0":
+        accepted_capabilities.append(
+            {
+                "id": "distribution_apply_engine_v0",
+                "result": str(engine.get("result", "unknown")).lower(),
+                "fixture_only": bool(engine.get("fixture_only", True)),
+                "temp_workspace_only": bool(engine.get("temp_workspace_only", True)),
+                "material_finding_count": engine.get("material_finding_count", "unknown"),
+                "missing_evidence": engine.get("missing_evidence", "unknown"),
+                "source_ref": engine_summary_path,
+            }
+        )
+    if self_consumer.get("accepted_capability") == "aide_self_consumer_fixture_v0":
+        accepted_capabilities.append(
+            {
+                "id": "aide_self_consumer_fixture_v0",
+                "result": str(self_consumer.get("result", "unknown")).lower(),
+                "fixture_only": True,
+                "self_consumer_fixture_only": True,
+                "material_finding_count": self_consumer.get("material_finding_count", "unknown"),
+                "missing_evidence": self_consumer.get("missing_evidence", "unknown"),
+                "source_ref": self_consumer_summary_path,
+            }
+        )
+
+    accepted_boundaries: list[dict[str, object]] = []
+    if routing.get("accepted_boundary_label") == "distribution_apply_routing_text_repair_v0":
+        accepted_boundaries.append(
+            {
+                "id": "distribution_apply_routing_text_repair_v0",
+                "result": str(routing.get("result", "unknown")).lower(),
+                "accepted_capability": routing.get("accepted_capability"),
+                "operator_routing_text_repair": bool(routing.get("operator_routing_text_repair_accepted", True)),
+                "routes_to": routing.get("recommended_next_task", DISTRIBUTION_PRODUCT_STATUS_TASK_ID),
+                "source_ref": routing_summary_path,
+            }
+        )
+
+    explicit_non_capabilities = [
+        "real target apply",
+        "AIDE source repo self-apply",
+        "external repo mutation",
+        "ScreenSave/Eureka/Dominium/Carbon canary readiness",
+        "public release/publication",
+        "release artifact generation",
+        "network fetching",
+        "package source fetching",
+        "provider/model calls",
+        "branch/worktree automation",
+        "automatic update apply",
+        "automatic push",
+        "automatic merge",
+        "live runtime",
+        "Workbench runtime",
+        "Commander/Mobile runtime",
+    ]
+    warning_debt = [
+        {
+            "id": "distribution_product_status_projection_unchecked",
+            "severity": "warning",
+            "description": "This product-status projection build still requires independent check and acceptance.",
+            "next_task": DISTRIBUTION_PRODUCT_STATUS_CHECK_TASK_ID,
+        },
+        {
+            "id": "canary_profiles_not_started",
+            "severity": "warning",
+            "description": "ScreenSave, Eureka, Dominium, and Carbon canary profile readiness are not accepted.",
+        },
+        {
+            "id": "archive_public_readiness_not_started",
+            "severity": "warning",
+            "description": "Local archive canary, public canary readiness, package-source verification, and shadow apply remain future tasks.",
+        },
+    ]
+    recommended_next_tasks = [
+        DISTRIBUTION_PRODUCT_STATUS_CHECK_TASK_ID,
+        DISTRIBUTION_PRODUCT_STATUS_ACCEPT_TASK_ID,
+        "AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01",
+        "AIDE-CHECK-CANARY-PROFILE-SCREENSAVE-01",
+        "AIDE-ACCEPT-CANARY-PROFILE-SCREENSAVE-01",
+    ]
+
+    readiness = {
+        "real_target_apply": False,
+        "aide_source_repo_self_apply": False,
+        "external_repo_mutation": False,
+        "public_release": False,
+        "release_artifact_generation": False,
+        "package_source": False,
+        "network_fetching": False,
+        "shadow_apply": False,
+        "branch_worktree_apply": False,
+        "branch_worktree_automation": False,
+        "provider_model_network": False,
+        "live_runtime": False,
+        "automatic_update_apply": False,
+        "automatic_push": False,
+        "automatic_merge": False,
+        "workbench_runtime": False,
+        "commander_mobile_runtime": False,
+        "public_canary": False,
+        "stable_release": False,
+    }
+    return {
+        "projection": {
+            "id": "distribution_product_status_v0",
+            "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+            "producer": "aide_lite.py distribution-product status",
+            "producer_version": GENERATOR_VERSION,
+            "source_refs": source_refs,
+        },
+        "current": {
+            "wave": "Distribution Productization Wave 01",
+            "current_gate": DISTRIBUTION_PRODUCT_STATUS_TASK_ID,
+            "current_executable_gate": "fixture-only DistributionApplyEngine v0 plus accepted AIDE self-consumer fixture proof",
+            "next_task": DISTRIBUTION_PRODUCT_STATUS_CHECK_TASK_ID,
+            "local_public_private_divergence": {
+                "status": "unknown",
+                "note": "No local queue artifact independently verifies public GitHub divergence for this projection.",
+            },
+        },
+        "accepted": {
+            "capabilities": accepted_capabilities,
+            "boundaries": accepted_boundaries,
+        },
+        "proposed_or_pending_distribution_capabilities": [
+            {"id": "distribution_product_status_v0", "status": "built_pending_check"},
+            {"id": "canary_profile_screensave_v0", "status": "not_started"},
+            {"id": "canary_profile_eureka_v0", "status": "not_started"},
+            {"id": "canary_profile_dominium_v0", "status": "not_started"},
+            {"id": "aide_lite_canary_archive_v0", "status": "not_started"},
+            {"id": "local_archive_source_v0", "status": "not_started"},
+            {"id": "shadow_update_apply_v0", "status": "not_started"},
+        ],
+        "fixture_only_capabilities": [
+            {
+                "id": "distribution_apply_engine_v0",
+                "boundary": "fixture-only temp-workspace-only apply execution",
+            },
+            {
+                "id": "aide_self_consumer_fixture_v0",
+                "boundary": "fixture-only AIDE-like installed target proof surface",
+            },
+        ],
+        "readiness": readiness,
+        "readiness_status": {
+            "release": "not_ready",
+            "real_target_apply": "not_ready",
+            "package_source": "not_ready",
+            "shadow_apply": "not_ready",
+            "branch_worktree_apply": "not_ready",
+            "public_canary": "not_ready",
+            "stable_release": "not_ready",
+        },
+        "canaries": {
+            "aide_self_consumer": {
+                "fixture_status": str(self_consumer.get("result", "unknown")).lower(),
+                "accepted_fixture_capability": self_consumer.get("accepted_capability"),
+                "canary_readiness": False,
+                "readiness_status": "fixture_proof_accepted_not_project_canary",
+            },
+            "screensave": {"status": "not_started", "readiness": False, "next_task": "AIDE-BUILD-CANARY-PROFILE-SCREENSAVE-01"},
+            "eureka": {"status": "not_started", "readiness": False, "next_task": "AIDE-BUILD-CANARY-PROFILE-EUREKA-01"},
+            "dominium": {"status": "not_started", "readiness": False, "next_task": "AIDE-BUILD-CANARY-PROFILE-DOMINIUM-01"},
+            "carbon": {"status": "not_configured", "readiness": False, "next_task": None},
+        },
+        "explicit_non_capabilities": explicit_non_capabilities,
+        "warning_debt": warning_debt,
+        "latest_validation_summary": {
+            "distribution_apply_engine_acceptance": {
+                "result": engine.get("result", "unknown"),
+                "material_finding_count": engine.get("material_finding_count", "unknown"),
+                "missing_evidence": engine.get("missing_evidence", "unknown"),
+            },
+            "aide_self_consumer_fixture_acceptance": {
+                "result": self_consumer.get("result", "unknown"),
+                "material_finding_count": self_consumer.get("material_finding_count", "unknown"),
+                "missing_evidence": self_consumer.get("missing_evidence", "unknown"),
+            },
+            "routing_text_repair_acceptance": {
+                "result": routing.get("result", "unknown"),
+                "material_finding_count": routing.get("material_finding_count", "unknown"),
+                "missing_evidence": routing.get("missing_evidence", "unknown"),
+            },
+        },
+        "latest_self_consumer_fixture_status": {
+            "result": self_consumer.get("result", "unknown"),
+            "accepted_capability": self_consumer.get("accepted_capability", "unknown"),
+            "fixture_structure_accepted": bool(self_consumer.get("fixture_structure_accepted", False)),
+            "offline_operation_proof_accepted": bool(self_consumer.get("offline_operation_proof_accepted", False)),
+            "source_vs_installed_target_separation_accepted": bool(
+                self_consumer.get("source_vs_installed_target_separation_accepted", False)
+            ),
+        },
+        "recommended_next_tasks": recommended_next_tasks,
+    }
+
+
+def render_distribution_product_status_markdown(report: dict[str, object]) -> str:
+    accepted = report.get("accepted", {}) if isinstance(report.get("accepted"), dict) else {}
+    capabilities = accepted.get("capabilities", []) if isinstance(accepted, dict) else []
+    boundaries = accepted.get("boundaries", []) if isinstance(accepted, dict) else []
+    readiness = report.get("readiness", {}) if isinstance(report.get("readiness"), dict) else {}
+    canaries = report.get("canaries", {}) if isinstance(report.get("canaries"), dict) else {}
+    projection = report.get("projection", {}) if isinstance(report.get("projection"), dict) else {}
+    current = report.get("current", {}) if isinstance(report.get("current"), dict) else {}
+    latest = report.get("latest_validation_summary", {}) if isinstance(report.get("latest_validation_summary"), dict) else {}
+    non_caps = report.get("explicit_non_capabilities", [])
+    warning_debt = report.get("warning_debt", [])
+    next_tasks = report.get("recommended_next_tasks", [])
+    source_refs = projection.get("source_refs", []) if isinstance(projection, dict) else []
+
+    capability_lines = [
+        f"- `{item.get('id')}`: {item.get('result')} ({item.get('source_ref')})"
+        for item in capabilities
+        if isinstance(item, dict)
+    ] or ["- none"]
+    boundary_lines = [
+        f"- `{item.get('id')}`: routes to `{item.get('routes_to')}`"
+        for item in boundaries
+        if isinstance(item, dict)
+    ] or ["- none"]
+    fixture_lines = [
+        f"- `{item.get('id')}`: {item.get('boundary')}"
+        for item in report.get("fixture_only_capabilities", [])
+        if isinstance(item, dict)
+    ] or ["- none"]
+    non_cap_lines = [f"- {item}" for item in non_caps if isinstance(item, str)] or ["- none"]
+    readiness_lines = [
+        f"- `{key}`: {str(value).lower()}"
+        for key, value in sorted(readiness.items())
+    ] or ["- none"]
+    canary_lines = [
+        f"- `{key}`: {value.get('status', value.get('readiness_status', 'unknown'))}; readiness={str(value.get('readiness', value.get('canary_readiness', False))).lower()}"
+        for key, value in sorted(canaries.items())
+        if isinstance(value, dict)
+    ] or ["- none"]
+    warning_lines = [
+        f"- `{item.get('id')}`: {item.get('description')}"
+        for item in warning_debt
+        if isinstance(item, dict)
+    ] or ["- none"]
+    latest_lines = [
+        f"- `{key}`: result={value.get('result')}, material_findings={value.get('material_finding_count')}, missing_evidence={value.get('missing_evidence')}"
+        for key, value in sorted(latest.items())
+        if isinstance(value, dict)
+    ] or ["- none"]
+    next_task_lines = [f"{index}. `{task}`" for index, task in enumerate(next_tasks, start=1) if isinstance(task, str)] or ["1. none"]
+    source_lines = [
+        f"- `{item.get('path')}`: exists={str(item.get('exists')).lower()}, kind={item.get('kind')}"
+        for item in source_refs
+        if isinstance(item, dict)
+    ] or ["- none"]
+
+    return f"""# Distribution Product Status
+
+## Current gate
+
+- wave: `{current.get('wave')}`
+- current gate: `{current.get('current_gate')}`
+- current executable gate: `{current.get('current_executable_gate')}`
+- next task: `{current.get('next_task')}`
+- generated at: `{projection.get('generated_at')}`
+- producer: `{projection.get('producer')}`
+
+## Accepted capabilities and boundaries
+
+{chr(10).join(capability_lines)}
+{chr(10).join(boundary_lines)}
+
+## Fixture-only boundaries
+
+{chr(10).join(fixture_lines)}
+
+## Explicit non-capabilities
+
+{chr(10).join(non_cap_lines)}
+
+## Readiness matrix
+
+{chr(10).join(readiness_lines)}
+
+## Canary readiness
+
+{chr(10).join(canary_lines)}
+
+## Warning debt
+
+{chr(10).join(warning_lines)}
+
+## Latest validation
+
+{chr(10).join(latest_lines)}
+
+## Next recommended tasks
+
+{chr(10).join(next_task_lines)}
+
+## Source refs
+
+{chr(10).join(source_lines)}
+"""
+
+
+def write_distribution_product_status_reports(repo_root: Path) -> dict[str, object]:
+    report = build_distribution_product_status_projection(repo_root)
+    write_text_if_changed(repo_root / DISTRIBUTION_PRODUCT_STATUS_JSON_PATH, stable_json_text(report))
+    write_text_if_changed(repo_root / DISTRIBUTION_PRODUCT_STATUS_MD_PATH, render_distribution_product_status_markdown(report))
+    return report
+
+
+def command_distribution_product_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    try:
+        report = write_distribution_product_status_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - product status projection must fail closed.
+        print("AIDE Lite distribution-product status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        return 1
+    current = report.get("current", {}) if isinstance(report.get("current"), dict) else {}
+    accepted = report.get("accepted", {}) if isinstance(report.get("accepted"), dict) else {}
+    capabilities = accepted.get("capabilities", []) if isinstance(accepted, dict) else []
+    boundaries = accepted.get("boundaries", []) if isinstance(accepted, dict) else []
+    readiness = report.get("readiness", {}) if isinstance(report.get("readiness"), dict) else {}
+    print("AIDE Lite distribution-product status")
+    print("result: PASS_WITH_WARNINGS")
+    print(f"projection_json: {DISTRIBUTION_PRODUCT_STATUS_JSON_PATH}")
+    print(f"projection_md: {DISTRIBUTION_PRODUCT_STATUS_MD_PATH}")
+    print(f"current_gate: {current.get('current_gate')}")
+    print(f"next_task: {current.get('next_task')}")
+    print("accepted_capabilities: " + ",".join(item.get("id", "") for item in capabilities if isinstance(item, dict)))
+    print("accepted_boundaries: " + ",".join(item.get("id", "") for item in boundaries if isinstance(item, dict)))
+    print(f"real_target_apply_readiness: {str(readiness.get('real_target_apply', False)).lower()}")
+    print(f"aide_source_repo_self_apply_readiness: {str(readiness.get('aide_source_repo_self_apply', False)).lower()}")
+    print(f"canary_readiness: {str(any(bool(value.get('readiness', value.get('canary_readiness', False))) for value in report.get('canaries', {}).values() if isinstance(value, dict))).lower()}")
+    print(f"public_release_readiness: {str(readiness.get('public_release', False)).lower()}")
+    print(f"package_source_readiness: {str(readiness.get('package_source', False)).lower()}")
+    print(f"provider_model_network_readiness: {str(readiness.get('provider_model_network', False)).lower()}")
+    print(f"branch_worktree_automation_readiness: {str(readiness.get('branch_worktree_automation', False)).lower()}")
+    print(f"warning_debt_count: {len(report.get('warning_debt', []))}")
+    return 0
+
+
+def _distribution_apply_routing_text_data(repo_root: Path, data: dict[str, object]) -> dict[str, object]:
+    routed = dict(data)
+    acceptance_path = repo_root / SELF_CONSUMER_FIXTURE_ACCEPTANCE_SUMMARY_PATH
+    acceptance = {}
+    if acceptance_path.exists():
+        try:
+            acceptance = read_json_file(acceptance_path)
+        except Exception:  # noqa: BLE001 - stale routing repair must fail conservatively.
+            acceptance = {}
+    accepted_capability = acceptance.get("accepted_capability") if isinstance(acceptance, dict) else None
+    result = acceptance.get("result") if isinstance(acceptance, dict) else None
+    if accepted_capability == "aide_self_consumer_fixture_v0" and result in {"ACCEPTED", "ACCEPTED_WITH_WARNINGS"}:
+        routed["aide_self_consumer_fixture_accepted"] = True
+        routed["accepted_fixture_capability"] = accepted_capability
+        routed["self_consumer_fixture_started"] = True
+        routed["recommended_next_task"] = DISTRIBUTION_PRODUCT_STATUS_PROJECTION_TASK_ID
+        routed["routing_source"] = str(SELF_CONSUMER_FIXTURE_ACCEPTANCE_SUMMARY_PATH)
+    else:
+        routed.setdefault("aide_self_consumer_fixture_accepted", False)
+    routed.setdefault("real_target_apply_implemented", False)
+    routed.setdefault("source_repo_apply_implemented", False)
+    routed.setdefault("target_repository_mutation_implemented", False)
+    routed.setdefault("release_publication_implemented", False)
+    routed.setdefault("canaries_started", False)
+    routed.setdefault("canary_readiness", False)
+    routed.setdefault("public_release_readiness", False)
+    return routed
+
+
+def command_distribution_apply_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_apply_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite distribution-apply status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_apply_boundary_lines({})
+        return 1
+    data = _distribution_apply_routing_text_data(repo_root, data)
+    print("AIDE Lite distribution-apply status")
+    print(f"result: {data.get('status')}")
+    print(f"scenario_count: {data.get('scenario_count')}")
+    print(f"positive_scenario_count: {data.get('positive_scenario_count')}")
+    print(f"negative_scenario_count: {data.get('negative_scenario_count')}")
+    print(f"update_receipt_accepted: {str(data.get('update_receipt_accepted', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_distribution_apply_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_distribution_apply_plan(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_apply_module(repo_root)
+    scenario_id = args.scenario or DEFAULT_DISTRIBUTION_APPLY_PLAN_SCENARIO
+    try:
+        report = module.plan(repo_root, scenario_id=scenario_id)
+    except Exception as exc:  # noqa: BLE001 - plan reports must fail closed.
+        print("AIDE Lite distribution-apply plan")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_apply_boundary_lines({})
+        return 1
+    report = _distribution_apply_routing_text_data(repo_root, report)
+    print("AIDE Lite distribution-apply plan")
+    print("result: PASS_WITH_WARNINGS")
+    print(f"scenario_id: {report.get('scenario_id')}")
+    print(f"operation_count: {report.get('operation_count')}")
+    print(f"expected_result: {report.get('expected_result')}")
+    print(f"expected_refusal_code: {report.get('expected_refusal_code') or 'none'}")
+    print(f"update_receipt_accepted: {str(report.get('update_receipt_accepted', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_distribution_apply_boundary_lines(report)
+    return 0
+
+
+def command_distribution_apply_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_apply_module(repo_root)
+    try:
+        report = module.run(repo_root, scenario_id=args.scenario, mode=args.mode)
+    except Exception as exc:  # noqa: BLE001 - fixture runs must fail closed.
+        print("AIDE Lite distribution-apply run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_apply_boundary_lines({})
+        return 1
+    print("AIDE Lite distribution-apply run")
+    print(f"result: {report.get('status')}")
+    print(f"scenario_id: {report.get('scenario_id')}")
+    print(f"refusal_code: {report.get('refusal_code') or 'none'}")
+    print(f"passed: {str(report.get('passed', False)).lower()}")
+    print(f"update_receipt_generated: {str(report.get('update_receipt_generated', False)).lower()}")
+    print(f"rollback_verified: {str(report.get('rollback_verified', False)).lower()}")
+    print(f"canonical_fixture_unchanged: {str(report.get('canonical_fixture_unchanged', False)).lower()}")
+    print(f"temp_workspace_retained: {str(report.get('temp_workspace_retained', False)).lower()}")
+    print(f"real_target_repo_modified: {str(report.get('real_target_repo_modified', False)).lower()}")
+    _print_distribution_apply_boundary_lines(report)
+    return 0 if report.get("passed") else 1
+
+
+def command_distribution_apply_verify(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_distribution_apply_module(repo_root)
+    try:
+        report = module.verify(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite distribution-apply verify")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_distribution_apply_boundary_lines({})
+        return 1
+    report = _distribution_apply_routing_text_data(repo_root, report)
+    print("AIDE Lite distribution-apply verify")
+    print(f"result: {report.get('validation_status')}")
+    checks = report.get("checks", {}) if isinstance(report.get("checks"), dict) else {}
+    for key in [
+        "fixture_only",
+        "temp_workspace_only",
+        "update_receipt_accepted",
+        "fixture_matrix_passed",
+        "canonical_fixture_unchanged",
+        "source_repo_apply_occurred",
+        "real_target_repo_modified",
+        "external_repo_touched",
+        "release_publication_occurred",
+        "network_calls_occurred",
+        "provider_model_calls_occurred",
+    ]:
+        if key in checks:
+            print(f"{key}: {str(checks.get(key)).lower()}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"material_finding_count: {report.get('material_finding_count')}")
+    print(f"missing_evidence: {report.get('missing_evidence')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_distribution_apply_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
+    print("profile_only: true")
+    print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
+    print(f"execution_implemented: {str(data.get('execution_implemented', False)).lower()}")
+    print(f"admission_performed: {str(data.get('admission_performed', False)).lower()}")
+    print(f"admitted: {str(data.get('admitted', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("conformance_result_implemented: false")
+    print("conformance_runner_implemented: false")
+    print("conformance_execution_implemented: false")
+    print("automatic_admission_implemented: false")
+    print("policy_decision_implemented: false")
+    print("adapter_admission_implemented: false")
+    print("adapter_execution_implemented: false")
+    print("capability_execution_implemented: false")
+    print("runtime_capability_registry_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("runtime: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("patch_transaction_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("worker_execution_implemented: false")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print("release: false")
+    print("promotion: false")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+    print("Gateway calls: none")
+    print(f"network_calls: {str(data.get('network_calls', False)).lower()}")
+    print(f"provider_or_model_calls: {'none' if not data.get('provider_model_calls', False) else 'present'}")
+    print("production_readiness: false")
+    print("release_readiness: false")
+    print("broad_autonomous_runtime: false")
+
+
+def command_conformance_profile_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    conformance_profile = load_conformance_profile_module(repo_root)
+    try:
+        data = conformance_profile.conformance_profile_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite conformance-profile status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_conformance_profile_boundary_lines({})
+        return 1
+    print("AIDE Lite conformance-profile status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"profile_ref: {data.get('profile_ref')}")
+    print(f"subject_ref: {data.get('subject_ref')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"projection_exists: {str(data.get('projection_exists', False)).lower()}")
+    print(f"profile_count: {data.get('profile_count')}")
+    print(f"case_count: {data.get('case_count')}")
+    print(f"required_case_count: {data.get('required_case_count')}")
+    print(f"optional_case_count: {data.get('optional_case_count')}")
+    print(f"advisory_case_count: {data.get('advisory_case_count')}")
+    print(f"warnings_count: {len(data.get('warnings', []))}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_conformance_profile_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_conformance_profile_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    conformance_profile = load_conformance_profile_module(repo_root)
+    try:
+        report = conformance_profile.write_conformance_profile_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite conformance-profile project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_conformance_profile_boundary_lines({})
+        return 1
+    print("AIDE Lite conformance-profile project")
+    print(f"result: {report.get('status')}")
+    print(f"capability_target: {report.get('capability_target')}")
+    print(f"profile_ref: {report.get('profile_ref')}")
+    print(f"subject_ref: {report.get('subject_ref')}")
+    print(f"profile_count: {report.get('profile_count')}")
+    print(f"case_count: {report.get('case_count')}")
+    print(f"required_case_count: {report.get('required_case_count')}")
+    print(f"optional_case_count: {report.get('optional_case_count')}")
+    print(f"advisory_case_count: {report.get('advisory_case_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_conformance_profile_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_conformance_profile_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    conformance_profile = load_conformance_profile_module(repo_root)
+    try:
+        report = conformance_profile.validate_conformance_profile(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite conformance-profile validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_conformance_profile_boundary_lines({})
+        return 1
+    print("AIDE Lite conformance-profile validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"reports_generated: {str(report.get('reports_generated', False)).lower()}")
+    print(f"profiles_json_valid: {str(report.get('profiles_json_valid', False)).lower()}")
+    print(f"profile_index_json_valid: {str(report.get('profile_index_json_valid', False)).lower()}")
+    print(f"case_index_json_valid: {str(report.get('case_index_json_valid', False)).lower()}")
+    print(f"case_ids_unique: {str(report.get('case_ids_unique', False)).lower()}")
+    print(f"dependencies_resolve: {str(report.get('dependencies_resolve', False)).lower()}")
+    print(f"dependency_cycles_absent: {str(report.get('dependency_cycles_absent', False)).lower()}")
+    print(f"requirement_levels_valid: {str(report.get('requirement_levels_valid', False)).lower()}")
+    print(f"known_required_evaluators: {str(report.get('known_required_evaluators', False)).lower()}")
+    print(f"unknown_required_evaluator_fails_closed: {str(report.get('unknown_required_evaluator_fails_closed', False)).lower()}")
+    print(f"unknown_optional_evaluator_warns: {str(report.get('unknown_optional_evaluator_warns', False)).lower()}")
+    print(f"unknown_advisory_evaluator_warns: {str(report.get('unknown_advisory_evaluator_warns', False)).lower()}")
+    print(f"required_cases_have_accepted_outcomes: {str(report.get('required_cases_have_accepted_outcomes', False)).lower()}")
+    print(f"required_cases_fail_closed: {str(report.get('required_cases_fail_closed', False)).lower()}")
+    print(f"profile_lifecycle_candidate: {str(report.get('profile_lifecycle_candidate', False)).lower()}")
+    print(f"evidence_requirements_declared: {str(report.get('evidence_requirements_declared', False)).lower()}")
+    print(f"source_evidence_exists: {str(report.get('source_evidence_exists', False)).lower()}")
+    print(f"profile_boundary_valid: {str(report.get('profile_boundary_valid', False)).lower()}")
+    print(f"result_not_generated: {str(report.get('result_not_generated', False)).lower()}")
+    print(f"execution_not_implemented: {str(report.get('execution_not_implemented', False)).lower()}")
+    print(f"admission_not_performed: {str(report.get('admission_not_performed', False)).lower()}")
+    print(f"trusted_not_promoted: {str(report.get('trusted_not_promoted', False)).lower()}")
+    print(f"predecessor_compatibility_preserved: {str(report.get('predecessor_compatibility_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_conformance_profile_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_conformance_result_boundary_lines(data: dict[str, object]) -> None:
+    print("result_only: true")
+    print("projection_only: true")
+    print(f"record_valid: {str(data.get('record_valid', False)).lower()}")
+    print(f"record_complete: {str(data.get('record_complete', False)).lower()}")
+    print(f"profile_requirements_satisfied: {str(data.get('profile_requirements_satisfied', False)).lower()}")
+    print(f"execution_performed: {str(data.get('execution_performed', False)).lower()}")
+    print(f"runner_ref: {data.get('runner_ref')}")
+    print(f"admission_performed: {str(data.get('admission_performed', False)).lower()}")
+    print(f"subject_admitted: {str(data.get('subject_admitted', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("conformance_runner_implemented: false")
+    print("case_execution_implemented: false")
+    print("command_execution_implemented: false")
+    print("automatic_result_collection_implemented: false")
+    print("profile_activation_implemented: false")
+    print("automatic_admission_implemented: false")
+    print("policy_decision_implemented: false")
+    print("adapter_admission_implemented: false")
+    print("adapter_execution_implemented: false")
+    print("capability_execution_implemented: false")
+    print("runtime_capability_registry_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("runtime: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("patch_transaction_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("worker_execution_implemented: false")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print("release: false")
+    print("promotion: false")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+    print("Gateway calls: none")
+    print(f"network_calls: {str(data.get('network_calls', False)).lower()}")
+    print(f"provider_or_model_calls: {'none' if not data.get('provider_model_calls', False) else 'present'}")
+    print("production_readiness: false")
+    print("release_readiness: false")
+    print("broad_autonomous_runtime: false")
+
+
+def command_conformance_result_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    conformance_result = load_conformance_result_module(repo_root)
+    try:
+        data = conformance_result.conformance_result_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite conformance-result status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_conformance_result_boundary_lines({})
+        return 1
+    print("AIDE Lite conformance-result status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"result_ref: {data.get('result_ref')}")
+    print(f"profile_ref: {data.get('profile_ref')}")
+    print(f"subject_ref: {data.get('subject_ref')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"projection_exists: {str(data.get('projection_exists', False)).lower()}")
+    print(f"result_count: {data.get('result_count')}")
+    print(f"case_result_count: {data.get('case_result_count')}")
+    print(f"required_case_result_count: {data.get('required_case_result_count')}")
+    print(f"pass_count: {data.get('pass_count')}")
+    print(f"pass_with_warnings_count: {data.get('pass_with_warnings_count')}")
+    print(f"warnings_count: {len(data.get('warnings', []))}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_conformance_result_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_conformance_result_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    conformance_result = load_conformance_result_module(repo_root)
+    try:
+        report = conformance_result.write_conformance_result_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite conformance-result project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_conformance_result_boundary_lines({})
+        return 1
+    print("AIDE Lite conformance-result project")
+    print(f"result: {report.get('status')}")
+    print(f"capability_target: {report.get('capability_target')}")
+    print(f"result_ref: {report.get('result_ref')}")
+    print(f"profile_ref: {report.get('profile_ref')}")
+    print(f"subject_ref: {report.get('subject_ref')}")
+    print(f"case_result_count: {report.get('case_result_count')}")
+    print(f"required_case_result_count: {report.get('required_case_result_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_conformance_result_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_conformance_result_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    conformance_result = load_conformance_result_module(repo_root)
+    try:
+        report = conformance_result.validate_conformance_result(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite conformance-result validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_conformance_result_boundary_lines({})
+        return 1
+    print("AIDE Lite conformance-result validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"reports_generated: {str(report.get('reports_generated', False)).lower()}")
+    print(f"results_json_valid: {str(report.get('results_json_valid', False)).lower()}")
+    print(f"result_index_json_valid: {str(report.get('result_index_json_valid', False)).lower()}")
+    print(f"case_result_index_json_valid: {str(report.get('case_result_index_json_valid', False)).lower()}")
+    print(f"case_ids_unique: {str(report.get('case_ids_unique', False)).lower()}")
+    print(f"case_results_bind_to_profile: {str(report.get('case_results_bind_to_profile', False)).lower()}")
+    print(f"observed_outcomes_valid: {str(report.get('observed_outcomes_valid', False)).lower()}")
+    print(f"case_results_execution_false: {str(report.get('case_results_execution_false', False)).lower()}")
+    print(f"case_results_runner_null: {str(report.get('case_results_runner_null', False)).lower()}")
+    print(f"observation_mode_evidence_projection: {str(report.get('observation_mode_evidence_projection', False)).lower()}")
+    print(f"observation_execution_false: {str(report.get('observation_execution_false', False)).lower()}")
+    print(f"observation_runner_null: {str(report.get('observation_runner_null', False)).lower()}")
+    print(f"profile_digest_matches: {str(report.get('profile_digest_matches', False)).lower()}")
+    print(f"required_cases_accounted: {str(report.get('required_cases_accounted', False)).lower()}")
+    print(f"record_complete: {str(report.get('record_complete', False)).lower()}")
+    print(f"profile_requirements_satisfied: {str(report.get('profile_requirements_satisfied', False)).lower()}")
+    print(f"record_valid_independent: {str(report.get('record_valid_independent', False)).lower()}")
+    print(f"admission_not_performed: {str(report.get('admission_not_performed', False)).lower()}")
+    print(f"subject_not_admitted: {str(report.get('subject_not_admitted', False)).lower()}")
+    print(f"trusted_not_promoted: {str(report.get('trusted_not_promoted', False)).lower()}")
+    print(f"predecessor_compatibility_preserved: {str(report.get('predecessor_compatibility_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_conformance_result_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_patch_transaction_boundary_lines(data: dict[str, object]) -> None:
+    print("schema_only: true")
+    print("projection_only: true")
+    print("representation_only: true")
+    print(f"policy_evaluation_performed: {str(data.get('policy_evaluation_performed', False)).lower()}")
+    print(f"approval_granted: {str(data.get('approval_granted', False)).lower()}")
+    print(f"apply_performed: {str(data.get('apply_performed', False)).lower()}")
+    print(f"target_mutated: {str(data.get('target_mutated', False)).lower()}")
+    print(f"rollback_performed: {str(data.get('rollback_performed', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("patch_apply_engine_implemented: false")
+    print("target_repository_apply_implemented: false")
+    print("approval_engine_implemented: false")
+    print("policy_engine_implemented: false")
+    print("conformance_runner_implemented: false")
+    print("automatic_observation_collection_implemented: false")
+    print("profile_activation_implemented: false")
+    print("admission_engine_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("worker_execution_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("runtime: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("workbench_implemented: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print("github_mutation: false")
+    print("release: false")
+    print("promotion: false")
+
+
+def command_patch_transaction_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    patch_transaction = load_patch_transaction_module(repo_root)
+    try:
+        data = patch_transaction.patch_transaction_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite patch-transaction status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_patch_transaction_boundary_lines({})
+        return 1
+    print("AIDE Lite patch-transaction status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"schema_loaded: {str(data.get('schema_loaded', False)).lower()}")
+    print(f"record_count: {data.get('record_count')}")
+    print(f"lifecycle_state_counts: {data.get('lifecycle_state_counts')}")
+    print(f"record_valid: {str(data.get('record_valid', False)).lower()}")
+    print(f"scope_valid: {str(data.get('scope_valid', False)).lower()}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_patch_transaction_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_patch_transaction_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    patch_transaction = load_patch_transaction_module(repo_root)
+    try:
+        report = patch_transaction.write_patch_transaction_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite patch-transaction project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_patch_transaction_boundary_lines({})
+        return 1
+    print("AIDE Lite patch-transaction project")
+    print(f"result: {report.get('status')}")
+    print(f"transaction_ref: {report.get('transaction_ref')}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"patch_artifact_sha256: {report.get('patch_artifact_sha256')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_patch_transaction_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_patch_transaction_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    patch_transaction = load_patch_transaction_module(repo_root)
+    try:
+        report = patch_transaction.patch_transaction_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite patch-transaction validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_patch_transaction_boundary_lines({})
+        return 1
+    print("AIDE Lite patch-transaction validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_loaded: {str(report.get('schema_loaded', False)).lower()}")
+    print(f"schema_parsed: {str(report.get('schema_parsed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"scope_valid: {str(report.get('scope_valid', False)).lower()}")
+    print(f"reference_id_syntax_valid: {str(report.get('reference_id_syntax_valid', False)).lower()}")
+    print(f"transaction_identity_stable: {str(report.get('transaction_identity_stable', False)).lower()}")
+    print(f"digest_shape_valid: {str(report.get('digest_shape_valid', False)).lower()}")
+    print(f"digest_binding_valid: {str(report.get('digest_binding_valid', False)).lower()}")
+    print(f"deterministic_projection: {str(report.get('deterministic_projection', False)).lower()}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"unknown_required_capability_fails_closed: {str(report.get('unknown_required_capability_fails_closed', False)).lower()}")
+    print(f"conformance_result_ref_does_not_trust: {str(report.get('conformance_result_ref_does_not_trust', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_patch_transaction_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_adapter_manifest_boundary_lines(data: dict[str, object]) -> None:
+    print("declaration_only: true")
+    print(f"admission_performed: {str(data.get('admission_performed', False)).lower()}")
+    print(f"admitted: {str(data.get('admitted', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print(f"execution_performed: {str(data.get('execution_performed', False)).lower()}")
+    print(f"worker_started: {str(data.get('worker_started', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"credential_resolution_performed: {str(data.get('credential_resolution_performed', False)).lower()}")
+    print(f"target_mutated: {str(data.get('target_mutated', False)).lower()}")
+    print("patch_apply_engine_implemented: false")
+    print("scheduler_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("service_implemented: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print("github_mutation: false")
+
+
+def command_adapter_manifest_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    adapter_manifest = load_adapter_manifest_module(repo_root)
+    try:
+        data = adapter_manifest.adapter_manifest_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite adapter-manifest status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_adapter_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite adapter-manifest status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"schema_loaded: {str(data.get('schema_loaded', False)).lower()}")
+    print(f"record_count: {data.get('record_count')}")
+    print(f"adapter_kind_counts: {data.get('adapter_kind_counts')}")
+    print(f"record_valid: {str(data.get('record_valid', False)).lower()}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_adapter_manifest_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_adapter_manifest_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    adapter_manifest = load_adapter_manifest_module(repo_root)
+    try:
+        report = adapter_manifest.write_adapter_manifest_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite adapter-manifest project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_adapter_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite adapter-manifest project")
+    print(f"result: {report.get('status')}")
+    print(f"manifest_ref: {report.get('manifest_ref')}")
+    print(f"adapter_ref: {report.get('adapter_ref')}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_adapter_manifest_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_adapter_manifest_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    adapter_manifest = load_adapter_manifest_module(repo_root)
+    try:
+        report = adapter_manifest.validate_adapter_manifest(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite adapter-manifest validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_adapter_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite adapter-manifest validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"adapter_ref_valid: {str(report.get('adapter_ref_valid', False)).lower()}")
+    print(f"conformance_result_ref_does_not_trust: {str(report.get('conformance_result_ref_does_not_trust', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_adapter_manifest_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_context_pack_v2_boundary_lines(data: dict[str, object]) -> None:
+    print(f"model_call_performed: {str(data.get('model_call_performed', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"embedding_performed: {str(data.get('embedding_performed', False)).lower()}")
+    print(f"agent_started: {str(data.get('agent_started', False)).lower()}")
+    print(f"worker_started: {str(data.get('worker_started', False)).lower()}")
+    print(f"command_executed: {str(data.get('command_executed', False)).lower()}")
+    print(f"patch_applied: {str(data.get('patch_applied', False)).lower()}")
+    print(f"repository_mutated: {str(data.get('repository_mutated', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("adapter_admission: false")
+    print("patch_apply_engine_implemented: false")
+    print("scheduler_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("service_implemented: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print("github_mutation: false")
+
+
+def command_context_pack_v2_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    context_pack_v2 = load_context_pack_v2_module(repo_root)
+    try:
+        data = context_pack_v2.context_pack_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite context-pack-v2 status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_context_pack_v2_boundary_lines({})
+        return 1
+    print("AIDE Lite context-pack-v2 status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"schema_loaded: {str(data.get('schema_loaded', False)).lower()}")
+    print(f"record_count: {data.get('record_count')}")
+    print(f"section_count: {data.get('section_count')}")
+    print(f"source_ref_count: {data.get('source_ref_count')}")
+    print(f"record_valid: {str(data.get('record_valid', False)).lower()}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_context_pack_v2_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_context_pack_v2_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    context_pack_v2 = load_context_pack_v2_module(repo_root)
+    try:
+        report = context_pack_v2.write_context_pack_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite context-pack-v2 project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_context_pack_v2_boundary_lines({})
+        return 1
+    print("AIDE Lite context-pack-v2 project")
+    print(f"result: {report.get('status')}")
+    print(f"context_pack_ref: {report.get('context_pack_ref')}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"section_count: {report.get('section_count')}")
+    print(f"source_ref_count: {report.get('source_ref_count')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_context_pack_v2_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_context_pack_v2_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    context_pack_v2 = load_context_pack_v2_module(repo_root)
+    try:
+        report = context_pack_v2.validate_context_pack(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite context-pack-v2 validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_context_pack_v2_boundary_lines({})
+        return 1
+    print("AIDE Lite context-pack-v2 validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"reports_generated: {str(report.get('reports_generated', False)).lower()}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"context_pack_ref_valid: {str(report.get('context_pack_ref_valid', False)).lower()}")
+    print(f"required_sections_present: {str(report.get('required_sections_present', False)).lower()}")
+    print(f"source_refs_exist: {str(report.get('source_refs_exist', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"no_execution_facts_preserved: {str(report.get('no_execution_facts_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_context_pack_v2_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_mcp_server_contract_boundary_lines(data: dict[str, object]) -> None:
+    print(f"server_process_started: {str(data.get('server_process_started', False)).lower()}")
+    print(f"stdio_transport_started: {str(data.get('stdio_transport_started', False)).lower()}")
+    print(f"http_transport_started: {str(data.get('http_transport_started', False)).lower()}")
+    print(f"http_endpoint_bound: {str(data.get('http_endpoint_bound', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"resource_serving_performed: {str(data.get('resource_serving_performed', False)).lower()}")
+    print(f"tool_execution_performed: {str(data.get('tool_execution_performed', False)).lower()}")
+    print(f"prompt_serving_performed: {str(data.get('prompt_serving_performed', False)).lower()}")
+    print(f"authorization_implemented: {str(data.get('authorization_implemented', False)).lower()}")
+    print(f"credential_resolution_performed: {str(data.get('credential_resolution_performed', False)).lower()}")
+    print(f"worker_dispatched: {str(data.get('worker_dispatched', False)).lower()}")
+    print(f"model_or_provider_called: {str(data.get('model_or_provider_called', False)).lower()}")
+    print(f"patch_applied: {str(data.get('patch_applied', False)).lower()}")
+    print(f"repository_target_mutated: {str(data.get('repository_target_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("live_mcp_server: false")
+    print("mcp_authentication: false")
+    print("host_contract_implemented: false")
+    print("dominium_bridge_implemented: false")
+    print("workbench_implemented: false")
+
+
+def command_mcp_server_contract_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    mcp_server_contract = load_mcp_server_contract_module(repo_root)
+    try:
+        data = mcp_server_contract.mcp_server_contract_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite mcp-server-contract status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_mcp_server_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite mcp-server-contract status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"target_protocol_version: {data.get('target_protocol_version')}")
+    print(f"jsonrpc_version: {data.get('jsonrpc_version')}")
+    print(f"contract_valid: {str(data.get('contract_valid', False)).lower()}")
+    print(f"resource_count: {data.get('resource_count')}")
+    print(f"tool_count: {data.get('tool_count')}")
+    print(f"prompt_count: {data.get('prompt_count')}")
+    print(f"fixture_count: {data.get('fixture_count')}")
+    print(f"transport_contract_count: {data.get('transport_contract_count')}")
+    print(f"conformance_expectation_count: {data.get('conformance_expectation_count')}")
+    print(f"implemented_live_transport_count: {data.get('implemented_live_transport_count')}")
+    print(f"callable_tool_count: {data.get('callable_tool_count')}")
+    print(f"served_resource_count: {data.get('served_resource_count')}")
+    print(f"live_endpoint_count: {data.get('live_endpoint_count')}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_mcp_server_contract_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_mcp_server_contract_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    mcp_server_contract = load_mcp_server_contract_module(repo_root)
+    try:
+        report = mcp_server_contract.write_mcp_server_contract_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite mcp-server-contract project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_mcp_server_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite mcp-server-contract project")
+    print(f"result: {report.get('status')}")
+    print(f"contract_id: {report.get('contract_id')}")
+    print(f"target_protocol_version: {report.get('target_protocol_version')}")
+    print(f"jsonrpc_version: {report.get('jsonrpc_version')}")
+    print(f"resource_count: {report.get('resource_count')}")
+    print(f"tool_count: {report.get('tool_count')}")
+    print(f"prompt_count: {report.get('prompt_count')}")
+    print(f"fixture_count: {report.get('fixture_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_mcp_server_contract_boundary_lines({})
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_mcp_server_contract_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    mcp_server_contract = load_mcp_server_contract_module(repo_root)
+    try:
+        report = mcp_server_contract.validate_mcp_server_contract(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite mcp-server-contract validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_mcp_server_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite mcp-server-contract validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"contract_valid: {str(report.get('contract_valid', False)).lower()}")
+    print(f"target_protocol_version: {report.get('target_protocol_version')}")
+    print(f"jsonrpc_version: {report.get('jsonrpc_version')}")
+    print(f"resource_count: {report.get('resource_count')}")
+    print(f"tool_count: {report.get('tool_count')}")
+    print(f"prompt_count: {report.get('prompt_count')}")
+    print(f"fixture_count: {report.get('fixture_count')}")
+    print(f"transport_contract_count: {report.get('transport_contract_count')}")
+    print(f"conformance_expectation_count: {report.get('conformance_expectation_count')}")
+    print(f"runtime_facts_preserved: {str(report.get('runtime_facts_preserved', False)).lower()}")
+    print(f"deterministic_projection: {str(report.get('deterministic_projection', False)).lower()}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"secret_like_scan_clear: {str(report.get('secret_like_scan_clear', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_mcp_server_contract_boundary_lines({})
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_a2a_agent_card_contract_boundary_lines(data: dict[str, object]) -> None:
+    print(f"live_a2a_endpoint_started: {str(data.get('live_a2a_endpoint_started', False)).lower()}")
+    print(f"agent_registered: {str(data.get('agent_registered', False)).lower()}")
+    print(f"task_delegation_performed: {str(data.get('task_delegation_performed', False)).lower()}")
+    print(f"authentication_implemented: {str(data.get('authentication_implemented', False)).lower()}")
+    print(f"worker_dispatched: {str(data.get('worker_dispatched', False)).lower()}")
+    print(f"model_or_provider_called: {str(data.get('model_or_provider_called', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"patch_applied: {str(data.get('patch_applied', False)).lower()}")
+    print(f"repository_target_mutated: {str(data.get('repository_target_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("live_a2a_endpoint: false")
+    print("a2a_authentication: false")
+    print("a2a_task_delegation: false")
+    print("host_contract_implemented: false")
+    print("dominium_bridge_implemented: false")
+    print("workbench_implemented: false")
+
+
+def command_a2a_agent_card_contract_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    a2a_agent_card_contract = load_a2a_agent_card_contract_module(repo_root)
+    try:
+        data = a2a_agent_card_contract.a2a_agent_card_contract_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite a2a-agent-card-contract status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_a2a_agent_card_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite a2a-agent-card-contract status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"contract_id: {data.get('contract_id')}")
+    print(f"agent_card_name: {data.get('agent_card_name')}")
+    print(f"contract_valid: {str(data.get('contract_valid', False)).lower()}")
+    print(f"skill_count: {data.get('skill_count')}")
+    print(f"implemented_skill_count: {data.get('implemented_skill_count')}")
+    print(f"artifact_count: {data.get('artifact_count')}")
+    print(f"live_endpoint_count: {data.get('live_endpoint_count')}")
+    print(f"registered_agent_count: {data.get('registered_agent_count')}")
+    print(f"delegation_capability_count: {data.get('delegation_capability_count')}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_a2a_agent_card_contract_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_a2a_agent_card_contract_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    a2a_agent_card_contract = load_a2a_agent_card_contract_module(repo_root)
+    try:
+        report = a2a_agent_card_contract.write_a2a_agent_card_contract_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite a2a-agent-card-contract project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_a2a_agent_card_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite a2a-agent-card-contract project")
+    print(f"result: {report.get('status')}")
+    print(f"contract_id: {report.get('contract_id')}")
+    print(f"agent_card_name: {report.get('agent_card_name')}")
+    print(f"skill_count: {report.get('skill_count')}")
+    print(f"artifact_count: {report.get('artifact_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_a2a_agent_card_contract_boundary_lines({})
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_a2a_agent_card_contract_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    a2a_agent_card_contract = load_a2a_agent_card_contract_module(repo_root)
+    try:
+        report = a2a_agent_card_contract.validate_a2a_agent_card_contract(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite a2a-agent-card-contract validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_a2a_agent_card_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite a2a-agent-card-contract validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"contract_valid: {str(report.get('contract_valid', False)).lower()}")
+    print(f"contract_id: {report.get('contract_id')}")
+    print(f"agent_card_name: {report.get('agent_card_name')}")
+    print(f"skill_count: {report.get('skill_count')}")
+    print(f"artifact_count: {report.get('artifact_count')}")
+    print(f"runtime_facts_preserved: {str(report.get('runtime_facts_preserved', False)).lower()}")
+    print(f"deterministic_projection: {str(report.get('deterministic_projection', False)).lower()}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"secret_like_scan_clear: {str(report.get('secret_like_scan_clear', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_a2a_agent_card_contract_boundary_lines({})
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _dominium_seam_boundary_data(data: dict[str, object]) -> dict[str, object]:
+    return data if isinstance(data, dict) else {}
+
+
+def _print_dominium_seam_boundary_lines(data: dict[str, object]) -> None:
+    data = _dominium_seam_boundary_data(data)
+    for key in [
+        "dominium_command_invoked",
+        "generated_projection_marked_canonical",
+        "host_runtime_started",
+        "workbench_started",
+        "bridge_runtime_started",
+        "service_started",
+        "database_opened",
+        "transport_started",
+        "network_call_performed",
+        "provider_or_model_called",
+        "worker_executed",
+        "patch_transaction_applied",
+        "preview_or_apply_performed",
+        "source_repository_mutated",
+        "target_repository_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "release_or_promotion_performed",
+    ]:
+        print(f"{key}: {str(data.get(key, False)).lower()}")
+    print("host_contract_implemented: false")
+    print("host_sdk_implemented: false")
+    print("dominium_bridge_runtime_implemented: false")
+    print("workbench_implemented: false")
+    print("service_implemented: false")
+    print("transport_implemented: false")
+    print("provider_or_model_calls: none")
+    print("worker_execution: false")
+    print("mutation_capability: false")
+
+
+def _dominium_root_arg(args: argparse.Namespace) -> str | None:
+    value = getattr(args, "dominium_root", None)
+    return str(value) if value else None
+
+
+def _dominium_revision_arg(args: argparse.Namespace) -> str | None:
+    value = getattr(args, "revision", None)
+    return str(value) if value else None
+
+
+def command_dominium_seam_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        data = dominium.dominium_seam_status(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite dominium-seam status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"bundle_exists: {str(data.get('bundle_exists', False)).lower()}")
+    print(f"dominium_available: {str(data.get('dominium_available', False)).lower()}")
+    print(f"source_revision: {data.get('source_revision')}")
+    print(f"selected_file_count: {data.get('selected_file_count')}")
+    print(f"record_count: {data.get('record_count')}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_seam_snapshot(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.snapshot_dominium_source(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - snapshot reports must fail closed.
+        print("AIDE Lite dominium-seam snapshot")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam snapshot")
+    print("result: PASS")
+    print(f"source_revision: {report.get('source_revision')}")
+    print(f"source_ref: {report.get('source_ref')}")
+    print(f"selected_file_count: {report.get('selected_file_count')}")
+    print(f"snapshot_digest: {report.get('snapshot_digest')}")
+    print(f"behind_origin_main: {report.get('freshness', {}).get('behind_origin_main')}")
+    print(f"recommended_next_task: {dominium.RECOMMENDED_NEXT_TASK if hasattr(dominium, 'RECOMMENDED_NEXT_TASK') else 'AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01'}")
+    _print_dominium_seam_boundary_lines({})
+    return 0
+
+
+def command_dominium_seam_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.project_dominium_seam(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite dominium-seam project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam project")
+    print(f"result: {report.get('status')}")
+    print(f"source_revision: {report.get('source_revision')}")
+    print(f"selected_file_count: {report.get('selected_file_count')}")
+    print(f"record_count: {report.get('record_count')}")
+    print(f"fixture_count: {report.get('fixture_count')}")
+    print(f"projection_index_digest: {report.get('projection_index_digest')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_seam_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.validate_dominium_seam(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+            project=False,
+        )
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite dominium-seam validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"record_count: {report.get('record_count')}")
+    print(f"selected_file_count: {report.get('selected_file_count')}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"warning_count: {len(report.get('warnings', []))}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"source_revision_bound: {str(report.get('source_revision_bound', False)).lower()}")
+    print(f"read_only_capability_boundary_preserved: {str(report.get('read_only_capability_boundary_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_seam_diff(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.dominium_seam_diff(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - deterministic diff reports must fail closed.
+        print("AIDE Lite dominium-seam diff")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam diff")
+    print(f"result: {report.get('status')}")
+    print(f"byte_equal: {str(report.get('byte_equal', False)).lower()}")
+    print(f"current_sha256: {report.get('current_sha256')}")
+    print(f"fresh_sha256: {report.get('fresh_sha256')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines({})
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_dominium_seam_demo(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.run_dominium_seam_demo(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - demo reports must fail closed.
+        print("AIDE Lite dominium-seam demo")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam demo")
+    print(f"result: {report.get('status')}")
+    print(f"input_revision: {report.get('input_revision')}")
+    print(f"selected_file_count: {report.get('record_counts', {}).get('selected_files')}")
+    print(f"record_count: {report.get('record_counts', {}).get('records')}")
+    print(f"fixture_count: {report.get('record_counts', {}).get('fixtures')}")
+    print(f"validation_result: {report.get('validation_result')}")
+    print(f"source_mutation_count: {report.get('source_mutation_count')}")
+    print(f"forbidden_operation_count: {report.get('forbidden_operation_count')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines({})
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_seam_unsupported(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    operation = str(getattr(args, "operation", getattr(args, "dominium_seam_command", "")) or "")
+    refusal = dominium.unsupported_operation_refusal(operation)
+    print("AIDE Lite dominium-seam unsupported")
+    print(f"result: {refusal.get('status')}")
+    print(f"reason_code: {refusal.get('reason_code')}")
+    print(f"operation: {refusal.get('operation')}")
+    print(f"message: {refusal.get('message')}")
+    print(f"recommended_next_task: {refusal.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines({})
+    return 2
+
+
+def _print_dominium_workunit_validation_boundary_lines(data: dict[str, object]) -> None:
+    print(f"arbitrary_shell_command_executed: {str(data.get('arbitrary_shell_command_executed', False)).lower()}")
+    print(f"private_tool_called: {str(data.get('private_tool_called', False)).lower()}")
+    print(f"broad_dispatch_used: {str(data.get('broad_dispatch_used', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"provider_or_model_called: {str(data.get('provider_or_model_called', False)).lower()}")
+    print(f"worker_executed: {str(data.get('worker_executed', False)).lower()}")
+    print(f"workbench_apply_performed: {str(data.get('workbench_apply_performed', False)).lower()}")
+    print(f"preview_or_apply_performed: {str(data.get('preview_or_apply_performed', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"source_repository_mutated: {str(data.get('source_repository_mutated', False)).lower()}")
+    print(f"target_repository_mutated: {str(data.get('target_repository_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_dominium_workunit_validation_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_dominium_workunit_validation_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite dominium-workunit-validation status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_workunit_validation_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-workunit-validation status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_id: {data.get('capability_id')}")
+    print(f"slice_report_exists: {str(data.get('slice_report_exists', False)).lower()}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_dominium_workunit_validation_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_dominium_workunit_validation_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_dominium_workunit_validation_module(repo_root)
+    try:
+        report = module.run_slice(repo_root)
+    except Exception as exc:  # noqa: BLE001 - bounded invocation must fail closed.
+        print("AIDE Lite dominium-workunit-validation run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_workunit_validation_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-workunit-validation run")
+    print(f"result: {report.get('status')}")
+    print(f"validation_status: {report.get('validation_status')}")
+    print(f"capability_id: {report.get('capability_id')}")
+    print(f"capability_invocation_count: {report.get('capability_invocation_count')}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_workunit_validation_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_workunit_validation_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_dominium_workunit_validation_module(repo_root)
+    try:
+        report = module.validate_slice_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite dominium-workunit-validation validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_workunit_validation_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-workunit-validation validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"required_outputs_present: {str(report.get('required_outputs_present', False)).lower()}")
+    print(f"exactly_one_invocation: {str(report.get('exactly_one_invocation', False)).lower()}")
+    print(f"no_mutation: {str(report.get('no_mutation', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_workunit_validation_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_dominium_registered_validation_boundary_lines(data: dict[str, object]) -> None:
+    print(f"launcher_call_count: {data.get('launcher_call_count', '')}")
+    print(f"registered_command_boundary_reached: {data.get('registered_command_boundary_reached', '')}")
+    print(f"service_adapter_boundary_reached: {data.get('service_adapter_boundary_reached', '')}")
+    print(f"aggregate_validation_executed: {str(data.get('aggregate_validation_executed', False)).lower()}")
+    print(f"aggregate_validation_succeeded: {str(data.get('aggregate_validation_succeeded', False)).lower()}")
+    print(f"mutation_observation: {data.get('mutation_observation', '')}")
+    print(f"arbitrary_shell_command_executed: {str(data.get('arbitrary_shell_command_executed', False)).lower()}")
+    print(f"private_tool_called: {str(data.get('private_tool_called', False)).lower()}")
+    print(f"broad_dispatch_used: {str(data.get('broad_dispatch_used', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"provider_or_model_called: {str(data.get('provider_or_model_called', False)).lower()}")
+    print(f"worker_executed: {str(data.get('worker_executed', False)).lower()}")
+    print(f"workbench_apply_performed: {str(data.get('workbench_apply_performed', False)).lower()}")
+    print(f"preview_or_apply_performed: {str(data.get('preview_or_apply_performed', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"source_repository_mutated: {str(data.get('source_repository_mutated', False)).lower()}")
+    print(f"target_repository_mutated: {str(data.get('target_repository_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_dominium_registered_validation_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_dominium_registered_validation_backend_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite dominium-registered-validation status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_registered_validation_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-registered-validation status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_id: {data.get('capability_id')}")
+    print(f"proposed_capability_label: {data.get('proposed_capability_label')}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_dominium_registered_validation_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_dominium_registered_validation_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_dominium_registered_validation_backend_module(repo_root)
+    dominium_root = args.dominium_root if getattr(args, "dominium_root", "") else None
+    expected_revision = args.expected_revision if getattr(args, "expected_revision", "") else None
+    try:
+        report = module.run_backend(
+            repo_root,
+            dominium_root=dominium_root,
+            expected_revision=expected_revision,
+            timeout_seconds=args.timeout_seconds,
+        )
+    except Exception as exc:  # noqa: BLE001 - bounded invocation must fail closed.
+        print("AIDE Lite dominium-registered-validation run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_registered_validation_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-registered-validation run")
+    print(f"result: {report.get('validation_status') or report.get('status')}")
+    print(f"capability_id: {report.get('capability_id')}")
+    print(f"proposed_capability_label: {report.get('proposed_capability_label')}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"actual_dominium_cli_process_spawned: {str(report.get('actual_dominium_cli_process_spawned', False)).lower()}")
+    print(f"dominium_stdout_json_parsed: {str(report.get('dominium_stdout_json_parsed', False)).lower()}")
+    print(f"checkout_state_unchanged: {str(report.get('checkout_state_unchanged', False)).lower()}")
+    print(f"result_origin: {report.get('result_origin')}")
+    print(f"recommended_next_task: {module.CHECK_TASK_ID}")
+    _print_dominium_registered_validation_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_registered_validation_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_dominium_registered_validation_backend_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite dominium-registered-validation validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_registered_validation_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-registered-validation validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"dominium_command_status: {report.get('dominium_command_status')}")
+    print(f"checkout_state_unchanged: {str(report.get('checkout_state_unchanged', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_registered_validation_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_aide_self_validation_process_adapter_boundary_lines(data: dict[str, object]) -> None:
+    print(f"provider_ref: {data.get('provider_ref', '')}")
+    print(f"process_call_count: {data.get('process_call_count', '')}")
+    print(f"workspace_state_unchanged: {str(data.get('workspace_state_unchanged', False)).lower()}")
+    print(f"mutation_observation: {data.get('mutation_observation', '')}")
+    print(f"result_origin: {data.get('result_origin', '')}")
+    print(f"arbitrary_shell_command_executed: {str(data.get('arbitrary_shell_command_executed', False)).lower()}")
+    print(f"private_tool_called: {str(data.get('private_tool_called', False)).lower()}")
+    print(f"broad_dispatch_used: {str(data.get('broad_dispatch_used', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"provider_or_model_called: {str(data.get('provider_or_model_called', False)).lower()}")
+    print(f"worker_executed: {str(data.get('worker_executed', False)).lower()}")
+    print(f"workbench_apply_performed: {str(data.get('workbench_apply_performed', False)).lower()}")
+    print(f"preview_or_apply_performed: {str(data.get('preview_or_apply_performed', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"source_repository_mutated: {str(data.get('source_repository_mutated', False)).lower()}")
+    print(f"target_repository_mutated: {str(data.get('target_repository_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_aide_self_validation_process_adapter_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_aide_self_validation_process_adapter_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite aide-self-validation-process-adapter status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_aide_self_validation_process_adapter_boundary_lines({})
+        return 1
+    print("AIDE Lite aide-self-validation-process-adapter status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_id: {data.get('capability_id')}")
+    print(f"proposed_capability_label: {data.get('proposed_capability_label')}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_aide_self_validation_process_adapter_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_aide_self_validation_process_adapter_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_aide_self_validation_process_adapter_module(repo_root)
+    expected_revision = args.expected_revision if getattr(args, "expected_revision", "") else None
+    try:
+        report = module.run_adapter(
+            repo_root,
+            expected_revision=expected_revision,
+            timeout_seconds=args.timeout_seconds,
+        )
+    except Exception as exc:  # noqa: BLE001 - bounded invocation must fail closed.
+        print("AIDE Lite aide-self-validation-process-adapter run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_aide_self_validation_process_adapter_boundary_lines({})
+        return 1
+    print("AIDE Lite aide-self-validation-process-adapter run")
+    print(f"result: {report.get('validation_status') or report.get('status')}")
+    print(f"capability_id: {report.get('capability_id')}")
+    print(f"proposed_capability_label: {report.get('proposed_capability_label')}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"actual_aide_validate_process_spawned: {str(report.get('actual_aide_validate_process_spawned', False)).lower()}")
+    print(f"aide_validate_stdout_parsed: {str(report.get('aide_validate_stdout_parsed', False)).lower()}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"result_origin: {report.get('result_origin')}")
+    print(f"recommended_next_task: {module.CHECK_TASK_ID}")
+    _print_aide_self_validation_process_adapter_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_aide_self_validation_process_adapter_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_aide_self_validation_process_adapter_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite aide-self-validation-process-adapter validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_aide_self_validation_process_adapter_boundary_lines({})
+        return 1
+    print("AIDE Lite aide-self-validation-process-adapter validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"aide_validate_status: {report.get('aide_validate_status')}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_aide_self_validation_process_adapter_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_eureka_readonly_process_adapter_boundary_lines(data: dict[str, object]) -> None:
+    print(f"provider_ref: {data.get('provider_ref', '')}")
+    print(f"process_call_count: {data.get('process_call_count', '')}")
+    print(f"workspace_state_unchanged: {str(data.get('workspace_state_unchanged', False)).lower()}")
+    print(f"mutation_observation: {data.get('mutation_observation', '')}")
+    print(f"result_origin: {data.get('result_origin', '')}")
+    print(f"requested_command_available: {str(data.get('requested_command_available', False)).lower()}")
+    print(f"selected_command: {data.get('selected_command', '')}")
+    print(f"arbitrary_shell_command_executed: {str(data.get('arbitrary_shell_command_executed', False)).lower()}")
+    print(f"private_tool_called: {str(data.get('private_tool_called', False)).lower()}")
+    print(f"broad_dispatch_used: {str(data.get('broad_dispatch_used', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"provider_or_model_called: {str(data.get('provider_or_model_called', False)).lower()}")
+    print(f"worker_executed: {str(data.get('worker_executed', False)).lower()}")
+    print(f"workbench_apply_performed: {str(data.get('workbench_apply_performed', False)).lower()}")
+    print(f"preview_or_apply_performed: {str(data.get('preview_or_apply_performed', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"source_repository_mutated: {str(data.get('source_repository_mutated', False)).lower()}")
+    print(f"target_repository_mutated: {str(data.get('target_repository_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_eureka_readonly_process_adapter_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_eureka_readonly_process_adapter_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite aide-eureka-readonly-process-adapter status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_eureka_readonly_process_adapter_boundary_lines({})
+        return 1
+    print("AIDE Lite aide-eureka-readonly-process-adapter status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_id: {data.get('capability_id')}")
+    print(f"proposed_capability_label: {data.get('proposed_capability_label')}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_eureka_readonly_process_adapter_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_eureka_readonly_process_adapter_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_eureka_readonly_process_adapter_module(repo_root)
+    eureka_root = args.eureka_root if getattr(args, "eureka_root", "") else None
+    expected_revision = args.expected_revision if getattr(args, "expected_revision", "") else None
+    try:
+        report = module.run_adapter(
+            repo_root,
+            eureka_root=eureka_root,
+            expected_revision=expected_revision,
+            timeout_seconds=args.timeout_seconds,
+        )
+    except Exception as exc:  # noqa: BLE001 - bounded invocation must fail closed.
+        print("AIDE Lite aide-eureka-readonly-process-adapter run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_eureka_readonly_process_adapter_boundary_lines({})
+        return 1
+    print("AIDE Lite aide-eureka-readonly-process-adapter run")
+    print(f"result: {report.get('validation_status') or report.get('status')}")
+    print(f"capability_id: {report.get('capability_id')}")
+    print(f"proposed_capability_label: {report.get('proposed_capability_label')}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"actual_eureka_process_spawned: {str(report.get('actual_eureka_process_spawned', False)).lower()}")
+    print(f"eureka_json_parsed: {str(report.get('eureka_json_parsed', False)).lower()}")
+    eureka_result = report.get("eureka_result") if isinstance(report.get("eureka_result"), dict) else {}
+    print(f"eureka_status: {report.get('eureka_status') or eureka_result.get('status')}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"result_origin: {report.get('result_origin')}")
+    print(f"recommended_next_task: {module.CHECK_TASK_ID}")
+    _print_eureka_readonly_process_adapter_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_eureka_readonly_process_adapter_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_eureka_readonly_process_adapter_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite aide-eureka-readonly-process-adapter validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_eureka_readonly_process_adapter_boundary_lines({})
+        return 1
+    print("AIDE Lite aide-eureka-readonly-process-adapter validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"eureka_status: {report.get('eureka_status')}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_eureka_readonly_process_adapter_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_local_process_execution_host_boundary_lines(data: dict[str, object]) -> None:
+    print(f"provider_ref: {data.get('provider_ref', '')}")
+    print(f"process_call_count: {data.get('process_call_count', '')}")
+    print(f"local_process_execution_host_implemented: {str(data.get('local_process_execution_host_implemented', False)).lower()}")
+    print(f"reference_worker_process_started: {str(data.get('reference_worker_process_started', False)).lower()}")
+    print(f"bounded_worker_session_executed: {str(data.get('bounded_worker_session_executed', False)).lower()}")
+    print(f"workspace_state_unchanged: {str(data.get('workspace_state_unchanged', False)).lower()}")
+    print(f"mutation_observation: {data.get('mutation_observation', '')}")
+    print(f"result_origin: {data.get('result_origin', '')}")
+    print(f"arbitrary_shell_command_executed: {str(data.get('arbitrary_shell_command_executed', False)).lower()}")
+    print(f"private_tool_called: {str(data.get('private_tool_called', False)).lower()}")
+    print(f"broad_dispatch_used: {str(data.get('broad_dispatch_used', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"provider_or_model_called: {str(data.get('provider_or_model_called', False)).lower()}")
+    print(f"workbench_apply_performed: {str(data.get('workbench_apply_performed', False)).lower()}")
+    print(f"preview_or_apply_performed: {str(data.get('preview_or_apply_performed', False)).lower()}")
+    print(f"patch_transaction_applied: {str(data.get('patch_transaction_applied', False)).lower()}")
+    print(f"source_repository_mutated: {str(data.get('source_repository_mutated', False)).lower()}")
+    print(f"target_repository_mutated: {str(data.get('target_repository_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"release_or_promotion_performed: {str(data.get('release_or_promotion_performed', False)).lower()}")
+
+
+def command_local_process_execution_host_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_process_execution_host_module(repo_root)
+    try:
+        data = module.status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite local-process-execution-host status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_process_execution_host_boundary_lines({})
+        return 1
+    print("AIDE Lite local-process-execution-host status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_id: {data.get('capability_id')}")
+    print(f"proposed_capability_label: {data.get('proposed_capability_label')}")
+    print(f"validation_report_exists: {str(data.get('validation_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_local_process_execution_host_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS", "NOT_RUN"} else 1
+
+
+def command_local_process_execution_host_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_process_execution_host_module(repo_root)
+    expected_revision = args.expected_revision if getattr(args, "expected_revision", "") else None
+    try:
+        report = module.run_host(
+            repo_root,
+            expected_revision=expected_revision,
+            timeout_seconds=args.timeout_seconds,
+        )
+    except Exception as exc:  # noqa: BLE001 - bounded invocation must fail closed.
+        print("AIDE Lite local-process-execution-host run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_process_execution_host_boundary_lines({})
+        return 1
+    print("AIDE Lite local-process-execution-host run")
+    print(f"result: {report.get('validation_status') or report.get('status')}")
+    print(f"capability_id: {report.get('capability_id')}")
+    print(f"proposed_capability_label: {report.get('proposed_capability_label')}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"reference_worker_process_started: {str(report.get('reference_worker_process_started', False)).lower()}")
+    print(f"reference_worker_json_parsed: {str(report.get('reference_worker_json_parsed', False)).lower()}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"result_origin: {report.get('result_origin')}")
+    print(f"recommended_next_task: {module.CHECK_TASK_ID}")
+    _print_local_process_execution_host_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_local_process_execution_host_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    module = load_local_process_execution_host_module(repo_root)
+    try:
+        report = module.validate_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite local-process-execution-host validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_local_process_execution_host_boundary_lines({})
+        return 1
+    print("AIDE Lite local-process-execution-host validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"process_call_count: {report.get('process_call_count')}")
+    print(f"reference_worker_process_started: {str(report.get('reference_worker_process_started', False)).lower()}")
+    print(f"workspace_state_unchanged: {str(report.get('workspace_state_unchanged', False)).lower()}")
+    print(f"error_count: {len(report.get('validation_errors', []))}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_local_process_execution_host_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
+    print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
+    print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
+    print(f"workunit_claim_implemented: {str(data.get('workunit_claim_implemented', False)).lower()}")
+    print(f"workunit_run_implemented: {str(data.get('workunit_run_implemented', False)).lower()}")
+    print(f"workunit_block_implemented: {str(data.get('workunit_block_implemented', False)).lower()}")
+    print(f"workunit_finish_implemented: {str(data.get('workunit_finish_implemented', False)).lower()}")
+    print(f"workunit_repair_implemented: {str(data.get('workunit_repair_implemented', False)).lower()}")
+    print(f"source_queue_tasks_mutated: {str(data.get('source_queue_tasks_mutated', False)).lower()}")
+    print(f"destructive_migration_performed: {str(data.get('destructive_migration_performed', False)).lower()}")
+    print("target_mutation: false")
+    print("active_repo_apply_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+
+
+def command_workunit_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - read-only CLI reports must fail closed.
+        print("AIDE Lite workunit status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    print("AIDE Lite workunit status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"workunit_cli_mode: {data.get('workunit_cli_mode')}")
+    print(f"accepted_workunit_queue_capability: {data.get('accepted_workunit_queue_capability')}")
+    print(f"queue_root_exists: {str(data.get('queue_root_exists', False)).lower()}")
+    print(f"task_directories_discovered: {data.get('task_directories_discovered')}")
+    print(f"projectable_workunits: {data.get('projectable_workunits')}")
+    print(f"schema_file_loaded: {str(data.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(data.get('schema_file_parsed', False)).lower()}")
+    _print_workunit_cli_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_list(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_list(repo_root)
+    except Exception as exc:  # noqa: BLE001 - read-only CLI reports must fail closed.
+        print("AIDE Lite workunit list")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    print("AIDE Lite workunit list")
+    print(f"result: {data.get('status')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"workunit_cli_mode: {data.get('workunit_cli_mode')}")
+    print(f"task_count: {data.get('task_count')}")
+    for item in data.get("tasks", []):
+        print(
+            "- "
+            f"{item.get('task_id')}: "
+            f"status={item.get('status')} "
+            f"phase={item.get('phase')} "
+            f"result={item.get('result')} "
+            f"work_type={item.get('work_type')} "
+            f"validation={item.get('validation_status')}"
+        )
+    _print_workunit_cli_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_inspect(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_inspect(repo_root, args.task_id)
+    except Exception as exc:  # noqa: BLE001 - unsafe task ids and invalid objects fail closed.
+        print("AIDE Lite workunit inspect")
+        print("result: FAIL")
+        print(f"task_id: {getattr(args, 'task_id', '')}")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    presence = data.get("source_presence", {})
+    validation = data.get("validation", {})
+    print("AIDE Lite workunit inspect")
+    print(f"result: {data.get('status')}")
+    print(f"task_id: {data.get('inspected_task_id')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"workunit_cli_mode: {data.get('workunit_cli_mode')}")
+    print(f"task_yaml_exists: {str(presence.get('task_yaml_exists', False)).lower()}")
+    print(f"status_yaml_exists: {str(presence.get('status_yaml_exists', False)).lower()}")
+    print(f"evidence_dir_exists: {str(presence.get('evidence_dir_exists', False)).lower()}")
+    print(f"evidence_file_count: {presence.get('evidence_file_count', 0)}")
+    print(f"projected_workunit_valid: {str(validation.get('status') == 'PASS').lower()}")
+    print(f"validation_status: {validation.get('status')}")
+    _print_workunit_cli_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite workunit validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    print("AIDE Lite workunit validate")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"workunit_cli_mode: {data.get('workunit_cli_mode')}")
+    print(f"source_queue_tasks_checked: {len(data.get('source_queue_tasks_checked', []))}")
+    print(f"workunit_objects_validated: {data.get('workunit_objects_validated')}")
+    print(f"queue_root_exists: {str(data.get('queue_root_exists', False)).lower()}")
+    print(f"task_id_safety_checked: {str(data.get('task_id_safety_checked', False)).lower()}")
+    print(f"path_traversal_rejected: {str(data.get('path_traversal_rejected', False)).lower()}")
+    print(f"absolute_path_rejected: {str(data.get('absolute_path_rejected', False)).lower()}")
+    print(f"separator_injection_rejected: {str(data.get('separator_injection_rejected', False)).lower()}")
+    print(f"wildcard_rejected: {str(data.get('wildcard_rejected', False)).lower()}")
+    print(f"hidden_path_rejected: {str(data.get('hidden_path_rejected', False)).lower()}")
+    print(f"backwards_compatibility_preserved: {str(data.get('backwards_compatibility_preserved', False)).lower()}")
+    print(f"unknown_optional_fields_tolerated: {str(data.get('unknown_optional_fields_tolerated', False)).lower()}")
+    print(
+        "unknown_required_capability_fails_closed: "
+        f"{str(data.get('unknown_required_capability_fails_closed', False)).lower()}"
+    )
+    print(f"explicit_non_capabilities_preserved: {str(data.get('explicit_non_capabilities_preserved', False)).lower()}")
+    _print_workunit_cli_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def _print_workunit_mutation_result(label: str, data: dict[str, object]) -> None:
+    print(f"AIDE Lite workunit {label}")
+    print(f"result: {data.get('status')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"operation: {data.get('operation')}")
+    print(f"mode: {data.get('mode')}")
+    print(f"dry_run: {str(data.get('dry_run', False)).lower()}")
+    print(f"apply: {str(data.get('apply', False)).lower()}")
+    print(f"queue_index_updated: {str(data.get('queue_index_updated', False)).lower()}")
+    print(f"queue_files_written: {len(data.get('queue_files_written', []))}")
+    print(f"runtime_state_created: {str(data.get('runtime_state_created', False)).lower()}")
+    print(f"worker_lease_created: {str(data.get('worker_lease_created', False)).lower()}")
+    print(f"scheduler_behavior: {str(data.get('scheduler_behavior', False)).lower()}")
+    _print_workunit_cli_boundary_lines(data)
+
+
+def command_workunit_create(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_create(repo_root, args.from_spec, dry_run=args.dry_run, apply=args.apply)
+    except Exception as exc:  # noqa: BLE001 - mutation commands must fail closed.
+        print("AIDE Lite workunit create")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    _print_workunit_mutation_result("create", data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_block(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_block(
+            repo_root,
+            args.task_id,
+            reason=args.reason,
+            note=args.note,
+            dry_run=args.dry_run,
+            apply=args.apply,
+        )
+    except Exception as exc:  # noqa: BLE001 - mutation commands must fail closed.
+        print("AIDE Lite workunit block")
+        print("result: FAIL")
+        print(f"task_id: {getattr(args, 'task_id', '')}")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    _print_workunit_mutation_result("block", data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_evidence_add(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_evidence_add(
+            repo_root,
+            args.task_id,
+            args.path,
+            role=args.role,
+            dry_run=args.dry_run,
+            apply=args.apply,
+        )
+    except Exception as exc:  # noqa: BLE001 - mutation commands must fail closed.
+        print("AIDE Lite workunit evidence add")
+        print("result: FAIL")
+        print(f"task_id: {getattr(args, 'task_id', '')}")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    _print_workunit_mutation_result("evidence add", data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_lifecycle_schema_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    json_result, md_result, data = write_lifecycle_schema_status_outputs(repo_root)
+    result = "PASS" if data.get("schemas_present") and data.get("examples_present") else "WARN"
+    print("AIDE Lite lifecycle-schema status")
+    print(f"result: {result}")
+    print("mode: report_only")
+    print(f"task_id: {data.get('task_id')}")
+    print(f"schemas_present: {str(data.get('schemas_present', False)).lower()}")
+    print(f"examples_present: {str(data.get('examples_present', False)).lower()}")
+    print("jsonschema_dependency_required: false")
+    print(f"json_report: {LIFECYCLE_SCHEMA_STATUS_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {LIFECYCLE_SCHEMA_STATUS_MD_PATH} ({md_result.action})")
+    print("review_gate: needs_review")
+    print("lifecycle_apply_implemented: false")
+    print("lifecycle_apply_executed: false")
+    print("fixture_targets_materialized: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_lifecycle_schema_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_lifecycle_schema_status_outputs(repo_root)
+    json_result, md_result, checks, data = write_lifecycle_schema_validation_outputs(repo_root)
+    result = str(data.get("result", result_from_checks(checks)))
+    print("AIDE Lite lifecycle-schema validate")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print("schema_validation_engine: stdlib_structural_fallback")
+    print("jsonschema_dependency_required: false")
+    print(f"json_report: {LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {LIFECYCLE_SCHEMA_VALIDATION_MD_PATH} ({md_result.action})")
+    print("report_mode: true")
+    print("dry_run: true")
+    print("review_gate: needs_review")
+    print("lifecycle_apply_implemented: false")
+    print("lifecycle_apply_executed: false")
+    print("fixture_targets_materialized: false")
+    print("production_ready: false")
+    print("release_ready: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
+def command_lifecycle_schema_fixture_verify(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_lifecycle_schema_status_outputs(repo_root)
+    json_result, md_result, checks, data = write_lifecycle_schema_fixture_validation_outputs(repo_root)
+    result = str(data.get("result", result_from_checks(checks)))
+    print("AIDE Lite lifecycle-schema fixture-verify")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"json_report: {LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_MD_PATH} ({md_result.action})")
+    print("fixture_shape_only: true")
+    print("fixture_targets_materialized: false")
+    print("lifecycle_apply_implemented: false")
+    print("lifecycle_apply_executed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
 def command_task_inspect(args: argparse.Namespace) -> int:
     inspection = inspect_task(args.repo_root, args.task_id)
     print("AIDE Lite task inspect")
@@ -30860,6 +37742,21 @@ def command_task_resume_plan(args: argparse.Namespace) -> int:
     print(f"report: {TASK_OS_RESUME_PLAN_REPORT_PATH} ({result.action})")
     print("safe_to_resume: true")
     print("report_only: true")
+    return 0
+
+
+def command_task_next_plan(args: argparse.Namespace) -> int:
+    result = write_task_os_next_plan(args.repo_root)
+    context = task_os_context(args.repo_root)
+    selection = task_os_next_selection(context)
+    print("AIDE Lite task next-plan")
+    print("result: PASS")
+    print(f"selected_next_workunit: {selection.get('task', 'review current task evidence')}")
+    print(f"report: {TASK_OS_NEXT_PLAN_REPORT_PATH} ({result.action})")
+    print(f"aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}")
+    print(f"lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}")
+    print("report_only: true")
+    print("task_execution: false")
     return 0
 
 
@@ -30971,10 +37868,12 @@ def command_wave_status(args: argparse.Namespace) -> int:
 
 
 def command_wave_plan(args: argparse.Namespace) -> int:
-    result, _context = write_task_os_wave_plan(args.repo_root)
+    result, context = write_task_os_wave_plan(args.repo_root)
+    selection = task_os_next_selection(context)
     print("AIDE Lite wave plan")
     print("result: PASS")
-    print("next_sequence: X-OS-01 -> X-OS-02 -> AIDE-CHECK-OS-01 -> AIDE-APPLY-00")
+    print(f"selected_next_workunit: {selection.get('task', 'review current task evidence')}")
+    print("historical_sequence: X-OS-01 -> X-OS-02 -> AIDE-CHECK-OS-01 -> AIDE-APPLY-00")
     print(f"report: {TASK_OS_WAVE_PLAN_REPORT_PATH} ({result.action})")
     print("report_only: true")
     print("branch_mutation: false")
@@ -31653,9 +38552,30 @@ def is_allowed_portable_report(rel_path: str) -> bool:
 
 def is_forbidden_export_path(rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
+    if is_source_only_export_test(rel):
+        return True
     if is_allowed_generated_export_template(rel) or is_allowed_local_state_example(rel) or is_allowed_portable_report(rel):
         return False
     return any(pattern_matches(rel, pattern) for pattern in EXPORT_FORBIDDEN_PATH_PATTERNS)
+
+
+# Self-hosting tests require source-only core modules and execution authority.
+# AIDE Lite exports only the explicitly admitted portable AIDE test modules.
+PORTABLE_AIDE_TEST_MODULES = frozenset({
+    ".aide/scripts/tests/test_aide_lite.py",
+    ".aide/scripts/tests/test_aide_apply_00_transaction_model.py",
+    ".aide/scripts/tests/test_aide_apply_01_managed_sections.py",
+})
+
+
+def is_source_only_export_test(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    if not rel.startswith(".aide/scripts/tests/"):
+        return False
+    name = Path(rel).name
+    return name.startswith("test_continuous_worker") or (
+        name.startswith("test_aide_") and rel not in PORTABLE_AIDE_TEST_MODULES
+    )
 
 
 def is_exportable_file(repo_root: Path, rel_path: str) -> bool:
@@ -33716,6 +40636,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_subparsers.add_parser("repair-plan").set_defaults(handler=command_task_repair_plan)
     task_subparsers.add_parser("requeue-plan").set_defaults(handler=command_task_requeue_plan)
     task_subparsers.add_parser("resume-plan").set_defaults(handler=command_task_resume_plan)
+    task_subparsers.add_parser("next-plan").set_defaults(handler=command_task_next_plan)
     task_noop_parser = task_subparsers.add_parser("noop-check")
     task_noop_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_noop_parser.set_defaults(handler=command_task_noop_check)
@@ -33769,6 +40690,562 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     managed_section_subparsers.add_parser("validate").set_defaults(handler=command_managed_section_validate)
     managed_section_subparsers.add_parser("fixture-plan").set_defaults(handler=command_managed_section_fixture_plan)
     managed_section_subparsers.add_parser("fixture-verify").set_defaults(handler=command_managed_section_fixture_verify)
+
+    scoped_transaction_parser = subparsers.add_parser("scoped-transaction")
+    scoped_transaction_parser.set_defaults(handler=command_scoped_transaction_status)
+    scoped_transaction_subparsers = scoped_transaction_parser.add_subparsers(dest="scoped_transaction_command", required=False)
+    scoped_transaction_subparsers.add_parser("status").set_defaults(handler=command_scoped_transaction_status)
+    scoped_transaction_subparsers.add_parser("validate").set_defaults(handler=command_scoped_transaction_validate)
+    scoped_transaction_subparsers.add_parser("fixture-plan").set_defaults(handler=command_scoped_transaction_fixture_plan)
+    scoped_transaction_subparsers.add_parser("fixture-verify").set_defaults(handler=command_scoped_transaction_fixture_verify)
+    scoped_transaction_run_parser = scoped_transaction_subparsers.add_parser("run")
+    scoped_transaction_run_parser.add_argument("--plan", required=True, help="Explicit scoped transaction plan JSON path.")
+    scoped_transaction_run_parser.set_defaults(handler=command_scoped_transaction_run)
+
+    lifecycle_fixture_parser = subparsers.add_parser("lifecycle-fixture")
+    lifecycle_fixture_parser.set_defaults(handler=command_lifecycle_fixture_status)
+    lifecycle_fixture_subparsers = lifecycle_fixture_parser.add_subparsers(dest="lifecycle_fixture_command", required=False)
+    lifecycle_fixture_subparsers.add_parser("status").set_defaults(handler=command_lifecycle_fixture_status)
+    lifecycle_fixture_run_parser = lifecycle_fixture_subparsers.add_parser("run")
+    lifecycle_fixture_run_parser.add_argument("--scenario", required=True, choices=["install-managed-section"])
+    lifecycle_fixture_run_parser.add_argument("--mode", required=True, choices=["apply-temp"])
+    lifecycle_fixture_run_parser.set_defaults(handler=command_lifecycle_fixture_run)
+    lifecycle_fixture_subparsers.add_parser("verify").set_defaults(handler=command_lifecycle_fixture_verify)
+
+    contract_envelope_parser = subparsers.add_parser("contract-envelope")
+    contract_envelope_parser.set_defaults(handler=command_contract_envelope_status)
+    contract_envelope_subparsers = contract_envelope_parser.add_subparsers(dest="contract_envelope_command", required=False)
+    contract_envelope_subparsers.add_parser("status").set_defaults(handler=command_contract_envelope_status)
+    contract_envelope_project_parser = contract_envelope_subparsers.add_parser("project")
+    contract_envelope_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["lifecycle-fixture-runner"],
+        help="Projection source for the minimal envelope slice.",
+    )
+    contract_envelope_project_parser.set_defaults(handler=command_contract_envelope_project)
+    contract_envelope_subparsers.add_parser("validate").set_defaults(handler=command_contract_envelope_validate)
+
+    evidence_packet_parser = subparsers.add_parser("evidence-packet")
+    evidence_packet_parser.set_defaults(handler=command_evidence_packet_status)
+    evidence_packet_subparsers = evidence_packet_parser.add_subparsers(dest="evidence_packet_command", required=False)
+    evidence_packet_subparsers.add_parser("status").set_defaults(handler=command_evidence_packet_status)
+    evidence_packet_project_parser = evidence_packet_subparsers.add_parser("project")
+    evidence_packet_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["accepted-slices"],
+        help="Projection source for the minimal EvidencePacket slice.",
+    )
+    evidence_packet_project_parser.set_defaults(handler=command_evidence_packet_project)
+    evidence_packet_subparsers.add_parser("validate").set_defaults(handler=command_evidence_packet_validate)
+
+    workunit_queue_parser = subparsers.add_parser("workunit-queue")
+    workunit_queue_parser.set_defaults(handler=command_workunit_queue_status)
+    workunit_queue_subparsers = workunit_queue_parser.add_subparsers(dest="workunit_queue_command", required=False)
+    workunit_queue_subparsers.add_parser("status").set_defaults(handler=command_workunit_queue_status)
+    workunit_queue_project_parser = workunit_queue_subparsers.add_parser("project")
+    workunit_queue_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["queue-tasks"],
+        help="Projection source for the minimal WorkUnit queue slice.",
+    )
+    workunit_queue_project_parser.set_defaults(handler=command_workunit_queue_project)
+    workunit_queue_subparsers.add_parser("validate").set_defaults(handler=command_workunit_queue_validate)
+
+    worker_run_parser = subparsers.add_parser("worker-run")
+    worker_run_parser.set_defaults(handler=command_worker_run_status)
+    worker_run_subparsers = worker_run_parser.add_subparsers(dest="worker_run_command", required=False)
+    worker_run_subparsers.add_parser("status").set_defaults(handler=command_worker_run_status)
+    worker_run_project_parser = worker_run_subparsers.add_parser("project")
+    worker_run_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["accepted-artifacts"],
+        help="Projection source for the minimal WorkerRun schema slice.",
+    )
+    worker_run_project_parser.set_defaults(handler=command_worker_run_project)
+    worker_run_subparsers.add_parser("validate").set_defaults(handler=command_worker_run_validate)
+
+    execution_host_parser = subparsers.add_parser("execution-host")
+    execution_host_parser.set_defaults(handler=command_execution_host_status)
+    execution_host_subparsers = execution_host_parser.add_subparsers(dest="execution_host_command", required=False)
+    execution_host_subparsers.add_parser("status").set_defaults(handler=command_execution_host_status)
+    execution_host_project_parser = execution_host_subparsers.add_parser("project")
+    execution_host_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["contract-projection"],
+        help="Projection source for the ExecutionHost contract v0 slice.",
+    )
+    execution_host_project_parser.set_defaults(handler=command_execution_host_project)
+    execution_host_subparsers.add_parser("validate").set_defaults(handler=command_execution_host_validate)
+
+    trust_parser = subparsers.add_parser("trust")
+    trust_parser.set_defaults(handler=command_trust_status)
+    trust_subparsers = trust_parser.add_subparsers(dest="trust_command", required=False)
+    trust_subparsers.add_parser("status").set_defaults(handler=command_trust_status)
+    trust_project_parser = trust_subparsers.add_parser("project")
+    trust_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["contract-projection"],
+        help="Projection source for the trust and authorization contract v0 slice.",
+    )
+    trust_project_parser.set_defaults(handler=command_trust_project)
+    trust_subparsers.add_parser("validate").set_defaults(handler=command_trust_validate)
+
+    local_service_parser = subparsers.add_parser("local-service")
+    local_service_parser.set_defaults(handler=command_local_service_status)
+    local_service_subparsers = local_service_parser.add_subparsers(dest="local_service_command", required=False)
+    local_service_subparsers.add_parser("status").set_defaults(handler=command_local_service_status)
+    local_service_subparsers.add_parser("init-fixture").set_defaults(handler=command_local_service_init_fixture)
+    local_service_subparsers.add_parser("fixture").set_defaults(handler=command_local_service_fixture)
+    local_service_subparsers.add_parser("validate").set_defaults(handler=command_local_service_validate)
+    local_service_subparsers.add_parser("reset-fixture").set_defaults(handler=command_local_service_reset_fixture)
+
+    local_trust_parser = subparsers.add_parser("local-trust")
+    local_trust_parser.set_defaults(handler=command_local_trust_status)
+    local_trust_subparsers = local_trust_parser.add_subparsers(dest="local_trust_command", required=False)
+    local_trust_subparsers.add_parser("status").set_defaults(handler=command_local_trust_status)
+    local_trust_subparsers.add_parser("fixture").set_defaults(handler=command_local_trust_fixture)
+    local_trust_subparsers.add_parser("validate").set_defaults(handler=command_local_trust_validate)
+    local_trust_subparsers.add_parser("reset-fixture").set_defaults(handler=command_local_trust_reset_fixture)
+
+    durable_worker_run_parser = subparsers.add_parser("durable-worker-run")
+    durable_worker_run_parser.set_defaults(handler=command_durable_worker_run_status)
+    durable_worker_run_subparsers = durable_worker_run_parser.add_subparsers(dest="durable_worker_run_command", required=False)
+    durable_worker_run_subparsers.add_parser("status").set_defaults(handler=command_durable_worker_run_status)
+    durable_worker_run_subparsers.add_parser("fixture").set_defaults(handler=command_durable_worker_run_fixture)
+    durable_worker_run_subparsers.add_parser("validate").set_defaults(handler=command_durable_worker_run_validate)
+    durable_worker_run_subparsers.add_parser("reset-fixture").set_defaults(handler=command_durable_worker_run_reset_fixture)
+
+    test_job_parser = subparsers.add_parser("test-job")
+    test_job_parser.set_defaults(handler=command_test_job_status)
+    test_job_subparsers = test_job_parser.add_subparsers(dest="test_job_command", required=False)
+    test_job_subparsers.add_parser("status").set_defaults(handler=command_test_job_status)
+    test_job_project_parser = test_job_subparsers.add_parser("project")
+    test_job_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["accepted-artifacts"],
+        help="Projection source for the minimal TestJob schema slice.",
+    )
+    test_job_project_parser.set_defaults(handler=command_test_job_project)
+    test_job_subparsers.add_parser("validate").set_defaults(handler=command_test_job_validate)
+
+    reference_id_parser = subparsers.add_parser("reference-id")
+    reference_id_parser.set_defaults(handler=command_reference_id_status)
+    reference_id_subparsers = reference_id_parser.add_subparsers(dest="reference_id_command", required=False)
+    reference_id_subparsers.add_parser("status").set_defaults(handler=command_reference_id_status)
+    reference_id_project_parser = reference_id_subparsers.add_parser("project")
+    reference_id_project_parser.add_argument(
+        "--source",
+        default="accepted-protocol",
+        choices=["accepted-protocol"],
+        help="Projection source for the minimal ReferenceID scheme slice.",
+    )
+    reference_id_project_parser.set_defaults(handler=command_reference_id_project)
+    reference_id_subparsers.add_parser("validate").set_defaults(handler=command_reference_id_validate)
+
+    event_record_parser = subparsers.add_parser("event-record")
+    event_record_parser.set_defaults(handler=command_event_record_status)
+    event_record_subparsers = event_record_parser.add_subparsers(dest="event_record_command", required=False)
+    event_record_subparsers.add_parser("status").set_defaults(handler=command_event_record_status)
+    event_record_project_parser = event_record_subparsers.add_parser("project")
+    event_record_project_parser.add_argument(
+        "--source",
+        default="accepted-reference-id",
+        choices=["accepted-reference-id"],
+        help="Projection source for the minimal EventRecord schema slice.",
+    )
+    event_record_project_parser.set_defaults(handler=command_event_record_project)
+    event_record_subparsers.add_parser("validate").set_defaults(handler=command_event_record_validate)
+
+    okf_parser = subparsers.add_parser("okf")
+    okf_parser.set_defaults(handler=command_okf_status)
+    okf_subparsers = okf_parser.add_subparsers(dest="okf_command", required=False)
+    okf_subparsers.add_parser("status").set_defaults(handler=command_okf_status)
+    okf_project_parser = okf_subparsers.add_parser("project")
+    okf_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["current-repo"],
+        help="Projection source for the deterministic OKF-compatible AIDE knowledge bundle.",
+    )
+    okf_project_parser.set_defaults(handler=command_okf_project)
+    okf_subparsers.add_parser("validate").set_defaults(handler=command_okf_validate)
+    okf_subparsers.add_parser("lint").set_defaults(handler=command_okf_lint)
+
+    reconciler_parser = subparsers.add_parser("reconciler")
+    reconciler_parser.set_defaults(handler=command_reconciler_status)
+    reconciler_subparsers = reconciler_parser.add_subparsers(dest="reconciler_command", required=False)
+    reconciler_subparsers.add_parser("status").set_defaults(handler=command_reconciler_status)
+    reconciler_report_parser = reconciler_subparsers.add_parser("report")
+    reconciler_report_parser.add_argument(
+        "--source",
+        default="accepted-okf",
+        choices=["accepted-okf"],
+        help="Report source for the first report-only Reconciler slice.",
+    )
+    reconciler_report_parser.set_defaults(handler=command_reconciler_report)
+    reconciler_subparsers.add_parser("validate").set_defaults(handler=command_reconciler_validate)
+
+    capability_manifest_parser = subparsers.add_parser("capability-manifest")
+    capability_manifest_parser.set_defaults(handler=command_capability_manifest_status)
+    capability_manifest_subparsers = capability_manifest_parser.add_subparsers(dest="capability_manifest_command", required=False)
+    capability_manifest_subparsers.add_parser("status").set_defaults(handler=command_capability_manifest_status)
+    capability_manifest_subparsers.add_parser("project").set_defaults(handler=command_capability_manifest_project)
+    capability_manifest_subparsers.add_parser("validate").set_defaults(handler=command_capability_manifest_validate)
+
+    distribution_manifest_parser = subparsers.add_parser("distribution-manifest")
+    distribution_manifest_parser.set_defaults(handler=command_distribution_manifest_status)
+    distribution_manifest_subparsers = distribution_manifest_parser.add_subparsers(dest="distribution_manifest_command", required=False)
+    distribution_manifest_subparsers.add_parser("status").set_defaults(handler=command_distribution_manifest_status)
+    distribution_manifest_subparsers.add_parser("project").set_defaults(handler=command_distribution_manifest_project)
+    distribution_manifest_subparsers.add_parser("validate").set_defaults(handler=command_distribution_manifest_validate)
+
+    project_lock_parser = subparsers.add_parser("project-lock")
+    project_lock_parser.set_defaults(handler=command_project_lock_status)
+    project_lock_subparsers = project_lock_parser.add_subparsers(dest="project_lock_command", required=False)
+    project_lock_subparsers.add_parser("status").set_defaults(handler=command_project_lock_status)
+    project_lock_subparsers.add_parser("project").set_defaults(handler=command_project_lock_project)
+    project_lock_subparsers.add_parser("validate").set_defaults(handler=command_project_lock_validate)
+
+    ownership_ledger_parser = subparsers.add_parser("ownership-ledger")
+    ownership_ledger_parser.set_defaults(handler=command_ownership_ledger_status)
+    ownership_ledger_subparsers = ownership_ledger_parser.add_subparsers(dest="ownership_ledger_command", required=False)
+    ownership_ledger_subparsers.add_parser("status").set_defaults(handler=command_ownership_ledger_status)
+    ownership_ledger_subparsers.add_parser("project").set_defaults(handler=command_ownership_ledger_project)
+    ownership_ledger_subparsers.add_parser("validate").set_defaults(handler=command_ownership_ledger_validate)
+    ownership_ledger_migrate_q43_parser = ownership_ledger_subparsers.add_parser("migrate-q43")
+    ownership_ledger_migrate_q43_parser.add_argument("--source-class", action="append", default=None)
+    ownership_ledger_migrate_q43_parser.set_defaults(handler=command_ownership_ledger_migrate_q43)
+
+    install_record_parser = subparsers.add_parser("install-record")
+    install_record_parser.set_defaults(handler=command_install_record_status)
+    install_record_subparsers = install_record_parser.add_subparsers(dest="install_record_command", required=False)
+    install_record_subparsers.add_parser("status").set_defaults(handler=command_install_record_status)
+    install_record_subparsers.add_parser("project").set_defaults(handler=command_install_record_project)
+    install_record_subparsers.add_parser("validate").set_defaults(handler=command_install_record_validate)
+
+    migration_record_parser = subparsers.add_parser("migration-record")
+    migration_record_parser.set_defaults(handler=command_migration_record_status)
+    migration_record_subparsers = migration_record_parser.add_subparsers(dest="migration_record_command", required=False)
+    migration_record_subparsers.add_parser("status").set_defaults(handler=command_migration_record_status)
+    migration_record_subparsers.add_parser("project").set_defaults(handler=command_migration_record_project)
+    migration_record_subparsers.add_parser("validate").set_defaults(handler=command_migration_record_validate)
+
+    update_plan_parser = subparsers.add_parser("update-plan")
+    update_plan_parser.set_defaults(handler=command_update_plan_status)
+    update_plan_subparsers = update_plan_parser.add_subparsers(dest="update_plan_command", required=False)
+    update_plan_subparsers.add_parser("status").set_defaults(handler=command_update_plan_status)
+    update_plan_subparsers.add_parser("project").set_defaults(handler=command_update_plan_project)
+    update_plan_subparsers.add_parser("validate").set_defaults(handler=command_update_plan_validate)
+
+    rollback_bundle_parser = subparsers.add_parser("rollback-bundle")
+    rollback_bundle_parser.set_defaults(handler=command_rollback_bundle_status)
+    rollback_bundle_subparsers = rollback_bundle_parser.add_subparsers(dest="rollback_bundle_command", required=False)
+    rollback_bundle_subparsers.add_parser("status").set_defaults(handler=command_rollback_bundle_status)
+    rollback_bundle_subparsers.add_parser("project").set_defaults(handler=command_rollback_bundle_project)
+    rollback_bundle_subparsers.add_parser("validate").set_defaults(handler=command_rollback_bundle_validate)
+
+    update_receipt_parser = subparsers.add_parser("update-receipt")
+    update_receipt_parser.set_defaults(handler=command_update_receipt_status)
+    update_receipt_subparsers = update_receipt_parser.add_subparsers(dest="update_receipt_command", required=False)
+    update_receipt_subparsers.add_parser("status").set_defaults(handler=command_update_receipt_status)
+    update_receipt_subparsers.add_parser("project").set_defaults(handler=command_update_receipt_project)
+    update_receipt_subparsers.add_parser("validate").set_defaults(handler=command_update_receipt_validate)
+
+    distribution_apply_parser = subparsers.add_parser("distribution-apply")
+    distribution_apply_parser.set_defaults(handler=command_distribution_apply_status)
+    distribution_apply_subparsers = distribution_apply_parser.add_subparsers(dest="distribution_apply_command", required=False)
+    distribution_apply_subparsers.add_parser("status").set_defaults(handler=command_distribution_apply_status)
+    distribution_apply_plan_parser = distribution_apply_subparsers.add_parser("plan")
+    distribution_apply_plan_parser.add_argument("--scenario", required=False)
+    distribution_apply_plan_parser.set_defaults(handler=command_distribution_apply_plan)
+    distribution_apply_run_parser = distribution_apply_subparsers.add_parser("run")
+    distribution_apply_run_parser.add_argument("--scenario", required=True)
+    distribution_apply_run_parser.add_argument("--mode", required=True, choices=["apply-temp"])
+    distribution_apply_run_parser.set_defaults(handler=command_distribution_apply_run)
+    distribution_apply_subparsers.add_parser("verify").set_defaults(handler=command_distribution_apply_verify)
+
+    distribution_product_parser = subparsers.add_parser("distribution-product")
+    distribution_product_parser.set_defaults(handler=command_distribution_product_status)
+    distribution_product_subparsers = distribution_product_parser.add_subparsers(dest="distribution_product_command", required=False)
+    distribution_product_subparsers.add_parser("status").set_defaults(handler=command_distribution_product_status)
+
+    conformance_profile_parser = subparsers.add_parser("conformance-profile")
+    conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)
+    conformance_profile_subparsers = conformance_profile_parser.add_subparsers(dest="conformance_profile_command", required=False)
+    conformance_profile_subparsers.add_parser("status").set_defaults(handler=command_conformance_profile_status)
+    conformance_profile_subparsers.add_parser("project").set_defaults(handler=command_conformance_profile_project)
+    conformance_profile_subparsers.add_parser("validate").set_defaults(handler=command_conformance_profile_validate)
+
+    conformance_result_parser = subparsers.add_parser("conformance-result")
+    conformance_result_parser.set_defaults(handler=command_conformance_result_status)
+    conformance_result_subparsers = conformance_result_parser.add_subparsers(dest="conformance_result_command", required=False)
+    conformance_result_subparsers.add_parser("status").set_defaults(handler=command_conformance_result_status)
+    conformance_result_subparsers.add_parser("project").set_defaults(handler=command_conformance_result_project)
+    conformance_result_subparsers.add_parser("validate").set_defaults(handler=command_conformance_result_validate)
+
+    patch_transaction_parser = subparsers.add_parser("patch-transaction")
+    patch_transaction_parser.set_defaults(handler=command_patch_transaction_status)
+    patch_transaction_subparsers = patch_transaction_parser.add_subparsers(dest="patch_transaction_command", required=False)
+    patch_transaction_subparsers.add_parser("status").set_defaults(handler=command_patch_transaction_status)
+    patch_transaction_subparsers.add_parser("project").set_defaults(handler=command_patch_transaction_project)
+    patch_transaction_subparsers.add_parser("validate").set_defaults(handler=command_patch_transaction_validate)
+
+    adapter_manifest_parser = subparsers.add_parser("adapter-manifest")
+    adapter_manifest_parser.set_defaults(handler=command_adapter_manifest_status)
+    adapter_manifest_subparsers = adapter_manifest_parser.add_subparsers(dest="adapter_manifest_command", required=False)
+    adapter_manifest_subparsers.add_parser("status").set_defaults(handler=command_adapter_manifest_status)
+    adapter_manifest_subparsers.add_parser("project").set_defaults(handler=command_adapter_manifest_project)
+    adapter_manifest_subparsers.add_parser("validate").set_defaults(handler=command_adapter_manifest_validate)
+
+    context_pack_v2_parser = subparsers.add_parser("context-pack-v2")
+    context_pack_v2_parser.set_defaults(handler=command_context_pack_v2_status)
+    context_pack_v2_subparsers = context_pack_v2_parser.add_subparsers(dest="context_pack_v2_command", required=False)
+    context_pack_v2_subparsers.add_parser("status").set_defaults(handler=command_context_pack_v2_status)
+    context_pack_v2_subparsers.add_parser("project").set_defaults(handler=command_context_pack_v2_project)
+    context_pack_v2_subparsers.add_parser("validate").set_defaults(handler=command_context_pack_v2_validate)
+
+    mcp_server_contract_parser = subparsers.add_parser("mcp-server-contract")
+    mcp_server_contract_parser.set_defaults(handler=command_mcp_server_contract_status)
+    mcp_server_contract_subparsers = mcp_server_contract_parser.add_subparsers(dest="mcp_server_contract_command", required=False)
+    mcp_server_contract_subparsers.add_parser("status").set_defaults(handler=command_mcp_server_contract_status)
+    mcp_server_contract_subparsers.add_parser("project").set_defaults(handler=command_mcp_server_contract_project)
+    mcp_server_contract_subparsers.add_parser("validate").set_defaults(handler=command_mcp_server_contract_validate)
+
+    a2a_agent_card_contract_parser = subparsers.add_parser("a2a-agent-card-contract")
+    a2a_agent_card_contract_parser.set_defaults(handler=command_a2a_agent_card_contract_status)
+    a2a_agent_card_contract_subparsers = a2a_agent_card_contract_parser.add_subparsers(
+        dest="a2a_agent_card_contract_command",
+        required=False,
+    )
+    a2a_agent_card_contract_subparsers.add_parser("status").set_defaults(handler=command_a2a_agent_card_contract_status)
+    a2a_agent_card_contract_subparsers.add_parser("project").set_defaults(handler=command_a2a_agent_card_contract_project)
+    a2a_agent_card_contract_subparsers.add_parser("validate").set_defaults(handler=command_a2a_agent_card_contract_validate)
+
+    dominium_seam_parser = subparsers.add_parser("dominium-seam")
+    dominium_seam_parser.set_defaults(handler=command_dominium_seam_status)
+    dominium_seam_subparsers = dominium_seam_parser.add_subparsers(dest="dominium_seam_command", required=False)
+
+    def add_dominium_source_args(command_parser: argparse.ArgumentParser) -> None:
+        command_parser.add_argument(
+            "--dominium-root",
+            help="Already-present local Dominium checkout or Git repository root. No fetch, pull, checkout, or Dominium command invocation is performed.",
+        )
+        command_parser.add_argument(
+            "--revision",
+            help="Pinned Dominium commit/ref to inspect read-only. Defaults to the charter-pinned commit.",
+        )
+
+    for name, handler in [
+        ("status", command_dominium_seam_status),
+        ("snapshot", command_dominium_seam_snapshot),
+        ("project", command_dominium_seam_project),
+        ("validate", command_dominium_seam_validate),
+        ("diff", command_dominium_seam_diff),
+        ("demo", command_dominium_seam_demo),
+    ]:
+        command_parser = dominium_seam_subparsers.add_parser(name)
+        add_dominium_source_args(command_parser)
+        command_parser.set_defaults(handler=handler)
+    for name in [
+        "run",
+        "invoke",
+        "execute",
+        "apply",
+        "write",
+        "sync",
+        "push",
+        "serve",
+        "connect",
+        "dispatch",
+        "fetch",
+        "pull",
+        "checkout",
+        "branch",
+        "worktree",
+        "publish",
+        "destroy",
+    ]:
+        command_parser = dominium_seam_subparsers.add_parser(name)
+        command_parser.set_defaults(handler=command_dominium_seam_unsupported, operation=name)
+
+    dominium_workunit_validation_parser = subparsers.add_parser("dominium-workunit-validation")
+    dominium_workunit_validation_parser.set_defaults(handler=command_dominium_workunit_validation_status)
+    dominium_workunit_validation_subparsers = dominium_workunit_validation_parser.add_subparsers(
+        dest="dominium_workunit_validation_command",
+        required=False,
+    )
+    dominium_workunit_validation_subparsers.add_parser("status").set_defaults(handler=command_dominium_workunit_validation_status)
+    dominium_workunit_validation_subparsers.add_parser("run").set_defaults(handler=command_dominium_workunit_validation_run)
+    dominium_workunit_validation_subparsers.add_parser("validate").set_defaults(handler=command_dominium_workunit_validation_validate)
+
+    dominium_registered_validation_parser = subparsers.add_parser("dominium-registered-validation")
+    dominium_registered_validation_parser.set_defaults(handler=command_dominium_registered_validation_status)
+    dominium_registered_validation_subparsers = dominium_registered_validation_parser.add_subparsers(
+        dest="dominium_registered_validation_command",
+        required=False,
+    )
+    dominium_registered_validation_subparsers.add_parser("status").set_defaults(handler=command_dominium_registered_validation_status)
+    dominium_registered_validation_run_parser = dominium_registered_validation_subparsers.add_parser("run")
+    dominium_registered_validation_run_parser.add_argument(
+        "--dominium-root",
+        default="",
+        help="Already-present local Dominium checkout. Defaults to a sibling Dominium checkout when discoverable.",
+    )
+    dominium_registered_validation_run_parser.add_argument(
+        "--expected-revision",
+        default="",
+        help="Exact pinned Dominium revision to require before invocation. Defaults to observed local HEAD before invocation.",
+    )
+    dominium_registered_validation_run_parser.add_argument(
+        "--timeout-seconds",
+        type=float,
+        default=30.0,
+        help="Bounded timeout for the single Dominium validation CLI process.",
+    )
+    dominium_registered_validation_run_parser.set_defaults(handler=command_dominium_registered_validation_run)
+    dominium_registered_validation_subparsers.add_parser("validate").set_defaults(handler=command_dominium_registered_validation_validate)
+
+    aide_self_validation_process_parser = subparsers.add_parser("aide-self-validation-process-adapter")
+    aide_self_validation_process_parser.set_defaults(handler=command_aide_self_validation_process_adapter_status)
+    aide_self_validation_process_subparsers = aide_self_validation_process_parser.add_subparsers(
+        dest="aide_self_validation_process_command",
+        required=False,
+    )
+    aide_self_validation_process_subparsers.add_parser("status").set_defaults(handler=command_aide_self_validation_process_adapter_status)
+    aide_self_validation_process_run_parser = aide_self_validation_process_subparsers.add_parser("run")
+    aide_self_validation_process_run_parser.add_argument(
+        "--expected-revision",
+        default="",
+        help="Exact pinned AIDE revision to require before invocation. Defaults to observed local HEAD before invocation.",
+    )
+    aide_self_validation_process_run_parser.add_argument(
+        "--timeout-seconds",
+        type=float,
+        default=120.0,
+        help="Bounded timeout for the single AIDE Lite validate process.",
+    )
+    aide_self_validation_process_run_parser.set_defaults(handler=command_aide_self_validation_process_adapter_run)
+    aide_self_validation_process_subparsers.add_parser("validate").set_defaults(handler=command_aide_self_validation_process_adapter_validate)
+
+    eureka_readonly_process_parser = subparsers.add_parser("aide-eureka-readonly-process-adapter")
+    eureka_readonly_process_parser.set_defaults(handler=command_eureka_readonly_process_adapter_status)
+    eureka_readonly_process_subparsers = eureka_readonly_process_parser.add_subparsers(
+        dest="eureka_readonly_process_command",
+        required=False,
+    )
+    eureka_readonly_process_subparsers.add_parser("status").set_defaults(handler=command_eureka_readonly_process_adapter_status)
+    eureka_readonly_process_run_parser = eureka_readonly_process_subparsers.add_parser("run")
+    eureka_readonly_process_run_parser.add_argument(
+        "--eureka-root",
+        default="",
+        help="Already-present local Eureka checkout. Defaults to a sibling Eureka checkout when discoverable.",
+    )
+    eureka_readonly_process_run_parser.add_argument(
+        "--expected-revision",
+        default="",
+        help="Exact pinned Eureka revision to require before invocation. Defaults to observed local HEAD before invocation.",
+    )
+    eureka_readonly_process_run_parser.add_argument(
+        "--timeout-seconds",
+        type=float,
+        default=120.0,
+        help="Bounded timeout for the single Eureka read-only process.",
+    )
+    eureka_readonly_process_run_parser.set_defaults(handler=command_eureka_readonly_process_adapter_run)
+    eureka_readonly_process_subparsers.add_parser("validate").set_defaults(handler=command_eureka_readonly_process_adapter_validate)
+
+    local_process_host_parser = subparsers.add_parser("local-process-execution-host")
+    local_process_host_parser.set_defaults(handler=command_local_process_execution_host_status)
+    local_process_host_subparsers = local_process_host_parser.add_subparsers(
+        dest="local_process_host_command",
+        required=False,
+    )
+    local_process_host_subparsers.add_parser("status").set_defaults(handler=command_local_process_execution_host_status)
+    local_process_host_run_parser = local_process_host_subparsers.add_parser("run")
+    local_process_host_run_parser.add_argument(
+        "--expected-revision",
+        default="",
+        help="Exact pinned AIDE revision to require before invocation. Defaults to observed local HEAD before invocation.",
+    )
+    local_process_host_run_parser.add_argument(
+        "--timeout-seconds",
+        type=float,
+        default=30.0,
+        help="Bounded timeout for the single local reference worker process.",
+    )
+    local_process_host_run_parser.set_defaults(handler=command_local_process_execution_host_run)
+    local_process_host_subparsers.add_parser("validate").set_defaults(handler=command_local_process_execution_host_validate)
+
+    workunit_parser = subparsers.add_parser("workunit")
+    workunit_parser.set_defaults(handler=command_workunit_status)
+    workunit_subparsers = workunit_parser.add_subparsers(dest="workunit_command", required=False)
+    workunit_subparsers.add_parser("status").set_defaults(handler=command_workunit_status)
+    workunit_subparsers.add_parser("list").set_defaults(handler=command_workunit_list)
+    workunit_inspect_parser = workunit_subparsers.add_parser("inspect")
+    workunit_inspect_parser.add_argument(
+        "--task-id",
+        required=True,
+        help="Safe filesystem queue task id to inspect.",
+    )
+    workunit_inspect_parser.set_defaults(handler=command_workunit_inspect)
+    workunit_subparsers.add_parser("validate").set_defaults(handler=command_workunit_validate)
+    workunit_create_parser = workunit_subparsers.add_parser("create")
+    workunit_create_parser.add_argument("--from-spec", required=True, help="Repo-local JSON WorkUnitCreateRequest spec.")
+    workunit_create_mode = workunit_create_parser.add_mutually_exclusive_group(required=True)
+    workunit_create_mode.add_argument("--dry-run", action="store_true", help="Preview queue metadata writes.")
+    workunit_create_mode.add_argument("--apply", action="store_true", help="Apply queue metadata writes.")
+    workunit_create_parser.set_defaults(handler=command_workunit_create)
+    workunit_block_parser = workunit_subparsers.add_parser("block")
+    workunit_block_parser.add_argument("--task-id", required=True, help="Safe filesystem queue task id to block.")
+    workunit_block_parser.add_argument(
+        "--reason",
+        required=True,
+        choices=[
+            "missing_prereq",
+            "conflict",
+            "human_decision",
+            "missing_environment",
+            "unsafe_operation",
+            "tool_failure",
+            "policy_block",
+            "other",
+        ],
+        help="Known blocker reason code.",
+    )
+    workunit_block_parser.add_argument("--note", required=True, help="Non-empty blocker note.")
+    workunit_block_mode = workunit_block_parser.add_mutually_exclusive_group(required=True)
+    workunit_block_mode.add_argument("--dry-run", action="store_true", help="Preview queue metadata writes.")
+    workunit_block_mode.add_argument("--apply", action="store_true", help="Apply queue metadata writes.")
+    workunit_block_parser.set_defaults(handler=command_workunit_block)
+    workunit_evidence_parser = workunit_subparsers.add_parser("evidence")
+    workunit_evidence_subparsers = workunit_evidence_parser.add_subparsers(dest="workunit_evidence_command", required=True)
+    workunit_evidence_add_parser = workunit_evidence_subparsers.add_parser("add")
+    workunit_evidence_add_parser.add_argument("--task-id", required=True, help="Safe filesystem queue task id.")
+    workunit_evidence_add_parser.add_argument("--path", required=True, help="Existing repo-local evidence path.")
+    workunit_evidence_add_parser.add_argument(
+        "--role",
+        required=True,
+        choices=["report", "validation", "test_result", "acceptance", "check", "blocker", "risk", "other"],
+        help="Narrow evidence pointer role.",
+    )
+    workunit_evidence_mode = workunit_evidence_add_parser.add_mutually_exclusive_group(required=True)
+    workunit_evidence_mode.add_argument("--dry-run", action="store_true", help="Preview queue metadata writes.")
+    workunit_evidence_mode.add_argument("--apply", action="store_true", help="Apply queue metadata writes.")
+    workunit_evidence_add_parser.set_defaults(handler=command_workunit_evidence_add)
+
+    lifecycle_schema_parser = subparsers.add_parser("lifecycle-schema")
+    lifecycle_schema_parser.set_defaults(handler=command_lifecycle_schema_status)
+    lifecycle_schema_subparsers = lifecycle_schema_parser.add_subparsers(dest="lifecycle_schema_command", required=False)
+    lifecycle_schema_subparsers.add_parser("status").set_defaults(handler=command_lifecycle_schema_status)
+    lifecycle_schema_subparsers.add_parser("validate").set_defaults(handler=command_lifecycle_schema_validate)
+    lifecycle_schema_subparsers.add_parser("fixture-verify").set_defaults(handler=command_lifecycle_schema_fixture_verify)
 
     git_parser = subparsers.add_parser("git")
     git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)
@@ -33919,8 +41396,46 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     default_root = repo_root_from_script()
+    effective_argv = list(sys.argv[1:] if argv is None else argv)
+    known_dominium_seam_commands = {
+        "status",
+        "snapshot",
+        "project",
+        "validate",
+        "diff",
+        "demo",
+        "run",
+        "invoke",
+        "execute",
+        "apply",
+        "write",
+        "sync",
+        "push",
+        "serve",
+        "connect",
+        "dispatch",
+        "fetch",
+        "pull",
+        "checkout",
+        "branch",
+        "worktree",
+        "publish",
+        "destroy",
+    }
+    if "dominium-seam" in effective_argv:
+        seam_index = effective_argv.index("dominium-seam")
+        if seam_index + 1 < len(effective_argv):
+            operation = effective_argv[seam_index + 1]
+            if operation and not operation.startswith("-") and operation not in known_dominium_seam_commands:
+                repo_root = default_root
+                if "--repo-root" in effective_argv:
+                    root_index = effective_argv.index("--repo-root")
+                    if root_index + 1 < len(effective_argv):
+                        repo_root = Path(effective_argv[root_index + 1])
+                args = argparse.Namespace(repo_root=repo_root, operation=operation, dominium_seam_command=operation)
+                return command_dominium_seam_unsupported(args)
     parser = build_parser(default_root)
-    args = parser.parse_args(argv)
+    args = parser.parse_args(effective_argv)
     args.repo_root = Path(args.repo_root).resolve()
     try:
         return int(args.handler(args))

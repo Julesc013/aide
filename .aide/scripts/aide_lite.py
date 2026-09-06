@@ -2369,6 +2369,8 @@ TRANSACTION_REQUIRED_GATES = [
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
+    ".aide/templates/portable-apply/README.md",
+    ".aide/templates/portable-apply/__init__.py",
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
     COMMIT_MESSAGE_POLICY_PATH,
@@ -2750,6 +2752,8 @@ IMPORT_SAFE_ALLOWED_DOCS_PREFIX = "docs/reference/"
 IMPORT_MODES = {"safe", "full"}
 
 PORTABLE_TEMPLATE_MAP = {
+    ".aide/templates/portable-apply/README.md": "core/apply/README.md",
+    ".aide/templates/portable-apply/__init__.py": "core/apply/__init__.py",
     TARGET_PROFILE_TEMPLATE_PATH: ".aide/profile.template.yaml",
     TARGET_PROJECT_STATE_TEMPLATE_PATH: ".aide/memory/project-state.template.md",
     TARGET_DECISIONS_TEMPLATE_PATH: ".aide/memory/decisions.template.md",
@@ -38548,9 +38552,30 @@ def is_allowed_portable_report(rel_path: str) -> bool:
 
 def is_forbidden_export_path(rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
+    if is_source_only_export_test(rel):
+        return True
     if is_allowed_generated_export_template(rel) or is_allowed_local_state_example(rel) or is_allowed_portable_report(rel):
         return False
     return any(pattern_matches(rel, pattern) for pattern in EXPORT_FORBIDDEN_PATH_PATTERNS)
+
+
+# Self-hosting tests require source-only core modules and execution authority.
+# AIDE Lite exports only the explicitly admitted portable AIDE test modules.
+PORTABLE_AIDE_TEST_MODULES = frozenset({
+    ".aide/scripts/tests/test_aide_lite.py",
+    ".aide/scripts/tests/test_aide_apply_00_transaction_model.py",
+    ".aide/scripts/tests/test_aide_apply_01_managed_sections.py",
+})
+
+
+def is_source_only_export_test(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    if not rel.startswith(".aide/scripts/tests/"):
+        return False
+    name = Path(rel).name
+    return name.startswith("test_continuous_worker") or (
+        name.startswith("test_aide_") and rel not in PORTABLE_AIDE_TEST_MODULES
+    )
 
 
 def is_exportable_file(repo_root: Path, rel_path: str) -> bool:

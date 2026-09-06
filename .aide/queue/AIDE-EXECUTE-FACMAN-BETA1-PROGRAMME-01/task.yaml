@@ -1,0 +1,36 @@
+schema_version: aide.queue-task.v0
+id: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
+title: Execute the admitted FacMan 0.1 Beta1 completion programme
+type: execution
+status: running
+planning_state: execution_active
+result: PENDING
+review_gate: exact_candidate_human_acceptance
+created_at: 2026-09-06
+updated_at: 2026-09-06
+authorizes_implementation: true
+authorization_basis: User explicitly requested all discussed plans queued, implemented, tested, remediated, decomposed, refactored, validated, documented, synchronized, committed and merged through complete 0.1 Beta1.
+objective: Complete the admitted full 0.1 Beta1 engineering and package candidate with honest remaining human acceptance.
+repositories:
+  - D:/Projects/AIDE/aide
+  - D:/Projects/Factorio/factorio-launcher
+  - D:/Projects/Universal/universal-launcher
+  - D:/Projects/Universal/universal-setup
+canonical_product_plan: D:/Projects/Factorio/factorio-launcher/release/index/plan.v1.toml
+runtime_prerequisite: AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01
+allowed_operations:
+  - scoped implementation and refactoring under admitted repository tasks
+  - independent code assurance and proportionate required validation
+  - read-only authentication and remote state observation in the real Windows user context
+  - explicit planned task branches, local commits, fetch and non-force sync
+  - task branch pushes, pull requests and normal policy-compliant merges
+  - required provider promotions followed by separate exact consumer adoption
+  - bounded worker qualification using existing Codex account allowance
+  - protected integration and host implementation before exact operational activation
+retained_gates:
+  - no bypass of required checks or independent assurance
+  - no direct protected push, force push or self-approval
+  - no production credentials, signing keys or billing changes
+  - no manufactured human experience or acceptance
+  - public publication remains separate from Beta1 readiness
+  - real lab effects require identified disposable hosts and approved inputs

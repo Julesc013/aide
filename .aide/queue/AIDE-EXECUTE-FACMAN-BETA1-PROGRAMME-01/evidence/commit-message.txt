@@ -1,0 +1,52 @@
+feat(runtime): add durable worker prototype and Beta1 programme
+
+## Summary
+
+- Add the source-qualified continuous worker and the admitted FacMan Beta1
+  execution programme; live unattended activation remains incomplete.
+
+## Why
+
+- Queue bounded work with durable claims, tests, assurance and integration
+  evidence while preserving exact candidate and human acceptance gates.
+
+## Changed
+
+- Add the SQLite coordinator, Windows Job containment, bounded Codex adapter,
+  controls, candidate qualification and integration broker interface.
+- Admit seven runtime follow-ups and seven provider coordination tasks.
+- Repair portable pack checksums and exclude source-only runtime tests;
+  include closed portable templates without source-only apply claims.
+- Record explicit normal Git integration authority and programme evidence.
+
+## Validation
+
+- Continuous worker: 51 tests PASS, independently reviewed exact source.
+- Export unit tests: 19 PASS; 829 checksums and portable boundary PASS.
+- AIDE validate, doctor, test, selftest and eval run: PASS.
+- Harness validate, doctor and self-check: PASS.
+- Source-bound export assurance: PASS. See programme evidence receipts.
+
+## Changelog
+
+- Added: durable source-qualified continuous worker prototype.
+- Fixed: portable pack closure and source-only test leakage.
+- Internal: admit the bounded FacMan Beta1 execution programme.
+
+## Risks
+
+- Credential/filesystem host isolation, live integration broker and genuine
+  two-task supervised qualification remain open; no worker is activated.
+- FacMan Beta1 package, platform and experience gates remain incomplete.
+
+## Follow-up
+
+- Integrate this reviewed source, then implement and qualify the seven
+  runtime slices and repository-owned FacMan/provider task graph.
+
+AIDE-Task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
+AIDE-Phase: continuous-worker-pilot
+AIDE-Result: partial
+AIDE-Scope: core/runtime/continuous_worker and programme/export evidence
+AIDE-Token-Impact: bounded durable task and evidence records
+AIDE-Quality-Gate: source tests and independent review passed

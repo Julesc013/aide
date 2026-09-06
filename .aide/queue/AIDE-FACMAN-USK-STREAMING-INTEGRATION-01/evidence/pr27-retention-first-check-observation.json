@@ -1,0 +1,139 @@
+{
+  "schema": "aide.provider_pr_observation.v1",
+  "observed_at": "2026-09-06T13:53:53.731135+00:00",
+  "repository": "Julesc013/universal-setup",
+  "pull_request": {
+    "number": 27,
+    "url": "https://github.com/Julesc013/universal-setup/pull/27",
+    "state": "OPEN",
+    "headRefName": "task/usk-streaming-source-target-01",
+    "headRefOid": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+    "baseRefName": "dev"
+  },
+  "checks": [
+    {
+      "id": 101497720548,
+      "name": "native-windows",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720548",
+      "started_at": "2026-09-06T13:51:05Z",
+      "completed_at": null
+    },
+    {
+      "id": 101497720491,
+      "name": "native-linux",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720491",
+      "started_at": "2026-09-06T13:53:55Z",
+      "completed_at": null
+    },
+    {
+      "id": 101497720476,
+      "name": "native-macos",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720476",
+      "started_at": "2026-09-06T13:51:32Z",
+      "completed_at": null
+    },
+    {
+      "id": 101497720421,
+      "name": "sanitizer",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720421",
+      "started_at": "2026-09-06T13:53:05Z",
+      "completed_at": null
+    },
+    {
+      "id": 101497720356,
+      "name": "native-windows-win32",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720356",
+      "started_at": "2026-09-06T13:52:08Z",
+      "completed_at": null
+    },
+    {
+      "id": 101497720311,
+      "name": "fuzz-smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720311",
+      "started_at": "2026-09-06T13:52:50Z",
+      "completed_at": "2026-09-06T13:53:04Z"
+    },
+    {
+      "id": 101497711573,
+      "name": "native-macos",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711573",
+      "started_at": "2026-09-06T13:51:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 101497711502,
+      "name": "native-windows-win32",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711502",
+      "started_at": "2026-09-06T13:51:38Z",
+      "completed_at": null
+    },
+    {
+      "id": 101497711486,
+      "name": "native-linux",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711486",
+      "started_at": "2026-09-06T13:51:25Z",
+      "completed_at": null
+    },
+    {
+      "id": 101497711475,
+      "name": "fuzz-smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711475",
+      "started_at": "2026-09-06T13:51:11Z",
+      "completed_at": "2026-09-06T13:51:28Z"
+    },
+    {
+      "id": 101497711454,
+      "name": "native-windows",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711454",
+      "started_at": "2026-09-06T13:51:04Z",
+      "completed_at": null
+    },
+    {
+      "id": 101497711382,
+      "name": "sanitizer",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711382",
+      "started_at": "2026-09-06T13:51:03Z",
+      "completed_at": "2026-09-06T13:52:48Z"
+    }
+  ],
+  "check_count": 12,
+  "qualification": "pending_complete_fresh_hosted_matrix",
+  "body_lf_sha256": "50a2bd6ba265aeb500746103117d8183aef70de7600875dd0edbeba2be11ab0a",
+  "body_comparison": "GitHub CRLF normalized to LF; otherwise exact approved body"
+}

@@ -1,0 +1,301 @@
+diff --git a/README.md b/README.md
+index 0f05f22..60e4cc9 100644
+--- a/README.md
++++ b/README.md
+@@ -146,9 +146,13 @@ the exact installed bytes. The package version remains separate from C ABI 1.9
+ and the session subset's
+ experimental prerelease contract maturity.
+ 
+-Canonical provider source is `main@5479939ca5cbc9ee0f901608a92012778b4752ae`;
+-`dev@5c2b6eb8ead53db863103a5190fa4fa130f64d42` contains that promotion and
+-has the same source tree. FacMan consumes that canonical `main` revision.
++The 6 September 2026 local branch observations record canonical provider source
++at `main@5479939ca5cbc9ee0f901608a92012778b4752ae`. Observed
++`dev@0e8bcc38f5a55c80974c41da8d2eac10ac703593` contains that promotion but has
++a different tree after workspace-hygiene integration. FacMan consumes the
++recorded canonical `main` revision. The August 20 equal-tree synchronization is
++[historical evidence](docs/release/checkpoints/ulk-session-last-run-promotion-01.md).
++These observations do not qualify this task candidate or future branch heads.
+ 
+ The current repository is an incremental production kernel. The authoritative
+ command graph, Setup handoff, frontend-neutral client/transport ABI,
+diff --git a/docs/release/checkpoints/ulk-1-9-1-current-truth-closeout-01.md b/docs/release/checkpoints/ulk-1-9-1-current-truth-closeout-01.md
+index 4f16cb4..0e8a690 100644
+--- a/docs/release/checkpoints/ulk-1-9-1-current-truth-closeout-01.md
++++ b/docs/release/checkpoints/ulk-1-9-1-current-truth-closeout-01.md
+@@ -1,25 +1,32 @@
+ # ULK 1.9.1 current-truth closeout 01
+ 
+-Date: 26 August 2026
++Date: 26 August 2026; branch observations corrected 6 September 2026
+ 
+ State: `implementation_complete_pending_protected_integration`
+ 
+ ## Boundary
+ 
+-This truth-only WorkUnit starts from exact synchronized
++This truth-only WorkUnit originally started from the historically synchronized
+ `dev@5c2b6eb8ead53db863103a5190fa4fa130f64d42`, tree
+-`7728e4d415539a0f24e6f17aa7d22be00cc99d80`.
++`7728e4d415539a0f24e6f17aa7d22be00cc99d80`. PR18 subsequently incorporated
++`dev`; this correction preserves its existing head ancestry at
++`484c6832a6c0ac1a4306d85987ee2b5a7c11bd90`.
+ 
+ It corrects stale roadmap, README, checkpoint, and machine-readable promotion
+ state. It changes no runtime source, public header, ABI, package layout, journal
+ format, command behavior, or provider authority.
+ 
+-## Current truth
++## Dated observations on 6 September 2026
+ 
+ - ULK 1.9.1 is canonical on
+   `main@5479939ca5cbc9ee0f901608a92012778b4752ae`.
+-- `dev@5c2b6eb8ead53db863103a5190fa4fa130f64d42` contains `main` and has the
+-  same source tree.
++- Local `origin/dev@0e8bcc38f5a55c80974c41da8d2eac10ac703593` contains the
++  observed `main`, but its tree is `b28499daea1088504708691e794dbbbd59998f18`.
++  The observed `main` tree remains `7728e4d415539a0f24e6f17aa7d22be00cc99d80`.
++  The trees differ after workspace-hygiene integration.
++- The August 20 synchronization at `dev@5c2b6eb8ead53db863103a5190fa4fa130f64d42`
++  remains historical evidence. These branch observations make no tree-equality
++  claim about this edited candidate or subsequent integration commits.
+ - Public C ABI remains 1.9.
+ - The journal reads v1/v2 and writes v2.
+ - FacMan consumes exact canonical ULK pin
+diff --git a/docs/release/checkpoints/ulk-session-last-run-promotion-01.md b/docs/release/checkpoints/ulk-session-last-run-promotion-01.md
+index 603782a..f4afb22 100644
+--- a/docs/release/checkpoints/ulk-session-last-run-promotion-01.md
++++ b/docs/release/checkpoints/ulk-session-last-run-promotion-01.md
+@@ -2,7 +2,7 @@
+ 
+ Date: 13 August 2026
+ 
+-State: `integrated_canonical_main_and_dev_synchronized`
++State: `integrated_with_historical_synchronization`
+ 
+ ## Exact candidate
+ 
+@@ -19,7 +19,7 @@ At qualification time, the exact `dev` history contained `main` and the
+ reviewed session task. No history was rewritten. This WorkUnit added promotion
+ truth and qualification evidence; it did not change journal behavior.
+ 
+-## Current closeout
++## Historical integration and synchronization
+ 
+ The original candidate identities and qualification below remain historical
+ evidence. Protected integration subsequently completed with normal merge
+@@ -31,12 +31,29 @@ dev -> main              09f0639ab6529fba2f2aa22e9bf68e5eebed0553
+ main -> dev              2e77e15c8bcdeb833a0a45aab3421886b72cc70c
+ 1.9.1 -> main            5479939ca5cbc9ee0f901608a92012778b4752ae
+ 1.9.1 main -> dev        5c2b6eb8ead53db863103a5190fa4fa130f64d42
+-current shared tree      7728e4d415539a0f24e6f17aa7d22be00cc99d80
++August 20 shared tree    7728e4d415539a0f24e6f17aa7d22be00cc99d80
+ ```
+ 
+-`main` is an ancestor of `dev`, and both protected refs project the same
+-1.9.1 source tree. FacMan's separate adoption WorkUnit consumes exact canonical
+-pin `5479939ca5cbc9ee0f901608a92012778b4752ae`.
++Those exact August 20 commits shared the recorded 1.9.1 source tree. This is
++historical synchronization evidence.
++
++## Branch observations on 6 September 2026
++
++Read-only local observations of `origin/main` and `origin/dev` recorded:
++
++```text
++main revision           5479939ca5cbc9ee0f901608a92012778b4752ae
++main tree               7728e4d415539a0f24e6f17aa7d22be00cc99d80
++dev revision            0e8bcc38f5a55c80974c41da8d2eac10ac703593
++dev tree                b28499daea1088504708691e794dbbbd59998f18
++```
++
++The observed `main` remains an ancestor of the observed `dev`. Their trees
++are different: subsequent workspace-hygiene work changed `dev`. These dated
++observations do not qualify this edited task candidate or establish equality
++with its resulting tree, future merge commits, or subsequently moving refs.
++FacMan's separate adoption WorkUnit consumes exact canonical pin
++`5479939ca5cbc9ee0f901608a92012778b4752ae`.
+ 
+ Public ABI remains 1.9. The journal reads v1/v2 disk records and writes v2.
+ Generic process runtime, daemon/service execution, and stable `ulu` maturity
+diff --git a/docs/roadmap.md b/docs/roadmap.md
+index 0c2ba46..c34e192 100644
+--- a/docs/roadmap.md
++++ b/docs/roadmap.md
+@@ -15,8 +15,12 @@ to canonical `main`. Consumer adoption remains a later exact-pin pull request.
+   `09f0639ab6529fba2f2aa22e9bf68e5eebed0553`, then returned to `dev`
+   through `2e77e15c8bcdeb833a0a45aab3421886b72cc70c`.
+ - The 1.9.1 Last Run ordering/package truth reached canonical `main` through
+-  `5479939ca5cbc9ee0f901608a92012778b4752ae`; synchronized
+-  `dev@5c2b6eb8ead53db863103a5190fa4fa130f64d42` has the same tree.
++  `5479939ca5cbc9ee0f901608a92012778b4752ae`; the August 20 synchronization
++  at `dev@5c2b6eb8ead53db863103a5190fa4fa130f64d42` shared its tree.
++- The 6 September local observation of
++  `dev@0e8bcc38f5a55c80974c41da8d2eac10ac703593` still contains that `main`,
++  but its tree differs after workspace-hygiene work. Historical synchronization
++  does not establish tree equality for this edited candidate or future refs.
+ - FacMan separately adopted exact canonical pin
+   `5479939ca5cbc9ee0f901608a92012778b4752ae`.
+ - ABI remains 1.9. The journal reads disk formats v1/v2 and writes v2.
+diff --git a/release/index/session_last_run_promotion.v1.toml b/release/index/session_last_run_promotion.v1.toml
+index 92f0377..337c963 100644
+--- a/release/index/session_last_run_promotion.v1.toml
++++ b/release/index/session_last_run_promotion.v1.toml
+@@ -3,7 +3,7 @@
+ 
+ schema = "universal_launcher.session_last_run_promotion.v1"
+ workunit = "ULK-SESSION-LAST-RUN-PROMOTION-01"
+-status = "integrated_canonical_main_and_dev_synchronized"
++status = "integrated_with_historical_synchronization"
+ reviewed_on = "2026-08-13"
+ closed_on = "2026-08-26"
+ closeout_workunit = "ULK-1.9.1-CURRENT-TRUTH-CLOSEOUT-01"
+@@ -69,12 +69,26 @@ required_skips = 0
+ installed_sdk_modes = ["workspace", "static", "shared", "combined"]
+ relocated_sdk_modes = ["static", "shared"]
+ 
+-[current]
++[historical_synchronization]
++synchronized_on = "2026-08-20"
++evidence_role = "historical_1_9_1_synchronization"
+ canonical_main_revision = "5479939ca5cbc9ee0f901608a92012778b4752ae"
+ synchronized_dev_revision = "5c2b6eb8ead53db863103a5190fa4fa130f64d42"
+ shared_tree = "7728e4d415539a0f24e6f17aa7d22be00cc99d80"
+ main_is_ancestor_of_dev = true
+ main_and_dev_same_tree = true
++
++[current]
++observed_on = "2026-09-06"
++observation_kind = "local_remote_tracking_refs"
++evidence_role = "dated_branch_observation_not_candidate_or_future_ref_qualification"
++canonical_main_revision = "5479939ca5cbc9ee0f901608a92012778b4752ae"
++canonical_main_tree = "7728e4d415539a0f24e6f17aa7d22be00cc99d80"
++observed_dev_revision = "0e8bcc38f5a55c80974c41da8d2eac10ac703593"
++observed_dev_tree = "b28499daea1088504708691e794dbbbd59998f18"
++main_is_ancestor_of_dev = true
++main_and_dev_same_tree = false
++candidate_tree_equivalence = "not_claimed"
+ facman_consumed_pin = "5479939ca5cbc9ee0f901608a92012778b4752ae"
+ journal_disk_compatibility = "read_v1_v2_write_v2"
+ generic_process_runtime = false
+diff --git a/tests/test_session_promotion.py b/tests/test_session_promotion.py
+index 7a1a19d..6d00320 100644
+--- a/tests/test_session_promotion.py
++++ b/tests/test_session_promotion.py
+@@ -41,6 +41,54 @@ class SessionPromotionTests(unittest.TestCase):
+         )
+         self.assertIn("session promotion current.published must be False", problems)
+ 
++    def test_historical_sync_and_dated_dev_observation_are_distinct(self) -> None:
++        with session_promotion_check.RECORD.open("rb") as handle:
++            import tomllib
++
++            record = tomllib.load(handle)
++        historical = record["historical_synchronization"]
++        current = record["current"]
++        self.assertTrue(historical["main_and_dev_same_tree"])
++        self.assertFalse(current["main_and_dev_same_tree"])
++        self.assertEqual(historical["shared_tree"], current["canonical_main_tree"])
++        self.assertNotEqual(current["canonical_main_tree"], current["observed_dev_tree"])
++        self.assertEqual(session_promotion_check.check_data(record), [])
++
++    def test_current_observation_rejects_historical_or_candidate_equivalence(self) -> None:
++        with session_promotion_check.RECORD.open("rb") as handle:
++            import tomllib
++
++            record = tomllib.load(handle)
++        mutations = {
++            "main_and_dev_same_tree": True,
++            "observed_dev_revision": record["historical_synchronization"]["synchronized_dev_revision"],
++            "observed_dev_tree": record["historical_synchronization"]["shared_tree"],
++            "candidate_tree_equivalence": "equal_to_observed_dev",
++            "observation_kind": "live_remote_verification",
++            "observed_on": "2026-08-20",
++        }
++        for field, value in mutations.items():
++            with self.subTest(field=field):
++                changed = copy.deepcopy(record)
++                changed["current"][field] = value
++                problems = session_promotion_check.check_data(changed)
++                self.assertTrue(any(f"current.{field} must be" in problem for problem in problems), problems)
++        changed = copy.deepcopy(record)
++        changed["current"]["shared_tree"] = record["historical_synchronization"]["shared_tree"]
++        self.assertIn(
++            "session promotion current must enumerate exactly the dated observation fields",
++            session_promotion_check.check_data(changed),
++        )
++
++    def test_historical_synchronization_identity_cannot_be_rewritten(self) -> None:
++        with session_promotion_check.RECORD.open("rb") as handle:
++            import tomllib
++
++            record = tomllib.load(handle)
++        record["historical_synchronization"]["synchronized_dev_revision"] = record["current"]["observed_dev_revision"]
++        problems = session_promotion_check.check_data(record)
++        self.assertTrue(any("historical_synchronization.synchronized_dev_revision" in problem for problem in problems), problems)
++
+ 
+ if __name__ == "__main__":
+     unittest.main()
+diff --git a/tools/session_promotion_check.py b/tools/session_promotion_check.py
+index 2971249..01deacd 100644
+--- a/tools/session_promotion_check.py
++++ b/tools/session_promotion_check.py
+@@ -30,7 +30,7 @@ def check_data(data: dict[str, Any]) -> list[str]:
+     expected = {
+         "schema": "universal_launcher.session_last_run_promotion.v1",
+         "workunit": "ULK-SESSION-LAST-RUN-PROMOTION-01",
+-        "status": "integrated_canonical_main_and_dev_synchronized",
++        "status": "integrated_with_historical_synchronization",
+         "reviewed_on": "2026-08-13",
+         "closed_on": "2026-08-26",
+         "closeout_workunit": "ULK-1.9.1-CURRENT-TRUTH-CLOSEOUT-01",
+@@ -93,13 +93,34 @@ def check_data(data: dict[str, Any]) -> list[str]:
+         if qualification.get(field) != value:
+             problems.append(f"session promotion qualification.{field} must be {value!r}")
+ 
+-    current = data.get("current", {})
+-    expected_current = {
++    historical = data.get("historical_synchronization", {})
++    expected_historical = {
++        "synchronized_on": "2026-08-20",
++        "evidence_role": "historical_1_9_1_synchronization",
+         "canonical_main_revision": "5479939ca5cbc9ee0f901608a92012778b4752ae",
+         "synchronized_dev_revision": "5c2b6eb8ead53db863103a5190fa4fa130f64d42",
+         "shared_tree": "7728e4d415539a0f24e6f17aa7d22be00cc99d80",
+         "main_is_ancestor_of_dev": True,
+         "main_and_dev_same_tree": True,
++    }
++    for field, value in expected_historical.items():
++        if type(historical.get(field)) is not type(value) or historical.get(field) != value:
++            problems.append(f"session promotion historical_synchronization.{field} must be {value!r}")
++
++    # This record binds dated observations of exact commits, not moving refs or
++    # the source tree containing this checker. Documentation edits change that tree.
++    current = data.get("current", {})
++    expected_current = {
++        "observed_on": "2026-09-06",
++        "observation_kind": "local_remote_tracking_refs",
++        "evidence_role": "dated_branch_observation_not_candidate_or_future_ref_qualification",
++        "canonical_main_revision": "5479939ca5cbc9ee0f901608a92012778b4752ae",
++        "canonical_main_tree": "7728e4d415539a0f24e6f17aa7d22be00cc99d80",
++        "observed_dev_revision": "0e8bcc38f5a55c80974c41da8d2eac10ac703593",
++        "observed_dev_tree": "b28499daea1088504708691e794dbbbd59998f18",
++        "main_is_ancestor_of_dev": True,
++        "main_and_dev_same_tree": False,
++        "candidate_tree_equivalence": "not_claimed",
+         "facman_consumed_pin": "5479939ca5cbc9ee0f901608a92012778b4752ae",
+         "journal_disk_compatibility": "read_v1_v2_write_v2",
+         "generic_process_runtime": False,
+@@ -111,8 +132,10 @@ def check_data(data: dict[str, Any]) -> list[str]:
+         "published": False,
+     }
+     for field, value in expected_current.items():
+-        if current.get(field) != value:
++        if type(current.get(field)) is not type(value) or current.get(field) != value:
+             problems.append(f"session promotion current.{field} must be {value!r}")
++    if set(current) != set(expected_current):
++        problems.append("session promotion current must enumerate exactly the dated observation fields")
+ 
+     scope = data.get("scope", {})
+     if not scope:

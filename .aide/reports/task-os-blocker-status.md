@@ -2,9 +2,9 @@
 
 - command: `blocker status`
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
+- repo_root: `D:/Projects/AIDE/aide`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Summary
 
-- blocker_count: 49
-- repairable_count: 1
-- non_repairable_count: 48
+- blocker_count: 267
+- repairable_count: 3
+- non_repairable_count: 264
 
 ## Blockers And Warnings
 
@@ -66,6 +66,224 @@
 - `AIDE-CHECK-APPLY-02-RECHECK-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
 - `AIDE-QUEUE-CLOSURE-02`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
 - `AIDE-TASK-OS-STATUS-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-APPLY-LIFECYCLE-PLAN-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-CHECK-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AI-LONG-TURN-OPERATING-PROTOCOL-00`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01`: kind=blocked_status class=unknown severity=high repairable=true
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-CONTRACT-ENVELOPE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-WORKUNIT-CLI-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-WORKER-RUN-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-WORKER-RUN-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-WORKER-RUN-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-TESTJOB-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-TESTJOB-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-TESTJOB-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-REFERENCE-ID-SCHEME-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-REFERENCE-ID-SCHEME-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-REFERENCE-ID-SCHEME-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-EVENT-RECORD-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-EVENT-RECORD-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-RECONCILER-REPORTS-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-RECONCILER-REPORTS-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-RECONCILER-REPORTS-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-CAPABILITY-MANIFEST-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-CAPABILITY-MANIFEST-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-CONFORMANCE-PROFILE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-CONFORMANCE-PROFILE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-CONFORMANCE-PROFILE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-OPERATIONAL-HEALTH-PAUSE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-RESUME-BUILD-CONTEXTPACK-V2-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-RESUME-CHECK-CONTEXTPACK-V2-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-INTEROP-EXPORTS-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-INTEROP-EXPORTS-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-INTEROP-EXPORTS-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-MCP-SERVER-CONTRACT-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-MCP-SERVER-CONTRACT-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-MCP-SERVER-CONTRACT-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-DOMINIUM-INTEGRATION-CHARTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-ADAPTER-MANIFEST-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-ADAPTER-MANIFEST-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-ADAPTER-MANIFEST-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-CONTEXTPACK-V2-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-CONTEXTPACK-V2-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-STRUCTURE-01-root-authority-contracts`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-REPO-LAYOUT-INVENTORY-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ADOPT-APACHE-2-LICENSE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-REPORT-INDEX-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-REPORT-INDEX-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-REPORT-INDEX-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-TRACK-B-B1-BARRIER-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-PROJECT-LOCK-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-PROJECT-LOCK-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-PROJECT-LOCK-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-OWNERSHIP-LEDGER-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-OWNERSHIP-LEDGER-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-DISTRIBUTION-SAFETY-WAVE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-INSTALL-RECORD-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-INSTALL-RECORD-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-INSTALL-RECORD-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-MIGRATION-RECORD-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-MIGRATION-RECORD-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-MIGRATION-RECORD-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-UPDATE-PLAN-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-UPDATE-PLAN-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-UPDATE-PLAN-V1-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-ROLLBACK-BUNDLE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-ROLLBACK-BUNDLE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-UPDATE-RECEIPT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-UPDATE-RECEIPT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-UPDATE-RECEIPT-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01`: kind=blocked_status class=unknown severity=high repairable=true
 - `target-deferral-1`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-2`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-3`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false

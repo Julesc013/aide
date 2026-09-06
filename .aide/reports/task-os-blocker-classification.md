@@ -2,9 +2,9 @@
 
 - command: `blocker classify`
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
+- repo_root: `D:/Projects/AIDE/aide`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Counts
 
-- blocker_count: 49
-- repairable_count: 1
-- non_repairable_count: 48
+- blocker_count: 267
+- repairable_count: 3
+- non_repairable_count: 264
 
 ## Records
 
@@ -66,6 +66,224 @@
 - `AIDE-CHECK-APPLY-02-RECHECK-01` review_gated_work missing_prerequisite low
 - `AIDE-QUEUE-CLOSURE-02` review_gated_work missing_prerequisite low
 - `AIDE-TASK-OS-STATUS-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-APPLY-LIFECYCLE-PLAN-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-CHECK-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01` review_gated_work missing_prerequisite low
+- `AI-LONG-TURN-OPERATING-PROTOCOL-00` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01` review_gated_work missing_prerequisite low
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01` blocked_status unknown high
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-CONTRACT-ENVELOPE-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-WORKUNIT-CLI-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-WORKER-RUN-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-WORKER-RUN-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-WORKER-RUN-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-TESTJOB-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-TESTJOB-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-TESTJOB-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-REFERENCE-ID-SCHEME-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-REFERENCE-ID-SCHEME-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-REFERENCE-ID-SCHEME-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-EVENT-RECORD-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-EVENT-RECORD-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-RECONCILER-REPORTS-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-RECONCILER-REPORTS-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-RECONCILER-REPORTS-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-CAPABILITY-MANIFEST-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-CAPABILITY-MANIFEST-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-CAPABILITY-MANIFEST-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-CONFORMANCE-PROFILE-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-CONFORMANCE-PROFILE-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-CONFORMANCE-PROFILE-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-OPERATIONAL-HEALTH-PAUSE-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01` review_gated_work missing_prerequisite low
+- `AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01` review_gated_work missing_prerequisite low
+- `AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01` review_gated_work missing_prerequisite low
+- `AIDE-RESUME-BUILD-CONTEXTPACK-V2-01` review_gated_work missing_prerequisite low
+- `AIDE-RESUME-CHECK-CONTEXTPACK-V2-01` review_gated_work missing_prerequisite low
+- `AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01` review_gated_work missing_prerequisite low
+- `AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-INTEROP-EXPORTS-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-INTEROP-EXPORTS-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-INTEROP-EXPORTS-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-MCP-SERVER-CONTRACT-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-MCP-SERVER-CONTRACT-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-MCP-SERVER-CONTRACT-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01` review_gated_work missing_prerequisite low
+- `AIDE-DOMINIUM-INTEGRATION-CHARTER-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-ADAPTER-MANIFEST-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-ADAPTER-MANIFEST-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-ADAPTER-MANIFEST-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-CONTEXTPACK-V2-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-CONTEXTPACK-V2-01` review_gated_work missing_prerequisite low
+- `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit` review_gated_work missing_prerequisite low
+- `AIDE-STRUCTURE-01-root-authority-contracts` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-REPO-LAYOUT-INVENTORY-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01` review_gated_work missing_prerequisite low
+- `AIDE-ADOPT-APACHE-2-LICENSE-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-REPORT-INDEX-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-REPORT-INDEX-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-REPORT-INDEX-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-TRACK-B-B1-BARRIER-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-PROJECT-LOCK-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-PROJECT-LOCK-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-PROJECT-LOCK-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-OWNERSHIP-LEDGER-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-OWNERSHIP-LEDGER-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-DISTRIBUTION-SAFETY-WAVE-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-INSTALL-RECORD-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-INSTALL-RECORD-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-INSTALL-RECORD-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-MIGRATION-RECORD-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-MIGRATION-RECORD-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-MIGRATION-RECORD-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-UPDATE-PLAN-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-UPDATE-PLAN-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-UPDATE-PLAN-V1-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-ROLLBACK-BUNDLE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-ROLLBACK-BUNDLE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-UPDATE-RECEIPT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-UPDATE-RECEIPT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-UPDATE-RECEIPT-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01` review_gated_work missing_prerequisite low
+- `AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01` review_gated_work missing_prerequisite low
+- `AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01` review_gated_work missing_prerequisite low
+- `AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01` review_gated_work missing_prerequisite low
+- `AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01` blocked_status unknown high
 - `target-deferral-1` deferred_target_work missing_prerequisite medium
 - `target-deferral-2` deferred_target_work missing_prerequisite medium
 - `target-deferral-3` deferred_target_work missing_prerequisite medium

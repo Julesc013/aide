@@ -1,0 +1,48 @@
+{
+  "schema": "aide.continuous-worker.activation.v0",
+  "runtime_files": {
+    "codex.py": "25707232e17da81cfd3a057c5e8334b54b6d0c3249685ee1176b30022ba7a9bb",
+    "contract.py": "466698d1a17911fc30a2bdc1fedbcd3f8a769e65d55baacab9aaa62ecea4f507",
+    "coordinator.py": "768abba87833e294468a3ee9bfd600bc9866bb4a32b180138a105ddcd3843fa4",
+    "locking.py": "36f8af035b1018838e8621aee644abc37b2b3410029ec55f8b2408357031476b",
+    "state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "windows_job.py": "c94cd26c80b319e600ed899f8b7d1135ef5fd5d78ab23b8342aa367ee8c077c6",
+    "__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+    "__main__.py": "d68bb72836e57b7980397e8545938c888d1b046e9f260844fb57ab61bf898034"
+  },
+  "state_root": "C:\\Users\\Jules\\AppData\\Local\\AIDE\\Continuous\\facman-pilot\\state",
+  "expires_at": 0,
+  "limits": {
+    "max_attempts": 2,
+    "max_sessions": 4,
+    "max_processes": 8,
+    "max_integration_queries": 60,
+    "process_seconds": 900,
+    "programme_seconds": 3600,
+    "output_bytes": 8388608,
+    "memory_bytes": 4294967296,
+    "max_state_bytes": 1073741824,
+    "min_free_bytes": 5368709120
+  },
+  "codex": {
+    "argv": [
+      "C:\\Users\\Jules\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe"
+    ],
+    "sha256": "83751f15cb6a0a7b97df67752c001e3fe1c20e18ffbfec3ff63567296205eb6c",
+    "inputs": {}
+  },
+  "git": {
+    "argv": [
+      "C:\\Program Files\\Git\\cmd\\git.exe"
+    ],
+    "sha256": "da240fe9bc24895b3e04150a4990b8a6ff329ecabcd8f19684c2cc310da5ef3f",
+    "inputs": {}
+  },
+  "worker_models": {
+    "coding": "gpt-5.6-terra",
+    "assurance": "gpt-5.6-luna"
+  },
+  "tasks": [],
+  "qualification": {},
+  "integration": null
+}

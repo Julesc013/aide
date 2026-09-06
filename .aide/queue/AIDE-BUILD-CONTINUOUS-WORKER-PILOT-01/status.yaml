@@ -1,0 +1,10 @@
+schema_version: aide.task-status.v0
+id: AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01
+status: blocked
+planning_state: local_prototype_validated
+result: PARTIAL
+review_gate: live_qualification_and_activation_pending
+updated_at: 2026-09-06
+accepted_capability: null
+blockers:
+  - Live pilot activation and legitimate protected integration require exact reviewed configuration.

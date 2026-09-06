@@ -2,9 +2,9 @@
 
 - command: `task resume-plan`
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
+- repo_root: `D:/Projects/AIDE/aide`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,8 +15,8 @@
 
 ## Current Task
 
-- latest_task_id: `AIDE-TASK-OS-STATUS-REPAIR-01`
-- latest_task_status: `needs_review`
+- latest_task_id: `AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01`
+- latest_task_status: `blocked`
 
 ## Evidence To Inspect
 

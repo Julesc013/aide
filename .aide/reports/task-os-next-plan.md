@@ -2,9 +2,9 @@
 
 - command: `task-os next plan`
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `002aa52413639f4a68b5d7d0a000b7217886dbec`
+- repo_root: `D:/Projects/AIDE/aide`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -26,10 +26,10 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01
-- latest_indexed_task_status: needs_review
-- latest_task_packet_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01
-- latest_task_packet_status: needs_review
+- latest_indexed_task_id: AIDE-FACMAN-ULK-PROMOTION-01
+- latest_indexed_task_status: planned
+- latest_task_packet_id: AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01
+- latest_task_packet_status: blocked
 - x_os_01_status: needs_review
 - x_os_02_status: needs_review
 - aide_check_os_01_status: needs_review
