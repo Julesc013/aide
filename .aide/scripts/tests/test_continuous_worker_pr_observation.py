@@ -1,5 +1,7 @@
 """Offline PR identity, policy, intent and lost-observation refusal tests."""
 import copy
+import os
+import shutil
 from pathlib import Path
 import sys
 import tempfile
@@ -173,6 +175,38 @@ class PrObservationTests(unittest.TestCase):
         with self.assertRaisesRegex(Refused, "observation budget"):
             store.observe(p, value)
 
+    def test_read_attempt_budget_is_atomic_and_retains_legacy_observation_cost(self):
+        store, root = self.store()
+        fixed = plan()
+        fixed["max_observations"] = 2
+        store.reserve(fixed)
+        # An earlier v1 writer could persist an observation before this additive
+        # read-attempt API existed. It still costs one of the finite calls.
+        store.observe(fixed, observed(fixed, "create_branch"))
+        results, failures = [], []
+        barrier = threading.Barrier(2)
+        def reserve():
+            local = ObservationStore(root)
+            try:
+                barrier.wait(timeout=5)
+                local.observation_attempt(fixed)
+                results.append("reserved")
+            except Refused:
+                results.append("refused")
+            except BaseException as error:
+                failures.append(error)
+            finally:
+                local.close()
+        threads = [threading.Thread(target=reserve) for _ in range(2)]
+        for thread in threads:
+            thread.start()
+        for thread in threads:
+            thread.join(10)
+        self.assertFalse(any(thread.is_alive() for thread in threads))
+        self.assertEqual(failures, [])
+        self.assertCountEqual(results, ["reserved", "refused"])
+        self.assertEqual(store.db.execute("SELECT COUNT(*) FROM observation_attempts").fetchone()[0], 2)
+
     def test_concurrent_reservation_and_intent_have_one_winner(self):
         store, root = self.store()
         p, value = plan(), observed(plan(), "create_branch")
@@ -198,6 +232,294 @@ class PrObservationTests(unittest.TestCase):
         self.assertEqual(failures, [])
         self.assertEqual(sum(row[0] for row in outcomes), 1)
         self.assertEqual(sum(row[1] for row in outcomes), 1)
+
+
+class ScriptedStageAdapter:
+    """Local fact/dispatch fixture, not authenticated production transport."""
+    def __init__(self, fixture, fixed):
+        self.fixture, self.fixed = fixture, fixed
+        self.stage = "publish_objects"
+        self.calls, self.qualifications = [], []
+        self.lost_after = False
+        self.fail_before = False
+        self.qualified = True
+        self.raw_override = None
+        self.observe_hook = None
+        self.merge_oid = None
+        self.observation_calls = 0
+
+    def assert_current(self, broker, request, fixed, purpose):
+        if not self.qualified:
+            raise Refused("fixture host qualification refused")
+        if fixed != self.fixed:
+            raise Refused("fixture plan drift")
+        self.qualifications.append(purpose)
+
+    def observe(self, fixed):
+        from core.runtime.integration_broker.common import canonical
+        self.observation_calls += 1
+        if self.observe_hook:
+            self.observe_hook()
+        if self.raw_override is not None:
+            return self.raw_override
+        value = observed(fixed, self.stage)
+        if self.merge_oid:
+            value["pull"]["merge_commit"] = self.merge_oid
+            value["target_commit"] = self.merge_oid
+        return canonical(value).encode()
+
+    def dispatch(self, operation, fixed, prepared):
+        self.calls.append(operation)
+        if self.fail_before:
+            raise OSError("fixture failed before acceptance")
+        folder = prepared["directory"]
+        # These are actual object-bound Windows handles and a real local Git
+        # commit/object store, even though the remote service is scripted.
+        with self.fixture.assertRaises(OSError):
+            folder.rename(folder.with_name("forbidden-substitution"))
+        actual = self.fixture.git.run(folder, "cat-file", "commit", fixed["candidate_commit"])
+        self.fixture.assertEqual(actual, prepared["commit_bytes"])
+        if operation == "merge":
+            raw = (f"tree {fixed['candidate_tree']}\nparent {fixed['base']}\n"
+                   f"parent {fixed['candidate_commit']}\nauthor fixture <fixture@example.invalid> 0 +0000\n"
+                   "committer fixture <fixture@example.invalid> 0 +0000\n\nfixture merge\n").encode()
+            self.merge_oid = self.fixture.git.run(folder, "hash-object", "-t", "commit", "-w", "--stdin", data=raw).decode().strip()
+        sequence = ["publish_objects", "create_branch", "create_pr", "merge", "integrated"]
+        self.fixture.assertEqual(operation, self.stage)
+        self.stage = sequence[sequence.index(operation) + 1]
+        if self.lost_after:
+            raise OSError("fixture lost reply after acceptance")
+
+
+@unittest.skipUnless(os.name == "nt" and shutil.which("git"), "requires bounded Windows Git host")
+class StagedBrokerTests(unittest.TestCase):
+    def fixture(self, *, max_observations=16, expires_at=2000):
+        import test_continuous_worker_integration_broker as native
+        from core.runtime.integration_broker.common import digest
+        from core.runtime.integration_broker.staged_transport import StagedTransport, commit_object
+        helper = native.BrokerTests(methodName="runTest")
+        helper.setUp()
+        self.addCleanup(helper.doCleanups)
+        fixed = plan()
+        fixed.update(max_observations=max_observations, expires_at=expires_at)
+        fixed.update(request_digest=digest(helper.request), base=helper.base,
+                     candidate_tree=helper.manifest["candidate_tree"],
+                     branch_ref="refs/heads/task/aide-cw-" + digest(helper.request))
+        fixed["checks"][0]["name"] = "unit"
+        oid, raw = commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"],
+                                 "Implement fixture candidate\n\nWork-Item: BROKER-FIXTURE-01\n")
+        fixed["candidate_commit"] = oid
+        adapter = ScriptedStageAdapter(helper, fixed)
+        transport = StagedTransport(fixed, raw, adapter=adapter)
+        broker = helper.broker(transport)
+        return helper, fixed, raw, adapter, transport, broker
+
+    def test_literal_commit_plan_rejects_extra_headers_and_changed_bytes(self):
+        from core.runtime.integration_broker.staged_transport import StagedTransport, commit_object
+        fixed = plan()
+        oid, raw = commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"], "Fixture\n")
+        fixed["candidate_commit"] = oid
+        self.assertEqual(commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"], "Fixture\n"), (oid, raw))
+        StagedTransport(fixed, raw)
+        for altered in (raw + b"changed\n", raw.replace(b"\n\n", b"\ngpgsig forged\n\n"), b"null", raw.decode()):
+            with self.subTest(altered=type(altered).__name__), self.assertRaises(Refused):
+                StagedTransport(fixed, altered)
+        for bad in ("", "no final newline", "nul\x00\n", "CRLF\r\n"):
+            with self.assertRaises(Refused):
+                commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"], bad)
+
+    def test_four_stages_use_real_candidate_objects_and_query_never_dispatches(self):
+        from core.runtime.integration_broker.common import digest
+        helper, fixed, raw, adapter, transport, broker = self.fixture()
+        self.assertEqual(broker.query(helper.request)["status"], "absent")
+        for stage in ("publish_objects", "create_branch", "create_pr", "merge"):
+            with self.subTest(stage=stage):
+                before = list(adapter.calls)
+                broker.reconcile(helper.request)
+                self.assertEqual(adapter.calls, before + [stage])
+                broker.query(helper.request)
+                self.assertEqual(adapter.calls, before + [stage])
+        result = broker.reconcile(helper.request)
+        self.assertEqual(result["status"], "integrated")
+        self.assertEqual(result["receipt"]["integrated_commit"], adapter.merge_oid)
+        self.assertEqual(result["receipt"]["integrated_tree"], helper.manifest["candidate_tree"])
+        folder = helper.state / broker.ledger.preparation(digest(helper.request))["generation"]
+        tree = helper.git.run(folder, "ls-tree", "-r", adapter.merge_oid).decode()
+        self.assertIn("src/new.bin", tree)
+        self.assertNotIn("src/remove.bin", tree)
+        self.assertEqual(len(adapter.calls), 4)
+
+    def test_each_lost_reply_restarts_into_a_later_stage_without_replay(self):
+        from core.runtime.integration_broker.staged_transport import StagedTransport
+        helper, fixed, raw, adapter, transport, broker = self.fixture()
+        adapter.lost_after = True
+        for stage in ("publish_objects", "create_branch", "create_pr", "merge"):
+            with self.subTest(stage=stage), self.assertRaisesRegex(OSError, "lost reply"):
+                broker.reconcile(helper.request)
+            broker.close()
+            broker = helper.broker(StagedTransport(fixed, raw, adapter=adapter))
+        self.assertEqual(broker.reconcile(helper.request)["status"], "integrated")
+        self.assertEqual(adapter.calls, ["publish_objects", "create_branch", "create_pr", "merge"])
+
+    def test_absence_after_intent_never_repeats_uncertain_dispatch(self):
+        from core.runtime.integration_broker.staged_transport import StagedTransport
+        helper, fixed, raw, adapter, transport, broker = self.fixture()
+        adapter.fail_before = True
+        with self.assertRaisesRegex(OSError, "before acceptance"):
+            broker.reconcile(helper.request)
+        broker.close()
+        adapter.fail_before = False
+        broker = helper.broker(StagedTransport(fixed, raw, adapter=adapter))
+        self.assertEqual(broker.reconcile(helper.request)["status"], "pending")
+        self.assertEqual(adapter.calls, ["publish_objects"])
+
+    def test_missing_or_revoked_adapter_refuses_before_broker_reservation(self):
+        from core.runtime.integration_broker.common import digest
+        helper, fixed, raw, adapter, transport, broker = self.fixture()
+        transport.adapter = None
+        with self.assertRaisesRegex(Refused, "not installed"):
+            broker.reconcile(helper.request)
+        transport.adapter = adapter
+        adapter.qualified = False
+        with self.assertRaisesRegex(Refused, "qualification refused"):
+            broker.reconcile(helper.request)
+        self.assertIsNone(broker.ledger.get(digest(helper.request)))
+        self.assertFalse((helper.state / "pr-observations.sqlite3").exists())
+        self.assertEqual(adapter.calls, [])
+
+    def test_malformed_observations_cannot_reserve_a_remote_intent(self):
+        import sqlite3
+        from contextlib import closing
+        helper, fixed, raw, adapter, transport, broker = self.fixture()
+        for malformed in (b"null", b"true", b"[]", b'{"schema":0,"schema":1}', {}, b" " * (1024 * 1024 + 1)):
+            adapter.raw_override = malformed
+            with self.subTest(kind=type(malformed).__name__), self.assertRaises(Refused):
+                broker.reconcile(helper.request)
+        self.assertEqual(adapter.calls, [])
+        with closing(sqlite3.connect(helper.state / "pr-observations.sqlite3")) as db:
+            self.assertEqual(db.execute("SELECT COUNT(*) FROM intents").fetchone()[0], 0)
+
+    def test_prepared_content_and_local_base_drift_refuse_later_stage(self):
+        from core.runtime.integration_broker.common import digest
+        helper, fixed, raw, adapter, transport, broker = self.fixture()
+        broker.reconcile(helper.request)
+        folder = helper.state / broker.ledger.preparation(digest(helper.request))["generation"]
+        index = (folder / "index").read_bytes()
+        helper.git.run(folder, "update-index", "-z", "--index-info",
+                       data=("0 " + "0" * 40 + "\tsrc/new.bin").encode() + b"\0")
+        with self.assertRaisesRegex(Refused, "index differs"):
+            broker.reconcile(helper.request)
+        (folder / "index").write_bytes(index)
+        # Move the real local dev ref to a different existing commit. Its new
+        # object has the candidate tree and is copied as raw bytes, without Git transport.
+        helper.git.run(helper.repo, "hash-object", "-t", "commit", "-w", "--stdin", data=raw)
+        helper.git.run(helper.repo, "update-ref", "refs/heads/dev", fixed["candidate_commit"])
+        with self.assertRaisesRegex(Refused, "target base moved"):
+            broker.reconcile(helper.request)
+        self.assertEqual(adapter.calls, ["publish_objects"])
+
+    def test_remote_base_moves_during_final_observation_without_dispatch(self):
+        from core.runtime.integration_broker.common import canonical
+        helper, fixed, raw, adapter, transport, broker = self.fixture()
+        count = 0
+        def drift():
+            nonlocal count
+            count += 1
+            if count == 2:
+                value = observed(fixed, "publish_objects")
+                value["target_commit"] = "1" * 40
+                adapter.raw_override = canonical(value).encode()
+        adapter.observe_hook = drift
+        with self.assertRaisesRegex(Refused, "remote target base moved"):
+            broker.reconcile(helper.request)
+        self.assertEqual(adapter.calls, [])
+
+    def test_failed_reads_consume_durable_attempt_budget_across_restart(self):
+        from core.runtime.integration_broker.staged_transport import StagedTransport
+        helper, fixed, raw, adapter, transport, broker = self.fixture(max_observations=2)
+        adapter.raw_override = b"null"
+        with self.assertRaises(Refused):
+            broker.reconcile(helper.request)
+        broker.close()
+        broker = helper.broker(StagedTransport(fixed, raw, adapter=adapter))
+        def timeout():
+            raise TimeoutError("fixture observation timed out")
+        adapter.observe_hook = timeout
+        with self.assertRaises(TimeoutError):
+            broker.reconcile(helper.request)
+        adapter.observe_hook = None
+        adapter.raw_override = None
+        with self.assertRaisesRegex(Refused, "attempt budget"):
+            broker.reconcile(helper.request)
+        self.assertEqual(adapter.observation_calls, 2)
+        self.assertEqual(adapter.calls, [])
+
+    def test_refused_attempt_write_prevents_provider_read(self):
+        from unittest.mock import patch
+        helper, fixed, raw, adapter, transport, broker = self.fixture()
+        with patch.object(ObservationStore, "observation_attempt", side_effect=OSError("durable attempt refused")):
+            with self.assertRaisesRegex(OSError, "durable attempt refused"):
+                broker.reconcile(helper.request)
+        self.assertEqual(adapter.observation_calls, 0)
+        self.assertEqual(adapter.calls, [])
+
+    def test_expiry_after_durable_intent_preserves_intent_without_dispatch(self):
+        from contextlib import closing
+        import sqlite3
+        from core.runtime.integration_broker.common import digest
+        for expiry in (2000, 1500):
+            with self.subTest(plan_expiry=expiry):
+                helper, fixed, raw, adapter, transport, broker = self.fixture(expires_at=expiry)
+                def expire(phase):
+                    if phase == "intent:publish_objects":
+                        broker.now = lambda: expiry + 1
+                transport.checkpoint = expire
+                with self.assertRaisesRegex(Refused, "expired"):
+                    broker.reconcile(helper.request)
+                self.assertEqual(adapter.calls, [])
+                self.assertEqual(broker.ledger.get(digest(helper.request))["stage"], "apply_intent")
+                with closing(sqlite3.connect(helper.state / "pr-observations.sqlite3")) as db:
+                    self.assertEqual(db.execute("SELECT COUNT(*) FROM intents").fetchone()[0], 1)
+                # Even a subsequently restored earlier clock cannot grant a
+                # repeat of the already reserved uncertain operation.
+                broker.now = lambda: 1000
+                transport.checkpoint = lambda phase: None
+                self.assertEqual(broker.reconcile(helper.request)["status"], "pending")
+                self.assertEqual(adapter.calls, [])
+
+    def test_actual_child_death_after_stage_intent_is_not_replayed(self):
+        import json
+        import subprocess
+        from core.runtime.integration_broker.common import canonical
+        helper, fixed, raw, adapter, transport, broker = self.fixture()
+        broker.reconcile(helper.request)
+        config = helper.root / "stage-fixture.json"
+        config.write_text(json.dumps({"plan": fixed, "commit": raw.decode(), "authority": helper.authority,
+                         "request": helper.request, "state": str(helper.state), "repo": str(helper.repo),
+                         "exchange": str(helper.exchange), "git": str(helper.git.executable),
+                         "git_sha": helper.git.sha256, "observation": observed(fixed, "create_branch")}), encoding="utf-8")
+        script = r"""
+import json, os, sys
+from pathlib import Path
+from core.runtime.integration_broker.common import Git, canonical
+from core.runtime.integration_broker.service import Broker
+from core.runtime.integration_broker.staged_transport import StagedTransport
+c=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
+class Fixture:
+    def assert_current(self, *args): pass
+    def observe(self, plan): return canonical(c['observation']).encode()
+    def dispatch(self, *args): raise AssertionError('dispatch must not occur')
+def checkpoint(phase):
+    if phase=='intent:create_branch': os._exit(71)
+t=StagedTransport(c['plan'],c['commit'].encode(),adapter=Fixture(),checkpoint=checkpoint)
+b=Broker(c['state'],c['exchange'],c['repo'],Git(c['git'],c['git_sha']),c['authority'],transport=t,now=lambda:1000)
+b.reconcile(c['request'])
+"""
+        result = subprocess.run([sys.executable, "-B", "-c", script, str(config)], cwd=ROOT,
+                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=45)
+        self.assertEqual(result.returncode, 71, result.stdout.decode(errors="replace"))
+        self.assertEqual(broker.reconcile(helper.request)["status"], "pending")
+        self.assertEqual(adapter.calls, ["publish_objects"])
 
 
 if __name__ == "__main__":

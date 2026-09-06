@@ -12,6 +12,7 @@ from .candidate import read_candidate, verify_changes, materialize
 from .ledger import Ledger
 from .preparation import directory_lease
 from .effect_boundary import prepared_candidate
+from .staged_transport import StagedTransport
 from core.runtime.continuous_worker.locking import supervisor_lock
 
 
@@ -168,7 +169,8 @@ class Broker:
                     or row["authority"] != digest(self.authority)):
             raise Refused("durable reservation mismatch")
         if row and row["stage"] == "apply_intent" and observe and self.transport is not None:
-            observation = self.transport.observe(request)
+            observation = (self.transport.observe(self, request) if isinstance(self.transport, StagedTransport)
+                           else self.transport.observe(request))
             fields(observation, "status receipt")
             if observation["status"] == "integrated":
                 receipt = self.checked_receipt(observation["receipt"], key, manifest)
@@ -186,6 +188,8 @@ class Broker:
                 "receipt_sha256": digest(receipt) if receipt else None}
 
     def apply(self, request):
+        if isinstance(self.transport, StagedTransport):
+            return self.reconcile(request)
         self.validate_request(request)
         if self.transport is None:
             raise Refused("production integration transport is not implemented or qualified")
@@ -200,9 +204,16 @@ class Broker:
         return self.query(request)
 
     def reconcile(self, request):
-        """Re-enter only the broker ledger, never repeat an uncertain transport.
-
-        Reserved/prepared requests can finish local preparation. Durable
-        apply_intent requests are observed only by apply's existing guard.
-        """
+        """Recover local preparation and advance only unused durable stage intents."""
+        if isinstance(self.transport, StagedTransport):
+            self.transport.validate(self, request)
+            row = self.ledger.get(digest(request))
+            if row and row["stage"] == "integrated":
+                return self.query(request, observe=False)
+            if row is None or row["stage"] == "reserved":
+                self.prepare(request)
+            self.transport.advance(self, request)
+            return self.query(request, observe=False)
+        # The original one-effect fixture contract remains observation-only
+        # after apply_intent; it cannot opt into staged replay by duck typing.
         return self.apply(request)

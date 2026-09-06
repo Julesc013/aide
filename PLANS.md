@@ -3362,3 +3362,7 @@ AIDE-CW-INTEGRATION-BROKER-01 now has independent exact-source review for the
 prepared-effect guard, controller capsule, finite issuer and durable PR intent
 core. Continue qualified provider adapter and stage reconciliation under the
 same active WorkUnit; full broker and operational qualification remain open.
+
+### Staged broker continuation
+
+Staged broker reconciliation now connects the reviewed local contracts. Validate one-intent-per-stage restart behavior before independent source review; actual bounded provider adapter and host/server qualification remain open.

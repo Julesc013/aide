@@ -1,0 +1,54 @@
+{
+  "schema": "aide.provider-compact-selection.v1",
+  "source_manifest_sha256": "4d388a22c671cc42823bc1bd0a401e0417f994e7feda616f0528526a81c09a09",
+  "coordinators": [
+    {
+      "task": "AIDE-FACMAN-USK-STREAMING-INTEGRATION-01",
+      "raw_records": 45,
+      "archive_members": 67,
+      "archive_sha256": "80941b5935fd337c3527ea62f2d383e1c967c3bdeaeb2807acca52f1bb8360cd",
+      "archive_bytes": 198309,
+      "custody_sha256": "f9ba543ff24081b483c8ffcc4c7afbda2a317c6687d97a9bef0866b20637aca1",
+      "selected_files": [
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/task.yaml",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/status.yaml",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/ExecPlan.md",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/integration-plan.md",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/closeout-plan.md",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/validation.md",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/remaining-risks.md",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/changed-files.md",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/closeout-validation.json",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/raw-custody-manifest.json",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-closeout-evidence.zip",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-closeout-custody.json",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/CUSTODY.md"
+      ]
+    },
+    {
+      "task": "AIDE-FACMAN-USK-ZIP-INTEGRATION-01",
+      "raw_records": 110,
+      "archive_members": 131,
+      "archive_sha256": "9c5d6a5b99362208bf1046f2f250e796210af57ff218e571d9be7cdc73190158",
+      "archive_bytes": 871007,
+      "custody_sha256": "eaf439bb4f98730ea0755791428d7786b232dc297fdc453a8d9971895a50dabf",
+      "selected_files": [
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/task.yaml",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/status.yaml",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/ExecPlan.md",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/integration-plan.md",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/closeout-plan.md",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/validation.md",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/remaining-risks.md",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/changed-files.md",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/closeout-validation.json",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/raw-custody-manifest.json",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-closeout-evidence.zip",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-closeout-custody.json",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/CUSTODY.md"
+      ]
+    }
+  ],
+  "index_change": "Only status/planning_state in the two named coordinator blocks.",
+  "stage_or_commit": false
+}

@@ -126,3 +126,51 @@ scoped local checkpoint. Root owns PR 4 and remote updates. The next same-task
 step is a qualified provider adapter and broker stage reconciliation; actual
 controller/store isolation and target atomicity remain unqualified. No live
 activation or full WorkUnit completion is claimed.
+
+## Staged broker reconciliation plan
+
+Checkpoint f9545c31bafc8d398e566ae2bbb39e5e4e1e5558 contains the reviewed local
+effect/capsule/issuer/PR cores. Connect those existing contracts in a separate
+staged_transport module and the broker reconcile endpoint. Validate a fixed
+request plan and canonical candidate commit bytes, then perform at most one new
+remote-stage intent per reconcile call. Query observes only. Every mutation
+re-enters the prepared-generation object/content guard and the explicit internal
+host/provider qualification seam. Persist the exact stage intent before dispatch;
+unknown acceptance cannot repeat that stage after restart. A later stage can
+advance only from newly validated provider facts and its own unused intent.
+
+Use existing direct PR tests plus real disposable local Git for deterministic
+commit bytes, binary/deletion handoffs, stage progression, lost replies, process
+death before dispatch, absent-stage replay refusal, moved base and changed
+materialized content. Explicitly distinguish scripted authenticated-fact fixtures
+from an installed provider API implementation. The latter, bounded native request
+execution, actual host/store isolation and exact-base server enforcement remain
+required implementation/qualification; no production credentials or calls occur.
+
+The frozen pre-remediation regression passed 82 tests with one explicit symlink
+privilege skip (83 total) in 345.601 seconds; runtime and reviewed inputs were
+unchanged. Root then reproduced expiry between durable intent and dispatch;
+local review found malformed reads did not consume the accepted-observation
+budget. Both defects are fixed forward: a durable attempt now precedes every
+provider read, and actual dispatch rechecks the target plus both finite
+deadlines after checkpoint/qualification. Current 21 direct tests pass in
+72.351 seconds, including refused durable writes, failed-read restart budgets,
+legacy/concurrent budget accounting and stricter-plan expiry with retained
+intent and zero dispatch. Preserve the old manifest, root reproducer and raw
+results as historical evidence. Independent current-source review is pending.
+
+Separately authorized provider coordination updates reconcile only status and
+planning_state for the completed USK streaming and ZIP index blocks. Provider
+worker owns those two task records and exact evidence custody; these are
+provider-chain observations and do not establish FacMan pin adoption or broker
+qualification. Include them only as disclosed independently reviewed evidence.
+
+Root accepted the final five-file staged source aggregate 4319d184fdc7f833528a1f2e8eccd8de9e2e31eb02661b42c78b3b75abf1c18e
+and independently reran all 21 direct tests successfully in 66.380 seconds.
+Original review, root tests, expiry reproducer, pre-remediation source/results
+and current validation are preserved in staged-evidence.zip before Git text
+normalization. The exact reviewed local broker checkpoint is authorized; full
+broker completion and operational activation remain false. The reviewed provider
+closeouts were committed separately as 813fe9548dfc8d4a9ec9c288b6e2fd3524074319.
+The next source increment is the bounded registered JSON bridge, followed by
+actual API normalization and real host/server qualification.

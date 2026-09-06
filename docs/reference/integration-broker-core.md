@@ -123,3 +123,40 @@ policy. GitHub's expected-head merge request and a local base pre-read alone
 are not proof of atomic exact-base refusal. AIDE currently has no hosted
 workflows or branch rules; the actual target does not meet that requirement.
 No target settings, credentials or operational activation changed here.
+
+## Staged request reconciliation
+
+`staged_transport.StagedTransport` connects a fixed PR plan and literal candidate
+commit bytes to the broker ledger. `Broker.reconcile` prepares a request if
+necessary, observes the exact service state, and dispatches at most one new
+mutation stage. Each stage holds the prepared-generation object/content guard
+and reserves its own durable intent. A lost response can reveal that a later
+stage is ready, but absence never permits repeating the uncertain operation.
+`query` observes service facts and may record a checked integration receipt; it
+never dispatches a mutation. The earlier single-effect fixture interface retains
+its original observation-only behavior after its one apply intent.
+
+Candidate commits have one exact parent and the frozen tree, canonical actor
+metadata and a fixed epoch for deterministic serialization. The protected plan
+pins their object ID and reviewed message. Local Git writes/reads the literal
+commit object before stage intent; no identity config, hooks or signing command
+is used. A merge receipt requires the durable merge intent and verified exact
+PR identity, tree, parents, complete required checks and target ancestry.
+
+The adapter interface is internal and absent by default. No config/CLI factory
+can install one. A future actual provider adapter must authenticate and bound
+its observations and commands, bind a protected plan, and enforce the real
+host/store and server mutation contract. Calling no-op qualification methods in
+a scripted fixture establishes none of these properties. Observations have a
+one-MiB response bound and the existing finite ledger budget; actual adapter
+execution timeout/output/process bounds and API normalization are still required
+implementation. Every dispatch must preserve the exact lease and current source
+qualification through its effect boundary. No production activation is implied.
+
+Each provider read reserves a durable attempt before calling the adapter.
+Malformed, timed-out or missing responses consume the same finite budget;
+restart cannot replenish it. Existing v1 observation records are conservatively
+charged when the additive attempt table is first used. A failed attempt write
+prevents the provider call. Immediately after the stage intent checkpoint and
+current qualification check, dispatch rechecks the local target and both the
+plan and authority deadlines. Expired intent is retained and cannot be replayed.

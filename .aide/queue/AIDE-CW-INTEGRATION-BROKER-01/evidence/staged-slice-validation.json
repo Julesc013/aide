@@ -1,0 +1,48 @@
+{
+  "schema": "aide.staged-transport-validation.v1",
+  "base": "f9545c31bafc8d398e566ae2bbb39e5e4e1e5558",
+  "review_source_manifest": "staged-transport-review-source.json",
+  "review_source_aggregate": "4319d184fdc7f833528a1f2e8eccd8de9e2e31eb02661b42c78b3b75abf1c18e",
+  "complete_source_manifest": "staged-current-source.json",
+  "complete_source_aggregate": "4fd298e128beb9600b5c317a1cdcc3ac45cf83f11b34ba7cac8dcbd906a31a5f",
+  "patch": "staged-source.patch",
+  "patch_sha256": "18960c11244736ab2e6f9553406e74a5483559b23bf2b2b8ce8392cab74f347b",
+  "current_direct_tests": {
+    "total": 21,
+    "passed": 21,
+    "seconds": 72.351,
+    "receipt": "staged-remediation-tests.json",
+    "receipt_sha256": "a7b02c934b428084b0f7fc71ffb68204267d22038833a693a75f8fe48095e3fa"
+  },
+  "pre_remediation_regression": {
+    "total": 83,
+    "passed": 82,
+    "skipped": 1,
+    "skip": "Host privilege for a disposable Windows symlink unavailable.",
+    "seconds": 345.601,
+    "receipt": "staged-transport-regression.json",
+    "source_manifest": "staged-transport-review-source.before-remediation.json"
+  },
+  "helper_checks": {
+    "doctor": "PASS",
+    "validate": "PASS",
+    "receipt": "staged-helper-validation.json"
+  },
+  "diff_check": "PASS",
+  "independent_review": {
+    "result": "PASS",
+    "receipt": "staged-root-independent-review.json",
+    "raw_sha256": "af9838affaff5949581afe093443b4982e25e58cd69cc9a5504d90ead6810f7d",
+    "current_tests": 21,
+    "seconds": 66.38
+  },
+  "operational_adapter_installed": false,
+  "full_broker_complete": false,
+  "activation": false,
+  "remaining": [
+    "Bounded registered provider bridge and actual API normalization are not yet implemented.",
+    "Actual protected controller/worker/broker host, child-store isolation and credential separation are unqualified.",
+    "AIDE currently lacks hosted workflow/branch enforcement; exact-base server mutation contract remains unqualified.",
+    "Every future actual remote effect must enforce the complete fixed request and deadline at the server boundary."
+  ]
+}

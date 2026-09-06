@@ -311,3 +311,7 @@ independent effect/capsule and issuer/PR reviews, historical full-suite results
 and focused remediation tests. qualified-core-custody.json distinguishes raw
 archived bytes from readable Git text projections; neither constitutes live
 host or provider qualification.
+
+### Staged broker continuation
+
+The integration broker reference now documents one-stage reconciliation, deterministic literal commit objects, independent stage intents, observation-only query and the absent qualified provider adapter.

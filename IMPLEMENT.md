@@ -10905,3 +10905,7 @@ prepared-effect/capsule tests and 13 current issuer/PR tests. The historical
 The scoped local checkpoint preserves original review and validation bytes in
 qualified-core-evidence.zip with explicit LF projection hashes for Git. No
 provider dispatcher, isolated host or qualified target is installed by this step.
+
+### Staged broker continuation
+
+Added typed staged transport routing to Broker.reconcile while preserving legacy single-effect recovery. Initial 17 tests passed in 46.845 seconds, including actual child termination after durable intent and literal local Git candidate/merge objects; only the subsequent Windows-only test discovery guard changes that initial test binding.

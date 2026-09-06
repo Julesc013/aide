@@ -143,6 +143,7 @@ class ObservationStore:
                 target TEXT NOT NULL, plan TEXT NOT NULL, stage TEXT NOT NULL, latest TEXT);
             CREATE UNIQUE INDEX IF NOT EXISTS one_writer ON plans(repository,target) WHERE stage != 'integrated';
             CREATE TABLE IF NOT EXISTS observations(sequence INTEGER PRIMARY KEY, request TEXT NOT NULL, body TEXT NOT NULL);
+            CREATE TABLE IF NOT EXISTS observation_attempts(sequence INTEGER PRIMARY KEY, request TEXT NOT NULL);
             CREATE TABLE IF NOT EXISTS intents(request TEXT NOT NULL, operation TEXT NOT NULL, observation TEXT NOT NULL,
                 PRIMARY KEY(request,operation));
             PRAGMA user_version=1;
@@ -181,6 +182,25 @@ class ObservationStore:
             except sqlite3.IntegrityError as error:
                 raise Refused("remote target writer already reserved") from error
         return True
+
+    def observation_attempt(self, plan):
+        """Reserve a finite provider read before any call, including failed reads.
+
+        Existing schema-v1 ledgers gain this additive table. Count their already
+        recorded observations conservatively when no earlier attempt records
+        exist; migration must not grant a fresh unlimited provider-read budget.
+        """
+        with self.transaction():
+            self._plan(plan)
+            key = plan["request_digest"]
+            attempts = self.db.execute("SELECT COUNT(*) FROM observation_attempts WHERE request=?", (key,)).fetchone()[0]
+            accepted = self.db.execute("SELECT COUNT(*) FROM observations WHERE request=?", (key,)).fetchone()[0]
+            if max(attempts, accepted) >= plan["max_observations"]:
+                raise Refused("finite provider observation attempt budget exhausted")
+            # Carry forward pre-attempt accepted records exactly once, then
+            # reserve this call in the same transaction. No network replay.
+            for _ in range(max(0, accepted - attempts) + 1):
+                self.db.execute("INSERT INTO observation_attempts(request) VALUES(?)", (key,))
 
     def observe(self, plan, observation):
         next_step = decision(plan, observation)
