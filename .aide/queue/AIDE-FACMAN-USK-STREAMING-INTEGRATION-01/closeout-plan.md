@@ -1,0 +1,9 @@
+# Provider coordinator closeout plan
+
+Current explicit user authority covers implementation, validation, documentation and normal checked integration; root dispatch assigns this worker only this coordinator directory and the paired USK streaming/ZIP directory. The existing queue objective and ExecPlan remain the acceptance boundary. The previously triggered queue/integration review gates are already covered by that explicit authority and exact independent source reviews; this update records completed evidence rather than widening authority.
+
+Inspect/resume this existing queue record and preserve historical raw evidence. Import the sealed PR27 and PR28 normal integration/promotion chains and the separately admitted Windows path-admission follow-on chain as exact raw bytes with a custody manifest. Reconcile task/status and ExecPlan only for the bounded provider acceptance actually completed. Record source heads/trees, independent review, native/Python/strict/SDK and fresh hosted check receipts. Retain failed attempts and the deeper unsupported-prefix diagnosis.
+
+Do not edit the queue index, broker, global PLANS/IMPLEMENT/DOCUMENTATION, source, provider pins or release records. Pilot/root own index/global records and the next scoped AIDE checkpoint. Supply exact requested index values and a changed-path/byte manifest without staging or committing. No consumer adoption, full restart/generation lease support, arbitrary-depth Windows qualification, cleanup authority or Beta1 release readiness is inferred.
+
+Run the report-only task inspect/noop-check/recover helpers and direct source/evidence/status consistency checks. Full AIDE global generation/validation remains with the source/index owner to avoid concurrent generated-file changes. Complete the raw follow-on chain before reporting its synchronization complete.

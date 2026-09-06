@@ -1,0 +1,331 @@
+{
+  "schema": "aide.provider_raw_custody.v1",
+  "observed_at": "2026-09-06T17:17:57.891765+00:00",
+  "task_id": "AIDE-FACMAN-USK-STREAMING-INTEGRATION-01",
+  "source_root": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence",
+  "record_kind": "historical exact provider evidence; observation timestamps and old pending fields preserved",
+  "seed_chains": [
+    "usk-streaming-integration-chain.json",
+    "pr27-canonical-promotion-chain.json"
+  ],
+  "records": [
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\ctest-x64-retention-clean.log",
+      "copied_path": "evidence/provider-source/ctest-x64-retention-clean.log",
+      "sha256": "39bbbd08b44ba1c6e34527b1e79975c31adce5734f239c6b4866f10cbd8e884f",
+      "bytes": 795,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\ctest-x64.log",
+      "copied_path": "evidence/provider-source/ctest-x64.log",
+      "sha256": "7faa02269e2f46c18ec25b6487ed3fd68b2b1cd99e705a80990abf5720fd4737",
+      "bytes": 795,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\diff-check-retention.log",
+      "copied_path": "evidence/provider-source/diff-check-retention.log",
+      "sha256": "6908202edc75d03414c947531048dc1569a352cfea9aab711e32269c64958556",
+      "bytes": 150,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\hygiene-local-main-dev-sync.json",
+      "copied_path": "evidence/provider-source/hygiene-local-main-dev-sync.json",
+      "sha256": "3e0b2d95cc7ae86a85397ce93bb46ea2a8fed6eb628505212ae1cd6394164fa1",
+      "bytes": 360,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\hygiene-main-dev-sync-open.json",
+      "copied_path": "evidence/provider-source/hygiene-main-dev-sync-open.json",
+      "sha256": "edbc54f6509ad4ef2ba4260698744c866381352ff25b3b33566fcfd7819eef03",
+      "bytes": 3176,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-ancestry-update-request.json",
+      "copied_path": "evidence/provider-source/pr27-ancestry-update-request.json",
+      "sha256": "d6131f354ac370199a48bc32ad40950d58b92303a17a2224804c003ceaed8cc9",
+      "bytes": 506,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-canonical-promotion-body.md",
+      "copied_path": "evidence/provider-source/pr27-canonical-promotion-body.md",
+      "sha256": "5e9a5d7ecb5abd8aaaf852087f3345b6d2579fd0e365ed8a09f3b6c4a44078dd",
+      "bytes": 1081,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-canonical-promotion-chain.json",
+      "copied_path": "evidence/provider-source/pr27-canonical-promotion-chain.json",
+      "sha256": "f7fea3ad8727699fc91dcb4c5de5aabd27a762470e9bc9cb8a9e155484608085",
+      "bytes": 3502,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-canonical-promotion-open.json",
+      "copied_path": "evidence/provider-source/pr27-canonical-promotion-open.json",
+      "sha256": "286d609baf5b26ca47aeb7e44cb19b32daa5908280ef1eb5824cc8b2ef46d827",
+      "bytes": 2744,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-canonical-promotion-plan.md",
+      "copied_path": "evidence/provider-source/pr27-canonical-promotion-plan.md",
+      "sha256": "8c66fb230d8ab76f286dc18d16934f226aa172483b3203b09e6d55259f16272c",
+      "bytes": 2720,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-canonical-sync-body.md",
+      "copied_path": "evidence/provider-source/pr27-canonical-sync-body.md",
+      "sha256": "c5e6608ccbe3b0eb03d4d5c930e1391f25f931db4b6eead10abfa65980538777",
+      "bytes": 688,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-canonical-sync-open.json",
+      "copied_path": "evidence/provider-source/pr27-canonical-sync-open.json",
+      "sha256": "cbe2141b28b5ab09b92bccd00a47b2230aebc08d2288b3c3580e886679273527",
+      "bytes": 21195,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-ce7f537-green-checks.json",
+      "copied_path": "evidence/provider-source/pr27-ce7f537-green-checks.json",
+      "sha256": "49e82adfe9bbccb127940ce24a04d70999f856466e47f07e826697224a6e58bb",
+      "bytes": 66562,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-final-local-sync.json",
+      "copied_path": "evidence/provider-source/pr27-final-local-sync.json",
+      "sha256": "5196581dfa935dbc1c605bcc20297a0f990fcedfad89153365edae64e1b2f10f",
+      "bytes": 1009,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-final-merge-receipt.json",
+      "copied_path": "evidence/provider-source/pr27-final-merge-receipt.json",
+      "sha256": "a11f39e7f46ea0e15ac67cf7896d865f9ab6fafd82169ad80802fca487b7668d",
+      "bytes": 76241,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-final-premerge.json",
+      "copied_path": "evidence/provider-source/pr27-final-premerge.json",
+      "sha256": "5963b13ac4a0597f870b442da804a45ca63e1f2fe8774b617c605a689690b322",
+      "bytes": 71691,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-integrated-body.md",
+      "copied_path": "evidence/provider-source/pr27-integrated-body.md",
+      "sha256": "99a1b5a6fd7dee7783fa5feac4c9476967489205edfb45f0711bd150150eb3f4",
+      "bytes": 2667,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-postmerge-check-observation.json",
+      "copied_path": "evidence/provider-source/pr27-postmerge-check-observation.json",
+      "sha256": "15fd38a916be3a11cc3b82e1bf8b6348aa90bd41e4c4acdcb5cc8ace68434799",
+      "bytes": 28027,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-promotion-helper.json",
+      "copied_path": "evidence/provider-source/pr27-promotion-helper.json",
+      "sha256": "cbec8d4e1592252bd9be3401bc4e6f3681f42788ecfc36c1ed21dc5ef766bb3e",
+      "bytes": 7538,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-promotion-hygiene.json",
+      "copied_path": "evidence/provider-source/pr27-promotion-hygiene.json",
+      "sha256": "4c7ee751e548b7ca14510cfb17f55d14b1edba855d87c7e2f824a6c8dbe9e9ed",
+      "bytes": 5476,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-promotion-paths.json",
+      "copied_path": "evidence/provider-source/pr27-promotion-paths.json",
+      "sha256": "0d17f6732f94f8732d9801fec1a0f284937bf11abb744b2f900492a797ee319a",
+      "bytes": 789,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-promotion-policy.log",
+      "copied_path": "evidence/provider-source/pr27-promotion-policy.log",
+      "sha256": "abd217fbd9cd2fffd9e77024a57714cf30dcf99e7981886598a7c60aa342af2f",
+      "bytes": 24,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-promotion-preflight.json",
+      "copied_path": "evidence/provider-source/pr27-promotion-preflight.json",
+      "sha256": "f64516f62b7efa5baee64510af2cd918c6d6b3751417267071091e0afe5b6cf0",
+      "bytes": 297460,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr27-synchronized-candidate.json",
+      "copied_path": "evidence/provider-source/pr27-synchronized-candidate.json",
+      "sha256": "f907eb03b2bd6060497bfe099be9f915151108a1e4541cbe1e8e221ae7552a24",
+      "bytes": 5691,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr28-before-pr27-merge.json",
+      "copied_path": "evidence/provider-source/pr28-before-pr27-merge.json",
+      "sha256": "4a59978e333fa93109f2f67e418dc3908c6cb3dea63f2b1bd3091f266c80cb4b",
+      "bytes": 498,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr30-hygiene-merge-receipt.json",
+      "copied_path": "evidence/provider-source/pr30-hygiene-merge-receipt.json",
+      "sha256": "8f4211b31601a0c04fcfd9d0fca394432cec876bdfc00d8a2122b2e4d1bc0303",
+      "bytes": 75358,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr30-hygiene-premerge.json",
+      "copied_path": "evidence/provider-source/pr30-hygiene-premerge.json",
+      "sha256": "800c104490875d3f8c1a6a07c7aa125f2f2f9bd8fbe191bd252f1fa5fea52f5e",
+      "bytes": 71007,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr31-ancestry-merge-receipt.json",
+      "copied_path": "evidence/provider-source/pr31-ancestry-merge-receipt.json",
+      "sha256": "0b678a14f195ab07ad417c6ef51bf39b334a1b3e94ea142ffb52ccab14c422ce",
+      "bytes": 75300,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr31-ancestry-premerge.json",
+      "copied_path": "evidence/provider-source/pr31-ancestry-premerge.json",
+      "sha256": "554903d952d5b6b3c2bd54e70308866661aa462263708a1ffbb8bd5e61f10394",
+      "bytes": 71043,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr32-merge-receipt.json",
+      "copied_path": "evidence/provider-source/pr32-merge-receipt.json",
+      "sha256": "04402cbc6b5b72d3cca34695d5ee353c24aace694dc6ac53484c750ec5a046c8",
+      "bytes": 79354,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr32-premerge-checked.json",
+      "copied_path": "evidence/provider-source/pr32-premerge-checked.json",
+      "sha256": "08b6b25e6d712004e03868ef3dfeb7569da85db7ffdace5ea10f4c457a6995ea",
+      "bytes": 36471,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr33-merge-receipt.json",
+      "copied_path": "evidence/provider-source/pr33-merge-receipt.json",
+      "sha256": "59ce35873620b6af954794fe160e68c0faa8d617eb019e8a93c0cc8c823a6d22",
+      "bytes": 85089,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\pr33-premerge-checked.json",
+      "copied_path": "evidence/provider-source/pr33-premerge-checked.json",
+      "sha256": "729002d61d38142dec69ed1228b184db4c43059e53551fc784862c79c142efe5",
+      "bytes": 54983,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\primary-python-retention.log",
+      "copied_path": "evidence/provider-source/primary-python-retention.log",
+      "sha256": "5f992a3042c0f5a2f5fd0080cdfd54a4436d82af2f94f63465b5c7417ecab862",
+      "bytes": 8366,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\primary-remediation-source-verification.json",
+      "copied_path": "evidence/provider-source/primary-remediation-source-verification.json",
+      "sha256": "868df8d26aaf4cf2c0db5afaad2dcca94e878b86388d3951ab412d38748b840e",
+      "bytes": 2138,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\primary-retention-commit-receipt.json",
+      "copied_path": "evidence/provider-source/primary-retention-commit-receipt.json",
+      "sha256": "5b88b82a051f1ed90e967e44ecbfc44fa941541289bff9f5f1f6294535801473",
+      "bytes": 1685,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\primary-strict-retention.log",
+      "copied_path": "evidence/provider-source/primary-strict-retention.log",
+      "sha256": "64d4434a322d0643baa47881d5c4a63de988a2651309898b3623f28d9aa1b61b",
+      "bytes": 330,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\python-tests-retention.log",
+      "copied_path": "evidence/provider-source/python-tests-retention.log",
+      "sha256": "9b046443ffdeb2ba929cee081459e29b71c5cd65f506684005cb390c1e46edaf",
+      "bytes": 8308,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\python-tests.log",
+      "copied_path": "evidence/provider-source/python-tests.log",
+      "sha256": "6772a322cfdb4073852f066dd163b82786d2db0c81db00970781a44f38082cc7",
+      "bytes": 8135,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\remediation-receipt.json",
+      "copied_path": "evidence/provider-source/remediation-receipt.json",
+      "sha256": "395d243e6967e931498f3798621769813d3a1a73a729deb0dbd708c8cb3c7f09",
+      "bytes": 1877,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\retention-remediation-receipt.json",
+      "copied_path": "evidence/provider-source/retention-remediation-receipt.json",
+      "sha256": "54572ee2cb15bfcade8ef1693617f8e831e7e105f4f55f46a0eb6ae234087d15",
+      "bytes": 3327,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\strict-retention.log",
+      "copied_path": "evidence/provider-source/strict-retention.log",
+      "sha256": "318f375f304ca138cb09c739fb59dd98bcec563d86b2981a62420a5d9f492804",
+      "bytes": 321,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\strict.log",
+      "copied_path": "evidence/provider-source/strict.log",
+      "sha256": "318f375f304ca138cb09c739fb59dd98bcec563d86b2981a62420a5d9f492804",
+      "bytes": 321,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\usk-pr27-stream-retention.patch",
+      "copied_path": "evidence/provider-source/usk-pr27-stream-retention.patch",
+      "sha256": "05f1a30f31dac99fcc337f980b85d18c9b5de534d020aa685a2a254d9174b42d",
+      "bytes": 28701,
+      "byte_identical": true
+    },
+    {
+      "source_path": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\usk-streaming-integration-chain.json",
+      "copied_path": "evidence/provider-source/usk-streaming-integration-chain.json",
+      "sha256": "5d13722796bd64a7c5098bb24ace07ae530a1925e5c7a1c007ad02475fb0066c",
+      "bytes": 5209,
+      "byte_identical": true
+    }
+  ],
+  "qualification_source": "Exact provider Git heads/trees, native test receipts and hosted check records; no AIDE reserialization of raw proof.",
+  "production_source_files_or_native_binaries_imported": false,
+  "diagnostic_harness_source_policy": "Referenced diagnostic harness sources are retained as historical evidence only."
+}
