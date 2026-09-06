@@ -1,0 +1,9 @@
+{
+  "schema": "aide.local.boundary-check.v1",
+  "source_only_export": "PASS",
+  "enumerated_portable_paths": 817,
+  "forbidden_test_family": ".aide/scripts/tests/test_continuous_worker_provider_bridge.py",
+  "runtime_enumeration_excluded": true,
+  "diff_check": "PASS",
+  "new_source_lf_no_blank_final_line": true
+}

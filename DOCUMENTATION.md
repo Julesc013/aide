@@ -315,3 +315,12 @@ host or provider qualification.
 ### Staged broker continuation
 
 The integration broker reference now documents one-stage reconciliation, deterministic literal commit objects, independent stage intents, observation-only query and the absent qualified provider adapter.
+
+### Registered bridge contract and evidence
+
+The integration broker reference documents the fixed JSON request/response
+protocol, protected registration and qualifier requirements, finite retained IO
+ledger and named Job recovery. AIDE-CW-INTEGRATION-BROKER-01 keeps exact local
+source/test receipts distinct from pending provider, host/store and atomic
+server qualification. Historical test and review bytes remain preserved in
+task custody archives.

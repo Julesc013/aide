@@ -42,7 +42,7 @@ class StagedTransport:
     """Internal typed seam; each provider mutation has its own durable intent.
 
     An adapter must supply assert_current(broker, request, plan, purpose),
-    observe(plan) -> bounded JSON bytes and dispatch(operation, plan, prepared).
+    observe(plan, attempt=token) -> bounded JSON bytes and dispatch(operation, plan, prepared).
     A real implementation must authenticate and completely observe provider
     facts, enforce bounded execution and recheck its actual protected-host and
     target contract. Implementing these methods with no-ops proves nothing.
@@ -88,8 +88,8 @@ class StagedTransport:
 
     def _read(self, broker, request, store):
         self._qualified(broker, request, "observe")
-        store.observation_attempt(self.plan)
-        raw = self.adapter.observe(self.plan)
+        attempt = store.observation_attempt(self.plan)
+        raw = self.adapter.observe(self.plan, attempt=attempt)
         if type(raw) is not bytes or len(raw) > MAX_OBSERVATION:
             raise Refused("provider observation byte budget or type")
         observation = parse_json(raw)

@@ -174,3 +174,55 @@ broker completion and operational activation remain false. The reviewed provider
 closeouts were committed separately as 813fe9548dfc8d4a9ec9c288b6e2fd3524074319.
 The next source increment is the bounded registered JSON bridge, followed by
 actual API normalization and real host/server qualification.
+
+## Registered JSON bridge implementation plan
+
+The accepted staged checkpoint is fe233c4611d5dfd02eac5c8460b828c9c8c1c450.
+Implement an internal registered JSON adapter and a separate bounded call ledger.
+Require the exact plan, fixed executable/script arguments and content pins,
+protected working directory, finite process/IO/call limits and an externally
+qualified host object. An absent qualification or bridge refuses before child
+creation. This slice installs no operational adapter and invokes no credentials
+or provider network API.
+
+Pass the exact durable observation-attempt identity to each read, and require
+the existing stage intent before each mutation. Serialize provider calls with a
+separate named kernel file lock, reserve a unique call/Job identity and worst-case
+IO budget before creating its exclusive evidence directory, and retain every
+uncertain outcome. Fence only exact owned named Jobs after restart; never infer
+ownership from a PID or delete retained paths.
+
+Reuse WindowsJobHost for atomic Job containment, finite output/time/memory/process
+limits and quiescence. Recheck source/registration pins, qualification and both
+mutation deadlines immediately before creation, before resume and during bounded
+execution. Deadline monitoring is not the server mutation predicate. Validate
+request-bound JSON response envelopes and artifact hashes; malformed, truncated
+or absent output never grants replay.
+
+Test real disposable Python bridge processes for fixed protocol identities,
+failed durable reservation, input drift, refused qualification, timeout/output
+limits, in-flight revocation/expiry, process death and duplicate effects. Keep
+existing staged and default supervisor-lock semantics covered. Freeze exact new
+source/tests for independent review before any checkpoint. Actual API fact
+normalization, credential/filesystem isolation and server CAS remain required.
+
+The registered bridge implementation is frozen at source aggregate
+e1541a3956b3fc9046eb55603df2a8753f4584bac856be251f3b004850d42315.
+All 43 current tests passed in 155.576 seconds: 11 real bridge tests, 21 existing
+PR/staged tests, ten Windows Job tests and the default workspace-lock regression.
+The seven runtime/test changes were byte-identical before and after the run.
+Doctor, validate, scoped diff and actual portable-source enumeration also pass.
+bridge-slice-validation.json binds the exact source, test receipts and explicit
+qualification limits. The prior 11-test first run retains its original source
+binding. Independent source review is pending; full task completion and
+operational activation remain false.
+
+Root independently reviewed all eight frozen source/test/reference inputs and
+reran all 11 bridge tests successfully in 75.629 seconds, with unchanged hashes.
+bridge-root-independent-review.json records PASS with no findings. Preserve
+the original review, first/final tests and helper logs in bridge-evidence.zip;
+bridge-custody.json distinguishes original members from readable LF projections.
+Root authorized this exact scoped local checkpoint and owns its remote push.
+Provider-owned entry activation records remain excluded. Next, decompose and
+implement actual provider facts and a concrete protected-host/server contract;
+fixture success is not a substitute for the accepted operational objective.

@@ -255,7 +255,7 @@ class ScriptedStageAdapter:
             raise Refused("fixture plan drift")
         self.qualifications.append(purpose)
 
-    def observe(self, fixed):
+    def observe(self, fixed, *, attempt):
         from core.runtime.integration_broker.common import canonical
         self.observation_calls += 1
         if self.observe_hook:
@@ -507,7 +507,7 @@ from core.runtime.integration_broker.staged_transport import StagedTransport
 c=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
 class Fixture:
     def assert_current(self, *args): pass
-    def observe(self, plan): return canonical(c['observation']).encode()
+    def observe(self, plan, *, attempt): return canonical(c['observation']).encode()
     def dispatch(self, *args): raise AssertionError('dispatch must not occur')
 def checkpoint(phase):
     if phase=='intent:create_branch': os._exit(71)

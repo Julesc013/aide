@@ -3366,3 +3366,12 @@ same active WorkUnit; full broker and operational qualification remain open.
 ### Staged broker continuation
 
 Staged broker reconciliation now connects the reviewed local contracts. Validate one-intent-per-stage restart behavior before independent source review; actual bounded provider adapter and host/server qualification remain open.
+
+### Registered provider bridge continuation
+
+AIDE-CW-INTEGRATION-BROKER-01 continues from reviewed staged checkpoint
+fe233c4611d5dfd02eac5c8460b828c9c8c1c450 with a fixed-command JSON bridge,
+separate durable call reservations and real Windows refusal/recovery tests.
+Freeze and independently review the exact source before checkpointing. Actual
+provider fact normalization, protected host/store and exact-base server
+qualification remain required; operational activation remains false.

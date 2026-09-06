@@ -200,7 +200,8 @@ class ObservationStore:
             # Carry forward pre-attempt accepted records exactly once, then
             # reserve this call in the same transaction. No network replay.
             for _ in range(max(0, accepted - attempts) + 1):
-                self.db.execute("INSERT INTO observation_attempts(request) VALUES(?)", (key,))
+                cursor = self.db.execute("INSERT INTO observation_attempts(request) VALUES(?)", (key,))
+            return cursor.lastrowid
 
     def observe(self, plan, observation):
         next_step = decision(plan, observation)

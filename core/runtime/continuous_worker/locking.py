@@ -6,8 +6,10 @@ from .state import Refused
 
 
 @contextmanager
-def supervisor_lock(root):
-    fd = os.open(root / "supervisor.lock", os.O_CREAT | os.O_RDWR, 0o600)
+def supervisor_lock(root, *, scope="supervisor"):
+    if scope not in ("supervisor", "provider-bridge"):
+        raise Refused("unknown owned lock scope")
+    fd = os.open(root / (scope + ".lock"), os.O_CREAT | os.O_RDWR, 0o600)
     acquired = False
     try:
         if os.name == "nt":

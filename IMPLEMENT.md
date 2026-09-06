@@ -10909,3 +10909,17 @@ provider dispatcher, isolated host or qualified target is installed by this step
 ### Staged broker continuation
 
 Added typed staged transport routing to Broker.reconcile while preserving legacy single-effect recovery. Initial 17 tests passed in 46.845 seconds, including actual child termination after durable intent and literal local Git candidate/merge objects; only the subsequent Windows-only test discovery guard changes that initial test binding.
+
+### Registered provider child boundary
+
+Added an internal pinned JSON bridge and a separate WAL/FULL call ledger under
+AIDE-CW-INTEGRATION-BROKER-01. Exact read-attempt tokens and mutation intents
+precede child dispatch; source/qualification/deadline checks run before creation
+and during bounded execution. Retained response artifacts and named Job recovery
+preserve uncertain effects without replay. The small shared changes expose the
+read token and a separate provider-lock scope while preserving default worker
+locking. All 43 current Windows/staged/lock tests passed in 155.576 seconds; doctor,
+validate and source-only export checks also passed. Exact source-bound evidence
+is recorded in the task. Independent root source review and all 11 replayed
+bridge tests passed with unchanged hashes. No operational provider
+implementation or qualification is installed.

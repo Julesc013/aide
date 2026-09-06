@@ -1,0 +1,32 @@
+{
+  "schema": "aide.local.source-bound-test.v1",
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "-c",
+    "import sys,unittest;sys.path.insert(0,'.aide/scripts/tests');s=unittest.defaultTestLoader.loadTestsFromNames(['test_continuous_worker_provider_bridge','test_continuous_worker_pr_observation','test_continuous_worker_host','test_continuous_worker_pipeline.PipelineTests.test_cross_ledger_same_workspace_lock_refuses']);r=unittest.TextTestRunner(verbosity=2).run(s);sys.exit(not r.wasSuccessful())"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 155.869,
+  "before": {
+    "core/runtime/integration_broker/bridge_store.py": "c66a31e7af2e29355c51199383c35d496adeaa9a3bb501a91cacabff8f191b37",
+    "core/runtime/integration_broker/registered_bridge.py": "f669d3e8943d1cc43f0df8b6624f830c40afab0eda7262b3d313d0107555a8ab",
+    "core/runtime/integration_broker/pr_observation.py": "1a4599ae12c13b3d2df6e76b6b2c633b6d49fbc2cf891b1fae5ac145d6e031c9",
+    "core/runtime/integration_broker/staged_transport.py": "863dfa51ebb8cfacad1067bf9258ddbdfd0670238a55d646f7bb94d146c0cf55",
+    "core/runtime/continuous_worker/locking.py": "ef6862800dec51361375b67d129956b6c27737281922c507978c832f300cd953",
+    ".aide/scripts/tests/test_continuous_worker_pr_observation.py": "3d8ea913fbc11810e1d1ad3ee6246c7326e52b571cc314f02e345836e101471d",
+    ".aide/scripts/tests/test_continuous_worker_provider_bridge.py": "58b5636e251322f6ea1f56299f6f0e598d8888c61c7cd10fa8a0f4b042ef24fa"
+  },
+  "after": {
+    "core/runtime/integration_broker/bridge_store.py": "c66a31e7af2e29355c51199383c35d496adeaa9a3bb501a91cacabff8f191b37",
+    "core/runtime/integration_broker/registered_bridge.py": "f669d3e8943d1cc43f0df8b6624f830c40afab0eda7262b3d313d0107555a8ab",
+    "core/runtime/integration_broker/pr_observation.py": "1a4599ae12c13b3d2df6e76b6b2c633b6d49fbc2cf891b1fae5ac145d6e031c9",
+    "core/runtime/integration_broker/staged_transport.py": "863dfa51ebb8cfacad1067bf9258ddbdfd0670238a55d646f7bb94d146c0cf55",
+    "core/runtime/continuous_worker/locking.py": "ef6862800dec51361375b67d129956b6c27737281922c507978c832f300cd953",
+    ".aide/scripts/tests/test_continuous_worker_pr_observation.py": "3d8ea913fbc11810e1d1ad3ee6246c7326e52b571cc314f02e345836e101471d",
+    ".aide/scripts/tests/test_continuous_worker_provider_bridge.py": "58b5636e251322f6ea1f56299f6f0e598d8888c61c7cd10fa8a0f4b042ef24fa"
+  },
+  "source_unchanged": true,
+  "log": "bridge-final-tests.txt",
+  "log_sha256": "63804c951f649f56e12f3b57437e912cb0862712f5cf41a74dfae815a540206e"
+}

@@ -148,9 +148,8 @@ can install one. A future actual provider adapter must authenticate and bound
 its observations and commands, bind a protected plan, and enforce the real
 host/store and server mutation contract. Calling no-op qualification methods in
 a scripted fixture establishes none of these properties. Observations have a
-one-MiB response bound and the existing finite ledger budget; actual adapter
-execution timeout/output/process bounds and API normalization are still required
-implementation. Every dispatch must preserve the exact lease and current source
+one-MiB response bound and the existing finite ledger budget; the registered bridge below now supplies bounded child execution. Actual API
+normalization and operational host/server qualification remain required. Every dispatch must preserve the exact lease and current source
 qualification through its effect boundary. No production activation is implied.
 
 Each provider read reserves a durable attempt before calling the adapter.
@@ -160,3 +159,54 @@ charged when the additive attempt table is first used. A failed attempt write
 prevents the provider call. Immediately after the stage intent checkpoint and
 current qualification check, dispatch rechecks the local target and both the
 plan and authority deadlines. Expired intent is retained and cannot be replayed.
+
+## Registered JSON provider bridge
+
+`RegisteredBridge(registration_path, approved_sha256, plan, qualifier=...)` is an
+internal adapter for `StagedTransport`. It installs no provider implementation
+or CLI factory. Its separately pinned `aide.broker.bridge.v1` registration binds
+the exact plan digest, fixed command, executable/script/source input hashes,
+protected working directory and finite timeout, output, memory, process, call,
+retained-IO and free-space limits. Only a native absolute executable or an
+explicit `python.exe -I -B <absolute-script.py>` command is accepted. Unknown
+fields and changed inputs refuse. The required external qualifier must supply
+a bounded local check of actual protected host/store and executable trust;
+fixture no-op qualification establishes none of those properties.
+
+Each provider read receives its exact durable observation-attempt token. Each
+mutation must match the current plan, latest observation and recorded stage
+intent. A separate WAL/FULL bridge ledger binds the complete registration and
+reserves a unique call/Job identity, input digest and worst-case retained IO
+before any evidence directory or child is created. A distinct provider lock
+serializes these calls while the existing broker/generation locks remain held.
+At most two requests and their fixed finite call/IO budgets are retained. The
+bridge refuses reuse of an observation token or mutation stage, even after a
+failed or interrupted child.
+
+The child receives one bounded `aide.broker.bridge-call.v1` JSON stdin envelope
+with call ID, request digest, operation, exact plan and prepared-generation
+identity/commit bytes. Its response must use `aide.broker.bridge-response.v1`
+and repeat the exact call/request/operation identities. Observation results
+then pass the existing independent PR/check parser. Mutation responses may
+acknowledge only `submitted`; acknowledgement is never integration proof.
+
+WindowsJobHost assigns each child atomically to its unique owned Job while
+suspended. Immediately before creation, before resume, after resume and during
+bounded execution, the parent rechecks source/registration pins, current local
+qualification, durable authorization and both mutation deadlines. An expired
+mutation intent remains uncertain and cannot authorize replay. Observations
+after expiry remain available for lost-reply reconciliation. The parent drains
+bounded output, quiesces descendants, fsyncs and hashes retained streams, checks
+the exact stdin bytes and records the returned response digest. Missing, invalid
+or oversized output and child/guard failure remain uncertain. On restart, only
+recorded named Jobs may be fenced; paths are retained and PIDs never establish
+ownership.
+
+The deadline monitor bounds client execution. It cannot retract a request that
+already reached a server or enforce atomic exact-base merging. A real provider
+implementation still must authenticate complete current facts, enforce the
+qualified remote predicate, and revalidate protected prepared content at its
+effect boundary. Same-user Job containment and a sanitized environment do not
+establish credential/filesystem isolation. Tests use local scripted child
+processes and disposable Git objects; no actual provider, credentials, network
+mutation, operational activation or completed broker qualification is implied.
