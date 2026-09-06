@@ -13,7 +13,7 @@ from .service import Broker
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("operation", choices=("query", "apply"))
+    parser.add_argument("operation", choices=("authority", "query", "apply", "reconcile"))
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--config-sha256", required=True)
     args = parser.parse_args()
@@ -34,7 +34,8 @@ def main():
         request = parse_json(request_bytes)
         broker = Broker(config["state_root"], config["exchange_root"], config["repository_root"],
                         Git(config["git"]["executable"], config["git"]["sha256"]), config["authority"])
-        print(canonical(getattr(broker, args.operation)(request)))
+        operation = "authority_observation" if args.operation == "authority" else args.operation
+        print(canonical(getattr(broker, operation)(request)))
         return 0
     except (Refused, OSError, ValueError, KeyError, TypeError) as exc:
         print(canonical({"schema": "aide.broker.refusal.v1", "reason": str(exc)}))

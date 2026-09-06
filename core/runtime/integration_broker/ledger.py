@@ -32,6 +32,10 @@ class Ledger:
             WHERE stage != 'integrated';
           CREATE TABLE IF NOT EXISTS events(
             sequence INTEGER PRIMARY KEY, request TEXT NOT NULL, kind TEXT NOT NULL, body TEXT NOT NULL);
+          CREATE TABLE IF NOT EXISTS preparations(
+            request TEXT NOT NULL, generation TEXT UNIQUE NOT NULL,
+            ordinal INTEGER NOT NULL, stage TEXT NOT NULL, identity TEXT,
+            PRIMARY KEY(request,ordinal));
           PRAGMA user_version=1;
         """)
 
@@ -74,11 +78,33 @@ class Ledger:
             self.event(key, "reserved", {"authority": digest(authority), "candidate_tree": manifest["candidate_tree"]})
         return True
 
-    def prepared(self, key, tree):
+    def allocate_preparation(self, key, generation):
+        with self.transaction():
+            row = self.get(key)
+            if not row or row["stage"] != "reserved":
+                raise Refused("preparation requires a reserved request")
+            count = self.db.execute("SELECT COUNT(*) FROM preparations WHERE request=?", (key,)).fetchone()[0]
+            if count >= 3:
+                raise Refused("preparation generation budget exhausted; retain for diagnosis")
+            self.db.execute("INSERT INTO preparations VALUES(?,?,?,'intent',NULL)",
+                            (key, generation, count + 1))
+            self.event(key, "preparation_intent", {"generation": generation, "ordinal": count + 1})
+
+    def preparation(self, key):
+        row = self.db.execute("SELECT * FROM preparations WHERE request=? ORDER BY ordinal DESC LIMIT 1", (key,)).fetchone()
+        return dict(row) if row else None
+
+    def prepared(self, key, tree, *, generation=None, directory_identity=None):
         with self.transaction():
             row = self.get(key)
             if not row or row["stage"] != "reserved":
                 raise Refused("invalid preparation transition")
+            if generation is not None:
+                current = self.preparation(key)
+                if not current or current["generation"] != generation or current["stage"] != "intent":
+                    raise Refused("preparation generation identity mismatch")
+                self.db.execute("UPDATE preparations SET stage='prepared',identity=? WHERE generation=?",
+                                (canonical(directory_identity), generation))
             self.db.execute("UPDATE requests SET stage='prepared' WHERE digest=?", (key,))
             self.event(key, "prepared", {"tree": tree})
 

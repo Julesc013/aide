@@ -1,0 +1,14 @@
+{
+  "schema": "aide.review-evidence-custody.v1",
+  "archive": "v1-review-custody.zip",
+  "sha256": "2c1c70261bcfb84b81a9d245c3889341366ee09d07ddeb32a19c80cfd3128635",
+  "member_sha256": {
+    "v1-independent-review.json": "66edab36d564a5616d2d213634b5baa84cedafc5732a40509f42d7681185d02c",
+    "v1-root-focused-tests.txt": "1e2dc9ae79b6f785dc8bea9b6fc00f7b07a3bc46fb460ac37d8c08b135499800"
+  },
+  "readable_projection_sha256": {
+    "v1-independent-review.json": "1df816b138d1d84ad9e0a6d66927d754a13c1de48f1d8bd2332eb0d9f09be6a3",
+    "v1-root-focused-tests.txt": "9ef770b7e51deb392dcd2885c071478ecd0a730dc83868f4ef04356e1de7b92f"
+  },
+  "interpretation": "Independent review log sha256 refers to archived original bytes. Git eol=lf produces readable sibling projections; content and reviewer findings are unchanged. Original local byte streams are preserved."
+}

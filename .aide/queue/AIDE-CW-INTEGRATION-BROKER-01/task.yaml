@@ -17,11 +17,14 @@ retained_gates:
   - no production credentials, signing, billing or public publication
   - genuine human verdicts and identified disposable real-effect hosts
 
-implementation_slice: local_frozen_handoff_and_durable_broker_core
+implementation_slice: bounded_delta_preparation_recovery_and_coordinator_v1
 base_revision: bfb86c12b9e6d2970024d29c57ba629994ec43cc
 branch: task/aide-cw-integration-broker-01
 allowed_paths:
   - core/runtime/integration_broker/
+  - core/runtime/continuous_worker/
+  - .aide/scripts/tests/test_continuous_worker_pipeline.py
+  - .aide/scripts/tests/test_continuous_worker_contract.py
   - .aide/scripts/tests/test_continuous_worker_integration_broker.py
   - docs/reference/integration-broker-core.md
   - .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/

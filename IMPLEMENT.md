@@ -10885,3 +10885,5 @@ Final export validation passed all eight commands; independent review verified a
 ## AIDE-CW-INTEGRATION-BROKER-01 â€” local core implementation
 
 Status: local foundation verified for review. The new integration_broker package separates frozen content materialization and durable remote-effect intent from the worker ledger. Broker suite: 22 pass and one explicit host symlink-creation skip; existing worker suite: 51 pass. Independent root review requires bounded delta handoff for actual AIDE repository size and safe interrupted-preparation recovery before coordinator-v1 adoption/unattended use. No live integration, host isolation, credentials or model calls are claimed.
+
+- Implemented candidate v2 delta overlays, atomically created Windows preparation generations with retained crash recovery, and coordinator-v1 frozen evidence/external authority/receipt handling. Ownership tests exposed and corrected metadata-only sharing behavior; full validation and independent review continue.

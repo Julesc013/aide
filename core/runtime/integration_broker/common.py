@@ -102,14 +102,40 @@ class Git:
         with tempfile.TemporaryDirectory(prefix="aide-broker-git-") as temporary:
             output = Path(temporary) / "streams"
             receipt = WindowsJobHost().run(
-                [str(self.executable), "--no-optional-locks", "-c", "core.fsmonitor=false",
+                [str(self.executable), "--no-optional-locks", "--no-replace-objects", "-c", "core.fsmonitor=false",
                  "-c", "core.hooksPath=" + os.devnull, "-c", "core.autocrlf=false",
-                 "-c", "core.attributesFile=" + os.devnull, "-C", str(root), *args],
+                 "-c", "core.attributesFile=" + os.devnull, "-c", "protocol.allow=never",
+                 "-c", "protocol.file.allow=never", "-C", str(root), *args],
                 cwd=root, input_bytes=data, output_dir=output, job_id=uuid.uuid4().hex,
                 timeout=30, output_limit=MAX_FILE, memory_limit=536870912, process_limit=8)
             if receipt["exit_code"] or receipt["reason"] != "exited" or not receipt["quiescent"]:
                 raise Refused("bounded Git operation failed")
             return bounded_bytes(output / "stdout")
+
+    def validate_store(self, root, commit):
+        """Validate a self-contained trusted object store without network fallback."""
+        identity(commit, OID)
+        raw = self.run(root, "rev-parse", "--absolute-git-dir").decode().strip()
+        git_dir = require_path(raw)
+        if not beneath(git_dir, root):
+            raise Refused("trusted Git metadata escaped admitted repository")
+        config = self.run(root, "config", "--local", "--no-includes", "--null", "--list")
+        for item in config.split(b"\0"):
+            key = item.split(b"\n", 1)[0].decode("utf-8").lower()
+            if (key.startswith("include.") or key.startswith("includeif.") or
+                    key == "extensions.partialclone" or key.endswith(".promisor") or
+                    key.endswith(".partialclonefilter")):
+                raise Refused("included or promisor repository configuration is not admitted")
+        objects = require_path(str(git_dir / "objects"))
+        for name in ("alternates", "http-alternates"):
+            path = objects / "info" / name
+            if path.exists() and bounded_bytes(path).strip():
+                raise Refused("transitive alternate object stores are not admitted")
+        if any((objects / "pack").glob("*.promisor")):
+            raise Refused("promisor pack is not admitted")
+        # fsck checks actual object content hashes; ls-tree/write-tree alone only
+        # prove metadata identity. The common command disables all transports.
+        self.run(root, "fsck", "--strict", "--no-dangling", commit)
 
     def tree(self, root, commit):
         identity(commit, OID)

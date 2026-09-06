@@ -68,7 +68,7 @@ def read_activation(path, expected_hash):
     data = json.loads(raw)
     required = {"schema", "runtime_files", "state_root", "expires_at", "limits", "codex",
                 "git", "worker_models", "tasks", "qualification", "integration"}
-    if set(data) != required or data["schema"] != "aide.continuous-worker.activation.v0":
+    if set(data) != required or data["schema"] not in ("aide.continuous-worker.activation.v0", "aide.continuous-worker.activation.v1"):
         raise Refused("unknown activation fields or schema")
     state = require_path(data["state_root"])
     if beneath(state, Path(__file__).resolve().parents[3]):
@@ -148,9 +148,27 @@ def read_activation(path, expected_hash):
         raise Refused("cyclic pilot dependencies")
     if not data["integration"]:
         raise Refused("live activation requires a registered legitimate integration broker")
-    if set(data["integration"]) != {"query", "apply", "cwd"}:
+    v1 = data["schema"] == "aide.continuous-worker.activation.v1"
+    integration_fields = {"query", "apply", "cwd"}
+    operations = ["query", "apply"]
+    if v1:
+        integration_fields |= {"authority", "reconcile", "exchange_root", "broker_runtime_files"}
+        operations.extend(("authority", "reconcile"))
+        exchange = require_path(data["integration"]["exchange_root"])
+        if exchange == state or not beneath(exchange, state):
+            raise Refused("v1 exchange must be a dedicated child of budgeted coordinator state")
+        broker_sources = runtime.parent / "integration_broker"
+        expected_broker = {p.name for p in broker_sources.glob("*.py")}
+        if set(data["integration"]["broker_runtime_files"]) != expected_broker:
+            raise Refused("v1 broker runtime pin must enumerate every source")
+        for name, pin in data["integration"]["broker_runtime_files"].items():
+            if file_hash(broker_sources / name) != pin:
+                raise Refused("broker runtime source drift")
+        if len(data["git"]["argv"]) != 1:
+            raise Refused("v1 candidate handoff requires the exact registered Git executable")
+    if set(data["integration"]) != integration_fields:
         raise Refused("unknown integration fields")
-    for kind in ("query", "apply"):
+    for kind in operations:
         broker = data["integration"][kind]
         registered_command(broker)
         exe_name = Path(broker["argv"][0]).name.lower()
@@ -179,7 +197,7 @@ def read_activation(path, expected_hash):
     protected = [path, runtime, state]
     protected += [require_path(t["source"]) for t in data["tasks"]]
     protected += [require_path(v["path"]) for v in qualification.values()]
-    for command in [data["codex"], data["git"], data["integration"]["query"], data["integration"]["apply"]]:
+    for command in [data["codex"], data["git"], *(data["integration"][kind] for kind in operations)]:
         protected += [require_path(command["argv"][0]), *(require_path(p) for p in command["inputs"])]
     if any(beneath(p, root) for p in protected for root in roots):
         raise Refused("worker clone contains programme authority or executable inputs")

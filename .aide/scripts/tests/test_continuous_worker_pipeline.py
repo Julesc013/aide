@@ -345,6 +345,195 @@ class PipelineTests(unittest.TestCase):
         self.assertFalse(host.jobs)
 
 
+
+class SyntheticV1Host(SyntheticHost):
+    """External approval fixture, real frozen broker core and injected transport.
+
+    This is not an operational authority issuer or a qualified host.
+    """
+    def __init__(self, fixture, *, lose_merge=False, pending_authority=False, corrupt_receipt=False):
+        super().__init__(lose_merge=lose_merge)
+        self.fixture = fixture
+        self.authorities = {}
+        self.pending_authority = pending_authority
+        self.corrupt_receipt = corrupt_receipt
+        self.kill_prepared_once = False
+
+    def run(self, command, **options):
+        if not any("synthetic_broker.py" in arg for arg in command):
+            return super().run(command, **options)
+        from core.runtime.integration_broker.common import Git
+        from core.runtime.integration_broker.service import Broker
+        self.jobs.append(options["job_id"])
+        request = json.loads(options["input_bytes"])
+        operation = command[-1]
+        task = request["task"]
+        if operation == "authority":
+            # Test-only external decision. Runtime coordinator has no issuer API.
+            self.authorities[task] = {
+                "schema": "aide.broker.authority.v1", "repository": request["repository"],
+                "target_ref": "refs/heads/dev", "actor": "synthetic-external-broker",
+                "base": request["base"], "base_tree": request["base_tree"],
+                "allowed_paths": request["allowed_paths"], "admission_digest": request["admission_digest"],
+                "review_digest": digest(request["verification"]),
+                "required_checks": [c["name"] for c in request["verification"]["checks"]],
+                "max_requests": 2, "expires_at": self.fixture.config["expires_at"],
+            }
+        host = self
+        class Transport:
+            def apply(self, exact):
+                host.applies += 1
+                host.integrated[digest(exact)] = exact
+                if host.lose_merge:
+                    host.lose_merge = False
+                    raise OSError("lost v1 transport response after acceptance")
+            def observe(self, exact):
+                if digest(exact) not in host.integrated:
+                    return {"status": "absent", "receipt": None}
+                authority = host.authorities[task]
+                receipt = {"schema": "aide.broker.integration-receipt.v1", "request_digest": digest(exact),
+                    "repository": authority["repository"], "target_ref": authority["target_ref"],
+                    "actor": authority["actor"], "base": authority["base"],
+                    "candidate_tree": exact["verification"]["subject_tree"],
+                    "integrated_tree": exact["verification"]["subject_tree"],
+                    "integrated_commit": "f" * 40,
+                    "required_checks_digest": digest(authority["required_checks"])}
+                return {"status": "integrated", "receipt": receipt}
+        if operation == "apply" and self.kill_prepared_once:
+            self.kill_prepared_once = False
+            cfg = {"state": str(self.fixture.root / ("broker-" + task)),
+                   "exchange": self.fixture.config["integration"]["exchange_root"],
+                   "repository": str(self.fixture.root / ("trusted-" + task)),
+                   "git": str(self.fixture.git), "authority": self.authorities[task], "request": request}
+            code = """import json,sys,os,hashlib; from pathlib import Path
+from core.runtime.integration_broker.service import Broker
+from core.runtime.integration_broker.common import Git
+c=json.load(sys.stdin); exe=Path(c['git'])
+b=Broker(c['state'],c['exchange'],c['repository'],Git(exe,hashlib.sha256(exe.read_bytes()).hexdigest()),c['authority'],transport=object(),checkpoint=lambda phase:os._exit(80) if phase=='materialized' else None)
+b.apply(c['request'])
+"""
+            child = subprocess.run([sys.executable, "-B", "-c", code], input=json.dumps(cfg), text=True,
+                                   cwd=ROOT, timeout=60, capture_output=True)
+            if child.returncode != 80:
+                raise AssertionError(child.stderr)
+            raise OSError("actual broker child died after materialization before prepared")
+        broker = Broker(self.fixture.root / ("broker-" + task),
+                        Path(self.fixture.config["integration"]["exchange_root"]),
+                        self.fixture.root / ("trusted-" + task),
+                        Git(self.fixture.git, file_hash(self.fixture.git)), self.authorities[task],
+                        transport=Transport())
+        try:
+            if operation == "authority" and self.pending_authority:
+                value = {"schema": "aide.broker.authority-observation.v1", "request_digest": digest(request),
+                         "status": "pending", "authority": None}
+            else:
+                value = getattr(broker, "authority_observation" if operation == "authority" else operation)(request)
+            if self.corrupt_receipt and value.get("status") == "integrated":
+                value["receipt_sha256"] = "0" * 64
+        finally:
+            broker.close()
+        output = options["output_dir"]
+        output.mkdir(parents=True)
+        (output / "stdin").write_bytes(options["input_bytes"])
+        (output / "stdout").write_text(json.dumps(value), encoding="utf-8")
+        (output / "stderr").write_text("", encoding="utf-8")
+        return {"exit_code": 0, "reason": "exited", "quiescent": True,
+                "job_id": options["job_id"], "bytes": 0, "io_errors": []}
+
+
+@unittest.skipUnless(os.name == "nt", "v1 pipeline uses the Windows owned host")
+class V1PipelineTests(unittest.TestCase):
+    setUp = PipelineTests.setUp
+    tearDown = PipelineTests.tearDown
+    git_run = PipelineTests.git_run
+    write_config = PipelineTests.write_config
+
+    def make_config(self):
+        config = PipelineTests.make_config(self)
+        config["schema"] = "aide.continuous-worker.activation.v1"
+        config["integration"]["authority"] = dict(config["integration"]["query"])
+        config["integration"]["authority"]["argv"] = config["integration"]["query"]["argv"][:-1] + ["authority"]
+        config["integration"]["reconcile"] = dict(config["integration"]["apply"])
+        config["integration"]["reconcile"]["argv"] = config["integration"]["apply"]["argv"][:-1] + ["reconcile"]
+        config["integration"]["exchange_root"] = str(self.root / "state" / "exchange")
+        config["integration"]["broker_runtime_files"] = {
+            p.name: file_hash(p) for p in (ROOT / "core/runtime/integration_broker").glob("*.py")}
+        for task in config["tasks"]:
+            task["repository"] = "fixture/" + task["id"]
+            self.git_run(self.root, "clone", "--no-hardlinks", task["workspace"], "trusted-" + task["id"])
+            self.git_run(self.root / ("trusted-" + task["id"]), "update-ref", "refs/heads/dev", task["base"])
+        return config
+
+    def runner(self, host=None):
+        return PipelineTests.runner(self, host or SyntheticV1Host(self))
+
+    def test_two_tasks_use_real_delta_broker_and_distinct_review_sessions(self):
+        host = SyntheticV1Host(self)
+        runner = self.runner(host)
+        result = runner.run()
+        self.assertEqual([t["status"] for t in result["tasks"]], ["succeeded", "succeeded"], result)
+        self.assertEqual(host.applies, 2)
+        self.assertEqual(len(set(host.sessions)), 4)
+        for row in runner.state.db.execute("SELECT evidence FROM attempts"):
+            evidence = json.loads(row[0])
+            request = evidence["authorized_request_v1"]["request"]
+            self.assertNotIn("workspace", request)
+            self.assertEqual(evidence["integration"]["receipt"]["candidate_tree"], request["verification"]["subject_tree"])
+
+    def test_lost_v1_reply_uses_frozen_bytes_even_if_worker_files_change(self):
+        host = SyntheticV1Host(self, lose_merge=True)
+        first = self.runner(host).run()
+        self.assertEqual(first["active"]["stage"], "integration_pending")
+        self.assertEqual(host.applies, 1)
+        (Path(self.config["tasks"][0]["workspace"]) / "value.py").write_text("untrusted later change\n")
+        result = self.runner(host).run()
+        self.assertEqual([t["status"] for t in result["tasks"]], ["succeeded", "succeeded"], result)
+        self.assertEqual(host.applies, 2)
+
+    def test_v1_recovers_real_broker_death_before_prepared_with_one_apply(self):
+        host = SyntheticV1Host(self)
+        host.kill_prepared_once = True
+        first = self.runner(host).run()
+        self.assertEqual(first["active"]["stage"], "integration_pending")
+        self.assertEqual(host.applies, 0)
+        previous = set(p.name for p in (self.root / "broker-one").iterdir() if p.is_dir())
+        self.assertEqual(len(previous), 1)
+        result = self.runner(host).run()
+        self.assertEqual([t["status"] for t in result["tasks"]], ["succeeded", "succeeded"], result)
+        self.assertEqual(host.applies, 2)
+        current = set(p.name for p in (self.root / "broker-one").iterdir() if p.is_dir())
+        self.assertTrue(previous < current)
+        self.assertEqual(len(current), 2)
+
+    def test_missing_external_authority_cannot_dispatch_apply(self):
+        from core.runtime.continuous_worker.coordinator import Paused
+        host = SyntheticV1Host(self, pending_authority=True)
+        runner = self.runner(host)
+        attempt = runner.state.claim(2)
+        with self.assertRaises(Paused):
+            runner.pipeline(attempt)
+        evidence = json.loads(runner.state.active()["evidence"])
+        self.assertIn("frozen_handoff_v1", evidence)
+        self.assertNotIn("authorized_request_v1", evidence)
+        self.assertEqual(host.applies, 0)
+
+    def test_invalid_receipt_hash_never_closes_task(self):
+        host = SyntheticV1Host(self, corrupt_receipt=True)
+        result = self.runner(host).run()
+        self.assertEqual(result["active"]["stage"], "integration_pending")
+        self.assertEqual(result["tasks"][0]["status"], "running")
+
+    def test_v1_broker_pins_and_exchange_boundaries_fail_closed(self):
+        for change in (lambda: self.config["integration"].update(exchange_root=str(self.root / "one")),
+                       lambda: self.config["integration"]["broker_runtime_files"].clear()):
+            original = json.loads(json.dumps(self.config))
+            change()
+            self.write_config()
+            with self.assertRaises(Refused):
+                self.runner()
+            self.config = original
+
+
 if __name__ == "__main__":
     unittest.main()
 

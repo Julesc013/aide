@@ -20,7 +20,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from core.runtime.integration_broker.common import Refused, Git, digest, canonical, relative, MAX_FILE, parse_json
-from core.runtime.integration_broker.candidate import freeze_candidate, read_candidate, tree_oid, validate_manifest
+from core.runtime.integration_broker.candidate import freeze_candidate, read_candidate, tree_oid, validate_manifest, literal_checkout
 from core.runtime.integration_broker.service import Broker, validate_authority
 from core.runtime.integration_broker.ledger import Ledger
 
@@ -79,11 +79,12 @@ class BrokerTests(unittest.TestCase):
         self.git.run(self.repo, "commit", "-m", "fixture base")
         self.base = self.git.run(self.repo, "rev-parse", "HEAD").decode().strip()
         self.git.run(self.repo, "update-ref", "refs/heads/dev", self.base)
+        self.checkout = literal_checkout(self.git, self.repo, self.base)
         (self.repo / "src" / "a.txt").write_bytes(b"changed\n")
         (self.repo / "src" / "new.bin").write_bytes(b"new\0\xff\x01")
         (self.repo / "src" / "remove.bin").unlink()
         self.ref = freeze_candidate(self.git, self.repo, self.exchange,
-                                    repository="fixture/repo", base=self.base, allowed=["src"])
+                                    repository="fixture/repo", base=self.base, allowed=["src"], checkout=self.checkout)
         self.manifest, _ = read_candidate(self.exchange, self.ref)
         verification = {"coding_session": str(uuid.uuid4()), "assurance_session": str(uuid.uuid4()),
                         "assurance_passed": True, "subject_tree": self.manifest["candidate_tree"],
@@ -109,7 +110,7 @@ class BrokerTests(unittest.TestCase):
         broker = self.broker()
         result = broker.prepare(self.request)
         self.assertEqual(result["stage"], "prepared")
-        candidate = self.state / digest(self.request)
+        candidate = self.state / broker.ledger.preparation(digest(self.request))["generation"]
         tree = self.git.run(candidate, "write-tree").decode().strip()
         self.assertEqual(tree, self.manifest["candidate_tree"])
         self.assertEqual(self.manifest["files"]["src/a.txt"]["mode"], "100755")
@@ -212,11 +213,147 @@ class BrokerTests(unittest.TestCase):
     def test_partial_preparation_retains_writer_and_refuses_another_request(self):
         broker = self.broker()
         broker.ledger.reserve(self.request, self.manifest, self.authority)
-        self.assertEqual(broker.prepare(self.request)["stage"], "reserved")
+        self.assertEqual(broker.prepare(self.request)["stage"], "prepared")
         other = {**self.request, "task": "ANOTHER"}
         with self.assertRaisesRegex(Refused, "reserved"):
             broker.prepare(other)
         self.assertEqual(broker.query(self.request)["status"], "pending")
+
+    def test_small_delta_on_base_above_full_snapshot_limit(self):
+        # Trusted unchanged objects do not consume the changed-file budget.
+        extra = self.repo / "unchanged"
+        extra.mkdir()
+        for i in range(4100):
+            (extra / (str(i) + ".txt")).write_bytes(b"base object\n")
+        (self.repo / "src" / "a.txt").write_bytes(b"old\n")
+        (self.repo / "src" / "remove.bin").write_bytes(b"remove\0")
+        (self.repo / "src" / "new.bin").unlink()
+        self.git.run(self.repo, "add", "unchanged")
+        self.git.run(self.repo, "commit", "-m", "large trusted base")
+        base = self.git.run(self.repo, "rev-parse", "HEAD").decode().strip()
+        checkout = literal_checkout(self.git, self.repo, base)
+        (self.repo / "src" / "a.txt").write_bytes(b"changed\n")
+        (self.repo / "src" / "remove.bin").unlink()
+        (self.repo / "src" / "new.bin").write_bytes(b"new\0\xff\x01")
+        ref = freeze_candidate(self.git, self.repo, self.exchange, repository="fixture/repo", base=base, allowed=["src"], checkout=checkout)
+        manifest, blobs = read_candidate(self.exchange, ref)
+        self.assertEqual(manifest["schema"], "aide.broker.candidate.v2")
+        self.assertEqual(set(manifest["files"]), {"src/a.txt", "src/new.bin", "src/remove.bin"})
+        self.assertIsNone(manifest["files"]["src/remove.bin"])
+        self.assertEqual(len(blobs), 2)
+        from core.runtime.integration_broker.candidate import materialize
+        directory = self.root / "large-materialized"
+        directory.mkdir()
+        tree = materialize(self.git, directory, manifest, blobs, base_repository=self.repo)
+        self.assertEqual(tree, manifest["candidate_tree"])
+        self.assertEqual(self.git.run(directory, "show", tree + ":unchanged/4099.txt"), b"base object\n")
+
+    def test_literal_checkout_refuses_crlf_transform_without_running_filters(self):
+        (self.repo / "src" / "a.txt").write_bytes(b"old\r\n")
+        (self.repo / "src" / "remove.bin").write_bytes(b"remove\0")
+        with self.assertRaisesRegex(Refused, "literal Git blob bytes"):
+            literal_checkout(self.git, self.repo, self.base)
+        (self.repo / "src" / "a.txt").write_bytes(b"old\n")
+        self.assertEqual(literal_checkout(self.git, self.repo, self.base), self.checkout)
+        with self.assertRaisesRegex(Refused, "pre-coding"):
+            freeze_candidate(self.git, self.repo, self.exchange, repository="fixture/repo", base=self.base,
+                             allowed=["src"], checkout={})
+
+    def test_corrupt_or_missing_unchanged_object_refuses_before_reservation(self):
+        import zlib
+        _, files = self.git.tree(self.repo, self.base)
+        oid = files[".github/guard"]["oid"]
+        obj = self.repo / ".git" / "objects" / oid[:2] / oid[2:]
+        original = obj.read_bytes()
+        broker = self.broker()
+        for corrupt in (True, False):
+            with self.subTest(corrupt=corrupt):
+                obj.chmod(0o600)
+                if corrupt:
+                    obj.write_bytes(zlib.compress(b"blob 7\0corrupt"))
+                else:
+                    obj.unlink()
+                with self.assertRaises(Refused):
+                    broker.prepare(self.request)
+                self.assertIsNone(broker.ledger.get(digest(self.request)))
+                obj.write_bytes(original)
+
+    def test_transitive_alternate_and_promisor_configuration_refuse(self):
+        broker = self.broker()
+        alternate = self.repo / ".git" / "objects" / "info" / "alternates"
+        alternate.write_text(str(self.repo / ".git" / "objects") + "\n")
+        with self.assertRaisesRegex(Refused, "alternate"):
+            broker.prepare(self.request)
+        alternate.unlink()
+        self.git.run(self.repo, "config", "remote.fixture.promisor", "true")
+        with self.assertRaisesRegex(Refused, "promisor"):
+            broker.prepare(self.request)
+        self.assertIsNone(broker.ledger.get(digest(self.request)))
+
+    def test_delta_rejects_unchanged_path_tampering_and_redundant_deletion(self):
+        from core.runtime.integration_broker.candidate import verify_changes
+        base_tree, base = self.git.tree(self.repo, self.base)
+        changed = copy.deepcopy(self.manifest)
+        changed["files"]["missing.txt"] = None
+        with self.assertRaisesRegex(Refused, "redundant"):
+            verify_changes(changed, base)
+        changed = copy.deepcopy(self.manifest)
+        changed["candidate_tree"] = base_tree
+        with self.assertRaisesRegex(Refused, "overlay tree"):
+            verify_changes(changed, base)
+
+    def test_directory_lease_refuses_substitution_and_retains_failed_generation(self):
+        broker = self.broker()
+        seen = []
+        def checkpoint(phase):
+            if phase == "directory_created":
+                folder = self.state / broker.ledger.preparation(digest(self.request))["generation"]
+                with self.assertRaises(OSError):
+                    folder.rename(self.state / "foreign")
+                seen.append(folder)
+                raise OSError("stop at owned directory")
+        broker.checkpoint = checkpoint
+        with self.assertRaises(OSError):
+            broker.prepare(self.request)
+        broker.checkpoint = lambda phase: None
+        self.assertEqual(broker.prepare(self.request)["stage"], "prepared")
+        self.assertTrue(seen[0].is_dir())
+        self.assertNotEqual(seen[0].name, broker.ledger.preparation(digest(self.request))["generation"])
+
+    def test_real_process_death_recovers_fresh_generation_without_cleanup(self):
+        config = self.root / "fixture.json"
+        config.write_text(json.dumps({"authority": self.authority, "request": self.request}))
+        code = """import sys,json,os,hashlib; from pathlib import Path
+from core.runtime.integration_broker.service import Broker
+from core.runtime.integration_broker.common import Git
+root=Path(sys.argv[1]); exe=Path(sys.argv[2]); cfg=json.loads((root/'fixture.json').read_text())
+b=Broker(root/'state',root/'exchange',root/'repo',Git(exe,hashlib.sha256(exe.read_bytes()).hexdigest()),cfg['authority'],now=lambda:1000,checkpoint=lambda phase: os._exit(79) if phase==sys.argv[3] else None)
+b.prepare(cfg['request'])
+"""
+        # Each case has its own ledger and does not consume another case's budget.
+        for phase in ("reserved", "preparation_intent", "directory_created", "materialized"):
+            with self.subTest(phase=phase):
+                self.state = self.root / ("state-" + phase)
+                phase_code = code.replace("root/'state'", "root/" + repr(self.state.name))
+                child = subprocess.run([sys.executable, "-B", "-c", phase_code, str(self.root), str(self.git.executable), phase],cwd=ROOT,timeout=60,capture_output=True)
+                self.assertEqual(child.returncode,79,child.stderr)
+                broker = self.broker()
+                old = broker.ledger.preparation(digest(self.request))
+                self.assertEqual(broker.prepare(self.request)["stage"], "prepared")
+                if old and phase in ("directory_created", "materialized"):
+                    self.assertTrue((self.state / old["generation"]).is_dir())
+                    self.assertNotEqual(old["generation"], broker.ledger.preparation(digest(self.request))["generation"])
+
+    def test_preparation_generation_budget_and_failed_intent_precede_effects(self):
+        broker = self.broker()
+        broker.checkpoint = lambda phase: (_ for _ in ()).throw(OSError("interrupted")) if phase == "preparation_intent" else None
+        for _ in range(3):
+            with self.assertRaises(OSError):
+                broker.prepare(self.request)
+        with self.assertRaisesRegex(Refused, "generation budget"):
+            broker.prepare(self.request)
+        self.assertEqual([p for p in self.state.iterdir() if p.is_dir()], [])
+
 
     def test_conflicting_or_corrupt_integration_receipt_refuses(self):
         broker = self.broker(self.transport)
@@ -276,7 +413,7 @@ class BrokerTests(unittest.TestCase):
         self.git.run(self.repo, "add", "src/a.txt")
         with self.assertRaisesRegex(Refused, "index differs"):
             freeze_candidate(self.git, self.repo, self.exchange, repository="fixture/repo",
-                             base=self.base, allowed=["src"])
+                             base=self.base, allowed=["src"], checkout=self.checkout)
 
     def test_transaction_budget_includes_completed_requests(self):
         broker = self.broker(self.transport)
@@ -310,7 +447,7 @@ class BrokerTests(unittest.TestCase):
         (self.repo / ".github" / "guard").write_text("tamper")
         with self.assertRaisesRegex(Refused, "escaped allowed"):
             freeze_candidate(self.git, self.repo, self.exchange, repository="fixture/repo",
-                             base=self.base, allowed=["src"])
+                             base=self.base, allowed=["src"], checkout=self.checkout)
 
 
 class ContractTests(unittest.TestCase):

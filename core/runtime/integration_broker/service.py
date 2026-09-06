@@ -10,6 +10,8 @@ import uuid
 from .common import (Refused, OID, fields, identity, require_path, beneath, digest)
 from .candidate import read_candidate, verify_changes, materialize
 from .ledger import Ledger
+from .preparation import directory_lease
+from core.runtime.continuous_worker.locking import supervisor_lock
 
 
 def validate_authority(authority):
@@ -38,7 +40,7 @@ def validate_authority(authority):
 
 
 class Broker:
-    def __init__(self, root, exchange, repository_root, git, authority, *, transport=None, now=time.time):
+    def __init__(self, root, exchange, repository_root, git, authority, *, transport=None, now=time.time, checkpoint=None):
         # Transport injection is an internal test seam, never a config/CLI plugin.
         validate_authority(authority)
         self.root, self.exchange, self.repository_root = (
@@ -48,6 +50,7 @@ class Broker:
             raise Refused("broker, handoff and repository roots must be separate")
         self.git, self.authority, self.transport, self.now = git, json.loads(json.dumps(authority)), transport, now
         self.ledger = Ledger(self.root)
+        self.checkpoint = checkpoint or (lambda phase: None)
 
     def close(self):
         self.ledger.close()
@@ -91,6 +94,22 @@ class Broker:
             raise Refused("required check set mismatch")
         return manifest, blobs
 
+    def authority_observation(self, frozen):
+        """Observe pre-issued protected authority; never manufacture review approval."""
+        fields(frozen, "schema task repository base base_tree allowed_paths admission_digest candidate verification")
+        if frozen["schema"] != "aide.broker.authority-request.v1":
+            raise Refused("unknown frozen authority request")
+        if any(frozen[k] != self.authority[k] for k in
+               ("repository", "base", "base_tree", "allowed_paths", "admission_digest")):
+            raise Refused("frozen request differs from externally issued authority")
+        request = {"schema": "aide.broker.request.v1", "task": frozen["task"],
+                   "authority_digest": digest(self.authority), "admission_digest": frozen["admission_digest"],
+                   "candidate": frozen["candidate"], "verification": frozen["verification"]}
+        self.validate_request(request)
+        self.guard()
+        return {"schema": "aide.broker.authority-observation.v1", "request_digest": digest(frozen),
+                "status": "authorized", "authority": self.authority}
+
     def guard(self):
         if self.now() >= self.authority["expires_at"]:
             raise Refused("integration authority expired")
@@ -100,17 +119,32 @@ class Broker:
             raise Refused("integration target base moved")
 
     def prepare(self, request):
-        manifest, blobs = self.validate_request(request)
-        self.guard()
-        base_tree, base_files = self.git.tree(self.repository_root, manifest["base"])
-        if base_tree != manifest["base_tree"]:
-            raise Refused("base tree mismatch")
-        verify_changes(manifest, base_files)
-        if self.ledger.reserve(request, manifest, self.authority):
-            folder = self.root / digest(request)
-            tree = materialize(self.git, folder, manifest, blobs)
-            self.ledger.prepared(digest(request), tree)
-        return self.query(request, observe=False)
+        # A crash releases the kernel lock. Recovery allocates a fresh generation;
+        # old objects remain retained and can never become deletion authority.
+        with directory_lease(self.root), supervisor_lock(self.root):
+            manifest, blobs = self.validate_request(request)
+            self.guard()
+            self.git.validate_store(self.repository_root, manifest["base"])
+            base_tree, base_files = self.git.tree(self.repository_root, manifest["base"])
+            if base_tree != manifest["base_tree"]:
+                raise Refused("base tree mismatch")
+            verify_changes(manifest, base_files)
+            self.ledger.reserve(request, manifest, self.authority)
+            key = digest(request)
+            self.checkpoint("reserved")
+            if self.ledger.get(key)["stage"] == "reserved":
+                generation = uuid.uuid4().hex
+                self.ledger.allocate_preparation(key, generation)
+                self.checkpoint("preparation_intent")
+                folder = self.root / generation
+                with directory_lease(folder, create=True) as owned:
+                    self.checkpoint("directory_created")
+                    tree = materialize(self.git, folder, manifest, blobs,
+                                       base_repository=self.repository_root)
+                    self.checkpoint("materialized")
+                    self.guard()
+                    self.ledger.prepared(key, tree, generation=generation, directory_identity=owned)
+            return self.query(request, observe=False)
 
     def checked_receipt(self, value, key, manifest):
         fields(value, "schema request_digest repository target_ref actor base candidate_tree integrated_commit integrated_tree required_checks_digest")
@@ -163,3 +197,11 @@ class Broker:
             # A thrown/lost response leaves the durable intent; apply is never replayed.
             self.transport.apply(request)
         return self.query(request)
+
+    def reconcile(self, request):
+        """Re-enter only the broker ledger, never repeat an uncertain transport.
+
+        Reserved/prepared requests can finish local preparation. Durable
+        apply_intent requests are observed only by apply's existing guard.
+        """
+        return self.apply(request)

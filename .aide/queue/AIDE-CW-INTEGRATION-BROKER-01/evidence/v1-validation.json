@@ -1,0 +1,71 @@
+{
+  "schema": "aide.broker-v1.validation.v1",
+  "base_revision": "7e4de0c9762ac89fa6c40fda64a33b0c6f471e93",
+  "source_manifest_sha256": "fc7cf178662d3906ab3a3751d38078a44e3b324606da47c38805259fe09c8d3a",
+  "runtime_test_manifest_sha256": "e2eb52e30522826586d368d832e1b9a44515c9c0c97925c6d69b180d3a2f3b82",
+  "result": "PASS_LOCAL_TESTS_PENDING_INDEPENDENT_REVIEW",
+  "tests": {
+    "command": "python -B -m unittest discover -s .aide/scripts/tests -p test_continuous_worker*.py -v",
+    "total": 88,
+    "passed": 87,
+    "skipped": 1,
+    "seconds": 257.7,
+    "source_unchanged_during_run": true,
+    "skip": "WinError1314 prevents actual disposable symlink creation; not qualified"
+  },
+  "doctor": "PASS",
+  "validate": "PASS",
+  "diff_check": "PASS",
+  "source_export_enumeration": "PASS; new core modules outside portable roots, continuous-worker tests excluded by existing source-only family",
+  "targeted_secret_scan": {
+    "result": "PASS",
+    "scope": "21 exact manifest source/runtime/test/doc files",
+    "limitation": "credential prefix/private-key heuristic, not exhaustive"
+  },
+  "custody": {
+    "path": "v1-evidence.zip",
+    "sha256": "3e8c3591fa54270d4054eb85e59488b379cabc187d6e02224e91e08508dc46b2",
+    "bytes": 212997,
+    "member_sha256": {
+      "delta-recovery-tests-first.txt": "4d0fbd8cd70fd2564126c4a23e2b71f1b55087b8da884f38722b990810e35f58",
+      "v1-suite-first.txt": "b2149302553555d3b3abc591bf4d3cb3b5ec92b6ef73b3d40d12f712dc56bbd2",
+      "v1-suite-first-source.json": "ca438cf21de53279edc511deebf9ef2fbb4b13cdd202e0a40f2f0962b08d12c0",
+      "v1-suite-second.txt": "3dbf893e58c5dc54fd23fa8dd4bd9ed84e29ff011c9494a113d7ba95082f0b25",
+      "v1-suite-second-source.json": "af0551dd46f5e643043886a6f277fc7c50a489be7c12881401194ee815184b26",
+      "v1-doctor.txt": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "v1-validate.txt": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "v1-review-source.json": "76721591ee918d70fa899ca680a687bccdbc1f165bca5ca0d9797e0d36a503f9",
+      "v1-source-manifest.json": "d6615357a796e8a1dcccf4088600573b29e73596902208f87181960817bb9f92"
+    },
+    "raw_bytes": 4942372
+  },
+  "failures_retained": [
+    {
+      "receipt": "delta-recovery-tests-first.txt",
+      "failure": "metadata-only directory access did not enforce delete sharing",
+      "remediation": "atomic NtCreateFile directory creation with directory-list access and no delete sharing; focused regression and later full suites pass"
+    },
+    {
+      "failure": "DELETE-desired lease prevented child Git access",
+      "remediation": "directory-list desired access enforces sharing without requiring child DELETE sharing; final88-test suite passes"
+    }
+  ],
+  "implemented": [
+    "candidate v2 bounded delta overlay with pre-coding literal blob checkout requirement",
+    "trusted base strict object integrity and alternate/promisor/include refusal with all transports disabled",
+    "maximum three durable, atomically created Windows preparation generations with retained crash artifacts",
+    "coordinator-v1 frozen handoff, external pre-issued authority, exact receipt binding and broker-owner reconciliation"
+  ],
+  "not_qualified": [
+    "actual 10631-file AIDE canonical clone and target-store qualification",
+    "production external authority issuer and PR/check transport",
+    "generation object/materialized content revalidation at production transport effect boundary",
+    "credential/filesystem/network worker/controller/broker isolation",
+    "real model sessions and two-task operational demonstration",
+    "fresh source review and next checkpoint/integration"
+  ],
+  "committed": false,
+  "pushed": false,
+  "operational_activation": false,
+  "full_task_complete": false
+}

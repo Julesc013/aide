@@ -1,0 +1,14 @@
+{
+  "schema": "aide.local-checkpoint.v1",
+  "task": "AIDE-CW-INTEGRATION-BROKER-01",
+  "commit": "7e4de0c9762ac89fa6c40fda64a33b0c6f471e93",
+  "tree": "849c24c0b292da8edac408f0640b451d70f419b1",
+  "base_revision": "bfb86c12b9e6d2970024d29c57ba629994ec43cc",
+  "source_manifest_sha256": "41633685e0cdbe1b4f33e2cf9a80620e304c229d9bcc7e24e4889c9f7b3456f8",
+  "files": 40,
+  "commit_check": "PASS",
+  "archive_sha256": "ea350ca9d9db1c414d8bd59d6267a0f7f80f4fb051789a5fcd8fc20d89832e80",
+  "pushed": false,
+  "operational_activation": false,
+  "full_task_complete": false
+}

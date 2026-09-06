@@ -3339,6 +3339,10 @@
 - Plan: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/ExecPlan.md.
 - Objective: full FacMan 0.1 Beta1 engineering/package completion, exact integration, honest human gates.
 
-## AIDE-CW-INTEGRATION-BROKER-01 — local transaction and handoff slice
+## AIDE-CW-INTEGRATION-BROKER-01 â€” local transaction and handoff slice
 
 Status: active, exact dev base bfb86c12b9e6d2970024d29c57ba629994ec43cc. Implement frozen candidate bytes/Git tree and a separate durable broker core. Scope and acceptance are in the task ExecPlan. Validation uses disposable local Git and injected transport only; actual protected transport, isolated host and coordinator v1 adoption remain open.
+
+- AIDE-CW-INTEGRATION-BROKER-01 continues from reviewed checkpoint 7e4de0c9 with bounded delta handoff, owned preparation recovery and coordinator-v1 wiring; fresh tests/review pending, operational authority/transport/host remain unqualified.
+
+- AIDE-CW-INTEGRATION-BROKER-01 continues from reviewed checkpoint 7e4de0c9 with bounded delta handoff, owned preparation recovery and coordinator-v1 wiring; fresh tests/review pending, operational authority/transport/host remain unqualified.

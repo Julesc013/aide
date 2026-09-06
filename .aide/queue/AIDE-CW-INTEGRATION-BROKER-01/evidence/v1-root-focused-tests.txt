@@ -1,0 +1,14 @@
+test_small_delta_on_base_above_full_snapshot_limit (test_continuous_worker_integration_broker.BrokerTests.test_small_delta_on_base_above_full_snapshot_limit) ... ok
+test_literal_checkout_refuses_crlf_transform_without_running_filters (test_continuous_worker_integration_broker.BrokerTests.test_literal_checkout_refuses_crlf_transform_without_running_filters) ... ok
+test_corrupt_or_missing_unchanged_object_refuses_before_reservation (test_continuous_worker_integration_broker.BrokerTests.test_corrupt_or_missing_unchanged_object_refuses_before_reservation) ... ok
+test_transitive_alternate_and_promisor_configuration_refuse (test_continuous_worker_integration_broker.BrokerTests.test_transitive_alternate_and_promisor_configuration_refuse) ... ok
+test_real_process_death_recovers_fresh_generation_without_cleanup (test_continuous_worker_integration_broker.BrokerTests.test_real_process_death_recovers_fresh_generation_without_cleanup) ... ok
+test_preparation_generation_budget_and_failed_intent_precede_effects (test_continuous_worker_integration_broker.BrokerTests.test_preparation_generation_budget_and_failed_intent_precede_effects) ... ok
+test_v1_recovers_real_broker_death_before_prepared_with_one_apply (test_continuous_worker_pipeline.V1PipelineTests.test_v1_recovers_real_broker_death_before_prepared_with_one_apply) ... ok
+test_missing_external_authority_cannot_dispatch_apply (test_continuous_worker_pipeline.V1PipelineTests.test_missing_external_authority_cannot_dispatch_apply) ... ok
+test_invalid_receipt_hash_never_closes_task (test_continuous_worker_pipeline.V1PipelineTests.test_invalid_receipt_hash_never_closes_task) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 120.435s
+
+OK

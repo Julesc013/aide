@@ -292,3 +292,5 @@ The intent-to-transaction planning reports under `.aide/reports/intent-to-transa
 AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01 records current execution authority, exact branch plans and durable validation. FacMan retains its own canonical plan and target-local queues. Portable source-only tests require explicit admission: the existing three AIDE Lite modules are retained; full runtime and continuous-worker tests remain source-only, including nested paths. Live activation is still disabled pending real host/broker/two-task qualification.
 
 - The local broker core and frozen-candidate contract are documented in `docs/reference/integration-broker-core.md`; full protected transport and isolated-host qualification remain separate queue work.
+
+- `docs/reference/integration-broker-core.md` describes candidate v2, bounded preparation recovery, coordinator-v1 and external authority issuance boundaries; foundation history remains in checkpoint 7e4de0c9.
