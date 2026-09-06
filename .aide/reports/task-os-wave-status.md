@@ -2,9 +2,9 @@
 
 - command: `wave status`
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
+- repo_root: `D:/Projects/AIDE/aide`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

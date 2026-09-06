@@ -1,0 +1,18 @@
+schema_version: aide.queue-task.v0
+id: AIDE-FACMAN-USK-PACKAGE-PROMOTION-01
+title: Qualify and promote coherent USK provider packages
+type: execution
+status: planned
+planning_state: admitted_backlog
+result: PENDING
+created_at: 2026-09-06
+parent_task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
+target_repository: universal-setup
+objective: "Bind exact native/SDK/relocation/streaming characterization receipts and package provenance to the reviewed integration candidate; promote normally to provider main before separate FacMan stable adoption."
+authority_basis: Current explicit user request for full implementation, validation and normal integration through Beta1.
+source_of_truth: Repository-owned WorkUnit and exact evidence; this item coordinates dispatch and does not copy target queues.
+retained_gates:
+  - current required checks and independent exact-source assurance
+  - no direct protected push, force push or self-approval
+  - no production credentials, signing, billing or public publication
+  - genuine human verdicts and identified disposable real-effect hosts

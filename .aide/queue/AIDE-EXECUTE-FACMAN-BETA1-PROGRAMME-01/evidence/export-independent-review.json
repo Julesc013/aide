@@ -1,0 +1,26 @@
+{
+  "schema": "aide.export.independent-review.v1",
+  "base_revision": "c39f47ea3cdb2f8359722906f3f486f3c8af19b7",
+  "reviewer": "native_ownership",
+  "result": "PASS",
+  "material_findings": 0,
+  "source_sha256": {
+    ".aide/scripts/aide_lite.py": "4e37cfdbc16ebd92ce9ea89b74c777a10f98535131283e031e0e1383e0f899de",
+    ".aide/scripts/tests/test_aide_lite.py": "6c9a00d60930f5376f76eeb3e6de26ed3a510c377a69da810f8b5d3f845dc582",
+    ".aide/templates/portable-apply/README.md": "041f26d7e0c40537c2caa9aac51df4ac348b1cc4bdc4f29fe2b0062b47c1e192",
+    ".aide/templates/portable-apply/__init__.py": "d9f1cb35bdf8557ef871410aba60c9982f34a9bea2a9381eef17b00ab1b13ac8"
+  },
+  "source_manifest_sha256": "926cd1fdb117c0d728490dea84c6e0ab21392235e8993107935b35f2ad7177b7",
+  "payload_files": 826,
+  "checksum_entries": 829,
+  "checksum_entries_verified": 829,
+  "baseline_portable_test_files": 37,
+  "additional_portable_test_paths": 0,
+  "source_runtime_exported": false,
+  "source_queue_history_exported": false,
+  "actual_local_state_exported": false,
+  "validation_receipt": "final-export-validation.json",
+  "commands_passed": 8,
+  "prototype_source_manifest_sha256": "9340793dac9777ae137fbc1c060b2d9c10383cfc761e15258f3f578f51b0cdee",
+  "live_worker_qualified": false
+}

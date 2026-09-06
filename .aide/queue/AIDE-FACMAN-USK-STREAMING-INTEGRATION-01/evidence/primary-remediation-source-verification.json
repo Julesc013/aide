@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-09-06T13:48:44.584442+00:00",
+  "base_revision": "18cb4b76b915a3033638cf6b39b39a9e159e0efe",
+  "branch": "task/usk-streaming-source-target-01",
+  "source_sha256": {
+    "contracts/schema/setup/transaction_journal.v1.schema.json": "1e5e93f4ef1d9a5f93d4e067fc930cc865fd14f30abe80661838b3aa822d6579",
+    "runtime/setup/streaming/README.md": "6f32821d850f0506b525bee84a90cbaae176b725f2c500f65891c41bbd31afe0",
+    "runtime/setup/streaming/usk_streaming_source_target.cpp": "480cd215ba2c85ec08ff62e6c21a3ae6bf3c393c1e8c9a8761e91c2acfe17196",
+    "runtime/setup/transaction/usk_transaction_session.cpp": "f0c0ec20dd7e666c3d648bcb3b4838182390e1395db4fae1d830d6263b626f1a",
+    "runtime/setup/transaction/usk_transaction_session.h": "acacf0a907f91eaf57e16c84a547b931fbf78887b40e36a7e046b245d77dfff9",
+    "tests/native/usk_streaming_source_target_smoke.cpp": "dab6ccd21287fa692eaf9087dbd007bb9f15997fa5372d449a2cdfabad6692ca",
+    "tests/test_setup_contracts.py": "da585ed4cb4541538557e319c0fb7115b4c8a978ff3a1b3b78698b4a19f39500"
+  },
+  "patch_sha256": "05f1a30f31dac99fcc337f980b85d18c9b5de534d020aa685a2a254d9174b42d",
+  "schema_only_lf_normalization": true,
+  "validation": {
+    "strict": {
+      "exit_code": 0,
+      "log": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\primary-strict-retention.log",
+      "sha256": "64d4434a322d0643baa47881d5c4a63de988a2651309898b3623f28d9aa1b61b"
+    },
+    "python": {
+      "exit_code": 0,
+      "log": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\primary-python-retention.log",
+      "sha256": "5f992a3042c0f5a2f5fd0080cdfd54a4436d82af2f94f63465b5c7417ecab862"
+    },
+    "diff-check": {
+      "exit_code": 0,
+      "log": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\tasks\\usk-s27\\evidence\\primary-diff-check-retention.log",
+      "sha256": "099903ed3e4bd34351c4950512f4ef6e88c76d3e5a8da472d333c5c3c96644d4"
+    }
+  }
+}

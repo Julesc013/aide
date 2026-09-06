@@ -27,6 +27,68 @@ class AideLiteWorkflowTests(unittest.TestCase):
         aide_lite._write_minimal_repo(root)
         return root
 
+    def test_portable_pack_excludes_source_only_runtime_tests(self) -> None:
+        root = self.make_repo()
+        cases = {
+            "test_aide_lite.py": True,
+            "test_aide_apply_00_transaction_model.py": True,
+            "test_aide_apply_01_managed_sections.py": True,
+            "test_aide_local_process_execution_host.py": False,
+            "test_aide_future_source_worker.py": False,
+            "test_continuous_worker_state.py": False,
+            "nested/test_aide_lite.py": False,
+            "nested/test_aide_source_worker.py": False,
+            "nested/test_continuous_worker_state.py": False,
+        }
+        for name, expected in cases.items():
+            relative = ".aide/scripts/tests/" + name
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("# harmless test module\n", encoding="utf-8")
+            with self.subTest(name=name):
+                self.assertEqual(
+                    aide_lite.is_exportable_file(root, relative), expected
+                )
+                self.assertEqual(
+                    relative in aide_lite.iter_portable_source_files(root), expected
+                )
+
+    def test_pack_boundary_refuses_injected_source_only_tests(self) -> None:
+        root = self.make_repo()
+        pack = root / "pack-fixture"
+        for name in ("test_continuous_worker_state.py", "nested/test_aide_worker.py"):
+            path = pack / "files/.aide/scripts/tests" / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("# harmless test module\n", encoding="utf-8")
+        violations = aide_lite.validate_export_pack_boundary(pack)
+        self.assertEqual(len(violations), 2)
+        self.assertTrue(all("forbidden exported path" in v for v in violations))
+
+    def test_portable_apply_descriptions_match_shipped_modules(self) -> None:
+        root = self.make_repo()
+        for relative in (
+            ".aide/templates/portable-apply/README.md",
+            ".aide/templates/portable-apply/__init__.py",
+        ):
+            target = root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(
+                (REPO_ROOT / relative).read_text(encoding="utf-8"), encoding="utf-8"
+            )
+        source = root / "core/apply/README.md"
+        source.parent.mkdir(parents=True, exist_ok=True)
+        source.write_text("Source-only executor is available here.\n", encoding="utf-8")
+        pack, _ = aide_lite.build_export_pack(root)
+        readme = (pack / "files/core/apply/README.md").read_text(encoding="utf-8")
+        self.assertIn("managed_sections.py", readme)
+        self.assertIn("not included", readme)
+        self.assertNotIn("Source-only executor is available here", readme)
+        self.assertFalse((pack / "files/core/apply/transaction_executor.py").exists())
+        for relative in ("README.md", "__init__.py"):
+            self.assertTrue(
+                (pack / "files/.aide/templates/portable-apply" / relative).is_file()
+            )
+
     def test_approximate_token_calculation(self) -> None:
         self.assertEqual(aide_lite.approx_tokens_for_chars(0), 0)
         self.assertEqual(aide_lite.approx_tokens_for_chars(1), 1)

@@ -1,0 +1,6 @@
+{
+  "example_sha256": "a86786cd63c73e062530a937d2fa4d3af5fb0a7c2e7e9f92a1cb14cec135f0c6",
+  "expected_refusal": true,
+  "reason": "missing externally reviewed qualification: isolated_worker_host",
+  "dispatch": false
+}

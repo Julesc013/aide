@@ -282,3 +282,11 @@ The intent-to-transaction planning reports under `.aide/reports/intent-to-transa
 - `.aide/knowledge/okf/**`, `.aide/reports/okf/**`, `core/knowledge/okf_bundle.py`, and `.aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/**` record the first deterministic OKF-compatible AIDE knowledge bundle projection.
 - The bundle explains current repo truth through markdown pages with structural frontmatter, concept indexes, link indexes, current-state pages, protocol pages, capability pages, decision pages, and risk pages.
 - OKF remains projection-only: it does not replace queue truth, protocol schema truth, evidence truth, ReferenceID/EventRecord authority, runtime knowledge services, provider/model calls, network enrichment, search/vector indexes, visualizer behavior, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, scheduler, Service, Commander, release, promotion, or target mutation.
+
+## Continuous worker pilot (2026-09-06)
+
+[Continuous worker pilot](docs/reference/continuous-worker-pilot.md) documents the implemented local prototype, commands, ownership/evidence contracts and remaining live qualification. The authoritative bounded work item is .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01; the disabled activation example is not policy.
+
+## Programme and portable-export repair
+
+AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01 records current execution authority, exact branch plans and durable validation. FacMan retains its own canonical plan and target-local queues. Portable source-only tests require explicit admission: the existing three AIDE Lite modules are retained; full runtime and continuous-worker tests remain source-only, including nested paths. Live activation is still disabled pending real host/broker/two-task qualification.

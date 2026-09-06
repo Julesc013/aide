@@ -1,0 +1,18 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CW-INTEGRATION-BROKER-01
+title: Implement the protected integration broker
+type: execution
+status: planned
+planning_state: admitted_backlog
+result: PENDING
+created_at: 2026-09-06
+parent_task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
+target_repository: AIDE
+objective: "Implement durable query/apply receipts binding repository base/head/tree, independent checks and current finite operator authority; recover lost replies by querying rather than repeating effects. Enforce normal PR checks and exact candidate identity."
+authority_basis: Current explicit user request for full implementation, validation and normal integration through Beta1.
+source_of_truth: Repository-owned WorkUnit and exact evidence; this item coordinates dispatch and does not copy target queues.
+retained_gates:
+  - current required checks and independent exact-source assurance
+  - no direct protected push, force push or self-approval
+  - no production credentials, signing, billing or public publication
+  - genuine human verdicts and identified disposable real-effect hosts

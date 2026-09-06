@@ -1,9 +1,9 @@
 # Current AIDE Roadmap
 
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `859f74cdeedb03718aaac1e5b9fba43747ce2a81`
+- repo_root: `D:/Projects/AIDE/aide`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - command: `transaction status`
 - mode: report_only
 - real_repo_apply_allowed: false

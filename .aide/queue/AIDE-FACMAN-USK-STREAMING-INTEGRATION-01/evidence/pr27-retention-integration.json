@@ -1,0 +1,194 @@
+{
+  "schema": "aide.usk_pr27_retention_integration.v1",
+  "work_item": "USK-STREAMING-SOURCE-TARGET-01",
+  "coordinator": "AIDE-FACMAN-USK-STREAMING-INTEGRATION-01",
+  "observed_at": "2026-09-06T13:53:53.731135+00:00",
+  "commit": {
+    "schema": "usk.streaming_correction_commit_receipt.v1",
+    "observed_at": "2026-09-06T13:50:56.624254+00:00",
+    "work_item": "USK-STREAMING-SOURCE-TARGET-01",
+    "base_revision": "18cb4b76b915a3033638cf6b39b39a9e159e0efe",
+    "commit": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+    "tree": "6b608b04f3c447ccfd13b738237d7f04757e6d7a",
+    "branch": "task/usk-streaming-source-target-01",
+    "patch_sha256": "05f1a30f31dac99fcc337f980b85d18c9b5de534d020aa685a2a254d9174b42d",
+    "source_sha256": {
+      "contracts/schema/setup/transaction_journal.v1.schema.json": "1e5e93f4ef1d9a5f93d4e067fc930cc865fd14f30abe80661838b3aa822d6579",
+      "runtime/setup/streaming/README.md": "6f32821d850f0506b525bee84a90cbaae176b725f2c500f65891c41bbd31afe0",
+      "runtime/setup/streaming/usk_streaming_source_target.cpp": "480cd215ba2c85ec08ff62e6c21a3ae6bf3c393c1e8c9a8761e91c2acfe17196",
+      "runtime/setup/transaction/usk_transaction_session.cpp": "f0c0ec20dd7e666c3d648bcb3b4838182390e1395db4fae1d830d6263b626f1a",
+      "runtime/setup/transaction/usk_transaction_session.h": "acacf0a907f91eaf57e16c84a547b931fbf78887b40e36a7e046b245d77dfff9",
+      "tests/native/usk_streaming_source_target_smoke.cpp": "dab6ccd21287fa692eaf9087dbd007bb9f15997fa5372d449a2cdfabad6692ca",
+      "tests/test_setup_contracts.py": "da585ed4cb4541538557e319c0fb7115b4c8a978ff3a1b3b78698b4a19f39500"
+    },
+    "non_force_push_verified": true,
+    "primary_branch": "dev",
+    "primary_head": "f1931488bd260ca7f77c5d5e227d08d59dea65ab",
+    "primary_clean": true,
+    "merged": false,
+    "pr28_modified": false,
+    "independent_review": "pilot_review approved exact patch; no remaining P0/P1/P2 in bounded remediation"
+  },
+  "pull_request": {
+    "schema": "aide.provider_pr_observation.v1",
+    "observed_at": "2026-09-06T13:53:53.731135+00:00",
+    "repository": "Julesc013/universal-setup",
+    "pull_request": {
+      "number": 27,
+      "url": "https://github.com/Julesc013/universal-setup/pull/27",
+      "state": "OPEN",
+      "headRefName": "task/usk-streaming-source-target-01",
+      "headRefOid": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+      "baseRefName": "dev"
+    },
+    "checks": [
+      {
+        "id": 101497720548,
+        "name": "native-windows",
+        "status": "queued",
+        "conclusion": null,
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720548",
+        "started_at": "2026-09-06T13:51:05Z",
+        "completed_at": null
+      },
+      {
+        "id": 101497720491,
+        "name": "native-linux",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720491",
+        "started_at": "2026-09-06T13:53:55Z",
+        "completed_at": null
+      },
+      {
+        "id": 101497720476,
+        "name": "native-macos",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720476",
+        "started_at": "2026-09-06T13:51:32Z",
+        "completed_at": null
+      },
+      {
+        "id": 101497720421,
+        "name": "sanitizer",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720421",
+        "started_at": "2026-09-06T13:53:05Z",
+        "completed_at": null
+      },
+      {
+        "id": 101497720356,
+        "name": "native-windows-win32",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720356",
+        "started_at": "2026-09-06T13:52:08Z",
+        "completed_at": null
+      },
+      {
+        "id": 101497720311,
+        "name": "fuzz-smoke",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037346073/job/101497720311",
+        "started_at": "2026-09-06T13:52:50Z",
+        "completed_at": "2026-09-06T13:53:04Z"
+      },
+      {
+        "id": 101497711573,
+        "name": "native-macos",
+        "status": "queued",
+        "conclusion": null,
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711573",
+        "started_at": "2026-09-06T13:51:00Z",
+        "completed_at": null
+      },
+      {
+        "id": 101497711502,
+        "name": "native-windows-win32",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711502",
+        "started_at": "2026-09-06T13:51:38Z",
+        "completed_at": null
+      },
+      {
+        "id": 101497711486,
+        "name": "native-linux",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711486",
+        "started_at": "2026-09-06T13:51:25Z",
+        "completed_at": null
+      },
+      {
+        "id": 101497711475,
+        "name": "fuzz-smoke",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711475",
+        "started_at": "2026-09-06T13:51:11Z",
+        "completed_at": "2026-09-06T13:51:28Z"
+      },
+      {
+        "id": 101497711454,
+        "name": "native-windows",
+        "status": "in_progress",
+        "conclusion": null,
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711454",
+        "started_at": "2026-09-06T13:51:04Z",
+        "completed_at": null
+      },
+      {
+        "id": 101497711382,
+        "name": "sanitizer",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "ce7f537f49db1a705ca6e134cc3403530799d64f",
+        "html_url": "https://github.com/Julesc013/universal-setup/actions/runs/34037343134/job/101497711382",
+        "started_at": "2026-09-06T13:51:03Z",
+        "completed_at": "2026-09-06T13:52:48Z"
+      }
+    ],
+    "check_count": 12,
+    "qualification": "pending_complete_fresh_hosted_matrix",
+    "body_lf_sha256": "50a2bd6ba265aeb500746103117d8183aef70de7600875dd0edbeba2be11ab0a",
+    "body_comparison": "GitHub CRLF normalized to LF; otherwise exact approved body"
+  },
+  "independent_review": {
+    "reviewer": "pilot_review",
+    "approved_patch_sha256": "05f1a30f31dac99fcc337f980b85d18c9b5de534d020aa685a2a254d9174b42d",
+    "findings": "no remaining P0/P1/P2 in bounded remediation",
+    "supersedes_rejected_patch": "f4df2a2ed7f8f85098dfe7c5e80281551411509cf456b4b0d8f3f751e6651a0c"
+  },
+  "historical_receipt_scope": "retention-remediation-receipt.json preserves the pre-commit source/test observation; the commit and independent-review records here supersede its pending delivery flags.",
+  "evidence_sha256": {
+    "ctest-x64-retention-clean.log": "39bbbd08b44ba1c6e34527b1e79975c31adce5734f239c6b4866f10cbd8e884f",
+    "pr27-retention-first-check-observation.json": "b27b8f6be7d67c79e965e05c18238bcdb30e18d218388f0048213e4472a01947",
+    "primary-python-retention.log": "5f992a3042c0f5a2f5fd0080cdfd54a4436d82af2f94f63465b5c7417ecab862",
+    "primary-remediation-source-verification.json": "868df8d26aaf4cf2c0db5afaad2dcca94e878b86388d3951ab412d38748b840e",
+    "primary-retention-commit-receipt.json": "5b88b82a051f1ed90e967e44ecbfc44fa941541289bff9f5f1f6294535801473",
+    "primary-strict-retention.log": "64d4434a322d0643baa47881d5c4a63de988a2651309898b3623f28d9aa1b61b",
+    "retention-remediation-receipt.json": "54572ee2cb15bfcade8ef1693617f8e831e7e105f4f55f46a0eb6ae234087d15"
+  },
+  "remaining": [
+    "Fresh full hosted qualification for this candidate",
+    "Normal reviewed PR27 integration after provider hygiene promotion",
+    "Propagate correction to PR28 and independently qualify its new head",
+    "Object-bound cleanup and restart leases for retained streaming staging"
+  ],
+  "authority": "Current user authorized scoped engineering, tests, commits, normal task push and PR refresh; no protected merge, force push, release publication or product state mutation performed."
+}

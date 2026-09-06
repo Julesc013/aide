@@ -3159,3 +3159,134 @@ items:
   prompt: .aide/queue/AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01/prompt.md
   evidence: .aide/queue/AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01/evidence
   description: Plans safe refactoring recipes and USB/offline, workstation, LAN, enterprise, cloud, and supercomputer scale modes for Project Intelligence. Planning-only; no refactor apply, service runtime requirement, network requirement, file moves, deletes, reference rewrites, target mutation, release work, branch/worktree automation, or provider/model calls.
+
+  - id: AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01
+    status: blocked
+    planning_state: local_prototype_validated
+    title: Build the bounded continuous Codex worker pilot
+    task: .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence
+    description: User-authorized local implementation; activation and protected integration remain review-gated.
+
+  - id: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
+    status: running
+    planning_state: execution_active
+    title: Execute the admitted FacMan 0.1 Beta1 completion programme
+    task: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/task.yaml
+    exec_plan: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/prompt.md
+    evidence: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/evidence
+  - id: AIDE-CW-ISOLATED-HOST-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Qualify a restricted worker host
+    task: .aide/queue/AIDE-CW-ISOLATED-HOST-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-ISOLATED-HOST-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence
+  - id: AIDE-CW-INTEGRATION-BROKER-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Implement the protected integration broker
+    task: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence
+  - id: AIDE-CW-CLONE-PREPARATION-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Prepare dependency-derived owned worker clones
+    task: .aide/queue/AIDE-CW-CLONE-PREPARATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-CLONE-PREPARATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-CLONE-PREPARATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-CLONE-PREPARATION-01/evidence
+  - id: AIDE-CW-RESUME-REPAIR-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Resume interrupted tasks through bounded repair admission
+    task: .aide/queue/AIDE-CW-RESUME-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-RESUME-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-RESUME-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-RESUME-REPAIR-01/evidence
+  - id: AIDE-CW-SUPERVISOR-LIFECYCLE-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Install and qualify the owned supervisor lifecycle
+    task: .aide/queue/AIDE-CW-SUPERVISOR-LIFECYCLE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-SUPERVISOR-LIFECYCLE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-SUPERVISOR-LIFECYCLE-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-SUPERVISOR-LIFECYCLE-01/evidence
+  - id: AIDE-CW-LIVE-PILOT-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Qualify two real tasks through the complete worker pipeline
+    task: .aide/queue/AIDE-CW-LIVE-PILOT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-LIVE-PILOT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-LIVE-PILOT-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-LIVE-PILOT-01/evidence
+  - id: AIDE-CW-PROGRAMME-OPERATIONS-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Operate the qualified bounded Beta1 programme
+    task: .aide/queue/AIDE-CW-PROGRAMME-OPERATIONS-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-PROGRAMME-OPERATIONS-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-PROGRAMME-OPERATIONS-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-PROGRAMME-OPERATIONS-01/evidence
+  - id: AIDE-FACMAN-USK-STREAMING-INTEGRATION-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Remediate and integrate the USK streaming dependency
+    task: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence
+  - id: AIDE-FACMAN-USK-ZIP-INTEGRATION-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Propagate fixes and integrate the USK ZIP64 dependency
+    task: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence
+  - id: AIDE-FACMAN-USK-ENTRY-RESTART-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Complete restartable provider entry journals
+    task: .aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/task.yaml
+    exec_plan: .aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/prompt.md
+    evidence: .aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence
+  - id: AIDE-FACMAN-USK-GENERATION-LEASES-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Complete provider generations and lease recovery
+    task: .aide/queue/AIDE-FACMAN-USK-GENERATION-LEASES-01/task.yaml
+    exec_plan: .aide/queue/AIDE-FACMAN-USK-GENERATION-LEASES-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-FACMAN-USK-GENERATION-LEASES-01/prompt.md
+    evidence: .aide/queue/AIDE-FACMAN-USK-GENERATION-LEASES-01/evidence
+  - id: AIDE-FACMAN-USK-PACKAGE-PROMOTION-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Qualify and promote coherent USK provider packages
+    task: .aide/queue/AIDE-FACMAN-USK-PACKAGE-PROMOTION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-FACMAN-USK-PACKAGE-PROMOTION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-FACMAN-USK-PACKAGE-PROMOTION-01/prompt.md
+    evidence: .aide/queue/AIDE-FACMAN-USK-PACKAGE-PROMOTION-01/evidence
+  - id: AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Correct and integrate ULK current truth
+    task: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/evidence
+  - id: AIDE-FACMAN-ULK-PROMOTION-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Promote reviewed ULK provider truth when required
+    task: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/prompt.md
+    evidence: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/evidence

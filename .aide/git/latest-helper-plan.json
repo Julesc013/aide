@@ -21,7 +21,7 @@
   "state": {
     "ahead_behind": {
       "ahead": 0,
-      "behind": 0,
+      "behind": 3,
       "error": "",
       "known": true
     },
@@ -32,7 +32,7 @@
       "origin/main": "canonical"
     },
     "current_branch": "main",
-    "current_commit": "53405366d5143ba540ad801352743d8472ff8288",
+    "current_commit": "7d8bf19d878fd9ad29859a6cba4b7de64ad80ecc",
     "current_role": "canonical",
     "detached_head": false,
     "local_branches": [
@@ -57,7 +57,7 @@
     "remote_branches": [
       "origin/main"
     ],
-    "repo_root": "C:/Projects/AIDE/aide",
+    "repo_root": "D:/Projects/AIDE/aide",
     "repo_root_detected": true,
     "repo_root_error": "",
     "schema_version": "aide.git-helper-state.v0",

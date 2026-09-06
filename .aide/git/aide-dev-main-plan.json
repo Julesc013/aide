@@ -1,7 +1,7 @@
 {
   "ahead_behind": {
     "ahead": 0,
-    "behind": 0,
+    "behind": 3,
     "error": "",
     "known": true
   },
@@ -13,7 +13,7 @@
   "current_branch": "main",
   "current_branch_role": "canonical",
   "current_branch_tracks_remote": true,
-  "current_commit": "53405366d5143ba540ad801352743d8472ff8288",
+  "current_commit": "7d8bf19d878fd9ad29859a6cba4b7de64ad80ecc",
   "future_explicit_operator_plan": {
     "commands_not_run": [
       "git switch -c dev main",
