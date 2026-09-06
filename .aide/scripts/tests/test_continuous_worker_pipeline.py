@@ -467,6 +467,53 @@ class V1PipelineTests(unittest.TestCase):
     def runner(self, host=None):
         return PipelineTests.runner(self, host or SyntheticV1Host(self))
 
+    def capsule_fixture(self):
+        from core.runtime.continuous_worker.coordinator import Paused
+        from core.runtime.integration_broker.common import digest as broker_digest
+        host = SyntheticV1Host(self, pending_authority=True)
+        runner = self.runner(host)
+        attempt = runner.state.claim(2)
+        with self.assertRaises(Paused):
+            runner.pipeline(attempt)
+        evidence = json.loads(runner.state.active()["evidence"])
+        frozen = evidence["frozen_handoff_v1"]
+        path = self.root / "state" / "authority-capsules" / (broker_digest(frozen) + ".json")
+        return runner, attempt, evidence, frozen, path
+
+    def test_controller_capsule_reparses_real_artifacts_and_distinct_synthetic_sessions(self):
+        from core.runtime.integration_broker.capsule import validate
+        runner, attempt, evidence, frozen, path = self.capsule_fixture()
+        result = validate(frozen, self.config, attempt["spec"], self.root / "state/exchange")
+        self.assertEqual(result["verification"], frozen["verification"])
+        self.assertEqual(result["attempt"], attempt["id"])
+        self.assertEqual(file_hash(path), evidence["controller_capsule_v1"]["capsule_sha256"])
+        self.assertEqual(runner.state.active()["stage"], "integration_pending")
+
+    def test_controller_capsule_refuses_command_completion_snapshot_and_output_substitution(self):
+        from core.runtime.integration_broker.capsule import validate
+        runner, attempt, evidence, frozen, path = self.capsule_fixture()
+        original = json.loads(path.read_text())
+        mutations = (
+            lambda value: value["effects"]["assurance"]["request"]["argv"].append("--unadmitted"),
+            lambda value: value["effects"]["test.0"]["response"]["receipt"].update(exit_code=True),
+            lambda value: value["effects"]["coding"]["request"].update(output=str(self.root / "foreign")),
+            lambda value: value["subject"].update(identity="f" * 64),
+            lambda value: value.update(activation_digest="f" * 64),
+        )
+        for index, mutate in enumerate(mutations):
+            with self.subTest(index=index):
+                value = json.loads(json.dumps(original))
+                mutate(value)
+                path.write_text(json.dumps(value), encoding="utf-8")
+                with self.assertRaises(Refused):
+                    validate(frozen, self.config, attempt["spec"], self.root / "state/exchange")
+        path.write_text(json.dumps(original), encoding="utf-8")
+        output = Path(original["effects"]["test.0"]["request"]["output"]) / "stdout"
+        output.write_bytes(b"changed actual output")
+        with self.assertRaisesRegex(Refused, "artifact drift"):
+            validate(frozen, self.config, attempt["spec"], self.root / "state/exchange")
+        self.assertEqual(runner.state.active()["stage"], "integration_pending")
+
     def test_two_tasks_use_real_delta_broker_and_distinct_review_sessions(self):
         host = SyntheticV1Host(self)
         runner = self.runner(host)

@@ -34,3 +34,95 @@ Coordinator v1 then persists this handoff and the exact broker request before ap
 The final combined local suite passed 87 tests with one explicit symlink privilege skip (88 total) against unchanged source; doctor and validate also passed. v1-source-manifest.json binds exact source and v1-validation.json binds tests, custody and open qualification. Broker-owner reconciliation now covers a real subprocess death before prepared through the coordinator, without repeated transport. Independent current-source review remains pending. No new commit, push or activation in this slice.
 
 Root independently reviewed exact21-file v1 manifest fc7cf178662d3906ab3a3751d38078a44e3b324606da47c38805259fe09c8d3a, verified the custody archive and all9members, and reran9focused tests successfully. The source-reviewed local v1 checkpoint is authorized; full task remains running. Original root review/log bytes are separately archived before Git LF normalization. Root owns PR4 and remote integration.
+
+## Delegated authority and qualified transport continuation
+
+The independently reviewed v1 checkpoint is f06bcd75aafeab175202a89ea1d69c815b7bd911,
+tree 53919c7b403d9e8c9d859a4eba759fdf77d4b51d. Root owns PR 4 and all remote
+integration. Current programme authority covers this source implementation;
+there is no new credential, model-call, network-effect or activation authority.
+
+Implement in three reviewable increments under this same WorkUnit:
+
+1. `effect_boundary.prepared_candidate(broker, request)` acquires the broker
+   lock and kernel directory leases, compares the persisted generation object
+   identity, validates the protected base store and its exact allowed alternate,
+   inspects the materialized index/tree and actual object bytes, and yields the
+   exact directory/tree/request binding while holding leases through dispatch.
+   Refuse replaced generation, altered config/alternate, corrupt or missing
+   changed/unchanged objects, substituted index and moved base. Refusal has no
+   remote intent or dispatch. A directory lease is not child-file isolation;
+   a real protected host/store qualification remains required for credentials.
+2. Add a strict external delegation issuer. Its finite pinned task admissions,
+   repository/base/paths/checks/expiry and command/source pins are independent
+   inputs. A protected controller evidence capsule must bind the frozen request,
+   separate actual coding/assurance session observations, successful owned test
+   receipts and output hashes. Caller booleans or mutable workspace records do
+   not become approval. Persist issued exact authority, enforce finite issuance
+   and reject replay with changed evidence. Source-only fixtures prove parsing
+   and local refusal, not controller credential/filesystem isolation.
+3. Add a durable branch/PR/check observation transport with a registered bounded
+   runner seam and typed exact request/commit/branch/PR identities. Persist each
+   possible mutation intent before dispatch; lost replies reconcile by observing
+   that exact identity without repeating an uncertain mutation. Require fresh
+   actor/repository/ref/check-source observations and independently qualified
+   target atomicity before any merge. An ordinary pre-read of dev is not CAS.
+   AIDE currently has no hosted workflows or branch rules, so it cannot satisfy
+   strict-server merge qualification. No settings or global configuration changes
+   are part of this slice; absent transport or qualification refuses execution.
+
+Use real disposable local Git for binary/mode/deletion/object corruption and
+moving-base tests. Use scripted service observations for mismatched heads,
+checks, actor, draft PR, unknown or lost response and replay/concurrency. Bind
+source/test evidence and obtain independent review before a further checkpoint.
+Record each remaining target or host requirement without turning it into a
+permission gate or marking this full broker task complete.
+
+
+## Current continuation observations
+
+Prepared-effect six focused tests pass (34.533 seconds). The initial 37-test
+broker run exposed two test setup defects producing three errors: Windows
+read-only loose objects and a non-bare index operation. Corrected only the
+fixtures; retained effect-boundary-initial-test-failure.json. Capsule and all
+existing v1 pipeline tests pass: eight tests, 72.717 seconds. Root independently
+reviewed exact six files, reran eight focused tests (48.518 seconds) against
+unchanged runtime and recorded PASS in effect-capsule-independent-review.json.
+
+Finite issuer source and offline PR observation/intent core are now implemented.
+Five issuer tests pass (18.797 seconds); the initial test-side SQLite teardown
+and duplicate-discovery run is preserved in issuer-initial-test-failure.json.
+Six PR observation/ledger tests pass (0.181 seconds), including exact source
+checks, moving-base refusal, uncertain-intent restart and concurrent reservation.
+Full current-source tests, doctor and validation are running before the next
+review packet. No implementation of the actual qualified host, provider API
+adapter, object uploader or network dispatcher is implied by these local cores.
+Normal provider observation/dispatch wiring, host/store qualification and
+server-side exact-base enforcement remain required under this WorkUnit.
+
+
+The full frozen baseline passed 107 tests (106 pass, one explicit symlink
+privilege skip) in 328.392 seconds; doctor and validate passed, with all runtime
+and test source unchanged during that run. Root review then identified missing
+PR base-ref/repository bindings. Added explicit base_ref/base_repository/
+head_repository checks and retained the first observed PR number. Eight current
+PR tests pass (0.190 seconds), including open/merged same-OID main/fork refusals
+and PR replacement/disappearance. The 107-test receipt remains historical for
+its exact pre-remediation source; the current two-file fix has separate focused
+evidence and independent review pending. No operational dispatcher is installed.
+
+## Reviewed delegated-core checkpoint
+
+Root independently reviewed the current issuer/PR source and reran all 13 issuer
+and PR tests successfully in 17.015 seconds, with source unchanged. Both review
+findings are resolved. qualified-core-current-source.json binds all 27 current
+source/test/reference inputs. The full 107-test baseline remains bound to its
+original source, with the later two-file PR correction proved by eight focused
+local tests and the independent 13-test run. Preserve original evidence bytes
+in qualified-core-evidence.zip, including both independent reviews and their
+logs; readable Git projections are separately identified in the custody receipt.
+Current programme authority and completed independent review authorize this
+scoped local checkpoint. Root owns PR 4 and remote updates. The next same-task
+step is a qualified provider adapter and broker stage reconciliation; actual
+controller/store isolation and target atomicity remain unqualified. No live
+activation or full WorkUnit completion is claimed.

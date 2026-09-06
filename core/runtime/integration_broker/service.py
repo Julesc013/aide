@@ -11,6 +11,7 @@ from .common import (Refused, OID, fields, identity, require_path, beneath, dige
 from .candidate import read_candidate, verify_changes, materialize
 from .ledger import Ledger
 from .preparation import directory_lease
+from .effect_boundary import prepared_candidate
 from core.runtime.continuous_worker.locking import supervisor_lock
 
 
@@ -192,10 +193,10 @@ class Broker:
         if existing and existing["stage"] in ("apply_intent", "integrated"):
             return self.query(request)
         self.prepare(request)
-        self.guard()
-        if self.ledger.intent(digest(request)):
-            # A thrown/lost response leaves the durable intent; apply is never replayed.
-            self.transport.apply(request)
+        with prepared_candidate(self, request):
+            if self.ledger.intent(digest(request)):
+                # A thrown/lost response leaves durable intent; apply is never replayed.
+                self.transport.apply(request)
         return self.query(request)
 
     def reconcile(self, request):

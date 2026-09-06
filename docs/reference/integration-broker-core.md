@@ -1,6 +1,6 @@
 # Local integration broker and coordinator-v1 handoff
 
-Task: AIDE-CW-INTEGRATION-BROKER-01. Checkpoint 7e4de0c9762ac89fa6c40fda64a33b0c6f471e93 preserves the independently reviewed foundation. The current slice adds bounded changes over trusted base objects, interrupted-preparation recovery and coordinator-v1 protocol wiring. The complete protected broker, isolated host and live programme remain unqualified.
+Task: AIDE-CW-INTEGRATION-BROKER-01. Checkpoint 7e4de0c9762ac89fa6c40fda64a33b0c6f471e93 preserves the independently reviewed foundation. Checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 adds bounded changes over trusted base objects, interrupted-preparation recovery and coordinator-v1 protocol wiring. The current continuation adds prepared-effect validation, controller evidence capsules, finite delegated issuance and offline PR observation/intent modules. The complete protected broker, isolated host and live programme remain unqualified.
 
 The package `core/runtime/integration_broker` never installs a service, provisions an identity, contacts GitHub, invokes a model or opens credentials. Production CLI `apply` has no transport configuration or plugin loading and refuses until a legitimate transport is implemented and independently qualified.
 
@@ -26,7 +26,7 @@ A crash releases the process's handles. The next prepare for the identical reser
 
 `Broker(root, exchange, repository_root, git, authority)` exposes `authority_observation(frozen)`, `prepare(request)`, `query(request)`, `apply(request)` and `reconcile(request)`. Its three roots must be separate. The authority record binds repository, exact refs/heads/dev target, actor, base commit/tree, expiry, one or two lifetime requests, required check names, admitted paths, admission digest and independently reviewed verification digest. Requests bind that authority digest, task, frozen candidate and independent coding/assurance sessions with passing check artifact identities.
 
-Authority is supplied externally. `authority_observation` reports an already issued protected authority only when all frozen evidence matches; it cannot create review approval. Because future model session IDs and candidate trees are unknown at initial programme admission, an operational authority issuer must inspect their later evidence under explicit programme delegation. The coordinator cannot mint that authority or alter its own activation. This missing issuer/transport implementation is distinct from a new user approval requirement.
+Authority is supplied externally. `authority_observation` reports an already issued protected authority only when all frozen evidence matches; it cannot create review approval. Because future model session IDs and candidate trees are unknown at initial programme admission, an operational authority issuer must inspect their later evidence under explicit programme delegation. The coordinator cannot mint that authority or alter its own activation. The issuer source described below implements evidence-based finite issuance; its qualified host and operational transport wiring remain required implementation. These are distinct from a new user approval requirement.
 
 The separate SQLite ledger uses WAL, FULL synchronous commits, immediate transactions and one unresolved writer per repository/target. A unique task reservation prevents readmission under another digest; completed requests consume the lifetime budget. State progresses through reserved, prepared, apply_intent and integrated. Apply intent precedes dispatch. Lost replies are reconciled by query only; absence after intent never authorizes blind replay. Expiry stops new broker effects but permits observation of an uncertain effect.
 
@@ -47,3 +47,79 @@ The callable local CLI supports `authority`, `query`, `apply` and `reconcile` wi
 Tests use disposable local Git repositories, real Windows process-death boundaries and a base larger than the old complete-tree entry budget. They exercise binary/untracked/deleted files, tree identity, corrupt content, directory substitution, bounded interrupted preparation, lost replies, exact receipts, authority refusal and existing v0 behavior. Coordinator-v1 tests use the real local broker core and genuine independent test commands, with explicitly synthetic model sessions, external authority decisions and integration observations.
 
 WindowsJobHost remains same-user process containment. It does not establish credential/filesystem isolation, network denial or volume quota. Separate qualified worker/controller/broker boundaries, production authority issuance and PR/check transport, target-store qualification and a real two-task demonstration remain required. Production transport must revalidate the selected generation object and materialized content at its own effect boundary; injected transport does not establish that qualification. The large synthetic base proves the entry-budget fix, not actual 10,631-file AIDE checkout readiness. Passing fixtures do not complete the WorkUnit, activate unattended operation or qualify FacMan Beta1.
+
+## Prepared effect boundary
+
+`effect_boundary.prepared_candidate(broker, request)` validates the durable
+request/generation binding and compares the live volume/file identity with the
+prepared directory identity. It holds directory leases and the broker lock
+through `transport.apply`, checks the protected base store with strict fsck,
+requires the exact permitted alternate and generated bare configuration,
+compares index modes/objects with the frozen overlay, validates the complete
+candidate object graph, and reads every changed blob back against frozen bytes.
+A second base/expiry check precedes the yielded effect. Replacement, corrupt or
+missing objects, changed index/config/alternate and moved base refuse before
+apply intent. Uncertain directories remain untouched. A later transport stage
+must enter this boundary again before its own effect; the directory handles do
+not exclude arbitrary concurrent child-file writers or qualify credentials.
+
+## Protected capsules and finite issuer
+
+After its final candidate snapshot check, the coordinator publishes an exclusive
+`authority-capsules/<frozen-digest>.json` under its budgeted state root. It contains
+the activation digest, exact attempt, baseline/subject snapshots and recorded
+coding/test/assurance process requests and responses. Publication does not issue
+authority. The issuer-side parser checks snapshot identities and frozen changed
+bytes, exact role argv/source pins, unique owned Job IDs, completed successful
+receipts and the actual stdin/stdout/stderr hashes. It reparses Codex verdicts
+against the original baseline/subject and requires distinct coding/assurance
+sessions before reconstructing the frozen verification record.
+
+`authority.Issuer(delegation_path, approved_sha256)` reads a separately pinned
+finite delegation and activation. It restricts repository, exact task IDs,
+paths/checks and expiry to that activation, then records one immutable issued
+authority per frozen request/task in a WAL/FULL ledger. Repeated identical
+issuance returns the same authority; changed evidence, over-budget issuance,
+unknown tasks, altered external bytes or unqualified hosts refuse.
+
+The operational issuer has no qualified host implementation installed. The
+internal `qualification.assert_current(delegation, activation)` seam must
+independently authenticate current controller/store identity, filesystem and
+credential boundaries and executable inputs; there is no config-loaded plugin
+or CLI shortcut. When absent, issuance refuses before ledger creation. Tests
+use an explicitly synthetic qualification seam to exercise local data flow;
+that fixture is not a host receipt. Protected controller authenticity cannot be
+proved by self-reported booleans or content hashes alone.
+
+## Offline PR/check observation and intent core
+
+`pr_observation.decision(plan, observation)` validates a normalized provider
+observation against an exact request/candidate commit/tree/base, request-named
+branch, actor and PR. The PR must explicitly bind its base ref to dev and both
+base/head repositories to the admitted repository, even when other branches or
+forks share the same object IDs. The first observed PR number is immutable for
+the request. Required checks bind both the application ID and workflow
+source commit, the exact candidate head, successful completion and an explicit
+complete-page observation. Draft/closed PRs, incomplete/skipped checks, foreign
+sources and moved base cannot reach merge readiness. A merged record requires
+exact candidate tree, ordered base/head parents, passing checks and observed
+ancestry in the integration target. This increment supports ordinary merge
+commits; it does not silently reinterpret squash/rebase results.
+
+`ObservationStore` reserves at most two lifetime requests and one unresolved
+writer per repository/target. It records at most 128 observations per request
+(or a smaller plan limit) and one durable intent per object-publication,
+branch-creation, PR-creation and merge stage. An absent observation after an
+intent cannot authorize repeating that stage. A mutation intent must bind the
+latest recorded observation and unexpired plan; terminal integration also
+requires a prior merge intent and cannot later change its recorded PR result.
+
+This module installs no provider adapter, API client, network dispatcher or
+object uploader. Normalized observations are not authenticated merely because
+the parser accepts their shape. A real qualified adapter must obtain complete,
+fresh provider facts and enforce each admitted effect. Merge additionally needs
+an externally qualified exact-base server contract and current matching target
+policy. GitHub's expected-head merge request and a local base pre-read alone
+are not proof of atomic exact-base refusal. AIDE currently has no hosted
+workflows or branch rules; the actual target does not meet that requirement.
+No target settings, credentials or operational activation changed here.

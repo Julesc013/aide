@@ -261,7 +261,10 @@ class Coordinator:
             frozen = freeze(self, attempt, evidence)
             if snapshot(git_command, workspace)["identity"] != subject["identity"]:
                 raise Refused("candidate moved during immutable handoff")
-            self.state.transition(ident, "integration_pending", {"frozen_handoff_v1": frozen})
+            from core.runtime.integration_broker.capsule import publish
+            capsule = publish(self, attempt, evidence, frozen)
+            self.state.transition(ident, "integration_pending", {"frozen_handoff_v1": frozen,
+                                                               "controller_capsule_v1": capsule})
             return integrate(self, attempt, evidence | {"frozen_handoff_v1": frozen}, Paused)
         request = {"attempt": ident, "task": spec["id"], "repository": spec["repository"],
                    "admission": spec["source_sha256"], "activation": digest(self.config),

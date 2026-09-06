@@ -1,0 +1,106 @@
+{
+  "schema": "aide.evidence-custody.v1",
+  "archive": "qualified-core-evidence.zip",
+  "archive_sha256": "bbbeb89ff6b4a6641ab7e2ec8c55e091364c42edf06e9bdb54c79a7da43dfb81",
+  "members": {
+    "capsule-review-source.json": {
+      "sha256": "2d49737670c75c9ed1593ef46cfed6b3a6188760bebff8135103f788fbee1df9",
+      "bytes": 1249
+    },
+    "effect-boundary-initial-test-failure.json": {
+      "sha256": "b79fb9d568aaf47afff5a31cbd508fd7d36b47014552f1a8dd2912e3fe8dfb8a",
+      "bytes": 1080
+    },
+    "effect-boundary-review-source.json": {
+      "sha256": "491d96c75fdd33b436995b718c324d04de80b20556990ba20b7c80d2ebfc7bdc",
+      "bytes": 1159
+    },
+    "effect-capsule-independent-review.json": {
+      "sha256": "b8611df245412c4ec35029ed93a1f4a0b4362dc97f50b8073dfeec833a0b9ce9",
+      "bytes": 2215
+    },
+    "effect-capsule-root-tests.txt": {
+      "sha256": "d2873c6ef4bcb827bd7f8144e022e8a53f16026c08fddaec75cf920b63a9ad7d",
+      "bytes": 1738
+    },
+    "issuer-initial-test-failure.json": {
+      "sha256": "a89a4461d0ce6d32afa664ea227158fe76639e34f03892e60729a10e9ff2a4f5",
+      "bytes": 684
+    },
+    "issuer-pr-independent-review.json": {
+      "sha256": "bcf522b7cd1df60c63f2e8339909269d51cb1736f4f265bbe4c4b5b21cd4e0df",
+      "bytes": 2376
+    },
+    "issuer-pr-root-test-binding.json": {
+      "sha256": "bde880f8c9b7c0549e8d2e04e7341a92c84d60a5874fda9871bf1a0beabd94d2",
+      "bytes": 669
+    },
+    "issuer-pr-root-tests.txt": {
+      "sha256": "402cf5eb116803784d49c0e4fb1cba40cd07fc310f1a552e8cbb5d34eb08eb17",
+      "bytes": 118
+    },
+    "pr-identity-remediation.json": {
+      "sha256": "b8e2a7bdba7fd7a725c6868f660d87f9bad6d4d9e6d95d35b3466310f43117bb",
+      "bytes": 1172
+    },
+    "qualified-core-current-source.json": {
+      "sha256": "dcd05cd276925561a4ae56488140da80a64e3bddd5ef1d914bbd5872f07ab70a",
+      "bytes": 3507
+    },
+    "qualified-core-doctor.txt": {
+      "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "bytes": 5181
+    },
+    "qualified-core-full-tests.txt": {
+      "sha256": "cdc727a6b3041b0a12338eb0575fa9d2048f732313dddd954585295f4299c5a3",
+      "bytes": 17453
+    },
+    "qualified-core-helper-plan.txt": {
+      "sha256": "f42827be7d795affa9cf9d1e67d9003a9cbda3c91ce77ed36691cda5d4b34166",
+      "bytes": 685
+    },
+    "qualified-core-validate.txt": {
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "bytes": 4893242
+    },
+    "qualified-core-validation.json": {
+      "sha256": "0d808dbe7040d422e3b3e66571a4e2404751d6434418d5beee2fa986f11f2ee6",
+      "bytes": 4557
+    },
+    "v1-commit-receipt.json": {
+      "sha256": "89849335ca1172ddf67b2d2a3ecf89428b74668a355d634d3e9f6b05174900bc",
+      "bytes": 453
+    }
+  },
+  "git_text_projections": {
+    "effect-capsule-independent-review.json": {
+      "raw_sha256": "b8611df245412c4ec35029ed93a1f4a0b4362dc97f50b8073dfeec833a0b9ce9",
+      "git_lf_sha256": "b8611df245412c4ec35029ed93a1f4a0b4362dc97f50b8073dfeec833a0b9ce9"
+    },
+    "issuer-pr-independent-review.json": {
+      "raw_sha256": "bcf522b7cd1df60c63f2e8339909269d51cb1736f4f265bbe4c4b5b21cd4e0df",
+      "git_lf_sha256": "bcf522b7cd1df60c63f2e8339909269d51cb1736f4f265bbe4c4b5b21cd4e0df"
+    },
+    "issuer-pr-root-test-binding.json": {
+      "raw_sha256": "bde880f8c9b7c0549e8d2e04e7341a92c84d60a5874fda9871bf1a0beabd94d2",
+      "git_lf_sha256": "bde880f8c9b7c0549e8d2e04e7341a92c84d60a5874fda9871bf1a0beabd94d2"
+    },
+    "pr-identity-remediation.json": {
+      "raw_sha256": "b8e2a7bdba7fd7a725c6868f660d87f9bad6d4d9e6d95d35b3466310f43117bb",
+      "git_lf_sha256": "b8e2a7bdba7fd7a725c6868f660d87f9bad6d4d9e6d95d35b3466310f43117bb"
+    },
+    "qualified-core-current-source.json": {
+      "raw_sha256": "dcd05cd276925561a4ae56488140da80a64e3bddd5ef1d914bbd5872f07ab70a",
+      "git_lf_sha256": "dcd05cd276925561a4ae56488140da80a64e3bddd5ef1d914bbd5872f07ab70a"
+    },
+    "qualified-core-validation.json": {
+      "raw_sha256": "0d808dbe7040d422e3b3e66571a4e2404751d6434418d5beee2fa986f11f2ee6",
+      "git_lf_sha256": "0d808dbe7040d422e3b3e66571a4e2404751d6434418d5beee2fa986f11f2ee6"
+    },
+    "v1-commit-receipt.json": {
+      "raw_sha256": "89849335ca1172ddf67b2d2a3ecf89428b74668a355d634d3e9f6b05174900bc",
+      "git_lf_sha256": "89849335ca1172ddf67b2d2a3ecf89428b74668a355d634d3e9f6b05174900bc"
+    }
+  },
+  "scope": "Local source checkpoint; raw full-suite evidence precedes the separately tested PR identity correction. No operational activation or full broker completion."
+}

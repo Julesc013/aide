@@ -294,3 +294,20 @@ AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01 records current execution authority, exac
 - The local broker core and frozen-candidate contract are documented in `docs/reference/integration-broker-core.md`; full protected transport and isolated-host qualification remain separate queue work.
 
 - `docs/reference/integration-broker-core.md` describes candidate v2, bounded preparation recovery, coordinator-v1 and external authority issuance boundaries; foundation history remains in checkpoint 7e4de0c9.
+
+### AIDE-CW-INTEGRATION-BROKER-01 qualified transport continuation
+
+Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds
+frozen delta/preparation recovery/coordinator v1. Continue exact-generation
+effect validation, external delegated authority and bounded branch/PR/check
+observation transport under the task ExecPlan. Real host/store and atomic
+target merge qualification remain open; AIDE has no current hosted workflows
+or branch rules. No operational activation or settings mutation is claimed.
+
+### Broker delegated-core current evidence
+
+The broker task evidence now binds the complete 27-file current source, separate
+independent effect/capsule and issuer/PR reviews, historical full-suite results
+and focused remediation tests. qualified-core-custody.json distinguishes raw
+archived bytes from readable Git text projections; neither constitutes live
+host or provider qualification.

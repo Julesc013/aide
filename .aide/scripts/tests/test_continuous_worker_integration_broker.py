@@ -106,6 +106,99 @@ class BrokerTests(unittest.TestCase):
         self.addCleanup(broker.close)
         return broker
 
+    def test_effect_boundary_holds_generation_lease_through_dispatch(self):
+        broker = self.broker(self.transport)
+        original = self.transport.apply
+        def apply(request):
+            generation = self.state / broker.ledger.preparation(digest(request))["generation"]
+            with self.assertRaises(OSError):
+                generation.rename(self.state / "substituted")
+            original(request)
+        self.transport.apply = apply
+        self.assertEqual(broker.apply(self.request)["status"], "integrated")
+        self.assertEqual(self.transport.calls, 1)
+
+    def test_effect_boundary_rejects_identical_bytes_replacement_without_deleting_it(self):
+        broker = self.broker(self.transport)
+        broker.prepare(self.request)
+        folder = self.state / broker.ledger.preparation(digest(self.request))["generation"]
+        retained = self.state / "retained-original"
+        self.assertTrue(folder.is_relative_to(self.root) and retained.is_relative_to(self.root))
+        folder.rename(retained)
+        shutil.copytree(retained, folder)
+        with self.assertRaisesRegex(Refused, "object was replaced"):
+            broker.apply(self.request)
+        self.assertTrue(folder.is_dir() and retained.is_dir())
+        self.assertEqual(self.transport.calls, 0)
+        self.assertEqual(broker.ledger.get(digest(self.request))["stage"], "prepared")
+
+    def test_effect_boundary_rejects_index_and_configuration_drift_before_intent(self):
+        broker = self.broker(self.transport)
+        broker.prepare(self.request)
+        folder = self.state / broker.ledger.preparation(digest(self.request))["generation"]
+        index, config = (folder / "index").read_bytes(), (folder / "config").read_bytes()
+        self.git.run(folder, "update-index", "-z", "--index-info",
+                     data=("0 " + "0" * 40 + "\tsrc/new.bin").encode() + b"\0")
+        with self.assertRaisesRegex(Refused, "index differs"):
+            broker.apply(self.request)
+        (folder / "index").write_bytes(index)
+        (folder / "config").write_bytes(config + b"\n[include]\npath = foreign-config\n")
+        with self.assertRaisesRegex(Refused, "configuration changed"):
+            broker.apply(self.request)
+        self.assertEqual(self.transport.calls, 0)
+        self.assertEqual(broker.ledger.get(digest(self.request))["stage"], "prepared")
+
+    def test_effect_boundary_rejects_changed_alternate_before_reading_it(self):
+        broker = self.broker(self.transport)
+        broker.prepare(self.request)
+        folder = self.state / broker.ledger.preparation(digest(self.request))["generation"]
+        alternate = folder / "objects/info/alternates"
+        original = alternate.read_bytes()
+        for data in (b"/unadmitted/object/store\n", original + original):
+            with self.subTest(data=data):
+                alternate.write_bytes(data)
+                with self.assertRaisesRegex(Refused, "alternate differs"):
+                    broker.apply(self.request)
+        self.assertEqual(self.transport.calls, 0)
+        self.assertEqual(broker.ledger.get(digest(self.request))["stage"], "prepared")
+
+    def test_effect_boundary_rejects_corrupt_and_missing_materialized_blob(self):
+        broker = self.broker(self.transport)
+        broker.prepare(self.request)
+        folder = self.state / broker.ledger.preparation(digest(self.request))["generation"]
+        oid = self.manifest["files"]["src/new.bin"]["oid"]
+        blob = folder / "objects" / oid[:2] / oid[2:]
+        original = blob.read_bytes()
+        for data in (b"corrupt object", None):
+            with self.subTest(missing=data is None):
+                blob.chmod(0o600)
+                if data is None:
+                    blob.unlink()
+                else:
+                    blob.write_bytes(data)
+                with self.assertRaises(Refused):
+                    broker.apply(self.request)
+                blob.write_bytes(original)
+        self.assertEqual(self.transport.calls, 0)
+        self.assertEqual(broker.ledger.get(digest(self.request))["stage"], "prepared")
+
+    def test_effect_boundary_rechecks_base_after_content_validation(self):
+        broker = self.broker(self.transport)
+        broker.prepare(self.request)
+        changed = self.git.run(self.repo, "commit-tree", self.manifest["base_tree"],
+                               "-p", self.base, data=b"new protected base\n").decode().strip()
+        original = self.git.run
+        def run(root, *args, **kwargs):
+            result = original(root, *args, **kwargs)
+            if args[:2] == ("cat-file", "blob"):
+                original(self.repo, "update-ref", "refs/heads/dev", changed)
+            return result
+        self.git.run = run
+        with self.assertRaisesRegex(Refused, "base moved"):
+            broker.apply(self.request)
+        self.assertEqual(self.transport.calls, 0)
+        self.assertEqual(broker.ledger.get(digest(self.request))["stage"], "prepared")
+
     def test_binary_untracked_delete_and_tree_round_trip(self):
         broker = self.broker()
         result = broker.prepare(self.request)

@@ -10887,3 +10887,21 @@ Final export validation passed all eight commands; independent review verified a
 Status: local foundation verified for review. The new integration_broker package separates frozen content materialization and durable remote-effect intent from the worker ledger. Broker suite: 22 pass and one explicit host symlink-creation skip; existing worker suite: 51 pass. Independent root review requires bounded delta handoff for actual AIDE repository size and safe interrupted-preparation recovery before coordinator-v1 adoption/unattended use. No live integration, host isolation, credentials or model calls are claimed.
 
 - Implemented candidate v2 delta overlays, atomically created Windows preparation generations with retained crash recovery, and coordinator-v1 frozen evidence/external authority/receipt handling. Ownership tests exposed and corrected metadata-only sharing behavior; full validation and independent review continue.
+
+### AIDE-CW-INTEGRATION-BROKER-01 qualified transport continuation
+
+Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds
+frozen delta/preparation recovery/coordinator v1. Continue exact-generation
+effect validation, external delegated authority and bounded branch/PR/check
+observation transport under the task ExecPlan. Real host/store and atomic
+target merge qualification remain open; AIDE has no current hosted workflows
+or branch rules. No operational activation or settings mutation is claimed.
+
+### Broker delegated-core review and evidence custody
+
+Independent root review passed for both source increments, including eight
+prepared-effect/capsule tests and 13 current issuer/PR tests. The historical
+107-test baseline and later PR identity correction have separate source binds.
+The scoped local checkpoint preserves original review and validation bytes in
+qualified-core-evidence.zip with explicit LF projection hashes for Git. No
+provider dispatcher, isolated host or qualified target is installed by this step.
