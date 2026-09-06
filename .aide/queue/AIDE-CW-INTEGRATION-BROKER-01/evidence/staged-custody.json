@@ -1,0 +1,138 @@
+{
+  "schema": "aide.evidence-custody.v1",
+  "archive": "staged-evidence.zip",
+  "archive_sha256": "28243acee0871eb76b635337682975293e2862846674d769b63c9df27498adff",
+  "members": {
+    "provider-closeout-commit-receipt.json": {
+      "sha256": "43a0311a66bfe45b2a11dcceeb3af01cc608b2126bc149852f77bb7b0fb1b4ce",
+      "bytes": 2634
+    },
+    "provider-compact-review.json": {
+      "sha256": "a5d9f0f5c4595da1e66b9b55ad5217bfa134da058dafcdedfc6595bb3b63e855",
+      "bytes": 3248
+    },
+    "qualified-core-commit-receipt.json": {
+      "sha256": "a1fd62066588101e19dd82b9d0f21ccf6239f208d3d53e907bd7a98bfaf647c3",
+      "bytes": 2769
+    },
+    "staged-checkpoint-helper-plan.txt": {
+      "sha256": "f42827be7d795affa9cf9d1e67d9003a9cbda3c91ce77ed36691cda5d4b34166",
+      "bytes": 685
+    },
+    "staged-current-source.json": {
+      "sha256": "da0b71f4755d333bfa6842fbf6cc0c55bf94d8a795d64e6677da8fc76ce21c4c",
+      "bytes": 3634
+    },
+    "staged-doctor.txt": {
+      "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "bytes": 5181
+    },
+    "staged-helper-validation.json": {
+      "sha256": "2b9f9c597525f73a2042c117641ed5d114fba9110da9f77712425f80dcf57f02",
+      "bytes": 385
+    },
+    "staged-remediation-tests.json": {
+      "sha256": "a7b02c934b428084b0f7fc71ffb68204267d22038833a693a75f8fe48095e3fa",
+      "bytes": 835
+    },
+    "staged-remediation-tests.txt": {
+      "sha256": "73c96d219601e2d4ffa303bcc182ed69ee9eaf9c9346785f736841c7bed81675",
+      "bytes": 4120
+    },
+    "staged-root-expiry-probe.json": {
+      "sha256": "28df51374de8a91e2bd1c988233b239ab4830f1e51df75ccd764bb8717300e6c",
+      "bytes": 246
+    },
+    "staged-root-independent-review.json": {
+      "sha256": "af9838affaff5949581afe093443b4982e25e58cd69cc9a5504d90ead6810f7d",
+      "bytes": 5485
+    },
+    "staged-root-review-tests.json": {
+      "sha256": "4e79ff96e6e2e47491a34b0b7b0d3a4c6c3ff49fd5bdb96ab8f7afb671c12fe1",
+      "bytes": 233
+    },
+    "staged-root-review-tests.txt": {
+      "sha256": "894dc913c5940810b2b3f2d5f79a60b98ac4fa4637f5ebd64709e0e5bbcea735",
+      "bytes": 126
+    },
+    "staged-slice-validation.before-review.json": {
+      "sha256": "6535525d187bd31b4fd6cfc465b25d38da2d744af77800971fd526bbbebb72d2",
+      "bytes": 1854
+    },
+    "staged-slice-validation.json": {
+      "sha256": "67f99d3cc615a12eae6afe35ef6296cde5518cf876175dc985c25d745d385e5f",
+      "bytes": 2058
+    },
+    "staged-source.patch": {
+      "sha256": "18960c11244736ab2e6f9553406e74a5483559b23bf2b2b8ce8392cab74f347b",
+      "bytes": 36238
+    },
+    "staged-transport-first-tests.json": {
+      "sha256": "4261431990e09bbca1176bfa3806be27562baf6bad74d9ea27b71b5d79cec18b",
+      "bytes": 713
+    },
+    "staged-transport-first-tests.txt": {
+      "sha256": "46d09e38554d669a62e8fc1a2de455a56dd1cac721b834f68ffe6da381bfa150",
+      "bytes": 3351
+    },
+    "staged-transport-regression.json": {
+      "sha256": "35bd90256b95b2716aa458afddfa0358a67f99e8a570b4201ac4e1e35cac0533",
+      "bytes": 722
+    },
+    "staged-transport-regression.txt": {
+      "sha256": "828f68b58c3cb2c7628ac877296b28a4f5a82e72396f91fb5437983d1ff2132c",
+      "bytes": 14956
+    },
+    "staged-transport-review-source.before-remediation.json": {
+      "sha256": "d0d626dcdfb0aa5de89d3ff2d2977f3bd34a24ca41eccb3d2ec96a6aeec4e303",
+      "bytes": 710
+    },
+    "staged-transport-review-source.json": {
+      "sha256": "8a958a4fc1052e2e70e9a614cd82abccb093b8dc2beec664981661902909e206",
+      "bytes": 835
+    },
+    "staged-validate.txt": {
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "bytes": 4893242
+    }
+  },
+  "git_text_projections": {
+    "staged-transport-review-source.json": {
+      "raw_sha256": "8a958a4fc1052e2e70e9a614cd82abccb093b8dc2beec664981661902909e206",
+      "git_lf_sha256": "8a958a4fc1052e2e70e9a614cd82abccb093b8dc2beec664981661902909e206"
+    },
+    "staged-current-source.json": {
+      "raw_sha256": "da0b71f4755d333bfa6842fbf6cc0c55bf94d8a795d64e6677da8fc76ce21c4c",
+      "git_lf_sha256": "da0b71f4755d333bfa6842fbf6cc0c55bf94d8a795d64e6677da8fc76ce21c4c"
+    },
+    "staged-slice-validation.json": {
+      "raw_sha256": "67f99d3cc615a12eae6afe35ef6296cde5518cf876175dc985c25d745d385e5f",
+      "git_lf_sha256": "67f99d3cc615a12eae6afe35ef6296cde5518cf876175dc985c25d745d385e5f"
+    },
+    "staged-root-independent-review.json": {
+      "raw_sha256": "af9838affaff5949581afe093443b4982e25e58cd69cc9a5504d90ead6810f7d",
+      "git_lf_sha256": "af9838affaff5949581afe093443b4982e25e58cd69cc9a5504d90ead6810f7d"
+    },
+    "staged-remediation-tests.json": {
+      "raw_sha256": "a7b02c934b428084b0f7fc71ffb68204267d22038833a693a75f8fe48095e3fa",
+      "git_lf_sha256": "a7b02c934b428084b0f7fc71ffb68204267d22038833a693a75f8fe48095e3fa"
+    },
+    "staged-root-review-tests.json": {
+      "raw_sha256": "4e79ff96e6e2e47491a34b0b7b0d3a4c6c3ff49fd5bdb96ab8f7afb671c12fe1",
+      "git_lf_sha256": "4e79ff96e6e2e47491a34b0b7b0d3a4c6c3ff49fd5bdb96ab8f7afb671c12fe1"
+    },
+    "provider-compact-review.json": {
+      "raw_sha256": "a5d9f0f5c4595da1e66b9b55ad5217bfa134da058dafcdedfc6595bb3b63e855",
+      "git_lf_sha256": "a5d9f0f5c4595da1e66b9b55ad5217bfa134da058dafcdedfc6595bb3b63e855"
+    },
+    "provider-closeout-commit-receipt.json": {
+      "raw_sha256": "43a0311a66bfe45b2a11dcceeb3af01cc608b2126bc149852f77bb7b0fb1b4ce",
+      "git_lf_sha256": "43a0311a66bfe45b2a11dcceeb3af01cc608b2126bc149852f77bb7b0fb1b4ce"
+    },
+    "qualified-core-commit-receipt.json": {
+      "raw_sha256": "a1fd62066588101e19dd82b9d0f21ccf6239f208d3d53e907bd7a98bfaf647c3",
+      "git_lf_sha256": "a1fd62066588101e19dd82b9d0f21ccf6239f208d3d53e907bd7a98bfaf647c3"
+    }
+  },
+  "qualification": "Historical pre-remediation 83-test run and current 21-test remediation/root review are distinct exact-source evidence. No operational provider/host/server qualification."
+}

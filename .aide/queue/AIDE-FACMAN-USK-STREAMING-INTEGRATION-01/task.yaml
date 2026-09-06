@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-FACMAN-USK-STREAMING-INTEGRATION-01
 title: Remediate and integrate the USK streaming dependency
 type: execution
-status: planned
-planning_state: admitted_backlog
-result: PENDING
+status: passed
+planning_state: implemented
+result: PASS
 created_at: 2026-09-06
 parent_task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
 target_repository: universal-setup

@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01
 title: Correct and integrate ULK current truth
 type: execution
-status: planned
-planning_state: admitted_backlog
-result: PENDING
+status: passed
+planning_state: implementation_completed
+result: PASS
 created_at: 2026-09-06
 parent_task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
 target_repository: universal-launcher
@@ -16,3 +16,6 @@ retained_gates:
   - no direct protected push, force push or self-approval
   - no production credentials, signing, billing or public publication
   - genuine human verdicts and identified disposable real-effect hosts
+updated_at: 2026-09-07
+completed_at: 2026-09-07
+integration_evidence: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/evidence/integration-closeout.json

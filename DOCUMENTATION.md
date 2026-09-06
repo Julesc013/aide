@@ -290,3 +290,46 @@ The intent-to-transaction planning reports under `.aide/reports/intent-to-transa
 ## Programme and portable-export repair
 
 AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01 records current execution authority, exact branch plans and durable validation. FacMan retains its own canonical plan and target-local queues. Portable source-only tests require explicit admission: the existing three AIDE Lite modules are retained; full runtime and continuous-worker tests remain source-only, including nested paths. Live activation is still disabled pending real host/broker/two-task qualification.
+
+- The local broker core and frozen-candidate contract are documented in `docs/reference/integration-broker-core.md`; full protected transport and isolated-host qualification remain separate queue work.
+
+- `docs/reference/integration-broker-core.md` describes candidate v2, bounded preparation recovery, coordinator-v1 and external authority issuance boundaries; foundation history remains in checkpoint 7e4de0c9.
+
+### AIDE-CW-INTEGRATION-BROKER-01 qualified transport continuation
+
+Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds
+frozen delta/preparation recovery/coordinator v1. Continue exact-generation
+effect validation, external delegated authority and bounded branch/PR/check
+observation transport under the task ExecPlan. Real host/store and atomic
+target merge qualification remain open; AIDE has no current hosted workflows
+or branch rules. No operational activation or settings mutation is claimed.
+
+### Broker delegated-core current evidence
+
+The broker task evidence now binds the complete 27-file current source, separate
+independent effect/capsule and issuer/PR reviews, historical full-suite results
+and focused remediation tests. qualified-core-custody.json distinguishes raw
+archived bytes from readable Git text projections; neither constitutes live
+host or provider qualification.
+
+### Staged broker continuation
+
+The integration broker reference now documents one-stage reconciliation, deterministic literal commit objects, independent stage intents, observation-only query and the absent qualified provider adapter.
+
+### Registered bridge contract and evidence
+
+The integration broker reference documents the fixed JSON request/response
+protocol, protected registration and qualifier requirements, finite retained IO
+ledger and named Job recovery. AIDE-CW-INTEGRATION-BROKER-01 keeps exact local
+source/test receipts distinct from pending provider, host/store and atomic
+server qualification. Historical test and review bytes remain preserved in
+task custody archives.
+
+### Provider facts and executable qualification plan
+
+The broker reference now documents finite raw REST reads, actual Actions
+run/attempt provenance, immutable merged parents, expired-authority observation
+and explicit target-policy absence. The new target WorkUnit contains cited
+GitHub contract research and local graph experiments; the existing host ExecPlan
+contains concrete Windows isolation/denial probes. Neither planning admission
+nor offline parser/graph tests install settings or qualify an operational host.

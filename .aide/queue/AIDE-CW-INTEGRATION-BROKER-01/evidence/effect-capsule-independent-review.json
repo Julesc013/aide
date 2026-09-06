@@ -1,0 +1,36 @@
+{
+  "schema": "aide.effect-capsule-independent-review.v1",
+  "reviewer": "root",
+  "source_files": {
+    "core/runtime/integration_broker/effect_boundary.py": "3ec69abec6691deb06939faac8940db75decef38f6272b005a52c5740eb9ecd2",
+    "core/runtime/integration_broker/service.py": "7770f5e7d7d4eac95544fdcf8ee628d737ebddb4c79088b8c6ad3a0e47fedde8",
+    ".aide/scripts/tests/test_continuous_worker_integration_broker.py": "5375d43820057f8e28e7864d7665753bc79ec2f781d12068950cffe23d748b45",
+    "core/runtime/integration_broker/capsule.py": "8c4efdc878a7746d1bae5da82713d72d24db9b746bd25a3c2ee62ba11a8f3d4a",
+    "core/runtime/continuous_worker/coordinator.py": "663ed1c0e11397028e8451f65bce7174502fa5c914c97733e0b4402d5af4f3d5",
+    ".aide/scripts/tests/test_continuous_worker_pipeline.py": "c70ef828af3e3761c2e640ace32df005d4735b74a02fad20bda15302f970bb4f"
+  },
+  "source_sha256": "e9a47c009e487394c716db45ad94a8861e72f65b75cf8608859a7def686957dc",
+  "runtime_source_unchanged": true,
+  "result": "PASS_SOURCE_REVIEW",
+  "tests": {
+    "count": 8,
+    "exit_code": 0,
+    "seconds": 48.518,
+    "log": "effect-capsule-root-tests.txt",
+    "sha256": "d2873c6ef4bcb827bd7f8144e022e8a53f16026c08fddaec75cf920b63a9ad7d"
+  },
+  "review": [
+    "generation object binding, protected alternate, config/index/tree/blob verification and held effect lease",
+    "guard placement before intent, no cleanup of substituted object or replay of uncertain transport",
+    "capsule authority separated from worker assertions; actual pinned argv/artifact/receipt/session reparse and snapshot binding"
+  ],
+  "findings": [],
+  "qualification_remaining": [
+    "protected stores must exclude concurrent child-file writers; directory leases alone do not provide this",
+    "controller authenticity and finite delegation require a separately qualified boundary",
+    "later multi-step transports must re-enter prepared candidate guard for every mutation",
+    "actual target atomic base/check enforcement and production host isolation remain unqualified"
+  ],
+  "scope_note": "Only these six files are independently reviewed here; concurrently added frozen issuer module is not included in this review.",
+  "operational_activation": false
+}

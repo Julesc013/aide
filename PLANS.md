@@ -3338,3 +3338,50 @@
 - Status: active execution authorized 2026-09-06.
 - Plan: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/ExecPlan.md.
 - Objective: full FacMan 0.1 Beta1 engineering/package completion, exact integration, honest human gates.
+
+## AIDE-CW-INTEGRATION-BROKER-01 â€” local transaction and handoff slice
+
+Status: active, exact dev base bfb86c12b9e6d2970024d29c57ba629994ec43cc. Implement frozen candidate bytes/Git tree and a separate durable broker core. Scope and acceptance are in the task ExecPlan. Validation uses disposable local Git and injected transport only; actual protected transport, isolated host and coordinator v1 adoption remain open.
+
+- AIDE-CW-INTEGRATION-BROKER-01 continues from reviewed checkpoint 7e4de0c9 with bounded delta handoff, owned preparation recovery and coordinator-v1 wiring; fresh tests/review pending, operational authority/transport/host remain unqualified.
+
+- AIDE-CW-INTEGRATION-BROKER-01 continues from reviewed checkpoint 7e4de0c9 with bounded delta handoff, owned preparation recovery and coordinator-v1 wiring; fresh tests/review pending, operational authority/transport/host remain unqualified.
+
+### AIDE-CW-INTEGRATION-BROKER-01 qualified transport continuation
+
+Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds
+frozen delta/preparation recovery/coordinator v1. Continue exact-generation
+effect validation, external delegated authority and bounded branch/PR/check
+observation transport under the task ExecPlan. Real host/store and atomic
+target merge qualification remain open; AIDE has no current hosted workflows
+or branch rules. No operational activation or settings mutation is claimed.
+
+### Broker delegated-core source checkpoint
+
+AIDE-CW-INTEGRATION-BROKER-01 now has independent exact-source review for the
+prepared-effect guard, controller capsule, finite issuer and durable PR intent
+core. Continue qualified provider adapter and stage reconciliation under the
+same active WorkUnit; full broker and operational qualification remain open.
+
+### Staged broker continuation
+
+Staged broker reconciliation now connects the reviewed local contracts. Validate one-intent-per-stage restart behavior before independent source review; actual bounded provider adapter and host/server qualification remain open.
+
+### Registered provider bridge continuation
+
+AIDE-CW-INTEGRATION-BROKER-01 continues from reviewed staged checkpoint
+fe233c4611d5dfd02eac5c8460b828c9c8c1c450 with a fixed-command JSON bridge,
+separate durable call reservations and real Windows refusal/recovery tests.
+Freeze and independently review the exact source before checkpointing. Actual
+provider fact normalization, protected host/store and exact-base server
+qualification remain required; operational activation remains false.
+
+### Broker provider facts and concrete completion dependencies
+
+Continue from reviewed/pushed 8c3df653 with raw GitHub response normalization,
+actual check/run/attempt provenance and immutable merged-object reconciliation.
+AIDE-CW-GITHUB-TARGET-QUALIFICATION-01 admits exact policy/principal/workflow
+preparation and hosted adversarial acceptance without installing settings.
+AIDE-CW-ISOLATED-HOST-01 names AppContainer, owned-root ACL, network and denial
+probes. Provider/source preparation starts independently; full broker closure
+requires actual host and target qualification before the existing live pilot.

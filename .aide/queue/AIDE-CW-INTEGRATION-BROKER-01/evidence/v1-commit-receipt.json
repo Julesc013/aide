@@ -1,0 +1,12 @@
+{
+  "schema": "aide.local-checkpoint.v1",
+  "commit": "f06bcd75aafeab175202a89ea1d69c815b7bd911",
+  "tree": "53919c7b403d9e8c9d859a4eba759fdf77d4b51d",
+  "base_revision": "7e4de0c9762ac89fa6c40fda64a33b0c6f471e93",
+  "source_manifest_sha256": "fc7cf178662d3906ab3a3751d38078a44e3b324606da47c38805259fe09c8d3a",
+  "files": 27,
+  "message_latest_range_checks": "PASS",
+  "pushed": false,
+  "full_task_complete": false,
+  "operational_activation": false
+}

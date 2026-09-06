@@ -3187,13 +3187,21 @@ items:
     prompt: .aide/queue/AIDE-CW-ISOLATED-HOST-01/prompt.md
     evidence: .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence
   - id: AIDE-CW-INTEGRATION-BROKER-01
-    status: planned
-    planning_state: admitted_backlog
+    status: running
+    planning_state: execution_active
     title: Implement the protected integration broker
     task: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/task.yaml
     exec_plan: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md
     prompt: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/prompt.md
     evidence: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence
+  - id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Implement and qualify the exact GitHub broker target contract
+    task: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence
   - id: AIDE-CW-CLONE-PREPARATION-01
     status: planned
     planning_state: admitted_backlog
@@ -3235,16 +3243,16 @@ items:
     prompt: .aide/queue/AIDE-CW-PROGRAMME-OPERATIONS-01/prompt.md
     evidence: .aide/queue/AIDE-CW-PROGRAMME-OPERATIONS-01/evidence
   - id: AIDE-FACMAN-USK-STREAMING-INTEGRATION-01
-    status: planned
-    planning_state: admitted_backlog
+    status: passed
+    planning_state: implemented
     title: Remediate and integrate the USK streaming dependency
     task: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence
   - id: AIDE-FACMAN-USK-ZIP-INTEGRATION-01
-    status: planned
-    planning_state: admitted_backlog
+    status: passed
+    planning_state: implemented
     title: Propagate fixes and integrate the USK ZIP64 dependency
     task: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/ExecPlan.md
@@ -3275,16 +3283,18 @@ items:
     prompt: .aide/queue/AIDE-FACMAN-USK-PACKAGE-PROMOTION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-USK-PACKAGE-PROMOTION-01/evidence
   - id: AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01
-    status: planned
-    planning_state: admitted_backlog
+    status: passed
+    planning_state: implementation_completed
+    result: PASS
     title: Correct and integrate ULK current truth
     task: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/evidence
   - id: AIDE-FACMAN-ULK-PROMOTION-01
-    status: planned
-    planning_state: admitted_backlog
+    status: passed
+    planning_state: implementation_completed
+    result: PASS
     title: Promote reviewed ULK provider truth when required
     task: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/ExecPlan.md

@@ -10881,3 +10881,62 @@ Implemented a separate durable Codex coordinator prototype with atomic claims/in
 The current user authorizes scoped implementation, validation, synchronization, commits and normal checked integration through full FacMan Beta1. The continuous-worker prototype remains source-qualified only; seven bounded runtime follow-ups and seven provider coordination tasks are admitted beneath AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01. Regenerated portable exports now exclude source-only runtime tests while retaining all previously admitted AIDE Lite test modules.
 
 Final export validation passed all eight commands; independent review verified all 829 checksum entries for 826 payload files and preserved all 37 baseline portable tests. Both portable apply templates are included in source closure and mapped outputs. The safe example secrets README is explicitly tracked; no actual secret or source-only worker state is exported. See programme evidence/final-export-validation.json and export-independent-review.json.
+
+## AIDE-CW-INTEGRATION-BROKER-01 â€” local core implementation
+
+Status: local foundation verified for review. The new integration_broker package separates frozen content materialization and durable remote-effect intent from the worker ledger. Broker suite: 22 pass and one explicit host symlink-creation skip; existing worker suite: 51 pass. Independent root review requires bounded delta handoff for actual AIDE repository size and safe interrupted-preparation recovery before coordinator-v1 adoption/unattended use. No live integration, host isolation, credentials or model calls are claimed.
+
+- Implemented candidate v2 delta overlays, atomically created Windows preparation generations with retained crash recovery, and coordinator-v1 frozen evidence/external authority/receipt handling. Ownership tests exposed and corrected metadata-only sharing behavior; full validation and independent review continue.
+
+### AIDE-CW-INTEGRATION-BROKER-01 qualified transport continuation
+
+Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds
+frozen delta/preparation recovery/coordinator v1. Continue exact-generation
+effect validation, external delegated authority and bounded branch/PR/check
+observation transport under the task ExecPlan. Real host/store and atomic
+target merge qualification remain open; AIDE has no current hosted workflows
+or branch rules. No operational activation or settings mutation is claimed.
+
+### Broker delegated-core review and evidence custody
+
+Independent root review passed for both source increments, including eight
+prepared-effect/capsule tests and 13 current issuer/PR tests. The historical
+107-test baseline and later PR identity correction have separate source binds.
+The scoped local checkpoint preserves original review and validation bytes in
+qualified-core-evidence.zip with explicit LF projection hashes for Git. No
+provider dispatcher, isolated host or qualified target is installed by this step.
+
+### Staged broker continuation
+
+Added typed staged transport routing to Broker.reconcile while preserving legacy single-effect recovery. Initial 17 tests passed in 46.845 seconds, including actual child termination after durable intent and literal local Git candidate/merge objects; only the subsequent Windows-only test discovery guard changes that initial test binding.
+
+### Registered provider child boundary
+
+Added an internal pinned JSON bridge and a separate WAL/FULL call ledger under
+AIDE-CW-INTEGRATION-BROKER-01. Exact read-attempt tokens and mutation intents
+precede child dispatch; source/qualification/deadline checks run before creation
+and during bounded execution. Retained response artifacts and named Job recovery
+preserve uncertain effects without replay. The small shared changes expose the
+read token and a separate provider-lock scope while preserving default worker
+locking. All 43 current Windows/staged/lock tests passed in 155.576 seconds; doctor,
+validate and source-only export checks also passed. Exact source-bound evidence
+is recorded in the task. Independent root source review and all 11 replayed
+bridge tests passed with unchanged hashes. No operational provider
+implementation or qualification is installed.
+
+### Bounded raw GitHub observations
+
+Added a fixed-origin finite REST reader, Actions provenance mapper and exact
+PR/Git observation collector under AIDE-CW-INTEGRATION-BROKER-01. Twenty-six
+offline tests pass, including null/duplicate/truncated responses, wrong refs or
+forks, rerun and late-target drift, expired-authority observe-only recovery and
+immutable merged parents. No HTTP client, credential reader or target policy
+is installed; policy pins remain absent. Thirteen disposable local Git graph
+experiments identify the strict-check premises and same-OID retarget counterexample.
+Exact source review and actual host/server acceptance remain separate gates.
+
+The independent review identified a normal queued-check publication window.
+That window now yields wait_checks with incomplete provenance, preserving
+automatic polling; completed successful checks still require the actual run
+and attempt job. A durable pending-to-complete regression confirms no mutation
+intent is created while evidence is incomplete.

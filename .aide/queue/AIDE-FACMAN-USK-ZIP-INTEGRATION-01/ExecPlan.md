@@ -7,3 +7,15 @@
 5. Close only actual acceptance, preserve blockers and dispatch the next eligible task.
 
 Coordinate USK-STORED-ZIP-STREAMING-01: propagate reviewed PR27 fixes without rewriting history, integrate base then retarget PR28 to actual dev; revalidate resulting candidate, vendored provenance and archive/native matrices before normal merge.
+
+## Completed acceptance on 2026-09-07
+
+The original PR28 source at `79245461c547ee2a2389a0104959cafab051b45a` was normally merged with actual integrated PR27 dev, retaining both ancestries. The completed stored/Deflate ZIP64 reader and pinned zlib subset were reviewed, and two substantive integration defects were remediated: retained-root recovery projection and ambiguous entry-set digest framing. Both regressions failed before their fixes. Reviewed checkpoint `8a0504c2f59e4cf76b49790761b18e3f75b20554` and the source-identical final task head `c7db3eeb04a1408d4abb6ee11204ca5e6c3bc40d` share tree `2e3d57c6d3050b19d22ca97b00bd9787f7d6a900`.
+
+PR28 merged as `b1da97893466ae4f91a3f6f59a92c068ee7e1d84`, PR34 promoted main `827a7aeb52b73d68a831e7ae97c877026a45c041`, and zero-file PR35 synchronized dev `ec39e13b664f66a1107803827f8a701a0ce1302f`. Each passed twelve current hosted checks before its normal exact-head merge. Independent review verified all16 pinned zlib members against the official archive; all53 Python/strict/19runtime checks and all3 clean-source SDK phases passed. The SDK's dirty-source and nested FileTracker failures were preserved; the unchanged harness passed in short owned directories without waiving gates.
+
+Separately admitted follow-on `USK-WINDOWS-PATH-ADMISSION-01` resolved the reproduced late262-character audit failure by pure pre-effect capacity admission. Exact checkpoint `fe1a47817be5f9d73cb88e553688b8e1cc3776a4`, tree `3faabe599f2ebe5f2a6f87287693f411fe1d6594`, passed independent source review,53Python/strict/19runtime checks, independent8native/18contract replay and all3 clean-source SDK gates. PR36 integrated, PR37 promoted, and zero-file PR38 synchronized; each passed twelve fresh checks with both workflow heads verified.
+
+Windows file259/directory247/component255 limits count UTF-16 units and include derived operation paths. Boundary, Unicode I/O, long transaction ID and full-snapshot preservation proofs pass. The deeper268-unit ownership fixture is intentionally refused before effects; its old harness abort and unchanged-snapshot diagnostic are preserved. General deep paths and full lifecycle Unicode persistence are not qualified.
+
+The current synchronized provider observation is main `ffe1b407abb1bbc340bc925396bd4be197002033`, dev `5e4c660890201accb30a14ed31b97d329a3be3cd`, shared source tree `3faabe599f2ebe5f2a6f87287693f411fe1d6594`; primary is clean dev. This is source/provider integration truth, not FacMan pin adoption or Beta1 product acceptance. The exact final receipt is the ZIP coordinator's `evidence/provider-source/path-admission-canonical-integration-chain.json` (SHA256 `149351d0aae2f6965614b602ddafa82358966be03a34e5926ba146f7f65dfda6`).

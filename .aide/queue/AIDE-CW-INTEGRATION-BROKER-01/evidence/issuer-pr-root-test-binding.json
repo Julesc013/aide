@@ -1,0 +1,11 @@
+{
+  "source": {
+    "core/runtime/integration_broker/authority.py": "e2d81142181d0a44806573a236f6c29e653d1ee0cba48caf2995ceafd3778093",
+    "core/runtime/integration_broker/pr_observation.py": "595239953f8098a8e7ad5625bc277afb701fd4fbad4d13a344eb0aa1da3e95dc",
+    ".aide/scripts/tests/test_continuous_worker_broker_authority.py": "637eb7263f80abb4912df16b9deba4d791721ed103417f5f9a0d1a1fb453e7c3",
+    ".aide/scripts/tests/test_continuous_worker_pr_observation.py": "862af69a99feca38b67365eb72dfbb5a1a8971bf925a05d90383a01b3ec40f1f"
+  },
+  "unchanged_after": true,
+  "exit_code": 0,
+  "log_sha256": "402cf5eb116803784d49c0e4fb1cba40cd07fc310f1a552e8cbb5d34eb08eb17"
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "aide.broker.completion-plan-source.v1",
+  "files": {
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/ExecPlan.md": "957bb517c0cb19b564ef3d32736de376d3f74755c785bbb0491a0d612664215f",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/changed-files.md": "90166b7075164990a9268caf28414f99ff2f8c6c8ee2ad3ebf406a0a72a65b51",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/remaining-risks.md": "98a53d6b40c5ceee25aa295fa0dd65043a9acbb1951414ddcf312b52ae4be4d4",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/strict-contract-experiments-run.json": "a8aba1fb67b256f7a9095a0d5e202ab1c4e5437b4434ef1641ee23e0409b72fa",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/strict-contract-experiments.json": "2a5831b106ec50233e8d6d863e45e69ce3e3e6f0507f65528e59fdd10643315e",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/strict-contract-experiments.py": "3ad248cd54670d4f5554d7b947e6950d2ea3ac874f36d2cdfb9d96ac08ec3f97",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/strict-target-investigation.md": "bee64eaf044f76c6f2013589cb40ba3edd0a6cf6f60ce449653f8fd204c8e1c3",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/validation.md": "e69d44a885866256ff3f82f52b94493ba86491f9f7d14ab51bd1413ed29443b8",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/prompt.md": "39ef2ea8c41d749483260cc2ed8844fe471bda61f0e4370bfa8648dd724dfed6",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/status.yaml": "642caf4ed574d9af9fa25b0167a3fca553205980f4be71e1d4ecc9f6b1d3e1fd",
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/task.yaml": "a70f21ba86c1a46845638ebbd074086f63a53b269ed02c6ce04ae3cad12ce9c9",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md": "a99545888b17a10af29f8a0bfd50afc719aa4899b2fc247990acdee60dd2c6df",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/task.yaml": "22fa3999f429d5dcffaa90d42af0406490b778c8cd72a690778d74e115746ecb",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md": "76e51d76ac4a11abbea15c14d6983f6d074771677b7921babba181850c0eb55c",
+    "DOCUMENTATION.md": "9093fd7a92b1f1d54e8d846615f07082c09cd9c786fa7fc9f9376acaf9c605ab",
+    "IMPLEMENT.md": "4d774d10b6f66d43b3c4f5e190893fc0f491c27a1b42ef0b5b809ee1b3256b74",
+    "PLANS.md": "cd67f8956a93542e96a423b92f5f08d23fa9c9596cc279812a88d740b3d4982d"
+  },
+  "aggregate_sha256": "9fbbac9ceeafe5d5a59e678e90eda767996a3c957e3709897cb5b75802c91b64",
+  "owned_index_block": "  - id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\n    status: planned\n    planning_state: admitted_backlog\n    title: Implement and qualify the exact GitHub broker target contract\n    task: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/task.yaml\n    exec_plan: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/ExecPlan.md\n    prompt: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/prompt.md\n    evidence: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence\n",
+  "owned_index_block_sha256": "38ef1341bf0fac5e2a05e85c929b260f82b6929357d99dc2a6024f4f101f87c4",
+  "provider_index_activation_excluded": true,
+  "settings_mutated": false,
+  "hosted_qualification": false,
+  "raw_members": {
+    ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/strict-contract-experiments.txt": "target-qualification/strict-contract-experiments.txt"
+  }
+}

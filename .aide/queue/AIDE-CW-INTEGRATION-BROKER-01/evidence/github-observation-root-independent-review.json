@@ -1,0 +1,59 @@
+{
+  "result": "PASS",
+  "reviewer": "root",
+  "scope": "Raw GitHub observation and ordinary pending CI windows; source-only boundary",
+  "source_before": {
+    "core/runtime/integration_broker/github_api.py": "c65409bbc2a2a621a0e457f04841ab3c21d5fdeceaf6cda1d4bdb2b95b086019",
+    "core/runtime/integration_broker/github_checks.py": "52aa57f50816bc3dba18a3c13775eecfde1a2fbf9a488e56dd1d327ac52bcf53",
+    "core/runtime/integration_broker/github_observation.py": "ad7f924ace33649e44dbcfd460a90141c1e7d67408c3133fc203b7d877bdb546",
+    ".aide/scripts/tests/test_continuous_worker_github_observation.py": "e1d9898637986a47679803a0670f145a98268d87868665cac1b929894f52bd24"
+  },
+  "source_after": {
+    "core/runtime/integration_broker/github_api.py": "c65409bbc2a2a621a0e457f04841ab3c21d5fdeceaf6cda1d4bdb2b95b086019",
+    "core/runtime/integration_broker/github_checks.py": "52aa57f50816bc3dba18a3c13775eecfde1a2fbf9a488e56dd1d327ac52bcf53",
+    "core/runtime/integration_broker/github_observation.py": "ad7f924ace33649e44dbcfd460a90141c1e7d67408c3133fc203b7d877bdb546",
+    ".aide/scripts/tests/test_continuous_worker_github_observation.py": "e1d9898637986a47679803a0670f145a98268d87868665cac1b929894f52bd24"
+  },
+  "source_unchanged": true,
+  "test_command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    ".aide/scripts/tests",
+    "-p",
+    "test_continuous_worker_github_observation.py",
+    "-v"
+  ],
+  "test_exit": 0,
+  "seconds": 0.372,
+  "test_log_sha256": "b13c6754ed61984f6589c0555d99f6a6f6453c240cb19381bd13772f82340e08",
+  "independent_probes": [
+    "Mixed completed and exact pending required checks remain wait_checks with only observed successful provenance",
+    "Monotonic expiry during first raw response refuses before second read"
+  ],
+  "resolved_findings": [
+    {
+      "severity": "P2",
+      "issue": "Queued checks arriving before their Actions run/job previously raised Refused and stopped automatic polling",
+      "fix": "Exact pending app/head records mark checks incomplete without invented workflow provenance; full successful provenance remains required"
+    }
+  ],
+  "real_api_fixture": {
+    "path": "github-observation-real-jobs.json",
+    "sha256": "4294affba49d13a1588b00e64f605ddcd772ad05df833eb52f1e17fa2819cae6",
+    "scope": "Read-only schema/identity observation of six actual jobs; not broker target qualification"
+  },
+  "primary_sources": [
+    "https://docs.github.com/en/rest/actions/workflow-jobs?apiVersion=2026-03-10",
+    "https://docs.github.com/en/rest/about-the-rest-api/api-versions"
+  ],
+  "remaining_boundaries": [
+    "No credential HTTP reader installed",
+    "No target rules, restricted principal or atomic merge contract qualified",
+    "No operational activation",
+    "Bounded consistency observations do not provide server compare-and-swap"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema": "aide.evidence-custody.v1",
+  "archive": "bridge-evidence.zip",
+  "archive_sha256": "47215be04f57662bc812ddc2631c28763a107534a81c9038289af3f7109bf046",
+  "members": {
+    "bridge-boundary-checks.json": {
+      "sha256": "e2642deb43a463fbf19383c88d23a167d5bbf5d6c686690a5759a934afd4ca46",
+      "bytes": 316
+    },
+    "bridge-checkpoint-git-detect.txt": {
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86",
+      "bytes": 560
+    },
+    "bridge-checkpoint-git-plan.txt": {
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de",
+      "bytes": 689
+    },
+    "bridge-checkpoint-git-policy.txt": {
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd",
+      "bytes": 5553
+    },
+    "bridge-doctor.txt": {
+      "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "bytes": 5181
+    },
+    "bridge-final-tests.json": {
+      "sha256": "66e5692160eac94d718df89f127f4985aac991bf9afc5d1699a5b67f338de3c0",
+      "bytes": 2555
+    },
+    "bridge-final-tests.txt": {
+      "sha256": "63804c951f649f56e12f3b57437e912cb0862712f5cf41a74dfae815a540206e",
+      "bytes": 7820
+    },
+    "bridge-first-tests.json": {
+      "sha256": "31eefd1d010f16ee2c9d6a3bb0377dc38bef8d2dd9108df4b339a6f24e30f818",
+      "bytes": 1217
+    },
+    "bridge-first-tests.txt": {
+      "sha256": "c6b1f0cd6e4c15ebbc48f223c3cc65a545707e579d0d7302f64b54bac5b81306",
+      "bytes": 2326
+    },
+    "bridge-git-helper-observations.json": {
+      "sha256": "b2e93211b1fea7a871d316a585373df1959898283325ad52838ab8b7d5b17e40",
+      "bytes": 17507
+    },
+    "bridge-helper-validation.json": {
+      "sha256": "74f0e8f5b5a4c0337a00240d59bfaf42333a1bff147b633271ee32d6f2a31c7b",
+      "bytes": 413
+    },
+    "bridge-root-independent-review.json": {
+      "sha256": "c0fb9904d10297309d48e201639063b92153f6b06605571c58d7d3a0f91c2860",
+      "bytes": 2461
+    },
+    "bridge-root-independent-tests.txt": {
+      "sha256": "f90d8a34c173f874003eab694b06ec7e48899c95164144f4a1f2c1baee4531fd",
+      "bytes": 2326
+    },
+    "bridge-slice-validation.before-review.json": {
+      "sha256": "4fc111c3386113095b32a6b7698a7ea8e3726d0aeeec24f351ada8d9ade08fdd",
+      "bytes": 5781
+    },
+    "bridge-slice-validation.json": {
+      "sha256": "6e8ec29c8c5946be87d8134540881323681ae58feb019b4ee6a1187933c6deeb",
+      "bytes": 6176
+    },
+    "bridge-source-manifest.json": {
+      "sha256": "287f941e619e77884e8b1ee2d20c885d631f0ca0e2b90a55230188ae645fcd71",
+      "bytes": 1608
+    },
+    "bridge-source.patch": {
+      "sha256": "ebcb8a23df1f8bef4be26ccac3984e0b01f130c6426885d72f15ee4a12ec4cf3",
+      "bytes": 48460
+    },
+    "bridge-task-checks.json": {
+      "sha256": "555529f1f5f1910c9155f1fa4e192e41d7df550476dfe6aa0a0b0c64bb0e8e55",
+      "bytes": 1083
+    },
+    "bridge-task-inspect.txt": {
+      "sha256": "63f0973d83cef36ff44773b6e25557470c99cc8680d6a2ea7137cef778f1590d",
+      "bytes": 402
+    },
+    "bridge-task-noop-check.txt": {
+      "sha256": "3fb536768b562ef14ec03020e6204f5f1aa81be1612ce9fbca5d30cd08fb2dee",
+      "bytes": 168
+    },
+    "bridge-task-recover.txt": {
+      "sha256": "139f61646d139c5f970bab5f372019c37c75ed6bc722c32e640978042163792d",
+      "bytes": 171
+    },
+    "bridge-validate.txt": {
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "bytes": 4893242
+    },
+    "staged-checkpoint-pushed.json": {
+      "sha256": "14b9bffdb49f19839769c7bd61a314f803554e3625d1bdad7e4dc70f4f647d17",
+      "bytes": 708
+    },
+    "staged-commit-receipt.json": {
+      "sha256": "d38414548085c8502010a8564ad01e0d42cfa21a4703962334cf85d92df23299",
+      "bytes": 2226
+    }
+  },
+  "git_projections": {
+    "bridge-source-manifest.json": {
+      "archive_member": "bridge-source-manifest.json",
+      "original_sha256": "287f941e619e77884e8b1ee2d20c885d631f0ca0e2b90a55230188ae645fcd71",
+      "git_lf_sha256": "287f941e619e77884e8b1ee2d20c885d631f0ca0e2b90a55230188ae645fcd71"
+    },
+    "bridge-slice-validation.json": {
+      "archive_member": "bridge-slice-validation.json",
+      "original_sha256": "6e8ec29c8c5946be87d8134540881323681ae58feb019b4ee6a1187933c6deeb",
+      "git_lf_sha256": "6e8ec29c8c5946be87d8134540881323681ae58feb019b4ee6a1187933c6deeb"
+    },
+    "bridge-final-tests.json": {
+      "archive_member": "bridge-final-tests.json",
+      "original_sha256": "66e5692160eac94d718df89f127f4985aac991bf9afc5d1699a5b67f338de3c0",
+      "git_lf_sha256": "66e5692160eac94d718df89f127f4985aac991bf9afc5d1699a5b67f338de3c0"
+    },
+    "bridge-root-independent-review.json": {
+      "archive_member": "bridge-root-independent-review.json",
+      "original_sha256": "c0fb9904d10297309d48e201639063b92153f6b06605571c58d7d3a0f91c2860",
+      "git_lf_sha256": "c0fb9904d10297309d48e201639063b92153f6b06605571c58d7d3a0f91c2860"
+    },
+    "bridge-helper-validation.json": {
+      "archive_member": "bridge-helper-validation.json",
+      "original_sha256": "74f0e8f5b5a4c0337a00240d59bfaf42333a1bff147b633271ee32d6f2a31c7b",
+      "git_lf_sha256": "74f0e8f5b5a4c0337a00240d59bfaf42333a1bff147b633271ee32d6f2a31c7b"
+    },
+    "bridge-boundary-checks.json": {
+      "archive_member": "bridge-boundary-checks.json",
+      "original_sha256": "e2642deb43a463fbf19383c88d23a167d5bbf5d6c686690a5759a934afd4ca46",
+      "git_lf_sha256": "e2642deb43a463fbf19383c88d23a167d5bbf5d6c686690a5759a934afd4ca46"
+    },
+    "bridge-task-checks.json": {
+      "archive_member": "bridge-task-checks.json",
+      "original_sha256": "555529f1f5f1910c9155f1fa4e192e41d7df550476dfe6aa0a0b0c64bb0e8e55",
+      "git_lf_sha256": "555529f1f5f1910c9155f1fa4e192e41d7df550476dfe6aa0a0b0c64bb0e8e55"
+    },
+    "staged-checkpoint-pushed.json": {
+      "archive_member": "staged-checkpoint-pushed.json",
+      "original_sha256": "14b9bffdb49f19839769c7bd61a314f803554e3625d1bdad7e4dc70f4f647d17",
+      "git_lf_sha256": "14b9bffdb49f19839769c7bd61a314f803554e3625d1bdad7e4dc70f4f647d17"
+    },
+    "staged-commit-receipt.json": {
+      "archive_member": "staged-commit-receipt.json",
+      "original_sha256": "d38414548085c8502010a8564ad01e0d42cfa21a4703962334cf85d92df23299",
+      "git_lf_sha256": "d38414548085c8502010a8564ad01e0d42cfa21a4703962334cf85d92df23299"
+    }
+  },
+  "member_path_rule": "Bare raw receipt/log names refer to members of bridge-evidence.zip after checkout. Original raw bytes remain on the authoring host unstaged. Current JSON projections use LF and are separately bound here.",
+  "qualification": "43 current local tests and independent 11-test replay passed; no operational provider, host isolation or server qualification."
+}
