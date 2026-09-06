@@ -1,0 +1,50 @@
+{
+  "schema": "aide.programme.source-integration.v1",
+  "observed_at": "2026-09-06T14:27:01.382154+00:00",
+  "repository": "Julesc013/aide",
+  "source_commit": "a9a46292f1ad214fef8c3abaaaf1795b0d4b67d0",
+  "source_tree": "54ab832eafa0ed0be3282858fd44f344e560732b",
+  "main": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+  "dev": "bfb86c12b9e6d2970024d29c57ba629994ec43cc",
+  "pull_requests": {
+    "1": {
+      "headRefOid": "a9a46292f1ad214fef8c3abaaaf1795b0d4b67d0",
+      "mergeCommit": {
+        "oid": "02e99d267b14dc7dfedbd42262d390a93eac354f"
+      },
+      "mergedAt": "2026-09-06T14:09:23Z",
+      "number": 1,
+      "state": "MERGED",
+      "statusCheckRollup": [],
+      "url": "https://github.com/Julesc013/aide/pull/1"
+    },
+    "2": {
+      "headRefOid": "02e99d267b14dc7dfedbd42262d390a93eac354f",
+      "mergeCommit": {
+        "oid": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3"
+      },
+      "mergedAt": "2026-09-06T14:11:15Z",
+      "number": 2,
+      "state": "MERGED",
+      "statusCheckRollup": [],
+      "url": "https://github.com/Julesc013/aide/pull/2"
+    },
+    "3": {
+      "headRefOid": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+      "mergeCommit": {
+        "oid": "bfb86c12b9e6d2970024d29c57ba629994ec43cc"
+      },
+      "mergedAt": "2026-09-06T14:13:04Z",
+      "number": 3,
+      "state": "MERGED",
+      "statusCheckRollup": [],
+      "url": "https://github.com/Julesc013/aide/pull/3"
+    }
+  },
+  "hosted_workflows_configured": 0,
+  "hosted_ci_pass_claimed": false,
+  "local_validation": "final-export-validation.json",
+  "source_review": "export-independent-review.json",
+  "prototype_live_qualified": false,
+  "activation_enabled": false
+}

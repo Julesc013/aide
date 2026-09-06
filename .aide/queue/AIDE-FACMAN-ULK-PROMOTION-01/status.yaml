@@ -1,6 +1,8 @@
 schema_version: aide.queue-status.v0
 id: AIDE-FACMAN-ULK-PROMOTION-01
-status: planned
-planning_state: admitted_backlog
-result: PENDING
-updated_at: 2026-09-06
+status: passed
+planning_state: implementation_completed
+result: PASS
+updated_at: 2026-09-07
+completed_at: 2026-09-07
+integration_evidence: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/evidence/integration-closeout.json
