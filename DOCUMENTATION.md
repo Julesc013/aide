@@ -333,3 +333,12 @@ and explicit target-policy absence. The new target WorkUnit contains cited
 GitHub contract research and local graph experiments; the existing host ExecPlan
 contains concrete Windows isolation/denial probes. Neither planning admission
 nor offline parser/graph tests install settings or qualify an operational host.
+
+## Integration broker HTTPS observation boundary
+
+The integration-broker-core reference now specifies the fixed-origin TLS reader,
+protected host/credential lease interface, finite DNS/socket/header/body budgets,
+strict supported response subset and local denial tests. It distinguishes the
+implemented HTTPS mechanism from absent operational host credentials, restricted
+principal, target rules and server qualification. The synthetic fixture route
+cannot be selected through production configuration or worker input.

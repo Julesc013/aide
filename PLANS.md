@@ -3385,3 +3385,18 @@ preparation and hosted adversarial acceptance without installing settings.
 AIDE-CW-ISOLATED-HOST-01 names AppContainer, owned-root ACL, network and denial
 probes. Provider/source preparation starts independently; full broker closure
 requires actual host and target qualification before the existing live pilot.
+
+### Fixed HTTPS observation reader
+
+Continue AIDE-CW-INTEGRATION-BROKER-01 from independently reviewed 57e28fac
+with an actual fixed-origin TLS reader, absent protected credential lease and
+real disposable local TLS denial tests. The exact task ExecPlan defines finite
+DNS/connect/read budgets and no real credentials, live provider calls or host
+configuration changes. Operational host/principal/target acceptance stays open.
+
+Current programme steering additionally authorizes qualified alpha.6, alpha.x
+and beta.1 milestone tags/releases, changelogs, TODO/release notes, docs, sync
+and normal merges, followed by the final 0.1 implemented/absent/public-gap
+report. This supersedes the earlier blanket publication exclusion. Actual
+human/game/signing/platform/host/target evidence is still required; the HTTPS
+checkpoint performs no release or operational activation.

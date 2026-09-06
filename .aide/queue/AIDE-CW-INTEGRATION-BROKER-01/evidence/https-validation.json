@@ -1,0 +1,55 @@
+{
+  "schema": "aide.broker.https-validation.v1",
+  "result": "PASS",
+  "full_broker_completion": false,
+  "activation": false,
+  "source_aggregate_sha256": "748f2576264d66199fa886c0acc099b9fe1ee5965052d169f040df8dffad9059",
+  "author_tests": [
+    {
+      "log": "https-first-tests.txt",
+      "count": 15,
+      "seconds": 1.73,
+      "history": "earlier source before final boundary additions"
+    },
+    {
+      "log": "https-second-tests.txt",
+      "count": 19,
+      "seconds": 1.236,
+      "source": "current"
+    },
+    {
+      "log": "https-raw-regression-tests.txt",
+      "count": 26,
+      "seconds": 0.077
+    },
+    {
+      "log": "https-bridge-regression-tests.txt",
+      "count": 11,
+      "seconds": 74.672
+    }
+  ],
+  "independent_tests": {
+    "count": 45,
+    "unittest_seconds": 1.178,
+    "review": "https-root-independent-review.json",
+    "review_raw_sha256": "52da038839f4ff3564073079e625e4a18a72a3011eab50f508a5e456a652d15b",
+    "log": "https-root-independent-tests.txt"
+  },
+  "required_helpers": "task inspect/noop/recover, doctor, validate, Git policy/detect/plan and message check PASS",
+  "export": "817 actual portable paths exclude both runtime modules by source-root selection and direct test by explicit family",
+  "source_unchanged": true,
+  "remaining": [
+    "protected Windows host/credential factory",
+    "actual restricted principal",
+    "effective target policy/server acceptance",
+    "full private tool image and controlled model channel",
+    "operational activation and complete programme"
+  ],
+  "index_preservation": {
+    "path": ".aide/queue/index.yaml",
+    "head_blob": "819098a8010999f568bf12301c70d819aa6c3911",
+    "head_raw_sha256": "0dc511d7e6727b49f2c52eee0ac51e01f4e9666b79b0f46c1ab062e3ea607e4a",
+    "working_raw_sha256": "6989b87ae3736801513834e0e1894581c42d4d16f795ea2d6eb4dc88c7ef255e",
+    "excluded_change": "Only provider entry-restart status planned->running and planning_state admitted_backlog->execution_active. No index staging in this checkpoint."
+  }
+}

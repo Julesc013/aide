@@ -52,3 +52,62 @@ Microsoft documents the dual user/package access check and capability-based
 network boundary; actual qualification still requires these local probes.
 [Launch an AppContainer](https://learn.microsoft.com/en-us/windows/win32/secauthz/implementing-an-appcontainer),
 [AppContainer isolation](https://learn.microsoft.com/en-us/windows/win32/secauthz/appcontainer-isolation).
+
+## Next bounded source proposal after HTTPS mechanism acceptance
+
+Keep this item planned until its exact source/effect admission is recorded.
+The current programme authorizes implementation and verification; the review
+below is a concrete coordination boundary before changing a Windows profile or
+owned DACL, not a request to renew the user's programme authority.
+
+Proposed paths: core/runtime/continuous_worker/windows_security.py,
+core/runtime/continuous_worker/windows_job.py, the direct
+.aide/scripts/tests/test_continuous_worker_windows_security.py, this task's
+records, the broker reference and root planning/execution/documentation logs.
+No operational credential, GitHub target setting or model integration belongs
+to this first host increment. Do not activate the complete worker programme.
+
+1. Add a focused Windows security adapter exposing a frozen zero-capability
+   AppContainer specification and bounded token-observation API. Use the exact
+   package SID returned by CreateAppContainerProfile; record the moniker, SID,
+   profile path and owned task-root identities. Profile construction is an
+   explicit local effect under one write-ahead reservation. A pre-existing name,
+   failed/ambiguous creation or uncertain recovery refuses reuse and retains
+   evidence. Limit the probe to one admitted profile; do not loop new profiles
+   or delete by an observed pathname/moniker after uncertainty.
+2. Extend the existing WindowsJobHost launch seam only enough to supply the
+   SECURITY_CAPABILITIES attribute alongside the existing HANDLE_LIST and
+   JOB_LIST in the same suspended CreateProcess call. Bind the exact process
+   handle and owned Job handle. Before ResumeThread, independently query actual
+   TokenIsAppContainer, TokenAppContainerSid, TokenCapabilities, integrity/user
+   identity and IsProcessInJob. A wrong/missing fact terminates the exact Job
+   before any child instruction; no fallback to a same-user unrestricted launch.
+   Existing callers remain explicitly containment-only.
+3. Build one minimal native Windows probe in a disposable owned task directory
+   with the existing local compiler, so H1 does not need to grant a shared
+   Python/Git installation access. Inventory compiler/SDK/probe bytes. Give only
+   the exact profile SID the necessary access to newly created owned probe and
+   scratch objects, by handles with independently observed final DACL/labels.
+   Never edit a shared tool, source checkout, broker root or parent directory ACL.
+   Full pinned private runtime/clone support remains H2 after this probe works.
+4. Before the actual profile/DACL effects, freeze and review this source and the
+   exact local effect manifest. Actual tests must show the same created token
+   can write its scratch file while it cannot read protected synthetic canaries,
+   change their contents/DACLs, open the controller for mutation, or make a
+   connection to an owned loopback listener with zero network capabilities.
+   Do not read real secrets. Test wrong SID/capabilities/Job observations before
+   resume, failure during profile preparation, and supervisor death at creation
+   and pre-resume boundaries. Object substitution must preserve the foreign
+   object and leave recovery evidence. Retain uncertain profile/root objects.
+5. Bind source/OS/token/Job/probe/root-object/DACL and exact denial outcomes to a
+   receipt that says local native probe only. It does not qualify the actual
+   Codex process, private toolchain, model channel, protected credential issuer,
+   broker installation or live pilot. Then implement the private runtime/clone
+   H2 and controlled model-channel H4 against the same actual token mechanism.
+
+This proposal follows the supported SECURITY_CAPABILITIES launch mechanism and
+Microsoft's dual user/package access model. It avoids confusing a token flag or
+source-only fixture with actual access denial. An AppContainer profile is a
+per-user security resource, not a new Windows login account.
+[Launch API and profile](https://learn.microsoft.com/en-us/windows/win32/secauthz/implementing-an-appcontainer),
+[Isolation model](https://learn.microsoft.com/en-us/windows/win32/secauthz/appcontainer-isolation).

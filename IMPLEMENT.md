@@ -10940,3 +10940,15 @@ That window now yields wait_checks with incomplete provenance, preserving
 automatic polling; completed successful checks still require the actual run
 and attempt job. A durable pending-to-complete regression confirms no mutation
 intent is created while evidence is incomplete.
+
+## AIDE-CW-INTEGRATION-BROKER-01: fixed HTTPS observation mechanism
+
+Added a fixed api.github.com TLS GET reader, finite socket/qualification monitor
+and bounded HTTP/1.1 response framing. A protected observation host/credential
+lease is required and absent by default. Nineteen real loopback TLS tests cover
+certificate/hostname denial, revocation/expiry before and during dispatch,
+redirect/proxy refusal, bounded framing and secret reflection without user
+credentials or machine trust changes. Source is frozen for independent review;
+all 26 prior raw-observation tests pass. Operational host/principal/target
+qualification and the complete broker task remain open. See the broker ExecPlan
+and docs/reference/integration-broker-core.md for the exact mechanism and limits.
