@@ -1,0 +1,14 @@
+fix(release): distinguish historical ULK synchronization
+
+Retain the exact August main/dev synchronization receipt and record the
+September tracking-ref observations separately. Dev includes workspace
+hygiene changes, so it must not inherit the historical shared-tree claim.
+The checker rejects conflated historical/current states and candidate
+identity claims; regression tests cover those refusals.
+
+Validation: 46 Python tests and 15 strict checks passed; independent review
+confirmed exact trees/ancestry and no runtime, ABI or authority changes.
+Hosted qualification must bind this new task head before integration.
+
+Work-Item: ULK-1.9.1-CURRENT-TRUTH-CLOSEOUT-01
+Evidence-Ref: docs/release/checkpoints/ulk-1-9-1-current-truth-closeout-01.md

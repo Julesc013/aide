@@ -3,8 +3,8 @@
 - command: `task-os command status registry`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `5c8e423803b3cb330b5f2c9b11b807f29ceee6e3`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -81,10 +81,10 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01
-- latest_indexed_task_status: pending
-- latest_task_packet_id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
-- latest_task_packet_status: needs_review
+- latest_indexed_task_id: AIDE-FACMAN-ULK-PROMOTION-01
+- latest_indexed_task_status: planned
+- latest_task_packet_id: AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01
+- latest_task_packet_status: blocked
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_action: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.

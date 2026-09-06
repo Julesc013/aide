@@ -1,0 +1,10 @@
+schema_version: aide.task-status.v0
+id: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
+status: running
+planning_state: execution_active
+result: PENDING
+updated_at: 2026-09-06
+accepted_capability: null
+current_step: Reconcile and admit all completion slices; preserve and integrate reviewed pilot; refresh four repository baselines.
+external_inputs_pending:
+  - Linux and macOS qualification hosts and approved Factorio test material

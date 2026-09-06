@@ -10871,3 +10871,13 @@ Queue status, task inspection/evidence, broad validation, and diff checks are re
 ### Remaining Issues
 
 The new entries are tentative queue planning surfaces. They do not authorize ProjectGraph implementation, naming enforcement, file movement, root creation, target mutation, update apply, release generation/publication, provider/model calls, network calls, branch/worktree automation, or push.
+
+## AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01 (2026-09-06)
+
+Implemented a separate durable Codex coordinator prototype with atomic claims/intents, Windows Job containment, operator controls, exact candidate/test/assurance evidence and a protected integration broker interface. Local suite: 51 tests passing, including real process faults and synthetic two-task continuation. Live broker, credential/filesystem qualification and two real integrated tasks remain incomplete. No standing authority changed. See .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/validation.md.
+
+## Full Beta1 programme integration
+
+The current user authorizes scoped implementation, validation, synchronization, commits and normal checked integration through full FacMan Beta1. The continuous-worker prototype remains source-qualified only; seven bounded runtime follow-ups and seven provider coordination tasks are admitted beneath AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01. Regenerated portable exports now exclude source-only runtime tests while retaining all previously admitted AIDE Lite test modules.
+
+Final export validation passed all eight commands; independent review verified all 829 checksum entries for 826 payload files and preserved all 37 baseline portable tests. Both portable apply templates are included in source closure and mapped outputs. The safe example secrets README is explicitly tracked; no actual secret or source-only worker state is exported. See programme evidence/final-export-validation.json and export-independent-review.json.

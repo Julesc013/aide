@@ -1,0 +1,56 @@
+test_absent_job_reconciliation_never_kills_pid (test_continuous_worker_host.WindowsHostTests.test_absent_job_reconciliation_never_kills_pid) ... ok
+test_cancel_kills_owned_work (test_continuous_worker_host.WindowsHostTests.test_cancel_kills_owned_work) ... ok
+test_no_secret_environment_forwarding (test_continuous_worker_host.WindowsHostTests.test_no_secret_environment_forwarding) ... ok
+test_output_flood_is_bounded (test_continuous_worker_host.WindowsHostTests.test_output_flood_is_bounded) ... ok
+test_parent_success_still_cleans_descendants (test_continuous_worker_host.WindowsHostTests.test_parent_success_still_cleans_descendants) ... ok
+test_real_process_output_and_quiescence (test_continuous_worker_host.WindowsHostTests.test_real_process_output_and_quiescence) ... ok
+test_stdin_and_stderr (test_continuous_worker_host.WindowsHostTests.test_stdin_and_stderr) ... ok
+test_supervisor_death_at_each_atomic_creation_boundary (test_continuous_worker_host.WindowsHostTests.test_supervisor_death_at_each_atomic_creation_boundary) ... ok
+test_supervisor_hard_death_kills_descendants (test_continuous_worker_host.WindowsHostTests.test_supervisor_hard_death_kills_descendants) ... ok
+test_timeout_kills_child_and_grandchild (test_continuous_worker_host.WindowsHostTests.test_timeout_kills_child_and_grandchild) ... ok
+test_corrupt_completed_test_evidence_refused_after_restart (test_continuous_worker_pipeline.PipelineTests.test_corrupt_completed_test_evidence_refused_after_restart) ... ok
+test_cross_ledger_same_workspace_lock_refuses (test_continuous_worker_pipeline.PipelineTests.test_cross_ledger_same_workspace_lock_refuses) ... ok
+test_cross_task_authority_in_writer_clone_refused (test_continuous_worker_pipeline.PipelineTests.test_cross_task_authority_in_writer_clone_refused) ... ok
+test_failed_durable_intent_never_dispatches (test_continuous_worker_pipeline.PipelineTests.test_failed_durable_intent_never_dispatches) ... ok
+test_failing_real_validation_never_reaches_integration (test_continuous_worker_pipeline.PipelineTests.test_failing_real_validation_never_reaches_integration) ... ok
+test_index_only_mutation_refused (test_continuous_worker_pipeline.PipelineTests.test_index_only_mutation_refused) ... ok
+test_inflight_admission_drift_stops_real_owned_process (test_continuous_worker_pipeline.PipelineTests.test_inflight_admission_drift_stops_real_owned_process) ... ok
+test_inflight_state_growth_stops_real_owned_process (test_continuous_worker_pipeline.PipelineTests.test_inflight_state_growth_stops_real_owned_process) ... ok
+test_integration_broker_input_drift_refused (test_continuous_worker_pipeline.PipelineTests.test_integration_broker_input_drift_refused) ... ok
+test_interrupted_coding_keeps_patch_and_blocks_duplicate_writer (test_continuous_worker_pipeline.PipelineTests.test_interrupted_coding_keeps_patch_and_blocks_duplicate_writer) ... ok
+test_lost_merge_response_queries_without_duplicate_apply (test_continuous_worker_pipeline.PipelineTests.test_lost_merge_response_queries_without_duplicate_apply) ... ok
+test_moved_base_blocks_without_coding (test_continuous_worker_pipeline.PipelineTests.test_moved_base_blocks_without_coding) ... ok
+test_nan_expiry_refused (test_continuous_worker_pipeline.PipelineTests.test_nan_expiry_refused) ... ok
+test_null_broker_payload_refused (test_continuous_worker_pipeline.PipelineTests.test_null_broker_payload_refused) ... ok
+test_pause_and_resume_keep_durable_tasks (test_continuous_worker_pipeline.PipelineTests.test_pause_and_resume_keep_durable_tasks) ... ok
+test_permission_file_edit_refused (test_continuous_worker_pipeline.PipelineTests.test_permission_file_edit_refused) ... ok
+test_source_drift_refuses_before_claim (test_continuous_worker_pipeline.PipelineTests.test_source_drift_refuses_before_claim) ... ok
+test_storage_floor_refuses_dispatch (test_continuous_worker_pipeline.PipelineTests.test_storage_floor_refuses_dispatch) ... ok
+test_two_tasks_automatically_complete_with_fresh_sessions_and_real_tests (test_continuous_worker_pipeline.PipelineTests.test_two_tasks_automatically_complete_with_fresh_sessions_and_real_tests) ... ok
+test_unpinned_broker_entrypoint_refused_even_with_unrelated_input (test_continuous_worker_pipeline.PipelineTests.test_unpinned_broker_entrypoint_refused_even_with_unrelated_input) ... ok
+test_worker_session_budget_blocks_second_task (test_continuous_worker_pipeline.PipelineTests.test_worker_session_budget_blocks_second_task) ... ok
+test_error_overrides_success_message (test_continuous_worker_state.CodexTests.test_error_overrides_success_message) ... ok
+test_final_message_without_completed_turn_fails (test_continuous_worker_state.CodexTests.test_final_message_without_completed_turn_fails) ... ok
+test_resume_never_uses_last (test_continuous_worker_state.CodexTests.test_resume_never_uses_last) ... ok
+test_scalar_events_and_null_session_refused (test_continuous_worker_state.CodexTests.test_scalar_events_and_null_session_refused) ... ok
+test_scalar_final_refused (test_continuous_worker_state.CodexTests.test_scalar_final_refused) ... ok
+test_valid_structured_completed_session (test_continuous_worker_state.CodexTests.test_valid_structured_completed_session) ... ok
+test_wrong_subject_fails (test_continuous_worker_state.CodexTests.test_wrong_subject_fails) ... ok
+test_automatic_next_task_and_attempt_budget (test_continuous_worker_state.StateTests.test_automatic_next_task_and_attempt_budget) ... ok
+test_cancel_one_task_keeps_other_ready (test_continuous_worker_state.StateTests.test_cancel_one_task_keeps_other_ready) ... ok
+test_changed_admission_refused (test_continuous_worker_state.StateTests.test_changed_admission_refused) ... ok
+test_drain_admits_no_new_task (test_continuous_worker_state.StateTests.test_drain_admits_no_new_task) ... ok
+test_effect_intent_survives_reopen (test_continuous_worker_state.StateTests.test_effect_intent_survives_reopen) ... ok
+test_emergency_stop_cancels_active (test_continuous_worker_state.StateTests.test_emergency_stop_cancels_active) ... ok
+test_exclusive_supervisor_lock (test_continuous_worker_state.StateTests.test_exclusive_supervisor_lock) ... ok
+test_observation_idempotency_and_conflict (test_continuous_worker_state.StateTests.test_observation_idempotency_and_conflict) ... ok
+test_pause_and_resume_persist (test_continuous_worker_state.StateTests.test_pause_and_resume_persist) ... ok
+test_same_phase_cannot_dispatch_twice (test_continuous_worker_state.StateTests.test_same_phase_cannot_dispatch_twice) ... ok
+test_schema_downgrade_refused (test_continuous_worker_state.StateTests.test_schema_downgrade_refused) ... ok
+test_two_connections_claim_once (test_continuous_worker_state.StateTests.test_two_connections_claim_once) ... ok
+test_unresolved_effect_prevents_terminal_transition (test_continuous_worker_state.StateTests.test_unresolved_effect_prevents_terminal_transition) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 47.657s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "failure_or_status_lines": 3,
+  "retained_lines": [
+    "status: FAIL",
+    "- FAIL export pack checksum problem: checksum mismatch: files/.aide.local.example/README.md; checksum mismatch: files/.aide.local.example/cache/README.md; checksum mismatch: files/.aide.local.example/config.example.yaml; checksum mismatch: files/.aide.local.example/ledgers/README.md; missing checksum file: files/.aide.local.example/secrets/README.md",
+    "- FAIL pack-status problem: checksum mismatch: files/.aide.local.example/README.md; checksum mismatch: files/.aide.local.example/cache/README.md; checksum mismatch: files/.aide.local.example/config.example.yaml; checksum mismatch: files/.aide.local.example/ledgers/README.md; missing checksum file: files/.aide.local.example/secrets/README.md"
+  ],
+  "exit_code": 1
+}

@@ -1,0 +1,47 @@
+# Changed files
+
+Local source, queue, documentation and required helper-generated intake/context/Git reports. Initial AIDE checkout was clean; these are this task's changes. No standing policy or accepted service/process fixture source was changed.
+
+- .aide/context/latest-task-packet.md
+- .aide/git/aide-dev-main-plan.json
+- .aide/git/aide-dev-main-plan.md
+- .aide/git/latest-helper-plan.json
+- .aide/git/latest-helper-plan.md
+- .aide/git/workflow-detection.json
+- .aide/git/workflow-detection.md
+- .aide/intake/latest-intent-packet.json
+- .aide/intake/latest-intent-packet.md
+- .aide/intake/latest-workunit-draft.json
+- .aide/intake/latest-workunit-draft.md
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/ExecPlan.md
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/activation-proposal.md
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/activation.example.json
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/assurance.md
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/baseline.md
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/independent-assurance.json
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/preflight-validation.json
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/source-manifest.json
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/unit-tests.txt
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/validation.md
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/prompt.md
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/status.yaml
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/task.yaml
+- .aide/queue/index.yaml
+- .aide/scripts/tests/test_continuous_worker_host.py
+- .aide/scripts/tests/test_continuous_worker_pipeline.py
+- .aide/scripts/tests/test_continuous_worker_state.py
+- DOCUMENTATION.md
+- IMPLEMENT.md
+- PLANS.md
+- core/runtime/continuous_worker/__init__.py
+- core/runtime/continuous_worker/__main__.py
+- core/runtime/continuous_worker/codex.py
+- core/runtime/continuous_worker/contract.py
+- core/runtime/continuous_worker/coordinator.py
+- core/runtime/continuous_worker/locking.py
+- core/runtime/continuous_worker/state.py
+- core/runtime/continuous_worker/windows_job.py
+- docs/reference/continuous-worker-pilot.md
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/activation-preflight.json
+- .aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/validation-commands.md

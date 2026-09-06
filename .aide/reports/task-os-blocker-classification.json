@@ -1,5 +1,5 @@
 {
-  "blocker_count": 49,
+  "blocker_count": 267,
   "blockers": [
     {
       "class": "missing_prerequisite",
@@ -318,6 +318,1532 @@
     },
     {
       "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-APPLY-LIFECYCLE-PLAN-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-CHECK-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AI-LONG-TURN-OPERATING-PROTOCOL-00"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01"
+    },
+    {
+      "class": "unknown",
+      "kind": "blocked_status",
+      "repairable": true,
+      "severity": "high",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-CONTRACT-ENVELOPE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-WORKUNIT-CLI-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-WORKER-RUN-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-WORKER-RUN-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-WORKER-RUN-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-TESTJOB-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-TESTJOB-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-TESTJOB-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-REFERENCE-ID-SCHEME-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-REFERENCE-ID-SCHEME-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-REFERENCE-ID-SCHEME-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-EVENT-RECORD-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-EVENT-RECORD-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-RECONCILER-REPORTS-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-RECONCILER-REPORTS-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-RECONCILER-REPORTS-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-CAPABILITY-MANIFEST-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-CAPABILITY-MANIFEST-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-CONFORMANCE-PROFILE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-CONFORMANCE-PROFILE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-CONFORMANCE-PROFILE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-OPERATIONAL-HEALTH-PAUSE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-RESUME-BUILD-CONTEXTPACK-V2-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-RESUME-CHECK-CONTEXTPACK-V2-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-INTEROP-EXPORTS-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-INTEROP-EXPORTS-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-INTEROP-EXPORTS-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-MCP-SERVER-CONTRACT-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-MCP-SERVER-CONTRACT-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-MCP-SERVER-CONTRACT-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-DOMINIUM-INTEGRATION-CHARTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-03"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-04"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-04"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-05"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-05"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DOMINIUM-READONLY-SEAM-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-ADAPTER-MANIFEST-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-ADAPTER-MANIFEST-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-ADAPTER-MANIFEST-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-CONTEXTPACK-V2-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-CONTEXTPACK-V2-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-STRUCTURE-00-current-truth-and-root-authority-audit"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-STRUCTURE-01-root-authority-contracts"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-REPO-LAYOUT-INVENTORY-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ADOPT-APACHE-2-LICENSE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-REPORT-INDEX-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-REPORT-INDEX-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-REPORT-INDEX-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-TRACK-B-B1-BARRIER-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-PROJECT-LOCK-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-PROJECT-LOCK-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-PROJECT-LOCK-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-DISTRIBUTION-SAFETY-WAVE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-INSTALL-RECORD-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-INSTALL-RECORD-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-INSTALL-RECORD-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-MIGRATION-RECORD-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-MIGRATION-RECORD-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-MIGRATION-RECORD-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-MIGRATION-RECORD-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-UPDATE-PLAN-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-UPDATE-PLAN-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-UPDATE-PLAN-V1-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-ROLLBACK-BUNDLE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-ROLLBACK-BUNDLE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-ROLLBACK-BUNDLE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-UPDATE-RECEIPT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-UPDATE-RECEIPT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-UPDATE-RECEIPT-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DISTRIBUTION-APPLY-ENGINE-V0-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-AIDE-SELF-CONSUMER-FIXTURE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-AIDE-SELF-CONSUMER-FIXTURE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-AIDE-SELF-CONSUMER-FIXTURE-V0-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DISTRIBUTION-APPLY-ROUTING-TEXT-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-ACCEPT-DISTRIBUTION-PRODUCT-STATUS-PROJECTION-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01"
+    },
+    {
+      "class": "unknown",
+      "kind": "blocked_status",
+      "repairable": true,
+      "severity": "high",
+      "task_id": "AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01"
+    },
+    {
+      "class": "missing_prerequisite",
       "kind": "deferred_target_work",
       "repairable": false,
       "severity": "medium",
@@ -346,8 +1872,8 @@
     }
   ],
   "command": "blocker classify",
-  "current_branch": "main",
-  "current_commit": "6eb0e6a9d0405a85ba11b743954493f924648c18",
+  "current_branch": "task/aide-continuous-worker-pilot-01",
+  "current_commit": "c39f47ea3cdb2f8359722906f3f486f3c8af19b7",
   "generated_at": "deterministic",
   "next_recommended_action": "review blockers before apply-capable work; no blocker was repaired",
   "no_apply_boundary": {
@@ -364,8 +1890,8 @@
     "target_mutation": false,
     "task_execution": false
   },
-  "non_repairable_count": 48,
-  "repairable_count": 1,
-  "repo_root": "C:/Projects/AIDE/aide",
+  "non_repairable_count": 264,
+  "repairable_count": 3,
+  "repo_root": "D:/Projects/AIDE/aide",
   "schema_version": "aide.task-os-blocker-classification.v0"
 }

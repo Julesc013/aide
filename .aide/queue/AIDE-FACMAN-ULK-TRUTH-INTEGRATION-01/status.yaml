@@ -1,0 +1,6 @@
+schema_version: aide.queue-status.v0
+id: AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01
+status: planned
+planning_state: admitted_backlog
+result: PENDING
+updated_at: 2026-09-06

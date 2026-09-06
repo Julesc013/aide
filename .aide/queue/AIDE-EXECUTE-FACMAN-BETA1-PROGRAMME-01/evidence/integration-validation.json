@@ -1,0 +1,50 @@
+[
+  {
+    "command": "python scripts/aide validate",
+    "exit_code": 0,
+    "output_lines": 157,
+    "summary": []
+  },
+  {
+    "command": "python scripts/aide doctor",
+    "exit_code": 0,
+    "output_lines": 167,
+    "summary": []
+  },
+  {
+    "command": "python scripts/aide self-check",
+    "exit_code": 0,
+    "output_lines": 393,
+    "summary": [
+      "- error: 0"
+    ]
+  },
+  {
+    "command": "python .aide/scripts/aide_lite.py doctor",
+    "exit_code": 0,
+    "output_lines": 88,
+    "summary": []
+  },
+  {
+    "command": "python .aide/scripts/aide_lite.py test",
+    "exit_code": 0,
+    "output_lines": 3,
+    "summary": []
+  },
+  {
+    "command": "python .aide/scripts/aide_lite.py selftest",
+    "exit_code": 0,
+    "output_lines": 3,
+    "summary": []
+  },
+  {
+    "command": "python .aide/scripts/aide_lite.py eval run",
+    "exit_code": 0,
+    "output_lines": 359,
+    "summary": [
+      "result: PASS",
+      "result: PASS",
+      "fail_count: 0"
+    ]
+  }
+]

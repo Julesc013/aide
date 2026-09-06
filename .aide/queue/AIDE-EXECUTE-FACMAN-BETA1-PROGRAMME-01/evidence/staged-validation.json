@@ -1,0 +1,246 @@
+{
+  "schema": "aide.staged.validation.v1",
+  "base_revision": "c39f47ea3cdb2f8359722906f3f486f3c8af19b7",
+  "pack_checksum_entries": 829,
+  "staged_pack_mismatches": [],
+  "git_diff_check_exit": 2,
+  "whitespace_observations": [
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide.local.example/secrets/README.md",
+      "line": 9,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/activation-proposal.md",
+      "line": 32,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/assurance.md",
+      "line": 8,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01/evidence/validation.md",
+      "line": 18,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 8,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 19,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 28,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 31,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 33,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 35,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 43,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 47,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 50,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 70,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 72,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 75,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 77,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 81,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 84,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 94,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 118,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 145,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 156,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 188,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 237,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 256,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/reviewed-remediation.patch",
+      "line": 299,
+      "kind": "trailing whitespace.",
+      "classification": "Required unified-diff context marker; preserve independently reviewed patch bytes."
+    },
+    {
+      "path": ".aide/scripts/tests/test_continuous_worker_host.py",
+      "line": 172,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": ".aide/scripts/tests/test_continuous_worker_pipeline.py",
+      "line": 350,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": ".aide/scripts/tests/test_continuous_worker_state.py",
+      "line": 181,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": "core/runtime/continuous_worker/__init__.py",
+      "line": 2,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": "core/runtime/continuous_worker/__main__.py",
+      "line": 54,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": "core/runtime/continuous_worker/codex.py",
+      "line": 87,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": "core/runtime/continuous_worker/contract.py",
+      "line": 251,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": "core/runtime/continuous_worker/coordinator.py",
+      "line": 314,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": "core/runtime/continuous_worker/locking.py",
+      "line": 35,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": "core/runtime/continuous_worker/state.py",
+      "line": 181,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": "core/runtime/continuous_worker/windows_job.py",
+      "line": 261,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    },
+    {
+      "path": "docs/reference/continuous-worker-pilot.md",
+      "line": 78,
+      "kind": "new blank line at EOF.",
+      "classification": "Empty final line only; no whitespace in statements or indentation. Preserve reviewed source and evidence bytes."
+    }
+  ],
+  "whitespace_review": "Only empty final lines and mandatory unified-diff context markers; no content/indentation finding. Original command result retained, not reported as zero.",
+  "required_validation": "See final-export-validation.json; all eight commands pass.",
+  "source_secret_scan": "15 informational path matches, zero FAIL findings"
+}

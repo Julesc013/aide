@@ -1,0 +1,60 @@
+{
+  "schema": "usk.streaming_remediation_receipt.v1",
+  "work_item": "USK-STREAMING-SOURCE-TARGET-01",
+  "base_revision": "18cb4b76b915a3033638cf6b39b39a9e159e0efe",
+  "worktree": "C:\\Users\\Jules\\AppData\\Local\\FacMan\\Development\\repositories\\universal-setup-db9c210f4a17\\worktrees\\evidence-overnight-beta-gate-usk-pr27",
+  "source_sha256": {
+    "contracts/schema/setup/transaction_journal.v1.schema.json": "1e5e93f4ef1d9a5f93d4e067fc930cc865fd14f30abe80661838b3aa822d6579",
+    "runtime/setup/streaming/README.md": "6f32821d850f0506b525bee84a90cbaae176b725f2c500f65891c41bbd31afe0",
+    "runtime/setup/streaming/usk_streaming_source_target.cpp": "480cd215ba2c85ec08ff62e6c21a3ae6bf3c393c1e8c9a8761e91c2acfe17196",
+    "runtime/setup/transaction/usk_transaction_session.cpp": "f0c0ec20dd7e666c3d648bcb3b4838182390e1395db4fae1d830d6263b626f1a",
+    "runtime/setup/transaction/usk_transaction_session.h": "acacf0a907f91eaf57e16c84a547b931fbf78887b40e36a7e046b245d77dfff9",
+    "tests/native/usk_streaming_source_target_smoke.cpp": "dab6ccd21287fa692eaf9087dbd007bb9f15997fa5372d449a2cdfabad6692ca",
+    "tests/test_setup_contracts.py": "da585ed4cb4541538557e319c0fb7115b4c8a978ff3a1b3b78698b4a19f39500"
+  },
+  "patch": "usk-pr27-stream-retention.patch",
+  "patch_sha256": "05f1a30f31dac99fcc337f980b85d18c9b5de534d020aa685a2a254d9174b42d",
+  "supersedes": {
+    "patch_sha256": "f4df2a2ed7f8f85098dfe7c5e80281551411509cf456b4b0d8f3f751e6651a0c",
+    "receipt": "remediation-receipt.json",
+    "reason": "Independent review rejected pathname identity-check/delete races and stale durable rollback ownership. Earlier test pass is not merge acceptance."
+  },
+  "behavior": "Persist retain_only before stream effects; serialize null staging identity; perform no streamed error pathname cleanup; live and resumed rollback refuse; identical bytes do not grant ownership; successful commit and visible-target finalization remain supported.",
+  "tests": {
+    "python": {
+      "passed": 51,
+      "receipt": "python-tests-retention.log"
+    },
+    "strict": {
+      "passed": true,
+      "receipt": "strict-retention.log"
+    },
+    "whitespace": {
+      "passed": true,
+      "receipt": "diff-check-retention.log"
+    },
+    "native_windows_x64": {
+      "passed": 5,
+      "failed": 0,
+      "receipt": "ctest-x64-retention-clean.log",
+      "compiler": "MSVC 19.51.36252.0",
+      "configuration": "Release",
+      "clean_rebuild": true
+    }
+  },
+  "build_observations": [
+    "Initial long task path exceeded MSVC FileTracker path limits; shorter canonical marker-owned usk-s27 root used.",
+    "Incremental build left stale dependent objects after private TransactionSession layout change; clean rebuild recompiled all affected targets and passed five native tests."
+  ],
+  "native_other_platforms": "pending_fresh_hosted_candidate_checks",
+  "independent_source_review": "pending_pilot_review_of_revised_hash",
+  "committed": false,
+  "pushed": false,
+  "branches_mutated": false,
+  "primary_checkout_changed": false,
+  "pr28_changed": false,
+  "remaining_scope": [
+    "Automatic deletion of retained streamed staging is not implemented; separate object-bound restart/lease work is required.",
+    "PR28 must consume this correction and update streamed failure expectations/receipts before fresh qualification."
+  ]
+}

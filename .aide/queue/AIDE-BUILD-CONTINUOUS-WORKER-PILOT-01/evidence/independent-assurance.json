@@ -1,0 +1,9 @@
+{
+  "schema": "aide.continuous-worker.local-assurance.v0",
+  "manifest_sha256": "9340793dac9777ae137fbc1c060b2d9c10383cfc761e15258f3f578f51b0cdee",
+  "reviewer_context": "independent pilot_review agent",
+  "result": "no_remaining_material_local_code_findings",
+  "test_execution_by_reviewer": false,
+  "live_qualification": false,
+  "activation_authority": false
+}

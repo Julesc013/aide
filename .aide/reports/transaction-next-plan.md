@@ -1,9 +1,9 @@
 # Transaction Next Plan
 
 - generated_at: deterministic
-- repo_root: `C:/Projects/AIDE/aide`
-- current_branch: `main`
-- current_commit: `002aa52413639f4a68b5d7d0a000b7217886dbec`
+- repo_root: `D:/Projects/AIDE/aide`
+- current_branch: `task/aide-continuous-worker-pilot-01`
+- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
 - command: `transaction status`
 - mode: report_only
 - real_repo_apply_allowed: false
