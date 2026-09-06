@@ -3194,6 +3194,14 @@ items:
     exec_plan: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md
     prompt: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/prompt.md
     evidence: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence
+  - id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
+    status: planned
+    planning_state: admitted_backlog
+    title: Implement and qualify the exact GitHub broker target contract
+    task: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence
   - id: AIDE-CW-CLONE-PREPARATION-01
     status: planned
     planning_state: admitted_backlog

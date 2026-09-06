@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\\evidence\\strict-contract-experiments.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 25.986,
+  "source_sha256": "3ad248cd54670d4f5554d7b947e6950d2ea3ac874f36d2cdfb9d96ac08ec3f97",
+  "log_sha256": "89096738d41d663767f2727f828853e559068e3c53e350656a19318acbe3659a",
+  "hosted_qualification": false
+}

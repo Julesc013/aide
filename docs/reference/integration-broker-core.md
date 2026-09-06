@@ -210,3 +210,82 @@ effect boundary. Same-user Job containment and a sanitized environment do not
 establish credential/filesystem isolation. Tests use local scripted child
 processes and disposable Git objects; no actual provider, credentials, network
 mutation, operational activation or completed broker qualification is implied.
+
+## Raw GitHub observation contract
+
+The current source adds three bounded read-only modules. `github_api.Reads`
+accepts an injected `read(url, headers, timeout, max_bytes)` implementation and
+returns only validated REST objects/pages. There is no installed HTTP client,
+credential source or bridge-child factory. A real reader must authenticate TLS
+and the intended principal, stream within the supplied byte bound, disable
+redirects/retries, and run inside the separately qualified registered bridge.
+Fixture readers establish parser behavior only.
+
+Each observation has a fresh deadline of at most 120 seconds, with a separate
+monotonic elapsed-time ceiling, at most 96 GET calls, eight MiB of response
+bodies, one MiB per response and 128 records per collection. Attempts consume
+budget before dispatch. Two-page collections require stable counts, unique
+identities and exact same-origin/path/query pagination; query ordering may
+vary but foreign/extra parameters and loops refuse. Duplicate JSON/header
+fields, non-finite values, structural overflow and unexpected status/media
+shapes refuse. A JSON null never becomes an absent object. Only an explicitly
+allowed 404 can mean absence, after repository and contents access checks.
+
+Read deadlines are independent of expired mutation authority. A finite
+observation can therefore reconcile a successful merge after authority expiry;
+existing broker/bridge stage checks continue to forbid expired mutations.
+No parser acceptance authorizes a retry of an uncertain effect.
+
+`github_observation.collect` reads the actual user/repository, target/candidate
+Git objects, exact refs and all request-branch PRs without filtering away a
+retargeted base. It checks PR list/detail identities, base/head refs and
+repositories, author, state and exact commit/tree/parent facts. After checks it
+re-observes the PR, target, request branch and access identity; a changed view
+refuses. These reads detect observed drift and do not establish server atomicity.
+For merged PRs, the immutable merge object's first parent supplies the base;
+the later mutable PR base.sha is never integration proof. Exact ordered parents,
+tree and target ancestry still pass the existing decision/intent ledger.
+
+`github_checks` binds each required check's actual app, check-suite and head to
+its Actions push run and exact run-attempt job. Run repository, branch, event,
+head commit, workflow entry path and check/job status must agree; re-observing
+the run detects a changed attempt. Missing checks wait. Exact app/head-bound queued or in-progress checks can
+precede run/job publication; they produce incomplete observations without
+invented workflow facts. Completed checks retain full provenance requirements;
+skipped/neutral conclusions never become successful broker checks. The executed entry workflow version is
+derived from the actual push event's head commit, not copied from the plan.
+GitHub documents those event/run/job relationships in its
+[workflow-run API](https://docs.github.com/en/rest/actions/workflow-runs),
+[job API](https://docs.github.com/en/rest/actions/workflow-jobs) and
+[workflow execution model](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows).
+Workflow/action dependencies and a non-skippable final gate still require
+reviewed target-workflow qualification; this collector does not prove them.
+
+The initial identity parser accepts authenticated User responses only. A real
+restricted principal and immutable principal-ID binding remain target work;
+App installation authentication requires a separately implemented observation
+path and cannot be simulated by relabelling an owner credential. Policy and
+merge-contract digests are absent in collected observations, so complete
+passing checks yield `qualify_target`. Only a later actual qualified target
+observer may add those facts; desired plan values are never substituted.
+
+## Concrete target and host completion work
+
+AIDE-CW-GITHUB-TARGET-QUALIFICATION-01 owns current target observation, an exact
+reviewed policy/workflow/principal proposal, actual provider implementation and
+hosted adversarial acceptance. For one-parent candidate C over admitted base B,
+monotonic target history and strict up-to-date checks imply that a new merge
+starts at B. Expected-head matching adds head binding. REST merging still lacks
+an expected base-ref argument, so same-OID PR retargeting needs an additional
+server guard: the broker principal must be denied updates to all non-dev refs,
+including later-created refs. The owner retains separately identified normal
+branch/promotion authority. The exact item records primary sources, 13 local
+Git graph counterexamples and required hosted tests. Local graph acceptance is
+not GitHub enforcement qualification; no settings were installed by admission.
+
+AIDE-CW-ISOLATED-HOST-01 now names concrete AppContainer/token, owned-root DACL,
+network-capability and denial-probe work. Same-user Jobs remain containment.
+Protected host/store and actual principal/target acceptance are broker close
+dependencies; source preparation can start independently. The existing clone,
+resume, supervisor and live-pilot tasks retain their own executable acceptance.
+All broker and programme completion/activation claims remain open.

@@ -17,7 +17,7 @@ retained_gates:
   - no production credentials, signing, billing or public publication
   - genuine human verdicts and identified disposable real-effect hosts
 
-implementation_slice: bounded_registered_json_provider_bridge
+implementation_slice: authenticated_provider_facts_and_concrete_target_contract
 base_revision: bfb86c12b9e6d2970024d29c57ba629994ec43cc
 branch: task/aide-cw-integration-broker-01
 allowed_paths:
@@ -29,9 +29,12 @@ allowed_paths:
   - .aide/scripts/tests/test_continuous_worker_broker_authority.py
   - .aide/scripts/tests/test_continuous_worker_pr_observation.py
   - .aide/scripts/tests/test_continuous_worker_provider_bridge.py
+  - .aide/scripts/tests/test_continuous_worker_github_observation.py
   - docs/reference/integration-broker-core.md
   - .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/
-  - .aide/queue/index.yaml # this task block only
+  - .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/
+  - .aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md
+  - .aide/queue/index.yaml # own broker and target-qualification blocks only
   - PLANS.md
   - IMPLEMENT.md
   - DOCUMENTATION.md

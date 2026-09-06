@@ -226,3 +226,84 @@ Root authorized this exact scoped local checkpoint and owns its remote push.
 Provider-owned entry activation records remain excluded. Next, decompose and
 implement actual provider facts and a concrete protected-host/server contract;
 fixture success is not a substitute for the accepted operational objective.
+
+## Remaining operational implementation after bridge checkpoint
+
+Checkpoint 8c3df6533222dc6536997d50e742c466108e2ecb contains the independently
+reviewed bounded child bridge. Root verified all 27 committed files and 24 raw
+custody members and pushed that exact checkpoint to draft PR 4. The remaining
+work below is required implementation, not a new user permission gate.
+
+1. Provider facts (current source slice): implement a bounded raw-response
+   envelope/page collector and pure GitHub normalizer. Require exact request,
+   endpoint, authenticated repository/actor, object/ref/PR identities, complete
+   check/run/job pages and actual workflow event/source provenance. Never fill
+   an observed identity from the desired plan. Bind merged tree/ordered parents
+   to immutable Git objects; reject a later moving PR base projection as proof.
+   Use recorded HTTP fixtures first, then connect the same parser to the actual
+   registered child provider implementation. Add unknown/duplicate/pagination,
+   same-OID wrong-ref/fork, foreign app/run/workflow, retarget and moved-base cases.
+2. Target contract: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01 owns the exact reviewed
+   GitHub configuration and hosted adversarial acceptance. The candidate proof
+   combines a one-parent commit, expected-head merge, strict up-to-date named
+   checks, monotonic target history, no bypass and server denial of non-dev
+   updates by the broker principal. Test each missing premise, especially PR
+   retargeting after observation. Do not infer server proof from a local model.
+3. Protected host: refine and implement AIDE-CW-ISOLATED-HOST-01 using actual
+   Windows restricted token/AppContainer, explicit owned-root ACLs, network
+   capability restrictions and child denial probes. Bind protected controller,
+   issuer, broker and evidence-store access as well as the worker boundary.
+4. Operational child and qualification: connect the bounded protocol to fixed
+   GitHub endpoints and a separately protected broker credential source. No
+   arbitrary URLs, redirects, credential-bearing logs or automatic mutation
+   retries. Recheck target policy, principal permissions, source/store pins and
+   deadline immediately before effects. Exercise timeout-after-server-commit,
+   owned child death and reply recovery against the qualified disposable target.
+5. Existing clone-preparation, resume-repair and supervisor tasks prepare their
+   own exact roots/lifecycle. AIDE-CW-LIVE-PILOT-01 closes only after two genuine
+   model sessions/tasks finish coding, independent assurance, hosted checks,
+   normal merge and durable current receipts through those qualified boundaries.
+
+Start dependencies: provider/source and host preparation can proceed in parallel
+within assigned ownership; target proposal preparation needs no completed broker.
+Close dependencies: full broker acceptance requires both host and target
+qualification plus actual provider acceptance. The live pilot additionally
+requires clone and supervisor readiness. No completed foundation is reopened.
+
+## Raw provider observation source validation
+
+The three raw REST modules and focused suite are implemented; 24 offline tests
+pass in 0.038 seconds at the hashes in github-observation-final-tests.json.
+The earlier 23-test receipt is historical: documentation review found and
+corrected an accidental coupling of read deadlines to mutation expiry. Reads
+now have their own fresh 120-second absolute/monotonic bounds, allowing finite
+lost-reply observations after mutation authority expires. Stage mutation
+checks are unchanged. Final source is frozen for independent root review.
+
+No network/credential client or policy observer is installed. The caller must
+supply actual authenticated raw facts through the qualified bridge. The parser
+supports User identities and push-event entry workflows; App principal proof,
+workflow dependencies and actual target enforcement remain concrete target
+qualification work. Keep all original source/test/review bytes in compact
+custody when checkpointed; exclude the provider-owned entry-restart records.
+
+Root identified that queued checks can appear before Actions run/job records.
+The current 26-test source returns incomplete pending evidence for exact
+app/head-bound queued or in-progress checks, so normal worker polling continues.
+It never invents workflow provenance, and complete success still requires the
+actual run and attempt job. The durable pending-to-complete regression records
+zero mutation intents. github-observation-pending-tests.json binds the current
+26-test result; the preceding 24-test source is preserved in an exact ZIP/map.
+Doctor, validate and both task inspect/noop/recover groups pass with no missing
+evidence. Root's read-only real six-job observation separately confirms the
+actual API fields used by the parser; it is not whole-collector qualification.
+
+Root independently replayed the final 26 tests and mixed pending/completed and
+in-flight monotonic expiry probes; exact four-file source review passed without
+remaining findings. github-observation-root-independent-review.json binds that
+result and the separate six-job API schema observation. Existing 21 PR/staged
+regressions also pass in 74.179 seconds with the new source unchanged. The
+five-file source/reference manifest is e6027d001ddf97d165071de7fdb7eefbea81c6a5440badde28a9785f7bf0cede.
+Assemble the compact exact-byte custody packet and reviewed completion plan
+before the scoped checkpoint. No provider-owned entry records or their index
+activation enter this broker checkpoint; root owns remote integration.

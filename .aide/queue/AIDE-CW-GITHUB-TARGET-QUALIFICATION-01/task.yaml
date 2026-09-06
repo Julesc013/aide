@@ -1,0 +1,32 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
+title: Implement and qualify the exact GitHub broker target contract
+type: execution
+status: planned
+planning_state: admitted_backlog
+result: PENDING
+created_at: 2026-09-07
+parent_task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
+target_repository: AIDE
+objective: "Implement a concrete GitHub policy/identity contract and qualified merge adapter that refuses changed base, head or target ref at the server; prove it with hosted adversarial races before broker activation."
+authority_basis: Current explicit programme implementation authority and root-directed decomposition after independently reviewed broker checkpoint 8c3df653.
+source_of_truth: Exact target observations, reviewed configuration, raw server outcomes and immutable Git objects.
+start_dependencies: []
+close_dependencies:
+  - AIDE-CW-ISOLATED-HOST-01
+integration_with: AIDE-CW-INTEGRATION-BROKER-01
+allowed_paths:
+  - core/runtime/integration_broker/
+  - .aide/scripts/tests/test_continuous_worker_github_observation.py
+  - .github/workflows/aide-cw-checks.yml
+  - .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/
+  - .aide/queue/index.yaml
+  - docs/reference/integration-broker-core.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+retained_gates:
+  - no GitHub settings or workflow installation before the exact target item and configuration receive independent review
+  - no credential creation, exposure or replacement inferred from this planning admission
+  - no force push, protected direct push, bypass or invented hosted qualification
+  - existing owner branch and promotion authority must be preserved explicitly

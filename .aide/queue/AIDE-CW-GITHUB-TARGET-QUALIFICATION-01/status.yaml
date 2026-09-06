@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
+status: planned
+planning_state: admitted_backlog
+result: PENDING
+updated_at: 2026-09-07
+configuration_review: pending
+settings_mutated: false
+hosted_acceptance: not_run

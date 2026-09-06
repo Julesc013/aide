@@ -324,3 +324,12 @@ ledger and named Job recovery. AIDE-CW-INTEGRATION-BROKER-01 keeps exact local
 source/test receipts distinct from pending provider, host/store and atomic
 server qualification. Historical test and review bytes remain preserved in
 task custody archives.
+
+### Provider facts and executable qualification plan
+
+The broker reference now documents finite raw REST reads, actual Actions
+run/attempt provenance, immutable merged parents, expired-authority observation
+and explicit target-policy absence. The new target WorkUnit contains cited
+GitHub contract research and local graph experiments; the existing host ExecPlan
+contains concrete Windows isolation/denial probes. Neither planning admission
+nor offline parser/graph tests install settings or qualify an operational host.

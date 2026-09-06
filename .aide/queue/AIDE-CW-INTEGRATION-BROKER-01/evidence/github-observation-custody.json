@@ -1,0 +1,258 @@
+{
+  "schema": "aide.broker.github-evidence-custody.v1",
+  "archive": "github-observation-evidence.zip",
+  "archive_sha256": "7c0fedaf3df8dd992c94b22334edf8eb96a6dcf5f5a3c3bb505e1872c880acf2",
+  "archive_bytes": 487128,
+  "members": {
+    "bridge-checkpoint-pushed.json": {
+      "sha256": "40294203dcc67afaba5cbce3fe7c76e322ebb6891a74f230317aafce4dc58304",
+      "bytes": 460,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\bridge-checkpoint-pushed.json"
+    },
+    "bridge-commit-receipt.json": {
+      "sha256": "3faf868ac7a409d4ec522388b02a71f8f96cce3db2efd8916e82b6bed1bfb598",
+      "bytes": 4689,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\bridge-commit-receipt.json"
+    },
+    "github-aide-cw-github-target-qualification-01-inspect.txt": {
+      "sha256": "e8c34016f340e54d5f1fa01098d1b2ae166edf3068b0b4407974a001a7f13844",
+      "bytes": 436,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-aide-cw-github-target-qualification-01-inspect.txt"
+    },
+    "github-aide-cw-github-target-qualification-01-noop-check.txt": {
+      "sha256": "8bd08e2f3952cd465aa5adef35e4d203889a3e9b4bf3a931a906cf67729e1755",
+      "bytes": 177,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-aide-cw-github-target-qualification-01-noop-check.txt"
+    },
+    "github-aide-cw-github-target-qualification-01-recover.txt": {
+      "sha256": "1ea74184a3d83334750848f3d26660d5034d993f87e8c154e6f0576dd8a2d68c",
+      "bytes": 180,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-aide-cw-github-target-qualification-01-recover.txt"
+    },
+    "github-aide-cw-integration-broker-01-inspect.txt": {
+      "sha256": "5fe9639906c5ea6854fc31f750cdef24093aaf5f88ce4653070a115be9b28467",
+      "bytes": 402,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-aide-cw-integration-broker-01-inspect.txt"
+    },
+    "github-aide-cw-integration-broker-01-noop-check.txt": {
+      "sha256": "3fb536768b562ef14ec03020e6204f5f1aa81be1612ce9fbca5d30cd08fb2dee",
+      "bytes": 168,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-aide-cw-integration-broker-01-noop-check.txt"
+    },
+    "github-aide-cw-integration-broker-01-recover.txt": {
+      "sha256": "139f61646d139c5f970bab5f372019c37c75ed6bc722c32e640978042163792d",
+      "bytes": 171,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-aide-cw-integration-broker-01-recover.txt"
+    },
+    "github-completion-plan-manifest.json": {
+      "sha256": "f6c588860015b6129ebb1cb9ee05afc86d561657014edc41090211b7c17a3d21",
+      "bytes": 3374,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-completion-plan-manifest.json"
+    },
+    "github-doctor.txt": {
+      "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "bytes": 5181,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-doctor.txt"
+    },
+    "github-existing-pr-tests.json": {
+      "sha256": "86821d336fa684133e86a26a3681abe7fd5cbe60df4ca5bb656d614d0ca33bd3",
+      "bytes": 1504,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-existing-pr-tests.json"
+    },
+    "github-existing-pr-tests.txt": {
+      "sha256": "2e740fd43d1228b6855a925b60962c5968a43cda49b55f5f478168cc34dadefe",
+      "bytes": 126,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-existing-pr-tests.txt"
+    },
+    "github-export-check.json": {
+      "sha256": "ac0ff4b763499e467f62237d93c02f50a296295a1f5164bab6a6f5eef8f98c7e",
+      "bytes": 159,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-export-check.json"
+    },
+    "github-helper-checks.json": {
+      "sha256": "66d24aeb17a3fdec787e94fb0ed7f81042f7d1425d69c222a8686bddab7ba128",
+      "bytes": 2740,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-helper-checks.json"
+    },
+    "github-observation-24-source-custody.json": {
+      "sha256": "a05ed2816a61c0b9dfbe8b3e1cecd02207892e28efea10d335cb0feea86b3531",
+      "bytes": 690,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-24-source-custody.json"
+    },
+    "github-observation-24-source.zip": {
+      "sha256": "90b8b98dc7b536525178eb0d1d1c08d84e48dd85238aeeba84ee2498f3870667",
+      "bytes": 13061,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-24-source.zip"
+    },
+    "github-observation-final-tests.json": {
+      "sha256": "f6b7e4fc6f6ff58f2e56237a1a3f18cb1f1ac5ddac6e00826a24599d58e7e335",
+      "bytes": 1411,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-final-tests.json"
+    },
+    "github-observation-final-tests.txt": {
+      "sha256": "63fa433d64c58c5cefc1565289d7e54ea9928996613f6357625367f3b8e5b65a",
+      "bytes": 4746,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-final-tests.txt"
+    },
+    "github-observation-pending-tests.json": {
+      "sha256": "0d44a089363c51f29b463384c1721bfbf3a717d249e3a07f40255b9c701f39b4",
+      "bytes": 1411,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-pending-tests.json"
+    },
+    "github-observation-pending-tests.txt": {
+      "sha256": "6180a4c1607a63b97713ed815e709d02964d96fe24d53cefd2a68065d5f80b6b",
+      "bytes": 5156,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-pending-tests.txt"
+    },
+    "github-observation-real-jobs.json": {
+      "sha256": "4294affba49d13a1588b00e64f605ddcd772ad05df833eb52f1e17fa2819cae6",
+      "bytes": 31122,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-real-jobs.json"
+    },
+    "github-observation-root-final-replay.txt": {
+      "sha256": "b13c6754ed61984f6589c0555d99f6a6f6453c240cb19381bd13772f82340e08",
+      "bytes": 5156,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-root-final-replay.txt"
+    },
+    "github-observation-root-independent-review.json": {
+      "sha256": "61acfae3a7a4aa14cf5671e2f8a88b8712d84424772db5bc84ec9ef8bc416a88",
+      "bytes": 2881,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-root-independent-review.json"
+    },
+    "github-observation-root-replay.json": {
+      "sha256": "752ab4b5e45bc8fe26f152df8f2c6d0e52ed2d7f47dfef1b8867aa22f766c3aa",
+      "bytes": 1451,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-root-replay.json"
+    },
+    "github-observation-root-replay.txt": {
+      "sha256": "98171f06359e7d0aa5493c7dee70fccec36b85339647c69531943fe98eed8974",
+      "bytes": 4746,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-root-replay.txt"
+    },
+    "github-observation-source-manifest.json": {
+      "sha256": "c89053c66894d66ba2b860c10d55d09052fc1ee9b86574f7c73f44bb004dd1b5",
+      "bytes": 1179,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-source-manifest.json"
+    },
+    "github-observation-source.patch": {
+      "sha256": "960acc2c8e655166c4ad9f3c64786df73c653dcb2e3a79daec6f5428097c8bc0",
+      "bytes": 56008,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-source.patch"
+    },
+    "github-observation-tests.json": {
+      "sha256": "61996ec4dbc7e4d8e5c234451a3782a5dc814c71005da6aa5c272f3a7bbe19fa",
+      "bytes": 1411,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-tests.json"
+    },
+    "github-observation-tests.txt": {
+      "sha256": "a1dd58f09466747796eba784c0a1a778d84c2d6d86d95b5d83cf8dcc990b4a6b",
+      "bytes": 4509,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-tests.txt"
+    },
+    "github-validate.txt": {
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "bytes": 4893242,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-validate.txt"
+    },
+    "target-qualification/strict-contract-experiments-run.json": {
+      "sha256": "a8aba1fb67b256f7a9095a0d5e202ab1c4e5437b4434ef1641ee23e0409b72fa",
+      "bytes": 459,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\\evidence\\strict-contract-experiments-run.json"
+    },
+    "target-qualification/strict-contract-experiments.json": {
+      "sha256": "2a5831b106ec50233e8d6d863e45e69ce3e3e6f0507f65528e59fdd10643315e",
+      "bytes": 18386,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\\evidence\\strict-contract-experiments.json"
+    },
+    "target-qualification/strict-contract-experiments.py": {
+      "sha256": "3ad248cd54670d4f5554d7b947e6950d2ea3ac874f36d2cdfb9d96ac08ec3f97",
+      "bytes": 7445,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\\evidence\\strict-contract-experiments.py"
+    },
+    "target-qualification/strict-contract-experiments.txt": {
+      "sha256": "89096738d41d663767f2727f828853e559068e3c53e350656a19318acbe3659a",
+      "bytes": 543,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\\evidence\\strict-contract-experiments.txt"
+    },
+    "github-checkpoint-aide-dev-main-plan.json": {
+      "sha256": "118441094a52dbaca0fe196c012a3cda703402cb96b6faa96340fc381e539266",
+      "bytes": 4472,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-aide-dev-main-plan.json"
+    },
+    "github-checkpoint-aide-dev-main-plan.md": {
+      "sha256": "074cc9104b1640af027e1204cfddd5ef05f245c76aa1c939b7ac647a7285b27e",
+      "bytes": 1300,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-aide-dev-main-plan.md"
+    },
+    "github-checkpoint-diff-check.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-diff-check.txt"
+    },
+    "github-checkpoint-git-detect.txt": {
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86",
+      "bytes": 560,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-git-detect.txt"
+    },
+    "github-checkpoint-git-plan.txt": {
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de",
+      "bytes": 689,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-git-plan.txt"
+    },
+    "github-checkpoint-git-policy.txt": {
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd",
+      "bytes": 5553,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-git-policy.txt"
+    },
+    "github-checkpoint-helper-checks.json": {
+      "sha256": "0b49344d12c83ff5185999993069069c6908114b2781ae9fc159dad60a9ee73f",
+      "bytes": 1301,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-helper-checks.json"
+    },
+    "github-checkpoint-latest-helper-plan.json": {
+      "sha256": "0e77d79700b8dd4a732cb3939885936db260be901af11d83a80d2978ef01bf54",
+      "bytes": 2736,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-latest-helper-plan.json"
+    },
+    "github-checkpoint-latest-helper-plan.md": {
+      "sha256": "747155bc3148d61357ebd0e78756f959b2e27e7d67c813676018c022ed2e7013",
+      "bytes": 987,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-latest-helper-plan.md"
+    },
+    "github-checkpoint-message-check.txt": {
+      "sha256": "38379e57430cf3aa454f5153ae0575760696e61a1527f6569af3d913e12cdb59",
+      "bytes": 2486,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-message-check.txt"
+    },
+    "github-checkpoint-message.txt": {
+      "sha256": "afc66f7c31d6180a4779844a00001fd8d786a0ca5106fc53d780ccfa80570460",
+      "bytes": 2452,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-message.txt"
+    },
+    "github-checkpoint-workflow-detection.json": {
+      "sha256": "74281b9b92a7bdcb78b9081594a7049fc060636a6d25c1c0d9e288a86831c2d0",
+      "bytes": 1037,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-workflow-detection.json"
+    },
+    "github-checkpoint-workflow-detection.md": {
+      "sha256": "af0f8ed9ad8a80acb45a89c4e5404daf1b32ed19ddeee79712eb424ed02f04ac",
+      "bytes": 748,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-checkpoint-workflow-detection.md"
+    },
+    "github-completion-root-review.json": {
+      "sha256": "4fcbc87aef6be0916676fd36a72416b5c44f33bd483d193ec0ca71f4b8327e18",
+      "bytes": 1215,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-completion-root-review.json"
+    },
+    "history/github-observation-34-evidence.zip": {
+      "sha256": "821b40b5ef1848815951fa042c236c6801a84114ae16381607752b42c73c43be",
+      "bytes": 258177,
+      "source_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-INTEGRATION-BROKER-01\\evidence\\github-observation-evidence.before-preflight.zip"
+    }
+  },
+  "source_of_truth": "exact original ZIP member bytes; directly tracked JSONs are readable projections",
+  "raw_originals_retained_on_disk": true,
+  "secret_pattern_scan": "PASS for token-family/private-key patterns; no values printed",
+  "network_operational_qualification": false,
+  "previous_preflight_archive_sha256": "821b40b5ef1848815951fa042c236c6801a84114ae16381607752b42c73c43be"
+}

@@ -1,0 +1,102 @@
+{
+  "checks": [
+    {
+      "name": "github-aide-cw-integration-broker-01-inspect",
+      "arguments": [
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-INTEGRATION-BROKER-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.592,
+      "sha256": "5fe9639906c5ea6854fc31f750cdef24093aaf5f88ce4653070a115be9b28467",
+      "bytes": 402
+    },
+    {
+      "name": "github-aide-cw-integration-broker-01-noop-check",
+      "arguments": [
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-INTEGRATION-BROKER-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.548,
+      "sha256": "3fb536768b562ef14ec03020e6204f5f1aa81be1612ce9fbca5d30cd08fb2dee",
+      "bytes": 168
+    },
+    {
+      "name": "github-aide-cw-integration-broker-01-recover",
+      "arguments": [
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-INTEGRATION-BROKER-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.604,
+      "sha256": "139f61646d139c5f970bab5f372019c37c75ed6bc722c32e640978042163792d",
+      "bytes": 171
+    },
+    {
+      "name": "github-aide-cw-github-target-qualification-01-inspect",
+      "arguments": [
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-GITHUB-TARGET-QUALIFICATION-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.559,
+      "sha256": "e8c34016f340e54d5f1fa01098d1b2ae166edf3068b0b4407974a001a7f13844",
+      "bytes": 436
+    },
+    {
+      "name": "github-aide-cw-github-target-qualification-01-noop-check",
+      "arguments": [
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-GITHUB-TARGET-QUALIFICATION-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.548,
+      "sha256": "8bd08e2f3952cd465aa5adef35e4d203889a3e9b4bf3a931a906cf67729e1755",
+      "bytes": 177
+    },
+    {
+      "name": "github-aide-cw-github-target-qualification-01-recover",
+      "arguments": [
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-GITHUB-TARGET-QUALIFICATION-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.594,
+      "sha256": "1ea74184a3d83334750848f3d26660d5034d993f87e8c154e6f0576dd8a2d68c",
+      "bytes": 180
+    },
+    {
+      "name": "github-doctor",
+      "arguments": [
+        "doctor"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.569,
+      "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "bytes": 5181
+    },
+    {
+      "name": "github-validate",
+      "arguments": [
+        "validate"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.481,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "bytes": 4893242
+    }
+  ]
+}

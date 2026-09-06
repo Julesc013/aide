@@ -1,0 +1,21 @@
+{
+  "command": "python -B -m unittest discover -s .aide/scripts/tests -p test_continuous_worker_github_observation.py -v",
+  "exit_code": 0,
+  "elapsed_seconds": 0.316,
+  "source_before": {
+    "core/runtime/integration_broker/github_api.py": "c65409bbc2a2a621a0e457f04841ab3c21d5fdeceaf6cda1d4bdb2b95b086019",
+    "core/runtime/integration_broker/github_checks.py": "52aa57f50816bc3dba18a3c13775eecfde1a2fbf9a488e56dd1d327ac52bcf53",
+    "core/runtime/integration_broker/github_observation.py": "ad7f924ace33649e44dbcfd460a90141c1e7d67408c3133fc203b7d877bdb546",
+    ".aide/scripts/tests/test_continuous_worker_github_observation.py": "e1d9898637986a47679803a0670f145a98268d87868665cac1b929894f52bd24"
+  },
+  "source_after": {
+    "core/runtime/integration_broker/github_api.py": "c65409bbc2a2a621a0e457f04841ab3c21d5fdeceaf6cda1d4bdb2b95b086019",
+    "core/runtime/integration_broker/github_checks.py": "52aa57f50816bc3dba18a3c13775eecfde1a2fbf9a488e56dd1d327ac52bcf53",
+    "core/runtime/integration_broker/github_observation.py": "ad7f924ace33649e44dbcfd460a90141c1e7d67408c3133fc203b7d877bdb546",
+    ".aide/scripts/tests/test_continuous_worker_github_observation.py": "e1d9898637986a47679803a0670f145a98268d87868665cac1b929894f52bd24"
+  },
+  "unchanged": true,
+  "log_sha256": "6180a4c1607a63b97713ed815e709d02964d96fe24d53cefd2a68065d5f80b6b",
+  "network_calls": false,
+  "hosted_qualification": false
+}

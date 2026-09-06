@@ -3375,3 +3375,13 @@ separate durable call reservations and real Windows refusal/recovery tests.
 Freeze and independently review the exact source before checkpointing. Actual
 provider fact normalization, protected host/store and exact-base server
 qualification remain required; operational activation remains false.
+
+### Broker provider facts and concrete completion dependencies
+
+Continue from reviewed/pushed 8c3df653 with raw GitHub response normalization,
+actual check/run/attempt provenance and immutable merged-object reconciliation.
+AIDE-CW-GITHUB-TARGET-QUALIFICATION-01 admits exact policy/principal/workflow
+preparation and hosted adversarial acceptance without installing settings.
+AIDE-CW-ISOLATED-HOST-01 names AppContainer, owned-root ACL, network and denial
+probes. Provider/source preparation starts independently; full broker closure
+requires actual host and target qualification before the existing live pilot.

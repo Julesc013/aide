@@ -10923,3 +10923,20 @@ validate and source-only export checks also passed. Exact source-bound evidence
 is recorded in the task. Independent root source review and all 11 replayed
 bridge tests passed with unchanged hashes. No operational provider
 implementation or qualification is installed.
+
+### Bounded raw GitHub observations
+
+Added a fixed-origin finite REST reader, Actions provenance mapper and exact
+PR/Git observation collector under AIDE-CW-INTEGRATION-BROKER-01. Twenty-six
+offline tests pass, including null/duplicate/truncated responses, wrong refs or
+forks, rerun and late-target drift, expired-authority observe-only recovery and
+immutable merged parents. No HTTP client, credential reader or target policy
+is installed; policy pins remain absent. Thirteen disposable local Git graph
+experiments identify the strict-check premises and same-OID retarget counterexample.
+Exact source review and actual host/server acceptance remain separate gates.
+
+The independent review identified a normal queued-check publication window.
+That window now yields wait_checks with incomplete provenance, preserving
+automatic polling; completed successful checks still require the actual run
+and attempt job. A durable pending-to-complete regression confirms no mutation
+intent is created while evidence is incomplete.
