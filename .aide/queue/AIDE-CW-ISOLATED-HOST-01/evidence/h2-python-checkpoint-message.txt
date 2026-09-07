@@ -1,0 +1,42 @@
+feat(runtime): bind explicit Python image recipe bytes
+
+## Summary
+
+- Bind private Python dependency metadata and deterministic library image bytes.
+
+## Why
+
+- Restricted images need exact input custody without ambient import assumptions.
+
+## Changed
+
+- Add bounded PE, named system/API-set and deterministic ZIP/_pth data readers.
+- Add v2 generated-byte admission through the retained image preparation protocol.
+- Preserve v1 identity/fingerprints and source-bound failure/review evidence.
+
+## Validation
+
+- Local and independent 95 source, stream, journal and actual Job tests PASS.
+- Independent legacy differential, ZIP wire and 1,024 PE mutation checks PASS.
+- AIDE validation, portable export exclusion and source secret scan PASS.
+
+## Changelog
+
+- Added: explicit Python recipe metadata and generated image-byte custody.
+
+## Risks
+
+- Actual native/API bindings, Windows delay compatibility and loader proof remain.
+- Image grants are modeled; no real tool copying or operational activation.
+
+## Follow-up
+
+- Handle the observed RVA/timestamp0 optional delay tables under existing bounds.
+- Review exact native input and image effects before restricted Python startup.
+
+AIDE-Task: AIDE-CW-ISOLATED-HOST-01
+AIDE-Phase: bounded-python-recipe-source
+AIDE-Result: partial
+AIDE-Scope: recipe source, direct tests, owned docs and immutable raw custody
+AIDE-Token-Impact: finite metadata and compact evidence packets
+AIDE-Quality-Gate: independent exact-source and 95-test replay passed

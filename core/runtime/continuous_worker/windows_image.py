@@ -14,6 +14,7 @@ import time
 
 from . import windows_security_objects as native
 from .state import Refused
+from .windows_python_image import DerivedFile, MAX_ARCHIVE_BYTES, PTH_BYTES
 
 CHUNK = 65536
 
@@ -100,6 +101,57 @@ class ImageFile:
 
 
 @dataclass(frozen=True)
+class GeneratedImageFile:
+    path: str
+    size: int
+    sha256: str
+    producer_sha256: str
+
+
+def _image_files(rows, limits, source, output, schema):
+    if type(rows) is not list or not 1 <= len(rows) <= limits.entries:
+        raise Refused("bounded nonempty image files required")
+    files, names, directories, sources, source_directories, total = [], {}, {}, set(), {}, 0
+    for row in rows:
+        if type(row) is not dict:
+            raise Refused("known exact image file required")
+        kind = "source_file" if schema.endswith(".v1") else row.get("kind")
+        fields = {"path", "source", "size", "sha256", "source_identity"} if kind == "source_file" else {"path", "size", "sha256", "producer_sha256"}
+        if schema.endswith(".v2"): fields.add("kind")
+        if kind not in ("source_file", "generated_bytes") or set(row) != fields:
+            raise Refused("explicit known source-file or generated-byte fields required")
+        parts = relative_path(row["path"]); path = "/".join(parts); key = path.casefold()
+        if key in names or _utf16_units(str(output.joinpath(*parts))) > 240:
+            raise Refused("image path alias or materialized path bound exceeded")
+        size = _integer(row["size"], 0, limits.file_bytes, "declared file size")
+        digest = _digest(row["sha256"])
+        components_to_record = [(parts, directories)]
+        if kind == "source_file":
+            origin = relative_path(row["source"]); source_name = "/".join(origin)
+            if source_name.casefold() in sources or _utf16_units(str(source.joinpath(*origin))) > 240:
+                raise Refused("source alias or materialized path bound exceeded")
+            sources.add(source_name.casefold()); components_to_record.append((origin, source_directories))
+            entry = ImageFile(path, source_name, size, digest, _identity(row["source_identity"]))
+        else:
+            if path not in ("python314.zip", "python314._pth") or not 0 < size <= MAX_ARCHIVE_BYTES:
+                raise Refused("one bounded exact derived Python path required")
+            if path == "python314._pth" and (size != len(PTH_BYTES) or digest != hashlib.sha256(PTH_BYTES).hexdigest()):
+                raise Refused("fixed isolated Python path declaration required")
+            entry = GeneratedImageFile(path, size, digest, _digest(row["producer_sha256"]))
+        for components, registered in components_to_record:
+            for i in range(1, len(components)):
+                directory = "/".join(components[:i]); folded = directory.casefold()
+                if folded in registered and registered[folded] != directory:
+                    raise Refused("case-aliased image or source directory")
+                registered[folded] = directory
+        names[key] = path; total += size; files.append(entry)
+    if (names.keys() & directories.keys() or sources & source_directories.keys() or
+            len(names) + len(directories) > limits.entries or total > limits.total_bytes):
+        raise Refused("file/directory collision or aggregate image limit exceeded")
+    return tuple(sorted(files, key=lambda row: row.path))
+
+
+@dataclass(frozen=True)
 class ImagePlan:
     generation: str
     input_root: str
@@ -110,14 +162,15 @@ class ImagePlan:
     package_sid: str
     entrypoint: str
     limits: ImageLimits
-    files: tuple[ImageFile, ...]
+    files: tuple[ImageFile | GeneratedImageFile, ...]
     fingerprint: str
+    schema: str = "aide.host.private-image.v1"
 
     @classmethod
     def read(cls, value):
         fields = {"schema", "generation", "input_root", "input_identity", "output_root", "parent_identity",
                   "user_sid", "package_sid", "entrypoint", "limits", "files"}
-        if not isinstance(value, dict) or set(value) != fields or value["schema"] != "aide.host.private-image.v1":
+        if not isinstance(value, dict) or set(value) != fields or value["schema"] not in ("aide.host.private-image.v1", "aide.host.private-image.v2"):
             raise Refused("known exact private-image plan required")
         generation = value["generation"]
         if not isinstance(generation, str) or not re.fullmatch(r"[0-9a-f]{32}", generation):
@@ -132,50 +185,32 @@ class ImagePlan:
         user, package = native.sid_text(value["user_sid"]), native.sid_text(value["package_sid"])
         if not re.fullmatch(r"S-1-15-2-(?:[0-9]+-){6}[0-9]+", package):
             raise Refused("one specific package SID required")
-        if not isinstance(value["files"], list) or not 1 <= len(value["files"]) <= limits.entries:
-            raise Refused("bounded nonempty image files required")
-        files, names, directories, sources, source_directories, total = [], {}, {}, set(), {}, 0
-        for row in value["files"]:
-            if not isinstance(row, dict) or set(row) != {"path", "source", "size", "sha256", "source_identity"}:
-                raise Refused("known exact image file required")
-            parts, origin = relative_path(row["path"]), relative_path(row["source"])
-            path, source_name = "/".join(parts), "/".join(origin)
-            key = path.casefold()
-            if key in names or source_name.casefold() in sources:
-                raise Refused("image file or source alias collision")
-            if _utf16_units(str(output.joinpath(*parts))) > 240 or _utf16_units(str(source.joinpath(*origin))) > 240:
-                raise Refused("materialized native path exceeds bound")
-            for components, registered in ((parts, directories), (origin, source_directories)):
-                for i in range(1, len(components)):
-                    directory = "/".join(components[:i]); folded = directory.casefold()
-                    if folded in registered and registered[folded] != directory:
-                        raise Refused("case-aliased image or source directory")
-                    registered[folded] = directory
-            names[key] = path; sources.add(source_name.casefold())
-            size = _integer(row["size"], 0, limits.file_bytes, "declared file size")
-            total += size
-            files.append(ImageFile(path, source_name, size, _digest(row["sha256"]), _identity(row["source_identity"])))
-        if (names.keys() & directories.keys() or sources & source_directories.keys() or
-                len(names) + len(directories) > limits.entries or total > limits.total_bytes):
-            raise Refused("file/directory collision or aggregate image limit exceeded")
+        files = _image_files(value["files"], limits, source, output, value["schema"])
         entrypoint = "/".join(relative_path(value["entrypoint"]))
-        if entrypoint not in names.values() or not entrypoint.lower().endswith(".exe"):
+        if entrypoint not in {row.path for row in files if isinstance(row, ImageFile)} or not entrypoint.lower().endswith(".exe"):
             raise Refused("exact declared executable entrypoint required")
         result = cls(generation, str(source), _identity(value["input_identity"]), str(output),
                    _identity(value["parent_identity"]), user, package, entrypoint, limits,
-                   tuple(sorted(files, key=lambda row: row.path)), "")
+                   files, "", value["schema"])
         canonical = json.dumps(result.to_value(), sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
         return replace(result, fingerprint=hashlib.sha256(canonical).hexdigest())
 
     def to_value(self):
         identity = lambda pair: {"volume": pair[0], "file_id": pair[1]}
-        return {"schema": "aide.host.private-image.v1", "generation": self.generation,
+        def file_value(row):
+            if isinstance(row, GeneratedImageFile):
+                return {"kind": "generated_bytes", "path": row.path, "size": row.size,
+                        "sha256": row.sha256, "producer_sha256": row.producer_sha256}
+            value = {"path": row.path, "source": row.source, "size": row.size,
+                     "sha256": row.sha256, "source_identity": identity(row.source_identity)}
+            if self.schema.endswith(".v2"): value["kind"] = "source_file"
+            return value
+        return {"schema": self.schema, "generation": self.generation,
                 "input_root": self.input_root, "input_identity": identity(self.input_identity),
                 "output_root": self.output_root, "parent_identity": identity(self.parent_identity),
                 "user_sid": self.user_sid, "package_sid": self.package_sid, "entrypoint": self.entrypoint,
                 "limits": {key: getattr(self.limits, key) for key in ("entries", "file_bytes", "total_bytes", "seconds")},
-                "files": [{"path": row.path, "source": row.source, "size": row.size, "sha256": row.sha256,
-                           "source_identity": identity(row.source_identity)} for row in self.files]}
+                "files": [file_value(row) for row in self.files]}
 
     def validate(self):
         try:
@@ -341,7 +376,33 @@ class PreparedImage:
         self.closed = True
 
 
-def prepare_image(plan, *, guard, clock=time.monotonic):
+def _generated_inputs(plan, generated):
+    if type(generated) is not tuple:
+        raise Refused("immutable explicit generated-file tuple required")
+    expected = {row.path: row for row in plan.files if isinstance(row, GeneratedImageFile)}
+    if len(generated) != len(expected):
+        raise Refused("generated-byte input set differs from image admission")
+    result = {}
+    for item in generated:
+        if type(item) is not DerivedFile:
+            raise Refused("typed immutable derived bytes required")
+        # Reconstruct to refuse a forged/mutated typed value before any native
+        # lease or reservation. The admission's producer and digest are authority.
+        current = DerivedFile(item.path, item.contents, item.producer_sha256)
+        entry = expected.get(current.path)
+        if (entry is None or current.path in result or len(current.contents) != entry.size or
+                current.sha256 != entry.sha256 or current.producer_sha256 != entry.producer_sha256):
+            raise Refused("generated bytes differ from admitted path, size, digest or producer")
+        result[current.path] = current.contents
+    return result
+
+
+def _generated_chunks(data):
+    for offset in range(0, len(data), CHUNK):
+        yield data[offset:offset + CHUNK]
+
+
+def prepare_image(plan, *, guard, clock=time.monotonic, generated=()):
     """Prepare admitted bytes only; tool/DLL/runtime qualification remains separate.
 
     Local synchronous I/O gets checks before/after operations. A qualified outer
@@ -360,6 +421,8 @@ def prepare_image(plan, *, guard, clock=time.monotonic):
         now = clock()
         if type(now) not in (int, float) or not math.isfinite(now) or (now < started or (preparing and now >= deadline)):
             raise Refused("private-image preparation deadline expired or regressed")
+    current()
+    generated_bytes = _generated_inputs(plan, generated)
     current()
     objects, transferred = [], False
     with ExitStack() as stack:
@@ -392,7 +455,9 @@ def prepare_image(plan, *, guard, clock=time.monotonic):
                         obj = directories[prefix[:-1]].child(prefix[-1], directory=True)
                         directories[prefix] = obj; objects.append(obj)
                 obj = directories[parts[:-1]].child(parts[-1]); objects.append(obj)
-                with closing(source.chunks(entry)) as chunks:
+                stream = (_generated_chunks(generated_bytes[entry.path]) if isinstance(entry, GeneratedImageFile)
+                          else source.chunks(entry))
+                with closing(stream) as chunks:
                     obj.write_stream(chunks, size=entry.size, sha256=entry.sha256,
                                      limit=plan.limits.file_bytes, deadline=deadline, clock=clock)
             for obj in reversed(objects): obj.seal()

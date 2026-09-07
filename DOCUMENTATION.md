@@ -371,3 +371,22 @@ The H2 source manifest, independent review and custody map under the isolated
 host task bind the three authored files and all 63-test evidence. The next
 h2-python-closure-proposal.md records exact PE/API-set and deterministic library
 requirements without granting tool-copy or runtime-effect authority.
+
+## H2 Python recipe source admission
+
+Continue from 06f2546f on the same owned branch under ROOT's accepted proposal
+16b243f4. Implement a bounded AMD64 import/delay/forwarder parser first, then the
+exact named private/system/API-set recipe and deterministic ZIP_STORED/_pth
+builder. Add a truthful generated-byte kind without changing v1 source identity.
+Use the proposed finite parse/closure/member/byte bounds and malformed-input,
+unknown-dependency, alias, mutation and deterministic-custody tests. Keep current
+image/H1/candidate bounds. No real tool copying, package grant, profile, private
+runtime launch or activation is admitted here. Freeze exact source for review.
+
+The frozen eight-file recipe source and its 95-test receipt are indexed by
+h2-python-source-manifest.json and h2-python-source-review-notes.md under the
+host task. The focused windows_python_contract module owns explicit system data;
+windows_python_image owns deterministic library data. Additional read-only
+Windows DLL inspection preserves five unsupported bound-delay refusals and three
+metadata passes; h2-python-native-input-next-proposal.md records the concrete
+compatibility/observation work required before an actual Python effect.

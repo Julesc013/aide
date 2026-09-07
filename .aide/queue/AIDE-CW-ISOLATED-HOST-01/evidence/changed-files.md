@@ -28,3 +28,11 @@ record exact source assurance and remaining work. Current review/manifest/test
 receipts and three compact custody packets preserve all failure and success
 history. No provider coordinator, queue-index scalar, branch or remote mutation
 is included in this checkpoint scope.
+
+## Python recipe source
+
+Add bounded windows_pe, windows_python_image and windows_python_contract modules
+and three direct test files; extend windows_image and its direct test for exact
+v2 generated-byte admission while preserving v1. Own task/docs and compact raw
+evidence carry the 95-test independent source review and remaining native/loader
+gaps. Provider entry records and queue index are excluded.

@@ -10982,3 +10982,38 @@ Image source now uses immutable bounded plans, separate streaming and retained
 relative-handle reservations. Independent NT/Win32 and 8.3 overlap findings were
 reproduced and fixed, with both original packets retained. All 63 tests and the
 independent replay pass. Native image grants/loading remain unqualified.
+
+## H2 Python recipe source admission
+
+Continue from 06f2546f on the same owned branch under ROOT's accepted proposal
+16b243f4. Implement a bounded AMD64 import/delay/forwarder parser first, then the
+exact named private/system/API-set recipe and deterministic ZIP_STORED/_pth
+builder. Add a truthful generated-byte kind without changing v1 source identity.
+Use the proposed finite parse/closure/member/byte bounds and malformed-input,
+unknown-dependency, alias, mutation and deterministic-custody tests. Keep current
+image/H1/candidate bounds. No real tool copying, package grant, profile, private
+runtime launch or activation is admitted here. Freeze exact source for review.
+
+### Focused dependency contract module
+
+Keep the exact named SystemContract and recursive PE dependency validation in
+windows_python_contract.py with test_continuous_worker_python_contract.py.
+This separates dependency admission from the deterministic library-byte builder
+and avoids growing a combined parser/contract/archive module. The two paths are
+within the accepted Python recipe objective and now explicit in allowed_paths;
+no new runtime, native or effect authority is added. The original proposal and
+image-source checkpoint remain unchanged.
+
+### Reviewed Python recipe checkpoint
+
+Independent review h2-python-independent-final-review.json passed exact eight
+source files and repeated all 95 tests, 24 v1 differential cases, an independent
+12-member ZIP wire oracle and 1,024 deterministic malformed-PE mutations without
+unexpected exceptions. The source checkpoint remains partial: actual Windows
+optional-delay-table compatibility, native/API mappings and restricted Python
+startup remain open. Preserve the immutable mutation RED and all original review
+bytes in compact custody. Do not stage provider-owned entry records/index or
+raw multi-megabyte logs. No actual tool copy, package grant or loader effect is
+admitted by this checkpoint. The SDK addendum clarifies that timestamp0 means
+unbound even when an optional bound-IAT pointer is nonzero; the next metadata
+slice will target that exact observed layout and retain existing bounds.

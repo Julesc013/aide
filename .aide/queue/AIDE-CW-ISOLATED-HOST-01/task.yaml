@@ -22,6 +22,12 @@ source_base: 24ed66153f7e5d2008b7178b89c1b03025791152
 branch: task/aide-cw-integration-broker-01
 branch_basis: Same reviewed integration task branch; sequential host dependency checkpoint, no new worktree or branch switch.
 allowed_paths:
+  - core/runtime/continuous_worker/windows_python_contract.py
+  - .aide/scripts/tests/test_continuous_worker_python_contract.py
+  - core/runtime/continuous_worker/windows_pe.py
+  - core/runtime/continuous_worker/windows_python_image.py
+  - .aide/scripts/tests/test_continuous_worker_windows_pe.py
+  - .aide/scripts/tests/test_continuous_worker_python_image.py
   - core/runtime/continuous_worker/windows_image.py
   - .aide/scripts/tests/test_continuous_worker_windows_image.py
   - core/runtime/continuous_worker/windows_security.py
@@ -45,3 +51,6 @@ forbidden_operations:
 
 h2_source_base: 454e41aa021c2b8b8b48531f2cb67838ecaa7dab
 h2_scope: bounded private-image source and ordinary synthetic tests; no tool copies or package grants
+
+h2_python_source_base: 06f2546fbb0fea3d4ace8278602737f113c1354d
+h2_python_scope: accepted bounded parser and deterministic derived-byte source plus synthetic tests; no actual copies or grants

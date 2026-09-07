@@ -48,3 +48,21 @@ not additional passing qualification. The current packet also retains exact
 original attack intent bytes copied read-only from their retained fixtures.
 All H1 packets above remain unchanged. The next Python closure proposal carries
 source-only authority and no new native image/profile/launch effect permission.
+
+## H2 Python source packet
+
+The current h2-python-evidence.zip and h2-python-custody.json preserve original
+source, tests, the complete patch, independent review/probe scripts and results,
+all helper output and initial mutation failure. The 4.9 MB validate outputs are
+archive members only; raw working files remain retained and unstaged. Original
+evidence paths referenced by the manifest/review resolve to ZIP members under
+files/. Extract only a requested member into a separately owned evidence root;
+do not overwrite current canonical documents to replay historical observations.
+
+The map gives each original path, byte length and SHA256, plus raw-to-LF Git
+projection bindings for selected human-readable evidence. Archived original bytes
+remain authoritative for their recorded raw hashes. Source/dependency snapshots
+and a copy of the unchanged pending-provider index are historical inputs, not
+new queue authority or a staged canonical index change. The v1 baseline files
+used by the independent differential oracle are under baseline/06f2546f/.
+No private tool images, DLL loads, package grants or runtime activation occurred.

@@ -273,3 +273,49 @@ observed separately. Both original source/reproduction packets and retained
 reviewer fixtures remain intact. Grants and image creation stay modeled in this
 source slice; native image/runtime/loader qualification is still open. The next
 bounded recipe is evidence/h2-python-closure-proposal.md, for source review only.
+
+## H2 Python recipe source admission
+
+Continue from 06f2546f on the same owned branch under ROOT's accepted proposal
+16b243f4. Implement a bounded AMD64 import/delay/forwarder parser first, then the
+exact named private/system/API-set recipe and deterministic ZIP_STORED/_pth
+builder. Add a truthful generated-byte kind without changing v1 source identity.
+Use the proposed finite parse/closure/member/byte bounds and malformed-input,
+unknown-dependency, alias, mutation and deterministic-custody tests. Keep current
+image/H1/candidate bounds. No real tool copying, package grant, profile, private
+runtime launch or activation is admitted here. Freeze exact source for review.
+### Focused dependency contract module
+
+Keep the exact named SystemContract and recursive PE dependency validation in
+windows_python_contract.py with test_continuous_worker_python_contract.py.
+This separates dependency admission from the deterministic library-byte builder
+and avoids growing a combined parser/contract/archive module. The two paths are
+within the accepted Python recipe objective and now explicit in allowed_paths;
+no new runtime, native or effect authority is added. The original proposal and
+image-source checkpoint remain unchanged.
+
+### Python source freeze and current evidence
+
+Eight source/test files are frozen in evidence/h2-python-source-manifest.json;
+95 source/ordinary Windows tests pass. The image v2 generated-byte kind preserves
+v1 file identity/fingerprint and uses the same retained journal/stream protocol.
+The exact named system contract remains metadata pending native ownership,
+API-set mapping and actual loaded-module observations. Library ZIP/_pth bytes are
+deterministic; actual interpreter/bootstrap behavior remains unqualified.
+The input-map mutation RED source/log is retained alongside its passing repair.
+Review boundaries and exact test categories are in h2-python-source-review-notes.md.
+No real tool-image, grant, profile, isolated Python or activation effects ran.
+
+### Reviewed Python recipe checkpoint
+
+Independent review h2-python-independent-final-review.json passed exact eight
+source files and repeated all 95 tests, 24 v1 differential cases, an independent
+12-member ZIP wire oracle and 1,024 deterministic malformed-PE mutations without
+unexpected exceptions. The source checkpoint remains partial: actual Windows
+optional-delay-table compatibility, native/API mappings and restricted Python
+startup remain open. Preserve the immutable mutation RED and all original review
+bytes in compact custody. Do not stage provider-owned entry records/index or
+raw multi-megabyte logs. No actual tool copy, package grant or loader effect is
+admitted by this checkpoint. The SDK addendum clarifies that timestamp0 means
+unbound even when an optional bound-IAT pointer is nonzero; the next metadata
+slice will target that exact observed layout and retain existing bounds.

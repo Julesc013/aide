@@ -28,3 +28,14 @@ are ordinary file/journal operations; image creation/sealing/grants are modeled.
 The task remains running/PENDING with operational_activation false. See the
 current source-review notes for qualified facts and remaining premises. Original
 H1 result and consumed effect receipts remain historical and source-bound.
+
+## H2 Python recipe source checkpoint
+
+Exact eight-file source aggregate c87493f3855f5356f1de47295d9eb4ca833adb943b1e04062fa4badf14dd99ab
+passes local and independent 95 tests. Independent review additionally binds
+24 v1 differential cases, a separate ZIP wire oracle and 1,024 deterministic PE
+mutations. AIDE validate, actual portable export exclusion and secret checks pass.
+See h2-python-source-manifest.json, h2-python-independent-final-review.json and
+h2-python-source-review-notes.md for exact scope; source remains partial and the
+host task running/PENDING. Read-only Windows delay-layout refusals and the SDK
+clarification are preserved. No real tool image, grant or loader qualification.

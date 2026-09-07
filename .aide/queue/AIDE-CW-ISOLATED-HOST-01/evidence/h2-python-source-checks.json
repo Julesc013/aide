@@ -1,0 +1,21 @@
+{
+  "schema": "aide.host.h2-python-source-checks.v1",
+  "source_aggregate": "c87493f3855f5356f1de47295d9eb4ca833adb943b1e04062fa4badf14dd99ab",
+  "portable_source_count": 817,
+  "source_paths_in_export": [],
+  "secret_error_count": 0,
+  "source_unchanged": true,
+  "validate": {
+    "command": [
+      "C:\\Program Files\\Python314\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "validate"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 6.187810400035232,
+    "log": "h2-python-aide-validate.txt",
+    "bytes": 4893242,
+    "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+  }
+}

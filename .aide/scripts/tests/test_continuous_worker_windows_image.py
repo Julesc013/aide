@@ -590,6 +590,146 @@ class PreparationProtocolTests(unittest.TestCase):
                 if phase == "partial": self.assertEqual(output.read_bytes(), retained)
 
 
+
+def generated_fixture(plan=None):
+    from test_continuous_worker_python_image import fixture as library_fixture
+    from core.runtime.continuous_worker.windows_python_image import LibrarySpec, build_stdlib
+    value, inputs = library_fixture(); bundle = build_stdlib(LibrarySpec.read(value), inputs)
+    value = fixture() if plan is None else plan.to_value()
+    value["schema"] = "aide.host.private-image.v2"
+    for row in value["files"]: row["kind"] = "source_file"
+    value["files"].extend(row.declaration() for row in bundle.files)
+    return image.ImagePlan.read(value), bundle.files
+
+
+class GeneratedImageAdmissionTests(unittest.TestCase):
+    def test_v1_value_and_fingerprint_remain_unchanged_and_v2_is_tagged(self):
+        legacy = fixture(); plan = image.ImagePlan.read(legacy)
+        self.assertEqual(plan.to_value(), legacy)
+        expected = hashlib.sha256(json.dumps(legacy, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()).hexdigest()
+        self.assertEqual(plan.fingerprint, expected)
+        current, generated = generated_fixture(); self.assertEqual(current.validate(), current)
+        self.assertEqual(current.schema, "aide.host.private-image.v2")
+        self.assertNotEqual(current.fingerprint, plan.fingerprint)
+        rows = {row["path"]: row for row in current.to_value()["files"]}
+        self.assertEqual(rows["probe.exe"]["kind"], "source_file")
+        self.assertEqual(rows["python314.zip"], generated[0].declaration())
+        self.assertNotIn("source_identity", rows["python314.zip"])
+        for record in generated:
+            self.assertEqual(image._generated_inputs(current, generated)[record.path], record.contents)
+
+    def test_unknown_ambiguous_generated_kinds_and_ambient_path_declarations_refuse(self):
+        for case in ("v1_generated", "v2_untagged", "unknown", "fake_identity", "fake_source", "missing_producer", "invalid_producer", "path", "empty", "too_large", "pth_hash", "pth_size", "entrypoint", "collision", "aggregate"):
+            plan, _ = generated_fixture(); value = plan.to_value(); rows = value["files"]; derived = next(row for row in rows if row["path"] == "python314.zip")
+            pth = next(row for row in rows if row["path"] == "python314._pth")
+            if case == "v1_generated": value["schema"] = "aide.host.private-image.v1"
+            if case == "v2_untagged": del rows[0]["kind"]
+            if case == "unknown": derived["kind"] = "ambient_file"
+            if case == "fake_identity": derived["source_identity"] = {"volume": 1, "file_id": "1" * 32}
+            if case == "fake_source": derived["source"] = "arbitrary"
+            if case == "missing_producer": del derived["producer_sha256"]
+            if case == "invalid_producer": derived["producer_sha256"] = True
+            if case == "path": derived["path"] = "nested/python314.zip"
+            if case == "empty": derived["size"] = 0
+            if case == "too_large": derived["size"] = image.MAX_ARCHIVE_BYTES + 1
+            if case == "pth_hash": pth["sha256"] = "0" * 64
+            if case == "pth_size": pth["size"] += 1
+            if case == "entrypoint": value["entrypoint"] = "python314.zip"
+            if case == "collision": rows.append(dict(rows[0], path="PYTHON314.ZIP", source="other.exe"))
+            if case == "aggregate": value["limits"]["file_bytes"] = len(DATA); value["limits"]["total_bytes"] = len(DATA)
+            with self.subTest(case=case), patch.object(image, "SourceDirectory") as leases:
+                with self.assertRaises(Refused): image.ImagePlan.read(value)
+                leases.assert_not_called()
+
+    def test_missing_extra_corrupt_or_wrong_producer_bytes_refuse_before_native_effects(self):
+        plan, generated = generated_fixture(); first, second = generated
+        malformed = [(), (first,), generated + (first,), (first, first), list(generated),
+                     (replace(first, contents=b"x" * len(first.contents)), second),
+                     (replace(first, contents=first.contents + b"x"), second),
+                     (replace(first, producer_sha256="0" * 64), second), (first.declaration(), second)]
+        for supplied in malformed:
+            with self.subTest(kind=type(supplied).__name__), patch.object(image, "SourceDirectory") as leases, patch.object(image, "_reserve_journal") as reserve:
+                with self.assertRaises(Refused): image.prepare_image(plan, guard=lambda: None, generated=supplied)
+                leases.assert_not_called(); reserve.assert_not_called()
+        with patch.object(image, "SourceDirectory") as leases:
+            with self.assertRaises(Refused): image.prepare_image(image.ImagePlan.read(fixture()), guard=lambda: None, generated=generated)
+            leases.assert_not_called()
+
+    def test_generated_prevalidation_consumes_preparation_clock_before_any_reservation(self):
+        plan, generated = generated_fixture(); times = iter((0, 0, plan.limits.seconds))
+        with patch.object(image, "SourceDirectory") as leases, patch.object(image, "_reserve_journal") as reserve:
+            with self.assertRaisesRegex(Refused, "deadline"):
+                image.prepare_image(plan, guard=lambda: None, generated=generated, clock=lambda: next(times))
+            leases.assert_not_called(); reserve.assert_not_called()
+
+
+@unittest.skipUnless(os.name == "nt", "ordinary Windows stream/journal fixtures required")
+class GeneratedPreparationTests(unittest.TestCase):
+    def setUp(self):
+        SyntheticOwnedObject.events, SyntheticOwnedObject.created, SyntheticOwnedObject.failure = [], [], None
+
+    def test_source_and_generated_bytes_share_durable_stream_and_all_bytes_before_grants(self):
+        with tempfile.TemporaryDirectory(prefix="aide-h2-synthetic-") as folder:
+            root, legacy = preparation_fixture(folder); plan, generated = generated_fixture(legacy)
+            original = image.SourceDirectory.chunks; read_paths = []
+            def record_source(source, row):
+                read_paths.append(row.source)
+                return original(source, row)
+            with patch.object(image.SourceDirectory, "chunks", record_source), patch.object(image, "_create_image_root", SyntheticOwnedObject.create_root):
+                result = image.prepare_image(plan, guard=lambda: None, generated=generated)
+                try:
+                    self.assertEqual(read_paths, ["probe.exe"])
+                    self.assertEqual(Path(plan.output_root, "probe.exe").read_bytes(), DATA)
+                    for row in generated: self.assertEqual(Path(plan.output_root, row.path).read_bytes(), row.contents)
+                    events = [kind for kind, _ in SyntheticOwnedObject.events]
+                    self.assertLess(max(i for i, kind in enumerate(events) if kind == "written"), events.index("seal"))
+                    self.assertLess(max(i for i, kind in enumerate(events) if kind == "seal"), events.index("grant-model-only"))
+                    receipts = [json.loads(row) for row in Path(plan.reservation).read_bytes().splitlines()]
+                    self.assertEqual(receipts[0]["plan_sha256"], plan.fingerprint)
+                    self.assertFalse(receipts[-1]["tool_runtime_qualified"])
+                    self.assertEqual(result.check(), result.observations)
+                finally: result.close()
+            with patch.object(image, "_create_image_root") as create:
+                with self.assertRaises(Refused): image.prepare_image(plan, guard=lambda: None, generated=generated)
+                create.assert_not_called()
+
+    def test_interrupted_derived_stream_retains_intent_partial_bytes_and_cannot_grant_or_replay(self):
+        with tempfile.TemporaryDirectory(prefix="aide-h2-synthetic-") as folder:
+            root, legacy = preparation_fixture(folder); plan, generated = generated_fixture(legacy)
+            original = image._generated_chunks
+            def interrupted(data):
+                yield next(original(data))
+                raise OSError("synthetic derived stream failure")
+            with patch.object(image, "_generated_chunks", interrupted), patch.object(image, "_create_image_root", SyntheticOwnedObject.create_root):
+                with self.assertRaisesRegex(OSError, "derived stream"):
+                    image.prepare_image(plan, guard=lambda: None, generated=generated)
+            self.assertTrue(all(obj.closed for obj in SyntheticOwnedObject.created))
+            self.assertFalse(any(kind == "grant-model-only" for kind, _ in SyntheticOwnedObject.events))
+            retained = {str(p.relative_to(Path(plan.output_root))): p.read_bytes() for p in Path(plan.output_root).iterdir()}
+            self.assertIn("python314._pth", retained)
+            receipts = [json.loads(row) for row in Path(plan.reservation).read_bytes().splitlines()]
+            self.assertEqual(receipts[-1]["phase"], "failed_or_uncertain")
+            with patch.object(image, "_create_image_root") as create:
+                with self.assertRaises(Refused): image.prepare_image(plan, guard=lambda: None, generated=generated)
+                create.assert_not_called()
+            self.assertEqual({str(p.relative_to(Path(plan.output_root))): p.read_bytes() for p in Path(plan.output_root).iterdir()}, retained)
+
+    def test_payload_reference_is_frozen_before_create_callback_can_mutate_caller_objects(self):
+        with tempfile.TemporaryDirectory(prefix="aide-h2-synthetic-") as folder:
+            root, legacy = preparation_fixture(folder); plan, generated = generated_fixture(legacy)
+            originals = {row.path: row.contents for row in generated}
+            def mutate(path, user, *, guard, parent):
+                # Deliberate frozen-dataclass bypass models an untrusted holder;
+                # preparation captured immutable bytes before this effect seam.
+                for row in generated: object.__setattr__(row, "contents", b"x")
+                return SyntheticOwnedObject.create_root(path, user, guard=guard, parent=parent)
+            with patch.object(image, "_create_image_root", mutate):
+                result = image.prepare_image(plan, guard=lambda: None, generated=generated)
+                try:
+                    for path, data in originals.items(): self.assertEqual(Path(plan.output_root, path).read_bytes(), data)
+                finally: result.close()
+
+
 def crash_fixture(manifest, phase):
     # Only an explicitly synthetic, contained test directory can use this entry.
     path = Path(manifest).resolve(); root = path.parent
