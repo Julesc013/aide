@@ -86,3 +86,25 @@ No private image, DLL loading, grant or isolated Python effect occurred. The
 observed union of 195 dependency names includes 180 API names, above the unchanged
 128-row contract cap; actual API/native ownership and loader qualification remain
 open. The packet does not relabel prior H1 failures or qualify general activation.
+
+## H2 system observation source packet
+
+The current h2-system-evidence.zip and h2-system-custody.json preserve the exact
+reviewed source2, 138-test run, 17 independent probes, scripts/raw review and
+helper logs. Original files not selected for checkout resolve through the map
+to files/<repository-path> members. Raw bytes remain authoritative for recorded
+SHA256s; the map separately binds selected Git LF text projections.
+
+The h2-system-before-review-evidence.zip/map remain immutable historical evidence:
+36 members retain the initial source/133 tests and concrete final-result,
+pre-dispatch, typed-time and modeled native-path attribution failures. Their
+successor repairs and current review do not relabel those original observations.
+The current packet includes this historical packet, with its original member map.
+
+The copied working index is an excluded historical dependency snapshot, never
+new canonical queue authority. All full validate logs remain archive members,
+not separate tracked multi-megabyte projections. This source checkpoint performs
+no actual selected DLL mapping, private image copy, package grant or isolated
+Python effect. The 8192 ceiling counts observer adapter calls, not each subordinate
+Win32 function or mandatory release; an owned outer-process bound is still needed.
+Native/controller/journal provenance, actual API context and loader gates stay open.

@@ -1,0 +1,24 @@
+{
+  "schema": "aide.host.h2-system-reviewed-source-checks.v1",
+  "source_manifest_sha256": "0259aa61259ccb8b590d1222ff2fb93ff3d2ee2f919200d5b9fad75a88c7ab68",
+  "source_aggregate": "03c0a5f94914ea72744d0387780b4cd22c3fb3b39b9703a2debef1bcf67a67d6",
+  "validate": {
+    "command": [
+      "C:\\Program Files\\Python314\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "validate"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 11.81672180001624,
+    "log": "h2-system-reviewed-aide-validate.txt",
+    "bytes": 4893242,
+    "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+  },
+  "portable_source_count": 817,
+  "source_and_test_excluded": true,
+  "secret_error_count": 0,
+  "scoped_diff_check": 0,
+  "source_dependencies_index_unchanged": true,
+  "actual_mapping_or_grant": false
+}

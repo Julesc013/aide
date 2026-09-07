@@ -1,0 +1,54 @@
+{
+  "schema": "aide.host.h2-system-source-admission.v1",
+  "base": "236da6c2ba0df8cf319849c7632c04727afc392d",
+  "plan_sha256": "945f26def0e17992459b1a997f15190730c212fe61d86ad9a8914bab4b113b6f",
+  "source_paths": [
+    "core/runtime/continuous_worker/windows_system_observation.py",
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py"
+  ],
+  "checks": [
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "log": "h2-system-source-inspect.txt",
+      "sha256": "12c1a7c93bc47472e90ff6f3faef2a2adc48ce2201d19d6a76dee26d7aedaa3e"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "log": "h2-system-source-noop.txt",
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "log": "h2-system-source-recover.txt",
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    }
+  ],
+  "actual_mapping_or_loader_effect": false
+}

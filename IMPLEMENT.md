@@ -11029,3 +11029,45 @@ The optional-delay source passed independent exact-source assurance and 101 test
 including actual numeric symbol bounds and unchanged Windows byte-stream replay.
 The current checkpoint preserves the original refusals and the unqualified native
 API/loader boundary; all capacity limits and external effect authority remain.
+
+## H2 system observation source admission
+
+Continue from 236da6c2 under evidence/h2-system-observation-source-plan.md. Build
+the bounded native object/resource-mapping observation seam and direct injected
+refusal/ownership tests. Keep existing private source and recipe caps; preserve
+the full 180-name API inventory and pending actual contextual/native/loader proof.
+No actual DLL mapping, tool copy, grant, profile or isolated Python effect is
+admitted in this source slice. Freeze exact source for independent review.
+
+## Frozen system observation source
+
+The h2-system-source-manifest.json packet binds two new files and 32 injected
+observer tests. All 133 selected tests pass, including unchanged PE/recipe/image/
+security/owned Job regressions. Reservation and intent acknowledgements bind
+exact canonical request hashes, and known handles are retained for one owned
+release before post-call guard failures can occur. Source remains frozen for
+independent review. Actual native object/API observations, durable controller
+journal authenticity, external process deadlines and loader qualification remain
+open; no selected DLL mapping, copy, grant or isolated Python effect occurred.
+
+## System observation review repairs
+
+Preserve the original 133-test source and the independent/author REDs in
+h2-system-before-review-evidence.zip. Revised source binds clocks before and
+after guards, checks final result freshness and serialization after cleanup,
+refuses arbitrary-precision temporal fields as typed input, and requires the
+mapped native spelling to match the freshly held object observation. All 138
+selected tests pass (37 injected observer plus unchanged 101 regressions). The
+source is frozen for independent re-review; no actual mapping, private image or
+grant effect has run, and native/API/loader qualification remains open.
+
+## Reviewed system observation source checkpoint
+
+Independent review h2-system-independent-final-review.json passes the exact
+source2 and 138-test replay plus 17 additional probes. Those include the retained
+original failures, actual numeric adapter-operation bounds and fully mocked
+native allocation/release failures. Source/dependency/index hashes and the
+original 36-member failure archive match. Preserve those raw bytes in checkpoint
+custody. This is a partial source checkpoint: actual public native input facts,
+API-resource observations, full bounded closure and restricted Python loading
+remain unqualified. No selected DLL mappings, image copies or grants occurred.

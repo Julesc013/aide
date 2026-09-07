@@ -22,6 +22,8 @@ source_base: 24ed66153f7e5d2008b7178b89c1b03025791152
 branch: task/aide-cw-integration-broker-01
 branch_basis: Same reviewed integration task branch; sequential host dependency checkpoint, no new worktree or branch switch.
 allowed_paths:
+  - core/runtime/continuous_worker/windows_system_observation.py
+  - .aide/scripts/tests/test_continuous_worker_system_observation.py
   - core/runtime/continuous_worker/windows_python_contract.py
   - .aide/scripts/tests/test_continuous_worker_python_contract.py
   - core/runtime/continuous_worker/windows_pe.py
@@ -54,3 +56,6 @@ h2_scope: bounded private-image source and ordinary synthetic tests; no tool cop
 
 h2_python_source_base: 06f2546fbb0fea3d4ace8278602737f113c1354d
 h2_python_scope: accepted bounded parser and deterministic derived-byte source plus synthetic tests; no actual copies or grants
+
+h2_system_observation_source_base: 236da6c2ba0df8cf319849c7632c04727afc392d
+h2_system_observation_scope: finite exact-name source and injected tests only; no actual mappings or grants

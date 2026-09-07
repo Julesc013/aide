@@ -1,0 +1,150 @@
+{
+  "schema": "aide.host.system-observation-independent-final-review.v1",
+  "verdict": "PASS for the bounded SOURCE2 checkpoint; no unresolved material source finding.",
+  "reviewer": "/root/native_ownership",
+  "source_base": "236da6c2ba0df8cf319849c7632c04727afc392d",
+  "source": {
+    "core/runtime/continuous_worker/windows_system_observation.py": "de1bfc5a12357c4a8815321531b6dad3c5b599d30c42fa5dec63a96b57fbd697",
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py": "7f505ce82071c2c2bd361cdd8c0313835fc51ca4213328fcef660589205449d7"
+  },
+  "source_aggregate": "03c0a5f94914ea72744d0387780b4cd22c3fb3b39b9703a2debef1bcf67a67d6",
+  "source_aggregation": "SHA256 canonical JSON sorted exact path-to-SHA mapping",
+  "manifest": {
+    "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-source-manifest.json",
+    "bytes": 3669,
+    "sha256": "0259aa61259ccb8b590d1222ff2fb93ff3d2ee2f919200d5b9fad75a88c7ab68"
+  },
+  "patch": {
+    "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-source.patch",
+    "bytes": 47412,
+    "sha256": "359f4119513a0e18fd059df0c56aafab990f5a1d5aed923c74d5680487324806"
+  },
+  "dependency_count": 15,
+  "source_dependencies_index_unchanged": true,
+  "review": [
+    "Read both full new files, accepted plan, current notes, dependency constants and native read-only opening primitive. Independently verified both raw hashes, canonical source aggregate, all15 dependency hashes, exact reconstructed sorted two-file patch and unchanged real index.",
+    "Fixed resource mapping flags are exactly 0x860. Worker code cannot supply loader flags or arbitrary physical names through this API; API requests and physical pins are closed and separately bounded. No fallback to an executable load was found.",
+    "The returned exact mapping handle is registered before post-call checks, distinguished by supported tag/origin, released once, and never retried on uncertain release. Unsupported tags still release only the owned LoadLibraryEx return; that matches the documented native ownership contract.",
+    "Object pins include exact identity, owner/DACL descriptor digest, size/hash, volume and explicit system hard-link count. Existing private ImageFile single-link rules and all recipe limits remain byte-identical. Root/file opens use the unchanged read-only no-write/no-delete-sharing, no-reparse primitive.",
+    "Mapped output now must equal the freshly held native path spelling exactly after the coarse pin selection; a folded case-variant alone cannot inherit the held identity/hash. This remains source-level observation logic, not qualification of an actual case-sensitive System32 or arbitrary namespace lease.",
+    "Calls are charged before the adapter invocation. Clock and guard checks bracket calls, including time consumed inside guard. Cleanup remains unconditional for exact owned resources; final freshness/serialization/output checks occur afterward inside retained failure handling.",
+    "Reservation and per-mapping intent acknowledgements bind exact canonical hashes, but protected durable journal storage, cross-process exclusion and controller authenticity remain external prerequisites. The local consumed flag never retries a failed session.",
+    "All returned successful observation bytes preserve system ownership, API context and loader qualification as false; the observer is unconnected to worker dispatch."
+  ],
+  "resolved_findings": [
+    {
+      "priority": "P2",
+      "finding": "Final successful cleanup could consume elapsed/expiry budget or revoke guard while result returned success.",
+      "proof": {
+        "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-independent-final-guard-red.json",
+        "bytes": 21030,
+        "sha256": "3f4db50845119bdf85e2fa8d71549f0b63b09ba76e4f97e44869bcd8d56b67ff"
+      },
+      "resolution": "All five original injected cases now Refused with failure recorded, consumed state and exact one-time cleanup; final serialization errors/size/expiry are also covered by direct tests."
+    },
+    {
+      "priority": "P2",
+      "finding": "Guard itself could consume remaining expiry immediately before native mapping.",
+      "proof": {
+        "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-precall-guard-red.json",
+        "bytes": 1718,
+        "sha256": "ddcbde2474974d01b766272d01d931d44ac0dda309f920fea8898a8ce7af4db9"
+      },
+      "resolution": "Time is checked after guard before dispatch; independent replay has zero mapping calls."
+    },
+    {
+      "priority": "P2",
+      "finding": "Case-fold-only mapping attribution did not establish equality with the held native spelling.",
+      "proof": {
+        "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-independent-admission-observations.json",
+        "bytes": 1795,
+        "sha256": "11f4f819d68e9d7c5dcd75537677bd58785eb3339eb1f8a97c758360606cd2d5"
+      },
+      "resolution": "Exact held/mapped native spelling required. Independent case-variant refusal and exact observed uppercase positive both pass. No actual system directory attack claimed."
+    },
+    {
+      "priority": "P3",
+      "finding": "Arbitrarily large temporal integers escaped typed admission as OverflowError.",
+      "resolution": "Both temporal fields now refuse as Refused without effects; huge-integer clock inputs covered by direct tests."
+    }
+  ],
+  "independent_validation": {
+    "selected_suite": "138 tests PASS, unittest4.794seconds; command5.129seconds. 37 new injected tests plus unchanged101 synthetic/ordinary image/security/owned Job tests.",
+    "additional_probes": "17 independent cases PASS: five original final-guard cases, pre-map guard expiry, two huge temporal fields, exact case-variant refusal/positive, unchanged actual8192 adapter-operation threshold and six injected native facts allocation/release fault cases.",
+    "adapter_fault_scope": "NativeSystemApi.__new__ only; get-identity, security, SID/descriptor conversion and release functions were all mocked. Buffers were local Python ctypes allocations. No selected DLL was loaded or mapped.",
+    "history": "Verified all36 original archive members and exact retained original source/tests/RED receipts, including the original133-test result. Source/notes/patch and evidence were not overwritten by the reviewer.",
+    "native_evidence": "No actual target DLL/resource mapping, tool/image copy, ACL/grant/profile change or isolated Python loader execution."
+  },
+  "limitations": [
+    "SOURCE2 review does not authorize actual mappings or establish an operational isolated host.",
+    "The 8192 counter measures bounded observer adapter calls; subordinate native functions and mandatory cleanup are not separate entries in that counter. Synchronous native, journal and guard calls require the later owned outer-process deadline.",
+    "The complete180-API-name metadata inventory still exceeds the unchanged128-row cap. No omission/partition was treated as complete contextual loader qualification.",
+    "Native system provenance/ownership, protected journal/controller, contextual API host identity, full transitive closure and real restricted loader behavior remain unqualified."
+  ],
+  "official_contracts": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryexw",
+      "supports": "Fixed resource-only modes, prior executable reference behavior and FreeLibrary ownership for the exact returned handle."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-getmappedfilenamew",
+      "supports": "Native mapped-name observation and missing/truncated buffer refusal."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/apiindex/windows-apisets",
+      "supports": "API contract names do not themselves establish physical DLL or contextual implementation identity."
+    }
+  ],
+  "evidence": {
+    "execution": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-independent-execution.json",
+      "bytes": 6347,
+      "sha256": "96411711b6753421b620f2283d643d1cc651dba4cdbe13a4c091f56cd3dbec9e"
+    },
+    "probes": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-independent-reviewed-probes.json",
+      "bytes": 3007,
+      "sha256": "bc5b5926730bb10d32e9a8829d23971e8cecd7f20907eb4ccff1d864ed94a9e9"
+    },
+    "test_stdout": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-independent-tests.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "test_stderr": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-independent-tests.stderr",
+      "bytes": 27088,
+      "sha256": "edbd014afacb8c3a64bf9e2e71769b16f3468ebfe8372e1d15bad5e753d0d122"
+    },
+    "probe_script": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-independent-reviewed-probes.py",
+      "bytes": 6106,
+      "sha256": "b46f524c82b4276e8c3317dc7596c8edd4848d2a9060e7924e649fd64b5aab0b"
+    },
+    "execution_script": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-independent-run.py",
+      "bytes": 4119,
+      "sha256": "fd37c4742e9d03ded31d51b72820e53497dd62cd847c4bfeb70c649df82e87f5"
+    },
+    "historical_custody": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-before-review-custody.json",
+      "bytes": 7477,
+      "sha256": "cc90dc7a33663d9f7b6053aa888454d0866b7c2efbb55aade4bbb33b6ec5a001"
+    },
+    "historical_archive": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-before-review-evidence.zip",
+      "bytes": 365754,
+      "sha256": "e3b1a12a7218b2cf240588e548c513d1a4ecf6f93e03e0d64e0c8f38e4dff1dc"
+    },
+    "notes": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-source-review-notes.md",
+      "bytes": 3134,
+      "sha256": "0a97ff03c85b59cecfff4ae7e7a6d7612077734e9bbb385935d5b245b98980bb"
+    },
+    "plan": {
+      "path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-observation-source-plan.md",
+      "bytes": 3958,
+      "sha256": "945f26def0e17992459b1a997f15190730c212fe61d86ad9a8914bab4b113b6f"
+    }
+  }
+}
