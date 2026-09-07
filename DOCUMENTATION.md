@@ -342,3 +342,20 @@ strict supported response subset and local denial tests. It distinguishes the
 implemented HTTPS mechanism from absent operational host credentials, restricted
 principal, target rules and server qualification. The synthetic fixture route
 cannot be selected through production configuration or worker input.
+
+## H1 native host mechanism and proof boundary
+
+The H1 native mechanism has one passing exact local probe after three retained
+FAIL attempts. Zero-capability AppContainer token/owned Job, scratch write,
+protected read/write/DACL/controller refusals, stable package non-exemption and
+the same-address network diagnostic/control conjunction passed. Raw 10060 still
+means timeout; diagnostic 2 means missing internetClient. Source27, existing
+actual Job10 and ordinary native3 tests pass and were independently replayed.
+The fourth child exited0/exited/quiescent. All four packets retain exact bytes.
+The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated
+fault/recovery cells, model channel, credential host and activation remain open.
+
+The broker reference and H1 ExecPlan document mechanism, four-attempt history
+and acceptance gaps. Task evidence/validation.md and custody maps navigate raw
+source, binaries, reviews and actual receipts. Text checkout projections do not
+replace archived raw hashes. Consumed effects cannot replay.

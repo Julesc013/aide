@@ -362,3 +362,71 @@ collector over the actual TLS path. The successful collector still returns
 `qualify_target` with no policy digest. These are local mechanism proofs; they
 establish neither a protected Windows credential host nor a restricted GitHub
 principal, effective target rules, hosted exact-base enforcement or activation.
+
+## Native Windows host source slice
+
+`continuous_worker.windows_security` adds an internal trusted-controller
+`SecurityLaunch` object for one zero-capability AppContainer profile. An
+exclusive flushed reservation precedes profile creation. Existing or uncertain
+reservations cannot replay or adopt a profile. WindowsJobHost supplies
+SECURITY_CAPABILITIES together with the exact HANDLE_LIST and JOB_LIST in the
+same suspended CreateProcess call, then observes the actual child package SID,
+capability count, user/integrity/elevation/UI-access and Job membership before
+resume. Its existing default remains process containment only. No worker-facing
+configuration or operational host factory supplies this new object.
+
+`windows_security_objects` creates literal owned objects with NtCreateFile
+FILE_CREATE, private initial descriptors and retained handles. Sealing retires
+writable file handles while pinning the original object; package grants use
+those exact handles. It contains no deletion operation. Root resolution observes
+one local HarddiskVolume target with QueryDosDeviceW; it refuses network, SUBST,
+ambiguous prior mappings and malformed output while retaining OBJ_DONT_REPARSE
+for every actual filesystem component. The first real read-only preflight
+refused the DOS alias, and the corrected local-volume open passes with the
+expected parent identity. Microsoft documents the distinction between the
+[current drive mapping and retained prior mappings](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-querydosdevicew).
+
+The H1 queue owns separately invoked native effect drivers. Review binds exact
+source, compiled probe, owned parent/marker, local volume, user/package SIDs and
+finite wall/monotonic deadlines. One created profile is retained. Continuations
+require its pinned complete creation journal and original actual child receipt,
+create zero profiles and reserve fresh one-shot owned roots. Existing or
+uncertain reservations refuse replay. No shared ACL, capability, exemption or
+network setting is changed.
+
+Four actual attempts retain their original result and bytes:
+
+| Attempt | Raw network observation | Overall result |
+| --- | --- | --- |
+| Initial native | Pending10035 without completed oracle | FAIL |
+| Bounded completion | Timeout10060 without causal diagnosis | FAIL |
+| Loopback diagnostic | Timeout10060, diagnostic success/NETISO_NONE0, live controls | FAIL |
+| Pinned local interface | Timeout10060, diagnostic success/INTERNET_CLIENT2, live controls | PASS for exact local native probe |
+
+The passing effect bound an exclusive listener only to 172.21.208.1, interface 50,
+vEthernet (WSL), on one ephemeral port. GetUnicastIpAddressEntry/GetIfEntry2
+checked exact address/index/alias/prefix, Preferred/connected and skip0 before
+effects and during execution. Connect and calling-token diagnosis used the
+same literal IPv4; no DNS or wildcard bind. The listener accepted ordinary
+controls before and after, observed no child connection, and exact package
+non-exemption stayed stable. Diagnostic2 means missing internetClient; endpoint
+address does not determine the returned category. See Microsoft's
+[NETISO_ERROR_TYPE definition](https://learn.microsoft.com/en-us/windows/win32/api/netfw/ne-netfw-netiso_error_type).
+
+Timeout remains timeout. The passing predicate requires the supported
+calling-token missing-capability result, actual endpoint controls and existing
+token/file/controller facts together. Child exit0/exited/quiescent and empty
+stderr are retained. The run used 252 of 256 read-only interface observations,
+each bounded to one second/512 output bytes, with authority rechecked after the
+read. These observations do not atomically lock network configuration.
+
+Twenty-seven source/refusal tests, ten existing actual Job regressions and three
+ordinary native oracle tests pass and were independently replayed. Four packets
+retain exact source, binaries, reviews/effect manifests, intents, actual receipts,
+stdout/stderr and scratch proof. The first three remain FAIL; later success does
+not relabel them. Current raw custody navigation lives under the H1 task evidence.
+
+This qualifies only the exact native token/local-endpoint probe. AppContainer
+descendants/supervisor-death/reparse adversarial cells, private Python/Git/Codex,
+controlled model channel, credential/broker host and operational acceptance
+remain required. The host WorkUnit is running/PENDING; no worker was activated.

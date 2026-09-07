@@ -3339,7 +3339,7 @@
 - Plan: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/ExecPlan.md.
 - Objective: full FacMan 0.1 Beta1 engineering/package completion, exact integration, honest human gates.
 
-## AIDE-CW-INTEGRATION-BROKER-01 â€” local transaction and handoff slice
+## AIDE-CW-INTEGRATION-BROKER-01 — local transaction and handoff slice
 
 Status: active, exact dev base bfb86c12b9e6d2970024d29c57ba629994ec43cc. Implement frozen candidate bytes/Git tree and a separate durable broker core. Scope and acceptance are in the task ExecPlan. Validation uses disposable local Git and injected transport only; actual protected transport, isolated host and coordinator v1 adoption remain open.
 
@@ -3400,3 +3400,15 @@ and normal merges, followed by the final 0.1 implemented/absent/public-gap
 report. This supersedes the earlier blanket publication exclusion. Actual
 human/game/signing/platform/host/target evidence is still required; the HTTPS
 checkpoint performs no release or operational activation.
+
+### H1 native AppContainer host mechanism
+
+The H1 native mechanism has one passing exact local probe after three retained
+FAIL attempts. Zero-capability AppContainer token/owned Job, scratch write,
+protected read/write/DACL/controller refusals, stable package non-exemption and
+the same-address network diagnostic/control conjunction passed. Raw 10060 still
+means timeout; diagnostic 2 means missing internetClient. Source27, existing
+actual Job10 and ordinary native3 tests pass and were independently replayed.
+The fourth child exited0/exited/quiescent. All four packets retain exact bytes.
+The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated
+fault/recovery cells, model channel, credential host and activation remain open.

@@ -10,7 +10,7 @@ Implement and test a worker identity/filesystem/network boundary that cannot rea
 
 ## Bounded Windows implementation slices
 
-This remains admitted backlog; the decomposition does not activate a host or
+At initial decomposition this remained admitted backlog; planning did not activate a host or
 change ACLs, credentials, firewall policy or accounts. The existing Job host
 provides containment. Implement an actual security boundary before qualification.
 
@@ -55,7 +55,8 @@ network boundary; actual qualification still requires these local probes.
 
 ## Next bounded source proposal after HTTPS mechanism acceptance
 
-Keep this item planned until its exact source/effect admission is recorded.
+The exact source-only admission is now recorded in evidence/h1-source-admission.json.
+Actual profile/DACL effects still await their separate source/effect review.
 The current programme authorizes implementation and verification; the review
 below is a concrete coordination boundary before changing a Windows profile or
 owned DACL, not a request to renew the user's programme authority.
@@ -111,3 +112,140 @@ source-only fixture with actual access denial. An AppContainer profile is a
 per-user security resource, not a new Windows login account.
 [Launch API and profile](https://learn.microsoft.com/en-us/windows/win32/secauthz/implementing-an-appcontainer),
 [Isolation model](https://learn.microsoft.com/en-us/windows/win32/secauthz/appcontainer-isolation).
+
+## H1 source progress at 24ed661
+
+Activated only this task's source implementation after inspect/noop/recover.
+No branch/worktree change and no provider-entry record change occurred. The
+focused adapter, owned-object helper and WindowsJobHost seam now construct one
+zero-capability security attribute in the same suspended Job/HANDLE_LIST call,
+with actual child token/Job verification before resume and repeated source/effect
+guards. Profile intent is exclusive and flushed before creation; existing,
+failed or ambiguous reservations cannot replay. New objects use NtCreateFile
+FILE_CREATE and returned handles; grants bind held objects, broad app-package
+SIDs are refused, and cleanup retains every object. Read-handle sealing preserves
+the created object while removing writable handles before executable launch.
+
+Thirteen initial mocked source refusal tests passed; additional deadline tests
+are being finalized. The native C probe compiled with existing MSVC 14.51.36231
+using /W4 /WX; its bytes are e74979c04a0f4cdec9f5829d6ef3de25ac948c26789618cf7ce541a60d941d47.
+One marker-owned temporary source/build root is recorded in h1-native-build.json.
+No compiled probe, AppContainer creation or DACL mutation has executed. The
+separate h1-native-effect-probe.py will require the exact reviewed six-source
+manifest, owner/root identity, compiled image digest, specific derived package
+SID, controller user SID and finite expiry before its one persistent profile
+and fixed new-object grants. It retains all effects and records failures.
+
+The actual probe will test positive scratch writes plus concrete read/write/
+DACL/controller-process/loopback denials. Full native descendants/death and
+reparse denial cells, private Python/Git/Codex image, controlled model egress,
+credential host and complete isolation qualification remain open until proved.
+[Native object creation](https://learn.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntcreatefile),
+[Token observations](https://learn.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-gettokeninformation).
+
+### Native volume preflight correction
+
+The first read-only FILE_OPEN through the DOS drive alias was refused with NTSTATUS c000050b before any profile reservation, object creation or descriptor effect. The corrected source observes exactly one local HarddiskVolume mapping with QueryDosDeviceW and retains OBJ_DONT_REPARSE for filesystem traversal. A real read-only open now passes and returns the expected owned parent identity. The effect manifest pins the native volume; its guard also carries a monotonic expiry ceiling. Eighteen source/driver refusal tests and ten existing actual containment tests pass. The old source/effect packet is preserved as historical and has not been executed. Fresh independent source/effect review is required for the rebound one-profile probe; full host/runtime qualification stays open.
+
+### First native effect and bounded network continuation
+
+The first reviewed effect created exactly one profile and ran an actual
+zero-capability AppContainer child in its owned Job. Scratch write passed;
+protected read/write/DACL and controller process mutation all returned access
+denied. The network oracle returned WSAEWOULDBLOCK and closed too early, so the
+overall result remains FAIL. The first profile, objects, image, source, receipts
+and logs are retained, with 53 exact members in h1-first-attempt-evidence.zip.
+
+The corrected native oracle waits once, within five monotonic seconds, for
+select write/exception completion and inspects SO_ERROR. Timeout, pending and
+ambiguous results never count as denial. Two actual ordinary-process fixtures
+pass: an owned listener completes/accepts, and a bound non-listening port
+completes with connection refusal. Twenty source/continuation and ten actual
+legacy Job tests also pass. These are separate from an isolated network proof.
+
+The next proposed effect requires a fresh independent exact-source/effect
+review. It constructs no profile: the existing profile identity is admitted
+only from the pinned complete original creation journal and matching actual
+child receipt. A separate exclusive flushed continuation intent precedes a new
+create-only network-probe-objects root under the same owned parent, with one
+image, scratch and synthetic canary and the same three package grants. The
+original objects remain untouched. A used or uncertain continuation reservation
+refuses all replay. No continuation effects have executed.
+
+[Winsock connect completion](https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-connect),
+[select and SO_ERROR](https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-select).
+
+### Supported diagnostic continuation after bounded timeout
+
+The second independently reviewed native effect retained overall FAIL: the
+bounded connect reached WSAETIMEDOUT10060, with the same useful token, scratch
+and protected access facts. No new profile was created; original proof remained
+unchanged. Forty exact new source/probe/evidence members are sealed in
+h1-network-attempt-evidence.zip, referencing the immutable first packet.
+
+Read-only NetworkIsolationGetAppContainerConfig reports zero exemptions and the
+exact package is not exempt. The next source adds the supported
+NetworkIsolationDiagnoseConnectFailureAndGetInfo call inside the actual child
+and controller connections accepted by the same listener before and after.
+Acceptance requires the complete conjunction of actual missing-capability
+diagnostic, exact stable non-exemption, raw failed connection, live ordinary
+positive controls and existing token/file/controller proofs. Timeout remains
+recorded as timeout and cannot qualify alone. Twenty-three source/control tests,
+ten actual legacy Job tests and two native ordinary-process diagnostic/network
+fixtures pass. The new diagnostic profile continuation is separately reserved,
+creates no profile and uses another create-only root under the same owned parent.
+Freeze h1-diagnostic-source-manifest.json and h1-owned-diagnostic-effect-manifest.json
+for independent review before any additional child or DACL effect.
+
+[Calling-token diagnosis](https://learn.microsoft.com/en-us/windows/win32/api/networkisolation/nf-networkisolation-networkisolationdiagnoseconnectfailureandgetinfo),
+[Read-only loopback configuration](https://learn.microsoft.com/en-us/windows/win32/api/netfw/nf-netfw-networkisolationgetappcontainerconfig).
+
+### Diagnostic outcome and next endpoint decision
+
+The third reviewed effect also retained FAIL. Token/Job/file/controller facts
+passed; the same listener accepted ordinary controls before and after; exact
+non-exemption stayed stable. The actual child diagnostic returned ERROR_SUCCESS
+with NETISO_NONE for loopback, while the bounded connect timed out. None of this
+is reinterpreted as a missing-capability result. Its 43-member exact packet is
+in h1-diagnostic-attempt-evidence.zip; both prior archives remain unchanged.
+
+Read-only exact-image Security audit access was denied for lack of elevated
+rights. WFP engine opening succeeded but reading event-collection state returned
+Win32 5. No escalation of Windows privileges or audit/policy changes occurred.
+A proposed next bounded test targets one exact owned non-loopback local-interface
+listener, with calling-token diagnosis and ordinary controls aimed at that same
+literal endpoint. This avoids repeating an uninformative loopback diagnostic.
+Read-only interface inventory and exact source/effect review must precede any
+additional endpoint/child/root effects; the proposal has not been executed.
+
+### Pinned local-interface source proposal
+
+The next bounded source delta pins 172.21.208.1, index 50, vEthernet (WSL),
+with the original read-only inventory hash. The native image gets a separate
+read-only GetUnicastIpAddressEntry/GetIfEntry2 entry to prove exact identity,
+Preferred address, connected interface, prefix and skip-as-source before each
+effect and during execution. These ordinary read-only observations have finite
+call/time/output bounds. The connect and capability diagnostic use the same
+canonical literal IPv4; no DNS or wildcard listener. Changed-source ordinary
+loopback fixtures remain permitted, but no non-loopback listener or fourth
+isolation effect runs until exact source/effect review. Zero profiles/settings
+changes; all three failed packets and prior roots remain immutable. Success
+still requires a supported missing-capability result and both live controls,
+never timeout alone. Full runtime/model/credential-host gates remain open.
+
+### Pinned-interface actual outcome and source checkpoint
+
+The fourth separately reviewed effect ran once and passed the complete local
+native predicate. Raw 10060 remains timeout; diagnostic0/2 means success with
+NETISO_ERROR_TYPE_INTERNET_CLIENT (missing internetClient). An initial chat
+label incorrectly called 2 private-network; installed Microsoft netfw.h and the
+official enum correct that prose here. Raw numeric receipts/source unchanged.
+Both controls reached the same 172.21.208.1 listener; non-exemption and interface
+facts remained valid, with 252/256 reads. Child exit0/exited/quiescent, scratch
+write and protected-file/controller refusals passed. Original profile proof and
+all 8 source hashes unchanged. Zero profile/settings changes, no replay; previous
+three FAIL packets immutable. ROOT independently rehashed the actual receipt,
+source, original proof and scratch. Prepare the source/evidence checkpoint and
+source-only private toolchain proposal; no further isolation effects/activation.
+
+The next source-only image/preparation/denial design is evidence/h2-private-toolchain-proposal.md, grounded in h2-local-tool-input-inventory.json. No image copying, new grants, isolated runtime or credentials/model effects have occurred.

@@ -6,6 +6,7 @@ This is process containment, NOT a filesystem/credential security sandbox.
 """
 from __future__ import annotations
 
+from contextlib import nullcontext
 import ctypes as C
 from ctypes import wintypes as W
 import os
@@ -130,12 +131,14 @@ class WindowsJobHost:
 
     def run(self, argv, *, cwd, input_bytes, output_dir, job_id, timeout,
             output_limit, memory_limit, process_limit, cancelled=lambda: False,
-            checkpoint=lambda stage: None):
+            checkpoint=lambda stage: None, security=None):
         self._require(job_id)
         import msvcrt
 
         if not argv or not Path(argv[0]).is_absolute() or not Path(argv[0]).is_file():
             raise Refused("executable must be a registered absolute file")
+        if security is not None:
+            security.assert_launch(argv, cwd)
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=False)
         stdin_path = output_dir / "stdin"
@@ -177,7 +180,7 @@ class WindowsJobHost:
             limits.BasicLimitInformation.ActiveProcessLimit = process_limit
             limits.JobMemoryLimit = memory_limit
             check(set_job(job, 9, C.byref(limits), C.sizeof(limits)))
-            with open(stdin_path, "rb") as src:
+            with open(stdin_path, "rb") as src, (security.attributes() if security is not None else nullcontext(())) as security_attrs:
                 si = STARTUP_EX()
                 si.StartupInfo.cb = C.sizeof(si)
                 si.StartupInfo.dwFlags = 0x100
@@ -192,23 +195,38 @@ class WindowsJobHost:
                 for handle in child_handles:
                     os.set_handle_inheritable(handle, True)
                 si.StartupInfo.hStdInput, si.StartupInfo.hStdOutput, si.StartupInfo.hStdError = child_handles
+                if len(security_attrs) != (1 if security is not None else 0):
+                    raise Refused("one exact AppContainer security attribute required")
+                attribute_count = 2 + len(security_attrs)
                 size = SIZE()
-                init_attrs(None, 2, 0, C.byref(size))
+                init_attrs(None, attribute_count, 0, C.byref(size))
                 attrs = C.create_string_buffer(size.value)
-                check(init_attrs(attrs, 2, 0, C.byref(size)))
+                check(init_attrs(attrs, attribute_count, 0, C.byref(size)))
                 si.lpAttributeList = C.cast(attrs, C.c_void_p)
                 handle_list = (W.HANDLE * 3)(*child_handles)
                 job_list = (W.HANDLE * 1)(job)
                 check(update_attr(attrs, 0, 0x20002, handle_list, C.sizeof(handle_list), None, None))
                 check(update_attr(attrs, 0, 0x2000D, job_list, C.sizeof(job_list), None, None))
-                env = sanitized_environment()
+                for attribute, value, length in security_attrs:
+                    if attribute != 0x20009:
+                        raise Refused("unexpected security launch attribute")
+                    check(update_attr(attrs, 0, attribute, value, length, None, None))
+                env = security.environment() if security is not None else sanitized_environment()
                 environment = C.create_unicode_buffer("\0".join(k + "=" + v for k, v in sorted(env.items(), key=lambda x: x[0].upper())) + "\0\0")
                 command = C.create_unicode_buffer(subprocess.list2cmdline([str(v) for v in argv]))
+                if security is not None:
+                    security.assert_launch(argv, cwd)
                 checkpoint("before_create")
+                if security is not None:
+                    security.assert_launch(argv, cwd)
                 check(create_process(str(argv[0]), command, None, None, True,
                                      0x4 | 0x80000 | 0x400 | 0x8000000,
                                      environment, str(cwd), C.byref(si), C.byref(proc)))
                 checkpoint("created_suspended")
+                if security is not None:
+                    security.verify_child(proc.hProcess, job)
+                    checkpoint("security_verified")
+                    security.assert_launch(argv, cwd)
                 # No child instruction has executed outside the owned Job.
                 check(resume(proc.hThread) != 0xFFFFFFFF)
                 checkpoint("resumed")

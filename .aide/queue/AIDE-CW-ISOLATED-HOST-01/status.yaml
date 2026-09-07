@@ -1,6 +1,11 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-ISOLATED-HOST-01
-status: planned
-planning_state: admitted_backlog
+status: running
+planning_state: execution_active
 result: PENDING
-updated_at: 2026-09-06
+updated_at: 2026-09-07
+current_slice: h1_local_native_probe_checkpoint
+local_native_attempt_result: PASS
+local_native_attempt_reason: exact_local_endpoint_missing_internetclient_with_controls
+current_source_review: passed_pinned_local_interface_source
+operational_activation: false

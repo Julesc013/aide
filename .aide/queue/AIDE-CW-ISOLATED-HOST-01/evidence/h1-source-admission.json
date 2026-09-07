@@ -1,0 +1,53 @@
+{
+  "schema": "aide.host.h1-source-admission.v1",
+  "source_base": "24ed66153f7e5d2008b7178b89c1b03025791152",
+  "branch": "task/aide-cw-integration-broker-01",
+  "authority": "Current user programme implementation/testing and explicit ROOT approval of H1/H2 source scope",
+  "stage": "source-only implementation active; no actual profile/DACL probe before exact source/effect review",
+  "task_checks": [
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "returncode": 0,
+      "sha256": "39bebdc95d1a4924bf100db8a386fd9e6ad3a54f3c2492059b61d91501d48044"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "returncode": 0,
+      "sha256": "25e9288e1dfb1d8df47dccf2afe93439394e5971831e1a88483151ad9b6e09b5"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "returncode": 0,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    }
+  ],
+  "profile_mutation": false,
+  "acl_mutation": false,
+  "activation": false,
+  "index_change": "own isolated-host status/planning scalars only; existing provider activation preserved",
+  "additional_helper_plan": "Same existing task branch at exact checkpoint; latest Git policy/detect/plan and HTTPS checkpoint receipt remain source-bound, no ref mutation"
+}

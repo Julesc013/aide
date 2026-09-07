@@ -10952,3 +10952,21 @@ credentials or machine trust changes. Source is frozen for independent review;
 all 26 prior raw-observation tests pass. Operational host/principal/target
 qualification and the complete broker task remain open. See the broker ExecPlan
 and docs/reference/integration-broker-core.md for the exact mechanism and limits.
+
+## AIDE-CW-ISOLATED-HOST-01: bounded native host mechanism
+
+The H1 native mechanism has one passing exact local probe after three retained
+FAIL attempts. Zero-capability AppContainer token/owned Job, scratch write,
+protected read/write/DACL/controller refusals, stable package non-exemption and
+the same-address network diagnostic/control conjunction passed. Raw 10060 still
+means timeout; diagnostic 2 means missing internetClient. Source27, existing
+actual Job10 and ordinary native3 tests pass and were independently replayed.
+The fourth child exited0/exited/quiescent. All four packets retain exact bytes.
+The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated
+fault/recovery cells, model channel, credential host and activation remain open.
+
+Grants use exact held create-only objects and retained profile intents. The
+initial DOS-volume alias refusal retained no effects; local-volume resolution
+preserves no-reparse traversal. Earlier network pending, timeout-only and
+loopback-NETISO_NONE observations remain FAIL. The pinned-interface run used
+252/256 bounded read-only observations. No network settings changed.

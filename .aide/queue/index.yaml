@@ -3179,8 +3179,8 @@ items:
     prompt: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/prompt.md
     evidence: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/evidence
   - id: AIDE-CW-ISOLATED-HOST-01
-    status: planned
-    planning_state: admitted_backlog
+    status: running
+    planning_state: execution_active
     title: Qualify a restricted worker host
     task: .aide/queue/AIDE-CW-ISOLATED-HOST-01/task.yaml
     exec_plan: .aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md
