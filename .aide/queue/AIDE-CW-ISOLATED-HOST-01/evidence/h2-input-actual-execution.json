@@ -1,0 +1,57 @@
+{
+  "schema": "aide.host.system-input-actual-execution.v1",
+  "head": "0c7788fd3660dc18e2751108ac49afe96d446801",
+  "root_review_sha256": "9816f1bcda641c2f2d0b6cfe12b083cf5da2e1c40124832e6db89b336ba6a8a5",
+  "effect_manifest_sha256": "e5655f469eef408b87669b5e55700fae6fe9b5a2c5d7bdbee0d05359e537df08",
+  "source_aggregate": "85d629a732d7efe5444940679323129a3c6382638c03ebe77ed6d3892eb80799",
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2_system_input_controller.py",
+    "--run",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-effect-manifest.json",
+    "e5655f469eef408b87669b5e55700fae6fe9b5a2c5d7bdbee0d05359e537df08"
+  ],
+  "start_time": 1788761984.0904582,
+  "elapsed_seconds": 0.4681478999555111,
+  "controller_exit_code": 0,
+  "controller_error": null,
+  "source_dependencies_index_unchanged": true,
+  "reservation_exists": true,
+  "output_exists": true,
+  "artifacts": {
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-actual-controller-stdout.txt": {
+      "bytes": 4914,
+      "sha256": "8c2e3a795bdb1ffab630d216b22ea415693a5658f955366e792bec13019cc2a1"
+    },
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-actual-controller-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-input-21a849a443434f44890e62b7a90198bc.intent.jsonl": {
+      "bytes": 5446,
+      "sha256": "7d43237ba9455c7222a0160261852f48e4fd4747d236eb43936d3a5710368a4f"
+    },
+    "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-input-21a849a443434f44890e62b7a90198bc\\stdin": {
+      "bytes": 1140,
+      "sha256": "8290ce128587b11ca86b5403be6c2a4d722f66daa9585f505cc1b8851b4567fb"
+    },
+    "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-input-21a849a443434f44890e62b7a90198bc\\stdout": {
+      "bytes": 4531,
+      "sha256": "068adfd89fabb19464e8c37438936a714fdc91a27844f4eb64245aaa7b228cd0"
+    },
+    "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-input-21a849a443434f44890e62b7a90198bc\\stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "no_retry": true,
+  "selected_mappings": 0,
+  "profile_creations": 0,
+  "acl_changes": 0,
+  "network_calls": 0,
+  "operational_activation": false,
+  "boundary": "One admitted ordinary child, 30-second child execution and25-second internal read ceiling;90-second controller success ceiling plus separate Job cleanup bounds. Wrapper150-second wait is an additional tooling bound, not a stronger native completion claim. Existing interpreter/bootstrap/controller namespace premises remain unqualified."
+}

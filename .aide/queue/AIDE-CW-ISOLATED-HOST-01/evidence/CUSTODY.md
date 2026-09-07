@@ -108,3 +108,27 @@ no actual selected DLL mapping, private image copy, package grant or isolated
 Python effect. The 8192 ceiling counts observer adapter calls, not each subordinate
 Win32 function or mandatory release; an owned outer-process bound is still needed.
 Native/controller/journal provenance, actual API context and loader gates stay open.
+
+## H2 public native input facts packet
+
+The h2-input-evidence.zip and h2-input-custody.json packet preserves source3,
+its complete patch, the first 24-test history, final 67-test output, independent
+73-test source/logs/reviews, and all six original actual artifacts. Raw repository
+paths resolve through files/<repository-path>; the four external journal/child
+artifacts resolve through external/owned-input-parent/. Originals remain retained
+in place. No DLL bytes were copied into this packet; the eight observed byte
+hashes and native facts retain exact names, including actual KernelBase.dll.
+
+The map binds every original member hash and separately names selected Git LF
+projections. Source review and actual audit refer to original raw bytes. ROOT's
+logical here-string probe source is preserved with its orchestration receipt;
+uncaptured original stdin bytes are not invented. Full validate logs and helper
+report snapshots stay archive-only. The working index snapshot is historical
+input, not a canonical index change. The source/base 0c7788fd commit receipt and
+independent commit review are retained as immediate history.
+
+The single input effect passed with a quiescent ordinary child. Its reservation
+and generation remain consumed. This packet admits no further mappings, private
+image/grants, profiles or activation. Native API context, full 180-name inventory
+versus the unchanged 128-row cap, protected controller provenance and restricted
+Python bootstrap remain open.

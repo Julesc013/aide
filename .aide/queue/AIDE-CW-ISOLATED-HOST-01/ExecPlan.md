@@ -384,3 +384,49 @@ original 36-member failure archive match. Preserve those raw bytes in checkpoint
 custody. This is a partial source checkpoint: actual public native input facts,
 API-resource observations, full bounded closure and restricted Python loading
 remain unqualified. No selected DLL mappings, image copies or grants occurred.
+
+## H2 public native input driver preparation
+
+Observer checkpoint 0c7788fd is independently verified. Continue under
+evidence/h2-input-driver-plan.md with task-owned read-only driver/controller
+and injected tests only. Freeze exact source/effect before actual eight-DLL
+read observations; retain all unresolved provenance, 180/128 and loader gates.
+
+## Frozen native input driver source
+
+Task-owned child/controller/tests are frozen in h2-input-source-manifest.json.
+All67 injected tests pass (30new plus37 unchanged observer), without selected
+DLL native reads, mappings or child effects. h2-input-effect-manifest.json binds
+one future ordinary child, exact eight historical hashes and a fresh exclusive
+journal/output under the existing marker-owned H1 parent. Only that parent's
+identity/marker and interpreter/source bytes were observed for preparation.
+Actual input facts remain pending ROOT review and one finite effect; no profile
+is adopted/replayed. Source and same-user output namespace assumptions remain
+explicit; full180/128 closure and restricted loader qualification stay open.
+
+## Exact public input observation
+
+ROOT source/effect review passed 73 injected tests, including independent
+fault probes. The one admitted read-facts effect then passed: controller exit0
+in0.468 seconds; owned child exit0/exited/quiescent; eight historical hashes
+matched across8,306,752 bytes;167 adapter calls; nine close attempts with no
+release failures. Both stderr streams are empty. Raw facts preserve the actual
+KernelBase.dll spelling separately from requested kernelbase.dll and observed
+file link count2. The source/dependency/index pins are unchanged.
+
+The original stdout/stderr, handle-relative journal and child input/output remain
+retained under the exact consumed generation. h2-input-actual-execution.json and
+h2-input-actual-summary.json navigate the raw bindings. Actual result awaits
+independent review. No retry, selected mapping, image, grant, profile, network
+or activation occurred. Controller namespace/bootstrap and90/30/25-second plus
+separate cleanup premises remain explicit; API/context/loader gates stay open.
+
+## Reviewed public input facts checkpoint
+
+ROOT independently verified all six raw artifacts, exact stdin/typed eight-file
+output, controller and provisional journal correlation, Job exit/quiescence,
+167 calculated adapter calls and nine close attempts. The actual result review
+is h2-input-root-actual-review.json. Prepare source3, own task/root docs and
+compact original-byte custody for a local checkpoint at 0c7788fd; no staging or
+commit before ROOT reviews its exact scope/projected tree. The read-facts effect
+is consumed. API mapping, full 180/128 closure and private loading stay open.

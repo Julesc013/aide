@@ -81,3 +81,35 @@ original 36-member failure archive match. Preserve those raw bytes in checkpoint
 custody. This is a partial source checkpoint: actual public native input facts,
 API-resource observations, full bounded closure and restricted Python loading
 remain unqualified. No selected DLL mappings, image copies or grants occurred.
+
+## H2 public input driver source
+
+PASS:67 injected tests in h2-input-reviewed-tests.json, bound to source3.
+No actual NativeSystemApi construction, selected DLL observation/mapping or
+child effect. Exact frozen source/effect await independent ROOT review.
+Existing parent identity/marker and interpreter/source hashes were read only
+to prepare the separate finite effect plan; output/reservation remain absent.
+
+## Exact public input observation
+
+ROOT source/effect review passed 73 injected tests, including independent
+fault probes. The one admitted read-facts effect then passed: controller exit0
+in0.468 seconds; owned child exit0/exited/quiescent; eight historical hashes
+matched across8,306,752 bytes;167 adapter calls; nine close attempts with no
+release failures. Both stderr streams are empty. Raw facts preserve the actual
+KernelBase.dll spelling separately from requested kernelbase.dll and observed
+file link count2. The source/dependency/index pins are unchanged.
+
+The original stdout/stderr, handle-relative journal and child input/output remain
+retained under the exact consumed generation. h2-input-actual-execution.json and
+h2-input-actual-summary.json navigate the raw bindings. Actual result awaits
+independent review. No retry, selected mapping, image, grant, profile, network
+or activation occurred. Controller namespace/bootstrap and90/30/25-second plus
+separate cleanup premises remain explicit; API/context/loader gates stay open.
+
+## Independent actual result review
+
+PASS: h2-input-root-actual-review.json independently binds all six actual raw
+artifacts and the exact local read-facts outcome. This supersedes only the
+earlier summary's pending-review status. The original summary and raw outputs
+remain immutable. Source67 tests and ROOT73 tests retain their distinct scopes.

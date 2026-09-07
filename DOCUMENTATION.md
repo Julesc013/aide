@@ -448,3 +448,9 @@ original 36-member failure archive match. Preserve those raw bytes in checkpoint
 custody. This is a partial source checkpoint: actual public native input facts,
 API-resource observations, full bounded closure and restricted Python loading
 remain unqualified. No selected DLL mappings, image copies or grants occurred.
+
+- Isolated-host evidence/h2-input-driver-plan.md documents the bounded public
+  native input driver and its separate reviewed effect boundary.
+- Isolated-host evidence/h2-input-source-manifest.json and
+  h2-input-root-actual-review.json bind the reviewed task driver and exact local
+  eight-file read-facts outcome. h2-input-custody.json maps original raw evidence.

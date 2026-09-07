@@ -3507,3 +3507,9 @@ original 36-member failure archive match. Preserve those raw bytes in checkpoint
 custody. This is a partial source checkpoint: actual public native input facts,
 API-resource observations, full bounded closure and restricted Python loading
 remain unqualified. No selected DLL mappings, image copies or grants occurred.
+
+- AIDE-CW-ISOLATED-HOST-01: prepare the bounded eight-DLL read-facts driver under
+  its evidence/h2-input-driver-plan.md; actual effect and loader gates remain open.
+- AIDE-CW-ISOLATED-HOST-01: checkpoint the independently reviewed eight-DLL
+  read-facts result; then separately propose two-API feasibility. The consumed
+  input effect is not replayable, and full closure/private loading remain open.

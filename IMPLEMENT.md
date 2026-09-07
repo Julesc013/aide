@@ -11071,3 +11071,18 @@ original 36-member failure archive match. Preserve those raw bytes in checkpoint
 custody. This is a partial source checkpoint: actual public native input facts,
 API-resource observations, full bounded closure and restricted Python loading
 remain unqualified. No selected DLL mappings, image copies or grants occurred.
+
+## H2 public native input driver preparation
+
+Continue AIDE-CW-ISOLATED-HOST-01 from reviewed observer 0c7788fd. The task-owned
+h2-input-driver-plan.md bounds read-facts driver/controller and injected tests;
+no actual native-input effect occurs before exact source/effect review.
+
+## Reviewed H2 public native input facts
+
+The task-owned read-facts driver passed 67 injected tests and independent
+73-test review. One exact ordinary Job child then matched all eight historical
+DLL hashes across 8,306,752 bytes, with 167 calls, nine closes and clean exit/
+quiescence. ROOT independently verified original artifacts and source binding.
+The checkpoint remains partial: no contextual API mapping, private loader,
+OS/controller provenance or operational activation is claimed.

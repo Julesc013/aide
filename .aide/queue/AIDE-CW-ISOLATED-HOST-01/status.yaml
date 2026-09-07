@@ -4,10 +4,10 @@ status: running
 planning_state: execution_active
 result: PENDING
 updated_at: 2026-09-07
-current_slice: h2_system_observation_source
+current_slice: h2_system_input_read_facts_checkpoint
 local_native_attempt_result: PASS
 local_native_attempt_reason: exact_local_endpoint_missing_internetclient_with_controls
-current_source_review: passed_h2_system_observation
+current_source_review: passed_h2_system_input_driver
 operational_activation: false
 python_source_tests: 95
 python_runtime_qualification: pending_actual_native_inputs_and_loader
@@ -16,3 +16,5 @@ optional_delay_actual_metadata_inputs: 8
 system_observation_source_tests: 138
 system_observation_additional_independent_probes: 17
 system_observation_actual_mapping_qualification: pending_reviewed_native_effect
+system_input_driver_injected_tests: 67
+system_input_actual_effect: passed_once_independently_reviewed

@@ -17,3 +17,13 @@ stalled-kernel-call enforcement or future worker launch paths. The approved next
 Python closure slice is source-only. Native image effects require their exact
 reviewed finite manifest. No retained generation or profile may be adopted,
 replayed or deleted by this checkpoint.
+
+## Native input facts acceptance ceiling
+
+The exact eight-file read-facts result passed independently. Owner/descriptor/
+identity/hash observations do not establish OS trust, contextual API resolution
+or a private Python bootstrap. The full inventory still has 180 API names
+against the unchanged 128-row cap. Existing interpreter transitive inputs and
+protected controller/output namespace remain premises. No selected resource
+mapping, image/grant, new profile or general activation is admitted by N1.
+The consumed journal/output and all H1 histories remain retained without replay.

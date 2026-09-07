@@ -76,3 +76,11 @@ original 36-member failure archive match. Preserve those raw bytes in checkpoint
 custody. This is a partial source checkpoint: actual public native input facts,
 API-resource observations, full bounded closure and restricted Python loading
 remain unqualified. No selected DLL mappings, image copies or grants occurred.
+
+## Public native input facts
+
+Three task-owned scripts add the read-only child facade, one-use controller and
+injected tests. Existing runtime source is unchanged. Own task status/plans,
+root planning indexes, validation/risk navigation and compact custody document
+the independently reviewed source and single local eight-file read-facts pass.
+Provider entry records/index and unrelated raw reports remain excluded.

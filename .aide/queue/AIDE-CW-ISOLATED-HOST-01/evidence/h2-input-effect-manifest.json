@@ -1,0 +1,100 @@
+{
+  "schema": "aide.host.system-input-effect.v1",
+  "source_base": "0c7788fd3660dc18e2751108ac49afe96d446801",
+  "repository": "D:\\Projects\\AIDE\\aide",
+  "source_files": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input.py": "1a394d243e08cad2264b6e803d150a9dccdbec779851c9e9e5da41acfa6e70d7",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_controller.py": "b8a886881ed53d1b3a28bda44e15e45cc6162588ffd720a2d6de00942ee23456",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_tests.py": "80f482fb36e7cd2e1cdf849cd356c0bf150490f3a41f2581502d860140605d47",
+    "core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "core/runtime/continuous_worker/windows_image.py": "2cac4dd7336b24dba47bc7cd40e510902b23fc99e64b56b349a1cfc0e3734ab8",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/windows_pe.py": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d",
+    "core/runtime/continuous_worker/windows_python_contract.py": "98d4a1c95337043477bad27611f4bac5cc2b574aaea37d94dc344543ff689411",
+    "core/runtime/continuous_worker/windows_python_image.py": "b20258182d5610384e8be97e502012ce9760d9b977bd824f5f09a394d3b026c8",
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847",
+    "core/runtime/continuous_worker/windows_system_observation.py": "de1bfc5a12357c4a8815321531b6dad3c5b599d30c42fa5dec63a96b57fbd697"
+  },
+  "interpreter": {
+    "path": "C:\\Program Files\\Python314\\python.exe",
+    "size": 106208,
+    "sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9"
+  },
+  "user_sid": "S-1-5-21-2168396775-1281633702-301206425-1001",
+  "output_parent": {
+    "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5",
+    "identity": {
+      "volume": 8302240993133592026,
+      "file_id": "11a01a000000a6000000000000000000"
+    },
+    "owner_marker": "owner.json",
+    "owner_sha256": "7db523e9d0838b98a47db87efdd76b6c6af638e99ce706afd20d3136d2fc2890"
+  },
+  "plan": {
+    "schema": "aide.host.system-input.v1",
+    "request_id": "21a849a443434f44890e62b7a90198bc",
+    "expires_at": 1788764260.7710943,
+    "system_directory": "C:\\Windows\\System32",
+    "native_root": "\\Device\\HarddiskVolume3\\Windows\\System32",
+    "files": [
+      {
+        "name": "advapi32.dll",
+        "size": 717048,
+        "sha256": "fe875dfe559d8bbcf1f3701405fe43d37078896280001697c6f2f2bc060af3df"
+      },
+      {
+        "name": "bcrypt.dll",
+        "size": 146888,
+        "sha256": "4aec900087b8fab630b7b816f9b5bb2205c532a909103fe7035ffbff938ecab2"
+      },
+      {
+        "name": "kernel32.dll",
+        "size": 784280,
+        "sha256": "2aba8de6779aec3f8ba17ae18084f86ccc54ec08079565cdd1850d3943433207"
+      },
+      {
+        "name": "kernelbase.dll",
+        "size": 3115184,
+        "sha256": "c65e1fa404c1b4f71618871072ff49c05311629aff586d6e79b97f56a89b5dc1"
+      },
+      {
+        "name": "ntdll.dll",
+        "size": 2035272,
+        "sha256": "7feb4c53b23b513b5c27d06e06bb1b0b2c770cf0419587b8ee0fc1421a9e64f2"
+      },
+      {
+        "name": "ucrtbase.dll",
+        "size": 1046072,
+        "sha256": "a3096ffbcf7a684e40a8599ea54ed85c3a4d3810592e724b582711b7311486f4"
+      },
+      {
+        "name": "version.dll",
+        "size": 32584,
+        "sha256": "af45a728552ccfdcd9435c40ace60a9354d7c1b52abf507a2f1cb371dada4fde"
+      },
+      {
+        "name": "ws2_32.dll",
+        "size": 429424,
+        "sha256": "31fb1a909e5477725b15a18a59c4b0e18f61f32def4c519559512ad69d899237"
+      }
+    ]
+  },
+  "limits": {
+    "child_seconds": 30,
+    "child_memory": 268435456,
+    "child_processes": 1,
+    "output_bytes": 65536
+  },
+  "effects": {
+    "ordinary_children": 1,
+    "read_files": 8,
+    "selected_mappings": 0,
+    "profile_creations": 0,
+    "acl_changes": 0,
+    "network_calls": 0,
+    "cleanup": "retain_only",
+    "operational_activation": false
+  }
+}
