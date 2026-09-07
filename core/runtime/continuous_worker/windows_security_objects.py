@@ -8,9 +8,11 @@ import ctypes as C
 from ctypes import wintypes as W
 from dataclasses import dataclass
 import hashlib
+import math
 import os
 from pathlib import PureWindowsPath
 import re
+import time
 
 from .state import Refused
 
@@ -20,6 +22,15 @@ SID_PATTERN = re.compile(r"S-1-(?:[0-9]+-){1,14}[0-9]+")
 def sid_text(value):
     if not isinstance(value, str) or len(value) > 180 or not SID_PATTERN.fullmatch(value):
         raise Refused("bounded literal Windows SID required")
+    return value
+
+
+def literal_component(value):
+    """Portable private-image component; never a device, stream or path alias."""
+    if (not isinstance(value, str) or not re.fullmatch(r"[A-Za-z0-9_][A-Za-z0-9_.-]{0,79}", value) or
+            value.endswith(".") or value.split(".", 1)[0].upper() in
+            {"CON", "PRN", "AUX", "NUL", *(f"COM{i}" for i in range(1, 10)), *(f"LPT{i}" for i in range(1, 10))}):
+        raise Refused("one safe literal non-device component required")
     return value
 
 
@@ -130,8 +141,10 @@ def _identity(handle):
     return {"volume": value.VolumeSerialNumber, "file_id": identity}
 
 
-def _open(name, parent, *, directory, create, security=None, share=1, guard=None):
+def _open(name, parent, *, directory, create, security=None, share=1, guard=None, read_only_source=False):
     _windows()
+    if read_only_source and (create or security is not None or share != 1):
+        raise Refused("trusted source opens must be read-only and deny write/delete sharing")
     text = C.create_unicode_buffer(name)
     name_value = UNICODE(len(name.encode("utf-16-le")), len(name.encode("utf-16-le")) + 2, C.cast(text, W.LPWSTR))
     sd = _sd(security) if security else None
@@ -140,6 +153,8 @@ def _open(name, parent, *, directory, create, security=None, share=1, guard=None
     # No DELETE access and no delete-on-close. Read-only opens retain descriptor
     # control without FILE_WRITE_DATA, allowing an executable image section.
     access = 0x001E01FF if create else 0x001E00A9
+    if read_only_source:
+        access = 0x120089 | (0x20 if directory else 0)
     options = 0x20 | (0x1 if directory else 0x40)
     try:
         if guard is not None:
@@ -192,7 +207,8 @@ class OwnedObject:
 
     def child(self, name, *, directory=False):
         self._live()
-        if not self.directory or self.sealed or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,79}", name) or name.endswith("."):
+        literal_component(name)
+        if not self.directory or self.sealed:
             raise Refused("owned child must be a new literal component before sealing")
         handle = _open(name, self.handle, directory=directory, create=True, security=descriptor(self.user, directory=directory), guard=self.guard)
         try:
@@ -213,10 +229,54 @@ class OwnedObject:
         self.content_sha256 = hashlib.sha256(data).hexdigest()
         return self.content_sha256
 
+    def write_stream(self, chunks, *, size, sha256, limit, deadline, clock=time.monotonic):
+        """Single-use admitted image copy; synchronous I/O still needs outer containment."""
+        self._live()
+        if (self.directory or self.sealed or self.written or type(size) is not int or type(limit) is not int or
+                not 0 <= size <= limit <= 512 * 1024 * 1024 or not 0 < limit or
+                not isinstance(sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", sha256) or
+                type(deadline) not in (int, float) or not math.isfinite(deadline)):
+            raise Refused("explicit finite image stream admission required")
+        def check_time():
+            self._live()
+            now = clock()
+            if type(now) not in (int, float) or not math.isfinite(now) or not 0 < deadline - now <= 3600:
+                raise Refused("owned image stream deadline expired or unbounded")
+        check_time()
+        # Consume before obtaining the iterator or first chunk. Any exception
+        # leaves this object ineligible for another write, sealing or granting.
+        self.written = True
+        total, count, digest = 0, 0, hashlib.sha256()
+        iterator = iter(chunks)
+        while True:
+            check_time()
+            try:
+                block = next(iterator)
+            except StopIteration:
+                break
+            check_time()
+            count += 1
+            if (not isinstance(block, bytes) or not 0 < len(block) <= 65536 or
+                    count > (size + 65535) // 65536 + 1 or total + len(block) > size):
+                raise Refused("image chunk count, type or byte bound exceeded")
+            buffer, written = C.create_string_buffer(block), W.DWORD()
+            _check(write_file(self.handle, buffer, len(block), C.byref(written), None))
+            _check(written.value == len(block))
+            check_time()
+            total += len(block)
+            digest.update(block)
+        if total != size or digest.hexdigest() != sha256:
+            raise Refused("image stream length or digest differs from admission")
+        check_time()
+        _check(flush_file(self.handle))
+        check_time()
+        self.content_sha256 = sha256
+        return sha256
+
     def seal(self):
         self._live()
-        if self.sealed:
-            raise Refused("owned object already sealed")
+        if self.sealed or (self.written and self.content_sha256 is None):
+            raise Refused("owned object already sealed or has an incomplete write")
         parent = self.parent.handle if self.parent else None
         # Keep a read handle on the original object while retiring its writable
         # file object, then acquire the final no-write/no-delete sharing handle.
@@ -242,8 +302,8 @@ class OwnedObject:
 
     def grant(self, package, *, mode):
         self._live()
-        if not self.sealed:
-            raise Refused("seal the exact created object before granting package access")
+        if not self.sealed or (self.written and self.content_sha256 is None):
+            raise Refused("seal a complete exact created object before granting package access")
         text = descriptor(self.user, package, mode=mode, directory=self.directory)
         value = _sd(text)
         try:

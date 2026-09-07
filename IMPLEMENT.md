@@ -10970,3 +10970,15 @@ initial DOS-volume alias refusal retained no effects; local-volume resolution
 preserves no-reparse traversal. Earlier network pending, timeout-only and
 loopback-NETISO_NONE observations remain FAIL. The pinned-interface run used
 252/256 bounded read-only observations. No network settings changed.
+
+## H2 source admission
+
+The active H1/H2 task now continues from 454e41aa with a separately bounded
+streaming image API and synthetic denial/recovery tests. The prior native PASS
+remains source-bound historical evidence; no real tool copying, package grants,
+isolated runtime or activation is included. The task ExecPlan owns exact scope.
+
+Image source now uses immutable bounded plans, separate streaming and retained
+relative-handle reservations. Independent NT/Win32 and 8.3 overlap findings were
+reproduced and fixed, with both original packets retained. All 63 tests and the
+independent replay pass. Native image grants/loading remain unqualified.

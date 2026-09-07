@@ -16,3 +16,15 @@ See h1-interface-source-manifest.json, h1-interface-final-tests.json,
 h1-interface-native-first-tests.json, h1-actual-owned-interface-first.json and
 h1-root-interface-result-review.json. Custody maps bind original receipts and
 native images. Text projections are navigation; consumed effects cannot replay.
+
+## H2 image preparation source checkpoint
+
+The three-file source aggregate is 9be03cf59281c72ec8152cabd5acf41b4477bff6963643a2e4adb573feed9a3d.
+Final local and independent 26 image + 27 security source + 10 actual Job tests
+pass, with exact source/dependencies unchanged. Both independent P2 path attacks
+were reproduced, retained and remediated. Journal/root creation and root sealing
+use held parent handles; object identity remains authority. Real H2 test effects
+are ordinary file/journal operations; image creation/sealing/grants are modeled.
+The task remains running/PENDING with operational_activation false. See the
+current source-review notes for qualified facts and remaining premises. Original
+H1 result and consumed effect receipts remain historical and source-bound.

@@ -359,3 +359,15 @@ The broker reference and H1 ExecPlan document mechanism, four-attempt history
 and acceptance gaps. Task evidence/validation.md and custody maps navigate raw
 source, binaries, reviews and actual receipts. Text checkout projections do not
 replace archived raw hashes. Consumed effects cannot replay.
+
+## H2 private-image proof boundary
+
+The active H1/H2 task now continues from 454e41aa with a separately bounded
+streaming image API and synthetic denial/recovery tests. The prior native PASS
+remains source-bound historical evidence; no real tool copying, package grants,
+isolated runtime or activation is included. The task ExecPlan owns exact scope.
+
+The H2 source manifest, independent review and custody map under the isolated
+host task bind the three authored files and all 63-test evidence. The next
+h2-python-closure-proposal.md records exact PE/API-set and deterministic library
+requirements without granting tool-copy or runtime-effect authority.

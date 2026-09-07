@@ -3412,3 +3412,15 @@ actual Job10 and ordinary native3 tests pass and were independently replayed.
 The fourth child exited0/exited/quiescent. All four packets retain exact bytes.
 The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated
 fault/recovery cells, model channel, credential host and activation remain open.
+
+## H2 bounded private-image source
+
+The active H1/H2 task now continues from 454e41aa with a separately bounded
+streaming image API and synthetic denial/recovery tests. The prior native PASS
+remains source-bound historical evidence; no real tool copying, package grants,
+isolated runtime or activation is included. The task ExecPlan owns exact scope.
+
+The image preparation checkpoint has independent source assurance and 63 passing
+tests. Exact held-parent reservations, stream bounds and failure custody are
+complete for this source slice. The accepted Python closure proposal is next;
+the task and operational host qualification remain open.

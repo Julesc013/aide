@@ -33,3 +33,18 @@ its pre-effect freeze; validation.md and actual result review give later truth.
 
 Next source-only design: h2-private-toolchain-proposal.md and its read-only local
 input inventory. No additional isolation/runtime/credential effects have run.
+
+## H2 source custody
+
+The three H2 authored files and current raw evidence are preserved in
+h2-source-evidence.zip; h2-custody.json lists exact member bytes/SHA256s and
+raw-to-LF Git text projections. Original on-disk logs remain unstaged. A raw file
+absent after checkout resolves to evidence/<its basename> in that packet.
+
+The two superseded source/reproduction packets remain separate and immutable:
+h2-before-root-alias-evidence.zip and h2-before-overlap-evidence.zip, each with its
+matching custody map and 12 original members. Those are historical review states,
+not additional passing qualification. The current packet also retains exact
+original attack intent bytes copied read-only from their retained fixtures.
+All H1 packets above remain unchanged. The next Python closure proposal carries
+source-only authority and no new native image/profile/launch effect permission.

@@ -18,3 +18,13 @@ Python refusal tests, the task-owned continuation effect driver and ordinary
 native oracle validation driver. Production security/objects/Job source remains
 unchanged from the diagnostic review. New task-owned source/effect/test manifests
 pin the exact local address and finite read-only/native effect budgets.
+
+## H2 image source checkpoint
+
+Authored source: windows_image.py, the separate stream/root-component additions
+in windows_security_objects.py, and test_continuous_worker_windows_image.py.
+Owned task/status/ExecPlan and root plan/implementation/documentation indexes
+record exact source assurance and remaining work. Current review/manifest/test
+receipts and three compact custody packets preserve all failure and success
+history. No provider coordinator, queue-index scalar, branch or remote mutation
+is included in this checkpoint scope.

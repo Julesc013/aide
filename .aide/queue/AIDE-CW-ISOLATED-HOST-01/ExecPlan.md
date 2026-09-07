@@ -249,3 +249,27 @@ source, original proof and scratch. Prepare the source/evidence checkpoint and
 source-only private toolchain proposal; no further isolation effects/activation.
 
 The next source-only image/preparation/denial design is evidence/h2-private-toolchain-proposal.md, grounded in h2-local-tool-input-inventory.json. No image copying, new grants, isolated runtime or credentials/model effects have occurred.
+
+### H2 source admission after native checkpoint
+
+Continue at 454e41aa021c2b8b8b48531f2cb67838ecaa7dab on the same owned branch.
+ROOT accepted the bounded H2 source/ordinary synthetic-test proposal. Add focused
+windows_image.py and its direct tests, extending owned-object streaming and safe
+underscore components without changing the existing 16 MiB write/candidate limits.
+First establish immutable path/entry/byte/time admission and a single-use bounded
+stream writer with retain-only failure, then bind protected source handles and
+prepared image observations. Include collision/device/ADS/traversal, mutation,
+short/extra reads, failed flush and restart/refusal tests. Use only synthetic
+ordinary disposable files; do not copy actual tools, grant a package or launch
+an AppContainer in this source increment. Freeze the complete next source delta
+for independent review and a later exact effect plan before those effects.
+
+H2 image source is frozen for review in evidence/h2-image-source-manifest.json.
+The final 26 image, 27 H1 source and 10 actual Job tests pass. Independent review
+reproduced NT/Win32 spelling and short-name source/output overlap findings; both
+are repaired. Journal/root creation and root sealing are relative to held parent
+handles; actual canonical names/IDs support overlap refusal, and DOS mapping is
+observed separately. Both original source/reproduction packets and retained
+reviewer fixtures remain intact. Grants and image creation stay modeled in this
+source slice; native image/runtime/loader qualification is still open. The next
+bounded recipe is evidence/h2-python-closure-proposal.md, for source review only.
