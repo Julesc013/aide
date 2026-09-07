@@ -39,3 +39,12 @@ See h2-python-source-manifest.json, h2-python-independent-final-review.json and
 h2-python-source-review-notes.md for exact scope; source remains partial and the
 host task running/PENDING. Read-only Windows delay-layout refusals and the SDK
 clarification are preserved. No real tool image, grant or loader qualification.
+
+## Optional delay metadata checkpoint
+
+The two-file h2-delay-source-manifest.json and independent final review bind
+101 passing tests, exact numeric 16,384/16,385 symbol and aggregate bounds, and
+read-only parsing of the same eight public Windows DLL byte streams. AIDE
+validate/export/secret checks pass. The 180 API-set inventory exceeds the
+unchanged 128-row contract limit; native/API mapping, private tool images and
+restricted loader qualification remain open. No mapping/loading or grant effect.

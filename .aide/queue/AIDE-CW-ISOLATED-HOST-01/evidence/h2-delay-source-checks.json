@@ -1,0 +1,21 @@
+{
+  "schema": "aide.host.h2-delay-source-checks.v1",
+  "source_aggregate": "54567d76c19f80e799c54ac9e65d2f544ed2f9f0f52b4ecf19caf936a67f3c83",
+  "portable_source_count": 817,
+  "source_paths_in_export": [],
+  "secret_errors": 0,
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    ".aide/scripts/aide_lite.py",
+    "validate"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 4.925091699929908,
+  "log": "h2-delay-aide-validate.txt",
+  "log_bytes": 4893242,
+  "log_sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+  "source_unchanged": true,
+  "index_unchanged": true,
+  "actual_effects": false
+}

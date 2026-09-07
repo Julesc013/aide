@@ -15,6 +15,7 @@ MAX_PE_BYTES = 16 * 1024 * 1024
 MAX_IMAGE_BYTES = 512 * 1024 * 1024
 MAX_IMPORTS = 2048
 MAX_EXPORTS = 16384
+MAX_DELAY_SYMBOLS = 16384
 
 
 def dll_name(value):
@@ -87,6 +88,8 @@ class _Reader:
                     raise Refused("overlapping raw sections refused")
                 raw_ranges.append((pointer, pointer + raw))
             self.sections.append((address, raw, pointer))
+        self.virtual_sections = tuple(virtual_ranges)
+        self.delay_symbols = 0
 
     def slice(self, offset, size):
         if not 0 <= offset <= len(self.data) or not 0 <= size <= len(self.data) - offset:
@@ -106,6 +109,55 @@ class _Reader:
             raise Refused("RVA is not uniquely mapped to file bytes")
         self.slice(matches[0], size)
         return matches[0]
+
+    def image_bytes(self, rva, size):
+        """Bounded initial mapped bytes, including a section's zero-filled tail.
+
+        Only IAT/handle metadata uses this view. Descriptors, names and lookup
+        entries must stay file-backed; no virtual address is dereferenced.
+        """
+        if not 0 <= rva < self.image_size or not 0 < size <= min(self.image_size - rva, (MAX_DELAY_SYMBOLS + 1) * 8):
+            raise Refused("bounded mapped table extent required")
+        if rva + size <= self.headers: return self.slice(rva, size)
+        matches = [i for i, (start, end) in enumerate(self.virtual_sections) if start <= rva and rva + size <= end]
+        if len(matches) != 1: raise Refused("mapped table crosses a gap or section extent")
+        address, raw, pointer = self.sections[matches[0]]
+        backed = min(size, max(0, raw - (rva - address)))
+        prefix = self.slice(pointer + rva - address, backed) if backed else b""
+        return prefix + b"\0" * (size - backed)
+
+    def delay_descriptor(self, row):
+        if row[0] != 1 or row[7]:
+            raise Refused("only unbound RVA delay imports are admitted")
+        if not row[3] or not row[4]:
+            raise Refused("explicit delay IAT and file-backed lookup required")
+        count = 0
+        while True:
+            slot = self.unpack("<Q", self.offset(row[4] + count * 8, 8))[0]
+            if not slot: break
+            if self.delay_symbols >= MAX_DELAY_SYMBOLS:
+                raise Refused("aggregate delay-symbol bound exceeded")
+            self.delay_symbols += 1; count += 1
+            if slot & (1 << 63):
+                if (slot & ((1 << 63) - 1)) > 0xffff:
+                    raise Refused("delay ordinal has reserved bits")
+            else:
+                if slot > 0xffffffff: raise Refused("delay name RVA exceeds supported width")
+                self.offset(slot, 2)
+                self.string(slot + 2, bound=512)
+        length = (count + 1) * 8
+        iat = self.image_bytes(row[3], length)
+        if iat[-8:] != b"\0" * 8: raise Refused("delay IAT lacks its bounded terminator")
+        if row[2]: self.image_bytes(row[2], 8)
+        if row[5]:
+            # Timestamp0 leaves this optional table unused. Validate its complete
+            # initialized extent, but never follow its raw function addresses.
+            bound = self.slice(self.offset(row[5], length), length)
+            if bound[-8:] != b"\0" * 8: raise Refused("optional delay table lacks its terminator")
+        if row[6]:
+            unload = self.slice(self.offset(row[6], length), length)
+            if unload != iat: raise Refused("delay unload table differs from the original IAT")
+        return row[1]
 
     def directory(self, index):
         rva, size = self.directories[index] if index < len(self.directories) else (0, 0)
@@ -141,16 +193,13 @@ class _Reader:
             if not any(row): return tuple(sorted(names))
             if i == MAX_IMPORTS: raise Refused("import count exceeds bound")
             if delayed:
-                if row[0] != 1 or row[5]:
-                    raise Refused("only unbound RVA delay imports are admitted")
-                name_rva, thunk = row[1], row[3]
-                if row[4]: self.offset(row[4], 8)
+                name_rva = self.delay_descriptor(row)
             else:
                 if row[1]: raise Refused("bound import timestamps refused")
                 name_rva, thunk = row[3], row[4]
                 if row[0]: self.offset(row[0], 8)
-            if not thunk: raise Refused("nonempty import address table required")
-            self.offset(thunk, 8)
+                if not thunk: raise Refused("nonempty import address table required")
+                self.offset(thunk, 8)
             name = dll_name(self.string(name_rva))
             if name in names: raise Refused("duplicate or case-aliased import descriptor")
             names.add(name)

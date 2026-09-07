@@ -4,10 +4,12 @@ status: running
 planning_state: execution_active
 result: PENDING
 updated_at: 2026-09-07
-current_slice: h2_python_recipe_source
+current_slice: h2_optional_delay_metadata
 local_native_attempt_result: PASS
 local_native_attempt_reason: exact_local_endpoint_missing_internetclient_with_controls
-current_source_review: passed_h2_python_recipe_metadata
+current_source_review: passed_h2_optional_delay_metadata
 operational_activation: false
 python_source_tests: 95
 python_runtime_qualification: pending_actual_native_inputs_and_loader
+optional_delay_source_tests: 101
+optional_delay_actual_metadata_inputs: 8

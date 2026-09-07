@@ -66,3 +66,23 @@ and a copy of the unchanged pending-provider index are historical inputs, not
 new queue authority or a staged canonical index change. The v1 baseline files
 used by the independent differential oracle are under baseline/06f2546f/.
 No private tool images, DLL loads, package grants or runtime activation occurred.
+
+## H2 optional delay metadata packet
+
+The h2-delay-evidence.zip and h2-delay-custody.json packet preserves the exact
+reviewed two-file update, all 101-test and numeric-bound evidence, the initial
+compatibility failures, and the unchanged public-file metadata observations.
+The full 4.9 MB validate output and raw helper/reviewer logs are ZIP members;
+the original on-disk files remain retained and unstaged. Resolve a referenced
+raw repository path through files/<repository-path> in the map. Historical
+pre-change source files are under baseline/830bf30d/.
+
+Raw review and observation bytes remain authoritative for their recorded hashes.
+The map separately binds any Git LF text projection. The first source manifest
+was reconstructed from retained fields and verified against its earlier recorded
+hash; the final source-bound manifest is h2-delay-source-manifest.json. A copied
+working index is a historical dependency observation, not new queue authority.
+No private image, DLL loading, grant or isolated Python effect occurred. The
+observed union of 195 dependency names includes 180 API names, above the unchanged
+128-row contract cap; actual API/native ownership and loader qualification remain
+open. The packet does not relabel prior H1 failures or qualify general activation.

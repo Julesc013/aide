@@ -1,0 +1,2483 @@
+{
+  "schema": "aide.host.h2-delay-readonly-compatibility.v1",
+  "source": {
+    ".aide/scripts/tests/test_continuous_worker_windows_pe.py": "fe77377eab4487862882a2878dbd0ba50daa50f7f14e388fa7d2a947cc6fcbe7",
+    "core/runtime/continuous_worker/windows_pe.py": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d"
+  },
+  "rows": [
+    {
+      "name": "advapi32.dll",
+      "path": "C:\\Windows\\system32\\advapi32.dll",
+      "bytes": 717048,
+      "sha256": "fe875dfe559d8bbcf1f3701405fe43d37078896280001697c6f2f2bc060af3df",
+      "metadata": {
+        "sha256": "fe875dfe559d8bbcf1f3701405fe43d37078896280001697c6f2f2bc060af3df",
+        "machine": "amd64",
+        "is_dll": true,
+        "imports": [
+          "api-ms-win-core-apiquery-l1-1-0.dll",
+          "api-ms-win-core-namedpipe-l1-1-0.dll",
+          "api-ms-win-core-pcw-l1-1-0.dll",
+          "api-ms-win-core-processthreads-l1-1-0.dll",
+          "api-ms-win-core-processthreads-l1-1-1.dll",
+          "api-ms-win-core-registry-l1-1-0.dll",
+          "api-ms-win-core-registry-l1-1-1.dll",
+          "api-ms-win-core-registry-l1-1-2.dll",
+          "api-ms-win-core-sysinfo-l1-1-0.dll",
+          "api-ms-win-core-timezone-l1-1-0.dll",
+          "api-ms-win-eventing-consumer-l1-1-0.dll",
+          "api-ms-win-eventing-consumer-l1-1-1.dll",
+          "api-ms-win-eventing-controller-l1-1-0.dll",
+          "api-ms-win-eventing-provider-l1-1-0.dll",
+          "api-ms-win-security-audit-l1-1-0.dll",
+          "api-ms-win-security-audit-l1-1-1.dll",
+          "api-ms-win-security-base-l1-1-0.dll",
+          "api-ms-win-security-base-private-l1-1-0.dll",
+          "api-ms-win-service-core-l1-1-0.dll",
+          "api-ms-win-service-core-l1-1-1.dll",
+          "api-ms-win-service-core-l1-1-2.dll",
+          "api-ms-win-service-management-l1-1-0.dll",
+          "api-ms-win-service-management-l2-1-0.dll",
+          "api-ms-win-service-private-l1-1-0.dll",
+          "api-ms-win-service-private-l1-1-2.dll",
+          "api-ms-win-service-private-l1-1-3.dll",
+          "api-ms-win-service-private-l1-1-4.dll",
+          "api-ms-win-service-winsvc-l1-1-0.dll",
+          "kernel32.dll",
+          "kernelbase.dll",
+          "msvcrt.dll",
+          "ntdll.dll",
+          "rpcrt4.dll",
+          "sechost.dll"
+        ],
+        "delay_imports": [
+          "api-ms-win-devices-config-l1-1-1.dll",
+          "api-ms-win-security-credentials-l1-1-0.dll",
+          "api-ms-win-security-credentials-l2-1-0.dll",
+          "api-ms-win-security-lsalookup-l1-1-0.dll",
+          "api-ms-win-security-provider-l1-1-0.dll",
+          "bcrypt.dll",
+          "crypt32.dll",
+          "cryptbase.dll",
+          "cryptsp.dll",
+          "sspicli.dll",
+          "user32.dll",
+          "wintrust.dll"
+        ],
+        "forwarders": [
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfCreateInstance"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfDecrementULongCounterValue"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfDecrementULongLongCounterValue"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfDeleteInstance"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfIncrementULongCounterValue"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfIncrementULongLongCounterValue"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfQueryInstance"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfSetCounterRefValue"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfSetCounterSetInfo"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfSetULongCounterValue"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfSetULongLongCounterValue"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfStartProvider"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfStartProviderEx"
+          },
+          {
+            "module": "api-ms-win-core-perfcounters-l1-2-0.dll",
+            "symbol": "PerfStopProvider"
+          },
+          {
+            "module": "api-ms-win-eventing-controller-l1-1-0.dll",
+            "symbol": "TraceQueryInformation"
+          },
+          {
+            "module": "api-ms-win-service-private-l1-1-0.dll",
+            "symbol": "I_QueryTagInformation"
+          },
+          {
+            "module": "api-ms-win-service-private-l1-1-0.dll",
+            "symbol": "I_ScIsSecurityProcess"
+          },
+          {
+            "module": "api-ms-win-service-private-l1-1-0.dll",
+            "symbol": "I_ScPnPGetServiceName"
+          },
+          {
+            "module": "api-ms-win-service-private-l1-1-0.dll",
+            "symbol": "I_ScQueryServiceConfig"
+          },
+          {
+            "module": "api-ms-win-service-private-l1-1-0.dll",
+            "symbol": "I_ScSendPnPMessage"
+          },
+          {
+            "module": "api-ms-win-service-private-l1-1-0.dll",
+            "symbol": "I_ScSendTSMessage"
+          },
+          {
+            "module": "api-ms-win-service-private-l1-1-0.dll",
+            "symbol": "I_ScValidatePnPService"
+          },
+          {
+            "module": "api-ms-win-service-private-l1-1-1.dll",
+            "symbol": "I_ScRegisterPreshutdownRestart"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction001"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction002"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction003"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction004"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction005"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction028"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction029"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction034"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction036"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction040"
+          },
+          {
+            "module": "cryptbase.dll",
+            "symbol": "SystemFunction041"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "CheckSignatureInFile"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction006"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction007"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction008"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction009"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction010"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction011"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction012"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction013"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction014"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction015"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction016"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction018"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction020"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction021"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction022"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction023"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction024"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction025"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction026"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction027"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction030"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction031"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction032"
+          },
+          {
+            "module": "cryptsp.dll",
+            "symbol": "SystemFunction033"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AddMandatoryAce"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "CveEventWrite"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "IsValidRelativeSecurityDescriptor"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "A_SHAFinal"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "A_SHAInit"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "A_SHAUpdate"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwCreateTraceInstanceId"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventActivityIdControl"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventEnabled"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventProviderEnabled"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventRegister"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventSetInformation"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventUnregister"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWrite"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWriteEndScenario"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWriteEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWriteStartScenario"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWriteString"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWriteTransfer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwGetTraceEnableFlags"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwGetTraceEnableLevel"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwGetTraceLoggerHandle"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwLogTraceEvent"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwRegisterTraceGuidsA"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwRegisterTraceGuidsW"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwTraceEventInstance"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwTraceMessage"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwTraceMessageVa"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwUnregisterTraceGuids"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "MD4Final"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "MD4Init"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "MD4Update"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "MD5Final"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "MD5Init"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "MD5Update"
+          },
+          {
+            "module": "sechost.dll",
+            "symbol": "RemoveTraceCallback"
+          },
+          {
+            "module": "sechost.dll",
+            "symbol": "SetTraceCallback"
+          }
+        ]
+      },
+      "dependencies": [
+        "api-ms-win-core-apiquery-l1-1-0.dll",
+        "api-ms-win-core-namedpipe-l1-1-0.dll",
+        "api-ms-win-core-pcw-l1-1-0.dll",
+        "api-ms-win-core-perfcounters-l1-2-0.dll",
+        "api-ms-win-core-processthreads-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-1.dll",
+        "api-ms-win-core-registry-l1-1-0.dll",
+        "api-ms-win-core-registry-l1-1-1.dll",
+        "api-ms-win-core-registry-l1-1-2.dll",
+        "api-ms-win-core-sysinfo-l1-1-0.dll",
+        "api-ms-win-core-timezone-l1-1-0.dll",
+        "api-ms-win-devices-config-l1-1-1.dll",
+        "api-ms-win-eventing-consumer-l1-1-0.dll",
+        "api-ms-win-eventing-consumer-l1-1-1.dll",
+        "api-ms-win-eventing-controller-l1-1-0.dll",
+        "api-ms-win-eventing-provider-l1-1-0.dll",
+        "api-ms-win-security-audit-l1-1-0.dll",
+        "api-ms-win-security-audit-l1-1-1.dll",
+        "api-ms-win-security-base-l1-1-0.dll",
+        "api-ms-win-security-base-private-l1-1-0.dll",
+        "api-ms-win-security-credentials-l1-1-0.dll",
+        "api-ms-win-security-credentials-l2-1-0.dll",
+        "api-ms-win-security-lsalookup-l1-1-0.dll",
+        "api-ms-win-security-provider-l1-1-0.dll",
+        "api-ms-win-service-core-l1-1-0.dll",
+        "api-ms-win-service-core-l1-1-1.dll",
+        "api-ms-win-service-core-l1-1-2.dll",
+        "api-ms-win-service-management-l1-1-0.dll",
+        "api-ms-win-service-management-l2-1-0.dll",
+        "api-ms-win-service-private-l1-1-0.dll",
+        "api-ms-win-service-private-l1-1-1.dll",
+        "api-ms-win-service-private-l1-1-2.dll",
+        "api-ms-win-service-private-l1-1-3.dll",
+        "api-ms-win-service-private-l1-1-4.dll",
+        "api-ms-win-service-winsvc-l1-1-0.dll",
+        "bcrypt.dll",
+        "crypt32.dll",
+        "cryptbase.dll",
+        "cryptsp.dll",
+        "kernel32.dll",
+        "kernelbase.dll",
+        "msvcrt.dll",
+        "ntdll.dll",
+        "rpcrt4.dll",
+        "sechost.dll",
+        "sspicli.dll",
+        "user32.dll",
+        "wintrust.dll"
+      ],
+      "elapsed_seconds": 0.007136699976399541
+    },
+    {
+      "name": "bcrypt.dll",
+      "path": "C:\\Windows\\system32\\bcrypt.dll",
+      "bytes": 146888,
+      "sha256": "4aec900087b8fab630b7b816f9b5bb2205c532a909103fe7035ffbff938ecab2",
+      "metadata": {
+        "sha256": "4aec900087b8fab630b7b816f9b5bb2205c532a909103fe7035ffbff938ecab2",
+        "machine": "amd64",
+        "is_dll": true,
+        "imports": [
+          "api-ms-win-core-delayload-l1-1-0.dll",
+          "api-ms-win-core-delayload-l1-1-1.dll",
+          "api-ms-win-core-errorhandling-l1-1-0.dll",
+          "api-ms-win-core-handle-l1-1-0.dll",
+          "api-ms-win-core-libraryloader-l1-2-0.dll",
+          "api-ms-win-core-memory-l1-1-0.dll",
+          "api-ms-win-core-processthreads-l1-1-0.dll",
+          "api-ms-win-core-psapi-l1-1-0.dll",
+          "api-ms-win-core-synch-l1-1-0.dll",
+          "api-ms-win-core-sysinfo-l1-1-0.dll",
+          "api-ms-win-core-threadpool-legacy-l1-1-0.dll",
+          "api-ms-win-core-threadpool-private-l1-1-0.dll",
+          "api-ms-win-eventing-provider-l1-1-0.dll",
+          "api-ms-win-security-base-l1-1-0.dll",
+          "ntdll.dll"
+        ],
+        "delay_imports": [
+          "bcryptprimitives.dll"
+        ],
+        "forwarders": []
+      },
+      "dependencies": [
+        "api-ms-win-core-delayload-l1-1-0.dll",
+        "api-ms-win-core-delayload-l1-1-1.dll",
+        "api-ms-win-core-errorhandling-l1-1-0.dll",
+        "api-ms-win-core-handle-l1-1-0.dll",
+        "api-ms-win-core-libraryloader-l1-2-0.dll",
+        "api-ms-win-core-memory-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-0.dll",
+        "api-ms-win-core-psapi-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-1-0.dll",
+        "api-ms-win-core-sysinfo-l1-1-0.dll",
+        "api-ms-win-core-threadpool-legacy-l1-1-0.dll",
+        "api-ms-win-core-threadpool-private-l1-1-0.dll",
+        "api-ms-win-eventing-provider-l1-1-0.dll",
+        "api-ms-win-security-base-l1-1-0.dll",
+        "bcryptprimitives.dll",
+        "ntdll.dll"
+      ],
+      "elapsed_seconds": 0.0006291000172495842
+    },
+    {
+      "name": "kernel32.dll",
+      "path": "C:\\Windows\\system32\\kernel32.dll",
+      "bytes": 784280,
+      "sha256": "2aba8de6779aec3f8ba17ae18084f86ccc54ec08079565cdd1850d3943433207",
+      "metadata": {
+        "sha256": "2aba8de6779aec3f8ba17ae18084f86ccc54ec08079565cdd1850d3943433207",
+        "machine": "amd64",
+        "is_dll": true,
+        "imports": [
+          "api-ms-win-core-apiquery-l1-1-0.dll",
+          "api-ms-win-core-appcompat-l1-1-0.dll",
+          "api-ms-win-core-appcompat-l1-1-1.dll",
+          "api-ms-win-core-comm-l1-1-0.dll",
+          "api-ms-win-core-console-l1-1-0.dll",
+          "api-ms-win-core-console-l1-2-0.dll",
+          "api-ms-win-core-console-l1-2-1.dll",
+          "api-ms-win-core-console-l2-1-0.dll",
+          "api-ms-win-core-console-l2-2-0.dll",
+          "api-ms-win-core-console-l3-2-0.dll",
+          "api-ms-win-core-datetime-l1-1-0.dll",
+          "api-ms-win-core-datetime-l1-1-1.dll",
+          "api-ms-win-core-datetime-l1-1-2.dll",
+          "api-ms-win-core-debug-l1-1-0.dll",
+          "api-ms-win-core-debug-l1-1-1.dll",
+          "api-ms-win-core-delayload-l1-1-0.dll",
+          "api-ms-win-core-delayload-l1-1-1.dll",
+          "api-ms-win-core-errorhandling-l1-1-0.dll",
+          "api-ms-win-core-errorhandling-l1-1-3.dll",
+          "api-ms-win-core-fibers-l1-1-0.dll",
+          "api-ms-win-core-fibers-l2-1-0.dll",
+          "api-ms-win-core-fibers-l2-1-1.dll",
+          "api-ms-win-core-file-l1-1-0.dll",
+          "api-ms-win-core-file-l1-2-0.dll",
+          "api-ms-win-core-file-l1-2-1.dll",
+          "api-ms-win-core-file-l1-2-2.dll",
+          "api-ms-win-core-file-l2-1-0.dll",
+          "api-ms-win-core-file-l2-1-1.dll",
+          "api-ms-win-core-file-l2-1-2.dll",
+          "api-ms-win-core-file-l2-1-3.dll",
+          "api-ms-win-core-handle-l1-1-0.dll",
+          "api-ms-win-core-heap-l1-1-0.dll",
+          "api-ms-win-core-heap-l2-1-0.dll",
+          "api-ms-win-core-io-l1-1-0.dll",
+          "api-ms-win-core-io-l1-1-1.dll",
+          "api-ms-win-core-job-l1-1-0.dll",
+          "api-ms-win-core-largeinteger-l1-1-0.dll",
+          "api-ms-win-core-libraryloader-l1-2-0.dll",
+          "api-ms-win-core-libraryloader-l1-2-1.dll",
+          "api-ms-win-core-libraryloader-l1-2-2.dll",
+          "api-ms-win-core-libraryloader-l2-1-0.dll",
+          "api-ms-win-core-localization-l1-2-0.dll",
+          "api-ms-win-core-localization-l2-1-0.dll",
+          "api-ms-win-core-localization-private-l1-1-0.dll",
+          "api-ms-win-core-memory-l1-1-0.dll",
+          "api-ms-win-core-memory-l1-1-1.dll",
+          "api-ms-win-core-memory-l1-1-2.dll",
+          "api-ms-win-core-namedpipe-l1-1-0.dll",
+          "api-ms-win-core-namedpipe-l1-2-1.dll",
+          "api-ms-win-core-namedpipe-l1-2-2.dll",
+          "api-ms-win-core-namespace-l1-1-0.dll",
+          "api-ms-win-core-normalization-l1-1-0.dll",
+          "api-ms-win-core-processenvironment-l1-1-0.dll",
+          "api-ms-win-core-processenvironment-l1-2-0.dll",
+          "api-ms-win-core-processsnapshot-l1-1-0.dll",
+          "api-ms-win-core-processthreads-l1-1-0.dll",
+          "api-ms-win-core-processthreads-l1-1-1.dll",
+          "api-ms-win-core-processthreads-l1-1-2.dll",
+          "api-ms-win-core-processthreads-l1-1-3.dll",
+          "api-ms-win-core-processtopology-l1-1-0.dll",
+          "api-ms-win-core-profile-l1-1-0.dll",
+          "api-ms-win-core-psapi-ansi-l1-1-0.dll",
+          "api-ms-win-core-psapi-l1-1-0.dll",
+          "api-ms-win-core-realtime-l1-1-0.dll",
+          "api-ms-win-core-registry-l1-1-0.dll",
+          "api-ms-win-core-rtlsupport-l1-1-0.dll",
+          "api-ms-win-core-sidebyside-l1-1-0.dll",
+          "api-ms-win-core-string-l1-1-0.dll",
+          "api-ms-win-core-synch-l1-1-0.dll",
+          "api-ms-win-core-synch-l1-2-0.dll",
+          "api-ms-win-core-synch-l1-2-1.dll",
+          "api-ms-win-core-sysinfo-l1-1-0.dll",
+          "api-ms-win-core-sysinfo-l1-2-0.dll",
+          "api-ms-win-core-sysinfo-l1-2-1.dll",
+          "api-ms-win-core-sysinfo-l1-2-3.dll",
+          "api-ms-win-core-systemtopology-l1-1-0.dll",
+          "api-ms-win-core-systemtopology-l1-1-1.dll",
+          "api-ms-win-core-threadpool-legacy-l1-1-0.dll",
+          "api-ms-win-core-threadpool-private-l1-1-0.dll",
+          "api-ms-win-core-timezone-l1-1-0.dll",
+          "api-ms-win-core-util-l1-1-0.dll",
+          "api-ms-win-core-windowserrorreporting-l1-1-0.dll",
+          "api-ms-win-core-windowserrorreporting-l1-1-1.dll",
+          "api-ms-win-core-windowserrorreporting-l1-1-2.dll",
+          "api-ms-win-core-windowserrorreporting-l1-1-3.dll",
+          "api-ms-win-core-wow64-l1-1-0.dll",
+          "api-ms-win-core-wow64-l1-1-1.dll",
+          "api-ms-win-core-wow64-l1-1-3.dll",
+          "api-ms-win-core-xstate-l2-1-0.dll",
+          "api-ms-win-core-xstate-l2-1-1.dll",
+          "api-ms-win-eventing-provider-l1-1-0.dll",
+          "api-ms-win-security-appcontainer-l1-1-0.dll",
+          "api-ms-win-security-base-l1-1-0.dll",
+          "api-ms-win-security-base-l1-2-0.dll",
+          "kernelbase.dll",
+          "ntdll.dll"
+        ],
+        "delay_imports": [
+          "ext-ms-win-oobe-query-l1-1-0.dll",
+          "rpcrt4.dll"
+        ],
+        "forwarders": [
+          {
+            "module": "api-ms-win-core-debug-l1-1-2.dll",
+            "symbol": "WaitForDebugEventEx"
+          },
+          {
+            "module": "api-ms-win-core-enclave-l1-1-0.dll",
+            "symbol": "CreateEnclave"
+          },
+          {
+            "module": "api-ms-win-core-enclave-l1-1-0.dll",
+            "symbol": "InitializeEnclave"
+          },
+          {
+            "module": "api-ms-win-core-enclave-l1-1-0.dll",
+            "symbol": "IsEnclaveTypeSupported"
+          },
+          {
+            "module": "api-ms-win-core-enclave-l1-1-0.dll",
+            "symbol": "LoadEnclaveData"
+          },
+          {
+            "module": "api-ms-win-core-file-l1-2-2.dll",
+            "symbol": "FindFirstStreamW"
+          },
+          {
+            "module": "api-ms-win-core-file-l1-2-2.dll",
+            "symbol": "FindNextStreamW"
+          },
+          {
+            "module": "api-ms-win-core-file-l1-2-3.dll",
+            "symbol": "GetDiskSpaceInformationA"
+          },
+          {
+            "module": "api-ms-win-core-file-l1-2-3.dll",
+            "symbol": "GetDiskSpaceInformationW"
+          },
+          {
+            "module": "api-ms-win-core-io-l1-1-1.dll",
+            "symbol": "GetOverlappedResultEx"
+          },
+          {
+            "module": "api-ms-win-core-libraryloader-l1-1-0.dll",
+            "symbol": "AddDllDirectory"
+          },
+          {
+            "module": "api-ms-win-core-libraryloader-l1-1-0.dll",
+            "symbol": "RemoveDllDirectory"
+          },
+          {
+            "module": "api-ms-win-core-libraryloader-l1-1-0.dll",
+            "symbol": "SetDefaultDllDirectories"
+          },
+          {
+            "module": "api-ms-win-core-memory-l1-1-1.dll",
+            "symbol": "CreateFileMappingFromApp"
+          },
+          {
+            "module": "api-ms-win-core-memory-l1-1-1.dll",
+            "symbol": "MapViewOfFileFromApp"
+          },
+          {
+            "module": "api-ms-win-core-memory-l1-1-1.dll",
+            "symbol": "PrefetchVirtualMemory"
+          },
+          {
+            "module": "api-ms-win-core-memory-l1-1-1.dll",
+            "symbol": "UnmapViewOfFileEx"
+          },
+          {
+            "module": "api-ms-win-core-memory-l1-1-2.dll",
+            "symbol": "DiscardVirtualMemory"
+          },
+          {
+            "module": "api-ms-win-core-memory-l1-1-2.dll",
+            "symbol": "OfferVirtualMemory"
+          },
+          {
+            "module": "api-ms-win-core-memory-l1-1-2.dll",
+            "symbol": "ReclaimVirtualMemory"
+          },
+          {
+            "module": "api-ms-win-core-namedpipe-l1-2-1.dll",
+            "symbol": "GetNamedPipeInfo"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-0.dll",
+            "symbol": "CreateRemoteThreadEx"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-0.dll",
+            "symbol": "DeleteProcThreadAttributeList"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-0.dll",
+            "symbol": "GetCurrentThreadStackLimits"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-0.dll",
+            "symbol": "InitializeProcThreadAttributeList"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-0.dll",
+            "symbol": "OpenProcessToken"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-0.dll",
+            "symbol": "OpenThreadToken"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-0.dll",
+            "symbol": "SetThreadToken"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-0.dll",
+            "symbol": "UpdateProcThreadAttribute"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-1.dll",
+            "symbol": "GetProcessMitigationPolicy"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-1.dll",
+            "symbol": "SetProcessMitigationPolicy"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-2.dll",
+            "symbol": "IsProcessCritical"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-2.dll",
+            "symbol": "QueryProtectedPolicy"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-2.dll",
+            "symbol": "SetProtectedPolicy"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-3.dll",
+            "symbol": "GetProcessDefaultCpuSets"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-3.dll",
+            "symbol": "GetSystemCpuSetInformation"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-3.dll",
+            "symbol": "GetThreadDescription"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-3.dll",
+            "symbol": "GetThreadSelectedCpuSets"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-3.dll",
+            "symbol": "SetProcessDefaultCpuSets"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-3.dll",
+            "symbol": "SetThreadDescription"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-3.dll",
+            "symbol": "SetThreadSelectedCpuSets"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-4.dll",
+            "symbol": "QueueUserAPC2"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-4.dll",
+            "symbol": "SetProcessDynamicEHContinuationTargets"
+          },
+          {
+            "module": "api-ms-win-core-processthreads-l1-1-4.dll",
+            "symbol": "SetProcessDynamicEnforcedCetCompatibleRanges"
+          },
+          {
+            "module": "api-ms-win-core-synch-l1-1-0.dll",
+            "symbol": "SetWaitableTimerEx"
+          },
+          {
+            "module": "api-ms-win-core-synch-l1-2-0.dll",
+            "symbol": "InitOnceBeginInitialize"
+          },
+          {
+            "module": "api-ms-win-core-synch-l1-2-0.dll",
+            "symbol": "InitOnceComplete"
+          },
+          {
+            "module": "api-ms-win-core-synch-l1-2-0.dll",
+            "symbol": "InitOnceExecuteOnce"
+          },
+          {
+            "module": "api-ms-win-core-synch-l1-2-0.dll",
+            "symbol": "SleepConditionVariableCS"
+          },
+          {
+            "module": "api-ms-win-core-synch-l1-2-0.dll",
+            "symbol": "SleepConditionVariableSRW"
+          },
+          {
+            "module": "api-ms-win-core-sysinfo-l1-1-0.dll",
+            "symbol": "GetLogicalProcessorInformationEx"
+          },
+          {
+            "module": "api-ms-win-core-sysinfo-l1-2-1.dll",
+            "symbol": "InstallELAMCertificateInfo"
+          },
+          {
+            "module": "api-ms-win-core-sysinfo-l1-2-2.dll",
+            "symbol": "GetProcessorSystemCycleTime"
+          },
+          {
+            "module": "api-ms-win-core-sysinfo-l1-2-6.dll",
+            "symbol": "IsUserCetAvailableInEnvironment"
+          },
+          {
+            "module": "api-ms-win-core-timezone-l1-1-0.dll",
+            "symbol": "SystemTimeToTzSpecificLocalTimeEx"
+          },
+          {
+            "module": "api-ms-win-core-timezone-l1-1-0.dll",
+            "symbol": "TzSpecificLocalTimeToSystemTimeEx"
+          },
+          {
+            "module": "api-ms-win-core-timezone-l1-1-1.dll",
+            "symbol": "LocalFileTimeToLocalSystemTime"
+          },
+          {
+            "module": "api-ms-win-core-timezone-l1-1-1.dll",
+            "symbol": "LocalSystemTimeToLocalFileTime"
+          },
+          {
+            "module": "api-ms-win-core-wow64-l1-1-1.dll",
+            "symbol": "IsWow64Process2"
+          },
+          {
+            "module": "api-ms-win-core-wow64-l1-1-2.dll",
+            "symbol": "IsWow64GuestMachineSupported"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AppPolicyGetClrCompat"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AppPolicyGetCreateFileAccess"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AppPolicyGetLifecycleManagement"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AppPolicyGetMediaFoundationCodecLoading"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AppPolicyGetProcessTerminationMethod"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AppPolicyGetShowDeveloperDiagnostic"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AppPolicyGetThreadInitializationType"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AppPolicyGetWindowingModel"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "AppXGetOSMaxVersionTested"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "CeipIsOptedIn"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "CheckIsMSIXPackage"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "ClosePackageInfo"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "CloseState"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "CtrlRoutine"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "FindPackagesByPackageFamily"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "FormatApplicationUserModelId"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetApplicationUserModelId"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetConsoleInputExeNameA"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetConsoleInputExeNameW"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetCurrentApplicationUserModelId"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetCurrentPackageFamilyName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetCurrentPackageFullName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetCurrentPackageId"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetCurrentPackageInfo"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetCurrentPackagePath"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetPackageApplicationIds"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetPackageFamilyName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetPackageFullName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetPackageId"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetPackageInfo"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetPackagePath"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetPackagePathByFullName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetPackagesByPackageFamily"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetStagedPackagePathByFullName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetStateFolder"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetSystemAppDataKey"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetTempPath2A"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "GetTempPath2W"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "OpenPackageInfoByFullName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "OpenState"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "OpenStateExplicit"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "PackageFamilyNameFromFullName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "PackageFamilyNameFromId"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "PackageFullNameFromId"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "PackageIdFromFullName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "PackageNameAndPublisherIdFromFamilyName"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "ParseApplicationUserModelId"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "RaiseFailFastException"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "ReadConsoleInputExA"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "ReadConsoleInputExW"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "SetConsoleInputExeNameA"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "SetConsoleInputExeNameW"
+          },
+          {
+            "module": "kernelbase.dll",
+            "symbol": "SetLastConsoleEventActive"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "LdrResolveDelayLoadedAPI"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "LdrResolveDelayLoadsFromDll"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "NtFlushProcessWriteBuffers"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAcquireSRWLockExclusive"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAcquireSRWLockShared"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAddVectoredContinueHandler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAddVectoredExceptionHandler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAllocateHeap"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlDecodePointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlDecodeSystemPointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlDeleteCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlEncodePointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlEncodeSystemPointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlEnterCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlExitUserThread"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlGetCurrentProcessorNumber"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlGetCurrentProcessorNumberEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInitializeConditionVariable"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInitializeCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInitializeSListHead"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInitializeSRWLock"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedFlushSList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedPopEntrySList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedPushEntrySList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedPushListSList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedPushListSListEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlLeaveCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlQueryDepthSList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlReAllocateHeap"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlReleaseSRWLockExclusive"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlReleaseSRWLockShared"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlRemoveVectoredContinueHandler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlRemoveVectoredExceptionHandler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlRestoreLastWin32Error"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlRunOnceInitialize"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlSetCriticalSectionSpinCount"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlSizeHeap"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlTryAcquireSRWLockExclusive"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlTryAcquireSRWLockShared"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlTryEnterCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlWakeAllConditionVariable"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlWakeConditionVariable"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlZeroMemory"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackLeaveCriticalSectionOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackReleaseMutexOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackReleaseSemaphoreOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackSetEventOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackUnloadDllOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCancelAsyncIoOperation"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpDisassociateCallback"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpIsTimerSet"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpPostWork"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseCleanupGroup"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseCleanupGroupMembers"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseIoCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleasePool"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseTimer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseWait"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseWork"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetPoolMaxThreads"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetTimer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetTimerEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetWait"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetWaitEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpStartAsyncIoOperation"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpWaitForIoCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpWaitForTimer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpWaitForWait"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpWaitForWork"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "VerSetConditionMask"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "__C_specific_handler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "__chkstk"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "__misaligned_access"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "_local_unwind"
+          }
+        ]
+      },
+      "dependencies": [
+        "api-ms-win-core-apiquery-l1-1-0.dll",
+        "api-ms-win-core-appcompat-l1-1-0.dll",
+        "api-ms-win-core-appcompat-l1-1-1.dll",
+        "api-ms-win-core-comm-l1-1-0.dll",
+        "api-ms-win-core-console-l1-1-0.dll",
+        "api-ms-win-core-console-l1-2-0.dll",
+        "api-ms-win-core-console-l1-2-1.dll",
+        "api-ms-win-core-console-l2-1-0.dll",
+        "api-ms-win-core-console-l2-2-0.dll",
+        "api-ms-win-core-console-l3-2-0.dll",
+        "api-ms-win-core-datetime-l1-1-0.dll",
+        "api-ms-win-core-datetime-l1-1-1.dll",
+        "api-ms-win-core-datetime-l1-1-2.dll",
+        "api-ms-win-core-debug-l1-1-0.dll",
+        "api-ms-win-core-debug-l1-1-1.dll",
+        "api-ms-win-core-debug-l1-1-2.dll",
+        "api-ms-win-core-delayload-l1-1-0.dll",
+        "api-ms-win-core-delayload-l1-1-1.dll",
+        "api-ms-win-core-enclave-l1-1-0.dll",
+        "api-ms-win-core-errorhandling-l1-1-0.dll",
+        "api-ms-win-core-errorhandling-l1-1-3.dll",
+        "api-ms-win-core-fibers-l1-1-0.dll",
+        "api-ms-win-core-fibers-l2-1-0.dll",
+        "api-ms-win-core-fibers-l2-1-1.dll",
+        "api-ms-win-core-file-l1-1-0.dll",
+        "api-ms-win-core-file-l1-2-0.dll",
+        "api-ms-win-core-file-l1-2-1.dll",
+        "api-ms-win-core-file-l1-2-2.dll",
+        "api-ms-win-core-file-l1-2-3.dll",
+        "api-ms-win-core-file-l2-1-0.dll",
+        "api-ms-win-core-file-l2-1-1.dll",
+        "api-ms-win-core-file-l2-1-2.dll",
+        "api-ms-win-core-file-l2-1-3.dll",
+        "api-ms-win-core-handle-l1-1-0.dll",
+        "api-ms-win-core-heap-l1-1-0.dll",
+        "api-ms-win-core-heap-l2-1-0.dll",
+        "api-ms-win-core-io-l1-1-0.dll",
+        "api-ms-win-core-io-l1-1-1.dll",
+        "api-ms-win-core-job-l1-1-0.dll",
+        "api-ms-win-core-largeinteger-l1-1-0.dll",
+        "api-ms-win-core-libraryloader-l1-1-0.dll",
+        "api-ms-win-core-libraryloader-l1-2-0.dll",
+        "api-ms-win-core-libraryloader-l1-2-1.dll",
+        "api-ms-win-core-libraryloader-l1-2-2.dll",
+        "api-ms-win-core-libraryloader-l2-1-0.dll",
+        "api-ms-win-core-localization-l1-2-0.dll",
+        "api-ms-win-core-localization-l2-1-0.dll",
+        "api-ms-win-core-localization-private-l1-1-0.dll",
+        "api-ms-win-core-memory-l1-1-0.dll",
+        "api-ms-win-core-memory-l1-1-1.dll",
+        "api-ms-win-core-memory-l1-1-2.dll",
+        "api-ms-win-core-namedpipe-l1-1-0.dll",
+        "api-ms-win-core-namedpipe-l1-2-1.dll",
+        "api-ms-win-core-namedpipe-l1-2-2.dll",
+        "api-ms-win-core-namespace-l1-1-0.dll",
+        "api-ms-win-core-normalization-l1-1-0.dll",
+        "api-ms-win-core-processenvironment-l1-1-0.dll",
+        "api-ms-win-core-processenvironment-l1-2-0.dll",
+        "api-ms-win-core-processsnapshot-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-1.dll",
+        "api-ms-win-core-processthreads-l1-1-2.dll",
+        "api-ms-win-core-processthreads-l1-1-3.dll",
+        "api-ms-win-core-processthreads-l1-1-4.dll",
+        "api-ms-win-core-processtopology-l1-1-0.dll",
+        "api-ms-win-core-profile-l1-1-0.dll",
+        "api-ms-win-core-psapi-ansi-l1-1-0.dll",
+        "api-ms-win-core-psapi-l1-1-0.dll",
+        "api-ms-win-core-realtime-l1-1-0.dll",
+        "api-ms-win-core-registry-l1-1-0.dll",
+        "api-ms-win-core-rtlsupport-l1-1-0.dll",
+        "api-ms-win-core-sidebyside-l1-1-0.dll",
+        "api-ms-win-core-string-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "api-ms-win-core-synch-l1-2-1.dll",
+        "api-ms-win-core-sysinfo-l1-1-0.dll",
+        "api-ms-win-core-sysinfo-l1-2-0.dll",
+        "api-ms-win-core-sysinfo-l1-2-1.dll",
+        "api-ms-win-core-sysinfo-l1-2-2.dll",
+        "api-ms-win-core-sysinfo-l1-2-3.dll",
+        "api-ms-win-core-sysinfo-l1-2-6.dll",
+        "api-ms-win-core-systemtopology-l1-1-0.dll",
+        "api-ms-win-core-systemtopology-l1-1-1.dll",
+        "api-ms-win-core-threadpool-legacy-l1-1-0.dll",
+        "api-ms-win-core-threadpool-private-l1-1-0.dll",
+        "api-ms-win-core-timezone-l1-1-0.dll",
+        "api-ms-win-core-timezone-l1-1-1.dll",
+        "api-ms-win-core-util-l1-1-0.dll",
+        "api-ms-win-core-windowserrorreporting-l1-1-0.dll",
+        "api-ms-win-core-windowserrorreporting-l1-1-1.dll",
+        "api-ms-win-core-windowserrorreporting-l1-1-2.dll",
+        "api-ms-win-core-windowserrorreporting-l1-1-3.dll",
+        "api-ms-win-core-wow64-l1-1-0.dll",
+        "api-ms-win-core-wow64-l1-1-1.dll",
+        "api-ms-win-core-wow64-l1-1-2.dll",
+        "api-ms-win-core-wow64-l1-1-3.dll",
+        "api-ms-win-core-xstate-l2-1-0.dll",
+        "api-ms-win-core-xstate-l2-1-1.dll",
+        "api-ms-win-eventing-provider-l1-1-0.dll",
+        "api-ms-win-security-appcontainer-l1-1-0.dll",
+        "api-ms-win-security-base-l1-1-0.dll",
+        "api-ms-win-security-base-l1-2-0.dll",
+        "ext-ms-win-oobe-query-l1-1-0.dll",
+        "kernelbase.dll",
+        "ntdll.dll",
+        "rpcrt4.dll"
+      ],
+      "elapsed_seconds": 0.011156300082802773
+    },
+    {
+      "name": "version.dll",
+      "path": "C:\\Windows\\system32\\version.dll",
+      "bytes": 32584,
+      "sha256": "af45a728552ccfdcd9435c40ace60a9354d7c1b52abf507a2f1cb371dada4fde",
+      "metadata": {
+        "sha256": "af45a728552ccfdcd9435c40ace60a9354d7c1b52abf507a2f1cb371dada4fde",
+        "machine": "amd64",
+        "is_dll": true,
+        "imports": [
+          "api-ms-win-core-errorhandling-l1-1-0.dll",
+          "api-ms-win-core-file-l1-1-0.dll",
+          "api-ms-win-core-handle-l1-1-0.dll",
+          "api-ms-win-core-heap-l2-1-0.dll",
+          "api-ms-win-core-libraryloader-l1-2-0.dll",
+          "api-ms-win-core-libraryloader-l1-2-1.dll",
+          "api-ms-win-core-localization-l1-2-0.dll",
+          "api-ms-win-core-processthreads-l1-1-0.dll",
+          "api-ms-win-core-profile-l1-1-0.dll",
+          "api-ms-win-core-rtlsupport-l1-1-0.dll",
+          "api-ms-win-core-string-l1-1-0.dll",
+          "api-ms-win-core-synch-l1-2-0.dll",
+          "api-ms-win-core-sysinfo-l1-1-0.dll",
+          "api-ms-win-core-version-l1-1-0.dll",
+          "api-ms-win-core-version-l1-1-1.dll",
+          "api-ms-win-core-version-private-l1-1-0.dll",
+          "api-ms-win-core-versionansi-l1-1-0.dll",
+          "api-ms-win-core-versionansi-l1-1-1.dll",
+          "kernel32.dll",
+          "kernelbase.dll",
+          "msvcrt.dll",
+          "ntdll.dll"
+        ],
+        "delay_imports": [],
+        "forwarders": [
+          {
+            "module": "kernel32.dll",
+            "symbol": "VerLanguageNameA"
+          },
+          {
+            "module": "kernel32.dll",
+            "symbol": "VerLanguageNameW"
+          }
+        ]
+      },
+      "dependencies": [
+        "api-ms-win-core-errorhandling-l1-1-0.dll",
+        "api-ms-win-core-file-l1-1-0.dll",
+        "api-ms-win-core-handle-l1-1-0.dll",
+        "api-ms-win-core-heap-l2-1-0.dll",
+        "api-ms-win-core-libraryloader-l1-2-0.dll",
+        "api-ms-win-core-libraryloader-l1-2-1.dll",
+        "api-ms-win-core-localization-l1-2-0.dll",
+        "api-ms-win-core-processthreads-l1-1-0.dll",
+        "api-ms-win-core-profile-l1-1-0.dll",
+        "api-ms-win-core-rtlsupport-l1-1-0.dll",
+        "api-ms-win-core-string-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "api-ms-win-core-sysinfo-l1-1-0.dll",
+        "api-ms-win-core-version-l1-1-0.dll",
+        "api-ms-win-core-version-l1-1-1.dll",
+        "api-ms-win-core-version-private-l1-1-0.dll",
+        "api-ms-win-core-versionansi-l1-1-0.dll",
+        "api-ms-win-core-versionansi-l1-1-1.dll",
+        "kernel32.dll",
+        "kernelbase.dll",
+        "msvcrt.dll",
+        "ntdll.dll"
+      ],
+      "elapsed_seconds": 0.00038270000368356705
+    },
+    {
+      "name": "ws2_32.dll",
+      "path": "C:\\Windows\\system32\\ws2_32.dll",
+      "bytes": 429424,
+      "sha256": "31fb1a909e5477725b15a18a59c4b0e18f61f32def4c519559512ad69d899237",
+      "metadata": {
+        "sha256": "31fb1a909e5477725b15a18a59c4b0e18f61f32def4c519559512ad69d899237",
+        "machine": "amd64",
+        "is_dll": true,
+        "imports": [
+          "api-ms-win-core-apiquery-l1-1-0.dll",
+          "api-ms-win-core-crt-l1-1-0.dll",
+          "api-ms-win-core-crt-l2-1-0.dll",
+          "api-ms-win-core-debug-l1-1-0.dll",
+          "api-ms-win-core-delayload-l1-1-0.dll",
+          "api-ms-win-core-delayload-l1-1-1.dll",
+          "api-ms-win-core-errorhandling-l1-1-0.dll",
+          "api-ms-win-core-file-l1-1-0.dll",
+          "api-ms-win-core-handle-l1-1-0.dll",
+          "api-ms-win-core-heap-l1-1-0.dll",
+          "api-ms-win-core-heap-l2-1-0.dll",
+          "api-ms-win-core-io-l1-1-0.dll",
+          "api-ms-win-core-kernel32-legacy-l1-1-0.dll",
+          "api-ms-win-core-libraryloader-l1-2-0.dll",
+          "api-ms-win-core-processenvironment-l1-1-0.dll",
+          "api-ms-win-core-processthreads-l1-1-0.dll",
+          "api-ms-win-core-processthreads-l1-1-1.dll",
+          "api-ms-win-core-profile-l1-1-0.dll",
+          "api-ms-win-core-registry-l1-1-0.dll",
+          "api-ms-win-core-string-l1-1-0.dll",
+          "api-ms-win-core-string-obsolete-l1-1-0.dll",
+          "api-ms-win-core-synch-l1-1-0.dll",
+          "api-ms-win-core-synch-l1-2-0.dll",
+          "api-ms-win-core-sysinfo-l1-1-0.dll",
+          "api-ms-win-core-threadpool-l1-2-0.dll",
+          "api-ms-win-core-util-l1-1-0.dll",
+          "api-ms-win-core-wow64-l1-1-0.dll",
+          "api-ms-win-eventing-provider-l1-1-0.dll",
+          "api-ms-win-security-base-l1-1-0.dll",
+          "ntdll.dll",
+          "rpcrt4.dll"
+        ],
+        "delay_imports": [
+          "api-ms-win-service-management-l1-1-0.dll",
+          "api-ms-win-service-winsvc-l1-1-0.dll",
+          "ext-ms-win-rtcore-ntuser-window-ext-l1-1-0.dll",
+          "nsi.dll"
+        ],
+        "forwarders": []
+      },
+      "dependencies": [
+        "api-ms-win-core-apiquery-l1-1-0.dll",
+        "api-ms-win-core-crt-l1-1-0.dll",
+        "api-ms-win-core-crt-l2-1-0.dll",
+        "api-ms-win-core-debug-l1-1-0.dll",
+        "api-ms-win-core-delayload-l1-1-0.dll",
+        "api-ms-win-core-delayload-l1-1-1.dll",
+        "api-ms-win-core-errorhandling-l1-1-0.dll",
+        "api-ms-win-core-file-l1-1-0.dll",
+        "api-ms-win-core-handle-l1-1-0.dll",
+        "api-ms-win-core-heap-l1-1-0.dll",
+        "api-ms-win-core-heap-l2-1-0.dll",
+        "api-ms-win-core-io-l1-1-0.dll",
+        "api-ms-win-core-kernel32-legacy-l1-1-0.dll",
+        "api-ms-win-core-libraryloader-l1-2-0.dll",
+        "api-ms-win-core-processenvironment-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-1.dll",
+        "api-ms-win-core-profile-l1-1-0.dll",
+        "api-ms-win-core-registry-l1-1-0.dll",
+        "api-ms-win-core-string-l1-1-0.dll",
+        "api-ms-win-core-string-obsolete-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "api-ms-win-core-sysinfo-l1-1-0.dll",
+        "api-ms-win-core-threadpool-l1-2-0.dll",
+        "api-ms-win-core-util-l1-1-0.dll",
+        "api-ms-win-core-wow64-l1-1-0.dll",
+        "api-ms-win-eventing-provider-l1-1-0.dll",
+        "api-ms-win-security-base-l1-1-0.dll",
+        "api-ms-win-service-management-l1-1-0.dll",
+        "api-ms-win-service-winsvc-l1-1-0.dll",
+        "ext-ms-win-rtcore-ntuser-window-ext-l1-1-0.dll",
+        "nsi.dll",
+        "ntdll.dll",
+        "rpcrt4.dll"
+      ],
+      "elapsed_seconds": 0.0019237999804317951
+    },
+    {
+      "name": "ntdll.dll",
+      "path": "C:\\Windows\\system32\\ntdll.dll",
+      "bytes": 2035272,
+      "sha256": "7feb4c53b23b513b5c27d06e06bb1b0b2c770cf0419587b8ee0fc1421a9e64f2",
+      "metadata": {
+        "sha256": "7feb4c53b23b513b5c27d06e06bb1b0b2c770cf0419587b8ee0fc1421a9e64f2",
+        "machine": "amd64",
+        "is_dll": true,
+        "imports": [],
+        "delay_imports": [],
+        "forwarders": []
+      },
+      "dependencies": [],
+      "elapsed_seconds": 0.014274500077590346
+    },
+    {
+      "name": "ucrtbase.dll",
+      "path": "C:\\Windows\\system32\\ucrtbase.dll",
+      "bytes": 1046072,
+      "sha256": "a3096ffbcf7a684e40a8599ea54ed85c3a4d3810592e724b582711b7311486f4",
+      "metadata": {
+        "sha256": "a3096ffbcf7a684e40a8599ea54ed85c3a4d3810592e724b582711b7311486f4",
+        "machine": "amd64",
+        "is_dll": true,
+        "imports": [
+          "api-ms-win-core-console-l1-1-0.dll",
+          "api-ms-win-core-datetime-l1-1-0.dll",
+          "api-ms-win-core-debug-l1-1-0.dll",
+          "api-ms-win-core-errorhandling-l1-1-0.dll",
+          "api-ms-win-core-file-l1-1-0.dll",
+          "api-ms-win-core-file-l1-2-0.dll",
+          "api-ms-win-core-file-l2-1-0.dll",
+          "api-ms-win-core-handle-l1-1-0.dll",
+          "api-ms-win-core-heap-l1-1-0.dll",
+          "api-ms-win-core-interlocked-l1-1-0.dll",
+          "api-ms-win-core-libraryloader-l1-1-0.dll",
+          "api-ms-win-core-localization-l1-2-0.dll",
+          "api-ms-win-core-memory-l1-1-0.dll",
+          "api-ms-win-core-namedpipe-l1-1-0.dll",
+          "api-ms-win-core-processenvironment-l1-1-0.dll",
+          "api-ms-win-core-processthreads-l1-1-0.dll",
+          "api-ms-win-core-processthreads-l1-1-1.dll",
+          "api-ms-win-core-profile-l1-1-0.dll",
+          "api-ms-win-core-rtlsupport-l1-1-0.dll",
+          "api-ms-win-core-string-l1-1-0.dll",
+          "api-ms-win-core-synch-l1-1-0.dll",
+          "api-ms-win-core-synch-l1-2-0.dll",
+          "api-ms-win-core-sysinfo-l1-1-0.dll",
+          "api-ms-win-core-timezone-l1-1-0.dll",
+          "api-ms-win-core-util-l1-1-0.dll"
+        ],
+        "delay_imports": [],
+        "forwarders": []
+      },
+      "dependencies": [
+        "api-ms-win-core-console-l1-1-0.dll",
+        "api-ms-win-core-datetime-l1-1-0.dll",
+        "api-ms-win-core-debug-l1-1-0.dll",
+        "api-ms-win-core-errorhandling-l1-1-0.dll",
+        "api-ms-win-core-file-l1-1-0.dll",
+        "api-ms-win-core-file-l1-2-0.dll",
+        "api-ms-win-core-file-l2-1-0.dll",
+        "api-ms-win-core-handle-l1-1-0.dll",
+        "api-ms-win-core-heap-l1-1-0.dll",
+        "api-ms-win-core-interlocked-l1-1-0.dll",
+        "api-ms-win-core-libraryloader-l1-1-0.dll",
+        "api-ms-win-core-localization-l1-2-0.dll",
+        "api-ms-win-core-memory-l1-1-0.dll",
+        "api-ms-win-core-namedpipe-l1-1-0.dll",
+        "api-ms-win-core-processenvironment-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-1.dll",
+        "api-ms-win-core-profile-l1-1-0.dll",
+        "api-ms-win-core-rtlsupport-l1-1-0.dll",
+        "api-ms-win-core-string-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "api-ms-win-core-sysinfo-l1-1-0.dll",
+        "api-ms-win-core-timezone-l1-1-0.dll",
+        "api-ms-win-core-util-l1-1-0.dll"
+      ],
+      "elapsed_seconds": 0.012783499900251627
+    },
+    {
+      "name": "kernelbase.dll",
+      "path": "C:\\Windows\\system32\\kernelbase.dll",
+      "bytes": 3115184,
+      "sha256": "c65e1fa404c1b4f71618871072ff49c05311629aff586d6e79b97f56a89b5dc1",
+      "metadata": {
+        "sha256": "c65e1fa404c1b4f71618871072ff49c05311629aff586d6e79b97f56a89b5dc1",
+        "machine": "amd64",
+        "is_dll": true,
+        "imports": [
+          "api-ms-win-core-apiquery-l1-1-0.dll",
+          "api-ms-win-core-apiquery-l1-1-1.dll",
+          "api-ms-win-eventing-provider-l1-1-0.dll",
+          "ntdll.dll"
+        ],
+        "delay_imports": [
+          "api-ms-win-core-psm-app-l1-1-0.dll",
+          "api-ms-win-security-isolationpolicy-l1-2-0.dll",
+          "api-ms-win-security-sddl-l1-1-0.dll",
+          "ext-ms-onecore-appmodel-staterepository-cache-l1-1-0.dll",
+          "ext-ms-onecore-appmodel-staterepository-internal-l1-1-1.dll",
+          "ext-ms-onecore-appmodel-staterepository-internal-l1-1-4.dll",
+          "ext-ms-win-advapi32-npusername-l1-1-0.dll",
+          "ext-ms-win-advapi32-ntmarta-l1-1-0.dll",
+          "ext-ms-win-advapi32-registry-l1-1-0.dll",
+          "ext-ms-win-advapi32-registry-l1-1-1.dll",
+          "ext-ms-win-appmodel-appexecutionalias-l1-1-0.dll",
+          "ext-ms-win-appmodel-appexecutionalias-l1-1-1.dll",
+          "ext-ms-win-appmodel-appexecutionalias-l1-1-2.dll",
+          "ext-ms-win-appmodel-daxcore-l1-1-0.dll",
+          "ext-ms-win-appxdeploymentclient-appxdeploy-l1-1-0.dll",
+          "ext-ms-win-appxdeploymentclient-appxdeployonecore-l1-1-0.dll",
+          "ext-ms-win-cng-rng-l1-1-1.dll",
+          "ext-ms-win-feclient-encryptedfile-l1-1-0.dll",
+          "ext-ms-win-gpapi-grouppolicy-l1-1-0.dll",
+          "ext-ms-win-kernel32-appcompat-l1-1-0.dll",
+          "ext-ms-win-kernel32-datetime-l1-1-0.dll",
+          "ext-ms-win-kernel32-errorhandling-l1-1-0.dll",
+          "ext-ms-win-kernel32-file-l1-1-0.dll",
+          "ext-ms-win-kernel32-quirks-l1-1-0.dll",
+          "ext-ms-win-kernel32-quirks-l1-1-1.dll",
+          "ext-ms-win-kernel32-registry-l1-1-0.dll",
+          "ext-ms-win-kernel32-sidebyside-l1-1-0.dll",
+          "ext-ms-win-kernelbase-processthread-l1-1-0.dll",
+          "ext-ms-win-kernelbase-processthread-l1-1-1.dll",
+          "ext-ms-win-mrmcorer-resmanager-l1-1-0.dll",
+          "ext-ms-win-ntdsapi-activedirectoryclient-l1-1-0.dll",
+          "ext-ms-win-ntdsapi-activedirectoryclient-l1-1-1.dll",
+          "ext-ms-win-ntuser-string-l1-1-0.dll",
+          "ext-ms-win-security-capauthz-l1-1-1.dll",
+          "ext-ms-win-security-efswrt-l1-1-0.dll",
+          "ext-ms-win-shell32-shellcom-l1-1-0.dll",
+          "ext-ms-win-winrt-device-access-l1-1-0.dll"
+        ],
+        "forwarders": [
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventActivityIdControl"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventEnabled"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventProviderEnabled"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventRegister"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventSetInformation"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventUnregister"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWrite"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWriteEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWriteString"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwEventWriteTransfer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwGetTraceEnableFlags"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwGetTraceEnableLevel"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwGetTraceLoggerHandle"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwLogTraceEvent"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwRegisterTraceGuidsW"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwTraceMessage"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwTraceMessageVa"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "EtwUnregisterTraceGuids"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "NtFlushProcessWriteBuffers"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAcquireSRWLockExclusive"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAcquireSRWLockShared"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAddVectoredContinueHandler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAddVectoredExceptionHandler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlAllocateHeap"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlCopyMemoryNonTemporal"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlDecodePointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlDecodeRemotePointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlDecodeSystemPointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlDeleteBarrier"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlDeleteCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlEncodePointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlEncodeRemotePointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlEncodeSystemPointer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlEnterCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlExitUserProcess"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlExitUserThread"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlFreeHeap"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlGetCurrentProcessorNumber"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlGetCurrentProcessorNumberEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInitializeConditionVariable"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInitializeCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInitializeSListHead"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInitializeSRWLock"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedFlushSList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedPopEntrySList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedPushEntrySList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedPushListSList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlInterlockedPushListSListEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlLeaveCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlQueryDepthSList"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlQueryPerformanceCounter"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlQueryPerformanceFrequency"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlQueryUnbiasedInterruptTime"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlReAllocateHeap"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlReleaseSRWLockExclusive"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlReleaseSRWLockShared"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlRemoveVectoredContinueHandler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlRemoveVectoredExceptionHandler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlRestoreLastWin32Error"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlRunOnceInitialize"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlSetCriticalSectionSpinCount"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlSetLastWin32Error"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlSizeHeap"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlTryAcquireSRWLockExclusive"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlTryAcquireSRWLockShared"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlTryEnterCriticalSection"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlWakeAddressAll"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlWakeAddressSingle"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlWakeAllConditionVariable"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "RtlWakeConditionVariable"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackLeaveCriticalSectionOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackReleaseMutexOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackReleaseSemaphoreOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackSetEventOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCallbackUnloadDllOnCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpCancelAsyncIoOperation"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpDisassociateCallback"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpIsTimerSet"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpPostWork"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseCleanupGroup"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseCleanupGroupMembers"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseIoCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleasePool"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseTimer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseWait"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpReleaseWork"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetPoolMaxThreads"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetTimer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetTimerEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetWait"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpSetWaitEx"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpStartAsyncIoOperation"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpWaitForIoCompletion"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpWaitForTimer"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpWaitForWait"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "TpWaitForWork"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "VerSetConditionMask"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "__C_specific_handler"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "__chkstk"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "__misaligned_access"
+          },
+          {
+            "module": "ntdll.dll",
+            "symbol": "_local_unwind"
+          }
+        ]
+      },
+      "dependencies": [
+        "api-ms-win-core-apiquery-l1-1-0.dll",
+        "api-ms-win-core-apiquery-l1-1-1.dll",
+        "api-ms-win-core-psm-app-l1-1-0.dll",
+        "api-ms-win-eventing-provider-l1-1-0.dll",
+        "api-ms-win-security-isolationpolicy-l1-2-0.dll",
+        "api-ms-win-security-sddl-l1-1-0.dll",
+        "ext-ms-onecore-appmodel-staterepository-cache-l1-1-0.dll",
+        "ext-ms-onecore-appmodel-staterepository-internal-l1-1-1.dll",
+        "ext-ms-onecore-appmodel-staterepository-internal-l1-1-4.dll",
+        "ext-ms-win-advapi32-npusername-l1-1-0.dll",
+        "ext-ms-win-advapi32-ntmarta-l1-1-0.dll",
+        "ext-ms-win-advapi32-registry-l1-1-0.dll",
+        "ext-ms-win-advapi32-registry-l1-1-1.dll",
+        "ext-ms-win-appmodel-appexecutionalias-l1-1-0.dll",
+        "ext-ms-win-appmodel-appexecutionalias-l1-1-1.dll",
+        "ext-ms-win-appmodel-appexecutionalias-l1-1-2.dll",
+        "ext-ms-win-appmodel-daxcore-l1-1-0.dll",
+        "ext-ms-win-appxdeploymentclient-appxdeploy-l1-1-0.dll",
+        "ext-ms-win-appxdeploymentclient-appxdeployonecore-l1-1-0.dll",
+        "ext-ms-win-cng-rng-l1-1-1.dll",
+        "ext-ms-win-feclient-encryptedfile-l1-1-0.dll",
+        "ext-ms-win-gpapi-grouppolicy-l1-1-0.dll",
+        "ext-ms-win-kernel32-appcompat-l1-1-0.dll",
+        "ext-ms-win-kernel32-datetime-l1-1-0.dll",
+        "ext-ms-win-kernel32-errorhandling-l1-1-0.dll",
+        "ext-ms-win-kernel32-file-l1-1-0.dll",
+        "ext-ms-win-kernel32-quirks-l1-1-0.dll",
+        "ext-ms-win-kernel32-quirks-l1-1-1.dll",
+        "ext-ms-win-kernel32-registry-l1-1-0.dll",
+        "ext-ms-win-kernel32-sidebyside-l1-1-0.dll",
+        "ext-ms-win-kernelbase-processthread-l1-1-0.dll",
+        "ext-ms-win-kernelbase-processthread-l1-1-1.dll",
+        "ext-ms-win-mrmcorer-resmanager-l1-1-0.dll",
+        "ext-ms-win-ntdsapi-activedirectoryclient-l1-1-0.dll",
+        "ext-ms-win-ntdsapi-activedirectoryclient-l1-1-1.dll",
+        "ext-ms-win-ntuser-string-l1-1-0.dll",
+        "ext-ms-win-security-capauthz-l1-1-1.dll",
+        "ext-ms-win-security-efswrt-l1-1-0.dll",
+        "ext-ms-win-shell32-shellcom-l1-1-0.dll",
+        "ext-ms-win-winrt-device-access-l1-1-0.dll",
+        "ntdll.dll"
+      ],
+      "elapsed_seconds": 0.0126738001126796
+    }
+  ],
+  "current_contract_api_cap": 128,
+  "api_names": [
+    "api-ms-win-core-apiquery-l1-1-0.dll",
+    "api-ms-win-core-apiquery-l1-1-1.dll",
+    "api-ms-win-core-appcompat-l1-1-0.dll",
+    "api-ms-win-core-appcompat-l1-1-1.dll",
+    "api-ms-win-core-comm-l1-1-0.dll",
+    "api-ms-win-core-console-l1-1-0.dll",
+    "api-ms-win-core-console-l1-2-0.dll",
+    "api-ms-win-core-console-l1-2-1.dll",
+    "api-ms-win-core-console-l2-1-0.dll",
+    "api-ms-win-core-console-l2-2-0.dll",
+    "api-ms-win-core-console-l3-2-0.dll",
+    "api-ms-win-core-crt-l1-1-0.dll",
+    "api-ms-win-core-crt-l2-1-0.dll",
+    "api-ms-win-core-datetime-l1-1-0.dll",
+    "api-ms-win-core-datetime-l1-1-1.dll",
+    "api-ms-win-core-datetime-l1-1-2.dll",
+    "api-ms-win-core-debug-l1-1-0.dll",
+    "api-ms-win-core-debug-l1-1-1.dll",
+    "api-ms-win-core-debug-l1-1-2.dll",
+    "api-ms-win-core-delayload-l1-1-0.dll",
+    "api-ms-win-core-delayload-l1-1-1.dll",
+    "api-ms-win-core-enclave-l1-1-0.dll",
+    "api-ms-win-core-errorhandling-l1-1-0.dll",
+    "api-ms-win-core-errorhandling-l1-1-3.dll",
+    "api-ms-win-core-fibers-l1-1-0.dll",
+    "api-ms-win-core-fibers-l2-1-0.dll",
+    "api-ms-win-core-fibers-l2-1-1.dll",
+    "api-ms-win-core-file-l1-1-0.dll",
+    "api-ms-win-core-file-l1-2-0.dll",
+    "api-ms-win-core-file-l1-2-1.dll",
+    "api-ms-win-core-file-l1-2-2.dll",
+    "api-ms-win-core-file-l1-2-3.dll",
+    "api-ms-win-core-file-l2-1-0.dll",
+    "api-ms-win-core-file-l2-1-1.dll",
+    "api-ms-win-core-file-l2-1-2.dll",
+    "api-ms-win-core-file-l2-1-3.dll",
+    "api-ms-win-core-handle-l1-1-0.dll",
+    "api-ms-win-core-heap-l1-1-0.dll",
+    "api-ms-win-core-heap-l2-1-0.dll",
+    "api-ms-win-core-interlocked-l1-1-0.dll",
+    "api-ms-win-core-io-l1-1-0.dll",
+    "api-ms-win-core-io-l1-1-1.dll",
+    "api-ms-win-core-job-l1-1-0.dll",
+    "api-ms-win-core-kernel32-legacy-l1-1-0.dll",
+    "api-ms-win-core-largeinteger-l1-1-0.dll",
+    "api-ms-win-core-libraryloader-l1-1-0.dll",
+    "api-ms-win-core-libraryloader-l1-2-0.dll",
+    "api-ms-win-core-libraryloader-l1-2-1.dll",
+    "api-ms-win-core-libraryloader-l1-2-2.dll",
+    "api-ms-win-core-libraryloader-l2-1-0.dll",
+    "api-ms-win-core-localization-l1-2-0.dll",
+    "api-ms-win-core-localization-l2-1-0.dll",
+    "api-ms-win-core-localization-private-l1-1-0.dll",
+    "api-ms-win-core-memory-l1-1-0.dll",
+    "api-ms-win-core-memory-l1-1-1.dll",
+    "api-ms-win-core-memory-l1-1-2.dll",
+    "api-ms-win-core-namedpipe-l1-1-0.dll",
+    "api-ms-win-core-namedpipe-l1-2-1.dll",
+    "api-ms-win-core-namedpipe-l1-2-2.dll",
+    "api-ms-win-core-namespace-l1-1-0.dll",
+    "api-ms-win-core-normalization-l1-1-0.dll",
+    "api-ms-win-core-pcw-l1-1-0.dll",
+    "api-ms-win-core-perfcounters-l1-2-0.dll",
+    "api-ms-win-core-processenvironment-l1-1-0.dll",
+    "api-ms-win-core-processenvironment-l1-2-0.dll",
+    "api-ms-win-core-processsnapshot-l1-1-0.dll",
+    "api-ms-win-core-processthreads-l1-1-0.dll",
+    "api-ms-win-core-processthreads-l1-1-1.dll",
+    "api-ms-win-core-processthreads-l1-1-2.dll",
+    "api-ms-win-core-processthreads-l1-1-3.dll",
+    "api-ms-win-core-processthreads-l1-1-4.dll",
+    "api-ms-win-core-processtopology-l1-1-0.dll",
+    "api-ms-win-core-profile-l1-1-0.dll",
+    "api-ms-win-core-psapi-ansi-l1-1-0.dll",
+    "api-ms-win-core-psapi-l1-1-0.dll",
+    "api-ms-win-core-psm-app-l1-1-0.dll",
+    "api-ms-win-core-realtime-l1-1-0.dll",
+    "api-ms-win-core-registry-l1-1-0.dll",
+    "api-ms-win-core-registry-l1-1-1.dll",
+    "api-ms-win-core-registry-l1-1-2.dll",
+    "api-ms-win-core-rtlsupport-l1-1-0.dll",
+    "api-ms-win-core-sidebyside-l1-1-0.dll",
+    "api-ms-win-core-string-l1-1-0.dll",
+    "api-ms-win-core-string-obsolete-l1-1-0.dll",
+    "api-ms-win-core-synch-l1-1-0.dll",
+    "api-ms-win-core-synch-l1-2-0.dll",
+    "api-ms-win-core-synch-l1-2-1.dll",
+    "api-ms-win-core-sysinfo-l1-1-0.dll",
+    "api-ms-win-core-sysinfo-l1-2-0.dll",
+    "api-ms-win-core-sysinfo-l1-2-1.dll",
+    "api-ms-win-core-sysinfo-l1-2-2.dll",
+    "api-ms-win-core-sysinfo-l1-2-3.dll",
+    "api-ms-win-core-sysinfo-l1-2-6.dll",
+    "api-ms-win-core-systemtopology-l1-1-0.dll",
+    "api-ms-win-core-systemtopology-l1-1-1.dll",
+    "api-ms-win-core-threadpool-l1-2-0.dll",
+    "api-ms-win-core-threadpool-legacy-l1-1-0.dll",
+    "api-ms-win-core-threadpool-private-l1-1-0.dll",
+    "api-ms-win-core-timezone-l1-1-0.dll",
+    "api-ms-win-core-timezone-l1-1-1.dll",
+    "api-ms-win-core-util-l1-1-0.dll",
+    "api-ms-win-core-version-l1-1-0.dll",
+    "api-ms-win-core-version-l1-1-1.dll",
+    "api-ms-win-core-version-private-l1-1-0.dll",
+    "api-ms-win-core-versionansi-l1-1-0.dll",
+    "api-ms-win-core-versionansi-l1-1-1.dll",
+    "api-ms-win-core-windowserrorreporting-l1-1-0.dll",
+    "api-ms-win-core-windowserrorreporting-l1-1-1.dll",
+    "api-ms-win-core-windowserrorreporting-l1-1-2.dll",
+    "api-ms-win-core-windowserrorreporting-l1-1-3.dll",
+    "api-ms-win-core-wow64-l1-1-0.dll",
+    "api-ms-win-core-wow64-l1-1-1.dll",
+    "api-ms-win-core-wow64-l1-1-2.dll",
+    "api-ms-win-core-wow64-l1-1-3.dll",
+    "api-ms-win-core-xstate-l2-1-0.dll",
+    "api-ms-win-core-xstate-l2-1-1.dll",
+    "api-ms-win-devices-config-l1-1-1.dll",
+    "api-ms-win-eventing-consumer-l1-1-0.dll",
+    "api-ms-win-eventing-consumer-l1-1-1.dll",
+    "api-ms-win-eventing-controller-l1-1-0.dll",
+    "api-ms-win-eventing-provider-l1-1-0.dll",
+    "api-ms-win-security-appcontainer-l1-1-0.dll",
+    "api-ms-win-security-audit-l1-1-0.dll",
+    "api-ms-win-security-audit-l1-1-1.dll",
+    "api-ms-win-security-base-l1-1-0.dll",
+    "api-ms-win-security-base-l1-2-0.dll",
+    "api-ms-win-security-base-private-l1-1-0.dll",
+    "api-ms-win-security-credentials-l1-1-0.dll",
+    "api-ms-win-security-credentials-l2-1-0.dll",
+    "api-ms-win-security-isolationpolicy-l1-2-0.dll",
+    "api-ms-win-security-lsalookup-l1-1-0.dll",
+    "api-ms-win-security-provider-l1-1-0.dll",
+    "api-ms-win-security-sddl-l1-1-0.dll",
+    "api-ms-win-service-core-l1-1-0.dll",
+    "api-ms-win-service-core-l1-1-1.dll",
+    "api-ms-win-service-core-l1-1-2.dll",
+    "api-ms-win-service-management-l1-1-0.dll",
+    "api-ms-win-service-management-l2-1-0.dll",
+    "api-ms-win-service-private-l1-1-0.dll",
+    "api-ms-win-service-private-l1-1-1.dll",
+    "api-ms-win-service-private-l1-1-2.dll",
+    "api-ms-win-service-private-l1-1-3.dll",
+    "api-ms-win-service-private-l1-1-4.dll",
+    "api-ms-win-service-winsvc-l1-1-0.dll",
+    "ext-ms-onecore-appmodel-staterepository-cache-l1-1-0.dll",
+    "ext-ms-onecore-appmodel-staterepository-internal-l1-1-1.dll",
+    "ext-ms-onecore-appmodel-staterepository-internal-l1-1-4.dll",
+    "ext-ms-win-advapi32-npusername-l1-1-0.dll",
+    "ext-ms-win-advapi32-ntmarta-l1-1-0.dll",
+    "ext-ms-win-advapi32-registry-l1-1-0.dll",
+    "ext-ms-win-advapi32-registry-l1-1-1.dll",
+    "ext-ms-win-appmodel-appexecutionalias-l1-1-0.dll",
+    "ext-ms-win-appmodel-appexecutionalias-l1-1-1.dll",
+    "ext-ms-win-appmodel-appexecutionalias-l1-1-2.dll",
+    "ext-ms-win-appmodel-daxcore-l1-1-0.dll",
+    "ext-ms-win-appxdeploymentclient-appxdeploy-l1-1-0.dll",
+    "ext-ms-win-appxdeploymentclient-appxdeployonecore-l1-1-0.dll",
+    "ext-ms-win-cng-rng-l1-1-1.dll",
+    "ext-ms-win-feclient-encryptedfile-l1-1-0.dll",
+    "ext-ms-win-gpapi-grouppolicy-l1-1-0.dll",
+    "ext-ms-win-kernel32-appcompat-l1-1-0.dll",
+    "ext-ms-win-kernel32-datetime-l1-1-0.dll",
+    "ext-ms-win-kernel32-errorhandling-l1-1-0.dll",
+    "ext-ms-win-kernel32-file-l1-1-0.dll",
+    "ext-ms-win-kernel32-quirks-l1-1-0.dll",
+    "ext-ms-win-kernel32-quirks-l1-1-1.dll",
+    "ext-ms-win-kernel32-registry-l1-1-0.dll",
+    "ext-ms-win-kernel32-sidebyside-l1-1-0.dll",
+    "ext-ms-win-kernelbase-processthread-l1-1-0.dll",
+    "ext-ms-win-kernelbase-processthread-l1-1-1.dll",
+    "ext-ms-win-mrmcorer-resmanager-l1-1-0.dll",
+    "ext-ms-win-ntdsapi-activedirectoryclient-l1-1-0.dll",
+    "ext-ms-win-ntdsapi-activedirectoryclient-l1-1-1.dll",
+    "ext-ms-win-ntuser-string-l1-1-0.dll",
+    "ext-ms-win-oobe-query-l1-1-0.dll",
+    "ext-ms-win-rtcore-ntuser-window-ext-l1-1-0.dll",
+    "ext-ms-win-security-capauthz-l1-1-1.dll",
+    "ext-ms-win-security-efswrt-l1-1-0.dll",
+    "ext-ms-win-shell32-shellcom-l1-1-0.dll",
+    "ext-ms-win-winrt-device-access-l1-1-0.dll"
+  ],
+  "physical_names": [
+    "bcrypt.dll",
+    "bcryptprimitives.dll",
+    "crypt32.dll",
+    "cryptbase.dll",
+    "cryptsp.dll",
+    "kernel32.dll",
+    "kernelbase.dll",
+    "msvcrt.dll",
+    "nsi.dll",
+    "ntdll.dll",
+    "rpcrt4.dll",
+    "sechost.dll",
+    "sspicli.dll",
+    "user32.dll",
+    "wintrust.dll"
+  ],
+  "qualified_runtime": false,
+  "boundary": "Exact current source and unchanged original public DLL byte hashes only. No mapping/loading, native object/API host qualification, images, grants or profiles."
+}

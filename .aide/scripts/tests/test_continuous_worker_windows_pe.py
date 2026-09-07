@@ -5,6 +5,7 @@ from pathlib import Path
 import struct
 import sys
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
@@ -120,6 +121,78 @@ class PeMetadataTests(unittest.TestCase):
         data = fixture(imports=(), forwarders=("NTDLL.Target", "KERNEL32.Other"))
         put(data, 0x1440, struct.pack("<II", 0, 0x3000))
         result = pe.read_pe(bytes(data)); self.assertEqual(result.forwarders, ()); self.assertEqual(result.dependencies, ())
+
+
+def optional_delay_fixture(*, virtual_iat=False, unload=False):
+    data = fixture(imports=(), delayed=("VERSION.dll",))
+    iat = 0x4100 if virtual_iat else 0x2a00
+    module = 0x4180 if virtual_iat else 0x2d80
+    if virtual_iat: write(data, SECTION + 8, "<I", 0x4000)
+    put(data, 0x1200, struct.pack("<8I", 1, 0x2400, module, iat, 0x2b00, 0x2c00, 0x2d00 if unload else 0, 0))
+    put(data, 0x2b00, struct.pack("<3Q", 0x2e00, (1 << 63) | 7, 0))
+    put(data, 0x2e00, b"\0\0ExampleImport\0")
+    original_iat = struct.pack("<3Q", 0, 0, 0) if virtual_iat else struct.pack("<3Q", 0x180003000, 0x180003100, 0)
+    if not virtual_iat: put(data, iat, original_iat)
+    # Timestamp0 means these optional bound values are inert metadata; they are
+    # neither loader targets nor file offsets and must never be dereferenced.
+    put(data, 0x2c00, struct.pack("<3Q", 0x7ff000001000, 0x7ff000002000, 0))
+    if unload: put(data, 0x2d00, original_iat)
+    return data
+
+
+class OptionalDelayMetadataTests(unittest.TestCase):
+    def test_timestamp_zero_optional_table_and_unload_copy_are_supported_without_address_following(self):
+        for unload in (False, True):
+            with self.subTest(unload=unload):
+                data = optional_delay_fixture(unload=unload); result = pe.read_pe(bytes(data))
+                self.assertEqual(result.delay_imports, ("version.dll",)); self.assertEqual(result.dependencies, ("version.dll",))
+                self.assertEqual(result.sha256, hashlib.sha256(data).hexdigest())
+
+    def test_virtual_zero_filled_iat_and_handle_storage_are_mapped_metadata_only(self):
+        data = optional_delay_fixture(virtual_iat=True, unload=True)
+        self.assertEqual(pe.read_pe(bytes(data)).delay_imports, ("version.dll",))
+        reader = pe._Reader(bytes(data))
+        with self.assertRaises(Refused): reader.offset(0x4100, 24)
+        self.assertEqual(reader.image_bytes(0x4100, 24), b"\0" * 24)
+        # The initialized/zero-filled boundary may be crossed by an IAT span.
+        put(data, 0x1200 + 12, struct.pack("<I", 0x3ff8)); put(data, 0x3ff8, struct.pack("<Q", 0))
+        self.assertEqual(pe.read_pe(bytes(data)).delay_imports, ("version.dll",))
+
+    def test_nonzero_timestamps_old_attributes_and_incomplete_optional_spans_refuse(self):
+        for field, value in ((0, 0), (0, 2), (8, 0x5000), (12, 0), (12, 0x4ff0), (16, 0), (16, 0x4ff0),
+                             (20, 0x3ff8), (20, 0x4100), (24, 0x3ff8), (28, 1), (28, 0xffffffff)):
+            data = optional_delay_fixture(virtual_iat=True); put(data, 0x1200 + field, struct.pack("<I", value))
+            with self.subTest(field=field, value=value), self.assertRaises(Refused): pe.read_pe(bytes(data))
+        data = optional_delay_fixture(); put(data, 0x1200 + 20, struct.pack("<I", 0)); put(data, 0x1200 + 28, struct.pack("<I", 1))
+        with self.assertRaises(Refused): pe.read_pe(bytes(data))
+
+    def test_lookup_names_ordinals_terminators_and_optional_terminators_are_bounded(self):
+        for kind in ("wide_name_rva", "name_extent", "name_unterminated", "ordinal_reserved", "lookup_terminator", "iat_terminator", "bound_terminator", "unload_terminator"):
+            data = optional_delay_fixture(unload=True)
+            if kind == "wide_name_rva": put(data, 0x2b00, struct.pack("<Q", 1 << 40))
+            if kind == "name_extent": put(data, 0x2b00, struct.pack("<Q", 0x4fff))
+            if kind == "name_unterminated": put(data, 0x2e00, b"\0\0" + b"x" * 512)
+            if kind == "ordinal_reserved": put(data, 0x2b08, struct.pack("<Q", (1 << 63) | (1 << 20) | 7))
+            if kind == "lookup_terminator":
+                put(data, 0x1200 + 16, struct.pack("<I", 0x3ff8)); put(data, 0x3ff8, struct.pack("<Q", 0x2e00))
+            if kind == "iat_terminator": put(data, 0x2a10, struct.pack("<Q", 1))
+            if kind == "bound_terminator": put(data, 0x2c10, struct.pack("<Q", 1))
+            if kind == "unload_terminator": put(data, 0x2d10, struct.pack("<Q", 1))
+            with self.subTest(kind=kind), self.assertRaises(Refused): pe.read_pe(bytes(data))
+
+    def test_unload_table_must_represent_the_same_original_iat_bytes(self):
+        for virtual in (False, True):
+            data = optional_delay_fixture(virtual_iat=virtual, unload=True); put(data, 0x2d00, struct.pack("<Q", 0x1234))
+            with self.subTest(virtual=virtual), self.assertRaises(Refused): pe.read_pe(bytes(data))
+
+    def test_delay_symbol_budget_is_aggregate_and_refuses_before_unbounded_traversal(self):
+        data = optional_delay_fixture()
+        with patch.object(pe, "MAX_DELAY_SYMBOLS", 1), self.assertRaises(Refused): pe.read_pe(bytes(data))
+        # Two descriptors reusing a small lookup still consume separate work.
+        write(data, OPTIONAL + 112 + 13 * 8, "<II", 0x1200, 96)
+        put(data, 0x1220, struct.pack("<8I", 1, 0x2480, 0x2d80, 0x2a00, 0x2b00, 0, 0, 0))
+        put(data, 0x2480, b"KERNEL32.dll\0")
+        with patch.object(pe, "MAX_DELAY_SYMBOLS", 3), self.assertRaises(Refused): pe.read_pe(bytes(data))
 
 
 if __name__ == "__main__": unittest.main()

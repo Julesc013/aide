@@ -1,0 +1,58 @@
+{
+  "schema": "aide.host.h2-delay-source-admission.v1",
+  "source_base": "830bf30db3e238fe3f8b1335f59a938ae415fe95",
+  "plan_sha256": "01ce838f4c77a01a863077ea2f9345bf68d1503332fec13190883b608ad23665",
+  "source_paths": [
+    "core/runtime/continuous_worker/windows_pe.py",
+    ".aide/scripts/tests/test_continuous_worker_windows_pe.py"
+  ],
+  "checks": [
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.49831590009853244,
+      "log": "h2-delay-source-inspect.txt",
+      "sha256": "ae7d3640b74c95e3e59283fea747d3f8f15149d90c706f14fd4be0e040a27b60"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.5394439999945462,
+      "log": "h2-delay-source-noop-check.txt",
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.48833519988693297,
+      "log": "h2-delay-source-recover.txt",
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    }
+  ],
+  "actual_effects": false,
+  "index_untouched": true
+}

@@ -319,3 +319,26 @@ raw multi-megabyte logs. No actual tool copy, package grant or loader effect is
 admitted by this checkpoint. The SDK addendum clarifies that timestamp0 means
 unbound even when an optional bound-IAT pointer is nonzero; the next metadata
 slice will target that exact observed layout and retain existing bounds.
+
+## Optional delay metadata continuation
+
+Continue from 830bf30d under evidence/h2-delay-source-plan.md. Only the PE reader
+and direct tests change. Preserve the95-test recipe checkpoint and initial actual
+Windows refusals; this slice supports the observed unbound timestamp0 optional
+table layout under finite lookup/IAT spans, without any loader/image effects.
+
+## Optional delay metadata source evidence
+
+The two-file h2-delay-source-manifest.json binds the PE reader/direct regression
+increment after 830bf30d. All 101 source/ordinary tests pass. Eight unchanged named
+Windows DLL byte streams now parse under the explicit RVA/timestamp0 optional
+bound-IAT layout, without loading or mapping inspected DLLs. The original
+refusals and pre-fix synthetic failures remain retained. Actual native system/API
+mapping and restricted Python bootstrap remain unqualified; the observed 180
+API-set names exceed the unchanged 128-row contract ceiling and need a separately
+reviewed exact admission decision. The source is frozen for independent review.
+
+Independent exact-source review passed the 101-test replay, real numeric symbol
+limits and the same eight ordinary byte-stream observations. Receipt
+h2-delay-independent-final-review.json binds the exact source and raw proof.
+The optional-delay checkpoint remains partial; native/API/loader gates stay open.

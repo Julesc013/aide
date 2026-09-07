@@ -36,3 +36,10 @@ and three direct test files; extend windows_image and its direct test for exact
 v2 generated-byte admission while preserving v1. Own task/docs and compact raw
 evidence carry the 95-test independent source review and remaining native/loader
 gaps. Provider entry records and queue index are excluded.
+
+## Optional delay metadata
+
+Only windows_pe.py and its direct regression change runtime/test source: finite
+RVA/timestamp0 optional table spans, mapped IAT storage and explicit malformed
+refusals. Own docs/status and raw custody record independent 101-test assurance.
+No module/API/image capacity changes, provider/index edits or real loader effects.

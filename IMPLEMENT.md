@@ -11017,3 +11017,15 @@ raw multi-megabyte logs. No actual tool copy, package grant or loader effect is
 admitted by this checkpoint. The SDK addendum clarifies that timestamp0 means
 unbound even when an optional bound-IAT pointer is nonzero; the next metadata
 slice will target that exact observed layout and retain existing bounds.
+
+## Optional delay metadata continuation
+
+Continue from 830bf30d under evidence/h2-delay-source-plan.md. Only the PE reader
+and direct tests change. Preserve the95-test recipe checkpoint and initial actual
+Windows refusals; this slice supports the observed unbound timestamp0 optional
+table layout under finite lookup/IAT spans, without any loader/image effects.
+
+The optional-delay source passed independent exact-source assurance and 101 tests,
+including actual numeric symbol bounds and unchanged Windows byte-stream replay.
+The current checkpoint preserves the original refusals and the unqualified native
+API/loader boundary; all capacity limits and external effect authority remain.
