@@ -35,6 +35,15 @@ these facts.
 - [Capability invocation and effects](contracts/capability-invocation-and-effects.md)
 - [Identity, references, and digests](contracts/identity-references-and-digests.md)
 
+## Adopted Implementation Contracts
+
+- [Integration stage effects and observed closeout](contracts/integration-stage-effects.md)
+
+This bounded contract adopts only two source aliases from the imported
+integration-broker draft. The draft remains proposed as a whole, and the new
+contract does not establish operational provider, host, target, or release
+qualification.
+
 ## Preserved Related Contracts
 
 - [Shared-core and host architecture](../architecture/README.md)

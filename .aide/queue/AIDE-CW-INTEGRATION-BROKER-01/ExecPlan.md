@@ -393,3 +393,15 @@ and normal merges, followed by the final 0.1 implemented/absent/public-gap
 report. This supersedes the earlier blanket publication exclusion. Actual
 human/game/signing/platform/host/target evidence is still required; the HTTPS
 checkpoint performs no release or operational activation.
+
+## Exact Observation-To-Dispatch Binding
+
+`AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01` owns the next bounded source
+increment. Current staging records the exact observation that authorizes a
+mutation, but the registered child input lacks that observation and cannot prove
+its request derives from the same durable fact set. Carry and repeatedly verify
+the canonical observation and digest through the existing internal prepared
+input. Preserve distinct stage intents, no replay after uncertainty, and
+observation-only closeout. This adopts only `UR-INT-06` and `UR-INT-07` as
+`AIDE-INT-001` and `AIDE-INT-002`; all host, credential, target, CAS, activation,
+and full-broker gates remain open.

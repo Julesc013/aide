@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01
+status: running
+classification: admitted
+planning_state: execution_active
+result: PENDING
+updated_at: 2026-09-21
+current_slice: exact_observation_to_mutation_child_binding
+next_slice: implementation_and_adversarial_tests
+notes:
+  - This is an internal source and fixture qualification slice only.
+  - Full broker completion remains false.
+  - Live provider, credential, protected-host, and target effects are forbidden.

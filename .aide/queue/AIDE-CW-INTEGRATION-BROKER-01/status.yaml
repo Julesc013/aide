@@ -6,5 +6,5 @@ result: PENDING
 updated_at: 2026-09-07
 local_foundation: verified_independent_source_review_passed
 full_broker_completion: false
-next_implementation: qualified_provider_adapter_dispatch_and_host_store_target_enforcement
-current_slice: fixed_https_observation_independent_source_review_passed
+next_implementation: exact_observation_bound_provider_dispatch
+current_slice: observation_dispatch_binding_active

@@ -1,0 +1,58 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01
+title: Bind broker mutation dispatch to its durable observation
+type: implementation
+status: running
+planning_state: execution_active
+result: PENDING
+created_at: 2026-09-21
+updated_at: 2026-09-21
+parent_task: AIDE-CW-INTEGRATION-BROKER-01
+depends_on:
+  - AIDE-SPEC-DOCS-INTEGRATION-01
+objective: >
+  Carry the exact durable provider observation and digest into each registered
+  mutation child, revalidate that binding before and during execution, and keep
+  acknowledgement distinct from observed integration closeout.
+authority_basis: >
+  The owner directed the convergence campaign to advance the next bounded
+  implementation and qualification slice after documentation integration.
+requirements:
+  adopted:
+    - AIDE-INT-001
+    - AIDE-INT-002
+  source_aliases:
+    - UR-INT-06
+    - UR-INT-07
+scope:
+  allowed_paths:
+    - core/runtime/integration_broker/staged_transport.py
+    - core/runtime/integration_broker/registered_bridge.py
+    - core/runtime/integration_broker/bridge_store.py
+    - .aide/scripts/tests/test_continuous_worker_pr_observation.py
+    - .aide/scripts/tests/test_continuous_worker_provider_bridge.py
+    - specs/control-plane/contracts/integration-stage-effects.md
+    - specs/control-plane/README.md
+    - docs/reference/unified-spec-status.md
+    - docs/reference/integration-broker-core.md
+    - .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/**
+    - .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md
+    - .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/status.yaml
+    - .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/task.yaml
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  forbidden_operations:
+    - live provider or model calls
+    - credential access or installation
+    - target repository or GitHub setting mutation
+    - claiming protected host, store, principal, or target qualification
+    - marking the full broker complete
+verification:
+  - prove every mutation child receives the exact latest intent-bound observation
+  - refuse missing, altered, stale, or wrong-stage observation bindings before child execution
+  - preserve one durable intent and no-replay behavior across lost replies and restart
+  - prove a submitted acknowledgement remains pending until later authoritative observation
+  - rerun affected staged and registered bridge suites
+  - run queue, repository, and commit checks

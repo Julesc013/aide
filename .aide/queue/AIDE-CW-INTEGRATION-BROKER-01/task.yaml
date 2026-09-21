@@ -31,6 +31,10 @@ allowed_paths:
   - .aide/scripts/tests/test_continuous_worker_provider_bridge.py
   - .aide/scripts/tests/test_continuous_worker_github_observation.py
   - .aide/scripts/tests/test_continuous_worker_github_http.py
+  - specs/control-plane/contracts/integration-stage-effects.md
+  - specs/control-plane/README.md
+  - docs/reference/unified-spec-status.md
+  - .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/
   - docs/reference/integration-broker-core.md
   - .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/
   - .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/
@@ -39,6 +43,7 @@ allowed_paths:
   - PLANS.md
   - IMPLEMENT.md
   - DOCUMENTATION.md
+active_increment: AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01
 forbidden_operations:
   - operational production transport, credentials, model or network calls without actual qualification
   - source/host qualification invented from fixture results
