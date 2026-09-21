@@ -12,3 +12,10 @@ visibility, restricted principal permissions, workflow provenance, protected
 host/store and adversarial hosted races all remain open. A missing response is
 uncertain and must be observed without replay through the existing durable
 bridge contract.
+
+The 2026-09-22 current-target observation confirms that the required server
+controls are absent: no rulesets, effective branch rules, `dev` protection or
+Actions workflows were returned. The only observed authenticated account is an
+owner/admin and is not an acceptable restricted broker principal. No hosted
+mutation is admissible until an exact desired configuration and real principal/
+app identities receive independent review and approved installation.

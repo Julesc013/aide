@@ -42,3 +42,14 @@ The registered-bridge and staged-broker cases retain durable one-mutation
 reservation, lost-reply uncertainty and no-replay behavior. The earlier broad
 broker run's Windows symlink skip remains a separate explicit qualification gap;
 these source tests neither reran nor discharged it.
+
+## 2026-09-22 current-target read-only observation
+
+- PASS: execution identity was `BLACKGLASS-WIN1\Jules` and `gh auth status`
+  reported active account `Julesc013` before credentialed reads.
+- PASS: repository, permission, ref, ruleset, effective-rule, branch-protection
+  and workflow endpoints were queried with explicit API version `2022-11-28`.
+- FAIL CLOSED: no target rulesets/effective rules/workflows were returned and
+  `dev` branch protection returned HTTP 404.
+- NOT RUN: settings apply, workflow installation, principal creation, branch
+  mutation, merge request or hosted adversarial race.

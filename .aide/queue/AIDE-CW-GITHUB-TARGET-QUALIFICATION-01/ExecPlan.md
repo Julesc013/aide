@@ -79,3 +79,13 @@ checks and policy are rechecked from the exact observation before construction,
 but remain local prerequisites until independently reviewed server rules and a
 restricted principal are observed under hosted races. This source slice does
 not upgrade those predicates to atomic destination guarantees.
+
+## Current target observation - 2026-09-22
+
+Read-only authenticated observations found no repository rulesets, no effective
+rules on `main` or `dev`, no `dev` branch protection and no Actions workflows.
+The observed `Julesc013` identity is repository owner/admin, not an admitted
+restricted broker principal. The observation half of the first pending item is
+complete; independent review and exact principal/app identity remain open.
+Hosted effects now fail closed on concrete missing controls rather than an
+assumed target configuration.
