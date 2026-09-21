@@ -7,7 +7,7 @@ updated_at: 2026-09-22
 configuration_review: pending
 settings_mutated: false
 hosted_acceptance: not_run
-current_slice: fixed_expected_head_source_implemented
+current_slice: fixed_expected_head_source_published
 next_slice: exact_policy_principal_and_workflow_observation
 source_tests: 31_passed
 affected_regression_tests: 83_passed
@@ -15,3 +15,4 @@ notes:
   - The synchronous request always supplies the admitted candidate as GitHub's expected head SHA.
   - Base, actor, policy, ruleset and principal predicates remain unqualified at the destination effect boundary.
   - No sender, credential, setting, workflow installation or hosted mutation was added or run.
+  - The exact source checkpoint is 091e3d7d9719e55d2d4202fef429c02c2cbf27bb with tree 45eee43c40ad0896e8a28db1bbd5fccc5ca43b0c.

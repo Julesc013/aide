@@ -64,6 +64,7 @@ broker closure, avoiding a circular completion gate.
 - [x] Keep a successful synchronous response at `submitted`; only a later
   authenticated observation may establish `integrated`.
 - [x] Pass 31 focused observation/merge-contract tests.
+- [x] Publish exact source checkpoint `091e3d7d` and bind tree `45eee43c`.
 - [ ] Observe and independently review exact current rulesets, protection,
   workflow, app/principal identity, permissions and owner bypass.
 - [ ] Install only a separately reviewed configuration and run hosted
