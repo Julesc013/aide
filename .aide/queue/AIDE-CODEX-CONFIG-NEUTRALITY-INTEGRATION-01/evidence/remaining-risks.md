@@ -10,3 +10,6 @@
 - The exact `main..dev` commit check fails on historical published commit
   `bfb86c12`; a reviewed disposition is required without rewriting shared
   history before the candidate can become promotion-ready.
+- The branch-only decision-packet commit `fbca5038` also failed the current
+  message-format checker. It is not part of `dev` or the main candidate and is
+  retained with a fix-forward disposition rather than rewritten.
