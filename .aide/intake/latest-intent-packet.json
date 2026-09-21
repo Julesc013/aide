@@ -1,15 +1,15 @@
 {
   "allowed_path_hints": [
-    ".aide/policies/git-workflow.yaml",
+    ".aide/changelog/**",
     ".aide/queue/<workunit>/**"
   ],
   "blocked": true,
-  "blocker_reason": "write blocker report and require reviewed authorization before mutation",
+  "blocker_reason": "block until release gates, tags, and assets are approved",
   "branch_state_refs": [
-    "current_branch:main",
-    "current_role:canonical",
-    "workflow:trunk_without_dev",
-    "worktree_dirty:false"
+    "current_branch:task/aide-cw-integration-broker-01",
+    "current_role:task",
+    "workflow:trunk_with_dev_integration",
+    "worktree_dirty:true"
   ],
   "canonical_sources": [
     ".aide/policies/intent.yaml",
@@ -41,8 +41,8 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Normalize prompt into a bounded git WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
-  "next_action": "write blocker report and require reviewed authorization before mutation",
+  "interpreted_goal": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
+  "next_action": "block until release gates, tags, and assets are approved",
   "notes": [
     "deterministic_local: true",
     "provider_or_model_calls: none",
@@ -51,18 +51,19 @@
     "raw_long_prompt_storage: false",
     "flag:unsafe_prompt"
   ],
-  "raw_prompt_excerpt": "Admit and implement AIDE continuous Codex worker pilot: persistent coordinator, one isolated writer, recovery, stop controls, exact-source test and independent assurance evidence. Add a bounded queue task and ExecPlan. Prepare disabled a...",
-  "raw_prompt_hash": "a0507ea93c900f41565f379a9be72425b8cf23766a72da16c2f786a510e2836d",
+  "raw_prompt_excerpt": "Execute AIDE-CONVERGENCE-AND-DELIVERY-01 as a bounded review-gated campaign: preserve and classify all current dirty work and refs; checkpoint the intended .codex neutralization separately; correct only the artificial future-requirements...",
+  "raw_prompt_hash": "1de3e5eff2b91fe5908d362f51f8513cdd73a5d87c97b1244425bccf0261fbad",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly",
-    "do not merge, push, promote, or prune without reviewed branch plan"
+    "do not move or delete roots without inventory and salvage map",
+    "do not publish releases, tags, or assets from prompt alone"
   ],
   "repo_state_refs": [
     ".aide/context/latest-context-packet.md",
     ".aide/context/latest-review-packet.md",
     ".aide/context/latest-task-packet.md",
-    ".aide/queue/AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01/status.yaml",
+    ".aide/queue/Q17/status.yaml",
     ".aide/queue/index.yaml",
     ".aide/repo/file-inventory.json",
     ".aide/repo/latest-repo-intelligence.md",
@@ -70,7 +71,7 @@
     ".aide/reports/file-quality-summary.md"
   ],
   "requires_split": true,
-  "risk_class": "release",
+  "risk_class": "destructive",
   "safe_to_execute": false,
   "schema_version": "aide.intent-packet.v0",
   "sizing_class": "blocked",
@@ -81,7 +82,7 @@
       "Validation and evidence requirements are explicit."
     ],
     "allowed_paths": [
-      ".aide/policies/git-workflow.yaml",
+      ".aide/changelog/**",
       ".aide/queue/<workunit>/**"
     ],
     "dependencies": [
@@ -106,10 +107,10 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:a0507ea93c900f41565f379a9be72425b8cf23766a72da16c2f786a510e2836d; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:1de3e5eff2b91fe5908d362f51f8513cdd73a5d87c97b1244425bccf0261fbad; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
-      "write blocker report and require reviewed authorization before mutation",
+      "block until release gates, tags, and assets are approved",
       "Stop at review gates and record evidence before execution."
     ],
     "non_goals": [
@@ -117,9 +118,10 @@
       "no provider/model/network calls",
       "do not bypass queue, branch, evidence, or policy state",
       "do not execute raw prompt directly",
-      "do not merge, push, promote, or prune without reviewed branch plan"
+      "do not move or delete roots without inventory and salvage map",
+      "do not publish releases, tags, or assets from prompt alone"
     ],
-    "objective": "Normalize prompt into a bounded git WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
+    "objective": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -127,24 +129,24 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-    "risk_class": "release",
+    "risk_class": "destructive",
     "schema_version": "aide.workunit-draft.v0",
     "sizing_class": "blocked",
     "status": "draft",
-    "task_class": "git",
-    "title": "Git WorkUnit Draft - Write blocker report and require reviewed authorization before mutation",
+    "task_class": "release",
+    "title": "Release WorkUnit Draft - Block until release gates, tags, and assets are approved",
     "validation": [
       "git diff --check",
-      "py -3 .aide/scripts/aide_lite.py git plan",
+      "py -3 .aide/scripts/aide_lite.py changelog validate",
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-git-a0507ea93c90"
+    "workunit_id": "draft-release-1de3e5eff2b9"
   },
-  "task_class": "git",
+  "task_class": "release",
   "validation_hints": [
     "git diff --check",
-    "py -3 .aide/scripts/aide_lite.py git plan",
+    "py -3 .aide/scripts/aide_lite.py changelog validate",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ]
 }

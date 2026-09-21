@@ -3259,8 +3259,8 @@ items:
     prompt: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence
   - id: AIDE-FACMAN-USK-ENTRY-RESTART-01
-    status: planned
-    planning_state: admitted_backlog
+    status: running
+    planning_state: execution_active
     title: Complete restartable provider entry journals
     task: .aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/ExecPlan.md
@@ -3300,3 +3300,23 @@ items:
     exec_plan: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/evidence
+  - id: AIDE-CONVERGENCE-AND-DELIVERY-01
+    status: running
+    planning_state: execution_active
+    result: PENDING
+    title: Converge, qualify, and deliver AIDE through bounded reviewed work
+    task: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/prompt.md
+    evidence: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence
+    description: Owner-admitted umbrella for preservation, source convergence, bounded implementation, qualified integration, and eventual exact-candidate release. Each implementation effect requires a bounded child WorkUnit; main promotion, tags, uploads, publication, destructive cleanup, machine configuration, secrets, and target-repository mutation retain their applicable gates.
+  - id: AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01
+    status: running
+    planning_state: verification_active
+    result: PENDING
+    title: Checkpoint repository Codex configuration neutrality
+    task: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/evidence
+    description: Remove repository model and execution-setting pins while preserving minimal role descriptions and operator-selected session behavior.

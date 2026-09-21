@@ -1,0 +1,39 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01
+title: Checkpoint repository Codex configuration neutrality
+type: execution
+status: running
+planning_state: verification_active
+result: PENDING
+created_at: 2026-09-21
+updated_at: 2026-09-21
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+objective: >
+  Remove repository-owned Codex model and execution-setting pins so model,
+  reasoning, provider, service tier, approval, sandbox, and search choices
+  remain selectable by the operator or active session.
+authority_basis: >
+  The owner explicitly requested permanent removal of the obsolete repository
+  pins and approved continued bounded campaign execution.
+scope:
+  allowed_paths:
+    - .codex/config.toml
+    - .codex/README.md
+    - .codex/agents/**
+    - .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/**
+    - .aide/queue/index.yaml
+  forbidden_paths:
+    - C:/Users/Jules/.codex/**
+    - .aide.local/**
+    - .github/**
+retained_gates:
+  - no model, provider, reasoning, service-tier, approval, sandbox, or search pins
+  - no machine-wide configuration mutation
+  - no unrelated runtime, documentation, queue, or branch changes
+  - no secret access or credential changes
+verification:
+  - scan repository Codex files for active execution-setting pins
+  - parse remaining TOML role files
+  - run Codex strict configuration startup check
+  - run Git whitespace validation for the bounded path set

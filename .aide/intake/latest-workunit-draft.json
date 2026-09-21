@@ -5,7 +5,7 @@
     "Validation and evidence requirements are explicit."
   ],
   "allowed_paths": [
-    ".aide/policies/git-workflow.yaml",
+    ".aide/changelog/**",
     ".aide/queue/<workunit>/**"
   ],
   "dependencies": [
@@ -30,10 +30,10 @@
     "raw response logs",
     "target repositories unless target-local queue authorizes work"
   ],
-  "idempotency": "prompt_hash:a0507ea93c900f41565f379a9be72425b8cf23766a72da16c2f786a510e2836d; status:draft; compile_only:true",
+  "idempotency": "prompt_hash:1de3e5eff2b91fe5908d362f51f8513cdd73a5d87c97b1244425bccf0261fbad; status:draft; compile_only:true",
   "implementation_outline": [
     "Reconcile repo state before editing.",
-    "write blocker report and require reviewed authorization before mutation",
+    "block until release gates, tags, and assets are approved",
     "Stop at review gates and record evidence before execution."
   ],
   "non_goals": [
@@ -41,9 +41,10 @@
     "no provider/model/network calls",
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly",
-    "do not merge, push, promote, or prune without reviewed branch plan"
+    "do not move or delete roots without inventory and salvage map",
+    "do not publish releases, tags, or assets from prompt alone"
   ],
-  "objective": "Normalize prompt into a bounded git WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
+  "objective": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
   "output_schema": ".aide/intake/workunit-draft.schema.json",
   "preflight": [
     "git status --short",
@@ -51,17 +52,17 @@
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-  "risk_class": "release",
+  "risk_class": "destructive",
   "schema_version": "aide.workunit-draft.v0",
   "sizing_class": "blocked",
   "status": "draft",
-  "task_class": "git",
-  "title": "Git WorkUnit Draft - Write blocker report and require reviewed authorization before mutation",
+  "task_class": "release",
+  "title": "Release WorkUnit Draft - Block until release gates, tags, and assets are approved",
   "validation": [
     "git diff --check",
-    "py -3 .aide/scripts/aide_lite.py git plan",
+    "py -3 .aide/scripts/aide_lite.py changelog validate",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-  "workunit_id": "draft-git-a0507ea93c90"
+  "workunit_id": "draft-release-1de3e5eff2b9"
 }
