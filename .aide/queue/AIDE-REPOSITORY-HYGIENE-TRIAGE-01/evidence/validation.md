@@ -9,7 +9,9 @@
 - Active-lane archive comparison: 506 remaining untracked files matched named
   members of tracked task-owned ZIPs with zero loose or archive mismatches.
 - Exact cleanup candidate: 506 files and 101,279,517 bytes.
-- Candidate manifest SHA-256:
+- Canonical committed manifest SHA-256:
+  `381213944009ef69aa4860ccb4269b9a0ecd72091fe3f0cb5fa41de40dcfe47d`.
+- Pre-index CRLF projection SHA-256:
   `77d6f576f3840971e1b9b470dd809819963662c0ac4c1009dfc5372f72b11029`.
 
 Generated audit reports are advisory and are not canonical source truth.

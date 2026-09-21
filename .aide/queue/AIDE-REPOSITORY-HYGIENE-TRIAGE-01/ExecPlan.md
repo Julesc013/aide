@@ -30,6 +30,7 @@ from age, size, orphan status, or duplicate status alone.
 
 ## Blockers
 
-Exact removal of 506 untracked archive duplicates awaits review of manifest
-`77d6f576f3840971e1b9b470dd809819963662c0ac4c1009dfc5372f72b11029`.
+Exact removal of 506 untracked archive duplicates awaits review of the canonical
+committed manifest SHA-256
+`381213944009ef69aa4860ccb4269b9a0ecd72091fe3f0cb5fa41de40dcfe47d`.
 Tracked generated-output retention remains a separate unresolved policy issue.

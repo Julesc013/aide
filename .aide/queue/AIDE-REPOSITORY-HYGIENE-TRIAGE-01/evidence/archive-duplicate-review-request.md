@@ -3,7 +3,8 @@
 ## Exact Candidate
 
 - Manifest: `archive-duplicate-candidate.json`
-- Manifest SHA-256: `77d6f576f3840971e1b9b470dd809819963662c0ac4c1009dfc5372f72b11029`
+- Canonical committed manifest SHA-256: `381213944009ef69aa4860ccb4269b9a0ecd72091fe3f0cb5fa41de40dcfe47d`
+- Pre-index CRLF projection SHA-256: `77d6f576f3840971e1b9b470dd809819963662c0ac4c1009dfc5372f72b11029`
 - Candidate files: 506 untracked ordinary files
 - Candidate bytes: 101,279,517
 - Isolated-host files: 358
@@ -13,6 +14,10 @@
 Every candidate file has the same SHA-256 as a named member of a tracked
 task-owned ZIP. The manifest records the loose path, size, SHA-256, tracked
 archive path, and archive member for each file.
+
+Git normalized the generated JSON to LF at the index boundary. Review and
+approval bind the canonical committed LF bytes. The CRLF hash is retained only
+as a provenance note for the pre-index working-tree projection.
 
 ## Proposed Effect
 
