@@ -3300,6 +3300,26 @@ items:
     prompt: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/prompt.md
     evidence: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence
     description: Owner-admitted umbrella for preservation, source convergence, bounded implementation, qualified integration, and eventual exact-candidate release. Each implementation effect requires a bounded child WorkUnit; main promotion, tags, uploads, publication, destructive cleanup, machine configuration, secrets, and target-repository mutation retain their applicable gates.
+  - id: AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01
+    status: passed
+    planning_state: implemented
+    result: PASS
+    title: Checkpoint repository Codex configuration neutrality
+    task: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/evidence
+    description: Remove repository-owned Codex execution-setting pins while preserving description-only local role files and all machine/session choices.
+  - id: AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PENDING
+    title: Integrate reviewed repository Codex configuration neutrality
+    task: .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/evidence
+    description: Carry the reviewed repository-only neutrality state onto current dev without importing mixed broker or host history or changing machine configuration.
   - id: AIDE-SPEC-CONVERGENCE-FOUNDATION-01
     status: passed
     planning_state: implemented

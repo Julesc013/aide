@@ -1,0 +1,49 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01
+title: Integrate reviewed repository Codex configuration neutrality
+type: integration
+status: needs_review
+planning_state: implementation_completed
+result: PENDING
+created_at: 2026-09-22
+updated_at: 2026-09-22
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01
+objective: >
+  Carry the already reviewed repository-only Codex neutrality state onto current
+  dev without importing mixed broker or host history, changing machine-wide
+  configuration, or widening execution permissions.
+authority_basis: >
+  The owner explicitly directed the completed neutrality checkpoint to be
+  integrated into dev before preparing a superseding main-promotion candidate.
+source_checkpoint: 0e76df9e10c0fa6d80b363c0990224ef45853062
+source_closeout: 91efe8156c4132cc8178e330b43d01db1a678d8c
+integration_base: be3a854abde73dd1d3498a20c240bd0c0a58c28b
+scope:
+  allowed_paths:
+    - .codex/config.toml
+    - .codex/README.md
+    - .codex/agents/**
+    - .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/**
+    - .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/index.yaml
+  forbidden_paths:
+    - C:/Users/Jules/.codex/**
+    - .aide.local/**
+    - core/**
+    - .github/**
+retained_gates:
+  - no model, provider, reasoning, service-tier, approval, sandbox, or search pins
+  - no machine-wide or active-session configuration mutation
+  - no permission widening or security-policy weakening
+  - no mixed broker or host source in the integration candidate
+  - main promotion remains an exact human review gate
+verification:
+  - compare all eight .codex path outcomes with source checkpoint 0e76df9e
+  - scan repository Codex files for active execution-setting pins
+  - parse all remaining role TOML files
+  - run strict Codex startup and repository validation
+  - verify the superseding main candidate by exact commit and tree

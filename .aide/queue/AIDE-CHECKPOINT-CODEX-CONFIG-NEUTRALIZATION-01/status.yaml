@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01
+status: passed
+classification: complete
+planning_state: implemented
+result: PASS
+updated_at: 2026-09-21
+checkpoint_commit: 0e76df9e
+current_slice: complete
+next_task: AIDE-CONVERGENCE-DIRTY-WORK-TRIAGE-01
+notes:
+  - Repository Codex execution pins have been removed.
+  - Bounded verification passed and the implementation is committed.
