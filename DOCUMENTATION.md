@@ -459,3 +459,12 @@ remain unqualified. No selected DLL mappings, image copies or grants occurred.
   eight-file read-facts outcome. h2-input-custody.json maps original raw evidence.
 - Isolated-host evidence/h2-resource-source-plan.md records the separate
   two-API feasibility source scope and its unexecuted native effect boundary.
+
+## Broker observation-bound dispatch
+
+`docs/reference/integration-broker-core.md` now records the exact observation
+and digest carried into each registered mutation child, the repeated durable
+authorization checks, and the distinction between submission acknowledgement
+and observed integration. The child WorkUnit passed local source and regression
+validation; operational provider, host/store, credential, and target
+qualification remain open under `AIDE-CW-INTEGRATION-BROKER-01`.

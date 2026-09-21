@@ -18,7 +18,7 @@ import uuid
 from .common import Refused, fields, identity, canonical, digest, require_path, beneath, bounded_bytes, parse_json
 from .bridge_store import BridgeStore
 from .preparation import directory_lease
-from .pr_observation import validate_plan
+from .pr_observation import decision, validate_plan
 from core.runtime.continuous_worker.locking import supervisor_lock
 from core.runtime.continuous_worker.windows_job import WindowsJobHost
 
@@ -142,7 +142,12 @@ class RegisteredBridge:
         if plan != self.plan:
             raise Refused("bridge mutation plan changed")
         broker, request = self._current(operation)
-        fields(prepared, "directory request_digest tree generation directory_identity commit_bytes")
+        fields(prepared, "directory request_digest tree generation directory_identity commit_bytes observation observation_digest")
+        observation = prepared["observation"]
+        if (not isinstance(observation, dict) or
+                prepared["observation_digest"] != digest(observation) or
+                decision(plan, observation) != operation):
+            raise Refused("bridge mutation lacks exact stage observation")
         generation = broker.ledger.preparation(digest(request))
         if (not generation or prepared["request_digest"] != plan["request_digest"] or
                 prepared["generation"] != generation["generation"] or prepared["directory_identity"] != generation["identity"] or
@@ -187,8 +192,10 @@ class RegisteredBridge:
         with directory_lease(broker.root), supervisor_lock(broker.root, scope="provider-bridge"), closing(BridgeStore(broker.root)) as store:
             self._recover(store, host)
             registered = canonical({"path": str(self.path), "sha256": self.pin, "config": self.config})
+            observation = prepared["observation"] if operation != "observe" else None
             store.reserve(self.plan, registered, operation, attempt, call_id,
-                          hashlib.sha256(payload).hexdigest(), reserve_bytes, limits)
+                          hashlib.sha256(payload).hexdigest(), reserve_bytes, limits,
+                          observation=observation)
             self.checkpoint("call_intent")
             folder = broker.root / ("provider-call-" + call_id)
             job_receipt, hashes, guard_failure = None, None, []
@@ -200,7 +207,7 @@ class RegisteredBridge:
                     raise Refused("registered bridge mutation deadline expired")
                 if force or time.monotonic() - last_checked[0] >= .25:
                     self._current(operation)
-                    store.authorized(self.plan, operation, attempt)
+                    store.authorized(self.plan, operation, attempt, observation=observation)
                     last_checked[0] = time.monotonic()
             def checkpoint(phase):
                 self.checkpoint(phase)

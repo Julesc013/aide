@@ -3371,9 +3371,9 @@ items:
     evidence: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/evidence
     description: Build a documentation-only candidate from current dev, prove its specification and provenance closure, and integrate only that qualified candidate without carrying unfinished runtime work.
   - id: AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01
-    status: running
-    planning_state: execution_active
-    result: PENDING
+    status: passed
+    planning_state: implementation_completed
+    result: PASS
     title: Bind broker mutation dispatch to its durable observation
     task: .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/task.yaml
     exec_plan: .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/ExecPlan.md

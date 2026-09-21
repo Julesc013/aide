@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01
 title: Bind broker mutation dispatch to its durable observation
 type: implementation
-status: running
-planning_state: execution_active
-result: PENDING
+status: passed
+planning_state: implementation_completed
+result: PASS
 created_at: 2026-09-21
 updated_at: 2026-09-21
 parent_task: AIDE-CW-INTEGRATION-BROKER-01

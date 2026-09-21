@@ -184,11 +184,18 @@ bridge refuses reuse of an observation token or mutation stage, even after a
 failed or interrupted child.
 
 The child receives one bounded `aide.broker.bridge-call.v1` JSON stdin envelope
-with call ID, request digest, operation, exact plan and prepared-generation
-identity/commit bytes. Its response must use `aide.broker.bridge-response.v1`
-and repeat the exact call/request/operation identities. Observation results
-then pass the existing independent PR/check parser. Mutation responses may
-acknowledge only `submitted`; acknowledgement is never integration proof.
+with call ID, request digest, operation, exact plan, prepared-generation
+identity/commit bytes, and, for mutations, the exact canonical observation and
+digest that selected that stage. Before reservation and while the owned child
+runs, the bridge rechecks that the observation is still the ledger's latest
+record, its digest matches the durable stage intent, and the pure decision
+function still selects the requested operation. Missing, altered, stale, or
+wrong-stage bindings refuse before a child can act. Its response must use
+`aide.broker.bridge-response.v1` and repeat the exact call/request/operation
+identities. Observation results then pass the existing independent PR/check
+parser. Mutation responses may acknowledge only `submitted`; acknowledgement
+is never integration proof, and a later authoritative observation must advance
+or close the request.
 
 WindowsJobHost assigns each child atomically to its unique owned Job while
 suspended. Immediately before creation, before resume, after resume and during

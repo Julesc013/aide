@@ -28,10 +28,10 @@ authority.
 
 - [x] Identify the missing observation-to-child binding in current source.
 - [x] Admit this bounded child and map source aliases to stable AIDE IDs.
-- [ ] Implement exact observation carriage and repeated authorization checks.
-- [ ] Add adversarial executable tests.
-- [ ] Run focused and broader affected validation.
-- [ ] Record exact evidence, commit, and publish the source checkpoint.
+- [x] Implement exact observation carriage and repeated authorization checks.
+- [x] Add adversarial executable tests.
+- [x] Run focused and broader affected validation.
+- [x] Record exact evidence and prepare the source checkpoint for publication.
 
 ## Validation
 
@@ -46,3 +46,23 @@ Before commit, revert only this WorkUnit's explicit paths if tests fail. After a
 published checkpoint, fix forward on the same task branch; do not rewrite shared
 history or replay an uncertain external effect. This slice performs no external
 effect.
+
+## Decisions And Discoveries
+
+- The staged ledger already persisted the exact observation digest that selected
+  each mutation. The missing boundary was carriage of that same observation into
+  the registered child request and revalidation against the durable latest row.
+- A mutation acknowledgement remains `pending`. Only a later authoritative
+  observation can select the next stage or prove integration.
+- The Windows symlink regression remains unrun on this host because the current
+  identity lacks symlink-creation privilege; all other affected tests passed.
+
+## Retrospective
+
+The bridge now binds each mutation envelope to the exact latest observation,
+its digest, the durable stage intent, and the pure stage decision before child
+execution and during its bounded lifetime. Adversarial tests refuse missing,
+changed, wrong-actor, wrong-stage, and stale observations without creating a
+provider-call directory. The parent broker remains running because operational
+provider, protected host/store, credential, target-policy, and hosted acceptance
+work is still open.

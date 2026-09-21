@@ -17,7 +17,7 @@ retained_gates:
   - no worker access to production credentials; no unqualified signing or billing
   - genuine human verdicts and identified disposable real-effect hosts
 
-implementation_slice: bounded_authenticated_https_observation_adapter
+implementation_slice: exact_observation_bound_provider_dispatch_completed
 base_revision: bfb86c12b9e6d2970024d29c57ba629994ec43cc
 branch: task/aide-cw-integration-broker-01
 allowed_paths:
@@ -43,7 +43,7 @@ allowed_paths:
   - PLANS.md
   - IMPLEMENT.md
   - DOCUMENTATION.md
-active_increment: AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01
+completed_increment: AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01
 forbidden_operations:
   - operational production transport, credentials, model or network calls without actual qualification
   - source/host qualification invented from fixture results

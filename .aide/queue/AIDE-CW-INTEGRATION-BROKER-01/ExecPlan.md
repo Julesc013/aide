@@ -405,3 +405,14 @@ input. Preserve distinct stage intents, no replay after uncertainty, and
 observation-only closeout. This adopts only `UR-INT-06` and `UR-INT-07` as
 `AIDE-INT-001` and `AIDE-INT-002`; all host, credential, target, CAS, activation,
 and full-broker gates remain open.
+
+The child slice passed on 2026-09-21. Every registered mutation child now
+receives the exact latest observation and canonical digest that selected its
+stage. Dispatch and the running-child guard revalidate that value against the
+durable plan, latest observation, stage intent, and pure decision. Missing or
+altered bindings refuse before child creation, while a submitted acknowledgement
+remains pending until a later authoritative observation. All 120 affected tests
+passed; one Windows symlink test was skipped for unavailable host privilege.
+This completes only the internal observation-to-dispatch binding. Protected
+host/store, credential, operational provider, target-policy, hosted acceptance,
+and full-broker completion remain open.

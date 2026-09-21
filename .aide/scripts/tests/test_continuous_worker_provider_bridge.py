@@ -46,6 +46,8 @@ state=json.loads(state_path.read_text()) if state_path.exists() else {'stage':'p
 if op!='observe':
     assert op==state['stage']
     prepared=request['prepared']; raw=base64.b64decode(prepared['commit_bytes'])
+    observation=json.dumps(prepared['observation'],sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()
+    assert hashlib.sha256(observation).hexdigest()==prepared['observation_digest']
     assert hashlib.sha1(b'commit '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==plan['candidate_commit']
     path=pathlib.Path(prepared['directory'])/'objects'/plan['candidate_commit'][:2]/plan['candidate_commit'][2:]
     assert zlib.decompress(path.read_bytes())==b'commit '+str(len(raw)).encode()+b'\0'+raw
@@ -125,7 +127,7 @@ class RegisteredBridgeTests(unittest.TestCase):
     def test_registered_child_reads_real_commit_objects_and_finishes_all_stages(self):
         helper, plan, commit, broker, bridge, qualifier, code = self.fixture()
         for _ in range(4):
-            broker.reconcile(helper.request)
+            self.assertEqual(broker.reconcile(helper.request)["status"], "pending")
         self.assertEqual(broker.query(helper.request)["status"], "integrated")
         state = json.loads((code / "fixture-service.json").read_text())
         self.assertEqual(state["effects"], ["publish_objects", "create_branch", "create_pr", "merge"])
@@ -136,7 +138,53 @@ class RegisteredBridgeTests(unittest.TestCase):
             folder = helper.state / ("provider-call-" + row["id"]) / "streams"
             for name, expected in receipt["hashes"].items():
                 self.assertEqual(hashlib.sha256((folder / name).read_bytes()).hexdigest(), expected)
+            envelope = json.loads((folder / "stdin").read_text())
+            if row["operation"] != "observe":
+                observation = envelope["prepared"]["observation"]
+                self.assertEqual(envelope["prepared"]["observation_digest"], digest(observation))
+                with closing(sqlite3.connect(helper.state / "pr-observations.sqlite3")) as db:
+                    intent = db.execute("SELECT observation FROM intents WHERE request=? AND operation=?",
+                                        (plan["request_digest"], row["operation"])).fetchone()[0]
+                    bodies = {value[0] for value in db.execute(
+                        "SELECT body FROM observations WHERE request=?", (plan["request_digest"],))}
+                self.assertEqual(digest(observation), intent)
+                self.assertIn(canonical(observation), bodies)
         self.assertEqual(len(self.calls(helper)), 13)
+
+    def test_mutation_dispatch_refuses_missing_or_changed_stage_observation_before_child(self):
+        from core.runtime.integration_broker.effect_boundary import prepared_candidate
+        helper, plan, commit, broker, bridge, qualifier, code = self.fixture()
+        broker.prepare(helper.request)
+        bridge.assert_current(broker, helper.request, plan, "observe")
+        observation = staged_cases.observed(plan, "publish_objects")
+        with closing(ObservationStore(helper.state)) as store:
+            store.reserve(plan)
+            store.observation_attempt(plan)
+            store.observe(plan, observation)
+            self.assertTrue(store.intent(plan, observation, "publish_objects", now=1000))
+            newer = copy.deepcopy(observation)
+            newer["checks_complete"] = False
+            store.observation_attempt(plan)
+            self.assertEqual(store.observe(plan, newer), "publish_objects")
+        bridge.assert_current(broker, helper.request, plan, "publish_objects")
+        with prepared_candidate(broker, helper.request) as prepared:
+            exact = dict(prepared, commit_bytes=commit, observation=observation,
+                         observation_digest=digest(observation))
+            wrong_actor = dict(observation, actor="wrong-actor")
+            wrong_stage = staged_cases.observed(plan, "create_branch")
+            variants = (
+                ("missing", {key: value for key, value in exact.items() if key != "observation"}),
+                ("wrong-digest", dict(exact, observation_digest="0" * 64)),
+                ("wrong-actor", dict(exact, observation=wrong_actor,
+                                     observation_digest=digest(wrong_actor))),
+                ("wrong-stage", dict(exact, observation=wrong_stage,
+                                     observation_digest=digest(wrong_stage))),
+                ("stale", exact),
+            )
+            for case, changed in variants:
+                with self.subTest(case=case), self.assertRaises(Refused):
+                    bridge.dispatch("publish_objects", plan, changed)
+        self.assertEqual(list(helper.state.glob("provider-call-*")), [])
 
     def test_missing_qualification_and_unpinned_script_refuse_before_child(self):
         helper, plan, commit, broker, bridge, qualifier, code = self.fixture()

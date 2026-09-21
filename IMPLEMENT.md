@@ -11117,3 +11117,18 @@ DLL mapping, image or grant effect is part of this source implementation.
   as explicitly unrun review inputs, not live `AIDE-*` requirements.
 - Excluded the import ZIP, baseline capture, verifier tools, patch, private
   archives, and bulk generated registers from the repository.
+
+## 2026-09-21 - Observation-bound broker dispatch
+
+- Passed each mutation's exact stage-selecting observation and canonical digest
+  into the registered child envelope.
+- Revalidated the observation against the durable latest record, stage intent,
+  plan, and pure decision before reservation and while the child runs.
+- Added refusal tests for missing, altered-digest, and changed-actor bindings;
+  no provider-call directory is created in those cases.
+- Verified that submitted acknowledgements remain pending until a later
+  authoritative observation advances or closes the request.
+- All 120 affected tests passed. One symlink case was skipped because this
+  Windows process lacks symlink-creation privilege.
+- No live provider, credential, network, protected-host, target, or release
+  effect ran; full broker completion remains false.

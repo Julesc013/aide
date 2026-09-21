@@ -158,6 +158,8 @@ class StagedTransport:
                 # The adapter receives only leased prepared inputs and an exact
                 # immutable plan projection. It must not accept mutation targets
                 # or credentials from worker-produced text.
-                inputs = dict(prepared, commit_bytes=self._commit_bytes)
+                inputs = dict(prepared, commit_bytes=self._commit_bytes,
+                              observation=observation,
+                              observation_digest=digest(observation))
                 self.adapter.dispatch(stage, self.plan, inputs)
                 self.checkpoint("dispatched:" + stage)

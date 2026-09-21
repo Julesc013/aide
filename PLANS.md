@@ -3535,3 +3535,12 @@ adopted contracts remain unchanged. The imported `UR-*` requirements and
 their presence does not authorize implementation or establish qualification.
 Private archives, bulk registers, captured baselines, package tools, and patch
 files remain outside the repository.
+
+## Broker observation-bound dispatch
+
+`AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01` completes the internal binding
+from a durable stage-selecting observation to the registered mutation child.
+The exact observation and digest are revalidated against the latest ledger row,
+stage intent, and decision before and during child execution. The parent broker
+remains active for operational provider, protected host/store, credential,
+target-policy, and hosted acceptance work.

@@ -11,7 +11,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from core.runtime.integration_broker.common import Refused
+from core.runtime.integration_broker.common import Refused, digest
 from core.runtime.integration_broker.pr_observation import decision, ObservationStore
 
 
@@ -279,6 +279,8 @@ class ScriptedStageAdapter:
             folder.rename(folder.with_name("forbidden-substitution"))
         actual = self.fixture.git.run(folder, "cat-file", "commit", fixed["candidate_commit"])
         self.fixture.assertEqual(actual, prepared["commit_bytes"])
+        self.fixture.assertEqual(prepared["observation_digest"], digest(prepared["observation"]))
+        self.fixture.assertEqual(decision(fixed, prepared["observation"]), operation)
         if operation == "merge":
             raw = (f"tree {fixed['candidate_tree']}\nparent {fixed['base']}\n"
                    f"parent {fixed['candidate_commit']}\nauthor fixture <fixture@example.invalid> 0 +0000\n"

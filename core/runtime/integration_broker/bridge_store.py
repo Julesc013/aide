@@ -1,6 +1,5 @@
 """Bounded registered bridge calls; uncertain Jobs and evidence are retained."""
 from contextlib import contextmanager, closing
-import json
 import sqlite3
 
 from .common import Refused, canonical, digest, require_path
@@ -40,7 +39,7 @@ class BridgeStore:
             self.db.execute("ROLLBACK")
             raise
 
-    def authorized(self, plan, operation, attempt):
+    def authorized(self, plan, operation, attempt, *, observation=None):
         path = require_path(str(self.root / "pr-observations.sqlite3"))
         if not path.is_file():
             raise Refused("provider call has no durable observation ledger")
@@ -49,21 +48,23 @@ class BridgeStore:
             if row is None or row[0] != canonical(plan):
                 raise Refused("provider call plan lacks exact durable reservation")
             if operation == "observe":
-                if (type(attempt) is not int or attempt <= 0 or not db.execute(
+                if (observation is not None or type(attempt) is not int or attempt <= 0 or not db.execute(
                         "SELECT 1 FROM observation_attempts WHERE sequence=? AND request=?",
                         (attempt, plan["request_digest"])).fetchone()):
                     raise Refused("provider read requires its exact durable attempt token")
             else:
-                if operation not in ("publish_objects", "create_branch", "create_pr", "merge") or attempt is not None:
+                if (operation not in ("publish_objects", "create_branch", "create_pr", "merge") or
+                        attempt is not None or not isinstance(observation, dict)):
                     raise Refused("unknown provider mutation")
                 intent = db.execute("SELECT observation FROM intents WHERE request=? AND operation=?",
                                     (plan["request_digest"], operation)).fetchone()
                 if (intent is None or row[1] != operation or row[2] is None or
-                        digest(json.loads(row[2])) != intent[0]):
+                        row[2] != canonical(observation) or digest(observation) != intent[0]):
                     raise Refused("provider mutation does not bind current durable stage intent")
 
-    def reserve(self, plan, registration, operation, attempt, call_id, body_digest, reserved_bytes, limits):
-        self.authorized(plan, operation, attempt)
+    def reserve(self, plan, registration, operation, attempt, call_id, body_digest, reserved_bytes, limits,
+                *, observation=None):
+        self.authorized(plan, operation, attempt, observation=observation)
         key = plan["request_digest"]
         with self.transaction():
             row = self.db.execute("SELECT registration FROM registrations WHERE request=?", (key,)).fetchone()
