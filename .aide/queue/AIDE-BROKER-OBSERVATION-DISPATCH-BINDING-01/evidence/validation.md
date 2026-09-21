@@ -20,9 +20,9 @@
 | `py -3 -B .aide/scripts/tests/test_continuous_worker_github_observation.py -v` | PASS; 26 tests in 0.208 seconds |
 | `py -3 -B .aide/scripts/tests/test_continuous_worker_github_http.py -v` | PASS; 19 tests in 2.093 seconds |
 
-The 120 executed tests passed. The single skipped case attempts to create a
-disposable symlink and was not runnable because this Windows process lacks the
-required privilege. The new adversarial bridge test proves that a missing,
+The six suites ran 120 cases: 119 passed and one was skipped. The skipped case
+attempts to create a disposable symlink and was not runnable because this
+Windows process lacks the required privilege. The new adversarial bridge test proves that a missing,
 wrong-digest, changed-actor, wrong-stage, or stale observation refuses before a
 provider-call directory or child exists. The stale case uses a correctly formed
 earlier observation after a newer durable observation selects the same stage,

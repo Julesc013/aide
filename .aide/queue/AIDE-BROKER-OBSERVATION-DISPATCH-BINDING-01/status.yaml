@@ -11,4 +11,4 @@ notes:
   - This is an internal source and fixture qualification slice only.
   - Full broker completion remains false.
   - Live provider, credential, protected-host, and target effects are forbidden.
-  - All 120 affected tests passed; one Windows symlink case was skipped because the host lacks symlink privilege.
+  - The affected suites ran 120 cases: 119 passed and one Windows symlink case was skipped because the host lacks symlink privilege.

@@ -11128,7 +11128,7 @@ DLL mapping, image or grant effect is part of this source implementation.
   no provider-call directory is created in those cases.
 - Verified that submitted acknowledgements remain pending until a later
   authoritative observation advances or closes the request.
-- All 120 affected tests passed. One symlink case was skipped because this
-  Windows process lacks symlink-creation privilege.
+- The affected suites ran 120 cases: 119 passed and one symlink case was skipped
+  because this Windows process lacks symlink-creation privilege.
 - No live provider, credential, network, protected-host, target, or release
   effect ran; full broker completion remains false.

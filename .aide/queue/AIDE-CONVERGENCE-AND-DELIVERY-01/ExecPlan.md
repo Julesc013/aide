@@ -97,8 +97,8 @@ their identities, verification result, and limitations.
   so the original admission did not edit them.
 - The hygiene task, three specification increments, and documentation-only
   integration are complete. Their evidence remains authoritative history.
-- `AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01` passed all 120 executed affected
-  tests, with one privilege-dependent symlink case skipped. It closes the exact
+- `AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01` ran 120 affected cases: 119
+  passed and one privilege-dependent symlink case was skipped. It closes the exact
   observation-to-child binding only; the parent broker remains running.
 
 ## Recovery And Resumption

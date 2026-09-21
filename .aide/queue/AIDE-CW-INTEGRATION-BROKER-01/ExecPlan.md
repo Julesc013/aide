@@ -411,8 +411,9 @@ receives the exact latest observation and canonical digest that selected its
 stage. Dispatch and the running-child guard revalidate that value against the
 durable plan, latest observation, stage intent, and pure decision. Missing or
 altered bindings refuse before child creation, while a submitted acknowledgement
-remains pending until a later authoritative observation. All 120 affected tests
-passed; one Windows symlink test was skipped for unavailable host privilege.
+remains pending until a later authoritative observation. The affected suites
+ran 120 cases: 119 passed and one Windows symlink test was skipped for
+unavailable host privilege.
 This completes only the internal observation-to-dispatch binding. Protected
 host/store, credential, operational provider, target-policy, hosted acceptance,
 and full-broker completion remain open.
