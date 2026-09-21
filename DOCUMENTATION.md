@@ -468,3 +468,11 @@ authorization checks, and the distinction between submission acknowledgement
 and observed integration. The child WorkUnit passed local source and regression
 validation; operational provider, host/store, credential, and target
 qualification remain open under `AIDE-CW-INTEGRATION-BROKER-01`.
+
+## GitHub target merge contract
+
+`docs/reference/integration-broker-core.md` records the source-only synchronous
+merge contract owned by `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01`. Its mandatory
+expected-head SHA is destination-enforced by the documented endpoint. The
+endpoint has no expected-base argument, so policy/principal qualification and
+hosted race evidence remain separate open work rather than inferred guarantees.

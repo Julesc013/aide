@@ -1,6 +1,7 @@
 # Changed files
 
-This task adds only its task/status/prompt/ExecPlan/evidence records and index
-admission. The existing broker ExecPlan owns provider source work; the existing
-isolated-host ExecPlan now contains bounded executable slices. No existing
-completed work or capacity policy is changed.
+The 2026-09-22 source slice adds
+`core/runtime/integration_broker/github_merge.py`, extends only the admitted
+GitHub observation test, updates this task's living records and queue index, and
+updates the broker/root documentation indexes. It does not add a sender,
+credential source, workflow, settings apply, branch mutation or hosted effect.

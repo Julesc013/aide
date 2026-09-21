@@ -1,9 +1,17 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
-status: planned
-planning_state: admitted_backlog
+status: running
+planning_state: execution_active
 result: PENDING
-updated_at: 2026-09-07
+updated_at: 2026-09-22
 configuration_review: pending
 settings_mutated: false
 hosted_acceptance: not_run
+current_slice: fixed_expected_head_source_implemented
+next_slice: exact_policy_principal_and_workflow_observation
+source_tests: 31_passed
+affected_regression_tests: 83_passed
+notes:
+  - The synchronous request always supplies the admitted candidate as GitHub's expected head SHA.
+  - Base, actor, policy, ruleset and principal predicates remain unqualified at the destination effect boundary.
+  - No sender, credential, setting, workflow installation or hosted mutation was added or run.

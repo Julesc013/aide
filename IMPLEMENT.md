@@ -11132,3 +11132,15 @@ DLL mapping, image or grant effect is part of this source implementation.
   because this Windows process lacks symlink-creation privilege.
 - No live provider, credential, network, protected-host, target, or release
   effect ran; full broker completion remains false.
+
+## 2026-09-22 - Fixed GitHub expected-head merge source
+
+- Added a pure synchronous merge request builder that revalidates the exact
+  stage observation and always supplies the admitted candidate as `sha` with
+  ordinary `merge` semantics.
+- Added bounded response classification for success and 405/409/422 refusal;
+  success remains `submitted`, never observed integration.
+- Added local adversarial coverage for changed base, head, actor, policy and
+  merge-contract facts. The focused suite passes 31 tests.
+- Added no network sender, credential path, settings/workflow mutation or hosted
+  effect. Base/ref, actor, policy, principal and ruleset atomicity remain open.

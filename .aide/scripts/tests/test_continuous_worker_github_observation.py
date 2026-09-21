@@ -12,6 +12,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from core.runtime.integration_broker.common import Refused
 from core.runtime.integration_broker.github_api import Reads, Response, ORIGIN, MAX_BODY
+from core.runtime.integration_broker.github_merge import classify_response, merge_request
 from core.runtime.integration_broker.github_observation import collect
 from core.runtime.integration_broker.pr_observation import decision, ObservationStore
 
@@ -37,6 +38,14 @@ def git_commit(sha, parents, tree=TREE):
 
 def page(key, values):
     return {"total_count": len(values), key: values}
+
+
+def qualified_observation():
+    p = plan()
+    value = collect(Fixture().api(), p)
+    value["policy_digest"] = p["policy_digest"]
+    value["merge_contract_sha256"] = p["merge_contract_sha256"]
+    return p, value
 
 
 class Fixture:
@@ -100,6 +109,88 @@ class Fixture:
 
 
 class GitHubObservationTests(unittest.TestCase):
+    def test_merge_request_has_fixed_expected_head_and_ordinary_merge(self):
+        p, observation = qualified_observation()
+        request = merge_request(p, observation)
+        self.assertEqual(request["method"], "PUT")
+        self.assertEqual(request["url"], ORIGIN + PREFIX + "/pulls/8/merge")
+        self.assertEqual(request["headers"], {
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json",
+            "X-GitHub-Api-Version": "2026-03-10",
+        })
+        self.assertEqual(json.loads(request["body"]), {"merge_method": "merge", "sha": HEAD})
+        self.assertNotIn("base", json.loads(request["body"]))
+
+    def test_merge_request_rechecks_base_head_actor_and_policy(self):
+        mutations = (
+            lambda p, value: value.update(target_commit="1" * 40),
+            lambda p, value: value["pull"].update(base="1" * 40),
+            lambda p, value: value["pull"].update(head="1" * 40),
+            lambda p, value: value["pull"].update(author="another-actor"),
+            lambda p, value: value.update(policy_digest="1" * 64),
+            lambda p, value: value.update(merge_contract_sha256="1" * 64),
+        )
+        for mutation in mutations:
+            p, observation = qualified_observation()
+            mutation(p, observation)
+            with self.subTest(mutation=mutation), self.assertRaises(Refused):
+                merge_request(p, observation)
+
+    def test_merge_response_is_submission_not_integration(self):
+        p, observation = qualified_observation()
+        request = merge_request(p, observation)
+        response = Response(request["url"], 200,
+            (("Content-Type", "application/json; charset=utf-8"),),
+            json.dumps({"sha": MERGE, "merged": True, "message": "Pull Request successfully merged"}).encode())
+        result = classify_response(p, observation, response)
+        self.assertEqual(result, {"status": "submitted", "response_sha": MERGE})
+        self.assertNotEqual(result["status"], "integrated")
+        self.assertEqual(decision(p, observation), "merge")
+
+    def test_head_conflict_and_nonmerge_responses_refuse_without_rewrite(self):
+        p, observation = qualified_observation()
+        request = merge_request(p, observation)
+        frozen = copy.deepcopy(observation)
+        for status in (405, 409, 422):
+            response = Response(request["url"], status,
+                (("Content-Type", "application/json"),),
+                json.dumps({"message": "server refused candidate"}).encode())
+            with self.subTest(status=status):
+                self.assertEqual(classify_response(p, observation, response),
+                                 {"status": "refused", "http_status": status})
+        self.assertEqual(observation, frozen)
+        self.assertEqual(json.loads(merge_request(p, observation)["body"])["sha"], HEAD)
+
+    def test_merge_response_requires_exact_endpoint_shape_and_bounds(self):
+        p, observation = qualified_observation()
+        request = merge_request(p, observation)
+        bodies = (
+            (200, {"sha": MERGE, "merged": False, "message": "not merged"}),
+            (200, {"sha": MERGE, "merged": True, "message": "ok", "extra": True}),
+            (201, {"message": "unexpected"}),
+        )
+        first = Response(request["url"], bodies[0][0], (("Content-Type", "application/json"),),
+                         json.dumps(bodies[0][1]).encode())
+        self.assertEqual(classify_response(p, observation, first),
+                         {"status": "refused", "http_status": 200})
+        for status, body in bodies[1:]:
+            response = Response(request["url"], status, (("Content-Type", "application/json"),),
+                                json.dumps(body).encode())
+            with self.subTest(status=status), self.assertRaises(Refused):
+                classify_response(p, observation, response)
+        for response in (
+            Response("https://api.github.com/repos/foreign/repo/pulls/8/merge", 409,
+                     (("Content-Type", "application/json"),), b'{"message":"conflict"}'),
+            Response(request["url"], 409, (("Content-Type", "text/plain"),), b"conflict"),
+            Response(request["url"], 409, (("Content-Type", "application/json"),) * 2,
+                     b'{"message":"conflict"}'),
+            Response(request["url"], 409, (("Content-Type", "application/json"),),
+                     b'{"message":"' + b"x" * 65536 + b'"}'),
+        ):
+            with self.assertRaises(Refused):
+                classify_response(p, observation, response)
+
     def test_complete_raw_observation_never_invents_policy_qualification(self):
         fixture, p = Fixture(), plan()
         result = collect(fixture.api(), p)

@@ -437,3 +437,27 @@ This qualifies only the exact native token/local-endpoint probe. AppContainer
 descendants/supervisor-death/reparse adversarial cells, private Python/Git/Codex,
 controlled model channel, credential/broker host and operational acceptance
 remain required. The host WorkUnit is running/PENDING; no worker was activated.
+
+## Fixed synchronous merge source contract
+
+`github_merge.merge_request(plan, observation)` constructs the only admitted
+merge shape after the existing pure decision function has revalidated the exact
+repository, pull, base/head, actor, check, policy and contract facts. It uses
+`PUT /repos/{owner}/{repo}/pulls/{number}/merge`, ordinary `merge`, and always
+sets the request-body `sha` to the immutable candidate commit. GitHub documents
+that value as an expected-head predicate and a mismatch as HTTP 409 in its
+[pull-request REST API](https://docs.github.com/en/enterprise-cloud@latest/rest/pulls/pulls#merge-a-pull-request).
+
+The endpoint has no expected-base argument. Base SHA/ref, target ref, actor,
+policy, ruleset, bypass state and principal permissions are therefore local
+preconditions or still-unqualified server controls, not endpoint-atomic claims.
+The source contains no sender, credentials, settings/workflow mutation or
+production factory. `classify_response` accepts only bounded exact-endpoint JSON,
+classifies 405/409/422 as refusals, and returns only `submitted` for a successful
+response. Missing replies remain uncertain under the durable bridge's no-replay
+contract; only a later authenticated observation can return `integrated`.
+
+Thirty-one focused tests pass for exact request bytes, stale fact refusal,
+response bounds and submission/integration separation. Hosted target races,
+effective policy/principal observation, workflow provenance and protected
+host/store qualification remain unrun.

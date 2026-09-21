@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
 title: Implement and qualify the exact GitHub broker target contract
 type: execution
-status: planned
-planning_state: admitted_backlog
+status: running
+planning_state: execution_active
 result: PENDING
 created_at: 2026-09-07
 parent_task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01

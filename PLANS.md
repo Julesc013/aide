@@ -3544,3 +3544,12 @@ The exact observation and digest are revalidated against the latest ledger row,
 stage intent, and decision before and during child execution. The parent broker
 remains active for operational provider, protected host/store, credential,
 target-policy, and hosted acceptance work.
+
+## GitHub expected-head target source
+
+`AIDE-CW-GITHUB-TARGET-QUALIFICATION-01` is now running on a bounded source
+slice. Implement the fixed synchronous ordinary-merge request with the exact
+candidate SHA as GitHub's expected-head predicate, and keep a successful response
+at submitted until later observation proves integration. Continue next with exact
+policy, workflow and principal observation/review. Expected-base enforcement,
+settings apply, hosted races and protected-host qualification remain open.

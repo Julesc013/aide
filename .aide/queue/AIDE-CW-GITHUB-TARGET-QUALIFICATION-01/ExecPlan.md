@@ -52,3 +52,29 @@ Start: policy/source preparation has no broker-completion dependency. Close:
 this item requires actual hosted contract acceptance and isolated-host binding.
 Full broker closure depends on this receipt; the item does not depend on full
 broker closure, avoiding a circular completion gate.
+
+## Progress - 2026-09-22 expected-head source slice
+
+- [x] Reconfirm the documented synchronous merge endpoint and its expected-head
+  `sha` predicate.
+- [x] Implement a pure fixed request/response contract with no installed sender,
+  credential source, settings mutation or retry path.
+- [x] Revalidate the exact current base, head, actor, checks, policy digest and
+  merge-contract digest before request construction.
+- [x] Keep a successful synchronous response at `submitted`; only a later
+  authenticated observation may establish `integrated`.
+- [x] Pass 31 focused observation/merge-contract tests.
+- [ ] Observe and independently review exact current rulesets, protection,
+  workflow, app/principal identity, permissions and owner bypass.
+- [ ] Install only a separately reviewed configuration and run hosted
+  adversarial race tests on an authorized disposable target.
+- [ ] Bind protected host/store qualification and an exact hosted receipt.
+
+## Decision record
+
+GitHub's request-body `sha` is classified as a destination-enforced expected
+head. The endpoint exposes no expected-base argument. Base, actor, target ref,
+checks and policy are rechecked from the exact observation before construction,
+but remain local prerequisites until independently reviewed server rules and a
+restricted principal are observed under hosted races. This source slice does
+not upgrade those predicates to atomic destination guarantees.
