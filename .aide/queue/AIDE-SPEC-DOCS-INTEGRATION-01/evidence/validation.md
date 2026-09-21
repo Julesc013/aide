@@ -36,3 +36,14 @@ No broker, isolated-host, or behavioral acceptance suite was run for this
 documentation candidate. The package's one skipped symlink fixture remains a
 skip, not a pass. Generated validator report refreshes were restored because
 this WorkUnit does not own those paths.
+
+## Post-Integration
+
+| Command or check | Result |
+|---|---|
+| `git merge --ff-only 237ae8c4` on clean local `dev` | PASS; base `bfb86c12` advanced without a merge commit |
+| Manifest and draft recount on integrated `dev` | PASS; zero hash mismatches, 34 drafts, 66 specification files |
+| `py -3 -B .aide/scripts/aide_lite.py validate` on integrated `dev` | PASS |
+| `commit check --latest` and `commit check --range origin/dev..HEAD` before push | PASS; one candidate commit |
+| `git push origin dev` | PASS; remote `dev` advanced from `bfb86c12` to `237ae8c4` |
+| `git ls-remote --heads origin dev task/aide-spec-docs-integration-01 main` | PASS; task and `dev` both at `237ae8c4`, `main` unchanged at `aec53b1d` |
