@@ -1,0 +1,39 @@
+schema_version: aide.queue-task.v0
+id: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
+title: Reduce repository evidence churn and classify tracked bulk
+type: execution
+status: running
+planning_state: execution_active
+result: PENDING
+created_at: 2026-09-21
+updated_at: 2026-09-21
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+objective: >
+  Make repository state reviewable by separating canonical records from
+  generated output, unique evidence, exact duplicates, and external custody;
+  eliminate proven status noise without losing recoverability.
+authority_basis: >
+  The owner explicitly requested repository cleanup, tracked-garbage review,
+  frequent detailed commits, and recoverable remote publication.
+scope:
+  allowed_paths:
+    - .gitignore
+    - .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/**
+    - .aide/queue/index.yaml
+  read_only_paths:
+    - .aide/repo/**
+    - .aide/reports/**
+    - .aide/roots/**
+    - .aide/refactors/**
+    - .aide/queue/**
+  forbidden_operations:
+    - blanket deletion
+    - removal of unique evidence
+    - history rewrite or force push
+    - treating orphan or drop candidates as deletion approval
+verification:
+  - verify loose custody bytes against tracked archive manifests and ZIP entries
+  - inventory tracked kinds, owners, sizes, duplicates, and generated paths
+  - run repository, quality, refactor, and root validators
+  - record exact dispositions before any destructive cleanup

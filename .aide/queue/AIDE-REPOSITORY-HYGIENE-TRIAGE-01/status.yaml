@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
+status: running
+classification: partial
+planning_state: execution_active
+result: PENDING
+updated_at: 2026-09-21
+current_slice: verified_loose_custody_suppression
+next_slice: tracked_generated_and_evidence_retention_map
+notes:
+  - Two passed Facman tasks retain compact tracked custody archives.
+  - Their 102 byte-identical loose expansions are now narrowly ignored.
+  - No files have been deleted by this WorkUnit.

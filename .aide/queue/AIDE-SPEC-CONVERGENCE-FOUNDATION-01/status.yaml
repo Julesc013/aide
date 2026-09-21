@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-SPEC-CONVERGENCE-FOUNDATION-01
+status: running
+classification: partial
+planning_state: execution_active
+result: PENDING
+updated_at: 2026-09-21
+current_slice: product_authority_and_status_foundation
+next_slice: work_attempt_effect_and_identity_contracts
+notes:
+  - The live specs tree contains 23 files across architecture and boot-slice areas.
+  - Unified source S21 is verified and externally extracted for review only.
+  - The 66-file candidate patch applies cleanly but will not be applied wholesale.

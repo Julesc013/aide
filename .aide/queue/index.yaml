@@ -3320,3 +3320,23 @@ items:
     prompt: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/prompt.md
     evidence: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/evidence
     description: Remove repository model and execution-setting pins while preserving minimal role descriptions and operator-selected session behavior.
+  - id: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
+    status: running
+    planning_state: execution_active
+    result: PENDING
+    title: Reduce repository evidence churn and classify tracked bulk
+    task: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/prompt.md
+    evidence: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/evidence
+    description: Verify duplicate and generated material by ownership, suppress only proven loose custody expansions, and prepare exact retained/migrate/drop-candidate dispositions without blanket deletion.
+  - id: AIDE-SPEC-CONVERGENCE-FOUNDATION-01
+    status: running
+    planning_state: execution_active
+    result: PENDING
+    title: Establish the first reviewed control-plane specification foundation
+    task: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/prompt.md
+    evidence: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/evidence
+    description: Keep private source archives external and adopt a small source-traceable control-plane foundation into the live specs tree without applying the unified overlay wholesale.
