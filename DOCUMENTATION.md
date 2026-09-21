@@ -454,3 +454,5 @@ remain unqualified. No selected DLL mappings, image copies or grants occurred.
 - Isolated-host evidence/h2-input-source-manifest.json and
   h2-input-root-actual-review.json bind the reviewed task driver and exact local
   eight-file read-facts outcome. h2-input-custody.json maps original raw evidence.
+- Isolated-host evidence/h2-resource-source-plan.md records the separate
+  two-API feasibility source scope and its unexecuted native effect boundary.

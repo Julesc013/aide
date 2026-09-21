@@ -430,3 +430,28 @@ is h2-input-root-actual-review.json. Prepare source3, own task/root docs and
 compact original-byte custody for a local checkpoint at 0c7788fd; no staging or
 commit before ROOT reviews its exact scope/projected tree. The read-facts effect
 is consumed. API mapping, full 180/128 closure and private loading stay open.
+
+## H2 two-API feasibility source admission
+
+Continue from reviewed local N1 checkpoint 2a44f17e under
+evidence/h2-resource-source-plan.md. Only three task-owned resource probe,
+controller and injected-test files are implemented. Existing runtime and N1
+source remain fixed dependencies. No actual resource mapping or other native
+effect occurs before independent source and exact effect review. Full 180/128,
+context, private bootstrap and protected authority gates remain open.
+
+## Frozen two-API feasibility source
+
+The h2-resource-source-manifest.json binds three task-owned files and16 unchanged
+dependencies at N1 checkpoint 2a44f17e. All88 injected tests passed:21 resource,
+30 N1 and37 observer regressions, with every actual native constructor forbidden.
+The controller derives file/descriptor/spelling pins from the exact archived
+N1 result and flushes reservation plus both mapping intents before child
+dispatch. The child permits only the two fixed API names, existing resource
+flags and exact one-use acknowledgements. Output remains unqualified, and
+failures retain bounded numeric native evidence without replay.
+
+Source is frozen for independent review. No resource effect manifest, selected
+DLL reread/mapping, child, copy/grant/profile/network or activation occurred.
+The full inventory/capacity, restricted context/bootstrap and protected parent
+authority gates remain open.

@@ -1,0 +1,17 @@
+[task/aide-cw-integration-broker-01 236da6c2] fix(runtime): parse bounded optional delay import metadata
+ 25 files changed, 4176 insertions(+), 8 deletions(-)
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-helper-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-message.txt
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-scope.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-evidence.zip
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-final-tests.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-final-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-final-review.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-root-checkpoint-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-admission.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-manifest.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-plan.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-review-notes.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json

@@ -1,0 +1,6 @@
+AIDE Lite commit range check
+result: PASS
+range: 236da6c2ba0df8cf319849c7632c04727afc392d..0c7788fd3660dc18e2751108ac49afe96d446801
+commit_count: 1
+policy: .aide/policies/commit-messages.yaml
+- 0c7788f PASS feat(runtime): add bounded native system observation source

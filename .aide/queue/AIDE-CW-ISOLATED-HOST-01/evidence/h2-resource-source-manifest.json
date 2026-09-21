@@ -1,0 +1,40 @@
+{
+  "schema": "aide.host.resource-source-manifest.v1",
+  "base": "2a44f17eb7232757133df549ac6fc519d535e71b",
+  "files": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource.py": "2ff532947b82d9e657ac52a9ee1c73925c43cc5f13a4a640724ab5d8f05991c9",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_controller.py": "58b707e14656829d716aa980d50580ce628b537ef44389cdf3122ae13a56bc60",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_tests.py": "57b0bdaffa85dc290c12be9ac2a23af9fccc9cce716d0c98886ef57ce6c6d82a"
+  },
+  "aggregate": "1a9e3809c11bbdd4a25a08a68d751a8584f67d6c95d8aa410f3f91ebc5ecb4f2",
+  "aggregate_definition": "SHA256 UTF8 json.dumps(files,sort_keys=True,separators=(comma,colon))",
+  "unchanged_dependencies": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-evidence.zip": "df1c3d806c40777e65d5567968f93c909c79d7c091a96f916584bd8213d920fc",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input.py": "1a394d243e08cad2264b6e803d150a9dccdbec779851c9e9e5da41acfa6e70d7",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_controller.py": "b8a886881ed53d1b3a28bda44e15e45cc6162588ffd720a2d6de00942ee23456",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_tests.py": "80f482fb36e7cd2e1cdf849cd356c0bf150490f3a41f2581502d860140605d47",
+    "core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "core/runtime/continuous_worker/windows_image.py": "2cac4dd7336b24dba47bc7cd40e510902b23fc99e64b56b349a1cfc0e3734ab8",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/windows_pe.py": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d",
+    "core/runtime/continuous_worker/windows_python_contract.py": "98d4a1c95337043477bad27611f4bac5cc2b574aaea37d94dc344543ff689411",
+    "core/runtime/continuous_worker/windows_python_image.py": "b20258182d5610384e8be97e502012ce9760d9b977bd824f5f09a394d3b026c8",
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847",
+    "core/runtime/continuous_worker/windows_system_observation.py": "de1bfc5a12357c4a8815321531b6dad3c5b599d30c42fa5dec63a96b57fbd697",
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py": "7f505ce82071c2c2bd361cdd8c0313835fc51ca4213328fcef660589205449d7",
+    ".aide/queue/index.yaml": "ddf3bd530a875f707210dcbea722a0ec9dccc80f91dade311ae25f643c81dd97"
+  },
+  "patch": "h2-resource-source.patch",
+  "patch_sha256": "9a58d569cbe1e87247aca4bf290a4113d5acb6586e09686e74439e17d73919b8",
+  "patch_bytes": 43708,
+  "patch_definition": "Concatenate sorted git diff --no-index --binary -- /dev/null <new source path> raw stdout; expected exit1.",
+  "tests_receipt": "h2-resource-first-tests.json",
+  "tests_receipt_sha256": "07b628e57372262af7c5ce68d075f74860f22b00567a9440a097a22d5df3441e",
+  "test_count": 88,
+  "new_test_count": 21,
+  "all_actual_native_constructors_forbidden_during_test": true,
+  "native_mapping_effect_executed": false,
+  "actual_effect_manifest": "not_prepared_or_admitted"
+}

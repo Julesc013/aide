@@ -11086,3 +11086,9 @@ DLL hashes across 8,306,752 bytes, with 167 calls, nine closes and clean exit/
 quiescence. ROOT independently verified original artifacts and source binding.
 The checkpoint remains partial: no contextual API mapping, private loader,
 OS/controller provenance or operational activation is claimed.
+
+## H2 two-API feasibility source
+
+Continue from local N1 checkpoint 2a44f17e with three task-owned resource probe/
+controller/test files. Reuse reviewed observer and N1 mechanisms; no actual
+DLL mapping, image or grant effect is part of this source implementation.

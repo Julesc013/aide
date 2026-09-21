@@ -113,3 +113,19 @@ PASS: h2-input-root-actual-review.json independently binds all six actual raw
 artifacts and the exact local read-facts outcome. This supersedes only the
 earlier summary's pending-review status. The original summary and raw outputs
 remain immutable. Source67 tests and ROOT73 tests retain their distinct scopes.
+
+## Frozen two-API feasibility source
+
+The h2-resource-source-manifest.json binds three task-owned files and16 unchanged
+dependencies at N1 checkpoint 2a44f17e. All88 injected tests passed:21 resource,
+30 N1 and37 observer regressions, with every actual native constructor forbidden.
+The controller derives file/descriptor/spelling pins from the exact archived
+N1 result and flushes reservation plus both mapping intents before child
+dispatch. The child permits only the two fixed API names, existing resource
+flags and exact one-use acknowledgements. Output remains unqualified, and
+failures retain bounded numeric native evidence without replay.
+
+Source is frozen for independent review. No resource effect manifest, selected
+DLL reread/mapping, child, copy/grant/profile/network or activation occurred.
+The full inventory/capacity, restricted context/bootstrap and protected parent
+authority gates remain open.

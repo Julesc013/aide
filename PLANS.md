@@ -3513,3 +3513,5 @@ remain unqualified. No selected DLL mappings, image copies or grants occurred.
 - AIDE-CW-ISOLATED-HOST-01: checkpoint the independently reviewed eight-DLL
   read-facts result; then separately propose two-API feasibility. The consumed
   input effect is not replayable, and full closure/private loading remain open.
+- AIDE-CW-ISOLATED-HOST-01: implement task-owned two-API feasibility source and
+  injected tests under h2-resource-source-plan.md; actual mappings stay gated.
