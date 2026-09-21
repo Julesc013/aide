@@ -3360,3 +3360,13 @@ items:
     prompt: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/prompt.md
     evidence: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/evidence
     description: Place the verified generated design prose in specs as explicit proposed drafts while preserving all adopted contracts and operational authority.
+  - id: AIDE-SPEC-DOCS-INTEGRATION-01
+    status: running
+    planning_state: execution_active
+    result: PENDING
+    title: Qualify and integrate the completed specification documentation
+    task: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/evidence
+    description: Build a documentation-only candidate from current dev, prove its specification and provenance closure, and integrate only that qualified candidate without carrying unfinished runtime work.

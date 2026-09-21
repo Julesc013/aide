@@ -6,11 +6,13 @@ planning_state: execution_active
 result: PENDING
 review_gate: admitted_by_owner
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
-next_task: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
+next_task: AIDE-SPEC-DOCS-INTEGRATION-01
 notes:
   - The owner approved continued campaign execution after the exact candidate-bound review packet.
   - AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01 passed and was published.
   - Private action-pack integrity and source identity verification passed.
   - Initial repository inventory and an externally verified recovery snapshot exist.
+  - Repository hygiene and the three specification placement/adoption increments passed and were published.
+  - Documentation integration is now isolated from the unfinished broker and isolated-host streams.
   - The compiled intent is destructive, split-required, and unsafe as one WorkUnit.
   - This programme coordinates bounded child WorkUnits; retained merge, release, publication, deletion, and secret gates still apply.

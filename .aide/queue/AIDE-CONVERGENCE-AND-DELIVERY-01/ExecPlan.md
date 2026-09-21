@@ -21,15 +21,17 @@ repositories. Each executable slice requires its own bounded queue packet.
 - Do not restore Codex model, reasoning, provider, permission, sandbox, search,
   or service-tier pins.
 
-## Current Facts
+## Initial Observations (Historical)
 
 - Initial source HEAD: `2a44f17eb7232757133df549ac6fc519d535e71b`.
-- The task branch is six commits ahead of its matching remote-tracking ref and
-  zero behind; it has no configured upstream.
-- Expanded inventory found 25 tracked dirty paths and 714 untracked files.
+- At initial inventory, the task branch was six commits ahead of its matching
+  remote-tracking ref and zero behind, with no configured upstream.
+- The initial expanded inventory found 25 tracked dirty paths and 714 untracked
+  files.
 - No stash or active merge, rebase, cherry-pick, or revert marker was observed.
-- A stale detached worktree registration points at an unavailable directory;
-  commit `492faa4f1a8280ba67954aa4fc252e79f2e19c15` is preserved in the bundle.
+- Initial inventory found a stale detached worktree registration pointing at an
+  unavailable directory; commit `492faa4f1a8280ba67954aa4fc252e79f2e19c15`
+  was preserved in the recovery bundle before the registration was pruned.
 - The private recovery snapshot reproduced the dirty status byte-for-byte.
 - The private action pack verified 21 archives, 2,480 archive entries, 1,244
   obligation entries, and 2,003 source occurrences; semantic adoption remains false.
@@ -74,8 +76,11 @@ their identities, verification result, and limitations.
 - [x] Recoverable private snapshot created and restore-tested.
 - [x] Campaign intent compiled and validated.
 - [x] Exact programme admission candidate prepared.
-- [ ] Human review accepts or rejects this queue admission candidate.
-- [ ] First bounded child WorkUnit is admitted.
+- [x] Human review accepted this queue admission candidate.
+- [x] First bounded child WorkUnit was admitted and completed.
+- [x] Repository hygiene and specification placement increments completed.
+- [ ] Documentation-only integration candidate is qualified against current `dev`.
+- [ ] Next bounded implementation or qualification slice advances.
 
 ## Discoveries And Decisions
 
@@ -84,10 +89,14 @@ their identities, verification result, and limitations.
 - The only restore mismatch in the first snapshot attempt was a working-tree
   line-ending representation. Exact tracked-file copies were added and the
   second restore reproduced status and file hashes.
-- Queue admission is itself a hard review gate. Preparation may proceed to
-  `needs_review`; implementation may not begin under this packet yet.
+- Queue admission was a hard review gate and was accepted by the owner against
+  the recorded candidate manifest. That historical gate must not be requested
+  again; later effect-specific gates remain binding.
 - Root planning and documentation files already contain unrelated dirty work,
-  so admission does not edit them.
+  so the original admission did not edit them.
+- The hygiene task and three specification increments are complete. Their
+  evidence remains authoritative history, while documentation integration now
+  proceeds under `AIDE-SPEC-DOCS-INTEGRATION-01`.
 
 ## Recovery And Resumption
 
@@ -99,5 +108,6 @@ operator recovery action.
 ## Retrospective
 
 Admission was accepted by the owner against the exact candidate manifest.
-Bounded child execution is active; no main promotion, tag, release, or public
-publication has occurred.
+Bounded child execution is active. The completed specifications are published
+on the mixed task branch, but no documentation-only integration to `dev`, main
+promotion, tag, release, or public publication has occurred.

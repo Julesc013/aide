@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-SPEC-DOCS-INTEGRATION-01
+status: running
+classification: admitted
+planning_state: execution_active
+result: PENDING
+updated_at: 2026-09-21
+current_slice: construct_documentation_only_candidate
+next_slice: qualify_candidate_against_current_dev
+notes:
+  - Owner direction authorizes the bounded documentation task branch and qualified dev integration.
+  - Main promotion, tags, releases, and publication remain outside this WorkUnit.
+  - The mixed broker branch remains preserved and must not be merged as the documentation candidate.
