@@ -3525,3 +3525,13 @@ input. The slice changes no queue or wire schema, grants no runtime authority,
 and records desired acceptance cases as not run. Navigation, source
 dispositions, preserved-path checks, and queue validation are required before
 the increment is treated as complete.
+
+## Specification convergence: explicit draft import
+
+`AIDE-SPEC-DRAFT-IMPORT-01` places the remaining 34 generated control-plane
+chapters in their intended topic directories as proposed drafts. The six
+adopted contracts remain unchanged. The imported `UR-*` requirements and
+`UC-*` acceptance designs stay source aliases pending bounded semantic review;
+their presence does not authorize implementation or establish qualification.
+Private archives, bulk registers, captured baselines, package tools, and patch
+files remain outside the repository.

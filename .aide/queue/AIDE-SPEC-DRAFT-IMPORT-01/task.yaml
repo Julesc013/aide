@@ -1,0 +1,52 @@
+schema_version: aide.queue-task.v0
+id: AIDE-SPEC-DRAFT-IMPORT-01
+title: Import the remaining control-plane chapters as explicit drafts
+type: execution
+status: passed
+planning_state: implemented
+result: PASS
+created_at: 2026-09-21
+updated_at: 2026-09-21
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-SPEC-CONVERGENCE-FOUNDATION-01
+  - AIDE-SPEC-WORK-EFFECT-IDENTITY-01
+objective: >
+  Place the remaining generated design prose in the live specification tree as
+  explicitly proposed drafts while preserving every adopted contract and all
+  current implementation, qualification, activation, and support boundaries.
+authority_basis: >
+  The owner explicitly requested the verified specs-only package be imported
+  into specs now and not left as another external handoff.
+scope:
+  allowed_paths:
+    - specs/control-plane/**
+    - docs/reference/unified-spec-status.md
+    - DOCUMENTATION.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/**
+    - .aide/queue/index.yaml
+  preserved_paths:
+    - specs/README.md
+    - specs/architecture/**
+    - specs/boot-slice/**
+    - specs/control-plane/product/scope-and-profiles.md
+    - specs/control-plane/contracts/authority-and-decision-provenance.md
+    - specs/control-plane/contracts/status-and-outcome-dimensions.md
+    - specs/control-plane/contracts/work-attempts-and-decomposition.md
+    - specs/control-plane/contracts/capability-invocation-and-effects.md
+    - specs/control-plane/contracts/identity-references-and-digests.md
+  forbidden_operations:
+    - copying the full package or private source archives into the repository
+    - copying baseline, tools, patches, audit payloads, or bulk source registers
+    - bulk-adopting imported UR or UC aliases
+    - claiming behavioral tests or runtime qualification
+    - changing runtime source, policy, model configuration, or release state
+verification:
+  - verify package integrity and exact source reconstruction
+  - verify the narrow patch applies to the current HEAD
+  - preserve all six adopted contracts byte-for-byte
+  - validate 34 draft chapters, 244 source requirement aliases, and 244 unrun acceptance designs
+  - validate local links and resulting 66-file specs tree
+  - stage only explicit import and task paths

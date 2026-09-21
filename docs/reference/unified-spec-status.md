@@ -31,15 +31,28 @@ Candidate `UR-*` identifiers remain attributable source aliases. Live clauses
 use the `AIDE-WORK-*`, `AIDE-CAP-*`, and `AIDE-ID-*` namespaces and explicitly
 preserve current queue, schema, policy, and review ownership.
 
+## Imported Draft Coverage
+
+The remaining 34 generated control-plane chapters are now physically present
+under `specs/control-plane/` as explicit proposed drafts. The
+[draft chapter index](../../specs/control-plane/draft-import.md) records their
+topics and source identities, and the adjacent import manifest binds exact
+source and destination bytes.
+
+The import preserves 244 proposed `UR-*` requirement aliases and 244 matching
+unrun `UC-*` acceptance designs. Those aliases are review input, not adopted
+`AIDE-*` requirements or passing tests. The six adopted foundation contracts
+remain byte-identical and retain precedence where scopes overlap.
+
 ## Deferred Material
 
-- The remaining recovery, compatibility, trust, lifecycle, knowledge,
-  optimization, interop, experience, and runtime families require separate
-  semantic dispositions.
+- Draft clauses in recovery, compatibility, trust, lifecycle, knowledge,
+  optimization, interop, experience, engineering, and runtime families still
+  require separate semantic dispositions before adoption.
 - Large generated requirements, decision, source-mapping, and acceptance-case
   registers remain external review inputs.
 - Root-authority policy changes remain separately reviewable.
-- Candidate documentation and authority patches are not implicitly adopted.
+- Draft presence and candidate documentation patches are not implicit adoption.
 
 ## Maturity
 

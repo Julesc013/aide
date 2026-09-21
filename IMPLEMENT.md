@@ -11105,3 +11105,15 @@ DLL mapping, image or grant effect is part of this source implementation.
   is claimed.
 - Updated control-plane and root documentation navigation and recorded the
   bounded WorkUnit evidence for this adoption increment.
+
+## 2026-09-21 - Explicit control-plane draft import
+
+- Imported 34 previously external design chapters into their intended
+  `specs/control-plane/` topic directories.
+- Added `draft-import.md` and `import-manifest.json` for navigation and exact
+  source/destination identity.
+- Preserved all six adopted foundation contracts byte-for-byte.
+- Retained 244 proposed requirement aliases and 244 matching acceptance designs
+  as explicitly unrun review inputs, not live `AIDE-*` requirements.
+- Excluded the import ZIP, baseline capture, verifier tools, patch, private
+  archives, and bulk generated registers from the repository.

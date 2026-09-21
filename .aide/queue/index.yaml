@@ -3350,3 +3350,13 @@ items:
     prompt: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/prompt.md
     evidence: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/evidence
     description: Adopt source-traceable work, attempt, capability-effect, and identity-digest contracts while preserving current queue, schema, architecture, policy, and operational authority.
+  - id: AIDE-SPEC-DRAFT-IMPORT-01
+    status: passed
+    planning_state: implemented
+    result: PASS
+    title: Import the remaining control-plane chapters as explicit drafts
+    task: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/prompt.md
+    evidence: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/evidence
+    description: Place the verified generated design prose in specs as explicit proposed drafts while preserving all adopted contracts and operational authority.

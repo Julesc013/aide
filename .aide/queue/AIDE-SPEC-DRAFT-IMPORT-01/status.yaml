@@ -1,0 +1,15 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-SPEC-DRAFT-IMPORT-01
+status: passed
+classification: complete
+planning_state: implemented
+result: PASS
+updated_at: 2026-09-21
+current_slice: complete
+next_slice: bounded_semantic_review_of_imported_drafts
+notes:
+  - Package verifier and 14 disposable preflight tests passed.
+  - Live preflight refused only on CRLF worktree bytes in 22 preserved files outside the patch.
+  - Git reports no tracked specs diff and the actual narrow patch check passes.
+  - The exact 37-path payload was applied and all six adopted contracts remain byte-identical.
+  - The resulting 66-file specs tree retains 34 explicit drafts and 244 unrun acceptance designs.

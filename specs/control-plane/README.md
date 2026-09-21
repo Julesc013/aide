@@ -1,7 +1,7 @@
 # AIDE Control-Plane Specifications
 
-This area contains adopted desired-state contracts for AIDE as a repo-native
-development control plane. It extends the preserved shared-core and host
+This area contains adopted desired-state contracts and explicitly labelled
+draft design chapters for AIDE as a repo-native development control plane. It extends the preserved shared-core and host
 architecture; it does not restart the product or replace `.aide/` as the
 self-hosting contract and queue.
 
@@ -41,12 +41,18 @@ these facts.
 - [Accepted shared-core ADR](../architecture/adr/ADR-0001-shared-core-many-hosts.md)
 - [Boot-slice baseline](../boot-slice/README.md)
 
-## Deferred Families
+## Imported Draft Design Chapters
 
-Recovery, compatibility, trust, lifecycle, knowledge, optimization, interop,
-experience, and runtime families remain in reviewed source custody until each
-family receives a live disposition. Candidate bulk registers are not copied
-into this directory merely because they validate as a package.
+The earlier generated design is now available in its intended directories.
+[Draft chapter index and source identities](draft-import.md) lists the 34
+imported chapters, alongside the six adopted foundation contracts above.
+
+These drafts cover compatibility, execution bindings, trust, engineering,
+recovery, lifecycle, knowledge, optimization, interoperability, and operator
+experience. They retain proposed requirements and unrun acceptance designs;
+copying the files does not adopt those requirements or enable the behavior.
+Existing adopted contracts retain precedence. Candidate bulk registers and
+private archive material remain external review inputs.
 
 ## Operational Boundary
 
