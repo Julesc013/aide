@@ -3331,9 +3331,9 @@ items:
     evidence: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/evidence
     description: Verify duplicate and generated material by ownership, suppress only proven loose custody expansions, and prepare exact retained/migrate/drop-candidate dispositions without blanket deletion.
   - id: AIDE-SPEC-CONVERGENCE-FOUNDATION-01
-    status: running
-    planning_state: execution_active
-    result: PENDING
+    status: passed
+    planning_state: implemented
+    result: PASS
     title: Establish the first reviewed control-plane specification foundation
     task: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/ExecPlan.md

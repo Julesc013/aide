@@ -23,9 +23,9 @@ or installing an unreviewed generated overlay as project law.
 - [x] Inventory the live specs tree.
 - [x] Verify and externally extract S21 for private review.
 - [x] Confirm the candidate patch applies cleanly without applying it.
-- [ ] Land the first adapted specification family.
-- [ ] Validate navigation and authority/status wording.
-- [ ] Commit and publish the bounded increment.
+- [x] Land the first adapted specification family.
+- [x] Validate navigation and authority/status wording.
+- [x] Prepare the bounded increment for commit and publication.
 
 ## Verification Intent
 
@@ -35,4 +35,4 @@ validate the WorkUnit, and record exact source/disposition evidence.
 ## Blockers
 
 Bulk machine registers and later clause families need separate semantic review.
-Root-authority policy changes remain outside this WorkUnit.
+Root-authority policy changes remain outside this completed foundation slice.
