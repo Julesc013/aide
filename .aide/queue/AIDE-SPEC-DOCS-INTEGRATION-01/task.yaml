@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-SPEC-DOCS-INTEGRATION-01
 title: Qualify and integrate the completed specification documentation
 type: integration
-status: running
-planning_state: execution_active
-result: PENDING
+status: passed
+planning_state: implemented
+result: PASS
 created_at: 2026-09-21
 updated_at: 2026-09-21
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -26,6 +26,8 @@ source:
 target:
   branch: dev
   observed_head: bfb86c12b9e6d2970024d29c57ba629994ec43cc
+  integrated_candidate: 237ae8c49adce2b2e3232d83e6a3289fd9f4d6f3
+  remote_result_observed: 237ae8c49adce2b2e3232d83e6a3289fd9f4d6f3
 scope:
   allowed_paths:
     - specs/**

@@ -79,7 +79,7 @@ their identities, verification result, and limitations.
 - [x] Human review accepted this queue admission candidate.
 - [x] First bounded child WorkUnit was admitted and completed.
 - [x] Repository hygiene and specification placement increments completed.
-- [ ] Documentation-only integration candidate is qualified against current `dev`.
+- [x] Documentation-only integration candidate is qualified and integrated to `dev`.
 - [ ] Next bounded implementation or qualification slice advances.
 
 ## Discoveries And Decisions
@@ -108,6 +108,8 @@ operator recovery action.
 ## Retrospective
 
 Admission was accepted by the owner against the exact candidate manifest.
-Bounded child execution is active. The completed specifications are published
-on the mixed task branch, but no documentation-only integration to `dev`, main
-promotion, tag, release, or public publication has occurred.
+Bounded child execution is active. The completed specifications were integrated
+independently to `dev` at `237ae8c49adce2b2e3232d83e6a3289fd9f4d6f3`.
+No main promotion, tag, release, or public publication has occurred. The next
+campaign route is the existing unfinished broker stream, with isolated-host and
+target qualification retained as separate dependencies.

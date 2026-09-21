@@ -3361,9 +3361,9 @@ items:
     evidence: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/evidence
     description: Place the verified generated design prose in specs as explicit proposed drafts while preserving all adopted contracts and operational authority.
   - id: AIDE-SPEC-DOCS-INTEGRATION-01
-    status: running
-    planning_state: execution_active
-    result: PENDING
+    status: passed
+    planning_state: implemented
+    result: PASS
     title: Qualify and integrate the completed specification documentation
     task: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/ExecPlan.md
