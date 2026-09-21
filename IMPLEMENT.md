@@ -10881,3 +10881,28 @@ Implemented a separate durable Codex coordinator prototype with atomic claims/in
 The current user authorizes scoped implementation, validation, synchronization, commits and normal checked integration through full FacMan Beta1. The continuous-worker prototype remains source-qualified only; seven bounded runtime follow-ups and seven provider coordination tasks are admitted beneath AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01. Regenerated portable exports now exclude source-only runtime tests while retaining all previously admitted AIDE Lite test modules.
 
 Final export validation passed all eight commands; independent review verified all 829 checksum entries for 826 payload files and preserved all 37 baseline portable tests. Both portable apply templates are included in source closure and mapped outputs. The safe example secrets README is explicitly tracked; no actual secret or source-only worker state is exported. See programme evidence/final-export-validation.json and export-independent-review.json.
+
+## 2026-09-21 - Control-plane work, effect, and identity contracts
+
+- Added live desired-state contracts for WorkUnits and immutable attempts,
+  capability invocation and effect declarations, and qualified identities and
+  digests.
+- Replaced candidate `UR-*` authority with attributable source aliases and
+  stable live `AIDE-WORK-*`, `AIDE-CAP-*`, and `AIDE-ID-*` requirement IDs.
+- Preserved the filesystem queue, existing schemas, architecture, boot-slice,
+  policy, and review gates; no runtime capability or behavioral qualification
+  is claimed.
+- Updated control-plane and root documentation navigation and recorded the
+  bounded WorkUnit evidence for this adoption increment.
+
+## 2026-09-21 - Explicit control-plane draft import
+
+- Imported 34 previously external design chapters into their intended
+  `specs/control-plane/` topic directories.
+- Added `draft-import.md` and `import-manifest.json` for navigation and exact
+  source/destination identity.
+- Preserved all six adopted foundation contracts byte-for-byte.
+- Retained 244 proposed requirement aliases and 244 matching acceptance designs
+  as explicitly unrun review inputs, not live `AIDE-*` requirements.
+- Excluded the import ZIP, baseline capture, verifier tools, patch, private
+  archives, and bulk generated registers from the repository.

@@ -1,0 +1,72 @@
+schema_version: aide.queue-task.v0
+id: AIDE-SPEC-DOCS-INTEGRATION-01
+title: Qualify and integrate the completed specification documentation
+type: integration
+status: running
+planning_state: execution_active
+result: PENDING
+created_at: 2026-09-21
+updated_at: 2026-09-21
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-SPEC-CONVERGENCE-FOUNDATION-01
+  - AIDE-SPEC-WORK-EFFECT-IDENTITY-01
+  - AIDE-SPEC-DRAFT-IMPORT-01
+objective: >
+  Build and qualify a documentation-only candidate from current dev, publish
+  the reviewable task branch, and integrate it to dev only after all task-to-dev
+  evidence and validation requirements pass.
+authority_basis: >
+  The owner explicitly directed the campaign to separate the completed
+  documentation from the mixed runtime branch, qualify it against current dev,
+  and integrate it through the existing process.
+source:
+  branch: task/aide-cw-integration-broker-01
+  published_head: 5e3f9240026f6f58825f605f4d1a3d24ca3762c0
+  routing_checkpoint_head: 9a1da8b82a1ce1d20de3d2ab60338cf7cbca2b83
+target:
+  branch: dev
+  observed_head: bfb86c12b9e6d2970024d29c57ba629994ec43cc
+scope:
+  allowed_paths:
+    - specs/**
+    - docs/reference/unified-spec-status.md
+    - DOCUMENTATION.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/**
+    - .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/**
+    - .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/**
+    - .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/**
+    - .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/**
+    - .aide/queue/index.yaml
+  forbidden_paths:
+    - core/**
+    - hosts/**
+    - schemas/**
+    - .codex/**
+    - .github/**
+    - .aide.local/**
+    - private archives and recovery snapshots
+  forbidden_operations:
+    - merging the mixed broker branch into dev
+    - changing machine-wide configuration or session choices
+    - adopting all imported proposals by implication
+    - relabelling unrun acceptance designs as passing tests
+    - merging to main, tagging, releasing, or publishing release assets
+authorized_git_operations:
+  - create an isolated task branch and worktree from the observed current dev
+  - publish the qualified documentation task branch to origin
+  - integrate the exact qualified candidate into dev after task-to-dev gates pass
+  - push the resulting dev ref after post-integration validation passes
+verification:
+  - preserve the six adopted contracts byte-for-byte
+  - retain all 34 imported chapters as explicit drafts
+  - validate source identities, aliases, relative links, and status language
+  - prove the candidate excludes broker and isolated-host implementation changes
+  - run applicable queue, documentation, commit, and repository checks
+  - record exact local and remote refs before and after integration
+retained_gates:
+  - queue scope or policy widening requires a new exact review
+  - merge to main requires exact candidate review
+  - tags, release assets, uploads, and publication require exact release review

@@ -1,0 +1,1355 @@
+{
+  "format": "aide.spec-draft-import.v1",
+  "status": "proposed_file_import_not_semantic_adoption",
+  "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+  "baseline_commit": "e4ab82e92adde1c1864e0082741b9c265511987c",
+  "baseline_scope": "30 captured specs files; not a full checkout",
+  "draft_chapters": 34,
+  "existing_adopted_chapters_preserved": 6,
+  "inline_proposed_requirements": 244,
+  "inline_acceptance_designs": 244,
+  "behavioral_cases_executed": 0,
+  "source_semantic_crosswalk_complete": false,
+  "records": [
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 108,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/contracts/authority-and-decision-provenance.md",
+      "source_member_sha256": "5f31da009503048f4388ab72b3354dea67436a0c183217fd2fd6938fdfd0357f",
+      "source_member_size_bytes": 6584,
+      "destination": "specs/control-plane/contracts/authority-and-decision-provenance.md",
+      "disposition": "preserve_existing_adopted_version",
+      "destination_sha256": "f3ba4e2135197b2882d626ff6b84f2843e481fe37111765c36849b1566eb5d10",
+      "semantic_equivalence": "not_asserted"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 109,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/contracts/capability-invocation-and-effects.md",
+      "source_member_sha256": "94580da19565317ecdb88cac6b09a771de9e91192951a0c2994e4826cc7b517c",
+      "source_member_size_bytes": 6433,
+      "destination": "specs/control-plane/contracts/capability-invocation-and-effects.md",
+      "disposition": "preserve_existing_adopted_version",
+      "destination_sha256": "6474f4789df5516c8e8079a225e732a529109fef221fb3d53b1cc007c32f979c",
+      "semantic_equivalence": "not_asserted"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 110,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/contracts/compatibility-and-migrations.md",
+      "source_member_sha256": "49bae9d6c238ce81dac0da9785cfc17e0482d7664dcd528ad92571795836b86a",
+      "source_member_size_bytes": 6539,
+      "destination": "specs/control-plane/contracts/compatibility-and-migrations.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "60cc9ec4bd193f78567fd094e0eeebc16ddc3799915cc64fd5fe3c0e4cb266a9",
+      "title": "Compatibility and migration",
+      "requirement_aliases": [
+        "UR-COMP-01",
+        "UR-COMP-02",
+        "UR-COMP-03",
+        "UR-COMP-04",
+        "UR-COMP-05",
+        "UR-COMP-06",
+        "UR-COMP-07"
+      ],
+      "acceptance_aliases": [
+        "UC-COMP-01",
+        "UC-COMP-02",
+        "UC-COMP-03",
+        "UC-COMP-04",
+        "UC-COMP-05",
+        "UC-COMP-06",
+        "UC-COMP-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 111,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/contracts/execution-hosts-and-workers.md",
+      "source_member_sha256": "9da17de216f91eaef0cff243002e841e0257dc7b9b88610526b99c1e6dc982ae",
+      "source_member_size_bytes": 6549,
+      "destination": "specs/control-plane/contracts/execution-hosts-and-workers.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "60a11190b305942363d0bda7d921ec81f74b55b672851e29b2fbc12f42489b2a",
+      "title": "Execution hosts, harnesses and session bindings",
+      "requirement_aliases": [
+        "UR-HOST-01",
+        "UR-HOST-02",
+        "UR-HOST-03",
+        "UR-HOST-04",
+        "UR-HOST-05",
+        "UR-HOST-06",
+        "UR-HOST-07"
+      ],
+      "acceptance_aliases": [
+        "UC-HOST-01",
+        "UC-HOST-02",
+        "UC-HOST-03",
+        "UC-HOST-04",
+        "UC-HOST-05",
+        "UC-HOST-06",
+        "UC-HOST-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 112,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/contracts/identity-references-and-digests.md",
+      "source_member_sha256": "7feb08d8f057ef8e0858874267387d161ede65f8d9f23e4f36017131661b5325",
+      "source_member_size_bytes": 6401,
+      "destination": "specs/control-plane/contracts/identity-references-and-digests.md",
+      "disposition": "preserve_existing_adopted_version",
+      "destination_sha256": "99d98396d8cf278890c4dbaa993148579887bf10a40ed82639877f3a375c4cf0",
+      "semantic_equivalence": "not_asserted"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 113,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/contracts/status-and-outcome-dimensions.md",
+      "source_member_sha256": "72ec2f7b645b2c613069c5a887fd5e98ab9fcb6fba72a8196b4c5f0891ea2a26",
+      "source_member_size_bytes": 6239,
+      "destination": "specs/control-plane/contracts/status-and-outcome-dimensions.md",
+      "disposition": "preserve_existing_adopted_version",
+      "destination_sha256": "2e5d56ecc065a270bf1f912c421c0c4e1be228c0c84fb0aaa95310c294cd5e09",
+      "semantic_equivalence": "not_asserted"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 114,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/contracts/trust-policy-and-grants.md",
+      "source_member_sha256": "5ba3e7d30ca0d89f09e3b6aa42c565b408a5a17d462f5fbc1a75361d2a276d5d",
+      "source_member_size_bytes": 6636,
+      "destination": "specs/control-plane/contracts/trust-policy-and-grants.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "87558130be85a0ea2d7ffc3407d6e2bd7d555fb2da1e77c6ff28309a25ab30bd",
+      "title": "Trust, policy, grants and revocation",
+      "requirement_aliases": [
+        "UR-TRUST-01",
+        "UR-TRUST-02",
+        "UR-TRUST-03",
+        "UR-TRUST-04",
+        "UR-TRUST-05",
+        "UR-TRUST-06",
+        "UR-TRUST-07"
+      ],
+      "acceptance_aliases": [
+        "UC-TRUST-01",
+        "UC-TRUST-02",
+        "UC-TRUST-03",
+        "UC-TRUST-04",
+        "UC-TRUST-05",
+        "UC-TRUST-06",
+        "UC-TRUST-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 115,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/contracts/work-attempts-and-decomposition.md",
+      "source_member_sha256": "3647d0e08b132b0359e5f408ae959c4d04e852831f35ef4361481a1e3c731fbf",
+      "source_member_size_bytes": 6606,
+      "destination": "specs/control-plane/contracts/work-attempts-and-decomposition.md",
+      "disposition": "preserve_existing_adopted_version",
+      "destination_sha256": "1b87e1f52b0b16525ac714de538d5206b7543babc3124f023f1b87505cda7413",
+      "semantic_equivalence": "not_asserted"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 116,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/engineering/documentation-and-editorial-contracts.md",
+      "source_member_sha256": "c7fbc6000ae6c8773b48f4650cb1ff95f77f2b648bd8997dd8d4aa2c33862057",
+      "source_member_size_bytes": 7515,
+      "destination": "specs/control-plane/engineering/documentation-and-editorial-contracts.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "5c718dc180f4266e93f07a425579391cda0a8ee33d5deabbaf535fe758c41a88",
+      "title": "Documentation, editorial intent and knowledge truth",
+      "requirement_aliases": [
+        "UR-DOC-01",
+        "UR-DOC-02",
+        "UR-DOC-03",
+        "UR-DOC-04",
+        "UR-DOC-05",
+        "UR-DOC-06",
+        "UR-DOC-07",
+        "UR-DOC-08",
+        "UR-DOC-09"
+      ],
+      "acceptance_aliases": [
+        "UC-DOC-01",
+        "UC-DOC-02",
+        "UC-DOC-03",
+        "UC-DOC-04",
+        "UC-DOC-05",
+        "UC-DOC-06",
+        "UC-DOC-07",
+        "UC-DOC-08",
+        "UC-DOC-09"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 117,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/engineering/languages-builds-and-toolchains.md",
+      "source_member_sha256": "6471319e0b0894ad369faaacf17f9e6298c8143a229d50a1fe2209460f1d6537",
+      "source_member_size_bytes": 6860,
+      "destination": "specs/control-plane/engineering/languages-builds-and-toolchains.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "4551aa72be7e1770c0dd27753a43e9d9efda76880bcf2a6a638114c4712710fb",
+      "title": "Languages, builds and toolchain profiles",
+      "requirement_aliases": [
+        "UR-BUILD-01",
+        "UR-BUILD-02",
+        "UR-BUILD-03",
+        "UR-BUILD-04",
+        "UR-BUILD-05",
+        "UR-BUILD-06",
+        "UR-BUILD-07"
+      ],
+      "acceptance_aliases": [
+        "UC-BUILD-01",
+        "UC-BUILD-02",
+        "UC-BUILD-03",
+        "UC-BUILD-04",
+        "UC-BUILD-05",
+        "UC-BUILD-06",
+        "UC-BUILD-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 118,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/engineering/module-and-implementation-boundaries.md",
+      "source_member_sha256": "81726f6b3b396673eaf40b48e9f4d95c12d92a903b458f09180544919e9735e4",
+      "source_member_size_bytes": 6697,
+      "destination": "specs/control-plane/engineering/module-and-implementation-boundaries.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "501b6373ec5ee1db45d01e4d9e0c94d06cb1aeca1d63037f3f6f09ab604be33d",
+      "title": "Implementation boundaries and modularity",
+      "requirement_aliases": [
+        "UR-ARCH-01",
+        "UR-ARCH-02",
+        "UR-ARCH-03",
+        "UR-ARCH-04",
+        "UR-ARCH-05",
+        "UR-ARCH-06",
+        "UR-ARCH-07"
+      ],
+      "acceptance_aliases": [
+        "UC-ARCH-01",
+        "UC-ARCH-02",
+        "UC-ARCH-03",
+        "UC-ARCH-04",
+        "UC-ARCH-05",
+        "UC-ARCH-06",
+        "UC-ARCH-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 119,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/engineering/performance-and-resource-planning.md",
+      "source_member_sha256": "3f0697877e0a93c00fee096234caeb2459a7c928bf55a6c39d22c3a8879a9d51",
+      "source_member_size_bytes": 6447,
+      "destination": "specs/control-plane/engineering/performance-and-resource-planning.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "28fcccc9354333922a7da463851be8f3e22ec11b2475e2feebdac98a1a213a8b",
+      "title": "Performance, efficiency and resource planning",
+      "requirement_aliases": [
+        "UR-PERF-01",
+        "UR-PERF-02",
+        "UR-PERF-03",
+        "UR-PERF-04",
+        "UR-PERF-05",
+        "UR-PERF-06"
+      ],
+      "acceptance_aliases": [
+        "UC-PERF-01",
+        "UC-PERF-02",
+        "UC-PERF-03",
+        "UC-PERF-04",
+        "UC-PERF-05",
+        "UC-PERF-06"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 120,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/engineering/security-privacy-and-isolation.md",
+      "source_member_sha256": "1be1bb7b0efeb297be8462d448724aa901fb1e5c099e3a96fafb37dcade5f3c6",
+      "source_member_size_bytes": 7425,
+      "destination": "specs/control-plane/engineering/security-privacy-and-isolation.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "62f28f9439f87dd154dded861da52008006e0220819a79b9112e777d3fc88a55",
+      "title": "Security, privacy and isolation qualification",
+      "requirement_aliases": [
+        "UR-SEC-01",
+        "UR-SEC-02",
+        "UR-SEC-03",
+        "UR-SEC-04",
+        "UR-SEC-05",
+        "UR-SEC-06",
+        "UR-SEC-07",
+        "UR-SEC-08"
+      ],
+      "acceptance_aliases": [
+        "UC-SEC-01",
+        "UC-SEC-02",
+        "UC-SEC-03",
+        "UC-SEC-04",
+        "UC-SEC-05",
+        "UC-SEC-06",
+        "UC-SEC-07",
+        "UC-SEC-08"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 121,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/engineering/self-hosting-and-governance.md",
+      "source_member_sha256": "f253ba57275572e5944a0c78042d7d7db5c4540fe59597d4c94d06b13cd8c4cb",
+      "source_member_size_bytes": 6692,
+      "destination": "specs/control-plane/engineering/self-hosting-and-governance.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "c1e0ecaef4050a8fbab25ca37cef0e744522098422641411d1047602a1656f8f",
+      "title": "Self-hosting, planning and code adoption",
+      "requirement_aliases": [
+        "UR-SELF-01",
+        "UR-SELF-02",
+        "UR-SELF-03",
+        "UR-SELF-04",
+        "UR-SELF-05",
+        "UR-SELF-06",
+        "UR-SELF-07"
+      ],
+      "acceptance_aliases": [
+        "UC-SELF-01",
+        "UC-SELF-02",
+        "UC-SELF-03",
+        "UC-SELF-04",
+        "UC-SELF-05",
+        "UC-SELF-06",
+        "UC-SELF-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 122,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/engineering/test-broker-and-reusable-tests.md",
+      "source_member_sha256": "e9150d09764f3658c1af5ab2fdc167a99db5959c6e02cc585968752e07f7928b",
+      "source_member_size_bytes": 6813,
+      "destination": "specs/control-plane/engineering/test-broker-and-reusable-tests.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "ae5e7de69d7d2119b2d0d7548864af10c079bb1d59e1c07449a7dae20faa2ab5",
+      "title": "Test jobs, reusable test assets and selective validation",
+      "requirement_aliases": [
+        "UR-TEST-01",
+        "UR-TEST-02",
+        "UR-TEST-03",
+        "UR-TEST-04",
+        "UR-TEST-05",
+        "UR-TEST-06",
+        "UR-TEST-07"
+      ],
+      "acceptance_aliases": [
+        "UC-TEST-01",
+        "UC-TEST-02",
+        "UC-TEST-03",
+        "UC-TEST-04",
+        "UC-TEST-05",
+        "UC-TEST-06",
+        "UC-TEST-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 123,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/engineering/verification-and-evidence.md",
+      "source_member_sha256": "f593be3ad79c003b0d15a39eaeb3fcb16b42da87880cafb0d6ab631c5d090a45",
+      "source_member_size_bytes": 7080,
+      "destination": "specs/control-plane/engineering/verification-and-evidence.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "5e80b08274e03129c47c88e07fa9907a823c04d3603343fa66634e4babad7bf7",
+      "title": "Verification, proof claims and evidence",
+      "requirement_aliases": [
+        "UR-VERIFY-01",
+        "UR-VERIFY-02",
+        "UR-VERIFY-03",
+        "UR-VERIFY-04",
+        "UR-VERIFY-05",
+        "UR-VERIFY-06",
+        "UR-VERIFY-07",
+        "UR-VERIFY-08"
+      ],
+      "acceptance_aliases": [
+        "UC-VERIFY-01",
+        "UC-VERIFY-02",
+        "UC-VERIFY-03",
+        "UC-VERIFY-04",
+        "UC-VERIFY-05",
+        "UC-VERIFY-06",
+        "UC-VERIFY-07",
+        "UC-VERIFY-08"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 124,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/experience/operator-workbench-and-accessibility.md",
+      "source_member_sha256": "14f3fcab86abf2721d9da6365353e5dd9cba8344d5d3f091411fbd6cc10ae35c",
+      "source_member_size_bytes": 6684,
+      "destination": "specs/control-plane/experience/operator-workbench-and-accessibility.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "0ce8384acd34378c3e3c78ccf793d142d4a13bf5275eaab64e1fdaffc984bb15",
+      "title": "Operator experience, Workbench and accessibility",
+      "requirement_aliases": [
+        "UR-UX-01",
+        "UR-UX-02",
+        "UR-UX-03",
+        "UR-UX-04",
+        "UR-UX-05",
+        "UR-UX-06",
+        "UR-UX-07"
+      ],
+      "acceptance_aliases": [
+        "UC-UX-01",
+        "UC-UX-02",
+        "UC-UX-03",
+        "UC-UX-04",
+        "UC-UX-05",
+        "UC-UX-06",
+        "UC-UX-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 125,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/experience/workflows-and-operating-profiles.md",
+      "source_member_sha256": "1da1969b872c0afbcf54e8855a332f96d412ff9c68b1ade3f37fc2bf5fe28b03",
+      "source_member_size_bytes": 6182,
+      "destination": "specs/control-plane/experience/workflows-and-operating-profiles.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "c64f95c0435fed2ac20637ed23d9a33b1b3a9ad20e63778a5343c9bf494ddc07",
+      "title": "Workflows, operating profiles and configuration",
+      "requirement_aliases": [
+        "UR-FLOW-01",
+        "UR-FLOW-02",
+        "UR-FLOW-03",
+        "UR-FLOW-04",
+        "UR-FLOW-05",
+        "UR-FLOW-06"
+      ],
+      "acceptance_aliases": [
+        "UC-FLOW-01",
+        "UC-FLOW-02",
+        "UC-FLOW-03",
+        "UC-FLOW-04",
+        "UC-FLOW-05",
+        "UC-FLOW-06"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 126,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/index.md",
+      "source_member_sha256": "314989eaa8b7642abb63af1cb1f24f1e1fa9598c21ea9a2b47f79310eab01a41",
+      "source_member_size_bytes": 8634,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 127,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/interop/domain-bridges-and-portfolio.md",
+      "source_member_sha256": "5e116fe98dfcf34ff1e822e21e9373f8da3e4d00c2add47d0543ce5521e5a4b8",
+      "source_member_size_bytes": 6939,
+      "destination": "specs/control-plane/interop/domain-bridges-and-portfolio.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "51112ddde81e7fae5763f0735683c20dcfda02a39bc53110d3a048c4632a6eef",
+      "title": "Domain bridges and portfolio integration",
+      "requirement_aliases": [
+        "UR-DOMAIN-01",
+        "UR-DOMAIN-02",
+        "UR-DOMAIN-03",
+        "UR-DOMAIN-04",
+        "UR-DOMAIN-05",
+        "UR-DOMAIN-06",
+        "UR-DOMAIN-07"
+      ],
+      "acceptance_aliases": [
+        "UC-DOMAIN-01",
+        "UC-DOMAIN-02",
+        "UC-DOMAIN-03",
+        "UC-DOMAIN-04",
+        "UC-DOMAIN-05",
+        "UC-DOMAIN-06",
+        "UC-DOMAIN-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 128,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/interop/extensions-packages-and-sdk.md",
+      "source_member_sha256": "723490be5088529f297c6f9a8199467c164d9c7b6d2601b7b87ff91b6c3ab4da",
+      "source_member_size_bytes": 6297,
+      "destination": "specs/control-plane/interop/extensions-packages-and-sdk.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "dc897aff675e06c5335b28bbd4d8a49bc8bbe756b6fd7f375c2ca9b56abc7ae0",
+      "title": "Extension packages, roles and SDKs",
+      "requirement_aliases": [
+        "UR-EXT-01",
+        "UR-EXT-02",
+        "UR-EXT-03",
+        "UR-EXT-04",
+        "UR-EXT-05",
+        "UR-EXT-06",
+        "UR-EXT-07"
+      ],
+      "acceptance_aliases": [
+        "UC-EXT-01",
+        "UC-EXT-02",
+        "UC-EXT-03",
+        "UC-EXT-04",
+        "UC-EXT-05",
+        "UC-EXT-06",
+        "UC-EXT-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 129,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/interop/native-and-legacy-hosts.md",
+      "source_member_sha256": "e42b593b5f1fa56324a9f8670f848d9e849cc783f5f33a85c4b09bfc54758871",
+      "source_member_size_bytes": 7008,
+      "destination": "specs/control-plane/interop/native-and-legacy-hosts.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "7f6ea65cd2718935f64f283ce3fd3cacfc47c4daa7baa63feb3bb57dba1aa24c",
+      "title": "Native hosts, legacy relays and offline mailboxes",
+      "requirement_aliases": [
+        "UR-NATIVE-01",
+        "UR-NATIVE-02",
+        "UR-NATIVE-03",
+        "UR-NATIVE-04",
+        "UR-NATIVE-05",
+        "UR-NATIVE-06",
+        "UR-NATIVE-07"
+      ],
+      "acceptance_aliases": [
+        "UC-NATIVE-01",
+        "UC-NATIVE-02",
+        "UC-NATIVE-03",
+        "UC-NATIVE-04",
+        "UC-NATIVE-05",
+        "UC-NATIVE-06",
+        "UC-NATIVE-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 130,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/interop/standards-and-translation.md",
+      "source_member_sha256": "6cdecdb241de0a62975eb90d9d751bd1efe8e16cd3554c04ed2c622665d817c9",
+      "source_member_size_bytes": 7147,
+      "destination": "specs/control-plane/interop/standards-and-translation.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "cf38e9513a66c5ce8b878303b5a80a5113810c363630a4c34b8496de75241783",
+      "title": "Standards profiles and loss-aware translation",
+      "requirement_aliases": [
+        "UR-INTEROP-01",
+        "UR-INTEROP-02",
+        "UR-INTEROP-03",
+        "UR-INTEROP-04",
+        "UR-INTEROP-05",
+        "UR-INTEROP-06",
+        "UR-INTEROP-07"
+      ],
+      "acceptance_aliases": [
+        "UC-INTEROP-01",
+        "UC-INTEROP-02",
+        "UC-INTEROP-03",
+        "UC-INTEROP-04",
+        "UC-INTEROP-05",
+        "UC-INTEROP-06",
+        "UC-INTEROP-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 131,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/knowledge/after-action-learning.md",
+      "source_member_sha256": "edbd69193a1d80c9822e97e3b4d61fdb358cc2d6af0aab5367638326c6da1929",
+      "source_member_size_bytes": 6338,
+      "destination": "specs/control-plane/knowledge/after-action-learning.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "2078634e547804b761c77f01af03ff8eedb9d0d550443897499a3f6ad8c16fe9",
+      "title": "After-action reviews and improvement effectiveness",
+      "requirement_aliases": [
+        "UR-LEARN-01",
+        "UR-LEARN-02",
+        "UR-LEARN-03",
+        "UR-LEARN-04",
+        "UR-LEARN-05",
+        "UR-LEARN-06"
+      ],
+      "acceptance_aliases": [
+        "UC-LEARN-01",
+        "UC-LEARN-02",
+        "UC-LEARN-03",
+        "UC-LEARN-04",
+        "UC-LEARN-05",
+        "UC-LEARN-06"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 132,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/knowledge/context-compilation.md",
+      "source_member_sha256": "eba4d9eaae16a340813ff719e20bba23a5127e18b42a5b4b4d82d270cc1d9fd3",
+      "source_member_size_bytes": 6652,
+      "destination": "specs/control-plane/knowledge/context-compilation.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "50033ed128e4a34d8241188dbaaba59f11261fa0fe32f12babd670753fb87a29",
+      "title": "Context compilation and handoffs",
+      "requirement_aliases": [
+        "UR-CTX-01",
+        "UR-CTX-02",
+        "UR-CTX-03",
+        "UR-CTX-04",
+        "UR-CTX-05",
+        "UR-CTX-06",
+        "UR-CTX-07"
+      ],
+      "acceptance_aliases": [
+        "UC-CTX-01",
+        "UC-CTX-02",
+        "UC-CTX-03",
+        "UC-CTX-04",
+        "UC-CTX-05",
+        "UC-CTX-06",
+        "UC-CTX-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 133,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/knowledge/okf-engineering-profile.md",
+      "source_member_sha256": "e963883ccdfe5bf4552f1564feea0a96f24b28a5fbca0e5d9bbb6269a0b0d39f",
+      "source_member_size_bytes": 7596,
+      "destination": "specs/control-plane/knowledge/okf-engineering-profile.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "780616ebc9f204e20dcfea613123ac450e5d5a6af9a13f5ef333b2154662a9a0",
+      "title": "OKF engineering profile and document codec",
+      "requirement_aliases": [
+        "UR-OKF-01",
+        "UR-OKF-02",
+        "UR-OKF-03",
+        "UR-OKF-04",
+        "UR-OKF-05",
+        "UR-OKF-06",
+        "UR-OKF-07",
+        "UR-OKF-08"
+      ],
+      "acceptance_aliases": [
+        "UC-OKF-01",
+        "UC-OKF-02",
+        "UC-OKF-03",
+        "UC-OKF-04",
+        "UC-OKF-05",
+        "UC-OKF-06",
+        "UC-OKF-07",
+        "UC-OKF-08"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 134,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/knowledge/project-graph-and-impact.md",
+      "source_member_sha256": "6642b0b118dba3ca21599c468f67e08adc23cf878a5051f62ee6fd11a9533b24",
+      "source_member_size_bytes": 6756,
+      "destination": "specs/control-plane/knowledge/project-graph-and-impact.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "302e96984bf23445aa2c28d0d2d6649e6e2cd23cb137a5bc141983f07223f3be",
+      "title": "ProjectGraph, provenance and impact",
+      "requirement_aliases": [
+        "UR-GRAPH-01",
+        "UR-GRAPH-02",
+        "UR-GRAPH-03",
+        "UR-GRAPH-04",
+        "UR-GRAPH-05",
+        "UR-GRAPH-06",
+        "UR-GRAPH-07"
+      ],
+      "acceptance_aliases": [
+        "UC-GRAPH-01",
+        "UC-GRAPH-02",
+        "UC-GRAPH-03",
+        "UC-GRAPH-04",
+        "UC-GRAPH-05",
+        "UC-GRAPH-06",
+        "UC-GRAPH-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 135,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/knowledge/structure-purpose-and-reuse.md",
+      "source_member_sha256": "22c53bfe9178ce46ff3d99d881d58bd672e20dda93cfea78bd4d1e0381b77291",
+      "source_member_size_bytes": 6789,
+      "destination": "specs/control-plane/knowledge/structure-purpose-and-reuse.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "de8958cc1e89657a0b28ee4cbb4e3b6bdc067f1147137a647af5cb8eb7c00b4a",
+      "title": "Structure, naming, purpose and safe reuse",
+      "requirement_aliases": [
+        "UR-STRUCT-01",
+        "UR-STRUCT-02",
+        "UR-STRUCT-03",
+        "UR-STRUCT-04",
+        "UR-STRUCT-05",
+        "UR-STRUCT-06",
+        "UR-STRUCT-07"
+      ],
+      "acceptance_aliases": [
+        "UC-STRUCT-01",
+        "UC-STRUCT-02",
+        "UC-STRUCT-03",
+        "UC-STRUCT-04",
+        "UC-STRUCT-05",
+        "UC-STRUCT-06",
+        "UC-STRUCT-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 136,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/knowledge/work-product-conservation.md",
+      "source_member_sha256": "96de5734f1a744ce8593c1b1242e66ddf6597921f774f8ff30ff2e5920e6a960",
+      "source_member_size_bytes": 6757,
+      "destination": "specs/control-plane/knowledge/work-product-conservation.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "7e18bdd896ebf43330346e009527cb5a38413e43c34f5ece60cee4a708ac87da",
+      "title": "Work-product conservation and harvest",
+      "requirement_aliases": [
+        "UR-HARV-01",
+        "UR-HARV-02",
+        "UR-HARV-03",
+        "UR-HARV-04",
+        "UR-HARV-05",
+        "UR-HARV-06",
+        "UR-HARV-07"
+      ],
+      "acceptance_aliases": [
+        "UC-HARV-01",
+        "UC-HARV-02",
+        "UC-HARV-03",
+        "UC-HARV-04",
+        "UC-HARV-05",
+        "UC-HARV-06",
+        "UC-HARV-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 137,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/lifecycle/brownfield-adoption-and-ownership.md",
+      "source_member_sha256": "bb881f94b0259242dc808d624dbc7be8e542825192223c072088629950364424",
+      "source_member_size_bytes": 6867,
+      "destination": "specs/control-plane/lifecycle/brownfield-adoption-and-ownership.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "2fb6d9b1ed36293addcd78c963a24f02d687f8a49195abf03b6c3e154f66b1ac",
+      "title": "Brownfield adoption and ownership",
+      "requirement_aliases": [
+        "UR-ADOPT-01",
+        "UR-ADOPT-02",
+        "UR-ADOPT-03",
+        "UR-ADOPT-04",
+        "UR-ADOPT-05",
+        "UR-ADOPT-06",
+        "UR-ADOPT-07"
+      ],
+      "acceptance_aliases": [
+        "UC-ADOPT-01",
+        "UC-ADOPT-02",
+        "UC-ADOPT-03",
+        "UC-ADOPT-04",
+        "UC-ADOPT-05",
+        "UC-ADOPT-06",
+        "UC-ADOPT-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 138,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/lifecycle/install-update-repair-removal.md",
+      "source_member_sha256": "d57c5ac0cff8e650178a90b174d5a1c8b5029a191d6788a8979af4459669a3d0",
+      "source_member_size_bytes": 7183,
+      "destination": "specs/control-plane/lifecycle/install-update-repair-removal.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "2b4d3f1bea44c1140a47b537038892b1bea0a9f2ddfe4bff4cc515529db61c1e",
+      "title": "Install, update, repair, rollback and removal",
+      "requirement_aliases": [
+        "UR-UPDATE-01",
+        "UR-UPDATE-02",
+        "UR-UPDATE-03",
+        "UR-UPDATE-04",
+        "UR-UPDATE-05",
+        "UR-UPDATE-06",
+        "UR-UPDATE-07",
+        "UR-UPDATE-08"
+      ],
+      "acceptance_aliases": [
+        "UC-UPDATE-01",
+        "UC-UPDATE-02",
+        "UC-UPDATE-03",
+        "UC-UPDATE-04",
+        "UC-UPDATE-05",
+        "UC-UPDATE-06",
+        "UC-UPDATE-07",
+        "UC-UPDATE-08"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 139,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/lifecycle/releases-support-and-backports.md",
+      "source_member_sha256": "450f165759e8e14fa46cfdba5377d2eeaf6b7deb939288c212f9d3f564ef3c86",
+      "source_member_size_bytes": 7076,
+      "destination": "specs/control-plane/lifecycle/releases-support-and-backports.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "f0ac8d8d1744f4e8b92f3877d23a0848c9664d719539a616717c4f859673e001",
+      "title": "Releases, support and backports",
+      "requirement_aliases": [
+        "UR-REL-01",
+        "UR-REL-02",
+        "UR-REL-03",
+        "UR-REL-04",
+        "UR-REL-05",
+        "UR-REL-06",
+        "UR-REL-07",
+        "UR-REL-08"
+      ],
+      "acceptance_aliases": [
+        "UC-REL-01",
+        "UC-REL-02",
+        "UC-REL-03",
+        "UC-REL-04",
+        "UC-REL-05",
+        "UC-REL-06",
+        "UC-REL-07",
+        "UC-REL-08"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 140,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/lifecycle/workspaces-storage-and-retention.md",
+      "source_member_sha256": "dba802f479e2da185e1652386370df69ab5ae6fae3e778b023599e8dc66bb77c",
+      "source_member_size_bytes": 5951,
+      "destination": "specs/control-plane/lifecycle/workspaces-storage-and-retention.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "fb752148a24a8eeb1216dad347d4574cc778263651e5c2d459c8f68e025fe4b0",
+      "title": "Workspace estate, storage and retirement",
+      "requirement_aliases": [
+        "UR-ESTATE-01",
+        "UR-ESTATE-02",
+        "UR-ESTATE-03",
+        "UR-ESTATE-04",
+        "UR-ESTATE-05",
+        "UR-ESTATE-06"
+      ],
+      "acceptance_aliases": [
+        "UC-ESTATE-01",
+        "UC-ESTATE-02",
+        "UC-ESTATE-03",
+        "UC-ESTATE-04",
+        "UC-ESTATE-05",
+        "UC-ESTATE-06"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 141,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/log.md",
+      "source_member_sha256": "7414cb0f15b5dbff5fd4a2243edea3f3690697aba8da99415e7a3c850780e983",
+      "source_member_size_bytes": 239,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 142,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/optimization/cache-and-evidence-reuse.md",
+      "source_member_sha256": "751bf15f87daabf24225ec3d669ce283e7e58890c8c5e3d19686129499c211dd",
+      "source_member_size_bytes": 6763,
+      "destination": "specs/control-plane/optimization/cache-and-evidence-reuse.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "3dcafb5b539310a1092680e2518081b77322bb97ee32f77242e11298fdd1ae16",
+      "title": "Cache classes, validity and evidence reuse",
+      "requirement_aliases": [
+        "UR-CACHE-01",
+        "UR-CACHE-02",
+        "UR-CACHE-03",
+        "UR-CACHE-04",
+        "UR-CACHE-05",
+        "UR-CACHE-06",
+        "UR-CACHE-07"
+      ],
+      "acceptance_aliases": [
+        "UC-CACHE-01",
+        "UC-CACHE-02",
+        "UC-CACHE-03",
+        "UC-CACHE-04",
+        "UC-CACHE-05",
+        "UC-CACHE-06",
+        "UC-CACHE-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 143,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/optimization/model-effort-and-delegation.md",
+      "source_member_sha256": "0cd226decafc2ebb5ea9a3562f0437db8c0a07fea4e0c2c5cb9e02176b44130d",
+      "source_member_size_bytes": 7279,
+      "destination": "specs/control-plane/optimization/model-effort-and-delegation.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "2266fa6c65e1a5c3a87c82a9cb4344e4c34b41ff3254190e22cb445e9a326fbe",
+      "title": "Model, effort and execution-recipe routing",
+      "requirement_aliases": [
+        "UR-ROUTE-01",
+        "UR-ROUTE-02",
+        "UR-ROUTE-03",
+        "UR-ROUTE-04",
+        "UR-ROUTE-05",
+        "UR-ROUTE-06",
+        "UR-ROUTE-07",
+        "UR-ROUTE-08"
+      ],
+      "acceptance_aliases": [
+        "UC-ROUTE-01",
+        "UC-ROUTE-02",
+        "UC-ROUTE-03",
+        "UC-ROUTE-04",
+        "UC-ROUTE-05",
+        "UC-ROUTE-06",
+        "UC-ROUTE-07",
+        "UC-ROUTE-08"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 144,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/optimization/usage-budgets-and-economics.md",
+      "source_member_sha256": "46c11a740f6c4fcc2e5fb6adc8182923b1ca2921b0296d9b19a13e186460570a",
+      "source_member_size_bytes": 7058,
+      "destination": "specs/control-plane/optimization/usage-budgets-and-economics.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "69ccad95a6c57797d2ebf2d180c0afed8659c85d68c1e497f8d2ae5be50d87b8",
+      "title": "Usage, aggregate budgets and accepted-outcome cost",
+      "requirement_aliases": [
+        "UR-COST-01",
+        "UR-COST-02",
+        "UR-COST-03",
+        "UR-COST-04",
+        "UR-COST-05",
+        "UR-COST-06",
+        "UR-COST-07",
+        "UR-COST-08"
+      ],
+      "acceptance_aliases": [
+        "UC-COST-01",
+        "UC-COST-02",
+        "UC-COST-03",
+        "UC-COST-04",
+        "UC-COST-05",
+        "UC-COST-06",
+        "UC-COST-07",
+        "UC-COST-08"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 145,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/product/scope-and-profiles.md",
+      "source_member_sha256": "ee99013a19e3dead3b94af42121cbf03ab2501d8d5312a7f63f9c43e1c821ba3",
+      "source_member_size_bytes": 7223,
+      "destination": "specs/control-plane/product/scope-and-profiles.md",
+      "disposition": "preserve_existing_adopted_version",
+      "destination_sha256": "df185d5fd3b68025b84ae2118b3a67b593aeac6b48686a115073241c9f3d7635",
+      "semantic_equivalence": "not_asserted"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 146,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/README.md",
+      "source_member_sha256": "e067ddb031583474315c8548fd19e7a48fe92e2f6a0d6a0f922e3fd6ae6497e0",
+      "source_member_size_bytes": 1369,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 147,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/acceptance-cases.json",
+      "source_member_sha256": "8cefc6085c28d05762ea79335cfc8c33e2a92ba698741707d8274dd395328904",
+      "source_member_size_bytes": 214940,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 148,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/acceptance-cases.md",
+      "source_member_sha256": "b87e006ba74c8337dcb64a23c0217f110e719e62b610a19cb139213a019665b5",
+      "source_member_size_bytes": 93999,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 149,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/acceptance-cases.schema.json",
+      "source_member_sha256": "41f7874f136bf1fcafa640eeb6922e7ec8cd5093f5537416206356e4ef0d0757",
+      "source_member_size_bytes": 1701,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 150,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/decisions.json",
+      "source_member_sha256": "8cd978c29e9bb66b8ec50b7bdb6129574053488ba89c1cc5cc6e310ed65b4c10",
+      "source_member_size_bytes": 23445,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 151,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/decisions.md",
+      "source_member_sha256": "6fb0c3c2f8bb98cafb07149aab691871613447f4e87aa837a64e2b2f3d308008",
+      "source_member_size_bytes": 16352,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 152,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/requirements.json",
+      "source_member_sha256": "969a705ee4dd66b6a7e33dd188506fc752f9f124241ab7db357fcd62a5785e21",
+      "source_member_size_bytes": 206581,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 153,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/requirements.md",
+      "source_member_sha256": "c574f4f8e316e9a8e3d5a10bee2aafa5e3927b86193d611863a576338cc4107e",
+      "source_member_size_bytes": 70579,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 154,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/requirements.schema.json",
+      "source_member_sha256": "c32c89cffaa7579a5ada77807d7e576e0ba4bc23d061fe4b8075fa0cb31b7c24",
+      "source_member_size_bytes": 1985,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 155,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/registers/source-mapping.json",
+      "source_member_sha256": "b854c7a4ad434755081452e8029febc64cc07a99252e9ef8c45dca4f3db3549f",
+      "source_member_size_bytes": 602824,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 156,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/roadmap/current-baseline.md",
+      "source_member_sha256": "5504122d46d8a35873054815eb0609c86ed81346c7cb2f336e71a073cf0d7b29",
+      "source_member_size_bytes": 7087,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 157,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/roadmap/delivery-plan.md",
+      "source_member_sha256": "0a0c42a4d0776bbddc45297dbe6e1061c7d9493eb95045305cf541621d39d125",
+      "source_member_size_bytes": 12819,
+      "destination": null,
+      "disposition": "retain_external_not_imported",
+      "reason": "Outdated roadmap/status, duplicate navigation/history, or bulk proposal register; not required to read inline draft contracts"
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 158,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/runtime/durability-and-storage.md",
+      "source_member_sha256": "f3b75bee30169fc628e85c53836c07326358ba1488fdcb63b280977000c857d1",
+      "source_member_size_bytes": 6834,
+      "destination": "specs/control-plane/runtime/durability-and-storage.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "161e57702723001ff94963aefbd247a02c5c53a458d510efb11f93761f943eaf",
+      "title": "Local durability, events and artifact storage",
+      "requirement_aliases": [
+        "UR-SERVICE-01",
+        "UR-SERVICE-02",
+        "UR-SERVICE-03",
+        "UR-SERVICE-04",
+        "UR-SERVICE-05",
+        "UR-SERVICE-06",
+        "UR-SERVICE-07"
+      ],
+      "acceptance_aliases": [
+        "UC-SERVICE-01",
+        "UC-SERVICE-02",
+        "UC-SERVICE-03",
+        "UC-SERVICE-04",
+        "UC-SERVICE-05",
+        "UC-SERVICE-06",
+        "UC-SERVICE-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 159,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/runtime/integration-broker-and-closeout.md",
+      "source_member_sha256": "1742f97c328df007897bc0349d0b93733033e88e34fabbb06a764d967e9197ba",
+      "source_member_size_bytes": 7170,
+      "destination": "specs/control-plane/runtime/integration-broker-and-closeout.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "e11ea4a0f3ef1e92f16e489dbab2b26bd5ef8792f85c15fc908b8758adf78acd",
+      "title": "Integration broker and authoritative closeout",
+      "requirement_aliases": [
+        "UR-INT-01",
+        "UR-INT-02",
+        "UR-INT-03",
+        "UR-INT-04",
+        "UR-INT-05",
+        "UR-INT-06",
+        "UR-INT-07",
+        "UR-INT-08"
+      ],
+      "acceptance_aliases": [
+        "UC-INT-01",
+        "UC-INT-02",
+        "UC-INT-03",
+        "UC-INT-04",
+        "UC-INT-05",
+        "UC-INT-06",
+        "UC-INT-07",
+        "UC-INT-08"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 160,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/runtime/recovery-and-uncertain-effects.md",
+      "source_member_sha256": "ae6309af0907d0308c4a0c53483102b1e0deefd76018afe41b9b279db283b338",
+      "source_member_size_bytes": 6873,
+      "destination": "specs/control-plane/runtime/recovery-and-uncertain-effects.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "1fd31e4d353b7b43914aecb4f91b67b1f5fcfe3926e1b517d4a4c65f7ab6bd8f",
+      "title": "Recovery, cancellation and uncertain effects",
+      "requirement_aliases": [
+        "UR-REC-01",
+        "UR-REC-02",
+        "UR-REC-03",
+        "UR-REC-04",
+        "UR-REC-05",
+        "UR-REC-06",
+        "UR-REC-07"
+      ],
+      "acceptance_aliases": [
+        "UC-REC-01",
+        "UC-REC-02",
+        "UC-REC-03",
+        "UC-REC-04",
+        "UC-REC-05",
+        "UC-REC-06",
+        "UC-REC-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    },
+    {
+      "source_archive_sha256": "61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c",
+      "source_member_ordinal": 161,
+      "source_member": "AIDE-Unified-Specification-2026-09-20/repo-overlay/specs/control-plane/runtime/supervision-and-continuity.md",
+      "source_member_sha256": "8c9fb77ff517769dcb2a5a9dc2c33aef9890f2c7c8457e848af7f6902ab48dbb",
+      "source_member_size_bytes": 6462,
+      "destination": "specs/control-plane/runtime/supervision-and-continuity.md",
+      "disposition": "import_as_explicit_draft",
+      "destination_sha256": "0c00e7417db874e28301fc45dd06ac4ad196377f1cc89542db6e4a0a91f15bc1",
+      "title": "Supervision, durable controls and continuity",
+      "requirement_aliases": [
+        "UR-SUP-01",
+        "UR-SUP-02",
+        "UR-SUP-03",
+        "UR-SUP-04",
+        "UR-SUP-05",
+        "UR-SUP-06",
+        "UR-SUP-07"
+      ],
+      "acceptance_aliases": [
+        "UC-SUP-01",
+        "UC-SUP-02",
+        "UC-SUP-03",
+        "UC-SUP-04",
+        "UC-SUP-05",
+        "UC-SUP-06",
+        "UC-SUP-07"
+      ],
+      "transformations": [
+        "Insert draft/preference notice after H1",
+        "Replace links to withheld bulk registers with local import index"
+      ]
+    }
+  ]
+}

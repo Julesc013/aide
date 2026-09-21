@@ -3290,3 +3290,53 @@ items:
     exec_plan: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/evidence
+  - id: AIDE-CONVERGENCE-AND-DELIVERY-01
+    status: running
+    planning_state: execution_active
+    result: PENDING
+    title: Converge, qualify, and deliver AIDE through bounded reviewed work
+    task: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/prompt.md
+    evidence: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence
+    description: Owner-admitted umbrella for preservation, source convergence, bounded implementation, qualified integration, and eventual exact-candidate release. Each implementation effect requires a bounded child WorkUnit; main promotion, tags, uploads, publication, destructive cleanup, machine configuration, secrets, and target-repository mutation retain their applicable gates.
+  - id: AIDE-SPEC-CONVERGENCE-FOUNDATION-01
+    status: passed
+    planning_state: implemented
+    result: PASS
+    title: Establish the first reviewed control-plane specification foundation
+    task: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/prompt.md
+    evidence: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/evidence
+    description: Keep private source archives external and adopt a small source-traceable control-plane foundation into the live specs tree without applying the unified overlay wholesale.
+  - id: AIDE-SPEC-WORK-EFFECT-IDENTITY-01
+    status: passed
+    planning_state: implemented
+    result: PASS
+    title: Adopt work, effect, and identity control-plane contracts
+    task: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/prompt.md
+    evidence: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/evidence
+    description: Adopt source-traceable work, attempt, capability-effect, and identity-digest contracts while preserving current queue, schema, architecture, policy, and operational authority.
+  - id: AIDE-SPEC-DRAFT-IMPORT-01
+    status: passed
+    planning_state: implemented
+    result: PASS
+    title: Import the remaining control-plane chapters as explicit drafts
+    task: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/prompt.md
+    evidence: .aide/queue/AIDE-SPEC-DRAFT-IMPORT-01/evidence
+    description: Place the verified generated design prose in specs as explicit proposed drafts while preserving all adopted contracts and operational authority.
+  - id: AIDE-SPEC-DOCS-INTEGRATION-01
+    status: running
+    planning_state: execution_active
+    result: PENDING
+    title: Qualify and integrate the completed specification documentation
+    task: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-SPEC-DOCS-INTEGRATION-01/evidence
+    description: Build a documentation-only candidate from current dev, prove its specification and provenance closure, and integrate only that qualified candidate without carrying unfinished runtime work.

@@ -1,0 +1,68 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Converge, qualify, and deliver AIDE through bounded reviewed work
+type: programme
+status: running
+planning_state: execution_active
+result: PENDING
+review_gate: admitted_by_owner
+created_at: 2026-09-21
+updated_at: 2026-09-21
+authorizes_implementation: true
+approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
+authorization_basis: >
+  The owner explicitly approved continued execution after receiving the exact
+  admission candidate and directed frequent detailed commits plus publication
+  of recoverable branch state. Child WorkUnits and all retained consequential
+  gates remain binding.
+objective: >
+  Preserve every initial contribution, reconcile verified private source
+  material into live AIDE truth in reviewable increments, continue existing
+  implementations, integrate only qualified work, and prepare an honestly
+  scoped release without weakening existing gates.
+repository:
+  path: D:/Projects/AIDE/aide
+  initial_head: 2a44f17eb7232757133df549ac6fc519d535e71b
+external_custody:
+  action_pack_sha256: 13c4975eefbbe8c4e088f83f3cbf405cb5ca99a95c4e8678568163e03286b2c9
+  recovery_snapshot_private: true
+  private_payload_committed: false
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/**
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/queue/index.yaml
+  read_only_paths:
+    - .aide/queue/**
+    - .aide/policies/**
+    - .aide/reports/**
+    - .codex/**
+    - specs/**
+    - docs/**
+    - core/**
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  forbidden_paths:
+    - C:/Users/Jules/.codex/**
+    - .aide.local/**
+    - .github/**
+    - target repositories
+allowed_operations_after_admission:
+  - coordinate separately admitted child WorkUnits
+  - preserve and classify current AIDE work
+  - prepare exact candidate-bound review packets
+  - continue independent read-only audit and verification
+retained_gates:
+  - every implementation slice requires a bounded child WorkUnit
+  - queue and policy changes require exact review
+  - merge to main requires exact candidate review
+  - tags, release assets, uploads, and publication require exact release review
+  - no force push, history rewrite, blanket deletion, or worktree pruning
+  - no secret access or machine-wide configuration changes
+  - no model, provider, effort, permission, sandbox, search, or service-tier pins
+  - no mutation of other repositories
+first_child_candidate: AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01

@@ -1,0 +1,15 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-SPEC-DOCS-INTEGRATION-01
+status: running
+classification: candidate_qualified
+planning_state: integration_ready
+result: PENDING
+updated_at: 2026-09-21
+current_slice: publish_qualified_candidate
+next_slice: fast_forward_current_dev_and_revalidate
+notes:
+  - Owner direction authorizes the bounded documentation task branch and qualified dev integration.
+  - Main promotion, tags, releases, and publication remain outside this WorkUnit.
+  - The mixed broker branch remains preserved and must not be merged as the documentation candidate.
+  - All 40 manifest-bound destination hashes, 127 relative links, and the repository validation pass.
+  - The package pre-import checker is inapplicable after materialization and refused expected post-import collisions.
