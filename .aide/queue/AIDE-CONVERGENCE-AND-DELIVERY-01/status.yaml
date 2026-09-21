@@ -14,6 +14,7 @@ notes:
   - Initial repository inventory and an externally verified recovery snapshot exist.
   - Repository hygiene and the three specification placement/adoption increments passed and were published.
   - Documentation integration passed independently on dev at 237ae8c49adce2b2e3232d83e6a3289fd9f4d6f3.
+  - The observation-bound broker dispatch child passed and was published at 0e942d7e55b7f12fc384f5df44fc8cb4c40017a4.
   - Broker and isolated-host qualification continue as separate unfinished streams on their published task branch.
   - The compiled intent is destructive, split-required, and unsafe as one WorkUnit.
   - This programme coordinates bounded child WorkUnits; retained merge, release, publication, deletion, and secret gates still apply.

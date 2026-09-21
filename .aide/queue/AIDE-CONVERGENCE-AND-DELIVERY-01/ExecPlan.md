@@ -80,7 +80,8 @@ their identities, verification result, and limitations.
 - [x] First bounded child WorkUnit was admitted and completed.
 - [x] Repository hygiene and specification placement increments completed.
 - [x] Documentation-only integration candidate is qualified and integrated to `dev`.
-- [ ] Next bounded implementation or qualification slice advances.
+- [x] Next bounded implementation or qualification slice advances.
+- [ ] Continue operational broker, protected-host, and target qualification.
 
 ## Discoveries And Decisions
 
@@ -94,9 +95,11 @@ their identities, verification result, and limitations.
   again; later effect-specific gates remain binding.
 - Root planning and documentation files already contain unrelated dirty work,
   so the original admission did not edit them.
-- The hygiene task and three specification increments are complete. Their
-  evidence remains authoritative history, while documentation integration now
-  proceeds under `AIDE-SPEC-DOCS-INTEGRATION-01`.
+- The hygiene task, three specification increments, and documentation-only
+  integration are complete. Their evidence remains authoritative history.
+- `AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01` passed all 120 executed affected
+  tests, with one privilege-dependent symlink case skipped. It closes the exact
+  observation-to-child binding only; the parent broker remains running.
 
 ## Recovery And Resumption
 
@@ -112,4 +115,7 @@ Bounded child execution is active. The completed specifications were integrated
 independently to `dev` at `237ae8c49adce2b2e3232d83e6a3289fd9f4d6f3`.
 No main promotion, tag, release, or public publication has occurred. The next
 campaign route is the existing unfinished broker stream, with isolated-host and
-target qualification retained as separate dependencies.
+target qualification retained as separate dependencies. The first post-docs
+implementation child is published at
+`0e942d7e55b7f12fc384f5df44fc8cb4c40017a4`; its passing status does not close
+the parent broker or authorize operational effects.
