@@ -35,6 +35,9 @@ scope:
     - removal of unique evidence
     - history rewrite or force push
     - treating orphan or drop candidates as deletion approval
+  authorized_operations:
+    - literal removal of the approved 506-file untracked archive-duplicate manifest
+    - prune only the stale aide-screensave-pack worktree registration after reachability and dry-run checks
 verification:
   - verify loose custody bytes against tracked archive manifests and ZIP entries
   - inventory tracked kinds, owners, sizes, duplicates, and generated paths
