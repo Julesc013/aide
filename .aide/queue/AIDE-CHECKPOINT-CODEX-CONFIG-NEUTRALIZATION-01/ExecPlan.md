@@ -23,7 +23,7 @@ operator-selected model or execution settings.
 - [x] Remove repository execution-setting pins.
 - [x] Preserve minimal role descriptions.
 - [x] Complete bounded verification.
-- [ ] Commit and publish the checkpoint branch.
+- [x] Commit the checkpoint; campaign publication follows with the closeout commit.
 
 ## Verification Intent
 
@@ -32,4 +32,4 @@ startup, and check the bounded diff for whitespace errors.
 
 ## Blockers
 
-None for the local checkpoint. Branch integration remains governed separately.
+None for the completed checkpoint. Branch integration remains governed separately.
