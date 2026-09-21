@@ -1,0 +1,46 @@
+schema_version: aide.queue-task.v0
+id: AIDE-SPEC-WORK-EFFECT-IDENTITY-01
+title: Adopt work, effect, and identity control-plane contracts
+type: execution
+status: passed
+planning_state: implemented
+result: PASS
+created_at: 2026-09-21
+updated_at: 2026-09-21
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-SPEC-CONVERGENCE-FOUNDATION-01
+objective: >
+  Adopt the next source-traceable control-plane contract family for durable
+  work attempts, capability effects, and qualified identities without copying
+  generated candidate overlays or changing runtime authority.
+authority_basis: >
+  The owner requested a modern, navigable specification tree and authorized
+  continued convergence work under the admitted parent campaign.
+scope:
+  allowed_paths:
+    - specs/control-plane/**
+    - docs/reference/unified-spec-status.md
+    - DOCUMENTATION.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/**
+    - .aide/queue/index.yaml
+  preserved_paths:
+    - specs/architecture/**
+    - specs/boot-slice/**
+  forbidden_paths:
+    - D:/Projects/AIDE/_handoffs/**
+    - C:/Users/Jules/.codex/**
+  forbidden_operations:
+    - extracting a private archive over the repository
+    - applying the unified overlay wholesale
+    - importing generated bulk registers
+    - changing existing queue or wire schemas
+    - claiming implementation, qualification, activation, or support from design text
+verification:
+  - record source aliases and live requirement dispositions
+  - validate local Markdown links and navigation
+  - confirm preserved specification families have no diff
+  - scan maturity and effect-authority language
+  - validate queue records and the bounded Git diff

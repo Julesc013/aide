@@ -31,6 +31,9 @@ these facts.
 
 - [Authority and decision provenance](contracts/authority-and-decision-provenance.md)
 - [Status and outcome dimensions](contracts/status-and-outcome-dimensions.md)
+- [WorkUnits, attempts, and decomposition](contracts/work-attempts-and-decomposition.md)
+- [Capability invocation and effects](contracts/capability-invocation-and-effects.md)
+- [Identity, references, and digests](contracts/identity-references-and-digests.md)
 
 ## Preserved Related Contracts
 
@@ -40,11 +43,10 @@ these facts.
 
 ## Deferred Families
 
-Work, attempts, effects, identity, compatibility, trust, lifecycle, knowledge,
-optimization, interop, experience, and runtime families remain in reviewed
-source custody until each family receives a live disposition. Candidate bulk
-registers are not copied into this directory merely because they validate as a
-package.
+Recovery, compatibility, trust, lifecycle, knowledge, optimization, interop,
+experience, and runtime families remain in reviewed source custody until each
+family receives a live disposition. Candidate bulk registers are not copied
+into this directory merely because they validate as a package.
 
 ## Operational Boundary
 

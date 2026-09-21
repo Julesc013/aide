@@ -3515,3 +3515,13 @@ remain unqualified. No selected DLL mappings, image copies or grants occurred.
   input effect is not replayable, and full closure/private loading remain open.
 - AIDE-CW-ISOLATED-HOST-01: implement task-owned two-API feasibility source and
   injected tests under h2-resource-source-plan.md; actual mappings stay gated.
+
+## Specification convergence: work, effects, and identity
+
+`AIDE-SPEC-WORK-EFFECT-IDENTITY-01` extends the adopted control-plane
+foundation with bounded WorkUnit/attempt, capability/effect, and
+identity/digest contracts. The private S21 package remains external review
+input. The slice changes no queue or wire schema, grants no runtime authority,
+and records desired acceptance cases as not run. Navigation, source
+dispositions, preserved-path checks, and queue validation are required before
+the increment is treated as complete.

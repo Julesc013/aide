@@ -11092,3 +11092,16 @@ OS/controller provenance or operational activation is claimed.
 Continue from local N1 checkpoint 2a44f17e with three task-owned resource probe/
 controller/test files. Reuse reviewed observer and N1 mechanisms; no actual
 DLL mapping, image or grant effect is part of this source implementation.
+
+## 2026-09-21 - Control-plane work, effect, and identity contracts
+
+- Added live desired-state contracts for WorkUnits and immutable attempts,
+  capability invocation and effect declarations, and qualified identities and
+  digests.
+- Replaced candidate `UR-*` authority with attributable source aliases and
+  stable live `AIDE-WORK-*`, `AIDE-CAP-*`, and `AIDE-ID-*` requirement IDs.
+- Preserved the filesystem queue, existing schemas, architecture, boot-slice,
+  policy, and review gates; no runtime capability or behavioral qualification
+  is claimed.
+- Updated control-plane and root documentation navigation and recorded the
+  bounded WorkUnit evidence for this adoption increment.

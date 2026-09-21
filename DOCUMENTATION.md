@@ -54,7 +54,8 @@
 - Decision records under `docs/decisions/` capture ADR-like reboot decisions and their consequences.
 - Design-mining docs under `docs/design-mining/` hold candidate lesson-extraction records; they are reference inputs, not AIDE doctrine.
 - Inventory docs will record exact host families, extension technologies, manifests, and version coverage claims.
-- Architecture docs under `specs/` describe shared-core boundaries, host adapter design, interfaces, and cross-cutting technical decisions.
+- Control-plane specs under `specs/control-plane/` define reviewed desired-state product scope and cross-cutting work, authority, status, effect, and identity contracts without replacing `.aide/` operational authority.
+- Architecture docs under `specs/architecture/` describe shared-core boundaries, host adapter design, interfaces, and cross-cutting technical decisions.
 - Boot-slice docs under `specs/boot-slice/` describe the first cross-host implementation target, lane acceptance criteria, degraded or blocked handling, and rollout order.
 - Shared contract docs and schemas under `shared/` describe implementation-facing data shapes and subsystem boundaries that must remain aligned with the architecture docs.
 - Shared implementation docs and tests under `shared/` describe the executable bootstrap runtime, the CLI bridge, and the deterministic verification layer that now backs the first boot slice.
@@ -85,7 +86,8 @@
 - Keep reboot decision records under `docs/decisions/`.
 - Keep external-system lesson candidates under `docs/design-mining/` until a later queue item researches them.
 - Keep inventory and matrix material separate from architecture narratives.
-- Keep durable product and contract architecture under `specs/architecture/`.
+- Keep reviewed product scope and cross-cutting desired-state contracts under `specs/control-plane/`.
+- Keep durable shared-core and host-adapter architecture under `specs/architecture/`.
 - Keep first-wave implementation targeting, rollout planning, and lane-acceptance specs under `specs/boot-slice/`.
 - Keep implementation-facing shared subsystem guides and schemas under `shared/`.
 - Keep lane-local host proof artifacts, wrappers, and blocked records inside the corresponding `hosts/<vendor>/<product>/<technology>/` directory.
@@ -221,7 +223,8 @@
 - `governance/naming-policy.md`: naming doctrine for directories, manifests, adapters, and artifacts.
 - `governance/capability-levels.md`: capability levels `L0` through `L4`.
 - `governance/release-policy.md`: phase gating and release law.
-- `specs/README.md`: root index for architecture and product contracts.
+- `specs/README.md`: root index and authority boundary for live specifications.
+- `specs/control-plane/**`: adopted desired-state product, authority, status, work, effect, and identity contracts; adoption is distinct from implementation, qualification, activation, and support.
 - `specs/architecture/**`: canonical shared-core and host-adapter architecture docs plus ADRs.
 - `specs/boot-slice/**`: first-wave implementation target, lane acceptance, rollout, degraded-policy, and machine-readable boot-slice planning manifests.
 - `shared/README.md`: root guide for the shared implementation subtree.

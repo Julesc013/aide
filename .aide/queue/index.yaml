@@ -3340,3 +3340,13 @@ items:
     prompt: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/prompt.md
     evidence: .aide/queue/AIDE-SPEC-CONVERGENCE-FOUNDATION-01/evidence
     description: Keep private source archives external and adopt a small source-traceable control-plane foundation into the live specs tree without applying the unified overlay wholesale.
+  - id: AIDE-SPEC-WORK-EFFECT-IDENTITY-01
+    status: passed
+    planning_state: implemented
+    result: PASS
+    title: Adopt work, effect, and identity control-plane contracts
+    task: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/prompt.md
+    evidence: .aide/queue/AIDE-SPEC-WORK-EFFECT-IDENTITY-01/evidence
+    description: Adopt source-traceable work, attempt, capability-effect, and identity-digest contracts while preserving current queue, schema, architecture, policy, and operational authority.

@@ -10,7 +10,7 @@ private verified custody with SHA-256
 `61236cb58baa1233c2d110b3d13a4c8a10f83362b58cc3f6bb6595c8f1aa179c`.
 It must not be extracted over the repository or published as an AIDE release.
 
-## Adopted Increment
+## Adopted Increments
 
 The first convergence increment adopts and adapts three desired-state families:
 
@@ -21,9 +21,21 @@ The first convergence increment adopts and adapts three desired-state families:
 It also adds a navigable `specs/control-plane/` area while preserving every
 existing architecture and boot-slice path.
 
+The second increment adopts three connected contract families:
+
+- WorkUnits, immutable attempts, decomposition, and continuation;
+- capability bindings, invocations, receipts, and declared effects;
+- logical identities, locators, revisions, lineage, and qualified digests.
+
+Candidate `UR-*` identifiers remain attributable source aliases. Live clauses
+use the `AIDE-WORK-*`, `AIDE-CAP-*`, and `AIDE-ID-*` namespaces and explicitly
+preserve current queue, schema, policy, and review ownership.
+
 ## Deferred Material
 
-- The remaining control-plane families require separate semantic dispositions.
+- The remaining recovery, compatibility, trust, lifecycle, knowledge,
+  optimization, interop, experience, and runtime families require separate
+  semantic dispositions.
 - Large generated requirements, decision, source-mapping, and acceptance-case
   registers remain external review inputs.
 - Root-authority policy changes remain separately reviewable.
