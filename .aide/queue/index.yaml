@@ -3311,9 +3311,9 @@ items:
     evidence: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/evidence
     description: Remove repository-owned Codex execution-setting pins while preserving description-only local role files and all machine/session choices.
   - id: AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01
-    status: needs_review
-    planning_state: implementation_completed
-    result: PENDING
+    status: passed
+    planning_state: implemented
+    result: PASS
     title: Integrate reviewed repository Codex configuration neutrality
     task: .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/ExecPlan.md

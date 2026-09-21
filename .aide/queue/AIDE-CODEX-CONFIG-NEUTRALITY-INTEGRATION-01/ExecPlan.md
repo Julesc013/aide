@@ -27,9 +27,10 @@ broker and host implementation history.
 - [x] Create a clean task branch from exact `dev@be3a854a`.
 - [x] Reproduce the exact reviewed `.codex` state and checkpoint evidence.
 - [x] Validate active pins, TOML, repository structure, and candidate scope.
-- [ ] Commit and publish the task branch.
-- [ ] Fast-forward `dev` through the authorized integration workflow.
-- [ ] Record the superseding exact main-promotion candidate and gate.
+- [x] Commit and publish the task branch.
+- [x] Fast-forward `dev` through the authorized integration workflow.
+- [x] Record the superseding main-promotion basis and retain its human gate;
+  exact post-closeout identities are published in task-branch evidence.
 
 ## Validation
 
@@ -52,3 +53,11 @@ the mixed broker branch as the integration vehicle.
   `.codex/config.toml` is absent.
 - The candidate carries the original completed checkpoint packet plus this
   branch-specific integration packet. It contains no runtime or machine state.
+
+## Retrospective
+
+The exact reviewed neutrality state was committed as `4398497a`, published on
+its task branch, fast-forwarded into `dev`, and validated again from the
+integration worktree. No mixed runtime history or machine setting moved. The
+old `be3a854a` main-review target is superseded; `main` remains unchanged and
+requires an exact post-closeout human decision.

@@ -80,6 +80,7 @@ their identities, verification result, and limitations.
 - [x] First bounded child WorkUnit was admitted and completed.
 - [x] Repository hygiene and specification placement increments completed.
 - [x] Documentation-only integration candidate is qualified and integrated to `dev`.
+- [x] Reviewed repository Codex neutrality is independently integrated to `dev`.
 - [ ] Next bounded implementation or qualification slice advances.
 
 ## Discoveries And Decisions
@@ -94,9 +95,11 @@ their identities, verification result, and limitations.
   again; later effect-specific gates remain binding.
 - Root planning and documentation files already contain unrelated dirty work,
   so the original admission did not edit them.
-- The hygiene task and three specification increments are complete. Their
-  evidence remains authoritative history, while documentation integration now
-  proceeds under `AIDE-SPEC-DOCS-INTEGRATION-01`.
+- The hygiene task, three specification increments, and documentation-only
+  integration are complete. Their evidence remains authoritative history.
+- The configuration-neutrality implementation was valid but absent from the
+  documentation-only `dev` candidate. Its exact `.codex` state and checkpoint
+  evidence were integrated separately without mixed runtime history.
 
 ## Recovery And Resumption
 

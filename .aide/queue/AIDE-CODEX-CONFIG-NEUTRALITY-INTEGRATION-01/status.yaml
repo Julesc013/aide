@@ -1,15 +1,16 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01
-status: needs_review
+status: passed
 classification: admitted
-planning_state: implementation_completed
-result: PENDING
+planning_state: implemented
+result: PASS
 updated_at: 2026-09-22
-current_slice: exact_neutrality_candidate_validated
-next_slice: task_to_dev_integration
+current_slice: complete
+next_slice: main_promotion_human_review
 main_promotion_review: pending_exact_superseding_candidate
 notes:
   - This reuses the reviewed repository-only neutrality state.
   - No machine-wide or active-session setting is changed.
   - Main promotion is not authorized by this task.
-  - Candidate validation passed; normal task-to-dev integration remains.
+  - Candidate validation passed and dev fast-forwarded to 4398497a1e43b77938636dcd0c7002d6ff045467.
+  - A branch-only exact main-promotion decision packet follows this closeout.

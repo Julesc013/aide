@@ -26,3 +26,14 @@ changes were restored and are excluded from the candidate.
 No user, profile, managed, system, machine-wide, or active-session configuration
 was read or changed. No permission, approval, sandbox, or network posture was
 widened. No runtime, provider, host, target, `main`, tag, or release effect ran.
+
+## Post-Integration Validation
+
+`dev` fast-forwarded from `be3a854a` to `4398497a` with no merge commit. From
+the integrated `dev` worktree:
+
+- Active execution-setting assignment scan: PASS; zero matches.
+- `workunit validate`: PASS; 351 queue tasks and objects.
+- Full `aide_lite.py validate`: PASS.
+- Generated workunit report refreshes were restored and excluded.
+- Remote `dev` publication: PASS at `4398497a1e43b77938636dcd0c7002d6ff045467`.
