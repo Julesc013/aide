@@ -3,8 +3,8 @@
 - command: `task-os command status registry`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-continuous-worker-pilot-01`
-- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
+- current_branch: `task/aide-cw-integration-broker-01`
+- current_commit: `83df2b73c96f754561e669080bc4c90108d0bc4b`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -81,10 +81,10 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-FACMAN-ULK-PROMOTION-01
-- latest_indexed_task_status: planned
-- latest_task_packet_id: AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01
-- latest_task_packet_status: blocked
+- latest_indexed_task_id: AIDE-SPEC-CONVERGENCE-FOUNDATION-01
+- latest_indexed_task_status: passed
+- latest_task_packet_id: Q17-router-profile-v0
+- latest_task_packet_status: passed
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_action: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.

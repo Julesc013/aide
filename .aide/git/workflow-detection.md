@@ -3,19 +3,19 @@
 - schema_version: aide.git-workflow-detection.v0
 - generated_by: aide-lite
 - non_mutating: true
-- current_branch: main
-- current_commit: 7d8bf19d878fd9ad29859a6cba4b7de64ad80ecc
-- current_branch_role: canonical
-- detected_workflow: trunk_without_dev
-- confidence: medium
+- current_branch: task/aide-cw-integration-broker-01
+- current_commit: 83df2b73c96f754561e669080bc4c90108d0bc4b
+- current_branch_role: task
+- detected_workflow: trunk_with_dev_integration
+- confidence: high
 - canonical_branch: main
-- integration_branch: not detected
+- integration_branch: dev
 - recommended_next_action: classify dirty tree before branch-sensitive work
 
 ## Branch Summary
 
-- local_branches: 1
-- remote_branches: 1
+- local_branches: 4
+- remote_branches: 4
 - tags_count: 0
 
 ## Warnings
