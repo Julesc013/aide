@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-FACMAN-USK-ENTRY-RESTART-01
 title: Complete restartable provider entry journals
 type: execution
-status: running
-planning_state: execution_active
+status: planned
+planning_state: admitted_backlog
 result: PENDING
 created_at: 2026-09-06
 parent_task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01

@@ -1,0 +1,7 @@
+# Required generation and commit authority acceptance
+
+Root explicitly admitted this remaining obligation on2026-09-07. Bounded explicit replay is reviewed separately; full provider adoption and Beta qualification depend on resolving this obligation in AIDE-FACMAN-USK-GENERATION-LEASES-01 or its concrete child WorkUnit.
+
+A staged child must remain bound to the reviewed native object, or be revalidated with an effect protocol that preserves that binding through the actual OS no-replace directory commit. Deterministic substitution after mark_verified must not publish a foreign child, including a replacement with identical bytes and the original moved outside staging. Revalidate every relevant root/child/source boundary and retain uncertain or losing state without speculative pathname cleanup. A root lease, matching hashes, directory identity observation or no-replace target rename alone is insufficient.
+
+Acceptance must include deterministic hooks after mark_verified and immediately around the commit effect, same-byte and changed-byte file/directory replacements, concurrent commit/restart contenders, and actual process interruption/recovery. Bind independent native Windows/Linux/macOS source and behavior evidence, supported filesystem limitations, clean-source SDK and exact fresh hosted checks. Do not erase historical gaps or claim broad Beta/provider adoption from the entry-replay proof. Safe refusal/retention must remain explicit where atomic object authority is unavailable.
