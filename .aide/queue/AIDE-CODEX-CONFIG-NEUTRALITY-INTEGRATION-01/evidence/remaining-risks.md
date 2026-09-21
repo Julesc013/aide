@@ -7,3 +7,6 @@
 - The previous `main -> be3a854a` review subject is superseded after this
   integration and cannot authorize a later `dev` commit.
 - `main` promotion remains an explicit human review gate.
+- The exact `main..dev` commit check fails on historical published commit
+  `bfb86c12`; a reviewed disposition is required without rewriting shared
+  history before the candidate can become promotion-ready.
