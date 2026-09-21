@@ -1,0 +1,7 @@
+The coordinator now freezes a bounded file delta over a verified Git base and can resume a broker process that died during preparation. Durable transport intent prevents repeating an uncertain integration.
+
+The implementation requires a literal-byte worker checkout, validates trusted base objects without network fallback, retains at most three preparation generations, and binds external authority and receipts to the exact candidate tree and independent test evidence.
+
+Validation:87 passed and one explicit Windows symlink-privilege skip; independent review plus nine focused fault tests passed. Doctor, repository validation, portable export boundary and structured commit checks passed. Exact source and archived proof are recorded in [.aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-source-manifest.json](.aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-source-manifest.json) and the adjacent validation/review receipts.
+
+This remains a source checkpoint. Production authority issuance, PR/check transport, actual repository qualification, isolated worker boundaries and the real two-task demonstration are still open. Operational activation remains disabled. This repository currently has no hosted workflows; local validation is not a hosted CI result.

@@ -1,0 +1,48 @@
+docs(queue): close verified USK provider integration chains
+
+## Summary
+
+- Record completed streaming and ZIP provider integrations and ancestry sync.
+- Preserve exact provider evidence in compact per-coordinator custody archives.
+
+## Why
+
+- The completed provider chains remained planned in AIDE coordination records.
+- Raw receipt bytes require preservation independently of Git text normalization.
+
+## Changed
+
+- Close only the two verified provider coordinator records and index entries.
+- Keep original objectives, historical metadata and qualified scope explicit.
+- Archive all 196 changed evidence streams and their source manifest, including
+  155 original provider records, with exact member and LF projection hashes.
+- Keep raw loose logs and receipts unstaged with navigable archive references.
+
+## Validation
+
+- Provider task inspect, no-op/recovery checks and custody validation PASS.
+- Root independently verified all 198 members across both custody archives.
+- Exact 26 reviewed summary/archive files and four index scalars verified PASS.
+- This records provider acceptance; FacMan pin adoption is not claimed.
+
+## Changelog
+
+- Updated: AIDE USK streaming and ZIP integration coordinator completion.
+- Added: compact original-byte evidence custody and canonical chain navigation.
+
+## Risks
+
+- Provider acceptance does not establish downstream FacMan adoption.
+- Entry restart work and broker operational qualification remain separate.
+
+## Follow-up
+
+- Activate the separately approved bounded USK entry/restart source slice.
+- Continue the broker and full FacMan Beta1 programme under their own evidence.
+
+AIDE-Task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
+AIDE-Phase: provider-integration-closeout
+AIDE-Result: partial
+AIDE-Scope: two provider coordinator records, evidence and exact index states
+AIDE-Token-Impact: compact verified custody instead of repeated raw log projections
+AIDE-Quality-Gate: provider validation and independent root custody review passed

@@ -1,0 +1,6 @@
+AIDE Lite commit range check
+result: PASS
+range: 57e28facc74c7407d4d270f5b0d21c0dc6e4ddbe..24ed66153f7e5d2008b7178b89c1b03025791152
+commit_count: 1
+policy: .aide/policies/commit-messages.yaml
+- 24ed661 PASS feat(runtime): bound broker HTTPS observation exchanges

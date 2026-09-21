@@ -1,0 +1,6 @@
+AIDE Lite commit range check
+result: PASS
+range: 7e4de0c9762ac89fa6c40fda64a33b0c6f471e93..f06bcd75aafeab175202a89ea1d69c815b7bd911
+commit_count: 1
+policy: .aide/policies/commit-messages.yaml
+- f06bcd7 PASS feat(runtime): recover frozen broker requests through coordinator v1

@@ -1,0 +1,9 @@
+Freeze and recover exact worker candidates through a durable integration broker, then bind delegated authority to actual controller evidence and exact PR/check observations.
+
+This checkpoint validates prepared Git objects at each effect boundary, reparses independent coding/test/assurance artifacts, bounds issuer and PR reservations, and preserves uncertainty without replay. Independent review caught and corrected PR target-ref, repository and PR-number identity gaps.
+
+Validation: source-bound full suite107 tests (106 passed, one explicit Windows symlink-privilege skip), doctor/validate; the subsequent identity remediation passed8 focused tests and13 independent issuer/PR tests. Earlier prepared-effect/capsule review passed8 independent tests. [Source and durable review/custody records](https://github.com/Julesc013/aide/tree/f9545c31bafc8d398e566ae2bbb39e5e4e1e5558/.aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence).
+
+The task remains in progress. Operational host/store isolation, authenticated provider dispatch, an exact-base server mutation contract and a real two-task demonstration remain required. Activation remains disabled; no target settings or credentials changed.
+
+Work-Item: AIDE-CW-INTEGRATION-BROKER-01
