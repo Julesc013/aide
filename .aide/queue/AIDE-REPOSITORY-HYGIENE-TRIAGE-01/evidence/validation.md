@@ -13,5 +13,9 @@
   `381213944009ef69aa4860ccb4269b9a0ecd72091fe3f0cb5fa41de40dcfe47d`.
 - Pre-index CRLF projection SHA-256:
   `77d6f576f3840971e1b9b470dd809819963662c0ac4c1009dfc5372f72b11029`.
+- Approved apply: PASS for 506 files and 101,279,517 bytes.
+- Post-apply candidate paths remaining: zero.
+- Tracked custody archives retained: 20 of 20.
+- External recovery snapshot remains present.
 
 Generated audit reports are advisory and are not canonical source truth.

@@ -21,6 +21,7 @@ the repository's large `.aide/` footprint.
 - [x] Classify active broker, isolated-host, and entry-restart evidence.
 - [ ] Decide generated-report retention and regeneration policy.
 - [x] Prepare destructive cleanup as an exact reviewed apply set.
+- [x] Apply the approved 506-file archive-duplicate removal set fail-closed.
 
 ## Verification Intent
 
@@ -30,7 +31,6 @@ from age, size, orphan status, or duplicate status alone.
 
 ## Blockers
 
-Exact removal of 506 untracked archive duplicates awaits review of the canonical
-committed manifest SHA-256
-`381213944009ef69aa4860ccb4269b9a0ecd72091fe3f0cb5fa41de40dcfe47d`.
 Tracked generated-output retention remains a separate unresolved policy issue.
+The exact untracked archive-duplicate candidate was approved, revalidated, and
+applied without removing tracked custody or unique evidence.
