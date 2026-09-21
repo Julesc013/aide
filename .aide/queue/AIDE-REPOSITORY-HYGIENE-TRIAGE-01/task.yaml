@@ -2,9 +2,10 @@ schema_version: aide.queue-task.v0
 id: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
 title: Reduce repository evidence churn and classify tracked bulk
 type: execution
-status: running
-planning_state: execution_active
-result: PENDING
+status: needs_review
+planning_state: cleanup_candidate_ready
+result: PENDING_REVIEW
+review_gate: exact_untracked_archive_duplicate_removal
 created_at: 2026-09-21
 updated_at: 2026-09-21
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

@@ -1,13 +1,15 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
-status: running
-classification: partial
-planning_state: execution_active
-result: PENDING
+status: needs_review
+classification: cleanup_candidate_ready
+planning_state: cleanup_candidate_ready
+result: PENDING_REVIEW
+review_gate: exact_untracked_archive_duplicate_removal
 updated_at: 2026-09-21
-current_slice: verified_loose_custody_suppression
-next_slice: tracked_generated_and_evidence_retention_map
+current_slice: archive_duplicate_cleanup_candidate
+next_slice: apply_exact_reviewed_removal_or_retain
 notes:
   - Two passed Facman tasks retain compact tracked custody archives.
   - Their 102 byte-identical loose expansions are now narrowly ignored.
   - No files have been deleted by this WorkUnit.
+  - An exact 506-file archive-duplicate removal candidate is verified and awaits review.

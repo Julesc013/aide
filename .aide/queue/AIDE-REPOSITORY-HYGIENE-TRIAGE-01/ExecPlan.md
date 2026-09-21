@@ -18,9 +18,9 @@ the repository's large `.aide/` footprint.
 - [x] Inventory 10,924 tracked files and the original 714 untracked files.
 - [x] Measure tracked and untracked duplicate content.
 - [x] Verify two passed Facman custody archives and their 102 loose expansions.
-- [ ] Classify active broker, isolated-host, and entry-restart evidence.
+- [x] Classify active broker, isolated-host, and entry-restart evidence.
 - [ ] Decide generated-report retention and regeneration policy.
-- [ ] Prepare any destructive cleanup as an exact reviewed apply set.
+- [x] Prepare destructive cleanup as an exact reviewed apply set.
 
 ## Verification Intent
 
@@ -30,5 +30,6 @@ from age, size, orphan status, or duplicate status alone.
 
 ## Blockers
 
-Tracked generated-output retention lacks an apply-capable policy. Cleanup can
-continue through classification, compact custody, and narrow ignore rules.
+Exact removal of 506 untracked archive duplicates awaits review of manifest
+`77d6f576f3840971e1b9b470dd809819963662c0ac4c1009dfc5372f72b11029`.
+Tracked generated-output retention remains a separate unresolved policy issue.
