@@ -19,9 +19,12 @@ the repository's large `.aide/` footprint.
 - [x] Measure tracked and untracked duplicate content.
 - [x] Verify two passed Facman custody archives and their 102 loose expansions.
 - [x] Classify active broker, isolated-host, and entry-restart evidence.
-- [ ] Decide generated-report retention and regeneration policy.
+- [x] Decide generated-report retention and regeneration policy.
 - [x] Prepare destructive cleanup as an exact reviewed apply set.
 - [x] Apply the approved 506-file archive-duplicate removal set fail-closed.
+- [x] Prune the one stale, fully reachable worktree registration.
+- [x] Remove the exact ignored Python cache set.
+- [x] Record current tracked-output retention requirements and deliberate deferrals.
 
 ## Verification Intent
 
@@ -31,6 +34,8 @@ from age, size, orphan status, or duplicate status alone.
 
 ## Blockers
 
-Tracked generated-output retention remains a separate unresolved policy issue.
-The exact untracked archive-duplicate candidate was approved, revalidated, and
-applied without removing tracked custody or unique evidence.
+No unresolved blocker remains for this triage task. The exact untracked
+archive-duplicate candidate was approved, revalidated, and applied without
+removing tracked custody or unique evidence. Tracked generated outputs are
+deliberately retained until their ledger proves deterministic regeneration,
+consumer coverage, historical retention, and exact rollback.

@@ -17,5 +17,12 @@
 - Post-apply candidate paths remaining: zero.
 - Tracked custody archives retained: 20 of 20.
 - External recovery snapshot remains present.
+- Clean-tree AIDE Git helper plan: `ready_dry_run`.
+- Stale worktree metadata prune: PASS; 10 refs and 4 local branches unchanged.
+- Detached worktree commit remained readable and reachable from current `HEAD`.
+- Python cache dry run and apply: PASS for 20 directories, 69 files, and 1,351,417 bytes.
+- Remaining Python cache directories: zero.
+- Git object-store garbage: zero bytes; no Git object prune was run.
+- Tracked generated-output ledger: 1,381 entries retained because deletion and regeneration safety are unknown for every entry.
 
 Generated audit reports are advisory and are not canonical source truth.

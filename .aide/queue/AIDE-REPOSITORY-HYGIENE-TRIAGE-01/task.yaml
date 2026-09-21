@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
 title: Reduce repository evidence churn and classify tracked bulk
 type: execution
-status: running
-planning_state: cleanup_apply_active
-result: PENDING
+status: passed
+planning_state: implemented
+result: PASS
 review_gate: exact_untracked_archive_duplicate_removal
 review_decision: approved
 reviewed_manifest_sha256: 381213944009ef69aa4860ccb4269b9a0ecd72091fe3f0cb5fa41de40dcfe47d
@@ -38,6 +38,7 @@ scope:
   authorized_operations:
     - literal removal of the approved 506-file untracked archive-duplicate manifest
     - prune only the stale aide-screensave-pack worktree registration after reachability and dry-run checks
+    - recursively remove only the exact verified ignored Python __pycache__ directory set
 verification:
   - verify loose custody bytes against tracked archive manifests and ZIP entries
   - inventory tracked kinds, owners, sizes, duplicates, and generated paths

@@ -3321,9 +3321,9 @@ items:
     evidence: .aide/queue/AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01/evidence
     description: Remove repository model and execution-setting pins while preserving minimal role descriptions and operator-selected session behavior.
   - id: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
-    status: running
-    planning_state: execution_active
-    result: PENDING
+    status: passed
+    planning_state: implemented
+    result: PASS
     title: Reduce repository evidence churn and classify tracked bulk
     task: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/task.yaml
     exec_plan: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/ExecPlan.md
