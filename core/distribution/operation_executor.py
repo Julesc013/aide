@@ -5,7 +5,9 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from core.distribution.temp_workspace import safe_join, sha256_text
+from core.distribution.temp_workspace import (
+    FixturePathError, relative_path_refusal, safe_join, sha256_text,
+)
 
 
 ALLOWED_OPERATION_CLASSES = {
@@ -56,11 +58,10 @@ def _failure(code: str, message: str, operation: dict[str, Any] | None = None) -
 
 
 def _path_refusal(path: str) -> str | None:
+    reason = relative_path_refusal(path)
+    if reason:
+        return "distribution_apply_engine." + reason
     normalized = path.replace("\\", "/")
-    if normalized.startswith("/") or normalized.startswith("//") or (len(normalized) >= 3 and normalized[1] == ":" and normalized[2] == "/"):
-        return "distribution_apply_engine.absolute_path_refused"
-    if any(part == ".." for part in normalized.split("/")):
-        return "distribution_apply_engine.path_traversal_refused"
     if ".aide/context/latest-" in normalized or ".aide/reports/latest-" in normalized:
         return "distribution_apply_engine.source_latest_output_refused"
     return None
@@ -121,7 +122,7 @@ def _remove_section(content: str, identity: str) -> str | None:
 
 def execute_operation(workspace_root: Path, operation: dict[str, Any]) -> dict[str, Any]:
     operation_class = str(operation.get("operation_class"))
-    target_path = str(operation.get("target_relative_path", ""))
+    target_path = operation.get("target_relative_path", "")
     ownership_class = str(operation.get("ownership_class", "unknown"))
     path_code = _path_refusal(target_path)
     if path_code:
@@ -147,13 +148,24 @@ def execute_operation(workspace_root: Path, operation: dict[str, Any]) -> dict[s
             "receipt_class": "manual_review_recorded" if operation_class == "manual_review_required" else "operation_refused",
             "target_relative_path": target_path,
         }
-    target = safe_join(workspace_root, target_path)
+    try:
+        target = safe_join(workspace_root, target_path)
+        if target.exists() and not target.is_file():
+            return _failure("distribution_apply_engine.non_regular_path_refused", "target is not a regular file", operation)
+    except FixturePathError as exc:
+        return _failure("distribution_apply_engine." + exc.reason, "unsafe fixture path refused", operation)
+    except OSError:
+        return _failure("distribution_apply_engine.path_inspection_failed", "fixture path could not be inspected", operation)
     preimage_failure = _verify_preimage(target, operation)
     if preimage_failure:
         return preimage_failure
     if operation_class == "add_managed_file":
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(str(operation.get("postimage", "")), encoding="utf-8", newline="\n")
+        try:
+            with target.open("x", encoding="utf-8", newline="\n") as stream:
+                stream.write(str(operation.get("postimage", "")))
+        except FileExistsError:
+            return _failure("distribution_apply_engine.preimage_exists_refused", "add target already exists", operation)
         receipt_class = "managed_file_added"
     elif operation_class == "update_managed_file":
         target.write_text(str(operation.get("postimage", "")), encoding="utf-8", newline="\n")
