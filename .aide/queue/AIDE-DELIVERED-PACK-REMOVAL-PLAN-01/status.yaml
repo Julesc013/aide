@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
+status: running
+classification: admitted_by_owner_split
+planning_state: implementation_active
+result: PENDING
+updated_at: 2026-09-22
+current_slice: red_tests_and_portable_plan_owner
+next_slice: implement_receipt_backed_read_only_planner
+notes:
+  - The broad compiled intent remains blocked and split-required.
+  - This bounded child starts from origin/dev at 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab.
+  - Q46 uninstall commands and policies remain no-apply and unchanged.
+  - Only disposable fixture and extracted-artifact consumers may be inspected.
+  - No deletion, target write, policy change, main mutation, tag, upload, or publication is authorized.
+

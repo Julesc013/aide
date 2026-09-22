@@ -3380,3 +3380,13 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/evidence
     description: Extends extracted-pack import with exact installed baselines, conflict-first updates, preview/apply identity, predecessor-pack proof, and interruption evidence in disposable consumers only.
+  - id: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
+    status: running
+    planning_state: implementation_active
+    result: PENDING
+    title: Plan preservation-first removal from delivered-pack receipts
+    task: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/evidence
+    description: Adds exact receipt-backed read-only removal planning to the delivered CLI while preserving every uninstall-apply and publication gate.

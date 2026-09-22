@@ -3,9 +3,9 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: a920ffc9d13a22265be63c0f3bbf565071bbb73620c007968bdb52268d3f5caf
-- raw_prompt_excerpt: Implement and qualify source-independent safe import from the extracted AIDE Lite release archive. Reconcile any release-filtered payload with the embedded manifest and checksum closure, add an executable consumer regression, preserve fo...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.
+- raw_prompt_hash: 8f58111a0c67ba17733cded4c16dbd2a34fea9bc8f00d5c9ec55ac076f6d2218
+- raw_prompt_excerpt: Implement a receipt-backed, read-only delivered-pack removal planner that runs from extracted AIDE Lite bytes, validates the installed receipt and current managed bytes, preserves target-authored and unknown content, produces an exact de...
+- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
 - risk_class: release
@@ -13,8 +13,8 @@
 - safe_to_execute: false
 - requires_split: true
 - blocked: true
-- blocker_reason: block until release gates, tags, and assets are approved
-- next_action: block until release gates, tags, and assets are approved
+- blocker_reason: write blocker report and require reviewed authorization before mutation
+- next_action: write blocker report and require reviewed authorization before mutation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,7 +24,6 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not mutate target repositories from AIDE source repo
 - do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
@@ -41,7 +40,7 @@
 
 ## Branch State Refs
 
-- current_branch:task/aide-delivered-pack-import-closure-01
+- current_branch:task/aide-delivered-pack-removal-plan-01
 - current_role:task
 - workflow:trunk_with_dev_integration
 - worktree_dirty:false

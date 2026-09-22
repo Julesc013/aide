@@ -4,9 +4,9 @@
     ".aide/queue/<workunit>/**"
   ],
   "blocked": true,
-  "blocker_reason": "block until release gates, tags, and assets are approved",
+  "blocker_reason": "write blocker report and require reviewed authorization before mutation",
   "branch_state_refs": [
-    "current_branch:task/aide-delivered-pack-import-closure-01",
+    "current_branch:task/aide-delivered-pack-removal-plan-01",
     "current_role:task",
     "workflow:trunk_with_dev_integration",
     "worktree_dirty:false"
@@ -41,23 +41,21 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
-  "next_action": "block until release gates, tags, and assets are approved",
+  "interpreted_goal": "Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
+  "next_action": "write blocker report and require reviewed authorization before mutation",
   "notes": [
     "deterministic_local: true",
     "provider_or_model_calls: none",
     "network_calls: none",
     "task_execution: false",
     "raw_long_prompt_storage: false",
-    "flag:unsafe_prompt",
-    "flag:target_repo_prompt"
+    "flag:unsafe_prompt"
   ],
-  "raw_prompt_excerpt": "Implement and qualify source-independent safe import from the extracted AIDE Lite release archive. Reconcile any release-filtered payload with the embedded manifest and checksum closure, add an executable consumer regression, preserve fo...",
-  "raw_prompt_hash": "a920ffc9d13a22265be63c0f3bbf565071bbb73620c007968bdb52268d3f5caf",
+  "raw_prompt_excerpt": "Implement a receipt-backed, read-only delivered-pack removal planner that runs from extracted AIDE Lite bytes, validates the installed receipt and current managed bytes, preserves target-authored and unknown content, produces an exact de...",
+  "raw_prompt_hash": "8f58111a0c67ba17733cded4c16dbd2a34fea9bc8f00d5c9ec55ac076f6d2218",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly",
-    "do not mutate target repositories from AIDE source repo",
     "do not publish releases, tags, or assets from prompt alone"
   ],
   "repo_state_refs": [
@@ -108,10 +106,10 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:a920ffc9d13a22265be63c0f3bbf565071bbb73620c007968bdb52268d3f5caf; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:8f58111a0c67ba17733cded4c16dbd2a34fea9bc8f00d5c9ec55ac076f6d2218; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
-      "block until release gates, tags, and assets are approved",
+      "write blocker report and require reviewed authorization before mutation",
       "Stop at review gates and record evidence before execution."
     ],
     "non_goals": [
@@ -119,10 +117,9 @@
       "no provider/model/network calls",
       "do not bypass queue, branch, evidence, or policy state",
       "do not execute raw prompt directly",
-      "do not mutate target repositories from AIDE source repo",
       "do not publish releases, tags, or assets from prompt alone"
     ],
-    "objective": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
+    "objective": "Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -135,14 +132,14 @@
     "sizing_class": "blocked",
     "status": "draft",
     "task_class": "release",
-    "title": "Release WorkUnit Draft - Block until release gates, tags, and assets are approved",
+    "title": "Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation",
     "validation": [
       "git diff --check",
       "py -3 .aide/scripts/aide_lite.py changelog validate",
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-release-a920ffc9d13a"
+    "workunit_id": "draft-release-8f58111a0c67"
   },
   "task_class": "release",
   "validation_hints": [
