@@ -30,8 +30,9 @@ hosted effects, target installs, or machine configuration.
 - [x] Commit repair `f147c905` and preview checkpoint `1397b703`.
 - [x] Regenerate deterministic archives, pass fresh/brownfield canaries, and
       prove a second 44-file pre-commit cycle changes zero bytes.
-- [ ] Commit the replacement artifact and correctly named post-commit
-      projection chain.
+- [x] Commit replacement artifact `7897f7de`, run its complete post-commit
+      projection, and prove a second 44-file cycle changes zero bytes.
+- [x] Bind actual parent checkpoint `7897f7de` in the projection commit message.
 - [ ] Obtain independent exact-commit rereview.
 - [ ] Integrate the qualified candidate into dev.
 
@@ -58,8 +59,8 @@ paired JSON still failed open and that the projection message named a
 superseded local checkpoint. The next restart point is the paired-source repair,
 replacement source `f147c905`, preview checkpoint `1397b703`, and newly
 generated deterministic artifacts. Commit those bytes, bind their actual
-checkpoint identity in the post-commit projection, and obtain superseding
-rereview.
+checkpoint identity `7897f7de` in the post-commit projection, replay from the
+committed tree, and obtain superseding rereview.
 
 ## Exit Criteria
 

@@ -97,6 +97,12 @@ bundle whose ZIP is
 idempotent rerun, doctor, and authored-content preservation. All 44 release
 files remain byte-identical on a second complete pre-commit cycle.
 
+Artifact checkpoint `7897f7de` is followed by a complete post-commit bundle,
+validate, draft, and draft-validate projection with
+`PASS_SOURCE_ANCESTOR`. A second complete cycle changes zero of 44 files. The
+projection commit message names `7897f7de` directly, superseding the stale
+identity narrative without rewriting published history.
+
 ## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 
 Status: independently reviewed and integrated into `dev`; commit-bound portable

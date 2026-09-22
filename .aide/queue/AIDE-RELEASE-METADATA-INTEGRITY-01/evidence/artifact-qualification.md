@@ -32,10 +32,11 @@
 - Release draft and draft validation: PASS.
 - Repeatability: 44 compared release files, 0 changed after a second complete
   bundle, validate, draft, and draft-validate cycle.
-- Replacement artifact checkpoint: pending this commit.
-- Pre-commit pack provenance: `PASS`.
+- Replacement artifact checkpoint:
+  `7897f7deb80c0bb64e63ed2cc93700ef34453598`.
+- Post-commit pack provenance: `PASS_SOURCE_ANCESTOR`.
 - Replacement bundle, validate, draft, and draft-validate: PASS.
-- Pre-commit repeatability: 44 compared release files, 0 changed after a
+- Post-commit repeatability: 44 compared release files, 0 changed after a
   second complete cycle.
 
 ## Delivered-Byte Consumers
@@ -82,5 +83,5 @@ changed.
 Independent rereview later found absent paired JSON still failed open and the
 published `198a87d2` message retained the superseded `75e37a4c` name. Repair
 `f147c905` requires both preview representations; preview checkpoint
-`1397b703` binds both to the repaired source. This replacement chain will name
-the actual artifact checkpoint in its post-commit projection message.
+`1397b703` binds both to the repaired source. Replacement artifact checkpoint
+`7897f7de` is the actual parent named by this post-commit projection.

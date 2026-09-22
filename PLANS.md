@@ -77,11 +77,11 @@
 - Objective: close the exact asset-index, checkout-provenance, and stale-preview findings from artifact review.
 - Scope: release generator, Q47/Q48 regressions, local no-publish outputs, and bounded evidence.
 - Dependencies: reviewed failed artifact candidate `38fe7128` and preserved review `4c0da897`.
-- Milestones: initial generator repair and convergence complete; exact rereview found missing paired-JSON refusal and a stale commit narrative; source/preview repair, 60-test matrix, deterministic artifact regeneration, consumer canaries, and pre-commit repeatability complete; artifact checkpoint, projection, and rereview pending.
+- Milestones: initial generator repair and convergence complete; exact rereview found missing paired-JSON refusal and a stale commit narrative; source/preview repair, 60-test matrix, deterministic artifacts, consumer canaries, checkpoint `7897f7de`, and post-commit 44-file convergence complete; committed replay and rereview pending.
 - Blockers: none for local implementation. Publication and main promotion remain separate exact gates.
 - Verification Intent: asset hash/size closure, cross-checkout determinism, preview-source binding, Q47/Q48 suites, consumer tests, canonical validation, and independent review.
 - Exit Criteria: exact repaired candidate reaches dev with internally consistent metadata and no publication effects.
-- Notes: replacement source `f147c905` and preview `1397b703` make paired JSON mandatory. The repaired 60-case matrix, exact archives, two extracted consumers, and 44-file repeatability pass. The next projection will name its actual artifact checkpoint.
+- Notes: replacement source `f147c905` and preview `1397b703` make paired JSON mandatory. The repaired 60-case matrix, exact archives, two extracted consumers, and 44-file repeatability pass. The projection names actual parent checkpoint `7897f7de`.
 
 ### Plan ID: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 

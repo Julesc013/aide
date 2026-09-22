@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-RELEASE-METADATA-INTEGRITY-01
 status: needs_review
 classification: qualified_candidate
-planning_state: replacement_artifact_checkpoint_ready
+planning_state: replacement_projection_ready_for_rereview
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
-current_slice: replacement_artifact_convergence
-next_slice: artifact_checkpoint_then_postcommit_projection_and_rereview
+current_slice: replacement_postcommit_projection
+next_slice: clean_replay_then_independent_exact_rereview
 source_review_commit: 9f4bbc0a77443bd84a5c2502882e95aa602f98fe
 notes:
   - Independent review found stale local asset identities, checkout-local provenance, and stale required preview assets.
@@ -28,5 +28,7 @@ notes:
   - Independent rereview of 9f4bbc0a returned REQUEST_CHANGES because deleting paired JSON still failed open and 198a87d2 named a superseded checkpoint.
   - The source repair now requires paired Markdown and JSON previews and adds end-to-end deletion regressions.
   - The repaired adjacent matrix passes 60 cases: Q31 6, export/import 25, Q47 18, and Q48 11, with zero failures or skips.
-  - Commit the replacement artifact checkpoint, then bind the actual checkpoint identity in a full post-commit projection before exact rereview.
+  - Replacement artifact checkpoint 7897f7de is published and its full post-commit projection reports PASS_SOURCE_ANCESTOR.
+  - The projection message names actual parent checkpoint 7897f7de; a second complete cycle changes zero of 44 files.
+  - Commit and cleanly replay this projection, then obtain independent exact rereview before dev integration.
   - No publication effect is authorized.

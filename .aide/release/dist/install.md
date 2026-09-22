@@ -3,7 +3,7 @@
 - bundle_id: aide-lite-pack-v0-1397b703a9c116a5
 - bundle_name: aide-lite-pack-v0
 - source_pack: .aide/export/aide-lite-pack-v0
-- pack_status: PASS
+- pack_status: PASS_SOURCE_ANCESTOR
 - publication_status: local_preview_no_publish
 - apply_mode_available: false
 
