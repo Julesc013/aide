@@ -461,3 +461,33 @@ Thirty-one focused tests pass for exact request bytes, stale fact refusal,
 response bounds and submission/integration separation. Hosted target races,
 effective policy/principal observation, workflow provenance and protected
 host/store qualification remain unrun.
+
+## GitHub target-policy review contract
+
+`github_target_policy` now owns a pure desired/current comparison and exact
+review-plan builder. It has no HTTP client, credential reader, settings writer,
+workflow installer, or apply entry point. An unresolved broker principal or
+workflow/check application identity yields `status: blocked`, an empty
+operation list, and `apply_authorized: false`.
+
+The desired contract permits ordinary merge commits only, requires pull
+requests and one strict app-bound check on `dev`, disallows dev bypass, and
+prevents deletion and non-fast-forward updates. A separate all-branches-except-
+dev ruleset restricts later updates, deletion, and non-fast-forward history;
+the exact owner id is its only proposed bypass. Because the update restriction
+does not restrict creation, a broker request branch can be created once at its
+final admitted object and cannot later be moved by that principal.
+
+The contract distinguishes guarantees precisely. Expected head, strict check,
+pull-request-only dev updates, and qualified ruleset restrictions are intended
+destination-enforced controls. Expected base, actor, policy digest, and
+workflow source remain local preconditions. The merge endpoint still has no
+atomic expected-base or policy compare-and-swap argument, hidden bypass cannot
+be inferred, and an uncertain mutation must not be replayed.
+
+The current normalized observation remains unqualified: no rulesets, effective
+dev rules, classic dev protection, workflow, restricted broker principal, or
+check-app identity exists. Merge, squash, and rebase are all currently enabled.
+The checked-in review plan therefore contains no operations and cannot be
+applied. A resolved fixture proves deterministic PATCH/POST review bytes, but
+does not authorize or qualify those operations on GitHub.

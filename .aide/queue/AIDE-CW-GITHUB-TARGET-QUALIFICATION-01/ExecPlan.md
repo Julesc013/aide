@@ -89,3 +89,25 @@ restricted broker principal. The observation half of the first pending item is
 complete; independent review and exact principal/app identity remain open.
 Hosted effects now fail closed on concrete missing controls rather than an
 assumed target configuration.
+
+## Progress - 2026-09-22 target-policy source slice
+
+- [x] Add a pure desired/current policy contract with no network or apply path.
+- [x] Require complete ruleset/bypass visibility and exact owner, broker,
+  workflow, check-app and permission identities.
+- [x] Materialize exact review operations only after every identity resolves;
+  unresolved input must produce an empty blocked plan.
+- [x] Preserve ordinary merge, strict app-bound checks, immutable request
+  branches, owner-only non-dev bypass, and explicit unsupported guarantees.
+- [x] Add adversarial fixtures for hidden bypass, wrong principals, stale
+  workflow/check identity, extra rules, unsafe merge settings and digest drift.
+- [ ] Record desired/current/plan bytes and publish the source checkpoint for
+  independent review without installing settings or workflows.
+
+The slice is independent of hosted mutation and isolated-host closeout. It
+ends at a reviewable, fail-closed plan; it does not make that plan effective.
+
+The current packet records two blockers: `broker_principal_unresolved` and
+`workflow_check_identity_unresolved`. Its operation list is empty. Fixture-only
+materialization demonstrates the eventual exact operation shape after identity
+resolution; it is not an apply plan for the live repository.

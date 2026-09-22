@@ -3195,8 +3195,8 @@ items:
     prompt: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/prompt.md
     evidence: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence
   - id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
-    status: running
-    planning_state: execution_active
+    status: needs_review
+    planning_state: policy_source_qualified_awaiting_exact_identity_and_review
     title: Implement and qualify the exact GitHub broker target contract
     task: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/ExecPlan.md

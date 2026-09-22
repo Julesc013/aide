@@ -3576,6 +3576,13 @@ at submitted until later observation proves integration. Continue next with exac
 policy, workflow and principal observation/review. Expected-base enforcement,
 settings apply, hosted races and protected-host qualification remain open.
 
+The next target-policy source slice is implemented as a pure desired/current
+comparator and review-plan builder. Current AIDE evidence reproduces a blocked,
+zero-operation plan because the restricted broker principal and workflow/check
+app identities do not exist. The source and 96 affected tests can proceed to
+independent review; workflow installation, settings apply, and hosted races
+remain separate exact gates.
+
 ## Broker runtime dev integration
 
 `AIDE-CW-BROKER-DEV-INTEGRATION-01` has landed. The exact published source

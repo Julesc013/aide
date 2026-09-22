@@ -11176,6 +11176,19 @@ DLL mapping, image or grant effect is part of this source implementation.
 - Added no network sender, credential path, settings/workflow mutation or hosted
   effect. Base/ref, actor, policy, principal and ruleset atomicity remain open.
 
+## 2026-09-22 - GitHub target-policy review source
+
+- Added a pure desired/current policy comparator and deterministic review-plan
+  builder with no network or apply path.
+- Bound the desired target to ordinary PR merges, one strict app-bound check,
+  immutable request branches, no dev bypass, and owner-only non-dev bypass.
+- Separated destination-enforced controls from local preconditions and
+  unsupported atomicity claims.
+- Refused incomplete visibility, excess permissions, identity/provenance drift,
+  unknown rules, malformed or unbounded observations, and partial operations.
+- Refreshed read-only GitHub state and emitted a blocked zero-operation plan;
+  96 affected tests pass, while hosted effects remain unrun.
+
 ## 2026-09-22 - Broker runtime dev integration
 
 - Preserved the full published broker line at `75da3310` through a two-parent

@@ -1,0 +1,25 @@
+{
+  "apply_authorized": false,
+  "blockers": [
+    "broker_principal_unresolved",
+    "workflow_check_identity_unresolved"
+  ],
+  "hosted_effects_run": false,
+  "mode": "review_only",
+  "network_calls": "none",
+  "observation_digest": "907688c5defff9615e8f8d5f0bac9d9e39e8d3bf6522ceb7f2813c51df134798",
+  "operations": [],
+  "plan_digest": "5c243ac74ff1deff1780debe97e5e0ec1dcfa42653d2898c37db84b54ef15d7d",
+  "policy_digest": "db1b1ad6e96d287386ad5d99c600b938c3e65dc12123a98954106d58bab68b7f",
+  "repository": "Julesc013/aide",
+  "required_reviews": [
+    "target_policy_and_bypass",
+    "restricted_principal_and_permissions",
+    "workflow_and_check_provenance",
+    "exact_operation_bytes"
+  ],
+  "schema": "aide.github-target-policy-review-plan.v1",
+  "settings_mutated": false,
+  "status": "blocked",
+  "workflow_installed": false
+}

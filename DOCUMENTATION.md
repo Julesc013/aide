@@ -476,3 +476,9 @@ merge contract owned by `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01`. Its mandatory
 expected-head SHA is destination-enforced by the documented endpoint. The
 endpoint has no expected-base argument, so policy/principal qualification and
 hosted race evidence remain separate open work rather than inferred guarantees.
+
+The same reference now documents `github_target_policy`: exact desired/current
+comparison, least-privilege and workflow identity requirements, ruleset
+semantics, guarantee classification, and the current blocked review-only plan.
+Task-local JSON under `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/` is the
+exact review subject; it is not installed GitHub configuration.

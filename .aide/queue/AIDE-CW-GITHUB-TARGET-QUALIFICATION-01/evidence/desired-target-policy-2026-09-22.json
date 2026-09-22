@@ -1,0 +1,65 @@
+{
+  "api_version": "2026-03-10",
+  "broker": null,
+  "guarantees": {
+    "destination_enforced_when_qualified": [
+      "expected_head",
+      "strict_app_bound_required_check",
+      "pull_request_only_dev_update",
+      "non_dev_update_restriction",
+      "deletion_restriction",
+      "non_fast_forward_restriction"
+    ],
+    "local_preconditions": [
+      "expected_base",
+      "expected_actor",
+      "expected_policy_digest",
+      "expected_workflow_source"
+    ],
+    "unsupported": [
+      "atomic_expected_base_argument",
+      "atomic_policy_compare_and_swap",
+      "hidden_bypass_inference",
+      "uncertain_mutation_replay"
+    ]
+  },
+  "identity_requirements": {
+    "broker": {
+      "permissions": {
+        "actions": "read",
+        "administration": "none",
+        "checks": "read",
+        "contents": "write",
+        "metadata": "read",
+        "pull_requests": "write",
+        "workflows": "none"
+      },
+      "type": "User"
+    },
+    "workflow": {
+      "app_id": "positive_integer_required",
+      "check_name": "nonempty_bounded_text_required",
+      "event": "push",
+      "path": ".github/workflows/aide-cw-checks.yml",
+      "source_commit": "full_sha1_required",
+      "source_ref": "refs/heads/dev"
+    }
+  },
+  "merge_method": "merge",
+  "owner": {
+    "login": "Julesc013",
+    "user_id": 30209022
+  },
+  "repository": "Julesc013/aide",
+  "repository_settings": {
+    "allow_auto_merge": false,
+    "allow_merge_commit": true,
+    "allow_rebase_merge": false,
+    "allow_squash_merge": false,
+    "delete_branch_on_merge": false
+  },
+  "rulesets": null,
+  "schema": "aide.github-target-policy.v1",
+  "target_ref": "refs/heads/dev",
+  "workflow": null
+}

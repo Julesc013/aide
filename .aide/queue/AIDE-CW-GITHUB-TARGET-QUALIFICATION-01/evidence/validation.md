@@ -53,3 +53,19 @@ these source tests neither reran nor discharged it.
   `dev` branch protection returned HTTP 404.
 - NOT RUN: settings apply, workflow installation, principal creation, branch
   mutation, merge request or hosted adversarial race.
+
+## 2026-09-22 target-policy source slice
+
+- PASS: focused GitHub observation/target-policy suite, 44 tests in 0.108 seconds.
+- PASS: durable PR observation/staged broker suite, 21 tests in 73.465 seconds.
+- PASS: bounded GitHub HTTP suite, 19 tests in 1.254 seconds.
+- PASS: registered provider bridge suite, 12 tests in 82.278 seconds.
+- PASS: 96 total affected tests, zero failures and zero skips.
+- PASS: unresolved desired/current evidence reproduces the committed blocked
+  plan with policy digest `db1b1ad6e96d287386ad5d99c600b938c3e65dc12123a98954106d58bab68b7f`
+  and plan digest `5c243ac74ff1deff1780debe97e5e0ec1dcfa42653d2898c37db84b54ef15d7d`.
+- PASS: adversarial fixtures refuse incomplete visibility, overprivileged or
+  wrong principals, stale workflow/check identity, unknown/drifted rulesets,
+  unsafe identity fields, unbounded JSON, and caller-replaced ruleset bodies.
+- NOT RUN: workflow installation, principal creation, settings apply, hosted
+  merge/race effects, protected-host binding, main promotion or release.

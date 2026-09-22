@@ -1,16 +1,16 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
-status: running
-planning_state: execution_active
-result: PENDING
+status: needs_review
+planning_state: policy_source_qualified_awaiting_exact_identity_and_review
+result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
 configuration_review: pending
 settings_mutated: false
 hosted_acceptance: not_run
-current_slice: current_target_read_only_observed
-next_slice: desired_policy_workflow_and_principal_review_packet
-source_tests: 31_passed
-affected_regression_tests: 83_passed
+current_slice: target_policy_contract_qualified
+next_slice: resolve_principal_and_workflow_identities_then_independent_review
+source_tests: 44_passed
+affected_regression_tests: 96_passed
 notes:
   - The synchronous request always supplies the admitted candidate as GitHub's expected head SHA.
   - Base, actor, policy, ruleset and principal predicates remain unqualified at the destination effect boundary.
@@ -18,3 +18,6 @@ notes:
   - The exact source checkpoint is 091e3d7d9719e55d2d4202fef429c02c2cbf27bb with tree 45eee43c40ad0896e8a28db1bbd5fccc5ca43b0c.
   - Current GitHub observation found no rulesets, effective main/dev rules, dev protection or Actions workflows.
   - The observed owner/admin account is not an admitted restricted broker principal; hosted effects fail closed.
+  - The active slice is local policy comparison and plan construction only; no workflow, settings, credential or hosted effect is authorized.
+  - The exact live review plan is blocked with zero operations on unresolved broker-principal and workflow/check identities.
+  - All 96 affected tests pass; source publication and independent review remain next.
