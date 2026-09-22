@@ -2751,6 +2751,11 @@ IMPORT_SAFE_ALLOWED_DOCS_PREFIX = "docs/reference/"
 
 IMPORT_MODES = {"safe", "full"}
 
+PORTABLE_IMPORT_RECEIPT_PATH = ".aide/install/aide-lite-pack-v0.receipt.json"
+PORTABLE_IMPORT_INTENT_PATH = ".aide/install/aide-lite-pack-v0.intent.json"
+PORTABLE_IMPORT_RECEIPT_SCHEMA = "aide.portable-import-receipt.v1"
+PORTABLE_IMPORT_INTENT_SCHEMA = "aide.portable-import-intent.v1"
+
 PORTABLE_TEMPLATE_MAP = {
     ".aide/templates/portable-apply/README.md": "core/apply/README.md",
     ".aide/templates/portable-apply/__init__.py": "core/apply/__init__.py",
@@ -38729,6 +38734,28 @@ def write_bytes_if_changed(path: Path, data: bytes) -> WriteResult:
     return WriteResult(path, "written")
 
 
+def atomic_write_bytes_if_changed(path: Path, data: bytes) -> WriteResult:
+    if path.exists() and path.is_file() and path.read_bytes() == data:
+        return WriteResult(path, "unchanged")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+    temporary = Path(temporary_name)
+    try:
+        with os.fdopen(descriptor, "wb") as handle:
+            handle.write(data)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+    return WriteResult(path, "written")
+
+
+def atomic_write_json(path: Path, data: object) -> WriteResult:
+    return atomic_write_bytes_if_changed(path, stable_json_text(data).encode("utf-8"))
+
+
 def copy_pack_file(source: Path, destination: Path) -> WriteResult:
     return write_bytes_if_changed(destination, source.read_bytes())
 
@@ -38908,14 +38935,14 @@ From the root of an extracted release archive, without the source checkout:
 
 ```text
 py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --dry-run --mode safe
-py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --mode safe
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --mode safe --expect-plan <preview-plan-digest>
 ```
 
 From the source AIDE repository during development:
 
 ```text
 py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/{EXPORT_PACK_ID} --target <target-repo> --dry-run
-py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/{EXPORT_PACK_ID} --target <target-repo> --mode safe
+py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/{EXPORT_PACK_ID} --target <target-repo> --mode safe --expect-plan <preview-plan-digest>
 ```
 
 `--mode safe` is the default. It skips optional broad roots such as `core/` and
@@ -38923,6 +38950,12 @@ non-reference `docs/` content and prints the exact planned writes plus skipped
 paths during dry-run. Portable `docs/reference/` governance docs are safe-mode
 files. Use `--mode full` only in reviewed local fixtures where copying optional
 roots has been explicitly accepted.
+
+Successful import records exact managed-file and portable managed-section
+baselines under `.aide/install/`. A later pack updates only unchanged recorded
+bytes. Use `--from-pack <validated-predecessor-pack>` to prove the baseline of
+an older installation that predates receipts. Local edits, unknown ownership,
+changed preview state, invalid packs, and partial prior effects refuse closed.
 
 ## Manual Import
 
@@ -39437,13 +39470,233 @@ def import_scope_skip_reason(rel: str, mode: str) -> str:
     return ""
 
 
+def portable_import_record_digest(record: dict[str, object], digest_key: str) -> str:
+    unsigned = dict(record)
+    unsigned.pop(digest_key, None)
+    return hashlib.sha256(stable_compact_json_text(unsigned).encode("utf-8")).hexdigest()
+
+
+def portable_target_path(target_root: Path, target_rel: str) -> Path:
+    relative = Path(target_rel.replace("\\", "/"))
+    if relative.is_absolute() or not relative.parts or any(part in {"", ".", ".."} for part in relative.parts):
+        raise ValueError(f"unsafe portable import target path: {target_rel}")
+    root = target_root.resolve()
+    current = root
+    for part in relative.parts:
+        current = current / part
+        if current.exists():
+            is_junction = bool(getattr(current, "is_junction", lambda: False)())
+            if current.is_symlink() or is_junction:
+                raise ValueError(f"portable import target crosses a symlink or junction: {target_rel}")
+    try:
+        current.parent.resolve().relative_to(root)
+    except ValueError as exc:
+        raise ValueError(f"portable import target escapes target root: {target_rel}") from exc
+    return current
+
+
+def load_portable_import_receipt(target_root: Path) -> dict[str, object] | None:
+    path = portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH)
+    if not path.exists():
+        return None
+    try:
+        record = json.loads(read_text(path))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"invalid portable import receipt: {exc}") from exc
+    if not isinstance(record, dict) or record.get("schema_version") != PORTABLE_IMPORT_RECEIPT_SCHEMA:
+        raise ValueError("invalid portable import receipt schema")
+    if record.get("pack_id") != EXPORT_PACK_ID:
+        raise ValueError("portable import receipt pack id mismatch")
+    expected = portable_import_record_digest(record, "receipt_digest")
+    if record.get("receipt_digest") != expected:
+        raise ValueError("portable import receipt digest mismatch")
+    managed = record.get("managed")
+    if not isinstance(managed, dict):
+        raise ValueError("portable import receipt managed entries are invalid")
+    return record
+
+
+def load_portable_import_intent(target_root: Path) -> dict[str, object] | None:
+    path = portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH)
+    if not path.exists():
+        return None
+    try:
+        record = json.loads(read_text(path))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"invalid portable import intent: {exc}") from exc
+    if not isinstance(record, dict) or record.get("schema_version") != PORTABLE_IMPORT_INTENT_SCHEMA:
+        raise ValueError("invalid portable import intent schema")
+    expected = portable_import_record_digest(record, "intent_digest")
+    if record.get("intent_digest") != expected:
+        raise ValueError("portable import intent digest mismatch")
+    if not isinstance(record.get("operations"), list) or not isinstance(record.get("next_receipt"), dict):
+        raise ValueError("portable import intent shape is invalid")
+    return record
+
+
+def portable_managed_block(text: str) -> str | None:
+    begin = "<!-- AIDE-PORTABLE:BEGIN section=aide-lite-pack-v0"
+    end = "<!-- AIDE-PORTABLE:END section=aide-lite-pack-v0 -->"
+    start = text.find(begin)
+    finish = text.find(end, start + len(begin)) if start >= 0 else -1
+    if start < 0 or finish < 0:
+        return None
+    return text[start : finish + len(end)]
+
+
+def digest_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def target_file_digest(path: Path) -> str:
+    if not path.exists():
+        return "missing"
+    if not path.is_file():
+        return "not-a-file"
+    return sha256_file(path)
+
+
+def text_output_bytes(text: str) -> bytes:
+    return normalize_text(text).encode("utf-8")
+
+
+def import_pack_identity(pack_root: Path) -> dict[str, str]:
+    scalars = pack_manifest_scalars(pack_root)
+    return {
+        "pack_id": scalars.get("pack_id", EXPORT_PACK_ID),
+        "source_commit": scalars.get("source_commit", "unknown"),
+        "manifest_digest": sha256_file(pack_root / "manifest.yaml"),
+        "checksums_digest": sha256_file(pack_root / "checksums.json"),
+    }
+
+
+def receipt_managed_entry(receipt: dict[str, object] | None, target_rel: str, source_rel: str) -> dict[str, object] | None:
+    if receipt is None:
+        return None
+    managed = receipt.get("managed", {})
+    entry = managed.get(target_rel) if isinstance(managed, dict) else None
+    if not isinstance(entry, dict) or entry.get("source") != source_rel:
+        return None
+    return entry
+
+
+def predecessor_installed_digest(predecessor_pack: Path | None, source_rel: str, kind: str) -> str | None:
+    if predecessor_pack is None:
+        return None
+    source = predecessor_pack / "files" / source_rel
+    if not source.exists() or not source.is_file():
+        return None
+    if kind == "portable_managed_section":
+        block = portable_managed_block(read_text(source))
+        return digest_bytes(block.encode("utf-8")) if block is not None else None
+    return sha256_file(source)
+
+
+def copy_operation(
+    source: Path,
+    source_rel: str,
+    target: Path,
+    target_rel: str,
+    receipt: dict[str, object] | None,
+    predecessor_pack: Path | None,
+) -> tuple[dict[str, str], str | None]:
+    source_digest = sha256_file(source)
+    observed = target_file_digest(target)
+    action = "copy"
+    ownership_basis = "new_path"
+    conflict: str | None = None
+    if observed == source_digest:
+        action = "unchanged"
+        ownership_basis = "identical_incoming_bytes"
+    elif observed != "missing":
+        entry = receipt_managed_entry(receipt, target_rel, source_rel)
+        if entry is not None and entry.get("kind") == "managed_file" and entry.get("installed_digest") == observed:
+            action = "update_owned"
+            ownership_basis = "installed_receipt"
+        elif predecessor_installed_digest(predecessor_pack, source_rel, "managed_file") == observed:
+            action = "update_owned"
+            ownership_basis = "validated_predecessor_pack"
+        else:
+            action = "conflict"
+            ownership_basis = "unknown_or_locally_modified"
+            conflict = target_rel
+    return (
+        {
+            "source": source_rel,
+            "target": target_rel,
+            "action": action,
+            "kind": "managed_file",
+            "ownership_basis": ownership_basis,
+            "preimage_digest": observed,
+            "postimage_digest": source_digest,
+            "source_digest": source_digest,
+        },
+        conflict,
+    )
+
+
+def agents_operation(
+    source: Path,
+    source_rel: str,
+    target: Path,
+    target_rel: str,
+    receipt: dict[str, object] | None,
+    predecessor_pack: Path | None,
+) -> tuple[dict[str, str], str | None]:
+    template = read_text(source)
+    desired_block = portable_managed_block(template)
+    if desired_block is None:
+        raise ValueError("portable AGENTS template is missing its managed block")
+    existing = read_text(target) if target.exists() and target.is_file() else None
+    current_block = portable_managed_block(existing) if existing is not None else None
+    current_block_digest = digest_bytes(current_block.encode("utf-8")) if current_block is not None else "missing"
+    desired_block_digest = digest_bytes(desired_block.encode("utf-8"))
+    preimage_digest = target_file_digest(target)
+    desired_text = merge_agents_text(existing, template)
+    postimage_digest = digest_bytes(text_output_bytes(desired_text))
+    action = "merge_agents"
+    ownership_basis = "new_managed_section"
+    conflict: str | None = None
+    if current_block_digest == desired_block_digest:
+        action = "unchanged"
+        ownership_basis = "identical_incoming_section"
+        postimage_digest = preimage_digest
+    elif current_block is not None:
+        entry = receipt_managed_entry(receipt, target_rel, source_rel)
+        if entry is not None and entry.get("kind") == "portable_managed_section" and entry.get("installed_digest") == current_block_digest:
+            action = "update_owned"
+            ownership_basis = "installed_receipt"
+        elif predecessor_installed_digest(predecessor_pack, source_rel, "portable_managed_section") == current_block_digest:
+            action = "update_owned"
+            ownership_basis = "validated_predecessor_pack"
+        else:
+            action = "conflict"
+            ownership_basis = "unknown_or_locally_modified"
+            conflict = target_rel
+    return (
+        {
+            "source": source_rel,
+            "target": target_rel,
+            "action": action,
+            "kind": "portable_managed_section",
+            "ownership_basis": ownership_basis,
+            "preimage_digest": preimage_digest,
+            "postimage_digest": postimage_digest,
+            "source_digest": desired_block_digest,
+        },
+        conflict,
+    )
+
+
 def import_pack_plan(
     pack_root: Path,
     target_root: Path,
     mode: str = "safe",
+    predecessor_pack: Path | None = None,
 ) -> tuple[list[dict[str, str]], list[str], list[dict[str, str]]]:
     if mode not in IMPORT_MODES:
         raise ValueError(f"unsupported import mode: {mode}")
+    receipt = load_portable_import_receipt(target_root)
     files_root = pack_root / "files"
     if not files_root.exists():
         raise ValueError(f"pack files root missing: {files_root}")
@@ -39458,36 +39711,233 @@ def import_pack_plan(
             continue
         if rel == "AGENTS.md.template":
             target_rel = "AGENTS.md"
-            action = "merge_agents"
         else:
             target_rel = rel
-            action = "copy"
-        target = target_root / target_rel
-        if action == "copy" and target.exists():
-            same = sha256_file(source) == sha256_file(target) if target.is_file() else False
-            action = "unchanged" if same else "conflict"
-            if not same:
-                conflicts.append(target_rel)
-        operations.append({"source": rel, "target": target_rel, "action": action})
+        if target_rel in {PORTABLE_IMPORT_RECEIPT_PATH, PORTABLE_IMPORT_INTENT_PATH}:
+            raise ValueError(f"pack payload collides with reserved lifecycle state: {target_rel}")
+        target = portable_target_path(target_root, target_rel)
+        if rel == "AGENTS.md.template":
+            operation, conflict = agents_operation(source, rel, target, target_rel, receipt, predecessor_pack)
+        else:
+            operation, conflict = copy_operation(source, rel, target, target_rel, receipt, predecessor_pack)
+        operations.append(operation)
+        if conflict:
+            conflicts.append(conflict)
         if rel == ".aide/profile.template.yaml":
-            operations.append({"source": rel, "target": ".aide/profile.yaml", "action": "create_from_template"})
+            generated_rel = ".aide/profile.yaml"
+            generated = portable_target_path(target_root, generated_rel)
+            desired = text_output_bytes(render_target_template(read_text(source), target_root))
+            operations.append({"source": rel, "target": generated_rel, "action": "preserve" if generated.exists() else "create_from_template", "kind": "target_owned_template", "ownership_basis": "target_owned_after_creation", "preimage_digest": target_file_digest(generated), "postimage_digest": target_file_digest(generated) if generated.exists() else digest_bytes(desired), "source_digest": sha256_file(source)})
         elif rel == ".aide/memory/project-state.template.md":
-            operations.append({"source": rel, "target": ".aide/memory/project-state.md", "action": "create_from_template"})
+            generated_rel = ".aide/memory/project-state.md"
+            generated = portable_target_path(target_root, generated_rel)
+            desired = text_output_bytes(render_target_template(read_text(source), target_root))
+            operations.append({"source": rel, "target": generated_rel, "action": "preserve" if generated.exists() else "create_from_template", "kind": "target_owned_template", "ownership_basis": "target_owned_after_creation", "preimage_digest": target_file_digest(generated), "postimage_digest": target_file_digest(generated) if generated.exists() else digest_bytes(desired), "source_digest": sha256_file(source)})
         elif rel == ".aide/memory/decisions.template.md":
-            operations.append({"source": rel, "target": ".aide/memory/decisions.md", "action": "create_from_template"})
+            generated_rel = ".aide/memory/decisions.md"
+            generated = portable_target_path(target_root, generated_rel)
+            desired = text_output_bytes(render_target_template(read_text(source), target_root))
+            operations.append({"source": rel, "target": generated_rel, "action": "preserve" if generated.exists() else "create_from_template", "kind": "target_owned_template", "ownership_basis": "target_owned_after_creation", "preimage_digest": target_file_digest(generated), "postimage_digest": target_file_digest(generated) if generated.exists() else digest_bytes(desired), "source_digest": sha256_file(source)})
         elif rel == ".aide/memory/open-risks.template.md":
-            operations.append({"source": rel, "target": ".aide/memory/open-risks.md", "action": "create_from_template"})
-    operations.append({"source": "<generated>", "target": ".gitignore", "action": "ensure_local_state_ignore"})
+            generated_rel = ".aide/memory/open-risks.md"
+            generated = portable_target_path(target_root, generated_rel)
+            desired = text_output_bytes(render_target_template(read_text(source), target_root))
+            operations.append({"source": rel, "target": generated_rel, "action": "preserve" if generated.exists() else "create_from_template", "kind": "target_owned_template", "ownership_basis": "target_owned_after_creation", "preimage_digest": target_file_digest(generated), "postimage_digest": target_file_digest(generated) if generated.exists() else digest_bytes(desired), "source_digest": sha256_file(source)})
+    gitignore = portable_target_path(target_root, ".gitignore")
+    existing_gitignore = read_text(gitignore) if gitignore.exists() and gitignore.is_file() else None
+    desired_gitignore = text_output_bytes(ensure_target_gitignore_text(existing_gitignore))
+    gitignore_preimage = target_file_digest(gitignore)
+    gitignore_postimage = digest_bytes(desired_gitignore)
+    operations.append({"source": "<generated>", "target": ".gitignore", "action": "unchanged" if gitignore_preimage == gitignore_postimage else "ensure_local_state_ignore", "kind": "target_owned_additive", "ownership_basis": "additive_ignore_rules", "preimage_digest": gitignore_preimage, "postimage_digest": gitignore_postimage, "source_digest": gitignore_postimage})
     return operations, sorted(set(conflicts)), skipped
 
 
-def apply_import_pack(pack_root: Path, target_root: Path, dry_run: bool = False, mode: str = "safe") -> dict[str, object]:
+def import_plan_digest(
+    pack_root: Path,
+    target_root: Path,
+    mode: str,
+    operations: list[dict[str, str]],
+    conflicts: list[str],
+    skipped: list[dict[str, str]],
+    predecessor_pack: Path | None,
+) -> str:
+    receipt = load_portable_import_receipt(target_root)
+    payload = {
+        "schema_version": "aide.portable-import-plan.v1",
+        "pack": import_pack_identity(pack_root),
+        "predecessor_pack": import_pack_identity(predecessor_pack) if predecessor_pack else None,
+        "target": normalize_rel(target_root.resolve()),
+        "mode": mode,
+        "prior_receipt_digest": receipt.get("receipt_digest") if receipt else None,
+        "operations": operations,
+        "conflicts": conflicts,
+        "skipped": skipped,
+    }
+    return digest_bytes(stable_compact_json_text(payload).encode("utf-8"))
+
+
+def build_portable_import_receipt(
+    pack_root: Path,
+    mode: str,
+    operations: list[dict[str, str]],
+    plan_digest: str,
+    predecessor_pack: Path | None,
+) -> dict[str, object]:
+    managed: dict[str, dict[str, str]] = {}
+    for operation in operations:
+        kind = operation.get("kind")
+        if kind not in {"managed_file", "portable_managed_section"} or operation.get("action") == "conflict":
+            continue
+        installed_digest = operation.get("source_digest") if kind == "portable_managed_section" else operation.get("postimage_digest")
+        managed[operation["target"]] = {
+            "source": operation["source"],
+            "kind": kind,
+            "installed_digest": str(installed_digest),
+            "source_digest": operation.get("source_digest", ""),
+            "ownership": "aide_portable_managed",
+        }
+    record: dict[str, object] = {
+        "schema_version": PORTABLE_IMPORT_RECEIPT_SCHEMA,
+        "pack_id": EXPORT_PACK_ID,
+        "mode": mode,
+        "pack": import_pack_identity(pack_root),
+        "predecessor_pack": import_pack_identity(predecessor_pack) if predecessor_pack else None,
+        "plan_digest": plan_digest,
+        "managed": dict(sorted(managed.items())),
+        "network_calls": False,
+        "provider_or_model_calls": False,
+    }
+    record["receipt_digest"] = portable_import_record_digest(record, "receipt_digest")
+    return record
+
+
+def build_portable_import_intent(
+    target_root: Path,
+    plan_digest: str,
+    operations: list[dict[str, str]],
+    next_receipt: dict[str, object],
+) -> dict[str, object]:
+    writes = [
+        {
+            "target": operation["target"],
+            "preimage_digest": operation["preimage_digest"],
+            "postimage_digest": operation["postimage_digest"],
+        }
+        for operation in operations
+        if operation.get("action") in {"copy", "update_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
+        and operation.get("preimage_digest") != operation.get("postimage_digest")
+    ]
+    record: dict[str, object] = {
+        "schema_version": PORTABLE_IMPORT_INTENT_SCHEMA,
+        "pack_id": EXPORT_PACK_ID,
+        "target": normalize_rel(target_root.resolve()),
+        "plan_digest": plan_digest,
+        "operations": writes,
+        "next_receipt": next_receipt,
+    }
+    record["intent_digest"] = portable_import_record_digest(record, "intent_digest")
+    return record
+
+
+def portable_receipt_state_matches(left: dict[str, object] | None, right: dict[str, object]) -> bool:
+    if left is None:
+        return False
+    return all(left.get(key) == right.get(key) for key in ("schema_version", "pack_id", "mode", "pack", "managed"))
+
+
+def classify_portable_import_recovery(target_root: Path, intent: dict[str, object]) -> dict[str, object]:
+    observations: list[dict[str, str]] = []
+    states: list[str] = []
+    for item in intent.get("operations", []):
+        if not isinstance(item, dict):
+            continue
+        target_rel = str(item.get("target", ""))
+        observed = target_file_digest(portable_target_path(target_root, target_rel))
+        if observed == item.get("postimage_digest"):
+            state = "effect_observed"
+        elif observed == item.get("preimage_digest"):
+            state = "no_effect_observed"
+        else:
+            state = "unknown"
+        states.append(state)
+        observations.append({"target": target_rel, "state": state, "observed_digest": observed})
+    if states and all(state == "effect_observed" for state in states):
+        classification = "completed"
+    elif not states or all(state == "no_effect_observed" for state in states):
+        classification = "no_effect"
+    elif "unknown" in states:
+        classification = "unknown"
+    else:
+        classification = "partial"
+    return {"classification": classification, "observations": observations, "plan_digest": intent.get("plan_digest")}
+
+
+def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[str, str]) -> bool:
+    action = operation["action"]
+    target = portable_target_path(target_root, operation["target"])
+    if target_file_digest(target) != operation["preimage_digest"]:
+        raise RuntimeError(f"stale target preimage: {operation['target']}")
+    if action in {"copy", "update_owned"} and operation["kind"] == "managed_file":
+        data = (pack_root / "files" / operation["source"]).read_bytes()
+    elif operation["kind"] == "portable_managed_section" and action in {"merge_agents", "update_owned"}:
+        existing = read_text(target) if target.exists() and target.is_file() else None
+        template = read_text(pack_root / "files" / operation["source"])
+        data = text_output_bytes(merge_agents_text(existing, template))
+    elif action == "create_from_template":
+        source = pack_root / "files" / operation["source"]
+        data = text_output_bytes(render_target_template(read_text(source), target_root))
+    elif action == "ensure_local_state_ignore":
+        existing = read_text(target) if target.exists() and target.is_file() else None
+        data = text_output_bytes(ensure_target_gitignore_text(existing))
+    else:
+        return False
+    if digest_bytes(data) != operation["postimage_digest"]:
+        raise RuntimeError(f"planned postimage mismatch: {operation['target']}")
+    result = atomic_write_bytes_if_changed(target, data)
+    if target_file_digest(target) != operation["postimage_digest"]:
+        raise RuntimeError(f"written postimage mismatch: {operation['target']}")
+    return result.action == "written"
+
+
+def apply_import_pack(
+    pack_root: Path,
+    target_root: Path,
+    dry_run: bool = False,
+    mode: str = "safe",
+    predecessor_pack: Path | None = None,
+    expected_plan_digest: str | None = None,
+    fail_after_writes: int | None = None,
+) -> dict[str, object]:
+    pack_root = pack_root.resolve()
+    target_root = target_root.resolve()
+    if pack_root == target_root or pack_root in target_root.parents or target_root in pack_root.parents:
+        raise ValueError("pack and target must be separate roots")
     ok, checksum_problems = validate_pack_checksums(pack_root)
     if not ok:
         raise ValueError("invalid pack checksums: " + "; ".join(checksum_problems))
-    operations, conflicts, skipped = import_pack_plan(pack_root, target_root, mode=mode)
+    if predecessor_pack is not None:
+        predecessor_pack = predecessor_pack.resolve()
+        predecessor_ok, predecessor_problems = validate_pack_checksums(predecessor_pack)
+        if not predecessor_ok:
+            raise ValueError("invalid predecessor pack checksums: " + "; ".join(predecessor_problems))
+    pending = load_portable_import_intent(target_root)
+    if pending is not None:
+        recovery = classify_portable_import_recovery(target_root, pending)
+        if recovery["classification"] == "completed":
+            atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), pending["next_receipt"])
+            portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
+            return {"status": "RECOVERED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": 0, "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
+        if recovery["classification"] == "no_effect":
+            portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
+        else:
+            return {"status": "RECOVERY_REQUIRED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
+    operations, conflicts, skipped = import_pack_plan(pack_root, target_root, mode=mode, predecessor_pack=predecessor_pack)
+    plan_digest = import_plan_digest(pack_root, target_root, mode, operations, conflicts, skipped, predecessor_pack)
+    if expected_plan_digest is not None and expected_plan_digest != plan_digest:
+        return {"status": "STALE_PLAN", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": conflicts, "skipped": skipped, "operations": operations, "written": [], "plan_digest": plan_digest, "expected_plan_digest": expected_plan_digest}
     if dry_run:
         return {
+            "status": "PLANNED_CONFLICT" if conflicts else "PLANNED",
             "dry_run": True,
             "mode": mode,
             "target": normalize_rel(target_root),
@@ -39496,49 +39946,58 @@ def apply_import_pack(pack_root: Path, target_root: Path, dry_run: bool = False,
             "skipped": skipped,
             "operations": operations,
             "written": [],
+            "plan_digest": plan_digest,
         }
+    if conflicts:
+        return {"status": "CONFLICT", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": conflicts, "skipped": skipped, "skipped_conflicts": conflicts, "operations": operations, "written": [], "plan_digest": plan_digest}
     target_root.mkdir(parents=True, exist_ok=True)
-    files_root = pack_root / "files"
+    next_receipt = build_portable_import_receipt(pack_root, mode, operations, plan_digest, predecessor_pack)
+    intent = build_portable_import_intent(target_root, plan_digest, operations, next_receipt)
+    payload_operations = [
+        operation
+        for operation in operations
+        if operation.get("action") in {"copy", "update_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
+        and operation.get("preimage_digest") != operation.get("postimage_digest")
+    ]
+    for operation in payload_operations:
+        if target_file_digest(portable_target_path(target_root, operation["target"])) != operation["preimage_digest"]:
+            return {"status": "STALE_PLAN", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": [], "plan_digest": plan_digest}
+    if payload_operations:
+        atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH), intent)
     written: list[str] = []
-    skipped_conflicts: list[str] = []
-    for operation in operations:
-        action = operation["action"]
-        rel = operation["target"]
-        target = target_root / rel
-        if action == "conflict":
-            skipped_conflicts.append(rel)
-            continue
-        if action == "ensure_local_state_ignore":
-            existing = read_text(target) if target.exists() else None
-            write_text_if_changed(target, ensure_target_gitignore_text(existing))
-            written.append(rel)
-            continue
-        source_rel = operation["source"]
-        source = files_root / source_rel
-        if action == "merge_agents":
-            existing = read_text(target) if target.exists() else None
-            write_text_if_changed(target, merge_agents_text(existing, read_text(source)))
-            written.append(rel)
-        elif action == "create_from_template":
-            if target.exists():
-                continue
-            write_text_if_changed(target, render_target_template(read_text(source), target_root))
-            written.append(rel)
-        elif action in {"copy", "unchanged"}:
-            if action == "unchanged":
-                continue
-            copy_pack_file(source, target)
-            written.append(rel)
+    for operation in payload_operations:
+        try:
+            if apply_import_operation(pack_root, target_root, operation):
+                written.append(operation["target"])
+        except RuntimeError:
+            recovery = classify_portable_import_recovery(target_root, intent)
+            return {"status": "INTERRUPTED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": written, "recovery": recovery, "plan_digest": plan_digest}
+        if fail_after_writes is not None and len(written) >= fail_after_writes:
+            recovery = classify_portable_import_recovery(target_root, intent)
+            return {"status": "INTERRUPTED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": written, "recovery": recovery, "plan_digest": plan_digest}
+    current_receipt = load_portable_import_receipt(target_root)
+    if not payload_operations and portable_receipt_state_matches(current_receipt, next_receipt):
+        receipt_result = WriteResult(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), "unchanged")
+    else:
+        receipt_result = atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), next_receipt)
+    intent_path = portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH)
+    if intent_path.exists():
+        intent_path.unlink()
+    status = "APPLIED" if written or receipt_result.action == "written" else "NO_CHANGES"
     return {
+        "status": status,
         "dry_run": False,
         "mode": mode,
         "target": normalize_rel(target_root),
         "operation_count": len(operations),
         "conflicts": sorted(set(conflicts)),
         "skipped": skipped,
-        "skipped_conflicts": sorted(set(skipped_conflicts)),
+        "skipped_conflicts": [],
         "operations": operations,
         "written": sorted(set(written)),
+        "receipt": PORTABLE_IMPORT_RECEIPT_PATH,
+        "receipt_written": receipt_result.action == "written",
+        "plan_digest": plan_digest,
     }
 
 
@@ -39561,12 +40020,25 @@ def command_import_pack(args: argparse.Namespace) -> int:
     if not pack_root.exists():
         pack_root = (args.repo_root / args.pack).resolve()
     target_root = Path(args.target).resolve()
-    result = apply_import_pack(pack_root, target_root, dry_run=args.dry_run, mode=args.mode)
+    predecessor_pack = Path(args.from_pack).resolve() if args.from_pack else None
+    if predecessor_pack is not None and not predecessor_pack.exists():
+        predecessor_pack = (args.repo_root / args.from_pack).resolve()
+    result = apply_import_pack(
+        pack_root,
+        target_root,
+        dry_run=args.dry_run,
+        mode=args.mode,
+        predecessor_pack=predecessor_pack,
+        expected_plan_digest=args.expect_plan,
+    )
     print("AIDE Lite import-pack")
     print(f"pack: {normalize_rel(pack_root)}")
     print(f"target: {normalize_rel(target_root)}")
     print(f"dry_run: {str(args.dry_run).lower()}")
     print(f"mode: {result['mode']}")
+    print(f"status: {result['status']}")
+    print(f"plan_digest: {result['plan_digest']}")
+    print(f"predecessor_pack: {normalize_rel(predecessor_pack) if predecessor_pack else 'none'}")
     print(f"operation_count: {result['operation_count']}")
     print(f"conflicts: {len(result['conflicts'])}")
     print(f"skipped: {len(result['skipped'])}")
@@ -39580,7 +40052,11 @@ def command_import_pack(args: argparse.Namespace) -> int:
             print(f"- {skipped['source']}: {skipped['reason']}")
     print("provider_or_model_calls: none")
     print("network_calls: none")
-    return 0 if not result["conflicts"] else 2
+    if result["status"] in {"CONFLICT", "PLANNED_CONFLICT"}:
+        return 2
+    if result["status"] in {"STALE_PLAN", "INTERRUPTED", "RECOVERY_REQUIRED"}:
+        return 3
+    return 0
 
 
 def command_pack_status(args: argparse.Namespace) -> int:
@@ -41505,6 +41981,8 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     import_parser.add_argument("--pack", default=EXPORT_PACK_PATH)
     import_parser.add_argument("--target", required=True)
     import_parser.add_argument("--dry-run", action="store_true")
+    import_parser.add_argument("--from-pack", help="Validated predecessor pack used only to prove an unrecorded installed baseline.")
+    import_parser.add_argument("--expect-plan", help="Exact plan digest printed by a prior dry-run; changed inputs refuse apply.")
     import_parser.add_argument(
         "--mode",
         choices=sorted(IMPORT_MODES),

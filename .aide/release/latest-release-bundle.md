@@ -1,9 +1,9 @@
 # Latest Release Bundle
 
-- bundle_id: aide-lite-pack-v0-4f80611776b7d524
+- bundle_id: aide-lite-pack-v0-9161d9512738440f
 - bundle_name: aide-lite-pack-v0
-- source_commit: 4f80611776b7d524660da2b0e10877d9128445a6
-- source_branch: task/aide-delivered-pack-import-closure-01
+- source_commit: 9161d9512738440f265df08c262d7117a74f7c8a
+- source_branch: task/aide-delivered-pack-safe-update-01
 - dirty_state: false
 - artifact_count: 11
 - validation_result: PASS
