@@ -2,23 +2,23 @@
   "artifact_hashes": {
     ".aide/release/dist/CHANGELOG.preview.md": "725d7aad7d6f7385121ba706fedf28675c443fc7a7a88bc7340d12fb724f55fa",
     ".aide/release/dist/RELEASE_NOTES.preview.md": "774a75827477d5e85f6a9659c74e0c85dc035e147f5e94161c843338077b259c",
-    ".aide/release/dist/aide-lite-pack-v0.tar.gz": "b50b116737ab65036e8fa520c4b729b5b58dd1caa1069774bcf8b8022706ef36",
-    ".aide/release/dist/aide-lite-pack-v0.zip": "b5cc171d178a404df125ddef0c8cb8d8bef50ecfd72329c7995bad127b5b437c",
-    ".aide/release/dist/install.md": "cb2637ef75783b6e2c0e6a3638a60dea7b594d5327256dbb8ac4d393cf8b0744",
-    ".aide/release/dist/manifest.yaml": "b27b8b16a2bf8dddf8ca6b89f1f4f2507435167896f05ae6c302bd4bb4c7bb6d"
+    ".aide/release/dist/aide-lite-pack-v0.tar.gz": "aa85cc0a27c1caf9561055679f7483a82645261ec314e2b0ed211d91bd867e20",
+    ".aide/release/dist/aide-lite-pack-v0.zip": "0bfdfa7f6224fffe3fcbe93a4155dc2ad80db5a039cfcd57ce63f2b2cf983efc",
+    ".aide/release/dist/install.md": "0b5a5cf9b37d1968df518c788c0adc621a3f0ee3ebb28515a27e7dcaf1a66e79",
+    ".aide/release/dist/manifest.yaml": "c8abe0f131a67be686b086c79a9b6ec4180c35c815d9fc4ac27c297910178622"
   },
-  "bundle_id": "aide-lite-pack-v0-f6ae36e8074bab51",
+  "bundle_id": "aide-lite-pack-v0-dd26c9fc67eee9d5",
   "dirty_state": false,
   "dirty_state_error": "",
-  "export_pack_checksums_sha256": "961db2cdcd81f7d749fee2e8580bd32d258548feccbbf3126a90e0964f362614",
-  "export_pack_manifest_sha256": "36f488a74dead589a20ed34a8c150e44197b513a4dd5a47a1b100f96e16c167f",
-  "generated_at_or_source_ref": "source_commit:b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb",
+  "export_pack_checksums_sha256": "3747256fe742e49a70e2c092c801929d6fef8437c68f687a5dc2610f01f55fc7",
+  "export_pack_manifest_sha256": "7d0410d6839ee570c8c66259f55d4f7a59334bbfb921a302c37862645cc0c032",
+  "generated_at_or_source_ref": "source_commit:dd26c9fc67eee9d5da4b1484d9fabccf3c2e21ab",
   "generated_by": "aide-lite release bundle q47",
   "no_publish": true,
   "preview_only": true,
   "publication_status": "local_preview_no_publish",
   "schema_version": "aide.release-provenance.v0",
-  "source_branch": "task/aide-broker-dev-pack-refresh-01",
-  "source_commit": "b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb",
-  "source_repo": "D:/Projects/AIDE/aide-broker-pack-refresh"
+  "source_branch": "task/aide-delivered-pack-removal-plan-01",
+  "source_commit": "dd26c9fc67eee9d5da4b1484d9fabccf3c2e21ab",
+  "source_repo": "D:/Projects/AIDE/aide-delivered-pack-remove"
 }

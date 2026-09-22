@@ -223,6 +223,32 @@ class Q47ReleaseBundleTests(unittest.TestCase):
                 self.assertEqual(rerun.returncode, 0, rerun.stdout + rerun.stderr)
                 self.assertIn("status: NO_CHANGES", rerun.stdout)
 
+                before = {
+                    aide_lite.normalize_rel(path.relative_to(target)): path.read_bytes()
+                    for path in sorted(target.rglob("*"))
+                    if path.is_file()
+                }
+                removal = self.run_extracted_cli(
+                    pack_root,
+                    target,
+                    "plan-removal",
+                    "--target",
+                    str(target),
+                    "--json",
+                )
+                self.assertEqual(removal.returncode, 0, removal.stdout + removal.stderr)
+                removal_plan = json.loads(removal.stdout)
+                self.assertEqual(removal_plan["status"], "PLANNED")
+                self.assertTrue(removal_plan["read_only"])
+                self.assertFalse(removal_plan["apply_allowed"])
+                self.assertGreater(removal_plan["candidate_count"], 0)
+                after = {
+                    aide_lite.normalize_rel(path.relative_to(target)): path.read_bytes()
+                    for path in sorted(target.rglob("*"))
+                    if path.is_file()
+                }
+                self.assertEqual(after, before)
+
     def test_release_archives_are_byte_deterministic(self) -> None:
         root = self.make_repo()
         aide_lite.build_release_bundle_outputs(root)

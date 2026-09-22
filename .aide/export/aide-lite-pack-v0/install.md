@@ -28,6 +28,21 @@ bytes. Use `--from-pack <validated-predecessor-pack>` to prove the baseline of
 an older installation that predates receipts. Local edits, unknown ownership,
 changed preview state, invalid packs, and partial prior effects refuse closed.
 
+## Read-Only Removal Planning
+
+After a receipt-backed import, inspect the exact future removal boundary without
+changing target bytes:
+
+```text
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo>
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo> --json
+```
+
+Only unchanged bytes recorded as AIDE-managed are future removal candidates.
+Local edits, missing state, target-owned files, unknown ownership, and authored
+`AGENTS.md` content are preserved. This command is planning-only: it never
+deletes files, removes a managed section, or writes lifecycle state.
+
 ## Manual Import
 
 Copy only the safe portable subset from `files/` into the target repository:
