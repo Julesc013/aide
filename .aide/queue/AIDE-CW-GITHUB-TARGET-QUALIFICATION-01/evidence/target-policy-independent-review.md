@@ -6,180 +6,204 @@ Review date: 2026-09-22
 
 `REQUEST_CHANGES`
 
-This rereview supersedes the verdict for the repaired exact commit without
-erasing the initial `REQUEST_CHANGES` history. F-01, F-02, and F-04 are closed.
-F-03 remains materially open: the generated `workflows` rule has the documented
-field shape, but GitHub documents ruleset workflows as organization- or
-enterprise-level controls, while the exact target is the user-owned repository
-`Julesc013/aide`. The represented workflow event is also `push`, while GitHub
-requires a ruleset workflow file to include `pull_request`,
-`pull_request_target`, or `merge_group`.
+This third review supersedes the verdict for exact follow-up commit
+`cb05b135eb0d9012e3d40e37a195f65abbab0b7a` without erasing either prior
+`REQUEST_CHANGES` round. The repair removes the unavailable required-workflow
+operation from the user-owned target, classifies destination, local, monitored,
+and unsupported guarantees truthfully, rejects same-app/name substitution, and
+binds its synthetic accepted provenance through the plan, raw observation,
+durable decision/intent, and registered bridge.
 
-The current unresolved packet remains fail-closed with zero operations. This
-review does not authorize target mutation, workflow or ruleset installation,
-credential or principal creation, settings changes, branch changes, push,
-merge, tag, release, or any other hosted effect.
+F-03 nevertheless remains open. The collector rejects the workflow-run `path`
+representation shown by GitHub's 2026-03-10 documentation
+(`.github/workflows/file.yml@ref`)
+because it compares that raw value to a plan field that permits only the bare
+path. The committed bare-only fixture does not exercise that documented API
+response shape, so all local tests pass without covering it.
+This is fail-closed, but it prevents a documented real workflow run from
+reaching the durable qualification chain and therefore does not complete target
+qualification.
+
+The current unresolved packet remains blocked with zero operations. This review
+does not authorize target mutation, workflow or ruleset installation, credential
+or principal creation, settings changes, branch changes, push, merge, tag,
+release, or any other hosted effect.
 
 ## Exact Review Subject
 
-- Repaired published commit: `9383c2b5e8521bbdf9d0a54648459ee25d76c1b3`.
-- Repaired tree: `572b2f4f8bbbcf896b4c1661157658b6907c37c6`.
-- Exact parent and initial-review commit:
-  `9bba1cecaec835b5299cf02718059a94ef4c08cb`.
-- Local `HEAD` and `origin/task/aide-cw-github-target-qualification-01` both
-  resolved to the repaired commit at review start.
-- The exact parent-to-repair diff contains 10 paths, all within the task's
-  declared allowed paths. `git diff --check` passes.
+- Follow-up commit: `cb05b135eb0d9012e3d40e37a195f65abbab0b7a`.
+- Tree: `48582b5476afc88eb72a5b1dd343495017e402f4`.
+- Parent: `9383c2b5e8521bbdf9d0a54648459ee25d76c1b3`.
+- Branch: `task/aide-cw-github-target-qualification-01`.
+- Local `HEAD` and its local remote-tracking ref both resolved to the exact
+  follow-up commit at review start.
+- The exact parent-to-follow-up diff contains 18 paths and passes
+  `git diff --check`.
+- Two changed test paths are outside `task.yaml`'s declared `allowed_paths`:
+  `.aide/scripts/tests/test_continuous_worker_pr_observation.py` and
+  `.aide/scripts/tests/test_continuous_worker_provider_bridge.py`.
 
 Reviewed source identities:
 
-- `core/runtime/integration_broker/github_target_policy.py`: Git blob
-  `bd9907be0da7fa442d4498e8a047221eb9a6d3df`; SHA-256
-  `75e61dbb5ce4f085b885da08616f9a19bf667ae1d4c50cfd834ecbf21fcca2d2`.
-- `.aide/scripts/tests/test_continuous_worker_github_observation.py`: Git blob
-  `0ade7c372ad0dd66e940380e7d2e4f7f2d9168ce`; SHA-256
-  `3ff68a757329e91564b8e69adf7a3b47d13d208d91973eaaf4fd0dda18860236`.
+- `github_target_policy.py`: blob
+  `b7ee5c19c4bc95f90aeb16e25a34bfb04386d8b4`; SHA-256
+  `ed2d5e6ae5a03c3e53e5e019ca972c67132367ec404807bb6dc035b515e37bd6`.
+- `github_checks.py`: blob `2433e901212d974003a297f9ffacfad5299dc175`;
+  SHA-256 `e13c1e2a77ad214d8edadfba9a2369cfa0f883cba526d5301db2ad77e3dcef05`.
+- `pr_observation.py`: blob `2c8f6dc2ebe78314af05a5e8dbca63b5007bf4bb`;
+  SHA-256 `ac37b9990a1c8b92e3285a77195c77968614407d9c99147e8dc191372d5c2e39`.
+- Focused observation test: blob
+  `bb7e4cc860cf58aab9b911235a8f6c4cb5eb1a4e`; SHA-256
+  `40ff3189bcbabd1a021dda0e1784fa67deed4d00c6d2758c148ba49e4b480201`.
+- PR observation test: blob `028586d3137929bac0b53665bf1c9e073c2c3e03`;
+  SHA-256 `6b35b1b3dffe501cdd0f840abaf9fc6e0ef0c336623724f7e4a6dcecb4cc5ece`.
+- Provider bridge test: blob `b2b7cfb7b470a929aa05a23b8f38e1f903f1d075`;
+  SHA-256 `7cf1e4c67bf9b4e17d0cae8113f5eaa15ff91f39af5cf2d9a3f55145ae815ac5`.
 
-## Superseding Finding
+## Findings
 
-### P1 F-03: the replacement workflow control is not qualified for this target
+### P1 F-03: documented workflow-run paths cannot enter qualification
 
-`github_target_policy.py:148-159` adds a `workflows` rule to a repository-level
-`POST /repos/Julesc013/aide/rulesets`. Its `path`, `repository_id`, `ref`, and
-`sha` fields match the generic REST request schema. That schema is not enough to
-establish target applicability: GitHub's current ruleset documentation states
-that ruleset workflows are configured at the organization or enterprise level.
-The reviewed target observation identifies `Julesc013` as a `User`, not an
-organization, so this repository-level operation has no documented supported
-deployment path for the exact target.
+At `github_checks.py:53-57`, the collector accepts an optional `@ref` in its
+regular expression but then requires the entire raw value to equal the bare
+planned path. At `pr_observation.py:34-40` and `pr_observation.py:89-108`, both
+the plan and normalized observation permit only a bare path. The test fixture at
+`test_continuous_worker_github_observation.py:118-124` likewise supplies only a
+bare path.
 
-There is a second unresolved premise in the same repair. The policy requires
-the workflow identity's event to be `push` at lines 96-111. GitHub documents
-only `pull_request`, `pull_request_target`, and `merge_group` as supported
-ruleset-workflow events, and says at least one must appear in the workflow
-file. The packet has no installed workflow and no source-file evidence proving
-one of those supported triggers. Consequently the new
-`exact_required_workflow` destination guarantee is not established, and the
-original same-app/same-name collision risk remains unresolved for the only
-documented, target-applicable required-status-check mechanism.
+GitHub's current workflow-run REST documentation, with
+`X-GitHub-Api-Version: 2026-03-10`, shows `path` as
+`.github/workflows/build.yml@main` for a workflow-run attempt. The exact
+versioned OpenAPI component marks `path` required and uses
+`octocat/octo-repo/.github/workflows/ci.yml@main` as its example. Independent
+API-faithful probes changed only the fixture path to
+`.github/workflows/aide-cw-checks.yml@task/aide-cw-...`; the collector refused
+it as a workflow-source mismatch and likewise refused the repository-prefixed
+OpenAPI example shape. Same-app/name substitution to a different path and the
+same path with a wrong ref were also refused, which is correct, but the
+documented legitimate shapes are indistinguishable from an invalid source under
+the current contract.
 
-Required change: either bind the actual accepted run to the reviewed workflow
-path/source throughout the local plan, observation, and decision contract, or
-replace the proposed control with an officially documented mechanism that is
-available for this user-owned repository. If a ruleset workflow remains part of
-the design, its supported target level and event trigger must be represented
-and independently qualified before an exact operation can be review-ready.
+Impact: the implementation fails closed before it can accept and durably bind a
+GitHub Actions run having the documented shape. Passing fixtures therefore do
+not establish the claimed local workflow-source qualification for that API
+shape.
+
+Required change: parse and validate the documented `path@ref` representation,
+bind the entry path and its source selector to the admitted branch/head semantics,
+and retain the accepted representation or an unambiguous normalized path/ref pair
+through the normalized observation, durable decision/intent, and bridge. Add an
+official-shape positive fixture plus wrong-path, wrong-ref, missing-ref, and
+malformed-ref refusals.
 
 Official basis:
 
-- [GitHub REST API 2026-03-10 versions](https://docs.github.com/en/rest/about-the-rest-api/api-versions).
-- [Create a repository ruleset](https://docs.github.com/en/enterprise-cloud@latest/rest/repos/rules#create-a-repository-ruleset).
-- [Available rules: require workflows](https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets#require-workflows-to-pass-before-merging).
-- [Troubleshooting ruleset workflows](https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/troubleshooting-rules#troubleshooting-ruleset-workflows).
+- [REST API endpoints for workflow runs](https://docs.github.com/en/rest/actions/workflow-runs).
+- [GitHub REST OpenAPI description 2026-03-10](https://github.com/github/rest-api-description/blob/main/descriptions/api.github.com/api.github.com.2026-03-10.json).
+- [REST API endpoints for workflow jobs](https://docs.github.com/en/rest/actions/workflow-jobs).
+- [REST API endpoints for check runs](https://docs.github.com/en/rest/checks/runs).
+- [Troubleshooting required status checks](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks).
 
-## Finding Closure Matrix
+### P2 S-01: the follow-up diff exceeds the declared task paths
 
-- `F-01 CLOSED`: the non-dev update rule now emits
-  `parameters.update_allows_fetch_and_merge: false`, which the pinned
-  `2026-03-10` REST schema requires. The focused test and independent probe
-  assert the exact body.
-- `F-02 CLOSED`: policy construction and validation reject broker/owner
-  equality by immutable user id or case-insensitive login. Independent probes
-  confirmed both refusal paths.
-- `F-03 OPEN`: the source-binding fields are present, but the replacement
-  control is not documented for a user-owned repository and the represented
-  `push` event does not satisfy ruleset-workflow trigger requirements.
-- `F-04 CLOSED`: repository id, bounded effective-rule records, and explicit
-  classic branch-protection state are required observation fields, enter the
-  canonical digest, and block operation materialization on drift. Hosted
-  non-empty normalization remains an external qualification step.
+The follow-up changes the PR-observation and provider-bridge tests, while
+`task.yaml:18-27` allows only the focused GitHub-observation test under
+`.aide/scripts/tests/`. These tests are relevant to the requested end-to-end
+binding, but the canonical task record was not expanded before the changes.
+
+Required change: route any scope expansion through the canonical queue record
+and its review gate. This review does not authorize such an edit.
+
+## F-03 Closure Matrix
+
+- `CLOSED`: the user-owned target emits no `workflows` rule or required-workflow
+  endpoint. A resolved synthetic plan contains one repository settings `PATCH`
+  and two repository ruleset `POST`s only.
+- `CLOSED`: destination-enforced guarantees are limited to expected-head,
+  app-bound status check, PR-only dev updates, non-dev update restriction,
+  deletion restriction, and non-fast-forward restriction.
+- `CLOSED`: exact workflow run path/event/head is classified as a local
+  precondition; run/attempt and check-run/suite identities are monitored;
+  server exact-source enforcement and same-app/name collision exclusion are
+  explicitly unsupported.
+- `CLOSED`: same-app/name substitution, missing run/check/suite identities, and
+  malformed normalized identities refuse. Malformed observations create no
+  durable mutation intent, and unresolved target identity yields zero review
+  operations.
+- `CLOSED FOR THE SYNTHETIC SHAPE`: workflow path/event/head, workflow run id and
+  attempt, check run id, and check suite id survive normalized observation,
+  decision validation, SQLite observation storage, intent digest, staged
+  transport, and registered-bridge observation-digest checks.
+- `OPEN`: the synthetic accepted bare path is not the documented workflow-run
+  `path@ref` shape, so the chain is not qualified for official API input.
 
 ## Canonical Evidence
 
 Exact raw SHA-256 values:
 
-- Desired policy: `245a8d871301b255d9cbc0abfa3e7fde2e8ccfea0e7f0b88e01ebcbe149e8146`.
+- Desired policy: `c516b0e8f655870dd3123ce6a175a2108dbe76a8d8a4e4cfda7be90fbfb05ff9`.
 - Current observation: `020650ae5932c672313248a4be57011b1e75046fed19e0c15e99cad095f9f75b`.
-- Review plan: `a0aec7f8c4db5191167a662bbc2ca66a742c2ed498f80cfd2e1ea9a36c95773c`.
-- Repair record: `9a28d24193c115c90abaca03b0375208d73e4bd04ebc0d46c974314b1f6333f6`.
-- Source checkpoint: `a5cebfe61f0939a2b72bbc8dc5dd1d3194639000b0285104a839bf68f6d78ed9`.
-- Validation record: `7e5ec1db098ad4c5977b38ca8ea40c5cafc9b06aef2291ae8dc819dd1c58dd93`.
+- Review plan: `54a18d662e6bc397eba1d6ae7dd66c99a29e42e47a1dfd8b741e0165590d7bbb`.
+- Repair record: `af61938768eabd5b08f87cdabdc374a7f62609c1acc7433cbfed50b06cfbeff6`.
+- Source checkpoint: `51f171fde3f0b2824bd7e0aea62e2c8c7f65c951b8f990b4b059c2f0a8344f66`.
+- Validation record: `346abab087a543719d2528f51c2d2eeb5f3bbd5923d69f82986292c16c1e998a`.
+- Remaining risks: `a7e62dd73d9ecfb2ced8596c8241399c9bbcf5d30cf640f2a0e109a0ed74711b`.
 
 Canonical recomputation reproduced:
 
-- Policy digest: `0c3c1ce858c4e70e0070074f66db31873c7a1f4b9aa820066f760678ed35ba89`.
+- Policy digest: `c79b62b9fc888aa50600334e3b7108addc91f543b4ea7e3e4505d0a8aef636c9`.
 - Observation digest: `a1261592a0d53ac3ded981a19e32b0b323f085da45cf041893c76078b767c86a`.
-- Plan digest: `762da6e0de4359fcc1316529e9f715f075bac0e37f42e7a9ec2127f3b5469336`.
+- Plan digest: `a754af93595c26612edc13d52456e0d7ef64b07120e639001a05a91b1b3d3655`.
 - Desired policy and review plan regenerate data-exactly from the pure builder
   and current observation.
-- Current plan status is `blocked` on `broker_principal_unresolved` and
-  `workflow_check_identity_unresolved`; it has zero operations and
-  `apply_authorized: false`.
-
-## Verified Guarantees
-
-- Exact-field validation, bounded strings and positive identifiers, a 16-record
-  repository-ruleset ceiling, a 128-record effective-rule ceiling, and
-  depth/node/byte limits keep the pure comparison bounded.
-- Repository identity, observer/admin identity, complete-visibility flags,
-  principal permissions, workflow identity, repository rulesets, effective
-  rules, classic protection, and repository settings are digest-bound.
-- Drift in repository id, effective rules, or classic protection changes both
-  observation and plan digests and yields a blocker with no operations.
-- The permission contract excludes administration and workflow write access;
-  GitHub requires Administration write permission to create a repository
-  ruleset, so policy installation is necessarily outside the broker identity.
-  The real restricted broker and its effective permissions remain unresolved.
-- The target-policy module imports only local validation/canonicalization
-  helpers and `re`. It has no HTTP client, credential reader, filesystem writer,
-  sender, retry, dispatcher, or apply entry point, and no production module
-  imports it at this checkpoint.
-- The repair adds no `.github/workflows` file and no apply, network, or
-  credential path. No GitHub target, Git ref, index entry, commit, branch, tag,
-  or object database was mutated during rereview.
+- Current status is `blocked` on `broker_principal_unresolved` and
+  `workflow_check_identity_unresolved`; operation count is zero and
+  `apply_authorized` is false.
 
 ## Local Verification
 
-- PASS: `py -3 -B .aide/scripts/tests/test_continuous_worker_github_observation.py -v`
-  ran 46 tests in 0.129 seconds.
-- PASS: `py -3 -B .aide/scripts/tests/test_continuous_worker_pr_observation.py -v`
-  ran 21 tests in 65.303 seconds.
-- PASS: `py -3 -B .aide/scripts/tests/test_continuous_worker_github_http.py -v`
-  ran 19 tests in 1.156 seconds.
-- PASS: `py -3 -B .aide/scripts/tests/test_continuous_worker_provider_bridge.py -v`
-  ran 12 tests in 80.727 seconds.
-- PASS WITH ONE RETAINED HOST GAP:
-  `py -3 -B .aide/scripts/tests/test_continuous_worker_integration_broker.py -v`
-  ran 37 tests in 158.111 seconds; 36 passed and the disposable-symlink case
-  skipped because this Windows token lacks symlink privilege.
+- PASS: focused GitHub observation suite, 46 tests in 0.093 seconds.
+- PASS: PR observation suite, 21 tests in 62.477 seconds.
+- PASS: bounded GitHub HTTP suite, 19 tests in 1.089 seconds.
+- PASS: provider bridge suite, 12 tests in 88.302 seconds.
+- PASS WITH ONE RETAINED HOST GAP: integration-broker suite, 37 tests in
+  181.390 seconds; one disposable-symlink case skipped for unavailable Windows
+  symlink privilege.
 - PASS: 135 total affected cases, 134 passed, one skipped, zero failures.
-- PASS: independent probes confirmed the complete update rule, same-id and
-  case-folded-login refusal, exact emitted workflow fields, and digest/blocker
-  changes for repository-id, effective-rule, and classic-protection drift.
-- PASS: exact evidence regeneration, raw SHA-256 recomputation, source Git blob
-  checks, `git diff --check`, changed-path scope, and static absence-of-effect
-  scans.
+- PASS: independent probes refused same-app/name source substitution, missing
+  run/check/suite identities, and missing normalized identities; confirmed no
+  required-workflow operation and zero operations for unresolved target identity.
+- PASS: the durable probe retained all provenance identities and bound the
+  `merge` intent to the exact observation digest.
+- EXPECTED REFUSAL / FINDING REPRODUCED: relative `path@ref` and
+  repository-prefixed OpenAPI example-shape probes were refused as
+  workflow-source mismatches; a wrong-ref probe also refused.
+- PASS: exact regeneration, raw SHA-256 and Git blob recomputation,
+  `git diff --check`, and static no-effect scans.
 
-All tests and probes were local and deterministic. No credential-dependent or
-GitHub API operation was run.
+The initial dotted-module `unittest` invocation failed with
+`ValueError: Empty module name` because `.aide` is not an importable dotted
+package name; the same five suites were rerun successfully with deterministic
+`unittest discover` file patterns. All tests and probes were local. Official
+documentation was read over HTTPS, but no GitHub REST API or credential-dependent
+operation was executed.
 
 ## Retained Blockers
 
-- F-03 requires a target-applicable workflow-source binding before the resolved
-  operation packet can be accepted.
+- F-03 needs an official-response-shape workflow path/ref contract and tests.
 - Exact restricted broker principal and effective repository permissions remain
   unresolved.
-- Exact workflow/check identity and a supported workflow trigger remain
-  unresolved; the target has no recorded installed workflow or qualifying
-  rulesets.
+- Exact target workflow/check identity remains unresolved; the target has no
+  recorded installed workflow or qualifying rulesets.
 - Settings/workflow installation, hosted adversarial races, non-empty effective
-  policy normalization, protected-host/store qualification, and the
-  isolated-host close dependency remain unrun.
+  policy normalization, protected-host/store qualification, and the isolated-host
+  close dependency remain unrun.
+- The two out-of-scope test changes require canonical scope disposition.
 - The task remains `needs_review`; no target mutation is authorized.
 
-## Initial Review History
+## Prior REQUEST_CHANGES History
 
-The initial review remains an auditable part of this file:
+### Round 1: Initial Review
 
 - Verdict: `REQUEST_CHANGES`.
 - Source: `bb433bb74f645e0904ca34bf3af38516ae05a7ad`, tree
@@ -187,19 +211,27 @@ The initial review remains an auditable part of this file:
 - Published head: `eb4dea3f30ab53e3e57fe85eae97fa07de6e414c`, tree
   `41adc996349690b4d796d8005ef179c89fb93c8e`.
 - Review commit: `9bba1cecaec835b5299cf02718059a94ef4c08cb`.
-- Initial Markdown blob/SHA-256:
-  `7103255f96461b1b1edc88dbc7b6bdd4e40e10cb` /
+- Markdown blob/SHA-256: `7103255f96461b1b1edc88dbc7b6bdd4e40e10cb` /
   `e69a8b86a6f6de5040d2ebdc8d60855006c420283dd7ce407cb904f9f004d915`.
-- Initial JSON blob/SHA-256:
-  `6a52271d2ec4727a0851156da57b3cb6ecbb0d00` /
+- JSON blob/SHA-256: `6a52271d2ec4727a0851156da57b3cb6ecbb0d00` /
   `dec5691bc4c0f59338f2b35f4b48052356e123fa3c06f9444d3b34a16014dfce`.
-- Initial F-01 (P1): generated update rule omitted required API parameters.
-- Initial F-02 (P1): owner and broker could resolve to the same bypass actor.
-- Initial F-03 (P1): reviewed workflow source was not bound to the accepted
-  required check.
-- Initial F-04 (P2): canonical observation omitted effective-policy inputs.
+- Findings: F-01 missing update parameters; F-02 owner/broker aliasing;
+  F-03 unbound workflow source; F-04 omitted effective-policy inputs.
 
-The initial review ran 44 focused tests, 19 bounded HTTP tests, 12 provider
-bridge tests, and 37 integration-broker tests with the same one symlink skip;
-its same-owner probe reproduced F-02. Its request for changes is historical
-fact even though three findings are closed by the repaired commit.
+### Round 2: First Repair Rereview
+
+- Verdict: `REQUEST_CHANGES`.
+- Source: `9383c2b5e8521bbdf9d0a54648459ee25d76c1b3`, tree
+  `572b2f4f8bbbcf896b4c1661157658b6907c37c6`.
+- Parent review commit: `9bba1cecaec835b5299cf02718059a94ef4c08cb`.
+- Markdown blob/SHA-256 at the follow-up review boundary:
+  `542dd632700f291ab98a48cd20bd4b5b582c5fc8` /
+  `be9da84f70698a5d34e392f8328d8a0049ce556ffcad243da0a9fdabeb469a87`.
+- JSON blob/SHA-256 at the follow-up review boundary:
+  `a6756731bdc003bd44adb1222cdb81174b712fff` /
+  `d1961d3fe29ca497d22dfed3185735e7a99e64cbfa5c850b804103313cf23485`.
+- F-01, F-02, and F-04 closed. F-03 remained open because the proposed
+  required-workflow ruleset operation was unavailable for the user-owned target
+  and its represented `push` trigger did not meet that control's requirements.
+
+No prior finding or verdict is erased by this superseding record.
