@@ -211,6 +211,29 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         second = {rel: (root / rel).read_bytes() for rel in first}
         self.assertEqual(first, second)
 
+    def test_release_records_clean_source_before_writing_bundle_outputs(self) -> None:
+        root = self.make_repo()
+        subprocess.run(["git", "init", "--quiet", str(root)], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "user.name", "AIDE Fixture"], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "user.email", "fixture@example.invalid"], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "core.autocrlf", "false"], check=True)
+        subprocess.run(["git", "-C", str(root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", "fixture"], check=True)
+        source_commit = subprocess.run(
+            ["git", "-C", str(root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+
+        bundle = aide_lite.build_release_bundle_outputs(root)
+        provenance = json.loads((root / aide_lite.RELEASE_PROVENANCE_JSON_PATH).read_text(encoding="utf-8"))
+        self.assertEqual(provenance["source_commit"], source_commit)
+        self.assertFalse(provenance["dirty_state"])
+        self.assertEqual(bundle["source_commit"], source_commit)
+        self.assertFalse(bundle["dirty_state"])
+
     def test_checksum_mismatch_detection_fails(self) -> None:
         root = self.make_repo()
         aide_lite.build_release_bundle_outputs(root)

@@ -17344,20 +17344,33 @@ def write_release_checksums(repo_root: Path, bundle_id: str) -> dict[str, object
     return data
 
 
-def release_provenance_data(repo_root: Path, bundle_id: str, artifacts: list[dict[str, object]]) -> dict[str, object]:
+def release_provenance_data(
+    repo_root: Path,
+    bundle_id: str,
+    artifacts: list[dict[str, object]],
+    *,
+    source_commit: str | None = None,
+    source_branch: str | None = None,
+    dirty_state: bool | None = None,
+    dirty_state_error: str | None = None,
+) -> dict[str, object]:
     source = release_source_pack_ref(repo_root)
     git_ok, status_entries, git_error = git_status_short(repo_root)
+    resolved_commit = source_commit if source_commit is not None else git_commit_id(repo_root)
+    resolved_branch = source_branch if source_branch is not None else git_branch_name(repo_root)
+    resolved_dirty = dirty_state if dirty_state is not None else (bool(status_entries) if git_ok else True)
+    resolved_error = dirty_state_error if dirty_state_error is not None else ("" if git_ok else git_error)
     return {
         "schema_version": "aide.release-provenance.v0",
         "bundle_id": bundle_id,
         "source_repo": normalize_rel(repo_root),
-        "source_commit": git_commit_id(repo_root),
-        "source_branch": git_branch_name(repo_root),
-        "dirty_state": bool(status_entries) if git_ok else True,
-        "dirty_state_error": "" if git_ok else git_error,
+        "source_commit": resolved_commit,
+        "source_branch": resolved_branch,
+        "dirty_state": resolved_dirty,
+        "dirty_state_error": resolved_error,
         "export_pack_manifest_sha256": source.get("manifest_sha256", ""),
         "export_pack_checksums_sha256": source.get("checksums_sha256", ""),
-        "generated_at_or_source_ref": f"source_commit:{git_commit_id(repo_root)}",
+        "generated_at_or_source_ref": f"source_commit:{resolved_commit}",
         "generated_by": RELEASE_GENERATED_BY,
         "artifact_hashes": {str(asset.get("path")): asset.get("sha256", "") for asset in artifacts},
         "preview_only": True,
@@ -17645,6 +17658,11 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     pack_status, pack_problems = release_pack_status(repo_root)
     if pack_problems:
         raise ValueError("pack-status failed for release bundle: " + "; ".join(pack_problems[:5]))
+    source_commit = git_commit_id(repo_root)
+    source_branch = git_branch_name(repo_root)
+    git_ok, source_status_entries, source_git_error = git_status_short(repo_root)
+    source_dirty_state = bool(source_status_entries) if git_ok else True
+    source_dirty_error = "" if git_ok else source_git_error
     bundle_id = release_bundle_id(repo_root)
     dist = release_dist_dir(repo_root)
     dist.mkdir(parents=True, exist_ok=True)
@@ -17666,7 +17684,15 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     ]
     write_text_if_changed(repo_root / RELEASE_MANIFEST_PATH, render_release_manifest_yaml(bundle_id, preliminary_assets))
     preliminary_assets.append(release_asset_record(repo_root, repo_root / RELEASE_MANIFEST_PATH, "release_model", "release manifest"))
-    provenance = release_provenance_data(repo_root, bundle_id, preliminary_assets)
+    provenance = release_provenance_data(
+        repo_root,
+        bundle_id,
+        preliminary_assets,
+        source_commit=source_commit,
+        source_branch=source_branch,
+        dirty_state=source_dirty_state,
+        dirty_state_error=source_dirty_error,
+    )
     write_text_if_changed(repo_root / RELEASE_PROVENANCE_JSON_PATH, stable_json_text(provenance))
     write_text_if_changed(repo_root / LATEST_RELEASE_PROVENANCE_MD_PATH, render_release_provenance_md(provenance))
 
@@ -17684,16 +17710,15 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     write_text_if_changed(repo_root / LATEST_RELEASE_VALIDATION_MD_PATH, validation_md)
 
     artifacts = release_assets_data(repo_root).get("artifacts", [])
-    git_ok, status_entries, _git_error = git_status_short(repo_root)
     bundle = {
         "schema_version": "aide.release-bundle.v0",
         "bundle_id": bundle_id,
         "bundle_name": RELEASE_BUNDLE_NAME,
         "generated_by": RELEASE_GENERATED_BY,
         "source_repo": normalize_rel(repo_root),
-        "source_commit": git_commit_id(repo_root),
-        "source_branch": git_branch_name(repo_root),
-        "dirty_state": bool(status_entries) if git_ok else True,
+        "source_commit": source_commit,
+        "source_branch": source_branch,
+        "dirty_state": source_dirty_state,
         "source_pack_ref": release_source_pack_ref(repo_root),
         "artifacts": artifacts if isinstance(artifacts, list) else [],
         "checksums": checksums,

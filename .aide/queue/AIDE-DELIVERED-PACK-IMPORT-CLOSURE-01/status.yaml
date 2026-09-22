@@ -15,3 +15,4 @@ notes:
   - The executable regression is green for ZIP and tar.gz after projected metadata regeneration.
   - A dirty-source preview canary safely imported 814 files and target-local doctor passed.
   - Clean source state is now captured before generated export output mutates the worktree.
+  - Clean release source state is now captured before bundle output mutation.
