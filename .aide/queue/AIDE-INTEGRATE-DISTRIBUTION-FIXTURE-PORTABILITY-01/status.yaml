@@ -1,0 +1,17 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
+status: running
+classification: integration_admitted
+planning_state: admitted
+result: PENDING
+updated_at: 2026-09-22
+current_slice: merge_exact_source_candidate
+source_candidate: e73ac0b269df3a47214588ae2d025d1b97f2f2c7
+dev_base: c6fdc754844cf7d42302218ce08307a7e05dcb61
+source_preserved: pending_two_parent_merge
+windows_validation: pending
+independent_review: pending
+dev_integration: pending
+notes:
+  - The source candidate remains fixture-only and has one commit-format PASS.
+  - No non-disposable consumer, main ref, tag, release, GitHub setting, or machine configuration is in scope.

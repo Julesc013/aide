@@ -1,0 +1,68 @@
+schema_version: aide.queue-task.v0
+id: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
+title: Qualify and integrate distribution fixture portability hardening
+type: integration
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-22
+updated_at: 2026-09-22
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-DELIVERED-PACK-SAFE-UPDATE-01
+objective: >
+  Preserve, qualify, and integrate the exact source-only portability hardening
+  for disposable distribution fixtures without widening it into real-target
+  apply authority or stable-release qualification.
+authority_basis: >
+  The owner explicitly directed the active stable-delivery campaign to preserve
+  useful published branch work, implement and test admitted product behavior,
+  integrate qualified work into dev, and keep checkpoints committed and pushed.
+source:
+  dev_base: c6fdc754844cf7d42302218ce08307a7e05dcb61
+  candidate_commit: e73ac0b269df3a47214588ae2d025d1b97f2f2c7
+  candidate_tree: b67c23b92d2086d2ed3862432a68a66af6861ea7
+  candidate_parent: d37219026462d5670f7a724980faf07e30abb85f
+  candidate_branch: origin/task/aide-distribution-fixture-portability-01
+scope:
+  allowed_paths:
+    - .aide/intake/distribution-fixture-portability-2026-09-22.md
+    - .aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/**
+    - .aide/queue/index.yaml
+    - .aide/scripts/tests/test_aide_distribution_fixture_portability.py
+    - core/distribution/operation_executor.py
+    - core/distribution/temp_workspace.py
+    - docs/reference/distribution-fixture-portability.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .codex/**
+    - .github/**
+    - .aide.local/**
+    - C:/Users/Jules/.codex/**
+  forbidden_operations:
+    - mutating a non-disposable target repository
+    - claiming hostile-writer or crash-atomic production confinement
+    - merging to main
+    - creating or pushing a tag
+    - creating a GitHub Release or uploading assets
+    - changing machine-wide or session execution settings
+authorized_git_operations:
+  - create this bounded task branch and worktree from exact published dev
+  - merge the exact source candidate with both parent histories preserved
+  - commit coherent qualification and evidence increments with explicit paths
+  - publish the qualified task branch to origin
+  - prepare and execute an exact task-to-dev integration after all retained gates pass
+verification:
+  - reproduce all 125 focused portability tests on Windows
+  - run adjacent distribution, update, rollback, and release tests
+  - run canonical AIDE validate and test commands against the combined candidate
+  - inspect path, symlink, hardlink, alias, rollback, and non-overwrite boundaries
+  - obtain an independent exact-commit review before dev integration
+retained_gates:
+  - source candidate is not accepted solely because its focused Linux tests passed
+  - independent review must bind the exact combined candidate
+  - real target adoption retains target-owned authority and qualification
+  - main promotion and release publication retain exact candidate review
