@@ -17310,18 +17310,12 @@ def release_install_notes_text(repo_root: Path, bundle_id: str, pack_status: str
     ]) + "\n"
 
 
-def release_preview_source_head(repo_root: Path, source_rel: str) -> str:
-    json_rel = RELEASE_PREVIEW_SOURCE_PATHS.get(source_rel, "")
-    if json_rel and (repo_root / json_rel).exists():
-        data = read_json_file(repo_root / json_rel)
-        source_head = str(data.get("source_head", "")).strip()
-        if source_head:
-            return source_head
-    source = repo_root / source_rel
-    if source.exists():
-        for line in read_text(source).splitlines():
-            if line.startswith("source_head:"):
-                return line.split(":", 1)[1].strip()
+def release_preview_markdown_source_head(path: Path) -> str:
+    if not path.exists():
+        return ""
+    for line in read_text(path).splitlines():
+        if line.startswith("source_head:"):
+            return line.split(":", 1)[1].strip()
     return ""
 
 
@@ -17329,32 +17323,52 @@ def release_preview_binding(repo_root: Path, source_rel: str, source_commit: str
     source = repo_root / source_rel
     if not source.exists():
         return "missing", "", f"source preview missing at {source_rel}"
-    observed_head = release_preview_source_head(repo_root, source_rel)
+    observed_head = release_preview_markdown_source_head(source)
     if not observed_head:
-        return "stale", "", "source preview does not record source_head"
+        return "stale", "", "source preview Markdown does not record source_head"
+    json_rel = RELEASE_PREVIEW_SOURCE_PATHS.get(source_rel, "")
+    json_path = repo_root / json_rel if json_rel else None
+    if json_path is not None and json_path.exists():
+        try:
+            data = read_json_file(json_path)
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            return "stale", observed_head, f"source preview JSON is malformed: {exc}"
+        json_head = str(data.get("source_head", "")).strip()
+        if not json_head:
+            return "stale", observed_head, "source preview JSON does not record source_head"
+        if json_head != observed_head:
+            return "stale", observed_head, "source preview Markdown and JSON identify different source heads"
     if observed_head == source_commit:
         return "bound", observed_head, "source_head matches export-pack source commit"
+    if not re.fullmatch(r"[0-9a-fA-F]{40}", observed_head) or not re.fullmatch(r"[0-9a-fA-F]{40}", source_commit):
+        return "stale", observed_head, "source preview and export source are not comparable full commit identities"
 
     environment = os.environ.copy()
     environment["GIT_NO_REPLACE_OBJECTS"] = "1"
-    ancestor = subprocess.run(
-        ["git", "-C", str(repo_root), "merge-base", "--is-ancestor", observed_head, source_commit],
-        check=False,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        env=environment,
-    )
+    try:
+        ancestor = subprocess.run(
+            ["git", "-C", str(repo_root), "merge-base", "--is-ancestor", observed_head, source_commit],
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            env=environment,
+        )
+    except OSError as exc:
+        return "stale", observed_head, f"could not verify preview ancestry: {exc}"
     if ancestor.returncode != 0:
         return "stale", observed_head, "source_head is not the export-pack source commit or its ancestor"
-    changed = subprocess.run(
-        ["git", "-C", str(repo_root), "diff", "--name-only", f"{observed_head}..{source_commit}"],
-        check=False,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        env=environment,
-    )
+    try:
+        changed = subprocess.run(
+            ["git", "-C", str(repo_root), "diff", "--name-only", f"{observed_head}..{source_commit}"],
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            env=environment,
+        )
+    except OSError as exc:
+        return "stale", observed_head, f"could not compare preview source with export source: {exc}"
     if changed.returncode != 0:
         return "stale", observed_head, "could not compare preview source_head with export-pack source commit"
     changed_paths = {normalize_rel(line.strip()) for line in changed.stdout.splitlines() if line.strip()}
