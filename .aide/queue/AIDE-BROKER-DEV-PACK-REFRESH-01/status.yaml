@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BROKER-DEV-PACK-REFRESH-01
+status: running
+classification: bounded_local_derived_artifact_refresh
+planning_state: candidate_validated
+result: PENDING
+updated_at: 2026-09-22
+current_slice: commit_and_publish_refreshed_artifacts
+next_slice: land_to_dev_and_close_parent
+notes:
+  - Source dev 0bd65583 is published and clean.
+  - Canonical validation fails only because tracked portable inputs advanced beyond manifest source 31bd91bd.
+  - Local artifact generation is authorized; tag upload publication and target mutation are prohibited.
+  - Export pack regeneration included 826 files and 829 checksums with provenance and boundary PASS.
+  - Local bundle aide-lite-pack-v0-b3e5c7aa2a1732fa and its preview-only release draft validate.
+  - The generated delta is 26 allowlisted export/release paths; no runtime script config or target path changed.
+  - Portable lifecycle tests passed 25 of 25 and release-bundle tests passed 10 of 10.
+  - Canonical validate and doctor now pass.
+  - Post-artifact-commit provenance changed from exact PASS to PASS_SOURCE_ANCESTOR; a second deterministic bundle and draft pass rebound 20 derived release records and restored validation.

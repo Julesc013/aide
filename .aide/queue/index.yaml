@@ -3420,3 +3420,13 @@ items:
     prompt: .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/prompt.md
     evidence: .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/evidence
     description: Carry the exact intent-bound provider observation into each registered mutation child and preserve observation-only closeout without claiming operational qualification.
+  - id: AIDE-BROKER-DEV-PACK-REFRESH-01
+    status: running
+    planning_state: execution_active
+    result: PENDING
+    title: Refresh portable artifacts after broker dev integration
+    task: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/prompt.md
+    evidence: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/evidence
+    description: Regenerate and validate local portable export and release artifacts from clean post-integration dev without publishing.

@@ -2,23 +2,23 @@
   "artifact_hashes": {
     ".aide/release/dist/CHANGELOG.preview.md": "725d7aad7d6f7385121ba706fedf28675c443fc7a7a88bc7340d12fb724f55fa",
     ".aide/release/dist/RELEASE_NOTES.preview.md": "774a75827477d5e85f6a9659c74e0c85dc035e147f5e94161c843338077b259c",
-    ".aide/release/dist/aide-lite-pack-v0.tar.gz": "23f6cb2cf5ba59866aceddd91f2b556da8c8686bdf40d86c631c016d0bde81fb",
-    ".aide/release/dist/aide-lite-pack-v0.zip": "9bc5078fc7673e51fda10568bb2bc575d44c07de4889922178d7980819f8ff2b",
-    ".aide/release/dist/install.md": "b22af39898c2bea2e4ceb259da2ae712161ac14915337257af5127530c9139dd",
-    ".aide/release/dist/manifest.yaml": "33c86efb760d4c69ef7afc55a8eaf450071b987186bb5c07099414b9575b4be4"
+    ".aide/release/dist/aide-lite-pack-v0.tar.gz": "b50b116737ab65036e8fa520c4b729b5b58dd1caa1069774bcf8b8022706ef36",
+    ".aide/release/dist/aide-lite-pack-v0.zip": "b5cc171d178a404df125ddef0c8cb8d8bef50ecfd72329c7995bad127b5b437c",
+    ".aide/release/dist/install.md": "cb2637ef75783b6e2c0e6a3638a60dea7b594d5327256dbb8ac4d393cf8b0744",
+    ".aide/release/dist/manifest.yaml": "b27b8b16a2bf8dddf8ca6b89f1f4f2507435167896f05ae6c302bd4bb4c7bb6d"
   },
-  "bundle_id": "aide-lite-pack-v0-b1f97c5f30848128",
+  "bundle_id": "aide-lite-pack-v0-f6ae36e8074bab51",
   "dirty_state": false,
   "dirty_state_error": "",
   "export_pack_checksums_sha256": "961db2cdcd81f7d749fee2e8580bd32d258548feccbbf3126a90e0964f362614",
-  "export_pack_manifest_sha256": "76b767e67b5d651e1820b05f0eec7c1f031c151b6ee075ec40569386f0cfefa8",
-  "generated_at_or_source_ref": "source_commit:31bd91bd10ed57e98e658380cd9372e074867f63",
+  "export_pack_manifest_sha256": "36f488a74dead589a20ed34a8c150e44197b513a4dd5a47a1b100f96e16c167f",
+  "generated_at_or_source_ref": "source_commit:b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb",
   "generated_by": "aide-lite release bundle q47",
   "no_publish": true,
   "preview_only": true,
   "publication_status": "local_preview_no_publish",
   "schema_version": "aide.release-provenance.v0",
-  "source_branch": "task/aide-delivered-pack-safe-update-01",
-  "source_commit": "31bd91bd10ed57e98e658380cd9372e074867f63",
-  "source_repo": "D:/Projects/AIDE/aide-delivered-pack-update"
+  "source_branch": "task/aide-broker-dev-pack-refresh-01",
+  "source_commit": "b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb",
+  "source_repo": "D:/Projects/AIDE/aide-broker-pack-refresh"
 }
