@@ -27,8 +27,8 @@ class Q48GitHubReleaseDraftTests(unittest.TestCase):
             source = REPO_ROOT / rel
             self.write(root, rel, source.read_text(encoding="utf-8"))
         self.write(root, ".gitignore", ".aide.local/\n.aide.local/**\n.env\nsecrets/\n")
-        self.write(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, "# AIDE Changelog Preview\n\n- Added: fixture changelog entry.\n")
-        self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_MD_PATH, "# AIDE Release Notes Preview\n\n- Fixture release note.\n")
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, "# AIDE Changelog Preview\n\nsource_head: fixture-commit\n- Added: fixture changelog entry.\n")
+        self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_MD_PATH, "# AIDE Release Notes Preview\n\nsource_head: fixture-commit\n- Fixture release note.\n")
         self.write_pack(root)
         aide_lite.build_release_bundle_outputs(root)
         return root
@@ -52,6 +52,7 @@ class Q48GitHubReleaseDraftTests(unittest.TestCase):
             "\n".join([
                 "schema_version: q25.aide-lite-pack-manifest.v1",
                 "pack_id: aide-lite-pack-v0",
+                "source_repo: fixture/aide",
                 "source_commit: fixture-commit",
                 "source_dirty_state: true",
                 "files:",
@@ -104,7 +105,30 @@ class Q48GitHubReleaseDraftTests(unittest.TestCase):
         aide_lite.build_github_release_draft_outputs(root)
         validation = json.loads((root / aide_lite.GITHUB_RELEASE_DRAFT_VALIDATION_JSON_PATH).read_text(encoding="utf-8"))
         self.assertEqual(validation["result"], "FAIL")
-        self.assertTrue(any("missing required release asset" in blocker or "required asset missing" in blocker for blocker in validation["blockers"]))
+        self.assertTrue(any("required release asset is not publishable" in blocker or "required asset missing" in blocker for blocker in validation["blockers"]))
+
+    def test_stale_previews_are_not_publish_candidates(self) -> None:
+        root = self.make_repo()
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, "# AIDE Changelog Preview\n\nsource_head: stale-commit\n")
+        self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_MD_PATH, "# AIDE Release Notes Preview\n\nsource_head: stale-commit\n")
+        aide_lite.build_release_bundle_outputs(root)
+        aide_lite.build_github_release_draft_outputs(root)
+        assets = json.loads((root / aide_lite.GITHUB_RELEASE_ASSETS_JSON_PATH).read_text(encoding="utf-8"))["assets"]
+        preview_assets = [asset for asset in assets if asset["kind"] in {"changelog_preview_copy", "release_notes_preview_copy"}]
+        self.assertEqual(len(preview_assets), 2)
+        self.assertTrue(all(asset["validation_status"] == "blocked_stale" for asset in preview_assets))
+        self.assertTrue(all(asset["publish_candidate"] is False for asset in preview_assets))
+        checks = aide_lite.validate_github_release_draft_files(root, require_outputs=True)
+        self.assertEqual(aide_lite.result_from_checks(checks), "FAIL")
+
+    def test_draft_provenance_uses_pack_identity_not_checkout_path(self) -> None:
+        root = self.make_repo()
+        draft = aide_lite.build_github_release_draft_outputs(root)
+        provenance = json.loads((root / aide_lite.RELEASE_PROVENANCE_JSON_PATH).read_text(encoding="utf-8"))
+        self.assertEqual(draft["source_repo"], "fixture/aide")
+        self.assertEqual(provenance["source_repo"], "fixture/aide")
+        self.assertNotIn(str(root), json.dumps(draft, sort_keys=True))
+        self.assertNotIn(str(root), json.dumps(provenance, sort_keys=True))
 
     def test_publication_boundary_is_false_and_advisory_only(self) -> None:
         root = self.make_repo()

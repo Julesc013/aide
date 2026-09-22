@@ -16994,8 +16994,24 @@ RELEASE_DIST_REQUIRED_FILES = [
 RELEASE_CHECKSUM_EXCLUDED_NAMES = {
     "aide-lite-pack-v0.checksums.json",
     "SHA256SUMS.txt",
+    "release-assets.json",
     "release-validation.json",
     "release-validation.md",
+}
+RELEASE_ASSET_INDEX_EXCLUDED_NAMES = {
+    "release-assets.json",
+    "release-validation.json",
+    "release-validation.md",
+}
+RELEASE_PREVIEW_SOURCE_PATHS = {
+    CHANGELOG_PREVIEW_MD_PATH: CHANGELOG_PREVIEW_JSON_PATH,
+    RELEASE_NOTES_PREVIEW_MD_PATH: RELEASE_NOTES_PREVIEW_JSON_PATH,
+}
+RELEASE_PREVIEW_GENERATED_PATHS = {
+    CHANGELOG_PREVIEW_MD_PATH,
+    CHANGELOG_PREVIEW_JSON_PATH,
+    RELEASE_NOTES_PREVIEW_MD_PATH,
+    RELEASE_NOTES_PREVIEW_JSON_PATH,
 }
 GITHUB_RELEASE_DRAFT_GENERATED_BY = "aide-lite release draft q48"
 GITHUB_RELEASE_PUBLICATION_STATUS = "local_draft_no_publish"
@@ -17058,8 +17074,18 @@ def git_branch_name(repo_root: Path) -> str:
 
 
 def release_bundle_id(repo_root: Path) -> str:
-    commit = git_commit_id(repo_root)
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    commit = pack_manifest_scalars(pack_root).get("source_commit", "") or git_commit_id(repo_root)
     return f"{RELEASE_BUNDLE_NAME}-{short_sha(commit if commit != 'unavailable' else 'unknown')}"
+
+
+def release_source_repo_identity(repo_root: Path) -> str:
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    return pack_manifest_scalars(pack_root).get("source_repo", "") or "not-recorded-in-pack"
+
+
+def release_source_branch_identity() -> str:
+    return "not-recorded-in-pack"
 
 
 def release_path_kind(path: Path) -> str:
@@ -17282,15 +17308,90 @@ def release_install_notes_text(repo_root: Path, bundle_id: str, pack_status: str
     ]) + "\n"
 
 
-def copy_release_preview_or_placeholder(repo_root: Path, source_rel: str, destination_rel: str, title: str) -> None:
+def release_preview_source_head(repo_root: Path, source_rel: str) -> str:
+    json_rel = RELEASE_PREVIEW_SOURCE_PATHS.get(source_rel, "")
+    if json_rel and (repo_root / json_rel).exists():
+        data = read_json_file(repo_root / json_rel)
+        source_head = str(data.get("source_head", "")).strip()
+        if source_head:
+            return source_head
     source = repo_root / source_rel
-    destination = repo_root / destination_rel
     if source.exists():
+        for line in read_text(source).splitlines():
+            if line.startswith("source_head:"):
+                return line.split(":", 1)[1].strip()
+    return ""
+
+
+def release_preview_binding(repo_root: Path, source_rel: str, source_commit: str) -> tuple[str, str, str]:
+    source = repo_root / source_rel
+    if not source.exists():
+        return "missing", "", f"source preview missing at {source_rel}"
+    observed_head = release_preview_source_head(repo_root, source_rel)
+    if not observed_head:
+        return "stale", "", "source preview does not record source_head"
+    if observed_head == source_commit:
+        return "bound", observed_head, "source_head matches export-pack source commit"
+
+    environment = os.environ.copy()
+    environment["GIT_NO_REPLACE_OBJECTS"] = "1"
+    ancestor = subprocess.run(
+        ["git", "-C", str(repo_root), "merge-base", "--is-ancestor", observed_head, source_commit],
+        check=False,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        env=environment,
+    )
+    if ancestor.returncode != 0:
+        return "stale", observed_head, "source_head is not the export-pack source commit or its ancestor"
+    changed = subprocess.run(
+        ["git", "-C", str(repo_root), "diff", "--name-only", f"{observed_head}..{source_commit}"],
+        check=False,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        env=environment,
+    )
+    if changed.returncode != 0:
+        return "stale", observed_head, "could not compare preview source_head with export-pack source commit"
+    changed_paths = {normalize_rel(line.strip()) for line in changed.stdout.splitlines() if line.strip()}
+    if changed_paths and changed_paths.issubset(RELEASE_PREVIEW_GENERATED_PATHS):
+        return "bound", observed_head, "source_head is followed only by the committed preview projection"
+    return "stale", observed_head, "source_head does not cover the exported source revision"
+
+
+def release_preview_copy_is_blocked(path: Path) -> bool:
+    return path.exists() and "status: blocked_stale_source_preview" in read_text(path)
+
+
+def copy_release_preview_or_placeholder(
+    repo_root: Path,
+    source_rel: str,
+    destination_rel: str,
+    title: str,
+    source_commit: str,
+) -> None:
+    source = repo_root / source_rel
+    status, observed_head, reason = release_preview_binding(repo_root, source_rel, source_commit)
+    destination = repo_root / destination_rel
+    if status == "bound":
         write_text_if_changed(destination, read_text(source))
         return
     write_text_if_changed(
         destination,
-        f"# {title}\n\n- status: unavailable\n- reason: source preview missing at `{source_rel}`\n- publication_status: local_preview_no_publish\n",
+        "\n".join([
+            f"# {title}",
+            "",
+            "status: blocked_stale_source_preview",
+            f"source_preview: {source_rel}",
+            f"expected_source_commit: {source_commit}",
+            f"observed_source_head: {observed_head or 'unavailable'}",
+            f"reason: {reason}",
+            "publish_candidate: false",
+            "publication_status: local_preview_no_publish",
+            "",
+        ]),
     )
 
 
@@ -17368,7 +17469,7 @@ def release_provenance_data(
     return {
         "schema_version": "aide.release-provenance.v0",
         "bundle_id": bundle_id,
-        "source_repo": normalize_rel(repo_root),
+        "source_repo": release_source_repo_identity(repo_root),
         "source_commit": resolved_commit,
         "source_branch": resolved_branch,
         "dirty_state": resolved_dirty,
@@ -17399,16 +17500,16 @@ def render_release_provenance_md(data: dict[str, object]) -> str:
     ]) + "\n"
 
 
-def release_assets_data(repo_root: Path) -> dict[str, object]:
+def release_assets_data(repo_root: Path, bundle_id: str | None = None) -> dict[str, object]:
     dist = release_dist_dir(repo_root)
     assets = []
     if dist.exists():
         for path in sorted(dist.iterdir()):
-            if path.is_file() and path.name != "release-assets.json":
+            if path.is_file() and path.name not in RELEASE_ASSET_INDEX_EXCLUDED_NAMES:
                 assets.append(release_asset_record(repo_root, path, "release_dist", "generated local release artifact"))
     return {
         "schema_version": "aide.release-assets.v0",
-        "bundle_id": release_bundle_id(repo_root),
+        "bundle_id": bundle_id or release_bundle_id(repo_root),
         "artifact_count": len(assets),
         "artifacts": assets,
         "no_publish": True,
@@ -17427,6 +17528,13 @@ def validate_release_checksums(repo_root: Path) -> tuple[bool, list[str]]:
     if not isinstance(entries, dict):
         return False, ["release checksums entry is not a mapping"]
     problems: list[str] = []
+    expected_entries = release_dist_checksum_entries(repo_root)
+    actual_names = {str(name) for name in entries}
+    expected_names = set(expected_entries)
+    for name in sorted(expected_names.difference(actual_names)):
+        problems.append(f"release checksums missing artifact: {name}")
+    for name in sorted(actual_names.difference(expected_names)):
+        problems.append(f"release checksums contain stale artifact: {name}")
     for name, expected in sorted(entries.items()):
         path = release_dist_dir(repo_root) / str(name)
         if not path.exists() or not path.is_file():
@@ -17440,9 +17548,56 @@ def validate_release_checksums(repo_root: Path) -> tuple[bool, list[str]]:
         problems.append("missing SHA256SUMS.txt")
     else:
         text = read_text(sha_path)
-        for name, expected in sorted(entries.items()):
-            if f"{expected}  {name}" not in text:
-                problems.append(f"SHA256SUMS missing entry: {name}")
+        expected_text = "".join(f"{digest}  {name}\n" for name, digest in sorted(entries.items()))
+        if text != expected_text:
+            problems.append("SHA256SUMS content does not exactly match release checksums JSON")
+    return not problems, problems
+
+
+def validate_release_asset_index(repo_root: Path) -> tuple[bool, list[str]]:
+    index_path = repo_root / RELEASE_ASSETS_JSON_PATH
+    if not index_path.exists():
+        return False, ["missing release asset index"]
+    try:
+        data = json.loads(read_text(index_path))
+    except (OSError, json.JSONDecodeError) as exc:
+        return False, [f"release asset index malformed: {exc}"]
+    records = data.get("artifacts", [])
+    if not isinstance(records, list):
+        return False, ["release asset index artifacts is not a list"]
+    problems: list[str] = []
+    dist = release_dist_dir(repo_root)
+    expected_paths = {
+        normalize_rel(path.relative_to(repo_root)): path
+        for path in sorted(dist.iterdir())
+        if path.is_file() and path.name not in RELEASE_ASSET_INDEX_EXCLUDED_NAMES
+    } if dist.exists() else {}
+    indexed: dict[str, dict[str, object]] = {}
+    for record in records:
+        if not isinstance(record, dict):
+            problems.append("release asset index contains a non-object record")
+            continue
+        rel = normalize_rel(str(record.get("path", "")))
+        if not rel:
+            problems.append("release asset index record missing path")
+            continue
+        if rel in indexed:
+            problems.append(f"release asset index contains duplicate path: {rel}")
+            continue
+        indexed[rel] = record
+    for rel in sorted(set(expected_paths).difference(indexed)):
+        problems.append(f"release asset index missing artifact: {rel}")
+    for rel in sorted(set(indexed).difference(expected_paths)):
+        problems.append(f"release asset index contains stale artifact: {rel}")
+    for rel in sorted(set(indexed).intersection(expected_paths)):
+        record = indexed[rel]
+        path = expected_paths[rel]
+        if str(record.get("sha256", "")) != sha256_file(path):
+            problems.append(f"release asset index checksum mismatch: {rel}")
+        if record.get("size_bytes") != path.stat().st_size:
+            problems.append(f"release asset index size mismatch: {rel}")
+    if data.get("artifact_count") != len(records):
+        problems.append("release asset index artifact_count does not match records")
     return not problems, problems
 
 
@@ -17555,6 +17710,13 @@ def validate_release_artifacts(repo_root: Path, require_validation_files: bool =
         checks.append(Check("PASS", "release checksums validate"))
     else:
         checks.append(Check("FAIL", "release checksum problem: " + "; ".join(checksum_problems[:5])))
+    asset_index_ok, asset_index_problems = validate_release_asset_index(repo_root)
+    if asset_index_ok:
+        checks.append(Check("PASS", "release asset index validates"))
+    else:
+        checks.append(Check("FAIL", "release asset index problem: " + "; ".join(asset_index_problems[:5])))
+    for rel in [RELEASE_CHANGELOG_PREVIEW_PATH, RELEASE_RELEASE_NOTES_PREVIEW_PATH]:
+        check_pass(checks, not release_preview_copy_is_blocked(repo_root / rel), f"release preview is source-bound: {rel}")
     fixture_results = [
         validate_release_archive(repo_root, RELEASE_ZIP_PATH),
         validate_release_archive(repo_root, RELEASE_TAR_GZ_PATH),
@@ -17592,6 +17754,10 @@ def validate_release_artifacts(repo_root: Path, require_validation_files: bool =
         "checksum_validation": {
             "result": "PASS" if checksum_ok else "FAIL",
             "problems": checksum_problems,
+        },
+        "asset_index_validation": {
+            "result": "PASS" if asset_index_ok else "FAIL",
+            "problems": asset_index_problems,
         },
         "pack_status": pack_status,
         "secret_scan": {
@@ -17665,10 +17831,10 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
         raise ValueError("pack-status failed for release bundle: " + "; ".join(pack_problems[:5]))
     pack_provenance = pack_manifest_scalars(pack_root)
     source_commit = pack_provenance["source_commit"]
-    source_branch = git_branch_name(repo_root)
+    source_branch = release_source_branch_identity()
     source_dirty_state = pack_provenance["source_dirty_state"] == "true"
     source_dirty_error = ""
-    bundle_id = release_bundle_id(repo_root)
+    bundle_id = f"{RELEASE_BUNDLE_NAME}-{short_sha(source_commit)}"
     dist = release_dist_dir(repo_root)
     dist.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="aide-release-pack-") as temp_name:
@@ -17677,8 +17843,8 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
         write_release_zip(projected_pack_root, repo_root / RELEASE_ZIP_PATH)
         write_release_tar_gz(projected_pack_root, repo_root / RELEASE_TAR_GZ_PATH)
     write_text_if_changed(repo_root / RELEASE_INSTALL_NOTES_PATH, release_install_notes_text(repo_root, bundle_id, pack_status))
-    copy_release_preview_or_placeholder(repo_root, CHANGELOG_PREVIEW_MD_PATH, RELEASE_CHANGELOG_PREVIEW_PATH, "AIDE Changelog Preview")
-    copy_release_preview_or_placeholder(repo_root, RELEASE_NOTES_PREVIEW_MD_PATH, RELEASE_RELEASE_NOTES_PREVIEW_PATH, "AIDE Release Notes Preview")
+    copy_release_preview_or_placeholder(repo_root, CHANGELOG_PREVIEW_MD_PATH, RELEASE_CHANGELOG_PREVIEW_PATH, "AIDE Changelog Preview", source_commit)
+    copy_release_preview_or_placeholder(repo_root, RELEASE_NOTES_PREVIEW_MD_PATH, RELEASE_RELEASE_NOTES_PREVIEW_PATH, "AIDE Release Notes Preview", source_commit)
 
     preliminary_assets = [
         release_asset_record(repo_root, repo_root / RELEASE_ZIP_PATH, EXPORT_PACK_PATH, "archive generated from validated export pack"),
@@ -17701,26 +17867,23 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     write_text_if_changed(repo_root / RELEASE_PROVENANCE_JSON_PATH, stable_json_text(provenance))
     write_text_if_changed(repo_root / LATEST_RELEASE_PROVENANCE_MD_PATH, render_release_provenance_md(provenance))
 
-    assets_data = release_assets_data(repo_root)
-    write_text_if_changed(repo_root / RELEASE_ASSETS_JSON_PATH, stable_json_text(assets_data))
-    assets_data = release_assets_data(repo_root)
+    checksums = write_release_checksums(repo_root, bundle_id)
+    assets_data = release_assets_data(repo_root, bundle_id)
     write_text_if_changed(repo_root / RELEASE_ASSETS_JSON_PATH, stable_json_text(assets_data))
     write_text_if_changed(repo_root / LATEST_RELEASE_ARTIFACTS_JSON_PATH, stable_json_text(assets_data))
-
-    checksums = write_release_checksums(repo_root, bundle_id)
     validation = validate_release_artifacts(repo_root, require_validation_files=False)
     write_text_if_changed(repo_root / RELEASE_VALIDATION_JSON_PATH, stable_json_text(validation))
     validation_md = render_release_validation_md(validation)
     write_text_if_changed(repo_root / RELEASE_VALIDATION_MD_PATH, validation_md)
     write_text_if_changed(repo_root / LATEST_RELEASE_VALIDATION_MD_PATH, validation_md)
 
-    artifacts = release_assets_data(repo_root).get("artifacts", [])
+    artifacts = assets_data.get("artifacts", [])
     bundle = {
         "schema_version": "aide.release-bundle.v0",
         "bundle_id": bundle_id,
         "bundle_name": RELEASE_BUNDLE_NAME,
         "generated_by": RELEASE_GENERATED_BY,
-        "source_repo": normalize_rel(repo_root),
+        "source_repo": release_source_repo_identity(repo_root),
         "source_commit": source_commit,
         "source_branch": source_branch,
         "dirty_state": source_dirty_state,
@@ -17975,6 +18138,8 @@ def github_release_suggested_title(repo_root: Path) -> str:
 def github_release_asset_record(repo_root: Path, rel: str, kind: str, required: bool, order: int) -> dict[str, object]:
     path = repo_root / rel
     present = path.exists() and path.is_file()
+    blocked_stale = present and kind in {"changelog_preview_copy", "release_notes_preview_copy"} and release_preview_copy_is_blocked(path)
+    validation_status = "blocked_stale" if blocked_stale else ("present" if present else ("missing_required" if required else "missing_optional"))
     return {
         "asset_id": Path(rel).name,
         "path": normalize_rel(rel),
@@ -17983,10 +18148,10 @@ def github_release_asset_record(repo_root: Path, rel: str, kind: str, required: 
         "size_bytes": path.stat().st_size if present else 0,
         "sha256": sha256_file(path) if present else "",
         "required": required,
-        "publish_candidate": present,
+        "publish_candidate": present and not blocked_stale,
         "upload_order": order,
-        "validation_status": "present" if present else ("missing_required" if required else "missing_optional"),
-        "notes": "local draft asset candidate; no upload performed in Q48" if present else "asset missing from local Q47 bundle",
+        "validation_status": validation_status,
+        "notes": "source preview is stale for the exported revision" if blocked_stale else ("local draft asset candidate; no upload performed in Q48" if present else "asset missing from local Q47 bundle"),
     }
 
 
@@ -17999,8 +18164,8 @@ def collect_github_release_assets(repo_root: Path) -> tuple[list[dict[str, objec
         asset = github_release_asset_record(repo_root, rel, kind, True, order)
         order += 1
         assets.append(asset)
-        if asset["validation_status"] == "missing_required":
-            blockers.append(f"missing required release asset: {rel}")
+        if asset["validation_status"] != "present":
+            blockers.append(f"required release asset is not publishable ({asset['validation_status']}): {rel}")
     for rel, kind in GITHUB_RELEASE_OPTIONAL_ASSETS:
         asset = github_release_asset_record(repo_root, rel, kind, False, order)
         order += 1
@@ -18314,7 +18479,7 @@ def github_release_draft_data(repo_root: Path, assets: list[dict[str, object]], 
         "schema_version": "aide.github-release-draft.v0",
         "draft_id": github_release_draft_id(repo_root),
         "generated_by": GITHUB_RELEASE_DRAFT_GENERATED_BY,
-        "source_repo": normalize_rel(repo_root),
+        "source_repo": release_source_repo_identity(repo_root),
         "source_commit": github_release_source_commit(repo_root),
         "source_branch": github_release_source_branch(repo_root),
         "suggested_tag": github_release_suggested_tag(repo_root),
@@ -18395,8 +18560,8 @@ def validate_github_release_draft_files(repo_root: Path, require_outputs: bool =
     assets_data = read_json_file(assets_path) if assets_path.exists() else {}
     assets = assets_data.get("assets", []) if isinstance(assets_data.get("assets"), list) else []
     check_pass(checks, bool(assets), "github release assets are listed")
-    missing_required = [asset for asset in assets if isinstance(asset, dict) and asset.get("required") is True and asset.get("validation_status") == "missing_required"]
-    check_pass(checks, not missing_required, "required release draft assets are present")
+    unavailable_required = [asset for asset in assets if isinstance(asset, dict) and asset.get("required") is True and asset.get("validation_status") != "present"]
+    check_pass(checks, not unavailable_required, "required release draft assets are present and publishable")
     hash_ok, hash_problems = validate_github_release_asset_hashes(repo_root, [asset for asset in assets if isinstance(asset, dict)])
     check_pass(checks, hash_ok, "release draft asset checksums match")
     for problem in hash_problems:

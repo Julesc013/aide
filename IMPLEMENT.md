@@ -41,8 +41,8 @@
 
 ## Work Item: AIDE-RELEASE-METADATA-INTEGRITY-01
 
-Status: admitted and implementing the independently reproduced release metadata
-repair.
+Status: source repair implemented and tested; clean artifact regeneration and
+independent rereview remain active.
 
 Planned changes:
 
@@ -52,8 +52,19 @@ Planned changes:
 - retain deterministic archives, extracted consumer behavior, and all
   no-publish boundaries.
 
-Remaining: regressions, implementation, regeneration, exact rereview, and dev
-integration.
+Implemented:
+
+- release identity and provenance now come from the export-pack manifest rather
+  than the checkout directory or task branch;
+- checksum and asset indexes require exact file-set, SHA-256, and byte-size
+  closure without self-referential dependency cycles;
+- stale or missing changelog/release-note previews become explicit blocked
+  placeholders and are not publication candidates;
+- 55 adjacent export, import, Q47, and Q48 tests pass, including new tamper and
+  cross-checkout regressions.
+
+Remaining: source-bound preview generation, clean artifact regeneration,
+canonical validation, exact rereview, and dev integration.
 
 ## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 

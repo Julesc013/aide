@@ -16,8 +16,8 @@ hosted effects, target installs, or machine configuration.
 - [x] Preserve the independent `REQUEST_CHANGES` review.
 - [x] Create an isolated repair branch from the exact failed candidate.
 - [x] Admit a bounded generator repair WorkUnit.
-- [ ] Add failing regressions for asset-index drift, checkout paths, and stale previews.
-- [ ] Repair dependency ordering, identity sources, and preview gating.
+- [x] Add failing regressions for asset-index drift, checkout paths, and stale previews.
+- [x] Repair dependency ordering, identity sources, and preview gating.
 - [ ] Regenerate and validate exact local artifacts.
 - [ ] Obtain independent exact-commit rereview.
 - [ ] Integrate the qualified candidate into dev.
@@ -34,6 +34,10 @@ an explicit blocked placeholder and must not be a publish candidate.
 Generated output can be recreated from the clean source checkpoint. Preserve
 the failed review and prior commits; fix forward without rewriting shared
 history or publishing local artifacts.
+
+The source repair passed 55 adjacent tests on 2026-09-22. The next restart point
+is the committed source checkpoint, followed by a source-bound changelog preview
+commit and clean export/release regeneration.
 
 ## Exit Criteria
 

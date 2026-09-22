@@ -29,8 +29,8 @@ class Q47ReleaseBundleTests(unittest.TestCase):
             source = REPO_ROOT / rel
             self.write(root, rel, source.read_text(encoding="utf-8"))
         self.write(root, ".gitignore", ".aide.local/\n.aide.local/**\n.env\nsecrets/\n")
-        self.write(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, "# AIDE Changelog Preview\n\nrelease_publishing: false\n")
-        self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_MD_PATH, "# AIDE Release Notes Preview\n\nrelease_publishing: false\n")
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, "# AIDE Changelog Preview\n\nsource_head: fixture-commit\nrelease_publishing: false\n")
+        self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_MD_PATH, "# AIDE Release Notes Preview\n\nsource_head: fixture-commit\nrelease_publishing: false\n")
         self.write_pack(root)
         return root
 
@@ -272,6 +272,59 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         ok, problems = aide_lite.validate_release_checksums(root)
         self.assertFalse(ok)
         self.assertTrue(any("checksum mismatch" in problem for problem in problems))
+
+    def test_checksum_validation_rejects_stale_and_missing_entries(self) -> None:
+        root = self.make_repo()
+        aide_lite.build_release_bundle_outputs(root)
+        checksums_path = root / aide_lite.RELEASE_CHECKSUMS_JSON_PATH
+        checksums = json.loads(checksums_path.read_text(encoding="utf-8"))
+        checksums["checksums"]["stale.bin"] = "0" * 64
+        checksums["checksums"].pop("manifest.yaml")
+        checksums_path.write_text(aide_lite.stable_json_text(checksums), encoding="utf-8")
+        ok, problems = aide_lite.validate_release_checksums(root)
+        self.assertFalse(ok)
+        self.assertTrue(any("stale artifact" in problem for problem in problems))
+        self.assertTrue(any("missing artifact" in problem for problem in problems))
+
+    def test_release_asset_index_binds_exact_hashes_and_sizes(self) -> None:
+        root = self.make_repo()
+        aide_lite.build_release_bundle_outputs(root)
+        index_path = root / aide_lite.RELEASE_ASSETS_JSON_PATH
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+        for artifact in index["artifacts"]:
+            path = root / artifact["path"]
+            self.assertEqual(artifact["sha256"], aide_lite.sha256_file(path))
+            self.assertEqual(artifact["size_bytes"], path.stat().st_size)
+        index["artifacts"][0]["sha256"] = "0" * 64
+        index["artifacts"][1]["size_bytes"] += 1
+        index_path.write_text(aide_lite.stable_json_text(index), encoding="utf-8")
+        ok, problems = aide_lite.validate_release_asset_index(root)
+        self.assertFalse(ok)
+        self.assertTrue(any("checksum mismatch" in problem for problem in problems))
+        self.assertTrue(any("size mismatch" in problem for problem in problems))
+
+    def test_release_metadata_is_checkout_path_independent(self) -> None:
+        first = self.make_repo()
+        second = self.make_repo()
+        first_bundle = aide_lite.build_release_bundle_outputs(first)
+        second_bundle = aide_lite.build_release_bundle_outputs(second)
+        self.assertEqual(first_bundle["source_repo"], "julesc013/aide")
+        self.assertEqual(first_bundle["source_branch"], "not-recorded-in-pack")
+        self.assertEqual(first_bundle, second_bundle)
+        first_provenance = (first / aide_lite.RELEASE_PROVENANCE_JSON_PATH).read_bytes()
+        second_provenance = (second / aide_lite.RELEASE_PROVENANCE_JSON_PATH).read_bytes()
+        self.assertEqual(first_provenance, second_provenance)
+        self.assertNotIn(str(first).encode(), first_provenance)
+        self.assertNotIn(str(second).encode(), second_provenance)
+
+    def test_stale_preview_is_blocked_in_release_bundle(self) -> None:
+        root = self.make_repo()
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, "# AIDE Changelog Preview\n\nsource_head: stale-commit\n")
+        bundle = aide_lite.build_release_bundle_outputs(root)
+        copied = (root / aide_lite.RELEASE_CHANGELOG_PREVIEW_PATH).read_text(encoding="utf-8")
+        self.assertIn("status: blocked_stale_source_preview", copied)
+        self.assertIn("publish_candidate: false", copied)
+        self.assertEqual(bundle["validation"]["result"], "FAIL")
 
     def test_release_validate_rejects_missing_required_file(self) -> None:
         root = self.make_repo()

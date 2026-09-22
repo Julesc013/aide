@@ -3,12 +3,14 @@ task_id: AIDE-RELEASE-METADATA-INTEGRITY-01
 status: running
 classification: admitted_repair
 planning_state: implementation_active
-result: PENDING
+result: SOURCE_REPAIR_PASS
 updated_at: 2026-09-22
-current_slice: generator_dependency_repair
-next_slice: failing_regressions_then_implementation
+current_slice: source_checkpoint
+next_slice: source_bound_preview_then_clean_regeneration
 source_review_commit: 4c0da8974daa96022e53212b8d24b5f5660d7926
 notes:
   - Independent review found stale local asset identities, checkout-local provenance, and stale required preview assets.
   - Archive bytes and extracted consumer behavior passed and must remain unchanged unless regenerated from changed portable source.
+  - The repaired generator and adjacent export, import, release, and draft suites pass 55 tests.
+  - Generated candidate bytes and independent rereview remain pending.
   - No publication effect is authorized.

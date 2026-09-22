@@ -15,14 +15,15 @@ The local release-bundle lifecycle is:
 2. regenerate the export pack
 3. validate `pack-status`
 4. build local archives
-5. compute checksums
-6. write release manifest and install notes
-7. extract archives into fixtures
-8. validate archive contents and forbidden-path exclusions
-9. write evidence
-10. review
-11. GitHub release draft review
-12. future publish
+5. bind changelog and release-note previews to the exported source revision
+6. compute checksums
+7. write and validate the exact asset index
+8. extract archives into fixtures
+9. validate archive contents and forbidden-path exclusions
+10. write evidence
+11. review
+12. GitHub release draft review
+13. future publish
 
 Q47 implements local generation and validation only.
 
@@ -116,7 +117,22 @@ source-generated target state as install truth.
 
 `release bundle` writes `aide-lite-pack-v0.checksums.json` and
 `SHA256SUMS.txt`. `release checksums` recomputes the recorded artifact hashes
-and fails if any recorded artifact is missing or mismatched.
+and fails if any recorded artifact is missing or mismatched, or if either file
+contains a stale or incomplete artifact set. `release-assets.json` is validated
+separately against every indexed file's final SHA-256 and byte size. The asset
+index and validation reports are excluded from their own dependency sets so
+the metadata graph has no self-reference.
+
+Release identity and provenance come from the validated export-pack manifest,
+not the local checkout path or task-branch name. Equivalent pack inputs in
+different directories therefore produce the same provenance and bundle
+metadata.
+
+The changelog and release-note copies must identify the exported source commit.
+A preview generated at its immediate parent is accepted only when the intervening
+commit changes preview outputs and nothing else. Missing or stale previews are
+replaced with explicit `blocked_stale_source_preview` records and cannot become
+publication candidates.
 
 `release validate` also extracts both archive formats into temporary fixture
 directories and checks:
