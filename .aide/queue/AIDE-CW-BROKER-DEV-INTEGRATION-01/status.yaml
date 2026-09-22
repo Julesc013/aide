@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CW-BROKER-DEV-INTEGRATION-01
+status: running
+classification: owner_prioritized_exact_integration
+planning_state: merge_candidate_preparation
+result: PENDING
+updated_at: 2026-09-22
+current_slice: exact_source_and_conflict_reconciliation
+next_slice: merge_source_and_resolve_14_conflicts
+notes:
+  - Source 75da33108995ba63fc7148c6b4137349d7013798 is published and clean.
+  - Target dev 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab is published and clean.
+  - Neither parent contains the other; merge base is bfb86c12b9e6d2970024d29c57ba629994ec43cc.
+  - Synthetic merge reports 14 coordination/documentation conflicts and no runtime-source conflict.
+  - Full broker completion and activation remain false after source integration.
+

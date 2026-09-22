@@ -3380,3 +3380,13 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/evidence
     description: Extends extracted-pack import with exact installed baselines, conflict-first updates, preview/apply identity, predecessor-pack proof, and interruption evidence in disposable consumers only.
+  - id: AIDE-CW-BROKER-DEV-INTEGRATION-01
+    status: running
+    planning_state: merge_candidate_preparation
+    result: PENDING
+    title: Integrate the published broker runtime line into current dev
+    task: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/evidence
+    description: Reconciles exact broker head 75da3310 with current dev while preserving product work and unfinished operational gates.
