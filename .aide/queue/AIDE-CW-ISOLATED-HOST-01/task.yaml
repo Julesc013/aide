@@ -59,3 +59,6 @@ h2_python_scope: accepted bounded parser and deterministic derived-byte source p
 
 h2_system_observation_source_base: 236da6c2ba0df8cf319849c7632c04727afc392d
 h2_system_observation_scope: finite exact-name source and injected tests only; no actual mappings or grants
+
+h2_api_query_source_base: c6fdc754844cf7d42302218ce08307a7e05dcb61
+h2_api_query_scope: supported API-set host query source and injected tests only; no actual native query, copy, grant, profile or loader effect

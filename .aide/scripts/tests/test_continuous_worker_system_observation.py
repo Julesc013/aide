@@ -15,6 +15,7 @@ from core.runtime.continuous_worker.state import Refused
 
 NATIVE = r"\Device\HarddiskVolume9\Windows\System32"
 API_NAME = "api-ms-win-core-test-l1-1-0.dll"
+API_NAME_2 = "api-ms-win-crt-runtime-l1-1-0.dll"
 DATA = b"MZ" + bytes(range(126))
 SHA = hashlib.sha256(DATA).hexdigest()
 
@@ -27,6 +28,12 @@ def value():
                        "owner_sid": "S-1-5-18", "security_sha256": "4" * 64,
                        "size": len(DATA), "sha256": SHA, "links": 3}],
             "api_names": [API_NAME], "expires_at": 2000, "max_seconds": 10}
+
+
+def query_value(names=None):
+    return {"schema": "aide.host.api-set-query.v1", "request_id": "b" * 32,
+            "os_build": "10.0.26200", "api_names": names if names is not None else [API_NAME, API_NAME_2],
+            "expires_at": 2000, "max_seconds": 10}
 
 
 class NativeFake:
@@ -79,6 +86,26 @@ class NativeFake:
     def close_file(self, handle):
         self.event("close", handle)
         return True
+
+
+class ApiQueryFake:
+    def __init__(self):
+        self.events, self.hooks = [], {}
+        self.build = "10.0.26200"
+        self.hosts = {API_NAME: "kernelbase.dll", API_NAME_2: "ucrtbase.dll"}
+
+    def event(self, name, *args):
+        self.events.append((name, *args))
+        if name in self.hooks:
+            self.hooks[name](*args)
+
+    def os_build(self):
+        self.event("os_build")
+        return self.build
+
+    def api_set_host(self, name):
+        self.event("api_set_host", name)
+        return self.hosts[name]
 
 
 class Journal:
@@ -389,8 +416,8 @@ class ObservationTests(unittest.TestCase):
         with self.assertRaises(Refused): obs.ObservationPlan.read(v)
         v = value(); v["files"].append(copy.deepcopy(v["files"][0]))
         with self.assertRaises(Refused): obs.ObservationPlan.read(v)
-        v = value(); v["api_names"] = [f"api-ms-win-test-{i}-l1-1-0.dll" for i in range(128)]
-        self.assertEqual(len(obs.ObservationPlan.read(v).api_names), 128)
+        v = value(); v["api_names"] = [f"api-ms-win-test-{i}-l1-1-0.dll" for i in range(obs.MAX_API_SETS)]
+        self.assertEqual(len(obs.ObservationPlan.read(v).api_names), obs.MAX_API_SETS)
         v["api_names"].append("api-ms-win-extra-l1-1-0.dll")
         with self.assertRaises(Refused): obs.ObservationPlan.read(v)
         v = value(); v["files"] = [dict(v["files"][0], name=f"m{i}.dll", size=obs.MAX_PE_BYTES,
@@ -407,7 +434,199 @@ class ObservationTests(unittest.TestCase):
             with self.subTest(bases=bases), self.assertRaises(Refused): obs.ObservationSession._bases(bases)
 
 
+class ApiSetQueryTests(unittest.TestCase):
+    def setUp(self):
+        self.api = ApiQueryFake(); self.journal = Journal(self.api)
+        self.now, self.wall = 10.0, 1000.0
+        self.guard = lambda: None
+
+    def session(self, source=None):
+        plan = source if isinstance(source, obs.ApiSetQueryPlan) else obs.ApiSetQueryPlan.read(source or query_value())
+        return obs.ApiSetQuerySession(plan, self.api, self.journal, lambda: self.guard(),
+                                      clock=lambda: self.now, wall_clock=lambda: self.wall)
+
+    def names(self):
+        return [row[0] for row in self.api.events]
+
+    def test_success_binds_sorted_names_build_intents_and_scope_ceiling(self):
+        result = json.loads(self.session(query_value([API_NAME_2, API_NAME])).run())
+        self.assertEqual([row["api_name"] for row in result["queries"]], [API_NAME, API_NAME_2])
+        self.assertEqual([row["physical_name"] for row in result["queries"]],
+                         ["kernelbase.dll", "ucrtbase.dll"])
+        self.assertEqual(result["native_calls"], 3)
+        self.assertTrue(result["api_set_query_completed"])
+        self.assertFalse(result["physical_hosts_qualified"])
+        self.assertFalse(result["loader_qualified"])
+        self.assertFalse(result["restricted_context_qualified"])
+        self.assertLess(self.names().index("reserve"), self.names().index("os_build"))
+        intents = [index for index, name in enumerate(self.names()) if name == "intent"]
+        calls = [index for index, name in enumerate(self.names()) if name == "api_set_host"]
+        self.assertEqual(len(intents), 2); self.assertEqual(len(calls), 2)
+        self.assertTrue(all(intent < call for intent, call in zip(intents, calls)))
+
+    def test_observed_180_name_closure_and_exact_256_ceiling_fit(self):
+        for count in (180, obs.MAX_API_SETS):
+            names = [f"api-ms-win-test-{index}-l1-1-0.dll" for index in range(count)]
+            with self.subTest(count=count):
+                self.assertEqual(len(obs.ApiSetQueryPlan.read(query_value(names)).api_names), count)
+        names.append("api-ms-win-overflow-l1-1-0.dll")
+        with self.assertRaises(Refused):
+            obs.ApiSetQueryPlan.read(query_value(names))
+
+    def test_observed_180_name_workload_completes_inside_call_and_result_bounds(self):
+        names = [f"api-ms-win-test-{index}-l1-1-0.dll" for index in range(180)]
+        self.api.hosts = {name: "kernelbase.dll" for name in names}
+        result = json.loads(self.session(query_value(names)).run())
+        self.assertEqual(len(result["queries"]), 180)
+        self.assertEqual(result["native_calls"], 181)
+        self.assertLess(len(json.dumps(result)), obs.MAX_RESULT_BYTES)
+
+    def test_plan_rejects_empty_duplicate_non_api_build_and_scalar_drift(self):
+        bad = ([], [API_NAME, API_NAME], ["kernel32.dll"], [API_NAME.upper()])
+        for names in bad:
+            with self.subTest(names=names), self.assertRaises(Refused):
+                obs.ApiSetQueryPlan.read({**query_value(), "api_names": names})
+        for build in (None, "10.0", "10.0.26200.1", "11.0.1"):
+            with self.subTest(build=build), self.assertRaises(Refused):
+                obs.ApiSetQueryPlan.read({**query_value(), "os_build": build})
+        plan = obs.ApiSetQueryPlan.read(query_value())
+        with self.assertRaises(Refused):
+            replace(plan, max_seconds=121).validate()
+
+    def test_build_drift_refuses_before_any_query_intent(self):
+        self.api.build = "10.0.26201"
+        session = self.session()
+        with self.assertRaises(Refused):
+            session.run()
+        self.assertEqual(self.names(), ["reserve", "os_build"])
+        self.assertEqual(session.attempts, [])
+
+    def test_wrong_journal_ack_refuses_before_native_query(self):
+        self.journal.ack = "7" * 64
+        session = self.session()
+        with self.assertRaises(Refused):
+            session.run()
+        self.assertEqual(self.names()[:3], ["reserve", "os_build", "intent"])
+        self.assertNotIn("api_set_host", self.names())
+        self.assertEqual(len(session.attempts), 1)
+
+    def test_native_failure_and_success_are_both_consumed_without_replay(self):
+        for fail in (False, True):
+            with self.subTest(fail=fail):
+                self.setUp(); session = self.session()
+                if fail:
+                    self.api.hooks["api_set_host"] = lambda name: (_ for _ in ()).throw(OSError("query failed"))
+                    with self.assertRaises(Refused):
+                        session.run()
+                else:
+                    session.run()
+                count = len(self.api.events)
+                with self.assertRaises(Refused):
+                    session.run()
+                self.assertEqual(len(self.api.events), count)
+                self.assertEqual(self.names().count("api_set_host"), 1 if fail else 2)
+
+    def test_invalid_physical_host_result_never_returns_partial_output(self):
+        for host in (API_NAME, "python314.dll", "KERNELBASE.DLL", r"C:\Windows\System32\kernelbase.dll", None):
+            with self.subTest(host=host):
+                self.setUp(); self.api.hosts[API_NAME] = host
+                session = self.session()
+                with self.assertRaises(Refused):
+                    session.run()
+                self.assertIsNotNone(session.failure)
+                self.assertEqual(session.failure["query_attempts"], 1)
+
+    def test_guard_expiry_budget_and_final_serialization_fail_closed(self):
+        self.guard = lambda: False
+        with self.assertRaises(Refused):
+            self.session().run()
+        self.assertEqual(self.api.events, [])
+
+        self.setUp(); self.wall = 2000
+        with self.assertRaises(Refused):
+            self.session().run()
+        self.assertEqual(self.api.events, [])
+
+        self.setUp()
+        with patch.object(obs, "MAX_API_QUERY_CALLS", 1), self.assertRaises(Refused):
+            self.session().run()
+        self.assertEqual(self.names(), ["reserve", "os_build", "intent"])
+
+        self.setUp(); original = obs._canonical
+        def stale(value):
+            if type(value) is dict and value.get("schema") == "aide.host.api-set-query-result.v1":
+                self.wall = 2000
+            return original(value)
+        with patch.object(obs, "_canonical", stale), self.assertRaises(Refused):
+            self.session().run()
+
+    def test_native_hresult_evidence_is_bounded_and_retained(self):
+        error = Refused("native")
+        error.native_evidence = {"operation": "GetApiSetModuleBaseName", "api_name": API_NAME,
+                                 "hresult": "0x80070490"}
+        self.api.hooks["api_set_host"] = lambda name: (_ for _ in ()).throw(error)
+        session = self.session()
+        with self.assertRaises(Refused):
+            session.run()
+        self.assertEqual(session.failure["native_refusal"]["hresult"], "0x80070490")
+
+    def test_frozen_source_manifest_matches_exact_files_and_no_effect_boundary(self):
+        path = ROOT / ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-query-source-manifest.json"
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        expected = {**manifest["source_files"], **manifest["dependencies"]}
+        actual = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in expected}
+        self.assertEqual(actual, expected)
+        encoded = json.dumps(actual, sort_keys=True, separators=(",", ":")).encode()
+        self.assertEqual(hashlib.sha256(encoded).hexdigest(), manifest["source_aggregate_sha256"])
+        self.assertFalse(manifest["actual_native_query_executed"])
+        self.assertTrue(all(value is False for value in manifest["effects"].values()))
+
+
 class NativeAdapterInjectedTests(unittest.TestCase):
+    def test_supported_api_set_query_validates_hresult_length_and_host(self):
+        api = obs.NativeApiSetQueryApi.__new__(obs.NativeApiSetQueryApi)
+        calls = []
+        def query(name, capacity, output, actual):
+            calls.append((name, capacity))
+            output.value = "KERNELBASE.DLL"
+            actual._obj.value = len(output.value) + 1
+            return 0
+        api._api_query = query
+        self.assertEqual(api.api_set_host(API_NAME), "kernelbase.dll")
+        self.assertEqual(calls, [(API_NAME.encode("ascii"), obs.API_QUERY_MAX_PATH)])
+
+        api._api_query = lambda name, capacity, output, actual: 0x80070490
+        with self.assertRaises(Refused) as caught:
+            api.api_set_host(API_NAME)
+        self.assertEqual(caught.exception.native_evidence["hresult"], "0x80070490")
+
+        def wrong_length(name, capacity, output, actual):
+            output.value = "kernelbase.dll"; actual._obj.value = len(output.value)
+            return 0
+        api._api_query = wrong_length
+        with self.assertRaises(Refused):
+            api.api_set_host(API_NAME)
+
+    def test_supported_api_set_query_rejects_invalid_input_and_output(self):
+        api = obs.NativeApiSetQueryApi.__new__(obs.NativeApiSetQueryApi); api._api_query = Mock()
+        for name in ("kernel32.dll", API_NAME.upper(), r"C:\bad.dll"):
+            with self.subTest(name=name), self.assertRaises(Refused):
+                api.api_set_host(name)
+        api._api_query.assert_not_called()
+
+        def bad_host(name, capacity, output, actual):
+            output.value = API_NAME; actual._obj.value = len(output.value) + 1
+            return 0
+        api._api_query = bad_host
+        with self.assertRaises(Refused):
+            api.api_set_host(API_NAME)
+
+    def test_native_os_build_uses_exact_platform_version(self):
+        api = obs.NativeApiSetQueryApi.__new__(obs.NativeApiSetQueryApi)
+        version = type("Version", (), {"platform_version": (10, 0, 26200)})()
+        with patch.object(obs.sys, "getwindowsversion", return_value=version, create=True):
+            self.assertEqual(api.os_build(), "10.0.26200")
+
     def test_only_fixed_resource_flags_and_exact_owned_release(self):
         api = obs.NativeSystemApi.__new__(obs.NativeSystemApi)
         api._load = Mock(return_value=0x10002); api._free = Mock(return_value=True)

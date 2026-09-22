@@ -3180,7 +3180,7 @@ items:
     evidence: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/evidence
   - id: AIDE-CW-ISOLATED-HOST-01
     status: running
-    planning_state: execution_active
+    planning_state: h2_api_query_source_frozen
     title: Qualify a restricted worker host
     task: .aide/queue/AIDE-CW-ISOLATED-HOST-01/task.yaml
     exec_plan: .aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md

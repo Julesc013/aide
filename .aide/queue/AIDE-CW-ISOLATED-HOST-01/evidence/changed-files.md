@@ -44,6 +44,18 @@ RVA/timestamp0 optional table spans, mapped IAT storage and explicit malformed
 refusals. Own docs/status and raw custody record independent 101-test assurance.
 No module/API/image capacity changes, provider/index edits or real loader effects.
 
+## H2 supported API-set query source
+
+- `core/runtime/continuous_worker/windows_python_contract.py`: raises the
+  explicit API-set row ceiling from 128 to 256 for the observed 180-name set.
+- `core/runtime/continuous_worker/windows_system_observation.py`: adds a
+  consumed-once supported API-set query plan/session and isolated native
+  `GetApiSetModuleBaseName` adapter.
+- `.aide/scripts/tests/test_continuous_worker_system_observation.py`: adds
+  injected query, no-replay, durability, bound, drift, and native ABI tests.
+- Task records, evidence, broker reference, and root indexes record the exact
+  source-only boundary. No actual native query or host mutation was performed.
+
 ## Frozen system observation source
 
 The h2-system-source-manifest.json packet binds two new files and 32 injected

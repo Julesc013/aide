@@ -3588,3 +3588,11 @@ through `AIDE-BROKER-DEV-PACK-REFRESH-01` and dev landing `088b20ba`; final
 canonical validation passes. Continue the parent broker, isolated-host, and
 GitHub target tasks for operational qualification; this integration does not
 authorize live effects or public release.
+
+## Isolated-host API-set query source
+
+The H2 continuation now has frozen source for supported Windows API-set host
+queries. It preserves the consumed resource-map failure, fits the observed
+180-name closure inside explicit 256-row/257-call bounds, and passes 142
+affected tests. Independent source review precedes any real host query;
+physical host bytes, private loading, grants, and activation remain open.

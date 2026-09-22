@@ -455,3 +455,44 @@ Source is frozen for independent review. No resource effect manifest, selected
 DLL reread/mapping, child, copy/grant/profile/network or activation occurred.
 The full inventory/capacity, restricted context/bootstrap and protected parent
 authority gates remain open.
+
+## H2 supported API-set query source - 2026-09-22
+
+The retained two-API effect answered its finite question: treating an API-set
+contract as a resource-mappable file fails with Win32 error 2 on the first
+contract, and the consumed request must not be replayed. Microsoft now exposes
+`GetApiSetModuleBaseName` specifically for dependency analyzers to resolve an
+API-set contract to its implementation module. Continue with that supported
+query rather than weakening the loader flags or parsing an undocumented PEB
+schema.
+
+This source slice may edit only the admitted Windows system-contract and
+observation modules, their direct tests, this task's records, the queue index,
+and existing root/reference logs. It will:
+
+1. raise the exact API-set row ceiling from 128 to 256 so the already observed
+   180-name Python closure fits without partitioning or omission;
+2. add a typed, consumed-once query plan/session with exact names, OS build,
+   expiry, operation bounds, durable reservation/intents, and fail-closed
+   result parsing;
+3. add an injected native adapter for `GetApiSetModuleBaseName`, with fixed
+   ASCII input, `MAX_PATH` output, exact HRESULT/length checks, canonical
+   physical DLL names, and no fallback loader or schema scraping;
+4. prove ordering, no replay, drift, malformed output, capacity, clock, guard,
+   serialization, and partial-result refusal through synthetic tests.
+
+No actual API query, DLL load, file read, image copy, ACL/package grant,
+AppContainer launch, credential access, network operation, or activation is
+part of this source slice. A later exact effect must bind the reviewed source,
+current OS build, protected journal/controller, all requested names, returned
+physical hosts, and fresh held-object observations. Query success alone does
+not qualify host bytes, a restricted loader, or the private Python runtime.
+
+The source is now frozen at aggregate
+`d6e30f285926acccbb3dd14cd0ec6672e966267a3131b37b177c7ae42449dda3`.
+Fifty-one direct system-observation/query tests and 91 dependent contract, image,
+PE and security tests pass. The injected suite executes all 180 observed API
+names within the 256-row and 257-call ceilings. `NativeApiSetQueryApi` is
+separate from the historical `NativeSystemApi`, so the old consumed resource
+probe path is not made dependent on the new query DLL. Source awaits
+independent review before any actual query/effect packet is prepared.

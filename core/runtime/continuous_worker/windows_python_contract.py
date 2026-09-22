@@ -10,7 +10,7 @@ from .windows_pe import MAX_PE_BYTES, dll_name, read_pe
 
 MAX_MODULES = 64
 MAX_TOTAL_BYTES = 256 * 1024 * 1024
-MAX_API_SETS = 128
+MAX_API_SETS = 256
 MAX_EDGES = 4096
 DIRECT_SYSTEM_NAMES = frozenset({
     "advapi32.dll", "bcrypt.dll", "kernel32.dll", "version.dll", "ws2_32.dll",

@@ -476,3 +476,11 @@ merge contract owned by `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01`. Its mandatory
 expected-head SHA is destination-enforced by the documented endpoint. The
 endpoint has no expected-base argument, so policy/principal qualification and
 hosted race evidence remain separate open work rather than inferred guarantees.
+
+## Isolated-host API-set query contract
+
+The integration-broker reference now records the isolated-host H2 API-set query
+contract. It explains why virtual API-set names are resolved through the
+supported Windows dependency-analysis API, the bounded 180-of-256 source
+coverage, and the remaining independent-review and real-host qualification
+boundaries.
