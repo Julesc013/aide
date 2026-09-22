@@ -1,6 +1,6 @@
 # Documented Workflow `path@ref` Repair
 
-Task: `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01`  
+Task: `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01`
 Starting published review checkpoint: `b8fb89b917c9a1fc152b19263bedbe2db16c2e39`
 
 ## Scope and Result
