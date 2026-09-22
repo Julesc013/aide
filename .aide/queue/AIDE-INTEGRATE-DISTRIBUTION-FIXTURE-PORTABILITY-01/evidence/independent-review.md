@@ -1,6 +1,8 @@
 # Independent Review: Distribution Fixture Portability
 
-Decision: `REQUEST_CHANGES`
+Decision: `REQUEST_CHANGES` (initial review; superseded below)
+
+Current decision: `PASS`
 
 ## Reviewed Identity
 
@@ -107,3 +109,96 @@ The changed `core/distribution` modules are not direct export-pack members.
 
 No Git history, branch, remote, target repository, release surface, machine
 configuration, credential, or external service was mutated during this review.
+
+## Superseding Rereview
+
+Decision: `PASS`
+
+### Repaired Identity
+
+- Branch: `task/aide-distribution-fixture-portability-integration-01`
+- Repaired commit: `64979977922ae8a493646df5858d0bd7f4459cd0`
+- Repaired tree: `c7474c29bbd84dfce6fc08c892544da045b6db3a`
+- Exact parent: `36fa64e011b56d228bdc83ed57ff78262934d762`
+- Preserved source merge: `7aab31bc1bc747484d80c662d20e218bb93d1f5b`
+- Original source commit: `e73ac0b269df3a47214588ae2d025d1b97f2f2c7`
+
+The repaired commit, tree, and parent match the requested identities. The
+original source commit remains an ancestor of the two-parent source merge and
+the repaired HEAD; the source merge remains an ancestor of the repaired HEAD.
+All five original source blobs remain byte-identical between `e73ac0b2` and
+`7aab31bc`. At repaired HEAD, the intake and operation-executor blobs remain
+identical, while the test, workspace helper, and reference document have the
+intentional F1 repair changes. No source history was rewritten or lost.
+
+### Finding Disposition
+
+#### F1 - CLOSED - Windows 8.3 alias mutation
+
+The repaired `safe_join` enumerates each existing parent and requires an
+existing resolved component to have an exact enumerated directory-entry name.
+An actual active Windows 8.3 alias was exercised on the current temporary
+volume:
+
+- Leaf alias `LONGFI~1.TXT` was refused by `safe_join` with
+  `path_collision_refused`.
+- `execute_operation` returned `FAILED_VALIDATION` with
+  `distribution_apply_engine.path_collision_refused` and left the long-name
+  file unchanged.
+- Exact `LongFixtureNameForAlias.txt` lookup succeeded, and the corresponding
+  exact-name operation returned `APPLIED_TEMP`.
+- Nested parent alias `LONGDI~1/NestedLongFixtureNameForAlias.txt` was refused
+  by both surfaces with zero mutation.
+- Nested leaf alias
+  `LongDirectoryNameForAlias/NESTED~1.TXT` was refused by both surfaces with
+  zero mutation.
+- The exact nested long-name path continued to resolve successfully.
+
+This closes the original high-severity finding. No new material findings were
+identified.
+
+### Rereview Validation
+
+- PASS: exact repaired commit `64979977`, tree `c7474c29`, and parent
+  `36fa64e0`.
+- PASS: original source-to-merge and source-to-repaired ancestry checks.
+- PASS: all five original source blobs are byte-identical at `e73ac0b2` and
+  `7aab31bc`; later blob differences are limited to the intentional repair.
+- PASS: repair and full combined `git diff --check`.
+- PASS: latest commit-message check.
+- PASS: commit-message range `f737f919..64979977`, four commits.
+- PASS: native active Windows 8.3 leaf, nested-parent, nested-leaf, exact leaf,
+  and exact nested compatibility probe.
+- PASS WITH SKIPS: focused portability suite ran 126 tests: 118 passed, eight
+  skipped, zero failed.
+- PASS WITH SKIPS: adjacent `test_aide_distribution*.py` suite ran 157 tests:
+  149 passed, eight skipped, zero failed.
+- PASS: `py -3 -B .aide/scripts/aide_lite.py test`.
+- EXPECTED FAIL: `pack-status` reports valid checksums and boundaries with one
+  stale-provenance problem: manifest source `b3e5c7aa` does not equal repaired
+  HEAD `64979977`.
+- EXPECTED FAIL: canonical validation has two failed checks, both projections
+  of that same stale portable-pack provenance condition.
+
+The eight skips remain truthful and unchanged: seven require symlink creation
+that this Windows token rejects with `WinError 1314`, and one requires a FIFO
+that Windows does not expose. The active 8.3 regression ran and passed; it was
+not skipped.
+
+### Residual Risks After Pass
+
+- The helpers remain a trusted-root, disposable, single-writer fixture
+  boundary, not hostile-writer confinement or atomic target apply.
+- Actual symlink behavior remains unqualified under this Windows token; a
+  mocked reparse attribute is not equivalent native symlink evidence.
+- FIFO behavior remains unqualified on Windows.
+- Component and aggregate path-length portability remain unmodeled lexically,
+  although filesystem errors fail preflight closed.
+- The committed native regression covers the active leaf alias. Nested aliases
+  and exact-name compatibility passed an independent disposable rereview probe
+  but are not separate retained regression cases.
+- Portable artifact provenance still requires a commit-bound refresh after
+  integration.
+
+No Git history, branch, remote, target repository, release surface, machine
+configuration, credential, or external service was mutated during rereview.

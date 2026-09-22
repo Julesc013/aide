@@ -41,5 +41,8 @@ The first independent review reproduced a high-severity failure: an active
 - NOT RUN: non-disposable target mutation, privileged symlink creation, hosted
   effects, main promotion, tagging, upload, or release publication.
 
-The repair requires independent rereview against its committed identity before
-integration.
+Superseding independent rereview passed exact commit `64979977922ae8a493646df5858d0bd7f4459cd0`
+and tree `c7474c29bbd84dfce6fc08c892544da045b6db3a`. The reviewer additionally
+exercised active nested-parent and nested-leaf 8.3 aliases, exact long-name
+compatibility, source ancestry/blob preservation, both test suites, AIDE Lite
+test, commit checks, and diff checks. Dev integration remains pending.

@@ -38,7 +38,7 @@ Windows-tested, independently reviewed integration candidate and land it on
 - [x] Record exact source, test, and boundary evidence.
 - [x] Preserve the first independent `REQUEST_CHANGES` review and repair its
   reproduced Windows 8.3 alias mutation with an actual short-name regression.
-- [ ] Obtain independent exact-commit review.
+- [x] Obtain independent exact-commit review.
 - [ ] Publish the qualified task ref.
 - [ ] Prepare, validate, integrate, and observe the exact `dev` candidate.
 
