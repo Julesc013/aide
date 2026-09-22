@@ -11175,3 +11175,18 @@ DLL mapping, image or grant effect is part of this source implementation.
   merge-contract facts. The focused suite passes 31 tests.
 - Added no network sender, credential path, settings/workflow mutation or hosted
   effect. Base/ref, actor, policy, principal and ruleset atomicity remain open.
+
+## 2026-09-22 - Broker runtime dev integration
+
+- Preserved the full published broker line at `75da3310` through a two-parent
+  merge instead of discarding, flattening, or selectively recreating it.
+- Reconciled fourteen coordination and documentation conflicts while retaining
+  the newer delivered-pack import/update and repository-neutrality work on dev.
+- Passed 312 runtime cases with one explicit privilege-dependent skip, 25
+  portable import/update cases, 10 release-bundle cases, and canonical doctor
+  and candidate-tree validation checks.
+- Published dev at `bed5a57aed4f7686de4b9137dbb3afc8e7995436`.
+- Post-commit validation then identified stale portable-pack source provenance;
+  derived export and release artifacts must be refreshed from clean landed dev.
+- Kept live providers, credentials, hosted effects, protected-host closeout,
+  main promotion, tagging, and release publication outside this integration.

@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-CW-BROKER-DEV-INTEGRATION-01
 status: running
 classification: owner_prioritized_exact_integration
-planning_state: ready_for_dev_landing
+planning_state: integrated_to_dev_followup_active
 result: PENDING
 updated_at: 2026-09-22
-current_slice: land_exact_published_candidate_to_dev
-next_slice: helper_plan_land_validate_push_and_observe
+current_slice: refresh_post_landing_portable_provenance
+next_slice: regenerate_export_and_release_artifacts
 notes:
   - Source 75da33108995ba63fc7148c6b4137349d7013798 is published and clean.
   - Target dev 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab is published and clean.
@@ -20,4 +20,6 @@ notes:
   - Two-parent candidate 091382e81f08b6e7363380cd3190c7483234d9ab is published and preserves source 75da3310 as its second parent.
   - The candidate commit passes current message policy; range check retains disclosed historical message failures without rewriting them.
   - The task-to-dev landing helper reports ready_dry_run for an exact no-ff merge and dev push.
+  - Dev landing bed5a57aed4f7686de4b9137dbb3afc8e7995436 is published and contains source 75da33108995ba63fc7148c6b4137349d7013798.
+  - Post-commit validation correctly reports stale portable-pack provenance at source 31bd91bd; refresh is required from a clean post-landing source commit.
   - Full broker completion and activation remain false after source integration.

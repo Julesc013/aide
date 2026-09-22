@@ -1,0 +1,24 @@
+{
+  "schema_version": "aide.integration-landing-receipt.v0",
+  "task_id": "AIDE-CW-BROKER-DEV-INTEGRATION-01",
+  "source_commit": "75da33108995ba63fc7148c6b4137349d7013798",
+  "tested_merge_commit": "091382e81f08b6e7363380cd3190c7483234d9ab",
+  "published_task_tip": "2ef1fb7476bb350ad2a8da84c6093fa9ae5a7953",
+  "target_before": "13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab",
+  "dev_landing_commit": "bed5a57aed4f7686de4b9137dbb3afc8e7995436",
+  "remote_dev_observed": "bed5a57aed4f7686de4b9137dbb3afc8e7995436",
+  "source_is_ancestor": true,
+  "validation": {
+    "continuous_worker_tests_run": 312,
+    "continuous_worker_tests_passed": 311,
+    "continuous_worker_tests_skipped": 1,
+    "portable_import_update_tests_passed": 25,
+    "release_bundle_tests_passed": 10,
+    "doctor": "PASS",
+    "pre_commit_tree_validate": "PASS",
+    "post_landing_validate": "FAIL_STALE_EXPORT_PROVENANCE",
+    "landing_commit_policy": "PASS"
+  },
+  "operational_broker_complete": false,
+  "release_authorized": false
+}

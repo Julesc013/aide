@@ -3575,3 +3575,14 @@ candidate SHA as GitHub's expected-head predicate, and keep a successful respons
 at submitted until later observation proves integration. Continue next with exact
 policy, workflow and principal observation/review. Expected-base enforcement,
 settings apply, hosted races and protected-host qualification remain open.
+
+## Broker runtime dev integration
+
+`AIDE-CW-BROKER-DEV-INTEGRATION-01` has landed. The exact published source
+`75da33108995ba63fc7148c6b4137349d7013798` is now retained in `dev` through
+two-parent landing `bed5a57aed4f7686de4b9137dbb3afc8e7995436`. Combined
+runtime, portable lifecycle, and release-bundle tests pass within their recorded
+scope. Post-commit validation requires a clean-source portable-pack provenance
+refresh before this integration task closes. Continue the parent broker,
+isolated-host, and GitHub target tasks for operational qualification; this
+integration does not authorize live effects or public release.

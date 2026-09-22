@@ -34,7 +34,9 @@ broker/runtime line and current dev, then qualify that combined source for dev.
 - [x] Run commit and range checks after the merge commit exists.
 - [x] Publish the exact integration candidate.
 - [x] Run the exact task-to-dev landing helper in dry-run mode.
-- [ ] Run the landing helper, merge to dev, validate, push, and observe refs.
+- [x] Run the landing helper, merge to dev, validate, push, and observe refs.
+- [ ] Refresh derived portable export and release artifacts from a clean post-landing source commit.
+- [ ] Re-run canonical validation and close the integration task.
 
 ## Conflict Policy
 
@@ -95,3 +97,12 @@ publication, fix forward. Never rewrite the published source or target refs.
   as passing.
 - The post-publication landing helper returned `ready_dry_run` for a no-ff merge
   of this task branch into `dev`, followed by `git push origin dev`.
+- `dev` landed the task through two-parent commit
+  `bed5a57aed4f7686de4b9137dbb3afc8e7995436`. Local `dev`, `origin/dev`, and
+  the observed remote ref matched that identity, and the requested source
+  `75da33108995ba63fc7148c6b4137349d7013798` is its ancestor.
+- The first validation after the landing commit correctly failed portable-pack
+  provenance because its manifest still names pre-integration source
+  `31bd91bd10ed57e98e658380cd9372e074867f63`. The integration is preserved;
+  refresh derived export and release artifacts from a clean post-landing commit
+  before marking this WorkUnit complete.

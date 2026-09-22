@@ -3402,7 +3402,7 @@ items:
     description: Extends extracted-pack import with exact installed baselines, conflict-first updates, preview/apply identity, predecessor-pack proof, and interruption evidence in disposable consumers only.
   - id: AIDE-CW-BROKER-DEV-INTEGRATION-01
     status: running
-    planning_state: merge_candidate_preparation
+    planning_state: integrated_to_dev_followup_active
     result: PENDING
     title: Integrate the published broker runtime line into current dev
     task: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/task.yaml

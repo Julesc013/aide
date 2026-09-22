@@ -39,3 +39,19 @@
 - `aide_lite.py git land --dry-run --source
   task/aide-cw-broker-dev-integration-01 --target dev --validation-ok --push`:
   `ready_dry_run`, with no local or remote mutation.
+- Dev landing commit:
+  `bed5a57aed4f7686de4b9137dbb3afc8e7995436`; parents:
+  `13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab` and
+  `2ef1fb7476bb350ad2a8da84c6093fa9ae5a7953`.
+- Pre-commit landing-tree `aide_lite.py doctor` and `aide_lite.py validate`:
+  `PASS`; at that point Git `HEAD` still named the old dev parent.
+- Landing commit message check: `PASS`; staged whitespace and conflict checks:
+  `PASS`.
+- `git push origin dev`: passed. Local `dev`, `origin/dev`, and
+  `git ls-remote origin refs/heads/dev` all observed the landing identity.
+- `git merge-base --is-ancestor 75da3310... dev`: passed.
+- Post-commit canonical validation: `FAIL` only for export-pack and pack-status
+  provenance. The committed manifest source is `31bd91bd10ed57e98e658380cd9372e074867f63`
+  while the new dev head is `bed5a57aed4f7686de4b9137dbb3afc8e7995436`
+  and portable inputs changed. This requires a clean-source derived-artifact
+  refresh; it is not recorded as a broker runtime failure or a pass.
