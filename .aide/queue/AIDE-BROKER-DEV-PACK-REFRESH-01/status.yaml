@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BROKER-DEV-PACK-REFRESH-01
+status: running
+classification: bounded_local_derived_artifact_refresh
+planning_state: execution_active
+result: PENDING
+updated_at: 2026-09-22
+current_slice: admission_and_clean_source_checkpoint
+next_slice: regenerate_export_pack
+notes:
+  - Source dev 0bd65583 is published and clean.
+  - Canonical validation fails only because tracked portable inputs advanced beyond manifest source 31bd91bd.
+  - Local artifact generation is authorized; tag upload publication and target mutation are prohibited.
