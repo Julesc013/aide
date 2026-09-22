@@ -42,6 +42,8 @@ Windows-tested, independently reviewed integration candidate and land it on
 - [x] Publish the qualified task ref at `6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22`.
 - [x] Prepare, validate, integrate, and observe the exact `dev` candidate at
   `bb689227c6a65292f4728d7ae0f8759c22e77bd3`.
+- [x] Create a clean bounded refresh worktree from published
+  `dev@cc85be9c472a16f39aae98ba00fd5de145098862`.
 - [ ] Refresh and validate commit-bound portable artifact provenance from the
   landed `dev` source.
 
