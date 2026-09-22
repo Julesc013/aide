@@ -1,26 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "4f80611776b7",
-      "summary": "Regenerate, rerun exact consumer and repository qualification, then publish and integrate the candidate."
-    },
-    {
-      "commit": "db8cd16279e0",
-      "summary": "Validate the committed artifact state, publish the task branch, and integrate the exact candidate to dev."
-    },
-    {
-      "commit": "dd8e1c226006",
-      "summary": "Prove validation is idempotent, publish the task branch, and integrate the exact candidate to dev."
-    },
-    {
-      "commit": "b35394ae939c",
-      "summary": "Run post-merge validation, push exact dev, and close the child WorkUnit with observed refs."
-    },
-    {
-      "commit": "8e1e9a9d724d",
-      "summary": "Integrate this closeout record to dev and select the next bounded stable implementation child."
-    },
-    {
       "commit": "a2ba43624bf9",
       "summary": "Validate and push exact dev, then continue the next bounded product slice."
     },
@@ -263,6 +243,26 @@
     {
       "commit": "b4d949c1ac1f",
       "summary": "Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview."
+    },
+    {
+      "commit": "7863891e581d",
+      "summary": "Regenerate, qualify, commit, and independently rereview the final artifact candidate."
+    },
+    {
+      "commit": "dd1f39f39f3d",
+      "summary": "Run and commit the complete post-commit bundle, validate, draft, and draft-validate projection; prove a second full cycle is byte-identical; obtain independent rereview."
+    },
+    {
+      "commit": "198a87d29238",
+      "summary": "Replay the complete cycle from this committed candidate, require a clean tree, run canonical and commit checks, push, and obtain independent exact-commit rereview."
+    },
+    {
+      "commit": "9f4bbc0a7744",
+      "summary": "Validate this complete range, push it, and obtain independent exact-commit rereview."
+    },
+    {
+      "commit": "f147c9059e8b",
+      "summary": "Generate a source-bound preview checkpoint, regenerate and converge exact artifacts, then obtain superseding independent review."
     }
   ],
   "highlights": [
@@ -409,27 +409,6 @@
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "4f80611776b7",
-      "subject": "fix(export): validate artifact-only descendant commits",
-      "summary": "committed release artifacts retain valid clean-source provenance without accepting stale portable inputs."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "db8cd16279e0",
-      "subject": "build(release): refresh qualified portable artifacts",
-      "summary": "the qualified portable candidate now includes post-build provenance validation."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "b35394ae939c",
-      "subject": "chore(dev): integrate delivered pack import closure",
-      "summary": "dev now carries source-independent portable pack import and closed archive identities."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
       "commit": "31bd91bd10ed",
       "subject": "fix(import): preserve authored agents bytes",
       "summary": "preserve target-authored AGENTS.md bytes around portable guidance."
@@ -520,6 +499,34 @@
     },
     {
       "breaking": false,
+      "category": "Fixed",
+      "commit": "dd1f39f39f3d",
+      "subject": "build(release): checkpoint replacement-safe artifacts",
+      "summary": "produce replacement-safe, checkout-neutral local release artifacts for exact rereview."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "198a87d29238",
+      "subject": "build(release): close committed provenance projection",
+      "summary": "close the deterministic post-commit provenance projection across local bundle and release-draft records."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "9f4bbc0a7744",
+      "subject": "docs(release): bind final qualification checkpoint",
+      "summary": "align durable release qualification records with the policy-compliant local commit identities."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "f147c9059e8b",
+      "subject": "fix(release): require paired preview identities",
+      "summary": "fail closed when either release-preview JSON identity is absent."
+    },
+    {
+      "breaking": false,
       "category": "Docs",
       "commit": "091382e81f08",
       "subject": "feat(broker): integrate published runtime line",
@@ -552,6 +559,13 @@
       "commit": "e2ec8925adf7",
       "subject": "docs(release): bind hardened preview source",
       "summary": "bind release previews to the hardened metadata generator."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "7863891e581d",
+      "subject": "docs(release): bind replacement-safe source",
+      "summary": "bind release summaries to the replacement-safe source checkpoint."
     },
     {
       "breaking": false,
@@ -619,26 +633,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "4f80611776b7",
-      "summary": "Final pack and archive bytes must be regenerated from this validator commit before integration."
-    },
-    {
-      "commit": "db8cd16279e0",
-      "summary": "This remains a local candidate; main, tagging, upload, and public publication retain exact review gates."
-    },
-    {
-      "commit": "dd8e1c226006",
-      "summary": "No publication occurred; task-to-dev integration is still pending exact helper validation."
-    },
-    {
-      "commit": "b35394ae939c",
-      "summary": "Main promotion, version selection, tag, upload, and public release remain separately gated."
-    },
-    {
-      "commit": "8e1e9a9d724d",
-      "summary": "Main promotion, stable version selection, tag, upload, publication, and remaining product work are still open."
-    },
     {
       "commit": "a2ba43624bf9",
       "summary": "Main, tag, upload, publication, and remaining stable-release work remain gated."
@@ -882,32 +876,32 @@
     {
       "commit": "b4d949c1ac1f",
       "summary": "Generated export and release artifacts must be rebuilt from the new source."
+    },
+    {
+      "commit": "7863891e581d",
+      "summary": "The preview remains local and non-publishing."
+    },
+    {
+      "commit": "dd1f39f39f3d",
+      "summary": "This first artifact checkpoint still requires the complete post-commit provenance projection and independent exact-commit rereview."
+    },
+    {
+      "commit": "198a87d29238",
+      "summary": "Independent review is still required before dev integration."
+    },
+    {
+      "commit": "9f4bbc0a7744",
+      "summary": "Independent exact-commit rereview and dev integration remain pending."
+    },
+    {
+      "commit": "f147c9059e8b",
+      "summary": "Generated portable and release artifacts still describe the prior source until the next deterministic regeneration chain."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "b4d949c1ac1f7481a56c763bdb41582291d477c9",
-  "source_range": "origin/main..HEAD",
+  "source_head": "f147c9059e8b42ea0f4618a45d306080f300e507",
+  "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "4f80611776b7",
-      "summary": "PASS: export/import 17 tests, focused stale-pack regression, Python compilation, and diff checks."
-    },
-    {
-      "commit": "db8cd16279e0",
-      "summary": "PASS: pack/release/repository validation; ZIP and tar.gz isolated imports; two target-local doctor runs; repeat archive hashes."
-    },
-    {
-      "commit": "dd8e1c226006",
-      "summary": "PASS: pack status, release validation, draft validation, and repository validation."
-    },
-    {
-      "commit": "b35394ae939c",
-      "summary": "PASS: pre-merge 49 focused tests, repository validation, two exact archive canaries, and structured commit range."
-    },
-    {
-      "commit": "8e1e9a9d724d",
-      "summary": "PASS: post-merge Q47/Q48, pack provenance, repository validation, remote dev observation, and closeout diff checks."
-    },
     {
       "commit": "a2ba43624bf9",
       "summary": "PASS: helper landing plan, closeout repository validation, and structured commit policy."
@@ -1151,6 +1145,26 @@
     {
       "commit": "b4d949c1ac1f",
       "summary": "PASS: adversarial export provenance regression."
+    },
+    {
+      "commit": "7863891e581d",
+      "summary": "PASS: changelog preview generation and git diff checks."
+    },
+    {
+      "commit": "dd1f39f39f3d",
+      "summary": "PASS: 58 adjacent tests, canonical validate and doctor, two delivered-byte consumer canaries, and 44-file repeatability comparison."
+    },
+    {
+      "commit": "198a87d29238",
+      "summary": "PASS: pack-status reports PASS_SOURCE_ANCESTOR."
+    },
+    {
+      "commit": "9f4bbc0a7744",
+      "summary": "PASS: commit range 7863891e..198a87d2."
+    },
+    {
+      "commit": "f147c9059e8b",
+      "summary": "PASS: Q31 governance 6, export/import lifecycle 25, Q47 release bundle 18, and Q48 release draft 11 tests."
     }
   ],
   "warnings": []
