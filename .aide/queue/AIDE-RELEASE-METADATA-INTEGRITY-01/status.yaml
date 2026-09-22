@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-RELEASE-METADATA-INTEGRITY-01
 status: needs_review
 classification: qualified_candidate
-planning_state: paired_preview_absence_repair_ready_for_checkpoint
+planning_state: replacement_artifact_checkpoint_ready
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
-current_slice: paired_preview_absence_repair
-next_slice: source_checkpoint_then_artifact_convergence_and_rereview
+current_slice: replacement_artifact_convergence
+next_slice: artifact_checkpoint_then_postcommit_projection_and_rereview
 source_review_commit: 9f4bbc0a77443bd84a5c2502882e95aa602f98fe
 notes:
   - Independent review found stale local asset identities, checkout-local provenance, and stale required preview assets.
@@ -14,10 +14,13 @@ notes:
   - The repaired generator and adjacent export, import, release, and draft suites pass 55 tests.
   - Independent review of 2819a63e requested three changes: bind both preview representations, ignore Git replacement objects for ancestry, and close the committed full-cycle projection.
   - Source commits 6cbd104c and b4d949c1 close the preview and replacement-object findings with adversarial regressions.
-  - The final exact source passes 58 adjacent tests, canonical validation, and two delivered-byte consumer canaries.
+  - The prior 7863891e source passed 58 adjacent tests, canonical validation, and two delivered-byte consumer canaries.
   - All 44 generated release files remain byte-identical across bundle, validate, draft, and draft-validate reruns.
-  - Exact ZIP SHA-256 is 622224960f882e1055995c2a9ae6c408f1ba3f8ec242bfe30a5353be781040f7.
-  - Exact tar.gz SHA-256 is 9c16ad304636badf26f9ac1029e833e548181fa411e119574e3cd71d683a4ccd.
+  - Replacement source f147c905 and preview checkpoint 1397b703 pass the 60-case adjacent matrix.
+  - Replacement ZIP SHA-256 is dfd344260ee39afc0fff833f266e480c3c59f74e083da986c5ed3685a25d61c7 (977452 bytes).
+  - Replacement tar.gz SHA-256 is 57d382171974b92febe79f4a4f865dc8e386fe03213b36a2b6deff8a0c317aaa (649415 bytes).
+  - Both replacement archives pass extracted fresh/brownfield import, idempotent rerun, target-local doctor, and authored-content preservation.
+  - The replacement 44-file release projection is byte-identical across a second complete pre-commit cycle.
   - Artifact checkpoint dd1f39f3 is committed; its full post-commit projection reports PASS_SOURCE_ANCESTOR.
   - A second complete bundle, validate, draft, and draft-validate cycle compared 44 files and changed zero bytes.
   - The unpublished checkpoint tail was recreated with identical trees to replace an invalid Build changelog category with the required Fixed category; no pushed history changed.
@@ -25,5 +28,5 @@ notes:
   - Independent rereview of 9f4bbc0a returned REQUEST_CHANGES because deleting paired JSON still failed open and 198a87d2 named a superseded checkpoint.
   - The source repair now requires paired Markdown and JSON previews and adds end-to-end deletion regressions.
   - The repaired adjacent matrix passes 60 cases: Q31 6, export/import 25, Q47 18, and Q48 11, with zero failures or skips.
-  - A new source, preview, artifact, and projection chain plus independent exact rereview remain pending before dev integration.
+  - Commit the replacement artifact checkpoint, then bind the actual checkpoint identity in a full post-commit projection before exact rereview.
   - No publication effect is authorized.

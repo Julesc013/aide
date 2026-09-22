@@ -31,6 +31,8 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         self.write(root, ".gitignore", ".aide.local/\n.aide.local/**\n.env\nsecrets/\n")
         self.write(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, "# AIDE Changelog Preview\n\nsource_head: fixture-commit\nrelease_publishing: false\n")
         self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_MD_PATH, "# AIDE Release Notes Preview\n\nsource_head: fixture-commit\nrelease_publishing: false\n")
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_JSON_PATH, aide_lite.stable_json_text({"source_head": "fixture-commit"}))
+        self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_JSON_PATH, aide_lite.stable_json_text({"source_head": "fixture-commit"}))
         self.write_pack(root)
         return root
 
@@ -349,6 +351,25 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         self.assertIn("status: blocked_stale_source_preview", copied)
         self.assertIn("JSON is malformed", copied)
         self.assertEqual(bundle["validation"]["result"], "FAIL")
+
+    def test_missing_preview_json_is_blocked_and_release_validate_fails(self) -> None:
+        preview_pairs = [
+            (aide_lite.CHANGELOG_PREVIEW_JSON_PATH, aide_lite.RELEASE_CHANGELOG_PREVIEW_PATH),
+            (aide_lite.RELEASE_NOTES_PREVIEW_JSON_PATH, aide_lite.RELEASE_RELEASE_NOTES_PREVIEW_PATH),
+        ]
+        for source_json, destination in preview_pairs:
+            with self.subTest(source_json=source_json):
+                root = self.make_repo()
+                (root / source_json).unlink()
+                bundle = self.run_cmd(root, "release", "bundle")
+                self.assertEqual(bundle.returncode, 1, bundle.stdout + bundle.stderr)
+                copied = (root / destination).read_text(encoding="utf-8")
+                self.assertIn("status: blocked_stale_source_preview", copied)
+                self.assertIn(f"source preview JSON missing at {source_json}", copied)
+                self.assertIn("publish_candidate: false", copied)
+                validate = self.run_cmd(root, "release", "validate")
+                self.assertEqual(validate.returncode, 1, validate.stdout + validate.stderr)
+                self.assertIn("result: FAIL", validate.stdout)
 
     def test_preview_parent_is_bound_only_across_generated_projection(self) -> None:
         root = self.make_repo()

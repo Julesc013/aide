@@ -17327,17 +17327,23 @@ def release_preview_binding(repo_root: Path, source_rel: str, source_commit: str
     if not observed_head:
         return "stale", "", "source preview Markdown does not record source_head"
     json_rel = RELEASE_PREVIEW_SOURCE_PATHS.get(source_rel, "")
-    json_path = repo_root / json_rel if json_rel else None
-    if json_path is not None and json_path.exists():
-        try:
-            data = read_json_file(json_path)
-        except (OSError, json.JSONDecodeError, TypeError) as exc:
-            return "stale", observed_head, f"source preview JSON is malformed: {exc}"
-        json_head = str(data.get("source_head", "")).strip()
-        if not json_head:
-            return "stale", observed_head, "source preview JSON does not record source_head"
-        if json_head != observed_head:
-            return "stale", observed_head, "source preview Markdown and JSON identify different source heads"
+    if not json_rel:
+        return "stale", observed_head, "source preview JSON path is not configured"
+    json_path = repo_root / json_rel
+    if not json_path.exists():
+        return "stale", observed_head, f"source preview JSON missing at {json_rel}"
+    try:
+        data = read_json_file(json_path)
+    except (OSError, json.JSONDecodeError, TypeError) as exc:
+        return "stale", observed_head, f"source preview JSON is malformed: {exc}"
+    if not isinstance(data, dict):
+        return "stale", observed_head, "source preview JSON must be an object"
+    json_head_value = data.get("source_head")
+    if not isinstance(json_head_value, str) or not json_head_value.strip():
+        return "stale", observed_head, "source preview JSON does not record source_head"
+    json_head = json_head_value.strip()
+    if json_head != observed_head:
+        return "stale", observed_head, "source preview Markdown and JSON identify different source heads"
     if observed_head == source_commit:
         return "bound", observed_head, "source_head matches export-pack source commit"
     if not re.fullmatch(r"[0-9a-fA-F]{40}", observed_head) or not re.fullmatch(r"[0-9a-fA-F]{40}", source_commit):

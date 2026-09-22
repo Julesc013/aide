@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: origin/main..HEAD
-source_head: b4d949c1ac1f7481a56c763bdb41582291d477c9
+source_range: HEAD latest 50 commits
+source_head: f147c9059e8b42ea0f4618a45d306080f300e507
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -13,11 +13,11 @@ release_publishing: false
 
 - Added: 7
 - Changed: 6
-- Fixed: 16
+- Fixed: 17
 - Security: 7
-- Docs: 5
+- Docs: 6
 - Tests: 9
-- Internal: 15
+- Internal: 13
 - Risks: 1
 
 ## Added
@@ -41,9 +41,6 @@ release_publishing: false
 
 ## Fixed
 
-- committed release artifacts retain valid clean-source provenance without accepting stale portable inputs. (4f80611776b7 fix(export): validate artifact-only descendant commits)
-- the qualified portable candidate now includes post-build provenance validation. (db8cd16279e0 build(release): refresh qualified portable artifacts)
-- dev now carries source-independent portable pack import and closed archive identities. (b35394ae939c chore(dev): integrate delivered pack import closure)
 - preserve target-authored AGENTS.md bytes around portable guidance. (31bd91bd10ed fix(import): preserve authored agents bytes)
 - ship exact target-authored guidance preservation in update artifacts. (b1f97c5f3084 build(pack): include exact agents preservation)
 - bind release preview checksums to committed portable provenance. (3f1bc120a10c build(release): close committed provenance derivation)
@@ -57,6 +54,10 @@ release_publishing: false
 - release metadata is internally exact, checkout-independent, source-bound, and byte-stable. (8369ac540e4a build(release): qualify deterministic candidate)
 - committed release draft metadata now reflects post-checkpoint pack provenance exactly. (2819a63e794e build(release): close post-commit provenance)
 - preview publication gating now binds both generated representations and fails closed on malformed metadata. (6cbd104cb048 fix(release): bind both preview representations)
+- produce replacement-safe, checkout-neutral local release artifacts for exact rereview. (dd1f39f39f3d build(release): checkpoint replacement-safe artifacts)
+- close the deterministic post-commit provenance projection across local bundle and release-draft records. (198a87d29238 build(release): close committed provenance projection)
+- align durable release qualification records with the policy-compliant local commit identities. (9f4bbc0a7744 docs(release): bind final qualification checkpoint)
+- fail closed when either release-preview JSON identity is absent. (f147c9059e8b fix(release): require paired preview identities)
 
 ## Security
 
@@ -75,6 +76,7 @@ release_publishing: false
 - refresh source-bound local changelog and release-note previews. (671faa232216 docs(release): bind previews to repair source)
 - bind release summaries to the converged generator source. (566a2c3b8b7d docs(release): refresh converged source previews)
 - bind release previews to the hardened metadata generator. (e2ec8925adf7 docs(release): bind hardened preview source)
+- bind release summaries to the replacement-safe source checkpoint. (7863891e581d docs(release): bind replacement-safe source)
 
 ## Tests
 
@@ -90,8 +92,6 @@ release_publishing: false
 
 ## Internal
 
-- stabilize generated release evidence after artifact commit. (dd8e1c226006 build(release): stabilize committed-state validation)
-- record completion and dev integration of source-independent delivered-pack import. (8e1e9a9d724d chore(queue): close delivered pack import task)
 - synchronize completed delivered-pack task state on dev. (a2ba43624bf9 chore(dev): integrate delivered pack task closeout)
 - admit ownership-aware delivered-pack update work. (34c49601964d chore(queue): admit delivered-pack safe update)
 - stabilize committed-state release evidence for the safe-update candidate. (3ef2372d7cdf build(pack): stabilize committed release evidence)

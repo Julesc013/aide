@@ -2,8 +2,8 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: origin/main..HEAD
-source_head: b4d949c1ac1f7481a56c763bdb41582291d477c9
+source_range: HEAD latest 50 commits
+source_head: f147c9059e8b42ea0f4618a45d306080f300e507
 preview_only: true
 
 ## Highlights
@@ -28,9 +28,6 @@ preview_only: true
 - Changed: Begin commit-bound portable artifact refresh after portability integration. (c730eac44202)
 - Changed: Refresh portable artifacts for the integrated Windows path-hardening source. (da1051793d4c)
 - Changed: exact no-publish candidate assets and draft evidence regenerated. (8369ac540e4a)
-- Fixed: committed release artifacts retain valid clean-source provenance without accepting stale portable inputs. (4f80611776b7)
-- Fixed: the qualified portable candidate now includes post-build provenance validation. (db8cd16279e0)
-- Fixed: dev now carries source-independent portable pack import and closed archive identities. (b35394ae939c)
 - Fixed: preserve target-authored AGENTS.md bytes around portable guidance. (31bd91bd10ed)
 - Fixed: ship exact target-authored guidance preservation in update artifacts. (b1f97c5f3084)
 - Fixed: bind release preview checksums to committed portable provenance. (3f1bc120a10c)
@@ -44,11 +41,16 @@ preview_only: true
 - Fixed: release metadata is internally exact, checkout-independent, source-bound, and byte-stable. (8369ac540e4a)
 - Fixed: committed release draft metadata now reflects post-checkpoint pack provenance exactly. (2819a63e794e)
 - Fixed: preview publication gating now binds both generated representations and fails closed on malformed metadata. (6cbd104cb048)
+- Fixed: produce replacement-safe, checkout-neutral local release artifacts for exact rereview. (dd1f39f39f3d)
+- Fixed: close the deterministic post-commit provenance projection across local bundle and release-draft records. (198a87d29238)
+- Fixed: align durable release qualification records with the policy-compliant local commit identities. (9f4bbc0a7744)
+- Fixed: fail closed when either release-preview JSON identity is absent. (f147c9059e8b)
 - Docs: retain exact implementation scope, effect contracts, and qualification boundaries. (091382e81f08)
 - Docs: publish exact effect contracts and qualification limits. (bed5a57aed4f)
 - Docs: refresh source-bound local changelog and release-note previews. (671faa232216)
 - Docs: bind release summaries to the converged generator source. (566a2c3b8b7d)
 - Docs: bind release previews to the hardened metadata generator. (e2ec8925adf7)
+- Docs: bind release summaries to the replacement-safe source checkpoint. (7863891e581d)
 - Tests: define delivered-pack update acceptance regressions. (69e363bc71be)
 - Tests: land broker, provider, GitHub, host, image, PE, and security regressions. (bed5a57aed4f)
 - Tests: requalify extracted archives, updates, checksums, and no-publish boundaries. (f6ae36e8074b)
@@ -61,42 +63,42 @@ preview_only: true
 
 ## Validation Summary
 
-- 4f80611776b7: PASS: export/import 17 tests, focused stale-pack regression, Python compilation, and diff checks.
-- db8cd16279e0: PASS: pack/release/repository validation; ZIP and tar.gz isolated imports; two target-local doctor runs; repeat archive hashes.
-- dd8e1c226006: PASS: pack status, release validation, draft validation, and repository validation.
-- b35394ae939c: PASS: pre-merge 49 focused tests, repository validation, two exact archive canaries, and structured commit range.
-- 8e1e9a9d724d: PASS: post-merge Q47/Q48, pack provenance, repository validation, remote dev observation, and closeout diff checks.
 - a2ba43624bf9: PASS: helper landing plan, closeout repository validation, and structured commit policy.
 - 34c49601964d: PASS: git diff --check.
 - 69e363bc71be: PASS: 17 existing export/import tests remain green.
 - 9161d9512738: PASS: 24 export/import tests.
 - e8c4bbe7d4ab: PASS: export pack boundary and checksum validation.
+- 3ef2372d7cdf: PASS: release bundle and committed-state validation.
+- 31bd91bd10ed: PASS: Python compilation.
+- b1f97c5f3084: PASS: 25 export/import tests and 10 Q47 tests.
+- 12918667778a: PASS: release bundle and validation.
+- dab67d269365: PASS: py -3 .aide/scripts/aide_lite.py test.
 
 ## Known Risks
 
-- 4f80611776b7: Final pack and archive bytes must be regenerated from this validator commit before integration.
-- db8cd16279e0: This remains a local candidate; main, tagging, upload, and public publication retain exact review gates.
-- dd8e1c226006: No publication occurred; task-to-dev integration is still pending exact helper validation.
-- b35394ae939c: Main promotion, version selection, tag, upload, and public release remain separately gated.
-- 8e1e9a9d724d: Main promotion, stable version selection, tag, upload, publication, and remaining product work are still open.
 - a2ba43624bf9: Main, tag, upload, publication, and remaining stable-release work remain gated.
 - 34c49601964d: No target, release, integration, or publication effect occurred.
 - 69e363bc71be: Tests use disposable temporary repositories and perform no live target mutation.
 - 9161d9512738: Qualification remains limited to disposable consumers; semantic merge and live target rollout remain gated.
 - e8c4bbe7d4ab: Artifacts are local candidates only; no tag, upload, release, or main mutation occurred.
+- 3ef2372d7cdf: The candidate remains local and preview-only; publication gates are unchanged.
+- 31bd91bd10ed: UTF-8 remains the admitted portable text encoding; non-UTF-8 target guidance is refused.
+- b1f97c5f3084: Artifacts remain local preview candidates with no publish authority.
+- 12918667778a: Candidate remains preview-only and is not a stable release publication.
+- dab67d269365: Real target adoption, semantic merge, automatic recovery, main promotion, tags, upload, and publication remain outside this task.
 
 ## Follow-up
 
-- 4f80611776b7: Regenerate, rerun exact consumer and repository qualification, then publish and integrate the candidate.
-- db8cd16279e0: Validate the committed artifact state, publish the task branch, and integrate the exact candidate to dev.
-- dd8e1c226006: Prove validation is idempotent, publish the task branch, and integrate the exact candidate to dev.
-- b35394ae939c: Run post-merge validation, push exact dev, and close the child WorkUnit with observed refs.
-- 8e1e9a9d724d: Integrate this closeout record to dev and select the next bounded stable implementation child.
 - a2ba43624bf9: Validate and push exact dev, then continue the next bounded product slice.
 - 34c49601964d: Add failing lifecycle regressions before implementation.
 - 69e363bc71be: Implement the portable receipt, plan binding, and interruption journal.
 - 9161d9512738: Run adjacent suites and qualify artifacts generated from a clean source commit.
 - e8c4bbe7d4ab: Revalidate committed artifact provenance and the exact archive bytes.
+- 3ef2372d7cdf: Re-run read-only validation without regenerating bundle identity.
+- 31bd91bd10ed: Re-run the full importer suite and rebuild exact delivery artifacts.
+- b1f97c5f3084: Stabilize committed-state release evidence and run final validation.
+- 12918667778a: Run final read-only validation, close the task, publish the task branch, and prepare dev integration.
+- dab67d269365: Publish the exact task head, run the landing helper, validate the merged candidate on dev, and observe the remote ref.
 
 ## Warnings
 

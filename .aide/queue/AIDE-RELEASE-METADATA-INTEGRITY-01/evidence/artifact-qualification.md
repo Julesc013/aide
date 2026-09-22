@@ -1,8 +1,8 @@
 # Artifact Qualification Evidence
 
 - Date: 2026-09-22
-- Exported source: `7863891e581db790dce3d5e1a24ac40b3c9eb391`
-- Bundle ID: `aide-lite-pack-v0-7863891e581db790`
+- Exported source: `1397b703a9c116a5b555948b8587dc53a668237a`
+- Bundle ID: `aide-lite-pack-v0-1397b703a9c116a5`
 - Source repository identity: `julesc013/aide`
 - Source branch identity: `not-recorded-in-pack`
 - Recorded source dirty state: `false`
@@ -10,10 +10,10 @@
 
 ## Exact Assets
 
-- ZIP: 976881 bytes
-- ZIP SHA-256: `622224960f882e1055995c2a9ae6c408f1ba3f8ec242bfe30a5353be781040f7`
-- tar.gz: 649071 bytes
-- tar.gz SHA-256: `9c16ad304636badf26f9ac1029e833e548181fa411e119574e3cd71d683a4ccd`
+- ZIP: 977452 bytes
+- ZIP SHA-256: `dfd344260ee39afc0fff833f266e480c3c59f74e083da986c5ed3685a25d61c7`
+- tar.gz: 649415 bytes
+- tar.gz SHA-256: `57d382171974b92febe79f4a4f865dc8e386fe03213b36a2b6deff8a0c317aaa`
 - Asset-index records: 9
 - Release checksum records: 7
 - Release validation: PASS
@@ -23,25 +23,29 @@
 
 - Q31 export-pack governance: 6 passed.
 - Export/import lifecycle: 25 passed.
-- Q47 release bundle: 17 passed.
-- Q48 GitHub release draft: 10 passed.
-- Total adjacent tests: 58 passed, 0 failed, 0 skipped.
+- Q47 release bundle: 18 passed.
+- Q48 GitHub release draft: 11 passed.
+- Total adjacent tests: 60 passed, 0 failed, 0 skipped.
 - Canonical `validate`: PASS.
 - Canonical `doctor`: PASS.
 - Release bundle and release validation: PASS.
 - Release draft and draft validation: PASS.
 - Repeatability: 44 compared release files, 0 changed after a second complete
   bundle, validate, draft, and draft-validate cycle.
-- Artifact checkpoint: `dd1f39f39f3de3f864f87f7c25a08cbe6030237e`.
-- Post-commit pack provenance: `PASS_SOURCE_ANCESTOR`.
-- Post-commit bundle, validate, draft, and draft-validate: PASS.
-- Post-commit repeatability: 44 compared release files, 0 changed after a
+- Replacement artifact checkpoint: pending this commit.
+- Pre-commit pack provenance: `PASS`.
+- Replacement bundle, validate, draft, and draft-validate: PASS.
+- Pre-commit repeatability: 44 compared release files, 0 changed after a
   second complete cycle.
 
 ## Delivered-Byte Consumers
 
-- ZIP fresh project: APPLIED, idempotent rerun NO_CHANGES, doctor PASS.
-- tar.gz brownfield project: APPLIED, idempotent rerun NO_CHANGES, doctor PASS.
+- ZIP fresh project: APPLIED with plan
+  `945aa03532b4ac0a443d632812ca074833e8ab9b54bfbf2b64f1665a0a644ee4`,
+  idempotent rerun NO_CHANGES, doctor PASS.
+- tar.gz brownfield project: APPLIED with plan
+  `a18d75d84095513d2d77d4712cae3333dbd38a832fdeb754e8c87324417759ce`,
+  idempotent rerun NO_CHANGES, doctor PASS.
 - Brownfield authored content remained present.
 - Both disposable canary directories were removed after validation.
 
@@ -69,8 +73,14 @@
   bytes. The converged projection and its clean-tree replay remain before exact
   independent rereview.
 
-The first local checkpoint identities `75e37a4c` and `1e39c424` were never
+The prior local checkpoint identities `75e37a4c` and `1e39c424` were never
 pushed. Their commit messages used an unsupported `Build:` changelog category.
 The two-commit tail was recreated as `dd1f39f3` and `198a87d2` with identical
 trees and the required `Fixed:` category; no shared history or artifact bytes
 changed.
+
+Independent rereview later found absent paired JSON still failed open and the
+published `198a87d2` message retained the superseded `75e37a4c` name. Repair
+`f147c905` requires both preview representations; preview checkpoint
+`1397b703` binds both to the repaired source. This replacement chain will name
+the actual artifact checkpoint in its post-commit projection message.

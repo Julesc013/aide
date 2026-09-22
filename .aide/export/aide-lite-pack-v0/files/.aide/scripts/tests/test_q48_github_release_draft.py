@@ -29,6 +29,8 @@ class Q48GitHubReleaseDraftTests(unittest.TestCase):
         self.write(root, ".gitignore", ".aide.local/\n.aide.local/**\n.env\nsecrets/\n")
         self.write(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, "# AIDE Changelog Preview\n\nsource_head: fixture-commit\n- Added: fixture changelog entry.\n")
         self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_MD_PATH, "# AIDE Release Notes Preview\n\nsource_head: fixture-commit\n- Fixture release note.\n")
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_JSON_PATH, aide_lite.stable_json_text({"source_head": "fixture-commit"}))
+        self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_JSON_PATH, aide_lite.stable_json_text({"source_head": "fixture-commit"}))
         self.write_pack(root)
         aide_lite.build_release_bundle_outputs(root)
         return root
@@ -120,6 +122,32 @@ class Q48GitHubReleaseDraftTests(unittest.TestCase):
         self.assertTrue(all(asset["publish_candidate"] is False for asset in preview_assets))
         checks = aide_lite.validate_github_release_draft_files(root, require_outputs=True)
         self.assertEqual(aide_lite.result_from_checks(checks), "FAIL")
+
+    def test_missing_preview_json_blocks_draft_and_draft_validate(self) -> None:
+        preview_pairs = [
+            (aide_lite.CHANGELOG_PREVIEW_JSON_PATH, aide_lite.RELEASE_CHANGELOG_PREVIEW_PATH),
+            (aide_lite.RELEASE_NOTES_PREVIEW_JSON_PATH, aide_lite.RELEASE_RELEASE_NOTES_PREVIEW_PATH),
+        ]
+        for source_json, destination in preview_pairs:
+            with self.subTest(source_json=source_json):
+                root = self.make_repo()
+                (root / source_json).unlink()
+                bundle = self.run_cmd(root, "release", "bundle")
+                self.assertEqual(bundle.returncode, 1, bundle.stdout + bundle.stderr)
+                copied = (root / destination).read_text(encoding="utf-8")
+                self.assertIn("status: blocked_stale_source_preview", copied)
+                self.assertIn(f"source preview JSON missing at {source_json}", copied)
+                self.assertIn("publish_candidate: false", copied)
+                draft = self.run_cmd(root, "release", "draft")
+                self.assertEqual(draft.returncode, 1, draft.stdout + draft.stderr)
+                assets = json.loads((root / aide_lite.GITHUB_RELEASE_ASSETS_JSON_PATH).read_text(encoding="utf-8"))["assets"]
+                preview_assets = [asset for asset in assets if asset["path"] == destination]
+                self.assertEqual(len(preview_assets), 1)
+                self.assertEqual(preview_assets[0]["validation_status"], "blocked_stale")
+                self.assertFalse(preview_assets[0]["publish_candidate"])
+                draft_validate = self.run_cmd(root, "release", "draft-validate")
+                self.assertEqual(draft_validate.returncode, 1, draft_validate.stdout + draft_validate.stderr)
+                self.assertIn("result: FAIL", draft_validate.stdout)
 
     def test_draft_provenance_uses_pack_identity_not_checkout_path(self) -> None:
         root = self.make_repo()

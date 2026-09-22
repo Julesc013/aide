@@ -60,12 +60,12 @@ Implemented:
   closure without self-referential dependency cycles;
 - stale or missing changelog/release-note previews become explicit blocked
   placeholders and are not publication candidates;
-- 58 adjacent export, import, Q47, and Q48 tests pass, including tamper,
+- 60 adjacent export, import, Q47, and Q48 tests pass, including tamper,
   cross-checkout, ancestry, and build/validate byte-convergence regressions;
 - preview source binding now requires matching Markdown and JSON identities and
   refuses malformed JSON, while ancestry checks ignore Git replacement objects;
-- the independent review of `2819a63e` remains `REQUEST_CHANGES`; its final
-  post-commit full-cycle projection finding is being closed before rereview;
+- the independent review of `2819a63e` remains preserved as
+  `REQUEST_CHANGES`; its three findings were repaired and requalified;
 - canonical validation and doctor pass;
 - final ZIP and tar.gz bytes pass fresh and brownfield consumer canaries,
   idempotent reruns, target-local doctor, and authored-content preservation;
@@ -74,9 +74,8 @@ Implemented:
   validate, draft, and draft-validate projection with
   `PASS_SOURCE_ANCESTOR`; a second complete cycle changes zero of 44 files.
 
-Remaining: commit the paired-preview repair, generate and cleanly replay a new
-exactly named artifact/projection chain, then obtain independent rereview and
-integrate into `dev`. Main promotion,
+Remaining: commit and cleanly replay the new exactly named artifact/projection
+chain, then obtain independent rereview and integrate into `dev`. Main promotion,
 tagging, upload, and release publication remain separate retained gates.
 
 Independent rereview of `9f4bbc0a` proved that deleting a paired preview JSON
@@ -88,6 +87,15 @@ and draft validation. The complete repaired matrix passes 60 tests: 6 Q31,
 25 export/import, 18 Q47, and 11 Q48, with no failures or skips. A newly
 generated source/artifact/projection chain will supersede the stale narrative
 before rereview.
+
+Replacement source `f147c905` and preview checkpoint `1397b703` now generate a
+bundle whose ZIP is
+`dfd344260ee39afc0fff833f266e480c3c59f74e083da986c5ed3685a25d61c7`
+(977452 bytes) and tar.gz is
+`57d382171974b92febe79f4a4f865dc8e386fe03213b36a2b6deff8a0c317aaa`
+(649415 bytes). Both extracted archives pass fresh/brownfield import,
+idempotent rerun, doctor, and authored-content preservation. All 44 release
+files remain byte-identical on a second complete pre-commit cycle.
 
 ## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 

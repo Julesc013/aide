@@ -27,7 +27,10 @@ hosted effects, target installs, or machine configuration.
 - [x] Require paired preview JSON presence and add bundle/draft deletion
       regressions for both preview families.
 - [x] Pass the 60-case adjacent governance, lifecycle, bundle, and draft matrix.
-- [ ] Commit the repaired source and regenerate a correctly named artifact and
+- [x] Commit repair `f147c905` and preview checkpoint `1397b703`.
+- [x] Regenerate deterministic archives, pass fresh/brownfield canaries, and
+      prove a second 44-file pre-commit cycle changes zero bytes.
+- [ ] Commit the replacement artifact and correctly named post-commit
       projection chain.
 - [ ] Obtain independent exact-commit rereview.
 - [ ] Integrate the qualified candidate into dev.
@@ -45,7 +48,7 @@ Generated output can be recreated from the clean source checkpoint. Preserve
 the failed review and prior commits; fix forward without rewriting shared
 history or publishing local artifacts.
 
-The exact generated candidate passed 58 adjacent tests, canonical validation,
+The prior generated candidate passed 58 adjacent tests, canonical validation,
 two delivered-byte consumer canaries, and a 44-file repeatability comparison on
 2026-09-22. The complete post-commit cycle advanced both release
 representations to `PASS_SOURCE_ANCESTOR`; a second cycle produced zero byte
@@ -53,7 +56,10 @@ changes. Committed projection `198a87d2` then replayed all four generators with
 zero changed files and a clean tree. Independent rereview found that absent
 paired JSON still failed open and that the projection message named a
 superseded local checkpoint. The next restart point is the paired-source repair,
-a newly generated chain with exact parent naming, and superseding rereview.
+replacement source `f147c905`, preview checkpoint `1397b703`, and newly
+generated deterministic artifacts. Commit those bytes, bind their actual
+checkpoint identity in the post-commit projection, and obtain superseding
+rereview.
 
 ## Exit Criteria
 
