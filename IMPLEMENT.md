@@ -70,8 +70,12 @@ Implemented:
 - final ZIP and tar.gz bytes pass fresh and brownfield consumer canaries,
   idempotent reruns, target-local doctor, and authored-content preservation;
 - all 44 release files are unchanged by a second bundle/validate/draft cycle.
+- artifact checkpoint `75e37a4c` is followed by a complete post-commit bundle,
+  validate, draft, and draft-validate projection with
+  `PASS_SOURCE_ANCESTOR`; a second complete cycle changes zero of 44 files.
 
-Remaining: exact independent rereview and `dev` integration. Main promotion,
+Remaining: commit and cleanly replay the converged projection, then exact
+independent rereview and `dev` integration. Main promotion,
 tagging, upload, and release publication remain separate retained gates.
 
 ## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01

@@ -32,6 +32,11 @@
 - Release draft and draft validation: PASS.
 - Repeatability: 44 compared release files, 0 changed after a second complete
   bundle, validate, draft, and draft-validate cycle.
+- Artifact checkpoint: `75e37a4ce87bee4185f73d054fddedf1905d2761`.
+- Post-commit pack provenance: `PASS_SOURCE_ANCESTOR`.
+- Post-commit bundle, validate, draft, and draft-validate: PASS.
+- Post-commit repeatability: 44 compared release files, 0 changed after a
+  second complete cycle.
 
 ## Delivered-Byte Consumers
 
@@ -59,6 +64,7 @@
   parse and agree; malformed or mismatched JSON refuses closed.
 - Commit `b4d949c1` disables replacement objects for release ancestry checks and
   adds a real `git replace` adversarial regression.
-- The remaining projection finding is closed only after the generated
-  checkpoint is committed, a complete post-commit bundle/validate/draft cycle
-  is committed, and another complete cycle changes zero bytes.
+- The generated checkpoint is committed at `75e37a4c`; the complete post-commit
+  cycle reports `PASS_SOURCE_ANCESTOR`, and another complete cycle changes zero
+  bytes. The converged projection and its clean-tree replay remain before exact
+  independent rereview.

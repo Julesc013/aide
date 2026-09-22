@@ -15,7 +15,7 @@ approve a later candidate.
 2. `HIGH`: `PASS_SOURCE_ANCESTOR` honored local Git replacement objects.
    Commit `b4d949c1` uses `GIT_NO_REPLACE_OBJECTS=1` for the ancestry and diff
    checks and adds an actual replacement-object regression.
-3. `MEDIUM`: the committed candidate did not converge both release
+3. `MEDIUM`: the reviewed candidate did not converge both release
    representations through a complete post-commit generator cycle. Closure
    requires a generated checkpoint commit, a full post-commit bundle, validate,
    draft, and draft-validate cycle, a committed projection, and a subsequent
@@ -29,6 +29,10 @@ approve a later candidate.
 - ZIP and tar.gz delivered-byte canaries pass fresh and brownfield import,
   idempotent rerun, target-local doctor, and authored-content preservation.
 - A second pre-commit full generator cycle changed zero of 44 release files.
+- Artifact checkpoint `75e37a4c` is committed. Its full post-commit cycle
+  reports `PASS_SOURCE_ANCESTOR`, all four generators pass, and the next full
+  cycle changes zero of 44 release files.
 
-The repaired exact candidate still requires independent rereview after the
-post-commit projection is complete. No publication effect is authorized.
+The converged projection must now be committed and replayed cleanly before the
+repaired exact candidate receives independent rereview. No publication effect
+is authorized.

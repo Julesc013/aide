@@ -49,21 +49,21 @@
 | --- | --- | --- | ---: | --- | --- |
 | 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 976881 | `622224960f882e10...` | true |
 | 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 649071 | `9c16ad304636badf...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `ed6b9c06079c02a0...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `3049c134ed66b5e3...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1405 | `1a98a609fdec4814...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 1325 | `15e78170b60ffed7...` | true |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `0b952ebf7e7da2d0...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `59a7600bdf88d25a...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1405 | `92039cc42f760f20...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 1341 | `c30a5d82bdfdd0e7...` | true |
 | 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 9743 | `a7d49c6265bb2132...` | true |
 | 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 8381 | `46e5f34c74e336de...` | true |
-| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3814 | `ac3218cb9d04de92...` | false |
-| 10 | `.aide/release/dist/release-validation.md` | validation_report | 222 | `37b6d4e4c7f51060...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `f7210173d59ebed3...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4079 | `7971268976cd0081...` | false |
+| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3846 | `a457b73f186db89c...` | false |
+| 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `47be2b4546ae2264...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4079 | `4b0b0e521f386065...` | false |
 
 ## Validation Summary
 
 - release validate: PASS
-- pack-status: PASS
+- pack-status: PASS_SOURCE_ANCESTOR
 - fixture extraction: PASS
 - checksum validation: PASS
 
