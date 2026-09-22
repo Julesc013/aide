@@ -670,13 +670,13 @@
     "files/.aide/routing/examples/security-review.json": "6ba66fe193de5f0372590212f6e627d673b7e844268af49058e06d2edbf7b8f4",
     "files/.aide/routing/examples/self-modification.json": "67c29e75c8702e2b2a7cc8b11ea733ac94b804cbfcb0dcc1a41a3e0706f6b099",
     "files/.aide/routing/route-decision.schema.json": "da42bfdea1680445c6d272cbd1d3f09b394a5c8b670b15fbd014aa93520d45ea",
-    "files/.aide/scripts/aide_lite.py": "4e37cfdbc16ebd92ce9ea89b74c777a10f98535131283e031e0e1383e0f899de",
+    "files/.aide/scripts/aide_lite.py": "0bd0bc9d4c810dced53e58c97808f715c299ea80f1899dfe947596c9746098bc",
     "files/.aide/scripts/tests/test_adapter_compiler.py": "ca38e9df4799cb125da26b55e21d031ee7367998a096ad91aba2094783189ed2",
     "files/.aide/scripts/tests/test_aide_apply_00_transaction_model.py": "6526d2a9e87686bae60de2a295d785b5dd251d244cc5ccf659f08b52ae90dcc6",
     "files/.aide/scripts/tests/test_aide_apply_01_managed_sections.py": "e76a3b7ed64fbc04a2feddc6626e78a4eb99a48d25ddd11b676779d0cd1dd848",
     "files/.aide/scripts/tests/test_aide_lite.py": "6c9a00d60930f5376f76eeb3e6de26ed3a510c377a69da810f8b5d3f845dc582",
     "files/.aide/scripts/tests/test_cache_local_state.py": "c439bee12eba2dee4cb950de2bd6c7c836bc686bef61a459469b730ac392b513",
-    "files/.aide/scripts/tests/test_export_import.py": "54a1e7c9d888fae7f134c75de36b8058c0d1bfcf450dd3066fd4ee6fcb67a375",
+    "files/.aide/scripts/tests/test_export_import.py": "2353c0235610f54e6771168af22783de43e0e3a4af0d998e170c0959446745a9",
     "files/.aide/scripts/tests/test_gateway_commands.py": "565667e5b4435ea041b59d2ad55ce4da690e972224e11a26a37d0ae9bb11904c",
     "files/.aide/scripts/tests/test_golden_tasks.py": "e4debd0e37cf852100bb53e1625a9cd4e61bba0f45d25bd19a737dab33262b65",
     "files/.aide/scripts/tests/test_outcome_controller.py": "a58c5917b4d648639f753540e7e3730de103b8bd384c103b73287db76915ed56",
@@ -698,7 +698,7 @@
     "files/.aide/scripts/tests/test_q44_repair_doctor.py": "9996efb592f8d55bd8ffb8bb40381256e8cf49d241ba330dc0171778e8d740f7",
     "files/.aide/scripts/tests/test_q45_upgrade_model.py": "58eebce434a5b8bbfa2ef6268e109f806479893934a668f0ab835a8282f33f70",
     "files/.aide/scripts/tests/test_q46_rollback_uninstall.py": "866222f60214a14c88138d0a497f3e11cc12145fdd1668e3669ddf89279ffe6b",
-    "files/.aide/scripts/tests/test_q47_release_bundle.py": "0e87c4a751e7a3e076992e4f4b8af0d4e420ed92ba3cb25c56d5bce10d97b693",
+    "files/.aide/scripts/tests/test_q47_release_bundle.py": "6f3fc2dda036bc49e946d593ce9e23f23ae4c8322b01e5468e9998a90c701b35",
     "files/.aide/scripts/tests/test_q48_github_release_draft.py": "54e8d6921bea73c364829b69bcce0c5f0880303ac066ecd663ba73e5174093ce",
     "files/.aide/scripts/tests/test_review_pack.py": "c6a62b1bb29f3e2b1c99608803dcda9945ffe1d0356f64826327644acf3bb228",
     "files/.aide/scripts/tests/test_router_profile.py": "9ca0d5a1ce93ae442b5f068c7ba720e38ca86d41787e857704afae5dbd7b5f88",
@@ -830,7 +830,7 @@
     "files/docs/reference/workunit-idempotency.md": "788350330221afc05af1de3598704448b70b21427d6100cb71df821fc1363ac6",
     "files/docs/reference/workunit-lifecycle.md": "4817e4284197c343636c65fbfec45b5072276091a9447b961bebbcfa1e695266",
     "import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13",
-    "install.md": "6d8ddc57ed3e44d255c3f0c39812611af2a2ee5b576079fb54f161dbf72b401f"
+    "install.md": "cedf0842903009293d431e22c9ab309329a7bd2c7b7888985e199cceb58e6720"
   },
   "contents_inline": false,
   "excluded_from_checksums": [

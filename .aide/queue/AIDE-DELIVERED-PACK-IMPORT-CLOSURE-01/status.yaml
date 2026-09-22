@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01
+status: running
+classification: admitted
+planning_state: execution_active
+result: PENDING
+updated_at: 2026-09-22
+current_slice: qualified_artifact_checkpoint
+next_slice: task_to_dev_integration
+notes:
+  - The aggregate stable-release request was compiled as blocked and split-required.
+  - This bounded child performs no publication, tagging, main mutation, or real target mutation.
+  - Baseline source-independent import failed because filtered archive payload remained checksummed.
+  - The task branch starts from dev at d37219026462d5670f7a724980faf07e30abb85f.
+  - The executable regression is green for ZIP and tar.gz after projected metadata regeneration.
+  - A dirty-source preview canary safely imported 814 files and target-local doctor passed.
+  - Clean source state is now captured before generated export output mutates the worktree.
+  - Release provenance now inherits source identity from the validated export pack.
+  - Final local artifacts bind to clean source commit 4f80611776b7d5249fbf8d8cac29bf68eacfdac1.
+  - ZIP and tar.gz consumer canaries pass; publication remains prohibited and unperformed.

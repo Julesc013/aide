@@ -17163,6 +17163,58 @@ def release_pack_files(pack_root: Path) -> list[Path]:
     return files
 
 
+def build_release_pack_projection(pack_root: Path, projection_root: Path) -> dict[str, object]:
+    if projection_root.exists():
+        shutil.rmtree(projection_root)
+    projection_root.mkdir(parents=True, exist_ok=True)
+
+    for source in release_pack_files(pack_root):
+        rel = normalize_rel(source.relative_to(pack_root))
+        if rel in CHECKSUM_EXCLUDED_PACK_FILES or rel == "checksums.json":
+            continue
+        copy_pack_file(source, projection_root / rel)
+
+    scalars = pack_manifest_scalars(pack_root)
+    source_commit = scalars.get("source_commit", "")
+    source_dirty_state = scalars.get("source_dirty_state", "")
+    if not source_commit or source_dirty_state not in {"true", "false"}:
+        raise ValueError("source pack manifest lacks valid release projection provenance")
+
+    files_root = projection_root / "files"
+    included_files = sorted(
+        normalize_rel(path.relative_to(projection_root))
+        for path in files_root.rglob("*")
+        if path.is_file()
+    )
+    write_text_if_changed(
+        projection_root / "manifest.yaml",
+        render_manifest(included_files, source_commit, source_dirty_state == "true"),
+    )
+    checksums = build_pack_checksums(projection_root)
+    write_text_if_changed(projection_root / "checksums.json", stable_json_text(checksums))
+    boundary_violations = validate_export_pack_boundary(projection_root)
+    write_text_if_changed(
+        projection_root / "export-report.md",
+        render_export_report(projection_root, included_files, boundary_violations),
+    )
+
+    forbidden = [
+        normalize_rel(path.relative_to(projection_root))
+        for path in projection_root.rglob("*")
+        if path.is_file() and release_forbidden_archive_path(path.relative_to(projection_root))
+    ]
+    checksum_ok, checksum_problems = validate_pack_checksums(projection_root)
+    if boundary_violations or forbidden or not checksum_ok:
+        problems = [*boundary_violations]
+        problems.extend(f"forbidden projected path: {rel}" for rel in sorted(forbidden))
+        problems.extend(checksum_problems)
+        raise ValueError("release pack projection invalid: " + "; ".join(problems[:10]))
+    return {
+        "included_files": included_files,
+        "checksum_count": len(checksums["checksums"]),
+    }
+
+
 def write_release_zip(pack_root: Path, zip_path: Path) -> None:
     zip_path.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
@@ -17208,8 +17260,9 @@ def release_install_notes_text(repo_root: Path, bundle_id: str, pack_status: str
         "",
         "1. Extract the archive into a review location.",
         "2. Inspect `manifest.yaml`, `checksums.json`, `install.md`, and `files/**`.",
-        "3. Run target-local AIDE Lite validation after import or extraction.",
-        "4. Use install, repair, upgrade, rollback, and uninstall commands in observe/plan/dry-run mode only.",
+        "3. From the extracted archive root, run the isolated dry-run and safe import commands from `install.md`.",
+        "4. Run target-local AIDE Lite validation after import.",
+        "5. Use install, repair, upgrade, rollback, and uninstall commands in observe/plan/dry-run mode only.",
         "",
         "## Preservation Rules",
         "",
@@ -17291,20 +17344,33 @@ def write_release_checksums(repo_root: Path, bundle_id: str) -> dict[str, object
     return data
 
 
-def release_provenance_data(repo_root: Path, bundle_id: str, artifacts: list[dict[str, object]]) -> dict[str, object]:
+def release_provenance_data(
+    repo_root: Path,
+    bundle_id: str,
+    artifacts: list[dict[str, object]],
+    *,
+    source_commit: str | None = None,
+    source_branch: str | None = None,
+    dirty_state: bool | None = None,
+    dirty_state_error: str | None = None,
+) -> dict[str, object]:
     source = release_source_pack_ref(repo_root)
     git_ok, status_entries, git_error = git_status_short(repo_root)
+    resolved_commit = source_commit if source_commit is not None else git_commit_id(repo_root)
+    resolved_branch = source_branch if source_branch is not None else git_branch_name(repo_root)
+    resolved_dirty = dirty_state if dirty_state is not None else (bool(status_entries) if git_ok else True)
+    resolved_error = dirty_state_error if dirty_state_error is not None else ("" if git_ok else git_error)
     return {
         "schema_version": "aide.release-provenance.v0",
         "bundle_id": bundle_id,
         "source_repo": normalize_rel(repo_root),
-        "source_commit": git_commit_id(repo_root),
-        "source_branch": git_branch_name(repo_root),
-        "dirty_state": bool(status_entries) if git_ok else True,
-        "dirty_state_error": "" if git_ok else git_error,
+        "source_commit": resolved_commit,
+        "source_branch": resolved_branch,
+        "dirty_state": resolved_dirty,
+        "dirty_state_error": resolved_error,
         "export_pack_manifest_sha256": source.get("manifest_sha256", ""),
         "export_pack_checksums_sha256": source.get("checksums_sha256", ""),
-        "generated_at_or_source_ref": f"source_commit:{git_commit_id(repo_root)}",
+        "generated_at_or_source_ref": f"source_commit:{resolved_commit}",
         "generated_by": RELEASE_GENERATED_BY,
         "artifact_hashes": {str(asset.get("path")): asset.get("sha256", "") for asset in artifacts},
         "preview_only": True,
@@ -17445,6 +17511,23 @@ def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, obj
         ]
         if extracted_forbidden:
             problems.append("fixture forbidden paths: " + ", ".join(extracted_forbidden[:5]))
+        if extracted_root.exists():
+            checksum_ok, checksum_problems = validate_pack_checksums(extracted_root)
+            if not checksum_ok:
+                problems.append("fixture pack checksum failure: " + "; ".join(checksum_problems[:5]))
+            manifest_files = set(pack_manifest_list(extracted_root, "included_files"))
+            actual_payload = {
+                normalize_rel(path.relative_to(extracted_root))
+                for path in (extracted_root / "files").rglob("*")
+                if path.is_file()
+            }
+            if manifest_files != actual_payload:
+                missing = sorted(actual_payload.difference(manifest_files))
+                stale = sorted(manifest_files.difference(actual_payload))
+                if missing:
+                    problems.append("fixture manifest missing payload: " + ", ".join(missing[:5]))
+                if stale:
+                    problems.append("fixture manifest lists absent payload: " + ", ".join(stale[:5]))
     result.update({
         "result": "PASS" if not problems else "FAIL",
         "root_present": root_present,
@@ -17575,11 +17658,19 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     pack_status, pack_problems = release_pack_status(repo_root)
     if pack_problems:
         raise ValueError("pack-status failed for release bundle: " + "; ".join(pack_problems[:5]))
+    pack_provenance = pack_manifest_scalars(pack_root)
+    source_commit = pack_provenance["source_commit"]
+    source_branch = git_branch_name(repo_root)
+    source_dirty_state = pack_provenance["source_dirty_state"] == "true"
+    source_dirty_error = ""
     bundle_id = release_bundle_id(repo_root)
     dist = release_dist_dir(repo_root)
     dist.mkdir(parents=True, exist_ok=True)
-    write_release_zip(pack_root, repo_root / RELEASE_ZIP_PATH)
-    write_release_tar_gz(pack_root, repo_root / RELEASE_TAR_GZ_PATH)
+    with tempfile.TemporaryDirectory(prefix="aide-release-pack-") as temp_name:
+        projected_pack_root = Path(temp_name) / RELEASE_ARCHIVE_ROOT
+        build_release_pack_projection(pack_root, projected_pack_root)
+        write_release_zip(projected_pack_root, repo_root / RELEASE_ZIP_PATH)
+        write_release_tar_gz(projected_pack_root, repo_root / RELEASE_TAR_GZ_PATH)
     write_text_if_changed(repo_root / RELEASE_INSTALL_NOTES_PATH, release_install_notes_text(repo_root, bundle_id, pack_status))
     copy_release_preview_or_placeholder(repo_root, CHANGELOG_PREVIEW_MD_PATH, RELEASE_CHANGELOG_PREVIEW_PATH, "AIDE Changelog Preview")
     copy_release_preview_or_placeholder(repo_root, RELEASE_NOTES_PREVIEW_MD_PATH, RELEASE_RELEASE_NOTES_PREVIEW_PATH, "AIDE Release Notes Preview")
@@ -17593,7 +17684,15 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     ]
     write_text_if_changed(repo_root / RELEASE_MANIFEST_PATH, render_release_manifest_yaml(bundle_id, preliminary_assets))
     preliminary_assets.append(release_asset_record(repo_root, repo_root / RELEASE_MANIFEST_PATH, "release_model", "release manifest"))
-    provenance = release_provenance_data(repo_root, bundle_id, preliminary_assets)
+    provenance = release_provenance_data(
+        repo_root,
+        bundle_id,
+        preliminary_assets,
+        source_commit=source_commit,
+        source_branch=source_branch,
+        dirty_state=source_dirty_state,
+        dirty_state_error=source_dirty_error,
+    )
     write_text_if_changed(repo_root / RELEASE_PROVENANCE_JSON_PATH, stable_json_text(provenance))
     write_text_if_changed(repo_root / LATEST_RELEASE_PROVENANCE_MD_PATH, render_release_provenance_md(provenance))
 
@@ -17611,16 +17710,15 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     write_text_if_changed(repo_root / LATEST_RELEASE_VALIDATION_MD_PATH, validation_md)
 
     artifacts = release_assets_data(repo_root).get("artifacts", [])
-    git_ok, status_entries, _git_error = git_status_short(repo_root)
     bundle = {
         "schema_version": "aide.release-bundle.v0",
         "bundle_id": bundle_id,
         "bundle_name": RELEASE_BUNDLE_NAME,
         "generated_by": RELEASE_GENERATED_BY,
         "source_repo": normalize_rel(repo_root),
-        "source_commit": git_commit_id(repo_root),
-        "source_branch": git_branch_name(repo_root),
-        "dirty_state": bool(status_entries) if git_ok else True,
+        "source_commit": source_commit,
+        "source_branch": source_branch,
+        "dirty_state": source_dirty_state,
         "source_pack_ref": release_source_pack_ref(repo_root),
         "artifacts": artifacts if isinstance(artifacts, list) else [],
         "checksums": checksums,
@@ -38806,7 +38904,14 @@ def pack_install_text() -> str:
 
 ## Command Import
 
-From the source AIDE repository:
+From the root of an extracted release archive, without the source checkout:
+
+```text
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --dry-run --mode safe
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --mode safe
+```
+
+From the source AIDE repository during development:
 
 ```text
 py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/{EXPORT_PACK_ID} --target <target-repo> --dry-run
@@ -39023,6 +39128,7 @@ def render_export_report(pack_root: Path, manifest_files: list[str], boundary_vi
 def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str | None = None) -> tuple[Path, dict[str, object]]:
     if name != EXPORT_PACK_ID:
         raise ValueError(f"unsupported pack name: {name}")
+    source_dirty = bool(git_status_short(repo_root)[1])
     pack_root = (repo_root / output).resolve() if output else export_pack_root(repo_root, name)
     repo_root_resolved = repo_root.resolve()
     try:
@@ -39068,9 +39174,8 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
     import_policy_source = repo_root / EXPORT_IMPORT_POLICY_TEMPLATE_PATH
     write_text_if_changed(pack_root / "import-policy.yaml", read_text(import_policy_source))
 
-    dirty = bool(git_status_short(repo_root)[1])
     manifest_files = sorted(set(copied))
-    write_text_if_changed(pack_root / "manifest.yaml", render_manifest(manifest_files, git_commit_id(repo_root), dirty))
+    write_text_if_changed(pack_root / "manifest.yaml", render_manifest(manifest_files, git_commit_id(repo_root), source_dirty))
     checksums = build_pack_checksums(pack_root)
     write_text_if_changed(pack_root / "checksums.json", stable_json_text(checksums))
     boundary_violations = validate_export_pack_boundary(pack_root)
@@ -39123,6 +39228,51 @@ def pack_manifest_scalars(pack_root: Path) -> dict[str, str]:
     return scalars
 
 
+def pack_manifest_list(pack_root: Path, field: str) -> list[str]:
+    manifest_path = pack_root / "manifest.yaml"
+    if not manifest_path.exists():
+        return []
+    values: list[str] = []
+    in_field = False
+    for line in read_text(manifest_path).splitlines():
+        if line == f"{field}:":
+            in_field = True
+            continue
+        if not in_field:
+            continue
+        if line.startswith("  - "):
+            values.append(line[4:].strip())
+            continue
+        if line and not line.startswith(" "):
+            break
+    return values
+
+
+def pack_source_ancestor_has_unchanged_inputs(repo_root: Path, source_commit: str, current_commit: str) -> bool:
+    ancestor_code, _ancestor_output, _ancestor_error = run_git_status_code(
+        repo_root,
+        ["merge-base", "--is-ancestor", source_commit, current_commit],
+    )
+    if ancestor_code != 0:
+        return False
+    diff_code, diff_output, _diff_error = run_git_status_code(
+        repo_root,
+        ["diff", "--name-only", "--no-renames", source_commit, current_commit],
+    )
+    if diff_code != 0:
+        return False
+    portable_files = {
+        normalize_rel(path)
+        for path in [*PORTABLE_SOURCE_FILES, *PORTABLE_TEMPLATE_MAP.keys()]
+    }
+    portable_dirs = tuple(f"{normalize_rel(path).rstrip('/')}/" for path in PORTABLE_SOURCE_DIRS)
+    for line in diff_output.splitlines():
+        rel = normalize_rel(line.strip())
+        if rel in portable_files or rel.startswith(portable_dirs):
+            return False
+    return True
+
+
 def validate_pack_provenance(
     pack_root: Path,
     repo_root: Path,
@@ -39142,14 +39292,19 @@ def validate_pack_provenance(
         return "FAIL", problems
     dirty_recorded = dirty_text == "true"
     current = current_commit if current_commit is not None else git_commit_id(repo_root)
+    source_ancestor = False
     if current not in {"", "unavailable"} and source_commit != current and not dirty_recorded:
-        problems.append(
-            f"manifest source_commit {source_commit} does not match current HEAD {current}"
-        )
+        source_ancestor = pack_source_ancestor_has_unchanged_inputs(repo_root, source_commit, current)
+        if not source_ancestor:
+            problems.append(
+                f"manifest source_commit {source_commit} does not match current HEAD {current}"
+            )
     if problems:
         return "FAIL", problems
     if dirty_recorded:
         return "DIRTY_SOURCE_RECORDED", []
+    if source_ancestor:
+        return "PASS_SOURCE_ANCESTOR", []
     if current == "unavailable":
         return "UNKNOWN_GIT_UNAVAILABLE", []
     return "PASS", []

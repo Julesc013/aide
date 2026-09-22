@@ -2,7 +2,14 @@
 
 ## Command Import
 
-From the source AIDE repository:
+From the root of an extracted release archive, without the source checkout:
+
+```text
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --dry-run --mode safe
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --mode safe
+```
+
+From the source AIDE repository during development:
 
 ```text
 py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target-repo> --dry-run
