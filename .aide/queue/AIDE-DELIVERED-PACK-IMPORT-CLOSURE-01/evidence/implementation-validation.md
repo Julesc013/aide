@@ -19,12 +19,12 @@
 ## Automated Results
 
 - `test_q47_release_bundle.py`: **PASS**, 10 tests, including clean pre-bundle provenance.
-- `test_export_import.py`: **PASS**, 16 tests, including clean pre-generation provenance.
+- `test_export_import.py`: **PASS**, 17 tests, including clean pre-generation and artifact-commit provenance.
 - `test_q31_export_pack_governance.py`: **PASS**, 6 tests.
 - `test_q48_github_release_draft.py`: **PASS**, 8 tests.
 - `test_aide_self_consumer_fixture_v0.py`: **PASS**, 7 tests.
 - `test_aide_distribution_product_status_projection.py`: **PASS**, 1 test.
-- Total recorded tests: **48 passed, 0 failed, 0 skipped**.
+- Total recorded tests: **49 passed, 0 failed, 0 skipped**.
 
 ## Dirty-Source Preview Canary
 
@@ -54,3 +54,9 @@ manifest while recording the current branch and exact pack metadata hashes.
 This remains truthful when materializing the clean pack changes the worktree.
 A clean committed release fixture now records `dirty_state: false` in both
 release provenance and bundle records.
+
+Post-build validation now accepts a clean source commit behind the artifact
+storage commit only when Git proves that source is an ancestor and no configured
+portable source file or directory changed across the range. A fixture proves
+artifact-only commits pass as `PASS_SOURCE_ANCESTOR`, then changes the portable
+CLI and proves the same pack fails as stale.
