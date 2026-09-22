@@ -34,7 +34,7 @@
       "path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
       "publish_candidate": true,
       "required": true,
-      "sha256": "79c07dc12fadb726ad2841626e5a2ab29c90c1a68f9d47c5c2766dfd2695e6ab",
+      "sha256": "965db2435e40d479e89ce57e1cef96b20d0fbaf77f4e0d951e031b3338047f5a",
       "size_bytes": 1200,
       "upload_order": 3,
       "validation_status": "present"
@@ -47,7 +47,7 @@
       "path": ".aide/release/dist/SHA256SUMS.txt",
       "publish_candidate": true,
       "required": true,
-      "sha256": "fee18729126d3829de10d5e55cd117123ef662136c9d6efd83b8287f6b6efc6d",
+      "sha256": "fa821c3f1c68bca499846ebc88571ceeb30ce5f051cc13128011978fb2d044c4",
       "size_bytes": 690,
       "upload_order": 4,
       "validation_status": "present"
@@ -60,7 +60,7 @@
       "path": ".aide/release/dist/manifest.yaml",
       "publish_candidate": true,
       "required": true,
-      "sha256": "1411165c7d4d0f0382d4d8c828c856ebce38f4ac81305da6c55a56f7c3d1ccb4",
+      "sha256": "3d45c31e2f66cbed39059b7bc510384e195fb7cd308bb98147f9e5cc1b4341c7",
       "size_bytes": 1404,
       "upload_order": 5,
       "validation_status": "present"
@@ -73,8 +73,8 @@
       "path": ".aide/release/dist/install.md",
       "publish_candidate": true,
       "required": true,
-      "sha256": "e998dfd86096d6f2d1b3e33a107ddaf1b618210860c773b754621ce5f69333eb",
-      "size_bytes": 1325,
+      "sha256": "5d090c854fd44daa0cbbca7db8cea563c46ad86396765e32af3889b491ad0780",
+      "size_bytes": 1341,
       "upload_order": 6,
       "validation_status": "present"
     },
@@ -112,8 +112,8 @@
       "path": ".aide/release/dist/release-validation.json",
       "publish_candidate": true,
       "required": false,
-      "sha256": "fa94ab8f8c1a08931063994878e7566c56a23bba7d8bdac57e4c1aa4108c531b",
-      "size_bytes": 3384,
+      "sha256": "11e1700d29651d67f662840ff510d89c2cd53d0fd97754c0a621f36a81cc37b3",
+      "size_bytes": 3166,
       "upload_order": 9,
       "validation_status": "present"
     },
@@ -125,8 +125,8 @@
       "path": ".aide/release/dist/release-validation.md",
       "publish_candidate": true,
       "required": false,
-      "sha256": "37b6d4e4c7f5106030cac8829decd81fed05f89641c70f5b87efdac0c363932c",
-      "size_bytes": 222,
+      "sha256": "aa0c336c3c2c0ded2747876f3517034f31dafd8f2a0f077274e0eb89ad649182",
+      "size_bytes": 238,
       "upload_order": 10,
       "validation_status": "present"
     },
@@ -138,7 +138,7 @@
       "path": ".aide/release/dist/release-provenance.json",
       "publish_candidate": true,
       "required": false,
-      "sha256": "7d5b0df3e71b2b741b7b5a2e6101c42e22b3e91a231546148c769b45bdd050e1",
+      "sha256": "458b6f900834140e058e3d2c79a610356b8026c0369f52fb3a5af405ca46892a",
       "size_bytes": 1523,
       "upload_order": 11,
       "validation_status": "present"
@@ -151,7 +151,7 @@
       "path": ".aide/release/dist/release-assets.json",
       "publish_candidate": true,
       "required": false,
-      "sha256": "57d278050e24186db6d9a2d68f4e80b32b62948c63a44ac27a16725abd6e06ae",
+      "sha256": "d38d595ba3990600c40824fad33d48a0f57639d3671297ec1657d565e9e35a4a",
       "size_bytes": 4958,
       "upload_order": 12,
       "validation_status": "present"
@@ -168,7 +168,7 @@
   "no_publish": true,
   "preview_only": true,
   "publication_status": "local_draft_no_publish",
-  "release_body_markdown": "# AIDE Lite Pack v0 Draft (c730eac442021cdd)\n\n> Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.\n\n## Release Metadata\n\n- Suggested tag: `aide-lite-pack-v0-draft-c730eac442021cdd`\n- Suggested tag created: no\n- Source commit: `c730eac442021cdd6f71e6d8038d096af0c6378b`\n- Source branch: `task/aide-distribution-portability-pack-refresh-01`\n- Dirty state recorded: `false`\n- Release type: local draft / not published\n\n## Summary\n\n- AIDE Lite Pack v0 local release bundle prepared for human review.\n- Assets come from the Q47 local bundle under `.aide/release/dist/`.\n- Install, repair, upgrade, rollback, and uninstall commands remain preservation-first planning surfaces.\n\n## Release Notes Preview\n- # AIDE Release Notes Preview\n- This is a deterministic preview only. It does not publish a release.\n- source_range: HEAD~1..HEAD\n- source_head: d5e3e818841931702cd4e2cde49452744afab985\n- preview_only: true\n- ## Highlights\n- - Added: report-only capability reality ledger support and generated capability reports. (d5e3e8188419)\n- - Added: X-OS-02 unit and golden coverage. (d5e3e8188419)\n\n## Changelog Preview\n- # AIDE Changelog Preview\n- This file is generated from local Git history and is a preview only.\n- source_range: HEAD~1..HEAD\n- source_head: d5e3e818841931702cd4e2cde49452744afab985\n- commit_count: 1\n- malformed_count: 0\n- preview_only: true\n- release_publishing: false\n\n## Install Notes\n\n- Local install notes: `.aide/release/dist/install.md`\n- Default install workflow is observe, plan, dry-run, review.\n- Target repositories must run their own validation after extraction/import.\n\n## Assets\n\n| Order | Asset | Kind | Size | SHA-256 | Required |\n| --- | --- | --- | ---: | --- | --- |\n| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 973407 | `3f24c8e27e21c188...` | true |\n| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 645707 | `fb855c0e88d26138...` | true |\n| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1200 | `79c07dc12fadb726...` | true |\n| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 690 | `fee18729126d3829...` | true |\n| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1404 | `1411165c7d4d0f03...` | true |\n| 6 | `.aide/release/dist/install.md` | install_notes | 1325 | `e998dfd86096d6f2...` | true |\n| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 670 | `725d7aad7d6f7385...` | true |\n| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 1300 | `774a75827477d5e8...` | true |\n| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3384 | `fa94ab8f8c1a0893...` | false |\n| 10 | `.aide/release/dist/release-validation.md` | validation_report | 222 | `37b6d4e4c7f51060...` | false |\n| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1523 | `7d5b0df3e71b2b74...` | false |\n| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4958 | `57d278050e24186d...` | false |\n\n## Validation Summary\n\n- release validate: PASS\n- pack-status: PASS\n- fixture extraction: PASS\n- checksum validation: PASS\n\n## Known Risks\n- This is a local draft only; no GitHub publication, tag, or upload has occurred.\n- Suggested tag naming still requires human/operator review.\n- Dominium and Eureka target install readiness are not claimed by Q48.\n- Install, repair, upgrade, rollback, and uninstall remain plan/dry-run models unless a future phase adds apply behavior.\n\n## Publication Blockers\n- none for local draft generation\n\n## Manual Publication Checklist\n\n- Review this release body.\n- Review suggested tag naming.\n- Review asset list and checksums.\n- Review known risks and target install caveats.\n- Decide whether the eventual GitHub release is draft, pre-release, or stable.\n- Obtain explicit operator approval before any future publication phase.\n\n## Non-Publication Statement\n\n- tag_created: no\n- github_release_created: no\n- upload_performed: no\n- network_api_call: no\n- branch_mutation: no\n- active_ci_installed: no\n",
+  "release_body_markdown": "# AIDE Lite Pack v0 Draft (c730eac442021cdd)\n\n> Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.\n\n## Release Metadata\n\n- Suggested tag: `aide-lite-pack-v0-draft-c730eac442021cdd`\n- Suggested tag created: no\n- Source commit: `c730eac442021cdd6f71e6d8038d096af0c6378b`\n- Source branch: `task/aide-distribution-portability-pack-refresh-01`\n- Dirty state recorded: `false`\n- Release type: local draft / not published\n\n## Summary\n\n- AIDE Lite Pack v0 local release bundle prepared for human review.\n- Assets come from the Q47 local bundle under `.aide/release/dist/`.\n- Install, repair, upgrade, rollback, and uninstall commands remain preservation-first planning surfaces.\n\n## Release Notes Preview\n- # AIDE Release Notes Preview\n- This is a deterministic preview only. It does not publish a release.\n- source_range: HEAD~1..HEAD\n- source_head: d5e3e818841931702cd4e2cde49452744afab985\n- preview_only: true\n- ## Highlights\n- - Added: report-only capability reality ledger support and generated capability reports. (d5e3e8188419)\n- - Added: X-OS-02 unit and golden coverage. (d5e3e8188419)\n\n## Changelog Preview\n- # AIDE Changelog Preview\n- This file is generated from local Git history and is a preview only.\n- source_range: HEAD~1..HEAD\n- source_head: d5e3e818841931702cd4e2cde49452744afab985\n- commit_count: 1\n- malformed_count: 0\n- preview_only: true\n- release_publishing: false\n\n## Install Notes\n\n- Local install notes: `.aide/release/dist/install.md`\n- Default install workflow is observe, plan, dry-run, review.\n- Target repositories must run their own validation after extraction/import.\n\n## Assets\n\n| Order | Asset | Kind | Size | SHA-256 | Required |\n| --- | --- | --- | ---: | --- | --- |\n| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 973407 | `3f24c8e27e21c188...` | true |\n| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 645707 | `fb855c0e88d26138...` | true |\n| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1200 | `965db2435e40d479...` | true |\n| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 690 | `fa821c3f1c68bca4...` | true |\n| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1404 | `3d45c31e2f66cbed...` | true |\n| 6 | `.aide/release/dist/install.md` | install_notes | 1341 | `5d090c854fd44daa...` | true |\n| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 670 | `725d7aad7d6f7385...` | true |\n| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 1300 | `774a75827477d5e8...` | true |\n| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3166 | `11e1700d29651d67...` | false |\n| 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |\n| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1523 | `458b6f900834140e...` | false |\n| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4958 | `d38d595ba3990600...` | false |\n\n## Validation Summary\n\n- release validate: PASS\n- pack-status: PASS_SOURCE_ANCESTOR\n- fixture extraction: PASS\n- checksum validation: PASS\n\n## Known Risks\n- This is a local draft only; no GitHub publication, tag, or upload has occurred.\n- Suggested tag naming still requires human/operator review.\n- Dominium and Eureka target install readiness are not claimed by Q48.\n- Install, repair, upgrade, rollback, and uninstall remain plan/dry-run models unless a future phase adds apply behavior.\n\n## Publication Blockers\n- none for local draft generation\n\n## Manual Publication Checklist\n\n- Review this release body.\n- Review suggested tag naming.\n- Review asset list and checksums.\n- Review known risks and target install caveats.\n- Decide whether the eventual GitHub release is draft, pre-release, or stable.\n- Obtain explicit operator approval before any future publication phase.\n\n## Non-Publication Statement\n\n- tag_created: no\n- github_release_created: no\n- upload_performed: no\n- network_api_call: no\n- branch_mutation: no\n- active_ci_installed: no\n",
   "schema_version": "aide.github-release-draft.v0",
   "source_branch": "task/aide-distribution-portability-pack-refresh-01",
   "source_commit": "c730eac442021cdd6f71e6d8038d096af0c6378b",
@@ -181,7 +181,7 @@
     "draft_validate_result": "pending",
     "fixture_extract": "PASS",
     "pack_problems": [],
-    "pack_status": "PASS",
+    "pack_status": "PASS_SOURCE_ANCESTOR",
     "release_validate_result": "PASS"
   }
 }

@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 status: running
-classification: integrated_artifact_refresh_qualified
-planning_state: awaiting_artifact_commit_and_provenance_rebind
+classification: artifact_refresh_integration_candidate
+planning_state: awaiting_independent_review_and_dev_integration
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
 current_slice: post_integration_artifact_refresh
@@ -13,6 +13,7 @@ windows_validation: 157_total_149_passed_8_skipped
 independent_review: pass_f1_closed
 dev_integration: bb689227c6a65292f4728d7ae0f8759c22e77bd3
 artifact_refresh_branch: task/aide-distribution-portability-pack-refresh-01
+artifact_commit: da1051793d4c91ccff8d6c23b66ce1fa598729aa
 notes:
   - The source candidate remains fixture-only and has one commit-format PASS.
   - No non-disposable consumer, main ref, tag, release, GitHub setting, or machine configuration is in scope.
@@ -25,3 +26,4 @@ notes:
   - The refresh worktree starts from published dev cc85be9c472a16f39aae98ba00fd5de145098862 and owns only generated export/release outputs plus this task's closeout records.
   - Clean-source generation from c730eac442021cdd6f71e6d8038d096af0c6378b produced a checksum-valid export, local bundle, and preview-only draft; 25 consumer lifecycle tests and 10 release-bundle tests passed.
   - Canonical validate and doctor pass before the generated-output commit; a deterministic post-commit provenance rebind remains required.
+  - Committed provenance correctly transitions to PASS_SOURCE_ANCESTOR; the deterministic second pass changed twenty release metadata records while preserving archive bytes.

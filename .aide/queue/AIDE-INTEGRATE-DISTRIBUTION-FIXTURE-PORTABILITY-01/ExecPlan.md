@@ -46,8 +46,11 @@ Windows-tested, independently reviewed integration candidate and land it on
   `dev@cc85be9c472a16f39aae98ba00fd5de145098862`.
 - [x] Refresh and validate portable export, local bundle, and preview-draft
   bytes from clean committed source `c730eac442021cdd6f71e6d8038d096af0c6378b`.
-- [ ] Commit the generated artifacts and close any deterministic post-commit
-  provenance/checksum derivation.
+- [x] Commit the generated artifacts at
+  `da1051793d4c91ccff8d6c23b66ce1fa598729aa` and close the deterministic
+  post-commit provenance/checksum derivation.
+- [ ] Obtain independent exact-commit review of generated scope, hashes,
+  consumer evidence, and retained no-publish boundaries.
 - [ ] Integrate the qualified refresh into `dev` and close this WorkUnit.
 
 ## Test Oracle
