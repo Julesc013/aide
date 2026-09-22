@@ -55,15 +55,15 @@
 | 6 | `.aide/release/dist/install.md` | install_notes | 1325 | `3be30edf49a38436...` | true |
 | 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 9633 | `1b5fd5cb1df7ff0a...` | true |
 | 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 9128 | `15d4e3a49e024385...` | true |
-| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3814 | `ac3218cb9d04de92...` | false |
-| 10 | `.aide/release/dist/release-validation.md` | validation_report | 222 | `37b6d4e4c7f51060...` | false |
+| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3846 | `a457b73f186db89c...` | false |
+| 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
 | 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `5b17ad6816e236ad...` | false |
 | 12 | `.aide/release/dist/release-assets.json` | asset_index | 4079 | `8c2f65632f63d4a5...` | false |
 
 ## Validation Summary
 
 - release validate: PASS
-- pack-status: PASS
+- pack-status: PASS_SOURCE_ANCESTOR
 - fixture extraction: PASS
 - checksum validation: PASS
 
