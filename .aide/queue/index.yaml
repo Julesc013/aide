@@ -3431,9 +3431,9 @@ items:
     evidence: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/evidence
     description: Regenerate and validate local portable export and release artifacts from clean post-integration dev without publishing.
   - id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
-    status: running
-    planning_state: implementation_active
-    result: PENDING
+    status: needs_review
+    planning_state: qualified_awaiting_independent_review_and_exact_decisions
+    result: PASS_WITH_WARNINGS
     title: Add exact historical commit-message dispositions
     task: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/task.yaml
     exec_plan: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/ExecPlan.md

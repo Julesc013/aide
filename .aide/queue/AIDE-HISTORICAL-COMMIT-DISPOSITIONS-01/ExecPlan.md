@@ -28,7 +28,7 @@ conformance without claiming that the original commit message passed.
 - [x] Implement schema, policy, registry validation, and range reporting.
 - [x] Prove portable export excludes source decision records.
 - [x] Prepare proposed exact records and human decision packet.
-- [ ] Run affected and canonical validation.
+- [x] Run affected and canonical validation.
 - [ ] Publish for independent review.
 
 ## Test Oracle
@@ -59,3 +59,13 @@ the referenced history.
 - Both proposed records are visible in range output and remain ineffective.
 - A clean source checkpoint is required before regenerating portable artifacts
   with trustworthy provenance.
+
+## Retrospective
+
+The source mechanism, adversarial tests, portable projection, and candidate
+evidence are complete. The clean source checkpoint is `0dc74af4` with tree
+`41137c8b`; generated pack closure is `f409dba8`. Every new branch commit passes
+the raw message checker. Both real historical records remain proposed, so the
+two original range failures continue to fail exactly and no integration gate
+has been bypassed. The task now stops at independent mechanism review and two
+exact owner/reviewer decisions.

@@ -1,15 +1,16 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
-status: running
+status: needs_review
 classification: admitted_by_owner_split
-planning_state: implementation_active
+planning_state: qualified_awaiting_independent_review_and_exact_decisions
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
-current_slice: source_implementation_and_proposed_records_complete
-next_slice: clean_source_portable_pack_refresh_and_final_validation
+current_slice: qualified_review_candidate
+next_slice: independent_mechanism_review_and_exact_owner_disposition_decisions
 notes:
   - Mechanism implementation is authorized; no disposition is self-approved.
   - Raw historical failures remain visible and immutable.
   - Both exact registry entries remain proposed and ineffective.
-  - Focused tests, canonical validation, doctor, and the commit-message golden task pass.
+  - Focused, portable governance, portable consumer, canonical, doctor, release-boundary, and raw branch-range checks pass.
+  - Portable pack source is clean commit 0dc74af4fea257f8c56ae0848e43215288ed9edf and source tree 41137c8be01cecf200049a876d94f0d18ebc0a8e.
   - Main, tag, upload, and publication effects are outside this task.

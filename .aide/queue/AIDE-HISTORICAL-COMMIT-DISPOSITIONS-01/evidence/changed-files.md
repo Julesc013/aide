@@ -9,3 +9,4 @@
 - `docs/reference/commit-discipline.md`: human reference and raw-mode command.
 - Task-local plan, status, and evidence records.
 - `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md`: repository planning, execution, and documentation indexes.
+- `.aide/export/aide-lite-pack-v0/**`: deterministic portable projection and checksum/provenance closure from clean source.

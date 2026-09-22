@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
 title: Add exact historical commit-message dispositions
 type: implementation
-status: running
-planning_state: implementation_active
-result: PENDING
+status: needs_review
+planning_state: qualified_awaiting_independent_review_and_exact_decisions
+result: PASS_WITH_WARNINGS
 created_at: 2026-09-22
 updated_at: 2026-09-22
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -60,4 +60,3 @@ retained_gates:
   - each accepted record requires exact responsible human review
   - policy and mechanism integration require review before dev landing
   - main promotion remains a separate exact candidate decision
-
