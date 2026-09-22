@@ -4490,6 +4490,8 @@ def commit_message_result(checks: Iterable[Check]) -> str:
 
 
 def git_latest_commit_message(repo_root: Path) -> str:
+    env = dict(os.environ)
+    env["GIT_NO_REPLACE_OBJECTS"] = "1"
     result = subprocess.run(
         ["git", "log", "-1", "--pretty=%B"],
         cwd=repo_root,
@@ -4498,6 +4500,7 @@ def git_latest_commit_message(repo_root: Path) -> str:
         stderr=subprocess.PIPE,
         check=False,
         encoding="utf-8",
+        env=env,
     )
     if result.returncode != 0:
         raise ValueError(result.stderr.strip() or "git log failed")
@@ -4522,6 +4525,8 @@ def git_commit_messages_for_range(repo_root: Path, revision_range: str, max_coun
     if max_count is not None:
         command.insert(2, f"--max-count={max_count}")
     command.append(revision_range)
+    env = dict(os.environ)
+    env["GIT_NO_REPLACE_OBJECTS"] = "1"
     result = subprocess.run(
         command,
         cwd=repo_root,
@@ -4530,6 +4535,7 @@ def git_commit_messages_for_range(repo_root: Path, revision_range: str, max_coun
         stderr=subprocess.PIPE,
         check=False,
         encoding="utf-8",
+        env=env,
     )
     if result.returncode != 0:
         raise ValueError(result.stderr.strip() or f"git log failed for range {revision_range}")
@@ -4593,6 +4599,66 @@ def historical_disposition_record_digest(record: dict[str, object]) -> str:
     return hashlib.sha256(serialized.encode("utf-8")).hexdigest()
 
 
+DISPOSITION_RECORD_FIELDS = {
+    "schema_version",
+    "disposition_id",
+    "status",
+    "commit",
+    "tree",
+    "parents",
+    "message_sha256",
+    "failed_checks",
+    "scope",
+    "decision",
+    "reviewed_by",
+    "reviewed_at",
+    "decision_ref",
+    "evidence",
+    "record_digest",
+}
+
+DISPOSITION_DECISION_FIELDS = {
+    "schema_version",
+    "disposition_id",
+    "status",
+    "commit",
+    "tree",
+    "message_sha256",
+    "scope",
+    "decision",
+    "reviewed_by",
+    "reviewed_at",
+}
+
+
+def _is_full_git_object_id(value: object) -> bool:
+    return isinstance(value, str) and re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", value) is not None
+
+
+def _disposition_authority_policy(repo_root: Path) -> tuple[set[str], object | None, list[str]]:
+    path = repo_root / COMMIT_MESSAGE_DISPOSITION_POLICY_PATH
+    if not path.is_file() or path.is_symlink():
+        return set(), None, ["disposition authority policy is missing or is a symlink"]
+    text = read_text(path)
+    reviewers = set(parse_simple_list(text, "authorized_reviewers"))
+    errors: list[str] = []
+    if not reviewers:
+        errors.append("disposition authority policy has no authorized_reviewers")
+    for reviewer in reviewers:
+        if not re.fullmatch(r"(?:owner|reviewer):[^\s:][^\s]*", reviewer):
+            errors.append(f"disposition authority policy has invalid reviewer identity: {reviewer}")
+    match = re.search(r"^\s*decision_window_start:\s*(\d{4}-\d{2}-\d{2})\s*$", text, re.MULTILINE)
+    start_date = None
+    if not match:
+        errors.append("disposition authority policy has no decision_window_start")
+    else:
+        try:
+            start_date = datetime.strptime(match.group(1), "%Y-%m-%d").date()
+        except ValueError:
+            errors.append("disposition authority policy decision_window_start is invalid")
+    return reviewers, start_date, errors
+
+
 def load_commit_message_dispositions(repo_root: Path) -> tuple[dict[str, object], bool]:
     path = repo_root / COMMIT_MESSAGE_DISPOSITIONS_PATH
     if not path.exists():
@@ -4642,6 +4708,154 @@ def _validate_disposition_reference(repo_root: Path, value: object, label: str) 
     return errors
 
 
+def validate_historical_disposition_registry(repo_root: Path, registry: dict[str, object]) -> list[str]:
+    errors = [str(item) for item in registry.get("load_errors", [])] if isinstance(registry, dict) else []
+    if not isinstance(registry, dict):
+        return errors + ["disposition registry root must be an object"]
+    if set(registry) - {"schema_version", "records", "load_errors"}:
+        errors.append("disposition registry contains unsupported fields")
+    if registry.get("schema_version") != "aide.commit-message-dispositions.v1":
+        errors.append("disposition registry schema_version is not supported")
+    records = registry.get("records")
+    if not isinstance(records, list):
+        return errors + ["disposition registry records must be an array"]
+
+    seen_ids: set[str] = set()
+    seen_commits: set[str] = set()
+    for index, record in enumerate(records):
+        label = f"records[{index}]"
+        if not isinstance(record, dict):
+            errors.append(f"{label} must be an object")
+            continue
+        missing_fields = DISPOSITION_RECORD_FIELDS - set(record)
+        unsupported_fields = set(record) - DISPOSITION_RECORD_FIELDS
+        if missing_fields:
+            errors.append(f"{label} is missing fields: " + ", ".join(sorted(missing_fields)))
+        if unsupported_fields:
+            errors.append(f"{label} contains unsupported fields: " + ", ".join(sorted(unsupported_fields)))
+        if record.get("schema_version") != "aide.commit-message-disposition.v1":
+            errors.append(f"{label} schema_version is not supported")
+        disposition_id = record.get("disposition_id")
+        if not isinstance(disposition_id, str) or not re.fullmatch(r"[a-z0-9][a-z0-9._-]*", disposition_id):
+            errors.append(f"{label} disposition_id must be a stable lowercase identifier")
+        elif disposition_id in seen_ids:
+            errors.append(f"{label} duplicates disposition_id: {disposition_id}")
+        else:
+            seen_ids.add(disposition_id)
+        commit = record.get("commit")
+        if not _is_full_git_object_id(commit):
+            errors.append(f"{label} commit must be a full lowercase Git object id")
+        elif commit in seen_commits:
+            errors.append(f"{label} duplicates exact commit: {commit}")
+        else:
+            seen_commits.add(str(commit))
+        if not _is_full_git_object_id(record.get("tree")):
+            errors.append(f"{label} tree must be a full lowercase Git object id")
+        parents = record.get("parents")
+        if not isinstance(parents, list) or any(not _is_full_git_object_id(parent) for parent in parents):
+            errors.append(f"{label} parents must be an array of full lowercase Git object ids")
+        if not isinstance(record.get("message_sha256"), str) or not re.fullmatch(
+            r"[0-9a-f]{64}", str(record.get("message_sha256", ""))
+        ):
+            errors.append(f"{label} message_sha256 must be 64 lowercase hexadecimal characters")
+        failed_checks = record.get("failed_checks")
+        if not isinstance(failed_checks, list) or not failed_checks or any(
+            not isinstance(item, str) or not item for item in failed_checks
+        ):
+            errors.append(f"{label} failed_checks must be a non-empty array of strings")
+        if record.get("scope") != "historical_commit_message_only":
+            errors.append(f"{label} scope is not historical_commit_message_only")
+        if record.get("decision") != "accept_historical_nonconformance":
+            errors.append(f"{label} decision is not accept_historical_nonconformance")
+        if record.get("status") not in {"proposed", "accepted", "rejected"}:
+            errors.append(f"{label} status is not supported")
+        if not isinstance(record.get("reviewed_by"), str):
+            errors.append(f"{label} reviewed_by must be a string")
+        if not isinstance(record.get("reviewed_at"), str):
+            errors.append(f"{label} reviewed_at must be a string")
+        errors.extend(
+            f"{label} {error}" for error in _validate_disposition_reference(repo_root, record.get("decision_ref"), "decision_ref")
+        )
+        evidence = record.get("evidence")
+        if not isinstance(evidence, list) or not evidence:
+            errors.append(f"{label} evidence must contain at least one reference")
+        else:
+            seen_paths: set[str] = set()
+            for evidence_index, reference in enumerate(evidence):
+                errors.extend(
+                    f"{label} {error}"
+                    for error in _validate_disposition_reference(
+                        repo_root, reference, f"evidence[{evidence_index}]"
+                    )
+                )
+                if isinstance(reference, dict) and isinstance(reference.get("path"), str):
+                    path_value = str(reference["path"])
+                    if path_value in seen_paths:
+                        errors.append(f"{label} evidence[{evidence_index}] duplicates path: {path_value}")
+                    seen_paths.add(path_value)
+        if record.get("record_digest") != historical_disposition_record_digest(record):
+            errors.append(f"{label} record_digest does not match the canonical record")
+        if record.get("status") == "accepted":
+            errors.extend(
+                f"{label} {error}" for error in _validate_accepted_disposition_decision(repo_root, record)
+            )
+    return errors
+
+
+def _validate_accepted_disposition_decision(repo_root: Path, record: dict[str, object]) -> list[str]:
+    errors: list[str] = []
+    reviewers, start_date, policy_errors = _disposition_authority_policy(repo_root)
+    errors.extend(policy_errors)
+    reviewed_by = record.get("reviewed_by")
+    reviewed_at = record.get("reviewed_at")
+    if reviewed_by not in reviewers:
+        errors.append("accepted disposition reviewer is not in authorized_reviewers")
+    review_date = None
+    try:
+        if not isinstance(reviewed_at, str):
+            raise ValueError
+        review_date = datetime.strptime(reviewed_at, "%Y-%m-%d").date()
+    except ValueError:
+        errors.append("accepted disposition requires a valid YYYY-MM-DD review date")
+    if review_date is not None:
+        if start_date is not None and review_date < start_date:
+            errors.append("accepted disposition review date precedes the decision window")
+        if review_date > datetime.now(timezone.utc).date():
+            errors.append("accepted disposition review date is in the future")
+
+    decision_ref = record.get("decision_ref")
+    if not isinstance(decision_ref, dict) or not isinstance(decision_ref.get("path"), str):
+        return errors + ["accepted disposition decision_ref is not readable"]
+    try:
+        decision_path = safe_repo_path(repo_root, str(decision_ref["path"]))
+    except ValueError as exc:
+        return errors + [f"accepted disposition decision_ref path is invalid: {exc}"]
+    try:
+        decision_data = json.loads(read_text(decision_path))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return errors + [f"accepted disposition decision_ref must be structured JSON: {exc}"]
+    if not isinstance(decision_data, dict):
+        return errors + ["accepted disposition decision artifact must be an object"]
+    if set(decision_data) != DISPOSITION_DECISION_FIELDS:
+        errors.append("accepted disposition decision artifact fields do not match the required schema")
+    expected = {
+        "schema_version": "aide.commit-message-disposition-decision.v1",
+        "disposition_id": record.get("disposition_id"),
+        "status": "accepted",
+        "commit": record.get("commit"),
+        "tree": record.get("tree"),
+        "message_sha256": record.get("message_sha256"),
+        "scope": record.get("scope"),
+        "decision": record.get("decision"),
+        "reviewed_by": reviewed_by,
+        "reviewed_at": reviewed_at,
+    }
+    for key, expected_value in expected.items():
+        if decision_data.get(key) != expected_value:
+            errors.append(f"accepted disposition decision artifact does not match record field: {key}")
+    return errors
+
+
 def evaluate_historical_commit_disposition(
     repo_root: Path,
     commit_hash: str,
@@ -4649,7 +4863,7 @@ def evaluate_historical_commit_disposition(
     checks: Iterable[Check],
     registry: dict[str, object],
 ) -> dict[str, object]:
-    errors = [str(item) for item in registry.get("load_errors", [])] if isinstance(registry, dict) else []
+    errors = validate_historical_disposition_registry(repo_root, registry)
     result: dict[str, object] = {
         "status": "missing",
         "effective": False,
@@ -4659,10 +4873,6 @@ def evaluate_historical_commit_disposition(
     if not isinstance(registry, dict):
         result["errors"] = errors + ["disposition registry root must be an object"]
         return result
-    if set(registry) - {"schema_version", "records", "load_errors"}:
-        errors.append("disposition registry contains unsupported fields")
-    if registry.get("schema_version") != "aide.commit-message-dispositions.v1":
-        errors.append("disposition registry schema_version is not supported")
     records = registry.get("records")
     if not isinstance(records, list):
         errors.append("disposition registry records must be an array")
@@ -4680,36 +4890,7 @@ def evaluate_historical_commit_disposition(
     record = matches[0]
     result["status"] = str(record.get("status", "invalid"))
     result["disposition_id"] = str(record.get("disposition_id", ""))
-    allowed_fields = {
-        "schema_version",
-        "disposition_id",
-        "status",
-        "commit",
-        "tree",
-        "parents",
-        "message_sha256",
-        "failed_checks",
-        "scope",
-        "decision",
-        "reviewed_by",
-        "reviewed_at",
-        "decision_ref",
-        "evidence",
-        "record_digest",
-    }
-    missing_fields = allowed_fields - set(record)
-    unsupported_fields = set(record) - allowed_fields
-    if missing_fields:
-        errors.append("disposition record is missing fields: " + ", ".join(sorted(missing_fields)))
-    if unsupported_fields:
-        errors.append("disposition record contains unsupported fields: " + ", ".join(sorted(unsupported_fields)))
-    if record.get("schema_version") != "aide.commit-message-disposition.v1":
-        errors.append("disposition record schema_version is not supported")
-    if not re.fullmatch(r"[a-z0-9][a-z0-9._-]*", str(record.get("disposition_id", ""))):
-        errors.append("disposition_id must be a stable lowercase identifier")
     status = record.get("status")
-    if status not in {"proposed", "accepted", "rejected"}:
-        errors.append("disposition status is not supported")
     try:
         facts = git_commit_object_facts(repo_root, commit_hash)
     except ValueError as exc:
@@ -4724,37 +4905,8 @@ def evaluate_historical_commit_disposition(
     failures = [check.message for check in checks if check.severity == "FAIL"]
     if record.get("failed_checks") != failures:
         errors.append("disposition failed_checks do not match the checker output")
-    if record.get("scope") != "historical_commit_message_only":
-        errors.append("disposition scope is not historical_commit_message_only")
-    if record.get("decision") != "accept_historical_nonconformance":
-        errors.append("disposition decision is not accept_historical_nonconformance")
-    expected_digest = historical_disposition_record_digest(record)
-    if record.get("record_digest") != expected_digest:
-        errors.append("disposition record_digest does not match the canonical record")
     if status == "accepted":
-        reviewed_by = record.get("reviewed_by")
-        if not isinstance(reviewed_by, str) or not re.fullmatch(r"(?:owner|reviewer):[^\s:][^\s]*", reviewed_by):
-            errors.append("accepted disposition requires an owner: or reviewer: identity")
-        reviewed_at = record.get("reviewed_at")
-        try:
-            if not isinstance(reviewed_at, str):
-                raise ValueError
-            datetime.strptime(reviewed_at, "%Y-%m-%d")
-        except ValueError:
-            errors.append("accepted disposition requires a valid YYYY-MM-DD review date")
-        errors.extend(_validate_disposition_reference(repo_root, record.get("decision_ref"), "decision_ref"))
-        evidence = record.get("evidence")
-        if not isinstance(evidence, list) or not evidence:
-            errors.append("accepted disposition requires at least one evidence reference")
-        else:
-            seen_paths: set[str] = set()
-            for index, reference in enumerate(evidence):
-                errors.extend(_validate_disposition_reference(repo_root, reference, f"evidence[{index}]"))
-                if isinstance(reference, dict) and isinstance(reference.get("path"), str):
-                    path_value = str(reference["path"])
-                    if path_value in seen_paths:
-                        errors.append(f"evidence[{index}] duplicates path: {path_value}")
-                    seen_paths.add(path_value)
+        pass
     elif status == "proposed":
         errors.append("disposition is proposed and has no effect")
     elif status == "rejected":

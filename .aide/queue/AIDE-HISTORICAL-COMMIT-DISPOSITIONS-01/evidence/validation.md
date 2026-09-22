@@ -31,3 +31,18 @@
 
 The earlier predecessor-pack line above is retained as execution history; the
 final refreshed result supersedes its stated refresh requirement.
+
+## Independent Review Repair
+
+- Preserved review commit `154daeee862705ddecb20d349fdbd9fb2b0bb06c`
+  with verdict `REQUEST_CHANGES` and no disposition decision.
+- PASS: 22 focused tests, including replacement-object, request-as-decision,
+  untrusted reviewer, future date, malformed-neighbor, and duplicate-id cases.
+- PASS: all three real commit checks retain their exact raw failures and report
+  only `proposed` ineffective dispositions.
+- PASS: 25 portable export/import consumer tests in 261.110 seconds.
+- PASS: AIDE Lite `test`.
+- PASS: exact full task-range `git diff --check` after removing two trailing
+  blank-line defects.
+- PENDING: source commit, portable artifact refresh for changed exported
+  checker/policy/schema/docs, and independent exact-commit rereview.

@@ -3595,6 +3595,7 @@ authorize live effects or public release.
 mechanism for immutable historical message failures. Records bind full Git
 objects, canonical message and failed-check identities, narrow scope, review
 authority, content-hashed decision/evidence files, and their own canonical
-digest. The two current blocker records remain proposed and ineffective.
-Continue with a clean-source portable-pack refresh, final validation, and
-independent mechanism/decision review; do not rewrite history or infer approval.
+digest. The three current blocker records remain proposed and ineffective.
+Independent review found replacement-ref, accountable-decision, whole-registry,
+and range-whitespace defects; the source repair adds adversarial regressions
+and now awaits exact rereview. Do not rewrite history or infer approval.

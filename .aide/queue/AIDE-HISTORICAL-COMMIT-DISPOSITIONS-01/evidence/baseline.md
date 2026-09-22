@@ -7,4 +7,3 @@
 - Published `486e81cd3a918729f28e4b452a9dcff017238a04` fails current body-shape
   and trailer checks on the qualified removal task branch.
 - Existing policy says malformed history is reported and not rewritten.
-

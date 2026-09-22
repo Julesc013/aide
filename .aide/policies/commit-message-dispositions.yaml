@@ -30,6 +30,13 @@ decision:
   reviewer_prefixes:
     - owner
     - reviewer
+  authorized_reviewers:
+    - owner:Julesc013
+  accepted_decision_schema: aide.commit-message-disposition-decision.v1
+  decision_window_start: 2026-09-22
+  future_review_dates_rejected: true
+  exact_decision_subject_match_required: true
+  whole_registry_validation_required: true
   decision_and_evidence_content_hashes_required: true
   source_registry: .aide/git/commit-message-dispositions.json
   source_registry_is_portable: false

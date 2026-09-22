@@ -51,7 +51,10 @@ Range validation may consume a separately reviewed exact historical
 disposition. The record must identify the full Git commit, tree, ordered
 parents, canonical message digest, exact failed checks, narrow decision scope,
 review authority, and content-hashed decision and evidence files. Every field
-and the record digest are fail-closed.
+and the record digest are fail-closed. Git replacement objects are disabled
+for range traversal and message reads, the whole registry is validated before
+any match can apply, and accepted records require an exact structured JSON
+decision by a policy-allowlisted reviewer with a non-future review date.
 
 An accepted record reports the commit as `DISPOSITIONED` and preserves each
 `original_failure`; it does not relabel the historical message as passing.

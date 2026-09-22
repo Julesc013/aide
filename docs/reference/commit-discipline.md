@@ -45,7 +45,16 @@ check and only through `.aide/git/commit-message-dispositions.json`. An
 accepted record is bound to the full commit and tree object ids, ordered
 parents, canonical message digest, exact checker failures, fixed narrow scope,
 reviewer identity, review date, decision and evidence file digests, and a
-digest of the record itself.
+digest of the record itself. Replacement objects are disabled while expanding
+the range and reading commit messages.
+
+Before any record can apply, the entire registry must be structurally valid
+and have unique disposition and commit identities. Acceptance additionally
+requires a content-hashed JSON decision whose exact disposition, commit, tree,
+message, scope, decision, accountable reviewer, and date match the registry.
+The reviewer must appear in the reviewed policy allowlist, and the date must
+fall between the policy start and the current UTC date. A request for a
+decision is not an acceptance decision.
 
 Proposed, rejected, stale, incomplete, duplicate, wildcard, prefix, or
 otherwise altered records have no effect. The original failed checks remain

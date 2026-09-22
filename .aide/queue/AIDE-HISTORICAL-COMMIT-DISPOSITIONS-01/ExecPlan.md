@@ -30,6 +30,11 @@ conformance without claiming that the original commit message passed.
 - [x] Prepare proposed exact records and human decision packet.
 - [x] Run affected and canonical validation.
 - [x] Publish for independent review.
+- [x] Preserve the independent `REQUEST_CHANGES` review with two high, one
+  medium, and one low finding.
+- [x] Repair replacement-object handling, accountable decision binding,
+  whole-registry validation, and exact-range whitespace.
+- [ ] Obtain independent rereview of the exact repaired candidate.
 
 ## Test Oracle
 
@@ -50,6 +55,10 @@ the referenced history.
 - Dispositions apply only to range checks; latest, message-file, and hook
   checks remain strict.
 - Accepted records bind decision and evidence paths to exact content hashes.
+- Accepted records require a structured exact JSON decision by a reviewer in
+  the policy allowlist, with a review date inside the permitted window.
+- Git replacement objects are disabled for range traversal, message loading,
+  and exact object facts; every registry record validates before any can apply.
 - The general policy and schema are portable, but this repository's decision
   registry is source-specific and excluded from export.
 
@@ -63,10 +72,11 @@ the referenced history.
 
 ## Retrospective
 
-The source mechanism, adversarial tests, portable projection, and candidate
-evidence are complete. The clean source checkpoint is `0dc74af4` with tree
-`41137c8b`; generated pack closure is `f409dba8`. Every new branch commit passes
-the raw message checker. All three real historical records remain proposed, so
-the original range failures continue to fail exactly and no integration gate
-has been bypassed. The task now stops at independent mechanism review and three
-exact owner/reviewer decisions.
+The first independent review correctly returned `REQUEST_CHANGES`. Its exact
+record verification passed, but it reproduced replacement-ref message
+substitution, unbound arbitrary approval, incomplete whole-registry
+validation, and two range whitespace errors. The repair closes those source
+findings with adversarial tests. All three real historical records remain
+proposed, so the original range failures continue to fail exactly and no
+integration gate has been bypassed. Portable artifact refresh and independent
+rereview remain required before mechanism integration or any exact decisions.

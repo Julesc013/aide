@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
 status: needs_review
-classification: admitted_by_owner_split
-planning_state: qualified_awaiting_independent_review_and_exact_decisions
+classification: repaired_review_candidate
+planning_state: awaiting_independent_rereview
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
-current_slice: qualified_review_candidate
-next_slice: independent_mechanism_review_and_exact_owner_disposition_decisions
+current_slice: independent_review_repair
+next_slice: independent_repair_rereview_then_portable_refresh
 notes:
   - Mechanism implementation is authorized; no disposition is self-approved.
   - Raw historical failures remain visible and immutable.
@@ -14,4 +14,7 @@ notes:
   - Focused, portable governance, portable consumer, canonical, doctor, release-boundary, and raw branch-range checks pass.
   - Portable pack source is clean commit 0dc74af4fea257f8c56ae0848e43215288ed9edf and source tree 41137c8be01cecf200049a876d94f0d18ebc0a8e.
   - Qualified candidate checkpoint 192d0f8aa09245ce4c73cd5800c3b72eb953c0b6 is published on the task branch.
+  - Independent review at 154daeee recorded REQUEST_CHANGES for replacement refs, unbound approval, incomplete whole-registry validation, and two whitespace errors.
+  - The repair disables replacement objects throughout message traversal, validates every record, requires an exact structured decision by an allowlisted reviewer within the date window, and adds adversarial tests.
+  - Focused repair tests pass 22 cases; all three real records still fail with proposed and ineffective dispositions.
   - Main, tag, upload, and publication effects are outside this task.

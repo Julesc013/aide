@@ -11207,3 +11207,9 @@ DLL mapping, image or grant effect is part of this source implementation.
   scope, decision, authority, duplicate, unknown, proposed, and raw cases.
 - Added two exact proposed records for current blockers; neither is accepted or
   effective, and no history, integration ref, tag, or release was changed.
+- Extended the registry to three exact proposed records after isolated-host
+  source qualification exposed one further historical body-shape failure.
+- Repaired independent-review findings by disabling replacement objects for
+  traversal and message reads, validating every registry entry, requiring an
+  exact structured decision by an allowlisted accountable reviewer, rejecting
+  out-of-window dates, and adding adversarial regression coverage.
