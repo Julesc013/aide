@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-DELIVERED-PACK-SAFE-UPDATE-01
 title: Add ownership-aware delivered-pack updates
 type: implementation
-status: needs_review
-planning_state: integration_ready
+status: passed
+planning_state: implemented
 result: PASS
 created_at: 2026-09-22
 updated_at: 2026-09-22
@@ -81,3 +81,7 @@ qualification:
   release_bundle_id: aide-lite-pack-v0-b1f97c5f30848128
   zip_sha256: 9bc5078fc7673e51fda10568bb2bc575d44c07de4889922178d7980819f8ff2b
   tar_gz_sha256: 23f6cb2cf5ba59866aceddd91f2b556da8c8686bdf40d86c631c016d0bde81fb
+integration:
+  published_task_head: dab67d269365382a51b072bd756c4939c7b313ae
+  dev_merge_commit: 09158bb2a8e1619f2a54d56489a5df737a54fca6
+  remote_dev_observed: 09158bb2a8e1619f2a54d56489a5df737a54fca6
