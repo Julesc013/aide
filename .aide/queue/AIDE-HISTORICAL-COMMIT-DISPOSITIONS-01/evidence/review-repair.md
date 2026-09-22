@@ -25,3 +25,19 @@
   permission widening, or machine configuration change occurred.
 - The repair needs a new portable pack generation and independent exact-commit
   rereview before integration.
+
+## Portable Repair Candidate
+
+- Source commit: `24a49c06ff84d4dbb83bfe608e9363be281b3869`.
+- Bundle id: `aide-lite-pack-v0-24a49c06ff84d4db`.
+- Export manifest SHA-256:
+  `90466c461eb682fd870d96473d2ee4f84bbe62c6711903798407bd04bce723d6`.
+- Export checksums SHA-256:
+  `0bdec4b643db3dcd15714f694257671c1b9639d6bb4a827826c7e2b1d93959d5`.
+- ZIP SHA-256:
+  `ad2e50daf391ce760d24d45fbbdcf178b12f8685a925cb8a240100e4ddb20028`.
+- tar.gz SHA-256:
+  `01cabce16417175855f75f87fe4d6b1b25373007644be536b2b9bb114ea6b328`.
+- Export payload, archive extraction, checksum, boundary, consumer, release,
+  draft, canonical validation, and doctor checks pass.
+- The local bundle and draft remain no-publish outputs.

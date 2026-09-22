@@ -6,18 +6,18 @@
 - draft_ref: .aide/release/github-release-draft.json
 
 ## Asset Order
-- 1: .aide/release/dist/aide-lite-pack-v0.zip (zip_archive) sha256=b5cc171d178a404df125ddef0c8cb8d8bef50ecfd72329c7995bad127b5b437c
-- 2: .aide/release/dist/aide-lite-pack-v0.tar.gz (tar_gz_archive) sha256=b50b116737ab65036e8fa520c4b729b5b58dd1caa1069774bcf8b8022706ef36
-- 3: .aide/release/dist/aide-lite-pack-v0.checksums.json (checksums) sha256=6e5515eadc0f10ad78441b37c6e44ce4ab60372dd55bfa0cd9ae43de87eb4a74
-- 4: .aide/release/dist/SHA256SUMS.txt (sha256sums_text) sha256=015f320dbd2942ebf2a13e8ecc93aa126cdfbf5ca8bf6ebe016883cb212a6061
-- 5: .aide/release/dist/manifest.yaml (manifest) sha256=b27b8b16a2bf8dddf8ca6b89f1f4f2507435167896f05ae6c302bd4bb4c7bb6d
-- 6: .aide/release/dist/install.md (install_notes) sha256=cb2637ef75783b6e2c0e6a3638a60dea7b594d5327256dbb8ac4d393cf8b0744
+- 1: .aide/release/dist/aide-lite-pack-v0.zip (zip_archive) sha256=ad2e50daf391ce760d24d45fbbdcf178b12f8685a925cb8a240100e4ddb20028
+- 2: .aide/release/dist/aide-lite-pack-v0.tar.gz (tar_gz_archive) sha256=01cabce16417175855f75f87fe4d6b1b25373007644be536b2b9bb114ea6b328
+- 3: .aide/release/dist/aide-lite-pack-v0.checksums.json (checksums) sha256=010f72abc3ebf1f147065f755ecdc080614bece2e2c84ae45636a464ec7769e0
+- 4: .aide/release/dist/SHA256SUMS.txt (sha256sums_text) sha256=2d076e0124a5589b6275cfc1bf383ac003142fb919828928dc92a1d9df701b8c
+- 5: .aide/release/dist/manifest.yaml (manifest) sha256=84d36396300b7c032d5727904f8aa4255c433f51bd87328378359d45c43573a0
+- 6: .aide/release/dist/install.md (install_notes) sha256=54b3aaf3aba0744291ff84ce7bd1c0a9154fdc9f77816910eee5f00b2f8bbc9b
 - 7: .aide/release/dist/CHANGELOG.preview.md (changelog_preview_copy) sha256=725d7aad7d6f7385121ba706fedf28675c443fc7a7a88bc7340d12fb724f55fa
 - 8: .aide/release/dist/RELEASE_NOTES.preview.md (release_notes_preview_copy) sha256=774a75827477d5e85f6a9659c74e0c85dc035e147f5e94161c843338077b259c
-- 9: .aide/release/dist/release-validation.json (validation_report) sha256=c42acc5280fa5f2d1d00a18b2a362bf515ff3d63e411843d2d12ce45b319e37a
-- 10: .aide/release/dist/release-validation.md (validation_report) sha256=aa0c336c3c2c0ded2747876f3517034f31dafd8f2a0f077274e0eb89ad649182
-- 11: .aide/release/dist/release-provenance.json (provenance_report) sha256=1503f3018b64c0f56caa5c8e4566776e88b5f8d78a84e4f076e742697e461b33
-- 12: .aide/release/dist/release-assets.json (asset_index) sha256=1f361eda6c1688e709a4931468835f17e49ebefa1fc3e927a06169c30e9114f6
+- 9: .aide/release/dist/release-validation.json (validation_report) sha256=fa94ab8f8c1a08931063994878e7566c56a23bba7d8bdac57e4c1aa4108c531b
+- 10: .aide/release/dist/release-validation.md (validation_report) sha256=37b6d4e4c7f5106030cac8829decd81fed05f89641c70f5b87efdac0c363932c
+- 11: .aide/release/dist/release-provenance.json (provenance_report) sha256=418faf9e0437f2e86155c7448194e2314457d9a7ec7f6bcc132d2ec6cc8c8a9b
+- 12: .aide/release/dist/release-assets.json (asset_index) sha256=406d9951c59112721e10cb9b9a6f7277227d20976ca900ced7ad68c53e250a49
 
 ## Blocked Actions
 - create_git_tag

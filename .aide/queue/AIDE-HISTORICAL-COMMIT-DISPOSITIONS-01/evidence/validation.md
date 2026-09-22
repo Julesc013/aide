@@ -44,5 +44,13 @@ final refreshed result supersedes its stated refresh requirement.
 - PASS: AIDE Lite `test`.
 - PASS: exact full task-range `git diff --check` after removing two trailing
   blank-line defects.
-- PENDING: source commit, portable artifact refresh for changed exported
-  checker/policy/schema/docs, and independent exact-commit rereview.
+- PASS: clean source commit `24a49c06ff84d4dbb83bfe608e9363be281b3869`.
+- PASS: regenerated export contains 828 files and 831 checksums with zero
+  provenance or boundary problems; the source-specific registry remains absent.
+- PASS: 6 portable governance tests in 37.325 seconds and 25 exact regenerated
+  export/import consumer tests in 259.794 seconds.
+- PASS: local 11-artifact bundle and 12-asset preview draft; all publication
+  effects remain false.
+- PASS: canonical `validate`, `doctor`, and generated diff checks.
+- PENDING: generated-output commit, deterministic post-commit provenance
+  closure, and independent exact-commit rereview.

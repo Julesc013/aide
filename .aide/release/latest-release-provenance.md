@@ -1,10 +1,10 @@
 # Latest Release Provenance
 
-- bundle_id: aide-lite-pack-v0-f6ae36e8074bab51
-- source_commit: b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb
-- source_branch: task/aide-broker-dev-pack-refresh-01
+- bundle_id: aide-lite-pack-v0-24a49c06ff84d4db
+- source_commit: 24a49c06ff84d4dbb83bfe608e9363be281b3869
+- source_branch: task/aide-historical-commit-dispositions-01
 - dirty_state: false
-- export_pack_manifest_sha256: 36f488a74dead589a20ed34a8c150e44197b513a4dd5a47a1b100f96e16c167f
-- export_pack_checksums_sha256: 961db2cdcd81f7d749fee2e8580bd32d258548feccbbf3126a90e0964f362614
+- export_pack_manifest_sha256: 90466c461eb682fd870d96473d2ee4f84bbe62c6711903798407bd04bce723d6
+- export_pack_checksums_sha256: 0bdec4b643db3dcd15714f694257671c1b9639d6bb4a827826c7e2b1d93959d5
 - preview_only: true
 - no_publish: true

@@ -34,6 +34,9 @@ conformance without claiming that the original commit message passed.
   medium, and one low finding.
 - [x] Repair replacement-object handling, accountable decision binding,
   whole-registry validation, and exact-range whitespace.
+- [x] Regenerate and validate the portable checker, policy, schema, tests,
+  documentation, local bundle, and preview draft from clean repair source
+  `24a49c06ff84d4dbb83bfe608e9363be281b3869`.
 - [ ] Obtain independent rereview of the exact repaired candidate.
 
 ## Test Oracle

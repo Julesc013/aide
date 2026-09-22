@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
 status: needs_review
-classification: repaired_review_candidate
-planning_state: awaiting_independent_rereview
+classification: repaired_portable_candidate
+planning_state: awaiting_artifact_commit_and_independent_rereview
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
 current_slice: independent_review_repair
@@ -12,9 +12,10 @@ notes:
   - Raw historical failures remain visible and immutable.
   - All three exact registry entries remain proposed and ineffective.
   - Focused, portable governance, portable consumer, canonical, doctor, release-boundary, and raw branch-range checks pass.
-  - Portable pack source is clean commit 0dc74af4fea257f8c56ae0848e43215288ed9edf and source tree 41137c8be01cecf200049a876d94f0d18ebc0a8e.
+  - The earlier portable pack source 0dc74af4 is retained as history; the repaired export now derives from clean source 24a49c06ff84d4dbb83bfe608e9363be281b3869.
   - Qualified candidate checkpoint 192d0f8aa09245ce4c73cd5800c3b72eb953c0b6 is published on the task branch.
   - Independent review at 154daeee recorded REQUEST_CHANGES for replacement refs, unbound approval, incomplete whole-registry validation, and two whitespace errors.
   - The repair disables replacement objects throughout message traversal, validates every record, requires an exact structured decision by an allowlisted reviewer within the date window, and adds adversarial tests.
   - Focused repair tests pass 22 cases; all three real records still fail with proposed and ineffective dispositions.
+  - Repaired portable governance passes 6 cases and portable consumer behavior passes 25 cases; canonical validate and doctor pass before the generated-output commit.
   - Main, tag, upload, and publication effects are outside this task.

@@ -196,10 +196,35 @@ class Q27CommitRecoveryTests(unittest.TestCase):
         checks: list[aide_lite.Check],
     ) -> dict[str, object]:
         facts = aide_lite.git_commit_object_facts(root, commit_hash)
-        decision_path = root / ".aide/queue/FIXTURE/evidence/decision.md"
+        policy_path = root / aide_lite.COMMIT_MESSAGE_DISPOSITION_POLICY_PATH
+        decision_path = root / ".aide/queue/FIXTURE/evidence/decision.json"
         evidence_path = root / ".aide/queue/FIXTURE/evidence/validation.md"
         decision_path.parent.mkdir(parents=True, exist_ok=True)
-        decision_path.write_text("# Decision\n\nFixture owner acceptance.\n", encoding="utf-8")
+        policy_path.parent.mkdir(parents=True, exist_ok=True)
+        policy_path.write_text(
+            "decision:\n"
+            "  authorized_reviewers:\n"
+            "    - owner:fixture\n"
+            "  decision_window_start: 2026-01-01\n",
+            encoding="utf-8",
+        )
+        decision_path.write_text(
+            aide_lite.stable_json_text(
+                {
+                    "schema_version": "aide.commit-message-disposition-decision.v1",
+                    "disposition_id": "fixture-historical-message",
+                    "status": "accepted",
+                    "commit": commit_hash,
+                    "tree": facts["tree"],
+                    "message_sha256": aide_lite.canonical_commit_message_sha256(message),
+                    "scope": "historical_commit_message_only",
+                    "decision": "accept_historical_nonconformance",
+                    "reviewed_by": "owner:fixture",
+                    "reviewed_at": "2026-09-22",
+                }
+            ),
+            encoding="utf-8",
+        )
         evidence_path.write_text("# Validation\n\nFixture evidence.\n", encoding="utf-8")
         record: dict[str, object] = {
             "schema_version": "aide.commit-message-disposition.v1",
@@ -215,7 +240,7 @@ class Q27CommitRecoveryTests(unittest.TestCase):
             "reviewed_by": "owner:fixture",
             "reviewed_at": "2026-09-22",
             "decision_ref": {
-                "path": ".aide/queue/FIXTURE/evidence/decision.md",
+                "path": ".aide/queue/FIXTURE/evidence/decision.json",
                 "sha256": aide_lite.sha256_file(decision_path),
             },
             "evidence": [
@@ -227,6 +252,36 @@ class Q27CommitRecoveryTests(unittest.TestCase):
         }
         record["record_digest"] = aide_lite.historical_disposition_record_digest(record)
         return record
+
+    def test_git_replacement_cannot_change_checked_message_or_traversal(self) -> None:
+        temp, root, commit_hash, message, _checks = self.make_commit_fixture()
+        self.addCleanup(temp.cleanup)
+        facts = aide_lite.git_commit_object_facts(root, commit_hash)
+        command = ["git", "-C", str(root), "commit-tree", str(facts["tree"])]
+        for parent in facts["parents"]:
+            command.extend(["-p", str(parent)])
+        replacement = subprocess.run(
+            command,
+            check=True,
+            input=aide_lite.COMMIT_GOOD_EXAMPLE,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+        subprocess.run(["git", "-C", str(root), "replace", commit_hash, replacement], check=True)
+
+        checked = aide_lite.git_commit_messages_for_range(root, "HEAD^..HEAD")
+        self.assertEqual([item[0] for item in checked], [commit_hash])
+        self.assertEqual(checked[0][2], message)
+        self.assertEqual(aide_lite.commit_message_result(aide_lite.validate_commit_message_text(checked[0][2])), "FAIL")
+
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            code = aide_lite.main(
+                ["--repo-root", str(root), "commit", "check", "--range", "HEAD^..HEAD", "--no-dispositions"]
+            )
+        self.assertEqual(code, 1, output.getvalue())
+        self.assertIn(f"- {commit_hash[:7]} FAIL", output.getvalue())
 
     def test_range_disposition_preserves_raw_failure_and_requires_acceptance(self) -> None:
         temp, root, commit_hash, message, checks = self.make_commit_fixture()
@@ -343,6 +398,84 @@ class Q27CommitRecoveryTests(unittest.TestCase):
         )
         self.assertEqual(unsupported["status"], "invalid")
         self.assertTrue(any("unsupported fields" in error for error in unsupported["errors"]))
+
+    def test_entire_registry_must_be_valid_before_a_match_can_apply(self) -> None:
+        temp, root, commit_hash, message, checks = self.make_commit_fixture()
+        self.addCleanup(temp.cleanup)
+        record = self.accepted_disposition(root, commit_hash, message, checks)
+        bad_registries = [
+            [record, "not-an-object"],
+            [record, {"disposition_id": "incomplete"}],
+        ]
+        duplicate_id = dict(record)
+        duplicate_id["commit"] = str(record["parents"][0])
+        duplicate_id["record_digest"] = aide_lite.historical_disposition_record_digest(duplicate_id)
+        bad_registries.append([record, duplicate_id])
+        for records in bad_registries:
+            with self.subTest(records=records):
+                result = aide_lite.evaluate_historical_commit_disposition(
+                    root,
+                    commit_hash,
+                    message,
+                    checks,
+                    {"schema_version": "aide.commit-message-dispositions.v1", "records": records},
+                )
+                self.assertFalse(result["effective"], result)
+                self.assertEqual(result["status"], "invalid", result)
+                self.assertTrue(any("records[1]" in error for error in result["errors"]), result)
+
+    def test_acceptance_requires_exact_structured_authority_and_current_date(self) -> None:
+        temp, root, commit_hash, message, checks = self.make_commit_fixture()
+        self.addCleanup(temp.cleanup)
+        baseline = self.accepted_disposition(root, commit_hash, message, checks)
+
+        decision_path = root / str(baseline["decision_ref"]["path"])
+        request_text = "# Decision request\n\nThis is not an acceptance.\n"
+        decision_path.write_text(request_text, encoding="utf-8")
+        request_record = dict(baseline)
+        request_record["decision_ref"] = {
+            "path": str(baseline["decision_ref"]["path"]),
+            "sha256": aide_lite.sha256_file(decision_path),
+        }
+        request_record["record_digest"] = aide_lite.historical_disposition_record_digest(request_record)
+        request_result = aide_lite.evaluate_historical_commit_disposition(
+            root,
+            commit_hash,
+            message,
+            checks,
+            {"schema_version": "aide.commit-message-dispositions.v1", "records": [request_record]},
+        )
+        self.assertFalse(request_result["effective"], request_result)
+        self.assertTrue(any("structured JSON" in error for error in request_result["errors"]), request_result)
+
+        baseline = self.accepted_disposition(root, commit_hash, message, checks)
+        decision = json.loads(decision_path.read_text(encoding="utf-8"))
+        for reviewed_by, reviewed_at, expected in [
+            ("owner:untrusted", "2026-09-22", "authorized_reviewers"),
+            ("owner:fixture", "9999-12-31", "future"),
+        ]:
+            with self.subTest(reviewed_by=reviewed_by, reviewed_at=reviewed_at):
+                altered_decision = dict(decision)
+                altered_decision["reviewed_by"] = reviewed_by
+                altered_decision["reviewed_at"] = reviewed_at
+                decision_path.write_text(aide_lite.stable_json_text(altered_decision), encoding="utf-8")
+                altered_record = dict(baseline)
+                altered_record["reviewed_by"] = reviewed_by
+                altered_record["reviewed_at"] = reviewed_at
+                altered_record["decision_ref"] = {
+                    "path": str(baseline["decision_ref"]["path"]),
+                    "sha256": aide_lite.sha256_file(decision_path),
+                }
+                altered_record["record_digest"] = aide_lite.historical_disposition_record_digest(altered_record)
+                result = aide_lite.evaluate_historical_commit_disposition(
+                    root,
+                    commit_hash,
+                    message,
+                    checks,
+                    {"schema_version": "aide.commit-message-dispositions.v1", "records": [altered_record]},
+                )
+                self.assertFalse(result["effective"], result)
+                self.assertTrue(any(expected in error for error in result["errors"]), result)
 
     def test_proposed_disposition_is_visible_but_ineffective(self) -> None:
         temp, root, commit_hash, message, checks = self.make_commit_fixture()
