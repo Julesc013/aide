@@ -34,6 +34,14 @@
       "severity": "PASS"
     },
     {
+      "message": "release artifact exists: .aide/release/dist/release-validation.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/release-validation.md",
+      "severity": "PASS"
+    },
+    {
       "message": "release artifact exists: .aide/release/dist/release-provenance.json",
       "severity": "PASS"
     },

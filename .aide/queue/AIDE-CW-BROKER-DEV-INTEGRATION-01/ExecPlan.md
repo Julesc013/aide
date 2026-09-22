@@ -35,8 +35,8 @@ broker/runtime line and current dev, then qualify that combined source for dev.
 - [x] Publish the exact integration candidate.
 - [x] Run the exact task-to-dev landing helper in dry-run mode.
 - [x] Run the landing helper, merge to dev, validate, push, and observe refs.
-- [ ] Refresh derived portable export and release artifacts from a clean post-landing source commit.
-- [ ] Re-run canonical validation and close the integration task.
+- [x] Refresh derived portable export and release artifacts from a clean post-landing source commit.
+- [x] Re-run canonical validation and close the integration task.
 
 ## Conflict Policy
 
@@ -106,3 +106,6 @@ publication, fix forward. Never rewrite the published source or target refs.
   `31bd91bd10ed57e98e658380cd9372e074867f63`. The integration is preserved;
   refresh derived export and release artifacts from a clean post-landing commit
   before marking this WorkUnit complete.
+- `AIDE-BROKER-DEV-PACK-REFRESH-01` completed the clean-source refresh, consumer
+  tests, committed derivation closure, and dev landing. Final canonical
+  validation passes with all publication effects still false.

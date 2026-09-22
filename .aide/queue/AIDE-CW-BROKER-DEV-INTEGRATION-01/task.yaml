@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-CW-BROKER-DEV-INTEGRATION-01
 title: Integrate the published broker runtime line into current dev
 type: integration
-status: running
-planning_state: merge_candidate_preparation
-result: PENDING
+status: passed
+planning_state: integrated_to_dev
+result: PASS
 created_at: 2026-09-22
 updated_at: 2026-09-22
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

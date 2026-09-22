@@ -23,8 +23,9 @@ GitHub mutation, and target repositories are outside scope.
 - [x] Regenerate the local release bundle from the refreshed export pack.
 - [x] Regenerate the preview-only release draft and checksum-bound planning records.
 - [x] Run pack, release, consumer, doctor, and canonical validation.
-- [ ] Commit and publish exact refreshed artifacts and evidence.
-- [ ] Land through dev, observe refs, and close the parent integration task.
+- [x] Commit and publish exact refreshed artifacts and evidence.
+- [x] Land through dev and run post-landing checks.
+- [x] Close the parent integration task with retained publication gates.
 
 ## Verification
 
@@ -58,3 +59,8 @@ local artifacts as proof of a public GitHub Release.
   `PASS_SOURCE_ANCESTOR`. Re-running the deterministic bundle and draft
   generators rebound twenty derived release records to that committed state;
   canonical validate and doctor pass again.
+- Dev landed the published task tip through no-ff commit
+  `088b20ba76ae09b19277b4aed7dff7d1d324cdbe`. The first post-landing check
+  made the release-validation files themselves visible to their artifact
+  inventory, and one final draft rebind stabilized that checksum set.
+- Final canonical validation passes. Public release actions remain absent.

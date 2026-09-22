@@ -11187,6 +11187,9 @@ DLL mapping, image or grant effect is part of this source implementation.
   and candidate-tree validation checks.
 - Published dev at `bed5a57aed4f7686de4b9137dbb3afc8e7995436`.
 - Post-commit validation then identified stale portable-pack source provenance;
-  derived export and release artifacts must be refreshed from clean landed dev.
+  the bounded pack-refresh task regenerated the export identity, local bundle,
+  and preview draft from clean landed dev and closed their checksum derivation.
+- Final pack, release, draft, canonical validation, and doctor checks pass. The
+  artifacts remain local no-publish outputs rather than a public release.
 - Kept live providers, credentials, hosted effects, protected-host closeout,
   main promotion, tagging, and release publication outside this integration.

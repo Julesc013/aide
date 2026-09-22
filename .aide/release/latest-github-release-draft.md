@@ -55,7 +55,7 @@
 | 6 | `.aide/release/dist/install.md` | install_notes | 1341 | `cb2637ef75783b6e...` | true |
 | 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 670 | `725d7aad7d6f7385...` | true |
 | 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 1300 | `774a75827477d5e8...` | true |
-| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3166 | `11e1700d29651d67...` | false |
+| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3416 | `c42acc5280fa5f2d...` | false |
 | 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
 | 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1491 | `1503f3018b64c0f5...` | false |
 | 12 | `.aide/release/dist/release-assets.json` | asset_index | 4958 | `1f361eda6c1688e7...` | false |

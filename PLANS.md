@@ -3582,7 +3582,9 @@ settings apply, hosted races and protected-host qualification remain open.
 `75da33108995ba63fc7148c6b4137349d7013798` is now retained in `dev` through
 two-parent landing `bed5a57aed4f7686de4b9137dbb3afc8e7995436`. Combined
 runtime, portable lifecycle, and release-bundle tests pass within their recorded
-scope. Post-commit validation requires a clean-source portable-pack provenance
-refresh before this integration task closes. Continue the parent broker,
-isolated-host, and GitHub target tasks for operational qualification; this
-integration does not authorize live effects or public release.
+scope. Post-commit validation required a clean-source portable-pack provenance
+refresh before this integration task closes. That refresh is now complete
+through `AIDE-BROKER-DEV-PACK-REFRESH-01` and dev landing `088b20ba`; final
+canonical validation passes. Continue the parent broker, isolated-host, and
+GitHub target tasks for operational qualification; this integration does not
+authorize live effects or public release.

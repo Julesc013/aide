@@ -3401,9 +3401,9 @@ items:
     evidence: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/evidence
     description: Extends extracted-pack import with exact installed baselines, conflict-first updates, preview/apply identity, predecessor-pack proof, and interruption evidence in disposable consumers only.
   - id: AIDE-CW-BROKER-DEV-INTEGRATION-01
-    status: running
-    planning_state: integrated_to_dev_followup_active
-    result: PENDING
+    status: passed
+    planning_state: integrated_to_dev
+    result: PASS
     title: Integrate the published broker runtime line into current dev
     task: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/ExecPlan.md
@@ -3421,9 +3421,9 @@ items:
     evidence: .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/evidence
     description: Carry the exact intent-bound provider observation into each registered mutation child and preserve observation-only closeout without claiming operational qualification.
   - id: AIDE-BROKER-DEV-PACK-REFRESH-01
-    status: running
-    planning_state: execution_active
-    result: PENDING
+    status: passed
+    planning_state: integrated_to_dev
+    result: PASS
     title: Refresh portable artifacts after broker dev integration
     task: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/task.yaml
     exec_plan: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/ExecPlan.md

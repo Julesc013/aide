@@ -1,0 +1,22 @@
+{
+  "schema_version": "aide.artifact-refresh-landing-receipt.v0",
+  "task_id": "AIDE-BROKER-DEV-PACK-REFRESH-01",
+  "source_dev": "0bd655834e7fa95e6d238be73a7056eefe8cb6c3",
+  "artifact_commit": "f6ae36e8074bab51d220352bdb824ad391baf00e",
+  "derivation_closure_commit": "3f1bc120a10ce8f87d0de24d45cdd447f6800be9",
+  "dev_landing_commit": "088b20ba76ae09b19277b4aed7dff7d1d324cdbe",
+  "export_source_commit": "b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb",
+  "release_bundle_id": "aide-lite-pack-v0-f6ae36e8074bab51",
+  "pack_provenance": "PASS_SOURCE_ANCESTOR",
+  "release_validation": "PASS",
+  "release_draft_validation": "PASS",
+  "canonical_validate": "PASS",
+  "doctor": "PASS",
+  "portable_tests_passed": 25,
+  "release_bundle_tests_passed": 10,
+  "preview_only": true,
+  "tag_created": false,
+  "upload_performed": false,
+  "github_release_created": false,
+  "network_api_call": false
+}

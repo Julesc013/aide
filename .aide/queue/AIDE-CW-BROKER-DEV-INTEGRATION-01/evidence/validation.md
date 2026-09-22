@@ -55,3 +55,10 @@
   while the new dev head is `bed5a57aed4f7686de4b9137dbb3afc8e7995436`
   and portable inputs changed. This requires a clean-source derived-artifact
   refresh; it is not recorded as a broker runtime failure or a pass.
+- Follow-up `AIDE-BROKER-DEV-PACK-REFRESH-01` regenerated the export manifest,
+  local bundle, and preview release draft from clean post-integration source,
+  then closed committed provenance derivation. Its landing is
+  `088b20ba76ae09b19277b4aed7dff7d1d324cdbe`.
+- Final `pack-status`, release validation, release draft checksums, canonical
+  `validate`, and `doctor`: `PASS`. No tag, upload, publication, network API,
+  or target mutation occurred.

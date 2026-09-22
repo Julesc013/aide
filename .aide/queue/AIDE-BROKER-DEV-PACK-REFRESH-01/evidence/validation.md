@@ -25,3 +25,8 @@
   draft generation changed twenty release-only records. Draft validation,
   canonical validate, and doctor then passed with no runtime or export payload
   change.
+- Published task tip `3f1bc120a10ce8f87d0de24d45cdd447f6800be9`
+  landed on dev through `088b20ba76ae09b19277b4aed7dff7d1d324cdbe`.
+- Post-landing release validation added stable self-artifact existence checks;
+  the final draft rebind passed. Canonical validate and both task inspections
+  pass with the broker integration and artifact refresh classified complete.
