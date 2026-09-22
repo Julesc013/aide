@@ -296,6 +296,23 @@ class ExportImportTests(unittest.TestCase):
         self.assertTrue((target / "docs/reference/commit-discipline.md").exists())
         self.assertFalse((target / "docs/roadmap").exists())
 
+    def test_import_preserves_authored_agents_bytes_outside_portable_section(self) -> None:
+        source_root = self.make_source_repo()
+        pack_root = self.build_pack(source_root)
+        target = source_root.parent / "target-agents-bytes"
+        target.mkdir()
+        authored = b"# Target Agents\r\n\r\nManual guidance with spaces  \r\n"
+        (target / "AGENTS.md").write_bytes(authored)
+
+        result = aide_lite.apply_import_pack(pack_root, target)
+        self.assertEqual(result["status"], "APPLIED")
+        installed = (target / "AGENTS.md").read_bytes()
+        self.assertTrue(installed.startswith(authored), installed[: len(authored) + 20])
+        self.assertIn(b"AIDE-PORTABLE:BEGIN", installed)
+        rerun = aide_lite.apply_import_pack(pack_root, target)
+        self.assertEqual(rerun["status"], "NO_CHANGES")
+        self.assertEqual((target / "AGENTS.md").read_bytes(), installed)
+
     def test_import_safe_mode_skips_broad_source_roots(self) -> None:
         source_root = self.make_source_repo()
         pack_root = self.build_pack(source_root)

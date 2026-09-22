@@ -17,6 +17,8 @@ Implemented behavior:
 - completed, no-effect, partial, and unknown recovery classification;
 - idempotent no-op rerun;
 - symlink/junction and root-overlap target refusal;
+- byte-preserving authored content outside the portable `AGENTS.md` section,
+  including CRLF and trailing-space content;
 - extracted CLI support through `--from-pack` and `--expect-plan`.
 
 The accepted DistributionApplyEngine remains fixture-only. This task does not
