@@ -17878,6 +17878,11 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     validation_md = render_release_validation_md(validation)
     write_text_if_changed(repo_root / RELEASE_VALIDATION_MD_PATH, validation_md)
     write_text_if_changed(repo_root / LATEST_RELEASE_VALIDATION_MD_PATH, validation_md)
+    validation = validate_release_artifacts(repo_root, require_validation_files=True)
+    write_text_if_changed(repo_root / RELEASE_VALIDATION_JSON_PATH, stable_json_text(validation))
+    validation_md = render_release_validation_md(validation)
+    write_text_if_changed(repo_root / RELEASE_VALIDATION_MD_PATH, validation_md)
+    write_text_if_changed(repo_root / LATEST_RELEASE_VALIDATION_MD_PATH, validation_md)
 
     artifacts = assets_data.get("artifacts", [])
     bundle = {

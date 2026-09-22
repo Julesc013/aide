@@ -234,6 +234,14 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         second = {rel: (root / rel).read_bytes() for rel in first}
         self.assertEqual(first, second)
 
+    def test_release_validate_does_not_rewrite_bundle_metadata(self) -> None:
+        root = self.make_repo()
+        aide_lite.build_release_bundle_outputs(root)
+        before = self.files_under_release(root)
+        result = self.run_cmd(root, "release", "validate")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(before, self.files_under_release(root))
+
     def test_release_records_clean_source_before_writing_bundle_outputs(self) -> None:
         root = self.make_repo()
         subprocess.run(["git", "init", "--quiet", str(root)], check=True)
