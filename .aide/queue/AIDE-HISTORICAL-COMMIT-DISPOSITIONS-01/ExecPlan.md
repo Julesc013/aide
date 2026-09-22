@@ -29,7 +29,7 @@ conformance without claiming that the original commit message passed.
 - [x] Prove portable export excludes source decision records.
 - [x] Prepare proposed exact records and human decision packet.
 - [x] Run affected and canonical validation.
-- [ ] Publish for independent review.
+- [x] Publish for independent review.
 
 ## Test Oracle
 
