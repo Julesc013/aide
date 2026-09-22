@@ -1,4 +1,14 @@
 {
+  "classic_branch_protection": {
+    "body": null,
+    "status": "absent",
+    "target_ref": "refs/heads/dev"
+  },
+  "effective_rules": {
+    "rules": [],
+    "status": "observed",
+    "target_ref": "refs/heads/dev"
+  },
   "observed_by": {
     "login": "Julesc013",
     "repository_permission": "admin",
@@ -7,6 +17,7 @@
   },
   "principal": null,
   "repository": "Julesc013/aide",
+  "repository_id": 1192621212,
   "repository_settings": {
     "allow_auto_merge": false,
     "allow_merge_commit": true,

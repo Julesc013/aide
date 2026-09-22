@@ -7,10 +7,10 @@
   "hosted_effects_run": false,
   "mode": "review_only",
   "network_calls": "none",
-  "observation_digest": "907688c5defff9615e8f8d5f0bac9d9e39e8d3bf6522ceb7f2813c51df134798",
+  "observation_digest": "a1261592a0d53ac3ded981a19e32b0b323f085da45cf041893c76078b767c86a",
   "operations": [],
-  "plan_digest": "5c243ac74ff1deff1780debe97e5e0ec1dcfa42653d2898c37db84b54ef15d7d",
-  "policy_digest": "db1b1ad6e96d287386ad5d99c600b938c3e65dc12123a98954106d58bab68b7f",
+  "plan_digest": "762da6e0de4359fcc1316529e9f715f075bac0e37f42e7a9ec2127f3b5469336",
+  "policy_digest": "0c3c1ce858c4e70e0070074f66db31873c7a1f4b9aa820066f760678ed35ba89",
   "repository": "Julesc013/aide",
   "required_reviews": [
     "target_policy_and_bypass",

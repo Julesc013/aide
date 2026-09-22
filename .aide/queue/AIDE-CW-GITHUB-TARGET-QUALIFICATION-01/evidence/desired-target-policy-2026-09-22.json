@@ -5,6 +5,7 @@
     "destination_enforced_when_qualified": [
       "expected_head",
       "strict_app_bound_required_check",
+      "exact_required_workflow",
       "pull_request_only_dev_update",
       "non_dev_update_restriction",
       "deletion_restriction",
@@ -41,6 +42,7 @@
       "check_name": "nonempty_bounded_text_required",
       "event": "push",
       "path": ".github/workflows/aide-cw-checks.yml",
+      "repository_id": "positive_integer_required",
       "source_commit": "full_sha1_required",
       "source_ref": "refs/heads/dev"
     }
@@ -51,6 +53,7 @@
     "user_id": 30209022
   },
   "repository": "Julesc013/aide",
+  "repository_id": 1192621212,
   "repository_settings": {
     "allow_auto_merge": false,
     "allow_merge_commit": true,

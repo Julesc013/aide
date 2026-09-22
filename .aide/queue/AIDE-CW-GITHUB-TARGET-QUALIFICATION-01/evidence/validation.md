@@ -77,3 +77,24 @@ these source tests neither reran nor discharged it.
   `b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb`, not this unintegrated task
   branch. The pre-commit source candidate passed canonical validation; a later
   reviewed integration/pack refresh must qualify delivered bytes.
+
+## 2026-09-22 independent-review repair
+
+- REQUEST_CHANGES retained: exact review commit `9bba1cecaec835b5299cf02718059a94ef4c08cb`
+  found incomplete update-rule parameters, owner/broker aliasing, unbound
+  workflow source, and incomplete effective-policy observation.
+- PASS: focused observation/target-policy suite, 46 tests.
+- PASS: PR observation/staged broker suite, 21 tests.
+- PASS: bounded GitHub HTTP suite, 19 tests.
+- PASS: registered provider bridge suite, 12 tests.
+- PASS WITH ONE RETAINED HOST SKIP: integration broker suite, 37 tests; the
+  disposable symlink case remains unavailable to this Windows token.
+- PASS: 135 affected tests, 134 passed, one skipped, zero failures.
+- PASS: exact unresolved evidence regenerates blocked with zero operations and
+  digests policy `0c3c1ce858c4e70e0070074f66db31873c7a1f4b9aa820066f760678ed35ba89`
+  and plan `762da6e0de4359fcc1316529e9f715f075bac0e37f42e7a9ec2127f3b5469336`.
+- PASS: official API `2026-03-10` documents required update parameters and the
+  exact workflow rule fields now emitted by the pure generator.
+- NOT RUN: settings/workflow installation, principal creation, hosted races,
+  target mutation, credentials, merge effects, main promotion, tag, or release.
+- PENDING: superseding independent review of the repaired exact commit.

@@ -117,3 +117,19 @@ The exact source checkpoint is published at
 with tree `a871c65880161f147f35cf8df7269bba9af3a867`. The next action remains
 identity resolution and independent review; publication did not authorize or
 perform any target mutation.
+
+## Progress - 2026-09-22 independent-review repair
+
+- [x] Preserve the exact independent `REQUEST_CHANGES` evidence.
+- [x] Emit `update.parameters.update_allows_fetch_and_merge: false`.
+- [x] Reject broker identities that alias the owner bypass by id or login.
+- [x] Add GitHub's exact required-workflow rule with path, repository id, ref,
+      and source commit instead of relying on check name/app alone.
+- [x] Bind repository id, effective-rule bodies, and explicit classic branch
+      protection presence/absence into the canonical observation and plan.
+- [x] Pass 135 affected cases with one retained Windows symlink skip.
+- [ ] Obtain a superseding independent review of the repaired exact commit.
+
+The live packet remains blocked on unresolved principal and workflow identity
+with zero operations. The repair changes only pure source, tests, and evidence;
+it does not authorize or perform target configuration.

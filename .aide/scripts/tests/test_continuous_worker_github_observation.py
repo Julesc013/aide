@@ -68,11 +68,11 @@ def broker():
 def workflow():
     return {"app_id": 99, "check_name": "AIDE Continuous Worker / required",
             "event": "push", "path": ".github/workflows/aide-cw-checks.yml",
-            "source_commit": HEAD, "source_ref": "refs/heads/dev"}
+            "repository_id": 880, "source_commit": HEAD, "source_ref": "refs/heads/dev"}
 
 
 def target_policy(*, resolved=True):
-    return desired_target_policy(REPO, owner=owner(),
+    return desired_target_policy(REPO, repository_id=880, owner=owner(),
         broker=broker() if resolved else None, workflow=workflow() if resolved else None)
 
 
@@ -85,6 +85,7 @@ def target_observation(policy, *, current=False):
     return {
         "schema": "aide.github-target-observation.v1",
         "repository": REPO,
+        "repository_id": 880,
         "observed_by": {"login": owner()["login"], "user_id": owner()["user_id"],
                         "type": "User", "repository_permission": "admin"},
         "visibility": {"bypass_actors_complete": True, "effective_rules_complete": True,
@@ -94,6 +95,10 @@ def target_observation(policy, *, current=False):
         "principal": copy.deepcopy(policy["broker"]),
         "workflow": copy.deepcopy(policy["workflow"]),
         "rulesets": records,
+        "effective_rules": {"status": "observed", "target_ref": "refs/heads/dev",
+                            "rules": copy.deepcopy([item["body"] for item in records])},
+        "classic_branch_protection": {"status": "absent", "target_ref": "refs/heads/dev",
+                                      "body": None},
     }
 
 
@@ -661,11 +666,20 @@ class GitHubTargetPolicyTests(unittest.TestCase):
         self.assertTrue(required["parameters"]["strict_required_status_checks_policy"])
         self.assertEqual(required["parameters"]["required_status_checks"], [
             {"context": workflow()["check_name"], "integration_id": workflow()["app_id"]}])
+        required_workflow = next(rule for rule in dev["rules"] if rule["type"] == "workflows")
+        self.assertEqual(required_workflow["parameters"], {
+            "do_not_enforce_on_create": False,
+            "workflows": [{"path": workflow()["path"], "ref": workflow()["source_ref"],
+                           "repository_id": workflow()["repository_id"],
+                           "sha": workflow()["source_commit"]}],
+        })
         confined = by_role["broker_non_dev_confinement"]
         self.assertEqual(confined["conditions"], {
             "ref_name": {"include": ["~ALL"], "exclude": ["refs/heads/dev"]}})
         self.assertEqual([rule["type"] for rule in confined["rules"]], [
             "update", "deletion", "non_fast_forward"])
+        self.assertEqual(confined["rules"][0]["parameters"], {
+            "update_allows_fetch_and_merge": False})
         self.assertEqual(confined["bypass_actors"], [
             {"actor_id": owner()["user_id"], "actor_type": "User", "bypass_mode": "always"}])
 
@@ -747,20 +761,61 @@ class GitHubTargetPolicyTests(unittest.TestCase):
         bad_broker = broker()
         bad_broker["permissions"]["administration"] = "write"
         with self.assertRaisesRegex(Refused, "principal or permissions"):
-            desired_target_policy(REPO, owner=owner(), broker=bad_broker, workflow=workflow())
+            desired_target_policy(REPO, repository_id=880, owner=owner(),
+                                  broker=bad_broker, workflow=workflow())
         for key, value in (("path", ".github/workflows/other.yml"),
                            ("event", "pull_request"), ("source_ref", "refs/heads/main")):
             bad_workflow = workflow()
             bad_workflow[key] = value
             with self.subTest(key=key), self.assertRaisesRegex(Refused, "workflow event"):
-                desired_target_policy(REPO, owner=owner(), broker=broker(), workflow=bad_workflow)
+                desired_target_policy(REPO, repository_id=880, owner=owner(),
+                                      broker=broker(), workflow=bad_workflow)
+
+    def test_owner_and_broker_bypass_identities_must_be_distinct(self):
+        for mutation in (
+                lambda value: value.update(user_id=owner()["user_id"]),
+                lambda value: value.update(login=owner()["login"].swapcase())):
+            bad_broker = broker()
+            mutation(bad_broker)
+            with self.assertRaisesRegex(Refused, "distinct from owner"):
+                desired_target_policy(REPO, repository_id=880, owner=owner(),
+                                      broker=bad_broker, workflow=workflow())
+
+    def test_repository_effective_rules_and_classic_protection_are_digest_bound(self):
+        policy = target_policy()
+        for mutation, blocker in (
+                (lambda value: value.update(repository_id=881), "repository_id_mismatch"),
+                (lambda value: value["effective_rules"]["rules"].append({"type": "deletion"}),
+                 "effective_rules_drift"),
+                (lambda value: value["classic_branch_protection"].update(
+                    status="present", body={"enforce_admins": {"enabled": True}}),
+                 "classic_branch_protection_requires_review")):
+            observation = target_observation(policy)
+            original = target_policy_review_plan(policy, observation)
+            mutation(observation)
+            changed = target_policy_review_plan(policy, observation)
+            with self.subTest(blocker=blocker):
+                self.assertNotEqual(original["observation_digest"], changed["observation_digest"])
+                self.assertNotEqual(original["plan_digest"], changed["plan_digest"])
+                if blocker is not None:
+                    self.assertIn(blocker, changed["blockers"])
+
+        for mutation in (
+                lambda value: value.pop("effective_rules"),
+                lambda value: value.pop("classic_branch_protection"),
+                lambda value: value["classic_branch_protection"].update(body={}),
+                lambda value: value["effective_rules"].update(status="asserted")):
+            observation = target_observation(policy)
+            mutation(observation)
+            with self.assertRaises(Refused):
+                target_policy_review_plan(policy, observation)
 
     def test_invalid_github_login_boundaries_are_refused(self):
         for login in ("-owner", "owner-", "owner_name", "x" * 40):
             bad_owner = owner()
             bad_owner["login"] = login
             with self.subTest(login=login), self.assertRaisesRegex(Refused, "login identity"):
-                desired_target_policy(REPO, owner=bad_owner)
+                desired_target_policy(REPO, repository_id=880, owner=bad_owner)
 
     def test_policy_rulesets_are_derived_and_cannot_be_caller_replaced(self):
         policy = target_policy()
@@ -790,7 +845,8 @@ class GitHubTargetPolicyTests(unittest.TestCase):
         current = json.loads((evidence / "current-target-policy-2026-09-22.json").read_text(encoding="utf-8"))
         recorded_plan = json.loads((evidence / "target-policy-review-plan-2026-09-22.json").read_text(encoding="utf-8"))
         self.assertEqual(desired, desired_target_policy(
-            "Julesc013/aide", owner={"login": "Julesc013", "user_id": 30209022}))
+            "Julesc013/aide", repository_id=1192621212,
+            owner={"login": "Julesc013", "user_id": 30209022}))
         self.assertEqual(recorded_plan, target_policy_review_plan(desired, current))
         self.assertEqual(recorded_plan["operations"], [])
         self.assertEqual(recorded_plan["status"], "blocked")

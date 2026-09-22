@@ -1,16 +1,16 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
 status: needs_review
-planning_state: policy_source_published_awaiting_exact_identity_and_review
+planning_state: independent_review_findings_repaired_pending_rereview
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
-configuration_review: pending
+configuration_review: request_changes_repaired_pending_rereview
 settings_mutated: false
 hosted_acceptance: not_run
-current_slice: target_policy_contract_published
-next_slice: resolve_principal_and_workflow_identities_then_independent_review
-source_tests: 44_passed
-affected_regression_tests: 96_passed
+current_slice: target_policy_independent_review_repair
+next_slice: independent_rereview_then_resolve_principal_and_workflow_identities
+source_tests: 46_passed
+affected_regression_tests: 134_passed_1_skipped
 notes:
   - The synchronous request always supplies the admitted candidate as GitHub's expected head SHA.
   - Base, actor, policy, ruleset and principal predicates remain unqualified at the destination effect boundary.
@@ -23,3 +23,6 @@ notes:
   - All 96 affected tests pass; independent review remains next.
   - The exact source checkpoint is published at bb433bb74f645e0904ca34bf3af38516ae05a7ad with tree a871c65880161f147f35cf8df7269bba9af3a867.
   - Post-commit canonical validation reports only stale export-pack provenance against b3e5c7aa; pack refresh remains an integration/release concern, not a claim of delivered behavior.
+  - Independent review at 9bba1cecaec835b5299cf02718059a94ef4c08cb requested four changes; its evidence is preserved.
+  - The repair adds the required update parameters, rejects owner/broker aliasing, uses GitHub's exact required-workflow rule, and digest-binds repository identity, effective rules, and classic protection.
+  - The blocked live packet still has zero operations; no target mutation or hosted effect is authorized.

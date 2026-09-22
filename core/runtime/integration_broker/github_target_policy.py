@@ -34,6 +34,7 @@ def _identity_requirements():
             "check_name": "nonempty_bounded_text_required",
             "event": "push",
             "path": WORKFLOW_PATH,
+            "repository_id": "positive_integer_required",
             "source_commit": "full_sha1_required",
             "source_ref": TARGET_REF,
         },
@@ -95,7 +96,7 @@ def _broker(value):
 def _workflow(value):
     if value is None:
         return None
-    fields(value, "app_id check_name event path source_commit source_ref")
+    fields(value, "app_id check_name event path repository_id source_commit source_ref")
     if value["path"] != WORKFLOW_PATH or value["event"] != "push" or value["source_ref"] != TARGET_REF:
         raise Refused("workflow event, path or source ref refused")
     identity(value["source_commit"], OID)
@@ -104,6 +105,7 @@ def _workflow(value):
         "check_name": text_value(value["check_name"], 200),
         "event": "push",
         "path": WORKFLOW_PATH,
+        "repository_id": positive(value["repository_id"]),
         "source_commit": value["source_commit"],
         "source_ref": TARGET_REF,
     }
@@ -143,6 +145,18 @@ def _rulesets(owner, workflow):
                             "strict_required_status_checks_policy": True,
                         },
                     },
+                    {
+                        "type": "workflows",
+                        "parameters": {
+                            "do_not_enforce_on_create": False,
+                            "workflows": [{
+                                "path": workflow["path"],
+                                "ref": workflow["source_ref"],
+                                "repository_id": workflow["repository_id"],
+                                "sha": workflow["source_commit"],
+                            }],
+                        },
+                    },
                 ],
             },
         },
@@ -157,7 +171,7 @@ def _rulesets(owner, workflow):
                 ],
                 "conditions": {"ref_name": {"include": ["~ALL"], "exclude": [TARGET_REF]}},
                 "rules": [
-                    {"type": "update"},
+                    {"type": "update", "parameters": {"update_allows_fetch_and_merge": False}},
                     {"type": "deletion"},
                     {"type": "non_fast_forward"},
                 ],
@@ -166,16 +180,23 @@ def _rulesets(owner, workflow):
     ]
 
 
-def desired_target_policy(repository, *, owner, broker=None, workflow=None):
+def desired_target_policy(repository, *, repository_id, owner, broker=None, workflow=None):
     """Build exact desired state or a deliberately unresolved review subject."""
     repository = repository_name(repository)
+    repository_id = positive(repository_id)
     owner = _owner(owner)
     broker = _broker(broker)
     workflow = _workflow(workflow)
+    if broker is not None and (broker["user_id"] == owner["user_id"] or
+            broker["login"].casefold() == owner["login"].casefold()):
+        raise Refused("broker principal must be distinct from owner bypass identity")
+    if workflow is not None and workflow["repository_id"] != repository_id:
+        raise Refused("workflow repository identity differs from target")
     materialized = _rulesets(owner, workflow) if broker is not None and workflow is not None else None
     return {
         "schema": "aide.github-target-policy.v1",
         "repository": repository,
+        "repository_id": repository_id,
         "api_version": VERSION,
         "target_ref": TARGET_REF,
         "merge_method": "merge",
@@ -189,6 +210,7 @@ def desired_target_policy(repository, *, owner, broker=None, workflow=None):
             "destination_enforced_when_qualified": [
                 "expected_head",
                 "strict_app_bound_required_check",
+                "exact_required_workflow",
                 "pull_request_only_dev_update",
                 "non_dev_update_restriction",
                 "deletion_restriction",
@@ -211,31 +233,38 @@ def desired_target_policy(repository, *, owner, broker=None, workflow=None):
 
 
 def validate_target_policy(policy):
-    fields(policy, "schema repository api_version target_ref merge_method repository_settings identity_requirements owner broker workflow rulesets guarantees")
+    fields(policy, "schema repository repository_id api_version target_ref merge_method repository_settings identity_requirements owner broker workflow rulesets guarantees")
     if (policy["schema"] != "aide.github-target-policy.v1" or
             policy["api_version"] != VERSION or policy["target_ref"] != TARGET_REF or
             policy["merge_method"] != "merge" or policy["repository_settings"] != REPOSITORY_SETTINGS or
             policy["identity_requirements"] != _identity_requirements()):
         raise Refused("target policy version, endpoint or repository settings refused")
     repository_name(policy["repository"])
+    repository_id = positive(policy["repository_id"])
     owner = _owner(policy["owner"])
     broker = _broker(policy["broker"])
     workflow = _workflow(policy["workflow"])
+    if broker is not None and (broker["user_id"] == owner["user_id"] or
+            broker["login"].casefold() == owner["login"].casefold()):
+        raise Refused("broker principal must be distinct from owner bypass identity")
+    if workflow is not None and workflow["repository_id"] != repository_id:
+        raise Refused("workflow repository identity differs from target")
     expected = _rulesets(owner, workflow) if broker is not None and workflow is not None else None
     if policy["rulesets"] != expected:
         raise Refused("target policy rulesets do not derive from exact identities")
     expected_guarantees = desired_target_policy(
-        policy["repository"], owner=owner, broker=broker, workflow=workflow
+        policy["repository"], repository_id=repository_id, owner=owner, broker=broker, workflow=workflow
     )["guarantees"]
     if policy["guarantees"] != expected_guarantees:
         raise Refused("target guarantee classification refused")
 
 
 def validate_target_observation(observation):
-    fields(observation, "schema repository observed_by visibility repository_settings principal workflow rulesets")
+    fields(observation, "schema repository repository_id observed_by visibility repository_settings principal workflow rulesets effective_rules classic_branch_protection")
     if observation["schema"] != "aide.github-target-observation.v1":
         raise Refused("target observation schema refused")
     repository_name(observation["repository"])
+    positive(observation["repository_id"])
     observed_by = observation["observed_by"]
     fields(observed_by, "login user_id type repository_permission")
     _login(observed_by["login"])
@@ -273,6 +302,27 @@ def validate_target_observation(observation):
         _bounded_json(record["body"])
         ids.add(rule_id)
         roles.add(role)
+    effective = observation["effective_rules"]
+    fields(effective, "status target_ref rules")
+    if effective["status"] != "observed" or effective["target_ref"] != TARGET_REF:
+        raise Refused("effective target rules observation refused")
+    if not isinstance(effective["rules"], list) or len(effective["rules"]) > 128:
+        raise Refused("effective target rules bounds refused")
+    for rule in effective["rules"]:
+        if not isinstance(rule, dict):
+            raise Refused("effective target rule body refused")
+        _bounded_json(rule)
+    protection = observation["classic_branch_protection"]
+    fields(protection, "body status target_ref")
+    if protection["target_ref"] != TARGET_REF or protection["status"] not in ("absent", "present"):
+        raise Refused("classic branch protection observation refused")
+    if protection["status"] == "absent":
+        if protection["body"] is not None:
+            raise Refused("absent classic protection cannot carry a body")
+    elif not isinstance(protection["body"], dict):
+        raise Refused("present classic protection body required")
+    else:
+        _bounded_json(protection["body"])
 
 
 def target_policy_review_plan(policy, observation):
@@ -282,6 +332,8 @@ def target_policy_review_plan(policy, observation):
     blockers = []
     if observation["repository"] != policy["repository"]:
         blockers.append("repository_identity_mismatch")
+    if observation["repository_id"] != policy["repository_id"]:
+        blockers.append("repository_id_mismatch")
     if observation["observed_by"] != {
             "login": policy["owner"]["login"], "user_id": policy["owner"]["user_id"],
             "type": "User", "repository_permission": "admin"}:
@@ -306,6 +358,13 @@ def target_policy_review_plan(policy, observation):
     for role in sorted(set(observed_by_role) & set(desired_by_role)):
         if observed_by_role[role]["body"] != desired_by_role[role]:
             blockers.append("ruleset_drift:" + role)
+    expected_effective = sorted(
+        (observed_by_role[role]["body"] for role in observed_by_role), key=canonical)
+    observed_effective = sorted(observation["effective_rules"]["rules"], key=canonical)
+    if observed_effective != expected_effective:
+        blockers.append("effective_rules_drift")
+    if observation["classic_branch_protection"]["status"] != "absent":
+        blockers.append("classic_branch_protection_requires_review")
 
     operations = []
     if not blockers:

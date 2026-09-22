@@ -3,24 +3,24 @@
 ## Exact Source
 
 - `core/runtime/integration_broker/github_target_policy.py` SHA-256:
-  `b3a08360180f96ec5f2608e478eee7fb22b4876c31b0f4340d1e276c251e2b5b`.
+  `75e61dbb5ce4f085b885da08616f9a19bf667ae1d4c50cfd834ecbf21fcca2d2`.
 - `.aide/scripts/tests/test_continuous_worker_github_observation.py` SHA-256:
-  `2d8306b731940b832df0f6ea5f7991e13e8acb6d6ea3ecf6acda397ea0f293ea`.
+  `3ff68a757329e91564b8e69adf7a3b47d13d208d91973eaaf4fd0dda18860236`.
 
 ## Exact Review Inputs
 
 - Desired policy SHA-256:
-  `cc7447efefa8de3fef797a289f8eb0a78514955e5449cb9d9348e6bab70ff157`.
+  `245a8d871301b255d9cbc0abfa3e7fde2e8ccfea0e7f0b88e01ebcbe149e8146`.
 - Current observation SHA-256:
-  `caa808af49186fbb7937e20d1fb4de2f575667c5142ff07c8af19c33aa8668af`.
+  `020650ae5932c672313248a4be57011b1e75046fed19e0c15e99cad095f9f75b`.
 - Blocked review plan SHA-256:
-  `e466b58b7db42a1938624f8d0683342ce9244d60352b148be6638cb6a25ca865`.
+  `a0aec7f8c4db5191167a662bbc2ca66a742c2ed498f80cfd2e1ea9a36c95773c`.
 - Policy digest:
-  `db1b1ad6e96d287386ad5d99c600b938c3e65dc12123a98954106d58bab68b7f`.
+  `0c3c1ce858c4e70e0070074f66db31873c7a1f4b9aa820066f760678ed35ba89`.
 - Observation digest:
-  `907688c5defff9615e8f8d5f0bac9d9e39e8d3bf6522ceb7f2813c51df134798`.
+  `a1261592a0d53ac3ded981a19e32b0b323f085da45cf041893c76078b767c86a`.
 - Plan digest:
-  `5c243ac74ff1deff1780debe97e5e0ec1dcfa42653d2898c37db84b54ef15d7d`.
+  `762da6e0de4359fcc1316529e9f715f075bac0e37f42e7a9ec2127f3b5469336`.
 
 ## Result
 
@@ -28,3 +28,9 @@ The implementation and local fixtures pass. The live plan is `blocked`, has
 zero operations, and is not authorized for apply. Exact broker principal and
 workflow/check identities are unresolved. No workflow, setting, credential,
 branch, pull request, merge, tag, release, or hosted race was changed or run.
+
+The first independent review is retained and requested changes. This repair
+checkpoint binds repository id `1192621212`, explicit effective-rule and
+classic-protection records, GitHub's exact `workflows` rule, a complete `update`
+rule body, and distinct owner/broker identities. A superseding independent
+review remains required before any effect packet.
