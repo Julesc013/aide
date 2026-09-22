@@ -8,7 +8,7 @@
       "path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "9b9bd22b6d9a6562e39c62f5ca81df9f96792033b46029509c7476ee21078455",
+      "sha256": "de06771fb26d1c38d1bd095f41eceafa090b0d37689a7be70a8688d64c25fbda",
       "size_bytes": 1200,
       "source": "release_dist",
       "validation_status": "pending"
@@ -56,8 +56,8 @@
       "path": ".aide/release/dist/install.md",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "781d161d024e6f9ab202e77e46d900f0f247c989a121402a96ac22664e57fd80",
-      "size_bytes": 1325,
+      "sha256": "cb2637ef75783b6e2c0e6a3638a60dea7b594d5327256dbb8ac4d393cf8b0744",
+      "size_bytes": 1341,
       "source": "release_dist",
       "validation_status": "pending"
     },
@@ -68,7 +68,7 @@
       "path": ".aide/release/dist/manifest.yaml",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "10f67210f5e8c95cdca2e906d02e5bc83ee9bf94f99bfa1fec907a49a5e1772c",
+      "sha256": "b27b8b16a2bf8dddf8ca6b89f1f4f2507435167896f05ae6c302bd4bb4c7bb6d",
       "size_bytes": 1404,
       "source": "release_dist",
       "validation_status": "pending"
@@ -80,7 +80,7 @@
       "path": ".aide/release/dist/release-provenance.json",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "b61128dc9553499e81b7adf65e3ec6ac057399b95f0aa42acc7cb77065f63dad",
+      "sha256": "1503f3018b64c0f56caa5c8e4566776e88b5f8d78a84e4f076e742697e461b33",
       "size_bytes": 1491,
       "source": "release_dist",
       "validation_status": "pending"
@@ -128,13 +128,13 @@
       "path": ".aide/release/dist/SHA256SUMS.txt",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "70769d5c363bb3c9ca93ced06a3183c270daf2a721d8a96c0d156ed90e32a4a5",
+      "sha256": "35dcbf96df81481a0a35d12dc9399d9fa85f67c5125d515da7125176fa13148d",
       "size_bytes": 690,
       "source": "release_dist",
       "validation_status": "pending"
     }
   ],
-  "bundle_id": "aide-lite-pack-v0-b3e5c7aa2a1732fa",
+  "bundle_id": "aide-lite-pack-v0-f6ae36e8074bab51",
   "no_publish": true,
   "schema_version": "aide.release-assets.v0"
 }

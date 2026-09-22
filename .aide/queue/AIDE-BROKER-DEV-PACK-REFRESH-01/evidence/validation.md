@@ -20,3 +20,8 @@
 - `doctor`: PASS.
 - Generated path allowlist check: 26 paths, zero outside authorized export and
   release roots.
+- Post-first-commit validation exposed two stale release-validation checksums
+  after provenance transitioned to `PASS_SOURCE_ANCESTOR`. A second bundle and
+  draft generation changed twenty release-only records. Draft validation,
+  canonical validate, and doctor then passed with no runtime or export payload
+  change.

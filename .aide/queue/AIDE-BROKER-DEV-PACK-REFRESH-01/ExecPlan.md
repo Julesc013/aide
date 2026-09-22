@@ -54,3 +54,7 @@ local artifacts as proof of a public GitHub Release.
 - The release draft remains preview-only and no-publish. No tag, upload,
   GitHub release, API call, active CI, target mutation, or branch mutation was
   performed by the artifact generators.
+- After the first artifact commit, pack provenance correctly became
+  `PASS_SOURCE_ANCESTOR`. Re-running the deterministic bundle and draft
+  generators rebound twenty derived release records to that committed state;
+  canonical validate and doctor pass again.
