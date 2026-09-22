@@ -1,8 +1,8 @@
 # Artifact Qualification Evidence
 
 - Date: 2026-09-22
-- Exported source: `566a2c3b8b7d73425061e91957f7481d41319291`
-- Bundle ID: `aide-lite-pack-v0-566a2c3b8b7d7342`
+- Exported source: `7863891e581db790dce3d5e1a24ac40b3c9eb391`
+- Bundle ID: `aide-lite-pack-v0-7863891e581db790`
 - Source repository identity: `julesc013/aide`
 - Source branch identity: `not-recorded-in-pack`
 - Recorded source dirty state: `false`
@@ -10,10 +10,10 @@
 
 ## Exact Assets
 
-- ZIP: 976479 bytes
-- ZIP SHA-256: `5210c9fb5d1113799f54318e1939752920f2bde697be843c0b1558611ccef497`
-- tar.gz: 648662 bytes
-- tar.gz SHA-256: `dcc10541365cdcaecab4241b425505cd55e7c86ee94977a8fc6a3b1a0845cda5`
+- ZIP: 976881 bytes
+- ZIP SHA-256: `622224960f882e1055995c2a9ae6c408f1ba3f8ec242bfe30a5353be781040f7`
+- tar.gz: 649071 bytes
+- tar.gz SHA-256: `9c16ad304636badf26f9ac1029e833e548181fa411e119574e3cd71d683a4ccd`
 - Asset-index records: 9
 - Release checksum records: 7
 - Release validation: PASS
@@ -23,9 +23,9 @@
 
 - Q31 export-pack governance: 6 passed.
 - Export/import lifecycle: 25 passed.
-- Q47 release bundle: 16 passed.
+- Q47 release bundle: 17 passed.
 - Q48 GitHub release draft: 10 passed.
-- Total adjacent tests: 57 passed, 0 failed, 0 skipped.
+- Total adjacent tests: 58 passed, 0 failed, 0 skipped.
 - Canonical `validate`: PASS.
 - Canonical `doctor`: PASS.
 - Release bundle and release validation: PASS.
@@ -47,3 +47,18 @@
 - No asset was uploaded.
 - No provider/model call or GitHub API mutation occurred.
 - Independent exact-commit review is required before `dev` integration.
+
+## Independent Review Repair
+
+- Exact candidate `2819a63e` received `REQUEST_CHANGES` for three material
+  issues: JSON preview identity could mask stale or malformed Markdown state,
+  source ancestry honored Git replacement objects, and the committed candidate
+  had not converged both release representations through a complete post-commit
+  generator cycle.
+- Commit `6cbd104c` requires the Markdown and JSON preview source identities to
+  parse and agree; malformed or mismatched JSON refuses closed.
+- Commit `b4d949c1` disables replacement objects for release ancestry checks and
+  adds a real `git replace` adversarial regression.
+- The remaining projection finding is closed only after the generated
+  checkpoint is committed, a complete post-commit bundle/validate/draft cycle
+  is committed, and another complete cycle changes zero bytes.

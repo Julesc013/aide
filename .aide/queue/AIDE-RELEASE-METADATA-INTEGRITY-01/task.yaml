@@ -24,6 +24,7 @@ scope:
     - .aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/**
     - .aide/queue/index.yaml
     - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
     - .aide/scripts/tests/test_q47_release_bundle.py
     - .aide/scripts/tests/test_q48_github_release_draft.py
     - .aide/changelog/**

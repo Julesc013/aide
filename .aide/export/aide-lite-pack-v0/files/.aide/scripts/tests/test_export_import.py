@@ -243,6 +243,13 @@ class ExportImportTests(unittest.TestCase):
         pack_root = self.build_pack(source_root)
         subprocess.run(["git", "-C", str(source_root), "add", "-A"], check=True)
         subprocess.run(["git", "-C", str(source_root), "commit", "--quiet", "-m", "artifacts"], check=True)
+        artifact_commit = subprocess.run(
+            ["git", "-C", str(source_root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
         status, problems = aide_lite.validate_pack_provenance(pack_root, source_root)
         self.assertEqual(status, "PASS_SOURCE_ANCESTOR", problems)
         self.assertFalse(problems)
@@ -251,6 +258,25 @@ class ExportImportTests(unittest.TestCase):
         portable_script.write_text(portable_script.read_text(encoding="utf-8") + "\n# changed input\n", encoding="utf-8")
         subprocess.run(["git", "-C", str(source_root), "add", ".aide/scripts/aide_lite.py"], check=True)
         subprocess.run(["git", "-C", str(source_root), "commit", "--quiet", "-m", "input changed"], check=True)
+        input_commit = subprocess.run(
+            ["git", "-C", str(source_root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+        status, problems = aide_lite.validate_pack_provenance(pack_root, source_root)
+        self.assertEqual(status, "FAIL")
+        self.assertTrue(any("does not match current HEAD" in problem for problem in problems))
+
+        subprocess.run(["git", "-C", str(source_root), "replace", input_commit, artifact_commit], check=True)
+        self.addCleanup(
+            subprocess.run,
+            ["git", "-C", str(source_root), "replace", "-d", input_commit],
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
         status, problems = aide_lite.validate_pack_provenance(pack_root, source_root)
         self.assertEqual(status, "FAIL")
         self.assertTrue(any("does not match current HEAD" in problem for problem in problems))

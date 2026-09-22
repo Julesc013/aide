@@ -334,6 +334,22 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         self.assertIn("publish_candidate: false", copied)
         self.assertEqual(bundle["validation"]["result"], "FAIL")
 
+    def test_preview_markdown_and_json_must_bind_the_same_source(self) -> None:
+        root = self.make_repo()
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_JSON_PATH, aide_lite.stable_json_text({"source_head": "different-commit"}))
+        bundle = aide_lite.build_release_bundle_outputs(root)
+        copied = (root / aide_lite.RELEASE_CHANGELOG_PREVIEW_PATH).read_text(encoding="utf-8")
+        self.assertIn("status: blocked_stale_source_preview", copied)
+        self.assertIn("different source heads", copied)
+        self.assertEqual(bundle["validation"]["result"], "FAIL")
+
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_JSON_PATH, "{not-json\n")
+        bundle = aide_lite.build_release_bundle_outputs(root)
+        copied = (root / aide_lite.RELEASE_CHANGELOG_PREVIEW_PATH).read_text(encoding="utf-8")
+        self.assertIn("status: blocked_stale_source_preview", copied)
+        self.assertIn("JSON is malformed", copied)
+        self.assertEqual(bundle["validation"]["result"], "FAIL")
+
     def test_preview_parent_is_bound_only_across_generated_projection(self) -> None:
         root = self.make_repo()
         subprocess.run(["git", "init", "--quiet", str(root)], check=True)

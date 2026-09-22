@@ -60,8 +60,12 @@ Implemented:
   closure without self-referential dependency cycles;
 - stale or missing changelog/release-note previews become explicit blocked
   placeholders and are not publication candidates;
-- 57 adjacent export, import, Q47, and Q48 tests pass, including tamper,
+- 58 adjacent export, import, Q47, and Q48 tests pass, including tamper,
   cross-checkout, ancestry, and build/validate byte-convergence regressions;
+- preview source binding now requires matching Markdown and JSON identities and
+  refuses malformed JSON, while ancestry checks ignore Git replacement objects;
+- the independent review of `2819a63e` remains `REQUEST_CHANGES`; its final
+  post-commit full-cycle projection finding is being closed before rereview;
 - canonical validation and doctor pass;
 - final ZIP and tar.gz bytes pass fresh and brownfield consumer canaries,
   idempotent reruns, target-local doctor, and authored-content preservation;

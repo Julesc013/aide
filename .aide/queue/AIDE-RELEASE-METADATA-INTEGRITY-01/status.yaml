@@ -12,9 +12,12 @@ notes:
   - Independent review found stale local asset identities, checkout-local provenance, and stale required preview assets.
   - Archive bytes and extracted consumer behavior passed and must remain unchanged unless regenerated from changed portable source.
   - The repaired generator and adjacent export, import, release, and draft suites pass 55 tests.
-  - The final exact source passes 57 adjacent tests, canonical validation, and two delivered-byte consumer canaries.
+  - Independent review of 2819a63e requested three changes: bind both preview representations, ignore Git replacement objects for ancestry, and close the committed full-cycle projection.
+  - Source commits 6cbd104c and b4d949c1 close the preview and replacement-object findings with adversarial regressions.
+  - The final exact source passes 58 adjacent tests, canonical validation, and two delivered-byte consumer canaries.
   - All 44 generated release files remain byte-identical across bundle, validate, draft, and draft-validate reruns.
-  - Exact ZIP SHA-256 is 5210c9fb5d1113799f54318e1939752920f2bde697be843c0b1558611ccef497.
-  - Exact tar.gz SHA-256 is dcc10541365cdcaecab4241b425505cd55e7c86ee94977a8fc6a3b1a0845cda5.
+  - Exact ZIP SHA-256 is 622224960f882e1055995c2a9ae6c408f1ba3f8ec242bfe30a5353be781040f7.
+  - Exact tar.gz SHA-256 is 9c16ad304636badf26f9ac1029e833e548181fa411e119574e3cd71d683a4ccd.
+  - The generated checkpoint and its post-commit full-cycle projection must be committed before exact rereview.
   - Independent exact-commit rereview and dev integration remain pending.
   - No publication effect is authorized.

@@ -81,7 +81,7 @@
 - Blockers: none for local implementation. Publication and main promotion remain separate exact gates.
 - Verification Intent: asset hash/size closure, cross-checkout determinism, preview-source binding, Q47/Q48 suites, consumer tests, canonical validation, and independent review.
 - Exit Criteria: exact repaired candidate reaches dev with internally consistent metadata and no publication effects.
-- Notes: 57 adjacent tests, canonical validation, delivered-byte canaries, and 44-file repeatability pass on the exact candidate.
+- Notes: 58 adjacent tests, canonical validation, delivered-byte canaries, and 44-file repeatability pass. Review repairs bind both preview representations and ignore Git replacement objects; the full post-commit projection and exact rereview remain.
 
 ### Plan ID: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 

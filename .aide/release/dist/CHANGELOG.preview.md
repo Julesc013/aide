@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: origin/main..HEAD
-source_head: edcd591a268ba8cd332ecad80a513ba3d632c3ef
+source_head: b4d949c1ac1f7481a56c763bdb41582291d477c9
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,18 +11,17 @@ release_publishing: false
 
 ## Summary
 
-- Added: 8
-- Changed: 5
-- Fixed: 19
-- Security: 6
-- Docs: 3
-- Tests: 7
+- Added: 7
+- Changed: 6
+- Fixed: 16
+- Security: 7
+- Docs: 5
+- Tests: 9
 - Internal: 15
 - Risks: 1
 
 ## Added
 
-- reusable regressions and explicit candidate boundaries. (e73ac0b269df fix(distribution): harden portable fixture paths and preservation)
 - ownership-aware and interruption-visible AIDE Lite pack updates. (9161d9512738 feat(import): add ownership-aware pack updates)
 - ownership-aware and interruption-aware updates from delivered AIDE Lite packs. (09158bb2a8e1 chore(dev): integrate delivered pack safe update)
 - integrate the protected broker foundation and bounded Windows host support into the dev candidate. (091382e81f08 feat(broker): integrate published runtime line)
@@ -38,15 +37,10 @@ release_publishing: false
 - qualified distribution fixture portability hardening on the full Windows checkout. (36fa64e011b5 test(distribution): qualify portability candidate)
 - Begin commit-bound portable artifact refresh after portability integration. (c730eac44202 chore(distribution): start clean artifact refresh)
 - Refresh portable artifacts for the integrated Windows path-hardening source. (da1051793d4c build(distribution): refresh portable artifacts)
+- exact no-publish candidate assets and draft evidence regenerated. (8369ac540e4a build(release): qualify deterministic candidate)
 
 ## Fixed
 
-- fixture path portability and preservation defects. (e73ac0b269df fix(distribution): harden portable fixture paths and preservation)
-- extracted AIDE Lite archives can validate and safely import without the source checkout. (aa3c8d14b55e fix(release): make extracted packs independently importable)
-- generated pack provenance now distinguishes clean source from generator-created output changes. (5400f53bc71b fix(export): capture provenance before output generation)
-- release provenance now describes source state rather than generator-created output churn. (ffd24f67ba15 fix(release): bind provenance before bundle mutation)
-- release provenance remains truthful when a clean export pack is an uncommitted generated output. (780312f9ad08 fix(release): inherit validated pack provenance)
-- downloadable AIDE Lite candidates now have closed identities and source-independent safe import. (80746a3ca547 build(release): checkpoint qualified portable candidate)
 - committed release artifacts retain valid clean-source provenance without accepting stale portable inputs. (4f80611776b7 fix(export): validate artifact-only descendant commits)
 - the qualified portable candidate now includes post-build provenance validation. (db8cd16279e0 build(release): refresh qualified portable artifacts)
 - dev now carries source-independent portable pack import and closed archive identities. (b35394ae939c chore(dev): integrate delivered pack import closure)
@@ -60,6 +54,9 @@ release_publishing: false
 - release metadata now binds final eligible bytes and the exported source identity. (7bb41079e11f fix(release): bind metadata to final artifacts)
 - release preview binding now matches the generator's complete output set. (bb308e64f4f2 fix(release): accept complete preview projection)
 - release bundle and validation commands now converge on one deterministic metadata state. (edcd591a268b fix(release): converge bundle validation bytes)
+- release metadata is internally exact, checkout-independent, source-bound, and byte-stable. (8369ac540e4a build(release): qualify deterministic candidate)
+- committed release draft metadata now reflects post-checkpoint pack provenance exactly. (2819a63e794e build(release): close post-commit provenance)
+- preview publication gating now binds both generated representations and fails closed on malformed metadata. (6cbd104cb048 fix(release): bind both preview representations)
 
 ## Security
 
@@ -69,12 +66,15 @@ release_publishing: false
 - Integrate reviewed Windows short-name alias refusal into the dev line. (cc85be9c472a docs(distribution): record portability integration)
 - Preserve checksum, forbidden-path, and no-publish validation on regenerated archives. (da1051793d4c build(distribution): refresh portable artifacts)
 - Record release metadata integrity defects before artifact integration. (4c0da8974daa audit(release): record artifact metadata findings)
+- portable pack provenance no longer trusts Git replacement refs. (b4d949c1ac1f fix(export): ignore Git replacement objects)
 
 ## Docs
 
 - retain exact implementation scope, effect contracts, and qualification boundaries. (091382e81f08 feat(broker): integrate published runtime line)
 - publish exact effect contracts and qualification limits. (bed5a57aed4f feat(broker): land runtime integration on dev)
 - refresh source-bound local changelog and release-note previews. (671faa232216 docs(release): bind previews to repair source)
+- bind release summaries to the converged generator source. (566a2c3b8b7d docs(release): refresh converged source previews)
+- bind release previews to the hardened metadata generator. (e2ec8925adf7 docs(release): bind hardened preview source)
 
 ## Tests
 
@@ -85,6 +85,8 @@ release_publishing: false
 - added stale-preview, file-set, hash, size, and cross-checkout regressions. (7bb41079e11f fix(release): bind metadata to final artifacts)
 - added positive projection and unrelated-change refusal coverage. (bb308e64f4f2 fix(release): accept complete preview projection)
 - require validation to preserve all generated release bytes. (edcd591a268b fix(release): converge bundle validation bytes)
+- added JSON/Markdown mismatch and malformed JSON cases. (6cbd104cb048 fix(release): bind both preview representations)
+- cover source-change concealment through git replace. (b4d949c1ac1f fix(export): ignore Git replacement objects)
 
 ## Internal
 
