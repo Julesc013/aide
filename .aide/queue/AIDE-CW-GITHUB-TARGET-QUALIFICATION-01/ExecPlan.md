@@ -101,7 +101,7 @@ assumed target configuration.
   branches, owner-only non-dev bypass, and explicit unsupported guarantees.
 - [x] Add adversarial fixtures for hidden bypass, wrong principals, stale
   workflow/check identity, extra rules, unsafe merge settings and digest drift.
-- [ ] Record desired/current/plan bytes and publish the source checkpoint for
+- [x] Record desired/current/plan bytes and publish the source checkpoint for
   independent review without installing settings or workflows.
 
 The slice is independent of hosted mutation and isolated-host closeout. It
@@ -111,3 +111,9 @@ The current packet records two blockers: `broker_principal_unresolved` and
 `workflow_check_identity_unresolved`. Its operation list is empty. Fixture-only
 materialization demonstrates the eventual exact operation shape after identity
 resolution; it is not an apply plan for the live repository.
+
+The exact source checkpoint is published at
+`task/aide-cw-github-target-qualification-01@bb433bb74f645e0904ca34bf3af38516ae05a7ad`
+with tree `a871c65880161f147f35cf8df7269bba9af3a867`. The next action remains
+identity resolution and independent review; publication did not authorize or
+perform any target mutation.

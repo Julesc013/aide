@@ -12,3 +12,6 @@ GitHub observation test with policy-plan fixtures, adds desired/current/plan and
 refreshed-observation evidence, and updates this task plus existing broker/root
 documentation. It does not add `.github/workflows/**`, a sender, credential
 source, settings apply, branch mutation or hosted effect.
+
+The publication receipt adds only exact branch, commit, tree, remote
+observation, and retained-gate facts for the source checkpoint.

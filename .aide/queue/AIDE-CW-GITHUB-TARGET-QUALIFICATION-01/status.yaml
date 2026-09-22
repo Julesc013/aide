@@ -1,13 +1,13 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
 status: needs_review
-planning_state: policy_source_qualified_awaiting_exact_identity_and_review
+planning_state: policy_source_published_awaiting_exact_identity_and_review
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
 configuration_review: pending
 settings_mutated: false
 hosted_acceptance: not_run
-current_slice: target_policy_contract_qualified
+current_slice: target_policy_contract_published
 next_slice: resolve_principal_and_workflow_identities_then_independent_review
 source_tests: 44_passed
 affected_regression_tests: 96_passed
@@ -20,4 +20,6 @@ notes:
   - The observed owner/admin account is not an admitted restricted broker principal; hosted effects fail closed.
   - The active slice is local policy comparison and plan construction only; no workflow, settings, credential or hosted effect is authorized.
   - The exact live review plan is blocked with zero operations on unresolved broker-principal and workflow/check identities.
-  - All 96 affected tests pass; source publication and independent review remain next.
+  - All 96 affected tests pass; independent review remains next.
+  - The exact source checkpoint is published at bb433bb74f645e0904ca34bf3af38516ae05a7ad with tree a871c65880161f147f35cf8df7269bba9af3a867.
+  - Post-commit canonical validation reports only stale export-pack provenance against b3e5c7aa; pack refresh remains an integration/release concern, not a claim of delivered behavior.

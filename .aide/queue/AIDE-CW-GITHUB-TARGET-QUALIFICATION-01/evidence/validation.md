@@ -69,3 +69,11 @@ these source tests neither reran nor discharged it.
   unsafe identity fields, unbounded JSON, and caller-replaced ruleset bodies.
 - NOT RUN: workflow installation, principal creation, settings apply, hosted
   merge/race effects, protected-host binding, main promotion or release.
+- PASS: published
+  `task/aide-cw-github-target-qualification-01@bb433bb74f645e0904ca34bf3af38516ae05a7ad`
+  and observed the same remote head with `git ls-remote`.
+- WARN: post-commit `aide_lite.py validate` reports only the two expected
+  export-pack provenance failures: the tracked pack still names source commit
+  `b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb`, not this unintegrated task
+  branch. The pre-commit source candidate passed canonical validation; a later
+  reviewed integration/pack refresh must qualify delivered bytes.
