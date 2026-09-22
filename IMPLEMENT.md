@@ -75,7 +75,8 @@ was rejected before provenance could reach durable observation or bridge input.
 - 21 durable PR/staged-broker tests passed.
 - 12 registered-provider-bridge tests passed.
 - 19 bounded GitHub HTTP tests passed.
-- 37 integration-broker tests passed with one retained Windows symlink skip.
+- 37 integration-broker tests executed: 36 passed and one retained Windows
+  symlink test was skipped.
 - `git diff --check` passed.
 
 ### Remaining Issues
@@ -84,6 +85,19 @@ was rejected before provenance could reach durable observation or bridge input.
   hosted adversarial races, and protected-host qualification remain open.
 - Canonical validation still reports stale export-pack provenance at
   `b3e5c7aa`; this unintegrated task branch does not refresh release artifacts.
+
+### Effective-Rules Rereview Repair
+
+Independent rereview of `963dcc7d` returned `REQUEST_CHANGES` because the
+branch-rules endpoint was represented as complete ruleset bodies and included
+the non-dev ruleset that excludes `refs/heads/dev`. Effective observations now
+use individual endpoint-shaped rules bound to source type, source repository,
+and ruleset id. Expected rules come only from observed rulesets whose exact
+conditions apply to dev. Missing, duplicate, extra, wrong-source,
+wrong-ruleset, excluded-ruleset, and parameter-drift cases refuse closed. The
+focused suite passes 50 tests. All five affected suites execute 139 cases: 138
+pass, zero fail, and one privilege-dependent Windows symlink case is skipped.
+Exact rereview remains pending.
 
 ## Work Item: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
 

@@ -3583,6 +3583,13 @@ app identities do not exist. The source and 96 affected tests can proceed to
 independent review; workflow installation, settings apply, and hosted races
 remain separate exact gates.
 
+Independent rereview of later exact candidate `963dcc7d` retained the workflow
+`path@ref` repair but rejected its effective-rule representation. The active
+repair uses endpoint-shaped individual rules, includes only rulesets applicable
+to `refs/heads/dev`, and passes 50 focused cases. The complete affected matrix
+executes 139 cases: 138 pass and one privilege-dependent Windows symlink case
+is skipped. Obtain a superseding exact review before any dev integration.
+
 ## Broker runtime dev integration
 
 `AIDE-CW-BROKER-DEV-INTEGRATION-01` has landed. The exact published source

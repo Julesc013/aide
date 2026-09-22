@@ -73,6 +73,75 @@ def _bounded_json(value):
         raise Refused("target ruleset body byte bound refused")
 
 
+def _ruleset_rule(value):
+    if not isinstance(value, dict) or set(value) not in ({"type"}, {"type", "parameters"}):
+        raise Refused("target ruleset rule shape refused")
+    rule_type = text_value(value["type"], 100)
+    if not re.fullmatch(r"[a-z][a-z0-9_]*", rule_type):
+        raise Refused("target ruleset rule type refused")
+    result = {"type": rule_type}
+    if "parameters" in value:
+        if not isinstance(value["parameters"], dict):
+            raise Refused("target ruleset rule parameters refused")
+        _bounded_json(value["parameters"])
+        result["parameters"] = value["parameters"]
+    return result
+
+
+def _ruleset_applies_to_target(body):
+    if not isinstance(body, dict):
+        raise Refused("target ruleset body refused")
+    conditions = body.get("conditions")
+    if not isinstance(conditions, dict) or set(conditions) != {"ref_name"}:
+        raise Refused("target ruleset ref conditions refused")
+    ref_name = conditions["ref_name"]
+    if not isinstance(ref_name, dict) or set(ref_name) != {"include", "exclude"}:
+        raise Refused("target ruleset ref conditions refused")
+    include, exclude = ref_name["include"], ref_name["exclude"]
+    if (not isinstance(include, list) or not isinstance(exclude, list) or
+            len(include) > 16 or len(exclude) > 16 or
+            any(text_value(value, 240) != value for value in include + exclude)):
+        raise Refused("target ruleset ref condition values refused")
+    return TARGET_REF not in exclude and (TARGET_REF in include or "~ALL" in include)
+
+
+def _effective_rule(value):
+    if not isinstance(value, dict) or set(value) not in (
+            {"type", "ruleset_source_type", "ruleset_source", "ruleset_id"},
+            {"type", "ruleset_source_type", "ruleset_source", "ruleset_id", "parameters"}):
+        raise Refused("effective target rule shape refused")
+    rule = _ruleset_rule({key: value[key] for key in ("type", "parameters") if key in value})
+    source_type = text_value(value["ruleset_source_type"], 64)
+    source = text_value(value["ruleset_source"], 240)
+    result = {
+        "type": rule["type"],
+        "ruleset_source_type": source_type,
+        "ruleset_source": source,
+        "ruleset_id": positive(value["ruleset_id"]),
+    }
+    if "parameters" in rule:
+        result["parameters"] = rule["parameters"]
+    return result
+
+
+def _expected_effective_rules(records):
+    expected = []
+    for record in records:
+        if not _ruleset_applies_to_target(record["body"]):
+            continue
+        rules = record["body"].get("rules")
+        if not isinstance(rules, list) or len(rules) > 128:
+            raise Refused("target ruleset rule collection refused")
+        for rule in rules:
+            expected.append({
+                **_ruleset_rule(rule),
+                "ruleset_source_type": record["source_type"],
+                "ruleset_source": record["source"],
+                "ruleset_id": record["id"],
+            })
+    return expected
+
+
 def _owner(value):
     fields(value, "login user_id")
     return {"login": _login(value["login"]), "user_id": positive(value["user_id"])}
@@ -302,9 +371,7 @@ def validate_target_observation(observation):
     if not isinstance(effective["rules"], list) or len(effective["rules"]) > 128:
         raise Refused("effective target rules bounds refused")
     for rule in effective["rules"]:
-        if not isinstance(rule, dict):
-            raise Refused("effective target rule body refused")
-        _bounded_json(rule)
+        _effective_rule(rule)
     protection = observation["classic_branch_protection"]
     fields(protection, "body status target_ref")
     if protection["target_ref"] != TARGET_REF or protection["status"] not in ("absent", "present"):
@@ -351,9 +418,9 @@ def target_policy_review_plan(policy, observation):
     for role in sorted(set(observed_by_role) & set(desired_by_role)):
         if observed_by_role[role]["body"] != desired_by_role[role]:
             blockers.append("ruleset_drift:" + role)
-    expected_effective = sorted(
-        (observed_by_role[role]["body"] for role in observed_by_role), key=canonical)
-    observed_effective = sorted(observation["effective_rules"]["rules"], key=canonical)
+    expected_effective = sorted(_expected_effective_rules(list(observed_by_role.values())), key=canonical)
+    observed_effective = sorted((_effective_rule(rule) for rule in observation["effective_rules"]["rules"]),
+                                key=canonical)
     if observed_effective != expected_effective:
         blockers.append("effective_rules_drift")
     if observation["classic_branch_protection"]["status"] != "absent":

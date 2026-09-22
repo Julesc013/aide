@@ -79,6 +79,25 @@ def target_policy(*, resolved=True):
         broker=broker() if resolved else None, workflow=workflow() if resolved else None)
 
 
+def effective_rules(records):
+    dev = next(record for record in records if record["role"] == "dev_integration")
+    source = {"ruleset_source_type": dev["source_type"], "ruleset_source": dev["source"],
+              "ruleset_id": dev["id"]}
+    return [
+        {"type": "deletion", **source},
+        {"type": "non_fast_forward", **source},
+        {"type": "pull_request", **source, "parameters": {
+            "allowed_merge_methods": ["merge"], "dismiss_stale_reviews_on_push": True,
+            "require_code_owner_review": False, "require_last_push_approval": False,
+            "required_approving_review_count": 0, "required_review_thread_resolution": True}},
+        {"type": "required_status_checks", **source, "parameters": {
+            "do_not_enforce_on_create": False,
+            "required_status_checks": [{"context": "AIDE Continuous Worker / required",
+                                        "integration_id": 99}],
+            "strict_required_status_checks_policy": True}},
+    ]
+
+
 def target_observation(policy, *, current=False):
     records = []
     if current and policy["rulesets"] is not None:
@@ -99,7 +118,7 @@ def target_observation(policy, *, current=False):
         "workflow": copy.deepcopy(policy["workflow"]),
         "rulesets": records,
         "effective_rules": {"status": "observed", "target_ref": "refs/heads/dev",
-                            "rules": copy.deepcopy([item["body"] for item in records])},
+                            "rules": effective_rules(records) if records else []},
         "classic_branch_protection": {"status": "absent", "target_ref": "refs/heads/dev",
                                       "body": None},
     }
@@ -743,6 +762,52 @@ class GitHubTargetPolicyTests(unittest.TestCase):
         self.assertFalse(result["apply_authorized"])
         self.assertEqual(len(result["required_reviews"]), 4)
 
+    def test_effective_rules_are_endpoint_shaped_and_exclude_non_dev_ruleset(self):
+        policy = target_policy()
+        observation = target_observation(policy, current=True)
+        rules = observation["effective_rules"]["rules"]
+        self.assertEqual(len(rules), 4)
+        self.assertTrue(all("ruleset_id" in rule for rule in rules))
+        self.assertTrue(all("body" not in rule and "rules" not in rule for rule in rules))
+        non_dev = next(record for record in observation["rulesets"]
+                       if record["role"] == "broker_non_dev_confinement")
+        self.assertTrue(all(rule["ruleset_id"] != non_dev["id"] for rule in rules))
+
+    def test_effective_rule_adversaries_fail_closed(self):
+        policy = target_policy()
+        scenarios = (
+            ("excluded_ruleset", lambda value: value["effective_rules"]["rules"].append({
+                "type": "update", "ruleset_source_type": "Repository", "ruleset_source": REPO,
+                "ruleset_id": value["rulesets"][1]["id"],
+                "parameters": {"update_allows_fetch_and_merge": False}})),
+            ("wrong_rule_identity", lambda value: value["effective_rules"]["rules"][0].update(
+                type="update", parameters={"update_allows_fetch_and_merge": False})),
+            ("wrong_source", lambda value: value["effective_rules"]["rules"][0].update(
+                ruleset_source="foreign/repo")),
+            ("wrong_ruleset", lambda value: value["effective_rules"]["rules"][0].update(ruleset_id=999)),
+            ("missing_rule", lambda value: value["effective_rules"]["rules"].pop()),
+            ("extra_rule", lambda value: value["effective_rules"]["rules"].append(
+                copy.deepcopy(value["effective_rules"]["rules"][0]))),
+            ("parameter_drift", lambda value: value["effective_rules"]["rules"][-1]["parameters"].update(
+                strict_required_status_checks_policy=False)),
+        )
+        for name, mutate in scenarios:
+            observation = target_observation(policy, current=True)
+            mutate(observation)
+            result = target_policy_review_plan(policy, observation)
+            with self.subTest(name=name):
+                self.assertEqual(result["status"], "blocked")
+                self.assertIn("effective_rules_drift", result["blockers"])
+                self.assertEqual(result["operations"], [])
+        for mutation in (
+                lambda value: value["effective_rules"]["rules"][0].pop("ruleset_id"),
+                lambda value: value["effective_rules"]["rules"][0].update(extra=True),
+                lambda value: value["effective_rules"]["rules"][0].update(parameters=[])):
+            observation = target_observation(policy, current=True)
+            mutation(observation)
+            with self.subTest(mutation=mutation), self.assertRaises(Refused):
+                target_policy_review_plan(policy, observation)
+
     def test_incomplete_visibility_and_wrong_observer_fail_closed(self):
         policy = target_policy()
         for mutation, blocker in (
@@ -837,7 +902,9 @@ class GitHubTargetPolicyTests(unittest.TestCase):
         policy = target_policy()
         for mutation, blocker in (
                 (lambda value: value.update(repository_id=881), "repository_id_mismatch"),
-                (lambda value: value["effective_rules"]["rules"].append({"type": "deletion"}),
+                (lambda value: value["effective_rules"]["rules"].append({
+                    "type": "deletion", "ruleset_source_type": "Repository",
+                    "ruleset_source": REPO, "ruleset_id": 400}),
                  "effective_rules_drift"),
                 (lambda value: value["classic_branch_protection"].update(
                     status="present", body={"enforce_admins": {"enabled": True}}),

@@ -158,6 +158,11 @@ does not authorize or perform target configuration.
       registered-bridge regression paths identified by independent review.
 - [x] Pass 136 affected local tests with one retained disposable-Windows
       symlink skip; retain the unintegrated export-pack provenance failure.
+- [x] Preserve the exact `963dcc7d` rereview and its endpoint-shape finding.
+- [x] Compare endpoint-shaped individual rules only from observed rulesets that
+      apply to `refs/heads/dev`, with malformed and drifted inputs fail-closed.
+- [x] Run all five affected suites: 139 executed, 138 passed, one retained
+      privilege-dependent Windows symlink skip.
 - [ ] Obtain a superseding independent review of the exact repair commit.
 
 The workflow selector remains a local precondition and monitored provenance,

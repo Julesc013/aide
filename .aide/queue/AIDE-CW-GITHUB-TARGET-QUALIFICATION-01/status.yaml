@@ -1,16 +1,16 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
 status: needs_review
-planning_state: documented_workflow_path_ref_binding_repaired_pending_rereview
+planning_state: effective_rules_endpoint_repair_ready_for_rereview
 result: PASS_WITH_WARNINGS
-updated_at: 2026-09-22
+updated_at: 2026-09-23
 configuration_review: third_request_changes_repaired_pending_rereview
 settings_mutated: false
 hosted_acceptance: not_run
-current_slice: documented_workflow_path_ref_binding_repair
-next_slice: independent_rereview_then_resolve_principal_and_workflow_identities
-source_tests: 48_passed
-affected_regression_tests: 136_passed_1_skipped
+current_slice: effective_rules_endpoint_shape_repair
+next_slice: independent_exact_rereview_then_dev_integration
+source_tests: 50_passed
+affected_regression_tests: 138_passed_1_skipped
 notes:
   - The synchronous request always supplies the admitted candidate as GitHub's expected head SHA.
   - Base, actor, policy, ruleset and principal predicates remain unqualified at the destination effect boundary.
@@ -20,7 +20,7 @@ notes:
   - The observed owner/admin account is not an admitted restricted broker principal; hosted effects fail closed.
   - The active slice is local policy comparison and plan construction only; no workflow, settings, credential or hosted effect is authorized.
   - The exact live review plan is blocked with zero operations on unresolved broker-principal and workflow/check identities.
-  - All 135 affected tests pass with one retained Windows symlink skip; independent rereview remains next.
+  - The earlier affected run recorded 135 passes and one retained Windows symlink skip.
   - The exact source checkpoint is published at bb433bb74f645e0904ca34bf3af38516ae05a7ad with tree a871c65880161f147f35cf8df7269bba9af3a867.
   - Post-commit canonical validation reports only stale export-pack provenance against b3e5c7aa; pack refresh remains an integration/release concern, not a claim of delivered behavior.
   - Independent review at 9bba1cecaec835b5299cf02718059a94ef4c08cb requested four changes; its evidence is preserved.
@@ -31,3 +31,7 @@ notes:
   - Wrong path, repository, ref, missing ref, and malformed selector forms refuse before any durable observation, intent, bridge dispatch, or hosted effect.
   - The independent-review scope finding is repaired by explicitly admitting the PR-observation and registered-bridge regression tests that carry the selector through durable observation and bridge inputs.
   - Final local validation passed 136 tests with one retained Windows symlink skip; canonical validation remains blocked only by the inherited stale export-pack provenance at b3e5c7aa.
+  - Independent rereview of 963dcc7d returned REQUEST_CHANGES because effective branch rules were modeled as complete ruleset bodies and included a ruleset that excludes dev.
+  - Effective rules now use endpoint-shaped individual rules bound to applicable observed ruleset identities; focused coverage passes 50 cases.
+  - Test prose now distinguishes executed, passed, and skipped counts.
+  - The complete repaired matrix executed 139 cases: 138 passed, zero failed, and one privilege-dependent Windows symlink case skipped.
