@@ -45,4 +45,3 @@ prohibitions:
   fabricated_historical_pass: true
   self_approval: true
   permission_widening: true
-

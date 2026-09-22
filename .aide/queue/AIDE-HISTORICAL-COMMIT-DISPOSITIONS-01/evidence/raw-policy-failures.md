@@ -51,4 +51,3 @@ input to the proposed decisions, not passing validation evidence.
 - Any accepted disposition must preserve these exact failures in range output.
 - The disposition mechanism cannot establish product, runtime, or release
   qualification; those claims require their own evidence.
-
