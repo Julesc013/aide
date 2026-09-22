@@ -39248,6 +39248,31 @@ def pack_manifest_list(pack_root: Path, field: str) -> list[str]:
     return values
 
 
+def pack_source_ancestor_has_unchanged_inputs(repo_root: Path, source_commit: str, current_commit: str) -> bool:
+    ancestor_code, _ancestor_output, _ancestor_error = run_git_status_code(
+        repo_root,
+        ["merge-base", "--is-ancestor", source_commit, current_commit],
+    )
+    if ancestor_code != 0:
+        return False
+    diff_code, diff_output, _diff_error = run_git_status_code(
+        repo_root,
+        ["diff", "--name-only", "--no-renames", source_commit, current_commit],
+    )
+    if diff_code != 0:
+        return False
+    portable_files = {
+        normalize_rel(path)
+        for path in [*PORTABLE_SOURCE_FILES, *PORTABLE_TEMPLATE_MAP.keys()]
+    }
+    portable_dirs = tuple(f"{normalize_rel(path).rstrip('/')}/" for path in PORTABLE_SOURCE_DIRS)
+    for line in diff_output.splitlines():
+        rel = normalize_rel(line.strip())
+        if rel in portable_files or rel.startswith(portable_dirs):
+            return False
+    return True
+
+
 def validate_pack_provenance(
     pack_root: Path,
     repo_root: Path,
@@ -39267,14 +39292,19 @@ def validate_pack_provenance(
         return "FAIL", problems
     dirty_recorded = dirty_text == "true"
     current = current_commit if current_commit is not None else git_commit_id(repo_root)
+    source_ancestor = False
     if current not in {"", "unavailable"} and source_commit != current and not dirty_recorded:
-        problems.append(
-            f"manifest source_commit {source_commit} does not match current HEAD {current}"
-        )
+        source_ancestor = pack_source_ancestor_has_unchanged_inputs(repo_root, source_commit, current)
+        if not source_ancestor:
+            problems.append(
+                f"manifest source_commit {source_commit} does not match current HEAD {current}"
+            )
     if problems:
         return "FAIL", problems
     if dirty_recorded:
         return "DIRTY_SOURCE_RECORDED", []
+    if source_ancestor:
+        return "PASS_SOURCE_ANCESTOR", []
     if current == "unavailable":
         return "UNKNOWN_GIT_UNAVAILABLE", []
     return "PASS", []

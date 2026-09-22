@@ -224,6 +224,30 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(status, "DIRTY_SOURCE_RECORDED")
         self.assertFalse(problems)
 
+    def test_pack_provenance_allows_only_artifact_commit_changes(self) -> None:
+        source_root = self.make_source_repo()
+        subprocess.run(["git", "init", "--quiet", str(source_root)], check=True)
+        subprocess.run(["git", "-C", str(source_root), "config", "user.name", "AIDE Fixture"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "config", "user.email", "fixture@example.invalid"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "config", "core.autocrlf", "false"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "commit", "--quiet", "-m", "source"], check=True)
+
+        pack_root = self.build_pack(source_root)
+        subprocess.run(["git", "-C", str(source_root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "commit", "--quiet", "-m", "artifacts"], check=True)
+        status, problems = aide_lite.validate_pack_provenance(pack_root, source_root)
+        self.assertEqual(status, "PASS_SOURCE_ANCESTOR", problems)
+        self.assertFalse(problems)
+
+        portable_script = source_root / ".aide/scripts/aide_lite.py"
+        portable_script.write_text(portable_script.read_text(encoding="utf-8") + "\n# changed input\n", encoding="utf-8")
+        subprocess.run(["git", "-C", str(source_root), "add", ".aide/scripts/aide_lite.py"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "commit", "--quiet", "-m", "input changed"], check=True)
+        status, problems = aide_lite.validate_pack_provenance(pack_root, source_root)
+        self.assertEqual(status, "FAIL")
+        self.assertTrue(any("does not match current HEAD" in problem for problem in problems))
+
     def test_import_dry_run_reports_without_writing(self) -> None:
         source_root = self.make_source_repo()
         pack_root = self.build_pack(source_root)

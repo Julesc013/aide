@@ -16,5 +16,5 @@ notes:
   - A dirty-source preview canary safely imported 814 files and target-local doctor passed.
   - Clean source state is now captured before generated export output mutates the worktree.
   - Release provenance now inherits source identity from the validated export pack.
-  - Final local artifacts bind to clean source commit 780312f9ad088111193d15066313aab22976d35d.
+  - Final local artifacts bind to clean source commit 4f80611776b7d5249fbf8d8cac29bf68eacfdac1.
   - ZIP and tar.gz consumer canaries pass; publication remains prohibited and unperformed.
