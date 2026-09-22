@@ -4,10 +4,10 @@
     ".aide/release/dist/RELEASE_NOTES.preview.md": "774a75827477d5e85f6a9659c74e0c85dc035e147f5e94161c843338077b259c",
     ".aide/release/dist/aide-lite-pack-v0.tar.gz": "105f9fd774f04e8a9ef3cf0bb4dc2e5862f9f40121e92af68e1158b23d6a88d6",
     ".aide/release/dist/aide-lite-pack-v0.zip": "48b3a4a4c3f6e443cc16919b5ac7c57ddb5070f5d50bbb80cc4b559ba3bf0355",
-    ".aide/release/dist/install.md": "5e286819f75bd9ffac0d14780cbdfb0a3ca4e47dabfcb75562cbb8552bf94a8a",
-    ".aide/release/dist/manifest.yaml": "51994dcf91e2401c7ba66f1ef638ea9af11acf55f1d6ca1ad463ba4b708f3e0a"
+    ".aide/release/dist/install.md": "34effa204225c34d36c0e750433937dfdb5d24462fa88ac75a5f293125c8c7ec",
+    ".aide/release/dist/manifest.yaml": "2457a72250f74efdb8fd4397dddb90e5400e3c947fc8862055fcfd3a358b729c"
   },
-  "bundle_id": "aide-lite-pack-v0-9161d9512738440f",
+  "bundle_id": "aide-lite-pack-v0-e8c4bbe7d4ab83e7",
   "dirty_state": false,
   "dirty_state_error": "",
   "export_pack_checksums_sha256": "adf22a6659532fbcd17fc1904bf3e8398ec03704943b697597965ba029c33658",
