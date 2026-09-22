@@ -204,31 +204,6 @@
     ],
     "Changed": [
       {
-        "aide_phase": "current-target-read-only-observation",
-        "aide_result": "PASS_WITH_WARNINGS",
-        "breaking": false,
-        "category": "Changed",
-        "commit": "75da33108995",
-        "commit_sha": "75da33108995ba63fc7148c6b4137349d7013798",
-        "entry": "bind current GitHub target controls and explicit hosted-effect blockers.",
-        "follow_up": "- Prepare and independently review an exact non-mutating desired configuration with real app/principal identities before any apply action.\n\nAIDE-Task: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\nAIDE-Phase: current-target-read-only-observation\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: github-target-policy-observation\nAIDE-Token-Impact: bounded-current-state-evidence\nAIDE-Quality-Gate: authenticated-read-only-observation-and-validation-pass",
-        "risks": "- No current target policy, workflow, or restricted broker principal can support hosted adversarial acceptance.",
-        "scope": "provider",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "audit(provider): record current GitHub target controls",
-        "summary": "bind current GitHub target controls and explicit hosted-effect blockers.",
-        "type": "audit",
-        "validation": "- PASS: authenticated read-only queries ran under BLACKGLASS-WIN1\\\\Jules as Julesc013.\n- PASS: WorkUnit validation checked 353 tasks and objects; full AIDE validation passed.\n- FAIL CLOSED: required hosted controls are absent and no hosted mutation was attempted."
-      },
-      {
         "aide_phase": "artifact-checkpoint",
         "aide_result": "PASS",
         "breaking": false,
@@ -356,31 +331,6 @@
     ],
     "Docs": [
       {
-        "aide_phase": "expected-head-source-checkpoint",
-        "aide_result": "PASS_WITH_WARNINGS",
-        "breaking": false,
-        "category": "Docs",
-        "commit": "045952d757d0",
-        "commit_sha": "045952d757d054cdaabcad14fad4e443d0229a2a",
-        "entry": "add the immutable expected-head source checkpoint receipt.",
-        "follow_up": "- Observe and independently review the exact current target policy, workflow provenance, principal permissions, and bypass state.\n\nAIDE-Task: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\nAIDE-Phase: expected-head-source-checkpoint\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: github-target-checkpoint-evidence\nAIDE-Token-Impact: compact-restartable-checkpoint\nAIDE-Quality-Gate: source-publication-and-workunit-validation-pass",
-        "risks": "- This receipt is not hosted target acceptance and authorizes no GitHub mutation or settings change.",
-        "scope": "queue",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "docs(queue): bind expected-head source checkpoint",
-        "summary": "add the immutable expected-head source checkpoint receipt.",
-        "type": "docs",
-        "validation": "- PASS: workunit validate checked 353 queue tasks and objects.\n- PASS: git diff --check completed without findings.\n- PASS: remote task branch matched the recorded source checkpoint before this receipt."
-      },
-      {
         "aide_phase": "implementation",
         "aide_result": "PASS",
         "breaking": false,
@@ -429,6 +379,31 @@
         "summary": "publish exact effect contracts and qualification limits.",
         "type": "feat",
         "validation": "- PASS: combined candidate previously ran 312 runtime cases with 311 passes and one explicit symlink privilege skip.\n- PASS: 25 portable import and update cases and 10 release-bundle cases.\n- PASS: post-landing-candidate aide_lite doctor and validate.\n- PASS: runtime and protected product paths match the tested merge candidate.\n- PASS: staged diff check and conflict scan."
+      },
+      {
+        "aide_phase": "STABLE-DELIVERY",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Docs",
+        "commit": "671faa232216",
+        "commit_sha": "671faa2322167cd8804c872bc5e9e0a6433a23a4",
+        "entry": "refresh source-bound local changelog and release-note previews.",
+        "follow_up": "- Export this clean commit, rebuild final local artifacts, and validate their exact metadata closure.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/changelog\nAIDE-Token-Impact: Updates generated release summaries only; no prompt or response capture.\nAIDE-Quality-Gate: Changelog preview PASS with zero malformed commits; publication remains blocked.",
+        "risks": "- Preview outputs remain non-publishing and do not authorize a tag or release.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "docs(release): bind previews to repair source",
+        "summary": "refresh source-bound local changelog and release-note previews.",
+        "type": "docs",
+        "validation": "- PASS: changelog preview reports 50 commits, 0 malformed commits, and 47 highlights.\n- PASS: git diff checks."
       }
     ],
     "Fixed": [
@@ -881,6 +856,31 @@
         "summary": "release preview binding now matches the generator's complete output set.",
         "type": "fix",
         "validation": "- PASS: 15 Q47 release-bundle tests.\n- PASS: the new ancestry case uses replacement-disabled Git comparisons."
+      },
+      {
+        "aide_phase": "STABLE-DELIVERY",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "edcd591a268b",
+        "commit_sha": "edcd591a268ba8cd332ecad80a513ba3d632c3ef",
+        "entry": "release bundle and validation commands now converge on one deterministic metadata state.",
+        "follow_up": "- Refresh source-bound previews and regenerate the export, bundle, draft, and consumer evidence.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_q47_release_bundle.py\nAIDE-Token-Impact: Adds one focused byte-stability regression; no prompt or response capture.\nAIDE-Quality-Gate: 16 Q47 tests pass; clean artifact regeneration remains pending.",
+        "risks": "- Previously regenerated artifacts are obsolete and will be deterministically replaced from the new clean source.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(release): converge bundle validation bytes",
+        "summary": "release bundle and validation commands now converge on one deterministic metadata state.",
+        "type": "fix",
+        "validation": "- PASS: 16 Q47 release-bundle tests.\n- PASS: bundle-to-validate byte identity regression."
       }
     ],
     "Internal": [
@@ -1589,71 +1589,46 @@
         "summary": "added positive projection and unrelated-change refusal coverage.",
         "type": "fix",
         "validation": "- PASS: 15 Q47 release-bundle tests.\n- PASS: the new ancestry case uses replacement-disabled Git comparisons."
+      },
+      {
+        "aide_phase": "STABLE-DELIVERY",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Tests",
+        "commit": "edcd591a268b",
+        "commit_sha": "edcd591a268ba8cd332ecad80a513ba3d632c3ef",
+        "entry": "require validation to preserve all generated release bytes.",
+        "follow_up": "- Refresh source-bound previews and regenerate the export, bundle, draft, and consumer evidence.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_q47_release_bundle.py\nAIDE-Token-Impact: Adds one focused byte-stability regression; no prompt or response capture.\nAIDE-Quality-Gate: 16 Q47 tests pass; clean artifact regeneration remains pending.",
+        "risks": "- Previously regenerated artifacts are obsolete and will be deterministically replaced from the new clean source.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(release): converge bundle validation bytes",
+        "summary": "require validation to preserve all generated release bytes.",
+        "type": "fix",
+        "validation": "- PASS: 16 Q47 release-bundle tests.\n- PASS: bundle-to-validate byte identity regression."
       }
     ]
   },
   "category_counts": {
     "Added": 8,
-    "Changed": 6,
+    "Changed": 5,
     "Docs": 3,
-    "Fixed": 18,
+    "Fixed": 19,
     "Internal": 15,
     "Risks": 1,
     "Security": 6,
-    "Tests": 6
+    "Tests": 7
   },
   "commit_count": 50,
   "entries": [
-    {
-      "aide_phase": "expected-head-source-checkpoint",
-      "aide_result": "PASS_WITH_WARNINGS",
-      "breaking": false,
-      "category": "Docs",
-      "commit": "045952d757d0",
-      "commit_sha": "045952d757d054cdaabcad14fad4e443d0229a2a",
-      "entry": "add the immutable expected-head source checkpoint receipt.",
-      "follow_up": "- Observe and independently review the exact current target policy, workflow provenance, principal permissions, and bypass state.\n\nAIDE-Task: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\nAIDE-Phase: expected-head-source-checkpoint\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: github-target-checkpoint-evidence\nAIDE-Token-Impact: compact-restartable-checkpoint\nAIDE-Quality-Gate: source-publication-and-workunit-validation-pass",
-      "risks": "- This receipt is not hosted target acceptance and authorizes no GitHub mutation or settings change.",
-      "scope": "queue",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "docs(queue): bind expected-head source checkpoint",
-      "summary": "add the immutable expected-head source checkpoint receipt.",
-      "type": "docs",
-      "validation": "- PASS: workunit validate checked 353 queue tasks and objects.\n- PASS: git diff --check completed without findings.\n- PASS: remote task branch matched the recorded source checkpoint before this receipt."
-    },
-    {
-      "aide_phase": "current-target-read-only-observation",
-      "aide_result": "PASS_WITH_WARNINGS",
-      "breaking": false,
-      "category": "Changed",
-      "commit": "75da33108995",
-      "commit_sha": "75da33108995ba63fc7148c6b4137349d7013798",
-      "entry": "bind current GitHub target controls and explicit hosted-effect blockers.",
-      "follow_up": "- Prepare and independently review an exact non-mutating desired configuration with real app/principal identities before any apply action.\n\nAIDE-Task: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01\nAIDE-Phase: current-target-read-only-observation\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: github-target-policy-observation\nAIDE-Token-Impact: bounded-current-state-evidence\nAIDE-Quality-Gate: authenticated-read-only-observation-and-validation-pass",
-      "risks": "- No current target policy, workflow, or restricted broker principal can support hosted adversarial acceptance.",
-      "scope": "provider",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "audit(provider): record current GitHub target controls",
-      "summary": "bind current GitHub target controls and explicit hosted-effect blockers.",
-      "type": "audit",
-      "validation": "- PASS: authenticated read-only queries ran under BLACKGLASS-WIN1\\\\Jules as Julesc013.\n- PASS: WorkUnit validation checked 353 tasks and objects; full AIDE validation passed.\n- FAIL CLOSED: required hosted controls are absent and no hosted mutation was attempted."
-    },
     {
       "aide_phase": "source-candidate",
       "aide_result": "PASS_WITH_WARNINGS",
@@ -3178,6 +3153,81 @@
       "summary": "added positive projection and unrelated-change refusal coverage.",
       "type": "fix",
       "validation": "- PASS: 15 Q47 release-bundle tests.\n- PASS: the new ancestry case uses replacement-disabled Git comparisons."
+    },
+    {
+      "aide_phase": "STABLE-DELIVERY",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Docs",
+      "commit": "671faa232216",
+      "commit_sha": "671faa2322167cd8804c872bc5e9e0a6433a23a4",
+      "entry": "refresh source-bound local changelog and release-note previews.",
+      "follow_up": "- Export this clean commit, rebuild final local artifacts, and validate their exact metadata closure.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/changelog\nAIDE-Token-Impact: Updates generated release summaries only; no prompt or response capture.\nAIDE-Quality-Gate: Changelog preview PASS with zero malformed commits; publication remains blocked.",
+      "risks": "- Preview outputs remain non-publishing and do not authorize a tag or release.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "docs(release): bind previews to repair source",
+      "summary": "refresh source-bound local changelog and release-note previews.",
+      "type": "docs",
+      "validation": "- PASS: changelog preview reports 50 commits, 0 malformed commits, and 47 highlights.\n- PASS: git diff checks."
+    },
+    {
+      "aide_phase": "STABLE-DELIVERY",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "edcd591a268b",
+      "commit_sha": "edcd591a268ba8cd332ecad80a513ba3d632c3ef",
+      "entry": "release bundle and validation commands now converge on one deterministic metadata state.",
+      "follow_up": "- Refresh source-bound previews and regenerate the export, bundle, draft, and consumer evidence.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_q47_release_bundle.py\nAIDE-Token-Impact: Adds one focused byte-stability regression; no prompt or response capture.\nAIDE-Quality-Gate: 16 Q47 tests pass; clean artifact regeneration remains pending.",
+      "risks": "- Previously regenerated artifacts are obsolete and will be deterministically replaced from the new clean source.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(release): converge bundle validation bytes",
+      "summary": "release bundle and validation commands now converge on one deterministic metadata state.",
+      "type": "fix",
+      "validation": "- PASS: 16 Q47 release-bundle tests.\n- PASS: bundle-to-validate byte identity regression."
+    },
+    {
+      "aide_phase": "STABLE-DELIVERY",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Tests",
+      "commit": "edcd591a268b",
+      "commit_sha": "edcd591a268ba8cd332ecad80a513ba3d632c3ef",
+      "entry": "require validation to preserve all generated release bytes.",
+      "follow_up": "- Refresh source-bound previews and regenerate the export, bundle, draft, and consumer evidence.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_q47_release_bundle.py\nAIDE-Token-Impact: Adds one focused byte-stability regression; no prompt or response capture.\nAIDE-Quality-Gate: 16 Q47 tests pass; clean artifact regeneration remains pending.",
+      "risks": "- Previously regenerated artifacts are obsolete and will be deterministically replaced from the new clean source.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(release): converge bundle validation bytes",
+      "summary": "require validation to preserve all generated release bytes.",
+      "type": "fix",
+      "validation": "- PASS: 16 Q47 release-bundle tests.\n- PASS: bundle-to-validate byte identity regression."
     }
   ],
   "generated_by": "aide-lite",
@@ -3188,7 +3238,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "bb308e64f4f23795916b1fe50827ba19043ed893",
+  "source_head": "edcd591a268ba8cd332ecad80a513ba3d632c3ef",
   "source_range": "origin/main..HEAD",
   "warnings": []
 }

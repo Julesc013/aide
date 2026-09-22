@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: origin/main..HEAD
-source_head: bb308e64f4f23795916b1fe50827ba19043ed893
+source_head: edcd591a268ba8cd332ecad80a513ba3d632c3ef
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -12,11 +12,11 @@ release_publishing: false
 ## Summary
 
 - Added: 8
-- Changed: 6
-- Fixed: 18
+- Changed: 5
+- Fixed: 19
 - Security: 6
 - Docs: 3
-- Tests: 6
+- Tests: 7
 - Internal: 15
 - Risks: 1
 
@@ -33,7 +33,6 @@ release_publishing: false
 
 ## Changed
 
-- bind current GitHub target controls and explicit hosted-effect blockers. (75da33108995 audit(provider): record current GitHub target controls)
 - refresh local AIDE Lite delivery artifacts with safe update support. (e8c4bbe7d4ab build(pack): refresh safe-update delivery artifacts)
 - refresh portable and local release artifacts for the integrated broker-era dev source. (f6ae36e8074b build(pack): refresh post-integration artifacts)
 - qualified distribution fixture portability hardening on the full Windows checkout. (36fa64e011b5 test(distribution): qualify portability candidate)
@@ -60,6 +59,7 @@ release_publishing: false
 - Bind preview release metadata to committed portability artifact provenance. (38fe712810b8 build(distribution): close artifact provenance)
 - release metadata now binds final eligible bytes and the exported source identity. (7bb41079e11f fix(release): bind metadata to final artifacts)
 - release preview binding now matches the generator's complete output set. (bb308e64f4f2 fix(release): accept complete preview projection)
+- release bundle and validation commands now converge on one deterministic metadata state. (edcd591a268b fix(release): converge bundle validation bytes)
 
 ## Security
 
@@ -72,9 +72,9 @@ release_publishing: false
 
 ## Docs
 
-- add the immutable expected-head source checkpoint receipt. (045952d757d0 docs(queue): bind expected-head source checkpoint)
 - retain exact implementation scope, effect contracts, and qualification boundaries. (091382e81f08 feat(broker): integrate published runtime line)
 - publish exact effect contracts and qualification limits. (bed5a57aed4f feat(broker): land runtime integration on dev)
+- refresh source-bound local changelog and release-note previews. (671faa232216 docs(release): bind previews to repair source)
 
 ## Tests
 
@@ -84,6 +84,7 @@ release_publishing: false
 - retain extracted consumer and no-publish qualification evidence. (088b20ba76ae build(pack): land post-integration artifact refresh)
 - added stale-preview, file-set, hash, size, and cross-checkout regressions. (7bb41079e11f fix(release): bind metadata to final artifacts)
 - added positive projection and unrelated-change refusal coverage. (bb308e64f4f2 fix(release): accept complete preview projection)
+- require validation to preserve all generated release bytes. (edcd591a268b fix(release): converge bundle validation bytes)
 
 ## Internal
 

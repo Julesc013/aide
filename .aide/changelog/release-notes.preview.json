@@ -1,14 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "045952d757d0",
-      "summary": "Observe and independently review the exact current target policy, workflow provenance, principal permissions, and bypass state."
-    },
-    {
-      "commit": "75da33108995",
-      "summary": "Prepare and independently review an exact non-mutating desired configuration with real app/principal identities before any apply action."
-    },
-    {
       "commit": "e73ac0b269df",
       "summary": "Materialize the bounded child WorkUnit under the current programme, reproduce in a complete checkout, run the distribution/full validation matrix and native profiles, and obtain independent review before integration."
     },
@@ -251,6 +243,18 @@
     {
       "commit": "bb308e64f4f2",
       "summary": "Regenerate and commit the six source-bound preview outputs, then rebuild the export and release artifacts."
+    },
+    {
+      "commit": "671faa232216",
+      "summary": "Export this clean commit, rebuild final local artifacts, and validate their exact metadata closure."
+    },
+    {
+      "commit": "edcd591a268b",
+      "summary": "Refresh source-bound previews and regenerate the export, bundle, draft, and consumer evidence."
+    },
+    {
+      "commit": "edcd591a268b",
+      "summary": "Refresh source-bound previews and regenerate the export, bundle, draft, and consumer evidence."
     }
   ],
   "highlights": [
@@ -351,13 +355,6 @@
       "commit": "5ad6aa979971",
       "subject": "chore(release): admit metadata integrity repair",
       "summary": "Admit deterministic release metadata integrity repair."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "75da33108995",
-      "subject": "audit(provider): record current GitHub target controls",
-      "summary": "bind current GitHub target controls and explicit hosted-effect blockers."
     },
     {
       "breaking": false,
@@ -522,10 +519,10 @@
     },
     {
       "breaking": false,
-      "category": "Docs",
-      "commit": "045952d757d0",
-      "subject": "docs(queue): bind expected-head source checkpoint",
-      "summary": "add the immutable expected-head source checkpoint receipt."
+      "category": "Fixed",
+      "commit": "edcd591a268b",
+      "subject": "fix(release): converge bundle validation bytes",
+      "summary": "release bundle and validation commands now converge on one deterministic metadata state."
     },
     {
       "breaking": false,
@@ -540,6 +537,13 @@
       "commit": "bed5a57aed4f",
       "subject": "feat(broker): land runtime integration on dev",
       "summary": "publish exact effect contracts and qualification limits."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "671faa232216",
+      "subject": "docs(release): bind previews to repair source",
+      "summary": "refresh source-bound local changelog and release-note previews."
     },
     {
       "breaking": false,
@@ -582,18 +586,17 @@
       "commit": "bb308e64f4f2",
       "subject": "fix(release): accept complete preview projection",
       "summary": "added positive projection and unrelated-change refusal coverage."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "edcd591a268b",
+      "subject": "fix(release): converge bundle validation bytes",
+      "summary": "require validation to preserve all generated release bytes."
     }
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "045952d757d0",
-      "summary": "This receipt is not hosted target acceptance and authorizes no GitHub mutation or settings change."
-    },
-    {
-      "commit": "75da33108995",
-      "summary": "No current target policy, workflow, or restricted broker principal can support hosted adversarial acceptance."
-    },
     {
       "commit": "e73ac0b269df",
       "summary": "This is an intake-backed source candidate pending canonical child-WorkUnit admission and full-checkout review."
@@ -837,20 +840,24 @@
     {
       "commit": "bb308e64f4f2",
       "summary": "Generated previews must be refreshed again against this newer source commit."
+    },
+    {
+      "commit": "671faa232216",
+      "summary": "Preview outputs remain non-publishing and do not authorize a tag or release."
+    },
+    {
+      "commit": "edcd591a268b",
+      "summary": "Previously regenerated artifacts are obsolete and will be deterministically replaced from the new clean source."
+    },
+    {
+      "commit": "edcd591a268b",
+      "summary": "Previously regenerated artifacts are obsolete and will be deterministically replaced from the new clean source."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "bb308e64f4f23795916b1fe50827ba19043ed893",
+  "source_head": "edcd591a268ba8cd332ecad80a513ba3d632c3ef",
   "source_range": "origin/main..HEAD",
   "validation_summary": [
-    {
-      "commit": "045952d757d0",
-      "summary": "PASS: workunit validate checked 353 queue tasks and objects."
-    },
-    {
-      "commit": "75da33108995",
-      "summary": "PASS: authenticated read-only queries ran under BLACKGLASS-WIN1\\\\Jules as Julesc013."
-    },
     {
       "commit": "e73ac0b269df",
       "summary": "PASS: all three captured baseline Git blob identities verified."
@@ -1094,6 +1101,18 @@
     {
       "commit": "bb308e64f4f2",
       "summary": "PASS: 15 Q47 release-bundle tests."
+    },
+    {
+      "commit": "671faa232216",
+      "summary": "PASS: changelog preview reports 50 commits, 0 malformed commits, and 47 highlights."
+    },
+    {
+      "commit": "edcd591a268b",
+      "summary": "PASS: 16 Q47 release-bundle tests."
+    },
+    {
+      "commit": "edcd591a268b",
+      "summary": "PASS: 16 Q47 release-bundle tests."
     }
   ],
   "warnings": []

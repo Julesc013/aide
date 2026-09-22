@@ -3,7 +3,7 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: origin/main..HEAD
-source_head: bb308e64f4f23795916b1fe50827ba19043ed893
+source_head: edcd591a268ba8cd332ecad80a513ba3d632c3ef
 preview_only: true
 
 ## Highlights
@@ -22,7 +22,6 @@ preview_only: true
 - Added: preserve and integrate the published broker runtime line on dev. (c6fdc754844c)
 - Added: bounded qualification path for distribution fixture portability. (f737f9199931)
 - Added: Admit deterministic release metadata integrity repair. (5ad6aa979971)
-- Changed: bind current GitHub target controls and explicit hosted-effect blockers. (75da33108995)
 - Changed: refresh local AIDE Lite delivery artifacts with safe update support. (e8c4bbe7d4ab)
 - Changed: refresh portable and local release artifacts for the integrated broker-era dev source. (f6ae36e8074b)
 - Changed: qualified distribution fixture portability hardening on the full Windows checkout. (36fa64e011b5)
@@ -46,20 +45,20 @@ preview_only: true
 - Fixed: Bind preview release metadata to committed portability artifact provenance. (38fe712810b8)
 - Fixed: release metadata now binds final eligible bytes and the exported source identity. (7bb41079e11f)
 - Fixed: release preview binding now matches the generator's complete output set. (bb308e64f4f2)
-- Docs: add the immutable expected-head source checkpoint receipt. (045952d757d0)
+- Fixed: release bundle and validation commands now converge on one deterministic metadata state. (edcd591a268b)
 - Docs: retain exact implementation scope, effect contracts, and qualification boundaries. (091382e81f08)
 - Docs: publish exact effect contracts and qualification limits. (bed5a57aed4f)
+- Docs: refresh source-bound local changelog and release-note previews. (671faa232216)
 - Tests: define delivered-pack update acceptance regressions. (69e363bc71be)
 - Tests: land broker, provider, GitHub, host, image, PE, and security regressions. (bed5a57aed4f)
 - Tests: requalify extracted archives, updates, checksums, and no-publish boundaries. (f6ae36e8074b)
 - Tests: retain extracted consumer and no-publish qualification evidence. (088b20ba76ae)
 - Tests: added stale-preview, file-set, hash, size, and cross-checkout regressions. (7bb41079e11f)
 - Tests: added positive projection and unrelated-change refusal coverage. (bb308e64f4f2)
+- Tests: require validation to preserve all generated release bytes. (edcd591a268b)
 
 ## Validation Summary
 
-- 045952d757d0: PASS: workunit validate checked 353 queue tasks and objects.
-- 75da33108995: PASS: authenticated read-only queries ran under BLACKGLASS-WIN1\\Jules as Julesc013.
 - e73ac0b269df: PASS: all three captured baseline Git blob identities verified.
 - e73ac0b269df: PASS: all three captured baseline Git blob identities verified.
 - aa3c8d14b55e: PASS: 46 focused and adjacent tests; fresh disposable import wrote 814 files with zero conflicts; target-local doctor passed; repeated archives were byte-identical.
@@ -68,11 +67,11 @@ preview_only: true
 - 780312f9ad08: PASS: Q47 release bundle 10 tests; focused clean-pack regression; Python compilation and diff checks.
 - 80746a3ca547: PASS: 48 focused tests, release validation, release-draft validation, repository validation, two fresh consumer imports, two target-local doctor runs, and repeat hash checks.
 - 4f80611776b7: PASS: export/import 17 tests, focused stale-pack regression, Python compilation, and diff checks.
+- db8cd16279e0: PASS: pack/release/repository validation; ZIP and tar.gz isolated imports; two target-local doctor runs; repeat archive hashes.
+- dd8e1c226006: PASS: pack status, release validation, draft validation, and repository validation.
 
 ## Known Risks
 
-- 045952d757d0: This receipt is not hosted target acceptance and authorizes no GitHub mutation or settings change.
-- 75da33108995: No current target policy, workflow, or restricted broker principal can support hosted adversarial acceptance.
 - e73ac0b269df: This is an intake-backed source candidate pending canonical child-WorkUnit admission and full-checkout review.
 - e73ac0b269df: This is an intake-backed source candidate pending canonical child-WorkUnit admission and full-checkout review.
 - aa3c8d14b55e: Generated release artifacts still need clean-source regeneration and candidate qualification before integration or publication.
@@ -81,11 +80,11 @@ preview_only: true
 - 780312f9ad08: Exact generated artifacts and consumer canaries remain to be committed and integrated.
 - 80746a3ca547: This is a local no-publish candidate; main promotion, stable version selection, tag, upload, and public release remain separately gated.
 - 4f80611776b7: Final pack and archive bytes must be regenerated from this validator commit before integration.
+- db8cd16279e0: This remains a local candidate; main, tagging, upload, and public publication retain exact review gates.
+- dd8e1c226006: No publication occurred; task-to-dev integration is still pending exact helper validation.
 
 ## Follow-up
 
-- 045952d757d0: Observe and independently review the exact current target policy, workflow provenance, principal permissions, and bypass state.
-- 75da33108995: Prepare and independently review an exact non-mutating desired configuration with real app/principal identities before any apply action.
 - e73ac0b269df: Materialize the bounded child WorkUnit under the current programme, reproduce in a complete checkout, run the distribution/full validation matrix and native profiles, and obtain independent review before integration.
 - e73ac0b269df: Materialize the bounded child WorkUnit under the current programme, reproduce in a complete checkout, run the distribution/full validation matrix and native profiles, and obtain independent review before integration.
 - aa3c8d14b55e: Regenerate export and release artifacts from this commit, rerun consumer qualification, and prepare the exact task-to-dev candidate.
@@ -94,6 +93,8 @@ preview_only: true
 - 780312f9ad08: Generate the final pack and archives, validate exact hashes, close the WorkUnit, and publish the candidate branch.
 - 80746a3ca547: Publish the task branch, validate the exact task-to-dev candidate, and fast-forward dev when helper gates pass.
 - 4f80611776b7: Regenerate, rerun exact consumer and repository qualification, then publish and integrate the candidate.
+- db8cd16279e0: Validate the committed artifact state, publish the task branch, and integrate the exact candidate to dev.
+- dd8e1c226006: Prove validation is idempotent, publish the task branch, and integrate the exact candidate to dev.
 
 ## Warnings
 
