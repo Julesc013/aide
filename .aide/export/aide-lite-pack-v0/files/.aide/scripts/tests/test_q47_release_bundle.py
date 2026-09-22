@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import importlib.util
+import json
+import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -42,20 +45,24 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         self.write(root, f"{aide_lite.EXPORT_PACK_PATH}/install.md", "# Install\n")
         self.write(root, f"{aide_lite.EXPORT_PACK_PATH}/import-policy.yaml", "schema_version: fixture.import.v0\n")
         self.write(root, f"{aide_lite.EXPORT_PACK_PATH}/export-report.md", "# Export Report\n")
-        self.write(root, f"{aide_lite.EXPORT_PACK_FILES_ROOT}/.aide/scripts/aide_lite.py", "# portable script\n")
+        portable_script = root / aide_lite.EXPORT_PACK_FILES_ROOT / ".aide/scripts/aide_lite.py"
+        portable_script.parent.mkdir(parents=True, exist_ok=True)
+        portable_script.write_bytes(MODULE_PATH.read_bytes())
         self.write(root, f"{aide_lite.EXPORT_PACK_FILES_ROOT}/docs/reference/aide-lite.md", "# AIDE Lite\n")
         self.write(
             root,
+            f"{aide_lite.EXPORT_PACK_FILES_ROOT}/.aide.local.example/secrets/README.md",
+            "# Empty local secret directory placeholder\n",
+        )
+        included_files = [
+            "files/.aide.local.example/secrets/README.md",
+            "files/.aide/scripts/aide_lite.py",
+            "files/docs/reference/aide-lite.md",
+        ]
+        self.write(
+            root,
             f"{aide_lite.EXPORT_PACK_PATH}/manifest.yaml",
-            "\n".join([
-                "schema_version: q25.aide-lite-pack-manifest.v1",
-                "pack_id: aide-lite-pack-v0",
-                "source_commit: fixture-commit",
-                "source_dirty_state: true",
-                "files:",
-                "  - files/.aide/scripts/aide_lite.py",
-                "  - files/docs/reference/aide-lite.md",
-            ]) + "\n",
+            aide_lite.render_manifest(included_files, "fixture-commit", True),
         )
         checksums = aide_lite.build_pack_checksums(pack_root)
         self.write(root, f"{aide_lite.EXPORT_PACK_PATH}/checksums.json", aide_lite.stable_json_text(checksums))
@@ -78,6 +85,35 @@ class Q47ReleaseBundleTests(unittest.TestCase):
             for path in sorted(release_root.rglob("*"))
             if path.is_file()
         }
+
+    def extract_archive(self, root: Path, archive_rel: str) -> Path:
+        extracted = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, extracted, ignore_errors=True)
+        shutil.unpack_archive(root / archive_rel, extracted)
+        return extracted / aide_lite.RELEASE_ARCHIVE_ROOT
+
+    def run_extracted_cli(self, pack_root: Path, target: Path, *args: str) -> subprocess.CompletedProcess[str]:
+        script = pack_root / "files/.aide/scripts/aide_lite.py"
+        environment = os.environ.copy()
+        environment.pop("PYTHONPATH", None)
+        environment["PYTHONNOUSERSITE"] = "1"
+        return subprocess.run(
+            [
+                sys.executable,
+                "-I",
+                "-B",
+                str(script),
+                "--repo-root",
+                str(target),
+                *args,
+            ],
+            cwd=pack_root,
+            env=environment,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
 
     def test_release_policy_and_schema_validation(self) -> None:
         root = self.make_repo()
@@ -111,6 +147,100 @@ class Q47ReleaseBundleTests(unittest.TestCase):
             names = aide_lite.archive_member_names(root / rel)
             self.assertIn("aide-lite-pack-v0/files/.aide/scripts/aide_lite.py", names)
             self.assertFalse(any(".aide.local" in name or name.endswith(".env") for name in names))
+
+    def test_extracted_archives_import_without_source_checkout(self) -> None:
+        root = self.make_repo()
+        aide_lite.build_release_bundle_outputs(root)
+
+        for archive_rel in [aide_lite.RELEASE_ZIP_PATH, aide_lite.RELEASE_TAR_GZ_PATH]:
+            with self.subTest(archive=archive_rel):
+                pack_root = self.extract_archive(root, archive_rel)
+                target = Path(tempfile.mkdtemp())
+                self.addCleanup(shutil.rmtree, target, ignore_errors=True)
+                subprocess.run(
+                    ["git", "init", "--quiet", str(target)],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    check=True,
+                )
+
+                checksums = json.loads((pack_root / "checksums.json").read_text(encoding="utf-8"))
+                manifest = (pack_root / "manifest.yaml").read_text(encoding="utf-8")
+                forbidden = "files/.aide.local.example/secrets/README.md"
+                self.assertNotIn(forbidden, checksums["checksums"])
+                self.assertNotIn(forbidden, manifest)
+
+                dry_run = self.run_extracted_cli(
+                    pack_root,
+                    target,
+                    "import-pack",
+                    "--pack",
+                    str(pack_root),
+                    "--target",
+                    str(target),
+                    "--dry-run",
+                    "--mode",
+                    "safe",
+                )
+                self.assertEqual(dry_run.returncode, 0, dry_run.stdout + dry_run.stderr)
+                self.assertIn("dry_run: true", dry_run.stdout)
+
+                apply = self.run_extracted_cli(
+                    pack_root,
+                    target,
+                    "import-pack",
+                    "--pack",
+                    str(pack_root),
+                    "--target",
+                    str(target),
+                    "--mode",
+                    "safe",
+                )
+                self.assertEqual(apply.returncode, 0, apply.stdout + apply.stderr)
+                self.assertTrue((target / ".aide/scripts/aide_lite.py").is_file())
+                self.assertFalse((target / ".aide.local.example/secrets/README.md").exists())
+
+    def test_release_archives_are_byte_deterministic(self) -> None:
+        root = self.make_repo()
+        aide_lite.build_release_bundle_outputs(root)
+        first = {
+            rel: (root / rel).read_bytes()
+            for rel in [aide_lite.RELEASE_ZIP_PATH, aide_lite.RELEASE_TAR_GZ_PATH]
+        }
+        aide_lite.build_release_bundle_outputs(root)
+        second = {rel: (root / rel).read_bytes() for rel in first}
+        self.assertEqual(first, second)
+
+    def test_release_records_clean_source_before_writing_bundle_outputs(self) -> None:
+        root = self.make_repo()
+        subprocess.run(["git", "init", "--quiet", str(root)], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "user.name", "AIDE Fixture"], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "user.email", "fixture@example.invalid"], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "core.autocrlf", "false"], check=True)
+        subprocess.run(["git", "-C", str(root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", "fixture"], check=True)
+        source_commit = subprocess.run(
+            ["git", "-C", str(root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+
+        pack_root = aide_lite.export_pack_root(root, aide_lite.EXPORT_PACK_ID)
+        included_files = aide_lite.pack_manifest_list(pack_root, "included_files")
+        self.write(
+            root,
+            f"{aide_lite.EXPORT_PACK_PATH}/manifest.yaml",
+            aide_lite.render_manifest(included_files, source_commit, False),
+        )
+
+        bundle = aide_lite.build_release_bundle_outputs(root)
+        provenance = json.loads((root / aide_lite.RELEASE_PROVENANCE_JSON_PATH).read_text(encoding="utf-8"))
+        self.assertEqual(provenance["source_commit"], source_commit)
+        self.assertFalse(provenance["dirty_state"])
+        self.assertEqual(bundle["source_commit"], source_commit)
+        self.assertFalse(bundle["dirty_state"])
 
     def test_checksum_mismatch_detection_fails(self) -> None:
         root = self.make_repo()

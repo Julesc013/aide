@@ -57,6 +57,7 @@ authorized_git_operations:
   - commit the bounded implementation and generated evidence with explicit paths
   - publish the qualified task branch to origin
   - prepare an exact task-to-dev integration candidate
+  - fast-forward the exact qualified candidate to dev and push after helper-plan and post-integration validation pass
 verification:
   - reproduce the stale checksum failure before implementation
   - execute the real delivered CLI from extracted ZIP and tar.gz bytes

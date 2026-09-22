@@ -3358,3 +3358,13 @@ adopted contracts remain unchanged. The imported `UR-*` requirements and
 their presence does not authorize implementation or establish qualification.
 Private archives, bulk registers, captured baselines, package tools, and patch
 files remain outside the repository.
+
+## Delivered pack import closure
+
+`AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01` closes the first stable-delivery product
+slice. Release archives are projected from permitted payload, receive truthful
+manifest and checksum closure, and execute their own importer without the AIDE
+source checkout. Clean source provenance is observed before export mutation and
+is inherited by release records. Exact ZIP and tar.gz candidates are locally
+qualified; task-to-`dev` integration remains the next action, while main,
+tagging, upload, and publication retain separate gates.

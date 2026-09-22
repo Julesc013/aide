@@ -10906,3 +10906,19 @@ Final export validation passed all eight commands; independent review verified a
   as explicitly unrun review inputs, not live `AIDE-*` requirements.
 - Excluded the import ZIP, baseline capture, verifier tools, patch, private
   archives, and bulk generated registers from the repository.
+
+## 2026-09-22 - Delivered pack import closure
+
+- Reproduced and fixed a release archive defect where forbidden-path filtering
+  left stale entries in the embedded checksum register.
+- Added a deterministic permitted-payload projection that regenerates manifest,
+  checksums, and export reporting before ZIP and tar.gz creation.
+- Upgraded release validation from extraction shape checks to exact checksum and
+  manifest/payload closure, plus executable isolated consumer tests.
+- Corrected export and release provenance so generator-created output changes
+  do not falsely describe clean source as dirty.
+- Qualified both exact archives in fresh disposable Git repositories: 814 safe
+  writes, zero conflicts, 16 intentional broad-root skips, and target-local
+  `doctor` PASS for each format.
+- Preserved no-publish boundaries: no tag, upload, GitHub Release, network API,
+  active CI, main mutation, or real target-project mutation occurred.

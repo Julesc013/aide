@@ -1,14 +1,14 @@
-# AIDE Lite Pack v0 Draft (2b2a00f7c4628311)
+# AIDE Lite Pack v0 Draft (780312f9ad088111)
 
 > Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.
 
 ## Release Metadata
 
-- Suggested tag: `aide-lite-pack-v0-draft-2b2a00f7c4628311`
+- Suggested tag: `aide-lite-pack-v0-draft-780312f9ad088111`
 - Suggested tag created: no
-- Source commit: `2b2a00f7c462831170dc8de21834e1e5ec91708d`
-- Source branch: `main`
-- Dirty state recorded: `true`
+- Source commit: `780312f9ad088111193d15066313aab22976d35d`
+- Source branch: `task/aide-delivered-pack-import-closure-01`
+- Dirty state recorded: `false`
 - Release type: local draft / not published
 
 ## Summary
@@ -20,20 +20,20 @@
 ## Release Notes Preview
 - # AIDE Release Notes Preview
 - This is a deterministic preview only. It does not publish a release.
-- source_range: HEAD latest 50 commits
-- source_head: 2b2a00f7c462831170dc8de21834e1e5ec91708d
+- source_range: HEAD~1..HEAD
+- source_head: d5e3e818841931702cd4e2cde49452744afab985
 - preview_only: true
 - ## Highlights
-- - Added: Q42 review-gated queue packet for candidate map and alias planning. (88cd260b8fc0)
-- - Added: Q42 candidate map, alias, rewrite, and draft ledger policy/schema layer. (76bbab2b2104)
+- - Added: report-only capability reality ledger support and generated capability reports. (d5e3e8188419)
+- - Added: X-OS-02 unit and golden coverage. (d5e3e8188419)
 
 ## Changelog Preview
 - # AIDE Changelog Preview
 - This file is generated from local Git history and is a preview only.
-- source_range: HEAD latest 50 commits
-- source_head: 2b2a00f7c462831170dc8de21834e1e5ec91708d
-- commit_count: 50
-- malformed_count: 15
+- source_range: HEAD~1..HEAD
+- source_head: d5e3e818841931702cd4e2cde49452744afab985
+- commit_count: 1
+- malformed_count: 0
 - preview_only: true
 - release_publishing: false
 
@@ -47,23 +47,23 @@
 
 | Order | Asset | Kind | Size | SHA-256 | Required |
 | --- | --- | --- | ---: | --- | --- |
-| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 747612 | `5ea124268b5c0448...` | true |
-| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 493160 | `258c0ce9200c24c8...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1200 | `d11f91599bbf13c3...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 690 | `60bfac6c8e912d1a...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1406 | `a63b444ba7b528b9...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 1251 | `6176f03b047465de...` | true |
-| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 10796 | `583d5ac82800450c...` | true |
-| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 7711 | `51cc5473d4f14fab...` | true |
-| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3418 | `746317110fd2e5cc...` | false |
-| 10 | `.aide/release/dist/release-validation.md` | validation_report | 239 | `df35747cfd0d9361...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1440 | `9394a6d96edd7ac6...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4960 | `fca3e7459e9d4745...` | false |
+| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 966604 | `32156c0ab2ee8a1d...` | true |
+| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 638504 | `1071c9001b75b8df...` | true |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1200 | `3663543c6273a87f...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 690 | `59034e9213c1e02d...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1404 | `0e8396b4b1e06cbf...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 1325 | `29c58a483b02f909...` | true |
+| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 670 | `725d7aad7d6f7385...` | true |
+| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 1300 | `774a75827477d5e8...` | true |
+| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3134 | `d01fbfd9f5e47663...` | false |
+| 10 | `.aide/release/dist/release-validation.md` | validation_report | 222 | `37b6d4e4c7f51060...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1492 | `bfec95af6e4d97cf...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4958 | `87b67bb7ec7a8b41...` | false |
 
 ## Validation Summary
 
 - release validate: PASS
-- pack-status: DIRTY_SOURCE_RECORDED
+- pack-status: PASS
 - fixture extraction: PASS
 - checksum validation: PASS
 
@@ -72,7 +72,6 @@
 - Suggested tag naming still requires human/operator review.
 - Dominium and Eureka target install readiness are not claimed by Q48.
 - Install, repair, upgrade, rollback, and uninstall remain plan/dry-run models unless a future phase adds apply behavior.
-- Q47 bundle provenance records dirty source state; release reviewers must explicitly accept or regenerate from a clean state.
 
 ## Publication Blockers
 - none for local draft generation

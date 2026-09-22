@@ -5,8 +5,8 @@ classification: admitted
 planning_state: execution_active
 result: PENDING
 updated_at: 2026-09-22
-current_slice: clean_source_artifact_regeneration
-next_slice: candidate_qualification
+current_slice: qualified_artifact_checkpoint
+next_slice: task_to_dev_integration
 notes:
   - The aggregate stable-release request was compiled as blocked and split-required.
   - This bounded child performs no publication, tagging, main mutation, or real target mutation.
@@ -16,3 +16,5 @@ notes:
   - A dirty-source preview canary safely imported 814 files and target-local doctor passed.
   - Clean source state is now captured before generated export output mutates the worktree.
   - Release provenance now inherits source identity from the validated export pack.
+  - Final local artifacts bind to clean source commit 780312f9ad088111193d15066313aab22976d35d.
+  - ZIP and tar.gz consumer canaries pass; publication remains prohibited and unperformed.

@@ -39,7 +39,7 @@ repository without the development checkout.
 - [x] Add and run an executable regression that fails on the current builder.
 - [x] Implement a deterministic archive projection with truthful metadata.
 - [x] Run focused and adjacent validation against extracted ZIP and tar.gz bytes.
-- [ ] Regenerate and validate owned local artifacts.
+- [x] Regenerate and validate owned local artifacts.
 - [ ] Record evidence, commit explicit paths, and publish the task branch.
 - [ ] Prepare and evaluate the exact task-to-dev integration candidate.
 

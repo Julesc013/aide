@@ -172,6 +172,30 @@ class ExportImportTests(unittest.TestCase):
         self.assertFalse(problems)
         self.assertIn(status, {"PASS", "DIRTY_SOURCE_RECORDED", "UNKNOWN_GIT_UNAVAILABLE"})
 
+    def test_export_records_clean_source_before_writing_generated_pack(self) -> None:
+        source_root = self.make_source_repo()
+        subprocess.run(["git", "init", "--quiet", str(source_root)], check=True)
+        subprocess.run(["git", "-C", str(source_root), "config", "user.name", "AIDE Fixture"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "config", "user.email", "fixture@example.invalid"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "config", "core.autocrlf", "false"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "commit", "--quiet", "-m", "fixture"], check=True)
+        source_commit = subprocess.run(
+            ["git", "-C", str(source_root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+
+        pack_root = self.build_pack(source_root)
+        scalars = aide_lite.pack_manifest_scalars(pack_root)
+        self.assertEqual(scalars["source_commit"], source_commit)
+        self.assertEqual(scalars["source_dirty_state"], "false")
+        status, problems = aide_lite.validate_pack_provenance(pack_root, source_root)
+        self.assertEqual(status, "PASS", problems)
+        self.assertFalse(problems)
+
     def test_pack_provenance_fails_stale_clean_manifest(self) -> None:
         source_root = self.make_source_repo()
         pack_root = self.build_pack(source_root)
