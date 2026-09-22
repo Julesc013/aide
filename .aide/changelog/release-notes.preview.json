@@ -1,26 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "e73ac0b269df",
-      "summary": "Materialize the bounded child WorkUnit under the current programme, reproduce in a complete checkout, run the distribution/full validation matrix and native profiles, and obtain independent review before integration."
-    },
-    {
-      "commit": "e73ac0b269df",
-      "summary": "Materialize the bounded child WorkUnit under the current programme, reproduce in a complete checkout, run the distribution/full validation matrix and native profiles, and obtain independent review before integration."
-    },
-    {
-      "commit": "aa3c8d14b55e",
-      "summary": "Regenerate export and release artifacts from this commit, rerun consumer qualification, and prepare the exact task-to-dev candidate."
-    },
-    {
-      "commit": "5400f53bc71b",
-      "summary": "Generate the portable pack and archives from clean committed source, qualify exact bytes, and publish the task branch."
-    },
-    {
-      "commit": "ffd24f67ba15",
-      "summary": "Commit the clean export pack, then generate and qualify exact release archives from that clean state."
-    },
-    {
       "commit": "780312f9ad08",
       "summary": "Generate the final pack and archives, validate exact hashes, close the WorkUnit, and publish the candidate branch."
     },
@@ -255,6 +235,30 @@
     {
       "commit": "edcd591a268b",
       "summary": "Refresh source-bound previews and regenerate the export, bundle, draft, and consumer evidence."
+    },
+    {
+      "commit": "566a2c3b8b7d",
+      "summary": "Regenerate and qualify exact export, archive, and draft bytes from this clean commit."
+    },
+    {
+      "commit": "8369ac540e4a",
+      "summary": "Obtain fresh Sol review; integrate the exact accepted candidate into dev and revalidate the combined tree."
+    },
+    {
+      "commit": "8369ac540e4a",
+      "summary": "Obtain fresh Sol review; integrate the exact accepted candidate into dev and revalidate the combined tree."
+    },
+    {
+      "commit": "2819a63e794e",
+      "summary": "Review this exact closure commit and integrate it into dev if accepted."
+    },
+    {
+      "commit": "6cbd104cb048",
+      "summary": "Refresh previews, rebuild exact artifacts, rerun consumer and canonical validation, and advance independent review."
+    },
+    {
+      "commit": "6cbd104cb048",
+      "summary": "Refresh previews, rebuild exact artifacts, rerun consumer and canonical validation, and advance independent review."
     }
   ],
   "highlights": [
@@ -299,13 +303,6 @@
       "commit": "4c0da8974daa",
       "subject": "audit(release): record artifact metadata findings",
       "summary": "Record release metadata integrity defects before artifact integration."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "e73ac0b269df",
-      "subject": "fix(distribution): harden portable fixture paths and preservation",
-      "summary": "reusable regressions and explicit candidate boundaries."
     },
     {
       "breaking": false,
@@ -393,31 +390,10 @@
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "e73ac0b269df",
-      "subject": "fix(distribution): harden portable fixture paths and preservation",
-      "summary": "fixture path portability and preservation defects."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "aa3c8d14b55e",
-      "subject": "fix(release): make extracted packs independently importable",
-      "summary": "extracted AIDE Lite archives can validate and safely import without the source checkout."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "5400f53bc71b",
-      "subject": "fix(export): capture provenance before output generation",
-      "summary": "generated pack provenance now distinguishes clean source from generator-created output changes."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "ffd24f67ba15",
-      "subject": "fix(release): bind provenance before bundle mutation",
-      "summary": "release provenance now describes source state rather than generator-created output churn."
+      "category": "Changed",
+      "commit": "8369ac540e4a",
+      "subject": "build(release): qualify deterministic candidate",
+      "summary": "exact no-publish candidate assets and draft evidence regenerated."
     },
     {
       "breaking": false,
@@ -526,6 +502,27 @@
     },
     {
       "breaking": false,
+      "category": "Fixed",
+      "commit": "8369ac540e4a",
+      "subject": "build(release): qualify deterministic candidate",
+      "summary": "release metadata is internally exact, checkout-independent, source-bound, and byte-stable."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "2819a63e794e",
+      "subject": "build(release): close post-commit provenance",
+      "summary": "committed release draft metadata now reflects post-checkpoint pack provenance exactly."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "6cbd104cb048",
+      "subject": "fix(release): bind both preview representations",
+      "summary": "preview publication gating now binds both generated representations and fails closed on malformed metadata."
+    },
+    {
+      "breaking": false,
       "category": "Docs",
       "commit": "091382e81f08",
       "subject": "feat(broker): integrate published runtime line",
@@ -544,6 +541,13 @@
       "commit": "671faa232216",
       "subject": "docs(release): bind previews to repair source",
       "summary": "refresh source-bound local changelog and release-note previews."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "566a2c3b8b7d",
+      "subject": "docs(release): refresh converged source previews",
+      "summary": "bind release summaries to the converged generator source."
     },
     {
       "breaking": false,
@@ -593,30 +597,17 @@
       "commit": "edcd591a268b",
       "subject": "fix(release): converge bundle validation bytes",
       "summary": "require validation to preserve all generated release bytes."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "6cbd104cb048",
+      "subject": "fix(release): bind both preview representations",
+      "summary": "added JSON/Markdown mismatch and malformed JSON cases."
     }
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "e73ac0b269df",
-      "summary": "This is an intake-backed source candidate pending canonical child-WorkUnit admission and full-checkout review."
-    },
-    {
-      "commit": "e73ac0b269df",
-      "summary": "This is an intake-backed source candidate pending canonical child-WorkUnit admission and full-checkout review."
-    },
-    {
-      "commit": "aa3c8d14b55e",
-      "summary": "Generated release artifacts still need clean-source regeneration and candidate qualification before integration or publication."
-    },
-    {
-      "commit": "5400f53bc71b",
-      "summary": "Release artifacts still require regeneration and final consumer qualification from this commit."
-    },
-    {
-      "commit": "ffd24f67ba15",
-      "summary": "Final export and release artifacts remain to be generated and qualified from this commit."
-    },
     {
       "commit": "780312f9ad08",
       "summary": "Exact generated artifacts and consumer canaries remain to be committed and integrated."
@@ -852,32 +843,36 @@
     {
       "commit": "edcd591a268b",
       "summary": "Previously regenerated artifacts are obsolete and will be deterministically replaced from the new clean source."
+    },
+    {
+      "commit": "566a2c3b8b7d",
+      "summary": "These files remain preview-only and do not authorize publication."
+    },
+    {
+      "commit": "8369ac540e4a",
+      "summary": "Independent exact-commit rereview and dev integration remain pending."
+    },
+    {
+      "commit": "8369ac540e4a",
+      "summary": "Independent exact-commit rereview and dev integration remain pending."
+    },
+    {
+      "commit": "2819a63e794e",
+      "summary": "Independent exact-commit rereview remains pending."
+    },
+    {
+      "commit": "6cbd104cb048",
+      "summary": "Portable artifacts and source-bound previews must be regenerated from this newer source commit."
+    },
+    {
+      "commit": "6cbd104cb048",
+      "summary": "Portable artifacts and source-bound previews must be regenerated from this newer source commit."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "edcd591a268ba8cd332ecad80a513ba3d632c3ef",
+  "source_head": "6cbd104cb048f4b0deb2b2ce7f01af532a9b9ff8",
   "source_range": "origin/main..HEAD",
   "validation_summary": [
-    {
-      "commit": "e73ac0b269df",
-      "summary": "PASS: all three captured baseline Git blob identities verified."
-    },
-    {
-      "commit": "e73ac0b269df",
-      "summary": "PASS: all three captured baseline Git blob identities verified."
-    },
-    {
-      "commit": "aa3c8d14b55e",
-      "summary": "PASS: 46 focused and adjacent tests; fresh disposable import wrote 814 files with zero conflicts; target-local doctor passed; repeated archives were byte-identical."
-    },
-    {
-      "commit": "5400f53bc71b",
-      "summary": "PASS: export/import 16 tests; release bundle 9 tests; Python compilation and diff checks."
-    },
-    {
-      "commit": "ffd24f67ba15",
-      "summary": "PASS: Q47 release bundle 10 tests; Python compilation and diff checks."
-    },
     {
       "commit": "780312f9ad08",
       "summary": "PASS: Q47 release bundle 10 tests; focused clean-pack regression; Python compilation and diff checks."
@@ -1113,6 +1108,30 @@
     {
       "commit": "edcd591a268b",
       "summary": "PASS: 16 Q47 release-bundle tests."
+    },
+    {
+      "commit": "566a2c3b8b7d",
+      "summary": "PASS: changelog preview generation and git diff checks."
+    },
+    {
+      "commit": "8369ac540e4a",
+      "summary": "PASS: 57 adjacent governance, export/import, Q47, and Q48 tests."
+    },
+    {
+      "commit": "8369ac540e4a",
+      "summary": "PASS: 57 adjacent governance, export/import, Q47, and Q48 tests."
+    },
+    {
+      "commit": "2819a63e794e",
+      "summary": "PASS: release validate, draft, and draft-validate."
+    },
+    {
+      "commit": "6cbd104cb048",
+      "summary": "PASS: 17 Q47 release-bundle tests."
+    },
+    {
+      "commit": "6cbd104cb048",
+      "summary": "PASS: 17 Q47 release-bundle tests."
     }
   ],
   "warnings": []
