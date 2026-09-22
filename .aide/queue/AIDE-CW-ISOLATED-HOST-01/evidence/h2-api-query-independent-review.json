@@ -1,0 +1,148 @@
+{
+  "schema": "aide.h2.api-query.independent-review.v1",
+  "task_id": "AIDE-CW-ISOLATED-HOST-01",
+  "review_date": "2026-09-22",
+  "reviewer": "codex/independent_source_review",
+  "verdict": "REQUEST_CHANGES",
+  "reviewed_range": {
+    "branch": "task/aide-cw-isolated-host-apiquery-01",
+    "base_commit": "c6fdc754844cf7d42302218ce08307a7e05dcb61",
+    "base_tree": "acb1ff296a622cc614e71b3ebb17a23752f8d902",
+    "published_commit": "ebf13af0dbef2dfbeab791dcb91eb8eb67a31c91",
+    "published_tree": "e7c7ee2b9e5833ea78eedef2f0fbf44b784736e1",
+    "base_is_sole_parent": true,
+    "worktree_clean_before_review": true
+  },
+  "scope": {
+    "changed_paths_in_reviewed_range": 16,
+    "all_changed_paths_within_task_allowlist": true,
+    "review_owned_outputs": [
+      ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-query-independent-review.md",
+      ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-query-independent-review.json"
+    ]
+  },
+  "source_manifest": {
+    "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-query-source-manifest.json",
+    "sha256": "0c7d957f5456e571b6fe3b78e6e1c1c939e3144c944ef4cc077da02a05766135",
+    "declared_source_aggregate_sha256": "d6e30f285926acccbb3dd14cd0ec6672e966267a3131b37b177c7ae42449dda3",
+    "recomputed_source_aggregate_sha256": "d6e30f285926acccbb3dd14cd0ec6672e966267a3131b37b177c7ae42449dda3",
+    "manifest_file_hashes_match": true,
+    "aggregate_matches": true,
+    "source_review_notes_sha256": "62395b3e7f4109e86b0bdb7a6144cf0e72dc65742dc7413431789c0aa3bfcc92"
+  },
+  "material_findings": [
+    {
+      "id": "H2-APIQUERY-001",
+      "severity": "HIGH",
+      "title": "The recorded 180-name closure cannot form an ApiSetQueryPlan",
+      "locations": [
+        "core/runtime/continuous_worker/windows_python_contract.py:50",
+        "core/runtime/continuous_worker/windows_system_observation.py:168",
+        ".aide/scripts/tests/test_continuous_worker_system_observation.py:467",
+        ".aide/scripts/tests/test_continuous_worker_system_observation.py:476",
+        ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json:2427"
+      ],
+      "evidence": {
+        "recorded_names": 180,
+        "distinct_recorded_names": 180,
+        "accepted_by_current_predicate": 177,
+        "rejected_by_current_predicate": 3,
+        "rejected_names": [
+          "ext-ms-onecore-appmodel-staterepository-cache-l1-1-0.dll",
+          "ext-ms-onecore-appmodel-staterepository-internal-l1-1-1.dll",
+          "ext-ms-onecore-appmodel-staterepository-internal-l1-1-4.dll"
+        ],
+        "exact_inventory_plan_result": "Refused: distinct literal API-set contracts required"
+      },
+      "impact": "The source cannot execute the claimed complete 180-name query workload or construct the corresponding complete SystemContract despite the raised numeric ceiling.",
+      "required_change": "Admit the documented bounded api-/ext- versioned contract grammar needed by the exact retained inventory and add an exact-inventory regression rather than only synthetic api-ms-win-test names."
+    },
+    {
+      "id": "H2-APIQUERY-002",
+      "severity": "MEDIUM",
+      "title": "The shared 256-row constant widens the historical resource-map policy",
+      "locations": [
+        "core/runtime/continuous_worker/windows_python_contract.py:13",
+        "core/runtime/continuous_worker/windows_system_observation.py:98",
+        "core/runtime/continuous_worker/windows_system_observation.py:446",
+        ".aide/scripts/tests/test_continuous_worker_system_observation.py:419"
+      ],
+      "evidence": {
+        "prior_shared_limit": 128,
+        "new_shared_limit": 256,
+        "independent_legacy_plan_probe_names": 129,
+        "independent_legacy_plan_probe_result": "accepted",
+        "legacy_mapping_iteration": "one _mapping call per admitted name"
+      },
+      "impact": "The change needed for the supported query and complete SystemContract also doubles admission on the retained resource-mapping path, weakening an unrelated native-operation boundary.",
+      "required_change": "Separate the system/query capacity from the historical resource-observation capacity and keep the latter at its prior bound unless a distinct reviewed policy explicitly authorizes expansion."
+    }
+  ],
+  "verified_guarantees": [
+    "The published commit has the requested base as its sole parent and all 16 changed paths are task-allowed.",
+    "All four source/dependency hashes and the canonical aggregate in the frozen manifest match the exact clean checkout.",
+    "The retained inventory contains exactly 180 distinct API-set names, numerically justifying a bounded query/system-contract ceiling above 180.",
+    "The ctypes declaration matches the installed Microsoft SDK apiquery2.h signature and calling convention: PCSTR, UINT32 buffer capacity, PWSTR, UINT32 pointer, and HRESULT through WinDLL.",
+    "The adapter requires S_OK, validates the returned count including the null terminator, and restricts output to a bounded canonical DLL basename.",
+    "The session consumes before dispatch, reserves before native calls, requires an exact durable-intent acknowledgement per name, counts attempted backend calls before invocation, emits no partial result, and refuses same-session replay.",
+    "Name, call, duration, output-buffer, and serialized-result bounds are explicit; an external owned-process deadline remains required for actual synchronous native calls."
+  ],
+  "independent_validation": {
+    "tests_executed": 138,
+    "tests_passed": 138,
+    "tests_failed": 0,
+    "test_groups": [
+      {
+        "name": "observation/query without NativeApiSetQueryApi instantiation",
+        "tests": 48,
+        "result": "PASS"
+      },
+      {
+        "name": "python-contract, windows-image, python-image, and PE regressions",
+        "tests": 64,
+        "result": "PASS"
+      },
+      {
+        "name": "security source tests without live loopback control",
+        "tests": 26,
+        "result": "PASS"
+      }
+    ],
+    "excluded_tests": [
+      {
+        "count": 3,
+        "reason": "They construct NativeApiSetQueryApi via __new__; the review request prohibited instantiating that class."
+      },
+      {
+        "count": 1,
+        "reason": "It opens a live loopback listener; the review remained source-only and effect-free."
+      }
+    ],
+    "exact_inventory_plan_probe": "FAIL as expected finding: three ext-ms-onecore names rejected",
+    "legacy_129_name_plan_probe": "PASS, confirming unintended old-path expansion",
+    "git_diff_check": "PASS",
+    "manifest_hash_check": "PASS",
+    "source_aggregate_check": "PASS"
+  },
+  "abi_reference": {
+    "installed_header": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/apiquery2.h:44",
+    "microsoft_get_api_set_module_base_name": "https://learn.microsoft.com/en-us/windows/win32/api/apiquery2/nf-apiquery2-getapisetmodulebasename",
+    "microsoft_api_set_contract_names": "https://learn.microsoft.com/en-us/windows/win32/apiindex/windows-apisets"
+  },
+  "limitations": [
+    "Protected journal durability and cross-process no-replay remain external premises; injected acknowledgements do not qualify the later effect controller.",
+    "The source clock checks cannot interrupt a blocked synchronous native call; a reviewed owned outer-process deadline remains required.",
+    "Physical host bytes, native object identity, protected authority, restricted loader behavior, private image/grants, AppContainer Python, credentials/model channel, and operational activation remain unqualified."
+  ],
+  "effect_boundary": {
+    "actual_native_query_executed": false,
+    "native_api_set_query_api_instantiated": false,
+    "dll_load_or_resource_map_performed": false,
+    "windows_state_mutated": false,
+    "profile_or_grant_created": false,
+    "credential_or_network_provider_accessed": false,
+    "git_branch_push_merge_tag_or_release_operation_performed": false,
+    "actual_native_query_or_effect_authorized_by_this_review": false,
+    "statement": "This source review does not authorize or perform the actual native query or any downstream effect."
+  }
+}

@@ -14,10 +14,19 @@ before each query. Any build, guard, clock, acknowledgement, HRESULT, output
 length, host spelling, capacity, or serialization failure consumes the request
 without partial success or automatic replay.
 
-The 256-row ceiling is a bounded correction for the already observed 180-name
-Python closure, not a wildcard or omission. Tests execute all 180 rows within a
-257-call budget. Returned hosts are canonical physical DLL basenames only;
-duplicate host values are allowed because many contracts can share one host.
+The 256-row system-contract and supported-query ceiling is a bounded correction
+for the already observed 180-name Python closure, not a wildcard or omission.
+The historical resource-mapping path retains its prior independent 128-name
+ceiling. Tests load the exact retained inventory, including three documented
+`ext-ms-onecore-*` contracts, and execute 180 rows within a 257-call budget.
+Returned hosts are canonical physical DLL basenames only; duplicate host values
+are allowed because many contracts can share one host.
+
+The first independent review requested changes because the initial grammar
+accepted only `*-ms-win-*` contracts and because the shared limit had widened
+the older resource path. Both findings are retained in the review record. This
+revision accepts bounded, versioned `api-*` and `ext-*` contract names and
+separates the query/system-contract limit from the resource-map limit.
 
 This is author/source evidence, not independent review. No native constructor,
 API query, file observation, copy, grant, profile, child, credential, network,

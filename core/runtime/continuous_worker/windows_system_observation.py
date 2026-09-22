@@ -27,6 +27,7 @@ MAX_EXECUTABLE_MODULES = 1024
 CHUNK_BYTES = 65536
 API_QUERY_MAX_PATH = 260
 MAX_API_QUERY_CALLS = MAX_API_SETS + 1
+MAX_RESOURCE_API_SETS = 128
 
 
 def _canonical(value):
@@ -95,7 +96,7 @@ class ObservationPlan:
         rows, names = value["files"], value["api_names"]
         if type(rows) is not list or not 1 <= len(rows) <= MAX_MODULES - 3:
             raise Refused("finite physical system object pins required")
-        if type(names) is not list or len(names) > MAX_API_SETS:
+        if type(names) is not list or len(names) > MAX_RESOURCE_API_SETS:
             raise Refused("finite API request list required")
         files, seen, identities, total = [], set(), {root_id}, 0
         for row in rows:

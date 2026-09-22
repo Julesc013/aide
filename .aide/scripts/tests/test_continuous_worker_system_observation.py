@@ -416,8 +416,8 @@ class ObservationTests(unittest.TestCase):
         with self.assertRaises(Refused): obs.ObservationPlan.read(v)
         v = value(); v["files"].append(copy.deepcopy(v["files"][0]))
         with self.assertRaises(Refused): obs.ObservationPlan.read(v)
-        v = value(); v["api_names"] = [f"api-ms-win-test-{i}-l1-1-0.dll" for i in range(obs.MAX_API_SETS)]
-        self.assertEqual(len(obs.ObservationPlan.read(v).api_names), obs.MAX_API_SETS)
+        v = value(); v["api_names"] = [f"api-ms-win-test-{i}-l1-1-0.dll" for i in range(obs.MAX_RESOURCE_API_SETS)]
+        self.assertEqual(len(obs.ObservationPlan.read(v).api_names), obs.MAX_RESOURCE_API_SETS)
         v["api_names"].append("api-ms-win-extra-l1-1-0.dll")
         with self.assertRaises(Refused): obs.ObservationPlan.read(v)
         v = value(); v["files"] = [dict(v["files"][0], name=f"m{i}.dll", size=obs.MAX_PE_BYTES,
@@ -465,13 +465,24 @@ class ApiSetQueryTests(unittest.TestCase):
         self.assertTrue(all(intent < call for intent, call in zip(intents, calls)))
 
     def test_observed_180_name_closure_and_exact_256_ceiling_fit(self):
-        for count in (180, obs.MAX_API_SETS):
-            names = [f"api-ms-win-test-{index}-l1-1-0.dll" for index in range(count)]
-            with self.subTest(count=count):
-                self.assertEqual(len(obs.ApiSetQueryPlan.read(query_value(names)).api_names), count)
+        evidence = ROOT / ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json"
+        names = json.loads(evidence.read_text(encoding="utf-8"))["api_names"]
+        self.assertEqual(len(names), 180)
+        self.assertEqual(len(set(names)), 180)
+        self.assertEqual(obs.ApiSetQueryPlan.read(query_value(names)).api_names, tuple(sorted(names)))
+        names = [f"api-ms-win-test-{index}-l1-1-0.dll" for index in range(obs.MAX_API_SETS)]
+        self.assertEqual(len(obs.ApiSetQueryPlan.read(query_value(names)).api_names), obs.MAX_API_SETS)
         names.append("api-ms-win-overflow-l1-1-0.dll")
         with self.assertRaises(Refused):
             obs.ApiSetQueryPlan.read(query_value(names))
+
+    def test_resource_mapping_limit_remains_independent_from_query_limit(self):
+        self.assertLess(obs.MAX_RESOURCE_API_SETS, obs.MAX_API_SETS)
+        v = value()
+        v["api_names"] = [f"api-ms-win-test-{index}-l1-1-0.dll"
+                          for index in range(obs.MAX_RESOURCE_API_SETS + 1)]
+        with self.assertRaises(Refused):
+            obs.ObservationPlan.read(v)
 
     def test_observed_180_name_workload_completes_inside_call_and_result_bounds(self):
         names = [f"api-ms-win-test-{index}-l1-1-0.dll" for index in range(180)]

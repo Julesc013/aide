@@ -48,7 +48,7 @@ def _name(value):
 
 
 def _api_name(value):
-    return bool(re.fullmatch(r"(?:api|ext)-ms-win-[a-z0-9-]+-l[0-9]+-[0-9]+-[0-9]+\.dll", value))
+    return bool(re.fullmatch(r"(?:api|ext)-(?:[a-z0-9]+-)+l[0-9]+-[0-9]+-[0-9]+\.dll", value))
 
 
 @dataclass(frozen=True)
