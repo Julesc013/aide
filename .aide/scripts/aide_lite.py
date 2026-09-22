@@ -39103,6 +39103,7 @@ def render_export_report(pack_root: Path, manifest_files: list[str], boundary_vi
 def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str | None = None) -> tuple[Path, dict[str, object]]:
     if name != EXPORT_PACK_ID:
         raise ValueError(f"unsupported pack name: {name}")
+    source_dirty = bool(git_status_short(repo_root)[1])
     pack_root = (repo_root / output).resolve() if output else export_pack_root(repo_root, name)
     repo_root_resolved = repo_root.resolve()
     try:
@@ -39148,9 +39149,8 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
     import_policy_source = repo_root / EXPORT_IMPORT_POLICY_TEMPLATE_PATH
     write_text_if_changed(pack_root / "import-policy.yaml", read_text(import_policy_source))
 
-    dirty = bool(git_status_short(repo_root)[1])
     manifest_files = sorted(set(copied))
-    write_text_if_changed(pack_root / "manifest.yaml", render_manifest(manifest_files, git_commit_id(repo_root), dirty))
+    write_text_if_changed(pack_root / "manifest.yaml", render_manifest(manifest_files, git_commit_id(repo_root), source_dirty))
     checksums = build_pack_checksums(pack_root)
     write_text_if_changed(pack_root / "checksums.json", stable_json_text(checksums))
     boundary_violations = validate_export_pack_boundary(pack_root)

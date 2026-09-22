@@ -19,12 +19,12 @@
 ## Automated Results
 
 - `test_q47_release_bundle.py`: **PASS**, 9 tests.
-- `test_export_import.py`: **PASS**, 15 tests.
+- `test_export_import.py`: **PASS**, 16 tests, including clean pre-generation provenance.
 - `test_q31_export_pack_governance.py`: **PASS**, 6 tests.
 - `test_q48_github_release_draft.py`: **PASS**, 8 tests.
 - `test_aide_self_consumer_fixture_v0.py`: **PASS**, 7 tests.
 - `test_aide_distribution_product_status_projection.py`: **PASS**, 1 test.
-- Total recorded tests: **46 passed, 0 failed, 0 skipped**.
+- Total recorded tests: **47 passed, 0 failed, 0 skipped**.
 
 ## Dirty-Source Preview Canary
 
@@ -38,3 +38,12 @@
 The preview artifacts were restored after this check. Final tracked artifacts
 must be regenerated from the clean implementation commit so their source
 identity does not claim this dirty pre-commit state as the release candidate.
+
+## Provenance Correction
+
+A clean disposable Git source initially produced `source_dirty_state: true`
+because export sampled status after writing its generated pack. The exporter
+now captures source dirtiness before output mutation. The regression records
+the exact committed source identity, requires `source_dirty_state: false`, and
+passes pack-provenance validation even though generation subsequently creates
+the expected output changes.
