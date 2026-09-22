@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 status: running
-classification: qualified_integration_candidate
-planning_state: awaiting_reviewed_closeout_publication_and_dev_integration
+classification: integrated_pending_artifact_refresh
+planning_state: awaiting_post_integration_pack_refresh
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
 current_slice: reviewed_candidate_closeout
@@ -11,7 +11,7 @@ dev_base: c6fdc754844cf7d42302218ce08307a7e05dcb61
 source_preserved: two_parent_merge_7aab31bc1bc747484d80c662d20e218bb93d1f5b
 windows_validation: 157_total_149_passed_8_skipped
 independent_review: pass_f1_closed
-dev_integration: pending
+dev_integration: bb689227c6a65292f4728d7ae0f8759c22e77bd3
 notes:
   - The source candidate remains fixture-only and has one commit-format PASS.
   - No non-disposable consumer, main ref, tag, release, GitHub setting, or machine configuration is in scope.
@@ -19,3 +19,5 @@ notes:
   - The changed core distribution files are not present in the current aide-lite export payload; commit-bound portable provenance is deferred to the post-integration artifact refresh.
   - Independent review reproduced an active Windows 8.3 alias mutation; the repair now refuses non-enumerated aliases and its actual short-name zero-write regression passes.
   - Superseding rereview passed the exact repair, including active leaf, nested-parent, and nested-leaf aliases with zero mutation and exact-name compatibility.
+  - Dev integration preserves the reviewed candidate as second parent 6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22 and passes 126 focused plus 157 adjacent tests with the same eight explicit host skips.
+  - The remaining task-owned action is the commit-bound portable artifact refresh and its validation; no main, tag, upload, or publication authority is implied.

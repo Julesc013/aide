@@ -39,8 +39,11 @@ Windows-tested, independently reviewed integration candidate and land it on
 - [x] Preserve the first independent `REQUEST_CHANGES` review and repair its
   reproduced Windows 8.3 alias mutation with an actual short-name regression.
 - [x] Obtain independent exact-commit review.
-- [ ] Publish the qualified task ref.
-- [ ] Prepare, validate, integrate, and observe the exact `dev` candidate.
+- [x] Publish the qualified task ref at `6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22`.
+- [x] Prepare, validate, integrate, and observe the exact `dev` candidate at
+  `bb689227c6a65292f4728d7ae0f8759c22e77bd3`.
+- [ ] Refresh and validate commit-bound portable artifact provenance from the
+  landed `dev` source.
 
 ## Test Oracle
 

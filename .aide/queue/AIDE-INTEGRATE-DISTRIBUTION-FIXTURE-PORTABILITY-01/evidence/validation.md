@@ -45,4 +45,20 @@ Superseding independent rereview passed exact commit `64979977922ae8a493646df585
 and tree `c7474c29bbd84dfce6fc08c892544da045b6db3a`. The reviewer additionally
 exercised active nested-parent and nested-leaf 8.3 aliases, exact long-name
 compatibility, source ancestry/blob preservation, both test suites, AIDE Lite
-test, commit checks, and diff checks. Dev integration remains pending.
+test, commit checks, and diff checks.
+
+## Dev Integration
+
+The exact reviewed candidate was integrated into `dev` by two-parent commit
+`bb689227c6a65292f4728d7ae0f8759c22e77bd3`, with reviewed candidate
+`6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22` preserved as its second parent.
+
+- PASS WITH SKIPS: 126 focused portability tests; 118 passed and eight skipped.
+- PASS WITH SKIPS: 157 adjacent distribution tests; 149 passed and eight skipped.
+- PASS: `py -3 -B .aide/scripts/aide_lite.py test`.
+- PASS: corrected integration commit message policy and `git diff --check`.
+- PENDING: regenerate and validate commit-bound portable artifacts from the
+  landed clean source commit.
+
+No main ref, tag, upload, GitHub Release, non-disposable consumer, or machine
+configuration was changed by this integration.
