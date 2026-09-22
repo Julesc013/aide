@@ -113,8 +113,8 @@
       "path": ".aide/release/dist/release-validation.json",
       "publish_candidate": true,
       "required": false,
-      "sha256": "fa94ab8f8c1a08931063994878e7566c56a23bba7d8bdac57e4c1aa4108c531b",
-      "size_bytes": 3384,
+      "sha256": "c42acc5280fa5f2d1d00a18b2a362bf515ff3d63e411843d2d12ce45b319e37a",
+      "size_bytes": 3416,
       "upload_order": 9,
       "validation_status": "present"
     },
@@ -126,8 +126,8 @@
       "path": ".aide/release/dist/release-validation.md",
       "publish_candidate": true,
       "required": false,
-      "sha256": "37b6d4e4c7f5106030cac8829decd81fed05f89641c70f5b87efdac0c363932c",
-      "size_bytes": 222,
+      "sha256": "aa0c336c3c2c0ded2747876f3517034f31dafd8f2a0f077274e0eb89ad649182",
+      "size_bytes": 238,
       "upload_order": 10,
       "validation_status": "present"
     },
