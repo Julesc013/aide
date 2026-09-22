@@ -1,0 +1,120 @@
+{
+  "schema": "aide.host.h2-checkpoint-helper-checks.v1",
+  "checks": [
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.49629,
+      "log": "h2-checkpoint-task-inspect.txt",
+      "bytes": 382,
+      "sha256": "00d6e618f5dbf416de04f12dfdc7992d3e77bc710a457afd04b792f0c5b7e811"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.490814,
+      "log": "h2-checkpoint-task-noop.txt",
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.469539,
+      "log": "h2-checkpoint-task-recover.txt",
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.719537,
+      "log": "h2-checkpoint-validate.txt",
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "policy"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.597467,
+      "log": "h2-checkpoint-git-policy.txt",
+      "bytes": 5553,
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "detect"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.596139,
+      "log": "h2-checkpoint-git-detect.txt",
+      "bytes": 560,
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.601782,
+      "log": "h2-checkpoint-git-plan.txt",
+      "bytes": 689,
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de"
+    }
+  ],
+  "report_originals_restored": {
+    ".aide/git/workflow-detection.json": true,
+    ".aide/git/workflow-detection.md": true,
+    ".aide/git/latest-helper-plan.json": true,
+    ".aide/git/latest-helper-plan.md": true,
+    ".aide/git/aide-dev-main-plan.json": true,
+    ".aide/git/aide-dev-main-plan.md": true
+  },
+  "branch_mutation": false,
+  "source_unchanged": true,
+  "index_unchanged": true,
+  "provider_records_untouched": true
+}

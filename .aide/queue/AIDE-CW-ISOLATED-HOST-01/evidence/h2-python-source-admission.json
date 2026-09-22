@@ -1,0 +1,69 @@
+{
+  "schema": "aide.host.h2-python-source-admission.v1",
+  "source_base": "06f2546fbb0fea3d4ace8278602737f113c1354d",
+  "branch": "task/aide-cw-integration-broker-01",
+  "proposal_sha256": "16b243f4a3d9401cb13c8cf8e282918539817c260037da4f673bfc030dee072d",
+  "authority": "Explicit programme and ROOT source/synthetic acceptance after checked H2 image checkpoint",
+  "new_paths": [
+    "core/runtime/continuous_worker/windows_pe.py",
+    "core/runtime/continuous_worker/windows_python_image.py",
+    ".aide/scripts/tests/test_continuous_worker_windows_pe.py",
+    ".aide/scripts/tests/test_continuous_worker_python_image.py"
+  ],
+  "additional_existing_paths": [
+    "core/runtime/continuous_worker/windows_image.py",
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py"
+  ],
+  "checks": [
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "log": "h2-python-source-inspect.txt",
+      "sha256": "3d76cc0638c605d1ef22993ce56ee63a9bc6f56c14ca18ff5da6cdd0f09c44a6",
+      "elapsed_seconds": 0.487477
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "log": "h2-python-source-noop-check.txt",
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4",
+      "elapsed_seconds": 0.480481
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "log": "h2-python-source-recover.txt",
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a",
+      "elapsed_seconds": 0.490758
+    }
+  ],
+  "actual_tool_copies": false,
+  "package_grants": false,
+  "appcontainer_launch": false,
+  "activation": false,
+  "index_untouched": true
+}

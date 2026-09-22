@@ -1,0 +1,58 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BROKER-DEV-PACK-REFRESH-01
+title: Refresh portable artifacts after broker dev integration
+type: local_artifact_refresh
+status: passed
+planning_state: integrated_to_dev
+result: PASS
+created_at: 2026-09-22
+updated_at: 2026-09-22
+parent_task: AIDE-CW-BROKER-DEV-INTEGRATION-01
+depends_on:
+  - AIDE-CW-BROKER-DEV-INTEGRATION-01
+objective: >
+  Regenerate the tracked portable export pack and local release bundle from the
+  clean post-integration dev source, validate exact artifact and consumer
+  behavior, and return canonical validation to PASS without publishing.
+authority_basis: >
+  The owner directed continued implementation, integration, and stable-delivery
+  work. The broker integration is published on dev and canonical validation
+  requires a derived-artifact provenance refresh. Existing Q47 boundaries
+  authorize local bundle generation and validation but prohibit publication.
+scope:
+  allowed_paths:
+    - .aide/intake/latest-*
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/**
+    - .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/**
+    - .aide/queue/index.yaml
+    - IMPLEMENT.md
+    - PLANS.md
+  protected_paths:
+    - core/**
+    - .aide/scripts/**
+    - .codex/**
+  forbidden_operations:
+    - creating or pushing a tag
+    - uploading assets or publishing a GitHub Release
+    - GitHub API mutation
+    - changing main or target repositories
+    - enabling provider model credential or network effects
+    - claiming full stable release or operational broker completion
+authorized_operations:
+  - regenerate the committed portable export pack with export-pack
+  - regenerate local release artifacts with release bundle
+  - run pack release consumer and canonical validation checks
+  - commit and publish the task branch
+  - integrate the qualified task to dev through the existing helper workflow
+verification:
+  - pack-status passes with clean post-integration source provenance
+  - release validate passes with exact manifest checksum and payload closure
+  - portable import update and release-bundle tests pass
+  - canonical doctor and validate pass
+  - no publication tag upload GitHub mutation or target mutation occurs
+retained_gates:
+  - public release remains separately reviewed and authorized
+  - main promotion remains an exact owner decision
+  - operational broker and host qualification remain open

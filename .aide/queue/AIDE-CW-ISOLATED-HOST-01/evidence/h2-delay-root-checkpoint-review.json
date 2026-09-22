@@ -1,0 +1,14 @@
+{
+  "schema": "aide.host.h2-delay-root-checkpoint-review.v1",
+  "result": "PASS",
+  "scope_sha256": "ec72277a8f93f12c372a6c9051c11e31c0c137211513c13f95656d7471607be3",
+  "source_base": "830bf30db3e238fe3f8b1335f59a938ae415fe95",
+  "source_aggregate": "54567d76c19f80e799c54ac9e65d2f544ed2f9f0f52b4ecf19caf936a67f3c83",
+  "independent_review_sha256": "58d58cbaf777e7dae16b826b012b6bbc19bef132100bca5f903f1747acf0e06e",
+  "selected23_raw_git_blobs_verified": true,
+  "archive78_members_and_originals_verified": true,
+  "projected_tree_excluding_approval_records": "525de0aa88b05014d2d3ab6ddcb795f07b0ee948",
+  "excluded_working_index_unchanged": true,
+  "approved_scope": "Exactly23 scoped paths plus scope and this ROOT record, checked normal local commit only. Recompute full staged tree; no publication, limit increase, image/grant/DLL mapping or interpreter execution.",
+  "review_notes": "Independent101tests, exact numeric symbol boundaries and eight actual byte-stream metadata observations support the timestamp0 subset;128API cap and native/loader qualification remain open. Earlier read-only review stopped on an incorrect assumed scope-field name before writing; this completed review uses this packet's actual schema."
+}

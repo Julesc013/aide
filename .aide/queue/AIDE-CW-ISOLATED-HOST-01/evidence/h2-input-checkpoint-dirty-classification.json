@@ -1,0 +1,3527 @@
+{
+  "schema": "aide.host.input-checkpoint-dirty-classification.v1",
+  "head": "0c7788fd3660dc18e2751108ac49afe96d446801",
+  "staged_tree": "a57e4a2cf5f22ec0deefa8c6f338b8829f61ca19",
+  "selected_count": 29,
+  "dirty_paths": [
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md",
+      "status": "M ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/CUSTODY.md",
+      "status": "M ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/changed-files.md",
+      "status": "M ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-execution.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-helper-checks.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-message.txt",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-scope.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-validation.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-custody.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-driver-plan.md",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-effect-manifest.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-evidence.zip",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-reviewed-tests.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-actual-review.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-checkpoint-review.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-orchestration-custody.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-source-effect-review.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-checks.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-manifest.json",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-review-notes.md",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input.py",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_controller.py",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_tests.py",
+      "status": "A ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/remaining-risks.md",
+      "status": "M ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/validation.md",
+      "status": "M ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/status.yaml",
+      "status": "M ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/ExecPlan.md",
+      "status": " M",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/status.yaml",
+      "status": " M",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/task.yaml",
+      "status": " M",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/index.yaml",
+      "status": " M",
+      "classification": "retained_provider_activation_index_excluded"
+    },
+    {
+      "path": "DOCUMENTATION.md",
+      "status": "M ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": "IMPLEMENT.md",
+      "status": "M ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": "PLANS.md",
+      "status": "M ",
+      "classification": "selected_exact_root_approved_local_checkpoint"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/strict-contract-experiments.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/branch-plan.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-checkpoint-git-detect.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-checkpoint-git-plan.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-checkpoint-git-policy.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-checkpoint-latest-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-checkpoint-message.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-checkpoint-range-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-doctor.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-final-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-first-tests.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-first-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-git-helper-observations.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-root-independent-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-root-push.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-selected-before-stage.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-slice-validation.before-review.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-source.patch",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-task-noop-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-task-recover.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/bridge-validate.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/broker-tests-renamed.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/broker-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/capsule-review-source.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/checkpoint-helper-plan.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/checkpoint-latest-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/checkpoint-message.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/delta-recovery-tests-first.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/doctor.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/effect-boundary-initial-test-failure.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/effect-boundary-review-source.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/effect-capsule-root-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/eval-generated-report-delta.patch",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/eval.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/export-boundary.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/generated-report-restoration.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/git-detect.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/git-plan.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/git-policy.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-aide-cw-github-target-qualification-01-inspect.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-aide-cw-github-target-qualification-01-noop-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-aide-cw-github-target-qualification-01-recover.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-aide-cw-integration-broker-01-inspect.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-aide-cw-integration-broker-01-noop-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-aide-cw-integration-broker-01-recover.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-aide-dev-main-plan.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-aide-dev-main-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-commit-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-commit.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-diff-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-git-detect.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-git-plan.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-git-policy.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-index.yaml",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-latest-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-latest-helper-plan.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-latest-helper-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-message.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-push-plan.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-push.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-pushed.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-range-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-staged-verification.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-workflow-detection.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-workflow-detection.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-doctor.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-existing-pr-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-24-source-custody.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-24-source.zip",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-evidence.before-preflight.zip",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-final-tests.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-final-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-pending-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-real-jobs.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-root-final-replay.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-root-replay.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-root-replay.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-source.patch",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-tests.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-observation-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-pr4-current-body.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-validate.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-bridge-regression-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-aide-dev-main-plan.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-aide-dev-main-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-cached-diff-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-commit-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-commit.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-detect.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-helper-checks.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-latest-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-latest-helper-plan.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-latest-helper-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-message.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-plan.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-policy.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-push-plan.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-push.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-pushed.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-range-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-stage.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-staged-verification.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-workflow-detection.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-workflow-detection.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-doctor.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-export-scope-validation.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-first-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-helper-validation.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-index-preservation.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-index-working-original.yaml",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-pr4-body.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-pr4-observed.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-pr4-update.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-raw-regression-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-root-independent-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-scoped-diff-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-second-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-secret-scan.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-source.patch",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-task-noop-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-task-recover.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-validate.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/issuer-initial-test-failure.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/issuer-pr-root-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/latest-golden-tasks.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/latest-golden-tasks.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/pr4-qualified-core-body.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/pr4-qualified-core-pushed.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/pr4-v1-body.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/provider-closeout-latest-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/provider-closeout-message-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/provider-closeout-message.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/provider-closeout-range-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-doctor.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-full-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-helper-plan.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-latest-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-message-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-message.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-range-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-validate.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/source-diff-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-checkpoint-helper-plan.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-checkpoint-latest-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-checkpoint-message.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-checkpoint-range-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-doctor.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-helper-validation.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-remediation-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-root-expiry-probe.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-root-review-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-slice-validation.before-review.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-source.patch",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-transport-first-tests.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-transport-first-tests.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-transport-regression.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-transport-regression.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-transport-review-source.before-remediation.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-validate.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/task-inspect.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/task-noop-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/task-recover.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-checkpoint-helper-plan.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-checkpoint-latest-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-checkpoint-message.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-checkpoint-range-check.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-doctor.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-review-source.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-suite-first-source.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-suite-first.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-suite-second-source.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-suite-second.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-validate.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/validate.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/worker-regression.txt",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-actual-native-effect-first.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-actual-native-effect-first.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-actual-owned-diagnostic-first.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-actual-owned-diagnostic-first.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-actual-owned-interface-first.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-actual-owned-network-first.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-actual-owned-network-first.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-aide-dev-main-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-aide-dev-main-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-commit-receipt.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-commit.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-docs-first-failure.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-git-detect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-git-plan.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-git-policy.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-index.yaml",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-latest-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-latest-helper-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-latest-helper-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-message-final-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-range-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-stage-first-refusal.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-stage.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-staged-verification.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-task-noop.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-task-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-workflow-detection.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-workflow-detection.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-final-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-host-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-native-build-first.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-native-build.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-native-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-source-config-observation.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-source-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-source-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-source-manifest.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-source-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-task-inspect.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-diagnostic-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-doctor-source-final.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-effect-manifest.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-exact-image-security-events.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-existing-host-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-inspect-source-final.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-interface-compile-first.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-interface-first-source-checks.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-interface-host-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-interface-native-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-interface-scoped-diff-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-interface-source-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-interface-source-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-interface-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-loopback-config-first-observation.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-build-first.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-build.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-host-inventory.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-interface-read-only.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-diff-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-effect-manifest.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-final-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-host-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-preflight.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-review-request.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-source-manifest.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-source-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-static-validation.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-volume-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-helper-validation.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-host-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-native-build-first.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-native-build.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-oracle-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-oracle-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-scoped-diff-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-source-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-source-manifest.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-source-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-static-validation.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-task-inspect-corrected.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-task-inspect-corrected.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-task-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-diagnostic-effect-manifest.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-diagnostic-review-request.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-network-effect-manifest.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-network-review-request.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-review-request.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-diagnostic-network-oracle.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-diagnostic-review.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-diagnostic-source-job.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-independent-first-review.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-independent-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-independent-review.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-independent-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-interface-network-oracle.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-interface-source-job.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-native-volume-review.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-native-volume-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-owned-network-network-oracle.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-owned-network-review.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-owned-network-source-job.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-source-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-source-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-source-helper-validation.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-source-manifest.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-source-test-runs.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-task-noop-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-task-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-validate-source-final.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-wfp-existing-state-observation.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-add.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-aide-dev-main-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-aide-dev-main-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-commit-receipt.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-commit.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-diff-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-export-secret-checks-first.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-git-detect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-git-plan.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-git-policy.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-latest-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-latest-helper-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-latest-helper-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-message-before-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-message-check-first.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-message.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-range-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-staged-diff-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-staged-verification.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-task-inspect-final.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-task-noop.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-task-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-validate-final.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-workflow-detection.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-workflow-detection.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-aide-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-before-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-before-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-commit-receipt.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-git-detect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-git-plan.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-git-policy.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-task-noop.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-task-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-commit-commit.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-commit-diff-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-commit-latest-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-commit-message-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-commit-range-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.json.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.md.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.json.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.md.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.json.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.md.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-execution.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-execution.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-finalize.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-probes.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-probes.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-tests.stderr.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-tests.stdout.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-root-review-custody.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-root-review-evidence.zip",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-manifest.first.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-noop-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-first.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-final-flush-red-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-final-flush-red-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-h1-final-regression.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-h1-source-first-regression.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-held-parent-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-held-parent-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-final-execution.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-final-review.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-root-alias-probe.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-root-alias-probe.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-source-output-overlap-probe.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-source-output-overlap-probe.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-controller-stderr.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-controller-stdout.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-summary.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-aide-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-git-detect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-git-plan.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-git-policy.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-message-check-initial.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-message-recheck.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-noop.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-preparation-history.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-staged-binding.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-commit-message-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-aide-dev-main-plan.json.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-aide-dev-main-plan.md.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-latest-helper-plan.json.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-latest-helper-plan.md.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-workflow-detection.json.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-workflow-detection.md.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-aide-dev-main-plan.json.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-aide-dev-main-plan.md.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-latest-helper-plan.json.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-latest-helper-plan.md.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-workflow-detection.json.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-workflow-detection.md.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-parent-preparation.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-reviewed-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-checkpoint-review.original.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-start-checks.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-start-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-start-noop-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-start-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-job-final-regression.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-preparation-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-preparation-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-aide-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-add.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-commit-receipt.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-commit.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-git-detect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-git-plan.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-git-policy.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-latest-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-range-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-staged-diff-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-task-noop.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-task-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-contract-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-contract-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-decomposition-first-attempt.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-generated-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-generated-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/aide-dev-main-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/aide-dev-main-plan.json.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/aide-dev-main-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/aide-dev-main-plan.md.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/latest-helper-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/latest-helper-plan.json.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/latest-helper-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/latest-helper-plan.md.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/workflow-detection.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/workflow-detection.json.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/workflow-detection.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-helper-output/workflow-detection.md.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-independent-execution.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-independent-execution.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-independent-finalize.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-independent-probes.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-independent-probes.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-independent-tests.stderr.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-independent-tests.stdout.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-library-before-mutation.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-library-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-library-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-library-fixed-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-library-fixed-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-pe-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-pe-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-precommit-message-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-readonly-pe-inspection.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-source-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-source-noop-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-source-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-staged-verification.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-review-helper-checks.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-review-helper-wrapper-first-failure.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-review-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-review-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-root-alias-red-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-root-alias-red-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-root-checkpoint-selected-blobs.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-source-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-source-noop-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-source-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-aide-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-commit-receipt.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-git-detect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-git-plan.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-git-policy.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-message-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-task-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-task-noop.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-task-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-commit-commit.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-commit-diff-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-commit-latest-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-commit-message-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-commit-range-check.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-final-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-final-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-first-tests.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-first-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/aide-dev-main-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/aide-dev-main-plan.json.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/aide-dev-main-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/aide-dev-main-plan.md.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/latest-helper-plan.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/latest-helper-plan.json.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/latest-helper-plan.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/latest-helper-plan.md.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/workflow-detection.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/workflow-detection.json.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/workflow-detection.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-helper-output/workflow-detection.md.before",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-admission-observations.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-admission-observations.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-execution.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-final-guard-red.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-final-guard-red.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-probes.stderr",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-probes.stdout",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-reviewed-probes.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-reviewed-probes.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-run.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-tests.stderr",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-tests.stdout",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-native-input-next-proposal.md",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-precall-guard-red.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-reviewed-aide-validate.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-reviewed-tests.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-root-checkpoint-review.original.bin",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-root-commit-review.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-checks.json",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-inspect.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-noop.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-recover.txt",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source.patch",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-two-api-next-proposal.md",
+      "status": "??",
+      "classification": "retained_next_proposal_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_input_root_actual_review.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_input_root_source_review.py",
+      "status": "??",
+      "classification": "retained_raw_history_and_current_execution_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/CUSTODY.md",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/admission-ExecPlan.md.txt",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/admission-status.yaml.txt",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/admission-task.yaml.txt",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/changed-files.md",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/commit-authority-follow-on.md",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/directory-replay-canonical-chain.json",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/directory-review-validation-history.md.txt",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/entry-replay-custody.json",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/entry-replay-evidence.zip",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/remaining-risks.md",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/evidence/validation.md",
+      "status": "??",
+      "classification": "retained_provider_owned_entry_work_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/changed-byte-manifest.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/historical-before-closeout/ExecPlan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/historical-before-closeout/integration-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/historical-before-closeout/status.yaml",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/historical-before-closeout/task.yaml",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/hygiene-local-main-dev-sync.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/hygiene-main-dev-sync-open.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-ancestry-update-request.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-canonical-promotion-body.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-canonical-promotion-chain.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-canonical-promotion-open.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-canonical-promotion-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-canonical-sync-body.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-canonical-sync-open.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-ce7f537-green-checks.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-final-local-sync.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-final-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-final-premerge.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-integrated-body.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-postmerge-check-observation.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-promotion-helper.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-promotion-hygiene.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-promotion-paths.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-promotion-preflight.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr27-synchronized-candidate.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr28-before-pr27-merge.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr30-hygiene-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr30-hygiene-premerge.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr31-ancestry-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr31-ancestry-premerge.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr32-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr32-premerge-checked.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr33-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/pr33-premerge-checked.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/primary-remediation-source-verification.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/primary-retention-commit-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/remediation-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/retention-remediation-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/usk-pr27-stream-retention.patch",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/usk-streaming-integration-chain.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/changed-byte-manifest.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/historical-before-closeout/ExecPlan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/historical-before-closeout/status.yaml",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/historical-before-closeout/task.yaml",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-branch-open.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-candidate-review.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-candidate.patch",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-canonical-final-local-sync.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-canonical-integration-chain.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-canonical-promotion-open.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-canonical-sync-open.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-clean-source-sdk-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-exact-branch-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-helper-preflight.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-hygiene.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-independent-depth-diagnosis.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-independent-execution.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-independent-qualified-prefix.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-independent-review.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-independent-review.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-local-checkpoint.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-normal-integration-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-paths.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-post-review-gate-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-admission-task-pr-open.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-diagnostic/diagnostic.cpp",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/path-diagnostic/diagnostic.vcxproj",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-candidate-review.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-canonical-final-local-sync.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-canonical-integration-chain.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-canonical-promotion-open.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-canonical-sync-open.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-clean-source-sdk-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-clean-source-sdk-short-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-complete-candidate.patch",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-final-ancestry-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-final-push-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-hygiene-preflight.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-independent-checks.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-independent-followups.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-independent-long-path-diagnosis.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-independent-provenance.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-independent-review.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-layout-preflight.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-normal-integration-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-premerge-checked.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-reconciliation-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-retention-reconciliation.patch",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr28-reviewed-local-commit.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr34-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr34-premerge-checked.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr35-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr35-premerge-checked.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr36-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr36-premerge-checked.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr37-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr37-premerge-checked.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr38-merge-receipt.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/pr38-premerge-checked.json",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/windows-path-admission-design-notes.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    },
+    {
+      "path": ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/windows-path-admission-follow-on-plan.md",
+      "status": "??",
+      "classification": "retained_prior_provider_programme_or_broker_evidence_excluded"
+    }
+  ],
+  "counts": {
+    "selected_exact_root_approved_local_checkpoint": 29,
+    "retained_provider_owned_entry_work_excluded": 15,
+    "retained_provider_activation_index_excluded": 1,
+    "retained_prior_provider_programme_or_broker_evidence_excluded": 285,
+    "retained_raw_history_and_current_execution_evidence_excluded": 369,
+    "retained_next_proposal_excluded": 1
+  },
+  "status_raw_sha256": "f075ac65e7cecf9c78432ab613aa6772e4bdfa5bf5f83b0f6cbd03c4a2b907aa",
+  "git_plan_log_sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de",
+  "git_plan_interpretation": {
+    "command_exit_code": 0,
+    "plan_status": "blocked",
+    "findings": [
+      "dirty_tree_requires_classification",
+      "no upstream warning"
+    ],
+    "resolution": "Exact current dirty paths classified here; ROOT approved only the29 selected-path local checkpoint at sole parent0c7788fd and exact treea57e4a2c. All unselected provider/index/history/next-proposal state is retained. No new branch, upstream, push, merge or remote authority is inferred from this helper."
+  }
+}

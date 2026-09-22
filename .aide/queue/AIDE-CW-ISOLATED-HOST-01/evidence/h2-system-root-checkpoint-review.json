@@ -1,0 +1,14 @@
+{
+  "schema": "aide.host.h2-system-root-checkpoint-review.v1",
+  "result": "PASS",
+  "scope_sha256": "6a2f22d2601ec8c54e8779806f74f0afbc15f176dfcb837d1857c32fe9724f62",
+  "source_base": "236da6c2ba0df8cf319849c7632c04727afc392d",
+  "source_aggregate": "03c0a5f94914ea72744d0387780b4cd22c3fb3b39b9703a2debef1bcf67a67d6",
+  "independent_review_sha256": "0dfaf014a6bbefc9a06b1cc4ef292fa18e3c7676bd75c6c24c49a76ab4159cfe",
+  "selected24_raw_git_blobs_verified": true,
+  "archive83_members_and_originals_verified": true,
+  "projected_tree_excluding_approval_records": "12b3c8b5588a673c6ffd2c2e7ca980391375fe08",
+  "excluded_working_index_unchanged": true,
+  "approved_scope": "Exactly24 scoped paths plus scope and this ROOT record, checked normal local commit only. Recompute full staged tree; no publication, limit increase, image/grant/DLL mapping or interpreter execution.",
+  "review_notes": "Read task and documentation diffs and final independent source review. Independent138tests and17 injected probes resolve final/pre-dispatch freshness, huge integer and mapped-path attribution findings. Full180API inventory exceeds unchanged128cap; protected journal/controller, outer-process deadlines, actual native/context/loader qualification remain open. No actual native mapping or activation admitted."
+}

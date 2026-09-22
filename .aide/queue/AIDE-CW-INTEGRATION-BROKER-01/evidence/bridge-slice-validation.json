@@ -1,0 +1,110 @@
+{
+  "schema": "aide.local.slice-validation.v1",
+  "work_item": "AIDE-CW-INTEGRATION-BROKER-01",
+  "slice": "registered_json_provider_bridge",
+  "head": "fe233c4611d5dfd02eac5c8460b828c9c8c1c450",
+  "source_aggregate_sha256": "e1541a3956b3fc9046eb55603df2a8753f4584bac856be251f3b004850d42315",
+  "source_manifest": "bridge-source-manifest.json",
+  "source_manifest_sha256": "287f941e619e77884e8b1ee2d20c885d631f0ca0e2b90a55230188ae645fcd71",
+  "runtime_source_snapshot": {
+    "core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+    "core/runtime/continuous_worker/__main__.py": "d68bb72836e57b7980397e8545938c888d1b046e9f260844fb57ab61bf898034",
+    "core/runtime/continuous_worker/codex.py": "25707232e17da81cfd3a057c5e8334b54b6d0c3249685ee1176b30022ba7a9bb",
+    "core/runtime/continuous_worker/contract.py": "240e35c7c4898be30b1df3294d5fa2ba0ec02c22db58b6ea33177e45b9f1bc6c",
+    "core/runtime/continuous_worker/coordinator.py": "663ed1c0e11397028e8451f65bce7174502fa5c914c97733e0b4402d5af4f3d5",
+    "core/runtime/continuous_worker/handoff.py": "bf1a30fdad18032e44dedfb29c7952dc1337035c7925d3692f51aba272c82305",
+    "core/runtime/continuous_worker/locking.py": "ef6862800dec51361375b67d129956b6c27737281922c507978c832f300cd953",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "core/runtime/continuous_worker/windows_job.py": "c94cd26c80b319e600ed899f8b7d1135ef5fd5d78ab23b8342aa367ee8c077c6",
+    "core/runtime/integration_broker/__init__.py": "ab9d0279e1d9f0a8baebec5a900669ec380401c42249bdb48133b17d38cdc587",
+    "core/runtime/integration_broker/__main__.py": "b745f0895e1b7bbd50858b07d0f22f8466fca99ed37d815eac63cbe6f95c35bd",
+    "core/runtime/integration_broker/authority.py": "e2d81142181d0a44806573a236f6c29e653d1ee0cba48caf2995ceafd3778093",
+    "core/runtime/integration_broker/bridge_store.py": "c66a31e7af2e29355c51199383c35d496adeaa9a3bb501a91cacabff8f191b37",
+    "core/runtime/integration_broker/candidate.py": "a10ae6eceb87ce4b88c9ed473b284eebc9ccace99d456363866240eeee2e357b",
+    "core/runtime/integration_broker/capsule.py": "8c4efdc878a7746d1bae5da82713d72d24db9b746bd25a3c2ee62ba11a8f3d4a",
+    "core/runtime/integration_broker/common.py": "355ebc60a4bdc787d2ef8dd76af072911e1923dbb305aee1c7a4c8cbfadcd5ee",
+    "core/runtime/integration_broker/effect_boundary.py": "3ec69abec6691deb06939faac8940db75decef38f6272b005a52c5740eb9ecd2",
+    "core/runtime/integration_broker/ledger.py": "565754d4473dae31868e1fc3e4679463c325f64a542eb46b0042e64558a2ff7c",
+    "core/runtime/integration_broker/pr_observation.py": "1a4599ae12c13b3d2df6e76b6b2c633b6d49fbc2cf891b1fae5ac145d6e031c9",
+    "core/runtime/integration_broker/preparation.py": "8e5e9714df47fc9553acd52b292b2a8cbac5f0288821f089aa0d63f2e8803148",
+    "core/runtime/integration_broker/registered_bridge.py": "f669d3e8943d1cc43f0df8b6624f830c40afab0eda7262b3d313d0107555a8ab",
+    "core/runtime/integration_broker/service.py": "012d7a492db30b22bf6aa6778a24459ddf8b9929e6f6e849c29d53e5c162572c",
+    "core/runtime/integration_broker/staged_transport.py": "863dfa51ebb8cfacad1067bf9258ddbdfd0670238a55d646f7bb94d146c0cf55"
+  },
+  "tests": {
+    "total": 43,
+    "passed": 43,
+    "skipped": 0,
+    "failed": 0,
+    "unittest_seconds": 155.576,
+    "composition": {
+      "registered_bridge": 11,
+      "pr_and_staged": 21,
+      "windows_job_host": 10,
+      "default_workspace_lock": 1
+    },
+    "receipt": "bridge-final-tests.json",
+    "receipt_sha256": "66e5692160eac94d718df89f127f4985aac991bf9afc5d1699a5b67f338de3c0",
+    "raw_log": "bridge-final-tests.txt",
+    "raw_log_sha256": "63804c951f649f56e12f3b57437e912cb0862712f5cf41a74dfae815a540206e"
+  },
+  "historical_test_binding": {
+    "receipt": "bridge-first-tests.json",
+    "description": "Eleven passing first-run bridge tests precede final fsync/input-hash and stronger oracle changes; not the final source qualification."
+  },
+  "helper_checks": [
+    {
+      "command": [
+        "doctor"
+      ],
+      "exit_code": 0,
+      "seconds": 4.918,
+      "log": "bridge-doctor.txt",
+      "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21"
+    },
+    {
+      "command": [
+        "validate"
+      ],
+      "exit_code": 0,
+      "seconds": 4.859,
+      "log": "bridge-validate.txt",
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+    }
+  ],
+  "boundaries": {
+    "schema": "aide.local.boundary-check.v1",
+    "source_only_export": "PASS",
+    "enumerated_portable_paths": 817,
+    "forbidden_test_family": ".aide/scripts/tests/test_continuous_worker_provider_bridge.py",
+    "runtime_enumeration_excluded": true,
+    "diff_check": "PASS",
+    "new_source_lf_no_blank_final_line": true
+  },
+  "independent_review": {
+    "verdict": "PASS",
+    "receipt": "bridge-root-independent-review.json",
+    "original_byte_sha256": "c0fb9904d10297309d48e201639063b92153f6b06605571c58d7d3a0f91c2860",
+    "custody_member": "bridge-evidence.zip!bridge-root-independent-review.json",
+    "tests_passed": 11,
+    "unittest_seconds": 75.629,
+    "raw_log_sha256": "f90d8a34c173f874003eab694b06ec7e48899c95164144f4a1f2c1baee4531fd"
+  },
+  "operational_activation": false,
+  "full_work_item_complete": false,
+  "actual_provider_calls": false,
+  "qualified_host_store": false,
+  "qualified_server_exact_base_predicate": false,
+  "fixture_limits": [
+    "Provider responses and qualifier are explicitly scripted local fixtures.",
+    "Job containment is not credential/filesystem isolation.",
+    "Deadline monitoring cannot retract a server request or supply atomic exact-base merging.",
+    "No operational adapter, provider API normalizer or CLI factory is installed.",
+    "Existing prepared-content protection requires a qualified immutable child store."
+  ],
+  "next_implementation": [
+    "Independent source review and scoped evidence checkpoint.",
+    "Provider fact normalization and registered provider implementation with offline complete-page fixtures.",
+    "Real protected host/store and target predicate qualification before operational use."
+  ]
+}

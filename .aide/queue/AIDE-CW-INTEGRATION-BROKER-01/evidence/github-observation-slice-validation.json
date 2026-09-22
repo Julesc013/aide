@@ -1,0 +1,54 @@
+{
+  "schema": "aide.broker.github-observation-validation.v1",
+  "result": "PASS",
+  "scope": "bounded raw REST observation source and executable completion-plan admission",
+  "source_manifest": "github-observation-source-manifest.json",
+  "source_aggregate": "e6027d001ddf97d165071de7fdb7eefbea81c6a5440badde28a9785f7bf0cede",
+  "completion_plan_manifest": "github-completion-plan-manifest.json",
+  "completion_plan_aggregate": "9fbbac9ceeafe5d5a59e678e90eda767996a3c957e3709897cb5b75802c91b64",
+  "tests": {
+    "current_observation": {
+      "count": 26,
+      "seconds": 0.093,
+      "receipt": "github-observation-pending-tests.json"
+    },
+    "existing_pr_staged": {
+      "count": 21,
+      "seconds": 74.179,
+      "receipt": "github-existing-pr-tests.json"
+    },
+    "root_independent": {
+      "count": 26,
+      "seconds": 0.081,
+      "receipt": "github-observation-root-independent-review.json"
+    },
+    "target_graph_model": {
+      "count": 13,
+      "seconds": 25.986,
+      "receipt": "target-qualification/strict-contract-experiments-run.json"
+    }
+  },
+  "helpers": "github-helper-checks.json",
+  "export": "github-export-check.json",
+  "independent_review_original_sha256": "61acfae3a7a4aa14cf5671e2f8a88b8712d84424772db5bc84ec9ef8bc416a88",
+  "custody": "github-observation-custody.json",
+  "archive_sha256": "7c0fedaf3df8dd992c94b22334edf8eb96a6dcf5f5a3c3bb505e1872c880acf2",
+  "historical_evidence": [
+    "23-test initial source before independent read deadline fix",
+    "24-test source archived before queued-check publication remediation",
+    "root actual six-job API response validates field shape only"
+  ],
+  "open_work": [
+    "authenticated bounded HTTP child and actual restricted principal",
+    "current effective target rules and reviewed configuration installation",
+    "hosted adversarial exact-base/head/ref acceptance",
+    "Windows protected controller/worker/credential/store isolation",
+    "existing clone/resume/supervisor and real two-task pilot acceptance"
+  ],
+  "task_complete": false,
+  "settings_mutated": false,
+  "operational_activation": false,
+  "provider_owned_entry_records_excluded": true,
+  "checkpoint_helpers": "github-checkpoint-helper-checks.json",
+  "completion_plan_review": "github-completion-root-review.json"
+}

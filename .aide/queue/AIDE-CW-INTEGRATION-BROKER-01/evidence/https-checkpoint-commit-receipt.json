@@ -1,0 +1,106 @@
+{
+  "schema": "aide.broker.https-checkpoint-commit.v1",
+  "head": "24ed66153f7e5d2008b7178b89c1b03025791152",
+  "tree": "445fac21ad01257f93d71afd6f1bae8955dcb9a7",
+  "parents": [
+    "57e28facc74c7407d4d270f5b0d21c0dc6e4ddbe"
+  ],
+  "files": {
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md": {
+      "sha256": "88e011009a2dcb07ce4defbc4df9c89fbd5596cbc0551e7425d2522a19d4fe4b",
+      "bytes": 29439
+    },
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-custody.json": {
+      "sha256": "fd38fca95ff82fb669040ace4e9cc1dc47fe1d93c19d13eaa3b4b2280446063b",
+      "bytes": 14872
+    },
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-evidence.zip": {
+      "sha256": "84ce260b275e175d9e193270b081e366d4aeb7b5adce492a872546d86901bdad",
+      "bytes": 361103
+    },
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-root-independent-review.json": {
+      "sha256": "52da038839f4ff3564073079e625e4a18a72a3011eab50f508a5e456a652d15b",
+      "bytes": 1992
+    },
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-source-manifest.json": {
+      "sha256": "5921f8becbe2876352e9abe9ad4cfd05e02e022ba58525348775727e80108413",
+      "bytes": 853
+    },
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-validation.json": {
+      "sha256": "53575dbb2d484c1dfe9799558e435466a230a2e186d7027b41822295b58fdada",
+      "bytes": 2031
+    },
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/validation.md": {
+      "sha256": "0d232b73143cb715cab309c2ff91c4e22f7561d5a356b6aacf38fd4b56da6570",
+      "bytes": 2019
+    },
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/status.yaml": {
+      "sha256": "b5aa76bb076e51a9328b568a5ca90c01651e813a61b823f5e8eef4bcf9ccfb66",
+      "bytes": 412
+    },
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/task.yaml": {
+      "sha256": "70de925c4fcb0d7b159fdc8fe7b6b07991c6be45006c67f45f0186cd5f1db14d",
+      "bytes": 2461
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md": {
+      "sha256": "9254bd25004e580fce4e1d3d4bbe73e733965fdfa7eba27d4ba5548d5a15021c",
+      "bytes": 8067
+    },
+    ".aide/scripts/tests/test_continuous_worker_github_http.py": {
+      "sha256": "323fdf96c9d617fea4b8410d6b84fd167d3b6f1d8468d6af005530edb5478e68",
+      "bytes": 24832
+    },
+    "DOCUMENTATION.md": {
+      "sha256": "ff3d23d21628388801283e2759d6ecddb38b2004b66b7643c436c06d72cf02e2",
+      "bytes": 63917
+    },
+    "IMPLEMENT.md": {
+      "sha256": "047e6a17e8f8c0ce835e09ccd954e8d08b60bb56d7e31896c68635df43a3735e",
+      "bytes": 491957
+    },
+    "PLANS.md": {
+      "sha256": "8a16e6c3236b792e568bea7992cc379898a7bd717ebf8656be7a3d13c5146cf1",
+      "bytes": 455480
+    },
+    "core/runtime/integration_broker/github_http.py": {
+      "sha256": "199ade1c36ceaa3eae5af9e063dc3a0ff519782323514a3adb85de595ded5b88",
+      "bytes": 11513
+    },
+    "core/runtime/integration_broker/github_http_framing.py": {
+      "sha256": "0a7a993279308f4a77644b60ef672e9661f18e4b0e06d782d06c47dce436dd0d",
+      "bytes": 5289
+    },
+    "docs/reference/integration-broker-core.md": {
+      "sha256": "5a1130f5d1767bc4d3b82fc65df75966c8b913cb69382ff2f840575367c3580c",
+      "bytes": 31259
+    },
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-preflight.json": {
+      "sha256": "4c88c9e295b13c78eb3be8cd4204a59bcbe4fb2d443d682fb3f85c8b7ba84a9a",
+      "bytes": 4203
+    }
+  },
+  "count": 18,
+  "all_committed_bytes_match": true,
+  "checks": [
+    {
+      "kind": "latest",
+      "returncode": 0,
+      "sha256": "a08458cc71b7db8d57a4063775c18c7c09acbf344138196b6c03e167edec60d6"
+    },
+    {
+      "kind": "range",
+      "returncode": 0,
+      "sha256": "1c404f7f6088982c8f5d700e814e73176d2e980258bc71c2b23df0ca9ed0fd6e"
+    }
+  ],
+  "index_preservation": {
+    "path": ".aide/queue/index.yaml",
+    "head_blob": "819098a8010999f568bf12301c70d819aa6c3911",
+    "head_raw_sha256": "0dc511d7e6727b49f2c52eee0ac51e01f4e9666b79b0f46c1ab062e3ea607e4a",
+    "working_raw_sha256": "6989b87ae3736801513834e0e1894581c42d4d16f795ea2d6eb4dc88c7ef255e",
+    "excluded_change": "Only provider entry-restart status planned->running and planning_state admitted_backlog->execution_active. No index staging in this checkpoint."
+  },
+  "custody": "84ce260b275e175d9e193270b081e366d4aeb7b5adce492a872546d86901bdad",
+  "remote_mutation": false,
+  "activation": false
+}

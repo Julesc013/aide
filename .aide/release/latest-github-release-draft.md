@@ -1,13 +1,13 @@
-# AIDE Lite Pack v0 Draft (31bd91bd10ed57e9)
+# AIDE Lite Pack v0 Draft (b3e5c7aa2a1732fa)
 
 > Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.
 
 ## Release Metadata
 
-- Suggested tag: `aide-lite-pack-v0-draft-31bd91bd10ed57e9`
+- Suggested tag: `aide-lite-pack-v0-draft-b3e5c7aa2a1732fa`
 - Suggested tag created: no
-- Source commit: `31bd91bd10ed57e98e658380cd9372e074867f63`
-- Source branch: `task/aide-delivered-pack-safe-update-01`
+- Source commit: `b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb`
+- Source branch: `task/aide-broker-dev-pack-refresh-01`
 - Dirty state recorded: `false`
 - Release type: local draft / not published
 
@@ -47,18 +47,18 @@
 
 | Order | Asset | Kind | Size | SHA-256 | Required |
 | --- | --- | --- | ---: | --- | --- |
-| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 973409 | `9bc5078fc7673e51...` | true |
-| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 645708 | `23f6cb2cf5ba5986...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1200 | `9b9bd22b6d9a6562...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 690 | `70769d5c363bb3c9...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1404 | `33c86efb760d4c69...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 1341 | `b22af39898c2bea2...` | true |
+| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 973405 | `b5cc171d178a404d...` | true |
+| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 645705 | `b50b116737ab6503...` | true |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1200 | `6e5515eadc0f10ad...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 690 | `015f320dbd2942eb...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1404 | `b27b8b16a2bf8ddd...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 1341 | `cb2637ef75783b6e...` | true |
 | 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 670 | `725d7aad7d6f7385...` | true |
 | 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 1300 | `774a75827477d5e8...` | true |
 | 9 | `.aide/release/dist/release-validation.json` | validation_report | 3416 | `c42acc5280fa5f2d...` | false |
 | 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1496 | `0d1c0de0bf81fcee...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4958 | `b57eebb15e1a3a64...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1491 | `1503f3018b64c0f5...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4958 | `1f361eda6c1688e7...` | false |
 
 ## Validation Summary
 

@@ -1,0 +1,56 @@
+{
+  "schema": "aide.host.h2-source-admission.v1",
+  "source_base": "454e41aa021c2b8b8b48531f2cb67838ecaa7dab",
+  "branch": "task/aide-cw-integration-broker-01",
+  "proposal_sha256": "7d19551d1dd69d0bafb19658b204cde247060fc2ed51d0d7cde696c260d3bda1",
+  "authority": "Explicit user programme and ROOT acceptance of bounded H2 source/ordinary synthetic tests after exact H1 checkpoint",
+  "checks": [
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "log": "h2-source-inspect.txt",
+      "sha256": "5182abd8088dcdcadb720adf92eeb8c46bc424db8147092211844702e8698885"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "log": "h2-source-noop-check.txt",
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "log": "h2-source-recover.txt",
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    }
+  ],
+  "actual_tool_copy": false,
+  "package_grant": false,
+  "appcontainer_launch": false,
+  "activation": false,
+  "provider_index_untouched": true
+}

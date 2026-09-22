@@ -1,0 +1,69 @@
+{
+  "schema": "aide.host.h1-owned-interface-effect.v1",
+  "source_base": "24ed66153f7e5d2008b7178b89c1b03025791152",
+  "repository": "D:\\Projects\\AIDE\\aide",
+  "source_files": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-effect-probe.py": "e53b19b1fc7cb8aac488f28e20cfe00942d4ed278e2e8533296185d71c00da1d",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-oracle-validation.py": "e41380f4b337e465ed5963622e6fb833325e712d7bef9ba81049e147cd2b3485",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-network-effect-probe.py": "bb50bc6eeaf24ccbf2e13fe817f24752f958dcebf668aa3dade52dd3d7c50c85",
+    ".aide/scripts/tests/test_continuous_worker_windows_security.py": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725",
+    ".aide/scripts/tests/test_continuous_worker_windows_security_probe.c": "edc4e572b8dd856e361aaa30e9b6300dc0c3a12a84aae13227b5bdfcf99a05c0",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_security_objects.py": "c5605f3dd3c173e93d707ac3e764e183b70263e1057e42bf5dfddf6405e5dcb9"
+  },
+  "owned_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5",
+  "owner_sha256": "7db523e9d0838b98a47db87efdd76b6c6af638e99ce706afd20d3136d2fc2890",
+  "parent_stat": {
+    "dev": 8302240993133592026,
+    "ino": 46724846135713809
+  },
+  "moniker": "aide.cw.h1.c1b5bc1fdd164c9fbf840039380ff124",
+  "package_sid": "S-1-15-2-4111678938-3811130403-3396209802-2099741974-3093164146-3291679880-2751395020",
+  "user_sid": "S-1-5-21-2168396775-1281633702-301206425-1001",
+  "probe_sha256": "be38dfa7754c4d6f2096c7f85b97e5c874bc760ca62ee3f638731fae15ce45dc",
+  "expires_at": 1788752186.424999,
+  "effects": {
+    "profile_creations": 0,
+    "package_capabilities": [],
+    "root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\interface-probe-objects",
+    "reservation": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\interface-probe-reservation.jsonl",
+    "new_objects": [
+      "probe.exe",
+      "scratch",
+      "protected-canary"
+    ],
+    "package_grants": {
+      ".": "read",
+      "probe.exe": "read",
+      "scratch": "modify"
+    },
+    "listener": {
+      "address": "172.21.208.1",
+      "port": 0,
+      "count": 1,
+      "exclusive": true
+    },
+    "ordinary_controls": 2,
+    "read_only_interface_observations": {
+      "max_calls": 256,
+      "timeout_seconds": 1,
+      "output_bytes": 512
+    },
+    "network_settings_changes": 0,
+    "cleanup": "retain_only"
+  },
+  "activation": false,
+  "native_volume": "\\Device\\HarddiskVolume3",
+  "origin_proof": {
+    "profile-reservation.jsonl": "e6d87172ef2cb03793bd39a7e1e0cc343f33b4435c1f1a0ac6d854ad79d908dd",
+    "native-probe-receipt.json": "d5f6b95b10dea906abb21d5a534a1515ecd93c82f36ae43e5ff8070e160f7930"
+  },
+  "endpoint": {
+    "address": "172.21.208.1",
+    "interface_index": 50,
+    "interface_alias": "vEthernet (WSL)",
+    "prefix_length": 20,
+    "inventory_sha256": "3633d2c2e0ee1ac6720d9236f4077e6c4f49044e55957bcf5f624784087acd4b"
+  }
+}

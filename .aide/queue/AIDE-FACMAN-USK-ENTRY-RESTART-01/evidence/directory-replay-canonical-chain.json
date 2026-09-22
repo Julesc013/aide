@@ -1,0 +1,102 @@
+{
+  "schema": "usk.provider-canonical-chain-receipt.v1",
+  "observed_at": "2026-09-06T18:49:24.965624+00:00",
+  "scope": "directory entry replay checkpoint only",
+  "task_commit": "26ce3b91597ce89270c59dcfe5739f754ec0da13",
+  "source_tree": "1eece0a67aba061e03aa59162dc57bffabec6793",
+  "pull_requests": [
+    39,
+    40,
+    41
+  ],
+  "required_checks_per_pull_request": 12,
+  "main": "16a889d3c7e083bd52746facf830c7a62f625ff7",
+  "dev": "d835167a5febf17c33aaa133bfeb284ce3b10df7",
+  "primary_branch": "dev",
+  "primary_clean": true,
+  "local_refs_match_origin": true,
+  "main_ancestor_of_dev": true,
+  "receipts": {
+    "entry-restart-candidate-review.json": {
+      "sha256": "bf2676ac2cab89ce976452f44c3aa1ea26686be54d143e8b21a40c6b5d7011bd",
+      "bytes": 15326
+    },
+    "entry-restart-independent-final-review.json": {
+      "sha256": "0740a2c5f7afa64b11110e698eb586dec544fee0e272cd87ab3c1823f8230bac",
+      "bytes": 7127
+    },
+    "entry-restart-clean-source-sdk-receipt.json": {
+      "sha256": "fa1641f8b9c4aa80e36fbc226dfa75911b9dff13fe0c610f57cc114b88252d5f",
+      "bytes": 2111
+    },
+    "pr39-premerge-checked.json": {
+      "sha256": "b5b89e054cb94160759edc981d78dead94680f04231cf01b1266a9378ebac51b",
+      "bytes": 38607
+    },
+    "pr39-merge-receipt.json": {
+      "sha256": "798830727b79a30b4fece09b95de934eb4fdd43f2d6d8489762b18ab96337b24",
+      "bytes": 3579
+    },
+    "pr40-premerge-checked.json": {
+      "sha256": "dad4986da4b58dace9f0e271afb2abaf18ca5df182cdec247eca2a884e867c06",
+      "bytes": 41065
+    },
+    "pr40-merge-receipt.json": {
+      "sha256": "c9c414d28dc88261f4b8342f74fd6bf9fc3324bc8df9647604f37c57fa15835a",
+      "bytes": 3425
+    },
+    "pr41-premerge-checked.json": {
+      "sha256": "f58f2eaeb074072b0f43bcbdb07c9f49ca89b8422c975ec7f4c10650c616aa23",
+      "bytes": 40954
+    },
+    "pr41-merge-receipt.json": {
+      "sha256": "459e3b36b2972396356d6a9a78a50deb429318cffb4a8413eebccf5248f77b31",
+      "bytes": 3435
+    }
+  },
+  "sync_commands": [
+    {
+      "args": [
+        "fetch",
+        "origin"
+      ],
+      "output": ""
+    },
+    {
+      "args": [
+        "switch",
+        "main"
+      ],
+      "output": "Your branch is behind 'origin/main' by 4 commits, and can be fast-forwarded.\n  (use \"git pull\" to update your local branch)"
+    },
+    {
+      "args": [
+        "merge",
+        "--ff-only",
+        "origin/main"
+      ],
+      "output": "Updating ffe1b40..16a889d\nFast-forward\n CMakeLists.txt                                     |   9 +\n .../setup/transaction_journal.v1.schema.json       | 155 ++++++++-\n .../payload_memory_characterization.md             |   6 +-\n release/index/entry_restart_workunit.v1.toml       |  27 ++\n runtime/setup/streaming/README.md                  |  51 ++-\n .../streaming/usk_streaming_source_target.cpp      |  33 +-\n .../setup/streaming/usk_streaming_source_target.h  |   3 +\n runtime/setup/transaction/README.md                |  26 +-\n .../setup/transaction/usk_stream_entry_journal.cpp | 153 +++++++++\n .../setup/transaction/usk_stream_entry_journal.h   |  36 +++\n .../setup/transaction/usk_transaction_session.cpp  | 142 ++++++++-\n .../setup/transaction/usk_transaction_session.h    |  18 +-\n tests/native/usk_entry_restart_smoke.cpp           | 348 +++++++++++++++++++++\n tests/native/usk_streaming_source_target_smoke.cpp |   1 +\n tests/test_setup_contracts.py                      |  24 ++\n tools/structure_policy_check.py                    |   1 +\n 16 files changed, 1000 insertions(+), 33 deletions(-)\n create mode 100644 release/index/entry_restart_workunit.v1.toml\n create mode 100644 runtime/setup/transaction/usk_stream_entry_journal.cpp\n create mode 100644 runtime/setup/transaction/usk_stream_entry_journal.h\n create mode 100644 tests/native/usk_entry_restart_smoke.cpp"
+    },
+    {
+      "args": [
+        "switch",
+        "dev"
+      ],
+      "output": "Your branch is behind 'origin/dev' by 4 commits, and can be fast-forwarded.\n  (use \"git pull\" to update your local branch)"
+    },
+    {
+      "args": [
+        "merge",
+        "--ff-only",
+        "origin/dev"
+      ],
+      "output": "Updating 5e4c660..d835167\nFast-forward\n CMakeLists.txt                                     |   9 +\n .../setup/transaction_journal.v1.schema.json       | 155 ++++++++-\n .../payload_memory_characterization.md             |   6 +-\n release/index/entry_restart_workunit.v1.toml       |  27 ++\n runtime/setup/streaming/README.md                  |  51 ++-\n .../streaming/usk_streaming_source_target.cpp      |  33 +-\n .../setup/streaming/usk_streaming_source_target.h  |   3 +\n runtime/setup/transaction/README.md                |  26 +-\n .../setup/transaction/usk_stream_entry_journal.cpp | 153 +++++++++\n .../setup/transaction/usk_stream_entry_journal.h   |  36 +++\n .../setup/transaction/usk_transaction_session.cpp  | 142 ++++++++-\n .../setup/transaction/usk_transaction_session.h    |  18 +-\n tests/native/usk_entry_restart_smoke.cpp           | 348 +++++++++++++++++++++\n tests/native/usk_streaming_source_target_smoke.cpp |   1 +\n tests/test_setup_contracts.py                      |  24 ++\n tools/structure_policy_check.py                    |   1 +\n 16 files changed, 1000 insertions(+), 33 deletions(-)\n create mode 100644 release/index/entry_restart_workunit.v1.toml\n create mode 100644 runtime/setup/transaction/usk_stream_entry_journal.cpp\n create mode 100644 runtime/setup/transaction/usk_stream_entry_journal.h\n create mode 100644 tests/native/usk_entry_restart_smoke.cpp"
+    }
+  ],
+  "entry_restart_task": "running/PENDING: stored and Deflate ZIP replay outstanding",
+  "provider_qualification_pending": [
+    "commit-boundary child authority",
+    "generation and stale-owner leases",
+    "consumer adoption"
+  ]
+}

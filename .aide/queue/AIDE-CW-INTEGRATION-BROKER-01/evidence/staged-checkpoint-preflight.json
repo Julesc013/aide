@@ -1,0 +1,32 @@
+{
+  "schema": "aide.checkpoint-preflight.v1",
+  "parent": "813fe9548dfc8d4a9ec9c288b6e2fd3524074319",
+  "source_aggregate": "4fd298e128beb9600b5c317a1cdcc3ac45cf83f11b34ba7cac8dcbd906a31a5f",
+  "selected_files": [
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/provider-closeout-commit-receipt.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/provider-compact-review.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-commit-receipt.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-current-source.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-custody.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-evidence.zip",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-remediation-tests.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-root-independent-review.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-root-review-tests.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-slice-validation.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/staged-transport-review-source.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/status.yaml",
+    ".aide/scripts/tests/test_continuous_worker_pr_observation.py",
+    "DOCUMENTATION.md",
+    "IMPLEMENT.md",
+    "PLANS.md",
+    "core/runtime/integration_broker/pr_observation.py",
+    "core/runtime/integration_broker/service.py",
+    "core/runtime/integration_broker/staged_transport.py",
+    "docs/reference/integration-broker-core.md"
+  ],
+  "source_export": "PASS: no runtime source or direct source-only PR tests in actual portable enumeration",
+  "secret_heuristic": "PASS on selected files and raw archive members for common private-key/token patterns at identifier boundaries",
+  "unrelated_preserved": "USK entry-restart task/status/ExecPlan, evidence and two index activation scalars remain unstaged. All raw historical/provider files remain unstaged.",
+  "helper_plan_classification": "Only explicit scoped local checkpoint; reviewed broker changes and separately owned entry activation explain dirty state. No upstream or remote mutation is required."
+}

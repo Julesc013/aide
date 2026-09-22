@@ -1,0 +1,37 @@
+{
+  "schema": "aide.broker-v1.independent-review.v1",
+  "source_manifest_sha256": "fc7cf178662d3906ab3a3751d38078a44e3b324606da47c38805259fe09c8d3a",
+  "reviewer": "root",
+  "result": "PASS_SOURCE_REVIEW",
+  "source_files": 21,
+  "source_hashes_verified_before_after": true,
+  "custody_zip_and_all_9_members_verified": true,
+  "independent_tests": {
+    "count": 9,
+    "exit_code": 0,
+    "seconds": 120.777,
+    "log": "v1-root-focused-tests.txt",
+    "sha256": "1e2dc9ae79b6f785dc8bea9b6fc00f7b07a3bc46fb460ac37d8c08b135499800"
+  },
+  "reviewed": [
+    "literal checkout and bounded changed-file overlay; trusted base integrity and no remote lazy fetch",
+    "durable generation intent preceding kernel-owned directory creation; retained interruption generations",
+    "broker apply intent and receipt binding; no repeated uncertain transport",
+    "coordinator v1 frozen handoff, external authority and guarded recovery endpoint",
+    "failure/process-death tests, source pins, portable export boundary and documented remaining qualification"
+  ],
+  "findings": [],
+  "nonblocking_notes": [
+    "Some query-only comments predate the registered broker-owner reconcile endpoint; code and detailed docs describe actual ledger-owned behavior.",
+    "Coordinator effect guard conservatively stops new observation processes after programme expiry; direct broker query can still observe uncertain effects."
+  ],
+  "qualification_remaining": [
+    "actual 10631-file AIDE canonical clone and target-store qualification",
+    "production external authority issuer and PR/check transport",
+    "generation object/materialized content revalidation at production transport effect boundary",
+    "credential/filesystem/network worker/controller/broker isolation",
+    "real model sessions and two-task operational demonstration"
+  ],
+  "full_task_complete": false,
+  "operational_activation": false
+}

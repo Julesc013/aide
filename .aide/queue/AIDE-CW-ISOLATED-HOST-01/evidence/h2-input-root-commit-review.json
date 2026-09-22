@@ -1,0 +1,16 @@
+{
+  "schema": "aide.host.input-root-commit-review.v1",
+  "result": "PASS",
+  "head": "2a44f17eb7232757133df549ac6fc519d535e71b",
+  "tree": "a57e4a2cf5f22ec0deefa8c6f338b8829f61ca19",
+  "parents": [
+    "0c7788fd3660dc18e2751108ac49afe96d446801"
+  ],
+  "exact29_committed_paths_and_blobs": true,
+  "four_retained_check_logs": true,
+  "six_reports_restored": true,
+  "git_index_empty": true,
+  "excluded_provider_index_unchanged": true,
+  "execution_receipt_sha256": "1578e01cf25f9474db3dc05a0dcd7cd1c46566d806fe17342cfd1cd294e26e54",
+  "qualification": "Local reviewed N1 source and read-facts checkpoint only; no broader host, API context or public qualification."
+}

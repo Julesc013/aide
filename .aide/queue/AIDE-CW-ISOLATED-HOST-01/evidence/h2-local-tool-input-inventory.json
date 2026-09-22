@@ -1,0 +1,133 @@
+{
+  "schema": "aide.host.h2-local-tool-input-inventory.v1",
+  "files": [
+    {
+      "path": "C:\\Program Files\\Python314\\python.exe",
+      "bytes": 106208,
+      "sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9"
+    },
+    {
+      "path": "C:\\Program Files\\Python314\\python314.dll",
+      "bytes": 6785760,
+      "sha256": "0f9857ffdfe010fe6b99328d58c2e3c7472ce75f336bf9c2ad9bd5bca3bce700"
+    },
+    {
+      "path": "C:\\Program Files\\Python314\\python3.dll",
+      "bytes": 73952,
+      "sha256": "6c45910e7c82617ca6360820de861699cc99f9efee434df290aa4c6e38f39886"
+    },
+    {
+      "path": "C:\\Program Files\\Python314\\vcruntime140.dll",
+      "bytes": 178616,
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7"
+    },
+    {
+      "path": "C:\\Program Files\\Python314\\vcruntime140_1.dll",
+      "bytes": 50112,
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"
+    },
+    {
+      "path": "C:\\Program Files\\Git\\mingw64\\bin\\git.exe",
+      "bytes": 4344208,
+      "sha256": "d09a1324132aa9da4b4c2b14242dcac893539a735fab288136b101156434a55a"
+    },
+    {
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe",
+      "bytes": 359245096,
+      "sha256": "83751f15cb6a0a7b97df67752c001e3fe1c20e18ffbfec3ff63567296205eb6c"
+    }
+  ],
+  "python_stdlib_excluding_site_packages_and_bytecode": {
+    "by_extension": {
+      ".py": {
+        "files": 721,
+        "bytes": 12544530
+      },
+      "": {
+        "files": 4,
+        "bytes": 60295
+      },
+      ".bat": {
+        "files": 4,
+        "bytes": 1749
+      },
+      ".ctypes": {
+        "files": 1,
+        "bytes": 302
+      },
+      ".rst": {
+        "files": 1,
+        "bytes": 9561
+      },
+      ".whl": {
+        "files": 1,
+        "bytes": 1816632
+      },
+      ".def": {
+        "files": 4,
+        "bytes": 19719
+      },
+      ".txt": {
+        "files": 9,
+        "bytes": 136924
+      },
+      ".html": {
+        "files": 1,
+        "bytes": 65913
+      },
+      ".pyw": {
+        "files": 1,
+        "bytes": 587
+      },
+      ".gif": {
+        "files": 9,
+        "bytes": 3891
+      },
+      ".ico": {
+        "files": 1,
+        "bytes": 57746
+      },
+      ".png": {
+        "files": 4,
+        "bytes": 38260
+      },
+      ".pyi": {
+        "files": 1,
+        "bytes": 168
+      },
+      ".css": {
+        "files": 1,
+        "bytes": 1437
+      },
+      ".ini": {
+        "files": 2,
+        "bytes": 1230
+      },
+      ".cfg": {
+        "files": 1,
+        "bytes": 170
+      },
+      ".fish": {
+        "files": 1,
+        "bytes": 2277
+      },
+      ".ps1": {
+        "files": 1,
+        "bytes": 29017
+      },
+      ".exe": {
+        "files": 2,
+        "bytes": 506816
+      },
+      ".csh": {
+        "files": 1,
+        "bytes": 978
+      }
+    },
+    "bytes": 15298202
+  },
+  "image_prepared": false,
+  "tool_execution": false,
+  "profile_or_acl_effects": false,
+  "qualification": "Read-only installed input inventory; dependency closure/redistribution/immutable image and isolated runtime acceptance unproved."
+}

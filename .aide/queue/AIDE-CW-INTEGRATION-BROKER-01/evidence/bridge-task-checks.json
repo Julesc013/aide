@@ -1,0 +1,44 @@
+[
+  {
+    "command": [
+      "C:\\Program Files\\Python314\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "task",
+      "inspect",
+      "--task-id",
+      "AIDE-CW-INTEGRATION-BROKER-01"
+    ],
+    "exit_code": 0,
+    "log": "bridge-task-inspect.txt",
+    "sha256": "63f0973d83cef36ff44773b6e25557470c99cc8680d6a2ea7137cef778f1590d"
+  },
+  {
+    "command": [
+      "C:\\Program Files\\Python314\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "task",
+      "noop-check",
+      "--task-id",
+      "AIDE-CW-INTEGRATION-BROKER-01"
+    ],
+    "exit_code": 0,
+    "log": "bridge-task-noop-check.txt",
+    "sha256": "3fb536768b562ef14ec03020e6204f5f1aa81be1612ce9fbca5d30cd08fb2dee"
+  },
+  {
+    "command": [
+      "C:\\Program Files\\Python314\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "task",
+      "recover",
+      "--task-id",
+      "AIDE-CW-INTEGRATION-BROKER-01"
+    ],
+    "exit_code": 0,
+    "log": "bridge-task-recover.txt",
+    "sha256": "139f61646d139c5f970bab5f372019c37c75ed6bc722c32e640978042163792d"
+  }
+]

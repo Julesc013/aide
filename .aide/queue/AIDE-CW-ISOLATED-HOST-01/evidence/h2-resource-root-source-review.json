@@ -1,0 +1,15 @@
+{
+  "schema": "aide.host.resource-root-source-review.v1",
+  "result": "PASS",
+  "source_manifest_sha256": "84d5621e634989b7bf2ad62ed3472c6989b2d9b4a9b44acfd1e465319991a1a6",
+  "source_aggregate": "1a9e3809c11bbdd4a25a08a68d751a8584f67d6c95d8aa410f3f91ebc5ecb4f2",
+  "tests_run": 95,
+  "independent_test_methods": 7,
+  "test_log_sha256": "63e0cddff4570b41f75c818b58570ec8e125272cf4d99f5220624d571d9acf9d",
+  "actual_native_constructors_forbidden": true,
+  "source_dependencies_unchanged": true,
+  "review_scope": "Read all three sources plus inherited parent guards and observer mapping/release checks. Added second-mapping expiry, all nine uncertain closes, environment integer aliases, false final durable acknowledgement, final controller release clock faults, boolean host status and observation aliases.",
+  "native_effect_executed": false,
+  "effect_manifest_admitted": false,
+  "limitations": "Trusted finite ordinary probe premises remain; full API inventory/cap, private loader and operational host qualification remain open."
+}

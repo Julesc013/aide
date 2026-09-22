@@ -1,0 +1,286 @@
+{
+  "schema": "aide.broker.https-custody.v1",
+  "archive": "https-evidence.zip",
+  "archive_sha256": "84ce260b275e175d9e193270b081e366d4aeb7b5adce492a872546d86901bdad",
+  "archive_bytes": 361103,
+  "member_count": 55,
+  "members": {
+    "github-checkpoint-aide-dev-main-plan.json": {
+      "sha256": "118441094a52dbaca0fe196c012a3cda703402cb96b6faa96340fc381e539266",
+      "bytes": 4472,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-aide-dev-main-plan.json"
+    },
+    "github-checkpoint-aide-dev-main-plan.md": {
+      "sha256": "074cc9104b1640af027e1204cfddd5ef05f245c76aa1c939b7ac647a7285b27e",
+      "bytes": 1300,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-aide-dev-main-plan.md"
+    },
+    "github-checkpoint-commit-receipt.json": {
+      "sha256": "a03273378b5b34da5cb6929d8457314c57db562f8fb6b16f615435d91e2bb3a9",
+      "bytes": 6613,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-commit-receipt.json"
+    },
+    "github-checkpoint-commit.txt": {
+      "sha256": "1c7c0542a699c3de414325982461c32904eb10846a09ba943cce6a0405881de2",
+      "bytes": 3100,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-commit.txt"
+    },
+    "github-checkpoint-diff-check.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-diff-check.txt"
+    },
+    "github-checkpoint-git-detect.txt": {
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86",
+      "bytes": 560,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-git-detect.txt"
+    },
+    "github-checkpoint-git-plan.txt": {
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de",
+      "bytes": 689,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-git-plan.txt"
+    },
+    "github-checkpoint-git-policy.txt": {
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd",
+      "bytes": 5553,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-git-policy.txt"
+    },
+    "github-checkpoint-helper-checks.json": {
+      "sha256": "0b49344d12c83ff5185999993069069c6908114b2781ae9fc159dad60a9ee73f",
+      "bytes": 1301,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-helper-checks.json"
+    },
+    "github-checkpoint-index.yaml": {
+      "sha256": "0dc511d7e6727b49f2c52eee0ac51e01f4e9666b79b0f46c1ab062e3ea607e4a",
+      "bytes": 387345,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-index.yaml"
+    },
+    "github-checkpoint-latest-check.txt": {
+      "sha256": "a08458cc71b7db8d57a4063775c18c7c09acbf344138196b6c03e167edec60d6",
+      "bytes": 2428,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-latest-check.txt"
+    },
+    "github-checkpoint-latest-helper-plan.json": {
+      "sha256": "0e77d79700b8dd4a732cb3939885936db260be901af11d83a80d2978ef01bf54",
+      "bytes": 2736,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-latest-helper-plan.json"
+    },
+    "github-checkpoint-latest-helper-plan.md": {
+      "sha256": "747155bc3148d61357ebd0e78756f959b2e27e7d67c813676018c022ed2e7013",
+      "bytes": 987,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-latest-helper-plan.md"
+    },
+    "github-checkpoint-message-check.txt": {
+      "sha256": "38379e57430cf3aa454f5153ae0575760696e61a1527f6569af3d913e12cdb59",
+      "bytes": 2486,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-message-check.txt"
+    },
+    "github-checkpoint-message.txt": {
+      "sha256": "afc66f7c31d6180a4779844a00001fd8d786a0ca5106fc53d780ccfa80570460",
+      "bytes": 2452,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-message.txt"
+    },
+    "github-checkpoint-preflight.json": {
+      "sha256": "b0e8a817522c9a99a053717335f4c2ab4940d2d0bb9c2440da8831af3c7a951c",
+      "bytes": 8361,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-preflight.json"
+    },
+    "github-checkpoint-push-plan.json": {
+      "sha256": "f101131445a2a076a604100a3dfb595de36f773486f1b2a0e8b1b80d7f6b400a",
+      "bytes": 433,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-push-plan.json"
+    },
+    "github-checkpoint-push.txt": {
+      "sha256": "1dfb63cb951efe2587728fd50918a274a989d78a95fe4aacc4ab4df33a6273aa",
+      "bytes": 137,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-push.txt"
+    },
+    "github-checkpoint-pushed.json": {
+      "sha256": "fc220e7b69773d5031d5063587aa568aad6a2986701979b0f7673f1cf56240f4",
+      "bytes": 471,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-pushed.json"
+    },
+    "github-checkpoint-range-check.txt": {
+      "sha256": "dc514c1a1b57fa478e04eaf8aec117cab16a585d05e1cb8e5fd0b3a84c627b02",
+      "bytes": 273,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-range-check.txt"
+    },
+    "github-checkpoint-staged-verification.json": {
+      "sha256": "994d9e7f716349318fd98daf020041fd493e2e239b712ea28e9b9e3895bc1cb3",
+      "bytes": 5802,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-staged-verification.json"
+    },
+    "github-checkpoint-workflow-detection.json": {
+      "sha256": "74281b9b92a7bdcb78b9081594a7049fc060636a6d25c1c0d9e288a86831c2d0",
+      "bytes": 1037,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-workflow-detection.json"
+    },
+    "github-checkpoint-workflow-detection.md": {
+      "sha256": "af0f8ed9ad8a80acb45a89c4e5404daf1b32ed19ddeee79712eb424ed02f04ac",
+      "bytes": 748,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/github-checkpoint-workflow-detection.md"
+    },
+    "https-bridge-regression-tests.txt": {
+      "sha256": "0b61f0fe77a5715498b968ffe4f07dd764775ae2f712e3298b7c2feb58f61ed0",
+      "bytes": 2326,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-bridge-regression-tests.txt"
+    },
+    "https-checkpoint-aide-dev-main-plan.json": {
+      "sha256": "3b193094a9405a6e1746fa541d5dbb3a2faa4388a0e307a4851b2b9c93e45d33",
+      "bytes": 4472,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-aide-dev-main-plan.json"
+    },
+    "https-checkpoint-aide-dev-main-plan.md": {
+      "sha256": "b14c0069bdc81818ae61cb6b04c7a7daa9b014aadcf66a15a34ad1bd51f24255",
+      "bytes": 1300,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-aide-dev-main-plan.md"
+    },
+    "https-checkpoint-detect.txt": {
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86",
+      "bytes": 560,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-detect.txt"
+    },
+    "https-checkpoint-helper-checks.json": {
+      "sha256": "5e020d6b7a18faa3099e58c93c13ba51b8c7807ec7874215b44dc0d83ec8a429",
+      "bytes": 2016,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-helper-checks.json"
+    },
+    "https-checkpoint-latest-helper-plan.json": {
+      "sha256": "80962f03916b4464ec21377347a46198ec7fcc045bca8aee6d17db6465178f20",
+      "bytes": 2736,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-latest-helper-plan.json"
+    },
+    "https-checkpoint-latest-helper-plan.md": {
+      "sha256": "e6f5cb739f0d2e6c577fa3c7099c1f81c5be44147aba9977ba31ff4386226bd8",
+      "bytes": 987,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-latest-helper-plan.md"
+    },
+    "https-checkpoint-message-check.txt": {
+      "sha256": "4cbba98a048dab34796bd75b6d36cfa724ae5af4fcabf139b90f638c4765b370",
+      "bytes": 2485,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-message-check.txt"
+    },
+    "https-checkpoint-message.txt": {
+      "sha256": "337784a7654d1aeb886b7a8093fd04eb87806b00763621aecb081379b4b0d09e",
+      "bytes": 2446,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-message.txt"
+    },
+    "https-checkpoint-plan.txt": {
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de",
+      "bytes": 689,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-plan.txt"
+    },
+    "https-checkpoint-policy.txt": {
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd",
+      "bytes": 5553,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-policy.txt"
+    },
+    "https-checkpoint-workflow-detection.json": {
+      "sha256": "59d3bec28d0236c0b5f249df0516d461e3f62e0a6927a2e0b3957ebd1d4809c5",
+      "bytes": 1037,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-workflow-detection.json"
+    },
+    "https-checkpoint-workflow-detection.md": {
+      "sha256": "a38347395faaead8844b2b55b2f65efd3874f8fc137ea4bdcf204f4726903a5e",
+      "bytes": 748,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-workflow-detection.md"
+    },
+    "https-doctor.txt": {
+      "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "bytes": 5181,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-doctor.txt"
+    },
+    "https-export-scope-validation.json": {
+      "sha256": "b35ba6d94b04f29b592c29b5a9a23638bd533a7a00aca484126a96df41aa18d6",
+      "bytes": 1932,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-export-scope-validation.json"
+    },
+    "https-first-tests.txt": {
+      "sha256": "aac503dbb8b6d27a9a837bef8407217a2d15d3748d8df62cb9735e20d109047c",
+      "bytes": 2911,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-first-tests.txt"
+    },
+    "https-helper-validation.json": {
+      "sha256": "97d96473746aab4266392ee717b4c60e16629dfaecdcf799da5d663f9f56b6a1",
+      "bytes": 1953,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-helper-validation.json"
+    },
+    "https-index-preservation.json": {
+      "sha256": "03fe7dce6417a9692ac3ed2127260165c346c9fcba955afc74f3ad818af2b71e",
+      "bytes": 447,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-index-preservation.json"
+    },
+    "https-index-working-original.yaml": {
+      "sha256": "6989b87ae3736801513834e0e1894581c42d4d16f795ea2d6eb4dc88c7ef255e",
+      "bytes": 387345,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-index-working-original.yaml"
+    },
+    "https-raw-regression-tests.txt": {
+      "sha256": "19b973d1b133c185bfdfc356ead7cddba57378e5c65f0e3d894c453ee8e6e8de",
+      "bytes": 5156,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-raw-regression-tests.txt"
+    },
+    "https-root-independent-review.json": {
+      "sha256": "52da038839f4ff3564073079e625e4a18a72a3011eab50f508a5e456a652d15b",
+      "bytes": 1992,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-root-independent-review.json"
+    },
+    "https-root-independent-tests.txt": {
+      "sha256": "93c08622ff61644ffca899fe5a7cec69b1d9ee32711d797f79dcce70c84b3cb8",
+      "bytes": 149,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-root-independent-tests.txt"
+    },
+    "https-scoped-diff-check.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-scoped-diff-check.txt"
+    },
+    "https-second-tests.txt": {
+      "sha256": "2f07fe83733152c8e21f77586c529ba38f68ab7099eb6e79f611ee34842e029d",
+      "bytes": 3671,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-second-tests.txt"
+    },
+    "https-secret-scan.json": {
+      "sha256": "8ebe2acca25b20f0386b6163cfea87c3726c5d71cadbc77479f150783ea16206",
+      "bytes": 185,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-secret-scan.json"
+    },
+    "https-source-manifest.json": {
+      "sha256": "5921f8becbe2876352e9abe9ad4cfd05e02e022ba58525348775727e80108413",
+      "bytes": 853,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-source-manifest.json"
+    },
+    "https-source.patch": {
+      "sha256": "cbae303d34c2c75c40eceec2222bf0f8f5f725b40a2b51cc0a5a5fdb9ca7f9e3",
+      "bytes": 43291,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-source.patch"
+    },
+    "https-task-inspect.txt": {
+      "sha256": "85101cd160c7933dd0309cb05068348d26eb1296fcc555843eec04b490cd5f3d",
+      "bytes": 402,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-task-inspect.txt"
+    },
+    "https-task-noop-check.txt": {
+      "sha256": "3fb536768b562ef14ec03020e6204f5f1aa81be1612ce9fbca5d30cd08fb2dee",
+      "bytes": 168,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-task-noop-check.txt"
+    },
+    "https-task-recover.txt": {
+      "sha256": "139f61646d139c5f970bab5f372019c37c75ed6bc722c32e640978042163792d",
+      "bytes": 171,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-task-recover.txt"
+    },
+    "https-validate.txt": {
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "bytes": 4893242,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-validate.txt"
+    },
+    "https-validation.json": {
+      "sha256": "53575dbb2d484c1dfe9799558e435466a230a2e186d7027b41822295b58fdada",
+      "bytes": 2031,
+      "original_path": ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-validation.json"
+    }
+  },
+  "originals_preserved_unstaged": true,
+  "raw_evidence_rule": "Member bytes are authoritative originals; separately tracked text projections may normalize after checkout. No credentials/private test keys are archived. Earlier full raw GitHub packet stays in the previous checkpoint."
+}

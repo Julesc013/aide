@@ -1,0 +1,36 @@
+{
+  "schema": "aide.host.h2-input-root-source-effect-review.v1",
+  "result": "PASS_bounded_read_only_effect_admitted",
+  "source_manifest_sha256": "68ec1a87f6e5e95193a5067c2c94907e0d38382863ce404f98984df5e0ac9cec",
+  "source_aggregate": "85d629a732d7efe5444940679323129a3c6382638c03ebe77ed6d3892eb80799",
+  "effect_raw_sha256": "e5655f469eef408b87669b5e55700fae6fe9b5a2c5d7bdbee0d05359e537df08",
+  "effect_canonical_sha256": "1fb1ba24217e8ab76bdc96e6a690055668842f66448b6989343f4be98ac20ec3",
+  "tests_run": 73,
+  "independent_additional_methods": 6,
+  "independent_subcases": 28,
+  "test_log_sha256": "10bfc67c913ccec8f061245b3b29ec34cc765f068587f590a555801272f2819e",
+  "source_dependencies_and_index_unchanged": true,
+  "head": "0c7788fd3660dc18e2751108ac49afe96d446801",
+  "review": "Read full child/controller/tests and borrowed native methods, exact-open and job/journal mechanisms. Independent tests add all8acquisition expiry/all9false-release edges, serialization expiry, final controller release/freshness failures and5wireboolean aliases. No actual read facade/child/eightDLL effect occurred in this review.",
+  "approved_scope": {
+    "ordinary_children": 1,
+    "exact_files": [
+      "advapi32.dll",
+      "bcrypt.dll",
+      "kernel32.dll",
+      "kernelbase.dll",
+      "ntdll.dll",
+      "ucrtbase.dll",
+      "version.dll",
+      "ws2_32.dll"
+    ],
+    "bytes": 8306752,
+    "read_only": true,
+    "selected_resource_mappings": 0,
+    "private_image_or_ACL_or_profile_operations": 0,
+    "network_calls": 0,
+    "public_operation": false,
+    "retain_only": true
+  },
+  "limits_and_premises": "Exact expiry/pins/owned parent/one-use journal and Job rechecked by controller. Ordinary Python tooling/bootstrap and protected same-user controller namespace are admitted premises, not qualified private runtime or OS provenance. Child execution30s,internal25s,controller success90s and separate existing cleanup budgets. FullAPI180/128/context/private-loader/operational activation remain open."
+}

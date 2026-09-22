@@ -1,0 +1,134 @@
+# H1 original-byte custody
+
+Current scope is the exact native host mechanism/local-endpoint probe. The host
+WorkUnit remains running/PENDING; no private toolchain/model/credential-host or
+operational qualification is implied. Earlier failures remain failures.
+
+| Packet | Original result | Map | Members |
+| --- | --- | --- | --- |
+| h1-first-attempt-evidence.zip | FAIL, pending connect | h1-first-attempt-custody.json | 53 |
+| h1-network-attempt-evidence.zip | FAIL, timeout-only | h1-network-attempt-custody.json | 40 |
+| h1-diagnostic-attempt-evidence.zip | FAIL, NETISO_NONE | h1-diagnostic-attempt-custody.json | 43 |
+| h1-interface-attempt-evidence.zip | PASS, exact native conjunction | h1-interface-attempt-custody.json | 69 |
+
+Every map pins archive SHA256, exact member paths, lengths and raw SHA256 values.
+The fourth packet references and preserves the preceding three. Repeated member
+names across packets represent explicitly different historical snapshots; use
+the map belonging to the named packet. No archive is silently rewritten.
+
+Current source8 is under source/<repository-path> in the fourth packet. Exact
+native binary, reservation, receipt, stdout/stderr and scratch proof are under
+owned/. Source/effect/review manifests and raw test/helper logs are under evidence/.
+Checkpoint document bytes are under checkpoint-docs/. Current text files beside
+these ZIPs are navigation projections; Git text normalization cannot replace raw
+archive hashes. If a cited raw file is absent after checkout, resolve the exact
+named member through its packet map. Original on-disk evidence remains unstaged.
+
+The fourth receipt retains network10060 as timeout, with diagnostic0/2 meaning
+missing internetClient, both same-listener controls and the remaining actual
+identity/access facts. The first three overall FAIL results are not relabeled.
+All consumed effect manifests refuse replay; retained objects/profiles have no
+automatic deletion authority. The source-manifest qualification text records
+its pre-effect freeze; validation.md and actual result review give later truth.
+
+Next source-only design: h2-private-toolchain-proposal.md and its read-only local
+input inventory. No additional isolation/runtime/credential effects have run.
+
+## H2 source custody
+
+The three H2 authored files and current raw evidence are preserved in
+h2-source-evidence.zip; h2-custody.json lists exact member bytes/SHA256s and
+raw-to-LF Git text projections. Original on-disk logs remain unstaged. A raw file
+absent after checkout resolves to evidence/<its basename> in that packet.
+
+The two superseded source/reproduction packets remain separate and immutable:
+h2-before-root-alias-evidence.zip and h2-before-overlap-evidence.zip, each with its
+matching custody map and 12 original members. Those are historical review states,
+not additional passing qualification. The current packet also retains exact
+original attack intent bytes copied read-only from their retained fixtures.
+All H1 packets above remain unchanged. The next Python closure proposal carries
+source-only authority and no new native image/profile/launch effect permission.
+
+## H2 Python source packet
+
+The current h2-python-evidence.zip and h2-python-custody.json preserve original
+source, tests, the complete patch, independent review/probe scripts and results,
+all helper output and initial mutation failure. The 4.9 MB validate outputs are
+archive members only; raw working files remain retained and unstaged. Original
+evidence paths referenced by the manifest/review resolve to ZIP members under
+files/. Extract only a requested member into a separately owned evidence root;
+do not overwrite current canonical documents to replay historical observations.
+
+The map gives each original path, byte length and SHA256, plus raw-to-LF Git
+projection bindings for selected human-readable evidence. Archived original bytes
+remain authoritative for their recorded raw hashes. Source/dependency snapshots
+and a copy of the unchanged pending-provider index are historical inputs, not
+new queue authority or a staged canonical index change. The v1 baseline files
+used by the independent differential oracle are under baseline/06f2546f/.
+No private tool images, DLL loads, package grants or runtime activation occurred.
+
+## H2 optional delay metadata packet
+
+The h2-delay-evidence.zip and h2-delay-custody.json packet preserves the exact
+reviewed two-file update, all 101-test and numeric-bound evidence, the initial
+compatibility failures, and the unchanged public-file metadata observations.
+The full 4.9 MB validate output and raw helper/reviewer logs are ZIP members;
+the original on-disk files remain retained and unstaged. Resolve a referenced
+raw repository path through files/<repository-path> in the map. Historical
+pre-change source files are under baseline/830bf30d/.
+
+Raw review and observation bytes remain authoritative for their recorded hashes.
+The map separately binds any Git LF text projection. The first source manifest
+was reconstructed from retained fields and verified against its earlier recorded
+hash; the final source-bound manifest is h2-delay-source-manifest.json. A copied
+working index is a historical dependency observation, not new queue authority.
+No private image, DLL loading, grant or isolated Python effect occurred. The
+observed union of 195 dependency names includes 180 API names, above the unchanged
+128-row contract cap; actual API/native ownership and loader qualification remain
+open. The packet does not relabel prior H1 failures or qualify general activation.
+
+## H2 system observation source packet
+
+The current h2-system-evidence.zip and h2-system-custody.json preserve the exact
+reviewed source2, 138-test run, 17 independent probes, scripts/raw review and
+helper logs. Original files not selected for checkout resolve through the map
+to files/<repository-path> members. Raw bytes remain authoritative for recorded
+SHA256s; the map separately binds selected Git LF text projections.
+
+The h2-system-before-review-evidence.zip/map remain immutable historical evidence:
+36 members retain the initial source/133 tests and concrete final-result,
+pre-dispatch, typed-time and modeled native-path attribution failures. Their
+successor repairs and current review do not relabel those original observations.
+The current packet includes this historical packet, with its original member map.
+
+The copied working index is an excluded historical dependency snapshot, never
+new canonical queue authority. All full validate logs remain archive members,
+not separate tracked multi-megabyte projections. This source checkpoint performs
+no actual selected DLL mapping, private image copy, package grant or isolated
+Python effect. The 8192 ceiling counts observer adapter calls, not each subordinate
+Win32 function or mandatory release; an owned outer-process bound is still needed.
+Native/controller/journal provenance, actual API context and loader gates stay open.
+
+## H2 public native input facts packet
+
+The h2-input-evidence.zip and h2-input-custody.json packet preserves source3,
+its complete patch, the first 24-test history, final 67-test output, independent
+73-test source/logs/reviews, and all six original actual artifacts. Raw repository
+paths resolve through files/<repository-path>; the four external journal/child
+artifacts resolve through external/owned-input-parent/. Originals remain retained
+in place. No DLL bytes were copied into this packet; the eight observed byte
+hashes and native facts retain exact names, including actual KernelBase.dll.
+
+The map binds every original member hash and separately names selected Git LF
+projections. Source review and actual audit refer to original raw bytes. ROOT's
+logical here-string probe source is preserved with its orchestration receipt;
+uncaptured original stdin bytes are not invented. Full validate logs and helper
+report snapshots stay archive-only. The working index snapshot is historical
+input, not a canonical index change. The source/base 0c7788fd commit receipt and
+independent commit review are retained as immediate history.
+
+The single input effect passed with a quiescent ordinary child. Its reservation
+and generation remain consumed. This packet admits no further mappings, private
+image/grants, profiles or activation. Native API context, full 180-name inventory
+versus the unchanged 128-row cap, protected controller provenance and restricted
+Python bootstrap remain open.

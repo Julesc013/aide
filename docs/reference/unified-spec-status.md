@@ -44,6 +44,14 @@ unrun `UC-*` acceptance designs. Those aliases are review input, not adopted
 `AIDE-*` requirements or passing tests. The six adopted foundation contracts
 remain byte-identical and retain precedence where scopes overlap.
 
+## Bounded Post-Import Adoption
+
+The broker observation-dispatch slice adopts `UR-INT-06` and `UR-INT-07` under
+stable live IDs `AIDE-INT-001` and `AIDE-INT-002`. The separate adopted contract
+binds those clauses to executable source tests while retaining the imported
+`UC-INT-06` and `UC-INT-07` designs as unrun source inputs. The remaining
+integration-broker draft clauses stay proposed.
+
 ## Deferred Material
 
 - Draft clauses in recovery, compatibility, trust, lifecycle, knowledge,

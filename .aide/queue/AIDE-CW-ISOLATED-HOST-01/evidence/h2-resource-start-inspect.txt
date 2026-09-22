@@ -1,0 +1,10 @@
+AIDE Lite task inspect
+task_id: AIDE-CW-ISOLATED-HOST-01
+status: running
+classification: partial
+task_yaml: .aide/queue/AIDE-CW-ISOLATED-HOST-01/task.yaml
+status_yaml: .aide/queue/AIDE-CW-ISOLATED-HOST-01/status.yaml
+evidence_dir: .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence
+evidence_files: 476
+missing_evidence: 0
+recovery_suggestion: continue_from_status_and_evidence

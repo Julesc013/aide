@@ -1,0 +1,17 @@
+{
+  "schema": "aide.host.input-root-checkpoint-review.v1",
+  "result": "PASS",
+  "scope_sha256": "96976c9c45bfa2fc513039abf192e9c20a1f1c38439d3c62539b770d5365edcd",
+  "expected_parent": "0c7788fd3660dc18e2751108ac49afe96d446801",
+  "base_tree": "19023049458d9fe27dbd04a2f8dfcf66992aae67",
+  "projected_tree_before_this_review": "279ef28b65617283f8ece05659e352569547d56d",
+  "selected27_raw_and_actual_git_blobs_verified": true,
+  "all71_archive_members_match_retained_originals": true,
+  "eight_helper_logs_verified_reports_restored": true,
+  "source_review_sha256": "9816f1bcda641c2f2d0b6cfe12b083cf5da2e1c40124832e6db89b336ba6a8a5",
+  "actual_review_sha256": "9830b14e4cf47a12db25794ee453f9ee7549c41d2dd303b0485a9a6830168513",
+  "doc_diff_read": true,
+  "index_empty": true,
+  "provider_index_unchanged": true,
+  "approved_local_operation": "Stage exactly scope.selected_files plus scope and this review (29 paths), independently recompute full tree including this review and verify staged/committed blobs, then perform normal local checked commit on unchanged task branch at expected_parent. Preserve all generated reports and unrelated work. No further DLL effects or public operations."
+}

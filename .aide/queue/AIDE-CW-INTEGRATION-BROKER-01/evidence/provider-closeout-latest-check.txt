@@ -1,0 +1,50 @@
+AIDE Lite commit check
+result: PASS
+source: git log -1 --pretty=%B
+policy: .aide/policies/commit-messages.yaml
+standard: .aide/reports/aide-commit-message-standard.md
+- PASS commit subject is present
+- PASS commit subject is 72 characters or fewer
+- PASS commit subject follows type(scope): summary
+- PASS commit type is allowed: docs
+- PASS commit subject has no trailing period
+- PASS commit subject is not a vague placeholder
+- PASS commit summary is specific enough
+- PASS commit body is present
+- PASS blank line separates subject and Markdown body
+- PASS commit body contains heading: ## Summary
+- PASS commit body heading has content: ## Summary
+- PASS commit body heading has bullet content: ## Summary
+- PASS commit body contains heading: ## Why
+- PASS commit body heading has content: ## Why
+- PASS commit body heading has bullet content: ## Why
+- PASS commit body contains heading: ## Changed
+- PASS commit body heading has content: ## Changed
+- PASS commit body heading has bullet content: ## Changed
+- PASS commit body contains heading: ## Validation
+- PASS commit body heading has content: ## Validation
+- PASS commit body heading has bullet content: ## Validation
+- PASS commit body contains heading: ## Changelog
+- PASS commit body heading has content: ## Changelog
+- PASS commit body heading has bullet content: ## Changelog
+- PASS commit body contains heading: ## Risks
+- PASS commit body heading has content: ## Risks
+- PASS commit body heading has bullet content: ## Risks
+- PASS commit body contains heading: ## Follow-up
+- PASS commit body heading has content: ## Follow-up
+- PASS commit body heading has bullet content: ## Follow-up
+- PASS validation section records PASS/WARN/FAIL/NOT RUN outcome
+- PASS changelog section uses a machine-readable category prefix
+- PASS commit trailer present: AIDE-Task
+- PASS commit trailer present: AIDE-Phase
+- PASS commit trailer present: AIDE-Result
+- PASS commit trailer present: AIDE-Scope
+- PASS commit trailer present: AIDE-Token-Impact
+- PASS commit trailer present: AIDE-Quality-Gate
+- PASS commit message excludes raw_prompt_body
+- PASS commit message excludes raw_response_body
+- PASS commit message excludes begin private key
+- PASS commit message excludes openai_api_key
+- PASS commit message excludes anthropic_api_key
+- PASS commit message excludes deepseek_api_key
+- PASS commit message excludes sk-ant

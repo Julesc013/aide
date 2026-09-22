@@ -1,0 +1,20 @@
+{
+  "schema": "aide.host.h2-delay-root-review-custody.v1",
+  "reason": "The ROOT checkpoint approval was authored after the main evidence archive; retain its exact CRLF original while binding normal Git LF projection. No source or approved primary-scope byte changes.",
+  "approved_primary_scope_sha256": "ec72277a8f93f12c372a6c9051c11e31c0c137211513c13f95656d7471607be3",
+  "archive": {
+    "path": "h2-delay-root-review-evidence.zip",
+    "bytes": 1040,
+    "sha256": "900558a35ab3cf1b61e8f2d78d106ca4eea43c64c70da2b3641548c57ff13df0"
+  },
+  "member": {
+    "path": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-root-checkpoint-review.json",
+    "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-root-checkpoint-review.json",
+    "bytes": 1245,
+    "sha256": "b5e076f81a82dd0e7ada5c601859b313462df9d0e98de1eb14779fb3917b6d6e",
+    "git_bytes": 1231,
+    "git_sha256": "61fc0200ce87868ba0087fb64b8041c2eb68ecfb0345d46cc9bbe5a4a7a19b88",
+    "git_blob_oid": "833361ee9313823a1fd764d8df57758c18351330"
+  },
+  "authority": "Custody only. This record does not enlarge runtime or effect authority."
+}

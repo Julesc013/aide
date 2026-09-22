@@ -1,0 +1,77 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CW-BROKER-DEV-INTEGRATION-01
+title: Integrate the published broker runtime line into current dev
+type: integration
+status: passed
+planning_state: integrated_to_dev
+result: PASS
+created_at: 2026-09-22
+updated_at: 2026-09-22
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-CW-INTEGRATION-BROKER-01
+source:
+  branch: task/aide-cw-integration-broker-01
+  commit: 75da33108995ba63fc7148c6b4137349d7013798
+target:
+  branch: dev
+  commit: 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab
+merge_base: bfb86c12b9e6d2970024d29c57ba629994ec43cc
+objective: >
+  Preserve and integrate the exact published broker/runtime history into
+  current dev, reconciling independently advanced documentation, queue, and
+  packaging state without downgrading current dev or claiming unfinished
+  operational host and target qualification.
+authority_basis: >
+  The owner explicitly named source commit
+  75da33108995ba63fc7148c6b4137349d7013798 and directed that its substantial
+  work must not be discarded. The admitted campaign already routes to the
+  broker stream and authorizes qualified task-to-dev integration through the
+  repository helper and exact validation.
+scope:
+  source_tree_boundary: all paths reachable from the exact source commit and its unique ancestry
+  conflict_paths_observed: 14
+  allowed_reconciliation_paths:
+    - .aide/intake/latest-*
+    - .aide/queue/**
+    - .aide/queue/index.yaml
+    - IMPLEMENT.md
+    - PLANS.md
+    - DOCUMENTATION.md
+    - docs/reference/unified-spec-status.md
+    - specs/control-plane/README.md
+    - .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/**
+  protected_current_dev_paths:
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - .aide/scripts/tests/test_q47_release_bundle.py
+    - .codex/**
+  forbidden_operations:
+    - dropping broker runtime commits or representing their source as redundant
+    - downgrading current dev packaging, specification, or configuration-neutrality state
+    - operational broker activation or credential installation
+    - claiming protected-host or GitHub-target qualification from fixture tests
+    - merging to main
+    - force pushing or rewriting shared history
+    - creating or pushing tags
+    - uploading or publishing a release
+authorized_git_operations:
+  - create this isolated integration branch and worktree from exact current dev
+  - merge exact source commit 75da33108995ba63fc7148c6b4137349d7013798 without rewriting either parent
+  - resolve the observed coordination and documentation conflicts explicitly
+  - commit and publish coherent integration checkpoints with detailed messages
+  - integrate the qualified candidate to dev after helper planning and post-merge validation
+verification:
+  - preserve both parent identities in a no-ff merge
+  - prove the current dev packaging and portable importer behavior remain intact
+  - run broker, provider, observation, HTTPS, continuous-worker, and Windows-host focused suites
+  - run canonical repository test and validation
+  - run exact incoming commit-message checks without falsifying historical bfb86c12
+  - verify operational activation, credentials, hosted effects, main, tags, and publication remain absent
+retained_gates:
+  - AIDE-CW-INTEGRATION-BROKER-01 remains running until host target and operational provider qualification close
+  - the Windows symlink qualification gap remains explicit
+  - main promotion remains an exact owner review decision
+  - tag upload and publication remain exact release review decisions

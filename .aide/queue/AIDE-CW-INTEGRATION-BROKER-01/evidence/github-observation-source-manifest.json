@@ -1,0 +1,16 @@
+{
+  "schema": "aide.broker.github-observation-source.v1",
+  "head": "8c3df6533222dc6536997d50e742c466108e2ecb",
+  "files": {
+    ".aide/scripts/tests/test_continuous_worker_github_observation.py": "e1d9898637986a47679803a0670f145a98268d87868665cac1b929894f52bd24",
+    "core/runtime/integration_broker/github_api.py": "c65409bbc2a2a621a0e457f04841ab3c21d5fdeceaf6cda1d4bdb2b95b086019",
+    "core/runtime/integration_broker/github_checks.py": "52aa57f50816bc3dba18a3c13775eecfde1a2fbf9a488e56dd1d327ac52bcf53",
+    "core/runtime/integration_broker/github_observation.py": "ad7f924ace33649e44dbcfd460a90141c1e7d67408c3133fc203b7d877bdb546",
+    "docs/reference/integration-broker-core.md": "56f4a391ebd5a25a4d7c4d3674873d2ae843fa8e0e3b59a0f37f73a67b77c46c"
+  },
+  "aggregate_sha256": "e6027d001ddf97d165071de7fdb7eefbea81c6a5440badde28a9785f7bf0cede",
+  "patch_sha256": "960acc2c8e655166c4ad9f3c64786df73c653dcb2e3a79daec6f5428097c8bc0",
+  "patch_bytes": 56008,
+  "source_scope": "three additive raw observation modules, direct test, reference documentation",
+  "qualification": "offline source only; no installed HTTP/credential client, target policy or operational activation"
+}

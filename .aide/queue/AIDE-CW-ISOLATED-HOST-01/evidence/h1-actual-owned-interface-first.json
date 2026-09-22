@@ -1,0 +1,43 @@
+{
+  "schema": "aide.host.h1-owned-interface-execution.v1",
+  "windows_identity": "blackglass-win1\\jules",
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h1-owned-network-effect-probe.py",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h1-owned-interface-effect-manifest.json",
+    "5899f09a73d812b32d5ec59a6014cbe83371e850f3e0ef19e4b320cc39d20d58"
+  ],
+  "started_at": 1788745305.322426,
+  "elapsed_seconds": 7.093360600061715,
+  "exit_code": 0,
+  "log_sha256": "34ff6b9b6a360131b3c97ce1302420139530c4c14cd5c489868662cde84f1fe5",
+  "manifest_sha256": "5899f09a73d812b32d5ec59a6014cbe83371e850f3e0ef19e4b320cc39d20d58",
+  "attempt_count": 1,
+  "replayed": false,
+  "activation": false,
+  "source_unchanged": true,
+  "origin_proof_unchanged": true,
+  "retained": {
+    "interface-probe-reservation.jsonl": {
+      "sha256": "625e17c8956e8093c75fd82884997a4276fc25459cd0e59ad56ce310cd80b946",
+      "bytes": 350
+    },
+    "interface-native-probe-receipt.json": {
+      "sha256": "1d56d971e9db3d96475163c7e9f41daad9d6cfb4c0782225d1709bc90e6bc8ec",
+      "bytes": 6326
+    },
+    "interface-native-job-output/stdout": {
+      "sha256": "d78f220fbfa8f8e610e855e51134b1cd8b74c1dd99ece72722b2f24abe1b2681",
+      "bytes": 155
+    },
+    "interface-native-job-output/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "interface-probe-objects/scratch/native-created.txt": {
+      "sha256": "120641fe76c4366e442d9f44bdfc2d8aec756026cf4e624de42b636f0403e8d5",
+      "bytes": 18
+    }
+  }
+}

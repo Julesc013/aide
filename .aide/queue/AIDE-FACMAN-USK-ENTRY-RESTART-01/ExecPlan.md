@@ -1,9 +1,16 @@
 # Complete restartable provider entry journals
 
-1. Inspect/resume the existing task and evidence; record exact prerequisites and branch plan.
-2. Decompose any oversized scope and implement one reviewable unit.
-3. Run affected required validation and independent assurance; remediate findings.
-4. Bind exact source, tests, review and integration receipts; commit and normally integrate.
-5. Close only actual acceptance, preserve blockers and dispatch the next eligible task.
+Directory and stored/Deflate ZIP replay are integrated through checked provider promotion and ancestry synchronization. The directory checkpoint used PR39/40/41; the ZIP checkpoint used PR42/43/44. Current provider dev is cf07ea2a0ad2a57baa351e46dd0664feeda028e3 and main is c87587e191f4cea5d32c4edf8f780fce30c2826e, both tree ec2255adf6d095951ca8b6fee01d5300c9b8e6bc. Local main/dev were fast-forwarded and clean. Exact source/review/test/merge receipts are navigable through [custody](evidence/CUSTODY.md).
 
-Coordinate USK-ENTRY-STREAM-JOURNAL-AND-RESTART-01: persist entry identity and recovery transitions, test kill/restart/failure at entry/stage/commit boundaries with bounded memory and foreign-state preservation.
+The completed replay preserves original journal/staging/audit bytes, revalidates original plan/archive/entry context, records fresh lineage before effects, uses exclusive new audit chains and refuses uncertain ancestor commits. ROOT reviewed the exact 27-file candidate; 20 native suites, 56 Python tests, strict and all three clean-source SDK gates passed. Every task/promotion/ancestry PR required twelve fresh hosted checks. Recovery inspection observes at most 32 audit events while replay admission retains its one-event precommit bound.
+
+Keep this task running/PENDING through the approved bounded commit-authority admission slice. ROOT approved the following shape after independent design review:
+
+1. Start the next scoped task branch from exact synchronized dev after current policy/detection/plan and resource checks. Preserve existing evidence worktrees; no new worktree or cleanup.
+2. Add and preserve a NEW deterministic actual same-byte staged-child substitution after mark_verified that publishes the foreign object in legacy mode. Earlier notes recorded an obligation, not an executed commit-window oracle.
+3. Add optional strict install_local.plan `required_commit_authority: staged_child_bound_v1`; apply inherits the original plan request. Bind explicit requirements into plan/source/journal context. Omission retains documented legacy behavior and never reports stronger authority.
+4. Add a small native requirement/capability boundary and bounded complete recorded closure inspection. Required public apply refuses before setup/transaction effects on unqualified hosts. A direct already-staged native attempt returns typed durable retained refusal when protected authority is absent. No silent fallback, caller boolean/ACL assertion or persisted numeric-ID observation may mint a success capability. Restarts do not inherit live authority.
+5. Prove native/public no-effect versus retained-effect refusal, same-byte and changed-byte replacement, nested-directory/extra-child races, strict requirement parsing, plan downgrade rejection and reopen behavior. Freeze source for independent review before checkpoint; repeat clean-source SDK and fresh checked task/dev/main/ancestry integration.
+6. Record only demonstrated acceptance. Protected successful publication requires its own enforced namespace and OS proof; generation/stale-owner recovery, retained cleanup, provider adoption and Beta qualification remain open.
+
+The authorized production path scope is transaction commit-authority h/cpp and session wiring, lifecycle/public/restart context, matching install plan/journal schemas, CMake registration, direct native/public/schema tests, architecture/transaction documentation and repository WorkUnit manifest. No accounts, services, ACL changes, drivers, protected push, force history changes or consumer pins are in this slice. AIDE index/staging remain with the integration worker.

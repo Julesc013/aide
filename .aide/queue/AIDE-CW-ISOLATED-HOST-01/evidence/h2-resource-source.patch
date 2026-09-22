@@ -1,0 +1,736 @@
+diff --git a/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource.py b/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource.py
+new file mode 100644
+index 00000000..584ba50c
+--- /dev/null
++++ b/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource.py
+@@ -0,0 +1,256 @@
++"""Task-only two-API resource feasibility; actual effects need a separate review."""
++from __future__ import annotations
++from dataclasses import dataclass
++import hashlib
++from pathlib import Path
++import sys
++import time
++
++HERE = Path(__file__).resolve().parent
++if str(HERE) not in sys.path: sys.path.insert(0, str(HERE))
++from h2_system_input import (REPOSITORY, Refused, ReadOnlyApi, NAMES, decode, exact,
++                             _canonical, _finite, _digest, MAX_INPUT, MAX_OUTPUT)
++from core.runtime.continuous_worker import windows_system_observation as obs
++from core.runtime.continuous_worker import windows_security_objects as native
++
++API_NAMES = ('api-ms-win-core-path-l1-1-0.dll', 'api-ms-win-crt-runtime-l1-1-0.dll')
++SECONDS = 25
++
++
++def read_plan(value):
++    plan = obs.ObservationPlan.read(value)
++    if (tuple(row.name for row in plan.files) != NAMES or plan.api_names != API_NAMES or
++            type(plan.max_seconds) is not int or plan.max_seconds != SECONDS):
++        raise Refused('exact eight files, two APIs and25-second observation required')
++    return plan
++
++
++def reservation_record(plan, effect):
++    return {'schema': 'aide.host.system-resource-reservation.v1', 'request_id': plan.request_id,
++            'plan_sha256': plan.fingerprint, 'effect_sha256': effect,
++            'consumed': True, 'replay_permitted': False}
++
++
++def mapping_intents(plan):
++    return tuple({'schema': 'aide.host.system-mapping-intent.v1', 'request_id': plan.request_id,
++                  'plan_sha256': plan.fingerprint, 'sequence': i, 'api_name': name,
++                  'flags': obs.RESOURCE_FLAGS} for i, name in enumerate(plan.api_names))
++
++
++def line_sha(row): return hashlib.sha256(_canonical(row) + b'\n').hexdigest()
++
++
++@dataclass(frozen=True)
++class Transfer:
++    plan: obs.ObservationPlan
++    effect: str
++    paths: tuple[tuple[str, str], ...]
++    reservation_line: str
++    intent_lines: tuple[str, ...]
++
++    @classmethod
++    def read(cls, value):
++        exact(value, ('schema', 'plan', 'effect_sha256', 'observed_paths',
++                      'reservation_line_sha256', 'intent_line_sha256s'))
++        if value['schema'] != 'aide.host.system-resource-transfer.v1': raise Refused('known resource transfer required')
++        plan, effect = read_plan(value['plan']), _digest(value['effect_sha256'])
++        paths = exact(value['observed_paths'], NAMES)
++        for name, path in paths.items():
++            if type(path) is not str or path.casefold() != (plan.native_root + '\\' + name).casefold():
++                raise Refused('exact N1 observed native spelling required')
++        reserved = _digest(value['reservation_line_sha256'])
++        lines = value['intent_line_sha256s']
++        if (reserved != line_sha(reservation_record(plan, effect)) or type(lines) is not list or len(lines) != 2 or
++                tuple(_digest(item) for item in lines) != tuple(line_sha(row) for row in mapping_intents(plan))):
++            raise Refused('exact parent-persisted reservation and both mapping lines required')
++        return cls(plan, effect, tuple(sorted(paths.items())), reserved, tuple(lines))
++
++    def value(self):
++        return {'schema': 'aide.host.system-resource-transfer.v1', 'plan': self.plan.value(),
++                'effect_sha256': self.effect, 'observed_paths': dict(self.paths),
++                'reservation_line_sha256': self.reservation_line, 'intent_line_sha256s': list(self.intent_lines)}
++
++    def validate(self):
++        if Transfer.read(self.value()) != self: raise Refused('resource transfer changed after admission')
++        return self
++
++    @property
++    def fingerprint(self): return hashlib.sha256(_canonical(self.value())).hexdigest()
++
++
++class ParentPaidJournal:
++    """Hash tickets acknowledge already-flushed parent rows, not new authority.
++
++    Authentic parent/namespace and trusted ordinary child remain explicit probe
++    premises. These hashes are not signatures or proof of adversarial isolation.
++    """
++    def __init__(self, transfer):
++        self.transfer = transfer.validate()
++        self.reserved, self.position, self.failed = False, 0, False
++
++    def reserve(self, fingerprint):
++        if self.failed or self.reserved or fingerprint != self.transfer.plan.fingerprint:
++            self.failed = True
++            raise Refused('prepaid reservation differs or has been consumed')
++        self.reserved = True
++        return fingerprint
++
++    def intent(self, value):
++        if self.failed or not self.reserved or self.position >= 2:
++            self.failed = True
++            raise Refused('prepaid mapping sequence is unavailable')
++        expected = mapping_intents(self.transfer.plan)[self.position]
++        if _canonical(value) != _canonical(expected) or line_sha(value) != self.transfer.intent_lines[self.position]:
++            self.failed = True
++            raise Refused('mapping intent differs from the parent-paid exact sequence')
++        self.position += 1
++        return hashlib.sha256(_canonical(value)).hexdigest()
++
++
++class Deadline:
++    def __init__(self, expiry, *, clock=time.monotonic, wall=time.time):
++        self.expiry, self.clock, self.wall = expiry, clock, wall
++        self.start = self.last = clock(); self.wall_start = wall()
++        self.calls = 0
++    def __call__(self):
++        now, wall = self.clock(), self.wall()
++        if (not all(_finite(v) for v in (now, wall, self.start, self.last, self.wall_start, self.expiry)) or
++                now < self.last or wall < self.wall_start or now - self.start >= SECONDS or
++                not 0 < self.expiry - wall <= 3600 or self.calls >= 32768):
++            raise Refused('resource child deadline/guard budget refused')
++        self.last = now; self.calls += 1
++
++
++class NativeResourceApi(obs.NativeSystemApi):
++    def __init__(self):
++        super().__init__()
++        self.native_refusal = None
++        self._directory = native.bind(native.K, 'GetSystemDirectoryW', [obs.W.LPWSTR, obs.W.UINT], obs.W.UINT)
++        self._wow = native.bind(native.K, 'IsWow64Process2',
++            [obs.W.HANDLE, obs.C.POINTER(obs.W.WORD), obs.C.POINTER(obs.W.WORD)], obs.W.BOOL)
++    environment = ReadOnlyApi.environment
++
++    def map_resource(self, name):
++        if name not in API_NAMES: raise Refused('only the two exact admitted API requests may map')
++        self.native_refusal = None
++        try:
++            return super().map_resource(name)
++        except Refused:
++            self.native_refusal = {'operation': 'LoadLibraryExW', 'api_name': name,
++                                   'flags': obs.RESOURCE_FLAGS, 'win32_error': obs.C.get_last_error()}
++            raise
++
++
++def environment(api, transfer, guard):
++    guard(); value = api.environment(); guard()
++    exact(value, ('system_directory', 'native_root', 'process_machine', 'native_machine'))
++    if (type(value['system_directory']) is not str or value['system_directory'].casefold() != r'c:\windows\system32' or
++            type(value['native_root']) is not str or value['native_root'].casefold() != transfer.plan.native_root.casefold() or
++            type(value['process_machine']) is not int or value['process_machine'] != 0 or
++            type(value['native_machine']) is not int or value['native_machine'] != 0x8664):
++        raise Refused('resource effect native context differs from admission')
++    return value
++
++
++def validate_observation(value, transfer):
++    fields = ('schema', 'request_id', 'plan_sha256', 'reservation_acknowledgement', 'root', 'files',
++              'mappings', 'native_calls', 'mapping_attempts', 'system_ownership_qualified',
++              'api_context_qualified', 'loader_qualified', 'boundary', 'all_owned_handles_released')
++    exact(value, fields)
++    plan = transfer.plan
++    if (value['schema'] != 'aide.host.system-observation-result.v1' or value['request_id'] != plan.request_id or
++            value['plan_sha256'] != plan.fingerprint or value['reservation_acknowledgement'] != plan.fingerprint or
++            _canonical(value['root']) != _canonical(plan.value()['root']) or
++            _canonical(value['files']) != _canonical(plan.value()['files']) or
++            type(value['native_calls']) is not int or not 1 <= value['native_calls'] <= obs.MAX_NATIVE_CALLS or
++            type(value['mapping_attempts']) is not int or value['mapping_attempts'] != 2 or
++            value['all_owned_handles_released'] is not True or
++            any(value[key] is not False for key in ('system_ownership_qualified', 'api_context_qualified', 'loader_qualified')) or
++            type(value['boundary']) is not str or not 1 <= len(value['boundary']) <= 512):
++        raise Refused('resource observation is incomplete, mismatched or overqualified')
++    rows = value['mappings']; pins = {pin.name: pin for pin in plan.files}; paths = dict(transfer.paths)
++    if type(rows) is not list or len(rows) != 2: raise Refused('exact two mapping outcomes required')
++    for row, intent in zip(rows, mapping_intents(plan)):
++        exact(row, ('api_name', 'physical_name', 'identity', 'sha256', 'mapped_path', 'mapping_kind', 'intent_acknowledgement'))
++        name = row['physical_name']
++        if type(name) is not str or name not in pins: raise Refused('unadmitted physical mapping host')
++        pin = pins[name]
++        if (row['api_name'] != intent['api_name'] or _canonical(row['identity']) != _canonical(list(pin.identity)) or
++                row['sha256'] != pin.sha256 or row['mapped_path'] != paths[name] or
++                row['mapping_kind'] not in ('resource', 'prior_executable') or
++                row['intent_acknowledgement'] != hashlib.sha256(_canonical(intent)).hexdigest()):
++            raise Refused('resource mapping result differs from exact paid pins')
++    return value
++
++
++def validate_result(data, transfer):
++    value = decode(data)
++    exact(value, ('schema', 'result', 'transfer_sha256', 'effect_sha256', 'environment',
++                  'observation', 'paid_intents_consumed', 'operational_activation'))
++    if (value['schema'] != 'aide.host.system-resource-result.v1' or value['result'] != 'PASS' or
++            value['transfer_sha256'] != transfer.fingerprint or value['effect_sha256'] != transfer.effect or
++            type(value['paid_intents_consumed']) is not int or value['paid_intents_consumed'] != 2 or
++            value['operational_activation'] is not False):
++        raise Refused('resource child result differs from its exact transfer')
++    # Reuse the same pure environment predicate without a native read.
++    class Recorded:
++        def environment(self): return value['environment']
++    environment(Recorded(), transfer, lambda: None)
++    validate_observation(value['observation'], transfer)
++    return value
++
++
++class ResourceProbe:
++    def __init__(self, transfer, api, guard, *, clock=time.monotonic, wall=time.time):
++        self.transfer, self.api, self.guard = transfer.validate(), api, guard
++        self.journal = ParentPaidJournal(transfer)
++        self.session = obs.ObservationSession(transfer.plan, api, self.journal, guard, clock=clock, wall_clock=wall)
++        self.consumed, self.failure = False, None
++    def run(self):
++        if self.consumed: raise Refused('resource probe consumed; no replay')
++        self.consumed = True
++        try:
++            before = environment(self.api, self.transfer, self.guard)
++            raw = self.session.run()
++            after = environment(self.api, self.transfer, self.guard)
++            if before != after or self.journal.position != 2: raise Refused('resource context or paid completion changed')
++            value = {'schema': 'aide.host.system-resource-result.v1', 'result': 'PASS',
++                     'transfer_sha256': self.transfer.fingerprint, 'effect_sha256': self.transfer.effect,
++                     'environment': before, 'observation': decode(raw), 'paid_intents_consumed': self.journal.position,
++                     'operational_activation': False}
++            data = _canonical(value)
++            if len(data) > MAX_OUTPUT: raise Refused('resource result exceeds child output bound')
++            validate_result(data, self.transfer); self.guard()
++            return data
++        except Exception as error:
++            self.failure = {'error_type': type(error).__name__, 'consumed': True,
++                            'session_failure': self.session.failure, 'mapping_attempts': len(self.session.attempts),
++                            'paid_intents_consumed': self.journal.position, 'release_failures': self.session.release_failures,
++                            'native_refusal': getattr(self.api, 'native_refusal', None),
++                            'replay_permitted': False}
++            raise Refused('resource feasibility refused; retain without replay') from error
++
++
++def child(expected):
++    probe = None
++    try:
++        _digest(expected)
++        transfer = Transfer.read(decode(sys.stdin.buffer.read(MAX_INPUT + 1)))
++        if transfer.fingerprint != expected: raise Refused('parent transfer differs from reviewed input')
++        guard = Deadline(transfer.plan.expires_at); guard()
++        api = NativeResourceApi(); guard()
++        probe = ResourceProbe(transfer, api, guard)
++        sys.stdout.buffer.write(probe.run()); sys.stdout.buffer.flush()
++        return 0
++    except Exception as error:
++        value = {'result': 'FAIL', 'error_type': type(error).__name__,
++                 'failure': probe.failure if probe else None, 'replay_permitted': False}
++        raw = _canonical(value)
++        if len(raw) > MAX_OUTPUT: raw = b'{"result":"FAIL","error_type":"output_bound"}'
++        sys.stdout.buffer.write(raw); sys.stdout.buffer.flush()
++        return 2
++
++
++if __name__ == '__main__':
++    if len(sys.argv) != 3 or sys.argv[1] != '--child': raise SystemExit(2)
++    raise SystemExit(child(sys.argv[2]))
+diff --git a/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_controller.py b/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_controller.py
+new file mode 100644
+index 00000000..ea08bd20
+--- /dev/null
++++ b/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_controller.py
+@@ -0,0 +1,194 @@
++"""Task-only parent for a separately reviewed two-API resource experiment."""
++from __future__ import annotations
++import hashlib
++import io
++import json
++from pathlib import Path
++import sys
++import time
++import zipfile
++
++HERE = Path(__file__).resolve().parent
++if str(HERE) not in sys.path: sys.path.insert(0, str(HERE))
++import h2_system_input_controller as previous
++import h2_system_input as read
++import h2_system_resource as resource
++from h2_system_resource import Refused, _canonical, _digest, exact, decode
++
++BASE = '2a44f17eb7232757133df549ac6fc519d535e71b'
++PREFIX = previous.RELATIVE
++ARCHIVE = PREFIX + 'h2-input-evidence.zip'
++ARCHIVE_SHA = 'df1c3d806c40777e65d5567968f93c909c79d7c091a96f916584bd8213d920fc'
++N1_MEMBERS = {
++    'h2-input-root-actual-review.json': '9830b14e4cf47a12db25794ee453f9ee7549c41d2dd303b0485a9a6830168513',
++    'h2-input-effect-manifest.json': 'e5655f469eef408b87669b5e55700fae6fe9b5a2c5d7bdbee0d05359e537df08',
++    'h2-input-actual-controller-stdout.txt': '8c2e3a795bdb1ffab630d216b22ea415693a5658f955366e792bec13019cc2a1'}
++SOURCES = tuple(sorted((*previous.SOURCES, ARCHIVE, *(PREFIX + name for name in
++    ('h2_system_resource.py', 'h2_system_resource_controller.py', 'h2_system_resource_tests.py')))))
++
++
++def read_effect(value):
++    exact(value, ('schema', 'source_base', 'repository', 'source_files', 'interpreter',
++                  'user_sid', 'output_parent', 'plan', 'observed_paths', 'limits', 'effects'))
++    if (value['schema'] != 'aide.host.system-resource-effect.v1' or value['source_base'] != BASE or
++            value['repository'] != str(previous.REPOSITORY) or value['user_sid'] != previous.USER):
++        raise Refused('exact reviewed resource effect repository/base/user required')
++    pins = exact(value['source_files'], SOURCES)
++    for digest in pins.values(): _digest(digest)
++    if pins[ARCHIVE] != ARCHIVE_SHA: raise Refused('exact audited N1 archive required')
++    interpreter = exact(value['interpreter'], ('path', 'size', 'sha256'))
++    if (interpreter['path'] != previous.PYTHON or type(interpreter['size']) is not int or
++            not 1 <= interpreter['size'] <= previous.MAX_SOURCE): raise Refused('bounded existing interpreter pin required')
++    _digest(interpreter['sha256'])
++    parent = exact(value['output_parent'], ('path', 'identity', 'owner_marker', 'owner_sha256'))
++    if str(previous._root(parent['path'])) != previous.PARENT or parent['owner_marker'] != 'owner.json':
++        raise Refused('exact previously owned output parent required')
++    previous._identity(parent['identity']); _digest(parent['owner_sha256'])
++    plan = resource.read_plan(value['plan'])
++    expected_limits = {'child_seconds': 30, 'child_memory': 268435456, 'child_processes': 1, 'output_bytes': read.MAX_OUTPUT}
++    expected_effects = {'ordinary_children': 1, 'read_files': 8, 'selected_mappings': 2,
++        'profile_creations': 0, 'acl_changes': 0, 'network_calls': 0, 'cleanup': 'retain_only', 'operational_activation': False}
++    if _canonical(value['limits']) != _canonical(expected_limits) or _canonical(value['effects']) != _canonical(expected_effects):
++        raise Refused('fixed bounded two-API effect ceiling required')
++    paths = exact(value['observed_paths'], read.NAMES)
++    for name, path in paths.items():
++        if type(path) is not str or path.casefold() != (plan.native_root + '\\' + name).casefold():
++            raise Refused('exact observed native input spelling required')
++    return plan
++
++
++def plan_from_n1(observation, request_id, expires_at):
++    root = observation['root']
++    identity = lambda row: {'volume': row['identity'][0], 'file_id': row['identity'][1]}
++    files = []
++    for row in observation['files']:
++        facts = row['facts']
++        files.append({'name': row['name'], 'identity': identity(facts), 'owner_sid': facts['owner_sid'],
++                      'security_sha256': facts['security_sha256'], 'size': facts['size'],
++                      'sha256': row['sha256'], 'links': facts['links']})
++    value = {'schema': 'aide.host.system-observation.v1', 'request_id': request_id,
++             'root': {'path': root['path'], 'identity': identity(root), 'owner_sid': root['owner_sid'],
++                      'security_sha256': root['security_sha256']}, 'files': files,
++             'api_names': list(resource.API_NAMES), 'expires_at': expires_at, 'max_seconds': resource.SECONDS}
++    return resource.read_plan(value)
++
++
++def audited_n1(raw):
++    if type(raw) is not bytes or len(raw) > previous.MAX_SOURCE or hashlib.sha256(raw).hexdigest() != ARCHIVE_SHA:
++        raise Refused('bounded byte-exact N1 custody archive required')
++    rows = {}
++    with zipfile.ZipFile(io.BytesIO(raw)) as archive:
++        infos = archive.infolist()
++        if len(infos) > 128 or len({info.filename for info in infos}) != len(infos):
++            raise Refused('bounded unambiguous N1 archive directory required')
++        for name, digest in N1_MEMBERS.items():
++            info = archive.getinfo('files/' + PREFIX + name)
++            if not 0 < info.file_size <= read.MAX_INPUT or info.compress_size > len(raw):
++                raise Refused('bounded exact N1 member required')
++            value = archive.read(info)
++            if hashlib.sha256(value).hexdigest() != digest: raise Refused('N1 original member differs')
++            rows[name] = decode(value)
++    original_plan = read.ReadPlan.read(rows['h2-input-effect-manifest.json']['plan'])
++    controller = rows['h2-input-actual-controller-stdout.txt']
++    observation = read.validate_result(_canonical(controller['observation']), original_plan)
++    return observation
++
++
++class NativeParent(previous.NativeController):
++    def __init__(self): self.observation = None
++    def verify(self, effect):
++        super().verify(effect)
++        if self.observation is None:
++            with open(previous.REPOSITORY / ARCHIVE, 'rb') as stream: raw = stream.read(previous.MAX_SOURCE + 1)
++            self.observation = audited_n1(raw)
++        plan = resource.read_plan(effect['plan'])
++        expected = plan_from_n1(self.observation, plan.request_id, plan.expires_at)
++        paths = {row['name']: row['facts']['path'] for row in self.observation['files']}
++        if plan != expected or effect['observed_paths'] != paths:
++            raise Refused('resource pins differ from independently audited N1 facts')
++
++
++class Controller(previous.Controller):
++    def __init__(self, effect, api, *, clock=time.monotonic, wall=time.time):
++        self.plan = read_effect(effect)
++        self.effect = decode(_canonical(effect))
++        self.fingerprint = hashlib.sha256(_canonical(effect)).hexdigest()
++        self.api, self.clock, self.wall = api, clock, wall
++        self.consumed, self.guard_calls = False, 0
++        self.failure, self.result = None, None
++        self.start = self.last = clock(); self.wall_start = wall()
++
++    def run(self):
++        if self.consumed: raise Refused('resource controller consumed; no replay')
++        self.consumed = True
++        request = self.plan.request_id
++        parent_path = Path(self.effect['output_parent']['path'])
++        output = parent_path / ('system-resource-' + request)
++        reservation = parent_path / ('system-resource-' + request + '.intent.jsonl')
++        try:
++            self.guard()
++            with self.api.parent(self.effect, self.guard) as parent:
++                parent.check(); self.guard()
++                with self.api.reserve(reservation, parent, self.guard) as journal:
++                    def persist(row):
++                        expected = resource.line_sha(row)
++                        if self.api.append(journal, row) != expected: raise Refused('exact durable parent row acknowledgement required')
++                        return expected
++                    reserved = persist(resource.reservation_record(self.plan, self.fingerprint))
++                    intents = []
++                    for row in resource.mapping_intents(self.plan):
++                        parent.check(); self.guard(); intents.append(persist(row))
++                    transfer = resource.Transfer.read({'schema': 'aide.host.system-resource-transfer.v1',
++                        'plan': self.plan.value(), 'effect_sha256': self.fingerprint,
++                        'observed_paths': self.effect['observed_paths'], 'reservation_line_sha256': reserved,
++                        'intent_line_sha256s': intents})
++                    def boundary(_stage=None): parent.check(); self.guard()
++                    def cancelled():
++                        try: boundary(); return False
++                        except Exception: return True
++                    boundary()
++                    args = [self.effect['interpreter']['path'], '-I', '-S', '-B',
++                            str(HERE / 'h2_system_resource.py'), '--child', transfer.fingerprint]
++                    host = self.api.run_child(args, cwd=previous.REPOSITORY, input_bytes=_canonical(transfer.value()),
++                        output_dir=output, job_id=request, timeout=30, output_limit=read.MAX_OUTPUT,
++                        memory_limit=268435456, process_limit=1, cancelled=cancelled, checkpoint=boundary)
++                    self.result = {'host': host}
++                    if (type(host) is not dict or type(host.get('exit_code')) is not int or host['exit_code'] != 0 or
++                            host.get('reason') != 'exited' or host.get('quiescent') is not True or
++                            host.get('io_errors') != [] or host.get('job_id') != request):
++                        raise Refused('resource child did not finish and quiesce')
++                    boundary(); raw = self.api.output(output)
++                    value = resource.validate_result(raw, transfer); boundary()
++                    result = {'schema': 'aide.host.system-resource-controller-result.v1', 'result': 'PASS',
++                              'effect_sha256': self.fingerprint, 'host': host,
++                              'stdout_sha256': hashlib.sha256(raw).hexdigest(), 'observation': value}
++                    persist({'schema': 'aide.host.system-resource-observed.v1',
++                             'final_controller_status': 'pending_final_guard', 'observation': result})
++                    self.result = result
++            self.guard()
++            return self.result
++        except Exception as error:
++            self.failure = {'error_type': type(error).__name__, 'consumed': True,
++                            'effect_sha256': self.fingerprint, 'replay_permitted': False}
++            raise Refused('resource controller refused; retain intent/output without replay') from error
++
++
++def main():
++    controller = None
++    try:
++        if len(sys.argv) != 4 or sys.argv[1] != '--run': raise Refused('exact separately reviewed invocation required')
++        expected = _digest(sys.argv[3])
++        with open(sys.argv[2], 'rb') as stream: raw = stream.read(read.MAX_INPUT + 1)
++        if hashlib.sha256(raw).hexdigest() != expected: raise Refused('resource effect differs from reviewed bytes')
++        controller = Controller(decode(raw), NativeParent())
++        value = controller.run()
++        sys.stdout.buffer.write(_canonical(value)); sys.stdout.buffer.flush()
++        return 0
++    except Exception as error:
++        value = {'result': 'FAIL', 'error_type': type(error).__name__,
++                 'failure': controller.failure if controller else None, 'replay_permitted': False}
++        sys.stdout.buffer.write(_canonical(value)); sys.stdout.buffer.flush()
++        return 2
++
++
++if __name__ == '__main__': raise SystemExit(main())
+diff --git a/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_tests.py b/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_tests.py
+new file mode 100644
+index 00000000..0cedd352
+--- /dev/null
++++ b/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_tests.py
+@@ -0,0 +1,268 @@
++"""Injected resource tests; no native constructor, selected mapping or child."""
++from dataclasses import replace
++import copy
++import hashlib
++import json
++from pathlib import Path
++import sys
++import unittest
++from unittest import mock
++
++HERE = Path(__file__).resolve().parent
++if str(HERE) not in sys.path: sys.path.insert(0, str(HERE))
++import h2_system_input_tests as n1
++import h2_system_resource as r
++import h2_system_resource_controller as c
++
++
++def n1_observation():
++    api=n1.FakeRead(); clock=n1.Clock()
++    def hook(stage,handle):
++        if stage=='open_file' and handle==11+r.NAMES.index('kernelbase.dll'):
++            api.values[handle]=replace(api.values[handle],path=api.values[handle].path.replace('kernelbase.dll','KernelBase.dll'))
++    api.hook=hook
++    return json.loads(n1.read.ReadProbe(n1.read.ReadPlan.read(n1.value()),api,lambda:True,
++                                      clock=clock.tick,wall=clock.utc).run())
++
++
++def plan(): return c.plan_from_n1(n1_observation(),'2'*32,1100.0)
++
++
++def transfer_value():
++    p=plan(); effect='e'*64
++    return {'schema':'aide.host.system-resource-transfer.v1','plan':p.value(),'effect_sha256':effect,
++            'observed_paths':{row['name']:row['facts']['path'] for row in n1_observation()['files']},
++            'reservation_line_sha256':r.line_sha(r.reservation_record(p,effect)),
++            'intent_line_sha256s':[r.line_sha(row) for row in r.mapping_intents(p)]}
++
++
++class FakeResource(n1.FakeRead):
++    def __init__(self):
++        super().__init__(); self.maps=[]; self.frees=[]; self.current_name=None
++        self.resource_hook=lambda stage:None; self.handles=(0x10002,0x20002); self.bases=(0x30000,)
++        self.native_refusal=None
++    def open_file(self,parent,name):
++        handle=super().open_file(parent,name)
++        if name=='kernelbase.dll': self.values[handle]=replace(self.values[handle],path=self.values[handle].path.replace(name,'KernelBase.dll'))
++        return handle
++    def read_file(self,handle,count):
++        self.hook('read',handle)
++        offset=self.position.get(handle,0); self.position[handle]=offset+count
++        return (bytes([handle-11])*64)[offset:offset+count]
++    def executable_bases(self): self.resource_hook('bases'); return self.bases
++    def map_resource(self,name):
++        if len(self.opened)!=9 or self.closed: raise AssertionError('mapping outside all nine held read handles')
++        self.current_name=name; self.maps.append(name); self.resource_hook('map')
++        return self.handles[len(self.maps)-1]
++    def mapped_name(self,address):
++        self.resource_hook('mapped_name')
++        name='kernelbase.dll' if self.current_name==r.API_NAMES[0] else 'ucrtbase.dll'
++        return self.values[11+r.NAMES.index(name)].path
++    def free_resource(self,handle):
++        self.frees.append(handle); self.resource_hook('free'); return True
++
++
++class TransferTests(unittest.TestCase):
++    def test_exact_parent_paid_sequence_cannot_replay(self):
++        t=r.Transfer.read(transfer_value()); journal=r.ParentPaidJournal(t)
++        self.assertEqual(journal.reserve(t.plan.fingerprint),t.plan.fingerprint)
++        for row in r.mapping_intents(t.plan): self.assertEqual(journal.intent(row),hashlib.sha256(r._canonical(row)).hexdigest())
++        with self.assertRaises(r.Refused): journal.intent(r.mapping_intents(t.plan)[0])
++        with self.assertRaises(r.Refused): journal.reserve(t.plan.fingerprint)
++    def test_wrong_reservation_intent_or_sequence_invalidates_ticket(self):
++        t=r.Transfer.read(transfer_value())
++        journal=r.ParentPaidJournal(t)
++        with self.assertRaises(r.Refused): journal.reserve('f'*64)
++        with self.assertRaises(r.Refused): journal.reserve(t.plan.fingerprint)
++        for change in ({'sequence':True},{'sequence':1},{'api_name':r.API_NAMES[1]},{'flags':0},{'plan_sha256':'f'*64}):
++            journal=r.ParentPaidJournal(t); journal.reserve(t.plan.fingerprint)
++            with self.assertRaises(r.Refused): journal.intent(dict(r.mapping_intents(t.plan)[0],**change))
++            with self.assertRaises(r.Refused): journal.intent(r.mapping_intents(t.plan)[0])
++    def test_transfer_wrong_missing_paid_lines_and_target_bounds(self):
++        mutations=[lambda v:v.update(intent_line_sha256s=[]),lambda v:v.update(reservation_line_sha256='f'*64),
++                   lambda v:v['intent_line_sha256s'].__setitem__(0,'f'*64),
++                   lambda v:v['plan'].update(api_names=[r.API_NAMES[0]]),
++                   lambda v:v['plan'].update(max_seconds=26),lambda v:v['plan'].update(files=[]),
++                   lambda v:v['observed_paths'].update({'kernelbase.dll':r'\Device\HarddiskVolume4\Windows\System32\KernelBase.dll'})]
++        for mutate in mutations:
++            value=transfer_value(); mutate(value)
++            with self.assertRaises(r.Refused): r.Transfer.read(value)
++    def test_changed_frozen_transfer_and_early_intent_refuse(self):
++        t=r.Transfer.read(transfer_value())
++        with self.assertRaises(r.Refused): replace(t,intent_lines=('a'*64,'b'*64)).validate()
++        journal=r.ParentPaidJournal(t)
++        with self.assertRaises(r.Refused): journal.intent(r.mapping_intents(t.plan)[0])
++        with self.assertRaises(r.Refused): journal.reserve(t.plan.fingerprint)
++
++
++class ProbeTests(unittest.TestCase):
++    def make(self):
++        self.clock=n1.Clock(); self.api=FakeResource(); self.transfer=r.Transfer.read(transfer_value())
++        self.guard=r.Deadline(self.transfer.plan.expires_at,clock=self.clock.tick,wall=self.clock.utc)
++        self.probe=r.ResourceProbe(self.transfer,self.api,self.guard,clock=self.clock.tick,wall=self.clock.utc)
++    def refuse(self):
++        with self.assertRaises(r.Refused): self.probe.run()
++        self.assertEqual(sorted(self.api.closed),sorted(self.api.opened))
++        self.assertIsNotNone(self.probe.failure)
++        with self.assertRaises(r.Refused): self.probe.run()
++    def test_two_exact_resource_hosts_preserve_case_and_all_handles(self):
++        self.make(); value=json.loads(self.probe.run()); result=value['observation']
++        self.assertEqual(self.api.maps,list(r.API_NAMES)); self.assertEqual(self.api.frees,[0x10002,0x20002])
++        self.assertEqual(len(self.api.closed),9); self.assertEqual(value['paid_intents_consumed'],2)
++        self.assertEqual(result['mappings'][0]['mapped_path'].split('\\')[-1],'KernelBase.dll')
++        self.assertFalse(result['loader_qualified']); self.assertFalse(value['operational_activation'])
++        self.assertEqual(r.validate_result(r._canonical(value),self.transfer),value)
++    def test_native_environment_refuses_before_file_open_or_map(self):
++        self.make(); old=self.api.environment
++        self.api.environment=lambda:dict(old(),native_machine=0xAA64)
++        self.refuse(); self.assertEqual(self.api.opened,[]); self.assertEqual(self.api.maps,[])
++    def test_unknown_backing_wrong_case_and_new_executable_origin_refuse(self):
++        for kind in ('backing','case','origin','tag'):
++            self.make()
++            if kind=='backing': self.api.mapped_name=lambda address:r'\Device\HarddiskVolume3\Windows\System32\other.dll'
++            if kind=='case': self.api.mapped_name=lambda address:self.transfer.plan.native_root+r'\KERNELBASE.DLL'
++            if kind=='origin': self.api.handles=(0x10000,0x20002)
++            if kind=='tag': self.api.handles=(0x10003,0x20002)
++            self.refuse(); self.assertEqual(len(self.api.frees),1)
++    def test_prior_executable_requires_current_base_and_is_released(self):
++        self.make(); self.api.handles=(0x30000,0x20002)
++        value=json.loads(self.probe.run())
++        self.assertEqual(value['observation']['mappings'][0]['mapping_kind'],'prior_executable')
++        self.assertEqual(self.api.frees,[0x30000,0x20002])
++    def test_expiry_after_acquisition_or_release_refuses_without_repeat(self):
++        for stage in ('map','free'):
++            self.make(); self.api.resource_hook=lambda current:setattr(self.clock,'wall',1100.0) if current==stage else None
++            self.refuse(); self.assertEqual(len(self.api.maps),1); self.assertEqual(len(self.api.frees),1)
++    def test_release_failure_closes_reads_and_retains_uncertainty(self):
++        self.make()
++        def hook(stage):
++            if stage=='free': raise OSError('synthetic release')
++        self.api.resource_hook=hook; self.refuse()
++        self.assertEqual(len(self.probe.session.release_failures),1); self.assertEqual(len(self.api.frees),1)
++    def test_final_cleanup_and_serialization_expiry_refuse(self):
++        self.make(); self.api.hook=lambda stage,handle:setattr(self.clock,'mono',126.0) if stage=='close' and handle==10 else None
++        self.refuse()
++        self.make(); original=r._canonical
++        def serialize(value):
++            data=original(value)
++            if isinstance(value,dict) and value.get('schema')=='aide.host.system-resource-result.v1': self.clock.wall=1100.0
++            return data
++        with mock.patch.object(r,'_canonical',side_effect=serialize): self.refuse()
++    def test_root_or_descriptor_drift_before_mapping_refuses(self):
++        self.make()
++        self.api.hook=lambda stage,handle:self.api.values.__setitem__(handle,replace(self.api.values[handle],security_sha256='f'*64)) if stage=='open_file' else None
++        self.refuse(); self.assertEqual(self.api.maps,[])
++    def test_child_output_bounds_and_forged_wire_results_refuse(self):
++        self.make()
++        with mock.patch.object(r,'MAX_OUTPUT',64): self.refuse()
++        self.make(); valid=json.loads(self.probe.run())
++        mutations=[lambda v:v.update(paid_intents_consumed=True),lambda v:v.update(operational_activation=True),
++                   lambda v:v['observation'].update(mapping_attempts=True),lambda v:v['observation'].update(mappings=[]),
++                   lambda v:v['observation'].update(api_context_qualified=True),
++                   lambda v:v['observation']['mappings'][0].update(sha256='f'*64),
++                   lambda v:v['observation']['mappings'][0].update(identity=[True,'a'*32]),
++                   lambda v:v['observation']['files'][0].update(links=True)]
++        for mutate in mutations:
++            value=copy.deepcopy(valid); mutate(value)
++            with self.assertRaises(r.Refused): r.validate_result(r._canonical(value),self.transfer)
++    def test_native_failed_load_preserves_code_and_never_falls_back(self):
++        api=r.NativeResourceApi.__new__(r.NativeResourceApi); api._load=mock.Mock(return_value=0)
++        with mock.patch.object(r.obs.C,'get_last_error',return_value=126):
++            with self.assertRaises(r.Refused): api.map_resource(r.API_NAMES[0])
++        api._load.assert_called_once_with(r.API_NAMES[0],None,0x860)
++        self.assertEqual(api.native_refusal,{'operation':'LoadLibraryExW','api_name':r.API_NAMES[0],'flags':0x860,'win32_error':126})
++        with self.assertRaises(r.Refused): api.map_resource('api-ms-win-core-other-l1-1-0.dll')
++        self.assertEqual(api._load.call_count,1)
++
++
++def effect():
++    value=n1.effect(); value['schema']='aide.host.system-resource-effect.v1'; value['source_base']=c.BASE
++    value['source_files']=dict.fromkeys(c.SOURCES,'a'*64); value['source_files'][c.ARCHIVE]=c.ARCHIVE_SHA
++    value['plan']=plan().value(); value['observed_paths']=transfer_value()['observed_paths']; value['effects']['selected_mappings']=2
++    return value
++
++
++class FakeParent(n1.FakeControl):
++    def run_child(self,args,**kw):
++        self.kw=kw; self.args=args; self.hook('host_enter'); kw['checkpoint']('before_create')
++        if len(self.rows)!=3: raise AssertionError('all three durable rows must precede creation')
++        self.dispatched+=1; self.events.append('dispatch')
++        self.hook('created_suspended'); kw['checkpoint']('created_suspended')
++        self.hook('resumed'); kw['checkpoint']('resumed')
++        self.hook('running')
++        if kw['cancelled'](): raise r.Refused('cancelled')
++        self.hook('reply')
++        transfer=r.Transfer.read(r.decode(kw['input_bytes'])); clock=n1.Clock(); api=FakeResource()
++        guard=r.Deadline(transfer.plan.expires_at,clock=clock.tick,wall=clock.utc)
++        self.bytes=r.ResourceProbe(transfer,api,guard,clock=clock.tick,wall=clock.utc).run()
++        return {'exit_code':0,'reason':'exited','quiescent':True,'bytes':len(self.bytes),'io_errors':[],'job_id':kw['job_id']}
++
++
++class ControllerTests(unittest.TestCase):
++    def make(self):
++        self.clock=n1.Clock(); self.api=FakeParent()
++        self.controller=c.Controller(effect(),self.api,clock=self.clock.tick,wall=self.clock.utc)
++    def test_reservation_and_both_intents_persist_before_owned_child(self):
++        self.make(); value=self.controller.run(); self.assertEqual(value['result'],'PASS')
++        self.assertEqual([row['schema'] for row in self.api.rows[:3]],['aide.host.system-resource-reservation.v1',
++            'aide.host.system-mapping-intent.v1','aide.host.system-mapping-intent.v1'])
++        self.assertEqual([row['api_name'] for row in self.api.rows[1:3]],list(r.API_NAMES))
++        self.assertEqual(self.api.kw['timeout'],30); self.assertNotIn('security',self.api.kw)
++        self.assertEqual(self.api.rows[3]['final_controller_status'],'pending_final_guard')
++        with self.assertRaises(r.Refused): self.controller.run()
++    def test_each_failed_durable_row_prevents_dispatch(self):
++        for failure in range(3):
++            self.make()
++            def hook(stage):
++                if stage=='append' and len(self.api.rows)==failure: raise OSError('synthetic durable failure')
++            self.api.hook=hook
++            with self.assertRaises(r.Refused): self.controller.run()
++            self.assertTrue(self.api.reserved); self.assertEqual(self.api.dispatched,0)
++            with self.assertRaises(r.Refused): self.controller.run()
++    def test_expiry_at_each_creation_boundary_refuses(self):
++        for stage,created in (('append',0),('host_enter',0),('created_suspended',1),('resumed',1),('running',1)):
++            self.make(); self.api.hook=lambda current:setattr(self.clock,'wall',1100.0) if current==stage else None
++            with self.assertRaises(r.Refused): self.controller.run()
++            self.assertEqual(self.api.dispatched,created)
++    def test_wrong_ack_restarted_intent_and_source_refusal_prevent_dispatch(self):
++        self.make(); self.api.append=lambda *_:'f'*64
++        with self.assertRaises(r.Refused): self.controller.run()
++        self.assertEqual(self.api.dispatched,0)
++        self.make(); self.api.reserved=True
++        with self.assertRaises(r.Refused): self.controller.run()
++        self.assertEqual(self.api.dispatched,0)
++        self.make(); self.api.verify=lambda _:False
++        with self.assertRaises(r.Refused): self.controller.run()
++        self.assertFalse(self.api.reserved)
++    def test_lost_reply_malformed_output_and_final_guard_cannot_retry(self):
++        for stage in ('reply','output','parent_close'):
++            self.make()
++            def hook(current):
++                if current==stage: raise OSError('synthetic lost reply or close')
++            self.api.hook=hook
++            with self.assertRaises(r.Refused): self.controller.run()
++            self.assertEqual(self.api.dispatched,1)
++            with self.assertRaises(r.Refused): self.controller.run()
++        self.make(); self.api.output=lambda _:b'null'
++        with self.assertRaises(r.Refused): self.controller.run()
++    def test_effect_capacity_names_and_types_never_broaden(self):
++        for mutate in (lambda v:v['effects'].update(selected_mappings=3),lambda v:v['effects'].update(ordinary_children=True),
++                       lambda v:v['limits'].update(child_seconds=31),lambda v:v['plan'].update(api_names=[r.API_NAMES[0]]),
++                       lambda v:v['source_files'].update({c.ARCHIVE:'f'*64})):
++            value=effect(); mutate(value)
++            with self.assertRaises(r.Refused): c.read_effect(value)
++    def test_archived_n1_bytes_bind_derived_actual_pins_without_native_calls(self):
++        raw=(c.previous.REPOSITORY/c.ARCHIVE).read_bytes(); observation=c.audited_n1(raw)
++        derived=c.plan_from_n1(observation,'4'*32,1100.0)
++        self.assertEqual(sum(pin.size for pin in derived.files),8306752)
++        self.assertEqual(observation['files'][3]['facts']['path'].split('\\')[-1],'KernelBase.dll')
++        for bad in (raw[:-1],b'bad',raw+b'x'):
++            with self.assertRaises(r.Refused): c.audited_n1(bad)
++        e=effect(); e['plan']=derived.value(); e['observed_paths']={row['name']:row['facts']['path'] for row in observation['files']}
++        with mock.patch.object(c.previous.NativeController,'verify',return_value=None):
++            parent=c.NativeParent(); parent.verify(e)
++            e['plan']['files'][0]['sha256']='f'*64
++            with self.assertRaises(r.Refused): parent.verify(e)
++
++
++if __name__=='__main__': unittest.main(verbosity=2)

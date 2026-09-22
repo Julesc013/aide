@@ -31,3 +31,11 @@ __pycache__/**
 /tmp/**
 *.log
 *.trace
+
+# Verified loose expansions of tracked task-owned custody archives.
+/.aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/changed-byte-manifest.json
+/.aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/historical-before-closeout/
+/.aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-source/
+/.aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/changed-byte-manifest.json
+/.aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/historical-before-closeout/
+/.aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-source/

@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-CW-ISOLATED-HOST-01
 title: Qualify a restricted worker host
 type: execution
-status: planned
-planning_state: admitted_backlog
+status: running
+planning_state: execution_active
 result: PENDING
 created_at: 2026-09-06
 parent_task: AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01
@@ -14,5 +14,48 @@ source_of_truth: Repository-owned WorkUnit and exact evidence; this item coordin
 retained_gates:
   - current required checks and independent exact-source assurance
   - no direct protected push, force push or self-approval
-  - no production credentials, signing, billing or public publication
+  - no worker access to production credentials; no unqualified signing or billing
   - genuine human verdicts and identified disposable real-effect hosts
+
+implementation_slice: h1_native_appcontainer_source_and_owned_probe_plan
+source_base: 24ed66153f7e5d2008b7178b89c1b03025791152
+branch: task/aide-cw-integration-broker-01
+branch_basis: Same reviewed integration task branch; sequential host dependency checkpoint, no new worktree or branch switch.
+allowed_paths:
+  - core/runtime/continuous_worker/windows_system_observation.py
+  - .aide/scripts/tests/test_continuous_worker_system_observation.py
+  - core/runtime/continuous_worker/windows_python_contract.py
+  - .aide/scripts/tests/test_continuous_worker_python_contract.py
+  - core/runtime/continuous_worker/windows_pe.py
+  - core/runtime/continuous_worker/windows_python_image.py
+  - .aide/scripts/tests/test_continuous_worker_windows_pe.py
+  - .aide/scripts/tests/test_continuous_worker_python_image.py
+  - core/runtime/continuous_worker/windows_image.py
+  - .aide/scripts/tests/test_continuous_worker_windows_image.py
+  - core/runtime/continuous_worker/windows_security.py
+  - core/runtime/continuous_worker/windows_security_objects.py
+  - core/runtime/continuous_worker/windows_job.py
+  - .aide/scripts/tests/test_continuous_worker_windows_security.py
+  - .aide/scripts/tests/test_continuous_worker_windows_security_probe.c
+  - .aide/queue/AIDE-CW-ISOLATED-HOST-01/
+  - .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md
+  - .aide/queue/index.yaml # own isolated-host activation only; preserve provider scalars
+  - docs/reference/integration-broker-core.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+retained_effect_boundary: Freeze independent source/effect manifest before the one actual AppContainer profile and owned-object DACL probe.
+forbidden_operations:
+  - adopt or delete an existing or ambiguously created profile
+  - change shared tool, source, broker or parent ACLs
+  - install loopback exemptions, credentials or target policy
+  - claim full private toolchain, model channel, isolation qualification or activation from this source increment
+
+h2_source_base: 454e41aa021c2b8b8b48531f2cb67838ecaa7dab
+h2_scope: bounded private-image source and ordinary synthetic tests; no tool copies or package grants
+
+h2_python_source_base: 06f2546fbb0fea3d4ace8278602737f113c1354d
+h2_python_scope: accepted bounded parser and deterministic derived-byte source plus synthetic tests; no actual copies or grants
+
+h2_system_observation_source_base: 236da6c2ba0df8cf319849c7632c04727afc392d
+h2_system_observation_scope: finite exact-name source and injected tests only; no actual mappings or grants

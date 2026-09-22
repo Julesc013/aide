@@ -1,0 +1,6 @@
+AIDE Lite commit range check
+result: PASS
+range: 06f2546fbb0fea3d4ace8278602737f113c1354d..830bf30db3e238fe3f8b1335f59a938ae415fe95
+commit_count: 1
+policy: .aide/policies/commit-messages.yaml
+- 830bf30 PASS feat(runtime): bind explicit Python image recipe bytes

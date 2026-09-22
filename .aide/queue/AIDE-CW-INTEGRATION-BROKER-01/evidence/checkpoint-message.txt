@@ -1,0 +1,53 @@
+feat(runtime): add frozen candidate and durable broker foundation
+
+## Summary
+
+- Add the local integration broker foundation for AIDE-CW-INTEGRATION-BROKER-01.
+- Preserve observed programme, ULK integration and USK evidence custody receipts.
+
+## Why
+
+- Continuous workers need immutable candidate bytes and durable effect identity
+  before a protected integration transport can safely accept their output.
+
+## Changed
+
+- Freeze regular files into hashed blobs and a reproducible Git tree, rejecting
+  staged drift, unsafe paths, corrupt blobs and moved base revisions.
+- Reserve bounded SQLite writers before preparation and record apply intent
+  before dispatch; reconcile lost responses by querying the same request.
+- Refuse production apply without a transport and bind independent sessions,
+  authority, checks and integration receipts to the exact candidate.
+- Archive original validation bytes with checksum-bound member custody.
+
+## Validation
+
+- Broker fixtures: 22 PASS, one explicit Windows symlink privilege skip.
+- Existing continuous-worker regression suite: 51 PASS.
+- Doctor and validate: PASS; golden evaluation: 171 PASS.
+- Root independent exact-source review and source-only export boundary: PASS.
+- Scope, archived evidence hashes and staged eight-file source manifest: PASS.
+
+## Changelog
+
+- Added: immutable local candidate handoff and durable broker request ledger.
+- Tests: local Git roundtrip, corrupt input, concurrency and lost-reply fixtures.
+- Docs: bounded prototype limitations and historical integration evidence.
+
+## Risks
+
+- This foundation snapshots at most 4,096 files; actual AIDE has more files.
+- Interrupted pre-preparation reservations remain retained for diagnosis.
+- Production transport, isolated host and live two-task qualification are absent.
+
+## Follow-up
+
+- Implement bounded changes over trusted base objects and owned preparation
+  recovery, then coordinator-v1 handoff and fresh independent qualification.
+
+AIDE-Task: AIDE-CW-INTEGRATION-BROKER-01
+AIDE-Phase: broker-foundation
+AIDE-Result: partial
+AIDE-Scope: broker source, tests, documentation, task and disclosed receipts
+AIDE-Token-Impact: bounded source-only runtime and reusable immutable evidence
+AIDE-Quality-Gate: local tests and root exact-source review passed

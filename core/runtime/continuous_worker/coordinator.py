@@ -171,6 +171,9 @@ class Coordinator:
         spec, ident = attempt["spec"], attempt["id"]
         self.verify_artifacts(ident)
         evidence = json.loads(self.state.db.execute("SELECT evidence FROM attempts WHERE id=?", (ident,)).fetchone()[0])
+        if "frozen_handoff_v1" in evidence:
+            from .handoff import integrate
+            return integrate(self, attempt, evidence, Paused)
         git_command = registered_command(self.config["git"])
         workspace = Path(spec["workspace"])
         attempt_root = self.state.root / "attempts" / ident
@@ -187,6 +190,13 @@ class Coordinator:
             from .contract import git
             if git(git_command, workspace, "status", "--porcelain", "--untracked-files=all").strip():
                 raise Refused("worker clone must initially be clean")
+            if self.config["schema"] == "aide.continuous-worker.activation.v1":
+                from core.runtime.integration_broker.common import Git
+                from core.runtime.integration_broker.candidate import literal_checkout
+                registered = self.config["git"]
+                literal = literal_checkout(Git(registered["argv"][0], registered["sha256"]), workspace, spec["base"])
+                self.state.transition(ident, "coding", {"literal_checkout_v1": literal})
+                evidence["literal_checkout_v1"] = literal
             self.state.transition(ident, "coding", {"baseline": baseline})
             evidence["baseline"] = baseline
         baseline = evidence["baseline"]
@@ -246,6 +256,16 @@ class Coordinator:
         self.guard(attempt["task"])
         if snapshot(git_command, workspace)["identity"] != subject["identity"]:
             raise Refused("candidate moved after assurance")
+        if self.config["schema"] == "aide.continuous-worker.activation.v1":
+            from .handoff import freeze, integrate
+            frozen = freeze(self, attempt, evidence)
+            if snapshot(git_command, workspace)["identity"] != subject["identity"]:
+                raise Refused("candidate moved during immutable handoff")
+            from core.runtime.integration_broker.capsule import publish
+            capsule = publish(self, attempt, evidence, frozen)
+            self.state.transition(ident, "integration_pending", {"frozen_handoff_v1": frozen,
+                                                               "controller_capsule_v1": capsule})
+            return integrate(self, attempt, evidence | {"frozen_handoff_v1": frozen}, Paused)
         request = {"attempt": ident, "task": spec["id"], "repository": spec["repository"],
                    "admission": spec["source_sha256"], "activation": digest(self.config),
                    "base": spec["base"], "workspace": str(workspace), "subject": subject,

@@ -9,8 +9,8 @@
       "path": ".aide/release/dist/aide-lite-pack-v0.zip",
       "publish_candidate": true,
       "required": true,
-      "sha256": "9bc5078fc7673e51fda10568bb2bc575d44c07de4889922178d7980819f8ff2b",
-      "size_bytes": 973409,
+      "sha256": "b5cc171d178a404df125ddef0c8cb8d8bef50ecfd72329c7995bad127b5b437c",
+      "size_bytes": 973405,
       "upload_order": 1,
       "validation_status": "present"
     },
@@ -22,8 +22,8 @@
       "path": ".aide/release/dist/aide-lite-pack-v0.tar.gz",
       "publish_candidate": true,
       "required": true,
-      "sha256": "23f6cb2cf5ba59866aceddd91f2b556da8c8686bdf40d86c631c016d0bde81fb",
-      "size_bytes": 645708,
+      "sha256": "b50b116737ab65036e8fa520c4b729b5b58dd1caa1069774bcf8b8022706ef36",
+      "size_bytes": 645705,
       "upload_order": 2,
       "validation_status": "present"
     },
@@ -35,7 +35,7 @@
       "path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
       "publish_candidate": true,
       "required": true,
-      "sha256": "9b9bd22b6d9a6562e39c62f5ca81df9f96792033b46029509c7476ee21078455",
+      "sha256": "6e5515eadc0f10ad78441b37c6e44ce4ab60372dd55bfa0cd9ae43de87eb4a74",
       "size_bytes": 1200,
       "upload_order": 3,
       "validation_status": "present"
@@ -48,7 +48,7 @@
       "path": ".aide/release/dist/SHA256SUMS.txt",
       "publish_candidate": true,
       "required": true,
-      "sha256": "70769d5c363bb3c9ca93ced06a3183c270daf2a721d8a96c0d156ed90e32a4a5",
+      "sha256": "015f320dbd2942ebf2a13e8ecc93aa126cdfbf5ca8bf6ebe016883cb212a6061",
       "size_bytes": 690,
       "upload_order": 4,
       "validation_status": "present"
@@ -61,7 +61,7 @@
       "path": ".aide/release/dist/manifest.yaml",
       "publish_candidate": true,
       "required": true,
-      "sha256": "33c86efb760d4c69ef7afc55a8eaf450071b987186bb5c07099414b9575b4be4",
+      "sha256": "b27b8b16a2bf8dddf8ca6b89f1f4f2507435167896f05ae6c302bd4bb4c7bb6d",
       "size_bytes": 1404,
       "upload_order": 5,
       "validation_status": "present"
@@ -74,7 +74,7 @@
       "path": ".aide/release/dist/install.md",
       "publish_candidate": true,
       "required": true,
-      "sha256": "b22af39898c2bea2e4ceb259da2ae712161ac14915337257af5127530c9139dd",
+      "sha256": "cb2637ef75783b6e2c0e6a3638a60dea7b594d5327256dbb8ac4d393cf8b0744",
       "size_bytes": 1341,
       "upload_order": 6,
       "validation_status": "present"
@@ -139,8 +139,8 @@
       "path": ".aide/release/dist/release-provenance.json",
       "publish_candidate": true,
       "required": false,
-      "sha256": "0d1c0de0bf81fcee2a59ae1c14d486c5326aec3fefb2c16e04cb60e4d41b68e5",
-      "size_bytes": 1496,
+      "sha256": "1503f3018b64c0f56caa5c8e4566776e88b5f8d78a84e4f076e742697e461b33",
+      "size_bytes": 1491,
       "upload_order": 11,
       "validation_status": "present"
     },
@@ -152,14 +152,14 @@
       "path": ".aide/release/dist/release-assets.json",
       "publish_candidate": true,
       "required": false,
-      "sha256": "b57eebb15e1a3a6457bcf9babce297705ef094c3bd8748e6cc0f10e5bdfc4274",
+      "sha256": "1f361eda6c1688e709a4931468835f17e49ebefa1fc3e927a06169c30e9114f6",
       "size_bytes": 4958,
       "upload_order": 12,
       "validation_status": "present"
     }
   ],
   "blockers": [],
-  "draft_id": "aide-lite-pack-v0-github-draft-31bd91bd10ed57e9",
+  "draft_id": "aide-lite-pack-v0-github-draft-b3e5c7aa2a1732fa",
   "missing_optional_count": 0,
   "missing_required_count": 0,
   "no_publish": true,

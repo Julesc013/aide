@@ -1,0 +1,57 @@
+{
+  "schema": "aide.host.h2-pre-review-fix-custody.v1",
+  "zip": "h2-before-overlap-evidence.zip",
+  "zip_sha256": "41f8e2ad294518bddb316923d77bdcd7d76e225253546a93bcbf22e44a4ff2da",
+  "members": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-h1-final-regression.txt": {
+      "bytes": 5841,
+      "sha256": "cc3f10653c81d55d05cd7aa32b6f2d91d6615f5af5fd12ff0a2c418856a829e1"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-final-tests.txt": {
+      "bytes": 4259,
+      "sha256": "62be944c5b630f8d19943a8dfadf3f68df274f74947724cf3a9001b4ca9dfec9"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-source-manifest.json": {
+      "bytes": 2223,
+      "sha256": "79b64ff53996286eb46a0faf28cffb4e794f72fd4ef3a5a7e5692f53216c1f3d"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-source-review-notes.md": {
+      "bytes": 3414,
+      "sha256": "a4dacd38e01e8cc9ab1e563f12f91944d44d0ab5f6ae8f9bf3a742a0fdb4e5f4"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-source.patch": {
+      "bytes": 57705,
+      "sha256": "a32ed23531972c3912e7cf3557cc4ac24711deb1d1173f2b4bc82c01bbc84c21"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-source-output-overlap-probe.json": {
+      "bytes": 1929,
+      "sha256": "3d251d26dc7a65be8facfcbc03ace1e76fae13435c9f9e3f6825e9c53008405c"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-source-output-overlap-probe.py": {
+      "bytes": 2808,
+      "sha256": "ef8806e9253b8577ac3e617ddb92d59d4d2732c0db45a0c76b7351a77b386c5b"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-job-final-regression.txt": {
+      "bytes": 1434,
+      "sha256": "b76e542c45b65512dd2f7611fc06a1a59adadb4b7e8f47d508858ab5997e275c"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-source-final-tests.json": {
+      "bytes": 2415,
+      "sha256": "2765a52d03f8c26a16d9bf63b0c75399643b021e23592f827b8353dc4b10db6e"
+    },
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py": {
+      "bytes": 32605,
+      "sha256": "d72d618bb3fd01998274f0d56003c34c0d254381e74a065c8d2bb7399dc9cbef"
+    },
+    "core/runtime/continuous_worker/windows_image.py": {
+      "bytes": 17251,
+      "sha256": "02c46d5dcc70a4e057a9dcde2408778aec40fe27ca7412689fc6a9026a4394b2"
+    },
+    "core/runtime/continuous_worker/windows_security_objects.py": {
+      "bytes": 16361,
+      "sha256": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+    }
+  },
+  "finding": "Independent real short-name source/output overlap observation; revised aggregate b309f828... retained before repair.",
+  "original_fixture_untouched": true
+}

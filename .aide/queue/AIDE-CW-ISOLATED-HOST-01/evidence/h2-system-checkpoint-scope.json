@@ -1,0 +1,254 @@
+{
+  "schema": "aide.host.h2-system-checkpoint-scope.v1",
+  "intent": "Exact local reviewed system observation source checkpoint; ROOT reviews scope before staging/commit.",
+  "source_base": "236da6c2ba0df8cf319849c7632c04727afc392d",
+  "base_tree": "b209b9b0fb923a9664f469b2d8f16e95f578b4d8",
+  "branch": "task/aide-cw-integration-broker-01",
+  "source_files": {
+    "core/runtime/continuous_worker/windows_system_observation.py": "de1bfc5a12357c4a8815321531b6dad3c5b599d30c42fa5dec63a96b57fbd697",
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py": "7f505ce82071c2c2bd361cdd8c0313835fc51ca4213328fcef660589205449d7"
+  },
+  "source_aggregate": "03c0a5f94914ea72744d0387780b4cd22c3fb3b39b9703a2debef1bcf67a67d6",
+  "selected_files": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md": {
+      "bytes": 26431,
+      "raw_sha256": "a7d65fa204ed2eaef8279bd3f2454bcea01ae6f55a62c5e32f0bf2165a0f7f2b",
+      "git_bytes": 26431,
+      "git_sha256": "a7d65fa204ed2eaef8279bd3f2454bcea01ae6f55a62c5e32f0bf2165a0f7f2b",
+      "git_blob_oid": "6816099e1586062619b07f3b80a4220641d6133f",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/CUSTODY.md": {
+      "bytes": 6947,
+      "raw_sha256": "9f59c554fc21d6a7b97b5310aa828fb3937a729c44f3c70e49c1f1526081a884",
+      "git_bytes": 6947,
+      "git_sha256": "9f59c554fc21d6a7b97b5310aa828fb3937a729c44f3c70e49c1f1526081a884",
+      "git_blob_oid": "9c065b47409c5c0846575055e805583d7c361a30",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/changed-files.md": {
+      "bytes": 4535,
+      "raw_sha256": "e8625fc1bc27d569a2231271a44e08c88dd4df74301c180d85a5f4be6f93abd1",
+      "git_bytes": 4535,
+      "git_sha256": "e8625fc1bc27d569a2231271a44e08c88dd4df74301c180d85a5f4be6f93abd1",
+      "git_blob_oid": "20c8b28d7ca1298c0eb84e5b9e39195e9f3ad85e",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-before-review-custody.json": {
+      "bytes": 7477,
+      "raw_sha256": "cc90dc7a33663d9f7b6053aa888454d0866b7c2efbb55aade4bbb33b6ec5a001",
+      "git_bytes": 7477,
+      "git_sha256": "cc90dc7a33663d9f7b6053aa888454d0866b7c2efbb55aade4bbb33b6ec5a001",
+      "git_blob_oid": "f2ed3d4adf70138fd691b70f3afd8e794a0e7535",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-before-review-evidence.zip": {
+      "bytes": 365754,
+      "raw_sha256": "e3b1a12a7218b2cf240588e548c513d1a4ecf6f93e03e0d64e0c8f38e4dff1dc",
+      "git_bytes": 365754,
+      "git_sha256": "e3b1a12a7218b2cf240588e548c513d1a4ecf6f93e03e0d64e0c8f38e4dff1dc",
+      "git_blob_oid": "0258d6d1c734943ee9e7a9772c5e0cb681785dcd",
+      "normalization": "binary unchanged"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-helper-checks.json": {
+      "bytes": 3637,
+      "raw_sha256": "1927ab41dbfdc6d567b40f261007270b5cac09cd30afa9ca8aaa0d3db8be71d9",
+      "git_bytes": 3637,
+      "git_sha256": "1927ab41dbfdc6d567b40f261007270b5cac09cd30afa9ca8aaa0d3db8be71d9",
+      "git_blob_oid": "ed9044eeba0c6f112ea9aa9c39436836b867bbaa",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-message.txt": {
+      "bytes": 1558,
+      "raw_sha256": "5c0a52bd15d61f2b66d39af9aee48e3fd9e0ec2856c94bfc13ae8d3895088111",
+      "git_bytes": 1558,
+      "git_sha256": "5c0a52bd15d61f2b66d39af9aee48e3fd9e0ec2856c94bfc13ae8d3895088111",
+      "git_blob_oid": "21c47bf873180f381945d1b4b0890b8732b82306",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-custody.json": {
+      "bytes": 35078,
+      "raw_sha256": "c01db6274b5f53617e4c8b79c3c5b883c6a81d1f2439fe52367b69575ab77075",
+      "git_bytes": 35078,
+      "git_sha256": "c01db6274b5f53617e4c8b79c3c5b883c6a81d1f2439fe52367b69575ab77075",
+      "git_blob_oid": "58b137d3cdad916300a59197532a5cff7088216a",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-evidence.zip": {
+      "bytes": 1171701,
+      "raw_sha256": "7de617a9e5d07aaf2be9d78fee42bacacefa6b73d97f3934c36c44f979e8ab4f",
+      "git_bytes": 1171701,
+      "git_sha256": "7de617a9e5d07aaf2be9d78fee42bacacefa6b73d97f3934c36c44f979e8ab4f",
+      "git_blob_oid": "e65df9778c9f57e114dd03c2d5e1321d1f1cc2a2",
+      "normalization": "binary unchanged"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-final-review.json": {
+      "bytes": 10722,
+      "raw_sha256": "0dfaf014a6bbefc9a06b1cc4ef292fa18e3c7676bd75c6c24c49a76ab4159cfe",
+      "git_bytes": 10722,
+      "git_sha256": "0dfaf014a6bbefc9a06b1cc4ef292fa18e3c7676bd75c6c24c49a76ab4159cfe",
+      "git_blob_oid": "797ebeb0ac5f972bb46c747307a7a454cdeb0f05",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-observation-source-plan.md": {
+      "bytes": 3958,
+      "raw_sha256": "945f26def0e17992459b1a997f15190730c212fe61d86ad9a8914bab4b113b6f",
+      "git_bytes": 3958,
+      "git_sha256": "945f26def0e17992459b1a997f15190730c212fe61d86ad9a8914bab4b113b6f",
+      "git_blob_oid": "6e40448e48e2280e432c6cfcfc1c5a1fc574b450",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-reviewed-source-checks.json": {
+      "bytes": 830,
+      "raw_sha256": "b4bb93756dff75cc0db0f62571f259d6652b37fcd05c67a51cd0d5810d875c0c",
+      "git_bytes": 830,
+      "git_sha256": "b4bb93756dff75cc0db0f62571f259d6652b37fcd05c67a51cd0d5810d875c0c",
+      "git_blob_oid": "8f82e33c424b06c70734f6def9cc4bef5e94b89b",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-reviewed-tests.json": {
+      "bytes": 3787,
+      "raw_sha256": "c7e322558d8131a78022fb8474353a952fad5bfc8a1697a39b6430800cc380b0",
+      "git_bytes": 3787,
+      "git_sha256": "c7e322558d8131a78022fb8474353a952fad5bfc8a1697a39b6430800cc380b0",
+      "git_blob_oid": "4506c406d246ea9408fda223b661f08617a869bf",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-admission.json": {
+      "bytes": 1581,
+      "raw_sha256": "5bb4a731d298a1305aa4dbea4e9710c3bf21e770dd007e6541b919696ed90e03",
+      "git_bytes": 1581,
+      "git_sha256": "5bb4a731d298a1305aa4dbea4e9710c3bf21e770dd007e6541b919696ed90e03",
+      "git_blob_oid": "e2d15d4ccb7eeb1ab5fe8a4d545089e36dde0786",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-manifest.json": {
+      "bytes": 3669,
+      "raw_sha256": "0259aa61259ccb8b590d1222ff2fb93ff3d2ee2f919200d5b9fad75a88c7ab68",
+      "git_bytes": 3669,
+      "git_sha256": "0259aa61259ccb8b590d1222ff2fb93ff3d2ee2f919200d5b9fad75a88c7ab68",
+      "git_blob_oid": "923ff652b4766c0bd0cf20dc032811d801e28c1d",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-review-notes.md": {
+      "bytes": 3134,
+      "raw_sha256": "0a97ff03c85b59cecfff4ae7e7a6d7612077734e9bbb385935d5b245b98980bb",
+      "git_bytes": 3134,
+      "git_sha256": "0a97ff03c85b59cecfff4ae7e7a6d7612077734e9bbb385935d5b245b98980bb",
+      "git_blob_oid": "cff391ef59dbf64c308d8959f7377abd91cacdb4",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/validation.md": {
+      "bytes": 5503,
+      "raw_sha256": "cb0283bc9a5f7d199d031a14e2acc4f9645017fe5317a49a6a76e3fcea083ae9",
+      "git_bytes": 5503,
+      "git_sha256": "cb0283bc9a5f7d199d031a14e2acc4f9645017fe5317a49a6a76e3fcea083ae9",
+      "git_blob_oid": "33dd1bdf7fb35c9a0eb0c3a78756a47d6c21b05c",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/status.yaml": {
+      "bytes": 739,
+      "raw_sha256": "5cf54f1534f331b3192aaa9463cd55f609d8a29079ef7809053c59d900c81ab3",
+      "git_bytes": 739,
+      "git_sha256": "5cf54f1534f331b3192aaa9463cd55f609d8a29079ef7809053c59d900c81ab3",
+      "git_blob_oid": "38997f2302716ea16c7020d86f0b2b20e5be499b",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/task.yaml": {
+      "bytes": 3549,
+      "raw_sha256": "48eb410c281fdd2563a1070545890fc266be399e3a2bf4c2f32a3152021b1ad0",
+      "git_bytes": 3549,
+      "git_sha256": "48eb410c281fdd2563a1070545890fc266be399e3a2bf4c2f32a3152021b1ad0",
+      "git_blob_oid": "eed7e6461441caee0339fd7ddf878cddaad72d26",
+      "normalization": "LF text projection"
+    },
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py": {
+      "bytes": 23154,
+      "raw_sha256": "7f505ce82071c2c2bd361cdd8c0313835fc51ca4213328fcef660589205449d7",
+      "git_bytes": 23154,
+      "git_sha256": "7f505ce82071c2c2bd361cdd8c0313835fc51ca4213328fcef660589205449d7",
+      "git_blob_oid": "33f2d131246ad8e3b124cfa15b7104286148d846",
+      "normalization": "LF text projection"
+    },
+    "DOCUMENTATION.md": {
+      "bytes": 70358,
+      "raw_sha256": "65c39535097417a604f6e86e0445df41334ace53d397c5c864fae931fc639030",
+      "git_bytes": 70358,
+      "git_sha256": "65c39535097417a604f6e86e0445df41334ace53d397c5c864fae931fc639030",
+      "git_blob_oid": "51989d5d2ee82156a77070307dfd17aa0f5b855a",
+      "normalization": "LF text projection"
+    },
+    "IMPLEMENT.md": {
+      "bytes": 499096,
+      "raw_sha256": "ad432927fc324a6734ec27d50564d31ae070aafcbf36f7cbba0827c3be86dd9e",
+      "git_bytes": 499096,
+      "git_sha256": "ad432927fc324a6734ec27d50564d31ae070aafcbf36f7cbba0827c3be86dd9e",
+      "git_blob_oid": "112dc82b9a1603a189637de9b29342fa327a9f6f",
+      "normalization": "LF text projection"
+    },
+    "PLANS.md": {
+      "bytes": 461963,
+      "raw_sha256": "3ee9d83f27a37550a1725d4aa16bf1a01e83ab76747e7c48ce0bb1ae556f304f",
+      "git_bytes": 461963,
+      "git_sha256": "3ee9d83f27a37550a1725d4aa16bf1a01e83ab76747e7c48ce0bb1ae556f304f",
+      "git_blob_oid": "463598fc7db871d633bc76893f32ac92aac0f0ba",
+      "normalization": "LF text projection"
+    },
+    "core/runtime/continuous_worker/windows_system_observation.py": {
+      "bytes": 22817,
+      "raw_sha256": "de1bfc5a12357c4a8815321531b6dad3c5b599d30c42fa5dec63a96b57fbd697",
+      "git_bytes": 22817,
+      "git_sha256": "de1bfc5a12357c4a8815321531b6dad3c5b599d30c42fa5dec63a96b57fbd697",
+      "git_blob_oid": "4c0a55e7916881e15955ae3013941af489231089",
+      "normalization": "LF text projection"
+    }
+  },
+  "selected_count": 24,
+  "additional_approval_records": [
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-scope.json",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-root-checkpoint-review.json"
+  ],
+  "expected_total_paths": 26,
+  "projected_tree_excluding_approval_records": "12b3c8b5588a673c6ffd2c2e7ca980391375fe08",
+  "projection_method": "Pure Git blob/tree SHA1 over exact base ls-tree plus selected LF text/binary projections; no Git object/index writes.",
+  "archive": {
+    "path": "h2-system-evidence.zip",
+    "bytes": 1171701,
+    "sha256": "7de617a9e5d07aaf2be9d78fee42bacacefa6b73d97f3934c36c44f979e8ab4f",
+    "members": 83
+  },
+  "custody_sha256": "c01db6274b5f53617e4c8b79c3c5b883c6a81d1f2439fe52367b69575ab77075",
+  "historical_archive": {
+    "path": "h2-system-before-review-evidence.zip",
+    "bytes": 365754,
+    "sha256": "e3b1a12a7218b2cf240588e548c513d1a4ecf6f93e03e0d64e0c8f38e4dff1dc",
+    "members": 36
+  },
+  "independent_review_sha256": "0dfaf014a6bbefc9a06b1cc4ef292fa18e3c7676bd75c6c24c49a76ab4159cfe",
+  "excluded_working_index_sha256": "ddf3bd530a875f707210dcbea722a0ec9dccc80f91dade311ae25f643c81dd97",
+  "excluded_scope": [
+    ".aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/**",
+    ".aide/queue/index.yaml",
+    "All unselected raw, historical and generated files"
+  ],
+  "packaging_note": "Initial scope assembly stopped after archive/map creation when an assumed optional review Markdown companion was absent. The actual independent JSON review and all its scripts/results are present. Resume verified every immutable archive member against original bytes and uses the existing 24 selected files; archive/map were not rewritten.",
+  "checks": {
+    "source2_dependencies15_unchanged": true,
+    "selected_tests": 138,
+    "independent_extra_probes": 17,
+    "helpers_pass": true,
+    "aide_validate": "PASS h2-system-reviewed-source-checks.json",
+    "portable_selection_count": 817,
+    "new_source_test_excluded": true,
+    "secret_error_count": 0,
+    "scoped_diff_check": 0,
+    "git_index_empty": true
+  },
+  "qualification": {
+    "source": "PASS",
+    "actual_selected_mapping": false,
+    "private_image_grant_or_loader": false,
+    "operational_activation": false,
+    "remaining": "Protected journal/controller and outer-process deadline; native facts/contextual API mapping, full180 inventory versus128 cap and restricted loader proof."
+  }
+}

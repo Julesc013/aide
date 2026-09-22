@@ -1,0 +1,54 @@
+{
+  "schema": "aide.provider_coordinator_validation.v1",
+  "observed_at": "2026-09-06T17:24:10.413317+00:00",
+  "task_id": "AIDE-FACMAN-USK-ZIP-INTEGRATION-01",
+  "result": "PASS",
+  "scope": "Only assigned coordinator metadata/docs and imported raw provider evidence; no AIDE source/index/global validation claim.",
+  "raw_records_verified": 110,
+  "raw_custody_manifest_sha256": "cb0dfa5860d28e0d4a8863f280a54cbca843b3608277760a77945b496b37bb3e",
+  "original_evidence_files_preserved": 1,
+  "pre_closeout_metadata_bytes_preserved": true,
+  "task_helpers": [
+    {
+      "command": [
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-FACMAN-USK-ZIP-INTEGRATION-01"
+      ],
+      "exit_code": 0,
+      "log": "closeout-after-task-inspect.log",
+      "sha256": "792c427cf996aaaf9e9318d53b21ba7430d8280ca0fb169eddbc769d63456b9d"
+    },
+    {
+      "command": [
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-FACMAN-USK-ZIP-INTEGRATION-01"
+      ],
+      "exit_code": 0,
+      "log": "closeout-after-task-noop-check.log",
+      "sha256": "66000eeced88726bc072c7423645563f61d9dab2e981752ce8b947a67293d81d"
+    },
+    {
+      "command": [
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-FACMAN-USK-ZIP-INTEGRATION-01"
+      ],
+      "exit_code": 0,
+      "log": "closeout-after-task-recover.log",
+      "sha256": "e821379940249226f13a458ef09114cac82ffd47a6db2debf7d38ce7d25cd2de"
+    }
+  ],
+  "provider_main": "ffe1b407abb1bbc340bc925396bd4be197002033",
+  "provider_dev": "5e4c660890201accb30a14ed31b97d329a3be3cd",
+  "provider_tree": "3faabe599f2ebe5f2a6f87287693f411fe1d6594",
+  "provider_primary_clean_dev": true,
+  "all_three_provider_acceptances_reachable_from_main": true,
+  "facman_pin_adoption_claimed": false,
+  "staging_or_commit_by_worker": false,
+  "index_global_source_owner": "pilot/root"
+}

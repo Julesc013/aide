@@ -1,0 +1,197 @@
+{
+  "schema": "aide.host.h1-diagnostic-attempt-custody.v1",
+  "archive": "h1-diagnostic-attempt-evidence.zip",
+  "archive_sha256": "878d10148bebd126c77f93be04af9c4fd5749f7c36b166ded164c601cc897dd7",
+  "members": {
+    "evidence/changed-files.md": {
+      "bytes": 853,
+      "sha256": "a3fc8e409c7faab666d7ac142ee41e1840aebee76ac04fb8b200aff743484403"
+    },
+    "evidence/h1-actual-owned-diagnostic-first.json": {
+      "bytes": 1637,
+      "sha256": "aa2977b977c3c03666ae3a68f44d1c3078b6785849883251e04d1fac1b9ac3e0"
+    },
+    "evidence/h1-actual-owned-diagnostic-first.txt": {
+      "bytes": 511,
+      "sha256": "8ce910f91ca8e4299587b9418b995b368240a636ec7a93d5e28c33e4d0877573"
+    },
+    "evidence/h1-diagnostic-final-tests.json": {
+      "bytes": 883,
+      "sha256": "0ed269cf4f490cd2326fb8322bbe26035cf8f80c9a572651b78632d5f20a1f61"
+    },
+    "evidence/h1-diagnostic-host-final-tests.txt": {
+      "bytes": 1434,
+      "sha256": "865c76a73ded39f204fb50a54c59cc9af79a948ce61706824649138e1d22d61e"
+    },
+    "evidence/h1-diagnostic-native-build-first.txt": {
+      "bytes": 49,
+      "sha256": "15974477059d99a1abcfbfde0052d6a8a8754c7f99300a44c4725c15c109dacc"
+    },
+    "evidence/h1-diagnostic-native-build.json": {
+      "bytes": 463,
+      "sha256": "d345703adc93038e8698ae571e7ae519817fcbfe534f0e625240e8191c49bbc7"
+    },
+    "evidence/h1-diagnostic-native-first-tests.txt": {
+      "bytes": 479,
+      "sha256": "689a22d9784c5e37199d412639123c128164a8fc7e85fb280c3b20c3049eac08"
+    },
+    "evidence/h1-diagnostic-source-config-observation.json": {
+      "bytes": 260,
+      "sha256": "c403b3d7f2e591f34ff8780471ab076f59872bd12e46b54f9e5db98c050af8e3"
+    },
+    "evidence/h1-diagnostic-source-final-tests.txt": {
+      "bytes": 4909,
+      "sha256": "66f1249d861d9dad0f2825ade4788bdb3e9cf6a9660c95e8e4e585a000eaf4bf"
+    },
+    "evidence/h1-diagnostic-source-first-tests.txt": {
+      "bytes": 4710,
+      "sha256": "2b1449d896a4bdfb530336ea77f008efd84c81a543074afea19e905c9804b2c2"
+    },
+    "evidence/h1-diagnostic-source-manifest.json": {
+      "bytes": 1584,
+      "sha256": "5a59f098489988da2e6379e22bc56c3d2b86c1a4313427d30514cd445ed60058"
+    },
+    "evidence/h1-diagnostic-source-tests.json": {
+      "bytes": 1001,
+      "sha256": "bd048ca9b7cf84882564b492c98fd52cb0d8a9a18fe7d09646612ac72bd6c9f8"
+    },
+    "evidence/h1-diagnostic-source.patch": {
+      "bytes": 102902,
+      "sha256": "eb0ba893d377cf74c1bdffaf8badedacc08bb0ba05e14e995def734c2814acef"
+    },
+    "evidence/h1-diagnostic-task-inspect.json": {
+      "bytes": 321,
+      "sha256": "e8359e508952b9c33c162ade50dbc481e89d4d73f63c55f4337200b294255cfa"
+    },
+    "evidence/h1-diagnostic-task-inspect.txt": {
+      "bytes": 381,
+      "sha256": "f85f1b8f7b757347fe4dee40d873b97c58f753d9f929e6384d94bf43251f0a62"
+    },
+    "evidence/h1-exact-image-security-events.json": {
+      "bytes": 401,
+      "sha256": "0e3bf0130fc272fd53310136b114d32b174da260486c888f249508268f0bc8db"
+    },
+    "evidence/h1-loopback-config-first-observation.json": {
+      "bytes": 554,
+      "sha256": "2c1b7e4cd375f66c9cd53d8088280a83fef8c382b8f4d806ee1e5ca1006c993e"
+    },
+    "evidence/h1-network-attempt-custody.json": {
+      "bytes": 7589,
+      "sha256": "fabd58dc9530cac501ad165442f80632119dd61c2a9a77d616bc80eec1a67845"
+    },
+    "evidence/h1-network-oracle-validation.py": {
+      "bytes": 2286,
+      "sha256": "07fcb134232821bd05e15a942637ec82bbfdd47e4dc486fe494a67c887106323"
+    },
+    "evidence/h1-owned-diagnostic-effect-manifest.json": {
+      "bytes": 2839,
+      "sha256": "34be99bb7fc81afc424c4efd5c466669eb9215763541b2dc48581bcfe9d6c4b9"
+    },
+    "evidence/h1-owned-diagnostic-review-request.json": {
+      "bytes": 1284,
+      "sha256": "2fbb40383165e5e70cbcead2143fc0505d756913001c645e1fd0fbd6089e1503"
+    },
+    "evidence/h1-owned-network-effect-probe.py": {
+      "bytes": 17116,
+      "sha256": "2aa3788af0be67037809e9700042b5371b74f3ed932872d10e2bef63432df18e"
+    },
+    "evidence/h1-root-diagnostic-network-oracle.txt": {
+      "bytes": 479,
+      "sha256": "d5bbf0c806506407c552f274e6818a753d6a2d0be58b17bcac9d1aafbae9083f"
+    },
+    "evidence/h1-root-diagnostic-review.json": {
+      "bytes": 1870,
+      "sha256": "34b1d59cef7ade5beb7ad07b78158f0242097197afd6a25bbf72193e52bed046"
+    },
+    "evidence/h1-root-diagnostic-source-job.txt": {
+      "bytes": 6239,
+      "sha256": "6105d3fa583b86d55ad29f0e4ed78e67cc90698a6036abc1ac565e578314710a"
+    },
+    "evidence/h1-wfp-existing-state-observation.json": {
+      "bytes": 226,
+      "sha256": "12f3aa8e9d25d78bab28f3cd6170335eca1aab56a13c780da7e5ddd70d395d76"
+    },
+    "evidence/remaining-risks.md": {
+      "bytes": 1155,
+      "sha256": "4b8e101fd8806f02fe5bc1f278c47118f514ef27f48923efe6c690bada3a6b39"
+    },
+    "evidence/validation.md": {
+      "bytes": 1808,
+      "sha256": "d7d998124a8d963474b75f271dce4a95979524cb377b942c2608ad18f2461d9d"
+    },
+    "owned/diagnostic-native-job-output/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "owned/diagnostic-native-job-output/stdout": {
+      "bytes": 155,
+      "sha256": "fff1939a3b542aaf9dc6ed00b5c926bce10df8c0cf4bc5813b9e0716f3d7705d"
+    },
+    "owned/diagnostic-native-probe-receipt.json": {
+      "bytes": 5718,
+      "sha256": "7318a6123332b74959eddd12e7c63a72a6e2d012a717865b0d1f995e0ba2ca72"
+    },
+    "owned/diagnostic-probe-objects/scratch/native-created.txt": {
+      "bytes": 18,
+      "sha256": "120641fe76c4366e442d9f44bdfc2d8aec756026cf4e624de42b636f0403e8d5"
+    },
+    "owned/diagnostic-probe-reservation.jsonl": {
+      "bytes": 350,
+      "sha256": "b2425f05dff7262cde4da60a490a6e12044e9b85333c95653ef3f7e1f6b3007f"
+    },
+    "owned/security-probe-diagnostic.exe": {
+      "bytes": 151552,
+      "sha256": "bd9af1afb788a661f9b9ca78f040161d0b5136f450cbc909ac1e652bebdbb166"
+    },
+    "source/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-effect-probe.py": {
+      "bytes": 9879,
+      "sha256": "e53b19b1fc7cb8aac488f28e20cfe00942d4ed278e2e8533296185d71c00da1d"
+    },
+    "source/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-oracle-validation.py": {
+      "bytes": 2286,
+      "sha256": "07fcb134232821bd05e15a942637ec82bbfdd47e4dc486fe494a67c887106323"
+    },
+    "source/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-network-effect-probe.py": {
+      "bytes": 17116,
+      "sha256": "2aa3788af0be67037809e9700042b5371b74f3ed932872d10e2bef63432df18e"
+    },
+    "source/.aide/scripts/tests/test_continuous_worker_windows_security.py": {
+      "bytes": 31146,
+      "sha256": "eb4a3b78772f75de1faf4cc33360f3020abbd06891bfc3551ab42eb98b11597b"
+    },
+    "source/.aide/scripts/tests/test_continuous_worker_windows_security_probe.c": {
+      "bytes": 7038,
+      "sha256": "b8b93c45c4ffb27fc40d1321c236e78afe76533fe178a36f7277e6faa5642fd6"
+    },
+    "source/core/runtime/continuous_worker/windows_job.py": {
+      "bytes": 13864,
+      "sha256": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c"
+    },
+    "source/core/runtime/continuous_worker/windows_security.py": {
+      "bytes": 14041,
+      "sha256": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021"
+    },
+    "source/core/runtime/continuous_worker/windows_security_objects.py": {
+      "bytes": 13253,
+      "sha256": "c5605f3dd3c173e93d707ac3e764e183b70263e1057e42bf5dfddf6405e5dcb9"
+    }
+  },
+  "preceding_custody": [
+    {
+      "archive": "h1-first-attempt-evidence.zip",
+      "sha256": "5411d9aff07553c7d3ae3ab56a8abb413ecd4bb81df71f9fea421c9de0600899",
+      "member_count": 53
+    },
+    {
+      "archive": "h1-network-attempt-evidence.zip",
+      "sha256": "ad19e18d67e3c3c67390e3f8c806d8123703f3f55dee591b5a3d3446ecf1c655",
+      "member_count": 40
+    }
+  ],
+  "result": "FAIL",
+  "classification": "Actual token/file/controller proofs and same-listener controls passed, exact package not exempt. Connect timed out10060; diagnostic API succeeded with NETISO_NONE0, so no missing-capability causal proof. No profile created or policy changed; no replay.",
+  "source_aggregate": "7d7a8acf8e343504a421eaff5a3dcdd2a3c6ea9907b9fe1d3834674e518b1897",
+  "effect_manifest_sha256": "34be99bb7fc81afc424c4efd5c466669eb9215763541b2dc48581bcfe9d6c4b9",
+  "cleanup": "retain_only",
+  "activation": false
+}

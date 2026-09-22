@@ -1,0 +1,115 @@
+{
+  "follow_up": [
+    {
+      "commit": "a9a46292f1ad",
+      "summary": "Integrate this reviewed source, then implement and qualify the seven"
+    },
+    {
+      "commit": "a9a46292f1ad",
+      "summary": "Integrate this reviewed source, then implement and qualify the seven"
+    },
+    {
+      "commit": "a9a46292f1ad",
+      "summary": "Integrate this reviewed source, then implement and qualify the seven"
+    },
+    {
+      "commit": "02e99d267b14",
+      "summary": "Integrate this reviewed source, then implement and qualify the seven"
+    },
+    {
+      "commit": "02e99d267b14",
+      "summary": "Integrate this reviewed source, then implement and qualify the seven"
+    },
+    {
+      "commit": "02e99d267b14",
+      "summary": "Integrate this reviewed source, then implement and qualify the seven"
+    }
+  ],
+  "highlights": [
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "a9a46292f1ad",
+      "subject": "feat(runtime): add durable worker prototype and Beta1 programme",
+      "summary": "durable source-qualified continuous worker prototype."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "02e99d267b14",
+      "subject": "feat(runtime): integrate reviewed worker prototype into dev",
+      "summary": "durable source-qualified continuous worker prototype."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "a9a46292f1ad",
+      "subject": "feat(runtime): add durable worker prototype and Beta1 programme",
+      "summary": "portable pack closure and source-only test leakage."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "02e99d267b14",
+      "subject": "feat(runtime): integrate reviewed worker prototype into dev",
+      "summary": "portable pack closure and source-only test leakage."
+    }
+  ],
+  "preview_only": true,
+  "risk_summary": [
+    {
+      "commit": "a9a46292f1ad",
+      "summary": "Credential/filesystem host isolation, live integration broker and genuine"
+    },
+    {
+      "commit": "a9a46292f1ad",
+      "summary": "Credential/filesystem host isolation, live integration broker and genuine"
+    },
+    {
+      "commit": "a9a46292f1ad",
+      "summary": "Credential/filesystem host isolation, live integration broker and genuine"
+    },
+    {
+      "commit": "02e99d267b14",
+      "summary": "Credential/filesystem host isolation, live integration broker and genuine"
+    },
+    {
+      "commit": "02e99d267b14",
+      "summary": "Credential/filesystem host isolation, live integration broker and genuine"
+    },
+    {
+      "commit": "02e99d267b14",
+      "summary": "Credential/filesystem host isolation, live integration broker and genuine"
+    }
+  ],
+  "schema_version": "aide.release-notes-preview.v0",
+  "source_head": "02e99d267b14dc7dfedbd42262d390a93eac354f",
+  "source_range": "c39f47ea3cdb2f8359722906f3f486f3c8af19b7..HEAD",
+  "validation_summary": [
+    {
+      "commit": "a9a46292f1ad",
+      "summary": "Continuous worker: 51 tests PASS, independently reviewed exact source."
+    },
+    {
+      "commit": "a9a46292f1ad",
+      "summary": "Continuous worker: 51 tests PASS, independently reviewed exact source."
+    },
+    {
+      "commit": "a9a46292f1ad",
+      "summary": "Continuous worker: 51 tests PASS, independently reviewed exact source."
+    },
+    {
+      "commit": "02e99d267b14",
+      "summary": "Continuous worker: 51 tests PASS, independently reviewed exact source."
+    },
+    {
+      "commit": "02e99d267b14",
+      "summary": "Continuous worker: 51 tests PASS, independently reviewed exact source."
+    },
+    {
+      "commit": "02e99d267b14",
+      "summary": "Continuous worker: 51 tests PASS, independently reviewed exact source."
+    }
+  ],
+  "warnings": []
+}

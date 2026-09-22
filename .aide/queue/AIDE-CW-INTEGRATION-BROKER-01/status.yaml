@@ -1,6 +1,10 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-INTEGRATION-BROKER-01
-status: planned
-planning_state: admitted_backlog
+status: running
+planning_state: execution_active
 result: PENDING
-updated_at: 2026-09-06
+updated_at: 2026-09-21
+local_foundation: verified_independent_source_review_passed
+full_broker_completion: false
+next_implementation: protected_host_target_and_operational_provider_qualification
+current_slice: observation_dispatch_binding_passed

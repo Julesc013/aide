@@ -1,0 +1,6 @@
+AIDE Lite commit range check
+result: PASS
+range: 454e41aa021c2b8b8b48531f2cb67838ecaa7dab..06f2546fbb0fea3d4ace8278602737f113c1354d
+commit_count: 1
+policy: .aide/policies/commit-messages.yaml
+- 06f2546 PASS feat(runtime): add bounded private-image preparation

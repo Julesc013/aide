@@ -1,0 +1,6 @@
+AIDE Lite commit range check
+result: PASS
+range: 0c7788fd3660dc18e2751108ac49afe96d446801..2a44f17eb7232757133df549ac6fc519d535e71b
+commit_count: 1
+policy: .aide/policies/commit-messages.yaml
+- 2a44f17 PASS feat(runtime): retain reviewed native input facts probe

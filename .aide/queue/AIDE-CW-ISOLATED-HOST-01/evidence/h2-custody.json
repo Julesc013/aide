@@ -1,0 +1,569 @@
+{
+  "schema": "aide.host.h2-source-custody.v1",
+  "zip": "h2-source-evidence.zip",
+  "zip_sha256": "e178162cf36540e487697cbbf817895d5c0294dc7a94b576917bcb42266aeb71",
+  "zip_bytes": 918319,
+  "members": {
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md": {
+      "bytes": 19661,
+      "sha256": "8d5643e952a47b4baf068559026bf865e6f0e71d92193247fc8748641ff11b9e",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\ExecPlan.md"
+    },
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/CUSTODY.md": {
+      "bytes": 3131,
+      "sha256": "0d42268f59eef2e28e3bf80073214dc2c2a049b96e59a3af266c453062c20518",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\CUSTODY.md"
+    },
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/changed-files.md": {
+      "bytes": 1781,
+      "sha256": "fcdf81ed82c1b3513217d24d7105290490f717c561299f3ba22873ed96e8c3ba",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\changed-files.md"
+    },
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/remaining-risks.md": {
+      "bytes": 1699,
+      "sha256": "1fd10c656f7a3176a8f52e3d62f96987957df52df07b7719f1533a3158e624dc",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\remaining-risks.md"
+    },
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/validation.md": {
+      "bytes": 2304,
+      "sha256": "18c1eaea5fc3e8be7a857498096e1b3b0d14643f60fbd3b503c6f2e675ec265b",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\validation.md"
+    },
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/status.yaml": {
+      "bytes": 409,
+      "sha256": "ea1a624e8ffe0f6a610c174bc36309784e8499ef7c3b7ca7abe17b548f6b07e3",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\status.yaml"
+    },
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/task.yaml": {
+      "bytes": 2677,
+      "sha256": "1ac001b2c572b8a4bec1931f1055d521c6d818a65dc1d2757b32c8cf021d765b",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\task.yaml"
+    },
+    "checkpoint-docs/DOCUMENTATION.md": {
+      "bytes": 65630,
+      "sha256": "044d2d00992e47e8bbf33c0bfddf8b6775b279549734247df6d69e03567847e7",
+      "original_path": "D:\\Projects\\AIDE\\aide\\DOCUMENTATION.md"
+    },
+    "checkpoint-docs/IMPLEMENT.md": {
+      "bytes": 493756,
+      "sha256": "d60695c9cd5232ec774dbfcb36e02a74e77dddb188a5df8a56b18f4f9ca94465",
+      "original_path": "D:\\Projects\\AIDE\\aide\\IMPLEMENT.md"
+    },
+    "checkpoint-docs/PLANS.md": {
+      "bytes": 456874,
+      "sha256": "2e2b2464a3211eeefedef24fa992b2fea4db6b3408d17cc463320d7fb8464161",
+      "original_path": "D:\\Projects\\AIDE\\aide\\PLANS.md"
+    },
+    "evidence/h2-before-overlap-custody.json": {
+      "bytes": 2684,
+      "sha256": "8fa73eb96a4eed7cedae6b34f0912193a1ed4cee43a24ed6e0be4b854967b054",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-before-overlap-custody.json"
+    },
+    "evidence/h2-before-root-alias-custody.json": {
+      "bytes": 2818,
+      "sha256": "e370920a789bb951a3de8285c48b73cc2505baa6dd2d9a6b49ec3eb8a79e13d9",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-before-root-alias-custody.json"
+    },
+    "evidence/h2-checkpoint-aide-dev-main-plan.json": {
+      "bytes": 4472,
+      "sha256": "f31aef8b91e65e9d16ca2b41eed500aca01774db75b237c94bfaaf8b5896e3ad",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-aide-dev-main-plan.json"
+    },
+    "evidence/h2-checkpoint-aide-dev-main-plan.md": {
+      "bytes": 1300,
+      "sha256": "980e1ff78916f29cdc4204f2771dfdaf75465872d8bf049145fbd6dd9decb006",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-aide-dev-main-plan.md"
+    },
+    "evidence/h2-checkpoint-diff-check.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-diff-check.txt"
+    },
+    "evidence/h2-checkpoint-export-secret-checks-first.json": {
+      "bytes": 1828,
+      "sha256": "37c3c4245100454e89745a460c40fcdc79871787a3633c9502813791bf2c5bca",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-export-secret-checks-first.json"
+    },
+    "evidence/h2-checkpoint-export-secret-checks.json": {
+      "bytes": 1976,
+      "sha256": "7d67c77810b316337edbaf0bfa8169d87f49f8cb323cda85bd64691a3f91696f",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-export-secret-checks.json"
+    },
+    "evidence/h2-checkpoint-git-detect.txt": {
+      "bytes": 560,
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-git-detect.txt"
+    },
+    "evidence/h2-checkpoint-git-plan.txt": {
+      "bytes": 689,
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-git-plan.txt"
+    },
+    "evidence/h2-checkpoint-git-policy.txt": {
+      "bytes": 5553,
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-git-policy.txt"
+    },
+    "evidence/h2-checkpoint-helper-checks.json": {
+      "bytes": 3353,
+      "sha256": "ae797a7919adaeecbb0f998034d85b413dc5e27f6ebfc31adecf9aae045ae523",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-helper-checks.json"
+    },
+    "evidence/h2-checkpoint-latest-helper-plan.json": {
+      "bytes": 2736,
+      "sha256": "572d20d5f6edf1456efbc8e098598f4bb6ca59dfed376f84d9bfb5da61d29aa6",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-latest-helper-plan.json"
+    },
+    "evidence/h2-checkpoint-latest-helper-plan.md": {
+      "bytes": 987,
+      "sha256": "28b0f574485939523f6d345b881e5e1a69564db27d1b177d9b8586ac6ce9a2dc",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-latest-helper-plan.md"
+    },
+    "evidence/h2-checkpoint-message-before-check.txt": {
+      "bytes": 1445,
+      "sha256": "f42fc78605408a173099e8af70d31d5a98bb636dbb9da05b9f29256c97d5bc20",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-message-before-check.txt"
+    },
+    "evidence/h2-checkpoint-message-check-first.txt": {
+      "bytes": 2477,
+      "sha256": "9c7f7885edff7a4ec9c7de983c85ce5162f01efc630d9bb02d9d619cf28c3c17",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-message-check-first.txt"
+    },
+    "evidence/h2-checkpoint-message-check.txt": {
+      "bytes": 2477,
+      "sha256": "edbdd9f777442f305c860932496820679a153d922d05eceff0694566513e7366",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-message-check.txt"
+    },
+    "evidence/h2-checkpoint-message.txt": {
+      "bytes": 1433,
+      "sha256": "5fe68e7e35eca32667c886ea533ca4a7b1f72ee45d8a56f641968226c886a574",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-message.txt"
+    },
+    "evidence/h2-checkpoint-task-inspect-final.txt": {
+      "bytes": 382,
+      "sha256": "3c5937fa9e48965435ccae51ae5f0dcdb4f730ac44b7093939df74f0cacb53ff",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-task-inspect-final.txt"
+    },
+    "evidence/h2-checkpoint-task-inspect.txt": {
+      "bytes": 382,
+      "sha256": "00d6e618f5dbf416de04f12dfdc7992d3e77bc710a457afd04b792f0c5b7e811",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-task-inspect.txt"
+    },
+    "evidence/h2-checkpoint-task-noop.txt": {
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-task-noop.txt"
+    },
+    "evidence/h2-checkpoint-task-recover.txt": {
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-task-recover.txt"
+    },
+    "evidence/h2-checkpoint-validate-final.txt": {
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-validate-final.txt"
+    },
+    "evidence/h2-checkpoint-validate.txt": {
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-validate.txt"
+    },
+    "evidence/h2-checkpoint-workflow-detection.json": {
+      "bytes": 1037,
+      "sha256": "f73b0e94cc833a33a10d7405ab892a3aa9fc599221fff31172f98c2cefaadb4e",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-workflow-detection.json"
+    },
+    "evidence/h2-checkpoint-workflow-detection.md": {
+      "bytes": 748,
+      "sha256": "109ef930c3ecba5733612a533d041a87a384ca042d32d4bf4d85bf729ca4b3f1",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-checkpoint-workflow-detection.md"
+    },
+    "evidence/h2-final-flush-red-tests.json": {
+      "bytes": 526,
+      "sha256": "a07023cdabdad8d1dc1016aacd5259d7bb4a0c25ed9f3b4da52ba6829fd72839",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-final-flush-red-tests.json"
+    },
+    "evidence/h2-final-flush-red-tests.txt": {
+      "bytes": 6246,
+      "sha256": "f0fedeeb544f63a0bd875cfcce185ca95feff73aa22548a594b74ac2798eafda",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-final-flush-red-tests.txt"
+    },
+    "evidence/h2-first-tests.json": {
+      "bytes": 893,
+      "sha256": "f9cce4f69522b0f42858e19b4304460d32059d69bbb3f46c213b962088f585d7",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-first-tests.json"
+    },
+    "evidence/h2-h1-final-regression.txt": {
+      "bytes": 5841,
+      "sha256": "1639afd8736651934d915025837252f2758ab6328dc96bb0ef1b534e58ad9e93",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-h1-final-regression.txt"
+    },
+    "evidence/h2-h1-source-first-regression.txt": {
+      "bytes": 5841,
+      "sha256": "f13f84e503625b957af9262865ddfc11f75afc2e21a9d8858a21df641e1b6d73",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-h1-source-first-regression.txt"
+    },
+    "evidence/h2-held-parent-first-tests.json": {
+      "bytes": 405,
+      "sha256": "ef246fc26b940cb03265eb109a876ba73f3128746815a9eefcf90baeec8192eb",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-held-parent-first-tests.json"
+    },
+    "evidence/h2-held-parent-first-tests.txt": {
+      "bytes": 5148,
+      "sha256": "1076c9d7d62c5de46460294e38dabe0a5e282748eaa6fad731986092a881c1cc",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-held-parent-first-tests.txt"
+    },
+    "evidence/h2-image-final-tests.txt": {
+      "bytes": 5576,
+      "sha256": "1fba9845f7f7c650bfb3bb2b2edd0683e44619fb6cfa99517b240cc35fd01d98",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-image-final-tests.txt"
+    },
+    "evidence/h2-image-first-tests.txt": {
+      "bytes": 1946,
+      "sha256": "0630e5ae9328fbf7fe6d66a3ca7e2e9b43933468510109d4d1d5401e0b0e1cbc",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-image-first-tests.txt"
+    },
+    "evidence/h2-image-source-manifest.json": {
+      "bytes": 2402,
+      "sha256": "9e6c745cdd0014cff17b8a2acc6e8b26e32d87a29ad1be402439405778cb859f",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-image-source-manifest.json"
+    },
+    "evidence/h2-image-source-review-notes.md": {
+      "bytes": 3776,
+      "sha256": "65a71165c50c7b729845c19065c538a3ff2a818ca056f5e0372e680532640bcf",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-image-source-review-notes.md"
+    },
+    "evidence/h2-image-source.patch": {
+      "bytes": 69016,
+      "sha256": "4a35dbe32c879d3a6fec3a86fc331187959ae7b0a7b69cbccc825351f70aa826",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-image-source.patch"
+    },
+    "evidence/h2-independent-final-execution.json": {
+      "bytes": 3929,
+      "sha256": "a5a21f991c256569853875b101d25ac679af268a571c84298673310d2f75721a",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-final-execution.json"
+    },
+    "evidence/h2-independent-final-execution.py": {
+      "bytes": 5783,
+      "sha256": "8da00e5dc6f5a693bdda2e2973fc21c8091549b5eabed6cc7a4588255d089482",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-final-execution.py"
+    },
+    "evidence/h2-independent-final-image.log": {
+      "bytes": 5576,
+      "sha256": "e7874a37d99b5e02b96e9fe6a30dc04b478c505c356c2a8b97fd09237bafd11c",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-final-image.log"
+    },
+    "evidence/h2-independent-final-job.log": {
+      "bytes": 1434,
+      "sha256": "2805087480b53bee58a672878007fccd71ed2c64546102fcbc54bba15fea0ae8",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-final-job.log"
+    },
+    "evidence/h2-independent-final-review.json": {
+      "bytes": 8803,
+      "sha256": "8d3bc8a5c12fcbab8c6ad72b8fa2df6f9dadd888eac479867b634e2251999913",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-final-review.json"
+    },
+    "evidence/h2-independent-final-review.md": {
+      "bytes": 2144,
+      "sha256": "1ae3e9c0f663c9403760b05fec6894e530fc580e399200caf4e65f2cb782536d",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-final-review.md"
+    },
+    "evidence/h2-independent-final-security.log": {
+      "bytes": 5841,
+      "sha256": "40d289a537a9140209e9a371def899e0caedfc5523d49c6addf287fc88a7d477",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-final-security.log"
+    },
+    "evidence/h2-independent-root-alias-probe.json": {
+      "bytes": 2171,
+      "sha256": "eea6256c94c896680de5ed1a118d9d6cd33bc1c926d7af8cb9f0ca2f43086d54",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-root-alias-probe.json"
+    },
+    "evidence/h2-independent-root-alias-probe.py": {
+      "bytes": 3404,
+      "sha256": "1b29ad95a044a04c6c49da7226ca3ac37df9e3d57c617d519f96c5e6c812aff3",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-root-alias-probe.py"
+    },
+    "evidence/h2-independent-source-output-overlap-probe.json": {
+      "bytes": 1929,
+      "sha256": "3d251d26dc7a65be8facfcbc03ace1e76fae13435c9f9e3f6825e9c53008405c",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-source-output-overlap-probe.json"
+    },
+    "evidence/h2-independent-source-output-overlap-probe.py": {
+      "bytes": 2808,
+      "sha256": "ef8806e9253b8577ac3e617ddb92d59d4d2732c0db45a0c76b7351a77b386c5b",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-independent-source-output-overlap-probe.py"
+    },
+    "evidence/h2-job-final-regression.txt": {
+      "bytes": 1434,
+      "sha256": "e0889681e9d9003affbce49ffd5ca3899e372192c25f15de9f0619995fab09db",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-job-final-regression.txt"
+    },
+    "evidence/h2-local-tool-input-inventory.json": {
+      "bytes": 3150,
+      "sha256": "c9d32e4ae50b4a39fdce661295608bf403ce65d5efca671f28b0f42b76382d46",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-local-tool-input-inventory.json"
+    },
+    "evidence/h2-preparation-first-tests.json": {
+      "bytes": 365,
+      "sha256": "fcf1ede83d52a7fd34233b599bac7c8e250eaa10eef3ecadfb24251695332391",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-preparation-first-tests.json"
+    },
+    "evidence/h2-preparation-first-tests.txt": {
+      "bytes": 3025,
+      "sha256": "31186c56179652ccd6b7f2682cb431d91a559c20323faf9a8cfd5cdde2145bac",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-preparation-first-tests.txt"
+    },
+    "evidence/h2-private-toolchain-proposal.md": {
+      "bytes": 5427,
+      "sha256": "7d19551d1dd69d0bafb19658b204cde247060fc2ed51d0d7cde696c260d3bda1",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-private-toolchain-proposal.md"
+    },
+    "evidence/h2-python-closure-proposal.md": {
+      "bytes": 6513,
+      "sha256": "16b243f4a3d9401cb13c8cf8e282918539817c260037da4f673bfc030dee072d",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-python-closure-proposal.md"
+    },
+    "evidence/h2-review-helper-checks.json": {
+      "bytes": 1470,
+      "sha256": "e2f44c2d3181a43a7606bcbab20fa0e43ebd0e6a3176ba022b3a583ff87003df",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-review-helper-checks.json"
+    },
+    "evidence/h2-review-helper-wrapper-first-failure.json": {
+      "bytes": 553,
+      "sha256": "38f559a64fc7604818911e78cf25b79d03d031d96e01c559e4fd66dacb61bc8c",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-review-helper-wrapper-first-failure.json"
+    },
+    "evidence/h2-review-task-inspect.txt": {
+      "bytes": 382,
+      "sha256": "01dbdfbbcc2d3ee6af257ef480d3911549630ef8c308228452570b21eee002c4",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-review-task-inspect.txt"
+    },
+    "evidence/h2-review-validate.txt": {
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-review-validate.txt"
+    },
+    "evidence/h2-root-alias-red-tests.json": {
+      "bytes": 559,
+      "sha256": "328be333edcef30962f3aa1cd5e92d88e28c359052abfb57b5635e664797c93b",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-root-alias-red-tests.json"
+    },
+    "evidence/h2-root-alias-red-tests.txt": {
+      "bytes": 35546,
+      "sha256": "fbad2aec758d8d0f05fc5023214a127e24366a8bdc1ef439896d6249c42b4910",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-root-alias-red-tests.txt"
+    },
+    "evidence/h2-source-admission.json": {
+      "bytes": 1692,
+      "sha256": "e174dffcaff1264d5d3137844202935e6ac24ba65553e616a7cd967e15fe5c6d",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-source-admission.json"
+    },
+    "evidence/h2-source-final-tests.json": {
+      "bytes": 2668,
+      "sha256": "abd383f81ce388b7adcb86ff1ba57c3fa3b486ac27589795a8fb5c75b9e18e4a",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-source-final-tests.json"
+    },
+    "evidence/h2-source-inspect.txt": {
+      "bytes": 382,
+      "sha256": "5182abd8088dcdcadb720adf92eeb8c46bc424db8147092211844702e8698885",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-source-inspect.txt"
+    },
+    "evidence/h2-source-noop-check.txt": {
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-source-noop-check.txt"
+    },
+    "evidence/h2-source-recover.txt": {
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-source-recover.txt"
+    },
+    "retained-attacks/h2-independent-root-alias-probe/intent.jsonl": {
+      "bytes": 387,
+      "sha256": "8000226a29e792b40ddc0bef27da55c58c5c072eb6806993168d47b5ae0b135a",
+      "original_path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h2-synthetic-review-ggm29eze\\parent\\image-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.intent.jsonl"
+    },
+    "retained-attacks/h2-independent-source-output-overlap-probe/intent.jsonl": {
+      "bytes": 363,
+      "sha256": "9d58a16bc1644adb8a58760d4b8343f6df3c0bf468c3b7a4bf1a1298440f15df",
+      "original_path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h2-synthetic-review-dzchrf3r\\Trusted input with spaces\\image-cccccccccccccccccccccccccccccccc.intent.jsonl"
+    },
+    "source/.aide/scripts/tests/test_continuous_worker_windows_image.py": {
+      "bytes": 40680,
+      "sha256": "aab4c2f1c047381f26320c31c2441bab316e0264d14a187069b76704e847ac0e",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests\\test_continuous_worker_windows_image.py"
+    },
+    "source/core/runtime/continuous_worker/windows_image.py": {
+      "bytes": 20314,
+      "sha256": "1fc511ab5316f09f305f1c02cee209fa4b21d017b074e39d6b8ec60ebd94ff5b",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_image.py"
+    },
+    "source/core/runtime/continuous_worker/windows_security_objects.py": {
+      "bytes": 16361,
+      "sha256": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_security_objects.py"
+    }
+  },
+  "all_members_reverified": true,
+  "raw_originals_unchanged": true,
+  "historical_packets": [
+    {
+      "zip": "h2-before-root-alias-evidence.zip",
+      "sha256": "db52b7b601f98013619b65cc723776554e9b559e8983bd806165ddd21948ef33",
+      "members": 12
+    },
+    {
+      "zip": "h2-before-overlap-evidence.zip",
+      "sha256": "41f8e2ad294518bddb316923d77bdcd7d76e225253546a93bcbf22e44a4ff2da",
+      "members": 12
+    }
+  ],
+  "text_projection": "Git text is LF. Raw original reviewer/receipt/log bytes remain authoritative inside this ZIP; current projections do not replace their raw SHA values.",
+  "raw_to_lf": {
+    "evidence/h2-checkpoint-git-detect.txt": {
+      "raw_sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86",
+      "git_lf_sha256": "e56633071ae3df65177d5c4d951c46c5b976549cbd11ec1fce05f1c1d1a8153a"
+    },
+    "evidence/h2-checkpoint-git-plan.txt": {
+      "raw_sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de",
+      "git_lf_sha256": "24d536f82981dbf56a8fa92a9982686e8e5d046fd61f4cbc3651c9dd5c1f454d"
+    },
+    "evidence/h2-checkpoint-git-policy.txt": {
+      "raw_sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd",
+      "git_lf_sha256": "f7cda673419f0b780076564dcc33c0b67e10237b7d44c0b3e300c7ec74c5e1f3"
+    },
+    "evidence/h2-checkpoint-message-check-first.txt": {
+      "raw_sha256": "9c7f7885edff7a4ec9c7de983c85ce5162f01efc630d9bb02d9d619cf28c3c17",
+      "git_lf_sha256": "18b4e5e414a50e5e344c8967034ca2a5584ee780a488cb185a029d81eb92f254"
+    },
+    "evidence/h2-checkpoint-message-check.txt": {
+      "raw_sha256": "edbdd9f777442f305c860932496820679a153d922d05eceff0694566513e7366",
+      "git_lf_sha256": "b92f1256abd7a8e8b1d34c6fd22c2703073e6db8337c03d2d98d70bbf4e37a24"
+    },
+    "evidence/h2-checkpoint-task-inspect-final.txt": {
+      "raw_sha256": "3c5937fa9e48965435ccae51ae5f0dcdb4f730ac44b7093939df74f0cacb53ff",
+      "git_lf_sha256": "5ce22b50d529052e2785d2f443f9f094bdd23904ac887bd3d37f73170b644d52"
+    },
+    "evidence/h2-checkpoint-task-inspect.txt": {
+      "raw_sha256": "00d6e618f5dbf416de04f12dfdc7992d3e77bc710a457afd04b792f0c5b7e811",
+      "git_lf_sha256": "6e2d8a469a3b98e8b190e839c3b4d719649feb724435972030c4e78c7832002b"
+    },
+    "evidence/h2-checkpoint-task-noop.txt": {
+      "raw_sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4",
+      "git_lf_sha256": "027e7db6f046226171d6fe7dfc41f231fd0cec97212d3ed41f364474ce8f5a15"
+    },
+    "evidence/h2-checkpoint-task-recover.txt": {
+      "raw_sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a",
+      "git_lf_sha256": "43309a4de831983a42430320638e55e4a6999d1994cdbca09f574d333c906388"
+    },
+    "evidence/h2-checkpoint-validate-final.txt": {
+      "raw_sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "git_lf_sha256": "4cc34ccf89cf15601c461a5577ed72a0b692ce3980b0e109ec357a50b7fac881"
+    },
+    "evidence/h2-checkpoint-validate.txt": {
+      "raw_sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "git_lf_sha256": "4cc34ccf89cf15601c461a5577ed72a0b692ce3980b0e109ec357a50b7fac881"
+    },
+    "evidence/h2-final-flush-red-tests.txt": {
+      "raw_sha256": "f0fedeeb544f63a0bd875cfcce185ca95feff73aa22548a594b74ac2798eafda",
+      "git_lf_sha256": "6327ccd55df69b2be324dd3fb0389d62ffdcaec9dd161222a98c12703e9825a9"
+    },
+    "evidence/h2-h1-final-regression.txt": {
+      "raw_sha256": "1639afd8736651934d915025837252f2758ab6328dc96bb0ef1b534e58ad9e93",
+      "git_lf_sha256": "a54ef126d31f12669afdf4b1b0a104ed5e8cee239e72cc29523e89c9e028d170"
+    },
+    "evidence/h2-h1-source-first-regression.txt": {
+      "raw_sha256": "f13f84e503625b957af9262865ddfc11f75afc2e21a9d8858a21df641e1b6d73",
+      "git_lf_sha256": "e676480405a7208e823697932d4290dbe92c52646117d2cca2c335726a083635"
+    },
+    "evidence/h2-held-parent-first-tests.txt": {
+      "raw_sha256": "1076c9d7d62c5de46460294e38dabe0a5e282748eaa6fad731986092a881c1cc",
+      "git_lf_sha256": "01cecd188f7a17064e1b2e1376ecc9e951ce2c6b95831519fc3e03091d7bab00"
+    },
+    "evidence/h2-image-final-tests.txt": {
+      "raw_sha256": "1fba9845f7f7c650bfb3bb2b2edd0683e44619fb6cfa99517b240cc35fd01d98",
+      "git_lf_sha256": "d8a2a3a35d1f390d6275d1a2c4446f9d341592b3a9fcdff3d2e0399ddb3138b0"
+    },
+    "evidence/h2-image-first-tests.txt": {
+      "raw_sha256": "0630e5ae9328fbf7fe6d66a3ca7e2e9b43933468510109d4d1d5401e0b0e1cbc",
+      "git_lf_sha256": "cb6167f9048c60d321ac277c644ab68e53d99f8737aaf379e4bc09f9b91cae2c"
+    },
+    "evidence/h2-independent-final-execution.json": {
+      "raw_sha256": "a5a21f991c256569853875b101d25ac679af268a571c84298673310d2f75721a",
+      "git_lf_sha256": "38e64d4d3109674840a7e4419515a5a2a88b31facb4e0ef93f028927e2fce424"
+    },
+    "evidence/h2-independent-final-execution.py": {
+      "raw_sha256": "8da00e5dc6f5a693bdda2e2973fc21c8091549b5eabed6cc7a4588255d089482",
+      "git_lf_sha256": "0e01df0f15710129f6fc2613094a31d70f26fcd0cc3fc5b6333b2d645dcc04f7"
+    },
+    "evidence/h2-independent-final-image.log": {
+      "raw_sha256": "e7874a37d99b5e02b96e9fe6a30dc04b478c505c356c2a8b97fd09237bafd11c",
+      "git_lf_sha256": "511c3fa9b54f6edbffd30240bc086973f7e68a7a217e7b6bb01157337fc5785e"
+    },
+    "evidence/h2-independent-final-job.log": {
+      "raw_sha256": "2805087480b53bee58a672878007fccd71ed2c64546102fcbc54bba15fea0ae8",
+      "git_lf_sha256": "a5e789836fedae7e98fc28bd829c9dc983c1f3f755c95e02189c9cd5de0fa13f"
+    },
+    "evidence/h2-independent-final-review.json": {
+      "raw_sha256": "8d3bc8a5c12fcbab8c6ad72b8fa2df6f9dadd888eac479867b634e2251999913",
+      "git_lf_sha256": "dae4265e9b99d4dc3f7aec560546accb9d27f25a306f8bd1f65c99d1727f36e3"
+    },
+    "evidence/h2-independent-final-review.md": {
+      "raw_sha256": "1ae3e9c0f663c9403760b05fec6894e530fc580e399200caf4e65f2cb782536d",
+      "git_lf_sha256": "0ca048788a36141457c8ad5e9be90ce5f37c34ac0a5dd6e7c5d7d20680ca7ed8"
+    },
+    "evidence/h2-independent-final-security.log": {
+      "raw_sha256": "40d289a537a9140209e9a371def899e0caedfc5523d49c6addf287fc88a7d477",
+      "git_lf_sha256": "5b00f4e6e50fef8196c3c6068056e1393faec179a4c044bc6a49fd3c82026bc9"
+    },
+    "evidence/h2-independent-root-alias-probe.json": {
+      "raw_sha256": "eea6256c94c896680de5ed1a118d9d6cd33bc1c926d7af8cb9f0ca2f43086d54",
+      "git_lf_sha256": "858b1e3336be934b6be279c7d81ee1fde3b7e6341b905620bb7a645cd4c59528"
+    },
+    "evidence/h2-independent-root-alias-probe.py": {
+      "raw_sha256": "1b29ad95a044a04c6c49da7226ca3ac37df9e3d57c617d519f96c5e6c812aff3",
+      "git_lf_sha256": "de53e87184205d76967097bfcbf8bf743663cf93e18db1ed5a0dd26eb400b348"
+    },
+    "evidence/h2-independent-source-output-overlap-probe.json": {
+      "raw_sha256": "3d251d26dc7a65be8facfcbc03ace1e76fae13435c9f9e3f6825e9c53008405c",
+      "git_lf_sha256": "f8bbe018517cfa2bdd6a4764fbe039c0b91760799d90a996eacdb720d7b2e90f"
+    },
+    "evidence/h2-independent-source-output-overlap-probe.py": {
+      "raw_sha256": "ef8806e9253b8577ac3e617ddb92d59d4d2732c0db45a0c76b7351a77b386c5b",
+      "git_lf_sha256": "70e6c4c0f6305a8ecac1945254c5be21b2be3788bc0ad5838b63ad6ec8ebf6f2"
+    },
+    "evidence/h2-job-final-regression.txt": {
+      "raw_sha256": "e0889681e9d9003affbce49ffd5ca3899e372192c25f15de9f0619995fab09db",
+      "git_lf_sha256": "e5ffe749171dd26f85dfbe30196d68d3fb98884edc4405bf142d573a4980c639"
+    },
+    "evidence/h2-preparation-first-tests.txt": {
+      "raw_sha256": "31186c56179652ccd6b7f2682cb431d91a559c20323faf9a8cfd5cdde2145bac",
+      "git_lf_sha256": "e6afe3fb41f0e2a4aab1bb8d508a2630734a875d8de35dbd1c2829f8499320ba"
+    },
+    "evidence/h2-review-task-inspect.txt": {
+      "raw_sha256": "01dbdfbbcc2d3ee6af257ef480d3911549630ef8c308228452570b21eee002c4",
+      "git_lf_sha256": "89edc8e58a0e73a1f5ea536920763fc989c9ab2e330472b846495cf42f0a8319"
+    },
+    "evidence/h2-review-validate.txt": {
+      "raw_sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "git_lf_sha256": "4cc34ccf89cf15601c461a5577ed72a0b692ce3980b0e109ec357a50b7fac881"
+    },
+    "evidence/h2-root-alias-red-tests.txt": {
+      "raw_sha256": "fbad2aec758d8d0f05fc5023214a127e24366a8bdc1ef439896d6249c42b4910",
+      "git_lf_sha256": "75d44b26d13b4cbc56128f0089eb8a8861860cf988b4bb1ca67a875b8e7cbfb0"
+    },
+    "evidence/h2-source-inspect.txt": {
+      "raw_sha256": "5182abd8088dcdcadb720adf92eeb8c46bc424db8147092211844702e8698885",
+      "git_lf_sha256": "e1d908e9ba9de80f3cb7c777b78afacfebb80430af50f96cd42ee4ebe13a4785"
+    },
+    "evidence/h2-source-noop-check.txt": {
+      "raw_sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4",
+      "git_lf_sha256": "027e7db6f046226171d6fe7dfc41f231fd0cec97212d3ed41f364474ce8f5a15"
+    },
+    "evidence/h2-source-recover.txt": {
+      "raw_sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a",
+      "git_lf_sha256": "43309a4de831983a42430320638e55e4a6999d1994cdbca09f574d333c906388"
+    }
+  }
+}

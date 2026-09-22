@@ -1,0 +1,44 @@
+feat(runtime): add bounded native system observation source
+
+## Summary
+
+- Add exact controller-pinned Windows object and resource observation machinery.
+
+## Why
+
+- Python host qualification needs actual named object facts and API mapping proof.
+
+## Changed
+
+- Admit finite root, file, owner, descriptor, byte and API request pins.
+- Bind reservations and mapping intents to exact canonical request hashes.
+- Keep owned handles through guarded observations and release each once.
+- Refuse stale results, case-mismatched mapping attribution and invalid budgets.
+
+## Validation
+
+- Local and independent 138 selected tests PASS.
+- Independent 17 fault, ownership and numeric-bound probes PASS.
+- AIDE validation, actual portable exclusion and scoped secret checks PASS.
+
+## Changelog
+
+- Added: source-only exact native system observation and refusal contract.
+
+## Risks
+
+- Native mapping and restricted loader effects have not been qualified.
+- Protected journal authenticity and outer-process deadlines remain required.
+- The full API inventory remains above the unchanged contract capacity.
+
+## Follow-up
+
+- Prepare an exact bounded public-native-input effect before API mapping proof.
+- Keep actual image, grant and operational activation gates open.
+
+AIDE-Task: AIDE-CW-ISOLATED-HOST-01
+AIDE-Phase: system-observation-source
+AIDE-Result: partial
+AIDE-Scope: native observation source, injected tests, own docs and custody
+AIDE-Token-Impact: bounded observations and compact raw evidence
+AIDE-Quality-Gate: independent source, 138 tests and 17 probes passed

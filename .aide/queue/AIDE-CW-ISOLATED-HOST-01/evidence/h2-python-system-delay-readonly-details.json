@@ -1,0 +1,787 @@
+{
+  "schema": "aide.host.h2-delay-readonly-details.v1",
+  "source_sha256": "1240295a4fd840f34a9d5c18f9c4aa712f53c14046106cc2b2d09b77b6fe344e",
+  "input_receipt_sha256": "1814c198d6d5c4d920479157ce61835960f78d5cbda271541e6f3906afb7dd71",
+  "rows": [
+    {
+      "name": "advapi32.dll",
+      "sha256": "fe875dfe559d8bbcf1f3701405fe43d37078896280001697c6f2f2bc060af3df",
+      "delay_directory": [
+        611880,
+        416
+      ],
+      "descriptors": [
+        {
+          "fields": [
+            1,
+            529088,
+            683248,
+            712768,
+            612360,
+            616408,
+            0,
+            0
+          ],
+          "name": "CRYPTSP.dll"
+        },
+        {
+          "fields": [
+            1,
+            529104,
+            683256,
+            713160,
+            612752,
+            616728,
+            0,
+            0
+          ],
+          "name": "WINTRUST.dll"
+        },
+        {
+          "fields": [
+            1,
+            529120,
+            683264,
+            712720,
+            612312,
+            616824,
+            0,
+            0
+          ],
+          "name": "CRYPTBASE.dll"
+        },
+        {
+          "fields": [
+            1,
+            529136,
+            683272,
+            713088,
+            612680,
+            616856,
+            0,
+            0
+          ],
+          "name": "SspiCli.dll"
+        },
+        {
+          "fields": [
+            1,
+            529152,
+            683280,
+            713120,
+            612712,
+            616888,
+            0,
+            0
+          ],
+          "name": "USER32.dll"
+        },
+        {
+          "fields": [
+            1,
+            529168,
+            683288,
+            712704,
+            612296,
+            616928,
+            0,
+            0
+          ],
+          "name": "CRYPT32.dll"
+        },
+        {
+          "fields": [
+            1,
+            529184,
+            683296,
+            713728,
+            613320,
+            616944,
+            0,
+            0
+          ],
+          "name": "bcrypt.dll"
+        },
+        {
+          "fields": [
+            1,
+            529200,
+            683304,
+            713632,
+            613224,
+            617048,
+            0,
+            0
+          ],
+          "name": "api-ms-win-security-lsalookup-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            529248,
+            683312,
+            713280,
+            612872,
+            617088,
+            0,
+            0
+          ],
+          "name": "api-ms-win-security-credentials-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            529296,
+            683320,
+            713520,
+            613112,
+            617328,
+            0,
+            0
+          ],
+          "name": "api-ms-win-security-credentials-l2-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            529584,
+            683344,
+            713672,
+            613264,
+            617440,
+            0,
+            0
+          ],
+          "name": "api-ms-win-security-provider-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            529632,
+            683352,
+            713256,
+            612848,
+            617496,
+            0,
+            0
+          ],
+          "name": "api-ms-win-devices-config-l1-1-1.dll"
+        }
+      ]
+    },
+    {
+      "name": "bcrypt.dll",
+      "sha256": "4aec900087b8fab630b7b816f9b5bb2205c532a909103fe7035ffbff938ecab2",
+      "delay_directory": [
+        127076,
+        64
+      ],
+      "descriptors": [
+        {
+          "fields": [
+            1,
+            114928,
+            136720,
+            147456,
+            127144,
+            127440,
+            0,
+            0
+          ],
+          "name": "bcryptPrimitives.dll"
+        }
+      ]
+    },
+    {
+      "name": "kernel32.dll",
+      "sha256": "2aba8de6779aec3f8ba17ae18084f86ccc54ec08079565cdd1850d3943433207",
+      "delay_directory": [
+        643328,
+        96
+      ],
+      "descriptors": [
+        {
+          "fields": [
+            1,
+            562928,
+            752176,
+            782424,
+            643512,
+            643800,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-oobe-query-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            563280,
+            752200,
+            782336,
+            643424,
+            643816,
+            0,
+            0
+          ],
+          "name": "RPCRT4.dll"
+        }
+      ]
+    },
+    {
+      "name": "ws2_32.dll",
+      "sha256": "31fb1a909e5477725b15a18a59c4b0e18f61f32def4c519559512ad69d899237",
+      "delay_directory": [
+        319932,
+        160
+      ],
+      "descriptors": [
+        {
+          "fields": [
+            1,
+            290912,
+            337528,
+            356400,
+            320144,
+            320512,
+            0,
+            0
+          ],
+          "name": "api-ms-win-service-winsvc-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            290960,
+            337536,
+            356384,
+            320128,
+            320536,
+            0,
+            0
+          ],
+          "name": "api-ms-win-service-management-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            291008,
+            337544,
+            356352,
+            320096,
+            320584,
+            0,
+            0
+          ],
+          "name": "NSI.dll"
+        },
+        {
+          "fields": [
+            1,
+            291216,
+            337560,
+            356456,
+            320200,
+            320616,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-rtcore-ntuser-window-ext-l1-1-0.dll"
+        }
+      ]
+    },
+    {
+      "name": "kernelbase.dll",
+      "sha256": "c65e1fa404c1b4f71618871072ff49c05311629aff586d6e79b97f56a89b5dc1",
+      "delay_directory": [
+        2747120,
+        1216
+      ],
+      "descriptors": [
+        {
+          "fields": [
+            1,
+            2016720,
+            2849408,
+            2932968,
+            2748568,
+            2755472,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-advapi32-registry-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2016928,
+            2849424,
+            2933176,
+            2748776,
+            2755600,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-advapi32-registry-l1-1-1.dll"
+        },
+        {
+          "fields": [
+            1,
+            2016976,
+            2849432,
+            2933576,
+            2749176,
+            2755664,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernel32-appcompat-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2017104,
+            2849448,
+            2934408,
+            2750008,
+            2755752,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-ntuser-string-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2017216,
+            2849464,
+            2933728,
+            2749328,
+            2755776,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernel32-file-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2017408,
+            2849480,
+            2933664,
+            2749264,
+            2755816,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernel32-datetime-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2017616,
+            2849496,
+            2933768,
+            2749368,
+            2755856,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernel32-quirks-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2017664,
+            2849504,
+            2933840,
+            2749440,
+            2755896,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernel32-quirks-l1-1-1.dll"
+        },
+        {
+          "fields": [
+            1,
+            2017792,
+            2849520,
+            2933968,
+            2749568,
+            2755952,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernel32-sidebyside-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2017840,
+            2849528,
+            2934280,
+            2749880,
+            2756048,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-mrmcorer-resmanager-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2017968,
+            2849544,
+            2933384,
+            2748984,
+            2756072,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-gpapi-grouppolicy-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2018096,
+            2849560,
+            2934304,
+            2749904,
+            2756264,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-ntdsapi-activedirectoryclient-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2018160,
+            2849568,
+            2934376,
+            2749976,
+            2756304,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-ntdsapi-activedirectoryclient-l1-1-1.dll"
+        },
+        {
+          "fields": [
+            1,
+            2018496,
+            2849592,
+            2934472,
+            2750072,
+            2756368,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-shell32-shellcom-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2018544,
+            2849600,
+            2932944,
+            2748544,
+            2756384,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-advapi32-ntmarta-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2018672,
+            2849616,
+            2934432,
+            2750032,
+            2756408,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-security-capauthz-l1-1-1.dll"
+        },
+        {
+          "fields": [
+            1,
+            2019104,
+            2849640,
+            2933328,
+            2748928,
+            2756424,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-feclient-encryptedfile-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2019472,
+            2849664,
+            2934448,
+            2750048,
+            2756480,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-security-efswrt-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2019520,
+            2849672,
+            2932768,
+            2748368,
+            2756504,
+            0,
+            0
+          ],
+          "name": "api-ms-win-security-sddl-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2019568,
+            2849680,
+            2932800,
+            2748400,
+            2756536,
+            0,
+            0
+          ],
+          "name": "ext-ms-onecore-appmodel-staterepository-cache-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2179472,
+            2849728,
+            2933264,
+            2748864,
+            2756672,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-appmodel-daxcore-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2179616,
+            2849744,
+            2933704,
+            2749304,
+            2756688,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernel32-errorhandling-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2179744,
+            2849760,
+            2933864,
+            2749464,
+            2756712,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernel32-registry-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2179792,
+            2849768,
+            2934064,
+            2749664,
+            2756816,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernelbase-processthread-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2180032,
+            2849784,
+            2934256,
+            2749856,
+            2756968,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-kernelbase-processthread-l1-1-1.dll"
+        },
+        {
+          "fields": [
+            1,
+            2180080,
+            2849792,
+            2932928,
+            2748528,
+            2757032,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-advapi32-npusername-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2180352,
+            2849808,
+            2933280,
+            2748880,
+            2757048,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-appxdeploymentclient-appxdeploy-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2180976,
+            2849840,
+            2932912,
+            2748512,
+            2757064,
+            0,
+            0
+          ],
+          "name": "ext-ms-onecore-appmodel-staterepository-internal-l1-1-4.dll"
+        },
+        {
+          "fields": [
+            1,
+            2181040,
+            2849848,
+            2932896,
+            2748496,
+            2757080,
+            0,
+            0
+          ],
+          "name": "ext-ms-onecore-appmodel-staterepository-internal-l1-1-1.dll"
+        },
+        {
+          "fields": [
+            1,
+            2181104,
+            2849856,
+            2933296,
+            2748896,
+            2757096,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-appxdeploymentclient-appxdeployonecore-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2181424,
+            2849872,
+            2932736,
+            2748336,
+            2757112,
+            0,
+            0
+          ],
+          "name": "api-ms-win-core-psm-app-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2181584,
+            2849888,
+            2933312,
+            2748912,
+            2757128,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-cng-rng-l1-1-1.dll"
+        },
+        {
+          "fields": [
+            1,
+            2181696,
+            2849904,
+            2934488,
+            2750088,
+            2757144,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-winrt-device-access-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2182032,
+            2849928,
+            2933248,
+            2748848,
+            2757160,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-appmodel-appexecutionalias-l1-1-2.dll"
+        },
+        {
+          "fields": [
+            1,
+            2182096,
+            2849936,
+            2933200,
+            2748800,
+            2757176,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-appmodel-appexecutionalias-l1-1-0.dll"
+        },
+        {
+          "fields": [
+            1,
+            2182160,
+            2849944,
+            2933224,
+            2748824,
+            2757192,
+            0,
+            0
+          ],
+          "name": "ext-ms-win-appmodel-appexecutionalias-l1-1-1.dll"
+        },
+        {
+          "fields": [
+            1,
+            2182224,
+            2849952,
+            2932752,
+            2748352,
+            2757224,
+            0,
+            0
+          ],
+          "name": "api-ms-win-security-isolationpolicy-l1-2-0.dll"
+        }
+      ]
+    }
+  ],
+  "qualified": false,
+  "boundary": "Bounded raw fields from unchanged read-only file bytes; not parser acceptance or loader effects."
+}

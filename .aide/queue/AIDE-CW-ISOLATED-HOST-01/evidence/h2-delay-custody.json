@@ -1,0 +1,669 @@
+{
+  "schema": "aide.host.h2-delay-custody.v1",
+  "source_base": "830bf30db3e238fe3f8b1335f59a938ae415fe95",
+  "archive": {
+    "path": "h2-delay-evidence.zip",
+    "bytes": 624052,
+    "sha256": "455ddc6ca540399cffbcc6a860fc1888d6e9977042d0137ce8183d643b567858",
+    "members": 78
+  },
+  "members": {
+    "baseline/830bf30d/.aide/scripts/tests/test_continuous_worker_windows_pe.py": {
+      "bytes": 8373,
+      "sha256": "61eab70cd0f9b83e263e56a82946aa03ef08979dfaff393ae615b00196a7b061",
+      "original_path": "baseline/830bf30d/.aide/scripts/tests/test_continuous_worker_windows_pe.py",
+      "source": "git show exact base blob"
+    },
+    "baseline/830bf30d/core/runtime/continuous_worker/windows_pe.py": {
+      "bytes": 9648,
+      "sha256": "1240295a4fd840f34a9d5c18f9c4aa712f53c14046106cc2b2d09b77b6fe344e",
+      "original_path": "baseline/830bf30d/core/runtime/continuous_worker/windows_pe.py",
+      "source": "git show exact base blob"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md": {
+      "bytes": 23913,
+      "sha256": "c17b741273f3385ca341580953dd5f69b6ed663848f0f6af404e11050ecbecf9",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/CUSTODY.md": {
+      "bytes": 5555,
+      "sha256": "daac593146c2377a82238a04a4b84685cead180b9f71c9f4f8d97d1b2aa9152d",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/CUSTODY.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/changed-files.md": {
+      "bytes": 2539,
+      "sha256": "b9461034f55e407223b83b2cfb666a4a8ec3e02125d3402c316ea2123b75dba7",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/changed-files.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-aide-validate.txt": {
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-aide-validate.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-before-tests.json": {
+      "bytes": 1083,
+      "sha256": "c2b2a5bcdcbb4424bcf3ba0c8398d5a8e958220ad540ad667a12a7275aa9e830",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-before-tests.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-before-tests.txt": {
+      "bytes": 4900,
+      "sha256": "13d4863772bc2497de9f8d7f1b5a9fa97ca3538e6866e03d233a2ea6e9eb3ff2",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-before-tests.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-git-detect.txt": {
+      "bytes": 560,
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-git-detect.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-git-plan.txt": {
+      "bytes": 689,
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-git-plan.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-git-policy.txt": {
+      "bytes": 5553,
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-git-policy.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-helper-checks.json": {
+      "bytes": 3625,
+      "sha256": "e761538bc28a90333f08565831b483604d37632cd58e19d8446fa48275bce4f9",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-helper-checks.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-message-check.txt": {
+      "bytes": 2482,
+      "sha256": "2e35e2a1873136b17833490cb7cc610bfd45a0bcc56e5992b15fa5ab920a3911",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-message-check.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-message.txt": {
+      "bytes": 1443,
+      "sha256": "4f3ba086ec67d8e114d6806af562999d3b5fc1ff036169c4ce1638bfbfe2d78d",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-message.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-task-inspect.txt": {
+      "bytes": 382,
+      "sha256": "8c7232233526f44077a0335abe8bd70c8d50f4f7d6237e1b632e6aa64cd03bfc",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-task-inspect.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-task-noop.txt": {
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-task-noop.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-task-recover.txt": {
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-task-recover.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-final-tests.json": {
+      "bytes": 3027,
+      "sha256": "29548b5d53a615b898bd798ef4ab4408b29762cb31edfbfd0668aa72b15898ef",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-final-tests.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-final-tests.txt": {
+      "bytes": 20425,
+      "sha256": "0913bbaf0ab53fe5addbdf0e772b9776b1afac6951640e951f50c2b51add7bef",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-final-tests.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-first-tests.json": {
+      "bytes": 707,
+      "sha256": "1f8b6cb33021ff4cf07245fe24b60e77773b5ccd6aa9002f6babf463316017aa",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-first-tests.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-first-tests.txt": {
+      "bytes": 2574,
+      "sha256": "3376c06dde21af764055a13146cd5500dc18e2b8d568143dc5fbf3ca42eb2a3a",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-first-tests.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.json": {
+      "bytes": 4472,
+      "sha256": "87f21e1cb94b9a88341d296607ab1c73532c7f7a04977a08767e43551c869ff8",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.json.before": {
+      "bytes": 3639,
+      "sha256": "e22ac07d236957c4fb552125a392a8747dad23c97f52812200c3ee4a9af1b7ec",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.json.before",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.md": {
+      "bytes": 1300,
+      "sha256": "38271bff7105ea51818b7ded2029ff892eaf15d44b9a93ea4594e78afb3b318f",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.md.before": {
+      "bytes": 1248,
+      "sha256": "ab2bf4d153d71f0c1455765df8e2f72165c517e0735ac887040dd01e4dcd7d5a",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/aide-dev-main-plan.md.before",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.json": {
+      "bytes": 2736,
+      "sha256": "c1981b9c9a0934be6421813f6bd0d31d7ac1df650cafcf37f2c70898d162b1c3",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.json.before": {
+      "bytes": 2066,
+      "sha256": "5f2dd61e7338200b579e890117e2c3e1379db1f3b44b0c411fbcaa4cdf1ee893",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.json.before",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.md": {
+      "bytes": 987,
+      "sha256": "e0a561bcac811d71e8285ec90b10c59b8ec8ff96d1dfaffc85f5b861ea710bb0",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.md.before": {
+      "bytes": 958,
+      "sha256": "791bff9184aeaa5ad6bec475a7ef4aec0d7dcbfbc775704bf71a423f9c6fb5a4",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/latest-helper-plan.md.before",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.json": {
+      "bytes": 1037,
+      "sha256": "09c074f3d15b13887d29ca455db9bb910f0e723338010344864dbbb1a09f28fd",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.json.before": {
+      "bytes": 788,
+      "sha256": "ca236c475ba5db376a176d5262741243de2288df736ea55c0ff01b1bf5a5e7ea",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.json.before",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.md": {
+      "bytes": 748,
+      "sha256": "8fe2e0972dcca8e5176cb102a3d991a4b756b0c4ed3499badf0816d1a7f5333d",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.md.before": {
+      "bytes": 725,
+      "sha256": "ff505331b170245262dd0cd79f160278fff0d9bce3ba4d120589e4e0d794f0ac",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-helper-output/workflow-detection.md.before",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-execution.json": {
+      "bytes": 5790,
+      "sha256": "a8d2dd28897bce05bd2e79d5eabb86f2bce2737642bfc3fe7405ff8699fbff9b",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-execution.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-execution.py": {
+      "bytes": 3676,
+      "sha256": "6cb137217354c73d79a756b32b0523f4f99cf9163383b71ed915d9833380b949",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-execution.py",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-final-review.json": {
+      "bytes": 7537,
+      "sha256": "58d58cbaf777e7dae16b826b012b6bbc19bef132100bca5f903f1747acf0e06e",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-final-review.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-final-review.md": {
+      "bytes": 1810,
+      "sha256": "26a77342cb5a9d0cc1fcf203e2ea47b98cf0d9bfee7c5a7a074ba59212abc197",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-final-review.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-finalize.py": {
+      "bytes": 6484,
+      "sha256": "6986c59e158e46f6c59a0ed71ea0045b3f990e74b5e4cbb4745a31bf31ae4151",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-finalize.py",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-probes.json": {
+      "bytes": 4391,
+      "sha256": "ac6802f06223648d7c0c42a0c5343c8b6913aa9c95cd8a43989dd767d66d0402",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-probes.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-probes.py": {
+      "bytes": 4785,
+      "sha256": "14df62d01b5b2398362adf207ea941303ad8f6664c19c84023492267e58673a2",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-probes.py",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-tests.stderr.txt": {
+      "bytes": 20425,
+      "sha256": "be289f55e9473ee54e40afa04b5e9a300eb54fdc070258f976fcfdf22b2dba2f",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-tests.stderr.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-tests.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-tests.stdout.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-admission.json": {
+      "bytes": 1713,
+      "sha256": "3d165651faaca8870995b7edd3d1992d4b9c27b86456ae6df7e67e6cc44d7072",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-admission.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-checks.json": {
+      "bytes": 644,
+      "sha256": "2c0ee14db104b7de447ef612e04a383a7584ecb733ee53dc736c87b8eba8d4a0",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-checks.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-inspect.txt": {
+      "bytes": 382,
+      "sha256": "ae7d3640b74c95e3e59283fea747d3f8f15149d90c706f14fd4be0e040a27b60",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-inspect.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-manifest.first.json": {
+      "bytes": 3005,
+      "sha256": "fa220331770b2e36441462baec532301d817dbec3a1873e11bbf559e42d39002",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-manifest.first.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-manifest.json": {
+      "bytes": 2979,
+      "sha256": "9855df4ece8529f45d76c0bb2802b90853484d083501992ff5c43862ae5e5af0",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-manifest.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-noop-check.txt": {
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-noop-check.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-plan.md": {
+      "bytes": 1965,
+      "sha256": "01ce838f4c77a01a863077ea2f9345bf68d1503332fec13190883b608ad23665",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-plan.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-recover.txt": {
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-recover.txt",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-review-notes.md": {
+      "bytes": 2453,
+      "sha256": "fce9ce83dd929e5b6f14cd602d09d37e01361a08561812cefad202d19a4a12da",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-review-notes.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source.patch": {
+      "bytes": 10828,
+      "sha256": "5e84882926d4ad9717c2e582c6dac3b3ae639343233c481e1c5e860f9e7d7f5a",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source.patch",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json": {
+      "bytes": 84668,
+      "sha256": "a9fef62f0e1431c12b4743cbc42f2039790625dd6ea8e769991512467b6ccce3",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-first.json": {
+      "bytes": 76096,
+      "sha256": "db808aa36f83dfb5e17da4ca11df58901e8319cb8c38567483e8ec7fedc7f4b5",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-first.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-commit-receipt.json": {
+      "bytes": 8158,
+      "sha256": "662bee0ba22d73117ec925bc75589a75b18a51151fa4fae25703ac5c3d94decd",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-commit-receipt.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-delay-sdk-addendum.json": {
+      "bytes": 1172,
+      "sha256": "ddf0ca15c5f8813e92a098bf3460fb98569e762ba71c8b983896eb291f1568b4",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-delay-sdk-addendum.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-system-delay-readonly-details.json": {
+      "bytes": 16112,
+      "sha256": "17d467d8a3f0d08d54ab8be5184aeec61dcbc00b318e8c871413b6b97ff1ba40",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-system-delay-readonly-details.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-system-pe-readonly-inspection.json": {
+      "bytes": 8570,
+      "sha256": "1814c198d6d5c4d920479157ce61835960f78d5cbda271541e6f3906afb7dd71",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-system-pe-readonly-inspection.json",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/validation.md": {
+      "bytes": 3507,
+      "sha256": "bfabb6b088a561e4754931dd8cd9a9ac258d77459c27d5a2f4416ba2114e975b",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/validation.md",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/status.yaml": {
+      "bytes": 572,
+      "sha256": "2ab3b16f0c29c6e78a8c3f986b1683034d6d240870404a03319ca5318ed3b1ad",
+      "original_path": ".aide/queue/AIDE-CW-ISOLATED-HOST-01/status.yaml",
+      "source": "working file original bytes"
+    },
+    "files/.aide/queue/index.yaml": {
+      "bytes": 387345,
+      "sha256": "ddf3bd530a875f707210dcbea722a0ec9dccc80f91dade311ae25f643c81dd97",
+      "original_path": ".aide/queue/index.yaml",
+      "source": "working file original bytes"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_host.py": {
+      "bytes": 9038,
+      "sha256": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854",
+      "original_path": ".aide/scripts/tests/test_continuous_worker_host.py",
+      "source": "working file original bytes"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_python_contract.py": {
+      "bytes": 11915,
+      "sha256": "7759aa897847cfbcd501b5b6bd41d7d76cad82c60a05f50b01d5f7bb3df989c3",
+      "original_path": ".aide/scripts/tests/test_continuous_worker_python_contract.py",
+      "source": "working file original bytes"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_python_image.py": {
+      "bytes": 7489,
+      "sha256": "92839124eaceec42a6ca4b72e790513f72f06cd519f19a98143f7d35b9d8398e",
+      "original_path": ".aide/scripts/tests/test_continuous_worker_python_image.py",
+      "source": "working file original bytes"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_windows_image.py": {
+      "bytes": 51015,
+      "sha256": "1da207d0b86bf62ca79f07d0b22e04c6821520d613198d19854d50a51dae1c37",
+      "original_path": ".aide/scripts/tests/test_continuous_worker_windows_image.py",
+      "source": "working file original bytes"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_windows_pe.py": {
+      "bytes": 13450,
+      "sha256": "fe77377eab4487862882a2878dbd0ba50daa50f7f14e388fa7d2a947cc6fcbe7",
+      "original_path": ".aide/scripts/tests/test_continuous_worker_windows_pe.py",
+      "source": "working file original bytes"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_windows_security.py": {
+      "bytes": 38635,
+      "sha256": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725",
+      "original_path": ".aide/scripts/tests/test_continuous_worker_windows_security.py",
+      "source": "working file original bytes"
+    },
+    "files/DOCUMENTATION.md": {
+      "bytes": 67840,
+      "sha256": "cbbbe93540100fab402ecee0ba0a69a0d571c2881a17d4704df29bcce26b2684",
+      "original_path": "DOCUMENTATION.md",
+      "source": "working file original bytes"
+    },
+    "files/IMPLEMENT.md": {
+      "bytes": 496578,
+      "sha256": "1758f41d17482e7c3a25843723e645376e8c256808356c8c943787ed7f5de3b7",
+      "original_path": "IMPLEMENT.md",
+      "source": "working file original bytes"
+    },
+    "files/PLANS.md": {
+      "bytes": 459445,
+      "sha256": "61f64d238caee6241fa745ddd3d233c55c0cbf287dadf960761a903c80409cb2",
+      "original_path": "PLANS.md",
+      "source": "working file original bytes"
+    },
+    "files/core/runtime/continuous_worker/state.py": {
+      "bytes": 9225,
+      "sha256": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+      "original_path": "core/runtime/continuous_worker/state.py",
+      "source": "working file original bytes"
+    },
+    "files/core/runtime/continuous_worker/windows_image.py": {
+      "bytes": 23638,
+      "sha256": "2cac4dd7336b24dba47bc7cd40e510902b23fc99e64b56b349a1cfc0e3734ab8",
+      "original_path": "core/runtime/continuous_worker/windows_image.py",
+      "source": "working file original bytes"
+    },
+    "files/core/runtime/continuous_worker/windows_job.py": {
+      "bytes": 13864,
+      "sha256": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+      "original_path": "core/runtime/continuous_worker/windows_job.py",
+      "source": "working file original bytes"
+    },
+    "files/core/runtime/continuous_worker/windows_pe.py": {
+      "bytes": 12296,
+      "sha256": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d",
+      "original_path": "core/runtime/continuous_worker/windows_pe.py",
+      "source": "working file original bytes"
+    },
+    "files/core/runtime/continuous_worker/windows_python_contract.py": {
+      "bytes": 10761,
+      "sha256": "98d4a1c95337043477bad27611f4bac5cc2b574aaea37d94dc344543ff689411",
+      "original_path": "core/runtime/continuous_worker/windows_python_contract.py",
+      "source": "working file original bytes"
+    },
+    "files/core/runtime/continuous_worker/windows_python_image.py": {
+      "bytes": 8004,
+      "sha256": "b20258182d5610384e8be97e502012ce9760d9b977bd824f5f09a394d3b026c8",
+      "original_path": "core/runtime/continuous_worker/windows_python_image.py",
+      "source": "working file original bytes"
+    },
+    "files/core/runtime/continuous_worker/windows_security.py": {
+      "bytes": 14041,
+      "sha256": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+      "original_path": "core/runtime/continuous_worker/windows_security.py",
+      "source": "working file original bytes"
+    },
+    "files/core/runtime/continuous_worker/windows_security_objects.py": {
+      "bytes": 16361,
+      "sha256": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847",
+      "original_path": "core/runtime/continuous_worker/windows_security_objects.py",
+      "source": "working file original bytes"
+    }
+  },
+  "selected_file_projections": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md": {
+      "bytes": 23913,
+      "raw_sha256": "c17b741273f3385ca341580953dd5f69b6ed663848f0f6af404e11050ecbecf9",
+      "git_bytes": 23913,
+      "git_sha256": "c17b741273f3385ca341580953dd5f69b6ed663848f0f6af404e11050ecbecf9",
+      "git_blob_oid": "68f851bc21866f6af9eff63d885a4c78ae4f3ecf",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/CUSTODY.md": {
+      "bytes": 5555,
+      "raw_sha256": "daac593146c2377a82238a04a4b84685cead180b9f71c9f4f8d97d1b2aa9152d",
+      "git_bytes": 5555,
+      "git_sha256": "daac593146c2377a82238a04a4b84685cead180b9f71c9f4f8d97d1b2aa9152d",
+      "git_blob_oid": "e74693573193e1ccd33892654579e4a5c9282993",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/changed-files.md": {
+      "bytes": 2539,
+      "raw_sha256": "b9461034f55e407223b83b2cfb666a4a8ec3e02125d3402c316ea2123b75dba7",
+      "git_bytes": 2539,
+      "git_sha256": "b9461034f55e407223b83b2cfb666a4a8ec3e02125d3402c316ea2123b75dba7",
+      "git_blob_oid": "623f4f6a7510795d1be9ae2e75906a8faa3edb46",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-helper-checks.json": {
+      "bytes": 3625,
+      "raw_sha256": "e761538bc28a90333f08565831b483604d37632cd58e19d8446fa48275bce4f9",
+      "git_bytes": 3625,
+      "git_sha256": "e761538bc28a90333f08565831b483604d37632cd58e19d8446fa48275bce4f9",
+      "git_blob_oid": "64694b650e0e6219804ffedfd932f14a1f7d206a",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-checkpoint-message.txt": {
+      "bytes": 1443,
+      "raw_sha256": "4f3ba086ec67d8e114d6806af562999d3b5fc1ff036169c4ce1638bfbfe2d78d",
+      "git_bytes": 1443,
+      "git_sha256": "4f3ba086ec67d8e114d6806af562999d3b5fc1ff036169c4ce1638bfbfe2d78d",
+      "git_blob_oid": "553f28af41dea7011439206c4a4e0b07f988aeec",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-evidence.zip": {
+      "bytes": 624052,
+      "raw_sha256": "455ddc6ca540399cffbcc6a860fc1888d6e9977042d0137ce8183d643b567858",
+      "git_bytes": 624052,
+      "git_sha256": "455ddc6ca540399cffbcc6a860fc1888d6e9977042d0137ce8183d643b567858",
+      "git_blob_oid": "b1b27e82d36c88c58c9ff24be00800e670618ca8",
+      "normalization": "binary unchanged"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-final-tests.json": {
+      "bytes": 3027,
+      "raw_sha256": "29548b5d53a615b898bd798ef4ab4408b29762cb31edfbfd0668aa72b15898ef",
+      "git_bytes": 3027,
+      "git_sha256": "29548b5d53a615b898bd798ef4ab4408b29762cb31edfbfd0668aa72b15898ef",
+      "git_blob_oid": "0f5c19c9fdb73f035586cf1cca3f152e4d77deea",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-final-review.json": {
+      "bytes": 7537,
+      "raw_sha256": "58d58cbaf777e7dae16b826b012b6bbc19bef132100bca5f903f1747acf0e06e",
+      "git_bytes": 7404,
+      "git_sha256": "569109b9ea1d50478786326b43b74babd835dd80e8455b1fa2e6a6ac2950d67f",
+      "git_blob_oid": "ec1afd0c7538979bf6bcf59f8b9119f9a2f3b82f",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-independent-final-review.md": {
+      "bytes": 1810,
+      "raw_sha256": "26a77342cb5a9d0cc1fcf203e2ea47b98cf0d9bfee7c5a7a074ba59212abc197",
+      "git_bytes": 1799,
+      "git_sha256": "8a84a1ff0854a559ee3f998d9d773bfb79e7aeb52efbbb31e13e7da9fe89afff",
+      "git_blob_oid": "490d014884c7583e4fdd42fe30f097cae811967d",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-admission.json": {
+      "bytes": 1713,
+      "raw_sha256": "3d165651faaca8870995b7edd3d1992d4b9c27b86456ae6df7e67e6cc44d7072",
+      "git_bytes": 1713,
+      "git_sha256": "3d165651faaca8870995b7edd3d1992d4b9c27b86456ae6df7e67e6cc44d7072",
+      "git_blob_oid": "a5f79e05556529d44f74c0afd3494499748a5a6f",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-checks.json": {
+      "bytes": 644,
+      "raw_sha256": "2c0ee14db104b7de447ef612e04a383a7584ecb733ee53dc736c87b8eba8d4a0",
+      "git_bytes": 644,
+      "git_sha256": "2c0ee14db104b7de447ef612e04a383a7584ecb733ee53dc736c87b8eba8d4a0",
+      "git_blob_oid": "55064fe3c4a1916b6e9f81148df618156f6d3c05",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-manifest.json": {
+      "bytes": 2979,
+      "raw_sha256": "9855df4ece8529f45d76c0bb2802b90853484d083501992ff5c43862ae5e5af0",
+      "git_bytes": 2979,
+      "git_sha256": "9855df4ece8529f45d76c0bb2802b90853484d083501992ff5c43862ae5e5af0",
+      "git_blob_oid": "4138151d8272503cc9903feb8c46e7e8b0c67170",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-plan.md": {
+      "bytes": 1965,
+      "raw_sha256": "01ce838f4c77a01a863077ea2f9345bf68d1503332fec13190883b608ad23665",
+      "git_bytes": 1965,
+      "git_sha256": "01ce838f4c77a01a863077ea2f9345bf68d1503332fec13190883b608ad23665",
+      "git_blob_oid": "726ef9a0b396ecc4d28acd72b46296d516950d51",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-source-review-notes.md": {
+      "bytes": 2453,
+      "raw_sha256": "fce9ce83dd929e5b6f14cd602d09d37e01361a08561812cefad202d19a4a12da",
+      "git_bytes": 2453,
+      "git_sha256": "fce9ce83dd929e5b6f14cd602d09d37e01361a08561812cefad202d19a4a12da",
+      "git_blob_oid": "cc91b1313de5f4164fd193bba86b803f8a4bb7c0",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json": {
+      "bytes": 84668,
+      "raw_sha256": "a9fef62f0e1431c12b4743cbc42f2039790625dd6ea8e769991512467b6ccce3",
+      "git_bytes": 84668,
+      "git_sha256": "a9fef62f0e1431c12b4743cbc42f2039790625dd6ea8e769991512467b6ccce3",
+      "git_blob_oid": "70227f5bfa455de339023e1e32269f8c6a613cc2",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/validation.md": {
+      "bytes": 3507,
+      "raw_sha256": "bfabb6b088a561e4754931dd8cd9a9ac258d77459c27d5a2f4416ba2114e975b",
+      "git_bytes": 3507,
+      "git_sha256": "bfabb6b088a561e4754931dd8cd9a9ac258d77459c27d5a2f4416ba2114e975b",
+      "git_blob_oid": "c6d9b8bd61ebd7d815d3cab5a8a6c805345cc2fe",
+      "normalization": "LF text projection"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/status.yaml": {
+      "bytes": 572,
+      "raw_sha256": "2ab3b16f0c29c6e78a8c3f986b1683034d6d240870404a03319ca5318ed3b1ad",
+      "git_bytes": 572,
+      "git_sha256": "2ab3b16f0c29c6e78a8c3f986b1683034d6d240870404a03319ca5318ed3b1ad",
+      "git_blob_oid": "e9131d431b3c57f328c14583cb0dc1c78cf60bbe",
+      "normalization": "LF text projection"
+    },
+    ".aide/scripts/tests/test_continuous_worker_windows_pe.py": {
+      "bytes": 13450,
+      "raw_sha256": "fe77377eab4487862882a2878dbd0ba50daa50f7f14e388fa7d2a947cc6fcbe7",
+      "git_bytes": 13450,
+      "git_sha256": "fe77377eab4487862882a2878dbd0ba50daa50f7f14e388fa7d2a947cc6fcbe7",
+      "git_blob_oid": "e4a75ba0af0df400c4cf0f81aa291b1b5718aef9",
+      "normalization": "LF text projection"
+    },
+    "DOCUMENTATION.md": {
+      "bytes": 67840,
+      "raw_sha256": "cbbbe93540100fab402ecee0ba0a69a0d571c2881a17d4704df29bcce26b2684",
+      "git_bytes": 67840,
+      "git_sha256": "cbbbe93540100fab402ecee0ba0a69a0d571c2881a17d4704df29bcce26b2684",
+      "git_blob_oid": "6dd14e9b3215057f541978928086f71cbf63c675",
+      "normalization": "LF text projection"
+    },
+    "IMPLEMENT.md": {
+      "bytes": 496578,
+      "raw_sha256": "1758f41d17482e7c3a25843723e645376e8c256808356c8c943787ed7f5de3b7",
+      "git_bytes": 496578,
+      "git_sha256": "1758f41d17482e7c3a25843723e645376e8c256808356c8c943787ed7f5de3b7",
+      "git_blob_oid": "1665002213049902bdfc9389b065068f93fc0e95",
+      "normalization": "LF text projection"
+    },
+    "PLANS.md": {
+      "bytes": 459445,
+      "raw_sha256": "61f64d238caee6241fa745ddd3d233c55c0cbf287dadf960761a903c80409cb2",
+      "git_bytes": 459445,
+      "git_sha256": "61f64d238caee6241fa745ddd3d233c55c0cbf287dadf960761a903c80409cb2",
+      "git_blob_oid": "b8cf72e3ee91f55a2ce91f5f3080be74006b87fb",
+      "normalization": "LF text projection"
+    },
+    "core/runtime/continuous_worker/windows_pe.py": {
+      "bytes": 12296,
+      "raw_sha256": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d",
+      "git_bytes": 12296,
+      "git_sha256": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d",
+      "git_blob_oid": "d8569c39ba13790ed46fbd309c1b40903cf5f043",
+      "normalization": "LF text projection"
+    }
+  },
+  "portable_export": {
+    "selected_count": 817,
+    "source_and_test_excluded": true
+  },
+  "secret_scan_error_count": 0,
+  "boundaries": [
+    "Original raw byte hashes apply to named archive members; selected Git text projections may normalize CRLF to LF.",
+    "The historical working index snapshot is excluded from the canonical commit.",
+    "Current source and ordinary tests only; no actual image/tool grants, PE loading or isolated Python effect.",
+    "Current source manifest supersedes preserved first manifest; original compatibility failures remain failures."
+  ]
+}

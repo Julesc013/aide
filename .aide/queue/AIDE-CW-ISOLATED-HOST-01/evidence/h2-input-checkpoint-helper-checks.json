@@ -1,0 +1,167 @@
+{
+  "schema": "aide.host.input-checkpoint-helpers.v1",
+  "checks": [
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5400461999233812,
+      "log": "h2-input-checkpoint-inspect.txt",
+      "bytes": 382,
+      "sha256": "90bb8b3b652bfa8fab0d372afd6d4729264621fce85d64d6a7a47ad490af462e"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "seconds": 0.6019109999760985,
+      "log": "h2-input-checkpoint-noop.txt",
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "seconds": 0.540131000103429,
+      "log": "h2-input-checkpoint-recover.txt",
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "policy"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5227123000659049,
+      "log": "h2-input-checkpoint-git-policy.txt",
+      "bytes": 5553,
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "detect"
+      ],
+      "exit_code": 0,
+      "seconds": 4.565582500072196,
+      "log": "h2-input-checkpoint-git-detect.txt",
+      "bytes": 560,
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "exit_code": 0,
+      "seconds": 4.711529099848121,
+      "log": "h2-input-checkpoint-git-plan.txt",
+      "bytes": 689,
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        ".aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-message.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5941516000311822,
+      "log": "h2-input-checkpoint-message-check-initial.txt",
+      "bytes": 2483,
+      "sha256": "a6b0c694736eef77d856317830bf61a11b6de9f078e2f11981e7d74bd5265fdc"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        ".aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-message.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5347930998541415,
+      "log": "h2-input-checkpoint-message-recheck.txt",
+      "bytes": 2483,
+      "sha256": "a6b0c694736eef77d856317830bf61a11b6de9f078e2f11981e7d74bd5265fdc"
+    }
+  ],
+  "reports": [
+    {
+      "path": ".aide/git/workflow-detection.json",
+      "original_sha256": "ca236c475ba5db376a176d5262741243de2288df736ea55c0ff01b1bf5a5e7ea",
+      "generated_sha256": "895309cae836d23f4fab235c32f7815f360896c7a06db45d142ebab41706de9e",
+      "restored": true
+    },
+    {
+      "path": ".aide/git/workflow-detection.md",
+      "original_sha256": "ff505331b170245262dd0cd79f160278fff0d9bce3ba4d120589e4e0d794f0ac",
+      "generated_sha256": "cc65bd06ccf5ba47f49e7c4f6666f8491be810a2f12a4532b74d9c5fdaadce0b",
+      "restored": true
+    },
+    {
+      "path": ".aide/git/latest-helper-plan.json",
+      "original_sha256": "5f2dd61e7338200b579e890117e2c3e1379db1f3b44b0c411fbcaa4cdf1ee893",
+      "generated_sha256": "51b78ddc4eb5e850a8840c69c51960c3ed23d1aa9a225afb571d4795a3286238",
+      "restored": true
+    },
+    {
+      "path": ".aide/git/latest-helper-plan.md",
+      "original_sha256": "791bff9184aeaa5ad6bec475a7ef4aec0d7dcbfbc775704bf71a423f9c6fb5a4",
+      "generated_sha256": "b531de80c3b922981b9ab088c3f33ba987223699f566d30bb56f59567f5dae05",
+      "restored": true
+    },
+    {
+      "path": ".aide/git/aide-dev-main-plan.json",
+      "original_sha256": "e22ac07d236957c4fb552125a392a8747dad23c97f52812200c3ee4a9af1b7ec",
+      "generated_sha256": "a942b826a196f9a522044c2591321261ea88f767bf2649d04c082f3a551df24b",
+      "restored": true
+    },
+    {
+      "path": ".aide/git/aide-dev-main-plan.md",
+      "original_sha256": "ab2bf4d153d71f0c1455765df8e2f72165c517e0735ac887040dd01e4dcd7d5a",
+      "generated_sha256": "8b1199fe875e45fcaa441801a9fbbe65bec8661096366ff4f4c7a5f7274d5f2a",
+      "restored": true
+    }
+  ],
+  "authored_message_sha256": "aad13cb776805d8052fb7d0be4e3fe79f7e51e42aade749915b3e75e2fd6bb83",
+  "message_recovery": "Initial helper log used the message pathname after checking it. Preserve that actual log separately, restore exact authored message and pass a second check with a distinct output filename. No staging/commit had occurred."
+}

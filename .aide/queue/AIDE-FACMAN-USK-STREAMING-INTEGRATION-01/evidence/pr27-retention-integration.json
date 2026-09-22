@@ -176,6 +176,20 @@
   },
   "historical_receipt_scope": "retention-remediation-receipt.json preserves the pre-commit source/test observation; the commit and independent-review records here supersede its pending delivery flags.",
   "evidence_sha256": {
+    "pr27-retention-first-check-observation.json": "c618d8826ab4e70ee05715ebc914a9cea5cc9c53f79ad76c962fbbd87d5c2c51",
+    "primary-remediation-source-verification.json": "4d32857bd99a903a0fc40eacd929e070261a56c43632634ea0e8eb0bf9b7c098",
+    "primary-retention-commit-receipt.json": "7c8563e5d2481ae77f42dd25e28451734c5e341326a228bbfaf5342f46c7d199",
+    "retention-remediation-receipt.json": "54572ee2cb15bfcade8ef1693617f8e831e7e105f4f55f46a0eb6ae234087d15",
+    "pr27-retention-evidence.zip": "ba21935b468b91b1eafe6b7f44676a1761c3ffe690ef7b9f1ad7790c26f03fb0"
+  },
+  "remaining": [
+    "Fresh full hosted qualification for this candidate",
+    "Normal reviewed PR27 integration after provider hygiene promotion",
+    "Propagate correction to PR28 and independently qualify its new head",
+    "Object-bound cleanup and restart leases for retained streaming staging"
+  ],
+  "authority": "Current user authorized scoped engineering, tests, commits, normal task push and PR refresh; no protected merge, force push, release publication or product state mutation performed.",
+  "historical_raw_evidence_sha256": {
     "ctest-x64-retention-clean.log": "39bbbd08b44ba1c6e34527b1e79975c31adce5734f239c6b4866f10cbd8e884f",
     "pr27-retention-first-check-observation.json": "b27b8f6be7d67c79e965e05c18238bcdb30e18d218388f0048213e4472a01947",
     "primary-python-retention.log": "5f992a3042c0f5a2f5fd0080cdfd54a4436d82af2f94f63465b5c7417ecab862",
@@ -184,11 +198,26 @@
     "primary-strict-retention.log": "64d4434a322d0643baa47881d5c4a63de988a2651309898b3623f28d9aa1b61b",
     "retention-remediation-receipt.json": "54572ee2cb15bfcade8ef1693617f8e831e7e105f4f55f46a0eb6ae234087d15"
   },
-  "remaining": [
-    "Fresh full hosted qualification for this candidate",
-    "Normal reviewed PR27 integration after provider hygiene promotion",
-    "Propagate correction to PR28 and independently qualify its new head",
-    "Object-bound cleanup and restart leases for retained streaming staging"
-  ],
-  "authority": "Current user authorized scoped engineering, tests, commits, normal task push and PR refresh; no protected merge, force push, release publication or product state mutation performed."
+  "raw_evidence_archive": {
+    "path": "pr27-retention-evidence.zip",
+    "sha256": "ba21935b468b91b1eafe6b7f44676a1761c3ffe690ef7b9f1ad7790c26f03fb0",
+    "original_receipt_member": "pr27-retention-integration.original.json",
+    "original_receipt_sha256": "ba7daff7cd82c40a1ab68b8c1d192b530f379ed1c12ed9b5db8e978bec6ac9e1",
+    "member_sha256": {
+      "ctest-x64-retention-clean.log": "39bbbd08b44ba1c6e34527b1e79975c31adce5734f239c6b4866f10cbd8e884f",
+      "pr27-retention-first-check-observation.json": "b27b8f6be7d67c79e965e05c18238bcdb30e18d218388f0048213e4472a01947",
+      "primary-python-retention.log": "5f992a3042c0f5a2f5fd0080cdfd54a4436d82af2f94f63465b5c7417ecab862",
+      "primary-remediation-source-verification.json": "868df8d26aaf4cf2c0db5afaad2dcca94e878b86388d3951ab412d38748b840e",
+      "primary-retention-commit-receipt.json": "5b88b82a051f1ed90e967e44ecbfc44fa941541289bff9f5f1f6294535801473",
+      "primary-strict-retention.log": "64d4434a322d0643baa47881d5c4a63de988a2651309898b3623f28d9aa1b61b",
+      "retention-remediation-receipt.json": "54572ee2cb15bfcade8ef1693617f8e831e7e105f4f55f46a0eb6ae234087d15",
+      "pr27-retention-integration.original.json": "ba7daff7cd82c40a1ab68b8c1d192b530f379ed1c12ed9b5db8e978bec6ac9e1"
+    }
+  },
+  "custody_correction": {
+    "observed_at": "2026-09-07 AEST",
+    "reason": "Git normalized copied JSON line endings and the repository ignores .log files. Preserve all original evidence bytes in the archive; current sibling JSON hashes identify readable normalized projections. Log hashes refer to archive members.",
+    "reconstruction_proof": "Each restored original JSON differs only by LF-to-CRLF conversion and exactly matches the pre-integration recorded SHA256; all original log byte hashes match without conversion.",
+    "source_or_test_execution_changed": false
+  }
 }

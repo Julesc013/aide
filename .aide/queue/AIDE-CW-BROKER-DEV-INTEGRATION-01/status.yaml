@@ -1,0 +1,27 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CW-BROKER-DEV-INTEGRATION-01
+status: passed
+classification: owner_prioritized_exact_integration
+planning_state: integrated_to_dev
+result: PASS
+updated_at: 2026-09-22
+current_slice: complete
+next_slice: AIDE-CW-INTEGRATION-BROKER-01
+notes:
+  - Source 75da33108995ba63fc7148c6b4137349d7013798 is published and clean.
+  - Target dev 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab is published and clean.
+  - Neither parent contains the other; merge base is bfb86c12b9e6d2970024d29c57ba629994ec43cc.
+  - Synthetic merge reports 14 coordination/documentation conflicts and no runtime-source conflict.
+  - The exact two-parent merge is in progress and all 14 conflicts are resolved without conflict markers.
+  - Current dev configuration-neutrality, export, release, importer, and associated test paths are unchanged.
+  - Combined runtime validation passed 312 tests with 311 passes and one explicit Windows symlink privilege skip.
+  - Portable import/update validation passed 25 of 25 tests and release-bundle validation passed 10 of 10 tests.
+  - Canonical doctor and validate commands both passed on the combined tree.
+  - Two-parent candidate 091382e81f08b6e7363380cd3190c7483234d9ab is published and preserves source 75da3310 as its second parent.
+  - The candidate commit passes current message policy; range check retains disclosed historical message failures without rewriting them.
+  - The task-to-dev landing helper reports ready_dry_run for an exact no-ff merge and dev push.
+  - Dev landing bed5a57aed4f7686de4b9137dbb3afc8e7995436 is published and contains source 75da33108995ba63fc7148c6b4137349d7013798.
+  - Post-commit validation correctly reports stale portable-pack provenance at source 31bd91bd; refresh is required from a clean post-landing source commit.
+  - AIDE-BROKER-DEV-PACK-REFRESH-01 regenerated and qualified the derived artifacts and landed through dev commit 088b20ba76ae09b19277b4aed7dff7d1d324cdbe.
+  - Final pack provenance, release validation, release draft checksums, canonical validate, and doctor pass.
+  - Full broker completion and activation remain false after source integration.
