@@ -3430,3 +3430,13 @@ items:
     prompt: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/prompt.md
     evidence: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/evidence
     description: Regenerate and validate local portable export and release artifacts from clean post-integration dev without publishing.
+  - id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
+    status: running
+    planning_state: implementation_active
+    result: PENDING
+    title: Add exact historical commit-message dispositions
+    task: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/task.yaml
+    exec_plan: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/prompt.md
+    evidence: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence
+    description: Adds a fail-closed exact-object compatibility mechanism for separately reviewed immutable historical commit-message failures without weakening strict new-commit checks.

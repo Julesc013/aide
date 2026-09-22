@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
+status: running
+classification: admitted_by_owner_split
+planning_state: implementation_active
+result: PENDING
+updated_at: 2026-09-22
+current_slice: red_tests_and_fail_closed_registry
+next_slice: implement_exact_disposition_validation
+notes:
+  - Mechanism implementation is authorized; no disposition is self-approved.
+  - Raw historical failures remain visible and immutable.
+  - Main, tag, upload, and publication effects are outside this task.
+
