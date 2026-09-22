@@ -54,8 +54,8 @@ The exact allowlist is in `task.yaml`. The implementation owner is
 - [x] Run adjacent distribution, release, and repository validation.
 - [x] Regenerate and qualify exact delivered bytes.
 - [x] Record implementation and qualification evidence with explicit paths.
-- [ ] Publish the exact qualified task candidate.
-- [ ] Prepare and validate exact task-to-`dev` integration.
+- [x] Publish the exact qualified task candidate.
+- [x] Prepare, validate, integrate, and observe the exact task-to-`dev` candidate.
 
 ## Test Oracle
 
@@ -94,3 +94,14 @@ pack-provenance, release-bundle, and release-draft checks recorded in
 consumer updates and no-op reruns. Publication to the task ref and integration
 to `dev` remain the next controlled steps; no main, tag, upload, or public
 release action is authorized by this task.
+
+## Retrospective
+
+Published task head `dab67d269365382a51b072bd756c4939c7b313ae` passed the
+clean helper landing dry-run. The no-ff `dev` merge
+`09158bb2a8e1619f2a54d56489a5df737a54fca6` passed the 25-case importer suite,
+10-case extracted-release suite, canonical `test` and `validate`, pack
+provenance, release validation, release-draft validation, and the complete
+incoming commit-message range. That exact merge is observed on `origin/dev`.
+Main, tag, upload, publication, live-target adoption, and the remaining stable
+profile are still separate work.

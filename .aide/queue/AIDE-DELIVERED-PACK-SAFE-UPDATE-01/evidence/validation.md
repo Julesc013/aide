@@ -56,3 +56,19 @@ file. Authored bytes outside the `AGENTS.md` managed section remained exact.
 The release records remain `preview_only` and `no_publish`. No tag, upload,
 GitHub Release, network API, main mutation, or non-disposable target mutation
 occurred.
+
+## Integration Result
+
+- Published task candidate:
+  `dab67d269365382a51b072bd756c4939c7b313ae`.
+- `git land --dry-run --source task/aide-delivered-pack-safe-update-01
+  --target dev --validation-ok`: `ready_dry_run` from a clean tree.
+- Staged combined tree: importer suite PASS (`25/25`) and extracted release
+  suite PASS (`10/10`).
+- Dev merge: `09158bb2a8e1619f2a54d56489a5df737a54fca6`.
+- Post-merge canonical `test`, `validate`, `pack-status`, `release validate`,
+  `release draft-validate`, and incoming commit-range check: PASS.
+- Remote observation: `origin/dev` resolves to
+  `09158bb2a8e1619f2a54d56489a5df737a54fca6`.
+- Remote `main` remains
+  `aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3`.

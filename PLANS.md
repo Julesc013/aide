@@ -3375,7 +3375,8 @@ remaining stable-release profile retain separate gates.
 isolated task branch. It adds exact target-local baseline receipts,
 conflict-first three-way byte comparison, deterministic preview/apply binding,
 validated predecessor-pack proof, and interruption evidence to the existing
-portable importer. Qualification is limited to disposable extracted-artifact
-consumers; source self-update, real-project rollout, main, tags, upload,
-publication, repair, rollback, uninstall, and full stable closure remain
-separate work and review gates.
+portable importer. Exact extracted ZIP and tar.gz consumers, interruption and
+conflict fixtures, and the combined candidate pass; the task is integrated on
+`dev`. Qualification is limited to disposable consumers. Source self-update,
+real-project rollout, main, tags, upload, publication, repair, rollback,
+uninstall, and full stable closure remain separate work and review gates.
