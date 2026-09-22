@@ -1,0 +1,70 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01
+title: Make the delivered AIDE pack independently importable
+type: implementation
+status: running
+planning_state: execution_active
+result: PENDING
+created_at: 2026-09-22
+updated_at: 2026-09-22
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - Q47-aide-lite-release-bundle-v0
+objective: >
+  Make each extracted AIDE Lite release archive internally consistent and
+  independently capable of planning and performing a safe import into a fresh
+  disposable repository without access to the AIDE source checkout.
+authority_basis: >
+  The owner directed the admitted convergence campaign to move into product
+  implementation and specifically authorized the delivered-pack adoption and
+  update slice while preserving exact release and publication gates.
+source:
+  branch: dev
+  observed_head: d37219026462d5670f7a724980faf07e30abb85f
+  reproduced_defect: >
+    The release archive excludes a forbidden source-pack payload but retains
+    that path in checksums.json, causing import-pack to reject extracted bytes.
+scope:
+  allowed_paths:
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/queue/AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01/**
+    - .aide/queue/index.yaml
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q47_release_bundle.py
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - IMPLEMENT.md
+    - PLANS.md
+  forbidden_paths:
+    - .codex/**
+    - .github/**
+    - .aide.local/**
+    - C:/Users/Jules/.codex/**
+    - target repositories
+  forbidden_operations:
+    - mutating any non-disposable consumer repository
+    - merging to main
+    - creating or pushing a Git tag
+    - creating a GitHub Release or uploading assets
+    - changing machine-wide or session model and execution settings
+    - weakening forbidden-path filtering
+authorized_git_operations:
+  - create an isolated task branch and worktree from exact current dev
+  - commit the bounded implementation and generated evidence with explicit paths
+  - publish the qualified task branch to origin
+  - prepare an exact task-to-dev integration candidate
+verification:
+  - reproduce the stale checksum failure before implementation
+  - execute the real delivered CLI from extracted ZIP and tar.gz bytes
+  - validate dry-run and safe import into fresh disposable Git repositories
+  - prove forbidden payloads are absent from archives, manifests, and checksums
+  - prove archive generation remains deterministic
+  - run affected release, export, import, and repository validation
+retained_gates:
+  - task-to-dev integration requires exact candidate validation
+  - main promotion requires exact candidate review
+  - tags, release assets, uploads, and publication require exact release review
+  - the stable release profile is not complete from this slice alone
