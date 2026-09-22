@@ -29,10 +29,10 @@ approve a later candidate.
 - ZIP and tar.gz delivered-byte canaries pass fresh and brownfield import,
   idempotent rerun, target-local doctor, and authored-content preservation.
 - A second pre-commit full generator cycle changed zero of 44 release files.
-- Artifact checkpoint `75e37a4c` is committed. Its full post-commit cycle
+- Artifact checkpoint `dd1f39f3` is committed. Its full post-commit cycle
   reports `PASS_SOURCE_ANCESTOR`, all four generators pass, and the next full
   cycle changes zero of 44 release files.
 
-The converged projection must now be committed and replayed cleanly before the
-repaired exact candidate receives independent rereview. No publication effect
-is authorized.
+Converged projection `198a87d2` is committed and replayed the complete cycle
+with zero changed files and a clean tree. The repaired exact candidate now
+requires independent rereview. No publication effect is authorized.

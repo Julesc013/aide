@@ -21,7 +21,7 @@ hosted effects, target installs, or machine configuration.
 - [x] Regenerate and validate exact local artifacts.
 - [x] Repair independent rereview findings for split preview identity,
       Git replacement-object ancestry, and post-commit projection closure.
-- [x] Commit artifact checkpoint `75e37a4c`, run the complete post-commit
+- [x] Commit artifact checkpoint `dd1f39f3`, run the complete post-commit
       projection, and prove a second 44-file cycle changes zero bytes.
 - [ ] Obtain independent exact-commit rereview.
 - [ ] Integrate the qualified candidate into dev.
@@ -41,11 +41,11 @@ history or publishing local artifacts.
 
 The exact generated candidate passed 58 adjacent tests, canonical validation,
 two delivered-byte consumer canaries, and a 44-file repeatability comparison on
-2026-09-22. The first post-commit cycle must run bundle, validate, draft, and
-draft-validate so both release representations transition together to
-`PASS_SOURCE_ANCESTOR`; a second cycle produced zero byte changes. The next
-restart point is the committed projection, a clean-tree replay, and its
-independent exact-commit rereview.
+2026-09-22. The complete post-commit cycle advanced both release
+representations to `PASS_SOURCE_ANCESTOR`; a second cycle produced zero byte
+changes. Committed projection `198a87d2` then replayed all four generators with
+zero changed files and a clean tree. The next restart point is independent
+exact-commit rereview.
 
 ## Exit Criteria
 

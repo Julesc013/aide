@@ -32,7 +32,7 @@
 - Release draft and draft validation: PASS.
 - Repeatability: 44 compared release files, 0 changed after a second complete
   bundle, validate, draft, and draft-validate cycle.
-- Artifact checkpoint: `75e37a4ce87bee4185f73d054fddedf1905d2761`.
+- Artifact checkpoint: `dd1f39f39f3de3f864f87f7c25a08cbe6030237e`.
 - Post-commit pack provenance: `PASS_SOURCE_ANCESTOR`.
 - Post-commit bundle, validate, draft, and draft-validate: PASS.
 - Post-commit repeatability: 44 compared release files, 0 changed after a
@@ -64,7 +64,13 @@
   parse and agree; malformed or mismatched JSON refuses closed.
 - Commit `b4d949c1` disables replacement objects for release ancestry checks and
   adds a real `git replace` adversarial regression.
-- The generated checkpoint is committed at `75e37a4c`; the complete post-commit
+- The generated checkpoint is committed at `dd1f39f3`; the complete post-commit
   cycle reports `PASS_SOURCE_ANCESTOR`, and another complete cycle changes zero
   bytes. The converged projection and its clean-tree replay remain before exact
   independent rereview.
+
+The first local checkpoint identities `75e37a4c` and `1e39c424` were never
+pushed. Their commit messages used an unsupported `Build:` changelog category.
+The two-commit tail was recreated as `dd1f39f3` and `198a87d2` with identical
+trees and the required `Fixed:` category; no shared history or artifact bytes
+changed.

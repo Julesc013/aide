@@ -18,8 +18,9 @@ notes:
   - All 44 generated release files remain byte-identical across bundle, validate, draft, and draft-validate reruns.
   - Exact ZIP SHA-256 is 622224960f882e1055995c2a9ae6c408f1ba3f8ec242bfe30a5353be781040f7.
   - Exact tar.gz SHA-256 is 9c16ad304636badf26f9ac1029e833e548181fa411e119574e3cd71d683a4ccd.
-  - Artifact checkpoint 75e37a4c is committed; its full post-commit projection reports PASS_SOURCE_ANCESTOR.
+  - Artifact checkpoint dd1f39f3 is committed; its full post-commit projection reports PASS_SOURCE_ANCESTOR.
   - A second complete bundle, validate, draft, and draft-validate cycle compared 44 files and changed zero bytes.
-  - Commit the converged projection, replay it from the committed candidate with a clean tree, then obtain exact rereview.
+  - The unpublished checkpoint tail was recreated with identical trees to replace an invalid Build changelog category with the required Fixed category; no pushed history changed.
+  - Converged projection 198a87d2 replays the full cycle with zero changed files and a clean tree.
   - Independent exact-commit rereview and dev integration remain pending.
   - No publication effect is authorized.
