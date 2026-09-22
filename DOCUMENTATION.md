@@ -476,3 +476,13 @@ merge contract owned by `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01`. Its mandatory
 expected-head SHA is destination-enforced by the documented endpoint. The
 endpoint has no expected-base argument, so policy/principal qualification and
 hosted race evidence remain separate open work rather than inferred guarantees.
+
+## Historical commit-message compatibility
+
+- `docs/reference/commit-discipline.md` explains strict new-commit validation,
+  exact range-only historical dispositions, and raw `--no-dispositions` checks.
+- `.aide/reports/aide-commit-message-standard.md` is the portable operator
+  standard; `.aide/policies/commit-message-dispositions.yaml` and
+  `.aide/git/commit-message-disposition.schema.json` define the mechanism.
+- `.aide/git/commit-message-dispositions.json` is source-specific decision
+  state and must not be included in target-repository exports.

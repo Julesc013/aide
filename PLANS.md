@@ -3588,3 +3588,13 @@ through `AIDE-BROKER-DEV-PACK-REFRESH-01` and dev landing `088b20ba`; final
 canonical validation passes. Continue the parent broker, isolated-host, and
 GitHub target tasks for operational qualification; this integration does not
 authorize live effects or public release.
+
+## Exact historical commit-message dispositions
+
+`AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01` adds a general fail-closed range-check
+mechanism for immutable historical message failures. Records bind full Git
+objects, canonical message and failed-check identities, narrow scope, review
+authority, content-hashed decision/evidence files, and their own canonical
+digest. The two current blocker records remain proposed and ineffective.
+Continue with a clean-source portable-pack refresh, final validation, and
+independent mechanism/decision review; do not rewrite history or infer approval.

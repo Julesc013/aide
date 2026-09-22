@@ -1,0 +1,76 @@
+{
+  "records": [
+    {
+      "commit": "bfb86c12b9e6d2970024d29c57ba629994ec43cc",
+      "decision": "accept_historical_nonconformance",
+      "decision_ref": {
+        "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-request.md",
+        "sha256": "67e02950ca9f5c53b848f820a05f2fda6b209eb2e71a00b5495753930a5f1187"
+      },
+      "disposition_id": "bfb86c12-historical-validation-token",
+      "evidence": [
+        {
+          "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/raw-policy-failures.md",
+          "sha256": "554ad91cf4f88799aee1227f972accb3adfc23d7404eeccbd1858b61886a4a28"
+        }
+      ],
+      "failed_checks": [
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome"
+      ],
+      "message_sha256": "24d6d65e72424b7fca5dac30ebe638b2f7a16266d2c4e8e114dbb9bd6e0c380c",
+      "parents": [
+        "02e99d267b14dc7dfedbd42262d390a93eac354f",
+        "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3"
+      ],
+      "record_digest": "8072034fc223400bd584e6af22063e0a60d6e424c4632e14bac88d8f7f6e2c45",
+      "reviewed_at": "",
+      "reviewed_by": "",
+      "schema_version": "aide.commit-message-disposition.v1",
+      "scope": "historical_commit_message_only",
+      "status": "proposed",
+      "tree": "54ab832eafa0ed0be3282858fd44f344e560732b"
+    },
+    {
+      "commit": "486e81cd3a918729f28e4b452a9dcff017238a04",
+      "decision": "accept_historical_nonconformance",
+      "decision_ref": {
+        "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-request.md",
+        "sha256": "67e02950ca9f5c53b848f820a05f2fda6b209eb2e71a00b5495753930a5f1187"
+      },
+      "disposition_id": "486e81cd-historical-structured-body",
+      "evidence": [
+        {
+          "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/raw-policy-failures.md",
+          "sha256": "554ad91cf4f88799aee1227f972accb3adfc23d7404eeccbd1858b61886a4a28"
+        }
+      ],
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Validation",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Task",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "message_sha256": "71bcd1ba685a049c535e20244f65b29a1fef4299d4a0811f0c43031bd3b4dca0",
+      "parents": [
+        "ea98dc1c004e2a1cdf83fee69b63976825dc175e"
+      ],
+      "record_digest": "ff0810a090f379b764b147f7dd8295949757e0f737c960075958782193f468d9",
+      "reviewed_at": "",
+      "reviewed_by": "",
+      "schema_version": "aide.commit-message-disposition.v1",
+      "scope": "historical_commit_message_only",
+      "status": "proposed",
+      "tree": "796f5aafc0d350e8cef599cacb9b3f703f8b2bb1"
+    }
+  ],
+  "schema_version": "aide.commit-message-dispositions.v1"
+}

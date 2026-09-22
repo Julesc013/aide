@@ -3,12 +3,13 @@ task_id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
 status: running
 classification: admitted_by_owner_split
 planning_state: implementation_active
-result: PENDING
+result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
-current_slice: red_tests_and_fail_closed_registry
-next_slice: implement_exact_disposition_validation
+current_slice: source_implementation_and_proposed_records_complete
+next_slice: clean_source_portable_pack_refresh_and_final_validation
 notes:
   - Mechanism implementation is authorized; no disposition is self-approved.
   - Raw historical failures remain visible and immutable.
+  - Both exact registry entries remain proposed and ineffective.
+  - Focused tests, canonical validation, doctor, and the commit-message golden task pass.
   - Main, tag, upload, and publication effects are outside this task.
-

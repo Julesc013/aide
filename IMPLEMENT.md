@@ -11193,3 +11193,17 @@ DLL mapping, image or grant effect is part of this source implementation.
   artifacts remain local no-publish outputs rather than a public release.
 - Kept live providers, credentials, hosted effects, protected-host closeout,
   main promotion, tagging, and release publication outside this integration.
+
+## 2026-09-22 - Exact historical commit-message dispositions
+
+- Added range-only exact disposition evaluation without changing the strict
+  commit-message validator used by latest, message-file, and hook checks.
+- Bound accepted records to full commit/tree/parent identities, canonical
+  message and failed-check identities, fixed scope and decision, responsible
+  reviewer/date, content-hashed decision/evidence files, and record digest.
+- Added explicit raw mode and preserved original failures under the distinct
+  `DISPOSITIONED` result rather than claiming historical messages pass.
+- Added adversarial disposable-Git coverage for altered identity, evidence,
+  scope, decision, authority, duplicate, unknown, proposed, and raw cases.
+- Added two exact proposed records for current blockers; neither is accepted or
+  effective, and no history, integration ref, tag, or release was changed.

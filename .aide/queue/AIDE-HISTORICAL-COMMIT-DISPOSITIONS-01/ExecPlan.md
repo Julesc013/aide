@@ -24,10 +24,10 @@ conformance without claiming that the original commit message passed.
 - [x] Inspect current checker, policy, tests, and blocker identities.
 - [x] Confirm no existing executable historical-disposition mechanism.
 - [x] Create an isolated task branch from current dev.
-- [ ] Add failing exact-object and adversarial tests.
-- [ ] Implement schema, policy, registry validation, and range reporting.
-- [ ] Prove portable export excludes source decision records.
-- [ ] Prepare proposed exact records and human decision packet.
+- [x] Add failing exact-object and adversarial tests.
+- [x] Implement schema, policy, registry validation, and range reporting.
+- [x] Prove portable export excludes source decision records.
+- [x] Prepare proposed exact records and human decision packet.
 - [ ] Run affected and canonical validation.
 - [ ] Publish for independent review.
 
@@ -45,3 +45,17 @@ The mechanism is read-only. Remove or mark a proposed record rejected to keep
 it ineffective. Resume from task evidence and committed fixtures; never rewrite
 the referenced history.
 
+## Decisions
+
+- Dispositions apply only to range checks; latest, message-file, and hook
+  checks remain strict.
+- Accepted records bind decision and evidence paths to exact content hashes.
+- The general policy and schema are portable, but this repository's decision
+  registry is source-specific and excluded from export.
+
+## Discoveries
+
+- `bfb86c12` has one current message failure; `486e81cd` has thirteen.
+- Both proposed records are visible in range output and remain ineffective.
+- A clean source checkpoint is required before regenerating portable artifacts
+  with trustworthy provenance.

@@ -1,5 +1,8 @@
 # Remaining Risks And Deferrals
 
-- No accepted disposition mechanism or reviewed disposition exists yet.
+- The mechanism and policy require independent review before dev integration.
+- Both exact dispositions remain proposed; range conformance still fails.
+- Portable pack outputs still need clean-source regeneration and validation.
+- Accepting a record requires an exact responsible owner/reviewer decision;
+  broad campaign authorization is not substituted for that decision.
 - Main promotion and release remain separately gated.
-
