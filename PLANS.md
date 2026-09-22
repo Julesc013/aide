@@ -73,11 +73,11 @@
 ### Plan ID: AIDE-RELEASE-METADATA-INTEGRITY-01
 
 - Title: Repair deterministic release metadata integrity
-- Status: rereview requested changes; paired-preview absence repair in progress
+- Status: replacement candidate qualified locally; exact rereview pending
 - Objective: close the exact asset-index, checkout-provenance, and stale-preview findings from artifact review.
 - Scope: release generator, Q47/Q48 regressions, local no-publish outputs, and bounded evidence.
 - Dependencies: reviewed failed artifact candidate `38fe7128` and preserved review `4c0da897`.
-- Milestones: initial generator repair and convergence complete; exact rereview found missing paired-JSON refusal and a stale commit narrative; source/preview repair, 60-test matrix, deterministic artifacts, consumer canaries, checkpoint `7897f7de`, and post-commit 44-file convergence complete; committed replay and rereview pending.
+- Milestones: initial generator repair and convergence complete; exact rereview found missing paired-JSON refusal and a stale commit narrative; source/preview repair, 60-test matrix, deterministic artifacts, consumer canaries, checkpoint `7897f7de`, projection `d6642c3d`, and clean 44-file replay complete; exact rereview pending.
 - Blockers: none for local implementation. Publication and main promotion remain separate exact gates.
 - Verification Intent: asset hash/size closure, cross-checkout determinism, preview-source binding, Q47/Q48 suites, consumer tests, canonical validation, and independent review.
 - Exit Criteria: exact repaired candidate reaches dev with internally consistent metadata and no publication effects.

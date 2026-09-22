@@ -41,8 +41,8 @@
 
 ## Work Item: AIDE-RELEASE-METADATA-INTEGRITY-01
 
-Status: exact rereview requested changes; paired-preview absence repair is
-implemented and the replacement artifact chain remains active.
+Status: replacement candidate qualified locally at projection `d6642c3d`;
+independent exact rereview and `dev` integration remain active.
 
 Planned changes:
 
@@ -102,6 +102,10 @@ validate, draft, and draft-validate projection with
 `PASS_SOURCE_ANCESTOR`. A second complete cycle changes zero of 44 files. The
 projection commit message names `7897f7de` directly, superseding the stale
 identity narrative without rewriting published history.
+
+Committed projection `d6642c3d` replays the complete generator cycle with zero
+changed files and a clean tree. Canonical validate, doctor, diff checks, and all
+four replacement commit messages pass.
 
 ## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 

@@ -33,6 +33,8 @@ hosted effects, target installs, or machine configuration.
 - [x] Commit replacement artifact `7897f7de`, run its complete post-commit
       projection, and prove a second 44-file cycle changes zero bytes.
 - [x] Bind actual parent checkpoint `7897f7de` in the projection commit message.
+- [x] Commit projection `d6642c3d` and replay all four generators with zero
+      changed files and a clean tree.
 - [ ] Obtain independent exact-commit rereview.
 - [ ] Integrate the qualified candidate into dev.
 
@@ -60,7 +62,8 @@ superseded local checkpoint. The next restart point is the paired-source repair,
 replacement source `f147c905`, preview checkpoint `1397b703`, and newly
 generated deterministic artifacts. Commit those bytes, bind their actual
 checkpoint identity `7897f7de` in the post-commit projection, replay from the
-committed tree, and obtain superseding rereview.
+committed tree, and obtain superseding rereview. Projection `d6642c3d` now
+replays cleanly; the restart point is exact independent rereview.
 
 ## Exit Criteria
 

@@ -35,9 +35,15 @@
 - Replacement artifact checkpoint:
   `7897f7deb80c0bb64e63ed2cc93700ef34453598`.
 - Post-commit pack provenance: `PASS_SOURCE_ANCESTOR`.
+- Committed projection:
+  `d6642c3d81f681b86d3a81d933a5e0cf9775922b`.
 - Replacement bundle, validate, draft, and draft-validate: PASS.
 - Post-commit repeatability: 44 compared release files, 0 changed after a
   second complete cycle.
+- Committed replay: all four generators PASS, 44 compared files, zero changed,
+  and clean worktree.
+- Canonical validate and doctor: PASS.
+- Repair commit range `9f4bbc0a..d6642c3d`: 4 of 4 commit messages PASS.
 
 ## Delivered-Byte Consumers
 
