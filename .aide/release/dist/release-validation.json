@@ -34,6 +34,14 @@
       "severity": "PASS"
     },
     {
+      "message": "release artifact exists: .aide/release/dist/release-validation.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/release-validation.md",
+      "severity": "PASS"
+    },
+    {
       "message": "release artifact exists: .aide/release/dist/release-provenance.json",
       "severity": "PASS"
     },
@@ -58,7 +66,7 @@
       "severity": "PASS"
     },
     {
-      "message": "pack-status compatible for release bundle: PASS",
+      "message": "pack-status compatible for release bundle: PASS_SOURCE_ANCESTOR",
       "severity": "PASS"
     }
   ],
@@ -107,7 +115,7 @@
     "result": "PASS"
   },
   "no_publish": true,
-  "pack_status": "PASS",
+  "pack_status": "PASS_SOURCE_ANCESTOR",
   "preview_only": true,
   "result": "PASS",
   "secret_scan": {
