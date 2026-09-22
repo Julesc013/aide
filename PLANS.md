@@ -3366,5 +3366,5 @@ slice. Release archives are projected from permitted payload, receive truthful
 manifest and checksum closure, and execute their own importer without the AIDE
 source checkout. Clean source provenance is observed before export mutation and
 is inherited by release records. Exact ZIP and tar.gz candidates are locally
-qualified; task-to-`dev` integration remains the next action, while main,
-tagging, upload, and publication retain separate gates.
+qualified and integrated on `dev`; main, tagging, upload, publication, and the
+remaining stable-release profile retain separate gates.

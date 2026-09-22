@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01
-status: running
-classification: admitted
-planning_state: execution_active
-result: PENDING
+status: passed
+classification: complete
+planning_state: implemented
+result: PASS
 updated_at: 2026-09-22
-current_slice: qualified_artifact_checkpoint
-next_slice: task_to_dev_integration
+current_slice: complete
+next_slice: select_next_stable_implementation_child
 notes:
   - The aggregate stable-release request was compiled as blocked and split-required.
   - This bounded child performs no publication, tagging, main mutation, or real target mutation.
@@ -18,3 +18,5 @@ notes:
   - Release provenance now inherits source identity from the validated export pack.
   - Final local artifacts bind to clean source commit 4f80611776b7d5249fbf8d8cac29bf68eacfdac1.
   - ZIP and tar.gz consumer canaries pass; publication remains prohibited and unperformed.
+  - Published task head dd8e1c226006ea08240249d7235c44ad0d1e3c1f passed the exact landing plan.
+  - Dev merge b35394ae939c62c97d68046c26744195edd97cba passed post-integration validation and was observed on origin/dev.

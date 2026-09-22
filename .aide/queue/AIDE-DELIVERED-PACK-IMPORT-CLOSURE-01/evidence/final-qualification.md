@@ -50,3 +50,15 @@ No tag was created, no GitHub Release was created, no asset was uploaded, no
 network API was called, no active CI was installed, and no real target project
 was mutated. These are qualified local candidate bytes, not a published stable
 release and not proof of the complete AIDE programme vision.
+
+## Integration
+
+- published task head: `dd8e1c226006ea08240249d7235c44ad0d1e3c1f`
+- helper landing result: `ready_dry_run`
+- merge strategy: policy-planned no-fast-forward merge
+- dev merge commit: `b35394ae939c62c97d68046c26744195edd97cba`
+- post-merge Q47 tests: `10 passed`
+- post-merge Q48 tests: `8 passed`
+- post-merge repository validation: `PASS`
+- post-merge pack provenance: `PASS_SOURCE_ANCESTOR`
+- remote dev observed: `b35394ae939c62c97d68046c26744195edd97cba`
