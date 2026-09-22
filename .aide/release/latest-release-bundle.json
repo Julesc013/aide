@@ -7,7 +7,7 @@
       "path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "9df133f315620c20371c4d960100a65ec973ac13d35166a709c95c992667dff7",
+      "sha256": "9b9bd22b6d9a6562e39c62f5ca81df9f96792033b46029509c7476ee21078455",
       "size_bytes": 1200,
       "source": "release_dist",
       "validation_status": "pending"
@@ -55,8 +55,8 @@
       "path": ".aide/release/dist/install.md",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "3a41e4dab50950d067e492ad8c56af3e6fa298825a28015168b3d28c57a1adc4",
-      "size_bytes": 1325,
+      "sha256": "b22af39898c2bea2e4ceb259da2ae712161ac14915337257af5127530c9139dd",
+      "size_bytes": 1341,
       "source": "release_dist",
       "validation_status": "pending"
     },
@@ -67,7 +67,7 @@
       "path": ".aide/release/dist/manifest.yaml",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "7cd2e48a6485230fc7302ffcc59433c604311dc0710773cf46211c41a3d668fa",
+      "sha256": "33c86efb760d4c69ef7afc55a8eaf450071b987186bb5c07099414b9575b4be4",
       "size_bytes": 1404,
       "source": "release_dist",
       "validation_status": "pending"
@@ -79,7 +79,7 @@
       "path": ".aide/release/dist/release-provenance.json",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "2aa0e82298501316519a433a9453a1e2028365061d6c385452037a6b331ab6ab",
+      "sha256": "0d1c0de0bf81fcee2a59ae1c14d486c5326aec3fefb2c16e04cb60e4d41b68e5",
       "size_bytes": 1496,
       "source": "release_dist",
       "validation_status": "pending"
@@ -91,8 +91,8 @@
       "path": ".aide/release/dist/release-validation.json",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "d01fbfd9f5e4766338df3049b3089d9d923566ba87adc7bb45e27016799c41e0",
-      "size_bytes": 3134,
+      "sha256": "11e1700d29651d67f662840ff510d89c2cd53d0fd97754c0a621f36a81cc37b3",
+      "size_bytes": 3166,
       "source": "release_dist",
       "validation_status": "pending"
     },
@@ -103,8 +103,8 @@
       "path": ".aide/release/dist/release-validation.md",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "37b6d4e4c7f5106030cac8829decd81fed05f89641c70f5b87efdac0c363932c",
-      "size_bytes": 222,
+      "sha256": "aa0c336c3c2c0ded2747876f3517034f31dafd8f2a0f077274e0eb89ad649182",
+      "size_bytes": 238,
       "source": "release_dist",
       "validation_status": "pending"
     },
@@ -127,27 +127,27 @@
       "path": ".aide/release/dist/SHA256SUMS.txt",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "9fc1e0f2f197484e9f1ef8400c42741f24a30cc10061adbfadb1f0f38b37ad77",
+      "sha256": "70769d5c363bb3c9ca93ced06a3183c270daf2a721d8a96c0d156ed90e32a4a5",
       "size_bytes": 690,
       "source": "release_dist",
       "validation_status": "pending"
     }
   ],
-  "bundle_id": "aide-lite-pack-v0-31bd91bd10ed57e9",
+  "bundle_id": "aide-lite-pack-v0-b1f97c5f30848128",
   "bundle_name": "aide-lite-pack-v0",
   "checksums": {
     "algorithm": "sha256",
-    "bundle_id": "aide-lite-pack-v0-31bd91bd10ed57e9",
+    "bundle_id": "aide-lite-pack-v0-b1f97c5f30848128",
     "checksum_scope": "release-dist-core-artifacts",
     "checksums": {
       "CHANGELOG.preview.md": "725d7aad7d6f7385121ba706fedf28675c443fc7a7a88bc7340d12fb724f55fa",
       "RELEASE_NOTES.preview.md": "774a75827477d5e85f6a9659c74e0c85dc035e147f5e94161c843338077b259c",
       "aide-lite-pack-v0.tar.gz": "23f6cb2cf5ba59866aceddd91f2b556da8c8686bdf40d86c631c016d0bde81fb",
       "aide-lite-pack-v0.zip": "9bc5078fc7673e51fda10568bb2bc575d44c07de4889922178d7980819f8ff2b",
-      "install.md": "3a41e4dab50950d067e492ad8c56af3e6fa298825a28015168b3d28c57a1adc4",
-      "manifest.yaml": "7cd2e48a6485230fc7302ffcc59433c604311dc0710773cf46211c41a3d668fa",
-      "release-assets.json": "193cdd72b05f0972a3638aac89393327e5f2fa31718c890300b71cc5b3cfa9ad",
-      "release-provenance.json": "2aa0e82298501316519a433a9453a1e2028365061d6c385452037a6b331ab6ab"
+      "install.md": "b22af39898c2bea2e4ceb259da2ae712161ac14915337257af5127530c9139dd",
+      "manifest.yaml": "33c86efb760d4c69ef7afc55a8eaf450071b987186bb5c07099414b9575b4be4",
+      "release-assets.json": "b57eebb15e1a3a6457bcf9babce297705ef094c3bd8748e6cc0f10e5bdfc4274",
+      "release-provenance.json": "0d1c0de0bf81fcee2a59ae1c14d486c5326aec3fefb2c16e04cb60e4d41b68e5"
     },
     "excluded_from_checksums": [
       "SHA256SUMS.txt",
@@ -169,10 +169,10 @@
       ".aide/release/dist/RELEASE_NOTES.preview.md": "774a75827477d5e85f6a9659c74e0c85dc035e147f5e94161c843338077b259c",
       ".aide/release/dist/aide-lite-pack-v0.tar.gz": "23f6cb2cf5ba59866aceddd91f2b556da8c8686bdf40d86c631c016d0bde81fb",
       ".aide/release/dist/aide-lite-pack-v0.zip": "9bc5078fc7673e51fda10568bb2bc575d44c07de4889922178d7980819f8ff2b",
-      ".aide/release/dist/install.md": "3a41e4dab50950d067e492ad8c56af3e6fa298825a28015168b3d28c57a1adc4",
-      ".aide/release/dist/manifest.yaml": "7cd2e48a6485230fc7302ffcc59433c604311dc0710773cf46211c41a3d668fa"
+      ".aide/release/dist/install.md": "b22af39898c2bea2e4ceb259da2ae712161ac14915337257af5127530c9139dd",
+      ".aide/release/dist/manifest.yaml": "33c86efb760d4c69ef7afc55a8eaf450071b987186bb5c07099414b9575b4be4"
     },
-    "bundle_id": "aide-lite-pack-v0-31bd91bd10ed57e9",
+    "bundle_id": "aide-lite-pack-v0-b1f97c5f30848128",
     "dirty_state": false,
     "dirty_state_error": "",
     "export_pack_checksums_sha256": "961db2cdcd81f7d749fee2e8580bd32d258548feccbbf3126a90e0964f362614",
@@ -260,7 +260,7 @@
         "severity": "PASS"
       },
       {
-        "message": "pack-status compatible for release bundle: PASS",
+        "message": "pack-status compatible for release bundle: PASS_SOURCE_ANCESTOR",
         "severity": "PASS"
       }
     ],
@@ -309,7 +309,7 @@
       "result": "PASS"
     },
     "no_publish": true,
-    "pack_status": "PASS",
+    "pack_status": "PASS_SOURCE_ANCESTOR",
     "preview_only": true,
     "result": "PASS",
     "secret_scan": {

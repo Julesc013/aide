@@ -1,6 +1,6 @@
 # Latest Release Provenance
 
-- bundle_id: aide-lite-pack-v0-31bd91bd10ed57e9
+- bundle_id: aide-lite-pack-v0-b1f97c5f30848128
 - source_commit: 31bd91bd10ed57e98e658380cd9372e074867f63
 - source_branch: task/aide-delivered-pack-safe-update-01
 - dirty_state: false
