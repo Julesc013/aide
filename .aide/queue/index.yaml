@@ -3440,3 +3440,13 @@ items:
     prompt: .aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/prompt.md
     evidence: .aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/evidence
     description: Preserves the exact published portability source candidate, reproduces it in a full Windows checkout, obtains independent review, and integrates only qualified fixture-only behavior.
+  - id: AIDE-RELEASE-METADATA-INTEGRITY-01
+    status: running
+    planning_state: admitted
+    result: PENDING
+    title: Repair deterministic release metadata integrity
+    task: .aide/queue/AIDE-RELEASE-METADATA-INTEGRITY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-RELEASE-METADATA-INTEGRITY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-RELEASE-METADATA-INTEGRITY-01/prompt.md
+    evidence: .aide/queue/AIDE-RELEASE-METADATA-INTEGRITY-01/evidence
+    description: Repairs stale asset identities, checkout-local provenance, and stale preview publication candidates found during independent artifact review.

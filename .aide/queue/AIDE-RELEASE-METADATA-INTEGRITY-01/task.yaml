@@ -1,0 +1,60 @@
+schema_version: aide.queue-task.v0
+id: AIDE-RELEASE-METADATA-INTEGRITY-01
+title: Repair deterministic release metadata integrity
+type: implementation
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-22
+updated_at: 2026-09-22
+parent_task: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
+depends_on:
+  - AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
+objective: >
+  Repair the release generator so every retained asset identity matches final
+  bytes, provenance is checkout-independent, and stale changelog previews are
+  blocked from publication candidates until bound to the release source.
+authority_basis: >
+  The owner authorized continued implementation, testing, integration, and
+  stable-delivery work. Independent review of exact candidate 38fe7128 found
+  three release metadata integrity defects that block dev integration.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-RELEASE-METADATA-INTEGRITY-01/**
+    - .aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/**
+    - .aide/queue/index.yaml
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q47_release_bundle.py
+    - .aide/scripts/tests/test_q48_github_release_draft.py
+    - .aide/changelog/**
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - docs/reference/**
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .codex/**
+    - .github/**
+    - .aide.local/**
+  forbidden_operations:
+    - creating or pushing a tag
+    - uploading assets or publishing a GitHub Release
+    - GitHub API mutation
+    - mutating main or a non-disposable target repository
+    - changing machine-wide or session configuration
+authorized_git_operations:
+  - implement and test this bounded repair on the isolated task branch
+  - regenerate local no-publish artifacts from a clean source checkpoint
+  - commit and publish coherent checkpoints
+  - integrate the independently reviewed exact candidate into dev
+verification:
+  - validate every local asset-index hash and size against final bytes
+  - prove release metadata is byte-identical across different checkout paths
+  - refuse stale preview files as publication candidates
+  - preserve archive determinism and extracted consumer behavior
+  - run release, draft, canonical, commit, and diff checks
+  - obtain independent exact-commit review before dev integration
+retained_gates:
+  - truthful local metadata does not authorize publication
+  - a blocked stale preview cannot be uploaded as a required asset
+  - main promotion and stable release remain separately reviewed exact actions

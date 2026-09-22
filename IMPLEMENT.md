@@ -39,6 +39,22 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-RELEASE-METADATA-INTEGRITY-01
+
+Status: admitted and implementing the independently reproduced release metadata
+repair.
+
+Planned changes:
+
+- make repository and bundle identity independent of the checkout path;
+- remove asset-index dependency cycles and validate exact final hashes/sizes;
+- block stale changelog and release-note previews from publish candidates;
+- retain deterministic archives, extracted consumer behavior, and all
+  no-publish boundaries.
+
+Remaining: regressions, implementation, regeneration, exact rereview, and dev
+integration.
+
 ## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 
 Status: independently reviewed and integrated into `dev`; commit-bound portable

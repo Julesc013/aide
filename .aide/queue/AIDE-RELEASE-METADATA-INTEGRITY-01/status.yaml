@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-RELEASE-METADATA-INTEGRITY-01
+status: running
+classification: admitted_repair
+planning_state: implementation_active
+result: PENDING
+updated_at: 2026-09-22
+current_slice: generator_dependency_repair
+next_slice: failing_regressions_then_implementation
+source_review_commit: 4c0da8974daa96022e53212b8d24b5f5660d7926
+notes:
+  - Independent review found stale local asset identities, checkout-local provenance, and stale required preview assets.
+  - Archive bytes and extracted consumer behavior passed and must remain unchanged unless regenerated from changed portable source.
+  - No publication effect is authorized.
