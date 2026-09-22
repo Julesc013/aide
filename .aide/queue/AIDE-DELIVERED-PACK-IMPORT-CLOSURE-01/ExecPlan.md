@@ -40,8 +40,8 @@ repository without the development checkout.
 - [x] Implement a deterministic archive projection with truthful metadata.
 - [x] Run focused and adjacent validation against extracted ZIP and tar.gz bytes.
 - [x] Regenerate and validate owned local artifacts.
-- [ ] Record evidence, commit explicit paths, and publish the task branch.
-- [ ] Prepare and evaluate the exact task-to-dev integration candidate.
+- [x] Record evidence, commit explicit paths, and publish the task branch.
+- [x] Prepare and evaluate the exact task-to-dev integration candidate.
 
 ## Test Oracle
 
@@ -68,3 +68,13 @@ bytes. Q47, export/import, governance-export, release-draft, self-consumer, and
 product-status tests pass. A release generated from the dirty implementation
 tree also completed a fresh-repository canary; final tracked artifacts will be
 regenerated from the clean implementation commit.
+
+## Retrospective
+
+Eight structured task commits were published at
+`dd8e1c226006ea08240249d7235c44ad0d1e3c1f`. The helper returned
+`ready_dry_run` for task-to-`dev` landing. A policy-compliant no-fast-forward
+merge produced `dev@b35394ae939c62c97d68046c26744195edd97cba`; Q47, Q48,
+pack, release, repository, and commit checks passed on the merged tree, and the
+same ref was observed on `origin/dev`. Main, tags, uploads, publication, and
+real target rollout were not performed.

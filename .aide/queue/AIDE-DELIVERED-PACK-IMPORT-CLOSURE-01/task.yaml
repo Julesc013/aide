@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01
 title: Make the delivered AIDE pack independently importable
 type: implementation
-status: running
-planning_state: execution_active
-result: PENDING
+status: passed
+planning_state: implemented
+result: PASS
 created_at: 2026-09-22
 updated_at: 2026-09-22
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -57,7 +57,7 @@ authorized_git_operations:
   - commit the bounded implementation and generated evidence with explicit paths
   - publish the qualified task branch to origin
   - prepare an exact task-to-dev integration candidate
-  - fast-forward the exact qualified candidate to dev and push after helper-plan and post-integration validation pass
+  - integrate the exact qualified candidate to dev through the helper-planned merge and push after post-integration validation passes
 verification:
   - reproduce the stale checksum failure before implementation
   - execute the real delivered CLI from extracted ZIP and tar.gz bytes
@@ -70,3 +70,7 @@ retained_gates:
   - main promotion requires exact candidate review
   - tags, release assets, uploads, and publication require exact release review
   - the stable release profile is not complete from this slice alone
+integration:
+  published_task_head: dd8e1c226006ea08240249d7235c44ad0d1e3c1f
+  dev_merge_commit: b35394ae939c62c97d68046c26744195edd97cba
+  remote_dev_observed: b35394ae939c62c97d68046c26744195edd97cba
