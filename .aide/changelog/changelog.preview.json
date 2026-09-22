@@ -429,59 +429,34 @@
         "summary": "bind release summaries to the converged generator source.",
         "type": "docs",
         "validation": "- PASS: changelog preview generation and git diff checks."
+      },
+      {
+        "aide_phase": "STABLE-DELIVERY",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Docs",
+        "commit": "e2ec8925adf7",
+        "commit_sha": "e2ec8925adf7fbff24025cbf4137e35e7cfa63a5",
+        "entry": "bind release previews to the hardened metadata generator.",
+        "follow_up": "- Regenerate and qualify the exact portable and release artifacts.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/changelog\nAIDE-Token-Impact: Refreshes generated summaries only; no prompt or response capture.\nAIDE-Quality-Gate: Preview PASS with zero malformed commits; artifact qualification pending.",
+        "risks": "- Preview files remain non-publishing and authorize no release effect.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "docs(release): bind hardened preview source",
+        "summary": "bind release previews to the hardened metadata generator.",
+        "type": "docs",
+        "validation": "- PASS: changelog preview generation and git diff checks."
       }
     ],
     "Fixed": [
-      {
-        "aide_phase": "provenance-binding",
-        "aide_result": "PASS",
-        "breaking": false,
-        "category": "Fixed",
-        "commit": "780312f9ad08",
-        "commit_sha": "780312f9ad088111193d15066313aab22976d35d",
-        "entry": "release provenance remains truthful when a clean export pack is an uncommitted generated output.",
-        "follow_up": "- Generate the final pack and archives, validate exact hashes, close the WorkUnit, and publish the candidate branch.\n\nAIDE-Task: AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01\nAIDE-Phase: provenance-binding\nAIDE-Result: PASS\nAIDE-Scope: release provenance inheritance and regression\nAIDE-Token-Impact: removes recursive Git-state reasoning during packaging\nAIDE-Quality-Gate: 10 Q47 tests passed; 0 failed; 0 skipped",
-        "risks": "- Exact generated artifacts and consumer canaries remain to be committed and integrated.",
-        "scope": "release",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "fix(release): inherit validated pack provenance",
-        "summary": "release provenance remains truthful when a clean export pack is an uncommitted generated output.",
-        "type": "fix",
-        "validation": "- PASS: Q47 release bundle 10 tests; focused clean-pack regression; Python compilation and diff checks."
-      },
-      {
-        "aide_phase": "artifact-qualification",
-        "aide_result": "PASS",
-        "breaking": false,
-        "category": "Fixed",
-        "commit": "80746a3ca547",
-        "commit_sha": "80746a3ca5472c5e210e466ecb8fc08239427b10",
-        "entry": "downloadable AIDE Lite candidates now have closed identities and source-independent safe import.",
-        "follow_up": "- Publish the task branch, validate the exact task-to-dev candidate, and fast-forward dev when helper gates pass.\n\nAIDE-Task: AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01\nAIDE-Phase: artifact-qualification\nAIDE-Result: PASS\nAIDE-Scope: portable export, local release assets, no-publish draft, docs, and evidence\nAIDE-Token-Impact: delivered-byte canaries replace inferred portability\nAIDE-Quality-Gate: 48 tests and repository/release validation passed; 0 skips",
-        "risks": "- This is a local no-publish candidate; main promotion, stable version selection, tag, upload, and public release remain separately gated.",
-        "scope": "release",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "build(release): checkpoint qualified portable candidate",
-        "summary": "downloadable AIDE Lite candidates now have closed identities and source-independent safe import.",
-        "type": "build",
-        "validation": "- PASS: 48 focused tests, release validation, release-draft validation, repository validation, two fresh consumer imports, two target-local doctor runs, and repeat hash checks."
-      },
       {
         "aide_phase": "post-build-provenance",
         "aide_result": "PASS",
@@ -1437,6 +1412,31 @@
         "summary": "Record release metadata integrity defects before artifact integration.",
         "type": "audit",
         "validation": "- PASS: 43 relevant unit tests, canonical validate, doctor, commit-range policy, and diff checks.\n- PASS: ZIP and tar content equivalence, safe paths, deterministic metadata, extracted consumer apply, rerun, receipt, and doctor checks.\n- FAIL: three stale local asset identities including one wrong size.\n- FAIL: machine-local source path and stale required release-note identities."
+      },
+      {
+        "aide_phase": "STABLE-DELIVERY",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Security",
+        "commit": "b4d949c1ac1f",
+        "commit_sha": "b4d949c1ac1f7481a56c763bdb41582291d477c9",
+        "entry": "portable pack provenance no longer trusts Git replacement refs.",
+        "follow_up": "- Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_export_import.py\nAIDE-Token-Impact: Adds one bounded adversarial Git fixture; no prompt or response capture.\nAIDE-Quality-Gate: Replacement-ref attack is refused; final artifact regeneration and rereview pending.",
+        "risks": "- Generated export and release artifacts must be rebuilt from the new source.",
+        "scope": "export",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(export): ignore Git replacement objects",
+        "summary": "portable pack provenance no longer trusts Git replacement refs.",
+        "type": "fix",
+        "validation": "- PASS: adversarial export provenance regression.\n- PASS: 17 Q47 release-bundle tests."
       }
     ],
     "Tests": [
@@ -1639,71 +1639,46 @@
         "summary": "added JSON/Markdown mismatch and malformed JSON cases.",
         "type": "fix",
         "validation": "- PASS: 17 Q47 release-bundle tests."
+      },
+      {
+        "aide_phase": "STABLE-DELIVERY",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Tests",
+        "commit": "b4d949c1ac1f",
+        "commit_sha": "b4d949c1ac1f7481a56c763bdb41582291d477c9",
+        "entry": "cover source-change concealment through git replace.",
+        "follow_up": "- Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_export_import.py\nAIDE-Token-Impact: Adds one bounded adversarial Git fixture; no prompt or response capture.\nAIDE-Quality-Gate: Replacement-ref attack is refused; final artifact regeneration and rereview pending.",
+        "risks": "- Generated export and release artifacts must be rebuilt from the new source.",
+        "scope": "export",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(export): ignore Git replacement objects",
+        "summary": "cover source-change concealment through git replace.",
+        "type": "fix",
+        "validation": "- PASS: adversarial export provenance regression.\n- PASS: 17 Q47 release-bundle tests."
       }
     ]
   },
   "category_counts": {
     "Added": 7,
     "Changed": 6,
-    "Docs": 4,
-    "Fixed": 18,
+    "Docs": 5,
+    "Fixed": 16,
     "Internal": 15,
     "Risks": 1,
-    "Security": 6,
-    "Tests": 8
+    "Security": 7,
+    "Tests": 9
   },
   "commit_count": 50,
   "entries": [
-    {
-      "aide_phase": "provenance-binding",
-      "aide_result": "PASS",
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "780312f9ad08",
-      "commit_sha": "780312f9ad088111193d15066313aab22976d35d",
-      "entry": "release provenance remains truthful when a clean export pack is an uncommitted generated output.",
-      "follow_up": "- Generate the final pack and archives, validate exact hashes, close the WorkUnit, and publish the candidate branch.\n\nAIDE-Task: AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01\nAIDE-Phase: provenance-binding\nAIDE-Result: PASS\nAIDE-Scope: release provenance inheritance and regression\nAIDE-Token-Impact: removes recursive Git-state reasoning during packaging\nAIDE-Quality-Gate: 10 Q47 tests passed; 0 failed; 0 skipped",
-      "risks": "- Exact generated artifacts and consumer canaries remain to be committed and integrated.",
-      "scope": "release",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "fix(release): inherit validated pack provenance",
-      "summary": "release provenance remains truthful when a clean export pack is an uncommitted generated output.",
-      "type": "fix",
-      "validation": "- PASS: Q47 release bundle 10 tests; focused clean-pack regression; Python compilation and diff checks."
-    },
-    {
-      "aide_phase": "artifact-qualification",
-      "aide_result": "PASS",
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "80746a3ca547",
-      "commit_sha": "80746a3ca5472c5e210e466ecb8fc08239427b10",
-      "entry": "downloadable AIDE Lite candidates now have closed identities and source-independent safe import.",
-      "follow_up": "- Publish the task branch, validate the exact task-to-dev candidate, and fast-forward dev when helper gates pass.\n\nAIDE-Task: AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01\nAIDE-Phase: artifact-qualification\nAIDE-Result: PASS\nAIDE-Scope: portable export, local release assets, no-publish draft, docs, and evidence\nAIDE-Token-Impact: delivered-byte canaries replace inferred portability\nAIDE-Quality-Gate: 48 tests and repository/release validation passed; 0 skips",
-      "risks": "- This is a local no-publish candidate; main promotion, stable version selection, tag, upload, and public release remain separately gated.",
-      "scope": "release",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "build(release): checkpoint qualified portable candidate",
-      "summary": "downloadable AIDE Lite candidates now have closed identities and source-independent safe import.",
-      "type": "build",
-      "validation": "- PASS: 48 focused tests, release validation, release-draft validation, repository validation, two fresh consumer imports, two target-local doctor runs, and repeat hash checks."
-    },
     {
       "aide_phase": "post-build-provenance",
       "aide_result": "PASS",
@@ -3278,6 +3253,81 @@
       "summary": "added JSON/Markdown mismatch and malformed JSON cases.",
       "type": "fix",
       "validation": "- PASS: 17 Q47 release-bundle tests."
+    },
+    {
+      "aide_phase": "STABLE-DELIVERY",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Docs",
+      "commit": "e2ec8925adf7",
+      "commit_sha": "e2ec8925adf7fbff24025cbf4137e35e7cfa63a5",
+      "entry": "bind release previews to the hardened metadata generator.",
+      "follow_up": "- Regenerate and qualify the exact portable and release artifacts.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/changelog\nAIDE-Token-Impact: Refreshes generated summaries only; no prompt or response capture.\nAIDE-Quality-Gate: Preview PASS with zero malformed commits; artifact qualification pending.",
+      "risks": "- Preview files remain non-publishing and authorize no release effect.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "docs(release): bind hardened preview source",
+      "summary": "bind release previews to the hardened metadata generator.",
+      "type": "docs",
+      "validation": "- PASS: changelog preview generation and git diff checks."
+    },
+    {
+      "aide_phase": "STABLE-DELIVERY",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Security",
+      "commit": "b4d949c1ac1f",
+      "commit_sha": "b4d949c1ac1f7481a56c763bdb41582291d477c9",
+      "entry": "portable pack provenance no longer trusts Git replacement refs.",
+      "follow_up": "- Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_export_import.py\nAIDE-Token-Impact: Adds one bounded adversarial Git fixture; no prompt or response capture.\nAIDE-Quality-Gate: Replacement-ref attack is refused; final artifact regeneration and rereview pending.",
+      "risks": "- Generated export and release artifacts must be rebuilt from the new source.",
+      "scope": "export",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(export): ignore Git replacement objects",
+      "summary": "portable pack provenance no longer trusts Git replacement refs.",
+      "type": "fix",
+      "validation": "- PASS: adversarial export provenance regression.\n- PASS: 17 Q47 release-bundle tests."
+    },
+    {
+      "aide_phase": "STABLE-DELIVERY",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Tests",
+      "commit": "b4d949c1ac1f",
+      "commit_sha": "b4d949c1ac1f7481a56c763bdb41582291d477c9",
+      "entry": "cover source-change concealment through git replace.",
+      "follow_up": "- Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_export_import.py\nAIDE-Token-Impact: Adds one bounded adversarial Git fixture; no prompt or response capture.\nAIDE-Quality-Gate: Replacement-ref attack is refused; final artifact regeneration and rereview pending.",
+      "risks": "- Generated export and release artifacts must be rebuilt from the new source.",
+      "scope": "export",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(export): ignore Git replacement objects",
+      "summary": "cover source-change concealment through git replace.",
+      "type": "fix",
+      "validation": "- PASS: adversarial export provenance regression.\n- PASS: 17 Q47 release-bundle tests."
     }
   ],
   "generated_by": "aide-lite",
@@ -3288,7 +3338,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "6cbd104cb048f4b0deb2b2ce7f01af532a9b9ff8",
+  "source_head": "b4d949c1ac1f7481a56c763bdb41582291d477c9",
   "source_range": "origin/main..HEAD",
   "warnings": []
 }

@@ -1,14 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "780312f9ad08",
-      "summary": "Generate the final pack and archives, validate exact hashes, close the WorkUnit, and publish the candidate branch."
-    },
-    {
-      "commit": "80746a3ca547",
-      "summary": "Publish the task branch, validate the exact task-to-dev candidate, and fast-forward dev when helper gates pass."
-    },
-    {
       "commit": "4f80611776b7",
       "summary": "Regenerate, rerun exact consumer and repository qualification, then publish and integrate the candidate."
     },
@@ -259,6 +251,18 @@
     {
       "commit": "6cbd104cb048",
       "summary": "Refresh previews, rebuild exact artifacts, rerun consumer and canonical validation, and advance independent review."
+    },
+    {
+      "commit": "e2ec8925adf7",
+      "summary": "Regenerate and qualify the exact portable and release artifacts."
+    },
+    {
+      "commit": "b4d949c1ac1f",
+      "summary": "Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview."
+    },
+    {
+      "commit": "b4d949c1ac1f",
+      "summary": "Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview."
     }
   ],
   "highlights": [
@@ -303,6 +307,13 @@
       "commit": "4c0da8974daa",
       "subject": "audit(release): record artifact metadata findings",
       "summary": "Record release metadata integrity defects before artifact integration."
+    },
+    {
+      "breaking": false,
+      "category": "Security",
+      "commit": "b4d949c1ac1f",
+      "subject": "fix(export): ignore Git replacement objects",
+      "summary": "portable pack provenance no longer trusts Git replacement refs."
     },
     {
       "breaking": false,
@@ -394,20 +405,6 @@
       "commit": "8369ac540e4a",
       "subject": "build(release): qualify deterministic candidate",
       "summary": "exact no-publish candidate assets and draft evidence regenerated."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "780312f9ad08",
-      "subject": "fix(release): inherit validated pack provenance",
-      "summary": "release provenance remains truthful when a clean export pack is an uncommitted generated output."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "80746a3ca547",
-      "subject": "build(release): checkpoint qualified portable candidate",
-      "summary": "downloadable AIDE Lite candidates now have closed identities and source-independent safe import."
     },
     {
       "breaking": false,
@@ -551,6 +548,13 @@
     },
     {
       "breaking": false,
+      "category": "Docs",
+      "commit": "e2ec8925adf7",
+      "subject": "docs(release): bind hardened preview source",
+      "summary": "bind release previews to the hardened metadata generator."
+    },
+    {
+      "breaking": false,
       "category": "Tests",
       "commit": "69e363bc71be",
       "subject": "test(import): specify ownership-aware pack updates",
@@ -604,18 +608,17 @@
       "commit": "6cbd104cb048",
       "subject": "fix(release): bind both preview representations",
       "summary": "added JSON/Markdown mismatch and malformed JSON cases."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "b4d949c1ac1f",
+      "subject": "fix(export): ignore Git replacement objects",
+      "summary": "cover source-change concealment through git replace."
     }
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "780312f9ad08",
-      "summary": "Exact generated artifacts and consumer canaries remain to be committed and integrated."
-    },
-    {
-      "commit": "80746a3ca547",
-      "summary": "This is a local no-publish candidate; main promotion, stable version selection, tag, upload, and public release remain separately gated."
-    },
     {
       "commit": "4f80611776b7",
       "summary": "Final pack and archive bytes must be regenerated from this validator commit before integration."
@@ -867,20 +870,24 @@
     {
       "commit": "6cbd104cb048",
       "summary": "Portable artifacts and source-bound previews must be regenerated from this newer source commit."
+    },
+    {
+      "commit": "e2ec8925adf7",
+      "summary": "Preview files remain non-publishing and authorize no release effect."
+    },
+    {
+      "commit": "b4d949c1ac1f",
+      "summary": "Generated export and release artifacts must be rebuilt from the new source."
+    },
+    {
+      "commit": "b4d949c1ac1f",
+      "summary": "Generated export and release artifacts must be rebuilt from the new source."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "6cbd104cb048f4b0deb2b2ce7f01af532a9b9ff8",
+  "source_head": "b4d949c1ac1f7481a56c763bdb41582291d477c9",
   "source_range": "origin/main..HEAD",
   "validation_summary": [
-    {
-      "commit": "780312f9ad08",
-      "summary": "PASS: Q47 release bundle 10 tests; focused clean-pack regression; Python compilation and diff checks."
-    },
-    {
-      "commit": "80746a3ca547",
-      "summary": "PASS: 48 focused tests, release validation, release-draft validation, repository validation, two fresh consumer imports, two target-local doctor runs, and repeat hash checks."
-    },
     {
       "commit": "4f80611776b7",
       "summary": "PASS: export/import 17 tests, focused stale-pack regression, Python compilation, and diff checks."
@@ -1132,6 +1139,18 @@
     {
       "commit": "6cbd104cb048",
       "summary": "PASS: 17 Q47 release-bundle tests."
+    },
+    {
+      "commit": "e2ec8925adf7",
+      "summary": "PASS: changelog preview generation and git diff checks."
+    },
+    {
+      "commit": "b4d949c1ac1f",
+      "summary": "PASS: adversarial export provenance regression."
+    },
+    {
+      "commit": "b4d949c1ac1f",
+      "summary": "PASS: adversarial export provenance regression."
     }
   ],
   "warnings": []

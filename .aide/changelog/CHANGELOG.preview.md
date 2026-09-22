@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: origin/main..HEAD
-source_head: 6cbd104cb048f4b0deb2b2ce7f01af532a9b9ff8
+source_head: b4d949c1ac1f7481a56c763bdb41582291d477c9
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -13,10 +13,10 @@ release_publishing: false
 
 - Added: 7
 - Changed: 6
-- Fixed: 18
-- Security: 6
-- Docs: 4
-- Tests: 8
+- Fixed: 16
+- Security: 7
+- Docs: 5
+- Tests: 9
 - Internal: 15
 - Risks: 1
 
@@ -41,8 +41,6 @@ release_publishing: false
 
 ## Fixed
 
-- release provenance remains truthful when a clean export pack is an uncommitted generated output. (780312f9ad08 fix(release): inherit validated pack provenance)
-- downloadable AIDE Lite candidates now have closed identities and source-independent safe import. (80746a3ca547 build(release): checkpoint qualified portable candidate)
 - committed release artifacts retain valid clean-source provenance without accepting stale portable inputs. (4f80611776b7 fix(export): validate artifact-only descendant commits)
 - the qualified portable candidate now includes post-build provenance validation. (db8cd16279e0 build(release): refresh qualified portable artifacts)
 - dev now carries source-independent portable pack import and closed archive identities. (b35394ae939c chore(dev): integrate delivered pack import closure)
@@ -68,6 +66,7 @@ release_publishing: false
 - Integrate reviewed Windows short-name alias refusal into the dev line. (cc85be9c472a docs(distribution): record portability integration)
 - Preserve checksum, forbidden-path, and no-publish validation on regenerated archives. (da1051793d4c build(distribution): refresh portable artifacts)
 - Record release metadata integrity defects before artifact integration. (4c0da8974daa audit(release): record artifact metadata findings)
+- portable pack provenance no longer trusts Git replacement refs. (b4d949c1ac1f fix(export): ignore Git replacement objects)
 
 ## Docs
 
@@ -75,6 +74,7 @@ release_publishing: false
 - publish exact effect contracts and qualification limits. (bed5a57aed4f feat(broker): land runtime integration on dev)
 - refresh source-bound local changelog and release-note previews. (671faa232216 docs(release): bind previews to repair source)
 - bind release summaries to the converged generator source. (566a2c3b8b7d docs(release): refresh converged source previews)
+- bind release previews to the hardened metadata generator. (e2ec8925adf7 docs(release): bind hardened preview source)
 
 ## Tests
 
@@ -86,6 +86,7 @@ release_publishing: false
 - added positive projection and unrelated-change refusal coverage. (bb308e64f4f2 fix(release): accept complete preview projection)
 - require validation to preserve all generated release bytes. (edcd591a268b fix(release): converge bundle validation bytes)
 - added JSON/Markdown mismatch and malformed JSON cases. (6cbd104cb048 fix(release): bind both preview representations)
+- cover source-change concealment through git replace. (b4d949c1ac1f fix(export): ignore Git replacement objects)
 
 ## Internal
 
