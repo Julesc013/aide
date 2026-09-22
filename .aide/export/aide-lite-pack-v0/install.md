@@ -6,14 +6,14 @@ From the root of an extracted release archive, without the source checkout:
 
 ```text
 py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --dry-run --mode safe
-py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --mode safe
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> import-pack --pack . --target <target-repo> --mode safe --expect-plan <preview-plan-digest>
 ```
 
 From the source AIDE repository during development:
 
 ```text
 py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target-repo> --dry-run
-py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target-repo> --mode safe
+py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target-repo> --mode safe --expect-plan <preview-plan-digest>
 ```
 
 `--mode safe` is the default. It skips optional broad roots such as `core/` and
@@ -21,6 +21,12 @@ non-reference `docs/` content and prints the exact planned writes plus skipped
 paths during dry-run. Portable `docs/reference/` governance docs are safe-mode
 files. Use `--mode full` only in reviewed local fixtures where copying optional
 roots has been explicitly accepted.
+
+Successful import records exact managed-file and portable managed-section
+baselines under `.aide/install/`. A later pack updates only unchanged recorded
+bytes. Use `--from-pack <validated-predecessor-pack>` to prove the baseline of
+an older installation that predates receipts. Local edits, unknown ownership,
+changed preview state, invalid packs, and partial prior effects refuse closed.
 
 ## Manual Import
 

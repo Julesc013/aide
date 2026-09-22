@@ -3370,3 +3370,13 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01/evidence
     description: Reconciled release-filtered payload identities, qualified source-independent import from both archive formats, and integrated the exact candidate to dev.
+  - id: AIDE-DELIVERED-PACK-SAFE-UPDATE-01
+    status: needs_review
+    planning_state: integration_ready
+    result: PASS
+    title: Add ownership-aware delivered-pack updates
+    task: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/evidence
+    description: Extends extracted-pack import with exact installed baselines, conflict-first updates, preview/apply identity, predecessor-pack proof, and interruption evidence in disposable consumers only.

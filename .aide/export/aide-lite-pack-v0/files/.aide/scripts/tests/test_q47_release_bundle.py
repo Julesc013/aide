@@ -184,6 +184,11 @@ class Q47ReleaseBundleTests(unittest.TestCase):
                 )
                 self.assertEqual(dry_run.returncode, 0, dry_run.stdout + dry_run.stderr)
                 self.assertIn("dry_run: true", dry_run.stdout)
+                plan_digest = next(
+                    line.split(":", 1)[1].strip()
+                    for line in dry_run.stdout.splitlines()
+                    if line.startswith("plan_digest:")
+                )
 
                 apply = self.run_extracted_cli(
                     pack_root,
@@ -195,10 +200,28 @@ class Q47ReleaseBundleTests(unittest.TestCase):
                     str(target),
                     "--mode",
                     "safe",
+                    "--expect-plan",
+                    plan_digest,
                 )
                 self.assertEqual(apply.returncode, 0, apply.stdout + apply.stderr)
+                self.assertIn("status: APPLIED", apply.stdout)
                 self.assertTrue((target / ".aide/scripts/aide_lite.py").is_file())
+                self.assertTrue((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).is_file())
                 self.assertFalse((target / ".aide.local.example/secrets/README.md").exists())
+
+                rerun = self.run_extracted_cli(
+                    pack_root,
+                    target,
+                    "import-pack",
+                    "--pack",
+                    str(pack_root),
+                    "--target",
+                    str(target),
+                    "--mode",
+                    "safe",
+                )
+                self.assertEqual(rerun.returncode, 0, rerun.stdout + rerun.stderr)
+                self.assertIn("status: NO_CHANGES", rerun.stdout)
 
     def test_release_archives_are_byte_deterministic(self) -> None:
         root = self.make_repo()

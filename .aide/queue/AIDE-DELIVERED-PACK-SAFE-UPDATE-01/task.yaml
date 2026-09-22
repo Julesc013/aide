@@ -1,0 +1,83 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DELIVERED-PACK-SAFE-UPDATE-01
+title: Add ownership-aware delivered-pack updates
+type: implementation
+status: needs_review
+planning_state: integration_ready
+result: PASS
+created_at: 2026-09-22
+updated_at: 2026-09-22
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01
+  - AIDE-ACCEPT-DISTRIBUTION-APPLY-ENGINE-V0-01
+objective: >
+  Extend the delivered AIDE Lite importer with a target-local ownership
+  baseline, exact plan binding, conflict-first update behavior, and durable
+  interruption evidence so extracted packs can perform supported updates in
+  disposable consumer repositories without overwriting target-owned edits.
+authority_basis: >
+  The owner explicitly directed the admitted convergence campaign to implement
+  the stable product lifecycle and supplied the stable implementation mission's
+  delivered-pack adoption and update slice. This child remains bounded to
+  disposable consumer fixtures and preserves all retained live-target and
+  publication gates.
+source:
+  branch: dev
+  observed_head: a2ba43624bf99d3354a2a7429a3241e3967310fc
+  characterized_gap: >
+    import-pack installs absent files and reports collisions, but it records no
+    target-local baseline, cannot distinguish an unchanged installed file from
+    unknown ownership during a later update, and exposes no exact preview/apply
+    binding or interruption journal.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/**
+    - .aide/queue/index.yaml
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - .aide/scripts/tests/test_q47_release_bundle.py
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - IMPLEMENT.md
+    - PLANS.md
+  forbidden_paths:
+    - .codex/**
+    - .github/**
+    - .aide.local/**
+    - C:/Users/Jules/.codex/**
+    - non-disposable target repositories
+  forbidden_operations:
+    - mutating AIDE's source checkout through import-pack
+    - mutating any non-disposable consumer repository
+    - recursively deleting an install root
+    - merging to main
+    - creating or pushing a Git tag
+    - creating a GitHub Release or uploading assets
+    - changing machine-wide or session model and execution settings
+authorized_git_operations:
+  - use the isolated task branch and worktree created from exact published dev
+  - commit coherent implementation and evidence increments with explicit paths
+  - publish the qualified task branch to origin
+  - prepare an exact task-to-dev integration candidate
+  - integrate the qualified candidate to dev after helper planning and post-merge validation
+verification:
+  - establish characterization tests for current install and conflict behavior
+  - prove recorded-baseline updates and validated predecessor-pack updates
+  - prove local edits and unknown ownership refuse before payload writes
+  - prove stale preview identities refuse apply
+  - prove interrupted multi-file apply retains exact recoverable state
+  - execute update and idempotent rerun from extracted release bytes
+  - run affected export, release, distribution, and repository validation
+retained_gates:
+  - imported lifecycle drafts remain proposed source aliases unless separately adopted
+  - non-disposable target adoption requires target-owned authority and validation
+  - main promotion requires exact candidate review
+  - tags, release assets, uploads, and publication require exact release review
+  - this slice does not qualify repair, rollback, uninstall, or the full stable profile
+qualification:
+  implementation_source_commit: 31bd91bd10ed57e98e658380cd9372e074867f63
+  artifact_metadata_head: 12918667778a6ff001d4abd8967bf46a922a5131
+  release_bundle_id: aide-lite-pack-v0-b1f97c5f30848128
+  zip_sha256: 9bc5078fc7673e51fda10568bb2bc575d44c07de4889922178d7980819f8ff2b
+  tar_gz_sha256: 23f6cb2cf5ba59866aceddd91f2b556da8c8686bdf40d86c631c016d0bde81fb
