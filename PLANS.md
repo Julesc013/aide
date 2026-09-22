@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
+
+- Title: Qualify and integrate distribution fixture portability hardening
+- Status: active
+- Objective: preserve exact source commit `e73ac0b2`, validate it against current `dev` on Windows, obtain independent review, and integrate the qualified fixture-only result.
+- Scope: portable fixture paths, snapshots, restore preflight, add-file non-overwrite behavior, regressions, evidence, and any required owned portable-artifact refresh.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/task.yaml`.
+- Dependencies: `dev@c6fdc754`; completed delivered-pack safe update; exact published source candidate `e73ac0b2`.
+- Milestones: source preservation; combined-tree tests; canonical validation; independent review; task publication; exact dev integration.
+- Blockers: none for source qualification. Real-target, main, tag, and publication actions remain separately gated.
+- Verification Intent: 125 focused regressions, adjacent distribution/lifecycle/release suites, canonical validation, source and integration commit-range checks, and independent exact-commit review.
+- Exit Criteria: exact candidate and post-merge `dev` pass, both histories are preserved, and remote refs are observed.
+- Notes: fixture-only hardening does not establish hostile-writer confinement or production rollback.
+
 ### Plan ID: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
 
 - Title: Accept UpdateReceipt v0

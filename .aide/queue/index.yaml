@@ -3430,3 +3430,13 @@ items:
     prompt: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/prompt.md
     evidence: .aide/queue/AIDE-BROKER-DEV-PACK-REFRESH-01/evidence
     description: Regenerate and validate local portable export and release artifacts from clean post-integration dev without publishing.
+  - id: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
+    status: running
+    planning_state: admitted
+    result: PENDING
+    title: Qualify and integrate distribution fixture portability hardening
+    task: .aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/prompt.md
+    evidence: .aide/queue/AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01/evidence
+    description: Preserves the exact published portability source candidate, reproduces it in a full Windows checkout, obtains independent review, and integrates only qualified fixture-only behavior.
