@@ -23,6 +23,7 @@ Run:
 ```powershell
 py -3 .aide/scripts/aide_lite.py commit check --latest
 py -3 .aide/scripts/aide_lite.py commit check --range HEAD~5..HEAD
+py -3 .aide/scripts/aide_lite.py commit check --range HEAD~5..HEAD --no-dispositions
 py -3 .aide/scripts/aide_lite.py commit template
 ```
 
@@ -36,6 +37,26 @@ Q27 does not rewrite old commits. Q34 reports malformed history and consumes
 the structured body categories and AIDE trailers through `changelog preview`,
 `changelog validate`, and `changelog status` to produce preview-only release
 drafts.
+
+## Exact Historical Dispositions
+
+An immutable historical failure may be dispositioned only during a range
+check and only through `.aide/git/commit-message-dispositions.json`. An
+accepted record is bound to the full commit and tree object ids, ordered
+parents, canonical message digest, exact checker failures, fixed narrow scope,
+reviewer identity, review date, decision and evidence file digests, and a
+digest of the record itself.
+
+Proposed, rejected, stale, incomplete, duplicate, wildcard, prefix, or
+otherwise altered records have no effect. The original failed checks remain
+visible under the `DISPOSITIONED` commit result, and the range result becomes
+`PASS_WITH_DISPOSITIONS`; neither result claims the historical message passed.
+Use `--no-dispositions` to reproduce raw range-policy failures. Latest-commit,
+message-file, and hook checks never consume dispositions.
+
+The general policy and schema are portable. This repository's decision
+registry is source-specific and is excluded from exported packs so target
+repositories cannot inherit AIDE's historical decisions.
 
 ## Portable Pack
 

@@ -72,6 +72,9 @@ COMMIT_MESSAGE_POLICY_PATH = ".aide/policies/commit-messages.yaml"
 COMMIT_MESSAGE_STANDARD_PATH = ".aide/reports/aide-commit-message-standard.md"
 COMMIT_MESSAGE_HOOK_TEMPLATE_PATH = ".aide/hooks/commit-msg"
 COMMIT_TEMPLATE_PATH = ".aide/git/commit-template.md"
+COMMIT_MESSAGE_DISPOSITION_POLICY_PATH = ".aide/policies/commit-message-dispositions.yaml"
+COMMIT_MESSAGE_DISPOSITION_SCHEMA_PATH = ".aide/git/commit-message-disposition.schema.json"
+COMMIT_MESSAGE_DISPOSITIONS_PATH = ".aide/git/commit-message-dispositions.json"
 GIT_WORKFLOW_POLICY_PATH = ".aide/policies/git-workflow.yaml"
 BRANCH_ROLES_POLICY_PATH = ".aide/policies/branch-roles.yaml"
 PROMOTION_RULES_POLICY_PATH = ".aide/policies/promotion-rules.yaml"
@@ -746,6 +749,8 @@ Q24_REQUIRED_FILES = [
 
 Q27_REQUIRED_FILES = [
     COMMIT_MESSAGE_POLICY_PATH,
+    COMMIT_MESSAGE_DISPOSITION_POLICY_PATH,
+    COMMIT_MESSAGE_DISPOSITION_SCHEMA_PATH,
     TASK_RESUMPTION_POLICY_PATH,
     WORK_UNITS_POLICY_PATH,
     RECOVERY_POLICY_PATH,
@@ -2374,6 +2379,8 @@ PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
     COMMIT_MESSAGE_POLICY_PATH,
+    COMMIT_MESSAGE_DISPOSITION_POLICY_PATH,
+    COMMIT_MESSAGE_DISPOSITION_SCHEMA_PATH,
     TASK_RESUMPTION_POLICY_PATH,
     WORK_UNITS_POLICY_PATH,
     RECOVERY_POLICY_PATH,
@@ -2793,6 +2800,7 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/git/aide-branch-policy.yaml",
     ".aide/git/aide-dev-main-plan.json",
     ".aide/git/aide-dev-main-plan.md",
+    COMMIT_MESSAGE_DISPOSITIONS_PATH,
     ".aide/changelog/*.preview.md",
     ".aide/changelog/changelog.preview.json",
     ".aide/changelog/release-notes.preview.json",
@@ -4536,6 +4544,226 @@ def git_commit_messages_for_range(repo_root: Path, revision_range: str, max_coun
         commit_hash, subject, message = parts
         commits.append((commit_hash.strip(), subject.strip(), message.strip() + "\n"))
     return commits
+
+
+def canonical_commit_message_sha256(message: str) -> str:
+    normalized = message.replace("\r\n", "\n").replace("\r", "\n").rstrip("\n") + "\n"
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
+def git_commit_object_facts(repo_root: Path, commit_hash: str) -> dict[str, object]:
+    if not re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", commit_hash):
+        raise ValueError("historical disposition requires a full lowercase Git object id")
+    env = dict(os.environ)
+    env["GIT_NO_REPLACE_OBJECTS"] = "1"
+    object_type = subprocess.run(
+        ["git", "cat-file", "-t", commit_hash],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+        env=env,
+    )
+    if object_type.returncode != 0 or object_type.stdout.strip() != "commit":
+        raise ValueError(object_type.stderr.strip() or f"Git object is not a commit: {commit_hash}")
+    result = subprocess.run(
+        ["git", "show", "-s", "--format=%H%x00%T%x00%P", commit_hash],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+        env=env,
+    )
+    if result.returncode != 0:
+        raise ValueError(result.stderr.strip() or f"git show failed for commit {commit_hash}")
+    parts = result.stdout.rstrip("\n").split("\x00")
+    if len(parts) != 3 or parts[0] != commit_hash:
+        raise ValueError(f"Git returned an unexpected identity for commit {commit_hash}")
+    parents = parts[2].split() if parts[2] else []
+    return {"commit": parts[0], "tree": parts[1], "parents": parents}
+
+
+def historical_disposition_record_digest(record: dict[str, object]) -> str:
+    digest_input = {key: value for key, value in record.items() if key != "record_digest"}
+    serialized = json.dumps(digest_input, sort_keys=True, separators=(",", ":"), ensure_ascii=True) + "\n"
+    return hashlib.sha256(serialized.encode("utf-8")).hexdigest()
+
+
+def load_commit_message_dispositions(repo_root: Path) -> tuple[dict[str, object], bool]:
+    path = repo_root / COMMIT_MESSAGE_DISPOSITIONS_PATH
+    if not path.exists():
+        return {"schema_version": "aide.commit-message-dispositions.v1", "records": []}, False
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return {
+            "schema_version": "invalid",
+            "records": [],
+            "load_errors": [f"cannot read disposition registry: {exc}"],
+        }, True
+    if not isinstance(data, dict):
+        return {
+            "schema_version": "invalid",
+            "records": [],
+            "load_errors": ["disposition registry root must be an object"],
+        }, True
+    return data, True
+
+
+def _validate_disposition_reference(repo_root: Path, value: object, label: str) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(value, dict) or set(value) != {"path", "sha256"}:
+        return [f"{label} must contain exactly path and sha256"]
+    path_value = value.get("path")
+    digest = value.get("sha256")
+    if not isinstance(path_value, str) or not path_value or normalize_rel(path_value) != path_value:
+        return [f"{label} path must be a normalized non-empty repository-relative path"]
+    if Path(path_value).is_absolute() or ".." in Path(path_value).parts:
+        return [f"{label} path must stay inside the repository"]
+    if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+        errors.append(f"{label} sha256 must be 64 lowercase hexadecimal characters")
+    unresolved = repo_root / path_value
+    if unresolved.is_symlink():
+        errors.append(f"{label} path must not be a symlink")
+        return errors
+    try:
+        path = safe_repo_path(repo_root, path_value)
+    except ValueError as exc:
+        errors.append(f"{label} path is invalid: {exc}")
+        return errors
+    if not path.is_file():
+        errors.append(f"{label} path does not identify a file: {path_value}")
+    elif isinstance(digest, str) and re.fullmatch(r"[0-9a-f]{64}", digest) and sha256_file(path) != digest:
+        errors.append(f"{label} sha256 does not match: {path_value}")
+    return errors
+
+
+def evaluate_historical_commit_disposition(
+    repo_root: Path,
+    commit_hash: str,
+    message: str,
+    checks: Iterable[Check],
+    registry: dict[str, object],
+) -> dict[str, object]:
+    errors = [str(item) for item in registry.get("load_errors", [])] if isinstance(registry, dict) else []
+    result: dict[str, object] = {
+        "status": "missing",
+        "effective": False,
+        "disposition_id": "",
+        "errors": errors,
+    }
+    if not isinstance(registry, dict):
+        result["errors"] = errors + ["disposition registry root must be an object"]
+        return result
+    if set(registry) - {"schema_version", "records", "load_errors"}:
+        errors.append("disposition registry contains unsupported fields")
+    if registry.get("schema_version") != "aide.commit-message-dispositions.v1":
+        errors.append("disposition registry schema_version is not supported")
+    records = registry.get("records")
+    if not isinstance(records, list):
+        errors.append("disposition registry records must be an array")
+        result["errors"] = errors
+        return result
+    matches = [record for record in records if isinstance(record, dict) and record.get("commit") == commit_hash]
+    if not matches:
+        errors.append("no exact disposition record for commit")
+        result["errors"] = errors
+        return result
+    if len(matches) != 1:
+        errors.append("multiple disposition records target the same exact commit")
+        result["errors"] = errors
+        return result
+    record = matches[0]
+    result["status"] = str(record.get("status", "invalid"))
+    result["disposition_id"] = str(record.get("disposition_id", ""))
+    allowed_fields = {
+        "schema_version",
+        "disposition_id",
+        "status",
+        "commit",
+        "tree",
+        "parents",
+        "message_sha256",
+        "failed_checks",
+        "scope",
+        "decision",
+        "reviewed_by",
+        "reviewed_at",
+        "decision_ref",
+        "evidence",
+        "record_digest",
+    }
+    missing_fields = allowed_fields - set(record)
+    unsupported_fields = set(record) - allowed_fields
+    if missing_fields:
+        errors.append("disposition record is missing fields: " + ", ".join(sorted(missing_fields)))
+    if unsupported_fields:
+        errors.append("disposition record contains unsupported fields: " + ", ".join(sorted(unsupported_fields)))
+    if record.get("schema_version") != "aide.commit-message-disposition.v1":
+        errors.append("disposition record schema_version is not supported")
+    if not re.fullmatch(r"[a-z0-9][a-z0-9._-]*", str(record.get("disposition_id", ""))):
+        errors.append("disposition_id must be a stable lowercase identifier")
+    status = record.get("status")
+    if status not in {"proposed", "accepted", "rejected"}:
+        errors.append("disposition status is not supported")
+    try:
+        facts = git_commit_object_facts(repo_root, commit_hash)
+    except ValueError as exc:
+        errors.append(str(exc))
+        facts = {"tree": "", "parents": []}
+    if record.get("tree") != facts["tree"]:
+        errors.append("disposition tree does not match the exact commit")
+    if record.get("parents") != facts["parents"]:
+        errors.append("disposition ordered parents do not match the exact commit")
+    if record.get("message_sha256") != canonical_commit_message_sha256(message):
+        errors.append("disposition message_sha256 does not match the checked message")
+    failures = [check.message for check in checks if check.severity == "FAIL"]
+    if record.get("failed_checks") != failures:
+        errors.append("disposition failed_checks do not match the checker output")
+    if record.get("scope") != "historical_commit_message_only":
+        errors.append("disposition scope is not historical_commit_message_only")
+    if record.get("decision") != "accept_historical_nonconformance":
+        errors.append("disposition decision is not accept_historical_nonconformance")
+    expected_digest = historical_disposition_record_digest(record)
+    if record.get("record_digest") != expected_digest:
+        errors.append("disposition record_digest does not match the canonical record")
+    if status == "accepted":
+        reviewed_by = record.get("reviewed_by")
+        if not isinstance(reviewed_by, str) or not re.fullmatch(r"(?:owner|reviewer):[^\s:][^\s]*", reviewed_by):
+            errors.append("accepted disposition requires an owner: or reviewer: identity")
+        reviewed_at = record.get("reviewed_at")
+        try:
+            if not isinstance(reviewed_at, str):
+                raise ValueError
+            datetime.strptime(reviewed_at, "%Y-%m-%d")
+        except ValueError:
+            errors.append("accepted disposition requires a valid YYYY-MM-DD review date")
+        errors.extend(_validate_disposition_reference(repo_root, record.get("decision_ref"), "decision_ref"))
+        evidence = record.get("evidence")
+        if not isinstance(evidence, list) or not evidence:
+            errors.append("accepted disposition requires at least one evidence reference")
+        else:
+            seen_paths: set[str] = set()
+            for index, reference in enumerate(evidence):
+                errors.extend(_validate_disposition_reference(repo_root, reference, f"evidence[{index}]"))
+                if isinstance(reference, dict) and isinstance(reference.get("path"), str):
+                    path_value = str(reference["path"])
+                    if path_value in seen_paths:
+                        errors.append(f"evidence[{index}] duplicates path: {path_value}")
+                    seen_paths.add(path_value)
+    elif status == "proposed":
+        errors.append("disposition is proposed and has no effect")
+    elif status == "rejected":
+        errors.append("disposition is rejected and has no effect")
+    result["errors"] = errors
+    result["effective"] = status == "accepted" and not errors
+    if errors and status == "accepted":
+        result["status"] = "invalid"
+    return result
 
 
 def render_commit_template() -> str:
@@ -22249,6 +22477,8 @@ def run_golden_commit_message_standard(repo_root: Path) -> GoldenTaskResult:
     checks: list[Check] = []
     related = [
         COMMIT_MESSAGE_POLICY_PATH,
+        COMMIT_MESSAGE_DISPOSITION_POLICY_PATH,
+        COMMIT_MESSAGE_DISPOSITION_SCHEMA_PATH,
         COMMIT_MESSAGE_STANDARD_PATH,
         COMMIT_MESSAGE_HOOK_TEMPLATE_PATH,
         COMMIT_TEMPLATE_PATH,
@@ -22270,6 +22500,22 @@ def run_golden_commit_message_standard(repo_root: Path) -> GoldenTaskResult:
         hook = read_text(repo_root / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH)
         check_pass(checks, "commit check --message-file" in hook, "hook calls commit check command")
         check_pass(checks, "provider" in hook.lower() and "network" in hook.lower(), "hook documents no provider/network behavior")
+    if (repo_root / COMMIT_MESSAGE_DISPOSITION_POLICY_PATH).exists():
+        policy = read_text(repo_root / COMMIT_MESSAGE_DISPOSITION_POLICY_PATH)
+        for marker in [
+            "range_checks_only: true",
+            "exact_commit_object_required: true",
+            "accepted_human_review_required: true",
+            "raw_mode_flag: --no-dispositions",
+        ]:
+            check_pass(checks, marker in policy, f"historical disposition policy contains {marker}")
+    if (repo_root / COMMIT_MESSAGE_DISPOSITION_SCHEMA_PATH).exists():
+        try:
+            schema = json.loads(read_text(repo_root / COMMIT_MESSAGE_DISPOSITION_SCHEMA_PATH))
+            check_pass(checks, schema.get("$schema") == "https://json-schema.org/draft/2020-12/schema", "historical disposition schema uses Draft 2020-12")
+            check_pass(checks, schema.get("additionalProperties") is False, "historical disposition schema rejects unknown fields")
+        except (OSError, json.JSONDecodeError) as exc:
+            check_pass(checks, False, f"historical disposition schema parses: {exc}")
     return golden_task_result(
         "commit_message_standard_golden",
         checks,
@@ -32209,28 +32455,57 @@ def command_commit_check(args: argparse.Namespace) -> int:
     sources = [bool(args.message_file), bool(args.message), bool(args.latest), bool(args.range)]
     if sum(sources) != 1:
         raise ValueError("use exactly one of --message-file, --message, --latest, or --range")
+    if getattr(args, "no_dispositions", False) and not args.range:
+        raise ValueError("--no-dispositions is valid only with --range")
     if args.range:
         commits = git_commit_messages_for_range(args.repo_root, args.range, max_count=args.max_count)
-        results: list[tuple[str, str, str, list[Check]]] = []
-        any_fail = False
+        registry, registry_present = load_commit_message_dispositions(args.repo_root)
+        results: list[tuple[str, str, str, list[Check], dict[str, object] | None]] = []
+        any_unresolved_fail = False
+        any_disposition = False
         for commit_hash, subject, message in commits:
             checks = validate_commit_message_text(message)
             result = commit_message_result(checks)
+            disposition: dict[str, object] | None = None
             if result == "FAIL":
-                any_fail = True
-            results.append((commit_hash, subject, result, checks))
-        range_result = "FAIL" if any_fail else ("PASS" if commits else "WARN")
+                if not getattr(args, "no_dispositions", False):
+                    disposition = evaluate_historical_commit_disposition(
+                        args.repo_root,
+                        commit_hash,
+                        message,
+                        checks,
+                        registry,
+                    )
+                if disposition and disposition.get("effective") is True:
+                    result = "DISPOSITIONED"
+                    any_disposition = True
+                else:
+                    any_unresolved_fail = True
+            results.append((commit_hash, subject, result, checks, disposition))
+        range_result = (
+            "FAIL"
+            if any_unresolved_fail
+            else ("PASS_WITH_DISPOSITIONS" if any_disposition else ("PASS" if commits else "WARN"))
+        )
         print("AIDE Lite commit range check")
         print(f"result: {range_result}")
         print(f"range: {args.range}")
         print(f"commit_count: {len(commits)}")
         print(f"policy: {COMMIT_MESSAGE_POLICY_PATH}")
-        for commit_hash, subject, result, checks in results:
+        print(f"disposition_policy: {COMMIT_MESSAGE_DISPOSITION_POLICY_PATH}")
+        print(f"dispositions: {'disabled' if getattr(args, 'no_dispositions', False) else ('loaded' if registry_present else 'absent')}")
+        for commit_hash, subject, result, checks, disposition in results:
             print(f"- {commit_hash[:7]} {result} {subject}")
             for check in checks:
                 if check.severity != "PASS":
-                    print(f"  - {check.severity} {check.message}")
-        return 1 if any_fail or not commits else 0
+                    prefix = "original_failure" if result == "DISPOSITIONED" and check.severity == "FAIL" else check.severity
+                    print(f"  - {prefix}: {check.message}")
+            if disposition and (registry_present or disposition.get("effective") is True):
+                print(f"  - disposition_id: {disposition.get('disposition_id', '') or '<none>'}")
+                print(f"  - disposition_status: {disposition.get('status', 'missing')}")
+                for error in disposition.get("errors", []):
+                    print(f"  - disposition_error: {error}")
+        return 1 if any_unresolved_fail or not commits else 0
     if args.message_file:
         message_path = safe_repo_path(args.repo_root, args.message_file)
         text = read_text(message_path)
@@ -41055,6 +41330,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     commit_check_parser.add_argument("--latest", action="store_true", help="Validate the latest Git commit message.")
     commit_check_parser.add_argument("--range", help="Validate all commits in a Git revision range, such as BASE..HEAD.")
     commit_check_parser.add_argument("--max-count", type=int, help="Limit range validation to the latest N commits in the range.")
+    commit_check_parser.add_argument("--no-dispositions", action="store_true", help="Report raw range-policy results without historical dispositions.")
     commit_check_parser.set_defaults(handler=command_commit_check)
     commit_template_parser = commit_subparsers.add_parser("template")
     commit_template_parser.add_argument("--output", help="Optional repo-relative path to write the template.")
