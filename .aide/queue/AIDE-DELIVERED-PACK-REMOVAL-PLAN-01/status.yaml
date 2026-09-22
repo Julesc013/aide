@@ -1,16 +1,20 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
-status: running
+status: needs_review
 classification: admitted_by_owner_split
-planning_state: implementation_active
-result: PENDING
+planning_state: qualified_awaiting_historical_commit_disposition
+result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
-current_slice: red_tests_and_portable_plan_owner
-next_slice: implement_receipt_backed_read_only_planner
+current_slice: qualified_source_artifacts_and_consumer_proof
+next_slice: resolve_exact_commit_disposition_then_integrate_dev
 notes:
   - The broad compiled intent remains blocked and split-required.
   - This bounded child starts from origin/dev at 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab.
   - Q46 uninstall commands and policies remain no-apply and unchanged.
   - Only disposable fixture and extracted-artifact consumers may be inspected.
   - No deletion, target write, policy change, main mutation, tag, upload, or publication is authorized.
-
+  - The synchronized candidate contains current dev at c6fdc754844cf7d42302218ce08307a7e05dcb61.
+  - Source, 28 import tests, 10 release tests, and both extracted archive canaries pass.
+  - Exact ZIP and tar.gz archive digests are recorded in evidence/artifact-canaries.json.
+  - Commit 486e81cd3a918729f28e4b452a9dcff017238a04 is published and fails message policy; history was not rewritten.
+  - Dev integration waits for the separately scoped exact historical-conformance disposition.

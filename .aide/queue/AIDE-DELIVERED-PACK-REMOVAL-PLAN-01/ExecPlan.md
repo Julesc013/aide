@@ -26,6 +26,7 @@ removal or changing target state.
 ## Dependencies
 
 - `dev@13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab`.
+- Synchronized `dev@c6fdc754844cf7d42302218ce08307a7e05dcb61`.
 - Portable receipt and byte-boundary behavior from
   `AIDE-DELIVERED-PACK-SAFE-UPDATE-01`.
 - Active Q46 uninstall policy remains authoritative and no-apply.
@@ -36,12 +37,14 @@ removal or changing target state.
 - [x] Compile the broad intent and preserve its blocked split-required result.
 - [x] Create an isolated task worktree from exact published dev.
 - [x] Admit this bounded read-only child and record retained gates.
-- [ ] Add failing positive and adversarial planner tests.
-- [ ] Implement the smallest coherent portable planner and CLI surface.
-- [ ] Run focused tests and inspect the returned plan manually.
-- [ ] Add extracted ZIP and tar.gz planner regressions.
-- [ ] Regenerate and qualify exact delivered bytes.
-- [ ] Record evidence, publish, and prepare exact task-to-dev integration.
+- [x] Add failing positive and adversarial planner tests.
+- [x] Implement the smallest coherent portable planner and CLI surface.
+- [x] Run focused tests and inspect the returned plan manually.
+- [x] Add extracted ZIP and tar.gz planner regressions.
+- [x] Synchronize current dev before artifact generation.
+- [x] Regenerate and qualify exact delivered bytes.
+- [x] Record evidence and publish the qualified task branch.
+- [ ] Resolve the exact published commit-message disposition and integrate to dev.
 
 ## Test Oracle
 
@@ -64,4 +67,26 @@ frequent commits; shared history is never rewritten after publication.
   into target truth.
 - Use receipt-backed exact bytes as the first ownership oracle.
 - Name apply as a retained future gate; do not hide it behind a fixture flag.
+- Treat the full target tree as an explicit preservation boundary, not an input
+  to hash or inspect. Plan identity binds the receipt and every recorded managed
+  target without reading unowned or potentially secret target bytes.
+- Preserve published commit `486e81cd` and report its format failure; do not
+  amend, rebase, force-push, or weaken strict checks for later commits.
 
+## Surprises
+
+- The commit checker requires bullets under every body heading and six trailers;
+  the first published implementation checkpoint omitted those details even
+  though its prose was detailed. Every later commit passes the exact checker.
+- Post-artifact validation legitimately changes from `PASS` to
+  `PASS_SOURCE_ANCESTOR`; the release-draft hashes therefore require one
+  committed derivation-closure increment.
+
+## Retrospective
+
+The delivered CLI now turns a valid target-local receipt into a deterministic
+read-only plan. Exact ZIP and tar.gz consumers each imported successfully,
+classified 809 unchanged managed resources, and retained an identical target
+tree digest before and after planning. Product qualification is complete for
+this bounded no-apply slice. Dev integration is pending only the exact
+historical message-conformance disposition, not a code or artifact failure.

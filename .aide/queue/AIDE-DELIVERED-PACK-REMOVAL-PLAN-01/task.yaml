@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
 title: Plan preservation-first removal from delivered-pack receipts
 type: implementation
-status: running
-planning_state: implementation_active
-result: PENDING
+status: needs_review
+planning_state: qualified_awaiting_historical_commit_disposition
+result: PASS_WITH_WARNINGS
 created_at: 2026-09-22
 updated_at: 2026-09-22
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -24,6 +24,10 @@ authority_basis: >
 source:
   branch: dev
   observed_head: 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab
+  synchronized_dev_head: c6fdc754844cf7d42302218ce08307a7e05dcb61
+  qualified_source_commit: dd26c9fc67eee9d5da4b1484d9fabccf3c2e21ab
+  artifact_commit: a551cd072a915b17ff4db191ce3c2437d99f70fe
+  provenance_closure_commit: 3306315bd6d0024f4c017ec419f95d9399de6edb
   adopted_requirements:
     - AIDE-SCOPE-002
     - AIDE-SCOPE-003
@@ -88,4 +92,3 @@ retained_gates:
   - live target use requires target-owned authority and validation
   - main promotion requires exact candidate review
   - tags, uploads, and publication require exact release review
-

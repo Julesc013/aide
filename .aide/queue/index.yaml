@@ -3401,15 +3401,15 @@ items:
     evidence: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/evidence
     description: Extends extracted-pack import with exact installed baselines, conflict-first updates, preview/apply identity, predecessor-pack proof, and interruption evidence in disposable consumers only.
   - id: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
-    status: running
-    planning_state: implementation_active
-    result: PENDING
+    status: needs_review
+    planning_state: qualified_awaiting_historical_commit_disposition
+    result: PASS_WITH_WARNINGS
     title: Plan preservation-first removal from delivered-pack receipts
     task: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/task.yaml
     exec_plan: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/ExecPlan.md
     prompt: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/evidence
-    description: Adds exact receipt-backed read-only removal planning to the delivered CLI while preserving every uninstall-apply and publication gate.
+    description: Qualified exact receipt-backed read-only removal planning in both delivered archive formats; dev integration awaits an exact published commit-message disposition while every uninstall-apply and publication gate remains preserved.
   - id: AIDE-CW-BROKER-DEV-INTEGRATION-01
     status: passed
     planning_state: integrated_to_dev

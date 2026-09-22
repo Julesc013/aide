@@ -1,0 +1,30 @@
+{
+  "schema_version": "aide.delivered-pack-removal-canaries.v1",
+  "qualified_source_commit": "dd26c9fc67eee9d5da4b1484d9fabccf3c2e21ab",
+  "artifacts": [
+    {
+      "archive": "aide-lite-pack-v0.zip",
+      "sha256": "0bfdfa7f6224fffe3fcbe93a4155dc2ad80db5a039cfcd57ce63f2b2cf983efc",
+      "import_status": "APPLIED",
+      "removal_status": "PLANNED",
+      "candidate_count": 809,
+      "bytes_unchanged": true,
+      "target_tree_digest": "f8dc9b804ff6c4276e4b9dbfbf6d2610f265c2b1c4a8595f67b2cc1a5ed376c5",
+      "removal_plan_digest": "1a5c2023c5b773615515850e64ab02c05236e4b1b3a08eadaa6c81ae765bc19c"
+    },
+    {
+      "archive": "aide-lite-pack-v0.tar.gz",
+      "sha256": "aa85cc0a27c1caf9561055679f7483a82645261ec314e2b0ed211d91bd867e20",
+      "import_status": "APPLIED",
+      "removal_status": "PLANNED",
+      "candidate_count": 809,
+      "bytes_unchanged": true,
+      "target_tree_digest": "b11cc3cf462602dc71654b6b7fa9308ff1f53c9276e6698425e63c6d42f04f28",
+      "removal_plan_digest": "99854c606bac31292bbd70c6bf26e4117da2470a76efa6a5b9601689cac507d9"
+    }
+  ],
+  "network_calls": false,
+  "provider_or_model_calls": false,
+  "target_mutation_by_planner": false,
+  "publication_performed": false
+}
