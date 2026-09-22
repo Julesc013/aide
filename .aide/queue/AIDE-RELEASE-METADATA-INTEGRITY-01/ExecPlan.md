@@ -18,7 +18,7 @@ hosted effects, target installs, or machine configuration.
 - [x] Admit a bounded generator repair WorkUnit.
 - [x] Add failing regressions for asset-index drift, checkout paths, and stale previews.
 - [x] Repair dependency ordering, identity sources, and preview gating.
-- [ ] Regenerate and validate exact local artifacts.
+- [x] Regenerate and validate exact local artifacts.
 - [ ] Obtain independent exact-commit rereview.
 - [ ] Integrate the qualified candidate into dev.
 
@@ -35,9 +35,10 @@ Generated output can be recreated from the clean source checkpoint. Preserve
 the failed review and prior commits; fix forward without rewriting shared
 history or publishing local artifacts.
 
-The source repair passed 55 adjacent tests on 2026-09-22. The next restart point
-is the committed source checkpoint, followed by a source-bound changelog preview
-commit and clean export/release regeneration.
+The exact generated candidate passed 57 adjacent tests, canonical validation,
+two delivered-byte consumer canaries, and a 44-file repeatability comparison on
+2026-09-22. The next restart point is the committed artifact checkpoint and its
+independent exact-commit rereview.
 
 ## Exit Criteria
 

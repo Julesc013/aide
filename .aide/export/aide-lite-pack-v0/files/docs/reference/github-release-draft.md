@@ -90,7 +90,10 @@ The tag is only text in the draft. Q48 never creates or pushes it.
 The checklist records source state, validation gates, artifact gates, security
 gates, target install caveats, publication blockers, and manual review items.
 Dirty source state is recorded for review. Missing required assets, failed
-checksums, or failed validation become blockers.
+checksums, failed validation, or preview files that are stale for the exported
+source become blockers. A stale preview remains visible as evidence with
+`validation_status: blocked_stale` and `publish_candidate: false`; it is never
+treated as uploadable merely because the file exists.
 
 ## Publication Boundary
 

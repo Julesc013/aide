@@ -1,4 +1,8 @@
 {
+  "asset_index_validation": {
+    "problems": [],
+    "result": "PASS"
+  },
   "blockers": [],
   "checks": [
     {
@@ -34,6 +38,14 @@
       "severity": "PASS"
     },
     {
+      "message": "release artifact exists: .aide/release/dist/release-validation.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/release-validation.md",
+      "severity": "PASS"
+    },
+    {
       "message": "release artifact exists: .aide/release/dist/release-provenance.json",
       "severity": "PASS"
     },
@@ -43,6 +55,18 @@
     },
     {
       "message": "release checksums validate",
+      "severity": "PASS"
+    },
+    {
+      "message": "release asset index validates",
+      "severity": "PASS"
+    },
+    {
+      "message": "release preview is source-bound: .aide/release/dist/CHANGELOG.preview.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "release preview is source-bound: .aide/release/dist/RELEASE_NOTES.preview.md",
       "severity": "PASS"
     },
     {
@@ -58,7 +82,7 @@
       "severity": "PASS"
     },
     {
-      "message": "pack-status compatible for release bundle: PASS_SOURCE_ANCESTOR",
+      "message": "pack-status compatible for release bundle: PASS",
       "severity": "PASS"
     }
   ],
@@ -107,7 +131,7 @@
     "result": "PASS"
   },
   "no_publish": true,
-  "pack_status": "PASS_SOURCE_ANCESTOR",
+  "pack_status": "PASS",
   "preview_only": true,
   "result": "PASS",
   "secret_scan": {

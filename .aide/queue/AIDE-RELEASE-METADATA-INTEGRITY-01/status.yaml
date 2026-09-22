@@ -1,16 +1,20 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-RELEASE-METADATA-INTEGRITY-01
-status: running
-classification: admitted_repair
-planning_state: implementation_active
-result: SOURCE_REPAIR_PASS
+status: needs_review
+classification: qualified_candidate
+planning_state: independent_review_pending
+result: PASS
 updated_at: 2026-09-22
-current_slice: source_checkpoint
-next_slice: source_bound_preview_then_clean_regeneration
+current_slice: exact_candidate_review
+next_slice: independent_rereview_then_dev_integration
 source_review_commit: 4c0da8974daa96022e53212b8d24b5f5660d7926
 notes:
   - Independent review found stale local asset identities, checkout-local provenance, and stale required preview assets.
   - Archive bytes and extracted consumer behavior passed and must remain unchanged unless regenerated from changed portable source.
   - The repaired generator and adjacent export, import, release, and draft suites pass 55 tests.
-  - Generated candidate bytes and independent rereview remain pending.
+  - The final exact source passes 57 adjacent tests, canonical validation, and two delivered-byte consumer canaries.
+  - All 44 generated release files remain byte-identical across bundle, validate, draft, and draft-validate reruns.
+  - Exact ZIP SHA-256 is 5210c9fb5d1113799f54318e1939752920f2bde697be843c0b1558611ccef497.
+  - Exact tar.gz SHA-256 is dcc10541365cdcaecab4241b425505cd55e7c86ee94977a8fc6a3b1a0845cda5.
+  - Independent exact-commit rereview and dev integration remain pending.
   - No publication effect is authorized.

@@ -73,15 +73,15 @@
 ### Plan ID: AIDE-RELEASE-METADATA-INTEGRITY-01
 
 - Title: Repair deterministic release metadata integrity
-- Status: active
+- Status: qualified candidate; independent review pending
 - Objective: close the exact asset-index, checkout-provenance, and stale-preview findings from artifact review.
 - Scope: release generator, Q47/Q48 regressions, local no-publish outputs, and bounded evidence.
 - Dependencies: reviewed failed artifact candidate `38fe7128` and preserved review `4c0da897`.
-- Milestones: regressions and generator repair complete; clean regeneration; combined validation; independent rereview; dev integration.
+- Milestones: regressions, generator repair, clean regeneration, and combined validation complete; independent rereview and dev integration pending.
 - Blockers: none for local implementation. Publication and main promotion remain separate exact gates.
 - Verification Intent: asset hash/size closure, cross-checkout determinism, preview-source binding, Q47/Q48 suites, consumer tests, canonical validation, and independent review.
 - Exit Criteria: exact repaired candidate reaches dev with internally consistent metadata and no publication effects.
-- Notes: 55 adjacent tests pass; generated output remains pending until the source repair and source-bound preview are committed.
+- Notes: 57 adjacent tests, canonical validation, delivered-byte canaries, and 44-file repeatability pass on the exact candidate.
 
 ### Plan ID: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 

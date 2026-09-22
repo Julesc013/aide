@@ -41,8 +41,8 @@
 
 ## Work Item: AIDE-RELEASE-METADATA-INTEGRITY-01
 
-Status: source repair implemented and tested; clean artifact regeneration and
-independent rereview remain active.
+Status: exact generated candidate qualified locally; independent rereview and
+`dev` integration remain active.
 
 Planned changes:
 
@@ -60,11 +60,15 @@ Implemented:
   closure without self-referential dependency cycles;
 - stale or missing changelog/release-note previews become explicit blocked
   placeholders and are not publication candidates;
-- 55 adjacent export, import, Q47, and Q48 tests pass, including new tamper and
-  cross-checkout regressions.
+- 57 adjacent export, import, Q47, and Q48 tests pass, including tamper,
+  cross-checkout, ancestry, and build/validate byte-convergence regressions;
+- canonical validation and doctor pass;
+- final ZIP and tar.gz bytes pass fresh and brownfield consumer canaries,
+  idempotent reruns, target-local doctor, and authored-content preservation;
+- all 44 release files are unchanged by a second bundle/validate/draft cycle.
 
-Remaining: source-bound preview generation, clean artifact regeneration,
-canonical validation, exact rereview, and dev integration.
+Remaining: exact independent rereview and `dev` integration. Main promotion,
+tagging, upload, and release publication remain separate retained gates.
 
 ## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 

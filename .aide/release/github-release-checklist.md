@@ -1,12 +1,12 @@
 # GitHub Release Publication Checklist
 
-- checklist_id: aide-lite-pack-v0-github-draft-c730eac442021cdd-checklist
-- source_commit: c730eac442021cdd6f71e6d8038d096af0c6378b
+- checklist_id: aide-lite-pack-v0-github-draft-566a2c3b8b7d7342-checklist
+- source_commit: 566a2c3b8b7d73425061e91957f7481d41319291
 - no_publish: true
 
 ## Checks
-- [source repo state] branch checked: recorded (task/aide-distribution-portability-pack-refresh-01)
-- [source repo state] source commit recorded: recorded (c730eac442021cdd6f71e6d8038d096af0c6378b)
+- [source repo state] branch checked: recorded (not-recorded-in-pack)
+- [source repo state] source commit recorded: recorded (566a2c3b8b7d73425061e91957f7481d41319291)
 - [source repo state] dirty state recorded: recorded (false)
 - [source repo state] tag not created yet: pass (tag_created=false)
 - [validation gates] release validate: required (.aide/release/dist/release-validation.md)
