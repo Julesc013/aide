@@ -46,8 +46,9 @@ The exact allowlist is in `task.yaml`. The implementation owner is
 - [x] Refresh published refs and characterize current importer/apply owners.
 - [x] Create an isolated task worktree from exact published `dev`.
 - [x] Admit the bounded child and record retained gates.
-- [ ] Add red tests for baseline update, conflict-first refusal, stale plan,
-      predecessor proof, interruption evidence, and extracted execution.
+- [x] Add red tests for baseline update, conflict-first refusal, stale plan,
+      predecessor proof, and interruption evidence.
+- [ ] Add the extracted-artifact update regression after the core path is green.
 - [ ] Implement the smallest coherent lifecycle extension in `import-pack`.
 - [ ] Run focused and adjacent validation immediately.
 - [ ] Regenerate and qualify exact delivered bytes.

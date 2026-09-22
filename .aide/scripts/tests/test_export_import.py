@@ -6,6 +6,7 @@ import tempfile
 import unittest
 import importlib.util
 import json
+import shutil
 from pathlib import Path
 
 
@@ -49,6 +50,12 @@ class ExportImportTests(unittest.TestCase):
         self.assertGreater(len(report["included_files"]), 20)
         self.assertEqual(report["boundary_violations"], [])
         return pack_root
+
+    def freeze_pack(self, source_root: Path, name: str) -> Path:
+        pack_root = self.build_pack(source_root)
+        frozen = source_root.parent / name
+        shutil.copytree(pack_root, frozen)
+        return frozen
 
     def set_manifest_scalars(self, pack_root: Path, updates: dict[str, str]) -> None:
         lines = []
@@ -337,6 +344,134 @@ class ExportImportTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertTrue((target / aide_lite.SNAPSHOT_PATH).exists())
         self.assertTrue((target / aide_lite.LATEST_PACKET_PATH).exists())
+
+    def test_import_records_baseline_and_updates_only_unchanged_owned_bytes(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "pack-v1")
+        target = source_root.parent / "target-owned-update"
+        first = aide_lite.apply_import_pack(pack_v1, target)
+        self.assertEqual(first["status"], "APPLIED")
+        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).is_file())
+
+        aide_lite.write_text(source_root / managed_rel, "# Compact Task v2\n")
+        pack_v2 = self.freeze_pack(source_root, "pack-v2")
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True)
+        operation = next(item for item in preview["operations"] if item["target"] == managed_rel)
+        self.assertEqual(operation["action"], "update_owned")
+        self.assertEqual(operation["ownership_basis"], "installed_receipt")
+
+        updated = aide_lite.apply_import_pack(
+            pack_v2,
+            target,
+            expected_plan_digest=preview["plan_digest"],
+        )
+        self.assertEqual(updated["status"], "APPLIED")
+        self.assertEqual(aide_lite.read_text(target / managed_rel), "# Compact Task v2\n")
+        rerun = aide_lite.apply_import_pack(pack_v2, target)
+        self.assertEqual(rerun["status"], "NO_CHANGES")
+        self.assertFalse(rerun["written"])
+
+    def test_validated_predecessor_pack_can_prove_an_unrecorded_baseline(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "predecessor-v1")
+        target = source_root.parent / "target-predecessor-update"
+        aide_lite.apply_import_pack(pack_v1, target)
+        (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).unlink()
+
+        aide_lite.write_text(source_root / managed_rel, "# Proven predecessor v2\n")
+        pack_v2 = self.freeze_pack(source_root, "predecessor-v2")
+        preview = aide_lite.apply_import_pack(
+            pack_v2,
+            target,
+            dry_run=True,
+            predecessor_pack=pack_v1,
+        )
+        operation = next(item for item in preview["operations"] if item["target"] == managed_rel)
+        self.assertEqual(operation["action"], "update_owned")
+        self.assertEqual(operation["ownership_basis"], "validated_predecessor_pack")
+        result = aide_lite.apply_import_pack(
+            pack_v2,
+            target,
+            predecessor_pack=pack_v1,
+            expected_plan_digest=preview["plan_digest"],
+        )
+        self.assertEqual(result["status"], "APPLIED")
+        self.assertEqual(aide_lite.read_text(target / managed_rel), "# Proven predecessor v2\n")
+
+    def test_local_edits_and_unknown_ownership_refuse_before_any_payload_write(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        second_rel = ".aide/policies/token-budget.yaml"
+        pack_v1 = self.freeze_pack(source_root, "conflict-v1")
+        target = source_root.parent / "target-local-edit"
+        aide_lite.apply_import_pack(pack_v1, target)
+        receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
+        aide_lite.write_text(target / managed_rel, "# User-owned local edit\n")
+        second_before = (target / second_rel).read_bytes()
+        aide_lite.write_text(source_root / managed_rel, "# Incoming v2\n")
+        aide_lite.write_text(source_root / second_rel, "version: incoming-v2\n")
+        pack_v2 = self.freeze_pack(source_root, "conflict-v2")
+
+        result = aide_lite.apply_import_pack(pack_v2, target)
+        self.assertEqual(result["status"], "CONFLICT")
+        self.assertEqual(result["written"], [])
+        self.assertIn(managed_rel, result["conflicts"])
+        self.assertEqual(aide_lite.read_text(target / managed_rel), "# User-owned local edit\n")
+        self.assertEqual((target / second_rel).read_bytes(), second_before)
+        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+
+        unknown = source_root.parent / "target-unknown-ownership"
+        aide_lite.write_text(unknown / managed_rel, "# Existing unknown bytes\n")
+        unknown_result = aide_lite.apply_import_pack(pack_v2, unknown)
+        self.assertEqual(unknown_result["status"], "CONFLICT")
+        self.assertEqual(unknown_result["written"], [])
+        self.assertFalse((unknown / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
+
+    def test_changed_target_refuses_an_exact_preview_identity(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "stale-v1")
+        target = source_root.parent / "target-stale-plan"
+        aide_lite.apply_import_pack(pack_v1, target)
+        aide_lite.write_text(source_root / managed_rel, "# Stale preview incoming\n")
+        pack_v2 = self.freeze_pack(source_root, "stale-v2")
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True)
+        receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
+        aide_lite.write_text(target / managed_rel, "# Changed after preview\n")
+
+        result = aide_lite.apply_import_pack(
+            pack_v2,
+            target,
+            expected_plan_digest=preview["plan_digest"],
+        )
+        self.assertEqual(result["status"], "STALE_PLAN")
+        self.assertEqual(result["written"], [])
+        self.assertEqual(aide_lite.read_text(target / managed_rel), "# Changed after preview\n")
+        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+
+    def test_interrupted_update_retains_exact_partial_state_and_refuses_replay(self) -> None:
+        source_root = self.make_source_repo()
+        first_rel = ".aide/prompts/compact-task.md"
+        second_rel = ".aide/policies/token-budget.yaml"
+        pack_v1 = self.freeze_pack(source_root, "interrupt-v1")
+        target = source_root.parent / "target-interrupted-update"
+        aide_lite.apply_import_pack(pack_v1, target)
+        aide_lite.write_text(source_root / first_rel, "# Interrupted incoming one\n")
+        aide_lite.write_text(source_root / second_rel, "version: interrupted-two\n")
+        pack_v2 = self.freeze_pack(source_root, "interrupt-v2")
+
+        interrupted = aide_lite.apply_import_pack(pack_v2, target, fail_after_writes=1)
+        self.assertEqual(interrupted["status"], "INTERRUPTED")
+        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file())
+        self.assertEqual(len(interrupted["written"]), 1)
+
+        resumed = aide_lite.apply_import_pack(pack_v2, target)
+        self.assertEqual(resumed["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(resumed["recovery"]["classification"], "partial")
+        self.assertEqual(resumed["written"], [])
+        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file())
 
     def test_fake_secret_source_file_is_not_exported(self) -> None:
         source_root = self.make_source_repo()
