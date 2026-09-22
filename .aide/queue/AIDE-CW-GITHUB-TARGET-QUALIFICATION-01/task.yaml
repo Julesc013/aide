@@ -18,6 +18,8 @@ integration_with: AIDE-CW-INTEGRATION-BROKER-01
 allowed_paths:
   - core/runtime/integration_broker/
   - .aide/scripts/tests/test_continuous_worker_github_observation.py
+  - .aide/scripts/tests/test_continuous_worker_pr_observation.py
+  - .aide/scripts/tests/test_continuous_worker_provider_bridge.py
   - .github/workflows/aide-cw-checks.yml
   - .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/
   - .aide/queue/index.yaml

@@ -4,6 +4,25 @@ import re
 from .common import Refused, OID, identity
 from .github_api import ORIGIN, object_value, positive, text_value
 
+WORKFLOW_RUN_PATH = re.compile(
+    r"(?:(?P<repository>[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)/)?"
+    r"(?P<path>\.github/workflows/[A-Za-z0-9_.-]+\.ya?ml)@"
+    r"(?P<ref>[A-Za-z0-9][A-Za-z0-9_.-]*(?:/[A-Za-z0-9][A-Za-z0-9_.-]*)*)\Z"
+)
+
+
+def workflow_source(value, repository, branch_ref):
+    """Normalize GitHub's documented workflow-run ``path@ref`` selector."""
+    source = text_value(value)
+    match = WORKFLOW_RUN_PATH.fullmatch(source)
+    if match is None or (match["repository"] is not None and
+                         match["repository"] != repository):
+        raise Refused("GitHub workflow path/ref selector is malformed or foreign")
+    source_ref = "refs/heads/" + match["ref"]
+    if source_ref != branch_ref:
+        raise Refused("GitHub workflow source ref differs from admitted branch")
+    return match["path"], source_ref
+
 
 def check_observations(api, plan):
     prefix, head = api.prefix, plan["candidate_commit"]
@@ -50,11 +69,12 @@ def check_observations(api, plan):
         if run is None:
             raise Refused("GitHub required check lacks its actual Actions push run")
         run_id, attempt = positive(run.get("id")), positive(run.get("run_attempt"))
-        workflow_path = text_value(run.get("path"))
+        workflow_path, workflow_ref = workflow_source(
+            run.get("path"), plan["repository"], expected[check["name"]]["workflow_ref"])
         # The entry workflow is taken from the actual push event's commit. Any
         # workflow/action dependencies still require target-workflow qualification.
-        if (not re.fullmatch(r"\.github/workflows/[A-Za-z0-9_.-]+\.ya?ml(?:@[A-Za-z0-9_./-]+)?", workflow_path) or
-                workflow_path != expected[check["name"]]["workflow_path"] or
+        if (workflow_path != expected[check["name"]]["workflow_path"] or
+                workflow_ref != expected[check["name"]]["workflow_ref"] or
                 run.get("event") != expected[check["name"]]["workflow_event"] or
                 run.get("head_sha") != head or
                 run.get("head_branch") != plan["branch_ref"].removeprefix("refs/heads/") or
@@ -83,6 +103,7 @@ def check_observations(api, plan):
             "app_id": positive(object_value(check.get("app")).get("id")),
             "workflow_sha": run["head_sha"],
             "workflow_path": workflow_path,
+            "workflow_ref": workflow_ref,
             "workflow_event": run["event"],
             "workflow_run_id": run_id,
             "workflow_run_attempt": attempt,

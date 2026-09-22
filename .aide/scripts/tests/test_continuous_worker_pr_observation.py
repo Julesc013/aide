@@ -20,8 +20,9 @@ def plan(key="a"):
             "repository": "fixture/repo", "actor": "fixture-broker", "target_ref": "refs/heads/dev",
             "base": "b" * 40, "candidate_commit": "c" * 40, "candidate_tree": "d" * 40,
             "branch_ref": "refs/heads/task/aide-cw-" + key * 64,
-            "checks": [{"name": "required", "app_id": 1, "workflow_sha": "e" * 40,
+            "checks": [{"name": "required", "app_id": 1, "workflow_sha": "c" * 40,
                         "workflow_path": ".github/workflows/aide-cw-checks.yml",
+                        "workflow_ref": "refs/heads/task/aide-cw-" + key * 64,
                         "workflow_event": "push"}],
             "policy_digest": "f" * 64, "merge_contract_sha256": "9" * 64,
             "expires_at": 2000, "max_observations": 16}
@@ -96,6 +97,7 @@ class PrObservationTests(unittest.TestCase):
             lambda value: value["checks"][0].update(app_id=2),
             lambda value: value["checks"][0].update(workflow_sha="1" * 40),
             lambda value: value["checks"][0].update(workflow_path=".github/workflows/other.yml"),
+            lambda value: value["checks"][0].update(workflow_ref="refs/heads/dev"),
             lambda value: value["checks"][0].update(workflow_event="pull_request"),
             lambda value: value["checks"][0].update(workflow_run_id=True),
             lambda value: value["checks"][0].update(check_run_id=0),
@@ -318,8 +320,9 @@ class StagedBrokerTests(unittest.TestCase):
                      branch_ref="refs/heads/task/aide-cw-" + digest(helper.request))
         fixed["checks"][0]["name"] = "unit"
         oid, raw = commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"],
-                                 "Implement fixture candidate\n\nWork-Item: BROKER-FIXTURE-01\n")
+                                  "Implement fixture candidate\n\nWork-Item: BROKER-FIXTURE-01\n")
         fixed["candidate_commit"] = oid
+        fixed["checks"][0].update(workflow_sha=oid, workflow_ref=fixed["branch_ref"])
         adapter = ScriptedStageAdapter(helper, fixed)
         transport = StagedTransport(fixed, raw, adapter=adapter)
         broker = helper.broker(transport)
@@ -330,6 +333,7 @@ class StagedBrokerTests(unittest.TestCase):
         fixed = plan()
         oid, raw = commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"], "Fixture\n")
         fixed["candidate_commit"] = oid
+        fixed["checks"][0]["workflow_sha"] = oid
         self.assertEqual(commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"], "Fixture\n"), (oid, raw))
         StagedTransport(fixed, raw)
         for altered in (raw + b"changed\n", raw.replace(b"\n\n", b"\ngpgsig forged\n\n"), b"null", raw.decode()):

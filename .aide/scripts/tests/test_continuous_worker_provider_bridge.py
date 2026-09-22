@@ -144,6 +144,7 @@ class RegisteredBridgeTests(unittest.TestCase):
             if row["operation"] != "observe":
                 observation = envelope["prepared"]["observation"]
                 self.assertEqual(envelope["prepared"]["observation_digest"], digest(observation))
+                self.assertEqual(observation["checks"][0]["workflow_ref"], plan["branch_ref"])
                 with closing(sqlite3.connect(helper.state / "pr-observations.sqlite3")) as db:
                     intent = db.execute("SELECT observation FROM intents WHERE request=? AND operation=?",
                                         (plan["request_digest"], row["operation"])).fetchone()[0]

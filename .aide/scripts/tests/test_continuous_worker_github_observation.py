@@ -37,6 +37,7 @@ def plan():
             "branch_ref": "refs/heads/" + BRANCH,
             "checks": [{"name": "required", "app_id": 99, "workflow_sha": HEAD,
                         "workflow_path": ".github/workflows/aide-cw-checks.yml",
+                        "workflow_ref": "refs/heads/" + BRANCH,
                         "workflow_event": "push"}],
             "policy_digest": "f" * 64, "merge_contract_sha256": "9" * 64,
             "expires_at": 2000, "max_observations": 16}
@@ -116,7 +117,8 @@ class Fixture:
                       "check_suite": {"id": 41}, "status": "completed", "conclusion": "success",
                       "url": ORIGIN + PREFIX + "/check-runs/31"}
         self.run = {"id": 51, "run_attempt": 2, "check_suite_id": 41, "head_sha": HEAD,
-                    "head_branch": BRANCH, "event": "push", "path": ".github/workflows/aide-cw-checks.yml",
+                    "head_branch": BRANCH, "event": "push",
+                    "path": REPO + "/.github/workflows/aide-cw-checks.yml@" + BRANCH,
                     "status": "completed", "conclusion": "success", "repository": {"full_name": REPO},
                     "head_repository": {"full_name": REPO}, "head_commit": {"id": HEAD},
                     "url": ORIGIN + PREFIX + "/actions/runs/51"}
@@ -256,6 +258,7 @@ class GitHubObservationTests(unittest.TestCase):
         self.assertEqual(result["checks"][0]["workflow_sha"], HEAD)
         self.assertEqual(result["checks"][0]["workflow_path"],
                          ".github/workflows/aide-cw-checks.yml")
+        self.assertEqual(result["checks"][0]["workflow_ref"], "refs/heads/" + BRANCH)
         self.assertEqual(result["checks"][0]["workflow_event"], "push")
         self.assertEqual(result["checks"][0]["workflow_run_id"], 51)
         self.assertEqual(result["checks"][0]["workflow_run_attempt"], 2)
@@ -263,6 +266,7 @@ class GitHubObservationTests(unittest.TestCase):
         self.assertEqual(result["checks"][0]["check_suite_id"], 41)
         for key, value in (("workflow_sha", "1" * 40),
                            ("workflow_path", ".github/workflows/other.yml"),
+                           ("workflow_ref", "refs/heads/dev"),
                            ("workflow_event", "pull_request")):
             changed = plan()
             changed["checks"][0][key] = value
@@ -430,6 +434,35 @@ class GitHubObservationTests(unittest.TestCase):
             fixture.run[field] = value
             with self.subTest(field=field), self.assertRaises(Refused):
                 collect(fixture.api(), plan())
+
+    def test_workflow_run_path_ref_accepts_documented_relative_and_repo_forms(self):
+        for source in (
+                ".github/workflows/aide-cw-checks.yml@" + BRANCH,
+                REPO + "/.github/workflows/aide-cw-checks.yml@" + BRANCH):
+            with self.subTest(source=source):
+                fixture = Fixture()
+                fixture.run["path"] = source
+                result = collect(fixture.api(), plan())
+                check = result["checks"][0]
+                self.assertEqual(check["workflow_path"], ".github/workflows/aide-cw-checks.yml")
+                self.assertEqual(check["workflow_ref"], "refs/heads/" + BRANCH)
+
+    def test_workflow_run_path_ref_refuses_wrong_missing_and_malformed_selectors(self):
+        cases = (
+            ".github/workflows/other.yml@" + BRANCH,
+            ".github/workflows/aide-cw-checks.yml@dev",
+            "other/repo/.github/workflows/aide-cw-checks.yml@" + BRANCH,
+            ".github/workflows/aide-cw-checks.yml",
+            ".github/workflows/aide-cw-checks.yml@",
+            ".github/workflows/aide-cw-checks.yml@refs/heads/" + BRANCH,
+            ".github/workflows/aide-cw-checks.yml@task//broken",
+        )
+        for source in cases:
+            with self.subTest(source=source):
+                fixture = Fixture()
+                fixture.run["path"] = source
+                with self.assertRaises(Refused):
+                    collect(fixture.api(), plan())
 
     def test_actual_attempt_job_cannot_be_replaced_or_mixed(self):
         cases = (("run_id", 52), ("run_attempt", 1), ("run_attempt", True), ("head_sha", BASE),

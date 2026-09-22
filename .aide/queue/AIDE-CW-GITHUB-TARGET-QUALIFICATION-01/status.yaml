@@ -1,16 +1,16 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
 status: needs_review
-planning_state: workflow_source_binding_repaired_pending_rereview
+planning_state: documented_workflow_path_ref_binding_repaired_pending_rereview
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
-configuration_review: second_request_changes_repaired_pending_rereview
+configuration_review: third_request_changes_repaired_pending_rereview
 settings_mutated: false
 hosted_acceptance: not_run
-current_slice: exact_workflow_run_binding_repair
+current_slice: documented_workflow_path_ref_binding_repair
 next_slice: independent_rereview_then_resolve_principal_and_workflow_identities
-source_tests: 46_passed
-affected_regression_tests: 134_passed_1_skipped
+source_tests: 48_passed
+affected_regression_tests: 136_passed_1_skipped
 notes:
   - The synchronous request always supplies the admitted candidate as GitHub's expected head SHA.
   - Base, actor, policy, ruleset and principal predicates remain unqualified at the destination effect boundary.
@@ -27,3 +27,7 @@ notes:
   - The first repair added a required-workflow rule, but rereview proved that control is not available for this user-owned target; the finding remains preserved.
   - The follow-up removes that unsupported operation, binds actual workflow/check run identities through the local observation and decision contract, and classifies server-side exact-workflow enforcement as unsupported.
   - The blocked live packet still has zero operations; no target mutation or hosted effect is authorized.
+  - The documented GitHub Actions workflow-run selector now accepts exact relative and target-repository-prefixed path@ref forms, normalizes path plus refs/heads ref, and binds both to the admitted request branch and candidate head.
+  - Wrong path, repository, ref, missing ref, and malformed selector forms refuse before any durable observation, intent, bridge dispatch, or hosted effect.
+  - The independent-review scope finding is repaired by explicitly admitting the PR-observation and registered-bridge regression tests that carry the selector through durable observation and bridge inputs.
+  - Final local validation passed 136 tests with one retained Windows symlink skip; canonical validation remains blocked only by the inherited stale export-pack provenance at b3e5c7aa.

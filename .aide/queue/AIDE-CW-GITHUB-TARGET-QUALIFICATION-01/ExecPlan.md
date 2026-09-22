@@ -140,3 +140,28 @@ The live packet remains blocked on unresolved principal and workflow identity
 with zero operations. The first rereview closed F-01, F-02 and F-04 but retained
 F-03. The follow-up repair changes only pure source, tests, and evidence; it
 does not authorize or perform target configuration.
+
+## Progress - 2026-09-22 documented workflow-run selector repair
+
+- [x] Preserve the published independent-review checkpoint `b8fb89b` before
+      changing source or queue scope.
+- [x] Extend the plan and normalized observation contract with `workflow_ref`.
+      It must equal the admitted request branch, while `workflow_sha` must
+      equal the admitted candidate commit.
+- [x] Parse GitHub's required `path@ref` workflow-run representation, including
+      the documented target-repository-prefixed form, and retain normalized
+      bare path plus full `refs/heads/...` selector through decision, intent,
+      staged transport, and registered bridge inputs.
+- [x] Add positive relative and repository-prefixed fixtures plus wrong path,
+      wrong repository, wrong ref, missing ref, and malformed ref refusals.
+- [x] Correct the canonical test allowlist for the existing PR-observation and
+      registered-bridge regression paths identified by independent review.
+- [x] Pass 136 affected local tests with one retained disposable-Windows
+      symlink skip; retain the unintegrated export-pack provenance failure.
+- [ ] Obtain a superseding independent review of the exact repair commit.
+
+The workflow selector remains a local precondition and monitored provenance,
+not evidence of server-enforced workflow-source identity. The live plan remains
+blocked with zero operations until the restricted principal, workflow/check
+identity, target policy, hosted races, and protected-host dependency are each
+separately qualified.

@@ -39,6 +39,52 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
+
+### Status
+
+Completed bounded source repair; awaiting superseding independent review.
+
+### Changed Paths
+
+- `core/runtime/integration_broker/github_checks.py`
+- `core/runtime/integration_broker/pr_observation.py`
+- `.aide/scripts/tests/test_continuous_worker_github_observation.py`
+- `.aide/scripts/tests/test_continuous_worker_pr_observation.py`
+- `.aide/scripts/tests/test_continuous_worker_provider_bridge.py`
+- `.aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/**`
+
+### Rationale
+
+The independent review preserved at `b8fb89b` found that a documented GitHub
+workflow-run `path@ref` value, including the OpenAPI repository-prefixed form,
+was rejected before provenance could reach durable observation or bridge input.
+
+### Notable Design Decisions
+
+- Normalize only exact relative or exact target-repository-prefixed workflow
+  selectors to a bare workflow path and full branch ref.
+- Bind `workflow_ref` to the admitted request branch and `workflow_sha` to the
+  admitted candidate commit in the immutable plan.
+- Preserve the existing classification: workflow provenance is locally checked
+  and monitored, not a destination-side compare-and-swap guarantee.
+
+### Verification
+
+- 48 focused GitHub observation/policy tests passed.
+- 21 durable PR/staged-broker tests passed.
+- 12 registered-provider-bridge tests passed.
+- 19 bounded GitHub HTTP tests passed.
+- 37 integration-broker tests passed with one retained Windows symlink skip.
+- `git diff --check` passed.
+
+### Remaining Issues
+
+- Independent rereview, restricted broker identity, target configuration,
+  hosted adversarial races, and protected-host qualification remain open.
+- Canonical validation still reports stale export-pack provenance at
+  `b3e5c7aa`; this unintegrated task branch does not refresh release artifacts.
+
 ## Work Item: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
 
 Completed as an acceptance-only consolidation and awaiting review.
