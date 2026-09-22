@@ -1,0 +1,259 @@
+{
+  "schema_version": "aide.independent-artifact-refresh-review.v0",
+  "task_id": "AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01",
+  "decision": "REQUEST_CHANGES",
+  "reviewed_at": "2026-09-22",
+  "reviewed_identity": {
+    "branch": "task/aide-distribution-portability-pack-refresh-01",
+    "base_commit": "cc85be9c472a16f39aae98ba00fd5de145098862",
+    "base_tree": "d0e37fff728678c7b3d66e7bd539651ba63d4dd8",
+    "commit": "38fe712810b856f84ee59dffa8a1100d447cbfd4",
+    "tree": "d279fb9191e9f43b29663d125b89977eb134f4a8",
+    "parent": "da1051793d4c91ccff8d6c23b66ce1fa598729aa",
+    "range_commits": [
+      "c730eac442021cdd6f71e6d8038d096af0c6378b",
+      "da1051793d4c91ccff8d6c23b66ce1fa598729aa",
+      "38fe712810b856f84ee59dffa8a1100d447cbfd4"
+    ]
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "blocking": true,
+      "title": "Local release asset indexes contain stale hashes and one stale size",
+      "locations": [
+        ".aide/release/dist/release-assets.json:5",
+        ".aide/release/dist/release-assets.json:89",
+        ".aide/release/dist/release-assets.json:125",
+        ".aide/release/latest-release-artifacts.json:5",
+        ".aide/release/latest-release-artifacts.json:89",
+        ".aide/release/latest-release-artifacts.json:125"
+      ],
+      "mismatches": [
+        {
+          "path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+          "recorded_sha256": "79c07dc12fadb726ad2841626e5a2ab29c90c1a68f9d47c5c2766dfd2695e6ab",
+          "actual_sha256": "965db2435e40d479e89ce57e1cef96b20d0fbaf77f4e0d951e031b3338047f5a",
+          "recorded_size": 1200,
+          "actual_size": 1200
+        },
+        {
+          "path": ".aide/release/dist/release-validation.json",
+          "recorded_sha256": "c42acc5280fa5f2d1d00a18b2a362bf515ff3d63e411843d2d12ce45b319e37a",
+          "actual_sha256": "11e1700d29651d67f662840ff510d89c2cd53d0fd97754c0a621f36a81cc37b3",
+          "recorded_size": 3416,
+          "actual_size": 3166
+        },
+        {
+          "path": ".aide/release/dist/SHA256SUMS.txt",
+          "recorded_sha256": "fee18729126d3829de10d5e55cd117123ef662136c9d6efd83b8287f6b6efc6d",
+          "actual_sha256": "fa821c3f1c68bca499846ebc88571ceeb30ce5f051cc13128011978fb2d044c4",
+          "recorded_size": 690,
+          "actual_size": 690
+        }
+      ],
+      "impact": "The claimed metadata closure is incomplete and consumers of either local asset index receive false artifact identities that current release validation does not detect.",
+      "required_changes": [
+        "Generate retained asset indexes after their dependent files reach final bytes, or remove cyclic/self-dependent records.",
+        "Validate every recorded artifact hash and size in release-assets.json and latest-release-artifacts.json.",
+        "Regenerate and independently review a new exact commit and tree."
+      ]
+    },
+    {
+      "id": "F2",
+      "severity": "MEDIUM",
+      "blocking": true,
+      "title": "Publish-candidate provenance embeds a machine-local checkout path",
+      "locations": [
+        ".aide/release/dist/release-provenance.json:23",
+        ".aide/release/github-release-draft.json:175",
+        ".aide/release/latest-github-release-draft.json:175",
+        ".aide/release/github-release-assets.json:135"
+      ],
+      "value": "D:/Projects/AIDE/aide-distribution-portability-pack-refresh",
+      "impact": "Tracked release metadata exposes checkout topology and changes across otherwise equivalent checkout locations; the provenance file is listed as a future publish candidate.",
+      "required_changes": [
+        "Use a stable canonical repository identity for portable and publish-candidate metadata.",
+        "Keep any local checkout path only in explicitly local evidence excluded from publication.",
+        "Add a cross-checkout deterministic metadata regression."
+      ]
+    },
+    {
+      "id": "F3",
+      "severity": "MEDIUM",
+      "blocking": true,
+      "title": "Required changelog and release-note assets describe an unrelated old head",
+      "locations": [
+        ".aide/release/dist/CHANGELOG.preview.md:6",
+        ".aide/release/dist/RELEASE_NOTES.preview.md:6",
+        ".aide/release/github-release-assets.json:83",
+        ".aide/release/github-release-assets.json:96"
+      ],
+      "recorded_source_head": "d5e3e818841931702cd4e2cde49452744afab985",
+      "impact": "The candidate-checked assets describe an older capability-ledger increment and are not accurate release material for the refreshed source or artifact commits.",
+      "required_changes": [
+        "Regenerate previews for an exact reviewed release range, or mark them stale and blocked/excluded from publish candidates until the range is frozen."
+      ]
+    }
+  ],
+  "scope_review": {
+    "changed_path_count": 30,
+    "all_paths_within_allowed_scope": true,
+    "forbidden_path_changes": [],
+    "runtime_source_changes": [],
+    "github_workflow_changes": [],
+    "codex_or_machine_configuration_changes": []
+  },
+  "provenance": {
+    "clean_generation_commit": "c730eac442021cdd6f71e6d8038d096af0c6378b",
+    "clean_generation_tree": "bebe741def82aaf59c2814ca15b65a67951c494d",
+    "artifact_commit": "da1051793d4c91ccff8d6c23b66ce1fa598729aa",
+    "artifact_tree": "e298c869f4fdda302fc83e3c2a95a1d25fffc457",
+    "closure_commit": "38fe712810b856f84ee59dffa8a1100d447cbfd4",
+    "closure_tree": "d279fb9191e9f43b29663d125b89977eb134f4a8",
+    "pack_status": "PASS_SOURCE_ANCESTOR",
+    "replacement_ref_count": 0,
+    "portable_input_changes_after_source_commit": 0,
+    "archive_blobs_identical_between_artifact_and_closure_commits": true,
+    "archive_relationship_truthful": true,
+    "metadata_dependency_graph_closed": false,
+    "metadata_checkout_location_independent": false
+  },
+  "archive_review": {
+    "zip": {
+      "sha256": "3f24c8e27e21c1884c866ad4faf15538a1fd53cb2905e9d9abe41f6fbe170905",
+      "file_members": 831,
+      "fixed_timestamp": "1980-01-01T00:00:00"
+    },
+    "tar_gz": {
+      "sha256": "fb855c0e88d26138014038ff3ed5c2c5f2fc26a57f08fafd0f842492a327e758",
+      "file_members": 831,
+      "fixed_mtime": 0,
+      "uid_gid": "0:0"
+    },
+    "zip_tar_content_differences": 0,
+    "unsafe_paths": 0,
+    "link_members": 0,
+    "exact_duplicate_paths": 0,
+    "casefolded_unicode_duplicate_paths": 0,
+    "private_state_path_hits": 0,
+    "high_confidence_secret_hits": 0,
+    "intentional_projection_exclusions": [
+      ".aide.local.example/secrets/README.md"
+    ]
+  },
+  "exact_consumer_review": {
+    "archives": [
+      "aide-lite-pack-v0.zip",
+      "aide-lite-pack-v0.tar.gz"
+    ],
+    "safe_dry_run": "PASS",
+    "digest_bound_apply": "PASS",
+    "idempotent_rerun": "PASS",
+    "receipt_creation": "PASS",
+    "doctor": "PASS",
+    "targets": "disposable temporary Git repositories only"
+  },
+  "validation": [
+    {
+      "command": "py -3 -B -m unittest discover -s .aide/scripts/tests -p test_export_import.py -v",
+      "result": "PASS",
+      "total": 25,
+      "passed": 25,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 258.521
+    },
+    {
+      "command": "py -3 -B -m unittest discover -s .aide/scripts/tests -p test_q47_release_bundle.py -v",
+      "result": "PASS",
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 17.634
+    },
+    {
+      "command": "py -3 -B -m unittest discover -s .aide/scripts/tests -p test_q48_github_release_draft.py -v",
+      "result": "PASS",
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 9.821
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py pack-status",
+      "result": "PASS_SOURCE_ANCESTOR",
+      "checksum_problems": 0,
+      "provenance_problems": 0,
+      "boundary_violations": 0
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py release checksums",
+      "result": "PASS",
+      "scope_note": "This command does not validate hashes recorded inside release-assets.json."
+    },
+    {
+      "command": "independent hash and size verification of every artifact record in release-assets.json and latest-release-artifacts.json",
+      "result": "FAIL",
+      "mismatch_count": 3
+    },
+    {
+      "command": "exact tracked ZIP and tar.gz in-memory member, hash, path, link, duplicate, secret, and determinism audit",
+      "result": "PASS"
+    },
+    {
+      "command": "exact tracked ZIP and tar.gz extracted consumer dry-run/apply/rerun/doctor probes",
+      "result": "PASS"
+    },
+    {
+      "command": "temporary exact-da1051793 generation replay: release bundle; release validate; release draft; release draft-validate",
+      "result": "PASS_WITH_DIFFERENCES",
+      "release_metadata_difference_count": 14,
+      "note": "Checkout-specific source_repo metadata prevents cross-checkout byte equality."
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py commit check --range cc85be9c472a16f39aae98ba00fd5de145098862..38fe712810b856f84ee59dffa8a1100d447cbfd4",
+      "result": "PASS",
+      "commit_count": 3
+    },
+    {
+      "command": "git diff --check cc85be9c472a16f39aae98ba00fd5de145098862..38fe712810b856f84ee59dffa8a1100d447cbfd4",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py validate",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py doctor",
+      "result": "PASS"
+    }
+  ],
+  "release_boundary": {
+    "preview_only": true,
+    "no_publish": true,
+    "tag_created": false,
+    "github_release_created": false,
+    "upload_performed": false,
+    "network_api_call": false,
+    "branch_mutation": false,
+    "active_ci_installed": false,
+    "provider_or_model_calls": false,
+    "boundary_markers_truthful": true,
+    "candidate_ready_for_release_publication": false
+  },
+  "effects": {
+    "git_history_mutated": false,
+    "branch_or_remote_mutated": false,
+    "tag_or_release_mutated": false,
+    "target_repository_mutated": false,
+    "source_or_generated_artifact_mutated": false,
+    "machine_configuration_mutated": false,
+    "network_or_external_effects": false,
+    "review_files_created_only": true,
+    "review_files_committed": false
+  }
+}
