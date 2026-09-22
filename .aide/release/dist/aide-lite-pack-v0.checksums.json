@@ -1,16 +1,16 @@
 {
   "algorithm": "sha256",
-  "bundle_id": "aide-lite-pack-v0-e8c4bbe7d4ab83e7",
+  "bundle_id": "aide-lite-pack-v0-31bd91bd10ed57e9",
   "checksum_scope": "release-dist-core-artifacts",
   "checksums": {
     "CHANGELOG.preview.md": "725d7aad7d6f7385121ba706fedf28675c443fc7a7a88bc7340d12fb724f55fa",
     "RELEASE_NOTES.preview.md": "774a75827477d5e85f6a9659c74e0c85dc035e147f5e94161c843338077b259c",
-    "aide-lite-pack-v0.tar.gz": "105f9fd774f04e8a9ef3cf0bb4dc2e5862f9f40121e92af68e1158b23d6a88d6",
-    "aide-lite-pack-v0.zip": "48b3a4a4c3f6e443cc16919b5ac7c57ddb5070f5d50bbb80cc4b559ba3bf0355",
-    "install.md": "34effa204225c34d36c0e750433937dfdb5d24462fa88ac75a5f293125c8c7ec",
-    "manifest.yaml": "2457a72250f74efdb8fd4397dddb90e5400e3c947fc8862055fcfd3a358b729c",
-    "release-assets.json": "56e659ede01eb5e3b101781c717cd5ee7f5ff42a692bf4a637968737a3933d9b",
-    "release-provenance.json": "39b1396a9a23cd08f95cd9188676b1dc53d7da13811135af8525007fb13e87be"
+    "aide-lite-pack-v0.tar.gz": "23f6cb2cf5ba59866aceddd91f2b556da8c8686bdf40d86c631c016d0bde81fb",
+    "aide-lite-pack-v0.zip": "9bc5078fc7673e51fda10568bb2bc575d44c07de4889922178d7980819f8ff2b",
+    "install.md": "3a41e4dab50950d067e492ad8c56af3e6fa298825a28015168b3d28c57a1adc4",
+    "manifest.yaml": "7cd2e48a6485230fc7302ffcc59433c604311dc0710773cf46211c41a3d668fa",
+    "release-assets.json": "193cdd72b05f0972a3638aac89393327e5f2fa31718c890300b71cc5b3cfa9ad",
+    "release-provenance.json": "2aa0e82298501316519a433a9453a1e2028365061d6c385452037a6b331ab6ab"
   },
   "excluded_from_checksums": [
     "SHA256SUMS.txt",

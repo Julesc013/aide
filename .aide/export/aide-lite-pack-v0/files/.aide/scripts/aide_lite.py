@@ -39438,13 +39438,17 @@ def render_target_template(text: str, target_root: Path, next_task: str = "Impor
 def merge_agents_text(existing: str | None, template: str) -> str:
     begin = "<!-- AIDE-PORTABLE:BEGIN section=aide-lite-pack-v0"
     end = "<!-- AIDE-PORTABLE:END section=aide-lite-pack-v0 -->"
+    block = template.rstrip("\r\n")
     if existing is None or not existing.strip():
-        return "# AGENTS.md\n\n" + template
+        return "# AGENTS.md\n\n" + block + "\n"
+    newline = "\r\n" if "\r\n" in existing else "\n"
+    target_block = block.replace("\r\n", "\n").replace("\n", newline)
     if begin in existing and end in existing:
-        prefix, rest = existing.split(begin, 1)
-        _old, suffix = rest.split(end, 1)
-        return prefix.rstrip() + "\n\n" + template.rstrip() + "\n" + suffix.lstrip()
-    return existing.rstrip() + "\n\n" + template
+        start = existing.index(begin)
+        finish = existing.index(end, start) + len(end)
+        return existing[:start] + target_block + existing[finish:]
+    separator = "" if existing.endswith(newline * 2) else (newline if existing.endswith(newline) else newline * 2)
+    return existing + separator + target_block + newline
 
 
 def ensure_target_gitignore_text(existing: str | None) -> str:
@@ -39643,17 +39647,21 @@ def agents_operation(
     receipt: dict[str, object] | None,
     predecessor_pack: Path | None,
 ) -> tuple[dict[str, str], str | None]:
-    template = read_text(source)
+    template = source.read_bytes().decode("utf-8")
     desired_block = portable_managed_block(template)
     if desired_block is None:
         raise ValueError("portable AGENTS template is missing its managed block")
-    existing = read_text(target) if target.exists() and target.is_file() else None
+    existing = target.read_bytes().decode("utf-8") if target.exists() and target.is_file() else None
     current_block = portable_managed_block(existing) if existing is not None else None
     current_block_digest = digest_bytes(current_block.encode("utf-8")) if current_block is not None else "missing"
     desired_block_digest = digest_bytes(desired_block.encode("utf-8"))
     preimage_digest = target_file_digest(target)
     desired_text = merge_agents_text(existing, template)
-    postimage_digest = digest_bytes(text_output_bytes(desired_text))
+    desired_installed_block = portable_managed_block(desired_text)
+    if desired_installed_block is None:
+        raise ValueError("portable AGENTS merge did not produce its managed block")
+    installed_digest = digest_bytes(desired_installed_block.encode("utf-8"))
+    postimage_digest = digest_bytes(desired_text.encode("utf-8"))
     action = "merge_agents"
     ownership_basis = "new_managed_section"
     conflict: str | None = None
@@ -39683,6 +39691,7 @@ def agents_operation(
             "preimage_digest": preimage_digest,
             "postimage_digest": postimage_digest,
             "source_digest": desired_block_digest,
+            "installed_digest": installed_digest,
         },
         conflict,
     )
@@ -39788,7 +39797,7 @@ def build_portable_import_receipt(
         kind = operation.get("kind")
         if kind not in {"managed_file", "portable_managed_section"} or operation.get("action") == "conflict":
             continue
-        installed_digest = operation.get("source_digest") if kind == "portable_managed_section" else operation.get("postimage_digest")
+        installed_digest = operation.get("installed_digest") if kind == "portable_managed_section" else operation.get("postimage_digest")
         managed[operation["target"]] = {
             "source": operation["source"],
             "kind": kind,
@@ -39880,9 +39889,9 @@ def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[s
     if action in {"copy", "update_owned"} and operation["kind"] == "managed_file":
         data = (pack_root / "files" / operation["source"]).read_bytes()
     elif operation["kind"] == "portable_managed_section" and action in {"merge_agents", "update_owned"}:
-        existing = read_text(target) if target.exists() and target.is_file() else None
-        template = read_text(pack_root / "files" / operation["source"])
-        data = text_output_bytes(merge_agents_text(existing, template))
+        existing = target.read_bytes().decode("utf-8") if target.exists() and target.is_file() else None
+        template = (pack_root / "files" / operation["source"]).read_bytes().decode("utf-8")
+        data = merge_agents_text(existing, template).encode("utf-8")
     elif action == "create_from_template":
         source = pack_root / "files" / operation["source"]
         data = text_output_bytes(render_target_template(read_text(source), target_root))

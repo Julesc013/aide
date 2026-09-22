@@ -2,23 +2,23 @@
   "artifact_hashes": {
     ".aide/release/dist/CHANGELOG.preview.md": "725d7aad7d6f7385121ba706fedf28675c443fc7a7a88bc7340d12fb724f55fa",
     ".aide/release/dist/RELEASE_NOTES.preview.md": "774a75827477d5e85f6a9659c74e0c85dc035e147f5e94161c843338077b259c",
-    ".aide/release/dist/aide-lite-pack-v0.tar.gz": "105f9fd774f04e8a9ef3cf0bb4dc2e5862f9f40121e92af68e1158b23d6a88d6",
-    ".aide/release/dist/aide-lite-pack-v0.zip": "48b3a4a4c3f6e443cc16919b5ac7c57ddb5070f5d50bbb80cc4b559ba3bf0355",
-    ".aide/release/dist/install.md": "34effa204225c34d36c0e750433937dfdb5d24462fa88ac75a5f293125c8c7ec",
-    ".aide/release/dist/manifest.yaml": "2457a72250f74efdb8fd4397dddb90e5400e3c947fc8862055fcfd3a358b729c"
+    ".aide/release/dist/aide-lite-pack-v0.tar.gz": "23f6cb2cf5ba59866aceddd91f2b556da8c8686bdf40d86c631c016d0bde81fb",
+    ".aide/release/dist/aide-lite-pack-v0.zip": "9bc5078fc7673e51fda10568bb2bc575d44c07de4889922178d7980819f8ff2b",
+    ".aide/release/dist/install.md": "3a41e4dab50950d067e492ad8c56af3e6fa298825a28015168b3d28c57a1adc4",
+    ".aide/release/dist/manifest.yaml": "7cd2e48a6485230fc7302ffcc59433c604311dc0710773cf46211c41a3d668fa"
   },
-  "bundle_id": "aide-lite-pack-v0-e8c4bbe7d4ab83e7",
+  "bundle_id": "aide-lite-pack-v0-31bd91bd10ed57e9",
   "dirty_state": false,
   "dirty_state_error": "",
-  "export_pack_checksums_sha256": "adf22a6659532fbcd17fc1904bf3e8398ec03704943b697597965ba029c33658",
-  "export_pack_manifest_sha256": "8302b4d43c7bc38045f6dde63bbee99c54464941c48ac2f4e53b24cea7261c41",
-  "generated_at_or_source_ref": "source_commit:9161d9512738440f265df08c262d7117a74f7c8a",
+  "export_pack_checksums_sha256": "961db2cdcd81f7d749fee2e8580bd32d258548feccbbf3126a90e0964f362614",
+  "export_pack_manifest_sha256": "76b767e67b5d651e1820b05f0eec7c1f031c151b6ee075ec40569386f0cfefa8",
+  "generated_at_or_source_ref": "source_commit:31bd91bd10ed57e98e658380cd9372e074867f63",
   "generated_by": "aide-lite release bundle q47",
   "no_publish": true,
   "preview_only": true,
   "publication_status": "local_preview_no_publish",
   "schema_version": "aide.release-provenance.v0",
   "source_branch": "task/aide-delivered-pack-safe-update-01",
-  "source_commit": "9161d9512738440f265df08c262d7117a74f7c8a",
+  "source_commit": "31bd91bd10ed57e98e658380cd9372e074867f63",
   "source_repo": "D:/Projects/AIDE/aide-delivered-pack-update"
 }
