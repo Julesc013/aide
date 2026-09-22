@@ -39,6 +39,32 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
+
+Status: combined candidate validated with retained host skips; independent
+exact-commit review pending.
+
+Changed:
+
+- preserved source candidate `e73ac0b269df3a47214588ae2d025d1b97f2f2c7` as
+  the second parent of merge `7aab31bc1bc747484d80c662d20e218bb93d1f5b`;
+- centralized portable fixture path classification and alias refusal;
+- hardened bounded snapshot reads, static link/reparse/hardlink/special-file
+  refusal, restore preflight, and exclusive add-file creation;
+- retained 125 focused portability regressions and explicit fixture-only docs;
+- added the bounded integration WorkUnit and evidence.
+
+Verification:
+
+- 156 adjacent distribution tests passed with eight explicit symlink/FIFO host
+  skips and zero failures;
+- AIDE Lite `test` passed;
+- canonical `validate` and `pack-status` report only expected commit-bound
+  portable-pack provenance drift pending post-integration refresh.
+
+Remaining: independent review, exact `dev` integration, post-integration pack
+refresh, and an authorized disposable Windows profile for skipped link cases.
+
 ## Work Item: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
 
 Completed as an acceptance-only consolidation and awaiting review.

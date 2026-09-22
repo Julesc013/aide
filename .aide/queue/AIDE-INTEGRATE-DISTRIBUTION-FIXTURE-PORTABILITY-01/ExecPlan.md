@@ -32,10 +32,10 @@ Windows-tested, independently reviewed integration candidate and land it on
 
 - [x] Inspect exact source history, message conformance, diff, and retained limits.
 - [x] Create an isolated current-dev task branch and admit this WorkUnit.
-- [ ] Merge the exact source candidate with both parents preserved.
-- [ ] Run focused and adjacent Windows tests against the combined tree.
-- [ ] Run canonical validation and classify generated-artifact drift.
-- [ ] Record exact source, test, and boundary evidence.
+- [x] Merge the exact source candidate with both parents preserved.
+- [x] Run focused and adjacent Windows tests against the combined tree.
+- [x] Run canonical validation and classify generated-artifact drift.
+- [x] Record exact source, test, and boundary evidence.
 - [ ] Obtain independent exact-commit review.
 - [ ] Publish the qualified task ref.
 - [ ] Prepare, validate, integrate, and observe the exact `dev` candidate.
