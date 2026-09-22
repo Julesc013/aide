@@ -10922,3 +10922,18 @@ Final export validation passed all eight commands; independent review verified a
   `doctor` PASS for each format.
 - Preserved no-publish boundaries: no tag, upload, GitHub Release, network API,
   active CI, main mutation, or real target-project mutation occurred.
+
+## 2026-09-22 - Ownership-aware delivered pack update
+
+- Extended the existing portable importer instead of creating a second
+  lifecycle implementation.
+- Added exact installed baselines for managed files and the portable managed
+  `AGENTS.md` section.
+- Added validated predecessor-pack proof for older receipt-less installations.
+- Added conflict-first update preflight, exact preview/apply digests, atomic
+  writes, durable interruption intent, and conservative recovery classes.
+- Proved local edits, unknown ownership, tampered predecessor bytes, stale
+  previews, and partial effects refuse closed in disposable consumers.
+- Proved extracted ZIP and tar.gz CLIs persist receipts and rerun as no-ops.
+- Retained real target, source self-update, main, tag, upload, publication,
+  repair, rollback, uninstall, and full stable-release gates.

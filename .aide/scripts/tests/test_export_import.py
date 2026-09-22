@@ -400,6 +400,41 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(result["status"], "APPLIED")
         self.assertEqual(aide_lite.read_text(target / managed_rel), "# Proven predecessor v2\n")
 
+    def test_tampered_predecessor_pack_is_rejected_before_target_writes(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "tampered-predecessor-v1")
+        target = source_root.parent / "target-tampered-predecessor"
+        aide_lite.apply_import_pack(pack_v1, target)
+        (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).unlink()
+        target_before = (target / managed_rel).read_bytes()
+
+        aide_lite.write_text(source_root / managed_rel, "# Tampered predecessor incoming\n")
+        pack_v2 = self.freeze_pack(source_root, "tampered-predecessor-v2")
+        aide_lite.write_text(pack_v1 / "files" / managed_rel, "# Invalid predecessor bytes\n")
+        with self.assertRaisesRegex(ValueError, "invalid predecessor pack checksums"):
+            aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)
+        self.assertEqual((target / managed_rel).read_bytes(), target_before)
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+
+    def test_locally_edited_portable_agents_section_refuses_whole_apply(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "agents-section-v1")
+        target = source_root.parent / "target-agents-section"
+        aide_lite.write_text(target / "AGENTS.md", "# Target Agents\n\nManual guidance.\n")
+        aide_lite.apply_import_pack(pack, target)
+        agents = aide_lite.read_text(target / "AGENTS.md")
+        aide_lite.write_text(target / "AGENTS.md", agents.replace("## AIDE Lite Portable Guidance", "## Locally edited portable guidance"))
+        receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
+
+        result = aide_lite.apply_import_pack(pack, target)
+        self.assertEqual(result["status"], "CONFLICT")
+        self.assertEqual(result["written"], [])
+        self.assertIn("AGENTS.md", result["conflicts"])
+        self.assertIn("Manual guidance.", aide_lite.read_text(target / "AGENTS.md"))
+        self.assertIn("Locally edited portable guidance", aide_lite.read_text(target / "AGENTS.md"))
+        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+
     def test_local_edits_and_unknown_ownership_refuse_before_any_payload_write(self) -> None:
         source_root = self.make_source_repo()
         managed_rel = ".aide/prompts/compact-task.md"

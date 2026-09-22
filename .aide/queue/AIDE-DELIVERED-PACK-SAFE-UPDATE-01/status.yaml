@@ -5,10 +5,11 @@ classification: admitted_by_owner
 planning_state: implementation_active
 result: PENDING
 updated_at: 2026-09-22
-current_slice: red_tests_and_lifecycle_owner_binding
-next_slice: implement_target_local_baseline_and_exact_apply
+current_slice: adjacent_validation_and_artifact_qualification
+next_slice: regenerate_clean_source_artifacts_and_run_external_canary
 notes:
   - The task starts from published dev at a2ba43624bf99d3354a2a7429a3241e3967310fc.
   - Existing DistributionApplyEngine behavior remains fixture-only and is not relabelled as real target qualification.
   - Only disposable extracted-artifact consumers may be mutated by this task.
   - Main, tags, upload, publication, and fleet rollout remain prohibited.
+  - Focused ownership/update tests pass 24 of 24 and extracted release tests pass 10 of 10.

@@ -49,8 +49,9 @@ The exact allowlist is in `task.yaml`. The implementation owner is
 - [x] Add red tests for baseline update, conflict-first refusal, stale plan,
       predecessor proof, and interruption evidence.
 - [ ] Add the extracted-artifact update regression after the core path is green.
-- [ ] Implement the smallest coherent lifecycle extension in `import-pack`.
-- [ ] Run focused and adjacent validation immediately.
+- [x] Implement the smallest coherent lifecycle extension in `import-pack`.
+- [x] Run focused validation immediately.
+- [ ] Run adjacent distribution, release, and repository validation.
 - [ ] Regenerate and qualify exact delivered bytes.
 - [ ] Record evidence, commit explicit paths, and publish the task branch.
 - [ ] Prepare and validate exact task-to-`dev` integration.
@@ -79,3 +80,5 @@ postimages instead of blindly replaying. Shared history is never rewritten.
 - Treat a path collision without a matching baseline as unknown ownership.
 - Use exact byte digests as the first supported three-way oracle; semantic
   merges remain deferred and explicit.
+- Preserve the original applied-plan identity on an idempotent rerun when the
+  incoming pack and managed baseline are already identical.
