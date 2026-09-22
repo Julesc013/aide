@@ -20794,7 +20794,15 @@ GIT_HELPER_POLICY_FILES = [
 ]
 
 
-def run_git_status_code(repo_root: Path, args: list[str]) -> tuple[int, str, str]:
+def run_git_status_code(
+    repo_root: Path,
+    args: list[str],
+    *,
+    ignore_replacements: bool = False,
+) -> tuple[int, str, str]:
+    environment = os.environ.copy()
+    if ignore_replacements:
+        environment["GIT_NO_REPLACE_OBJECTS"] = "1"
     try:
         result = subprocess.run(
             ["git", *args],
@@ -20804,6 +20812,7 @@ def run_git_status_code(repo_root: Path, args: list[str]) -> tuple[int, str, str
             stderr=subprocess.PIPE,
             check=False,
             encoding="utf-8",
+            env=environment,
         )
     except OSError as exc:
         return 127, "", str(exc)
@@ -39471,12 +39480,14 @@ def pack_source_ancestor_has_unchanged_inputs(repo_root: Path, source_commit: st
     ancestor_code, _ancestor_output, _ancestor_error = run_git_status_code(
         repo_root,
         ["merge-base", "--is-ancestor", source_commit, current_commit],
+        ignore_replacements=True,
     )
     if ancestor_code != 0:
         return False
     diff_code, diff_output, _diff_error = run_git_status_code(
         repo_root,
         ["diff", "--name-only", "--no-renames", source_commit, current_commit],
+        ignore_replacements=True,
     )
     if diff_code != 0:
         return False
