@@ -55,8 +55,9 @@ the referenced history.
 
 ## Discoveries
 
-- `bfb86c12` has one current message failure; `486e81cd` has thirteen.
-- Both proposed records are visible in range output and remain ineffective.
+- `bfb86c12` has one current message failure; `486e81cd` has thirteen;
+  `1011d008` has one bullet-shape failure in `## Why`.
+- All three proposed records are visible in range output and remain ineffective.
 - A clean source checkpoint is required before regenerating portable artifacts
   with trustworthy provenance.
 
@@ -65,7 +66,7 @@ the referenced history.
 The source mechanism, adversarial tests, portable projection, and candidate
 evidence are complete. The clean source checkpoint is `0dc74af4` with tree
 `41137c8b`; generated pack closure is `f409dba8`. Every new branch commit passes
-the raw message checker. Both real historical records remain proposed, so the
-two original range failures continue to fail exactly and no integration gate
-has been bypassed. The task now stops at independent mechanism review and two
+the raw message checker. All three real historical records remain proposed, so
+the original range failures continue to fail exactly and no integration gate
+has been bypassed. The task now stops at independent mechanism review and three
 exact owner/reviewer decisions.

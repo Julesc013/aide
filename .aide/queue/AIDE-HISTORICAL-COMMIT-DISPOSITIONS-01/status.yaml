@@ -10,7 +10,7 @@ next_slice: independent_mechanism_review_and_exact_owner_disposition_decisions
 notes:
   - Mechanism implementation is authorized; no disposition is self-approved.
   - Raw historical failures remain visible and immutable.
-  - Both exact registry entries remain proposed and ineffective.
+  - All three exact registry entries remain proposed and ineffective.
   - Focused, portable governance, portable consumer, canonical, doctor, release-boundary, and raw branch-range checks pass.
   - Portable pack source is clean commit 0dc74af4fea257f8c56ae0848e43215288ed9edf and source tree 41137c8be01cecf200049a876d94f0d18ebc0a8e.
   - Qualified candidate checkpoint 192d0f8aa09245ce4c73cd5800c3b72eb953c0b6 is published on the task branch.

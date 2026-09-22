@@ -30,11 +30,25 @@ Task: `AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01`
   the commit, accepting adjacent commits, integrating the product branch, or
   approving a main promotion.
 
+## Decision Subject C
+
+- Disposition id: `1011d008-api-query-why-bullet`
+- Exact commit: `1011d008fc39b135a5ef27062b5b8ee9c95cdc7f`
+- Requested decision: accept only the recorded historical commit-message
+  nonconformance for range integration checks.
+- Basis: the published repair commit has a complete structured message and
+  independently passing source review, but its `## Why` content is prose rather
+  than the currently required Markdown bullet form.
+- Excluded: declaring the original message conformant, treating source review
+  as native-effect qualification, changing the commit, accepting adjacent
+  commits, or approving main promotion.
+
 ## Available Decisions
 
 The responsible owner or reviewer may independently choose `accepted` or
 `rejected` for each exact subject. Silence, broad campaign authorization, and
-the existence of this packet leave both entries `proposed` and ineffective.
+the existence of this packet leave all three entries `proposed` and
+ineffective.
 
 For acceptance, the registry must record an `owner:` or `reviewer:` identity,
 the exact review date, this decision file's content digest, the raw-evidence

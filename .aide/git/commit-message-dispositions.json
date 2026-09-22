@@ -5,13 +5,13 @@
       "decision": "accept_historical_nonconformance",
       "decision_ref": {
         "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-request.md",
-        "sha256": "67e02950ca9f5c53b848f820a05f2fda6b209eb2e71a00b5495753930a5f1187"
+        "sha256": "3ee6fdfd25809a2847bfabe78231a63bab5ec977087d0def94c318a0b8594ec8"
       },
       "disposition_id": "bfb86c12-historical-validation-token",
       "evidence": [
         {
           "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/raw-policy-failures.md",
-          "sha256": "554ad91cf4f88799aee1227f972accb3adfc23d7404eeccbd1858b61886a4a28"
+          "sha256": "18db66e85bec256ef7ec2f66b615b073543f193ff67df79d90086bba202be611"
         }
       ],
       "failed_checks": [
@@ -22,7 +22,7 @@
         "02e99d267b14dc7dfedbd42262d390a93eac354f",
         "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3"
       ],
-      "record_digest": "8072034fc223400bd584e6af22063e0a60d6e424c4632e14bac88d8f7f6e2c45",
+      "record_digest": "d93839dc7c1e6c8e3c74e42e09ca27aeff631f3da5ede42d13e3ff901822e0f0",
       "reviewed_at": "",
       "reviewed_by": "",
       "schema_version": "aide.commit-message-disposition.v1",
@@ -35,13 +35,13 @@
       "decision": "accept_historical_nonconformance",
       "decision_ref": {
         "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-request.md",
-        "sha256": "67e02950ca9f5c53b848f820a05f2fda6b209eb2e71a00b5495753930a5f1187"
+        "sha256": "3ee6fdfd25809a2847bfabe78231a63bab5ec977087d0def94c318a0b8594ec8"
       },
       "disposition_id": "486e81cd-historical-structured-body",
       "evidence": [
         {
           "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/raw-policy-failures.md",
-          "sha256": "554ad91cf4f88799aee1227f972accb3adfc23d7404eeccbd1858b61886a4a28"
+          "sha256": "18db66e85bec256ef7ec2f66b615b073543f193ff67df79d90086bba202be611"
         }
       ],
       "failed_checks": [
@@ -63,13 +63,42 @@
       "parents": [
         "ea98dc1c004e2a1cdf83fee69b63976825dc175e"
       ],
-      "record_digest": "ff0810a090f379b764b147f7dd8295949757e0f737c960075958782193f468d9",
+      "record_digest": "7289b1ed86e6cd204d29dc041767f1536517a1bc31a798caf243fabb47ea95bc",
       "reviewed_at": "",
       "reviewed_by": "",
       "schema_version": "aide.commit-message-disposition.v1",
       "scope": "historical_commit_message_only",
       "status": "proposed",
       "tree": "796f5aafc0d350e8cef599cacb9b3f703f8b2bb1"
+    },
+    {
+      "commit": "1011d008fc39b135a5ef27062b5b8ee9c95cdc7f",
+      "decision": "accept_historical_nonconformance",
+      "decision_ref": {
+        "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-request.md",
+        "sha256": "3ee6fdfd25809a2847bfabe78231a63bab5ec977087d0def94c318a0b8594ec8"
+      },
+      "disposition_id": "1011d008-api-query-why-bullet",
+      "evidence": [
+        {
+          "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/raw-policy-failures.md",
+          "sha256": "18db66e85bec256ef7ec2f66b615b073543f193ff67df79d90086bba202be611"
+        }
+      ],
+      "failed_checks": [
+        "commit body heading has bullet content: ## Why"
+      ],
+      "message_sha256": "972e1349736a366c0a3b73189519c218bcb6b653fa8bb1a90bf73986034d3913",
+      "parents": [
+        "ebf13af0dbef2dfbeab791dcb91eb8eb67a31c91"
+      ],
+      "record_digest": "f7beb809106c19b0ae2a0e591c2721a2b84a3970a70fb8366d493b863d564232",
+      "reviewed_at": "",
+      "reviewed_by": "",
+      "schema_version": "aide.commit-message-disposition.v1",
+      "scope": "historical_commit_message_only",
+      "status": "proposed",
+      "tree": "68cbc4d2b15049b7c589204d29003cf4affd93fc"
     }
   ],
   "schema_version": "aide.commit-message-dispositions.v1"

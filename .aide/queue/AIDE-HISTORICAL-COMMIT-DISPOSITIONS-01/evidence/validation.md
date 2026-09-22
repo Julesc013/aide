@@ -5,8 +5,10 @@
 - `py -3 -B .aide/scripts/aide_lite.py validate`: PASS.
 - `py -3 -B .aide/scripts/aide_lite.py doctor`: PASS.
 - `py -3 -B .aide/scripts/aide_lite.py eval run --task commit_message_standard_golden`: PASS, 22/22 checks; generated latest-run reports were restored because they are outside task scope.
-- Raw range checks for `bfb86c12^!` and `486e81cd^!`: FAIL with the exact retained failures recorded in `raw-policy-failures.md`.
-- Default range checks for both proposed records: FAIL with `disposition_status: proposed` and `disposition is proposed and has no effect`.
+- Raw range checks for `bfb86c12^!`, `486e81cd^!`, and `1011d008^!`:
+  FAIL with the exact retained failures recorded in `raw-policy-failures.md`.
+- Default range checks for all three proposed records: FAIL with
+  `disposition_status: proposed` and `disposition is proposed and has no effect`.
 - `py -3 -B .aide/scripts/aide_lite.py pack-status`: PASS for the predecessor pack; a clean-source refresh is still required to carry the new portable policy, schema, helper, and docs.
 - `git diff --check`: PASS for the current source change.
 

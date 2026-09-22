@@ -46,7 +46,22 @@ input to the proposed decisions, not passing validation evidence.
 
 ## Interpretation
 
-- Neither historical commit message passes the current standard.
+## `1011d008fc39b135a5ef27062b5b8ee9c95cdc7f`
+
+- Subject: `fix(runtime): repair API-set query review findings`
+- Tree: `68cbc4d2b15049b7c589204d29003cf4affd93fc`
+- Ordered parent:
+  - `ebf13af0dbef2dfbeab791dcb91eb8eb67a31c91`
+- Canonical message SHA-256: `972e1349736a366c0a3b73189519c218bcb6b653fa8bb1a90bf73986034d3913`
+- Raw result: `FAIL`
+- Exact failed check:
+  - `commit body heading has bullet content: ## Why`
+- Command:
+  - `py -3 -B .aide/scripts/aide_lite.py commit check --range 1011d008fc39b135a5ef27062b5b8ee9c95cdc7f^! --no-dispositions`
+
+## Interpretation
+
+- None of the three historical commit messages passes the current standard.
 - No commit was amended, replaced, or rewritten.
 - Any accepted disposition must preserve these exact failures in range output.
 - The disposition mechanism cannot establish product, runtime, or release
