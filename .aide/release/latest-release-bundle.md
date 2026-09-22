@@ -1,9 +1,9 @@
 # Latest Release Bundle
 
-- bundle_id: aide-lite-pack-v0-f6ae36e8074bab51
+- bundle_id: aide-lite-pack-v0-c730eac442021cdd
 - bundle_name: aide-lite-pack-v0
-- source_commit: b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb
-- source_branch: task/aide-broker-dev-pack-refresh-01
+- source_commit: c730eac442021cdd6f71e6d8038d096af0c6378b
+- source_branch: task/aide-distribution-portability-pack-refresh-01
 - dirty_state: false
 - artifact_count: 11
 - validation_result: PASS

@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 status: running
-classification: integrated_pending_artifact_refresh
-planning_state: artifact_refresh_active
+classification: integrated_artifact_refresh_qualified
+planning_state: awaiting_artifact_commit_and_provenance_rebind
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
 current_slice: post_integration_artifact_refresh
@@ -23,3 +23,5 @@ notes:
   - Dev integration preserves the reviewed candidate as second parent 6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22 and passes 126 focused plus 157 adjacent tests with the same eight explicit host skips.
   - The remaining task-owned action is the commit-bound portable artifact refresh and its validation; no main, tag, upload, or publication authority is implied.
   - The refresh worktree starts from published dev cc85be9c472a16f39aae98ba00fd5de145098862 and owns only generated export/release outputs plus this task's closeout records.
+  - Clean-source generation from c730eac442021cdd6f71e6d8038d096af0c6378b produced a checksum-valid export, local bundle, and preview-only draft; 25 consumer lifecycle tests and 10 release-bundle tests passed.
+  - Canonical validate and doctor pass before the generated-output commit; a deterministic post-commit provenance rebind remains required.

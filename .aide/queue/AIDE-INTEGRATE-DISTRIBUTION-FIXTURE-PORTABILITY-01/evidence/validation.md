@@ -57,8 +57,15 @@ The exact reviewed candidate was integrated into `dev` by two-parent commit
 - PASS WITH SKIPS: 157 adjacent distribution tests; 149 passed and eight skipped.
 - PASS: `py -3 -B .aide/scripts/aide_lite.py test`.
 - PASS: corrected integration commit message policy and `git diff --check`.
-- PENDING: regenerate and validate commit-bound portable artifacts from the
-  landed clean source commit.
+- PASS: clean-source export, local bundle, and preview draft generation from
+  `c730eac442021cdd6f71e6d8038d096af0c6378b`.
+- PASS: export checksums, source provenance, archive boundaries, release
+  validation, and preview-draft asset checksums.
+- PASS: 25 portable export/import/update consumer tests and 10 release-bundle
+  extraction/determinism tests.
+- PASS: canonical validate and doctor before the generated-output commit.
+- PENDING: commit the generated outputs, rebind any post-commit provenance
+  derivatives, and integrate the exact refresh candidate.
 
 No main ref, tag, upload, GitHub Release, non-disposable consumer, or machine
 configuration was changed by this integration.

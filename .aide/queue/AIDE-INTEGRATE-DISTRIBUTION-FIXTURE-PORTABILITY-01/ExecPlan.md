@@ -44,8 +44,11 @@ Windows-tested, independently reviewed integration candidate and land it on
   `bb689227c6a65292f4728d7ae0f8759c22e77bd3`.
 - [x] Create a clean bounded refresh worktree from published
   `dev@cc85be9c472a16f39aae98ba00fd5de145098862`.
-- [ ] Refresh and validate commit-bound portable artifact provenance from the
-  landed `dev` source.
+- [x] Refresh and validate portable export, local bundle, and preview-draft
+  bytes from clean committed source `c730eac442021cdd6f71e6d8038d096af0c6378b`.
+- [ ] Commit the generated artifacts and close any deterministic post-commit
+  provenance/checksum derivation.
+- [ ] Integrate the qualified refresh into `dev` and close this WorkUnit.
 
 ## Test Oracle
 
