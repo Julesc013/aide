@@ -11219,3 +11219,16 @@ DLL mapping, image or grant effect is part of this source implementation.
   artifacts remain local no-publish outputs rather than a public release.
 - Kept live providers, credentials, hosted effects, protected-host closeout,
   main promotion, tagging, and release publication outside this integration.
+
+## 2026-09-22 - Distribution fixture Windows alias repair
+
+- Preserved the exact published portability source through a two-parent merge
+  onto current `dev` and ran it in the complete Windows checkout.
+- Independent review reproduced a high-severity 8.3 short-name alias mutation
+  that the original case/Unicode collision checks did not detect.
+- Required every existing path component to match an exact enumerated
+  directory-entry name before reads or writes.
+- Added an actual `GetShortPathNameW` regression proving both path resolution
+  and operation execution refuse the alias without changing the long-name file.
+- Passed 126 focused and 157 adjacent tests with the same eight explicit
+  symlink/FIFO host limitations; exact repair rereview remains pending.

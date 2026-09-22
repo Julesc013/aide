@@ -129,13 +129,20 @@ def safe_join(root: Path, relative_path: str) -> Path:
     parts = normalized.split("/")
     for index, part in enumerate(parts):
         parent_state = _inspect(candidate)
+        entries: list[Path] = []
         if parent_state is not None:
+            entries = list(candidate.iterdir())
             folded = unicodedata.normalize("NFC", part).casefold()
-            for existing in candidate.iterdir():
+            for existing in entries:
                 if unicodedata.normalize("NFC", existing.name).casefold() == folded and existing.name != part:
                     raise FixturePathError("path_collision_refused")
         candidate = candidate / part
         observed = _inspect(candidate)
+        if observed is not None and not any(existing.name == part for existing in entries):
+            # Case-insensitive filesystems can resolve aliases that directory
+            # enumeration does not expose as entries, notably Windows 8.3
+            # short names. Only the exact enumerated name is admissible.
+            raise FixturePathError("path_collision_refused")
         if index < len(parts) - 1 and observed is not None and not stat.S_ISDIR(observed.st_mode):
             raise FixturePathError("parent_not_directory")
     return candidate

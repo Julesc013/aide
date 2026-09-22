@@ -21,3 +21,25 @@ because its manifest intentionally identifies the exact source commit.
 
 No non-disposable target, network, credential, GitHub setting, branch policy,
 main ref, tag, upload, or release publication was changed.
+
+## Windows 8.3 Review Repair
+
+The first independent review reproduced a high-severity failure: an active
+`LONGFI~1.TXT` alias reached and changed its long-name target. That
+`REQUEST_CHANGES` record is preserved in `independent-review.md` and
+`independent-review.json`.
+
+- PASS WITH SKIPS: 126 repaired focused tests; 118 passed and eight skipped.
+- PASS: the new native Windows test obtained the actual short name, observed
+  `path_collision_refused` from both `safe_join` and operation execution, and
+  proved the long-name file remained byte-for-byte unchanged.
+- PASS WITH SKIPS: 157 adjacent distribution tests; 149 passed and eight
+  skipped, zero failures.
+- PASS: `py -3 -B .aide/scripts/aide_lite.py test`.
+- EXPECTED FAIL: canonical `validate` retains exactly two projections of the
+  known stale portable-pack source provenance at `b3e5c7aa`.
+- NOT RUN: non-disposable target mutation, privileged symlink creation, hosted
+  effects, main promotion, tagging, upload, or release publication.
+
+The repair requires independent rereview against its committed identity before
+integration.

@@ -1,0 +1,138 @@
+{
+  "schema_version": "aide.independent-review.v0",
+  "task_id": "AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01",
+  "decision": "REQUEST_CHANGES",
+  "reviewed_at": "2026-09-22",
+  "reviewed_identity": {
+    "branch": "task/aide-distribution-fixture-portability-integration-01",
+    "commit": "36fa64e011b56d228bdc83ed57ff78262934d762",
+    "tree": "791cfe7599f052f5781096b630d3f5355bea5820",
+    "parent": "7aab31bc1bc747484d80c662d20e218bb93d1f5b",
+    "source_merge": {
+      "commit": "7aab31bc1bc747484d80c662d20e218bb93d1f5b",
+      "tree": "ad3e2746b08f8380abf7d6ddc793a8692460ecee",
+      "parents": [
+        "f737f9199931131adce3bca430295754211f2e9a",
+        "e73ac0b269df3a47214588ae2d025d1b97f2f2c7"
+      ]
+    },
+    "source_candidate": {
+      "commit": "e73ac0b269df3a47214588ae2d025d1b97f2f2c7",
+      "tree": "b67c23b92d2086d2ed3862432a68a66af6861ea7"
+    }
+  },
+  "source_identity": {
+    "source_is_ancestor_of_merge": true,
+    "merge_is_ancestor_of_reviewed_commit": true,
+    "source_candidate_blob_count": 5,
+    "source_candidate_blobs_identical_at_source_merge_and_head": true,
+    "source_to_merge_blob_diff_empty": true
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "blocking": true,
+      "title": "Windows 8.3 aliases can mutate an existing file",
+      "locations": [
+        "core/distribution/temp_workspace.py:125",
+        "core/distribution/temp_workspace.py:133",
+        "core/distribution/temp_workspace.py:137",
+        "core/distribution/operation_executor.py:151",
+        "core/distribution/operation_executor.py:170"
+      ],
+      "evidence": {
+        "platform": "Windows",
+        "long_name": "LongFixtureNameForAlias.txt",
+        "short_alias": "LONGFI~1.TXT",
+        "safe_join_refused": false,
+        "joined_existing_target": true,
+        "operation_status": "APPLIED_TEMP",
+        "preimage": "keep",
+        "postimage": "changed"
+      },
+      "impact": "An alternate Windows directory-entry alias bypasses the candidate's alias-refusal boundary and permits mutation of the long-name file, contradicting the task oracle and documentation.",
+      "required_changes": [
+        "Refuse alternate Windows directory-entry names, including active 8.3 short-name aliases, before preimage reads or writes.",
+        "Add a native Windows regression using the actual generated short name and assert zero mutation.",
+        "Treat absence of a distinct short name as a specific unqualified skip, not a passing alias proof.",
+        "Re-run and independently review the repaired exact commit and tree."
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "command": "py -3 -B -m unittest discover -s .aide/scripts/tests -p test_aide_distribution_fixture_portability.py -v",
+      "result": "PASS_WITH_SKIPS",
+      "total": 125,
+      "passed": 117,
+      "skipped": 8,
+      "failed": 0
+    },
+    {
+      "command": "py -3 -B -m unittest discover -s .aide/scripts/tests -p test_aide_distribution*.py -v",
+      "result": "PASS_WITH_SKIPS",
+      "total": 156,
+      "passed": 148,
+      "skipped": 8,
+      "failed": 0
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py commit check --range f737f9199931131adce3bca430295754211f2e9a..HEAD",
+      "result": "PASS",
+      "commit_count": 3
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py pack-status",
+      "result": "EXPECTED_FAIL",
+      "underlying_problem_count": 1,
+      "problem": "manifest source_commit b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb does not match reviewed HEAD 36fa64e011b56d228bdc83ed57ff78262934d762",
+      "checksums_valid": true,
+      "boundary_result": "PASS"
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py validate",
+      "result": "EXPECTED_FAIL",
+      "failed_check_count": 2,
+      "underlying_problem_count": 1,
+      "problem": "stale portable-pack source provenance"
+    },
+    {
+      "command": "disposable Windows GetShortPathNameW alias probe followed by safe_join and execute_operation",
+      "result": "REPRODUCED_FAILURE",
+      "repository_files_mutated": false
+    }
+  ],
+  "skips": {
+    "truthful": true,
+    "total": 8,
+    "symlink_privilege_winerror_1314": 7,
+    "fifo_unavailable": 1,
+    "counted_as_qualified": false,
+    "hardlink_refusal_passed": true,
+    "mocked_windows_reparse_attribute_refusal_passed": true
+  },
+  "provenance_gap": {
+    "truthful": true,
+    "manifest_source_commit": "b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb",
+    "reviewed_head": "36fa64e011b56d228bdc83ed57ff78262934d762",
+    "checksums_valid": true,
+    "boundary_result": "PASS",
+    "changed_core_distribution_modules_are_direct_export_members": false
+  },
+  "residual_risks": [
+    "The helpers remain a trusted-root, disposable, single-writer fixture boundary rather than hostile-writer confinement or atomic target apply.",
+    "Actual symlink behavior is unqualified under the current Windows token.",
+    "FIFO behavior is unqualified on Windows.",
+    "Component and aggregate path-length portability are not modeled lexically, though filesystem errors fail preflight closed.",
+    "Portable artifact provenance needs a commit-bound refresh after repaired integration."
+  ],
+  "effects": {
+    "git_history_mutated": false,
+    "branch_or_remote_mutated": false,
+    "target_repository_mutated": false,
+    "release_surface_mutated": false,
+    "machine_configuration_mutated": false,
+    "network_or_external_effects": false
+  }
+}

@@ -36,6 +36,8 @@ Windows-tested, independently reviewed integration candidate and land it on
 - [x] Run focused and adjacent Windows tests against the combined tree.
 - [x] Run canonical validation and classify generated-artifact drift.
 - [x] Record exact source, test, and boundary evidence.
+- [x] Preserve the first independent `REQUEST_CHANGES` review and repair its
+  reproduced Windows 8.3 alias mutation with an actual short-name regression.
 - [ ] Obtain independent exact-commit review.
 - [ ] Publish the qualified task ref.
 - [ ] Prepare, validate, integrate, and observe the exact `dev` candidate.

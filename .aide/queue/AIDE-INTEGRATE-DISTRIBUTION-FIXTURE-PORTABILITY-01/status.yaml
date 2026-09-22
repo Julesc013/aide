@@ -1,19 +1,20 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 status: running
-classification: combined_candidate_validated
-planning_state: awaiting_independent_review
-result: PASS_WITH_WARNINGS
+classification: independent_review_repair_candidate
+planning_state: awaiting_independent_rereview
+result: PENDING
 updated_at: 2026-09-22
-current_slice: independent_exact_commit_review
+current_slice: windows_8dot3_alias_repair_rereview
 source_candidate: e73ac0b269df3a47214588ae2d025d1b97f2f2c7
 dev_base: c6fdc754844cf7d42302218ce08307a7e05dcb61
 source_preserved: two_parent_merge_7aab31bc1bc747484d80c662d20e218bb93d1f5b
-windows_validation: 156_passed_8_skipped
-independent_review: pending
+windows_validation: 157_total_149_passed_8_skipped
+independent_review: request_changes_f1_repaired_pending_rereview
 dev_integration: pending
 notes:
   - The source candidate remains fixture-only and has one commit-format PASS.
   - No non-disposable consumer, main ref, tag, release, GitHub setting, or machine configuration is in scope.
   - AIDE Lite test passes; canonical validate and pack-status fail only because the tracked portable manifest still names pre-candidate source b3e5c7aa.
   - The changed core distribution files are not present in the current aide-lite export payload; commit-bound portable provenance is deferred to the post-integration artifact refresh.
+  - Independent review reproduced an active Windows 8.3 alias mutation; the repair now refuses non-enumerated aliases and its actual short-name zero-write regression passes.

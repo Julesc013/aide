@@ -4,6 +4,7 @@ These tests are not native Windows qualification or a hostile-writer sandbox.
 """
 from __future__ import annotations
 
+import ctypes
 import hashlib
 import json
 import os
@@ -125,6 +126,23 @@ class FixtureCase(unittest.TestCase):
         except (OSError, NotImplementedError) as exc:
             self.skipTest(f"symlink creation unavailable: {exc}")
 
+    def windows_short_leaf(self, path):
+        if os.name != "nt":
+            self.skipTest("Windows 8.3 aliases are Windows-specific")
+        get_short_path_name = ctypes.WinDLL("kernel32", use_last_error=True).GetShortPathNameW
+        get_short_path_name.argtypes = [ctypes.c_wchar_p, ctypes.c_wchar_p, ctypes.c_uint32]
+        get_short_path_name.restype = ctypes.c_uint32
+        buffer = ctypes.create_unicode_buffer(32768)
+        length = get_short_path_name(str(path), buffer, len(buffer))
+        if length == 0:
+            self.skipTest(f"GetShortPathNameW unavailable: {ctypes.get_last_error()}")
+        if length >= len(buffer):
+            self.fail("GetShortPathNameW exceeded the fixed test buffer")
+        short_leaf = Path(buffer.value).name
+        if short_leaf.casefold() == path.name.casefold():
+            self.skipTest("test volume did not generate a distinct 8.3 alias")
+        return short_leaf
+
 
 class FixtureFilesystemTests(FixtureCase):
     def test_empty_snapshot_and_hash_compatibility(self):
@@ -230,6 +248,28 @@ class FixtureFilesystemTests(FixtureCase):
         (self.root / "Current.txt").write_text("keep")
         with self.assertRaisesRegex(ValueError, "path_collision_refused"):
             tw.safe_join(self.root, "current.txt")
+
+    def test_windows_short_name_alias_is_typed_zero_write(self):
+        target = self.root / "LongFixtureNameForAlias.txt"
+        target.write_text("keep", encoding="utf-8")
+        short_leaf = self.windows_short_leaf(target)
+        with self.assertRaisesRegex(ValueError, "path_collision_refused"):
+            tw.safe_join(self.root, short_leaf)
+        operation = {
+            "operation_class": "update_managed_file",
+            "target_relative_path": short_leaf,
+            "ownership_class": "vendor_managed_file",
+            "rollback_covered": True,
+            "preimage_digest": tw.sha256_text("keep"),
+            "postimage": "changed",
+        }
+        outcome = oe.execute_operation(self.root, operation)
+        self.assertEqual(outcome["status"], "FAILED_VALIDATION")
+        self.assertEqual(
+            outcome["refusal_code"],
+            "distribution_apply_engine.path_collision_refused",
+        )
+        self.assertEqual(target.read_text(encoding="utf-8"), "keep")
 
     def test_initial_case_aliases_refused_before_write(self):
         with self.assertRaises(ValueError):

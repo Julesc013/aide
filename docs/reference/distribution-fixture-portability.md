@@ -1,6 +1,6 @@
 # Distribution fixture portability hardening
 
-Status: source candidate; independent review and complete-checkout validation pending.
+Status: Windows-qualified combined candidate; repair rereview pending.
 
 ## Scope
 
@@ -12,8 +12,9 @@ schema, activate a worker, or grant target-repository apply permission.
   traversal, root aliases, reserved Windows device names, illegal characters,
   trailing-dot/space aliases, and unencodable Unicode.
 - Backslash and slash input locators have the same meaning on all hosts.
-- Exact, case-folded, normalized-Unicode and file/parent collisions refuse before
-  initial writes; existing child-name aliases also refuse.
+- Exact, case-folded, normalized-Unicode and file/parent collisions refuse
+  before initial writes. Existing paths are admitted only through their exact
+  enumerated directory-entry names, so active Windows 8.3 aliases also refuse.
 - Snapshots reject static symlinks, reparse points, hardlinks and special files.
   Regular-file hashing uses bounded chunks and checks descriptor/path identity,
   file size and modification time around reads. The snapshot/digest encoding for
@@ -36,12 +37,14 @@ python -B -m unittest discover -s .aide/scripts/tests -p 'test_aide_distribution
 python -B .aide/scripts/aide_lite.py validate
 ```
 
-The first command passed 125 tests on Linux/CPython 3.13.5 in the implementation
-session. Nine explicit regressions failed against the exact baseline and passed
-after the fix. The second and third commands were not run: the session had exact
-blob reconstructions of the changed modules, not a complete AIDE checkout.
-Branch coverage: workspace helper 95%, operation executor 81%, aggregate 89%.
-These are focused test measurements, not product certification.
+The source session passed 125 focused tests on Linux/CPython 3.13.5. In the
+complete Windows checkout, independent review reproduced an active 8.3 alias
+mutation. The repair adds an actual `GetShortPathNameW` regression and passes
+126 focused tests (118 passed, eight skipped) plus 157 adjacent distribution
+tests (149 passed, eight skipped). AIDE Lite's internal test passes. Canonical
+validation retains only the expected stale portable-pack source-provenance
+failures pending the post-integration refresh. These results are candidate
+qualification, not product certification.
 
 ## Non-capabilities and retained limits
 
@@ -50,8 +53,10 @@ Python path checks do not hold an atomic handle-based confinement boundary over
 all reads/writes. They do not defeat a malicious concurrent same-user writer.
 Restore is still a fixture reset, not crash-atomic production rollback. Generic
 `write_text`/`write_json` retain their trusted-caller contract; they are not new
-root-confined publication APIs. Native Windows reparse/network/token behavior and
-macOS filesystem behavior remain unqualified by this Linux run.
+root-confined publication APIs. Native Windows 8.3 refusal is exercised on the
+current NTFS test volume. Privilege-dependent Windows symlink behavior, Windows
+FIFO behavior, other reparse/network/token behavior, and macOS filesystem
+behavior remain unqualified.
 
 All changes narrow ambiguous fixture behavior. No .codex settings, model/provider
 pins, credentials, branch policy, target repository or release state is changed.
