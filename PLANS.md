@@ -73,15 +73,15 @@
 ### Plan ID: AIDE-RELEASE-METADATA-INTEGRITY-01
 
 - Title: Repair deterministic release metadata integrity
-- Status: qualified candidate; independent review pending
+- Status: rereview requested changes; paired-preview absence repair in progress
 - Objective: close the exact asset-index, checkout-provenance, and stale-preview findings from artifact review.
 - Scope: release generator, Q47/Q48 regressions, local no-publish outputs, and bounded evidence.
 - Dependencies: reviewed failed artifact candidate `38fe7128` and preserved review `4c0da897`.
-- Milestones: regressions, generator repair, clean regeneration, artifact checkpoint, post-commit projection, and 44-file repeatability complete; clean-tree replay, independent rereview, and dev integration pending.
+- Milestones: initial generator repair and convergence complete; exact rereview found missing paired-JSON refusal and a stale commit narrative; source regression repair complete, new artifact chain and rereview pending.
 - Blockers: none for local implementation. Publication and main promotion remain separate exact gates.
 - Verification Intent: asset hash/size closure, cross-checkout determinism, preview-source binding, Q47/Q48 suites, consumer tests, canonical validation, and independent review.
 - Exit Criteria: exact repaired candidate reaches dev with internally consistent metadata and no publication effects.
-- Notes: 58 adjacent tests, canonical validation, delivered-byte canaries, and 44-file repeatability pass. Review repairs bind both preview representations and ignore Git replacement objects; checkpoint `dd1f39f3` has a converged `PASS_SOURCE_ANCESTOR` projection at `198a87d2`, with exact rereview pending.
+- Notes: exact `9f4bbc0a` rereview returned `REQUEST_CHANGES`. Paired JSON is now mandatory and the repaired adjacent matrix passes 60 cases with zero failures or skips. The next chain must bind its actual checkpoint identity in every commit message.
 
 ### Plan ID: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 

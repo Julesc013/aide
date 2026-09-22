@@ -23,6 +23,12 @@ hosted effects, target installs, or machine configuration.
       Git replacement-object ancestry, and post-commit projection closure.
 - [x] Commit artifact checkpoint `dd1f39f3`, run the complete post-commit
       projection, and prove a second 44-file cycle changes zero bytes.
+- [x] Preserve the exact `9f4bbc0a` rereview and its two findings.
+- [x] Require paired preview JSON presence and add bundle/draft deletion
+      regressions for both preview families.
+- [x] Pass the 60-case adjacent governance, lifecycle, bundle, and draft matrix.
+- [ ] Commit the repaired source and regenerate a correctly named artifact and
+      projection chain.
 - [ ] Obtain independent exact-commit rereview.
 - [ ] Integrate the qualified candidate into dev.
 
@@ -44,8 +50,10 @@ two delivered-byte consumer canaries, and a 44-file repeatability comparison on
 2026-09-22. The complete post-commit cycle advanced both release
 representations to `PASS_SOURCE_ANCESTOR`; a second cycle produced zero byte
 changes. Committed projection `198a87d2` then replayed all four generators with
-zero changed files and a clean tree. The next restart point is independent
-exact-commit rereview.
+zero changed files and a clean tree. Independent rereview found that absent
+paired JSON still failed open and that the projection message named a
+superseded local checkpoint. The next restart point is the paired-source repair,
+a newly generated chain with exact parent naming, and superseding rereview.
 
 ## Exit Criteria
 

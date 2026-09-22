@@ -1,0 +1,20 @@
+{
+  "base_commit": "cc85be9c472a16f39aae98ba00fd5de145098862",
+  "decision": "REQUEST_CHANGES",
+  "findings": [
+    {
+      "id": "paired_preview_json_missing_fails_open",
+      "severity": "HIGH",
+      "status": "OPEN_AT_REVIEWED_COMMIT"
+    },
+    {
+      "id": "projection_message_names_superseded_checkpoint",
+      "severity": "MEDIUM",
+      "status": "OPEN_AT_REVIEWED_COMMIT"
+    }
+  ],
+  "no_publication_authority": true,
+  "reviewed_commit": "9f4bbc0a77443bd84a5c2502882e95aa602f98fe",
+  "reviewed_tree": "af019b3fffbc0d8b27b3db60082ae0e80067e754",
+  "schema": "aide.release-integrity-independent-rereview.v1"
+}

@@ -2,12 +2,12 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-RELEASE-METADATA-INTEGRITY-01
 status: needs_review
 classification: qualified_candidate
-planning_state: independent_review_pending
-result: PASS
+planning_state: paired_preview_absence_repair_ready_for_checkpoint
+result: PASS_WITH_WARNINGS
 updated_at: 2026-09-22
-current_slice: exact_candidate_review
-next_slice: independent_rereview_then_dev_integration
-source_review_commit: 4c0da8974daa96022e53212b8d24b5f5660d7926
+current_slice: paired_preview_absence_repair
+next_slice: source_checkpoint_then_artifact_convergence_and_rereview
+source_review_commit: 9f4bbc0a77443bd84a5c2502882e95aa602f98fe
 notes:
   - Independent review found stale local asset identities, checkout-local provenance, and stale required preview assets.
   - Archive bytes and extracted consumer behavior passed and must remain unchanged unless regenerated from changed portable source.
@@ -22,5 +22,8 @@ notes:
   - A second complete bundle, validate, draft, and draft-validate cycle compared 44 files and changed zero bytes.
   - The unpublished checkpoint tail was recreated with identical trees to replace an invalid Build changelog category with the required Fixed category; no pushed history changed.
   - Converged projection 198a87d2 replays the full cycle with zero changed files and a clean tree.
-  - Independent exact-commit rereview and dev integration remain pending.
+  - Independent rereview of 9f4bbc0a returned REQUEST_CHANGES because deleting paired JSON still failed open and 198a87d2 named a superseded checkpoint.
+  - The source repair now requires paired Markdown and JSON previews and adds end-to-end deletion regressions.
+  - The repaired adjacent matrix passes 60 cases: Q31 6, export/import 25, Q47 18, and Q48 11, with zero failures or skips.
+  - A new source, preview, artifact, and projection chain plus independent exact rereview remain pending before dev integration.
   - No publication effect is authorized.

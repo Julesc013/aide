@@ -41,8 +41,8 @@
 
 ## Work Item: AIDE-RELEASE-METADATA-INTEGRITY-01
 
-Status: exact generated candidate qualified locally; independent rereview and
-`dev` integration remain active.
+Status: exact rereview requested changes; paired-preview absence repair is
+implemented and the replacement artifact chain remains active.
 
 Planned changes:
 
@@ -74,9 +74,20 @@ Implemented:
   validate, draft, and draft-validate projection with
   `PASS_SOURCE_ANCESTOR`; a second complete cycle changes zero of 44 files.
 
-Remaining: commit and cleanly replay the converged projection, then exact
-independent rereview and `dev` integration. Main promotion,
+Remaining: commit the paired-preview repair, generate and cleanly replay a new
+exactly named artifact/projection chain, then obtain independent rereview and
+integrate into `dev`. Main promotion,
 tagging, upload, and release publication remain separate retained gates.
+
+Independent rereview of `9f4bbc0a` proved that deleting a paired preview JSON
+still allowed Markdown alone to become publish-candidate and noted that
+`198a87d2` named a superseded local checkpoint. The repair now requires both
+representations to exist, parse, and agree. Deletion regressions for both
+preview families pass through bundle, release validation, draft generation,
+and draft validation. The complete repaired matrix passes 60 tests: 6 Q31,
+25 export/import, 18 Q47, and 11 Q48, with no failures or skips. A newly
+generated source/artifact/projection chain will supersede the stale narrative
+before rereview.
 
 ## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 
