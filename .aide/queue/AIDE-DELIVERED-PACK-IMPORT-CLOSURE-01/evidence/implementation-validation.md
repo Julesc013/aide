@@ -49,7 +49,8 @@ passes pack-provenance validation even though generation subsequently creates
 the expected output changes.
 
 The outer release bundle had the same observation-order defect. Its builder
-now captures commit, branch, dirtiness, and Git-status error before writing any
-release output, then carries that immutable observation into the provenance and
-bundle records. A clean committed release fixture now records
-`dirty_state: false` in both records.
+now inherits commit and dirty state from the already validated export-pack
+manifest while recording the current branch and exact pack metadata hashes.
+This remains truthful when materializing the clean pack changes the worktree.
+A clean committed release fixture now records `dirty_state: false` in both
+release provenance and bundle records.

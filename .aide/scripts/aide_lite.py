@@ -17658,11 +17658,11 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     pack_status, pack_problems = release_pack_status(repo_root)
     if pack_problems:
         raise ValueError("pack-status failed for release bundle: " + "; ".join(pack_problems[:5]))
-    source_commit = git_commit_id(repo_root)
+    pack_provenance = pack_manifest_scalars(pack_root)
+    source_commit = pack_provenance["source_commit"]
     source_branch = git_branch_name(repo_root)
-    git_ok, source_status_entries, source_git_error = git_status_short(repo_root)
-    source_dirty_state = bool(source_status_entries) if git_ok else True
-    source_dirty_error = "" if git_ok else source_git_error
+    source_dirty_state = pack_provenance["source_dirty_state"] == "true"
+    source_dirty_error = ""
     bundle_id = release_bundle_id(repo_root)
     dist = release_dist_dir(repo_root)
     dist.mkdir(parents=True, exist_ok=True)

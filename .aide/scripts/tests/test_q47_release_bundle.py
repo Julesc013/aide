@@ -227,6 +227,14 @@ class Q47ReleaseBundleTests(unittest.TestCase):
             encoding="utf-8",
         ).stdout.strip()
 
+        pack_root = aide_lite.export_pack_root(root, aide_lite.EXPORT_PACK_ID)
+        included_files = aide_lite.pack_manifest_list(pack_root, "included_files")
+        self.write(
+            root,
+            f"{aide_lite.EXPORT_PACK_PATH}/manifest.yaml",
+            aide_lite.render_manifest(included_files, source_commit, False),
+        )
+
         bundle = aide_lite.build_release_bundle_outputs(root)
         provenance = json.loads((root / aide_lite.RELEASE_PROVENANCE_JSON_PATH).read_text(encoding="utf-8"))
         self.assertEqual(provenance["source_commit"], source_commit)
