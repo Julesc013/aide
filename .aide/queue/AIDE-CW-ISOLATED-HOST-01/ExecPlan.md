@@ -488,11 +488,15 @@ current OS build, protected journal/controller, all requested names, returned
 physical hosts, and fresh held-object observations. Query success alone does
 not qualify host bytes, a restricted loader, or the private Python runtime.
 
-The source is now frozen at aggregate
-`d6e30f285926acccbb3dd14cd0ec6672e966267a3131b37b177c7ae42449dda3`.
-Fifty-one direct system-observation/query tests and 91 dependent contract, image,
-PE and security tests pass. The injected suite executes all 180 observed API
-names within the 256-row and 257-call ceilings. `NativeApiSetQueryApi` is
-separate from the historical `NativeSystemApi`, so the old consumed resource
-probe path is not made dependent on the new query DLL. Source awaits
-independent review before any actual query/effect packet is prepared.
+The repaired source is frozen at aggregate
+`8604fa6127db546a9507022037b0004de4313352d83b5c5d981c3a2bec6ad5a2`.
+Fifty-two direct system-observation/query tests and 92 dependent contract,
+image, PE and security tests pass. The injected suite executes all 180 observed
+API names, including the three retained `ext-ms-onecore-*` contracts, within
+the 256-row and 257-call ceilings. `NativeApiSetQueryApi` remains separate from
+the historical `NativeSystemApi`, and the legacy resource probe again retains
+its independent 128-name ceiling. Independent source rereview passed 140
+permitted tests and closed both findings. No actual query/effect packet is
+prepared or admitted. The published repair commit's non-bulleted `## Why`
+section still requires an exact Git-policy disposition before release or
+changelog readiness.

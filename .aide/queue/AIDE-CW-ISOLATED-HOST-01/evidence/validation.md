@@ -132,13 +132,17 @@ authority gates remain open.
 
 ## H2 supported API-set query source
 
-- PASS: `test_continuous_worker_system_observation.py -v`, 51 tests.
-- PASS: `test_continuous_worker_python_contract.py -v`, 11 tests.
+- PASS: `test_continuous_worker_system_observation.py -v`, 52 tests.
+- PASS: `test_continuous_worker_python_contract.py -v`, 12 tests.
 - PASS: `test_continuous_worker_windows_image.py -v`, 33 tests.
 - PASS: `test_continuous_worker_python_image.py -v`, 7 tests.
 - PASS: `test_continuous_worker_windows_pe.py -v`, 13 tests.
 - PASS: `test_continuous_worker_windows_security.py -v`, 27 tests.
-- PASS: 142 affected tests total, zero failures and zero skips.
+- PASS: 144 affected tests total, zero failures and zero skips.
+- PASS: independent source rereview executed 140 permitted tests with zero
+  failures and closed both prior findings.
+- FAIL: the published repair commit is not commit-policy conformant because its
+  `## Why` section lacks bullet content; exact disposition remains pending.
 - PASS: Python compilation and `git diff --check`.
 - NOT RUN: `NativeApiSetQueryApi` construction, actual
   `GetApiSetModuleBaseName`, private-image creation/grants, AppContainer Python,

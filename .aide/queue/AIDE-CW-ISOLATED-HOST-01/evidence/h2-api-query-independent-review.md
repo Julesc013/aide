@@ -1,6 +1,54 @@
 # H2 API-Set Query Independent Review
 
-Verdict: **REQUEST_CHANGES** for commit
+## Superseding Rereview - 2026-09-22
+
+Source verdict: **PASS** for repaired commit
+`1011d008fc39b135a5ef27062b5b8ee9c95cdc7f` (tree
+`68cbc4d2b15049b7c589204d29003cf4affd93fc`), whose sole parent is the first
+reviewed candidate `ebf13af0dbef2dfbeab791dcb91eb8eb67a31c91`.
+
+Both prior material findings are closed:
+
+- **H2-APIQUERY-001 closed.**
+  `core/runtime/continuous_worker/windows_python_contract.py:50` now accepts
+  bounded, lower-case, versioned `api-*` and `ext-*` contract names. The direct
+  regression at
+  `.aide/scripts/tests/test_continuous_worker_system_observation.py:467` loads
+  the exact retained inventory. Independent replay admitted all 180 distinct
+  names, including all three `ext-ms-onecore-*` contracts. The focused
+  `SystemContract` regression is at
+  `.aide/scripts/tests/test_continuous_worker_python_contract.py:105`.
+- **H2-APIQUERY-002 closed.**
+  `core/runtime/continuous_worker/windows_system_observation.py:30` restores an
+  independent `MAX_RESOURCE_API_SETS = 128`, used by `ObservationPlan` at line
+  99, while the supported query and `SystemContract` retain their justified
+  256-row ceiling. Independent replay refused a 129-name legacy resource plan;
+  the regression is at
+  `.aide/scripts/tests/test_continuous_worker_system_observation.py:479`.
+
+The revised four-file manifest hashes and canonical aggregate independently
+match `8604fa6127db546a9507022037b0004de4313352d83b5c5d981c3a2bec6ad5a2`.
+The 49 permitted observation/query tests, 65 contract/image/PE regressions, and
+26 effect-free security source tests all pass: 140 tests total, zero failures.
+The four excluded tests remain the three tests that manufacture a
+`NativeApiSetQueryApi` object and the one live-loopback test.
+
+Commit-message policy is a separate **FAIL**, not a passing check and not a
+source-quality waiver. `py -3 .aide/scripts/aide_lite.py commit check --latest`
+exits 1 only because `## Why` has prose but no bullet content. Every other
+reported commit-message rule passes. The published repair commit is therefore
+not commit-policy conformant or release/changelog-ready on this evidence even
+though its reviewed source passes.
+
+No `NativeApiSetQueryApi` object was instantiated. No native query, DLL
+load/map, file observation, profile, grant, AppContainer launch,
+credential/provider access, network effect, Windows-state mutation, or Git
+mutation was performed. This source rereview does not authorize or perform the
+actual native query or any downstream effect.
+
+## Preserved First Review
+
+First-review verdict: **REQUEST_CHANGES** for commit
 `ebf13af0dbef2dfbeab791dcb91eb8eb67a31c91` (tree
 `e7c7ee2b9e5833ea78eedef2f0fbf44b784736e1`) over base
 `c6fdc754844cf7d42302218ce08307a7e05dcb61`.
