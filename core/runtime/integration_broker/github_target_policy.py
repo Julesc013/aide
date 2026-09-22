@@ -145,18 +145,6 @@ def _rulesets(owner, workflow):
                             "strict_required_status_checks_policy": True,
                         },
                     },
-                    {
-                        "type": "workflows",
-                        "parameters": {
-                            "do_not_enforce_on_create": False,
-                            "workflows": [{
-                                "path": workflow["path"],
-                                "ref": workflow["source_ref"],
-                                "repository_id": workflow["repository_id"],
-                                "sha": workflow["source_commit"],
-                            }],
-                        },
-                    },
                 ],
             },
         },
@@ -210,7 +198,6 @@ def desired_target_policy(repository, *, repository_id, owner, broker=None, work
             "destination_enforced_when_qualified": [
                 "expected_head",
                 "strict_app_bound_required_check",
-                "exact_required_workflow",
                 "pull_request_only_dev_update",
                 "non_dev_update_restriction",
                 "deletion_restriction",
@@ -220,11 +207,17 @@ def desired_target_policy(repository, *, repository_id, owner, broker=None, work
                 "expected_base",
                 "expected_actor",
                 "expected_policy_digest",
-                "expected_workflow_source",
+                "exact_workflow_run_path_event_and_head",
+            ],
+            "monitored": [
+                "workflow_run_and_attempt_identity",
+                "check_run_and_suite_identity",
             ],
             "unsupported": [
                 "atomic_expected_base_argument",
                 "atomic_policy_compare_and_swap",
+                "server_enforced_exact_workflow_source",
+                "same_app_same_check_name_collision_exclusion",
                 "hidden_bypass_inference",
                 "uncertain_mutation_replay",
             ],

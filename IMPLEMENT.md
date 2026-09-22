@@ -11189,6 +11189,20 @@ DLL mapping, image or grant effect is part of this source implementation.
 - Refreshed read-only GitHub state and emitted a blocked zero-operation plan;
   96 affected tests pass, while hosted effects remain unrun.
 
+## 2026-09-22 - GitHub workflow-source binding repair
+
+- Preserved two independent `REQUEST_CHANGES` rounds, including the finding
+  that required-workflow rules are unavailable for the user-owned target.
+- Removed the target-inapplicable workflow ruleset operation and retained only
+  the narrower server-enforced app-bound required status check.
+- Bound exact workflow path/event/head, workflow run id/attempt, check run id,
+  and check suite id through the admitted plan, raw observation, durable
+  decision, and registered bridge fixtures.
+- Classified exact workflow provenance as local/monitored and its unavailable
+  server enforcement and same-app/name collision exclusion as unsupported.
+- Passed 135 affected tests with one retained Windows symlink privilege skip;
+  no GitHub setting, workflow, credential, ref, merge, tag, or release changed.
+
 ## 2026-09-22 - Broker runtime dev integration
 
 - Preserved the full published broker line at `75da3310` through a two-parent

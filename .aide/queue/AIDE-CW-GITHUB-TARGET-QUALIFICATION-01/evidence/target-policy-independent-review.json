@@ -1,38 +1,153 @@
 {
-  "schema": "aide.github-target-policy-independent-review.v1",
+  "schema": "aide.github-target-policy-independent-review.v2",
   "task_id": "AIDE-CW-GITHUB-TARGET-QUALIFICATION-01",
   "review_date": "2026-09-22",
   "reviewer": "Codex independent source review",
   "result": "REQUEST_CHANGES",
+  "supersedes_review_commit": "9bba1cecaec835b5299cf02718059a94ef4c08cb",
+  "review_history": [
+    {
+      "stage": "initial_review",
+      "result": "REQUEST_CHANGES",
+      "review_commit": "9bba1cecaec835b5299cf02718059a94ef4c08cb",
+      "source_commit": "bb433bb74f645e0904ca34bf3af38516ae05a7ad",
+      "source_tree": "a871c65880161f147f35cf8df7269bba9af3a867",
+      "published_head": "eb4dea3f30ab53e3e57fe85eae97fa07de6e414c",
+      "published_tree": "41adc996349690b4d796d8005ef179c89fb93c8e",
+      "artifact_identity": {
+        "markdown_git_blob": "7103255f96461b1b1edc88dbc7b6bdd4e40e10cb",
+        "markdown_sha256": "e69a8b86a6f6de5040d2ebdc8d60855006c420283dd7ce407cb904f9f004d915",
+        "json_git_blob": "6a52271d2ec4727a0851156da57b3cb6ecbb0d00",
+        "json_sha256": "dec5691bc4c0f59338f2b35f4b48052356e123fa3c06f9444d3b34a16014dfce"
+      },
+      "findings": [
+        {
+          "id": "F-01",
+          "priority": "P1",
+          "title": "Generated update rule omitted required 2026-03-10 API parameters",
+          "initial_status": "OPEN"
+        },
+        {
+          "id": "F-02",
+          "priority": "P1",
+          "title": "Owner and broker could resolve to the same bypass actor",
+          "initial_status": "OPEN"
+        },
+        {
+          "id": "F-03",
+          "priority": "P1",
+          "title": "Reviewed workflow source was not bound to the accepted required check",
+          "initial_status": "OPEN"
+        },
+        {
+          "id": "F-04",
+          "priority": "P2",
+          "title": "Canonical observation omitted effective-policy inputs",
+          "initial_status": "OPEN"
+        }
+      ]
+    },
+    {
+      "stage": "repaired_commit_rereview",
+      "result": "REQUEST_CHANGES",
+      "source_commit": "9383c2b5e8521bbdf9d0a54648459ee25d76c1b3",
+      "source_tree": "572b2f4f8bbbcf896b4c1661157658b6907c37c6",
+      "parent_review_commit": "9bba1cecaec835b5299cf02718059a94ef4c08cb",
+      "finding_status": {
+        "F-01": "CLOSED",
+        "F-02": "CLOSED",
+        "F-03": "OPEN",
+        "F-04": "CLOSED"
+      }
+    }
+  ],
   "source": {
-    "base_commit": "c6fdc754844cf7d42302218ce08307a7e05dcb61",
-    "base_tree": "acb1ff296a622cc614e71b3ebb17a23752f8d902",
-    "source_commit": "bb433bb74f645e0904ca34bf3af38516ae05a7ad",
-    "source_tree": "a871c65880161f147f35cf8df7269bba9af3a867",
-    "published_head": "eb4dea3f30ab53e3e57fe85eae97fa07de6e414c",
-    "published_tree": "41adc996349690b4d796d8005ef179c89fb93c8e",
-    "published_product_diff_from_source": false,
-    "base_source_changed_path_count": 18,
-    "all_changed_paths_allowed": true
+    "commit": "9383c2b5e8521bbdf9d0a54648459ee25d76c1b3",
+    "tree": "572b2f4f8bbbcf896b4c1661157658b6907c37c6",
+    "parent": "9bba1cecaec835b5299cf02718059a94ef4c08cb",
+    "branch": "task/aide-cw-github-target-qualification-01",
+    "remote_tracking_ref_at_review_start": "9383c2b5e8521bbdf9d0a54648459ee25d76c1b3",
+    "parent_source_changed_path_count": 10,
+    "all_changed_paths_allowed": true,
+    "diff_check_passed": true
   },
   "reviewed_files": {
     "core/runtime/integration_broker/github_target_policy.py": {
-      "git_blob": "71fd442b22ecdeeb669dfd0673388a0ca372cdb2",
-      "sha256": "b3a08360180f96ec5f2608e478eee7fb22b4876c31b0f4340d1e276c251e2b5b"
+      "git_blob": "bd9907be0da7fa442d4498e8a047221eb9a6d3df",
+      "sha256": "75e61dbb5ce4f085b885da08616f9a19bf667ae1d4c50cfd834ecbf21fcca2d2"
     },
     ".aide/scripts/tests/test_continuous_worker_github_observation.py": {
-      "git_blob": "26dc9a0f4cc5a0bfca7425b450e445d0a8fd8933",
-      "sha256": "2d8306b731940b832df0f6ea5f7991e13e8acb6d6ea3ecf6acda397ea0f293ea"
+      "git_blob": "0ade7c372ad0dd66e940380e7d2e4f7f2d9168ce",
+      "sha256": "3ff68a757329e91564b8e69adf7a3b47d13d208d91973eaaf4fd0dda18860236"
     }
   },
+  "finding_closure": [
+    {
+      "id": "F-01",
+      "priority": "P1",
+      "status": "CLOSED",
+      "evidence": "The update rule now contains parameters.update_allows_fetch_and_merge=false, matching the required field in the pinned REST schema; focused tests and an independent probe assert the exact body.",
+      "locations": [
+        "core/runtime/integration_broker/github_target_policy.py:174",
+        ".aide/scripts/tests/test_continuous_worker_github_observation.py:681"
+      ]
+    },
+    {
+      "id": "F-02",
+      "priority": "P1",
+      "status": "CLOSED",
+      "evidence": "Policy construction and validation reject broker/owner equality by user id or case-insensitive login; independent same-id and case-folded-login probes both refused.",
+      "locations": [
+        "core/runtime/integration_broker/github_target_policy.py:190",
+        "core/runtime/integration_broker/github_target_policy.py:247",
+        ".aide/scripts/tests/test_continuous_worker_github_observation.py:774"
+      ]
+    },
+    {
+      "id": "F-03",
+      "priority": "P1",
+      "status": "OPEN",
+      "title": "Replacement required-workflow control is not qualified for the exact user-owned target",
+      "evidence": "The emitted workflow fields match the generic repository-ruleset REST schema, but GitHub documents ruleset workflows as organization- or enterprise-level controls. The exact target owner is a User. The policy also represents event=push, while GitHub requires a ruleset workflow file to include pull_request, pull_request_target, or merge_group.",
+      "impact": "The exact_required_workflow destination guarantee and repository-level POST cannot be accepted as a documented deployable control for Julesc013/aide; the original same-app/same-name source-collision risk therefore remains unresolved for the documented target-applicable status-check mechanism.",
+      "required_change": "Bind the actual accepted run to reviewed workflow path/source throughout the local contract, or use an officially documented target-applicable control and represent/qualify its supported event trigger before operation review.",
+      "locations": [
+        "core/runtime/integration_broker/github_target_policy.py:29",
+        "core/runtime/integration_broker/github_target_policy.py:96",
+        "core/runtime/integration_broker/github_target_policy.py:148"
+      ],
+      "official_docs": [
+        "https://docs.github.com/en/enterprise-cloud@latest/rest/repos/rules#create-a-repository-ruleset",
+        "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets#require-workflows-to-pass-before-merging",
+        "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/troubleshooting-rules#troubleshooting-ruleset-workflows"
+      ]
+    },
+    {
+      "id": "F-04",
+      "priority": "P2",
+      "status": "CLOSED",
+      "evidence": "Repository id, bounded effective-rule records, and explicit classic protection state are mandatory, digest-bound inputs; independent mutations changed observation and plan digests and yielded blockers with no operations.",
+      "locations": [
+        "core/runtime/integration_broker/github_target_policy.py:262",
+        "core/runtime/integration_broker/github_target_policy.py:305",
+        "core/runtime/integration_broker/github_target_policy.py:335",
+        "core/runtime/integration_broker/github_target_policy.py:361",
+        ".aide/scripts/tests/test_continuous_worker_github_observation.py:784"
+      ]
+    }
+  ],
   "canonical_evidence": {
-    "desired_policy_file_sha256": "cc7447efefa8de3fef797a289f8eb0a78514955e5449cb9d9348e6bab70ff157",
-    "current_observation_file_sha256": "caa808af49186fbb7937e20d1fb4de2f575667c5142ff07c8af19c33aa8668af",
-    "review_plan_file_sha256": "e466b58b7db42a1938624f8d0683342ce9244d60352b148be6638cb6a25ca865",
-    "policy_digest": "db1b1ad6e96d287386ad5d99c600b938c3e65dc12123a98954106d58bab68b7f",
-    "observation_digest": "907688c5defff9615e8f8d5f0bac9d9e39e8d3bf6522ceb7f2813c51df134798",
-    "plan_digest": "5c243ac74ff1deff1780debe97e5e0ec1dcfa42653d2898c37db84b54ef15d7d",
-    "recomputed_exactly": true
+    "desired_policy_file_sha256": "245a8d871301b255d9cbc0abfa3e7fde2e8ccfea0e7f0b88e01ebcbe149e8146",
+    "current_observation_file_sha256": "020650ae5932c672313248a4be57011b1e75046fed19e0c15e99cad095f9f75b",
+    "review_plan_file_sha256": "a0aec7f8c4db5191167a662bbc2ca66a742c2ed498f80cfd2e1ea9a36c95773c",
+    "repair_record_sha256": "9a28d24193c115c90abaca03b0375208d73e4bd04ebc0d46c974314b1f6333f6",
+    "source_checkpoint_sha256": "a5cebfe61f0939a2b72bbc8dc5dd1d3194639000b0285104a839bf68f6d78ed9",
+    "validation_record_sha256": "7e5ec1db098ad4c5977b38ca8ea40c5cafc9b06aef2291ae8dc819dd1c58dd93",
+    "policy_digest": "0c3c1ce858c4e70e0070074f66db31873c7a1f4b9aa820066f760678ed35ba89",
+    "observation_digest": "a1261592a0d53ac3ded981a19e32b0b323f085da45cf041893c76078b767c86a",
+    "plan_digest": "762da6e0de4359fcc1316529e9f715f075bac0e37f42e7a9ec2127f3b5469336",
+    "desired_regenerated_exactly": true,
+    "plan_regenerated_exactly": true
   },
   "current_packet": {
     "status": "blocked",
@@ -47,90 +162,41 @@
     "hosted_effects_run": false,
     "fail_closed_for_current_unresolved_inputs": true
   },
-  "findings": [
-    {
-      "id": "F-01",
-      "priority": "P1",
-      "title": "Generated update rule omits required 2026-03-10 API parameters",
-      "locations": [
-        "core/runtime/integration_broker/github_target_policy.py:158",
-        ".aide/scripts/tests/test_continuous_worker_github_observation.py:667"
-      ],
-      "evidence": "The generated rule is exactly {\"type\":\"update\"}; GitHub documents parameters.update_allows_fetch_and_merge as required for an update rule.",
-      "impact": "The proposed non-dev confinement POST is not a valid exact operation under the pinned API and can fail with REST validation error.",
-      "required_change": "Emit and test the complete update-rule parameters after choosing the intended fetch-and-merge behavior, and validate operation bodies against the pinned API schema.",
-      "official_docs": [
-        "https://docs.github.com/en/enterprise-cloud@latest/rest/repos/rules#create-a-repository-ruleset"
-      ]
+  "independent_probes": {
+    "update_rule": {
+      "type": "update",
+      "parameters": {
+        "update_allows_fetch_and_merge": false
+      }
     },
-    {
-      "id": "F-02",
-      "priority": "P1",
-      "title": "Owner and broker may resolve to the same bypass actor",
-      "locations": [
-        "core/runtime/integration_broker/github_target_policy.py:75",
-        "core/runtime/integration_broker/github_target_policy.py:155",
-        "core/runtime/integration_broker/github_target_policy.py:169"
-      ],
-      "evidence": "A deterministic same-user-id owner/broker probe returned ready_for_review with two ruleset POSTs while the always-bypass actor id equaled the broker user id.",
-      "impact": "The admitted broker can bypass the update rule, defeating the claimed non-dev update restriction even when its token has administration:none.",
-      "required_change": "Reject owner/broker identity aliasing by immutable user id, check login consistency, and add same-id adversarial tests.",
-      "official_docs": [
-        "https://docs.github.com/en/enterprise-cloud@latest/rest/repos/rules#create-a-repository-ruleset"
-      ]
-    },
-    {
-      "id": "F-03",
-      "priority": "P1",
-      "title": "Reviewed workflow source is not bound to the accepted required check",
-      "locations": [
-        "core/runtime/integration_broker/github_target_policy.py:95",
-        "core/runtime/integration_broker/github_target_policy.py:137",
-        "core/runtime/integration_broker/github_checks.py:53",
-        "core/runtime/integration_broker/github_checks.py:79"
-      ],
-      "evidence": "The ruleset binds only context and integration_id, while the runtime accepts any syntactically valid workflow path and drops that path from the normalized check. GitHub states required status checks do not account for workflow or event trigger type.",
-      "impact": "Another workflow under the same app with the same job/check name can satisfy the destination and local predicates without being the reviewed workflow path/source.",
-      "required_change": "Bind the actual run path/source through policy, plan, observation, and decision, or qualify GitHub's workflow ruleset primitive; test same-app same-name workflow collisions.",
-      "official_docs": [
-        "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/troubleshooting-rules#troubleshooting-required-status-checks",
-        "https://docs.github.com/en/enterprise-cloud@latest/rest/repos/rules#create-a-repository-ruleset"
-      ]
-    },
-    {
-      "id": "F-04",
-      "priority": "P2",
-      "title": "Canonical observation does not contain the effective policy state it labels complete",
-      "locations": [
-        "core/runtime/integration_broker/github_target_policy.py:234",
-        "core/runtime/integration_broker/github_target_policy.py:289",
-        ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/current-target-policy-2026-09-22.json:1"
-      ],
-      "evidence": "The observation has completeness booleans but no immutable repository id, effective-rule bodies, or classic branch-protection record. The refresh narrative's repository id and dev protection 404 are absent from the digested observation.",
-      "impact": "Same-name repository replacement or classic-protection drift can leave observation_digest and plan_digest unchanged even though GitHub aggregates branch protection with rulesets.",
-      "required_change": "Digest immutable repository identity and bounded effective policy records, including classic protection or verified absence; do not let an unaccompanied true visibility flag unlock operations.",
-      "official_docs": [
-        "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets#about-rule-layering"
-      ]
-    }
-  ],
-  "verified_guarantees": [
-    "Current unresolved evidence is deterministic and fail-closed with zero operations.",
-    "Recorded source/evidence SHA-256 values and canonical digests recompute exactly.",
-    "Changed files are bounded to task allowed paths.",
-    "Policy and observation parsers enforce exact fields and finite structural bounds.",
-    "The target-policy module has no HTTP client, credential reader, filesystem writer, sender, dispatcher, retry, or apply entry point.",
-    "The module is not imported by a production runtime module at this checkpoint.",
-    "The restricted permission map excludes administration and workflow write access, while real principal permission provenance remains unresolved."
-  ],
+    "same_owner_id_refused": true,
+    "same_owner_casefolded_login_refused": true,
+    "workflow_rule_fields": [
+      "path",
+      "ref",
+      "repository_id",
+      "sha"
+    ],
+    "repository_id_drift_changes_digests_and_blocks": true,
+    "effective_rules_drift_changes_digests_and_blocks": true,
+    "classic_protection_drift_changes_digests_and_blocks": true
+  },
   "tests": [
     {
       "command": "py -3 -B .aide/scripts/tests/test_continuous_worker_github_observation.py -v",
       "result": "PASS",
-      "tests": 44,
+      "tests": 46,
       "failures": 0,
       "skips": 0,
-      "seconds": 0.136
+      "seconds": 0.129
+    },
+    {
+      "command": "py -3 -B .aide/scripts/tests/test_continuous_worker_pr_observation.py -v",
+      "result": "PASS",
+      "tests": 21,
+      "failures": 0,
+      "skips": 0,
+      "seconds": 65.303
     },
     {
       "command": "py -3 -B .aide/scripts/tests/test_continuous_worker_github_http.py -v",
@@ -138,7 +204,7 @@
       "tests": 19,
       "failures": 0,
       "skips": 0,
-      "seconds": 1.342
+      "seconds": 1.156
     },
     {
       "command": "py -3 -B .aide/scripts/tests/test_continuous_worker_provider_bridge.py -v",
@@ -146,7 +212,7 @@
       "tests": 12,
       "failures": 0,
       "skips": 0,
-      "seconds": 93.233
+      "seconds": 80.727
     },
     {
       "command": "py -3 -B .aide/scripts/tests/test_continuous_worker_integration_broker.py -v",
@@ -154,47 +220,75 @@
       "tests": 37,
       "failures": 0,
       "skips": 1,
-      "seconds": 174.855,
+      "seconds": 158.111,
       "skip_reason": "Disposable symlink creation requires a Windows privilege unavailable to the current identity."
     },
     {
-      "command": "independent inline same-owner/broker and update-rule probe",
-      "result": "PASS_REPRODUCED_FINDINGS",
-      "observed": {
-        "status": "ready_for_review",
-        "operation_count": 2,
-        "owner_user_id": 76,
-        "broker_user_id": 76,
-        "bypass_actor_id": 76,
-        "update_rule": {
-          "type": "update"
-        }
-      }
+      "command": "independent target-policy closure and digest probe",
+      "result": "PASS",
+      "assertions": 9
     },
     {
-      "command": "git diff --check c6fdc754844cf7d42302218ce08307a7e05dcb61..bb433bb74f645e0904ca34bf3af38516ae05a7ad",
+      "command": "git diff --check 9bba1cecaec835b5299cf02718059a94ef4c08cb..9383c2b5e8521bbdf9d0a54648459ee25d76c1b3",
       "result": "PASS"
     }
   ],
+  "test_summary": {
+    "tests": 135,
+    "passed": 134,
+    "failed": 0,
+    "skipped": 1
+  },
   "documentation_verified": {
     "date": "2026-09-22",
     "api_version": "2026-03-10",
+    "api_version_supported": true,
     "facts": [
-      "User is a supported bypass actor type and actor_id identifies that user.",
+      "User is a supported bypass actor type and actor_id is required for that type.",
+      "Creating a repository ruleset requires Administration repository permission (write).",
       "The update rule requires parameters.update_allows_fetch_and_merge.",
-      "Required status checks bind context and optional integration_id, not workflow or event trigger identity.",
+      "The generic repository-ruleset request schema lists workflow path and repository_id as required, with ref and sha available.",
+      "GitHub documents ruleset workflows as configurable at organization or enterprise level.",
+      "GitHub documents pull_request, pull_request_target, and merge_group as supported ruleset-workflow events, not push.",
+      "Required status checks do not distinguish workflow, matrix, or event trigger type.",
       "Rulesets aggregate with other rulesets and classic branch protection."
+    ],
+    "official_docs": [
+      "https://docs.github.com/en/rest/about-the-rest-api/api-versions",
+      "https://docs.github.com/en/enterprise-cloud@latest/rest/repos/rules#create-a-repository-ruleset",
+      "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets#require-workflows-to-pass-before-merging",
+      "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/troubleshooting-rules#troubleshooting-ruleset-workflows",
+      "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets#about-rule-layering"
     ]
   },
-  "retained_blockers": [
-    "Exact restricted broker principal is unresolved.",
-    "Exact workflow/check identity is unresolved.",
-    "The current target has no recorded qualifying workflow or rulesets.",
-    "Settings and workflow installation have not run.",
-    "Hosted adversarial races and protected-host/store qualification have not run.",
-    "The isolated-host close dependency remains open.",
-    "F-01 through F-04 require remediation and exact-source re-review."
+  "verified_guarantees": [
+    "Current unresolved evidence regenerates exactly and fails closed with zero operations.",
+    "F-01 update parameters are complete under the pinned REST schema.",
+    "F-02 owner/broker aliasing is refused by id or case-insensitive login.",
+    "F-04 repository identity and effective policy inputs are bounded, digest-bound, and blocker-producing on drift.",
+    "Policy and observation parsing enforces exact fields and finite structural bounds.",
+    "The restricted permission map excludes administration and workflow write access.",
+    "The target-policy module has no HTTP client, credential reader, filesystem writer, sender, retry, dispatcher, or apply entry point.",
+    "No production module imports the target-policy module at this checkpoint.",
+    "The repaired diff adds no workflow file and no apply, network, or credential path."
   ],
+  "retained_blockers": [
+    "F-03 requires a target-applicable workflow-source binding.",
+    "Exact restricted broker principal and effective repository permissions are unresolved.",
+    "Exact workflow/check identity and a supported workflow trigger are unresolved.",
+    "The current target has no recorded installed workflow or qualifying rulesets.",
+    "Settings and workflow installation have not run.",
+    "Hosted adversarial races and non-empty effective-policy normalization have not run.",
+    "Protected-host/store qualification and the isolated-host close dependency remain open."
+  ],
+  "effects": {
+    "github_api_calls_run_during_rereview": false,
+    "credentials_read_or_changed": false,
+    "target_settings_mutated": false,
+    "workflow_or_ruleset_installed": false,
+    "principal_created_or_changed": false,
+    "git_refs_index_commits_tags_or_object_database_mutated": false
+  },
   "authorization": {
     "target_mutation_authorized": false,
     "workflow_or_ruleset_installation_authorized": false,

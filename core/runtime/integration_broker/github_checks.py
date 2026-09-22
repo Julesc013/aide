@@ -54,7 +54,9 @@ def check_observations(api, plan):
         # The entry workflow is taken from the actual push event's commit. Any
         # workflow/action dependencies still require target-workflow qualification.
         if (not re.fullmatch(r"\.github/workflows/[A-Za-z0-9_.-]+\.ya?ml(?:@[A-Za-z0-9_./-]+)?", workflow_path) or
-                run.get("event") != "push" or run.get("head_sha") != head or
+                workflow_path != expected[check["name"]]["workflow_path"] or
+                run.get("event") != expected[check["name"]]["workflow_event"] or
+                run.get("head_sha") != head or
                 run.get("head_branch") != plan["branch_ref"].removeprefix("refs/heads/") or
                 object_value(run.get("repository")).get("full_name") != plan["repository"] or
                 object_value(run.get("head_repository")).get("full_name") != plan["repository"] or
@@ -76,9 +78,20 @@ def check_observations(api, plan):
                 job.get("conclusion") != check.get("conclusion")):
             raise Refused("GitHub check/job/run attempt facts disagree")
         identity(run["head_sha"], OID)
-        result.append({"name": check["name"], "app_id": positive(object_value(check.get("app")).get("id")),
-                       "workflow_sha": run["head_sha"], "head_commit": check["head_sha"],
-                       "status": check.get("status"), "conclusion": check.get("conclusion")})
+        result.append({
+            "name": check["name"],
+            "app_id": positive(object_value(check.get("app")).get("id")),
+            "workflow_sha": run["head_sha"],
+            "workflow_path": workflow_path,
+            "workflow_event": run["event"],
+            "workflow_run_id": run_id,
+            "workflow_run_attempt": attempt,
+            "check_run_id": positive(check.get("id")),
+            "check_suite_id": suite,
+            "head_commit": check["head_sha"],
+            "status": check.get("status"),
+            "conclusion": check.get("conclusion"),
+        })
     # Re-read every used run: a rerun after jobs were read must not promote stale
     # attempt facts. This is a bounded consistency observation, not a server CAS.
     for run_id, attempt in jobs:

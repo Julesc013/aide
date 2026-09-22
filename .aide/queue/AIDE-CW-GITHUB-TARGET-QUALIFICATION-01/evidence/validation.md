@@ -98,3 +98,26 @@ these source tests neither reran nor discharged it.
 - NOT RUN: settings/workflow installation, principal creation, hosted races,
   target mutation, credentials, merge effects, main promotion, tag, or release.
 - PENDING: superseding independent review of the repaired exact commit.
+
+## 2026-09-22 workflow-source follow-up repair
+
+- REQUEST_CHANGES retained: the first repair's rereview closed F-01, F-02 and
+  F-04 but proved the `workflows` rule unavailable for the user-owned target.
+- PASS: the target policy emits no required-workflow operation and does not
+  claim exact workflow source as destination-enforced.
+- PASS: the plan, raw GitHub observation, durable decision, and bridge fixtures
+  bind workflow path/event/head, workflow run id/attempt, check run id, and
+  check suite id.
+- PASS: focused observation/target-policy suite, 46 tests.
+- PASS: PR observation/staged broker suite, 21 tests.
+- PASS: bounded GitHub HTTP suite, 19 tests.
+- PASS: registered provider bridge suite, 12 tests.
+- PASS WITH ONE RETAINED HOST SKIP: integration broker suite, 37 tests; the
+  disposable symlink case remains unavailable to this Windows token.
+- PASS: 135 affected tests, 134 passed, one skipped, zero failures.
+- PASS: unresolved evidence regenerates blocked with zero operations and exact
+  digests policy `c79b62b9fc888aa50600334e3b7108addc91f543b4ea7e3e4505d0a8aef636c9`
+  and plan `a754af93595c26612edc13d52456e0d7ef64b07120e639001a05a91b1b3d3655`.
+- NOT RUN: settings/workflow installation, principal creation, hosted races,
+  target mutation, credentials, merge effects, main promotion, tag, or release.
+- PENDING: superseding independent review of the exact follow-up commit.

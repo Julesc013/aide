@@ -31,9 +31,12 @@ def validate_plan(plan):
         raise Refused("finite explicit hosted checks required")
     names = set()
     for check in checks:
-        fields(check, "name app_id workflow_sha")
+        fields(check, "name app_id workflow_sha workflow_path workflow_event")
         if (not isinstance(check["name"], str) or not check["name"] or len(check["name"]) > 200 or
-                check["name"] in names or type(check["app_id"]) is not int or check["app_id"] <= 0):
+                check["name"] in names or type(check["app_id"]) is not int or check["app_id"] <= 0 or
+                not isinstance(check["workflow_path"], str) or
+                not re.fullmatch(r"\.github/workflows/[A-Za-z0-9_.-]+\.ya?ml", check["workflow_path"]) or
+                check["workflow_event"] != "push"):
             raise Refused("invalid or duplicate required check identity")
         identity(check["workflow_sha"], OID)
         names.add(check["name"])
@@ -83,10 +86,15 @@ def decision(plan, observation):
         raise Refused("invalid or unbounded check observation")
     observed, required = {}, {check["name"]: check for check in plan["checks"]}
     for check in observation["checks"]:
-        fields(check, "name app_id workflow_sha head_commit status conclusion")
+        fields(check, "name app_id workflow_sha workflow_path workflow_event workflow_run_id workflow_run_attempt check_run_id check_suite_id head_commit status conclusion")
         name = check["name"]
         if (not isinstance(name, str) or not name or name in observed or
                 type(check["app_id"]) is not int or check["app_id"] <= 0 or
+                not isinstance(check["workflow_path"], str) or
+                not re.fullmatch(r"\.github/workflows/[A-Za-z0-9_.-]+\.ya?ml", check["workflow_path"]) or
+                check["workflow_event"] != "push" or
+                any(type(check[field]) is not int or check[field] <= 0 for field in
+                    ("workflow_run_id", "workflow_run_attempt", "check_run_id", "check_suite_id")) or
                 check["status"] not in ("queued", "in_progress", "completed") or
                 check["conclusion"] not in (None, "success", "failure", "neutral", "cancelled", "skipped", "timed_out", "action_required", "stale")):
             raise Refused("ambiguous hosted check observations")
@@ -94,7 +102,8 @@ def decision(plan, observation):
         identity(check["head_commit"], OID)
         observed[name] = check
         if name in required:
-            if (any(check[k] != required[name][k] for k in ("app_id", "workflow_sha")) or
+            if (any(check[k] != required[name][k] for k in
+                    ("app_id", "workflow_sha", "workflow_path", "workflow_event")) or
                     check["head_commit"] != plan["candidate_commit"]):
                 raise Refused("required check came from another application/workflow/head")
     passed = observation["checks_complete"] and all(name in observed and

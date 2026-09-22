@@ -9,8 +9,8 @@
   "network_calls": "none",
   "observation_digest": "a1261592a0d53ac3ded981a19e32b0b323f085da45cf041893c76078b767c86a",
   "operations": [],
-  "plan_digest": "762da6e0de4359fcc1316529e9f715f075bac0e37f42e7a9ec2127f3b5469336",
-  "policy_digest": "0c3c1ce858c4e70e0070074f66db31873c7a1f4b9aa820066f760678ed35ba89",
+  "plan_digest": "a754af93595c26612edc13d52456e0d7ef64b07120e639001a05a91b1b3d3655",
+  "policy_digest": "c79b62b9fc888aa50600334e3b7108addc91f543b4ea7e3e4505d0a8aef636c9",
   "repository": "Julesc013/aide",
   "required_reviews": [
     "target_policy_and_bypass",

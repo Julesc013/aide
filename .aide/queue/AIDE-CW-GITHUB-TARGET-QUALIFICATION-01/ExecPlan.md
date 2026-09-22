@@ -123,13 +123,20 @@ perform any target mutation.
 - [x] Preserve the exact independent `REQUEST_CHANGES` evidence.
 - [x] Emit `update.parameters.update_allows_fetch_and_merge: false`.
 - [x] Reject broker identities that alias the owner bypass by id or login.
-- [x] Add GitHub's exact required-workflow rule with path, repository id, ref,
-      and source commit instead of relying on check name/app alone.
+- [x] Preserve the first repair's required-workflow attempt and the rereview
+      finding that GitHub does not expose it for this user-owned target.
+- [x] Remove the unsupported operation and bind the actual accepted Actions
+      run's path, event, head, run/attempt, check-run, and suite identities
+      through the plan, observation, and decision contract.
+- [x] Classify exact workflow source as locally checked/monitored and its
+      unavailable server enforcement and same-app/name collision exclusion as
+      unsupported rather than destination-enforced.
 - [x] Bind repository id, effective-rule bodies, and explicit classic branch
       protection presence/absence into the canonical observation and plan.
 - [x] Pass 135 affected cases with one retained Windows symlink skip.
 - [ ] Obtain a superseding independent review of the repaired exact commit.
 
 The live packet remains blocked on unresolved principal and workflow identity
-with zero operations. The repair changes only pure source, tests, and evidence;
-it does not authorize or perform target configuration.
+with zero operations. The first rereview closed F-01, F-02 and F-04 but retained
+F-03. The follow-up repair changes only pure source, tests, and evidence; it
+does not authorize or perform target configuration.

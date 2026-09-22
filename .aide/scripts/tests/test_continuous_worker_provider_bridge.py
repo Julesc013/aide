@@ -67,7 +67,9 @@ else:
         'base_repository':plan['repository'],'head':plan['candidate_commit'],'head_ref':plan['branch_ref'],
         'head_repository':plan['repository'],'author':plan['actor'],'merge_commit':None,
         'merge_tree':None,'merge_parents':None,'integrated_ancestor':None},
-      'checks_complete':True,'checks':[dict(c,head_commit=plan['candidate_commit'],status='completed',conclusion='success') for c in plan['checks']],
+      'checks_complete':True,'checks':[dict(c,workflow_run_id=51,workflow_run_attempt=2,
+        check_run_id=31,check_suite_id=41,head_commit=plan['candidate_commit'],
+        status='completed',conclusion='success') for c in plan['checks']],
       'policy_digest':plan['policy_digest'],'merge_contract_sha256':plan['merge_contract_sha256']}
     if state['stage']=='publish_objects': result['candidate']=result['branch']=result['pull']=None
     elif state['stage']=='create_branch': result['branch']=result['pull']=None

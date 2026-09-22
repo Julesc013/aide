@@ -35,7 +35,9 @@ def plan():
             "repository": REPO, "actor": "fixture-broker", "target_ref": "refs/heads/dev",
             "base": BASE, "candidate_commit": HEAD, "candidate_tree": TREE,
             "branch_ref": "refs/heads/" + BRANCH,
-            "checks": [{"name": "required", "app_id": 99, "workflow_sha": HEAD}],
+            "checks": [{"name": "required", "app_id": 99, "workflow_sha": HEAD,
+                        "workflow_path": ".github/workflows/aide-cw-checks.yml",
+                        "workflow_event": "push"}],
             "policy_digest": "f" * 64, "merge_contract_sha256": "9" * 64,
             "expires_at": 2000, "max_observations": 16}
 
@@ -114,7 +116,7 @@ class Fixture:
                       "check_suite": {"id": 41}, "status": "completed", "conclusion": "success",
                       "url": ORIGIN + PREFIX + "/check-runs/31"}
         self.run = {"id": 51, "run_attempt": 2, "check_suite_id": 41, "head_sha": HEAD,
-                    "head_branch": BRANCH, "event": "push", "path": ".github/workflows/checks.yml",
+                    "head_branch": BRANCH, "event": "push", "path": ".github/workflows/aide-cw-checks.yml",
                     "status": "completed", "conclusion": "success", "repository": {"full_name": REPO},
                     "head_repository": {"full_name": REPO}, "head_commit": {"id": HEAD},
                     "url": ORIGIN + PREFIX + "/actions/runs/51"}
@@ -252,9 +254,20 @@ class GitHubObservationTests(unittest.TestCase):
         self.assertIsNone(result["policy_digest"])
         self.assertIsNone(result["merge_contract_sha256"])
         self.assertEqual(result["checks"][0]["workflow_sha"], HEAD)
-        p["checks"][0]["workflow_sha"] = "1" * 40
-        with self.assertRaises(Refused):
-            collect(fixture.api(), p)
+        self.assertEqual(result["checks"][0]["workflow_path"],
+                         ".github/workflows/aide-cw-checks.yml")
+        self.assertEqual(result["checks"][0]["workflow_event"], "push")
+        self.assertEqual(result["checks"][0]["workflow_run_id"], 51)
+        self.assertEqual(result["checks"][0]["workflow_run_attempt"], 2)
+        self.assertEqual(result["checks"][0]["check_run_id"], 31)
+        self.assertEqual(result["checks"][0]["check_suite_id"], 41)
+        for key, value in (("workflow_sha", "1" * 40),
+                           ("workflow_path", ".github/workflows/other.yml"),
+                           ("workflow_event", "pull_request")):
+            changed = plan()
+            changed["checks"][0][key] = value
+            with self.subTest(key=key), self.assertRaises(Refused):
+                collect(fixture.api(), changed)
 
     def test_exact_object_branch_and_pr_absence_select_each_preparation_stage(self):
         for stage in ("publish_objects", "create_branch", "create_pr"):
@@ -666,13 +679,19 @@ class GitHubTargetPolicyTests(unittest.TestCase):
         self.assertTrue(required["parameters"]["strict_required_status_checks_policy"])
         self.assertEqual(required["parameters"]["required_status_checks"], [
             {"context": workflow()["check_name"], "integration_id": workflow()["app_id"]}])
-        required_workflow = next(rule for rule in dev["rules"] if rule["type"] == "workflows")
-        self.assertEqual(required_workflow["parameters"], {
-            "do_not_enforce_on_create": False,
-            "workflows": [{"path": workflow()["path"], "ref": workflow()["source_ref"],
-                           "repository_id": workflow()["repository_id"],
-                           "sha": workflow()["source_commit"]}],
-        })
+        self.assertNotIn("workflows", [rule["type"] for rule in dev["rules"]])
+        self.assertNotIn("exact_required_workflow",
+                         policy["guarantees"]["destination_enforced_when_qualified"])
+        self.assertIn("exact_workflow_run_path_event_and_head",
+                      policy["guarantees"]["local_preconditions"])
+        self.assertEqual(policy["guarantees"]["monitored"], [
+            "workflow_run_and_attempt_identity",
+            "check_run_and_suite_identity",
+        ])
+        self.assertIn("server_enforced_exact_workflow_source",
+                      policy["guarantees"]["unsupported"])
+        self.assertIn("same_app_same_check_name_collision_exclusion",
+                      policy["guarantees"]["unsupported"])
         confined = by_role["broker_non_dev_confinement"]
         self.assertEqual(confined["conditions"], {
             "ref_name": {"include": ["~ALL"], "exclude": ["refs/heads/dev"]}})
