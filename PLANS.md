@@ -3368,3 +3368,14 @@ source checkout. Clean source provenance is observed before export mutation and
 is inherited by release records. Exact ZIP and tar.gz candidates are locally
 qualified and integrated on `dev`; main, tagging, upload, publication, and the
 remaining stable-release profile retain separate gates.
+
+## Delivered pack safe update
+
+`AIDE-DELIVERED-PACK-SAFE-UPDATE-01` advances the next lifecycle slice on an
+isolated task branch. It adds exact target-local baseline receipts,
+conflict-first three-way byte comparison, deterministic preview/apply binding,
+validated predecessor-pack proof, and interruption evidence to the existing
+portable importer. Qualification is limited to disposable extracted-artifact
+consumers; source self-update, real-project rollout, main, tags, upload,
+publication, repair, rollback, uninstall, and full stable closure remain
+separate work and review gates.
