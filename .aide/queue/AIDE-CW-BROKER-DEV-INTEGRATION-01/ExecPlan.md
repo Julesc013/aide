@@ -31,8 +31,9 @@ broker/runtime line and current dev, then qualify that combined source for dev.
 - [x] Verify current dev protected paths were not downgraded.
 - [x] Run focused broker/runtime and packaging regressions.
 - [x] Run canonical repository structural checks.
-- [ ] Run commit-range checks after the merge commit exists.
-- [ ] Publish the exact integration candidate.
+- [x] Run commit and range checks after the merge commit exists.
+- [x] Publish the exact integration candidate.
+- [x] Run the exact task-to-dev landing helper in dry-run mode.
 - [ ] Run the landing helper, merge to dev, validate, push, and observe refs.
 
 ## Conflict Policy
@@ -85,3 +86,12 @@ publication, fix forward. Never rewrite the published source or target refs.
 - `aide_lite.py doctor` and `aide_lite.py validate` both returned `PASS`.
 - The helper correctly refused to produce a clean-tree landing plan while the
   merge was uncommitted; a fresh plan is required after candidate publication.
+- The published two-parent candidate is
+  `091382e81f08b6e7363380cd3190c7483234d9ab`, tree
+  `4f75f5a9d1686a9fc5cfce9a484477237d9fbc2c`.
+- Its latest-commit policy check passes. The complete incoming range check also
+  reports historical message-format failures already present in published
+  ancestry; those are retained as evidence and are not rewritten or presented
+  as passing.
+- The post-publication landing helper returned `ready_dry_run` for a no-ff merge
+  of this task branch into `dev`, followed by `git push origin dev`.

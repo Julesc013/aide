@@ -26,5 +26,16 @@
   from status and evidence.
 - The pre-commit `git plan` correctly reported
   `dirty_tree_requires_classification`; it did not mutate branches or remotes.
-- Commit-policy and post-commit range checks remain pending until the two-parent
-  merge commit has an identity.
+- Two-parent merge commit:
+  `091382e81f08b6e7363380cd3190c7483234d9ab`; tree:
+  `4f75f5a9d1686a9fc5cfce9a484477237d9fbc2c`; second parent:
+  `75da33108995ba63fc7148c6b4137349d7013798`.
+- `aide_lite.py commit check --latest`: `PASS` for the merge commit.
+- The incoming range check reports older policy-format failures in published
+  history as well as passing implementation commits. No historical result is
+  forged and no published history is rewritten.
+- `git push origin task/aide-cw-broker-dev-integration-01`: passed; remote
+  observation matched `091382e81f08b6e7363380cd3190c7483234d9ab`.
+- `aide_lite.py git land --dry-run --source
+  task/aide-cw-broker-dev-integration-01 --target dev --validation-ok --push`:
+  `ready_dry_run`, with no local or remote mutation.
