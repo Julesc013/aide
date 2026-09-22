@@ -326,6 +326,55 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         self.assertIn("publish_candidate: false", copied)
         self.assertEqual(bundle["validation"]["result"], "FAIL")
 
+    def test_preview_parent_is_bound_only_across_generated_projection(self) -> None:
+        root = self.make_repo()
+        subprocess.run(["git", "init", "--quiet", str(root)], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "user.name", "AIDE Fixture"], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "user.email", "fixture@example.invalid"], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "core.autocrlf", "false"], check=True)
+        subprocess.run(["git", "-C", str(root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", "fixture"], check=True)
+        parent = subprocess.run(
+            ["git", "-C", str(root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, f"# AIDE Changelog Preview\n\nsource_head: {parent}\n")
+        self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_MD_PATH, f"# AIDE Release Notes Preview\n\nsource_head: {parent}\n")
+        self.write(root, aide_lite.CHANGELOG_PREVIEW_JSON_PATH, aide_lite.stable_json_text({"source_head": parent}))
+        self.write(root, aide_lite.RELEASE_NOTES_PREVIEW_JSON_PATH, aide_lite.stable_json_text({"source_head": parent}))
+        for rel in [aide_lite.MALFORMED_COMMITS_MD_PATH, aide_lite.CHANGELOG_REPORT_PATH]:
+            self.write(root, rel, "# Generated preview evidence\n")
+        subprocess.run(
+            ["git", "-C", str(root), "add", "--", *sorted(aide_lite.RELEASE_PREVIEW_GENERATED_PATHS)],
+            check=True,
+        )
+        subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", "preview"], check=True)
+        projection = subprocess.run(
+            ["git", "-C", str(root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+        status, observed, _reason = aide_lite.release_preview_binding(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, projection)
+        self.assertEqual((status, observed), ("bound", parent))
+
+        self.write(root, "docs/unrelated.md", "# Not a preview projection\n")
+        subprocess.run(["git", "-C", str(root), "add", "docs/unrelated.md"], check=True)
+        subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", "unrelated"], check=True)
+        unrelated = subprocess.run(
+            ["git", "-C", str(root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+        status, observed, _reason = aide_lite.release_preview_binding(root, aide_lite.CHANGELOG_PREVIEW_MD_PATH, unrelated)
+        self.assertEqual((status, observed), ("stale", parent))
+
     def test_release_validate_rejects_missing_required_file(self) -> None:
         root = self.make_repo()
         aide_lite.build_release_bundle_outputs(root)
