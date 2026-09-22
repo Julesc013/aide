@@ -81,7 +81,9 @@ their identities, verification result, and limitations.
 - [x] Repository hygiene and specification placement increments completed.
 - [x] Documentation-only integration candidate is qualified and integrated to `dev`.
 - [x] Reviewed repository Codex neutrality is independently integrated to `dev`.
-- [ ] Next bounded implementation or qualification slice advances.
+- [x] Next bounded implementation or qualification slice advances.
+- [x] Delivered-pack import closure and ownership-aware safe update are integrated to `dev`.
+- [ ] Continue operational broker, protected-host, and target qualification.
 
 ## Discoveries And Decisions
 
@@ -100,6 +102,12 @@ their identities, verification result, and limitations.
 - The configuration-neutrality implementation was valid but absent from the
   documentation-only `dev` candidate. Its exact `.codex` state and checkpoint
   evidence were integrated separately without mixed runtime history.
+- `AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01` ran 120 affected cases: 119
+  passed and one privilege-dependent symlink case was skipped. It closes the
+  exact observation-to-child binding only; the parent broker remains running.
+- The delivered-pack import closure and safe-update slices reached `dev` with
+  extracted ZIP and tar.gz consumer qualification. They do not authorize a
+  public release or close repair, rollback, uninstall, or real-target gates.
 
 ## Recovery And Resumption
 
@@ -115,4 +123,9 @@ Bounded child execution is active. The completed specifications were integrated
 independently to `dev` at `237ae8c49adce2b2e3232d83e6a3289fd9f4d6f3`.
 No main promotion, tag, release, or public publication has occurred. The next
 campaign route is the existing unfinished broker stream, with isolated-host and
-target qualification retained as separate dependencies.
+target qualification retained as separate dependencies. The first post-docs
+implementation child is published at
+`0e942d7e55b7f12fc384f5df44fc8cb4c40017a4`; its passing status does not close
+the parent broker or authorize operational effects. The dedicated broker-to-dev
+integration task preserves the later broker source head while validating it
+against the newer delivered-pack work already on `dev`.

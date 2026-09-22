@@ -1,0 +1,47 @@
+{
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "-c",
+    "import sys,unittest; sys.path.insert(0,\".aide/scripts/tests\"); result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromNames(['test_continuous_worker_system_observation', 'test_continuous_worker_windows_pe', 'test_continuous_worker_python_image', 'test_continuous_worker_python_contract', 'test_continuous_worker_windows_image', 'test_continuous_worker_windows_security', 'test_continuous_worker_host'])); sys.exit(not result.wasSuccessful())"
+  ],
+  "modules": [
+    "test_continuous_worker_system_observation",
+    "test_continuous_worker_windows_pe",
+    "test_continuous_worker_python_image",
+    "test_continuous_worker_python_contract",
+    "test_continuous_worker_windows_image",
+    "test_continuous_worker_windows_security",
+    "test_continuous_worker_host"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 5.267852799966931,
+  "source": {
+    "core/runtime/continuous_worker/windows_system_observation.py": "de1bfc5a12357c4a8815321531b6dad3c5b599d30c42fa5dec63a96b57fbd697",
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py": "7f505ce82071c2c2bd361cdd8c0313835fc51ca4213328fcef660589205449d7"
+  },
+  "dependent_inputs": {
+    ".aide/scripts/tests/test_continuous_worker_windows_pe.py": "fe77377eab4487862882a2878dbd0ba50daa50f7f14e388fa7d2a947cc6fcbe7",
+    "core/runtime/continuous_worker/windows_pe.py": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d",
+    ".aide/queue/index.yaml": "ddf3bd530a875f707210dcbea722a0ec9dccc80f91dade311ae25f643c81dd97",
+    ".aide/scripts/tests/test_continuous_worker_host.py": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854",
+    ".aide/scripts/tests/test_continuous_worker_python_contract.py": "7759aa897847cfbcd501b5b6bd41d7d76cad82c60a05f50b01d5f7bb3df989c3",
+    ".aide/scripts/tests/test_continuous_worker_python_image.py": "92839124eaceec42a6ca4b72e790513f72f06cd519f19a98143f7d35b9d8398e",
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py": "1da207d0b86bf62ca79f07d0b22e04c6821520d613198d19854d50a51dae1c37",
+    ".aide/scripts/tests/test_continuous_worker_windows_security.py": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "core/runtime/continuous_worker/windows_image.py": "2cac4dd7336b24dba47bc7cd40e510902b23fc99e64b56b349a1cfc0e3734ab8",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/windows_python_contract.py": "98d4a1c95337043477bad27611f4bac5cc2b574aaea37d94dc344543ff689411",
+    "core/runtime/continuous_worker/windows_python_image.py": "b20258182d5610384e8be97e502012ce9760d9b977bd824f5f09a394d3b026c8",
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+  },
+  "log": "h2-system-reviewed-tests.txt",
+  "log_sha256": "0cd960f30dbfbb2b66c0837ebad8adb8a71a06e4cd6384a8fec3a8ae45f40291",
+  "actual_selected_dll_mapping_or_image_grant": false,
+  "new_tests": "injected observation/backend calls only; NativeSystemApi constructor is never used",
+  "retained_previous_tests": "existing synthetic/ordinary image/security and owned Windows Job tests",
+  "source_dependencies_index_unchanged": true,
+  "review_repairs": "Final post-cleanup and serialization freshness; clock after guard before dispatch; typed huge integers; exact mapped spelling against actual held facts."
+}

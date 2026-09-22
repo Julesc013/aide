@@ -1,0 +1,28 @@
+{
+  "schema": "aide.host.resource-root-actual-review.v1",
+  "result": "PASS_AUDIT_OF_RETAINED_FAILED_EFFECT",
+  "head": "2a44f17eb7232757133df549ac6fc519d535e71b",
+  "pins": {
+    "h2-resource-actual-handoff.json": "6a2d64878c73929a5eb06a84a88be4d72d7c747bda8c9295e04a75928ca3c8a5",
+    "h2-resource-actual-execution.json": "eb2286bb6a984689dfd1f34c775a1eb2d67deab5c62e1d3157c166e418a0b11c",
+    "h2-resource-actual-invocation.json": "6a7055760c315501ffeace21b5ed8e39f357d76eed1fabbe2d8e009ba463af95",
+    "h2_resource_actual_execute.py": "fc949b2f3d0e7b1a7db6f8bce08789d2fde11865d2bd54167a2e157dc408e7fd",
+    "h2-resource-effect-manifest.json": "d4a49c0683ae1903611e0350d0edbc4f9c4708f05363bda88cf5eaf71f741ab4",
+    "h2-resource-root-effect-review.json": "3d0c862b7c0de04eeafed2a1173335b88de250293716511d88a1f3cbb081a683"
+  },
+  "source_aggregate": "1a9e3809c11bbdd4a25a08a68d751a8584f67d6c95d8aa410f3f91ebc5ecb4f2",
+  "all_six_original_artifacts_rehashed": true,
+  "three_exact_prepaid_journal_rows_and_transfer_verified": true,
+  "recorded_expiry_valid": true,
+  "actual_mapping_attempts": 1,
+  "actual_api": "api-ms-win-core-path-l1-1-0.dll",
+  "flags": 2144,
+  "raw_win32_error": 2,
+  "second_api_attempted": false,
+  "resource_mapping_qualified": false,
+  "recorded_release_failures": [],
+  "host_cleanup_qualification": "Unknown in retained failure CLI; no host exit/reason/quiescence fields. No later probe or inference repairs this evidence gap.",
+  "sources_dependencies_and_excluded_index_unchanged": true,
+  "effect_replayed_or_selected_DLLs_reread_by_review": false,
+  "interpretation": "Exact resource-only attempt refused. This does not establish API absence or general API-set resolution behavior; both journal intents are consumed for replay policy, only first mapping attempted."
+}

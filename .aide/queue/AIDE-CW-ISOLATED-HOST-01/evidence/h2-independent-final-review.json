@@ -1,0 +1,163 @@
+{
+  "schema": "aide.h2.independent-source-review.v1",
+  "reviewer": "native_ownership",
+  "status": "pass",
+  "scope": "H2 private-image preparation and streaming source plus ordinary synthetic/native-file/Job tests; no operational activation.",
+  "head": "454e41aa021c2b8b8b48531f2cb67838ecaa7dab",
+  "base_tree": "28e9e0e20315f9458f60aa201eaa88174381984e",
+  "source_aggregate": "9be03cf59281c72ec8152cabd5acf41b4477bff6963643a2e4adb573feed9a3d",
+  "source": {
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py": "aab4c2f1c047381f26320c31c2441bab316e0264d14a187069b76704e847ac0e",
+    "core/runtime/continuous_worker/windows_image.py": "1fc511ab5316f09f305f1c02cee209fa4b21d017b074e39d6b8ec60ebd94ff5b",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+  },
+  "dependencies": {
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    ".aide/scripts/tests/test_continuous_worker_windows_security.py": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725",
+    ".aide/scripts/tests/test_continuous_worker_host.py": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854"
+  },
+  "patch": {
+    "path": "h2-image-source.patch",
+    "sha256": "4a35dbe32c879d3a6fec3a86fc331187959ae7b0a7b69cbccc825351f70aa826",
+    "bytes": 69016,
+    "construction": "sorted paths; tracked git diff --binary HEAD, new files git header/mode plus difflib unified diff from /dev/null; all authored source LF"
+  },
+  "findings": [],
+  "resolved_findings": [
+    {
+      "priority": "P2",
+      "id": "H2-NT-WIN32-ANCESTOR-ALIAS",
+      "problem": "Distinct native parent. and ordinary parent caused the initial intent to be written outside the held parent.",
+      "resolution": "Root components refuse normalized aliases/devices/control/malformed Unicode before opens; reservation and image creation now use the held parent handle."
+    },
+    {
+      "priority": "P2",
+      "id": "H2-SHORTNAME-SOURCE-OUTPUT-OVERLAP",
+      "problem": "Actual 8.3 alias bypassed lexical separation and allowed intent creation inside input.",
+      "resolution": "Held normalized NT names and native IDs enforce conservative overlap refusal; equal/nested real short aliases refuse before reservation. Literal drive mapping is checked separately and cannot redirect relative creation."
+    }
+  ],
+  "independent_verification": {
+    "image_tests": 26,
+    "security_tests": 27,
+    "ordinary_job_tests": 10,
+    "all_pass": true,
+    "original_attack_replays": "Both retained attacks refuse; original fixture bytes unchanged.",
+    "complete_patch_reconstructed": true,
+    "source_and_index_unchanged": true,
+    "historical_archives": [
+      {
+        "path": "h2-before-root-alias-evidence.zip",
+        "sha256": "db52b7b601f98013619b65cc723776554e9b559e8983bd806165ddd21948ef33",
+        "source_manifest_sha256": "a56a99713336a4ef388b88ae0dd36de7546959e85f74e50b1e056d8fd6d3f9e5",
+        "source_and_patch_reverified": true
+      },
+      {
+        "path": "h2-before-overlap-evidence.zip",
+        "sha256": "41f8e2ad294518bddb316923d77bdcd7d76e225253546a93bcbf22e44a4ff2da",
+        "source_manifest_sha256": "79b64ff53996286eb46a0faf28cffb4e794f72fd4ef3a5a7e5692f53216c1f3d",
+        "source_and_patch_reverified": true
+      }
+    ]
+  },
+  "assurance": [
+    "Immutable exact ImagePlan admits finite entry/path/UTF16/file/total/time budgets and a declared entrypoint; bytes are preparation data until later loader qualification.",
+    "Separate streaming preserves the original 16MiB H1 write limit and candidate budgets; consumed sinks refuse reuse after chunk/read/digest/flush/deadline failure.",
+    "Source reads use no-reparse relative handles with denied write/delete sharing and check exact object ID, regular single-link size and consumed bytes.",
+    "The create-only journal uses the held parent and transfers its handle exactly once to a non-inheritable CRT descriptor; both adoption failures close handles and retain the reserved name.",
+    "Created image roots and their seal operations remain relative to the held parent. Grants use the exact internal plan package SID after all byte copies and sealing; no worker dispatch API consumes this helper.",
+    "Case-fold canonical ancestry comparisons intentionally refuse ambiguous case-sensitive siblings. Identity remains separately checked. Explicit volume-GUID/UNC input paths refuse; admitted drive aliases are compared in the held normalized NT namespace.",
+    "Initial durable intent makes interrupted/uncertain generations non-replayable. Failure handling retains objects and closes leases; no cleanup/adoption path was added."
+  ],
+  "limits": [
+    "Native image DACL grants, actual tool copies, PE/library dependency closure and isolated Python/Git/Codex loading remain unqualified.",
+    "Protected controller/source/store descriptors and current guard must be established separately.",
+    "Synchronous kernel calls require a qualified outer owned process for hard wall-clock enforcement; source checks alone cannot interrupt stalled I/O.",
+    "PreparedImage observations do not establish an atomic global namespace lease or qualify future worker launch paths.",
+    "No profile, package grant, real drive mapping change, real tool copy, model network or AppContainer launch in this review."
+  ],
+  "official_api_references": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntcreatefile",
+      "supports": "Relative RootDirectory creation binds the directory handle."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfinalpathnamebyhandlew",
+      "supports": "Normalized VOLUME_NAME_NT names originate from the held object, with bounded returned length."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/open-osfhandle?view=msvc-170",
+      "supports": "CRT descriptor adopts the native handle and closes it through the descriptor/file owner."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "h2-image-source-manifest.json",
+      "sha256": "9e6c745cdd0014cff17b8a2acc6e8b26e32d87a29ad1be402439405778cb859f",
+      "bytes": 2402
+    },
+    {
+      "path": "h2-image-source.patch",
+      "sha256": "4a35dbe32c879d3a6fec3a86fc331187959ae7b0a7b69cbccc825351f70aa826",
+      "bytes": 69016
+    },
+    {
+      "path": "h2-source-final-tests.json",
+      "sha256": "abd383f81ce388b7adcb86ff1ba57c3fa3b486ac27589795a8fb5c75b9e18e4a",
+      "bytes": 2668
+    },
+    {
+      "path": "h2-image-source-review-notes.md",
+      "sha256": "65a71165c50c7b729845c19065c538a3ff2a818ca056f5e0372e680532640bcf",
+      "bytes": 3776
+    },
+    {
+      "path": "h2-independent-final-execution.json",
+      "sha256": "a5a21f991c256569853875b101d25ac679af268a571c84298673310d2f75721a",
+      "bytes": 3929
+    },
+    {
+      "path": "h2-independent-final-execution.py",
+      "sha256": "8da00e5dc6f5a693bdda2e2973fc21c8091549b5eabed6cc7a4588255d089482",
+      "bytes": 5783
+    },
+    {
+      "path": "h2-independent-final-image.log",
+      "sha256": "e7874a37d99b5e02b96e9fe6a30dc04b478c505c356c2a8b97fd09237bafd11c",
+      "bytes": 5576
+    },
+    {
+      "path": "h2-independent-final-security.log",
+      "sha256": "40d289a537a9140209e9a371def899e0caedfc5523d49c6addf287fc88a7d477",
+      "bytes": 5841
+    },
+    {
+      "path": "h2-independent-final-job.log",
+      "sha256": "2805087480b53bee58a672878007fccd71ed2c64546102fcbc54bba15fea0ae8",
+      "bytes": 1434
+    },
+    {
+      "path": "h2-independent-root-alias-probe.json",
+      "sha256": "eea6256c94c896680de5ed1a118d9d6cd33bc1c926d7af8cb9f0ca2f43086d54",
+      "bytes": 2171
+    },
+    {
+      "path": "h2-independent-root-alias-probe.py",
+      "sha256": "1b29ad95a044a04c6c49da7226ca3ac37df9e3d57c617d519f96c5e6c812aff3",
+      "bytes": 3404
+    },
+    {
+      "path": "h2-independent-source-output-overlap-probe.json",
+      "sha256": "3d251d26dc7a65be8facfcbc03ace1e76fae13435c9f9e3f6825e9c53008405c",
+      "bytes": 1929
+    },
+    {
+      "path": "h2-independent-source-output-overlap-probe.py",
+      "sha256": "ef8806e9253b8577ac3e617ddb92d59d4d2732c0db45a0c76b7351a77b386c5b",
+      "bytes": 2808
+    }
+  ],
+  "created_at": "2026-09-07T03:10:25.416749+00:00"
+}

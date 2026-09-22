@@ -8,9 +8,9 @@
 
 ## Branch Roles
 
-- current_branch: main
-- current_commit: 7d8bf19d878fd9ad29859a6cba4b7de64ad80ecc
-- current_branch_role: canonical
+- current_branch: task/aide-cw-integration-broker-01
+- current_commit: 83df2b73c96f754561e669080bc4c90108d0bc4b
+- current_branch_role: task
 - canonical_branch: main
 - integration_branch: dev
 - dev_is_canonical_truth: false
@@ -19,10 +19,10 @@
 
 - local_main_exists: true
 - remote_origin_main_exists: true
-- local_dev_exists: false
-- remote_origin_dev_exists: false
+- local_dev_exists: true
+- remote_origin_dev_exists: true
 - current_branch_tracks_remote: true
-- upstream: origin/main
+- upstream: origin/task/aide-cw-integration-broker-01
 - working_tree_clean: false
 
 ## Helper Dry-Runs
@@ -37,18 +37,15 @@
 
 These commands were not run by Q30:
 
-- git switch -c dev main
-- git push -u origin dev
+- none
 
 ## Recommended Next Action
 
-review future explicit dev creation plan; do not create or push dev during Q30
+verify dev is integration and use Q29 helper dry-runs before any future land/promote operation
 
 ## Warnings
 
 - dirty_tree_detected
-- local_dev_missing
-- remote_origin_dev_missing
 
 ## Q30 Boundary
 

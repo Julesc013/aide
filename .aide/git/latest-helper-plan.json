@@ -12,7 +12,6 @@
   "planned_commands": [],
   "push_requested": false,
   "recommendations": [
-    "AIDE branch policy expects dev; Q30 plans future explicit dev creation without mutating branches",
     "clean or classify the working tree before branch-sensitive helper actions"
   ],
   "remote_mutation": false,
@@ -21,22 +20,31 @@
   "state": {
     "ahead_behind": {
       "ahead": 0,
-      "behind": 3,
+      "behind": 0,
       "error": "",
       "known": true
     },
     "aide_branch_policy_path": ".aide/git/aide-branch-policy.yaml",
     "aide_branch_policy_present": true,
     "branch_roles": {
+      "dev": "integration",
       "main": "canonical",
-      "origin/main": "canonical"
+      "origin/dev": "integration",
+      "origin/main": "canonical",
+      "origin/task/aide-continuous-worker-pilot-01": "task",
+      "origin/task/aide-cw-integration-broker-01": "task",
+      "task/aide-continuous-worker-pilot-01": "task",
+      "task/aide-cw-integration-broker-01": "task"
     },
-    "current_branch": "main",
-    "current_commit": "7d8bf19d878fd9ad29859a6cba4b7de64ad80ecc",
-    "current_role": "canonical",
+    "current_branch": "task/aide-cw-integration-broker-01",
+    "current_commit": "83df2b73c96f754561e669080bc4c90108d0bc4b",
+    "current_role": "task",
     "detached_head": false,
     "local_branches": [
-      "main"
+      "dev",
+      "main",
+      "task/aide-continuous-worker-pilot-01",
+      "task/aide-cw-integration-broker-01"
     ],
     "non_mutating": true,
     "policy_files": {
@@ -55,14 +63,17 @@
       "release"
     ],
     "remote_branches": [
-      "origin/main"
+      "origin/dev",
+      "origin/main",
+      "origin/task/aide-continuous-worker-pilot-01",
+      "origin/task/aide-cw-integration-broker-01"
     ],
     "repo_root": "D:/Projects/AIDE/aide",
     "repo_root_detected": true,
     "repo_root_error": "",
     "schema_version": "aide.git-helper-state.v0",
     "unpushed_protected_branches": [],
-    "upstream": "origin/main",
+    "upstream": "origin/task/aide-cw-integration-broker-01",
     "upstream_available": true,
     "warnings": [
       "dirty_tree_detected"

@@ -1,0 +1,21 @@
+[task/aide-cw-integration-broker-01 06f2546f] feat(runtime): add bounded private-image preparation
+ 30 files changed, 3116 insertions(+), 8 deletions(-)
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-before-overlap-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-before-overlap-evidence.zip
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-before-root-alias-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-before-root-alias-evidence.zip
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-export-secret-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-helper-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-checkpoint-scope.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-source-manifest.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-source-review-notes.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-final-execution.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-final-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-closure-proposal.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-root-checkpoint-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-source-admission.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-source-evidence.zip
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-source-final-tests.json
+ create mode 100644 .aide/scripts/tests/test_continuous_worker_windows_image.py
+ create mode 100644 core/runtime/continuous_worker/windows_image.py

@@ -1,0 +1,55 @@
+{
+  "schema": "aide.broker.foundation-validation.v1",
+  "base_revision": "bfb86c12b9e6d2970024d29c57ba629994ec43cc",
+  "source_manifest_sha256": "41633685e0cdbe1b4f33e2cf9a80620e304c229d9bcc7e24e4889c9f7b3456f8",
+  "source_review": "PASS_BOUNDED_FOUNDATION; independent-review.json bound to exact eight-file source manifest",
+  "broker_tests": {
+    "total": 23,
+    "passed": 22,
+    "skipped": 1,
+    "receipt": "broker-tests-renamed.txt",
+    "skip_reason": "WinError 1314 denied disposable symlink creation; actual symlink host fixture not qualified"
+  },
+  "worker_v0_regression": {
+    "passed": 51,
+    "receipt": "worker-regression.txt",
+    "run_before_equivalent_test_rename": true
+  },
+  "doctor": "PASS",
+  "validate": "PASS",
+  "golden_evaluation": {
+    "result": "PASS",
+    "task_count": 171,
+    "pass_count": 171,
+    "warn_count": 0,
+    "fail_count": 0
+  },
+  "export_boundary": "source-only test excluded by existing forbidden/exportable/enumeration checks",
+  "test_rename_preserves_exact_bytes": true,
+  "committed": false,
+  "pushed": false,
+  "full_broker_complete": false,
+  "next_required": [
+    "bounded change-set handoff over trusted base objects without increasing MAX_FILES",
+    "object-bound reserved preparation recovery/repair and kill-before-prepared tests",
+    "coordinator-v1 protocol adoption",
+    "production integration transport and isolated host qualification"
+  ],
+  "evidence_sha256": {
+    "broker-tests.txt": "2560e828469beded31843cf3b3f373a86fd3eeddb1343886c4ebba49322e4366",
+    "broker-tests-renamed.txt": "28e2947b63be42e07fe650358fa3d67224d4233d37778df812f80cd832168d3b",
+    "worker-regression.txt": "275116f3b0f847765618c881e1bc5ecec784235d7b1352a7ffd58af202fefa9a",
+    "doctor.txt": "a88e3625a522652ef8fbc94b99f8abb2d834407be3a78d8ad94dbfebe9ff1476",
+    "validate.txt": "4cc34ccf89cf15601c461a5577ed72a0b692ce3980b0e109ec357a50b7fac881",
+    "eval.txt": "d0360896a3b477f0e93113c18e4a00c922bedef22c705359321c94af233c2080",
+    "export-boundary.txt": "a177b26e3b04b25f00f25e077c8a5951a7aca54c1a65a619d5719b4ee641ea59",
+    "source-diff-check.txt": "5e97f0732c51e07482c3689ecd14ba7a28aca63a25fe6d1b6b8aa85a963696a8"
+  },
+  "evidence_storage": {
+    "archive": "foundation-evidence.zip",
+    "custody": "foundation-custody.json",
+    "sha256": "ea350ca9d9db1c414d8bd59d6267a0f7f80f4fb051789a5fcd8fc20d89832e80",
+    "hash_semantics": "evidence_sha256 names identify exact archive members, including original command output; sibling raw files are not required checkout inputs"
+  },
+  "checkpoint_status": "authorized source-reviewed local checkpoint; full task remains running"
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h1-network-oracle-validation.py",
+    "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\security-probe-interface.exe",
+    "be38dfa7754c4d6f2096c7f85b97e5c874bc760ca62ee3f638731fae15ce45dc"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.443883099826053,
+  "log_sha256": "741c883029a2d7ab597dc04dca85c3eed47c7ad7959f0fcb9f2023698871f719",
+  "probe_sha256": "be38dfa7754c4d6f2096c7f85b97e5c874bc760ca62ee3f638731fae15ce45dc"
+}

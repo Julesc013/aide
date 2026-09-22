@@ -1,0 +1,24 @@
+{
+  "schema": "aide.host.system-input-source-checks.v1",
+  "manifest_sha256": "68ec1a87f6e5e95193a5067c2c94907e0d38382863ce404f98984df5e0ac9cec",
+  "source_aggregate": "85d629a732d7efe5444940679323129a3c6382638c03ebe77ed6d3892eb80799",
+  "validate": {
+    "command": [
+      "C:\\Program Files\\Python314\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "validate"
+    ],
+    "exit_code": 0,
+    "seconds": 5.339226800017059,
+    "log": "h2-input-aide-validate.txt",
+    "bytes": 4893242,
+    "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+  },
+  "portable_source_count": 817,
+  "source3_excluded": true,
+  "secret_error_count": 0,
+  "scoped_diff_exit": 0,
+  "source_dependencies_index_unchanged": true,
+  "native_input_effect_executed": false
+}

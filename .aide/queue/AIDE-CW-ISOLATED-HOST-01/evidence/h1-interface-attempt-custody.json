@@ -1,0 +1,307 @@
+{
+  "schema": "aide.host.h1-interface-attempt-custody.v1",
+  "archive": "h1-interface-attempt-evidence.zip",
+  "archive_sha256": "ac8ff44d865483cc0a01305c3fdc345b9602193c08995afc2982e22cf43ad3ae",
+  "members": {
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md": {
+      "bytes": 18011,
+      "sha256": "be13e7c5223891c03e97327d34f3ed7d0e0ccf57897fc04e693edebf28f18d18"
+    },
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/status.yaml": {
+      "bytes": 413,
+      "sha256": "e67574cc5945885e4b26b739adbc8508ab77cc0ccd5b14fc83568de7678aa76f"
+    },
+    "checkpoint-docs/.aide/queue/AIDE-CW-ISOLATED-HOST-01/task.yaml": {
+      "bytes": 2401,
+      "sha256": "03d8b65f2fce37a7b761bdb2bd0998d38e4f87d08ba257b7b4f51fd8eecc3820"
+    },
+    "checkpoint-docs/DOCUMENTATION.md": {
+      "bytes": 64974,
+      "sha256": "eab9448fa492f13b7b150e51efda9c6098135a071888a4a1ffa5e088836d8b2a"
+    },
+    "checkpoint-docs/IMPLEMENT.md": {
+      "bytes": 493102,
+      "sha256": "425890d974914aab8f60b8ce63083b0c76587838643015f97fb0c2046a362598"
+    },
+    "checkpoint-docs/PLANS.md": {
+      "bytes": 456228,
+      "sha256": "fc23badf1729f7c1cf7d2703f53e63265692c470bb59ea558799ca79eab7d428"
+    },
+    "checkpoint-docs/docs/reference/integration-broker-core.md": {
+      "bytes": 35723,
+      "sha256": "49b2f3e7d1972af1fba18ce1d0263f8b22b16e35a42479d9459d4b0d609fac45"
+    },
+    "evidence/changed-files.md": {
+      "bytes": 1241,
+      "sha256": "d79f5d715efc3451256f7ee1edd573ed5eb815d931182bca4de921495494b121"
+    },
+    "evidence/h1-actual-owned-interface-first.json": {
+      "bytes": 1694,
+      "sha256": "988070e89e7332c90be27b07d6448314e0bd383168b17c762c590e9a834ed09c"
+    },
+    "evidence/h1-actual-owned-interface-first.txt": {
+      "bytes": 161,
+      "sha256": "34ff6b9b6a360131b3c97ce1302420139530c4c14cd5c489868662cde84f1fe5"
+    },
+    "evidence/h1-checkpoint-aide-dev-main-plan.json": {
+      "bytes": 4472,
+      "sha256": "98f7ecd32fb06fd657dfb721261c90d86bbcb2e61cc5d0a1907fdb3e16da297b"
+    },
+    "evidence/h1-checkpoint-aide-dev-main-plan.md": {
+      "bytes": 1300,
+      "sha256": "36d3ef4821be6598a1f1c89db2ef32deace8728141e6583fbe56d87e7d63ed49"
+    },
+    "evidence/h1-checkpoint-docs-first-failure.json": {
+      "bytes": 338,
+      "sha256": "f5711b20a7b3f956b8aab30855076ef5eb418283adb7f5060e563ca87c7c94fd"
+    },
+    "evidence/h1-checkpoint-export-secret-checks.json": {
+      "bytes": 1388,
+      "sha256": "cb0de840f2d44ac76a3eb4d6af52fa4161cc74fb96ea13fedf71951573123f0d"
+    },
+    "evidence/h1-checkpoint-git-detect.txt": {
+      "bytes": 560,
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86"
+    },
+    "evidence/h1-checkpoint-git-plan.txt": {
+      "bytes": 689,
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de"
+    },
+    "evidence/h1-checkpoint-git-policy.txt": {
+      "bytes": 5553,
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd"
+    },
+    "evidence/h1-checkpoint-helper-checks.json": {
+      "bytes": 3324,
+      "sha256": "b8e199413849a638ffa06ae2b5837dd3a9a0c9e571fb5301b42fee5ce1bf5098"
+    },
+    "evidence/h1-checkpoint-latest-helper-plan.json": {
+      "bytes": 2736,
+      "sha256": "4a6747788f4718cf81dbaf1546eef2cb30abb8963417edcce0799da1b312f2dc"
+    },
+    "evidence/h1-checkpoint-latest-helper-plan.md": {
+      "bytes": 987,
+      "sha256": "0afed74c1a3ccea83fdec8faba8962251020e289a48769947eee1ef5373b8392"
+    },
+    "evidence/h1-checkpoint-message-check.txt": {
+      "bytes": 2477,
+      "sha256": "ead955d9b3404ab01ee170d56ecb21e0295d8b378cd8e0e59c3962398e54aa34"
+    },
+    "evidence/h1-checkpoint-message.txt": {
+      "bytes": 2650,
+      "sha256": "0a21e0940146d892dd5608a00c9f4558fd7a4f8d97ef0c0ec8bc4b616c86429c"
+    },
+    "evidence/h1-checkpoint-task-inspect.txt": {
+      "bytes": 382,
+      "sha256": "25f70cf26e7d5b75c8dede8a3152e1e0920fcd4ac63a8d3b66bef28d2beb7577"
+    },
+    "evidence/h1-checkpoint-task-noop.txt": {
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    "evidence/h1-checkpoint-task-recover.txt": {
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    },
+    "evidence/h1-checkpoint-validate.txt": {
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+    },
+    "evidence/h1-checkpoint-workflow-detection.json": {
+      "bytes": 1037,
+      "sha256": "d88b6d7db2d5726f5f1fcf58c7625e609e2efa1e84dffc2c2189eab570edddb7"
+    },
+    "evidence/h1-checkpoint-workflow-detection.md": {
+      "bytes": 748,
+      "sha256": "8d1a1184ade3f3635bc85d221431109c948561acee18aa37d685f8d5bb71d9a3"
+    },
+    "evidence/h1-interface-compile-first.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evidence/h1-interface-final-tests.json": {
+      "bytes": 804,
+      "sha256": "a07db1669b799673ed9354a1a3af8a033db6686c98bff579251f9ec3c93a80e7"
+    },
+    "evidence/h1-interface-first-source-checks.json": {
+      "bytes": 730,
+      "sha256": "7749d4f7d2c4c00fa23ce98e80b08577f4c51ed17a7a6f2ab69626ff59b02461"
+    },
+    "evidence/h1-interface-host-final-tests.txt": {
+      "bytes": 1434,
+      "sha256": "69cbf43edab8e13da729b0d41d9fcb9b049270dea232f16912f8ef7a258c8ab8"
+    },
+    "evidence/h1-interface-native-first-tests.json": {
+      "bytes": 596,
+      "sha256": "3a9f2994c63054c3c6418992e192ff79c440fb6bb650d0537297de605695c0db"
+    },
+    "evidence/h1-interface-native-first-tests.txt": {
+      "bytes": 649,
+      "sha256": "741c883029a2d7ab597dc04dca85c3eed47c7ad7959f0fcb9f2023698871f719"
+    },
+    "evidence/h1-interface-scoped-diff-check.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evidence/h1-interface-source-final-tests.txt": {
+      "bytes": 5841,
+      "sha256": "788ab807ba95acc6c7398ed6408b9fdac162f9b735c06a12e27b72f40b833925"
+    },
+    "evidence/h1-interface-source-first-tests.txt": {
+      "bytes": 5383,
+      "sha256": "8f37e22388de565b588890a968c10028dbf5a509e2e06a39e2398341e0e12bc9"
+    },
+    "evidence/h1-interface-source-manifest.json": {
+      "bytes": 2013,
+      "sha256": "4ec8498eec2d6d1beda694a369b428922899082ed349172d1e130246c4bd87b9"
+    },
+    "evidence/h1-interface-source.patch": {
+      "bytes": 118258,
+      "sha256": "4c6bbea0b3f41b9504264dae8db7d5098428fd8dba320dccd93e55606ed65fcb"
+    },
+    "evidence/h1-local-interface-inventory.json": {
+      "bytes": 1819,
+      "sha256": "3633d2c2e0ee1ac6720d9236f4077e6c4f49044e55957bcf5f624784087acd4b"
+    },
+    "evidence/h1-native-interface-read-only.json": {
+      "bytes": 635,
+      "sha256": "c3ef2ba42dc019a140fd494a5ef6f28b7935be8311bd103ba51f5673580506ec"
+    },
+    "evidence/h1-network-oracle-validation.py": {
+      "bytes": 2813,
+      "sha256": "e41380f4b337e465ed5963622e6fb833325e712d7bef9ba81049e147cd2b3485"
+    },
+    "evidence/h1-owned-interface-effect-manifest.json": {
+      "bytes": 3273,
+      "sha256": "5899f09a73d812b32d5ec59a6014cbe83371e850f3e0ef19e4b320cc39d20d58"
+    },
+    "evidence/h1-owned-network-effect-probe.py": {
+      "bytes": 21838,
+      "sha256": "bb50bc6eeaf24ccbf2e13fe817f24752f958dcebf668aa3dade52dd3d7c50c85"
+    },
+    "evidence/h1-root-interface-network-oracle.txt": {
+      "bytes": 649,
+      "sha256": "74b53ffd70e5ed1981813aeea376c897e930f2865546ffb95c647dabc0cb9b3b"
+    },
+    "evidence/h1-root-interface-result-review.json": {
+      "bytes": 1233,
+      "sha256": "2ec63f85c099c24e0e2392ac037c61d637396495104ae921e2fbb047ef36f111"
+    },
+    "evidence/h1-root-interface-review.json": {
+      "bytes": 2013,
+      "sha256": "a9daef4cbb14d6268ee6f63e8f824800911e70f15c02e24836e207b137cf76c9"
+    },
+    "evidence/h1-root-interface-source-job.txt": {
+      "bytes": 7171,
+      "sha256": "ef6dd71a007f531cc3f2e7af95f6c7b99de038914373e70a6017737b72617c91"
+    },
+    "evidence/h2-local-tool-input-inventory.json": {
+      "bytes": 3150,
+      "sha256": "c9d32e4ae50b4a39fdce661295608bf403ce65d5efca671f28b0f42b76382d46"
+    },
+    "evidence/h2-private-toolchain-proposal.md": {
+      "bytes": 5427,
+      "sha256": "7d19551d1dd69d0bafb19658b204cde247060fc2ed51d0d7cde696c260d3bda1"
+    },
+    "evidence/remaining-risks.md": {
+      "bytes": 1231,
+      "sha256": "c8d15136e505c5128380e6b3fff0752bb86bd396644a5108261ec3f8bc569a86"
+    },
+    "evidence/validation.md": {
+      "bytes": 1523,
+      "sha256": "62a60c799bedc05eda69f80beb1c54619e6f848a3b17cf63d1bbbc8c63b541ca"
+    },
+    "owned/build-interface-probe.cmd": {
+      "bytes": 809,
+      "sha256": "eb6f4ead69ec3156e214c664eae426e1c8495cbb1ae7ee19d8d3ff4ac4e51c9d"
+    },
+    "owned/interface-compile.txt": {
+      "bytes": 49,
+      "sha256": "15974477059d99a1abcfbfde0052d6a8a8754c7f99300a44c4725c15c109dacc"
+    },
+    "owned/interface-compiler-env.txt": {
+      "bytes": 297,
+      "sha256": "410264226a5d4978bb90f1c29b5da192fa045d0c511053836acbdd6109d3781f"
+    },
+    "owned/interface-native-job-output/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "owned/interface-native-job-output/stdout": {
+      "bytes": 155,
+      "sha256": "d78f220fbfa8f8e610e855e51134b1cd8b74c1dd99ece72722b2f24abe1b2681"
+    },
+    "owned/interface-native-probe-receipt.json": {
+      "bytes": 6326,
+      "sha256": "1d56d971e9db3d96475163c7e9f41daad9d6cfb4c0782225d1709bc90e6bc8ec"
+    },
+    "owned/interface-probe-objects/scratch/native-created.txt": {
+      "bytes": 18,
+      "sha256": "120641fe76c4366e442d9f44bdfc2d8aec756026cf4e624de42b636f0403e8d5"
+    },
+    "owned/interface-probe-reservation.jsonl": {
+      "bytes": 350,
+      "sha256": "625e17c8956e8093c75fd82884997a4276fc25459cd0e59ad56ce310cd80b946"
+    },
+    "owned/security-probe-interface.exe": {
+      "bytes": 153088,
+      "sha256": "be38dfa7754c4d6f2096c7f85b97e5c874bc760ca62ee3f638731fae15ce45dc"
+    },
+    "source/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-effect-probe.py": {
+      "bytes": 9879,
+      "sha256": "e53b19b1fc7cb8aac488f28e20cfe00942d4ed278e2e8533296185d71c00da1d"
+    },
+    "source/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-oracle-validation.py": {
+      "bytes": 2813,
+      "sha256": "e41380f4b337e465ed5963622e6fb833325e712d7bef9ba81049e147cd2b3485"
+    },
+    "source/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-network-effect-probe.py": {
+      "bytes": 21838,
+      "sha256": "bb50bc6eeaf24ccbf2e13fe817f24752f958dcebf668aa3dade52dd3d7c50c85"
+    },
+    "source/.aide/scripts/tests/test_continuous_worker_windows_security.py": {
+      "bytes": 38635,
+      "sha256": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725"
+    },
+    "source/.aide/scripts/tests/test_continuous_worker_windows_security_probe.c": {
+      "bytes": 9620,
+      "sha256": "edc4e572b8dd856e361aaa30e9b6300dc0c3a12a84aae13227b5bdfcf99a05c0"
+    },
+    "source/core/runtime/continuous_worker/windows_job.py": {
+      "bytes": 13864,
+      "sha256": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c"
+    },
+    "source/core/runtime/continuous_worker/windows_security.py": {
+      "bytes": 14041,
+      "sha256": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021"
+    },
+    "source/core/runtime/continuous_worker/windows_security_objects.py": {
+      "bytes": 13253,
+      "sha256": "c5605f3dd3c173e93d707ac3e764e183b70263e1057e42bf5dfddf6405e5dcb9"
+    }
+  },
+  "preceding_custody": [
+    {
+      "archive": "h1-first-attempt-evidence.zip",
+      "sha256": "5411d9aff07553c7d3ae3ab56a8abb413ecd4bb81df71f9fea421c9de0600899",
+      "member_count": 53
+    },
+    {
+      "archive": "h1-network-attempt-evidence.zip",
+      "sha256": "ad19e18d67e3c3c67390e3f8c806d8123703f3f55dee591b5a3d3446ecf1c655",
+      "member_count": 40
+    },
+    {
+      "archive": "h1-diagnostic-attempt-evidence.zip",
+      "sha256": "878d10148bebd126c77f93be04af9c4fd5749f7c36b166ded164c601cc897dd7",
+      "member_count": 43
+    }
+  ],
+  "result": "PASS",
+  "classification": "Exact native token/local-endpoint conjunction only; raw timeout10060 plus diagnostic0/2 (missing internetClient), stable non-exemption, live ordinary controls, no child connect, filesystem/controller denials and exit0/exited/quiescent. Prior three FAIL packets remain unchanged.",
+  "source_aggregate": "df77e584e56027cc36979287779fa2911d2ea8cfef36df2ea72679ebd1433abd",
+  "effect_manifest_sha256": "5899f09a73d812b32d5ec59a6014cbe83371e850f3e0ef19e4b320cc39d20d58",
+  "actual_receipt_sha256": "1d56d971e9db3d96475163c7e9f41daad9d6cfb4c0782225d1709bc90e6bc8ec",
+  "cleanup": "retain_only",
+  "activation": false
+}

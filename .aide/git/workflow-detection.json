@@ -1,20 +1,26 @@
 {
-  "branch_role_for_current_branch": "canonical",
+  "branch_role_for_current_branch": "task",
   "canonical_branch": "main",
-  "confidence": "medium",
-  "current_branch": "main",
-  "current_commit": "7d8bf19d878fd9ad29859a6cba4b7de64ad80ecc",
-  "detected_workflow": "trunk_without_dev",
+  "confidence": "high",
+  "current_branch": "task/aide-cw-integration-broker-01",
+  "current_commit": "83df2b73c96f754561e669080bc4c90108d0bc4b",
+  "detected_workflow": "trunk_with_dev_integration",
   "generated_by": "aide-lite",
-  "integration_branch": "",
-  "integration_branch_detected": false,
+  "integration_branch": "dev",
+  "integration_branch_detected": true,
   "local_branches": [
-    "main"
+    "dev",
+    "main",
+    "task/aide-continuous-worker-pilot-01",
+    "task/aide-cw-integration-broker-01"
   ],
   "non_mutating": true,
   "recommended_next_action": "classify dirty tree before branch-sensitive work",
   "remote_branches": [
-    "origin/main"
+    "origin/dev",
+    "origin/main",
+    "origin/task/aide-continuous-worker-pilot-01",
+    "origin/task/aide-cw-integration-broker-01"
   ],
   "remote_url_summary": "Julesc013/aide",
   "repo_id": "Julesc013/aide",

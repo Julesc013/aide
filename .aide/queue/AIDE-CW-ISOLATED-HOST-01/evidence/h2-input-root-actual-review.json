@@ -1,0 +1,21 @@
+{
+  "schema": "aide.host.h2-input-root-actual-review.v1",
+  "result": "PASS_ACTUAL_BOUNDED_READ_FACTS",
+  "execution_receipt_sha256": "c7ad28de4426eefdf6af8a44bb38b8ff1c0a402a1a7d5653c522cbf98785388e",
+  "source_manifest_sha256": "68ec1a87f6e5e95193a5067c2c94907e0d38382863ce404f98984df5e0ac9cec",
+  "source_aggregate": "85d629a732d7efe5444940679323129a3c6382638c03ebe77ed6d3892eb80799",
+  "effect_raw_sha256": "e5655f469eef408b87669b5e55700fae6fe9b5a2c5d7bdbee0d05359e537df08",
+  "effect_canonical_sha256": "1fb1ba24217e8ab76bdc96e6a690055668842f66448b6989343f4be98ac20ec3",
+  "all_six_original_artifacts_rehashed": true,
+  "exact_child_stdin_and_typed_output": true,
+  "controller_and_provisional_journal_correlate": true,
+  "owned_job_exit_quiescence_and_output_bytes_match": true,
+  "exact_adapter_calls": 167,
+  "exact_close_attempts": 9,
+  "observed_files": 8,
+  "observed_bytes": 8306752,
+  "actual_native_names_preserved": true,
+  "sources_dependencies_index_unchanged": true,
+  "actual_DLL_reread_or_effect_replay_by_reviewer": false,
+  "scope": "Independent audit of exact recorded ordinary child read-only execution and native facts. Observed owner/DACL/identity/hash/links do not establish OS provenance, contextual API mapping, private Python bootstrap, complete180/128API closure or continuous activation."
+}

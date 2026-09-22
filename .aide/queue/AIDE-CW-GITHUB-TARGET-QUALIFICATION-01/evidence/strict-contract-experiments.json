@@ -1,0 +1,460 @@
+{
+  "schema": "aide.local.conditional-contract-experiments.v1",
+  "source_sha256": "3ad248cd54670d4f5554d7b947e6950d2ea3ac874f36d2cdfb9d96ac08ec3f97",
+  "git_executable_sha256": "da240fe9bc24895b3e04150a4990b8a6ff329ecabcd8f19684c2cc310da5ef3f",
+  "experiments": [
+    {
+      "name": "unchanged_base",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": null,
+      "result_commit": "519d8822359bb34857d3e8d3650960b79a9aeff0",
+      "result_parents": [
+        "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      ],
+      "result_tree": "271c89a518fe039d5cee91b3a8842fd56d2dbe6f",
+      "ref_changed": true,
+      "admitted_effect": true,
+      "expected": "admitted"
+    },
+    {
+      "name": "competing_base_after_read",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": "strict_base_not_up_to_date",
+      "result_commit": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+      "result_parents": [
+        "ca92c7f3230879eb12693d194bae32b8f7422be4"
+      ],
+      "result_tree": "184bc990a54f6c3ff6310e29c4cc04505adb2bdc",
+      "ref_changed": false,
+      "admitted_effect": false,
+      "expected": "refused"
+    },
+    {
+      "name": "same_tree_base_advance",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "3af62ba2ba14607621b80f55aa8998065a659a31",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": "strict_base_not_up_to_date",
+      "result_commit": "3af62ba2ba14607621b80f55aa8998065a659a31",
+      "result_parents": [
+        "ca92c7f3230879eb12693d194bae32b8f7422be4"
+      ],
+      "result_tree": "967db4abddb907224a3f8dc49ea041806bc55961",
+      "ref_changed": false,
+      "admitted_effect": false,
+      "expected": "refused"
+    },
+    {
+      "name": "loose_policy_counterexample",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": false,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": null,
+      "result_commit": "68787cc9143af5b89818f42cde7d417f5a3da6b3",
+      "result_parents": [
+        "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      ],
+      "result_tree": "36932ebdc4bee4953b7d1c1fd9089edc5cbd404e",
+      "ref_changed": true,
+      "admitted_effect": false,
+      "expected": "unadmitted"
+    },
+    {
+      "name": "bypass_counterexample",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": true,
+      "bypass": true,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": null,
+      "result_commit": "68787cc9143af5b89818f42cde7d417f5a3da6b3",
+      "result_parents": [
+        "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      ],
+      "result_tree": "36932ebdc4bee4953b7d1c1fd9089edc5cbd404e",
+      "ref_changed": true,
+      "admitted_effect": false,
+      "expected": "unadmitted"
+    },
+    {
+      "name": "rollback_counterexample",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "02b3f5918284e14e1668382b768c77e843452256",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": null,
+      "result_commit": "0a0a0649a71f695eaa7d309c2d4a909c667bd97f",
+      "result_parents": [
+        "02b3f5918284e14e1668382b768c77e843452256",
+        "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      ],
+      "result_tree": "271c89a518fe039d5cee91b3a8842fd56d2dbe6f",
+      "ref_changed": true,
+      "admitted_effect": false,
+      "expected": "unadmitted"
+    },
+    {
+      "name": "head_changed_after_read",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+      "dispatch_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": "expected_head_mismatch",
+      "result_commit": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+      "result_parents": [
+        "02b3f5918284e14e1668382b768c77e843452256"
+      ],
+      "result_tree": "967db4abddb907224a3f8dc49ea041806bc55961",
+      "ref_changed": false,
+      "admitted_effect": false,
+      "expected": "refused"
+    },
+    {
+      "name": "missing_expected_head_counterexample",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+      "dispatch_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+      "strict": true,
+      "bypass": false,
+      "expected_head": false,
+      "deny_non_dev": true,
+      "refusal": null,
+      "result_commit": "eba137d0ec53dc440a0864f74bcbc668dc4fa8d9",
+      "result_parents": [
+        "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "f73a30ad532a35392cc00a66c116c50f0aed911a"
+      ],
+      "result_tree": "6637a24a4a171c321ea8001fc1a08b30e1bc1b94",
+      "ref_changed": true,
+      "admitted_effect": false,
+      "expected": "unadmitted"
+    },
+    {
+      "name": "same_oid_retarget_counterexample",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "main",
+      "dispatch_base": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": false,
+      "refusal": null,
+      "result_commit": "f10c7ae8ea01b4621612a52d4b0296e5e6d4d3de",
+      "result_parents": [
+        "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      ],
+      "result_tree": "271c89a518fe039d5cee91b3a8842fd56d2dbe6f",
+      "ref_changed": true,
+      "admitted_effect": false,
+      "expected": "unadmitted"
+    },
+    {
+      "name": "same_oid_retarget_denied",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "main",
+      "dispatch_base": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": "non_dev_update_denied",
+      "result_commit": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+      "result_parents": [
+        "02b3f5918284e14e1668382b768c77e843452256"
+      ],
+      "result_tree": "967db4abddb907224a3f8dc49ea041806bc55961",
+      "ref_changed": false,
+      "admitted_effect": false,
+      "expected": "refused"
+    },
+    {
+      "name": "already_exact_candidate",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": null,
+      "result_commit": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "result_parents": [
+        "ca92c7f3230879eb12693d194bae32b8f7422be4"
+      ],
+      "result_tree": "271c89a518fe039d5cee91b3a8842fd56d2dbe6f",
+      "ref_changed": false,
+      "admitted_effect": false,
+      "expected": "unchanged"
+    },
+    {
+      "name": "candidate_already_in_target",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+      "dispatch_head": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": "strict_base_not_up_to_date",
+      "result_commit": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+      "result_parents": [
+        "ea3f00b07227b518fd0256c5c42d23c98b10fe78"
+      ],
+      "result_tree": "627defcb6a84d6d789da8678a75da9d93d8c6521",
+      "ref_changed": false,
+      "admitted_effect": false,
+      "expected": "refused"
+    },
+    {
+      "name": "multiple_parent_counterexample",
+      "observed": {
+        "target_ref": "dev",
+        "target": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "head": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "graph": {
+        "a": "02b3f5918284e14e1668382b768c77e843452256",
+        "b": "ca92c7f3230879eb12693d194bae32b8f7422be4",
+        "c": "ea3f00b07227b518fd0256c5c42d23c98b10fe78",
+        "d": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "same_tree": "3af62ba2ba14607621b80f55aa8998065a659a31",
+        "descendant": "ac985f05e0080cb18dda43fa0e43766e7beb4569",
+        "changed_head": "f73a30ad532a35392cc00a66c116c50f0aed911a",
+        "multi": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      },
+      "dispatch_ref": "dev",
+      "dispatch_base": "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+      "dispatch_head": "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4",
+      "strict": true,
+      "bypass": false,
+      "expected_head": true,
+      "deny_non_dev": true,
+      "refusal": null,
+      "result_commit": "d330998debf217c94a640beec86c6e018feba5a5",
+      "result_parents": [
+        "a88c64148a1df47dba61593e6065ed74a0ab7fb5",
+        "2d7e969ff99b2f5dc9a828a015f7110fc9f7f5b4"
+      ],
+      "result_tree": "36932ebdc4bee4953b7d1c1fd9089edc5cbd404e",
+      "ref_changed": true,
+      "admitted_effect": false,
+      "expected": "unadmitted"
+    }
+  ],
+  "count": 13,
+  "result": "PASS",
+  "hosted_github_qualification": false,
+  "scope": "Real local Git objects and deterministic modeled server predicates; no provider calls."
+}

@@ -1,0 +1,11 @@
+[task/aide-cw-integration-broker-01 24ed6615] feat(runtime): bound broker HTTPS observation exchanges
+ 18 files changed, 1643 insertions(+), 4 deletions(-)
+ create mode 100644 .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-checkpoint-preflight.json
+ create mode 100644 .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-evidence.zip
+ create mode 100644 .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-root-independent-review.json
+ create mode 100644 .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-source-manifest.json
+ create mode 100644 .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/https-validation.json
+ create mode 100644 .aide/scripts/tests/test_continuous_worker_github_http.py
+ create mode 100644 core/runtime/integration_broker/github_http.py
+ create mode 100644 core/runtime/integration_broker/github_http_framing.py

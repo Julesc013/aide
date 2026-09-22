@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
+status: passed
+classification: complete
+planning_state: implemented
+result: PASS
+review_gate: exact_untracked_archive_duplicate_removal
+updated_at: 2026-09-21
+current_slice: complete
+next_slice: future_generated_output_retention_migration
+notes:
+  - Two passed Facman tasks retain compact tracked custody archives.
+  - Their 102 byte-identical loose expansions are now narrowly ignored.
+  - Owner approval bound the canonical 506-file manifest and its fail-closed removal procedure.
+  - All 506 approved untracked duplicates were removed after loose-file and tracked-ZIP-member revalidation.
+  - The removal reclaimed 101,279,517 bytes while preserving 20 tracked custody archives and the external recovery snapshot.
+  - The stale worktree registration and exact ignored Python cache set were removed safely.
+  - Tracked generated outputs are retained because all 1381 ledger entries still have unknown deletion and regeneration safety.

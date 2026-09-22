@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "-c",
+    "import sys,unittest; sys.path[:0]=['.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence','.aide/scripts/tests']; r=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromNames(['h2_system_input_tests','test_continuous_worker_system_observation'])); sys.exit(not r.wasSuccessful())"
+  ],
+  "exit_code": 0,
+  "seconds": 0.3953249999321997,
+  "source_files": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input.py": "1a394d243e08cad2264b6e803d150a9dccdbec779851c9e9e5da41acfa6e70d7",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_controller.py": "b8a886881ed53d1b3a28bda44e15e45cc6162588ffd720a2d6de00942ee23456",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_tests.py": "80f482fb36e7cd2e1cdf849cd356c0bf150490f3a41f2581502d860140605d47"
+  },
+  "log_sha256": "a97301369dc32ad5afa18ca0d83329cdc71da78b4509694dd00acd943281d99c",
+  "tests_scope": "30 new injected plus 37 unchanged injected observer; no native constructor or effect"
+}

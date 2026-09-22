@@ -1,0 +1,22 @@
+[task/aide-cw-integration-broker-01 2a44f17e] feat(runtime): retain reviewed native input facts probe
+ 29 files changed, 2488 insertions(+), 2 deletions(-)
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-execution.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-helper-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-message.txt
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-scope.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-validation.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-driver-plan.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-effect-manifest.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-evidence.zip
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-reviewed-tests.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-actual-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-checkpoint-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-orchestration-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-source-effect-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-manifest.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-review-notes.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input.py
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_controller.py
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_tests.py

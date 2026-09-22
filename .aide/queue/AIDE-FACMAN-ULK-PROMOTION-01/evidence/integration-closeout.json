@@ -1,0 +1,486 @@
+{
+  "schema": "aide.provider.integration.v1",
+  "observed_at": "2026-09-06T14:27:01.382154+00:00",
+  "repository": "Julesc013/universal-launcher",
+  "source_correction": "151a18f9f67af1a1ede17bda72641155d22106e5",
+  "reviewed_task_head": "76d93a0e81e5b8f9391123780157402e27ff486f",
+  "main": "fc00ecd1d9e8f9d2a382f7155510a8bf0fd71644",
+  "dev": "e61782bc6d71fb91efa960e9033738b5a44fece3",
+  "tree": "cf1ab68a3695cfbc8a5947cc5444b7cca620c883",
+  "main_ancestor_of_dev": true,
+  "pull_requests": {
+    "18": {
+      "headRefOid": "76d93a0e81e5b8f9391123780157402e27ff486f",
+      "mergeCommit": {
+        "oid": "240cf43b5c3a6aa20d36066b624c21252743e959"
+      },
+      "mergedAt": "2026-09-06T13:48:19Z",
+      "number": 18,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:41:02Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036798836/job/101496236726",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-09-06T13:40:20Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:41:23Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036797257/job/101496232495",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-09-06T13:40:18Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:41:37Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036798836/job/101496236832",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-09-06T13:40:20Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:41:31Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036797257/job/101496232331",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-09-06T13:40:18Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:40:54Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036798836/job/101496236591",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-09-06T13:40:24Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:40:56Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036797257/job/101496232506",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-09-06T13:40:24Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:41:34Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036798836/job/101496236803",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-09-06T13:40:21Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:41:39Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036797257/job/101496232531",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-09-06T13:40:18Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        }
+      ],
+      "url": "https://github.com/Julesc013/universal-launcher/pull/18"
+    },
+    "20": {
+      "headRefOid": "0e8bcc38f5a55c80974c41da8d2eac10ac703593",
+      "mergeCommit": {
+        "oid": "b57b51c56c8bc785b472105f1f86856c42724f2a"
+      },
+      "mergedAt": "2026-09-06T13:32:56Z",
+      "number": 20,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:22:16Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34035852654/job/101493657549",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-09-06T13:21:34Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-08-30T15:51:49Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/33320792688/job/99282283713",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-08-30T15:51:03Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:22:44Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34035852654/job/101493657546",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-09-06T13:21:33Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-08-30T15:52:21Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/33320792688/job/99282283861",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-08-30T15:51:03Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:21:56Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34035852654/job/101493657412",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-09-06T13:21:34Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-08-30T15:51:28Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/33320792688/job/99282283852",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-08-30T15:51:04Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:22:59Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34035852654/job/101493657552",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-09-06T13:21:36Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-08-30T15:52:19Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/33320792688/job/99282283897",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-08-30T15:51:03Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        }
+      ],
+      "url": "https://github.com/Julesc013/universal-launcher/pull/20"
+    },
+    "21": {
+      "headRefOid": "b57b51c56c8bc785b472105f1f86856c42724f2a",
+      "mergeCommit": {
+        "oid": "24a3bd3802b716d84d52d87807f4f488d7a1796b"
+      },
+      "mergedAt": "2026-09-06T13:38:32Z",
+      "number": 21,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:37:05Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036597915/job/101495690448",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-09-06T13:36:20Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:33:53Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036426051/job/101495226967",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-09-06T13:33:01Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:37:33Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036597915/job/101495690338",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-09-06T13:36:20Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:34:23Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036426051/job/101495226881",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-09-06T13:33:05Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:36:48Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036597915/job/101495690372",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-09-06T13:36:24Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:33:46Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036426051/job/101495226944",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-09-06T13:33:09Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:37:31Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036597915/job/101495690192",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-09-06T13:36:20Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:35:13Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34036426051/job/101495226749",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-09-06T13:33:01Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        }
+      ],
+      "url": "https://github.com/Julesc013/universal-launcher/pull/21"
+    },
+    "22": {
+      "headRefOid": "240cf43b5c3a6aa20d36066b624c21252743e959",
+      "mergeCommit": {
+        "oid": "fc00ecd1d9e8f9d2a382f7155510a8bf0fd71644"
+      },
+      "mergedAt": "2026-09-06T14:09:11Z",
+      "number": 22,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:50:42Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34037287925/job/101497562382",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-09-06T13:49:59Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:49:31Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34037208696/job/101497347653",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-09-06T13:48:24Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:51:36Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34037287925/job/101497562298",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-09-06T13:49:59Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:49:47Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34037208696/job/101497347633",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-09-06T13:48:25Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:50:29Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34037287925/job/101497562316",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-09-06T13:50:04Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:48:52Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34037208696/job/101497347743",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-09-06T13:48:28Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:51:22Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34037287925/job/101497562173",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-09-06T13:50:00Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T13:49:37Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34037208696/job/101497347613",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-09-06T13:48:24Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        }
+      ],
+      "url": "https://github.com/Julesc013/universal-launcher/pull/22"
+    },
+    "23": {
+      "headRefOid": "fc00ecd1d9e8f9d2a382f7155510a8bf0fd71644",
+      "mergeCommit": {
+        "oid": "e61782bc6d71fb91efa960e9033738b5a44fece3"
+      },
+      "mergedAt": "2026-09-06T14:24:08Z",
+      "number": 23,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T14:12:53Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34038270382/job/101500234308",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-09-06T14:12:13Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T14:12:47Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34038267237/job/101500226274",
+          "name": "test (ubuntu-latest)",
+          "startedAt": "2026-09-06T14:12:03Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T14:13:54Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34038270382/job/101500234367",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-09-06T14:12:31Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T14:14:29Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34038267237/job/101500226271",
+          "name": "test (windows-latest)",
+          "startedAt": "2026-09-06T14:13:07Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T14:13:05Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34038270382/job/101500234302",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-09-06T14:12:41Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T14:13:47Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34038267237/job/101500226269",
+          "name": "test (macos-latest)",
+          "startedAt": "2026-09-06T14:13:20Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T14:11:32Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34038270382/job/101500234190",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-09-06T14:10:19Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-06T14:13:58Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Julesc013/universal-launcher/actions/runs/34038267237/job/101500226214",
+          "name": "test (windows-latest, Win32)",
+          "startedAt": "2026-09-06T14:12:48Z",
+          "status": "COMPLETED",
+          "workflowName": "ci"
+        }
+      ],
+      "url": "https://github.com/Julesc013/universal-launcher/pull/23"
+    }
+  },
+  "local_tests": 46,
+  "strict_checks": 15,
+  "independent_review": "provider_review accepted exact seven-file correction and historical/current tree identities",
+  "package_declaration": {
+    "version": "1.9.1",
+    "source": "CMakeLists.txt",
+    "source_sha256": "1a6586cb1d00ed3ff53aa324c5dad8d9e5e28ea99337485c34bb13a63b2b0db2",
+    "tree": "cf1ab68a3695cfbc8a5947cc5444b7cca620c883",
+    "qualification_scope": "hosted provider checks and existing SDK tests; contract maturity unchanged",
+    "consumer_adopted": false,
+    "published": false
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,6 @@
+AIDE Lite commit range check
+result: PASS
+range: f9545c31bafc8d398e566ae2bbb39e5e4e1e5558..813fe9548dfc8d4a9ec9c288b6e2fd3524074319
+commit_count: 1
+policy: .aide/policies/commit-messages.yaml
+- 813fe95 PASS docs(queue): close verified USK provider integration chains

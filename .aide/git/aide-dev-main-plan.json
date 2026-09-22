@@ -1,26 +1,29 @@
 {
   "ahead_behind": {
     "ahead": 0,
-    "behind": 3,
+    "behind": 0,
     "error": "",
     "known": true
   },
   "branch_roles": {
+    "dev": "integration",
     "main": "canonical",
-    "origin/main": "canonical"
+    "origin/dev": "integration",
+    "origin/main": "canonical",
+    "origin/task/aide-continuous-worker-pilot-01": "task",
+    "origin/task/aide-cw-integration-broker-01": "task",
+    "task/aide-continuous-worker-pilot-01": "task",
+    "task/aide-cw-integration-broker-01": "task"
   },
   "canonical_branch": "main",
-  "current_branch": "main",
-  "current_branch_role": "canonical",
+  "current_branch": "task/aide-cw-integration-broker-01",
+  "current_branch_role": "task",
   "current_branch_tracks_remote": true,
-  "current_commit": "7d8bf19d878fd9ad29859a6cba4b7de64ad80ecc",
+  "current_commit": "83df2b73c96f754561e669080bc4c90108d0bc4b",
   "future_explicit_operator_plan": {
-    "commands_not_run": [
-      "git switch -c dev main",
-      "git push -u origin dev"
-    ],
+    "commands_not_run": [],
     "operator_approval_required": true,
-    "required_if_dev_missing": true,
+    "required_if_dev_missing": false,
     "validation_required_before_apply": true
   },
   "generated_by": "aide-lite",
@@ -28,17 +31,14 @@
     "land": {
       "apply_requested": false,
       "blockers": [
-        "dirty_tree_blocks_land",
-        "source_role_not_landable: canonical",
-        "source_role_protected: canonical",
-        "target_branch_missing: dev"
+        "dirty_tree_blocks_land"
       ],
       "dry_run": true,
       "force_push_allowed": false,
       "operation": "land",
       "planned_commands": [
         "git checkout dev",
-        "git merge --no-ff main -m \"land: main into dev\""
+        "git merge --no-ff task/aide-cw-integration-broker-01 -m \"land: task/aide-cw-integration-broker-01 into dev\""
       ],
       "push_requested": false,
       "remote_mutation": false,
@@ -66,8 +66,7 @@
     "promote": {
       "apply_requested": false,
       "blockers": [
-        "dirty_tree_blocks_promote",
-        "source_branch_missing: dev"
+        "dirty_tree_blocks_promote"
       ],
       "dry_run": true,
       "force_push_allowed": false,
@@ -89,7 +88,9 @@
       "dry_run": true,
       "force_push_allowed": false,
       "operation": "prune",
-      "planned_commands": [],
+      "planned_commands": [
+        "git branch -d task/aide-continuous-worker-pilot-01"
+      ],
       "push_requested": false,
       "remote_mutation": false,
       "status": "ready_dry_run",
@@ -120,19 +121,17 @@
   },
   "integration_branch": "dev",
   "live_mutation_performed": false,
-  "local_dev_exists": false,
+  "local_dev_exists": true,
   "local_main_exists": true,
   "non_mutating": true,
-  "recommended_next_action": "review future explicit dev creation plan; do not create or push dev during Q30",
-  "remote_origin_dev_exists": false,
+  "recommended_next_action": "verify dev is integration and use Q29 helper dry-runs before any future land/promote operation",
+  "remote_origin_dev_exists": true,
   "remote_origin_main_exists": true,
   "repo_id": "julesc013/aide",
   "schema_version": "aide.dev-main-plan.v0",
-  "upstream": "origin/main",
+  "upstream": "origin/task/aide-cw-integration-broker-01",
   "warnings": [
-    "dirty_tree_detected",
-    "local_dev_missing",
-    "remote_origin_dev_missing"
+    "dirty_tree_detected"
   ],
   "working_tree_clean": false
 }

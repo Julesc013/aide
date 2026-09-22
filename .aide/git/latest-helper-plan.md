@@ -13,11 +13,11 @@
 
 ## Current State
 
-- branch: main
-- role: canonical
-- commit: 7d8bf19d878fd9ad29859a6cba4b7de64ad80ecc
+- branch: task/aide-cw-integration-broker-01
+- role: task
+- commit: 83df2b73c96f754561e669080bc4c90108d0bc4b
 - dirty_tree: true
-- upstream: origin/main
+- upstream: origin/task/aide-cw-integration-broker-01
 - policy_ready: true
 
 ## Planned Commands
@@ -38,7 +38,6 @@
 
 ## Recommendations
 
-- AIDE branch policy expects dev; Q30 plans future explicit dev creation without mutating branches
 - clean or classify the working tree before branch-sensitive helper actions
 
 ## Safety Boundary

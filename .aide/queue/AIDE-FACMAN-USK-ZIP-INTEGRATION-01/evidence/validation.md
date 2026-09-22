@@ -1,0 +1,9 @@
+# Provider acceptance validation
+
+The sealed raw PR28 chain is `provider-source/pr28-canonical-integration-chain.json`, SHA256 `7684353e5ad61ff5fd8446c277dae40a10b022400c4f9c5a9400f3a99190dc60`; independent ZIP review is `9cdeb498faddae6da583b44e9d6e2879e365ea8b9b6b3d2fa98332dae4b2409f`. Original red regressions, source manifests, full candidate patches, private dependency provenance and failed SDK/deep-prefix attempts retain original bytes and dates.
+
+The Windows follow-on chain is `provider-source/path-admission-canonical-integration-chain.json`, SHA256 `149351d0aae2f6965614b602ddafa82358966be03a34e5926ba146f7f65dfda6`; independent review is `e01ef39a41aa640a5c29b00e1b761a8f4743b9a34d9577ca75fff17967e14387`, and the three clean-source SDK receipt is `867fe0a5292db7fe5350af54f1eadb5672505c7e31a2dd3975419ec604888e11`. Complete12/12 exact-head hosted matrices bind PR28/34/35 and PR36/37/38 individually. The superseding refusal contract does not rewrite the historical failed observations.
+
+The current synchronized provider observation is main `ffe1b407abb1bbc340bc925396bd4be197002033`, dev `5e4c660890201accb30a14ed31b97d329a3be3cd`, shared source tree `3faabe599f2ebe5f2a6f87287693f411fe1d6594`; primary is clean dev. This is source/provider integration truth, not FacMan pin adoption or Beta1 product acceptance. The exact final receipt is the ZIP coordinator's `evidence/provider-source/path-admission-canonical-integration-chain.json` (SHA256 `149351d0aae2f6965614b602ddafa82358966be03a34e5926ba146f7f65dfda6`).
+
+Raw custody is enumerated in raw-custody-manifest.json. Coordinator-only validation verifies exact copied hashes, preserved historical bytes, task/status values, and scoped changed paths. Report-only task resumption helpers are recorded separately. Pilot/root own queue-index reconciliation and full AIDE source/global validation; those are not claimed by this worker.

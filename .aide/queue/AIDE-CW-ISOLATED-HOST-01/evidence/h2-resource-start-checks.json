@@ -1,0 +1,47 @@
+[
+  {
+    "command": [
+      "C:\\Program Files\\Python314\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "task",
+      "inspect",
+      "--task-id",
+      "AIDE-CW-ISOLATED-HOST-01"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5318065001629293,
+    "log": "h2-resource-start-inspect.txt",
+    "sha256": "2abd17d7f56d7b599b9d49c744c6c9412d0db42a10e9bc3683c7367c0adfd899"
+  },
+  {
+    "command": [
+      "C:\\Program Files\\Python314\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "task",
+      "noop-check",
+      "--task-id",
+      "AIDE-CW-ISOLATED-HOST-01"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5814161000307649,
+    "log": "h2-resource-start-noop-check.txt",
+    "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+  },
+  {
+    "command": [
+      "C:\\Program Files\\Python314\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "task",
+      "recover",
+      "--task-id",
+      "AIDE-CW-ISOLATED-HOST-01"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5521594998426735,
+    "log": "h2-resource-start-recover.txt",
+    "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+  }
+]

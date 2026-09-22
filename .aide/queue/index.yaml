@@ -3179,21 +3179,29 @@ items:
     prompt: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/prompt.md
     evidence: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/evidence
   - id: AIDE-CW-ISOLATED-HOST-01
-    status: planned
-    planning_state: admitted_backlog
+    status: running
+    planning_state: execution_active
     title: Qualify a restricted worker host
     task: .aide/queue/AIDE-CW-ISOLATED-HOST-01/task.yaml
     exec_plan: .aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md
     prompt: .aide/queue/AIDE-CW-ISOLATED-HOST-01/prompt.md
     evidence: .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence
   - id: AIDE-CW-INTEGRATION-BROKER-01
-    status: planned
-    planning_state: admitted_backlog
+    status: running
+    planning_state: execution_active
     title: Implement the protected integration broker
     task: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/task.yaml
     exec_plan: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md
     prompt: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/prompt.md
     evidence: .aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence
+  - id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
+    status: running
+    planning_state: execution_active
+    title: Implement and qualify the exact GitHub broker target contract
+    task: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence
   - id: AIDE-CW-CLONE-PREPARATION-01
     status: planned
     planning_state: admitted_backlog
@@ -3235,24 +3243,24 @@ items:
     prompt: .aide/queue/AIDE-CW-PROGRAMME-OPERATIONS-01/prompt.md
     evidence: .aide/queue/AIDE-CW-PROGRAMME-OPERATIONS-01/evidence
   - id: AIDE-FACMAN-USK-STREAMING-INTEGRATION-01
-    status: planned
-    planning_state: admitted_backlog
+    status: passed
+    planning_state: implemented
     title: Remediate and integrate the USK streaming dependency
     task: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence
   - id: AIDE-FACMAN-USK-ZIP-INTEGRATION-01
-    status: planned
-    planning_state: admitted_backlog
+    status: passed
+    planning_state: implemented
     title: Propagate fixes and integrate the USK ZIP64 dependency
     task: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence
   - id: AIDE-FACMAN-USK-ENTRY-RESTART-01
-    status: planned
-    planning_state: admitted_backlog
+    status: running
+    planning_state: execution_active
     title: Complete restartable provider entry journals
     task: .aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-USK-ENTRY-RESTART-01/ExecPlan.md
@@ -3275,16 +3283,18 @@ items:
     prompt: .aide/queue/AIDE-FACMAN-USK-PACKAGE-PROMOTION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-USK-PACKAGE-PROMOTION-01/evidence
   - id: AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01
-    status: planned
-    planning_state: admitted_backlog
+    status: passed
+    planning_state: implementation_completed
+    result: PASS
     title: Correct and integrate ULK current truth
     task: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01/evidence
   - id: AIDE-FACMAN-ULK-PROMOTION-01
-    status: planned
-    planning_state: admitted_backlog
+    status: passed
+    planning_state: implementation_completed
+    result: PASS
     title: Promote reviewed ULK provider truth when required
     task: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/task.yaml
     exec_plan: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/ExecPlan.md
@@ -3320,6 +3330,16 @@ items:
     prompt: .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/evidence
     description: Carry the reviewed repository-only neutrality state onto current dev without importing mixed broker or host history or changing machine configuration.
+  - id: AIDE-REPOSITORY-HYGIENE-TRIAGE-01
+    status: passed
+    planning_state: implemented
+    result: PASS
+    title: Reduce repository evidence churn and classify tracked bulk
+    task: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/prompt.md
+    evidence: .aide/queue/AIDE-REPOSITORY-HYGIENE-TRIAGE-01/evidence
+    description: Verify duplicate and generated material by ownership, suppress only proven loose custody expansions, and prepare exact retained/migrate/drop-candidate dispositions without blanket deletion.
   - id: AIDE-SPEC-CONVERGENCE-FOUNDATION-01
     status: passed
     planning_state: implemented
@@ -3380,3 +3400,23 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/evidence
     description: Extends extracted-pack import with exact installed baselines, conflict-first updates, preview/apply identity, predecessor-pack proof, and interruption evidence in disposable consumers only.
+  - id: AIDE-CW-BROKER-DEV-INTEGRATION-01
+    status: running
+    planning_state: merge_candidate_preparation
+    result: PENDING
+    title: Integrate the published broker runtime line into current dev
+    task: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-BROKER-DEV-INTEGRATION-01/evidence
+    description: Reconciles exact broker head 75da3310 with current dev while preserving product work and unfinished operational gates.
+  - id: AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01
+    status: passed
+    planning_state: implementation_completed
+    result: PASS
+    title: Bind broker mutation dispatch to its durable observation
+    task: .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/prompt.md
+    evidence: .aide/queue/AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01/evidence
+    description: Carry the exact intent-bound provider observation into each registered mutation child and preserve observation-only closeout without claiming operational qualification.

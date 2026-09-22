@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "-c",
+    "import sys,unittest; from unittest import mock; sys.path[:0]=['.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence','.aide/scripts/tests']; import h2_system_resource as r; import h2_system_input as n; from core.runtime.continuous_worker import windows_system_observation as o; stack=__import__('contextlib').ExitStack(); stack.enter_context(mock.patch.object(r.NativeResourceApi,'__init__',side_effect=AssertionError('actual native resource constructor forbidden'))); stack.enter_context(mock.patch.object(n.ReadOnlyApi,'__init__',side_effect=AssertionError('actual native read constructor forbidden'))); stack.enter_context(mock.patch.object(o.NativeSystemApi,'__init__',side_effect=AssertionError('actual native observer constructor forbidden'))); result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromNames(['h2_system_resource_tests','h2_system_input_tests','test_continuous_worker_system_observation'])); stack.close(); sys.exit(not result.wasSuccessful())"
+  ],
+  "exit_code": 0,
+  "seconds": 0.5114064000081271,
+  "source_files": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource.py": "2ff532947b82d9e657ac52a9ee1c73925c43cc5f13a4a640724ab5d8f05991c9",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_controller.py": "58b707e14656829d716aa980d50580ce628b537ef44389cdf3122ae13a56bc60",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_resource_tests.py": "57b0bdaffa85dc290c12be9ac2a23af9fccc9cce716d0c98886ef57ce6c6d82a"
+  },
+  "log": "h2-resource-first-tests.txt",
+  "log_sha256": "97330f98a5230e0f8b72fd33e755131329d8c292213ef11319cecba451c84592",
+  "boundary": "Injected source suites; actual native constructors patched to forbid effect. Archive provenance reads only existing N1 evidence bytes."
+}

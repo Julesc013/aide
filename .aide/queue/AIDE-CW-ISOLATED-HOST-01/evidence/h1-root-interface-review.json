@@ -1,0 +1,35 @@
+{
+  "schema": "aide.host.h1-root-interface-review.v1",
+  "captured_at": "2026-09-07T01:40:08.762789+00:00",
+  "source_manifest_sha256": "4ec8498eec2d6d1beda694a369b428922899082ed349172d1e130246c4bd87b9",
+  "aggregate_sha256": "df77e584e56027cc36979287779fa2911d2ea8cfef36df2ea72679ebd1433abd",
+  "effect_sha256": "5899f09a73d812b32d5ec59a6014cbe83371e850f3e0ef19e4b320cc39d20d58",
+  "source_unchanged": true,
+  "tests": [
+    {
+      "name": "source-job",
+      "exit": 0,
+      "seconds": 4.168337000068277,
+      "log": "h1-root-interface-source-job.txt",
+      "log_sha256": "ef6dd71a007f531cc3f2e7af95f6c7b99de038914373e70a6017737b72617c91"
+    },
+    {
+      "name": "network-oracle",
+      "exit": 0,
+      "seconds": 2.3508383999578655,
+      "log": "h1-root-interface-network-oracle.txt",
+      "log_sha256": "74b53ffd70e5ed1981813aeea376c897e930f2865546ffb95c647dabc0cb9b3b"
+    }
+  ],
+  "origin_proof": {
+    "profile-reservation.jsonl": "e6d87172ef2cb03793bd39a7e1e0cc343f33b4435c1f1a0ac6d854ad79d908dd",
+    "native-probe-receipt.json": "d5f6b95b10dea906abb21d5a534a1515ecd93c82f36ae43e5ff8070e160f7930"
+  },
+  "review": "Read full changed native probe, continuation driver, literal network oracle and interface/expiry/budget regressions; corroborated actual GetUnicastIpAddressEntry/GetIfEntry2 read-only lookup semantics. Pinned private local address/interface, exclusive single listener, same-address connect/diagnosis, before/after accepted ordinary controls, no profile or settings changes, one fresh retained effect and finite expiry. Observation is not an atomic topology lock. PASS would apply only to this native token and local endpoint, not general host/toolchain/credential activation.",
+  "primary_sources": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/netioapi/nf-netioapi-getunicastipaddressentry",
+    "https://learn.microsoft.com/en-us/windows/win32/api/netioapi/nf-netioapi-getifentry2"
+  ],
+  "findings": [],
+  "activation": false
+}

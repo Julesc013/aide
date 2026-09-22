@@ -1,0 +1,33 @@
+{
+  "schema": "aide.broker.https-root-independent-review.v1",
+  "head": "57e28facc74c7407d4d270f5b0d21c0dc6e4ddbe",
+  "source": {
+    ".aide/scripts/tests/test_continuous_worker_github_http.py": "323fdf96c9d617fea4b8410d6b84fd167d3b6f1d8468d6af005530edb5478e68",
+    "core/runtime/integration_broker/github_http.py": "199ade1c36ceaa3eae5af9e063dc3a0ff519782323514a3adb85de595ded5b88",
+    "core/runtime/integration_broker/github_http_framing.py": "0a7a993279308f4a77644b60ef672e9661f18e4b0e06d782d06c47dce436dd0d"
+  },
+  "source_aggregate_sha256": "748f2576264d66199fa886c0acc099b9fe1ee5965052d169f040df8dffad9059",
+  "source_unchanged": true,
+  "patch_sha256": "cbae303d34c2c75c40eceec2222bf0f8f5f725b40a2b51cc0a5a5fdb9ca7f9e3",
+  "test_count": 45,
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "test_continuous_worker_github_http",
+    "test_continuous_worker_github_observation"
+  ],
+  "exit_code": 0,
+  "seconds": 1.4666098000016063,
+  "test_log_sha256": "93c08622ff61644ffca899fe5a7cec69b1d9ee32711d797f79dcce70c84b3cb8",
+  "findings": [],
+  "reviewed": [
+    "Fixed logical origin and SNI, verified TLS and denied trust/keylog environment overrides before credential acquisition",
+    "Opaque protected host hook; repeated observation and credential expiry qualification around TCP/TLS/send/read; owned socket abort and bounded inert DNS thread",
+    "GET-only one-request exchange, no retries/proxy/redirects, serialized calls and finite wire/line/header/body/chunk/JSON budgets",
+    "Literal and escaped credential reflection refusal; sanitized top-level exception without printable underlying exception context",
+    "Real loopback TLS 19-test mechanism suite and prior raw-observation26 tests independently executed"
+  ],
+  "scope": "Source mechanism only: no protected host or credential factory installation, restricted principal, target policy qualification, runtime activation, live GitHub request or Beta1 authority"
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "aide.host.h2-system-source.v1",
+  "source_base": "236da6c2ba0df8cf319849c7632c04727afc392d",
+  "files": {
+    "core/runtime/continuous_worker/windows_system_observation.py": "de1bfc5a12357c4a8815321531b6dad3c5b599d30c42fa5dec63a96b57fbd697",
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py": "7f505ce82071c2c2bd361cdd8c0313835fc51ca4213328fcef660589205449d7"
+  },
+  "aggregate_sha256": "03c0a5f94914ea72744d0387780b4cd22c3fb3b39b9703a2debef1bcf67a67d6",
+  "aggregation": "SHA256 canonical JSON sorted exact path-to-SHA mapping",
+  "dependent_inputs": {
+    ".aide/scripts/tests/test_continuous_worker_windows_pe.py": "fe77377eab4487862882a2878dbd0ba50daa50f7f14e388fa7d2a947cc6fcbe7",
+    "core/runtime/continuous_worker/windows_pe.py": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d",
+    ".aide/queue/index.yaml": "ddf3bd530a875f707210dcbea722a0ec9dccc80f91dade311ae25f643c81dd97",
+    ".aide/scripts/tests/test_continuous_worker_host.py": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854",
+    ".aide/scripts/tests/test_continuous_worker_python_contract.py": "7759aa897847cfbcd501b5b6bd41d7d76cad82c60a05f50b01d5f7bb3df989c3",
+    ".aide/scripts/tests/test_continuous_worker_python_image.py": "92839124eaceec42a6ca4b72e790513f72f06cd519f19a98143f7d35b9d8398e",
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py": "1da207d0b86bf62ca79f07d0b22e04c6821520d613198d19854d50a51dae1c37",
+    ".aide/scripts/tests/test_continuous_worker_windows_security.py": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "core/runtime/continuous_worker/windows_image.py": "2cac4dd7336b24dba47bc7cd40e510902b23fc99e64b56b349a1cfc0e3734ab8",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/windows_python_contract.py": "98d4a1c95337043477bad27611f4bac5cc2b574aaea37d94dc344543ff689411",
+    "core/runtime/continuous_worker/windows_python_image.py": "b20258182d5610384e8be97e502012ce9760d9b977bd824f5f09a394d3b026c8",
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+  },
+  "patch": {
+    "path": "h2-system-source.patch",
+    "bytes": 47412,
+    "sha256": "359f4119513a0e18fd059df0c56aafab990f5a1d5aed923c74d5680487324806",
+    "construction": "Concatenate sorted exact two git diff --no-index --binary -- /dev/null <repo-path> outputs; return 1 means each untracked new file differs."
+  },
+  "test_receipt": {
+    "path": "h2-system-reviewed-tests.json",
+    "sha256": "c7e322558d8131a78022fb8474353a952fad5bfc8a1697a39b6430800cc380b0",
+    "tests": 138,
+    "new_injected_tests": 37
+  },
+  "notes_sha256": "0a97ff03c85b59cecfff4ae7e7a6d7612077734e9bbb385935d5b245b98980bb",
+  "plan_sha256": "945f26def0e17992459b1a997f15190730c212fe61d86ad9a8914bab4b113b6f",
+  "actual_mapping_or_host_effect": false,
+  "operational_activation": false,
+  "superseded_source": {
+    "aggregate_sha256": "adb9ba879d3de3030a96dcfaca2b7e3046011b8002cba79ba4ea2f38b3d3e015",
+    "custody": "h2-system-before-review-custody.json",
+    "archive": "h2-system-before-review-evidence.zip",
+    "archive_sha256": "e3b1a12a7218b2cf240588e548c513d1a4ecf6f93e03e0d64e0c8f38e4dff1dc",
+    "status": "historical review findings retained; not current source acceptance"
+  }
+}

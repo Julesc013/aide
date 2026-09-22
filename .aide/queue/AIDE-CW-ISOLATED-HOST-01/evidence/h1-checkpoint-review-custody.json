@@ -1,0 +1,55 @@
+{
+  "schema": "aide.host.h1-checkpoint-review-custody.v1",
+  "archive": "h1-checkpoint-review-evidence.zip",
+  "archive_sha256": "47651b4cca868137f5a791e6a9de6b49a96a75918d882e6e3bf07c66f1fedd3f",
+  "members": {
+    "evidence/h1-checkpoint-root-review.json": {
+      "bytes": 1535,
+      "sha256": "0157ada34e246c57bcdf47ef61e6ab635024d3ddfcf0637f3a6fef079e5d67cf"
+    },
+    "evidence/h1-checkpoint-stage-first-refusal.json": {
+      "bytes": 400,
+      "sha256": "ee833390a77f996d64dc69aa006edec9a000836a3d84a0985dae503c541bd0f5"
+    }
+  },
+  "text_projections": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-local-interface-inventory.json": {
+      "raw_sha256": "3633d2c2e0ee1ac6720d9236f4077e6c4f49044e55957bcf5f624784087acd4b",
+      "git_lf_sha256": "98064bd0b63f867b3b0c98b447a0915d6995ce97c688ff1b1469dce7afc1cc3b",
+      "raw_bytes": 1819,
+      "git_bytes": 1758,
+      "raw_archive": "h1-interface-attempt-evidence.zip",
+      "raw_member": "evidence/h1-local-interface-inventory.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-interface-result-review.json": {
+      "raw_sha256": "2ec63f85c099c24e0e2392ac037c61d637396495104ae921e2fbb047ef36f111",
+      "git_lf_sha256": "ff00b1bc74bd63c13bdd1966f9e7da4f76bc14850887377de7f86bc35acfa987",
+      "raw_bytes": 1233,
+      "git_bytes": 1203,
+      "raw_archive": "h1-interface-attempt-evidence.zip",
+      "raw_member": "evidence/h1-root-interface-result-review.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-root-interface-review.json": {
+      "raw_sha256": "a9daef4cbb14d6268ee6f63e8f824800911e70f15c02e24836e207b137cf76c9",
+      "git_lf_sha256": "2b6e567299cb3d8c3902c65baa85ef025fa726156c53349f7c3f1bcffbe073e2",
+      "raw_bytes": 2013,
+      "git_bytes": 1978,
+      "raw_archive": "h1-interface-attempt-evidence.zip",
+      "raw_member": "evidence/h1-root-interface-review.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-checkpoint-root-review.json": {
+      "raw_sha256": "0157ada34e246c57bcdf47ef61e6ab635024d3ddfcf0637f3a6fef079e5d67cf",
+      "git_lf_sha256": "ad5f949ddb9973d7af3aae8eb307e18542131ec0d5b6c907256b0c0670526f8d",
+      "raw_bytes": 1535,
+      "git_bytes": 1512,
+      "raw_archive": "h1-checkpoint-review-evidence.zip",
+      "raw_member": "evidence/h1-checkpoint-root-review.json"
+    }
+  },
+  "preceding_attempt_raw_members": 205,
+  "additional_checkpoint_raw_members": 2,
+  "source8_normalized": false,
+  "index_selected_sha256": "a0fe679856c1cc5f70a7881dfc1df67c484056f4307f2e5df72aef51eb64b601",
+  "root_authority": "ROOT approved exact two extra custody metadata paths and four raw-to-LF projection mapping after pre-stage refusal; no semantics/source/effect changes",
+  "activation": false
+}

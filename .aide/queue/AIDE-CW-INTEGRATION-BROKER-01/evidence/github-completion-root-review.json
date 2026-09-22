@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "scope": "Completion decomposition and raw evidence custody accompanying independently reviewed GitHub observation source",
+  "reviewer": "root",
+  "plan_files": 17,
+  "plan_aggregate": "9fbbac9ceeafe5d5a59e678e90eda767996a3c957e3709897cb5b75802c91b64",
+  "archive_sha256": "821b40b5ef1848815951fa042c236c6801a84114ae16381607752b42c73c43be",
+  "verified_raw_members": 34,
+  "owned_index_block_sha256": "38ef1341bf0fac5e2a05e85c929b260f82b6929357d99dc2a6024f4f101f87c4",
+  "assessment": [
+    "New target-contract leaf remains planned/PENDING; existing WIP and activation are unchanged",
+    "Windows isolation and target-hosted acceptance are separately testable with no circular full-broker dependency",
+    "Desired/current settings, actual principal and independent exact configuration review precede target changes",
+    "Strict target theorem retains monotonic-history and no-retarget premises; local graph evidence is not hosted qualification",
+    "Provider-owned entry activation scalars and task files remain excluded from broker checkpoint"
+  ],
+  "settings_mutated": false,
+  "operational_activation": false,
+  "source_review": "github-observation-root-independent-review.json"
+}

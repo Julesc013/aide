@@ -1,0 +1,29 @@
+{
+  "schema": "aide.source-manifest.v1",
+  "base_revision": "7e4de0c9762ac89fa6c40fda64a33b0c6f471e93",
+  "files": {
+    "core/runtime/continuous_worker/codex.py": "25707232e17da81cfd3a057c5e8334b54b6d0c3249685ee1176b30022ba7a9bb",
+    "core/runtime/continuous_worker/contract.py": "240e35c7c4898be30b1df3294d5fa2ba0ec02c22db58b6ea33177e45b9f1bc6c",
+    "core/runtime/continuous_worker/coordinator.py": "d9a4859acfb9c8e5772d4d8e42791d368b049a76a604f739beae0f793051e2a0",
+    "core/runtime/continuous_worker/handoff.py": "bf1a30fdad18032e44dedfb29c7952dc1337035c7925d3692f51aba272c82305",
+    "core/runtime/continuous_worker/locking.py": "36f8af035b1018838e8621aee644abc37b2b3410029ec55f8b2408357031476b",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "core/runtime/continuous_worker/windows_job.py": "c94cd26c80b319e600ed899f8b7d1135ef5fd5d78ab23b8342aa367ee8c077c6",
+    "core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+    "core/runtime/continuous_worker/__main__.py": "d68bb72836e57b7980397e8545938c888d1b046e9f260844fb57ab61bf898034",
+    "core/runtime/integration_broker/candidate.py": "a10ae6eceb87ce4b88c9ed473b284eebc9ccace99d456363866240eeee2e357b",
+    "core/runtime/integration_broker/common.py": "355ebc60a4bdc787d2ef8dd76af072911e1923dbb305aee1c7a4c8cbfadcd5ee",
+    "core/runtime/integration_broker/ledger.py": "565754d4473dae31868e1fc3e4679463c325f64a542eb46b0042e64558a2ff7c",
+    "core/runtime/integration_broker/preparation.py": "8e5e9714df47fc9553acd52b292b2a8cbac5f0288821f089aa0d63f2e8803148",
+    "core/runtime/integration_broker/service.py": "77b89c482739f8e56a5ccc107ee13695d749e4781fe085636fea6831a4245e97",
+    "core/runtime/integration_broker/__init__.py": "ab9d0279e1d9f0a8baebec5a900669ec380401c42249bdb48133b17d38cdc587",
+    "core/runtime/integration_broker/__main__.py": "b745f0895e1b7bbd50858b07d0f22f8466fca99ed37d815eac63cbe6f95c35bd",
+    ".aide/scripts/tests/test_continuous_worker_host.py": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854",
+    ".aide/scripts/tests/test_continuous_worker_integration_broker.py": "cb61812f6edbb79aeab6c7b0ee12039633eab8682a59d9993ad306c027c9f1e9",
+    ".aide/scripts/tests/test_continuous_worker_pipeline.py": "d13da711ca2e62d60b23a7112f1c353e8756ab3d30e0ea7339bca34a62ef103a",
+    ".aide/scripts/tests/test_continuous_worker_state.py": "925c35389697d6a210c74ca00350557087005297cd019cebb0b3374f0868252f",
+    "docs/reference/integration-broker-core.md": "34510a6aa36370c1942e39b755f2c32e7f1043b534fb6a84651045f319a058ae"
+  },
+  "source_manifest_sha256": "fc7cf178662d3906ab3a3751d38078a44e3b324606da47c38805259fe09c8d3a",
+  "hash_definition": "SHA256 of UTF-8 json.dumps(files, sort_keys=True, separators=(comma, colon)); exact current bytes including unchanged runtime/test dependencies."
+}

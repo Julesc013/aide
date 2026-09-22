@@ -1,0 +1,58 @@
+{
+  "schema": "aide.host.h2-pre-review-fix-custody.v1",
+  "zip": "h2-before-root-alias-evidence.zip",
+  "zip_sha256": "db52b7b601f98013619b65cc723776554e9b559e8983bd806165ddd21948ef33",
+  "members": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-h1-final-regression.txt": {
+      "bytes": 5841,
+      "sha256": "03d2607a0ea1324fd2822fb14e1d9a3d246660756d5a0d577dc579d527573d33"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-final-tests.txt": {
+      "bytes": 3844,
+      "sha256": "b47fb66397401a088b822b71949a99963a77f6a8859b72e09b6da4c6caef9e02"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-source-manifest.json": {
+      "bytes": 2042,
+      "sha256": "a56a99713336a4ef388b88ae0dd36de7546959e85f74e50b1e056d8fd6d3f9e5"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-source-review-notes.md": {
+      "bytes": 2740,
+      "sha256": "6e89d5a9e8e03633c03c5161055c9e3936cfdd727b9034887f2ee31cce22d0bc"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-image-source.patch": {
+      "bytes": 54300,
+      "sha256": "408af0fecee26a8e17f8de2142890f3e7b88619f75d4be0e3c0b1f71c9f6bde5"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-root-alias-probe.json": {
+      "bytes": 2171,
+      "sha256": "eea6256c94c896680de5ed1a118d9d6cd33bc1c926d7af8cb9f0ca2f43086d54"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-independent-root-alias-probe.py": {
+      "bytes": 3404,
+      "sha256": "1b29ad95a044a04c6c49da7226ca3ac37df9e3d57c617d519f96c5e6c812aff3"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-job-final-regression.txt": {
+      "bytes": 1434,
+      "sha256": "a3d2f4b4aace1c6070f88cfeb22a6add8ece3f9059a43ac7a52beb52a019fadd"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-source-final-tests.json": {
+      "bytes": 2208,
+      "sha256": "fdc8955fd25e049a22afe22b64c9aa945720dbbd243a8f2dee631f61645f6d22"
+    },
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py": {
+      "bytes": 30076,
+      "sha256": "229f7537c82333e1c57998de4078c901d6aaed29834e29e8b28a1f39f642d404"
+    },
+    "core/runtime/continuous_worker/windows_image.py": {
+      "bytes": 16425,
+      "sha256": "3e67ebafbb1dff54e09e091b866e5e272aaf6e5777aee109bf85c24e5a484293"
+    },
+    "core/runtime/continuous_worker/windows_security_objects.py": {
+      "bytes": 16361,
+      "sha256": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+    }
+  },
+  "finding": "Independent real ordinary native/Win32 root alias observation; original aggregate 5ec83bc3574a919b7b5dd7235700e43a78e5a221424d5e0e45a764376ebd77dd retained before repair.",
+  "original_fixture": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h2-synthetic-review-ggm29eze",
+  "original_fixture_untouched": true
+}

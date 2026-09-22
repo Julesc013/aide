@@ -1,0 +1,13 @@
+{
+  "schema": "aide.broker.https-source.v1",
+  "head": "57e28facc74c7407d4d270f5b0d21c0dc6e4ddbe",
+  "files": {
+    ".aide/scripts/tests/test_continuous_worker_github_http.py": "323fdf96c9d617fea4b8410d6b84fd167d3b6f1d8468d6af005530edb5478e68",
+    "core/runtime/integration_broker/github_http.py": "199ade1c36ceaa3eae5af9e063dc3a0ff519782323514a3adb85de595ded5b88",
+    "core/runtime/integration_broker/github_http_framing.py": "0a7a993279308f4a77644b60ef672e9661f18e4b0e06d782d06c47dce436dd0d"
+  },
+  "aggregate_sha256": "748f2576264d66199fa886c0acc099b9fe1ee5965052d169f040df8dffad9059",
+  "patch_sha256": "cbae303d34c2c75c40eceec2222bf0f8f5f725b40a2b51cc0a5a5fdb9ca7f9e3",
+  "patch_bytes": 43291,
+  "qualification": "actual local loopback TLS mechanism only; protected credential host, restricted principal, target contract and activation absent"
+}

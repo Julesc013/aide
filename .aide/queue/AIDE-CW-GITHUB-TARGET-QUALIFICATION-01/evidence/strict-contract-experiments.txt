@@ -1,0 +1,13 @@
+PASS unchanged_base admitted
+PASS competing_base_after_read refused
+PASS same_tree_base_advance refused
+PASS loose_policy_counterexample unadmitted
+PASS bypass_counterexample unadmitted
+PASS rollback_counterexample unadmitted
+PASS head_changed_after_read refused
+PASS missing_expected_head_counterexample unadmitted
+PASS same_oid_retarget_counterexample unadmitted
+PASS same_oid_retarget_denied refused
+PASS already_exact_candidate unchanged
+PASS candidate_already_in_target refused
+PASS multiple_parent_counterexample unadmitted

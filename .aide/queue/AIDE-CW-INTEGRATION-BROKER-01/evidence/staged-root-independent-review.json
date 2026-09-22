@@ -1,0 +1,63 @@
+{
+  "schema": "aide.root-staged-and-provider-review.v1",
+  "result": "PASS",
+  "source_aggregate": "4319d184fdc7f833528a1f2e8eccd8de9e2e31eb02661b42c78b3b75abf1c18e",
+  "source_unchanged_after_root_tests": true,
+  "direct_tests": 21,
+  "seconds": 66.38,
+  "review": [
+    "Source read: final dispatch checks finite plan/authority deadlines after intent checkpoint and adapter qualification.",
+    "Read attempt is reserved durably before every provider read; failed/invalid reads and existing observations consume finite budget.",
+    "No uncertain mutation replay; actual commit bytes/tree/parent and PR repository/ref/number bindings remain fixed.",
+    "Provider status/index delta matches completed canonical integration chains; original member bytes all verified."
+  ],
+  "provider_packets": [
+    {
+      "task": "AIDE-FACMAN-USK-STREAMING-INTEGRATION-01",
+      "members_verified": 67,
+      "archive_sha256": "80941b5935fd337c3527ea62f2d383e1c967c3bdeaeb2807acca52f1bb8360cd",
+      "selected_files": {
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/task.yaml": "8aaf01841ed1370269db5bf1eb24ece839db30aaf439f3990500004944542477",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/status.yaml": "6d8fbfc4a29651405d6003971fe26d8f4c5878659dc04cf835088b1a6c664850",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/ExecPlan.md": "cebd95d79402363ddbbee0b35990e179822fc62974cbe5a714d3e5236665c0fa",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/integration-plan.md": "e767779287ba56daf9b0556096273b7789d50dc326bf277e6c237f72b53e4b60",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/closeout-plan.md": "3cbdd69d6be3bd50988ed05be1aa96b0413e0cdd110aea9851ec631ec1bffb67",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/validation.md": "97b26daab7238507500fd3e67e86a6de447d6db5c3d0174c5180e9ce929f350d",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/remaining-risks.md": "3fd64adc0ea06a71e046b6af995f93a3c34087055dacfcc8fc98cab94ed03329",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/changed-files.md": "9f6103aed05caed525c3dddce71b897e522eda2c15cd5df39c9c7533561ed05f",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/closeout-validation.json": "efed4dc657258acc2265ba235007987330a0c4fca1583161e5a91a9e75ed1437",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/raw-custody-manifest.json": "1df869816f260d3aa094c2bc8bd9148a92a64616c4805003a234c53af3391c77",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-closeout-evidence.zip": "80941b5935fd337c3527ea62f2d383e1c967c3bdeaeb2807acca52f1bb8360cd",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/provider-closeout-custody.json": "f9ba543ff24081b483c8ffcc4c7afbda2a317c6687d97a9bef0866b20637aca1",
+        ".aide/queue/AIDE-FACMAN-USK-STREAMING-INTEGRATION-01/evidence/CUSTODY.md": "d54776a07b2f76565b78d3b45e7da459b63f0713c6477bf100854e1d9c054704"
+      }
+    },
+    {
+      "task": "AIDE-FACMAN-USK-ZIP-INTEGRATION-01",
+      "members_verified": 131,
+      "archive_sha256": "9c5d6a5b99362208bf1046f2f250e796210af57ff218e571d9be7cdc73190158",
+      "selected_files": {
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/task.yaml": "4a0359e515e787288a32e2c30e3fc2803f0e4e2d4fc4c9c497abdede99290416",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/status.yaml": "c4041292a72dceaff60b1069094be03ed3107cc94d9bf17aa385fa4457468043",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/ExecPlan.md": "ea6c590f0556adffbdb75678659321a5d61536953baacb39acce8f78f757ed4a",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/integration-plan.md": "d1348880249182f91d95bfa86df7d9954a2a3b40e35ccf864ecb228c65804cfe",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/closeout-plan.md": "3cbdd69d6be3bd50988ed05be1aa96b0413e0cdd110aea9851ec631ec1bffb67",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/validation.md": "49905732dac90644c47aff642a833b07de0278d52f91764888f7b3b36d669397",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/remaining-risks.md": "3fd64adc0ea06a71e046b6af995f93a3c34087055dacfcc8fc98cab94ed03329",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/changed-files.md": "9f6103aed05caed525c3dddce71b897e522eda2c15cd5df39c9c7533561ed05f",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/closeout-validation.json": "a08086a595484e32ba51d40e154527afb306528a670693adc96dedbed0623fea",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/raw-custody-manifest.json": "cb0dfa5860d28e0d4a8863f280a54cbca843b3608277760a77945b496b37bb3e",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-closeout-evidence.zip": "9c5d6a5b99362208bf1046f2f250e796210af57ff218e571d9be7cdc73190158",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/provider-closeout-custody.json": "eaf439bb4f98730ea0755791428d7786b232dc297fdc453a8d9971895a50dabf",
+        ".aide/queue/AIDE-FACMAN-USK-ZIP-INTEGRATION-01/evidence/CUSTODY.md": "274ec384fc5e647d211c72fa8eae811a8e9dfff6a39eedf7708354c50b968034"
+      }
+    }
+  ],
+  "activation": false,
+  "full_broker_complete": false,
+  "remaining": [
+    "Actual bounded provider bridge and authenticated API normalization",
+    "Protected host and credential isolation",
+    "Exact-base server mutation qualification"
+  ]
+}

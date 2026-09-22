@@ -1,0 +1,50 @@
+{
+  "schema": "aide.github-target-observation.v0",
+  "observed_date": "2026-09-22",
+  "execution_identity": "BLACKGLASS-WIN1\\Jules",
+  "github_cli": "2.96.0",
+  "github_api_version": "2022-11-28",
+  "authenticated_account": {
+    "id": 30209022,
+    "login": "Julesc013",
+    "type": "User"
+  },
+  "repository": {
+    "id": 1192621212,
+    "full_name": "Julesc013/aide",
+    "private": false,
+    "visibility": "public",
+    "archived": false,
+    "disabled": false,
+    "default_branch": "main",
+    "allow_merge_commit": true,
+    "allow_squash_merge": true,
+    "allow_rebase_merge": true,
+    "allow_auto_merge": false,
+    "delete_branch_on_merge": false
+  },
+  "observed_account_permission": {
+    "permission": "admin",
+    "role_name": "admin"
+  },
+  "refs": {
+    "main": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+    "dev": "d37219026462d5670f7a724980faf07e30abb85f"
+  },
+  "repository_rulesets": [],
+  "effective_rules": {
+    "main": [],
+    "dev": []
+  },
+  "dev_branch_protection": {
+    "http_status": 404,
+    "message": "Branch not protected"
+  },
+  "actions_workflows": {
+    "total_count": 0,
+    "workflows": []
+  },
+  "broker_principal": null,
+  "settings_mutated": false,
+  "hosted_effects_run": false
+}
