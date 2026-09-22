@@ -1,15 +1,19 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DELIVERED-PACK-SAFE-UPDATE-01
-status: running
-classification: admitted_by_owner
-planning_state: implementation_active
-result: PENDING
+status: needs_review
+classification: qualified_candidate
+planning_state: integration_ready
+result: PASS
 updated_at: 2026-09-22
-current_slice: adjacent_validation_and_artifact_qualification
-next_slice: regenerate_clean_source_artifacts_and_run_external_canary
+current_slice: qualified_task_candidate
+next_slice: publish_and_integrate_exact_candidate_to_dev
 notes:
   - The task starts from published dev at a2ba43624bf99d3354a2a7429a3241e3967310fc.
   - Existing DistributionApplyEngine behavior remains fixture-only and is not relabelled as real target qualification.
   - Only disposable extracted-artifact consumers may be mutated by this task.
   - Main, tags, upload, publication, and fleet rollout remain prohibited.
-  - Focused ownership/update tests pass 24 of 24 and extracted release tests pass 10 of 10.
+  - Focused ownership/update tests pass 25 of 25 and extracted release tests pass 10 of 10.
+  - Adjacent distribution, update, rollback, and release suites pass 52 of 52.
+  - Canonical AIDE test, validate, pack-status, release validate, and release draft-validate pass.
+  - Exact ZIP and tar.gz candidates were exercised through extracted CLIs in disposable consumers.
+  - Artifact metadata head 12918667778a6ff001d4abd8967bf46a922a5131 is qualified; the evidence commit will become the exact landing candidate.

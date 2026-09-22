@@ -48,12 +48,13 @@ The exact allowlist is in `task.yaml`. The implementation owner is
 - [x] Admit the bounded child and record retained gates.
 - [x] Add red tests for baseline update, conflict-first refusal, stale plan,
       predecessor proof, and interruption evidence.
-- [ ] Add the extracted-artifact update regression after the core path is green.
+- [x] Add the extracted-artifact update regression after the core path is green.
 - [x] Implement the smallest coherent lifecycle extension in `import-pack`.
 - [x] Run focused validation immediately.
-- [ ] Run adjacent distribution, release, and repository validation.
-- [ ] Regenerate and qualify exact delivered bytes.
-- [ ] Record evidence, commit explicit paths, and publish the task branch.
+- [x] Run adjacent distribution, release, and repository validation.
+- [x] Regenerate and qualify exact delivered bytes.
+- [x] Record implementation and qualification evidence with explicit paths.
+- [ ] Publish the exact qualified task candidate.
 - [ ] Prepare and validate exact task-to-`dev` integration.
 
 ## Test Oracle
@@ -82,3 +83,14 @@ postimages instead of blindly replaying. Shared history is never rewritten.
   merges remain deferred and explicit.
 - Preserve the original applied-plan identity on an idempotent rerun when the
   incoming pack and managed baseline are already identical.
+
+## Qualification Result
+
+The implementation source is
+`31bd91bd10ed57e98e658380cd9372e074867f63`. The stabilized artifact metadata at
+`12918667778a6ff001d4abd8967bf46a922a5131` passes the focused, adjacent, broad,
+pack-provenance, release-bundle, and release-draft checks recorded in
+`evidence/validation.md`. The exact ZIP and tar.gz artifacts pass extracted-CLI
+consumer updates and no-op reruns. Publication to the task ref and integration
+to `dev` remain the next controlled steps; no main, tag, upload, or public
+release action is authorized by this task.
