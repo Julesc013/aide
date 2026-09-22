@@ -1,0 +1,54 @@
+{
+  "schema": "aide.local-checkpoint.v1",
+  "commit": "f9545c31bafc8d398e566ae2bbb39e5e4e1e5558",
+  "tree": "2b6753044c419cc0bbe480d60d3ae98b1cccfd05",
+  "parent": "f06bcd75aafeab175202a89ea1d69c815b7bd911",
+  "branch": "task/aide-cw-integration-broker-01",
+  "changed_files": [
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/ExecPlan.md",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/effect-capsule-independent-review.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/issuer-pr-independent-review.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/issuer-pr-root-test-binding.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/pr-identity-remediation.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-current-source.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-custody.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-evidence.zip",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-preflight.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/qualified-core-validation.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/evidence/v1-commit-receipt.json",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/status.yaml",
+    ".aide/queue/AIDE-CW-INTEGRATION-BROKER-01/task.yaml",
+    ".aide/scripts/tests/test_continuous_worker_broker_authority.py",
+    ".aide/scripts/tests/test_continuous_worker_integration_broker.py",
+    ".aide/scripts/tests/test_continuous_worker_pipeline.py",
+    ".aide/scripts/tests/test_continuous_worker_pr_observation.py",
+    "DOCUMENTATION.md",
+    "IMPLEMENT.md",
+    "PLANS.md",
+    "core/runtime/continuous_worker/coordinator.py",
+    "core/runtime/integration_broker/authority.py",
+    "core/runtime/integration_broker/capsule.py",
+    "core/runtime/integration_broker/effect_boundary.py",
+    "core/runtime/integration_broker/pr_observation.py",
+    "core/runtime/integration_broker/service.py",
+    "docs/reference/integration-broker-core.md"
+  ],
+  "source_aggregate_sha256": "8f8281ae185555b7ae17343b03f0c584195cc099b2e5d4816f501632ead3f244",
+  "source_files_verified": 27,
+  "checks": {
+    "latest": {
+      "result": "PASS",
+      "log": "qualified-core-latest-check.txt",
+      "sha256": "a08458cc71b7db8d57a4063775c18c7c09acbf344138196b6c03e167edec60d6"
+    },
+    "range": {
+      "result": "PASS",
+      "log": "qualified-core-range-check.txt",
+      "sha256": "44974e2751f1c6960732e14cbbff8b1745b13d0be6a1243cbb873d652c84935f"
+    }
+  },
+  "remote_mutation": false,
+  "full_broker_complete": false,
+  "activation": false,
+  "next": "Qualified provider adapter and broker stage reconciliation, with actual host/store/server qualification still open."
+}

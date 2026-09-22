@@ -1,0 +1,14 @@
+{
+  "schema": "aide.host.h2-python-root-checkpoint-review.v1",
+  "result": "PASS",
+  "scope_sha256": "7260e601757fab0107df5ab62b6f95fd03f9051394b958d5bbe3e5af5d5e271f",
+  "source_base": "06f2546fbb0fea3d4ace8278602737f113c1354d",
+  "reviewed_source_aggregate": "c87493f3855f5356f1de47295d9eb4ca833adb943b1e04062fa4badf14dd99ab",
+  "independent_review_sha256": "896bcc427ce98615e6e9ebeff9eaf617aec095d70dffd3b007e0305dc3744adc",
+  "selected_33_raw_and_git_blobs_verified": true,
+  "archive_87_members_and_originals_verified": true,
+  "projected_tree_excluding_two_approval_records": "ca1bd96811838b7674ff6f484a93239a3dd1e29c",
+  "excluded_index_unchanged": true,
+  "approved_scope": "Exactly33 scoped paths plus the scope and this ROOT record, using checked message and normal local commit. Recompute staged tree including two approval records; retain separate execution receipt. No publication, runtime activation, private image copy, ACL grant or interpreter execution.",
+  "review_notes": "Documentation remains partial/PENDING and preserves actual Windows optional-delay compatibility and native loader observation gaps; source review includes95tests and independent differential/wire/malformed-input probes."
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "aide.independent-source-review.v1",
+  "reviewer": "root",
+  "observed_at": "2026-09-06T15:07:42.829202+00:00",
+  "base_revision": "bfb86c12b9e6d2970024d29c57ba629994ec43cc",
+  "source_manifest_sha256": "41633685e0cdbe1b4f33e2cf9a80620e304c229d9bcc7e24e4889c9f7b3456f8",
+  "files": {
+    "core/runtime/integration_broker/__init__.py": "ab9d0279e1d9f0a8baebec5a900669ec380401c42249bdb48133b17d38cdc587",
+    "core/runtime/integration_broker/__main__.py": "9a1ec3c340b8c20cb0cdd4d780d8bc4325ff320c7c7d82de49257e10454b0e35",
+    "core/runtime/integration_broker/candidate.py": "281948e5468f29473019d40f592771a2666163d7e8a9bfe55400a2f560af0b1c",
+    "core/runtime/integration_broker/common.py": "10f28484077ed91c5325ebb2e93755e4c8dd75e628b013529a3f9791313c5ac2",
+    "core/runtime/integration_broker/ledger.py": "8ce438d7a5902f48738e9c8febf655537ca3ee26eb50bbc5faf8e99851d093eb",
+    "core/runtime/integration_broker/service.py": "3b522045b23114088a71439986208c9bf60b6078c15207208c143f883c3f25ef",
+    ".aide/scripts/tests/test_continuous_worker_integration_broker.py": "3af1ddeb067cb6a4241100092465ded2265175df66e59e48207a575a0c5eb191",
+    "docs/reference/integration-broker-core.md": "9ef5edfe732e7883c30a561f334aadddf384b3ee270648ecdd51efac8997808b"
+  },
+  "result": "PASS_BOUNDED_FOUNDATION",
+  "scope": "Six runtime modules, complete broker test suite and reference documentation; final eight source hashes reverified after source-only test rename.",
+  "findings": {
+    "open_P0": 0,
+    "open_P1": 0,
+    "remediated": [
+      "Renamed the test to test_continuous_worker_integration_broker.py so existing source-only export guards exclude it."
+    ]
+  },
+  "validation_reviewed": {
+    "broker_tests": {
+      "passed": 22,
+      "skipped": 1,
+      "skip": "Windows refused disposable symlink creation; not host symlink qualification"
+    },
+    "worker_tests_passed": 51,
+    "doctor": "PASS",
+    "validate": "PASS",
+    "golden_tasks_passed": 171,
+    "tests_independently_rerun_by_root": false
+  },
+  "authorized_next": "Scoped foundation checkpoint commit, then required same-task bounded delta handoff, preparation recovery and coordinator-v1 implementation with fresh review.",
+  "remaining_required": [
+    "Bounded change-set handoff over trusted base Git objects for actual 10631-file AIDE repository; do not raise MAX_FILES.",
+    "Object-bound interrupted-preparation recovery and kill-before-prepared tests.",
+    "Coordinator-v1 frozen candidate/request/receipt adoption.",
+    "Production transport, qualified isolated host and real two-task qualification."
+  ],
+  "operational_activation": false,
+  "full_task_complete": false
+}

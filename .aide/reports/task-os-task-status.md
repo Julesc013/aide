@@ -3,8 +3,8 @@
 - command: `task status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-continuous-worker-pilot-01`
-- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
+- current_branch: `task/aide-cw-integration-broker-01`
+- current_commit: `83df2b73c96f754561e669080bc4c90108d0bc4b`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -19,50 +19,50 @@
 - current_task_raw: `none`
 - current_task_id: `none`
 - current_task_status: `absent`
-- latest_indexed_task_id: `AIDE-FACMAN-ULK-PROMOTION-01`
-- latest_indexed_task_status: `planned`
-- latest_task_packet_raw: `AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01`
-- latest_task_packet_id: `AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01`
-- latest_task_packet_status: `blocked`
+- latest_indexed_task_id: `AIDE-SPEC-CONVERGENCE-FOUNDATION-01`
+- latest_indexed_task_status: `passed`
+- latest_task_packet_raw: `Q17`
+- latest_task_packet_id: `Q17-router-profile-v0`
+- latest_task_packet_status: `passed`
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - selected_next_workunit_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
 
 ## Latest Task Packet
 
-- latest_task_raw: `AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01`
-- latest_task_id: `AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01`
-- latest_task_status: `blocked`
+- latest_task_raw: `Q17`
+- latest_task_id: `Q17-router-profile-v0`
+- latest_task_status: `passed`
 
 ## Queue Summary
 
-- task_count: 343
-- running_count: 1
-- needs_review_count: 253
+- task_count: 348
+- running_count: 5
+- needs_review_count: 254
 - blocked_count: 2
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `AIDE-BUILD-PROJECT-HEALTH-OBSERVERS-WAVE-01`: status=pending lifecycle=proposed planning_state=tentative_planned
-- `AIDE-BUILD-PROJECTGRAPH-CONTEXTPACK-SLICE-01`: status=pending lifecycle=proposed planning_state=tentative_planned
-- `AIDE-PLAN-PROJECT-INTELLIGENCE-WORKBENCH-VIEWS-01`: status=pending lifecycle=proposed planning_state=tentative_planned
-- `AIDE-PLAN-SAFE-REFACTORING-AND-SCALE-MODES-WAVE-01`: status=pending lifecycle=proposed planning_state=tentative_planned
-- `AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01`: status=blocked lifecycle=blocked_repairable planning_state=local_prototype_validated
 - `AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01`: status=running lifecycle=running planning_state=execution_active
-- `AIDE-CW-ISOLATED-HOST-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
-- `AIDE-CW-INTEGRATION-BROKER-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
+- `AIDE-CW-ISOLATED-HOST-01`: status=running lifecycle=running planning_state=execution_active
+- `AIDE-CW-INTEGRATION-BROKER-01`: status=running lifecycle=running planning_state=execution_active
+- `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01`: status=planned lifecycle=partial planning_state=admitted_backlog
 - `AIDE-CW-CLONE-PREPARATION-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
 - `AIDE-CW-RESUME-REPAIR-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
 - `AIDE-CW-SUPERVISOR-LIFECYCLE-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
 - `AIDE-CW-LIVE-PILOT-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
 - `AIDE-CW-PROGRAMME-OPERATIONS-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
-- `AIDE-FACMAN-USK-STREAMING-INTEGRATION-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
-- `AIDE-FACMAN-USK-ZIP-INTEGRATION-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
-- `AIDE-FACMAN-USK-ENTRY-RESTART-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
+- `AIDE-FACMAN-USK-STREAMING-INTEGRATION-01`: status=passed lifecycle=done_local planning_state=implemented
+- `AIDE-FACMAN-USK-ZIP-INTEGRATION-01`: status=passed lifecycle=done_local planning_state=implemented
+- `AIDE-FACMAN-USK-ENTRY-RESTART-01`: status=running lifecycle=running planning_state=execution_active
 - `AIDE-FACMAN-USK-GENERATION-LEASES-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
 - `AIDE-FACMAN-USK-PACKAGE-PROMOTION-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
-- `AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
-- `AIDE-FACMAN-ULK-PROMOTION-01`: status=planned lifecycle=unknown planning_state=admitted_backlog
+- `AIDE-FACMAN-ULK-TRUTH-INTEGRATION-01`: status=passed lifecycle=done_local planning_state=implementation_completed
+- `AIDE-FACMAN-ULK-PROMOTION-01`: status=passed lifecycle=done_local planning_state=implementation_completed
+- `AIDE-CONVERGENCE-AND-DELIVERY-01`: status=running lifecycle=running planning_state=execution_active
+- `AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01`: status=passed lifecycle=done_local planning_state=implemented
+- `AIDE-REPOSITORY-HYGIENE-TRIAGE-01`: status=needs_review lifecycle=done_local planning_state=cleanup_candidate_ready
+- `AIDE-SPEC-CONVERGENCE-FOUNDATION-01`: status=passed lifecycle=done_local planning_state=implemented
 
 ## Deferred Target Work
 
@@ -326,6 +326,7 @@
 - `AIDE-BUILD-CANARY-PROFILE-MORE-INFINITE-RESEARCH-01`
 - `AIDE-PLAN-ULTIMATE-SYNTHESIS-ROADMAP-01`
 - `AIDE-PLAN-PROJECT-INTELLIGENCE-SPINE-01`
+- `AIDE-REPOSITORY-HYGIENE-TRIAGE-01`
 
 ## Next Recommended Action
 

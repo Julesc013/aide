@@ -1,0 +1,3 @@
+The current slice covers explicit directory-source replay, not automatic recovery or ZIP replay dispatch. Complete stored and Deflate ZIP replay under this task next, after checked integration of the reviewed directory slice. Old staging remains retain-only; no byte equality grants reuse, deletion or prior completion authority.
+
+The mandatory [commit-authority follow-on](commit-authority-follow-on.md) requires deterministic post-verification file/directory substitution, including identical bytes, to fail without publishing a foreign child. Root leases/no-replace alone are insufficient. Keep generation leases/stale-owner reconciliation and full provider package/consumer adoption qualification separate and pending.

@@ -15,6 +15,8 @@ notes:
   - Repository hygiene and the three specification placement/adoption increments passed and were published.
   - Documentation integration passed independently on dev at 237ae8c49adce2b2e3232d83e6a3289fd9f4d6f3.
   - Repository Codex neutrality reached dev through the exact candidate 4398497a1e43b77938636dcd0c7002d6ff045467.
+  - The observation-bound broker dispatch child passed and was published at 0e942d7e55b7f12fc384f5df44fc8cb4c40017a4.
+  - Delivered-pack import closure and ownership-aware safe update reached dev; public release and real-target gates remain open.
   - Broker and isolated-host qualification continue as separate unfinished streams on their published task branch.
   - The compiled intent is destructive, split-required, and unsafe as one WorkUnit.
   - This programme coordinates bounded child WorkUnits; retained merge, release, publication, deletion, and secret gates still apply.

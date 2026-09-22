@@ -293,3 +293,186 @@ The intent-to-transaction planning reports under `.aide/reports/intent-to-transa
 ## Programme and portable-export repair
 
 AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01 records current execution authority, exact branch plans and durable validation. FacMan retains its own canonical plan and target-local queues. Portable source-only tests require explicit admission: the existing three AIDE Lite modules are retained; full runtime and continuous-worker tests remain source-only, including nested paths. Live activation is still disabled pending real host/broker/two-task qualification.
+
+- The local broker core and frozen-candidate contract are documented in `docs/reference/integration-broker-core.md`; full protected transport and isolated-host qualification remain separate queue work.
+
+- `docs/reference/integration-broker-core.md` describes candidate v2, bounded preparation recovery, coordinator-v1 and external authority issuance boundaries; foundation history remains in checkpoint 7e4de0c9.
+
+### AIDE-CW-INTEGRATION-BROKER-01 qualified transport continuation
+
+Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds
+frozen delta/preparation recovery/coordinator v1. Continue exact-generation
+effect validation, external delegated authority and bounded branch/PR/check
+observation transport under the task ExecPlan. Real host/store and atomic
+target merge qualification remain open; AIDE has no current hosted workflows
+or branch rules. No operational activation or settings mutation is claimed.
+
+### Broker delegated-core current evidence
+
+The broker task evidence now binds the complete 27-file current source, separate
+independent effect/capsule and issuer/PR reviews, historical full-suite results
+and focused remediation tests. qualified-core-custody.json distinguishes raw
+archived bytes from readable Git text projections; neither constitutes live
+host or provider qualification.
+
+### Staged broker continuation
+
+The integration broker reference now documents one-stage reconciliation, deterministic literal commit objects, independent stage intents, observation-only query and the absent qualified provider adapter.
+
+### Registered bridge contract and evidence
+
+The integration broker reference documents the fixed JSON request/response
+protocol, protected registration and qualifier requirements, finite retained IO
+ledger and named Job recovery. AIDE-CW-INTEGRATION-BROKER-01 keeps exact local
+source/test receipts distinct from pending provider, host/store and atomic
+server qualification. Historical test and review bytes remain preserved in
+task custody archives.
+
+### Provider facts and executable qualification plan
+
+The broker reference now documents finite raw REST reads, actual Actions
+run/attempt provenance, immutable merged parents, expired-authority observation
+and explicit target-policy absence. The new target WorkUnit contains cited
+GitHub contract research and local graph experiments; the existing host ExecPlan
+contains concrete Windows isolation/denial probes. Neither planning admission
+nor offline parser/graph tests install settings or qualify an operational host.
+
+## Integration broker HTTPS observation boundary
+
+The integration-broker-core reference now specifies the fixed-origin TLS reader,
+protected host/credential lease interface, finite DNS/socket/header/body budgets,
+strict supported response subset and local denial tests. It distinguishes the
+implemented HTTPS mechanism from absent operational host credentials, restricted
+principal, target rules and server qualification. The synthetic fixture route
+cannot be selected through production configuration or worker input.
+
+## H1 native host mechanism and proof boundary
+
+The H1 native mechanism has one passing exact local probe after three retained
+FAIL attempts. Zero-capability AppContainer token/owned Job, scratch write,
+protected read/write/DACL/controller refusals, stable package non-exemption and
+the same-address network diagnostic/control conjunction passed. Raw 10060 still
+means timeout; diagnostic 2 means missing internetClient. Source27, existing
+actual Job10 and ordinary native3 tests pass and were independently replayed.
+The fourth child exited0/exited/quiescent. All four packets retain exact bytes.
+The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated
+fault/recovery cells, model channel, credential host and activation remain open.
+
+The broker reference and H1 ExecPlan document mechanism, four-attempt history
+and acceptance gaps. Task evidence/validation.md and custody maps navigate raw
+source, binaries, reviews and actual receipts. Text checkout projections do not
+replace archived raw hashes. Consumed effects cannot replay.
+
+## H2 private-image proof boundary
+
+The active H1/H2 task now continues from 454e41aa with a separately bounded
+streaming image API and synthetic denial/recovery tests. The prior native PASS
+remains source-bound historical evidence; no real tool copying, package grants,
+isolated runtime or activation is included. The task ExecPlan owns exact scope.
+
+The H2 source manifest, independent review and custody map under the isolated
+host task bind the three authored files and all 63-test evidence. The next
+h2-python-closure-proposal.md records exact PE/API-set and deterministic library
+requirements without granting tool-copy or runtime-effect authority.
+
+## H2 Python recipe source admission
+
+Continue from 06f2546f on the same owned branch under ROOT's accepted proposal
+16b243f4. Implement a bounded AMD64 import/delay/forwarder parser first, then the
+exact named private/system/API-set recipe and deterministic ZIP_STORED/_pth
+builder. Add a truthful generated-byte kind without changing v1 source identity.
+Use the proposed finite parse/closure/member/byte bounds and malformed-input,
+unknown-dependency, alias, mutation and deterministic-custody tests. Keep current
+image/H1/candidate bounds. No real tool copying, package grant, profile, private
+runtime launch or activation is admitted here. Freeze exact source for review.
+
+The frozen eight-file recipe source and its 95-test receipt are indexed by
+h2-python-source-manifest.json and h2-python-source-review-notes.md under the
+host task. The focused windows_python_contract module owns explicit system data;
+windows_python_image owns deterministic library data. Additional read-only
+Windows DLL inspection preserves five unsupported bound-delay refusals and three
+metadata passes; h2-python-native-input-next-proposal.md records the concrete
+compatibility/observation work required before an actual Python effect.
+
+## Optional delay metadata source evidence
+
+The two-file h2-delay-source-manifest.json binds the PE reader/direct regression
+increment after 830bf30d. All 101 source/ordinary tests pass. Eight unchanged named
+Windows DLL byte streams now parse under the explicit RVA/timestamp0 optional
+bound-IAT layout, without loading or mapping inspected DLLs. The original
+refusals and pre-fix synthetic failures remain retained. Actual native system/API
+mapping and restricted Python bootstrap remain unqualified; the observed 180
+API-set names exceed the unchanged 128-row contract ceiling and need a separately
+reviewed exact admission decision. The source is frozen for independent review.
+
+Independent exact-source review passed the 101-test replay, real numeric symbol
+limits and the same eight ordinary byte-stream observations. Receipt
+h2-delay-independent-final-review.json binds the exact source and raw proof.
+The optional-delay checkpoint remains partial; native/API/loader gates stay open.
+
+## H2 system observation source admission
+
+Continue from 236da6c2 under evidence/h2-system-observation-source-plan.md. Build
+the bounded native object/resource-mapping observation seam and direct injected
+refusal/ownership tests. Keep existing private source and recipe caps; preserve
+the full 180-name API inventory and pending actual contextual/native/loader proof.
+No actual DLL mapping, tool copy, grant, profile or isolated Python effect is
+admitted in this source slice. Freeze exact source for independent review.
+
+## Frozen system observation source
+
+The h2-system-source-manifest.json packet binds two new files and 32 injected
+observer tests. All 133 selected tests pass, including unchanged PE/recipe/image/
+security/owned Job regressions. Reservation and intent acknowledgements bind
+exact canonical request hashes, and known handles are retained for one owned
+release before post-call guard failures can occur. Source remains frozen for
+independent review. Actual native object/API observations, durable controller
+journal authenticity, external process deadlines and loader qualification remain
+open; no selected DLL mapping, copy, grant or isolated Python effect occurred.
+
+## System observation review repairs
+
+Preserve the original 133-test source and the independent/author REDs in
+h2-system-before-review-evidence.zip. Revised source binds clocks before and
+after guards, checks final result freshness and serialization after cleanup,
+refuses arbitrary-precision temporal fields as typed input, and requires the
+mapped native spelling to match the freshly held object observation. All 138
+selected tests pass (37 injected observer plus unchanged 101 regressions). The
+source is frozen for independent re-review; no actual mapping, private image or
+grant effect has run, and native/API/loader qualification remains open.
+
+## Reviewed system observation source checkpoint
+
+Independent review h2-system-independent-final-review.json passes the exact
+source2 and 138-test replay plus 17 additional probes. Those include the retained
+original failures, actual numeric adapter-operation bounds and fully mocked
+native allocation/release failures. Source/dependency/index hashes and the
+original 36-member failure archive match. Preserve those raw bytes in checkpoint
+custody. This is a partial source checkpoint: actual public native input facts,
+API-resource observations, full bounded closure and restricted Python loading
+remain unqualified. No selected DLL mappings, image copies or grants occurred.
+
+- Isolated-host evidence/h2-input-driver-plan.md documents the bounded public
+  native input driver and its separate reviewed effect boundary.
+- Isolated-host evidence/h2-input-source-manifest.json and
+  h2-input-root-actual-review.json bind the reviewed task driver and exact local
+  eight-file read-facts outcome. h2-input-custody.json maps original raw evidence.
+- Isolated-host evidence/h2-resource-source-plan.md records the separate
+  two-API feasibility source scope and its unexecuted native effect boundary.
+
+## Broker observation-bound dispatch
+
+`docs/reference/integration-broker-core.md` now records the exact observation
+and digest carried into each registered mutation child, the repeated durable
+authorization checks, and the distinction between submission acknowledgement
+and observed integration. The child WorkUnit passed local source and regression
+validation; operational provider, host/store, credential, and target
+qualification remain open under `AIDE-CW-INTEGRATION-BROKER-01`.
+
+## GitHub target merge contract
+
+`docs/reference/integration-broker-core.md` records the source-only synchronous
+merge contract owned by `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01`. Its mandatory
+expected-head SHA is destination-enforced by the documented endpoint. The
+endpoint has no expected-base argument, so policy/principal qualification and
+hosted race evidence remain separate open work rather than inferred guarantees.

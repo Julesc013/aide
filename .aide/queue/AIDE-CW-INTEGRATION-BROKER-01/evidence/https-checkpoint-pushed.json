@@ -1,0 +1,28 @@
+{
+  "head": "24ed66153f7e5d2008b7178b89c1b03025791152",
+  "tree": "445fac21ad01257f93d71afd6f1bae8955dcb9a7",
+  "previous_remote": "57e28facc74c7407d4d270f5b0d21c0dc6e4ddbe",
+  "branch": "task/aide-cw-integration-broker-01",
+  "target": "dev",
+  "operation": "non-force exact-SHA task push then existing draft PR4 title/body update",
+  "authority": "explicit programme and ROOT assignment",
+  "real_windows_identity": "BLACKGLASS-WIN1\\Jules",
+  "github_identity": "Julesc013",
+  "auth_observation": "read-only user-context keyring session verified; no credential value read or stored",
+  "scoped_committed_files_verified": 18,
+  "pr_remains_draft": true,
+  "activation": false,
+  "body_sha256": "08fae6212ee158f3b5fa05a1f3f5d07ac8c7e8f3a4968d072880c2f535197a28",
+  "remote_verified": true,
+  "pr": {
+    "baseRefName": "dev",
+    "headRefName": "task/aide-cw-integration-broker-01",
+    "headRefOid": "24ed66153f7e5d2008b7178b89c1b03025791152",
+    "isDraft": true,
+    "number": 4,
+    "state": "OPEN",
+    "title": "feat(runtime): implement bounded integration broker and HTTPS observations",
+    "url": "https://github.com/Julesc013/aide/pull/4"
+  },
+  "push_log_sha256": "fdaa36222c2cd4a3dab761797ca769773d7b331f8282fe873e31251bc7e82724"
+}

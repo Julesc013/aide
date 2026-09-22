@@ -1,0 +1,19 @@
+[task/aide-cw-integration-broker-01 0c7788fd] feat(runtime): add bounded native system observation source
+ 26 files changed, 2773 insertions(+), 2 deletions(-)
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-before-review-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-before-review-evidence.zip
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-helper-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-message.txt
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-scope.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-evidence.zip
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-final-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-observation-source-plan.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-reviewed-source-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-reviewed-tests.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-root-checkpoint-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-admission.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-manifest.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-review-notes.md
+ create mode 100644 .aide/scripts/tests/test_continuous_worker_system_observation.py
+ create mode 100644 core/runtime/continuous_worker/windows_system_observation.py

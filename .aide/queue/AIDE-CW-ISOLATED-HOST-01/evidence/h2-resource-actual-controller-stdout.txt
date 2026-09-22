@@ -1,0 +1,1 @@
+{"error_type":"Refused","failure":{"consumed":true,"effect_sha256":"a54a6eb93380aa5f63fb5c809d9d6f3dede3a943dad51c94fc4841ce25016494","error_type":"Refused","replay_permitted":false},"replay_permitted":false,"result":"FAIL"}

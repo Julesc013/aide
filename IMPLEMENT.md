@@ -10882,6 +10882,217 @@ The current user authorizes scoped implementation, validation, synchronization, 
 
 Final export validation passed all eight commands; independent review verified all 829 checksum entries for 826 payload files and preserved all 37 baseline portable tests. Both portable apply templates are included in source closure and mapped outputs. The safe example secrets README is explicitly tracked; no actual secret or source-only worker state is exported. See programme evidence/final-export-validation.json and export-independent-review.json.
 
+## AIDE-CW-INTEGRATION-BROKER-01 â€” local core implementation
+
+Status: local foundation verified for review. The new integration_broker package separates frozen content materialization and durable remote-effect intent from the worker ledger. Broker suite: 22 pass and one explicit host symlink-creation skip; existing worker suite: 51 pass. Independent root review requires bounded delta handoff for actual AIDE repository size and safe interrupted-preparation recovery before coordinator-v1 adoption/unattended use. No live integration, host isolation, credentials or model calls are claimed.
+
+- Implemented candidate v2 delta overlays, atomically created Windows preparation generations with retained crash recovery, and coordinator-v1 frozen evidence/external authority/receipt handling. Ownership tests exposed and corrected metadata-only sharing behavior; full validation and independent review continue.
+
+### AIDE-CW-INTEGRATION-BROKER-01 qualified transport continuation
+
+Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds
+frozen delta/preparation recovery/coordinator v1. Continue exact-generation
+effect validation, external delegated authority and bounded branch/PR/check
+observation transport under the task ExecPlan. Real host/store and atomic
+target merge qualification remain open; AIDE has no current hosted workflows
+or branch rules. No operational activation or settings mutation is claimed.
+
+### Broker delegated-core review and evidence custody
+
+Independent root review passed for both source increments, including eight
+prepared-effect/capsule tests and 13 current issuer/PR tests. The historical
+107-test baseline and later PR identity correction have separate source binds.
+The scoped local checkpoint preserves original review and validation bytes in
+qualified-core-evidence.zip with explicit LF projection hashes for Git. No
+provider dispatcher, isolated host or qualified target is installed by this step.
+
+### Staged broker continuation
+
+Added typed staged transport routing to Broker.reconcile while preserving legacy single-effect recovery. Initial 17 tests passed in 46.845 seconds, including actual child termination after durable intent and literal local Git candidate/merge objects; only the subsequent Windows-only test discovery guard changes that initial test binding.
+
+### Registered provider child boundary
+
+Added an internal pinned JSON bridge and a separate WAL/FULL call ledger under
+AIDE-CW-INTEGRATION-BROKER-01. Exact read-attempt tokens and mutation intents
+precede child dispatch; source/qualification/deadline checks run before creation
+and during bounded execution. Retained response artifacts and named Job recovery
+preserve uncertain effects without replay. The small shared changes expose the
+read token and a separate provider-lock scope while preserving default worker
+locking. All 43 current Windows/staged/lock tests passed in 155.576 seconds; doctor,
+validate and source-only export checks also passed. Exact source-bound evidence
+is recorded in the task. Independent root source review and all 11 replayed
+bridge tests passed with unchanged hashes. No operational provider
+implementation or qualification is installed.
+
+### Bounded raw GitHub observations
+
+Added a fixed-origin finite REST reader, Actions provenance mapper and exact
+PR/Git observation collector under AIDE-CW-INTEGRATION-BROKER-01. Twenty-six
+offline tests pass, including null/duplicate/truncated responses, wrong refs or
+forks, rerun and late-target drift, expired-authority observe-only recovery and
+immutable merged parents. No HTTP client, credential reader or target policy
+is installed; policy pins remain absent. Thirteen disposable local Git graph
+experiments identify the strict-check premises and same-OID retarget counterexample.
+Exact source review and actual host/server acceptance remain separate gates.
+
+The independent review identified a normal queued-check publication window.
+That window now yields wait_checks with incomplete provenance, preserving
+automatic polling; completed successful checks still require the actual run
+and attempt job. A durable pending-to-complete regression confirms no mutation
+intent is created while evidence is incomplete.
+
+## AIDE-CW-INTEGRATION-BROKER-01: fixed HTTPS observation mechanism
+
+Added a fixed api.github.com TLS GET reader, finite socket/qualification monitor
+and bounded HTTP/1.1 response framing. A protected observation host/credential
+lease is required and absent by default. Nineteen real loopback TLS tests cover
+certificate/hostname denial, revocation/expiry before and during dispatch,
+redirect/proxy refusal, bounded framing and secret reflection without user
+credentials or machine trust changes. Source is frozen for independent review;
+all 26 prior raw-observation tests pass. Operational host/principal/target
+qualification and the complete broker task remain open. See the broker ExecPlan
+and docs/reference/integration-broker-core.md for the exact mechanism and limits.
+
+## AIDE-CW-ISOLATED-HOST-01: bounded native host mechanism
+
+The H1 native mechanism has one passing exact local probe after three retained
+FAIL attempts. Zero-capability AppContainer token/owned Job, scratch write,
+protected read/write/DACL/controller refusals, stable package non-exemption and
+the same-address network diagnostic/control conjunction passed. Raw 10060 still
+means timeout; diagnostic 2 means missing internetClient. Source27, existing
+actual Job10 and ordinary native3 tests pass and were independently replayed.
+The fourth child exited0/exited/quiescent. All four packets retain exact bytes.
+The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated
+fault/recovery cells, model channel, credential host and activation remain open.
+
+Grants use exact held create-only objects and retained profile intents. The
+initial DOS-volume alias refusal retained no effects; local-volume resolution
+preserves no-reparse traversal. Earlier network pending, timeout-only and
+loopback-NETISO_NONE observations remain FAIL. The pinned-interface run used
+252/256 bounded read-only observations. No network settings changed.
+
+## H2 source admission
+
+The active H1/H2 task now continues from 454e41aa with a separately bounded
+streaming image API and synthetic denial/recovery tests. The prior native PASS
+remains source-bound historical evidence; no real tool copying, package grants,
+isolated runtime or activation is included. The task ExecPlan owns exact scope.
+
+Image source now uses immutable bounded plans, separate streaming and retained
+relative-handle reservations. Independent NT/Win32 and 8.3 overlap findings were
+reproduced and fixed, with both original packets retained. All 63 tests and the
+independent replay pass. Native image grants/loading remain unqualified.
+
+## H2 Python recipe source admission
+
+Continue from 06f2546f on the same owned branch under ROOT's accepted proposal
+16b243f4. Implement a bounded AMD64 import/delay/forwarder parser first, then the
+exact named private/system/API-set recipe and deterministic ZIP_STORED/_pth
+builder. Add a truthful generated-byte kind without changing v1 source identity.
+Use the proposed finite parse/closure/member/byte bounds and malformed-input,
+unknown-dependency, alias, mutation and deterministic-custody tests. Keep current
+image/H1/candidate bounds. No real tool copying, package grant, profile, private
+runtime launch or activation is admitted here. Freeze exact source for review.
+
+### Focused dependency contract module
+
+Keep the exact named SystemContract and recursive PE dependency validation in
+windows_python_contract.py with test_continuous_worker_python_contract.py.
+This separates dependency admission from the deterministic library-byte builder
+and avoids growing a combined parser/contract/archive module. The two paths are
+within the accepted Python recipe objective and now explicit in allowed_paths;
+no new runtime, native or effect authority is added. The original proposal and
+image-source checkpoint remain unchanged.
+
+### Reviewed Python recipe checkpoint
+
+Independent review h2-python-independent-final-review.json passed exact eight
+source files and repeated all 95 tests, 24 v1 differential cases, an independent
+12-member ZIP wire oracle and 1,024 deterministic malformed-PE mutations without
+unexpected exceptions. The source checkpoint remains partial: actual Windows
+optional-delay-table compatibility, native/API mappings and restricted Python
+startup remain open. Preserve the immutable mutation RED and all original review
+bytes in compact custody. Do not stage provider-owned entry records/index or
+raw multi-megabyte logs. No actual tool copy, package grant or loader effect is
+admitted by this checkpoint. The SDK addendum clarifies that timestamp0 means
+unbound even when an optional bound-IAT pointer is nonzero; the next metadata
+slice will target that exact observed layout and retain existing bounds.
+
+## Optional delay metadata continuation
+
+Continue from 830bf30d under evidence/h2-delay-source-plan.md. Only the PE reader
+and direct tests change. Preserve the95-test recipe checkpoint and initial actual
+Windows refusals; this slice supports the observed unbound timestamp0 optional
+table layout under finite lookup/IAT spans, without any loader/image effects.
+
+The optional-delay source passed independent exact-source assurance and 101 tests,
+including actual numeric symbol bounds and unchanged Windows byte-stream replay.
+The current checkpoint preserves the original refusals and the unqualified native
+API/loader boundary; all capacity limits and external effect authority remain.
+
+## H2 system observation source admission
+
+Continue from 236da6c2 under evidence/h2-system-observation-source-plan.md. Build
+the bounded native object/resource-mapping observation seam and direct injected
+refusal/ownership tests. Keep existing private source and recipe caps; preserve
+the full 180-name API inventory and pending actual contextual/native/loader proof.
+No actual DLL mapping, tool copy, grant, profile or isolated Python effect is
+admitted in this source slice. Freeze exact source for independent review.
+
+## Frozen system observation source
+
+The h2-system-source-manifest.json packet binds two new files and 32 injected
+observer tests. All 133 selected tests pass, including unchanged PE/recipe/image/
+security/owned Job regressions. Reservation and intent acknowledgements bind
+exact canonical request hashes, and known handles are retained for one owned
+release before post-call guard failures can occur. Source remains frozen for
+independent review. Actual native object/API observations, durable controller
+journal authenticity, external process deadlines and loader qualification remain
+open; no selected DLL mapping, copy, grant or isolated Python effect occurred.
+
+## System observation review repairs
+
+Preserve the original 133-test source and the independent/author REDs in
+h2-system-before-review-evidence.zip. Revised source binds clocks before and
+after guards, checks final result freshness and serialization after cleanup,
+refuses arbitrary-precision temporal fields as typed input, and requires the
+mapped native spelling to match the freshly held object observation. All 138
+selected tests pass (37 injected observer plus unchanged 101 regressions). The
+source is frozen for independent re-review; no actual mapping, private image or
+grant effect has run, and native/API/loader qualification remains open.
+
+## Reviewed system observation source checkpoint
+
+Independent review h2-system-independent-final-review.json passes the exact
+source2 and 138-test replay plus 17 additional probes. Those include the retained
+original failures, actual numeric adapter-operation bounds and fully mocked
+native allocation/release failures. Source/dependency/index hashes and the
+original 36-member failure archive match. Preserve those raw bytes in checkpoint
+custody. This is a partial source checkpoint: actual public native input facts,
+API-resource observations, full bounded closure and restricted Python loading
+remain unqualified. No selected DLL mappings, image copies or grants occurred.
+
+## H2 public native input driver preparation
+
+Continue AIDE-CW-ISOLATED-HOST-01 from reviewed observer 0c7788fd. The task-owned
+h2-input-driver-plan.md bounds read-facts driver/controller and injected tests;
+no actual native-input effect occurs before exact source/effect review.
+
+## Reviewed H2 public native input facts
+
+The task-owned read-facts driver passed 67 injected tests and independent
+73-test review. One exact ordinary Job child then matched all eight historical
+DLL hashes across 8,306,752 bytes, with 167 calls, nine closes and clean exit/
+quiescence. ROOT independently verified original artifacts and source binding.
+The checkpoint remains partial: no contextual API mapping, private loader,
+OS/controller provenance or operational activation is claimed.
+
+## H2 two-API feasibility source
+
+Continue from local N1 checkpoint 2a44f17e with three task-owned resource probe/
+controller/test files. Reuse reviewed observer and N1 mechanisms; no actual
+DLL mapping, image or grant effect is part of this source implementation.
+
 ## 2026-09-21 - Control-plane work, effect, and identity contracts
 
 - Added live desired-state contracts for WorkUnits and immutable attempts,
@@ -10906,6 +11117,21 @@ Final export validation passed all eight commands; independent review verified a
   as explicitly unrun review inputs, not live `AIDE-*` requirements.
 - Excluded the import ZIP, baseline capture, verifier tools, patch, private
   archives, and bulk generated registers from the repository.
+
+## 2026-09-21 - Observation-bound broker dispatch
+
+- Passed each mutation's exact stage-selecting observation and canonical digest
+  into the registered child envelope.
+- Revalidated the observation against the durable latest record, stage intent,
+  plan, and pure decision before reservation and while the child runs.
+- Added refusal tests for missing, altered-digest, and changed-actor bindings;
+  no provider-call directory is created in those cases.
+- Verified that submitted acknowledgements remain pending until a later
+  authoritative observation advances or closes the request.
+- The affected suites ran 120 cases: 119 passed and one symlink case was skipped
+  because this Windows process lacks symlink-creation privilege.
+- No live provider, credential, network, protected-host, target, or release
+  effect ran; full broker completion remains false.
 
 ## 2026-09-22 - Delivered pack import closure
 
@@ -10937,3 +11163,15 @@ Final export validation passed all eight commands; independent review verified a
 - Proved extracted ZIP and tar.gz CLIs persist receipts and rerun as no-ops.
 - Retained real target, source self-update, main, tag, upload, publication,
   repair, rollback, uninstall, and full stable-release gates.
+
+## 2026-09-22 - Fixed GitHub expected-head merge source
+
+- Added a pure synchronous merge request builder that revalidates the exact
+  stage observation and always supplies the admitted candidate as `sha` with
+  ordinary `merge` semantics.
+- Added bounded response classification for success and 405/409/422 refusal;
+  success remains `submitted`, never observed integration.
+- Added local adversarial coverage for changed base, head, actor, policy and
+  merge-contract facts. The focused suite passes 31 tests.
+- Added no network sender, credential path, settings/workflow mutation or hosted
+  effect. Base/ref, actor, policy, principal and ruleset atomicity remain open.

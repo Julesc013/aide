@@ -1,0 +1,47 @@
+{
+  "schema": "aide.host.h2-input-root-orchestration-custody.v1",
+  "scripts": [
+    {
+      "path": "h2_input_root_source_review.py",
+      "bytes": 7348,
+      "sha256": "f3403441302cf16ea7173eefa77ec5b85dccbbc4a95d05bc6923a4bf0eaeb180"
+    },
+    {
+      "path": "h2_input_root_actual_review.py",
+      "bytes": 4652,
+      "sha256": "694ca6f3d92142494280169a7a087295f81ef47aab7139230bf6b20a3af8e710"
+    }
+  ],
+  "delivery": "Logical Python orchestration source retained after the actual execution. Each script was supplied to Python314 -B - through a PowerShell literal here-string; the raw bytes of original stdin were not separately captured. These files preserve the source text, not a claim of original-stdin byte custody or a later file-based rerun.",
+  "executions": [
+    {
+      "script": "h2_input_root_source_review.py",
+      "python": "C:\\Program Files\\Python314\\python.exe",
+      "arguments": [
+        "-B",
+        "-"
+      ],
+      "tool_chunk_id": "bbc017",
+      "exit_code": 0,
+      "tool_wall_seconds": 0.5740213,
+      "reported_tests": 73,
+      "result": "PASS_bounded_read_only_effect_admitted",
+      "review_sha256": "9816f1bcda641c2f2d0b6cfe12b083cf5da2e1c40124832e6db89b336ba6a8a5",
+      "test_log_sha256": "10bfc67c913ccec8f061245b3b29ec34cc765f068587f590a555801272f2819e"
+    },
+    {
+      "script": "h2_input_root_actual_review.py",
+      "python": "C:\\Program Files\\Python314\\python.exe",
+      "arguments": [
+        "-B",
+        "-"
+      ],
+      "tool_chunk_id": "5c2290",
+      "exit_code": 0,
+      "tool_wall_seconds": 0.3117482,
+      "result": "PASS_ACTUAL_BOUNDED_READ_FACTS",
+      "review_sha256": "9830b14e4cf47a12db25794ee453f9ee7549c41d2dd303b0485a9a6830168513"
+    }
+  ],
+  "new_effect_or_test_replay": false
+}

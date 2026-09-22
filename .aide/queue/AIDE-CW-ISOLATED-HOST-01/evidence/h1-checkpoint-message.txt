@@ -1,0 +1,56 @@
+feat(runtime): add bounded native AppContainer host mechanisms
+
+## Summary
+
+- Add zero-capability suspended launches with actual token and Job checks.
+- Prepare exact held owned objects and retain profile/effect intent evidence.
+
+## Why
+
+- Same-user process containment cannot prove filesystem or credential isolation.
+- A qualified worker host needs actual identity and access-denial observations.
+
+## Changed
+
+- Add focused security and owned-object adapters with a narrow optional Job seam.
+- Reserve profile effects durably and refuse existing or uncertain ownership.
+- Bind grants to created handles, preserve no-reparse traversal and retain failures.
+- Add finite native connection diagnostics and exact local-interface controls.
+- Preserve three failed attempts and one independently verified local native PASS.
+- Record the bounded private-toolchain follow-up and remaining host gates.
+
+## Validation
+
+- Source/refusal 27, existing actual Job 10 and ordinary native 3 tests PASS.
+- Independent 37+3 test replay and exact-source/effect review PASS.
+- One reviewed native effect PASS: actual token, scratch, protected-access facts.
+- Same-address diagnosis reports missing internetClient; both controls succeed.
+- Child exit 0/exited/quiescent; raw timeout retained without relabeling.
+- Task resumption, full AIDE validate, Git planning, export and secret checks PASS.
+- Raw source, native images, reviews, intents and receipts retained in custody.
+
+## Changelog
+
+- Added: native AppContainer launch and exact owned-object security mechanisms.
+- Added: actual local denial evidence and failure-preserving effect reservations.
+- Added: concrete bounded private-image and host qualification follow-up.
+
+## Risks
+
+- Exact native local-endpoint proof does not qualify Python, Git, Codex or models.
+- The passing run used 252/256 finite read-only observations; no robustness claim.
+- AppContainer fault cells, private toolchain and protected credential host remain.
+- No operational activation, new network settings or provider evidence closeout.
+
+## Follow-up
+
+- Implement bounded private-image preparation and isolated runtime denial tests.
+- Complete AppContainer descendants/death/reparse and controlled model channel.
+- Qualify broker/principal/target and actual live continuous-worker integration.
+
+AIDE-Task: AIDE-CW-ISOLATED-HOST-01
+AIDE-Phase: native-appcontainer-host-mechanism
+AIDE-Result: partial
+AIDE-Scope: native host source, direct tests, owned docs and exact raw custody
+AIDE-Token-Impact: finite native effects and compact byte-preserving evidence
+AIDE-Quality-Gate: independent source and exact local native result review passed

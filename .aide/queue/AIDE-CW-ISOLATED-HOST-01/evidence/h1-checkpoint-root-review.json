@@ -1,0 +1,23 @@
+{
+  "schema": "aide.h1-checkpoint-root-review.v1",
+  "reviewed_at": "2026-09-07T02:03:59.935978+00:00",
+  "source_head": "24ed66153f7e5d2008b7178b89c1b03025791152",
+  "scope_sha256": "7b4344a640cb5be79dddd194943ec710299d9e640cb063b2491f684624ec83c3",
+  "reviewed_scope_files": 42,
+  "verified_archive_members": {
+    "first": 53,
+    "network": 40,
+    "diagnostic": 43,
+    "interface": 69
+  },
+  "all_archive_members_exact": true,
+  "index_delta": "Only own H1 status and planning_state; provider changes remain working and unstaged",
+  "source_aggregate": "df77e584e56027cc36979287779fa2911d2ea8cfef36df2ea72679ebd1433abd",
+  "checks": "Verified stored passing helper logs; independent source37/native3 and effect review already bound by original receipts",
+  "review_findings": [
+    "No blocking finding in final scope and documents. Historical progress statements are qualified by later exact outcome.",
+    "Task remains running/PENDING and operational_activation=false. Native proof does not qualify toolchain or unrestricted egress.",
+    "H2 proposal accepted for bounded source and ordinary synthetic tests only; exact real image/grant/launch effects need a later reviewed manifest. Include safe underscore basename support without traversal, ADS, device or collision acceptance."
+  ],
+  "approval": "Local checkpoint of exact42 scope files plus scope and this review metadata; compact staged verification required before commit. No public push, operational host, extra profile or security effect."
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "aide.host.h2-delay-source.v1",
+  "source_base": "830bf30db3e238fe3f8b1335f59a938ae415fe95",
+  "files": {
+    ".aide/scripts/tests/test_continuous_worker_windows_pe.py": "fe77377eab4487862882a2878dbd0ba50daa50f7f14e388fa7d2a947cc6fcbe7",
+    "core/runtime/continuous_worker/windows_pe.py": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d"
+  },
+  "aggregate_sha256": "54567d76c19f80e799c54ac9e65d2f544ed2f9f0f52b4ecf19caf936a67f3c83",
+  "aggregation": "SHA256 of UTF-8 json.dumps(files,sort_keys=True,separators=(comma,colon))",
+  "dependent_inputs": {
+    ".aide/queue/index.yaml": "ddf3bd530a875f707210dcbea722a0ec9dccc80f91dade311ae25f643c81dd97",
+    ".aide/scripts/tests/test_continuous_worker_host.py": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854",
+    ".aide/scripts/tests/test_continuous_worker_python_contract.py": "7759aa897847cfbcd501b5b6bd41d7d76cad82c60a05f50b01d5f7bb3df989c3",
+    ".aide/scripts/tests/test_continuous_worker_python_image.py": "92839124eaceec42a6ca4b72e790513f72f06cd519f19a98143f7d35b9d8398e",
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py": "1da207d0b86bf62ca79f07d0b22e04c6821520d613198d19854d50a51dae1c37",
+    ".aide/scripts/tests/test_continuous_worker_windows_security.py": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "core/runtime/continuous_worker/windows_image.py": "2cac4dd7336b24dba47bc7cd40e510902b23fc99e64b56b349a1cfc0e3734ab8",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/windows_python_contract.py": "98d4a1c95337043477bad27611f4bac5cc2b574aaea37d94dc344543ff689411",
+    "core/runtime/continuous_worker/windows_python_image.py": "b20258182d5610384e8be97e502012ce9760d9b977bd824f5f09a394d3b026c8",
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+  },
+  "patch": {
+    "path": "h2-delay-source.patch",
+    "sha256": "5e84882926d4ad9717c2e582c6dac3b3ae639343233c481e1c5e860f9e7d7f5a",
+    "bytes": 10828,
+    "construction": "git diff --binary 830bf30d -- the exact two tracked source/test paths"
+  },
+  "test_receipt": {
+    "path": "h2-delay-final-tests.json",
+    "sha256": "29548b5d53a615b898bd798ef4ab4408b29762cb31edfbfd0668aa72b15898ef"
+  },
+  "read_only_system_receipt": {
+    "path": "h2-delay-system-readonly-final.json",
+    "sha256": "a9fef62f0e1431c12b4743cbc42f2039790625dd6ea8e769991512467b6ccce3",
+    "source_exact": true,
+    "earlier_first_observation_retained": "h2-delay-system-readonly-first.json"
+  },
+  "effect_qualification": false,
+  "operational_activation": false
+}

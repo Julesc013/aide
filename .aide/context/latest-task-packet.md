@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01: qualify the separate durable Codex coordinator; live acceptance remains pending
+UNSPECIFIED - Continue AIDE convergence: preserve the exact 506-file archive-duplicate cleanup gate, continue non-destructive tracked-output retention work, and adopt the next source-dispositioned control-plane specification family.
 
 ## GOAL
 
-AIDE-BUILD-CONTINUOUS-WORKER-PILOT-01: qualify the separate durable Codex coordinator; live acceptance remains pending
+Continue AIDE convergence: preserve the exact 506-file archive-duplicate cleanup gate, continue non-destructive tracked-output retention work, and adopt the next source-dispositioned control-plane specification family.
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4298
-- approx_tokens: 1075
+- chars: 4498
+- approx_tokens: 1125
 - budget_status: PASS
 - warnings:
   - none

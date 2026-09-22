@@ -1,0 +1,74 @@
+{
+  "schema": "aide.host.h2-source-tests.v1",
+  "source_base": "454e41aa021c2b8b8b48531f2cb67838ecaa7dab",
+  "files": {
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py": "aab4c2f1c047381f26320c31c2441bab316e0264d14a187069b76704e847ac0e",
+    "core/runtime/continuous_worker/windows_image.py": "1fc511ab5316f09f305f1c02cee209fa4b21d017b074e39d6b8ec60ebd94ff5b",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+  },
+  "source_unchanged": true,
+  "runs": [
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".aide/scripts/tests",
+        "-p",
+        "test_continuous_worker_windows_image.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.167263,
+      "log": "h2-image-final-tests.txt",
+      "sha256": "1fba9845f7f7c650bfb3bb2b2edd0683e44619fb6cfa99517b240cc35fd01d98"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".aide/scripts/tests",
+        "-p",
+        "test_continuous_worker_windows_security.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.774693,
+      "log": "h2-h1-final-regression.txt",
+      "sha256": "1639afd8736651934d915025837252f2758ab6328dc96bb0ef1b534e58ad9e93"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".aide/scripts/tests",
+        "-p",
+        "test_continuous_worker_host.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.435193,
+      "log": "h2-job-final-regression.txt",
+      "sha256": "e0889681e9d9003affbce49ffd5ca3899e372192c25f15de9f0619995fab09db"
+    }
+  ],
+  "resolved_reviews": [
+    "NT versus Win32 root spelling: strict component/UTF-16 admission",
+    "8.3 source/output overlap: held normalized native names plus object IDs",
+    "DOS mapping residual: relative held-parent journal and image creation; independent mapping observations",
+    "CRT transfer: O_NOINHERIT, actual flag assertion and both owned-resource failure branches"
+  ],
+  "actual_effect_scope": "H2 ordinary synthetic files, real relative native journals, empty alias directories and modeled image creation/grants/seals; existing Windows Job regression launches ordinary contained fixtures. No package/profile/DACL or real tool image/isolated launch effects.",
+  "operational_activation": false
+}

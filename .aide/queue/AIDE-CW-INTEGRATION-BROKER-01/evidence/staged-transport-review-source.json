@@ -1,0 +1,12 @@
+{
+  "schema": "aide.source-manifest.v1",
+  "base_revision": "f9545c31bafc8d398e566ae2bbb39e5e4e1e5558",
+  "files": {
+    ".aide/scripts/tests/test_continuous_worker_pr_observation.py": "71e3712cf54251c2e5d2a7d4832b9d0d2863dcc6dff5e279738695e84fc364ea",
+    "core/runtime/integration_broker/pr_observation.py": "5f0f568f4e5afb1220e283be623a0107495d1b41c303caed8253fc07ad6dabdd",
+    "core/runtime/integration_broker/service.py": "012d7a492db30b22bf6aa6778a24459ddf8b9929e6f6e849c29d53e5c162572c",
+    "core/runtime/integration_broker/staged_transport.py": "a19cb4be34c966e443558014f0bb028347b7f500aefc948edefc71b642d0f870",
+    "docs/reference/integration-broker-core.md": "6e7c3344cba10ac98a3d5b7490fa9fab93a55e0cb565576ac57dbe8b29bb731c"
+  },
+  "aggregate_sha256": "4319d184fdc7f833528a1f2e8eccd8de9e2e31eb02661b42c78b3b75abf1c18e"
+}

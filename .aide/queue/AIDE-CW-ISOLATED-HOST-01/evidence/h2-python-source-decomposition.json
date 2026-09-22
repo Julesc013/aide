@@ -1,0 +1,17 @@
+{
+  "schema": "aide.host.h2-python-source-decomposition.v1",
+  "original_admission": "h2-python-source-admission.json",
+  "original_admission_sha256": "0e427220c7c7622e02a0a57c65fabdbe097232ac6584e2d0d3a068919e50cb4a",
+  "new_paths": [
+    "core/runtime/continuous_worker/windows_python_contract.py",
+    ".aide/scripts/tests/test_continuous_worker_python_contract.py"
+  ],
+  "rationale": "Separate named system dependency admission from deterministic library-byte construction within the same accepted recipe scope.",
+  "recorded_in": [
+    "task.yaml",
+    "ExecPlan.md",
+    "IMPLEMENT.md"
+  ],
+  "authority_delta": false,
+  "effect_delta": false
+}

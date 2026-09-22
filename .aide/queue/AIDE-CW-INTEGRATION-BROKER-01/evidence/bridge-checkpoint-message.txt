@@ -1,0 +1,54 @@
+feat(runtime): register bounded provider bridge calls
+
+## Summary
+
+- Dispatch exact provider stages through a pinned bounded JSON child bridge.
+- Retain durable calls, owned process identities and uncertain response evidence.
+
+## Why
+
+- A provider adapter needs finite execution and request-bound recovery semantics.
+- Missing replies must never grant a second mutation or restore consumed budgets.
+
+## Changed
+
+- Require fixed command/source pins and external host qualification.
+- Bind exact observation tokens and stage intents before child creation.
+- Reserve finite calls and retained IO in a separate WAL/FULL ledger.
+- Recheck source, qualification and deadlines before creation and during execution.
+- Fence only recorded named Jobs; preserve all uncertain artifacts without replay.
+- Persist and verify bounded stdin/stdout/stderr and response identities.
+- Keep original test/review bytes in one checksum-verified custody archive.
+
+## Validation
+
+- All 43 current bridge, staged, Windows-host and default-lock tests PASS.
+- Independent source review and all 11 bridge replay tests PASS.
+- Source hashes remained unchanged through both current qualification runs.
+- Doctor, validate, actual source-only export and scoped diff checks PASS.
+- Selected index hashes and bounded credential-pattern scan PASS.
+
+## Changelog
+
+- Added: internal registered JSON provider bridge and finite durable call ledger.
+- Changed: provider observations carry their exact reserved attempt token.
+- Tests: actual Windows process death, deadlines, drift, bounds and lost replies.
+
+## Risks
+
+- No operational provider implementation or CLI loading shortcut is installed.
+- Job containment does not establish credential or filesystem isolation.
+- Client deadlines do not supply the required atomic server mutation predicate.
+
+## Follow-up
+
+- Implement authenticated provider facts and actual protected host boundaries.
+- Qualify a concrete strict-check server contract under a reviewed target item.
+- Keep full broker completion and operational activation false until proved.
+
+AIDE-Task: AIDE-CW-INTEGRATION-BROKER-01
+AIDE-Phase: broker-registered-provider-bridge
+AIDE-Result: partial
+AIDE-Scope: broker source, direct tests, reference and exact task evidence
+AIDE-Token-Impact: bounded calls, retained IO and compact original-byte custody
+AIDE-Quality-Gate: exact-source tests and independent root review passed

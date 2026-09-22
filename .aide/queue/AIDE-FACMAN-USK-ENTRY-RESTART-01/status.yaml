@@ -1,6 +1,9 @@
 schema_version: aide.queue-status.v0
 id: AIDE-FACMAN-USK-ENTRY-RESTART-01
-status: planned
-planning_state: admitted_backlog
+status: running
+planning_state: execution_active
 result: PENDING
-updated_at: 2026-09-06
+updated_at: 2026-09-07
+current_slice: staged_child_commit_authority_admission_and_refusal
+completed_replay_scope: directory_and_stored_deflate_zip_byte_zero_replay
+provider_qualification_dependency: protected_commit_authority_generation_cleanup_and_adoption

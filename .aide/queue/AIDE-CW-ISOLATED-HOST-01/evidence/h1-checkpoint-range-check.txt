@@ -1,0 +1,6 @@
+AIDE Lite commit range check
+result: PASS
+range: 24ed66153f7e5d2008b7178b89c1b03025791152..454e41aa021c2b8b8b48531f2cb67838ecaa7dab
+commit_count: 1
+policy: .aide/policies/commit-messages.yaml
+- 454e41a PASS feat(runtime): add bounded native AppContainer host mechanisms

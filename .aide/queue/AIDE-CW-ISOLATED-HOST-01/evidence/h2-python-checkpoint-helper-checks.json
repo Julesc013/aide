@@ -1,0 +1,136 @@
+{
+  "schema": "aide.host.h2-python-checkpoint-helper-checks.v1",
+  "checks": [
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.5017281000036746,
+      "log": "h2-python-checkpoint-task-inspect.txt",
+      "bytes": 382,
+      "sha256": "927b230535e66c55bd3d437e7bcfaabcb0fd62f760b5951e969c98397d3bbabf"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.4825369999743998,
+      "log": "h2-python-checkpoint-task-noop.txt",
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-CW-ISOLATED-HOST-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.4985813000239432,
+      "log": "h2-python-checkpoint-task-recover.txt",
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.7318187998607755,
+      "log": "h2-python-checkpoint-validate.txt",
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "policy"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.5263267001137137,
+      "log": "h2-python-checkpoint-git-policy.txt",
+      "bytes": 5553,
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "detect"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.053075999952853,
+      "log": "h2-python-checkpoint-git-detect.txt",
+      "bytes": 560,
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.296942099928856,
+      "log": "h2-python-checkpoint-git-plan.txt",
+      "bytes": 689,
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-message.txt"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.535438199993223,
+      "log": "h2-python-checkpoint-message-check.txt",
+      "bytes": 2484,
+      "sha256": "ab603cfdef7125121f0dadb95e7d405b6980a8e7bcbf9815bd9549a648f5bc27"
+    }
+  ],
+  "report_originals_restored": {
+    ".aide/git/workflow-detection.json": true,
+    ".aide/git/workflow-detection.md": true,
+    ".aide/git/latest-helper-plan.json": true,
+    ".aide/git/latest-helper-plan.md": true,
+    ".aide/git/aide-dev-main-plan.json": true,
+    ".aide/git/aide-dev-main-plan.md": true
+  },
+  "source_unchanged": true,
+  "index_unchanged": true,
+  "branch_mutation": false,
+  "provider_records_untouched": true
+}

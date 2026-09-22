@@ -1,0 +1,14 @@
+{
+  "command": "python -B -m unittest discover -s .aide/scripts/tests -p test_continuous_worker_pr_observation.py -v",
+  "exit_code": 0,
+  "seconds": 72.525,
+  "files": {
+    "core/runtime/integration_broker/staged_transport.py": "a19cb4be34c966e443558014f0bb028347b7f500aefc948edefc71b642d0f870",
+    "core/runtime/integration_broker/service.py": "012d7a492db30b22bf6aa6778a24459ddf8b9929e6f6e849c29d53e5c162572c",
+    "core/runtime/integration_broker/pr_observation.py": "5f0f568f4e5afb1220e283be623a0107495d1b41c303caed8253fc07ad6dabdd",
+    ".aide/scripts/tests/test_continuous_worker_pr_observation.py": "71e3712cf54251c2e5d2a7d4832b9d0d2863dcc6dff5e279738695e84fc364ea"
+  },
+  "source_unchanged": true,
+  "log": "staged-remediation-tests.txt",
+  "log_sha256": "73c96d219601e2d4ffa303bcc182ed69ee9eaf9c9346785f736841c7bed81675"
+}

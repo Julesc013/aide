@@ -1,0 +1,6 @@
+AIDE Lite commit range check
+result: PASS
+range: 830bf30db3e238fe3f8b1335f59a938ae415fe95..236da6c2ba0df8cf319849c7632c04727afc392d
+commit_count: 1
+policy: .aide/policies/commit-messages.yaml
+- 236da6c PASS fix(runtime): parse bounded optional delay import metadata

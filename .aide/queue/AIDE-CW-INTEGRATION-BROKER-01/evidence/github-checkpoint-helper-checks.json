@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "name": "github-checkpoint-git-policy.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 0.528,
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd"
+    },
+    {
+      "name": "github-checkpoint-git-detect.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 4.808,
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86"
+    },
+    {
+      "name": "github-checkpoint-git-plan.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 4.858,
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de"
+    }
+  ],
+  "generated_reports_preserved_then_restored": [
+    ".aide/git/workflow-detection.json",
+    ".aide/git/workflow-detection.md",
+    ".aide/git/latest-helper-plan.json",
+    ".aide/git/latest-helper-plan.md",
+    ".aide/git/aide-dev-main-plan.json",
+    ".aide/git/aide-dev-main-plan.md"
+  ],
+  "branch_mutation": false,
+  "message_check": "PASS",
+  "scoped_diff_check": "PASS",
+  "dirty_classification": "Only admitted broker/target/host-plan/docs, historical raw custody and separately owned provider entry progress; provider entry files/index activation excluded.",
+  "missing_upstream": "Existing task branch push is owned by root; no ref or upstream mutation by this worker."
+}

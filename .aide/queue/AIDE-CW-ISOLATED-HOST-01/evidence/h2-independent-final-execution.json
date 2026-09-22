@@ -1,0 +1,102 @@
+{
+  "schema": "aide.h2.independent-final-execution.v1",
+  "status": "pass",
+  "head": "454e41aa021c2b8b8b48531f2cb67838ecaa7dab",
+  "base_tree": "28e9e0e20315f9458f60aa201eaa88174381984e",
+  "source_manifest_sha256": "9e6c745cdd0014cff17b8a2acc6e8b26e32d87a29ad1be402439405778cb859f",
+  "source_aggregate": "9be03cf59281c72ec8152cabd5acf41b4477bff6963643a2e4adb573feed9a3d",
+  "patch_sha256": "4a35dbe32c879d3a6fec3a86fc331187959ae7b0a7b69cbccc825351f70aa826",
+  "patch_reconstructed_exactly": true,
+  "inputs": {
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py": "aab4c2f1c047381f26320c31c2441bab316e0264d14a187069b76704e847ac0e",
+    "core/runtime/continuous_worker/windows_image.py": "1fc511ab5316f09f305f1c02cee209fa4b21d017b074e39d6b8ec60ebd94ff5b",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847",
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    ".aide/scripts/tests/test_continuous_worker_windows_security.py": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725",
+    ".aide/scripts/tests/test_continuous_worker_host.py": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854"
+  },
+  "source_index_unchanged": true,
+  "prior_archives": [
+    {
+      "path": "h2-before-root-alias-evidence.zip",
+      "sha256": "db52b7b601f98013619b65cc723776554e9b559e8983bd806165ddd21948ef33",
+      "members": 12
+    },
+    {
+      "path": "h2-before-overlap-evidence.zip",
+      "sha256": "41f8e2ad294518bddb316923d77bdcd7d76e225253546a93bcbf22e44a4ff2da",
+      "members": 12
+    }
+  ],
+  "retained_failure_replays": [
+    {
+      "case": "retained-native-trailing-dot-root",
+      "status": "refused",
+      "detail": "ambiguous Windows root component refused"
+    },
+    {
+      "case": "retained-8dot3-source-output-overlap",
+      "status": "refused",
+      "detail": "source or parent alias differs from its held normalized name"
+    }
+  ],
+  "runs": [
+    {
+      "argv": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".aide/scripts/tests",
+        "-p",
+        "test_continuous_worker_windows_image.py",
+        "-v"
+      ],
+      "exit": 0,
+      "seconds": 1.1664326000027359,
+      "log": "h2-independent-final-image.log",
+      "sha256": "e7874a37d99b5e02b96e9fe6a30dc04b478c505c356c2a8b97fd09237bafd11c"
+    },
+    {
+      "argv": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".aide/scripts/tests",
+        "-p",
+        "test_continuous_worker_windows_security.py",
+        "-v"
+      ],
+      "exit": 0,
+      "seconds": 0.6808225000277162,
+      "log": "h2-independent-final-security.log",
+      "sha256": "40d289a537a9140209e9a371def899e0caedfc5523d49c6addf287fc88a7d477"
+    },
+    {
+      "argv": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".aide/scripts/tests",
+        "-p",
+        "test_continuous_worker_host.py",
+        "-v"
+      ],
+      "exit": 0,
+      "seconds": 3.3779453998431563,
+      "log": "h2-independent-final-job.log",
+      "sha256": "2805087480b53bee58a672878007fccd71ed2c64546102fcbc54bba15fea0ae8"
+    }
+  ],
+  "authority": "ordinary synthetic file and Job tests only; no real tools, package grants, profile or AppContainer launch effects"
+}

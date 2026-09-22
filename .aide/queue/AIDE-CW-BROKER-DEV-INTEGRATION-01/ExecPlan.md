@@ -25,12 +25,13 @@ broker/runtime line and current dev, then qualify that combined source for dev.
 - [x] Run a synthetic merge and enumerate conflict classes.
 - [x] Create an isolated integration worktree from current dev.
 - [x] Admit this exact owner-prioritized integration WorkUnit.
-- [ ] Commit and publish the integration admission checkpoint.
-- [ ] Merge exact source with no commit and preserve both parents.
-- [ ] Resolve fourteen conflicts against current repository truth.
-- [ ] Verify current dev protected paths were not downgraded.
-- [ ] Run focused broker/runtime and packaging regressions.
-- [ ] Run canonical repository and commit-range checks.
+- [x] Commit and publish the integration admission checkpoint.
+- [x] Merge exact source with no commit and preserve both parents.
+- [x] Resolve fourteen conflicts against current repository truth.
+- [x] Verify current dev protected paths were not downgraded.
+- [x] Run focused broker/runtime and packaging regressions.
+- [x] Run canonical repository structural checks.
+- [ ] Run commit-range checks after the merge commit exists.
 - [ ] Publish the exact integration candidate.
 - [ ] Run the landing helper, merge to dev, validate, push, and observe refs.
 
@@ -62,3 +63,25 @@ Until the merge commit is published, aborting the merge returns this isolated
 branch to its admission commit without touching either parent. After
 publication, fix forward. Never rewrite the published source or target refs.
 
+## Conflict Resolution
+
+- Current `dev` won for four generated latest-intake projections and the three
+  completed documentation-integration records.
+- The broker source supplied its adopted integration-stage effect contract and
+  navigation additions.
+- Campaign, queue-index, `PLANS.md`, and `IMPLEMENT.md` records were combined
+  so the broker/host/target history and the later delivered-pack slices remain.
+- The queue index now contains 261 unique task ids, including all entries unique
+  to either parent and the dedicated integration WorkUnit.
+- No conflict occurred in `core/runtime/**` or the focused test modules.
+
+## Candidate Validation
+
+- Continuous-worker, broker, provider, GitHub, host, image, PE, and security
+  discovery ran 312 cases: 311 passed and one Windows symlink-creation case was
+  skipped because the current process lacks that privilege.
+- Portable export/import and ownership-aware update discovery passed 25 cases.
+- Release-bundle discovery passed 10 cases, including extracted-archive import.
+- `aide_lite.py doctor` and `aide_lite.py validate` both returned `PASS`.
+- The helper correctly refused to produce a clean-tree landing plan while the
+  merge was uncommitted; a fresh plan is required after candidate publication.

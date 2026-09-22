@@ -1,0 +1,30 @@
+{
+  "schema": "aide.host.h1-root-native-result-review.v1",
+  "captured_at": "2026-09-07T01:45:01.329625+00:00",
+  "receipt_sha256": "1d56d971e9db3d96475163c7e9f41daad9d6cfb4c0782225d1709bc90e6bc8ec",
+  "effect_sha256": "5899f09a73d812b32d5ec59a6014cbe83371e850f3e0ef19e4b320cc39d20d58",
+  "result": "pass_exact_native_effect_only",
+  "source_files_verified": 8,
+  "native_observation": {
+    "scratch_error": 0,
+    "read_error": 5,
+    "write_error": 5,
+    "dacl_error": 5,
+    "controller_error": 5,
+    "network_error": 10060,
+    "diagnostic_status": 0,
+    "missing_capability": 2
+  },
+  "missing_capability_label": "NETISO_ERROR_TYPE_INTERNET_CLIENT",
+  "read_only_interface_observations": 252,
+  "control_endpoint": [
+    "172.21.208.1",
+    64657
+  ],
+  "original_creation_proof_unchanged": true,
+  "quiescent": true,
+  "activation": false,
+  "toolchain_host_qualified": false,
+  "ceiling": "One exact owned native image/token/local endpoint. No generic network isolation, topology lock, private toolchain or model/credential host qualification. Three prior failed attempts remain failed.",
+  "enum_reference": "https://learn.microsoft.com/windows/win32/api/netfw/ne-netfw-netiso_error_type"
+}

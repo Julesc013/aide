@@ -1,0 +1,482 @@
+{
+  "schema": "aide.host.input-custody.v1",
+  "archive": "h2-input-evidence.zip",
+  "archive_bytes": 396965,
+  "archive_sha256": "df1c3d806c40777e65d5567968f93c909c79d7c091a96f916584bd8213d920fc",
+  "members": [
+    {
+      "member": "external/owned-input-parent/system-input-21a849a443434f44890e62b7a90198bc.intent.jsonl",
+      "original_path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-input-21a849a443434f44890e62b7a90198bc.intent.jsonl",
+      "bytes": 5446,
+      "sha256": "7d43237ba9455c7222a0160261852f48e4fd4747d236eb43936d3a5710368a4f"
+    },
+    {
+      "member": "external/owned-input-parent/system-input-21a849a443434f44890e62b7a90198bc/stderr",
+      "original_path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-input-21a849a443434f44890e62b7a90198bc\\stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "member": "external/owned-input-parent/system-input-21a849a443434f44890e62b7a90198bc/stdin",
+      "original_path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-input-21a849a443434f44890e62b7a90198bc\\stdin",
+      "bytes": 1140,
+      "sha256": "8290ce128587b11ca86b5403be6c2a4d722f66daa9585f505cc1b8851b4567fb"
+    },
+    {
+      "member": "external/owned-input-parent/system-input-21a849a443434f44890e62b7a90198bc/stdout",
+      "original_path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-input-21a849a443434f44890e62b7a90198bc\\stdout",
+      "bytes": 4531,
+      "sha256": "068adfd89fabb19464e8c37438936a714fdc91a27844f4eb64245aaa7b228cd0"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-delay-system-readonly-final.json",
+      "bytes": 84668,
+      "sha256": "a9fef62f0e1431c12b4743cbc42f2039790625dd6ea8e769991512467b6ccce3"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-controller-stderr.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-actual-controller-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-controller-stdout.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-actual-controller-stdout.txt",
+      "bytes": 4914,
+      "sha256": "8c2e3a795bdb1ffab630d216b22ea415693a5658f955366e792bec13019cc2a1"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-execution.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-actual-execution.json",
+      "bytes": 2983,
+      "sha256": "c7ad28de4426eefdf6af8a44bb38b8ff1c0a402a1a7d5653c522cbf98785388e"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-summary.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-actual-summary.json",
+      "bytes": 1427,
+      "sha256": "6f800d691eb8f1b52b1248c0016ee76d6c6c44211439dfa922fe3d3362914748"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-aide-validate.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-aide-validate.txt",
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-git-detect.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-git-detect.txt",
+      "bytes": 560,
+      "sha256": "4a55f6d9bf463e86570bd616f59157726ab7c650c24300f35d920808b29c3b86"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-git-plan.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-git-plan.txt",
+      "bytes": 689,
+      "sha256": "2db224e1d71bc8121de0e0e193c76e708c681d548db8126a81478b87c80b50de"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-git-policy.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-git-policy.txt",
+      "bytes": 5553,
+      "sha256": "3dd67ff22fc03740db2e9d1bdf350d836fa454e56f30f782dab0e2c2d5a8d6fd"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-helper-checks.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-helper-checks.json",
+      "bytes": 5616,
+      "sha256": "46febf7ab63f26b4b18ba24ab4bc7e1180c0bbaf6654f2c50cd7d9aa7aa82ec2"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-inspect.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-inspect.txt",
+      "bytes": 382,
+      "sha256": "90bb8b3b652bfa8fab0d372afd6d4729264621fce85d64d6a7a47ad490af462e"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-message-check-initial.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-message-check-initial.txt",
+      "bytes": 2483,
+      "sha256": "a6b0c694736eef77d856317830bf61a11b6de9f078e2f11981e7d74bd5265fdc"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-message-recheck.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-message-recheck.txt",
+      "bytes": 2483,
+      "sha256": "a6b0c694736eef77d856317830bf61a11b6de9f078e2f11981e7d74bd5265fdc"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-message.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-message.txt",
+      "bytes": 1682,
+      "sha256": "aad13cb776805d8052fb7d0be4e3fe79f7e51e42aade749915b3e75e2fd6bb83"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-noop.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-noop.txt",
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-preparation-history.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-preparation-history.json",
+      "bytes": 772,
+      "sha256": "eba76ff55fb8c8c1e42e1ecec1943fc347c558c9e0e27148996dff4ad89958c6"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-recover.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-checkpoint-recover.txt",
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-driver-plan.md",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-driver-plan.md",
+      "bytes": 2947,
+      "sha256": "dd9a04500aa26188fa2dac408555f9bf4d6c91f241ad658e0583a34d884c8b04"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-effect-manifest.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-effect-manifest.json",
+      "bytes": 4369,
+      "sha256": "e5655f469eef408b87669b5e55700fae6fe9b5a2c5d7bdbee0d05359e537df08"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-first-tests.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-first-tests.json",
+      "bytes": 298,
+      "sha256": "0fe67a7b989ee050ba87327b1e27c8190d77e8da4103da63cca14941be477380"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-first-tests.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-first-tests.txt",
+      "bytes": 3449,
+      "sha256": "49c367bed894a597860dc6c64ab77c6e36810c9ecb9f5ee04031041d1ddfaa1a"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-aide-dev-main-plan.json.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-generated-aide-dev-main-plan.json.bin",
+      "bytes": 4472,
+      "sha256": "a942b826a196f9a522044c2591321261ea88f767bf2649d04c082f3a551df24b"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-aide-dev-main-plan.md.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-generated-aide-dev-main-plan.md.bin",
+      "bytes": 1300,
+      "sha256": "8b1199fe875e45fcaa441801a9fbbe65bec8661096366ff4f4c7a5f7274d5f2a"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-latest-helper-plan.json.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-generated-latest-helper-plan.json.bin",
+      "bytes": 2736,
+      "sha256": "51b78ddc4eb5e850a8840c69c51960c3ed23d1aa9a225afb571d4795a3286238"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-latest-helper-plan.md.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-generated-latest-helper-plan.md.bin",
+      "bytes": 987,
+      "sha256": "b531de80c3b922981b9ab088c3f33ba987223699f566d30bb56f59567f5dae05"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-workflow-detection.json.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-generated-workflow-detection.json.bin",
+      "bytes": 1037,
+      "sha256": "895309cae836d23f4fab235c32f7815f360896c7a06db45d142ebab41706de9e"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-generated-workflow-detection.md.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-generated-workflow-detection.md.bin",
+      "bytes": 748,
+      "sha256": "cc65bd06ccf5ba47f49e7c4f6666f8491be810a2f12a4532b74d9c5fdaadce0b"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-aide-dev-main-plan.json.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-original-aide-dev-main-plan.json.bin",
+      "bytes": 3639,
+      "sha256": "e22ac07d236957c4fb552125a392a8747dad23c97f52812200c3ee4a9af1b7ec"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-aide-dev-main-plan.md.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-original-aide-dev-main-plan.md.bin",
+      "bytes": 1248,
+      "sha256": "ab2bf4d153d71f0c1455765df8e2f72165c517e0735ac887040dd01e4dcd7d5a"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-latest-helper-plan.json.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-original-latest-helper-plan.json.bin",
+      "bytes": 2066,
+      "sha256": "5f2dd61e7338200b579e890117e2c3e1379db1f3b44b0c411fbcaa4cdf1ee893"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-latest-helper-plan.md.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-original-latest-helper-plan.md.bin",
+      "bytes": 958,
+      "sha256": "791bff9184aeaa5ad6bec475a7ef4aec0d7dcbfbc775704bf71a423f9c6fb5a4"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-workflow-detection.json.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-original-workflow-detection.json.bin",
+      "bytes": 788,
+      "sha256": "ca236c475ba5db376a176d5262741243de2288df736ea55c0ff01b1bf5a5e7ea"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-git-original-workflow-detection.md.bin",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-git-original-workflow-detection.md.bin",
+      "bytes": 725,
+      "sha256": "ff505331b170245262dd0cd79f160278fff0d9bce3ba4d120589e4e0d794f0ac"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-parent-preparation.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-parent-preparation.json",
+      "bytes": 778,
+      "sha256": "4c91dc56169e34fe92f3f4a22f3df1e7bb9934b6afcd88d3a058b93eafbd96c7"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-reviewed-tests.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-reviewed-tests.json",
+      "bytes": 1099,
+      "sha256": "b913e30e47729b42d24538f9100c139f544fa982104b697646374091a4e483b0"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-reviewed-tests.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-reviewed-tests.txt",
+      "bytes": 11466,
+      "sha256": "a97301369dc32ad5afa18ca0d83329cdc71da78b4509694dd00acd943281d99c"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-actual-review.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-root-actual-review.json",
+      "bytes": 1323,
+      "sha256": "9830b14e4cf47a12db25794ee453f9ee7549c41d2dd303b0485a9a6830168513"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-orchestration-custody.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-root-orchestration-custody.json",
+      "bytes": 1776,
+      "sha256": "addcd0e03332e715005b50afbc484b2894ac4217d294aaf7e2a4546cba592985"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-source-effect-review.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-root-source-effect-review.json",
+      "bytes": 2012,
+      "sha256": "9816f1bcda641c2f2d0b6cfe12b083cf5da2e1c40124832e6db89b336ba6a8a5"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-tests.log",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-root-tests.log",
+      "bytes": 12184,
+      "sha256": "10bfc67c913ccec8f061245b3b29ec34cc765f068587f590a555801272f2819e"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-checks.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-source-checks.json",
+      "bytes": 795,
+      "sha256": "e0cee25b039fc51b521144fb3e47d9fd641d9b011f5d0722f098cd14f8251f44"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-manifest.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-source-manifest.json",
+      "bytes": 3059,
+      "sha256": "68ec1a87f6e5e95193a5067c2c94907e0d38382863ce404f98984df5e0ac9cec"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-review-notes.md",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-source-review-notes.md",
+      "bytes": 3381,
+      "sha256": "8a713e349996bf0c2652f3adfff74f5c18d59562e71fe76a083399908fe42c24"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source.patch",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-source.patch",
+      "bytes": 50831,
+      "sha256": "26012848aeab30cf8c16778593d79688ceffc21edb82b2ab8a42d4ec0731f648"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-start-checks.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-start-checks.json",
+      "bytes": 1184,
+      "sha256": "b02494aa6e4e64e59c76f858688312e2ae4d11716edc6c53c00cbf3381477677"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-start-inspect.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-start-inspect.txt",
+      "bytes": 382,
+      "sha256": "0c72860fcfbb65c369ca66aa0edf1ca1df78ee691ce25cfccf600ee0f27f5756"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-start-noop-check.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-start-noop-check.txt",
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-start-recover.txt",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-input-start-recover.txt",
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-checkpoint-commit-receipt.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-checkpoint-commit-receipt.json",
+      "bytes": 11873,
+      "sha256": "d29b374079823c82b3b87b9a1c8ed1362d873efa95345dce170d416675dd50bf"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-root-commit-review.json",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-system-root-commit-review.json",
+      "bytes": 657,
+      "sha256": "494706e570456e47369ba7e9de55afaec8a60ada8880067849935ece432dc77d"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_input_root_actual_review.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2_input_root_actual_review.py",
+      "bytes": 4652,
+      "sha256": "694ca6f3d92142494280169a7a087295f81ef47aab7139230bf6b20a3af8e710"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_input_root_source_review.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2_input_root_source_review.py",
+      "bytes": 7348,
+      "sha256": "f3403441302cf16ea7173eefa77ec5b85dccbbc4a95d05bc6923a4bf0eaeb180"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2_system_input.py",
+      "bytes": 16430,
+      "sha256": "1a394d243e08cad2264b6e803d150a9dccdbec779851c9e9e5da41acfa6e70d7"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_controller.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2_system_input_controller.py",
+      "bytes": 12113,
+      "sha256": "b8a886881ed53d1b3a28bda44e15e45cc6162588ffd720a2d6de00942ee23456"
+    },
+    {
+      "member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_system_input_tests.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2_system_input_tests.py",
+      "bytes": 20468,
+      "sha256": "80f482fb36e7cd2e1cdf849cd356c0bf150490f3a41f2581502d860140605d47"
+    },
+    {
+      "member": "files/.aide/queue/index.yaml",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\index.yaml",
+      "bytes": 387345,
+      "sha256": "ddf3bd530a875f707210dcbea722a0ec9dccc80f91dade311ae25f643c81dd97"
+    },
+    {
+      "member": "files/.aide/scripts/tests/test_continuous_worker_system_observation.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests\\test_continuous_worker_system_observation.py",
+      "bytes": 23154,
+      "sha256": "7f505ce82071c2c2bd361cdd8c0313835fc51ca4213328fcef660589205449d7"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/__init__.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\__init__.py",
+      "bytes": 86,
+      "sha256": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/state.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\state.py",
+      "bytes": 9225,
+      "sha256": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/windows_image.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_image.py",
+      "bytes": 23638,
+      "sha256": "2cac4dd7336b24dba47bc7cd40e510902b23fc99e64b56b349a1cfc0e3734ab8"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/windows_job.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_job.py",
+      "bytes": 13864,
+      "sha256": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/windows_pe.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_pe.py",
+      "bytes": 12296,
+      "sha256": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/windows_python_contract.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_python_contract.py",
+      "bytes": 10761,
+      "sha256": "98d4a1c95337043477bad27611f4bac5cc2b574aaea37d94dc344543ff689411"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/windows_python_image.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_python_image.py",
+      "bytes": 8004,
+      "sha256": "b20258182d5610384e8be97e502012ce9760d9b977bd824f5f09a394d3b026c8"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/windows_security.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_security.py",
+      "bytes": 14041,
+      "sha256": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/windows_security_objects.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_security_objects.py",
+      "bytes": 16361,
+      "sha256": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+    },
+    {
+      "member": "files/core/runtime/continuous_worker/windows_system_observation.py",
+      "original_path": "D:\\Projects\\AIDE\\aide\\core\\runtime\\continuous_worker\\windows_system_observation.py",
+      "bytes": 22817,
+      "sha256": "de1bfc5a12357c4a8815321531b6dad3c5b599d30c42fa5dec63a96b57fbd697"
+    }
+  ],
+  "raw_to_git_text_projections": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-source-effect-review.json": {
+      "raw_sha256": "9816f1bcda641c2f2d0b6cfe12b083cf5da2e1c40124832e6db89b336ba6a8a5",
+      "git_lf_sha256": "9816f1bcda641c2f2d0b6cfe12b083cf5da2e1c40124832e6db89b336ba6a8a5",
+      "raw_member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-source-effect-review.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-actual-review.json": {
+      "raw_sha256": "9830b14e4cf47a12db25794ee453f9ee7549c41d2dd303b0485a9a6830168513",
+      "git_lf_sha256": "9830b14e4cf47a12db25794ee453f9ee7549c41d2dd303b0485a9a6830168513",
+      "raw_member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-actual-review.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-orchestration-custody.json": {
+      "raw_sha256": "addcd0e03332e715005b50afbc484b2894ac4217d294aaf7e2a4546cba592985",
+      "git_lf_sha256": "addcd0e03332e715005b50afbc484b2894ac4217d294aaf7e2a4546cba592985",
+      "raw_member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-root-orchestration-custody.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-effect-manifest.json": {
+      "raw_sha256": "e5655f469eef408b87669b5e55700fae6fe9b5a2c5d7bdbee0d05359e537df08",
+      "git_lf_sha256": "e5655f469eef408b87669b5e55700fae6fe9b5a2c5d7bdbee0d05359e537df08",
+      "raw_member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-effect-manifest.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-manifest.json": {
+      "raw_sha256": "68ec1a87f6e5e95193a5067c2c94907e0d38382863ce404f98984df5e0ac9cec",
+      "git_lf_sha256": "68ec1a87f6e5e95193a5067c2c94907e0d38382863ce404f98984df5e0ac9cec",
+      "raw_member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-manifest.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-reviewed-tests.json": {
+      "raw_sha256": "b913e30e47729b42d24538f9100c139f544fa982104b697646374091a4e483b0",
+      "git_lf_sha256": "b913e30e47729b42d24538f9100c139f544fa982104b697646374091a4e483b0",
+      "raw_member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-reviewed-tests.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-execution.json": {
+      "raw_sha256": "c7ad28de4426eefdf6af8a44bb38b8ff1c0a402a1a7d5653c522cbf98785388e",
+      "git_lf_sha256": "c7ad28de4426eefdf6af8a44bb38b8ff1c0a402a1a7d5653c522cbf98785388e",
+      "raw_member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-actual-execution.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-checks.json": {
+      "raw_sha256": "e0cee25b039fc51b521144fb3e47d9fd641d9b011f5d0722f098cd14f8251f44",
+      "git_lf_sha256": "e0cee25b039fc51b521144fb3e47d9fd641d9b011f5d0722f098cd14f8251f44",
+      "raw_member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-source-checks.json"
+    },
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-helper-checks.json": {
+      "raw_sha256": "46febf7ab63f26b4b18ba24ab4bc7e1180c0bbaf6654f2c50cd7d9aa7aa82ec2",
+      "git_lf_sha256": "46febf7ab63f26b4b18ba24ab4bc7e1180c0bbaf6654f2c50cd7d9aa7aa82ec2",
+      "raw_member": "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-input-checkpoint-helper-checks.json"
+    }
+  },
+  "boundary": "Raw archive member bytes are authoritative for original recorded digests. Working originals remain retained. Imported dependency/index snapshots are historical inputs only; no provider/index admission changes. ROOT review source is retained logical here-string source, not falsely reconstructed original stdin bytes. Initial24 test history is preserved separately from exact final67/independent73. All six actual artifacts preserve the one consumed read-facts effect; no new effect occurs during custody."
+}

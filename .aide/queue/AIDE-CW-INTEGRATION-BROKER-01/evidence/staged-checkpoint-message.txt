@@ -1,0 +1,52 @@
+feat(runtime): reconcile durable broker integration stages
+
+## Summary
+
+- Advance one exact integration stage per broker reconciliation call.
+- Retain independent durable intents and bounded provider read attempts.
+
+## Why
+
+- A single apply intent cannot safely finish later PR stages after a lost reply.
+- Failed reads and expiry between intent and dispatch must fail closed.
+
+## Changed
+
+- Bind deterministic literal commit objects to the fixed request and PR plan.
+- Keep query free of mutation dispatch and preserve the legacy fixture contract.
+- Re-enter leased candidate content validation before every new stage intent.
+- Reserve failed and successful read attempts before invoking the adapter.
+- Recheck current target, plan and authority deadlines at actual dispatch.
+- Preserve reviewed source, historical findings and original evidence in ZIP.
+
+## Validation
+
+- Pre-remediation regression: 82 PASS, one explicit symlink privilege skip.
+- Current 21 direct tests PASS, including actual intent-boundary process death,
+  failed-read budgets, concurrency and both post-intent expiry boundaries.
+- Root independent current-source review and 21 tests PASS.
+- Doctor, validate, source-only export, index hashes and diff checks PASS.
+- Historical 83-test and current 21-test evidence retain separate source binds.
+
+## Changelog
+
+- Added: typed staged broker reconciliation and literal candidate commits.
+- Fixed: unbounded failed reads and dispatch after intent-boundary expiry.
+- Tests: real local Git and process death with scripted remote service facts.
+
+## Risks
+
+- No operational provider bridge or authenticated API adapter is installed.
+- Host/store isolation and exact-base server enforcement remain unqualified.
+
+## Follow-up
+
+- Implement the bounded registered JSON bridge and actual API normalization.
+- Preserve independent review and real host/server qualification before activation.
+
+AIDE-Task: AIDE-CW-INTEGRATION-BROKER-01
+AIDE-Phase: broker-staged-reconciliation
+AIDE-Result: partial
+AIDE-Scope: broker source, direct tests, reference and exact task evidence
+AIDE-Token-Impact: finite reusable stage observations and compact evidence custody
+AIDE-Quality-Gate: exact-source tests and independent root review passed

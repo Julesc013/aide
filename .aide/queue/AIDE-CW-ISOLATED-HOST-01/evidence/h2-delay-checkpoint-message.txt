@@ -1,0 +1,42 @@
+fix(runtime): parse bounded optional delay import metadata
+
+## Summary
+
+- Account for unbound optional delay tables in the exact Windows PE inputs.
+
+## Why
+
+- Timestamp-zero Windows layouts may reserve an optional bound-IAT table.
+
+## Changed
+
+- Validate finite lookup, IAT, bound and unload spans without following addresses.
+- Admit mapped zero-filled IAT storage while keeping names and lookups file-backed.
+- Retain nonzero timestamp, malformed table and symbol-budget refusals.
+
+## Validation
+
+- Local and independent 101 source and ordinary Windows tests PASS.
+- Numeric symbol boundaries and unchanged eight-DLL metadata replay PASS.
+- AIDE validation, portable export exclusion and secret checks PASS.
+
+## Changelog
+
+- Fixed: exact unbound optional-delay metadata compatibility under existing caps.
+
+## Risks
+
+- The observed API-set inventory exceeds the unchanged contract row ceiling.
+- Actual native mappings, private image grants and loader qualification remain.
+
+## Follow-up
+
+- Review the exact required API/dependency admission before host qualification.
+- Preserve separate native/image effect review and no operational activation.
+
+AIDE-Task: AIDE-CW-ISOLATED-HOST-01
+AIDE-Phase: optional-delay-metadata-source
+AIDE-Result: partial
+AIDE-Scope: PE source, direct regression, own docs and raw custody
+AIDE-Token-Impact: finite metadata and compact evidence
+AIDE-Quality-Gate: independent exact-source and 101-test replay passed

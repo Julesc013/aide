@@ -1,0 +1,55 @@
+feat(runtime): recover frozen broker requests through coordinator v1
+
+## Summary
+
+- Add bounded delta handoff and owned preparation recovery to the broker.
+- Wire coordinator v1 to external authority and exact integration receipts.
+
+## Why
+
+- Whole-tree snapshots cannot handle the admitted large repository, and a
+  broker crash before prepared must not strand an authorized request forever.
+
+## Changed
+
+- Keep unchanged content in a verified trusted Git base and export bounded
+  changed blobs/deletions after a literal-byte clone preflight.
+- Refuse corrupt/missing objects, transitive alternates, promisor stores and
+  config includes; disable replacement refs and every Git transport protocol.
+- Create preparation directory handles atomically after durable generation
+  intents, retain interrupted generations and enforce a three-generation cap.
+- Persist v1 handoff/authority/request identities and reconcile through the
+  broker ledger, preserving no-repeat behavior after transport apply intent.
+- Preserve raw validation and independent-review bytes in verified archives.
+
+## Validation
+
+- Full continuous-worker/broker suite: 87 PASS, one symlink privilege skip.
+- Root independent source review and nine focused tests: PASS.
+- Repository doctor, validate and source-only export enumeration: PASS.
+- Exact 21-file source manifest and archived evidence custody: PASS.
+
+## Changelog
+
+- Added: coordinator-v1 frozen integration and broker-owned crash recovery.
+- Fixed: complete-tree entry limits and stranded pre-prepared requests.
+- Tests: real Windows object substitution/process death and local Git integrity.
+
+## Risks
+
+- Same-user Job Objects do not establish credential/filesystem isolation.
+- Production authority issuance and PR/check transport remain unqualified.
+- Synthetic large-base tests do not qualify the actual AIDE canonical clone.
+
+## Follow-up
+
+- Implement delegated authority and production PR/check transport, including
+  generation object/content validation at its effect boundary and target-store
+  qualification. Preserve independent review and no operational activation.
+
+AIDE-Task: AIDE-CW-INTEGRATION-BROKER-01
+AIDE-Phase: broker-v1-recovery
+AIDE-Result: partial
+AIDE-Scope: broker and coordinator source, direct tests, docs and task evidence
+AIDE-Token-Impact: bounded delta blobs and durable reusable recovery evidence
+AIDE-Quality-Gate: local full suite and independent source review passed

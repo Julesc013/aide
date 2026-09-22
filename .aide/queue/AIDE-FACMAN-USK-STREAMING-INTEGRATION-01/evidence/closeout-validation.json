@@ -1,0 +1,54 @@
+{
+  "schema": "aide.provider_coordinator_validation.v1",
+  "observed_at": "2026-09-06T17:24:08.803650+00:00",
+  "task_id": "AIDE-FACMAN-USK-STREAMING-INTEGRATION-01",
+  "result": "PASS",
+  "scope": "Only assigned coordinator metadata/docs and imported raw provider evidence; no AIDE source/index/global validation claim.",
+  "raw_records_verified": 45,
+  "raw_custody_manifest_sha256": "1df869816f260d3aa094c2bc8bd9148a92a64616c4805003a234c53af3391c77",
+  "original_evidence_files_preserved": 10,
+  "pre_closeout_metadata_bytes_preserved": true,
+  "task_helpers": [
+    {
+      "command": [
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-FACMAN-USK-STREAMING-INTEGRATION-01"
+      ],
+      "exit_code": 0,
+      "log": "closeout-after-task-inspect.log",
+      "sha256": "53fc8aad5997eeffc6b8fee62019cf211f9ea88b4cfd77da10d489eb1674afbc"
+    },
+    {
+      "command": [
+        "task",
+        "noop-check",
+        "--task-id",
+        "AIDE-FACMAN-USK-STREAMING-INTEGRATION-01"
+      ],
+      "exit_code": 0,
+      "log": "closeout-after-task-noop-check.log",
+      "sha256": "ad93f9a03f3f82c46ef274832b23f22b4ea5d24b580b749e3584d100c374aaed"
+    },
+    {
+      "command": [
+        "task",
+        "recover",
+        "--task-id",
+        "AIDE-FACMAN-USK-STREAMING-INTEGRATION-01"
+      ],
+      "exit_code": 0,
+      "log": "closeout-after-task-recover.log",
+      "sha256": "d3686cc571a4608ec38f8f9b01eb725850f8b7b7feed9f8fb4fa8da7d72ac38a"
+    }
+  ],
+  "provider_main": "ffe1b407abb1bbc340bc925396bd4be197002033",
+  "provider_dev": "5e4c660890201accb30a14ed31b97d329a3be3cd",
+  "provider_tree": "3faabe599f2ebe5f2a6f87287693f411fe1d6594",
+  "provider_primary_clean_dev": true,
+  "all_three_provider_acceptances_reachable_from_main": true,
+  "facman_pin_adoption_claimed": false,
+  "staging_or_commit_by_worker": false,
+  "index_global_source_owner": "pilot/root"
+}

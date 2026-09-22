@@ -1,0 +1,24 @@
+{
+  "schema": "aide.host.h1-source.v1",
+  "head": "24ed66153f7e5d2008b7178b89c1b03025791152",
+  "files": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-effect-probe.py": "e53b19b1fc7cb8aac488f28e20cfe00942d4ed278e2e8533296185d71c00da1d",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-oracle-validation.py": "e41380f4b337e465ed5963622e6fb833325e712d7bef9ba81049e147cd2b3485",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-network-effect-probe.py": "bb50bc6eeaf24ccbf2e13fe817f24752f958dcebf668aa3dade52dd3d7c50c85",
+    ".aide/scripts/tests/test_continuous_worker_windows_security.py": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725",
+    ".aide/scripts/tests/test_continuous_worker_windows_security_probe.c": "edc4e572b8dd856e361aaa30e9b6300dc0c3a12a84aae13227b5bdfcf99a05c0",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_security_objects.py": "c5605f3dd3c173e93d707ac3e764e183b70263e1057e42bf5dfddf6405e5dcb9"
+  },
+  "aggregate_sha256": "df77e584e56027cc36979287779fa2911d2ea8cfef36df2ea72679ebd1433abd",
+  "patch_sha256": "4c6bbea0b3f41b9504264dae8db7d5098428fd8dba320dccd93e55606ed65fcb",
+  "patch_bytes": 118258,
+  "changed_from_diagnostic": [
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-oracle-validation.py",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-network-effect-probe.py",
+    ".aide/scripts/tests/test_continuous_worker_windows_security.py",
+    ".aide/scripts/tests/test_continuous_worker_windows_security_probe.c"
+  ],
+  "qualification": "Pinned-address diagnostic proposal only. Read-only exact native interface observation and 27 source, 10 actual Job, 3 ordinary native tests pass. Fourth isolated effect unrun; three prior FAIL packets retained."
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "aide.local.independent-review.v1",
+  "verdict": "PASS",
+  "source_aggregate_sha256": "e1541a3956b3fc9046eb55603df2a8753f4584bac856be251f3b004850d42315",
+  "source_files": {
+    ".aide/scripts/tests/test_continuous_worker_pr_observation.py": "3d8ea913fbc11810e1d1ad3ee6246c7326e52b571cc314f02e345836e101471d",
+    ".aide/scripts/tests/test_continuous_worker_provider_bridge.py": "58b5636e251322f6ea1f56299f6f0e598d8888c61c7cd10fa8a0f4b042ef24fa",
+    "core/runtime/continuous_worker/locking.py": "ef6862800dec51361375b67d129956b6c27737281922c507978c832f300cd953",
+    "core/runtime/integration_broker/bridge_store.py": "c66a31e7af2e29355c51199383c35d496adeaa9a3bb501a91cacabff8f191b37",
+    "core/runtime/integration_broker/pr_observation.py": "1a4599ae12c13b3d2df6e76b6b2c633b6d49fbc2cf891b1fae5ac145d6e031c9",
+    "core/runtime/integration_broker/registered_bridge.py": "f669d3e8943d1cc43f0df8b6624f830c40afab0eda7262b3d313d0107555a8ab",
+    "core/runtime/integration_broker/staged_transport.py": "863dfa51ebb8cfacad1067bf9258ddbdfd0670238a55d646f7bb94d146c0cf55",
+    "docs/reference/integration-broker-core.md": "9378523ed8a427ae185a18e8944d4724dc46d6e9c58074472af2780129a987f4"
+  },
+  "source_unchanged": true,
+  "command": [
+    "C:\\Program Files\\Python314\\python.exe",
+    "-B",
+    "-c",
+    "import sys,unittest;sys.path.insert(0,'.aide/scripts/tests');r=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromName('test_continuous_worker_provider_bridge'));sys.exit(not r.wasSuccessful())"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 75.901,
+  "log": "bridge-root-independent-tests.txt",
+  "log_sha256": "f90d8a34c173f874003eab694b06ec7e48899c95164144f4a1f2c1baee4531fd",
+  "reviewed": [
+    "Fixed plan and registration pins, exact source inputs, immutable authority/store binding.",
+    "Durable observation tokens and stage intent precede registered child dispatch; finite calls and retained IO survive failures.",
+    "Atomic suspended Job assignment, source/deadline/qualification rechecks, exact named Job fencing and no uncertain mutation replay.",
+    "No operational provider, host isolation or atomic server merge predicate is claimed or installed."
+  ],
+  "findings": [],
+  "limitations": [
+    "Tests use a permissive local qualification fixture and disposable Git objects.",
+    "Real host/store/credential isolation and authenticated provider/server effect contracts remain unqualified."
+  ]
+}

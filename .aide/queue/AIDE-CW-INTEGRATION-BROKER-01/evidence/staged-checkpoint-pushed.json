@@ -1,0 +1,19 @@
+{
+  "previous_head": "f9545c31bafc8d398e566ae2bbb39e5e4e1e5558",
+  "after": {
+    "headRefOid": "fe233c4611d5dfd02eac5c8460b828c9c8c1c450",
+    "isDraft": true,
+    "state": "OPEN",
+    "url": "https://github.com/Julesc013/aide/pull/4"
+  },
+  "commits": [
+    "813fe9548dfc8d4a9ec9c288b6e2fd3524074319",
+    "fe233c4611d5dfd02eac5c8460b828c9c8c1c450"
+  ],
+  "verified_source_aggregate": "4fd298e128beb9600b5c317a1cdcc3ac45cf83f11b34ba7cac8dcbd906a31a5f",
+  "source_files": 28,
+  "initial_push_succeeded": true,
+  "immediate_api_head_assertion_failed": "Fresh follow-up PR and ls-remote both observe exact intended head; no mutation replay.",
+  "provider_activation": false,
+  "full_broker_complete": false
+}

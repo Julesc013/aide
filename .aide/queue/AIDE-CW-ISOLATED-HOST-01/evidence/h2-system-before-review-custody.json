@@ -1,0 +1,157 @@
+{
+  "schema": "aide.host.h2-system-before-review-custody.v1",
+  "source_aggregate": "adb9ba879d3de3030a96dcfaca2b7e3046011b8002cba79ba4ea2f38b3d3e015",
+  "archive": {
+    "path": "h2-system-before-review-evidence.zip",
+    "bytes": 365754,
+    "sha256": "e3b1a12a7218b2cf240588e548c513d1a4ecf6f93e03e0d64e0c8f38e4dff1dc",
+    "members": 36
+  },
+  "members": {
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-aide-validate.txt": {
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-final-tests.json": {
+      "bytes": 3609,
+      "sha256": "291ad9c96afad495a173c8c1bafc8424fd3c6c2d3371223191972a0271dc2a18"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-final-tests.txt": {
+      "bytes": 26127,
+      "sha256": "67064641b0cc152cff2d553b3ca2b6a731961278b82ee344e984bde09e3c5ebf"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-first-tests.json": {
+      "bytes": 446,
+      "sha256": "6dfc6310e501bc3dbd045b48a02852256a369a02dfa5451941b5967139c52716"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-first-tests.txt": {
+      "bytes": 5269,
+      "sha256": "4e0d96760803d4251a3bd8d729c578c1b4f5c5654c6f6c454327f4311b0733d5"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-admission-observations.json": {
+      "bytes": 1795,
+      "sha256": "11f4f819d68e9d7c5dcd75537677bd58785eb3339eb1f8a97c758360606cd2d5"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-admission-observations.py": {
+      "bytes": 1829,
+      "sha256": "803dfd2808ed905c31b5bdd1ea5353a55a8e73cf74c3a19d2714979e5f49e150"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-final-guard-red.json": {
+      "bytes": 21030,
+      "sha256": "3f4db50845119bdf85e2fa8d71549f0b63b09ba76e4f97e44869bcd8d56b67ff"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-independent-final-guard-red.py": {
+      "bytes": 2793,
+      "sha256": "317d18efca7fde64f9f3a2ca543d5a19122783aae3946e1c022e695d90ed3832"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-observation-source-plan.md": {
+      "bytes": 3958,
+      "sha256": "945f26def0e17992459b1a997f15190730c212fe61d86ad9a8914bab4b113b6f"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-precall-guard-red.json": {
+      "bytes": 1718,
+      "sha256": "ddcbde2474974d01b766272d01d931d44ac0dda309f920fea8898a8ce7af4db9"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-admission.json": {
+      "bytes": 1581,
+      "sha256": "5bb4a731d298a1305aa4dbea4e9710c3bf21e770dd007e6541b919696ed90e03"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-checks.json": {
+      "bytes": 686,
+      "sha256": "9528cf75ae5207e9d9ac44c041c8f680d9cde4c34faa08d73d90b6da8af3b801"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-inspect.txt": {
+      "bytes": 382,
+      "sha256": "12c1a7c93bc47472e90ff6f3faef2a2adc48ce2201d19d6a76dee26d7aedaa3e"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-manifest.json": {
+      "bytes": 3261,
+      "sha256": "2cddfbb8cde9e71bd0d286432bab75ce102ca571618d87a834b37d4b92e533d2"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-noop.txt": {
+      "bytes": 163,
+      "sha256": "ff304cb05ba58defa29a2b7e0664afac25f367119cbe99e7adcf0481b934e9a4"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-recover.txt": {
+      "bytes": 166,
+      "sha256": "c608d92b151d73b6c83e02bffb30ec15a495353b6145deec11ba00026b3f433a"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source-review-notes.md": {
+      "bytes": 3116,
+      "sha256": "75dd4a6375d730e1da29c6b8727a03d9f2e3bc32f8f8552ad5af72bff8478d11"
+    },
+    "files/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-system-source.patch": {
+      "bytes": 43204,
+      "sha256": "deae33f01782eefe8a215d6fb8e1672e49ee6347bbdbe27bb40b62a080663f88"
+    },
+    "files/.aide/queue/index.yaml": {
+      "bytes": 387345,
+      "sha256": "ddf3bd530a875f707210dcbea722a0ec9dccc80f91dade311ae25f643c81dd97"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_host.py": {
+      "bytes": 9038,
+      "sha256": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_python_contract.py": {
+      "bytes": 11915,
+      "sha256": "7759aa897847cfbcd501b5b6bd41d7d76cad82c60a05f50b01d5f7bb3df989c3"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_python_image.py": {
+      "bytes": 7489,
+      "sha256": "92839124eaceec42a6ca4b72e790513f72f06cd519f19a98143f7d35b9d8398e"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_system_observation.py": {
+      "bytes": 19750,
+      "sha256": "26c423af91ce25930812ac3e6ac4eab3bfcea7d98d644c7ba17bc8fa9e6582dd"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_windows_image.py": {
+      "bytes": 51015,
+      "sha256": "1da207d0b86bf62ca79f07d0b22e04c6821520d613198d19854d50a51dae1c37"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_windows_pe.py": {
+      "bytes": 13450,
+      "sha256": "fe77377eab4487862882a2878dbd0ba50daa50f7f14e388fa7d2a947cc6fcbe7"
+    },
+    "files/.aide/scripts/tests/test_continuous_worker_windows_security.py": {
+      "bytes": 38635,
+      "sha256": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725"
+    },
+    "files/core/runtime/continuous_worker/state.py": {
+      "bytes": 9225,
+      "sha256": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2"
+    },
+    "files/core/runtime/continuous_worker/windows_image.py": {
+      "bytes": 23638,
+      "sha256": "2cac4dd7336b24dba47bc7cd40e510902b23fc99e64b56b349a1cfc0e3734ab8"
+    },
+    "files/core/runtime/continuous_worker/windows_job.py": {
+      "bytes": 13864,
+      "sha256": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c"
+    },
+    "files/core/runtime/continuous_worker/windows_pe.py": {
+      "bytes": 12296,
+      "sha256": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d"
+    },
+    "files/core/runtime/continuous_worker/windows_python_contract.py": {
+      "bytes": 10761,
+      "sha256": "98d4a1c95337043477bad27611f4bac5cc2b574aaea37d94dc344543ff689411"
+    },
+    "files/core/runtime/continuous_worker/windows_python_image.py": {
+      "bytes": 8004,
+      "sha256": "b20258182d5610384e8be97e502012ce9760d9b977bd824f5f09a394d3b026c8"
+    },
+    "files/core/runtime/continuous_worker/windows_security.py": {
+      "bytes": 14041,
+      "sha256": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021"
+    },
+    "files/core/runtime/continuous_worker/windows_security_objects.py": {
+      "bytes": 16361,
+      "sha256": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+    },
+    "files/core/runtime/continuous_worker/windows_system_observation.py": {
+      "bytes": 22088,
+      "sha256": "ddd20433bf0912a1946601d0ab28819a4377e9f639fb3faeb9c88eab7e670ba8"
+    }
+  },
+  "status": "Historical source/133-test packet and concrete final-guard, pre-call guard, large-int and modeled case-spelling review findings; not final acceptance."
+}

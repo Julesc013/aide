@@ -1,0 +1,178 @@
+{
+  "schema": "aide.host.h1-network-attempt-custody.v1",
+  "archive": "h1-network-attempt-evidence.zip",
+  "archive_sha256": "ad19e18d67e3c3c67390e3f8c806d8123703f3f55dee591b5a3d3446ecf1c655",
+  "members": {
+    "evidence/h1-actual-owned-network-first.json": {
+      "bytes": 1616,
+      "sha256": "b845d3e957cb1c0cef19d4f6aa3b79d76e1251ea668e70f8ba66091b1e247abd"
+    },
+    "evidence/h1-actual-owned-network-first.txt": {
+      "bytes": 511,
+      "sha256": "a68c59546a533e5f4efe4dee8ee881ccc1c40825106f6c5cd42d50b949c2131e"
+    },
+    "evidence/h1-first-attempt-custody.json": {
+      "bytes": 9179,
+      "sha256": "30a47a6dc7535920146c91dda72f073d4da4336622fa43ab0ff357acdae28940"
+    },
+    "evidence/h1-network-helper-validation.json": {
+      "bytes": 937,
+      "sha256": "4d25fbe553ed62456a00f1864dfd99f1daee351d85f41e35d32f12869d5a6e65"
+    },
+    "evidence/h1-network-host-first-tests.txt": {
+      "bytes": 1434,
+      "sha256": "0635a578212dcda44d5b2580a613f66b3a60729e3bc23421f25448682c0b9ff2"
+    },
+    "evidence/h1-network-native-build-first.txt": {
+      "bytes": 49,
+      "sha256": "15974477059d99a1abcfbfde0052d6a8a8754c7f99300a44c4725c15c109dacc"
+    },
+    "evidence/h1-network-native-build.json": {
+      "bytes": 583,
+      "sha256": "5df91b8c7cc993be5dcdfb95344bceb61b9cf6d6fb929e50465825012d25b110"
+    },
+    "evidence/h1-network-oracle-first-tests.json": {
+      "bytes": 910,
+      "sha256": "6b16f8d73346f19ae205267f7b4f9cd8e3674810bec9b013f98835c17677b4e4"
+    },
+    "evidence/h1-network-oracle-first-tests.txt": {
+      "bytes": 479,
+      "sha256": "742ed5d6a0eed0f0ec69a67fc52d94e7e5857b3b70fb05a4c02f5a9717cfddd9"
+    },
+    "evidence/h1-network-oracle-validation.py": {
+      "bytes": 2007,
+      "sha256": "029274c984d5f3d91f045e40f662fc82803a0a9f93ada2e8c8374eb674d9ed42"
+    },
+    "evidence/h1-network-scoped-diff-check.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evidence/h1-network-source-first-tests.txt": {
+      "bytes": 4258,
+      "sha256": "38b5e85530797cd65d50614db75d5415c778df1d06e294aa9028a62206d7f913"
+    },
+    "evidence/h1-network-source-manifest.json": {
+      "bytes": 1590,
+      "sha256": "7197c8a14b9c37b0c14da6fc0070630e09b0413671fc9fd47ff0e290111939b8"
+    },
+    "evidence/h1-network-source-tests.json": {
+      "bytes": 877,
+      "sha256": "8db5edb35d04f6055d7fae710de18e64da70b0ef6cb2dc2be06d5955344ffeb3"
+    },
+    "evidence/h1-network-source.patch": {
+      "bytes": 90369,
+      "sha256": "b8e2318ea9f83a79452efa546821bf62137a5d0d9cc326e39531e8ae6e202566"
+    },
+    "evidence/h1-network-static-validation.json": {
+      "bytes": 219,
+      "sha256": "c3cb7ffca59748d87a5fce2bde9f99d211590ce8ae42433de92701dd351b7e80"
+    },
+    "evidence/h1-network-task-inspect-corrected.json": {
+      "bytes": 445,
+      "sha256": "a891d5f280561285cab188cccc58f15c8f18be84bf8c06ac181c1c5870c48358"
+    },
+    "evidence/h1-network-task-inspect-corrected.txt": {
+      "bytes": 381,
+      "sha256": "0589d85964214fc828101260c6d5dbff52df24e13c1a9b3b0ecbfca445ef29ce"
+    },
+    "evidence/h1-network-task-inspect.txt": {
+      "bytes": 1290,
+      "sha256": "c490a4167fa88483b3f2a9a32c59c778ffa550a18c22e4409012e96fc7935b06"
+    },
+    "evidence/h1-network-task-validate.txt": {
+      "bytes": 4893242,
+      "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+    },
+    "evidence/h1-owned-network-effect-manifest.json": {
+      "bytes": 2785,
+      "sha256": "8b9ad90270dcbd41f1051a6215f320e1c4978674adb284732bf6103459d35ebb"
+    },
+    "evidence/h1-owned-network-effect-probe.py": {
+      "bytes": 13385,
+      "sha256": "397f888481a962786e4b7029dbb0a1530b39117f1b20bfe4fbf1d450673d56a3"
+    },
+    "evidence/h1-owned-network-review-request.json": {
+      "bytes": 964,
+      "sha256": "ea20a64e65685770bd6aeb524bee33bb06dac2f9b8a0dc0d96acc5c91a053177"
+    },
+    "evidence/h1-root-owned-network-network-oracle.txt": {
+      "bytes": 479,
+      "sha256": "3ed65f5c26189cc8e0d7b1d6823eee5720ae83e4df6b6c476e0b254ab7d973ea"
+    },
+    "evidence/h1-root-owned-network-review.json": {
+      "bytes": 1449,
+      "sha256": "2a746b609709226cdc939b607df1b8db94dacfb9520fa1c10d095bcc69f0afb5"
+    },
+    "evidence/h1-root-owned-network-source-job.txt": {
+      "bytes": 5588,
+      "sha256": "aa412bef7a8aae42606824a54c0871273ab038ff6d974a900493fd18f5ddc0f9"
+    },
+    "owned/network-native-job-output/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "owned/network-native-job-output/stdout": {
+      "bytes": 110,
+      "sha256": "48c7f957be413c2d162a950eb0aa71893ffc4db9fccf2591cce50cd2e50154f8"
+    },
+    "owned/network-native-probe-receipt.json": {
+      "bytes": 4885,
+      "sha256": "4fbb3a94c81c63914fc9841179219cf7aadcd7c623ea9cc67aaab52c2f3457cd"
+    },
+    "owned/network-probe-objects/scratch/native-created.txt": {
+      "bytes": 18,
+      "sha256": "120641fe76c4366e442d9f44bdfc2d8aec756026cf4e624de42b636f0403e8d5"
+    },
+    "owned/network-probe-reservation.jsonl": {
+      "bytes": 350,
+      "sha256": "c6dd0ec9e3c3bbc32f4c56ff3b035e734f29509b0694dc798c17ce39a1ddc96e"
+    },
+    "owned/security-probe-network.exe": {
+      "bytes": 150528,
+      "sha256": "e9c5b9e0e7cfcc08f33dff420459aa721fc8ad2915f4a9a876f44fc100a94b1d"
+    },
+    "source/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-native-effect-probe.py": {
+      "bytes": 9879,
+      "sha256": "e53b19b1fc7cb8aac488f28e20cfe00942d4ed278e2e8533296185d71c00da1d"
+    },
+    "source/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-network-oracle-validation.py": {
+      "bytes": 2007,
+      "sha256": "029274c984d5f3d91f045e40f662fc82803a0a9f93ada2e8c8374eb674d9ed42"
+    },
+    "source/.aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h1-owned-network-effect-probe.py": {
+      "bytes": 13385,
+      "sha256": "397f888481a962786e4b7029dbb0a1530b39117f1b20bfe4fbf1d450673d56a3"
+    },
+    "source/.aide/scripts/tests/test_continuous_worker_windows_security.py": {
+      "bytes": 25803,
+      "sha256": "ded50cd6e04d0b618fe66486c1ae2e67d17a523582a7c4ce94c02ea18bda4182"
+    },
+    "source/.aide/scripts/tests/test_continuous_worker_windows_security_probe.c": {
+      "bytes": 5757,
+      "sha256": "358e5c628e5f3844aad893a707aaa6a09e9e8cc11a1d9c2e9f096fba3269a036"
+    },
+    "source/core/runtime/continuous_worker/windows_job.py": {
+      "bytes": 13864,
+      "sha256": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c"
+    },
+    "source/core/runtime/continuous_worker/windows_security.py": {
+      "bytes": 12319,
+      "sha256": "26c6e00bea41c67835efce12c19fd7cea4eab14b852095ae5d4df41809237d74"
+    },
+    "source/core/runtime/continuous_worker/windows_security_objects.py": {
+      "bytes": 13253,
+      "sha256": "c5605f3dd3c173e93d707ac3e764e183b70263e1057e42bf5dfddf6405e5dcb9"
+    }
+  },
+  "preceding_custody": {
+    "archive": "h1-first-attempt-evidence.zip",
+    "sha256": "5411d9aff07553c7d3ae3ab56a8abb413ecd4bb81df71f9fea421c9de0600899",
+    "member_count": 53
+  },
+  "result": "FAIL",
+  "classification": "Actual token/scratch/file/controller denial facts observed again; bounded network connect timed out10060 and is not explicit denial. No further profile created; first proof unchanged; no automatic replay.",
+  "source_aggregate": "6000097e5a7cc305d9c9dc3b2b3ed0dd7d2ebe7fc19b7b42ff99f450c1562487",
+  "effect_manifest_sha256": "8b9ad90270dcbd41f1051a6215f320e1c4978674adb284732bf6103459d35ebb",
+  "cleanup": "retain_only",
+  "activation": false
+}

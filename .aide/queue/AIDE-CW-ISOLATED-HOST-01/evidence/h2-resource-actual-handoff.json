@@ -1,0 +1,91 @@
+{
+  "automatic_retry": false,
+  "closed_records": "Controller returned exit2 and every six raw artifact bytes were subsequently read and hashed. Journal has only the three paid intent rows, no successful observation row.",
+  "controller_elapsed_seconds": 0.4488272999878973,
+  "controller_exit_code": 2,
+  "effect_review_sha256": "3d0c862b7c0de04eeafed2a1173335b88de250293716511d88a1f3cbb081a683",
+  "exact_child_transfer_matches_proposal": true,
+  "exact_journal_rows_and_line_hashes_match_proposal": true,
+  "execution_receipt_sha256": "eb2286bb6a984689dfd1f34c775a1eb2d67deab5c62e1d3157c166e418a0b11c",
+  "fallback_attempted": false,
+  "file_executed_orchestration_source_sha256": "fc949b2f3d0e7b1a7db6f8bce08789d2fde11865d2bd54167a2e157dc408e7fd",
+  "head": "2a44f17eb7232757133df549ac6fc519d535e71b",
+  "host_evidence_limit": "Frozen failure CLI omits controller.result.host. A host exit/reason/quiescence PASS is not available in the persisted output; do not infer one from the outer controller exit. No later native probe was run to fill that gap.",
+  "independent_actual_review": "pending",
+  "interpretation": "This exact ordinary resource-only API-set request refused with raw Win32 error2. No API-host mapping was qualified; the second selected name remains unattempted.",
+  "invocation_receipt_sha256": "6a7055760c315501ffeace21b5ed8e39f357d76eed1fabbe2d8e009ba463af95",
+  "parent_mapping_intent_rows_durable": 2,
+  "parent_reservation_consumed": true,
+  "raw_artifacts": {
+    "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-resource-ceaa759a8344465fa4d5b1340dfb4eed.intent.jsonl": {
+      "bytes": 805,
+      "sha256": "19e14dcf0bd3dae89ce61e8b08731ace9f572a4880600a082facbd4d0c654113"
+    },
+    "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-resource-ceaa759a8344465fa4d5b1340dfb4eed\\stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-resource-ceaa759a8344465fa4d5b1340dfb4eed\\stdin": {
+      "bytes": 4534,
+      "sha256": "d6ea50776e53a9d371ab92942d9a7d41894a91ce32d5afadd07ed89223a84177"
+    },
+    "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-h1-source-4m92pvi5\\system-resource-ceaa759a8344465fa4d5b1340dfb4eed\\stdout": {
+      "bytes": 415,
+      "sha256": "4ec2cda6129d90c07f8f8196335502d000ae97d15738a0c5efb8f5a68e255d07"
+    },
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-resource-actual-controller-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CW-ISOLATED-HOST-01\\evidence\\h2-resource-actual-controller-stdout.txt": {
+      "bytes": 224,
+      "sha256": "e3bb749c8f56e38b01b58cf4b5584858d653a0a7e07b693e9177b35c6a5f54e8"
+    }
+  },
+  "raw_child_failure": {
+    "error_type": "Refused",
+    "failure": {
+      "consumed": true,
+      "error_type": "Refused",
+      "mapping_attempts": 1,
+      "native_refusal": {
+        "api_name": "api-ms-win-core-path-l1-1-0.dll",
+        "flags": 2144,
+        "operation": "LoadLibraryExW",
+        "win32_error": 2
+      },
+      "paid_intents_consumed": 1,
+      "release_failures": [],
+      "replay_permitted": false,
+      "session_failure": {
+        "error_type": "Refused",
+        "mapping_attempts": 1,
+        "native_calls": 167
+      }
+    },
+    "replay_permitted": false,
+    "result": "FAIL"
+  },
+  "raw_controller_failure": {
+    "error_type": "Refused",
+    "failure": {
+      "consumed": true,
+      "effect_sha256": "a54a6eb93380aa5f63fb5c809d9d6f3dede3a943dad51c94fc4841ce25016494",
+      "error_type": "Refused",
+      "replay_permitted": false
+    },
+    "replay_permitted": false,
+    "result": "FAIL"
+  },
+  "raw_effect_sha256": "d4a49c0683ae1903611e0350d0edbc4f9c4708f05363bda88cf5eaf71f741ab4",
+  "readback_note": "Initial sandbox readback failed on access to the real-user temporary journal (tool chunk a7b7d5); escalated read-only evidence inspection succeeded. The effect was not repeated.",
+  "recorded_expiry_valid_at_invocation_and_return": true,
+  "request_id": "ceaa759a8344465fa4d5b1340dfb4eed",
+  "result": "FAIL_RETAINED_NO_REPLAY",
+  "schema": "aide.host.resource-actual-handoff.v1",
+  "scope_ceiling": "No new profiles, copies, grants, executable fallback or network operation. Full180/128 inventory, contextual private loader, protected controller/journal/bootstrap trust and operational activation remain unqualified.",
+  "second_mapping_attempted": false,
+  "source_aggregate": "1a9e3809c11bbdd4a25a08a68d751a8584f67d6c95d8aa410f3f91ebc5ecb4f2",
+  "source_dependencies_and_excluded_index_unchanged": true,
+  "source_review_sha256": "d2f89ee87a0feffc669a10e35594859f3581cd7f75522faff9c82699886d69db"
+}

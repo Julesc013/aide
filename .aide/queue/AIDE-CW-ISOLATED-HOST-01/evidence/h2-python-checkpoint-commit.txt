@@ -1,0 +1,26 @@
+[task/aide-cw-integration-broker-01 830bf30d] feat(runtime): bind explicit Python image recipe bytes
+ 35 files changed, 4120 insertions(+), 37 deletions(-)
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-helper-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-message.txt
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-checkpoint-scope.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-custody.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-delay-sdk-addendum.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-evidence.zip
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-final-tests.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-independent-final-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-independent-final-review.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-native-input-next-proposal.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-root-checkpoint-review.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-source-admission.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-source-checks.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-source-decomposition.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-source-manifest.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-source-review-notes.md
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-system-delay-readonly-details.json
+ create mode 100644 .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-python-system-pe-readonly-inspection.json
+ create mode 100644 .aide/scripts/tests/test_continuous_worker_python_contract.py
+ create mode 100644 .aide/scripts/tests/test_continuous_worker_python_image.py
+ create mode 100644 .aide/scripts/tests/test_continuous_worker_windows_pe.py
+ create mode 100644 core/runtime/continuous_worker/windows_pe.py
+ create mode 100644 core/runtime/continuous_worker/windows_python_contract.py
+ create mode 100644 core/runtime/continuous_worker/windows_python_image.py

@@ -1,0 +1,41 @@
+{
+  "schema": "aide.host.h2-image-source.v1",
+  "source_base": "454e41aa021c2b8b8b48531f2cb67838ecaa7dab",
+  "files": {
+    ".aide/scripts/tests/test_continuous_worker_windows_image.py": "aab4c2f1c047381f26320c31c2441bab316e0264d14a187069b76704e847ac0e",
+    "core/runtime/continuous_worker/windows_image.py": "1fc511ab5316f09f305f1c02cee209fa4b21d017b074e39d6b8ec60ebd94ff5b",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+  },
+  "aggregate_sha256": "9be03cf59281c72ec8152cabd5acf41b4477bff6963643a2e4adb573feed9a3d",
+  "aggregation": "SHA256 of UTF-8 json.dumps(files,sort_keys=True,separators=(comma,colon))",
+  "patch": {
+    "path": "h2-image-source.patch",
+    "sha256": "4a35dbe32c879d3a6fec3a86fc331187959ae7b0a7b69cbccc825351f70aa826",
+    "bytes": 69016,
+    "construction": "sorted paths; tracked git diff --binary HEAD, new files git header/mode plus difflib unified diff from /dev/null; all authored source LF"
+  },
+  "test_receipt": {
+    "path": "h2-source-final-tests.json",
+    "sha256": "abd383f81ce388b7adcb86ff1ba57c3fa3b486ac27589795a8fb5c75b9e18e4a"
+  },
+  "dependent_inputs": {
+    "core/runtime/continuous_worker/windows_security.py": "a65a458998391e54e385339faf364837f226023b5260e76d044a509a60a40021",
+    "core/runtime/continuous_worker/windows_job.py": "52bdcc2251cf6133cb71e2ee9371c7e5075bd87984affb83a21f1f2fc2861f1c",
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    ".aide/scripts/tests/test_continuous_worker_windows_security.py": "7a69e1097b1c085a53f62cfca446e8832385c6cae6859e7431b1e3bf006af725",
+    ".aide/scripts/tests/test_continuous_worker_host.py": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854"
+  },
+  "runtime_qualification": false,
+  "operational_activation": false,
+  "current_effect_authority": "source and ordinary synthetic tests only; no actual private tool copies, package grants, profile or AppContainer effects",
+  "prior_source_custody": {
+    "zip": "h2-before-root-alias-evidence.zip",
+    "sha256": "db52b7b601f98013619b65cc723776554e9b559e8983bd806165ddd21948ef33",
+    "members": 12
+  },
+  "prior_overlap_custody": {
+    "zip": "h2-before-overlap-evidence.zip",
+    "sha256": "41f8e2ad294518bddb316923d77bdcd7d76e225253546a93bcbf22e44a4ff2da",
+    "members": 12
+  }
+}

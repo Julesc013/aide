@@ -1,0 +1,23 @@
+{
+  "schema": "aide.host.h2-delay-sdk-observation.v1",
+  "files": {
+    "C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\include\\delayimp.h": "27be6a2d9590498f0a7408f801cf45bfaf87fd8108d899f3d22cba07a441c5e0",
+    "C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\include\\delayhlp.cpp": "d31b06279d54f0cf103b03f898391c594c8a1ef0c90d34e6cc2977d2fc4e6912"
+  },
+  "references": {
+    "delayimp.h": [
+      22,
+      30,
+      37
+    ],
+    "delayhlp.cpp": [
+      264,
+      367,
+      379
+    ]
+  },
+  "finding": "dlattrRva is1; timestamp0 means unbound. The helper uses the optional bound IAT only when its pointer and timestamp are both nonzero. The observed nonzero optional table pointers do not alone establish a bound image.",
+  "next_scope": "Metadata-only support for the exact observed RVA/timestamp0 optional-table layout and bounded lookup/IAT spans; actual bound timestamp interpretation remains refused unless separately justified. Preserve source/limits and malformed/refusal regressions.",
+  "source_frozen_unchanged": true,
+  "dll_mapping_loading_or_image_effect": false
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "command": [
+      "doctor"
+    ],
+    "exit_code": 0,
+    "seconds": 4.918,
+    "log": "bridge-doctor.txt",
+    "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21"
+  },
+  {
+    "command": [
+      "validate"
+    ],
+    "exit_code": 0,
+    "seconds": 4.859,
+    "log": "bridge-validate.txt",
+    "sha256": "e1352d5d9abbfd23cbd95d179af8151015897be33498d11101ca4aa2f70875c4"
+  }
+]

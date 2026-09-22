@@ -1,0 +1,54 @@
+feat(runtime): bind delegated broker authority and PR observations
+
+## Summary
+
+- Validate protected prepared candidates at the integration effect boundary.
+- Bind finite delegated authority and durable exact PR stage observations.
+
+## Why
+
+- Frozen candidate hashes alone do not prove current materialized content,
+  authenticated controller evidence or the identity of a remote PR/check.
+
+## Changed
+
+- Hold generation object leases through validation and dispatch; refuse object,
+  index, config, alternate and base drift before reserving the remote effect.
+- Publish and independently reparse controller capsules from observed artifacts.
+- Derive bounded replay-safe authority from a pinned external delegation.
+- Persist exact branch/PR/check identities, observations and one intent per
+  mutation stage, including target-ref/repository and stable PR-number checks.
+- Preserve raw validation and review bytes in a verified custody archive.
+
+## Validation
+
+- Full pre-remediation baseline: 106 PASS, one symlink privilege skip.
+- Current PR identity correction: eight focused tests PASS.
+- Root independent effect/capsule eight and issuer/PR 13 tests PASS.
+- Doctor, validate, exact source hashes and source-only export checks PASS.
+- The full baseline and focused correction retain distinct source bindings.
+
+## Changelog
+
+- Added: prepared-effect guard, controller capsule and delegated issuer core.
+- Added: bounded offline PR/check observations and write-ahead stage intents.
+- Fixed: PR ref/repository ambiguity and observed PR identity replacement.
+
+## Risks
+
+- No provider dispatcher or operational isolated host is installed.
+- Protected controller/store origin and exact-base server enforcement require
+  real qualification; normalized facts and same-user Jobs do not prove it.
+
+## Follow-up
+
+- Implement qualified provider observation/dispatch and broker reconciliation.
+- Re-enter the candidate effect boundary before every remote mutation stage.
+- Keep the full task active and operational activation disabled.
+
+AIDE-Task: AIDE-CW-INTEGRATION-BROKER-01
+AIDE-Phase: broker-delegated-pr-core
+AIDE-Result: partial
+AIDE-Scope: broker source, direct tests, reference and task evidence
+AIDE-Token-Impact: bounded reusable capsules and finite exact stage observations
+AIDE-Quality-Gate: local tests and independent current-source review passed

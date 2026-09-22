@@ -1,0 +1,45 @@
+feat(runtime): retain reviewed native input facts probe
+
+## Summary
+
+- Add a one-use task driver for exact Windows public-input observations.
+
+## Why
+
+- Private Python qualification needs actual bounded file facts before API proof.
+
+## Changed
+
+- Hold exact native root and eight file handles through hashing and reobservation.
+- Flush a consumed intent before the bounded ordinary Job child starts.
+- Refuse stale, incomplete or mismatched output without retrying effects.
+- Retain source reviews, injected tests and original local facts in compact custody.
+
+## Validation
+
+- Local 67 injected tests and independent 73 tests PASS.
+- One admitted eight-file effect and independent raw artifact audit PASS.
+- All historical byte pins match; 167 calls and nine closes; clean owned exit.
+- AIDE validation, portable exclusion, scoped secret and diff checks PASS.
+
+## Changelog
+
+- Added: reviewed one-use native input facts probe and retained local evidence.
+
+## Risks
+
+- Existing interpreter and protected controller namespace remain premises.
+- API context, full 180/128 closure and private loading remain unqualified.
+- No mapping, image, grant, profile or operational activation follows from N1.
+
+## Follow-up
+
+- Review a separate two-API feasibility proposal using the exact observed pins.
+- Complete protected host, closure and restricted loader qualification.
+
+AIDE-Task: AIDE-CW-ISOLATED-HOST-01
+AIDE-Phase: native-input-facts
+AIDE-Result: partial
+AIDE-Scope: task driver, injected tests, own docs and compact raw custody
+AIDE-Token-Impact: bounded observations and compact original evidence
+AIDE-Quality-Gate: independent source, 73 tests and exact local artifact audit passed
