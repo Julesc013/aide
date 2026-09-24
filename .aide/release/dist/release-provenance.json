@@ -4,8 +4,8 @@
     ".aide/release/dist/RELEASE_NOTES.preview.md": "95a114721e2f4d7551d0e374378cbec86f5f57b68cf2201e3357d3900050a770",
     ".aide/release/dist/aide-lite-pack-v0.tar.gz": "437fdefcf524ff2a7d7918d34554bb84f18df810a4aaa27465019260182da435",
     ".aide/release/dist/aide-lite-pack-v0.zip": "787759eda0c0d4c159106b0eec271eb876a099133d462180a50c06a2077d89c8",
-    ".aide/release/dist/install.md": "ea7c2c0da6539d315a68fb55afa71c1ec623a40230b3bc2deaa2d0461f8eaea9",
-    ".aide/release/dist/manifest.yaml": "0f132ab6c2e8f643602cd35bcc3fd01cd24a0cb8b89ec6502578eb4d65d8a5ba"
+    ".aide/release/dist/install.md": "169c8d8e49d991cd25d2dcd2528441cff1c131a66e9043333d33d3e6cfa3b126",
+    ".aide/release/dist/manifest.yaml": "a390925c95ee699d460653d0e1e9535ab99ae6b1c035fb8ce7035e45f10f8546"
   },
   "bundle_id": "aide-lite-pack-v0-0c98e175bab91513",
   "dirty_state": false,
