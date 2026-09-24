@@ -492,3 +492,14 @@ exact review subject; it is not installed GitHub configuration.
   `.aide/git/commit-message-disposition.schema.json` define the mechanism.
 - `.aide/git/commit-message-dispositions.json` is source-specific decision
   state and must not be included in target-repository exports.
+
+## Isolated-host API-set query contract
+
+The integration-broker reference now records the isolated-host H2 API-set query
+contract. It explains why virtual API-set names are resolved through the
+supported Windows dependency-analysis API, the bounded 180-of-256 source
+coverage, and the remaining independent-review and real-host qualification
+boundaries.
+The exact API-query source repair received independent review, and the owner
+accepted its narrow historical commit-message disposition. These source and
+range-check results do not qualify a native query or operational activation.

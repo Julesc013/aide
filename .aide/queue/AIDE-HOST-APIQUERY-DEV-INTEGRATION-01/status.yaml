@@ -1,9 +1,12 @@
 schema_version: aide.queue-status.v0
 id: AIDE-HOST-APIQUERY-DEV-INTEGRATION-01
 status: running
-planning_state: source_merge_pending
+planning_state: combined_source_validated_review_pending
 result: PENDING
 updated_at: 2026-09-25
 base_dev: fce11e7fce3e8106a71f5a2391fd6f0517d7e0c8
 source_candidate: ad1076a3b165d15bfb68045908dfef1f5acd13c2
-next_action: preserve_both_histories_and_reconcile_actual_conflicts
+combined_tests: 140_permitted_passed_4_effect_tests_excluded
+canonical_checks: validate_and_doctor_passed
+historical_c_range: default_dispositioned_raw_failure_preserved
+next_action: commit_merge_then_obtain_exact_independent_integration_review

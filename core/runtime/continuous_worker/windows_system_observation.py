@@ -12,6 +12,7 @@ import json
 import math
 import os
 import re
+import sys
 import time
 
 from .state import Refused
@@ -24,6 +25,9 @@ MAX_NATIVE_CALLS = 8192
 MAX_RESULT_BYTES = 2 * 1024 * 1024
 MAX_EXECUTABLE_MODULES = 1024
 CHUNK_BYTES = 65536
+API_QUERY_MAX_PATH = 260
+MAX_API_QUERY_CALLS = MAX_API_SETS + 1
+MAX_RESOURCE_API_SETS = 128
 
 
 def _canonical(value):
@@ -92,7 +96,7 @@ class ObservationPlan:
         rows, names = value["files"], value["api_names"]
         if type(rows) is not list or not 1 <= len(rows) <= MAX_MODULES - 3:
             raise Refused("finite physical system object pins required")
-        if type(names) is not list or len(names) > MAX_API_SETS:
+        if type(names) is not list or len(names) > MAX_RESOURCE_API_SETS:
             raise Refused("finite API request list required")
         files, seen, identities, total = [], set(), {root_id}, 0
         for row in rows:
@@ -133,6 +137,149 @@ class ObservationPlan:
         except (AttributeError, TypeError, ValueError, IndexError) as error:
             raise Refused("complete immutable observation plan required") from error
         return self
+
+
+def _os_build(value):
+    if type(value) is not str or not re.fullmatch(r"10\.0\.[0-9]{1,6}", value):
+        raise Refused("exact Windows build required")
+    return value
+
+
+@dataclass(frozen=True)
+class ApiSetQueryPlan:
+    request_id: str
+    os_build: str
+    api_names: tuple[str, ...]
+    expires_at: float
+    max_seconds: float
+    fingerprint: str
+
+    @classmethod
+    def read(cls, value):
+        fields = {"schema", "request_id", "os_build", "api_names", "expires_at", "max_seconds"}
+        if type(value) is not dict or set(value) != fields or value["schema"] != "aide.host.api-set-query.v1":
+            raise Refused("exact API-set query plan required")
+        request = value["request_id"]
+        if type(request) is not str or not re.fullmatch(r"[0-9a-f]{32}", request):
+            raise Refused("literal API-set query identity required")
+        names = value["api_names"]
+        if type(names) is not list or not 1 <= len(names) <= MAX_API_SETS:
+            raise Refused("finite nonempty API-set query list required")
+        aliases = tuple(_name(name) for name in names)
+        if len(set(aliases)) != len(aliases) or any(not _api_name(name) for name in aliases):
+            raise Refused("distinct literal API-set contracts required")
+        expires, duration = value["expires_at"], value["max_seconds"]
+        if not _finite(expires) or not _finite(duration) or not 0 < duration <= 120 or expires <= 0:
+            raise Refused("finite API-set query expiry and duration required")
+        result = cls(request, _os_build(value["os_build"]), tuple(sorted(aliases)), expires, duration, "")
+        return replace(result, fingerprint=hashlib.sha256(_canonical(result.value())).hexdigest())
+
+    def value(self):
+        return {"schema": "aide.host.api-set-query.v1", "request_id": self.request_id,
+                "os_build": self.os_build, "api_names": list(self.api_names),
+                "expires_at": self.expires_at, "max_seconds": self.max_seconds}
+
+    def validate(self):
+        try:
+            if ApiSetQueryPlan.read(self.value()) != self:
+                raise Refused("API-set query plan differs from immutable admission")
+        except (AttributeError, TypeError, ValueError, IndexError) as error:
+            raise Refused("complete immutable API-set query plan required") from error
+        return self
+
+
+class ApiSetQuerySession:
+    """One-use supported API-set host query with durable pre-call intents."""
+    def __init__(self, plan, api, journal, guard, *, clock=time.monotonic, wall_clock=time.time):
+        if not isinstance(plan, ApiSetQueryPlan) or not callable(guard) or not callable(clock) or not callable(wall_clock):
+            raise Refused("typed API-set plan and explicit controller guard required")
+        if not callable(getattr(journal, "reserve", None)) or not callable(getattr(journal, "intent", None)):
+            raise Refused("protected API-set reservation and write-ahead journal required")
+        if not callable(getattr(api, "os_build", None)) or not callable(getattr(api, "api_set_host", None)):
+            raise Refused("supported API-set query backend required")
+        self.plan, self.api, self.journal, self.guard = plan.validate(), api, journal, guard
+        self.clock, self.wall_clock = clock, wall_clock
+        self.consumed, self.calls, self.attempts, self.failure = False, 0, [], None
+        self.start, self.wall_start, self.last = None, None, None
+
+    def _time_check(self):
+        now, wall = self.clock(), self.wall_clock()
+        if (not _finite(now) or not _finite(wall) or now < self.last or wall < self.wall_start or
+                now - self.start >= self.plan.max_seconds or not 0 < self.plan.expires_at - wall <= 3600):
+            raise Refused("API-set query clock, expiry or duration refused")
+        self.last = now
+
+    def _check(self):
+        self._time_check()
+        if self.guard() is False:
+            raise Refused("controller guard explicitly refused API-set query")
+        self._time_check()
+
+    def _call(self, name, *args):
+        self._check()
+        if self.calls >= MAX_API_QUERY_CALLS:
+            raise Refused("API-set query operation budget exhausted")
+        self.calls += 1
+        result = getattr(self.api, name)(*args)
+        self._check()
+        return result
+
+    def _query(self, name):
+        intent = {"schema": "aide.host.api-set-query-intent.v1", "request_id": self.plan.request_id,
+                  "plan_sha256": self.plan.fingerprint, "sequence": len(self.attempts), "api_name": name,
+                  "operation": "GetApiSetModuleBaseName"}
+        self.attempts.append(dict(intent))
+        self._check()
+        acknowledgement = _digest(self.journal.intent(dict(intent)))
+        if acknowledgement != hashlib.sha256(_canonical(intent)).hexdigest():
+            raise Refused("journal did not acknowledge the exact API-set query intent")
+        host = self._call("api_set_host", name)
+        host = _name(host)
+        if _api_name(host) or host in PRIVATE_NAMES:
+            raise Refused("API-set query did not return one physical system module")
+        return {"api_name": name, "physical_name": host,
+                "intent_acknowledgement": acknowledgement}
+
+    def run(self):
+        if self.consumed:
+            raise Refused("API-set query already consumed; inspect retained state without replay")
+        self.consumed = True
+        self.plan.validate()
+        self.start, self.wall_start = self.clock(), self.wall_clock()
+        if not _finite(self.start) or not _finite(self.wall_start):
+            raise Refused("finite initial API-set query clocks required")
+        self.last = self.start
+        try:
+            self._check()
+            reservation = _digest(self.journal.reserve(self.plan.fingerprint))
+            if reservation != self.plan.fingerprint:
+                raise Refused("journal did not reserve this exact API-set query")
+            if _os_build(self._call("os_build")) != self.plan.os_build:
+                raise Refused("Windows build changed before API-set query")
+            queries = [self._query(name) for name in self.plan.api_names]
+            self._check()
+            result = {"schema": "aide.host.api-set-query-result.v1", "request_id": self.plan.request_id,
+                      "plan_sha256": self.plan.fingerprint, "reservation_acknowledgement": reservation,
+                      "os_build": self.plan.os_build, "queries": queries, "native_calls": self.calls,
+                      "query_attempts": len(self.attempts), "api_set_query_completed": True,
+                      "physical_hosts_qualified": False, "loader_qualified": False,
+                      "restricted_context_qualified": False,
+                      "boundary": "Supported API-set names only; physical host bytes, protected authority and restricted loader remain separate qualifications."}
+            if len(_canonical(result)) > MAX_RESULT_BYTES:
+                raise Refused("API-set query result exceeds output bound")
+            self._check()
+            output = _canonical(result)
+            if len(output) > MAX_RESULT_BYTES:
+                raise Refused("final API-set query result exceeds output bound")
+            self._check()
+            return output
+        except Exception as caught:
+            self.failure = {"error_type": type(caught).__name__, "native_calls": self.calls,
+                            "query_attempts": len(self.attempts)}
+            native = getattr(caught, "native_evidence", None)
+            if type(native) is dict:
+                self.failure["native_refusal"] = dict(native)
+            raise Refused("API-set query refused; consumed state retained without replay") from caught
 
 
 @dataclass(frozen=True)
@@ -332,6 +479,44 @@ class ObservationSession:
             self.failure = {"error_type": type(caught).__name__, "native_calls": self.calls, "mapping_attempts": len(self.attempts)}
             raise Refused("final observation is stale or incomplete; consumed state retained") from caught
         return output
+
+
+class NativeApiSetQueryApi:
+    """Supported API-set host query; construct only in a reviewed owned probe."""
+    def __init__(self):
+        if os.name != "nt" or C.sizeof(C.c_void_p) != 8:
+            raise Refused("native AMD64 Windows API-set query backend required")
+        try:
+            self._api_query_library = C.WinDLL("api-ms-win-core-apiquery-l2-1-0.dll", use_last_error=True)
+        except OSError as error:
+            raise Refused("supported API-set query library unavailable") from error
+        self._api_query = objects.bind(self._api_query_library, "GetApiSetModuleBaseName",
+                                       [C.c_char_p, C.c_uint32, W.LPWSTR, C.POINTER(C.c_uint32)], C.c_long)
+
+    def os_build(self):
+        version = sys.getwindowsversion()
+        parts = tuple(getattr(version, "platform_version", version)[:3])
+        if len(parts) != 3 or any(type(part) is not int or part < 0 for part in parts):
+            raise Refused("exact Windows platform build unavailable")
+        return _os_build(".".join(str(part) for part in parts))
+
+    def api_set_host(self, name):
+        name = _name(name)
+        if not _api_name(name):
+            raise Refused("literal admitted API-set contract required")
+        output, actual = C.create_unicode_buffer(API_QUERY_MAX_PATH), C.c_uint32()
+        status = int(self._api_query(name.encode("ascii"), API_QUERY_MAX_PATH, output, C.byref(actual))) & 0xffffffff
+        if status:
+            error = Refused("supported API-set host query failed")
+            error.native_evidence = {"operation": "GetApiSetModuleBaseName", "api_name": name,
+                                     "hresult": "0x" + format(status, "08x")}
+            raise error
+        if not 2 <= actual.value <= API_QUERY_MAX_PATH or actual.value != len(output.value) + 1:
+            raise Refused("API-set host output length missing or inconsistent")
+        host = _name(output.value.lower())
+        if _api_name(host) or host in PRIVATE_NAMES:
+            raise Refused("API-set query returned no physical system module")
+        return host
 
 
 class NativeSystemApi:

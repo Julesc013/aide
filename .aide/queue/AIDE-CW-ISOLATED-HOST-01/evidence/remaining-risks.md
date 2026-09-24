@@ -27,3 +27,14 @@ against the unchanged 128-row cap. Existing interpreter transitive inputs and
 protected controller/output namespace remain premises. No selected resource
 mapping, image/grant, new profile or general activation is admitted by N1.
 The consumed journal/output and all H1 histories remain retained without replay.
+
+## Supported API-set query source ceiling
+
+The source now has enough bounded capacity for the observed 180 contracts and
+uses Microsoft's supported dependency-analysis API instead of resource-mapping
+virtual contract names. It has not called that API on the real host. A later
+effect still needs exact OS/source/controller review, durable intents, complete
+name coverage, returned-host validation, fresh held physical-object facts, and
+independent result review. Query output alone does not establish OS trust,
+physical bytes, restricted loader behavior, private-image grants, AppContainer
+execution, credential isolation, or worker activation.

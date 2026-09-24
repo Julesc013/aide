@@ -3180,7 +3180,7 @@ items:
     evidence: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/evidence
   - id: AIDE-CW-ISOLATED-HOST-01
     status: running
-    planning_state: execution_active
+    planning_state: h2_api_query_source_frozen
     title: Qualify a restricted worker host
     task: .aide/queue/AIDE-CW-ISOLATED-HOST-01/task.yaml
     exec_plan: .aide/queue/AIDE-CW-ISOLATED-HOST-01/ExecPlan.md
@@ -3502,7 +3502,7 @@ items:
     description: Preserve historical decision ancestry and current dev source, then regenerate and qualify combined artifacts.
   - id: AIDE-HOST-APIQUERY-DEV-INTEGRATION-01
     status: running
-    planning_state: source_merge_pending
+    planning_state: combined_source_validated_review_pending
     result: PENDING
     title: Integrate reviewed isolated-host API-query source into dev
     task: .aide/queue/AIDE-HOST-APIQUERY-DEV-INTEGRATION-01/task.yaml

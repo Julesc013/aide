@@ -491,3 +491,18 @@ check-app identity exists. Merge, squash, and rebase are all currently enabled.
 The checked-in review plan therefore contains no operations and cannot be
 applied. A resolved fixture proves deterministic PATCH/POST review bytes, but
 does not authorize or qualify those operations on GitHub.
+
+## Supported Windows API-set host queries
+
+The isolated-host H2 source now uses a separate `NativeApiSetQueryApi` around
+Windows' supported `GetApiSetModuleBaseName` dependency-analysis interface.
+API-set contract names are virtual loader contracts, so the earlier retained
+resource-map failure is not retried or recast as file absence. The new one-use
+query session binds exact names, OS build, expiry, controller guard, reservation,
+per-name durable intents, HRESULTs, output lengths, and canonical host basenames.
+
+The explicit API-set ceiling is 256, which contains the observed 180-name Python
+closure and is exercised as one bounded injected workload. Query results still
+mark physical-host, restricted-context, and loader qualification false. Exact
+host bytes, protected controller authority, private-image grants, AppContainer
+Python execution, and operational activation remain later reviewed boundaries.

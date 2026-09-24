@@ -102,6 +102,12 @@ class PythonContractTests(unittest.TestCase):
             if case == "count": value["api_sets"] *= contract.MAX_API_SETS + 1
             with self.subTest(case=case), self.assertRaises(Refused): contract.SystemContract.read(value)
 
+    def test_api_set_contract_grammar_accepts_observed_onecore_extension(self):
+        value, _, _, _ = fixture()
+        value["api_sets"][0]["name"] = "ext-ms-onecore-appmodel-staterepository-cache-l1-1-0.dll"
+        admitted = contract.SystemContract.read(value)
+        self.assertEqual(admitted.api_sets[0].name, value["api_sets"][0]["name"])
+
     def test_unknown_normal_delayed_and_forwarded_dependencies_refuse(self):
         for mode in ("imports", "delayed", "forwarders"):
             for module in ("python314.dll", "ntdll.dll"):

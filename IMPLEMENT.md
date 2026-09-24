@@ -11516,3 +11516,15 @@ DLL mapping, image or grant effect is part of this source implementation.
 - The old branch's generated outputs were discarded during integration; the
   current dev generator must produce qualified combined artifacts. No product,
   native, hosted, main, or publication acceptance follows from dispositions.
+
+## 2026-09-22 - Supported Windows API-set query source
+
+- Preserved the retained failed two-API resource effect without replay.
+- Added a separate consumed-once `GetApiSetModuleBaseName` adapter and query
+  session with exact build, name, clock, guard, journal, HRESULT, and output
+  validation.
+- Raised the explicit API-set contract ceiling from 128 to 256 to contain the
+  observed 180-name Python closure without partitioning or omission.
+- Kept physical-host, protected-authority, restricted-loader, private-image,
+  grant, AppContainer, credential, network, and activation claims false.
+- Passed 142 affected source/regression tests; no actual native query ran.

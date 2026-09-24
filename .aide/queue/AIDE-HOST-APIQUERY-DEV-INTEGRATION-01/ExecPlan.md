@@ -23,8 +23,12 @@ native, hosted, credential, target, or publication effects.
 
 - [x] Current clean dev and exact published candidate identified.
 - [x] Independent source review and exact C historical disposition located.
-- [ ] Merge and reconcile.
-- [ ] Validate combined source and obtain independent integration review.
+- [x] Merge candidate with both histories. Four documentation conflicts were
+  resolved by retaining both current dev and source-branch content; the stale
+  disposition-pending status was corrected to the owner's exact C decision.
+- [x] Run 140 permitted combined-source tests, exact C default/raw range,
+  canonical validate/doctor, and staged diff checks; all reported as observed.
+- [ ] Commit the two-parent integration subject and obtain independent review.
 - [ ] Observe qualified remote dev and close evidence.
 
 ## Recovery

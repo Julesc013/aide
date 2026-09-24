@@ -3679,5 +3679,16 @@ passed post-commit replay and independent source/artifact review with notes.
 The separate evidence-only closeout passed its narrow check. Remote and local
 dev were observed at `5ac617b37b5778193b1c2cc7c63e0cc12c98ec09`, tree
 `56921686952f334e92532bd2ad350b0d80d5328c`. Do not rewrite the
-historical messages. Historical-dependent removal and host source remain next;
+historical messages. Historical-dependent removal and host source are being
+integrated in separate bounded branches;
 mandatory lifecycle apply remains unimplemented.
+
+## Isolated-host API-set query source
+
+The H2 continuation now has frozen source for supported Windows API-set host
+queries. It preserves the consumed resource-map failure, fits the observed
+180-name closure inside explicit 256-row/257-call bounds, and passes 142
+affected tests. The exact repair received independent source review with 140
+permitted tests, and historical message disposition C is owner-accepted.
+Combined dev integration remains separately reviewed. Before any real host query,
+physical host bytes, private loading, grants, and activation remain open.

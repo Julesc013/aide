@@ -1,0 +1,41 @@
+{
+  "actual_native_query_executed": false,
+  "affected_tests": {
+    "failed": 0,
+    "passed": 144,
+    "skipped": 0
+  },
+  "api_contract": {
+    "buffer_characters": 260,
+    "function": "GetApiSetModuleBaseName",
+    "library_contract": "api-ms-win-core-apiquery-l2-1-0.dll",
+    "maximum_calls": 257,
+    "maximum_names": 256,
+    "observed_required_names": 180
+  },
+  "base_commit": "c6fdc754844cf7d42302218ce08307a7e05dcb61",
+  "branch": "task/aide-cw-isolated-host-apiquery-01",
+  "dependencies": {
+    ".aide/scripts/tests/test_continuous_worker_python_contract.py": "d71f0ddd80a1039bea34d8addda1e6eef8c597cd1b221bebea4c2cd179fd7dc4"
+  },
+  "documentation": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/apiquery2/nf-apiquery2-getapisetmodulebasename",
+    "https://learn.microsoft.com/en-us/windows/win32/apiindex/windows-apisets"
+  ],
+  "effects": {
+    "acl_or_package_grant": false,
+    "appcontainer_launch": false,
+    "credential_access": false,
+    "dll_load_or_resource_map": false,
+    "file_read": false,
+    "network": false
+  },
+  "schema": "aide.host.api-query-source-manifest.v1",
+  "source_aggregate_sha256": "8604fa6127db546a9507022037b0004de4313352d83b5c5d981c3a2bec6ad5a2",
+  "source_files": {
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py": "2e1793ac9a8dd51bbf7901713cbcbe55ef9f47c66d999cbd34e10794963fb9b5",
+    "core/runtime/continuous_worker/windows_python_contract.py": "b95eb3a551b0fdd43d05912f63e8f50b4e1c0c5d851d9b3b276d8699ad627cd9",
+    "core/runtime/continuous_worker/windows_system_observation.py": "57fc1b3baeed79b9e1197df67b9b648dd043ff51981c8e9a233af7c40f669df5"
+  },
+  "status": "review_findings_repaired_pending_independent_rereview"
+}
