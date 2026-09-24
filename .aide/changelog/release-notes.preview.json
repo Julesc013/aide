@@ -1,26 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "eb4dea3f30ab",
-      "summary": "obtain independent review after resolving exact identities"
-    },
-    {
-      "commit": "f737f9199931",
-      "summary": "Merge the exact source commit with both histories preserved and validate the combined tree."
-    },
-    {
-      "commit": "7aab31bc1bc7",
-      "summary": "Run focused, adjacent, and canonical validation, then obtain independent exact-commit review."
-    },
-    {
-      "commit": "9bba1cecaec8",
-      "summary": "remediate F-01 through F-04 and submit a new exact-source checkpoint for independent review"
-    },
-    {
-      "commit": "9383c2b5e852",
-      "summary": "Publish the repair and obtain independent exact-commit rereview before any target effect packet."
-    },
-    {
       "commit": "36fa64e011b5",
       "summary": "Obtain independent review, integrate the exact candidate to dev, then refresh and qualify portable artifacts."
     },
@@ -235,6 +215,26 @@
     {
       "commit": "98de5ee1531e",
       "summary": "Regenerate current portable and release artifacts, qualify exact extracted bytes, then integrate the accepted slice."
+    },
+    {
+      "commit": "9dc91654f8df",
+      "summary": "Generate the portable pack and local release artifacts from this committed checkpoint."
+    },
+    {
+      "commit": "8262b2fd6465",
+      "summary": "Replay after commit, record final-byte evidence, and qualify a clean integration candidate."
+    },
+    {
+      "commit": "37daa862e939",
+      "summary": "Replay from this committed clean tree and record the extracted-consumer receipt."
+    },
+    {
+      "commit": "1e3a59dce7bf",
+      "summary": "Obtain explicit review decision for the exact candidate and integrate only if accepted."
+    },
+    {
+      "commit": "9b21e183d462",
+      "summary": "Regenerate the pack and local release artifacts from this source, then qualify exact consumer bytes."
     }
   ],
   "highlights": [
@@ -304,13 +304,6 @@
     {
       "breaking": false,
       "category": "Added",
-      "commit": "f737f9199931",
-      "subject": "chore(queue): admit fixture portability integration",
-      "summary": "bounded qualification path for distribution fixture portability."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
       "commit": "5ad6aa979971",
       "subject": "chore(release): admit metadata integrity repair",
       "summary": "Admit deterministic release metadata integrity repair."
@@ -321,13 +314,6 @@
       "commit": "98de5ee1531e",
       "subject": "feat(import): explain downstream customization decisions",
       "summary": "local customization explanation and opt-in import feedback."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "eb4dea3f30ab",
-      "subject": "chore(queue): record target-policy source publication",
-      "summary": "target-policy queue state now records its exact published review checkpoint"
     },
     {
       "breaking": false,
@@ -356,20 +342,6 @@
       "commit": "8369ac540e4a",
       "subject": "build(release): qualify deterministic candidate",
       "summary": "exact no-publish candidate assets and draft evidence regenerated."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "7aab31bc1bc7",
-      "subject": "fix(distribution): merge portability source candidate",
-      "summary": "distribution fixture path and preservation boundaries are present on the current-dev candidate."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "9383c2b5e852",
-      "subject": "fix(provider): repair target-policy review findings",
-      "summary": "GitHub policy planning now binds valid rule bytes, separate principals, exact workflow source, and effective policy state."
     },
     {
       "breaking": false,
@@ -499,6 +471,13 @@
     },
     {
       "breaking": false,
+      "category": "Fixed",
+      "commit": "9b21e183d462",
+      "subject": "fix(import): keep recovery previews read-only",
+      "summary": "dry-run recovery mutation and project-owned metadata payload boundary."
+    },
+    {
+      "breaking": false,
       "category": "Docs",
       "commit": "671faa232216",
       "subject": "docs(release): bind previews to repair source",
@@ -598,26 +577,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "eb4dea3f30ab",
-      "summary": "broker principal and workflow/check identities remain unresolved"
-    },
-    {
-      "commit": "f737f9199931",
-      "summary": "Source acceptance remains pending Windows tests and independent exact-commit review."
-    },
-    {
-      "commit": "7aab31bc1bc7",
-      "summary": "Combined-tree behavior remains unqualified until the recorded Windows and adjacent suites pass."
-    },
-    {
-      "commit": "9bba1cecaec8",
-      "summary": "no product source was edited"
-    },
-    {
-      "commit": "9383c2b5e852",
-      "summary": "The repaired exact source still requires superseding independent review."
-    },
     {
       "commit": "36fa64e011b5",
       "summary": "Independent exact-commit review is pending."
@@ -833,32 +792,32 @@
     {
       "commit": "98de5ee1531e",
       "summary": "Conflicting managed edits still require explicit resolution; feedback is local and manually shared."
+    },
+    {
+      "commit": "9dc91654f8df",
+      "summary": "Preview text is not official release notes or publication authority."
+    },
+    {
+      "commit": "8262b2fd6465",
+      "summary": "This is a local artifact checkpoint; post-commit source-ancestor projection and stable release gates remain open."
+    },
+    {
+      "commit": "37daa862e939",
+      "summary": "Local artifacts do not authorize main promotion, tagging, or publication."
+    },
+    {
+      "commit": "1e3a59dce7bf",
+      "summary": "Queue review and dev integration remain pending; stable release and lifecycle apply are not accepted."
+    },
+    {
+      "commit": "9b21e183d462",
+      "summary": "The earlier archive receipt applies only to the superseded candidate; no dev integration occurred."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "98de5ee1531e3d71f6f003f8bc98bf2a6b8bf23b",
+  "source_head": "9b21e183d462416bf95d0e3022b1ac5fc6fc077f",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "eb4dea3f30ab",
-      "summary": "PASS: remote task ref equals bb433bb74f645e0904ca34bf3af38516ae05a7ad"
-    },
-    {
-      "commit": "f737f9199931",
-      "summary": "PASS: exact candidate commit, tree, parent, diff, and commit-range checks."
-    },
-    {
-      "commit": "7aab31bc1bc7",
-      "summary": "PASS: source commit range and diff checks before merge."
-    },
-    {
-      "commit": "9bba1cecaec8",
-      "summary": "PASS: 44 focused GitHub observation/target-policy tests"
-    },
-    {
-      "commit": "9383c2b5e852",
-      "summary": "PASS: 135 affected tests; 134 passed and one Windows symlink test skipped."
-    },
     {
       "commit": "36fa64e011b5",
       "summary": "PASS WITH SKIPS: 156 adjacent distribution tests; 148 passed and eight skipped."
@@ -1074,6 +1033,26 @@
     {
       "commit": "98de5ee1531e",
       "summary": "PASS: export/import suite ran 27 cases with zero failures."
+    },
+    {
+      "commit": "9dc91654f8df",
+      "summary": "PASS: changelog preview, validate, and status; 50 commits, zero malformed."
+    },
+    {
+      "commit": "8262b2fd6465",
+      "summary": "PASS: export boundary, pack-status, release validate, and draft-validate."
+    },
+    {
+      "commit": "37daa862e939",
+      "summary": "PASS: first post-artifact generation changed the expected 18 records."
+    },
+    {
+      "commit": "1e3a59dce7bf",
+      "summary": "PASS: 27 export/import, 18 Q47, 11 Q48, and 6 Q31 cases; two affected rechecks passed."
+    },
+    {
+      "commit": "9b21e183d462",
+      "summary": "PASS: 28-case export/import suite after the recovery repair."
     }
   ],
   "warnings": []
