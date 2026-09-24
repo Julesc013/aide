@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 4deeed08be90080583183ca5a24597a4a72aedda
+source_head: 98de5ee1531e3d71f6f003f8bc98bf2a6b8bf23b
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,25 +11,23 @@ release_publishing: false
 
 ## Summary
 
-- Added: 4
-- Changed: 6
-- Fixed: 21
+- Added: 3
+- Changed: 5
+- Fixed: 20
 - Security: 9
-- Docs: 7
-- Tests: 8
-- Internal: 8
+- Docs: 8
+- Tests: 6
+- Internal: 7
 - Risks: 1
 
 ## Added
 
-- preserve and integrate the published broker runtime line on dev. (c6fdc754844c chore(queue): close broker dev integration chain)
-- fail-closed review-only GitHub target-policy contract for the continuous-worker integration broker (bb433bb74f64 feat(provider): add fail-closed GitHub target policy)
 - bounded qualification path for distribution fixture portability. (f737f9199931 chore(queue): admit fixture portability integration)
 - Admit deterministic release metadata integrity repair. (5ad6aa979971 chore(release): admit metadata integrity repair)
+- local customization explanation and opt-in import feedback. (98de5ee1531e feat(import): explain downstream customization decisions)
 
 ## Changed
 
-- refresh portable and local release artifacts for the integrated broker-era dev source. (f6ae36e8074b build(pack): refresh post-integration artifacts)
 - target-policy queue state now records its exact published review checkpoint (eb4dea3f30ab chore(queue): record target-policy source publication)
 - qualified distribution fixture portability hardening on the full Windows checkout. (36fa64e011b5 test(distribution): qualify portability candidate)
 - Begin commit-bound portable artifact refresh after portability integration. (c730eac44202 chore(distribution): start clean artifact refresh)
@@ -38,9 +36,6 @@ release_publishing: false
 
 ## Fixed
 
-- bind release preview checksums to committed portable provenance. (3f1bc120a10c build(release): close committed provenance derivation)
-- land clean post-broker portable and local release provenance on dev. (088b20ba76ae build(pack): land post-integration artifact refresh)
-- refresh and stabilize portable and local release provenance after integration. (c6fdc754844c chore(queue): close broker dev integration chain)
 - distribution fixture path and preservation boundaries are present on the current-dev candidate. (7aab31bc1bc7 fix(distribution): merge portability source candidate)
 - GitHub policy planning now binds valid rule bytes, separate principals, exact workflow source, and effective policy state. (9383c2b5e852 fix(provider): repair target-policy review findings)
 - Bind preview release metadata to committed portability artifact provenance. (38fe712810b8 build(distribution): close artifact provenance)
@@ -59,6 +54,8 @@ release_publishing: false
 - deliver release artifacts that require paired preview identities and refuse missing JSON sources. (7897f7deb80c build(release): checkpoint paired-preview artifacts)
 - project paired-preview release provenance from actual artifact checkpoint 7897f7de. (d6642c3d81f6 build(release): project checkpoint 7897f7de provenance)
 - integrate endpoint-shaped effective GitHub rule comparison into the dev source. (6a581dbcfbd5 feat(github): merge reviewed target source with release dev)
+- refresh local export and release provenance for combined target source. (cda504b9a546 fix(release): refresh combined source portable artifacts)
+- bind local release metadata to the committed combined-source artifact ancestry. (d4bd4938fa43 fix(release): project committed combined source provenance)
 
 ## Security
 
@@ -81,11 +78,10 @@ release_publishing: false
 - bind release summaries to the replacement-safe source checkpoint. (7863891e581d docs(release): bind replacement-safe source)
 - bind release summaries to the paired-preview fail-closed repair. (1397b703a9c1 docs(release): bind paired-preview repair source)
 - bind the repaired release-integrity candidate and its exact qualification evidence for review. (853d1c7a8486 docs(release): freeze replacement review candidate)
+- refresh preview-only release text for the combined source. (66ef462c2b1b docs(changelog): bind combined source previews)
 
 ## Tests
 
-- requalify extracted archives, updates, checksums, and no-publish boundaries. (f6ae36e8074b build(pack): refresh post-integration artifacts)
-- retain extracted consumer and no-publish qualification evidence. (088b20ba76ae build(pack): land post-integration artifact refresh)
 - added stale-preview, file-set, hash, size, and cross-checkout regressions. (7bb41079e11f fix(release): bind metadata to final artifacts)
 - added positive projection and unrelated-change refusal coverage. (bb308e64f4f2 fix(release): accept complete preview projection)
 - require validation to preserve all generated release bytes. (edcd591a268b fix(release): converge bundle validation bytes)
@@ -95,14 +91,13 @@ release_publishing: false
 
 ## Internal
 
-- admit clean-source derived-artifact refresh after broker integration. (b3e5c7aa2a17 chore(queue): admit post-integration pack refresh)
-- record deterministic second-order artifact closure. (3f1bc120a10c build(release): close committed provenance derivation)
-- close exact integration and artifact-refresh task evidence. (c6fdc754844c chore(queue): close broker dev integration chain)
 - record the bounded scope correction and review handoff. (7e56ad751615 fix(workflow): bind documented path ref)
 - record source-review acceptance for a bounded dev integration. (f77ecba28741 audit(queue): record fresh release candidate review)
 - record local target source acceptance with retained qualification notes. (d81d953a7674 audit(queue): record fresh target source review)
 - register a source-only integration task. (43c86ffb92e1 audit(queue): admit target source dev integration)
 - register a local artifact refresh with no publication effect. (4deeed08be90 audit(queue): admit combined target pack refresh)
+- record qualified local combined-source artifacts and consumer evidence. (9cc4bb068837 audit(queue): qualify combined target artifacts)
+- close reviewed local source and artifact dev integration. (3bdeb220cb31 audit(queue): close release and target dev integration)
 
 ## Risks
 

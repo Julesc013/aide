@@ -3,7 +3,7 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 4deeed08be90080583183ca5a24597a4a72aedda
+source_head: 98de5ee1531e3d71f6f003f8bc98bf2a6b8bf23b
 preview_only: true
 
 ## Highlights
@@ -17,19 +17,14 @@ preview_only: true
 - Security: Record release metadata integrity defects before artifact integration. (4c0da8974daa)
 - Security: Preserve fail-closed target qualification review findings before integration. (b8fb89b917c9)
 - Security: portable pack provenance no longer trusts Git replacement refs. (b4d949c1ac1f)
-- Added: preserve and integrate the published broker runtime line on dev. (c6fdc754844c)
-- Added: fail-closed review-only GitHub target-policy contract for the continuous-worker integration broker (bb433bb74f64)
 - Added: bounded qualification path for distribution fixture portability. (f737f9199931)
 - Added: Admit deterministic release metadata integrity repair. (5ad6aa979971)
-- Changed: refresh portable and local release artifacts for the integrated broker-era dev source. (f6ae36e8074b)
+- Added: local customization explanation and opt-in import feedback. (98de5ee1531e)
 - Changed: target-policy queue state now records its exact published review checkpoint (eb4dea3f30ab)
 - Changed: qualified distribution fixture portability hardening on the full Windows checkout. (36fa64e011b5)
 - Changed: Begin commit-bound portable artifact refresh after portability integration. (c730eac44202)
 - Changed: Refresh portable artifacts for the integrated Windows path-hardening source. (da1051793d4c)
 - Changed: exact no-publish candidate assets and draft evidence regenerated. (8369ac540e4a)
-- Fixed: bind release preview checksums to committed portable provenance. (3f1bc120a10c)
-- Fixed: land clean post-broker portable and local release provenance on dev. (088b20ba76ae)
-- Fixed: refresh and stabilize portable and local release provenance after integration. (c6fdc754844c)
 - Fixed: distribution fixture path and preservation boundaries are present on the current-dev candidate. (7aab31bc1bc7)
 - Fixed: GitHub policy planning now binds valid rule bytes, separate principals, exact workflow source, and effective policy state. (9383c2b5e852)
 - Fixed: Bind preview release metadata to committed portability artifact provenance. (38fe712810b8)
@@ -48,6 +43,8 @@ preview_only: true
 - Fixed: deliver release artifacts that require paired preview identities and refuse missing JSON sources. (7897f7deb80c)
 - Fixed: project paired-preview release provenance from actual artifact checkpoint 7897f7de. (d6642c3d81f6)
 - Fixed: integrate endpoint-shaped effective GitHub rule comparison into the dev source. (6a581dbcfbd5)
+- Fixed: refresh local export and release provenance for combined target source. (cda504b9a546)
+- Fixed: bind local release metadata to the committed combined-source artifact ancestry. (d4bd4938fa43)
 - Docs: refresh source-bound local changelog and release-note previews. (671faa232216)
 - Docs: bind release summaries to the converged generator source. (566a2c3b8b7d)
 - Docs: bind release previews to the hardened metadata generator. (e2ec8925adf7)
@@ -55,8 +52,7 @@ preview_only: true
 - Docs: bind release summaries to the replacement-safe source checkpoint. (7863891e581d)
 - Docs: bind release summaries to the paired-preview fail-closed repair. (1397b703a9c1)
 - Docs: bind the repaired release-integrity candidate and its exact qualification evidence for review. (853d1c7a8486)
-- Tests: requalify extracted archives, updates, checksums, and no-publish boundaries. (f6ae36e8074b)
-- Tests: retain extracted consumer and no-publish qualification evidence. (088b20ba76ae)
+- Docs: refresh preview-only release text for the combined source. (66ef462c2b1b)
 - Tests: added stale-preview, file-set, hash, size, and cross-checkout regressions. (7bb41079e11f)
 - Tests: added positive projection and unrelated-change refusal coverage. (bb308e64f4f2)
 - Tests: require validation to preserve all generated release bytes. (edcd591a268b)
@@ -66,42 +62,42 @@ preview_only: true
 
 ## Validation Summary
 
-- b3e5c7aa2a17: PASS: intent packet validation.
-- f6ae36e8074b: PASS: export-pack and pack-status with 826 files, 829 checksums, and zero provenance or boundary problems.
-- f6ae36e8074b: PASS: export-pack and pack-status with 826 files, 829 checksums, and zero provenance or boundary problems.
-- 3f1bc120a10c: PASS: release bundle and draft generators.
-- 3f1bc120a10c: PASS: release bundle and draft generators.
-- 088b20ba76ae: PASS: exact staged tree equals published task tree 2bb4a151d57fa250c244e6183509efdf48ea9fe1.
-- 088b20ba76ae: PASS: exact staged tree equals published task tree 2bb4a151d57fa250c244e6183509efdf48ea9fe1.
-- c6fdc754844c: PASS: both task inspections classify complete with no missing evidence.
-- c6fdc754844c: PASS: both task inspections classify complete with no missing evidence.
-- c6fdc754844c: PASS: both task inspections classify complete with no missing evidence.
+- eb4dea3f30ab: PASS: remote task ref equals bb433bb74f645e0904ca34bf3af38516ae05a7ad
+- f737f9199931: PASS: exact candidate commit, tree, parent, diff, and commit-range checks.
+- 7aab31bc1bc7: PASS: source commit range and diff checks before merge.
+- 9bba1cecaec8: PASS: 44 focused GitHub observation/target-policy tests
+- 9383c2b5e852: PASS: 135 affected tests; 134 passed and one Windows symlink test skipped.
+- 36fa64e011b5: PASS WITH SKIPS: 156 adjacent distribution tests; 148 passed and eight skipped.
+- 64979977922a: PASS WITH SKIPS: 126 focused tests; 118 passed and eight skipped.
+- cb05b135eb0d: PASS: 46 target-observation, 21 PR-observation, 19 HTTP, and 12 provider-bridge tests.
+- 6cb0a9ac8856: PASS WITH SKIPS: 126 focused tests; 118 passed and eight skipped.
+- bb689227c6a6: PASS: candidate range commit policy check for all six commits.
 
 ## Known Risks
 
-- b3e5c7aa2a17: Generated path scope and byte changes are unknown until deterministic regeneration.
-- f6ae36e8074b: These are local no-publish artifacts and a preview-only release draft, not a public stable release.
-- f6ae36e8074b: These are local no-publish artifacts and a preview-only release draft, not a public stable release.
-- 3f1bc120a10c: Artifacts remain local and no-publish; no public release is claimed.
-- 3f1bc120a10c: Artifacts remain local and no-publish; no public release is claimed.
-- 088b20ba76ae: This is still a local no-publish bundle and preview draft, not a tagged or uploaded stable release.
-- 088b20ba76ae: This is still a local no-publish bundle and preview draft, not a tagged or uploaded stable release.
-- c6fdc754844c: Operational broker completion, restricted credentials, hosted races, protected-host closeout, main promotion, tags, upload, and public release remain open gates.
-- c6fdc754844c: Operational broker completion, restricted credentials, hosted races, protected-host closeout, main promotion, tags, upload, and public release remain open gates.
-- c6fdc754844c: Operational broker completion, restricted credentials, hosted races, protected-host closeout, main promotion, tags, upload, and public release remain open gates.
+- eb4dea3f30ab: broker principal and workflow/check identities remain unresolved
+- f737f9199931: Source acceptance remains pending Windows tests and independent exact-commit review.
+- 7aab31bc1bc7: Combined-tree behavior remains unqualified until the recorded Windows and adjacent suites pass.
+- 9bba1cecaec8: no product source was edited
+- 9383c2b5e852: The repaired exact source still requires superseding independent review.
+- 36fa64e011b5: Independent exact-commit review is pending.
+- 64979977922a: Exact repair rereview remains pending.
+- cb05b135eb0d: Same-app and same-check-name collision exclusion remains unsupported at the destination boundary.
+- 6cb0a9ac8856: Privilege-dependent symlink and Windows FIFO behavior remain unqualified.
+- bb689227c6a6: Post-merge combined-tree tests and portable artifact provenance refresh remain required.
 
 ## Follow-up
 
-- b3e5c7aa2a17: Publish admission, regenerate export and local release artifacts from clean source, and run exact consumer and canonical checks.
-- f6ae36e8074b: Publish this task candidate, land it into dev, rerun post-landing validation, and close the broker integration and pack-refresh tasks.
-- f6ae36e8074b: Publish this task candidate, land it into dev, rerun post-landing validation, and close the broker integration and pack-refresh tasks.
-- 3f1bc120a10c: Publish the task candidate, verify clean post-commit validation, and land the exact branch into dev.
-- 3f1bc120a10c: Publish the task candidate, verify clean post-commit validation, and land the exact branch into dev.
-- 088b20ba76ae: Run post-commit canonical validation, push dev, observe refs, and close the pack-refresh and parent integration tasks.
-- 088b20ba76ae: Run post-commit canonical validation, push dev, observe refs, and close the pack-refresh and parent integration tasks.
-- c6fdc754844c: Continue AIDE-CW-INTEGRATION-BROKER-01, isolated-host, and GitHub target qualification from their integrated checkpoints; handle main and release only through exact retained gates.
-- c6fdc754844c: Continue AIDE-CW-INTEGRATION-BROKER-01, isolated-host, and GitHub target qualification from their integrated checkpoints; handle main and release only through exact retained gates.
-- c6fdc754844c: Continue AIDE-CW-INTEGRATION-BROKER-01, isolated-host, and GitHub target qualification from their integrated checkpoints; handle main and release only through exact retained gates.
+- eb4dea3f30ab: obtain independent review after resolving exact identities
+- f737f9199931: Merge the exact source commit with both histories preserved and validate the combined tree.
+- 7aab31bc1bc7: Run focused, adjacent, and canonical validation, then obtain independent exact-commit review.
+- 9bba1cecaec8: remediate F-01 through F-04 and submit a new exact-source checkpoint for independent review
+- 9383c2b5e852: Publish the repair and obtain independent exact-commit rereview before any target effect packet.
+- 36fa64e011b5: Obtain independent review, integrate the exact candidate to dev, then refresh and qualify portable artifacts.
+- 64979977922a: Rereview this exact repair, integrate the passing candidate to dev, and refresh commit-bound portable artifacts.
+- cb05b135eb0d: Obtain superseding independent review, then integrate source-only guarantees while keeping hosted effects blocked.
+- 6cb0a9ac8856: Publish this reviewed closeout, merge the exact candidate to dev, and refresh delivered artifacts.
+- bb689227c6a6: Run the focused and adjacent suites on the merged tree, record exact evidence, and regenerate commit-bound portable artifacts.
 
 ## Warnings
 

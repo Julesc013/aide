@@ -2753,6 +2753,8 @@ IMPORT_MODES = {"safe", "full"}
 
 PORTABLE_IMPORT_RECEIPT_PATH = ".aide/install/aide-lite-pack-v0.receipt.json"
 PORTABLE_IMPORT_INTENT_PATH = ".aide/install/aide-lite-pack-v0.intent.json"
+PROJECT_CUSTOMIZATIONS_PATH = ".aide/customizations.json"
+PROJECT_CUSTOMIZATIONS_SCHEMA = "aide.project-customizations.v1"
 PORTABLE_IMPORT_RECEIPT_SCHEMA = "aide.portable-import-receipt.v1"
 PORTABLE_IMPORT_INTENT_SCHEMA = "aide.portable-import-intent.v1"
 
@@ -39988,6 +39990,91 @@ def import_plan_digest(
     return digest_bytes(stable_compact_json_text(payload).encode("utf-8"))
 
 
+def load_project_customizations(target_root: Path) -> dict[str, dict[str, str]]:
+    """Read optional project-authored explanations; never grant update authority."""
+    path = portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)
+    if not path.exists():
+        return {}
+    if not path.is_file() or path.stat().st_size > 65536:
+        raise ValueError("invalid project customizations file")
+    try:
+        record = json.loads(read_text(path))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"invalid project customizations JSON: {exc}") from exc
+    if not isinstance(record, dict) or set(record) != {"schema_version", "entries"} or record["schema_version"] != PROJECT_CUSTOMIZATIONS_SCHEMA:
+        raise ValueError("invalid project customizations schema")
+    entries = record["entries"]
+    if not isinstance(entries, dict) or len(entries) > 256:
+        raise ValueError("invalid project customizations entries")
+    for target_rel, entry in entries.items():
+        if not isinstance(target_rel, str) or "\\" in target_rel or not target_rel or normalize_rel(target_rel) != target_rel:
+            raise ValueError("invalid project customization path")
+        portable_target_path(target_root, target_rel)
+        if not isinstance(entry, dict) or set(entry) != {"observed_digest", "rationale"}:
+            raise ValueError(f"invalid project customization entry: {target_rel}")
+        observed = entry["observed_digest"]
+        rationale = entry["rationale"]
+        if not isinstance(observed, str) or not re.fullmatch(r"[0-9a-f]{64}", observed):
+            raise ValueError(f"invalid project customization digest: {target_rel}")
+        if not isinstance(rationale, str) or not rationale.strip() or len(rationale) > 500 or any(ord(char) < 32 for char in rationale):
+            raise ValueError(f"invalid project customization rationale: {target_rel}")
+    return entries
+
+
+def explain_import_result(result: dict[str, object], target_root: Path, customizations: dict[str, dict[str, str]] | None = None) -> list[dict[str, str]]:
+    """Explain ownership decisions without inferring a project's motivation."""
+    if customizations is None:
+        customizations = load_project_customizations(target_root)
+    reasons = {
+        "preserve": "Project-owned file exists; the incoming template cannot replace it.",
+        "conflict": "Existing bytes differ from incoming bytes and their ownership cannot be proven; the whole payload apply stops before writes.",
+        "update_owned": "The installed receipt or validated predecessor proves unchanged managed bytes may be updated.",
+        "create_from_template": "No project-owned file exists; create the initial editable template.",
+        "merge_agents": "Add the portable section while retaining project-authored text outside it.",
+    }
+    explanations: list[dict[str, str]] = []
+    for operation in result.get("operations", []):
+        action = operation.get("action")
+        if action not in reasons:
+            continue
+        target_rel = operation["target"]
+        entry = customizations.get(target_rel)
+        known = entry is not None and entry["observed_digest"] == operation["preimage_digest"]
+        explanations.append({
+            "target": target_rel,
+            "action": action,
+            "ownership_basis": operation["ownership_basis"],
+            "observed_digest": operation["preimage_digest"],
+            "incoming_digest": operation["source_digest"],
+            "reason": reasons[action],
+            "rationale_status": "recorded_for_current_bytes" if known else "unknown",
+            "project_rationale": entry["rationale"] if known else "unknown",
+        })
+    return explanations
+
+
+def write_import_feedback(path: Path, pack_root: Path, target_root: Path, result: dict[str, object], explanations: list[dict[str, str]]) -> None:
+    """Create a manual-share packet only at an explicit, external output path."""
+    if path.exists() or path.is_symlink() or not path.parent.exists() or not path.parent.is_dir():
+        raise ValueError("feedback output must be a new file in an existing directory")
+    resolved = path.parent.resolve() / path.name
+    if resolved == target_root or target_root in resolved.parents or resolved == pack_root or pack_root in resolved.parents:
+        raise ValueError("feedback output must be outside the pack and target")
+    packet = {
+        "schema_version": "aide.import-feedback.v1",
+        "pack": import_pack_identity(pack_root),
+        "target": normalize_rel(target_root),
+        "plan_digest": result["plan_digest"],
+        "status": result["status"],
+        "explanations": explanations,
+        "sharing": "manual_only",
+        "network_calls": False,
+        "provider_or_model_calls": False,
+    }
+    with resolved.open("x", encoding="utf-8", newline="\n") as stream:
+        stream.write(json.dumps(packet, sort_keys=True, indent=2, ensure_ascii=False) + "\n")
+
+
 def build_portable_import_receipt(
     pack_root: Path,
     mode: str,
@@ -40228,6 +40315,8 @@ def command_export_pack(args: argparse.Namespace) -> int:
 
 
 def command_import_pack(args: argparse.Namespace) -> int:
+    if args.feedback_out and not args.dry_run:
+        raise ValueError("--feedback-out requires --dry-run")
     pack_root = Path(args.pack).resolve()
     if not pack_root.exists():
         pack_root = (args.repo_root / args.pack).resolve()
@@ -40235,6 +40324,7 @@ def command_import_pack(args: argparse.Namespace) -> int:
     predecessor_pack = Path(args.from_pack).resolve() if args.from_pack else None
     if predecessor_pack is not None and not predecessor_pack.exists():
         predecessor_pack = (args.repo_root / args.from_pack).resolve()
+    customizations = load_project_customizations(target_root) if args.explain or args.feedback_out else None
     result = apply_import_pack(
         pack_root,
         target_root,
@@ -40243,6 +40333,9 @@ def command_import_pack(args: argparse.Namespace) -> int:
         predecessor_pack=predecessor_pack,
         expected_plan_digest=args.expect_plan,
     )
+    explanations = explain_import_result(result, target_root, customizations) if customizations is not None else []
+    if args.feedback_out:
+        write_import_feedback(Path(args.feedback_out), pack_root, target_root, result, explanations)
     print("AIDE Lite import-pack")
     print(f"pack: {normalize_rel(pack_root)}")
     print(f"target: {normalize_rel(target_root)}")
@@ -40262,6 +40355,12 @@ def command_import_pack(args: argparse.Namespace) -> int:
         print("skipped_paths:")
         for skipped in result["skipped"]:
             print(f"- {skipped['source']}: {skipped['reason']}")
+    if args.explain:
+        print("explanations:")
+        for item in explanations:
+            print(f"- {item['action']}: {item['target']}; basis={item['ownership_basis']}; reason={item['reason']}; rationale_status={item['rationale_status']}; project_rationale={json.dumps(item['project_rationale'], ensure_ascii=False)}")
+    if args.feedback_out:
+        print(f"feedback_out: {normalize_rel(Path(args.feedback_out).resolve())}")
     print("provider_or_model_calls: none")
     print("network_calls: none")
     if result["status"] in {"CONFLICT", "PLANNED_CONFLICT"}:
@@ -42193,6 +42292,8 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     import_parser.add_argument("--pack", default=EXPORT_PACK_PATH)
     import_parser.add_argument("--target", required=True)
     import_parser.add_argument("--dry-run", action="store_true")
+    import_parser.add_argument("--explain", action="store_true", help="Explain ownership decisions; unknown project rationale remains unknown.")
+    import_parser.add_argument("--feedback-out", help="With --dry-run, create a local manual-share JSON packet at a new path outside pack and target.")
     import_parser.add_argument("--from-pack", help="Validated predecessor pack used only to prove an unrecorded installed baseline.")
     import_parser.add_argument("--expect-plan", help="Exact plan digest printed by a prior dry-run; changed inputs refuse apply.")
     import_parser.add_argument(

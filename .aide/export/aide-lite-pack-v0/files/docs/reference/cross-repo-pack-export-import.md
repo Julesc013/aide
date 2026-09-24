@@ -1,5 +1,40 @@
 # Cross-Repo Pack Export / Import v0
 
+## Project customization and update explanation
+
+The portable importer creates `.aide/profile.yaml` from a template on first
+import. That file belongs to the project thereafter. A later pack preserves its
+bytes. Other project-authored text outside the portable `AGENTS.md` section is
+also preserved. If a managed file is edited outside AIDE and an incoming pack
+changes it, import stops before payload writes and reports a conflict.
+
+`import-pack --dry-run --explain` prints the ownership reason for preserved,
+conflicting, and managed update operations. It does not guess why a project
+made a change. A project may optionally write `.aide/customizations.json`:
+
+```json
+{
+  "schema_version": "aide.project-customizations.v1",
+  "entries": {
+    ".aide/profile.yaml": {
+      "observed_digest": "<sha256 of the current file bytes>",
+      "rationale": "Keep our project adapter active."
+    }
+  }
+}
+```
+
+The rationale is shown only while its digest matches the observed file. An
+absent or stale rationale is `unknown`; the file grants no overwrite authority.
+Malformed customization metadata refuses explanation before CLI apply. No
+customization metadata is created or sent automatically.
+
+To make a local packet that the project can review and share manually, add
+`--feedback-out <new-path>` to a dry run. The new path must be outside both the
+pack and target. The packet contains paths, digests, ownership decisions, and
+any current recorded rationale; review it before sharing. This flag performs
+no network, provider, or model call.
+
 ## Purpose
 
 Q21 creates the first portable AIDE Lite Pack. Q25 repairs its integrity and
