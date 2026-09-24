@@ -1,5 +1,9 @@
 # Qualified local candidate
 
+**Superseded after qualification:** the dry-run pending-intent recovery finding
+was outside this candidate's test matrix. These recorded results remain true for
+the identified bytes, but this is not the current review subject.
+
 Date: 2026-09-24 AEST. Source checkpoint `98de5ee1531e3d71f6f003f8bc98bf2a6b8bf23b`;
 preview checkpoint `9dc91654f8df9d7ea8b85dc32285b504f3344e26`;
 artifact checkpoint `8262b2fd64658cdb6ee8638fc4aad6221ecfee94`;

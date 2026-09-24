@@ -1,5 +1,11 @@
 # Exact review request
 
+**SUPERSEDED 2026-09-24:** This packet records the earlier candidate only.
+The existing importer can reconcile a completed or no-effect pending intent
+during `--dry-run`. No review or dev integration should use this subject.
+Replacement source/artifact qualification is in progress under the same bounded
+WorkUnit. Preserve this packet as historical evidence.
+
 Candidate: `37daa862e939ec4b4b299474e26668a6e44c54e2`, tree
 `118e3771fd9ce82cf43425bbabbf3677244fcddb`, based on dev
 `3bdeb220cb31dfc3177faa6836f5e86c8071d1ef`.

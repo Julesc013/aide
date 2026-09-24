@@ -16,3 +16,12 @@ recorded rationale only for matching bytes, stale/absent rationale as unknown,
 malformed metadata refusal, opt-in feedback, and no ordinary feedback output.
 No live target or hosted effect was run. Final extracted-archive consumer and
 generated-artifact replay remain open.
+
+Later adversarial work found that pending completed/no-effect recovery intent
+could be reconciled by a dry run. The repair returned `RECOVERY_REQUIRED`
+without target writes and refused feedback without a complete plan. The full
+28-case export/import suite passed after that repair in 342.578 seconds.
+After adding a reserved project-metadata payload refusal and a final
+current-byte rationale check, focused customization (2 cases), pending-intent
+(1 case), and reserved-metadata (1 case) runs passed. Final archive
+requalification is pending.

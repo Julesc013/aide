@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
 title: Explain and retain downstream customization across portable updates
 type: delivered_consumer_behavior
-status: needs_review
-planning_state: exact_local_candidate_qualified
-result: PASS_WITH_RETAINED_GATES
+status: running
+planning_state: superseding_recovery_safety_repair
+result: pending_requalification
 created_at: 2026-09-24
 updated_at: 2026-09-24
 base_commit: 3bdeb220cb31dfc3177faa6836f5e86c8071d1ef

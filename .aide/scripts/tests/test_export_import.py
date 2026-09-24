@@ -541,6 +541,10 @@ class ExportImportTests(unittest.TestCase):
         known = {item["target"]: item for item in aide_lite.explain_import_result(preview, target)}
         self.assertEqual(known[".aide/profile.yaml"]["project_rationale"], "Keep the project adapter active.")
         self.assertEqual(known[managed_rel]["project_rationale"], "Project command wording is intentional.")
+        aide_lite.write_text(profile, aide_lite.read_text(profile) + "intervening_edit: true\n")
+        changed_after_preview = {item["target"]: item for item in aide_lite.explain_import_result(preview, target)}
+        self.assertEqual(changed_after_preview[".aide/profile.yaml"]["project_rationale"], "unknown")
+        profile.write_bytes(profile_bytes)
         self.assertEqual(aide_lite.apply_import_pack(pack_v2, target)["status"], "CONFLICT")
         self.assertEqual(profile.read_bytes(), profile_bytes)
         self.assertEqual((target / managed_rel).read_bytes(), managed_bytes)
@@ -626,6 +630,77 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(resumed["recovery"]["classification"], "partial")
         self.assertEqual(resumed["written"], [])
         self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file())
+
+    def test_dry_run_never_reconciles_a_pending_import_intent(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "recovery-dry-v1")
+        target = source_root.parent / "target-recovery-dry"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        receipt = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        intent = target / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+
+        aide_lite.write_text(source_root / managed_rel, "# Recovery candidate two\n")
+        pack_v2 = self.freeze_pack(source_root, "recovery-dry-v2")
+        interrupted = aide_lite.apply_import_pack(pack_v2, target, fail_after_writes=1)
+        self.assertEqual(interrupted["status"], "INTERRUPTED")
+        self.assertEqual(interrupted["recovery"]["classification"], "completed")
+        intent_before = intent.read_bytes()
+        receipt_before = receipt.read_bytes()
+        target_before = (target / managed_rel).read_bytes()
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True)
+        self.assertEqual(preview["status"], "RECOVERY_REQUIRED")
+        self.assertTrue(preview["dry_run"])
+        self.assertEqual(preview["recovery"]["classification"], "completed")
+        self.assertEqual(intent.read_bytes(), intent_before)
+        self.assertEqual(receipt.read_bytes(), receipt_before)
+
+        self.assertEqual((target / managed_rel).read_bytes(), target_before)
+
+        script = source_root / ".aide/scripts/aide_lite.py"
+        feedback = source_root.parent / "recovery-feedback.json"
+        command = [sys.executable, str(script), "--repo-root", str(source_root), "import-pack", "--pack", str(pack_v2), "--target", str(target), "--dry-run", "--feedback-out", str(feedback)]
+        refused = subprocess.run(command, capture_output=True, text=True, encoding="utf-8")
+        self.assertNotEqual(refused.returncode, 0)
+        self.assertFalse(feedback.exists())
+        self.assertEqual(intent.read_bytes(), intent_before)
+        self.assertEqual(receipt.read_bytes(), receipt_before)
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target)["status"], "RECOVERED")
+
+        aide_lite.write_text(source_root / managed_rel, "# Recovery candidate three\n")
+        pack_v3 = self.freeze_pack(source_root, "recovery-dry-v3")
+        preimage = (target / managed_rel).read_bytes()
+        interrupted = aide_lite.apply_import_pack(pack_v3, target, fail_after_writes=1)
+        self.assertEqual(interrupted["status"], "INTERRUPTED")
+        (target / managed_rel).write_bytes(preimage)
+        intent_before = intent.read_bytes()
+        receipt_before = receipt.read_bytes()
+        preview = aide_lite.apply_import_pack(pack_v3, target, dry_run=True)
+        self.assertEqual(preview["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(preview["recovery"]["classification"], "no_effect")
+        self.assertEqual(intent.read_bytes(), intent_before)
+        self.assertEqual(receipt.read_bytes(), receipt_before)
+
+    def test_pack_cannot_supply_project_owned_customization_metadata(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "reserved-project-metadata")
+        payload = pack / "files" / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
+        aide_lite.write_text(payload, '{"schema_version":"aide.project-customizations.v1","entries":{}}\n')
+        checksums_path = pack / "checksums.json"
+        checksums = json.loads(aide_lite.read_text(checksums_path))
+        checksums["checksums"]["files/" + aide_lite.PROJECT_CUSTOMIZATIONS_PATH] = aide_lite.sha256_file(payload)
+        aide_lite.write_text(checksums_path, json.dumps(checksums, sort_keys=True) + "\n")
+        self.assertTrue(aide_lite.validate_pack_checksums(pack)[0])
+        target = source_root.parent / "reserved-project-target"
+        original = b'{"project":"owned"}\n'
+        authored = target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
+        authored.parent.mkdir(parents=True)
+        authored.write_bytes(original)
+        with self.assertRaisesRegex(ValueError, "reserved project/import state"):
+            aide_lite.apply_import_pack(pack, target)
+        self.assertEqual(authored.read_bytes(), original)
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
 
     def test_fake_secret_source_file_is_not_exported(self) -> None:
         source_root = self.make_source_repo()

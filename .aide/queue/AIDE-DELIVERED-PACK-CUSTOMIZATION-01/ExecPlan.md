@@ -17,6 +17,11 @@ publication effect.
 - [x] Run source tests and adversarial cases: 27-case suite and two focused rechecks passed.
 - [x] Regenerate and qualify final portable bytes in disposable consumers.
 - [ ] Record source/artifact evidence, prevalidate closeout, and integrate if reviewed and accepted.
+- [x] Detect that an existing pending-intent dry run could mutate recovery
+  state; supersede `37daa862` before review or dev integration.
+- [x] Repair read-only recovery preview and reserve project rationale metadata
+  against pack payloads; focused adversarial tests pass.
+- [ ] Rebuild exact bytes and qualify the replacement candidate.
 
 ## Verification and recovery
 

@@ -39927,8 +39927,8 @@ def import_pack_plan(
             target_rel = "AGENTS.md"
         else:
             target_rel = rel
-        if target_rel in {PORTABLE_IMPORT_RECEIPT_PATH, PORTABLE_IMPORT_INTENT_PATH}:
-            raise ValueError(f"pack payload collides with reserved lifecycle state: {target_rel}")
+        if target_rel in {PORTABLE_IMPORT_RECEIPT_PATH, PORTABLE_IMPORT_INTENT_PATH, PROJECT_CUSTOMIZATIONS_PATH}:
+            raise ValueError(f"pack payload collides with reserved project/import state: {target_rel}")
         target = portable_target_path(target_root, target_rel)
         if rel == "AGENTS.md.template":
             operation, conflict = agents_operation(source, rel, target, target_rel, receipt, predecessor_pack)
@@ -40039,7 +40039,11 @@ def explain_import_result(result: dict[str, object], target_root: Path, customiz
             continue
         target_rel = operation["target"]
         entry = customizations.get(target_rel)
-        known = entry is not None and entry["observed_digest"] == operation["preimage_digest"]
+        known = (
+            entry is not None
+            and entry["observed_digest"] == operation["preimage_digest"]
+            and target_file_digest(portable_target_path(target_root, target_rel)) == operation["preimage_digest"]
+        )
         explanations.append({
             "target": target_rel,
             "action": action,
@@ -40222,6 +40226,8 @@ def apply_import_pack(
     pending = load_portable_import_intent(target_root)
     if pending is not None:
         recovery = classify_portable_import_recovery(target_root, pending)
+        if dry_run:
+            return {"status": "RECOVERY_REQUIRED", "dry_run": True, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
         if recovery["classification"] == "completed":
             atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), pending["next_receipt"])
             portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
@@ -40335,6 +40341,8 @@ def command_import_pack(args: argparse.Namespace) -> int:
     )
     explanations = explain_import_result(result, target_root, customizations) if customizations is not None else []
     if args.feedback_out:
+        if result["status"] not in {"PLANNED", "PLANNED_CONFLICT"}:
+            raise ValueError("feedback output requires a complete import dry-run plan")
         write_import_feedback(Path(args.feedback_out), pack_root, target_root, result, explanations)
     print("AIDE Lite import-pack")
     print(f"pack: {normalize_rel(pack_root)}")

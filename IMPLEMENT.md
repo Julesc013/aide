@@ -4,8 +4,8 @@
 
 ### Status
 
-Source and local artifacts are qualified on the bounded task branch. Exact
-candidate `37daa862` awaits the queue review gate before dev integration.
+The earlier local candidate `37daa862` was superseded after a dry-run recovery
+finding. A repaired replacement source is being qualified; dev is unchanged.
 
 ### Changed Paths
 
@@ -40,6 +40,18 @@ This slice explains and preserves customization. A conflict still requires an
 explicit resolution workflow; it does not silently merge unknown edits.
 Repair, rollback, and removal apply behavior and stable publication remain
 separate release obligations.
+
+### Superseding recovery repair
+
+Read-only preview now leaves a pending import intent and receipt unchanged for
+completed, no-effect, and partial recovery classifications. Feedback export
+refuses these incomplete plans. The importer rejects a checksummed pack payload
+that attempts to provide project-owned `.aide/customizations.json`. Recorded
+rationale is shown only if both the plan preimage and current target bytes match
+the project-authored digest. The full 28-case suite passed after the recovery
+repair; final focused checks for customization, pending intent, and reserved
+metadata passed after the remaining boundary changes. Rebuilt artifact and
+consumer evidence will supersede the earlier archive results.
 
 ## Purpose
 
