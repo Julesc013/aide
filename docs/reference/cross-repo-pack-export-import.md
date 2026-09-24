@@ -272,6 +272,17 @@ operator action through `commit install-hook`.
 
 ## Boundary
 
+### Restore one missing portable managed file
+
+An installed safe-mode consumer can restore one missing file recorded as `managed_file` in its import receipt. Use the same extracted, checksum-valid pack whose exact identity appears in the receipt:
+
+```text
+py -3 -I -B <pack>/files/.aide/scripts/aide_lite.py --repo-root <target> repair-owned-file --pack <pack> --target <target> --path .aide/prompts/compact-task.md --dry-run
+py -3 -I -B <pack>/files/.aide/scripts/aide_lite.py --repo-root <target> repair-owned-file --pack <pack> --target <target> --path .aide/prompts/compact-task.md --expect-plan <preview-plan-digest>
+```
+
+The preview checks pack checksums, exact receipt and source digests, safe-mode ownership, and a missing target. Apply requires its exact plan digest. An existing file, local edit, unknown receipt entry, different pack, pending import intent, or stale plan refuses the write. A target-local repair intent records a write before it occurs. Complete bytes are staged in the target directory and published by an atomic no-clobber hard-link creation, so a competing creation is preserved. Rerunning the exact apply after interruption verifies a completed postimage or retries a missing preimage; unknown bytes remain blocked. A dry-run leaves the intent and target unchanged. The repair command does not restore managed sections, target-owned templates, modified files, or multiple paths.
+
 The portable pack is metadata and tooling, not proof that AIDE reduces tokens in
 the target. Q22 Eureka Import Pilot and Q23 Dominium Import Pilot must measure:
 

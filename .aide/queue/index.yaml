@@ -3500,3 +3500,13 @@ items:
     prompt: .aide/queue/AIDE-HISTORICAL-DEV-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-HISTORICAL-DEV-INTEGRATION-01/evidence
     description: Preserve historical decision ancestry and current dev source, then regenerate and qualify combined artifacts.
+  - id: AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01
+    status: needs_review
+    planning_state: implementation_complete
+    result: PENDING_REVIEW
+    title: Restore one missing receipt-owned delivered-pack file
+    task: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/evidence
+    description: Exact-pack, receipt-owned single missing-file repair apply in disposable delivered-pack consumers.

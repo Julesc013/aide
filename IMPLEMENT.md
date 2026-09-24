@@ -11516,3 +11516,8 @@ DLL mapping, image or grant effect is part of this source implementation.
 - The old branch's generated outputs were discarded during integration; the
   current dev generator must produce qualified combined artifacts. No product,
   native, hosted, main, or publication acceptance follows from dispositions.
+# Delivered-pack owned repair apply candidate (2026-09-25)
+
+Added `repair-owned-file` to the portable AIDE Lite CLI with exact pack/receipt/ownership/preimage checks, preview digest binding, and an interruption intent. The importer now refuses a pending repair intent. This bounded cross-cutting importer guard prevents a second lifecycle command from bypassing recovery. Tests use disposable extracted-pack consumers; no shared artifacts or live repositories were changed. Qualification details are in the queue item's evidence.
+
+Owner review found a final-write race in the first candidate. The repair now publishes complete staged bytes through atomic no-clobber hard-link creation. A deterministic competing-creation test proves a project file survives; prepublication failure leaves the intent for exact retry. The no-clobber behavior is limited to this repair operation.

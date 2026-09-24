@@ -1,0 +1,6 @@
+schema_version: aide.queue-status.v0
+id: AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01
+status: needs_review
+planning_state: implementation_complete
+result: PENDING_REVIEW
+updated_at: 2026-09-25

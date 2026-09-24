@@ -1,0 +1,33 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01
+title: Restore one missing receipt-owned delivered-pack file
+type: implementation
+status: needs_review
+planning_state: implementation_complete
+result: PENDING_REVIEW
+created_at: 2026-09-25
+updated_at: 2026-09-25
+objective: Restore one missing managed file from the exact validated pack recorded in a consumer's portable import receipt.
+authority_basis: Owner's 2026-09-25 persistent lifecycle campaign delegation; disposable delivered-pack consumers only.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - docs/reference/cross-repo-pack-export-import.md
+    - .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_operations:
+    - mutate live consumer repositories
+    - repair locally modified or unknown files
+    - integrate or publish before independent review and exact candidate qualification
+    - generate shared pack/release outputs during this implementation slice
+verification:
+  - exact pack, receipt, ownership, and missing preimage gate
+  - dry-run identity and stale-plan refusal
+  - interrupted write recovery and adversarial path checks
+  - extracted-pack consumer regression
+retained_gates:
+  - rollback and removal apply remain separate slices
+  - independent technical review before integration
