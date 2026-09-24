@@ -1,14 +1,14 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
-status: needs_review
-planning_state: effective_rules_endpoint_repair_ready_for_rereview
+status: running
+planning_state: local_source_review_accepted_dev_integration_pending
 result: PASS_WITH_WARNINGS
-updated_at: 2026-09-23
-configuration_review: third_request_changes_repaired_pending_rereview
+updated_at: 2026-09-24
+configuration_review: local_source_accepted_with_notes_hosted_pending
 settings_mutated: false
 hosted_acceptance: not_run
-current_slice: effective_rules_endpoint_shape_repair
-next_slice: independent_exact_rereview_then_dev_integration
+current_slice: dev_source_integration
+next_slice: combined_pack_refresh_and_hosted_qualification
 source_tests: 50_passed
 affected_regression_tests: 138_passed_1_skipped
 notes:
@@ -35,3 +35,6 @@ notes:
   - Effective rules now use endpoint-shaped individual rules bound to applicable observed ruleset identities; focused coverage passes 50 cases.
   - Test prose now distinguishes executed, passed, and skipped counts.
   - The complete repaired matrix executed 139 cases: 138 passed, zero failed, and one privilege-dependent Windows symlink case skipped.
+  - A fresh Codex review of exact commit e378d38e and tree c8712646 accepted the local target source with notes for dev integration; the older Sagan terminal verdict was not recovered.
+  - The fresh review reran 139 cases with 138 passes and one Windows privilege skip; canonical validate and doctor still fail on the inherited stale export-pack source identity.
+  - Review evidence is preserved in evidence/fresh-exact-review-2026-09-24.md with a separate custody receipt and the external original retained.

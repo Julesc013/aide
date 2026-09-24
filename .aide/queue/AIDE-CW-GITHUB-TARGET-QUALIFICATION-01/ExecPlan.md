@@ -134,7 +134,7 @@ perform any target mutation.
 - [x] Bind repository id, effective-rule bodies, and explicit classic branch
       protection presence/absence into the canonical observation and plan.
 - [x] Pass 135 affected cases with one retained Windows symlink skip.
-- [ ] Obtain a superseding independent review of the repaired exact commit.
+- [x] Obtain a superseding fresh independent review of the repaired exact source.
 
 The live packet remains blocked on unresolved principal and workflow identity
 with zero operations. The first rereview closed F-01, F-02 and F-04 but retained
@@ -163,10 +163,18 @@ does not authorize or perform target configuration.
       apply to `refs/heads/dev`, with malformed and drifted inputs fail-closed.
 - [x] Run all five affected suites: 139 executed, 138 passed, one retained
       privilege-dependent Windows symlink skip.
-- [ ] Obtain a superseding independent review of the exact repair commit.
+- [x] Obtain a superseding fresh independent review of exact commit `e378d38e`.
 
 The workflow selector remains a local precondition and monitored provenance,
 not evidence of server-enforced workflow-source identity. The live plan remains
 blocked with zero operations until the restricted principal, workflow/check
 identity, target policy, hosted races, and protected-host dependency are each
 separately qualified.
+
+On 2026-09-24, a new Codex reviewer who did not author the candidate accepted
+exact commit `e378d38e` with notes for local source integration. The review
+reran all five affected suites and retained the Windows privilege skip. The
+older Sagan terminal output was unavailable. The fresh report and custody
+receipt are in this task's evidence directory. The next restart point is dev
+source integration and export-pack regeneration against the combined source;
+hosted and protected-host effects retain their separate gates.
