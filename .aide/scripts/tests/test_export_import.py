@@ -507,6 +507,82 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(unknown_result["written"], [])
         self.assertFalse((unknown / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
 
+    def test_customization_explains_project_owned_and_conflicting_direct_edits(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "customization-v1")
+        target = source_root.parent / "target-customized"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        profile = target / ".aide/profile.yaml"
+        aide_lite.write_text(profile, aide_lite.read_text(profile) + "project_adapter: local\n")
+        aide_lite.write_text(target / managed_rel, "# Direct project edit\n")
+        profile_bytes = profile.read_bytes()
+        managed_bytes = (target / managed_rel).read_bytes()
+        receipt_bytes = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
+        aide_lite.write_text(source_root / managed_rel, "# Conflicting upstream revision\n")
+        pack_v2 = self.freeze_pack(source_root, "customization-v2")
+
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True)
+        self.assertEqual(preview["status"], "PLANNED_CONFLICT")
+        unknown = {item["target"]: item for item in aide_lite.explain_import_result(preview, target)}
+        self.assertEqual(unknown[".aide/profile.yaml"]["action"], "preserve")
+        self.assertEqual(unknown[".aide/profile.yaml"]["project_rationale"], "unknown")
+        self.assertEqual(unknown[managed_rel]["action"], "conflict")
+        self.assertEqual(unknown[managed_rel]["rationale_status"], "unknown")
+        self.assertEqual(unknown[managed_rel]["observed_digest"], aide_lite.digest_bytes(managed_bytes))
+
+        aide_lite.write_text(target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH, json.dumps({
+            "schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA,
+            "entries": {
+                ".aide/profile.yaml": {"observed_digest": aide_lite.digest_bytes(profile_bytes), "rationale": "Keep the project adapter active."},
+                managed_rel: {"observed_digest": aide_lite.digest_bytes(managed_bytes), "rationale": "Project command wording is intentional."},
+            },
+        }))
+        known = {item["target"]: item for item in aide_lite.explain_import_result(preview, target)}
+        self.assertEqual(known[".aide/profile.yaml"]["project_rationale"], "Keep the project adapter active.")
+        self.assertEqual(known[managed_rel]["project_rationale"], "Project command wording is intentional.")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target)["status"], "CONFLICT")
+        self.assertEqual(profile.read_bytes(), profile_bytes)
+        self.assertEqual((target / managed_rel).read_bytes(), managed_bytes)
+        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_bytes)
+
+        aide_lite.write_text(profile, aide_lite.read_text(profile) + "local_note: changed_again\n")
+        stale_preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True)
+        stale = {item["target"]: item for item in aide_lite.explain_import_result(stale_preview, target)}
+        self.assertEqual(stale[".aide/profile.yaml"]["project_rationale"], "unknown")
+        self.assertEqual(stale[".aide/profile.yaml"]["rationale_status"], "unknown")
+
+    def test_feedback_is_explicit_local_and_malformed_rationale_refuses_explanation(self) -> None:
+        source_root = self.make_source_repo()
+        pack_root = self.freeze_pack(source_root, "feedback-pack")
+        target = source_root.parent / "target-feedback"
+        self.assertEqual(aide_lite.apply_import_pack(pack_root, target)["status"], "APPLIED")
+        script = source_root / ".aide/scripts/aide_lite.py"
+        feedback = source_root.parent / "feedback.json"
+        command = [sys.executable, str(script), "--repo-root", str(source_root), "import-pack", "--pack", str(pack_root), "--target", str(target)]
+
+        ordinary = subprocess.run([*command, "--dry-run"], capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(ordinary.returncode, 0, ordinary.stdout + ordinary.stderr)
+        self.assertFalse(feedback.exists())
+        requested = subprocess.run([*command, "--dry-run", "--explain", "--feedback-out", str(feedback)], capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(requested.returncode, 0, requested.stdout + requested.stderr)
+        packet = json.loads(aide_lite.read_text(feedback))
+        self.assertEqual(packet["sharing"], "manual_only")
+        self.assertFalse(packet["network_calls"])
+        self.assertTrue(all("observed_digest" in item and "incoming_digest" in item for item in packet["explanations"]))
+        self.assertTrue(any(item["target"] == ".aide/profile.yaml" for item in packet["explanations"]))
+        self.assertTrue(all(item["project_rationale"] == "unknown" for item in packet["explanations"]))
+        self.assertFalse((target / "feedback.json").exists())
+        self.assertEqual(aide_lite.apply_import_pack(pack_root, target)["status"], "NO_CHANGES")
+
+        refused = subprocess.run([*command, "--feedback-out", str(source_root.parent / "forbidden.json")], capture_output=True, text=True, encoding="utf-8")
+        self.assertNotEqual(refused.returncode, 0)
+        self.assertFalse((source_root.parent / "forbidden.json").exists())
+        aide_lite.write_text(target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH, '{"schema_version": "wrong", "entries": {}}')
+        with self.assertRaisesRegex(ValueError, "invalid project customizations schema"):
+            aide_lite.explain_import_result(aide_lite.apply_import_pack(pack_root, target, dry_run=True), target)
+        self.assertEqual(aide_lite.apply_import_pack(pack_root, target)["status"], "NO_CHANGES")
+
     def test_changed_target_refuses_an_exact_preview_identity(self) -> None:
         source_root = self.make_source_repo()
         managed_rel = ".aide/prompts/compact-task.md"

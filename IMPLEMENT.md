@@ -1,5 +1,42 @@
 # AIDE Implementation Log
 
+## Work Item: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
+
+### Status
+
+Source implementation complete on the bounded task branch; delivered artifact
+refresh and consumer qualification are pending.
+
+### Changed Paths
+
+`.aide/scripts/aide_lite.py`, its export/import tests,
+`docs/reference/cross-repo-pack-export-import.md`, and this task's queue,
+planning, and evidence records.
+
+### Rationale and design
+
+The importer already preserves target-owned template outputs and refuses a
+locally modified managed file before payload writes. An optional project-owned
+`.aide/customizations.json` now binds a rationale to the current observed file
+digest. `--explain` reports ownership decisions and keeps absent or stale
+rationale unknown. `--feedback-out` creates a local manual-share packet only
+when explicitly requested with `--dry-run`; it cannot write inside the pack or
+target. Rationale never grants update authority.
+
+### Verification
+
+The full export/import suite passed 27/27 in 292.756 seconds. After adding
+digest fields to the explanations, the two affected tests passed again (one
+each in 20.320 and 19.481 seconds). `git diff --check` passed. Final archive
+consumer and canonical replay are pending.
+
+### Risks and follow-up
+
+This slice explains and preserves customization. A conflict still requires an
+explicit resolution workflow; it does not silently merge unknown edits.
+Repair, rollback, and removal apply behavior and stable publication remain
+separate release obligations.
+
 ## Purpose
 
 `IMPLEMENT.md` is the engineering execution log for repository changes. It records what changed, why it changed, how it was verified, which risks were avoided, and what remains unresolved. It is not a changelog.

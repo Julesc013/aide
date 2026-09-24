@@ -1,5 +1,18 @@
 # AIDE Planning Index
 
+## AIDE-DELIVERED-PACK-CUSTOMIZATION-01: Delivered customization
+
+- Status: active on `task/aide-delivered-pack-customization-01` from dev `3bdeb220`.
+- Objective: explain project-owned preservation and conflicting updates with
+  exact-byte optional rationale and opt-in local feedback.
+- Scope and dependencies: see the bounded queue ExecPlan and mandatory-profile
+  gap matrix. Combined release/target dev is the source base; no live target or
+  hosted effect is admitted.
+- Verification: source conflict/preservation tests, extracted-pack consumer,
+  canonical checks, and current-generator replay.
+- Blockers: historical owner dispositions, full lifecycle apply behavior,
+  native/hosted qualification, and exact publication remain separate gates.
+
 ## Purpose
 
 `PLANS.md` is the repository's working plan index for substantial engineering work. It exists to track real execution intent, dependencies, milestones, blockers, and verification plans. It is not a marketing roadmap.

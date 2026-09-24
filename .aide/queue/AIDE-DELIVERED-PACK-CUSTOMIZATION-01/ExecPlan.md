@@ -1,0 +1,27 @@
+# ExecPlan: Delivered Pack Customization
+
+## Objective and scope
+
+Implement one bounded missing consumer journey on the accepted combined dev:
+project-owned configuration, a direct local edit, a conflicting upstream
+update, deterministic preservation explanation, and explicit local feedback.
+Change only this WorkUnit's allowlist. No live target, hosted, provider, or
+publication effect.
+
+## Dependencies and progress
+
+- [x] Start from observed dev `3bdeb220` with release and target source integrated.
+- [x] Inspect import authority, ownership, receipt, and conflict behavior.
+- [x] Add exact-byte rationale binding and explanation without changing apply authority.
+- [x] Add opt-in local feedback with no automatic telemetry.
+- [x] Run source tests and adversarial cases: 27-case suite and two focused rechecks passed.
+- [ ] Regenerate and qualify final portable bytes in disposable consumers.
+- [ ] Record source/artifact evidence, prevalidate commits, and integrate if accepted.
+
+## Verification and recovery
+
+Test preservation and conflict-first behavior with two pack versions, direct
+edits, matching/stale/malformed rationale, and feedback absent/present. Then
+qualify an extracted archive consumer and run the current release generator's
+post-commit replay. Fix forward on the task branch; do not replace current
+release machinery with older branch output.
