@@ -3622,8 +3622,10 @@ the accepted release-integrity `dev` at `f77ecba2`; nine combined suites ran
 pack-provenance refresh has generated local artifacts from source `66ef462c`
 through `AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01`. The first post-artifact cycle
 advanced to `PASS_SOURCE_ANCESTOR`, and a second changed zero of 44 files.
-Commit the projection, replay cleanly, run direct archive consumers, then land
-the qualified combined candidate. Hosted settings,
+Projection `d4bd4938` replays all four generators with zero changed files;
+fresh ZIP and brownfield tar.gz consumers apply, rerun idempotently, preserve
+authored content, and pass target-local doctor. Land the qualified combined
+candidate next. Hosted settings,
 credentials, and races retain separate gates.
 
 ## Broker runtime dev integration

@@ -25,5 +25,9 @@ creation privilege case, not an executed pass. An initial typo selected
 the stated skip. No test assertion failed.
 
 `git diff --check` and staged diff checks passed. The exact merge commit,
-canonical validation, pack provenance, and derived-artifact replay remain
-pending at this source candidate checkpoint.
+canonical validation, pack provenance, and derived-artifact replay were pending
+at this source candidate checkpoint. Merge `6a581dbc` then failed canonical
+validate only for inherited pack source `1397b703` versus combined HEAD.
+Bounded child `AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01` subsequently cleared
+that failure, passed canonical checks, and qualified direct ZIP and tar.gz
+consumers. Its evidence records the exact final bytes.

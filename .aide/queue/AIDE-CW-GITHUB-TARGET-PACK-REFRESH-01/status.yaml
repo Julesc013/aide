@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01
 status: running
-planning_state: projection_commit_pending
+planning_state: qualified_dev_integration_pending
 result: PENDING
 updated_at: 2026-09-24
 source_merge_commit: 6a581dbcfbd5d208f957956096aacb18b832301a
@@ -13,3 +13,7 @@ pack_provenance: PASS_SOURCE_ANCESTOR
 release_paths_replay: 44_compared_0_changed
 asset_hashes: 9_checked_0_mismatch
 checksum_hashes: 7_checked_0_mismatch
+projection_commit: d4bd4938fa4324f6dd8818ba4ce5ae38041bb897
+committed_replay: 44_compared_0_changed
+zip_consumer: fresh_APPLIED_NO_CHANGES_doctor_PASS
+tar_consumer: brownfield_APPLIED_NO_CHANGES_doctor_PASS

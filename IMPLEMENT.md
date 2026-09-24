@@ -222,7 +222,10 @@ The first complete post-commit cycle advanced provenance to
 `PASS_SOURCE_ANCESTOR`; a second cycle changed zero of 44 release files.
 Nine asset hashes and sizes and seven checksum records match actual files.
 Canonical validate and doctor pass after projection. Final projection commit,
-clean replay, direct consumers, and dev integration remain pending. No hosted
+clean replay, and direct consumers now pass: committed projection `d4bd4938`
+replays all four generators with zero of 44 files changed, and exact ZIP/tar.gz
+fresh/brownfield imports apply, rerun without changes, preserve authored content,
+and pass target-local doctor. Dev integration remains pending. No hosted
 setting, main, tag, upload, or publication effect occurred.
 
 ## Work Item: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01

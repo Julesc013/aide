@@ -3452,7 +3452,7 @@ items:
     description: Repairs stale asset identities, checkout-local provenance, and stale preview publication candidates found during independent artifact review.
   - id: AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01
     status: running
-    planning_state: admitted
+    planning_state: qualified_dev_integration_pending
     result: PENDING
     title: Integrate the reviewed GitHub target source into dev
     task: .aide/queue/AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01/task.yaml
@@ -3462,7 +3462,7 @@ items:
     description: Preserve the fresh-reviewed target source in accepted release-integrity dev ancestry and qualify the combined local source without hosted effects.
   - id: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01
     status: running
-    planning_state: admitted
+    planning_state: qualified_dev_integration_pending
     result: PENDING
     title: Refresh local portable and release artifacts for combined target source
     task: .aide/queue/AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01/task.yaml

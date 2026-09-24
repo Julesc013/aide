@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "archive": "aide-lite-pack-v0.zip",
+      "sha256": "4b9e458fe4a3c5f67f862de9c443ea195f74df7dd0bd2d0b69a4406562fdb5d8",
+      "profile": "fresh",
+      "plan_digest": "578c741fa1635f817372dabb23c389d0bc0c1187602680407ccc7dad2914bed4",
+      "dry_run": "PASS",
+      "apply": "APPLIED",
+      "rerun": "NO_CHANGES",
+      "doctor": "PASS",
+      "authored_files_preserved": [],
+      "pack_root": "D:\\Projects\\AIDE\\_review_scratch\\combined-consumers-a9a8b295a871\\extracted-fresh\\aide-lite-pack-v0",
+      "target": "D:\\Projects\\AIDE\\_review_scratch\\combined-consumers-a9a8b295a871\\target-fresh"
+    },
+    {
+      "archive": "aide-lite-pack-v0.tar.gz",
+      "sha256": "65fc3f78f719244695a80914e73d535269d486a754e61b7b0a102969705f9589",
+      "profile": "brownfield",
+      "plan_digest": "e576ea8949ecbc461a605bb4c9eb4587d961f47ccdb166ccb1b69763d29faccb",
+      "dry_run": "PASS",
+      "apply": "APPLIED",
+      "rerun": "NO_CHANGES",
+      "doctor": "PASS",
+      "authored_files_preserved": [
+        ".aide/memory/owner-note.md",
+        ".aide/queue/owner-note.md",
+        "AGENTS.md",
+        "docs/owner-note.md"
+      ],
+      "pack_root": "D:\\Projects\\AIDE\\_review_scratch\\combined-consumers-a9a8b295a871\\extracted-brownfield\\aide-lite-pack-v0",
+      "target": "D:\\Projects\\AIDE\\_review_scratch\\combined-consumers-a9a8b295a871\\target-brownfield"
+    }
+  ]
+}

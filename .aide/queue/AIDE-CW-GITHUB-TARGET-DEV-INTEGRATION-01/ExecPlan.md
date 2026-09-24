@@ -32,9 +32,10 @@ post-integration pack provenance before final canonical acceptance.
 - [x] Run 199 combined source cases: 198 passed, one Windows privilege skip.
 - [x] Run post-commit canonical checks; record the inherited pack-source
   mismatch as the only validation failure in the child refresh baseline.
-- [ ] Commit with a prevalidated message and publish the exact candidate.
-- [ ] Land the qualified source on `dev`; then refresh derived artifacts through
-  a separate bounded WorkUnit.
+- [x] Commit with a prevalidated message and publish the exact source candidate.
+- [x] Refresh derived artifacts through bounded child WorkUnit
+  `AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01`; canonical and direct consumers pass.
+- [ ] Land the qualified combined candidate on `dev`.
 
 ## Conflict and recovery policy
 

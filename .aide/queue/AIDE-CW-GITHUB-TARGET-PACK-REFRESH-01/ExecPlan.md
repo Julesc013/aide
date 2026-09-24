@@ -17,9 +17,11 @@ no-publish portable and release artifacts from a clean checkpoint.
 - [x] Generate and validate local release bundle and draft; inspect exact assets.
 - [x] Commit artifact checkpoint `cda504b9`, rerun the full generator cycle,
   and prove a second 44-file cycle changes zero bytes.
-- [ ] Commit the source-ancestor projection required for final byte convergence.
-- [ ] Replay from the committed clean tree and prove zero tracked output changes.
-- [ ] Run canonical checks and publish the exact qualified integration branch.
+- [x] Commit source-ancestor projection `d4bd4938`.
+- [x] Replay all four generators from the committed clean tree; 44 files,
+  zero changes.
+- [x] Run final canonical and exact-byte consumer checks.
+- [ ] Publish the exact qualified integration branch.
 - [ ] Fast-forward `dev` only after the above passes; observe remote identity.
 
 ## Verification and recovery

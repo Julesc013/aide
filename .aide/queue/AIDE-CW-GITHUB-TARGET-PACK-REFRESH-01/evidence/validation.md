@@ -25,5 +25,23 @@ under `D:\Projects\AIDE\_review_scratch\combined-*.log`.
 - Canonical validate and doctor: PASS before artifact commit and after the
   source-ancestor projection. Release status, assets, manifest, checksums,
   provenance, and `release clean --dry-run`: exit zero; clean deleted zero.
-- Final projection commit, committed-tree replay, and direct consumer canaries
-  remain pending at this evidence checkpoint.
+- Projection commit `d4bd4938fa4324f6dd8818ba4ce5ae38041bb897`
+  replayed all four generators from a clean tree; all passed and zero of 44
+  tracked release files changed.
+- Final pack-status: checksum PASS, provenance `PASS_SOURCE_ANCESTOR`, boundary
+  PASS. Canonical validate, doctor, release validate, and draft-validate: PASS.
+  Independent asset checks still report nine plus seven exact matches.
+- Direct current-byte ZIP fresh-project and tar.gz brownfield consumers both
+  passed dry-run, `APPLIED`, idempotent `NO_CHANGES`, and target-local doctor.
+  Brownfield owner memory, queue, and documentation files kept exact bytes;
+  manual `AGENTS.md` text stayed intact before one AIDE managed section.
+- The first canary script used an overly strict whole-file `AGENTS.md` equality
+  oracle and stopped after the fresh-project pass. The inspected brownfield
+  file retained the owner text. The corrected preservation oracle reran both
+  archives successfully. This was a canary assertion correction, not a product
+  source change.
+- Exact external receipt:
+  `D:\Projects\AIDE\_review_scratch\combined-consumers-a9a8b295a871\receipt.json`;
+  repository copy: `combined-consumer-receipt.json`; both SHA-256
+  `208498a897238d78d302bfc8c6b0f9e2c71d46863515f6f9b89cebaf8c9f78d6`.
+- Final task-to-dev integration and remote observation remain pending.
