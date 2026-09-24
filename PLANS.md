@@ -3657,3 +3657,20 @@ through `AIDE-BROKER-DEV-PACK-REFRESH-01` and dev landing `088b20ba`; final
 canonical validation passes. Continue the parent broker, isolated-host, and
 GitHub target tasks for operational qualification; this integration does not
 authorize live effects or public release.
+
+## Exact historical commit-message dispositions
+
+`AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01` adds a general fail-closed range-check
+mechanism for immutable historical message failures. Records bind full Git
+objects, canonical message and failed-check identities, narrow scope, review
+authority, content-hashed decision/evidence files, and their own canonical
+digest. The three current blocker records received separate explicit owner
+acceptance on 2026-09-25; their raw failures remain visible.
+Independent review found replacement-ref, accountable-decision, whole-registry,
+and range-whitespace defects; the source repair adds adversarial regressions.
+Fresh exact review of `59b886db` accepts mechanism source integration with
+notes: the old branch's generated release snapshot fails draft validation after
+release validation and must be regenerated through current dev machinery.
+The owner decisions are bound to exact structured artifacts and content hashes.
+Integrate eligible source against current dev, then regenerate its derived pack
+and release outputs. Do not rewrite the historical messages.

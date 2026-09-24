@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+id: AIDE-HISTORICAL-DEV-INTEGRATION-01
+status: running
+planning_state: merge_conflicts_under_resolution
+result: PENDING
+updated_at: 2026-09-25
+base_dev: a5cd5ca5ddf7d0be561fbf2796b073b9f5d96fd2
+historical_branch: 7a2305f518940077892729b915734bb766a335e1
+next_action: resolve_source_merge_then_refresh_derived_outputs

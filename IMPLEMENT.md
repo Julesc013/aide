@@ -11491,3 +11491,28 @@ DLL mapping, image or grant effect is part of this source implementation.
   and operation execution refuse the alias without changing the long-name file.
 - Passed 126 focused and 157 adjacent tests with the same eight explicit
   symlink/FIFO host limitations; exact repair rereview remains pending.
+
+## 2026-09-22 - Exact historical commit-message dispositions
+
+- Added range-only exact disposition evaluation without changing the strict
+  commit-message validator used by latest, message-file, and hook checks.
+- Bound accepted records to full commit/tree/parent identities, canonical
+  message and failed-check identities, fixed scope and decision, responsible
+  reviewer/date, content-hashed decision/evidence files, and record digest.
+- Added explicit raw mode and preserved original failures under the distinct
+  `DISPOSITIONED` result rather than claiming historical messages pass.
+- Added adversarial disposable-Git coverage for altered identity, evidence,
+  scope, decision, authority, duplicate, unknown, proposed, and raw cases.
+- Added two exact proposed records for initial blockers, then a third after
+  isolated-host source qualification exposed another historical body failure.
+- Repaired independent-review findings by disabling replacement objects for
+  traversal and message reads, validating every registry entry, requiring an
+  exact structured decision by an allowlisted accountable reviewer, rejecting
+  out-of-window dates, and adding adversarial regression coverage.
+- Fresh exact review of `59b886db` accepted mechanism source with notes;
+  the owner separately accepted A/B/C on 2026-09-25. The date-only guard now
+  recognizes an AEST calendar date already begun globally, with independent
+  delta review and 23 focused tests. Raw 1/13/1 failures remain visible.
+- The old branch's generated outputs were discarded during integration; the
+  current dev generator must produce qualified combined artifacts. No product,
+  native, hosted, main, or publication acceptance follows from dispositions.

@@ -1,0 +1,31 @@
+# ExecPlan: historical disposition dev integration
+
+## Objective and scope
+
+Merge the exact reviewed historical source and owner decisions into accepted
+customization dev with both histories retained. Work only in the source branch
+delta, queue coordination, root indexes, and generated portable/release outputs.
+Do not activate native or hosted effects or publish a release.
+
+## Dependencies and sequence
+
+1. Confirm current dev, historical head, merge base, clean worktree, and one
+   shared-Git writer. Run the helper plan and read-only merge preflight.
+2. Merge without an automatic commit. Keep accepted dev generated artifacts
+   during source conflict resolution and reconcile queue/root documents.
+3. Commit the coherent source merge with an explicit artifact-refresh gap.
+4. Regenerate the portable export and local release/draft from that committed
+   combined source, then qualify exact outputs and post-commit replay.
+5. Obtain independent technical review of the exact integrated candidate.
+6. Publish the task branch and fast-forward dev only if refs and checks remain
+   valid; observe remote identities and close task evidence.
+
+## Verification and likely blockers
+
+Run focused historical checks including raw A/B/C, affected customization and
+portable consumer tests, release/draft validation, canonical validate/doctor,
+archive checksums and replay. Preserve the Windows privilege skip explicitly.
+The known 27 conflict paths are mostly derived artifacts; queue index,
+DOCUMENTATION.md, and IMPLEMENT.md require both histories. Recheck actual
+conflicts before mutation, and never copy the older branch's generated pack or
+release snapshot over current dev.

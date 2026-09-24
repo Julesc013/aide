@@ -1,0 +1,62 @@
+schema_version: aide.queue-task.v0
+id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
+title: Add exact historical commit-message dispositions
+type: implementation
+status: running
+planning_state: exact_owner_decisions_recorded_integration_pending
+result: PASS_WITH_WARNINGS
+created_at: 2026-09-22
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on: []
+objective: >
+  Add a fail-closed, exact-object disposition mechanism for immutable historical
+  commit-message failures without rewriting history or weakening checks for new
+  commits.
+authority_basis: >
+  The owner directed the convergence and stable-delivery campaign to resolve
+  exact historical conformance blockers while preserving the original failures,
+  strict new-commit checks, and retained human review gates.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/**
+    - .aide/queue/index.yaml
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q27_commit_recovery.py
+    - .aide/policies/commit-message-dispositions.yaml
+    - .aide/git/commit-message-disposition.schema.json
+    - .aide/git/commit-message-dispositions.json
+    - .aide/reports/aide-commit-message-standard.md
+    - docs/reference/commit-discipline.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  forbidden_paths:
+    - .codex/**
+    - .github/**
+    - .aide.local/**
+    - specs/**
+  forbidden_operations:
+    - rewriting or amending published commits
+    - force pushing
+    - wildcard or prefix commit exemptions
+    - blanket merge-commit exemptions
+    - changing a failed check into a fabricated pass
+    - self-approving a proposed disposition
+    - main promotion, tagging, upload, or publication
+authorized_git_operations:
+  - use the isolated task branch from current published dev
+  - commit and publish coherent implementation and evidence increments
+  - prepare a separately reviewed exact disposition decision packet
+verification:
+  - preserve raw-policy failures for every malformed commit
+  - require exact commit, tree, parents, canonical message hash, and failed checks
+  - reject proposed, altered, wildcard, wrong-scope, and unsupported records
+  - keep latest and message-file checks strict
+  - exclude source-repository disposition decisions from portable target packs
+retained_gates:
+  - each accepted record requires exact responsible human review
+  - policy and mechanism integration require review before dev landing
+  - main promotion remains a separate exact candidate decision

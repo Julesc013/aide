@@ -482,3 +482,13 @@ comparison, least-privilege and workflow identity requirements, ruleset
 semantics, guarantee classification, and the current blocked review-only plan.
 Task-local JSON under `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/` is the
 exact review subject; it is not installed GitHub configuration.
+
+## Historical commit-message compatibility
+
+- `docs/reference/commit-discipline.md` explains strict new-commit validation,
+  exact range-only historical dispositions, and raw `--no-dispositions` checks.
+- `.aide/reports/aide-commit-message-standard.md` is the portable operator
+  standard; `.aide/policies/commit-message-dispositions.yaml` and
+  `.aide/git/commit-message-disposition.schema.json` define the mechanism.
+- `.aide/git/commit-message-dispositions.json` is source-specific decision
+  state and must not be included in target-repository exports.

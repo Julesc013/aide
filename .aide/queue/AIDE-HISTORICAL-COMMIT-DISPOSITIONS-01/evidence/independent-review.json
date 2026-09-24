@@ -1,0 +1,256 @@
+{
+  "schema_version": "aide.historical-commit-dispositions.independent-review.v1",
+  "review_date": "2026-09-22",
+  "reviewer": "codex/independent_review",
+  "verdict": "REQUEST_CHANGES",
+  "verdict_scope": "mechanism_and_exact_proposals",
+  "dispositions_accepted_or_rejected": false,
+  "reviewed_range": {
+    "branch": "task/aide-historical-commit-dispositions-01",
+    "base_commit": "c6fdc754844cf7d42302218ce08307a7e05dcb61",
+    "head_commit": "dea2cf7f4526c4874e1b3960b65d85f059836226",
+    "head_tree": "11f6586275e6e19201092ccbbddce3340404e641",
+    "range": "c6fdc754844cf7d42302218ce08307a7e05dcb61..dea2cf7f4526c4874e1b3960b65d85f059836226",
+    "commit_count": 7,
+    "worktree_clean_before_review": true
+  },
+  "findings": [
+    {
+      "id": "HCD-REVIEW-001",
+      "severity": "HIGH",
+      "title": "Replacement refs can make a malformed historical message pass raw range validation",
+      "locations": [
+        ".aide/scripts/aide_lite.py:4520",
+        ".aide/scripts/aide_lite.py:4521",
+        ".aide/scripts/aide_lite.py:4558"
+      ],
+      "observed": {
+        "fixture_mutation_scope": "disposable_repository_only",
+        "same_requested_full_object_id": true,
+        "before_replace_result": "FAIL",
+        "after_replace_raw_result": "PASS",
+        "after_replace_exit_code": 0,
+        "original_tree_fact_preserved": true
+      },
+      "policy_conflict": "replacement_objects_disabled: true",
+      "required_fix": "Disable replacement objects for revision expansion, traversal, and message loading and add default/raw replacement-ref regressions."
+    },
+    {
+      "id": "HCD-REVIEW-002",
+      "severity": "HIGH",
+      "title": "Accepted status validates syntax but does not prove an accountable decision",
+      "locations": [
+        ".aide/scripts/aide_lite.py:4734",
+        ".aide/scripts/aide_lite.py:4735",
+        ".aide/scripts/aide_lite.py:4738",
+        ".aide/scripts/aide_lite.py:4742",
+        ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-request.md:48"
+      ],
+      "observed": {
+        "reviewed_by": "owner:untrusted-arbitrary-string",
+        "reviewed_at": "9999-12-31",
+        "decision_ref_content": "request_not_acceptance",
+        "records_evaluated": 3,
+        "records_effective": 3,
+        "errors": 0
+      },
+      "policy_conflicts": [
+        "accepted_human_review_required: true",
+        "self_approval prohibited"
+      ],
+      "required_fix": "Bind accepted records to an exact structured decision, match its subject/decision/identity/date fields, validate authority, and reject dates outside the allowed decision window."
+    },
+    {
+      "id": "HCD-REVIEW-003",
+      "severity": "MEDIUM",
+      "title": "Malformed unrelated records and duplicate disposition ids do not fail the registry closed",
+      "locations": [
+        ".aide/scripts/aide_lite.py:4671",
+        ".aide/scripts/aide_lite.py:4676"
+      ],
+      "observed_cases": [
+        {
+          "case": "malformed_unrelated_dict",
+          "matched_record_effective": true,
+          "errors": 0
+        },
+        {
+          "case": "non_object_unrelated_entry",
+          "matched_record_effective": true,
+          "errors": 0
+        },
+        {
+          "case": "duplicate_disposition_id_on_other_commit",
+          "matched_record_effective": true,
+          "errors": 0
+        }
+      ],
+      "verified_non_bypasses": [
+        "duplicate exact-commit records are rejected",
+        "wildcard and prefix commit values do not match full commit ids",
+        "adjacent commits cannot consume an exact record"
+      ],
+      "required_fix": "Validate every registry entry before use and enforce unique full commit ids and disposition ids."
+    },
+    {
+      "id": "HCD-REVIEW-004",
+      "severity": "LOW",
+      "title": "The exact task range fails git diff --check",
+      "observed": {
+        "command": "git diff --check c6fdc754844cf7d42302218ce08307a7e05dcb61..dea2cf7f4526c4874e1b3960b65d85f059836226",
+        "exit_code": 1,
+        "findings": [
+          ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/baseline.md:10: new blank line at EOF",
+          ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/prompt.md:8: new blank line at EOF"
+        ]
+      },
+      "required_fix": "Remove both whitespace errors and record the exact final diff-check range."
+    }
+  ],
+  "exact_proposals": [
+    {
+      "commit": "bfb86c12b9e6d2970024d29c57ba629994ec43cc",
+      "tree": "54ab832eafa0ed0be3282858fd44f344e560732b",
+      "parent_count": 2,
+      "failure_count": 1,
+      "tree_match": true,
+      "ordered_parents_match": true,
+      "message_sha256_match": true,
+      "failed_checks_match": true,
+      "evidence_hashes_match": true,
+      "record_digest_match": true,
+      "status": "proposed",
+      "effective": false
+    },
+    {
+      "commit": "486e81cd3a918729f28e4b452a9dcff017238a04",
+      "tree": "796f5aafc0d350e8cef599cacb9b3f703f8b2bb1",
+      "parent_count": 1,
+      "failure_count": 13,
+      "tree_match": true,
+      "ordered_parents_match": true,
+      "message_sha256_match": true,
+      "failed_checks_match": true,
+      "evidence_hashes_match": true,
+      "record_digest_match": true,
+      "status": "proposed",
+      "effective": false
+    },
+    {
+      "commit": "1011d008fc39b135a5ef27062b5b8ee9c95cdc7f",
+      "tree": "68cbc4d2b15049b7c589204d29003cf4affd93fc",
+      "parent_count": 1,
+      "failure_count": 1,
+      "tree_match": true,
+      "ordered_parents_match": true,
+      "message_sha256_match": true,
+      "failed_checks_match": true,
+      "evidence_hashes_match": true,
+      "record_digest_match": true,
+      "status": "proposed",
+      "effective": false
+    }
+  ],
+  "portable_projection": {
+    "source_and_payload_files_byte_equal": true,
+    "compared_files": 6,
+    "source_registry_absent_from_payload": true,
+    "source_registry_absent_from_manifest": true,
+    "source_registry_absent_from_checksums": true,
+    "pack_status": "PASS",
+    "release_validation": "PASS_NO_PUBLISH",
+    "release_draft_validation": "PASS_NO_PUBLISH"
+  },
+  "validation": [
+    {
+      "command": "py -3 -B .aide/scripts/tests/test_q27_commit_recovery.py -v",
+      "result": "PASS",
+      "passed": 19,
+      "failed": 0
+    },
+    {
+      "command": "py -3 -B .aide/scripts/tests/test_q31_export_pack_governance.py -v",
+      "result": "PASS",
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "command": "py -3 -B .aide/scripts/tests/test_export_import.py -v",
+      "result": "PASS",
+      "passed": 25,
+      "failed": 0
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py validate",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py doctor",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py pack-status",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py release validate",
+      "result": "PASS_NO_PUBLISH"
+    },
+    {
+      "command": "py -3 -B .aide/scripts/aide_lite.py release draft-validate",
+      "result": "PASS_NO_PUBLISH"
+    },
+    {
+      "command": "commit check default and raw for exact seven-commit task range",
+      "result": "PASS",
+      "commit_count": 7
+    },
+    {
+      "command": "commit check default and raw for each exact proposal subject",
+      "result": "EXPECTED_FAIL",
+      "subjects": 3,
+      "proposals_effective": 0
+    },
+    {
+      "command": "independent raw Git object and digest recomputation",
+      "result": "PASS",
+      "subjects": 3
+    },
+    {
+      "command": "disposable replacement-ref adversarial fixture",
+      "result": "FAIL",
+      "reason": "malformed original became raw PASS"
+    },
+    {
+      "command": "in-memory arbitrary-authority and future-date adversarial evaluation",
+      "result": "FAIL",
+      "reason": "three of three hypothetical accepted records became effective"
+    },
+    {
+      "command": "in-memory mixed-invalid-registry adversarial evaluation",
+      "result": "FAIL",
+      "reason": "all malformed-adjacent and duplicate-id cases left the matched record effective"
+    },
+    {
+      "command": "git diff --check c6fdc754844cf7d42302218ce08307a7e05dcb61..dea2cf7f4526c4874e1b3960b65d85f059836226",
+      "result": "FAIL",
+      "finding_count": 2
+    }
+  ],
+  "residual_risks": [
+    "Range validation is not trustworthy while Git replacement refs can alter traversal or message content.",
+    "Accepted records do not yet prove a responsible human decision.",
+    "A mixed-invalid registry can still activate an otherwise accepted record.",
+    "Mechanism integration and all exact disposition decisions remain blocked pending repair and rereview."
+  ],
+  "effect_boundary": {
+    "git_history_mutated": false,
+    "branch_or_ref_mutated": false,
+    "remote_mutated": false,
+    "target_repository_mutated": false,
+    "tag_or_release_created": false,
+    "network_or_hosted_effect_performed": false,
+    "only_review_files_written": true,
+    "disposable_fixture_git_mutation_only": true
+  }
+}

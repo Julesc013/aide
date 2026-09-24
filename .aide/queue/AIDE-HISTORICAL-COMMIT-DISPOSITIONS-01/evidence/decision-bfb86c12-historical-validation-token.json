@@ -1,0 +1,12 @@
+{
+  "commit": "bfb86c12b9e6d2970024d29c57ba629994ec43cc",
+  "decision": "accept_historical_nonconformance",
+  "disposition_id": "bfb86c12-historical-validation-token",
+  "message_sha256": "24d6d65e72424b7fca5dac30ebe638b2f7a16266d2c4e8e114dbb9bd6e0c380c",
+  "reviewed_at": "2026-09-25",
+  "reviewed_by": "owner:Julesc013",
+  "schema_version": "aide.commit-message-disposition-decision.v1",
+  "scope": "historical_commit_message_only",
+  "status": "accepted",
+  "tree": "54ab832eafa0ed0be3282858fd44f344e560732b"
+}

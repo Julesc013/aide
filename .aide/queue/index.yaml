@@ -3480,3 +3480,23 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-CUSTOMIZATION-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-CUSTOMIZATION-01/evidence
     description: Preserve project-owned changes and explain bounded update decisions, with explicit local feedback only.
+  - id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
+    status: running
+    planning_state: exact_owner_decisions_recorded_integration_pending
+    result: PASS_WITH_WARNINGS
+    title: Add exact historical commit-message dispositions
+    task: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/task.yaml
+    exec_plan: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/prompt.md
+    evidence: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence
+    description: Add exact-object historical message dispositions while retaining strict new-commit validation and raw failures.
+  - id: AIDE-HISTORICAL-DEV-INTEGRATION-01
+    status: running
+    planning_state: merge_conflicts_under_resolution
+    result: PENDING
+    title: Integrate exact historical dispositions with current dev source
+    task: .aide/queue/AIDE-HISTORICAL-DEV-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-HISTORICAL-DEV-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-HISTORICAL-DEV-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-HISTORICAL-DEV-INTEGRATION-01/evidence
+    description: Preserve historical decision ancestry and current dev source, then regenerate and qualify combined artifacts.

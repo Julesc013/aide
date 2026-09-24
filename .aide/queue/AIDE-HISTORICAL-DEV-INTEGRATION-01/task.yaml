@@ -1,0 +1,62 @@
+schema_version: aide.queue-task.v0
+id: AIDE-HISTORICAL-DEV-INTEGRATION-01
+title: Integrate exact historical dispositions with current dev source
+type: integration
+status: running
+planning_state: merge_conflicts_under_resolution
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
+  - AIDE-DELIVERED-PACK-CUSTOMIZATION-01
+source:
+  evidence_commit: 7a2305f518940077892729b915734bb766a335e1
+  mechanism_reviewed_commit: 59b886db75a534615808c37a85e4fbe24c28eda1
+target:
+  branch: dev
+  base_commit: a5cd5ca5ddf7d0be561fbf2796b073b9f5d96fd2
+merge_base: c6fdc754844cf7d42302218ce08307a7e05dcb61
+objective: >
+  Preserve exact historical source and owner-decision ancestry on current dev,
+  retain the accepted generator and customization source, then regenerate and
+  qualify derived portable and release outputs from the combined source.
+authority_basis: >
+  The owner's 2026-09-25 campaign instruction accepted A/B/C and delegated
+  qualified dev integration. The mechanism and date repair have separate fresh
+  independent technical reviews; combined integration retains its own review.
+scope:
+  source_tree_boundary: exact historical task branch ancestry through 7a2305f518940077892729b915734bb766a335e1
+  allowed_reconciliation_paths:
+    - .aide/queue/**
+    - .aide/git/commit-message-disposition.schema.json
+    - .aide/git/commit-message-dispositions.json
+    - .aide/policies/commit-message-dispositions.yaml
+    - .aide/reports/aide-commit-message-standard.md
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q27_commit_recovery.py
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - docs/reference/commit-discipline.md
+    - DOCUMENTATION.md
+    - IMPLEMENT.md
+    - PLANS.md
+  forbidden_operations:
+    - history rewrite, force push, or replacement of current dev generator
+    - main promotion, tag, upload, or release publication
+    - native or hosted effect activation
+authorized_git_operations:
+  - create a bounded integration branch from exact current dev
+  - merge the published historical evidence descendant with both parents retained
+  - commit and publish coherent source and generated-output increments
+  - fast-forward qualified integration to dev after exact technical review
+verification:
+  - resolve queue and root-document conflicts with both histories
+  - retain accepted customization and release generator source byte identities
+  - preserve strict latest and raw commit validation
+  - regenerate portable and release artifacts from committed combined source
+  - run affected source, archive, canonical, and replay checks
+retained_gates:
+  - independent technical integration review before remote dev effect
+  - native, hosted, main, stable publication, and real-consumer acceptance remain separate

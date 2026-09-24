@@ -1,0 +1,12 @@
+{
+  "commit": "486e81cd3a918729f28e4b452a9dcff017238a04",
+  "decision": "accept_historical_nonconformance",
+  "disposition_id": "486e81cd-historical-structured-body",
+  "message_sha256": "71bcd1ba685a049c535e20244f65b29a1fef4299d4a0811f0c43031bd3b4dca0",
+  "reviewed_at": "2026-09-25",
+  "reviewed_by": "owner:Julesc013",
+  "schema_version": "aide.commit-message-disposition-decision.v1",
+  "scope": "historical_commit_message_only",
+  "status": "accepted",
+  "tree": "796f5aafc0d350e8cef599cacb9b3f703f8b2bb1"
+}

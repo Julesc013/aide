@@ -1,0 +1,12 @@
+{
+  "commit": "1011d008fc39b135a5ef27062b5b8ee9c95cdc7f",
+  "decision": "accept_historical_nonconformance",
+  "disposition_id": "1011d008-api-query-why-bullet",
+  "message_sha256": "972e1349736a366c0a3b73189519c218bcb6b653fa8bb1a90bf73986034d3913",
+  "reviewed_at": "2026-09-25",
+  "reviewed_by": "owner:Julesc013",
+  "schema_version": "aide.commit-message-disposition-decision.v1",
+  "scope": "historical_commit_message_only",
+  "status": "accepted",
+  "tree": "68cbc4d2b15049b7c589204d29003cf4affd93fc"
+}
