@@ -2,9 +2,10 @@
 
 ## AIDE-DELIVERED-PACK-CUSTOMIZATION-01: Delivered customization
 
-- Status: prior local candidate `37daa862` superseded by a pending-intent
-  dry-run recovery finding; replacement requalification is active. Dev is
-  unchanged and the queue review gate remains open.
+- Status: final local candidate `8cad56c0` qualified with 29 import, 18
+  release, 11 draft, and 6 governance tests plus extracted ZIP and clean
+  44-file replay. Prior `37daa862` is superseded. Dev is unchanged; exact
+  queue review remains open.
 - Objective: explain project-owned preservation and conflicting updates with
   exact-byte optional rationale and opt-in local feedback.
 - Scope and dependencies: see the bounded queue ExecPlan and mandatory-profile

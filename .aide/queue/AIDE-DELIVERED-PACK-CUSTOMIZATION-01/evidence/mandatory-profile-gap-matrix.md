@@ -8,7 +8,7 @@ baseline. A source test is not whole-product release evidence.
 | Obtain and run without checkout | Portable export and release builder | `test_export_import.py`; `release validate` | ZIP/tar extracted consumer at dev `3bdeb220` | Requalify final integrated bytes, then consumer acquisition from published asset. |
 | Initialize new project | `import-pack` | `test_import_fixture_creates_templates_and_preserves_agents` | Fresh ZIP consumer APPLIED and doctor PASS | Establish full first-run project profile acceptance. |
 | Adopt brownfield safely | `import-pack` and observation | `test_import_preserves_authored_agents_bytes_outside_portable_section` | Brownfield tar consumer preserved owner files | Expand supported brownfield recovery and qualification. |
-| Customize and explain update | `import-pack` ownership/explanation | New tests in this WorkUnit | Pending final archive consumer | Implement and qualify matching/stale rationale, conflict, explicit feedback now. |
+| Customize and explain update | `import-pack` ownership/explanation | `test_export_import.py` 29/29 | Final ZIP old-to-new consumer and pending-recovery receipt at `8cad56c0` | Exact queue review and dev integration remain; conflict resolution still needs an explicit workflow. |
 | Diagnose and repair | `repair` planners | Existing repair suite; no final apply test | Planner only | Implement admitted apply behavior and delivered recovery test. |
 | Roll back | `rollback` planners | Existing rollback suite; no final apply test | Planner only | Implement admitted recovery apply behavior and delivered test. |
 | Detach owned material | `uninstall` planner | Existing uninstall suite; no deletion test | Planner only | Implement owner-scoped removal apply and preservation test. |

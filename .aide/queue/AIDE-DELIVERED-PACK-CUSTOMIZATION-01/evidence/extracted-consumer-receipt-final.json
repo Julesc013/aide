@@ -1,0 +1,17 @@
+{
+  "prior_zip_sha256": "4b9e458fe4a3c5f67f862de9c443ea195f74df7dd0bd2d0b69a4406562fdb5d8",
+  "current_zip_sha256": "be9d0d77151c1206fd2119401f81ffb58bb62a38f8fb6a7dda4490cb7718c555",
+  "current_manifest_source": "source_commit: 03c4793d353b70b617f7ad1787a9352a5868d55f",
+  "first_apply": "APPLIED",
+  "new_preview": "PLANNED_CONFLICT",
+  "new_apply": "CONFLICT",
+  "project_profile_preserved": true,
+  "direct_edit_preserved": true,
+  "unmodified_managed_script_preserved_on_whole_conflict": true,
+  "manual_agents_text_preserved": true,
+  "known_rationale_bound_to_current_bytes": true,
+  "feedback": "opt_in_local_only",
+  "pending_completed_dry_run": "RECOVERY_REQUIRED_no_target_write_no_feedback",
+  "explicit_pending_recovery": "RECOVERED",
+  "run_root": "D:\\Projects\\AIDE\\_review_scratch\\customization-consumer-fcb30471c2f8"
+}

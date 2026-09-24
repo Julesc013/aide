@@ -58,6 +58,14 @@ comparing reserved project/import paths. A checksummed uppercase payload
 alias was refused with existing project metadata preserved. This refinement
 is a later source delta and requires one final archive refresh.
 
+The final source delta and generated archive are qualified at `8cad56c0`.
+The 29 import, 18 release, 11 draft, and 6 governance tests passed on final
+source. The extracted ZIP proved project-owned preservation, direct-edit
+conflict refusal, opt-in local feedback, read-only pending-intent preview, and
+explicit recovery. Current pack provenance and clean-tree 44-file release
+replay pass; exact hashes and limits are in `validation-final.md`. Queue review
+and dev integration remain pending.
+
 ## Purpose
 
 `IMPLEMENT.md` is the engineering execution log for repository changes. It records what changed, why it changed, how it was verified, which risks were avoided, and what remains unresolved. It is not a changelog.

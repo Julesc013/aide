@@ -21,7 +21,7 @@ publication effect.
   state; supersede `37daa862` before review or dev integration.
 - [x] Repair read-only recovery preview and reserve project rationale metadata
   against pack payloads; focused adversarial tests pass.
-- [ ] Rebuild exact bytes and qualify the replacement candidate.
+- [x] Rebuild exact bytes and qualify final candidate `8cad56c0` in extracted ZIP consumers.
 - [x] Close a Windows case/trailing-dot alias of the reserved project-owned
   metadata path; the checksummed alias refusal test passes.
 
