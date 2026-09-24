@@ -3502,8 +3502,8 @@ items:
     description: Preserve historical decision ancestry and current dev source, then regenerate and qualify combined artifacts.
   - id: AIDE-HOST-APIQUERY-DEV-INTEGRATION-01
     status: running
-    planning_state: source_ancestor_metadata_commit_pending
-    result: PENDING
+    planning_state: reviewed_candidate_dev_fast_forward_pending
+    result: PASS_WITH_RETAINED_GATES
     title: Integrate reviewed isolated-host API-query source into dev
     task: .aide/queue/AIDE-HOST-APIQUERY-DEV-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-HOST-APIQUERY-DEV-INTEGRATION-01/ExecPlan.md

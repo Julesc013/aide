@@ -3690,5 +3690,7 @@ queries. It preserves the consumed resource-map failure, fits the observed
 180-name closure inside explicit 256-row/257-call bounds, and passes 142
 affected tests. The exact repair received independent source review with 140
 permitted tests, and historical message disposition C is owner-accepted.
-Combined dev integration remains separately reviewed. Before any real host query,
+Combined dev source and local artifacts received separate exact reviews through
+candidate `a4ee0f32`; an evidence-only closeout and remote dev observation
+remain before source integration is complete. Before any real host query,
 physical host bytes, private loading, grants, and activation remain open.

@@ -37,8 +37,12 @@ native, hosted, credential, target, or publication effects.
 - [x] Commit refreshed projection at `3875cad7`; post-commit pack status is
   `PASS_SOURCE_ANCESTOR`. Refresh local metadata and replay 44 release files
   with zero changes in the stable source-ancestor state.
-- [ ] Commit stable metadata, prove final post-commit replay, and obtain a
-  narrow exact artifact review.
+- [x] Commit stable metadata at `a4ee0f32`, prove a final post-commit replay
+  with zero changes among 44 release files, and obtain independent exact
+  `ACCEPT_WITH_NOTES` artifact review clearing the earlier hold.
+- [x] Qualify the frozen ZIP in a fresh disposable extracted-archive consumer:
+  safe import 816 writes, zero conflicts, target-local doctor exit zero.
+- [ ] Narrow-check evidence-only closeout, then observe remote dev and close.
 - [ ] Observe qualified remote dev and close evidence.
 
 ## Recovery

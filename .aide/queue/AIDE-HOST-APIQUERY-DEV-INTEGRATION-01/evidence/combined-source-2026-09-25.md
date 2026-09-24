@@ -53,7 +53,7 @@ validation, canonical validate, and doctor now exit zero. The current ZIP
 SHA-256 is `515817522aba08281cb7f61a55185fbdc315b861d002d2008b3a3d94d7235411`
 and tar.gz is
 `c5def15fc3920d25aad095ede0ea4f39966f8cff2e082c4ba06facb5414d5bbb`;
-the final post-commit replay remains pending. This remains a local preview
+the final post-commit replay is recorded below. This remains a local preview
 with no tag, upload, or publication.
 
 ## Refreshed local projection and affected suites
@@ -74,10 +74,10 @@ The stable replay hash map is external at
 `D:\Projects\AIDE\_review_scratch\host-dev-replay-before.json`; logs share the
 `host-dev-replay-` prefix. The export/import and Q47/Q48/Q31 suite logs use
 `host-dev-` prefixes in the same directory. These results qualify a local
-artifact projection from source `ab17fd66`; the projection still requires a
-commit, then post-commit provenance and replay checks. The independent source
-review explicitly retains its artifact hold until that exact later candidate
-is checked.
+artifact projection from source `ab17fd66`. At this point in the sequence,
+the projection still required a commit and post-commit checks; the independent
+source review retained an artifact hold until the exact later candidate was
+checked. Those subsequent results are recorded below.
 
 The refreshed projection was committed at
 `3875cad7af78aeefdc26d2557a1a254edf49b98f` (tree
@@ -88,4 +88,5 @@ from the committed source-ancestor state changed 15 of 44 local release files,
 mainly metadata recording the corrected status; validation reports also
 updated. A subsequent full replay changed zero of 44 files. The ZIP and tar.gz
 digests above did not change. This stable source-ancestor metadata requires its
-own commit, followed by final post-commit replay and narrow artifact review.
+own commit. The final post-commit replay and narrow artifact review are
+recorded in `final-candidate-review-and-consumer-2026-09-25.md`.
