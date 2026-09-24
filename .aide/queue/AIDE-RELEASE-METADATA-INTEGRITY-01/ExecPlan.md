@@ -35,7 +35,7 @@ hosted effects, target installs, or machine configuration.
 - [x] Bind actual parent checkpoint `7897f7de` in the projection commit message.
 - [x] Commit projection `d6642c3d` and replay all four generators with zero
       changed files and a clean tree.
-- [ ] Obtain independent exact-commit rereview.
+- [x] Obtain a fresh independent exact-commit review of `853d1c7a` for dev integration.
 - [ ] Integrate the qualified candidate into dev.
 
 ## Test Oracle
@@ -64,6 +64,13 @@ generated deterministic artifacts. Commit those bytes, bind their actual
 checkpoint identity `7897f7de` in the post-commit projection, replay from the
 committed tree, and obtain superseding rereview. Projection `d6642c3d` now
 replays cleanly; the restart point is exact independent rereview.
+
+On 2026-09-24, a new Codex reviewer who did not author the candidate accepted
+exact commit `853d1c7a` for dev integration after a disposable 60-case replay,
+missing-sidecar checks, checksum comparison, and a clean 44-file release replay.
+The prior Lovelace terminal output was unavailable; the fresh report and its
+custody receipt are in this task's evidence directory. The next restart point
+is the authorized dev integration, followed by combined-source validation.
 
 ## Exit Criteria
 

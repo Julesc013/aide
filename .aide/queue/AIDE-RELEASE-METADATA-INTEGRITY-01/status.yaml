@@ -1,14 +1,14 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-RELEASE-METADATA-INTEGRITY-01
-status: needs_review
-classification: qualified_candidate
-planning_state: independent_exact_rereview_pending
+status: running
+classification: exact_source_review_accepted
+planning_state: dev_integration_pending
 result: PASS
-updated_at: 2026-09-22
-current_slice: replacement_exact_candidate_review
-next_slice: independent_exact_rereview_then_dev_integration
+updated_at: 2026-09-24
+current_slice: release_candidate_dev_integration
+next_slice: dev_fast_forward_then_combined_validation
 source_review_commit: 9f4bbc0a77443bd84a5c2502882e95aa602f98fe
-candidate_commit: d6642c3d81f681b86d3a81d933a5e0cf9775922b
+candidate_commit: 853d1c7a848621c52819f02a835db2a05f585641
 notes:
   - Independent review found stale local asset identities, checkout-local provenance, and stale required preview assets.
   - Archive bytes and extracted consumer behavior passed and must remain unchanged unless regenerated from changed portable source.
@@ -33,5 +33,6 @@ notes:
   - The projection message names actual parent checkpoint 7897f7de; a second complete cycle changes zero of 44 files.
   - Committed projection d6642c3d replays all four generators with zero changed files and a clean tree.
   - Canonical validate, doctor, git diff, and the four-commit repair range pass.
-  - Independent exact rereview remains required before dev integration.
+  - A fresh Codex review of exact commit 853d1c7a and tree b5f69ce1 accepted the release-integrity source for dev integration; the older Lovelace terminal verdict was not recovered.
+  - Review evidence is preserved in evidence/fresh-exact-review-2026-09-24.md with a separate custody receipt and the external original retained.
   - No publication effect is authorized.
