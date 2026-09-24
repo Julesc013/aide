@@ -1,8 +1,8 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 03c4793d353b70b617f7ad1787a9352a5868d55f
-source_dirty_state: false
+source_commit: e40aec47dd2dd5555d00f869262c3fb000a2e617
+source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
 raw_prompt_storage: false
@@ -428,6 +428,7 @@ included_files:
   - files/.aide/gateway/security-boundary.md
   - files/.aide/git/README.md
   - files/.aide/git/branch-roles.md
+  - files/.aide/git/commit-message-disposition.schema.json
   - files/.aide/git/commit-template.md
   - files/.aide/git/helper-commands.md
   - files/.aide/git/helper-policy.yaml
@@ -478,6 +479,7 @@ included_files:
   - files/.aide/policies/changelog.yaml
   - files/.aide/policies/checkpoints.yaml
   - files/.aide/policies/ci-gates.yaml
+  - files/.aide/policies/commit-message-dispositions.yaml
   - files/.aide/policies/commit-messages.yaml
   - files/.aide/policies/controller.yaml
   - files/.aide/policies/dependency-map.yaml

@@ -20,6 +20,17 @@ Do not activate native or hosted effects or publish a release.
 6. Publish the task branch and fast-forward dev only if refs and checks remain
    valid; observe remote identities and close task evidence.
 
+## Progress
+
+- [x] Exact current dev and published historical heads checked; merge preflight run.
+- [x] Both parent histories merged; queue and root-document conflicts resolved.
+- [x] Current dev generated snapshot retained during source merge.
+- [x] Combined source committed at `e40aec47`; current generator refreshed
+  portable/release/draft outputs and a stable 888-file replay changed zero.
+- [x] Affected tests and canonical local checks passed as recorded in evidence.
+- [ ] Commit qualified generated projection and prove post-commit replay.
+- [ ] Obtain exact independent integration review and update remote dev.
+
 ## Verification and likely blockers
 
 Run focused historical checks including raw A/B/C, affected customization and

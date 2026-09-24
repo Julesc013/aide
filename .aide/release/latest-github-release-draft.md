@@ -1,14 +1,14 @@
-# AIDE Lite Pack v0 Draft (03c4793d353b70b6)
+# AIDE Lite Pack v0 Draft (e40aec47dd2dd555)
 
 > Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.
 
 ## Release Metadata
 
-- Suggested tag: `aide-lite-pack-v0-draft-03c4793d353b70b6`
+- Suggested tag: `aide-lite-pack-v0-draft-e40aec47dd2dd555`
 - Suggested tag created: no
-- Source commit: `03c4793d353b70b617f7ad1787a9352a5868d55f`
+- Source commit: `e40aec47dd2dd5555d00f869262c3fb000a2e617`
 - Source branch: `not-recorded-in-pack`
-- Dirty state recorded: `false`
+- Dirty state recorded: `true`
 - Release type: local draft / not published
 
 ## Summary
@@ -21,17 +21,17 @@
 - # AIDE Release Notes Preview
 - This is a deterministic preview only. It does not publish a release.
 - source_range: HEAD latest 50 commits
-- source_head: 2b4f5de885a59d561478759fa38b0f83a66312c7
+- source_head: e40aec47dd2dd5555d00f869262c3fb000a2e617
 - preview_only: true
 - ## Highlights
-- - Security: Reject Windows 8.3 aliases and other unsafe fixture paths before destination mutation. (bb689227c6a6)
-- - Security: Integrate reviewed Windows short-name alias refusal into the dev line. (cc85be9c472a)
+- - Security: portable pack provenance no longer trusts Git replacement refs. (b4d949c1ac1f)
+- - Added: local customization explanation and opt-in import feedback. (98de5ee1531e)
 
 ## Changelog Preview
 - # AIDE Changelog Preview
 - This file is generated from local Git history and is a preview only.
 - source_range: HEAD latest 50 commits
-- source_head: 2b4f5de885a59d561478759fa38b0f83a66312c7
+- source_head: e40aec47dd2dd5555d00f869262c3fb000a2e617
 - commit_count: 50
 - malformed_count: 0
 - preview_only: true
@@ -47,23 +47,23 @@
 
 | Order | Asset | Kind | Size | SHA-256 | Required |
 | --- | --- | --- | ---: | --- | --- |
-| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 981396 | `be9d0d77151c1206...` | true |
-| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 653592 | `b444e546f3b7564e...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `1a86606c235fb9da...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `6da9c1618d2e53a0...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1405 | `ebe74866b6017ad3...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 1341 | `dd49b351e2f3e998...` | true |
-| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 8663 | `416870cfce568c36...` | true |
-| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 8296 | `164073e1fa6e63ce...` | true |
-| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3846 | `a457b73f186db89c...` | false |
-| 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `2e83a2b3f71f5990...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4079 | `612689cbca54d7e0...` | false |
+| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 991801 | `298b4e7b38c12554...` | true |
+| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 663140 | `d5a755716cd86214...` | true |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `a8eecb9f9b379d62...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `6d1c7f5761525e6e...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1405 | `2c17af01d32906a9...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 1342 | `4316672cc9aeb35a...` | true |
+| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 8334 | `65b99fba2b0bf28a...` | true |
+| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 6694 | `f9cbfec83f0cadbd...` | true |
+| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3848 | `9e3797fc6662e173...` | false |
+| 10 | `.aide/release/dist/release-validation.md` | validation_report | 239 | `df35747cfd0d9361...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1447 | `3538f2bd44f07286...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4079 | `591b57198b678075...` | false |
 
 ## Validation Summary
 
 - release validate: PASS
-- pack-status: PASS_SOURCE_ANCESTOR
+- pack-status: DIRTY_SOURCE_RECORDED
 - fixture extraction: PASS
 - checksum validation: PASS
 
@@ -72,6 +72,7 @@
 - Suggested tag naming still requires human/operator review.
 - Dominium and Eureka target install readiness are not claimed by Q48.
 - Install, repair, upgrade, rollback, and uninstall remain plan/dry-run models unless a future phase adds apply behavior.
+- Q47 bundle provenance records dirty source state; release reviewers must explicitly accept or regenerate from a clean state.
 
 ## Publication Blockers
 - none for local draft generation

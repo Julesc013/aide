@@ -3492,8 +3492,8 @@ items:
     description: Add exact-object historical message dispositions while retaining strict new-commit validation and raw failures.
   - id: AIDE-HISTORICAL-DEV-INTEGRATION-01
     status: running
-    planning_state: merge_conflicts_under_resolution
-    result: PENDING
+    planning_state: combined_local_artifacts_qualified_pre_review
+    result: PASS_WITH_RETAINED_GATES
     title: Integrate exact historical dispositions with current dev source
     task: .aide/queue/AIDE-HISTORICAL-DEV-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-HISTORICAL-DEV-INTEGRATION-01/ExecPlan.md

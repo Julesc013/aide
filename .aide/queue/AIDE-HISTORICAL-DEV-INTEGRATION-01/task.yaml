@@ -3,8 +3,8 @@ id: AIDE-HISTORICAL-DEV-INTEGRATION-01
 title: Integrate exact historical dispositions with current dev source
 type: integration
 status: running
-planning_state: merge_conflicts_under_resolution
-result: PENDING
+planning_state: combined_local_artifacts_qualified_pre_review
+result: PASS_WITH_RETAINED_GATES
 created_at: 2026-09-25
 updated_at: 2026-09-25
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

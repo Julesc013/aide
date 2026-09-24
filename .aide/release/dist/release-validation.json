@@ -82,7 +82,7 @@
       "severity": "PASS"
     },
     {
-      "message": "pack-status compatible for release bundle: PASS_SOURCE_ANCESTOR",
+      "message": "pack-status compatible for release bundle: DIRTY_SOURCE_RECORDED",
       "severity": "PASS"
     }
   ],
@@ -131,7 +131,7 @@
     "result": "PASS"
   },
   "no_publish": true,
-  "pack_status": "PASS_SOURCE_ANCESTOR",
+  "pack_status": "DIRTY_SOURCE_RECORDED",
   "preview_only": true,
   "result": "PASS",
   "secret_scan": {

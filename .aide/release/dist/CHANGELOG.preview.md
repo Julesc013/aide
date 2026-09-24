@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 2b4f5de885a59d561478759fa38b0f83a66312c7
+source_head: e40aec47dd2dd5555d00f869262c3fb000a2e617
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -12,28 +12,24 @@ release_publishing: false
 ## Summary
 
 - Added: 2
-- Changed: 3
-- Fixed: 20
-- Security: 6
+- Changed: 1
+- Fixed: 19
+- Security: 1
 - Docs: 8
-- Tests: 6
-- Internal: 14
+- Tests: 5
+- Internal: 21
 
 ## Added
 
-- Admit deterministic release metadata integrity repair. (5ad6aa979971 chore(release): admit metadata integrity repair)
 - local customization explanation and opt-in import feedback. (98de5ee1531e feat(import): explain downstream customization decisions)
+- exact historical message dispositions to the dev source ancestry. (e40aec47dd2d feat(git): merge exact historical dispositions into dev candidate)
 
 ## Changed
 
-- Begin commit-bound portable artifact refresh after portability integration. (c730eac44202 chore(distribution): start clean artifact refresh)
-- Refresh portable artifacts for the integrated Windows path-hardening source. (da1051793d4c build(distribution): refresh portable artifacts)
 - exact no-publish candidate assets and draft evidence regenerated. (8369ac540e4a build(release): qualify deterministic candidate)
 
 ## Fixed
 
-- Bind preview release metadata to committed portability artifact provenance. (38fe712810b8 build(distribution): close artifact provenance)
-- release metadata now binds final eligible bytes and the exported source identity. (7bb41079e11f fix(release): bind metadata to final artifacts)
 - release preview binding now matches the generator's complete output set. (bb308e64f4f2 fix(release): accept complete preview projection)
 - release bundle and validation commands now converge on one deterministic metadata state. (edcd591a268b fix(release): converge bundle validation bytes)
 - release metadata is internally exact, checkout-independent, source-bound, and byte-stable. (8369ac540e4a build(release): qualify deterministic candidate)
@@ -52,14 +48,10 @@ release_publishing: false
 - bind local release metadata to the committed combined-source artifact ancestry. (d4bd4938fa43 fix(release): project committed combined source provenance)
 - dry-run recovery mutation and project-owned metadata payload boundary. (9b21e183d462 fix(import): keep recovery previews read-only)
 - Windows alias route into project-owned customization metadata. (2b4f5de885a5 fix(import): reserve project metadata Windows aliases)
+- allow accountable AEST historical decisions while retaining strict raw policy results. (7a2305f51894 fix(git): bind exact owner historical decisions)
 
 ## Security
 
-- Reject Windows 8.3 aliases and other unsafe fixture paths before destination mutation. (bb689227c6a6 fix(distribution): integrate portability hardening)
-- Integrate reviewed Windows short-name alias refusal into the dev line. (cc85be9c472a docs(distribution): record portability integration)
-- Preserve checksum, forbidden-path, and no-publish validation on regenerated archives. (da1051793d4c build(distribution): refresh portable artifacts)
-- Record release metadata integrity defects before artifact integration. (4c0da8974daa audit(release): record artifact metadata findings)
-- Preserve fail-closed target qualification review findings before integration. (b8fb89b917c9 audit(github): record workflow identity finding)
 - portable pack provenance no longer trusts Git replacement refs. (b4d949c1ac1f fix(export): ignore Git replacement objects)
 
 ## Docs
@@ -75,7 +67,6 @@ release_publishing: false
 
 ## Tests
 
-- added stale-preview, file-set, hash, size, and cross-checkout regressions. (7bb41079e11f fix(release): bind metadata to final artifacts)
 - added positive projection and unrelated-change refusal coverage. (bb308e64f4f2 fix(release): accept complete preview projection)
 - require validation to preserve all generated release bytes. (edcd591a268b fix(release): converge bundle validation bytes)
 - added JSON/Markdown mismatch and malformed JSON cases. (6cbd104cb048 fix(release): bind both preview representations)
@@ -91,6 +82,7 @@ release_publishing: false
 - register a local artifact refresh with no publication effect. (4deeed08be90 audit(queue): admit combined target pack refresh)
 - record qualified local combined-source artifacts and consumer evidence. (9cc4bb068837 audit(queue): qualify combined target artifacts)
 - close reviewed local source and artifact dev integration. (3bdeb220cb31 audit(queue): close release and target dev integration)
+- record mechanism-only review acceptance and exact owner decisions still required. (f84778ff4675 audit(queue): record fresh disposition mechanism review)
 - refresh local preview-only release text. (9dc91654f8df chore(changelog): refresh customization source previews)
 - refresh local portable and release artifacts for customization. (8262b2fd6465 build(release): refresh local customization pack artifacts)
 - project local release provenance onto committed artifact ancestry. (37daa862e939 build(release): project customization artifact ancestry)
@@ -98,6 +90,12 @@ release_publishing: false
 - refresh local preview-only records for the recovery repair. (0c98e175bab9 chore(changelog): refresh recovery repair previews)
 - refresh repaired portable and local release bytes. (7e678f165fb4 build(release): refresh repaired customization artifacts)
 - project replacement local release ancestry. (55e76dfbab3a build(release): project repaired artifact ancestry)
+- refresh local release previews for final customization repair. (03c4793d353b chore(changelog): refresh Windows alias repair preview)
+- refresh final local customization pack and release assets. (10fc01a6a827 build(release): refresh final customization artifacts)
+- project final local artifact ancestry. (8cad56c0a612 build(release): project final customization ancestry)
+- persist exact final customization qualification and review gate. (1c0327782f8a audit(queue): record final customization review subject)
+- clarify final consumer receipt provenance. (71416928aa36 audit(queue): distinguish receipt byte identities)
+- preserve exact owner authorization and technical review evidence. (a5cd5ca5ddf7 audit(queue): record owner and technical customization acceptance)
 
 ## Malformed Commits
 

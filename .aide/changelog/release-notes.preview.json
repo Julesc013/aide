@@ -1,50 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "bb689227c6a6",
-      "summary": "Run the focused and adjacent suites on the merged tree, record exact evidence, and regenerate commit-bound portable artifacts."
-    },
-    {
-      "commit": "cc85be9c472a",
-      "summary": "Push the exact dev checkpoint, regenerate portable artifacts in a bounded refresh task, and validate extracted consumer bytes."
-    },
-    {
-      "commit": "c730eac44202",
-      "summary": "Generate export, bundle, and preview draft outputs from this clean checkpoint and validate extracted consumer artifacts."
-    },
-    {
-      "commit": "da1051793d4c",
-      "summary": "Revalidate committed provenance, close any second-order metadata changes, obtain exact review, and integrate the refresh into dev."
-    },
-    {
-      "commit": "da1051793d4c",
-      "summary": "Revalidate committed provenance, close any second-order metadata changes, obtain exact review, and integrate the refresh into dev."
-    },
-    {
-      "commit": "38fe712810b8",
-      "summary": "Publish the exact candidate, obtain independent review, integrate it into dev, and rerun landed-tree validation."
-    },
-    {
-      "commit": "4c0da8974daa",
-      "summary": "Admit a generator repair, add cross-checkout and asset-index regressions, regenerate all affected artifacts, and request exact rereview."
-    },
-    {
-      "commit": "b8fb89b917c9",
-      "summary": "Expand the task scope explicitly, parse and bind path-at-ref identity, add adversarial fixtures, and request exact rereview."
-    },
-    {
-      "commit": "5ad6aa979971",
-      "summary": "Add failing regressions, repair the generator dependency graph, and regenerate exact local artifacts."
-    },
-    {
-      "commit": "7bb41079e11f",
-      "summary": "Generate source-bound previews, regenerate clean artifacts, validate consumers, and obtain exact independent rereview."
-    },
-    {
-      "commit": "7bb41079e11f",
-      "summary": "Generate source-bound previews, regenerate clean artifacts, validate consumers, and obtain exact independent rereview."
-    },
-    {
       "commit": "bb308e64f4f2",
       "summary": "Regenerate and commit the six source-bound preview outputs, then rebuild the export and release artifacts."
     },
@@ -197,6 +153,10 @@
       "summary": "Publish this evidence-only closeout and continue historical dispositions and mandatory stable-product work."
     },
     {
+      "commit": "f84778ff4675",
+      "summary": "Obtain independent owner accept/reject choices for A, B, and C; integrate eligible source through current dev and regenerate local artifacts."
+    },
+    {
       "commit": "98de5ee1531e",
       "summary": "Regenerate current portable and release artifacts, qualify exact extracted bytes, then integrate the accepted slice."
     },
@@ -235,44 +195,41 @@
     {
       "commit": "2b4f5de885a5",
       "summary": "Rebuild exact portable bytes and run final source and consumer qualification."
+    },
+    {
+      "commit": "03c4793d353b",
+      "summary": "Generate final local pack and release assets from this committed checkpoint."
+    },
+    {
+      "commit": "10fc01a6a827",
+      "summary": "Project committed artifact ancestry, verify clean replay, and record the exact review subject."
+    },
+    {
+      "commit": "8cad56c0a612",
+      "summary": "Replay from committed clean tree and preserve the exact final review packet."
+    },
+    {
+      "commit": "1c0327782f8a",
+      "summary": "Obtain exact human review of the frozen source/artifact subject before dev integration."
+    },
+    {
+      "commit": "71416928aa36",
+      "summary": "Use the frozen `8cad56c0` subject for human dev-integration review."
+    },
+    {
+      "commit": "a5cd5ca5ddf7",
+      "summary": "Publish the clean task branch, fast-forward dev if the remote base remains unchanged, then verify provenance and remote identity."
+    },
+    {
+      "commit": "7a2305f51894",
+      "summary": "Integrate eligible source and decisions against current dev, regenerate derived outputs, and verify combined validation."
+    },
+    {
+      "commit": "e40aec47dd2d",
+      "summary": "Regenerate through the current generator, validate combined source and archives, obtain independent integration review, then update remote dev."
     }
   ],
   "highlights": [
-    {
-      "breaking": false,
-      "category": "Security",
-      "commit": "bb689227c6a6",
-      "subject": "fix(distribution): integrate portability hardening",
-      "summary": "Reject Windows 8.3 aliases and other unsafe fixture paths before destination mutation."
-    },
-    {
-      "breaking": false,
-      "category": "Security",
-      "commit": "cc85be9c472a",
-      "subject": "docs(distribution): record portability integration",
-      "summary": "Integrate reviewed Windows short-name alias refusal into the dev line."
-    },
-    {
-      "breaking": false,
-      "category": "Security",
-      "commit": "da1051793d4c",
-      "subject": "build(distribution): refresh portable artifacts",
-      "summary": "Preserve checksum, forbidden-path, and no-publish validation on regenerated archives."
-    },
-    {
-      "breaking": false,
-      "category": "Security",
-      "commit": "4c0da8974daa",
-      "subject": "audit(release): record artifact metadata findings",
-      "summary": "Record release metadata integrity defects before artifact integration."
-    },
-    {
-      "breaking": false,
-      "category": "Security",
-      "commit": "b8fb89b917c9",
-      "subject": "audit(github): record workflow identity finding",
-      "summary": "Preserve fail-closed target qualification review findings before integration."
-    },
     {
       "breaking": false,
       "category": "Security",
@@ -283,30 +240,16 @@
     {
       "breaking": false,
       "category": "Added",
-      "commit": "5ad6aa979971",
-      "subject": "chore(release): admit metadata integrity repair",
-      "summary": "Admit deterministic release metadata integrity repair."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
       "commit": "98de5ee1531e",
       "subject": "feat(import): explain downstream customization decisions",
       "summary": "local customization explanation and opt-in import feedback."
     },
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "c730eac44202",
-      "subject": "chore(distribution): start clean artifact refresh",
-      "summary": "Begin commit-bound portable artifact refresh after portability integration."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "da1051793d4c",
-      "subject": "build(distribution): refresh portable artifacts",
-      "summary": "Refresh portable artifacts for the integrated Windows path-hardening source."
+      "category": "Added",
+      "commit": "e40aec47dd2d",
+      "subject": "feat(git): merge exact historical dispositions into dev candidate",
+      "summary": "exact historical message dispositions to the dev source ancestry."
     },
     {
       "breaking": false,
@@ -314,20 +257,6 @@
       "commit": "8369ac540e4a",
       "subject": "build(release): qualify deterministic candidate",
       "summary": "exact no-publish candidate assets and draft evidence regenerated."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "38fe712810b8",
-      "subject": "build(distribution): close artifact provenance",
-      "summary": "Bind preview release metadata to committed portability artifact provenance."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "7bb41079e11f",
-      "subject": "fix(release): bind metadata to final artifacts",
-      "summary": "release metadata now binds final eligible bytes and the exported source identity."
     },
     {
       "breaking": false,
@@ -457,6 +386,13 @@
     },
     {
       "breaking": false,
+      "category": "Fixed",
+      "commit": "7a2305f51894",
+      "subject": "fix(git): bind exact owner historical decisions",
+      "summary": "allow accountable AEST historical decisions while retaining strict raw policy results."
+    },
+    {
+      "breaking": false,
       "category": "Docs",
       "commit": "671faa232216",
       "subject": "docs(release): bind previews to repair source",
@@ -514,13 +450,6 @@
     {
       "breaking": false,
       "category": "Tests",
-      "commit": "7bb41079e11f",
-      "subject": "fix(release): bind metadata to final artifacts",
-      "summary": "added stale-preview, file-set, hash, size, and cross-checkout regressions."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
       "commit": "bb308e64f4f2",
       "subject": "fix(release): accept complete preview projection",
       "summary": "added positive projection and unrelated-change refusal coverage."
@@ -556,50 +485,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "bb689227c6a6",
-      "summary": "Post-merge combined-tree tests and portable artifact provenance refresh remain required."
-    },
-    {
-      "commit": "cc85be9c472a",
-      "summary": "Portable export and release-bundle provenance remain stale until regenerated from clean landed dev."
-    },
-    {
-      "commit": "c730eac44202",
-      "summary": "Generated outputs are not yet refreshed and canonical validation remains red for known provenance drift."
-    },
-    {
-      "commit": "da1051793d4c",
-      "summary": "This generated-byte commit may require one deterministic post-commit provenance rebind."
-    },
-    {
-      "commit": "da1051793d4c",
-      "summary": "This generated-byte commit may require one deterministic post-commit provenance rebind."
-    },
-    {
-      "commit": "38fe712810b8",
-      "summary": "The artifacts remain local no-publish outputs pending independent review and dev integration."
-    },
-    {
-      "commit": "4c0da8974daa",
-      "summary": "The exact artifact-refresh candidate remains blocked from dev integration."
-    },
-    {
-      "commit": "b8fb89b917c9",
-      "summary": "GitHub target qualification remains fixture-only and blocked from hosted effects."
-    },
-    {
-      "commit": "5ad6aa979971",
-      "summary": "The failed artifact candidate remains blocked until implementation and independent rereview pass."
-    },
-    {
-      "commit": "7bb41079e11f",
-      "summary": "Generated release artifacts are not qualified until regenerated after the source-bound preview commit."
-    },
-    {
-      "commit": "7bb41079e11f",
-      "summary": "Generated release artifacts are not qualified until regenerated after the source-bound preview commit."
-    },
     {
       "commit": "bb308e64f4f2",
       "summary": "Generated previews must be refreshed again against this newer source commit."
@@ -753,6 +638,10 @@
       "summary": "Target hosted qualification, native privilege case, mandatory product gaps, main promotion, and public release remain open."
     },
     {
+      "commit": "f84778ff4675",
+      "summary": "No proposed disposition is accepted; source integration must preserve current release generator and output lineage."
+    },
+    {
       "commit": "98de5ee1531e",
       "summary": "Conflicting managed edits still require explicit resolution; feedback is local and manually shared."
     },
@@ -791,56 +680,44 @@
     {
       "commit": "2b4f5de885a5",
       "summary": "The prior replacement archive is superseded; dev remains unchanged."
+    },
+    {
+      "commit": "03c4793d353b",
+      "summary": "Preview text is not official release publication."
+    },
+    {
+      "commit": "10fc01a6a827",
+      "summary": "Post-commit ancestry projection and human dev review remain open; no publication occurred."
+    },
+    {
+      "commit": "8cad56c0a612",
+      "summary": "Stable publication and human dev review remain separate gates."
+    },
+    {
+      "commit": "1c0327782f8a",
+      "summary": "Dev integration, complete lifecycle apply, native/hosted qualification, and stable release remain open."
+    },
+    {
+      "commit": "71416928aa36",
+      "summary": "The external original is required for byte-exact original verification."
+    },
+    {
+      "commit": "a5cd5ca5ddf7",
+      "summary": "Post-integration replay and final lifecycle qualification remain open."
+    },
+    {
+      "commit": "7a2305f51894",
+      "summary": "This does not qualify product behavior, native or hosted effects, or release publication."
+    },
+    {
+      "commit": "e40aec47dd2d",
+      "summary": "This source merge is not a qualified delivered artifact or release candidate until generated outputs and combined tests pass."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "2b4f5de885a59d561478759fa38b0f83a66312c7",
+  "source_head": "e40aec47dd2dd5555d00f869262c3fb000a2e617",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "bb689227c6a6",
-      "summary": "PASS: candidate range commit policy check for all six commits."
-    },
-    {
-      "commit": "cc85be9c472a",
-      "summary": "PASS: 118 of 126 focused tests, with eight symlink or FIFO capability skips and zero failures."
-    },
-    {
-      "commit": "c730eac44202",
-      "summary": "PASS: refresh worktree starts clean at dev cc85be9c472a16f39aae98ba00fd5de145098862."
-    },
-    {
-      "commit": "da1051793d4c",
-      "summary": "PASS: export pack with 826 files, 829 checksums, and zero provenance or boundary problems."
-    },
-    {
-      "commit": "da1051793d4c",
-      "summary": "PASS: export pack with 826 files, 829 checksums, and zero provenance or boundary problems."
-    },
-    {
-      "commit": "38fe712810b8",
-      "summary": "PASS: pack provenance is PASS_SOURCE_ANCESTOR with zero checksum, provenance, or boundary problems."
-    },
-    {
-      "commit": "4c0da8974daa",
-      "summary": "PASS: 43 relevant unit tests, canonical validate, doctor, commit-range policy, and diff checks."
-    },
-    {
-      "commit": "b8fb89b917c9",
-      "summary": "PASS: 134 of 135 affected tests with one Windows symlink-privilege skip and zero failures."
-    },
-    {
-      "commit": "5ad6aa979971",
-      "summary": "PASS: exact failed candidate and review identities recorded."
-    },
-    {
-      "commit": "7bb41079e11f",
-      "summary": "PASS: 55 adjacent export, import, Q47, and Q48 tests."
-    },
-    {
-      "commit": "7bb41079e11f",
-      "summary": "PASS: 55 adjacent export, import, Q47, and Q48 tests."
-    },
     {
       "commit": "bb308e64f4f2",
       "summary": "PASS: 15 Q47 release-bundle tests."
@@ -994,6 +871,10 @@
       "summary": "PASS: remote dev observed at 9cc4bb06883754de24096547c6b356524bd71b93 with tree 8afadda53f79e7e7094460ff472862b68bac214c."
     },
     {
+      "commit": "f84778ff4675",
+      "summary": "PASS: 22 focused repair cases and six portable governance cases."
+    },
+    {
       "commit": "98de5ee1531e",
       "summary": "PASS: export/import suite ran 27 cases with zero failures."
     },
@@ -1032,6 +913,38 @@
     {
       "commit": "2b4f5de885a5",
       "summary": "PASS: focused reserved-metadata alias test after this change."
+    },
+    {
+      "commit": "03c4793d353b",
+      "summary": "PASS: changelog preview, validate, and status; 50 commits, zero malformed."
+    },
+    {
+      "commit": "10fc01a6a827",
+      "summary": "PASS: 29 import, 18 release, 11 draft, and 6 governance tests against final source."
+    },
+    {
+      "commit": "8cad56c0a612",
+      "summary": "PASS: first postcommit generator cycle changed 18 expected files."
+    },
+    {
+      "commit": "1c0327782f8a",
+      "summary": "PASS: 29 import, 18 release, 11 draft, and 6 governance tests on final source."
+    },
+    {
+      "commit": "71416928aa36",
+      "summary": "PASS: SHA-256 of external original and working copy match."
+    },
+    {
+      "commit": "a5cd5ca5ddf7",
+      "summary": "PASS: accepted commit and tree identities, candidate ancestry, and final ZIP and tar.gz hashes."
+    },
+    {
+      "commit": "7a2305f51894",
+      "summary": "PASS: 23 focused commit-recovery tests and canonical validate and doctor."
+    },
+    {
+      "commit": "e40aec47dd2d",
+      "summary": "PASS: read-only merge preflight, 23 focused historical tests, exact accepted and raw range checks, and staged diff checks."
     }
   ],
   "warnings": []
