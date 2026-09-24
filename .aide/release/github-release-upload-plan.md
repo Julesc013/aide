@@ -14,8 +14,8 @@
 - 6: .aide/release/dist/install.md (install_notes) sha256=0d490b36dd0708ad040c2f2bf5a3fd861a8e2b0d6a7f789a2330ba3454831e23
 - 7: .aide/release/dist/CHANGELOG.preview.md (changelog_preview_copy) sha256=dcbce43079b9d56688c9a718468b3f63fc123be6d0f6a11f30555103d94cffd4
 - 8: .aide/release/dist/RELEASE_NOTES.preview.md (release_notes_preview_copy) sha256=e5e2ba4893055be8bc19ce1c03ce25713efdbacbe005d90c14dd107af785caca
-- 9: .aide/release/dist/release-validation.json (validation_report) sha256=ac3218cb9d04de920b9ea15a7cfce686483d252103cd023abd6014ee9225fde3
-- 10: .aide/release/dist/release-validation.md (validation_report) sha256=37b6d4e4c7f5106030cac8829decd81fed05f89641c70f5b87efdac0c363932c
+- 9: .aide/release/dist/release-validation.json (validation_report) sha256=a457b73f186db89c3fe444ba17864cfef2e0662ce5c12d808652cc24ed43ffd7
+- 10: .aide/release/dist/release-validation.md (validation_report) sha256=aa0c336c3c2c0ded2747876f3517034f31dafd8f2a0f077274e0eb89ad649182
 - 11: .aide/release/dist/release-provenance.json (provenance_report) sha256=b6a61e46fc3c0f1261ac3f83ef8a8b283eb751bd4681a6ebb1ef240bb31310e1
 - 12: .aide/release/dist/release-assets.json (asset_index) sha256=1badc2438785d8d5ac4db37e09a6e08855d6264bec0d72118a00ba6186a3b5e3
 
