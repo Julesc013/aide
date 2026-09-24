@@ -16,7 +16,9 @@ publication effect.
 - [x] Add opt-in local feedback with no automatic telemetry.
 - [x] Run source tests and adversarial cases: 27-case suite and two focused rechecks passed.
 - [x] Regenerate and qualify final portable bytes in disposable consumers.
-- [ ] Record source/artifact evidence, prevalidate closeout, and integrate if reviewed and accepted.
+- [x] Record source/artifact evidence, prevalidate closeout, and integrate
+  the accepted candidate into dev at `a5cd5ca5`; later historical merge
+  preserved its reviewed source and artifact ancestry.
 - [x] Detect that an existing pending-intent dry run could mutate recovery
   state; supersede `37daa862` before review or dev integration.
 - [x] Repair read-only recovery preview and reserve project rationale metadata
@@ -26,8 +28,8 @@ publication effect.
   metadata path; the checksummed alias refusal test passes.
 - [x] Record the owner's exact 2026-09-25 acceptance of frozen commit/tree.
 - [x] Obtain a fresh independent technical ACCEPT_WITH_NOTES of that subject.
-- [ ] Validate the unchanged source/artifact bytes against current dev, then
-  serialize and verify the remote dev integration.
+- [x] Validate unchanged source/artifact bytes against current dev, then
+  serialize and verify remote dev at `a5cd5ca5` and descendant `5ac617b3`.
 
 ## Verification and recovery
 

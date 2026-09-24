@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-HISTORICAL-DEV-INTEGRATION-01
-status: running
-planning_state: reviewed_candidate_dev_fast_forward_pending
+status: passed
+planning_state: integrated_dev_remote_observed
 result: PASS_WITH_RETAINED_GATES
 updated_at: 2026-09-25
 base_dev: a5cd5ca5ddf7d0be561fbf2796b073b9f5d96fd2
@@ -14,4 +14,7 @@ candidate_tree: f579b2da285752a4231777a58d36c696f788870d
 technical_review: ACCEPT_WITH_NOTES_source_and_artifact_2026-09-25
 technical_review_hold: evidence_only_closeout_then_narrow_check_before_dev
 postcommit_replay: 44_release_files_compared_zero_changed
-next_action: narrow_check_evidence_closeout_then_fast_forward_dev_and_observe_remote
+technical_review_hold_resolution: narrow_evidence_check_passed_2026-09-25
+remote_dev_observed: 5ac617b37b5778193b1c2cc7c63e0cc12c98ec09
+remote_tree: 56921686952f334e92532bd2ad350b0d80d5328c
+next_action: continue_historical_dependent_source_and_mandatory_lifecycle_work

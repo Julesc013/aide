@@ -3676,5 +3676,8 @@ The exact historical source and decision branch was merged onto customization
 dev with both parent histories preserved. Current generator outputs were
 regenerated from the combined source, and the frozen candidate `7c12fc40`
 passed post-commit replay and independent source/artifact review with notes.
-The review requires a separate evidence-only closeout and narrow check before
-the dev fast-forward. Do not rewrite the historical messages.
+The separate evidence-only closeout passed its narrow check. Remote and local
+dev were observed at `5ac617b37b5778193b1c2cc7c63e0cc12c98ec09`, tree
+`56921686952f334e92532bd2ad350b0d80d5328c`. Do not rewrite the
+historical messages. Historical-dependent removal and host source remain next;
+mandatory lifecycle apply remains unimplemented.

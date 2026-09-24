@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
-status: running
-planning_state: owner_and_technical_accepted_integration_preflight
+status: passed
+planning_state: integrated_dev_remote_observed
 result: PASS_WITH_RETAINED_GATES
 updated_at: 2026-09-25
 base_commit: 3bdeb220cb31dfc3177faa6836f5e86c8071d1ef
@@ -18,4 +18,4 @@ final_tests: 29_import_18_release_11_draft_6_governance_passed
 final_replay: 44_compared_0_changed_from_committed_projection
 owner_decision: accepted_for_dev_integration_2026-09-25
 technical_review: ACCEPT_WITH_NOTES_2026-09-25
-remote_integration: pending_combined_validation
+remote_integration: a5cd5ca5ddf7d0be561fbf2796b073b9f5d96fd2_then_5ac617b37b5778193b1c2cc7c63e0cc12c98ec09

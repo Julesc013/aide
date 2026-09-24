@@ -97,3 +97,17 @@ findings with adversarial tests. All three real historical records remain
 proposed, so the original range failures continue to fail exactly and no
 integration gate has been bypassed. Portable artifact refresh and independent
 rereview remain required before mechanism integration or any exact decisions.
+
+## 2026-09-25 completion checkpoint
+
+The owner explicitly accepted exact A/B/C records, each bound to its own
+structured decision and immutable object, message, failure, and evidence
+digests. A narrow date guard repair received independent technical acceptance;
+23 focused tests passed. All three default ranges pass only through their exact
+dispositions while raw ranges retain 1/13/1 failures. The current dev generator
+rebuilt the combined portable and local release artifacts. Independent combined
+source/artifact review and evidence closeout passed. Remote dev was observed at
+`5ac617b37b5778193b1c2cc7c63e0cc12c98ec09`. This completes the
+historical-message mechanism and its dev integration, not product, native,
+hosted, main, or public release acceptance. The preceding retrospective records
+the earlier predecision state and is retained as historical context.

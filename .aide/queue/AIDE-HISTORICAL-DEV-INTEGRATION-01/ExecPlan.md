@@ -37,8 +37,8 @@ Do not activate native or hosted effects or publish a release.
 - [x] Obtain independent technical review of exact commit `7c12fc40`:
   `ACCEPT_WITH_NOTES` for source/artifact integration, with an evidence-only
   closeout and narrow check required before the dev fast-forward.
-- [ ] Check this evidence-only closeout, update remote dev, and observe its
-  resulting commit and tree.
+- [x] Check evidence-only closeout `5ac617b3` independently, fast-forward
+  remote and local dev, and observe exact commit/tree in both.
 
 ## Verification and likely blockers
 

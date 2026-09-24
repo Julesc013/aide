@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
-status: running
-classification: mechanism_source_review_accepted_with_artifact_note
-planning_state: exact_owner_decisions_recorded_integration_pending
+status: passed
+classification: exact_owner_decisions_and_source_integrated
+planning_state: integrated_dev_remote_observed
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
 current_slice: exact_owner_decisions_bound_and_validated
-next_slice: integrate_eligible_source_with_current_release_generator
+next_slice: historical_dependent_removal_and_host_source_integration
 notes:
   - Mechanism implementation is authorized; no disposition is self-approved.
   - Raw historical failures remain visible and immutable.
@@ -22,3 +22,4 @@ notes:
   - Fresh exact review of 59b886db accepts mechanism source integration with notes; it does not accept any of the three proposed records.
   - The old branch release validate followed by draft-validate exposes stale draft checksums; preserve current dev generator and regenerate combined artifacts instead of copying old outputs.
   - The UTC date edge was repaired and independently reviewed; 23 focused tests pass and all three exact default ranges are PASS_WITH_DISPOSITIONS while raw ranges still FAIL.
+  - Both parent histories reached remote dev at 5ac617b37b5778193b1c2cc7c63e0cc12c98ec09 after independent combined review and narrow evidence closeout; native, hosted, main, and release gates remain open.

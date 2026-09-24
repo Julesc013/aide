@@ -149,3 +149,16 @@ implementation child is published at
 the parent broker or authorize operational effects. The dedicated broker-to-dev
 integration task preserves the later broker source head while validating it
 against the newer delivered-pack work already on `dev`.
+
+## 2026-09-25 live checkpoint
+
+The owner accepted frozen customization candidate `8cad56c0` and exact
+historical message dispositions A/B/C, and delegated in-scope execution under
+the persistent Codex Goal recorded in campaign evidence. Customization reached
+dev at `a5cd5ca5`; the independently reviewed combined historical candidate,
+including current-generator pack and local release outputs, reached remote and
+local dev at `5ac617b37b5778193b1c2cc7c63e0cc12c98ec09`, tree
+`56921686952f334e92532bd2ad350b0d80d5328c`. The prior review hold was
+cleared by a narrow evidence-only check. Removal/host source integration and
+mandatory lifecycle apply are next. No main promotion or public release has
+occurred; this programme remains running.

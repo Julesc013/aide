@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
 title: Add exact historical commit-message dispositions
 type: implementation
-status: running
-planning_state: exact_owner_decisions_recorded_integration_pending
+status: passed
+planning_state: integrated_dev_remote_observed
 result: PASS_WITH_WARNINGS
 created_at: 2026-09-22
 updated_at: 2026-09-25
