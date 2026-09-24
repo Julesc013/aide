@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -21,6 +22,16 @@ SPEC.loader.exec_module(aide_lite)
 
 
 class Q27CommitRecoveryTests(unittest.TestCase):
+    def test_review_date_allows_ahead_of_utc_civil_timezones(self) -> None:
+        self.assertEqual(
+            aide_lite.latest_possible_local_review_date(datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc)).isoformat(),
+            "2026-09-25",
+        )
+        self.assertEqual(
+            aide_lite.latest_possible_local_review_date(datetime(2026, 9, 24, 8, 0, tzinfo=timezone.utc)).isoformat(),
+            "2026-09-24",
+        )
+
     def result_for(self, message: str) -> str:
         return aide_lite.commit_message_result(aide_lite.validate_commit_message_text(message))
 

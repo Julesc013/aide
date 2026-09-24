@@ -3,10 +3,10 @@ id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
 title: Add exact historical commit-message dispositions
 type: implementation
 status: running
-planning_state: mechanism_source_review_accepted_exact_owner_decisions_pending
+planning_state: exact_owner_decisions_recorded_integration_pending
 result: PASS_WITH_WARNINGS
 created_at: 2026-09-22
-updated_at: 2026-09-24
+updated_at: 2026-09-25
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 depends_on: []
 objective: >

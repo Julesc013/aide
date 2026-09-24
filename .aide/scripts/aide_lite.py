@@ -26,7 +26,7 @@ import tarfile
 import tempfile
 import zipfile
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Iterable
 
@@ -4659,6 +4659,12 @@ def _disposition_authority_policy(repo_root: Path) -> tuple[set[str], object | N
     return reviewers, start_date, errors
 
 
+def latest_possible_local_review_date(now_utc: datetime | None = None):
+    """Accept a date that has begun in any civil timezone (UTC+14 at latest)."""
+    instant = now_utc if now_utc is not None else datetime.now(timezone.utc)
+    return instant.astimezone(timezone(timedelta(hours=14))).date()
+
+
 def load_commit_message_dispositions(repo_root: Path) -> tuple[dict[str, object], bool]:
     path = repo_root / COMMIT_MESSAGE_DISPOSITIONS_PATH
     if not path.exists():
@@ -4820,7 +4826,7 @@ def _validate_accepted_disposition_decision(repo_root: Path, record: dict[str, o
     if review_date is not None:
         if start_date is not None and review_date < start_date:
             errors.append("accepted disposition review date precedes the decision window")
-        if review_date > datetime.now(timezone.utc).date():
+        if review_date > latest_possible_local_review_date():
             errors.append("accepted disposition review date is in the future")
 
     decision_ref = record.get("decision_ref")

@@ -4,14 +4,18 @@
       "commit": "bfb86c12b9e6d2970024d29c57ba629994ec43cc",
       "decision": "accept_historical_nonconformance",
       "decision_ref": {
-        "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-request.md",
-        "sha256": "3ee6fdfd25809a2847bfabe78231a63bab5ec977087d0def94c318a0b8594ec8"
+        "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-bfb86c12-historical-validation-token.json",
+        "sha256": "dd979cd603a3ef1743e4b870fa8abc2a795fb68d86986976af487de39bf0a01e"
       },
       "disposition_id": "bfb86c12-historical-validation-token",
       "evidence": [
         {
           "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/raw-policy-failures.md",
           "sha256": "18db66e85bec256ef7ec2f66b615b073543f193ff67df79d90086bba202be611"
+        },
+        {
+          "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/owner-decisions-2026-09-25.md",
+          "sha256": "95d02200c457f4285065344d8121606f48e2ff3b5d7bc4bdddc64c5354ac4c3b"
         }
       ],
       "failed_checks": [
@@ -22,26 +26,30 @@
         "02e99d267b14dc7dfedbd42262d390a93eac354f",
         "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3"
       ],
-      "record_digest": "d93839dc7c1e6c8e3c74e42e09ca27aeff631f3da5ede42d13e3ff901822e0f0",
-      "reviewed_at": "",
-      "reviewed_by": "",
+      "record_digest": "173b7e265767f95380164dcb0a6b4de09b4fa8e2c1b5d952d1ff1a0c8ca6b8b9",
+      "reviewed_at": "2026-09-25",
+      "reviewed_by": "owner:Julesc013",
       "schema_version": "aide.commit-message-disposition.v1",
       "scope": "historical_commit_message_only",
-      "status": "proposed",
+      "status": "accepted",
       "tree": "54ab832eafa0ed0be3282858fd44f344e560732b"
     },
     {
       "commit": "486e81cd3a918729f28e4b452a9dcff017238a04",
       "decision": "accept_historical_nonconformance",
       "decision_ref": {
-        "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-request.md",
-        "sha256": "3ee6fdfd25809a2847bfabe78231a63bab5ec977087d0def94c318a0b8594ec8"
+        "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-486e81cd-historical-structured-body.json",
+        "sha256": "597743245516cc796da400b101043300e23002242feb4cbee15e4bc1dbdf9acf"
       },
       "disposition_id": "486e81cd-historical-structured-body",
       "evidence": [
         {
           "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/raw-policy-failures.md",
           "sha256": "18db66e85bec256ef7ec2f66b615b073543f193ff67df79d90086bba202be611"
+        },
+        {
+          "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/owner-decisions-2026-09-25.md",
+          "sha256": "95d02200c457f4285065344d8121606f48e2ff3b5d7bc4bdddc64c5354ac4c3b"
         }
       ],
       "failed_checks": [
@@ -63,26 +71,30 @@
       "parents": [
         "ea98dc1c004e2a1cdf83fee69b63976825dc175e"
       ],
-      "record_digest": "7289b1ed86e6cd204d29dc041767f1536517a1bc31a798caf243fabb47ea95bc",
-      "reviewed_at": "",
-      "reviewed_by": "",
+      "record_digest": "e844704e33079c0e6b9f25939b03b2491c2713a7ac6384b78e19e52c73198199",
+      "reviewed_at": "2026-09-25",
+      "reviewed_by": "owner:Julesc013",
       "schema_version": "aide.commit-message-disposition.v1",
       "scope": "historical_commit_message_only",
-      "status": "proposed",
+      "status": "accepted",
       "tree": "796f5aafc0d350e8cef599cacb9b3f703f8b2bb1"
     },
     {
       "commit": "1011d008fc39b135a5ef27062b5b8ee9c95cdc7f",
       "decision": "accept_historical_nonconformance",
       "decision_ref": {
-        "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-request.md",
-        "sha256": "3ee6fdfd25809a2847bfabe78231a63bab5ec977087d0def94c318a0b8594ec8"
+        "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/decision-1011d008-api-query-why-bullet.json",
+        "sha256": "19a2f57bf510d720dc5abaa92e82fd1b68d80d5ea9dccebf5e7301d0f82676a9"
       },
       "disposition_id": "1011d008-api-query-why-bullet",
       "evidence": [
         {
           "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/raw-policy-failures.md",
           "sha256": "18db66e85bec256ef7ec2f66b615b073543f193ff67df79d90086bba202be611"
+        },
+        {
+          "path": ".aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/evidence/owner-decisions-2026-09-25.md",
+          "sha256": "95d02200c457f4285065344d8121606f48e2ff3b5d7bc4bdddc64c5354ac4c3b"
         }
       ],
       "failed_checks": [
@@ -92,12 +104,12 @@
       "parents": [
         "ebf13af0dbef2dfbeab791dcb91eb8eb67a31c91"
       ],
-      "record_digest": "f7beb809106c19b0ae2a0e591c2721a2b84a3970a70fb8366d493b863d564232",
-      "reviewed_at": "",
-      "reviewed_by": "",
+      "record_digest": "a1f061acb851359d37981549dab9c662da7565e8ff0412b9cb0709eeb693b403",
+      "reviewed_at": "2026-09-25",
+      "reviewed_by": "owner:Julesc013",
       "schema_version": "aide.commit-message-disposition.v1",
       "scope": "historical_commit_message_only",
-      "status": "proposed",
+      "status": "accepted",
       "tree": "68cbc4d2b15049b7c589204d29003cf4affd93fc"
     }
   ],

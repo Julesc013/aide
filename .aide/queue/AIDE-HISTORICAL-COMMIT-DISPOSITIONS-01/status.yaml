@@ -2,15 +2,15 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
 status: running
 classification: mechanism_source_review_accepted_with_artifact_note
-planning_state: exact_owner_decisions_and_current_dev_integration_pending
+planning_state: exact_owner_decisions_recorded_integration_pending
 result: PASS_WITH_WARNINGS
-updated_at: 2026-09-24
-current_slice: exact_owner_decision_packet
+updated_at: 2026-09-25
+current_slice: exact_owner_decisions_bound_and_validated
 next_slice: integrate_eligible_source_with_current_release_generator
 notes:
   - Mechanism implementation is authorized; no disposition is self-approved.
   - Raw historical failures remain visible and immutable.
-  - All three exact registry entries remain proposed and ineffective.
+  - The owner accepted all three exact records on 2026-09-25; structured decisions are bound and raw failures remain visible.
   - Focused, portable governance, portable consumer, canonical, doctor, release-boundary, and raw branch-range checks pass.
   - The earlier portable pack source 0dc74af4 is retained as history; the repaired export now derives from clean source 24a49c06ff84d4dbb83bfe608e9363be281b3869.
   - Qualified candidate checkpoint 192d0f8aa09245ce4c73cd5800c3b72eb953c0b6 is published on the task branch.
@@ -21,3 +21,4 @@ notes:
   - Main, tag, upload, and publication effects are outside this task.
   - Fresh exact review of 59b886db accepts mechanism source integration with notes; it does not accept any of the three proposed records.
   - The old branch release validate followed by draft-validate exposes stale draft checksums; preserve current dev generator and regenerate combined artifacts instead of copying old outputs.
+  - The UTC date edge was repaired and independently reviewed; 23 focused tests pass and all three exact default ranges are PASS_WITH_DISPOSITIONS while raw ranges still FAIL.

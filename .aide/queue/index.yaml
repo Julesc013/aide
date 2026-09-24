@@ -3432,7 +3432,7 @@ items:
     description: Regenerate and validate local portable export and release artifacts from clean post-integration dev without publishing.
   - id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
     status: running
-    planning_state: mechanism_source_review_accepted_exact_owner_decisions_pending
+    planning_state: exact_owner_decisions_recorded_integration_pending
     result: PASS_WITH_WARNINGS
     title: Add exact historical commit-message dispositions
     task: .aide/queue/AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01/task.yaml

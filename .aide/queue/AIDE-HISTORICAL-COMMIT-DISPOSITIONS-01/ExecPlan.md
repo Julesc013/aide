@@ -39,9 +39,19 @@ conformance without claiming that the original commit message passed.
   `24a49c06ff84d4dbb83bfe608e9363be281b3869`.
 - [x] Obtain fresh exact review of `59b886db`: `ACCEPT_WITH_NOTES` for
   mechanism source, with old generated release artifacts excluded.
-- [ ] Obtain actual responsible-owner decisions for the three proposed records.
+- [x] Obtain actual responsible-owner decisions for the three proposed records.
 - [ ] Integrate eligible source against current dev without restoring older
   release generator or derived artifact snapshots.
+
+## Owner decision execution (2026-09-25)
+
+The owner explicitly accepted A, B, and C in the current conversation. Record
+each exact decision as structured JSON with owner provenance, bind the
+registry to immutable evidence digests, and verify effective and raw range
+behavior. Keep the source candidate and old generated artifacts distinct.
+After technical validation, integrate only eligible source against the current
+dev generator. A changed source or failed exact binding requires repair and
+focused independent review before integration.
 
 ## Test Oracle
 
