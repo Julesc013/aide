@@ -3450,3 +3450,13 @@ items:
     prompt: .aide/queue/AIDE-RELEASE-METADATA-INTEGRITY-01/prompt.md
     evidence: .aide/queue/AIDE-RELEASE-METADATA-INTEGRITY-01/evidence
     description: Repairs stale asset identities, checkout-local provenance, and stale preview publication candidates found during independent artifact review.
+  - id: AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01
+    status: running
+    planning_state: admitted
+    result: PENDING
+    title: Integrate the reviewed GitHub target source into dev
+    task: .aide/queue/AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01/evidence
+    description: Preserve the fresh-reviewed target source in accepted release-integrity dev ancestry and qualify the combined local source without hosted effects.

@@ -1,0 +1,61 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01
+title: Integrate the reviewed GitHub target source into dev
+type: integration
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-24
+updated_at: 2026-09-24
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-RELEASE-METADATA-INTEGRITY-01
+  - AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
+source:
+  reviewed_commit: e378d38e0c51b964ff0886823b5ad6ba62c82f14
+  reviewed_tree: c871264626f29b6de593b8d700df5005f44a6148
+  evidence_commit: d81d953a767492c4f71bfe9a2334944d51cf5201
+target:
+  branch: dev
+  base_commit: f77ecba287415ebefb24db97b8543d6256963e45
+merge_base: c6fdc754844cf7d42302218ce08307a7e05dcb61
+objective: >
+  Preserve the fresh-reviewed target source and the accepted release repair in
+  one dev ancestry, resolve their coordination records, and qualify local
+  combined source without activating hosted GitHub effects.
+authority_basis: >
+  The owner explicitly directed release-first then target-source integration
+  using the two fresh exact-candidate reviews, with one writer, preserved
+  ancestry, combined tests, and a later derived-artifact provenance refresh.
+scope:
+  source_tree_boundary: all paths reachable from the exact target evidence commit and its unique ancestry
+  allowed_reconciliation_paths:
+    - .aide/queue/**
+    - IMPLEMENT.md
+    - PLANS.md
+    - DOCUMENTATION.md
+  protected_current_dev_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+  forbidden_operations:
+    - GitHub settings or workflow installation
+    - credential or principal configuration
+    - hosted effects or race qualification claims
+    - main promotion, tags, uploads, or release publication
+    - force push or history rewrite
+authorized_git_operations:
+  - create a bounded task branch from the exact accepted dev head
+  - merge the target evidence descendant without rewriting either parent
+  - commit and publish coherent integration evidence
+  - fast-forward the qualified source to dev after helper planning
+verification:
+  - retain the reviewed source and both parent histories
+  - run affected target and release source regressions on the combined tree
+  - run canonical checks and state any inherited pack-provenance failure
+  - verify no hosted GitHub effect or release publication occurred
+retained_gates:
+  - regenerate and qualify derived portable and release artifacts through a separate bounded WorkUnit
+  - Windows symlink privilege skip remains an outstanding native qualification
+  - hosted settings, credential, and race work requires separate exact review
+  - main promotion and stable publication require separate exact review

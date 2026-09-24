@@ -1,0 +1,10 @@
+schema_version: aide.queue-status.v0
+id: AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01
+status: running
+planning_state: admitted
+result: PENDING
+updated_at: 2026-09-24
+reviewed_source: e378d38e0c51b964ff0886823b5ad6ba62c82f14
+source_review: ACCEPT_WITH_NOTES
+hosted_acceptance: not_run
+pack_refresh: pending_separate_workunit
