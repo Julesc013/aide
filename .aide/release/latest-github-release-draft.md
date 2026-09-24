@@ -49,16 +49,16 @@
 | --- | --- | --- | ---: | --- | --- |
 | 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 991798 | `1c797d61f5c559b1...` | true |
 | 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 663143 | `b2d4dc7d5ef52c0b...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `c550eec2b700f6dd...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `ea072f116ac1bb98...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1405 | `03a935e9c2390ec0...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 1325 | `0d490b36dd0708ad...` | true |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `a8fcb7b34b4fc296...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `36d36cdbb09d5b6b...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1405 | `dc7c0f485733b7fe...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 1341 | `db0ce8df44df9807...` | true |
 | 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 8201 | `dcbce43079b9d566...` | true |
 | 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 6507 | `e5e2ba4893055be8...` | true |
 | 9 | `.aide/release/dist/release-validation.json` | validation_report | 3846 | `a457b73f186db89c...` | false |
 | 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `b6a61e46fc3c0f12...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4079 | `1badc2438785d8d5...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `2506539a39ae65e7...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4079 | `4a1694df8586ec26...` | false |
 
 ## Validation Summary
 

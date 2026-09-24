@@ -8,7 +8,7 @@
       "path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "c550eec2b700f6ddb1db858420f56cf3303637d2abc042d6dbe2bf257eb3ed0e",
+      "sha256": "a8fcb7b34b4fc2968991c7ddd8897dbda9e605dd0178fea94d122c72e708b44a",
       "size_bytes": 1132,
       "source": "release_dist",
       "validation_status": "pending"
@@ -56,8 +56,8 @@
       "path": ".aide/release/dist/install.md",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "0d490b36dd0708ad040c2f2bf5a3fd861a8e2b0d6a7f789a2330ba3454831e23",
-      "size_bytes": 1325,
+      "sha256": "db0ce8df44df9807b8dd137f9e2b0dada34ff95bcafd5b804d46bed0b824aa62",
+      "size_bytes": 1341,
       "source": "release_dist",
       "validation_status": "pending"
     },
@@ -68,7 +68,7 @@
       "path": ".aide/release/dist/manifest.yaml",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "03a935e9c2390ec0d05d4dfc4c238a7cc2ef19b8602ac2eb4c120c6a541074e3",
+      "sha256": "dc7c0f485733b7fe78539ecc140295c2de4d76193fa22c89d74175884c63bd4c",
       "size_bytes": 1405,
       "source": "release_dist",
       "validation_status": "pending"
@@ -80,7 +80,7 @@
       "path": ".aide/release/dist/release-provenance.json",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "b6a61e46fc3c0f1261ac3f83ef8a8b283eb751bd4681a6ebb1ef240bb31310e1",
+      "sha256": "2506539a39ae65e7c783c1592e4cc1151ab0561aa6d7fc2a1fef54bf395ec747",
       "size_bytes": 1448,
       "source": "release_dist",
       "validation_status": "pending"
@@ -104,7 +104,7 @@
       "path": ".aide/release/dist/SHA256SUMS.txt",
       "publish_candidate": false,
       "reason": "generated local release artifact",
-      "sha256": "ea072f116ac1bb982abff446cf24abbb89dc20efa7baeb76e5bb3b0880d68712",
+      "sha256": "36d36cdbb09d5b6bfc2e1804a67d6aecc5ad88e6951c239c0a360ceec9b113c1",
       "size_bytes": 604,
       "source": "release_dist",
       "validation_status": "pending"
