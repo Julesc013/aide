@@ -78,3 +78,14 @@ artifact projection from source `ab17fd66`; the projection still requires a
 commit, then post-commit provenance and replay checks. The independent source
 review explicitly retains its artifact hold until that exact later candidate
 is checked.
+
+The refreshed projection was committed at
+`3875cad7af78aeefdc26d2557a1a254edf49b98f` (tree
+`2d7bda9e9ce3b30ce93bc4da623e75d2316e1781`). Post-commit pack status
+became `PASS_SOURCE_ANCESTOR`, with checksum and boundary checks still passing.
+Release and draft validation passed. Replaying bundle, validation, and draft
+from the committed source-ancestor state changed 15 of 44 local release files,
+mainly metadata recording the corrected status; validation reports also
+updated. A subsequent full replay changed zero of 44 files. The ZIP and tar.gz
+digests above did not change. This stable source-ancestor metadata requires its
+own commit, followed by final post-commit replay and narrow artifact review.

@@ -34,8 +34,11 @@ native, hosted, credential, target, or publication effects.
 - [x] Export first from clean `ab17fd66`, then generate preview, local bundle,
   and draft. Affected 29+18+11+6 suites, canonical checks, and a 33-path
   deterministic replay pass.
-- [ ] Commit the refreshed artifact projection, prove post-commit provenance
-  and replay, and obtain a narrow exact artifact review.
+- [x] Commit refreshed projection at `3875cad7`; post-commit pack status is
+  `PASS_SOURCE_ANCESTOR`. Refresh local metadata and replay 44 release files
+  with zero changes in the stable source-ancestor state.
+- [ ] Commit stable metadata, prove final post-commit replay, and obtain a
+  narrow exact artifact review.
 - [ ] Observe qualified remote dev and close evidence.
 
 ## Recovery

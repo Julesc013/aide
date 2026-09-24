@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-HOST-APIQUERY-DEV-INTEGRATION-01
 status: running
-planning_state: artifact_projection_commit_pending
+planning_state: source_ancestor_metadata_commit_pending
 result: PENDING
 updated_at: 2026-09-25
 base_dev: fce11e7fce3e8106a71f5a2391fd6f0517d7e0c8
@@ -12,4 +12,6 @@ canonical_checks: precommit_staged_pass_postcommit_stale_pack_fail_regenerated_p
 historical_c_range: default_dispositioned_raw_failure_preserved
 source_review: ACCEPT_WITH_NOTES_ab17fd66_artifact_hold
 local_projection_replay: 33_generated_paths_zero_changed
-next_action: commit_refreshed_artifacts_then_postcommit_provenance_replay_and_review
+artifact_projection_commit: 3875cad7af78aeefdc26d2557a1a254edf49b98f
+source_ancestor_replay: 44_release_paths_zero_changed_after_metadata_refresh
+next_action: commit_source_ancestor_metadata_then_final_postcommit_replay_and_review
