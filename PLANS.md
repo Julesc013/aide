@@ -3597,5 +3597,9 @@ objects, canonical message and failed-check identities, narrow scope, review
 authority, content-hashed decision/evidence files, and their own canonical
 digest. The three current blocker records remain proposed and ineffective.
 Independent review found replacement-ref, accountable-decision, whole-registry,
-and range-whitespace defects; the source repair adds adversarial regressions
-and now awaits exact rereview. Do not rewrite history or infer approval.
+and range-whitespace defects; the source repair adds adversarial regressions.
+Fresh exact review of `59b886db` accepts mechanism source integration with
+notes: the old branch's generated release snapshot fails draft validation after
+release validation and must be regenerated through current dev machinery.
+The three exact records still need independent owner decisions. Do not rewrite
+history or infer approval.

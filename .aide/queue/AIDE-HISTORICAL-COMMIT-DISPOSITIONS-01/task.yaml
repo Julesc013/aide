@@ -2,11 +2,11 @@ schema_version: aide.queue-task.v0
 id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
 title: Add exact historical commit-message dispositions
 type: implementation
-status: needs_review
-planning_state: qualified_awaiting_independent_review_and_exact_decisions
+status: running
+planning_state: mechanism_source_review_accepted_exact_owner_decisions_pending
 result: PASS_WITH_WARNINGS
 created_at: 2026-09-22
-updated_at: 2026-09-22
+updated_at: 2026-09-24
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 depends_on: []
 objective: >

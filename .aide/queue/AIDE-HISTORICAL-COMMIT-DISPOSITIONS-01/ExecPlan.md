@@ -37,7 +37,11 @@ conformance without claiming that the original commit message passed.
 - [x] Regenerate and validate the portable checker, policy, schema, tests,
   documentation, local bundle, and preview draft from clean repair source
   `24a49c06ff84d4dbb83bfe608e9363be281b3869`.
-- [ ] Obtain independent rereview of the exact repaired candidate.
+- [x] Obtain fresh exact review of `59b886db`: `ACCEPT_WITH_NOTES` for
+  mechanism source, with old generated release artifacts excluded.
+- [ ] Obtain actual responsible-owner decisions for the three proposed records.
+- [ ] Integrate eligible source against current dev without restoring older
+  release generator or derived artifact snapshots.
 
 ## Test Oracle
 

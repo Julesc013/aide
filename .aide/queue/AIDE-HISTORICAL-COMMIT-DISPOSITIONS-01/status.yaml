@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
-status: needs_review
-classification: repaired_portable_candidate
-planning_state: awaiting_artifact_commit_and_independent_rereview
+status: running
+classification: mechanism_source_review_accepted_with_artifact_note
+planning_state: exact_owner_decisions_and_current_dev_integration_pending
 result: PASS_WITH_WARNINGS
-updated_at: 2026-09-22
-current_slice: independent_review_repair
-next_slice: independent_repair_rereview_then_portable_refresh
+updated_at: 2026-09-24
+current_slice: exact_owner_decision_packet
+next_slice: integrate_eligible_source_with_current_release_generator
 notes:
   - Mechanism implementation is authorized; no disposition is self-approved.
   - Raw historical failures remain visible and immutable.
@@ -19,3 +19,5 @@ notes:
   - Focused repair tests pass 22 cases; all three real records still fail with proposed and ineffective dispositions.
   - Repaired portable governance passes 6 cases and portable consumer behavior passes 25 cases; canonical validate and doctor pass before the generated-output commit.
   - Main, tag, upload, and publication effects are outside this task.
+  - Fresh exact review of 59b886db accepts mechanism source integration with notes; it does not accept any of the three proposed records.
+  - The old branch release validate followed by draft-validate exposes stale draft checksums; preserve current dev generator and regenerate combined artifacts instead of copying old outputs.
