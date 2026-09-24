@@ -12,11 +12,12 @@ no-publish portable and release artifacts from a clean checkpoint.
 - [x] Observe the committed combined-source failure in `validate`, `doctor`,
   and `pack-status`; no unrelated failure was reported.
 - [x] Create this bounded local artifact WorkUnit under the owner's direction.
-- [ ] Commit a clean admission checkpoint before generation.
-- [ ] Generate current-source changelog previews and the portable pack.
-- [ ] Generate and validate local release bundle and draft; inspect exact assets.
-- [ ] Commit the artifact checkpoint, rerun the full generator cycle, and commit
-  any source-ancestor projection required for final byte convergence.
+- [x] Commit clean admission `4deeed08` and preview checkpoint `66ef462c`.
+- [x] Generate current-source changelog previews and the portable pack.
+- [x] Generate and validate local release bundle and draft; inspect exact assets.
+- [x] Commit artifact checkpoint `cda504b9`, rerun the full generator cycle,
+  and prove a second 44-file cycle changes zero bytes.
+- [ ] Commit the source-ancestor projection required for final byte convergence.
 - [ ] Replay from the committed clean tree and prove zero tracked output changes.
 - [ ] Run canonical checks and publish the exact qualified integration branch.
 - [ ] Fast-forward `dev` only after the above passes; observe remote identity.

@@ -212,6 +212,19 @@ Windows symlink privilege case skipped. Post-commit canonical validation and
 derived-artifact refresh remain pending. Hosted GitHub effects, main, tags, and publication
 remain separately gated.
 
+## Work Item: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01
+
+The committed combined source initially failed only inherited export-pack
+provenance. Changelog previews were rebound to source `4deeed08`, then the
+current release generator built the portable pack and local bundle from clean
+checkpoint `66ef462c`. Artifact commit `cda504b9` preserves those bytes.
+The first complete post-commit cycle advanced provenance to
+`PASS_SOURCE_ANCESTOR`; a second cycle changed zero of 44 release files.
+Nine asset hashes and sizes and seven checksum records match actual files.
+Canonical validate and doctor pass after projection. Final projection commit,
+clean replay, direct consumers, and dev integration remain pending. No hosted
+setting, main, tag, upload, or publication effect occurred.
+
 ## Work Item: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
 
 Completed as an acceptance-only consolidation and awaiting review.

@@ -7,9 +7,9 @@
     "RELEASE_NOTES.preview.md": "9c07de3ab10094fb44bfb275395d2b92e1c02e2c093cad9e242556355629174c",
     "aide-lite-pack-v0.tar.gz": "65fc3f78f719244695a80914e73d535269d486a754e61b7b0a102969705f9589",
     "aide-lite-pack-v0.zip": "4b9e458fe4a3c5f67f862de9c443ea195f74df7dd0bd2d0b69a4406562fdb5d8",
-    "install.md": "de178573d2179a6decee863646ed9c64308eea240b26041d1c75468ceae466a1",
-    "manifest.yaml": "133381f86058af40f51a247ed6d737845e2cfc1d3d394c5e36d903a00dc0eb8b",
-    "release-provenance.json": "57998ff0109bba9d84fbf447e8ec415d6d5dd732898d8680453e8ac85120c07c"
+    "install.md": "412437597dd73daa8953b92f40f3f0f36dd87f57a14d83dc4f2d64acbd7452fe",
+    "manifest.yaml": "89eda43f57eb9d5102fb3a73a9561182da1cbc739a55e9d872712036e033b6ee",
+    "release-provenance.json": "d27b91fc133075a871210150223424b62cabb4e20990a804d3505449e977dc87"
   },
   "excluded_from_checksums": [
     "SHA256SUMS.txt",

@@ -3619,7 +3619,11 @@ is skipped. Fresh exact review of `e378d38e` accepts local source integration
 with notes. `AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01` merges that source into
 the accepted release-integrity `dev` at `f77ecba2`; nine combined suites ran
 199 cases with 198 passes and one Windows privilege skip. The inherited
-pack-provenance refresh remains executable next. Hosted settings,
+pack-provenance refresh has generated local artifacts from source `66ef462c`
+through `AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01`. The first post-artifact cycle
+advanced to `PASS_SOURCE_ANCESTOR`, and a second changed zero of 44 files.
+Commit the projection, replay cleanly, run direct archive consumers, then land
+the qualified combined candidate. Hosted settings,
 credentials, and races retain separate gates.
 
 ## Broker runtime dev integration
