@@ -38,6 +38,11 @@ feedback; explicit non-dry recovery completed. Receipt original:
 `D:\Projects\AIDE\_review_scratch\customization-consumer-fcb30471c2f8\receipt.json`.
 Copied `extracted-consumer-receipt-final.json` SHA-256:
 `2a89e87dc28445d8b610854a08d351fded57c3a0afb60e934c0d0394158633f0`.
+That hash applies to the external original and the Windows working copy.
+Git normalized its CRLF line endings when storing the evidence file; the
+committed blob SHA-256 is
+`5447a33507ebfd114a56b9cfcf37e6bc27554d89d9a61f8ecb1a8fab715a3c88`.
+The JSON content is equivalent. Use the external path for exact original bytes.
 
 Logs are external under `D:\Projects\AIDE\_review_scratch\` with names
 `customization-final2-*` and `combined-customization-final2-*`. These are
