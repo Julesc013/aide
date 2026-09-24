@@ -3,14 +3,11 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 9b21e183d462416bf95d0e3022b1ac5fc6fc077f
+source_head: 2b4f5de885a59d561478759fa38b0f83a66312c7
 preview_only: true
 
 ## Highlights
 
-- Security: refused Windows 8.3 aliases at the disposable distribution fixture boundary. (64979977922a)
-- Security: bound locally accepted GitHub checks to exact workflow-run provenance without overstating server enforcement. (cb05b135eb0d)
-- Security: independently qualified exact-name enforcement for Windows fixture paths. (6cb0a9ac8856)
 - Security: Reject Windows 8.3 aliases and other unsafe fixture paths before destination mutation. (bb689227c6a6)
 - Security: Integrate reviewed Windows short-name alias refusal into the dev line. (cc85be9c472a)
 - Security: Preserve checksum, forbidden-path, and no-publish validation on regenerated archives. (da1051793d4c)
@@ -19,7 +16,6 @@ preview_only: true
 - Security: portable pack provenance no longer trusts Git replacement refs. (b4d949c1ac1f)
 - Added: Admit deterministic release metadata integrity repair. (5ad6aa979971)
 - Added: local customization explanation and opt-in import feedback. (98de5ee1531e)
-- Changed: qualified distribution fixture portability hardening on the full Windows checkout. (36fa64e011b5)
 - Changed: Begin commit-bound portable artifact refresh after portability integration. (c730eac44202)
 - Changed: Refresh portable artifacts for the integrated Windows path-hardening source. (da1051793d4c)
 - Changed: exact no-publish candidate assets and draft evidence regenerated. (8369ac540e4a)
@@ -42,6 +38,7 @@ preview_only: true
 - Fixed: refresh local export and release provenance for combined target source. (cda504b9a546)
 - Fixed: bind local release metadata to the committed combined-source artifact ancestry. (d4bd4938fa43)
 - Fixed: dry-run recovery mutation and project-owned metadata payload boundary. (9b21e183d462)
+- Fixed: Windows alias route into project-owned customization metadata. (2b4f5de885a5)
 - Docs: refresh source-bound local changelog and release-note previews. (671faa232216)
 - Docs: bind release summaries to the converged generator source. (566a2c3b8b7d)
 - Docs: bind release previews to the hardened metadata generator. (e2ec8925adf7)
@@ -59,42 +56,42 @@ preview_only: true
 
 ## Validation Summary
 
-- 36fa64e011b5: PASS WITH SKIPS: 156 adjacent distribution tests; 148 passed and eight skipped.
-- 64979977922a: PASS WITH SKIPS: 126 focused tests; 118 passed and eight skipped.
-- cb05b135eb0d: PASS: 46 target-observation, 21 PR-observation, 19 HTTP, and 12 provider-bridge tests.
-- 6cb0a9ac8856: PASS WITH SKIPS: 126 focused tests; 118 passed and eight skipped.
 - bb689227c6a6: PASS: candidate range commit policy check for all six commits.
 - cc85be9c472a: PASS: 118 of 126 focused tests, with eight symlink or FIFO capability skips and zero failures.
 - c730eac44202: PASS: refresh worktree starts clean at dev cc85be9c472a16f39aae98ba00fd5de145098862.
 - da1051793d4c: PASS: export pack with 826 files, 829 checksums, and zero provenance or boundary problems.
 - da1051793d4c: PASS: export pack with 826 files, 829 checksums, and zero provenance or boundary problems.
 - 38fe712810b8: PASS: pack provenance is PASS_SOURCE_ANCESTOR with zero checksum, provenance, or boundary problems.
+- 4c0da8974daa: PASS: 43 relevant unit tests, canonical validate, doctor, commit-range policy, and diff checks.
+- b8fb89b917c9: PASS: 134 of 135 affected tests with one Windows symlink-privilege skip and zero failures.
+- 5ad6aa979971: PASS: exact failed candidate and review identities recorded.
+- 7bb41079e11f: PASS: 55 adjacent export, import, Q47, and Q48 tests.
 
 ## Known Risks
 
-- 36fa64e011b5: Independent exact-commit review is pending.
-- 64979977922a: Exact repair rereview remains pending.
-- cb05b135eb0d: Same-app and same-check-name collision exclusion remains unsupported at the destination boundary.
-- 6cb0a9ac8856: Privilege-dependent symlink and Windows FIFO behavior remain unqualified.
 - bb689227c6a6: Post-merge combined-tree tests and portable artifact provenance refresh remain required.
 - cc85be9c472a: Portable export and release-bundle provenance remain stale until regenerated from clean landed dev.
 - c730eac44202: Generated outputs are not yet refreshed and canonical validation remains red for known provenance drift.
 - da1051793d4c: This generated-byte commit may require one deterministic post-commit provenance rebind.
 - da1051793d4c: This generated-byte commit may require one deterministic post-commit provenance rebind.
 - 38fe712810b8: The artifacts remain local no-publish outputs pending independent review and dev integration.
+- 4c0da8974daa: The exact artifact-refresh candidate remains blocked from dev integration.
+- b8fb89b917c9: GitHub target qualification remains fixture-only and blocked from hosted effects.
+- 5ad6aa979971: The failed artifact candidate remains blocked until implementation and independent rereview pass.
+- 7bb41079e11f: Generated release artifacts are not qualified until regenerated after the source-bound preview commit.
 
 ## Follow-up
 
-- 36fa64e011b5: Obtain independent review, integrate the exact candidate to dev, then refresh and qualify portable artifacts.
-- 64979977922a: Rereview this exact repair, integrate the passing candidate to dev, and refresh commit-bound portable artifacts.
-- cb05b135eb0d: Obtain superseding independent review, then integrate source-only guarantees while keeping hosted effects blocked.
-- 6cb0a9ac8856: Publish this reviewed closeout, merge the exact candidate to dev, and refresh delivered artifacts.
 - bb689227c6a6: Run the focused and adjacent suites on the merged tree, record exact evidence, and regenerate commit-bound portable artifacts.
 - cc85be9c472a: Push the exact dev checkpoint, regenerate portable artifacts in a bounded refresh task, and validate extracted consumer bytes.
 - c730eac44202: Generate export, bundle, and preview draft outputs from this clean checkpoint and validate extracted consumer artifacts.
 - da1051793d4c: Revalidate committed provenance, close any second-order metadata changes, obtain exact review, and integrate the refresh into dev.
 - da1051793d4c: Revalidate committed provenance, close any second-order metadata changes, obtain exact review, and integrate the refresh into dev.
 - 38fe712810b8: Publish the exact candidate, obtain independent review, integrate it into dev, and rerun landed-tree validation.
+- 4c0da8974daa: Admit a generator repair, add cross-checkout and asset-index regressions, regenerate all affected artifacts, and request exact rereview.
+- b8fb89b917c9: Expand the task scope explicitly, parse and bind path-at-ref identity, add adversarial fixtures, and request exact rereview.
+- 5ad6aa979971: Add failing regressions, repair the generator dependency graph, and regenerate exact local artifacts.
+- 7bb41079e11f: Generate source-bound previews, regenerate clean artifacts, validate consumers, and obtain exact independent rereview.
 
 ## Warnings
 

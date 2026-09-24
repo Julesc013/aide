@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 9b21e183d462416bf95d0e3022b1ac5fc6fc077f
+source_head: 2b4f5de885a59d561478759fa38b0f83a66312c7
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -12,12 +12,12 @@ release_publishing: false
 ## Summary
 
 - Added: 2
-- Changed: 4
-- Fixed: 19
-- Security: 9
+- Changed: 3
+- Fixed: 20
+- Security: 6
 - Docs: 8
 - Tests: 6
-- Internal: 11
+- Internal: 14
 
 ## Added
 
@@ -26,7 +26,6 @@ release_publishing: false
 
 ## Changed
 
-- qualified distribution fixture portability hardening on the full Windows checkout. (36fa64e011b5 test(distribution): qualify portability candidate)
 - Begin commit-bound portable artifact refresh after portability integration. (c730eac44202 chore(distribution): start clean artifact refresh)
 - Refresh portable artifacts for the integrated Windows path-hardening source. (da1051793d4c build(distribution): refresh portable artifacts)
 - exact no-publish candidate assets and draft evidence regenerated. (8369ac540e4a build(release): qualify deterministic candidate)
@@ -52,12 +51,10 @@ release_publishing: false
 - refresh local export and release provenance for combined target source. (cda504b9a546 fix(release): refresh combined source portable artifacts)
 - bind local release metadata to the committed combined-source artifact ancestry. (d4bd4938fa43 fix(release): project committed combined source provenance)
 - dry-run recovery mutation and project-owned metadata payload boundary. (9b21e183d462 fix(import): keep recovery previews read-only)
+- Windows alias route into project-owned customization metadata. (2b4f5de885a5 fix(import): reserve project metadata Windows aliases)
 
 ## Security
 
-- refused Windows 8.3 aliases at the disposable distribution fixture boundary. (64979977922a fix(distribution): refuse Windows short-name aliases)
-- bound locally accepted GitHub checks to exact workflow-run provenance without overstating server enforcement. (cb05b135eb0d fix(provider): bind exact workflow run provenance)
-- independently qualified exact-name enforcement for Windows fixture paths. (6cb0a9ac8856 audit(distribution): accept Windows alias repair)
 - Reject Windows 8.3 aliases and other unsafe fixture paths before destination mutation. (bb689227c6a6 fix(distribution): integrate portability hardening)
 - Integrate reviewed Windows short-name alias refusal into the dev line. (cc85be9c472a docs(distribution): record portability integration)
 - Preserve checksum, forbidden-path, and no-publish validation on regenerated archives. (da1051793d4c build(distribution): refresh portable artifacts)
@@ -98,6 +95,9 @@ release_publishing: false
 - refresh local portable and release artifacts for customization. (8262b2fd6465 build(release): refresh local customization pack artifacts)
 - project local release provenance onto committed artifact ancestry. (37daa862e939 build(release): project customization artifact ancestry)
 - persist exact customization candidate review evidence. (1e3a59dce7bf audit(queue): record customization candidate review packet)
+- refresh local preview-only records for the recovery repair. (0c98e175bab9 chore(changelog): refresh recovery repair previews)
+- refresh repaired portable and local release bytes. (7e678f165fb4 build(release): refresh repaired customization artifacts)
+- project replacement local release ancestry. (55e76dfbab3a build(release): project repaired artifact ancestry)
 
 ## Malformed Commits
 

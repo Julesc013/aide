@@ -1,22 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "36fa64e011b5",
-      "summary": "Obtain independent review, integrate the exact candidate to dev, then refresh and qualify portable artifacts."
-    },
-    {
-      "commit": "64979977922a",
-      "summary": "Rereview this exact repair, integrate the passing candidate to dev, and refresh commit-bound portable artifacts."
-    },
-    {
-      "commit": "cb05b135eb0d",
-      "summary": "Obtain superseding independent review, then integrate source-only guarantees while keeping hosted effects blocked."
-    },
-    {
-      "commit": "6cb0a9ac8856",
-      "summary": "Publish this reviewed closeout, merge the exact candidate to dev, and refresh delivered artifacts."
-    },
-    {
       "commit": "bb689227c6a6",
       "summary": "Run the focused and adjacent suites on the merged tree, record exact evidence, and regenerate commit-bound portable artifacts."
     },
@@ -235,30 +219,25 @@
     {
       "commit": "9b21e183d462",
       "summary": "Regenerate the pack and local release artifacts from this source, then qualify exact consumer bytes."
+    },
+    {
+      "commit": "0c98e175bab9",
+      "summary": "Generate the replacement pack and local release artifacts from this clean checkpoint."
+    },
+    {
+      "commit": "7e678f165fb4",
+      "summary": "Run and commit source-ancestor projection, then clean-tree replay and exact review packet."
+    },
+    {
+      "commit": "55e76dfbab3a",
+      "summary": "Replay from this committed projection, update exact evidence, and request review of the replacement subject."
+    },
+    {
+      "commit": "2b4f5de885a5",
+      "summary": "Rebuild exact portable bytes and run final source and consumer qualification."
     }
   ],
   "highlights": [
-    {
-      "breaking": false,
-      "category": "Security",
-      "commit": "64979977922a",
-      "subject": "fix(distribution): refuse Windows short-name aliases",
-      "summary": "refused Windows 8.3 aliases at the disposable distribution fixture boundary."
-    },
-    {
-      "breaking": false,
-      "category": "Security",
-      "commit": "cb05b135eb0d",
-      "subject": "fix(provider): bind exact workflow run provenance",
-      "summary": "bound locally accepted GitHub checks to exact workflow-run provenance without overstating server enforcement."
-    },
-    {
-      "breaking": false,
-      "category": "Security",
-      "commit": "6cb0a9ac8856",
-      "subject": "audit(distribution): accept Windows alias repair",
-      "summary": "independently qualified exact-name enforcement for Windows fixture paths."
-    },
     {
       "breaking": false,
       "category": "Security",
@@ -314,13 +293,6 @@
       "commit": "98de5ee1531e",
       "subject": "feat(import): explain downstream customization decisions",
       "summary": "local customization explanation and opt-in import feedback."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "36fa64e011b5",
-      "subject": "test(distribution): qualify portability candidate",
-      "summary": "qualified distribution fixture portability hardening on the full Windows checkout."
     },
     {
       "breaking": false,
@@ -478,6 +450,13 @@
     },
     {
       "breaking": false,
+      "category": "Fixed",
+      "commit": "2b4f5de885a5",
+      "subject": "fix(import): reserve project metadata Windows aliases",
+      "summary": "Windows alias route into project-owned customization metadata."
+    },
+    {
+      "breaking": false,
       "category": "Docs",
       "commit": "671faa232216",
       "subject": "docs(release): bind previews to repair source",
@@ -577,22 +556,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "36fa64e011b5",
-      "summary": "Independent exact-commit review is pending."
-    },
-    {
-      "commit": "64979977922a",
-      "summary": "Exact repair rereview remains pending."
-    },
-    {
-      "commit": "cb05b135eb0d",
-      "summary": "Same-app and same-check-name collision exclusion remains unsupported at the destination boundary."
-    },
-    {
-      "commit": "6cb0a9ac8856",
-      "summary": "Privilege-dependent symlink and Windows FIFO behavior remain unqualified."
-    },
     {
       "commit": "bb689227c6a6",
       "summary": "Post-merge combined-tree tests and portable artifact provenance refresh remain required."
@@ -812,28 +775,28 @@
     {
       "commit": "9b21e183d462",
       "summary": "The earlier archive receipt applies only to the superseded candidate; no dev integration occurred."
+    },
+    {
+      "commit": "0c98e175bab9",
+      "summary": "Preview text is not official release notes or publication authority."
+    },
+    {
+      "commit": "7e678f165fb4",
+      "summary": "Local artifacts are not published and post-commit ancestry projection remains open."
+    },
+    {
+      "commit": "55e76dfbab3a",
+      "summary": "Clean-tree replay and accountable dev review remain open; no public release is claimed."
+    },
+    {
+      "commit": "2b4f5de885a5",
+      "summary": "The prior replacement archive is superseded; dev remains unchanged."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "9b21e183d462416bf95d0e3022b1ac5fc6fc077f",
+  "source_head": "2b4f5de885a59d561478759fa38b0f83a66312c7",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "36fa64e011b5",
-      "summary": "PASS WITH SKIPS: 156 adjacent distribution tests; 148 passed and eight skipped."
-    },
-    {
-      "commit": "64979977922a",
-      "summary": "PASS WITH SKIPS: 126 focused tests; 118 passed and eight skipped."
-    },
-    {
-      "commit": "cb05b135eb0d",
-      "summary": "PASS: 46 target-observation, 21 PR-observation, 19 HTTP, and 12 provider-bridge tests."
-    },
-    {
-      "commit": "6cb0a9ac8856",
-      "summary": "PASS WITH SKIPS: 126 focused tests; 118 passed and eight skipped."
-    },
     {
       "commit": "bb689227c6a6",
       "summary": "PASS: candidate range commit policy check for all six commits."
@@ -1053,6 +1016,22 @@
     {
       "commit": "9b21e183d462",
       "summary": "PASS: 28-case export/import suite after the recovery repair."
+    },
+    {
+      "commit": "0c98e175bab9",
+      "summary": "PASS: changelog preview, validate, and status; 50 commits, zero malformed."
+    },
+    {
+      "commit": "7e678f165fb4",
+      "summary": "PASS: export boundary, pack-status, release validate, draft-validate, and nine asset checks."
+    },
+    {
+      "commit": "55e76dfbab3a",
+      "summary": "PASS: first postcommit generator cycle changed the expected 18 files."
+    },
+    {
+      "commit": "2b4f5de885a5",
+      "summary": "PASS: focused reserved-metadata alias test after this change."
     }
   ],
   "warnings": []
