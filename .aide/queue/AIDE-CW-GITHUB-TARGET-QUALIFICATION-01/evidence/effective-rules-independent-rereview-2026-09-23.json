@@ -1,0 +1,20 @@
+{
+  "base_commit": "c6fdc754844cf7d42302218ce08307a7e05dcb61",
+  "decision": "REQUEST_CHANGES",
+  "findings": [
+    {
+      "id": "effective_branch_rules_wrong_representation",
+      "severity": "HIGH",
+      "status": "OPEN_AT_REVIEWED_COMMIT"
+    },
+    {
+      "id": "test_count_prose_inconsistent_with_skip",
+      "severity": "LOW",
+      "status": "OPEN_AT_REVIEWED_COMMIT"
+    }
+  ],
+  "hosted_effect_authorized": false,
+  "reviewed_commit": "963dcc7d6ede688dbfa7771c7b6d9d03dc284f4a",
+  "reviewed_tree": "0fdc57c4910568c10cb978d45cf86b6273759ad5",
+  "schema": "aide.github-target-effective-rules-rereview.v1"
+}

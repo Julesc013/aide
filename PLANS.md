@@ -3603,6 +3603,25 @@ at submitted until later observation proves integration. Continue next with exac
 policy, workflow and principal observation/review. Expected-base enforcement,
 settings apply, hosted races and protected-host qualification remain open.
 
+The next target-policy source slice is implemented as a pure desired/current
+comparator and review-plan builder. Current AIDE evidence reproduces a blocked,
+zero-operation plan because the restricted broker principal and workflow/check
+app identities do not exist. The source and 96 affected tests can proceed to
+independent review; workflow installation, settings apply, and hosted races
+remain separate exact gates.
+
+Independent rereview of later exact candidate `963dcc7d` retained the workflow
+`path@ref` repair but rejected its effective-rule representation. The active
+repair uses endpoint-shaped individual rules, includes only rulesets applicable
+to `refs/heads/dev`, and passes 50 focused cases. The complete affected matrix
+executes 139 cases: 138 pass and one privilege-dependent Windows symlink case
+is skipped. Fresh exact review of `e378d38e` accepts local source integration
+with notes. `AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01` merges that source into
+the accepted release-integrity `dev` at `f77ecba2`; nine combined suites ran
+199 cases with 198 passes and one Windows privilege skip. The inherited
+pack-provenance refresh remains executable next. Hosted settings,
+credentials, and races retain separate gates.
+
 ## Broker runtime dev integration
 
 `AIDE-CW-BROKER-DEV-INTEGRATION-01` has landed. The exact published source

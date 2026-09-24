@@ -20,7 +20,10 @@ def plan(key="a"):
             "repository": "fixture/repo", "actor": "fixture-broker", "target_ref": "refs/heads/dev",
             "base": "b" * 40, "candidate_commit": "c" * 40, "candidate_tree": "d" * 40,
             "branch_ref": "refs/heads/task/aide-cw-" + key * 64,
-            "checks": [{"name": "required", "app_id": 1, "workflow_sha": "e" * 40}],
+            "checks": [{"name": "required", "app_id": 1, "workflow_sha": "c" * 40,
+                        "workflow_path": ".github/workflows/aide-cw-checks.yml",
+                        "workflow_ref": "refs/heads/task/aide-cw-" + key * 64,
+                        "workflow_event": "push"}],
             "policy_digest": "f" * 64, "merge_contract_sha256": "9" * 64,
             "expires_at": 2000, "max_observations": 16}
 
@@ -36,7 +39,10 @@ def observed(p, stage="merge"):
                       "head_repository": p["repository"], "author": p["actor"],
                       "merge_commit": None, "merge_tree": None, "merge_parents": None, "integrated_ancestor": None},
              "checks_complete": True,
-             "checks": [dict(p["checks"][0], head_commit=p["candidate_commit"], status="completed", conclusion="success")],
+             "checks": [dict(p["checks"][0], workflow_run_id=51, workflow_run_attempt=2,
+                              check_run_id=31, check_suite_id=41,
+                              head_commit=p["candidate_commit"], status="completed",
+                              conclusion="success")],
              "policy_digest": p["policy_digest"], "merge_contract_sha256": p["merge_contract_sha256"]}
     if stage == "publish_objects":
         value["candidate"] = value["branch"] = value["pull"] = None
@@ -90,6 +96,11 @@ class PrObservationTests(unittest.TestCase):
             lambda value: value["checks"][0].update(app_id=True),
             lambda value: value["checks"][0].update(app_id=2),
             lambda value: value["checks"][0].update(workflow_sha="1" * 40),
+            lambda value: value["checks"][0].update(workflow_path=".github/workflows/other.yml"),
+            lambda value: value["checks"][0].update(workflow_ref="refs/heads/dev"),
+            lambda value: value["checks"][0].update(workflow_event="pull_request"),
+            lambda value: value["checks"][0].update(workflow_run_id=True),
+            lambda value: value["checks"][0].update(check_run_id=0),
             lambda value: value["checks"][0].update(head_commit="1" * 40),
             lambda value: value["checks"].append(dict(value["checks"][0])),
         )
@@ -309,8 +320,9 @@ class StagedBrokerTests(unittest.TestCase):
                      branch_ref="refs/heads/task/aide-cw-" + digest(helper.request))
         fixed["checks"][0]["name"] = "unit"
         oid, raw = commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"],
-                                 "Implement fixture candidate\n\nWork-Item: BROKER-FIXTURE-01\n")
+                                  "Implement fixture candidate\n\nWork-Item: BROKER-FIXTURE-01\n")
         fixed["candidate_commit"] = oid
+        fixed["checks"][0].update(workflow_sha=oid, workflow_ref=fixed["branch_ref"])
         adapter = ScriptedStageAdapter(helper, fixed)
         transport = StagedTransport(fixed, raw, adapter=adapter)
         broker = helper.broker(transport)
@@ -321,6 +333,7 @@ class StagedBrokerTests(unittest.TestCase):
         fixed = plan()
         oid, raw = commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"], "Fixture\n")
         fixed["candidate_commit"] = oid
+        fixed["checks"][0]["workflow_sha"] = oid
         self.assertEqual(commit_object(fixed["candidate_tree"], fixed["base"], fixed["actor"], "Fixture\n"), (oid, raw))
         StagedTransport(fixed, raw)
         for altered in (raw + b"changed\n", raw.replace(b"\n\n", b"\ngpgsig forged\n\n"), b"null", raw.decode()):

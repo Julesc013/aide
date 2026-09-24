@@ -89,3 +89,92 @@ restricted broker principal. The observation half of the first pending item is
 complete; independent review and exact principal/app identity remain open.
 Hosted effects now fail closed on concrete missing controls rather than an
 assumed target configuration.
+
+## Progress - 2026-09-22 target-policy source slice
+
+- [x] Add a pure desired/current policy contract with no network or apply path.
+- [x] Require complete ruleset/bypass visibility and exact owner, broker,
+  workflow, check-app and permission identities.
+- [x] Materialize exact review operations only after every identity resolves;
+  unresolved input must produce an empty blocked plan.
+- [x] Preserve ordinary merge, strict app-bound checks, immutable request
+  branches, owner-only non-dev bypass, and explicit unsupported guarantees.
+- [x] Add adversarial fixtures for hidden bypass, wrong principals, stale
+  workflow/check identity, extra rules, unsafe merge settings and digest drift.
+- [x] Record desired/current/plan bytes and publish the source checkpoint for
+  independent review without installing settings or workflows.
+
+The slice is independent of hosted mutation and isolated-host closeout. It
+ends at a reviewable, fail-closed plan; it does not make that plan effective.
+
+The current packet records two blockers: `broker_principal_unresolved` and
+`workflow_check_identity_unresolved`. Its operation list is empty. Fixture-only
+materialization demonstrates the eventual exact operation shape after identity
+resolution; it is not an apply plan for the live repository.
+
+The exact source checkpoint is published at
+`task/aide-cw-github-target-qualification-01@bb433bb74f645e0904ca34bf3af38516ae05a7ad`
+with tree `a871c65880161f147f35cf8df7269bba9af3a867`. The next action remains
+identity resolution and independent review; publication did not authorize or
+perform any target mutation.
+
+## Progress - 2026-09-22 independent-review repair
+
+- [x] Preserve the exact independent `REQUEST_CHANGES` evidence.
+- [x] Emit `update.parameters.update_allows_fetch_and_merge: false`.
+- [x] Reject broker identities that alias the owner bypass by id or login.
+- [x] Preserve the first repair's required-workflow attempt and the rereview
+      finding that GitHub does not expose it for this user-owned target.
+- [x] Remove the unsupported operation and bind the actual accepted Actions
+      run's path, event, head, run/attempt, check-run, and suite identities
+      through the plan, observation, and decision contract.
+- [x] Classify exact workflow source as locally checked/monitored and its
+      unavailable server enforcement and same-app/name collision exclusion as
+      unsupported rather than destination-enforced.
+- [x] Bind repository id, effective-rule bodies, and explicit classic branch
+      protection presence/absence into the canonical observation and plan.
+- [x] Pass 135 affected cases with one retained Windows symlink skip.
+- [x] Obtain a superseding fresh independent review of the repaired exact source.
+
+The live packet remains blocked on unresolved principal and workflow identity
+with zero operations. The first rereview closed F-01, F-02 and F-04 but retained
+F-03. The follow-up repair changes only pure source, tests, and evidence; it
+does not authorize or perform target configuration.
+
+## Progress - 2026-09-22 documented workflow-run selector repair
+
+- [x] Preserve the published independent-review checkpoint `b8fb89b` before
+      changing source or queue scope.
+- [x] Extend the plan and normalized observation contract with `workflow_ref`.
+      It must equal the admitted request branch, while `workflow_sha` must
+      equal the admitted candidate commit.
+- [x] Parse GitHub's required `path@ref` workflow-run representation, including
+      the documented target-repository-prefixed form, and retain normalized
+      bare path plus full `refs/heads/...` selector through decision, intent,
+      staged transport, and registered bridge inputs.
+- [x] Add positive relative and repository-prefixed fixtures plus wrong path,
+      wrong repository, wrong ref, missing ref, and malformed ref refusals.
+- [x] Correct the canonical test allowlist for the existing PR-observation and
+      registered-bridge regression paths identified by independent review.
+- [x] Pass 136 affected local tests with one retained disposable-Windows
+      symlink skip; retain the unintegrated export-pack provenance failure.
+- [x] Preserve the exact `963dcc7d` rereview and its endpoint-shape finding.
+- [x] Compare endpoint-shaped individual rules only from observed rulesets that
+      apply to `refs/heads/dev`, with malformed and drifted inputs fail-closed.
+- [x] Run all five affected suites: 139 executed, 138 passed, one retained
+      privilege-dependent Windows symlink skip.
+- [x] Obtain a superseding fresh independent review of exact commit `e378d38e`.
+
+The workflow selector remains a local precondition and monitored provenance,
+not evidence of server-enforced workflow-source identity. The live plan remains
+blocked with zero operations until the restricted principal, workflow/check
+identity, target policy, hosted races, and protected-host dependency are each
+separately qualified.
+
+On 2026-09-24, a new Codex reviewer who did not author the candidate accepted
+exact commit `e378d38e` with notes for local source integration. The review
+reran all five affected suites and retained the Windows privilege skip. The
+older Sagan terminal output was unavailable. The fresh report and custody
+receipt are in this task's evidence directory. The next restart point is dev
+source integration and export-pack regeneration against the combined source;
+hosted and protected-host effects retain their separate gates.

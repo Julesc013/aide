@@ -1,0 +1,37 @@
+{
+  "classic_branch_protection": {
+    "body": null,
+    "status": "absent",
+    "target_ref": "refs/heads/dev"
+  },
+  "effective_rules": {
+    "rules": [],
+    "status": "observed",
+    "target_ref": "refs/heads/dev"
+  },
+  "observed_by": {
+    "login": "Julesc013",
+    "repository_permission": "admin",
+    "type": "User",
+    "user_id": 30209022
+  },
+  "principal": null,
+  "repository": "Julesc013/aide",
+  "repository_id": 1192621212,
+  "repository_settings": {
+    "allow_auto_merge": false,
+    "allow_merge_commit": true,
+    "allow_rebase_merge": true,
+    "allow_squash_merge": true,
+    "delete_branch_on_merge": false
+  },
+  "rulesets": [],
+  "schema": "aide.github-target-observation.v1",
+  "visibility": {
+    "bypass_actors_complete": true,
+    "effective_rules_complete": true,
+    "rulesets_complete": true,
+    "workflows_complete": true
+  },
+  "workflow": null
+}

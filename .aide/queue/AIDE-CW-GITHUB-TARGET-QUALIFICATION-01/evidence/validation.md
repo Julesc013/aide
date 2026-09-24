@@ -53,3 +53,71 @@ these source tests neither reran nor discharged it.
   `dev` branch protection returned HTTP 404.
 - NOT RUN: settings apply, workflow installation, principal creation, branch
   mutation, merge request or hosted adversarial race.
+
+## 2026-09-22 target-policy source slice
+
+- PASS: focused GitHub observation/target-policy suite, 44 tests in 0.108 seconds.
+- PASS: durable PR observation/staged broker suite, 21 tests in 73.465 seconds.
+- PASS: bounded GitHub HTTP suite, 19 tests in 1.254 seconds.
+- PASS: registered provider bridge suite, 12 tests in 82.278 seconds.
+- PASS: 96 total affected tests, zero failures and zero skips.
+- PASS: unresolved desired/current evidence reproduces the committed blocked
+  plan with policy digest `db1b1ad6e96d287386ad5d99c600b938c3e65dc12123a98954106d58bab68b7f`
+  and plan digest `5c243ac74ff1deff1780debe97e5e0ec1dcfa42653d2898c37db84b54ef15d7d`.
+- PASS: adversarial fixtures refuse incomplete visibility, overprivileged or
+  wrong principals, stale workflow/check identity, unknown/drifted rulesets,
+  unsafe identity fields, unbounded JSON, and caller-replaced ruleset bodies.
+- NOT RUN: workflow installation, principal creation, settings apply, hosted
+  merge/race effects, protected-host binding, main promotion or release.
+- PASS: published
+  `task/aide-cw-github-target-qualification-01@bb433bb74f645e0904ca34bf3af38516ae05a7ad`
+  and observed the same remote head with `git ls-remote`.
+- WARN: post-commit `aide_lite.py validate` reports only the two expected
+  export-pack provenance failures: the tracked pack still names source commit
+  `b3e5c7aa2a1732faee4a9021e64bdba65c6db1cb`, not this unintegrated task
+  branch. The pre-commit source candidate passed canonical validation; a later
+  reviewed integration/pack refresh must qualify delivered bytes.
+
+## 2026-09-22 independent-review repair
+
+- REQUEST_CHANGES retained: exact review commit `9bba1cecaec835b5299cf02718059a94ef4c08cb`
+  found incomplete update-rule parameters, owner/broker aliasing, unbound
+  workflow source, and incomplete effective-policy observation.
+- PASS: focused observation/target-policy suite, 46 tests.
+- PASS: PR observation/staged broker suite, 21 tests.
+- PASS: bounded GitHub HTTP suite, 19 tests.
+- PASS: registered provider bridge suite, 12 tests.
+- PASS WITH ONE RETAINED HOST SKIP: integration broker suite, 37 tests; the
+  disposable symlink case remains unavailable to this Windows token.
+- PASS: 135 affected tests, 134 passed, one skipped, zero failures.
+- PASS: exact unresolved evidence regenerates blocked with zero operations and
+  digests policy `0c3c1ce858c4e70e0070074f66db31873c7a1f4b9aa820066f760678ed35ba89`
+  and plan `762da6e0de4359fcc1316529e9f715f075bac0e37f42e7a9ec2127f3b5469336`.
+- PASS: official API `2026-03-10` documents required update parameters and the
+  exact workflow rule fields now emitted by the pure generator.
+- NOT RUN: settings/workflow installation, principal creation, hosted races,
+  target mutation, credentials, merge effects, main promotion, tag, or release.
+- PENDING: superseding independent review of the repaired exact commit.
+
+## 2026-09-22 workflow-source follow-up repair
+
+- REQUEST_CHANGES retained: the first repair's rereview closed F-01, F-02 and
+  F-04 but proved the `workflows` rule unavailable for the user-owned target.
+- PASS: the target policy emits no required-workflow operation and does not
+  claim exact workflow source as destination-enforced.
+- PASS: the plan, raw GitHub observation, durable decision, and bridge fixtures
+  bind workflow path/event/head, workflow run id/attempt, check run id, and
+  check suite id.
+- PASS: focused observation/target-policy suite, 46 tests.
+- PASS: PR observation/staged broker suite, 21 tests.
+- PASS: bounded GitHub HTTP suite, 19 tests.
+- PASS: registered provider bridge suite, 12 tests.
+- PASS WITH ONE RETAINED HOST SKIP: integration broker suite, 37 tests; the
+  disposable symlink case remains unavailable to this Windows token.
+- PASS: 135 affected tests, 134 passed, one skipped, zero failures.
+- PASS: unresolved evidence regenerates blocked with zero operations and exact
+  digests policy `c79b62b9fc888aa50600334e3b7108addc91f543b4ea7e3e4505d0a8aef636c9`
+  and plan `a754af93595c26612edc13d52456e0d7ef64b07120e639001a05a91b1b3d3655`.
+- NOT RUN: settings/workflow installation, principal creation, hosted races,
+  target mutation, credentials, merge effects, main promotion, tag, or release.
+- PENDING: superseding independent review of the exact follow-up commit.

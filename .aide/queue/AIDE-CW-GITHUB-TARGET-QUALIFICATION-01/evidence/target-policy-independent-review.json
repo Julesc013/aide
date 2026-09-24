@@ -1,0 +1,384 @@
+{
+  "schema": "aide.github-target-policy-independent-review.v3",
+  "task_id": "AIDE-CW-GITHUB-TARGET-QUALIFICATION-01",
+  "review_date": "2026-09-22",
+  "reviewer": "Codex independent source review",
+  "result": "REQUEST_CHANGES",
+  "supersedes_source_commit": "cb05b135eb0d9012e3d40e37a195f65abbab0b7a",
+  "review_history": [
+    {
+      "stage": "initial_review",
+      "result": "REQUEST_CHANGES",
+      "review_commit": "9bba1cecaec835b5299cf02718059a94ef4c08cb",
+      "source_commit": "bb433bb74f645e0904ca34bf3af38516ae05a7ad",
+      "source_tree": "a871c65880161f147f35cf8df7269bba9af3a867",
+      "published_head": "eb4dea3f30ab53e3e57fe85eae97fa07de6e414c",
+      "published_tree": "41adc996349690b4d796d8005ef179c89fb93c8e",
+      "artifact_identity": {
+        "markdown_git_blob": "7103255f96461b1b1edc88dbc7b6bdd4e40e10cb",
+        "markdown_sha256": "e69a8b86a6f6de5040d2ebdc8d60855006c420283dd7ce407cb904f9f004d915",
+        "json_git_blob": "6a52271d2ec4727a0851156da57b3cb6ecbb0d00",
+        "json_sha256": "dec5691bc4c0f59338f2b35f4b48052356e123fa3c06f9444d3b34a16014dfce"
+      },
+      "finding_status": {
+        "F-01": "OPEN",
+        "F-02": "OPEN",
+        "F-03": "OPEN",
+        "F-04": "OPEN"
+      }
+    },
+    {
+      "stage": "first_repair_rereview",
+      "result": "REQUEST_CHANGES",
+      "source_commit": "9383c2b5e8521bbdf9d0a54648459ee25d76c1b3",
+      "source_tree": "572b2f4f8bbbcf896b4c1661157658b6907c37c6",
+      "parent_review_commit": "9bba1cecaec835b5299cf02718059a94ef4c08cb",
+      "artifact_identity_at_followup_boundary": {
+        "markdown_git_blob": "542dd632700f291ab98a48cd20bd4b5b582c5fc8",
+        "markdown_sha256": "be9da84f70698a5d34e392f8328d8a0049ce556ffcad243da0a9fdabeb469a87",
+        "json_git_blob": "a6756731bdc003bd44adb1222cdb81174b712fff",
+        "json_sha256": "d1961d3fe29ca497d22dfed3185735e7a99e64cbfa5c850b804103313cf23485"
+      },
+      "finding_status": {
+        "F-01": "CLOSED",
+        "F-02": "CLOSED",
+        "F-03": "OPEN",
+        "F-04": "CLOSED"
+      },
+      "reason": "The required-workflow ruleset operation was not documented for the exact user-owned target and its push trigger was not supported by that control."
+    },
+    {
+      "stage": "followup_repair_rereview",
+      "result": "REQUEST_CHANGES",
+      "source_commit": "cb05b135eb0d9012e3d40e37a195f65abbab0b7a",
+      "source_tree": "48582b5476afc88eb72a5b1dd343495017e402f4",
+      "parent": "9383c2b5e8521bbdf9d0a54648459ee25d76c1b3",
+      "finding_status": {
+        "F-01": "CLOSED",
+        "F-02": "CLOSED",
+        "F-03": "OPEN",
+        "F-04": "CLOSED",
+        "S-01": "OPEN"
+      }
+    }
+  ],
+  "source": {
+    "commit": "cb05b135eb0d9012e3d40e37a195f65abbab0b7a",
+    "tree": "48582b5476afc88eb72a5b1dd343495017e402f4",
+    "parent": "9383c2b5e8521bbdf9d0a54648459ee25d76c1b3",
+    "branch": "task/aide-cw-github-target-qualification-01",
+    "remote_tracking_ref_at_review_start": "cb05b135eb0d9012e3d40e37a195f65abbab0b7a",
+    "parent_source_changed_path_count": 18,
+    "diff_check_passed": true,
+    "all_changed_paths_allowed": false,
+    "changed_paths_outside_task_scope": [
+      ".aide/scripts/tests/test_continuous_worker_pr_observation.py",
+      ".aide/scripts/tests/test_continuous_worker_provider_bridge.py"
+    ]
+  },
+  "reviewed_files": {
+    "core/runtime/integration_broker/github_target_policy.py": {
+      "git_blob": "b7ee5c19c4bc95f90aeb16e25a34bfb04386d8b4",
+      "sha256": "ed2d5e6ae5a03c3e53e5e019ca972c67132367ec404807bb6dc035b515e37bd6"
+    },
+    "core/runtime/integration_broker/github_checks.py": {
+      "git_blob": "2433e901212d974003a297f9ffacfad5299dc175",
+      "sha256": "e13c1e2a77ad214d8edadfba9a2369cfa0f883cba526d5301db2ad77e3dcef05"
+    },
+    "core/runtime/integration_broker/pr_observation.py": {
+      "git_blob": "2c8f6dc2ebe78314af05a5e8dbca63b5007bf4bb",
+      "sha256": "ac37b9990a1c8b92e3285a77195c77968614407d9c99147e8dc191372d5c2e39"
+    },
+    ".aide/scripts/tests/test_continuous_worker_github_observation.py": {
+      "git_blob": "bb7e4cc860cf58aab9b911235a8f6c4cb5eb1a4e",
+      "sha256": "40ff3189bcbabd1a021dda0e1784fa67deed4d00c6d2758c148ba49e4b480201"
+    },
+    ".aide/scripts/tests/test_continuous_worker_pr_observation.py": {
+      "git_blob": "028586d3137929bac0b53665bf1c9e073c2c3e03",
+      "sha256": "6b35b1b3dffe501cdd0f840abaf9fc6e0ef0c336623724f7e4a6dcecb4cc5ece"
+    },
+    ".aide/scripts/tests/test_continuous_worker_provider_bridge.py": {
+      "git_blob": "b2b7cfb7b470a929aa05a23b8f38e1f903f1d075",
+      "sha256": "7cf1e4c67bf9b4e17d0cae8113f5eaa15ff91f39af5cf2d9a3f55145ae815ac5"
+    }
+  },
+  "findings": [
+    {
+      "id": "F-03",
+      "priority": "P1",
+      "status": "OPEN",
+      "title": "Documented workflow-run paths cannot enter qualification",
+      "evidence": "GitHub's workflow-run documentation shows .github/workflows/file.yml@ref, and the exact 2026-03-10 OpenAPI workflow-run component marks path required with octocat/octo-repo/.github/workflows/ci.yml@main as its example. github_checks.py permits only the relative syntax in its regex and then compares the entire raw value to a plan field restricted to a bare path. The committed fixture uses only a bare path. Independent relative path@ref and repository-prefixed example-shape probes were refused as source mismatches.",
+      "impact": "The implementation fails closed before a GitHub Actions response having the documented shape can reach normalized observation, durable decision/intent, or bridge qualification. Passing fixtures therefore do not qualify that API shape.",
+      "required_change": "Parse and validate path@ref, bind the path and source selector to admitted branch/head semantics, retain an unambiguous accepted representation through observation/decision/intent/bridge, and add official-shape positive and wrong/missing/malformed-ref tests.",
+      "locations": [
+        "core/runtime/integration_broker/github_checks.py:53",
+        "core/runtime/integration_broker/github_checks.py:56",
+        "core/runtime/integration_broker/pr_observation.py:34",
+        "core/runtime/integration_broker/pr_observation.py:89",
+        ".aide/scripts/tests/test_continuous_worker_github_observation.py:118"
+      ],
+      "official_docs": [
+        "https://docs.github.com/en/rest/actions/workflow-runs",
+        "https://github.com/github/rest-api-description/blob/main/descriptions/api.github.com/api.github.com.2026-03-10.json",
+        "https://docs.github.com/en/rest/actions/workflow-jobs",
+        "https://docs.github.com/en/rest/checks/runs"
+      ]
+    },
+    {
+      "id": "S-01",
+      "priority": "P2",
+      "status": "OPEN",
+      "title": "Follow-up diff exceeds declared task paths",
+      "evidence": "The follow-up changes two test files not listed in task.yaml allowed_paths.",
+      "required_change": "Route the needed scope expansion through the canonical queue record and review gate.",
+      "locations": [
+        ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/task.yaml:18",
+        ".aide/scripts/tests/test_continuous_worker_pr_observation.py:1",
+        ".aide/scripts/tests/test_continuous_worker_provider_bridge.py:1"
+      ]
+    }
+  ],
+  "historical_finding_closure": {
+    "F-01": {
+      "status": "CLOSED",
+      "evidence": "The non-dev update rule includes update_allows_fetch_and_merge=false."
+    },
+    "F-02": {
+      "status": "CLOSED",
+      "evidence": "Broker and owner equality is rejected by immutable user id or case-insensitive login."
+    },
+    "F-04": {
+      "status": "CLOSED",
+      "evidence": "Repository id, bounded effective rules, and classic protection state are mandatory digest-bound inputs that block operation materialization on drift."
+    }
+  },
+  "f03_subclaims": {
+    "required_workflow_operation_removed": true,
+    "resolved_synthetic_operation_paths": [
+      "PATCH /repos/fixture/repo",
+      "POST /repos/fixture/repo/rulesets",
+      "POST /repos/fixture/repo/rulesets"
+    ],
+    "destination_local_monitored_unsupported_classification_truthful": true,
+    "same_app_same_name_other_path_refused": true,
+    "malformed_or_missing_identity_refused": true,
+    "malformed_observation_creates_no_partial_intent": true,
+    "unresolved_target_operation_count": 0,
+    "synthetic_identity_chain_bound_end_to_end": true,
+    "official_workflow_run_path_shape_accepted": false,
+    "f03_closed": false
+  },
+  "guarantee_classification": {
+    "destination_enforced_when_qualified": [
+      "expected_head",
+      "strict_app_bound_required_check",
+      "pull_request_only_dev_update",
+      "non_dev_update_restriction",
+      "deletion_restriction",
+      "non_fast_forward_restriction"
+    ],
+    "local_preconditions": [
+      "expected_base",
+      "expected_actor",
+      "expected_policy_digest",
+      "exact_workflow_run_path_event_and_head"
+    ],
+    "monitored": [
+      "workflow_run_and_attempt_identity",
+      "check_run_and_suite_identity"
+    ],
+    "unsupported": [
+      "atomic_expected_base_argument",
+      "atomic_policy_compare_and_swap",
+      "server_enforced_exact_workflow_source",
+      "same_app_same_check_name_collision_exclusion",
+      "hidden_bypass_inference",
+      "uncertain_mutation_replay"
+    ]
+  },
+  "canonical_evidence": {
+    "desired_policy_file_sha256": "c516b0e8f655870dd3123ce6a175a2108dbe76a8d8a4e4cfda7be90fbfb05ff9",
+    "current_observation_file_sha256": "020650ae5932c672313248a4be57011b1e75046fed19e0c15e99cad095f9f75b",
+    "review_plan_file_sha256": "54a18d662e6bc397eba1d6ae7dd66c99a29e42e47a1dfd8b741e0165590d7bbb",
+    "repair_record_sha256": "af61938768eabd5b08f87cdabdc374a7f62609c1acc7433cbfed50b06cfbeff6",
+    "source_checkpoint_sha256": "51f171fde3f0b2824bd7e0aea62e2c8c7f65c951b8f990b4b059c2f0a8344f66",
+    "validation_record_sha256": "346abab087a543719d2528f51c2d2eeb5f3bbd5923d69f82986292c16c1e998a",
+    "remaining_risks_sha256": "a7e62dd73d9ecfb2ced8596c8241399c9bbcf5d30cf640f2a0e109a0ed74711b",
+    "policy_digest": "c79b62b9fc888aa50600334e3b7108addc91f543b4ea7e3e4505d0a8aef636c9",
+    "observation_digest": "a1261592a0d53ac3ded981a19e32b0b323f085da45cf041893c76078b767c86a",
+    "plan_digest": "a754af93595c26612edc13d52456e0d7ef64b07120e639001a05a91b1b3d3655",
+    "desired_regenerated_exactly": true,
+    "plan_regenerated_exactly": true
+  },
+  "current_packet": {
+    "status": "blocked",
+    "blockers": [
+      "broker_principal_unresolved",
+      "workflow_check_identity_unresolved"
+    ],
+    "operation_count": 0,
+    "apply_authorized": false,
+    "settings_mutated": false,
+    "workflow_installed": false,
+    "hosted_effects_run": false,
+    "fail_closed_for_current_unresolved_inputs": true
+  },
+  "independent_probes": {
+    "documented_path_at_ref": "REFUSED:GitHub workflow source or repository does not bind the push head",
+    "versioned_openapi_repository_prefixed_path": "REFUSED:GitHub workflow source or repository does not bind the push head",
+    "same_path_wrong_ref": "REFUSED:GitHub workflow source or repository does not bind the push head",
+    "same_app_name_other_path": "REFUSED:GitHub workflow source or repository does not bind the push head",
+    "job_missing_run_attempt": "REFUSED:GitHub positive integer identity required",
+    "run_missing_id": "REFUSED:GitHub positive integer identity required",
+    "run_missing_suite_id": "REFUSED:GitHub positive integer identity required",
+    "check_missing_id": "REFUSED:GitHub positive integer identity required",
+    "decision_missing_dynamic_identity_fields_refused": true,
+    "durable_binding": {
+      "stage": "merge",
+      "intent_created": true,
+      "intent_matches_observation_digest": true,
+      "retained_fields": [
+        "workflow_path",
+        "workflow_event",
+        "workflow_sha",
+        "workflow_run_id",
+        "workflow_run_attempt",
+        "check_run_id",
+        "check_suite_id",
+        "head_commit"
+      ]
+    },
+    "required_workflow_operation_present": false,
+    "unresolved_status": "blocked",
+    "unresolved_operation_count": 0
+  },
+  "tests": [
+    {
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_continuous_worker_github_observation.py -q",
+      "result": "PASS",
+      "tests": 46,
+      "failures": 0,
+      "skips": 0,
+      "seconds": 0.093
+    },
+    {
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_continuous_worker_pr_observation.py -q",
+      "result": "PASS",
+      "tests": 21,
+      "failures": 0,
+      "skips": 0,
+      "seconds": 62.477
+    },
+    {
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_continuous_worker_github_http.py -q",
+      "result": "PASS",
+      "tests": 19,
+      "failures": 0,
+      "skips": 0,
+      "seconds": 1.089
+    },
+    {
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_continuous_worker_provider_bridge.py -q",
+      "result": "PASS",
+      "tests": 12,
+      "failures": 0,
+      "skips": 0,
+      "seconds": 88.302
+    },
+    {
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_continuous_worker_integration_broker.py -q",
+      "result": "PASS_WITH_SKIP",
+      "tests": 37,
+      "failures": 0,
+      "skips": 1,
+      "seconds": 181.390,
+      "skip_reason": "Disposable symlink creation requires a Windows privilege unavailable to the current identity."
+    },
+    {
+      "command": "independent workflow provenance, durability, and no-partial-operation probe",
+      "result": "FINDING_REPRODUCED",
+      "finding": "Official relative path@ref and repository-prefixed OpenAPI example shapes are refused; wrong-ref, malformed, and substitution cases also fail closed."
+    },
+    {
+      "command": "git diff --check 9383c2b5e8521bbdf9d0a54648459ee25d76c1b3..cb05b135eb0d9012e3d40e37a195f65abbab0b7a",
+      "result": "PASS"
+    }
+  ],
+  "test_summary": {
+    "tests": 135,
+    "passed": 134,
+    "failed": 0,
+    "skipped": 1
+  },
+  "non_product_command_errors": [
+    {
+      "command": "py -3 -m unittest .aide.scripts.tests...",
+      "result": "RUNNER_INVOCATION_ERROR",
+      "error": "ValueError: Empty module name",
+      "corrective_action": "Reran all five suites with unittest discover file patterns."
+    }
+  ],
+  "documentation_verified": {
+    "date": "2026-09-22",
+    "api_version": "2026-03-10",
+    "api_version_supported": true,
+    "facts": [
+      "Workflow-run response examples show path in path@ref form, and the exact versioned OpenAPI example is repository-prefixed.",
+      "The workflow-run component requires run id, head sha, head branch, event, path, repository, and head repository; it defines run attempt and check suite id properties.",
+      "The job component defines run_attempt but does not mark it required; the local exact-identity contract conservatively refuses its absence.",
+      "Attempt-scoped workflow jobs expose job/run/check-run linkage.",
+      "Check runs expose app, head sha, check-suite id, check-run id, status, and conclusion facts.",
+      "Required status checks can be app-bound but do not provide server-enforced exact workflow-source identity.",
+      "The removed required-workflow operation is unavailable for the exact user-owned target."
+    ],
+    "official_docs": [
+      "https://docs.github.com/en/rest/about-the-rest-api/api-versions",
+      "https://docs.github.com/en/rest/actions/workflow-runs",
+      "https://github.com/github/rest-api-description/blob/main/descriptions/api.github.com/api.github.com.2026-03-10.json",
+      "https://docs.github.com/en/rest/actions/workflow-jobs",
+      "https://docs.github.com/en/rest/checks/runs",
+      "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks",
+      "https://docs.github.com/en/rest/repos/rules"
+    ]
+  },
+  "verified_guarantees": [
+    "The current unresolved evidence regenerates exactly and fails closed with zero operations.",
+    "The user-owned target emits no unavailable required-workflow operation.",
+    "Destination-enforced, local-precondition, monitored, and unsupported guarantees are truthfully separated.",
+    "Same-app/name source substitution and malformed or missing provenance identities are refused.",
+    "The synthetic accepted provenance tuple remains exact through normalized observation, decision, durable storage/intent, staged transport, and registered bridge.",
+    "The restricted permission map excludes administration and workflow write access.",
+    "No apply sender, credential reader, workflow installer, or Git/GitHub mutation path was added by the follow-up repair."
+  ],
+  "retained_blockers": [
+    "F-03 requires an official-response-shape workflow path/ref contract and tests.",
+    "Exact restricted broker principal and effective repository permissions are unresolved.",
+    "Exact target workflow/check identity is unresolved.",
+    "The current target has no recorded installed workflow or qualifying rulesets.",
+    "Settings and workflow installation have not run.",
+    "Hosted adversarial races and non-empty effective-policy normalization have not run.",
+    "Protected-host/store qualification and the isolated-host close dependency remain open.",
+    "Two follow-up test changes require canonical task-scope disposition."
+  ],
+  "effects": {
+    "official_documentation_https_reads": true,
+    "github_rest_api_calls_run_during_rereview": false,
+    "credentials_read_or_changed": false,
+    "target_settings_mutated": false,
+    "workflow_or_ruleset_installed": false,
+    "principal_created_or_changed": false,
+    "git_refs_index_commits_tags_or_object_database_mutated": false,
+    "files_changed_by_reviewer": [
+      ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/target-policy-independent-review.md",
+      ".aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/evidence/target-policy-independent-review.json"
+    ]
+  },
+  "authorization": {
+    "target_mutation_authorized": false,
+    "workflow_or_ruleset_installation_authorized": false,
+    "credential_or_principal_creation_authorized": false,
+    "branch_mutation_authorized": false,
+    "push_merge_tag_or_release_authorized": false
+  }
+}

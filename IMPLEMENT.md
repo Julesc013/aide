@@ -41,8 +41,8 @@
 
 ## Work Item: AIDE-RELEASE-METADATA-INTEGRITY-01
 
-Status: replacement candidate qualified locally at projection `d6642c3d`;
-independent exact rereview and `dev` integration remain active.
+Status: fresh exact review accepted source candidate `853d1c7a`; evidence
+descendant `f77ecba2` fast-forwarded to remote `dev` on 2026-09-24.
 
 Planned changes:
 
@@ -135,6 +135,82 @@ Verification:
 
 Remaining: post-integration pack refresh and an authorized disposable Windows
 profile for skipped link cases.
+
+## Work Item: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
+
+### Status
+
+Completed bounded source repair at `e378d38e`. A fresh exact review accepted
+local source integration with notes; evidence descendant `d81d953a` preserves
+that review. Hosted qualification remains open.
+
+### Changed Paths
+
+- `core/runtime/integration_broker/github_checks.py`
+- `core/runtime/integration_broker/pr_observation.py`
+- `.aide/scripts/tests/test_continuous_worker_github_observation.py`
+- `.aide/scripts/tests/test_continuous_worker_pr_observation.py`
+- `.aide/scripts/tests/test_continuous_worker_provider_bridge.py`
+- `.aide/queue/AIDE-CW-GITHUB-TARGET-QUALIFICATION-01/**`
+
+### Rationale
+
+The independent review preserved at `b8fb89b` found that a documented GitHub
+workflow-run `path@ref` value, including the OpenAPI repository-prefixed form,
+was rejected before provenance could reach durable observation or bridge input.
+
+### Notable Design Decisions
+
+- Normalize only exact relative or exact target-repository-prefixed workflow
+  selectors to a bare workflow path and full branch ref.
+- Bind `workflow_ref` to the admitted request branch and `workflow_sha` to the
+  admitted candidate commit in the immutable plan.
+- Preserve the existing classification: workflow provenance is locally checked
+  and monitored, not a destination-side compare-and-swap guarantee.
+
+### Verification
+
+- 48 focused GitHub observation/policy tests passed.
+- 21 durable PR/staged-broker tests passed.
+- 12 registered-provider-bridge tests passed.
+- 19 bounded GitHub HTTP tests passed.
+- 37 integration-broker tests executed: 36 passed and one retained Windows
+  symlink test was skipped.
+- `git diff --check` passed.
+
+### Remaining Issues
+
+- Independent rereview, restricted broker identity, target configuration,
+  hosted adversarial races, and protected-host qualification remain open.
+- Canonical validation still reports stale export-pack provenance at
+  `b3e5c7aa`; this unintegrated task branch does not refresh release artifacts.
+
+### Effective-Rules Rereview Repair
+
+Independent rereview of `963dcc7d` returned `REQUEST_CHANGES` because the
+branch-rules endpoint was represented as complete ruleset bodies and included
+the non-dev ruleset that excludes `refs/heads/dev`. Effective observations now
+use individual endpoint-shaped rules bound to source type, source repository,
+and ruleset id. Expected rules come only from observed rulesets whose exact
+conditions apply to dev. Missing, duplicate, extra, wrong-source,
+wrong-ruleset, excluded-ruleset, and parameter-drift cases refuse closed. The
+focused suite passes 50 tests. All five affected suites execute 139 cases: 138
+pass, zero fail, and one privilege-dependent Windows symlink case is skipped.
+Fresh exact review accepted the repaired source for local dev integration with
+notes. The inherited export-pack provenance mismatch remains a combined-source
+artifact-refresh obligation. No hosted settings or credentials were changed.
+
+## Work Item: AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01
+
+The owner directed release-first then target-source integration. The accepted
+release repair reached remote `dev` at `f77ecba2` with canonical validate,
+doctor, release validate, and draft validate passing. This bounded task merges
+the fresh-reviewed target source and its evidence descendant into that dev
+ancestry, retaining both coordination histories and the repaired release
+generator. Nine combined suites executed 199 cases: 198 passed and one existing
+Windows symlink privilege case skipped. Post-commit canonical validation and
+derived-artifact refresh remain pending. Hosted GitHub effects, main, tags, and publication
+remain separately gated.
 
 ## Work Item: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
 
@@ -11272,6 +11348,33 @@ DLL mapping, image or grant effect is part of this source implementation.
   merge-contract facts. The focused suite passes 31 tests.
 - Added no network sender, credential path, settings/workflow mutation or hosted
   effect. Base/ref, actor, policy, principal and ruleset atomicity remain open.
+
+## 2026-09-22 - GitHub target-policy review source
+
+- Added a pure desired/current policy comparator and deterministic review-plan
+  builder with no network or apply path.
+- Bound the desired target to ordinary PR merges, one strict app-bound check,
+  immutable request branches, no dev bypass, and owner-only non-dev bypass.
+- Separated destination-enforced controls from local preconditions and
+  unsupported atomicity claims.
+- Refused incomplete visibility, excess permissions, identity/provenance drift,
+  unknown rules, malformed or unbounded observations, and partial operations.
+- Refreshed read-only GitHub state and emitted a blocked zero-operation plan;
+  96 affected tests pass, while hosted effects remain unrun.
+
+## 2026-09-22 - GitHub workflow-source binding repair
+
+- Preserved two independent `REQUEST_CHANGES` rounds, including the finding
+  that required-workflow rules are unavailable for the user-owned target.
+- Removed the target-inapplicable workflow ruleset operation and retained only
+  the narrower server-enforced app-bound required status check.
+- Bound exact workflow path/event/head, workflow run id/attempt, check run id,
+  and check suite id through the admitted plan, raw observation, durable
+  decision, and registered bridge fixtures.
+- Classified exact workflow provenance as local/monitored and its unavailable
+  server enforcement and same-app/name collision exclusion as unsupported.
+- Passed 135 affected tests with one retained Windows symlink privilege skip;
+  no GitHub setting, workflow, credential, ref, merge, tag, or release changed.
 
 ## 2026-09-22 - Broker runtime dev integration
 

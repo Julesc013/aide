@@ -26,10 +26,11 @@ post-integration pack provenance before final canonical acceptance.
 - [x] Compile the current intent; the generic classifier marked Git/release
   wording blocked, so this exact owner direction and bounded WorkUnit define
   the authorized local source slice.
-- [ ] Merge the target evidence descendant into this isolated branch.
-- [ ] Reconcile `IMPLEMENT.md`, queue index, and planning history without
+- [x] Merge the target evidence descendant into this isolated branch.
+- [x] Reconcile `IMPLEMENT.md`, queue index, and planning history without
   downgrading the repaired release generator or artifacts.
-- [ ] Run combined source regressions and proportionate canonical checks.
+- [x] Run 199 combined source cases: 198 passed, one Windows privilege skip.
+- [ ] Run post-commit canonical checks and record pack provenance.
 - [ ] Commit with a prevalidated message and publish the exact candidate.
 - [ ] Land the qualified source on `dev`; then refresh derived artifacts through
   a separate bounded WorkUnit.

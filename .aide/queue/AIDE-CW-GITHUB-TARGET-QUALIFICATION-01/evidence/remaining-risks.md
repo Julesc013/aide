@@ -19,3 +19,17 @@ Actions workflows were returned. The only observed authenticated account is an
 owner/admin and is not an acceptable restricted broker principal. No hosted
 mutation is admissible until an exact desired configuration and real principal/
 app identities receive independent review and approved installation.
+
+The new comparator makes these missing identities executable blockers and emits
+no partial operations while either is unresolved. Its resolved fixture proves
+only deterministic review-plan construction. GitHub plan/feature availability,
+actual principal least privilege, workflow behavior, check-app provenance,
+ruleset installation, effective-rule observation, and adversarial hosted races
+remain unqualified. No source result upgrades those external guarantees.
+
+GitHub's app-bound required-status-check rule does not server-bind the check to
+one workflow file. The local broker now binds the actual run's path, event,
+head, run attempt, check run and suite, but that is not atomic destination
+enforcement. A same-app/same-check-name collision remains explicitly
+unsupported and must be dispositioned or eliminated by a future target-
+applicable control before operational broker qualification.
