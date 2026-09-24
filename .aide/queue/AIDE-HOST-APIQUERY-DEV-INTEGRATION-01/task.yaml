@@ -1,0 +1,45 @@
+schema_version: aide.queue-task.v0
+id: AIDE-HOST-APIQUERY-DEV-INTEGRATION-01
+title: Integrate reviewed isolated-host API-query source into dev
+type: integration
+status: running
+planning_state: source_merge_pending
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-CW-ISOLATED-HOST-01
+  - AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01
+base_dev: fce11e7fce3e8106a71f5a2391fd6f0517d7e0c8
+source_candidate: ad1076a3b165d15bfb68045908dfef1f5acd13c2
+source_reviewed_commit: 1011d008fc39b135a5ef27062b5b8ee9c95cdc7f
+authority_basis: >
+  The owner's 2026-09-25 campaign delegation permits qualified dev integration.
+  The exact source repair has independent technical PASS; the owner accepted
+  historical disposition C for its narrow commit-message failure.
+scope:
+  allowed_paths:
+    - core/runtime/continuous_worker/windows_system_observation.py
+    - core/runtime/continuous_worker/windows_python_contract.py
+    - .aide/scripts/tests/test_continuous_worker_system_observation.py
+    - .aide/scripts/tests/test_continuous_worker_python_contract.py
+    - .aide/queue/AIDE-CW-ISOLATED-HOST-01/**
+    - .aide/queue/AIDE-HOST-APIQUERY-DEV-INTEGRATION-01/**
+    - .aide/queue/index.yaml
+    - docs/reference/integration-broker-core.md
+    - DOCUMENTATION.md
+    - IMPLEMENT.md
+    - PLANS.md
+  forbidden_operations:
+    - actual native query, profile, grant, AppContainer, hosted, credential, or model activation
+    - main promotion, tag, upload, or public release
+    - replacement of newer dev source, queue history, or generated artifacts
+verification:
+  - retain exact source review subject and accepted historical disposition C
+  - preserve both parent histories and reconcile four documentation conflicts
+  - run affected host tests, strict new-commit check, exact C range and raw check
+  - run canonical validation and independent combined integration review
+retained_gates:
+  - independent exact integrated source review before remote dev effect
+  - native, hosted, release, and operational activation remain separate
