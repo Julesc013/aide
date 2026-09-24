@@ -3,7 +3,7 @@ id: AIDE-HOST-APIQUERY-DEV-INTEGRATION-01
 title: Integrate reviewed isolated-host API-query source into dev
 type: integration
 status: running
-planning_state: combined_source_validated_review_pending
+planning_state: artifact_projection_commit_pending
 result: PENDING
 created_at: 2026-09-25
 updated_at: 2026-09-25

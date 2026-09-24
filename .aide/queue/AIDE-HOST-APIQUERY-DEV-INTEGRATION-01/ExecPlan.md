@@ -28,7 +28,14 @@ native, hosted, credential, target, or publication effects.
   disposition-pending status was corrected to the owner's exact C decision.
 - [x] Run 140 permitted combined-source tests, exact C default/raw range,
   canonical validate/doctor, and staged diff checks; all reported as observed.
-- [ ] Commit the two-parent integration subject and obtain independent review.
+- [x] Commit source merge at `ab17fd66`; independent review accepted source
+  with notes and held artifacts after post-commit canonical checks correctly
+  exposed stale export provenance.
+- [x] Export first from clean `ab17fd66`, then generate preview, local bundle,
+  and draft. Affected 29+18+11+6 suites, canonical checks, and a 33-path
+  deterministic replay pass.
+- [ ] Commit the refreshed artifact projection, prove post-commit provenance
+  and replay, and obtain a narrow exact artifact review.
 - [ ] Observe qualified remote dev and close evidence.
 
 ## Recovery

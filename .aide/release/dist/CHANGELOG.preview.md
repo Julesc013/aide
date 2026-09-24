@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 3326868b534d6a514af14c4ca3aabc9dc8230579
+source_head: ab17fd664159c46fa40e4683f8a4276c452a34a1
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -12,28 +12,19 @@ release_publishing: false
 ## Summary
 
 - Added: 2
-- Changed: 1
-- Fixed: 18
+- Fixed: 15
 - Security: 1
-- Docs: 8
-- Tests: 4
-- Internal: 22
+- Docs: 5
+- Tests: 2
+- Internal: 28
 
 ## Added
 
 - local customization explanation and opt-in import feedback. (98de5ee1531e feat(import): explain downstream customization decisions)
 - exact historical message dispositions to the dev source ancestry. (e40aec47dd2d feat(git): merge exact historical dispositions into dev candidate)
 
-## Changed
-
-- exact no-publish candidate assets and draft evidence regenerated. (8369ac540e4a build(release): qualify deterministic candidate)
-
 ## Fixed
 
-- release bundle and validation commands now converge on one deterministic metadata state. (edcd591a268b fix(release): converge bundle validation bytes)
-- release metadata is internally exact, checkout-independent, source-bound, and byte-stable. (8369ac540e4a build(release): qualify deterministic candidate)
-- committed release draft metadata now reflects post-checkpoint pack provenance exactly. (2819a63e794e build(release): close post-commit provenance)
-- preview publication gating now binds both generated representations and fails closed on malformed metadata. (6cbd104cb048 fix(release): bind both preview representations)
 - documented workflow-run path@ref provenance is parsed and bound to the admitted source. (7e56ad751615 fix(workflow): bind documented path ref)
 - produce replacement-safe, checkout-neutral local release artifacts for exact rereview. (dd1f39f39f3d build(release): checkpoint replacement-safe artifacts)
 - close the deterministic post-commit provenance projection across local bundle and release-draft records. (198a87d29238 build(release): close committed provenance projection)
@@ -48,6 +39,7 @@ release_publishing: false
 - dry-run recovery mutation and project-owned metadata payload boundary. (9b21e183d462 fix(import): keep recovery previews read-only)
 - Windows alias route into project-owned customization metadata. (2b4f5de885a5 fix(import): reserve project metadata Windows aliases)
 - allow accountable AEST historical decisions while retaining strict raw policy results. (7a2305f51894 fix(git): bind exact owner historical decisions)
+- prevent dirty-source provenance in the local combined artifact projection. (1fa02a8594fe fix(release): record clean combined pack provenance)
 
 ## Security
 
@@ -55,9 +47,6 @@ release_publishing: false
 
 ## Docs
 
-- refresh source-bound local changelog and release-note previews. (671faa232216 docs(release): bind previews to repair source)
-- bind release summaries to the converged generator source. (566a2c3b8b7d docs(release): refresh converged source previews)
-- bind release previews to the hardened metadata generator. (e2ec8925adf7 docs(release): bind hardened preview source)
 - normalize task evidence formatting. (963dcc7d6ede docs(queue): normalize workflow repair evidence)
 - bind release summaries to the replacement-safe source checkpoint. (7863891e581d docs(release): bind replacement-safe source)
 - bind release summaries to the paired-preview fail-closed repair. (1397b703a9c1 docs(release): bind paired-preview repair source)
@@ -66,8 +55,6 @@ release_publishing: false
 
 ## Tests
 
-- require validation to preserve all generated release bytes. (edcd591a268b fix(release): converge bundle validation bytes)
-- added JSON/Markdown mismatch and malformed JSON cases. (6cbd104cb048 fix(release): bind both preview representations)
 - add official-shape and adversarial selector coverage. (7e56ad751615 fix(workflow): bind documented path ref)
 - cover source-change concealment through git replace. (b4d949c1ac1f fix(export): ignore Git replacement objects)
 
@@ -95,6 +82,12 @@ release_publishing: false
 - clarify final consumer receipt provenance. (71416928aa36 audit(queue): distinguish receipt byte identities)
 - preserve exact owner authorization and technical review evidence. (a5cd5ca5ddf7 audit(queue): record owner and technical customization acceptance)
 - refresh local preview artifacts for the combined source. (3326868b534d build(release): refresh combined historical portable artifacts)
+- align local draft checksums with final validation report bytes. (8933792f37c5 fix(release): reconcile postcommit validation and draft bytes)
+- align local bundle metadata with committed source ancestry. (7c12fc401384 fix(release): normalize source ancestor bundle metadata)
+- align historical dev integration records with completed technical checks. (5ac617b37b57 chore(queue): close historical dev integration evidence)
+- record source integration without claiming lifecycle or release acceptance. (fce11e7fce3e chore(queue): record observed historical dev integration)
+- route reviewed host source through a bounded dev integration task. (526e9e402c56 chore(queue): admit isolated-host API query dev integration)
+- combine isolated-host API-query source without native or hosted activation. (ab17fd664159 feat(runtime): integrate reviewed API query source with dev)
 
 ## Malformed Commits
 

@@ -3,7 +3,7 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 3326868b534d6a514af14c4ca3aabc9dc8230579
+source_head: ab17fd664159c46fa40e4683f8a4276c452a34a1
 preview_only: true
 
 ## Highlights
@@ -11,11 +11,6 @@ preview_only: true
 - Security: portable pack provenance no longer trusts Git replacement refs. (b4d949c1ac1f)
 - Added: local customization explanation and opt-in import feedback. (98de5ee1531e)
 - Added: exact historical message dispositions to the dev source ancestry. (e40aec47dd2d)
-- Changed: exact no-publish candidate assets and draft evidence regenerated. (8369ac540e4a)
-- Fixed: release bundle and validation commands now converge on one deterministic metadata state. (edcd591a268b)
-- Fixed: release metadata is internally exact, checkout-independent, source-bound, and byte-stable. (8369ac540e4a)
-- Fixed: committed release draft metadata now reflects post-checkpoint pack provenance exactly. (2819a63e794e)
-- Fixed: preview publication gating now binds both generated representations and fails closed on malformed metadata. (6cbd104cb048)
 - Fixed: documented workflow-run path@ref provenance is parsed and bound to the admitted source. (7e56ad751615)
 - Fixed: produce replacement-safe, checkout-neutral local release artifacts for exact rereview. (dd1f39f39f3d)
 - Fixed: close the deterministic post-commit provenance projection across local bundle and release-draft records. (198a87d29238)
@@ -30,57 +25,53 @@ preview_only: true
 - Fixed: dry-run recovery mutation and project-owned metadata payload boundary. (9b21e183d462)
 - Fixed: Windows alias route into project-owned customization metadata. (2b4f5de885a5)
 - Fixed: allow accountable AEST historical decisions while retaining strict raw policy results. (7a2305f51894)
-- Docs: refresh source-bound local changelog and release-note previews. (671faa232216)
-- Docs: bind release summaries to the converged generator source. (566a2c3b8b7d)
-- Docs: bind release previews to the hardened metadata generator. (e2ec8925adf7)
+- Fixed: prevent dirty-source provenance in the local combined artifact projection. (1fa02a8594fe)
 - Docs: normalize task evidence formatting. (963dcc7d6ede)
 - Docs: bind release summaries to the replacement-safe source checkpoint. (7863891e581d)
 - Docs: bind release summaries to the paired-preview fail-closed repair. (1397b703a9c1)
 - Docs: bind the repaired release-integrity candidate and its exact qualification evidence for review. (853d1c7a8486)
 - Docs: refresh preview-only release text for the combined source. (66ef462c2b1b)
-- Tests: require validation to preserve all generated release bytes. (edcd591a268b)
-- Tests: added JSON/Markdown mismatch and malformed JSON cases. (6cbd104cb048)
 - Tests: add official-shape and adversarial selector coverage. (7e56ad751615)
 - Tests: cover source-change concealment through git replace. (b4d949c1ac1f)
 
 ## Validation Summary
 
-- 671faa232216: PASS: changelog preview reports 50 commits, 0 malformed commits, and 47 highlights.
-- edcd591a268b: PASS: 16 Q47 release-bundle tests.
-- edcd591a268b: PASS: 16 Q47 release-bundle tests.
-- 566a2c3b8b7d: PASS: changelog preview generation and git diff checks.
-- 8369ac540e4a: PASS: 57 adjacent governance, export/import, Q47, and Q48 tests.
-- 8369ac540e4a: PASS: 57 adjacent governance, export/import, Q47, and Q48 tests.
-- 2819a63e794e: PASS: release validate, draft, and draft-validate.
-- 6cbd104cb048: PASS: 17 Q47 release-bundle tests.
-- 6cbd104cb048: PASS: 17 Q47 release-bundle tests.
-- e2ec8925adf7: PASS: changelog preview generation and git diff checks.
+- 7e56ad751615: PASS: 48 focused GitHub observation/policy tests.
+- 7e56ad751615: PASS: 48 focused GitHub observation/policy tests.
+- 7e56ad751615: PASS: 48 focused GitHub observation/policy tests.
+- 963dcc7d6ede: PASS: git diff --check after this correction.
+- b4d949c1ac1f: PASS: adversarial export provenance regression.
+- b4d949c1ac1f: PASS: adversarial export provenance regression.
+- 7863891e581d: PASS: changelog preview generation and git diff checks.
+- dd1f39f39f3d: PASS: 58 adjacent tests, canonical validate and doctor, two delivered-byte consumer canaries, and 44-file repeatability comparison.
+- 198a87d29238: PASS: pack-status reports PASS_SOURCE_ANCESTOR.
+- 9f4bbc0a7744: PASS: commit range 7863891e..198a87d2.
 
 ## Known Risks
 
-- 671faa232216: Preview outputs remain non-publishing and do not authorize a tag or release.
-- edcd591a268b: Previously regenerated artifacts are obsolete and will be deterministically replaced from the new clean source.
-- edcd591a268b: Previously regenerated artifacts are obsolete and will be deterministically replaced from the new clean source.
-- 566a2c3b8b7d: These files remain preview-only and do not authorize publication.
-- 8369ac540e4a: Independent exact-commit rereview and dev integration remain pending.
-- 8369ac540e4a: Independent exact-commit rereview and dev integration remain pending.
-- 2819a63e794e: Independent exact-commit rereview remains pending.
-- 6cbd104cb048: Portable artifacts and source-bound previews must be regenerated from this newer source commit.
-- 6cbd104cb048: Portable artifacts and source-bound previews must be regenerated from this newer source commit.
-- e2ec8925adf7: Preview files remain non-publishing and authorize no release effect.
+- 7e56ad751615: Workflow provenance remains locally checked and monitored, not destination-side source enforcement.
+- 7e56ad751615: Workflow provenance remains locally checked and monitored, not destination-side source enforcement.
+- 7e56ad751615: Workflow provenance remains locally checked and monitored, not destination-side source enforcement.
+- 963dcc7d6ede: None; this is a documentation-only whitespace correction.
+- b4d949c1ac1f: Generated export and release artifacts must be rebuilt from the new source.
+- b4d949c1ac1f: Generated export and release artifacts must be rebuilt from the new source.
+- 7863891e581d: The preview remains local and non-publishing.
+- dd1f39f39f3d: This first artifact checkpoint still requires the complete post-commit provenance projection and independent exact-commit rereview.
+- 198a87d29238: Independent review is still required before dev integration.
+- 9f4bbc0a7744: Independent exact-commit rereview and dev integration remain pending.
 
 ## Follow-up
 
-- 671faa232216: Export this clean commit, rebuild final local artifacts, and validate their exact metadata closure.
-- edcd591a268b: Refresh source-bound previews and regenerate the export, bundle, draft, and consumer evidence.
-- edcd591a268b: Refresh source-bound previews and regenerate the export, bundle, draft, and consumer evidence.
-- 566a2c3b8b7d: Regenerate and qualify exact export, archive, and draft bytes from this clean commit.
-- 8369ac540e4a: Obtain fresh Sol review; integrate the exact accepted candidate into dev and revalidate the combined tree.
-- 8369ac540e4a: Obtain fresh Sol review; integrate the exact accepted candidate into dev and revalidate the combined tree.
-- 2819a63e794e: Review this exact closure commit and integrate it into dev if accepted.
-- 6cbd104cb048: Refresh previews, rebuild exact artifacts, rerun consumer and canonical validation, and advance independent review.
-- 6cbd104cb048: Refresh previews, rebuild exact artifacts, rerun consumer and canonical validation, and advance independent review.
-- e2ec8925adf7: Regenerate and qualify the exact portable and release artifacts.
+- 7e56ad751615: Obtain independent rereview; retain all target configuration and hosted-effect gates.
+- 7e56ad751615: Obtain independent rereview; retain all target configuration and hosted-effect gates.
+- 7e56ad751615: Obtain independent rereview; retain all target configuration and hosted-effect gates.
+- 963dcc7d6ede: Validate the exact two-commit candidate and publish it for independent rereview.
+- b4d949c1ac1f: Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview.
+- b4d949c1ac1f: Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview.
+- 7863891e581d: Regenerate, qualify, commit, and independently rereview the final artifact candidate.
+- dd1f39f39f3d: Run and commit the complete post-commit bundle, validate, draft, and draft-validate projection; prove a second full cycle is byte-identical; obtain independent rereview.
+- 198a87d29238: Replay the complete cycle from this committed candidate, require a clean tree, run canonical and commit checks, push, and obtain independent exact-commit rereview.
+- 9f4bbc0a7744: Validate this complete range, push it, and obtain independent exact-commit rereview.
 
 ## Warnings
 
