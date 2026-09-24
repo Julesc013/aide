@@ -53,6 +53,11 @@ repair; final focused checks for customization, pending intent, and reserved
 metadata passed after the remaining boundary changes. Rebuilt artifact and
 consumer evidence will supersede the earlier archive results.
 
+The importer also normalizes Windows case and trailing-dot/space forms before
+comparing reserved project/import paths. A checksummed uppercase payload
+alias was refused with existing project metadata preserved. This refinement
+is a later source delta and requires one final archive refresh.
+
 ## Purpose
 
 `IMPLEMENT.md` is the engineering execution log for repository changes. It records what changed, why it changed, how it was verified, which risks were avoided, and what remains unresolved. It is not a changelog.

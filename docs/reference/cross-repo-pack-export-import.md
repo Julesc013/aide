@@ -29,6 +29,7 @@ absent or stale rationale is `unknown`; the file grants no overwrite authority.
 Malformed customization metadata refuses explanation before CLI apply. No
 customization metadata is created or sent automatically. A pack payload that
 tries to supply `.aide/customizations.json` is refused, even when checksummed.
+Windows case and trailing-dot aliases of that reserved path are refused too.
 
 To make a local packet that the project can review and share manually, add
 `--feedback-out <new-path>` to a dry run. The new path must be outside both the

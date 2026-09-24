@@ -25,3 +25,9 @@ After adding a reserved project-metadata payload refusal and a final
 current-byte rationale check, focused customization (2 cases), pending-intent
 (1 case), and reserved-metadata (1 case) runs passed. Final archive
 requalification is pending.
+
+The repaired source then ran the full 29-case export/import suite (351.821
+seconds), Q47 (18), Q48 (11), and Q31 (6), all PASS. A final Windows reserved
+path alias refinement followed those suites. Its focused checksummed uppercase
+payload refusal passed. The final archive will be regenerated from that later
+source commit, and final source verification will be recorded separately.

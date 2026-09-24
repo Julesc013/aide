@@ -701,6 +701,17 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(authored.read_bytes(), original)
         self.assertFalse((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
         self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+        payload.unlink()
+        checksums["checksums"].pop("files/" + aide_lite.PROJECT_CUSTOMIZATIONS_PATH)
+        alias_rel = ".aide/CUSTOMIZATIONS.JSON"
+        alias_payload = pack / "files" / alias_rel
+        aide_lite.write_text(alias_payload, '{"schema_version":"aide.project-customizations.v1","entries":{}}\n')
+        checksums["checksums"]["files/" + alias_rel] = aide_lite.sha256_file(alias_payload)
+        aide_lite.write_text(checksums_path, json.dumps(checksums, sort_keys=True) + "\n")
+        self.assertTrue(aide_lite.validate_pack_checksums(pack)[0])
+        with self.assertRaisesRegex(ValueError, "reserved project/import state"):
+            aide_lite.apply_import_pack(pack, target)
+        self.assertEqual(authored.read_bytes(), original)
 
     def test_fake_secret_source_file_is_not_exported(self) -> None:
         source_root = self.make_source_repo()

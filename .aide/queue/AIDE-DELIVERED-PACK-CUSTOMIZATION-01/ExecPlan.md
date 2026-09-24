@@ -22,6 +22,8 @@ publication effect.
 - [x] Repair read-only recovery preview and reserve project rationale metadata
   against pack payloads; focused adversarial tests pass.
 - [ ] Rebuild exact bytes and qualify the replacement candidate.
+- [x] Close a Windows case/trailing-dot alias of the reserved project-owned
+  metadata path; the checksummed alias refusal test passes.
 
 ## Verification and recovery
 
