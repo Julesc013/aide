@@ -22,3 +22,4 @@ notes:
   - This programme coordinates bounded child WorkUnits; retained merge, release, publication, deletion, and secret gates still apply.
   - The owner's 2026-09-25 campaign delegation is recorded in evidence; routine in-scope owner responses are superseded while substantive technical gates remain.
   - Customization and exact historical disposition source/artifacts reached remote dev 5ac617b37b5778193b1c2cc7c63e0cc12c98ec09; mandatory lifecycle apply and release qualification remain open.
+  - Reviewed isolated-host API-query source reached remote dev a55b804bb573f145e0f1f00751d27f9b4f2af195; native and hosted effects remain unqualified.

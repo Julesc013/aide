@@ -3691,6 +3691,7 @@ queries. It preserves the consumed resource-map failure, fits the observed
 affected tests. The exact repair received independent source review with 140
 permitted tests, and historical message disposition C is owner-accepted.
 Combined dev source and local artifacts received separate exact reviews through
-candidate `a4ee0f32`; an evidence-only closeout and remote dev observation
-remain before source integration is complete. Before any real host query,
+candidate `a4ee0f32`; evidence-only closeout `a55b804b` passed a narrow check,
+and remote/local dev were observed at that commit (tree `9f687687`). Before any
+real host query,
 physical host bytes, private loading, grants, and activation remain open.

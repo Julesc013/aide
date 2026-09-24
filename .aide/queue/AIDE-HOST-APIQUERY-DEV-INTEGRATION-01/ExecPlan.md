@@ -42,7 +42,8 @@ native, hosted, credential, target, or publication effects.
   `ACCEPT_WITH_NOTES` artifact review clearing the earlier hold.
 - [x] Qualify the frozen ZIP in a fresh disposable extracted-archive consumer:
   safe import 816 writes, zero conflicts, target-local doctor exit zero.
-- [ ] Narrow-check evidence-only closeout, then observe remote dev and close.
+- [x] Narrow-check evidence-only closeout `a55b804b`, fast-forward remote and
+  local dev, and observe exact commit/tree in both.
 - [ ] Observe qualified remote dev and close evidence.
 
 ## Recovery

@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-HOST-APIQUERY-DEV-INTEGRATION-01
-status: running
-planning_state: reviewed_candidate_dev_fast_forward_pending
+status: passed
+planning_state: integrated_dev_remote_observed
 result: PASS_WITH_RETAINED_GATES
 updated_at: 2026-09-25
 base_dev: fce11e7fce3e8106a71f5a2391fd6f0517d7e0c8
@@ -19,4 +19,7 @@ final_tree: aafb17803e0a10836ad1b313e19106a2b9be4da7
 final_postcommit_replay: 44_release_paths_zero_changed
 artifact_review: ACCEPT_WITH_NOTES_artifact_hold_cleared_2026-09-25
 consumer: extracted_zip_fresh_safe_import_and_doctor_passed
-next_action: narrow_check_evidence_closeout_then_fast_forward_dev_and_observe_remote
+review_closeout: a55b804bb573f145e0f1f00751d27f9b4f2af195
+remote_dev_observed: a55b804bb573f145e0f1f00751d27f9b4f2af195
+remote_tree: 9f6876877de8371897cc2bc736384dd2a5669789
+next_action: continue_removal_and_lifecycle_apply_then_native_host_qualification
