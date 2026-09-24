@@ -40,7 +40,12 @@ records `source_commit: 3326868b534d6a514af14c4ca3aabc9dc8230579` and
 all pass. A clean-provenance replay of preview, bundle, and draft compared
 all 888 generated files and changed zero; its tree digest before and after
 was `7722774616539b12707707f59589a3c196a559dd671d78b114eaf1e69a28b9a0`.
-This repair projection still needs its own commit and post-commit replay.
+The clean-provenance projection was committed in the exact integration
+candidate `7c12fc4013847531726c07a3064300d08c637e29` (tree
+`f579b2da285752a4231777a58d36c696f788870d`). Its post-commit
+release bundle, validate, draft, and draft-validate replay passed and changed
+zero of 44 release files. Pack status is `PASS_SOURCE_ANCESTOR`; the export
+source commit is the clean ancestor `3326868b534d6a514af14c4ca3aabc9dc8230579`.
 The earlier 888-file result describes deterministic bytes for the
 superseded dirty-provenance projection, not final clean provenance.
 
@@ -56,4 +61,8 @@ All logs are external under `D:\Projects\AIDE\_review_scratch\` with
 `historical-dev-` prefixes. These are local source and artifact checks,
 not native/hosted qualification, stable publication, or downloaded consumer
 proof. The historical mechanism and date delta have independent reviews;
-the exact combined integration candidate still requires its own review.
+The exact combined candidate received an independent `ACCEPT_WITH_NOTES`
+source/artifact verdict. The reviewer required this separate evidence-only
+closeout and a narrow check before the dev fast-forward. See
+`review-and-consumer-closeout-2026-09-25.md`; native, hosted, main, and
+publication acceptance remain open.

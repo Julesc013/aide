@@ -31,8 +31,14 @@ Do not activate native or hosted effects or publish a release.
 - [x] Post-commit provenance exposed a dirty-source record in the first
   projection; regenerate from clean `3326868b` with export first and record
   the corrected clean manifest and asset hashes.
-- [ ] Commit qualified generated projection and prove post-commit replay.
-- [ ] Obtain exact independent integration review and update remote dev.
+- [x] Commit qualified generated projection at `7c12fc40`; post-commit
+  release bundle, validate, draft, and draft-validate replay changed zero of
+  44 release files. Pack status is `PASS_SOURCE_ANCESTOR`.
+- [x] Obtain independent technical review of exact commit `7c12fc40`:
+  `ACCEPT_WITH_NOTES` for source/artifact integration, with an evidence-only
+  closeout and narrow check required before the dev fast-forward.
+- [ ] Check this evidence-only closeout, update remote dev, and observe its
+  resulting commit and tree.
 
 ## Verification and likely blockers
 

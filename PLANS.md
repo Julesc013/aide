@@ -3672,5 +3672,9 @@ Fresh exact review of `59b886db` accepts mechanism source integration with
 notes: the old branch's generated release snapshot fails draft validation after
 release validation and must be regenerated through current dev machinery.
 The owner decisions are bound to exact structured artifacts and content hashes.
-Integrate eligible source against current dev, then regenerate its derived pack
-and release outputs. Do not rewrite the historical messages.
+The exact historical source and decision branch was merged onto customization
+dev with both parent histories preserved. Current generator outputs were
+regenerated from the combined source, and the frozen candidate `7c12fc40`
+passed post-commit replay and independent source/artifact review with notes.
+The review requires a separate evidence-only closeout and narrow check before
+the dev fast-forward. Do not rewrite the historical messages.
