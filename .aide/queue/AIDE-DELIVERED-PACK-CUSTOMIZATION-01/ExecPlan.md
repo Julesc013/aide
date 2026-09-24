@@ -15,8 +15,8 @@ publication effect.
 - [x] Add exact-byte rationale binding and explanation without changing apply authority.
 - [x] Add opt-in local feedback with no automatic telemetry.
 - [x] Run source tests and adversarial cases: 27-case suite and two focused rechecks passed.
-- [ ] Regenerate and qualify final portable bytes in disposable consumers.
-- [ ] Record source/artifact evidence, prevalidate commits, and integrate if accepted.
+- [x] Regenerate and qualify final portable bytes in disposable consumers.
+- [ ] Record source/artifact evidence, prevalidate closeout, and integrate if reviewed and accepted.
 
 ## Verification and recovery
 

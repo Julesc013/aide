@@ -4,8 +4,8 @@
 
 ### Status
 
-Source implementation complete on the bounded task branch; delivered artifact
-refresh and consumer qualification are pending.
+Source and local artifacts are qualified on the bounded task branch. Exact
+candidate `37daa862` awaits the queue review gate before dev integration.
 
 ### Changed Paths
 
@@ -27,8 +27,12 @@ target. Rationale never grants update authority.
 
 The full export/import suite passed 27/27 in 292.756 seconds. After adding
 digest fields to the explanations, the two affected tests passed again (one
-each in 20.320 and 19.481 seconds). `git diff --check` passed. Final archive
-consumer and canonical replay are pending.
+each in 20.320 and 19.481 seconds). Q47 18/18, Q48 11/11, and Q31 6/6
+passed. The extracted old-to-new ZIP consumer preserved project bytes and
+produced local opt-in feedback. Release generation replayed zero of 44 files
+from the committed projection; canonical validate, doctor, pack-status, and
+asset checks passed. `git diff --check` passed. Exact identities and logs are
+in this WorkUnit's validation evidence.
 
 ### Risks and follow-up
 

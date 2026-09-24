@@ -2,7 +2,8 @@
 
 ## AIDE-DELIVERED-PACK-CUSTOMIZATION-01: Delivered customization
 
-- Status: active on `task/aide-delivered-pack-customization-01` from dev `3bdeb220`.
+- Status: exact local candidate qualified at `37daa862`, awaiting the queue
+  review gate before dev integration.
 - Objective: explain project-owned preservation and conflicting updates with
   exact-byte optional rationale and opt-in local feedback.
 - Scope and dependencies: see the bounded queue ExecPlan and mandatory-profile

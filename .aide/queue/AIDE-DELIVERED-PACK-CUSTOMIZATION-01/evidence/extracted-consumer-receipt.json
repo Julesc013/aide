@@ -1,0 +1,15 @@
+{
+  "prior_zip_sha256": "4b9e458fe4a3c5f67f862de9c443ea195f74df7dd0bd2d0b69a4406562fdb5d8",
+  "current_zip_sha256": "1b972fb1c96b1d673620e3543f079e10da13ec4fac1473379b8528294de25052",
+  "current_manifest_source": "source_commit: 9dc91654f8df9d7ea8b85dc32285b504f3344e26",
+  "first_apply": "APPLIED",
+  "new_preview": "PLANNED_CONFLICT",
+  "new_apply": "CONFLICT",
+  "project_profile_preserved": true,
+  "direct_edit_preserved": true,
+  "unmodified_managed_script_preserved_on_whole_conflict": true,
+  "manual_agents_text_preserved": true,
+  "known_rationale_bound_to_current_bytes": true,
+  "feedback": "opt_in_local_only",
+  "run_root": "D:\\Projects\\AIDE\\_review_scratch\\customization-consumer-cc34021a8351"
+}
