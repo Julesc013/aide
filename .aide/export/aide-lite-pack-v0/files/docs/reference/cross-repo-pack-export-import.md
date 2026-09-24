@@ -27,13 +27,17 @@ made a change. A project may optionally write `.aide/customizations.json`:
 The rationale is shown only while its digest matches the observed file. An
 absent or stale rationale is `unknown`; the file grants no overwrite authority.
 Malformed customization metadata refuses explanation before CLI apply. No
-customization metadata is created or sent automatically.
+customization metadata is created or sent automatically. A pack payload that
+tries to supply `.aide/customizations.json` is refused, even when checksummed.
 
 To make a local packet that the project can review and share manually, add
 `--feedback-out <new-path>` to a dry run. The new path must be outside both the
 pack and target. The packet contains paths, digests, ownership decisions, and
 any current recorded rationale; review it before sharing. This flag performs
 no network, provider, or model call.
+If a previous import has an unresolved recovery intent, a dry run reports
+`RECOVERY_REQUIRED` without changing that intent or writing feedback. Use the
+explicit recovery path before requesting a fresh update plan.
 
 ## Purpose
 

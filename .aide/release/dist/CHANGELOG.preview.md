@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 98de5ee1531e3d71f6f003f8bc98bf2a6b8bf23b
+source_head: 9b21e183d462416bf95d0e3022b1ac5fc6fc077f
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,24 +11,21 @@ release_publishing: false
 
 ## Summary
 
-- Added: 3
-- Changed: 5
-- Fixed: 20
+- Added: 2
+- Changed: 4
+- Fixed: 19
 - Security: 9
 - Docs: 8
 - Tests: 6
-- Internal: 7
-- Risks: 1
+- Internal: 11
 
 ## Added
 
-- bounded qualification path for distribution fixture portability. (f737f9199931 chore(queue): admit fixture portability integration)
 - Admit deterministic release metadata integrity repair. (5ad6aa979971 chore(release): admit metadata integrity repair)
 - local customization explanation and opt-in import feedback. (98de5ee1531e feat(import): explain downstream customization decisions)
 
 ## Changed
 
-- target-policy queue state now records its exact published review checkpoint (eb4dea3f30ab chore(queue): record target-policy source publication)
 - qualified distribution fixture portability hardening on the full Windows checkout. (36fa64e011b5 test(distribution): qualify portability candidate)
 - Begin commit-bound portable artifact refresh after portability integration. (c730eac44202 chore(distribution): start clean artifact refresh)
 - Refresh portable artifacts for the integrated Windows path-hardening source. (da1051793d4c build(distribution): refresh portable artifacts)
@@ -36,8 +33,6 @@ release_publishing: false
 
 ## Fixed
 
-- distribution fixture path and preservation boundaries are present on the current-dev candidate. (7aab31bc1bc7 fix(distribution): merge portability source candidate)
-- GitHub policy planning now binds valid rule bytes, separate principals, exact workflow source, and effective policy state. (9383c2b5e852 fix(provider): repair target-policy review findings)
 - Bind preview release metadata to committed portability artifact provenance. (38fe712810b8 build(distribution): close artifact provenance)
 - release metadata now binds final eligible bytes and the exported source identity. (7bb41079e11f fix(release): bind metadata to final artifacts)
 - release preview binding now matches the generator's complete output set. (bb308e64f4f2 fix(release): accept complete preview projection)
@@ -56,6 +51,7 @@ release_publishing: false
 - integrate endpoint-shaped effective GitHub rule comparison into the dev source. (6a581dbcfbd5 feat(github): merge reviewed target source with release dev)
 - refresh local export and release provenance for combined target source. (cda504b9a546 fix(release): refresh combined source portable artifacts)
 - bind local release metadata to the committed combined-source artifact ancestry. (d4bd4938fa43 fix(release): project committed combined source provenance)
+- dry-run recovery mutation and project-owned metadata payload boundary. (9b21e183d462 fix(import): keep recovery previews read-only)
 
 ## Security
 
@@ -98,10 +94,10 @@ release_publishing: false
 - register a local artifact refresh with no publication effect. (4deeed08be90 audit(queue): admit combined target pack refresh)
 - record qualified local combined-source artifacts and consumer evidence. (9cc4bb068837 audit(queue): qualify combined target artifacts)
 - close reviewed local source and artifact dev integration. (3bdeb220cb31 audit(queue): close release and target dev integration)
-
-## Risks
-
-- GitHub target-policy checkpoint requires changes before target mutation (9bba1cecaec8 audit(provider): record target-policy defects)
+- refresh local preview-only release text. (9dc91654f8df chore(changelog): refresh customization source previews)
+- refresh local portable and release artifacts for customization. (8262b2fd6465 build(release): refresh local customization pack artifacts)
+- project local release provenance onto committed artifact ancestry. (37daa862e939 build(release): project customization artifact ancestry)
+- persist exact customization candidate review evidence. (1e3a59dce7bf audit(queue): record customization candidate review packet)
 
 ## Malformed Commits
 
