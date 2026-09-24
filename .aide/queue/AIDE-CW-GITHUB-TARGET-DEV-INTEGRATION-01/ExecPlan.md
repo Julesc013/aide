@@ -35,7 +35,9 @@ post-integration pack provenance before final canonical acceptance.
 - [x] Commit with a prevalidated message and publish the exact source candidate.
 - [x] Refresh derived artifacts through bounded child WorkUnit
   `AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01`; canonical and direct consumers pass.
-- [ ] Land the qualified combined candidate on `dev`.
+- [x] Fast-forward the qualified combined candidate to remote dev at
+  `9cc4bb06`; replay 44 release files with zero changes and pass canonical
+  checks on the actual dev checkout.
 
 ## Conflict and recovery policy
 

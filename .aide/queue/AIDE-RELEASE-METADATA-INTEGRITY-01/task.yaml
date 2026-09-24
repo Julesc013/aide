@@ -2,11 +2,11 @@ schema_version: aide.queue-task.v0
 id: AIDE-RELEASE-METADATA-INTEGRITY-01
 title: Repair deterministic release metadata integrity
 type: implementation
-status: running
-planning_state: admitted
-result: PENDING
+status: passed
+planning_state: integrated_to_dev
+result: PASS
 created_at: 2026-09-22
-updated_at: 2026-09-22
+updated_at: 2026-09-24
 parent_task: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 depends_on:
   - AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01

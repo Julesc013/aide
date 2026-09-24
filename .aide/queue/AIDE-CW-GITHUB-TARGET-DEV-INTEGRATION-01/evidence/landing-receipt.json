@@ -1,0 +1,20 @@
+{
+  "schema_version": "aide.dev-integration-receipt.v0",
+  "observed_at_local_date": "2026-09-24",
+  "target_ref": "refs/heads/dev",
+  "observed_remote_commit": "9cc4bb06883754de24096547c6b356524bd71b93",
+  "observed_tree": "8afadda53f79e7e7094460ff472862b68bac214c",
+  "previous_remote_commit": "f77ecba287415ebefb24db97b8543d6256963e45",
+  "reviewed_release_source": "853d1c7a848621c52819f02a835db2a05f585641",
+  "reviewed_target_source": "e378d38e0c51b964ff0886823b5ad6ba62c82f14",
+  "target_two_parent_merge": "6a581dbcfbd5d208f957956096aacb18b832301a",
+  "merge_parents": [
+    "43c86ffb92e14c0e40c678b1b063c06ba9dd817a",
+    "d81d953a767492c4f71bfe9a2334944d51cf5201"
+  ],
+  "integration_method": "fast_forward_after_qualified_two_parent_source_merge",
+  "combined_tests": {"executed": 199, "passed": 198, "skipped": 1, "failed": 0},
+  "pack_provenance": "PASS_SOURCE_ANCESTOR",
+  "release_replay": {"tracked_files": 44, "changed_files": 0},
+  "remote_effects": {"main": false, "tag": false, "release": false, "hosted_settings": false}
+}

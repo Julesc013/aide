@@ -73,7 +73,7 @@
 ### Plan ID: AIDE-RELEASE-METADATA-INTEGRITY-01
 
 - Title: Repair deterministic release metadata integrity
-- Status: replacement candidate qualified locally; exact rereview pending
+- Status: reviewed source and combined local artifacts integrated on remote dev; stable publication separately gated
 - Objective: close the exact asset-index, checkout-provenance, and stale-preview findings from artifact review.
 - Scope: release generator, Q47/Q48 regressions, local no-publish outputs, and bounded evidence.
 - Dependencies: reviewed failed artifact candidate `38fe7128` and preserved review `4c0da897`.
@@ -3624,8 +3624,9 @@ through `AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01`. The first post-artifact cycle
 advanced to `PASS_SOURCE_ANCESTOR`, and a second changed zero of 44 files.
 Projection `d4bd4938` replays all four generators with zero changed files;
 fresh ZIP and brownfield tar.gz consumers apply, rerun idempotently, preserve
-authored content, and pass target-local doctor. Land the qualified combined
-candidate next. Hosted settings,
+authored content, and pass target-local doctor. The qualified candidate
+fast-forwarded to remote `dev` at `9cc4bb06`, tree `8afadda5`; the actual dev
+checkout replayed zero of 44 release files and passed canonical checks. Hosted settings,
 credentials, and races retain separate gates.
 
 ## Broker runtime dev integration

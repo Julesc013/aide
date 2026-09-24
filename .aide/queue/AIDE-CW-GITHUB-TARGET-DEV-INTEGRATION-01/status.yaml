@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01
-status: running
-planning_state: combined_source_and_artifact_qualified_dev_integration_pending
-result: PENDING
+status: passed
+planning_state: integrated_to_dev
+result: PASS_WITH_WARNINGS
 updated_at: 2026-09-24
 reviewed_source: e378d38e0c51b964ff0886823b5ad6ba62c82f14
 source_review: ACCEPT_WITH_NOTES
@@ -10,3 +10,5 @@ hosted_acceptance: not_run
 pack_refresh: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01_qualified
 combined_tests: 198_passed_1_skipped_of_199
 merge_conflict: IMPLEMENT.md_resolved_with_both_histories
+remote_dev_commit: 9cc4bb06883754de24096547c6b356524bd71b93
+remote_dev_tree: 8afadda53f79e7e7094460ff472862b68bac214c

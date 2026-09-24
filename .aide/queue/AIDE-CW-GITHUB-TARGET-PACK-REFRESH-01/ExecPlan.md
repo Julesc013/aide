@@ -21,8 +21,9 @@ no-publish portable and release artifacts from a clean checkpoint.
 - [x] Replay all four generators from the committed clean tree; 44 files,
   zero changes.
 - [x] Run final canonical and exact-byte consumer checks.
-- [ ] Publish the exact qualified integration branch.
-- [ ] Fast-forward `dev` only after the above passes; observe remote identity.
+- [x] Publish exact qualified integration branch at `9cc4bb06`.
+- [x] Fast-forward dev to `9cc4bb06` and observe the remote identity; actual
+  dev replay and canonical checks pass.
 
 ## Verification and recovery
 

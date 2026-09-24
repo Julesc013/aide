@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01
 title: Integrate the reviewed GitHub target source into dev
 type: integration
-status: running
-planning_state: admitted
-result: PENDING
+status: passed
+planning_state: integrated_to_dev
+result: PASS_WITH_WARNINGS
 created_at: 2026-09-24
 updated_at: 2026-09-24
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

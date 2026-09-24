@@ -36,7 +36,8 @@ hosted effects, target installs, or machine configuration.
 - [x] Commit projection `d6642c3d` and replay all four generators with zero
       changed files and a clean tree.
 - [x] Obtain a fresh independent exact-commit review of `853d1c7a` for dev integration.
-- [ ] Integrate the qualified candidate into dev.
+- [x] Integrate the qualified candidate into remote dev through evidence
+  descendant `f77ecba2`; preserve it in combined head `9cc4bb06`.
 
 ## Test Oracle
 

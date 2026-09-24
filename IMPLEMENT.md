@@ -208,8 +208,9 @@ doctor, release validate, and draft validate passing. This bounded task merges
 the fresh-reviewed target source and its evidence descendant into that dev
 ancestry, retaining both coordination histories and the repaired release
 generator. Nine combined suites executed 199 cases: 198 passed and one existing
-Windows symlink privilege case skipped. Post-commit canonical validation and
-derived-artifact refresh remain pending. Hosted GitHub effects, main, tags, and publication
+Windows symlink privilege case skipped. The combined candidate reached remote
+`dev` at `9cc4bb06`, tree `8afadda5`, after derived-artifact qualification.
+Hosted GitHub effects, main, tags, and publication
 remain separately gated.
 
 ## Work Item: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01
@@ -225,7 +226,9 @@ Canonical validate and doctor pass after projection. Final projection commit,
 clean replay, and direct consumers now pass: committed projection `d4bd4938`
 replays all four generators with zero of 44 files changed, and exact ZIP/tar.gz
 fresh/brownfield imports apply, rerun without changes, preserve authored content,
-and pass target-local doctor. Dev integration remains pending. No hosted
+and pass target-local doctor. The actual dev checkout replayed all four
+generators with zero of 44 release files changed and passed pack-status,
+canonical validate, doctor, and exact asset checks. No hosted
 setting, main, tag, upload, or publication effect occurred.
 
 ## Work Item: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01

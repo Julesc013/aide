@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-RELEASE-METADATA-INTEGRITY-01
-status: running
-classification: exact_source_review_accepted
-planning_state: dev_integration_pending
+status: passed
+classification: exact_source_integrated_to_dev
+planning_state: integrated_to_dev
 result: PASS
 updated_at: 2026-09-24
-current_slice: release_candidate_dev_integration
-next_slice: dev_fast_forward_then_combined_validation
+current_slice: completed_local_source_and_metadata_integrity
+next_slice: mandatory_profile_and_exact_release_gates
 source_review_commit: 9f4bbc0a77443bd84a5c2502882e95aa602f98fe
 candidate_commit: 853d1c7a848621c52819f02a835db2a05f585641
 notes:
