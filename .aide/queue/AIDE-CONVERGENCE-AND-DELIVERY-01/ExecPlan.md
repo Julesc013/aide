@@ -53,6 +53,26 @@ repositories. Each executable slice requires its own bounded queue packet.
 10. Publish only after exact source, tag, channel, assets, and approvals are bound.
 11. Record final dispositions and durable continuation for advanced runtime work.
 
+## Current execution phase (2026-09-25)
+
+Objective: close the accepted customization and exact historical-message
+decisions, integrate eligible source in dependency order, then implement the
+first missing lifecycle apply behavior while maintaining the mandatory-profile
+matrix. Scope is bounded by the existing child WorkUnits and the owner's
+2026-09-25 campaign delegation in evidence.
+
+Dependencies: preserve the frozen customization commit/tree and current dev
+generator; obtain independent technical review of consequential changed scope;
+bind A/B/C to their exact Git objects and raw failures; serialize integration
+across shared Git metadata. Verify candidate ancestry, focused tests, canonical
+validation, artifact provenance/replay, and observed remote refs. Retain native,
+hosted, main, publication, and target-consumer qualification as separate gates.
+
+Likely blockers are a changed remote dev, integration conflicts in queue and
+generated output, the historical date validator's UTC/local-date edge, and
+missing supported lifecycle apply behavior. Repair these rather than treating
+this plan as a completion report.
+
 ## Validation
 
 - Validate task packet structure and queue indexing.

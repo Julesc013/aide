@@ -6,7 +6,7 @@ planning_state: execution_active
 result: PENDING
 review_gate: admitted_by_owner
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
-next_task: AIDE-CW-INTEGRATION-BROKER-01
+next_task: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
 notes:
   - The owner approved continued campaign execution after the exact candidate-bound review packet.
   - AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01 passed and was published.
@@ -20,3 +20,4 @@ notes:
   - Broker and isolated-host qualification continue as separate unfinished streams on their published task branch.
   - The compiled intent is destructive, split-required, and unsafe as one WorkUnit.
   - This programme coordinates bounded child WorkUnits; retained merge, release, publication, deletion, and secret gates still apply.
+  - The owner's 2026-09-25 campaign delegation is recorded in evidence; routine in-scope owner responses are superseded while substantive technical gates remain.

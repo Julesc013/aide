@@ -3471,8 +3471,8 @@ items:
     evidence: .aide/queue/AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01/evidence
     description: Regenerate local portable and release outputs from committed combined source and prove provenance and post-commit byte convergence.
   - id: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
-    status: needs_review
-    planning_state: final_local_candidate_qualified
+    status: running
+    planning_state: owner_and_technical_accepted_integration_preflight
     result: PASS_WITH_RETAINED_GATES
     title: Explain and retain downstream customization across portable updates
     task: .aide/queue/AIDE-DELIVERED-PACK-CUSTOMIZATION-01/task.yaml

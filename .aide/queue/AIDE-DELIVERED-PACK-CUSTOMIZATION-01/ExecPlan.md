@@ -24,6 +24,10 @@ publication effect.
 - [x] Rebuild exact bytes and qualify final candidate `8cad56c0` in extracted ZIP consumers.
 - [x] Close a Windows case/trailing-dot alias of the reserved project-owned
   metadata path; the checksummed alias refusal test passes.
+- [x] Record the owner's exact 2026-09-25 acceptance of frozen commit/tree.
+- [x] Obtain a fresh independent technical ACCEPT_WITH_NOTES of that subject.
+- [ ] Validate the unchanged source/artifact bytes against current dev, then
+  serialize and verify the remote dev integration.
 
 ## Verification and recovery
 
