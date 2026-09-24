@@ -39927,7 +39927,8 @@ def import_pack_plan(
             target_rel = "AGENTS.md"
         else:
             target_rel = rel
-        if target_rel in {PORTABLE_IMPORT_RECEIPT_PATH, PORTABLE_IMPORT_INTENT_PATH, PROJECT_CUSTOMIZATIONS_PATH}:
+        reserved_key = "/".join(part.rstrip(" .").casefold() for part in target_rel.split("/"))
+        if reserved_key in {PORTABLE_IMPORT_RECEIPT_PATH.casefold(), PORTABLE_IMPORT_INTENT_PATH.casefold(), PROJECT_CUSTOMIZATIONS_PATH.casefold()}:
             raise ValueError(f"pack payload collides with reserved project/import state: {target_rel}")
         target = portable_target_path(target_root, target_rel)
         if rel == "AGENTS.md.template":
