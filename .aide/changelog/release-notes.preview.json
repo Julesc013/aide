@@ -1,94 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "a2ba43624bf9",
-      "summary": "Validate and push exact dev, then continue the next bounded product slice."
-    },
-    {
-      "commit": "34c49601964d",
-      "summary": "Add failing lifecycle regressions before implementation."
-    },
-    {
-      "commit": "69e363bc71be",
-      "summary": "Implement the portable receipt, plan binding, and interruption journal."
-    },
-    {
-      "commit": "9161d9512738",
-      "summary": "Run adjacent suites and qualify artifacts generated from a clean source commit."
-    },
-    {
-      "commit": "e8c4bbe7d4ab",
-      "summary": "Revalidate committed artifact provenance and the exact archive bytes."
-    },
-    {
-      "commit": "3ef2372d7cdf",
-      "summary": "Re-run read-only validation without regenerating bundle identity."
-    },
-    {
-      "commit": "31bd91bd10ed",
-      "summary": "Re-run the full importer suite and rebuild exact delivery artifacts."
-    },
-    {
-      "commit": "b1f97c5f3084",
-      "summary": "Stabilize committed-state release evidence and run final validation."
-    },
-    {
-      "commit": "12918667778a",
-      "summary": "Run final read-only validation, close the task, publish the task branch, and prepare dev integration."
-    },
-    {
-      "commit": "dab67d269365",
-      "summary": "Publish the exact task head, run the landing helper, validate the merged candidate on dev, and observe the remote ref."
-    },
-    {
-      "commit": "09158bb2a8e1",
-      "summary": "Run canonical post-merge validation, push dev, observe the remote ref, and record task closeout evidence."
-    },
-    {
-      "commit": "e642b73a78be",
-      "summary": "Publish this closeout checkpoint and merge the record into dev before selecting the next implementation child."
-    },
-    {
-      "commit": "13fc9a6a0aa0",
-      "summary": "Push and observe dev, then select the next bounded stable implementation child from current queue evidence."
-    },
-    {
-      "commit": "0da2a3dd156c",
-      "summary": "Merge exact source without committing, resolve the fourteen coordination conflicts, and run focused plus canonical validation."
-    },
-    {
-      "commit": "091382e81f08",
-      "summary": "Run commit-policy checks, publish this task candidate, land it into dev, repeat post-landing validation, and observe local and remote refs."
-    },
-    {
-      "commit": "091382e81f08",
-      "summary": "Run commit-policy checks, publish this task candidate, land it into dev, repeat post-landing validation, and observe local and remote refs."
-    },
-    {
-      "commit": "2ef1fb7476bb",
-      "summary": "Merge the exact task tip into dev, run post-landing checks, push dev, and observe both local and remote ancestry."
-    },
-    {
-      "commit": "bed5a57aed4f",
-      "summary": "Check this landing commit, push dev, observe remote ancestry, and commit the exact integration closeout receipt."
-    },
-    {
-      "commit": "bed5a57aed4f",
-      "summary": "Check this landing commit, push dev, observe remote ancestry, and commit the exact integration closeout receipt."
-    },
-    {
-      "commit": "bed5a57aed4f",
-      "summary": "Check this landing commit, push dev, observe remote ancestry, and commit the exact integration closeout receipt."
-    },
-    {
-      "commit": "0bd655834e7f",
-      "summary": "Regenerate export and release artifacts from this clean commit, rerun artifact tests and canonical validation, then close and push the task."
-    },
-    {
-      "commit": "0bd655834e7f",
-      "summary": "Regenerate export and release artifacts from this clean commit, rerun artifact tests and canonical validation, then close and push the task."
-    },
-    {
       "commit": "b3e5c7aa2a17",
       "summary": "Publish admission, regenerate export and local release artifacts from clean source, and run exact consumer and canonical checks."
     },
@@ -129,6 +41,14 @@
       "summary": "Continue AIDE-CW-INTEGRATION-BROKER-01, isolated-host, and GitHub target qualification from their integrated checkpoints; handle main and release only through exact retained gates."
     },
     {
+      "commit": "bb433bb74f64",
+      "summary": "resolve exact principal and workflow identities and obtain independent byte-bound review"
+    },
+    {
+      "commit": "eb4dea3f30ab",
+      "summary": "obtain independent review after resolving exact identities"
+    },
+    {
       "commit": "f737f9199931",
       "summary": "Merge the exact source commit with both histories preserved and validate the combined tree."
     },
@@ -137,12 +57,24 @@
       "summary": "Run focused, adjacent, and canonical validation, then obtain independent exact-commit review."
     },
     {
+      "commit": "9bba1cecaec8",
+      "summary": "remediate F-01 through F-04 and submit a new exact-source checkpoint for independent review"
+    },
+    {
+      "commit": "9383c2b5e852",
+      "summary": "Publish the repair and obtain independent exact-commit rereview before any target effect packet."
+    },
+    {
       "commit": "36fa64e011b5",
       "summary": "Obtain independent review, integrate the exact candidate to dev, then refresh and qualify portable artifacts."
     },
     {
       "commit": "64979977922a",
       "summary": "Rereview this exact repair, integrate the passing candidate to dev, and refresh commit-bound portable artifacts."
+    },
+    {
+      "commit": "cb05b135eb0d",
+      "summary": "Obtain superseding independent review, then integrate source-only guarantees while keeping hosted effects blocked."
     },
     {
       "commit": "6cb0a9ac8856",
@@ -175,6 +107,10 @@
     {
       "commit": "4c0da8974daa",
       "summary": "Admit a generator repair, add cross-checkout and asset-index regressions, regenerate all affected artifacts, and request exact rereview."
+    },
+    {
+      "commit": "b8fb89b917c9",
+      "summary": "Expand the task scope explicitly, parse and bind path-at-ref identity, add adversarial fixtures, and request exact rereview."
     },
     {
       "commit": "5ad6aa979971",
@@ -237,6 +173,22 @@
       "summary": "Regenerate and qualify the exact portable and release artifacts."
     },
     {
+      "commit": "7e56ad751615",
+      "summary": "Obtain independent rereview; retain all target configuration and hosted-effect gates."
+    },
+    {
+      "commit": "7e56ad751615",
+      "summary": "Obtain independent rereview; retain all target configuration and hosted-effect gates."
+    },
+    {
+      "commit": "7e56ad751615",
+      "summary": "Obtain independent rereview; retain all target configuration and hosted-effect gates."
+    },
+    {
+      "commit": "963dcc7d6ede",
+      "summary": "Validate the exact two-commit candidate and publish it for independent rereview."
+    },
+    {
       "commit": "b4d949c1ac1f",
       "summary": "Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview."
     },
@@ -263,6 +215,46 @@
     {
       "commit": "f147c9059e8b",
       "summary": "Generate a source-bound preview checkpoint, regenerate and converge exact artifacts, then obtain superseding independent review."
+    },
+    {
+      "commit": "e378d38e0c51",
+      "summary": "Obtain superseding exact-commit review, then integrate through a current-dev two-parent candidate with combined validation."
+    },
+    {
+      "commit": "1397b703a9c1",
+      "summary": "Regenerate the portable pack and complete release artifact/projection convergence from this exact preview checkpoint."
+    },
+    {
+      "commit": "7897f7deb80c",
+      "summary": "Run all four generators after this exact checkpoint, commit a projection message naming this actual parent, prove clean replay, and rereview."
+    },
+    {
+      "commit": "d6642c3d81f6",
+      "summary": "Replay the complete cycle from this committed projection, require a clean tree, then obtain independent exact rereview."
+    },
+    {
+      "commit": "853d1c7a8486",
+      "summary": "Obtain independent exact review; integrate only an accepted candidate into current dev."
+    },
+    {
+      "commit": "f77ecba28741",
+      "summary": "Fast-forward dev through this evidence-only descendant, then validate the combined source and derived artifacts."
+    },
+    {
+      "commit": "d81d953a7674",
+      "summary": "Integrate the source with current dev, refresh the combined portable pack, and rerun canonical and affected checks."
+    },
+    {
+      "commit": "43c86ffb92e1",
+      "summary": "Merge the exact target evidence descendant, preserve both histories, and qualify the combined source."
+    },
+    {
+      "commit": "6a581dbcfbd5",
+      "summary": "Run post-commit checks, publish the qualified source candidate, then refresh derived artifacts in a bounded WorkUnit."
+    },
+    {
+      "commit": "4deeed08be90",
+      "summary": "Generate from this clean checkpoint using the repaired release generator, then verify final bytes and replay."
     }
   ],
   "highlights": [
@@ -272,6 +264,13 @@
       "commit": "64979977922a",
       "subject": "fix(distribution): refuse Windows short-name aliases",
       "summary": "refused Windows 8.3 aliases at the disposable distribution fixture boundary."
+    },
+    {
+      "breaking": false,
+      "category": "Security",
+      "commit": "cb05b135eb0d",
+      "subject": "fix(provider): bind exact workflow run provenance",
+      "summary": "bound locally accepted GitHub checks to exact workflow-run provenance without overstating server enforcement."
     },
     {
       "breaking": false,
@@ -311,6 +310,13 @@
     {
       "breaking": false,
       "category": "Security",
+      "commit": "b8fb89b917c9",
+      "subject": "audit(github): record workflow identity finding",
+      "summary": "Preserve fail-closed target qualification review findings before integration."
+    },
+    {
+      "breaking": false,
+      "category": "Security",
       "commit": "b4d949c1ac1f",
       "subject": "fix(export): ignore Git replacement objects",
       "summary": "portable pack provenance no longer trusts Git replacement refs."
@@ -318,37 +324,16 @@
     {
       "breaking": false,
       "category": "Added",
-      "commit": "9161d9512738",
-      "subject": "feat(import): add ownership-aware pack updates",
-      "summary": "ownership-aware and interruption-visible AIDE Lite pack updates."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "09158bb2a8e1",
-      "subject": "chore(dev): integrate delivered pack safe update",
-      "summary": "ownership-aware and interruption-aware updates from delivered AIDE Lite packs."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "091382e81f08",
-      "subject": "feat(broker): integrate published runtime line",
-      "summary": "integrate the protected broker foundation and bounded Windows host support into the dev candidate."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "bed5a57aed4f",
-      "subject": "feat(broker): land runtime integration on dev",
-      "summary": "land the protected broker and bounded Windows host foundation on dev."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
       "commit": "c6fdc754844c",
       "subject": "chore(queue): close broker dev integration chain",
       "summary": "preserve and integrate the published broker runtime line on dev."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "bb433bb74f64",
+      "subject": "feat(provider): add fail-closed GitHub target policy",
+      "summary": "fail-closed review-only GitHub target-policy contract for the continuous-worker integration broker"
     },
     {
       "breaking": false,
@@ -367,16 +352,16 @@
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "e8c4bbe7d4ab",
-      "subject": "build(pack): refresh safe-update delivery artifacts",
-      "summary": "refresh local AIDE Lite delivery artifacts with safe update support."
+      "commit": "f6ae36e8074b",
+      "subject": "build(pack): refresh post-integration artifacts",
+      "summary": "refresh portable and local release artifacts for the integrated broker-era dev source."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "f6ae36e8074b",
-      "subject": "build(pack): refresh post-integration artifacts",
-      "summary": "refresh portable and local release artifacts for the integrated broker-era dev source."
+      "commit": "eb4dea3f30ab",
+      "subject": "chore(queue): record target-policy source publication",
+      "summary": "target-policy queue state now records its exact published review checkpoint"
     },
     {
       "breaking": false,
@@ -409,20 +394,6 @@
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "31bd91bd10ed",
-      "subject": "fix(import): preserve authored agents bytes",
-      "summary": "preserve target-authored AGENTS.md bytes around portable guidance."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "b1f97c5f3084",
-      "subject": "build(pack): include exact agents preservation",
-      "summary": "ship exact target-authored guidance preservation in update artifacts."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
       "commit": "3f1bc120a10c",
       "subject": "build(release): close committed provenance derivation",
       "summary": "bind release preview checksums to committed portable provenance."
@@ -447,6 +418,13 @@
       "commit": "7aab31bc1bc7",
       "subject": "fix(distribution): merge portability source candidate",
       "summary": "distribution fixture path and preservation boundaries are present on the current-dev candidate."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "9383c2b5e852",
+      "subject": "fix(provider): repair target-policy review findings",
+      "summary": "GitHub policy planning now binds valid rule bytes, separate principals, exact workflow source, and effective policy state."
     },
     {
       "breaking": false,
@@ -500,6 +478,13 @@
     {
       "breaking": false,
       "category": "Fixed",
+      "commit": "7e56ad751615",
+      "subject": "fix(workflow): bind documented path ref",
+      "summary": "documented workflow-run path@ref provenance is parsed and bound to the admitted source."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
       "commit": "dd1f39f39f3d",
       "subject": "build(release): checkpoint replacement-safe artifacts",
       "summary": "produce replacement-safe, checkout-neutral local release artifacts for exact rereview."
@@ -527,17 +512,31 @@
     },
     {
       "breaking": false,
-      "category": "Docs",
-      "commit": "091382e81f08",
-      "subject": "feat(broker): integrate published runtime line",
-      "summary": "retain exact implementation scope, effect contracts, and qualification boundaries."
+      "category": "Fixed",
+      "commit": "e378d38e0c51",
+      "subject": "fix(github): compare endpoint-shaped branch rules",
+      "summary": "align target-policy comparison with GitHub branch-rules endpoint semantics."
     },
     {
       "breaking": false,
-      "category": "Docs",
-      "commit": "bed5a57aed4f",
-      "subject": "feat(broker): land runtime integration on dev",
-      "summary": "publish exact effect contracts and qualification limits."
+      "category": "Fixed",
+      "commit": "7897f7deb80c",
+      "subject": "build(release): checkpoint paired-preview artifacts",
+      "summary": "deliver release artifacts that require paired preview identities and refuse missing JSON sources."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "d6642c3d81f6",
+      "subject": "build(release): project checkpoint 7897f7de provenance",
+      "summary": "project paired-preview release provenance from actual artifact checkpoint 7897f7de."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "6a581dbcfbd5",
+      "subject": "feat(github): merge reviewed target source with release dev",
+      "summary": "integrate endpoint-shaped effective GitHub rule comparison into the dev source."
     },
     {
       "breaking": false,
@@ -563,23 +562,30 @@
     {
       "breaking": false,
       "category": "Docs",
+      "commit": "963dcc7d6ede",
+      "subject": "docs(queue): normalize workflow repair evidence",
+      "summary": "normalize task evidence formatting."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
       "commit": "7863891e581d",
       "subject": "docs(release): bind replacement-safe source",
       "summary": "bind release summaries to the replacement-safe source checkpoint."
     },
     {
       "breaking": false,
-      "category": "Tests",
-      "commit": "69e363bc71be",
-      "subject": "test(import): specify ownership-aware pack updates",
-      "summary": "define delivered-pack update acceptance regressions."
+      "category": "Docs",
+      "commit": "1397b703a9c1",
+      "subject": "docs(release): bind paired-preview repair source",
+      "summary": "bind release summaries to the paired-preview fail-closed repair."
     },
     {
       "breaking": false,
-      "category": "Tests",
-      "commit": "bed5a57aed4f",
-      "subject": "feat(broker): land runtime integration on dev",
-      "summary": "land broker, provider, GitHub, host, image, PE, and security regressions."
+      "category": "Docs",
+      "commit": "853d1c7a8486",
+      "subject": "docs(release): freeze replacement review candidate",
+      "summary": "bind the repaired release-integrity candidate and its exact qualification evidence for review."
     },
     {
       "breaking": false,
@@ -626,6 +632,13 @@
     {
       "breaking": false,
       "category": "Tests",
+      "commit": "7e56ad751615",
+      "subject": "fix(workflow): bind documented path ref",
+      "summary": "add official-shape and adversarial selector coverage."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
       "commit": "b4d949c1ac1f",
       "subject": "fix(export): ignore Git replacement objects",
       "summary": "cover source-change concealment through git replace."
@@ -633,94 +646,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "a2ba43624bf9",
-      "summary": "Main, tag, upload, publication, and remaining stable-release work remain gated."
-    },
-    {
-      "commit": "34c49601964d",
-      "summary": "No target, release, integration, or publication effect occurred."
-    },
-    {
-      "commit": "69e363bc71be",
-      "summary": "Tests use disposable temporary repositories and perform no live target mutation."
-    },
-    {
-      "commit": "9161d9512738",
-      "summary": "Qualification remains limited to disposable consumers; semantic merge and live target rollout remain gated."
-    },
-    {
-      "commit": "e8c4bbe7d4ab",
-      "summary": "Artifacts are local candidates only; no tag, upload, release, or main mutation occurred."
-    },
-    {
-      "commit": "3ef2372d7cdf",
-      "summary": "The candidate remains local and preview-only; publication gates are unchanged."
-    },
-    {
-      "commit": "31bd91bd10ed",
-      "summary": "UTF-8 remains the admitted portable text encoding; non-UTF-8 target guidance is refused."
-    },
-    {
-      "commit": "b1f97c5f3084",
-      "summary": "Artifacts remain local preview candidates with no publish authority."
-    },
-    {
-      "commit": "12918667778a",
-      "summary": "Candidate remains preview-only and is not a stable release publication."
-    },
-    {
-      "commit": "dab67d269365",
-      "summary": "Real target adoption, semantic merge, automatic recovery, main promotion, tags, upload, and publication remain outside this task."
-    },
-    {
-      "commit": "09158bb2a8e1",
-      "summary": "Live target rollout, semantic merge, repair, rollback, uninstall, main promotion, tagging, upload, and publication remain gated."
-    },
-    {
-      "commit": "e642b73a78be",
-      "summary": "Main promotion, public release, live target rollout, and remaining lifecycle capabilities retain separate gates."
-    },
-    {
-      "commit": "13fc9a6a0aa0",
-      "summary": "This record merge does not authorize main promotion, tagging, upload, publication, or live-target rollout."
-    },
-    {
-      "commit": "0da2a3dd156c",
-      "summary": "Combined-tree tests and conflict resolution remain pending; operational broker activation remains false."
-    },
-    {
-      "commit": "091382e81f08",
-      "summary": "Full broker completion remains false; live provider, credential, hosted mutation, protected-host closeout, and release activation remain gated."
-    },
-    {
-      "commit": "091382e81f08",
-      "summary": "Full broker completion remains false; live provider, credential, hosted mutation, protected-host closeout, and release activation remain gated."
-    },
-    {
-      "commit": "2ef1fb7476bb",
-      "summary": "Dev landing and post-landing validation are still pending."
-    },
-    {
-      "commit": "bed5a57aed4f",
-      "summary": "Full operational broker completion, restricted credentials, hosted races, protected-host closeout, main promotion, tagging, and release publication remain gated."
-    },
-    {
-      "commit": "bed5a57aed4f",
-      "summary": "Full operational broker completion, restricted credentials, hosted races, protected-host closeout, main promotion, tagging, and release publication remain gated."
-    },
-    {
-      "commit": "bed5a57aed4f",
-      "summary": "Full operational broker completion, restricted credentials, hosted races, protected-host closeout, main promotion, tagging, and release publication remain gated."
-    },
-    {
-      "commit": "0bd655834e7f",
-      "summary": "Portable export and release artifacts remain derived from pre-integration source 31bd91bd until refreshed."
-    },
-    {
-      "commit": "0bd655834e7f",
-      "summary": "Portable export and release artifacts remain derived from pre-integration source 31bd91bd until refreshed."
-    },
     {
       "commit": "b3e5c7aa2a17",
       "summary": "Generated path scope and byte changes are unknown until deterministic regeneration."
@@ -762,6 +687,14 @@
       "summary": "Operational broker completion, restricted credentials, hosted races, protected-host closeout, main promotion, tags, upload, and public release remain open gates."
     },
     {
+      "commit": "bb433bb74f64",
+      "summary": "restricted broker principal and workflow/check identities remain unresolved"
+    },
+    {
+      "commit": "eb4dea3f30ab",
+      "summary": "broker principal and workflow/check identities remain unresolved"
+    },
+    {
       "commit": "f737f9199931",
       "summary": "Source acceptance remains pending Windows tests and independent exact-commit review."
     },
@@ -770,12 +703,24 @@
       "summary": "Combined-tree behavior remains unqualified until the recorded Windows and adjacent suites pass."
     },
     {
+      "commit": "9bba1cecaec8",
+      "summary": "no product source was edited"
+    },
+    {
+      "commit": "9383c2b5e852",
+      "summary": "The repaired exact source still requires superseding independent review."
+    },
+    {
       "commit": "36fa64e011b5",
       "summary": "Independent exact-commit review is pending."
     },
     {
       "commit": "64979977922a",
       "summary": "Exact repair rereview remains pending."
+    },
+    {
+      "commit": "cb05b135eb0d",
+      "summary": "Same-app and same-check-name collision exclusion remains unsupported at the destination boundary."
     },
     {
       "commit": "6cb0a9ac8856",
@@ -808,6 +753,10 @@
     {
       "commit": "4c0da8974daa",
       "summary": "The exact artifact-refresh candidate remains blocked from dev integration."
+    },
+    {
+      "commit": "b8fb89b917c9",
+      "summary": "GitHub target qualification remains fixture-only and blocked from hosted effects."
     },
     {
       "commit": "5ad6aa979971",
@@ -870,6 +819,22 @@
       "summary": "Preview files remain non-publishing and authorize no release effect."
     },
     {
+      "commit": "7e56ad751615",
+      "summary": "Workflow provenance remains locally checked and monitored, not destination-side source enforcement."
+    },
+    {
+      "commit": "7e56ad751615",
+      "summary": "Workflow provenance remains locally checked and monitored, not destination-side source enforcement."
+    },
+    {
+      "commit": "7e56ad751615",
+      "summary": "Workflow provenance remains locally checked and monitored, not destination-side source enforcement."
+    },
+    {
+      "commit": "963dcc7d6ede",
+      "summary": "None; this is a documentation-only whitespace correction."
+    },
+    {
       "commit": "b4d949c1ac1f",
       "summary": "Generated export and release artifacts must be rebuilt from the new source."
     },
@@ -896,100 +861,52 @@
     {
       "commit": "f147c9059e8b",
       "summary": "Generated portable and release artifacts still describe the prior source until the next deterministic regeneration chain."
+    },
+    {
+      "commit": "e378d38e0c51",
+      "summary": "Hosted policy installation, restricted-principal qualification, adversarial races, protected-host closeout, and authoritative integration remain unrun."
+    },
+    {
+      "commit": "1397b703a9c1",
+      "summary": "The previews remain local and non-publishing; portable and release artifacts are not regenerated by this commit."
+    },
+    {
+      "commit": "7897f7deb80c",
+      "summary": "This checkpoint still requires the complete post-commit PASS_SOURCE_ANCESTOR projection and independent exact rereview."
+    },
+    {
+      "commit": "d6642c3d81f6",
+      "summary": "Independent exact-commit rereview remains required before dev integration."
+    },
+    {
+      "commit": "853d1c7a8486",
+      "summary": "Review has not yet accepted this exact candidate."
+    },
+    {
+      "commit": "f77ecba28741",
+      "summary": "This evidence commit does not certify a stable product or authorize main promotion, tagging, upload, or publication."
+    },
+    {
+      "commit": "d81d953a7674",
+      "summary": "This evidence commit does not install settings or workflows, qualify credentials or hosted races, or authorize operational activation."
+    },
+    {
+      "commit": "43c86ffb92e1",
+      "summary": "Combined source tests and post-integration pack provenance remain pending."
+    },
+    {
+      "commit": "6a581dbcfbd5",
+      "summary": "This merge does not authorize target settings, credentials, hosted races, main promotion, tags, uploads, or publication."
+    },
+    {
+      "commit": "4deeed08be90",
+      "summary": "Pack, release bundle, draft, canonical validation, and committed replay remain pending."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "f147c9059e8b42ea0f4618a45d306080f300e507",
+  "source_head": "4deeed08be90080583183ca5a24597a4a72aedda",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "a2ba43624bf9",
-      "summary": "PASS: helper landing plan, closeout repository validation, and structured commit policy."
-    },
-    {
-      "commit": "34c49601964d",
-      "summary": "PASS: git diff --check."
-    },
-    {
-      "commit": "69e363bc71be",
-      "summary": "PASS: 17 existing export/import tests remain green."
-    },
-    {
-      "commit": "9161d9512738",
-      "summary": "PASS: 24 export/import tests."
-    },
-    {
-      "commit": "e8c4bbe7d4ab",
-      "summary": "PASS: export pack boundary and checksum validation."
-    },
-    {
-      "commit": "3ef2372d7cdf",
-      "summary": "PASS: release bundle and committed-state validation."
-    },
-    {
-      "commit": "31bd91bd10ed",
-      "summary": "PASS: Python compilation."
-    },
-    {
-      "commit": "b1f97c5f3084",
-      "summary": "PASS: 25 export/import tests and 10 Q47 tests."
-    },
-    {
-      "commit": "12918667778a",
-      "summary": "PASS: release bundle and validation."
-    },
-    {
-      "commit": "dab67d269365",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py test."
-    },
-    {
-      "commit": "09158bb2a8e1",
-      "summary": "PASS: helper landing dry-run reported ready_dry_run."
-    },
-    {
-      "commit": "e642b73a78be",
-      "summary": "PASS: task inspect reports complete with six evidence files and no omissions."
-    },
-    {
-      "commit": "13fc9a6a0aa0",
-      "summary": "PASS: clean helper landing dry-run for the closeout head."
-    },
-    {
-      "commit": "0da2a3dd156c",
-      "summary": "PASS: source and target refs match their remotes."
-    },
-    {
-      "commit": "091382e81f08",
-      "summary": "PASS: 312 continuous-worker and broker cases run; 311 passed and one Windows symlink privilege case skipped."
-    },
-    {
-      "commit": "091382e81f08",
-      "summary": "PASS: 312 continuous-worker and broker cases run; 311 passed and one Windows symlink privilege case skipped."
-    },
-    {
-      "commit": "2ef1fb7476bb",
-      "summary": "PASS: candidate commit message policy."
-    },
-    {
-      "commit": "bed5a57aed4f",
-      "summary": "PASS: combined candidate previously ran 312 runtime cases with 311 passes and one explicit symlink privilege skip."
-    },
-    {
-      "commit": "bed5a57aed4f",
-      "summary": "PASS: combined candidate previously ran 312 runtime cases with 311 passes and one explicit symlink privilege skip."
-    },
-    {
-      "commit": "bed5a57aed4f",
-      "summary": "PASS: combined candidate previously ran 312 runtime cases with 311 passes and one explicit symlink privilege skip."
-    },
-    {
-      "commit": "0bd655834e7f",
-      "summary": "PASS: landing ancestry and remote dev observation."
-    },
-    {
-      "commit": "0bd655834e7f",
-      "summary": "PASS: landing ancestry and remote dev observation."
-    },
     {
       "commit": "b3e5c7aa2a17",
       "summary": "PASS: intent packet validation."
@@ -1031,6 +948,14 @@
       "summary": "PASS: both task inspections classify complete with no missing evidence."
     },
     {
+      "commit": "bb433bb74f64",
+      "summary": "PASS: 44 GitHub observation and target-policy tests"
+    },
+    {
+      "commit": "eb4dea3f30ab",
+      "summary": "PASS: remote task ref equals bb433bb74f645e0904ca34bf3af38516ae05a7ad"
+    },
+    {
       "commit": "f737f9199931",
       "summary": "PASS: exact candidate commit, tree, parent, diff, and commit-range checks."
     },
@@ -1039,12 +964,24 @@
       "summary": "PASS: source commit range and diff checks before merge."
     },
     {
+      "commit": "9bba1cecaec8",
+      "summary": "PASS: 44 focused GitHub observation/target-policy tests"
+    },
+    {
+      "commit": "9383c2b5e852",
+      "summary": "PASS: 135 affected tests; 134 passed and one Windows symlink test skipped."
+    },
+    {
       "commit": "36fa64e011b5",
       "summary": "PASS WITH SKIPS: 156 adjacent distribution tests; 148 passed and eight skipped."
     },
     {
       "commit": "64979977922a",
       "summary": "PASS WITH SKIPS: 126 focused tests; 118 passed and eight skipped."
+    },
+    {
+      "commit": "cb05b135eb0d",
+      "summary": "PASS: 46 target-observation, 21 PR-observation, 19 HTTP, and 12 provider-bridge tests."
     },
     {
       "commit": "6cb0a9ac8856",
@@ -1077,6 +1014,10 @@
     {
       "commit": "4c0da8974daa",
       "summary": "PASS: 43 relevant unit tests, canonical validate, doctor, commit-range policy, and diff checks."
+    },
+    {
+      "commit": "b8fb89b917c9",
+      "summary": "PASS: 134 of 135 affected tests with one Windows symlink-privilege skip and zero failures."
     },
     {
       "commit": "5ad6aa979971",
@@ -1139,6 +1080,22 @@
       "summary": "PASS: changelog preview generation and git diff checks."
     },
     {
+      "commit": "7e56ad751615",
+      "summary": "PASS: 48 focused GitHub observation/policy tests."
+    },
+    {
+      "commit": "7e56ad751615",
+      "summary": "PASS: 48 focused GitHub observation/policy tests."
+    },
+    {
+      "commit": "7e56ad751615",
+      "summary": "PASS: 48 focused GitHub observation/policy tests."
+    },
+    {
+      "commit": "963dcc7d6ede",
+      "summary": "PASS: git diff --check after this correction."
+    },
+    {
       "commit": "b4d949c1ac1f",
       "summary": "PASS: adversarial export provenance regression."
     },
@@ -1165,6 +1122,46 @@
     {
       "commit": "f147c9059e8b",
       "summary": "PASS: Q31 governance 6, export/import lifecycle 25, Q47 release bundle 18, and Q48 release draft 11 tests."
+    },
+    {
+      "commit": "e378d38e0c51",
+      "summary": "PASS: 50 GitHub observation and policy tests."
+    },
+    {
+      "commit": "1397b703a9c1",
+      "summary": "PASS: changelog preview generation."
+    },
+    {
+      "commit": "7897f7deb80c",
+      "summary": "PASS: export pack and pack status, release bundle and validation, release draft and draft validation."
+    },
+    {
+      "commit": "d6642c3d81f6",
+      "summary": "PASS: pack status is PASS_SOURCE_ANCESTOR."
+    },
+    {
+      "commit": "853d1c7a8486",
+      "summary": "PASS: committed bundle, validate, draft, and draft-validate replay changed zero of 44 files and left a clean tree."
+    },
+    {
+      "commit": "f77ecba28741",
+      "summary": "PASS: original and copied report SHA-256 match dceaf7051715b40c9054291d827bd0a16627993109f4257a184035c299753d82."
+    },
+    {
+      "commit": "d81d953a7674",
+      "summary": "PASS: original and copied report SHA-256 match 81c5b66fce3146aeda74d715fec4446752f4a32b0516f8aa6b2a7f76971683aa."
+    },
+    {
+      "commit": "43c86ffb92e1",
+      "summary": "PASS: exact local and remote dev and target identities observed."
+    },
+    {
+      "commit": "6a581dbcfbd5",
+      "summary": "PASS_WITH_SKIP: nine combined suites executed 199 cases, 198 passed and one Windows symlink privilege case skipped."
+    },
+    {
+      "commit": "4deeed08be90",
+      "summary": "PASS: source merge preserved both parents and 199 combined cases ran with 198 passes and one Windows privilege skip."
     }
   ],
   "warnings": []
