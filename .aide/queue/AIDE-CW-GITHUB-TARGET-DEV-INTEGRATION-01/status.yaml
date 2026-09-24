@@ -7,6 +7,6 @@ updated_at: 2026-09-24
 reviewed_source: e378d38e0c51b964ff0886823b5ad6ba62c82f14
 source_review: ACCEPT_WITH_NOTES
 hosted_acceptance: not_run
-pack_refresh: pending_separate_workunit
+pack_refresh: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01_active
 combined_tests: 198_passed_1_skipped_of_199
 merge_conflict: IMPLEMENT.md_resolved_with_both_histories

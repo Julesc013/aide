@@ -30,7 +30,8 @@ post-integration pack provenance before final canonical acceptance.
 - [x] Reconcile `IMPLEMENT.md`, queue index, and planning history without
   downgrading the repaired release generator or artifacts.
 - [x] Run 199 combined source cases: 198 passed, one Windows privilege skip.
-- [ ] Run post-commit canonical checks and record pack provenance.
+- [x] Run post-commit canonical checks; record the inherited pack-source
+  mismatch as the only validation failure in the child refresh baseline.
 - [ ] Commit with a prevalidated message and publish the exact candidate.
 - [ ] Land the qualified source on `dev`; then refresh derived artifacts through
   a separate bounded WorkUnit.

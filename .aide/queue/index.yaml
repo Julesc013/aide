@@ -3460,3 +3460,13 @@ items:
     prompt: .aide/queue/AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01/evidence
     description: Preserve the fresh-reviewed target source in accepted release-integrity dev ancestry and qualify the combined local source without hosted effects.
+  - id: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01
+    status: running
+    planning_state: admitted
+    result: PENDING
+    title: Refresh local portable and release artifacts for combined target source
+    task: .aide/queue/AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01/prompt.md
+    evidence: .aide/queue/AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01/evidence
+    description: Regenerate local portable and release outputs from committed combined source and prove provenance and post-commit byte convergence.

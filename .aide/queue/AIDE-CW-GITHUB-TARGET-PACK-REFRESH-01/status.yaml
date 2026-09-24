@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+id: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01
+status: running
+planning_state: admitted
+result: PENDING
+updated_at: 2026-09-24
+source_merge_commit: 6a581dbcfbd5d208f957956096aacb18b832301a
+observed_pack_source: 1397b703a9c116a5b555948b8587dc53a668237a
+publication_effect: none

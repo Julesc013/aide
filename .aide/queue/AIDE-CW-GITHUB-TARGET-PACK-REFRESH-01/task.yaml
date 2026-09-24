@@ -1,0 +1,55 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01
+title: Refresh local portable and release artifacts for combined target source
+type: local_artifact_refresh
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-24
+updated_at: 2026-09-24
+parent_task: AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01
+source_checkpoint: 6a581dbcfbd5d208f957956096aacb18b832301a
+objective: >
+  Regenerate the tracked portable pack and local release/draft artifacts from
+  the clean combined release-and-target source, clear the observed stale pack
+  provenance, and prove post-commit deterministic replay without publication.
+authority_basis: >
+  The owner explicitly directed a combined-source portable pack and derived
+  release refresh after target source integration, with provenance and replay
+  verification. Existing Q47/Q48 boundaries permit local no-publish artifacts.
+scope:
+  allowed_paths:
+    - .aide/changelog/**
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - .aide/queue/AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01/**
+    - .aide/queue/AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01/**
+    - .aide/queue/index.yaml
+    - IMPLEMENT.md
+    - PLANS.md
+  protected_paths:
+    - .aide/scripts/aide_lite.py
+    - core/**
+    - .github/**
+    - .codex/**
+  forbidden_operations:
+    - main promotion or tag creation
+    - asset upload or GitHub Release publication
+    - GitHub API mutation or hosted settings change
+    - provider, model, credential, or target-repository effect
+    - force push or history rewrite
+authorized_operations:
+  - regenerate changelog previews, portable export, release bundle, and local draft
+  - run deterministic replay and exact asset checksum checks
+  - commit and publish coherent artifact checkpoints on the integration branch
+  - integrate qualified combined source and artifacts into dev
+verification:
+  - pack-status has valid source provenance and exact payload checksums
+  - release validate and draft-validate pass with final-byte asset identities
+  - canonical validate and doctor pass after a committed clean-tree replay
+  - generated paths remain inside this task allowlist
+  - no source regression or hosted/publication effect occurs
+retained_gates:
+  - local release artifacts are not a stable published release
+  - main promotion, tag, upload, and publication require exact review
+  - native Windows privilege and hosted qualification remain open
