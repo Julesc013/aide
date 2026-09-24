@@ -29,16 +29,28 @@ that stale projection. A later full generation pass changed bytes from the
 earlier order; another complete pass then changed zero of 888 files. The
 stable replay comparison used a per-file SHA-256 map stored externally at
 `D:\Projects\AIDE\_review_scratch\historical-dev-replay-hashes-before.json`.
-The matching map has 888 paths. This is pre-artifact-commit replay; a second
-post-commit replay is still required.
+The matching map has 888 paths. That projection was committed at
+`3326868b534d6a514af14c4ca3aabc9dc8230579`. A post-commit check then
+correctly exposed `DIRTY_SOURCE_RECORDED`: its pack export had run after
+generated preview files dirtied the working tree. The projection was
+superseded locally by running export **first from clean commit `3326868b`**,
+then changelog preview, release bundle, and draft. The corrected manifest
+records `source_commit: 3326868b534d6a514af14c4ca3aabc9dc8230579` and
+`source_dirty_state: false`; pack-status, release validate, and draft-validate
+all pass. A clean-provenance replay of preview, bundle, and draft compared
+all 888 generated files and changed zero; its tree digest before and after
+was `7722774616539b12707707f59589a3c196a559dd671d78b114eaf1e69a28b9a0`.
+This repair projection still needs its own commit and post-commit replay.
+The earlier 888-file result describes deterministic bytes for the
+superseded dirty-provenance projection, not final clean provenance.
 
 The portable export's `aide_lite.py` SHA-256 equals the combined source file:
 `f63be218844ab704674821d8e37d6ca5b04502ffb957fcf1f5b477799fb0bccf`.
 The source-specific `.aide/git/commit-message-dispositions.json` is absent
-from the export. Current generated ZIP SHA-256 is
-`298b4e7b38c125540a6b04c6405712ca665b895ae64d0fa3fc95ef3a51d59204`;
+from the export. Corrected clean-provenance ZIP SHA-256 is
+`1c797d61f5c559b1e3424c71dc7306095e3438e2184351a3e02ff464c4b43fd8`;
 tar.gz SHA-256 is
-`d5a755716cd862147fd7d13a09113493800933c4b0c5487c8a52f8ef28f791f1`.
+`b2d4dc7d5ef52c0bad0394bb6cf80d14dc1fa09ea7f93147c51d03f6473588f6`.
 
 All logs are external under `D:\Projects\AIDE\_review_scratch\` with
 `historical-dev-` prefixes. These are local source and artifact checks,

@@ -28,6 +28,9 @@ Do not activate native or hosted effects or publish a release.
 - [x] Combined source committed at `e40aec47`; current generator refreshed
   portable/release/draft outputs and a stable 888-file replay changed zero.
 - [x] Affected tests and canonical local checks passed as recorded in evidence.
+- [x] Post-commit provenance exposed a dirty-source record in the first
+  projection; regenerate from clean `3326868b` with export first and record
+  the corrected clean manifest and asset hashes.
 - [ ] Commit qualified generated projection and prove post-commit replay.
 - [ ] Obtain exact independent integration review and update remote dev.
 

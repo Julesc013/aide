@@ -287,31 +287,6 @@
         "aide_result": "PASS",
         "breaking": false,
         "category": "Fixed",
-        "commit": "bb308e64f4f2",
-        "commit_sha": "bb308e64f4f23795916b1fe50827ba19043ed893",
-        "entry": "release preview binding now matches the generator's complete output set.",
-        "follow_up": "- Regenerate and commit the six source-bound preview outputs, then rebuild the export and release artifacts.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_q47_release_bundle.py\nAIDE-Token-Impact: Adds one focused Git ancestry regression; no prompt or response capture.\nAIDE-Quality-Gate: 15 Q47 tests pass; artifact regeneration remains pending.",
-        "risks": "- Generated previews must be refreshed again against this newer source commit.",
-        "scope": "release",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "fix(release): accept complete preview projection",
-        "summary": "release preview binding now matches the generator's complete output set.",
-        "type": "fix",
-        "validation": "- PASS: 15 Q47 release-bundle tests.\n- PASS: the new ancestry case uses replacement-disabled Git comparisons."
-      },
-      {
-        "aide_phase": "STABLE-DELIVERY",
-        "aide_result": "PASS",
-        "breaking": false,
-        "category": "Fixed",
         "commit": "edcd591a268b",
         "commit_sha": "edcd591a268ba8cd332ecad80a513ba3d632c3ef",
         "entry": "release bundle and validation commands now converge on one deterministic metadata state.",
@@ -1283,6 +1258,31 @@
         "summary": "preserve exact owner authorization and technical review evidence.",
         "type": "audit",
         "validation": "- PASS: accepted commit and tree identities, candidate ancestry, and final ZIP and tar.gz hashes.\n- PASS: independent read-only source and artifact review returned ACCEPT_WITH_NOTES.\n- PASS: canonical validate, doctor, and git diff --check; remote dev identity observed."
+      },
+      {
+        "aide_phase": "STABLE-DELIVERY",
+        "aide_result": "PASS_WITH_RETAINED_GATES",
+        "breaking": false,
+        "category": "Internal",
+        "commit": "3326868b534d",
+        "commit_sha": "3326868b534d6a514af14c4ca3aabc9dc8230579",
+        "entry": "refresh local preview artifacts for the combined source.",
+        "follow_up": "- Verify committed artifact provenance and replay, obtain exact integration review, then fast-forward qualified source to dev.\n\nAIDE-Task: AIDE-HISTORICAL-DEV-INTEGRATION-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS_WITH_RETAINED_GATES\nAIDE-Scope: combined local portable and release projection\nAIDE-Token-Impact: One coherent artifact refresh replaces repeated branch snapshots.\nAIDE-Quality-Gate: Combined tests passed; postcommit replay and independent integration review pending.",
+        "risks": "- Post-commit replay and independent integration review remain open; no release is published.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "build(release): refresh combined historical portable artifacts",
+        "summary": "refresh local preview artifacts for the combined source.",
+        "type": "build",
+        "validation": "- PASS: 23 historical, 29 import, 18 release, 11 draft, and 6 portable governance tests.\n- PASS: pack-status, changelog/release/draft validation, canonical validate and doctor.\n- PASS: stable precommit generation replay changed zero of 888 files; git diff --check."
       }
     ],
     "Security": [
@@ -1313,31 +1313,6 @@
       }
     ],
     "Tests": [
-      {
-        "aide_phase": "STABLE-DELIVERY",
-        "aide_result": "PASS",
-        "breaking": false,
-        "category": "Tests",
-        "commit": "bb308e64f4f2",
-        "commit_sha": "bb308e64f4f23795916b1fe50827ba19043ed893",
-        "entry": "added positive projection and unrelated-change refusal coverage.",
-        "follow_up": "- Regenerate and commit the six source-bound preview outputs, then rebuild the export and release artifacts.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_q47_release_bundle.py\nAIDE-Token-Impact: Adds one focused Git ancestry regression; no prompt or response capture.\nAIDE-Quality-Gate: 15 Q47 tests pass; artifact regeneration remains pending.",
-        "risks": "- Generated previews must be refreshed again against this newer source commit.",
-        "scope": "release",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "fix(release): accept complete preview projection",
-        "summary": "added positive projection and unrelated-change refusal coverage.",
-        "type": "fix",
-        "validation": "- PASS: 15 Q47 release-bundle tests.\n- PASS: the new ancestry case uses replacement-disabled Git comparisons."
-      },
       {
         "aide_phase": "STABLE-DELIVERY",
         "aide_result": "PASS",
@@ -1444,63 +1419,13 @@
     "Added": 2,
     "Changed": 1,
     "Docs": 8,
-    "Fixed": 19,
-    "Internal": 21,
+    "Fixed": 18,
+    "Internal": 22,
     "Security": 1,
-    "Tests": 5
+    "Tests": 4
   },
   "commit_count": 50,
   "entries": [
-    {
-      "aide_phase": "STABLE-DELIVERY",
-      "aide_result": "PASS",
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "bb308e64f4f2",
-      "commit_sha": "bb308e64f4f23795916b1fe50827ba19043ed893",
-      "entry": "release preview binding now matches the generator's complete output set.",
-      "follow_up": "- Regenerate and commit the six source-bound preview outputs, then rebuild the export and release artifacts.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_q47_release_bundle.py\nAIDE-Token-Impact: Adds one focused Git ancestry regression; no prompt or response capture.\nAIDE-Quality-Gate: 15 Q47 tests pass; artifact regeneration remains pending.",
-      "risks": "- Generated previews must be refreshed again against this newer source commit.",
-      "scope": "release",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "fix(release): accept complete preview projection",
-      "summary": "release preview binding now matches the generator's complete output set.",
-      "type": "fix",
-      "validation": "- PASS: 15 Q47 release-bundle tests.\n- PASS: the new ancestry case uses replacement-disabled Git comparisons."
-    },
-    {
-      "aide_phase": "STABLE-DELIVERY",
-      "aide_result": "PASS",
-      "breaking": false,
-      "category": "Tests",
-      "commit": "bb308e64f4f2",
-      "commit_sha": "bb308e64f4f23795916b1fe50827ba19043ed893",
-      "entry": "added positive projection and unrelated-change refusal coverage.",
-      "follow_up": "- Regenerate and commit the six source-bound preview outputs, then rebuild the export and release artifacts.\n\nAIDE-Task: AIDE-RELEASE-METADATA-INTEGRITY-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS\nAIDE-Scope: .aide/scripts/aide_lite.py,.aide/scripts/tests/test_q47_release_bundle.py\nAIDE-Token-Impact: Adds one focused Git ancestry regression; no prompt or response capture.\nAIDE-Quality-Gate: 15 Q47 tests pass; artifact regeneration remains pending.",
-      "risks": "- Generated previews must be refreshed again against this newer source commit.",
-      "scope": "release",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "fix(release): accept complete preview projection",
-      "summary": "added positive projection and unrelated-change refusal coverage.",
-      "type": "fix",
-      "validation": "- PASS: 15 Q47 release-bundle tests.\n- PASS: the new ancestry case uses replacement-disabled Git comparisons."
-    },
     {
       "aide_phase": "STABLE-DELIVERY",
       "aide_result": "PASS",
@@ -2875,6 +2800,31 @@
       "summary": "exact historical message dispositions to the dev source ancestry.",
       "type": "feat",
       "validation": "- PASS: read-only merge preflight, 23 focused historical tests, exact accepted and raw range checks, and staged diff checks.\n- WARN: portable and release outputs still reflect the earlier committed dev source; regenerate after this source commit."
+    },
+    {
+      "aide_phase": "STABLE-DELIVERY",
+      "aide_result": "PASS_WITH_RETAINED_GATES",
+      "breaking": false,
+      "category": "Internal",
+      "commit": "3326868b534d",
+      "commit_sha": "3326868b534d6a514af14c4ca3aabc9dc8230579",
+      "entry": "refresh local preview artifacts for the combined source.",
+      "follow_up": "- Verify committed artifact provenance and replay, obtain exact integration review, then fast-forward qualified source to dev.\n\nAIDE-Task: AIDE-HISTORICAL-DEV-INTEGRATION-01\nAIDE-Phase: STABLE-DELIVERY\nAIDE-Result: PASS_WITH_RETAINED_GATES\nAIDE-Scope: combined local portable and release projection\nAIDE-Token-Impact: One coherent artifact refresh replaces repeated branch snapshots.\nAIDE-Quality-Gate: Combined tests passed; postcommit replay and independent integration review pending.",
+      "risks": "- Post-commit replay and independent integration review remain open; no release is published.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "build(release): refresh combined historical portable artifacts",
+      "summary": "refresh local preview artifacts for the combined source.",
+      "type": "build",
+      "validation": "- PASS: 23 historical, 29 import, 18 release, 11 draft, and 6 portable governance tests.\n- PASS: pack-status, changelog/release/draft validation, canonical validate and doctor.\n- PASS: stable precommit generation replay changed zero of 888 files; git diff --check."
     }
   ],
   "generated_by": "aide-lite",
@@ -2885,7 +2835,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "e40aec47dd2dd5555d00f869262c3fb000a2e617",
+  "source_head": "3326868b534d6a514af14c4ca3aabc9dc8230579",
   "source_range": "HEAD latest 50 commits",
   "warnings": []
 }

@@ -1,14 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "bb308e64f4f2",
-      "summary": "Regenerate and commit the six source-bound preview outputs, then rebuild the export and release artifacts."
-    },
-    {
-      "commit": "bb308e64f4f2",
-      "summary": "Regenerate and commit the six source-bound preview outputs, then rebuild the export and release artifacts."
-    },
-    {
       "commit": "671faa232216",
       "summary": "Export this clean commit, rebuild final local artifacts, and validate their exact metadata closure."
     },
@@ -227,6 +219,10 @@
     {
       "commit": "e40aec47dd2d",
       "summary": "Regenerate through the current generator, validate combined source and archives, obtain independent integration review, then update remote dev."
+    },
+    {
+      "commit": "3326868b534d",
+      "summary": "Verify committed artifact provenance and replay, obtain exact integration review, then fast-forward qualified source to dev."
     }
   ],
   "highlights": [
@@ -257,13 +253,6 @@
       "commit": "8369ac540e4a",
       "subject": "build(release): qualify deterministic candidate",
       "summary": "exact no-publish candidate assets and draft evidence regenerated."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "bb308e64f4f2",
-      "subject": "fix(release): accept complete preview projection",
-      "summary": "release preview binding now matches the generator's complete output set."
     },
     {
       "breaking": false,
@@ -450,13 +439,6 @@
     {
       "breaking": false,
       "category": "Tests",
-      "commit": "bb308e64f4f2",
-      "subject": "fix(release): accept complete preview projection",
-      "summary": "added positive projection and unrelated-change refusal coverage."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
       "commit": "edcd591a268b",
       "subject": "fix(release): converge bundle validation bytes",
       "summary": "require validation to preserve all generated release bytes."
@@ -485,14 +467,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "bb308e64f4f2",
-      "summary": "Generated previews must be refreshed again against this newer source commit."
-    },
-    {
-      "commit": "bb308e64f4f2",
-      "summary": "Generated previews must be refreshed again against this newer source commit."
-    },
     {
       "commit": "671faa232216",
       "summary": "Preview outputs remain non-publishing and do not authorize a tag or release."
@@ -712,20 +686,16 @@
     {
       "commit": "e40aec47dd2d",
       "summary": "This source merge is not a qualified delivered artifact or release candidate until generated outputs and combined tests pass."
+    },
+    {
+      "commit": "3326868b534d",
+      "summary": "Post-commit replay and independent integration review remain open; no release is published."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "e40aec47dd2dd5555d00f869262c3fb000a2e617",
+  "source_head": "3326868b534d6a514af14c4ca3aabc9dc8230579",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "bb308e64f4f2",
-      "summary": "PASS: 15 Q47 release-bundle tests."
-    },
-    {
-      "commit": "bb308e64f4f2",
-      "summary": "PASS: 15 Q47 release-bundle tests."
-    },
     {
       "commit": "671faa232216",
       "summary": "PASS: changelog preview reports 50 commits, 0 malformed commits, and 47 highlights."
@@ -945,6 +915,10 @@
     {
       "commit": "e40aec47dd2d",
       "summary": "PASS: read-only merge preflight, 23 focused historical tests, exact accepted and raw range checks, and staged diff checks."
+    },
+    {
+      "commit": "3326868b534d",
+      "summary": "PASS: 23 historical, 29 import, 18 release, 11 draft, and 6 portable governance tests."
     }
   ],
   "warnings": []

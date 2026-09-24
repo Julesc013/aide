@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: e40aec47dd2dd5555d00f869262c3fb000a2e617
+source_head: 3326868b534d6a514af14c4ca3aabc9dc8230579
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -13,11 +13,11 @@ release_publishing: false
 
 - Added: 2
 - Changed: 1
-- Fixed: 19
+- Fixed: 18
 - Security: 1
 - Docs: 8
-- Tests: 5
-- Internal: 21
+- Tests: 4
+- Internal: 22
 
 ## Added
 
@@ -30,7 +30,6 @@ release_publishing: false
 
 ## Fixed
 
-- release preview binding now matches the generator's complete output set. (bb308e64f4f2 fix(release): accept complete preview projection)
 - release bundle and validation commands now converge on one deterministic metadata state. (edcd591a268b fix(release): converge bundle validation bytes)
 - release metadata is internally exact, checkout-independent, source-bound, and byte-stable. (8369ac540e4a build(release): qualify deterministic candidate)
 - committed release draft metadata now reflects post-checkpoint pack provenance exactly. (2819a63e794e build(release): close post-commit provenance)
@@ -67,7 +66,6 @@ release_publishing: false
 
 ## Tests
 
-- added positive projection and unrelated-change refusal coverage. (bb308e64f4f2 fix(release): accept complete preview projection)
 - require validation to preserve all generated release bytes. (edcd591a268b fix(release): converge bundle validation bytes)
 - added JSON/Markdown mismatch and malformed JSON cases. (6cbd104cb048 fix(release): bind both preview representations)
 - add official-shape and adversarial selector coverage. (7e56ad751615 fix(workflow): bind documented path ref)
@@ -96,6 +94,7 @@ release_publishing: false
 - persist exact final customization qualification and review gate. (1c0327782f8a audit(queue): record final customization review subject)
 - clarify final consumer receipt provenance. (71416928aa36 audit(queue): distinguish receipt byte identities)
 - preserve exact owner authorization and technical review evidence. (a5cd5ca5ddf7 audit(queue): record owner and technical customization acceptance)
+- refresh local preview artifacts for the combined source. (3326868b534d build(release): refresh combined historical portable artifacts)
 
 ## Malformed Commits
 

@@ -1,7 +1,7 @@
 # Release Validation
 
 - result: PASS
-- pack_status: DIRTY_SOURCE_RECORDED
+- pack_status: PASS
 - checksum_validation: PASS
 - fixture_extract: PASS
 - no_publish: true
