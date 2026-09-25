@@ -24,7 +24,8 @@ allowlist; use disposable targets for write tests.
 ## Progress
 
 - [x] Identified the path-check/write gap in current `apply_import_operation`.
-- [ ] Reproduce it with a deterministic disposable-parent substitution.
+- [x] Reproduce it with a deterministic disposable-parent substitution. The
+  current importer wrote `compact-task.md` outside the target on Windows.
 - [ ] Repair and qualify the source with the reviewed shared helper.
 - [ ] Close independent review, provenance, and dev integration.
 

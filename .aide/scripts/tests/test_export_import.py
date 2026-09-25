@@ -4,6 +4,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 import importlib.util
 import json
 import shutil
@@ -712,6 +713,77 @@ class ExportImportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "reserved project/import state"):
             aide_lite.apply_import_pack(pack, target)
         self.assertEqual(authored.read_bytes(), original)
+
+    def test_import_payload_does_not_follow_a_swapped_parent(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            target_root = root / "target"
+            parent = target_root / ".aide" / "prompts"
+            parent.mkdir(parents=True)
+            parked = target_root / ".aide" / "prompts-parked"
+            outside = root / "outside"
+            outside.mkdir()
+            self.assertEqual(parent.resolve().parent, (target_root / ".aide").resolve())
+            self.assertEqual(parked.parent.resolve(), (target_root / ".aide").resolve())
+
+            source_rel = ".aide/prompts/compact-task.md"
+            payload = b"# Portable managed content\n"
+            pack_root = root / "pack"
+            source = pack_root / "files" / source_rel
+            source.parent.mkdir(parents=True)
+            source.write_bytes(payload)
+            operation = {
+                "action": "copy",
+                "target": source_rel,
+                "source": source_rel,
+                "kind": "managed_file",
+                "preimage_digest": "missing",
+                "postimage_digest": aide_lite.digest_bytes(payload),
+            }
+
+            original_mkstemp = tempfile.mkstemp
+            attempted = False
+
+            def swap_before_staging(*args: object, **kwargs: object) -> tuple[int, str]:
+                nonlocal attempted
+                if Path(str(kwargs.get("dir"))) == parent and not attempted:
+                    attempted = True
+                    try:
+                        parent.rename(parked)
+                    except PermissionError:
+                        # A pinned ancestor that denies deletion has already
+                        # closed this interleaving; staging can continue.
+                        pass
+                    else:
+                        if sys.platform == "win32":
+                            junction = subprocess.run(
+                                ["cmd", "/c", "mklink", "/J", str(parent), str(outside)],
+                                capture_output=True,
+                                text=True,
+                                encoding="utf-8",
+                            )
+                            self.assertEqual(junction.returncode, 0, junction.stderr)
+                        else:
+                            parent.symlink_to(outside, target_is_directory=True)
+                return original_mkstemp(*args, **kwargs)
+
+            try:
+                with mock.patch.object(aide_lite.tempfile, "mkstemp", side_effect=swap_before_staging):
+                    try:
+                        aide_lite.apply_import_operation(pack_root, target_root, operation)
+                    except (OSError, RuntimeError, ValueError):
+                        pass
+                outside_entries = list(outside.iterdir())
+            finally:
+                if parent.is_symlink():
+                    parent.unlink()
+                elif getattr(parent, "is_junction", lambda: False)():
+                    parent.rmdir()
+                if parked.exists():
+                    parked.rename(parent)
+
+            self.assertTrue(attempted, "the importer must exercise the staging boundary")
+            self.assertEqual(outside_entries, [], "import wrote through a swapped parent")
 
     def test_removal_plan_requires_an_exact_valid_receipt(self) -> None:
         source_root = self.make_source_repo()

@@ -11566,3 +11566,12 @@ DLL mapping, image or grant effect is part of this source implementation.
   advanced remote dev to `ae0e29e98eb436136f1d62d7830a4d8b20251b32`,
   matching the local primary and task integration branch; GitHub's ref endpoint
   returned the same object.
+
+## 2026-09-25 - Portable importer parent substitution regression
+
+- Added a deterministic disposable Windows junction test at the importer
+  staging boundary. The current importer wrote a managed prompt into an
+  outside sibling directory after the parent was replaced, so the no-outside-
+  write assertion failed as intended. The temporary fixture was cleaned.
+- The test is retained as the repair oracle; no importer source fix, delivered
+  artifact claim, or real target effect is recorded yet.

@@ -3532,7 +3532,7 @@ items:
     description: Reconcile planner source with later dev work and regenerate current-source portable and local release outputs.
   - id: AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01
     status: running
-    planning_state: adversarial_regression_in_progress
+    planning_state: parent_escape_reproduced_repair_helper_pending
     result: PENDING
     title: Keep delivered-pack importer writes inside the observed target
     task: .aide/queue/AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01/task.yaml
