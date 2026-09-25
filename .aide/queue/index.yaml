@@ -3531,9 +3531,9 @@ items:
     evidence: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/evidence
     description: Reconcile planner source with later dev work and regenerate current-source portable and local release outputs.
   - id: AIDE-OWNED-REPAIR-DEV-INTEGRATION-01
-    status: running
-    planning_state: reviewed_dev_effect_pending
-    result: PENDING_INTEGRATION
+    status: passed
+    planning_state: integrated_to_remote_dev
+    result: PASS_WITH_RETAINED_GATES
     title: Integrate reviewed owned repair with current dev
     task: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/ExecPlan.md

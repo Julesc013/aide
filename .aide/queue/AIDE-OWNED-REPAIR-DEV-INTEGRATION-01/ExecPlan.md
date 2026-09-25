@@ -36,7 +36,8 @@ qualify full lifecycle, native/hosted operation, main, or publication.
   `evidence/consumer-and-replay.md`.
 - [x] Obtain independent exact `ACCEPT_WITH_NOTES` for `e4697aaa`,
   tree `a0b2ed70`. See `evidence/review-e4697aaa.md`.
-- [ ] Fast-forward and observe remote dev under one Git writer.
+- [x] Fast-forward local dev and push normally under one writer; Git and
+  GitHub observed remote `6b4007d0`, tree `36702725`.
 
 ## Recovery
 

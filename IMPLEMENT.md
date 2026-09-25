@@ -11582,3 +11582,22 @@ Owner review found a final-write race in the first candidate. The repair now pub
 - Canonical validation on the source branch still reports old generated-pack
   provenance. Combined artifact generation, actual consumer qualification,
   dev integration, and broader importer/lifecycle safety remain pending.
+
+## 2026-09-25 - Owned repair combined dev integration
+
+- Merged accepted repair source with current dev removal planning and release
+  machinery in `71501c6b`, retaining both parent histories. The combined
+  importer suite passed 42/42 and release-adjacent suites passed 46/46.
+- Generated and converged local ZIP/tar release bytes from source `71501c6b`.
+  Two extracted offline consumers passed import, owned-file repair, installed
+  doctor, read-only removal planning, and direct-edit preservation. A full
+  postcommit replay changed zero of 44 release files.
+- Independent exact candidate review accepted `e4697aaa` for dev source and
+  local artifact integration with notes. A normal fast-forward push advanced
+  remote dev to `6b4007d06546fe234f96730751d94d7c540a223e`, confirmed by
+  Git and GitHub. Full importer write safety, removal/rollback apply,
+  native/hosted qualification, main, and publication remain open.
+- A subsequent Windows staging check exposed a possible second-writer race
+  in the repair helper's `mkstemp` publication path. This is a new
+  fix-forward safety blocker pending an exact dev regression and review;
+  no main or release effect used these bytes.

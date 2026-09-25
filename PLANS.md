@@ -3715,3 +3715,14 @@ physical host bytes, private loading, grants, and activation remain open.
 ## Delivered-pack owned repair apply (2026-09-25)
 
 `AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01` implements one explicit repair of a missing receipt-owned file from the exact validated delivered pack in a disposable consumer. Exact source `45c5ce91` (tree `b119a52d`) passed 39 importer tests and independent focused rereview. Integrate it with current dev while preserving the newer release generator and removal planner, then regenerate and qualify combined portable/release artifacts. Managed-section repair, modified-file reconciliation, rollback, removal, importer write safety, live-target adoption, and publication remain separate work.
+
+The combined owned repair candidate `e4697aaa` passed 42 importer and 46
+release-adjacent tests, two extracted archive consumers, zero-change replay
+of 44 release files, and independent dev-integration review. Remote dev was
+observed at `6b4007d0` after a normal fast-forward push. The next critical
+path is importer write safety, then wider lifecycle apply and final release
+qualification. This bounded dev result does not accept main or publication.
+After integration, an adversarial check found that Windows may admit a
+second writer to the repair helper's `mkstemp` staging file before no-replace
+publication. Fix and independently review that race before relying on repair
+write safety; the earlier dev integration is not stable-release acceptance.
