@@ -11987,3 +11987,8 @@ Owner review found a final-write race in the first candidate. The repair now pub
   suggestion. Recorded source cause and exact log in the evaluation WorkUnit.
   Product source and release assets stayed untouched; a bounded source repair
   and final delivered-byte rerun are next.
+- The independent evidence reviewer accepted `b4501028` with notes and
+  identified the evaluation task's explicit dev-mutation prohibition. A
+  separate integration WorkUnit was admitted at the same source head for an
+  exact effect review. Its admission changes only queue/docs metadata; no ref,
+  product source or archive effect is claimed.
