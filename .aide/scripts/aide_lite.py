@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import argparse
 import builtins
-from contextlib import contextmanager
+from contextlib import ExitStack, contextmanager
 import fnmatch
 import gzip
 import hashlib
@@ -41288,6 +41288,8 @@ def build_portable_import_intent(
     plan_digest: str,
     operations: list[dict[str, str]],
     next_receipt: dict[str, object],
+    skipped: list[dict[str, str]] | None = None,
+    plan_operations: list[dict[str, str]] | None = None,
 ) -> dict[str, object]:
     writes = [
         {
@@ -41308,6 +41310,8 @@ def build_portable_import_intent(
         "operations": writes,
         "next_receipt": next_receipt,
     }
+    if skipped is not None:
+        record["plan_snapshot"] = {"operations": plan_operations if plan_operations is not None else operations, "skipped": skipped}
     record["intent_digest"] = portable_import_record_digest(record, "intent_digest")
     return record
 
@@ -42072,6 +42076,194 @@ def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[s
     return result.action == "written"
 
 
+def recover_partial_import(
+    pack_root: Path,
+    target_root: Path,
+    pending: dict[str, object],
+    recovery: dict[str, object],
+    mode: str,
+    predecessor_pack: Path | None,
+    expected_plan_digest: str,
+    resolutions: dict[str, Path],
+) -> dict[str, object]:
+    """Continue only an exact, snapshot-bound partial Windows import on request."""
+    def refused() -> dict[str, object]:
+        return {
+            "status": "RECOVERY_REQUIRED", "dry_run": False, "mode": mode,
+            "target": normalize_rel(target_root),
+            "operation_count": len(pending.get("operations", [])),
+            "conflicts": [], "skipped": [], "operations": [], "written": [],
+            "recovery": classify_portable_import_recovery(target_root, pending),
+            "plan_digest": pending.get("plan_digest"),
+        }
+
+    def verified_observed_digest(target_rel: str) -> str:
+        target = portable_target_path(target_root, target_rel)
+        observed = target_file_digest(target)
+        if observed not in {"missing", "not-a-file"}:
+            with windows_pinned_directory(target.parent, for_write=False):
+                kernel, handle = portable_import_verified_leaf(target, observed, read_only=True)
+                kernel.CloseHandle(handle)
+        return observed
+
+    if (
+        os.name != "nt"
+        or pending.get("target") != normalize_rel(target_root)
+        or pending.get("pack_id") != EXPORT_PACK_ID
+        or re.fullmatch(r"[0-9a-f]{64}", expected_plan_digest) is None
+        or expected_plan_digest != pending.get("plan_digest")
+        or recovery.get("classification") != "partial"
+        or recovery.get("outstanding_backups")
+    ):
+        return refused()
+    snapshot = pending.get("plan_snapshot")
+    next_receipt = pending.get("next_receipt")
+    if not isinstance(snapshot, dict) or not isinstance(next_receipt, dict):
+        return refused()  # Old intents retain their original safe-refusal behavior.
+    operations = snapshot.get("operations")
+    skipped = snapshot.get("skipped")
+    if not isinstance(operations, list) or not isinstance(skipped, list) or not all(isinstance(item, dict) for item in operations + skipped):
+        return refused()
+    if (
+        next_receipt.get("mode") != mode
+        or next_receipt.get("pack") != import_pack_identity(pack_root)
+        or next_receipt.get("predecessor_pack") != (import_pack_identity(predecessor_pack) if predecessor_pack else None)
+        or next_receipt.get("plan_digest") != expected_plan_digest
+    ):
+        return refused()
+    prior_receipt = load_portable_import_receipt(target_root)
+    if target_file_digest(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH)) != pending.get("receipt_preimage_digest"):
+        return refused()
+    try:
+        disabled, controls_digest = project_update_controls(target_root, prior_receipt)
+        if controls_digest != next_receipt.get("project_controls_digest") or sorted(disabled) != next_receipt.get("disabled_features"):
+            return refused()
+        if import_plan_digest(pack_root, target_root, mode, operations, [], skipped, predecessor_pack, controls_digest) != expected_plan_digest:
+            return refused()
+        if build_portable_import_receipt(pack_root, mode, operations, expected_plan_digest, predecessor_pack, disabled, controls_digest) != next_receipt:
+            return refused()
+        write_actions = {"copy", "update_owned", "resolve_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
+        expected_writes = []
+        for item in operations:
+            if item.get("action") not in write_actions or item.get("preimage_digest") == item.get("postimage_digest"):
+                continue
+            relative = Path(item["target"])
+            backup_rel = (
+                (relative.parent / f".{relative.name}.aide-import-backup-{expected_plan_digest[:20]}").as_posix()
+                if item["preimage_digest"] != "missing" else None
+            )
+            expected_writes.append({"target": item["target"], "preimage_digest": item["preimage_digest"],
+                "postimage_digest": item["postimage_digest"], "backup_rel": backup_rel})
+        if expected_writes != pending.get("operations"):
+            return refused()
+        included = set(pack_manifest_list(pack_root, "included_files"))
+        template_targets = {
+            ".aide/profile.template.yaml": ".aide/profile.yaml",
+            ".aide/memory/project-state.template.md": ".aide/memory/project-state.md",
+            ".aide/memory/decisions.template.md": ".aide/memory/decisions.md",
+            ".aide/memory/open-risks.template.md": ".aide/memory/open-risks.md",
+        }
+        seen: set[str] = set()
+        resolution_data: dict[str, bytes] = {}
+        resolution_targets = {str(item["target"]) for item in operations if item.get("action") == "resolve_owned"}
+        if set(resolutions) != resolution_targets:
+            return refused()
+        for item in operations:
+            target_rel = item["target"]
+            source_rel = item["source"]
+            action = item["action"]
+            kind = item["kind"]
+            if not isinstance(target_rel, str) or target_rel in seen or "\\" in target_rel or normalize_rel(target_rel) != target_rel:
+                return refused()
+            seen.add(target_rel)
+            portable_target_path(target_root, target_rel)
+            if action not in write_actions | {"unchanged", "preserve", "preserve_local", "preserve_disabled"}:
+                return refused()
+            if source_rel == "<generated>":
+                if target_rel != ".gitignore" or kind != "target_owned_additive" or action not in {"unchanged", "ensure_local_state_ignore"} or item.get("source_digest") != item.get("postimage_digest"):
+                    return refused()
+            else:
+                if not isinstance(source_rel, str) or "\\" in source_rel or normalize_rel(source_rel) != source_rel or "files/" + source_rel not in included:
+                    return refused()
+                source = pack_root / "files" / source_rel
+                if kind == "portable_managed_section":
+                    block = portable_managed_block(read_text(source))
+                    if source_rel != "AGENTS.md.template" or target_rel != "AGENTS.md" or block is None or digest_bytes(block.encode("utf-8")) != item.get("source_digest"):
+                        return refused()
+                elif kind == "target_owned_template":
+                    if template_targets.get(source_rel) != target_rel or action not in {"preserve", "create_from_template"} or sha256_file(source) != item.get("source_digest"):
+                        return refused()
+                elif kind in {"managed_file", "disabled_feature"}:
+                    if source_rel != target_rel or sha256_file(source) != item.get("source_digest"):
+                        return refused()
+                else:
+                    return refused()
+            observed = verified_observed_digest(target_rel)
+            if observed not in {item.get("preimage_digest"), item.get("postimage_digest")}:
+                return refused()
+            if action == "resolve_owned":
+                data = read_portable_resolution_bytes(Path(resolutions[target_rel]), pack_root, target_root)
+                if digest_bytes(data) != item.get("resolution_digest") or digest_bytes(data) != item.get("postimage_digest"):
+                    return refused()
+                resolution_data[target_rel] = data
+
+        def external_inputs_match() -> bool:
+            try:
+                current_disabled, current_controls = project_update_controls(target_root, prior_receipt)
+                if current_disabled != disabled or current_controls != controls_digest:
+                    return False
+                return all(read_portable_resolution_bytes(Path(resolutions[rel]), pack_root, target_root) == body for rel, body in resolution_data.items())
+            except (OSError, RuntimeError, ValueError):
+                return False
+
+        written: list[str] = []
+        for item in operations:
+            if item.get("action") not in write_actions or item.get("preimage_digest") == item.get("postimage_digest"):
+                continue
+            observed = verified_observed_digest(item["target"])
+            if observed == item["postimage_digest"]:
+                continue
+            if observed != item["preimage_digest"] or not external_inputs_match():
+                return refused()
+            try:
+                if apply_import_operation(pack_root, target_root, item, resolution_data):
+                    written.append(item["target"])
+            except (OSError, RuntimeError, ValueError):
+                return refused()
+        if not external_inputs_match() or any(
+            verified_observed_digest(item["target"]) != item["postimage_digest"]
+            for item in operations
+        ):
+            return refused()
+        if target_file_digest(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH)) != pending["receipt_preimage_digest"]:
+            return refused()
+        valid, problems = validate_pack_checksums(pack_root)
+        if not valid or problems or import_pack_identity(pack_root) != next_receipt["pack"]:
+            return refused()
+        # Keep every existing postimage regular, single-linked, and immutable
+        # until the receipt and intent have been published/retired.
+        with ExitStack() as guards:
+            for item in operations:
+                postimage = item["postimage_digest"]
+                if postimage == "missing":
+                    continue
+                target = portable_target_path(target_root, item["target"])
+                guards.enter_context(windows_pinned_directory(target.parent, for_write=False))
+                kernel, handle = portable_import_verified_leaf(target, postimage, read_only=True)
+                guards.callback(kernel.CloseHandle, handle)
+            receipt_bytes = stable_json_text(next_receipt).encode("utf-8")
+            portable_import_write_exact(target_root, PORTABLE_IMPORT_RECEIPT_PATH, receipt_bytes,
+                pending["receipt_preimage_digest"], pending.get("receipt_backup_rel"))
+            portable_import_delete_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(pending).encode("utf-8"))
+        return {"status": "RECOVERED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root),
+            "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations,
+            "written": sorted(written), "plan_digest": expected_plan_digest,
+            "receipt": PORTABLE_IMPORT_RECEIPT_PATH, "receipt_written": True,
+            "project_controls_digest": controls_digest}
+    except (KeyError, TypeError, OSError, RuntimeError, ValueError):
+        return refused()
+
+
 def _apply_import_pack_unlocked(
     pack_root: Path,
     target_root: Path,
@@ -42081,6 +42273,7 @@ def _apply_import_pack_unlocked(
     expected_plan_digest: str | None = None,
     fail_after_writes: int | None = None,
     resolutions: dict[str, Path] | None = None,
+    recover_partial: bool = False,
 ) -> dict[str, object]:
     pack_root = pack_root.resolve()
     target_root = target_root.resolve()
@@ -42098,11 +42291,16 @@ def _apply_import_pack_unlocked(
             raise ValueError("invalid predecessor pack checksums: " + "; ".join(predecessor_problems))
     if portable_target_path(target_root, PORTABLE_REPAIR_INTENT_PATH).exists():
         raise ValueError("pending portable repair intent requires repair recovery")
+    if recover_partial and (dry_run or expected_plan_digest is None or os.name != "nt"):
+        raise ValueError("partial import recovery requires Windows, apply mode and --expect-plan")
     pending = load_portable_import_intent(target_root)
     if pending is not None:
         recovery = classify_portable_import_recovery(target_root, pending)
         if dry_run:
             return {"status": "RECOVERY_REQUIRED", "dry_run": True, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
+        if recover_partial and recovery["classification"] == "partial":
+            return recover_partial_import(pack_root, target_root, pending, recovery, mode,
+                predecessor_pack, expected_plan_digest, resolutions or {})
         if recovery["classification"] == "completed":
             expected_controls = pending["next_receipt"].get("project_controls_digest")
             if expected_controls not in {None, "missing"} and target_file_digest(portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)) != expected_controls:
@@ -42127,6 +42325,8 @@ def _apply_import_pack_unlocked(
                 portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
         else:
             return {"status": "RECOVERY_REQUIRED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
+    if recover_partial:
+        raise ValueError("partial import recovery requires a pending intent")
     prior_receipt = load_portable_import_receipt(target_root)
     disabled_features, controls_digest = project_update_controls(target_root, prior_receipt)
     if os.name != "nt" and not dry_run and (resolutions or disabled_features or (prior_receipt and prior_receipt.get("disabled_features"))):
@@ -42145,6 +42345,7 @@ def _apply_import_pack_unlocked(
     resolution_data: dict[str, bytes] = {}
     operations, conflicts, skipped = import_pack_plan(pack_root, target_root, mode=mode, predecessor_pack=predecessor_pack, resolutions=resolutions, resolution_data=resolution_data, disabled_features=disabled_features)
     plan_digest = import_plan_digest(pack_root, target_root, mode, operations, conflicts, skipped, predecessor_pack, controls_digest)
+    plan_operations = [dict(operation) for operation in operations]
     if expected_plan_digest is not None and expected_plan_digest != plan_digest:
         return {"status": "STALE_PLAN", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": conflicts, "skipped": skipped, "operations": operations, "written": [], "plan_digest": plan_digest, "expected_plan_digest": expected_plan_digest, "project_controls_digest": controls_digest}
     if dry_run:
@@ -42169,7 +42370,7 @@ def _apply_import_pack_unlocked(
         if operation.get("action") in {"copy", "update_owned", "resolve_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"} and operation.get("preimage_digest") not in {"missing", operation.get("postimage_digest")}:
             relative = Path(operation["target"])
             operation["backup_rel"] = (relative.parent / f".{relative.name}.aide-import-backup-{plan_digest[:20]}").as_posix()
-    intent = build_portable_import_intent(target_root, plan_digest, operations, next_receipt)
+    intent = build_portable_import_intent(target_root, plan_digest, operations, next_receipt, skipped, plan_operations)
     intent["receipt_preimage_digest"] = receipt_preimage_digest
     intent["receipt_postimage_digest"] = digest_bytes(stable_json_text(next_receipt).encode("utf-8"))
     if receipt_preimage_digest != "missing":
@@ -42276,11 +42477,12 @@ def apply_import_pack(
     expected_plan_digest: str | None = None,
     fail_after_writes: int | None = None,
     resolutions: dict[str, Path] | None = None,
+    recover_partial: bool = False,
 ) -> dict[str, object]:
     if dry_run:
-        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions)
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions, recover_partial)
     with portable_lifecycle_lock(target_root.resolve()):
-        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions)
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions, recover_partial)
 
 
 def reject_portable_rollback_pack_reparse(pack_root: Path) -> None:
@@ -42751,6 +42953,7 @@ def command_import_pack(args: argparse.Namespace) -> int:
         predecessor_pack=predecessor_pack,
         expected_plan_digest=args.expect_plan,
         resolutions=resolutions,
+        recover_partial=args.recover_partial,
     )
     explanations = explain_import_result(result, target_root, customizations) if customizations is not None else []
     if args.feedback_out:
@@ -44809,6 +45012,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     import_parser.add_argument("--from-pack", help="Exact validated predecessor pack required for automatic managed updates, manual resolution, or an unrecorded baseline.")
     import_parser.add_argument("--resolve", nargs=2, action="append", metavar=("TARGET", "FILE"), help="Use FILE's exact bytes as the explicit postimage for a receipt-owned conflict; requires --from-pack and --expect-plan on apply.")
     import_parser.add_argument("--expect-plan", help="Exact plan digest printed by a prior dry-run; changed inputs refuse apply.")
+    import_parser.add_argument("--recover-partial", action="store_true", help="Explicitly reconcile a partial import only from its exact intent, pack, predecessor, inputs and plan.")
     import_parser.add_argument(
         "--mode",
         choices=sorted(IMPORT_MODES),

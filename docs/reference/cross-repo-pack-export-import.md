@@ -92,6 +92,18 @@ If a previous import has an unresolved recovery intent, a dry run reports
 `RECOVERY_REQUIRED` without changing that intent or writing feedback. Use the
 explicit recovery path before requesting a fresh update plan.
 
+For a Windows import stopped after some payload writes, inspect the pending
+intent and its `plan_digest`, preserve the target and both packs, and repeat
+the exact original inputs with `--recover-partial --expect-plan <digest>`.
+Include the same `--from-pack`, `--mode`, and each `--resolve` file used for the
+interrupted update. An ordinary retry still refuses a partial state. The
+explicit recovery verifies the saved full plan against the pack, predecessor,
+receipt, project controls, resolution bytes, and every target preimage or
+postimage before continuing. It refuses changed, linked, or unsafe files and
+keeps the intent for inspection. Older intents without a full plan snapshot
+also require manual reconciliation. Recovery never takes a new update plan or
+infers the reason for a project edit.
+
 ## Purpose
 
 Q21 creates the first portable AIDE Lite Pack. Q25 repairs its integrity and

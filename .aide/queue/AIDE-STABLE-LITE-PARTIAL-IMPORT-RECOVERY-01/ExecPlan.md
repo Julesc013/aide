@@ -44,6 +44,13 @@ refusal remains a valid fallback for old intents without replay metadata.
 
 ## Progress
 
-- [ ] Admit this bounded source task and preserve prior evidence effect.
-- [ ] Add failing partial-resume regressions and implement guarded behavior.
+- [x] Admit this bounded source task and preserve prior evidence effect.
+- [x] Add failing partial-resume regressions and implement guarded behavior.
 - [ ] Complete independent review, artifact projection and qualified dev effect.
+
+The first red test raised `TypeError` for the absent explicit recovery option.
+Focused Windows cases now pass for fresh and predecessor updates, a repeated
+interruption, wrong identities and mode, changed controls, rival edits, linked
+postimages, old intents, and changed manual resolution bytes. The full importer
+suite remains running; its result is not yet claimed. Source review and
+delivered-byte qualification remain pending.

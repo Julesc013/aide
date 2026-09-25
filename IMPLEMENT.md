@@ -12064,3 +12064,15 @@ Owner review found a final-write race in the first candidate. The repair now pub
   lifecycle canary also passed on the same ZIP and its logs were hash-audited.
   Final supported profile, main, tag, public release and downloaded-byte
   acceptance remain open.
+- Admitted `AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01` from the observed
+  `dev@e88b1c2e` forced-restart checkpoint. A red regression reproduced the
+  missing explicit recovery option. The candidate now stores a full original
+  import-plan snapshot in new intents and offers Windows-only
+  `--recover-partial --expect-plan` reconciliation. It binds the current and
+  predecessor packs, prior receipt, controls, resolutions, original decisions
+  and every target pre/postimage; anchored single-link guards hold existing
+  postimages through receipt publication. Implicit retries and older intents
+  retain safe refusal. Focused fresh/update, second-interruption, wrong-input,
+  rival, linked-file and resolution-change regressions pass. The full importer
+  suite, independent source review, delivered archive checks, dev integration
+  and stable release remain open.

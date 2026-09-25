@@ -4,7 +4,6 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from unittest import mock
 import importlib.util
 import json
 import shutil
@@ -1099,6 +1098,178 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(resumed["recovery"]["classification"], "partial")
         self.assertEqual(resumed["written"], [])
         self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file())
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
+    def test_explicit_partial_recovery_finishes_fresh_and_predecessor_update(self) -> None:
+        source_root = self.make_source_repo()
+        first_rel = ".aide/prompts/compact-task.md"
+        second_rel = ".aide/policies/token-budget.yaml"
+        pack_v1 = self.freeze_pack(source_root, "partial-recover-v1")
+        target = source_root.parent / "partial-recover-target"
+        target.mkdir()
+        authored = target / "project-owned.txt"
+        authored.write_bytes(b"Keep project bytes.\r\n")
+
+        first = aide_lite.apply_import_pack(pack_v1, target, fail_after_writes=1)
+        self.assertEqual(first["status"], "INTERRUPTED")
+        self.assertEqual(first["recovery"]["classification"], "partial")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "RECOVERY_REQUIRED")
+        original_apply = aide_lite.apply_import_operation
+        attempted = 0
+        def interrupt_recovery(*args: object, **kwargs: object) -> bool:
+            nonlocal attempted
+            attempted += 1
+            if attempted == 2:
+                raise RuntimeError("simulated second interruption")
+            return original_apply(*args, **kwargs)
+        with mock.patch.object(aide_lite, "apply_import_operation", side_effect=interrupt_recovery):
+            second_interruption = aide_lite.apply_import_pack(
+                pack_v1, target, expected_plan_digest=first["plan_digest"], recover_partial=True
+            )
+        self.assertEqual(second_interruption["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(second_interruption["recovery"]["classification"], "partial")
+        resumed = aide_lite.apply_import_pack(
+            pack_v1, target, expected_plan_digest=first["plan_digest"], recover_partial=True
+        )
+        self.assertEqual(resumed["status"], "RECOVERED")
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+        self.assertEqual(aide_lite.load_portable_import_receipt(target)["pack"], aide_lite.import_pack_identity(pack_v1))
+        self.assertEqual(authored.read_bytes(), b"Keep project bytes.\r\n")
+
+        aide_lite.write_text(source_root / first_rel, "# Changed by successor one\n")
+        aide_lite.write_text(source_root / second_rel, "version: successor-two\n")
+        pack_v2 = self.freeze_pack(source_root, "partial-recover-v2")
+        second = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, fail_after_writes=1)
+        self.assertEqual(second["status"], "INTERRUPTED")
+        self.assertEqual(second["recovery"]["classification"], "partial")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "RECOVERY_REQUIRED")
+        resumed_update = aide_lite.apply_import_pack(
+            pack_v2, target, predecessor_pack=pack_v1,
+            expected_plan_digest=second["plan_digest"], recover_partial=True,
+        )
+        self.assertEqual(resumed_update["status"], "RECOVERED")
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+        self.assertEqual(aide_lite.load_portable_import_receipt(target)["pack"], aide_lite.import_pack_identity(pack_v2))
+        self.assertEqual((target / first_rel).read_text(encoding="utf-8"), "# Changed by successor one\n")
+        self.assertEqual((target / second_rel).read_text(encoding="utf-8"), "version: successor-two\n")
+        self.assertEqual(authored.read_bytes(), b"Keep project bytes.\r\n")
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
+    def test_partial_recovery_refuses_wrong_inputs_rivals_and_old_intent(self) -> None:
+        source_root = self.make_source_repo()
+        pack_v1 = self.freeze_pack(source_root, "partial-refusal-v1")
+        target = source_root.parent / "partial-refusal-target"
+        aide_lite.apply_import_pack(pack_v1, target)
+        aide_lite.write_text(source_root / ".aide/prompts/compact-task.md", "# Incoming one\n")
+        aide_lite.write_text(source_root / ".aide/policies/token-budget.yaml", "version: incoming-two\n")
+        pack_v2 = self.freeze_pack(source_root, "partial-refusal-v2")
+        interrupted = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, fail_after_writes=1)
+        self.assertEqual(interrupted["recovery"]["classification"], "partial")
+
+        def state() -> dict[str, str]:
+            return {item.relative_to(target).as_posix(): aide_lite.sha256_file(item)
+                for item in target.rglob("*") if item.is_file()}
+
+        before = state()
+        for label, current, previous, digest, mode in (
+            ("wrong-plan", pack_v2, pack_v1, "0" * 64, "safe"),
+            ("wrong-pack", pack_v1, None, interrupted["plan_digest"], "safe"),
+            ("missing-predecessor", pack_v2, None, interrupted["plan_digest"], "safe"),
+            ("wrong-mode", pack_v2, pack_v1, interrupted["plan_digest"], "full"),
+        ):
+            with self.subTest(label=label):
+                refused = aide_lite.apply_import_pack(current, target, mode=mode,
+                    predecessor_pack=previous, expected_plan_digest=digest, recover_partial=True)
+                self.assertEqual(refused["status"], "RECOVERY_REQUIRED")
+                self.assertEqual(state(), before)
+
+        unwritten = next(item["target"] for item in interrupted["operations"]
+            if item["action"] in {"copy", "update_owned"} and item["target"] not in interrupted["written"]
+            and item["preimage_digest"] != item["postimage_digest"])
+        rival = target / unwritten
+        original = rival.read_bytes() if rival.exists() else None
+        rival.parent.mkdir(parents=True, exist_ok=True)
+        rival.write_bytes(b"# Rival project edit\n")
+        rival_state = state()
+        refused = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1,
+            expected_plan_digest=interrupted["plan_digest"], recover_partial=True)
+        self.assertEqual(refused["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(state(), rival_state)
+        if original is None:
+            rival.unlink()
+        else:
+            rival.write_bytes(original)
+
+        controls = target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
+        aide_lite.write_text(controls, aide_lite.stable_json_text({
+            "schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA_V2,
+            "entries": {}, "disabled_features": [],
+        }))
+        control_state = state()
+        refused = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1,
+            expected_plan_digest=interrupted["plan_digest"], recover_partial=True)
+        self.assertEqual(refused["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(state(), control_state)
+        controls.unlink()
+
+        already_written = target / interrupted["written"][0]
+        second_link = target / "project-hardlink-copy"
+        os.link(already_written, second_link)
+        linked_state = state()
+        refused = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1,
+            expected_plan_digest=interrupted["plan_digest"], recover_partial=True)
+        self.assertEqual(refused["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(state(), linked_state)
+        second_link.unlink()
+
+        intent_path = target / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+        old_intent = aide_lite.load_portable_import_intent(target)
+        old_intent.pop("plan_snapshot")
+        old_intent["intent_digest"] = aide_lite.portable_import_record_digest(old_intent, "intent_digest")
+        intent_path.write_text(aide_lite.stable_json_text(old_intent), encoding="utf-8")
+        legacy_state = state()
+        refused = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1,
+            expected_plan_digest=interrupted["plan_digest"], recover_partial=True)
+        self.assertEqual(refused["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(state(), legacy_state)
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
+    def test_partial_recovery_requires_exact_manual_resolution_bytes(self) -> None:
+        source_root = self.make_source_repo()
+        resolved_rel = ".aide/prompts/compact-task.md"
+        other_rel = ".aide/policies/token-budget.yaml"
+        pack_v1 = self.freeze_pack(source_root, "partial-resolution-v1")
+        target = source_root.parent / "partial-resolution-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        (target / resolved_rel).write_bytes(b"project edit\n")
+        aide_lite.write_text(source_root / resolved_rel, "upstream edit\n")
+        aide_lite.write_text(source_root / other_rel, "version: other-edit\n")
+        pack_v2 = self.freeze_pack(source_root, "partial-resolution-v2")
+        merged = source_root.parent / "manual-merge.txt"
+        merged.write_bytes(b"project and upstream\n")
+        resolution = {resolved_rel: merged}
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True,
+            predecessor_pack=pack_v1, resolutions=resolution)
+        self.assertEqual(preview["status"], "PLANNED")
+        interrupted = aide_lite.apply_import_pack(pack_v2, target,
+            predecessor_pack=pack_v1, resolutions=resolution,
+            expected_plan_digest=preview["plan_digest"], fail_after_writes=1)
+        self.assertEqual(interrupted["status"], "INTERRUPTED")
+        self.assertEqual(interrupted["recovery"]["classification"], "partial")
+        receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
+        merged.write_bytes(b"rival merged bytes\n")
+        refused = aide_lite.apply_import_pack(pack_v2, target,
+            predecessor_pack=pack_v1, resolutions=resolution,
+            expected_plan_digest=preview["plan_digest"], recover_partial=True)
+        self.assertEqual(refused["status"], "RECOVERY_REQUIRED")
+        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+        merged.write_bytes(b"project and upstream\n")
+        recovered = aide_lite.apply_import_pack(pack_v2, target,
+            predecessor_pack=pack_v1, resolutions=resolution,
+            expected_plan_digest=preview["plan_digest"], recover_partial=True)
+        self.assertEqual(recovered["status"], "RECOVERED")
+        self.assertEqual((target / resolved_rel).read_bytes(), b"project and upstream\n")
+        self.assertEqual((target / other_rel).read_text(encoding="utf-8"), "version: other-edit\n")
 
     @unittest.skipUnless(sys.platform == "win32", "Windows junction boundary")
     def test_rollback_pack_rejects_reparse_payload_and_pack_roots(self) -> None:
