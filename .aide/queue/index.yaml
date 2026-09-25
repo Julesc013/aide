@@ -3690,3 +3690,13 @@ items:
     prompt: .aide/queue/AIDE-STABLE-LITE-DRAFT-TRUTH-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-LITE-DRAFT-TRUTH-01/evidence
     description: Distinguish report-only planners from bounded Windows exact-plan apply in Q48 local draft text.
+  - id: AIDE-STABLE-LITE-CURRENT-PROJECTION-01
+    status: in_progress
+    planning_state: admitted_clean_source_projection_pending
+    result: PENDING
+    title: Project accepted Lite Task OS and draft source into delivered previews
+    task: .aide/queue/AIDE-STABLE-LITE-CURRENT-PROJECTION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-STABLE-LITE-CURRENT-PROJECTION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-STABLE-LITE-CURRENT-PROJECTION-01/prompt.md
+    evidence: .aide/queue/AIDE-STABLE-LITE-CURRENT-PROJECTION-01/evidence
+    description: Regenerate and qualify current Lite preview artifacts and exact dev effect.

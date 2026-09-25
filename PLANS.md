@@ -3997,3 +3997,11 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   and draft; require committed zero-change release replay, installed target
   queue consumers, canonical checks, independent exact artifact/effect review
   and one-writer `dev` integration. Final release gates remain separate.
+
+## 2026-09-25 - Current Lite artifact projection
+
+- `AIDE-STABLE-LITE-CURRENT-PROJECTION-01` is admitted from clean accepted
+  source lineage `59286688`. One generator writer will refresh export,
+  changelog, bundle and local draft; installed target queue proof, committed
+  replay, canonical checks and independent exact artifact/dev effect review
+  precede a normal `dev` push. Main and publication remain separate.

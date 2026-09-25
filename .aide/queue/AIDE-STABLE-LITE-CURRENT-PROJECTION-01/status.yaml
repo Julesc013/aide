@@ -1,0 +1,17 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-LITE-CURRENT-PROJECTION-01
+status: in_progress
+classification: combined_lite_artifact_projection
+planning_state: admitted_clean_source_projection_pending
+result: PENDING
+updated_at: 2026-09-25
+current_slice: clean_source_admission
+next_slice: deterministic_export_and_release_projection
+review_gate: independent_exact_artifact_and_dev_effect_review
+dev_integration_performed: false
+main_promotion_performed: false
+tag_created: false
+release_published: false
+notes:
+  - Accepted source reviews bind exact source subjects only.
+  - Old export and release preview bytes are stale; regeneration is the current dependency.

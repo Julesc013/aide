@@ -12035,3 +12035,6 @@ Owner review found a final-write race in the first candidate. The repair now pub
   with notes. The old draft text and stale export provenance remain blocking
   artifact/dev effect gates, so this evidence-only closeout preserves the
   reviewed source while routing to a separate current-generator projection.
+- Admitted `AIDE-STABLE-LITE-CURRENT-PROJECTION-01` on a dedicated worktree
+  from `59286688`. This admission only defines generated-output scope and
+  executable checks; no archive regeneration or integration has occurred.

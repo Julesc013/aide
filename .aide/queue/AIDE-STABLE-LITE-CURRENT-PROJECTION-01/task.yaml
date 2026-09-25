@@ -1,0 +1,64 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-CURRENT-PROJECTION-01
+title: Project accepted Lite Task OS and draft source into delivered previews
+type: integration
+status: in_progress
+planning_state: admitted_clean_source_projection_pending
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-STABLE-LITE-TASK-TRUTH-01
+  - AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01
+  - AIDE-STABLE-LITE-DRAFT-TRUTH-01
+base_dev: d292253b09944f28f0fc794fe3a9679966fe56a0
+accepted_source_candidates:
+  - f00d937e23681c3962b99ee3e8c0706ae34d6373
+  - 52e1f194ebd2286374cfc32c91b81104d8b2838a
+  - bc1867a069330ac3c38e85f41392bf466333a89f
+source_lineage_head: 59286688dfcead36f39d2bd9a48c376bc98d7b9f
+objective: >
+  Regenerate export, changelog, local release bundle and local draft from
+  independently accepted combined source; qualify exact installed preview
+  bytes and committed replay before one reviewed dev integration effect.
+authority_basis: >
+  The owner's 2026-09-25 campaign delegation authorizes a bounded projection
+  and qualified dev integration. Three separate independent source verdicts
+  exist; generated artifacts and exact dev effect retain their own gates.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-STABLE-LITE-CURRENT-PROJECTION-01/**
+    - .aide/queue/index.yaml
+    - .aide/export/**
+    - .aide/release/**
+    - .aide/changelog/**
+    - PLANS.md
+    - IMPLEMENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+  read_only_paths:
+    - .aide/scripts/**
+    - .aide/policies/**
+    - specs/**
+    - governance/**
+    - docs/reference/**
+  forbidden_paths:
+    - .github/**
+    - .aide.local/**
+    - arbitrary target repositories
+  forbidden_operations:
+    - source repair hidden inside generated output
+    - main promotion, tag, upload or publication
+    - overwrite current generator from an older branch
+    - mutate authored consumer data
+verification:
+  - clean-source export, changelog, bundle and draft generation
+  - archive checksums, provenance, boundaries and Q47/Q48 tests
+  - empty and nonempty installed target queue Task OS proof
+  - committed zero-change release replay and canonical checks
+  - independent exact artifact and dev-effect review
+  - fresh refs, identity and one-writer check before dev fast-forward and normal push
+retained_gates:
+  - source reviews do not alone qualify artifacts or dev effect
+  - preview outputs remain local and no-publish
+  - final stable profile, main, tag, publication and downloaded consumers are separate
