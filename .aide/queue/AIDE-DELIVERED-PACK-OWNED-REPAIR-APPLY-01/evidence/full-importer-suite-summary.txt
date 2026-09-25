@@ -1,0 +1,9 @@
+Command: py -3 -m unittest discover -s .aide/scripts/tests -p test_export_import.py
+Working directory: D:\Projects\AIDE\aide-lifecycle-owned-repair
+Exit code: 0
+Runner summary:
+----------------------------------------------------------------------
+Ran 38 tests in 670.154s
+
+OK
+Note: the command ran in an interactive exec session without output redirection. This file preserves the exact final runner summary and exit code, not the intermediate progress dots.

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import builtins
+from contextlib import contextmanager
 import fnmatch
 import gzip
 import hashlib
@@ -20,10 +21,12 @@ import math
 import os
 import re
 import shutil
+import stat
 import subprocess
 import sys
 import tarfile
 import tempfile
+import threading
 import zipfile
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
@@ -2761,6 +2764,7 @@ IMPORT_MODES = {"safe", "full"}
 PORTABLE_IMPORT_RECEIPT_PATH = ".aide/install/aide-lite-pack-v0.receipt.json"
 PORTABLE_IMPORT_INTENT_PATH = ".aide/install/aide-lite-pack-v0.intent.json"
 PORTABLE_REPAIR_INTENT_PATH = ".aide/install/aide-lite-pack-v0.repair-intent.json"
+PORTABLE_LIFECYCLE_LOCK_PATH = ".aide/install/aide-lite-pack-v0.lifecycle.lock"
 PROJECT_CUSTOMIZATIONS_PATH = ".aide/customizations.json"
 PROJECT_CUSTOMIZATIONS_SCHEMA = "aide.project-customizations.v1"
 PORTABLE_IMPORT_RECEIPT_SCHEMA = "aide.portable-import-receipt.v1"
@@ -39391,20 +39395,169 @@ def atomic_write_bytes_if_changed(path: Path, data: bytes) -> WriteResult:
 
 def atomic_create_bytes_no_clobber(path: Path, data: bytes) -> None:
     """Publish complete bytes only if the destination is still absent."""
+    if os.name != "nt":
+        raise ValueError("owned repair requires Windows anchored directory handles")
     if not path.parent.is_dir():
         raise ValueError(f"repair parent directory is missing: {path.parent}")
-    descriptor, temporary_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
-    temporary = Path(temporary_name)
+    with windows_pinned_directory(path.parent) as directory_handle:
+        descriptor, temporary_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+        temporary = Path(temporary_name)
+        try:
+            with os.fdopen(descriptor, "wb") as handle:
+                handle.write(data)
+                handle.flush()
+                os.fsync(handle.fileno())
+                windows_link_from_handle(handle.fileno(), directory_handle, path.name)
+        finally:
+            temporary.unlink(missing_ok=True)
+
+
+@contextmanager
+def windows_pinned_directory(path: Path):
+    """Hold every ancestor against rename and reject reparse-point traversal."""
+    if os.name != "nt":
+        raise ValueError("Windows directory handles required")
+    import ctypes
+    from ctypes import wintypes
+
+    class FileTime(ctypes.Structure):
+        _fields_ = [("low", wintypes.DWORD), ("high", wintypes.DWORD)]
+
+    class FileInfo(ctypes.Structure):
+        _fields_ = [("attributes", wintypes.DWORD), ("created", FileTime), ("accessed", FileTime), ("written", FileTime), ("volume", wintypes.DWORD), ("size_high", wintypes.DWORD), ("size_low", wintypes.DWORD), ("links", wintypes.DWORD), ("index_high", wintypes.DWORD), ("index_low", wintypes.DWORD)]
+
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.GetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.POINTER(FileInfo)]
+    kernel.GetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    resolved = path.absolute()
+    if not resolved.anchor:
+        raise ValueError("directory lacks a Windows volume anchor")
+    current = Path(resolved.anchor)
+    components = [current]
+    for part in resolved.parts[1:]:
+        current = current / part
+        components.append(current)
+    handles = []
+    invalid = ctypes.c_void_p(-1).value
     try:
-        with os.fdopen(descriptor, "wb") as handle:
-            handle.write(data)
-            handle.flush()
-            os.fsync(handle.fileno())
-        # Hard-link creation fails atomically if another writer created path.
-        # A complete temporary file is visible at path, never a partial copy.
-        os.link(temporary, path)
+        for index, component in enumerate(components):
+            access = 0x80 | (0x2 if index == len(components) - 1 else 0)  # READ_ATTRIBUTES | ADD_FILE
+            handle = kernel.CreateFileW(str(component), access, 0x1 | 0x2, None, 3, 0x02000000 | 0x00200000, None)
+            if handle == invalid or handle is None:
+                raise ctypes.WinError(ctypes.get_last_error())
+            handles.append(handle)
+            info = FileInfo()
+            if not kernel.GetFileInformationByHandle(handle, ctypes.byref(info)):
+                raise ctypes.WinError(ctypes.get_last_error())
+            if not info.attributes & 0x10 or info.attributes & 0x400:  # DIRECTORY, REPARSE_POINT
+                raise ValueError(f"repair path crosses a non-directory or reparse point: {component}")
+        yield handles[-1]
     finally:
-        temporary.unlink(missing_ok=True)
+        for handle in reversed(handles):
+            kernel.CloseHandle(handle)
+
+
+def windows_link_from_handle(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+    """Create a no-replace hard link relative to a pinned directory handle."""
+    import ctypes
+    import msvcrt
+    from ctypes import wintypes
+
+    class FileLinkInfo(ctypes.Structure):
+        _fields_ = [("replace", wintypes.BOOLEAN), ("root", wintypes.HANDLE), ("name_length", wintypes.DWORD), ("name", wintypes.WCHAR * len(leaf_name))]
+
+    class IoStatusBlock(ctypes.Structure):
+        _fields_ = [("status", ctypes.c_void_p), ("information", ctypes.c_size_t)]
+
+    info = FileLinkInfo()
+    info.replace = False
+    info.root = directory_handle
+    info.name_length = len(leaf_name.encode("utf-16-le"))
+    info.name = leaf_name
+    native = ctypes.WinDLL("ntdll")
+    native.NtSetInformationFile.argtypes = [wintypes.HANDLE, ctypes.POINTER(IoStatusBlock), ctypes.c_void_p, wintypes.ULONG, ctypes.c_int]
+    native.NtSetInformationFile.restype = ctypes.c_long
+    native.RtlNtStatusToDosError.argtypes = [ctypes.c_long]
+    native.RtlNtStatusToDosError.restype = wintypes.ULONG
+    status = native.NtSetInformationFile(msvcrt.get_osfhandle(descriptor), ctypes.byref(IoStatusBlock()), ctypes.byref(info), ctypes.sizeof(info), 11)
+    if status < 0:
+        code = native.RtlNtStatusToDosError(status)
+        if code in {80, 183}:
+            raise FileExistsError(code, "repair target already exists", leaf_name)
+        raise OSError(code, f"Windows hard-link publication failed (NTSTATUS {status:#x})")
+
+
+_PORTABLE_LIFECYCLE_GUARD = threading.Lock()
+_PORTABLE_LIFECYCLE_ACTIVE: set[str] = set()
+
+
+@contextmanager
+def portable_lifecycle_lock(target_root: Path):
+    """Serialize all effectful imports and repairs without writing to target."""
+    identity = os.path.normcase(str(target_root.resolve()))
+    key = hashlib.sha256(identity.encode("utf-8")).hexdigest()
+    with _PORTABLE_LIFECYCLE_GUARD:
+        if key in _PORTABLE_LIFECYCLE_ACTIVE:
+            raise ValueError("portable lifecycle operation already in progress")
+        _PORTABLE_LIFECYCLE_ACTIVE.add(key)
+    try:
+        if os.name == "nt":
+            import ctypes
+            from ctypes import wintypes
+
+            kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+            kernel.CreateMutexW.argtypes = [wintypes.LPVOID, wintypes.BOOL, wintypes.LPCWSTR]
+            kernel.CreateMutexW.restype = wintypes.HANDLE
+            kernel.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+            kernel.WaitForSingleObject.restype = wintypes.DWORD
+            kernel.ReleaseMutex.argtypes = [wintypes.HANDLE]
+            kernel.ReleaseMutex.restype = wintypes.BOOL
+            kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+            kernel.CloseHandle.restype = wintypes.BOOL
+            handle = kernel.CreateMutexW(None, False, "Global\\AIDE.PortableLifecycle." + key)
+            if not handle:
+                raise ctypes.WinError(ctypes.get_last_error())
+            try:
+                wait = kernel.WaitForSingleObject(handle, 0)
+                if wait == 0x102:
+                    raise ValueError("portable lifecycle operation already in progress")
+                if wait not in {0, 0x80}:
+                    raise ctypes.WinError(ctypes.get_last_error())
+                try:
+                    yield
+                finally:
+                    kernel.ReleaseMutex(handle)
+            finally:
+                kernel.CloseHandle(handle)
+        else:
+            import fcntl
+
+            lock_dir = Path(tempfile.gettempdir()) / f"aide-portable-lifecycle-locks-{os.getuid()}"
+            lock_dir.mkdir(mode=0o700, exist_ok=True)
+            directory_stat = lock_dir.lstat()
+            if not stat.S_ISDIR(directory_stat.st_mode) or directory_stat.st_uid != os.getuid() or directory_stat.st_mode & 0o077:
+                raise ValueError("portable lifecycle lock directory is not private")
+            lock_path = lock_dir / (key + ".lock")
+            descriptor = os.open(lock_path, os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW | os.O_CLOEXEC, 0o600)
+            with os.fdopen(descriptor, "r+b") as handle:
+                lock_stat = os.fstat(handle.fileno())
+                if not stat.S_ISREG(lock_stat.st_mode) or lock_stat.st_uid != os.getuid() or lock_stat.st_nlink != 1:
+                    raise ValueError("portable lifecycle lock file ownership is invalid")
+                try:
+                    fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                except BlockingIOError as exc:
+                    raise ValueError("portable lifecycle operation already in progress") from exc
+                try:
+                    yield
+                finally:
+                    fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+    finally:
+        with _PORTABLE_LIFECYCLE_GUARD:
+            _PORTABLE_LIFECYCLE_ACTIVE.remove(key)
 
 
 def atomic_write_json(path: Path, data: object) -> WriteResult:
@@ -40379,7 +40532,7 @@ def import_pack_plan(
         else:
             target_rel = rel
         reserved_key = "/".join(part.rstrip(" .").casefold() for part in target_rel.split("/"))
-        if reserved_key in {PORTABLE_IMPORT_RECEIPT_PATH.casefold(), PORTABLE_IMPORT_INTENT_PATH.casefold(), PORTABLE_REPAIR_INTENT_PATH.casefold(), PROJECT_CUSTOMIZATIONS_PATH.casefold()}:
+        if reserved_key in {PORTABLE_IMPORT_RECEIPT_PATH.casefold(), PORTABLE_IMPORT_INTENT_PATH.casefold(), PORTABLE_REPAIR_INTENT_PATH.casefold(), PORTABLE_LIFECYCLE_LOCK_PATH.casefold(), PROJECT_CUSTOMIZATIONS_PATH.casefold()}:
             raise ValueError(f"pack payload collides with reserved project/import state: {target_rel}")
         target = portable_target_path(target_root, target_rel)
         if rel == "AGENTS.md.template":
@@ -40654,7 +40807,7 @@ def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[s
     return result.action == "written"
 
 
-def apply_import_pack(
+def _apply_import_pack_unlocked(
     pack_root: Path,
     target_root: Path,
     dry_run: bool = False,
@@ -40760,7 +40913,22 @@ def apply_import_pack(
     }
 
 
-def apply_portable_owned_repair(
+def apply_import_pack(
+    pack_root: Path,
+    target_root: Path,
+    dry_run: bool = False,
+    mode: str = "safe",
+    predecessor_pack: Path | None = None,
+    expected_plan_digest: str | None = None,
+    fail_after_writes: int | None = None,
+) -> dict[str, object]:
+    if dry_run:
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes)
+    with portable_lifecycle_lock(target_root.resolve()):
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes)
+
+
+def _apply_portable_owned_repair_unlocked(
     pack_root: Path,
     target_root: Path,
     target_rel: str,
@@ -40839,7 +41007,11 @@ def apply_portable_owned_repair(
     if intent is None:
         intent = {"schema_version": "aide.portable-owned-repair-intent.v1", "plan": plan, "plan_digest": plan_digest}
         intent["intent_digest"] = portable_import_record_digest(intent, "intent_digest")
-        atomic_write_json(intent_path, intent)
+        try:
+            atomic_create_bytes_no_clobber(intent_path, stable_json_text(intent).encode("utf-8"))
+        except FileExistsError:
+            result["status"] = "RECOVERY_REQUIRED"
+            return result
     if target_file_digest(target) != "missing":
         result["status"] = "CONFLICT"
         return result
@@ -40864,6 +41036,21 @@ def apply_portable_owned_repair(
     result["status"] = "APPLIED"
     result["written"] = [target_rel]
     return result
+
+
+def apply_portable_owned_repair(
+    pack_root: Path,
+    target_root: Path,
+    target_rel: str,
+    *,
+    dry_run: bool = False,
+    expected_plan_digest: str | None = None,
+    fail_after_write: bool = False,
+) -> dict[str, object]:
+    if dry_run:
+        return _apply_portable_owned_repair_unlocked(pack_root, target_root, target_rel, dry_run=True, expected_plan_digest=expected_plan_digest, fail_after_write=fail_after_write)
+    with portable_lifecycle_lock(target_root.resolve()):
+        return _apply_portable_owned_repair_unlocked(pack_root, target_root, target_rel, dry_run=False, expected_plan_digest=expected_plan_digest, fail_after_write=fail_after_write)
 
 
 def command_repair_owned_file(args: argparse.Namespace) -> int:
