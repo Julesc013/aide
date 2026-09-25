@@ -1,0 +1,56 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01
+title: Keep delivered Lite next-work reports target-owned for nonempty queues
+type: implementation
+status: needs_review
+planning_state: source_candidate_frozen
+result: PASS_WITH_WARNINGS
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-STABLE-LITE-TASK-TRUTH-01
+base_dev: d292253b09944f28f0fc794fe3a9679966fe56a0
+accepted_source_ancestor: f00d937e23681c3962b99ee3e8c0706ae34d6373
+review_closeout_ancestor: 04caefe659865f16e5777f6c76293fb1df8510fd
+objective: >
+  Prevent the delivered Lite Task OS next-work selector from recommending AIDE
+  source-only X-OS phases after a target project admits its own WorkUnit.
+authority_basis: >
+  The 2026-09-25 owner campaign delegation authorizes bounded child source
+  repair. The independent f00d937e review explicitly identified this as a
+  release-blocking follow-up before public target Task OS qualification.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_x_os_01_task_os_commands.py
+    - docs/reference/task-os-report-only-commands.md
+    - .aide/queue/AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/export/**
+    - .aide/release/**
+    - specs/**
+    - governance/**
+    - core/**
+  forbidden_paths:
+    - .github/**
+    - .aide.local/**
+    - arbitrary target repositories
+  forbidden_operations:
+    - mutate dev, main, tags, releases or hosted settings in this source task
+    - rebuild or replace reviewed preview archives in this source task
+    - invent a runnable target WorkUnit or claim authorization from report-only next work
+verification:
+  - red regression with one project-owned target queue item and no AIDE source phase items
+  - preserve source-repository X-OS and post-apply Task OS selection fixtures
+  - keep empty-target and explicit packet-ID behavior from f00d937e
+  - focused tests, canonical checks and independent exact delta review
+  - separate current-generator projection and installed target consumer recheck
+retained_gates:
+  - source review before source acceptance
+  - artifact projection, replay and effect review remain separate
+  - final stable released-byte qualification remains open

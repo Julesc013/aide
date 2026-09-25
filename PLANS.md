@@ -3925,7 +3925,13 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   empty-target `Q17`/`X-OS-01` report-truth defect. It owns source/tests and
   a reference note only; artifact projection and dev effect are separate.
   Its red regression reproduced incidental identity promotion; the narrow
-  source fix and affected tests pass. Exact source review is next.
+  source fix and affected tests pass. Independent review accepted exact
+  `f00d937e` with notes and found a release-blocking one-item target queue
+  recommendation gap. `AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01` owns that narrow
+  follow-up before the next artifact projection. Its one-item regression was
+  red, then all 10 focused tests passed after source routing was limited to
+  exact self-hosting queue records. Canonical validate/doctor still fail on
+  stale export provenance, which the later projection must clear.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

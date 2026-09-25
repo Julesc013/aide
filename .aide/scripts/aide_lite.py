@@ -5760,6 +5760,16 @@ TASK_OS_APPLY_02_TASK_ID = "AIDE-APPLY-02-scoped-transaction-executor-v0"
 TASK_OS_APPLY_02_REPAIR_TASK_ID = "AIDE-APPLY-02-REPAIR-01"
 TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID = "AIDE-CHECK-APPLY-02-RECHECK-01"
 TASK_OS_STATUS_REPAIR_TASK_ID = "AIDE-TASK-OS-STATUS-REPAIR-01"
+TASK_OS_SOURCE_ROUTING_TASK_IDS = {
+    "X-OS-00-aide-task-os-schemas-policies",
+    "X-OS-01-aide-task-os-report-only-commands",
+    "X-OS-02-capability-reality-ledger-v0",
+    TASK_OS_CHECKPOINT_TASK_ID,
+    TASK_OS_REPAIR_TASK_ID,
+    TASK_OS_APPLY_02_TASK_ID,
+    TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID,
+    TASK_OS_STATUS_REPAIR_TASK_ID,
+}
 TASK_OS_LIFECYCLE_PLAN_TASK_LABEL = "AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning"
 
 
@@ -5830,6 +5840,21 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
         return {
             "task": "No queued WorkUnit selected",
             "reason": "The target queue is empty; create a target-owned WorkUnit through intake before execution.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
+        }
+    tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    if not any(
+        isinstance(task, dict) and task.get("id") in TASK_OS_SOURCE_ROUTING_TASK_IDS
+        for task in tasks
+    ):
+        return {
+            "task": "Review target-owned queue WorkUnits",
+            "reason": "The queue has no AIDE self-hosting routing WorkUnit; inspect its own task status and evidence before selecting next work.",
             "x_os_01_status": xos01_status,
             "x_os_02_status": xos02_status,
             "checkpoint_status": checkpoint_status,

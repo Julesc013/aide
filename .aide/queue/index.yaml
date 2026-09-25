@@ -3670,3 +3670,13 @@ items:
     prompt: .aide/queue/AIDE-STABLE-LITE-TASK-TRUTH-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-LITE-TASK-TRUTH-01/evidence
     description: Prevent incidental packet IDs and source-specific next work in a fresh target queue.
+  - id: AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01
+    status: needs_review
+    planning_state: source_candidate_frozen
+    result: PASS_WITH_WARNINGS
+    title: Keep delivered Lite next-work reports target-owned for nonempty queues
+    task: .aide/queue/AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01/prompt.md
+    evidence: .aide/queue/AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01/evidence
+    description: Prevent AIDE source-only next-work advice in installed target queues with project-owned items.

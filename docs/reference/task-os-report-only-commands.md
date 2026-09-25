@@ -47,6 +47,12 @@ not create task identity; an explicit packet `task_id` or a leading PHASE/GOAL
 identity is required. New work must be admitted through the target's own
 intake and queue before these reports can name a next WorkUnit.
 
+After the target admits project-owned WorkUnits, `task status` and `task
+next-plan` direct the operator to inspect that target queue's status and
+evidence. They do not recommend AIDE's self-hosting X-OS phase sequence when
+the source routing WorkUnits are absent, and they do not authorize task
+execution. The source repository retains its existing X-OS phase routing.
+
 `blocker status` and `blocker classify` convert visible blocked, review-gated, or deferred state into typed report records. A repairable marker means "candidate for a future reviewed repair WorkUnit"; it is not proof that a repair was executed.
 
 `task repair-plan`, `task requeue-plan`, and `task resume-plan` are planning aids. They may name suggested repair or resume paths, but they always record that no queue mutation, repair execution, target resume, or target mutation was applied.

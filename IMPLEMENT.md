@@ -12012,3 +12012,10 @@ Owner review found a final-write race in the first candidate. The repair now pub
   The review identified a
   release-blocking nonempty target queue routing gap; that separate source
   repair precedes the next artifact projection.
+- Admitted `AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01` from evidence-only
+  `04caefe6` to make one-item installed target queue advice project-owned.
+  A red regression found `X-OS-01` advice for one target-owned WorkUnit.
+  The narrow source selector now requires exact AIDE self-hosting queue
+  records; all 10 focused tests pass, preserving source post-apply routing.
+  Canonical validate/doctor correctly report stale export provenance until a
+  separate generator projection. No generated artifact or dev effect occurred.

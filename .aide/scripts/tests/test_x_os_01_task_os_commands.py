@@ -272,6 +272,25 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             self.assertIn("task_count: 0", output.getvalue())
             self.assertIn("latest_task_id: none", output.getvalue())
 
+    def test_nonempty_target_queue_does_not_select_aide_source_phase(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            context = aide_lite.task_os_context(root)
+            self.assertEqual(context["task_count"], 1)
+            self.assertEqual(context["latest_task_id"], "FIXTURE-TASK")
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertEqual(selection["task"], "Review target-owned queue WorkUnits")
+            self.assertFalse(selection["aide_apply_00_next_packet_ready"])
+            self.assertFalse(selection["lifecycle_apply_authorized"])
+            task_status = aide_lite.task_os_render_task_status(context)
+            self.assertIn("selected_next_workunit: Review target-owned queue WorkUnits", task_status)
+            self.assertIn("`FIXTURE-TASK`: status=running", task_status)
+            aide_lite.write_task_os_next_plan(root)
+            next_plan = (root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH).read_text(encoding="utf-8")
+            self.assertIn("- `Review target-owned queue WorkUnits`", next_plan)
+            self.assertNotIn("- `X-OS-01 - Task OS Report-Only Commands`", next_plan)
+
     def test_checkpoint_and_next_plan_use_queue_truth_after_x_os_02(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

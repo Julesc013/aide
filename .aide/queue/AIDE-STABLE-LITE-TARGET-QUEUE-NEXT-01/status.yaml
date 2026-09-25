@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01
+status: needs_review
+classification: delivered_lite_target_queue_next_work_repair
+planning_state: source_candidate_frozen
+result: PASS_WITH_WARNINGS
+updated_at: 2026-09-25
+current_slice: exact_source_delta_review
+next_slice: accepted_combined_source_projection
+review_gate: independent_exact_source_delta_review
+source_candidate_frozen: true
+dev_effect_performed: false
+release_published: false
+notes:
+  - The f00d937e review accepted the zero-item repair and identified this distinct nonempty target gap.
+  - Target WorkUnit selection remains report-only and project-owned.
+  - Focused tests pass; canonical validate and doctor fail on stale export provenance pending projection.
+  - Final artifact, replay and stable release gates remain open.
