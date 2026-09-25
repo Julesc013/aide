@@ -3853,6 +3853,16 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   The candidate awaits review. Mandatory behavior, final installed assets,
   predecessor consumers, main/tag/release effects and downloaded checks remain
   later WorkUnit gates. Q47/Q48 outputs remain previews.
+
+## 2026-09-25 - Stable Lite contract repair after exact review
+
+- `aa3bcfec` received `REQUEST_CHANGES`. Current `dev@a32535a2` is merged
+  at `060de472`; the superseding source addresses the predecessor/conflict
+  CLI boundary and makes first-release technical `ACCEPT` strictness explicit.
+- Committed pack-status, validate and doctor failures are retained. The
+  contract WorkUnit owns source and documentation only; a separate projection
+  WorkUnit must refresh derived export/release outputs, pass exact checks and
+  obtain appropriate review before dev integration.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

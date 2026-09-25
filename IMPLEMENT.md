@@ -11836,6 +11836,20 @@ Owner review found a final-write race in the first candidate. The repair now pub
 - Updated existing product/release/reference documents. This candidate changes
   policy/contract source only and awaits independent exact review before dev
   integration; verification and limitations are in the task evidence.
+
+## 2026-09-25 - Stable Lite contract review repair
+
+- Exact `aa3bcfec` technical review requested changes because committed
+  pack-status, validate and doctor failed export provenance, the public CLI
+  omitted predecessor/conflict options, and release verdict strictness was
+  ambiguous. The failed exact review is retained as evidence.
+- Merged accepted `dev@a32535a2` at `060de472`, preserving both planning
+  histories and the current update/repair implementation. Superseding source
+  now lists required import pack/target/predecessor/resolution operands and
+  explicitly requires a strict `ACCEPT` for the first stable release.
+- This source-only branch cannot regenerate `.aide/export/**` or
+  `.aide/release/**` under its WorkUnit scope. Those outputs need a separately
+  bounded projection and passing committed-candidate checks before dev effect.
 ## 2026-09-25 - Project-owned successive update source candidate
 
 - The three-way update WorkUnit reproduced two current defects on its admitted

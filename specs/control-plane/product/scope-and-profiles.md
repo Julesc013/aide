@@ -72,7 +72,8 @@ verified capability ceiling.
 The candidate public CLI list for `aide-lite-local-windows` is enumerated in
 `.aide/policies/release-versioning.yaml`: local `doctor`, `validate`, `context`,
 `pack --task`, `verify --evidence`, `task inspect`, and `task status`; safe-mode
-`import-pack` preview and exact-plan apply; `rollback-pack` preview and
+`import-pack` preview and exact-plan apply, including explicit `--from-pack`
+predecessor updates and `--resolve` conflict decisions; `rollback-pack` preview and
 exact-plan apply; `plan-removal` and exact-plan `apply-removal`; and
 `repair-owned-file` preview and exact-plan apply. The final manifest must pin
 the supported forms and options and prove each one. Other CLI commands and

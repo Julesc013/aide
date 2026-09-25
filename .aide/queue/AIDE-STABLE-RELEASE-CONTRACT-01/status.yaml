@@ -5,8 +5,8 @@ classification: contract_source_candidate
 planning_state: admitted
 result: PENDING
 updated_at: 2026-09-25
-current_slice: frozen_contract_source_candidate
-next_slice: independent_exact_technical_review
+current_slice: repair_after_exact_request_changes
+next_slice: superseding_exact_source_review_then_separate_artifact_projection
 review_gate: independent_technical_review_of_exact_contract_change
 version_selected: false
 public_compatibility_contract_adopted: false
@@ -22,3 +22,4 @@ notes:
   - Q47 and Q48 local outputs retain preview-only, no-publish status.
   - The candidate defines a conditional first-version rule and a bounded Windows Lite profile; it does not choose a tag or qualify final release bytes.
   - Consequential queue, review, version and support changes await an independent exact technical verdict before dev integration.
+  - The aa3bcfec exact review returned REQUEST_CHANGES; committed pack-status, validate, and doctor failed due stale export provenance. A separate bounded projection must restore machine gates.

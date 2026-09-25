@@ -45,14 +45,18 @@ stable_lite_contract_candidate:
     - verify --evidence
     - task inspect
     - task status
-    - import-pack --mode safe --dry-run
-    - import-pack --mode safe --expect-plan
-    - rollback-pack --dry-run
-    - rollback-pack --expect-plan
-    - plan-removal
-    - apply-removal --expect-plan
-    - repair-owned-file --dry-run
-    - repair-owned-file --expect-plan
+    - import-pack --pack <new-pack> --target <target> --mode safe --dry-run
+    - import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>
+    - import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run
+    - import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>
+    - import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run
+    - import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>
+    - rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run
+    - rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>
+    - plan-removal --target <target>
+    - apply-removal --target <target> --expect-plan <digest>
+    - repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run
+    - repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>
   cli_scope_rule: >
     These are candidate command forms, not a shipping claim. The final release
     manifest must pin each supported form and option, supported target state,
@@ -86,3 +90,6 @@ stable_lite_contract_candidate:
     Freeze profile, exact source and tree, version and tag, predecessor matrix,
     assets and hashes, machine and downloaded-consumer evidence, and an
     independent technical release ACCEPT in a later release-effect WorkUnit.
+    This first stable release uses the stricter ACCEPT threshold, even though
+    the generic campaign review gate can qualify disposed ACCEPT_WITH_NOTES
+    for other exact source and effect subjects.

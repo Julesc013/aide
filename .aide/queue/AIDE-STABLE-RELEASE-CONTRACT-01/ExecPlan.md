@@ -85,6 +85,12 @@ integration phase regenerates them; record that state without generating here.
   changes, preserving Q47/Q48 history and independent technical gates.
 - [ ] Run contract/schema/link/regression validation and obtain independent
   exact candidate technical review before any dev integration.
+- [x] Retain the `aa3bcfec` REQUEST_CHANGES report and merge current accepted
+  `dev` source at `060de472` with both planning histories intact.
+- [x] Repair the missing predecessor/conflict CLI forms and record the exact
+  committed pack/validate/doctor failures; seek focused superseding review.
+- [ ] Route generated export/release output to a separate bounded projection
+  WorkUnit and establish passing committed combined-candidate machine gates.
 - [ ] Route a later exact release-effect WorkUnit after mandatory behavior,
   final artifacts, and support claims qualify.
 

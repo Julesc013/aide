@@ -60,21 +60,31 @@ Five principal source SHA-256 values after the final wording change:
   were not changed afterward).
 - `py -3 -B .aide/scripts/tests/test_q48_github_release_draft.py`: exit 0,
   11 tests, `OK` (same timing and unchanged Q48 hard flags).
-- `py -3 -B .aide/scripts/aide_lite.py pack-status`: exit 0, checksums true,
-  provenance `PASS_SOURCE_ANCESTOR`, boundary PASS. This validates the
-  existing ancestor pack, not regenerated current contract bytes.
-- `py -3 -B .aide/scripts/aide_lite.py validate`: final exit 0, 60,909
-  output lines captured in memory, zero `FAIL` lines. `doctor`: exit 0,
-  88 lines, no hard validation failures. Neither command is release
-  qualification.
+- The precommit `pack-status`, `validate`, and `doctor` observations were made
+  before the frozen source commit and **do not qualify** `aa3bcfec`. The
+  independent reviewer reran all three on exact commit `aa3bcfec`; each
+  exited 1 because the retained export pack no longer had valid source
+  provenance. Review report SHA-256:
+  `45900dbb33e278f3681f72895afbdbbc13dfb038f4913cca3f3966f760b5dec6`.
+  That exact subject received `REQUEST_CHANGES` and is superseded, not accepted.
+- After merging current `dev` in commit `060de47208b3b04f4eddde4cfd6fe13687b45189`,
+  the controller reran the three commands. `pack-status` exited 1 (log SHA-256
+  `ac2df4ff3da9b1d363bf6fb30db0b81cd149373ceafc7cb5f31b7adcce71ccee`),
+  `validate` exited 1 (`790a9cd92e47f87804dfb899db3019ade8a4ecfaa4da53fc3279e9fd94eaa692`),
+  and `doctor` exited 1 (`aa281ca8ebac7c415bbe14b276493006f0955d19f9c0b0874a7b7ec0c166466b`).
+  Logs remain in `D:/Projects/AIDE/_review_scratch/` with prefix
+  `stable-contract-060de472-`. The reported export manifest source commit is
+  `99a9e54d`; the pack has not been regenerated for this contract source.
 - CLI parser help check: PowerShell loop invoked
   `py -3 -B .aide/scripts/aide_lite.py <command> --help` for `doctor`,
   `validate`, `context`, `pack`, `verify`, `task inspect`, `task status`,
   `import-pack`, `rollback-pack`, `plan-removal`, `apply-removal`, and
   `repair-owned-file`. Each returned exit 0 and its required help tokens;
   `import-pack --help` explicitly lists `--mode {full,safe}`, `--dry-run`,
-  and `--expect-plan`. This proves the candidate command forms exist in the
-  current source parser, not that installed bytes or behavior qualify.
+  and `--expect-plan`. This was a parser-only check on the older candidate.
+  Current merged source also exposes `--from-pack` and `--resolve TARGET FILE`,
+  which the superseding policy now includes. Parser help alone does not
+  qualify installed bytes or behavior.
 - `py -3 -B .aide/scripts/aide_lite.py task inspect --task-id
   AIDE-STABLE-RELEASE-CONTRACT-01`: exit 0; `status: needs_review`,
   `missing_evidence: 0` before this additional evidence file.
@@ -83,8 +93,14 @@ Five principal source SHA-256 values after the final wording change:
   target effect was run in this source slice.
 - A supplementary `py -3 -B -c "import yaml, ..."` parse attempt exited 1
   because PyYAML is absent (`ModuleNotFoundError: No module named 'yaml'`).
-  The canonical repository validator passed; a separate PyYAML parse is not
-  claimed.
+  The precommit canonical validator result is superseded by the committed
+  candidate's provenance failure; a separate PyYAML parse is not claimed.
+
+The source WorkUnit's `.aide/export/**` and `.aide/release/**` paths are
+read-only. A separate bounded integration/projection WorkUnit must regenerate
+and review derived artifacts, then establish passing committed-candidate
+checks before dev integration. A source-only stale-pack state is not a passing
+machine gate.
 
 The candidate does **not** choose `1.0.0` or any tag; that value is conditional
 on complete fresh history and an exact frozen release manifest. Current source
