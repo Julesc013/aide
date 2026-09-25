@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-CONSUMER-DEV-INTEGRATION-01
-status: running
+status: needs_review
 classification: evidence_only_dev_integration
-planning_state: admitted
+planning_state: exact_effect_candidate_preparation
 result: PENDING
 updated_at: 2026-09-25
 current_slice: exact_effect_preparation
-next_slice: independent_integration_effect_review
+next_slice: freeze_manifest_and_independent_integration_effect_review
 review_gate: exact_source_and_effect_manifest
 dev_effect_performed: false
 main_promotion_performed: false

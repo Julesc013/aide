@@ -3651,8 +3651,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-CONSUMER-PREQUAL-01/evidence
     description: Qualify mandatory installed local preview journeys in disposable Windows consumers and route concrete defects to reviewed repair tasks.
   - id: AIDE-STABLE-LITE-CONSUMER-DEV-INTEGRATION-01
-    status: running
-    planning_state: admitted
+    status: needs_review
+    planning_state: exact_effect_candidate_preparation
     result: PENDING
     title: Integrate reviewed Windows Lite prequalification evidence into dev
     task: .aide/queue/AIDE-STABLE-LITE-CONSUMER-DEV-INTEGRATION-01/task.yaml
