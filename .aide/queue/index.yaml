@@ -3530,3 +3530,13 @@ items:
     prompt: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/evidence
     description: Reconcile planner source with later dev work and regenerate current-source portable and local release outputs.
+  - id: AIDE-OWNED-REPAIR-DEV-INTEGRATION-01
+    status: running
+    planning_state: admitted_combined_source_pending
+    result: PENDING
+    title: Integrate reviewed owned repair with current dev
+    task: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/evidence
+    description: Reconcile reviewed repair source with dev removal planner and regenerate qualified combined artifacts.

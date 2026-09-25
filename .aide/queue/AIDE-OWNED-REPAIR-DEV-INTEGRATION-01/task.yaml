@@ -1,0 +1,44 @@
+schema_version: aide.queue-task.v0
+id: AIDE-OWNED-REPAIR-DEV-INTEGRATION-01
+title: Integrate reviewed owned repair with current dev
+type: integration
+status: running
+planning_state: admitted_combined_source_pending
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01
+base_dev: 5dfa75e632b09f732a8150376db6840bcf149ed3
+source_candidate: 45c5ce91132a00012dcf15e4ca38aa007afb8359
+source_review_closeout: cdb3bd04f1ae20f4e58529f7132c376fcbdc48c6
+merge_base: fce11e7fce3e8106a71f5a2391fd6f0517d7e0c8
+authority_basis: >
+  Owner campaign delegation permits qualified dev integration after independent
+  technical acceptance. The exact source rereview accepted 45c5ce91 for dev
+  source integration only; combined artifact and consumer gates remain.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/**
+    - .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/**
+    - .aide/queue/index.yaml
+    - .aide/changelog/**
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_operations:
+    - full removal, rollback, hosted activation, or public release
+    - replacing current dev generator or removal planner with stale source
+verification:
+  - retain both parent histories and exact reviewed source identity
+  - reconcile all code, tests, and queue history
+  - regenerate portable and local release outputs from committed combined source
+  - run affected tests, extracted consumers, canonical and provenance checks
+  - obtain independent exact combined source and artifact acceptance before dev effect
+retained_gates:
+  - importer write safety and complete lifecycle remain separate
+  - main promotion and public release remain separate
