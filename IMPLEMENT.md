@@ -11795,3 +11795,17 @@ Owner review found a final-write race in the first candidate. The repair now pub
   pack status passed. The WorkUnit binds exact hashes and external logs.
 - Independent exact dev-effect review and observed remote `dev` are pending.
   These local preview artifacts are not stable release publication.
+
+## 2026-09-25 - Combined lifecycle source and artifacts integrated into dev
+
+- Independent exact `7e8816b6` artifact/dev-effect review returned
+  `ACCEPT_WITH_NOTES`. A final clean-candidate replay changed zero of 44
+  release files. The 12-commit range passed structured message checks.
+- After current-base, clean-worktree and authenticated identity checks, the
+  primary checkout fast-forwarded `dev` to `7e8816b6`, tree `94fe10b6`,
+  and pushed it normally. Git and GitHub ref reads observed that exact remote
+  value; `main` remained `aec53b1d`. The WorkUnit records review/report and
+  archive hashes.
+- This closes the bounded lifecycle integration task with warnings about
+  unqualified product profiles and public release. The parent campaign remains
+  active for three-way update, disabled features and final release work.

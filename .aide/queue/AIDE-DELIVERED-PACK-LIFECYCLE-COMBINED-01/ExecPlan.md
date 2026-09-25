@@ -86,4 +86,10 @@ unreviewed source or artifact candidate may advance `dev`.
       from clean HEAD, all 44 release paths replay byte-identically, and
       ZIP/tar hashes remain fixed. Canonical validation, doctor and pack status
       pass with `PASS_SOURCE_ANCESTOR`.
-- [ ] Independent exact artifact/dev-effect review and observed `dev` ref.
+- [x] Independent exact artifact/dev-effect review returned
+      `ACCEPT_WITH_NOTES` for `7e8816b6`; a clean four-command replay from that
+      exact candidate changed zero of 44 release paths. After current-base and
+      identity checks, `dev` fast-forwarded and pushed normally. Git and
+      GitHub refs both observed remote `dev@7e8816b6`, tree `94fe10b6`.
+      Main, public release, native/hosted and remaining product gates stay in
+      the parent campaign.

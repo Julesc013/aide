@@ -3816,3 +3816,13 @@ of 49 delivered CLI consumer commands on the exact local ZIP/tar. Commit the
 projection, converge and replay the 44 release files, then obtain an exact
 dev-effect review and observe remote integration. Next implement the genuine
 three-way update/disabled-feature workflow from the campaign coverage matrix.
+
+## 2026-09-25 - Combined lifecycle dev integration checkpoint
+
+- `AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01` passed its bounded source,
+  extracted consumer, release replay and exact dev-effect gates. Remote `dev`
+  was observed at `7e8816b6`, tree `94fe10b6`; `main` remains unchanged.
+- The parent campaign remains active. Its next executable gap is a project
+  supplied three-way update resolution with successive upstream versions and
+  explicit optional-feature disable preservation, followed by final delivered
+  consumers and release qualification.

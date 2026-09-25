@@ -150,3 +150,42 @@ and `pack-status` passed again; pack provenance remains
 `PASS_SOURCE_ANCESTOR` with zero problems. The ZIP/tar bytes and their hashes
 above remain fixed. This is local artifact qualification and does not record
 dev integration, native/hosted qualification, main promotion or publication.
+
+## Independent dev-effect review and observed integration
+
+Independent reviewer `/root/owned_repair_integration_review` returned
+`ACCEPT_WITH_NOTES` for exact candidate
+`7e8816b60af714bd2fcd699bd66a961ebb83cc60`, tree
+`94fe10b69fdb61f183575dbfdc1c1a83350dd1de`, against
+`dev@ea53e319bd066efcdd0dc5ded38acd4f2d38c990`. External original
+`D:/Projects/AIDE/_review_scratch/lifecycle-7e8816b6-independent-dev-effect-review.md`
+has SHA-256 `9fba96b64fabf5d69e1bcd123e8ed17a1c7a35468b72ed8dd7f2a96b1bf6af36`.
+The reviewer independently passed 12/12 commit-range message checks and
+29 release hash bindings, verified the 44-file replay list, source/pack
+identities, metadata-only guide delta and fast-forward graph. Its notes
+required a clean four-command replay from `7e8816b6` and immediate base/ref
+recheck. This was dev integration acceptance only.
+
+The four release commands were rerun from clean `7e8816b6`, all exit zero;
+the 44 release files remained byte-identical and `git status --short` stayed
+empty. External logs
+`D:/Projects/AIDE/_review_scratch/lifecycle-7e8816b6-finalreplay-<command>.log`
+have the same four SHA-256 values recorded above. `git plan` returned
+`ready_dry_run`; its four temporary report changes were restored after their
+exact paths were checked. Under `BLACKGLASS-WIN1\Jules`, `gh auth status`
+reported active `Julesc013` and `gh api user --jq .login` returned
+`Julesc013`. The primary and candidate worktrees were clean, local and remote
+`dev` still equalled the exact base, and the candidate was its descendant.
+
+The sole integration writer performed a normal `git merge --ff-only` in the
+primary `dev` checkout, then `git push origin dev` without force. Both
+`git ls-remote origin refs/heads/dev` and GitHub's ref endpoint subsequently
+returned `7e8816b60af714bd2fcd699bd66a961ebb83cc60`, tree
+`94fe10b69fdb61f183575dbfdc1c1a83350dd1de`; local `dev` and
+`origin/dev` match. Remote `main` remained
+`aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3`. Current primary release
+ZIP/tar SHA-256 remained `d1eaf1bcb7272492b0a4dacf8cd2e291a54471a1051cae002d24c08bb8fb5f00`
+and `ce3066076029d7f0e63172840f838ae4cfd141ae041760663800e72f4b0b218e`.
+This is qualified source and local artifact integration into `dev`; the
+parent campaign and all product, native/hosted, main and public-release gates
+remain open.
