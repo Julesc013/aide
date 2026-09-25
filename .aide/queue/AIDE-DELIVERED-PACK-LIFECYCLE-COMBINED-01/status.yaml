@@ -1,0 +1,8 @@
+schema_version: aide.queue-task-status.v0
+id: AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01
+status: running
+result: PENDING
+current_step: merge_reviewed_rollback_source
+updated_at: 2026-09-25
+blockers: []
+review_required: true

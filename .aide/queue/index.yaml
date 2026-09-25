@@ -3580,3 +3580,13 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01/evidence
     description: Implement and qualify actual receipt-owned removal apply with effect-time checks, preservation, and interruption recovery.
+  - id: AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01
+    status: running
+    planning_state: source_integration
+    result: PENDING
+    title: Qualify combined portable removal and rollback
+    task: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/evidence
+    description: Reconcile reviewed removal and rollback source, regenerate current artifacts, qualify consumers, and integrate an exact dev candidate.
