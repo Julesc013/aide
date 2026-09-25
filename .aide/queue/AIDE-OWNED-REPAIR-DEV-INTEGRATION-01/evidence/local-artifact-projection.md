@@ -28,3 +28,18 @@
 Postcommit generator replay, full checksum verification, archive consumers,
 and independent combined review remain pending. No tag, upload, GitHub Release,
 live target, native, or hosted effect occurred.
+
+## First postcommit replay finding
+
+After projection commit `ef60c138` and scope-only correction `3ed628c1`, the
+four release/draft generator commands all passed, but the first replay changed
+18 of 44 tracked release files. The export pack's source commit `71501c6b`
+became an ancestor of current HEAD, so the generated status changed from
+`PASS` to `PASS_SOURCE_ANCESTOR`. That one legitimate status transition
+propagated through install notes, manifests, checksums, validation, asset
+indexes, and drafts. ZIP and tar.gz bytes did not change. Aggregate SHA-256
+of the 44-file path/hash list changed from
+`21a636ab49d112a598c704c2fe8bb75499fb136fbd23295e2f954cc4cd6927ae`
+to `310a42cc6e8420d266a95e205ff3f64d787a23fdc5960a80421793ca8724b749`.
+Commit the converged outputs, then repeat the full four-command replay from
+clean HEAD; zero changed files is still required before dev integration.
