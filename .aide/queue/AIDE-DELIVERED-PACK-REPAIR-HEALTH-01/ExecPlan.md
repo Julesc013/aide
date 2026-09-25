@@ -56,5 +56,5 @@ artifact or real target is changed by this admission.
 - [x] Owner campaign delegation and source dependency identified.
 - [x] Read-only catalogue and one extracted-CLI red probe prepared externally.
 - [x] Bounded task branch/worktree admitted.
-- [ ] Adapt and run red oracle against admitted source; implement and validate.
-- [ ] Freeze and independently review source; combine and qualify delivered bytes.
+- [x] Admitted source rejected `repair-health` as an unknown command (CLI exit 2); implemented read-only inspection and ran the frozen source-focused tests, including extracted ZIP consumer tests. See `evidence/source-candidate.md`.
+- [ ] Independently review this exact source; combine and qualify delivered bytes. Keep this WorkUnit running until those gates close.

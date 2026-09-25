@@ -9,6 +9,7 @@ import importlib.util
 import json
 import shutil
 import os
+import zipfile
 from pathlib import Path
 from unittest import mock
 
@@ -2637,6 +2638,121 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(managed.read_bytes(), expected)
         self.assertFalse((target / aide_lite.PORTABLE_REPAIR_INTENT_PATH).exists())
         self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)["status"], "CONFLICT")
+
+    @unittest.skipUnless(os.name == "nt", "anchored repair health inspection is Windows only")
+    def test_repair_health_extracted_cli_classifies_missing_edit_and_unknown_without_writes(self) -> None:
+        source = self.make_source_repo()
+        original_pack = self.freeze_pack(source, "repair-health-pack")
+        archive = source.parent / "repair-health-pack.zip"
+        with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as zipped:
+            for file in sorted(original_pack.rglob("*")):
+                if file.is_file():
+                    zipped.write(file, "aide-lite-pack-v0/" + file.relative_to(original_pack).as_posix())
+        extracted = source.parent / "extracted-repair-health"
+        with zipfile.ZipFile(archive) as zipped:
+            zipped.extractall(extracted)
+        pack = extracted / "aide-lite-pack-v0"
+        target = source.parent / "repair-health-consumer"
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+        rel = ".aide/prompts/compact-task.md"
+        managed = target / rel
+        managed.unlink()
+        cli = pack / "files/.aide/scripts/aide_lite.py"
+        def inspect():
+            before = sorted((str(path.relative_to(target)), path.read_bytes()) for path in target.rglob("*") if path.is_file())
+            run = subprocess.run([sys.executable, "-I", "-B", str(cli), "--repo-root", str(target), "repair-health", "--pack", str(pack), "--target", str(target), "--json"], text=True, capture_output=True)
+            after = sorted((str(path.relative_to(target)), path.read_bytes()) for path in target.rglob("*") if path.is_file())
+            self.assertEqual(before, after)
+            self.assertEqual(run.returncode, 0, run.stderr)
+            return json.loads(run.stdout)
+        missing = inspect()
+        item = next(row for row in missing["observations"] if row["path"] == rel)
+        self.assertEqual(missing["status"], "REPAIRABLE")
+        self.assertEqual(item["state"], "MISSING_OWNED")
+        self.assertTrue(item["repair_eligible"])
+        self.assertEqual(item["repair_plan_digest"], aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)["plan_digest"])
+        managed.write_bytes(b"authored edit\n")
+        changed = inspect()
+        item = next(row for row in changed["observations"] if row["path"] == rel)
+        self.assertEqual(item["state"], "CHANGED")
+        self.assertFalse(item["repair_eligible"])
+        managed.unlink()
+        other = target / "authored-other"
+        other.write_bytes(b"authored edit\n")
+        os.link(other, managed)
+        unknown = inspect()
+        item = next(row for row in unknown["observations"] if row["path"] == rel)
+        self.assertEqual(item["state"], "UNKNOWN")
+        self.assertFalse(item["repair_eligible"])
+
+    @unittest.skipUnless(os.name == "nt", "anchored repair health inspection is Windows only")
+    def test_repair_health_invalid_receipt_and_pending_intent_fail_closed(self) -> None:
+        source = self.make_source_repo()
+        pack = self.freeze_pack(source, "repair-health-refusals-pack")
+        target = source.parent / "repair-health-refusals"
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+        rel = ".aide/prompts/compact-task.md"
+        (target / rel).unlink()
+        repair_intent = target / aide_lite.PORTABLE_REPAIR_INTENT_PATH
+        repair_intent.write_bytes(b"not valid json\n")
+        pending = aide_lite.inspect_portable_repair_health(pack, target)
+        self.assertEqual(pending["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(pending["pending_intents"], ["repair"])
+        self.assertFalse(any(item["repair_eligible"] for item in pending["observations"]))
+        repair_intent.unlink()
+        receipt = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt.write_bytes(b"{invalid")
+        invalid = aide_lite.inspect_portable_repair_health(pack, target)
+        self.assertEqual(invalid["status"], "INVALID_RECEIPT")
+        self.assertEqual(invalid["observations"], [])
+
+    @unittest.skipUnless(os.name == "nt", "anchored repair health inspection is Windows only")
+    def test_repair_health_v1_section_overlay_disabled_and_pending_intents(self) -> None:
+        source = self.make_source_repo()
+        pack = self.freeze_pack(source, "repair-health-receipts-pack")
+        target = source.parent / "repair-health-v1"
+        aide_lite.write_text(target / "AGENTS.md", "# Authored guidance\n")
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt = aide_lite.load_portable_import_receipt(target)
+        receipt["schema_version"] = aide_lite.PORTABLE_IMPORT_RECEIPT_SCHEMA
+        receipt.pop("disabled_features")
+        receipt.pop("project_controls_digest")
+        for entry in receipt["managed"].values():
+            entry.pop("local_overlay")
+        receipt["receipt_digest"] = aide_lite.portable_import_record_digest(receipt, "receipt_digest")
+        receipt_path.write_text(aide_lite.stable_json_text(receipt), encoding="utf-8")
+        health = aide_lite.inspect_portable_repair_health(pack, target)
+        agents = next(item for item in health["observations"] if item["path"] == "AGENTS.md")
+        self.assertEqual(agents["state"], "MATCHING")
+        self.assertFalse(agents["repair_eligible"])
+        for name, rel in (("import", aide_lite.PORTABLE_IMPORT_INTENT_PATH), ("removal", aide_lite.PORTABLE_REMOVAL_INTENT_PATH)):
+            intent = target / rel
+            intent.write_bytes(b"unknown intent\n")
+            pending = aide_lite.inspect_portable_repair_health(pack, target)
+            self.assertEqual(pending["status"], "RECOVERY_REQUIRED")
+            self.assertIn(name, pending["pending_intents"])
+            self.assertFalse(any(item["repair_eligible"] for item in pending["observations"]))
+            intent.unlink()
+        overlay_target = source.parent / "repair-health-overlay"
+        aide_lite.write_text(overlay_target / "AGENTS.md", "# Authored guidance\n")
+        self.assertEqual(aide_lite.apply_import_pack(pack, overlay_target)["status"], "APPLIED")
+        agents_path = overlay_target / "AGENTS.md"
+        agents_path.write_text(agents_path.read_text(encoding="utf-8").replace("## AIDE Lite Portable Guidance", "## Locally edited guidance"), encoding="utf-8")
+        self.assertEqual(aide_lite.apply_import_pack(pack, overlay_target)["status"], "APPLIED")
+        overlay = next(item for item in aide_lite.inspect_portable_repair_health(pack, overlay_target)["observations"] if item["path"] == "AGENTS.md")
+        self.assertTrue(overlay["local_overlay"])
+        self.assertFalse(overlay["repair_eligible"])
+        disabled_target = source.parent / "repair-health-disabled"
+        aide_lite.write_text(disabled_target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH, aide_lite.stable_json_text({
+            "schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA_V2,
+            "entries": {}, "disabled_features": [{"feature_id": "local_state_examples"}],
+        }))
+        disabled_preview = aide_lite.apply_import_pack(pack, disabled_target, dry_run=True)
+        self.assertEqual(aide_lite.apply_import_pack(pack, disabled_target, expected_plan_digest=disabled_preview["plan_digest"])["status"], "APPLIED")
+        disabled = aide_lite.inspect_portable_repair_health(pack, disabled_target)
+        self.assertEqual(disabled["disabled_features"], ["local_state_examples"])
+        self.assertFalse(any(item["path"].startswith(".aide.local.example/") for item in disabled["observations"]))
 
     def test_owned_repair_rejects_edits_stale_plan_and_tampered_pack(self) -> None:
         source_root = self.make_source_repo()

@@ -42490,6 +42490,116 @@ def apply_portable_owned_repair(
         return _apply_portable_owned_repair_unlocked(pack_root, target_root, target_rel, dry_run=False, expected_plan_digest=expected_plan_digest, fail_after_write=fail_after_write)
 
 
+def inspect_portable_repair_health(pack_root: Path, target_root: Path) -> dict[str, object]:
+    """Observe receipt-owned files without changing the target; apply rechecks everything."""
+    pack_root, target_root = pack_root.absolute(), target_root.absolute()
+    report: dict[str, object] = {
+        "schema_version": "aide.portable-repair-health.v1", "status": "HEALTHY",
+        "pack": None, "target": str(target_root.resolve()), "receipt_digest": None,
+        "pending_intents": [], "disabled_features": [], "observations": [], "read_only": True,
+        "network_calls": False, "provider_or_model_calls": False,
+    }
+    if os.name != "nt" or not target_root.is_dir() or target_root.is_symlink() or bool(getattr(target_root, "is_junction", lambda: False)()):
+        report["status"] = "UNSAFE_TARGET"
+        return report
+    if pack_root == target_root or pack_root in target_root.parents or target_root in pack_root.parents:
+        report["status"] = "INVALID_PACK"
+        return report
+    try:
+        valid, problems = validate_pack_checksums(pack_root)
+        if not valid:
+            report["status"], report["reason"] = "INVALID_PACK", "; ".join(problems)
+            return report
+        report["pack"] = import_pack_identity(pack_root)
+    except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        report["status"], report["reason"] = "INVALID_PACK", str(exc)
+        return report
+    try:
+        with windows_pinned_directory(target_root, for_write=False):
+            for name, rel in (("import", PORTABLE_IMPORT_INTENT_PATH), ("repair", PORTABLE_REPAIR_INTENT_PATH), ("removal", PORTABLE_REMOVAL_INTENT_PATH)):
+                if os.path.lexists(portable_target_path(target_root, rel)):
+                    report["pending_intents"].append(name)
+            receipt = load_portable_import_receipt(target_root)
+    except (OSError, ValueError, RuntimeError) as exc:
+        report["status"], report["reason"] = "INVALID_RECEIPT", str(exc)
+        return report
+    if receipt is None:
+        report["status"], report["reason"] = "INVALID_RECEIPT", "portable import receipt is absent"
+        return report
+    report["receipt_digest"] = receipt["receipt_digest"]
+    report["disabled_features"] = receipt.get("disabled_features", [])
+    if receipt.get("pack") != report["pack"]:
+        report["status"] = "PACK_MISMATCH"
+        return report
+    pending = bool(report["pending_intents"])
+    for rel, entry in sorted(receipt["managed"].items()):
+        observation: dict[str, object] = {
+            "path": rel, "kind": entry["kind"], "ownership": entry["ownership"],
+            "local_overlay": bool(entry.get("local_overlay", False)), "expected_digest": entry["installed_digest"],
+            "observed_digest": None, "state": "UNKNOWN", "repair_eligible": False,
+            "repair_plan_digest": None, "reason": "", "next_action": "inspect ownership and preserve local state",
+        }
+        report["observations"].append(observation)
+        try:
+            target = portable_target_path(target_root, rel)
+            with windows_pinned_directory(target.parent, for_write=False):
+                if not os.path.lexists(target):
+                    observation["state"] = "MISSING_OWNED"
+                    observation["observed_digest"] = "missing"
+                else:
+                    captured: list[bytes] = []
+                    kernel, handle = portable_import_verified_leaf(target, None, read_only=True, capture_out=captured, max_bytes=64 * 1024 * 1024)
+                    try:
+                        data = b"".join(captured)
+                    finally:
+                        kernel.CloseHandle(handle)
+                    if entry["kind"] == "portable_managed_section":
+                        block = portable_managed_block(data.decode("utf-8"))
+                        observation["observed_digest"] = digest_bytes(block.encode("utf-8")) if block is not None else None
+                    else:
+                        observation["observed_digest"] = digest_bytes(data)
+                    observation["state"] = "MATCHING" if observation["observed_digest"] == entry["installed_digest"] else "CHANGED"
+            if observation["state"] == "MISSING_OWNED" and not pending and entry["kind"] == "managed_file" and entry["ownership"] == "aide_portable_managed" and receipt.get("mode") == "safe" and not import_scope_skip_reason(rel, "safe") and not any(rel.startswith(PORTABLE_OPTIONAL_FEATURES[feature]) for feature in receipt.get("disabled_features", [])):
+                preview = apply_portable_owned_repair(pack_root, target_root, rel, dry_run=True)
+                if preview["status"] == "PLANNED":
+                    observation["repair_eligible"] = True
+                    observation["repair_plan_digest"] = preview["plan_digest"]
+                    observation["next_action"] = "repair-owned-file with this exact preview digest"
+                else:
+                    observation["reason"] = f"exact repair preview returned {preview['status']}"
+            elif observation["state"] == "MISSING_OWNED":
+                observation["reason"] = "missing path is outside the exact safe owned-file repair scope"
+            elif observation["state"] == "CHANGED":
+                observation["reason"] = "installed content differs from the receipt; preserve local edits"
+            elif observation["state"] == "MATCHING":
+                observation["next_action"] = "none"
+                if observation["local_overlay"]:
+                    observation["reason"] = "project overlay remains project owned"
+        except (OSError, ValueError, RuntimeError, UnicodeDecodeError, KeyError, TypeError) as exc:
+            observation["state"], observation["repair_eligible"] = "UNKNOWN", False
+            observation["reason"] = str(exc)
+    if pending:
+        report["status"] = "RECOVERY_REQUIRED"
+    elif any(item["repair_eligible"] for item in report["observations"]):
+        report["status"] = "REPAIRABLE"
+    elif any(item["state"] != "MATCHING" for item in report["observations"]):
+        report["status"] = "PRESERVATION_REQUIRED"
+    return report
+
+
+def command_repair_health(args: argparse.Namespace) -> int:
+    report = inspect_portable_repair_health(Path(args.pack), Path(args.target))
+    if args.json:
+        print(stable_json_text(report), end="")
+    else:
+        print("AIDE Lite repair-health")
+        print(f"status: {report['status']}")
+        print(f"observations: {len(report['observations'])}")
+        print(f"pending_intents: {','.join(report['pending_intents']) or 'none'}")
+        print("network_calls: none")
+    return 0 if report["status"] in {"HEALTHY", "REPAIRABLE", "PRESERVATION_REQUIRED"} else 3
+
+
 def command_repair_owned_file(args: argparse.Namespace) -> int:
     result = apply_portable_owned_repair(Path(args.pack), Path(args.target), args.path, dry_run=args.dry_run, expected_plan_digest=args.expect_plan)
     print("AIDE Lite repair-owned-file")
@@ -44625,6 +44735,11 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     repair_owned_parser.add_argument("--dry-run", action="store_true")
     repair_owned_parser.add_argument("--expect-plan", help="Exact digest from dry-run; required for apply.")
     repair_owned_parser.set_defaults(handler=command_repair_owned_file)
+    repair_health_parser = subparsers.add_parser("repair-health")
+    repair_health_parser.add_argument("--pack", required=True)
+    repair_health_parser.add_argument("--target", required=True)
+    repair_health_parser.add_argument("--json", action="store_true")
+    repair_health_parser.set_defaults(handler=command_repair_health)
     removal_apply_parser = subparsers.add_parser("apply-removal")
     removal_apply_parser.add_argument("--target", required=True)
     removal_apply_parser.add_argument("--expect-plan", required=True, help="Exact digest from plan-removal --json.")

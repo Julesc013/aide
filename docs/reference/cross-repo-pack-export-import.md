@@ -364,6 +364,14 @@ py -3 -I -B <pack>/files/.aide/scripts/aide_lite.py --repo-root <target> repair-
 
 The preview checks pack checksums, exact receipt and source digests, safe-mode ownership, and a missing target. Apply requires its exact plan digest. An existing file, local edit, unknown receipt entry, different pack, pending import intent, or stale plan refuses the write. A target-local repair intent records a write before it occurs. On Windows, repair holds non-renamable directory handles for every path component, rejects reparse points, stages complete bytes, and publishes through a handle-relative no-clobber hard link. A competing file or parent substitution cannot redirect that publication. Repair cleanup opens the intent beneath pinned ancestors without following reparse points, verifies its exact bytes and regular single-link identity, and deletes through that same handle. A changed or redirected intent remains untouched. Every effectful import, including a first install, and repair acquire a per-target lifecycle guard before preflight or intent changes. Windows uses a named kernel mutex that leaves no target lock file; POSIX import uses a private persistent temporary lock file whose advisory lock is released on process exit. Rerunning the exact apply after interruption verifies a completed postimage or retries a missing preimage; unknown bytes remain blocked. A dry-run leaves the target unchanged. Repair apply fails closed on non-Windows platforms until equivalent anchored path operations are implemented. The importer’s separate intent cleanup remains outside this repair guarantee. The repair command does not restore managed sections, target-owned templates, modified files, or multiple paths.
 
+An installed Windows consumer can inspect its receipt-owned files without the development checkout:
+
+```bash
+py -3 -I -B <pack>/files/.aide/scripts/aide_lite.py --repo-root <target> repair-health --pack <pack> --target <target> --json
+```
+
+The read-only report identifies matching, missing, changed and unknown paths, pending import/repair/removal intents, and receipt v1/v2 overlays or disabled features. Only a missing, safe-mode, receipt-owned managed file with a successful exact-pack `repair-owned-file --dry-run` receives a repair plan digest. Changed files, hard links, unsafe paths, managed sections and project overlays are preserved. A pending intent requires recovery before new repair eligibility. The report is a snapshot, not authority for an effect: apply rechecks the pack, receipt, path and plan. Inspection itself is limited to Windows anchored handles; other platforms report `UNSAFE_TARGET` until equivalent observation is qualified.
+
 ### Return to an exact predecessor portable pack
 
 For a completed safe-mode update whose receipt names both the current pack and
