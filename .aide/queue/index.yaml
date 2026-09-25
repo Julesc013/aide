@@ -3550,3 +3550,13 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/evidence
     description: Exact-pack, receipt-owned single missing-file repair apply in disposable delivered-pack consumers.
+  - id: AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01
+    status: running
+    planning_state: admitted_regression_pending
+    result: PENDING
+    title: Block rival Windows writes to owned repair staging bytes
+    task: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/evidence
+    description: Fix the independently reproduced second-writer race in Windows owned repair staging before release qualification.

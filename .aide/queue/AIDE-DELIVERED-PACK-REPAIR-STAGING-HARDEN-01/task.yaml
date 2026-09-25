@@ -1,0 +1,43 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01
+title: Block rival Windows writes to owned repair staging bytes
+type: implementation
+status: running
+planning_state: admitted_regression_pending
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-OWNED-REPAIR-DEV-INTEGRATION-01
+base_dev: 9a8b08700ef7356ee75b6750f3a53c97a4a56e3e
+authority_basis: >
+  Owner campaign delegation authorizes a fix-forward security repair after
+  independent same-user Windows reproduction found unsafe staging publication
+  in the already integrated repair helper. No main or public release effect
+  used these bytes.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/**
+    - .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/**
+    - .aide/queue/index.yaml
+    - .aide/changelog/**
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_operations:
+    - main promotion, tagging, public release, hosted or native activation
+    - rewriting published dev history or deleting unrelated target files
+verification:
+  - reproduce rival staging writes against the exact old helper for intent and payload
+  - prove exclusive new staging denies rival writes through handle-relative publication
+  - preserve no-clobber, interruption, recovery, anchored cleanup, and receipt ownership
+  - run full combined importer and affected release-adjacent suites
+  - regenerate exact current-source pack/release outputs and verify consumers and replay
+  - obtain independent exact source and artifact review before qualified dev effect
+retained_gates:
+  - safe import writes and complete lifecycle remain separate
+  - main and public release remain separate

@@ -1,0 +1,8 @@
+schema_version: aide.queue-status.v0
+id: AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01
+status: running
+planning_state: admitted_regression_pending
+result: PENDING
+updated_at: 2026-09-25
+base_dev: 9a8b08700ef7356ee75b6750f3a53c97a4a56e3e
+next_action: add_exact_staging_rival_regressions_and_secure_publication
