@@ -1,0 +1,8 @@
+schema_version: aide.queue-status.v0
+id: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01
+status: running
+planning_state: admitted_source_implementation
+result: PENDING
+updated_at: 2026-09-25
+base_dev: 5dfa75e632b09f732a8150376db6840bcf149ed3
+next_action: characterize_removal_apply_oracles_and_implement_bounded_source

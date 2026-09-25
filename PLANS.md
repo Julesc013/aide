@@ -3712,3 +3712,10 @@ candidate `a4ee0f32`; evidence-only closeout `a55b804b` passed a narrow check,
 and remote/local dev were observed at that commit (tree `9f687687`). Before any
 real host query,
 physical host bytes, private loading, grants, and activation remain open.
+## 2026-09-25: Receipt-owned delivered-pack removal apply
+
+- `AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01` is admitted on a bounded task
+  branch from `dev@5dfa75e6`. It implements actual removal after the integrated
+  read-only planner, with receipt/plan binding, effect-time ownership,
+  preservation and interruption recovery. The separate importer and repair
+  safety work must be reconciled before integrated artifact qualification.

@@ -3530,3 +3530,13 @@ items:
     prompt: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/evidence
     description: Reconcile planner source with later dev work and regenerate current-source portable and local release outputs.
+  - id: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01
+    status: running
+    planning_state: admitted_source_implementation
+    result: PENDING
+    title: Apply receipt-owned delivered-pack removal safely
+    task: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01/evidence
+    description: Implement and qualify actual receipt-owned removal apply with effect-time checks, preservation, and interruption recovery.

@@ -1,0 +1,42 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01
+title: Apply receipt-owned delivered-pack removal safely
+type: implementation
+status: running
+planning_state: admitted_source_implementation
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_dev: 5dfa75e632b09f732a8150376db6840bcf149ed3
+authority_basis: >
+  The owner's 2026-09-25 campaign delegation explicitly authorizes bounded
+  lifecycle apply and disposable consumers after substantive technical gates.
+  The integrated removal planner remains read-only and does not satisfy the
+  mandatory supported removal journey.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - docs/reference/cross-repo-pack-export-import.md
+    - .aide/queue/AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01/**
+    - .aide/queue/index.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/**
+    - .aide/release/**
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_operations:
+    - remove target-owned or unknown material
+    - mutate a real consumer or unrelated repository
+    - follow reparse points outside the target
+    - main promotion, tag, upload, or publication before final gates
+verification:
+  - exact receipt and plan binding with effect-time observations
+  - deterministic changed, missing, junction, competing-writer, and interruption cases
+  - fresh and brownfield extracted-archive consumers
+  - independent source and integrated artifact review before dev effect
+retained_gates:
+  - share qualified lifecycle serialization and anchored path primitives
+  - preserve a valid receipt and recovery evidence until effect reconciliation
+  - no product, native, hosted, main, or release claim from source tests alone
