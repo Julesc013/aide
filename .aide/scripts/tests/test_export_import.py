@@ -85,6 +85,20 @@ class ExportImportTests(unittest.TestCase):
         ]:
             self.assertIn(anchor, policy)
 
+    def test_generated_install_guides_describe_bounded_removal_apply(self) -> None:
+        pack_guide = aide_lite.pack_install_text()
+        release_guide = aide_lite.release_install_notes_text(REPO_ROOT, "fixture", "PASS")
+        for guide in [pack_guide, release_guide]:
+            self.assertIn("plan-removal", guide)
+            self.assertIn("apply-removal", guide)
+            self.assertIn("--expect-plan", guide)
+            self.assertIn("Windows", guide)
+            self.assertIn("PARTIAL_REMOVAL", guide)
+            self.assertIn("authored", guide.lower())
+            self.assertNotIn("uninstall are planning models only", guide)
+        self.assertIn("apply_mode_available: true", release_guide)
+        self.assertIn("Non-Windows apply", pack_guide)
+
     def test_export_includes_required_portable_files_and_manifest(self) -> None:
         source_root = self.make_source_repo()
         pack_root = self.build_pack(source_root)

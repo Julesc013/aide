@@ -11657,3 +11657,16 @@ Owner review found a final-write race in the first candidate. The repair now pub
   check passed. Direct branch apply fails at the absent helper dependency.
   Complete detach, combined-source/consumer qualification, independent review,
   and dev integration remain pending. The CLI reports `PARTIAL_REMOVAL`.
+
+## 2026-09-25 - Combined removal artifact guidance repair
+
+- Combined source `00966855` and its extracted ZIP/tar consumers passed the
+  bounded Windows removal behavior checks, but independent artifact review
+  rejected both generated install guides. They still described removal as
+  planning only, which would mislead consumers of the delivered pack.
+- Superseded both guide generators in `.aide/scripts/aide_lite.py` and added a
+  focused regression to assert that exported and outer release guidance explain
+  exact-plan Windows apply, authored-content preservation, partial results,
+  interruption recovery, and non-Windows limits. The rejected bytes remain in
+  external scratch evidence. New source, artifact, and consumer validation
+  must precede dev integration.

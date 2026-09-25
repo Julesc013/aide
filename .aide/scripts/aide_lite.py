@@ -17685,7 +17685,8 @@ def release_install_notes_text(repo_root: Path, bundle_id: str, pack_status: str
         f"- source_pack: {source.get('path', EXPORT_PACK_PATH)}",
         f"- pack_status: {pack_status}",
         "- publication_status: local_preview_no_publish",
-        "- apply_mode_available: false",
+        "- apply_mode_available: true",
+        "- apply_mode_scope: bounded receipt-owned removal on Windows",
         "",
         "## Default Workflow",
         "",
@@ -17693,13 +17694,16 @@ def release_install_notes_text(repo_root: Path, bundle_id: str, pack_status: str
         "2. Inspect `manifest.yaml`, `checksums.json`, `install.md`, and `files/**`.",
         "3. From the extracted archive root, run the isolated dry-run and safe import commands from `install.md`.",
         "4. Run target-local AIDE Lite validation after import.",
-        "5. Use install, repair, upgrade, rollback, and uninstall commands in observe/plan/dry-run mode only.",
+        "5. On Windows, use `plan-removal --target <target-repo> --json`, then `apply-removal --target <target-repo> --expect-plan <plan_digest>` for receipt-owned removal.",
+        "6. Treat other lifecycle apply commands according to their separately documented boundaries.",
         "",
         "## Preservation Rules",
         "",
         "- Target `.aide/memory/**`, `.aide/queue/**`, evidence, golden tasks, generated reports, docs/canon, manual guidance, and existing tools are target state and must be preserved.",
         "- `.aide.local/**`, `.env`, secrets, raw prompts, raw responses, and provider credentials are never install candidates.",
-        "- Upgrade, repair, rollback, and uninstall are planning models only until a future reviewed apply phase exists.",
+        "- Windows `apply-removal` deletes only unchanged receipt-owned regular files and an exact generated whole-file `AGENTS.md` scaffold. It refuses changed paths and retains authored `AGENTS.md`, the runner, and receipt as `PARTIAL_REMOVAL`.",
+        "- Authored `AGENTS.md` managed-section removal and non-Windows removal apply remain unavailable. A partial or interrupted removal requires exact-intent reconciliation.",
+        "- General install, repair, upgrade, and rollback apply have separate documented scopes; this removal command does not expand them.",
         "",
         "## Publication Boundary",
         "",
@@ -39894,20 +39898,26 @@ bytes. Use `--from-pack <validated-predecessor-pack>` to prove the baseline of
 an older installation that predates receipts. Local edits, unknown ownership,
 changed preview state, invalid packs, and partial prior effects refuse closed.
 
-## Read-Only Removal Planning
+## Bounded Receipt-Owned Removal on Windows
 
-After a receipt-backed import, inspect the exact future removal boundary without
-changing target bytes:
+After a receipt-backed import, inspect the exact removal boundary without
+changing target bytes. Pass that preview's exact `plan_digest` to apply:
 
 ```text
 py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo>
 py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo> --json
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> apply-removal --target <target-repo> --expect-plan <plan_digest>
 ```
 
-Only unchanged bytes recorded as AIDE-managed are future removal candidates.
-Local edits, missing state, target-owned files, unknown ownership, and authored
-`AGENTS.md` content are preserved. This command is planning-only: it never
-deletes files, removes a managed section, or writes lifecycle state.
+`plan-removal` is read-only. On Windows, `apply-removal` deletes only unchanged
+receipt-owned regular files and an exact generated whole-file `AGENTS.md`
+scaffold. It checks ownership again at effect time and retains an intent for
+interruption recovery. Changed or unknown paths are preserved and refuse the
+effect. Authored `AGENTS.md` content is preserved; a partial result retains the
+runner and receipt and reports `PARTIAL_REMOVAL` (exit code 2). Removing only a
+managed section from an authored file remains unavailable. A repeated apply
+must use the same digest to reconcile an interrupted intent. Non-Windows apply
+fails closed. Keep the extracted pack available for recovery after full detach.
 
 ## Manual Import
 

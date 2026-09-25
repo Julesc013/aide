@@ -53,6 +53,20 @@ content, and leave a clear recovery state across interruptions.
 
 ## Recovery and risks
 
+## Artifact guidance repair after independent review
+
+The combined source and first extracted consumers passed behavior checks, but
+independent artifact review rejected the frozen `00966855` guides: both generated
+install notes still described removal as planning only. Supersede that source by
+editing the two guide generators and a focused guide regression within this
+WorkUnit, record the reason in `IMPLEMENT.md`, then freeze a clean source commit.
+Regenerate the export and release outputs from that commit, repeat affected tests
+and disposable consumers, obtain independent review of changed source and exact
+artifact bytes, and only then consider a dev effect. Preserve the rejected
+archive bytes externally for comparison; never publish or integrate them.
+
+## Recovery and risks
+
 The planner alone is not deletion authority. An exact receipt and effect-time
 bytes must both agree before each removal. A partial run must remain
 classifiable; never discard the last ownership record before reconciliation.
