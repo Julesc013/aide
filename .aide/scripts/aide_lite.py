@@ -5675,25 +5675,29 @@ def task_os_latest_task_ref(repo_root: Path) -> tuple[str, str]:
     if not packet.exists():
         return "", ""
     text = read_text(packet)
-    candidate_sections: list[str] = []
+    # Only the packet preamble and the leading PHASE/GOAL lines can declare
+    # task identity. Later sections contain incidental IDs in guidance.
+    preamble = re.split(r"^##\s+", text, maxsplit=1, flags=re.MULTILINE)[0]
+    declared_id = re.search(r"^\s*[-*]?\s*task_id:\s*([^\s`]+)", preamble, re.MULTILINE)
+    if declared_id:
+        raw = declared_id.group(1)
+        return raw, resolve_task_id(repo_root, raw)
+    candidate_lines: list[str] = []
     for heading in ["PHASE", "GOAL"]:
         match = re.search(rf"^##\s+{heading}\s*$\s*(.*?)(?=^##\s+|\Z)", text, re.MULTILINE | re.DOTALL)
         if match:
-            candidate_sections.append(match.group(1).strip())
-    candidate_sections.append(text)
-    known_ids = sorted((str(task.get("id", "")) for task in queue_task_blocks(repo_root) if str(task.get("id", ""))), key=len, reverse=True)
+            lines = match.group(1).strip().splitlines()
+            if lines:
+                candidate_lines.append(re.sub(r"^UNSPECIFIED\s+-\s+", "", lines[0].strip()))
     patterns = [
-        r"(?<![A-Za-z0-9._-])AIDE-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
-        r"(?<![A-Za-z0-9._-])X-OS-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
-        r"(?<![A-Za-z0-9._-])X-TEST-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
-        r"(?<![A-Za-z0-9._-])Q\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"AIDE-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"X-OS-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"X-TEST-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"Q\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
     ]
-    for section in candidate_sections:
-        for known_id in known_ids:
-            if re.search(rf"(?<![A-Za-z0-9._-]){re.escape(known_id)}(?![A-Za-z0-9._-])", section):
-                return known_id, known_id
+    for line in candidate_lines:
         for pattern in patterns:
-            match = re.search(pattern, section)
+            match = re.match(pattern, line)
             if match:
                 raw = match.group(0)
                 return raw, resolve_task_id(repo_root, raw)
@@ -5822,6 +5826,17 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
         "aide_apply_lifecycle_plan_ready": False,
         "lifecycle_apply_authorized": False,
     }
+    if not context.get("tasks"):
+        return {
+            "task": "No queued WorkUnit selected",
+            "reason": "The target queue is empty; create a target-owned WorkUnit through intake before execution.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
+        }
     if apply02_accepted_with_notes and not task_os_done_local(status_repair_status):
         return {
             "task": f"{TASK_OS_STATUS_REPAIR_TASK_ID} - Task OS Current and Latest-Task Reporting Repair",
@@ -6119,16 +6134,16 @@ def task_os_render_task_status(context: dict[str, object]) -> str:
             f"- current_task_status: `{context.get('current_task_status', 'unknown')}`",
             f"- latest_indexed_task_id: `{context.get('latest_indexed_task_id', '') or 'none'}`",
             f"- latest_indexed_task_status: `{context.get('latest_indexed_task_status', 'unknown')}`",
-            f"- latest_task_packet_raw: `{context.get('latest_task_raw', '') or 'unknown'}`",
-            f"- latest_task_packet_id: `{context.get('latest_task_id', '') or 'unknown'}`",
+            f"- latest_task_packet_raw: `{context.get('latest_task_raw', '') or 'none'}`",
+            f"- latest_task_packet_id: `{context.get('latest_task_id', '') or 'none'}`",
             f"- latest_task_packet_status: `{context.get('latest_task_status', '') or 'unknown'}`",
             f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
             f"- selected_next_workunit_reason: {selection.get('reason', '')}",
             "",
             "## Latest Task Packet",
             "",
-            f"- latest_task_raw: `{context.get('latest_task_raw', '') or 'unknown'}`",
-            f"- latest_task_id: `{context.get('latest_task_id', '') or 'unknown'}`",
+            f"- latest_task_raw: `{context.get('latest_task_raw', '') or 'none'}`",
+            f"- latest_task_id: `{context.get('latest_task_id', '') or 'none'}`",
             f"- latest_task_status: `{context.get('latest_task_status', '') or 'unknown'}`",
             "",
             "## Queue Summary",
@@ -38451,7 +38466,7 @@ def command_task_status(args: argparse.Namespace) -> int:
     print(f"task_count: {len(tasks)}")
     for task in tasks:
         print(f"- {task.get('id', '')}: status={task.get('status', 'unknown')} planning_state={task.get('planning_state', 'unknown')}")
-    print(f"latest_task_id: {context.get('latest_task_id', '') or 'unknown'}")
+    print(f"latest_task_id: {context.get('latest_task_id', '') or 'none'}")
     print(f"report: {TASK_OS_TASK_STATUS_REPORT_PATH} ({report_result.action})")
     print("report_only: true")
     return 0 if tasks else 1

@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-LITE-TASK-TRUTH-01
+status: needs_review
+classification: delivered_lite_report_truth_repair
+planning_state: source_candidate_frozen
+result: PASS_WITH_WARNINGS
+updated_at: 2026-09-25
+current_slice: exact_source_review
+next_slice: accepted_source_projection_and_installed_recheck
+review_gate: independent_exact_source_review
+source_candidate_frozen: true
+dev_effect_performed: false
+release_published: false
+notes:
+  - Exact installed target finding is recorded in the predecessor consumer WorkUnit.
+  - Source repair cannot reuse old preview bytes as delivered acceptance.
+  - The focused red regression failed before repair and passes after the narrow source change.
+  - Final artifact, offline and stable release gates remain open.

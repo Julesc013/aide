@@ -3660,3 +3660,13 @@ items:
     prompt: .aide/queue/AIDE-STABLE-LITE-CONSUMER-DEV-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-LITE-CONSUMER-DEV-INTEGRATION-01/evidence
     description: Separately review the exact evidence-only dev effect forbidden to the source evaluation task.
+  - id: AIDE-STABLE-LITE-TASK-TRUTH-01
+    status: needs_review
+    planning_state: source_candidate_frozen
+    result: PASS_WITH_WARNINGS
+    title: Repair delivered Lite empty-target Task OS reporting truth
+    task: .aide/queue/AIDE-STABLE-LITE-TASK-TRUTH-01/task.yaml
+    exec_plan: .aide/queue/AIDE-STABLE-LITE-TASK-TRUTH-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-STABLE-LITE-TASK-TRUTH-01/prompt.md
+    evidence: .aide/queue/AIDE-STABLE-LITE-TASK-TRUTH-01/evidence
+    description: Prevent incidental packet IDs and source-specific next work in a fresh target queue.

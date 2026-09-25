@@ -12001,3 +12001,11 @@ Owner review found a final-write race in the first candidate. The repair now pub
   tracking, remote and API dev all became `a7254d7d`, tree `f5d019ed`.
   The external logs and hashes are bound in the integration evidence. Main,
   tag, publication and the Task OS source defect remain open.
+- The evidence-only closeout `d292253b` received independent
+  `ACCEPT_WITH_NOTES`, a fresh exact preflight, local dev fast-forward, normal
+  push and observed local/tracking/remote/API equality. From that clean dev,
+  a separate Task OS source repair WorkUnit was admitted. Its red clean-target
+  regression reproduced incidental `X-OS-01` identity. A narrow parser and
+  empty-queue selection repair passes 9 focused Task OS, 5 capability,
+  canonical validate and doctor checks. The source candidate awaits exact
+  technical review; artifact projection and dev effect remain separate.

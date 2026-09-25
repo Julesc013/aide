@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import argparse
+import contextlib
 import importlib.util
+import io
 import json
 import sys
 import tempfile
@@ -217,6 +220,57 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             context = aide_lite.task_os_context(root)
             self.assertEqual(context["latest_task_id"], repair_id)
             self.assertEqual(context["latest_task_status"], "running")
+
+    def test_empty_target_packet_does_not_promote_context_to_task_truth(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / ".aide/queue").mkdir(parents=True)
+            (root / ".aide/context").mkdir(parents=True)
+            (root / ".aide/queue/index.yaml").write_text(
+                "schema_version: aide.queue-index.v0\nitems:\n", encoding="utf-8"
+            )
+            (root / ".aide/context/latest-task-packet.md").write_text(
+                "\n".join(
+                    [
+                        "# AIDE Latest Task Packet",
+                        "",
+                        "## PHASE",
+                        "",
+                        "UNSPECIFIED - Disposable installed AIDE context evidence smoke task",
+                        "Prior Q17 and X-OS-01 are background only.",
+                        "",
+                        "## GOAL",
+                        "",
+                        "Disposable installed AIDE context evidence smoke task",
+                        "AIDE-APPLY-00 appears here only as explanatory text.",
+                        "",
+                        "## CONTEXT_REFS",
+                        "",
+                        "- run route explain after Q17",
+                        "- source X-OS-01 is background context only",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            self.assertEqual(aide_lite.task_os_latest_task_ref(root), ("", ""))
+            context = aide_lite.task_os_context(root)
+            self.assertEqual(context["task_count"], 0)
+            self.assertEqual(context["latest_task_id"], "")
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertEqual(selection["task"], "No queued WorkUnit selected")
+            self.assertFalse(selection["aide_apply_00_next_packet_ready"])
+            self.assertFalse(selection["lifecycle_apply_authorized"])
+            report = aide_lite.task_os_render_task_status(context)
+            self.assertIn("latest_task_packet_id: `none`", report)
+            self.assertIn("selected_next_workunit: No queued WorkUnit selected", report)
+            self.assertNotIn("selected_next_workunit: X-OS-01", report)
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                exit_code = aide_lite.command_task_status(argparse.Namespace(repo_root=root))
+            self.assertEqual(exit_code, 1)
+            self.assertIn("task_count: 0", output.getvalue())
+            self.assertIn("latest_task_id: none", output.getvalue())
 
     def test_checkpoint_and_next_plan_use_queue_truth_after_x_os_02(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

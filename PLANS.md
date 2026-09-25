@@ -3920,6 +3920,12 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   normal push only. Fresh preflight passed, both effects exited 0, and local,
   tracking, remote and API `dev` all showed `a7254d7d` afterward. This
   closeout evidence awaits its own review; Task OS source repair is next.
+- After the reviewed closeout reached observed `dev@d292253b`, bounded
+  `AIDE-STABLE-LITE-TASK-TRUTH-01` was admitted to repair the installed
+  empty-target `Q17`/`X-OS-01` report-truth defect. It owns source/tests and
+  a reference note only; artifact projection and dev effect are separate.
+  Its red regression reproduced incidental identity promotion; the narrow
+  source fix and affected tests pass. Exact source review is next.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

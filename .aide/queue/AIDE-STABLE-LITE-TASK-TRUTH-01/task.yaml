@@ -1,0 +1,54 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-TASK-TRUTH-01
+title: Repair delivered Lite empty-target Task OS reporting truth
+type: implementation
+status: needs_review
+planning_state: source_candidate_frozen
+result: PASS_WITH_WARNINGS
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_dev: d292253b09944f28f0fc794fe3a9679966fe56a0
+objective: >
+  Prevent incidental task identifiers in a generated target packet from
+  becoming latest-task truth, and suppress source-specific next-work advice
+  when the installed target queue has no WorkUnits.
+authority_basis: >
+  The 2026-09-25 owner campaign delegation authorizes bounded child source
+  repair and technical review. The independently reviewed local consumer
+  finding is recorded in AIDE-STABLE-LITE-CONSUMER-PREQUAL-01.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_x_os_01_task_os_commands.py
+    - docs/reference/task-os-report-only-commands.md
+    - .aide/queue/AIDE-STABLE-LITE-TASK-TRUTH-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/export/**
+    - .aide/release/**
+    - specs/**
+    - governance/**
+    - core/**
+  forbidden_paths:
+    - .github/**
+    - .aide.local/**
+    - arbitrary target repositories
+  forbidden_operations:
+    - mutate dev, main, tags, releases or hosted settings within this source WorkUnit
+    - regenerate or replace reviewed preview archives within this source WorkUnit
+    - alter task-status empty-queue exit convention without a separate contract decision
+    - claim final installed or offline acceptance from source tests
+verification:
+  - red regression for generic target packet with incidental Q17 and empty queue
+  - preserve explicit task_id and leading PHASE identity behavior
+  - suppress AIDE source-specific next-work selection for empty target queue
+  - focused suite plus affected canonical checks and independent exact source review
+  - separate artifact projection and installed consumer recheck before dev integration
+retained_gates:
+  - exact source review before accepted source status
+  - separately admitted generated artifact projection and dev effect review
+  - final released-byte and stable support qualification remain open
