@@ -7,6 +7,11 @@ This is an uncommitted source candidate awaiting independent review and
 combined artifact qualification. No real target, shared ref, generator output
 or remote was changed.
 
+Later identity: this initial source was committed as `23422130` and received
+independent REQUEST_CHANGES for a `pack/files` junction omission. It is
+superseded by the later reparse repair recorded in `reparse-review-repair.md`;
+the historical test and source hashes below remain tied to the first subject.
+
 ## Behavior
 
 `rollback-pack` previews or applies a return from a completed safe-mode

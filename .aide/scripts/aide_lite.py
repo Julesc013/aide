@@ -41431,8 +41431,16 @@ def apply_import_pack(
         return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes)
 
 
+def reject_portable_rollback_pack_reparse(pack_root: Path) -> None:
+    """Reject reparse roots and metadata before reading a rollback pack."""
+    for path in (pack_root, pack_root / "files", pack_root / "manifest.yaml", pack_root / "checksums.json"):
+        if path.is_symlink() or bool(getattr(path, "is_junction", lambda: False)()):
+            raise ValueError(f"rollback pack contains a reparse path: {path}")
+
+
 def portable_safe_pack_targets(pack_root: Path) -> set[str]:
     """Project targets represented by a checksum-valid safe portable pack."""
+    reject_portable_rollback_pack_reparse(pack_root)
     files_root = pack_root / "files"
     if not files_root.is_dir():
         raise ValueError("rollback pack has no payload root")
@@ -41458,6 +41466,8 @@ def portable_safe_pack_targets(pack_root: Path) -> set[str]:
 
 def build_portable_rollback_plan(current_pack: Path, previous_pack: Path, target_root: Path) -> dict[str, object]:
     """Preview a receipt-bound return to the exact predecessor payload."""
+    reject_portable_rollback_pack_reparse(current_pack)
+    reject_portable_rollback_pack_reparse(previous_pack)
     current_pack, previous_pack, target_root = current_pack.resolve(), previous_pack.resolve(), target_root.resolve()
     if current_pack == previous_pack or not target_root.is_dir():
         raise ValueError("rollback requires distinct packs and an existing target")

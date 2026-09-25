@@ -3,7 +3,7 @@ id: AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01
 title: Apply an exact predecessor portable-pack rollback
 type: implementation
 status: needs_review
-planning_state: bounded_equal_payload_source_candidate_frozen
+planning_state: reparse_repair_source_candidate_frozen
 result: PENDING
 created_at: 2026-09-25
 updated_at: 2026-09-25
@@ -31,5 +31,5 @@ verification:
   - disposable success, stale, authored-edit, interruption, and path-set tests
   - independent source review before integration
 retained_gates:
-  - no direct Git ref or generated-output effects in this task worktree
+  - no dev/main, remote-ref, or generated-output effects in this task worktree
   - full rollback across added/deleted payload paths remains a separate requirement

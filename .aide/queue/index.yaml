@@ -3572,7 +3572,7 @@ items:
     description: Reproduce and close a Windows parent-junction substitution race in portable import payload writes.
   - id: AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01
     status: needs_review
-    planning_state: bounded_equal_payload_source_candidate_frozen
+    planning_state: reparse_repair_source_candidate_frozen
     result: PENDING
     title: Apply an exact predecessor portable-pack rollback
     task: .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01/task.yaml

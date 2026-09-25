@@ -633,6 +633,47 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(resumed["written"], [])
         self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file())
 
+    @unittest.skipUnless(sys.platform == "win32", "Windows junction boundary")
+    def test_rollback_pack_rejects_reparse_payload_and_pack_roots(self) -> None:
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        root = Path(temp.name)
+        pack = root / "pack"
+        payload = root / "external-payload"
+        pack.mkdir()
+        payload.mkdir()
+        (payload / "a.txt").write_bytes(b"fixture bytes")
+        (pack / "manifest.yaml").write_text("included_files:\n  - files/a.txt\n", encoding="utf-8")
+        files_root = pack / "files"
+        pack_alias = root / "pack-alias"
+        try:
+            junction = subprocess.run(
+                ["cmd", "/c", "mklink", "/J", str(files_root), str(payload)],
+                capture_output=True, text=True, encoding="utf-8", check=False,
+            )
+            self.assertEqual(junction.returncode, 0, junction.stderr)
+            aide_lite.write_text(pack / "checksums.json", aide_lite.stable_json_text(aide_lite.build_pack_checksums(pack)))
+            self.assertEqual(aide_lite.validate_pack_checksums(pack), (True, []))
+            with self.assertRaisesRegex(ValueError, "reparse"):
+                aide_lite.portable_safe_pack_targets(pack)
+
+            junction = subprocess.run(
+                ["cmd", "/c", "mklink", "/J", str(pack_alias), str(pack)],
+                capture_output=True, text=True, encoding="utf-8", check=False,
+            )
+            self.assertEqual(junction.returncode, 0, junction.stderr)
+            with self.assertRaisesRegex(ValueError, "reparse"):
+                aide_lite.portable_safe_pack_targets(pack_alias)
+            target = root / "target"
+            target.mkdir()
+            with self.assertRaisesRegex(ValueError, "reparse"):
+                aide_lite.build_portable_rollback_plan(pack_alias, pack, target)
+        finally:
+            if pack_alias.is_junction():
+                pack_alias.rmdir()
+            if files_root.is_junction():
+                files_root.rmdir()
+
     @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
     def test_exact_predecessor_rollback_restores_owned_bytes_and_receipt(self) -> None:
         source_root = self.make_source_repo()

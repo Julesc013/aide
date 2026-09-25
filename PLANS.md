@@ -3761,3 +3761,13 @@ completed update through the existing import transaction. Source tests and
 documentation are recorded in the child WorkUnit. Changed payload sets,
 unavailable predecessor bytes, interrupted mixed effects, combined source,
 delivered artifacts, and independent review remain open gates.
+
+The first committed source `23422130` received independent REQUEST_CHANGES:
+the safe-pack enumerator followed a checksum-valid junction at `pack/files`.
+Repair and rerun the exact Windows boundary regression, obtain a scoped source
+rereview, then combine with current dev. The combined source must block rollback
+while a removal intent is pending and must regenerate artifacts from the
+current accepted generator before dev integration.
+The repaired source passes six focused rollback tests and awaits independent
+delta rereview. Its isolated pack still has old provenance by design; final
+validation belongs on combined source with regenerated artifacts.

@@ -11657,3 +11657,20 @@ Owner review found a final-write race in the first candidate. The repair now pub
   in the isolated task worktree. The child WorkUnit records exact logs and
   hashes. This is a source candidate only: independent review, combined-source
   qualification, extracted artifacts, and wider rollback coverage remain open.
+
+## 2026-09-25 - Rollback pack reparse-boundary review repair
+
+- Independent review of committed rollback source `23422130` reproduced a
+  checksum-valid `pack/files` junction that the new safe-target enumerator
+  followed into an outside fixture. The exact source received REQUEST_CHANGES;
+  importer effect-time checks limit overwrite risk, but the declared pack
+  containment boundary was not met.
+- Added a failing Windows regression for payload-root and pack-root junctions,
+  then made rollback refuse reparse roots and metadata before checksum reads.
+  Focused tests and a superseding independent review are required before any
+  combined artifact or dev effect.
+- The root/payload junction regression failed against `23422130` and passed
+  after the guard. Six focused rollback tests passed in 177.988s; compilation
+  and diff checks passed. Isolated canonical validation reports only the
+  expected stale generated-pack provenance, which this source-only WorkUnit
+  does not overwrite. Exact source delta rereview remains pending.

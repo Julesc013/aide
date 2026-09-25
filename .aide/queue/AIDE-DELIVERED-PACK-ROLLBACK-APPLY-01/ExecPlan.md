@@ -42,9 +42,23 @@ ownership-aware handling and are excluded from this first apply slice.
   regressions, Python compilation, diff check and canonical `validate` pass.
 - [ ] Independent review and combined artifact qualification.
 
+## Independent review repair
+
+Exact source `23422130` received REQUEST_CHANGES: its safe-pack enumerator
+checked descendant reparse paths but not the `pack/files` payload root. A
+checksum-valid Windows junction at that root escaped the declared pack while
+passing enumeration. Retain the review and fixture; add a focused failing
+regression for payload-root and pack-root junctions, reject those roots and
+reparse metadata leaves before checksum reads, rerun affected tests, then
+freeze a superseding source for exact delta rereview. Do not regenerate release
+outputs or touch shared refs until that technical gate passes. The new
+regression failed 1/1 before the guard and passed afterward; all six rollback
+tests then passed. A fresh independent delta review remains pending.
+
 ## Current source checkpoint
 
-The branch remains uncommitted by delegation to the integration controller.
+The first source candidate was committed as `23422130` by the integration
+controller and is rejected pending the reparse-boundary repair.
 Changed paths are `.aide/scripts/aide_lite.py`,
 `.aide/scripts/tests/test_export_import.py`,
 `docs/reference/cross-repo-pack-export-import.md`, and this new WorkUnit.
