@@ -39415,6 +39415,14 @@ def atomic_create_bytes_no_clobber(path: Path, data: bytes) -> None:
     kernel.CloseHandle.argtypes = [wintypes.HANDLE]
     kernel.CloseHandle.restype = wintypes.BOOL
     invalid = ctypes.c_void_p(-1).value
+
+    def delete_stage_link(native_handle: int) -> None:
+        disposition = FileDispositionInfo(True)
+        if not kernel.SetFileInformationByHandle(
+            native_handle, 4, ctypes.byref(disposition), ctypes.sizeof(disposition),
+        ):
+            raise ctypes.WinError(ctypes.get_last_error())
+
     with windows_pinned_directory(path.parent) as directory_handle:
         # A CRT mkstemp descriptor permits another Windows writer. Create the
         # stage with no sharing and keep that handle through the no-replace link.
@@ -39435,9 +39443,20 @@ def atomic_create_bytes_no_clobber(path: Path, data: bytes) -> None:
         try:
             descriptor = msvcrt.open_osfhandle(native_handle, os.O_RDWR | os.O_BINARY)
         except BaseException:
-            kernel.CloseHandle(native_handle)
+            try:
+                delete_stage_link(native_handle)
+            finally:
+                kernel.CloseHandle(native_handle)
             raise
-        with os.fdopen(descriptor, "wb") as handle:
+        try:
+            file_handle = os.fdopen(descriptor, "wb")
+        except BaseException:
+            try:
+                delete_stage_link(msvcrt.get_osfhandle(descriptor))
+            finally:
+                os.close(descriptor)
+            raise
+        with file_handle as handle:
             try:
                 handle.write(data)
                 handle.flush()
@@ -39446,12 +39465,7 @@ def atomic_create_bytes_no_clobber(path: Path, data: bytes) -> None:
             finally:
                 # Delete the random staging link through the same exclusive
                 # handle. A pathname unlink after close could hit a replacement.
-                disposition = FileDispositionInfo(True)
-                if not kernel.SetFileInformationByHandle(
-                    msvcrt.get_osfhandle(handle.fileno()),
-                    4, ctypes.byref(disposition), ctypes.sizeof(disposition),
-                ):
-                    raise ctypes.WinError(ctypes.get_last_error())
+                delete_stage_link(msvcrt.get_osfhandle(handle.fileno()))
 
 
 @contextmanager

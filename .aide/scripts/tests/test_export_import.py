@@ -970,6 +970,20 @@ class ExportImportTests(unittest.TestCase):
                 self.assertEqual(target.read_bytes(), b"expected bytes")
                 self.assertEqual(list(target.parent.iterdir()), [target])
 
+    @unittest.skipUnless(sys.platform == "win32", "requires Windows file sharing")
+    def test_owned_repair_stage_setup_failure_cleans_owned_link(self) -> None:
+        for stage in ("descriptor", "file-object"):
+            with self.subTest(stage=stage), tempfile.TemporaryDirectory() as raw:
+                target = Path(raw) / "victim.bin"
+                if stage == "descriptor":
+                    context = mock.patch("msvcrt.open_osfhandle", side_effect=OSError("descriptor setup failed"))
+                else:
+                    context = mock.patch.object(aide_lite.os, "fdopen", side_effect=OSError("file-object setup failed"))
+                with context, self.assertRaisesRegex(OSError, "setup failed"):
+                    aide_lite.atomic_create_bytes_no_clobber(target, b"expected bytes")
+                self.assertFalse(target.exists())
+                self.assertEqual(list(target.parent.iterdir()), [])
+
     def test_owned_repair_prepublication_failure_retries_from_missing(self) -> None:
         source_root = self.make_source_repo()
         pack = self.freeze_pack(source_root, "repair-prepublish-pack")
