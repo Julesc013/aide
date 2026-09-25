@@ -1,0 +1,39 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01
+title: Keep delivered-pack importer writes inside the observed target
+type: implementation
+status: running
+planning_state: adversarial_regression_in_progress
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_dev: 5dfa75e632b09f732a8150376db6840bcf149ed3
+authority_basis: >
+  The owner's 2026-09-25 campaign delegation covers qualified lifecycle
+  implementation and disposable consumers. Existing import writes use a
+  pathname after validating it, leaving a parent-junction substitution gap.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - .aide/queue/AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01/**
+    - .aide/queue/index.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/**
+    - .aide/release/**
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_operations:
+    - mutate a real target repository or unrelated project data
+    - delete or replace target-owned content to simplify import
+    - main promotion, tag, upload, or publication
+verification:
+  - prove a parent swap cannot redirect a managed payload outside target
+  - preserve exact preview, receipt, interruption, update, and ownership behavior
+  - run importer and affected release suites plus delivered-archive consumers
+  - obtain independent source and integrated artifact review before dev effect
+retained_gates:
+  - depends on the separately reviewed owned-repair helper where reused
+  - a skipped Windows junction oracle does not qualify the safety claim
+  - actual repair, removal, rollback, hosted effects, and publication remain separate

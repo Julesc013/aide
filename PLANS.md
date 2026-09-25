@@ -3627,6 +3627,17 @@ The extracted ZIP fresh/brownfield consumers and zero-change 44-file release
 replay pass. No removal apply, live
 target mutation, main promotion, tag, upload, or publication is included.
 
+## Delivered pack importer write boundary
+
+`AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01` is a bounded stable-lifecycle
+repair from remote `dev@5dfa75e6`. Current import validates target paths and
+later writes by pathname; a parent junction substituted at that boundary may
+redirect a managed payload. First prove the race in a disposable target, then
+reuse the separately reviewed owned-repair pinned-parent mechanism for the
+importer. Exact preview, receipt, ownership, interruption, update, delivered
+archive, and independent integration checks remain required. No real target
+effect, main promotion, or publication is included in this task.
+
 ## GitHub expected-head target source
 
 `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01` is now running on a bounded source
