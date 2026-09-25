@@ -3532,8 +3532,8 @@ items:
     description: Reconcile planner source with later dev work and regenerate current-source portable and local release outputs.
   - id: AIDE-OWNED-REPAIR-DEV-INTEGRATION-01
     status: running
-    planning_state: local_artifacts_projected_consumer_review_pending
-    result: PENDING
+    planning_state: reviewed_dev_effect_pending
+    result: PENDING_INTEGRATION
     title: Integrate reviewed owned repair with current dev
     task: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/ExecPlan.md

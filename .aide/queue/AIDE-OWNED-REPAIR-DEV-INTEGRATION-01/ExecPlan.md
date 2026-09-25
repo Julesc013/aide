@@ -31,8 +31,12 @@ qualify full lifecycle, native/hosted operation, main, or publication.
 - [x] Project local portable and release/draft artifacts from committed
   combined source `71501c6b`; all generator validators pass. Archive
   consumers, postcommit replay, and independent review remain pending.
-- [ ] Qualify regenerated artifacts and consumers.
-- [ ] Obtain independent combined acceptance and integrate dev.
+- [x] Qualify regenerated artifacts and two extracted offline consumers;
+  committed replay changed zero of 44 release files. See
+  `evidence/consumer-and-replay.md`.
+- [x] Obtain independent exact `ACCEPT_WITH_NOTES` for `e4697aaa`,
+  tree `a0b2ed70`. See `evidence/review-e4697aaa.md`.
+- [ ] Fast-forward and observe remote dev under one Git writer.
 
 ## Recovery
 

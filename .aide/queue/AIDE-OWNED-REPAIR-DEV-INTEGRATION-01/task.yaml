@@ -3,7 +3,7 @@ id: AIDE-OWNED-REPAIR-DEV-INTEGRATION-01
 title: Integrate reviewed owned repair with current dev
 type: integration
 status: running
-planning_state: local_artifacts_projected_consumer_review_pending
+planning_state: reviewed_dev_effect_pending
 result: PENDING
 created_at: 2026-09-25
 updated_at: 2026-09-25
@@ -13,6 +13,9 @@ depends_on:
 base_dev: 5dfa75e632b09f732a8150376db6840bcf149ed3
 source_candidate: 45c5ce91132a00012dcf15e4ca38aa007afb8359
 source_review_closeout: cdb3bd04f1ae20f4e58529f7132c376fcbdc48c6
+reviewed_candidate: e4697aaa327189e6eb00742613de841aa4e4d4a8
+reviewed_tree: a0b2ed700ee89da3200f00ed2591e8860b75be06
+review_verdict: ACCEPT_WITH_NOTES
 merge_base: fce11e7fce3e8106a71f5a2391fd6f0517d7e0c8
 authority_basis: >
   Owner campaign delegation permits qualified dev integration after independent
