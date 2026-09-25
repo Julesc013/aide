@@ -93,6 +93,9 @@ security predicates and final delivered bytes at their exact revisions.
       suites, deterministic generators, canonical checks, extracted ZIP/tar
       canary and independent artifact review. Exact identities, results and
       limitations are in `evidence/combined-qualification-99a9e54d.md`.
-- [ ] Commit the generated projection, prove zero-diff postcommit replay,
-      obtain exact effect review and integrate qualified bytes into observed
-      remote `dev`.
+- [x] Commit the generated projection, converge release metadata, prove
+      zero-diff four-command derived replay, obtain exact effect review and
+      integrate qualified bytes into observed remote `dev@54b9d45e`.
+      The failed full export/changelog replay remains visible; exact results
+      and limits are in `evidence/postcommit-convergence.md` and
+      `evidence/dev-integration.md`.

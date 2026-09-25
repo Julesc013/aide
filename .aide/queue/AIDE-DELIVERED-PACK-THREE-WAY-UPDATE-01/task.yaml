@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01
 title: Preserve project choices across successive portable-pack updates
 type: implementation
-status: needs_review
-planning_state: artifact_candidate_review
-result: PENDING
+status: passed
+planning_state: integrated_dev
+result: PASS
 created_at: 2026-09-25
 updated_at: 2026-09-25
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

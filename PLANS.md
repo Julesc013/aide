@@ -3859,3 +3859,15 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
 - Next commit the projection, prove post-commit replay and obtain exact `dev`
   effect review. Stable profile, main, tag and publication gates remain with
   `AIDE-CONVERGENCE-AND-DELIVERY-01`.
+
+## 2026-09-25 - Combined update and repair-health dev effect
+
+- Projection `d137f936` and metadata convergence `54b9d45e` retained the
+  independently reviewed ZIP/tar bytes. Four-command derived replay changed
+  zero tracked files; the earlier full export/changelog replay failure is
+  preserved. Canonical checks and 12-commit range policy passed.
+- Independent exact effect review issued conditional GO. After fresh clean
+  worktree, identity and remote-ref checks, one writer fast-forwarded and
+  normally pushed `dev@54b9d45e`; local, tracking, remote and GitHub API refs
+  matched. The two bounded WorkUnits are integrated; parent release gates
+  remain open. Next repair the stable contract candidate against this source.

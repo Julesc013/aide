@@ -11878,3 +11878,19 @@ Owner review found a final-write race in the first candidate. The repair now pub
   repair/rollback/removal apply, hostile/OS-level network and publication
   paths remain separate. The generated projection awaits a frozen commit,
   replay and exact `dev` effect review; no public release is claimed.
+
+## 2026-09-25 - Integrate qualified combined update and repair health into dev
+
+- Committed exact local preview projection `d137f936`. The first post-commit
+  full export/changelog replay changed generated source identities and failed
+  its zero-change gate; that output remains recorded. A bounded release-only
+  metadata convergence at `54b9d45e` preserved reviewed archive hashes,
+  passed bundle/validate/draft/draft-validate and then replayed those four
+  commands with zero tracked changes.
+- Exact independent effect review issued conditional GO for FF local dev and
+  normal push only. Fresh Windows `Jules`/GitHub `Julesc013`, clean worktrees,
+  base/candidate ancestry and local/origin/remote/API refs passed. Both
+  operations exited 0; all observed `dev` identities became full `54b9d45e`,
+  tree `ffbaecee`, with a clean primary worktree. The two WorkUnits hold exact
+  logs, hashes and effect manifest. Main/tag/publication and stable profile
+  qualification remain open.
