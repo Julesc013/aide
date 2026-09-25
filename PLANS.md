@@ -3914,6 +3914,12 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   `AIDE-STABLE-LITE-CONSUMER-DEV-INTEGRATION-01` WorkUnit now owns the exact
   integration candidate, effect review, ref checks and closeout; source repair
   follows that checkpoint.
+- The separate WorkUnit froze candidate `a7254d7d`, tree `f5d019ed`, with
+  four structured commits and 22 queue/docs paths. Canonical checks passed;
+  independent exact effect review gave conditional GO for a local FF and
+  normal push only. Fresh preflight passed, both effects exited 0, and local,
+  tracking, remote and API `dev` all showed `a7254d7d` afterward. This
+  closeout evidence awaits its own review; Task OS source repair is next.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

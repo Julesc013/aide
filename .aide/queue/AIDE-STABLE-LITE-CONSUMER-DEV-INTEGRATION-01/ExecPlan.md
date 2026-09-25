@@ -40,6 +40,10 @@ closeout, not product source, generated archives or a public release.
 ## Progress
 
 - [x] Admit bounded integration task from the frozen evaluation candidate.
-- [ ] Freeze and review exact effect candidate/manifest.
-- [ ] Execute qualified dev effect and observe the remote identity.
-- [ ] Close status/evidence and route the source repair.
+- [x] Freeze and independently review exact `a7254d7d` effect candidate and
+  external manifest; conditional GO was scoped to local FF and normal push.
+- [x] Execute the qualified dev effect and observe local, tracking, remote and
+  API refs at `a7254d7d`, tree `f5d019ed`, with unchanged preview archives.
+- [x] Prepare exact observed-effect closeout and route the Task OS source
+  repair. Independent review and push of this later evidence-only closeout
+  remain a separate final effect.

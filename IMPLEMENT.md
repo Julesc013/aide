@@ -11992,3 +11992,12 @@ Owner review found a final-write race in the first candidate. The repair now pub
   separate integration WorkUnit was admitted at the same source head for an
   exact effect review. Its admission changes only queue/docs metadata; no ref,
   product source or archive effect is claimed.
+- The integration WorkUnit's exact `a7254d7d` candidate passed pack-status,
+  validate, doctor, task inspect and a four-commit range check, with unchanged
+  ZIP/tar. An independent effect reviewer issued conditional GO for local dev
+  FF plus normal push. Fresh Windows identity, GitHub account, clean
+  worktrees, archive hashes, ancestry, locks and four dev refs matched the
+  reviewed manifest. The FF and normal push exited 0; observed local,
+  tracking, remote and API dev all became `a7254d7d`, tree `f5d019ed`.
+  The external logs and hashes are bound in the integration evidence. Main,
+  tag, publication and the Task OS source defect remain open.

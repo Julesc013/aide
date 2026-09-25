@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-LITE-CONSUMER-PREQUAL-01
 title: Exercise delivered Windows Lite journeys before final release freeze
 type: evaluation
-status: needs_review
-planning_state: local_preview_evaluated_with_report_truth_finding
+status: passed_with_notes
+planning_state: evidence_integrated_dev_defect_routed
 result: PASS_WITH_WARNINGS
 created_at: 2026-09-25
 updated_at: 2026-09-25

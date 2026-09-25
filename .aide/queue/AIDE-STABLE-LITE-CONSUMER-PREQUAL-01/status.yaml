@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-CONSUMER-PREQUAL-01
-status: needs_review
+status: passed_with_notes
 classification: delivered_local_preview_prequalification
-planning_state: local_preview_evaluated_with_report_truth_finding
+planning_state: evidence_integrated_dev_defect_routed
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
 current_slice: disposable_windows_consumers
-next_slice: independent_closeout_then_bounded_task_os_repair
+next_slice: bounded_task_os_source_repair
 review_gate: independent_exact_consumer_result_review
 final_release_qualified: false
 main_promotion_performed: false
@@ -17,3 +17,4 @@ notes:
   - Independent ACCEPT_WITH_NOTES covers only the exact 31-command local lifecycle canary; notes and first-run timeout remain visible.
   - Installed task status misreports Q17 and a source-specific next WorkUnit for an empty fresh target queue; route a bounded repair before final freeze.
   - Final downloaded-byte, real version-pair, OS-level offline, native and hosted acceptance remain open.
+  - The separate reviewed integration WorkUnit observed remote dev at a7254d7d; this status closes only the evaluation, not the source defect.

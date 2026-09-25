@@ -1,16 +1,17 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-CONSUMER-DEV-INTEGRATION-01
-status: needs_review
+status: passed
 classification: evidence_only_dev_integration
-planning_state: exact_effect_candidate_preparation
-result: PENDING
+planning_state: observed_dev_effect_closeout_candidate
+result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
-current_slice: exact_effect_preparation
-next_slice: freeze_manifest_and_independent_integration_effect_review
+current_slice: observed_dev_effect_closeout
+next_slice: independent_closeout_review_then_task_os_source_repair
 review_gate: exact_source_and_effect_manifest
-dev_effect_performed: false
+dev_effect_performed: true
 main_promotion_performed: false
 release_published: false
 notes:
   - Source evaluation ACCEPT_WITH_NOTES is evidence acceptance only; this separately admitted task owns any qualified dev effect.
   - Product source and preview archives are unchanged; Task OS target-truth repair and stable release qualification remain open.
+  - Fresh preflight, local fast-forward, normal push and four-way observed dev a7254d7d are bound in observed-dev-effect evidence.
