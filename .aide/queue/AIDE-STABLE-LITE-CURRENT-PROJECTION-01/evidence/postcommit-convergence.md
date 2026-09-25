@@ -24,3 +24,14 @@ Commit these 18 current metadata files with this failure record. Then rerun
 the same four commands from that clean exact commit and require zero tracked
 and untracked changes with unchanged ZIP/tar hashes. Until that succeeds, no
 artifact/dev effect is qualified.
+
+## Second replay, passed
+
+Metadata convergence commit `10fd7a207f1644c5966e688092e03387e5e553e8`,
+tree `a0888730d121ae88736ba5063f1b15b464e87f69`, retains the exact ZIP/tar
+hashes above. From clean `10fd7a20`, the same four release commands all exited
+0, changed **zero tracked or untracked files**, and preserved both archive
+hashes. External `postcommit-replay2-receipt.txt` SHA-256
+`1c06b93fa3958d0221f114f5baf5c4d4e468ffbefab9677658465f4b554e2766`.
+The failed first replay remains part of the record. Canonical committed checks
+and commit-range policy also passed; see `committed-qualification.md`.

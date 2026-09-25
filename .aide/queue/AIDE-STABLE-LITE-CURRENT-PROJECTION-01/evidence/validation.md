@@ -15,5 +15,8 @@
 - FAIL, retained: first post-commit four-command replay changed 18 release
   metadata files while leaving ZIP/tar bytes unchanged. A bounded metadata
   convergence and clean replay are required.
-- NOT RUN: clean zero-change replay, exact artifact/dev effect review, dev
+- PASS: clean second four-command replay on committed `10fd7a20` changed
+  zero tracked/untracked paths and preserved ZIP/tar hashes. Committed
+  pack-status, validate, doctor and 11-commit policy range passed.
+- NOT RUN: exact artifact/dev effect review, dev
   integration, main, tag, public release or downloaded-byte acceptance.

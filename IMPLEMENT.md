@@ -12048,3 +12048,7 @@ Owner review found a final-write race in the first candidate. The repair now pub
   Projection commit `dc8697e3` retains the consumer-tested archive hashes.
   First four-command replay exited 0 but changed 18 release metadata paths;
   its zero-change gate failed, so bounded metadata convergence is next.
+  Metadata commit `10fd7a20` retained archive hashes. Its four-command
+  replay changed zero files, and committed pack-status, validate, doctor and
+  11-commit policy range passed. Exact artifact/effect review is next; no
+  dev/main/public release effect occurred.
