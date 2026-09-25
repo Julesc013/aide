@@ -3501,9 +3501,9 @@ items:
     evidence: .aide/queue/AIDE-HISTORICAL-DEV-INTEGRATION-01/evidence
     description: Preserve historical decision ancestry and current dev source, then regenerate and qualify combined artifacts.
   - id: AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01
-    status: needs_review
-    planning_state: implementation_complete
-    result: PENDING_REVIEW
+    status: running
+    planning_state: source_review_accepted_dev_integration_pending
+    result: PENDING_INTEGRATION
     title: Restore one missing receipt-owned delivered-pack file
     task: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/task.yaml
     exec_plan: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/ExecPlan.md

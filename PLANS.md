@@ -3681,6 +3681,6 @@ dev were observed at `5ac617b37b5778193b1c2cc7c63e0cc12c98ec09`, tree
 `56921686952f334e92532bd2ad350b0d80d5328c`. Do not rewrite the
 historical messages. Historical-dependent removal and host source remain next;
 mandatory lifecycle apply remains unimplemented.
-# Delivered-pack owned repair apply (2026-09-25)
+## Delivered-pack owned repair apply (2026-09-25)
 
-`AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01` implements one explicit repair of a missing receipt-owned file from the exact validated delivered pack in a disposable consumer. It is pending independent review. Managed-section repair, modified-file reconciliation, rollback, removal, live-target adoption, artifact regeneration, and publication remain separate work.
+`AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01` implements one explicit repair of a missing receipt-owned file from the exact validated delivered pack in a disposable consumer. Exact source `45c5ce91` (tree `b119a52d`) passed 39 importer tests and independent focused rereview. Integrate it with current dev while preserving the newer release generator and removal planner, then regenerate and qualify combined portable/release artifacts. Managed-section repair, modified-file reconciliation, rollback, removal, importer write safety, live-target adoption, and publication remain separate work.
