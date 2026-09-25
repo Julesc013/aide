@@ -42,5 +42,5 @@ delta from its evidence-only closeout.
       11 focused tests now pass.
 - [x] Preserve exact `REQUEST_CHANGES` for `b9d2b150`; correct the
       collision-case reason and rerun 11 focused tests.
-- [ ] Obtain exact independent rereview of the repaired changed source.
+- [x] Obtain exact independent ACCEPT_WITH_NOTES for repaired `52e1f194`.
 - [ ] Route accepted source to projection and installed-byte qualification.

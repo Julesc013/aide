@@ -12022,5 +12022,5 @@ Owner review found a final-write race in the first candidate. The repair now pub
   copied source-ID collision and static next-plan advice. The superseding
   profile-aware source repair passes 11 focused tests. Its exact review found
   a false copied-ID reason and requested changes; a narrow reason repair and
-  explicit regression assertion pass the same 11 tests. No generated artifact
-  or dev effect occurred.
+  explicit regression assertion pass the same 11 tests. Independent rereview
+  accepted `52e1f194` with notes. No generated artifact or dev effect occurred.

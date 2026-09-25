@@ -3671,8 +3671,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-TASK-TRUTH-01/evidence
     description: Prevent incidental packet IDs and source-specific next work in a fresh target queue.
   - id: AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01
-    status: needs_review
-    planning_state: source_candidate_frozen
+    status: passed_with_notes
+    planning_state: source_review_accepted_projection_pending
     result: PASS_WITH_WARNINGS
     title: Keep delivered Lite next-work reports target-owned for nonempty queues
     task: .aide/queue/AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01/task.yaml

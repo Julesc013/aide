@@ -1,13 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01
-status: needs_review
+status: passed_with_notes
 classification: delivered_lite_target_queue_next_work_repair
-planning_state: source_candidate_frozen
+planning_state: source_review_accepted_projection_pending
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
-current_slice: reason_repair_rereview
+current_slice: source_review_accepted
 next_slice: accepted_combined_source_projection
-review_gate: independent_exact_source_delta_review
+review_gate: independent_exact_source_delta_review_passed_with_notes
 source_candidate_frozen: true
 dev_effect_performed: false
 release_published: false
@@ -17,4 +17,5 @@ notes:
   - Focused tests pass; canonical validate and doctor fail on stale export provenance pending projection.
   - Independent review accepted e88a1468 with notes; its copied-ID and static next-plan findings are repaired in a changed source candidate awaiting delta review.
   - Independent review requested changes to b9d2b150 for a false copied-ID reason; the exact finding is preserved and a narrow repair awaits rereview.
+  - Focused independent rereview accepted exact 52e1f194 with notes; generated artifact and dev effect gates remain open.
   - Final artifact, replay and stable release gates remain open.
