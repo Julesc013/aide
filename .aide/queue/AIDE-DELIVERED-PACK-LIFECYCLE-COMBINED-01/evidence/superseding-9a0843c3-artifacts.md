@@ -93,8 +93,37 @@ oracle, not a prior public AIDE release; this run does not qualify OS-level
 network isolation, native/hosted effects, main or publication. The original
 archive and guide hashes stayed fixed through the run.
 
-This remains a local, `no_publish: true` preview. Artifact projection commit,
-metadata convergence,
-zero-diff replay, independent artifact/dev-effect review and observed remote
-`dev` are still pending. Main, tag, publication, native, hosted and remaining
-mandatory product obligations are not accepted by this checkpoint.
+This remains a local, `no_publish: true` preview. At this consumer checkpoint,
+artifact projection, metadata convergence, zero-diff replay, independent
+artifact/dev-effect review and observed remote `dev` were pending. Main, tag,
+publication, native, hosted and remaining mandatory product obligations are
+not accepted by this checkpoint.
+
+## Artifact projection and first postcommit replay
+
+Artifact projection commit `db76505363753fae6fa6d4aeb44ffc2b3c471582`,
+tree `8ba90b9b37def925b1d010ceac1c5f53ba7901b5`, records the exact
+generated pack, local release files, and the 85-test and 49-command evidence
+above. Its commit-message check passed before and after commit. Source remains
+frozen at ancestor `9a0843c3`.
+
+The first postcommit `release bundle`, `release validate`, `release draft`,
+`release draft-validate` replay all exited zero. External logs in
+`D:/Projects/AIDE/_review_scratch/` named
+`lifecycle-9a0843c3-postprojection-<command>.log` have SHA-256 values,
+respectively, `416bc3dac0dfdf61f23eaee9b1a6fd3b285c63c13dea4ae1d0434f2746a3aeb5`,
+`c30eb7108e7489ec43f1f401bf9c07f08a111c52ddac098830e65daf5910e770`,
+`7d44076e48c3ebb3664c77a2905597d3f0946c7798a3a03d04db33d65e4c58a7`,
+and `13103d0bfd1ae6bd60f6e12e9c4d0a9337f3e68b7f599f35c72d82634b8545de`.
+`pack-status` is now `PASS_SOURCE_ANCESTOR` with zero problems and
+`release status` reports validation `PASS`, `no_publish: true`.
+
+The replay changed 20 tracked `.aide/release` metadata or draft paths because
+the pack source is now a clean ancestor. The release guide changed only its
+`pack_status` line from `PASS` to `PASS_SOURCE_ANCESTOR`; its new SHA-256 is
+`4ce8b603deff3f817f4b1ad0c58294c6e80b6626c3bd64e343671df6f7bdb977`.
+The ZIP SHA-256 remains `d1eaf1bcb7272492b0a4dacf8cd2e291a54471a1051cae002d24c08bb8fb5f00`
+and tar.gz SHA-256 remains
+`ce3066076029d7f0e63172840f838ae4cfd141ae041760663800e72f4b0b218e`.
+The 20 changed metadata paths require a separate convergence commit and a
+zero-diff replay from clean HEAD before dev-effect review.
