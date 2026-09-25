@@ -42006,7 +42006,13 @@ def build_portable_rollback_plan(current_pack: Path, previous_pack: Path, target
             if source_block is None:
                 raise ValueError("current rollback pack AGENTS template has no managed block")
             source_digest = digest_bytes(source_block.encode("utf-8"))
-        if entry["installed_digest"] != source_digest or entry["source_digest"] != source_digest:
+        allowed_installed = {source_digest}
+        if expected_kind == "portable_managed_section":
+            # merge_agents_text renders the exact pack block with the authored
+            # AGENTS.md newline style. Its CRLF bytes are receipt-owned even
+            # though the validated pack template uses LF bytes.
+            allowed_installed.add(digest_bytes(source_block.replace("\n", "\r\n").encode("utf-8")))
+        if entry["installed_digest"] not in allowed_installed or entry["source_digest"] != source_digest:
             raise ValueError(f"rollback receipt baseline differs from current pack: {target_rel}")
         target = portable_target_path(target_root, target_rel)
         if entry["kind"] == "managed_file":

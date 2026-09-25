@@ -722,6 +722,69 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(aide_lite.load_portable_import_receipt(target)["pack"], aide_lite.import_pack_identity(pack_v1))
 
     @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
+    def test_rollback_preserves_authored_crlf_agents_and_rejects_changed_section(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "rollback-crlf-v1")
+        target = source_root.parent / "target-rollback-crlf"
+        target.mkdir()
+        authored_prefix = b"# Authored project policy\r\n"
+        authored_suffix = b"\r\n# Authored closing policy\r\n"
+        agents_path = target / "AGENTS.md"
+        agents_path.write_bytes(authored_prefix)
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        v1_payload = (target / managed_rel).read_bytes()
+        agents_path.write_bytes(agents_path.read_bytes() + authored_suffix)
+
+        aide_lite.write_text(source_root / managed_rel, "# Changed upstream in v2\n")
+        pack_v2 = self.freeze_pack(source_root, "rollback-crlf-v2")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "APPLIED")
+        v2_agents = agents_path.read_bytes()
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt_bytes = receipt_path.read_bytes()
+        receipt = aide_lite.load_portable_import_receipt(target)
+        entry = receipt["managed"]["AGENTS.md"]
+        source_block = aide_lite.portable_managed_block(aide_lite.read_text(pack_v2 / "files/AGENTS.md.template"))
+        installed_block = aide_lite.portable_managed_block(v2_agents.decode("utf-8"))
+        self.assertIsNotNone(source_block)
+        self.assertIsNotNone(installed_block)
+        self.assertNotEqual(entry["installed_digest"], entry["source_digest"])
+        self.assertEqual(entry["source_digest"], aide_lite.digest_bytes(source_block.encode("utf-8")))
+        self.assertEqual(entry["installed_digest"], aide_lite.digest_bytes(installed_block.encode("utf-8")))
+        self.assertEqual(installed_block.replace("\r\n", "\n"), source_block)
+
+        preview = aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        self.assertEqual(preview["status"], "PLANNED")
+        marker = b"<!-- AIDE-PORTABLE:END section=aide-lite-pack-v0 -->"
+        self.assertEqual(v2_agents.count(marker), 1)
+        changed_agents = v2_agents.replace(marker, b"# Direct managed-block edit\r\n" + marker, 1)
+        agents_path.write_bytes(changed_agents)
+        stale = aide_lite.apply_portable_rollback(pack_v2, pack_v1, target, preview["plan_digest"])
+        self.assertEqual(stale["status"], "STALE_PLAN")
+        self.assertEqual(aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)["status"], "CONFLICT")
+        self.assertEqual(agents_path.read_bytes(), changed_agents)
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+
+        forged = json.loads(receipt_bytes.decode("utf-8"))
+        forged_block = aide_lite.portable_managed_block(changed_agents.decode("utf-8"))
+        self.assertIsNotNone(forged_block)
+        forged["managed"]["AGENTS.md"]["installed_digest"] = aide_lite.digest_bytes(forged_block.encode("utf-8"))
+        forged["receipt_digest"] = aide_lite.portable_import_record_digest(forged, "receipt_digest")
+        aide_lite.write_text(receipt_path, aide_lite.stable_json_text(forged))
+        with self.assertRaisesRegex(ValueError, "baseline differs from current pack"):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+
+        receipt_path.write_bytes(receipt_bytes)
+        agents_path.write_bytes(v2_agents)
+        rolled = aide_lite.apply_portable_rollback(pack_v2, pack_v1, target, preview["plan_digest"])
+        self.assertEqual(rolled["status"], "ROLLED_BACK")
+        self.assertEqual((target / managed_rel).read_bytes(), v1_payload)
+        after_agents = agents_path.read_bytes()
+        self.assertTrue(after_agents.startswith(authored_prefix))
+        self.assertTrue(after_agents.endswith(authored_suffix))
+        self.assertEqual(aide_lite.load_portable_import_receipt(target)["pack"], aide_lite.import_pack_identity(pack_v1))
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
     def test_rollback_preserves_authored_edit_and_refuses_stale_or_wrong_lineage(self) -> None:
         source_root = self.make_source_repo()
         managed_rel = ".aide/prompts/compact-task.md"

@@ -3801,3 +3801,11 @@ establishes stable release readiness.
   `AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01` now passes focused tests, but
   still needs independent review, combined-source qualification and delivered
   artifact canaries before dev integration or a broader removal claim.
+
+The combined lifecycle source `723322cf` passed focused tests and produced a
+local ZIP/tar projection, but an extracted brownfield consumer found a real
+CRLF `AGENTS.md` rollback refusal. Exact rejected bytes and the independent
+finding are retained. A red/green regression now guards the narrow source
+repair. Complete the affected suite, obtain delta review, regenerate the pack
+from clean superseding source, and rerun the full consumer/replay gates before
+any `dev` effect. The stable release goal remains open.

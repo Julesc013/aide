@@ -11752,3 +11752,18 @@ Owner review found a final-write race in the first candidate. The repair now pub
   content fails closed.
 - Twenty-two focused removal tests and canonical `validate` passed. Source
   review, regenerated artifact consumers and dev integration remain pending.
+
+## 2026-09-25 - Combined lifecycle consumer finding and rollback repair
+
+- Combined source `723322cf` merged accepted rollback and authored-section
+  removal histories and passed 9 focused importer cases, 202 Q27-Q48 fixture
+  tests, canonical validation, and a clean-source local ZIP/tar projection.
+  An extracted consumer then found that authored CRLF `AGENTS.md` caused
+  rollback preview to reject a valid receipt. The exact local candidate was
+  rejected, its bytes and report were retained externally, and the incomplete
+  full importer run was stopped without claiming a pass.
+- A new Windows regression failed on the exact defect and passed after rollback
+  accepted only the pack's exact managed block rendered with LF or CRLF. It
+  still refuses changed blocks and forged receipts. The child WorkUnit records
+  hashes. Wider tests, independent delta review, new artifacts and dev
+  integration remain pending.

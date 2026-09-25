@@ -67,4 +67,14 @@ unreviewed source or artifact candidate may advance `dev`.
       rejected for orphaned backup recovery; superseding `2c4c9089` received
       ACCEPT_WITH_NOTES for source combination. Merge it only after this
       rollback guard is checkpointed.
-- [ ] Combined source, artifact, consumer, replay and dev-effect gates.
+- [x] Merge accepted removal repair `2c4c9089` into source `723322cf` with
+      both parent histories intact. Independent combined-source review returned
+      `ACCEPT_WITH_NOTES` for the source only.
+- [x] Run 9 focused combined importer cases; regenerate the current export,
+      changelog and local release/draft outputs from clean source `723322cf`.
+      Canonical validation, pack status, and 202 Q27-Q48 fixture tests pass.
+- [x] Repair the authored-CRLF rollback defect found by the extracted-artifact
+      canary; red/green exact regression and 8 focused rollback tests pass.
+      Preserve the rejected candidate's exact report and ZIP/tar bytes.
+- [ ] Full importer, extracted ZIP/tar consumers, postcommit replay, exact
+      artifact/dev-effect review and observed `dev` ref.
