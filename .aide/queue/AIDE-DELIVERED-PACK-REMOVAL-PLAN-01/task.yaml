@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
 title: Plan preservation-first removal from delivered-pack receipts
 type: implementation
-status: running
-planning_state: historical_b_accepted_combined_integration_in_progress
+status: passed
+planning_state: integrated_to_remote_dev
 result: PASS_WITH_WARNINGS
 created_at: 2026-09-22
 updated_at: 2026-09-22

@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01
 title: Integrate delivered-pack removal planner with current dev
 type: integration
-status: running
-planning_state: candidate_accepted_dev_effect_pending
+status: passed
+planning_state: integrated_to_remote_dev
 result: PASS_WITH_WARNINGS
 created_at: 2026-09-25
 updated_at: 2026-09-25

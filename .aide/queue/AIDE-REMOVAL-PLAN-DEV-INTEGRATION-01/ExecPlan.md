@@ -34,7 +34,8 @@ removal apply, deletion, live target effect, or public release.
 - [x] Qualify regenerated portable and local release bytes at `2819385a`;
   replay changed zero of 44 tracked release files.
 - [x] Obtain independent `ACCEPT_WITH_NOTES` for the exact combined candidate.
-- [ ] Observe qualified dev after fresh remote ancestry and single-writer checks.
+- [x] Observe qualified dev after fresh remote ancestry and single-writer
+  checks. The normal push advanced remote `dev` to `ae0e29e9`.
 
 ## Recovery
 

@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01
-status: running
-planning_state: candidate_accepted_dev_effect_pending
+status: passed
+planning_state: integrated_to_remote_dev
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
 base_dev: 1c75abf1d93b34be8998383ea2ce4c9084c9d612
@@ -9,4 +9,6 @@ source_candidate: d1362f912c951ccc6022d0a2a3a527a4d66365f1
 reviewed_candidate: 2819385a5b3d6817fbcd45ee9dcc7065b90fbb2c
 reviewed_tree: b57bdab7c47512518d39c91259111878ee7d858b
 review_verdict: ACCEPT_WITH_NOTES
-next_action: verify_dev_remote_then_fast_forward_candidate
+observed_dev: ae0e29e98eb436136f1d62d7830a4d8b20251b32
+observed_dev_tree: 63d2d1094862f4c97760fe4b3f2177a84e9c1b9e
+next_action: implement_and_review_actual_owned_removal_apply

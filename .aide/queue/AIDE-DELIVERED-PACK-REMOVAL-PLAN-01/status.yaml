@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
-status: running
+status: passed
 classification: admitted_by_owner_split
-planning_state: historical_b_accepted_combined_integration_in_progress
+planning_state: integrated_to_remote_dev
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
 current_slice: qualified_source_artifacts_and_consumer_proof
-next_slice: fast_forward_reviewed_combined_candidate_to_dev
+next_slice: implement_actual_owned_removal_apply_in_separate_workunit
 notes:
   - The broad compiled intent remains blocked and split-required.
   - This bounded child starts from origin/dev at 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab.
@@ -20,3 +20,4 @@ notes:
   - Dev integration waits for the separately scoped exact historical-conformance disposition.
   - The owner accepted exact disposition B on 2026-09-25. Its raw 13 message failures remain; current-dev source/artifact integration is in progress through AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01.
   - Combined candidate 2819385a has independent ACCEPT_WITH_NOTES for dev source integration, 32 combined import tests, fresh and brownfield archive consumers, current-generator provenance, and zero-change release replay. Remote dev observation is pending.
+  - Remote dev and the task integration branch were both observed at ae0e29e98eb436136f1d62d7830a4d8b20251b32 after a normal, non-force push; read-only planning is integrated, actual removal remains open.

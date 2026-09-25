@@ -11562,4 +11562,7 @@ DLL mapping, image or grant effect is part of this source implementation.
   tracked release files.
 - Independent exact-candidate review returned ACCEPT_WITH_NOTES for dev source
   integration. The receipt remains local ownership evidence only; future
-  removal apply requires effect-time revalidation. Dev remote effect is pending.
+  removal apply requires effect-time revalidation. A normal non-force push
+  advanced remote dev to `ae0e29e98eb436136f1d62d7830a4d8b20251b32`,
+  matching the local primary and task integration branch; GitHub's ref endpoint
+  returned the same object.
