@@ -81,7 +81,11 @@ security predicates and final delivered bytes at their exact revisions.
       direct AGENTS edit and overwrite it. The reviewer also independently
       confirmed the pre-existing ordinary managed-file analogue. Both exact
       reports and red oracles are bound in `evidence/predecessor-baseline-repair.md`.
-- [ ] Finish full tests and independent review of the predecessor-bound
-      superseding source. No artifact generation precedes that acceptance.
+- [x] Independently review predecessor-bound source `12758e07`; it received
+      ACCEPT_WITH_NOTES for source integration. The first full importer run
+      completed 94/95 cases with one outdated forged-receipt fixture. The
+      corrected exact single case passes; the full rerun is active. See
+      `evidence/full-suite-correction.md`. No artifact generation precedes
+      a passing full suite.
 - [ ] Run full affected source suites, generate/qualify delivered artifacts,
       prove replay, and integrate accepted bytes into observed remote `dev`.

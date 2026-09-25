@@ -2,7 +2,7 @@ schema_version: aide.queue-task-status.v0
 id: AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01
 status: running
 result: PENDING
-current_step: superseding_crlf_repair_review_and_full_suite
+current_step: corrected_full_importer_suite
 updated_at: 2026-09-25
 blockers: []
 review_required: true

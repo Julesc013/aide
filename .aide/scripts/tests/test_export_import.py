@@ -419,6 +419,9 @@ class ExportImportTests(unittest.TestCase):
 
         aide_lite.write_text(source_root / managed_rel, "# Compact Task v2\n")
         pack_v2 = self.freeze_pack(source_root, "pack-v2")
+        without_predecessor = aide_lite.apply_import_pack(pack_v2, target, dry_run=True)
+        self.assertEqual(without_predecessor["status"], "PLANNED_CONFLICT")
+        self.assertIn(managed_rel, without_predecessor["conflicts"])
         preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
         operation = next(item for item in preview["operations"] if item["target"] == managed_rel)
         self.assertEqual(operation["action"], "update_owned")
@@ -986,7 +989,7 @@ class ExportImportTests(unittest.TestCase):
         aide_lite.write_text(source_root / managed_rel, "# Conflicting upstream revision\n")
         pack_v2 = self.freeze_pack(source_root, "customization-v2")
 
-        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True)
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
         self.assertEqual(preview["status"], "PLANNED_CONFLICT")
         unknown = {item["target"]: item for item in aide_lite.explain_import_result(preview, target)}
         self.assertEqual(unknown[".aide/profile.yaml"]["action"], "preserve")
@@ -1059,13 +1062,14 @@ class ExportImportTests(unittest.TestCase):
         aide_lite.apply_import_pack(pack_v1, target)
         aide_lite.write_text(source_root / managed_rel, "# Stale preview incoming\n")
         pack_v2 = self.freeze_pack(source_root, "stale-v2")
-        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True)
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
         receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
         aide_lite.write_text(target / managed_rel, "# Changed after preview\n")
 
         result = aide_lite.apply_import_pack(
             pack_v2,
             target,
+            predecessor_pack=pack_v1,
             expected_plan_digest=preview["plan_digest"],
         )
         self.assertEqual(result["status"], "STALE_PLAN")
@@ -1084,7 +1088,7 @@ class ExportImportTests(unittest.TestCase):
         aide_lite.write_text(source_root / second_rel, "version: interrupted-two\n")
         pack_v2 = self.freeze_pack(source_root, "interrupt-v2")
 
-        interrupted = aide_lite.apply_import_pack(pack_v2, target, fail_after_writes=1)
+        interrupted = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, fail_after_writes=1)
         self.assertEqual(interrupted["status"], "INTERRUPTED")
         self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file())
         self.assertEqual(len(interrupted["written"]), 1)
@@ -1261,6 +1265,8 @@ class ExportImportTests(unittest.TestCase):
             aide_lite.build_portable_rollback_plan(pack_v1, pack_v2, target)
         forged_receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         forged_receipt["managed"][managed_rel]["installed_digest"] = aide_lite.digest_bytes(authored)
+        forged_receipt["managed"][managed_rel]["ownership"] = "project_overlay_on_aide_managed"
+        forged_receipt["managed"][managed_rel]["local_overlay"] = True
         forged_receipt["receipt_digest"] = aide_lite.portable_import_record_digest(forged_receipt, "receipt_digest")
         aide_lite.write_text(receipt_path, aide_lite.stable_json_text(forged_receipt))
         with self.assertRaisesRegex(ValueError, "baseline differs from current pack"):
@@ -1389,7 +1395,7 @@ class ExportImportTests(unittest.TestCase):
 
         aide_lite.write_text(source_root / managed_rel, "# Recovery candidate two\n")
         pack_v2 = self.freeze_pack(source_root, "recovery-dry-v2")
-        interrupted = aide_lite.apply_import_pack(pack_v2, target, fail_after_writes=1)
+        interrupted = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, fail_after_writes=1)
         self.assertEqual(interrupted["status"], "INTERRUPTED")
         self.assertEqual(interrupted["recovery"]["classification"], "completed")
         intent_before = intent.read_bytes()
@@ -1417,7 +1423,7 @@ class ExportImportTests(unittest.TestCase):
         aide_lite.write_text(source_root / managed_rel, "# Recovery candidate three\n")
         pack_v3 = self.freeze_pack(source_root, "recovery-dry-v3")
         preimage = (target / managed_rel).read_bytes()
-        interrupted = aide_lite.apply_import_pack(pack_v3, target, fail_after_writes=1)
+        interrupted = aide_lite.apply_import_pack(pack_v3, target, predecessor_pack=pack_v2, fail_after_writes=1)
         self.assertEqual(interrupted["status"], "INTERRUPTED")
         (target / managed_rel).write_bytes(preimage)
         intent_before = intent.read_bytes()
@@ -1706,7 +1712,7 @@ class ExportImportTests(unittest.TestCase):
             original_link(descriptor, directory_handle, leaf_name)
 
         with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=rival_at_publication):
-            result = aide_lite.apply_import_pack(pack_v2, target_root)
+            result = aide_lite.apply_import_pack(pack_v2, target_root, predecessor_pack=pack_v1)
         self.assertTrue(attempted)
         self.assertEqual(result["status"], "INTERRUPTED")
         self.assertEqual(result["recovery"]["classification"], "unknown")
@@ -1764,7 +1770,7 @@ class ExportImportTests(unittest.TestCase):
         pack_v2 = self.freeze_pack(source_root, "receipt-commit-v2")
         with mock.patch.object(aide_lite, "portable_import_delete_exact", side_effect=OSError("simulated interruption after receipt")):
             with self.assertRaisesRegex(OSError, "simulated interruption"):
-                aide_lite.apply_import_pack(pack_v2, target_root)
+                aide_lite.apply_import_pack(pack_v2, target_root, predecessor_pack=pack_v1)
         intent_path = target_root / aide_lite.PORTABLE_IMPORT_INTENT_PATH
         self.assertTrue(intent_path.is_file())
         receipt_before = (target_root / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
