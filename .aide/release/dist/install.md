@@ -1,9 +1,9 @@
 # AIDE Lite Pack Local Install Notes
 
-- bundle_id: aide-lite-pack-v0-99a9e54da887a3a2
+- bundle_id: aide-lite-pack-v0-8365aa61b7cad51d
 - bundle_name: aide-lite-pack-v0
 - source_pack: .aide/export/aide-lite-pack-v0
-- pack_status: PASS_SOURCE_ANCESTOR
+- pack_status: PASS
 - publication_status: local_preview_no_publish
 - apply_mode_available: true
 - apply_mode_scope: bounded receipt-owned removal on Windows

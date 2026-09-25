@@ -177,3 +177,13 @@ Q48 adds local GitHub Release draft generation on top of this bundle, with a
 checksum-backed asset list, no-upload plan, and publication checklist. Q49
 Dominium Fresh Install Preflight is next because downstream install readiness
 still needs target-local evidence before any public readiness claim.
+
+The later stable Lite package rule is recorded in
+`.aide/policies/release-versioning.yaml` and the bounded Windows profile in
+`specs/control-plane/product/scope-and-profiles.md`. They define a contract
+candidate for a future release, not a change to this Q47 archive's
+`aide-lite-pack-v0` format identity or its no-publish metadata. Stable
+version, tag, supported predecessor matrix, exact source and assets, and
+downloaded-consumer qualification must be frozen and reviewed in a separate
+release-effect WorkUnit. Existing Q47 outputs cannot be relabeled as stable
+release assets by editing prose or a draft flag.

@@ -110,6 +110,16 @@ If a future phase publishes a release, it must have explicit operator approval,
 reviewed tag naming, reviewed assets, passing validation, passing secret scan,
 and a reviewed checklist.
 
+For `AIDE-CONVERGENCE-AND-DELIVERY-01` only, the owner's recorded 2026-09-25
+delegation supplies that operator authorization for qualified in-scope actions
+without a second routine owner response. The separate effect WorkUnit still
+needs a frozen version/tag/source/asset manifest, final support-profile and
+consumer evidence, passing machine gates, a qualified independent technical
+release verdict under `.aide/policies/review-gates.yaml`, and fresh ref and
+asset observation before each effect. This does not
+alter Q48's draft-only suggested tag, no-upload plan, or no-publish reports.
+The final tag is not chosen by this document or by a Q48 draft.
+
 ## Export Boundary
 
 The portable export pack includes Q48 policies, schemas, commands, tests,

@@ -1,12 +1,12 @@
-# AIDE Lite Pack v0 Draft (99a9e54da887a3a2)
+# AIDE Lite Pack v0 Draft (8365aa61b7cad51d)
 
 > Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.
 
 ## Release Metadata
 
-- Suggested tag: `aide-lite-pack-v0-draft-99a9e54da887a3a2`
+- Suggested tag: `aide-lite-pack-v0-draft-8365aa61b7cad51d`
 - Suggested tag created: no
-- Source commit: `99a9e54da887a3a209cfd73df345c55735819368`
+- Source commit: `8365aa61b7cad51d542f88434e50bc33c5aac8fe`
 - Source branch: `not-recorded-in-pack`
 - Dirty state recorded: `false`
 - Release type: local draft / not published
@@ -21,7 +21,7 @@
 - # AIDE Release Notes Preview
 - This is a deterministic preview only. It does not publish a release.
 - source_range: HEAD latest 50 commits
-- source_head: 99a9e54da887a3a209cfd73df345c55735819368
+- source_head: 8365aa61b7cad51d542f88434e50bc33c5aac8fe
 - preview_only: true
 - ## Highlights
 - - Security: Rollback no longer accepts a checksum-valid payload through a reparse pack boundary. (33824b369b84)
@@ -31,7 +31,7 @@
 - # AIDE Changelog Preview
 - This file is generated from local Git history and is a preview only.
 - source_range: HEAD latest 50 commits
-- source_head: 99a9e54da887a3a209cfd73df345c55735819368
+- source_head: 8365aa61b7cad51d542f88434e50bc33c5aac8fe
 - commit_count: 50
 - malformed_count: 0
 - preview_only: true
@@ -47,23 +47,23 @@
 
 | Order | Asset | Kind | Size | SHA-256 | Required |
 | --- | --- | --- | ---: | --- | --- |
-| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 1038388 | `32c1f0ad5465809e...` | true |
-| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 709443 | `22101aa98982cf8b...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `eb98375d0ed0b91f...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `6a267a6253444f11...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1406 | `cae043cad6f05913...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 2434 | `1419e96a778b2caf...` | true |
-| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 8366 | `d809961de7600adb...` | true |
-| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 6901 | `d4119bd0ff7760c5...` | true |
-| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3846 | `a457b73f186db89c...` | false |
-| 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `a315baafa141c684...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4080 | `607bd225b5107162...` | false |
+| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 1040988 | `8c4fbef71470954c...` | true |
+| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 711763 | `11c95b9c10355cb6...` | true |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `9436a30454a467d0...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `5060e98d8094c748...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1406 | `ed848816b777a6f6...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 2418 | `e13dd69b79d53d97...` | true |
+| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 8438 | `f7b97ad091ff1b9f...` | true |
+| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 7257 | `222a04b829cac70c...` | true |
+| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3814 | `ac3218cb9d04de92...` | false |
+| 10 | `.aide/release/dist/release-validation.md` | validation_report | 222 | `37b6d4e4c7f51060...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `f32c20c8b0cabbe4...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4080 | `5da0682246387457...` | false |
 
 ## Validation Summary
 
 - release validate: PASS
-- pack-status: PASS_SOURCE_ANCESTOR
+- pack-status: PASS
 - fixture extraction: PASS
 - checksum validation: PASS
 

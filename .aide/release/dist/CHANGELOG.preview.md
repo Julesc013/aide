@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 99a9e54da887a3a209cfd73df345c55735819368
+source_head: 8365aa61b7cad51d542f88434e50bc33c5aac8fe
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -12,10 +12,10 @@ release_publishing: false
 ## Summary
 
 - Added: 7
-- Changed: 6
+- Changed: 9
 - Fixed: 11
 - Security: 1
-- Internal: 26
+- Internal: 23
 
 ## Added
 
@@ -35,6 +35,9 @@ release_publishing: false
 - Track installed Lite repair diagnosis as a bounded campaign task. (0aa5a9d23b10 chore(repair): admit installed Lite health diagnosis task)
 - Keep predecessor-bound import and rollback regressions aligned with the validated receipt contract. (c68077548ee9 test(import): bind legacy update and rollback oracles)
 - Combine delivered update and read-only repair-health implementation for qualification. (99a9e54da887 chore(campaign): combine update and repair health candidates)
+- Track the bounded stable release contract as a campaign WorkUnit. (74093ecacb4f chore(release): admit stable contract WorkUnit)
+- Define a reviewable candidate for the first stable Lite release contract. (aa3bcfec849e chore(release): define stable Lite contract candidate)
+- Refresh local portable-pack and release-preview outputs for qualified combined source. (d137f936bf0a chore(pack): refresh combined update and health previews)
 
 ## Fixed
 
@@ -56,17 +59,6 @@ release_publishing: false
 
 ## Internal
 
-- refresh local portable release candidates after owned repair source merge. (ef60c1388ee5 build(release): project combined owned repair artifacts)
-- repair integration scope metadata. (3ed628c19aed fix(queue): align owned repair integration allowlist)
-- converge local release metadata after committed source projection. (e4697aaa3271 build(release): converge owned repair release projection)
-- close the combined owned repair source and local artifact review for dev integration. (6b4007d06546 docs(queue): record accepted owned repair integration)
-- preserve integration effect and newly discovered safety blocker. (9a8b08700ef7 docs(queue): record owned repair dev effect and new race)
-- track repair publication safety fix forward. (fdad1a06f3fe chore(queue): admit Windows repair staging hardening)
-- harden owned repair publication against competing Windows writers. (1a44ec617508 fix(repair): deny competing writes to Windows repair staging)
-- close the repair staging setup-failure leak found in review. (e215698a993d fix(repair): clean exclusive stage after descriptor setup errors)
-- harden delivered-pack Windows import writes and recovery evidence. (0dfb2931d32f fix(import): anchor Windows importer writes and guard stages)
-- bind exclusive Windows repair staging to current local delivery artifacts. (d4311651b76d build(release): project repaired Windows staging source into local pack)
-- converge release provenance for the reviewed Windows repair staging source. (9f2f38957e57 build(release): converge repair staging source ancestry metadata)
 - record exact repair staging dev-integration readiness. (10a16afb681e docs(queue): record repair staging zero-change replay)
 - record accepted Windows repair staging in remote dev. (6377cda923c1 docs(queue): record remote dev repair staging integration)
 - construct current-dev safe importer integration candidate. (7624d9f4b542 fix(import): combine reviewed Windows importer writes with dev)
@@ -82,6 +74,14 @@ release_publishing: false
 - Record the combined delivered-pack lifecycle qualification task. (f2be45ea13ce chore(lifecycle): admit combined portable integration task)
 - Preserve rollback ancestry for combined lifecycle qualification. (03f4b0a1ef37 chore(lifecycle): retain reviewed rollback source in combined candidate)
 - Preserve accepted removal source for combined lifecycle qualification. (723322cf07ab chore(lifecycle): retain reviewed removal source in combined candidate)
+- Converge local release metadata after the reviewed artifact projection. (54b9d45eeaa3 chore(pack): converge preview metadata after projection)
+- Close the bounded update and repair-health dev integration record. (a32535a2675f chore(queue): close combined update and health dev integration)
+- Merge current dev history for contract repair without declaring public release behavior. (060de47208b3 chore(release): merge current dev into stable contract task)
+- Correct the proposed first stable Lite release contract and its review evidence. (4315a8130db2 fix(release): repair stable Lite contract review findings)
+- Correct contract review provenance without changing policy or implementation bytes. (d38e5839fe10 chore(release): bind contract evidence to repaired source hashes)
+- Route contract projection through its own bounded WorkUnit. (7168ee1cfaa8 chore(queue): admit stable contract artifact projection)
+- Preserve exact contract evidence ancestry in projection history. (d3d9848569a9 chore(release): merge corrected contract evidence into projection)
+- Record accepted source dependency for bounded projection. (8365aa61b7ca chore(release): bind accepted contract source to projection)
 
 ## Malformed Commits
 

@@ -1,50 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "ef60c1388ee5",
-      "summary": "Verify exact committed bytes through replay and disposable consumers, obtain independent review, then advance dev if accepted."
-    },
-    {
-      "commit": "3ed628c19aed",
-      "summary": "Complete exact consumer checks and independent review before dev integration."
-    },
-    {
-      "commit": "e4697aaa3271",
-      "summary": "Run the full four-command replay from this clean commit and record zero-change evidence, then finish exact review."
-    },
-    {
-      "commit": "6b4007d06546",
-      "summary": "Recheck remote dev and shared writer state, fast-forward qualified history, push normally, and observe remote identity."
-    },
-    {
-      "commit": "9a8b08700ef7",
-      "summary": "Reproduce against the exact dev helper, close the race, review the fix, then resume lifecycle qualification."
-    },
-    {
-      "commit": "fdad1a06f3fe",
-      "summary": "Implement exclusive staged publication, test both repair intent and payload, then qualify exact dev candidate."
-    },
-    {
-      "commit": "1a44ec617508",
-      "summary": "Complete combined qualification and independent review, then integrate the exact accepted candidate into dev."
-    },
-    {
-      "commit": "e215698a993d",
-      "summary": "Complete the running combined tests and independent exact-source review before dev integration."
-    },
-    {
-      "commit": "0dfb2931d32f",
-      "summary": "Obtain independent source review, combined-source artifact qualification and dev integration."
-    },
-    {
-      "commit": "d4311651b76d",
-      "summary": "Finish extracted consumers and postcommit replay, obtain artifact review, then fast-forward qualified dev."
-    },
-    {
-      "commit": "9f2f38957e57",
-      "summary": "Prove zero changed release files on full replay, then fast-forward dev under the campaign delegation."
-    },
-    {
       "commit": "10a16afb681e",
       "summary": "Refresh dev and origin/dev, fast-forward only if ancestry holds, push normally, and observe the remote ref."
     },
@@ -203,6 +159,50 @@
     {
       "commit": "99a9e54da887",
       "summary": "Run full combined importer and affected canonical suites, generate once from this source, then obtain artifact and exact dev-effect review."
+    },
+    {
+      "commit": "74093ecacb4f",
+      "summary": "Implement and independently review the exact version, support and campaign-scoped publication contract; route later effects through a separate frozen manifest."
+    },
+    {
+      "commit": "aa3bcfec849e",
+      "summary": "Obtain independent review of this exact contract commit, then integrate qualified policy before final release freeze."
+    },
+    {
+      "commit": "d137f936bf0a",
+      "summary": "Replay generators after this commit with zero derived changes, then obtain exact dev effect review and integrate through observed remote dev."
+    },
+    {
+      "commit": "54b9d45eeaa3",
+      "summary": "Prove four-command zero-change replay and canonical checks, then obtain exact dev effect review."
+    },
+    {
+      "commit": "a32535a2675f",
+      "summary": "Repair the reviewed stable Lite contract candidate against combined dev, qualify the final declared profile, then proceed through exact release gates."
+    },
+    {
+      "commit": "060de47208b3",
+      "summary": "Repair the contract findings, obtain superseding technical review, and use a separate bounded projection task for regenerated artifacts."
+    },
+    {
+      "commit": "4315a8130db2",
+      "summary": "Obtain focused independent source review, regenerate derived artifacts under a separately scoped WorkUnit, and validate the exact combined candidate before dev effect."
+    },
+    {
+      "commit": "d38e5839fe10",
+      "summary": "Obtain a final independent verdict on the exact evidence-corrected contract subject."
+    },
+    {
+      "commit": "7168ee1cfaa8",
+      "summary": "Merge the evidence-only source correction, confirm focused independent source verdict, then generate and validate current artifacts."
+    },
+    {
+      "commit": "d3d9848569a9",
+      "summary": "Confirm the exact technical verdict, then generate and qualify current preview artifacts."
+    },
+    {
+      "commit": "8365aa61b7ca",
+      "summary": "Generate current export and release previews, inspect artifact bytes, and prove committed replay before effect review."
     }
   ],
   "highlights": [
@@ -306,6 +306,27 @@
     },
     {
       "breaking": false,
+      "category": "Changed",
+      "commit": "74093ecacb4f",
+      "subject": "chore(release): admit stable contract WorkUnit",
+      "summary": "Track the bounded stable release contract as a campaign WorkUnit."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "aa3bcfec849e",
+      "subject": "chore(release): define stable Lite contract candidate",
+      "summary": "Define a reviewable candidate for the first stable Lite release contract."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "d137f936bf0a",
+      "subject": "chore(pack): refresh combined update and health previews",
+      "summary": "Refresh local portable-pack and release-preview outputs for qualified combined source."
+    },
+    {
+      "breaking": false,
       "category": "Fixed",
       "commit": "fbd9465344f0",
       "subject": "fix(removal): bind recovery intents to receipt-owned bytes",
@@ -384,50 +405,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "ef60c1388ee5",
-      "summary": "Local draft and assets are no-publish evidence; full lifecycle, importer safety, and stable release remain open."
-    },
-    {
-      "commit": "3ed628c19aed",
-      "summary": "This correction does not broaden the source or artifact review verdict."
-    },
-    {
-      "commit": "e4697aaa3271",
-      "summary": "Consumer qualification and independent exact-candidate acceptance remain pending for dev integration."
-    },
-    {
-      "commit": "6b4007d06546",
-      "summary": "Importer write safety, full removal/rollback, native/hosted qualification, main, and publication remain open."
-    },
-    {
-      "commit": "9a8b08700ef7",
-      "summary": "Dev contains repair source with disputed staging-file write safety; main and public release remain untouched."
-    },
-    {
-      "commit": "fdad1a06f3fe",
-      "summary": "Current dev repair helper is unsafe under the reproduced second-writer race; main and public release remain untouched."
-    },
-    {
-      "commit": "1a44ec617508",
-      "summary": "A cleanup error after link publication is an uncertain effect requiring recovery review; no main or release effect is authorized by this commit."
-    },
-    {
-      "commit": "e215698a993d",
-      "summary": "A post-link cleanup error is an uncertain effect; the intent must be reconciled before retry."
-    },
-    {
-      "commit": "0dfb2931d32f",
-      "summary": "Existing-leaf update has a visible missing-leaf interval; a rival leaf leaves an exact backup and requires manual recovery."
-    },
-    {
-      "commit": "d4311651b76d",
-      "summary": "A post-link stage cleanup failure remains an uncertain recovery effect; this is not main or stable-release acceptance."
-    },
-    {
-      "commit": "9f2f38957e57",
-      "summary": "Local artifact acceptance does not cover whole lifecycle, native/hosted qualification, main, or publication."
-    },
     {
       "commit": "10a16afb681e",
       "summary": "This evidence-only change does not alter the reviewed source or artifacts; post-link cleanup remains an uncertain recovery effect."
@@ -587,56 +564,56 @@
     {
       "commit": "99a9e54da887",
       "summary": "This merge is a local candidate only; neither individual branch result substitutes for combined testing or artifact evidence."
+    },
+    {
+      "commit": "74093ecacb4f",
+      "summary": "No stable version or supported profile is asserted by admission; preview-only release policies remain in force."
+    },
+    {
+      "commit": "aa3bcfec849e",
+      "summary": "No version, tag, asset or shipping profile is selected by this source change; later effect gates remain binding."
+    },
+    {
+      "commit": "d137f936bf0a",
+      "summary": "V2/V3 consumers are synthetic fixtures; these previews do not establish published predecessor, native/hosted, repair/rollback/removal apply or stable-release acceptance."
+    },
+    {
+      "commit": "54b9d45eeaa3",
+      "summary": "This commit changes preview metadata only and does not establish stable release or hosted publication readiness."
+    },
+    {
+      "commit": "a32535a2675f",
+      "summary": "Local preview and synthetic update consumers do not establish a stable supported profile or public release."
+    },
+    {
+      "commit": "060de47208b3",
+      "summary": "Contract policy remains under REQUEST_CHANGES and generated outputs may be stale after its source changes."
+    },
+    {
+      "commit": "4315a8130db2",
+      "summary": "CLI syntax and source review do not qualify delivered archive behavior or clear the provenance failure."
+    },
+    {
+      "commit": "d38e5839fe10",
+      "summary": "Source-only committed export provenance remains stale pending projection."
+    },
+    {
+      "commit": "7168ee1cfaa8",
+      "summary": "Admission does not qualify the source, generated bytes or stable support profile."
+    },
+    {
+      "commit": "d3d9848569a9",
+      "summary": "Existing generated export provenance remains stale until deterministic projection."
+    },
+    {
+      "commit": "8365aa61b7ca",
+      "summary": "Source acceptance alone does not qualify export provenance, archives, dev integration or public release."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "99a9e54da887a3a209cfd73df345c55735819368",
+  "source_head": "8365aa61b7cad51d542f88434e50bc33c5aac8fe",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "ef60c1388ee5",
-      "summary": "PASS: export included 828 files with 831 checksum entries; bundle, release validation, draft, and draft validation exited zero."
-    },
-    {
-      "commit": "3ed628c19aed",
-      "summary": "PASS: exact allowlist indentation assertion and canonical validate."
-    },
-    {
-      "commit": "e4697aaa3271",
-      "summary": "PASS: bundle, release validation, draft, and draft validation all exited zero on first replay."
-    },
-    {
-      "commit": "6b4007d06546",
-      "summary": "PASS: independent ACCEPT_WITH_NOTES for e4697aaa, 42 importer and 46 adjacent tests, 16 consumer checks, and zero of 44 release files changed on replay."
-    },
-    {
-      "commit": "9a8b08700ef7",
-      "summary": "PASS: both remote ref readings matched 6b4007d0; canonical validate and staged diff whitespace checks passed."
-    },
-    {
-      "commit": "fdad1a06f3fe",
-      "summary": "PASS: canonical validate and staged diff whitespace check on the admission record."
-    },
-    {
-      "commit": "1a44ec617508",
-      "summary": "PASS: baseline regression demonstrated both old-helper stage writes."
-    },
-    {
-      "commit": "e215698a993d",
-      "summary": "PASS: setup-failure regression, one test with two Windows fault-injection subcases."
-    },
-    {
-      "commit": "0dfb2931d32f",
-      "summary": "PASS: focused parent substitution, competing leaf, guarded staging, ordinary update and recovery tests on Windows."
-    },
-    {
-      "commit": "d4311651b76d",
-      "summary": "PASS: exact e215 importer suite, 44 tests in 617.176 seconds; focused repair suite, 11 tests."
-    },
-    {
-      "commit": "9f2f38957e57",
-      "summary": "PASS: independent local artifact/consumer ACCEPT; 833 equal safe archive members, 16 offline commands, eight delivered-script races."
-    },
     {
       "commit": "10a16afb681e",
       "summary": "PASS: clean convergence commit 9f2f3895 replay changed zero of 44 release files."
@@ -796,6 +773,50 @@
     {
       "commit": "99a9e54da887",
       "summary": "PASS: git plan reported ready_dry_run before branch mutation."
+    },
+    {
+      "commit": "74093ecacb4f",
+      "summary": "PASS: Intent compile and intent validate completed; broad raw release execution remained blocked and split-required."
+    },
+    {
+      "commit": "aa3bcfec849e",
+      "summary": "PASS: Canonical validate, doctor, task inspect and git diff --check completed on the candidate."
+    },
+    {
+      "commit": "d137f936bf0a",
+      "summary": "PASS: Combined importer suite 100/100; Q31/Q34/Q47/Q48 suites 6/6, 11/11, 18/18 and 11/11."
+    },
+    {
+      "commit": "54b9d45eeaa3",
+      "summary": "PASS: Bundle, release validate, draft and draft validate each exited zero during metadata convergence."
+    },
+    {
+      "commit": "a32535a2675f",
+      "summary": "PASS: Local, origin, ls-remote and GitHub API all observed dev at 54b9d45e after normal fast-forward and push."
+    },
+    {
+      "commit": "060de47208b3",
+      "summary": "PASS: Resolved the only two merge conflicts in PLANS.md and IMPLEMENT.md; git diff --cached --check passed; no unmerged paths remain."
+    },
+    {
+      "commit": "4315a8130db2",
+      "summary": "PASS: Q47 release bundle tests 18 of 18 and Q48 draft tests 11 of 11."
+    },
+    {
+      "commit": "d38e5839fe10",
+      "summary": "PASS: Get-FileHash SHA256 matched all five current table values; git diff --cached --check passed."
+    },
+    {
+      "commit": "7168ee1cfaa8",
+      "summary": "PASS: Git diff --check passed; task inspect recognized the running child and its evidence directory."
+    },
+    {
+      "commit": "d3d9848569a9",
+      "summary": "PASS: Git reported an automatic one-file merge; staged diff whitespace check passed."
+    },
+    {
+      "commit": "8365aa61b7ca",
+      "summary": "PASS: External report SHA256 matched 882d9a18ff1d94dec626e4ae646f27fa74bcadadc125cfe1d43c49280940c38e; reviewed source is an ancestor of this projection branch."
     }
   ],
   "warnings": []

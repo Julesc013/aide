@@ -3,7 +3,7 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 99a9e54da887a3a209cfd73df345c55735819368
+source_head: 8365aa61b7cad51d542f88434e50bc33c5aac8fe
 preview_only: true
 
 ## Highlights
@@ -22,6 +22,9 @@ preview_only: true
 - Changed: Track installed Lite repair diagnosis as a bounded campaign task. (0aa5a9d23b10)
 - Changed: Keep predecessor-bound import and rollback regressions aligned with the validated receipt contract. (c68077548ee9)
 - Changed: Combine delivered update and read-only repair-health implementation for qualification. (99a9e54da887)
+- Changed: Track the bounded stable release contract as a campaign WorkUnit. (74093ecacb4f)
+- Changed: Define a reviewable candidate for the first stable Lite release contract. (aa3bcfec849e)
+- Changed: Refresh local portable-pack and release-preview outputs for qualified combined source. (d137f936bf0a)
 - Fixed: receipt-owned removal recovery preserves later authored bytes and retains ownership evidence when a recorded path was already absent. (fbd9465344f0)
 - Fixed: Generated install guidance now describes the supported bounded removal apply path. (597b5bcd6f54)
 - Fixed: Generated removal guidance now describes planner output and recovery states accurately. (49318d50472b)
@@ -36,42 +39,42 @@ preview_only: true
 
 ## Validation Summary
 
-- ef60c1388ee5: PASS: export included 828 files with 831 checksum entries; bundle, release validation, draft, and draft validation exited zero.
-- 3ed628c19aed: PASS: exact allowlist indentation assertion and canonical validate.
-- e4697aaa3271: PASS: bundle, release validation, draft, and draft validation all exited zero on first replay.
-- 6b4007d06546: PASS: independent ACCEPT_WITH_NOTES for e4697aaa, 42 importer and 46 adjacent tests, 16 consumer checks, and zero of 44 release files changed on replay.
-- 9a8b08700ef7: PASS: both remote ref readings matched 6b4007d0; canonical validate and staged diff whitespace checks passed.
-- fdad1a06f3fe: PASS: canonical validate and staged diff whitespace check on the admission record.
-- 1a44ec617508: PASS: baseline regression demonstrated both old-helper stage writes.
-- e215698a993d: PASS: setup-failure regression, one test with two Windows fault-injection subcases.
-- 0dfb2931d32f: PASS: focused parent substitution, competing leaf, guarded staging, ordinary update and recovery tests on Windows.
-- d4311651b76d: PASS: exact e215 importer suite, 44 tests in 617.176 seconds; focused repair suite, 11 tests.
+- 10a16afb681e: PASS: clean convergence commit 9f2f3895 replay changed zero of 44 release files.
+- 6377cda923c1: PASS: dev and origin/dev fast-forwarded from 9a8b0870 to 10a16afb; Git and GitHub refs agree.
+- 7624d9f4b542: PASS: Python compilation and staged diff whitespace check on the combined source.
+- d13894ba0f55: PASS: ten adversarial Windows removal tests with the frozen shared-helper snapshot and three existing planner tests.
+- 0fbabcdd8510: PASS: 55 combined importer tests and 46 affected Q31/Q34/Q47/Q48 tests.
+- 515ad6b2c07e: PASS: all four post-commit generators returned zero.
+- fbd9465344f0: PASS: Twelve focused removal tests passed in 185.261 seconds using frozen helper snapshot injection; four affected tests passed in 73.470 seconds.
+- 5317524f0760: PASS: task inspect classifies the WorkUnit complete with zero missing evidence.
+- 009668559436: PASS: source compilation and staged whitespace check.
+- b05ba7d5984f: PASS: checkpoint identities checked against local worktrees and observed remote dev.
 
 ## Known Risks
 
-- ef60c1388ee5: Local draft and assets are no-publish evidence; full lifecycle, importer safety, and stable release remain open.
-- 3ed628c19aed: This correction does not broaden the source or artifact review verdict.
-- e4697aaa3271: Consumer qualification and independent exact-candidate acceptance remain pending for dev integration.
-- 6b4007d06546: Importer write safety, full removal/rollback, native/hosted qualification, main, and publication remain open.
-- 9a8b08700ef7: Dev contains repair source with disputed staging-file write safety; main and public release remain untouched.
-- fdad1a06f3fe: Current dev repair helper is unsafe under the reproduced second-writer race; main and public release remain untouched.
-- 1a44ec617508: A cleanup error after link publication is an uncertain effect requiring recovery review; no main or release effect is authorized by this commit.
-- e215698a993d: A post-link cleanup error is an uncertain effect; the intent must be reconciled before retry.
-- 0dfb2931d32f: Existing-leaf update has a visible missing-leaf interval; a rival leaf leaves an exact backup and requires manual recovery.
-- d4311651b76d: A post-link stage cleanup failure remains an uncertain recovery effect; this is not main or stable-release acceptance.
+- 10a16afb681e: This evidence-only change does not alter the reviewed source or artifacts; post-link cleanup remains an uncertain recovery effect.
+- 6377cda923c1: Post-link cleanup uncertainty and safe import, removal, rollback, native/hosted, main, and release gates remain open.
+- 7624d9f4b542: The importer update has a visible missing-leaf interval and manual backup reconciliation; stable release qualification is separate.
+- d13894ba0f55: Authored brownfield AGENTS remains partial; anchored managed-section edit and general rollback remain open.
+- 0fbabcdd8510: Current generated bytes are a local preview; release and native/hosted qualification remain separate.
+- 515ad6b2c07e: Local preview metadata is not stable release publication.
+- fbd9465344f0: The task branch still depends on shared lifecycle helpers from newer dev ancestry. Already absent paths now yield partial removal; authored brownfield AGENTS.md section removal is not implemented.
+- 5317524f0760: Parent campaign still requires removal, rollback, native/hosted, main, and stable release qualification.
+- 009668559436: Authored brownfield managed-section detach and general rollback remain unfinished; no dev effect is authorized by this source merge alone.
+- b05ba7d5984f: Main promotion, tag, publication, native/hosted qualification, and mandatory lifecycle closure remain open.
 
 ## Follow-up
 
-- ef60c1388ee5: Verify exact committed bytes through replay and disposable consumers, obtain independent review, then advance dev if accepted.
-- 3ed628c19aed: Complete exact consumer checks and independent review before dev integration.
-- e4697aaa3271: Run the full four-command replay from this clean commit and record zero-change evidence, then finish exact review.
-- 6b4007d06546: Recheck remote dev and shared writer state, fast-forward qualified history, push normally, and observe remote identity.
-- 9a8b08700ef7: Reproduce against the exact dev helper, close the race, review the fix, then resume lifecycle qualification.
-- fdad1a06f3fe: Implement exclusive staged publication, test both repair intent and payload, then qualify exact dev candidate.
-- 1a44ec617508: Complete combined qualification and independent review, then integrate the exact accepted candidate into dev.
-- e215698a993d: Complete the running combined tests and independent exact-source review before dev integration.
-- 0dfb2931d32f: Obtain independent source review, combined-source artifact qualification and dev integration.
-- d4311651b76d: Finish extracted consumers and postcommit replay, obtain artifact review, then fast-forward qualified dev.
+- 10a16afb681e: Refresh dev and origin/dev, fast-forward only if ancestry holds, push normally, and observe the remote ref.
+- 6377cda923c1: Reconcile the safe-import candidate against current dev while retaining the exclusive repair helper and lifecycle lock.
+- 7624d9f4b542: Finish exact combined tests and review, regenerate current-source pack/release bytes, then qualify before dev integration.
+- d13894ba0f55: Merge with accepted shared-helper ancestry, run combined tests and independent review, then qualify delivered consumers before dev effect.
+- 0fbabcdd8510: Obtain the artifact verdict, converge post-commit metadata, and qualify exact dev integration.
+- 515ad6b2c07e: Prove zero-change replay, then integrate the qualified candidate into dev.
+- fbd9465344f0: Obtain independent rereview of this exact commit, reconcile into current dev with the shared helpers, and run combined and delivered-artifact qualification before integration.
+- 5317524f0760: Continue dependency-ready lifecycle implementation and final release gates under the active parent goal.
+- 009668559436: Complete combined tests and review, regenerate and qualify current-source artifacts, then decide dev integration.
+- b05ba7d5984f: Resume combined removal qualification, then proceed through remaining mandatory product and release gates.
 
 ## Warnings
 
