@@ -3701,9 +3701,9 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-CURRENT-PROJECTION-01/evidence
     description: Regenerate and qualify current Lite preview artifacts and exact dev effect.
   - id: AIDE-STABLE-LITE-FORCED-RESTART-01
-    status: running
-    planning_state: admitted
-    result: PENDING
+    status: needs_review
+    planning_state: canary_review_accepted_effect_pending
+    result: PASS_WITH_WARNINGS
     title: Qualify delivered Windows Lite recovery after abrupt process exit
     task: .aide/queue/AIDE-STABLE-LITE-FORCED-RESTART-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-FORCED-RESTART-01/ExecPlan.md

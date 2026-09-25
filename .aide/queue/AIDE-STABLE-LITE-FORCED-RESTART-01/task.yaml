@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-LITE-FORCED-RESTART-01
 title: Qualify delivered Windows Lite recovery after abrupt process exit
 type: evaluation
-status: running
-planning_state: admitted
-result: PENDING
+status: needs_review
+planning_state: canary_review_accepted_effect_pending
+result: PASS_WITH_WARNINGS
 created_at: 2026-09-26
 updated_at: 2026-09-26
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

@@ -32,6 +32,8 @@ ZIP requires a new identity-bound canary and relevant review.
 
 ## Progress
 
-- [ ] Admit this bounded qualification task from current `dev`.
-- [ ] Run forced-process-exit consumer cases and preserve observed bytes.
+- [x] Admit this bounded qualification task from current `dev` at `5f2441d1`.
+- [x] Run four completed-effect forced exits and one first-payload partial
+      exit. Preserve exact external logs, target bytes, two corrected oracle
+      failures and the partial recovery gap.
 - [ ] Review exact evidence and integrate truthful closeout into `dev`.
