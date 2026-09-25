@@ -3702,7 +3702,7 @@ items:
     description: Regenerate and qualify current Lite preview artifacts and exact dev effect.
   - id: AIDE-STABLE-LITE-FORCED-RESTART-01
     status: needs_review
-    planning_state: canary_review_accepted_effect_pending
+    planning_state: superseding_record_repair_candidate
     result: PASS_WITH_WARNINGS
     title: Qualify delivered Windows Lite recovery after abrupt process exit
     task: .aide/queue/AIDE-STABLE-LITE-FORCED-RESTART-01/task.yaml

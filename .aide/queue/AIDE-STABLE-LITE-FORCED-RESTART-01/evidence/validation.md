@@ -13,5 +13,9 @@
 - FAIL retained: two earlier combined harness runs used incorrect runner and
   authored-AGENTS expectations. Exact logs and failure files remain external;
   corrected final run passed without product source changes.
+- REQUEST_CHANGES retained: exact `f44f3a28` dev-effect review found stale
+  PLANS and matrix claims. Its external report and hash are recorded in
+  `review-finding-f44f3a28.md`; the narrow record correction needs focused
+  rereview and still has no dev effect GO.
 - OPEN: full partial-import recovery, final downloaded-byte consumers, OS
   network trace, hostile timing and stable release acceptance.

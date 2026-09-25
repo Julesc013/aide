@@ -2,7 +2,7 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-FORCED-RESTART-01
 status: needs_review
 classification: delivered_lite_forced_restart_qualification
-planning_state: canary_review_accepted_effect_pending
+planning_state: superseding_record_repair_candidate
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-26
 current_slice: exact_evidence_dev_effect_review

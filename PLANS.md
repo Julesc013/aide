@@ -4026,4 +4026,5 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
 - Exact local ZIP processes recovered after import, repair, rollback and
   removal completion boundaries. A real first-payload import exit was retained
   as `partial`: fresh preview/apply refused replay without changing bytes.
-  Independent canary review and a bounded partial-recovery source task remain.
+  Independent canary review accepted these local results with notes. Exact
+  evidence-effect review and a bounded partial-recovery source task remain.
