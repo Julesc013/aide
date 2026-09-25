@@ -50,7 +50,8 @@ older branch or silently rebuild reviewed bytes.
 
 - [x] Admit this bounded projection under the owner's campaign delegation.
 - [x] Confirm independent acceptance of the frozen contract repair source.
-- [ ] Generate and qualify derived previews and exact delivered artifacts.
+- [x] Generate and qualify derived previews and exact delivered artifacts
+  locally, including the 25-command extracted ZIP/tar consumer.
 - [ ] Prove committed replay and canonical checks.
 - [ ] Obtain independent artifact and dev-effect verdict.
 - [ ] Integrate qualified candidate into `dev` and observe remote identity.

@@ -6,7 +6,7 @@ planning_state: admitted
 result: PENDING
 updated_at: 2026-09-25
 source_candidate: d38e5839fe102fd4b38dc29971877753ccb6e2ec
-next_slice: generate_current_preview_artifacts_from_clean_source
+next_slice: commit_bounded_release_metadata_convergence_then_zero_diff_replay
 review_gate: exact_artifact_and_dev_effect_review
 dev_integration_performed: false
 main_promotion_performed: false
@@ -16,3 +16,4 @@ notes:
   - Independent exact source-contract rereview ACCEPT is recorded in evidence/source-review-acceptance.md; this does not qualify artifacts or dev effect.
   - This WorkUnit carries the export-provenance failure openly until exact regenerated committed outputs pass canonical checks.
   - No stable release or public compatibility claim follows from local preview projection.
+  - Projection d0bfa404 carries consumer-tested ZIP/tar bytes; first post-commit release replay changed 18 metadata files with archives unchanged. Zero-diff replay remains open.

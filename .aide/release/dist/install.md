@@ -3,7 +3,7 @@
 - bundle_id: aide-lite-pack-v0-8365aa61b7cad51d
 - bundle_name: aide-lite-pack-v0
 - source_pack: .aide/export/aide-lite-pack-v0
-- pack_status: PASS
+- pack_status: PASS_SOURCE_ANCESTOR
 - publication_status: local_preview_no_publish
 - apply_mode_available: true
 - apply_mode_scope: bounded receipt-owned removal on Windows
