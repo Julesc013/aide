@@ -11971,3 +11971,19 @@ Owner review found a final-write race in the first candidate. The repair now pub
   tree `ffbaecee`, with a clean primary worktree. The two WorkUnits hold exact
   logs, hashes and effect manifest. Main/tag/publication and stable profile
   qualification remain open.
+
+## 2026-09-25 - Evaluate installed Windows Lite preview consumers
+
+- Ran extracted local ZIP safe import in a clean target and then installed
+  `context`, `pack --task`, and `verify`: all exited 0; verify reported zero
+  errors and 15 classified warnings. No development checkout runner was used.
+- An external exact-ZIP canary ran 31 delivered CLI commands for owned repair,
+  fault-injected restart recovery, synthetic V2 rollback, full fresh and
+  authored brownfield detach, and changed-file partial removal. Independent
+  read-only review accepted the exact passing run with notes. Its first run
+  timed out in the helper during a later import; that attempt remains separate.
+- A fresh installed `task status` exposed an empty-queue report-truth defect:
+  `task_count: 0` but incidental `Q17` latest task and X-OS-01 next-work
+  suggestion. Recorded source cause and exact log in the evaluation WorkUnit.
+  Product source and release assets stayed untouched; a bounded source repair
+  and final delivered-byte rerun are next.

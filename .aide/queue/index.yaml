@@ -3641,9 +3641,9 @@ items:
     evidence: .aide/queue/AIDE-STABLE-CONTRACT-PROJECTION-01/evidence
     description: Regenerate current preview artifacts for accepted contract source, qualify committed provenance and replay, then review exact dev effect.
   - id: AIDE-STABLE-LITE-CONSUMER-PREQUAL-01
-    status: running
-    planning_state: admitted
-    result: PENDING
+    status: needs_review
+    planning_state: local_preview_evaluated_with_report_truth_finding
+    result: PASS_WITH_WARNINGS
     title: Exercise delivered Windows Lite journeys before final release freeze
     task: .aide/queue/AIDE-STABLE-LITE-CONSUMER-PREQUAL-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-CONSUMER-PREQUAL-01/ExecPlan.md

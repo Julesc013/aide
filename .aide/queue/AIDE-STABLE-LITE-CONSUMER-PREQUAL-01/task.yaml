@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-LITE-CONSUMER-PREQUAL-01
 title: Exercise delivered Windows Lite journeys before final release freeze
 type: evaluation
-status: running
-planning_state: admitted
-result: PENDING
+status: needs_review
+planning_state: local_preview_evaluated_with_report_truth_finding
+result: PASS_WITH_WARNINGS
 created_at: 2026-09-25
 updated_at: 2026-09-25
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

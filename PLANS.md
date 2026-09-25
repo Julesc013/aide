@@ -3896,9 +3896,19 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   outputs remain read-only until a concrete defect is scoped separately.
 - Clean extracted-ZIP safe import wrote 816 owned paths. The installed
   `context`, `pack --task`, and `verify` path exited 0 with zero verifier
-  errors; optional-report/no-Git warnings remain explicit. The lifecycle
-  canary is in progress. Final downloaded release bytes and stable support
-  acceptance remain later gates.
+  errors; optional-report/no-Git warnings remain explicit. At admission the
+  lifecycle canary was still running. Final downloaded release bytes and
+  stable support acceptance remain later gates.
+- The separate 31-command Windows lifecycle canary passed against the same
+  local ZIP and received independent `ACCEPT_WITH_NOTES` for that exact
+  preview. It exercised repair apply/restart, synthetic V2 rollback, and
+  receipt-owned fresh/brownfield removal. The first helper-limited run timed
+  out and remains failed evidence; the queue record supplies the correct hash
+  that the reviewer identified. No final/published acceptance follows.
+- Clean installed `task status` exposed a report-truth defect: an empty target
+  queue appears with incidental `Q17` and an AIDE-source-specific X-OS-01 next
+  task. The evaluation task records it and routes a bounded source repair;
+  final offline, real-version and downloaded-byte qualification remains open.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

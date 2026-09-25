@@ -56,8 +56,14 @@ target intentionally modified by an earlier adversarial case.
 - [x] Admit bounded local preview consumer qualification under the campaign.
 - [x] Run a clean installed context/pack/verify smoke after safe import;
   retain the invalid post-tamper baseline probe separately.
-- [ ] Finish and independently review the lifecycle/restart canary.
-- [ ] Repair any substantive product failures through a bounded reviewed
-  source task, or record precise limitations where no failure is established.
-- [ ] Close this prequalification task with exact evidence and update the
-  parent release obligation matrix.
+- [x] Finish and independently review the lifecycle/restart canary. The
+  second exact run received `ACCEPT_WITH_NOTES`; the first timed out in the
+  older harness and remains separate.
+- [x] Run installed `task status` and classify the empty-queue reporting
+  defect without changing source in this read-only evaluation WorkUnit.
+- [ ] Admit and repair the Task OS report-truth defect in a separate bounded
+  source WorkUnit, then regenerate and recheck delivered bytes.
+- [x] Update the parent release obligation matrix and preserve exact local
+  evidence, including the independent lifecycle review and Task OS finding.
+- [ ] Obtain an independent closeout verdict for this exact evaluation record,
+  then integrate the evidence checkpoint and route the bounded source repair.
