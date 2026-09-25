@@ -633,6 +633,144 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(resumed["written"], [])
         self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file())
 
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
+    def test_exact_predecessor_rollback_restores_owned_bytes_and_receipt(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "rollback-v1")
+        target = source_root.parent / "target-rollback"
+        aide_lite.write_text(target / "README.md", "# Project authored\n")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        old_bytes = (target / managed_rel).read_bytes()
+        aide_lite.write_text(source_root / managed_rel, "# Upstream v2\n")
+        pack_v2 = self.freeze_pack(source_root, "rollback-v2")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "APPLIED")
+        self.assertNotEqual((target / managed_rel).read_bytes(), old_bytes)
+
+        preview = aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        self.assertEqual(preview["status"], "PLANNED")
+        installed_cli = target / ".aide/scripts/aide_lite.py"
+        command = [sys.executable, str(installed_cli), "--repo-root", str(target), "rollback-pack", "--current-pack", str(pack_v2), "--previous-pack", str(pack_v1), "--target", str(target), "--json"]
+        cli_preview = subprocess.run([*command, "--dry-run"], capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(cli_preview.returncode, 0, cli_preview.stderr)
+        self.assertEqual(json.loads(cli_preview.stdout)["plan_digest"], preview["plan_digest"])
+        cli_apply = subprocess.run([*command, "--expect-plan", preview["plan_digest"]], capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(cli_apply.returncode, 0, cli_apply.stderr)
+        result = json.loads(cli_apply.stdout)
+        self.assertEqual(result["status"], "ROLLED_BACK")
+        self.assertEqual((target / managed_rel).read_bytes(), old_bytes)
+        self.assertEqual(aide_lite.read_text(target / "README.md"), "# Project authored\n")
+        self.assertEqual(aide_lite.load_portable_import_receipt(target)["pack"], aide_lite.import_pack_identity(pack_v1))
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
+    def test_rollback_preserves_authored_edit_and_refuses_stale_or_wrong_lineage(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "rollback-edits-v1")
+        target = source_root.parent / "target-rollback-edits"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        aide_lite.write_text(source_root / managed_rel, "# Upstream changed bytes\n")
+        pack_v2 = self.freeze_pack(source_root, "rollback-edits-v2")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "APPLIED")
+        preview = aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt_bytes = receipt_path.read_bytes()
+        authored = b"# Project changed after v2\n"
+        (target / managed_rel).write_bytes(authored)
+        stale = aide_lite.apply_portable_rollback(pack_v2, pack_v1, target, preview["plan_digest"])
+        self.assertEqual(stale["status"], "STALE_PLAN")
+        conflicted = aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        self.assertEqual(conflicted["status"], "CONFLICT")
+        self.assertEqual(aide_lite.apply_portable_rollback(pack_v2, pack_v1, target, conflicted["plan_digest"])["status"], "CONFLICT")
+        self.assertEqual((target / managed_rel).read_bytes(), authored)
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+        wrong_previous = source_root.parent / "rollback-wrong-predecessor"
+        shutil.copytree(pack_v1, wrong_previous)
+        aide_lite.write_text(wrong_previous / "files" / managed_rel, "# Similar paths, different predecessor\n")
+        aide_lite.write_text(wrong_previous / "checksums.json", aide_lite.stable_json_text(aide_lite.build_pack_checksums(wrong_previous)))
+        self.assertEqual(aide_lite.validate_pack_checksums(wrong_previous), (True, []))
+        with self.assertRaisesRegex(ValueError, "exact receipt lineage"):
+            aide_lite.build_portable_rollback_plan(pack_v2, wrong_previous, target)
+        with self.assertRaisesRegex(ValueError, "exact receipt lineage"):
+            aide_lite.build_portable_rollback_plan(pack_v1, pack_v2, target)
+        forged_receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        forged_receipt["managed"][managed_rel]["installed_digest"] = aide_lite.digest_bytes(authored)
+        forged_receipt["receipt_digest"] = aide_lite.portable_import_record_digest(forged_receipt, "receipt_digest")
+        aide_lite.write_text(receipt_path, aide_lite.stable_json_text(forged_receipt))
+        with self.assertRaisesRegex(ValueError, "baseline differs from current pack"):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        self.assertEqual((target / managed_rel).read_bytes(), authored)
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
+    def test_rollback_refuses_changed_payload_path_set(self) -> None:
+        source_root = self.make_source_repo()
+        pack_v1 = self.freeze_pack(source_root, "rollback-paths-v1")
+        added_rel = ".aide/prompts/compact-task.md"
+        (pack_v1 / "files" / added_rel).unlink()
+        manifest = aide_lite.read_text(pack_v1 / "manifest.yaml")
+        aide_lite.write_text(pack_v1 / "manifest.yaml", manifest.replace(f"  - files/{added_rel}\n", ""))
+        aide_lite.write_text(pack_v1 / "checksums.json", aide_lite.stable_json_text(aide_lite.build_pack_checksums(pack_v1)))
+        self.assertEqual(aide_lite.validate_pack_checksums(pack_v1), (True, []))
+        target = source_root.parent / "target-rollback-paths"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        pack_v2 = self.freeze_pack(source_root, "rollback-paths-v2")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "APPLIED")
+        receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
+        with self.assertRaisesRegex(ValueError, "payload paths differ"):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        self.assertTrue((target / added_rel).is_file())
+        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
+    def test_interrupted_rollback_retains_intent_and_requires_reconciliation(self) -> None:
+        source_root = self.make_source_repo()
+        first_rel = ".aide/prompts/compact-task.md"
+        second_rel = ".aide/policies/token-budget.yaml"
+        pack_v1 = self.freeze_pack(source_root, "rollback-interrupt-v1")
+        target = source_root.parent / "target-rollback-interrupt"
+        aide_lite.write_text(target / "README.md", "# Authored\n")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        aide_lite.write_text(source_root / first_rel, "# Second release one\n")
+        aide_lite.write_text(source_root / second_rel, "version: second-release\n")
+        pack_v2 = self.freeze_pack(source_root, "rollback-interrupt-v2")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "APPLIED")
+        preview = aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        interrupted = aide_lite.apply_portable_rollback(pack_v2, pack_v1, target, preview["plan_digest"], fail_after_writes=1)
+        self.assertEqual(interrupted["status"], "INTERRUPTED")
+        self.assertEqual(len(interrupted["written"]), 1)
+        intent_path = target / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        self.assertTrue(intent_path.is_file())
+        self.assertEqual(aide_lite.load_portable_import_receipt(target)["pack"], aide_lite.import_pack_identity(pack_v2))
+        intent_bytes, receipt_bytes = intent_path.read_bytes(), receipt_path.read_bytes()
+        retry = aide_lite.apply_portable_rollback(pack_v2, pack_v1, target, preview["plan_digest"])
+        self.assertEqual(retry["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(intent_path.read_bytes(), intent_bytes)
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+        self.assertEqual(aide_lite.read_text(target / "README.md"), "# Authored\n")
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
+    def test_rollback_refuses_pending_prior_update_without_touching_intent(self) -> None:
+        source_root = self.make_source_repo()
+        first_rel = ".aide/prompts/compact-task.md"
+        second_rel = ".aide/policies/token-budget.yaml"
+        pack_v1 = self.freeze_pack(source_root, "rollback-prior-intent-v1")
+        target = source_root.parent / "target-rollback-prior-intent"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        aide_lite.write_text(source_root / first_rel, "# Pending release one\n")
+        aide_lite.write_text(source_root / second_rel, "version: pending-release\n")
+        pack_v2 = self.freeze_pack(source_root, "rollback-prior-intent-v2")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, fail_after_writes=1)["status"], "INTERRUPTED")
+        intent_path = target / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        intent_bytes, receipt_bytes = intent_path.read_bytes(), receipt_path.read_bytes()
+        preview = aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        self.assertEqual(preview["status"], "RECOVERY_REQUIRED")
+        with self.assertRaisesRegex(ValueError, "exact preview digest"):
+            aide_lite.apply_portable_rollback(pack_v2, pack_v1, target, "")
+        self.assertEqual(intent_path.read_bytes(), intent_bytes)
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+
     def test_dry_run_never_reconciles_a_pending_import_intent(self) -> None:
         source_root = self.make_source_repo()
         managed_rel = ".aide/prompts/compact-task.md"

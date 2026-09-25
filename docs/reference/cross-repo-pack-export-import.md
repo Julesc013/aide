@@ -283,6 +283,29 @@ py -3 -I -B <pack>/files/.aide/scripts/aide_lite.py --repo-root <target> repair-
 
 The preview checks pack checksums, exact receipt and source digests, safe-mode ownership, and a missing target. Apply requires its exact plan digest. An existing file, local edit, unknown receipt entry, different pack, pending import intent, or stale plan refuses the write. A target-local repair intent records a write before it occurs. On Windows, repair holds non-renamable directory handles for every path component, rejects reparse points, stages complete bytes, and publishes through a handle-relative no-clobber hard link. A competing file or parent substitution cannot redirect that publication. Repair cleanup opens the intent beneath pinned ancestors without following reparse points, verifies its exact bytes and regular single-link identity, and deletes through that same handle. A changed or redirected intent remains untouched. Every effectful import, including a first install, and repair acquire a per-target lifecycle guard before preflight or intent changes. Windows uses a named kernel mutex that leaves no target lock file; POSIX import uses a private persistent temporary lock file whose advisory lock is released on process exit. Rerunning the exact apply after interruption verifies a completed postimage or retries a missing preimage; unknown bytes remain blocked. A dry-run leaves the target unchanged. Repair apply fails closed on non-Windows platforms until equivalent anchored path operations are implemented. The importer’s separate intent cleanup remains outside this repair guarantee. The repair command does not restore managed sections, target-owned templates, modified files, or multiple paths.
 
+### Return to an exact predecessor portable pack
+
+For a completed safe-mode update whose receipt names both the current pack and
+its predecessor, a Windows consumer can preview and apply an exact return to
+the predecessor:
+
+```text
+py -3 -I -B <current-pack>/files/.aide/scripts/aide_lite.py --repo-root <target> rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run --json
+py -3 -I -B <current-pack>/files/.aide/scripts/aide_lite.py --repo-root <target> rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <preview-plan-digest> --json
+```
+
+Both packs must pass checksum validation and have the same safe payload path
+set. The receipt must bind their exact manifest and checksum identities, and
+its managed baselines must match the current pack. Changed receipt-owned
+bytes, a local edit to the managed `AGENTS.md` section, or a changed preview
+refuses the rollback before new writes. Project-owned templates and authored
+content outside the managed section stay intact. The existing importer intent
+records the effect; an interrupted or uncertain transaction remains
+`RECOVERY_REQUIRED` and is not silently replayed by the rollback command.
+This narrow path cannot restore arbitrary prior bytes without the exact
+predecessor pack or resolve additions and removals between pack payload sets.
+Apply fails closed outside Windows until equivalent anchored effects qualify.
+
 The portable pack is metadata and tooling, not proof that AIDE reduces tokens in
 the target. Q22 Eureka Import Pilot and Q23 Dominium Import Pilot must measure:
 

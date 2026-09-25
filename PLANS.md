@@ -3751,3 +3751,13 @@ eight delivered-script race cases, and a zero-change replay of 44 release
 files. Local/remote dev now agree at `10a16afb`; the staging WorkUnit is
 closed with retained cleanup uncertainty. Safe import `0dfb2931` and
 conditional removal remain dependency-ready candidates, not integrated dev.
+
+## Exact predecessor delivered-pack rollback apply (2026-09-25)
+
+`AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01` is a bounded Windows source candidate
+from `dev@b05ba7d5`. It uses the validated predecessor pack, exact receipt
+lineage, equal safe payload targets, and current-byte checks to restore a
+completed update through the existing import transaction. Source tests and
+documentation are recorded in the child WorkUnit. Changed payload sets,
+unavailable predecessor bytes, interrupted mixed effects, combined source,
+delivered artifacts, and independent review remain open gates.

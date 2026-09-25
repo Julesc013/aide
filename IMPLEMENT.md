@@ -11645,3 +11645,15 @@ Owner review found a final-write race in the first candidate. The repair now pub
   baseline failed as intended and left no real target effect.
 - The repair must anchor metadata as well as managed payload writes. No source
   repair or delivered-artifact acceptance is recorded by this regression.
+
+## 2026-09-25 - Exact predecessor delivered-pack rollback candidate
+
+- Added `rollback-pack` preview/apply for a completed safe-mode update whose
+  current receipt binds the exact validated predecessor and whose safe payload
+  target set matches. The path uses the existing import transaction and
+  refuses stale plans, changed target bytes, wrong packs, path-set changes,
+  and unresolved prior intents.
+- Five disposable rollback tests and two existing importer regressions passed
+  in the isolated task worktree. The child WorkUnit records exact logs and
+  hashes. This is a source candidate only: independent review, combined-source
+  qualification, extracted artifacts, and wider rollback coverage remain open.

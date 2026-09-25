@@ -1,0 +1,35 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01
+title: Apply an exact predecessor portable-pack rollback
+type: implementation
+status: needs_review
+planning_state: bounded_equal_payload_source_candidate_frozen
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_dev: b05ba7d5
+authority_basis: >
+  The owner's 2026-09-25 campaign delegation authorizes bounded lifecycle
+  apply on disposable consumers, subject to independent technical review.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - docs/reference/cross-repo-pack-export-import.md
+    - .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_operations:
+    - mutate a real consumer or unrelated repository
+    - overwrite project-authored or unknown bytes
+    - mutate shared dev, main, generated release outputs, or remote refs
+verification:
+  - exact current and predecessor pack identities and receipt lineage
+  - exact preview with effect-time checks
+  - disposable success, stale, authored-edit, interruption, and path-set tests
+  - independent source review before integration
+retained_gates:
+  - no direct Git ref or generated-output effects in this task worktree
+  - full rollback across added/deleted payload paths remains a separate requirement
