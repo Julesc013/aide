@@ -11615,3 +11615,9 @@ Owner review found a final-write race in the first candidate. The repair now pub
   postcommit replay, and dev integration remain open. A post-link cleanup
   failure is an uncertain effect and retains recovery obligations; safe import
   writes and complete lifecycle behavior remain separate work.
+- The tested ZIP/tar subsequently passed independent fresh/brownfield
+  consumers and delivered-script race checks. A full postcommit replay changed
+  zero of 44 release files. Fast-forward integration advanced local and remote
+  dev to `10a16afb` (tree `8a64880c`), observed through Git and GitHub.
+  This closes the staging-race WorkUnit for dev; it does not accept main,
+  publication, or complete lifecycle behavior.

@@ -3734,3 +3734,9 @@ and postcommit replay qualification before a dev fast-forward. The accepted
 safe-import branch `0dfb2931` needs a separate combined-source merge that
 retains this newer repair helper and the lifecycle lock. Neither result closes
 mandatory removal, rollback, native/hosted, main, or publication gates.
+
+The repair staging projection passed independent offline ZIP/tar consumers,
+eight delivered-script race cases, and a zero-change replay of 44 release
+files. Local/remote dev now agree at `10a16afb`; the staging WorkUnit is
+closed with retained cleanup uncertainty. Safe import `0dfb2931` and
+conditional removal remain dependency-ready candidates, not integrated dev.

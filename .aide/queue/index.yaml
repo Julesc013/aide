@@ -3551,9 +3551,9 @@ items:
     evidence: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/evidence
     description: Exact-pack, receipt-owned single missing-file repair apply in disposable delivered-pack consumers.
   - id: AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01
-    status: running
-    planning_state: admitted_regression_pending
-    result: PENDING
+    status: passed
+    planning_state: integrated_to_remote_dev
+    result: PASS_WITH_RETAINED_GATES
     title: Block rival Windows writes to owned repair staging bytes
     task: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/task.yaml
     exec_plan: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/ExecPlan.md

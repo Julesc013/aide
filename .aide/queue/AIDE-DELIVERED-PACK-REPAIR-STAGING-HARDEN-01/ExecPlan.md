@@ -36,7 +36,7 @@ WorkUnit closes that race for owned repair intent and payload only.
   independent reviewer accepted the frozen local artifact scope.
 - [x] Commit source-ancestor metadata convergence and prove a zero-change
   postcommit replay across all 44 release files from clean `9f2f3895`.
-- [ ] Observe exact remote dev after qualified fast-forward integration.
+- [x] Observe exact remote dev after qualified fast-forward integration.
 
 ## Recovery
 

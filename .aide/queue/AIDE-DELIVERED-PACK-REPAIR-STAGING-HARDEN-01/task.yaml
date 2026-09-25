@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01
 title: Block rival Windows writes to owned repair staging bytes
 type: implementation
-status: running
-planning_state: qualified_dev_integration_pending
-result: PENDING
+status: passed
+planning_state: integrated_to_remote_dev
+result: PASS_WITH_RETAINED_GATES
 created_at: 2026-09-25
 updated_at: 2026-09-25
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
