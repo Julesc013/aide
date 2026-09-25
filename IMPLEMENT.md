@@ -11675,3 +11675,8 @@ Owner review found a final-write race in the first candidate. The repair now pub
   a change after earlier deletions begins yields `RECOVERY_REQUIRED`, not a
   blanket no-effect refusal. Clarified both generated guides and strengthened
   the regression before regenerating superseding bytes.
+- Clean source `49318d50` generated a new ZIP/tar pair. The corrected guides,
+  checksum/provenance projection, Q31/Q47 suites, and 27-command extracted
+  consumer canary passed. Independent artifact review accepted those exact
+  local bytes with Windows, authored-section, and effect-injection limits.
+  Post-commit replay and dev integration remain open.

@@ -28,20 +28,31 @@ bytes. Use `--from-pack <validated-predecessor-pack>` to prove the baseline of
 an older installation that predates receipts. Local edits, unknown ownership,
 changed preview state, invalid packs, and partial prior effects refuse closed.
 
-## Read-Only Removal Planning
+## Bounded Receipt-Owned Removal on Windows
 
-After a receipt-backed import, inspect the exact future removal boundary without
-changing target bytes:
+After a receipt-backed import, inspect the exact removal boundary without
+changing target bytes. Pass that preview's exact `plan_digest` to apply:
 
 ```text
 py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo>
 py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo> --json
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> apply-removal --target <target-repo> --expect-plan <plan_digest>
 ```
 
-Only unchanged bytes recorded as AIDE-managed are future removal candidates.
-Local edits, missing state, target-owned files, unknown ownership, and authored
-`AGENTS.md` content are preserved. This command is planning-only: it never
-deletes files, removes a managed section, or writes lifecycle state.
+`plan-removal` is read-only. On Windows, `apply-removal` deletes only unchanged
+receipt-owned regular files and an exact generated whole-file `AGENTS.md`
+scaffold. It checks ownership again at effect time and retains an intent for
+interruption recovery. The preview's `apply_allowed: false` describes the
+read-only `plan-removal` command; the separate `apply-removal` command accepts
+its exact digest on Windows. A stale preview refuses before deletion. If a
+candidate changes after removal begins, the command stops with
+`RECOVERY_REQUIRED`; earlier deletions may have occurred, and the intent remains.
+Authored `AGENTS.md` content is preserved; other eligible files may be removed
+with the runner and receipt retained as `PARTIAL_REMOVAL` (exit code 2).
+Removing only a managed section from an authored file remains unavailable. A
+repeated apply must use the same digest to reconcile an interrupted intent.
+Non-Windows apply fails closed. Keep the extracted pack available for recovery
+after full detach.
 
 ## Manual Import
 

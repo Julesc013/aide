@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 id: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01
 status: running
-planning_state: conditional_detach_source_candidate_shared_helper_pending
+planning_state: combined_artifact_accepted_dev_integration_pending
 result: PENDING
 updated_at: 2026-09-25
 base_dev: 5dfa75e632b09f732a8150376db6840bcf149ed3
-next_action: review_conditional_detach_then_merge_qualified_helpers_and_validate_combined_source
+next_action: commit_generated_projection_replay_then_review_exact_dev_effect

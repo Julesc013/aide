@@ -32,7 +32,7 @@ from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Iterable
+from typing import Callable, Iterable
 
 
 GENERATOR_NAME = "aide-lite"
@@ -2766,11 +2766,14 @@ PORTABLE_IMPORT_RECEIPT_PATH = ".aide/install/aide-lite-pack-v0.receipt.json"
 PORTABLE_IMPORT_INTENT_PATH = ".aide/install/aide-lite-pack-v0.intent.json"
 PORTABLE_REPAIR_INTENT_PATH = ".aide/install/aide-lite-pack-v0.repair-intent.json"
 PORTABLE_LIFECYCLE_LOCK_PATH = ".aide/install/aide-lite-pack-v0.lifecycle.lock"
+PORTABLE_REMOVAL_INTENT_PATH = ".aide/install/aide-lite-pack-v0.removal-intent.json"
+PORTABLE_REMOVAL_RUNNER_PATH = ".aide/scripts/aide_lite.py"
 PROJECT_CUSTOMIZATIONS_PATH = ".aide/customizations.json"
 PROJECT_CUSTOMIZATIONS_SCHEMA = "aide.project-customizations.v1"
 PORTABLE_IMPORT_RECEIPT_SCHEMA = "aide.portable-import-receipt.v1"
 PORTABLE_IMPORT_INTENT_SCHEMA = "aide.portable-import-intent.v1"
 PORTABLE_REMOVAL_PLAN_SCHEMA = "aide.portable-removal-plan.v1"
+PORTABLE_REMOVAL_INTENT_SCHEMA = "aide.portable-removal-intent.v1"
 
 PORTABLE_TEMPLATE_MAP = {
     ".aide/templates/portable-apply/README.md": "core/apply/README.md",
@@ -17682,7 +17685,8 @@ def release_install_notes_text(repo_root: Path, bundle_id: str, pack_status: str
         f"- source_pack: {source.get('path', EXPORT_PACK_PATH)}",
         f"- pack_status: {pack_status}",
         "- publication_status: local_preview_no_publish",
-        "- apply_mode_available: false",
+        "- apply_mode_available: true",
+        "- apply_mode_scope: bounded receipt-owned removal on Windows",
         "",
         "## Default Workflow",
         "",
@@ -17690,13 +17694,18 @@ def release_install_notes_text(repo_root: Path, bundle_id: str, pack_status: str
         "2. Inspect `manifest.yaml`, `checksums.json`, `install.md`, and `files/**`.",
         "3. From the extracted archive root, run the isolated dry-run and safe import commands from `install.md`.",
         "4. Run target-local AIDE Lite validation after import.",
-        "5. Use install, repair, upgrade, rollback, and uninstall commands in observe/plan/dry-run mode only.",
+        "5. On Windows, use `plan-removal --target <target-repo> --json`, then `apply-removal --target <target-repo> --expect-plan <plan_digest>` for receipt-owned removal.",
+        "6. Treat other lifecycle apply commands according to their separately documented boundaries.",
+        "7. `plan-removal` reports `apply_allowed: false` because that command is read-only; the separate `apply-removal` command accepts its exact digest on Windows.",
         "",
         "## Preservation Rules",
         "",
         "- Target `.aide/memory/**`, `.aide/queue/**`, evidence, golden tasks, generated reports, docs/canon, manual guidance, and existing tools are target state and must be preserved.",
         "- `.aide.local/**`, `.env`, secrets, raw prompts, raw responses, and provider credentials are never install candidates.",
-        "- Upgrade, repair, rollback, and uninstall are planning models only until a future reviewed apply phase exists.",
+        "- Windows `apply-removal` deletes only unchanged receipt-owned regular files and an exact generated whole-file `AGENTS.md` scaffold. A stale preview refuses before deletion; a change after removal begins returns `RECOVERY_REQUIRED` with the intent retained and earlier deletions possible.",
+        "- Authored `AGENTS.md` content remains intact; when other eligible files are removed, the runner and receipt remain and the command reports `PARTIAL_REMOVAL`.",
+        "- Authored `AGENTS.md` managed-section removal and non-Windows removal apply remain unavailable. An interrupted removal requires exact-intent reconciliation; a partial result retains the receipt and runner for further review.",
+        "- General install, repair, upgrade, and rollback apply have separate documented scopes; this removal command does not expand them.",
         "",
         "## Publication Boundary",
         "",
@@ -39891,20 +39900,31 @@ bytes. Use `--from-pack <validated-predecessor-pack>` to prove the baseline of
 an older installation that predates receipts. Local edits, unknown ownership,
 changed preview state, invalid packs, and partial prior effects refuse closed.
 
-## Read-Only Removal Planning
+## Bounded Receipt-Owned Removal on Windows
 
-After a receipt-backed import, inspect the exact future removal boundary without
-changing target bytes:
+After a receipt-backed import, inspect the exact removal boundary without
+changing target bytes. Pass that preview's exact `plan_digest` to apply:
 
 ```text
 py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo>
 py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo> --json
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> apply-removal --target <target-repo> --expect-plan <plan_digest>
 ```
 
-Only unchanged bytes recorded as AIDE-managed are future removal candidates.
-Local edits, missing state, target-owned files, unknown ownership, and authored
-`AGENTS.md` content are preserved. This command is planning-only: it never
-deletes files, removes a managed section, or writes lifecycle state.
+`plan-removal` is read-only. On Windows, `apply-removal` deletes only unchanged
+receipt-owned regular files and an exact generated whole-file `AGENTS.md`
+scaffold. It checks ownership again at effect time and retains an intent for
+interruption recovery. The preview's `apply_allowed: false` describes the
+read-only `plan-removal` command; the separate `apply-removal` command accepts
+its exact digest on Windows. A stale preview refuses before deletion. If a
+candidate changes after removal begins, the command stops with
+`RECOVERY_REQUIRED`; earlier deletions may have occurred, and the intent remains.
+Authored `AGENTS.md` content is preserved; other eligible files may be removed
+with the runner and receipt retained as `PARTIAL_REMOVAL` (exit code 2).
+Removing only a managed section from an authored file remains unavailable. A
+repeated apply must use the same digest to reconcile an interrupted intent.
+Non-Windows apply fails closed. Keep the extracted pack available for recovery
+after full detach.
 
 ## Manual Import
 
@@ -40471,7 +40491,7 @@ def load_portable_import_receipt(target_root: Path) -> dict[str, object] | None:
         if not isinstance(target_rel, str) or not target_rel:
             raise ValueError("portable import receipt managed target is invalid")
         portable_target_path(target_root, target_rel)
-        if target_rel in {PORTABLE_IMPORT_RECEIPT_PATH, PORTABLE_IMPORT_INTENT_PATH}:
+        if target_rel in {PORTABLE_IMPORT_RECEIPT_PATH, PORTABLE_IMPORT_INTENT_PATH, PORTABLE_REMOVAL_INTENT_PATH}:
             raise ValueError(f"portable import receipt contains reserved target: {target_rel}")
         if not isinstance(entry, dict):
             raise ValueError(f"portable import receipt managed entry is invalid: {target_rel}")
@@ -40503,6 +40523,64 @@ def load_portable_import_intent(target_root: Path) -> dict[str, object] | None:
         raise ValueError("portable import intent digest mismatch")
     if not isinstance(record.get("operations"), list) or not isinstance(record.get("next_receipt"), dict):
         raise ValueError("portable import intent shape is invalid")
+    return record
+
+
+def load_portable_removal_intent(target_root: Path) -> dict[str, object] | None:
+    path = portable_target_path(target_root, PORTABLE_REMOVAL_INTENT_PATH)
+    if not path.exists():
+        return None
+    try:
+        record = json.loads(read_text(path))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"invalid portable removal intent: {exc}") from exc
+    if not isinstance(record, dict) or record.get("schema_version") != PORTABLE_REMOVAL_INTENT_SCHEMA:
+        raise ValueError("invalid portable removal intent schema")
+    if record.get("pack_id") != EXPORT_PACK_ID or record.get("target") != normalize_rel(target_root.resolve()):
+        raise ValueError("portable removal intent identity mismatch")
+    if record.get("intent_digest") != portable_import_record_digest(record, "intent_digest"):
+        raise ValueError("portable removal intent digest mismatch")
+    if not isinstance(record.get("operations"), list) or not isinstance(record.get("receipt_digest"), str):
+        raise ValueError("portable removal intent shape is invalid")
+    if not isinstance(record.get("retire_receipt"), bool) or not isinstance(record.get("preserved"), list) or not isinstance(record.get("settled_absent"), list):
+        raise ValueError("portable removal intent completion shape is invalid")
+    if not isinstance(record.get("receipt_file_digest"), str) or re.fullmatch(r"[0-9a-f]{64}", record["receipt_file_digest"]) is None:
+        raise ValueError("portable removal intent receipt file digest is invalid")
+    if record["retire_receipt"] and record["preserved"]:
+        raise ValueError("portable removal intent cannot retire a preserved receipt")
+    # Older intents could retire a receipt based on an unguarded absence
+    # observation. They require manual reconciliation instead of replay.
+    if record["settled_absent"]:
+        raise ValueError("portable removal intent has unguarded absent targets")
+    if any(not isinstance(item, str) for item in record["preserved"]):
+        raise ValueError("portable removal intent preservation list is invalid")
+    targets: list[str] = []
+    for target_rel in record["preserved"]:
+        portable_target_path(target_root, target_rel)
+        targets.append(target_rel)
+    for item in record["settled_absent"]:
+        if not isinstance(item, dict) or item.get("kind") not in {"managed_file", "portable_managed_section"} or not isinstance(item.get("target"), str):
+            raise ValueError("portable removal intent settled entry is invalid")
+        portable_target_path(target_root, item["target"])
+        targets.append(item["target"])
+    for item in record["operations"]:
+        if not isinstance(item, dict) or item.get("kind") not in {"managed_file", "standalone_managed_agents"}:
+            raise ValueError("portable removal intent operation is invalid")
+        target_rel = item.get("target")
+        if not isinstance(target_rel, str) or target_rel in {
+            PORTABLE_IMPORT_RECEIPT_PATH, PORTABLE_IMPORT_INTENT_PATH, PORTABLE_REMOVAL_INTENT_PATH
+        }:
+            raise ValueError("portable removal intent target is invalid")
+        portable_target_path(target_root, target_rel)
+        if not isinstance(item.get("installed_digest"), str) or re.fullmatch(r"[0-9a-f]{64}", item["installed_digest"]) is None:
+            raise ValueError("portable removal intent installed digest is invalid")
+        if not isinstance(item.get("preimage_digest"), str) or re.fullmatch(r"[0-9a-f]{64}", item["preimage_digest"]) is None:
+            raise ValueError("portable removal intent preimage digest is invalid")
+        if item["kind"] == "standalone_managed_agents" and target_rel != "AGENTS.md":
+            raise ValueError("portable removal intent standalone AGENTS target is invalid")
+        targets.append(target_rel)
+    if len(targets) != len(set(targets)):
+        raise ValueError("portable removal intent has duplicate targets")
     return record
 
 
@@ -40691,7 +40769,7 @@ def import_pack_plan(
         else:
             target_rel = rel
         reserved_key = "/".join(part.rstrip(" .").casefold() for part in target_rel.split("/"))
-        if reserved_key in {PORTABLE_IMPORT_RECEIPT_PATH.casefold(), PORTABLE_IMPORT_INTENT_PATH.casefold(), PORTABLE_REPAIR_INTENT_PATH.casefold(), PORTABLE_LIFECYCLE_LOCK_PATH.casefold(), PROJECT_CUSTOMIZATIONS_PATH.casefold()}:
+        if reserved_key in {PORTABLE_IMPORT_RECEIPT_PATH.casefold(), PORTABLE_IMPORT_INTENT_PATH.casefold(), PORTABLE_REPAIR_INTENT_PATH.casefold(), PORTABLE_REMOVAL_INTENT_PATH.casefold(), PORTABLE_LIFECYCLE_LOCK_PATH.casefold(), PROJECT_CUSTOMIZATIONS_PATH.casefold()}:
             raise ValueError(f"pack payload collides with reserved project/import state: {target_rel}")
         target = portable_target_path(target_root, target_rel)
         if rel == "AGENTS.md.template":
@@ -40972,6 +41050,8 @@ def build_portable_removal_plan(target_root: Path) -> dict[str, object]:
     target_root = target_root.resolve()
     if not target_root.exists() or not target_root.is_dir():
         raise ValueError(f"portable removal target is not a directory: {target_root}")
+    if load_portable_removal_intent(target_root) is not None:
+        raise ValueError("portable removal recovery must complete before a new plan")
     pending_path = portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH)
     if pending_path.exists():
         load_portable_import_intent(target_root)
@@ -41024,6 +41104,281 @@ def build_portable_removal_plan(target_root: Path) -> dict[str, object]:
     }
     plan["plan_digest"] = portable_import_record_digest(plan, "plan_digest")
     return plan
+
+
+def windows_unlink_exact_portable_file(
+    path: Path, expected_digest: str, before_disposition: Callable[[], None] | None = None
+) -> None:
+    """Hash and unlink the same opened regular file while its ancestors are pinned.
+
+    This requires the reviewed Windows pinned-directory primitive shared with
+    portable repair. A pathname digest followed by Path.unlink is insufficient.
+    """
+    if os.name != "nt":
+        raise ValueError("portable removal apply requires Windows anchored file handles")
+    import ctypes
+    from ctypes import wintypes
+
+    class FileTime(ctypes.Structure):
+        _fields_ = [("low", wintypes.DWORD), ("high", wintypes.DWORD)]
+
+    class FileInfo(ctypes.Structure):
+        _fields_ = [("attributes", wintypes.DWORD), ("created", FileTime), ("accessed", FileTime), ("written", FileTime), ("volume", wintypes.DWORD), ("size_high", wintypes.DWORD), ("size_low", wintypes.DWORD), ("links", wintypes.DWORD), ("index_high", wintypes.DWORD), ("index_low", wintypes.DWORD)]
+
+    class DispositionInfo(ctypes.Structure):
+        _fields_ = [("delete", wintypes.BOOLEAN)]
+
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.GetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.POINTER(FileInfo)]
+    kernel.GetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.ReadFile.argtypes = [wintypes.HANDLE, wintypes.LPVOID, wintypes.DWORD, ctypes.POINTER(wintypes.DWORD), wintypes.LPVOID]
+    kernel.ReadFile.restype = wintypes.BOOL
+    kernel.SetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.c_int, wintypes.LPVOID, wintypes.DWORD]
+    kernel.SetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    invalid = ctypes.c_void_p(-1).value
+
+    with windows_pinned_directory(path.parent):
+        # Exclude both write and delete sharing. No other writer may alter the
+        # bytes between the handle-bound digest and disposition effect.
+        handle = kernel.CreateFileW(str(path), 0x80000000 | 0x00010000, 0x1, None, 3, 0x00200000, None)
+        if handle == invalid or handle is None:
+            raise ctypes.WinError(ctypes.get_last_error())
+        try:
+            info = FileInfo()
+            if not kernel.GetFileInformationByHandle(handle, ctypes.byref(info)):
+                raise ctypes.WinError(ctypes.get_last_error())
+            if info.attributes & (0x10 | 0x400):  # directory or reparse point
+                raise ValueError(f"portable removal leaf is not a regular file: {path}")
+            if info.links != 1:
+                raise ValueError(f"portable removal leaf has multiple hard links: {path}")
+            digest = hashlib.sha256()
+            buffer = ctypes.create_string_buffer(65536)
+            count = wintypes.DWORD()
+            while True:
+                if not kernel.ReadFile(handle, buffer, len(buffer), ctypes.byref(count), None):
+                    raise ctypes.WinError(ctypes.get_last_error())
+                if not count.value:
+                    break
+                digest.update(buffer.raw[:count.value])
+            if digest.hexdigest() != expected_digest:
+                raise RuntimeError(f"stale owned removal preimage: {path}")
+            if before_disposition is not None:
+                before_disposition()
+            disposition = DispositionInfo(True)
+            if not kernel.SetFileInformationByHandle(handle, 4, ctypes.byref(disposition), ctypes.sizeof(disposition)):
+                raise ctypes.WinError(ctypes.get_last_error())
+        finally:
+            kernel.CloseHandle(handle)
+
+
+def standalone_portable_agents_digest(target_root: Path, item: dict[str, object]) -> str | None:
+    """Recognize only the exact whole AGENTS file made for an empty target."""
+    if item.get("target") != "AGENTS.md" or item.get("kind") != "portable_managed_section":
+        return None
+    path = portable_target_path(target_root, "AGENTS.md")
+    try:
+        data = path.read_bytes()
+        text = data.decode("utf-8")
+    except (OSError, UnicodeDecodeError):
+        return None
+    block = portable_managed_block(text)
+    if block is None or digest_bytes(block.encode("utf-8")) != item.get("installed_digest"):
+        return None
+    if data != merge_agents_text(None, block).encode("utf-8"):
+        return None
+    digest = digest_bytes(data)
+    return digest if digest == item.get("target_file_digest") else None
+
+
+def portable_removal_entry_still_absent(target_root: Path, item: dict[str, object]) -> bool:
+    path = portable_target_path(target_root, str(item["target"]))
+    observed = target_file_digest(path)
+    if observed == "missing":
+        return True
+    if item["kind"] != "portable_managed_section" or observed == "not-a-file":
+        return False
+    try:
+        return portable_managed_block(read_text(path)) is None
+    except (OSError, UnicodeDecodeError):
+        return False
+
+
+def portable_removal_recovery_observations(target_root: Path, intent: dict[str, object]) -> list[dict[str, str]]:
+    observations: list[dict[str, str]] = []
+    for item in intent["operations"]:
+        target_rel = str(item["target"])
+        observed = target_file_digest(portable_target_path(target_root, target_rel))
+        state = "removed" if observed == "missing" else "pending" if observed == item["preimage_digest"] else "unknown"
+        observations.append({"target": target_rel, "state": state, "observed_digest": observed})
+    for item in intent["settled_absent"]:
+        observations.append({"target": str(item["target"]), "state": "removed" if portable_removal_entry_still_absent(target_root, item) else "unknown", "observed_digest": target_file_digest(portable_target_path(target_root, str(item["target"])))})
+    return observations
+
+
+def _apply_portable_removal_pinned(
+    target_root: Path,
+    expected_plan_digest: str,
+    fail_after_removals: int | None = None,
+    fail_after_receipt: bool = False,
+) -> dict[str, object]:
+    """Remove exact owned files, retiring the receipt only after every effect.
+
+    Authored AGENTS text remains until a separately reviewed anchored section
+    replacement exists. A whole file made by the empty-target importer is safe
+    to remove through the existing anchored delete primitive.
+    """
+    if not expected_plan_digest or re.fullmatch(r"[0-9a-f]{64}", expected_plan_digest) is None:
+        raise ValueError("portable removal apply requires an exact preview plan digest")
+    if os.name != "nt":
+        raise ValueError("portable removal apply requires Windows anchored file handles")
+    with portable_lifecycle_lock(target_root):
+        if load_portable_import_intent(target_root) is not None:
+            raise ValueError("portable import recovery must complete before removal")
+        intent = load_portable_removal_intent(target_root)
+        receipt = load_portable_import_receipt(target_root)
+        if intent is not None and intent["plan_digest"] != expected_plan_digest:
+            return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": [], "preserved": intent["preserved"], "recovery": portable_removal_recovery_observations(target_root, intent)}
+        if receipt is None:
+            if intent is None:
+                raise ValueError("portable import receipt missing")
+            observations = portable_removal_recovery_observations(target_root, intent)
+            if not intent["retire_receipt"] or any(item["state"] != "removed" for item in observations):
+                return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": [], "preserved": intent["preserved"], "recovery": observations}
+            windows_unlink_exact_portable_file(
+                portable_target_path(target_root, PORTABLE_REMOVAL_INTENT_PATH),
+                digest_bytes(stable_json_text(intent).encode("utf-8")),
+            )
+            return {"status": "DETACHED_RECOVERED", "plan_digest": intent["plan_digest"], "removed": [], "preserved": [], "receipt_retained": False}
+        if intent is None:
+            plan = build_portable_removal_plan(target_root)
+            if plan["plan_digest"] != expected_plan_digest:
+                return {"status": "STALE_PLAN", "plan_digest": plan["plan_digest"], "removed": [], "preserved": plan["preserved_recorded_targets"]}
+            if receipt["receipt_digest"] != plan["receipt_digest"]:
+                return {"status": "STALE_PLAN", "plan_digest": plan["plan_digest"], "removed": [], "preserved": plan["preserved_recorded_targets"]}
+            for item in plan["operations"]:
+                if target_file_digest(portable_target_path(target_root, str(item["target"]))) != item["target_file_digest"]:
+                    return {"status": "STALE_PLAN", "plan_digest": plan["plan_digest"], "removed": [], "preserved": plan["preserved_recorded_targets"]}
+            candidates: list[dict[str, object]] = []
+            preserved: list[str] = []
+            settled_absent: list[dict[str, str]] = []
+            for item in plan["operations"]:
+                if not item["removal_candidate"]:
+                    # An absent leaf cannot be held absent through receipt
+                    # retirement. Keep the receipt and installed runner so a
+                    # later writer cannot leave an unrecorded replacement.
+                    preserved.append(str(item["target"]))
+                elif item["kind"] == "managed_file":
+                    candidates.append({"target": item["target"], "kind": "managed_file", "installed_digest": item["installed_digest"], "preimage_digest": item["installed_digest"]})
+                else:
+                    whole_digest = standalone_portable_agents_digest(target_root, item)
+                    if whole_digest is None:
+                        preserved.append(str(item["target"]))
+                    else:
+                        candidates.append({"target": item["target"], "kind": "standalone_managed_agents", "installed_digest": item["installed_digest"], "preimage_digest": whole_digest})
+            if preserved:
+                candidates = [item for item in candidates if item["target"] != PORTABLE_REMOVAL_RUNNER_PATH]
+                if any(item["target"] == PORTABLE_REMOVAL_RUNNER_PATH and item["removal_candidate"] for item in plan["operations"]):
+                    preserved.append(PORTABLE_REMOVAL_RUNNER_PATH)
+            candidates.sort(key=lambda item: (item["target"] == PORTABLE_REMOVAL_RUNNER_PATH, str(item["target"])))
+            preserved = sorted(set(preserved))
+            if not candidates and preserved:
+                return {"status": "PRESERVATION_REQUIRED", "plan_digest": expected_plan_digest, "removed": [], "preserved": preserved}
+            receipt_file_digest = target_file_digest(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH))
+            if re.fullmatch(r"[0-9a-f]{64}", receipt_file_digest) is None:
+                raise ValueError("portable import receipt changed before removal intent")
+            intent = {
+                "schema_version": PORTABLE_REMOVAL_INTENT_SCHEMA,
+                "pack_id": EXPORT_PACK_ID,
+                "target": normalize_rel(target_root),
+                "plan_digest": expected_plan_digest,
+                "receipt_digest": receipt["receipt_digest"],
+                "receipt_file_digest": receipt_file_digest,
+                "operations": candidates,
+                "preserved": preserved,
+                "settled_absent": settled_absent,
+                "retire_receipt": not preserved,
+            }
+            intent["intent_digest"] = portable_import_record_digest(intent, "intent_digest")
+            atomic_create_bytes_no_clobber(
+                portable_target_path(target_root, PORTABLE_REMOVAL_INTENT_PATH),
+                stable_json_text(intent).encode("utf-8"),
+            )
+        if receipt["receipt_digest"] != intent["receipt_digest"]:
+            raise ValueError("portable removal receipt changed during recovery")
+        managed = receipt["managed"]
+        assert isinstance(managed, dict)
+        covered_targets = {str(item["target"]) for item in intent["operations"]} | set(intent["preserved"]) | {str(item["target"]) for item in intent["settled_absent"]}
+        if covered_targets != set(managed):
+            raise ValueError("portable removal intent does not cover exact receipt targets")
+        for item in intent["settled_absent"]:
+            entry = managed[item["target"]]
+            if entry["kind"] != item["kind"] or not portable_removal_entry_still_absent(target_root, item):
+                return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": [], "preserved": intent["preserved"], "recovery": portable_removal_recovery_observations(target_root, intent)}
+        for item in intent["operations"]:
+            entry = managed.get(item["target"])
+            expected_kind = "managed_file" if item["kind"] == "managed_file" else "portable_managed_section"
+            if not isinstance(entry, dict) or entry.get("kind") != expected_kind or entry.get("installed_digest") != item["installed_digest"]:
+                raise ValueError(f"portable removal intent no longer matches receipt: {item['target']}")
+            if item["kind"] == "managed_file" and item["preimage_digest"] != entry["installed_digest"]:
+                raise ValueError(f"portable removal intent preimage differs from installed bytes: {item['target']}")
+            if item["kind"] == "standalone_managed_agents":
+                agents_path = portable_target_path(target_root, "AGENTS.md")
+                if target_file_digest(agents_path) != "missing" and standalone_portable_agents_digest(
+                    target_root,
+                    {"target": "AGENTS.md", "kind": "portable_managed_section", "installed_digest": entry["installed_digest"], "target_file_digest": item["preimage_digest"]},
+                ) is None:
+                    return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": [], "preserved": intent["preserved"], "recovery": portable_removal_recovery_observations(target_root, intent)}
+        removed: list[str] = []
+        for item in intent["operations"]:
+            target_rel = str(item["target"])
+            target = portable_target_path(target_root, target_rel)
+            observed = target_file_digest(target)
+            if observed == "missing":
+                continue
+            if observed != item["preimage_digest"]:
+                return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": intent.get("preserved", []), "recovery": portable_removal_recovery_observations(target_root, intent)}
+            try:
+                windows_unlink_exact_portable_file(target, str(item["preimage_digest"]))
+            except (OSError, RuntimeError, ValueError):
+                return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": intent.get("preserved", []), "recovery": portable_removal_recovery_observations(target_root, intent)}
+            removed.append(target_rel)
+            if fail_after_removals is not None and len(removed) >= fail_after_removals:
+                return {"status": "INTERRUPTED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": intent.get("preserved", []), "recovery": portable_removal_recovery_observations(target_root, intent)}
+        observations = portable_removal_recovery_observations(target_root, intent)
+        if any(item["state"] != "removed" for item in observations):
+            return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": intent.get("preserved", []), "recovery": observations}
+        current_receipt = load_portable_import_receipt(target_root)
+        receipt_path = portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH)
+        if current_receipt is None or current_receipt["receipt_digest"] != intent["receipt_digest"] or target_file_digest(receipt_path) != intent["receipt_file_digest"]:
+            raise ValueError("portable removal receipt changed before intent reconciliation")
+        if intent["retire_receipt"]:
+            try:
+                windows_unlink_exact_portable_file(receipt_path, str(intent["receipt_file_digest"]))
+            except (OSError, RuntimeError, ValueError):
+                return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": [], "recovery": observations}
+            if fail_after_receipt:
+                return {"status": "INTERRUPTED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": [], "recovery": observations}
+        intent_path = portable_target_path(target_root, PORTABLE_REMOVAL_INTENT_PATH)
+        windows_unlink_exact_portable_file(intent_path, digest_bytes(stable_json_text(intent).encode("utf-8")))
+        return {"status": "DETACHED" if intent["retire_receipt"] else "PARTIAL_REMOVAL", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": intent["preserved"], "receipt_retained": not intent["retire_receipt"]}
+
+
+def apply_portable_removal(
+    target_root: Path,
+    expected_plan_digest: str,
+    fail_after_removals: int | None = None,
+    fail_after_receipt: bool = False,
+) -> dict[str, object]:
+    """Hold the target root itself against reparse traversal or replacement."""
+    if os.name != "nt":
+        raise ValueError("portable removal apply requires Windows anchored file handles")
+    target_root = Path(os.path.abspath(target_root))
+    with windows_pinned_directory(target_root):
+        return _apply_portable_removal_pinned(target_root, expected_plan_digest, fail_after_removals, fail_after_receipt)
 
 
 def classify_portable_import_recovery(target_root: Path, intent: dict[str, object]) -> dict[str, object]:
@@ -41288,6 +41643,8 @@ def _apply_import_pack_unlocked(
     target_root = target_root.resolve()
     if pack_root == target_root or pack_root in target_root.parents or target_root in pack_root.parents:
         raise ValueError("pack and target must be separate roots")
+    if load_portable_removal_intent(target_root) is not None:
+        raise ValueError("portable removal recovery must complete before import")
     ok, checksum_problems = validate_pack_checksums(pack_root)
     if not ok:
         raise ValueError("invalid pack checksums: " + "; ".join(checksum_problems))
@@ -41688,6 +42045,24 @@ def command_plan_removal(args: argparse.Namespace) -> int:
         print("provider_or_model_calls: none")
         print("network_calls: none")
     return 0 if plan["status"] == "PLANNED" else 2
+
+
+def command_apply_removal(args: argparse.Namespace) -> int:
+    result = apply_portable_removal(Path(args.target), args.expect_plan)
+    if args.json:
+        print(stable_json_text(result), end="")
+    else:
+        print("AIDE Lite apply-removal")
+        print(f"status: {result['status']}")
+        print(f"plan_digest: {result['plan_digest']}")
+        print(f"removed: {len(result['removed'])}")
+        print(f"preserved: {len(result['preserved'])}")
+        print(f"receipt_retained: {str(result.get('receipt_retained', True)).lower()}")
+        print("provider_or_model_calls: none")
+        print("network_calls: none")
+    if result["status"] in {"STALE_PLAN", "RECOVERY_REQUIRED", "INTERRUPTED"}:
+        return 3
+    return 2 if result["status"] in {"PRESERVATION_REQUIRED", "PARTIAL_REMOVAL"} else 0
 
 
 def command_pack_status(args: argparse.Namespace) -> int:
@@ -43637,6 +44012,11 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     repair_owned_parser.add_argument("--dry-run", action="store_true")
     repair_owned_parser.add_argument("--expect-plan", help="Exact digest from dry-run; required for apply.")
     repair_owned_parser.set_defaults(handler=command_repair_owned_file)
+    removal_apply_parser = subparsers.add_parser("apply-removal")
+    removal_apply_parser.add_argument("--target", required=True)
+    removal_apply_parser.add_argument("--expect-plan", required=True, help="Exact digest from plan-removal --json.")
+    removal_apply_parser.add_argument("--json", action="store_true")
+    removal_apply_parser.set_defaults(handler=command_apply_removal)
 
     subparsers.add_parser("pack-status").set_defaults(handler=command_pack_status)
 

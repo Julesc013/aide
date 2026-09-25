@@ -33,7 +33,7 @@ content, and leave a clear recovery state across interruptions.
   slice with exact plan, same-handle digest/delete, recoverable intent, and
   target-root pinning. The AGENTS managed section and receipt remain; result
   is explicitly `PARTIAL_REMOVAL`.
-- [ ] Reconcile the shared lifecycle lock and pinned-directory helper from the
+- [x] Reconcile the shared lifecycle lock and pinned-directory helper from the
   separately reviewed repair stream. Run tests on actual combined source.
 - [x] Add anchored whole-file removal only for the exact new-project
   `AGENTS.md` scaffold with a receipt-matching managed block. Delete the
@@ -50,6 +50,12 @@ content, and leave a clear recovery state across interruptions.
   `AGENTS.md`; preserve that file, the runner, and receipt meanwhile.
 - [ ] Run combined-source and extracted consumer qualification, independent
   review, and integration after the shared helper dependency is accepted.
+- [x] Exact combined source `49318d50` passed focused guide, Q31, and Q47
+  checks; the earlier `00966855` full importer suite passed 67/67 before only
+  generated-guide text changed. A fresh full importer run is active separately.
+  Its ZIP/tar consumers passed 27 delivered commands and independent local
+  artifact review accepted the new hashes with notes. Post-commit replay and
+  exact dev effect review remain.
 
 ## Recovery and risks
 

@@ -1,10 +1,10 @@
 # Latest Release Provenance
 
-- bundle_id: aide-lite-pack-v0-7624d9f4b54207a3
-- source_commit: 7624d9f4b54207a33ad3ed0ba434143a1fda9398
+- bundle_id: aide-lite-pack-v0-49318d50472b17f6
+- source_commit: 49318d50472b17f648c2f29e998239b9c446cf14
 - source_branch: not-recorded-in-pack
 - dirty_state: false
-- export_pack_manifest_sha256: 3ee3ffe5a30c21b92453df99a5cc7fb9d282181348588c163b3a333b717d41b6
-- export_pack_checksums_sha256: 5c9aa15e4826e300d7131d1186cd4eb2f8d25141434ce88ba35a29324c6143e6
+- export_pack_manifest_sha256: 8fa2f2a562f65ab2e5ad3975af956698b5afe52256489038a373d812feeb2b0a
+- export_pack_checksums_sha256: 18b4240962f72df23c26826911fe371b7fb3048930decb468ee650f568635747
 - preview_only: true
 - no_publish: true

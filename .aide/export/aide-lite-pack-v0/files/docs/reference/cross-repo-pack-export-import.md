@@ -211,6 +211,34 @@ The importer does not create actual `.aide.local/`, does not overwrite existing
 target files without reporting conflicts, and does not call providers, models,
 network services, or Gateway forwarding paths.
 
+## Bounded receipt-owned removal
+
+On Windows, preview the receipt-owned paths with `plan-removal --target
+<target-repo> --json`, then pass its exact `plan_digest` to `apply-removal
+--target <target-repo> --expect-plan <digest>`. Apply takes the portable
+lifecycle lock, records a target-local removal intent, and removes only regular
+files whose bytes still match the validated import receipt. It checks and
+deletes each file through the same anchored Windows handle. It can also remove
+the entire `AGENTS.md` file when its bytes are exactly the scaffold generated
+for a new project, with a receipt-matching managed block and no authored text.
+A changed preview,
+receipt, leaf, or parent path refuses the effect; an interruption leaves the
+intent for exact-byte reconciliation on a repeated call with the same digest.
+
+When every recorded managed path is removed or already absent, it deletes the
+installed runner last, retires the exact receipt, and reports `DETACHED`.
+An interruption after receipt retirement leaves the removal intent; rerun the
+same command and plan digest from the extracted pack to reconcile it. Empty
+directories and target-owned project state remain.
+
+When `AGENTS.md` contains authored content, or any recorded bytes changed,
+the command preserves them, the runner, and the receipt, and reports
+`PARTIAL_REMOVAL` (exit code 2). Removing only a managed section from an
+authored file still needs a reviewed anchored replacement mechanism. An
+existing removal intent must be reconciled before import or a new removal
+preview. Non-Windows removal apply fails closed until anchored equivalent
+behavior is qualified.
+
 ## Target Initialization
 
 After import, the target repository must generate its own local artifacts:
