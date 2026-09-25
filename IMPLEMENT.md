@@ -11686,3 +11686,16 @@ Owner review found a final-write race in the first candidate. The repair now pub
   normal dev fast-forward; local Git, remote Git and GitHub observed that ref.
   The removal WorkUnit stays open for authored brownfield managed-section
   detach, which the current apply intentionally preserves.
+
+## 2026-09-25 - Authored AGENTS managed-section removal source
+
+- Added Windows-only anchored replacement of the exact receipt-owned AIDE
+  block inside authored `AGENTS.md`, preserving every byte outside the block.
+  The removal intent binds an exact preview snapshot, source and result
+  digests; interruption retains classification and receipt evidence.
+- Fixed CRLF observation so a receipt-owned block installed in authored CRLF
+  text remains recognizable. A verified postimage handle denies competing
+  writes through receipt retirement. Changed, duplicate, unknown or racing
+  content fails closed.
+- Twenty-two focused removal tests and canonical `validate` passed. Source
+  review, regenerated artifact consumers and dev integration remain pending.

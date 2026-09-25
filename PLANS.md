@@ -3769,3 +3769,7 @@ conditional removal remain dependency-ready candidates, not integrated dev.
   `a60b8cb0`. Fresh full detach works for an exact generated scaffold;
   authored brownfield `AGENTS.md` remains a partial removal until anchored
   managed-section detach is implemented and qualified.
+- The authored-section detach source candidate in
+  `AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01` now passes focused tests, but
+  still needs independent review, combined-source qualification and delivered
+  artifact canaries before dev integration or a broader removal claim.
