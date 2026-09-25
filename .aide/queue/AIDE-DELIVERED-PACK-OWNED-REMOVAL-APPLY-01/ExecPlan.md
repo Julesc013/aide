@@ -58,6 +58,15 @@ content, and leave a clear recovery state across interruptions.
 - [ ] Independent review of the new source commit; combined rollback guard,
   regenerated artifacts, extracted consumers, exact dev effect and final
   release qualification are still separate.
+- [x] 2026-09-25 review repair for `d5b44626`: reproduce orphaned original
+  AGENTS backup after postimage publication, then bind recovery observations
+  to the deterministic backup. Hold the verified postimage while deleting
+  only the exact original backup through the anchored single-link primitive;
+  retain receipt and intent for altered, unknown, or interrupted backups.
+  Regress retry, tamper, same-byte backup substitution, and rename-before-link
+  before freezing a superseding source commit for independent rereview. Eight
+  authored-section tests pass; source-only canonical validation reports the
+  expected stale export-pack manifest provenance pending combined regeneration.
 - [x] Run combined-source and extracted consumer qualification, independent
   review, and integration after the shared helper dependency is accepted.
 - [x] Exact combined source `49318d50` passed focused guide, Q31, and Q47

@@ -1,5 +1,18 @@
 # AIDE Implementation Log
 
+## Work Item: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01 (backup review repair)
+
+The independent review of `d5b44626` found that a failed authored AGENTS
+replacement could leave its original backup while retry still retired the
+receipt and intent. This source repair binds the backup's Windows file identity
+and exact preimage digest to the intent, classifies any remaining backup as
+unresolved, and holds the verified AGENTS postimage while anchored cleanup
+precedes receipt retirement. Eight affected authored-section tests pass,
+including altered and same-byte substituted backups. Canonical validation
+still reports stale generated-pack provenance on this source-only branch;
+regeneration and combined acceptance remain for integration. Details and log
+hashes are in the task's `evidence/d5b44626-backup-review-repair-validation.md`.
+
 ## Work Item: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
 
 ### Status

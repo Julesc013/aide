@@ -40598,6 +40598,11 @@ def load_portable_removal_intent(target_root: Path) -> dict[str, object] | None:
             raise ValueError("portable removal intent AGENTS postimage is invalid")
         if item["kind"] == "managed_agents_section" and item.get("backup_rel") != f".AGENTS.md.aide-import-backup-{record['plan_digest'][:20]}":
             raise ValueError("portable removal intent AGENTS backup is invalid")
+        if item["kind"] == "managed_agents_section" and item.get("preimage_file_identity") is not None and (
+            not isinstance(item["preimage_file_identity"], str)
+            or re.fullmatch(r"[0-9a-f]{24}", item["preimage_file_identity"]) is None
+        ):
+            raise ValueError("portable removal intent AGENTS preimage identity is invalid")
         if item["kind"] == "managed_agents_section":
             plan_agents = next((entry for entry in plan_snapshot["operations"] if isinstance(entry, dict) and entry.get("target") == "AGENTS.md"), None) if isinstance(plan_snapshot, dict) else None
             if not isinstance(plan_agents, dict) or not plan_agents.get("removal_candidate") or plan_agents.get("kind") != "portable_managed_section" or plan_agents.get("installed_digest") != item["installed_digest"] or plan_agents.get("target_file_digest") != item["preimage_digest"]:
@@ -41131,7 +41136,8 @@ def build_portable_removal_plan(target_root: Path) -> dict[str, object]:
 
 
 def windows_unlink_exact_portable_file(
-    path: Path, expected_digest: str, before_disposition: Callable[[], None] | None = None
+    path: Path, expected_digest: str, before_disposition: Callable[[], None] | None = None,
+    *, expected_identity: str | None = None,
 ) -> None:
     """Hash and unlink the same opened regular file while its ancestors are pinned.
 
@@ -41179,6 +41185,9 @@ def windows_unlink_exact_portable_file(
                 raise ValueError(f"portable removal leaf is not a regular file: {path}")
             if info.links != 1:
                 raise ValueError(f"portable removal leaf has multiple hard links: {path}")
+            identity = f"{info.volume:08x}{info.index_high:08x}{info.index_low:08x}"
+            if expected_identity is not None and identity != expected_identity:
+                raise RuntimeError(f"portable removal leaf identity changed: {path}")
             digest = hashlib.sha256()
             buffer = ctypes.create_string_buffer(65536)
             count = wintypes.DWORD()
@@ -41253,10 +41262,17 @@ def portable_removal_recovery_observations(target_root: Path, intent: dict[str, 
         target_rel = str(item["target"])
         observed = target_file_digest(portable_target_path(target_root, target_rel))
         if item["kind"] == "managed_agents_section":
-            state = "removed" if observed == item["postimage_digest"] else "pending" if observed == item["preimage_digest"] else "unknown"
+            backup = portable_target_path(target_root, str(item["backup_rel"]))
+            # A published postimage does not reconcile a failed replacement:
+            # the original authored file may still live at this exact name.
+            backup_present = os.path.lexists(backup)
+            state = "unknown" if backup_present else "removed" if observed == item["postimage_digest"] else "pending" if observed == item["preimage_digest"] else "unknown"
         else:
             state = "removed" if observed == "missing" else "pending" if observed == item["preimage_digest"] else "unknown"
-        observations.append({"target": target_rel, "state": state, "observed_digest": observed})
+        observation = {"target": target_rel, "state": state, "observed_digest": observed}
+        if item["kind"] == "managed_agents_section":
+            observation["backup_state"] = "present" if backup_present else "absent"
+        observations.append(observation)
     for item in intent["settled_absent"]:
         observations.append({"target": str(item["target"]), "state": "removed" if portable_removal_entry_still_absent(target_root, item) else "unknown", "observed_digest": target_file_digest(portable_target_path(target_root, str(item["target"])))})
     return observations
@@ -41322,6 +41338,12 @@ def _apply_portable_removal_pinned(
                         if postimage is None or digest_bytes(agents_bytes) != item["target_file_digest"]:
                             preserved.append(str(item["target"]))
                         else:
+                            identity: list[str] = []
+                            with windows_pinned_directory(agents_path.parent):
+                                identity_kernel, identity_handle = portable_import_verified_leaf(
+                                    agents_path, str(item["target_file_digest"]), identity_out=identity
+                                )
+                                identity_kernel.CloseHandle(identity_handle)
                             candidates.append({
                                 "target": "AGENTS.md",
                                 "kind": "managed_agents_section",
@@ -41329,6 +41351,7 @@ def _apply_portable_removal_pinned(
                                 "preimage_digest": item["target_file_digest"],
                                 "postimage_digest": digest_bytes(postimage),
                                 "backup_rel": f".AGENTS.md.aide-import-backup-{expected_plan_digest[:20]}",
+                                "preimage_file_identity": identity[0],
                             })
             if preserved:
                 candidates = [item for item in candidates if item["target"] != PORTABLE_REMOVAL_RUNNER_PATH]
@@ -41420,24 +41443,43 @@ def _apply_portable_removal_pinned(
             removed.append(target_rel)
             if fail_after_removals is not None and len(removed) >= fail_after_removals:
                 return {"status": "INTERRUPTED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": intent.get("preserved", []), "recovery": portable_removal_recovery_observations(target_root, intent)}
+        # Observe before opening the no-write/no-delete AGENTS guard: ordinary
+        # pathname reads cannot reopen that leaf while the guard is held.
         observations = portable_removal_recovery_observations(target_root, intent)
-        if any(item["state"] != "removed" for item in observations):
-            return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": intent.get("preserved", []), "recovery": observations}
-        current_receipt = load_portable_import_receipt(target_root)
-        receipt_path = portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH)
-        if current_receipt is None or current_receipt["receipt_digest"] != intent["receipt_digest"] or target_file_digest(receipt_path) != intent["receipt_file_digest"]:
-            raise ValueError("portable removal receipt changed before intent reconciliation")
         guard_kernel = guard_handle = None
         try:
-            if intent["retire_receipt"]:
-                section_operation = next((item for item in intent["operations"] if item["kind"] == "managed_agents_section"), None)
-                if section_operation is not None:
-                    try:
-                        guard_kernel, guard_handle = portable_import_verified_leaf(
-                            portable_target_path(target_root, "AGENTS.md"), str(section_operation["postimage_digest"])
+            section_operation = next((item for item in intent["operations"] if item["kind"] == "managed_agents_section"), None)
+            if section_operation is not None:
+                try:
+                    # Keep the postimage pinned through backup cleanup and
+                    # receipt/intent retirement. The backup delete hashes and
+                    # disposes the same anchored, single-link regular handle.
+                    guard_kernel, guard_handle = portable_import_verified_leaf(
+                        portable_target_path(target_root, "AGENTS.md"), str(section_operation["postimage_digest"])
+                    )
+                    backup_path = portable_target_path(target_root, str(section_operation["backup_rel"]))
+                    if os.path.lexists(backup_path):
+                        identity = section_operation.get("preimage_file_identity")
+                        if not isinstance(identity, str):
+                            raise RuntimeError("portable AGENTS backup lacks original file identity")
+                        windows_unlink_exact_portable_file(
+                            backup_path, str(section_operation["preimage_digest"]), expected_identity=identity
                         )
-                    except (OSError, RuntimeError, ValueError):
-                        return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": [], "recovery": portable_removal_recovery_observations(target_root, intent)}
+                        if os.path.lexists(backup_path):
+                            raise RuntimeError("original portable AGENTS backup remains after disposition")
+                except (OSError, RuntimeError, ValueError):
+                    return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": intent.get("preserved", []), "recovery": observations}
+                for observation in observations:
+                    if observation["target"] == "AGENTS.md":
+                        observation["state"] = "removed"
+                        observation["backup_state"] = "absent"
+            if any(item["state"] != "removed" for item in observations):
+                return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": removed, "preserved": intent.get("preserved", []), "recovery": observations}
+            current_receipt = load_portable_import_receipt(target_root)
+            receipt_path = portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH)
+            if current_receipt is None or current_receipt["receipt_digest"] != intent["receipt_digest"] or target_file_digest(receipt_path) != intent["receipt_file_digest"]:
+                raise ValueError("portable removal receipt changed before intent reconciliation")
+            if intent["retire_receipt"]:
                 try:
                     windows_unlink_exact_portable_file(receipt_path, str(intent["receipt_file_digest"]))
                 except (OSError, RuntimeError, ValueError):
@@ -41527,7 +41569,7 @@ def portable_import_ensure_parent(target_root: Path, target_rel: str) -> Path:
     return target
 
 
-def portable_import_verified_leaf(path: Path, expected_digest: str, *, writable: bool = False) -> tuple[object, object]:
+def portable_import_verified_leaf(path: Path, expected_digest: str, *, writable: bool = False, identity_out: list[str] | None = None) -> tuple[object, object]:
     """Open the exact regular, single-link preimage without writer/delete sharing."""
     import ctypes
     from ctypes import wintypes
@@ -41570,6 +41612,8 @@ def portable_import_verified_leaf(path: Path, expected_digest: str, *, writable:
             remaining -= count.value
         if digest.hexdigest() != expected_digest:
             raise RuntimeError(f"stale target preimage: {path}")
+        if identity_out is not None:
+            identity_out.append(f"{info.volume:08x}{info.index_high:08x}{info.index_low:08x}")
         return kernel, handle
     except BaseException:
         kernel.CloseHandle(handle)
