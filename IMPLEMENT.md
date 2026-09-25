@@ -12045,3 +12045,6 @@ Owner review found a final-write race in the first candidate. The repair now pub
   passed after correcting an external oracle that confused packet and queue
   IDs. ZIP `68f8b3cc` and tar `d0b42456` remain local previews. Commit,
   replay, independent artifact/effect review and dev integration are pending.
+  Projection commit `dc8697e3` retains the consumer-tested archive hashes.
+  First four-command replay exited 0 but changed 18 release metadata paths;
+  its zero-change gate failed, so bounded metadata convergence is next.

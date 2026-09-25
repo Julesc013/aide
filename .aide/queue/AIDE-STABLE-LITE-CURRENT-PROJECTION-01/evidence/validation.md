@@ -12,5 +12,8 @@
   packet ID with latest indexed queue ID. Corrected external oracle and
   replay passed; no product source change followed from that failure.
 - PASS: `git diff --check` before projection staging.
-- NOT RUN: committed replay, exact artifact/dev effect review, dev
+- FAIL, retained: first post-commit four-command replay changed 18 release
+  metadata files while leaving ZIP/tar bytes unchanged. A bounded metadata
+  convergence and clean replay are required.
+- NOT RUN: clean zero-change replay, exact artifact/dev effect review, dev
   integration, main, tag, public release or downloaded-byte acceptance.

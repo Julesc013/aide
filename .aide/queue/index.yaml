@@ -3692,7 +3692,7 @@ items:
     description: Distinguish report-only planners from bounded Windows exact-plan apply in Q48 local draft text.
   - id: AIDE-STABLE-LITE-CURRENT-PROJECTION-01
     status: in_progress
-    planning_state: preview_projection_qualified_precommit
+    planning_state: metadata_convergence_pending
     result: PASS_WITH_WARNINGS
     title: Project accepted Lite Task OS and draft source into delivered previews
     task: .aide/queue/AIDE-STABLE-LITE-CURRENT-PROJECTION-01/task.yaml

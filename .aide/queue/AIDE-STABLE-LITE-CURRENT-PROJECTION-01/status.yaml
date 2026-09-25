@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-CURRENT-PROJECTION-01
 status: in_progress
 classification: combined_lite_artifact_projection
-planning_state: preview_projection_qualified_precommit
+planning_state: metadata_convergence_pending
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
-current_slice: commit_exact_projection
-next_slice: committed_replay_and_exact_artifact_review
+current_slice: commit_bounded_replay_metadata
+next_slice: clean_zero_change_replay_and_canonical_checks
 review_gate: independent_exact_artifact_and_dev_effect_review
 dev_integration_performed: false
 main_promotion_performed: false
@@ -17,3 +17,4 @@ notes:
   - Clean-source generation and affected source/consumer checks passed on exact local preview bytes.
   - First external Task OS canary had an incorrect packet-versus-indexed-ID oracle; corrected rerun passed and failure is retained.
   - Committed replay, exact effect review and dev integration remain open.
+  - First four-command replay from dc8697e3 exited zero but changed 18 release metadata files; zero-change gate failed, archives unchanged.
