@@ -3763,3 +3763,9 @@ conditional removal remain dependency-ready candidates, not integrated dev.
   preserves the portable runner, managed `AGENTS.md` section, and receipt.
   Direct combined-source tests, complete detach, independent review, and dev
   integration remain open.
+- The combined Windows source later passed 68/68 importer tests, 27 extracted
+  consumer commands, independent artifact and exact dev-effect reviews, and
+  zero-diff replay of 44 release files. Local and remote dev now agree at
+  `a60b8cb0`. Fresh full detach works for an exact generated scaffold;
+  authored brownfield `AGENTS.md` remains a partial removal until anchored
+  managed-section detach is implemented and qualified.

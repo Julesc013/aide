@@ -11680,3 +11680,9 @@ Owner review found a final-write race in the first candidate. The repair now pub
   consumer canary passed. Independent artifact review accepted those exact
   local bytes with Windows, authored-section, and effect-injection limits.
   Post-commit replay and dev integration remain open.
+- Post-commit projection converged without changing the reviewed ZIP/tar, and
+  the four-command replay changed zero of 44 release files. The exact-source
+  importer suite passed 68/68. Independent review accepted `a60b8cb0` for a
+  normal dev fast-forward; local Git, remote Git and GitHub observed that ref.
+  The removal WorkUnit stays open for authored brownfield managed-section
+  detach, which the current apply intentionally preserves.

@@ -3572,7 +3572,7 @@ items:
     description: Reproduce and close a Windows parent-junction substitution race in portable import payload writes.
   - id: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01
     status: running
-    planning_state: combined_artifact_accepted_dev_integration_pending
+    planning_state: partial_apply_integrated_authored_section_pending
     result: PENDING
     title: Apply receipt-owned delivered-pack removal safely
     task: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01/task.yaml

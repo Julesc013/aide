@@ -48,14 +48,14 @@ content, and leave a clear recovery state across interruptions.
   frozen helper injection. Independent rereview is pending.
 - [ ] Implement anchored managed-section removal inside authored brownfield
   `AGENTS.md`; preserve that file, the runner, and receipt meanwhile.
-- [ ] Run combined-source and extracted consumer qualification, independent
+- [x] Run combined-source and extracted consumer qualification, independent
   review, and integration after the shared helper dependency is accepted.
 - [x] Exact combined source `49318d50` passed focused guide, Q31, and Q47
   checks; the earlier `00966855` full importer suite passed 67/67 before only
-  generated-guide text changed. A fresh full importer run is active separately.
+  generated-guide text changed. The final source passed 68/68 importer tests.
   Its ZIP/tar consumers passed 27 delivered commands and independent local
   artifact review accepted the new hashes with notes. Post-commit replay and
-  exact dev effect review remain.
+  exact dev effect review subsequently passed; remote dev is `a60b8cb0`.
 
 ## Recovery and risks
 

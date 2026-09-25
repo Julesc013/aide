@@ -41,7 +41,9 @@ qualification; not dev, main, native/hosted, or stable-release acceptance.
 - The `00966855` combined source passed 67/67 importer tests before the later
   guide-only source changes. Its retained log SHA-256 is
   `98a0c187a67472cf6abce69acfac54715ea5ad1e19038ae04aea4c71134ec08b`.
-  A new full importer run against `49318d50` is active and not yet an outcome.
+  A new full importer run against `49318d50` passed 68/68 tests in 1076.279s,
+  exit 0. Log `D:/Projects/AIDE/_review_scratch/removal-guide-493-full-importer.log`,
+  SHA-256 `552ec7761ec79d5bf038c6965f7e933c42cf9738557e232dcd024f54b6747d75`.
 - Exact-source generated-guide regression 1/1 PASS; Q31 6/6 PASS, log SHA-256
   `a5457474dc8563b1b6cda93036eb199c51528d4dac2a6e0c57e81f6f554315d9`;
   Q47 18/18 PASS, log SHA-256
@@ -56,9 +58,37 @@ qualification; not dev, main, native/hosted, or stable-release acceptance.
 
 ## Remaining gates and limitations
 
-The generated artifact projection needs an exact commit and post-commit replay,
-then an independent exact dev effect review. Removal apply is Windows-only.
+The local artifact acceptance preceded the projection and dev-effect gates
+recorded below. Removal apply is Windows-only.
 Authored `AGENTS.md` managed-section removal is not implemented; partial apply
 retains that file, runner, and receipt. Effect-time edits and interruption
 used deterministic same-process/API injection rather than a hostile OS process.
 No OS-level offline trace or native-host/hosted qualification is established.
+
+## Post-commit replay and dev effect
+
+- The projection commit `704825d1` and metadata convergence commit `7b23b719`
+  retained the reviewed ZIP/tar hashes. The latter changed the outer install
+  sidecar only from `pack_status: PASS` to `PASS_SOURCE_ANCESTOR`; its final
+  SHA-256 is `f7c762a448eec796957912aae17cc78100c8bc06b751482d5500ac2e77bb75e7`.
+- Local merge candidate `a60b8cb011066ad537f56f8bfa657542f0ffc10f`, tree
+  `9c9c2a3f3b3fd07229e955025157898be14bfcac`, preserved reviewed source
+  and both parents, including prior `dev@b05ba7d5`.
+- Exact four-command post-merge replay passed and changed zero of 44 tracked
+  release files; before and after hash-list SHA-256 both
+  `c974a4cf56413478d42dfbe060e22cb0613bcb9bd9544201b2399347aad096fc`.
+  Replay log SHA-256 `b43906e090f029a18aa936484f17a1b6431aa92031feb6d846c696b9e7a7f4a1`;
+  dev-range log SHA-256 `89d3542c2d4e3befa23bfd067cdd2129f3b8e1931879883f21d43da627a3c446`.
+- Independent exact dev-effect review ACCEPT for normal fast-forward only:
+  `D:/Projects/AIDE/_review_scratch/removal-a60-dev-effect-review.md`, SHA-256
+  `22609e0edabbe3aa9bc2acab476c227f279ee8b5f121beaa367e245151171286`.
+- After Windows identity `BLACKGLASS-WIN1\Jules` and authenticated GitHub
+  account `Julesc013` were observed, local `dev` fast-forwarded normally and
+  pushed. Local, remote Git, and GitHub API each observed `a60b8cb0`; pack
+  provenance remains `PASS_SOURCE_ANCESTOR` with zero problems. No main,
+  tag, publication, native, or hosted effect occurred.
+
+The WorkUnit remains running: authored brownfield `AGENTS.md` still contains
+its managed section after partial apply. Implement its anchored exact-block
+removal and repeat affected consumer/review gates before claiming supported
+brownfield detach.
