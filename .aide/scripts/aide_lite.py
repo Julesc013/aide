@@ -41788,6 +41788,156 @@ def apply_import_pack(
         return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes)
 
 
+def reject_portable_rollback_pack_reparse(pack_root: Path) -> None:
+    """Reject reparse roots and metadata before reading a rollback pack."""
+    for path in (pack_root, pack_root / "files", pack_root / "manifest.yaml", pack_root / "checksums.json"):
+        if path.is_symlink() or bool(getattr(path, "is_junction", lambda: False)()):
+            raise ValueError(f"rollback pack contains a reparse path: {path}")
+
+
+def portable_safe_pack_targets(pack_root: Path) -> set[str]:
+    """Project targets represented by a checksum-valid safe portable pack."""
+    reject_portable_rollback_pack_reparse(pack_root)
+    files_root = pack_root / "files"
+    if not files_root.is_dir():
+        raise ValueError("rollback pack has no payload root")
+    actual_files: set[str] = set()
+    for path in files_root.rglob("*"):
+        if path.is_symlink() or bool(getattr(path, "is_junction", lambda: False)()):
+            raise ValueError("rollback pack payload has a reparse path")
+        if path.is_file():
+            actual_files.add("files/" + normalize_rel(path.relative_to(files_root)))
+    manifest_files = set(pack_manifest_list(pack_root, "included_files"))
+    if actual_files != manifest_files:
+        raise ValueError("rollback payload manifest differs from actual files")
+    targets: set[str] = set()
+    for packed_rel in sorted(manifest_files):
+        if not packed_rel.startswith("files/"):
+            continue
+        source_rel = packed_rel[len("files/"):]
+        if import_scope_skip_reason(source_rel, "safe"):
+            continue
+        targets.add("AGENTS.md" if source_rel == "AGENTS.md.template" else source_rel)
+    return targets
+
+
+def build_portable_rollback_plan(current_pack: Path, previous_pack: Path, target_root: Path) -> dict[str, object]:
+    """Preview a receipt-bound return to the exact predecessor payload."""
+    reject_portable_rollback_pack_reparse(current_pack)
+    reject_portable_rollback_pack_reparse(previous_pack)
+    current_pack, previous_pack, target_root = current_pack.resolve(), previous_pack.resolve(), target_root.resolve()
+    if current_pack == previous_pack or not target_root.is_dir():
+        raise ValueError("rollback requires distinct packs and an existing target")
+    for label, pack in (("current", current_pack), ("previous", previous_pack)):
+        if pack == target_root or pack in target_root.parents or target_root in pack.parents:
+            raise ValueError(f"{label} rollback pack must be outside the target")
+        ok, problems = validate_pack_checksums(pack)
+        if not ok:
+            raise ValueError(f"invalid {label} rollback pack checksums: " + "; ".join(problems))
+    current_identity, previous_identity = import_pack_identity(current_pack), import_pack_identity(previous_pack)
+    pending = load_portable_import_intent(target_root)
+    if pending is not None:
+        next_receipt = pending["next_receipt"]
+        expected_pair = (
+            (current_identity, previous_identity),
+            (previous_identity, current_identity),
+        )
+        if pending.get("target") != normalize_rel(target_root) or (next_receipt.get("pack"), next_receipt.get("predecessor_pack")) not in expected_pair:
+            raise ValueError("pending import intent belongs to different rollback packs or target")
+        return {"status": "RECOVERY_REQUIRED", "plan_digest": None, "operations": [], "conflicts": [], "preserved": [], "recovery": classify_portable_import_recovery(target_root, pending)}
+    receipt = load_portable_import_receipt(target_root)
+    if receipt is None or receipt.get("mode") != "safe":
+        raise ValueError("rollback requires a completed safe-mode import receipt")
+    if receipt.get("pack") != current_identity or receipt.get("predecessor_pack") != previous_identity:
+        raise ValueError("rollback packs do not match exact receipt lineage")
+    current_targets, previous_targets = portable_safe_pack_targets(current_pack), portable_safe_pack_targets(previous_pack)
+    if current_targets != previous_targets:
+        raise ValueError("rollback payload paths differ; ownership-aware path changes require separate recovery")
+    if portable_target_path(target_root, PORTABLE_REPAIR_INTENT_PATH).exists():
+        raise ValueError("pending portable repair intent blocks rollback")
+    managed = receipt["managed"]
+    if set(managed) != current_targets:
+        raise ValueError("rollback receipt does not cover exact safe payload targets")
+    changed: list[str] = []
+    for target_rel, entry in managed.items():
+        source_rel = "AGENTS.md.template" if target_rel == "AGENTS.md" else target_rel
+        expected_kind = "portable_managed_section" if target_rel == "AGENTS.md" else "managed_file"
+        source = current_pack / "files" / source_rel
+        if entry["kind"] != expected_kind or entry["source"] != source_rel or not source.is_file():
+            raise ValueError(f"rollback receipt source does not match current pack: {target_rel}")
+        if expected_kind == "managed_file":
+            source_digest = sha256_file(source)
+        else:
+            source_block = portable_managed_block(read_text(source))
+            if source_block is None:
+                raise ValueError("current rollback pack AGENTS template has no managed block")
+            source_digest = digest_bytes(source_block.encode("utf-8"))
+        if entry["installed_digest"] != source_digest or entry["source_digest"] != source_digest:
+            raise ValueError(f"rollback receipt baseline differs from current pack: {target_rel}")
+        target = portable_target_path(target_root, target_rel)
+        if entry["kind"] == "managed_file":
+            observed = target_file_digest(target)
+        else:
+            try:
+                block = portable_managed_block(target.read_bytes().decode("utf-8"))
+            except (OSError, UnicodeDecodeError):
+                block = None
+            observed = digest_bytes(block.encode("utf-8")) if block is not None else "missing"
+        if observed != entry["installed_digest"]:
+            changed.append(target_rel)
+    preview = apply_import_pack(previous_pack, target_root, dry_run=True, mode="safe", predecessor_pack=current_pack)
+    if preview["status"] == "RECOVERY_REQUIRED":
+        return {"status": "RECOVERY_REQUIRED", "plan_digest": None, "operations": [], "conflicts": [], "preserved": [], "recovery": preview["recovery"]}
+    preserved = [str(item["target"]) for item in preview["operations"] if item["kind"] in {"target_owned_template", "target_owned_additive"} and item["action"] not in {"preserve", "unchanged"}]
+    conflicts = sorted(set(changed) | set(preview["conflicts"]))
+    status = "CONFLICT" if conflicts else "PRESERVATION_REQUIRED" if preserved else "PLANNED"
+    plan = {
+        "schema_version": "aide.portable-rollback-plan.v1",
+        "status": status,
+        "target": normalize_rel(target_root),
+        "current_pack": current_identity,
+        "previous_pack": previous_identity,
+        "receipt_digest": receipt["receipt_digest"],
+        "import_plan_digest": preview["plan_digest"],
+        "operations": preview["operations"],
+        "conflicts": conflicts,
+        "preserved": sorted(set(preserved)),
+    }
+    plan["plan_digest"] = portable_import_record_digest(plan, "plan_digest")
+    return plan
+
+
+def apply_portable_rollback(
+    current_pack: Path,
+    previous_pack: Path,
+    target_root: Path,
+    expected_plan_digest: str,
+    *,
+    fail_after_writes: int | None = None,
+) -> dict[str, object]:
+    """Apply only the previewed equal-payload predecessor rollback on Windows."""
+    if os.name != "nt":
+        raise ValueError("portable rollback apply requires Windows anchored file handles")
+    if re.fullmatch(r"[0-9a-f]{64}", expected_plan_digest or "") is None:
+        raise ValueError("portable rollback apply requires an exact preview digest")
+    with portable_lifecycle_lock(target_root.resolve()):
+        plan = build_portable_rollback_plan(current_pack, previous_pack, target_root)
+        if plan["status"] == "RECOVERY_REQUIRED":
+            return plan
+        if plan["plan_digest"] != expected_plan_digest:
+            return {"status": "STALE_PLAN", "plan_digest": plan["plan_digest"], "written": []}
+        if plan["status"] != "PLANNED":
+            return {"status": plan["status"], "plan_digest": plan["plan_digest"], "conflicts": plan["conflicts"], "preserved": plan["preserved"], "written": []}
+        result = _apply_import_pack_unlocked(
+            previous_pack, target_root, mode="safe", predecessor_pack=current_pack,
+            expected_plan_digest=str(plan["import_plan_digest"]), fail_after_writes=fail_after_writes,
+        )
+        if result["status"] == "APPLIED":
+            result["status"] = "ROLLED_BACK"
+        result["rollback_plan_digest"] = plan["plan_digest"]
+        return result
+
+
 def _apply_portable_owned_repair_unlocked(
     pack_root: Path,
     target_root: Path,
@@ -41993,6 +42143,26 @@ def command_import_pack(args: argparse.Namespace) -> int:
     if result["status"] in {"STALE_PLAN", "INTERRUPTED", "RECOVERY_REQUIRED"}:
         return 3
     return 0
+
+
+def command_rollback_pack(args: argparse.Namespace) -> int:
+    current_pack = Path(args.current_pack).resolve()
+    previous_pack = Path(args.previous_pack).resolve()
+    target_root = Path(args.target).resolve()
+    if args.dry_run:
+        result = build_portable_rollback_plan(current_pack, previous_pack, target_root)
+    else:
+        result = apply_portable_rollback(current_pack, previous_pack, target_root, args.expect_plan)
+    if args.json:
+        print(json.dumps(result, sort_keys=True, indent=2, ensure_ascii=False))
+    else:
+        print("AIDE Lite rollback-pack")
+        print(f"status: {result['status']}")
+        print(f"plan_digest: {result.get('plan_digest') or result.get('rollback_plan_digest') or 'none'}")
+        print(f"written: {len(result.get('written', []))}")
+        print("provider_or_model_calls: none")
+        print("network_calls: none")
+    return 0 if result["status"] in {"PLANNED", "ROLLED_BACK", "NO_CHANGES"} else 2 if result["status"] in {"CONFLICT", "PRESERVATION_REQUIRED"} else 3
 
 
 def command_plan_removal(args: argparse.Namespace) -> int:
@@ -43999,6 +44169,15 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
         help="safe imports portable .aide/templates only; full includes optional broad roots for reviewed fixtures.",
     )
     import_parser.set_defaults(handler=command_import_pack)
+
+    rollback_pack_parser = subparsers.add_parser("rollback-pack")
+    rollback_pack_parser.add_argument("--current-pack", required=True)
+    rollback_pack_parser.add_argument("--previous-pack", required=True)
+    rollback_pack_parser.add_argument("--target", required=True)
+    rollback_pack_parser.add_argument("--dry-run", action="store_true")
+    rollback_pack_parser.add_argument("--expect-plan", help="Exact rollback preview digest; required for apply.")
+    rollback_pack_parser.add_argument("--json", action="store_true")
+    rollback_pack_parser.set_defaults(handler=command_rollback_pack)
 
     removal_parser = subparsers.add_parser("plan-removal")
     removal_parser.add_argument("--target", required=True)

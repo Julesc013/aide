@@ -1,0 +1,8 @@
+schema_version: aide.queue-task-status.v0
+id: AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01
+status: needs_review
+result: PENDING
+current_step: independent_reparse_repair_rereview
+updated_at: 2026-09-25
+blockers: []
+review_required: true

@@ -3590,3 +3590,13 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/evidence
     description: Reconcile reviewed removal and rollback source, regenerate current artifacts, qualify consumers, and integrate an exact dev candidate.
+  - id: AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01
+    status: needs_review
+    planning_state: reparse_repair_source_candidate_frozen
+    result: PENDING
+    title: Apply an exact predecessor portable-pack rollback
+    task: .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01/evidence
+    description: Restore an exact predecessor portable pack after a completed update when validated safe payload targets match.
