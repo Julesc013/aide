@@ -4026,5 +4026,16 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
 - Exact local ZIP processes recovered after import, repair, rollback and
   removal completion boundaries. A real first-payload import exit was retained
   as `partial`: fresh preview/apply refused replay without changing bytes.
-  Independent canary review accepted these local results with notes. Exact
-  evidence-effect review and a bounded partial-recovery source task remain.
+  Independent canary and focused evidence-effect reviews accepted the exact
+  local result with notes. One-writer dev fast-forward and normal push reached
+  `e88b1c2e`; an initially stale GitHub API read matched on subsequent
+  uncached git/ref and branch reads. Partial-import source work remains.
+
+## 2026-09-26 - Partial portable import recovery source
+
+- `AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01` is admitted from
+  `dev@e88b1c2e` after the independently reviewed forced-restart evidence
+  fast-forward and normal push. The exact first-payload process exit retained
+  an intent and safely refused replay. This task will add an explicit guarded
+  partial reconciliation, preserve older intents as refusal, seek independent
+  source review, and qualify newly generated delivered bytes separately.

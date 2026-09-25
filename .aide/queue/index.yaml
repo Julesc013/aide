@@ -3701,8 +3701,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-CURRENT-PROJECTION-01/evidence
     description: Regenerate and qualify current Lite preview artifacts and exact dev effect.
   - id: AIDE-STABLE-LITE-FORCED-RESTART-01
-    status: needs_review
-    planning_state: superseding_record_repair_candidate
+    status: passed_with_notes
+    planning_state: integrated_dev
     result: PASS_WITH_WARNINGS
     title: Qualify delivered Windows Lite recovery after abrupt process exit
     task: .aide/queue/AIDE-STABLE-LITE-FORCED-RESTART-01/task.yaml
@@ -3710,3 +3710,13 @@ items:
     prompt: .aide/queue/AIDE-STABLE-LITE-FORCED-RESTART-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-LITE-FORCED-RESTART-01/evidence
     description: Observe exact delivered lifecycle state after a child process exits at durable effect boundaries.
+  - id: AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01
+    status: running
+    planning_state: admitted
+    result: PENDING
+    title: Reconcile exact partial portable imports after process exit
+    task: .aide/queue/AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01/prompt.md
+    evidence: .aide/queue/AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01/evidence
+    description: Add explicit guarded recovery for a partial portable import while preserving old safe refusals.

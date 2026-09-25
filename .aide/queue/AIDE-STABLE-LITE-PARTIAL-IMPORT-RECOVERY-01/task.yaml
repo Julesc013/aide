@@ -1,0 +1,50 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01
+title: Reconcile exact partial portable imports after process exit
+type: implementation
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-26
+updated_at: 2026-09-26
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-STABLE-LITE-FORCED-RESTART-01
+base_dev: e88b1c2ee6f3206c628f79908e430a7967e9f58c
+objective: >
+  Add explicit guarded recovery of a partially applied portable import using
+  exact validated pack, plan, intent, target and project inputs.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - docs/reference/cross-repo-pack-export-import.md
+    - .aide/queue/AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01/**
+    - .aide/queue/AIDE-STABLE-LITE-FORCED-RESTART-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/export/**
+    - .aide/release/**
+    - .aide/changelog/**
+    - specs/**
+    - .github/**
+  forbidden_paths:
+    - .aide.local/**
+    - arbitrary target repositories
+  forbidden_operations:
+    - implicit partial replay without a new exact operator request
+    - overwrite unknown, rival or project-owned bytes
+    - main promotion, tag, upload or publication
+verification:
+  - red and green fresh/update partial-recovery regressions
+  - wrong-identity, altered-input, rival and interruption adversarial checks
+  - importer and dependent lifecycle test suites
+  - independent exact source review
+  - delivered-archive abrupt-exit and new-process recovery after projection
+retained_gates:
+  - old intents without replay metadata remain safe refusal
+  - source review does not qualify generated archive or final release
+  - partial recovery must not invent user intent or emit feedback

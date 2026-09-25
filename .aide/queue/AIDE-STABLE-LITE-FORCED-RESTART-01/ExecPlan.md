@@ -36,4 +36,8 @@ ZIP requires a new identity-bound canary and relevant review.
 - [x] Run four completed-effect forced exits and one first-payload partial
       exit. Preserve exact external logs, target bytes, two corrected oracle
       failures and the partial recovery gap.
-- [ ] Review exact evidence and integrate truthful closeout into `dev`.
+- [x] Frozen `f44f3a28` received REQUEST_CHANGES for stale closeout claims;
+      corrected exact `e88b1c2e` received focused ACCEPT_WITH_NOTES. Fresh
+      preflight, one-writer dev fast-forward and normal push passed. The first
+      GitHub API read lagged, then two API routes and Git refs agreed; no
+      mutation was replayed. Partial import recovery remains a source task.
