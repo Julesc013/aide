@@ -23,7 +23,7 @@ scope:
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_export_import.py
     - .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/**
-  - .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/**
+    - .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/**
     - .aide/queue/index.yaml
     - .aide/changelog/**
     - .aide/export/aide-lite-pack-v0/**
