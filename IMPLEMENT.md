@@ -1,5 +1,17 @@
 # AIDE Implementation Log
 
+## Work Item: AIDE-STABLE-RELEASE-CONTRACT-01 (admission only)
+
+Admitted a bounded child of `AIDE-CONVERGENCE-AND-DELIVERY-01` for stable
+version, public compatibility, Lite support-profile, and campaign-scoped
+publication-route contract work. The admission changes only task/index,
+task-relevant intake, and planning/execution records. Intent compile blocked
+raw release execution and required a split; this packet contains the contract
+slice. Root controller scope review is in `evidence/controller-admission.md`;
+validation and limits are in `evidence/admission.md`. Policy/source
+changes, version choice, exact release bytes, main promotion, tag, upload,
+publication, and consumer qualification remain future reviewed work.
+
 ## Work Item: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01 (backup review repair)
 
 The independent review of `d5b44626` found that a failed authored AGENTS

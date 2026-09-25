@@ -1,0 +1,77 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-RELEASE-CONTRACT-01
+title: Define the bounded stable release contract and publication route
+type: planning
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+objective: >
+  Establish an independently reviewed version and public compatibility rule,
+  exact first stable Lite support profile, and campaign-scoped route to a later
+  frozen main, tag, and publication effect. This WorkUnit does not select
+  unqualified release bytes or execute those effects.
+authority_basis: >
+  The owner's 2026-09-25 campaign delegation authorizes qualified in-scope
+  release actions without routine reconfirmation while retaining exact
+  candidate identity, machine gates, and independent technical review. This
+  admission packet authorizes bounded contract work after controller scope
+  review; exact policy/source changes retain independent technical review.
+source_base: d4b67c96ff81eb10aeecd6763b538331844619c9
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/**
+    - .aide/queue/index.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml
+    - .aide/queue/policy.yaml
+    - .aide/policies/release-versioning.yaml
+    - .aide/policies/release-publication-boundary.yaml
+    - .aide/policies/review-gates.yaml
+    - specs/control-plane/product/scope-and-profiles.md
+    - governance/release-policy.md
+    - docs/reference/aide-lite-release-bundle.md
+    - docs/reference/github-release-draft.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  read_only_paths:
+    - .aide/release/**
+    - .aide/export/**
+    - .aide/policies/release-bundle.yaml
+    - .aide/policies/release-provenance.yaml
+    - .aide/policies/github-release-draft.yaml
+    - specs/control-plane/contracts/compatibility-and-migrations.md
+    - governance/support-policy.md
+  forbidden_paths:
+    - .github/**
+    - .aide.local/**
+    - .aide/scripts/**
+    - core/**
+    - hosts/**
+    - target repositories
+  forbidden_operations:
+    - main promotion in this WorkUnit
+    - branch or ref mutation during admission or before exact contract review
+    - Git tag creation, movement, or push
+    - release asset upload or GitHub Release publication
+    - changing Q47 or Q48 preview evidence into publication evidence
+    - broad review-gate removal or fabricated owner or independent verdict
+    - new specification overlay
+    - provider, model, or hosted effect calls
+verification:
+  - confirm local and hosted read-only tag and release history with exact observation provenance
+  - validate the adopted public compatibility and support-profile contract against current implementation evidence
+  - review the exact queue and policy amendment for campaign-only authority and retained technical gates
+  - validate schema, links, task state, diff, and current preview-only boundaries
+  - obtain independent technical review of the exact contract candidate before dev integration
+retained_gates:
+  - no stable version is selected by admission
+  - mandatory Lite behavior and final installed-asset qualification remain open
+  - a later exact release-effect WorkUnit and frozen manifest are required for main, tag, upload, or publication
+  - any material source, version, profile, asset, or effect change requires focused revalidation and review

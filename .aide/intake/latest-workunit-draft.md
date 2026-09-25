@@ -1,7 +1,7 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-release-acb5fbf88e05
+- workunit_id: draft-release-093c508e6332
 - title: Release WorkUnit Draft - Block until release gates, tags, and assets are approved
 - status: draft
 - task_class: release
@@ -48,10 +48,9 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not mutate target repositories from AIDE source repo
 - do not publish releases, tags, or assets from prompt alone
 
 ## Recovery
 
-- idempotency: prompt_hash:acb5fbf88e05c79f28519763f30b433218d261267cba1bfea1fc1717e72b9ced; status:draft; compile_only:true
+- idempotency: prompt_hash:093c508e6332fc2489ed08b433d492e4d72dc18b1c7197f03b24fc66724502fa; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

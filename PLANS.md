@@ -86,6 +86,21 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-STABLE-RELEASE-CONTRACT-01
+
+- Title: Define the bounded stable release contract and publication route.
+- Status: bounded contract work admitted and running; technical source review pending.
+- Objective: establish a reviewed version/public compatibility rule, first
+  stable Lite support profile, and narrow campaign-scoped release route.
+- Scope: the exact existing policy, adopted profile, and reference-doc owners
+  in the child `task.yaml`; admission edits only queue/intake/plan records.
+- Dependencies: 2026-09-25 owner delegation, read-only release history, final
+  mandatory-profile evidence, and independent technical review.
+- Verification: task inspect and diff checks for admission; contract and
+  support validation before later exact candidate review.
+- Blockers: version and final release bytes remain unchosen; Q47/Q48 are
+  preview-only, and main/tag/publication require a separate frozen effect.
+
 ### Plan ID: AIDE-RELEASE-METADATA-INTEGRITY-01
 
 - Title: Repair deterministic release metadata integrity

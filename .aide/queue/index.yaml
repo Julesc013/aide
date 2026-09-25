@@ -3600,3 +3600,13 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01/evidence
     description: Restore an exact predecessor portable pack after a completed update when validated safe payload targets match.
+  - id: AIDE-STABLE-RELEASE-CONTRACT-01
+    status: running
+    planning_state: admitted
+    result: PENDING
+    title: Define the bounded stable release contract and publication route
+    task: .aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/prompt.md
+    evidence: .aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/evidence
+    description: Admit contract-only version, public compatibility, support-profile, and campaign-scoped review-route work; no release effect or version claim.

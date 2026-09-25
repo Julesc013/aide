@@ -1,0 +1,22 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-RELEASE-CONTRACT-01
+status: running
+classification: admission_packet_only
+planning_state: admitted
+result: PENDING
+updated_at: 2026-09-25
+current_slice: bounded_contract_source_work
+next_slice: exact_version_profile_and_policy_candidate
+review_gate: independent_technical_review_of_exact_contract_change
+version_selected: false
+public_compatibility_contract_adopted: false
+stable_support_profile_qualified: false
+publication_route_applied: false
+main_promotion_performed: false
+tag_created: false
+release_published: false
+notes:
+  - The 2026-09-25 owner delegation is authority for future qualified in-scope effects, not evidence that technical gates have passed.
+  - Intent compile classified the broad release wording as blocked and split-required; this WorkUnit is contract-only.
+  - Read-only GitHub release and tag observations were supplied by the parent controller and require source-bound custody in contract execution.
+  - Q47 and Q48 local outputs retain preview-only, no-publish status.

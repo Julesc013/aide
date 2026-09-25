@@ -1,0 +1,9 @@
+# Controller admission, 2026-09-25
+
+The root controller inspected the exact child packet on clean base `dev@d4b67c96ff81eb10aeecd6763b538331844619c9`, the allowed and forbidden paths, the `intent compile` result, queue index entry, ExecPlan, external analysis note SHA-256 `aaf8ab963440f7df049892ccef0eaa10a9fae47850ec68478393f04726f0db7f`, and the owner delegation recorded in the parent campaign.
+
+The owner's 2026-09-25 campaign instruction authorizes routine child admission without another human response. The child is bounded to version, public compatibility, supported Lite profile, and campaign-scoped publication-route contract work. It does not admit main promotion, tag, upload, publication, source generator changes, or a stable readiness claim. The release intent compiler blocked direct execution of the broad release prompt and required splitting; this queue child is the contract-only slice. Generated intake outputs are task evidence, not canonical authorization.
+
+Decision: admit this child as `running` / `admitted` for contract source work. This is a controller scope decision under the owner's delegation, not an independent technical acceptance or a release decision. Any consequential version/profile/queue/review-gate/publication-policy change must be frozen and independently reviewed at an exact source identity before dev integration. The later effect WorkUnit requires a final candidate/effect manifest, machine and consumer gates, independent release acceptance, and observed remote/asset results.
+
+At admission the root controller's authenticated read-only GitHub query under `BLACKGLASS-WIN1\Jules` returned no release or tag entries, exit 0, at 2026-09-25 09:40 UTC; no version was selected from that observation. No release, target, or credential effect was performed.
