@@ -4,9 +4,9 @@ status: running
 classification: admitted_by_owner_split
 planning_state: historical_b_accepted_combined_integration_in_progress
 result: PASS_WITH_WARNINGS
-updated_at: 2026-09-22
+updated_at: 2026-09-25
 current_slice: qualified_source_artifacts_and_consumer_proof
-next_slice: qualify_current_dev_combined_source_and_artifacts
+next_slice: fast_forward_reviewed_combined_candidate_to_dev
 notes:
   - The broad compiled intent remains blocked and split-required.
   - This bounded child starts from origin/dev at 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab.
@@ -19,3 +19,4 @@ notes:
   - Commit 486e81cd3a918729f28e4b452a9dcff017238a04 is published and fails message policy; history was not rewritten.
   - Dev integration waits for the separately scoped exact historical-conformance disposition.
   - The owner accepted exact disposition B on 2026-09-25. Its raw 13 message failures remain; current-dev source/artifact integration is in progress through AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01.
+  - Combined candidate 2819385a has independent ACCEPT_WITH_NOTES for dev source integration, 32 combined import tests, fresh and brownfield archive consumers, current-generator provenance, and zero-change release replay. Remote dev observation is pending.

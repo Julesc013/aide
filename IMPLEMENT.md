@@ -11547,3 +11547,19 @@ DLL mapping, image or grant effect is part of this source implementation.
   upload, publication, network, provider, or model effect.
 - Retained one exact commit-message conformance failure at `486e81cd` without
   rewriting history; dev integration awaits its separately scoped disposition.
+
+## 2026-09-25 - Removal planner combined dev candidate
+
+- Accepted the owner's exact historical disposition B while retaining all 13
+  raw formatting failures, then merged old removal history with current dev in
+  source commit `1a25e33e`.
+- Regenerated portable and local release bytes with the current generator;
+  the combined candidate `2819385a` has source-ancestor pack provenance.
+- Passed 32 combined import tests, 18 release tests, 11 draft tests, 11
+  changelog tests, 6 governance tests, canonical checks, 831 pack and 7 release
+  independent checksums, equal 833-file ZIP/tar payloads, and fresh/brownfield
+  extracted ZIP consumer checks. A post-commit replay changed zero of 44
+  tracked release files.
+- Independent exact-candidate review returned ACCEPT_WITH_NOTES for dev source
+  integration. The receipt remains local ownership evidence only; future
+  removal apply requires effect-time revalidation. Dev remote effect is pending.

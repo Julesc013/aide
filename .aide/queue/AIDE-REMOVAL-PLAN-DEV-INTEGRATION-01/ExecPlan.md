@@ -30,9 +30,11 @@ removal apply, deletion, live target effect, or public release.
   customization and planner tests plus both root execution logs.
 - [x] Validate reconciled source with 32 import, 18 release, 11 draft, 11
   changelog, and 6 governance tests; canonical validate and doctor pass.
-- [ ] Commit reconciled source with both parents.
-- [ ] Qualify regenerated portable and local release bytes.
-- [ ] Obtain independent integration verdict and observe qualified dev.
+- [x] Commit reconciled source `1a25e33e` with both parents.
+- [x] Qualify regenerated portable and local release bytes at `2819385a`;
+  replay changed zero of 44 tracked release files.
+- [x] Obtain independent `ACCEPT_WITH_NOTES` for the exact combined candidate.
+- [ ] Observe qualified dev after fresh remote ancestry and single-writer checks.
 
 ## Recovery
 

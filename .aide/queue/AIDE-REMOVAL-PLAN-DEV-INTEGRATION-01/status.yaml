@@ -1,9 +1,12 @@
 schema_version: aide.queue-status.v0
 id: AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01
 status: running
-planning_state: source_merge_conflicts_resolved_validation_pending
-result: PENDING
+planning_state: candidate_accepted_dev_effect_pending
+result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
 base_dev: 1c75abf1d93b34be8998383ea2ce4c9084c9d612
 source_candidate: d1362f912c951ccc6022d0a2a3a527a4d66365f1
-next_action: run_combined_tests_then_commit_source_merge
+reviewed_candidate: 2819385a5b3d6817fbcd45ee9dcc7065b90fbb2c
+reviewed_tree: b57bdab7c47512518d39c91259111878ee7d858b
+review_verdict: ACCEPT_WITH_NOTES
+next_action: verify_dev_remote_then_fast_forward_candidate

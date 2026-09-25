@@ -3522,8 +3522,8 @@ items:
     description: Preserve reviewed API-query source and both parent histories without activating native or hosted effects.
   - id: AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01
     status: running
-    planning_state: source_merge_conflicts_resolved_validation_pending
-    result: PENDING
+    planning_state: candidate_accepted_dev_effect_pending
+    result: PASS_WITH_WARNINGS
     title: Integrate delivered-pack removal planner with current dev
     task: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/ExecPlan.md

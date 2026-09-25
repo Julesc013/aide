@@ -3621,8 +3621,10 @@ content, and preserves changed, missing, target-owned, and unknown state. The
 consumer canaries pass with no planner writes. The qualified task branch is
 published; exact historical disposition B for malformed published commit
 `486e81cd` was accepted on 2026-09-25 while raw failures remain visible.
-Current-dev source/artifact integration is in progress on a bounded branch.
-No removal apply, live
+Current-dev source/artifact integration is independently accepted at combined
+candidate `2819385a`; exact remote dev fast-forward and observation remain.
+The extracted ZIP fresh/brownfield consumers and zero-change 44-file release
+replay pass. No removal apply, live
 target mutation, main promotion, tag, upload, or publication is included.
 
 ## GitHub expected-head target source
