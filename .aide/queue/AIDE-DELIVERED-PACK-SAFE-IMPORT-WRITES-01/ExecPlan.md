@@ -43,7 +43,7 @@ allowlist; use disposable targets for write tests.
   independently reviewed source retained the current repair helper and lock.
 - [x] Generate and validate the portable pack and draft from the clean merge,
   and run the fresh/brownfield extracted-artifact canary.
-- [ ] Close independent artifact review, post-commit replay, and dev integration.
+- [x] Close independent artifact review, post-commit replay, and dev integration.
 
 ## Recovery and risks
 

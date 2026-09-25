@@ -3561,9 +3561,9 @@ items:
     evidence: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/evidence
     description: Fix the independently reproduced second-writer race in Windows owned repair staging before release qualification.
   - id: AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01
-    status: running
-    planning_state: parent_escape_reproduced_repair_helper_pending
-    result: PENDING
+    status: passed
+    planning_state: integrated_dev
+    result: PASS
     title: Keep delivered-pack importer writes inside the observed target
     task: .aide/queue/AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01/task.yaml
     exec_plan: .aide/queue/AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01/ExecPlan.md
