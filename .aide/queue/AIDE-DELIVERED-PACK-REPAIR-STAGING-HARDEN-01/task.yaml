@@ -3,7 +3,7 @@ id: AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01
 title: Block rival Windows writes to owned repair staging bytes
 type: implementation
 status: running
-planning_state: admitted_regression_pending
+planning_state: source_candidate_under_qualification
 result: PENDING
 created_at: 2026-09-25
 updated_at: 2026-09-25

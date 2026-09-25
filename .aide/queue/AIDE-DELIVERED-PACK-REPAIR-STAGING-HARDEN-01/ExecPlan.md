@@ -25,7 +25,8 @@ WorkUnit closes that race for owned repair intent and payload only.
 
 - [x] Independent reproduction found actual altered-byte publication in the
   old helper. External script and log are bound in task evidence.
-- [ ] Add exact regressions and source fix.
+- [x] Add exact regressions and source fix; the baseline failed both staging
+  subcases, and the corrected focused repair suite passed all 10 tests.
 - [ ] Qualify source, artifacts, consumers, and replay.
 - [ ] Obtain independent acceptance and observe remote dev.
 

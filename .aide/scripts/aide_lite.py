@@ -39395,22 +39395,63 @@ def atomic_write_bytes_if_changed(path: Path, data: bytes) -> WriteResult:
 
 
 def atomic_create_bytes_no_clobber(path: Path, data: bytes) -> None:
-    """Publish complete bytes only if the destination is still absent."""
+    """Publish complete bytes while denying rival staging writers."""
     if os.name != "nt":
         raise ValueError("owned repair requires Windows anchored directory handles")
     if not path.parent.is_dir():
         raise ValueError(f"repair parent directory is missing: {path.parent}")
+    import ctypes
+    import msvcrt
+    from ctypes import wintypes
+
+    class FileDispositionInfo(ctypes.Structure):
+        _fields_ = [("delete_file", wintypes.BOOL)]
+
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.SetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.c_int, ctypes.c_void_p, wintypes.DWORD]
+    kernel.SetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    invalid = ctypes.c_void_p(-1).value
     with windows_pinned_directory(path.parent) as directory_handle:
-        descriptor, temporary_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
-        temporary = Path(temporary_name)
+        # A CRT mkstemp descriptor permits another Windows writer. Create the
+        # stage with no sharing and keep that handle through the no-replace link.
+        for _ in range(8):
+            temporary = path.parent / f".{path.name}.{os.urandom(16).hex()}.tmp"
+            native_handle = kernel.CreateFileW(
+                str(temporary),
+                0x80000000 | 0x40000000 | 0x00010000,  # READ | WRITE | DELETE
+                0, None, 2, 0x80, None,  # no sharing, CREATE_NEW, NORMAL
+            )
+            if native_handle != invalid and native_handle is not None:
+                break
+            error = ctypes.get_last_error()
+            if error not in {80, 183}:
+                raise ctypes.WinError(error)
+        else:
+            raise FileExistsError("could not reserve a unique repair stage")
         try:
-            with os.fdopen(descriptor, "wb") as handle:
+            descriptor = msvcrt.open_osfhandle(native_handle, os.O_RDWR | os.O_BINARY)
+        except BaseException:
+            kernel.CloseHandle(native_handle)
+            raise
+        with os.fdopen(descriptor, "wb") as handle:
+            try:
                 handle.write(data)
                 handle.flush()
                 os.fsync(handle.fileno())
                 windows_link_from_handle(handle.fileno(), directory_handle, path.name)
-        finally:
-            temporary.unlink(missing_ok=True)
+            finally:
+                # Delete the random staging link through the same exclusive
+                # handle. A pathname unlink after close could hit a replacement.
+                disposition = FileDispositionInfo(True)
+                if not kernel.SetFileInformationByHandle(
+                    msvcrt.get_osfhandle(handle.fileno()),
+                    4, ctypes.byref(disposition), ctypes.sizeof(disposition),
+                ):
+                    raise ctypes.WinError(ctypes.get_last_error())
 
 
 @contextmanager

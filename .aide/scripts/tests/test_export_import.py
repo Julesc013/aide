@@ -940,6 +940,36 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])["status"], "CONFLICT")
         self.assertEqual(managed.read_bytes(), b"competing project bytes\n")
 
+    @unittest.skipUnless(sys.platform == "win32", "requires Windows file sharing")
+    def test_owned_repair_stage_denies_second_process_writer(self) -> None:
+        for rel in (".aide/install/aide-lite-pack-v0.repair-intent.json", ".aide/prompts/compact-task.md"):
+            with self.subTest(path=rel), tempfile.TemporaryDirectory() as raw:
+                target = Path(raw) / rel
+                target.parent.mkdir(parents=True)
+                original_link = aide_lite.windows_link_from_handle
+                attempted = []
+
+                def rival_before_link(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+                    stages = list(target.parent.glob(f".{target.name}.*.tmp"))
+                    self.assertEqual(len(stages), 1)
+                    child = subprocess.run(
+                        [
+                            sys.executable, "-I", "-B", "-c",
+                            "import sys\ntry:\n with open(sys.argv[1], 'r+b') as handle: handle.write(b'ATTACKED bytes')\nexcept PermissionError:\n sys.exit(23)\n",
+                            str(stages[0]),
+                        ],
+                        capture_output=True, text=True, timeout=10,
+                    )
+                    attempted.append(child.returncode)
+                    self.assertEqual(child.returncode, 23, child.stderr)
+                    original_link(descriptor, directory_handle, leaf_name)
+
+                with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=rival_before_link):
+                    aide_lite.atomic_create_bytes_no_clobber(target, b"expected bytes")
+                self.assertEqual(attempted, [23])
+                self.assertEqual(target.read_bytes(), b"expected bytes")
+                self.assertEqual(list(target.parent.iterdir()), [target])
+
     def test_owned_repair_prepublication_failure_retries_from_missing(self) -> None:
         source_root = self.make_source_repo()
         pack = self.freeze_pack(source_root, "repair-prepublish-pack")
@@ -1011,17 +1041,17 @@ class ExportImportTests(unittest.TestCase):
         outside.mkdir()
         sentinel = outside / "sentinel.txt"
         sentinel.write_bytes(b"outside unchanged\n")
-        real_mkstemp = aide_lite.tempfile.mkstemp
+        real_link = aide_lite.windows_link_from_handle
         blocked = []
 
-        def attempt_swap(*args: object, **kwargs: object):
-            if kwargs.get("dir") == parent:
+        def attempt_swap(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+            if leaf_name == managed.name:
                 with self.assertRaises(OSError):
                     parent.rename(moved)
                 blocked.append(True)
-            return real_mkstemp(*args, **kwargs)
+            real_link(descriptor, directory_handle, leaf_name)
 
-        with mock.patch.object(aide_lite.tempfile, "mkstemp", side_effect=attempt_swap):
+        with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=attempt_swap):
             result = aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])
         self.assertEqual(result["status"], "APPLIED")
         self.assertEqual(blocked, [True])
