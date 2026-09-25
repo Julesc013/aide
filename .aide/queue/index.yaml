@@ -3590,6 +3590,16 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/evidence
     description: Reconcile reviewed removal and rollback source, regenerate current artifacts, qualify consumers, and integrate an exact dev candidate.
+  - id: AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01
+    status: running
+    planning_state: red_regressions
+    result: PENDING
+    title: Preserve project choices across successive portable-pack updates
+    task: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/evidence
+    description: Implement exact manual update resolution and explicit optional-disable preservation across successive delivered packs.
   - id: AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01
     status: needs_review
     planning_state: reparse_repair_source_candidate_frozen

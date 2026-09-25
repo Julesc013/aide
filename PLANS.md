@@ -3826,3 +3826,13 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   supplied three-way update resolution with successive upstream versions and
   explicit optional-feature disable preservation, followed by final delivered
   consumers and release qualification.
+
+## 2026-09-25 - Successive project-owned update WorkUnit
+
+- `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote
+  `dev@d4b67c96` on a bounded task branch. Its ExecPlan binds red regressions,
+  manual exact-plan resolution, versioned overlay/disable receipts, two-pack
+  survival, review, delivered consumer validation and replay before dev effect.
+- Root retains integration and generated-artifact ownership. Product source
+  work starts with the prepared test-only patch; public-release gates remain
+  with the parent campaign.

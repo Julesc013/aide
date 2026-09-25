@@ -1,0 +1,45 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01
+title: Preserve project choices across successive portable-pack updates
+type: implementation
+status: running
+planning_state: red_regressions
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_dev: d4b67c96ff81eb10aeecd6763b538331844619c9
+authority_basis: >
+  The owner's 2026-09-25 campaign delegation authorizes implementation,
+  qualified review and dev integration of mandatory update and customization
+  behavior without another routine owner approval.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - docs/reference/cross-repo-pack-export-import.md
+    - .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/**
+    - .aide/queue/index.yaml
+    - .aide/export/**
+    - .aide/changelog/**
+    - .aide/release/**
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_operations:
+    - mutate a real consumer or unrelated repository
+    - infer the reason for a direct project edit
+    - automatically share project feedback
+    - overwrite unknown or project-owned bytes
+    - promote main, tag, upload or publish before final release gates
+verification:
+  - red and green exact disposable update regressions
+  - affected importer, lifecycle, export and release tests
+  - independent exact source and artifact/effect review
+  - extracted ZIP/tar fresh and brownfield successive-update consumers
+  - postcommit deterministic generator replay
+retained_gates:
+  - missing receipt-owned files refuse implicit recreation
+  - resolution inputs and project-owned disabled decisions bind the exact plan
+  - overlay bytes remain distinct from upstream source in receipts
+  - source acceptance does not imply public-release acceptance
