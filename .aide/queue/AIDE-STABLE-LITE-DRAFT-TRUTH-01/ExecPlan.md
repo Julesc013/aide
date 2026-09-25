@@ -32,5 +32,7 @@ invoke publishing, dev integration or target mutation from this source task.
 - [x] Reproduce red stale-wording regression.
 - [x] Repair generator; 12 Q48 tests pass. Canonical validate/doctor retain
       old-export provenance failures for the separate projection.
-- [ ] Obtain exact independent source review.
+- [x] Obtain exact independent source review: ACCEPT_WITH_NOTES for
+      `bc1867a0`, tree `edf8f273`; external report SHA-256
+      `f7e53a384a1d439fcc5db6a16a86a9e1b1241f52951f2ce402a37e17ad466a20`.
 - [ ] Route accepted source to artifact projection.

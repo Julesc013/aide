@@ -3987,3 +3987,13 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   normally pushed `dev@54b9d45e`; local, tracking, remote and GitHub API refs
   matched. The two bounded WorkUnits are integrated; parent release gates
   remain open. Next repair the stable contract candidate against this source.
+
+## 2026-09-25 - Task OS and Q48 accepted source handoff
+
+- Exact Task OS source `52e1f194` and Q48 draft source `bc1867a0` have
+  independent accepted-with-notes verdicts. Their source lineage descends
+  from `dev@d292253b`; generated pack and release preview outputs are stale.
+- Next admit one current-generator projection for export, changelog, bundle
+  and draft; require committed zero-change release replay, installed target
+  queue consumers, canonical checks, independent exact artifact/effect review
+  and one-writer `dev` integration. Final release gates remain separate.

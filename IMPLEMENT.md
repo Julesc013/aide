@@ -12031,3 +12031,7 @@ Owner review found a final-write race in the first candidate. The repair now pub
   candidates without changing no-publish semantics; all 12 Q48 tests pass.
   Canonical validate/doctor retain the old-export provenance failure until
   current-generator projection. Generated outputs were not edited here.
+  Independent source review accepted exact `bc1867a0`, tree `edf8f273`,
+  with notes. The old draft text and stale export provenance remain blocking
+  artifact/dev effect gates, so this evidence-only closeout preserves the
+  reviewed source while routing to a separate current-generator projection.
