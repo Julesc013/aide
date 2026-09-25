@@ -3789,3 +3789,11 @@ current accepted generator before dev integration.
 The repaired source passes six focused rollback tests and awaits independent
 delta rereview. Its isolated pack still has old provenance by design; final
 validation belongs on combined source with regenerated artifacts.
+
+The independent source rereview accepted `33824b36`. Combined lifecycle task
+`AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01` now preserves that ancestry and
+closes the pending-removal rollback preview guard with a red/green Windows
+regression. Authored-section removal source `2c4c9089` has separate independent
+source acceptance but still needs combination, current-generator artifacts,
+extracted consumers, replay and exact dev-effect review. Neither source result
+establishes stable release readiness.

@@ -11715,3 +11715,15 @@ Owner review found a final-write race in the first candidate. The repair now pub
   and diff checks passed. Isolated canonical validation reports only the
   expected stale generated-pack provenance, which this source-only WorkUnit
   does not overwrite. Exact source delta rereview remains pending.
+
+## 2026-09-25 - Combined rollback/removal intent gate
+
+- Merged independently accepted rollback source `33824b36` into the combined
+  lifecycle task branch, preserving current-dev removal and release machinery.
+- A real interrupted-removal regression failed against that merge because
+  rollback preview reached the import guard and diagnosed removal recovery as
+  import recovery. An early validated removal-intent guard now refuses both
+  rollback preview and apply before interpreting the import receipt.
+- The exact regression passed after repair; broader combined tests, delivered
+  artifacts, consumer checks, independent review, and dev integration remain
+  open. No target outside disposable tests or remote ref was changed.

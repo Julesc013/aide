@@ -58,6 +58,13 @@ unreviewed source or artifact candidate may advance `dev`.
 - [x] Observed clean primary/removal/rollback worktrees and remote `dev`.
 - [x] Ran dry-run `git plan`; it reported ready with no blocker.
 - [x] Created this integration worktree from `dev@ea53e319`.
-- [ ] Merge reviewed rollback source and close the pending-removal gate.
-- [ ] Receive independent authored-section source verdict and merge accepted source.
+- [x] Merge reviewed rollback source with both parents and all queue/planning
+      additions preserved (`03f4b0a1`).
+- [x] Reproduce the pending-removal rollback diagnostic defect, add an early
+      validated-intent gate and pass the exact Windows regression. Wider
+      combined tests remain open.
+- [x] Receive independent authored-section source verdict: `d5b44626` was
+      rejected for orphaned backup recovery; superseding `2c4c9089` received
+      ACCEPT_WITH_NOTES for source combination. Merge it only after this
+      rollback guard is checkpointed.
 - [ ] Combined source, artifact, consumer, replay and dev-effect gates.

@@ -829,6 +829,47 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(intent_path.read_bytes(), intent_bytes)
         self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
 
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
+    def test_rollback_refuses_pending_removal_before_receipt_or_target_reinterpretation(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "rollback-removal-v1")
+        aide_lite.write_text(source_root / managed_rel, "# Updated before removal\n")
+        pack_v2 = self.freeze_pack(source_root, "rollback-removal-v2")
+
+        target = source_root.parent / "rollback-removal-pending"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "APPLIED")
+        prior_rollback = aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        removal = aide_lite.build_portable_removal_plan(target)
+        self.assertEqual(aide_lite.apply_portable_removal(target, removal["plan_digest"], fail_after_removals=1)["status"], "INTERRUPTED")
+        intent_path = target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        intent_bytes, receipt_bytes = intent_path.read_bytes(), receipt_path.read_bytes()
+        with self.assertRaisesRegex(ValueError, "removal recovery must complete before rollback"):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        with self.assertRaisesRegex(ValueError, "removal recovery must complete before rollback"):
+            aide_lite.apply_portable_rollback(pack_v2, pack_v1, target, prior_rollback["plan_digest"])
+        self.assertEqual(intent_path.read_bytes(), intent_bytes)
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+
+        intent_path.write_bytes(b"{malformed")
+        with self.assertRaisesRegex(ValueError, "invalid portable removal intent"):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        self.assertEqual(intent_path.read_bytes(), b"{malformed")
+
+        retired_target = source_root.parent / "rollback-removal-retired"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, retired_target)["status"], "APPLIED")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, retired_target, predecessor_pack=pack_v1)["status"], "APPLIED")
+        retired_plan = aide_lite.build_portable_removal_plan(retired_target)
+        self.assertEqual(aide_lite.apply_portable_removal(retired_target, retired_plan["plan_digest"], fail_after_receipt=True)["status"], "INTERRUPTED")
+        retired_intent = retired_target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH
+        retired_bytes = retired_intent.read_bytes()
+        self.assertFalse((retired_target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
+        with self.assertRaisesRegex(ValueError, "removal recovery must complete before rollback"):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, retired_target)
+        self.assertEqual(retired_intent.read_bytes(), retired_bytes)
+
     def test_dry_run_never_reconciles_a_pending_import_intent(self) -> None:
         source_root = self.make_source_repo()
         managed_rel = ".aide/prompts/compact-task.md"

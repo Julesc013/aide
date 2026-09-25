@@ -41828,6 +41828,11 @@ def build_portable_rollback_plan(current_pack: Path, previous_pack: Path, target
     current_pack, previous_pack, target_root = current_pack.resolve(), previous_pack.resolve(), target_root.resolve()
     if current_pack == previous_pack or not target_root.is_dir():
         raise ValueError("rollback requires distinct packs and an existing target")
+    # Removal may already have deleted owned bytes or retired the import
+    # receipt. Its intent must be reconciled before either rollback preview
+    # or apply interprets that state as an update conflict or fresh baseline.
+    if load_portable_removal_intent(target_root) is not None:
+        raise ValueError("portable removal recovery must complete before rollback")
     for label, pack in (("current", current_pack), ("previous", previous_pack)):
         if pack == target_root or pack in target_root.parents or target_root in pack.parents:
             raise ValueError(f"{label} rollback pack must be outside the target")
