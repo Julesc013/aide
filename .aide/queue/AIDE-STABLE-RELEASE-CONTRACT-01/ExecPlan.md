@@ -83,13 +83,13 @@ integration phase regenerates them; record that state without generating here.
   Qualification against final assets and predecessor versions remains open.
 - [x] Draft campaign-scoped queue/review/publication policy and documentation
   changes, preserving Q47/Q48 history and independent technical gates.
-- [ ] Run contract/schema/link/regression validation and obtain independent
+- [x] Run contract/schema/link/regression validation and obtain independent
   exact candidate technical review before any dev integration.
 - [x] Retain the `aa3bcfec` REQUEST_CHANGES report and merge current accepted
   `dev` source at `060de472` with both planning histories intact.
 - [x] Repair the missing predecessor/conflict CLI forms and record the exact
   committed pack/validate/doctor failures; seek focused superseding review.
-- [ ] Route generated export/release output to a separate bounded projection
+- [x] Route generated export/release output to a separate bounded projection
   WorkUnit and establish passing committed combined-candidate machine gates.
 - [ ] Route a later exact release-effect WorkUnit after mandatory behavior,
   final artifacts, and support claims qualify.
@@ -125,7 +125,10 @@ replay and must not retag changed bytes.
 
 ## Retrospective
 
-The contract-source candidate is prepared for exact independent review. It
-does not select a final version, qualify a shipping profile, alter release
-assets, or authorize a publication effect. The earlier admission record
-remains historical evidence of the boundary at that checkpoint.
+The repaired contract source received independent exact `ACCEPT` at
+`d38e5839`. Separate projection WorkUnit
+`AIDE-STABLE-CONTRACT-PROJECTION-01` regenerated and reviewed local preview
+assets, passed committed machine/replay checks and integrated `dev@2defcad5`.
+The earlier admission and `aa3bcfec` REQUEST_CHANGES records remain
+historical evidence. This WorkUnit selected no version or tag and qualified
+no shipping profile or publication effect.

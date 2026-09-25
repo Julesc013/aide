@@ -52,6 +52,17 @@ older branch or silently rebuild reviewed bytes.
 - [x] Confirm independent acceptance of the frozen contract repair source.
 - [x] Generate and qualify derived previews and exact delivered artifacts
   locally, including the 25-command extracted ZIP/tar consumer.
-- [ ] Prove committed replay and canonical checks.
-- [ ] Obtain independent artifact and dev-effect verdict.
-- [ ] Integrate qualified candidate into `dev` and observe remote identity.
+- [x] Prove committed four-command zero-diff replay and canonical checks.
+- [x] Obtain independent exact artifact and dev-effect verdict.
+- [x] Integrate qualified candidate into `dev` and observe remote identity.
+
+## Retrospective
+
+The source contract review remained separate from projection and effect
+review. Projection `d0bfa404` retained the consumer-tested archives;
+metadata convergence `2defcad5` passed four-command zero-diff replay and
+canonical checks. Independent conditional GO led to one-writer local dev
+fast-forward and normal push, with local/tracking/ls-remote/API refs all
+observed at `2defcad5`. The running-task evidence gap is closed separately
+in this WorkUnit. Final stable profile, main, tag, publication and downloaded
+consumer acceptance remain parent-campaign work.

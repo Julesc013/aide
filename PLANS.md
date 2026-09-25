@@ -3873,6 +3873,20 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   qualify committed artifact provenance and zero-change replay, obtain
   independent artifact/dev-effect review and perform only qualified dev
   integration. Main/tag/publication remain later gates.
+
+## 2026-09-25 - Stable Lite contract preview integrated in dev
+
+- Exact contract source `d38e5839` received independent technical `ACCEPT`.
+  Projection candidate `2defcad5` preserved clean-source ZIP/tar bytes,
+  passed 25 extracted consumer commands, committed canonical checks and a
+  zero-change four-command release replay; independent review gave conditional
+  GO for dev only.
+- Fresh effect checks passed. One writer fast-forwarded and normally pushed
+  `dev@2defcad5`, tree `14b13c20`; local/tracking/ls-remote/GitHub API refs
+  matched. Source and projection WorkUnits close with warnings about the
+  unqualified stable profile, version, main, publication and downloaded
+  consumers. The next critical path is final declared-platform lifecycle,
+  restart, offline and context/evidence qualification from frozen bytes.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

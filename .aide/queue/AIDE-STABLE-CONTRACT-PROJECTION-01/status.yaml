@@ -1,19 +1,20 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-CONTRACT-PROJECTION-01
-status: running
-classification: artifact_projection_admitted
-planning_state: admitted
-result: PENDING
+status: passed
+classification: artifact_projection_integrated_dev
+planning_state: integrated_dev
+result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
 source_candidate: d38e5839fe102fd4b38dc29971877753ccb6e2ec
-next_slice: commit_bounded_release_metadata_convergence_then_zero_diff_replay
-review_gate: exact_artifact_and_dev_effect_review
-dev_integration_performed: false
+next_slice: final_stable_profile_qualification_and_release_effect_workunit
+review_gate: exact_artifact_and_dev_effect_review_passed
+dev_integration_performed: true
 main_promotion_performed: false
 tag_created: false
 release_published: false
 notes:
   - Independent exact source-contract rereview ACCEPT is recorded in evidence/source-review-acceptance.md; this does not qualify artifacts or dev effect.
-  - This WorkUnit carries the export-provenance failure openly until exact regenerated committed outputs pass canonical checks.
+  - Exact regenerated committed outputs passed pack-status, validate, doctor and four-command zero-diff release replay.
   - No stable release or public compatibility claim follows from local preview projection.
-  - Projection d0bfa404 carries consumer-tested ZIP/tar bytes; first post-commit release replay changed 18 metadata files with archives unchanged. Zero-diff replay remains open.
+  - Projection d0bfa404 carries consumer-tested ZIP/tar bytes; first post-commit replay changed 18 metadata files, then 2defcad5 replay changed zero files with archives unchanged.
+  - Independent 2defcad5 artifact/effect review allowed only fast-forward dev and normal push; all four observed dev refs equal that commit after the effect.

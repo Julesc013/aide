@@ -1,13 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-RELEASE-CONTRACT-01
-status: needs_review
-classification: contract_source_candidate
-planning_state: admitted
-result: PENDING
+status: passed
+classification: contract_source_integrated_dev
+planning_state: integrated_dev
+result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
-current_slice: repair_after_exact_request_changes
-next_slice: superseding_exact_source_review_then_separate_artifact_projection
-review_gate: independent_technical_review_of_exact_contract_change
+current_slice: accepted_contract_source_and_preview_integrated_dev
+next_slice: final_stable_profile_qualification_and_release_effect_workunit
+review_gate: source_and_preview_dev_effect_review_passed
 version_selected: false
 public_compatibility_contract_adopted: false
 stable_support_profile_qualified: false
@@ -21,5 +21,6 @@ notes:
   - Read-only GitHub release and tag observations were supplied by the parent controller and require source-bound custody in contract execution.
   - Q47 and Q48 local outputs retain preview-only, no-publish status.
   - The candidate defines a conditional first-version rule and a bounded Windows Lite profile; it does not choose a tag or qualify final release bytes.
-  - Consequential queue, review, version and support changes await an independent exact technical verdict before dev integration.
+  - Exact d38e5839 source ACCEPT, 2defcad5 preview artifact ACCEPT_WITH_NOTES, and conditional dev-effect GO are recorded; local and remote dev integration was observed.
   - The aa3bcfec exact review returned REQUEST_CHANGES; committed pack-status, validate, and doctor failed due stale export provenance. A separate bounded projection must restore machine gates.
+  - Projection restored committed pack-status, validate, doctor and zero-diff release replay. The conditional profile remains unqualified; no version, tag or release was selected.

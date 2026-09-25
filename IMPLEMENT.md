@@ -11858,6 +11858,24 @@ Owner review found a final-write race in the first candidate. The repair now pub
   artifact, replay, canonical and dev-effect gates.
 - Admission changed queue and planning records only; generation, technical
   acceptance, dev mutation, main and publication remain unperformed.
+
+## 2026-09-25 - Stable Lite contract preview dev integration
+
+- Independent source rereview accepted exact `d38e5839`. From clean source
+  `8365aa61`, serial export/changelog/bundle/draft generation produced local
+  ZIP `8c4fbef7…` and tar `11c95b9c…`; 25 extracted consumer commands passed
+  with five expected refusals, and Q47/Q48 passed 18/18 and 11/11.
+- Projection `d0bfa404` retained those archive bytes. Its first post-commit
+  release replay changed 18 metadata files and failed zero diff; explicit
+  convergence at `2defcad5` replayed four commands with zero changes.
+  Committed pack-status, validate and doctor passed; ten commit messages in
+  the dev range passed. Independent artifact review accepted the local
+  preview with notes and gave conditional dev-effect GO.
+- After fresh clean worktree, identity, exact hash, ancestry and four-ref
+  checks, local `dev` fast-forward and normal push exited 0. Local, tracking,
+  ls-remote and GitHub API all observed `2defcad5`, tree `14b13c20`.
+  This closeout records exact hashes, commands and remaining release work in
+  the two WorkUnits; it adds no new runtime or archive bytes.
 ## 2026-09-25 - Project-owned successive update source candidate
 
 - The three-way update WorkUnit reproduced two current defects on its admitted
