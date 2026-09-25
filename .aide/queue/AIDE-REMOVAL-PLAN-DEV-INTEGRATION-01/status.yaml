@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+id: AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01
+status: running
+planning_state: source_merge_pending
+result: PENDING
+updated_at: 2026-09-25
+base_dev: 1c75abf1d93b34be8998383ea2ce4c9084c9d612
+source_candidate: d1362f912c951ccc6022d0a2a3a527a4d66365f1
+next_action: merge_source_preserve_current_generator_and_reconcile_actual_conflicts

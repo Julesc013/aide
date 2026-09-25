@@ -3510,3 +3510,13 @@ items:
     prompt: .aide/queue/AIDE-HOST-APIQUERY-DEV-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-HOST-APIQUERY-DEV-INTEGRATION-01/evidence
     description: Preserve reviewed API-query source and both parent histories without activating native or hosted effects.
+  - id: AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01
+    status: running
+    planning_state: source_merge_pending
+    result: PENDING
+    title: Integrate delivered-pack removal planner with current dev
+    task: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/prompt.md
+    evidence: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/evidence
+    description: Reconcile planner source with later dev work and regenerate current-source portable and local release outputs.
