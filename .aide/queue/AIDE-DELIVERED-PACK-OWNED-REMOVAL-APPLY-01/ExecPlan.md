@@ -35,8 +35,15 @@ content, and leave a clear recovery state across interruptions.
   is explicitly `PARTIAL_REMOVAL`.
 - [ ] Reconcile the shared lifecycle lock and pinned-directory helper from the
   separately reviewed repair stream. Run tests on actual combined source.
-- [ ] Complete anchored managed-section removal, receipt retirement, consumer
-  qualification, independent review, and integration.
+- [x] Add anchored whole-file removal only for the exact new-project
+  `AGENTS.md` scaffold with a receipt-matching managed block. Delete the
+  runner last and retire the receipt only after all recorded managed paths
+  are removed or already absent. Test interrupted receipt retirement and
+  unknown/new bytes at previously absent paths.
+- [ ] Implement anchored managed-section removal inside authored brownfield
+  `AGENTS.md`; preserve that file, the runner, and receipt meanwhile.
+- [ ] Run combined-source and extracted consumer qualification, independent
+  review, and integration after the shared helper dependency is accepted.
 
 ## Recovery and risks
 
@@ -50,3 +57,8 @@ The six apply regressions pass only with a temporary in-process import of one
 frozen repair-helper snapshot; this does not constitute combined-source
 acceptance. The partial result retains the portable CLI runner so a target can
 still inspect and reconcile its receipt or intent after the file effects.
+The later conditional-detach source candidate retains an exact target-local
+intent through receipt retirement; after the runner is deleted, recovery must
+use the extracted pack CLI. It does not remove authored content or claim
+general rollback. The separate validation record identifies current tests and
+the stale generated-pack provenance in this source branch.
