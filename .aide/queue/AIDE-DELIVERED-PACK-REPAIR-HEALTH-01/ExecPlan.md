@@ -58,4 +58,5 @@ artifact or real target is changed by this admission.
 - [x] Bounded task branch/worktree admitted.
 - [x] Admitted source rejected `repair-health` as an unknown command (CLI exit 2); implemented read-only inspection and ran the frozen source-focused tests, including extracted ZIP consumer tests. See `evidence/source-candidate.md`.
 - [x] Independently review frozen source `03c5e7f8`; it returned REQUEST_CHANGES for forged receipt baseline and source-to-target mapping. Superseding source and no-write regressions are in `evidence/receipt-baseline-repair.md`.
-- [ ] Independently rereview the superseding source; combine and qualify delivered bytes. Keep this WorkUnit running until those gates close.
+- [x] Independently rereview `486aa2bd`; it returned REQUEST_CHANGES for a valid CRLF pack template whose raw block hash was normalized before comparison. The exact report and repair are in `evidence/crlf-template-repair.md`.
+- [ ] Independently rereview the CRLF repair; combine and qualify delivered bytes. Keep this WorkUnit running until those gates close.

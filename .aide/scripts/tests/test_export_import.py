@@ -2750,6 +2750,26 @@ class ExportImportTests(unittest.TestCase):
         self.assertFalse(row["repair_eligible"])
 
     @unittest.skipUnless(os.name == "nt", "anchored repair health inspection is Windows only")
+    def test_repair_health_accepts_raw_crlf_pack_agents_baseline(self) -> None:
+        source = self.make_source_repo()
+        pack = self.freeze_pack(source, "repair-health-crlf-template-pack")
+        agents_template = pack / "files/AGENTS.md.template"
+        agents_template.write_bytes(agents_template.read_bytes().replace(b"\n", b"\r\n"))
+        aide_lite.write_text(pack / "checksums.json", aide_lite.stable_json_text(aide_lite.build_pack_checksums(pack)))
+        self.assertEqual(aide_lite.validate_pack_checksums(pack), (True, []))
+        target = source.parent / "repair-health-crlf-template-target"
+        (target / "AGENTS.md").parent.mkdir(parents=True, exist_ok=True)
+        (target / "AGENTS.md").write_bytes(b"# Authored project guidance\r\n")
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+        before = sorted((str(path.relative_to(target)), path.read_bytes()) for path in target.rglob("*") if path.is_file())
+        health = aide_lite.inspect_portable_repair_health(pack, target)
+        after = sorted((str(path.relative_to(target)), path.read_bytes()) for path in target.rglob("*") if path.is_file())
+        self.assertEqual(before, after)
+        agents = next(item for item in health["observations"] if item["path"] == "AGENTS.md")
+        self.assertEqual(agents["state"], "MATCHING")
+        self.assertEqual(health["status"], "HEALTHY")
+
+    @unittest.skipUnless(os.name == "nt", "anchored repair health inspection is Windows only")
     def test_repair_health_v1_section_overlay_disabled_and_pending_intents(self) -> None:
         source = self.make_source_repo()
         pack = self.freeze_pack(source, "repair-health-receipts-pack")

@@ -42553,7 +42553,12 @@ def inspect_portable_repair_health(pack_root: Path, target_root: Path) -> dict[s
             if any(rel.startswith(PORTABLE_OPTIONAL_FEATURES[feature]) for feature in receipt.get("disabled_features", [])):
                 observation["reason"] = "receipt claims ownership of a disabled feature"
                 continue
-            pack_digest = predecessor_installed_digest(pack_root, source_rel, entry["kind"])
+            source = pack_root / "files" / source_rel
+            if entry["kind"] == "portable_managed_section":
+                pack_block = portable_managed_block(source.read_bytes().decode("utf-8"))
+                pack_digest = digest_bytes(pack_block.encode("utf-8")) if pack_block is not None else None
+            else:
+                pack_digest = sha256_file(source)
             if pack_digest is None or entry["source_digest"] != pack_digest:
                 observation["reason"] = "receipt source baseline differs from validated pack bytes"
                 continue
