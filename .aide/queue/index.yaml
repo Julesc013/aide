@@ -3532,7 +3532,7 @@ items:
     description: Reconcile planner source with later dev work and regenerate current-source portable and local release outputs.
   - id: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01
     status: running
-    planning_state: admitted_source_implementation
+    planning_state: partial_source_candidate_shared_helper_pending
     result: PENDING
     title: Apply receipt-owned delivered-pack removal safely
     task: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01/task.yaml

@@ -11566,3 +11566,16 @@ DLL mapping, image or grant effect is part of this source implementation.
   advanced remote dev to `ae0e29e98eb436136f1d62d7830a4d8b20251b32`,
   matching the local primary and task integration branch; GitHub's ref endpoint
   returned the same object.
+
+## 2026-09-25 - Partial receipt-owned removal apply checkpoint
+
+- Source checkpoint `cd636c9c` adds exact-plan Windows removal of unchanged
+  receipt-owned regular files through a pinned, same-handle digest/delete path.
+  It keeps a recoverable intent and refuses changed leaves, junctions, hard
+  links, and competing writers. The portable runner, authored content,
+  `AGENTS.md` section, and receipt remain.
+- Six adversarial tests passed with a frozen in-memory copy of the pending
+  shared repair helper; three existing planner tests and one installed-runner
+  check passed. Direct branch apply fails at the absent helper dependency.
+  Complete detach, combined-source/consumer qualification, independent review,
+  and dev integration remain pending. The CLI reports `PARTIAL_REMOVAL`.
