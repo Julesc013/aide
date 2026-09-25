@@ -49,9 +49,11 @@ intake and queue before these reports can name a next WorkUnit.
 
 After the target admits project-owned WorkUnits, `task status` and `task
 next-plan` direct the operator to inspect that target queue's status and
-evidence. They do not recommend AIDE's self-hosting X-OS phase sequence when
-the source routing WorkUnits are absent, and they do not authorize task
-execution. The source repository retains its existing X-OS phase routing.
+evidence. A target profile takes precedence even if a queue ID happens to
+match an AIDE source phase. Target next-plan reports omit AIDE source
+readiness fields and do not authorize task execution. The AIDE self-hosting
+profile retains its existing X-OS phase routing. Legacy fixtures without a
+profile use exact source queue IDs to retain their historical routing.
 
 `blocker status` and `blocker classify` convert visible blocked, review-gated, or deferred state into typed report records. A repairable marker means "candidate for a future reviewed repair WorkUnit"; it is not proof that a repair was executed.
 

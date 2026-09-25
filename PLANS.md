@@ -3931,7 +3931,10 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   follow-up before the next artifact projection. Its one-item regression was
   red, then all 10 focused tests passed after source routing was limited to
   exact self-hosting queue records. Canonical validate/doctor still fail on
-  stale export provenance, which the later projection must clear.
+  stale export provenance, which the later projection must clear. Independent
+  review accepted `e88a1468` with notes about ID collisions and static
+  next-plan fields. The superseding profile-aware repair passes 11 tests and
+  awaits a focused changed-source review.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

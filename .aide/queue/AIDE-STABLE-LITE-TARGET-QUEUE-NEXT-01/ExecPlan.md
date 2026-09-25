@@ -36,5 +36,9 @@ delta from its evidence-only closeout.
 - [x] Reproduce red one-item target queue regression.
 - [x] Implement and pass 10 focused tests; canonical checks retain stale
       export provenance failures until the separate projection.
-- [ ] Obtain exact independent delta review.
+- [x] Obtain independent ACCEPT_WITH_NOTES for `e88a1468`; retain its
+      copied-ID and static target next-plan notes.
+- [x] Add profile-aware routing and target-only next-plan presentation;
+      11 focused tests now pass.
+- [ ] Obtain exact independent review of the superseding changed source.
 - [ ] Route accepted source to projection and installed-byte qualification.

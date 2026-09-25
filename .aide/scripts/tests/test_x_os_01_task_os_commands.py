@@ -288,8 +288,28 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             self.assertIn("`FIXTURE-TASK`: status=running", task_status)
             aide_lite.write_task_os_next_plan(root)
             next_plan = (root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH).read_text(encoding="utf-8")
-            self.assertIn("- `Review target-owned queue WorkUnits`", next_plan)
+            self.assertIn("selected_next_workunit: Review target-owned queue WorkUnits", next_plan)
             self.assertNotIn("- `X-OS-01 - Task OS Report-Only Commands`", next_plan)
+            self.assertNotIn("x_os_01_status:", next_plan)
+
+    def test_target_profile_overrides_colliding_aide_source_task_id(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            add_queue_task(root, "X-OS-01-aide-task-os-report-only-commands")
+            (root / ".aide/profile.yaml").write_text(
+                "schema_version: aide.profile.template.v0\n"
+                "profile_id: fixture-target\n"
+                "status: target_template\n",
+                encoding="utf-8",
+            )
+            context = aide_lite.task_os_context(root)
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertEqual(selection["task"], "Review target-owned queue WorkUnits")
+            aide_lite.write_task_os_next_plan(root)
+            next_plan = (root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH).read_text(encoding="utf-8")
+            self.assertNotIn("x_os_01_status:", next_plan)
+            self.assertNotIn("selecting AIDE-APPLY-00", next_plan)
 
     def test_checkpoint_and_next_plan_use_queue_truth_after_x_os_02(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -390,6 +410,7 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             self.assertIn("authorizes only planning, not lifecycle apply execution", next_text)
 
     def test_current_repo_validation_registration_passes(self) -> None:
+        self.assertEqual(aide_lite.task_os_profile_role(REPO_ROOT), "aide_source")
         checks = aide_lite.validate_task_os_command_files(REPO_ROOT)
         failures = [check.message for check in checks if check.severity == "FAIL"]
         self.assertEqual(failures, [])

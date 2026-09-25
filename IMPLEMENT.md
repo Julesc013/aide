@@ -12018,4 +12018,7 @@ Owner review found a final-write race in the first candidate. The repair now pub
   The narrow source selector now requires exact AIDE self-hosting queue
   records; all 10 focused tests pass, preserving source post-apply routing.
   Canonical validate/doctor correctly report stale export provenance until a
-  separate generator projection. No generated artifact or dev effect occurred.
+  separate generator projection. Independent `e88a1468` review exposed a
+  copied source-ID collision and static next-plan advice. The superseding
+  profile-aware source repair passes 11 focused tests; no generated artifact
+  or dev effect occurred.

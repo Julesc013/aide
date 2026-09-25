@@ -5714,6 +5714,16 @@ def task_os_status_field(text: str, key: str, default: str = "") -> str:
     return match.group(1).strip() if match else default
 
 
+def task_os_profile_role(repo_root: Path) -> str:
+    profile = repo_root / ".aide/profile.yaml"
+    if not profile.exists():
+        return "unknown"
+    profile_text = read_text(profile)
+    profile_id = task_os_status_field(profile_text, "profile_id").strip("\"'")
+    profile_mode = task_os_status_field(profile_text, "profile_mode").strip("\"'")
+    return "aide_source" if profile_id == "aide-self-hosting" and profile_mode == "self-hosting" else "target"
+
+
 def task_os_warning_counts(text: str) -> dict[str, int]:
     counts: dict[str, int] = {}
     in_warnings = False
@@ -5771,6 +5781,19 @@ TASK_OS_SOURCE_ROUTING_TASK_IDS = {
     TASK_OS_STATUS_REPAIR_TASK_ID,
 }
 TASK_OS_LIFECYCLE_PLAN_TASK_LABEL = "AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning"
+
+
+def task_os_source_routing_enabled(context: dict[str, object]) -> bool:
+    role = context.get("task_os_profile_role", "unknown")
+    if role == "target":
+        return False
+    if role == "aide_source":
+        return True
+    tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    return any(
+        isinstance(task, dict) and task.get("id") in TASK_OS_SOURCE_ROUTING_TASK_IDS
+        for task in tasks
+    )
 
 
 def task_os_done_local(status: str) -> bool:
@@ -5847,11 +5870,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             "aide_apply_00_next_packet_ready": False,
             **post_apply_fields,
         }
-    tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
-    if not any(
-        isinstance(task, dict) and task.get("id") in TASK_OS_SOURCE_ROUTING_TASK_IDS
-        for task in tasks
-    ):
+    if not task_os_source_routing_enabled(context):
         return {
             "task": "Review target-owned queue WorkUnits",
             "reason": "The queue has no AIDE self-hosting routing WorkUnit; inspect its own task status and evidence before selecting next work.",
@@ -6056,6 +6075,7 @@ def task_os_context(repo_root: Path) -> dict[str, object]:
         "schema_version": "aide.task-os-command-context.v0",
         "generated_at": "deterministic",
         "repo_root": normalize_rel(repo_root),
+        "task_os_profile_role": task_os_profile_role(repo_root),
         "current_branch": git_current_branch_name(repo_root),
         "current_commit": safe_git_head_commit(repo_root),
         "current_toml_state": current_toml.get("current_toml_state", "unknown"),
@@ -6688,6 +6708,25 @@ def write_task_os_next_plan(repo_root: Path) -> WriteResult:
     context = task_os_context(repo_root)
     selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Next Plan", "task-os next plan", context)
+    if not task_os_source_routing_enabled(context):
+        lines.extend(
+            [
+                "## Target Queue Next Work",
+                "",
+                f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
+                f"- reason: {selection.get('reason', '')}",
+                f"- task_count: {context.get('task_count', 0)}",
+                f"- latest_indexed_task_id: {context.get('latest_indexed_task_id', '') or 'none'}",
+                f"- latest_task_packet_id: {context.get('latest_task_id', '') or 'none'}",
+                "",
+                "## Boundary",
+                "",
+                "- this report does not execute or authorize a target WorkUnit",
+                "- choose next work under the target repository's own queue policy and evidence",
+                "",
+            ]
+        )
+        return write_text_if_changed(repo_root / TASK_OS_NEXT_PLAN_REPORT_PATH, "\n".join(lines))
     lines.extend(
         [
             "## Selected Next Task",

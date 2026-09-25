@@ -14,6 +14,13 @@
   `D:/Projects/AIDE/_review_scratch/stable-lite-target-queue-next-20260925/x-os-01-focused.log`,
   SHA-256 `6217fc734c1bf44cf1738d1b21286c55216af4861345c29a14dac23635437be7`.
 - PASS: Python AST parse of `.aide/scripts/aide_lite.py` exited 0.
+- RED after the `e88a1468` review: a target profile with a copied exact
+  `X-OS-01` queue ID selected source `X-OS-02`. The new collision regression
+  exited 1 before profile-aware routing was implemented.
+- PASS after profile-aware routing: 11 focused Task OS tests exited 0,
+  including the collision case, target-specific next-plan presentation and
+  source self-hosting profile check. External log SHA-256
+  `1ae9f90e295f155bf0ffe2a423ee7e996b27d1082ee239f12073aa0980ab5872`.
 - FAIL, retained as projection gate: `py -3 -B .aide/scripts/aide_lite.py
   validate` exited 1, SHA-256 log
   `3015a89c5c985bd69736bb1e1a105813bfab6916e8572e3489a78b2c4ef4866d`.
