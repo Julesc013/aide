@@ -32,8 +32,10 @@ WorkUnit closes that race for owned repair intent and payload only.
   obtain independent ACCEPT_WITH_NOTES for dev source integration.
 - [x] Generate and locally validate the current-source portable pack and
   release/draft outputs with non-circular provenance.
-- [ ] Qualify extracted consumers, obtain artifact verdict, converge and prove
-  zero-change postcommit replay.
+- [x] Qualify exact extracted ZIP/tar consumers and delivered-script races;
+  independent reviewer accepted the frozen local artifact scope.
+- [ ] Commit the expected source-ancestor metadata convergence, then prove
+  zero-change postcommit replay across all 44 release files.
 - [ ] Observe exact remote dev after qualified fast-forward integration.
 
 ## Recovery

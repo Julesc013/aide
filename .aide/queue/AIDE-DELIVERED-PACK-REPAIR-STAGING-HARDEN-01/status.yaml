@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 id: AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01
 status: running
-planning_state: artifact_consumer_and_replay_pending
+planning_state: metadata_convergence_replay_pending
 result: PENDING
 updated_at: 2026-09-25
 base_dev: 9a8b08700ef7356ee75b6750f3a53c97a4a56e3e
-next_action: qualify_frozen_artifact_consumers_then_postcommit_replay
+next_action: commit_source_ancestor_metadata_then_prove_zero_change_replay
