@@ -54,3 +54,13 @@ interruption, wrong identities and mode, changed controls, rival edits, linked
 postimages, old intents, and changed manual resolution bytes. The full importer
 suite remains running; its result is not yet claimed. Source review and
 delivered-byte qualification remain pending.
+
+Independent source review of frozen `547ea2b0` returned `REQUEST_CHANGES`:
+forged, self-digested target intent could overwrite an authored file, and a
+controls edit injected at receipt publication could produce a stale successful
+receipt. The initial full importer run on that rejected subject was stopped;
+it is not qualification for the repair. A superseding diff checks exact pack
+operation coverage, action/ownership legality against the receipt/predecessor,
+and controls/resolution inputs after receipt publication before retiring the
+intent. Both reproduced defects and omitted-payload forgery now have passing
+Windows regressions; full suite and independent rereview remain open.

@@ -42157,12 +42157,35 @@ def recover_partial_import(
         if expected_writes != pending.get("operations"):
             return refused()
         included = set(pack_manifest_list(pack_root, "included_files"))
+        portable_safe_pack_targets(pack_root)
+        if predecessor_pack is not None:
+            portable_safe_pack_targets(predecessor_pack)
         template_targets = {
             ".aide/profile.template.yaml": ".aide/profile.yaml",
             ".aide/memory/project-state.template.md": ".aide/memory/project-state.md",
             ".aide/memory/decisions.template.md": ".aide/memory/decisions.md",
             ".aide/memory/open-risks.template.md": ".aide/memory/open-risks.md",
         }
+        expected_layout: list[tuple[str, str, str]] = []
+        expected_skipped: list[dict[str, str]] = []
+        for source in sorted(path for path in (pack_root / "files").rglob("*") if path.is_file()):
+            source_rel = normalize_rel(source.relative_to(pack_root / "files"))
+            reason = import_scope_skip_reason(source_rel, mode)
+            if reason:
+                expected_skipped.append({"source": source_rel, "reason": reason})
+                continue
+            target_rel = "AGENTS.md" if source_rel == "AGENTS.md.template" else source_rel
+            disabled_feature = next((feature_id for feature_id, prefix in PORTABLE_OPTIONAL_FEATURES.items()
+                if feature_id in disabled and target_rel.startswith(prefix)), None)
+            kind = "disabled_feature" if disabled_feature else "portable_managed_section" if source_rel == "AGENTS.md.template" else "managed_file"
+            expected_layout.append((source_rel, target_rel, kind))
+            if source_rel in template_targets:
+                expected_layout.append((source_rel, template_targets[source_rel], "target_owned_template"))
+        expected_layout.append(("<generated>", ".gitignore", "target_owned_additive"))
+        if skipped != expected_skipped or expected_layout != [
+            (item.get("source"), item.get("target"), item.get("kind")) for item in operations
+        ]:
+            return refused()
         seen: set[str] = set()
         resolution_data: dict[str, bytes] = {}
         resolution_targets = {str(item["target"]) for item in operations if item.get("action") == "resolve_owned"}
@@ -42201,6 +42224,116 @@ def recover_partial_import(
             observed = verified_observed_digest(target_rel)
             if observed not in {item.get("preimage_digest"), item.get("postimage_digest")}:
                 return refused()
+            preimage = item.get("preimage_digest")
+            postimage = item.get("postimage_digest")
+            source_digest = item.get("source_digest")
+            basis = item.get("ownership_basis")
+            if kind == "managed_file":
+                rows = prior_receipt.get("managed", {}) if prior_receipt else {}
+                prior_row = rows.get(target_rel) if isinstance(rows, dict) else None
+                entry = receipt_managed_entry(prior_receipt, target_rel, source_rel)
+                if prior_row is not None and (entry is None or entry.get("kind") != "managed_file"):
+                    return refused()
+                if action == "copy":
+                    if preimage != "missing" or prior_row is not None or postimage != source_digest or basis != "new_path":
+                        return refused()
+                elif action == "update_owned":
+                    receipt_owned = (
+                        entry is not None and entry.get("kind") == "managed_file"
+                        and entry.get("ownership") == "aide_portable_managed"
+                        and entry.get("local_overlay") is not True
+                        and entry.get("installed_digest") == preimage
+                        and receipt_matches_predecessor_baseline(predecessor_pack, source_rel, "managed_file", entry)
+                    )
+                    unrecorded_baseline = (
+                        prior_receipt is None and predecessor_pack is not None
+                        and predecessor_installed_digest(predecessor_pack, source_rel, "managed_file") == preimage
+                    )
+                    if (not (receipt_owned or unrecorded_baseline) or postimage != source_digest
+                        or basis != ("installed_receipt" if receipt_owned else "validated_predecessor_pack")):
+                        return refused()
+                elif action == "resolve_owned":
+                    if (entry is None or entry.get("kind") != "managed_file" or predecessor_pack is None
+                        or preimage in {"missing", "not-a-file", source_digest}
+                        or source_digest == entry.get("source_digest")
+                        or item.get("base_digest") != entry.get("source_digest")
+                        or predecessor_installed_digest(predecessor_pack, source_rel, "managed_file") != item.get("base_digest")
+                        or postimage != item.get("resolution_digest")
+                        or basis != "project_selected_three_way"):
+                        return refused()
+                elif action == "unchanged":
+                    if preimage != source_digest or postimage != source_digest or basis != "identical_incoming_bytes":
+                        return refused()
+                elif action == "preserve_local":
+                    if (entry is None or entry.get("kind") != "managed_file" or preimage in {"missing", "not-a-file", source_digest}
+                        or postimage != preimage or source_digest != entry.get("source_digest")
+                        or basis != "unchanged_upstream_project_bytes"):
+                        return refused()
+                else:
+                    return refused()
+            elif kind == "disabled_feature":
+                feature = next((feature_id for feature_id, prefix in PORTABLE_OPTIONAL_FEATURES.items()
+                    if feature_id in disabled and target_rel.startswith(prefix)), None)
+                if (feature is None or item.get("feature_id") != feature or action != "preserve_disabled"
+                    or preimage != postimage or basis != f"project_disabled_feature:{feature}"):
+                    return refused()
+            elif kind == "target_owned_template":
+                desired = digest_bytes(text_output_bytes(render_target_template(read_text(source), target_root)))
+                if action == "create_from_template":
+                    if preimage != "missing" or postimage != desired or basis != "target_owned_after_creation":
+                        return refused()
+                elif action == "preserve":
+                    if preimage in {"missing", "not-a-file"} or preimage != postimage or basis != "target_owned_after_creation":
+                        return refused()
+                else:
+                    return refused()
+            elif kind == "portable_managed_section":
+                rows = prior_receipt.get("managed", {}) if prior_receipt else {}
+                prior_row = rows.get(target_rel) if isinstance(rows, dict) else None
+                entry = receipt_managed_entry(prior_receipt, target_rel, source_rel)
+                if prior_row is not None and (entry is None or entry.get("kind") != "portable_managed_section"):
+                    return refused()
+                if action in {"unchanged", "preserve_local"} or observed == preimage:
+                    planned, conflict = agents_operation(source, source_rel,
+                        portable_target_path(target_root, target_rel), target_rel, prior_receipt, predecessor_pack)
+                    if conflict or planned != item:
+                        return refused()
+                elif action in {"merge_agents", "update_owned"}:
+                    current_block = portable_managed_block(read_text(portable_target_path(target_root, target_rel)))
+                    if (current_block is None or digest_bytes(current_block.encode("utf-8")) != source_digest
+                        or item.get("installed_digest") != source_digest or postimage != observed):
+                        return refused()
+                    if action == "merge_agents":
+                        if prior_row is not None or basis != "new_managed_section":
+                            return refused()
+                    elif not (
+                        (entry is not None and entry.get("ownership") == "aide_portable_managed"
+                         and entry.get("local_overlay") is not True
+                         and receipt_matches_predecessor_baseline(predecessor_pack, source_rel, "portable_managed_section", entry)
+                         and basis == "installed_receipt")
+                        or (prior_receipt is None and predecessor_pack is not None
+                            and predecessor_installed_digest(predecessor_pack, source_rel, "portable_managed_section") is not None
+                            and basis == "validated_predecessor_pack")
+                    ):
+                        return refused()
+                else:
+                    return refused()
+            elif kind == "target_owned_additive":
+                if action == "unchanged":
+                    if preimage != postimage or basis != "additive_ignore_rules":
+                        return refused()
+                elif action == "ensure_local_state_ignore":
+                    if basis != "additive_ignore_rules" or postimage != source_digest:
+                        return refused()
+                    if observed == preimage:
+                        existing = read_text(portable_target_path(target_root, target_rel)) if preimage != "missing" else None
+                        if digest_bytes(text_output_bytes(ensure_target_gitignore_text(existing))) != postimage:
+                            return refused()
+                    elif digest_bytes(text_output_bytes(ensure_target_gitignore_text(
+                        read_text(portable_target_path(target_root, target_rel))))) != postimage:
+                        return refused()
+                else:
+                    return refused()
             if action == "resolve_owned":
                 data = read_portable_resolution_bytes(Path(resolutions[target_rel]), pack_root, target_root)
                 if digest_bytes(data) != item.get("resolution_digest") or digest_bytes(data) != item.get("postimage_digest"):
@@ -42254,7 +42387,11 @@ def recover_partial_import(
             receipt_bytes = stable_json_text(next_receipt).encode("utf-8")
             portable_import_write_exact(target_root, PORTABLE_IMPORT_RECEIPT_PATH, receipt_bytes,
                 pending["receipt_preimage_digest"], pending.get("receipt_backup_rel"))
-            portable_import_delete_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(pending).encode("utf-8"))
+            inputs_changed = not external_inputs_match()
+            if not inputs_changed:
+                portable_import_delete_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(pending).encode("utf-8"))
+        if inputs_changed:
+            return refused()  # Keep intent when a rival changed inputs during receipt publication.
         return {"status": "RECOVERED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root),
             "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations,
             "written": sorted(written), "plan_digest": expected_plan_digest,

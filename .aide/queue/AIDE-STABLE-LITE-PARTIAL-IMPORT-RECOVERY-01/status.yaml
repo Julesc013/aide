@@ -5,9 +5,9 @@ classification: portable_partial_import_recovery
 planning_state: admitted
 result: PENDING
 updated_at: 2026-09-26
-current_slice: source_candidate_and_full_importer_suite
-next_slice: independent_source_review_then_artifact_projection
-review_gate: independent_source_review_pending
+current_slice: superseding_source_repair_after_request_changes
+next_slice: full_importer_suite_and_independent_source_rereview
+review_gate: independent_source_rereview_pending
 main_promotion_performed: false
 tag_created: false
 release_published: false

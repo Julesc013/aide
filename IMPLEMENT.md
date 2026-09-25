@@ -12076,3 +12076,11 @@ Owner review found a final-write race in the first candidate. The repair now pub
   rival, linked-file and resolution-change regressions pass. The full importer
   suite, independent source review, delivered archive checks, dev integration
   and stable release remain open.
+  Independent review rejected exact source `547ea2b0`: a recomputed target
+  intent could relabel an authored file as AIDE-owned and overwrite it, and
+  project controls could change during receipt publication without retaining
+  recovery state. The superseding source checks complete payload coverage and
+  per-kind ownership/action against the prior receipt and predecessor, then
+  rechecks controls and resolution bytes before intent retirement. Regressions
+  now pass for both defects and for omission of an included pack path. Full
+  suite, rereview and artifact qualification remain open.

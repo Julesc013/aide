@@ -1271,6 +1271,111 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual((target / resolved_rel).read_bytes(), b"project and upstream\n")
         self.assertEqual((target / other_rel).read_text(encoding="utf-8"), "version: other-edit\n")
 
+    @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
+    def test_redigested_partial_intent_cannot_relabel_authored_file_as_owned(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "forged-partial")
+        target = source_root.parent / "forged-partial-target"
+        first = aide_lite.apply_import_pack(pack, target, fail_after_writes=1)
+        self.assertEqual(first["recovery"]["classification"], "partial")
+        intent_path = target / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+        intent = aide_lite.load_portable_import_intent(target)
+        snapshot = intent["plan_snapshot"]
+        operation = next(item for item in snapshot["operations"]
+            if item["kind"] == "managed_file" and item["action"] == "copy"
+            and item["target"] not in first["written"])
+        authored = target / operation["target"]
+        authored.parent.mkdir(parents=True, exist_ok=True)
+        authored.write_bytes(b"authored after interruption\n")
+        authored_digest = aide_lite.sha256_file(authored)
+        operation["action"] = "update_owned"
+        operation["ownership_basis"] = "installed_receipt"
+        operation["preimage_digest"] = authored_digest
+        forged_plan = aide_lite.import_plan_digest(pack, target, "safe",
+            snapshot["operations"], [], snapshot["skipped"], None)
+        intent["plan_digest"] = forged_plan
+        intent["next_receipt"] = aide_lite.build_portable_import_receipt(
+            pack, "safe", snapshot["operations"], forged_plan, None)
+        intent["receipt_postimage_digest"] = aide_lite.digest_bytes(
+            aide_lite.stable_json_text(intent["next_receipt"]).encode("utf-8"))
+        pending_operation = next(item for item in intent["operations"] if item["target"] == operation["target"])
+        pending_operation["preimage_digest"] = authored_digest
+        relative = Path(operation["target"])
+        pending_operation["backup_rel"] = (relative.parent /
+            f".{relative.name}.aide-import-backup-{forged_plan[:20]}").as_posix()
+        intent["intent_digest"] = aide_lite.portable_import_record_digest(intent, "intent_digest")
+        intent_path.write_text(aide_lite.stable_json_text(intent), encoding="utf-8")
+        self.assertEqual(aide_lite.classify_portable_import_recovery(target, intent)["classification"], "partial")
+
+        refused = aide_lite.apply_import_pack(pack, target,
+            expected_plan_digest=forged_plan, recover_partial=True)
+        self.assertEqual(refused["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(authored.read_bytes(), b"authored after interruption\n")
+        self.assertTrue(intent_path.exists())
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
+    def test_partial_recovery_retains_intent_when_controls_change_during_receipt_write(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "partial-controls-race")
+        target = source_root.parent / "partial-controls-race-target"
+        interrupted = aide_lite.apply_import_pack(pack, target, fail_after_writes=1)
+        self.assertEqual(interrupted["recovery"]["classification"], "partial")
+        controls = target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
+        original_write = aide_lite.portable_import_write_exact
+        inserted = False
+
+        def insert_controls(root: Path, target_rel: str, data: bytes, preimage: str,
+            backup_rel: str | None = None):
+            nonlocal inserted
+            result = original_write(root, target_rel, data, preimage, backup_rel)
+            if target_rel == aide_lite.PORTABLE_IMPORT_RECEIPT_PATH and not inserted:
+                aide_lite.write_text(controls, aide_lite.stable_json_text({
+                    "schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA_V2,
+                    "entries": {}, "disabled_features": [],
+                }))
+                inserted = True
+            return result
+
+        with mock.patch.object(aide_lite, "portable_import_write_exact", side_effect=insert_controls):
+            result = aide_lite.apply_import_pack(pack, target,
+                expected_plan_digest=interrupted["plan_digest"], recover_partial=True)
+        self.assertTrue(inserted)
+        self.assertEqual(result["status"], "RECOVERY_REQUIRED")
+        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+        self.assertNotEqual(aide_lite.load_portable_import_receipt(target)["project_controls_digest"],
+            aide_lite.sha256_file(controls))
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
+    def test_redigested_partial_intent_cannot_omit_payload_coverage(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "omitted-partial")
+        target = source_root.parent / "omitted-partial-target"
+        interrupted = aide_lite.apply_import_pack(pack, target, fail_after_writes=1)
+        self.assertEqual(interrupted["recovery"]["classification"], "partial")
+        intent_path = target / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+        intent = aide_lite.load_portable_import_intent(target)
+        snapshot = intent["plan_snapshot"]
+        omitted = next(item for item in snapshot["operations"]
+            if item["kind"] == "managed_file" and item["action"] == "copy"
+            and item["target"] not in interrupted["written"])
+        snapshot["operations"].remove(omitted)
+        intent["operations"] = [item for item in intent["operations"]
+            if item["target"] != omitted["target"]]
+        forged_plan = aide_lite.import_plan_digest(pack, target, "safe",
+            snapshot["operations"], [], snapshot["skipped"], None)
+        intent["plan_digest"] = forged_plan
+        intent["next_receipt"] = aide_lite.build_portable_import_receipt(
+            pack, "safe", snapshot["operations"], forged_plan, None)
+        intent["receipt_postimage_digest"] = aide_lite.digest_bytes(
+            aide_lite.stable_json_text(intent["next_receipt"]).encode("utf-8"))
+        intent["intent_digest"] = aide_lite.portable_import_record_digest(intent, "intent_digest")
+        intent_path.write_text(aide_lite.stable_json_text(intent), encoding="utf-8")
+        self.assertEqual(aide_lite.classify_portable_import_recovery(target, intent)["classification"], "partial")
+        refused = aide_lite.apply_import_pack(pack, target,
+            expected_plan_digest=forged_plan, recover_partial=True)
+        self.assertEqual(refused["status"], "RECOVERY_REQUIRED")
+        self.assertTrue(intent_path.exists())
+
     @unittest.skipUnless(sys.platform == "win32", "Windows junction boundary")
     def test_rollback_pack_rejects_reparse_payload_and_pack_roots(self) -> None:
         temp = tempfile.TemporaryDirectory()
