@@ -28,6 +28,9 @@ qualify full lifecycle, native/hosted operation, main, or publication.
 - [x] Reconcile both CLI commands, tests, queue history, and root records;
   combined importer 42/42 and release-adjacent 46/46 tests pass. Canonical
   validate and doctor pass. See `evidence/combined-source-validation.md`.
+- [x] Project local portable and release/draft artifacts from committed
+  combined source `71501c6b`; all generator validators pass. Archive
+  consumers, postcommit replay, and independent review remain pending.
 - [ ] Qualify regenerated artifacts and consumers.
 - [ ] Obtain independent combined acceptance and integrate dev.
 

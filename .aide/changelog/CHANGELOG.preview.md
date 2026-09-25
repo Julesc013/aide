@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 1a25e33effc5c8f32311da8cebdd6855ff3185cf
+source_head: 71501c6bb30bb19a6f7cb0056ba0f009d39a9b40
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,24 +11,20 @@ release_publishing: false
 
 ## Summary
 
-- Added: 3
-- Fixed: 12
-- Docs: 3
-- Internal: 32
+- Added: 4
+- Fixed: 7
+- Docs: 1
+- Internal: 38
 
 ## Added
 
 - local customization explanation and opt-in import feedback. (98de5ee1531e feat(import): explain downstream customization decisions)
 - exact historical message dispositions to the dev source ancestry. (e40aec47dd2d feat(git): merge exact historical dispositions into dev candidate)
+- restore a missing receipt-owned file from the exact delivered pack. (49f38d12f425 feat(import): repair one missing receipt-owned file)
 - receipt-backed read-only removal planning in the delivered portable CLI. (1a25e33effc5 feat(pack): integrate receipt-bound removal planning)
 
 ## Fixed
 
-- align durable release qualification records with the policy-compliant local commit identities. (9f4bbc0a7744 docs(release): bind final qualification checkpoint)
-- fail closed when either release-preview JSON identity is absent. (f147c9059e8b fix(release): require paired preview identities)
-- align target-policy comparison with GitHub branch-rules endpoint semantics. (e378d38e0c51 fix(github): compare endpoint-shaped branch rules)
-- deliver release artifacts that require paired preview identities and refuse missing JSON sources. (7897f7deb80c build(release): checkpoint paired-preview artifacts)
-- project paired-preview release provenance from actual artifact checkpoint 7897f7de. (d6642c3d81f6 build(release): project checkpoint 7897f7de provenance)
 - integrate endpoint-shaped effective GitHub rule comparison into the dev source. (6a581dbcfbd5 feat(github): merge reviewed target source with release dev)
 - refresh local export and release provenance for combined target source. (cda504b9a546 fix(release): refresh combined source portable artifacts)
 - bind local release metadata to the committed combined-source artifact ancestry. (d4bd4938fa43 fix(release): project committed combined source provenance)
@@ -39,15 +35,10 @@ release_publishing: false
 
 ## Docs
 
-- bind release summaries to the paired-preview fail-closed repair. (1397b703a9c1 docs(release): bind paired-preview repair source)
-- bind the repaired release-integrity candidate and its exact qualification evidence for review. (853d1c7a8486 docs(release): freeze replacement review candidate)
 - refresh preview-only release text for the combined source. (66ef462c2b1b docs(changelog): bind combined source previews)
 
 ## Internal
 
-- record source-review acceptance for a bounded dev integration. (f77ecba28741 audit(queue): record fresh release candidate review)
-- record local target source acceptance with retained qualification notes. (d81d953a7674 audit(queue): record fresh target source review)
-- register a source-only integration task. (43c86ffb92e1 audit(queue): admit target source dev integration)
 - register a local artifact refresh with no publication effect. (4deeed08be90 audit(queue): admit combined target pack refresh)
 - record qualified local combined-source artifacts and consumer evidence. (9cc4bb068837 audit(queue): qualify combined target artifacts)
 - close reviewed local source and artifact dev integration. (3bdeb220cb31 audit(queue): close release and target dev integration)
@@ -77,6 +68,15 @@ release_publishing: false
 - align host integration evidence with frozen local artifacts. (a55b804bb573 chore(queue): close host integration review evidence)
 - record isolated-host source integration with operational gates retained. (1c75abf1d93b chore(queue): record observed host source dev integration)
 - route removal planner through a bounded current-dev integration. (7bc4c9b5087b chore(queue): admit removal planner dev integration)
+- materialize the combined portable and local release projection. (9c284081fc33 build(pack): materialize combined removal-planner artifacts)
+- bind local release metadata to the combined source and artifact lineage. (2819385a5b3d build(release): bind combined removal artifacts to ancestry)
+- close review evidence for the removal-planner dev candidate. (ae0e29e98eb4 docs(queue): record reviewed removal integration candidate)
+- close observed dev integration of receipt-backed removal planning. (5dfa75e632b0 docs(queue): record removal planner on remote dev)
+- close reviewed ownership and path-race defects for one missing receipt-owned file. (52b338eef8ff fix(pack): serialize repair and import effects with pinned paths)
+- protect repair-intent cleanup from outside-target deletion. (45c5ce91132a fix(pack): delete repair intents through verified Windows handles)
+- close the owned repair source review for dev integration. (cdb3bd04f1ae docs(queue): record accepted owned repair source review)
+- plan reviewed repair integration with current dev. (d40c18ccc744 chore(queue): admit owned repair dev integration)
+- integrate one receipt-owned missing-file repair with delivered removal planning. (71501c6bb30b feat(pack): integrate reviewed owned repair with removal planner)
 
 ## Malformed Commits
 

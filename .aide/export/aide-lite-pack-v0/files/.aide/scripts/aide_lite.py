@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import builtins
+from contextlib import contextmanager
 import fnmatch
 import gzip
 import hashlib
@@ -20,10 +21,12 @@ import math
 import os
 import re
 import shutil
+import stat
 import subprocess
 import sys
 import tarfile
 import tempfile
+import threading
 import zipfile
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
@@ -2760,6 +2763,8 @@ IMPORT_MODES = {"safe", "full"}
 
 PORTABLE_IMPORT_RECEIPT_PATH = ".aide/install/aide-lite-pack-v0.receipt.json"
 PORTABLE_IMPORT_INTENT_PATH = ".aide/install/aide-lite-pack-v0.intent.json"
+PORTABLE_REPAIR_INTENT_PATH = ".aide/install/aide-lite-pack-v0.repair-intent.json"
+PORTABLE_LIFECYCLE_LOCK_PATH = ".aide/install/aide-lite-pack-v0.lifecycle.lock"
 PROJECT_CUSTOMIZATIONS_PATH = ".aide/customizations.json"
 PROJECT_CUSTOMIZATIONS_SCHEMA = "aide.project-customizations.v1"
 PORTABLE_IMPORT_RECEIPT_SCHEMA = "aide.portable-import-receipt.v1"
@@ -39389,6 +39394,234 @@ def atomic_write_bytes_if_changed(path: Path, data: bytes) -> WriteResult:
     return WriteResult(path, "written")
 
 
+def atomic_create_bytes_no_clobber(path: Path, data: bytes) -> None:
+    """Publish complete bytes only if the destination is still absent."""
+    if os.name != "nt":
+        raise ValueError("owned repair requires Windows anchored directory handles")
+    if not path.parent.is_dir():
+        raise ValueError(f"repair parent directory is missing: {path.parent}")
+    with windows_pinned_directory(path.parent) as directory_handle:
+        descriptor, temporary_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+        temporary = Path(temporary_name)
+        try:
+            with os.fdopen(descriptor, "wb") as handle:
+                handle.write(data)
+                handle.flush()
+                os.fsync(handle.fileno())
+                windows_link_from_handle(handle.fileno(), directory_handle, path.name)
+        finally:
+            temporary.unlink(missing_ok=True)
+
+
+@contextmanager
+def windows_pinned_directory(path: Path):
+    """Hold every ancestor against rename and reject reparse-point traversal."""
+    if os.name != "nt":
+        raise ValueError("Windows directory handles required")
+    import ctypes
+    from ctypes import wintypes
+
+    class FileTime(ctypes.Structure):
+        _fields_ = [("low", wintypes.DWORD), ("high", wintypes.DWORD)]
+
+    class FileInfo(ctypes.Structure):
+        _fields_ = [("attributes", wintypes.DWORD), ("created", FileTime), ("accessed", FileTime), ("written", FileTime), ("volume", wintypes.DWORD), ("size_high", wintypes.DWORD), ("size_low", wintypes.DWORD), ("links", wintypes.DWORD), ("index_high", wintypes.DWORD), ("index_low", wintypes.DWORD)]
+
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.GetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.POINTER(FileInfo)]
+    kernel.GetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    resolved = path.absolute()
+    if not resolved.anchor:
+        raise ValueError("directory lacks a Windows volume anchor")
+    current = Path(resolved.anchor)
+    components = [current]
+    for part in resolved.parts[1:]:
+        current = current / part
+        components.append(current)
+    handles = []
+    invalid = ctypes.c_void_p(-1).value
+    try:
+        for index, component in enumerate(components):
+            access = 0x80 | (0x2 if index == len(components) - 1 else 0)  # READ_ATTRIBUTES | ADD_FILE
+            handle = kernel.CreateFileW(str(component), access, 0x1 | 0x2, None, 3, 0x02000000 | 0x00200000, None)
+            if handle == invalid or handle is None:
+                raise ctypes.WinError(ctypes.get_last_error())
+            handles.append(handle)
+            info = FileInfo()
+            if not kernel.GetFileInformationByHandle(handle, ctypes.byref(info)):
+                raise ctypes.WinError(ctypes.get_last_error())
+            if not info.attributes & 0x10 or info.attributes & 0x400:  # DIRECTORY, REPARSE_POINT
+                raise ValueError(f"repair path crosses a non-directory or reparse point: {component}")
+        yield handles[-1]
+    finally:
+        for handle in reversed(handles):
+            kernel.CloseHandle(handle)
+
+
+def windows_link_from_handle(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+    """Create a no-replace hard link relative to a pinned directory handle."""
+    import ctypes
+    import msvcrt
+    from ctypes import wintypes
+
+    class FileLinkInfo(ctypes.Structure):
+        _fields_ = [("replace", wintypes.BOOLEAN), ("root", wintypes.HANDLE), ("name_length", wintypes.DWORD), ("name", wintypes.WCHAR * len(leaf_name))]
+
+    class IoStatusBlock(ctypes.Structure):
+        _fields_ = [("status", ctypes.c_void_p), ("information", ctypes.c_size_t)]
+
+    info = FileLinkInfo()
+    info.replace = False
+    info.root = directory_handle
+    info.name_length = len(leaf_name.encode("utf-16-le"))
+    info.name = leaf_name
+    native = ctypes.WinDLL("ntdll")
+    native.NtSetInformationFile.argtypes = [wintypes.HANDLE, ctypes.POINTER(IoStatusBlock), ctypes.c_void_p, wintypes.ULONG, ctypes.c_int]
+    native.NtSetInformationFile.restype = ctypes.c_long
+    native.RtlNtStatusToDosError.argtypes = [ctypes.c_long]
+    native.RtlNtStatusToDosError.restype = wintypes.ULONG
+    status = native.NtSetInformationFile(msvcrt.get_osfhandle(descriptor), ctypes.byref(IoStatusBlock()), ctypes.byref(info), ctypes.sizeof(info), 11)
+    if status < 0:
+        code = native.RtlNtStatusToDosError(status)
+        if code in {80, 183}:
+            raise FileExistsError(code, "repair target already exists", leaf_name)
+        raise OSError(code, f"Windows hard-link publication failed (NTSTATUS {status:#x})")
+
+
+def delete_portable_repair_intent_anchored(target_root: Path, intent: dict[str, object]) -> None:
+    """Delete only the exact single-link intent opened beneath pinned parents."""
+    if os.name != "nt":
+        raise ValueError("owned repair intent cleanup requires Windows anchored handles")
+    import ctypes
+    from ctypes import wintypes
+
+    class FileTime(ctypes.Structure):
+        _fields_ = [("low", wintypes.DWORD), ("high", wintypes.DWORD)]
+
+    class FileInfo(ctypes.Structure):
+        _fields_ = [("attributes", wintypes.DWORD), ("created", FileTime), ("accessed", FileTime), ("written", FileTime), ("volume", wintypes.DWORD), ("size_high", wintypes.DWORD), ("size_low", wintypes.DWORD), ("links", wintypes.DWORD), ("index_high", wintypes.DWORD), ("index_low", wintypes.DWORD)]
+
+    class FileDispositionInfo(ctypes.Structure):
+        _fields_ = [("delete_file", wintypes.BOOL)]
+
+    path = target_root / PORTABLE_REPAIR_INTENT_PATH
+    expected = stable_json_text(intent).encode("utf-8")
+    if len(expected) > 65536:
+        raise ValueError("repair intent exceeds cleanup size limit")
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.GetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.POINTER(FileInfo)]
+    kernel.GetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.ReadFile.argtypes = [wintypes.HANDLE, wintypes.LPVOID, wintypes.DWORD, ctypes.POINTER(wintypes.DWORD), wintypes.LPVOID]
+    kernel.ReadFile.restype = wintypes.BOOL
+    kernel.SetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.c_int, ctypes.c_void_p, wintypes.DWORD]
+    kernel.SetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    with windows_pinned_directory(path.parent):
+        handle = kernel.CreateFileW(str(path), 0x80000000 | 0x00010000, 0x1, None, 3, 0x00200000, None)
+        if handle == ctypes.c_void_p(-1).value or handle is None:
+            raise ctypes.WinError(ctypes.get_last_error())
+        try:
+            info = FileInfo()
+            if not kernel.GetFileInformationByHandle(handle, ctypes.byref(info)):
+                raise ctypes.WinError(ctypes.get_last_error())
+            if info.attributes & (0x10 | 0x400) or info.links != 1 or info.size_high or info.size_low != len(expected):
+                raise ValueError("repair intent is not the expected regular single-link file")
+            chunks: list[bytes] = []
+            remaining = len(expected)
+            while remaining:
+                buffer = ctypes.create_string_buffer(remaining)
+                count = wintypes.DWORD()
+                if not kernel.ReadFile(handle, buffer, remaining, ctypes.byref(count), None):
+                    raise ctypes.WinError(ctypes.get_last_error())
+                if count.value == 0:
+                    raise ValueError("repair intent ended before expected bytes")
+                chunks.append(buffer.raw[:count.value])
+                remaining -= count.value
+            if b"".join(chunks) != expected:
+                raise ValueError("repair intent bytes changed before cleanup")
+            disposition = FileDispositionInfo(True)
+            if not kernel.SetFileInformationByHandle(handle, 4, ctypes.byref(disposition), ctypes.sizeof(disposition)):
+                raise ctypes.WinError(ctypes.get_last_error())
+        finally:
+            kernel.CloseHandle(handle)
+
+
+_PORTABLE_LIFECYCLE_GUARD = threading.Lock()
+_PORTABLE_LIFECYCLE_ACTIVE: set[str] = set()
+
+
+@contextmanager
+def portable_lifecycle_lock(target_root: Path):
+    """Serialize all effectful imports and repairs without writing to target."""
+    identity = os.path.normcase(str(target_root.resolve()))
+    key = hashlib.sha256(identity.encode("utf-8")).hexdigest()
+    with _PORTABLE_LIFECYCLE_GUARD:
+        if key in _PORTABLE_LIFECYCLE_ACTIVE:
+            raise ValueError("portable lifecycle operation already in progress")
+        _PORTABLE_LIFECYCLE_ACTIVE.add(key)
+    try:
+        if os.name == "nt":
+            import ctypes
+            from ctypes import wintypes
+
+            kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+            kernel.CreateMutexW.argtypes = [wintypes.LPVOID, wintypes.BOOL, wintypes.LPCWSTR]
+            kernel.CreateMutexW.restype = wintypes.HANDLE
+            kernel.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+            kernel.WaitForSingleObject.restype = wintypes.DWORD
+            kernel.ReleaseMutex.argtypes = [wintypes.HANDLE]
+            kernel.ReleaseMutex.restype = wintypes.BOOL
+            kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+            kernel.CloseHandle.restype = wintypes.BOOL
+            handle = kernel.CreateMutexW(None, False, "Global\\AIDE.PortableLifecycle." + key)
+            if not handle:
+                raise ctypes.WinError(ctypes.get_last_error())
+            try:
+                wait = kernel.WaitForSingleObject(handle, 0)
+                if wait == 0x102:
+                    raise ValueError("portable lifecycle operation already in progress")
+                if wait not in {0, 0x80}:
+                    raise ctypes.WinError(ctypes.get_last_error())
+                try:
+                    yield
+                finally:
+                    kernel.ReleaseMutex(handle)
+            finally:
+                kernel.CloseHandle(handle)
+        else:
+            import fcntl
+
+            lock_dir = Path(tempfile.gettempdir()) / f"aide-portable-lifecycle-locks-{os.getuid()}"
+            lock_dir.mkdir(mode=0o700, exist_ok=True)
+            directory_stat = lock_dir.lstat()
+            if not stat.S_ISDIR(directory_stat.st_mode) or directory_stat.st_uid != os.getuid() or directory_stat.st_mode & 0o077:
+                raise ValueError("portable lifecycle lock directory is not private")
+            lock_path = lock_dir / (key + ".lock")
+            descriptor = os.open(lock_path, os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW | os.O_CLOEXEC, 0o600)
+            with os.fdopen(descriptor, "r+b") as handle:
+                lock_stat = os.fstat(handle.fileno())
+                if not stat.S_ISREG(lock_stat.st_mode) or lock_stat.st_uid != os.getuid() or lock_stat.st_nlink != 1:
+                    raise ValueError("portable lifecycle lock file ownership is invalid")
+                try:
+                    fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                except BlockingIOError as exc:
+                    raise ValueError("portable lifecycle operation already in progress") from exc
+                try:
+                    yield
+                finally:
+                    fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+    finally:
+        with _PORTABLE_LIFECYCLE_GUARD:
+            _PORTABLE_LIFECYCLE_ACTIVE.remove(key)
+
+
 def atomic_write_json(path: Path, data: object) -> WriteResult:
     return atomic_write_bytes_if_changed(path, stable_json_text(data).encode("utf-8"))
 
@@ -40144,16 +40377,15 @@ def portable_import_record_digest(record: dict[str, object], digest_key: str) ->
 
 def portable_target_path(target_root: Path, target_rel: str) -> Path:
     relative = Path(target_rel.replace("\\", "/"))
-    if relative.is_absolute() or not relative.parts or any(part in {"", ".", ".."} for part in relative.parts):
+    if relative.is_absolute() or relative.drive or not relative.parts or any(part in {"", ".", ".."} for part in relative.parts):
         raise ValueError(f"unsafe portable import target path: {target_rel}")
     root = target_root.resolve()
     current = root
     for part in relative.parts:
         current = current / part
-        if current.exists():
-            is_junction = bool(getattr(current, "is_junction", lambda: False)())
-            if current.is_symlink() or is_junction:
-                raise ValueError(f"portable import target crosses a symlink or junction: {target_rel}")
+        is_junction = bool(getattr(current, "is_junction", lambda: False)())
+        if current.is_symlink() or is_junction:
+            raise ValueError(f"portable import target crosses a symlink or junction: {target_rel}")
     try:
         current.parent.resolve().relative_to(root)
     except ValueError as exc:
@@ -40403,7 +40635,7 @@ def import_pack_plan(
         else:
             target_rel = rel
         reserved_key = "/".join(part.rstrip(" .").casefold() for part in target_rel.split("/"))
-        if reserved_key in {PORTABLE_IMPORT_RECEIPT_PATH.casefold(), PORTABLE_IMPORT_INTENT_PATH.casefold(), PROJECT_CUSTOMIZATIONS_PATH.casefold()}:
+        if reserved_key in {PORTABLE_IMPORT_RECEIPT_PATH.casefold(), PORTABLE_IMPORT_INTENT_PATH.casefold(), PORTABLE_REPAIR_INTENT_PATH.casefold(), PORTABLE_LIFECYCLE_LOCK_PATH.casefold(), PROJECT_CUSTOMIZATIONS_PATH.casefold()}:
             raise ValueError(f"pack payload collides with reserved project/import state: {target_rel}")
         target = portable_target_path(target_root, target_rel)
         if rel == "AGENTS.md.template":
@@ -40791,7 +41023,7 @@ def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[s
     return result.action == "written"
 
 
-def apply_import_pack(
+def _apply_import_pack_unlocked(
     pack_root: Path,
     target_root: Path,
     dry_run: bool = False,
@@ -40812,6 +41044,8 @@ def apply_import_pack(
         predecessor_ok, predecessor_problems = validate_pack_checksums(predecessor_pack)
         if not predecessor_ok:
             raise ValueError("invalid predecessor pack checksums: " + "; ".join(predecessor_problems))
+    if portable_target_path(target_root, PORTABLE_REPAIR_INTENT_PATH).exists():
+        raise ValueError("pending portable repair intent requires repair recovery")
     pending = load_portable_import_intent(target_root)
     if pending is not None:
         recovery = classify_portable_import_recovery(target_root, pending)
@@ -40893,6 +41127,156 @@ def apply_import_pack(
         "receipt_written": receipt_result.action == "written",
         "plan_digest": plan_digest,
     }
+
+
+def apply_import_pack(
+    pack_root: Path,
+    target_root: Path,
+    dry_run: bool = False,
+    mode: str = "safe",
+    predecessor_pack: Path | None = None,
+    expected_plan_digest: str | None = None,
+    fail_after_writes: int | None = None,
+) -> dict[str, object]:
+    if dry_run:
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes)
+    with portable_lifecycle_lock(target_root.resolve()):
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes)
+
+
+def _apply_portable_owned_repair_unlocked(
+    pack_root: Path,
+    target_root: Path,
+    target_rel: str,
+    *,
+    dry_run: bool = False,
+    expected_plan_digest: str | None = None,
+    fail_after_write: bool = False,
+) -> dict[str, object]:
+    """Restore one absent receipt-owned file from its exact delivered pack."""
+    pack_root, target_root = pack_root.resolve(), target_root.resolve()
+    if pack_root == target_root or pack_root in target_root.parents or target_root in pack_root.parents:
+        raise ValueError("pack and target must be separate roots")
+    if not target_root.is_dir():
+        raise ValueError("repair target must be an existing directory")
+    ok, problems = validate_pack_checksums(pack_root)
+    if not ok:
+        raise ValueError("invalid pack checksums: " + "; ".join(problems))
+    if not target_rel or "\\" in target_rel or normalize_rel(target_rel) != target_rel:
+        raise ValueError("invalid repair path")
+    target = portable_target_path(target_root, target_rel)
+    receipt = load_portable_import_receipt(target_root)
+    if receipt is None or receipt.get("pack") != import_pack_identity(pack_root):
+        raise ValueError("repair requires a receipt for this exact pack")
+    if receipt.get("mode") != "safe" or import_scope_skip_reason(target_rel, "safe"):
+        raise ValueError("repair requires a safe-mode managed file")
+    if portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).exists():
+        raise ValueError("pending portable import intent blocks repair")
+    entry = receipt_managed_entry(receipt, target_rel, target_rel)
+    if entry is None or entry.get("kind") != "managed_file" or entry.get("ownership") != "aide_portable_managed":
+        raise ValueError("path has no receipt-owned managed-file baseline")
+    source_rel = "files/" + target_rel
+    if source_rel not in pack_manifest_list(pack_root, "included_files"):
+        raise ValueError("repair source is absent from the pack manifest")
+    source = pack_root / source_rel
+    if any(parent.is_symlink() or bool(getattr(parent, "is_junction", lambda: False)()) for parent in (source, *source.parents) if parent == pack_root or pack_root in parent.parents) or not source.is_file():
+        raise ValueError("repair source is not a regular pack file")
+    source_digest = sha256_file(source)
+    if entry.get("source_digest") != source_digest or entry.get("installed_digest") != source_digest:
+        raise ValueError("receipt baseline differs from validated pack payload")
+    preimage = target_file_digest(target)
+    plan = {
+        "schema_version": "aide.portable-owned-repair-plan.v1",
+        "target": normalize_rel(target_root),
+        "path": target_rel,
+        "pack": import_pack_identity(pack_root),
+        "receipt_digest": receipt["receipt_digest"],
+        "preimage_digest": "missing",
+        "postimage_digest": source_digest,
+    }
+    plan_digest = digest_bytes(stable_compact_json_text(plan).encode("utf-8"))
+    intent_path = portable_target_path(target_root, PORTABLE_REPAIR_INTENT_PATH)
+    intent = None
+    if intent_path.exists():
+        try:
+            intent = json.loads(read_text(intent_path))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise ValueError(f"invalid repair intent: {exc}") from exc
+        if not isinstance(intent, dict) or intent.get("schema_version") != "aide.portable-owned-repair-intent.v1" or intent.get("intent_digest") != portable_import_record_digest(intent, "intent_digest"):
+            raise ValueError("invalid repair intent digest or schema")
+        if intent.get("plan") != plan or intent.get("plan_digest") != plan_digest:
+            raise ValueError("repair intent does not match exact pack, receipt, target, and path")
+    status = "RECOVERY_REQUIRED" if intent else ("PLANNED" if preimage == "missing" else "CONFLICT")
+    result = {"status": status, "dry_run": dry_run, "path": target_rel, "plan_digest": plan_digest, "observed_digest": preimage, "postimage_digest": source_digest, "written": []}
+    if dry_run:
+        return result
+    if expected_plan_digest != plan_digest:
+        result["status"] = "STALE_PLAN"
+        return result
+    if intent and preimage == source_digest:
+        delete_portable_repair_intent_anchored(target_root, intent)
+        result["status"] = "RECOVERED"
+        return result
+    if preimage != "missing":
+        result["status"] = "CONFLICT"
+        return result
+    if intent is None:
+        intent = {"schema_version": "aide.portable-owned-repair-intent.v1", "plan": plan, "plan_digest": plan_digest}
+        intent["intent_digest"] = portable_import_record_digest(intent, "intent_digest")
+        try:
+            atomic_create_bytes_no_clobber(intent_path, stable_json_text(intent).encode("utf-8"))
+        except FileExistsError:
+            result["status"] = "RECOVERY_REQUIRED"
+            return result
+    if target_file_digest(target) != "missing":
+        result["status"] = "CONFLICT"
+        return result
+    data = source.read_bytes()
+    if digest_bytes(data) != source_digest:
+        raise ValueError("repair source changed after preflight")
+    portable_target_path(target_root, target_rel)
+    try:
+        atomic_create_bytes_no_clobber(target, data)
+    except FileExistsError:
+        result["status"] = "CONFLICT"
+        result["observed_digest"] = target_file_digest(target)
+        return result
+    if fail_after_write:
+        result["status"] = "INTERRUPTED"
+        result["written"] = [target_rel]
+        return result
+    if target_file_digest(target) != source_digest:
+        result["status"] = "INTERRUPTED"
+        return result
+    delete_portable_repair_intent_anchored(target_root, intent)
+    result["status"] = "APPLIED"
+    result["written"] = [target_rel]
+    return result
+
+
+def apply_portable_owned_repair(
+    pack_root: Path,
+    target_root: Path,
+    target_rel: str,
+    *,
+    dry_run: bool = False,
+    expected_plan_digest: str | None = None,
+    fail_after_write: bool = False,
+) -> dict[str, object]:
+    if dry_run:
+        return _apply_portable_owned_repair_unlocked(pack_root, target_root, target_rel, dry_run=True, expected_plan_digest=expected_plan_digest, fail_after_write=fail_after_write)
+    with portable_lifecycle_lock(target_root.resolve()):
+        return _apply_portable_owned_repair_unlocked(pack_root, target_root, target_rel, dry_run=False, expected_plan_digest=expected_plan_digest, fail_after_write=fail_after_write)
+
+
+def command_repair_owned_file(args: argparse.Namespace) -> int:
+    result = apply_portable_owned_repair(Path(args.pack), Path(args.target), args.path, dry_run=args.dry_run, expected_plan_digest=args.expect_plan)
+    print("AIDE Lite repair-owned-file")
+    for key in ("status", "path", "plan_digest", "observed_digest", "postimage_digest"):
+        print(f"{key}: {result[key]}")
+    print(f"written: {len(result['written'])}")
+    print("network_calls: none")
+    return 0 if result["status"] in {"PLANNED", "APPLIED", "RECOVERED"} else (2 if result["status"] == "CONFLICT" else 3)
 
 
 def command_export_pack(args: argparse.Namespace) -> int:
@@ -42958,6 +43342,14 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     removal_parser.add_argument("--target", required=True)
     removal_parser.add_argument("--json", action="store_true", help="Emit the deterministic plan or refusal record as JSON.")
     removal_parser.set_defaults(handler=command_plan_removal)
+
+    repair_owned_parser = subparsers.add_parser("repair-owned-file")
+    repair_owned_parser.add_argument("--pack", required=True)
+    repair_owned_parser.add_argument("--target", required=True)
+    repair_owned_parser.add_argument("--path", required=True)
+    repair_owned_parser.add_argument("--dry-run", action="store_true")
+    repair_owned_parser.add_argument("--expect-plan", help="Exact digest from dry-run; required for apply.")
+    repair_owned_parser.set_defaults(handler=command_repair_owned_file)
 
     subparsers.add_parser("pack-status").set_defaults(handler=command_pack_status)
 
