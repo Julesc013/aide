@@ -11601,3 +11601,17 @@ Owner review found a final-write race in the first candidate. The repair now pub
   in the repair helper's `mkstemp` publication path. This is a new
   fix-forward safety blocker pending an exact dev regression and review;
   no main or release effect used these bytes.
+
+## 2026-09-25 - Exclusive Windows repair staging candidate
+
+- Source `e215698a` replaces the repair helper's writable CRT temporary with
+  an exclusive Windows handle held through no-replace publication. It deletes
+  the owned stage through that handle, including descriptor setup failures.
+  A rival writer failed for both intent and payload staging; the exact source
+  passed 11 focused and 44 full importer tests. Independent security review
+  accepted this source for dev integration with an uncertainty note.
+- The local pack and release drafts were regenerated from clean source
+  `e215698a` and passed bundle, validation, and draft checks. Consumer checks,
+  postcommit replay, and dev integration remain open. A post-link cleanup
+  failure is an uncertain effect and retains recovery obligations; safe import
+  writes and complete lifecycle behavior remain separate work.

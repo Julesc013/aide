@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 71501c6bb30bb19a6f7cb0056ba0f009d39a9b40
+source_head: e215698a993d1904152c614ec84b71741f4bb086
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -12,9 +12,8 @@ release_publishing: false
 ## Summary
 
 - Added: 4
-- Fixed: 7
-- Docs: 1
-- Internal: 38
+- Fixed: 4
+- Internal: 42
 
 ## Added
 
@@ -25,24 +24,13 @@ release_publishing: false
 
 ## Fixed
 
-- integrate endpoint-shaped effective GitHub rule comparison into the dev source. (6a581dbcfbd5 feat(github): merge reviewed target source with release dev)
-- refresh local export and release provenance for combined target source. (cda504b9a546 fix(release): refresh combined source portable artifacts)
-- bind local release metadata to the committed combined-source artifact ancestry. (d4bd4938fa43 fix(release): project committed combined source provenance)
 - dry-run recovery mutation and project-owned metadata payload boundary. (9b21e183d462 fix(import): keep recovery previews read-only)
 - Windows alias route into project-owned customization metadata. (2b4f5de885a5 fix(import): reserve project metadata Windows aliases)
 - allow accountable AEST historical decisions while retaining strict raw policy results. (7a2305f51894 fix(git): bind exact owner historical decisions)
 - prevent dirty-source provenance in the local combined artifact projection. (1fa02a8594fe fix(release): record clean combined pack provenance)
 
-## Docs
-
-- refresh preview-only release text for the combined source. (66ef462c2b1b docs(changelog): bind combined source previews)
-
 ## Internal
 
-- register a local artifact refresh with no publication effect. (4deeed08be90 audit(queue): admit combined target pack refresh)
-- record qualified local combined-source artifacts and consumer evidence. (9cc4bb068837 audit(queue): qualify combined target artifacts)
-- close reviewed local source and artifact dev integration. (3bdeb220cb31 audit(queue): close release and target dev integration)
-- record mechanism-only review acceptance and exact owner decisions still required. (f84778ff4675 audit(queue): record fresh disposition mechanism review)
 - refresh local preview-only release text. (9dc91654f8df chore(changelog): refresh customization source previews)
 - refresh local portable and release artifacts for customization. (8262b2fd6465 build(release): refresh local customization pack artifacts)
 - project local release provenance onto committed artifact ancestry. (37daa862e939 build(release): project customization artifact ancestry)
@@ -77,6 +65,14 @@ release_publishing: false
 - close the owned repair source review for dev integration. (cdb3bd04f1ae docs(queue): record accepted owned repair source review)
 - plan reviewed repair integration with current dev. (d40c18ccc744 chore(queue): admit owned repair dev integration)
 - integrate one receipt-owned missing-file repair with delivered removal planning. (71501c6bb30b feat(pack): integrate reviewed owned repair with removal planner)
+- refresh local portable release candidates after owned repair source merge. (ef60c1388ee5 build(release): project combined owned repair artifacts)
+- repair integration scope metadata. (3ed628c19aed fix(queue): align owned repair integration allowlist)
+- converge local release metadata after committed source projection. (e4697aaa3271 build(release): converge owned repair release projection)
+- close the combined owned repair source and local artifact review for dev integration. (6b4007d06546 docs(queue): record accepted owned repair integration)
+- preserve integration effect and newly discovered safety blocker. (9a8b08700ef7 docs(queue): record owned repair dev effect and new race)
+- track repair publication safety fix forward. (fdad1a06f3fe chore(queue): admit Windows repair staging hardening)
+- harden owned repair publication against competing Windows writers. (1a44ec617508 fix(repair): deny competing writes to Windows repair staging)
+- close the repair staging setup-failure leak found in review. (e215698a993d fix(repair): clean exclusive stage after descriptor setup errors)
 
 ## Malformed Commits
 

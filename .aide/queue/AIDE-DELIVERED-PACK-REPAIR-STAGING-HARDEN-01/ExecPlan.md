@@ -25,10 +25,16 @@ WorkUnit closes that race for owned repair intent and payload only.
 
 - [x] Independent reproduction found actual altered-byte publication in the
   old helper. External script and log are bound in task evidence.
-- [x] Add exact regressions and source fix; the baseline failed both staging
-  subcases, and the corrected focused repair suite passed all 10 tests.
-- [ ] Qualify source, artifacts, consumers, and replay.
-- [ ] Obtain independent acceptance and observe remote dev.
+- [x] Add exact regressions and source fix. The baseline failed both staging
+  subcases. The first source candidate was superseded after independent review
+  found a setup-failure stage leak.
+- [x] Freeze `e215698a`, pass 11 focused and 44 full importer tests, and
+  obtain independent ACCEPT_WITH_NOTES for dev source integration.
+- [x] Generate and locally validate the current-source portable pack and
+  release/draft outputs with non-circular provenance.
+- [ ] Qualify extracted consumers, obtain artifact verdict, converge and prove
+  zero-change postcommit replay.
+- [ ] Observe exact remote dev after qualified fast-forward integration.
 
 ## Recovery
 

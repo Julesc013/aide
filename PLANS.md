@@ -3726,3 +3726,11 @@ After integration, an adversarial check found that Windows may admit a
 second writer to the repair helper's `mkstemp` staging file before no-replace
 publication. Fix and independently review that race before relying on repair
 write safety; the earlier dev integration is not stable-release acceptance.
+
+The exclusive-handle repair staging source `e215698a` passed the exact 44-test
+importer suite and received independent ACCEPT_WITH_NOTES for dev source
+integration. Its local pack and release projection is under artifact consumer
+and postcommit replay qualification before a dev fast-forward. The accepted
+safe-import branch `0dfb2931` needs a separate combined-source merge that
+retains this newer repair helper and the lifecycle lock. Neither result closes
+mandatory removal, rollback, native/hosted, main, or publication gates.
