@@ -148,11 +148,15 @@ No target install apply is run.
 
 ## Install Notes Boundary
 
-The generated `install.md` intentionally says that install, repair, upgrade,
-rollback, and uninstall surfaces are observe/plan/dry-run by default. Target
-repositories must run their own preflight and validation after extraction or
-import. Target-specific memory, queue, evidence, golden tasks, tools, doctrine,
-and manual guidance remain target-owned.
+The Q43-Q46 planning commands remain observe/plan/dry-run. Separate Windows
+`import-pack`, `repair-owned-file`, `rollback-pack`, and `apply-removal`
+commands have bounded exact-plan apply implementations, with supported forms
+and final artifact qualification still determined by the release manifest.
+The generated local draft must describe this distinction and retain its
+no-publish boundary. Target repositories must run their own preflight and
+validation after extraction or import. Target-specific memory, queue,
+evidence, golden tasks, tools, doctrine, and manual guidance remain
+target-owned.
 
 ## Export Boundary
 

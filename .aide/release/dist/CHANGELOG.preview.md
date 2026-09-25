@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 8365aa61b7cad51d542f88434e50bc33c5aac8fe
+source_head: 0509e1611b1838c650954c64212ad603f132dada
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,16 +11,14 @@ release_publishing: false
 
 ## Summary
 
-- Added: 7
+- Added: 5
 - Changed: 9
-- Fixed: 11
+- Fixed: 13
 - Security: 1
 - Internal: 23
 
 ## Added
 
-- conditional receipt-owned removal apply for exact generated material. (d13894ba0f55 feat(uninstall): detach exact generated files and retire receipt)
-- bounded predecessor-pack rollback apply for the declared Windows slice. (23422130fcfc feat(rollback): apply exact predecessor portable pack)
 - receipt-owned managed-section removal inside authored AGENTS.md on Windows, preserving all outside bytes. (d5b44626d6f9 feat(removal): detach owned AGENTS section in brownfield projects)
 - Local delivered pack evidence for supported rollback, owned removal, and interruption recovery. (db7650536375 chore(lifecycle): project reviewed lifecycle source into local pack)
 - Bounded plan for manual portable-pack conflict resolution and disabled-feature preservation. (63484c756197 chore(update): admit bounded successive project update task)
@@ -41,9 +39,6 @@ release_publishing: false
 
 ## Fixed
 
-- receipt-owned removal recovery preserves later authored bytes and retains ownership evidence when a recorded path was already absent. (fbd9465344f0 fix(removal): bind recovery intents to receipt-owned bytes)
-- Generated install guidance now describes the supported bounded removal apply path. (597b5bcd6f54 fix(release): describe bounded removal apply in install guides)
-- Generated removal guidance now describes planner output and recovery states accurately. (49318d50472b fix(release): clarify removal planner and recovery guidance)
 - authored AGENTS backup recovery retains receipt and intent until exact original backup cleanup is reconciled. (2c4c9089a546 fix(removal): reconcile authored AGENTS backup before receipt retirement)
 - Pending portable removal now blocks exact-predecessor rollback preview and apply. (1f920ebbf7bf fix(rollback): block rollback while removal recovery is pending)
 - Exact predecessor rollback now accepts an unchanged authored CRLF AGENTS.md managed section. (9a0843c3a763 fix(lifecycle): accept exact CRLF managed section in rollback)
@@ -52,6 +47,11 @@ release_publishing: false
 - Automatic managed updates now require a validated predecessor baseline instead of a local receipt claim alone. (12758e07373f fix(update): bind owned updates to the validated predecessor)
 - Reject receipt claims that disagree with the delivered pack during installed health inspection. (486aa2bd0f5f fix(repair): bind health receipt rows to pack baseline)
 - Recognize valid CRLF portable guidance blocks during read-only installed health inspection. (558638203fae fix(repair): preserve raw CRLF pack block identity)
+- installed Lite Task OS reports no selected task for an empty queue. (f00d937e2368 fix(task-os): keep empty target queue reports truthful)
+- project-owned Lite target queues no longer receive AIDE source-phase next-work advice. (e88a1468acd2 fix(task-os): keep target queue next work project-owned)
+- target Task OS routing follows its declared profile even when a queue ID matches an AIDE source task. (b9d2b150c39c fix(task-os): route target next work by declared profile)
+- target next-work explanation remains accurate even when queue IDs collide with source IDs. (52e1f194ebd2 fix(task-os): keep copied-id target reason truthful)
+- local draft lifecycle claims now match the bounded Windows apply candidates. (bc1867a06933 fix(release): distinguish lifecycle planners from bounded apply)
 
 ## Security
 
@@ -59,18 +59,6 @@ release_publishing: false
 
 ## Internal
 
-- record exact repair staging dev-integration readiness. (10a16afb681e docs(queue): record repair staging zero-change replay)
-- record accepted Windows repair staging in remote dev. (6377cda923c1 docs(queue): record remote dev repair staging integration)
-- construct current-dev safe importer integration candidate. (7624d9f4b542 fix(import): combine reviewed Windows importer writes with dev)
-- bind safe importer portable assets to the reviewed combined source. (0fbabcdd8510 chore(import): project reviewed safe importer artifacts)
-- converge safe importer artifact metadata after projection. (515ad6b2c07e chore(import): converge safe importer release metadata)
-- close the bounded safe importer integration gate. (5317524f0760 chore(import): close safe importer dev integration record)
-- construct conditional removal integration candidate. (009668559436 fix(removal): combine reviewed conditional detach with dev)
-- durable campaign continuation checkpoint. (b05ba7d5984f chore(campaign): checkpoint delivery after owner window)
-- Local review-ready removal artifacts and evidence are projected from the corrected source. (704825d14643 chore(release): project reviewed removal artifact bytes)
-- Converged release metadata for reviewed local removal artifacts. (7b23b71912ba chore(release): converge removal metadata after projection)
-- Preserve dev checkpoint ancestry in the removal integration candidate. (a60b8cb01106 chore(campaign): retain dev checkpoint in removal candidate)
-- Durable dev checkpoint and remaining owned-section removal obligation. (ea53e319bd06 chore(campaign): record removal dev checkpoint and open section work)
 - Record the combined delivered-pack lifecycle qualification task. (f2be45ea13ce chore(lifecycle): admit combined portable integration task)
 - Preserve rollback ancestry for combined lifecycle qualification. (03f4b0a1ef37 chore(lifecycle): retain reviewed rollback source in combined candidate)
 - Preserve accepted removal source for combined lifecycle qualification. (723322cf07ab chore(lifecycle): retain reviewed removal source in combined candidate)
@@ -82,6 +70,18 @@ release_publishing: false
 - Route contract projection through its own bounded WorkUnit. (7168ee1cfaa8 chore(queue): admit stable contract artifact projection)
 - Preserve exact contract evidence ancestry in projection history. (d3d9848569a9 chore(release): merge corrected contract evidence into projection)
 - Record accepted source dependency for bounded projection. (8365aa61b7ca chore(release): bind accepted contract source to projection)
+- Refresh local preview artifacts for the accepted Lite contract. (d0bfa4045a3c chore(release): project accepted Lite contract into preview assets)
+- Converge local preview release metadata without rebuilding archives. (2defcad541d0 chore(release): converge Lite contract preview metadata)
+- Close the bounded stable contract source and local-preview dev integration records. (b3a001befaac chore(queue): close stable Lite contract dev integration)
+- Route mandatory delivered Lite consumer checks through a bounded WorkUnit. (5561aecdb608 chore(queue): admit delivered Lite consumer prequalification)
+- preserve bounded local consumer evidence and a reproducible Task OS repair trigger. (b45010280e5e test(lite): record delivered consumer prequalification)
+- create a bounded route for evidence-only dev integration. (736e3f9ac027 chore(queue): admit Lite evidence dev integration)
+- complete a separate evidence-only dev integration review packet. (a7254d7d4c9c chore(queue): freeze Lite evidence integration packet)
+- preserve verified Windows Lite preview evidence integration and unresolved release gates. (d292253b0994 chore(lite): close observed consumer evidence dev effect)
+- preserve independent Task OS source review and its release-blocking follow-up. (04caefe65986 chore(task-os): record exact empty-queue source review)
+- preserve the exact Task OS repaired-source review result. (75406123ccb0 chore(task-os): preserve accepted target routing review)
+- preserve exact Q48 source review and remaining gates. (59286688dfce chore(release): preserve accepted draft source review)
+- admit current Lite preview projection and qualification task. (0509e1611b18 chore(release): admit current Lite artifact projection)
 
 ## Malformed Commits
 

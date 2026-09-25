@@ -40,6 +40,9 @@ qualification or reuse an approval tied to changed bytes.
 ## Progress
 
 - [x] Confirm three accepted source subjects and admit this bounded task.
-- [ ] Generate and qualify exact preview bytes.
-- [ ] Prove committed zero-change replay and installed target queue behavior.
+- [x] Generate and qualify exact preview bytes: clean-source six commands,
+      canonical checks and 25-command extracted consumer passed.
+- [ ] Prove committed zero-change replay. Installed empty/one-item target
+      queue behavior passed from extracted ZIP CLI; first oracle error is
+      retained with the corrected replay.
 - [ ] Obtain independent artifact/effect review and qualified dev effect.

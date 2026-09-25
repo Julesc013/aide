@@ -1,6 +1,6 @@
 {
   "blockers": [],
-  "checklist_id": "aide-lite-pack-v0-github-draft-8365aa61b7cad51d-checklist",
+  "checklist_id": "aide-lite-pack-v0-github-draft-0509e1611b1838c6-checklist",
   "checks": [
     {
       "evidence": "not-recorded-in-pack",
@@ -9,7 +9,7 @@
       "status": "recorded"
     },
     {
-      "evidence": "8365aa61b7cad51d542f88434e50bc33c5aac8fe",
+      "evidence": "0509e1611b1838c650954c64212ad603f132dada",
       "item": "source commit recorded",
       "section": "source repo state",
       "status": "recorded"
@@ -93,6 +93,6 @@
   "no_publish": true,
   "release_bundle_ref": ".aide/release/latest-release-bundle.json",
   "schema_version": "aide.github-release-checklist.v0",
-  "source_commit": "8365aa61b7cad51d542f88434e50bc33c5aac8fe",
+  "source_commit": "0509e1611b1838c650954c64212ad603f132dada",
   "warnings": []
 }

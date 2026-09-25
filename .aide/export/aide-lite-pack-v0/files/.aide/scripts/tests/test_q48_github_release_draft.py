@@ -88,6 +88,18 @@ class Q48GitHubReleaseDraftTests(unittest.TestCase):
         self.assertIn("not published", draft["release_body_markdown"].lower())
         self.assertIn("aide-lite-pack-v0-draft-", draft["suggested_tag"])
 
+    def test_draft_distinguishes_legacy_planners_from_exact_plan_apply(self) -> None:
+        root = self.make_repo()
+        draft = aide_lite.build_github_release_draft_outputs(root)
+        body = draft["release_body_markdown"]
+        self.assertNotIn("remain plan/dry-run models", body)
+        self.assertNotIn("remain preservation-first planning surfaces", body)
+        self.assertIn("Q43-Q46", body)
+        self.assertIn("exact-plan", body)
+        self.assertIn("final profile qualification", body)
+        self.assertIn("Local draft only", body)
+        self.assertTrue(draft["no_publish"])
+
     def test_assets_include_hashes_and_upload_plan_is_no_upload(self) -> None:
         root = self.make_repo()
         aide_lite.build_github_release_draft_outputs(root)

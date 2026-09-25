@@ -12038,3 +12038,10 @@ Owner review found a final-write race in the first candidate. The repair now pub
 - Admitted `AIDE-STABLE-LITE-CURRENT-PROJECTION-01` on a dedicated worktree
   from `59286688`. This admission only defines generated-output scope and
   executable checks; no archive regeneration or integration has occurred.
+- From clean admission `0509e161`, regenerated 39 bounded preview output
+  paths. Six generation commands, canonical checks, 18 Q47, 12 Q48 and 11
+  Task OS tests passed. The 25-command extracted ZIP/tar consumer passed with
+  833 matching members; a separate four-command installed Task OS canary
+  passed after correcting an external oracle that confused packet and queue
+  IDs. ZIP `68f8b3cc` and tar `d0b42456` remain local previews. Commit,
+  replay, independent artifact/effect review and dev integration are pending.

@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import argparse
+import contextlib
 import importlib.util
+import io
 import json
 import sys
 import tempfile
@@ -218,6 +221,98 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             self.assertEqual(context["latest_task_id"], repair_id)
             self.assertEqual(context["latest_task_status"], "running")
 
+    def test_empty_target_packet_does_not_promote_context_to_task_truth(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / ".aide/queue").mkdir(parents=True)
+            (root / ".aide/context").mkdir(parents=True)
+            (root / ".aide/queue/index.yaml").write_text(
+                "schema_version: aide.queue-index.v0\nitems:\n", encoding="utf-8"
+            )
+            (root / ".aide/context/latest-task-packet.md").write_text(
+                "\n".join(
+                    [
+                        "# AIDE Latest Task Packet",
+                        "",
+                        "## PHASE",
+                        "",
+                        "UNSPECIFIED - Disposable installed AIDE context evidence smoke task",
+                        "Prior Q17 and X-OS-01 are background only.",
+                        "",
+                        "## GOAL",
+                        "",
+                        "Disposable installed AIDE context evidence smoke task",
+                        "AIDE-APPLY-00 appears here only as explanatory text.",
+                        "",
+                        "## CONTEXT_REFS",
+                        "",
+                        "- run route explain after Q17",
+                        "- source X-OS-01 is background context only",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            self.assertEqual(aide_lite.task_os_latest_task_ref(root), ("", ""))
+            context = aide_lite.task_os_context(root)
+            self.assertEqual(context["task_count"], 0)
+            self.assertEqual(context["latest_task_id"], "")
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertEqual(selection["task"], "No queued WorkUnit selected")
+            self.assertFalse(selection["aide_apply_00_next_packet_ready"])
+            self.assertFalse(selection["lifecycle_apply_authorized"])
+            report = aide_lite.task_os_render_task_status(context)
+            self.assertIn("latest_task_packet_id: `none`", report)
+            self.assertIn("selected_next_workunit: No queued WorkUnit selected", report)
+            self.assertNotIn("selected_next_workunit: X-OS-01", report)
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                exit_code = aide_lite.command_task_status(argparse.Namespace(repo_root=root))
+            self.assertEqual(exit_code, 1)
+            self.assertIn("task_count: 0", output.getvalue())
+            self.assertIn("latest_task_id: none", output.getvalue())
+
+    def test_nonempty_target_queue_does_not_select_aide_source_phase(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            context = aide_lite.task_os_context(root)
+            self.assertEqual(context["task_count"], 1)
+            self.assertEqual(context["latest_task_id"], "FIXTURE-TASK")
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertEqual(selection["task"], "Review target-owned queue WorkUnits")
+            self.assertFalse(selection["aide_apply_00_next_packet_ready"])
+            self.assertFalse(selection["lifecycle_apply_authorized"])
+            task_status = aide_lite.task_os_render_task_status(context)
+            self.assertIn("selected_next_workunit: Review target-owned queue WorkUnits", task_status)
+            self.assertIn("`FIXTURE-TASK`: status=running", task_status)
+            aide_lite.write_task_os_next_plan(root)
+            next_plan = (root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH).read_text(encoding="utf-8")
+            self.assertIn("selected_next_workunit: Review target-owned queue WorkUnits", next_plan)
+            self.assertNotIn("- `X-OS-01 - Task OS Report-Only Commands`", next_plan)
+            self.assertNotIn("x_os_01_status:", next_plan)
+
+    def test_target_profile_overrides_colliding_aide_source_task_id(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            add_queue_task(root, "X-OS-01-aide-task-os-report-only-commands")
+            (root / ".aide/profile.yaml").write_text(
+                "schema_version: aide.profile.template.v0\n"
+                "profile_id: fixture-target\n"
+                "status: target_template\n",
+                encoding="utf-8",
+            )
+            context = aide_lite.task_os_context(root)
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertEqual(selection["task"], "Review target-owned queue WorkUnits")
+            self.assertIn("this repository's queue status and evidence", selection["reason"])
+            self.assertNotIn("no AIDE self-hosting routing WorkUnit", selection["reason"])
+            aide_lite.write_task_os_next_plan(root)
+            next_plan = (root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH).read_text(encoding="utf-8")
+            self.assertNotIn("x_os_01_status:", next_plan)
+            self.assertNotIn("selecting AIDE-APPLY-00", next_plan)
+
     def test_checkpoint_and_next_plan_use_queue_truth_after_x_os_02(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -317,6 +412,7 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             self.assertIn("authorizes only planning, not lifecycle apply execution", next_text)
 
     def test_current_repo_validation_registration_passes(self) -> None:
+        self.assertEqual(aide_lite.task_os_profile_role(REPO_ROOT), "aide_source")
         checks = aide_lite.validate_task_os_command_files(REPO_ROOT)
         failures = [check.message for check in checks if check.severity == "FAIL"]
         self.assertEqual(failures, [])

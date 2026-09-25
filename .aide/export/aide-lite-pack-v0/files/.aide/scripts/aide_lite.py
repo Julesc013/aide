@@ -5675,25 +5675,29 @@ def task_os_latest_task_ref(repo_root: Path) -> tuple[str, str]:
     if not packet.exists():
         return "", ""
     text = read_text(packet)
-    candidate_sections: list[str] = []
+    # Only the packet preamble and the leading PHASE/GOAL lines can declare
+    # task identity. Later sections contain incidental IDs in guidance.
+    preamble = re.split(r"^##\s+", text, maxsplit=1, flags=re.MULTILINE)[0]
+    declared_id = re.search(r"^\s*[-*]?\s*task_id:\s*([^\s`]+)", preamble, re.MULTILINE)
+    if declared_id:
+        raw = declared_id.group(1)
+        return raw, resolve_task_id(repo_root, raw)
+    candidate_lines: list[str] = []
     for heading in ["PHASE", "GOAL"]:
         match = re.search(rf"^##\s+{heading}\s*$\s*(.*?)(?=^##\s+|\Z)", text, re.MULTILINE | re.DOTALL)
         if match:
-            candidate_sections.append(match.group(1).strip())
-    candidate_sections.append(text)
-    known_ids = sorted((str(task.get("id", "")) for task in queue_task_blocks(repo_root) if str(task.get("id", ""))), key=len, reverse=True)
+            lines = match.group(1).strip().splitlines()
+            if lines:
+                candidate_lines.append(re.sub(r"^UNSPECIFIED\s+-\s+", "", lines[0].strip()))
     patterns = [
-        r"(?<![A-Za-z0-9._-])AIDE-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
-        r"(?<![A-Za-z0-9._-])X-OS-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
-        r"(?<![A-Za-z0-9._-])X-TEST-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
-        r"(?<![A-Za-z0-9._-])Q\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"AIDE-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"X-OS-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"X-TEST-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"Q\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
     ]
-    for section in candidate_sections:
-        for known_id in known_ids:
-            if re.search(rf"(?<![A-Za-z0-9._-]){re.escape(known_id)}(?![A-Za-z0-9._-])", section):
-                return known_id, known_id
+    for line in candidate_lines:
         for pattern in patterns:
-            match = re.search(pattern, section)
+            match = re.match(pattern, line)
             if match:
                 raw = match.group(0)
                 return raw, resolve_task_id(repo_root, raw)
@@ -5708,6 +5712,16 @@ def task_os_read_status_yaml(repo_root: Path, task_id: str) -> str:
 def task_os_status_field(text: str, key: str, default: str = "") -> str:
     match = re.search(rf"^\s*{re.escape(key)}:\s*(.+)$", text, re.MULTILINE)
     return match.group(1).strip() if match else default
+
+
+def task_os_profile_role(repo_root: Path) -> str:
+    profile = repo_root / ".aide/profile.yaml"
+    if not profile.exists():
+        return "unknown"
+    profile_text = read_text(profile)
+    profile_id = task_os_status_field(profile_text, "profile_id").strip("\"'")
+    profile_mode = task_os_status_field(profile_text, "profile_mode").strip("\"'")
+    return "aide_source" if profile_id == "aide-self-hosting" and profile_mode == "self-hosting" else "target"
 
 
 def task_os_warning_counts(text: str) -> dict[str, int]:
@@ -5756,7 +5770,30 @@ TASK_OS_APPLY_02_TASK_ID = "AIDE-APPLY-02-scoped-transaction-executor-v0"
 TASK_OS_APPLY_02_REPAIR_TASK_ID = "AIDE-APPLY-02-REPAIR-01"
 TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID = "AIDE-CHECK-APPLY-02-RECHECK-01"
 TASK_OS_STATUS_REPAIR_TASK_ID = "AIDE-TASK-OS-STATUS-REPAIR-01"
+TASK_OS_SOURCE_ROUTING_TASK_IDS = {
+    "X-OS-00-aide-task-os-schemas-policies",
+    "X-OS-01-aide-task-os-report-only-commands",
+    "X-OS-02-capability-reality-ledger-v0",
+    TASK_OS_CHECKPOINT_TASK_ID,
+    TASK_OS_REPAIR_TASK_ID,
+    TASK_OS_APPLY_02_TASK_ID,
+    TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID,
+    TASK_OS_STATUS_REPAIR_TASK_ID,
+}
 TASK_OS_LIFECYCLE_PLAN_TASK_LABEL = "AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning"
+
+
+def task_os_source_routing_enabled(context: dict[str, object]) -> bool:
+    role = context.get("task_os_profile_role", "unknown")
+    if role == "target":
+        return False
+    if role == "aide_source":
+        return True
+    tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    return any(
+        isinstance(task, dict) and task.get("id") in TASK_OS_SOURCE_ROUTING_TASK_IDS
+        for task in tasks
+    )
 
 
 def task_os_done_local(status: str) -> bool:
@@ -5822,6 +5859,28 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
         "aide_apply_lifecycle_plan_ready": False,
         "lifecycle_apply_authorized": False,
     }
+    if not context.get("tasks"):
+        return {
+            "task": "No queued WorkUnit selected",
+            "reason": "The target queue is empty; create a target-owned WorkUnit through intake before execution.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
+        }
+    if not task_os_source_routing_enabled(context):
+        return {
+            "task": "Review target-owned queue WorkUnits",
+            "reason": "Inspect this repository's queue status and evidence; no AIDE source-phase recommendation is inferred for this target.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
+        }
     if apply02_accepted_with_notes and not task_os_done_local(status_repair_status):
         return {
             "task": f"{TASK_OS_STATUS_REPAIR_TASK_ID} - Task OS Current and Latest-Task Reporting Repair",
@@ -6016,6 +6075,7 @@ def task_os_context(repo_root: Path) -> dict[str, object]:
         "schema_version": "aide.task-os-command-context.v0",
         "generated_at": "deterministic",
         "repo_root": normalize_rel(repo_root),
+        "task_os_profile_role": task_os_profile_role(repo_root),
         "current_branch": git_current_branch_name(repo_root),
         "current_commit": safe_git_head_commit(repo_root),
         "current_toml_state": current_toml.get("current_toml_state", "unknown"),
@@ -6119,16 +6179,16 @@ def task_os_render_task_status(context: dict[str, object]) -> str:
             f"- current_task_status: `{context.get('current_task_status', 'unknown')}`",
             f"- latest_indexed_task_id: `{context.get('latest_indexed_task_id', '') or 'none'}`",
             f"- latest_indexed_task_status: `{context.get('latest_indexed_task_status', 'unknown')}`",
-            f"- latest_task_packet_raw: `{context.get('latest_task_raw', '') or 'unknown'}`",
-            f"- latest_task_packet_id: `{context.get('latest_task_id', '') or 'unknown'}`",
+            f"- latest_task_packet_raw: `{context.get('latest_task_raw', '') or 'none'}`",
+            f"- latest_task_packet_id: `{context.get('latest_task_id', '') or 'none'}`",
             f"- latest_task_packet_status: `{context.get('latest_task_status', '') or 'unknown'}`",
             f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
             f"- selected_next_workunit_reason: {selection.get('reason', '')}",
             "",
             "## Latest Task Packet",
             "",
-            f"- latest_task_raw: `{context.get('latest_task_raw', '') or 'unknown'}`",
-            f"- latest_task_id: `{context.get('latest_task_id', '') or 'unknown'}`",
+            f"- latest_task_raw: `{context.get('latest_task_raw', '') or 'none'}`",
+            f"- latest_task_id: `{context.get('latest_task_id', '') or 'none'}`",
             f"- latest_task_status: `{context.get('latest_task_status', '') or 'unknown'}`",
             "",
             "## Queue Summary",
@@ -6648,6 +6708,25 @@ def write_task_os_next_plan(repo_root: Path) -> WriteResult:
     context = task_os_context(repo_root)
     selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Next Plan", "task-os next plan", context)
+    if not task_os_source_routing_enabled(context):
+        lines.extend(
+            [
+                "## Target Queue Next Work",
+                "",
+                f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
+                f"- reason: {selection.get('reason', '')}",
+                f"- task_count: {context.get('task_count', 0)}",
+                f"- latest_indexed_task_id: {context.get('latest_indexed_task_id', '') or 'none'}",
+                f"- latest_task_packet_id: {context.get('latest_task_id', '') or 'none'}",
+                "",
+                "## Boundary",
+                "",
+                "- this report does not execute or authorize a target WorkUnit",
+                "- choose next work under the target repository's own queue policy and evidence",
+                "",
+            ]
+        )
+        return write_text_if_changed(repo_root / TASK_OS_NEXT_PLAN_REPORT_PATH, "\n".join(lines))
     lines.extend(
         [
             "## Selected Next Task",
@@ -18660,7 +18739,7 @@ def github_release_known_risks(repo_root: Path) -> list[str]:
         "This is a local draft only; no GitHub publication, tag, or upload has occurred.",
         "Suggested tag naming still requires human/operator review.",
         "Dominium and Eureka target install readiness are not claimed by Q48.",
-        "Install, repair, upgrade, rollback, and uninstall remain plan/dry-run models unless a future phase adds apply behavior.",
+        "Q43-Q46 lifecycle planners remain report-only; separate Windows exact-plan apply paths require final profile qualification before public support is claimed.",
     ]
     if github_release_dirty_state(repo_root):
         risks.append("Q47 bundle provenance records dirty source state; release reviewers must explicitly accept or regenerate from a clean state.")
@@ -18690,7 +18769,7 @@ def render_github_release_body(repo_root: Path, assets: list[dict[str, object]],
         "",
         "- AIDE Lite Pack v0 local release bundle prepared for human review.",
         "- Assets come from the Q47 local bundle under `.aide/release/dist/`.",
-        "- Install, repair, upgrade, rollback, and uninstall commands remain preservation-first planning surfaces.",
+        "- Q43-Q46 report-only planners and separate bounded Windows exact-plan apply commands have distinct boundaries.",
         "",
         "## Release Notes Preview",
     ]
@@ -18702,7 +18781,7 @@ def render_github_release_body(repo_root: Path, assets: list[dict[str, object]],
         "## Install Notes",
         "",
         f"- Local install notes: `{RELEASE_INSTALL_NOTES_PATH}`",
-        "- Default install workflow is observe, plan, dry-run, review.",
+        "- Preview first; use documented exact-plan apply only where the final artifact and Windows profile are qualified.",
         "- Target repositories must run their own validation after extraction/import.",
         "",
         "## Assets",
@@ -38451,7 +38530,7 @@ def command_task_status(args: argparse.Namespace) -> int:
     print(f"task_count: {len(tasks)}")
     for task in tasks:
         print(f"- {task.get('id', '')}: status={task.get('status', 'unknown')} planning_state={task.get('planning_state', 'unknown')}")
-    print(f"latest_task_id: {context.get('latest_task_id', '') or 'unknown'}")
+    print(f"latest_task_id: {context.get('latest_task_id', '') or 'none'}")
     print(f"report: {TASK_OS_TASK_STATUS_REPORT_PATH} ({report_result.action})")
     print("report_only: true")
     return 0 if tasks else 1
