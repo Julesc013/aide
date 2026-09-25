@@ -2,11 +2,11 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-LITE-CURRENT-PROJECTION-01
 title: Project accepted Lite Task OS and draft source into delivered previews
 type: integration
-status: needs_review
-planning_state: superseding_record_repair_review_pending
+status: passed_with_notes
+planning_state: integrated_dev
 result: PASS_WITH_WARNINGS
 created_at: 2026-09-25
-updated_at: 2026-09-25
+updated_at: 2026-09-26
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 depends_on:
   - AIDE-STABLE-LITE-TASK-TRUTH-01

@@ -23,5 +23,11 @@
 - REQUEST_CHANGES: independent exact `22257dc6` artifact/effect review found
   stale 11-commit citation and contradictory replay-open status. No dev GO;
   the report and hash are in `review-finding-22257dc6.md`.
-- NOT RUN: focused superseding review, dev
-  integration, main, tag, public release or downloaded-byte acceptance.
+- PASS_WITH_NOTES: focused exact `6e8af2bd` artifact/effect rereview accepted
+  the corrected record and permitted only local dev FF plus normal push.
+- PASS: fresh Windows/GitHub identity, four base refs, ancestry, clean
+  worktrees, checked locks and archive hashes; local FF, push and four
+  post-effect ref reads matched `6e8af2bd` and tree `a964b2e2`.
+- PASS: supplemental 31-command Windows lifecycle local preview canary on
+  the same ZIP; all 31 command-log hashes/exits matched on audit.
+- NOT RUN: main promotion, tag, public release or downloaded-byte acceptance.

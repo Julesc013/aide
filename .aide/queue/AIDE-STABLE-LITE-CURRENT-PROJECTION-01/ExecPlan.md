@@ -45,7 +45,17 @@ qualification or reuse an approval tied to changed bytes.
 - [x] Prove committed zero-change replay after explicit 18-file metadata
       convergence. Installed empty/one-item target queue behavior passed
       from extracted ZIP CLI; first oracle error is retained.
-- [ ] Obtain independent artifact/effect review and qualified dev effect.
+- [x] Obtain independent artifact/effect review and qualified dev effect.
       Frozen `22257dc6` received REQUEST_CHANGES for two evidence/status
-      discrepancies; archive checks passed. Preserve its report, repair only
-      records and request focused exact superseding rereview.
+      discrepancies; archive checks passed. Exact `6e8af2bd` received focused
+      ACCEPT_WITH_NOTES and conditional GO. Fresh preflight passed; local dev
+      fast-forward, normal push and four-ref observation matched that exact
+      commit/tree. Main, publication and final profile gates remain open.
+
+## Retrospective
+
+The source repairs, current generator projection, bounded metadata
+convergence, installed consumers and exact dev effect were kept distinct.
+Both a failed first zero-change replay and a rejected effect record remain
+visible. ZIP/tar bytes did not change across the evidence repairs. Local
+preview qualification is not stable release qualification.

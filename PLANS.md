@@ -4005,3 +4005,13 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   changelog, bundle and local draft; installed target queue proof, committed
   replay, canonical checks and independent exact artifact/dev effect review
   precede a normal `dev` push. Main and publication remain separate.
+
+## 2026-09-26 - Current Lite projection dev closeout
+
+- Independent focused review accepted exact `6e8af2bd` with notes after an
+  earlier evidence-record REQUEST_CHANGES. One-writer local fast-forward and
+  normal push placed that candidate in `dev`; local, tracking, remote and API
+  identities matched. The current ZIP/tar and 25-command update,
+  four-command installed Task OS and 31-command lifecycle consumers are local
+  preview evidence. Next qualify the exact first stable Lite command/profile,
+  forced restart/offline and final bytes before release acceptance.

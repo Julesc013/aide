@@ -1,14 +1,14 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-CURRENT-PROJECTION-01
-status: needs_review
+status: passed_with_notes
 classification: combined_lite_artifact_projection
-planning_state: superseding_record_repair_review_pending
+planning_state: integrated_dev
 result: PASS_WITH_WARNINGS
-updated_at: 2026-09-25
-current_slice: exact_range_and_status_record_repair
-next_slice: focused_superseding_effect_review
-review_gate: independent_exact_artifact_and_dev_effect_review
-dev_integration_performed: false
+updated_at: 2026-09-26
+current_slice: observed_dev_effect_closeout
+next_slice: final_stable_lite_profile_qualification
+review_gate: independent_exact_artifact_and_dev_effect_review_passed
+dev_integration_performed: true
 main_promotion_performed: false
 tag_created: false
 release_published: false
@@ -16,7 +16,10 @@ notes:
   - Accepted source reviews bind exact source subjects only.
   - Clean-source generation and affected source/consumer checks passed on exact local preview bytes.
   - First external Task OS canary had an incorrect packet-versus-indexed-ID oracle; corrected rerun passed and failure is retained.
-  - Committed four-command replays at 10fd7a20 and 22257dc6 passed with zero changes; dev integration remains open.
+  - Committed four-command replays at 10fd7a20, 22257dc6 and 6e8af2bd passed with zero changes.
   - First four-command replay from dc8697e3 exited zero but changed 18 release metadata files; zero-change gate failed, archives unchanged.
   - Second replay from 10fd7a20 changed zero paths; committed canonical and commit-range checks passed.
-  - Independent 22257dc6 REQUEST_CHANGES identified a stale 11-commit citation and replay-open status; exact 12-commit check passed, final superseding range/review pending.
+  - Independent 22257dc6 REQUEST_CHANGES identified a stale 11-commit citation and replay-open status; the corrected superseding record received focused acceptance.
+  - Independent focused ACCEPT_WITH_NOTES and conditional GO bound exact 6e8af2bd; final 13-commit policy check passed.
+  - One-writer dev fast-forward and normal push exited zero; local, tracking, remote and GitHub API dev all read 6e8af2bd afterward.
+  - Final stable profile, main, tag, publication and downloaded-byte checks remain open.

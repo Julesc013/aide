@@ -3691,8 +3691,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-DRAFT-TRUTH-01/evidence
     description: Distinguish report-only planners from bounded Windows exact-plan apply in Q48 local draft text.
   - id: AIDE-STABLE-LITE-CURRENT-PROJECTION-01
-    status: needs_review
-    planning_state: superseding_record_repair_review_pending
+    status: passed_with_notes
+    planning_state: integrated_dev
     result: PASS_WITH_WARNINGS
     title: Project accepted Lite Task OS and draft source into delivered previews
     task: .aide/queue/AIDE-STABLE-LITE-CURRENT-PROJECTION-01/task.yaml

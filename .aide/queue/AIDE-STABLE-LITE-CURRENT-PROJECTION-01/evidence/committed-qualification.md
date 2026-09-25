@@ -26,6 +26,8 @@
   installed Task OS canary bind the unchanged archive/CLI hashes in
   `projection-0509e161.md`.
 
-Independent exact artifact and `dev` effect review is still pending. Final
-stable profile, main/tag/publication and downloaded-asset acceptance remain
-parent-campaign obligations.
+At this `10fd7a20` checkpoint, independent exact artifact and `dev` effect
+review was pending. The later rejected and accepted exact reviews and observed
+effect are in `review-finding-22257dc6.md`, `review-acceptance.md` and
+`observed-dev-effect.md`. Final stable profile, main/tag/publication and
+downloaded-asset acceptance remain parent-campaign obligations.

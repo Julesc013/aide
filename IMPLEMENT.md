@@ -12057,3 +12057,10 @@ Owner review found a final-write race in the first candidate. The repair now pub
   to `10fd7a20`, while `22257dc6` has 12; status still said replay was open.
   Exact 12-commit range passed. Repairing those records and rechecking the
   final effect subject precedes dev integration; artifact bytes stay frozen.
+  Focused independent rereview accepted exact `6e8af2bd` with notes and
+  conditional dev GO. Fresh identity/ref/lock/archive preflight passed; the
+  local `dev` FF and normal push exited 0 and all four observed refs matched
+  `6e8af2bd`, tree `a964b2e2`. The 31-command supplemental local Windows
+  lifecycle canary also passed on the same ZIP and its logs were hash-audited.
+  Final supported profile, main, tag, public release and downloaded-byte
+  acceptance remain open.
