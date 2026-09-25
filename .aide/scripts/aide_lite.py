@@ -42495,7 +42495,7 @@ def inspect_portable_repair_health(pack_root: Path, target_root: Path) -> dict[s
     pack_root, target_root = pack_root.absolute(), target_root.absolute()
     report: dict[str, object] = {
         "schema_version": "aide.portable-repair-health.v1", "status": "HEALTHY",
-        "pack": None, "target": str(target_root.resolve()), "receipt_digest": None,
+        "pack": None, "target": str(target_root), "receipt_digest": None,
         "pending_intents": [], "disabled_features": [], "observations": [], "read_only": True,
         "network_calls": False, "provider_or_model_calls": False,
     }
@@ -42531,7 +42531,11 @@ def inspect_portable_repair_health(pack_root: Path, target_root: Path) -> dict[s
     if receipt.get("pack") != report["pack"]:
         report["status"] = "PACK_MISMATCH"
         return report
+    if receipt.get("mode") not in {"safe", "full"}:
+        report["status"], report["reason"] = "INVALID_RECEIPT", "portable import receipt mode is invalid"
+        return report
     pending = bool(report["pending_intents"])
+    included_sources = set(pack_manifest_list(pack_root, "included_files"))
     for rel, entry in sorted(receipt["managed"].items()):
         observation: dict[str, object] = {
             "path": rel, "kind": entry["kind"], "ownership": entry["ownership"],
@@ -42541,6 +42545,21 @@ def inspect_portable_repair_health(pack_root: Path, target_root: Path) -> dict[s
         }
         report["observations"].append(observation)
         try:
+            source_rel = "AGENTS.md.template" if rel == "AGENTS.md" else rel
+            expected_kind = "portable_managed_section" if rel == "AGENTS.md" else "managed_file"
+            if entry["source"] != source_rel or entry["kind"] != expected_kind or "files/" + source_rel not in included_sources or import_scope_skip_reason(source_rel, receipt["mode"]):
+                observation["reason"] = "receipt source or kind is outside the admitted pack mapping"
+                continue
+            if any(rel.startswith(PORTABLE_OPTIONAL_FEATURES[feature]) for feature in receipt.get("disabled_features", [])):
+                observation["reason"] = "receipt claims ownership of a disabled feature"
+                continue
+            pack_digest = predecessor_installed_digest(pack_root, source_rel, entry["kind"])
+            if pack_digest is None or entry["source_digest"] != pack_digest:
+                observation["reason"] = "receipt source baseline differs from validated pack bytes"
+                continue
+            if entry["ownership"] == "aide_portable_managed" and not receipt_matches_predecessor_baseline(pack_root, source_rel, entry["kind"], entry):
+                observation["reason"] = "receipt owned baseline differs from validated pack bytes"
+                continue
             target = portable_target_path(target_root, rel)
             with windows_pinned_directory(target.parent, for_write=False):
                 if not os.path.lexists(target):
@@ -42582,7 +42601,7 @@ def inspect_portable_repair_health(pack_root: Path, target_root: Path) -> dict[s
         report["status"] = "RECOVERY_REQUIRED"
     elif any(item["repair_eligible"] for item in report["observations"]):
         report["status"] = "REPAIRABLE"
-    elif any(item["state"] != "MATCHING" for item in report["observations"]):
+    elif any(item["state"] != "MATCHING" or item["local_overlay"] for item in report["observations"]):
         report["status"] = "PRESERVATION_REQUIRED"
     return report
 

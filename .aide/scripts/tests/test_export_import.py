@@ -2707,6 +2707,49 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(invalid["observations"], [])
 
     @unittest.skipUnless(os.name == "nt", "anchored repair health inspection is Windows only")
+    def test_repair_health_rejects_redigested_receipt_baseline_and_wrong_source_mapping(self) -> None:
+        source = self.make_source_repo()
+        pack = self.freeze_pack(source, "repair-health-forged-receipt-pack")
+        target = source.parent / "repair-health-forged-receipt-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+        rel = ".aide/prompts/compact-task.md"
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        original_receipt = receipt_path.read_bytes()
+        managed = target / rel
+        managed.write_bytes(b"direct project edit with unknown rationale\n")
+        receipt = aide_lite.load_portable_import_receipt(target)
+        edited_digest = aide_lite.digest_bytes(managed.read_bytes())
+        receipt["managed"][rel]["source_digest"] = edited_digest
+        receipt["managed"][rel]["installed_digest"] = edited_digest
+        receipt["receipt_digest"] = aide_lite.portable_import_record_digest(receipt, "receipt_digest")
+        receipt_path.write_text(aide_lite.stable_json_text(receipt), encoding="utf-8")
+        before = sorted((str(path.relative_to(target)), path.read_bytes()) for path in target.rglob("*") if path.is_file())
+        forged = aide_lite.inspect_portable_repair_health(pack, target)
+        after = sorted((str(path.relative_to(target)), path.read_bytes()) for path in target.rglob("*") if path.is_file())
+        self.assertEqual(before, after)
+        row = next(item for item in forged["observations"] if item["path"] == rel)
+        self.assertEqual(forged["status"], "PRESERVATION_REQUIRED")
+        self.assertEqual(row["state"], "UNKNOWN")
+        self.assertFalse(row["repair_eligible"])
+        receipt_path.write_bytes(original_receipt)
+        managed.write_bytes((pack / "files" / rel).read_bytes())
+        authored_rel = "authored-project-file.md"
+        authored = target / authored_rel
+        authored.write_bytes(managed.read_bytes())
+        receipt = aide_lite.load_portable_import_receipt(target)
+        receipt["managed"][authored_rel] = dict(receipt["managed"][rel])
+        receipt["receipt_digest"] = aide_lite.portable_import_record_digest(receipt, "receipt_digest")
+        receipt_path.write_text(aide_lite.stable_json_text(receipt), encoding="utf-8")
+        before = sorted((str(path.relative_to(target)), path.read_bytes()) for path in target.rglob("*") if path.is_file())
+        wrong_mapping = aide_lite.inspect_portable_repair_health(pack, target)
+        after = sorted((str(path.relative_to(target)), path.read_bytes()) for path in target.rglob("*") if path.is_file())
+        self.assertEqual(before, after)
+        row = next(item for item in wrong_mapping["observations"] if item["path"] == authored_rel)
+        self.assertEqual(wrong_mapping["status"], "PRESERVATION_REQUIRED")
+        self.assertEqual(row["state"], "UNKNOWN")
+        self.assertFalse(row["repair_eligible"])
+
+    @unittest.skipUnless(os.name == "nt", "anchored repair health inspection is Windows only")
     def test_repair_health_v1_section_overlay_disabled_and_pending_intents(self) -> None:
         source = self.make_source_repo()
         pack = self.freeze_pack(source, "repair-health-receipts-pack")

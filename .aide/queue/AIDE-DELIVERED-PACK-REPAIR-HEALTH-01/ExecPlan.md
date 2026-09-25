@@ -57,4 +57,5 @@ artifact or real target is changed by this admission.
 - [x] Read-only catalogue and one extracted-CLI red probe prepared externally.
 - [x] Bounded task branch/worktree admitted.
 - [x] Admitted source rejected `repair-health` as an unknown command (CLI exit 2); implemented read-only inspection and ran the frozen source-focused tests, including extracted ZIP consumer tests. See `evidence/source-candidate.md`.
-- [ ] Independently review this exact source; combine and qualify delivered bytes. Keep this WorkUnit running until those gates close.
+- [x] Independently review frozen source `03c5e7f8`; it returned REQUEST_CHANGES for forged receipt baseline and source-to-target mapping. Superseding source and no-write regressions are in `evidence/receipt-baseline-repair.md`.
+- [ ] Independently rereview the superseding source; combine and qualify delivered bytes. Keep this WorkUnit running until those gates close.

@@ -1,6 +1,6 @@
 # Repair-health source candidate, 2026-09-25
 
-Status: SOURCE IMPLEMENTED, REVIEW PENDING. This is an uncommitted task-worktree candidate; no `dev`, generated release artifact, or published asset changed.
+Status: SUPERSEDED SOURCE CANDIDATE. This source was frozen at commit `03c5e7f81c225525bc1b7bc9532f4353d0e42b07`, tree `d8954f98b234eb9c717cbeda197f71d0681a153e`. Independent source review returned REQUEST_CHANGES; see `evidence/receipt-baseline-repair.md`. No `dev`, generated release artifact, or published asset changed.
 
 Base HEAD: `0aa5a9d23b10d084d0d227a1848ab415cedff2f5`, tree `fb6044bb432cd96ea523c9f8a1437a105db1143d`. Source dependency: accepted-with-notes three-way update `12758e07373f8bfedee667715df04f8caaf1de23`. Only the root controller may freeze/integrate this branch.
 
