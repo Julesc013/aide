@@ -1,0 +1,6 @@
+schema_version: aide.queue-status.v0
+id: AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01
+status: running
+planning_state: source_review_accepted_dev_integration_pending
+result: PENDING_INTEGRATION
+updated_at: 2026-09-25

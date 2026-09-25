@@ -3699,7 +3699,6 @@ dev were observed at `5ac617b37b5778193b1c2cc7c63e0cc12c98ec09`, tree
 historical messages. Historical-dependent removal and host source are being
 integrated in separate bounded branches;
 mandatory lifecycle apply remains unimplemented.
-
 ## Isolated-host API-set query source
 
 The H2 continuation now has frozen source for supported Windows API-set host
@@ -3712,3 +3711,7 @@ candidate `a4ee0f32`; evidence-only closeout `a55b804b` passed a narrow check,
 and remote/local dev were observed at that commit (tree `9f687687`). Before any
 real host query,
 physical host bytes, private loading, grants, and activation remain open.
+
+## Delivered-pack owned repair apply (2026-09-25)
+
+`AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01` implements one explicit repair of a missing receipt-owned file from the exact validated delivered pack in a disposable consumer. Exact source `45c5ce91` (tree `b119a52d`) passed 39 importer tests and independent focused rereview. Integrate it with current dev while preserving the newer release generator and removal planner, then regenerate and qualify combined portable/release artifacts. Managed-section repair, modified-file reconciliation, rollback, removal, importer write safety, live-target adoption, and publication remain separate work.

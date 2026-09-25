@@ -25,7 +25,9 @@ qualify full lifecycle, native/hosted operation, main, or publication.
 
 - [x] Read-only merge preflight and remote identity check completed.
 - [x] Exact source review accepted `45c5ce91` for dev source integration.
-- [ ] Reconcile and test the combined source.
+- [x] Reconcile both CLI commands, tests, queue history, and root records;
+  combined importer 42/42 and release-adjacent 46/46 tests pass. Canonical
+  validate and doctor pass. See `evidence/combined-source-validation.md`.
 - [ ] Qualify regenerated artifacts and consumers.
 - [ ] Obtain independent combined acceptance and integrate dev.
 

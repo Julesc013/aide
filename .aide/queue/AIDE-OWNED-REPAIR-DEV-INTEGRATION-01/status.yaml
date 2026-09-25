@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 id: AIDE-OWNED-REPAIR-DEV-INTEGRATION-01
 status: running
-planning_state: admitted_combined_source_pending
+planning_state: combined_source_validated_artifacts_pending
 result: PENDING
 updated_at: 2026-09-25
 base_dev: 5dfa75e632b09f732a8150376db6840bcf149ed3
 source_candidate: 45c5ce91132a00012dcf15e4ca38aa007afb8359
 source_review_closeout: cdb3bd04f1ae20f4e58529f7132c376fcbdc48c6
-next_action: merge_reviewed_repair_history_and_resolve_combined_source
+next_action: commit_combined_source_then_regenerate_and_qualify_artifacts

@@ -3532,7 +3532,7 @@ items:
     description: Reconcile planner source with later dev work and regenerate current-source portable and local release outputs.
   - id: AIDE-OWNED-REPAIR-DEV-INTEGRATION-01
     status: running
-    planning_state: admitted_combined_source_pending
+    planning_state: combined_source_validated_artifacts_pending
     result: PENDING
     title: Integrate reviewed owned repair with current dev
     task: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/task.yaml
@@ -3540,3 +3540,13 @@ items:
     prompt: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-OWNED-REPAIR-DEV-INTEGRATION-01/evidence
     description: Reconcile reviewed repair source with dev removal planner and regenerate qualified combined artifacts.
+  - id: AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01
+    status: running
+    planning_state: source_review_accepted_dev_integration_pending
+    result: PENDING_INTEGRATION
+    title: Restore one missing receipt-owned delivered-pack file
+    task: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01/evidence
+    description: Exact-pack, receipt-owned single missing-file repair apply in disposable delivered-pack consumers.

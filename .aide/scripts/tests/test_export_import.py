@@ -8,6 +8,7 @@ import importlib.util
 import json
 import shutil
 from pathlib import Path
+from unittest import mock
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -820,6 +821,310 @@ class ExportImportTests(unittest.TestCase):
         self.assertFalse(aide_lite.is_exportable_file(source_root, ".aide/prompts/compact-task.md"))
         pack_root = self.build_pack(source_root)
         self.assertFalse((pack_root / "files/.aide/prompts/compact-task.md").exists())
+
+    def test_owned_repair_restores_missing_file_from_extracted_pack(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-pack")
+        target = source_root.parent / "repair-consumer"
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+        rel = ".aide/prompts/compact-task.md"
+        managed = target / rel
+        expected = managed.read_bytes()
+        managed.unlink()
+        cli = pack / "files/.aide/scripts/aide_lite.py"
+        command = [sys.executable, "-I", "-B", str(cli), "--repo-root", str(target), "repair-owned-file", "--pack", str(pack), "--target", str(target), "--path", rel]
+        preview = subprocess.run([*command, "--dry-run"], text=True, capture_output=True)
+        self.assertEqual(preview.returncode, 0, preview.stderr)
+        self.assertIn("status: PLANNED", preview.stdout)
+        plan_digest = next(line.partition(": ")[2] for line in preview.stdout.splitlines() if line.startswith("plan_digest: "))
+        self.assertFalse((target / aide_lite.PORTABLE_REPAIR_INTENT_PATH).exists())
+        applied = subprocess.run([*command, "--expect-plan", plan_digest], text=True, capture_output=True)
+        self.assertEqual(applied.returncode, 0, applied.stderr)
+        self.assertIn("status: APPLIED", applied.stdout)
+        self.assertEqual(managed.read_bytes(), expected)
+        self.assertFalse((target / aide_lite.PORTABLE_REPAIR_INTENT_PATH).exists())
+        self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)["status"], "CONFLICT")
+
+    def test_owned_repair_rejects_edits_stale_plan_and_tampered_pack(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-adversarial-pack")
+        target = source_root.parent / "repair-adversarial-consumer"
+        aide_lite.apply_import_pack(pack, target)
+        rel = ".aide/prompts/compact-task.md"
+        managed = target / rel
+        managed.unlink()
+        preview = aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+        self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest="0" * 64)["status"], "STALE_PLAN")
+        self.assertFalse(managed.exists())
+        managed.write_bytes(b"project edit\n")
+        self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])["status"], "CONFLICT")
+        self.assertEqual(managed.read_bytes(), b"project edit\n")
+        managed.unlink()
+        with self.assertRaises(ValueError):
+            aide_lite.apply_portable_owned_repair(pack, target, "../escape", dry_run=True)
+        (pack / "files" / rel).write_bytes(b"tampered\n")
+        with self.assertRaisesRegex(ValueError, "invalid pack checksums"):
+            aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])
+
+    def test_owned_repair_interruption_blocks_import_and_recovers_exact_postimage(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-interruption-pack")
+        target = source_root.parent / "repair-interruption-consumer"
+        aide_lite.apply_import_pack(pack, target)
+        rel = ".aide/prompts/compact-task.md"
+        managed = target / rel
+        managed.unlink()
+        preview = aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+        interrupted = aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"], fail_after_write=True)
+        self.assertEqual(interrupted["status"], "INTERRUPTED")
+        intent = target / aide_lite.PORTABLE_REPAIR_INTENT_PATH
+        before = intent.read_bytes()
+        self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(intent.read_bytes(), before)
+        with self.assertRaisesRegex(ValueError, "repair recovery"):
+            aide_lite.apply_import_pack(pack, target)
+        self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])["status"], "RECOVERED")
+        self.assertFalse(intent.exists())
+
+    def test_owned_repair_rejects_wrong_pack_receipt_and_unknown_interruption(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-receipt-pack")
+        target = source_root.parent / "repair-receipt-consumer"
+        aide_lite.apply_import_pack(pack, target)
+        rel = ".aide/prompts/compact-task.md"
+        managed = target / rel
+        managed.unlink()
+        other_pack = source_root.parent / "repair-other-pack"
+        shutil.copytree(pack, other_pack)
+        aide_lite.write_text(other_pack / "README.md", aide_lite.read_text(other_pack / "README.md") + "different\n")
+        checksums = json.loads(aide_lite.read_text(other_pack / "checksums.json"))
+        checksums["checksums"]["README.md"] = aide_lite.sha256_file(other_pack / "README.md")
+        aide_lite.write_text(other_pack / "checksums.json", json.dumps(checksums, sort_keys=True) + "\n")
+        with self.assertRaisesRegex(ValueError, "exact pack"):
+            aide_lite.apply_portable_owned_repair(other_pack, target, rel, dry_run=True)
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        saved_receipt = receipt_path.read_bytes()
+        receipt = json.loads(saved_receipt)
+        receipt["managed"][rel]["ownership"] = "unknown"
+        aide_lite.write_text(receipt_path, json.dumps(receipt) + "\n")
+        with self.assertRaisesRegex(ValueError, "receipt digest"):
+            aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+        receipt_path.write_bytes(saved_receipt)
+        preview = aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+        aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"], fail_after_write=True)
+        managed.write_bytes(b"unexpected project edit\n")
+        self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])["status"], "CONFLICT")
+        self.assertEqual(managed.read_bytes(), b"unexpected project edit\n")
+        self.assertTrue((target / aide_lite.PORTABLE_REPAIR_INTENT_PATH).exists())
+
+    def test_owned_repair_atomic_creation_preserves_competing_file(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-race-pack")
+        target = source_root.parent / "repair-race-consumer"
+        aide_lite.apply_import_pack(pack, target)
+        rel = ".aide/prompts/compact-task.md"
+        managed = target / rel
+        managed.unlink()
+        preview = aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+        real_link = aide_lite.windows_link_from_handle
+
+        def competing_creation(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+            managed.write_bytes(b"competing project bytes\n")
+            real_link(descriptor, directory_handle, leaf_name)
+
+        with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=competing_creation):
+            result = aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])
+        self.assertEqual(result["status"], "CONFLICT")
+        self.assertEqual(managed.read_bytes(), b"competing project bytes\n")
+        self.assertTrue((target / aide_lite.PORTABLE_REPAIR_INTENT_PATH).exists())
+        self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])["status"], "CONFLICT")
+        self.assertEqual(managed.read_bytes(), b"competing project bytes\n")
+
+    def test_owned_repair_prepublication_failure_retries_from_missing(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-prepublish-pack")
+        target = source_root.parent / "repair-prepublish-consumer"
+        aide_lite.apply_import_pack(pack, target)
+        rel = ".aide/prompts/compact-task.md"
+        managed = target / rel
+        managed.unlink()
+        preview = aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+        real_link = aide_lite.windows_link_from_handle
+
+        def fail_payload(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+            if leaf_name == managed.name:
+                raise OSError("simulated prepublication failure")
+            real_link(descriptor, directory_handle, leaf_name)
+
+        with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=fail_payload):
+            with self.assertRaisesRegex(OSError, "prepublication"):
+                aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])
+        self.assertFalse(managed.exists())
+        intent = target / aide_lite.PORTABLE_REPAIR_INTENT_PATH
+        self.assertTrue(intent.exists())
+        self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])["status"], "APPLIED")
+        self.assertFalse(intent.exists())
+
+    def test_owned_repair_serializes_concurrent_repair_and_import(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-concurrent-pack")
+        target = source_root.parent / "repair-concurrent-consumer"
+        aide_lite.apply_import_pack(pack, target)
+        rel = ".aide/prompts/compact-task.md"
+        (target / rel).unlink()
+        preview = aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+        real_link = aide_lite.windows_link_from_handle
+        blocked = []
+
+        def overlapping_publish(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+            if leaf_name != (target / rel).name:
+                real_link(descriptor, directory_handle, leaf_name)
+                return
+            for operation in (
+                lambda: aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"]),
+                lambda: aide_lite.apply_import_pack(pack, target),
+            ):
+                with self.assertRaisesRegex(ValueError, "already in progress"):
+                    operation()
+                blocked.append(True)
+            real_link(descriptor, directory_handle, leaf_name)
+
+        with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=overlapping_publish):
+            result = aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])
+        self.assertEqual(result["status"], "APPLIED")
+        self.assertEqual(blocked, [True, True])
+        self.assertFalse((target / aide_lite.PORTABLE_REPAIR_INTENT_PATH).exists())
+
+    def test_owned_repair_blocks_parent_substitution_at_publish(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-junction-pack")
+        target = source_root.parent / "repair-junction-consumer"
+        aide_lite.apply_import_pack(pack, target)
+        rel = ".aide/prompts/compact-task.md"
+        managed = target / rel
+        managed.unlink()
+        preview = aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+        parent = managed.parent
+        moved = parent.with_name("prompts-moved")
+        outside = source_root.parent / "outside-junction-target"
+        outside.mkdir()
+        sentinel = outside / "sentinel.txt"
+        sentinel.write_bytes(b"outside unchanged\n")
+        real_mkstemp = aide_lite.tempfile.mkstemp
+        blocked = []
+
+        def attempt_swap(*args: object, **kwargs: object):
+            if kwargs.get("dir") == parent:
+                with self.assertRaises(OSError):
+                    parent.rename(moved)
+                blocked.append(True)
+            return real_mkstemp(*args, **kwargs)
+
+        with mock.patch.object(aide_lite.tempfile, "mkstemp", side_effect=attempt_swap):
+            result = aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])
+        self.assertEqual(result["status"], "APPLIED")
+        self.assertEqual(blocked, [True])
+        self.assertFalse(moved.exists())
+        self.assertEqual(sentinel.read_bytes(), b"outside unchanged\n")
+        self.assertFalse((outside / managed.name).exists())
+
+    def test_fresh_import_serializes_second_import_and_repair_without_lock_file(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "fresh-import-overlap-pack")
+        target = source_root.parent / "fresh-import-overlap-consumer"
+        self.assertEqual(aide_lite.apply_import_pack(pack, target, dry_run=True)["status"], "PLANNED")
+        self.assertFalse(target.exists())
+        real_operation = aide_lite.apply_import_operation
+        checked = []
+
+        def overlap(pack_root: Path, target_root: Path, operation: dict[str, str]) -> bool:
+            if not checked:
+                with self.assertRaisesRegex(ValueError, "already in progress"):
+                    aide_lite.apply_import_pack(pack, target)
+                with self.assertRaisesRegex(ValueError, "already in progress"):
+                    aide_lite.apply_portable_owned_repair(pack, target, ".aide/prompts/compact-task.md")
+                cli = pack / "files/.aide/scripts/aide_lite.py"
+                other = subprocess.run([sys.executable, "-I", "-B", str(cli), "--repo-root", str(target), "import-pack", "--pack", str(pack), "--target", str(target)], text=True, capture_output=True, timeout=30)
+                self.assertNotEqual(other.returncode, 0)
+                self.assertIn("already in progress", other.stderr)
+                self.assertFalse((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
+                checked.append(True)
+            return real_operation(pack_root, target_root, operation)
+
+        with mock.patch.object(aide_lite, "apply_import_operation", side_effect=overlap):
+            first = aide_lite.apply_import_pack(pack, target)
+        self.assertEqual(first["status"], "APPLIED")
+        self.assertEqual(checked, [True])
+        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+        self.assertFalse((target / aide_lite.PORTABLE_LIFECYCLE_LOCK_PATH).exists())
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "NO_CHANGES")
+
+    def test_owned_repair_cleanup_rejects_junction_swap_on_success_and_recovery(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-cleanup-junction-pack")
+        rel = ".aide/prompts/compact-task.md"
+        for scenario in ("success", "recovery"):
+            with self.subTest(scenario=scenario):
+                target = source_root.parent / f"repair-cleanup-{scenario}-consumer"
+                aide_lite.apply_import_pack(pack, target)
+                managed = target / rel
+                managed.unlink()
+                preview = aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+                if scenario == "recovery":
+                    interrupted = aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"], fail_after_write=True)
+                    self.assertEqual(interrupted["status"], "INTERRUPTED")
+                install = (target / aide_lite.PORTABLE_REPAIR_INTENT_PATH).parent
+                moved = install.with_name("install-before-junction-swap")
+                outside = source_root.parent / f"repair-cleanup-{scenario}-outside"
+                outside.mkdir()
+                outside_same_name = outside / Path(aide_lite.PORTABLE_REPAIR_INTENT_PATH).name
+                outside_same_name.write_bytes(b"outside project-owned intent name\n")
+                observed_intent = []
+                real_cleanup = aide_lite.delete_portable_repair_intent_anchored
+
+                def swap_at_cleanup(root: Path, intent: dict[str, object]) -> None:
+                    observed_intent.append((install / Path(aide_lite.PORTABLE_REPAIR_INTENT_PATH).name).read_bytes())
+                    install.rename(moved)
+                    junction = subprocess.run(["cmd", "/c", "mklink", "/J", str(install), str(outside)], text=True, capture_output=True, timeout=10)
+                    self.assertEqual(junction.returncode, 0, junction.stderr)
+                    self.assertTrue(install.is_junction())
+                    real_cleanup(root, intent)
+
+                try:
+                    with mock.patch.object(aide_lite, "delete_portable_repair_intent_anchored", side_effect=swap_at_cleanup):
+                        with self.assertRaisesRegex(ValueError, "reparse point"):
+                            aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])
+                    self.assertEqual(outside_same_name.read_bytes(), b"outside project-owned intent name\n")
+                    self.assertEqual(len(observed_intent), 1)
+                finally:
+                    if install.is_junction():
+                        install.rmdir()
+                    if moved.exists():
+                        moved.rename(install)
+                intent_path = target / aide_lite.PORTABLE_REPAIR_INTENT_PATH
+                self.assertEqual(intent_path.read_bytes(), observed_intent[0])
+                if scenario == "success":
+                    original_intent = observed_intent[0]
+                    intent_record = json.loads(original_intent)
+                    altered = bytearray(original_intent)
+                    altered[0] ^= 1
+                    intent_path.write_bytes(altered)
+                    with self.assertRaisesRegex(ValueError, "bytes changed"):
+                        aide_lite.delete_portable_repair_intent_anchored(target, intent_record)
+                    self.assertEqual(intent_path.read_bytes(), altered)
+                    intent_path.write_bytes(original_intent)
+                    second_link = intent_path.with_name("intent-second-link")
+                    aide_lite.os.link(intent_path, second_link)
+                    try:
+                        with self.assertRaisesRegex(ValueError, "single-link"):
+                            aide_lite.delete_portable_repair_intent_anchored(target, intent_record)
+                    finally:
+                        second_link.unlink()
+                    self.assertEqual(intent_path.read_bytes(), original_intent)
+                self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])["status"], "RECOVERED")
+                self.assertFalse(intent_path.exists())
 
 
 if __name__ == "__main__":
