@@ -5,7 +5,7 @@ classification: delivered_lite_target_queue_next_work_repair
 planning_state: source_candidate_frozen
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
-current_slice: superseding_profile_aware_source_review
+current_slice: reason_repair_rereview
 next_slice: accepted_combined_source_projection
 review_gate: independent_exact_source_delta_review
 source_candidate_frozen: true
@@ -16,4 +16,5 @@ notes:
   - Target WorkUnit selection remains report-only and project-owned.
   - Focused tests pass; canonical validate and doctor fail on stale export provenance pending projection.
   - Independent review accepted e88a1468 with notes; its copied-ID and static next-plan findings are repaired in a changed source candidate awaiting delta review.
+  - Independent review requested changes to b9d2b150 for a false copied-ID reason; the exact finding is preserved and a narrow repair awaits rereview.
   - Final artifact, replay and stable release gates remain open.

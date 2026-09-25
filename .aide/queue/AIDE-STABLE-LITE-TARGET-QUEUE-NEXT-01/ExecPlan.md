@@ -40,5 +40,7 @@ delta from its evidence-only closeout.
       copied-ID and static target next-plan notes.
 - [x] Add profile-aware routing and target-only next-plan presentation;
       11 focused tests now pass.
-- [ ] Obtain exact independent review of the superseding changed source.
+- [x] Preserve exact `REQUEST_CHANGES` for `b9d2b150`; correct the
+      collision-case reason and rerun 11 focused tests.
+- [ ] Obtain exact independent rereview of the repaired changed source.
 - [ ] Route accepted source to projection and installed-byte qualification.

@@ -3934,7 +3934,8 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   stale export provenance, which the later projection must clear. Independent
   review accepted `e88a1468` with notes about ID collisions and static
   next-plan fields. The superseding profile-aware repair passes 11 tests and
-  awaits a focused changed-source review.
+  received `REQUEST_CHANGES` for a false reason in the copied-ID case. That
+  reason is repaired and the 11 tests pass again; exact rereview is next.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

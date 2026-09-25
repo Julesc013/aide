@@ -21,6 +21,12 @@
   including the collision case, target-specific next-plan presentation and
   source self-hosting profile check. External log SHA-256
   `1ae9f90e295f155bf0ffe2a423ee7e996b27d1082ee239f12073aa0980ab5872`.
+- REVIEW FINDING: independent `REQUEST_CHANGES` for `b9d2b150` found a false
+  reason in the copied-ID target case. The original review and SHA-256 are in
+  `role-hardening-review-b9d2b150.md`.
+- PASS after the reason repair: the collision test alone exited 0, then all
+  11 focused Task OS tests exited 0. External full-suite log SHA-256
+  `fb534f79c7f2ad85bd0e5216c4ae2cbc99926a7f18cda1629044694206bd28fe`.
 - FAIL, retained as projection gate: `py -3 -B .aide/scripts/aide_lite.py
   validate` exited 1, SHA-256 log
   `3015a89c5c985bd69736bb1e1a105813bfab6916e8572e3489a78b2c4ef4866d`.

@@ -5873,7 +5873,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
     if not task_os_source_routing_enabled(context):
         return {
             "task": "Review target-owned queue WorkUnits",
-            "reason": "The queue has no AIDE self-hosting routing WorkUnit; inspect its own task status and evidence before selecting next work.",
+            "reason": "Inspect this repository's queue status and evidence; no AIDE source-phase recommendation is inferred for this target.",
             "x_os_01_status": xos01_status,
             "x_os_02_status": xos02_status,
             "checkpoint_status": checkpoint_status,

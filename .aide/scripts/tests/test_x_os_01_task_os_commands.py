@@ -306,6 +306,8 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             context = aide_lite.task_os_context(root)
             selection = aide_lite.task_os_next_selection(context)
             self.assertEqual(selection["task"], "Review target-owned queue WorkUnits")
+            self.assertIn("this repository's queue status and evidence", selection["reason"])
+            self.assertNotIn("no AIDE self-hosting routing WorkUnit", selection["reason"])
             aide_lite.write_task_os_next_plan(root)
             next_plan = (root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH).read_text(encoding="utf-8")
             self.assertNotIn("x_os_01_status:", next_plan)
