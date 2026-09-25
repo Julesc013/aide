@@ -43,7 +43,8 @@
 - This task's `task.yaml`, `status.yaml`, `ExecPlan.md`, and this evidence file:
   record source work and stop at `needs_review` for independent exact review.
 
-Five principal source SHA-256 values after the final wording change:
+Five principal source SHA-256 values for the original `aa3bcfec` review
+subject, retained as historical evidence (the superseding values follow):
 
 | Path | SHA-256 |
 | --- | --- |
@@ -52,6 +53,17 @@ Five principal source SHA-256 values after the final wording change:
 | `.aide/policies/review-gates.yaml` | `7db8f568853e67a2a4226a26daf819397b3cb45317c02c02b9b3be2c29a2b1ef` |
 | `.aide/queue/policy.yaml` | `968c23c360f693ec51ca1e008eb61dba75882e3692c58ab5801255ec30164b92` |
 | `specs/control-plane/product/scope-and-profiles.md` | `750eaed071c76d97c6f4d2ac3730330e92cdcf97bef9af69888b01126d9b0acf` |
+
+At repaired source commit `4315a8130db2923937ff3f98af2f33cc92c70c61`,
+the corresponding values are:
+
+| Path | SHA-256 |
+| --- | --- |
+| `.aide/policies/release-versioning.yaml` | `2fcae524a4a33b68815a68a11b2bfc4e881c39dfbb99f975560ab01d876b0575` |
+| `.aide/policies/release-publication-boundary.yaml` | `0826d00bd2b15bd469d500961f446a5671e82ef7afcc91f24d138ddf2c5ce705` |
+| `.aide/policies/review-gates.yaml` | `7db8f568853e67a2a4226a26daf819397b3cb45317c02c02b9b3be2c29a2b1ef` |
+| `.aide/queue/policy.yaml` | `968c23c360f693ec51ca1e008eb61dba75882e3692c58ab5801255ec30164b92` |
+| `specs/control-plane/product/scope-and-profiles.md` | `bb44e0b078730d7b9807c4e00da69cd9f3cf04735a7a0a31ffb40c563bbeacc4` |
 
 ## Verification and limits
 
