@@ -127,3 +127,26 @@ and tar.gz SHA-256 remains
 `ce3066076029d7f0e63172840f838ae4cfd141ae041760663800e72f4b0b218e`.
 The 20 changed metadata paths require a separate convergence commit and a
 zero-diff replay from clean HEAD before dev-effect review.
+
+## Clean-HEAD zero-diff replay
+
+Metadata convergence commit `0c048b3baeb7aa6ef48c58cdaed834b599fa870e`,
+tree `48a2a43bf23c3c6768df78ac0bba9fdbc1f06be3`, records those 20
+deterministic release changes. Its commit-message check passed. From its
+clean HEAD, the same four release commands all exited zero again. External
+logs `D:/Projects/AIDE/_review_scratch/lifecycle-9a0843c3-finalreplay-<command>.log`
+have SHA-256 values, respectively,
+`416bc3dac0dfdf61f23eaee9b1a6fd3b285c63c13dea4ae1d0434f2746a3aeb5`,
+`c30eb7108e7489ec43f1f401bf9c07f08a111c52ddac098830e65daf5910e770`,
+`7d44076e48c3ebb3664c77a2905597d3f0946c7798a3a03d04db33d65e4c58a7`,
+and `13103d0bfd1ae6bd60f6e12e9c4d0a9337f3e68b7f599f35c72d82634b8545de`.
+All 44 tracked `.aide/release` path/hash lines before and after are byte
+identical; external sorted lists
+`D:/Projects/AIDE/_review_scratch/lifecycle-9a0843c3-release-44-final-before.txt`
+and `...-after.txt` both have SHA-256
+`fa2a831f29c36233039795f2cf0cc6a40d56d12d7d27e4a54f4f44093bfd9b4a`.
+`git status --short` was empty after replay. Canonical `validate`, `doctor`,
+and `pack-status` passed again; pack provenance remains
+`PASS_SOURCE_ANCESTOR` with zero problems. The ZIP/tar bytes and their hashes
+above remain fixed. This is local artifact qualification and does not record
+dev integration, native/hosted qualification, main promotion or publication.

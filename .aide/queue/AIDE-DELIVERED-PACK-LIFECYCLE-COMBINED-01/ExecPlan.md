@@ -81,5 +81,9 @@ unreviewed source or artifact candidate may advance `dev`.
       checks. Independent extracted consumer review ACCEPT_WITH_NOTES after
       49 delivered CLI commands on the exact new bytes.
 - [x] Full exact-source importer suite passes 85/85 with a hashed external log.
-- [ ] Artifact projection/metadata convergence and zero-diff replay, exact
-      dev-effect review and observed `dev` ref.
+- [x] Artifact projection `db765053` and metadata convergence `0c048b3b`
+      committed with structured messages. Four final release commands pass
+      from clean HEAD, all 44 release paths replay byte-identically, and
+      ZIP/tar hashes remain fixed. Canonical validation, doctor and pack status
+      pass with `PASS_SOURCE_ANCESTOR`.
+- [ ] Independent exact artifact/dev-effect review and observed `dev` ref.

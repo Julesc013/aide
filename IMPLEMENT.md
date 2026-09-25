@@ -11783,3 +11783,15 @@ Owner review found a final-write race in the first candidate. The repair now pub
   the combined lifecycle WorkUnit. Artifact projection, postcommit replay,
   independent dev-effect review and remote integration remain open. No main,
   tag, publication, native or hosted effect occurred.
+
+## 2026-09-25 - Lifecycle artifact projection convergence
+
+- Artifact projection `db765053` and release metadata convergence `0c048b3b`
+  preserve the exact source `9a0843c3` and fixed ZIP/tar bytes. The first
+  postcommit replay changed only 20 release metadata and draft paths to record
+  clean-ancestor provenance.
+- A second bundle, validate, draft and draft-validate replay from clean HEAD
+  changed zero of 44 tracked release paths. Canonical validation, doctor and
+  pack status passed. The WorkUnit binds exact hashes and external logs.
+- Independent exact dev-effect review and observed remote `dev` are pending.
+  These local preview artifacts are not stable release publication.
