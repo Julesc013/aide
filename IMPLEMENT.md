@@ -12024,3 +12024,10 @@ Owner review found a final-write race in the first candidate. The repair now pub
   a false copied-ID reason and requested changes; a narrow reason repair and
   explicit regression assertion pass the same 11 tests. Independent rereview
   accepted `52e1f194` with notes. No generated artifact or dev effect occurred.
+- Admitted `AIDE-STABLE-LITE-DRAFT-TRUTH-01` from evidence closeout
+  `75406123` to correct source-generated local release draft lifecycle claims.
+  A red regression reproduced the obsolete plan-only claim. The Q48 source
+  now distinguishes legacy planners from bounded exact-plan Windows apply
+  candidates without changing no-publish semantics; all 12 Q48 tests pass.
+  Canonical validate/doctor retain the old-export provenance failure until
+  current-generator projection. Generated outputs were not edited here.

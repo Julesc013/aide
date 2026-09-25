@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-LITE-DRAFT-TRUTH-01
+status: needs_review
+classification: release_draft_lifecycle_claim_repair
+planning_state: source_candidate_frozen
+result: PASS_WITH_WARNINGS
+updated_at: 2026-09-25
+current_slice: exact_source_review
+next_slice: current_generator_projection_after_acceptance
+review_gate: independent_exact_source_review
+source_candidate_frozen: true
+artifact_projection_performed: false
+dev_effect_performed: false
+release_published: false
+notes:
+  - Q48 remains local draft and no-publish regardless of the corrected lifecycle wording.
+  - Old committed export and release artifacts require separate current-generator projection.
+  - Q48 focused tests pass; canonical validate and doctor remain red on old export provenance.

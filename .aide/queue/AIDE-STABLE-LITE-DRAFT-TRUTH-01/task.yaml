@@ -1,0 +1,54 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-DRAFT-TRUTH-01
+title: Correct obsolete lifecycle claims in local release draft generator
+type: implementation
+status: needs_review
+planning_state: source_candidate_frozen
+result: PASS_WITH_WARNINGS
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01
+base_dev: d292253b09944f28f0fc794fe3a9679966fe56a0
+accepted_source_ancestor: 52e1f194ebd2286374cfc32c91b81104d8b2838a
+review_closeout_ancestor: 75406123ccb06febf34fe9c579a6a1f772b0d6c0
+objective: >
+  Make Q48 local draft text distinguish legacy report-only lifecycle planning
+  commands from separately implemented bounded Windows exact-plan apply
+  commands, without claiming stable support or publication.
+authority_basis: >
+  The 2026-09-25 owner campaign delegation authorizes bounded child source
+  repair and review. The stable Lite contract requires release claims to match
+  actual delivered behavior and exact qualification.
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q48_github_release_draft.py
+    - docs/reference/aide-lite-release-bundle.md
+    - .aide/queue/AIDE-STABLE-LITE-DRAFT-TRUTH-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/export/**
+    - .aide/release/**
+    - .aide/policies/**
+    - specs/**
+    - governance/**
+  forbidden_paths:
+    - .github/**
+    - .aide.local/**
+    - arbitrary target repositories
+  forbidden_operations:
+    - generate or replace reviewed archive/draft outputs in this source task
+    - mutate dev, main, tags, releases or hosted settings
+    - claim stable release acceptance or any apply class beyond its documented boundary
+verification:
+  - red regression for obsolete planning-only lifecycle claims
+  - retain Q48 no-publish and no-upload preview boundaries
+  - affected draft tests and exact independent source review
+  - separate current-generator projection and committed replay
+retained_gates:
+  - source-only review does not qualify generated archive or draft bytes
+  - exact dev effect and final release acceptance remain separate

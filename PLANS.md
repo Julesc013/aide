@@ -3937,6 +3937,12 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   received `REQUEST_CHANGES` for a false reason in the copied-ID case. That
   reason is repaired and the 11 tests pass again; focused independent
   rereview accepted exact `52e1f194` with notes. Projection is next.
+  Before projection, `AIDE-STABLE-LITE-DRAFT-TRUTH-01` addresses obsolete Q48
+  draft text that still describes all lifecycle commands as planning-only.
+  Its source scope is bounded; current-generator outputs and dev effect stay
+  in the later projection task. The stale wording regression was red, then
+  12 Q48 tests passed; source review is next. Canonical validate/doctor remain
+  red on stale export provenance until projection.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

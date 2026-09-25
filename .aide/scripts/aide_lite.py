@@ -18739,7 +18739,7 @@ def github_release_known_risks(repo_root: Path) -> list[str]:
         "This is a local draft only; no GitHub publication, tag, or upload has occurred.",
         "Suggested tag naming still requires human/operator review.",
         "Dominium and Eureka target install readiness are not claimed by Q48.",
-        "Install, repair, upgrade, rollback, and uninstall remain plan/dry-run models unless a future phase adds apply behavior.",
+        "Q43-Q46 lifecycle planners remain report-only; separate Windows exact-plan apply paths require final profile qualification before public support is claimed.",
     ]
     if github_release_dirty_state(repo_root):
         risks.append("Q47 bundle provenance records dirty source state; release reviewers must explicitly accept or regenerate from a clean state.")
@@ -18769,7 +18769,7 @@ def render_github_release_body(repo_root: Path, assets: list[dict[str, object]],
         "",
         "- AIDE Lite Pack v0 local release bundle prepared for human review.",
         "- Assets come from the Q47 local bundle under `.aide/release/dist/`.",
-        "- Install, repair, upgrade, rollback, and uninstall commands remain preservation-first planning surfaces.",
+        "- Q43-Q46 report-only planners and separate bounded Windows exact-plan apply commands have distinct boundaries.",
         "",
         "## Release Notes Preview",
     ]
@@ -18781,7 +18781,7 @@ def render_github_release_body(repo_root: Path, assets: list[dict[str, object]],
         "## Install Notes",
         "",
         f"- Local install notes: `{RELEASE_INSTALL_NOTES_PATH}`",
-        "- Default install workflow is observe, plan, dry-run, review.",
+        "- Preview first; use documented exact-plan apply only where the final artifact and Windows profile are qualified.",
         "- Target repositories must run their own validation after extraction/import.",
         "",
         "## Assets",
