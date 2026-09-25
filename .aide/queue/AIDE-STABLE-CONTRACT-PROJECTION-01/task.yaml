@@ -9,7 +9,7 @@ created_at: 2026-09-25
 updated_at: 2026-09-25
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 source_task: AIDE-STABLE-RELEASE-CONTRACT-01
-source_candidate: 4315a8130db2923937ff3f98af2f33cc92c70c61
+source_candidate: d38e5839fe102fd4b38dc29971877753ccb6e2ec
 base_dev: a32535a2675f191ae3515f39501658e91ef41103
 objective: >
   Project the independently accepted stable Lite contract source through the
@@ -47,7 +47,7 @@ scope:
     - overwrite the accepted generator with older branch artifacts
     - mutate arbitrary or authored consumer data
 verification:
-  - exact source review of 4315a813 and any changed source scope
+  - exact source review of d38e5839 and any changed source scope
   - deterministic export, changelog, bundle and draft generation from clean source
   - checksums, archive member and source-provenance validation
   - committed-candidate canonical validate, doctor and pack-status

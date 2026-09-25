@@ -10,10 +10,12 @@ draft previews, exact combined validation, artifact review and a qualified
 ## Dependencies
 
 - Current accepted `dev` is `a32535a2675f191ae3515f39501658e91ef41103`.
-- Contract repair source is `4315a8130db2923937ff3f98af2f33cc92c70c61`,
-  tree `26a8f1081896326c47415a185b0f001f93b8d901`.
-- Independent technical rereview of that exact source is required before
-  treating it as accepted. A changed source receives focused review.
+- Contract repair source is exact reviewed commit
+  `d38e5839fe102fd4b38dc29971877753ccb6e2ec`, tree
+  `cee0ddf6800b3cb29cf192ae5ac6e9f0da684457`. Its substantive policy
+  repair is ancestor `4315a813`, tree `26a8f1081896326c47415a185b0f001f93b8d901`.
+- Independent technical rereview ACCEPT is in `evidence/source-review-acceptance.md`.
+  A changed source receives focused review.
 - The `aa3bcfec` review found committed provenance failure; its report and
   the three failing command logs are retained in the source task.
 
@@ -47,7 +49,7 @@ older branch or silently rebuild reviewed bytes.
 ## Progress
 
 - [x] Admit this bounded projection under the owner's campaign delegation.
-- [ ] Confirm independent acceptance of the frozen contract repair source.
+- [x] Confirm independent acceptance of the frozen contract repair source.
 - [ ] Generate and qualify derived previews and exact delivered artifacts.
 - [ ] Prove committed replay and canonical checks.
 - [ ] Obtain independent artifact and dev-effect verdict.
