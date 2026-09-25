@@ -3592,7 +3592,7 @@ items:
     description: Reconcile reviewed removal and rollback source, regenerate current artifacts, qualify consumers, and integrate an exact dev candidate.
   - id: AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01
     status: running
-    planning_state: red_regressions
+    planning_state: source_candidate_review
     result: PENDING
     title: Preserve project choices across successive portable-pack updates
     task: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/task.yaml

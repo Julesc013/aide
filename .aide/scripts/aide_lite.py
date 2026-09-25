@@ -2770,8 +2770,11 @@ PORTABLE_REMOVAL_INTENT_PATH = ".aide/install/aide-lite-pack-v0.removal-intent.j
 PORTABLE_REMOVAL_RUNNER_PATH = ".aide/scripts/aide_lite.py"
 PROJECT_CUSTOMIZATIONS_PATH = ".aide/customizations.json"
 PROJECT_CUSTOMIZATIONS_SCHEMA = "aide.project-customizations.v1"
+PROJECT_CUSTOMIZATIONS_SCHEMA_V2 = "aide.project-customizations.v2"
 PORTABLE_IMPORT_RECEIPT_SCHEMA = "aide.portable-import-receipt.v1"
+PORTABLE_IMPORT_RECEIPT_SCHEMA_V2 = "aide.portable-import-receipt.v2"
 PORTABLE_IMPORT_INTENT_SCHEMA = "aide.portable-import-intent.v1"
+PORTABLE_OPTIONAL_FEATURES = {"local_state_examples": ".aide.local.example/"}
 PORTABLE_REMOVAL_PLAN_SCHEMA = "aide.portable-removal-plan.v1"
 PORTABLE_REMOVAL_INTENT_SCHEMA = "aide.portable-removal-intent.v1"
 
@@ -39479,7 +39482,7 @@ def atomic_create_bytes_no_clobber(path: Path, data: bytes) -> None:
 
 
 @contextmanager
-def windows_pinned_directory(path: Path):
+def windows_pinned_directory(path: Path, *, for_write: bool = True):
     """Hold every ancestor against rename and reject reparse-point traversal."""
     if os.name != "nt":
         raise ValueError("Windows directory handles required")
@@ -39511,7 +39514,7 @@ def windows_pinned_directory(path: Path):
     invalid = ctypes.c_void_p(-1).value
     try:
         for index, component in enumerate(components):
-            access = 0x80 | (0x2 if index == len(components) - 1 else 0)  # READ_ATTRIBUTES | ADD_FILE
+            access = 0x80 | (0x2 if for_write and index == len(components) - 1 else 0)  # READ_ATTRIBUTES | ADD_FILE for effects
             handle = kernel.CreateFileW(str(component), access, 0x1 | 0x2, None, 3, 0x02000000 | 0x00200000, None)
             if handle == invalid or handle is None:
                 raise ctypes.WinError(ctypes.get_last_error())
@@ -40478,7 +40481,7 @@ def load_portable_import_receipt(target_root: Path) -> dict[str, object] | None:
         record = json.loads(read_text(path))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise ValueError(f"invalid portable import receipt: {exc}") from exc
-    if not isinstance(record, dict) or record.get("schema_version") != PORTABLE_IMPORT_RECEIPT_SCHEMA:
+    if not isinstance(record, dict) or record.get("schema_version") not in {PORTABLE_IMPORT_RECEIPT_SCHEMA, PORTABLE_IMPORT_RECEIPT_SCHEMA_V2}:
         raise ValueError("invalid portable import receipt schema")
     if record.get("pack_id") != EXPORT_PACK_ID:
         raise ValueError("portable import receipt pack id mismatch")
@@ -40498,14 +40501,31 @@ def load_portable_import_receipt(target_root: Path) -> dict[str, object] | None:
             raise ValueError(f"portable import receipt managed entry is invalid: {target_rel}")
         if entry.get("kind") not in {"managed_file", "portable_managed_section"}:
             raise ValueError(f"portable import receipt managed kind is invalid: {target_rel}")
-        if entry.get("ownership") != "aide_portable_managed":
+        overlay = (
+            entry.get("installed_digest") != entry.get("source_digest")
+            if entry.get("kind") == "managed_file"
+            else entry.get("local_overlay") is True
+        )
+        expected_ownership = "project_overlay_on_aide_managed" if overlay else "aide_portable_managed"
+        if entry.get("ownership") != expected_ownership:
             raise ValueError(f"portable import receipt ownership is invalid: {target_rel}")
+        if record["schema_version"] == PORTABLE_IMPORT_RECEIPT_SCHEMA_V2 and entry.get("local_overlay") is not overlay:
+            raise ValueError(f"portable import receipt overlay state is invalid: {target_rel}")
+        if record["schema_version"] == PORTABLE_IMPORT_RECEIPT_SCHEMA and overlay:
+            raise ValueError(f"portable import v1 receipt cannot claim an overlay: {target_rel}")
         if not isinstance(entry.get("source"), str) or not entry.get("source"):
             raise ValueError(f"portable import receipt source is invalid: {target_rel}")
         for digest_key in ("installed_digest", "source_digest"):
             digest = entry.get(digest_key)
             if not isinstance(digest, str) or re.fullmatch(r"[0-9a-f]{64}", digest) is None:
                 raise ValueError(f"portable import receipt {digest_key} is invalid: {target_rel}")
+    if record["schema_version"] == PORTABLE_IMPORT_RECEIPT_SCHEMA_V2:
+        disabled = record.get("disabled_features")
+        if not isinstance(disabled, list) or any(not isinstance(feature, str) or feature not in PORTABLE_OPTIONAL_FEATURES for feature in disabled) or disabled != sorted(set(disabled)):
+            raise ValueError("portable import receipt disabled features are invalid")
+        controls_digest = record.get("project_controls_digest")
+        if not isinstance(controls_digest, str) or (controls_digest != "missing" and re.fullmatch(r"[0-9a-f]{64}", controls_digest) is None):
+            raise ValueError("portable import receipt project controls digest is invalid")
     return record
 
 
@@ -40678,27 +40698,50 @@ def copy_operation(
     target_rel: str,
     receipt: dict[str, object] | None,
     predecessor_pack: Path | None,
+    resolved_data: bytes | None = None,
 ) -> tuple[dict[str, str], str | None]:
     source_digest = sha256_file(source)
     observed = target_file_digest(target)
+    managed = receipt.get("managed", {}) if receipt else {}
+    prior_target = managed.get(target_rel) if isinstance(managed, dict) else None
+    entry = receipt_managed_entry(receipt, target_rel, source_rel)
     action = "copy"
     ownership_basis = "new_path"
     conflict: str | None = None
-    if observed == source_digest:
+    postimage_digest = source_digest
+    if prior_target is not None and (entry is None or entry.get("kind") != "managed_file"):
+        action, ownership_basis, conflict = "conflict", "receipt_source_mismatch", target_rel
+    elif entry is not None and observed in {"missing", "not-a-file"}:
+        action, ownership_basis, conflict = "conflict", "missing_or_invalid_receipt_owned_file", target_rel
+    elif observed == source_digest:
         action = "unchanged"
         ownership_basis = "identical_incoming_bytes"
-    elif observed != "missing":
-        entry = receipt_managed_entry(receipt, target_rel, source_rel)
-        if entry is not None and entry.get("kind") == "managed_file" and entry.get("installed_digest") == observed:
+    elif entry is not None:
+        if source_digest == entry["source_digest"]:
+            action = "preserve_local"
+            ownership_basis = "unchanged_upstream_project_bytes"
+            postimage_digest = observed
+        elif entry["source_digest"] == entry["installed_digest"] and entry["installed_digest"] == observed:
             action = "update_owned"
             ownership_basis = "installed_receipt"
-        elif predecessor_installed_digest(predecessor_pack, source_rel, "managed_file") == observed:
+        else:
+            action, ownership_basis, conflict = "conflict", "project_edit_and_incoming_change", target_rel
+    elif observed != "missing":
+        if receipt is None and predecessor_installed_digest(predecessor_pack, source_rel, "managed_file") == observed:
             action = "update_owned"
             ownership_basis = "validated_predecessor_pack"
         else:
             action = "conflict"
             ownership_basis = "unknown_or_locally_modified"
             conflict = target_rel
+    if resolved_data is not None:
+        if action != "conflict" or entry is None or observed in {"missing", "not-a-file"} or predecessor_pack is None:
+            raise ValueError(f"resolution is not applicable to a receipt-owned conflict: {target_rel}")
+        base_digest = predecessor_installed_digest(predecessor_pack, source_rel, "managed_file")
+        if base_digest != entry["source_digest"] or source_digest == base_digest:
+            raise ValueError(f"resolution predecessor does not match the installed upstream baseline: {target_rel}")
+        action, ownership_basis, conflict = "resolve_owned", "project_selected_three_way", None
+        postimage_digest = digest_bytes(resolved_data)
     return (
         {
             "source": source_rel,
@@ -40707,8 +40750,9 @@ def copy_operation(
             "kind": "managed_file",
             "ownership_basis": ownership_basis,
             "preimage_digest": observed,
-            "postimage_digest": source_digest,
+            "postimage_digest": postimage_digest,
             "source_digest": source_digest,
+            **({"base_digest": str(base_digest), "resolution_digest": postimage_digest} if resolved_data is not None else {}),
         },
         conflict,
     )
@@ -40740,16 +40784,27 @@ def agents_operation(
     action = "merge_agents"
     ownership_basis = "new_managed_section"
     conflict: str | None = None
-    if current_block_digest == desired_block_digest:
+    managed = receipt.get("managed", {}) if receipt else {}
+    prior_target = managed.get(target_rel) if isinstance(managed, dict) else None
+    entry = receipt_managed_entry(receipt, target_rel, source_rel)
+    if prior_target is not None and (entry is None or entry.get("kind") != "portable_managed_section"):
+        action, ownership_basis, conflict = "conflict", "receipt_source_mismatch", target_rel
+    elif entry is not None and current_block is None:
+        action, ownership_basis, conflict = "conflict", "missing_receipt_owned_section", target_rel
+    elif current_block_digest == desired_block_digest:
         action = "unchanged"
         ownership_basis = "identical_incoming_section"
         postimage_digest = preimage_digest
+    elif entry is not None and desired_block_digest == entry["source_digest"]:
+        action = "preserve_local"
+        ownership_basis = "unchanged_upstream_project_section"
+        installed_digest = current_block_digest
+        postimage_digest = preimage_digest
     elif current_block is not None:
-        entry = receipt_managed_entry(receipt, target_rel, source_rel)
-        if entry is not None and entry.get("kind") == "portable_managed_section" and entry.get("installed_digest") == current_block_digest:
+        if entry is not None and entry.get("installed_digest") == current_block_digest and entry["source_digest"] == entry["installed_digest"]:
             action = "update_owned"
             ownership_basis = "installed_receipt"
-        elif predecessor_installed_digest(predecessor_pack, source_rel, "portable_managed_section") == current_block_digest:
+        elif receipt is None and predecessor_installed_digest(predecessor_pack, source_rel, "portable_managed_section") == current_block_digest:
             action = "update_owned"
             ownership_basis = "validated_predecessor_pack"
         else:
@@ -40772,15 +40827,53 @@ def agents_operation(
     )
 
 
+def read_portable_resolution_bytes(path: Path, pack_root: Path, target_root: Path) -> bytes:
+    """Read one bounded project-selected postimage outside both effect roots."""
+    path = Path(os.path.abspath(path))
+    for ancestor in (path, *path.parents):
+        if ancestor.is_symlink() or bool(getattr(ancestor, "is_junction", lambda: False)()):
+            raise ValueError(f"resolution crosses a reparse path: {path}")
+    if not path.is_file() or not stat.S_ISREG(path.stat().st_mode) or path.stat().st_size > 4 * 1024 * 1024:
+        raise ValueError(f"resolution must be a bounded regular file: {path}")
+    if os.name == "nt" and path.stat().st_nlink != 1:
+        raise ValueError("resolution must not be a hard-linked pack or target alias")
+    resolved = path.resolve()
+    if resolved in {pack_root, target_root} or pack_root in resolved.parents or target_root in resolved.parents:
+        raise ValueError("resolution file must be outside pack and target")
+    if os.name == "nt":
+        with windows_pinned_directory(path.parent, for_write=False):
+            chunks: list[bytes] = []
+            kernel, handle = portable_import_verified_leaf(path, None, read_only=True, max_bytes=4 * 1024 * 1024, capture_out=chunks)
+            try:
+                data = b"".join(chunks)
+            finally:
+                kernel.CloseHandle(handle)
+    else:
+        data = path.read_bytes()
+        if len(data) > 4 * 1024 * 1024:
+            raise ValueError("resolution file exceeds the size bound")
+    return data
+
+
 def import_pack_plan(
     pack_root: Path,
     target_root: Path,
     mode: str = "safe",
     predecessor_pack: Path | None = None,
+    resolutions: dict[str, Path] | None = None,
+    resolution_data: dict[str, bytes] | None = None,
+    disabled_features: dict[str, str] | None = None,
 ) -> tuple[list[dict[str, str]], list[str], list[dict[str, str]]]:
     if mode not in IMPORT_MODES:
         raise ValueError(f"unsupported import mode: {mode}")
     receipt = load_portable_import_receipt(target_root)
+    resolutions = resolutions or {}
+    resolution_data = resolution_data if resolution_data is not None else {}
+    disabled_features = disabled_features or {}
+    for target_rel in resolutions:
+        if not isinstance(target_rel, str) or "\\" in target_rel or normalize_rel(target_rel) != target_rel:
+            raise ValueError("invalid resolution target")
+        portable_target_path(target_root, target_rel)
     files_root = pack_root / "files"
     if not files_root.exists():
         raise ValueError(f"pack files root missing: {files_root}")
@@ -40801,10 +40894,19 @@ def import_pack_plan(
         if reserved_key in {PORTABLE_IMPORT_RECEIPT_PATH.casefold(), PORTABLE_IMPORT_INTENT_PATH.casefold(), PORTABLE_REPAIR_INTENT_PATH.casefold(), PORTABLE_REMOVAL_INTENT_PATH.casefold(), PORTABLE_LIFECYCLE_LOCK_PATH.casefold(), PROJECT_CUSTOMIZATIONS_PATH.casefold()}:
             raise ValueError(f"pack payload collides with reserved project/import state: {target_rel}")
         target = portable_target_path(target_root, target_rel)
-        if rel == "AGENTS.md.template":
+        feature = next((feature_id for feature_id, prefix in PORTABLE_OPTIONAL_FEATURES.items() if feature_id in disabled_features and target_rel.startswith(prefix)), None)
+        if feature is not None:
+            observed = target_file_digest(target)
+            operation = {"source": rel, "target": target_rel, "action": "preserve_disabled", "kind": "disabled_feature", "ownership_basis": f"project_disabled_feature:{feature}", "preimage_digest": observed, "postimage_digest": observed, "source_digest": sha256_file(source), "feature_id": feature}
+            conflict = None
+        elif rel == "AGENTS.md.template":
             operation, conflict = agents_operation(source, rel, target, target_rel, receipt, predecessor_pack)
         else:
-            operation, conflict = copy_operation(source, rel, target, target_rel, receipt, predecessor_pack)
+            resolved = None
+            if target_rel in resolutions:
+                resolved = read_portable_resolution_bytes(Path(resolutions[target_rel]), pack_root, target_root)
+                resolution_data[target_rel] = resolved
+            operation, conflict = copy_operation(source, rel, target, target_rel, receipt, predecessor_pack, resolved)
         operations.append(operation)
         if conflict:
             conflicts.append(conflict)
@@ -40834,6 +40936,8 @@ def import_pack_plan(
     gitignore_preimage = target_file_digest(gitignore)
     gitignore_postimage = digest_bytes(desired_gitignore)
     operations.append({"source": "<generated>", "target": ".gitignore", "action": "unchanged" if gitignore_preimage == gitignore_postimage else "ensure_local_state_ignore", "kind": "target_owned_additive", "ownership_basis": "additive_ignore_rules", "preimage_digest": gitignore_preimage, "postimage_digest": gitignore_postimage, "source_digest": gitignore_postimage})
+    if set(resolutions) != set(resolution_data):
+        raise ValueError("resolution target is absent or outside the admitted payload")
     return operations, sorted(set(conflicts)), skipped
 
 
@@ -40845,6 +40949,7 @@ def import_plan_digest(
     conflicts: list[str],
     skipped: list[dict[str, str]],
     predecessor_pack: Path | None,
+    project_controls_digest: str = "missing",
 ) -> str:
     receipt = load_portable_import_receipt(target_root)
     payload = {
@@ -40854,6 +40959,7 @@ def import_plan_digest(
         "target": normalize_rel(target_root.resolve()),
         "mode": mode,
         "prior_receipt_digest": receipt.get("receipt_digest") if receipt else None,
+        "project_controls_digest": project_controls_digest,
         "operations": operations,
         "conflicts": conflicts,
         "skipped": skipped,
@@ -40861,19 +40967,41 @@ def import_plan_digest(
     return digest_bytes(stable_compact_json_text(payload).encode("utf-8"))
 
 
-def load_project_customizations(target_root: Path) -> dict[str, dict[str, str]]:
-    """Read optional project-authored explanations; never grant update authority."""
+def load_project_customizations(target_root: Path, record_override: dict[str, object] | None = None) -> dict[str, dict[str, str]]:
+    """Read optional project-authored explanations; never grant ownership."""
     path = portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)
-    if not path.exists():
+    if record_override is None and not path.exists():
         return {}
-    if not path.is_file() or path.stat().st_size > 65536:
-        raise ValueError("invalid project customizations file")
-    try:
-        record = json.loads(read_text(path))
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-        raise ValueError(f"invalid project customizations JSON: {exc}") from exc
-    if not isinstance(record, dict) or set(record) != {"schema_version", "entries"} or record["schema_version"] != PROJECT_CUSTOMIZATIONS_SCHEMA:
+    if record_override is None:
+        if not path.is_file() or path.stat().st_size > 65536:
+            raise ValueError("invalid project customizations file")
+        try:
+            record = json.loads(read_text(path))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise ValueError(f"invalid project customizations JSON: {exc}") from exc
+    else:
+        record = record_override
+    if not isinstance(record, dict) or record.get("schema_version") not in {PROJECT_CUSTOMIZATIONS_SCHEMA, PROJECT_CUSTOMIZATIONS_SCHEMA_V2}:
         raise ValueError("invalid project customizations schema")
+    if record["schema_version"] == PROJECT_CUSTOMIZATIONS_SCHEMA and set(record) != {"schema_version", "entries"}:
+        raise ValueError("invalid project customizations schema")
+    if record["schema_version"] == PROJECT_CUSTOMIZATIONS_SCHEMA_V2:
+        if set(record) != {"schema_version", "entries", "disabled_features"}:
+            raise ValueError("invalid project customizations v2 schema")
+        disabled = record["disabled_features"]
+        if not isinstance(disabled, list) or len(disabled) > len(PORTABLE_OPTIONAL_FEATURES):
+            raise ValueError("invalid disabled features")
+        seen: set[str] = set()
+        for feature in disabled:
+            if not isinstance(feature, dict) or not {"feature_id"} <= set(feature) <= {"feature_id", "rationale"}:
+                raise ValueError("invalid disabled feature entry")
+            feature_id = feature["feature_id"]
+            if not isinstance(feature_id, str) or feature_id not in PORTABLE_OPTIONAL_FEATURES or feature_id in seen:
+                raise ValueError("unknown or duplicate disabled feature")
+            seen.add(feature_id)
+            rationale = feature.get("rationale")
+            if rationale is not None and (not isinstance(rationale, str) or not rationale.strip() or len(rationale) > 500 or any(ord(char) < 32 for char in rationale)):
+                raise ValueError("invalid disabled feature rationale")
     entries = record["entries"]
     if not isinstance(entries, dict) or len(entries) > 256:
         raise ValueError("invalid project customizations entries")
@@ -40892,6 +41020,42 @@ def load_project_customizations(target_root: Path) -> dict[str, dict[str, str]]:
     return entries
 
 
+def project_update_controls(target_root: Path, prior_receipt: dict[str, object] | None) -> tuple[dict[str, str], str]:
+    """Treat v1 rationale as advisory; require valid v2 for effectful disables."""
+    path = portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)
+    prior_disabled = prior_receipt.get("disabled_features", []) if prior_receipt else []
+    if not path.exists():
+        if prior_disabled:
+            raise ValueError("disabled-feature controls missing; explicit reenablement is required")
+        return {}, "missing"
+    if not path.is_file() or path.stat().st_size > 65536:
+        raise ValueError("invalid project customizations file")
+    try:
+        if os.name == "nt":
+            with windows_pinned_directory(path.parent, for_write=False):
+                chunks: list[bytes] = []
+                kernel, handle = portable_import_verified_leaf(path, None, read_only=True, max_bytes=65536, capture_out=chunks)
+                try:
+                    raw = b"".join(chunks)
+                finally:
+                    kernel.CloseHandle(handle)
+        else:
+            with path.open("rb") as stream:
+                raw = stream.read(65537)
+            if len(raw) > 65536:
+                raise ValueError("invalid project customizations file")
+        observed = digest_bytes(raw)
+        record = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"invalid project customizations JSON: {exc}") from exc
+    if not isinstance(record, dict) or record.get("schema_version") != PROJECT_CUSTOMIZATIONS_SCHEMA_V2:
+        if prior_disabled:
+            raise ValueError("disabled-feature controls require explicit v2 reenablement")
+        return {}, "missing"
+    load_project_customizations(target_root, record_override=record)
+    return {item["feature_id"]: item.get("rationale", "unknown") for item in record["disabled_features"]}, observed
+
+
 def explain_import_result(result: dict[str, object], target_root: Path, customizations: dict[str, dict[str, str]] | None = None) -> list[dict[str, str]]:
     """Explain ownership decisions without inferring a project's motivation."""
     if customizations is None:
@@ -40900,10 +41064,18 @@ def explain_import_result(result: dict[str, object], target_root: Path, customiz
         "preserve": "Project-owned file exists; the incoming template cannot replace it.",
         "conflict": "Existing bytes differ from incoming bytes and their ownership cannot be proven; the whole payload apply stops before writes.",
         "update_owned": "The installed receipt or validated predecessor proves unchanged managed bytes may be updated.",
+        "preserve_local": "The upstream bytes are unchanged; the project-edited managed bytes remain installed.",
+        "resolve_owned": "A project-selected file supplies the exact postimage for this receipt-owned three-way conflict.",
+        "preserve_disabled": "The project disabled this optional example feature; its existing bytes remain untouched.",
         "create_from_template": "No project-owned file exists; create the initial editable template.",
         "merge_agents": "Add the portable section while retaining project-authored text outside it.",
     }
     explanations: list[dict[str, str]] = []
+    disabled_rationales: dict[str, str] = {}
+    controls_current = False
+    if any(operation.get("action") == "preserve_disabled" for operation in result.get("operations", [])):
+        disabled_rationales, controls_digest = project_update_controls(target_root, load_portable_import_receipt(target_root))
+        controls_current = controls_digest == result.get("project_controls_digest")
     for operation in result.get("operations", []):
         action = operation.get("action")
         if action not in reasons:
@@ -40915,6 +41087,9 @@ def explain_import_result(result: dict[str, object], target_root: Path, customiz
             and entry["observed_digest"] == operation["preimage_digest"]
             and target_file_digest(portable_target_path(target_root, target_rel)) == operation["preimage_digest"]
         )
+        feature_id = operation.get("feature_id") if action == "preserve_disabled" else None
+        disabled_reason = disabled_rationales.get(feature_id, "unknown") if controls_current and feature_id else "unknown"
+        rationale = disabled_reason if feature_id else entry["rationale"] if known else "unknown"
         explanations.append({
             "target": target_rel,
             "action": action,
@@ -40922,8 +41097,8 @@ def explain_import_result(result: dict[str, object], target_root: Path, customiz
             "observed_digest": operation["preimage_digest"],
             "incoming_digest": operation["source_digest"],
             "reason": reasons[action],
-            "rationale_status": "recorded_for_current_bytes" if known else "unknown",
-            "project_rationale": entry["rationale"] if known else "unknown",
+            "rationale_status": ("recorded_for_current_controls" if disabled_reason != "unknown" else "unknown") if feature_id else "recorded_for_current_bytes" if known else "unknown",
+            "project_rationale": rationale,
         })
     return explanations
 
@@ -40956,6 +41131,8 @@ def build_portable_import_receipt(
     operations: list[dict[str, str]],
     plan_digest: str,
     predecessor_pack: Path | None,
+    disabled_features: dict[str, str] | None = None,
+    project_controls_digest: str = "missing",
 ) -> dict[str, object]:
     managed: dict[str, dict[str, str]] = {}
     for operation in operations:
@@ -40963,21 +41140,29 @@ def build_portable_import_receipt(
         if kind not in {"managed_file", "portable_managed_section"} or operation.get("action") == "conflict":
             continue
         installed_digest = operation.get("installed_digest") if kind == "portable_managed_section" else operation.get("postimage_digest")
+        overlay = (
+            installed_digest != operation.get("source_digest")
+            if kind == "managed_file"
+            else operation.get("action") == "preserve_local"
+        )
         managed[operation["target"]] = {
             "source": operation["source"],
             "kind": kind,
             "installed_digest": str(installed_digest),
             "source_digest": operation.get("source_digest", ""),
-            "ownership": "aide_portable_managed",
+            "ownership": "project_overlay_on_aide_managed" if overlay else "aide_portable_managed",
+            "local_overlay": overlay,
         }
     record: dict[str, object] = {
-        "schema_version": PORTABLE_IMPORT_RECEIPT_SCHEMA,
+        "schema_version": PORTABLE_IMPORT_RECEIPT_SCHEMA_V2,
         "pack_id": EXPORT_PACK_ID,
         "mode": mode,
         "pack": import_pack_identity(pack_root),
         "predecessor_pack": import_pack_identity(predecessor_pack) if predecessor_pack else None,
         "plan_digest": plan_digest,
         "managed": dict(sorted(managed.items())),
+        "disabled_features": sorted(disabled_features or {}),
+        "project_controls_digest": project_controls_digest,
         "network_calls": False,
         "provider_or_model_calls": False,
     }
@@ -40999,7 +41184,7 @@ def build_portable_import_intent(
             "backup_rel": operation.get("backup_rel"),
         }
         for operation in operations
-        if operation.get("action") in {"copy", "update_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
+        if operation.get("action") in {"copy", "update_owned", "resolve_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
         and operation.get("preimage_digest") != operation.get("postimage_digest")
     ]
     record: dict[str, object] = {
@@ -41017,7 +41202,7 @@ def build_portable_import_intent(
 def portable_receipt_state_matches(left: dict[str, object] | None, right: dict[str, object]) -> bool:
     if left is None:
         return False
-    return all(left.get(key) == right.get(key) for key in ("schema_version", "pack_id", "mode", "pack", "managed"))
+    return all(left.get(key) == right.get(key) for key in ("schema_version", "pack_id", "mode", "pack", "managed", "disabled_features", "project_controls_digest"))
 
 
 def portable_removal_operation(
@@ -41045,7 +41230,11 @@ def portable_removal_operation(
             else:
                 observed_digest = digest_bytes(block.encode("utf-8")) if block is not None else "managed-section-missing"
 
-    if observed_digest == installed_digest:
+    if entry.get("local_overlay") or entry.get("ownership") == "project_overlay_on_aide_managed":
+        action = "preserve_project_overlay"
+        state = "recorded_project_overlay"
+        removal_candidate = False
+    elif observed_digest == installed_digest:
         action = "remove_managed_section_future" if kind == "portable_managed_section" else "remove_managed_file_future"
         state = "unchanged_recorded_managed_bytes"
         removal_candidate = True
@@ -41569,7 +41758,7 @@ def portable_import_ensure_parent(target_root: Path, target_rel: str) -> Path:
     return target
 
 
-def portable_import_verified_leaf(path: Path, expected_digest: str, *, writable: bool = False, identity_out: list[str] | None = None) -> tuple[object, object]:
+def portable_import_verified_leaf(path: Path, expected_digest: str | None, *, writable: bool = False, read_only: bool = False, identity_out: list[str] | None = None, max_bytes: int | None = None, capture_out: list[bytes] | None = None) -> tuple[object, object]:
     """Open the exact regular, single-link preimage without writer/delete sharing."""
     import ctypes
     from ctypes import wintypes
@@ -41589,7 +41778,9 @@ def portable_import_verified_leaf(path: Path, expected_digest: str, *, writable:
     kernel.ReadFile.restype = wintypes.BOOL
     kernel.CloseHandle.argtypes = [wintypes.HANDLE]
     kernel.CloseHandle.restype = wintypes.BOOL
-    access = 0x80000000 | 0x00010000 | (0x40000000 if writable else 0)
+    if writable and read_only:
+        raise ValueError("verified leaf cannot be writable and read-only")
+    access = 0x80000000 | (0 if read_only else 0x00010000) | (0x40000000 if writable else 0)
     handle = kernel.CreateFileW(str(path), access, 0x1, None, 3, 0x00200000, None)
     if handle == ctypes.c_void_p(-1).value or handle is None:
         raise ctypes.WinError(ctypes.get_last_error())
@@ -41599,6 +41790,8 @@ def portable_import_verified_leaf(path: Path, expected_digest: str, *, writable:
             raise ctypes.WinError(ctypes.get_last_error())
         if info.attributes & (0x10 | 0x400) or info.links != 1 or info.size_high:
             raise RuntimeError(f"import preimage is not a regular single-link file: {path}")
+        if max_bytes is not None and info.size_low > max_bytes:
+            raise ValueError(f"import preimage exceeds the size bound: {path}")
         remaining = info.size_low
         digest = hashlib.sha256()
         while remaining:
@@ -41608,9 +41801,12 @@ def portable_import_verified_leaf(path: Path, expected_digest: str, *, writable:
                 raise ctypes.WinError(ctypes.get_last_error())
             if not count.value:
                 raise RuntimeError(f"import preimage ended early: {path}")
-            digest.update(buffer.raw[:count.value])
+            chunk = buffer.raw[:count.value]
+            digest.update(chunk)
+            if capture_out is not None:
+                capture_out.append(chunk)
             remaining -= count.value
-        if digest.hexdigest() != expected_digest:
+        if expected_digest is not None and digest.hexdigest() != expected_digest:
             raise RuntimeError(f"stale target preimage: {path}")
         if identity_out is not None:
             identity_out.append(f"{info.volume:08x}{info.index_high:08x}{info.index_low:08x}")
@@ -41728,12 +41924,16 @@ def portable_import_delete_exact(target_root: Path, target_rel: str, expected: b
             kernel.CloseHandle(handle)
 
 
-def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[str, str]) -> bool:
+def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[str, str], resolution_data: dict[str, bytes] | None = None) -> bool:
     action = operation["action"]
     target = portable_target_path(target_root, operation["target"])
     if target_file_digest(target) != operation["preimage_digest"]:
         raise RuntimeError(f"stale target preimage: {operation['target']}")
-    if action in {"copy", "update_owned"} and operation["kind"] == "managed_file":
+    if action == "resolve_owned" and operation["kind"] == "managed_file":
+        data = (resolution_data or {}).get(operation["target"])
+        if data is None or digest_bytes(data) != operation.get("resolution_digest"):
+            raise RuntimeError(f"resolution data no longer matches the plan: {operation['target']}")
+    elif action in {"copy", "update_owned"} and operation["kind"] == "managed_file":
         data = (pack_root / "files" / operation["source"]).read_bytes()
     elif operation["kind"] == "portable_managed_section" and action in {"merge_agents", "update_owned"}:
         existing = target.read_bytes().decode("utf-8") if target.exists() and target.is_file() else None
@@ -41767,6 +41967,7 @@ def _apply_import_pack_unlocked(
     predecessor_pack: Path | None = None,
     expected_plan_digest: str | None = None,
     fail_after_writes: int | None = None,
+    resolutions: dict[str, Path] | None = None,
 ) -> dict[str, object]:
     pack_root = pack_root.resolve()
     target_root = target_root.resolve()
@@ -41790,6 +41991,9 @@ def _apply_import_pack_unlocked(
         if dry_run:
             return {"status": "RECOVERY_REQUIRED", "dry_run": True, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
         if recovery["classification"] == "completed":
+            expected_controls = pending["next_receipt"].get("project_controls_digest")
+            if expected_controls not in {None, "missing"} and target_file_digest(portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)) != expected_controls:
+                return {"status": "RECOVERY_REQUIRED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
             receipt_bytes = stable_json_text(pending["next_receipt"]).encode("utf-8")
             receipt_preimage = pending.get("receipt_preimage_digest")
             if os.name == "nt":
@@ -41810,11 +42014,26 @@ def _apply_import_pack_unlocked(
                 portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
         else:
             return {"status": "RECOVERY_REQUIRED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
+    prior_receipt = load_portable_import_receipt(target_root)
+    disabled_features, controls_digest = project_update_controls(target_root, prior_receipt)
+    if os.name != "nt" and not dry_run and (resolutions or disabled_features or (prior_receipt and prior_receipt.get("disabled_features"))):
+        raise ValueError("three-way resolution and disabled-feature apply require Windows anchored effects")
+    if resolutions and predecessor_pack is None:
+        raise ValueError("three-way resolution requires the exact predecessor pack")
+    if resolutions and prior_receipt is None:
+        raise ValueError("three-way resolution requires an installed receipt")
+    if resolutions and expected_plan_digest is None and not dry_run:
+        raise ValueError("three-way resolution apply requires --expect-plan")
+    if disabled_features and expected_plan_digest is None and not dry_run:
+        raise ValueError("disabled-feature apply requires --expect-plan")
+    if predecessor_pack is not None and prior_receipt is not None and prior_receipt.get("pack") != import_pack_identity(predecessor_pack):
+        raise ValueError("predecessor pack does not match the installed receipt")
     receipt_preimage_digest = target_file_digest(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH))
-    operations, conflicts, skipped = import_pack_plan(pack_root, target_root, mode=mode, predecessor_pack=predecessor_pack)
-    plan_digest = import_plan_digest(pack_root, target_root, mode, operations, conflicts, skipped, predecessor_pack)
+    resolution_data: dict[str, bytes] = {}
+    operations, conflicts, skipped = import_pack_plan(pack_root, target_root, mode=mode, predecessor_pack=predecessor_pack, resolutions=resolutions, resolution_data=resolution_data, disabled_features=disabled_features)
+    plan_digest = import_plan_digest(pack_root, target_root, mode, operations, conflicts, skipped, predecessor_pack, controls_digest)
     if expected_plan_digest is not None and expected_plan_digest != plan_digest:
-        return {"status": "STALE_PLAN", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": conflicts, "skipped": skipped, "operations": operations, "written": [], "plan_digest": plan_digest, "expected_plan_digest": expected_plan_digest}
+        return {"status": "STALE_PLAN", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": conflicts, "skipped": skipped, "operations": operations, "written": [], "plan_digest": plan_digest, "expected_plan_digest": expected_plan_digest, "project_controls_digest": controls_digest}
     if dry_run:
         return {
             "status": "PLANNED_CONFLICT" if conflicts else "PLANNED",
@@ -41827,13 +42046,14 @@ def _apply_import_pack_unlocked(
             "operations": operations,
             "written": [],
             "plan_digest": plan_digest,
+            "project_controls_digest": controls_digest,
         }
     if conflicts:
-        return {"status": "CONFLICT", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": conflicts, "skipped": skipped, "skipped_conflicts": conflicts, "operations": operations, "written": [], "plan_digest": plan_digest}
+        return {"status": "CONFLICT", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": conflicts, "skipped": skipped, "skipped_conflicts": conflicts, "operations": operations, "written": [], "plan_digest": plan_digest, "project_controls_digest": controls_digest}
     target_root.mkdir(parents=True, exist_ok=True)
-    next_receipt = build_portable_import_receipt(pack_root, mode, operations, plan_digest, predecessor_pack)
+    next_receipt = build_portable_import_receipt(pack_root, mode, operations, plan_digest, predecessor_pack, disabled_features, controls_digest)
     for operation in operations:
-        if operation.get("action") in {"copy", "update_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"} and operation.get("preimage_digest") not in {"missing", operation.get("postimage_digest")}:
+        if operation.get("action") in {"copy", "update_owned", "resolve_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"} and operation.get("preimage_digest") not in {"missing", operation.get("postimage_digest")}:
             relative = Path(operation["target"])
             operation["backup_rel"] = (relative.parent / f".{relative.name}.aide-import-backup-{plan_digest[:20]}").as_posix()
     intent = build_portable_import_intent(target_root, plan_digest, operations, next_receipt)
@@ -41846,7 +42066,7 @@ def _apply_import_pack_unlocked(
     payload_operations = [
         operation
         for operation in operations
-        if operation.get("action") in {"copy", "update_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
+        if operation.get("action") in {"copy", "update_owned", "resolve_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
         and operation.get("preimage_digest") != operation.get("postimage_digest")
     ]
     receipt_changed = not portable_receipt_state_matches(load_portable_import_receipt(target_root), next_receipt)
@@ -41858,10 +42078,35 @@ def _apply_import_pack_unlocked(
             portable_import_write_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(intent).encode("utf-8"), "missing")
         else:
             atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH), intent)
+    def external_inputs_still_match() -> bool:
+        try:
+            current_disabled, current_controls_digest = project_update_controls(target_root, prior_receipt)
+        except (OSError, RuntimeError, ValueError):
+            return False
+        if current_disabled != disabled_features or current_controls_digest != controls_digest:
+            return False
+        for target_rel, path in (resolutions or {}).items():
+            try:
+                if read_portable_resolution_bytes(Path(path), pack_root, target_root) != resolution_data[target_rel]:
+                    return False
+            except (OSError, RuntimeError, ValueError, KeyError):
+                return False
+        return True
+
     written: list[str] = []
+    if not external_inputs_still_match():
+        recovery = classify_portable_import_recovery(target_root, intent) if payload_operations or receipt_changed else None
+        return {"status": "INTERRUPTED" if recovery else "STALE_PLAN", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": [], "recovery": recovery, "plan_digest": plan_digest}
     for operation in payload_operations:
         try:
-            if apply_import_operation(pack_root, target_root, operation):
+            if not external_inputs_still_match():
+                raise RuntimeError("project controls or resolution changed after intent")
+            applied = (
+                apply_import_operation(pack_root, target_root, operation, resolution_data)
+                if operation["action"] == "resolve_owned"
+                else apply_import_operation(pack_root, target_root, operation)
+            )
+            if applied:
                 written.append(operation["target"])
         except (OSError, RuntimeError, ValueError):
             recovery = classify_portable_import_recovery(target_root, intent)
@@ -41869,6 +42114,9 @@ def _apply_import_pack_unlocked(
         if fail_after_writes is not None and len(written) >= fail_after_writes:
             recovery = classify_portable_import_recovery(target_root, intent)
             return {"status": "INTERRUPTED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": written, "recovery": recovery, "plan_digest": plan_digest}
+    if not external_inputs_still_match():
+        recovery = classify_portable_import_recovery(target_root, intent)
+        return {"status": "INTERRUPTED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": written, "recovery": recovery, "plan_digest": plan_digest}
     current_receipt = load_portable_import_receipt(target_root)
     if not payload_operations and not receipt_changed and portable_receipt_state_matches(current_receipt, next_receipt):
         receipt_result = WriteResult(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), "unchanged")
@@ -41878,6 +42126,9 @@ def _apply_import_pack_unlocked(
             if os.name == "nt"
             else atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), next_receipt)
         )
+    if not external_inputs_still_match():
+        recovery = classify_portable_import_recovery(target_root, intent)
+        return {"status": "INTERRUPTED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": written, "recovery": recovery, "plan_digest": plan_digest}
     intent_path = portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH)
     if intent_path.exists():
         if os.name == "nt":
@@ -41899,6 +42150,7 @@ def _apply_import_pack_unlocked(
         "receipt": PORTABLE_IMPORT_RECEIPT_PATH,
         "receipt_written": receipt_result.action == "written",
         "plan_digest": plan_digest,
+        "project_controls_digest": controls_digest,
     }
 
 
@@ -41910,11 +42162,12 @@ def apply_import_pack(
     predecessor_pack: Path | None = None,
     expected_plan_digest: str | None = None,
     fail_after_writes: int | None = None,
+    resolutions: dict[str, Path] | None = None,
 ) -> dict[str, object]:
     if dry_run:
-        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes)
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions)
     with portable_lifecycle_lock(target_root.resolve()):
-        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes)
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions)
 
 
 def reject_portable_rollback_pack_reparse(pack_root: Path) -> None:
@@ -42237,6 +42490,11 @@ def command_import_pack(args: argparse.Namespace) -> int:
     predecessor_pack = Path(args.from_pack).resolve() if args.from_pack else None
     if predecessor_pack is not None and not predecessor_pack.exists():
         predecessor_pack = (args.repo_root / args.from_pack).resolve()
+    resolutions: dict[str, Path] = {}
+    for target_rel, filename in args.resolve or []:
+        if target_rel in resolutions:
+            raise ValueError(f"duplicate resolution target: {target_rel}")
+        resolutions[target_rel] = Path(filename)
     customizations = load_project_customizations(target_root) if args.explain or args.feedback_out else None
     result = apply_import_pack(
         pack_root,
@@ -42245,6 +42503,7 @@ def command_import_pack(args: argparse.Namespace) -> int:
         mode=args.mode,
         predecessor_pack=predecessor_pack,
         expected_plan_digest=args.expect_plan,
+        resolutions=resolutions,
     )
     explanations = explain_import_result(result, target_root, customizations) if customizations is not None else []
     if args.feedback_out:
@@ -44300,7 +44559,8 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     import_parser.add_argument("--dry-run", action="store_true")
     import_parser.add_argument("--explain", action="store_true", help="Explain ownership decisions; unknown project rationale remains unknown.")
     import_parser.add_argument("--feedback-out", help="With --dry-run, create a local manual-share JSON packet at a new path outside pack and target.")
-    import_parser.add_argument("--from-pack", help="Validated predecessor pack used only to prove an unrecorded installed baseline.")
+    import_parser.add_argument("--from-pack", help="Validated predecessor pack for an installed receipt or an unrecorded baseline.")
+    import_parser.add_argument("--resolve", nargs=2, action="append", metavar=("TARGET", "FILE"), help="Use FILE's exact bytes as the explicit postimage for a receipt-owned conflict; requires --from-pack and --expect-plan on apply.")
     import_parser.add_argument("--expect-plan", help="Exact plan digest printed by a prior dry-run; changed inputs refuse apply.")
     import_parser.add_argument(
         "--mode",

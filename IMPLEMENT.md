@@ -11809,3 +11809,18 @@ Owner review found a final-write race in the first candidate. The repair now pub
 - This closes the bounded lifecycle integration task with warnings about
   unqualified product profiles and public release. The parent campaign remains
   active for three-way update, disabled features and final release work.
+
+## 2026-09-25 - Project-owned successive update source candidate
+
+- The three-way update WorkUnit reproduced two current defects on its admitted
+  `dev@d4b67c96` base: missing `resolutions` API and implicit recreation of
+  a missing receipt-owned file. Its red log hashes are in the WorkUnit.
+- The task worktree now implements manual exact-plan resolution, v2 receipt
+  overlays, explicit optional-example disable survival, guarded Windows input
+  reads, conservative repair/removal/rollback interactions and explanations.
+  It changes the importer, its tests and user guide only; no new generated
+  export/release bytes or target outside disposable tests were produced.
+- Fourteen focused tests passed on the preceding source hash; two cases
+  affected by the final non-Windows guard passed on final source. The WorkUnit
+  binds commands, file/log hashes and limitations. Independent review, full
+  suite, artifact/consumer gates and dev integration remain pending.

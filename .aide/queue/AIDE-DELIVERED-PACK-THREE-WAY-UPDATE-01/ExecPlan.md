@@ -63,5 +63,16 @@ security predicates and final delivered bytes at their exact revisions.
 
 - [x] Read-only design and red test patch prepared externally.
 - [x] Task branch/worktree created from observed `dev@d4b67c96`.
-- [ ] Run the red regressions on the exact task base.
-- [ ] Implement, validate, review and integrate the bounded behavior.
+- [x] Apply the test-only patch and run both cases separately on the exact
+      admitted base. They fail at the expected missing-resolution API and
+      missing-receipt-owned-file conflict assertions; external logs are bound
+      in `evidence/red-regressions.md`.
+- [x] Implement v2 overlay/disable receipts, plan-bound manual resolution,
+      missing-owned conflict, guarded input reads, explanations, compatibility
+      and effect-time checks. Fourteen focused cases passed on the preceding
+      source; two delta cases passed on final source. Exact hashes and logs are
+      in `evidence/source-candidate-validation.md`.
+- [ ] Freeze a structured source commit and obtain independent technical
+      review of that exact commit and the Windows leaf/intent changes.
+- [ ] Run full affected source suites, generate/qualify delivered artifacts,
+      prove replay, and integrate accepted bytes into observed remote `dev`.

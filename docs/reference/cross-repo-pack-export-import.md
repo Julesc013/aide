@@ -26,10 +26,58 @@ made a change. A project may optionally write `.aide/customizations.json`:
 
 The rationale is shown only while its digest matches the observed file. An
 absent or stale rationale is `unknown`; the file grants no overwrite authority.
-Malformed customization metadata refuses explanation before CLI apply. No
+A syntactically valid v1 document with malformed advisory rationale fields
+does not stop an ordinary import, but `--explain` refuses it. Invalid JSON
+refuses import because its control schema cannot be classified. Malformed v2
+controls also refuse import. No
 customization metadata is created or sent automatically. A pack payload that
 tries to supply `.aide/customizations.json` is refused, even when checksummed.
 Windows case and trailing-dot aliases of that reserved path are refused too.
+
+For an optional example tree, the project can use strict v2 controls. The
+current admitted feature ID is `local_state_examples`, covering only
+`.aide.local.example/`. Unknown or duplicate IDs refuse the import:
+
+```json
+{
+  "schema_version": "aide.project-customizations.v2",
+  "entries": {},
+  "disabled_features": [
+    {"feature_id": "local_state_examples", "rationale": "Our project maintains its own examples."}
+  ]
+}
+```
+
+Preview the change, then apply with its exact plan digest. Import records the
+disabled ID and controls-file digest in a v2 receipt and leaves existing
+example bytes untouched across later packs. If the controls file disappears or
+becomes malformed, a subsequent import refuses to silently reenable the
+feature. Reenable by explicitly removing its entry from a valid v2 file, then
+review the new plan. The rationale is optional; missing rationale remains
+`unknown`. This control does not disable core `.aide/` files.
+
+For a conflict between a receipt-owned local edit and changed upstream bytes,
+prepare a manually merged file outside both the target and packs. The importer
+does not guess the merge. On Windows, use the exact predecessor pack named by
+the receipt and run:
+
+```text
+py -3 -I -B <new-pack>/files/.aide/scripts/aide_lite.py --repo-root <target> import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --resolve .aide/prompts/compact-task.md <merged-file> --dry-run --explain
+py -3 -I -B <new-pack>/files/.aide/scripts/aide_lite.py --repo-root <target> import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --resolve .aide/prompts/compact-task.md <merged-file> --expect-plan <preview-plan-digest>
+```
+
+The plan binds the predecessor identity, current receipt, local preimage,
+incoming digest, merged-file digest, and controls digest. Apply rechecks those
+inputs after recording its recovery intent and writes only the preflight-read
+merged bytes. Its receipt distinguishes the installed project overlay from the
+new upstream source, so a later changed pack requires a fresh resolution;
+unchanged upstream preserves the overlay. A missing previously managed file is
+a conflict, not an implicit reinstall. The resolution file path and raw bytes
+are not stored in the intent or optional feedback. Rollback and owned-file
+repair refuse overlays or skipped optional paths; removal preserves an overlay
+and retains the partial receipt. Interrupted imports require exact intent
+reconciliation before another update. This bounded apply path is available only
+on Windows; release support requires separate delivered-artifact qualification.
 
 To make a local packet that the project can review and share manually, add
 `--feedback-out <new-path>` to a dry run. The new path must be outside both the

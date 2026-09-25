@@ -435,6 +435,305 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(rerun["status"], "NO_CHANGES")
         self.assertFalse(rerun["written"])
 
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_manual_three_way_resolution_keeps_local_overlay_across_updates(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        aide_lite.write_text(source_root / managed_rel, "# Task\ninstruction: base\n")
+        pack_v1 = self.freeze_pack(source_root, "three-way-v1")
+        target = source_root.parent / "target-three-way"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+
+        local_v1 = b"# Task\ninstruction: project\n"
+        (target / managed_rel).write_bytes(local_v1)
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt_v1 = receipt_path.read_bytes()
+        aide_lite.write_text(source_root / managed_rel, "# Task\ninstruction: upstream-v2\n")
+        pack_v2 = self.freeze_pack(source_root, "three-way-v2")
+        refused = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)
+        self.assertEqual(refused["status"], "CONFLICT")
+        self.assertEqual(refused["written"], [])
+        self.assertIn(managed_rel, refused["conflicts"])
+        self.assertEqual((target / managed_rel).read_bytes(), local_v1)
+        self.assertEqual(receipt_path.read_bytes(), receipt_v1)
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+
+        resolved_v2 = source_root.parent / "resolved-v2.md"
+        merged_v2 = b"# Task\ninstruction: project + upstream-v2\n"
+        resolved_v2.write_bytes(merged_v2)
+        preview_v2 = aide_lite.apply_import_pack(
+            pack_v2, target, dry_run=True, predecessor_pack=pack_v1,
+            resolutions={managed_rel: resolved_v2},
+        )
+        self.assertEqual(preview_v2["status"], "PLANNED")
+        applied_v2 = aide_lite.apply_import_pack(
+            pack_v2, target, predecessor_pack=pack_v1,
+            resolutions={managed_rel: resolved_v2},
+            expected_plan_digest=preview_v2["plan_digest"],
+        )
+        self.assertEqual(applied_v2["status"], "APPLIED")
+        self.assertEqual((target / managed_rel).read_bytes(), merged_v2)
+        receipt_v2 = json.loads(receipt_path.read_text(encoding="utf-8"))
+        entry_v2 = receipt_v2["managed"][managed_rel]
+        self.assertEqual(entry_v2["installed_digest"], aide_lite.digest_bytes(merged_v2))
+        self.assertEqual(entry_v2["source_digest"], aide_lite.digest_bytes((pack_v2 / "files" / managed_rel).read_bytes()))
+        self.assertNotEqual(entry_v2["installed_digest"], entry_v2["source_digest"])
+        self.assertEqual(entry_v2["ownership"], "project_overlay_on_aide_managed")
+        removal_row = next(item for item in aide_lite.build_portable_removal_plan(target)["operations"] if item["target"] == managed_rel)
+        self.assertEqual(removal_row["action"], "preserve_project_overlay")
+        self.assertFalse(removal_row["removal_candidate"])
+        with self.assertRaisesRegex(ValueError, "receipt-owned"):
+            aide_lite.apply_portable_owned_repair(pack_v2, target, managed_rel, dry_run=True)
+        with self.assertRaises(ValueError):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+
+        aide_lite.write_text(source_root / managed_rel, "# Task\ninstruction: upstream-v3\n")
+        pack_v3 = self.freeze_pack(source_root, "three-way-v3")
+        receipt_before_v3 = receipt_path.read_bytes()
+        refused_v3 = aide_lite.apply_import_pack(pack_v3, target, predecessor_pack=pack_v2)
+        self.assertEqual(refused_v3["status"], "CONFLICT")
+        self.assertEqual(refused_v3["written"], [])
+        self.assertEqual((target / managed_rel).read_bytes(), merged_v2)
+        self.assertEqual(receipt_path.read_bytes(), receipt_before_v3)
+
+        resolved_v3 = source_root.parent / "resolved-v3.md"
+        merged_v3 = b"# Task\ninstruction: project + upstream-v3\n"
+        resolved_v3.write_bytes(merged_v3)
+        cli = [sys.executable, "-I", "-B", str(pack_v3 / "files/.aide/scripts/aide_lite.py"), "--repo-root", str(target), "import-pack", "--pack", str(pack_v3), "--target", str(target), "--from-pack", str(pack_v2), "--resolve", managed_rel, str(resolved_v3)]
+        preview_cli = subprocess.run([*cli, "--dry-run", "--explain"], capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(preview_cli.returncode, 0, preview_cli.stderr)
+        self.assertIn("status: PLANNED", preview_cli.stdout)
+        self.assertIn("resolve_owned", preview_cli.stdout)
+        self.assertIn("rationale_status=unknown", preview_cli.stdout)
+        self.assertNotIn(str(resolved_v3), preview_cli.stdout)
+        preview_digest = next(line.partition(": ")[2] for line in preview_cli.stdout.splitlines() if line.startswith("plan_digest: "))
+        applied_cli = subprocess.run([*cli, "--expect-plan", preview_digest], capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(applied_cli.returncode, 0, applied_cli.stderr)
+        self.assertIn("status: APPLIED", applied_cli.stdout)
+        self.assertEqual((target / managed_rel).read_bytes(), merged_v3)
+        entry_v3 = json.loads(receipt_path.read_text(encoding="utf-8"))["managed"][managed_rel]
+        self.assertEqual(entry_v3["installed_digest"], aide_lite.digest_bytes(merged_v3))
+        self.assertNotEqual(entry_v3["installed_digest"], entry_v3["source_digest"])
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_missing_receipt_owned_file_refuses_implicit_recreation(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "missing-owned-v1")
+        target = source_root.parent / "target-missing-owned"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt_before = receipt_path.read_bytes()
+        (target / managed_rel).unlink()
+        aide_lite.write_text(source_root / managed_rel, "# Incoming changed prompt\n")
+        pack_v2 = self.freeze_pack(source_root, "missing-owned-v2")
+
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
+        operation = next(item for item in preview["operations"] if item["target"] == managed_rel)
+        self.assertEqual(preview["status"], "PLANNED_CONFLICT")
+        self.assertEqual(operation["action"], "conflict")
+        self.assertIn(managed_rel, preview["conflicts"])
+        applied = aide_lite.apply_import_pack(
+            pack_v2, target, predecessor_pack=pack_v1,
+            expected_plan_digest=preview["plan_digest"],
+        )
+        self.assertEqual(applied["status"], "CONFLICT")
+        self.assertEqual(applied["written"], [])
+        self.assertFalse((target / managed_rel).exists())
+        self.assertEqual(receipt_path.read_bytes(), receipt_before)
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_resolution_preview_binds_bytes_and_predecessor_without_leaking_path(self) -> None:
+        source_root = self.make_source_repo()
+        rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "resolution-bound-v1")
+        target = source_root.parent / "resolution-bound-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        (target / rel).write_bytes(b"project edit\n")
+        aide_lite.write_text(source_root / rel, "upstream v2\n")
+        pack_v2 = self.freeze_pack(source_root, "resolution-bound-v2")
+        resolved = source_root.parent / "private-resolution.txt"
+        resolved.write_bytes(b"project and upstream v2\n")
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        before = receipt_path.read_bytes()
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1, resolutions={rel: resolved})
+        self.assertEqual(preview["status"], "PLANNED")
+        self.assertNotIn(str(resolved), json.dumps(preview))
+        with self.assertRaisesRegex(ValueError, "predecessor pack"):
+            aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v2, resolutions={rel: resolved})
+        resolved.write_bytes(b"changed after preview\n")
+        stale = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, resolutions={rel: resolved}, expected_plan_digest=preview["plan_digest"])
+        self.assertEqual(stale["status"], "STALE_PLAN")
+        self.assertEqual(receipt_path.read_bytes(), before)
+        self.assertEqual((target / rel).read_bytes(), b"project edit\n")
+        hard_link = source_root.parent / "hard-link-resolution.txt"
+        os.link(target / rel, hard_link)
+        with self.assertRaisesRegex(ValueError, "hard-linked"):
+            aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1, resolutions={rel: hard_link})
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_resolution_change_after_intent_refuses_and_recovery_preserves_local(self) -> None:
+        source_root = self.make_source_repo()
+        rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "resolution-race-v1")
+        target = source_root.parent / "resolution-race-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        (target / rel).write_bytes(b"local bytes\n")
+        aide_lite.write_text(source_root / rel, "incoming bytes\n")
+        pack_v2 = self.freeze_pack(source_root, "resolution-race-v2")
+        resolved = source_root.parent / "resolution-race.txt"
+        resolved.write_bytes(b"approved combination\n")
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1, resolutions={rel: resolved})
+        original_write = aide_lite.portable_import_write_exact
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        before = receipt_path.read_bytes()
+
+        def swap_after_intent(root: Path, target_rel: str, data: bytes, preimage: str, backup_rel: str | None = None):
+            result = original_write(root, target_rel, data, preimage, backup_rel)
+            if target_rel == aide_lite.PORTABLE_IMPORT_INTENT_PATH:
+                resolved.write_bytes(b"rival combination\n")
+            return result
+
+        with mock.patch.object(aide_lite, "portable_import_write_exact", side_effect=swap_after_intent):
+            stopped = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, resolutions={rel: resolved}, expected_plan_digest=preview["plan_digest"])
+        self.assertEqual(stopped["status"], "INTERRUPTED")
+        self.assertEqual(stopped["written"], [])
+        self.assertEqual((target / rel).read_bytes(), b"local bytes\n")
+        self.assertEqual(receipt_path.read_bytes(), before)
+        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+        retry = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, resolutions={rel: resolved}, expected_plan_digest=preview["plan_digest"])
+        self.assertEqual(retry["status"], "STALE_PLAN")
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_v2_optional_disable_persists_and_legacy_guards_refuse_skipped_path(self) -> None:
+        source_root = self.make_source_repo()
+        optional = ".aide.local.example/secrets/README.md"
+        pack_v1 = self.freeze_pack(source_root, "disabled-v1")
+        target = source_root.parent / "disabled-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        controls_path = target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
+        aide_lite.write_text(controls_path, aide_lite.stable_json_text({
+            "schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA_V2,
+            "entries": {},
+            "disabled_features": [{"feature_id": "local_state_examples", "rationale": "The project maintains its own examples."}],
+        }))
+        aide_lite.write_text(source_root / optional, "upstream optional v2\n")
+        pack_v2 = self.freeze_pack(source_root, "disabled-v2")
+        before = (target / optional).read_bytes()
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
+        optional_op = next(op for op in preview["operations"] if op["target"] == optional)
+        self.assertEqual(optional_op["action"], "preserve_disabled")
+        explained = next(item for item in aide_lite.explain_import_result(preview, target) if item["target"] == optional)
+        self.assertEqual(explained["project_rationale"], "The project maintains its own examples.")
+        aide_lite.write_text(controls_path, aide_lite.stable_json_text({"schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA_V2, "entries": {}, "disabled_features": [{"feature_id": "local_state_examples"}]}))
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, expected_plan_digest=preview["plan_digest"])["status"], "STALE_PLAN")
+        self.assertEqual((target / optional).read_bytes(), before)
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
+        unexplained = next(item for item in aide_lite.explain_import_result(preview, target) if item["target"] == optional)
+        self.assertEqual(unexplained["project_rationale"], "unknown")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, expected_plan_digest=preview["plan_digest"])["status"], "APPLIED")
+        self.assertEqual((target / optional).read_bytes(), before)
+        receipt = aide_lite.load_portable_import_receipt(target)
+        self.assertEqual(receipt["disabled_features"], ["local_state_examples"])
+        self.assertNotIn(optional, receipt["managed"])
+        self.assertNotIn(optional, [op["target"] for op in aide_lite.build_portable_removal_plan(target)["operations"]])
+        with self.assertRaisesRegex(ValueError, "receipt-owned"):
+            aide_lite.apply_portable_owned_repair(pack_v2, target, optional, dry_run=True)
+        with self.assertRaises(ValueError):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        aide_lite.write_text(source_root / optional, "upstream optional v3\n")
+        pack_v3 = self.freeze_pack(source_root, "disabled-v3")
+        preview_v3 = aide_lite.apply_import_pack(pack_v3, target, dry_run=True, predecessor_pack=pack_v2)
+        self.assertEqual(aide_lite.apply_import_pack(pack_v3, target, predecessor_pack=pack_v2, expected_plan_digest=preview_v3["plan_digest"])["status"], "APPLIED")
+        self.assertEqual((target / optional).read_bytes(), before)
+        controls_path.unlink()
+        with self.assertRaisesRegex(ValueError, "disabled-feature controls missing"):
+            aide_lite.apply_import_pack(pack_v3, target, dry_run=True)
+        aide_lite.write_text(controls_path, aide_lite.stable_json_text({"schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA_V2, "entries": {}, "disabled_features": [{"feature_id": "unknown", "rationale": "x"}]}))
+        with self.assertRaisesRegex(ValueError, "unknown or duplicate disabled feature"):
+            aide_lite.apply_import_pack(pack_v3, target, dry_run=True)
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_v1_receipt_crlf_agents_is_read_as_managed_not_project_overlay(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "v1-crlf-pack")
+        target = source_root.parent / "v1-crlf-target"
+        target.mkdir()
+        (target / "AGENTS.md").write_bytes(b"# Authored\r\n")
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+        path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt = aide_lite.load_portable_import_receipt(target)
+        agents = receipt["managed"]["AGENTS.md"]
+        self.assertNotEqual(agents["installed_digest"], agents["source_digest"])
+        self.assertEqual(agents["ownership"], "aide_portable_managed")
+        self.assertFalse(agents["local_overlay"])
+        receipt["schema_version"] = aide_lite.PORTABLE_IMPORT_RECEIPT_SCHEMA
+        receipt.pop("disabled_features")
+        receipt.pop("project_controls_digest")
+        for entry in receipt["managed"].values():
+            entry.pop("local_overlay")
+        receipt["receipt_digest"] = aide_lite.portable_import_record_digest(receipt, "receipt_digest")
+        path.write_text(aide_lite.stable_json_text(receipt), encoding="utf-8")
+        self.assertEqual(aide_lite.load_portable_import_receipt(target)["managed"]["AGENTS.md"]["ownership"], "aide_portable_managed")
+        plan = aide_lite.build_portable_removal_plan(target)
+        agents_row = next(item for item in plan["operations"] if item["target"] == "AGENTS.md")
+        self.assertTrue(agents_row["removal_candidate"])
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_disabled_controls_swap_at_receipt_effect_keeps_intent_for_reconciliation(self) -> None:
+        source_root = self.make_source_repo()
+        pack_v1 = self.freeze_pack(source_root, "controls-race-v1")
+        target = source_root.parent / "controls-race-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        controls = target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
+        enabled = {"schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA_V2, "entries": {}, "disabled_features": [{"feature_id": "local_state_examples"}]}
+        controls.write_text(aide_lite.stable_json_text(enabled), encoding="utf-8")
+        pack_v2 = self.freeze_pack(source_root, "controls-race-v2")
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
+        original_write = aide_lite.portable_import_write_exact
+
+        def swap_after_receipt(root: Path, target_rel: str, data: bytes, preimage: str, backup_rel: str | None = None):
+            result = original_write(root, target_rel, data, preimage, backup_rel)
+            if target_rel == aide_lite.PORTABLE_IMPORT_RECEIPT_PATH:
+                controls.write_text(aide_lite.stable_json_text({**enabled, "disabled_features": []}), encoding="utf-8")
+            return result
+
+        with mock.patch.object(aide_lite, "portable_import_write_exact", side_effect=swap_after_receipt):
+            stopped = aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, expected_plan_digest=preview["plan_digest"])
+        self.assertEqual(stopped["status"], "INTERRUPTED")
+        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file())
+        self.assertEqual(aide_lite.apply_import_pack(pack_v2, target)["status"], "RECOVERY_REQUIRED")
+        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file())
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_malformed_v2_controls_refuse_while_v1_bad_rationale_stays_advisory(self) -> None:
+        source_root = self.make_source_repo()
+        optional = ".aide.local.example/secrets/README.md"
+        pack_v1 = self.freeze_pack(source_root, "controls-malformed-v1")
+        target = source_root.parent / "controls-malformed-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt_before = receipt_path.read_bytes()
+        optional_before = (target / optional).read_bytes()
+        controls = target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
+        controls.write_bytes(b'{"schema_version":"aide.project-customizations.v2","disabled_features":[')
+        aide_lite.write_text(source_root / optional, "changed optional example\n")
+        pack_v2 = self.freeze_pack(source_root, "controls-malformed-v2")
+        with self.assertRaisesRegex(ValueError, "invalid project customizations JSON"):
+            aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
+        with self.assertRaisesRegex(ValueError, "invalid project customizations JSON"):
+            aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)
+        self.assertEqual((target / optional).read_bytes(), optional_before)
+        self.assertEqual(receipt_path.read_bytes(), receipt_before)
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+        controls.write_text(aide_lite.stable_json_text({"schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA, "entries": {optional: {"observed_digest": "invalid", "rationale": ""}}}), encoding="utf-8")
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "NO_CHANGES")
+        preview = aide_lite.apply_import_pack(pack_v1, target, dry_run=True)
+        with self.assertRaisesRegex(ValueError, "invalid project customization digest"):
+            aide_lite.explain_import_result(preview, target)
+
     def test_validated_predecessor_pack_can_prove_an_unrecorded_baseline(self) -> None:
         source_root = self.make_source_repo()
         managed_rel = ".aide/prompts/compact-task.md"
@@ -480,7 +779,7 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual((target / managed_rel).read_bytes(), target_before)
         self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
 
-    def test_locally_edited_portable_agents_section_refuses_whole_apply(self) -> None:
+    def test_locally_edited_portable_agents_section_is_preserved_when_upstream_unchanged(self) -> None:
         source_root = self.make_source_repo()
         pack = self.freeze_pack(source_root, "agents-section-v1")
         target = source_root.parent / "target-agents-section"
@@ -488,15 +787,20 @@ class ExportImportTests(unittest.TestCase):
         aide_lite.apply_import_pack(pack, target)
         agents = aide_lite.read_text(target / "AGENTS.md")
         aide_lite.write_text(target / "AGENTS.md", agents.replace("## AIDE Lite Portable Guidance", "## Locally edited portable guidance"))
-        receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
+        edited = (target / "AGENTS.md").read_bytes()
 
         result = aide_lite.apply_import_pack(pack, target)
-        self.assertEqual(result["status"], "CONFLICT")
+        self.assertEqual(result["status"], "APPLIED")
         self.assertEqual(result["written"], [])
-        self.assertIn("AGENTS.md", result["conflicts"])
+        self.assertEqual(result["conflicts"], [])
+        self.assertEqual((target / "AGENTS.md").read_bytes(), edited)
         self.assertIn("Manual guidance.", aide_lite.read_text(target / "AGENTS.md"))
         self.assertIn("Locally edited portable guidance", aide_lite.read_text(target / "AGENTS.md"))
-        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+        entry = aide_lite.load_portable_import_receipt(target)["managed"]["AGENTS.md"]
+        self.assertEqual(entry["ownership"], "project_overlay_on_aide_managed")
+        self.assertTrue(entry["local_overlay"])
+        removal = next(item for item in aide_lite.build_portable_removal_plan(target)["operations"] if item["target"] == "AGENTS.md")
+        self.assertEqual(removal["action"], "preserve_project_overlay")
 
     def test_local_edits_and_unknown_ownership_refuse_before_any_payload_write(self) -> None:
         source_root = self.make_source_repo()
