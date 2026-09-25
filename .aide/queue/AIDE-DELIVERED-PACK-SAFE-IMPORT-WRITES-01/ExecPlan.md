@@ -32,7 +32,12 @@ allowlist; use disposable targets for write tests.
   wrote its intent to an outside sibling through a disposable junction.
 - [x] Record the Windows handle/no-replace recovery design and its explicit
   non-atomic update tradeoff. This is analysis only, with source work pending.
-- [ ] Repair and qualify the source with the reviewed shared helper.
+- [x] Implement and run focused Windows source tests for pinned parents,
+  no-clobber publication, verified old-leaf backup, intent and receipt
+  transitions, and interruption recovery. The source remains uncommitted;
+  see `evidence/source-implementation-uncommitted.md`.
+- [ ] Qualify the final combined source with the reviewed shared helper and
+  lifecycle-lock wrapper, then run the full importer suite and consumers.
 - [ ] Close independent review, provenance, and dev integration.
 
 ## Recovery and risks
