@@ -1,0 +1,60 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-CONTRACT-PROJECTION-01
+title: Qualify stable Lite contract with current derived artifacts
+type: integration
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+source_task: AIDE-STABLE-RELEASE-CONTRACT-01
+source_candidate: 4315a8130db2923937ff3f98af2f33cc92c70c61
+base_dev: a32535a2675f191ae3515f39501658e91ef41103
+objective: >
+  Project the independently accepted stable Lite contract source through the
+  current export and release preview generators; qualify exact combined
+  committed artifacts and integrate only a reviewed candidate into dev.
+authority_basis: >
+  The owner's 2026-09-25 campaign delegation authorizes bounded child
+  WorkUnits and qualified dev integration. The source task leaves generated
+  artifacts read-only; this separate WorkUnit owns their projection and exact
+  technical, artifact and effect gates.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-STABLE-CONTRACT-PROJECTION-01/**
+    - .aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/**
+    - .aide/queue/index.yaml
+    - .aide/export/**
+    - .aide/release/**
+    - .aide/changelog/**
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/scripts/**
+    - .aide/policies/**
+    - specs/**
+    - governance/**
+    - docs/reference/**
+  forbidden_paths:
+    - .github/**
+    - .aide.local/**
+    - target repositories
+  forbidden_operations:
+    - main promotion, tag, upload or publication
+    - source-policy repair hidden inside generated output
+    - overwrite the accepted generator with older branch artifacts
+    - mutate arbitrary or authored consumer data
+verification:
+  - exact source review of 4315a813 and any changed source scope
+  - deterministic export, changelog, bundle and draft generation from clean source
+  - checksums, archive member and source-provenance validation
+  - committed-candidate canonical validate, doctor and pack-status
+  - post-commit release metadata replay with zero tracked changes
+  - independent artifact and exact dev-effect review
+  - fresh ref, worktree and Windows/GitHub identity checks before one-writer dev fast-forward and normal push
+retained_gates:
+  - source review does not alone qualify artifact bytes or dev effect
+  - Q47 and Q48 outputs remain preview-only and no-publish
+  - final stable support profile, main, tag, publication and downloaded consumers remain with later release WorkUnits

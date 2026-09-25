@@ -11850,6 +11850,14 @@ Owner review found a final-write race in the first candidate. The repair now pub
 - This source-only branch cannot regenerate `.aide/export/**` or
   `.aide/release/**` under its WorkUnit scope. Those outputs need a separately
   bounded projection and passing committed-candidate checks before dev effect.
+
+## 2026-09-25 - Stable Lite contract projection admission
+
+- Created a separate integration WorkUnit for current export/release preview
+  projection from `4315a813` after `dev@a32535a2`, with exact source-review,
+  artifact, replay, canonical and dev-effect gates.
+- Admission changed queue and planning records only; generation, technical
+  acceptance, dev mutation, main and publication remain unperformed.
 ## 2026-09-25 - Project-owned successive update source candidate
 
 - The three-way update WorkUnit reproduced two current defects on its admitted

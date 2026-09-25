@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-CONTRACT-PROJECTION-01
+status: running
+classification: artifact_projection_admitted
+planning_state: admitted
+result: PENDING
+updated_at: 2026-09-25
+source_candidate: 4315a8130db2923937ff3f98af2f33cc92c70c61
+next_slice: confirm_source_review_then_generate_current_preview_artifacts
+review_gate: exact_artifact_and_dev_effect_review
+dev_integration_performed: false
+main_promotion_performed: false
+tag_created: false
+release_published: false
+notes:
+  - The source task's exact technical rereview is in progress; generated projection is conditional on its acceptance.
+  - This WorkUnit carries the export-provenance failure openly until exact regenerated committed outputs pass canonical checks.
+  - No stable release or public compatibility claim follows from local preview projection.

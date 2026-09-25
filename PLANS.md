@@ -3863,6 +3863,16 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   contract WorkUnit owns source and documentation only; a separate projection
   WorkUnit must refresh derived export/release outputs, pass exact checks and
   obtain appropriate review before dev integration.
+
+## 2026-09-25 - Stable Lite contract projection WorkUnit
+
+- `AIDE-STABLE-CONTRACT-PROJECTION-01` is admitted from frozen contract
+  repair `4315a813` after current `dev@a32535a2`. It owns only generated
+  export/changelog/release preview outputs and bounded queue/evidence records.
+- Its dependency is independent exact source acceptance. Then regenerate,
+  qualify committed artifact provenance and zero-change replay, obtain
+  independent artifact/dev-effect review and perform only qualified dev
+  integration. Main/tag/publication remain later gates.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote
