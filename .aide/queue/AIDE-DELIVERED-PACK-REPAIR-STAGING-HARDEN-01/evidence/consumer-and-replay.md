@@ -39,5 +39,23 @@ This transition is an expected metadata convergence, not a changed archive.
 Commit the converged metadata and repeat all four commands from clean HEAD;
 zero changed release files is still required before dev integration.
 
+## Converged replay
+
+Convergence commit `9f2f38957e5757b2264c6dacb42d03a21583a83f`, tree
+`e7068eb2d067143ff244def7551247ee5f843881`, contains the 18 derived
+metadata changes. From that clean HEAD all four release/draft commands exited
+zero; the 44-file path/hash list stayed byte-identical with SHA-256
+`7d80dacc3bf5b3351cf67b0208c797c218f5cd9e42688ef734b496a632427ccd`.
+`Compare-Object` returned no differences, and `git status --short` was empty.
+ZIP and tar remained at the tested hashes above. `pack-status` reported valid
+`PASS_SOURCE_ANCESTOR`. Canonical `validate`, `doctor`, and the `dev..HEAD`
+structured commit range all passed. External final logs remain in
+`D:\Projects\AIDE\_review_scratch\repair-staging-replay2-*.log` and
+`repair-staging-final-{validate,doctor,commit-range}.log`.
+
+This evidence is scoped to source and local dev-integration readiness. The
+next effect is a refreshed, fast-forward-only dev integration and observed
+remote identity; main and public release remain separate.
+
 This local acceptance does not qualify safe import writes, complete lifecycle,
 native/hosted effects, main promotion, or public stable release.
