@@ -30,6 +30,8 @@ allowlist; use disposable targets for write tests.
   The current importer overwrote the concurrent bytes in both cases.
 - [x] Reproduce an import-intent parent substitution. The current importer
   wrote its intent to an outside sibling through a disposable junction.
+- [x] Record the Windows handle/no-replace recovery design and its explicit
+  non-atomic update tradeoff. This is analysis only, with source work pending.
 - [ ] Repair and qualify the source with the reviewed shared helper.
 - [ ] Close independent review, provenance, and dev integration.
 
