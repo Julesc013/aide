@@ -11851,3 +11851,13 @@ Owner review found a final-write race in the first candidate. The repair now pub
   pack, changed upstream content conflicts. The portable and delivered guides
   state the old-pack requirement. Three focused tests passed on the repaired
   source; full importer, independent review, artifacts and dev effect remain.
+
+## 2026-09-25 - Admit installed Lite repair-health implementation
+
+- A bounded WorkUnit and separate task worktree were created from reviewed
+  update source `12758e07` while that source's full importer suite runs in a
+  different worktree. The new task is limited to read-only installed-target
+  diagnosis and existing one-file repair eligibility; its external extracted
+  ZIP probe is red because the command is absent.
+- No source implementation, real-target mutation, generated pack/release
+  artifact, dev effect or public release is claimed at this admission.

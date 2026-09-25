@@ -3836,3 +3836,13 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
 - Root retains integration and generated-artifact ownership. Product source
   work starts with the prepared test-only patch; public-release gates remain
   with the parent campaign.
+
+## 2026-09-25 - Installed Lite repair-health WorkUnit
+
+- `AIDE-DELIVERED-PACK-REPAIR-HEALTH-01` is admitted on a task worktree from
+  independently reviewed update source `12758e07`. It provides one read-only
+  installed-target health command, using the exact pack and receipt to explain
+  supported one-file repair eligibility and conservative refusal classes.
+- The external extracted-CLI red probe and catalogue are bound in its
+  ExecPlan. Source work may proceed independently; dev integration waits for
+  the three-way update's full qualification and combined artifact review.
