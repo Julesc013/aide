@@ -42,5 +42,8 @@ effect is required for this source repair.
 - [x] Admit bounded WorkUnit on a clean task branch from observed dev.
 - [x] Reproduce red empty-target regression.
 - [x] Implement narrow fix and pass affected tests.
-- [ ] Obtain exact independent source review.
+- [x] Obtain exact independent source review, ACCEPT_WITH_NOTES for `f00d937e`.
 - [ ] Route accepted source to artifact projection and installed recheck.
+
+The reviewer identified nonempty target queue routing as a distinct
+release-blocking follow-up. Project artifacts after that source repair.

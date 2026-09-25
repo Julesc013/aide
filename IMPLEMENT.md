@@ -12007,5 +12007,8 @@ Owner review found a final-write race in the first candidate. The repair now pub
   a separate Task OS source repair WorkUnit was admitted. Its red clean-target
   regression reproduced incidental `X-OS-01` identity. A narrow parser and
   empty-queue selection repair passes 9 focused Task OS, 5 capability,
-  canonical validate and doctor checks. The source candidate awaits exact
-  technical review; artifact projection and dev effect remain separate.
+  canonical validate and doctor checks. Independent review accepted exact
+  `f00d937e` with notes. Artifact projection and dev effect remain separate.
+  The review identified a
+  release-blocking nonempty target queue routing gap; that separate source
+  repair precedes the next artifact projection.
