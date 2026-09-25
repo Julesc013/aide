@@ -23,9 +23,10 @@ files. Use `--mode full` only in reviewed local fixtures where copying optional
 roots has been explicitly accepted.
 
 Successful import records exact managed-file and portable managed-section
-baselines under `.aide/install/`. A later pack updates only unchanged recorded
-bytes. Use `--from-pack <validated-predecessor-pack>` to prove the baseline of
-an older installation that predates receipts. Local edits, unknown ownership,
+baselines under `.aide/install/`. A later pack updates unchanged recorded
+bytes only when `--from-pack <validated-predecessor-pack>` also proves their
+source and installed baseline. Retain that exact previous pack for updates.
+Local edits, unknown ownership,
 changed preview state, invalid packs, and partial prior effects refuse closed.
 
 ## Bounded Receipt-Owned Removal on Windows

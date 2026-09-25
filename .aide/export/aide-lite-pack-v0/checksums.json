@@ -672,13 +672,13 @@
     "files/.aide/routing/examples/security-review.json": "6ba66fe193de5f0372590212f6e627d673b7e844268af49058e06d2edbf7b8f4",
     "files/.aide/routing/examples/self-modification.json": "67c29e75c8702e2b2a7cc8b11ea733ac94b804cbfcb0dcc1a41a3e0706f6b099",
     "files/.aide/routing/route-decision.schema.json": "da42bfdea1680445c6d272cbd1d3f09b394a5c8b670b15fbd014aa93520d45ea",
-    "files/.aide/scripts/aide_lite.py": "cf7eab84c392a6ae78e9d7df26a354fb43d0929a75ce609fc2f62e33db4cc4e6",
+    "files/.aide/scripts/aide_lite.py": "163d8e38bb3ad1f2d8ca2c29c9a946b733b1246c5bf55dfac647b7b693796b57",
     "files/.aide/scripts/tests/test_adapter_compiler.py": "ca38e9df4799cb125da26b55e21d031ee7367998a096ad91aba2094783189ed2",
     "files/.aide/scripts/tests/test_aide_apply_00_transaction_model.py": "6526d2a9e87686bae60de2a295d785b5dd251d244cc5ccf659f08b52ae90dcc6",
     "files/.aide/scripts/tests/test_aide_apply_01_managed_sections.py": "e76a3b7ed64fbc04a2feddc6626e78a4eb99a48d25ddd11b676779d0cd1dd848",
     "files/.aide/scripts/tests/test_aide_lite.py": "6c9a00d60930f5376f76eeb3e6de26ed3a510c377a69da810f8b5d3f845dc582",
     "files/.aide/scripts/tests/test_cache_local_state.py": "c439bee12eba2dee4cb950de2bd6c7c836bc686bef61a459469b730ac392b513",
-    "files/.aide/scripts/tests/test_export_import.py": "ed3d8506ec4784f51cd7fa705b9e77e0429de52a23fde932213aff29166aae2c",
+    "files/.aide/scripts/tests/test_export_import.py": "b68e8c7402b46d028e72d2cd21d2eed1acafe162f08f1964297e8748b5f68c05",
     "files/.aide/scripts/tests/test_gateway_commands.py": "565667e5b4435ea041b59d2ad55ce4da690e972224e11a26a37d0ae9bb11904c",
     "files/.aide/scripts/tests/test_golden_tasks.py": "e4debd0e37cf852100bb53e1625a9cd4e61bba0f45d25bd19a737dab33262b65",
     "files/.aide/scripts/tests/test_outcome_controller.py": "a58c5917b4d648639f753540e7e3730de103b8bd384c103b73287db76915ed56",
@@ -799,7 +799,7 @@
     "files/docs/reference/changelog-preview.md": "6a997585aa124672d333d9376b67d5df43c896855ef341edabcc8a61003ec13b",
     "files/docs/reference/checkpoint-and-promotion-model.md": "ed9e5bcc9854d92996bdbba96f88289f7b0b964cf3b3d67f4fc3fe2b67fd1d87",
     "files/docs/reference/commit-discipline.md": "aca685ee7f658213d2261c8482881fa3317ca8095d07ae55b2ecf0660edecb92",
-    "files/docs/reference/cross-repo-pack-export-import.md": "057421a915052bacd0295ec146224e4777c31c7ab0453e1e2af56cf778cc5a4a",
+    "files/docs/reference/cross-repo-pack-export-import.md": "600eeddd75542c4779b6559220cebd97e252d9279110f6f2fbe7793924ced5d0",
     "files/docs/reference/existing-tool-adapter-compiler-v0.md": "0b5c86279ce8effe4da48be6d34c34329b20377fc57887f4e23549092c5b7bb7",
     "files/docs/reference/file-quality-ledger.md": "c7eb545cba70bfbbc7e2f56e0cbdbb8f4b13f654fc2fbad55b47c634f8bebe82",
     "files/docs/reference/full-discovery-handoff.md": "b938aff8f8e81e15ed0374de25aa5d0010a1506230b412e59d6a26de020718a9",
@@ -832,7 +832,7 @@
     "files/docs/reference/workunit-idempotency.md": "788350330221afc05af1de3598704448b70b21427d6100cb71df821fc1363ac6",
     "files/docs/reference/workunit-lifecycle.md": "4817e4284197c343636c65fbfec45b5072276091a9447b961bebbcfa1e695266",
     "import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13",
-    "install.md": "bd7fe2c88f17c1280c361e1bb367216ef0ac3bda57c85ae696350d038a6ded50"
+    "install.md": "3bce5e90257d5d5c3b25ae00d6a8e47b693c8b944bbcf1340b49c5646170ea2f"
   },
   "contents_inline": false,
   "excluded_from_checksums": [

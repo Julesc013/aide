@@ -1,12 +1,12 @@
-# AIDE Lite Pack v0 Draft (9a0843c3a7633002)
+# AIDE Lite Pack v0 Draft (99a9e54da887a3a2)
 
 > Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.
 
 ## Release Metadata
 
-- Suggested tag: `aide-lite-pack-v0-draft-9a0843c3a7633002`
+- Suggested tag: `aide-lite-pack-v0-draft-99a9e54da887a3a2`
 - Suggested tag created: no
-- Source commit: `9a0843c3a7633002f91a0ec3e707fe613650eb5f`
+- Source commit: `99a9e54da887a3a209cfd73df345c55735819368`
 - Source branch: `not-recorded-in-pack`
 - Dirty state recorded: `false`
 - Release type: local draft / not published
@@ -20,19 +20,19 @@
 ## Release Notes Preview
 - # AIDE Release Notes Preview
 - This is a deterministic preview only. It does not publish a release.
-- source_range: HEAD~1..HEAD
-- source_head: 9a0843c3a7633002f91a0ec3e707fe613650eb5f
+- source_range: HEAD latest 50 commits
+- source_head: 99a9e54da887a3a209cfd73df345c55735819368
 - preview_only: true
 - ## Highlights
-- - Fixed: Exact predecessor rollback now accepts an unchanged authored CRLF AGENTS.md managed section. (9a0843c3a763)
-- ## Validation Summary
+- - Security: Rollback no longer accepts a checksum-valid payload through a reparse pack boundary. (33824b369b84)
+- - Added: conditional receipt-owned removal apply for exact generated material. (d13894ba0f55)
 
 ## Changelog Preview
 - # AIDE Changelog Preview
 - This file is generated from local Git history and is a preview only.
-- source_range: HEAD~1..HEAD
-- source_head: 9a0843c3a7633002f91a0ec3e707fe613650eb5f
-- commit_count: 1
+- source_range: HEAD latest 50 commits
+- source_head: 99a9e54da887a3a209cfd73df345c55735819368
+- commit_count: 50
 - malformed_count: 0
 - preview_only: true
 - release_publishing: false
@@ -47,18 +47,18 @@
 
 | Order | Asset | Kind | Size | SHA-256 | Required |
 | --- | --- | --- | ---: | --- | --- |
-| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 1026123 | `d1eaf1bcb7272492...` | true |
-| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 697103 | `ce3066076029d7f0...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `5f3ee01e5775cbe6...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `ebca00da041abf3f...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1404 | `da06b3679d5dba08...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 2434 | `4ce8b603deff3f81...` | true |
-| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 604 | `b86d4e79378a8fef...` | true |
-| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 933 | `97ad9ea58d613945...` | true |
+| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 1038388 | `32c1f0ad5465809e...` | true |
+| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 709443 | `22101aa98982cf8b...` | true |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `eb98375d0ed0b91f...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `6a267a6253444f11...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1406 | `cae043cad6f05913...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 2434 | `1419e96a778b2caf...` | true |
+| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 8366 | `d809961de7600adb...` | true |
+| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 6901 | `d4119bd0ff7760c5...` | true |
 | 9 | `.aide/release/dist/release-validation.json` | validation_report | 3846 | `a457b73f186db89c...` | false |
 | 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `70ad198b819481b8...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4078 | `cc77d0abf99b69dd...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `a315baafa141c684...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4080 | `607bd225b5107162...` | false |
 
 ## Validation Summary
 

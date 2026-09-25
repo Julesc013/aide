@@ -3590,6 +3590,26 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/evidence
     description: Reconcile reviewed removal and rollback source, regenerate current artifacts, qualify consumers, and integrate an exact dev candidate.
+  - id: AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01
+    status: passed
+    planning_state: integrated_dev
+    result: PASS
+    title: Preserve project choices across successive portable-pack updates
+    task: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/evidence
+    description: Implement exact manual update resolution and explicit optional-disable preservation across successive delivered packs.
+  - id: AIDE-DELIVERED-PACK-REPAIR-HEALTH-01
+    status: passed
+    planning_state: integrated_dev
+    result: PASS
+    title: Diagnose installed Lite pack health from receipt-owned target state
+    task: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-HEALTH-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-HEALTH-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-HEALTH-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-HEALTH-01/evidence
+    description: Report installed receipt-owned health and exact repair eligibility without applying effects.
   - id: AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01
     status: needs_review
     planning_state: reparse_repair_source_candidate_frozen

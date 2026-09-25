@@ -11836,3 +11836,87 @@ Owner review found a final-write race in the first candidate. The repair now pub
 - Updated existing product/release/reference documents. This candidate changes
   policy/contract source only and awaits independent exact review before dev
   integration; verification and limitations are in the task evidence.
+## 2026-09-25 - Project-owned successive update source candidate
+
+- The three-way update WorkUnit reproduced two current defects on its admitted
+  `dev@d4b67c96` base: missing `resolutions` API and implicit recreation of
+  a missing receipt-owned file. Its red log hashes are in the WorkUnit.
+- The task worktree now implements manual exact-plan resolution, v2 receipt
+  overlays, explicit optional-example disable survival, guarded Windows input
+  reads, conservative repair/removal/rollback interactions and explanations.
+  It changes the importer, its tests and user guide only; no new generated
+  export/release bytes or target outside disposable tests were produced.
+- Fourteen focused tests passed on the preceding source hash; two cases
+  affected by the final non-Windows guard passed on final source. The WorkUnit
+  binds commands, file/log hashes and limitations. Independent review, full
+  suite, artifact/consumer gates and dev integration remain pending.
+
+## 2026-09-25 - Correct receipt-owned CRLF updates after independent review
+
+- The independent review of `acbcb9c8` returned `REQUEST_CHANGES`: an authored
+  CRLF `AGENTS.md` block with a valid managed receipt falsely conflicted when
+  upstream changed. The frozen report and disposable reproduction are bound
+  in the three-way update WorkUnit; the interrupted broad test had no result.
+- A new exact regression failed for both v1 and v2 receipts before the repair.
+  The source now uses observed installed-block identity and validated ownership
+  rather than requiring installed and source digests to match. An unrelated
+  update retains non-overlay ownership; a direct edit records an overlay and
+  a later upstream change conflicts without writes. The extended regression
+  passed; full importer, independent delta review, generated artifacts and
+  dev integration remain pending.
+
+## 2026-09-25 - Bind automatic updates to the exact predecessor pack
+
+- Review of the first CRLF repair found that a re-digested receipt could
+  relabel a direct managed-section edit and permit overwrite. An independent
+  disposable probe confirmed it with and without a predecessor; a second
+  probe confirmed the same pre-existing class for an ordinary managed file.
+- Red regressions reproduced both overwrite decisions. Automatic managed
+  updates now require a checksum-validated predecessor whose exact payload
+  matches the receipt's claimed source and installed baseline. Without that
+  pack, changed upstream content conflicts. The portable and delivered guides
+  state the old-pack requirement. Three focused tests passed on the repaired
+  source; full importer, independent review, artifacts and dev effect remain.
+
+## 2026-09-25 - Admit installed Lite repair-health implementation
+
+- A bounded WorkUnit and separate task worktree were created from reviewed
+  update source `12758e07` while that source's full importer suite runs in a
+  different worktree. The new task is limited to read-only installed-target
+  diagnosis and existing one-file repair eligibility; its external extracted
+  ZIP probe is red because the command is absent.
+- No source implementation, real-target mutation, generated pack/release
+  artifact, dev effect or public release is claimed at this admission.
+
+## 2026-09-25 - Qualify combined three-way update and repair-health previews
+
+- Merged the independently accepted update and repair-health source/tests in
+  `99a9e54d`, preserving the exact repaired importer bytes and corrected test
+  fixture. The full importer suite passed 100/100; Q31/Q34/Q47/Q48 passed
+  6/6, 11/11, 18/18 and 11/11.
+- Regenerated export, changelog, release bundle and draft from clean source.
+  Release validation, draft validation, canonical validate/doctor/pack-status
+  passed; the local ZIP/tar hashes and logs are in the two WorkUnit evidence
+  records. The extracted canary passed 25 commands in disposable fresh and
+  brownfield consumers, with expected conservative refusals.
+- Independent artifact review accepted the exact local previews with notes:
+  synthetic V2/V3 packs, CLI-only source-byte binding, and unqualified
+  repair/rollback/removal apply, hostile/OS-level network and publication
+  paths remain separate. The generated projection awaits a frozen commit,
+  replay and exact `dev` effect review; no public release is claimed.
+
+## 2026-09-25 - Integrate qualified combined update and repair health into dev
+
+- Committed exact local preview projection `d137f936`. The first post-commit
+  full export/changelog replay changed generated source identities and failed
+  its zero-change gate; that output remains recorded. A bounded release-only
+  metadata convergence at `54b9d45e` preserved reviewed archive hashes,
+  passed bundle/validate/draft/draft-validate and then replayed those four
+  commands with zero tracked changes.
+- Exact independent effect review issued conditional GO for FF local dev and
+  normal push only. Fresh Windows `Jules`/GitHub `Julesc013`, clean worktrees,
+  base/candidate ancestry and local/origin/remote/API refs passed. Both
+  operations exited 0; all observed `dev` identities became full `54b9d45e`,
+  tree `ffbaecee`, with a clean primary worktree. The two WorkUnits hold exact
+  logs, hashes and effect manifest. Main/tag/publication and stable profile
+  qualification remain open.

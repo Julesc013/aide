@@ -7,6 +7,10 @@ import. That file belongs to the project thereafter. A later pack preserves its
 bytes. Other project-authored text outside the portable `AGENTS.md` section is
 also preserved. If a managed file is edited outside AIDE and an incoming pack
 changes it, import stops before payload writes and reports a conflict.
+For an automatic update of unchanged AIDE-owned bytes, keep the exact previous
+pack and pass it as `--from-pack <old-pack>` in both preview and apply. A local
+receipt alone does not prove an overwrite baseline. If the old pack is absent,
+the importer reports a conflict and preserves the existing bytes.
 
 `import-pack --dry-run --explain` prints the ownership reason for preserved,
 conflicting, and managed update operations. It does not guess why a project
@@ -26,10 +30,58 @@ made a change. A project may optionally write `.aide/customizations.json`:
 
 The rationale is shown only while its digest matches the observed file. An
 absent or stale rationale is `unknown`; the file grants no overwrite authority.
-Malformed customization metadata refuses explanation before CLI apply. No
+A syntactically valid v1 document with malformed advisory rationale fields
+does not stop an ordinary import, but `--explain` refuses it. Invalid JSON
+refuses import because its control schema cannot be classified. Malformed v2
+controls also refuse import. No
 customization metadata is created or sent automatically. A pack payload that
 tries to supply `.aide/customizations.json` is refused, even when checksummed.
 Windows case and trailing-dot aliases of that reserved path are refused too.
+
+For an optional example tree, the project can use strict v2 controls. The
+current admitted feature ID is `local_state_examples`, covering only
+`.aide.local.example/`. Unknown or duplicate IDs refuse the import:
+
+```json
+{
+  "schema_version": "aide.project-customizations.v2",
+  "entries": {},
+  "disabled_features": [
+    {"feature_id": "local_state_examples", "rationale": "Our project maintains its own examples."}
+  ]
+}
+```
+
+Preview the change, then apply with its exact plan digest. Import records the
+disabled ID and controls-file digest in a v2 receipt and leaves existing
+example bytes untouched across later packs. If the controls file disappears or
+becomes malformed, a subsequent import refuses to silently reenable the
+feature. Reenable by explicitly removing its entry from a valid v2 file, then
+review the new plan. The rationale is optional; missing rationale remains
+`unknown`. This control does not disable core `.aide/` files.
+
+For a conflict between a receipt-owned local edit and changed upstream bytes,
+prepare a manually merged file outside both the target and packs. The importer
+does not guess the merge. On Windows, use the exact predecessor pack named by
+the receipt and run:
+
+```text
+py -3 -I -B <new-pack>/files/.aide/scripts/aide_lite.py --repo-root <target> import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --resolve .aide/prompts/compact-task.md <merged-file> --dry-run --explain
+py -3 -I -B <new-pack>/files/.aide/scripts/aide_lite.py --repo-root <target> import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --resolve .aide/prompts/compact-task.md <merged-file> --expect-plan <preview-plan-digest>
+```
+
+The plan binds the predecessor identity, current receipt, local preimage,
+incoming digest, merged-file digest, and controls digest. Apply rechecks those
+inputs after recording its recovery intent and writes only the preflight-read
+merged bytes. Its receipt distinguishes the installed project overlay from the
+new upstream source, so a later changed pack requires a fresh resolution;
+unchanged upstream preserves the overlay. A missing previously managed file is
+a conflict, not an implicit reinstall. The resolution file path and raw bytes
+are not stored in the intent or optional feedback. Rollback and owned-file
+repair refuse overlays or skipped optional paths; removal preserves an overlay
+and retains the partial receipt. Interrupted imports require exact intent
+reconciliation before another update. This bounded apply path is available only
+on Windows; release support requires separate delivered-artifact qualification.
 
 To make a local packet that the project can review and share manually, add
 `--feedback-out <new-path>` to a dry run. The new path must be outside both the
@@ -311,6 +363,14 @@ py -3 -I -B <pack>/files/.aide/scripts/aide_lite.py --repo-root <target> repair-
 ```
 
 The preview checks pack checksums, exact receipt and source digests, safe-mode ownership, and a missing target. Apply requires its exact plan digest. An existing file, local edit, unknown receipt entry, different pack, pending import intent, or stale plan refuses the write. A target-local repair intent records a write before it occurs. On Windows, repair holds non-renamable directory handles for every path component, rejects reparse points, stages complete bytes, and publishes through a handle-relative no-clobber hard link. A competing file or parent substitution cannot redirect that publication. Repair cleanup opens the intent beneath pinned ancestors without following reparse points, verifies its exact bytes and regular single-link identity, and deletes through that same handle. A changed or redirected intent remains untouched. Every effectful import, including a first install, and repair acquire a per-target lifecycle guard before preflight or intent changes. Windows uses a named kernel mutex that leaves no target lock file; POSIX import uses a private persistent temporary lock file whose advisory lock is released on process exit. Rerunning the exact apply after interruption verifies a completed postimage or retries a missing preimage; unknown bytes remain blocked. A dry-run leaves the target unchanged. Repair apply fails closed on non-Windows platforms until equivalent anchored path operations are implemented. The importer’s separate intent cleanup remains outside this repair guarantee. The repair command does not restore managed sections, target-owned templates, modified files, or multiple paths.
+
+An installed Windows consumer can inspect its receipt-owned files without the development checkout:
+
+```bash
+py -3 -I -B <pack>/files/.aide/scripts/aide_lite.py --repo-root <target> repair-health --pack <pack> --target <target> --json
+```
+
+The read-only report identifies matching, missing, changed and unknown paths, pending import/repair/removal intents, and receipt v1/v2 overlays or disabled features. It checks each receipt row against the validated current pack's source digest and admitted source-to-target mapping before calling a row matching or repairable. A re-digested receipt cannot relabel a directly edited file or an authored file as healthy AIDE-owned content. Only a missing, safe-mode, receipt-owned managed file with a successful exact-pack `repair-owned-file --dry-run` receives a repair plan digest. Changed files, hard links, unsafe paths, managed sections and project overlays are preserved. A pending intent requires recovery before new repair eligibility. Project overlay rationale remains unknown unless the project records it. The report is a snapshot, not authority for an effect: apply rechecks the pack, receipt, path and plan. Inspection itself is limited to Windows anchored handles; other platforms report `UNSAFE_TARGET` until equivalent observation is qualified.
 
 ### Return to an exact predecessor portable pack
 
