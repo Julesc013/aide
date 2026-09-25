@@ -1,0 +1,46 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-FORCED-RESTART-01
+title: Qualify delivered Windows Lite recovery after abrupt process exit
+type: evaluation
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-26
+updated_at: 2026-09-26
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-STABLE-LITE-CURRENT-PROJECTION-01
+base_dev: 493e3f13c1b2e754dd8fb5f533380ba13a7b8979
+objective: >
+  Prove abrupt child-process exit and fresh-process reconciliation for the
+  delivered Lite lifecycle on disposable Windows consumers.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-STABLE-LITE-FORCED-RESTART-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/scripts/**
+    - .aide/export/**
+    - .aide/release/**
+    - docs/**
+    - specs/**
+  forbidden_paths:
+    - .github/**
+    - .aide.local/**
+    - arbitrary target repositories
+  forbidden_operations:
+    - main promotion, tag, upload or publication
+    - change frozen archive bytes to make a test pass
+verification:
+  - exact archive and extracted-CLI hashes
+  - child process exits at selected durable effect boundaries
+  - fresh unmodified CLI observes pending effects and reconciles safely
+  - authored bytes and exact receipts checked after recovery
+  - independent technical evidence review before dev closeout
+retained_gates:
+  - synthetic successor is not a published predecessor
+  - local preview is not final downloaded-byte acceptance
+  - OS-level offline and hostile-process races need separate evidence
