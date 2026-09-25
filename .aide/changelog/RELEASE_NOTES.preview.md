@@ -3,17 +3,14 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: ab17fd664159c46fa40e4683f8a4276c452a34a1
+source_head: 1a25e33effc5c8f32311da8cebdd6855ff3185cf
 preview_only: true
 
 ## Highlights
 
-- Security: portable pack provenance no longer trusts Git replacement refs. (b4d949c1ac1f)
 - Added: local customization explanation and opt-in import feedback. (98de5ee1531e)
 - Added: exact historical message dispositions to the dev source ancestry. (e40aec47dd2d)
-- Fixed: documented workflow-run path@ref provenance is parsed and bound to the admitted source. (7e56ad751615)
-- Fixed: produce replacement-safe, checkout-neutral local release artifacts for exact rereview. (dd1f39f39f3d)
-- Fixed: close the deterministic post-commit provenance projection across local bundle and release-draft records. (198a87d29238)
+- Added: receipt-backed read-only removal planning in the delivered portable CLI. (1a25e33effc5)
 - Fixed: align durable release qualification records with the policy-compliant local commit identities. (9f4bbc0a7744)
 - Fixed: fail closed when either release-preview JSON identity is absent. (f147c9059e8b)
 - Fixed: align target-policy comparison with GitHub branch-rules endpoint semantics. (e378d38e0c51)
@@ -26,52 +23,48 @@ preview_only: true
 - Fixed: Windows alias route into project-owned customization metadata. (2b4f5de885a5)
 - Fixed: allow accountable AEST historical decisions while retaining strict raw policy results. (7a2305f51894)
 - Fixed: prevent dirty-source provenance in the local combined artifact projection. (1fa02a8594fe)
-- Docs: normalize task evidence formatting. (963dcc7d6ede)
-- Docs: bind release summaries to the replacement-safe source checkpoint. (7863891e581d)
 - Docs: bind release summaries to the paired-preview fail-closed repair. (1397b703a9c1)
 - Docs: bind the repaired release-integrity candidate and its exact qualification evidence for review. (853d1c7a8486)
 - Docs: refresh preview-only release text for the combined source. (66ef462c2b1b)
-- Tests: add official-shape and adversarial selector coverage. (7e56ad751615)
-- Tests: cover source-change concealment through git replace. (b4d949c1ac1f)
 
 ## Validation Summary
 
-- 7e56ad751615: PASS: 48 focused GitHub observation/policy tests.
-- 7e56ad751615: PASS: 48 focused GitHub observation/policy tests.
-- 7e56ad751615: PASS: 48 focused GitHub observation/policy tests.
-- 963dcc7d6ede: PASS: git diff --check after this correction.
-- b4d949c1ac1f: PASS: adversarial export provenance regression.
-- b4d949c1ac1f: PASS: adversarial export provenance regression.
-- 7863891e581d: PASS: changelog preview generation and git diff checks.
-- dd1f39f39f3d: PASS: 58 adjacent tests, canonical validate and doctor, two delivered-byte consumer canaries, and 44-file repeatability comparison.
-- 198a87d29238: PASS: pack-status reports PASS_SOURCE_ANCESTOR.
 - 9f4bbc0a7744: PASS: commit range 7863891e..198a87d2.
+- f147c9059e8b: PASS: Q31 governance 6, export/import lifecycle 25, Q47 release bundle 18, and Q48 release draft 11 tests.
+- e378d38e0c51: PASS: 50 GitHub observation and policy tests.
+- 1397b703a9c1: PASS: changelog preview generation.
+- 7897f7deb80c: PASS: export pack and pack status, release bundle and validation, release draft and draft validation.
+- d6642c3d81f6: PASS: pack status is PASS_SOURCE_ANCESTOR.
+- 853d1c7a8486: PASS: committed bundle, validate, draft, and draft-validate replay changed zero of 44 files and left a clean tree.
+- f77ecba28741: PASS: original and copied report SHA-256 match dceaf7051715b40c9054291d827bd0a16627993109f4257a184035c299753d82.
+- d81d953a7674: PASS: original and copied report SHA-256 match 81c5b66fce3146aeda74d715fec4446752f4a32b0516f8aa6b2a7f76971683aa.
+- 43c86ffb92e1: PASS: exact local and remote dev and target identities observed.
 
 ## Known Risks
 
-- 7e56ad751615: Workflow provenance remains locally checked and monitored, not destination-side source enforcement.
-- 7e56ad751615: Workflow provenance remains locally checked and monitored, not destination-side source enforcement.
-- 7e56ad751615: Workflow provenance remains locally checked and monitored, not destination-side source enforcement.
-- 963dcc7d6ede: None; this is a documentation-only whitespace correction.
-- b4d949c1ac1f: Generated export and release artifacts must be rebuilt from the new source.
-- b4d949c1ac1f: Generated export and release artifacts must be rebuilt from the new source.
-- 7863891e581d: The preview remains local and non-publishing.
-- dd1f39f39f3d: This first artifact checkpoint still requires the complete post-commit provenance projection and independent exact-commit rereview.
-- 198a87d29238: Independent review is still required before dev integration.
 - 9f4bbc0a7744: Independent exact-commit rereview and dev integration remain pending.
+- f147c9059e8b: Generated portable and release artifacts still describe the prior source until the next deterministic regeneration chain.
+- e378d38e0c51: Hosted policy installation, restricted-principal qualification, adversarial races, protected-host closeout, and authoritative integration remain unrun.
+- 1397b703a9c1: The previews remain local and non-publishing; portable and release artifacts are not regenerated by this commit.
+- 7897f7deb80c: This checkpoint still requires the complete post-commit PASS_SOURCE_ANCESTOR projection and independent exact rereview.
+- d6642c3d81f6: Independent exact-commit rereview remains required before dev integration.
+- 853d1c7a8486: Review has not yet accepted this exact candidate.
+- f77ecba28741: This evidence commit does not certify a stable product or authorize main promotion, tagging, upload, or publication.
+- d81d953a7674: This evidence commit does not install settings or workflows, qualify credentials or hosted races, or authorize operational activation.
+- 43c86ffb92e1: Combined source tests and post-integration pack provenance remain pending.
 
 ## Follow-up
 
-- 7e56ad751615: Obtain independent rereview; retain all target configuration and hosted-effect gates.
-- 7e56ad751615: Obtain independent rereview; retain all target configuration and hosted-effect gates.
-- 7e56ad751615: Obtain independent rereview; retain all target configuration and hosted-effect gates.
-- 963dcc7d6ede: Validate the exact two-commit candidate and publish it for independent rereview.
-- b4d949c1ac1f: Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview.
-- b4d949c1ac1f: Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview.
-- 7863891e581d: Regenerate, qualify, commit, and independently rereview the final artifact candidate.
-- dd1f39f39f3d: Run and commit the complete post-commit bundle, validate, draft, and draft-validate projection; prove a second full cycle is byte-identical; obtain independent rereview.
-- 198a87d29238: Replay the complete cycle from this committed candidate, require a clean tree, run canonical and commit checks, push, and obtain independent exact-commit rereview.
 - 9f4bbc0a7744: Validate this complete range, push it, and obtain independent exact-commit rereview.
+- f147c9059e8b: Generate a source-bound preview checkpoint, regenerate and converge exact artifacts, then obtain superseding independent review.
+- e378d38e0c51: Obtain superseding exact-commit review, then integrate through a current-dev two-parent candidate with combined validation.
+- 1397b703a9c1: Regenerate the portable pack and complete release artifact/projection convergence from this exact preview checkpoint.
+- 7897f7deb80c: Run all four generators after this exact checkpoint, commit a projection message naming this actual parent, prove clean replay, and rereview.
+- d6642c3d81f6: Replay the complete cycle from this committed projection, require a clean tree, then obtain independent exact rereview.
+- 853d1c7a8486: Obtain independent exact review; integrate only an accepted candidate into current dev.
+- f77ecba28741: Fast-forward dev through this evidence-only descendant, then validate the combined source and derived artifacts.
+- d81d953a7674: Integrate the source with current dev, refresh the combined portable pack, and rerun canonical and affected checks.
+- 43c86ffb92e1: Merge the exact target evidence descendant, preserve both histories, and qualify the combined source.
 
 ## Warnings
 

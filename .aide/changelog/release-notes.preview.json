@@ -1,42 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "7e56ad751615",
-      "summary": "Obtain independent rereview; retain all target configuration and hosted-effect gates."
-    },
-    {
-      "commit": "7e56ad751615",
-      "summary": "Obtain independent rereview; retain all target configuration and hosted-effect gates."
-    },
-    {
-      "commit": "7e56ad751615",
-      "summary": "Obtain independent rereview; retain all target configuration and hosted-effect gates."
-    },
-    {
-      "commit": "963dcc7d6ede",
-      "summary": "Validate the exact two-commit candidate and publish it for independent rereview."
-    },
-    {
-      "commit": "b4d949c1ac1f",
-      "summary": "Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview."
-    },
-    {
-      "commit": "b4d949c1ac1f",
-      "summary": "Refresh source-bound previews, regenerate final artifacts, and obtain exact independent rereview."
-    },
-    {
-      "commit": "7863891e581d",
-      "summary": "Regenerate, qualify, commit, and independently rereview the final artifact candidate."
-    },
-    {
-      "commit": "dd1f39f39f3d",
-      "summary": "Run and commit the complete post-commit bundle, validate, draft, and draft-validate projection; prove a second full cycle is byte-identical; obtain independent rereview."
-    },
-    {
-      "commit": "198a87d29238",
-      "summary": "Replay the complete cycle from this committed candidate, require a clean tree, run canonical and commit checks, push, and obtain independent exact-commit rereview."
-    },
-    {
       "commit": "9f4bbc0a7744",
       "summary": "Validate this complete range, push it, and obtain independent exact-commit rereview."
     },
@@ -211,16 +175,33 @@
     {
       "commit": "ab17fd664159",
       "summary": "Seek independent exact combined-source review, then fast-forward dev only if accepted."
+    },
+    {
+      "commit": "3875cad7af78",
+      "summary": "Check committed source ancestry, replay local outputs, and seek exact artifact review before dev mutation."
+    },
+    {
+      "commit": "a4ee0f32ec7e",
+      "summary": "Check exact final bytes and narrow review before the dev fast-forward."
+    },
+    {
+      "commit": "a55b804bb573",
+      "summary": "Narrow-check this evidence-only commit and then fast-forward dev after fresh remote checks."
+    },
+    {
+      "commit": "1c75abf1d93b",
+      "summary": "Integrate eligible removal source and qualify the lifecycle repair candidate."
+    },
+    {
+      "commit": "7bc4c9b5087b",
+      "summary": "Merge source, preserve current generator, regenerate outputs, and obtain independent review."
+    },
+    {
+      "commit": "1a25e33effc5",
+      "summary": "Regenerate and qualify portable artifacts from this exact source, then obtain independent integration review."
     }
   ],
   "highlights": [
-    {
-      "breaking": false,
-      "category": "Security",
-      "commit": "b4d949c1ac1f",
-      "subject": "fix(export): ignore Git replacement objects",
-      "summary": "portable pack provenance no longer trusts Git replacement refs."
-    },
     {
       "breaking": false,
       "category": "Added",
@@ -237,24 +218,10 @@
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "7e56ad751615",
-      "subject": "fix(workflow): bind documented path ref",
-      "summary": "documented workflow-run path@ref provenance is parsed and bound to the admitted source."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "dd1f39f39f3d",
-      "subject": "build(release): checkpoint replacement-safe artifacts",
-      "summary": "produce replacement-safe, checkout-neutral local release artifacts for exact rereview."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "198a87d29238",
-      "subject": "build(release): close committed provenance projection",
-      "summary": "close the deterministic post-commit provenance projection across local bundle and release-draft records."
+      "category": "Added",
+      "commit": "1a25e33effc5",
+      "subject": "feat(pack): integrate receipt-bound removal planning",
+      "summary": "receipt-backed read-only removal planning in the delivered portable CLI."
     },
     {
       "breaking": false,
@@ -343,20 +310,6 @@
     {
       "breaking": false,
       "category": "Docs",
-      "commit": "963dcc7d6ede",
-      "subject": "docs(queue): normalize workflow repair evidence",
-      "summary": "normalize task evidence formatting."
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
-      "commit": "7863891e581d",
-      "subject": "docs(release): bind replacement-safe source",
-      "summary": "bind release summaries to the replacement-safe source checkpoint."
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
       "commit": "1397b703a9c1",
       "subject": "docs(release): bind paired-preview repair source",
       "summary": "bind release summaries to the paired-preview fail-closed repair."
@@ -374,60 +327,10 @@
       "commit": "66ef462c2b1b",
       "subject": "docs(changelog): bind combined source previews",
       "summary": "refresh preview-only release text for the combined source."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "7e56ad751615",
-      "subject": "fix(workflow): bind documented path ref",
-      "summary": "add official-shape and adversarial selector coverage."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "b4d949c1ac1f",
-      "subject": "fix(export): ignore Git replacement objects",
-      "summary": "cover source-change concealment through git replace."
     }
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "7e56ad751615",
-      "summary": "Workflow provenance remains locally checked and monitored, not destination-side source enforcement."
-    },
-    {
-      "commit": "7e56ad751615",
-      "summary": "Workflow provenance remains locally checked and monitored, not destination-side source enforcement."
-    },
-    {
-      "commit": "7e56ad751615",
-      "summary": "Workflow provenance remains locally checked and monitored, not destination-side source enforcement."
-    },
-    {
-      "commit": "963dcc7d6ede",
-      "summary": "None; this is a documentation-only whitespace correction."
-    },
-    {
-      "commit": "b4d949c1ac1f",
-      "summary": "Generated export and release artifacts must be rebuilt from the new source."
-    },
-    {
-      "commit": "b4d949c1ac1f",
-      "summary": "Generated export and release artifacts must be rebuilt from the new source."
-    },
-    {
-      "commit": "7863891e581d",
-      "summary": "The preview remains local and non-publishing."
-    },
-    {
-      "commit": "dd1f39f39f3d",
-      "summary": "This first artifact checkpoint still requires the complete post-commit provenance projection and independent exact-commit rereview."
-    },
-    {
-      "commit": "198a87d29238",
-      "summary": "Independent review is still required before dev integration."
-    },
     {
       "commit": "9f4bbc0a7744",
       "summary": "Independent exact-commit rereview and dev integration remain pending."
@@ -603,48 +506,36 @@
     {
       "commit": "ab17fd664159",
       "summary": "Physical host, restricted principal, native query, private image, hosted, and release gates remain open."
+    },
+    {
+      "commit": "3875cad7af78",
+      "summary": "Post-commit provenance and independent artifact review remain; native, hosted, main, and publication are open."
+    },
+    {
+      "commit": "a4ee0f32ec7e",
+      "summary": "Final postcommit replay and independent artifact review remain; no public release or native effect is approved."
+    },
+    {
+      "commit": "a55b804bb573",
+      "summary": "This closeout does not qualify native or hosted effects, main, or public release."
+    },
+    {
+      "commit": "1c75abf1d93b",
+      "summary": "Native, hosted, lifecycle, main, and publication qualification remains open."
+    },
+    {
+      "commit": "7bc4c9b5087b",
+      "summary": "This admission does not implement deletion or accept the old archive bytes."
+    },
+    {
+      "commit": "1a25e33effc5",
+      "summary": "This source commit is not final artifact qualification or removal apply."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "ab17fd664159c46fa40e4683f8a4276c452a34a1",
+  "source_head": "1a25e33effc5c8f32311da8cebdd6855ff3185cf",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "7e56ad751615",
-      "summary": "PASS: 48 focused GitHub observation/policy tests."
-    },
-    {
-      "commit": "7e56ad751615",
-      "summary": "PASS: 48 focused GitHub observation/policy tests."
-    },
-    {
-      "commit": "7e56ad751615",
-      "summary": "PASS: 48 focused GitHub observation/policy tests."
-    },
-    {
-      "commit": "963dcc7d6ede",
-      "summary": "PASS: git diff --check after this correction."
-    },
-    {
-      "commit": "b4d949c1ac1f",
-      "summary": "PASS: adversarial export provenance regression."
-    },
-    {
-      "commit": "b4d949c1ac1f",
-      "summary": "PASS: adversarial export provenance regression."
-    },
-    {
-      "commit": "7863891e581d",
-      "summary": "PASS: changelog preview generation and git diff checks."
-    },
-    {
-      "commit": "dd1f39f39f3d",
-      "summary": "PASS: 58 adjacent tests, canonical validate and doctor, two delivered-byte consumer canaries, and 44-file repeatability comparison."
-    },
-    {
-      "commit": "198a87d29238",
-      "summary": "PASS: pack-status reports PASS_SOURCE_ANCESTOR."
-    },
     {
       "commit": "9f4bbc0a7744",
       "summary": "PASS: commit range 7863891e..198a87d2."
@@ -820,6 +711,30 @@
     {
       "commit": "ab17fd664159",
       "summary": "PASS: 140 permitted combined-source tests; four effect tests excluded."
+    },
+    {
+      "commit": "3875cad7af78",
+      "summary": "PASS: 140 permitted host source tests; 29 import, 18 release, 11 draft, and 6 governance cases."
+    },
+    {
+      "commit": "a4ee0f32ec7e",
+      "summary": "PASS: postcommit pack status reports PASS_SOURCE_ANCESTOR with valid checksums and boundary."
+    },
+    {
+      "commit": "a55b804bb573",
+      "summary": "PASS: independent source and artifact checks on the exact frozen subjects."
+    },
+    {
+      "commit": "1c75abf1d93b",
+      "summary": "PASS: independent source, artifact, and narrow evidence reviews preceded dev mutation."
+    },
+    {
+      "commit": "7bc4c9b5087b",
+      "summary": "PASS: exact dev/candidate/merge-base identities and historical B decision checked."
+    },
+    {
+      "commit": "1a25e33effc5",
+      "summary": "PASS: combined import, release, draft, governance, canonical, and Python compilation checks."
     }
   ],
   "warnings": []

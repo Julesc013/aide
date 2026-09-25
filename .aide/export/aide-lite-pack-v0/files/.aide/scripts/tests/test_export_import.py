@@ -713,6 +713,107 @@ class ExportImportTests(unittest.TestCase):
             aide_lite.apply_import_pack(pack, target)
         self.assertEqual(authored.read_bytes(), original)
 
+    def test_removal_plan_requires_an_exact_valid_receipt(self) -> None:
+        source_root = self.make_source_repo()
+        target = source_root.parent / "target-removal-receipt"
+        target.mkdir()
+
+        with self.assertRaisesRegex(ValueError, "portable import receipt missing"):
+            aide_lite.build_portable_removal_plan(target)
+
+        aide_lite.write_text(target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH, "not json\n")
+        with self.assertRaisesRegex(ValueError, "invalid portable import receipt"):
+            aide_lite.build_portable_removal_plan(target)
+
+        pack = self.freeze_pack(source_root, "removal-receipt-pack")
+        shutil.rmtree(target)
+        aide_lite.apply_import_pack(pack, target)
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        receipt["plan_digest"] = "tampered"
+        aide_lite.write_text(receipt_path, aide_lite.stable_json_text(receipt))
+        with self.assertRaisesRegex(ValueError, "portable import receipt digest mismatch"):
+            aide_lite.build_portable_removal_plan(target)
+
+    def test_removal_plan_is_read_only_and_preserves_non_owned_bytes(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "removal-plan-pack")
+        target = source_root.parent / "target-removal-plan"
+        aide_lite.write_text(target / "AGENTS.md", "# Target Agents\n\nAuthored guidance.\n")
+        applied = aide_lite.apply_import_pack(pack, target)
+        self.assertEqual(applied["status"], "APPLIED")
+        aide_lite.write_text(target / "unknown.txt", "target owned\n")
+
+        before = {
+            aide_lite.normalize_rel(path.relative_to(target)): path.read_bytes()
+            for path in sorted(target.rglob("*"))
+            if path.is_file()
+        }
+        plan = aide_lite.build_portable_removal_plan(target)
+        after = {
+            aide_lite.normalize_rel(path.relative_to(target)): path.read_bytes()
+            for path in sorted(target.rglob("*"))
+            if path.is_file()
+        }
+
+        self.assertEqual(plan["status"], "PLANNED")
+        self.assertTrue(plan["read_only"])
+        self.assertFalse(plan["apply_allowed"])
+        self.assertFalse(plan["delete_allowed"])
+        self.assertEqual(before, after)
+        self.assertEqual(plan["candidate_count"], len(plan["operations"]))
+        self.assertNotIn("unknown.txt", {item["target"] for item in plan["operations"]})
+        agents = next(item for item in plan["operations"] if item["target"] == "AGENTS.md")
+        self.assertEqual(agents["action"], "remove_managed_section_future")
+        self.assertTrue(agents["preserves_authored_content"])
+        self.assertIn("Authored guidance.", aide_lite.read_text(target / "AGENTS.md"))
+        for rel in [
+            ".aide/profile.yaml",
+            ".aide/memory/project-state.md",
+            ".aide/memory/decisions.md",
+            ".aide/memory/open-risks.md",
+            ".gitignore",
+            "unknown.txt",
+        ]:
+            self.assertNotIn(rel, plan["candidate_targets"])
+
+        managed_rel = ".aide/prompts/compact-task.md"
+        aide_lite.write_text(target / managed_rel, "# Local edit\n")
+        edited = aide_lite.build_portable_removal_plan(target)
+        operation = next(item for item in edited["operations"] if item["target"] == managed_rel)
+        self.assertEqual(edited["status"], "PRESERVATION_REQUIRED")
+        self.assertEqual(operation["action"], "preserve_local_or_unknown")
+        self.assertFalse(operation["removal_candidate"])
+        self.assertNotEqual(edited["plan_digest"], plan["plan_digest"])
+        self.assertEqual(aide_lite.read_text(target / managed_rel), "# Local edit\n")
+
+    def test_removal_plan_identity_changes_with_receipt_or_managed_state(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "removal-identity-pack")
+        target = source_root.parent / "target-removal-identity"
+        aide_lite.apply_import_pack(pack, target)
+        original = aide_lite.build_portable_removal_plan(target)
+
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        receipt["plan_digest"] = "f" * 64
+        receipt["receipt_digest"] = aide_lite.portable_import_record_digest(receipt, "receipt_digest")
+        aide_lite.write_text(receipt_path, aide_lite.stable_json_text(receipt))
+        changed_receipt = aide_lite.build_portable_removal_plan(target)
+        self.assertNotEqual(changed_receipt["plan_digest"], original["plan_digest"])
+
+        managed_rel = next(
+            item["target"]
+            for item in changed_receipt["operations"]
+            if item["kind"] == "managed_file"
+        )
+        (target / managed_rel).unlink()
+        missing = aide_lite.build_portable_removal_plan(target)
+        operation = next(item for item in missing["operations"] if item["target"] == managed_rel)
+        self.assertEqual(operation["action"], "preserve_already_absent")
+        self.assertFalse(operation["removal_candidate"])
+        self.assertNotEqual(missing["plan_digest"], changed_receipt["plan_digest"])
+
     def test_fake_secret_source_file_is_not_exported(self) -> None:
         source_root = self.make_source_repo()
         aide_lite.write_text(source_root / ".aide/prompts/compact-task.md", "api_key = \"abcdefghijklmnop\"\n")

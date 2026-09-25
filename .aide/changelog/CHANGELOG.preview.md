@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: ab17fd664159c46fa40e4683f8a4276c452a34a1
+source_head: 1a25e33effc5c8f32311da8cebdd6855ff3185cf
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,23 +11,19 @@ release_publishing: false
 
 ## Summary
 
-- Added: 2
-- Fixed: 15
-- Security: 1
-- Docs: 5
-- Tests: 2
-- Internal: 28
+- Added: 3
+- Fixed: 12
+- Docs: 3
+- Internal: 32
 
 ## Added
 
 - local customization explanation and opt-in import feedback. (98de5ee1531e feat(import): explain downstream customization decisions)
 - exact historical message dispositions to the dev source ancestry. (e40aec47dd2d feat(git): merge exact historical dispositions into dev candidate)
+- receipt-backed read-only removal planning in the delivered portable CLI. (1a25e33effc5 feat(pack): integrate receipt-bound removal planning)
 
 ## Fixed
 
-- documented workflow-run path@ref provenance is parsed and bound to the admitted source. (7e56ad751615 fix(workflow): bind documented path ref)
-- produce replacement-safe, checkout-neutral local release artifacts for exact rereview. (dd1f39f39f3d build(release): checkpoint replacement-safe artifacts)
-- close the deterministic post-commit provenance projection across local bundle and release-draft records. (198a87d29238 build(release): close committed provenance projection)
 - align durable release qualification records with the policy-compliant local commit identities. (9f4bbc0a7744 docs(release): bind final qualification checkpoint)
 - fail closed when either release-preview JSON identity is absent. (f147c9059e8b fix(release): require paired preview identities)
 - align target-policy comparison with GitHub branch-rules endpoint semantics. (e378d38e0c51 fix(github): compare endpoint-shaped branch rules)
@@ -41,26 +37,14 @@ release_publishing: false
 - allow accountable AEST historical decisions while retaining strict raw policy results. (7a2305f51894 fix(git): bind exact owner historical decisions)
 - prevent dirty-source provenance in the local combined artifact projection. (1fa02a8594fe fix(release): record clean combined pack provenance)
 
-## Security
-
-- portable pack provenance no longer trusts Git replacement refs. (b4d949c1ac1f fix(export): ignore Git replacement objects)
-
 ## Docs
 
-- normalize task evidence formatting. (963dcc7d6ede docs(queue): normalize workflow repair evidence)
-- bind release summaries to the replacement-safe source checkpoint. (7863891e581d docs(release): bind replacement-safe source)
 - bind release summaries to the paired-preview fail-closed repair. (1397b703a9c1 docs(release): bind paired-preview repair source)
 - bind the repaired release-integrity candidate and its exact qualification evidence for review. (853d1c7a8486 docs(release): freeze replacement review candidate)
 - refresh preview-only release text for the combined source. (66ef462c2b1b docs(changelog): bind combined source previews)
 
-## Tests
-
-- add official-shape and adversarial selector coverage. (7e56ad751615 fix(workflow): bind documented path ref)
-- cover source-change concealment through git replace. (b4d949c1ac1f fix(export): ignore Git replacement objects)
-
 ## Internal
 
-- record the bounded scope correction and review handoff. (7e56ad751615 fix(workflow): bind documented path ref)
 - record source-review acceptance for a bounded dev integration. (f77ecba28741 audit(queue): record fresh release candidate review)
 - record local target source acceptance with retained qualification notes. (d81d953a7674 audit(queue): record fresh target source review)
 - register a source-only integration task. (43c86ffb92e1 audit(queue): admit target source dev integration)
@@ -88,6 +72,11 @@ release_publishing: false
 - record source integration without claiming lifecycle or release acceptance. (fce11e7fce3e chore(queue): record observed historical dev integration)
 - route reviewed host source through a bounded dev integration task. (526e9e402c56 chore(queue): admit isolated-host API query dev integration)
 - combine isolated-host API-query source without native or hosted activation. (ab17fd664159 feat(runtime): integrate reviewed API query source with dev)
+- align local portable and release preview bytes with combined host source. (3875cad7af78 build(release): refresh host source portable projection)
+- stabilize local source-ancestor release metadata. (a4ee0f32ec7e fix(release): record stable host source ancestor metadata)
+- align host integration evidence with frozen local artifacts. (a55b804bb573 chore(queue): close host integration review evidence)
+- record isolated-host source integration with operational gates retained. (1c75abf1d93b chore(queue): record observed host source dev integration)
+- route removal planner through a bounded current-dev integration. (7bc4c9b5087b chore(queue): admit removal planner dev integration)
 
 ## Malformed Commits
 

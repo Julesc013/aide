@@ -1,8 +1,8 @@
 # Latest Release Bundle
 
-- bundle_id: aide-lite-pack-v0-ab17fd664159c46f
+- bundle_id: aide-lite-pack-v0-1a25e33effc5c8f3
 - bundle_name: aide-lite-pack-v0
-- source_commit: ab17fd664159c46fa40e4683f8a4276c452a34a1
+- source_commit: 1a25e33effc5c8f32311da8cebdd6855ff3185cf
 - source_branch: not-recorded-in-pack
 - dirty_state: false
 - artifact_count: 9
