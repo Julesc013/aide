@@ -46,3 +46,6 @@ qualification or reuse an approval tied to changed bytes.
       convergence. Installed empty/one-item target queue behavior passed
       from extracted ZIP CLI; first oracle error is retained.
 - [ ] Obtain independent artifact/effect review and qualified dev effect.
+      Frozen `22257dc6` received REQUEST_CHANGES for two evidence/status
+      discrepancies; archive checks passed. Preserve its report, repair only
+      records and request focused exact superseding rereview.

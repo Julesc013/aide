@@ -35,3 +35,11 @@ hashes. External `postcommit-replay2-receipt.txt` SHA-256
 `1c06b93fa3958d0221f114f5baf5c4d4e468ffbefab9677658465f4b554e2766`.
 The failed first replay remains part of the record. Canonical committed checks
 and commit-range policy also passed; see `committed-qualification.md`.
+
+Evidence-only candidate `22257dc6ad9e08d5b656895d251f20b38c7f1fb5`,
+tree `dd1f40bb466ac6c03d94679dca2183dda6eddda7`, also ran the same four
+commands from clean HEAD, all exit 0, with zero tracked/untracked changes and
+unchanged ZIP/tar SHA-256 values. External
+`frozen-candidate-replay-receipt.txt` SHA-256
+`4ba473e03cc4d259a9bd46791b6a749090da553e12353c50b86809078ad7cc5f`.
+The independent review requested record corrections, not artifact rebuilding.

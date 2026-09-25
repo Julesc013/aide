@@ -17,6 +17,11 @@
   convergence and clean replay are required.
 - PASS: clean second four-command replay on committed `10fd7a20` changed
   zero tracked/untracked paths and preserved ZIP/tar hashes. Committed
-  pack-status, validate, doctor and 11-commit policy range passed.
-- NOT RUN: exact artifact/dev effect review, dev
+  pack-status, validate, doctor and its exact 11-commit policy range passed.
+- PASS: evidence-only `22257dc6` also had zero-change replay and its exact
+  12-commit range check passed. Superseding evidence needs a new final range.
+- REQUEST_CHANGES: independent exact `22257dc6` artifact/effect review found
+  stale 11-commit citation and contradictory replay-open status. No dev GO;
+  the report and hash are in `review-finding-22257dc6.md`.
+- NOT RUN: focused superseding review, dev
   integration, main, tag, public release or downloaded-byte acceptance.

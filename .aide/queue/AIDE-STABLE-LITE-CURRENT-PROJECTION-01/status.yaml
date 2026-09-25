@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-CURRENT-PROJECTION-01
 status: needs_review
 classification: combined_lite_artifact_projection
-planning_state: committed_preview_qualified_review_pending
+planning_state: superseding_record_repair_review_pending
 result: PASS_WITH_WARNINGS
 updated_at: 2026-09-25
-current_slice: exact_artifact_and_dev_effect_review
-next_slice: classified_review_and_qualified_dev_effect
+current_slice: exact_range_and_status_record_repair
+next_slice: focused_superseding_effect_review
 review_gate: independent_exact_artifact_and_dev_effect_review
 dev_integration_performed: false
 main_promotion_performed: false
@@ -16,6 +16,7 @@ notes:
   - Accepted source reviews bind exact source subjects only.
   - Clean-source generation and affected source/consumer checks passed on exact local preview bytes.
   - First external Task OS canary had an incorrect packet-versus-indexed-ID oracle; corrected rerun passed and failure is retained.
-  - Committed replay, exact effect review and dev integration remain open.
+  - Committed four-command replays at 10fd7a20 and 22257dc6 passed with zero changes; dev integration remains open.
   - First four-command replay from dc8697e3 exited zero but changed 18 release metadata files; zero-change gate failed, archives unchanged.
   - Second replay from 10fd7a20 changed zero paths; committed canonical and commit-range checks passed.
+  - Independent 22257dc6 REQUEST_CHANGES identified a stale 11-commit citation and replay-open status; exact 12-commit check passed, final superseding range/review pending.

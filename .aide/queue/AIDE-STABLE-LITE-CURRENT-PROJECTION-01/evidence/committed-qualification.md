@@ -14,9 +14,13 @@
   PASS; canonical `validate` and `doctor` exited 0/PASS. All three left the
   worktree clean. External `committed-canonical-receipt.txt` SHA-256
   `50565ccfda46dd30258de51d2603029c079d542a4bfff9cdaa02309f9cc8379f`.
-- `commit check --range dev..HEAD` passed all 11 commits after `dev@d292253b`,
-  log SHA-256
+- At `10fd7a20`, `commit check --range dev..HEAD` passed all 11 commits
+  after `dev@d292253b`, log SHA-256
   `f15f0449c6bc2dc00a6ca3b5dd8dafd082e6c592ffde49f8bdb53c36ea359c84`.
+  This check does **not** cover later evidence-only commits. At frozen
+  `22257dc6`, an exact 12-commit range check passed; log SHA-256
+  `b068e30f6e8e7f87fbc3683c7801fa8cfce1d3d0edaf1a0ae112b68fb869eb73`.
+  A superseding candidate needs a new exact post-commit range receipt.
 - Exact local draft remains preview-only/no-publish and contains corrected
   lifecycle claims. The 25-command extracted ZIP/tar canary and four-command
   installed Task OS canary bind the unchanged archive/CLI hashes in

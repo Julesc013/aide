@@ -12052,3 +12052,8 @@ Owner review found a final-write race in the first candidate. The repair now pub
   replay changed zero files, and committed pack-status, validate, doctor and
   11-commit policy range passed. Exact artifact/effect review is next; no
   dev/main/public release effect occurred.
+  Evidence-only `22257dc6` also replayed without changes. Its independent
+  artifact/effect review requested changes: the cited 11-commit range belonged
+  to `10fd7a20`, while `22257dc6` has 12; status still said replay was open.
+  Exact 12-commit range passed. Repairing those records and rechecking the
+  final effect subject precedes dev integration; artifact bytes stay frozen.
