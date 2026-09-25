@@ -2,7 +2,7 @@ schema_version: aide.queue-task-status.v0
 id: AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01
 status: running
 result: PENDING
-current_step: repair_crlf_rollback_consumer_finding
+current_step: converge_artifact_projection_and_replay
 updated_at: 2026-09-25
 blockers: []
 review_required: true

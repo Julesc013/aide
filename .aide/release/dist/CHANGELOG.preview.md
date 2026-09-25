@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 49318d50472b17f648c2f29e998239b9c446cf14
+source_head: 9a0843c3a7633002f91a0ec3e707fe613650eb5f
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -12,35 +12,31 @@ release_publishing: false
 ## Summary
 
 - Added: 3
-- Fixed: 3
-- Internal: 44
+- Fixed: 6
+- Security: 1
+- Internal: 40
 
 ## Added
 
-- restore a missing receipt-owned file from the exact delivered pack. (49f38d12f425 feat(import): repair one missing receipt-owned file)
-- receipt-backed read-only removal planning in the delivered portable CLI. (1a25e33effc5 feat(pack): integrate receipt-bound removal planning)
 - conditional receipt-owned removal apply for exact generated material. (d13894ba0f55 feat(uninstall): detach exact generated files and retire receipt)
+- bounded predecessor-pack rollback apply for the declared Windows slice. (23422130fcfc feat(rollback): apply exact predecessor portable pack)
+- receipt-owned managed-section removal inside authored AGENTS.md on Windows, preserving all outside bytes. (d5b44626d6f9 feat(removal): detach owned AGENTS section in brownfield projects)
 
 ## Fixed
 
 - receipt-owned removal recovery preserves later authored bytes and retains ownership evidence when a recorded path was already absent. (fbd9465344f0 fix(removal): bind recovery intents to receipt-owned bytes)
 - Generated install guidance now describes the supported bounded removal apply path. (597b5bcd6f54 fix(release): describe bounded removal apply in install guides)
 - Generated removal guidance now describes planner output and recovery states accurately. (49318d50472b fix(release): clarify removal planner and recovery guidance)
+- authored AGENTS backup recovery retains receipt and intent until exact original backup cleanup is reconciled. (2c4c9089a546 fix(removal): reconcile authored AGENTS backup before receipt retirement)
+- Pending portable removal now blocks exact-predecessor rollback preview and apply. (1f920ebbf7bf fix(rollback): block rollback while removal recovery is pending)
+- Exact predecessor rollback now accepts an unchanged authored CRLF AGENTS.md managed section. (9a0843c3a763 fix(lifecycle): accept exact CRLF managed section in rollback)
+
+## Security
+
+- Rollback no longer accepts a checksum-valid payload through a reparse pack boundary. (33824b369b84 fix(rollback): reject reparse pack roots before rollback)
 
 ## Internal
 
-- align historical dev integration records with completed technical checks. (5ac617b37b57 chore(queue): close historical dev integration evidence)
-- record source integration without claiming lifecycle or release acceptance. (fce11e7fce3e chore(queue): record observed historical dev integration)
-- route reviewed host source through a bounded dev integration task. (526e9e402c56 chore(queue): admit isolated-host API query dev integration)
-- combine isolated-host API-query source without native or hosted activation. (ab17fd664159 feat(runtime): integrate reviewed API query source with dev)
-- align local portable and release preview bytes with combined host source. (3875cad7af78 build(release): refresh host source portable projection)
-- stabilize local source-ancestor release metadata. (a4ee0f32ec7e fix(release): record stable host source ancestor metadata)
-- align host integration evidence with frozen local artifacts. (a55b804bb573 chore(queue): close host integration review evidence)
-- record isolated-host source integration with operational gates retained. (1c75abf1d93b chore(queue): record observed host source dev integration)
-- route removal planner through a bounded current-dev integration. (7bc4c9b5087b chore(queue): admit removal planner dev integration)
-- materialize the combined portable and local release projection. (9c284081fc33 build(pack): materialize combined removal-planner artifacts)
-- bind local release metadata to the combined source and artifact lineage. (2819385a5b3d build(release): bind combined removal artifacts to ancestry)
-- close review evidence for the removal-planner dev candidate. (ae0e29e98eb4 docs(queue): record reviewed removal integration candidate)
 - close observed dev integration of receipt-backed removal planning. (5dfa75e632b0 docs(queue): record removal planner on remote dev)
 - route importer parent-substitution safety through a bounded implementation task. (f3e668513975 chore(queue): admit safe delivered-pack importer writes)
 - preserve a failing importer parent-substitution oracle before repair. (26720ed197d0 test(pack): reproduce importer parent-junction escape)
@@ -73,6 +69,14 @@ release_publishing: false
 - converge safe importer artifact metadata after projection. (515ad6b2c07e chore(import): converge safe importer release metadata)
 - close the bounded safe importer integration gate. (5317524f0760 chore(import): close safe importer dev integration record)
 - construct conditional removal integration candidate. (009668559436 fix(removal): combine reviewed conditional detach with dev)
+- durable campaign continuation checkpoint. (b05ba7d5984f chore(campaign): checkpoint delivery after owner window)
+- Local review-ready removal artifacts and evidence are projected from the corrected source. (704825d14643 chore(release): project reviewed removal artifact bytes)
+- Converged release metadata for reviewed local removal artifacts. (7b23b71912ba chore(release): converge removal metadata after projection)
+- Preserve dev checkpoint ancestry in the removal integration candidate. (a60b8cb01106 chore(campaign): retain dev checkpoint in removal candidate)
+- Durable dev checkpoint and remaining owned-section removal obligation. (ea53e319bd06 chore(campaign): record removal dev checkpoint and open section work)
+- Record the combined delivered-pack lifecycle qualification task. (f2be45ea13ce chore(lifecycle): admit combined portable integration task)
+- Preserve rollback ancestry for combined lifecycle qualification. (03f4b0a1ef37 chore(lifecycle): retain reviewed rollback source in combined candidate)
+- Preserve accepted removal source for combined lifecycle qualification. (723322cf07ab chore(lifecycle): retain reviewed removal source in combined candidate)
 
 ## Malformed Commits
 

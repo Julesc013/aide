@@ -1,9 +1,9 @@
 # AIDE Lite Pack Local Install Notes
 
-- bundle_id: aide-lite-pack-v0-49318d50472b17f6
+- bundle_id: aide-lite-pack-v0-9a0843c3a7633002
 - bundle_name: aide-lite-pack-v0
 - source_pack: .aide/export/aide-lite-pack-v0
-- pack_status: PASS_SOURCE_ANCESTOR
+- pack_status: PASS
 - publication_status: local_preview_no_publish
 - apply_mode_available: true
 - apply_mode_scope: bounded receipt-owned removal on Windows
@@ -22,9 +22,9 @@
 
 - Target `.aide/memory/**`, `.aide/queue/**`, evidence, golden tasks, generated reports, docs/canon, manual guidance, and existing tools are target state and must be preserved.
 - `.aide.local/**`, `.env`, secrets, raw prompts, raw responses, and provider credentials are never install candidates.
-- Windows `apply-removal` deletes only unchanged receipt-owned regular files and an exact generated whole-file `AGENTS.md` scaffold. A stale preview refuses before deletion; a change after removal begins returns `RECOVERY_REQUIRED` with the intent retained and earlier deletions possible.
-- Authored `AGENTS.md` content remains intact; when other eligible files are removed, the runner and receipt remain and the command reports `PARTIAL_REMOVAL`.
-- Authored `AGENTS.md` managed-section removal and non-Windows removal apply remain unavailable. An interrupted removal requires exact-intent reconciliation; a partial result retains the receipt and runner for further review.
+- Windows `apply-removal` deletes unchanged receipt-owned regular files and an exact generated whole-file `AGENTS.md` scaffold; it removes only the receipt-owned managed section inside authored `AGENTS.md`, preserving every outside byte. A stale preview refuses before deletion; a change after removal begins returns `RECOVERY_REQUIRED` with the intent retained and earlier effects possible.
+- Changed or already absent recorded paths remain partial: the runner and receipt stay and the command reports `PARTIAL_REMOVAL`.
+- Non-Windows removal apply remains unavailable. An interrupted removal requires exact-intent reconciliation; a partial result retains the receipt and runner for further review.
 - General install, repair, upgrade, and rollback apply have separate documented scopes; this removal command does not expand them.
 
 ## Publication Boundary

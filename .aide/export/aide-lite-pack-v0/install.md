@@ -39,18 +39,19 @@ py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-remo
 py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> apply-removal --target <target-repo> --expect-plan <plan_digest>
 ```
 
-`plan-removal` is read-only. On Windows, `apply-removal` deletes only unchanged
+`plan-removal` is read-only. On Windows, `apply-removal` deletes unchanged
 receipt-owned regular files and an exact generated whole-file `AGENTS.md`
-scaffold. It checks ownership again at effect time and retains an intent for
+scaffold. In an authored `AGENTS.md`, it removes only the managed section
+recorded by the receipt while preserving every outside byte. It checks
+ownership again at effect time and retains an intent for
 interruption recovery. The preview's `apply_allowed: false` describes the
 read-only `plan-removal` command; the separate `apply-removal` command accepts
 its exact digest on Windows. A stale preview refuses before deletion. If a
 candidate changes after removal begins, the command stops with
 `RECOVERY_REQUIRED`; earlier deletions may have occurred, and the intent remains.
-Authored `AGENTS.md` content is preserved; other eligible files may be removed
-with the runner and receipt retained as `PARTIAL_REMOVAL` (exit code 2).
-Removing only a managed section from an authored file remains unavailable. A
-repeated apply must use the same digest to reconcile an interrupted intent.
+Changed or already absent recorded paths retain the runner and receipt as
+`PARTIAL_REMOVAL` (exit code 2). A repeated apply must use the same digest
+to reconcile an interrupted intent.
 Non-Windows apply fails closed. Keep the extracted pack available for recovery
 after full detach.
 

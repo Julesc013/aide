@@ -3809,3 +3809,10 @@ finding are retained. A red/green regression now guards the narrow source
 repair. Complete the affected suite, obtain delta review, regenerate the pack
 from clean superseding source, and rerun the full consumer/replay gates before
 any `dev` effect. The stable release goal remains open.
+
+Superseding source `9a0843c3` has independent source ACCEPT, 85/85 full
+importer cases, 46 affected release-adjacent cases and independent acceptance
+of 49 delivered CLI consumer commands on the exact local ZIP/tar. Commit the
+projection, converge and replay the 44 release files, then obtain an exact
+dev-effect review and observe remote integration. Next implement the genuine
+three-way update/disabled-feature workflow from the campaign coverage matrix.

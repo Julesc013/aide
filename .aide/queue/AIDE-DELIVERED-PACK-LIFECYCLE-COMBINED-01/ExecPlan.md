@@ -76,5 +76,10 @@ unreviewed source or artifact candidate may advance `dev`.
 - [x] Repair the authored-CRLF rollback defect found by the extracted-artifact
       canary; red/green exact regression and 8 focused rollback tests pass.
       Preserve the rejected candidate's exact report and ZIP/tar bytes.
-- [ ] Full importer, extracted ZIP/tar consumers, postcommit replay, exact
-      artifact/dev-effect review and observed `dev` ref.
+- [x] Freeze superseding source `9a0843c3`; independent delta review ACCEPT.
+      Regenerate local ZIP/tar/guide, pass Q31/Q34/Q47/Q48 and canonical
+      checks. Independent extracted consumer review ACCEPT_WITH_NOTES after
+      49 delivered CLI commands on the exact new bytes.
+- [x] Full exact-source importer suite passes 85/85 with a hashed external log.
+- [ ] Artifact projection/metadata convergence and zero-diff replay, exact
+      dev-effect review and observed `dev` ref.

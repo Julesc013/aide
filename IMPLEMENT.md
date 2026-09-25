@@ -11767,3 +11767,19 @@ Owner review found a final-write race in the first candidate. The repair now pub
   still refuses changed blocks and forged receipts. The child WorkUnit records
   hashes. Wider tests, independent delta review, new artifacts and dev
   integration remain pending.
+
+## 2026-09-25 - Superseding local lifecycle artifact candidate
+
+- Source `9a0843c3` received independent delta ACCEPT. The full importer suite
+  passed 85/85, affected Q31/Q34/Q47/Q48 suites passed 6/11/18/11, and
+  canonical `validate` and `doctor` passed.
+- Current-source local ZIP/tar and release draft generation passed. An
+  independent 49-command extracted consumer canary accepted the exact local
+  bytes with notes after fresh and authored brownfield full detach, exact
+  predecessor rollback, direct-edit refusal, backup recovery, effect-time
+  preservation and interruption recovery. Its synthetic v2 pack is a
+  disposable update fixture, not a published predecessor.
+- The exact source, asset hashes, commands, log digests and limitations are in
+  the combined lifecycle WorkUnit. Artifact projection, postcommit replay,
+  independent dev-effect review and remote integration remain open. No main,
+  tag, publication, native or hosted effect occurred.
