@@ -20,5 +20,37 @@ hard_review_gates:
 required_response:
   - Record the gate in task evidence.
   - Move status to needs_review or blocked as appropriate.
-  - Wait for explicit human review before continuing.
-
+  - For the campaign below only, apply its recorded owner delegation and the matching review tier; otherwise wait for explicit human review before continuing.
+campaign_owner_delegation:
+  campaign_id: AIDE-CONVERGENCE-AND-DELIVERY-01
+  authority_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/owner-delegation-2026-09-25.md
+  scope: >
+    Bounded child admission and qualified AIDE-scoped integration, main
+    promotion, tag, and publication through separately admitted WorkUnits.
+    This delegation replaces repeated routine owner responses only for this
+    campaign; it does not itself pass a technical or release gate.
+  qualified_independent_verdict: >
+    Exact ACCEPT qualifies. ACCEPT_WITH_NOTES qualifies only when every note
+    is explicitly classified nonblocking and disposed against the same frozen
+    source or effect manifest; no note may defer a required check, waive an
+    unsafe risk, or cover changed bytes or effects. REQUEST_CHANGES, an
+    unresolved note, or a changed subject requires repair and a new exact
+    independent review. The owner delegation is never an independent verdict.
+  admission_resolution_requires:
+    - exact bounded child task packet and controller scope review
+    - no implementation or external effect from admission alone
+  source_resolution_requires:
+    - exact frozen source and policy candidate within the child allowlist
+    - applicable machine checks and classified warnings or skips
+    - qualified independent technical verdict for consequential source, queue, policy, security, compatibility, and migration changes
+  effect_resolution_requires:
+    - separately admitted exact candidate and effect manifest within the child allowlist
+    - required machine and consumer checks with classified warnings and skips
+    - qualified independent technical verdict of integration, main promotion, and release effects
+    - fresh observed source, ref, asset, authority, and recovery identities before each effect
+  remains_stopped_for:
+    - a changed candidate or effect not covered by the independent verdict
+    - missing or failed required checks or unresolved unsafe risk
+    - material owner preference absent from the delegation
+    - new spending, unrelated targets, unavailable privilege, or protection bypass
+    - force push, retagging, secret exposure, or fabricated review evidence

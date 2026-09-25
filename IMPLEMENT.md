@@ -11821,3 +11821,18 @@ Owner review found a final-write race in the first candidate. The repair now pub
 - This closes the bounded lifecycle integration task with warnings about
   unqualified product profiles and public release. The parent campaign remains
   active for three-way update, disabled features and final release work.
+
+## 2026-09-25 - Stable Lite release contract source candidate
+
+- In `AIDE-STABLE-RELEASE-CONTRACT-01`, defined a conditional Lite package
+  SemVer rule separate from `aide-lite-pack-v0`, with an enumerated candidate
+  Windows local CLI and support profile. No final version, tag, shipping tier,
+  source, or asset identity was selected; final manifest and consumer gates
+  remain open.
+- Narrowly aligned queue, review and publication policies with the recorded
+  campaign owner delegation. Exact independent technical verdicts, classified
+  notes, machine checks and fresh effect manifests remain mandatory. Q47/Q48
+  preview-only output and no-publish rules remain unchanged.
+- Updated existing product/release/reference documents. This candidate changes
+  policy/contract source only and awaits independent exact review before dev
+  integration; verification and limitations are in the task evidence.

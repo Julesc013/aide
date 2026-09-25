@@ -3841,3 +3841,15 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   supplied three-way update resolution with successive upstream versions and
   explicit optional-feature disable preservation, followed by final delivered
   consumers and release qualification.
+
+## 2026-09-25 - Stable Lite contract candidate
+
+- `AIDE-STABLE-RELEASE-CONTRACT-01` now proposes a conditional SemVer rule and
+  enumerated `aide-lite-local-windows` public CLI/profile boundary. First
+  `1.0.0` remains conditional on fresh complete release history and a final
+  frozen manifest; this candidate selects no final tag or release bytes.
+- Campaign-only queue and review routing reflects the recorded owner
+  delegation while retaining independent exact technical and effect verdicts.
+  The candidate awaits review. Mandatory behavior, final installed assets,
+  predecessor consumers, main/tag/release effects and downloaded checks remain
+  later WorkUnit gates. Q47/Q48 outputs remain previews.

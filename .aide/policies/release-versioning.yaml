@@ -2,13 +2,14 @@ schema_version: aide.release-versioning-policy.v0
 policy_id: aide-release-versioning-v0
 status: active
 purpose: >
-  Define local bundle naming and version identity without inventing a public
-  SemVer contract.
+  Preserve Q47/Q48 local bundle identity and define the conditional public
+  version rule for a later qualified AIDE Lite release.
 bundle_name: aide-lite-pack-v0
 release_id_policy:
   - use pack name plus source commit when no stable semver exists
   - do not invent SemVer
   - future SemVer only after public compatibility contract
+  - do not choose a final stable version or tag before a frozen release manifest
 artifact_naming:
   zip_archive: aide-lite-pack-v0.zip
   tar_gz_archive: aide-lite-pack-v0.tar.gz
@@ -22,3 +23,66 @@ compatibility_statement:
   public_compatibility_contract: not_established
   stable_semver: not_established
   preview_only: true
+stable_lite_contract_candidate:
+  status: defined_for_review_not_active_or_shipping
+  release_axis: aide_lite_portable_package
+  version_syntax: MAJOR.MINOR.PATCH
+  tag_pattern: aide-lite-v<MAJOR.MINOR.PATCH>
+  first_stable_rule: >
+    If a fresh read-only history check at freeze confirms no prior stable
+    AIDE Lite tag or release, the first qualified stable candidate is 1.0.0.
+    Otherwise classify changes against the actual published predecessor.
+    The exact version and tag are selected only in the frozen release manifest.
+  independent_identities:
+    - aide-lite-pack-v0 is the portable pack format name, not product SemVer
+    - protocol, object schema, persisted state, adapter, and profile versions are separate compatibility axes
+  candidate_profile_id: aide-lite-local-windows
+  candidate_public_cli:
+    - doctor
+    - validate
+    - context
+    - pack --task
+    - verify --evidence
+    - task inspect
+    - task status
+    - import-pack --mode safe --dry-run
+    - import-pack --mode safe --expect-plan
+    - rollback-pack --dry-run
+    - rollback-pack --expect-plan
+    - plan-removal
+    - apply-removal --expect-plan
+    - repair-owned-file --dry-run
+    - repair-owned-file --expect-plan
+  cli_scope_rule: >
+    These are candidate command forms, not a shipping claim. The final release
+    manifest must pin each supported form and option, supported target state,
+    tested environment, and evidence. Unlisted CLI commands and options,
+    including import-pack --mode full and --feedback-out, are outside the first
+    stable public contract unless separately qualified and added by review.
+  public_scope: >
+    Only the final-manifest-qualified forms from candidate_public_cli for
+    aide-lite-local-windows, portable pack interpretation, and ownership/receipt
+    lifecycle behavior recorded for that profile are public package
+    compatibility promises.
+  same_major_rule: >
+    Preserve documented supported behavior for declared predecessor versions
+    on the qualified Windows profile. Changes to persisted ownership or receipt
+    meaning require an explicit migration or safe refusal and cross-version
+    consumer evidence; opening or observing a target never auto-upgrades it.
+  minor_rule: >
+    Add compatible supported behavior without removing or reinterpreting
+    existing documented commands, options, or persisted-state meaning.
+  patch_rule: >
+    Repair behavior without an intended public contract change; rerun affected
+    lifecycle and predecessor update checks.
+  major_rule: >
+    An incompatible documented contract change requires a new major version,
+    migration or refusal documentation, recovery path, and explicit review.
+  limits:
+    - no forward compatibility promise for unknown future versions
+    - no host, native, hosted, model-enabled, or non-Windows apply promise
+    - no implied support for a predecessor absent from the release compatibility matrix
+  activation_gate: >
+    Freeze profile, exact source and tree, version and tag, predecessor matrix,
+    assets and hashes, machine and downloaded-consumer evidence, and an
+    independent technical release ACCEPT in a later release-effect WorkUnit.

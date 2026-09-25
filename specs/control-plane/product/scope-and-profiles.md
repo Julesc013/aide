@@ -57,6 +57,56 @@ Continuous workers, fleet operation, every host integration, advanced domain
 authoring, and unattended integration may exist as optional or incubating
 profiles. A smaller profile's qualification does not certify them.
 
+### First stable Lite profile contract target
+
+The proposed first stable release profile is **AIDE Lite local Windows**: a
+portable archive and local CLI operating beside a repository. Its target
+maintenance posture is `T3` Limited Support, target state `shipping`, and
+support mode `companion`, each limited to the exact workflows and Windows
+environment recorded in the final release manifest. This is a contract target,
+not a claim that the current source or archives are shipping. The `L0`-`L4`
+capability scale describes host integration depth and is not applicable to a
+host-independent Lite CLI; any host lane needs its own tier, state, mode, and
+verified capability ceiling.
+
+The candidate public CLI list for `aide-lite-local-windows` is enumerated in
+`.aide/policies/release-versioning.yaml`: local `doctor`, `validate`, `context`,
+`pack --task`, `verify --evidence`, `task inspect`, and `task status`; safe-mode
+`import-pack` preview and exact-plan apply; `rollback-pack` preview and
+exact-plan apply; `plan-removal` and exact-plan `apply-removal`; and
+`repair-owned-file` preview and exact-plan apply. The final manifest must pin
+the supported forms and options and prove each one. Other CLI commands and
+options remain outside this first stable contract unless separately reviewed
+and qualified; this candidate list alone does not establish support.
+
+The stable profile requires an all-provider-disabled path to acquire the
+released archive, then verify its bytes and run locally offline after
+acquisition. It must inspect and adopt a fresh or brownfield repository
+without taking ownership of authored content, and use bounded
+WorkUnits, validation, context, and evidence. Its supported lifecycle path
+must cover explicit install/adoption, direct-edit-aware update, a real
+three-way conflict with an operator decision, preservation of intentionally
+disabled features, declared repair classes, rollback/recovery, and
+receipt-owned detach/removal. Apply behavior in this first profile is
+**Windows-only**; the release manifest must name the exact tested Windows and
+Python environments and supported filesystem assumptions. Non-Windows users
+may receive portable read-only or planning behavior only where separately
+tested and declared, with no non-Windows lifecycle apply claim.
+
+Qualification must use frozen version pairs, including every declared
+published predecessor, and final archive bytes in disposable fresh and
+brownfield consumers. It must cover interruption and
+restart at effect boundaries, stale or competing writes, retained target-owned
+bytes, supported predecessor update and recovery, and offline operation.
+Missing mandatory tests or unresolved unsafe states block `shipping`; a local
+preview ZIP, schema validation, or source test alone does not establish it.
+
+TUI, Service, Workbench, Commander, continuous workers, IDE and mobile Hosts,
+native execution, hosted GitHub target effects, model/provider operation, and
+fleet behavior are outside this first stable Lite profile. They require
+separate exact support and qualification records before their release text
+may claim them. The Lite package version does not version those surfaces.
+
 ## Requirements
 
 ### AIDE-SCOPE-001: Durable Work

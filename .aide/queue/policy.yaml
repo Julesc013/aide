@@ -30,6 +30,14 @@ task_states:
   - failed
   - superseded
 review_gate_policy: .aide/policies/review-gates.yaml
+campaign_owner_delegation:
+  campaign_id: AIDE-CONVERGENCE-AND-DELIVERY-01
+  authority_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/owner-delegation-2026-09-25.md
+  resolution_rule: >
+    Stop at every applicable review gate. Only an exact child WorkUnit under
+    this campaign may use the recorded owner delegation for the owner-response
+    portion; resolve technical and effect gates by the independent verdict,
+    checks, and manifest conditions in review-gates.yaml. Other queue work
+    follows the ordinary human-review route.
 autonomy_policy: .aide/policies/autonomy.yaml
 bypass_policy: .aide/policies/bypass.yaml
-

@@ -2,7 +2,7 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-RELEASE-CONTRACT-01
 title: Define the bounded stable release contract and publication route
 type: planning
-status: running
+status: needs_review
 planning_state: admitted
 result: PENDING
 created_at: 2026-09-25

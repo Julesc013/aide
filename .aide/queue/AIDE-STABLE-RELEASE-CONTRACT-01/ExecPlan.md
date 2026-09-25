@@ -11,8 +11,8 @@ preview bundle as a public release.
 The exact allowlist is in `task.yaml`. Contract owners are the existing
 release-versioning and publication-boundary policies, the adopted product
 scope/profile document, the root release policy, and their reference docs.
-Only this task's queue records, index, four task-relevant intake outputs, and
-root plan/execution indexes are in admission scope now. Q47/Q48 generators,
+At admission, only this task's queue records, index, four task-relevant intake
+outputs, and root plan/execution indexes were edited. Q47/Q48 generators,
 local release artifacts, implementation source, hosted settings, target
 repositories, and new specification overlays are outside this WorkUnit.
 
@@ -31,6 +31,30 @@ repositories, and new specification overlays are outside this WorkUnit.
   qualification of this source or eventual assets.
 - External analysis note SHA-256:
   `aaf8ab963440f7df049892ccef0eaa10a9fae47850ec68478393f04726f0db7f`.
+
+## Current contract-source plan (2026-09-25)
+
+Objective: define a conditional stable Lite SemVer and public compatibility
+rule, a Windows-only local companion profile with no current shipping claim,
+and an exact campaign-only path through review gates to a future release
+effect WorkUnit. Keep `aide-lite-pack-v0` as the separate portable pack format.
+
+Scope: edit only the allowed versioning/publication/review policies, the
+existing adopted scope/profile and release governance documents, their two
+release references, root indexes, and this task's evidence/state. Preserve
+Q47/Q48 generated files and their no-publish policy/history. No new spec file,
+implementation code, target, branch, tag, or network effect.
+
+Dependencies: the owner's recorded 2026-09-25 delegation, the parent
+controller's no-entry read-only GitHub history observation, existing support
+tier and host-capability definitions, and mandatory-profile coverage gaps.
+Do not infer final version, tag, source, asset, or readiness from those inputs.
+
+Verification: structural policy/document consistency, focused existing
+release and queue checks where read-only, exact path and whitespace audit,
+and independent review of the frozen diff. Expected blocker: this source
+change may make generated pack/release previews stale until a later reviewed
+integration phase regenerates them; record that state without generating here.
 
 ## Non-goals
 
@@ -51,12 +75,14 @@ repositories, and new specification overlays are outside this WorkUnit.
   owner's campaign delegation as authority for this routine child; see
   `evidence/controller-admission.md`. Independent technical review remains
   required for the actual version/profile/policy candidate.
-- [ ] Verify complete local and hosted release history with retained read-only
-  observation provenance; define version and public compatibility rule.
-- [ ] Freeze the first stable Lite profile against implemented behavior and
-  support-tier/capability evidence; classify excluded profiles explicitly.
-- [ ] Draft the smallest campaign-scoped queue/review/publication policy and
-  documentation changes, preserving Q47/Q48 history and technical gates.
+- [x] Define a conditional version and public compatibility candidate. The
+  parent-supplied hosted observation is admission context; a fresh complete
+  local/hosted history receipt is still required at release freeze.
+- [x] Define the first stable Lite profile target with candidate CLI forms,
+  Windows-only lifecycle apply, support-tier target and excluded profiles.
+  Qualification against final assets and predecessor versions remains open.
+- [x] Draft campaign-scoped queue/review/publication policy and documentation
+  changes, preserving Q47/Q48 history and independent technical gates.
 - [ ] Run contract/schema/link/regression validation and obtain independent
   exact candidate technical review before any dev integration.
 - [ ] Route a later exact release-effect WorkUnit after mandatory behavior,
@@ -93,5 +119,7 @@ replay and must not retag changed bytes.
 
 ## Retrospective
 
-Admission only. No version, support claim, policy amendment, release asset,
-or publication has been accepted.
+The contract-source candidate is prepared for exact independent review. It
+does not select a final version, qualify a shipping profile, alter release
+assets, or authorize a publication effect. The earlier admission record
+remains historical evidence of the boundary at that checkpoint.

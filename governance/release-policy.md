@@ -2,22 +2,32 @@
 
 ## Current Phase
 
-This repository is currently pre-bootstrap and pre-product. Early outputs are architectural and governance-focused rather than implementation-focused.
+The repository has implemented and integrated AIDE Lite source, but has not
+qualified or published a stable AIDE release. `dev` is integration progress;
+`main` and an immutable release tag require separate exact review and evidence.
+The first stable Lite profile is a bounded Windows local CLI and portable-pack
+contract target, not a whole-product readiness claim.
 
 ## Phase Gate
 
-- Implementation prompts should not begin until governance, inventory, and harness prompts are completed and reviewed.
-- Host adapter work, shared-core work, packaging, CI, and environment systems should remain deferred until those gates are satisfied.
-- Early repository changes should strengthen law, inventory structure, and execution discipline before feature work begins.
+- Continue implementation through bounded queue WorkUnits and the applicable
+  independent technical gates. A contract or local preview does not qualify
+  release behavior.
+- Stable publication requires a reviewed public compatibility and version
+  rule, exact supported profile, final source and asset identity, mandatory
+  behavioral/consumer evidence, and a separate release-effect review.
+- Host, native, hosted, model-enabled, and non-Windows lifecycle apply claims
+  require their own evidence; they are not inherited from Lite qualification.
 
 ## Release Naming Rule
 
 - Release artifacts may contain exact version names, release channels, or target identifiers when that makes the deliverable precise.
 - This does not change the source naming law: source directories remain based on compatibility technology or host contract rather than exact versions.
 
-## Planned Phase Order
+## Historical Phase Order
 
-Future phases are expected to populate the repository in this order:
+The bootstrap plan ordered work as follows; this list is historical context,
+not a current release gate or a claim that every phase is complete:
 
 1. inventory
 2. matrix
@@ -33,4 +43,6 @@ Future phases are expected to populate the repository in this order:
 
 - Governance and release policy are binding during this phase.
 - No release artifact should imply broad compatibility before inventory, matrices, evals, and packaging evidence exist.
-- Current outputs should be treated as constitutional inputs for later engineering work rather than as product releases.
+- Q47/Q48 local bundles and drafts remain preview-only, no-publish evidence.
+  A later frozen release-effect WorkUnit must verify the published bytes and
+  downloaded consumers before a stable claim is complete.
