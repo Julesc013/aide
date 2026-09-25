@@ -881,6 +881,53 @@ class ExportImportTests(unittest.TestCase):
         self.assertFalse((target / "AGENTS.md").exists())
 
     @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
+    def test_removal_rejects_rechecksummed_intent_for_later_authored_managed_file(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "removal-forged-managed-intent-pack")
+        target = source_root.parent / "target-removal-forged-managed-intent"
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+        plan = aide_lite.build_portable_removal_plan(target)
+        self.assertEqual(aide_lite.apply_portable_removal(target, plan["plan_digest"], fail_after_removals=1)["status"], "INTERRUPTED")
+        intent_path = target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        intent = json.loads(intent_path.read_text(encoding="utf-8"))
+        operation = next(item for item in intent["operations"] if item["kind"] == "managed_file" and (target / item["target"]).is_file())
+        authored = b"project's later authored bytes\n"
+        (target / operation["target"]).write_bytes(authored)
+        operation["preimage_digest"] = aide_lite.digest_bytes(authored)
+        intent["intent_digest"] = aide_lite.portable_import_record_digest(intent, "intent_digest")
+        aide_lite.write_text(intent_path, aide_lite.stable_json_text(intent))
+        receipt_bytes = receipt_path.read_bytes()
+        with self.assertRaisesRegex(ValueError, "preimage differs from installed bytes"):
+            aide_lite.apply_portable_removal(target, plan["plan_digest"])
+        self.assertEqual((target / operation["target"]).read_bytes(), authored)
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+
+    @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
+    def test_removal_rejects_rechecksummed_intent_for_authored_agents_file(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "removal-forged-agents-intent-pack")
+        target = source_root.parent / "target-removal-forged-agents-intent"
+        self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+        plan = aide_lite.build_portable_removal_plan(target)
+        self.assertEqual(aide_lite.apply_portable_removal(target, plan["plan_digest"], fail_after_removals=1)["status"], "INTERRUPTED")
+        intent_path = target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        intent = json.loads(intent_path.read_text(encoding="utf-8"))
+        operation = next(item for item in intent["operations"] if item["kind"] == "standalone_managed_agents")
+        agents_path = target / "AGENTS.md"
+        authored = b"# Project authored preface\n" + agents_path.read_bytes()
+        agents_path.write_bytes(authored)
+        operation["preimage_digest"] = aide_lite.digest_bytes(authored)
+        intent["intent_digest"] = aide_lite.portable_import_record_digest(intent, "intent_digest")
+        aide_lite.write_text(intent_path, aide_lite.stable_json_text(intent))
+        receipt_bytes = receipt_path.read_bytes()
+        result = aide_lite.apply_portable_removal(target, plan["plan_digest"])
+        self.assertEqual(result["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(agents_path.read_bytes(), authored)
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+
+    @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
     def test_removal_recovers_after_receipt_retirement_before_intent_cleanup(self) -> None:
         source_root = self.make_source_repo()
         pack = self.freeze_pack(source_root, "removal-retirement-pack")
@@ -900,7 +947,7 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(aide_lite.read_text(target / "unknown.txt"), "keep target data\n")
 
     @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
-    def test_removal_can_retire_receipt_when_one_owned_file_is_already_absent(self) -> None:
+    def test_removal_retains_receipt_when_one_owned_file_is_already_absent(self) -> None:
         source_root = self.make_source_repo()
         pack = self.freeze_pack(source_root, "removal-already-absent-pack")
         target = source_root.parent / "target-removal-already-absent"
@@ -911,14 +958,14 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(plan["status"], "PRESERVATION_REQUIRED")
         self.assertIn(".aide/prompts/compact-task.md", plan["preserved_recorded_targets"])
         result = aide_lite.apply_portable_removal(target, plan["plan_digest"])
-        self.assertEqual(result["status"], "DETACHED")
-        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
-        self.assertFalse((target / aide_lite.PORTABLE_REMOVAL_RUNNER_PATH).exists())
+        self.assertEqual(result["status"], "PARTIAL_REMOVAL")
+        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
+        self.assertTrue((target / aide_lite.PORTABLE_REMOVAL_RUNNER_PATH).exists())
         self.assertFalse((target / "AGENTS.md").exists())
         self.assertFalse(missing.exists())
 
     @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
-    def test_removal_recovery_refuses_a_new_file_at_an_already_absent_path(self) -> None:
+    def test_removal_does_not_retire_receipt_at_absent_path_race_boundary(self) -> None:
         source_root = self.make_source_repo()
         pack = self.freeze_pack(source_root, "removal-absent-race-pack")
         target = source_root.parent / "target-removal-absent-race"
@@ -926,15 +973,25 @@ class ExportImportTests(unittest.TestCase):
         missing = target / ".aide/prompts/compact-task.md"
         missing.unlink()
         plan = aide_lite.build_portable_removal_plan(target)
-        stopped = aide_lite.apply_portable_removal(target, plan["plan_digest"], fail_after_receipt=True)
-        self.assertEqual(stopped["status"], "INTERRUPTED")
-        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
-        new_bytes = b"project created this after retirement\n"
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        original_unlink = aide_lite.windows_unlink_exact_portable_file
+        receipt_attempts = []
+        def intercept_receipt(path, expected_digest):
+            if path == receipt_path:
+                receipt_attempts.append(path)
+                missing.write_bytes(b"project created this at retirement boundary\n")
+            return original_unlink(path, expected_digest)
+        with mock.patch.object(aide_lite, "windows_unlink_exact_portable_file", side_effect=intercept_receipt):
+            result = aide_lite.apply_portable_removal(target, plan["plan_digest"], fail_after_receipt=True)
+        self.assertEqual(result["status"], "PARTIAL_REMOVAL")
+        self.assertEqual(receipt_attempts, [])
+        self.assertTrue(receipt_path.is_file())
+        new_bytes = b"project created this after partial removal\n"
         missing.write_bytes(new_bytes)
-        recovery = aide_lite.apply_portable_removal(target, plan["plan_digest"])
-        self.assertEqual(recovery["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(aide_lite.apply_portable_removal(target, plan["plan_digest"])["status"], "STALE_PLAN")
         self.assertEqual(missing.read_bytes(), new_bytes)
-        self.assertTrue((target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH).is_file())
+        self.assertTrue(receipt_path.is_file())
+        self.assertTrue((target / aide_lite.PORTABLE_REMOVAL_RUNNER_PATH).is_file())
 
     @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
     def test_removal_preview_refuses_changed_receipt_or_managed_bytes(self) -> None:

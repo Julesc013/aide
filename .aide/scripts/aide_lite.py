@@ -40243,6 +40243,10 @@ def load_portable_removal_intent(target_root: Path) -> dict[str, object] | None:
         raise ValueError("portable removal intent receipt file digest is invalid")
     if record["retire_receipt"] and record["preserved"]:
         raise ValueError("portable removal intent cannot retire a preserved receipt")
+    # Older intents could retire a receipt based on an unguarded absence
+    # observation. They require manual reconciliation instead of replay.
+    if record["settled_absent"]:
+        raise ValueError("portable removal intent has unguarded absent targets")
     if any(not isinstance(item, str) for item in record["preserved"]):
         raise ValueError("portable removal intent preservation list is invalid")
     targets: list[str] = []
@@ -40957,10 +40961,10 @@ def _apply_portable_removal_pinned(
             settled_absent: list[dict[str, str]] = []
             for item in plan["operations"]:
                 if not item["removal_candidate"]:
-                    if item["action"] == "preserve_already_absent":
-                        settled_absent.append({"target": str(item["target"]), "kind": str(item["kind"])})
-                    else:
-                        preserved.append(str(item["target"]))
+                    # An absent leaf cannot be held absent through receipt
+                    # retirement. Keep the receipt and installed runner so a
+                    # later writer cannot leave an unrecorded replacement.
+                    preserved.append(str(item["target"]))
                 elif item["kind"] == "managed_file":
                     candidates.append({"target": item["target"], "kind": "managed_file", "installed_digest": item["installed_digest"], "preimage_digest": item["installed_digest"]})
                 else:
@@ -41013,6 +41017,15 @@ def _apply_portable_removal_pinned(
             expected_kind = "managed_file" if item["kind"] == "managed_file" else "portable_managed_section"
             if not isinstance(entry, dict) or entry.get("kind") != expected_kind or entry.get("installed_digest") != item["installed_digest"]:
                 raise ValueError(f"portable removal intent no longer matches receipt: {item['target']}")
+            if item["kind"] == "managed_file" and item["preimage_digest"] != entry["installed_digest"]:
+                raise ValueError(f"portable removal intent preimage differs from installed bytes: {item['target']}")
+            if item["kind"] == "standalone_managed_agents":
+                agents_path = portable_target_path(target_root, "AGENTS.md")
+                if target_file_digest(agents_path) != "missing" and standalone_portable_agents_digest(
+                    target_root,
+                    {"target": "AGENTS.md", "kind": "portable_managed_section", "installed_digest": entry["installed_digest"], "target_file_digest": item["preimage_digest"]},
+                ) is None:
+                    return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": [], "preserved": intent["preserved"], "recovery": portable_removal_recovery_observations(target_root, intent)}
         removed: list[str] = []
         for item in intent["operations"]:
             target_rel = str(item["target"])

@@ -38,8 +38,14 @@ content, and leave a clear recovery state across interruptions.
 - [x] Add anchored whole-file removal only for the exact new-project
   `AGENTS.md` scaffold with a receipt-matching managed block. Delete the
   runner last and retire the receipt only after all recorded managed paths
-  are removed or already absent. Test interrupted receipt retirement and
-  unknown/new bytes at previously absent paths.
+  were removed in this operation. Retain the receipt and runner when a path
+  was already absent; test interruption and creation at the former
+  receipt-retirement boundary.
+- [x] Repair independent source review findings on `d13894ba`: bind every
+  managed-file intent preimage to the receipt, revalidate the exact generated
+  whole-file AGENTS shape on resume, and reject older intents whose absent
+  paths were permitted to retire the receipt. Twelve focused tests pass with
+  frozen helper injection. Independent rereview is pending.
 - [ ] Implement anchored managed-section removal inside authored brownfield
   `AGENTS.md`; preserve that file, the runner, and receipt meanwhile.
 - [ ] Run combined-source and extracted consumer qualification, independent
@@ -57,8 +63,10 @@ The six apply regressions pass only with a temporary in-process import of one
 frozen repair-helper snapshot; this does not constitute combined-source
 acceptance. The partial result retains the portable CLI runner so a target can
 still inspect and reconcile its receipt or intent after the file effects.
-The later conditional-detach source candidate retains an exact target-local
-intent through receipt retirement; after the runner is deleted, recovery must
-use the extracted pack CLI. It does not remove authored content or claim
-general rollback. The separate validation record identifies current tests and
-the stale generated-pack provenance in this source branch.
+The conditional-detach source candidate retains an exact target-local intent
+through receipt retirement; after the runner is deleted, recovery must use
+the extracted pack CLI. An already-absent managed path now prevents receipt
+retirement because its absence cannot be guarded against creation at the
+terminal boundary. It does not remove authored content or claim general
+rollback. The separate validation record identifies current tests and the
+stale generated-pack provenance in this source branch.
