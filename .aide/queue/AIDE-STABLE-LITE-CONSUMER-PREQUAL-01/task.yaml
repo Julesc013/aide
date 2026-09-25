@@ -1,0 +1,55 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-CONSUMER-PREQUAL-01
+title: Exercise delivered Windows Lite journeys before final release freeze
+type: evaluation
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-25
+updated_at: 2026-09-25
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_dev: b3a001befaac2d2d9a596c1d7dc738dd1733bec6
+objective: >
+  Run source-independent disposable consumers against the current exact local
+  preview archives for mandatory Windows Lite lifecycle, customization,
+  context, evidence and restart paths. Classify actual defects into bounded
+  repair WorkUnits and preserve a final-byte rerun obligation.
+authority_basis: >
+  The owner's 2026-09-25 campaign delegation authorizes bounded child
+  WorkUnits and disposable AIDE-owned qualification. This task changes no
+  target outside explicitly new scratch consumers and no release ref.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-STABLE-LITE-CONSUMER-PREQUAL-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/scripts/**
+    - .aide/export/**
+    - .aide/release/**
+    - .aide/policies/**
+    - specs/**
+    - governance/**
+    - docs/**
+  forbidden_paths:
+    - .github/**
+    - .aide.local/**
+    - arbitrary target repositories
+  forbidden_operations:
+    - mutate main, dev, tags, GitHub releases or hosted settings
+    - alter reviewed archive bytes or source within this evaluation WorkUnit
+    - claim stable or published acceptance from local previews or synthetic predecessor packs
+    - delete unknown, authored or unrelated target bytes
+verification:
+  - bind exact preview archive/source/review hashes and disposable run paths
+  - fresh and brownfield safe import, customization and successive update with explicit conflict decision
+  - supported repair apply, rollback/recovery and receipt-owned detach/removal with stale and interrupted effects
+  - local context, task packet and verify from installed CLI without development checkout
+  - classify warnings, failed attempts and optional/native/hosted profile boundaries honestly
+  - independent review of exact consumer script, results and any repair conclusion
+retained_gates:
+  - final release manifest and downloaded bytes require a fresh complete rerun
+  - source or product defect must enter a separate bounded repair WorkUnit and receive technical review
+  - this task alone cannot promote main, tag, upload or publish

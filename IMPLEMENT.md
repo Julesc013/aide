@@ -11876,6 +11876,17 @@ Owner review found a final-write race in the first candidate. The repair now pub
   ls-remote and GitHub API all observed `2defcad5`, tree `14b13c20`.
   This closeout records exact hashes, commands and remaining release work in
   the two WorkUnits; it adds no new runtime or archive bytes.
+
+## 2026-09-25 - Delivered Windows Lite prequalification admission
+
+- Created a bounded evaluation WorkUnit from `dev@b3a001be` for exact local
+  preview installed lifecycle, restart, context and evidence consumers.
+  Source and generated release outputs remain read-only in this slice.
+- In a new disposable fresh target, extracted-ZIP safe import preview/apply
+  exited 0 with 816 writes, followed by installed `context`, `pack --task`,
+  and `verify` exits 0. `verify` reported 15 warnings and zero errors; the
+  earlier cloned post-tamper target's verify failure is retained as invalid
+  baseline evidence. A separate lifecycle canary continues in scratch.
 ## 2026-09-25 - Project-owned successive update source candidate
 
 - The three-way update WorkUnit reproduced two current defects on its admitted

@@ -3887,6 +3887,18 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   unqualified stable profile, version, main, publication and downloaded
   consumers. The next critical path is final declared-platform lifecycle,
   restart, offline and context/evidence qualification from frozen bytes.
+
+## 2026-09-25 - Delivered Windows Lite prequalification
+
+- `AIDE-STABLE-LITE-CONSUMER-PREQUAL-01` is admitted from clean
+  `dev@b3a001be`. It binds current local preview ZIP/tar bytes and runs only
+  new disposable Windows consumers; product source and generated release
+  outputs remain read-only until a concrete defect is scoped separately.
+- Clean extracted-ZIP safe import wrote 816 owned paths. The installed
+  `context`, `pack --task`, and `verify` path exited 0 with zero verifier
+  errors; optional-report/no-Git warnings remain explicit. The lifecycle
+  canary is in progress. Final downloaded release bytes and stable support
+  acceptance remain later gates.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
 - `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote

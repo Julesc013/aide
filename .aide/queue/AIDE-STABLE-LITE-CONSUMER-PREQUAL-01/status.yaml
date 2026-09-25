@@ -1,0 +1,17 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-LITE-CONSUMER-PREQUAL-01
+status: running
+classification: delivered_local_preview_prequalification
+planning_state: admitted
+result: PENDING
+updated_at: 2026-09-25
+current_slice: disposable_windows_consumers
+next_slice: reconcile_lifecycle_canary_and_installed_context_probe
+review_gate: independent_exact_consumer_result_review
+final_release_qualified: false
+main_promotion_performed: false
+release_published: false
+notes:
+  - Exact dev preview source and archives are bound in admission evidence; these are not downloaded public assets.
+  - A clean installed context/pack/verify probe passed with warnings; the earlier post-tamper clone result is retained only as invalid baseline evidence.
+  - Lifecycle repair/rollback/removal/restart canary is running in external disposable scratch and remains unreviewed.
