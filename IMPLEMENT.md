@@ -11670,3 +11670,8 @@ Owner review found a final-write race in the first candidate. The repair now pub
   interruption recovery, and non-Windows limits. The rejected bytes remain in
   external scratch evidence. New source, artifact, and consumer validation
   must precede dev integration.
+- Scoped source review then found two wording ambiguities: the planner's
+  `apply_allowed: false` marker refers to the read-only planning command, and
+  a change after earlier deletions begins yields `RECOVERY_REQUIRED`, not a
+  blanket no-effect refusal. Clarified both generated guides and strengthened
+  the regression before regenerating superseding bytes.

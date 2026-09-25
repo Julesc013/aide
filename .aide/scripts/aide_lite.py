@@ -17696,13 +17696,15 @@ def release_install_notes_text(repo_root: Path, bundle_id: str, pack_status: str
         "4. Run target-local AIDE Lite validation after import.",
         "5. On Windows, use `plan-removal --target <target-repo> --json`, then `apply-removal --target <target-repo> --expect-plan <plan_digest>` for receipt-owned removal.",
         "6. Treat other lifecycle apply commands according to their separately documented boundaries.",
+        "7. `plan-removal` reports `apply_allowed: false` because that command is read-only; the separate `apply-removal` command accepts its exact digest on Windows.",
         "",
         "## Preservation Rules",
         "",
         "- Target `.aide/memory/**`, `.aide/queue/**`, evidence, golden tasks, generated reports, docs/canon, manual guidance, and existing tools are target state and must be preserved.",
         "- `.aide.local/**`, `.env`, secrets, raw prompts, raw responses, and provider credentials are never install candidates.",
-        "- Windows `apply-removal` deletes only unchanged receipt-owned regular files and an exact generated whole-file `AGENTS.md` scaffold. It refuses changed paths and retains authored `AGENTS.md`, the runner, and receipt as `PARTIAL_REMOVAL`.",
-        "- Authored `AGENTS.md` managed-section removal and non-Windows removal apply remain unavailable. A partial or interrupted removal requires exact-intent reconciliation.",
+        "- Windows `apply-removal` deletes only unchanged receipt-owned regular files and an exact generated whole-file `AGENTS.md` scaffold. A stale preview refuses before deletion; a change after removal begins returns `RECOVERY_REQUIRED` with the intent retained and earlier deletions possible.",
+        "- Authored `AGENTS.md` content remains intact; when other eligible files are removed, the runner and receipt remain and the command reports `PARTIAL_REMOVAL`.",
+        "- Authored `AGENTS.md` managed-section removal and non-Windows removal apply remain unavailable. An interrupted removal requires exact-intent reconciliation; a partial result retains the receipt and runner for further review.",
         "- General install, repair, upgrade, and rollback apply have separate documented scopes; this removal command does not expand them.",
         "",
         "## Publication Boundary",
@@ -39912,12 +39914,17 @@ py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> apply-rem
 `plan-removal` is read-only. On Windows, `apply-removal` deletes only unchanged
 receipt-owned regular files and an exact generated whole-file `AGENTS.md`
 scaffold. It checks ownership again at effect time and retains an intent for
-interruption recovery. Changed or unknown paths are preserved and refuse the
-effect. Authored `AGENTS.md` content is preserved; a partial result retains the
-runner and receipt and reports `PARTIAL_REMOVAL` (exit code 2). Removing only a
-managed section from an authored file remains unavailable. A repeated apply
-must use the same digest to reconcile an interrupted intent. Non-Windows apply
-fails closed. Keep the extracted pack available for recovery after full detach.
+interruption recovery. The preview's `apply_allowed: false` describes the
+read-only `plan-removal` command; the separate `apply-removal` command accepts
+its exact digest on Windows. A stale preview refuses before deletion. If a
+candidate changes after removal begins, the command stops with
+`RECOVERY_REQUIRED`; earlier deletions may have occurred, and the intent remains.
+Authored `AGENTS.md` content is preserved; other eligible files may be removed
+with the runner and receipt retained as `PARTIAL_REMOVAL` (exit code 2).
+Removing only a managed section from an authored file remains unavailable. A
+repeated apply must use the same digest to reconcile an interrupted intent.
+Non-Windows apply fails closed. Keep the extracted pack available for recovery
+after full detach.
 
 ## Manual Import
 

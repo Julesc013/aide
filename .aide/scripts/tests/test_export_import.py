@@ -95,6 +95,8 @@ class ExportImportTests(unittest.TestCase):
             self.assertIn("Windows", guide)
             self.assertIn("PARTIAL_REMOVAL", guide)
             self.assertIn("authored", guide.lower())
+            self.assertIn("apply_allowed: false", guide)
+            self.assertIn("RECOVERY_REQUIRED", guide)
             self.assertNotIn("uninstall are planning models only", guide)
         self.assertIn("apply_mode_available: true", release_guide)
         self.assertIn("Non-Windows apply", pack_guide)
