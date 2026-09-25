@@ -3846,3 +3846,16 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
 - The external extracted-CLI red probe and catalogue are bound in its
   ExecPlan. Source work may proceed independently; dev integration waits for
   the three-way update's full qualification and combined artifact review.
+
+## 2026-09-25 - Combined update and repair-health artifact candidate
+
+- Combined source `99a9e54d` passed 100/100 importer cases and affected
+  Q31/Q34/Q47/Q48 suites. From clean source, the current generator produced
+  local preview ZIP/tar bytes with passing provenance and canonical checks.
+- A 25-command extracted-archive consumer canary passed fresh, successive
+  synthetic updates, disabled-feature preservation, brownfield conflict
+  resolution and read-only health states. Independent exact artifact review
+  accepted those bounded bytes with classified preview limits.
+- Next commit the projection, prove post-commit replay and obtain exact `dev`
+  effect review. Stable profile, main, tag and publication gates remain with
+  `AIDE-CONVERGENCE-AND-DELIVERY-01`.

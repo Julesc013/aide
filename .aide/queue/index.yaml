@@ -3591,8 +3591,8 @@ items:
     evidence: .aide/queue/AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01/evidence
     description: Reconcile reviewed removal and rollback source, regenerate current artifacts, qualify consumers, and integrate an exact dev candidate.
   - id: AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01
-    status: running
-    planning_state: source_candidate_review
+    status: needs_review
+    planning_state: artifact_candidate_review
     result: PENDING
     title: Preserve project choices across successive portable-pack updates
     task: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/task.yaml
@@ -3601,8 +3601,8 @@ items:
     evidence: .aide/queue/AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01/evidence
     description: Implement exact manual update resolution and explicit optional-disable preservation across successive delivered packs.
   - id: AIDE-DELIVERED-PACK-REPAIR-HEALTH-01
-    status: running
-    planning_state: admitted
+    status: needs_review
+    planning_state: combined_qualification
     result: PENDING
     title: Diagnose installed Lite pack health from receipt-owned target state
     task: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-HEALTH-01/task.yaml

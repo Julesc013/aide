@@ -1,9 +1,8 @@
 schema_version: aide.queue-task-status.v0
 id: AIDE-DELIVERED-PACK-REPAIR-HEALTH-01
-status: running
+status: needs_review
 result: PENDING
-current_step: superseding_receipt_baseline_review
+current_step: exact_dev_effect_review_after_artifact_commit_and_replay
 updated_at: 2026-09-25
-blockers:
-  - dev integration waits for three-way update qualification
+blockers: []
 review_required: true

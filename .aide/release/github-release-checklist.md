@@ -1,12 +1,12 @@
 # GitHub Release Publication Checklist
 
-- checklist_id: aide-lite-pack-v0-github-draft-9a0843c3a7633002-checklist
-- source_commit: 9a0843c3a7633002f91a0ec3e707fe613650eb5f
+- checklist_id: aide-lite-pack-v0-github-draft-99a9e54da887a3a2-checklist
+- source_commit: 99a9e54da887a3a209cfd73df345c55735819368
 - no_publish: true
 
 ## Checks
 - [source repo state] branch checked: recorded (not-recorded-in-pack)
-- [source repo state] source commit recorded: recorded (9a0843c3a7633002f91a0ec3e707fe613650eb5f)
+- [source repo state] source commit recorded: recorded (99a9e54da887a3a209cfd73df345c55735819368)
 - [source repo state] dirty state recorded: recorded (false)
 - [source repo state] tag not created yet: pass (tag_created=false)
 - [validation gates] release validate: required (.aide/release/dist/release-validation.md)

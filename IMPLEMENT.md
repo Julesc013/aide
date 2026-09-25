@@ -11861,3 +11861,20 @@ Owner review found a final-write race in the first candidate. The repair now pub
   ZIP probe is red because the command is absent.
 - No source implementation, real-target mutation, generated pack/release
   artifact, dev effect or public release is claimed at this admission.
+
+## 2026-09-25 - Qualify combined three-way update and repair-health previews
+
+- Merged the independently accepted update and repair-health source/tests in
+  `99a9e54d`, preserving the exact repaired importer bytes and corrected test
+  fixture. The full importer suite passed 100/100; Q31/Q34/Q47/Q48 passed
+  6/6, 11/11, 18/18 and 11/11.
+- Regenerated export, changelog, release bundle and draft from clean source.
+  Release validation, draft validation, canonical validate/doctor/pack-status
+  passed; the local ZIP/tar hashes and logs are in the two WorkUnit evidence
+  records. The extracted canary passed 25 commands in disposable fresh and
+  brownfield consumers, with expected conservative refusals.
+- Independent artifact review accepted the exact local previews with notes:
+  synthetic V2/V3 packs, CLI-only source-byte binding, and unqualified
+  repair/rollback/removal apply, hostile/OS-level network and publication
+  paths remain separate. The generated projection awaits a frozen commit,
+  replay and exact `dev` effect review; no public release is claimed.

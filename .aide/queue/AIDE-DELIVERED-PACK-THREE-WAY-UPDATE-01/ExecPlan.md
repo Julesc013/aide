@@ -89,5 +89,10 @@ security predicates and final delivered bytes at their exact revisions.
       available for one combined qualification run. See
       `evidence/full-suite-correction.md`. No artifact generation precedes
       a passing full suite.
-- [ ] Run full affected source suites, generate/qualify delivered artifacts,
-      prove replay, and integrate accepted bytes into observed remote `dev`.
+- [x] Run full combined 100-case importer suite, affected Q31/Q34/Q47/Q48
+      suites, deterministic generators, canonical checks, extracted ZIP/tar
+      canary and independent artifact review. Exact identities, results and
+      limitations are in `evidence/combined-qualification-99a9e54d.md`.
+- [ ] Commit the generated projection, prove zero-diff postcommit replay,
+      obtain exact effect review and integrate qualified bytes into observed
+      remote `dev`.
