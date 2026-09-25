@@ -11,9 +11,9 @@ allowlist; use disposable targets for write tests.
 
 1. Start from remote-observed `dev@5dfa75e6`, clean separate worktree,
    `git plan`, and current importer implementation.
-2. Add adversarial regressions for parent substitution and for an authored
-   target leaf arriving or changing after preimage validation. Record the
-   current failures before changing source.
+2. Add adversarial regressions for payload and intent parent substitution and
+   for an authored target leaf arriving or changing after preimage validation.
+   Record the current failures before changing source.
 3. Integrate the independently accepted pinned-parent/lifecycle-lock helper
    from the owned-repair stream. Adapt the importer to use a handle-bound
    publication path, or fail closed where that cannot be proved.
@@ -28,6 +28,8 @@ allowlist; use disposable targets for write tests.
   current importer wrote `compact-task.md` outside the target on Windows.
 - [x] Reproduce a racing target leaf in both create and update operations.
   The current importer overwrote the concurrent bytes in both cases.
+- [x] Reproduce an import-intent parent substitution. The current importer
+  wrote its intent to an outside sibling through a disposable junction.
 - [ ] Repair and qualify the source with the reviewed shared helper.
 - [ ] Close independent review, provenance, and dev integration.
 

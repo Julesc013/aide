@@ -11583,3 +11583,11 @@ DLL mapping, image or grant effect is part of this source implementation.
   concurrent project bytes in both cases, so the test failed as intended.
 - Retained the test as the effect-time ownership oracle. No importer source fix
   or delivered-artifact acceptance is recorded yet.
+
+## 2026-09-25 - Portable importer intent parent substitution regression
+
+- A disposable Windows junction substitution before import-intent staging made
+  the current importer write its intent to an outside sibling. The one-test
+  baseline failed as intended and left no real target effect.
+- The repair must anchor metadata as well as managed payload writes. No source
+  repair or delivered-artifact acceptance is recorded by this regression.

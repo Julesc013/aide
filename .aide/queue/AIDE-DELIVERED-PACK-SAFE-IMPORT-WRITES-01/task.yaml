@@ -3,7 +3,7 @@ id: AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01
 title: Keep delivered-pack importer writes inside the observed target
 type: implementation
 status: running
-planning_state: parent_escape_and_leaf_clobber_reproduced_repair_helper_pending
+planning_state: payload_intent_parent_escape_and_leaf_clobber_reproduced
 result: PENDING
 created_at: 2026-09-25
 updated_at: 2026-09-25
@@ -30,6 +30,7 @@ scope:
     - main promotion, tag, upload, or publication
 verification:
   - prove a parent swap cannot redirect a managed payload outside target
+  - prove a parent swap cannot redirect intent or receipt metadata
   - prove a racing leaf is not clobbered after the preimage check
   - preserve exact preview, receipt, interruption, update, and ownership behavior
   - run importer and affected release suites plus delivered-archive consumers

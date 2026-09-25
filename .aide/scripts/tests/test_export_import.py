@@ -827,6 +827,57 @@ class ExportImportTests(unittest.TestCase):
                 self.assertTrue(attempted, "the importer must exercise the staging boundary")
                 self.assertEqual(target.read_bytes(), competing, "import replaced a concurrent project edit")
 
+    def test_import_intent_does_not_follow_a_swapped_parent(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "intent-parent-pack")
+        target_root = source_root.parent / "intent-parent-target"
+        parent = target_root / ".aide" / "install"
+        parent.mkdir(parents=True)
+        parked = target_root / ".aide" / "install-parked"
+        outside = source_root.parent / "intent-parent-outside"
+        outside.mkdir()
+        original_mkstemp = tempfile.mkstemp
+        attempted = False
+
+        def swap_before_intent_staging(*args: object, **kwargs: object) -> tuple[int, str]:
+            nonlocal attempted
+            if Path(str(kwargs.get("dir"))) == parent and not attempted:
+                attempted = True
+                try:
+                    parent.rename(parked)
+                except PermissionError:
+                    pass
+                else:
+                    if sys.platform == "win32":
+                        junction = subprocess.run(
+                            ["cmd", "/c", "mklink", "/J", str(parent), str(outside)],
+                            capture_output=True,
+                            text=True,
+                            encoding="utf-8",
+                        )
+                        self.assertEqual(junction.returncode, 0, junction.stderr)
+                    else:
+                        parent.symlink_to(outside, target_is_directory=True)
+            return original_mkstemp(*args, **kwargs)
+
+        try:
+            with mock.patch.object(aide_lite.tempfile, "mkstemp", side_effect=swap_before_intent_staging):
+                try:
+                    aide_lite.apply_import_pack(pack, target_root)
+                except (OSError, RuntimeError, ValueError):
+                    pass
+            outside_entries = list(outside.iterdir())
+        finally:
+            if parent.is_symlink():
+                parent.unlink()
+            elif getattr(parent, "is_junction", lambda: False)():
+                parent.rmdir()
+            if parked.exists():
+                parked.rename(parent)
+
+        self.assertTrue(attempted, "the importer must exercise the intent staging boundary")
+        self.assertEqual(outside_entries, [], "import wrote an intent through a swapped parent")
+
     def test_removal_plan_requires_an_exact_valid_receipt(self) -> None:
         source_root = self.make_source_repo()
         target = source_root.parent / "target-removal-receipt"
