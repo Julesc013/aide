@@ -39491,6 +39491,67 @@ def windows_link_from_handle(descriptor: int, directory_handle: int, leaf_name: 
         raise OSError(code, f"Windows hard-link publication failed (NTSTATUS {status:#x})")
 
 
+def delete_portable_repair_intent_anchored(target_root: Path, intent: dict[str, object]) -> None:
+    """Delete only the exact single-link intent opened beneath pinned parents."""
+    if os.name != "nt":
+        raise ValueError("owned repair intent cleanup requires Windows anchored handles")
+    import ctypes
+    from ctypes import wintypes
+
+    class FileTime(ctypes.Structure):
+        _fields_ = [("low", wintypes.DWORD), ("high", wintypes.DWORD)]
+
+    class FileInfo(ctypes.Structure):
+        _fields_ = [("attributes", wintypes.DWORD), ("created", FileTime), ("accessed", FileTime), ("written", FileTime), ("volume", wintypes.DWORD), ("size_high", wintypes.DWORD), ("size_low", wintypes.DWORD), ("links", wintypes.DWORD), ("index_high", wintypes.DWORD), ("index_low", wintypes.DWORD)]
+
+    class FileDispositionInfo(ctypes.Structure):
+        _fields_ = [("delete_file", wintypes.BOOL)]
+
+    path = target_root / PORTABLE_REPAIR_INTENT_PATH
+    expected = stable_json_text(intent).encode("utf-8")
+    if len(expected) > 65536:
+        raise ValueError("repair intent exceeds cleanup size limit")
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.GetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.POINTER(FileInfo)]
+    kernel.GetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.ReadFile.argtypes = [wintypes.HANDLE, wintypes.LPVOID, wintypes.DWORD, ctypes.POINTER(wintypes.DWORD), wintypes.LPVOID]
+    kernel.ReadFile.restype = wintypes.BOOL
+    kernel.SetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.c_int, ctypes.c_void_p, wintypes.DWORD]
+    kernel.SetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    with windows_pinned_directory(path.parent):
+        handle = kernel.CreateFileW(str(path), 0x80000000 | 0x00010000, 0x1, None, 3, 0x00200000, None)
+        if handle == ctypes.c_void_p(-1).value or handle is None:
+            raise ctypes.WinError(ctypes.get_last_error())
+        try:
+            info = FileInfo()
+            if not kernel.GetFileInformationByHandle(handle, ctypes.byref(info)):
+                raise ctypes.WinError(ctypes.get_last_error())
+            if info.attributes & (0x10 | 0x400) or info.links != 1 or info.size_high or info.size_low != len(expected):
+                raise ValueError("repair intent is not the expected regular single-link file")
+            chunks: list[bytes] = []
+            remaining = len(expected)
+            while remaining:
+                buffer = ctypes.create_string_buffer(remaining)
+                count = wintypes.DWORD()
+                if not kernel.ReadFile(handle, buffer, remaining, ctypes.byref(count), None):
+                    raise ctypes.WinError(ctypes.get_last_error())
+                if count.value == 0:
+                    raise ValueError("repair intent ended before expected bytes")
+                chunks.append(buffer.raw[:count.value])
+                remaining -= count.value
+            if b"".join(chunks) != expected:
+                raise ValueError("repair intent bytes changed before cleanup")
+            disposition = FileDispositionInfo(True)
+            if not kernel.SetFileInformationByHandle(handle, 4, ctypes.byref(disposition), ctypes.sizeof(disposition)):
+                raise ctypes.WinError(ctypes.get_last_error())
+        finally:
+            kernel.CloseHandle(handle)
+
+
 _PORTABLE_LIFECYCLE_GUARD = threading.Lock()
 _PORTABLE_LIFECYCLE_ACTIVE: set[str] = set()
 
@@ -40998,7 +41059,7 @@ def _apply_portable_owned_repair_unlocked(
         result["status"] = "STALE_PLAN"
         return result
     if intent and preimage == source_digest:
-        intent_path.unlink()
+        delete_portable_repair_intent_anchored(target_root, intent)
         result["status"] = "RECOVERED"
         return result
     if preimage != "missing":
@@ -41032,7 +41093,7 @@ def _apply_portable_owned_repair_unlocked(
     if target_file_digest(target) != source_digest:
         result["status"] = "INTERRUPTED"
         return result
-    intent_path.unlink()
+    delete_portable_repair_intent_anchored(target_root, intent)
     result["status"] = "APPLIED"
     result["written"] = [target_rel]
     return result

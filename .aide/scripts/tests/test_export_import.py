@@ -960,6 +960,71 @@ class ExportImportTests(unittest.TestCase):
         self.assertFalse((target / aide_lite.PORTABLE_LIFECYCLE_LOCK_PATH).exists())
         self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "NO_CHANGES")
 
+    def test_owned_repair_cleanup_rejects_junction_swap_on_success_and_recovery(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "repair-cleanup-junction-pack")
+        rel = ".aide/prompts/compact-task.md"
+        for scenario in ("success", "recovery"):
+            with self.subTest(scenario=scenario):
+                target = source_root.parent / f"repair-cleanup-{scenario}-consumer"
+                aide_lite.apply_import_pack(pack, target)
+                managed = target / rel
+                managed.unlink()
+                preview = aide_lite.apply_portable_owned_repair(pack, target, rel, dry_run=True)
+                if scenario == "recovery":
+                    interrupted = aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"], fail_after_write=True)
+                    self.assertEqual(interrupted["status"], "INTERRUPTED")
+                install = (target / aide_lite.PORTABLE_REPAIR_INTENT_PATH).parent
+                moved = install.with_name("install-before-junction-swap")
+                outside = source_root.parent / f"repair-cleanup-{scenario}-outside"
+                outside.mkdir()
+                outside_same_name = outside / Path(aide_lite.PORTABLE_REPAIR_INTENT_PATH).name
+                outside_same_name.write_bytes(b"outside project-owned intent name\n")
+                observed_intent = []
+                real_cleanup = aide_lite.delete_portable_repair_intent_anchored
+
+                def swap_at_cleanup(root: Path, intent: dict[str, object]) -> None:
+                    observed_intent.append((install / Path(aide_lite.PORTABLE_REPAIR_INTENT_PATH).name).read_bytes())
+                    install.rename(moved)
+                    junction = subprocess.run(["cmd", "/c", "mklink", "/J", str(install), str(outside)], text=True, capture_output=True, timeout=10)
+                    self.assertEqual(junction.returncode, 0, junction.stderr)
+                    self.assertTrue(install.is_junction())
+                    real_cleanup(root, intent)
+
+                try:
+                    with mock.patch.object(aide_lite, "delete_portable_repair_intent_anchored", side_effect=swap_at_cleanup):
+                        with self.assertRaisesRegex(ValueError, "reparse point"):
+                            aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])
+                    self.assertEqual(outside_same_name.read_bytes(), b"outside project-owned intent name\n")
+                    self.assertEqual(len(observed_intent), 1)
+                finally:
+                    if install.is_junction():
+                        install.rmdir()
+                    if moved.exists():
+                        moved.rename(install)
+                intent_path = target / aide_lite.PORTABLE_REPAIR_INTENT_PATH
+                self.assertEqual(intent_path.read_bytes(), observed_intent[0])
+                if scenario == "success":
+                    original_intent = observed_intent[0]
+                    intent_record = json.loads(original_intent)
+                    altered = bytearray(original_intent)
+                    altered[0] ^= 1
+                    intent_path.write_bytes(altered)
+                    with self.assertRaisesRegex(ValueError, "bytes changed"):
+                        aide_lite.delete_portable_repair_intent_anchored(target, intent_record)
+                    self.assertEqual(intent_path.read_bytes(), altered)
+                    intent_path.write_bytes(original_intent)
+                    second_link = intent_path.with_name("intent-second-link")
+                    aide_lite.os.link(intent_path, second_link)
+                    try:
+                        with self.assertRaisesRegex(ValueError, "single-link"):
+                            aide_lite.delete_portable_repair_intent_anchored(target, intent_record)
+                    finally:
+                        second_link.unlink()
+                    self.assertEqual(intent_path.read_bytes(), original_intent)
+                self.assertEqual(aide_lite.apply_portable_owned_repair(pack, target, rel, expected_plan_digest=preview["plan_digest"])["status"], "RECOVERED")
+                self.assertFalse(intent_path.exists())
+
 
 if __name__ == "__main__":
     unittest.main()
