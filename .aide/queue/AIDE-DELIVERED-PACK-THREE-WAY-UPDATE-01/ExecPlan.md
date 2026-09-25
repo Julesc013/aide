@@ -76,6 +76,12 @@ security predicates and final delivered bytes at their exact revisions.
       It returned `REQUEST_CHANGES` for a receipt-owned CRLF `AGENTS.md`
       update regression. Add a red/green Windows oracle and superseding repair;
       exact external review and test hashes are in `evidence/crlf-review-repair.md`.
-- [ ] Obtain independent delta review of the repaired exact source commit.
+- [x] Obtain independent delta review of CRLF repair commit `32395301`.
+      It returned `REQUEST_CHANGES`: a re-digested receipt could relabel a
+      direct AGENTS edit and overwrite it. The reviewer also independently
+      confirmed the pre-existing ordinary managed-file analogue. Both exact
+      reports and red oracles are bound in `evidence/predecessor-baseline-repair.md`.
+- [ ] Finish full tests and independent review of the predecessor-bound
+      superseding source. No artifact generation precedes that acceptance.
 - [ ] Run full affected source suites, generate/qualify delivered artifacts,
       prove replay, and integrate accepted bytes into observed remote `dev`.

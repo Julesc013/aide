@@ -419,7 +419,7 @@ class ExportImportTests(unittest.TestCase):
 
         aide_lite.write_text(source_root / managed_rel, "# Compact Task v2\n")
         pack_v2 = self.freeze_pack(source_root, "pack-v2")
-        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True)
+        preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
         operation = next(item for item in preview["operations"] if item["target"] == managed_rel)
         self.assertEqual(operation["action"], "update_owned")
         self.assertEqual(operation["ownership_basis"], "installed_receipt")
@@ -427,6 +427,7 @@ class ExportImportTests(unittest.TestCase):
         updated = aide_lite.apply_import_pack(
             pack_v2,
             target,
+            predecessor_pack=pack_v1,
             expected_plan_digest=preview["plan_digest"],
         )
         self.assertEqual(updated["status"], "APPLIED")
@@ -434,6 +435,38 @@ class ExportImportTests(unittest.TestCase):
         rerun = aide_lite.apply_import_pack(pack_v2, target)
         self.assertEqual(rerun["status"], "NO_CHANGES")
         self.assertFalse(rerun["written"])
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_redigested_receipt_cannot_relabel_direct_edit_as_owned_update(self) -> None:
+        source_root = self.make_source_repo()
+        managed_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "forged-owned-v1")
+        target = source_root.parent / "forged-owned-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        managed_path = target / managed_rel
+        direct_edit = b"# Direct project edit\n"
+        managed_path.write_bytes(direct_edit)
+        receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+        forged = aide_lite.load_portable_import_receipt(target)
+        entry = forged["managed"][managed_rel]
+        entry["source_digest"] = aide_lite.digest_bytes(direct_edit)
+        entry["installed_digest"] = aide_lite.digest_bytes(direct_edit)
+        entry["ownership"] = "aide_portable_managed"
+        entry["local_overlay"] = False
+        forged["receipt_digest"] = aide_lite.portable_import_record_digest(forged, "receipt_digest")
+        receipt_path.write_text(aide_lite.stable_json_text(forged), encoding="utf-8")
+        self.assertEqual(aide_lite.load_portable_import_receipt(target)["managed"][managed_rel]["source_digest"], entry["source_digest"])
+
+        aide_lite.write_text(source_root / managed_rel, "# Changed upstream\n")
+        pack_v2 = self.freeze_pack(source_root, "forged-owned-v2")
+        for prior in (pack_v1, None):
+            with self.subTest(predecessor=prior is not None):
+                preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=prior)
+                operation = next(item for item in preview["operations"] if item["target"] == managed_rel)
+                self.assertEqual(operation["action"], "conflict")
+                self.assertEqual(preview["status"], "PLANNED_CONFLICT")
+                self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=prior)["status"], "CONFLICT")
+                self.assertEqual(managed_path.read_bytes(), direct_edit)
 
     @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
     def test_manual_three_way_resolution_keeps_local_overlay_across_updates(self) -> None:
@@ -771,6 +804,22 @@ class ExportImportTests(unittest.TestCase):
                     self.assertEqual(aide_lite.apply_import_pack(pack_v5, target, predecessor_pack=pack_v4)["status"], "CONFLICT")
                     self.assertEqual(agents_path.read_bytes(), edited)
                     self.assertEqual(receipt_path.read_bytes(), overlay_receipt)
+
+                    forged = json.loads(overlay_receipt.decode("utf-8"))
+                    forged_agents = forged["managed"]["AGENTS.md"]
+                    forged_agents["ownership"] = "aide_portable_managed"
+                    forged_agents["local_overlay"] = False
+                    forged["receipt_digest"] = aide_lite.portable_import_record_digest(forged, "receipt_digest")
+                    receipt_path.write_text(aide_lite.stable_json_text(forged), encoding="utf-8")
+                    self.assertEqual(aide_lite.load_portable_import_receipt(target)["managed"]["AGENTS.md"]["installed_digest"], forged_agents["installed_digest"])
+                    for prior in (pack_v4, None):
+                        with self.subTest(forged_receipt_predecessor=prior is not None):
+                            forged_preview = aide_lite.apply_import_pack(pack_v5, target, dry_run=True, predecessor_pack=prior)
+                            forged_operation = next(item for item in forged_preview["operations"] if item["target"] == "AGENTS.md")
+                            self.assertEqual(forged_operation["action"], "conflict")
+                            self.assertEqual(forged_preview["status"], "PLANNED_CONFLICT")
+                            self.assertEqual(aide_lite.apply_import_pack(pack_v5, target, predecessor_pack=prior)["status"], "CONFLICT")
+                            self.assertEqual(agents_path.read_bytes(), edited)
 
     @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
     def test_disabled_controls_swap_at_receipt_effect_keeps_intent_for_reconciliation(self) -> None:

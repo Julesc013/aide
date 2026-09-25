@@ -39898,9 +39898,10 @@ files. Use `--mode full` only in reviewed local fixtures where copying optional
 roots has been explicitly accepted.
 
 Successful import records exact managed-file and portable managed-section
-baselines under `.aide/install/`. A later pack updates only unchanged recorded
-bytes. Use `--from-pack <validated-predecessor-pack>` to prove the baseline of
-an older installation that predates receipts. Local edits, unknown ownership,
+baselines under `.aide/install/`. A later pack updates unchanged recorded
+bytes only when `--from-pack <validated-predecessor-pack>` also proves their
+source and installed baseline. Retain that exact previous pack for updates.
+Local edits, unknown ownership,
 changed preview state, invalid packs, and partial prior effects refuse closed.
 
 ## Bounded Receipt-Owned Removal on Windows
@@ -40691,6 +40692,35 @@ def predecessor_installed_digest(predecessor_pack: Path | None, source_rel: str,
     return sha256_file(source)
 
 
+def receipt_matches_predecessor_baseline(
+    predecessor_pack: Path | None, source_rel: str, kind: str, entry: dict[str, object]
+) -> bool:
+    """Check receipt ownership against the caller-validated exact predecessor."""
+    if predecessor_pack is None:
+        return False
+    source = predecessor_pack / "files" / source_rel
+    if not source.is_file():
+        return False
+    if kind == "managed_file":
+        expected = sha256_file(source)
+        return entry.get("source_digest") == expected and entry.get("installed_digest") == expected
+    if kind != "portable_managed_section":
+        return False
+    try:
+        block = portable_managed_block(source.read_bytes().decode("utf-8"))
+    except UnicodeDecodeError:
+        return False
+    if block is None:
+        return False
+    normalized = block.replace("\r\n", "\n")
+    allowed_installed = {
+        digest_bytes(block.encode("utf-8")),
+        digest_bytes(normalized.encode("utf-8")),
+        digest_bytes(normalized.replace("\n", "\r\n").encode("utf-8")),
+    }
+    return entry.get("source_digest") == digest_bytes(block.encode("utf-8")) and entry.get("installed_digest") in allowed_installed
+
+
 def copy_operation(
     source: Path,
     source_rel: str,
@@ -40721,7 +40751,7 @@ def copy_operation(
             action = "preserve_local"
             ownership_basis = "unchanged_upstream_project_bytes"
             postimage_digest = observed
-        elif entry["source_digest"] == entry["installed_digest"] and entry["installed_digest"] == observed:
+        elif entry.get("ownership") == "aide_portable_managed" and entry.get("local_overlay") is not True and entry["installed_digest"] == observed and receipt_matches_predecessor_baseline(predecessor_pack, source_rel, "managed_file", entry):
             action = "update_owned"
             ownership_basis = "installed_receipt"
         else:
@@ -40805,7 +40835,7 @@ def agents_operation(
         installed_digest = current_block_digest
         postimage_digest = preimage_digest
     elif current_block is not None:
-        if entry is not None and entry.get("installed_digest") == current_block_digest and entry.get("ownership") == "aide_portable_managed" and entry.get("local_overlay") is not True:
+        if entry is not None and entry.get("installed_digest") == current_block_digest and entry.get("ownership") == "aide_portable_managed" and entry.get("local_overlay") is not True and receipt_matches_predecessor_baseline(predecessor_pack, source_rel, "portable_managed_section", entry):
             action = "update_owned"
             ownership_basis = "installed_receipt"
         elif receipt is None and predecessor_installed_digest(predecessor_pack, source_rel, "portable_managed_section") == current_block_digest:
@@ -41067,7 +41097,7 @@ def explain_import_result(result: dict[str, object], target_root: Path, customiz
     reasons = {
         "preserve": "Project-owned file exists; the incoming template cannot replace it.",
         "conflict": "Existing bytes differ from incoming bytes and their ownership cannot be proven; the whole payload apply stops before writes.",
-        "update_owned": "The installed receipt or validated predecessor proves unchanged managed bytes may be updated.",
+        "update_owned": "The validated predecessor and observed managed bytes prove this recorded baseline may be updated.",
         "preserve_local": "The upstream bytes are unchanged; the project-edited managed bytes remain installed.",
         "resolve_owned": "A project-selected file supplies the exact postimage for this receipt-owned three-way conflict.",
         "preserve_disabled": "The project disabled this optional example feature; its existing bytes remain untouched.",
@@ -44563,7 +44593,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     import_parser.add_argument("--dry-run", action="store_true")
     import_parser.add_argument("--explain", action="store_true", help="Explain ownership decisions; unknown project rationale remains unknown.")
     import_parser.add_argument("--feedback-out", help="With --dry-run, create a local manual-share JSON packet at a new path outside pack and target.")
-    import_parser.add_argument("--from-pack", help="Validated predecessor pack for an installed receipt or an unrecorded baseline.")
+    import_parser.add_argument("--from-pack", help="Exact validated predecessor pack required for automatic managed updates, manual resolution, or an unrecorded baseline.")
     import_parser.add_argument("--resolve", nargs=2, action="append", metavar=("TARGET", "FILE"), help="Use FILE's exact bytes as the explicit postimage for a receipt-owned conflict; requires --from-pack and --expect-plan on apply.")
     import_parser.add_argument("--expect-plan", help="Exact plan digest printed by a prior dry-run; changed inputs refuse apply.")
     import_parser.add_argument(

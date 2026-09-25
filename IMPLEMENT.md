@@ -11838,3 +11838,16 @@ Owner review found a final-write race in the first candidate. The repair now pub
   a later upstream change conflicts without writes. The extended regression
   passed; full importer, independent delta review, generated artifacts and
   dev integration remain pending.
+
+## 2026-09-25 - Bind automatic updates to the exact predecessor pack
+
+- Review of the first CRLF repair found that a re-digested receipt could
+  relabel a direct managed-section edit and permit overwrite. An independent
+  disposable probe confirmed it with and without a predecessor; a second
+  probe confirmed the same pre-existing class for an ordinary managed file.
+- Red regressions reproduced both overwrite decisions. Automatic managed
+  updates now require a checksum-validated predecessor whose exact payload
+  matches the receipt's claimed source and installed baseline. Without that
+  pack, changed upstream content conflicts. The portable and delivered guides
+  state the old-pack requirement. Three focused tests passed on the repaired
+  source; full importer, independent review, artifacts and dev effect remain.

@@ -7,6 +7,10 @@ import. That file belongs to the project thereafter. A later pack preserves its
 bytes. Other project-authored text outside the portable `AGENTS.md` section is
 also preserved. If a managed file is edited outside AIDE and an incoming pack
 changes it, import stops before payload writes and reports a conflict.
+For an automatic update of unchanged AIDE-owned bytes, keep the exact previous
+pack and pass it as `--from-pack <old-pack>` in both preview and apply. A local
+receipt alone does not prove an overwrite baseline. If the old pack is absent,
+the importer reports a conflict and preserves the existing bytes.
 
 `import-pack --dry-run --explain` prints the ownership reason for preserved,
 conflicting, and managed update operations. It does not guess why a project
