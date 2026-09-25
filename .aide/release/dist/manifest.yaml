@@ -1,5 +1,5 @@
 schema_version: aide.release-manifest.v0
-bundle_id: aide-lite-pack-v0-e215698a993d1904
+bundle_id: aide-lite-pack-v0-7624d9f4b54207a3
 bundle_name: aide-lite-pack-v0
 no_publish: true
 install_notes: .aide/release/dist/install.md
@@ -9,26 +9,26 @@ validation_ref: .aide/release/dist/release-validation.json
 artifacts:
   - path: .aide/release/dist/aide-lite-pack-v0.zip
     kind: zip_archive
-    sha256: 949cfc24ac261f2db520e8c1c4e80f46d9f9ac569ae6c6d5ea62c6e0c31434ec
-    size_bytes: 1003472
+    sha256: 956b59a76d7d8d42cbeb83d776beab7cf096c4ff964314f4252e1e0531f4b4fd
+    size_bytes: 1009337
     publish_candidate: false
   - path: .aide/release/dist/aide-lite-pack-v0.tar.gz
     kind: tar_gz_archive
-    sha256: 26081af25c94d8494542b120ce1adee4df27710e089f65f707daecf8db679c2f
-    size_bytes: 674744
+    sha256: 4dd239edd4d52ab25bb4b41cb0eb9b756710894e5f4d0400defd9305d255606c
+    size_bytes: 680660
     publish_candidate: false
   - path: .aide/release/dist/install.md
     kind: install_notes
-    sha256: f2d8499ebc7f1a6dc5b092a1b1a3ed94a8c74989cb4ecdeaf5abc111dd588a91
-    size_bytes: 1341
+    sha256: 1ac57d7c8ba8f07355c67c5a24b89a44c44274c563aaeb157d3c015cece2d350
+    size_bytes: 1325
     publish_candidate: false
   - path: .aide/release/dist/CHANGELOG.preview.md
     kind: changelog_preview_copy
-    sha256: 0d60002888bdfe5253350dffc725b6b0fda848c06e51a310f999267e42d7c1ed
-    size_bytes: 7348
+    sha256: 24a6f5a2c48fc2d64c9096cbbfb271e12b5c6e0876c32c19ca4f3c9f22747797
+    size_bytes: 7483
     publish_candidate: false
   - path: .aide/release/dist/RELEASE_NOTES.preview.md
     kind: release_notes_preview_copy
-    sha256: dbc9dfe95622dcf84776bd78482c4703cd88b1c9c130b7139a4ae87b13cad758
-    size_bytes: 4172
+    sha256: 05ccee6aa7db25166c63d201b09c2676d3b583e4f596f094ee03761433c7211c
+    size_bytes: 4233
     publish_candidate: false

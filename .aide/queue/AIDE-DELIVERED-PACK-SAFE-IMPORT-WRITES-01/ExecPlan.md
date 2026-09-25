@@ -34,11 +34,16 @@ allowlist; use disposable targets for write tests.
   non-atomic update tradeoff. This is analysis only, with source work pending.
 - [x] Implement and run focused Windows source tests for pinned parents,
   no-clobber publication, verified old-leaf backup, intent and receipt
-  transitions, and interruption recovery. The source remains uncommitted;
-  see `evidence/source-implementation-uncommitted.md`.
-- [ ] Qualify the final combined source with the reviewed shared helper and
-  lifecycle-lock wrapper, then run the full importer suite and consumers.
-- [ ] Close independent review, provenance, and dev integration.
+  transitions, and interruption recovery. That initial source checkpoint was
+  later committed and merged with the current repair helper; see
+  `evidence/source-implementation-uncommitted.md` for the earlier state and
+  `evidence/combined-source-and-artifacts.md` for the combined candidate.
+- [x] Qualify the final combined source with the reviewed shared helper and
+  lifecycle-lock wrapper. The exact merge passed 55 importer tests and the
+  independently reviewed source retained the current repair helper and lock.
+- [x] Generate and validate the portable pack and draft from the clean merge,
+  and run the fresh/brownfield extracted-artifact canary.
+- [ ] Close independent artifact review, post-commit replay, and dev integration.
 
 ## Recovery and risks
 
