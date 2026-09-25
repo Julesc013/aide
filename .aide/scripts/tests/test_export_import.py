@@ -785,6 +785,48 @@ class ExportImportTests(unittest.TestCase):
             self.assertTrue(attempted, "the importer must exercise the staging boundary")
             self.assertEqual(outside_entries, [], "import wrote through a swapped parent")
 
+    def test_import_payload_does_not_clobber_a_racing_leaf(self) -> None:
+        for initial in (None, b"# Previously managed content\n"):
+            with self.subTest(initial=initial), tempfile.TemporaryDirectory() as raw:
+                root = Path(raw)
+                target_root = root / "target"
+                target = target_root / ".aide" / "prompts" / "compact-task.md"
+                target.parent.mkdir(parents=True)
+                if initial is not None:
+                    target.write_bytes(initial)
+                pack_root = root / "pack"
+                source_rel = ".aide/prompts/compact-task.md"
+                source = pack_root / "files" / source_rel
+                source.parent.mkdir(parents=True)
+                source.write_bytes(b"# Updated managed content\n")
+                operation = {
+                    "action": "copy" if initial is None else "update_owned",
+                    "target": source_rel,
+                    "source": source_rel,
+                    "kind": "managed_file",
+                    "preimage_digest": "missing" if initial is None else aide_lite.digest_bytes(initial),
+                    "postimage_digest": aide_lite.digest_bytes(source.read_bytes()),
+                }
+                competing = b"# Concurrent project edit\n"
+                original_mkstemp = tempfile.mkstemp
+                attempted = False
+
+                def change_leaf_after_preimage(*args: object, **kwargs: object) -> tuple[int, str]:
+                    nonlocal attempted
+                    descriptor, temporary_name = original_mkstemp(*args, **kwargs)
+                    if Path(str(kwargs.get("dir"))) == target.parent and not attempted:
+                        attempted = True
+                        target.write_bytes(competing)
+                    return descriptor, temporary_name
+
+                with mock.patch.object(aide_lite.tempfile, "mkstemp", side_effect=change_leaf_after_preimage):
+                    try:
+                        aide_lite.apply_import_operation(pack_root, target_root, operation)
+                    except (OSError, RuntimeError, ValueError):
+                        pass
+                self.assertTrue(attempted, "the importer must exercise the staging boundary")
+                self.assertEqual(target.read_bytes(), competing, "import replaced a concurrent project edit")
+
     def test_removal_plan_requires_an_exact_valid_receipt(self) -> None:
         source_root = self.make_source_repo()
         target = source_root.parent / "target-removal-receipt"

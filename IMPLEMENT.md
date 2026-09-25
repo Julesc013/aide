@@ -11575,3 +11575,11 @@ DLL mapping, image or grant effect is part of this source implementation.
   write assertion failed as intended. The temporary fixture was cleaned.
 - The test is retained as the repair oracle; no importer source fix, delivered
   artifact claim, or real target effect is recorded yet.
+
+## 2026-09-25 - Portable importer racing-leaf regression
+
+- Added a disposable import test for a new managed file and an update whose
+  target leaf is edited after preimage validation. Current source overwrote the
+  concurrent project bytes in both cases, so the test failed as intended.
+- Retained the test as the effect-time ownership oracle. No importer source fix
+  or delivered-artifact acceptance is recorded yet.
