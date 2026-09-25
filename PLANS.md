@@ -3610,6 +3610,21 @@ conflict fixtures, and the combined candidate pass; the task is integrated on
 real-project rollout, main, tags, upload, publication, repair, rollback,
 uninstall, and full stable closure remain separate work and review gates.
 
+## Delivered pack removal planning
+
+`AIDE-DELIVERED-PACK-REMOVAL-PLAN-01` adds deterministic receipt-backed
+`plan-removal` behavior to the existing portable CLI. It validates exact
+managed ownership, identifies only unchanged recorded bytes as future removal
+candidates, treats the portable `AGENTS.md` block separately from authored
+content, and preserves changed, missing, target-owned, and unknown state. The
+28-case import suite, 10-case release suite, and exact extracted ZIP/tar.gz
+consumer canaries pass with no planner writes. The qualified task branch is
+published; exact historical disposition B for malformed published commit
+`486e81cd` was accepted on 2026-09-25 while raw failures remain visible.
+Current-dev source/artifact integration is in progress on a bounded branch.
+No removal apply, live
+target mutation, main promotion, tag, upload, or publication is included.
+
 ## GitHub expected-head target source
 
 `AIDE-CW-GITHUB-TARGET-QUALIFICATION-01` is now running on a bounded source

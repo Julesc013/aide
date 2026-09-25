@@ -3400,6 +3400,16 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-SAFE-UPDATE-01/evidence
     description: Extends extracted-pack import with exact installed baselines, conflict-first updates, preview/apply identity, predecessor-pack proof, and interruption evidence in disposable consumers only.
+  - id: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
+    status: running
+    planning_state: historical_b_accepted_combined_integration_in_progress
+    result: PASS_WITH_WARNINGS
+    title: Plan preservation-first removal from delivered-pack receipts
+    task: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/evidence
+    description: Qualified receipt-backed read-only removal planning in both delivered archive formats; exact historical disposition B is accepted and current-dev integration is in progress, with uninstall-apply and publication gates retained.
   - id: AIDE-CW-BROKER-DEV-INTEGRATION-01
     status: passed
     planning_state: integrated_to_dev
@@ -3512,7 +3522,7 @@ items:
     description: Preserve reviewed API-query source and both parent histories without activating native or hosted effects.
   - id: AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01
     status: running
-    planning_state: source_merge_pending
+    planning_state: source_merge_conflicts_resolved_validation_pending
     result: PENDING
     title: Integrate delivered-pack removal planner with current dev
     task: .aide/queue/AIDE-REMOVAL-PLAN-DEV-INTEGRATION-01/task.yaml

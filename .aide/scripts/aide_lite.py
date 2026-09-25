@@ -2764,6 +2764,7 @@ PROJECT_CUSTOMIZATIONS_PATH = ".aide/customizations.json"
 PROJECT_CUSTOMIZATIONS_SCHEMA = "aide.project-customizations.v1"
 PORTABLE_IMPORT_RECEIPT_SCHEMA = "aide.portable-import-receipt.v1"
 PORTABLE_IMPORT_INTENT_SCHEMA = "aide.portable-import-intent.v1"
+PORTABLE_REMOVAL_PLAN_SCHEMA = "aide.portable-removal-plan.v1"
 
 PORTABLE_TEMPLATE_MAP = {
     ".aide/templates/portable-apply/README.md": "core/apply/README.md",
@@ -39446,6 +39447,14 @@ commands:
     owner_component: aide-lite-pack
     mutates_repo: false
     notes: canonical AIDE Lite validation command; no provider/model/network calls.
+  - id: aide-lite-plan-removal
+    display_name: AIDE Lite portable removal planner
+    invocation: py -3 .aide/scripts/aide_lite.py plan-removal --target <target-repo> [--json]
+    command_kind: repo-local-helper
+    status: implemented-portable-read-only
+    owner_component: aide-lite-pack
+    mutates_repo: false
+    notes: validates the portable import receipt and classifies only unchanged recorded managed bytes as future removal candidates; never deletes files or removes managed sections.
   - id: aide-lite-test-tier-model
     display_name: AIDE Lite validation tier planning
     invocation: py -3 .aide/scripts/aide_lite.py test <tiers|tier-plan|impact-plan|summary-validate|telemetry-status|full-discovery-handoff|slow-report-validate>
@@ -39592,6 +39601,21 @@ baselines under `.aide/install/`. A later pack updates only unchanged recorded
 bytes. Use `--from-pack <validated-predecessor-pack>` to prove the baseline of
 an older installation that predates receipts. Local edits, unknown ownership,
 changed preview state, invalid packs, and partial prior effects refuse closed.
+
+## Read-Only Removal Planning
+
+After a receipt-backed import, inspect the exact future removal boundary without
+changing target bytes:
+
+```text
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo>
+py -3 -I -B files/.aide/scripts/aide_lite.py --repo-root <target-repo> plan-removal --target <target-repo> --json
+```
+
+Only unchanged bytes recorded as AIDE-managed are future removal candidates.
+Local edits, missing state, target-owned files, unknown ownership, and authored
+`AGENTS.md` content are preserved. This command is planning-only: it never
+deletes files, removes a managed section, or writes lifecycle state.
 
 ## Manual Import
 
@@ -40155,6 +40179,24 @@ def load_portable_import_receipt(target_root: Path) -> dict[str, object] | None:
     managed = record.get("managed")
     if not isinstance(managed, dict):
         raise ValueError("portable import receipt managed entries are invalid")
+    for target_rel, entry in managed.items():
+        if not isinstance(target_rel, str) or not target_rel:
+            raise ValueError("portable import receipt managed target is invalid")
+        portable_target_path(target_root, target_rel)
+        if target_rel in {PORTABLE_IMPORT_RECEIPT_PATH, PORTABLE_IMPORT_INTENT_PATH}:
+            raise ValueError(f"portable import receipt contains reserved target: {target_rel}")
+        if not isinstance(entry, dict):
+            raise ValueError(f"portable import receipt managed entry is invalid: {target_rel}")
+        if entry.get("kind") not in {"managed_file", "portable_managed_section"}:
+            raise ValueError(f"portable import receipt managed kind is invalid: {target_rel}")
+        if entry.get("ownership") != "aide_portable_managed":
+            raise ValueError(f"portable import receipt ownership is invalid: {target_rel}")
+        if not isinstance(entry.get("source"), str) or not entry.get("source"):
+            raise ValueError(f"portable import receipt source is invalid: {target_rel}")
+        for digest_key in ("installed_digest", "source_digest"):
+            digest = entry.get(digest_key)
+            if not isinstance(digest, str) or re.fullmatch(r"[0-9a-f]{64}", digest) is None:
+                raise ValueError(f"portable import receipt {digest_key} is invalid: {target_rel}")
     return record
 
 
@@ -40582,6 +40624,119 @@ def portable_receipt_state_matches(left: dict[str, object] | None, right: dict[s
     return all(left.get(key) == right.get(key) for key in ("schema_version", "pack_id", "mode", "pack", "managed"))
 
 
+def portable_removal_operation(
+    target_root: Path,
+    target_rel: str,
+    entry: dict[str, object],
+) -> dict[str, object]:
+    target = portable_target_path(target_root, target_rel)
+    kind = str(entry["kind"])
+    installed_digest = str(entry["installed_digest"])
+    target_digest = target_file_digest(target)
+    observed_digest = target_digest
+    preserves_authored_content = kind == "portable_managed_section"
+    observation = "managed_file_bytes"
+    if kind == "portable_managed_section":
+        observation = "portable_managed_section_bytes"
+        if target_digest in {"missing", "not-a-file"}:
+            observed_digest = target_digest
+        else:
+            try:
+                block = portable_managed_block(read_text(target))
+            except (OSError, UnicodeDecodeError):
+                block = None
+                observed_digest = "unreadable-text"
+            else:
+                observed_digest = digest_bytes(block.encode("utf-8")) if block is not None else "managed-section-missing"
+
+    if observed_digest == installed_digest:
+        action = "remove_managed_section_future" if kind == "portable_managed_section" else "remove_managed_file_future"
+        state = "unchanged_recorded_managed_bytes"
+        removal_candidate = True
+    elif observed_digest in {"missing", "managed-section-missing"}:
+        action = "preserve_already_absent"
+        state = "recorded_managed_bytes_absent"
+        removal_candidate = False
+    else:
+        action = "preserve_local_or_unknown"
+        state = "recorded_managed_bytes_changed_or_unreadable"
+        removal_candidate = False
+
+    return {
+        "target": target_rel,
+        "source": str(entry["source"]),
+        "kind": kind,
+        "ownership": str(entry["ownership"]),
+        "ownership_basis": "digest_validated_portable_import_receipt",
+        "observation": observation,
+        "state": state,
+        "action": action,
+        "removal_candidate": removal_candidate,
+        "installed_digest": installed_digest,
+        "observed_digest": observed_digest,
+        "target_file_digest": target_digest,
+        "preserves_authored_content": preserves_authored_content,
+    }
+
+
+def build_portable_removal_plan(target_root: Path) -> dict[str, object]:
+    target_root = target_root.resolve()
+    if not target_root.exists() or not target_root.is_dir():
+        raise ValueError(f"portable removal target is not a directory: {target_root}")
+    pending_path = portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH)
+    if pending_path.exists():
+        load_portable_import_intent(target_root)
+        raise ValueError("portable import recovery must complete before removal planning")
+    receipt = load_portable_import_receipt(target_root)
+    if receipt is None:
+        raise ValueError("portable import receipt missing")
+    managed = receipt["managed"]
+    assert isinstance(managed, dict)
+    operations = [
+        portable_removal_operation(target_root, target_rel, entry)
+        for target_rel, entry in sorted(managed.items())
+        if isinstance(target_rel, str) and isinstance(entry, dict)
+    ]
+    candidates = sorted(str(item["target"]) for item in operations if item["removal_candidate"])
+    preserved = sorted(str(item["target"]) for item in operations if not item["removal_candidate"])
+    status = "PLANNED" if not preserved else "PRESERVATION_REQUIRED"
+    observed_state = {
+        str(item["target"]): {
+            "observed_digest": item["observed_digest"],
+            "target_file_digest": item["target_file_digest"],
+        }
+        for item in operations
+    }
+    plan: dict[str, object] = {
+        "schema_version": PORTABLE_REMOVAL_PLAN_SCHEMA,
+        "status": status,
+        "pack_id": EXPORT_PACK_ID,
+        "target": normalize_rel(target_root),
+        "receipt_path": PORTABLE_IMPORT_RECEIPT_PATH,
+        "receipt_digest": receipt["receipt_digest"],
+        "receipt_pack": receipt.get("pack"),
+        "observed_state_digest": digest_bytes(stable_compact_json_text(observed_state).encode("utf-8")),
+        "operation_count": len(operations),
+        "candidate_count": len(candidates),
+        "preservation_count": len(preserved),
+        "candidate_targets": candidates,
+        "preserved_recorded_targets": preserved,
+        "operations": operations,
+        "read_only": True,
+        "apply_allowed": False,
+        "delete_allowed": False,
+        "managed_section_removal_allowed": False,
+        "unknown_ownership_preserved": True,
+        "target_owned_content_preserved": True,
+        "authored_agents_content_preserved": True,
+        "receipt_preserved_until_future_verified_apply": True,
+        "network_calls": False,
+        "provider_or_model_calls": False,
+    }
+    plan["plan_digest"] = portable_import_record_digest(plan, "plan_digest")
+    return plan
+
+
 def classify_portable_import_recovery(target_root: Path, intent: dict[str, object]) -> dict[str, object]:
     observations: list[dict[str, str]] = []
     states: list[str] = []
@@ -40810,6 +40965,58 @@ def command_import_pack(args: argparse.Namespace) -> int:
     if result["status"] in {"STALE_PLAN", "INTERRUPTED", "RECOVERY_REQUIRED"}:
         return 3
     return 0
+
+
+def command_plan_removal(args: argparse.Namespace) -> int:
+    target_root = Path(args.target).resolve()
+    try:
+        plan = build_portable_removal_plan(target_root)
+    except ValueError as exc:
+        refusal = {
+            "schema_version": PORTABLE_REMOVAL_PLAN_SCHEMA,
+            "status": "REFUSED",
+            "target": normalize_rel(target_root),
+            "error": str(exc),
+            "read_only": True,
+            "apply_allowed": False,
+            "delete_allowed": False,
+            "network_calls": False,
+            "provider_or_model_calls": False,
+        }
+        if args.json:
+            print(stable_json_text(refusal), end="")
+        else:
+            print("AIDE Lite plan-removal")
+            print("status: REFUSED")
+            print(f"target: {normalize_rel(target_root)}")
+            print(f"error: {exc}")
+            print("read_only: true")
+            print("apply_allowed: false")
+            print("delete_allowed: false")
+            print("provider_or_model_calls: none")
+            print("network_calls: none")
+        return 3
+    if args.json:
+        print(stable_json_text(plan), end="")
+    else:
+        print("AIDE Lite plan-removal")
+        print(f"status: {plan['status']}")
+        print(f"target: {plan['target']}")
+        print(f"receipt_digest: {plan['receipt_digest']}")
+        print(f"observed_state_digest: {plan['observed_state_digest']}")
+        print(f"plan_digest: {plan['plan_digest']}")
+        print(f"operation_count: {plan['operation_count']}")
+        print(f"candidate_count: {plan['candidate_count']}")
+        print(f"preservation_count: {plan['preservation_count']}")
+        print("planned_operations:")
+        for operation in plan["operations"]:
+            print(f"- {operation['action']}: {operation['target']}")
+        print("read_only: true")
+        print("apply_allowed: false")
+        print("delete_allowed: false")
+        print("provider_or_model_calls: none")
+        print("network_calls: none")
+    return 0 if plan["status"] == "PLANNED" else 2
 
 
 def command_pack_status(args: argparse.Namespace) -> int:
@@ -42746,6 +42953,11 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
         help="safe imports portable .aide/templates only; full includes optional broad roots for reviewed fixtures.",
     )
     import_parser.set_defaults(handler=command_import_pack)
+
+    removal_parser = subparsers.add_parser("plan-removal")
+    removal_parser.add_argument("--target", required=True)
+    removal_parser.add_argument("--json", action="store_true", help="Emit the deterministic plan or refusal record as JSON.")
+    removal_parser.set_defaults(handler=command_plan_removal)
 
     subparsers.add_parser("pack-status").set_defaults(handler=command_pack_status)
 

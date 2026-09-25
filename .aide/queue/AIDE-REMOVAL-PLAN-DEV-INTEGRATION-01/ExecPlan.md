@@ -25,7 +25,12 @@ removal apply, deletion, live target effect, or public release.
 
 - [x] Read-only preflight identified stale old artifacts and direct-merge
   conflicts; exact B historical disposition is accepted in current dev.
-- [ ] Reconcile and commit source with both histories.
+- [x] Merge both histories without an automatic commit. Preserve current dev
+  generated export/release/changelog bytes and intake reports. Retain both
+  customization and planner tests plus both root execution logs.
+- [x] Validate reconciled source with 32 import, 18 release, 11 draft, 11
+  changelog, and 6 governance tests; canonical validate and doctor pass.
+- [ ] Commit reconciled source with both parents.
 - [ ] Qualify regenerated portable and local release bytes.
 - [ ] Obtain independent integration verdict and observe qualified dev.
 

@@ -1,0 +1,94 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
+title: Plan preservation-first removal from delivered-pack receipts
+type: implementation
+status: running
+planning_state: historical_b_accepted_combined_integration_in_progress
+result: PASS_WITH_WARNINGS
+created_at: 2026-09-22
+updated_at: 2026-09-22
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-DELIVERED-PACK-SAFE-UPDATE-01
+objective: >
+  Add an extracted-CLI removal planner that validates the target-local portable
+  import receipt, compares every recorded managed resource with current target
+  bytes, and emits an exact deterministic preservation-first plan without
+  deleting files or removing managed sections.
+authority_basis: >
+  The owner directed the admitted convergence campaign to implement and qualify
+  the stable product lifecycle. The broad intent compiler result remains
+  blocked and split-required; this separately admitted child is limited to
+  deterministic read-only planning and preserves every uninstall-apply and
+  publication gate.
+source:
+  branch: dev
+  observed_head: 13fc9a6a0aa02bd4c2343c640e8b83a95d89c6ab
+  synchronized_dev_head: c6fdc754844cf7d42302218ce08307a7e05dcb61
+  qualified_source_commit: dd26c9fc67eee9d5da4b1484d9fabccf3c2e21ab
+  artifact_commit: a551cd072a915b17ff4db191ce3c2437d99f70fe
+  provenance_closure_commit: 3306315bd6d0024f4c017ec419f95d9399de6edb
+  adopted_requirements:
+    - AIDE-SCOPE-002
+    - AIDE-SCOPE-003
+  proposed_source_aliases:
+    - UR-UPDATE-06
+    - UR-UPDATE-08
+  characterized_gap: >
+    Delivered-pack import now records exact portable ownership, but the
+    extracted CLI cannot turn that receipt and current bytes into a bounded
+    removal plan. Q46 source-repository uninstall planning remains no-apply and
+    must not be replaced or mislabeled as target qualification.
+scope:
+  allowed_paths:
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/queue/AIDE-DELIVERED-PACK-REMOVAL-PLAN-01/**
+    - .aide/queue/index.yaml
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - .aide/scripts/tests/test_q47_release_bundle.py
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - IMPLEMENT.md
+    - PLANS.md
+  forbidden_paths:
+    - .codex/**
+    - .github/**
+    - .aide.local/**
+    - .aide/policies/**
+    - specs/**
+    - C:/Users/Jules/.codex/**
+    - non-disposable target repositories
+  forbidden_operations:
+    - deleting or overwriting target files
+    - removing or changing a managed section
+    - writing lifecycle state into a target
+    - mutating any non-disposable consumer repository
+    - changing uninstall policy or claiming uninstall apply
+    - merging to main
+    - creating or pushing a Git tag
+    - creating a GitHub Release or uploading assets
+    - changing machine-wide or session model and execution settings
+authorized_git_operations:
+  - use this isolated task branch and worktree from exact published dev
+  - commit coherent implementation and evidence increments with explicit paths
+  - publish the qualified task branch to origin
+  - prepare an exact task-to-dev integration candidate
+  - integrate the qualified candidate to dev after helper planning and post-merge validation
+verification:
+  - prove missing, malformed, tampered, or stale receipts refuse deterministically
+  - prove unchanged managed files become removal candidates
+  - prove local edits, unknown paths, target-owned files, and authored AGENTS content are preserved
+  - prove the plan digest changes when receipt or target state changes
+  - prove planning writes no target bytes
+  - execute the planner from extracted ZIP and tar.gz artifacts offline
+  - run affected export, release, and repository validation
+retained_gates:
+  - imported lifecycle aliases remain proposed and are not bulk-adopted
+  - uninstall apply and managed-section removal remain prohibited
+  - live target use requires target-owned authority and validation
+  - main promotion requires exact candidate review
+  - tags, uploads, and publication require exact release review

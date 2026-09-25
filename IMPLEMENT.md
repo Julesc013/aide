@@ -11528,3 +11528,22 @@ DLL mapping, image or grant effect is part of this source implementation.
 - Kept physical-host, protected-authority, restricted-loader, private-image,
   grant, AppContainer, credential, network, and activation claims false.
 - Passed 142 affected source/regression tests; no actual native query ran.
+
+## 2026-09-22 - Receipt-backed delivered pack removal planning
+
+- Added the portable `plan-removal` command with human-readable and stable JSON
+  output, exact receipt validation, observed-state and plan digests, and no
+  apply or deletion path.
+- Classified unchanged recorded files and the portable `AGENTS.md` section as
+  future-only candidates while preserving authored content, local edits,
+  missing state, target-owned paths, and unknown ownership.
+- Strengthened receipt entry validation for safe targets, exact ownership,
+  supported kinds, and SHA-256 digest shape.
+- Passed 28 import/lifecycle tests and 10 release-bundle tests.
+- Rebuilt and exercised the exact ZIP and tar.gz archives offline; both
+  imported successfully, reported 809 candidates, and left target-tree bytes
+  unchanged during planning.
+- Published the qualified task line with no live target, deletion, main, tag,
+  upload, publication, network, provider, or model effect.
+- Retained one exact commit-message conformance failure at `486e81cd` without
+  rewriting history; dev integration awaits its separately scoped disposition.
