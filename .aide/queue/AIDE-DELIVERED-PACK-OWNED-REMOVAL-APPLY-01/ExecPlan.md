@@ -46,8 +46,27 @@ content, and leave a clear recovery state across interruptions.
   whole-file AGENTS shape on resume, and reject older intents whose absent
   paths were permitted to retire the receipt. Twelve focused tests pass with
   frozen helper injection. Independent rereview is pending.
-- [ ] Implement anchored managed-section removal inside authored brownfield
-  `AGENTS.md`; preserve that file, the runner, and receipt meanwhile.
+- [x] Implement anchored managed-section removal inside authored brownfield
+  `AGENTS.md`; preserve every authored byte outside the receipt-owned block.
+- [x] 2026-09-25 bounded follow-on: characterize a red brownfield regression,
+  then remove only the receipt-owned section bytes through the qualified
+  pinned Windows replace primitive. Preserve all bytes outside the section,
+  bind pre/post digests in the removal intent, classify interrupted replacement
+  before receipt retirement, and run adversarial disposable tests before
+  freezing one source commit for independent review. Work only in
+  `D:/Projects/AIDE/aide-removal-combined`; root owns dev and generated outputs.
+- [ ] Independent review of the new source commit; combined rollback guard,
+  regenerated artifacts, extracted consumers, exact dev effect and final
+  release qualification are still separate.
+- [x] 2026-09-25 review repair for `d5b44626`: reproduce orphaned original
+  AGENTS backup after postimage publication, then bind recovery observations
+  to the deterministic backup. Hold the verified postimage while deleting
+  only the exact original backup through the anchored single-link primitive;
+  retain receipt and intent for altered, unknown, or interrupted backups.
+  Regress retry, tamper, same-byte backup substitution, and rename-before-link
+  before freezing a superseding source commit for independent rereview. Eight
+  authored-section tests pass; source-only canonical validation reports the
+  expected stale export-pack manifest provenance pending combined regeneration.
 - [x] Run combined-source and extracted consumer qualification, independent
   review, and integration after the shared helper dependency is accepted.
 - [x] Exact combined source `49318d50` passed focused guide, Q31, and Q47
@@ -76,6 +95,14 @@ archive bytes externally for comparison; never publish or integrate them.
 The planner alone is not deletion authority. An exact receipt and effect-time
 bytes must both agree before each removal. A partial run must remain
 classifiable; never discard the last ownership record before reconciliation.
+The authored-section follow-on stores a digest-bound exact preview in its
+intent; the pinned Windows replacement checks the full preimage at effect
+time. A verified postimage handle denies competing writes while the receipt
+is retired. A failed replacement may leave the original under its recorded
+backup name; retain intent and receipt and classify the state as requiring
+recovery rather than declaring detach. Current source-only validation passed
+22 targeted removal tests and canonical `validate`; final combined and
+delivered-artifact evidence remains pending.
 Do not mutate real targets. The separate repair and importer-safety streams
 are dependencies for final integrated acceptance, so generated artifacts
 must come from their combined accepted source rather than this old base.

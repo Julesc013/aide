@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 id: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01
-status: running
-planning_state: partial_apply_integrated_authored_section_pending
+status: needs_review
+planning_state: authored_section_source_candidate_frozen
 result: PENDING
 updated_at: 2026-09-25
 base_dev: 5dfa75e632b09f732a8150376db6840bcf149ed3
-next_action: implement_anchored_authored_agents_managed_section_detach
+next_action: independent_source_review_then_combined_artifact_qualification

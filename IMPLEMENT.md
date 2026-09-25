@@ -1,5 +1,18 @@
 # AIDE Implementation Log
 
+## Work Item: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01 (backup review repair)
+
+The independent review of `d5b44626` found that a failed authored AGENTS
+replacement could leave its original backup while retry still retired the
+receipt and intent. This source repair binds the backup's Windows file identity
+and exact preimage digest to the intent, classifies any remaining backup as
+unresolved, and holds the verified AGENTS postimage while anchored cleanup
+precedes receipt retirement. Eight affected authored-section tests pass,
+including altered and same-byte substituted backups. Canonical validation
+still reports stale generated-pack provenance on this source-only branch;
+regeneration and combined acceptance remain for integration. Details and log
+hashes are in the task's `evidence/d5b44626-backup-review-repair-validation.md`.
+
 ## Work Item: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
 
 ### Status
@@ -11727,3 +11740,15 @@ Owner review found a final-write race in the first candidate. The repair now pub
 - The exact regression passed after repair; broader combined tests, delivered
   artifacts, consumer checks, independent review, and dev integration remain
   open. No target outside disposable tests or remote ref was changed.
+## 2026-09-25 - Authored AGENTS managed-section removal source
+
+- Added Windows-only anchored replacement of the exact receipt-owned AIDE
+  block inside authored `AGENTS.md`, preserving every byte outside the block.
+  The removal intent binds an exact preview snapshot, source and result
+  digests; interruption retains classification and receipt evidence.
+- Fixed CRLF observation so a receipt-owned block installed in authored CRLF
+  text remains recognizable. A verified postimage handle denies competing
+  writes through receipt retirement. Changed, duplicate, unknown or racing
+  content fails closed.
+- Twenty-two focused removal tests and canonical `validate` passed. Source
+  review, regenerated artifact consumers and dev integration remain pending.

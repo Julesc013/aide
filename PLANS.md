@@ -3797,3 +3797,7 @@ regression. Authored-section removal source `2c4c9089` has separate independent
 source acceptance but still needs combination, current-generator artifacts,
 extracted consumers, replay and exact dev-effect review. Neither source result
 establishes stable release readiness.
+- The authored-section detach source candidate in
+  `AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01` now passes focused tests, but
+  still needs independent review, combined-source qualification and delivered
+  artifact canaries before dev integration or a broader removal claim.
