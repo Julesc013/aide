@@ -72,7 +72,10 @@ security predicates and final delivered bytes at their exact revisions.
       and effect-time checks. Fourteen focused cases passed on the preceding
       source; two delta cases passed on final source. Exact hashes and logs are
       in `evidence/source-candidate-validation.md`.
-- [ ] Freeze a structured source commit and obtain independent technical
-      review of that exact commit and the Windows leaf/intent changes.
+- [x] Freeze source commit `acbcb9c8` and obtain independent technical review.
+      It returned `REQUEST_CHANGES` for a receipt-owned CRLF `AGENTS.md`
+      update regression. Add a red/green Windows oracle and superseding repair;
+      exact external review and test hashes are in `evidence/crlf-review-repair.md`.
+- [ ] Obtain independent delta review of the repaired exact source commit.
 - [ ] Run full affected source suites, generate/qualify delivered artifacts,
       prove replay, and integrate accepted bytes into observed remote `dev`.

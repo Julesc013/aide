@@ -40796,12 +40796,16 @@ def agents_operation(
         ownership_basis = "identical_incoming_section"
         postimage_digest = preimage_digest
     elif entry is not None and desired_block_digest == entry["source_digest"]:
-        action = "preserve_local"
-        ownership_basis = "unchanged_upstream_project_section"
+        if entry.get("installed_digest") == current_block_digest and entry.get("ownership") == "aide_portable_managed" and entry.get("local_overlay") is not True:
+            action = "unchanged"
+            ownership_basis = "unchanged_receipt_owned_section"
+        else:
+            action = "preserve_local"
+            ownership_basis = "unchanged_upstream_project_section"
         installed_digest = current_block_digest
         postimage_digest = preimage_digest
     elif current_block is not None:
-        if entry is not None and entry.get("installed_digest") == current_block_digest and entry["source_digest"] == entry["installed_digest"]:
+        if entry is not None and entry.get("installed_digest") == current_block_digest and entry.get("ownership") == "aide_portable_managed" and entry.get("local_overlay") is not True:
             action = "update_owned"
             ownership_basis = "installed_receipt"
         elif receipt is None and predecessor_installed_digest(predecessor_pack, source_rel, "portable_managed_section") == current_block_digest:

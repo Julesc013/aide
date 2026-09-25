@@ -682,6 +682,97 @@ class ExportImportTests(unittest.TestCase):
         self.assertTrue(agents_row["removal_candidate"])
 
     @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
+    def test_receipt_owned_crlf_agents_section_updates_when_upstream_changes(self) -> None:
+        source_root = self.make_source_repo()
+        pack_v1 = self.freeze_pack(source_root, "agents-crlf-v1")
+        pack_v2 = source_root.parent / "agents-crlf-v2"
+        shutil.copytree(pack_v1, pack_v2)
+        template = pack_v2 / "files/AGENTS.md.template"
+        before = template.read_bytes()
+        heading = b"## AIDE Lite Portable Guidance"
+        self.assertEqual(before.count(heading), 1)
+        template.write_bytes(before.replace(heading, b"## AIDE Lite Portable Guidance changed upstream", 1))
+        aide_lite.write_text(pack_v2 / "checksums.json", aide_lite.stable_json_text(aide_lite.build_pack_checksums(pack_v2)))
+        self.assertTrue(aide_lite.validate_pack_checksums(pack_v2)[0])
+        pack_v3 = source_root.parent / "agents-crlf-v3"
+        shutil.copytree(pack_v2, pack_v3)
+        prompt = pack_v3 / "files/.aide/prompts/compact-task.md"
+        prompt.write_bytes(prompt.read_bytes() + b"\n# Changed upstream outside AGENTS\n")
+        aide_lite.write_text(pack_v3 / "checksums.json", aide_lite.stable_json_text(aide_lite.build_pack_checksums(pack_v3)))
+        self.assertTrue(aide_lite.validate_pack_checksums(pack_v3)[0])
+
+        for receipt_version in ("v1", "v2"):
+            with self.subTest(receipt_version=receipt_version):
+                target = source_root.parent / f"agents-crlf-target-{receipt_version}"
+                target.mkdir()
+                agents_path = target / "AGENTS.md"
+                authored = b"# Authored project guidance\r\n"
+                agents_path.write_bytes(authored)
+                self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+                receipt_path = target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH
+                receipt = aide_lite.load_portable_import_receipt(target)
+                agents_entry = receipt["managed"]["AGENTS.md"]
+                self.assertNotEqual(agents_entry["installed_digest"], agents_entry["source_digest"])
+                self.assertFalse(agents_entry["local_overlay"])
+                authored_suffix = b"\r\n# Authored closing guidance\r\n"
+                agents_path.write_bytes(agents_path.read_bytes() + authored_suffix)
+                if receipt_version == "v1":
+                    receipt["schema_version"] = aide_lite.PORTABLE_IMPORT_RECEIPT_SCHEMA
+                    receipt.pop("disabled_features")
+                    receipt.pop("project_controls_digest")
+                    for entry in receipt["managed"].values():
+                        entry.pop("local_overlay")
+                    receipt["receipt_digest"] = aide_lite.portable_import_record_digest(receipt, "receipt_digest")
+                    receipt_path.write_text(aide_lite.stable_json_text(receipt), encoding="utf-8")
+
+                preview = aide_lite.apply_import_pack(pack_v2, target, dry_run=True, predecessor_pack=pack_v1)
+                agents_operation = next(item for item in preview["operations"] if item["target"] == "AGENTS.md")
+                self.assertEqual(agents_operation["action"], "update_owned")
+                self.assertEqual(preview["status"], "PLANNED")
+                self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1, expected_plan_digest=preview["plan_digest"])["status"], "APPLIED")
+                updated = agents_path.read_bytes()
+                self.assertTrue(updated.startswith(authored))
+                self.assertTrue(updated.endswith(authored_suffix))
+                self.assertIn(b"Portable Guidance changed upstream", updated)
+                self.assertIn(b"\r\n", updated)
+                self.assertFalse(aide_lite.load_portable_import_receipt(target)["managed"]["AGENTS.md"]["local_overlay"])
+
+                unrelated_preview = aide_lite.apply_import_pack(pack_v3, target, dry_run=True, predecessor_pack=pack_v2)
+                unrelated_agents = next(item for item in unrelated_preview["operations"] if item["target"] == "AGENTS.md")
+                self.assertEqual(unrelated_agents["action"], "unchanged")
+                self.assertEqual(aide_lite.apply_import_pack(pack_v3, target, predecessor_pack=pack_v2, expected_plan_digest=unrelated_preview["plan_digest"])["status"], "APPLIED")
+                self.assertEqual(agents_path.read_bytes(), updated)
+                self.assertFalse(aide_lite.load_portable_import_receipt(target)["managed"]["AGENTS.md"]["local_overlay"])
+
+                if receipt_version == "v2":
+                    edited = updated.replace(b"Portable Guidance changed upstream", b"Project-edited portable guidance", 1)
+                    agents_path.write_bytes(edited)
+                    pack_v4 = source_root.parent / "agents-crlf-v4"
+                    shutil.copytree(pack_v3, pack_v4)
+                    prompt_v4 = pack_v4 / "files/.aide/prompts/compact-task.md"
+                    prompt_v4.write_bytes(prompt_v4.read_bytes() + b"# Another upstream prompt change\n")
+                    aide_lite.write_text(pack_v4 / "checksums.json", aide_lite.stable_json_text(aide_lite.build_pack_checksums(pack_v4)))
+                    overlay_preview = aide_lite.apply_import_pack(pack_v4, target, dry_run=True, predecessor_pack=pack_v3)
+                    overlay_agents = next(item for item in overlay_preview["operations"] if item["target"] == "AGENTS.md")
+                    self.assertEqual(overlay_agents["action"], "preserve_local")
+                    self.assertEqual(aide_lite.apply_import_pack(pack_v4, target, predecessor_pack=pack_v3, expected_plan_digest=overlay_preview["plan_digest"])["status"], "APPLIED")
+                    self.assertEqual(agents_path.read_bytes(), edited)
+                    self.assertTrue(aide_lite.load_portable_import_receipt(target)["managed"]["AGENTS.md"]["local_overlay"])
+                    pack_v5 = source_root.parent / "agents-crlf-v5"
+                    shutil.copytree(pack_v4, pack_v5)
+                    template_v5 = pack_v5 / "files/AGENTS.md.template"
+                    template_v5.write_bytes(template_v5.read_bytes().replace(b"Portable Guidance changed upstream", b"Portable Guidance changed upstream again", 1))
+                    aide_lite.write_text(pack_v5 / "checksums.json", aide_lite.stable_json_text(aide_lite.build_pack_checksums(pack_v5)))
+                    overlay_receipt = receipt_path.read_bytes()
+                    conflict_preview = aide_lite.apply_import_pack(pack_v5, target, dry_run=True, predecessor_pack=pack_v4)
+                    conflict_agents = next(item for item in conflict_preview["operations"] if item["target"] == "AGENTS.md")
+                    self.assertEqual(conflict_agents["action"], "conflict")
+                    self.assertEqual(conflict_preview["status"], "PLANNED_CONFLICT")
+                    self.assertEqual(aide_lite.apply_import_pack(pack_v5, target, predecessor_pack=pack_v4)["status"], "CONFLICT")
+                    self.assertEqual(agents_path.read_bytes(), edited)
+                    self.assertEqual(receipt_path.read_bytes(), overlay_receipt)
+
+    @unittest.skipUnless(sys.platform == "win32", "anchored portable import apply is Windows only")
     def test_disabled_controls_swap_at_receipt_effect_keeps_intent_for_reconciliation(self) -> None:
         source_root = self.make_source_repo()
         pack_v1 = self.freeze_pack(source_root, "controls-race-v1")

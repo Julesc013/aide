@@ -11824,3 +11824,17 @@ Owner review found a final-write race in the first candidate. The repair now pub
   affected by the final non-Windows guard passed on final source. The WorkUnit
   binds commands, file/log hashes and limitations. Independent review, full
   suite, artifact/consumer gates and dev integration remain pending.
+
+## 2026-09-25 - Correct receipt-owned CRLF updates after independent review
+
+- The independent review of `acbcb9c8` returned `REQUEST_CHANGES`: an authored
+  CRLF `AGENTS.md` block with a valid managed receipt falsely conflicted when
+  upstream changed. The frozen report and disposable reproduction are bound
+  in the three-way update WorkUnit; the interrupted broad test had no result.
+- A new exact regression failed for both v1 and v2 receipts before the repair.
+  The source now uses observed installed-block identity and validated ownership
+  rather than requiring installed and source digests to match. An unrelated
+  update retains non-overlay ownership; a direct edit records an overlay and
+  a later upstream change conflicts without writes. The extended regression
+  passed; full importer, independent delta review, generated artifacts and
+  dev integration remain pending.
