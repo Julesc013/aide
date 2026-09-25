@@ -28,6 +28,7 @@ import tarfile
 import tempfile
 import threading
 import zipfile
+from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -40888,6 +40889,7 @@ def build_portable_import_intent(
             "target": operation["target"],
             "preimage_digest": operation["preimage_digest"],
             "postimage_digest": operation["postimage_digest"],
+            "backup_rel": operation.get("backup_rel"),
         }
         for operation in operations
         if operation.get("action") in {"copy", "update_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
@@ -41027,10 +41029,14 @@ def build_portable_removal_plan(target_root: Path) -> dict[str, object]:
 def classify_portable_import_recovery(target_root: Path, intent: dict[str, object]) -> dict[str, object]:
     observations: list[dict[str, str]] = []
     states: list[str] = []
+    outstanding_backups: list[str] = []
     for item in intent.get("operations", []):
         if not isinstance(item, dict):
             continue
         target_rel = str(item.get("target", ""))
+        backup_rel = item.get("backup_rel")
+        if isinstance(backup_rel, str) and backup_rel and portable_target_path(target_root, backup_rel).exists():
+            outstanding_backups.append(backup_rel)
         observed = target_file_digest(portable_target_path(target_root, target_rel))
         if observed == item.get("postimage_digest"):
             state = "effect_observed"
@@ -41040,7 +41046,17 @@ def classify_portable_import_recovery(target_root: Path, intent: dict[str, objec
             state = "unknown"
         states.append(state)
         observations.append({"target": target_rel, "state": state, "observed_digest": observed})
-    if states and all(state == "effect_observed" for state in states):
+    receipt_backup_rel = intent.get("receipt_backup_rel")
+    if isinstance(receipt_backup_rel, str) and receipt_backup_rel and portable_target_path(target_root, receipt_backup_rel).exists():
+        outstanding_backups.append(receipt_backup_rel)
+    receipt_preimage = intent.get("receipt_preimage_digest")
+    receipt_postimage = intent.get("receipt_postimage_digest")
+    if not states and isinstance(receipt_postimage, str):
+        observed_receipt = target_file_digest(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH))
+        states.append("effect_observed" if observed_receipt == receipt_postimage else "no_effect_observed" if observed_receipt == receipt_preimage else "unknown")
+    if outstanding_backups:
+        classification = "unknown"
+    elif states and all(state == "effect_observed" for state in states):
         classification = "completed"
     elif not states or all(state == "no_effect_observed" for state in states):
         classification = "no_effect"
@@ -41048,7 +41064,184 @@ def classify_portable_import_recovery(target_root: Path, intent: dict[str, objec
         classification = "unknown"
     else:
         classification = "partial"
-    return {"classification": classification, "observations": observations, "plan_digest": intent.get("plan_digest")}
+    return {"classification": classification, "observations": observations, "outstanding_backups": sorted(set(outstanding_backups)), "plan_digest": intent.get("plan_digest")}
+
+
+def portable_import_ensure_parent(target_root: Path, target_rel: str) -> Path:
+    """Create missing ancestors only beneath a pinned, non-reparse parent."""
+    if os.name != "nt":
+        raise ValueError("anchored portable import writes require Windows")
+    target = portable_target_path(target_root, target_rel)
+    root = target_root.absolute()
+    current = root
+    for part in Path(target_rel.replace("\\", "/")).parts[:-1]:
+        with windows_pinned_directory(current):
+            child = current / part
+            try:
+                child.mkdir()
+            except FileExistsError:
+                pass
+        current = child
+    with windows_pinned_directory(target.parent):
+        pass
+    return target
+
+
+def portable_import_verified_leaf(path: Path, expected_digest: str, *, writable: bool = False) -> tuple[object, object]:
+    """Open the exact regular, single-link preimage without writer/delete sharing."""
+    import ctypes
+    from ctypes import wintypes
+
+    class FileTime(ctypes.Structure):
+        _fields_ = [("low", wintypes.DWORD), ("high", wintypes.DWORD)]
+
+    class FileInfo(ctypes.Structure):
+        _fields_ = [("attributes", wintypes.DWORD), ("created", FileTime), ("accessed", FileTime), ("written", FileTime), ("volume", wintypes.DWORD), ("size_high", wintypes.DWORD), ("size_low", wintypes.DWORD), ("links", wintypes.DWORD), ("index_high", wintypes.DWORD), ("index_low", wintypes.DWORD)]
+
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.GetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.POINTER(FileInfo)]
+    kernel.GetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.ReadFile.argtypes = [wintypes.HANDLE, wintypes.LPVOID, wintypes.DWORD, ctypes.POINTER(wintypes.DWORD), wintypes.LPVOID]
+    kernel.ReadFile.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    access = 0x80000000 | 0x00010000 | (0x40000000 if writable else 0)
+    handle = kernel.CreateFileW(str(path), access, 0x1, None, 3, 0x00200000, None)
+    if handle == ctypes.c_void_p(-1).value or handle is None:
+        raise ctypes.WinError(ctypes.get_last_error())
+    try:
+        info = FileInfo()
+        if not kernel.GetFileInformationByHandle(handle, ctypes.byref(info)):
+            raise ctypes.WinError(ctypes.get_last_error())
+        if info.attributes & (0x10 | 0x400) or info.links != 1 or info.size_high:
+            raise RuntimeError(f"import preimage is not a regular single-link file: {path}")
+        remaining = info.size_low
+        digest = hashlib.sha256()
+        while remaining:
+            buffer = ctypes.create_string_buffer(min(remaining, 65536))
+            count = wintypes.DWORD()
+            if not kernel.ReadFile(handle, buffer, len(buffer), ctypes.byref(count), None):
+                raise ctypes.WinError(ctypes.get_last_error())
+            if not count.value:
+                raise RuntimeError(f"import preimage ended early: {path}")
+            digest.update(buffer.raw[:count.value])
+            remaining -= count.value
+        if digest.hexdigest() != expected_digest:
+            raise RuntimeError(f"stale target preimage: {path}")
+        return kernel, handle
+    except BaseException:
+        kernel.CloseHandle(handle)
+        raise
+
+
+def portable_import_rename_open_leaf(kernel: object, handle: object, directory_handle: object, name: str) -> None:
+    import ctypes
+    from ctypes import wintypes
+
+    class FileRenameInfo(ctypes.Structure):
+        _fields_ = [("replace", wintypes.DWORD), ("root", wintypes.HANDLE), ("name_length", wintypes.DWORD), ("name", wintypes.WCHAR * (len(name) + 1))]
+
+    info = FileRenameInfo()
+    info.replace = False
+    # Ancestors are pinned by the caller; Win32 accepts this absolute name
+    # without depending on a separately interpreted RootDirectory handle.
+    info.root = None
+    info.name_length = len(name.encode("utf-16-le"))
+    info.name = name
+    kernel.SetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.c_int, ctypes.c_void_p, wintypes.DWORD]
+    kernel.SetFileInformationByHandle.restype = wintypes.BOOL
+    if not kernel.SetFileInformationByHandle(handle, 3, ctypes.byref(info), ctypes.sizeof(info)):
+        raise ctypes.WinError(ctypes.get_last_error())
+
+
+def portable_import_delete_open_leaf(kernel: object, handle: object) -> None:
+    import ctypes
+    from ctypes import wintypes
+
+    class FileDispositionInfo(ctypes.Structure):
+        _fields_ = [("delete_file", wintypes.BOOL)]
+
+    info = FileDispositionInfo(True)
+    kernel.SetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.c_int, ctypes.c_void_p, wintypes.DWORD]
+    kernel.SetFileInformationByHandle.restype = wintypes.BOOL
+    if not kernel.SetFileInformationByHandle(handle, 4, ctypes.byref(info), ctypes.sizeof(info)):
+        raise ctypes.WinError(ctypes.get_last_error())
+
+
+@contextmanager
+def windows_guarded_staged_bytes(parent: Path, leaf_name: str, data: bytes):
+    """Verify complete stage bytes, then deny rival write/delete until publication."""
+    import msvcrt
+
+    descriptor, temporary_name = tempfile.mkstemp(prefix=f".{leaf_name}.", suffix=".tmp", dir=parent)
+    temporary = Path(temporary_name)
+    with os.fdopen(descriptor, "wb") as writer:
+        writer.write(data)
+        writer.flush()
+        os.fsync(writer.fileno())
+    # The mkstemp descriptor permits another writer on Windows. Close it,
+    # then reopen the exact verified bytes with writer/delete sharing denied.
+    # A rival holding a writer handle or changing bytes in the gap makes this
+    # reopen fail closed; do not unlink an unverified replacement by path.
+    kernel, handle = portable_import_verified_leaf(temporary, digest_bytes(data), writable=True)
+    try:
+        guarded_descriptor = msvcrt.open_osfhandle(handle, os.O_RDWR)
+    except BaseException:
+        kernel.CloseHandle(handle)
+        raise
+    try:
+        yield guarded_descriptor
+    finally:
+        try:
+            portable_import_delete_open_leaf(kernel, handle)
+        finally:
+            os.close(guarded_descriptor)
+
+
+def portable_import_write_exact(target_root: Path, target_rel: str, data: bytes, expected_digest: str, backup_rel: str | None = None) -> WriteResult:
+    """Stage under pinned ancestors; publish new bytes without replacing a rival leaf."""
+    target = portable_import_ensure_parent(target_root, target_rel)
+    with windows_pinned_directory(target.parent) as directory_handle:
+        with windows_guarded_staged_bytes(target.parent, target.name, data) as stage_descriptor:
+                if expected_digest == "missing":
+                    windows_link_from_handle(stage_descriptor, directory_handle, target.name)
+                else:
+                    if backup_rel is not None:
+                        backup = portable_target_path(target_root, backup_rel)
+                        if backup.parent != target.parent or not backup.name.startswith(f".{target.name}.aide-import-backup-"):
+                            raise ValueError("import backup is outside the pinned target parent")
+                        backup_name = backup.name
+                    else:
+                        backup_name = f".{target.name}.aide-import-backup-{os.urandom(12).hex()}"
+                    kernel, old_handle = portable_import_verified_leaf(target, expected_digest)
+                    try:
+                        portable_import_rename_open_leaf(kernel, old_handle, directory_handle, str(target.parent / backup_name))
+                        try:
+                            windows_link_from_handle(stage_descriptor, directory_handle, target.name)
+                        except BaseException:
+                            # A rival leaf is never replaced. If it won the gap,
+                            # preserve the exact old bytes under the backup name.
+                            try:
+                                portable_import_rename_open_leaf(kernel, old_handle, directory_handle, str(target))
+                            except OSError:
+                                pass
+                            raise
+                        portable_import_delete_open_leaf(kernel, old_handle)
+                    finally:
+                        kernel.CloseHandle(old_handle)
+    return WriteResult(target, "written")
+
+
+def portable_import_delete_exact(target_root: Path, target_rel: str, expected: bytes) -> None:
+    target = portable_target_path(target_root, target_rel)
+    with windows_pinned_directory(target.parent):
+        kernel, handle = portable_import_verified_leaf(target, digest_bytes(expected))
+        try:
+            portable_import_delete_open_leaf(kernel, handle)
+        finally:
+            kernel.CloseHandle(handle)
 
 
 def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[str, str]) -> bool:
@@ -41072,7 +41265,11 @@ def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[s
         return False
     if digest_bytes(data) != operation["postimage_digest"]:
         raise RuntimeError(f"planned postimage mismatch: {operation['target']}")
-    result = atomic_write_bytes_if_changed(target, data)
+    result = (
+        portable_import_write_exact(target_root, operation["target"], data, operation["preimage_digest"], operation.get("backup_rel"))
+        if os.name == "nt"
+        else atomic_write_bytes_if_changed(target, data)
+    )
     if target_file_digest(target) != operation["postimage_digest"]:
         raise RuntimeError(f"written postimage mismatch: {operation['target']}")
     return result.action == "written"
@@ -41107,13 +41304,27 @@ def _apply_import_pack_unlocked(
         if dry_run:
             return {"status": "RECOVERY_REQUIRED", "dry_run": True, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
         if recovery["classification"] == "completed":
-            atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), pending["next_receipt"])
-            portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
+            receipt_bytes = stable_json_text(pending["next_receipt"]).encode("utf-8")
+            receipt_preimage = pending.get("receipt_preimage_digest")
+            if os.name == "nt":
+                if not isinstance(receipt_preimage, str):
+                    raise ValueError("import recovery lacks receipt preimage identity")
+                observed_receipt = target_file_digest(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH))
+                if observed_receipt != digest_bytes(receipt_bytes):
+                    portable_import_write_exact(target_root, PORTABLE_IMPORT_RECEIPT_PATH, receipt_bytes, receipt_preimage, pending.get("receipt_backup_rel"))
+                portable_import_delete_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(pending).encode("utf-8"))
+            else:
+                atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), pending["next_receipt"])
+                portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
             return {"status": "RECOVERED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": 0, "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
         if recovery["classification"] == "no_effect":
-            portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
+            if os.name == "nt":
+                portable_import_delete_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(pending).encode("utf-8"))
+            else:
+                portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
         else:
             return {"status": "RECOVERY_REQUIRED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
+    receipt_preimage_digest = target_file_digest(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH))
     operations, conflicts, skipped = import_pack_plan(pack_root, target_root, mode=mode, predecessor_pack=predecessor_pack)
     plan_digest = import_plan_digest(pack_root, target_root, mode, operations, conflicts, skipped, predecessor_pack)
     if expected_plan_digest is not None and expected_plan_digest != plan_digest:
@@ -41135,37 +41346,58 @@ def _apply_import_pack_unlocked(
         return {"status": "CONFLICT", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": conflicts, "skipped": skipped, "skipped_conflicts": conflicts, "operations": operations, "written": [], "plan_digest": plan_digest}
     target_root.mkdir(parents=True, exist_ok=True)
     next_receipt = build_portable_import_receipt(pack_root, mode, operations, plan_digest, predecessor_pack)
+    for operation in operations:
+        if operation.get("action") in {"copy", "update_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"} and operation.get("preimage_digest") not in {"missing", operation.get("postimage_digest")}:
+            relative = Path(operation["target"])
+            operation["backup_rel"] = (relative.parent / f".{relative.name}.aide-import-backup-{plan_digest[:20]}").as_posix()
     intent = build_portable_import_intent(target_root, plan_digest, operations, next_receipt)
+    intent["receipt_preimage_digest"] = receipt_preimage_digest
+    intent["receipt_postimage_digest"] = digest_bytes(stable_json_text(next_receipt).encode("utf-8"))
+    if receipt_preimage_digest != "missing":
+        relative = Path(PORTABLE_IMPORT_RECEIPT_PATH)
+        intent["receipt_backup_rel"] = (relative.parent / f".{relative.name}.aide-import-backup-{plan_digest[:20]}").as_posix()
+    intent["intent_digest"] = portable_import_record_digest(intent, "intent_digest")
     payload_operations = [
         operation
         for operation in operations
         if operation.get("action") in {"copy", "update_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
         and operation.get("preimage_digest") != operation.get("postimage_digest")
     ]
+    receipt_changed = not portable_receipt_state_matches(load_portable_import_receipt(target_root), next_receipt)
     for operation in payload_operations:
         if target_file_digest(portable_target_path(target_root, operation["target"])) != operation["preimage_digest"]:
             return {"status": "STALE_PLAN", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": [], "plan_digest": plan_digest}
-    if payload_operations:
-        atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH), intent)
+    if payload_operations or receipt_changed:
+        if os.name == "nt":
+            portable_import_write_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(intent).encode("utf-8"), "missing")
+        else:
+            atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH), intent)
     written: list[str] = []
     for operation in payload_operations:
         try:
             if apply_import_operation(pack_root, target_root, operation):
                 written.append(operation["target"])
-        except RuntimeError:
+        except (OSError, RuntimeError, ValueError):
             recovery = classify_portable_import_recovery(target_root, intent)
             return {"status": "INTERRUPTED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": written, "recovery": recovery, "plan_digest": plan_digest}
         if fail_after_writes is not None and len(written) >= fail_after_writes:
             recovery = classify_portable_import_recovery(target_root, intent)
             return {"status": "INTERRUPTED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations, "written": written, "recovery": recovery, "plan_digest": plan_digest}
     current_receipt = load_portable_import_receipt(target_root)
-    if not payload_operations and portable_receipt_state_matches(current_receipt, next_receipt):
+    if not payload_operations and not receipt_changed and portable_receipt_state_matches(current_receipt, next_receipt):
         receipt_result = WriteResult(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), "unchanged")
     else:
-        receipt_result = atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), next_receipt)
+        receipt_result = (
+            portable_import_write_exact(target_root, PORTABLE_IMPORT_RECEIPT_PATH, stable_json_text(next_receipt).encode("utf-8"), receipt_preimage_digest, intent.get("receipt_backup_rel"))
+            if os.name == "nt"
+            else atomic_write_json(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH), next_receipt)
+        )
     intent_path = portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH)
     if intent_path.exists():
-        intent_path.unlink()
+        if os.name == "nt":
+            portable_import_delete_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(intent).encode("utf-8"))
+        else:
+            intent_path.unlink()
     status = "APPLIED" if written or receipt_result.action == "written" else "NO_CHANGES"
     return {
         "status": status,

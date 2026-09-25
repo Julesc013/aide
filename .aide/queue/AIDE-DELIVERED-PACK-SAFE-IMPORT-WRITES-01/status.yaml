@@ -1,0 +1,8 @@
+schema_version: aide.queue-status.v0
+id: AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01
+status: running
+planning_state: payload_intent_parent_escape_and_leaf_clobber_reproduced
+result: PENDING
+updated_at: 2026-09-25
+base_dev: 5dfa75e632b09f732a8150376db6840bcf149ed3
+next_action: integrate_reviewed_helper_then_anchor_all_import_writes_and_protect_leaf

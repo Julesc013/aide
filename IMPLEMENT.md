@@ -11621,3 +11621,27 @@ Owner review found a final-write race in the first candidate. The repair now pub
   dev to `10a16afb` (tree `8a64880c`), observed through Git and GitHub.
   This closes the staging-race WorkUnit for dev; it does not accept main,
   publication, or complete lifecycle behavior.
+## 2026-09-25 - Portable importer parent substitution regression
+
+- Added a deterministic disposable Windows junction test at the importer
+  staging boundary. The current importer wrote a managed prompt into an
+  outside sibling directory after the parent was replaced, so the no-outside-
+  write assertion failed as intended. The temporary fixture was cleaned.
+- The test is retained as the repair oracle; no importer source fix, delivered
+  artifact claim, or real target effect is recorded yet.
+
+## 2026-09-25 - Portable importer racing-leaf regression
+
+- Added a disposable import test for a new managed file and an update whose
+  target leaf is edited after preimage validation. Current source overwrote the
+  concurrent project bytes in both cases, so the test failed as intended.
+- Retained the test as the effect-time ownership oracle. No importer source fix
+  or delivered-artifact acceptance is recorded yet.
+
+## 2026-09-25 - Portable importer intent parent substitution regression
+
+- A disposable Windows junction substitution before import-intent staging made
+  the current importer write its intent to an outside sibling. The one-test
+  baseline failed as intended and left no real target effect.
+- The repair must anchor metadata as well as managed payload writes. No source
+  repair or delivered-artifact acceptance is recorded by this regression.

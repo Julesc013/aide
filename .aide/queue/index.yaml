@@ -3560,3 +3560,13 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-REPAIR-STAGING-HARDEN-01/evidence
     description: Fix the independently reproduced second-writer race in Windows owned repair staging before release qualification.
+  - id: AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01
+    status: running
+    planning_state: parent_escape_reproduced_repair_helper_pending
+    result: PENDING
+    title: Keep delivered-pack importer writes inside the observed target
+    task: .aide/queue/AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01/prompt.md
+    evidence: .aide/queue/AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01/evidence
+    description: Reproduce and close a Windows parent-junction substitution race in portable import payload writes.

@@ -4,6 +4,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 import importlib.util
 import json
 import shutil
@@ -713,6 +714,417 @@ class ExportImportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "reserved project/import state"):
             aide_lite.apply_import_pack(pack, target)
         self.assertEqual(authored.read_bytes(), original)
+
+    def test_import_payload_does_not_follow_a_swapped_parent(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            target_root = root / "target"
+            parent = target_root / ".aide" / "prompts"
+            parent.mkdir(parents=True)
+            parked = target_root / ".aide" / "prompts-parked"
+            outside = root / "outside"
+            outside.mkdir()
+            self.assertEqual(parent.resolve().parent, (target_root / ".aide").resolve())
+            self.assertEqual(parked.parent.resolve(), (target_root / ".aide").resolve())
+
+            source_rel = ".aide/prompts/compact-task.md"
+            payload = b"# Portable managed content\n"
+            pack_root = root / "pack"
+            source = pack_root / "files" / source_rel
+            source.parent.mkdir(parents=True)
+            source.write_bytes(payload)
+            operation = {
+                "action": "copy",
+                "target": source_rel,
+                "source": source_rel,
+                "kind": "managed_file",
+                "preimage_digest": "missing",
+                "postimage_digest": aide_lite.digest_bytes(payload),
+            }
+
+            original_mkstemp = tempfile.mkstemp
+            attempted = False
+
+            def swap_before_staging(*args: object, **kwargs: object) -> tuple[int, str]:
+                nonlocal attempted
+                if Path(str(kwargs.get("dir"))) == parent and not attempted:
+                    attempted = True
+                    try:
+                        parent.rename(parked)
+                    except PermissionError:
+                        # A pinned ancestor that denies deletion has already
+                        # closed this interleaving; staging can continue.
+                        pass
+                    else:
+                        if sys.platform == "win32":
+                            junction = subprocess.run(
+                                ["cmd", "/c", "mklink", "/J", str(parent), str(outside)],
+                                capture_output=True,
+                                text=True,
+                                encoding="utf-8",
+                            )
+                            self.assertEqual(junction.returncode, 0, junction.stderr)
+                        else:
+                            parent.symlink_to(outside, target_is_directory=True)
+                return original_mkstemp(*args, **kwargs)
+
+            try:
+                with mock.patch.object(aide_lite.tempfile, "mkstemp", side_effect=swap_before_staging):
+                    try:
+                        aide_lite.apply_import_operation(pack_root, target_root, operation)
+                    except (OSError, RuntimeError, ValueError):
+                        pass
+                outside_entries = list(outside.iterdir())
+            finally:
+                if parent.is_symlink():
+                    parent.unlink()
+                elif getattr(parent, "is_junction", lambda: False)():
+                    parent.rmdir()
+                if parked.exists():
+                    parked.rename(parent)
+
+            self.assertTrue(attempted, "the importer must exercise the staging boundary")
+            self.assertEqual(outside_entries, [], "import wrote through a swapped parent")
+
+    def test_import_payload_does_not_clobber_a_racing_leaf(self) -> None:
+        for initial in (None, b"# Previously managed content\n"):
+            with self.subTest(initial=initial), tempfile.TemporaryDirectory() as raw:
+                root = Path(raw)
+                target_root = root / "target"
+                target = target_root / ".aide" / "prompts" / "compact-task.md"
+                target.parent.mkdir(parents=True)
+                if initial is not None:
+                    target.write_bytes(initial)
+                pack_root = root / "pack"
+                source_rel = ".aide/prompts/compact-task.md"
+                source = pack_root / "files" / source_rel
+                source.parent.mkdir(parents=True)
+                source.write_bytes(b"# Updated managed content\n")
+                operation = {
+                    "action": "copy" if initial is None else "update_owned",
+                    "target": source_rel,
+                    "source": source_rel,
+                    "kind": "managed_file",
+                    "preimage_digest": "missing" if initial is None else aide_lite.digest_bytes(initial),
+                    "postimage_digest": aide_lite.digest_bytes(source.read_bytes()),
+                }
+                competing = b"# Concurrent project edit\n"
+                original_mkstemp = tempfile.mkstemp
+                attempted = False
+
+                def change_leaf_after_preimage(*args: object, **kwargs: object) -> tuple[int, str]:
+                    nonlocal attempted
+                    descriptor, temporary_name = original_mkstemp(*args, **kwargs)
+                    if Path(str(kwargs.get("dir"))) == target.parent and not attempted:
+                        attempted = True
+                        target.write_bytes(competing)
+                    return descriptor, temporary_name
+
+                with mock.patch.object(aide_lite.tempfile, "mkstemp", side_effect=change_leaf_after_preimage):
+                    try:
+                        aide_lite.apply_import_operation(pack_root, target_root, operation)
+                    except (OSError, RuntimeError, ValueError):
+                        pass
+                self.assertTrue(attempted, "the importer must exercise the staging boundary")
+                self.assertEqual(target.read_bytes(), competing, "import replaced a concurrent project edit")
+
+    @unittest.skipUnless(sys.platform == "win32", "requires Windows guarded staging")
+    def test_atomic_create_staged_bytes_deny_rival_writer(self) -> None:
+        for relative in (".aide/install/aide-lite-pack-v0.repair-intent.json", ".aide/prompts/compact-task.md"):
+            with self.subTest(relative=relative), tempfile.TemporaryDirectory() as raw:
+                target = Path(raw) / relative
+                target.parent.mkdir(parents=True)
+                original_link = aide_lite.windows_link_from_handle
+                attempted = False
+
+                def rival_before_publication(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+                    nonlocal attempted
+                    stage = list(target.parent.glob(f".{target.name}.*.tmp"))
+                    self.assertEqual(len(stage), 1)
+                    attempted = True
+                    with self.assertRaises(OSError):
+                        stage[0].write_bytes(b"rival bytes")
+                    original_link(descriptor, directory_handle, leaf_name)
+
+                with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=rival_before_publication):
+                    aide_lite.atomic_create_bytes_no_clobber(target, b"expected bytes")
+                self.assertTrue(attempted)
+                self.assertEqual(target.read_bytes(), b"expected bytes")
+                self.assertEqual(list(target.parent.iterdir()), [target])
+
+    @unittest.skipUnless(sys.platform == "win32", "requires Windows guarded staging")
+    def test_import_staged_bytes_refuse_rival_before_guard(self) -> None:
+        for relative in (".aide/install/aide-lite-pack-v0.repair-intent.json", ".aide/prompts/compact-task.md"):
+            with self.subTest(relative=relative), tempfile.TemporaryDirectory() as raw:
+                target = Path(raw) / relative
+                target.parent.mkdir(parents=True)
+                original_verified = aide_lite.portable_import_verified_leaf
+                attempted = False
+
+                def rival_before_guard(path: Path, expected: str, *, writable: bool = False) -> tuple[object, object]:
+                    nonlocal attempted
+                    if writable and not attempted:
+                        attempted = True
+                        path.write_bytes(b"rival bytes")
+                    return original_verified(path, expected, writable=writable)
+
+                with mock.patch.object(aide_lite, "portable_import_verified_leaf", side_effect=rival_before_guard):
+                    with self.assertRaises(RuntimeError):
+                        aide_lite.portable_import_write_exact(Path(raw), relative, b"expected bytes", "missing")
+                self.assertTrue(attempted)
+                self.assertFalse(target.exists())
+                stages = list(target.parent.glob(f".{target.name}.*.tmp"))
+                self.assertEqual(len(stages), 1)
+                self.assertEqual(stages[0].read_bytes(), b"rival bytes")
+
+    @unittest.skipUnless(sys.platform == "win32", "requires Windows guarded staging")
+    def test_import_staged_bytes_deny_rival_writer(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            target_root = Path(raw) / "target"
+            target_root.mkdir()
+            target = target_root / "managed.txt"
+            original_link = aide_lite.windows_link_from_handle
+            attempted = False
+
+            def rival_before_publication(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+                nonlocal attempted
+                stage = list(target.parent.glob(f".{target.name}.*.tmp"))
+                self.assertEqual(len(stage), 1)
+                attempted = True
+                with self.assertRaises(OSError):
+                    stage[0].write_bytes(b"rival bytes")
+                original_link(descriptor, directory_handle, leaf_name)
+
+            with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=rival_before_publication):
+                aide_lite.portable_import_write_exact(target_root, "managed.txt", b"expected bytes", "missing")
+            self.assertTrue(attempted)
+            self.assertEqual(target.read_bytes(), b"expected bytes")
+            self.assertEqual(list(target.parent.iterdir()), [target])
+
+    @unittest.skipUnless(sys.platform == "win32", "requires Windows no-replace publication")
+    def test_import_update_preserves_preimage_backup_when_rival_wins_publish_gap(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            target_root = root / "target"
+            target = target_root / ".aide" / "prompts" / "compact-task.md"
+            target.parent.mkdir(parents=True)
+            original = b"# Previously managed content\n"
+            competing = b"# Concurrent project edit\n"
+            target.write_bytes(original)
+            backup_rel = ".aide/prompts/.compact-task.md.aide-import-backup-test"
+            backup = target_root / backup_rel
+            original_link = aide_lite.windows_link_from_handle
+            attempted = False
+
+            def rival_at_publication(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+                nonlocal attempted
+                if leaf_name == target.name and not attempted:
+                    attempted = True
+                    self.assertFalse(target.exists(), "the verified old leaf must be held under its backup")
+                    target.write_bytes(competing)
+                original_link(descriptor, directory_handle, leaf_name)
+
+            with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=rival_at_publication):
+                with self.assertRaises((OSError, RuntimeError)):
+                    aide_lite.portable_import_write_exact(
+                        target_root,
+                        ".aide/prompts/compact-task.md",
+                        b"# Incoming managed content\n",
+                        aide_lite.digest_bytes(original),
+                        backup_rel,
+                    )
+            self.assertTrue(attempted)
+            self.assertEqual(target.read_bytes(), competing)
+            self.assertEqual(backup.read_bytes(), original)
+
+    @unittest.skipUnless(sys.platform == "win32", "requires Windows no-replace publication")
+    def test_import_recovery_reports_backup_and_refuses_rival_replay(self) -> None:
+        source_root = self.make_source_repo()
+        source_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "backup-gap-v1")
+        target_root = source_root.parent / "backup-gap-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target_root)["status"], "APPLIED")
+        target = target_root / source_rel
+        original = target.read_bytes()
+        competing = b"# Concurrent project edit during publish\n"
+        aide_lite.write_text(source_root / source_rel, "# Incoming managed content\n")
+        pack_v2 = self.freeze_pack(source_root, "backup-gap-v2")
+        original_link = aide_lite.windows_link_from_handle
+        attempted = False
+
+        def rival_at_publication(descriptor: int, directory_handle: int, leaf_name: str) -> None:
+            nonlocal attempted
+            if leaf_name == target.name and not attempted:
+                attempted = True
+                self.assertFalse(target.exists())
+                target.write_bytes(competing)
+            original_link(descriptor, directory_handle, leaf_name)
+
+        with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=rival_at_publication):
+            result = aide_lite.apply_import_pack(pack_v2, target_root)
+        self.assertTrue(attempted)
+        self.assertEqual(result["status"], "INTERRUPTED")
+        self.assertEqual(result["recovery"]["classification"], "unknown")
+        intent = aide_lite.load_portable_import_intent(target_root)
+        self.assertIsNotNone(intent)
+        item = next(item for item in intent["operations"] if item["target"] == source_rel)
+        backup_rel = item["backup_rel"]
+        self.assertIn(backup_rel, result["recovery"]["outstanding_backups"])
+        self.assertEqual((target_root / backup_rel).read_bytes(), original)
+        self.assertEqual(target.read_bytes(), competing)
+        resumed = aide_lite.apply_import_pack(pack_v2, target_root)
+        self.assertEqual(resumed["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(resumed["recovery"]["classification"], "unknown")
+        self.assertEqual(target.read_bytes(), competing)
+        self.assertEqual((target_root / backup_rel).read_bytes(), original)
+
+    def test_import_receipt_only_transition_uses_an_intent(self) -> None:
+        source_root = self.make_source_repo()
+        pack_v1 = self.freeze_pack(source_root, "receipt-only-v1")
+        target_root = source_root.parent / "receipt-only-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target_root)["status"], "APPLIED")
+        pack_v2 = self.freeze_pack(source_root, "receipt-only-v2")
+        self.set_manifest_scalars(pack_v2, {"source_commit": "a" * 40})
+        self.assertTrue(aide_lite.validate_pack_checksums(pack_v2)[0])
+        preview = aide_lite.apply_import_pack(pack_v2, target_root, dry_run=True)
+        self.assertFalse(any(item["preimage_digest"] != item["postimage_digest"] for item in preview["operations"] if item["action"] != "conflict"))
+        original_write = aide_lite.portable_import_write_exact
+        saw_intent = False
+
+        def observe_receipt_write(root: Path, rel: str, data: bytes, expected: str, backup_rel: str | None = None) -> aide_lite.WriteResult:
+            nonlocal saw_intent
+            if rel == aide_lite.PORTABLE_IMPORT_RECEIPT_PATH:
+                saw_intent = (target_root / aide_lite.PORTABLE_IMPORT_INTENT_PATH).is_file()
+            return original_write(root, rel, data, expected, backup_rel)
+
+        if sys.platform == "win32":
+            with mock.patch.object(aide_lite, "portable_import_write_exact", side_effect=observe_receipt_write):
+                result = aide_lite.apply_import_pack(pack_v2, target_root)
+            self.assertTrue(saw_intent)
+        else:
+            result = aide_lite.apply_import_pack(pack_v2, target_root)
+        self.assertEqual(result["status"], "APPLIED")
+        self.assertTrue(result["receipt_written"])
+        self.assertEqual(result["written"], [])
+        self.assertFalse((target_root / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+
+    @unittest.skipUnless(sys.platform == "win32", "requires Windows anchored intent cleanup")
+    def test_import_recovers_after_receipt_commit_before_intent_cleanup(self) -> None:
+        source_root = self.make_source_repo()
+        source_rel = ".aide/prompts/compact-task.md"
+        pack_v1 = self.freeze_pack(source_root, "receipt-commit-v1")
+        target_root = source_root.parent / "receipt-commit-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target_root)["status"], "APPLIED")
+        aide_lite.write_text(source_root / source_rel, "# Updated managed content\n")
+        pack_v2 = self.freeze_pack(source_root, "receipt-commit-v2")
+        with mock.patch.object(aide_lite, "portable_import_delete_exact", side_effect=OSError("simulated interruption after receipt")):
+            with self.assertRaisesRegex(OSError, "simulated interruption"):
+                aide_lite.apply_import_pack(pack_v2, target_root)
+        intent_path = target_root / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+        self.assertTrue(intent_path.is_file())
+        receipt_before = (target_root / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
+        target_before = (target_root / source_rel).read_bytes()
+        recovered = aide_lite.apply_import_pack(pack_v2, target_root)
+        self.assertEqual(recovered["status"], "RECOVERED")
+        self.assertFalse(intent_path.exists())
+        self.assertEqual((target_root / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+        self.assertEqual((target_root / source_rel).read_bytes(), target_before)
+
+    @unittest.skipUnless(sys.platform == "win32", "requires Windows junction and pinned handles")
+    def test_import_receipt_does_not_follow_a_swapped_parent(self) -> None:
+        source_root = self.make_source_repo()
+        pack_v1 = self.freeze_pack(source_root, "receipt-parent-v1")
+        target_root = source_root.parent / "receipt-parent-target"
+        self.assertEqual(aide_lite.apply_import_pack(pack_v1, target_root)["status"], "APPLIED")
+        pack_v2 = self.freeze_pack(source_root, "receipt-parent-v2")
+        self.set_manifest_scalars(pack_v2, {"source_commit": "b" * 40})
+        parent = target_root / ".aide" / "install"
+        parked = target_root / ".aide" / "install-parked"
+        outside = source_root.parent / "receipt-parent-outside"
+        outside.mkdir()
+        original_mkstemp = tempfile.mkstemp
+        attempted = False
+
+        def swap_before_receipt_staging(*args: object, **kwargs: object) -> tuple[int, str]:
+            nonlocal attempted
+            if Path(str(kwargs.get("dir"))) == parent and str(kwargs.get("prefix", "")).startswith(".aide-lite-pack-v0.receipt.json.") and not attempted:
+                attempted = True
+                try:
+                    parent.rename(parked)
+                except PermissionError:
+                    pass
+                else:
+                    junction = subprocess.run(["cmd", "/c", "mklink", "/J", str(parent), str(outside)], capture_output=True, text=True, encoding="utf-8")
+                    self.assertEqual(junction.returncode, 0, junction.stderr)
+            return original_mkstemp(*args, **kwargs)
+
+        try:
+            with mock.patch.object(aide_lite.tempfile, "mkstemp", side_effect=swap_before_receipt_staging):
+                try:
+                    aide_lite.apply_import_pack(pack_v2, target_root)
+                except (OSError, RuntimeError, ValueError):
+                    pass
+            outside_entries = list(outside.iterdir())
+        finally:
+            if parent.is_symlink():
+                parent.unlink()
+            elif getattr(parent, "is_junction", lambda: False)():
+                parent.rmdir()
+            if parked.exists():
+                parked.rename(parent)
+        self.assertTrue(attempted)
+        self.assertEqual(outside_entries, [], "import wrote a receipt through a swapped parent")
+
+    def test_import_intent_does_not_follow_a_swapped_parent(self) -> None:
+        source_root = self.make_source_repo()
+        pack = self.freeze_pack(source_root, "intent-parent-pack")
+        target_root = source_root.parent / "intent-parent-target"
+        parent = target_root / ".aide" / "install"
+        parent.mkdir(parents=True)
+        parked = target_root / ".aide" / "install-parked"
+        outside = source_root.parent / "intent-parent-outside"
+        outside.mkdir()
+        original_mkstemp = tempfile.mkstemp
+        attempted = False
+
+        def swap_before_intent_staging(*args: object, **kwargs: object) -> tuple[int, str]:
+            nonlocal attempted
+            if Path(str(kwargs.get("dir"))) == parent and not attempted:
+                attempted = True
+                try:
+                    parent.rename(parked)
+                except PermissionError:
+                    pass
+                else:
+                    if sys.platform == "win32":
+                        junction = subprocess.run(
+                            ["cmd", "/c", "mklink", "/J", str(parent), str(outside)],
+                            capture_output=True,
+                            text=True,
+                            encoding="utf-8",
+                        )
+                        self.assertEqual(junction.returncode, 0, junction.stderr)
+                    else:
+                        parent.symlink_to(outside, target_is_directory=True)
+            return original_mkstemp(*args, **kwargs)
+
+        try:
+            with mock.patch.object(aide_lite.tempfile, "mkstemp", side_effect=swap_before_intent_staging):
+                try:
+                    aide_lite.apply_import_pack(pack, target_root)
+                except (OSError, RuntimeError, ValueError):
+                    pass
+            outside_entries = list(outside.iterdir())
+        finally:
+            if parent.is_symlink():
+                parent.unlink()
+            elif getattr(parent, "is_junction", lambda: False)():
+                parent.rmdir()
+            if parked.exists():
+                parked.rename(parent)
+
+        self.assertTrue(attempted, "the importer must exercise the intent staging boundary")
+        self.assertEqual(outside_entries, [], "import wrote an intent through a swapped parent")
 
     def test_removal_plan_requires_an_exact_valid_receipt(self) -> None:
         source_root = self.make_source_repo()
