@@ -1,11 +1,11 @@
 {
   "artifact_hashes": {
-    ".aide/release/dist/CHANGELOG.preview.md": "24a6f5a2c48fc2d64c9096cbbfb271e12b5c6e0876c32c19ca4f3c9f22747797",
-    ".aide/release/dist/RELEASE_NOTES.preview.md": "05ccee6aa7db25166c63d201b09c2676d3b583e4f596f094ee03761433c7211c",
+    ".aide/release/dist/CHANGELOG.preview.md": "acaee39b96e756689bb117c598e5c44fcc72d4187a963088e63ad4561a36999c",
+    ".aide/release/dist/RELEASE_NOTES.preview.md": "2edeaa4c5709880c91388fd98364c86b7c57e0da128fb83c82e7582d7bcc9ce9",
     ".aide/release/dist/aide-lite-pack-v0.tar.gz": "4dd239edd4d52ab25bb4b41cb0eb9b756710894e5f4d0400defd9305d255606c",
     ".aide/release/dist/aide-lite-pack-v0.zip": "956b59a76d7d8d42cbeb83d776beab7cf096c4ff964314f4252e1e0531f4b4fd",
-    ".aide/release/dist/install.md": "1ac57d7c8ba8f07355c67c5a24b89a44c44274c563aaeb157d3c015cece2d350",
-    ".aide/release/dist/manifest.yaml": "7bca7ebc8e943147e92823f3ef659ec8ce44e1309d570e3442aff0f3cd83d1b2"
+    ".aide/release/dist/install.md": "7ce5608e0799b87bb94174be437f64c8ccd6203eeb94e3bfc6f098d852050226",
+    ".aide/release/dist/manifest.yaml": "72c47dbc06b37e2caecfd1d3919962275b559ab5be1e3173b2eda02c76375ced"
   },
   "bundle_id": "aide-lite-pack-v0-7624d9f4b54207a3",
   "dirty_state": false,

@@ -20,19 +20,19 @@
 ## Release Notes Preview
 - # AIDE Release Notes Preview
 - This is a deterministic preview only. It does not publish a release.
-- source_range: HEAD latest 50 commits
+- source_range: HEAD~1..HEAD
 - source_head: 7624d9f4b54207a33ad3ed0ba434143a1fda9398
 - preview_only: true
 - ## Highlights
-- - Added: exact historical message dispositions to the dev source ancestry. (e40aec47dd2d)
-- - Added: restore a missing receipt-owned file from the exact delivered pack. (49f38d12f425)
+- - No release highlights were extracted from structured changelog entries.
+- ## Validation Summary
 
 ## Changelog Preview
 - # AIDE Changelog Preview
 - This file is generated from local Git history and is a preview only.
-- source_range: HEAD latest 50 commits
+- source_range: HEAD~1..HEAD
 - source_head: 7624d9f4b54207a33ad3ed0ba434143a1fda9398
-- commit_count: 50
+- commit_count: 1
 - malformed_count: 0
 - preview_only: true
 - release_publishing: false
@@ -49,21 +49,21 @@
 | --- | --- | --- | ---: | --- | --- |
 | 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 1009337 | `956b59a76d7d8d42...` | true |
 | 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 680660 | `4dd239edd4d52ab2...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `168c7364d78f7bf2...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `1b0d070d8251b4e8...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1406 | `7bca7ebc8e943147...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 1325 | `1ac57d7c8ba8f073...` | true |
-| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 7483 | `24a6f5a2c48fc2d6...` | true |
-| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 4233 | `05ccee6aa7db2516...` | true |
-| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3814 | `ac3218cb9d04de92...` | false |
-| 10 | `.aide/release/dist/release-validation.md` | validation_report | 222 | `37b6d4e4c7f51060...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `de378b0a64a4c1d7...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4080 | `89cb21195c3bdfc0...` | false |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `b5fc4a9a889aaacb...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `f60269f7f69e21fc...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1404 | `72c47dbc06b37e2c...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 1341 | `7ce5608e0799b87b...` | true |
+| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 577 | `acaee39b96e75668...` | true |
+| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 863 | `2edeaa4c5709880c...` | true |
+| 9 | `.aide/release/dist/release-validation.json` | validation_report | 3846 | `a457b73f186db89c...` | false |
+| 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `888bd9f028357fec...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4078 | `2c25b33abab6d71c...` | false |
 
 ## Validation Summary
 
 - release validate: PASS
-- pack-status: PASS
+- pack-status: PASS_SOURCE_ANCESTOR
 - fixture extraction: PASS
 - checksum validation: PASS
 

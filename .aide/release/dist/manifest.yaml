@@ -19,16 +19,16 @@ artifacts:
     publish_candidate: false
   - path: .aide/release/dist/install.md
     kind: install_notes
-    sha256: 1ac57d7c8ba8f07355c67c5a24b89a44c44274c563aaeb157d3c015cece2d350
-    size_bytes: 1325
+    sha256: 7ce5608e0799b87bb94174be437f64c8ccd6203eeb94e3bfc6f098d852050226
+    size_bytes: 1341
     publish_candidate: false
   - path: .aide/release/dist/CHANGELOG.preview.md
     kind: changelog_preview_copy
-    sha256: 24a6f5a2c48fc2d64c9096cbbfb271e12b5c6e0876c32c19ca4f3c9f22747797
-    size_bytes: 7483
+    sha256: acaee39b96e756689bb117c598e5c44fcc72d4187a963088e63ad4561a36999c
+    size_bytes: 577
     publish_candidate: false
   - path: .aide/release/dist/RELEASE_NOTES.preview.md
     kind: release_notes_preview_copy
-    sha256: 05ccee6aa7db25166c63d201b09c2676d3b583e4f596f094ee03761433c7211c
-    size_bytes: 4233
+    sha256: 2edeaa4c5709880c91388fd98364c86b7c57e0da128fb83c82e7582d7bcc9ce9
+    size_bytes: 863
     publish_candidate: false

@@ -35,7 +35,7 @@
       "path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
       "publish_candidate": true,
       "required": true,
-      "sha256": "168c7364d78f7bf2b42c1ab8f1afe5636a8dfcfa00fb4e77ca296036ff3c6adc",
+      "sha256": "b5fc4a9a889aaacb6662853484b0e2e35cbcaa3d740f74949607005e8da9fb83",
       "size_bytes": 1132,
       "upload_order": 3,
       "validation_status": "present"
@@ -48,7 +48,7 @@
       "path": ".aide/release/dist/SHA256SUMS.txt",
       "publish_candidate": true,
       "required": true,
-      "sha256": "1b0d070d8251b4e8bf175750fca14a9fbf34786711cd25ed4e9de83080929156",
+      "sha256": "f60269f7f69e21fcee5e047c579d4da5b11189720e4c9f1ae6510184ed6e0437",
       "size_bytes": 604,
       "upload_order": 4,
       "validation_status": "present"
@@ -61,8 +61,8 @@
       "path": ".aide/release/dist/manifest.yaml",
       "publish_candidate": true,
       "required": true,
-      "sha256": "7bca7ebc8e943147e92823f3ef659ec8ce44e1309d570e3442aff0f3cd83d1b2",
-      "size_bytes": 1406,
+      "sha256": "72c47dbc06b37e2caecfd1d3919962275b559ab5be1e3173b2eda02c76375ced",
+      "size_bytes": 1404,
       "upload_order": 5,
       "validation_status": "present"
     },
@@ -74,8 +74,8 @@
       "path": ".aide/release/dist/install.md",
       "publish_candidate": true,
       "required": true,
-      "sha256": "1ac57d7c8ba8f07355c67c5a24b89a44c44274c563aaeb157d3c015cece2d350",
-      "size_bytes": 1325,
+      "sha256": "7ce5608e0799b87bb94174be437f64c8ccd6203eeb94e3bfc6f098d852050226",
+      "size_bytes": 1341,
       "upload_order": 6,
       "validation_status": "present"
     },
@@ -87,8 +87,8 @@
       "path": ".aide/release/dist/CHANGELOG.preview.md",
       "publish_candidate": true,
       "required": true,
-      "sha256": "24a6f5a2c48fc2d64c9096cbbfb271e12b5c6e0876c32c19ca4f3c9f22747797",
-      "size_bytes": 7483,
+      "sha256": "acaee39b96e756689bb117c598e5c44fcc72d4187a963088e63ad4561a36999c",
+      "size_bytes": 577,
       "upload_order": 7,
       "validation_status": "present"
     },
@@ -100,8 +100,8 @@
       "path": ".aide/release/dist/RELEASE_NOTES.preview.md",
       "publish_candidate": true,
       "required": true,
-      "sha256": "05ccee6aa7db25166c63d201b09c2676d3b583e4f596f094ee03761433c7211c",
-      "size_bytes": 4233,
+      "sha256": "2edeaa4c5709880c91388fd98364c86b7c57e0da128fb83c82e7582d7bcc9ce9",
+      "size_bytes": 863,
       "upload_order": 8,
       "validation_status": "present"
     },
@@ -113,8 +113,8 @@
       "path": ".aide/release/dist/release-validation.json",
       "publish_candidate": true,
       "required": false,
-      "sha256": "ac3218cb9d04de920b9ea15a7cfce686483d252103cd023abd6014ee9225fde3",
-      "size_bytes": 3814,
+      "sha256": "a457b73f186db89c3fe444ba17864cfef2e0662ce5c12d808652cc24ed43ffd7",
+      "size_bytes": 3846,
       "upload_order": 9,
       "validation_status": "present"
     },
@@ -126,8 +126,8 @@
       "path": ".aide/release/dist/release-validation.md",
       "publish_candidate": true,
       "required": false,
-      "sha256": "37b6d4e4c7f5106030cac8829decd81fed05f89641c70f5b87efdac0c363932c",
-      "size_bytes": 222,
+      "sha256": "aa0c336c3c2c0ded2747876f3517034f31dafd8f2a0f077274e0eb89ad649182",
+      "size_bytes": 238,
       "upload_order": 10,
       "validation_status": "present"
     },
@@ -139,7 +139,7 @@
       "path": ".aide/release/dist/release-provenance.json",
       "publish_candidate": true,
       "required": false,
-      "sha256": "de378b0a64a4c1d7e958d272eff439be6b5d0f4ecb9ec894ca942a88a3e3b73d",
+      "sha256": "888bd9f028357fecf3eba911156d3ebe5d9108495e43ad1e7f817d7bcf9db9b7",
       "size_bytes": 1448,
       "upload_order": 11,
       "validation_status": "present"
@@ -152,8 +152,8 @@
       "path": ".aide/release/dist/release-assets.json",
       "publish_candidate": true,
       "required": false,
-      "sha256": "89cb21195c3bdfc0d6e2e9ceb3a89e8c8675b5e86a2a2122eb82d76fa70eb8c9",
-      "size_bytes": 4080,
+      "sha256": "2c25b33abab6d71c5117eab67ae82768e930862e3df4a401c588eb9fa6571322",
+      "size_bytes": 4078,
       "upload_order": 12,
       "validation_status": "present"
     }
