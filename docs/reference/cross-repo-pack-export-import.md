@@ -103,6 +103,11 @@ postimage before continuing. It refuses changed, linked, or unsafe files and
 keeps the intent for inspection. Older intents without a full plan snapshot
 also require manual reconciliation. Recovery never takes a new update plan or
 infers the reason for a project edit.
+Final Windows publication holds existing controls and resolution files against
+write or replacement. If controls are absent, a temporary exclusive filename
+reservation prevents creation until intent retirement; Windows removes that
+reservation on handle close or process exit. It does not create lasting
+project customization metadata.
 
 ## Purpose
 

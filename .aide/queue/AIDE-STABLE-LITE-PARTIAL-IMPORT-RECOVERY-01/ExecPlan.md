@@ -52,7 +52,7 @@ The first red test raised `TypeError` for the absent explicit recovery option.
 Focused Windows cases now pass for fresh and predecessor updates, a repeated
 interruption, wrong identities and mode, changed controls, rival edits, linked
 postimages, old intents, and changed manual resolution bytes. The full importer
-suite remains running; its result is not yet claimed. Source review and
+suite was stopped on the rejected source; no passing result is claimed. Source review and
 delivered-byte qualification remain pending.
 
 Independent source review of frozen `547ea2b0` returned `REQUEST_CHANGES`:
@@ -64,3 +64,12 @@ operation coverage, action/ownership legality against the receipt/predecessor,
 and controls/resolution inputs after receipt publication before retiring the
 intent. Both reproduced defects and omitted-payload forgery now have passing
 Windows regressions; full suite and independent rereview remain open.
+
+Rereview rejected `052a0a92` because inputs could still change at intent
+retirement. The next repair holds controls/resolution inputs through receipt
+publication and intent deletion. An absent controls name is reserved with
+CREATE_NEW and DELETE_ON_CLOSE; it cannot replace a project file and Windows
+cleans it after abrupt process exit. Tests passed for a second-process writer,
+process-exit cleanup, controls writes at both final boundaries, pinned manual
+resolution at retirement, and the existing fresh/update recovery case. The
+full suite on `052a0a92` was stopped; exact rereview precedes its replacement.

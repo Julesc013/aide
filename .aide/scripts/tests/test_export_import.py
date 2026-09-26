@@ -1264,10 +1264,22 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(refused["status"], "RECOVERY_REQUIRED")
         self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
         merged.write_bytes(b"project and upstream\n")
-        recovered = aide_lite.apply_import_pack(pack_v2, target,
-            predecessor_pack=pack_v1, resolutions=resolution,
-            expected_plan_digest=preview["plan_digest"], recover_partial=True)
+        original_delete = aide_lite.portable_import_delete_exact
+        resolution_blocked = False
+        def change_resolution_at_retirement(*args: object, **kwargs: object) -> None:
+            nonlocal resolution_blocked
+            try:
+                merged.write_bytes(b"changed during retirement\n")
+            except OSError:
+                resolution_blocked = True
+            original_delete(*args, **kwargs)
+        with mock.patch.object(aide_lite, "portable_import_delete_exact", side_effect=change_resolution_at_retirement):
+            recovered = aide_lite.apply_import_pack(pack_v2, target,
+                predecessor_pack=pack_v1, resolutions=resolution,
+                expected_plan_digest=preview["plan_digest"], recover_partial=True)
         self.assertEqual(recovered["status"], "RECOVERED")
+        self.assertTrue(resolution_blocked)
+        self.assertEqual(merged.read_bytes(), b"project and upstream\n")
         self.assertEqual((target / resolved_rel).read_bytes(), b"project and upstream\n")
         self.assertEqual((target / other_rel).read_text(encoding="utf-8"), "version: other-edit\n")
 
@@ -1314,36 +1326,74 @@ class ExportImportTests(unittest.TestCase):
         self.assertTrue(intent_path.exists())
 
     @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
-    def test_partial_recovery_retains_intent_when_controls_change_during_receipt_write(self) -> None:
+    def test_partial_recovery_blocks_controls_change_during_publication_and_retirement(self) -> None:
         source_root = self.make_source_repo()
         pack = self.freeze_pack(source_root, "partial-controls-race")
-        target = source_root.parent / "partial-controls-race-target"
-        interrupted = aide_lite.apply_import_pack(pack, target, fail_after_writes=1)
-        self.assertEqual(interrupted["recovery"]["classification"], "partial")
-        controls = target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
-        original_write = aide_lite.portable_import_write_exact
-        inserted = False
+        for boundary in ("receipt", "retirement"):
+            with self.subTest(boundary=boundary):
+                target = source_root.parent / f"partial-controls-{boundary}-target"
+                interrupted = aide_lite.apply_import_pack(pack, target, fail_after_writes=1)
+                self.assertEqual(interrupted["recovery"]["classification"], "partial")
+                controls = target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
+                original_write = aide_lite.portable_import_write_exact
+                original_delete = aide_lite.portable_import_delete_exact
+                attempted = blocked = False
+                def change_controls() -> None:
+                    nonlocal attempted, blocked
+                    attempted = True
+                    try:
+                        aide_lite.write_text(controls, aide_lite.stable_json_text({
+                            "schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA_V2,
+                            "entries": {}, "disabled_features": [],
+                        }))
+                    except OSError:
+                        blocked = True
+                def receipt_write(root: Path, target_rel: str, data: bytes, preimage: str,
+                    backup_rel: str | None = None):
+                    result = original_write(root, target_rel, data, preimage, backup_rel)
+                    if boundary == "receipt" and target_rel == aide_lite.PORTABLE_IMPORT_RECEIPT_PATH:
+                        change_controls()
+                    return result
+                def intent_delete(*args: object, **kwargs: object) -> None:
+                    if boundary == "retirement":
+                        change_controls()
+                    original_delete(*args, **kwargs)
+                with mock.patch.object(aide_lite, "portable_import_write_exact", side_effect=receipt_write), \
+                    mock.patch.object(aide_lite, "portable_import_delete_exact", side_effect=intent_delete):
+                    result = aide_lite.apply_import_pack(pack, target,
+                        expected_plan_digest=interrupted["plan_digest"], recover_partial=True)
+                self.assertTrue(attempted)
+                self.assertTrue(blocked)
+                self.assertEqual(result["status"], "RECOVERED")
+                self.assertFalse((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
+                self.assertFalse(controls.exists())
+                self.assertEqual(aide_lite.load_portable_import_receipt(target)["project_controls_digest"], "missing")
 
-        def insert_controls(root: Path, target_rel: str, data: bytes, preimage: str,
-            backup_rel: str | None = None):
-            nonlocal inserted
-            result = original_write(root, target_rel, data, preimage, backup_rel)
-            if target_rel == aide_lite.PORTABLE_IMPORT_RECEIPT_PATH and not inserted:
-                aide_lite.write_text(controls, aide_lite.stable_json_text({
-                    "schema_version": aide_lite.PROJECT_CUSTOMIZATIONS_SCHEMA_V2,
-                    "entries": {}, "disabled_features": [],
-                }))
-                inserted = True
-            return result
-
-        with mock.patch.object(aide_lite, "portable_import_write_exact", side_effect=insert_controls):
-            result = aide_lite.apply_import_pack(pack, target,
-                expected_plan_digest=interrupted["plan_digest"], recover_partial=True)
-        self.assertTrue(inserted)
-        self.assertEqual(result["status"], "RECOVERY_REQUIRED")
-        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_INTENT_PATH).exists())
-        self.assertNotEqual(aide_lite.load_portable_import_receipt(target)["project_controls_digest"],
-            aide_lite.sha256_file(controls))
+    @unittest.skipUnless(sys.platform == "win32", "Windows missing-controls handle reservation")
+    def test_missing_controls_guard_blocks_writer_and_cleans_after_process_exit(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            target = Path(temporary) / "target"
+            (target / ".aide").mkdir(parents=True)
+            controls = target / aide_lite.PROJECT_CUSTOMIZATIONS_PATH
+            with aide_lite.portable_import_guard_missing_controls(target):
+                rival = subprocess.run([sys.executable, "-I", "-B", "-c",
+                    "import sys; from pathlib import Path; Path(sys.argv[1]).write_bytes(b'rival')",
+                    str(controls)], capture_output=True, text=True, check=False)
+                self.assertNotEqual(rival.returncode, 0)
+            self.assertFalse(controls.exists())
+            child_code = """import importlib.util, sys, os
+from pathlib import Path
+spec = importlib.util.spec_from_file_location('aide_lite', sys.argv[1])
+module = importlib.util.module_from_spec(spec)
+sys.modules['aide_lite'] = module
+spec.loader.exec_module(module)
+with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
+    os._exit(77)
+"""
+            child = subprocess.run([sys.executable, "-I", "-B", "-c", child_code,
+                str(MODULE_PATH), str(target)], capture_output=True, text=True, check=False)
+            self.assertEqual(child.returncode, 77, child.stderr)
+            self.assertFalse(controls.exists())
 
     @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
     def test_redigested_partial_intent_cannot_omit_payload_coverage(self) -> None:

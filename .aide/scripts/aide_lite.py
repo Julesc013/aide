@@ -41933,6 +41933,34 @@ def portable_import_verified_leaf(path: Path, expected_digest: str | None, *, wr
         raise
 
 
+@contextmanager
+def portable_import_guard_missing_controls(target_root: Path):
+    """Reserve an absent project controls name until the import intent retires."""
+    if os.name != "nt":
+        raise ValueError("missing-controls reservation requires Windows")
+    import ctypes
+    from ctypes import wintypes
+
+    path = portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD,
+        wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    with windows_pinned_directory(path.parent):
+        # CREATE_NEW refuses a competing project file. DELETE_ON_CLOSE removes
+        # only this owned reservation, including after process termination.
+        handle = kernel.CreateFileW(str(path), 0x00010000 | 0x80 | 0x2, 0,
+            None, 1, 0x04000000 | 0x00200000 | 0x100 | 0x2, None)
+        if handle == ctypes.c_void_p(-1).value or handle is None:
+            raise ctypes.WinError(ctypes.get_last_error())
+        try:
+            yield
+        finally:
+            kernel.CloseHandle(handle)
+
+
 def portable_import_rename_open_leaf(kernel: object, handle: object, directory_handle: object, name: str) -> None:
     import ctypes
     from ctypes import wintypes
@@ -42384,20 +42412,46 @@ def recover_partial_import(
                 guards.enter_context(windows_pinned_directory(target.parent, for_write=False))
                 kernel, handle = portable_import_verified_leaf(target, postimage, read_only=True)
                 guards.callback(kernel.CloseHandle, handle)
+            controls_path = portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)
+            if not os.path.lexists(controls_path):
+                if controls_digest != "missing" or disabled:
+                    raise RuntimeError("project controls disappeared before publication")
+                guards.enter_context(portable_import_guard_missing_controls(target_root))
+            else:
+                guards.enter_context(windows_pinned_directory(controls_path.parent, for_write=False))
+                captured_controls: list[bytes] = []
+                kernel, handle = portable_import_verified_leaf(controls_path, None,
+                    read_only=True, max_bytes=65536, capture_out=captured_controls)
+                guards.callback(kernel.CloseHandle, handle)
+                raw_controls = b"".join(captured_controls)
+                controls_record = json.loads(raw_controls.decode("utf-8"))
+                if isinstance(controls_record, dict) and controls_record.get("schema_version") == PROJECT_CUSTOMIZATIONS_SCHEMA_V2:
+                    load_project_customizations(target_root, record_override=controls_record)
+                    guarded_disabled = {item["feature_id"]: item.get("rationale", "unknown")
+                        for item in controls_record["disabled_features"]}
+                    guarded_digest = digest_bytes(raw_controls)
+                else:
+                    guarded_disabled, guarded_digest = {}, "missing"
+                    if prior_receipt and prior_receipt.get("disabled_features"):
+                        raise RuntimeError("disabled-feature controls changed before publication")
+                if guarded_disabled != disabled or guarded_digest != controls_digest:
+                    raise RuntimeError("project controls changed before publication")
+            for target_rel, data in resolution_data.items():
+                resolution_path = Path(os.path.abspath(resolutions[target_rel]))
+                guards.enter_context(windows_pinned_directory(resolution_path.parent, for_write=False))
+                kernel, handle = portable_import_verified_leaf(resolution_path, digest_bytes(data),
+                    read_only=True, max_bytes=4 * 1024 * 1024)
+                guards.callback(kernel.CloseHandle, handle)
             receipt_bytes = stable_json_text(next_receipt).encode("utf-8")
             portable_import_write_exact(target_root, PORTABLE_IMPORT_RECEIPT_PATH, receipt_bytes,
                 pending["receipt_preimage_digest"], pending.get("receipt_backup_rel"))
-            inputs_changed = not external_inputs_match()
-            if not inputs_changed:
-                portable_import_delete_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(pending).encode("utf-8"))
-        if inputs_changed:
-            return refused()  # Keep intent when a rival changed inputs during receipt publication.
+            portable_import_delete_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(pending).encode("utf-8"))
         return {"status": "RECOVERED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root),
             "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations,
             "written": sorted(written), "plan_digest": expected_plan_digest,
             "receipt": PORTABLE_IMPORT_RECEIPT_PATH, "receipt_written": True,
             "project_controls_digest": controls_digest}
-    except (KeyError, TypeError, OSError, RuntimeError, ValueError):
+    except (KeyError, TypeError, OSError, RuntimeError, ValueError, UnicodeDecodeError):
         return refused()
 
 

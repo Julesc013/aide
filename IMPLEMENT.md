@@ -12084,3 +12084,10 @@ Owner review found a final-write race in the first candidate. The repair now pub
   rechecks controls and resolution bytes before intent retirement. Regressions
   now pass for both defects and for omission of an included pack path. Full
   suite, rereview and artifact qualification remain open.
+  Rereview rejected `052a0a92` for a remaining input race at intent retirement.
+  The next source uses verified controls/resolution handles through final
+  publication; missing controls use an exclusive CREATE_NEW, DELETE_ON_CLOSE
+  reservation. A second-process write was denied, abrupt child exit cleaned
+  the reservation, and controls/resolution boundary regressions passed. The
+  full suite on the rejected subject was stopped; new exact review remains
+  required before running the full suite and projecting archives.
