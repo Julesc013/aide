@@ -12164,3 +12164,12 @@ ACCEPT_WITH_NOTES after frozen AST, all declared code hashes and actual raw-log
 verification. Source acceptance and the precommit-context limitation are recorded
 without relabeling tests as a clean HEAD run. The subsequent closeout is evidence
 only; task-ref preservation is owner delegated. Dev/main and release stay unchanged.
+
+Resource continuation retired two exact prior ZIP expansions from completed
+customization consumers. The read-only bounded proof checked frozen Git custody,
+every archive member and the complete ordinary directory inventory. Native
+removal rechecked aliases, nested repositories, containment, inactivity and
+retained archives. 1,662 duplicate files (6,882,832 logical bytes) were removed;
+both ZIPs, target/failure fixtures and records remain. Compact effect and prior
+remote-checkpoint receipts are canonical task evidence. Unknown consumers and
+permanent placement remain unresolved; no product source or bulk job changed.

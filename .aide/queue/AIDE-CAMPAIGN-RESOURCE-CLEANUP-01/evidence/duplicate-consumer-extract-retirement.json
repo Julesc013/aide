@@ -1,0 +1,59 @@
+{
+  "at": "2026-09-26T15:32:49.5234920+10:00",
+  "workunit": "AIDE-CAMPAIGN-RESOURCE-CLEANUP-01",
+  "authority": "Owner explicit resource cleanup delegation",
+  "verification_script_sha256": "2efabcf14cbed4915478c99753944332ccfeb4caae41af366dde9ed83d8f92dc",
+  "d_free_before": 73082650624,
+  "d_free_after": 73091637248,
+  "observed_net_change": 8986624,
+  "logical_bytes_removed": 6882832.0,
+  "concurrent_activity_limit": "Net free-space change is observed, not an allocated-byte attribution",
+  "effects": [
+    {
+      "proof": {
+        "eligible": true,
+        "root": "D:\\Projects\\AIDE\\_review_scratch\\customization-consumer-cc34021a8351\\old-extract",
+        "retained_archive": "D:\\Projects\\AIDE\\_review_scratch\\customization-consumer-cc34021a8351\\prior.zip",
+        "archive_sha256": "4b9e458fe4a3c5f67f862de9c443ea195f74df7dd0bd2d0b69a4406562fdb5d8",
+        "owner_receipt": "D:\\Projects\\AIDE\\_review_scratch\\customization-consumer-cc34021a8351\\receipt.json",
+        "files": 831,
+        "logical_bytes": 3441416,
+        "custody_source": "260139d2d10804b66960f8a33e88f55bc5d246f4",
+        "custody_path": ".aide/queue/AIDE-DELIVERED-PACK-CUSTOMIZATION-01/evidence/extracted-consumer-receipt.json",
+        "custody_sha256": "efebc84a09a12ea0cd68d88744f87d8e0aa852924799d09767fc98e8755acc63",
+        "directories": 235,
+        "root_identity": [
+          3781016413010784355,
+          844424933343685
+        ],
+        "manifest_sha256": "15105de09ca28168f5726ba383a9a62e29af1b44213fda37c657b5dc02a3052a"
+      },
+      "action": "remove exact ZIP duplicate expansion; retain original ZIP, custody and sibling unique fixtures",
+      "result": "removed",
+      "retained_zip_unchanged": true
+    },
+    {
+      "proof": {
+        "eligible": true,
+        "root": "D:\\Projects\\AIDE\\_review_scratch\\customization-consumer-fcb30471c2f8\\old-extract",
+        "retained_archive": "D:\\Projects\\AIDE\\_review_scratch\\customization-consumer-fcb30471c2f8\\prior.zip",
+        "archive_sha256": "4b9e458fe4a3c5f67f862de9c443ea195f74df7dd0bd2d0b69a4406562fdb5d8",
+        "owner_receipt": "D:\\Projects\\AIDE\\_review_scratch\\customization-consumer-fcb30471c2f8\\receipt.json",
+        "files": 831,
+        "logical_bytes": 3441416,
+        "custody_source": "260139d2d10804b66960f8a33e88f55bc5d246f4",
+        "custody_path": ".aide/queue/AIDE-DELIVERED-PACK-CUSTOMIZATION-01/evidence/extracted-consumer-receipt-final.json",
+        "custody_sha256": "5447a33507ebfd114a56b9cfcf37e6bc27554d89d9a61f8ecb1a8fab715a3c88",
+        "directories": 235,
+        "root_identity": [
+          3781016413010784355,
+          562949956650758
+        ],
+        "manifest_sha256": "15105de09ca28168f5726ba383a9a62e29af1b44213fda37c657b5dc02a3052a"
+      },
+      "action": "remove exact ZIP duplicate expansion; retain original ZIP, custody and sibling unique fixtures",
+      "result": "removed",
+      "retained_zip_unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "at": "2026-09-26T15:24:20.7725037+10:00",
+  "effect_manifest": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\task-ref-effect-260139d2.json",
+  "effect_manifest_sha256": "44a2fc03a612b3b48949d0ecace18089740eedb97ea375b84b42eb334958d011",
+  "push_exit": 0,
+  "observed_remote_refs": [
+    "e88b1c2ee6f3206c628f79908e430a7967e9f58c\trefs/heads/dev",
+    "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3\trefs/heads/main",
+    "260139d2d10804b66960f8a33e88f55bc5d246f4\trefs/heads/task/aide-stable-lite-partial-import-recovery-01"
+  ],
+  "candidate": "260139d2d10804b66960f8a33e88f55bc5d246f4",
+  "tree": "58cae1df63e615507dd3fb1911277bf8aefa5ef0",
+  "local_worktree_clean": true,
+  "permanent_pool": "unresolved; bulk jobs not active",
+  "next_action": "resolve approved permanent placement then admit required full importer/current generator qualification",
+  "current_capacity": {
+    "at": "2026-09-26T15:25:36.7782749+10:00",
+    "volumes": [
+      {
+        "DriveLetter": "D:",
+        "DeviceID": "\\\\?\\Volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\",
+        "FreeSpace": 73414291456
+      },
+      {
+        "DriveLetter": "E:",
+        "DeviceID": "\\\\?\\Volume{e45ec57d-b4ee-4f1f-9760-a1689f2c8fbb}\\",
+        "FreeSpace": 55903629312
+      },
+      {
+        "DriveLetter": "C:",
+        "DeviceID": "\\\\?\\Volume{16af7907-a325-4a4a-a3de-43ef76663b7e}\\",
+        "FreeSpace": 211542900736
+      }
+    ],
+    "memory": {
+      "AvailableBytes": 12982013952,
+      "CommittedBytes": 30641283072,
+      "CommitLimit": 93066825728
+    }
+  }
+}

@@ -28,6 +28,15 @@ No new clone/checkout/bulk extraction/release archive was created for this work.
 
 ## Actual execution and limits
 
+Continuation retired two exact old ZIP expansions after frozen Git custody,
+streamed member hashes, ordinary-path and inactivity checks. Original ZIPs and
+all sibling target/failure fixtures, feedback and reviews remain retained.
+duplicate-consumer-extract-retirement.json records 1,662 files, 6,882,832
+logical bytes, no failures, unchanged retained archives, and observed D free
+73,082,650,624 → 73,091,637,248 bytes. Cumulative known logical removals are
+3,258,721,920 bytes, plus the first unmeasured three checkouts. Unknown-custody
+consumers remain protected. No new bulk pool or job was admitted.
+
 No owner-approved permanent bulk pool was recovered; the precise existing
 location question remains pending. No fallback or machine pool was activated.
 Actual validation used only explicit tiny disposable fixtures under existing

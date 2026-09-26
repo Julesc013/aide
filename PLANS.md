@@ -4053,3 +4053,6 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   bounded owner without rewriting source reports. Permanent bulk placement,
   full importer/current-generator qualification, integration and release remain
   open. See the task's resource-checkpoint.md and exact run/review receipts.
+- Continuation: retired two byte-identical consumer expansions while retaining
+  their committed-custody ZIP originals and unique sibling state. Permanent
+  storage configuration remains absent; no bulk job or fallback was admitted.

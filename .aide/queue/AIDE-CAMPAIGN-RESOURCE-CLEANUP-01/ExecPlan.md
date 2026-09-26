@@ -187,3 +187,26 @@ The receipt's precommit identity is explicit; real context is not a full frozen
 dependency manifest. Retain this limitation for integrated qualification.
 Preserve a separate evidence-only closeout, then normally push only the exact
 task ref and verify it remotely. No source, dev/main or artifact substitution.
+
+Automatic continuation revalidated the missing permanent execution config and
+found no owned running build/test process. Continue safe reclamation separately:
+inspect only old-extract directories of existing customization-consumer fixtures
+whose retained prior.zip SHA matches their existing receipt. Compare every
+ordinary file and directory against that archive with bounded streaming hashes;
+reject aliases, nested repositories, extras or altered bytes. A proven exact
+duplicate may be retired without its retained ZIP, target/failure fixtures,
+feedback, receipt or reviews being removed. Preserve one compact proof/effect
+receipt, recheck inactivity and containment immediately before native deletion,
+and measure net free-space change. No new pool or bulk job is admitted.
+
+Two old-extract roots passed exact archived-member checks: 831 files each,
+retained ZIP digest 4b9e458fe4a3c5f67f862de9c443ea195f74df7dd0bd2d0b69a4406562fdb5d8,
+and their external ownership receipts matched frozen Git custody at 260139d2.
+Native removal rechecked containment, aliases/nested repos, entry/byte counts,
+retained ZIP and observed referring processes. Both roots are absent, originals
+unchanged, no failure. 6,882,832 logical bytes removed; observed D free-space
+change +8,986,624 bytes (concurrent activity prevents exact allocation attribution).
+Other consumers lacking committed custody remain untouched. Read-only proof
+script and compact effect receipt are task-local; they are not a new runner.
+The previously observed remote task ref and capacity receipt are now canonical
+task evidence. Permanent pool remains absent; bulk qualification is still held.
