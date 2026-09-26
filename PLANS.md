@@ -1,5 +1,14 @@
 # AIDE Planning Index
 
+## 2026-09-26 dev synchronization checkpoint
+
+Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4;
+remaining historical evidence is preserved without malformed commit ancestry.
+The release and project rollout plan is in
+[the closeout report](.aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence/repo-release-rollout-report.md).
+This is source/evidence integration only. Main, release assets and deployments
+are unchanged; final qualification remains open and development stays stopped.
+
 ## AIDE-DELIVERED-PACK-CUSTOMIZATION-01: Delivered customization
 
 2026-09-26 follow-up: repair the independently identified predecessor-pack

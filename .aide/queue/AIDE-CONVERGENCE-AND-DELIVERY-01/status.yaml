@@ -31,3 +31,4 @@ notes:
   - Resource source b325deea and focused oracle e87386e5 have independent source acceptance; seven admitted partial-recovery cases pass in 25.090s with scratch retirement. Full importer, real packaging and stable release gates remain open.
   - Frozen f0eabe41 REQUEST_CHANGES is preserved; c6d104f6 repairs predecessor feedback protection and narrows partial recovery wording, with independent ACCEPT_WITH_NOTES, three bounded test passes and 28 parser forms. Source closure is not integration or shipping acceptance.
   - No further dependency-ready source repair is identified in the current critical path; full importer and real generator qualification require the unresolved existing bulk placement. No arbitrary pool or fallback is adopted.
+  - Owner-requested 2026-09-26 dev synchronization integrates reviewed campaign source and preserves historical evidence; this closeout does not resume the Goal or qualify stale release artifacts.

@@ -1,0 +1,1 @@
+Merge the remaining reviewed campaign changes into dev, synchronize local and remote state, and report the next release/project rollout plan. Do not resume implementation, builds, full tests or deployment.

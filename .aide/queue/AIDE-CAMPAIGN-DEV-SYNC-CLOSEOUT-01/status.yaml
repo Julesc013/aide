@@ -1,0 +1,12 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01
+status: passed
+planning_state: source_consolidated_sync_effect_pending_observation
+result: PASS_WITH_RETAINED_GATES
+updated_at: 2026-09-26
+source_integrated: 53be4fc43ab20786de10312d0e5cfaf04e31921a
+effect_review: ACCEPT_WITH_NOTES
+effect_review_sha256: e74d6e976d5cbbb151d0a2c27c926c977a5c7692d0667c23b03f32584c72f932
+final_observation: D:/Projects/AIDE/_recovery/resource-cleanup-20260926/dev-sync-final-observation.json
+implementation_resumed: false
+release_qualified: false

@@ -1,0 +1,37 @@
+chore(git): consolidate dev and record release rollout checkpoint
+
+## Summary
+- Complete AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01 under the latest owner instruction.
+
+## Why
+- Reviewed source and historical evidence should be synchronized without restarting development.
+
+## Changed
+- Fast-forward dev to the reviewed campaign checkpoint and preserve remaining historical evidence.
+- Keep malformed historical commit ancestry on its original ref, with raw failures visible.
+- Record the current repository, finite release critical path and target rollout requirements.
+- Link existing roadmap and planning indexes; retain unfinished qualification and blocked Goal.
+
+## Validation
+- PASS: exact independent dev-effect ACCEPT_WITH_NOTES and clean fast-forward ancestry.
+- PASS: campaign commit range, historical evidence byte identity and staged diff checks.
+- PASS: source/artifact scopes unchanged from the reviewed task checkpoint.
+- NOT RUN: new implementation, full tests, builds, generator, release or project deployment.
+
+## Changelog
+- Internal: Consolidate dev source and preserve the stopped release/rollout checkpoint.
+
+## Risks
+- Current artifacts remain stale previews; source integration is not stable release acceptance.
+- Approved permanent resource pools and final integrated qualification remain open.
+
+## Follow-up
+- Normally sync dev and the existing task checkout/remotes and observe exact refs.
+- Report only; leave the parent Goal blocked and do not start further work.
+
+AIDE-Task: AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01
+AIDE-Phase: owner-requested-dev-sync-report
+AIDE-Result: PASS_WITH_RETAINED_GATES
+AIDE-Scope: reviewed-dev-and-historical-evidence-closeout
+AIDE-Token-Impact: no-full-tests-builds-or-new-workspaces
+AIDE-Quality-Gate: exact-effect-accepted-stable-qualification-open

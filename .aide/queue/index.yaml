@@ -3730,3 +3730,11 @@ items:
     prompt: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/prompt.md
     evidence: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence
     description: Owner-directed contained resource cleanup without deleting unique work or unrelated data.
+  - id: AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01
+    status: passed
+    planning_state: source_consolidated_sync_effect_pending_observation
+    result: PASS_WITH_RETAINED_GATES
+    title: Consolidate source, sync dev and report without resuming delivery
+    task: .aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence

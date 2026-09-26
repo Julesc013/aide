@@ -1,0 +1,29 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01
+title: Consolidate reviewed source, synchronize dev and report remaining delivery
+type: integration_closeout
+status: passed
+planning_state: source_consolidated_sync_effect_pending_observation
+result: PASS_WITH_RETAINED_GATES
+created_at: 2026-09-26
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority: Owner explicitly requested merge, sync, quick plan and report only; do not resume implementation.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/**
+    - .aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/evidence/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - .aide/queue/index.yaml
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  forbidden_operations:
+    - implementation, builds, full tests, packaging, new worktrees or bulk allocations
+    - main promotion, tags, publication, target rollout or goal resumption
+verification:
+  - exact before and candidate identities, clean worktrees and fast-forward ancestry
+  - independent effect acceptance and structured commit checks
+  - byte-identical historical evidence and unchanged reviewed source/artifacts
+  - normal pushes and observed local/remote identities

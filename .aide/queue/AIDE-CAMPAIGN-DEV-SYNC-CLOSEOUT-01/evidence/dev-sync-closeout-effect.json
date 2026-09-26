@@ -1,0 +1,22 @@
+{
+  "workunit": "AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01",
+  "authority": "Owner 2026-09-26 explicit request: merge all changes into dev, sync and report only; do not resume implementation",
+  "before_dev": "e88b1c2ee6f3206c628f79908e430a7967e9f58c",
+  "first_effect": "git merge --ff-only task/aide-stable-lite-partial-import-recovery-01",
+  "candidate": "53be4fc43ab20786de10312d0e5cfaf04e31921a",
+  "tree": "7b772d73328959afb31197f194b8c12b23ed9abe",
+  "additional_evidence": "Preserve the two branch-only historical neutrality documentation commits by integrating their three changed evidence files in a new conforming closeout commit, not merging their known malformed commit into dev ancestry; retain original refs and raw failure facts",
+  "evidence_branch": "916d4928373c9889e8a9dac52a329d5a056669f5",
+  "evidence_paths": [
+    ".aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/evidence/main-promotion-decision.md",
+    ".aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/evidence/packet-publication-result.md",
+    ".aide/queue/AIDE-CODEX-CONFIG-NEUTRALITY-INTEGRATION-01/evidence/remaining-risks.md"
+  ],
+  "second_effect": "Queue-scoped evidence/report commit; structured message precheck; normal origin/dev push and verification",
+  "retained_gates": "No full tests/build/generator, main promotion, tags, publication, project installs, native or hosted activation; generated artifacts remain stale previews",
+  "reviewed_source": "dfc8048b b325deea e87386e5 0302b18c e185d289 c6d104f6 accepted exact subjects with notes",
+  "required_checks": "Clean worktrees and fetched refs, ancestry, native commit range validator, unchanged implementation/artifact bytes after evidence closeout",
+  "main": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+  "goal": "Remain blocked; user requests closeout only",
+  "at": "2026-09-26T22:25:19.1960965+10:00"
+}

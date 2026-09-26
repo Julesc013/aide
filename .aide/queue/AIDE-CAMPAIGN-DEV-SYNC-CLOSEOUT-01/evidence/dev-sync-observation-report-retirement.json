@@ -1,0 +1,27 @@
+{
+  "cause": "Old dev git plan wrote these four derived reports; prior status was clean",
+  "action": "Restore only these positively owned derived writes to HEAD; preserve exact preimages and generated hashes",
+  "paths": [
+    {
+      "path": ".aide/git/aide-dev-main-plan.json",
+      "preimage_blob": "924f1b8ea57e8b5f7f59dea2f60ce62545ac8339",
+      "generated_sha256": "570198c04b0135971e377ca8ba9077bd08d2173d9d7b16b92350680133135e06"
+    },
+    {
+      "path": ".aide/git/aide-dev-main-plan.md",
+      "preimage_blob": "c7196e99616c5c7af595c25cfb7ea47873c5284a",
+      "generated_sha256": "27b95641db0a678fde753107c79206a607b34b4bc1725687cde4f73ebac06174"
+    },
+    {
+      "path": ".aide/git/latest-helper-plan.json",
+      "preimage_blob": "a21f41a960f5dc00fb34ced9290ee692fac26d6f",
+      "generated_sha256": "7bd18be9811718d06702e66d6207fe2c42bba70e9b51020df365b746af18c8cf"
+    },
+    {
+      "path": ".aide/git/latest-helper-plan.md",
+      "preimage_blob": "9d87d075b2571933c2ff88aee8383aaaf6ed552c",
+      "generated_sha256": "5a2e533011bc1dc272f90ac1549356aa714ff6f3f94420c8ba7f4cc2a19f9feb"
+    }
+  ],
+  "at": "2026-09-26T22:26:25.8102895+10:00"
+}
