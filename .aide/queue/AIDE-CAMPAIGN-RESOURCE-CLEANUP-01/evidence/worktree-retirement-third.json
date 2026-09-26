@@ -1,0 +1,238 @@
+{
+  "mode": "apply",
+  "after_free": 70508969984,
+  "before_free": 48433573888,
+  "effects": [
+    {
+      "path": "D:\\Projects\\AIDE\\aide-lifecycle-combined",
+      "head": "d4b67c96ff81eb10aeecd6763b538331844619c9",
+      "branch": "refs/heads/task/aide-delivered-lifecycle-combined-01",
+      "result": "removed_refs_retained",
+      "bytes": 105848935,
+      "files": 11413,
+      "cache_files": 0,
+      "ref_after": "d4b67c96ff81eb10aeecd6763b538331844619c9",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-lifecycle-owned-repair",
+      "head": "cdb3bd04f1ae20f4e58529f7132c376fcbdc48c6",
+      "branch": "refs/heads/task/aide-lifecycle-owned-repair-01",
+      "result": "removed_refs_retained",
+      "bytes": 108432420,
+      "files": 11327,
+      "cache_files": 9,
+      "ref_after": "cdb3bd04f1ae20f4e58529f7132c376fcbdc48c6",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-lifecycle-removal-apply",
+      "head": "fbd9465344f038ea0069fd65673a09bd9106a6a1",
+      "branch": "refs/heads/task/aide-lifecycle-removal-apply-01",
+      "result": "removed_refs_retained",
+      "bytes": 108488556,
+      "files": 11347,
+      "cache_files": 2,
+      "ref_after": "fbd9465344f038ea0069fd65673a09bd9106a6a1",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-lifecycle-rollback-apply",
+      "head": "33824b369b844b1c7a4304844838bcb424806131",
+      "branch": "refs/heads/task/aide-lifecycle-rollback-apply-01",
+      "result": "removed_refs_retained",
+      "bytes": 108634134,
+      "files": 11392,
+      "cache_files": 2,
+      "ref_after": "33824b369b844b1c7a4304844838bcb424806131",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-lifecycle-safe-import",
+      "head": "0dfb2931d32f767db19f5df15f173b6a704be5d3",
+      "branch": "refs/heads/task/aide-lifecycle-safe-import-01",
+      "result": "removed_refs_retained",
+      "bytes": 108479751,
+      "files": 11349,
+      "cache_files": 2,
+      "ref_after": "0dfb2931d32f767db19f5df15f173b6a704be5d3",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-owned-repair-integration",
+      "head": "9a8b08700ef7356ee75b6750f3a53c97a4a56e3e",
+      "branch": "refs/heads/task/aide-owned-repair-dev-integration-01",
+      "result": "removed_refs_retained",
+      "bytes": 108554129,
+      "files": 11357,
+      "cache_files": 2,
+      "ref_after": "9a8b08700ef7356ee75b6750f3a53c97a4a56e3e",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-release-metadata-integrity",
+      "head": "f77ecba287415ebefb24db97b8543d6256963e45",
+      "branch": "refs/heads/task/aide-release-metadata-integrity-01",
+      "result": "removed_refs_retained",
+      "bytes": 107730012,
+      "files": 11220,
+      "cache_files": 1,
+      "ref_after": "f77ecba287415ebefb24db97b8543d6256963e45",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-removal-combined",
+      "head": "2c4c9089a546c04f81db946b3343aa4236ebe406",
+      "branch": "refs/heads/task/aide-removal-combined-01",
+      "result": "removed_refs_retained",
+      "bytes": 109194674,
+      "files": 11403,
+      "cache_files": 11,
+      "ref_after": "2c4c9089a546c04f81db946b3343aa4236ebe406",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-repair-health",
+      "head": "a32535a2675f191ae3515f39501658e91ef41103",
+      "branch": "refs/heads/task/aide-delivered-pack-repair-health-01",
+      "result": "removed_refs_retained",
+      "bytes": 106331836,
+      "files": 11442,
+      "cache_files": 0,
+      "ref_after": "a32535a2675f191ae3515f39501658e91ef41103",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-repair-staging-hardening",
+      "head": "10a16afb681edcdd1907af0f178ccbb294ec17ff",
+      "branch": "refs/heads/task/aide-repair-staging-race-01",
+      "result": "removed_refs_retained",
+      "bytes": 108585270,
+      "files": 11366,
+      "cache_files": 2,
+      "ref_after": "10a16afb681edcdd1907af0f178ccbb294ec17ff",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-safe-import-combined",
+      "head": "515ad6b2c07e398e62675a3b39fbee7260ac08b8",
+      "branch": "refs/heads/task/aide-safe-import-combined-01",
+      "result": "removed_refs_retained",
+      "bytes": 108549770,
+      "files": 11378,
+      "cache_files": 2,
+      "ref_after": "515ad6b2c07e398e62675a3b39fbee7260ac08b8",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-spec-docs-integration",
+      "head": "be3a854abde73dd1d3498a20c240bd0c0a58c28b",
+      "branch": "refs/heads/task/aide-spec-docs-integration-01",
+      "result": "removed_refs_retained",
+      "bytes": 85747878,
+      "files": 10717,
+      "cache_files": 0,
+      "ref_after": "be3a854abde73dd1d3498a20c240bd0c0a58c28b",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-stable-contract-projection",
+      "head": "b3a001befaac2d2d9a596c1d7dc738dd1733bec6",
+      "branch": "refs/heads/task/aide-stable-contract-projection-01",
+      "result": "removed_refs_retained",
+      "bytes": 106428193,
+      "files": 11466,
+      "cache_files": 0,
+      "ref_after": "b3a001befaac2d2d9a596c1d7dc738dd1733bec6",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-stable-lite-current-projection",
+      "head": "493e3f13c1b2e754dd8fb5f533380ba13a7b8979",
+      "branch": "refs/heads/task/aide-stable-lite-current-projection-01",
+      "result": "removed_refs_retained",
+      "bytes": 106578574,
+      "files": 11529,
+      "cache_files": 0,
+      "ref_after": "493e3f13c1b2e754dd8fb5f533380ba13a7b8979",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-stable-lite-draft-truth",
+      "head": "59286688dfcead36f39d2bd9a48c376bc98d7b9f",
+      "branch": "refs/heads/task/aide-stable-lite-draft-truth-01",
+      "result": "removed_refs_retained",
+      "bytes": 106525918,
+      "files": 11514,
+      "cache_files": 0,
+      "ref_after": "59286688dfcead36f39d2bd9a48c376bc98d7b9f",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-stable-lite-evidence-integration",
+      "head": "d292253b09944f28f0fc794fe3a9679966fe56a0",
+      "branch": "refs/heads/task/aide-stable-lite-consumer-evidence-dev-integration-01",
+      "result": "removed_refs_retained",
+      "bytes": 106469962,
+      "files": 11485,
+      "cache_files": 0,
+      "ref_after": "d292253b09944f28f0fc794fe3a9679966fe56a0",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-stable-lite-forced-restart",
+      "head": "e88b1c2ee6f3206c628f79908e430a7967e9f58c",
+      "branch": "refs/heads/task/aide-stable-lite-forced-restart-01",
+      "result": "removed_refs_retained",
+      "bytes": 106593218,
+      "files": 11538,
+      "cache_files": 0,
+      "ref_after": "e88b1c2ee6f3206c628f79908e430a7967e9f58c",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-stable-lite-qualification",
+      "head": "b45010280e5ea9b628f6191ac9f1959c820444cb",
+      "branch": "refs/heads/task/aide-stable-lite-consumer-qualification-01",
+      "result": "removed_refs_retained",
+      "bytes": 106453671,
+      "files": 11476,
+      "cache_files": 0,
+      "ref_after": "b45010280e5ea9b628f6191ac9f1959c820444cb",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-stable-lite-target-queue-next",
+      "head": "75406123ccb06febf34fe9c579a6a1f772b0d6c0",
+      "branch": "refs/heads/task/aide-stable-lite-target-queue-next-01",
+      "result": "removed_refs_retained",
+      "bytes": 106511605,
+      "files": 11505,
+      "cache_files": 0,
+      "ref_after": "75406123ccb06febf34fe9c579a6a1f772b0d6c0",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-stable-lite-task-truth",
+      "head": "04caefe659865f16e5777f6c76293fb1df8510fd",
+      "branch": "refs/heads/task/aide-stable-lite-task-truth-01",
+      "result": "removed_refs_retained",
+      "bytes": 106487747,
+      "files": 11494,
+      "cache_files": 0,
+      "ref_after": "04caefe659865f16e5777f6c76293fb1df8510fd",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-stable-release-contract",
+      "head": "d38e5839fe102fd4b38dc29971877753ccb6e2ec",
+      "branch": "refs/heads/task/aide-stable-release-contract-01",
+      "result": "removed_refs_retained",
+      "bytes": 106383311,
+      "files": 11453,
+      "cache_files": 0,
+      "ref_after": "d38e5839fe102fd4b38dc29971877753ccb6e2ec",
+      "path_absent": true
+    }
+  ]
+}

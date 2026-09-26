@@ -40,3 +40,25 @@ escape/link refusal, crash/cancellation reconciliation, monitor and log limits,
 read-only inspection and normal retirement. After technical review, run the
 pending importer suite with the owner-resolved placement map. Do not regenerate
 portable/release bytes until this coherent source slice is accepted.
+
+## 2026-09-26 review repair checkpoint
+
+Thirty-three inactive checkouts are physically retired; exact branches and
+objects remain reachable. Three checkouts remain: primary dev, the active
+partial-import implementation, and the preserved neutrality integration.
+Third-round receipt retains all 21 removals, 2,233,009,564 logical bytes, and
+observed D free-space change from 48,433,573,888 to 70,508,969,984 bytes.
+Concurrent unrelated disk activity prevents attributing that net change solely
+to AIDE. capacity-after-third.json records a later snapshot for C/D/E and RAM.
+
+Independent review of 5ea1f7cd requested changes: broken scratch junctions were
+misclassified as absent, and source maintainer entrypoints bypassed admission.
+The exact external report is retained in evidence/review-5ea1f7cd.md. Repairs
+use lexical existence, prove actual named-Job membership and bound CLI/source
+inputs before source test/selftest/eval effects. Source packaging remains
+explicitly refused until its canonical output paths have qualified reservations.
+Portable Lite behavior is preserved; the source-only runner tests are excluded
+from export. Seventeen focused Windows tests passed without skips (22.209s).
+Freeze this repaired source, rerun the small affected host checks through the
+bounded runner, and request only the superseding delta review. The permanent
+pool question remains pending; do not adopt a historical dump as its answer.

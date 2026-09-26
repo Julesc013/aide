@@ -6,7 +6,7 @@ QFIX-02 makes AIDE Lite validation boring on purpose. Future agents should not
 need to remember Python `unittest` import rules for a hidden `.aide/` directory
 before they can trust the token-survival substrate.
 
-## Canonical Command
+## Portable Lite command
 
 Run this from the repository root:
 
@@ -31,6 +31,11 @@ py -3 .aide/scripts/aide_lite.py selftest
 Campaign builds, packaging and external unittest processes use the explicit
 maintainer job path. This reuses AIDE's Windows Job process owner; it does not
 activate the autonomous broker or replace the metadata-only TestJob contract.
+In the AIDE source checkout, `test`, `selftest` and `eval run` require this
+admission. The child proves membership in the exact named Windows Job and
+rechecks the source/CLI input manifest. Setting temporary-directory environment
+variables alone cannot satisfy the guard. Portable Lite keeps its existing
+behavior because it does not export the source-only execution owner or tests.
 
 ```powershell
 py -3 .aide/scripts/aide_lite.py job inspect --config <local-config> --manifest <job-json>
@@ -56,6 +61,10 @@ commands are supported. Python temporary creation is pinned to the admitted
 temporary directory; output belongs in `AIDE_JOB_OUTPUT` and caches in the
 provided process-local cache variables. Additional tool adapters require
 qualification of their actual output/cache placement before admission.
+Source `export-pack` and release generation/validation currently refuse even
+inside a job: their canonical repository outputs need an explicitly qualified
+placement/reservation before packaging can resume. This remains required
+campaign work, with the accepted release generator preserved.
 
 Memory, descendant count and combined logs have Windows Job/pipe enforcement.
 Disk capacity and occupancy are monitored thresholds, not filesystem quotas

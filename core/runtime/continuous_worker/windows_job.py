@@ -83,6 +83,8 @@ if os.name == "nt":
     exit_code = bind("GetExitCodeProcess", [W.HANDLE, C.POINTER(W.DWORD)], W.BOOL)
     process_times = bind("GetProcessTimes", [W.HANDLE, C.POINTER(W.FILETIME), C.POINTER(W.FILETIME),
                          C.POINTER(W.FILETIME), C.POINTER(W.FILETIME)], W.BOOL)
+    current_process = bind("GetCurrentProcess", [], W.HANDLE)
+    process_in_job = bind("IsProcessInJob", [W.HANDLE, W.HANDLE, C.POINTER(W.BOOL)], W.BOOL)
 
     def check(ok):
         if not ok:
@@ -128,6 +130,19 @@ class WindowsJobHost:
             if active(job):
                 raise Refused("owned processes still active")
             return {"quiescent": True, "observation": "owned_job_terminated"}
+        finally:
+            close(job)
+
+    def contains_current_process(self, job_id):
+        self._require(job_id)
+        job = open_job(0x0004, False, JOB_PREFIX + job_id)
+        if not job:
+            if C.get_last_error() == 2: return False
+            raise C.WinError(C.get_last_error())
+        try:
+            contained = W.BOOL()
+            check(process_in_job(current_process(), job, C.byref(contained)))
+            return bool(contained.value)
         finally:
             close(job)
 

@@ -68,7 +68,7 @@ def read_json(path):
 
 def write_json(path, value):
     path = Path(path)
-    if path.exists():
+    if os.path.lexists(path):
         ordinary(path)
     temporary = path.with_name(path.name + '.next')
     with temporary.open('x', encoding='utf-8', newline='\n') as stream:
@@ -139,7 +139,7 @@ def estate_lock(control):
     # All admitted campaign workspaces use this one configured control root.
     # OS handle locking survives PID reuse and releases on interpreter death.
     path = control / 'admission.lock'
-    if path.exists():
+    if os.path.lexists(path):
         ordinary(path)
     fd = os.open(path, os.O_CREAT | os.O_RDWR | getattr(os, 'O_NOFOLLOW', 0), 0o600)
     try:
@@ -256,7 +256,7 @@ def inspect(config_path, job=None):
     reservations = admission(config, roots, observed)
     active = roots['control'] / 'active.json'
     return {'config_digest': digest(config), 'capacity': observed, 'reservations': reservations,
-            'active': read_json(active) if active.exists() else None,
+            'active': read_json(active) if os.path.lexists(active) else None,
             'writes': False, 'disk_enforcement': 'reservation_and_monitored_threshold',
             'memory_enforcement': 'Windows_Job_commit_limit', 'log_enforcement': 'bounded_pipe_drain'}
 
@@ -298,7 +298,7 @@ def finish_collected(record, config, roots):
         tree_usage(retained/member, maximum=limits['retained_bytes']+limits['log_bytes'], max_files=limits['max_files'])
         if content_digest(retained/member) != expected: raise WorkspaceRefused('retained content changed')
     root = roots['scratch']/record['job_id']
-    if root.exists():
+    if os.path.lexists(root):
         info = ordinary(root, directory=True)
         if [info.st_dev, info.st_ino] != record['scratch_identity']:
             raise WorkspaceRefused('scratch directory identity changed')
@@ -318,7 +318,7 @@ def finish_collected(record, config, roots):
         for member in ('output', 'logs'):
             if (root/member).exists(): verify_remaining(root/member, retained/member)
         shutil.rmtree(root)
-    record.update(phase='retired', scratch_absent=not root.exists(), reservation_released=True)
+    record.update(phase='retired', scratch_absent=not os.path.lexists(root), reservation_released=True)
     write_json(retained/'receipt.json', record)
     (roots['control']/'active.json').unlink()
     return record
@@ -335,7 +335,7 @@ def collect_and_retire(record, config, roots):
     tree_usage(output, maximum=limits['retained_bytes'], max_files=limits['max_files'])
     retained = roots['retained'] / record['job_id']
     owner = {'job_id': record['job_id'], 'manifest_digest': record['manifest_digest']}
-    if retained.exists():
+    if os.path.lexists(retained):
         ordinary(retained, directory=True)
         if read_json(retained/'owner.json') != owner:
             raise WorkspaceRefused('retention ownership mismatch')
@@ -343,14 +343,14 @@ def collect_and_retire(record, config, roots):
         retained.mkdir(); write_json(retained/'owner.json', owner)
     def collect(source, target):
         ordinary(source, directory=True)
-        if not target.exists(): target.mkdir()
+        if not os.path.lexists(target): target.mkdir()
         ordinary(target, directory=True)
         for entry in source.iterdir():
             if entry.is_dir():
                 collect(entry, target/entry.name)
             else:
                 ordinary(entry); destination = target/entry.name
-                if destination.exists():
+                if os.path.lexists(destination):
                     ordinary(destination)
                     if entry.stat().st_size != destination.stat().st_size or file_digest(entry) != file_digest(destination):
                         raise WorkspaceRefused('conflicting partial collection preserved')
@@ -378,9 +378,9 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
     config, roots, working = load_config(config_path); cwd = validate_job(job, working)
     host = host or WindowsJobHost(); limits = config['limits']; active = roots['control'] / 'active.json'
     with estate_lock(roots['control']):
-        if active.exists():
+        if os.path.lexists(active):
             raise WorkspaceRefused('previous job requires explicit reconciliation')
-        if active.with_name('active.json.next').exists():
+        if os.path.lexists(active.with_name('active.json.next')):
             raise WorkspaceRefused('interrupted admission staging record requires reconciliation')
         before = probe(roots); reservations = admission(config, roots, before)
         job_id = uuid.uuid4().hex; root = roots['scratch'] / job_id
@@ -397,6 +397,8 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
         env = sanitized_environment()
         env.update(TEMP=str(root/'tmp'), TMP=str(root/'tmp'), TMPDIR=str(root/'tmp'),
                    AIDE_JOB_TMP=str(root/'tmp'), AIDE_JOB_OUTPUT=str(root/'output'),
+                   AIDE_RESOURCE_TEST_PARENT=str(root/'tmp'), AIDE_JOB_ID=job_id,
+                   AIDE_JOB_CONTROL=str(roots['control']),
                    XDG_CACHE_HOME=str(root/'cache'), PIP_CACHE_DIR=str(root/'cache'),
                    UV_CACHE_DIR=str(root/'cache'), PYTHONUNBUFFERED='1')
         record['environment_digest'] = digest(env)
@@ -442,7 +444,7 @@ def recover(config_path):
     config, roots, _ = load_config(config_path)
     with estate_lock(roots['control']):
         active = roots['control'] / 'active.json'
-        if not active.exists(): return {'phase': 'no_pending_job', 'writes': False}
+        if not os.path.lexists(active): return {'phase': 'no_pending_job', 'writes': False}
         record = read_json(active)
         if record['config_digest'] != digest(config): raise WorkspaceRefused('recovery config changed')
         if not record.get('collected_manifest'): owned_scratch(record, roots)
@@ -452,9 +454,32 @@ def recover(config_path):
         # file. Once ownership and quiescence are established, discard only
         # that regular single-link staging file; output remains untouched.
         staging = active.with_name('active.json.next')
-        if staging.exists():
+        if os.path.lexists(staging):
             if ordinary(staging).st_size > 1024 * 1024: raise WorkspaceRefused('unexpected checkpoint staging size')
             staging.unlink()
         record['result'] = record.get('result', {'reason': 'controller_interrupted', 'exit_code': None})
         if record.get('collected_manifest'): return finish_collected(record, config, roots)
         return collect_and_retire(record, config, roots)
+
+
+def current_context(working_root):
+    """Source-maintainer admission proof; environment alone cannot grant it."""
+    job_id = os.environ.get('AIDE_JOB_ID', '')
+    if os.name != 'nt' or len(job_id) != 32 or any(c not in '0123456789abcdef' for c in job_id) or not WindowsJobHost().contains_current_process(job_id):
+        raise WorkspaceRefused('source maintainer command requires an admitted Windows Job')
+    control = root_path(os.environ['AIDE_JOB_CONTROL'])
+    record = read_json(control/'active.json')
+    if record['job_id'] != job_id or digest(record['job']) != record['manifest_digest']:
+        raise WorkspaceRefused('managed context identity mismatch')
+    root = root_path(str(working_root))
+    if Path(record['job']['cwd']) != root:
+        raise WorkspaceRefused('managed context working root mismatch')
+    # Check exact declared source/executable/Git identities again at effect entry.
+    validate_job(record['job'], [root])
+    if '.aide/scripts/aide_lite.py' not in record['job']['inputs']:
+        raise WorkspaceRefused('source CLI must be a bound input')
+    task_id = record['job']['workunit']
+    if not isinstance(task_id, str) or not task_id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for c in task_id):
+        raise WorkspaceRefused('bounded WorkUnit identifier required')
+    ordinary(root/'.aide/queue'/task_id/'task.yaml')
+    return record

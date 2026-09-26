@@ -4,8 +4,11 @@ status: running
 planning_state: admitted
 result: PENDING
 updated_at: 2026-09-26
-current_slice: bounded_runner_source_candidate
+current_slice: bounded_runner_review_repairs
 next_slice: exact_source_review_and_affected_bounded_replay
-review_gate: independent_source_review_pending
+review_gate: superseding_exact_source_review_pending
 placement: approved_permanent_pool_unresolved_question_pending
-retired_worktrees: 12
+retired_worktrees: 33
+remaining_worktrees: 3
+focused_tests: 17_passed_no_skips
+packaging: canonical_output_placement_qualification_required

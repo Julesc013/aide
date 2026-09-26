@@ -18,6 +18,13 @@ from core.execution import managed_workspace as workspace
 
 
 class ManagedWorkspaceTests(unittest.TestCase):
+    def lite_module(self):
+        name = 'managed_workspace_aide_lite'
+        if name not in sys.modules:
+            spec = importlib.util.spec_from_file_location(name, REPO/'.aide/scripts/aide_lite.py')
+            lite = importlib.util.module_from_spec(spec); sys.modules[name] = lite; spec.loader.exec_module(lite)
+        return sys.modules[name]
+
     def setUp(self):
         # The bootstrap test command must name an existing bounded parent.
         # Never let tempfile pick a machine-wide fallback for these fixtures.
@@ -99,8 +106,7 @@ class ManagedWorkspaceTests(unittest.TestCase):
         self.assertEqual(snapshot(), before)
 
     def test_git_queries_only_project_reports_when_requested(self):
-        spec = importlib.util.spec_from_file_location('managed_workspace_aide_lite', REPO/'.aide/scripts/aide_lite.py')
-        lite = importlib.util.module_from_spec(spec); sys.modules[spec.name] = lite; spec.loader.exec_module(lite)
+        lite = self.lite_module()
         args = argparse.Namespace(repo_root=REPO, write_reports=False)
         with mock.patch.object(lite, 'write_git_workflow_detection') as detection_writer, \
              mock.patch.object(lite, 'write_aide_dev_main_plan') as aide_writer, \
@@ -116,6 +122,51 @@ class ManagedWorkspaceTests(unittest.TestCase):
             aide_writer.return_value = ({}, *helper_writer.return_value)
             lite.command_git_plan(args)
             helper_writer.assert_called_once(); aide_writer.assert_called_once()
+
+    def test_source_heavy_entrypoints_refuse_outside_owned_job(self):
+        lite = self.lite_module(); args = argparse.Namespace(repo_root=REPO)
+        with mock.patch.object(workspace, 'current_context', side_effect=workspace.WorkspaceRefused('outside job')), \
+             mock.patch.object(lite, 'run_selftest') as selftest, \
+             mock.patch.object(lite, 'build_export_pack') as export, \
+             mock.patch.object(lite, 'build_release_bundle_outputs') as release, \
+             mock.patch.object(lite, 'run_golden_tasks') as golden, mock.patch('builtins.print'):
+            for handler in (lite.command_test, lite.command_selftest, lite.command_export_pack,
+                            lite.command_release_bundle, lite.command_eval_run):
+                self.assertEqual(handler(args), 1)
+            for builder in (selftest, export, release, golden): builder.assert_not_called()
+        with mock.patch.object(workspace, 'current_context', return_value={}), \
+             mock.patch.object(lite, 'build_export_pack') as export, \
+             mock.patch.object(lite, 'build_release_bundle_outputs') as release, mock.patch('builtins.print'):
+            self.assertEqual(lite.command_export_pack(args), 1)
+            self.assertEqual(lite.command_release_bundle(args), 1)
+            export.assert_not_called(); release.assert_not_called()
+
+    def test_portable_compatibility_and_source_only_test_export(self):
+        lite = self.lite_module()
+        with mock.patch.object(lite, 'run_selftest', return_value=(True, ['PASS tiny portable fixture'])) as body, mock.patch('builtins.print'):
+            self.assertEqual(lite.command_test(argparse.Namespace(repo_root=self.source)), 0)
+            body.assert_called_once()
+        self.assertTrue(lite.is_source_only_export_test('.aide/scripts/tests/test_managed_workspace.py'))
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
+    def test_environment_spoof_does_not_grant_job_context(self):
+        with mock.patch.dict(os.environ, {'AIDE_JOB_ID': 'a'*32, 'AIDE_JOB_CONTROL': str(self.roots['control'])}):
+            with self.assertRaises(workspace.WorkspaceRefused): workspace.current_context(self.source)
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
+    def test_owned_child_proves_named_job_context(self):
+        source = ('import os,sys\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(REPO))+')\n'
+                  'from core.execution.managed_workspace import current_context\n'
+                  'r=current_context(Path.cwd());assert r["job_id"]==os.environ["AIDE_JOB_ID"]\nprint("admitted context")\n')
+        job = self.real_job(source)
+        stub = self.source/'.aide/scripts/aide_lite.py'; stub.parent.mkdir(parents=True)
+        stub.write_text('# bound synthetic CLI input\n')
+        job['inputs']['.aide/scripts/aide_lite.py'] = workspace.file_digest(stub)
+        task = self.source/'.aide/queue'/job['workunit']/'task.yaml'; task.parent.mkdir(parents=True)
+        task.write_text('planning_state: admitted\n')
+        result = workspace.run(self.config_path, job)
+        self.assertEqual(result['result']['exit_code'], 0, result)
+        self.assertIn('admitted context', (Path(result['retained'])/'logs/stdout').read_text())
 
     @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
     def test_junction_root_and_cleanup_escape_refused(self):
@@ -182,6 +233,23 @@ class ManagedWorkspaceTests(unittest.TestCase):
         result = workspace.recover(self.config_path)
         self.assertEqual((Path(result['retained'])/'output/unique.txt').read_text(), 'retirement result')
         self.assertTrue(result['scratch_absent']); self.assertTrue(result['reservation_released'])
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
+    def test_broken_scratch_junction_preserves_recovery_state(self):
+        job = self.real_job('import os\nfrom pathlib import Path\nPath(os.environ["AIDE_JOB_OUTPUT"],"unique.txt").write_text("retained result")\n')
+        remove = workspace.shutil.rmtree
+        with mock.patch.object(workspace.shutil, 'rmtree', side_effect=InterruptedError('stop before retirement')):
+            with self.assertRaises(InterruptedError): workspace.run(self.config_path, job)
+        active = self.roots['control']/'active.json'; record = workspace.read_json(active)
+        scratch = Path(record['scratch']); remove(scratch)
+        target = self.root/'missing-junction-target'
+        child = subprocess.run(['cmd.exe', '/c', 'mklink', '/J', str(scratch), str(target)], capture_output=True, timeout=5)
+        self.assertEqual(child.returncode, 0, child.stderr)
+        self.addCleanup(lambda: os.rmdir(scratch) if os.path.lexists(scratch) else None)
+        self.assertFalse(scratch.exists()); self.assertTrue(os.path.lexists(scratch))
+        with self.assertRaises(workspace.WorkspaceRefused): workspace.recover(self.config_path)
+        self.assertTrue(active.exists()); self.assertTrue(os.path.lexists(scratch))
+        self.assertEqual((Path(record['retained'])/'output/unique.txt').read_text(), 'retained result')
 
     @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
     def test_controller_crash_recovery_retains_unique_output(self):

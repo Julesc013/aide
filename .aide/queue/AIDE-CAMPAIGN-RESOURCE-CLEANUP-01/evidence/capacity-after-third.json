@@ -1,0 +1,35 @@
+{
+  "observed_at": "2026-09-26T14:23:58.5657147+10:00",
+  "volumes": [
+    {
+      "DriveLetter": "D:",
+      "DeviceID": "\\\\?\\Volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\",
+      "Capacity": 1500099112960,
+      "FreeSpace": 73769836544
+    },
+    {
+      "DriveLetter": "E:",
+      "DeviceID": "\\\\?\\Volume{e45ec57d-b4ee-4f1f-9760-a1689f2c8fbb}\\",
+      "Capacity": 2400192557056,
+      "FreeSpace": 55903629312
+    },
+    {
+      "DriveLetter": "C:",
+      "DeviceID": "\\\\?\\Volume{16af7907-a325-4a4a-a3de-43ef76663b7e}\\",
+      "Capacity": 599395090432,
+      "FreeSpace": 209070100480
+    }
+  ],
+  "memory": {
+    "AvailableBytes": 13082685440,
+    "CommitLimit": 93066825728,
+    "CommittedBytes": 30736166912
+  },
+  "registered_worktrees": [
+    "D:\\Projects\\AIDE\\aide",
+    "D:\\Projects\\AIDE\\aide-codex-neutrality-integration",
+    "D:\\Projects\\AIDE\\aide-stable-lite-partial-import-recovery"
+  ],
+  "retired_worktrees": 33,
+  "attribution": "Concurrent unrelated disk activity observed; net free-space changes are not all attributable to this cleanup."
+}

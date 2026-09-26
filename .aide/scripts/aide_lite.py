@@ -18458,6 +18458,8 @@ def validate_release_files(repo_root: Path, require_outputs: bool = True) -> lis
 
 
 def command_release_bundle(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     try:
         bundle = build_release_bundle_outputs(args.repo_root)
     except ValueError as exc:
@@ -18482,6 +18484,8 @@ def command_release_bundle(args: argparse.Namespace) -> int:
 
 
 def command_release_validate(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     checks = validate_release_files(args.repo_root, require_outputs=True)
     validation = validate_release_artifacts(args.repo_root)
     write_text_if_changed(args.repo_root / RELEASE_VALIDATION_JSON_PATH, stable_json_text(validation))
@@ -19179,6 +19183,8 @@ def build_github_release_draft_outputs(repo_root: Path) -> dict[str, object]:
 
 
 def command_release_draft(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     draft = build_github_release_draft_outputs(args.repo_root)
     validation = github_release_draft_validation_data(args.repo_root)
     assets = draft.get("assets", []) if isinstance(draft.get("assets"), list) else []
@@ -19199,6 +19205,8 @@ def command_release_draft(args: argparse.Namespace) -> int:
 
 
 def command_release_draft_validate(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     validation = github_release_draft_validation_data(args.repo_root)
     write_text_if_changed(args.repo_root / GITHUB_RELEASE_DRAFT_VALIDATION_JSON_PATH, stable_json_text(validation))
     write_text_if_changed(args.repo_root / GITHUB_RELEASE_DRAFT_VALIDATION_MD_PATH, render_github_release_draft_validation_md(validation))
@@ -32870,6 +32878,8 @@ def command_eval_list(args: argparse.Namespace) -> int:
 
 
 def command_eval_run(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root):
+        return 1
     run = run_golden_tasks(args.repo_root, task_id=args.task)
     json_result, md_result = write_golden_run_reports(args.repo_root, run)
     data = golden_run_to_dict(run)
@@ -39419,7 +39429,7 @@ def is_source_only_export_test(rel_path: str) -> bool:
     if not rel.startswith(".aide/scripts/tests/"):
         return False
     name = Path(rel).name
-    return name.startswith("test_continuous_worker") or (
+    return name == "test_managed_workspace.py" or name.startswith("test_continuous_worker") or (
         name.startswith("test_aide_") and rel not in PORTABLE_AIDE_TEST_MODULES
     )
 
@@ -43116,6 +43126,8 @@ def command_repair_owned_file(args: argparse.Namespace) -> int:
 
 
 def command_export_pack(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     pack_root, report = build_export_pack(args.repo_root, name=args.name, output=args.output)
     print("AIDE Lite export-pack")
     print(f"pack: {normalize_rel(pack_root.relative_to(args.repo_root))}")
@@ -44107,7 +44119,27 @@ def command_managed_job(args: argparse.Namespace) -> int:
         return 1
 
 
+def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False) -> bool:
+    # The source-only execution owner is deliberately absent from Lite exports.
+    # Preserve their established consumer selftest/export compatibility.
+    if not (repo_root / "core/execution/managed_workspace.py").is_file():
+        return True
+    if str(repo_root) not in sys.path:
+        sys.path.insert(0, str(repo_root))
+    from core.execution import managed_workspace
+    try:
+        managed_workspace.current_context(repo_root)
+        if packaging:
+            raise managed_workspace.WorkspaceRefused("source packaging placement remains unqualified; generation is paused")
+        return True
+    except (OSError, ValueError, KeyError) as exc:
+        print(f"result: REFUSED\nresource_admission: {exc}")
+        return False
+
+
 def command_internal_test(args: argparse.Namespace, label: str) -> int:
+    if not source_maintainer_job_guard(args.repo_root):
+        return 1
     try:
         ok, messages = run_selftest()
     except AssertionError as exc:

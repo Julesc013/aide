@@ -12106,3 +12106,10 @@ projections require --write-reports. Twelve small Windows regressions passed;
 an actual ten-case AIDE host suite also ran through the bounded path. Exact
 receipts are task-local. Final source review/replay, permanent pool resolution,
 heavy importer qualification and delivered-release proof remain outstanding.
+
+Resource repair checkpoint: 33 worktrees retired with refs retained, three
+remain. Preserved the independent REQUEST_CHANGES against 5ea1f7cd; lexical
+existence checks now refuse broken reparse roots, and source maintainer commands
+require actual named-Job membership with bound CLI inputs. Packaging remains
+paused pending canonical-output reservation qualification. Seventeen focused
+Windows cases pass; superseding review and final bounded replay remain open.
