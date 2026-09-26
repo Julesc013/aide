@@ -101,3 +101,17 @@ reachability. Its two unique evidence-only commits remain under the unchanged
 branch; no branch was deleted and no history was integrated by this cleanup.
 Receipt: neutrality-worktree-retirement.json. Thirty-four physical checkouts
 are retired; primary dev and current implementation are the only two remaining.
+
+Source b325deea received scoped independent ACCEPT_WITH_NOTES. The exact report
+and external original remain retained; acceptance covers this resource source,
+not activation or release. Two identical 4,893,625-byte diagnostic logs were
+removed after SHA-256 equality with retained evidence-validate.log; the alias
+receipt preserves their identities without another copy. Required reviews,
+failures, unique work and recovery custody remain protected.
+
+Continue product work with the existing bounded validation driver: select the
+partial-import recovery regressions, bind actual fixture/source/oracle inputs,
+use only a finite 128 MiB scratch/512 MiB memory/64 KiB log/180s run under the
+existing disposable tiny-fixture parent, collect one result/log and retire it.
+This limited validation does not adopt a permanent bulk pool or close the full
+importer/artifact gates. Permanent pool resolution remains pending the owner.

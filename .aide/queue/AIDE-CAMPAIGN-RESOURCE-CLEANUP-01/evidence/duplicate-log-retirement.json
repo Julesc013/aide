@@ -1,0 +1,22 @@
+{
+  "retained": "D:\\Projects\\AIDE\\_review_scratch\\stable-lite-forced-restart-20260926\\evidence-validate.log",
+  "sha256": "7b326b01165e7743abe7d770bad1646dab78f4a411352dfbd8faae83b383e789",
+  "before_free": 73654267904,
+  "effects": [
+    {
+      "path": "D:\\Projects\\AIDE\\_review_scratch\\stable-lite-forced-restart-20260926\\partial-admission-validate.log",
+      "result": "byte_identical_duplicate_removed",
+      "bytes": 4893625,
+      "retained_original": "D:\\Projects\\AIDE\\_review_scratch\\stable-lite-forced-restart-20260926\\evidence-validate.log"
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\_review_scratch\\stable-lite-forced-restart-20260926\\record-repair-validate.log",
+      "result": "byte_identical_duplicate_removed",
+      "bytes": 4893625,
+      "retained_original": "D:\\Projects\\AIDE\\_review_scratch\\stable-lite-forced-restart-20260926\\evidence-validate.log"
+    }
+  ],
+  "logical_bytes_removed": 9787250,
+  "attribution": "Net capacity may include concurrent unrelated activity",
+  "after_free": 73664053248
+}
