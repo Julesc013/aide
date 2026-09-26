@@ -1,0 +1,142 @@
+{
+  "source_commit": "119529d076fdce289cacbb1737e8abf2582fe6fd",
+  "code_sha256": "dd076065f1b59c9587a1fa7a58df17b8cf16f32834529284863392b67c09108e",
+  "policy_sha256": "c4204a9e4d7153470057ba86f417f42ee864f6e59d314626fa8c95c8c0d12763",
+  "validation_scope": "argument parser only; no handler, native effect, lifecycle or archive qualification",
+  "forms": [
+    {
+      "form": "doctor",
+      "result": "PASS",
+      "handler": "command_doctor"
+    },
+    {
+      "form": "validate",
+      "result": "PASS",
+      "handler": "command_validate"
+    },
+    {
+      "form": "context",
+      "result": "PASS",
+      "handler": "command_context"
+    },
+    {
+      "form": "pack --task <task>",
+      "result": "PASS",
+      "handler": "command_pack"
+    },
+    {
+      "form": "verify --evidence <evidence-path>",
+      "result": "PASS",
+      "handler": "command_verify"
+    },
+    {
+      "form": "task inspect",
+      "result": "PASS",
+      "handler": "command_task_inspect"
+    },
+    {
+      "form": "task status",
+      "result": "PASS",
+      "handler": "command_task_status"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+      "result": "PASS",
+      "handler": "command_import_pack"
+    },
+    {
+      "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+      "result": "PASS",
+      "handler": "command_rollback_pack"
+    },
+    {
+      "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+      "result": "PASS",
+      "handler": "command_rollback_pack"
+    },
+    {
+      "form": "plan-removal --target <target>",
+      "result": "PASS",
+      "handler": "command_plan_removal"
+    },
+    {
+      "form": "apply-removal --target <target> --expect-plan <digest>",
+      "result": "PASS",
+      "handler": "command_apply_removal"
+    },
+    {
+      "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+      "result": "PASS",
+      "handler": "command_repair_owned_file"
+    },
+    {
+      "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+      "result": "PASS",
+      "handler": "command_repair_owned_file"
+    }
+  ],
+  "non_mutating": true,
+  "handlers_invoked": 0,
+  "metadata_schemas": [
+    "aide.project-customizations.v1",
+    "aide.project-customizations.v2"
+  ],
+  "optional_features": {
+    "local_state_examples": ".aide.local.example/"
+  }
+}

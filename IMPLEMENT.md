@@ -12173,3 +12173,21 @@ retained archives. 1,662 duplicate files (6,882,832 logical bytes) were removed;
 both ZIPs, target/failure fixtures and records remain. Compact effect and prior
 remote-checkpoint receipts are canonical task evidence. Unknown consumers and
 permanent placement remain unresolved; no product source or bulk job changed.
+
+## AIDE-STABLE-RELEASE-CONTRACT-01: customization interface follow-up
+
+The candidate public CLI excluded --feedback-out and omitted --explain despite
+implemented, owner-requested customization workflows. Added six explicit dry-run
+forms and referenced project-owned v1/v2 metadata, unknown rationale, disabled
+intent and separately authorized sharing. Actual unchanged parser rejected bare
+pack --task and verify --evidence forms; required argument placeholders are now
+explicit. All 25 forms parse, handlers invoked zero, Git state unchanged during
+checking. Existing source/canaries remain their original evidence; this syntax
+check does not qualify behavior or archives. First qualified 1.0.0 selection still
+requires a frozen manifest and fresh history. No version/tag/public effect, bulk
+job, new workspace or release regeneration occurred. Frozen delta review is next.
+
+The follow-up also enumerates the accepted saved partial-import recovery
+interface: original digest, packs, mode and resolution files; changed/legacy
+inputs remain refusals. All 28 final candidate forms parse without handlers.
+The earlier 25-form result stays separately bound, not relabeled as 28 cases.

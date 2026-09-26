@@ -1,0 +1,37 @@
+{
+  "task": "AIDE-STABLE-RELEASE-CONTRACT-01",
+  "source_base": "119529d076fdce289cacbb1737e8abf2582fe6fd",
+  "scope": "Candidate customization and saved partial-recovery CLI correction; implementation unchanged",
+  "bindings": [
+    {
+      "path": ".aide/policies/release-versioning.yaml",
+      "sha256": "da05e67499216512941187c788fab43d777c4d0dc8177b9491d56ac8134ae502"
+    },
+    {
+      "path": "specs/control-plane/product/scope-and-profiles.md",
+      "sha256": "8cb80b01d28755061c6bd7d1d8f0f411921a5d458ea76ba68a7f8845b816533e"
+    },
+    {
+      "path": "docs/reference/cross-repo-pack-export-import.md",
+      "sha256": "de7e77bfc16fcd349337070a0a9bed2bd9c4324d97153ca2e9fbc219b3d266a4"
+    },
+    {
+      "path": ".aide/scripts/aide_lite.py",
+      "sha256": "dd076065f1b59c9587a1fa7a58df17b8cf16f32834529284863392b67c09108e"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/evidence/check-candidate-cli.py",
+      "sha256": "f1dfd27113a3b119f33cb95d6add7e9a484e1be6ffdc56c156e6cbb0f90c26d0"
+    }
+  ],
+  "parser_forms": 28,
+  "parser_passed": 28,
+  "handlers_invoked": 0,
+  "fixtures_created": 0,
+  "artifacts_regenerated": 0,
+  "independent_review": "pending exact frozen candidate",
+  "qualification": "Syntax only; lifecycle/archives/final supported forms and metadata remain unqualified",
+  "initial_failures": "pack --task and verify --evidence lacked required value placeholders",
+  "permanent_pool": "unconfigured; no bulk jobs admitted",
+  "recorded_at": "2026-09-26T16:04:10.4257468+10:00"
+}

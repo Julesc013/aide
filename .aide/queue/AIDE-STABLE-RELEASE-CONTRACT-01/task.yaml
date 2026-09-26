@@ -2,11 +2,11 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-RELEASE-CONTRACT-01
 title: Define the bounded stable release contract and publication route
 type: planning
-status: passed
-planning_state: integrated_dev
-result: PASS_WITH_WARNINGS
+status: running
+planning_state: customization_contract_followup
+result: PENDING
 created_at: 2026-09-25
-updated_at: 2026-09-25
+updated_at: 2026-09-26
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 objective: >
   Establish an independently reviewed version and public compatibility rule,
@@ -20,6 +20,9 @@ authority_basis: >
   admission packet authorizes bounded contract work after controller scope
   review; exact policy/source changes retain independent technical review.
 source_base: d4b67c96ff81eb10aeecd6763b538331844619c9
+followup_source_base: 119529d076fdce289cacbb1737e8abf2582fe6fd
+followup_workspace: existing partial-import checkout; serialized writer; no new workspace
+prior_result: accepted contract source and projection integrated dev; retained unchanged
 scope:
   allowed_paths:
     - .aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/**
@@ -37,6 +40,10 @@ scope:
     - governance/release-policy.md
     - docs/reference/aide-lite-release-bundle.md
     - docs/reference/github-release-draft.md
+    - docs/reference/cross-repo-pack-export-import.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
     - PLANS.md
     - IMPLEMENT.md
     - DOCUMENTATION.md

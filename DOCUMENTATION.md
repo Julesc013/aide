@@ -508,3 +508,12 @@ boundaries.
 The exact API-query source repair received independent review, and the owner
 accepted its narrow historical commit-message disposition. These source and
 range-check results do not qualify a native query or operational activation.
+
+## 2026-09-26 - Candidate stable customization interface
+
+The existing release-versioning policy and product scope now enumerate implemented
+explanation and explicit local-feedback preview forms, including updates and
+resolutions. Cross-repo import documentation links that candidate contract and
+retains final qualification boundaries. Project-owned customizations and unknown
+rationale remain described in docs/reference/cross-repo-pack-export-import.md.
+This changes desired candidate coverage, not shipping or public activation status.

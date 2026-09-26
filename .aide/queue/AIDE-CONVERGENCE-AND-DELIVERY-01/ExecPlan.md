@@ -182,3 +182,13 @@ through the runner, then batch current-generator source/artifact projection and
 exact integration review. Main, tags, publication and native/hosted guarantees
 remain unqualified. The stale removal-plan route is replaced with this actual
 dependency order; completed candidate integrations must not be repeated.
+
+## 2026-09-26 - Independent work while bulk placement is held
+
+The stable contract's candidate forms omitted customization explanation/local
+feedback and had two incomplete required-argument forms. Resume that existing
+WorkUnit on the same checkout, preserve initial accepted history, correct only
+policy/docs, parse all forms with actual unchanged code, and seek narrow frozen
+technical review. No archive regeneration, native effect or new physical
+workspace. Full importer/current-generator/artifact qualification remains the
+critical path after existing approved permanent storage is provided.

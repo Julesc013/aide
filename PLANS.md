@@ -4056,3 +4056,14 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
 - Continuation: retired two byte-identical consumer expansions while retaining
   their committed-custody ZIP originals and unique sibling state. Permanent
   storage configuration remains absent; no bulk job or fallback was admitted.
+
+## 2026-09-26 - Stable customization contract follow-up
+
+- Resume AIDE-STABLE-RELEASE-CONTRACT-01 in the existing task checkout under
+  campaign delegation. Retain initial source/projection acceptance and dev history.
+- Candidate CLI now includes existing explanation and explicit local-feedback
+  forms for fresh/update/resolution previews, with project-owned v1/v2 metadata.
+- Actual parser validation found two incomplete argument forms and repaired them;
+  all 25 declared forms now parse without handlers or fixture allocation.
+- Freeze and independently review this policy/doc delta. Final archive/profile
+  qualification and public activation remain gated; permanent bulk pool is absent.

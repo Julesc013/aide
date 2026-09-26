@@ -2,6 +2,12 @@
 
 ## Project customization and update explanation
 
+These existing interfaces are included in the candidate stable Lite contract
+in `.aide/policies/release-versioning.yaml`. Final delivered-byte qualification
+and public compatibility activation remain open; the candidate list is not a
+shipping claim. Explanation and optional local feedback use dry-run forms,
+including predecessor updates and explicit conflict resolution.
+
 The portable importer creates `.aide/profile.yaml` from a template on first
 import. That file belongs to the project thereafter. A later pack preserves its
 bytes. Other project-authored text outside the portable `AGENTS.md` section is

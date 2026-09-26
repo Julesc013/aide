@@ -71,14 +71,27 @@ verified capability ceiling.
 
 The candidate public CLI list for `aide-lite-local-windows` is enumerated in
 `.aide/policies/release-versioning.yaml`: local `doctor`, `validate`, `context`,
-`pack --task`, `verify --evidence`, `task inspect`, and `task status`; safe-mode
+`pack --task <task>`, `verify --evidence <evidence-path>`, `task inspect`, and
+`task status`; safe-mode
 `import-pack` preview and exact-plan apply, including explicit `--from-pack`
-predecessor updates and `--resolve` conflict decisions; `rollback-pack` preview and
+predecessor updates and `--resolve` conflict decisions; explicit dry-run
+`--explain` for fresh, predecessor and resolution plans, optionally with local
+`--feedback-out`; saved partial import recovery with `--recover-partial` and
+the exact original `--expect-plan` plus predecessor/resolution inputs;
+`rollback-pack` preview and
 exact-plan apply; `plan-removal` and exact-plan `apply-removal`; and
 `repair-owned-file` preview and exact-plan apply. The final manifest must pin
 the supported forms and options and prove each one. Other CLI commands and
 options remain outside this first stable contract unless separately reviewed
 and qualified; this candidate list alone does not establish support.
+
+The candidate customization contract includes the documented project-owned
+`.aide/customizations.json` v1/v2 interfaces and supported disabled-feature
+intent. Explanations identify observed differences and ownership; they preserve
+unknown rationale and never grant overwrite authority. Local feedback is
+explicit, dry-run only, and stored outside target and packs. AIDE does not
+transmit it; sharing remains a separate authorized action. The final manifest
+must qualify the exact forms, metadata and feature IDs from delivered bytes.
 
 The stable profile requires an all-provider-disabled path to acquire the
 released archive, then verify its bytes and run locally offline after

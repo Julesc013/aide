@@ -132,3 +132,43 @@ assets, passed committed machine/replay checks and integrated `dev@2defcad5`.
 The earlier admission and `aa3bcfec` REQUEST_CHANGES records remain
 historical evidence. This WorkUnit selected no version or tag and qualified
 no shipping profile or publication effect.
+
+## 2026-09-26 customization contract follow-up
+
+Objective: retain the owner's requested explanation and explicit local feedback
+workflow in the candidate stable CLI rather than excluding its existing options.
+Reuse checkout 119529d076fdce289cacbb1737e8abf2582fe6fd; no new worktree,
+bulk job or artifact regeneration. Initial accepted contract/projection and
+their dev integrations remain completed historical work.
+
+Scope: existing release-versioning policy, product scope, reference docs,
+this task's records/index, parent status/existing coverage control and root
+planning/execution/documentation indexes. Implementation already exists:
+--explain, project-owned v1/v2 customizations and explicit --feedback-out.
+Preserve source bytes, existing CLI forms, no sharing, unknown rationale and
+final qualification gates. Add precise candidate fresh/update/resolution
+explanation and optional local-feedback forms, referencing existing metadata
+documentation. Do not activate public compatibility or claim delivered acceptance.
+
+Validation: parse enumerated forms with the actual unchanged parser without
+invoking handlers; bind source/policy/docs hashes and Git state. Check desired
+metadata and no automatic sharing against source and recorded canaries. Use
+bounded read-only code, no fixtures. Obtain independent frozen policy/doc delta
+review. Update the single coverage matrix; keep archive requalification open.
+
+Fresh read-only history under BLACKGLASS-WIN1\Jules found no local/remote tags
+and no GitHub release entries. The policy's first qualified version is 1.0.0
+only at a frozen manifest; no version/tag is selected now. Reobserve at freeze.
+Permanent bulk placement remains absent; full importer/generator stays held.
+
+The same exact candidate-interface check also found the implemented partial
+recovery flag absent from public candidate forms. Include three original-plan
+recovery forms for fresh, predecessor and resolution imports, matching the
+existing documentation and accepted dfc8048b source. Do not promise replay of
+legacy/changed inputs or an unqualified archive. Existing 25-form syntax evidence
+is retained separately; rerun the unchanged parser for the resulting 28 forms.
+
+The follow-up also enumerates the accepted saved partial-import recovery
+interface: original digest, packs, mode and resolution files; changed/legacy
+inputs remain refusals. All 28 final candidate forms parse without handlers.
+The earlier 25-form result stays separately bound, not relabeled as 28 cases.
