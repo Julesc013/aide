@@ -13,6 +13,9 @@ junction checks the predecessor alias. Original source acceptance remains
 historical; changed bytes require superseding review and delivered qualification.
 The contract WorkUnit scopes saved-plan guarantees to partial continuation,
 preserving completed/no-effect reconciliation without claiming payload replay.
+Frozen source c6d104f6 received independent ACCEPT_WITH_NOTES; three affected
+tests and 28 parser forms pass. The follow-up retains final archive and
+combined-source integration gates. No permanent bulk pool is configured.
 
 ## Work Item: AIDE-STABLE-RELEASE-CONTRACT-01 (admission only)
 

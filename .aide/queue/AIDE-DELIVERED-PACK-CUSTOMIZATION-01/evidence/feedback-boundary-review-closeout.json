@@ -1,0 +1,21 @@
+{
+  "source_commit": "c6d104f665e3bc76ffd5c30ef600f66f014f50f3",
+  "source_tree": "b05e73c554bef347fb6c3bffc0009ac83ccb1622",
+  "review_verdict": "ACCEPT_WITH_NOTES",
+  "reviewer": "Independent Codex agent /root/partial_recovery_review",
+  "external_report": "D:/Projects/AIDE/_review_scratch/stable-lite-forced-restart-20260926/stable-interface-contract-rereview-c6d104f6.md",
+  "report_sha256": "9f69560bdd9343f15734e04e6e37859e3ddbfbca79f5a5fb469048a84d661aa3",
+  "review_scope": "Predecessor feedback exclusion, backward helper compatibility, partial continuation wording and focused evidence only",
+  "tests": "3 PASS, no skips, 0.082 seconds; existing bounded run independently checked, no reviewer rerun",
+  "parser_forms": "28 parse; no handlers",
+  "byte_custody_note": "Original packet records CRLF working receipt bytes; frozen Git JSON is LF. Independent review verified equivalence; no JSON content mismatch.",
+  "git_parser_receipt_sha256": "c9ba2867efb21d645f387f6af4001b4db65e035fa61248808375aef5af222959",
+  "prior_review_retained": true,
+  "stable_profile_qualified": false,
+  "dev_integration_performed": false,
+  "main_promotion_performed": false,
+  "release_published": false,
+  "next_action": "Configure recovered existing approved local execution roots/volume identities, then admit full importer/current-generator qualification",
+  "blocked_input": "Existing owner-approved build/test/temp locations; no fallback",
+  "recorded_at": "2026-09-26T16:31:34.9927883+10:00"
+}

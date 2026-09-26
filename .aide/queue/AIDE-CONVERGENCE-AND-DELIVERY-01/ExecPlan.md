@@ -1,5 +1,19 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## 2026-09-26 resource-bound checkpoint
+
+Predecessor-feedback source c6d104f6 and its corrected candidate contract have
+independent source ACCEPT_WITH_NOTES, three tiny managed test passes and 28
+parser forms. Original reviews, unique refs and failure evidence are retained.
+Two worktrees remain; no owned job or temporary fixture remains observed.
+The permanent execution placement question remains unanswered in three
+consecutive goal turns. Both remaining execution.json configurations are absent.
+Further importer/current-generator qualification is held without fallback.
+Record the Goal as blocked after publishing the exact source/evidence task
+checkpoint; it is incomplete. Next executable action is configure the existing
+owner-approved local build/test/temp roots and volume identities, then admit
+the required integrated importer/lifecycle suite and current generator replay.
+
 ## Purpose
 
 Coordinate a restartable convergence and delivery campaign without turning one

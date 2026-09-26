@@ -1,0 +1,38 @@
+{
+  "at": "2026-09-26T16:31:34.9927883+10:00",
+  "volumes": [
+    {
+      "DriveLetter": "D:",
+      "DeviceID": "\\\\?\\Volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\",
+      "Capacity": 1500099112960,
+      "FreeSpace": 71830855680
+    },
+    {
+      "DriveLetter": "E:",
+      "DeviceID": "\\\\?\\Volume{e45ec57d-b4ee-4f1f-9760-a1689f2c8fbb}\\",
+      "Capacity": 2400192557056,
+      "FreeSpace": 55903629312
+    },
+    {
+      "DriveLetter": "C:",
+      "DeviceID": "\\\\?\\Volume{16af7907-a325-4a4a-a3de-43ef76663b7e}\\",
+      "Capacity": 599395090432,
+      "FreeSpace": 211532599296
+    }
+  ],
+  "physical_free_bytes": 13447352320,
+  "commit_bytes": 30173233152,
+  "commit_limit_bytes": 93066825728,
+  "worktrees_remaining": 2,
+  "owned_jobs_remaining": "none_observed",
+  "remaining_worktrees": [
+    "D:/Projects/AIDE/aide",
+    "D:/Projects/AIDE/aide-stable-lite-partial-import-recovery"
+  ],
+  "measured_logical_removed_bytes": 3258721920,
+  "first_three_retired_worktrees_size": "not_measured",
+  "new_bulk_allocation": false,
+  "permanent_approved_pool_configured": false,
+  "source_candidate": "c6d104f665e3bc76ffd5c30ef600f66f014f50f3",
+  "source_tree": "b05e73c554bef347fb6c3bffc0009ac83ccb1622"
+}

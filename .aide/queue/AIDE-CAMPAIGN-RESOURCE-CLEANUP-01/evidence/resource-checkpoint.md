@@ -97,3 +97,35 @@ main remains aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3. Task publication is
 not dev/main integration. After permanent placement is resolved, admit the
 required importer/lifecycle suite, batch current-generator projection, qualify
 delivered bytes and integrate. Native/hosted and stable-release gates stay open.
+
+## Feedback repair and resource continuation
+
+Frozen c6d104f665e3bc76ffd5c30ef600f66f014f50f3, tree
+b05e73c554bef347fb6c3bffc0009ac83ccb1622, independently received
+ACCEPT_WITH_NOTES for the predecessor-feedback guard and partial-recovery
+wording. Three tiny admitted tests PASS with zero skips in 0.082s; the
+observed Job memory was 212,582,400 bytes, scratch 708 bytes and logs 568
+bytes. Scratch was retired and reservations released. The existing 8MiB
+scratch/1MiB retained/512MiB Job memory/64KiB log/120s/16-process limits and
+10GiB disk/4GiB physical/4GiB commit reserves applied. These observed samples
+are not filesystem quotas or exhaustive peak measurements. The real Windows
+junction was refused; no archive generation occurred.
+
+Two older consumer extractions also passed exact custody and ZIP-member
+hash proofs and were removed. Their retained ZIPs, target siblings and
+failure/evidence material remain. Measured disposable logical bytes now total
+3,258,721,920, excluding the first three unmeasured retired checkouts. The
+34 supported worktree removals preserved branch refs and unique commits.
+Latest volume/memory identities and free-space values are in
+feedback-repair-capacity-checkpoint.json. Concurrent unrelated activity means
+observed volume changes are not all attributable to AIDE removals.
+
+Only primary dev and the reused implementation checkout remain. No owned
+job or tiny fixture directory was observed remaining. There is still no
+execution.json configured in either checkout. This existing receipt parent
+is only a tiny per-run test fixture location, not an approved permanent bulk
+pool. Do not invent a pool or fallback. The critical path needs the existing
+approved build/test/temp locations, then full importer/lifecycle tests and
+one current-generator projection through admission, delivered-byte review,
+qualified integration and delegated release. Source acceptance does not
+close those gates. Unique/unknown work and original reviews remain retained.

@@ -3,7 +3,7 @@ id: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
 title: Explain and retain downstream customization across portable updates
 type: delivered_consumer_behavior
 status: running
-planning_state: predecessor_feedback_boundary_repair
+planning_state: feedback_source_accepted_delivery_qualification_open
 result: PENDING
 created_at: 2026-09-24
 updated_at: 2026-09-26

@@ -12,8 +12,16 @@ the campaign delegation. The existing script/test/document allowlist applies.
   retain backwards-compatible helper callers and explicit external creation.
 - [x] Test the CLI forwarding and actual boundary through the bounded runner;
   no archive generation or permanent storage-pool adoption.
-- [ ] Freeze a superseding candidate and obtain narrow independent review.
-- [ ] Record source qualification separately from final delivered-byte gates.
+- [x] Freeze a superseding candidate and obtain narrow independent review.
+- [x] Record source qualification separately from final delivered-byte gates.
+
+Frozen c6d104f665e3bc76ffd5c30ef600f66f014f50f3 / tree
+b05e73c554bef347fb6c3bffc0009ac83ccb1622 received independent
+ACCEPT_WITH_NOTES; report SHA-256
+9f69560bdd9343f15734e04e6e37859e3ddbfbca79f5a5fb469048a84d661aa3.
+Three tests pass with zero skips; no new review fixture was run. Source closure
+does not grant archive or integration acceptance. Permanent bulk placement
+remains the next executable qualification dependency.
 
 The policy-only release-contract WorkUnit owns the parallel wording correction:
 exact saved-plan continuation describes partial intents; completed/no-effect

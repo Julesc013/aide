@@ -1,0 +1,39 @@
+chore(queue): preserve feedback repair review and resource checkpoint
+
+## Summary
+- Close the source-review slice of AIDE-DELIVERED-PACK-CUSTOMIZATION-01.
+- Preserve the incomplete AIDE-CONVERGENCE-AND-DELIVERY-01 checkpoint.
+
+## Why
+- Qualified source evidence must remain distinct from unqualified delivered bytes.
+- Permanent build/test/temp placement is unresolved; arbitrary fallback is prohibited.
+
+## Changed
+- Preserve independent c6d104f6 ACCEPT_WITH_NOTES and exact frozen commit/tree.
+- Record receipt byte normalization and existing original review custody.
+- Refresh measured capacity, cleanup totals, pending routing and continuation.
+- Keep reviewed implementation, policies and portable/release outputs unchanged.
+
+## Validation
+- PASS: reviewed source and policy scopes remain identical to c6d104f6.
+- PASS: prior three bounded tests and 28 parser forms are exactly bound; no rerun invented.
+- PASS: latest and dev-range commit checks before closeout; staged whitespace check.
+- NOT RUN: full importer, real generator, final assets, main promotion and publication.
+
+## Changelog
+- Internal: Preserve reviewed feedback repair and the resource-bound continuation.
+
+## Risks
+- Two source worktrees and valuable or unknown material remain protected.
+- Available capacity is measured; permanent placement is not inferred from capacity.
+
+## Follow-up
+- Record the normal task-ref effect, push it and verify the observed remote identity.
+- Resume bulk qualification when existing approved execution locations are supplied.
+
+AIDE-Task: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
+AIDE-Phase: feedback-review-evidence-closeout
+AIDE-Result: PENDING
+AIDE-Scope: queue-evidence-and-resource-checkpoint
+AIDE-Token-Impact: reuse-valid-source-evidence-no-bulk-build
+AIDE-Quality-Gate: source-accepted-final-qualification-open

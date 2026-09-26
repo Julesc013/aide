@@ -5,6 +5,11 @@ Campaign maintainer execution uses the explicit bounded job interface in
 placement remains local; missing pools refuse allocation. Resource cleanup and
 exact receipts live in `.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/`.
 
+The customization task preserves the predecessor-feedback repair's exact
+source review and focused bounded results. Final pack support requires the
+pending combined-source and delivered-byte qualification; source acceptance
+does not activate a stable compatibility promise.
+
 ## Purpose
 
 `DOCUMENTATION.md` is the root guide and index for repository documentation. It defines how documentation should be organized, how authoritative documents relate to each other, and how documentation is kept aligned with reality.

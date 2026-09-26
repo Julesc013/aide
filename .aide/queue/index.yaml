@@ -3301,8 +3301,8 @@ items:
     prompt: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/evidence
   - id: AIDE-CONVERGENCE-AND-DELIVERY-01
-    status: running
-    planning_state: execution_active
+    status: blocked
+    planning_state: approved_bulk_placement_required
     result: PENDING
     title: Converge, qualify, and deliver AIDE through bounded reviewed work
     task: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml
@@ -3482,7 +3482,7 @@ items:
     description: Regenerate local portable and release outputs from committed combined source and prove provenance and post-commit byte convergence.
   - id: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
     status: running
-    planning_state: predecessor_feedback_boundary_repair
+    planning_state: feedback_source_accepted_delivery_qualification_open
     result: PENDING
     title: Explain and retain downstream customization across portable updates
     task: .aide/queue/AIDE-DELIVERED-PACK-CUSTOMIZATION-01/task.yaml
@@ -3622,7 +3622,7 @@ items:
     description: Restore an exact predecessor portable pack after a completed update when validated safe payload targets match.
   - id: AIDE-STABLE-RELEASE-CONTRACT-01
     status: running
-    planning_state: customization_contract_followup
+    planning_state: source_followup_accepted_delivery_qualification_open
     result: PENDING
     title: Define the bounded stable release contract and publication route
     task: .aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/task.yaml

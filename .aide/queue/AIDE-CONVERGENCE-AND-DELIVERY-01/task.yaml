@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Converge, qualify, and deliver AIDE through bounded reviewed work
 type: programme
-status: running
-planning_state: execution_active
+status: blocked
+planning_state: approved_bulk_placement_required
 result: PENDING
 review_gate: admitted_by_owner
 created_at: 2026-09-21
