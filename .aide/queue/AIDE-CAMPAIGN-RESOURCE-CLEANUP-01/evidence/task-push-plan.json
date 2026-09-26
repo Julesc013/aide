@@ -1,0 +1,41 @@
+{
+  "schema": "aide.campaign-task-push-plan.v1",
+  "at": "2026-09-26T15:21:26.1222588+10:00",
+  "workunit": "AIDE-CAMPAIGN-RESOURCE-CLEANUP-01",
+  "owner_authority": "Explicit 2026-09-25 campaign delegation and 2026-09-26 resource correction",
+  "repository": "D:\\Projects\\AIDE\\aide-stable-lite-partial-import-recovery",
+  "common_git_directory": "D:/Projects/AIDE/aide/.git",
+  "operation": "normal create task remote ref after exact test-placement review and evidence closeout",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "target_ref": "refs/heads/task/aide-stable-lite-partial-import-recovery-01",
+  "frozen_source": "e185d2898fb207e59c9eb5380fecf624a3e954ac",
+  "frozen_tree": "f04b108474a3af0bf18434c4b81e83f33cacaabb",
+  "review_pending": "narrow golden report test placement",
+  "expected_remote_ref": "absent at preflight",
+  "final_effect_manifest_required": true,
+  "unchanged_dev": "e88b1c2ee6f3206c628f79908e430a7967e9f58c",
+  "unchanged_main": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+  "restrictions": [
+    "no force",
+    "only named task ref",
+    "no dev/main/tag/release effect",
+    "no bulk output allocation",
+    "recheck exact local and remote identities before push"
+  ],
+  "helper_plan": [
+    "AIDE Lite git plan",
+    "result: ready_dry_run",
+    "operation: plan",
+    "current_branch: task/aide-stable-lite-partial-import-recovery-01",
+    "current_role: task",
+    "dry_run: true",
+    "apply_requested: false",
+    "push_requested: false",
+    "remote_mutation: false",
+    "force_push_allowed: false",
+    "warnings:",
+    "- upstream_unavailable: fatal: no upstream configured for branch 'task/aide-stable-lite-partial-import-recovery-01'",
+    "reports_written: false"
+  ]
+}

@@ -12158,3 +12158,9 @@ bounded owner, with no source-report changes, retired scratch and released
 reservations. Exact source/input bindings, raw-log hashes and review scopes are
 in the resource task. Permanent bulk placement and full delivered qualification
 remain unresolved; this source checkpoint does not claim activation or release.
+
+The frozen e185d289 golden-placement delta received independent
+ACCEPT_WITH_NOTES after frozen AST, all declared code hashes and actual raw-log
+verification. Source acceptance and the precommit-context limitation are recorded
+without relabeling tests as a clean HEAD run. The subsequent closeout is evidence
+only; task-ref preservation is owner delegated. Dev/main and release stay unchanged.

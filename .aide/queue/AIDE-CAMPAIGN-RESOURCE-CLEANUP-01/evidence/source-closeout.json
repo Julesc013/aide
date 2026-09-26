@@ -1,0 +1,25 @@
+{
+  "reviewer_agent": "/root/partial_recovery_review",
+  "frozen_subject": "e185d2898fb207e59c9eb5380fecf624a3e954ac",
+  "tree": "f04b108474a3af0bf18434c4b81e83f33cacaabb",
+  "parent": "0302b18c724d463a5865441bb717f9733d26a1eb",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "report": "D:\\Projects\\AIDE\\_review_scratch\\stable-lite-forced-restart-20260926\\task-os-golden-placement-review-e185d289.md",
+  "sha256": "322e92f1d829714e71da767f2e83f4a090557fe0b97087cb7d69cae1a5ecb5a4",
+  "scope": "Golden report test placement only; normal task checkpoint publication is separately campaign-delegated, not source integration or activation",
+  "original_0302_report": {
+    "sha256": "d449d1597ce408f932313b267563fb9ec73027f207dd2f3b9caa95e296c107a5",
+    "path": "D:\\Projects\\AIDE\\_review_scratch\\stable-lite-forced-restart-20260926\\task-status-inspection-review-0302b18c-original.md"
+  },
+  "reviewer_amended_0302_report": {
+    "sha256": "6d649d75abc18a024b3fb639ec37b78266587a6eab057e36c4af592dfe958c62",
+    "path": "D:\\Projects\\AIDE\\_review_scratch\\stable-lite-forced-restart-20260926\\task-status-inspection-review-0302b18c.md",
+    "note": "Reviewer appended independently verified controller-run suite result; original version remains retained"
+  },
+  "limits": [
+    "Precommit HEAD and declared changed input hashes are explicit; full real context not fully frozen in run manifest",
+    "Permanent pool unresolved",
+    "Full importer/current generator/artifact qualification open"
+  ],
+  "at": "2026-09-26T15:22:41.5123513+10:00"
+}

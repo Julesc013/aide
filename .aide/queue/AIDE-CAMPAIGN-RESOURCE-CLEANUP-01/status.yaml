@@ -1,13 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
 status: running
-planning_state: admitted
+planning_state: source_review_accepted_activation_pending
 result: PENDING
 updated_at: 2026-09-26
-current_slice: golden_report_scratch_isolation
-next_slice: narrow_test_placement_review_and_task_branch_checkpoint
+current_slice: source_checkpoint_accepted
+next_slice: approved_permanent_pool_then_full_importer_and_current_generator
 last_product_run: task_os_11_passed_8_554s_inputs_bound_source_reports_unchanged
-review_gate: resource_b325deea_oracle_e87386e5_query_0302b18c_accepted_test_placement_pending
+review_gate: resource_b325deea_oracle_e87386e5_query_0302b18c_placement_e185d289_accepted_with_notes
 placement: approved_permanent_pool_unresolved_question_pending
 retired_worktrees: 34
 remaining_worktrees: 2

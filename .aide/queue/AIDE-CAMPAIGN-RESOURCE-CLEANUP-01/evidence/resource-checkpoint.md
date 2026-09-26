@@ -76,8 +76,14 @@ monitors/waits; tests do not require repeated model polling.
 
 ## Continuation
 
-Freeze/review the tested golden-placement delta and normally publish the
-exact task checkpoint. Primary dev remains e88b1c2ee6f3206c628f79908e430a7967e9f58c;
+Golden-placement e185d2898fb207e59c9eb5380fecf624a3e954ac, tree
+f04b108474a3af0bf18434c4b81e83f33cacaabb, received independent
+ACCEPT_WITH_NOTES; review-e185d289.md SHA-256
+322e92f1d829714e71da767f2e83f4a090557fe0b97087cb7d69cae1a5ecb5a4.
+The full real source context was not completely frozen in the run manifest;
+retain that limit and perform final integrated qualification at its boundary.
+Normally publish only the evidence-closed task checkpoint.
+Primary dev remains e88b1c2ee6f3206c628f79908e430a7967e9f58c;
 main remains aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3. Task publication is
 not dev/main integration. After permanent placement is resolved, admit the
 required importer/lifecycle suite, batch current-generator projection, qualify

@@ -176,3 +176,14 @@ task branch under campaign delegation. Full importer, current generator,
 combined integration and release qualification remain open. The pending owner
 question concerns the existing permanent storage pool; temporary small fixtures
 under the receipt parent do not adopt that parent as a bulk pool.
+
+Frozen e185d2898fb207e59c9eb5380fecf624a3e954ac, tree
+f04b108474a3af0bf18434c4b81e83f33cacaabb, received narrow independent
+ACCEPT_WITH_NOTES. Reviewer proved all existing test bodies and the original
+golden assertion loop unchanged, all fifteen destinations redirected, actual
+code hashes matching the candidate and the retained 11-case log/result.
+source-closeout.json binds the actual reviewer agent and external report/hash.
+The receipt's precommit identity is explicit; real context is not a full frozen
+dependency manifest. Retain this limitation for integrated qualification.
+Preserve a separate evidence-only closeout, then normally push only the exact
+task ref and verify it remotely. No source, dev/main or artifact substitution.
