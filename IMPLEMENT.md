@@ -12121,3 +12121,10 @@ and evaluation runs. Canonical outputs are retained, never disposable cleanup
 targets; missing placement/allowance refuses. Twenty-two focused cases pass,
 including fast output overrun and separate volume admission. Exact extension
 review and permanent placement remain required before bulk packaging/tests.
+
+Canonical review of 8acfecc4 exposed a crash-before-final-check gap. Both normal
+completion and recovery now qualify source output size/identity, preserve the
+original process result, and retain canonical bytes on failure. Ten affected
+tests pass without skips (13.276s); exact superseding review remains required.
+The last inactive checkout was retired with its two unique evidence-only commits
+and branch preserved. Thirty-four checkouts retired, two physical checkouts left.

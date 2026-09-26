@@ -217,9 +217,30 @@ def canonical_roots(config, job, cwd):
 
 
 def canonical_usage(config, job, roots):
+    for relative, declared in job.get('canonical_outputs', {}).items():
+        if volume_identity(roots['canonical:' + relative]) != declared['volume_id'].casefold():
+            raise WorkspaceRefused('canonical output volume identity changed')
     return {relative: tree_usage(roots['canonical:' + relative], maximum=declared['bytes'],
                                 max_files=config['limits']['max_files'])
             for relative, declared in job.get('canonical_outputs', {}).items()}
+
+
+def qualify_canonical_outputs(record, config, roots, working):
+    """Required on both normal completion and interrupted-controller recovery."""
+    try:
+        cwd = Path(record['job']['cwd'])
+        if cwd not in working: raise WorkspaceRefused('canonical working root no longer approved')
+        roots.update(canonical_roots(config, record['job'], cwd))
+        record['canonical_after'] = canonical_usage(config, record['job'], roots)
+        peaks = record['peaks'].setdefault('canonical_bytes', {})
+        for relative, used in record['canonical_after'].items():
+            peaks[relative] = max(peaks.get(relative, 0), used)
+    except (OSError, WorkspaceRefused) as exc:
+        # Never change a resource failure into success during later recovery.
+        # Preserve canonical files/aliases; only verified scratch is retired.
+        record['canonical_after_error'] = str(exc)
+        record.setdefault('prior_result', record.get('result'))
+        record['result'] = {'reason': 'canonical_output_limit_or_identity', 'message': str(exc), 'exit_code': None}
 
 
 def tree_usage(root, *, maximum, max_files):
@@ -485,20 +506,12 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
             record['reconciliation'] = host.reconcile(job_id)
         record['phase'] = 'quiescent'; write_json(active, record)
         record['after'] = probe(roots)
-        try:
-            record['canonical_after'] = canonical_usage(config, job, roots)
-            for relative, used in record['canonical_after'].items():
-                record['peaks']['canonical_bytes'][relative] = max(record['peaks']['canonical_bytes'][relative], used)
-        except (OSError, WorkspaceRefused) as exc:
-            # Canonical outputs are retained source state, never scratch cleanup
-            # targets. A quick allocation between scans still fails qualification.
-            record['canonical_after_error'] = str(exc)
-            record['result'] = {'reason': 'canonical_output_limit_or_identity', 'message': str(exc), 'exit_code': None}
+        qualify_canonical_outputs(record, config, roots, working)
         return collect_and_retire(record, config, roots)
 
 
 def recover(config_path):
-    config, roots, _ = load_config(config_path)
+    config, roots, working = load_config(config_path)
     with estate_lock(roots['control']):
         active = roots['control'] / 'active.json'
         if not os.path.lexists(active): return {'phase': 'no_pending_job', 'writes': False}
@@ -515,6 +528,8 @@ def recover(config_path):
             if ordinary(staging).st_size > 1024 * 1024: raise WorkspaceRefused('unexpected checkpoint staging size')
             staging.unlink()
         record['result'] = record.get('result', {'reason': 'controller_interrupted', 'exit_code': None})
+        qualify_canonical_outputs(record, config, roots, working)
+        write_json(active, record)
         if record.get('collected_manifest'): return finish_collected(record, config, roots)
         return collect_and_retire(record, config, roots)
 

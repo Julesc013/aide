@@ -1,0 +1,17 @@
+{
+  "path": "D:\\Projects\\AIDE\\aide-codex-neutrality-integration",
+  "head": "916d4928373c9889e8a9dac52a329d5a056669f5",
+  "branch": "refs/heads/task/aide-codex-neutrality-integration-01",
+  "unique_commits": [
+    "fbca5038",
+    "916d4928"
+  ],
+  "unique_state": "Two evidence-only commits retained under unchanged branch; no local ignored/untracked/dirty contents.",
+  "logical_bytes": 85770572,
+  "files": 10737,
+  "before_free": 73685745664,
+  "result": "removed_refs_and_unique_evidence_retained",
+  "ref_after": "916d4928373c9889e8a9dac52a329d5a056669f5",
+  "path_absent": true,
+  "after_free": 73793736704
+}

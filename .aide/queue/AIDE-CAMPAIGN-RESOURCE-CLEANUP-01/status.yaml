@@ -4,11 +4,11 @@ status: running
 planning_state: admitted
 result: PENDING
 updated_at: 2026-09-26
-current_slice: canonical_output_reservation_candidate
+current_slice: canonical_output_recovery_review_repair
 next_slice: scoped_canonical_output_review_then_admitted_product_validation
 review_gate: superseding_exact_source_review_pending
 placement: approved_permanent_pool_unresolved_question_pending
-retired_worktrees: 33
-remaining_worktrees: 3
-focused_tests: 22_passed_no_skips
+retired_worktrees: 34
+remaining_worktrees: 2
+focused_tests: 10_affected_cases_passed_no_skips_prior_candidate_22_passed
 packaging: source_output_reservations_implemented_review_pending

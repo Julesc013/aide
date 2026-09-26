@@ -178,6 +178,40 @@ class ManagedWorkspaceTests(unittest.TestCase):
             del record['job']['canonical_outputs']['.aide/release']
             self.assertFalse(lite.source_maintainer_job_guard(REPO, packaging=True))
 
+    @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
+    def test_crash_before_final_canonical_check_cannot_recover_as_success(self):
+        path = self.declare_canonical(amount=1024)
+        host = mock.Mock()
+        def complete(*args, **kwargs):
+            (path/'overrun.bin').write_bytes(b'x'*1025)
+            return {'reason': 'exited', 'exit_code': 0}
+        host.run.side_effect = complete
+        with mock.patch.object(workspace, 'validate_job', return_value=self.source), \
+             mock.patch.object(workspace, 'qualify_canonical_outputs', side_effect=InterruptedError('crash after quiescent checkpoint')):
+            with self.assertRaises(InterruptedError):
+                workspace.run(self.config_path, self.job, host=host)
+        active = self.roots['control']/'active.json'
+        self.assertEqual(workspace.read_json(active)['result']['exit_code'], 0)
+        result = workspace.recover(self.config_path)
+        self.assertEqual(result['result']['reason'], 'canonical_output_limit_or_identity')
+        self.assertEqual(result['prior_result']['exit_code'], 0)
+        self.assertEqual((path/'overrun.bin').stat().st_size, 1025)
+        self.assertTrue(result['scratch_absent']); self.assertTrue(result['reservation_released'])
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
+    def test_crash_recovery_rechecks_canonical_volume_identity(self):
+        path = self.declare_canonical()
+        host = mock.Mock(); host.run.return_value = {'reason': 'exited', 'exit_code': 0}
+        with mock.patch.object(workspace, 'validate_job', return_value=self.source), \
+             mock.patch.object(workspace, 'qualify_canonical_outputs', side_effect=InterruptedError('crash')):
+            with self.assertRaises(InterruptedError): workspace.run(self.config_path, self.job, host=host)
+        actual_volume = workspace.volume_identity
+        with mock.patch.object(workspace, 'volume_identity', side_effect=lambda p: 'changed' if Path(p) == path else actual_volume(p)):
+            result = workspace.recover(self.config_path)
+        self.assertEqual(result['result']['reason'], 'canonical_output_limit_or_identity')
+        self.assertIn('volume identity changed', result['canonical_after_error'])
+        self.assertTrue(path.exists()); self.assertTrue(result['scratch_absent'])
+
     def test_git_queries_only_project_reports_when_requested(self):
         lite = self.lite_module()
         args = argparse.Namespace(repo_root=REPO, write_reports=False)

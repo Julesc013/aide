@@ -85,3 +85,19 @@ review is required before real packaging. Source 11226a6e received scoped
 ACCEPT_WITH_NOTES; its actual host replay passed ten cases in 3.335s through
 the runner, peak Job memory 59,314,176 bytes, 1,434 log bytes, scratch absent
 and reservation released. Report and bounded receipt/log are retained once.
+
+Review 8acfecc4 requested a final-check recovery repair: interruption after the
+quiescent checkpoint could bypass canonical size/identity qualification and
+retain exited/0. Normal completion and recovery now share final canonical
+qualification. Recovery rebuilds declared roots, checks volume identity and
+size, retains prior process result separately, and reports canonical failure
+without deleting source outputs. Ten affected tests pass, no skips, 13.276s,
+including both new crash boundaries plus real process/crash/retirement checks.
+Prior 22-case result stays bound to its prior source, not relabeled as a new run.
+
+Retired the final inactive neutrality checkout after proving clean local state,
+no ignored/untracked contents, no observed referencing command and exact branch
+reachability. Its two unique evidence-only commits remain under the unchanged
+branch; no branch was deleted and no history was integrated by this cleanup.
+Receipt: neutrality-worktree-retirement.json. Thirty-four physical checkouts
+are retired; primary dev and current implementation are the only two remaining.
