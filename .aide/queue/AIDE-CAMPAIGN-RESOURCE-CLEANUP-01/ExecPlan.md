@@ -152,3 +152,27 @@ interfaces: collect current context without writes by default, and retain the
 existing generator behind --write-reports. Test actual fixture state before and
 after inspection plus explicit report generation; keep Task OS writers/golden
 checks and queue routing behavior intact. No bulk allocation is needed.
+
+The exact 0302b18c inspection change received independent ACCEPT_WITH_NOTES.
+The bounded Task OS suite passed eleven cases in 10.084s, no skips, but its
+legacy golden test explicitly generated fifteen tracked source reports. These
+are this run's known derived writes, not pre-existing user changes. Record
+their before/after identities and restore only these explicit paths from the
+unchanged HEAD. Correct the golden test by redirecting only its report path
+constants into admitted temporary scratch, retaining real source inputs,
+unchanged golden runners/assertions and an actual-source report nonmutation
+assertion. Extend the allowed test path above. Re-run that eleven-case suite
+through the bounded driver, check checkout state, and request only the narrow
+test-placement delta review. No production generator or oracle weakening.
+
+The corrected actual suite passed all eleven cases in 8.554s, no skips, through
+the bounded owner; scratch peak 2,104 bytes, Job memory 212,393,984 bytes,
+1,964 log bytes. Scratch was retired and reservations released. The checkout's
+fifteen report paths remain unchanged. This precommit run records HEAD 0302b18c
+and the actual changed test digest d92b2d583fb8bbd919f9eeef202211b94f499e2ac856b9863a289411050ccfa2;
+do not relabel it a clean frozen-HEAD run. Freeze the tested file for narrow
+independent placement review, preserve evidence and normally publish only the
+task branch under campaign delegation. Full importer, current generator,
+combined integration and release qualification remain open. The pending owner
+question concerns the existing permanent storage pool; temporary small fixtures
+under the receipt parent do not adopt that parent as a bulk pool.

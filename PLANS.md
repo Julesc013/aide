@@ -4046,3 +4046,10 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   resource and organization damage. D has 1.81 GB free. Reuse the current
   checkout, reclaim clean retained-ref worktrees and evidenced disposable
   payloads, then enforce resource preflight and automatic cleanup in AIDE.
+- Checkpoint: 34 inactive checkouts retired with exact refs retained; two
+  physical checkouts remain. Resource source, focused recovery fixture and
+  default inspection changes have scoped independent acceptance. Seven focused
+  product cases pass; the corrected 11-case Task OS suite passes through the
+  bounded owner without rewriting source reports. Permanent bulk placement,
+  full importer/current-generator qualification, integration and release remain
+  open. See the task's resource-checkpoint.md and exact run/review receipts.

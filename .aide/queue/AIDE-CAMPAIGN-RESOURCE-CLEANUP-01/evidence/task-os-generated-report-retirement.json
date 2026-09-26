@@ -1,0 +1,82 @@
+{
+  "source_commit": "0302b18c724d463a5865441bb717f9733d26a1eb",
+  "job_id": "77839b609b1742388eb3bf75b90d5aba",
+  "reason": "Golden report writers explicitly wrote current-source projections; preserve identities and restore only owned generated outputs to frozen source",
+  "reports": [
+    {
+      "path": ".aide/reports/task-os-blocker-classification.json",
+      "generated_sha256": "762e44d6e61004a1bc84ff0004999f2fefdb9b17a8219327fe7a05c579fbcd36",
+      "original_git_blob": "4fe37efdffc8726ae50ec4ab4d3f5fdcbab1259c"
+    },
+    {
+      "path": ".aide/reports/task-os-blocker-classification.md",
+      "generated_sha256": "f58988b9da014c8bc6a581e71836b00ff4ac487dfe671fb6be3cb7ae166e0f6b",
+      "original_git_blob": "5d386450b0d58eb5bc811c8a4305e4dcc72c975a"
+    },
+    {
+      "path": ".aide/reports/task-os-blocker-status.md",
+      "generated_sha256": "1e924a4d0bbbbfc8cf957395122e86d0ded9d7c449c12acdd8c662fa243974e1",
+      "original_git_blob": "4a51b8ffa1d9add023efebdbf5ca3b3c40bdc517"
+    },
+    {
+      "path": ".aide/reports/task-os-checkpoint-plan.md",
+      "generated_sha256": "b89022d3ff1c41950dd22beb22903c2c5affd32a956c72a1bd31128cd6cc3e1e",
+      "original_git_blob": "301a6241eb07d68163fdea10f3aa04981171cd52"
+    },
+    {
+      "path": ".aide/reports/task-os-checkpoint-status.md",
+      "generated_sha256": "8fed6acd9c6534e0eeb02a6778490936fab81559b2c58322aa6daf02413aeaf4",
+      "original_git_blob": "6d539c23c1c9c52a580a4c34065f8e0b742ce337"
+    },
+    {
+      "path": ".aide/reports/task-os-command-status.md",
+      "generated_sha256": "541325d195ef90d8487dd0f192f7261891929f751d95844c02508196f0a2129b",
+      "original_git_blob": "289658546b7191e34e9c8cd5d043b776c3fa5a1f"
+    },
+    {
+      "path": ".aide/reports/task-os-next-plan.md",
+      "generated_sha256": "96a3edc2aacae5c6fb68832b3abe031759cb150ff0b3f92cd80b301b6f407ad5",
+      "original_git_blob": "3e1710bb7fb722eac59896c38d7ed724be4df158"
+    },
+    {
+      "path": ".aide/reports/task-os-repair-plan.md",
+      "generated_sha256": "a15fe6d57e25e47c0a5ae3241939042a56a2228ae2d92935ab3f54af33fb5c0b",
+      "original_git_blob": "9ea0455d64df2a9645cd88f9074c741e59a6a3bf"
+    },
+    {
+      "path": ".aide/reports/task-os-requeue-plan.md",
+      "generated_sha256": "4193eea3f117a571e6203476650be46677c09145177394ae423a419ddc40e93d",
+      "original_git_blob": "cf84d93cc793bcdb1edcb126bd9ac2301545454d"
+    },
+    {
+      "path": ".aide/reports/task-os-resume-plan.md",
+      "generated_sha256": "63e6614a01f493e332eec86daee22181f40e401c42b8339d9d47f87245f8d80f",
+      "original_git_blob": "a42c50145d56145b65e6bf07b43189743d0e4d50"
+    },
+    {
+      "path": ".aide/reports/task-os-task-classification.json",
+      "generated_sha256": "dfc4cf751a7db52896ade2da273ca479ebe076b41adfa54f5c4ac859bd2cfe86",
+      "original_git_blob": "68d778b19f9ce4f7d6b11c96edc17e799af0b838"
+    },
+    {
+      "path": ".aide/reports/task-os-task-classification.md",
+      "generated_sha256": "fa82c30e816090da7a7c6c81d1e50f9bd9c091c2c87ff23f686cd9190a441fa4",
+      "original_git_blob": "091dcdac88c050cf5ccbc174f32d1a01677fe0c8"
+    },
+    {
+      "path": ".aide/reports/task-os-task-status.md",
+      "generated_sha256": "0429c89cf7e58470236312a523cbe4f302a874351eba38249dde80b30fd1ef26",
+      "original_git_blob": "aab96d58e0664177075c84718ba116774c89f4bf"
+    },
+    {
+      "path": ".aide/reports/task-os-wave-plan.md",
+      "generated_sha256": "8624383b6ecffa85fad1b68a7eb1477fe106f621122246d8fb053fd6f514da76",
+      "original_git_blob": "50de25aa9c2babaf14ac304b440cf1f2a0681774"
+    },
+    {
+      "path": ".aide/reports/task-os-wave-status.md",
+      "generated_sha256": "2ab2c0f489b436bd3455083b51beb524c2007d9b8c75ae08af9cb0b1fd69fdcb",
+      "original_git_blob": "f70f70a90c4c020f13fe660d6068cbe1834f8cd2"
+    }
+  ]
+}

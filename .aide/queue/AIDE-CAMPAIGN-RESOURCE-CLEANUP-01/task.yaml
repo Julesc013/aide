@@ -21,6 +21,7 @@ scope:
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_managed_workspace.py
     - .aide/scripts/tests/test_export_import.py
+    - .aide/scripts/tests/test_x_os_01_task_os_commands.py
     - .aide.local.example/execution.json
     - docs/reference/aide-lite-test-runner.md
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml

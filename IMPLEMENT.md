@@ -12146,3 +12146,15 @@ pass (7.978s); a real checkout query returned exit0 with unchanged Git state.
 Parent routing and its existing coverage control now point to the resource and
 partial-import dependencies. No new master specification or permanent layout
 was introduced; full Task OS check and exact query review remain next.
+
+Independent review accepted the exact 0302b18c task-status reader delta.
+Its bounded Task OS suite passed 11/11 in 10.084s, but an existing golden test
+generated fifteen source reports. Those known derived writes were identified
+and restored individually to unchanged HEAD. The same golden runners now use
+real source context with only report destinations redirected to admitted scratch;
+all original assertions remain and actual source-report byte/mtime equality is
+checked. The corrected suite passed 11/11 in 8.554s, no skips, through the
+bounded owner, with no source-report changes, retired scratch and released
+reservations. Exact source/input bindings, raw-log hashes and review scopes are
+in the resource task. Permanent bulk placement and full delivered qualification
+remain unresolved; this source checkpoint does not claim activation or release.

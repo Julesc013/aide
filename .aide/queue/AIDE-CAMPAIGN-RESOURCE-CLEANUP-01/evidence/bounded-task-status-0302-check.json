@@ -1,0 +1,114 @@
+{
+  "after": {
+    "commit_free": 61940842496,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 74347892736
+    },
+    "physical_free": 12723908608
+  },
+  "before": {
+    "commit_free": 62218022912,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 73512615936
+    },
+    "physical_free": 13006917632
+  },
+  "canonical_after": {},
+  "canonical_before": {},
+  "collected_manifest": {
+    "logs": "789b5591752628b44bfe957fdb293ed1cb6f3b9b68240e994eb776ce66dbc8d8",
+    "output": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "config_digest": "9c27c358ca871f972325f8d683f2af1d59513a63efb6861543044601a72c5cf9",
+  "created_at_unix_ns": 1790399178585256200,
+  "environment_digest": "bb85da78692eb996556c0fcd9c27fcc98cb1e0269062b4c6765ed7811d54209c",
+  "fixture_parent": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926",
+  "job": {
+    "adapter": "python",
+    "argv": [
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      ".aide/scripts/tests",
+      "-p",
+      "test_x_os_01_task_os_commands.py",
+      "-v"
+    ],
+    "cwd": "D:\\Projects\\AIDE\\aide-stable-lite-partial-import-recovery",
+    "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+    "inputs": {
+      ".aide/scripts/aide_lite.py": "dd076065f1b59c9587a1fa7a58df17b8cf16f32834529284863392b67c09108e",
+      ".aide/scripts/tests/test_x_os_01_task_os_commands.py": "8b976b7548faa4dda288043384b7b0a3b919306b9215f6254a7ccfb2d1a3b0b9",
+      "core/execution/managed_workspace.py": "1af93063424cc75829b203eef5f2399c32f953cc89b5d4afc284e3fb666a2e89",
+      "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+    },
+    "owner": "AIDE campaign controller",
+    "schema": "aide.maintainer-job.v1",
+    "source_commit": "0302b18c724d463a5865441bb717f9733d26a1eb",
+    "source_tree": "ad89d8700834cad5a99edbebc068a248eca784a0",
+    "workunit": "AIDE-CAMPAIGN-RESOURCE-CLEANUP-01"
+  },
+  "job_id": "77839b609b1742388eb3bf75b90d5aba",
+  "last_capacity": {
+    "commit_free": 61900984320,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 74347896832
+    },
+    "physical_free": 12682145792
+  },
+  "limits": {
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 65536,
+    "max_files": 1000,
+    "memory_bytes": 536870912,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 16,
+    "retained_bytes": 1048576,
+    "runtime_seconds": 120,
+    "scratch_bytes": 8388608
+  },
+  "log_capture": {
+    "bytes": 1965,
+    "path": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\bounded-task-status-check-77839b609b1742388eb3bf75b90d5aba.log",
+    "sha256": "84315b2313a23add735170223dc2dfd5d769c69c37cf8c549e65e3fee76ad953"
+  },
+  "manifest_digest": "20f78539e4d74bf7966b9f508eb9dc4cea18c9c3c4e17bad4d50a63ba98703bd",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 207859712,
+    "scratch_bytes": 2105
+  },
+  "phase": "retired",
+  "process": {
+    "creation_filetime": 134348727787242554,
+    "job_id": "77839b609b1742388eb3bf75b90d5aba",
+    "peak_memory_bytes": 207859712,
+    "pid": 30968,
+    "stage": "quiescent"
+  },
+  "reservation_released": true,
+  "reservations": {
+    "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 10616832
+  },
+  "result": {
+    "bytes": 1965,
+    "creation_filetime": 134348727787242554,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "77839b609b1742388eb3bf75b90d5aba",
+    "pid": 30968,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "retained": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\tiny-aide-validation-z95ykys2\\retained\\77839b609b1742388eb3bf75b90d5aba",
+  "retention_disposition": "task receipt references one raw log at log_capture.path; tiny fixture retired",
+  "scratch": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\tiny-aide-validation-z95ykys2\\scratch\\77839b609b1742388eb3bf75b90d5aba",
+  "scratch_absent": true,
+  "scratch_identity": [
+    3781016413010784355,
+    6192449489414580
+  ]
+}
