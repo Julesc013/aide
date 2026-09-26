@@ -20,6 +20,7 @@ scope:
     - core/runtime/continuous_worker/windows_job.py
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_managed_workspace.py
+    - .aide/scripts/tests/test_export_import.py
     - .aide.local.example/execution.json
     - docs/reference/aide-lite-test-runner.md
   external_resource_root: D:/Projects/AIDE

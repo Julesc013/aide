@@ -23,16 +23,29 @@ SPEC.loader.exec_module(aide_lite)
 
 
 class ExportImportTests(unittest.TestCase):
-    def make_source_repo(self) -> Path:
+    def make_source_repo(self, *, minimal_recovery: bool = False) -> Path:
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
         root = Path(temp.name) / "source"
         root.mkdir()
-        for rel in [*aide_lite.PORTABLE_SOURCE_FILES, *aide_lite.Q21_REQUIRED_FILES]:
+        source_files = [*aide_lite.PORTABLE_SOURCE_FILES, *aide_lite.Q21_REQUIRED_FILES]
+        if minimal_recovery:
+            # Intent/ownership boundary tests need a valid multi-file pack,
+            # not repeated durable installation of every exported design family.
+            # Full export/archive/consumer tests retain the complete fixture.
+            source_files = [*aide_lite.Q21_REQUIRED_FILES, *aide_lite.PORTABLE_TEMPLATE_MAP,
+                '.aide/scripts/aide_lite.py', '.aide/prompts/compact-task.md',
+                '.aide/policies/token-budget.yaml', '.aide/policies/commit-messages.yaml',
+                '.aide/policies/task-resumption.yaml', '.aide/policies/work-units.yaml',
+                '.aide/policies/recovery.yaml', '.aide/policies/verification.yaml',
+                '.aide/policies/token-ledger.yaml', '.aide/policies/evals.yaml',
+                '.aide/policies/controller.yaml', '.aide/policies/routing.yaml',
+                '.aide/policies/cache.yaml', '.aide/policies/local-state.yaml']
+        for rel in source_files:
             source = REPO_ROOT / rel
             if source.exists() and source.is_file():
                 self.copy_file(source, root / rel)
-        for directory in [*aide_lite.PORTABLE_SOURCE_DIRS, ".aide/import"]:
+        for directory in ([] if minimal_recovery else [*aide_lite.PORTABLE_SOURCE_DIRS, ".aide/import"]):
             source_root = REPO_ROOT / directory
             if not source_root.exists():
                 continue
@@ -1101,7 +1114,7 @@ class ExportImportTests(unittest.TestCase):
 
     @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
     def test_explicit_partial_recovery_finishes_fresh_and_predecessor_update(self) -> None:
-        source_root = self.make_source_repo()
+        source_root = self.make_source_repo(minimal_recovery=True)
         first_rel = ".aide/prompts/compact-task.md"
         second_rel = ".aide/policies/token-budget.yaml"
         pack_v1 = self.freeze_pack(source_root, "partial-recover-v1")
@@ -1156,7 +1169,7 @@ class ExportImportTests(unittest.TestCase):
 
     @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
     def test_partial_recovery_refuses_wrong_inputs_rivals_and_old_intent(self) -> None:
-        source_root = self.make_source_repo()
+        source_root = self.make_source_repo(minimal_recovery=True)
         pack_v1 = self.freeze_pack(source_root, "partial-refusal-v1")
         target = source_root.parent / "partial-refusal-target"
         aide_lite.apply_import_pack(pack_v1, target)
@@ -1235,7 +1248,7 @@ class ExportImportTests(unittest.TestCase):
 
     @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
     def test_partial_recovery_requires_exact_manual_resolution_bytes(self) -> None:
-        source_root = self.make_source_repo()
+        source_root = self.make_source_repo(minimal_recovery=True)
         resolved_rel = ".aide/prompts/compact-task.md"
         other_rel = ".aide/policies/token-budget.yaml"
         pack_v1 = self.freeze_pack(source_root, "partial-resolution-v1")
@@ -1285,7 +1298,7 @@ class ExportImportTests(unittest.TestCase):
 
     @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
     def test_redigested_partial_intent_cannot_relabel_authored_file_as_owned(self) -> None:
-        source_root = self.make_source_repo()
+        source_root = self.make_source_repo(minimal_recovery=True)
         pack = self.freeze_pack(source_root, "forged-partial")
         target = source_root.parent / "forged-partial-target"
         first = aide_lite.apply_import_pack(pack, target, fail_after_writes=1)
@@ -1327,7 +1340,7 @@ class ExportImportTests(unittest.TestCase):
 
     @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
     def test_partial_recovery_blocks_controls_change_during_publication_and_retirement(self) -> None:
-        source_root = self.make_source_repo()
+        source_root = self.make_source_repo(minimal_recovery=True)
         pack = self.freeze_pack(source_root, "partial-controls-race")
         for boundary in ("receipt", "retirement"):
             with self.subTest(boundary=boundary):
@@ -1397,7 +1410,7 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
 
     @unittest.skipUnless(sys.platform == "win32", "anchored partial import recovery is Windows only")
     def test_redigested_partial_intent_cannot_omit_payload_coverage(self) -> None:
-        source_root = self.make_source_repo()
+        source_root = self.make_source_repo(minimal_recovery=True)
         pack = self.freeze_pack(source_root, "omitted-partial")
         target = source_root.parent / "omitted-partial-target"
         interrupted = aide_lite.apply_import_pack(pack, target, fail_after_writes=1)

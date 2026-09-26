@@ -115,3 +115,28 @@ use only a finite 128 MiB scratch/512 MiB memory/64 KiB log/180s run under the
 existing disposable tiny-fixture parent, collect one result/log and retire it.
 This limited validation does not adopt a permanent bulk pool or close the full
 importer/artifact gates. Permanent pool resolution remains pending the owner.
+
+The admitted product batch timed out at 180s after two completed cases; the
+controls publication/retirement case was unfinished. Do not report a suite
+pass. Result/log bind exact source 8aa60c7b, declared fixture inputs, real process
+identity and limits. Observed scratch peak 17,542,660 bytes, Job memory peak
+291,880,960 bytes, 577 log bytes; owned Job quiescent, scratch absent and
+reservation released. No full-suite retry is admitted. Isolate only the
+unfinished case with bounded code-driven stack samples and a finite 300s
+diagnostic budget; preserve its result before deciding any repair.
+
+The isolated controls case passed in 112.647s. Stack samples show real fsync
+staged writes and path resolution, then fixture teardown, not a stalled thread.
+Observed scratch peak 18,069,781 bytes, Job memory 216,014,848 bytes; scratch
+absent and reservation released. Preserve fsync and the real Windows guards.
+
+Next efficiency repair: the seven focused partial-recovery cases currently
+import the complete 833-member fixture repeatedly to test intent/ownership and
+controls boundaries. Add an explicitly minimal valid lifecycle fixture for
+those cases only, retaining required source files/templates and the changed
+payload paths. Keep all original assertions and real flush/handle/process
+behavior; full export/archive/consumer tests retain their full fixtures. This
+is test-oracle scope under the owner resource delegation, not reduced release
+coverage. Extend this task's allowed paths to test_export_import.py. Run these
+seven cases through the bounded path and obtain narrow independent oracle review
+before treating the reduced-fixture evidence as accepted.

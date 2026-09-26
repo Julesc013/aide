@@ -12128,3 +12128,12 @@ original process result, and retain canonical bytes on failure. Ten affected
 tests pass without skips (13.276s); exact superseding review remains required.
 The last inactive checkout was retired with its two unique evidence-only commits
 and branch preserved. Thirty-four checkouts retired, two physical checkouts left.
+
+The real bounded importer batch timed out at 180s after two completed cases;
+the isolated controls publication/retirement case passed in 112.647s. Stack
+samples showed fsync/path resolution and cleanup rather than a hang. To reduce
+repeated fixture work, only the six pack-based partial recovery boundary tests
+now select a smaller valid multi-file fixture; their assertions, production
+flushes and Windows handle behavior are unchanged. The missing-controls process
+case needs no pack. Full export/archive/consumer tests retain full fixtures.
+This oracle change requires actual seven-case validation and narrow review.

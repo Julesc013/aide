@@ -4,8 +4,9 @@ status: running
 planning_state: admitted
 result: PENDING
 updated_at: 2026-09-26
-current_slice: admitted_product_regression
-next_slice: scoped_canonical_output_review_then_admitted_product_validation
+current_slice: focused_recovery_fixture_candidate
+next_slice: admitted_seven_case_validation_and_narrow_oracle_review
+last_product_run: timeout_180s_two_completed_cases_not_suite_pass
 review_gate: b325deea_independent_source_accept_with_notes
 placement: approved_permanent_pool_unresolved_question_pending
 retired_worktrees: 34
