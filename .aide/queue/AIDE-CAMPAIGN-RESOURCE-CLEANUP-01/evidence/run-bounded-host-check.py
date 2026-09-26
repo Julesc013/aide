@@ -45,7 +45,7 @@ with tempfile.TemporaryDirectory(prefix='tiny-aide-validation-', dir=parent) as 
     retained = Path(result['retained'])
     log = (retained/'logs/stdout').read_bytes() + (retained/'logs/stderr').read_bytes()
     # One durable result and one bounded log; fixture copies are retired below.
-    (evidence/'bounded-host-check.log').write_bytes(log)
+    (evidence/'bounded-host-check.txt').write_bytes(log)
     result['retention_disposition'] = 'bounded log and receipt collected here; tiny fixture retired'
     result['fixture_parent'] = str(parent)
     workspace.write_json(evidence/'bounded-host-check.json', result)

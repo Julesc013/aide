@@ -1,0 +1,15 @@
+test_absent_job_reconciliation_never_kills_pid (test_continuous_worker_host.WindowsHostTests.test_absent_job_reconciliation_never_kills_pid) ... ok
+test_cancel_kills_owned_work (test_continuous_worker_host.WindowsHostTests.test_cancel_kills_owned_work) ... ok
+test_no_secret_environment_forwarding (test_continuous_worker_host.WindowsHostTests.test_no_secret_environment_forwarding) ... ok
+test_output_flood_is_bounded (test_continuous_worker_host.WindowsHostTests.test_output_flood_is_bounded) ... ok
+test_parent_success_still_cleans_descendants (test_continuous_worker_host.WindowsHostTests.test_parent_success_still_cleans_descendants) ... ok
+test_real_process_output_and_quiescence (test_continuous_worker_host.WindowsHostTests.test_real_process_output_and_quiescence) ... ok
+test_stdin_and_stderr (test_continuous_worker_host.WindowsHostTests.test_stdin_and_stderr) ... ok
+test_supervisor_death_at_each_atomic_creation_boundary (test_continuous_worker_host.WindowsHostTests.test_supervisor_death_at_each_atomic_creation_boundary) ... ok
+test_supervisor_hard_death_kills_descendants (test_continuous_worker_host.WindowsHostTests.test_supervisor_hard_death_kills_descendants) ... ok
+test_timeout_kills_child_and_grandchild (test_continuous_worker_host.WindowsHostTests.test_timeout_kills_child_and_grandchild) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 3.335s
+
+OK

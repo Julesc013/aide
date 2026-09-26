@@ -32878,7 +32878,7 @@ def command_eval_list(args: argparse.Namespace) -> int:
 
 
 def command_eval_run(args: argparse.Namespace) -> int:
-    if not source_maintainer_job_guard(args.repo_root):
+    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(".aide/evals/runs",)):
         return 1
     run = run_golden_tasks(args.repo_root, task_id=args.task)
     json_result, md_result = write_golden_run_reports(args.repo_root, run)
@@ -44119,7 +44119,7 @@ def command_managed_job(args: argparse.Namespace) -> int:
         return 1
 
 
-def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False) -> bool:
+def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False, canonical_paths=()) -> bool:
     # The source-only execution owner is deliberately absent from Lite exports.
     # Preserve their established consumer selftest/export compatibility.
     if not (repo_root / "core/execution/managed_workspace.py").is_file():
@@ -44128,9 +44128,11 @@ def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False) -> 
         sys.path.insert(0, str(repo_root))
     from core.execution import managed_workspace
     try:
-        managed_workspace.current_context(repo_root)
+        record = managed_workspace.current_context(repo_root)
         if packaging:
-            raise managed_workspace.WorkspaceRefused("source packaging placement remains unqualified; generation is paused")
+            canonical_paths = (EXPORT_PACK_PATH, ".aide/release")
+        if canonical_paths:
+            managed_workspace.require_canonical_outputs(record, canonical_paths)
         return True
     except (OSError, ValueError, KeyError) as exc:
         print(f"result: REFUSED\nresource_admission: {exc}")

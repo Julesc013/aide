@@ -12113,3 +12113,11 @@ existence checks now refuse broken reparse roots, and source maintainer commands
 require actual named-Job membership with bound CLI inputs. Packaging remains
 paused pending canonical-output reservation qualification. Seventeen focused
 Windows cases pass; superseding review and final bounded replay remain open.
+
+The exact 11226a6e source received independent ACCEPT_WITH_NOTES; actual bounded
+host replay passed ten tests, scratch absent/reservation released. Added finite
+job reservations and sampling for the generator's existing source output roots
+and evaluation runs. Canonical outputs are retained, never disposable cleanup
+targets; missing placement/allowance refuses. Twenty-two focused cases pass,
+including fast output overrun and separate volume admission. Exact extension
+review and permanent placement remain required before bulk packaging/tests.

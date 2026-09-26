@@ -62,3 +62,26 @@ from export. Seventeen focused Windows tests passed without skips (22.209s).
 Freeze this repaired source, rerun the small affected host checks through the
 bounded runner, and request only the superseding delta review. The permanent
 pool question remains pending; do not adopt a historical dump as its answer.
+
+## Canonical output qualification slice
+
+Keep the generator's established .aide/export/aide-lite-pack-v0 and .aide/release
+destinations. Bind those existing ordinary roots and volume IDs in the job;
+declare positive per-root byte reservations bounded by one finite local
+canonical_bytes allowance. Include their volumes in admission and OS sampling,
+inspect only those bounded trees every thirty seconds and at completion.
+Retain canonical source outputs without deletion during scratch retirement;
+record exceeded limits as failure. Evaluation's existing .aide/evals/runs also
+requires a declared reservation. Unknown paths, missing roots, alias roots,
+wrong volumes and missing finite allowance refuse without creating paths.
+Use tiny canonical fixtures before a real source packaging job is admitted.
+
+Implemented this bounded extension; twenty-two focused Windows tests passed,
+no skips, 21.894s. New cases cover finite allowance/reservation arithmetic,
+separate canonical volume sampling, missing/wrong/unknown roots, real junction
+refusal, a real quick output overrun detected at completion with canonical
+bytes retained, and source command manifest requirements. Independent delta
+review is required before real packaging. Source 11226a6e received scoped
+ACCEPT_WITH_NOTES; its actual host replay passed ten cases in 3.335s through
+the runner, peak Job memory 59,314,176 bytes, 1,434 log bytes, scratch absent
+and reservation released. Report and bounded receipt/log are retained once.

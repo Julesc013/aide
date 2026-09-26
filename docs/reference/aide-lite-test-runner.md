@@ -61,10 +61,26 @@ commands are supported. Python temporary creation is pinned to the admitted
 temporary directory; output belongs in `AIDE_JOB_OUTPUT` and caches in the
 provided process-local cache variables. Additional tool adapters require
 qualification of their actual output/cache placement before admission.
-Source `export-pack` and release generation/validation currently refuse even
-inside a job: their canonical repository outputs need an explicitly qualified
-placement/reservation before packaging can resume. This remains required
-campaign work, with the accepted release generator preserved.
+Source `export-pack` and release generation/validation require both existing
+canonical output roots in their job manifest, with their actual volume IDs and
+finite byte reservations. Evaluation requires its existing runs destination.
+For example, a packaging manifest adds:
+
+```json
+"canonical_outputs": {
+  ".aide/export/aide-lite-pack-v0": {"volume_id": "ACTUAL_VOLUME_GUID", "bytes": 134217728},
+  ".aide/release": {"volume_id": "ACTUAL_VOLUME_GUID", "bytes": 134217728}
+}
+```
+
+Their combined budgets must fit the local `canonical_bytes` allowance (example:
+512 MiB). Missing roots, unknown destinations, aliases, wrong volumes or absent
+allowance refuse admission without creating a replacement. Reservations include
+canonical and scratch/collection peaks on each affected volume. OS disk sampling
+covers those volumes; bounded canonical metadata checks run at admission, every
+thirty seconds and completion. A quick overrun still fails the job. These source
+outputs remain in their established locations and are never scratch-retirement
+targets. Packaging qualification and final byte/replay checks remain required.
 
 Memory, descendant count and combined logs have Windows Job/pipe enforcement.
 Disk capacity and occupancy are monitored thresholds, not filesystem quotas

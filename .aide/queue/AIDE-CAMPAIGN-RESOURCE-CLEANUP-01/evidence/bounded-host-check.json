@@ -1,21 +1,25 @@
 {
   "after": {
-    "commit_free": 62735360000,
+    "commit_free": 62387658752,
     "disk_free": {
-      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 33937043456
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 73768751104
     },
-    "physical_free": 12242231296
+    "physical_free": 13139550208
   },
   "before": {
-    "commit_free": 62733742080,
+    "commit_free": 62391537664,
     "disk_free": {
-      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 33937055744
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 73768763392
     },
-    "physical_free": 12244635648
+    "physical_free": 13150760960
   },
-  "config_digest": "f31ddef5676f639ed983f97592c6adb06e9d095de57fdd85b519c05dd30c6bfa",
-  "created_at_unix_ns": 1790394759614894000,
-  "environment_digest": "3e696b8ea17a3622d29f7c583bd015659aab46d76b3f203390b0b3cb5a870319",
+  "collected_manifest": {
+    "logs": "737e12a0826f1648b4060ea8f136b54c17bc15bacd7c2efa87dacec06b84eb34",
+    "output": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "config_digest": "90cdf858c6562a3fb19d6f7e40cdaa2c04a8084900dc83caa65ce36b6ebe0c58",
+  "created_at_unix_ns": 1790396756499310200,
+  "environment_digest": "b1c64d85e275dbca4065a729eee410acf1c7e94488b9cb690b16c9349dda0c70",
   "fixture_parent": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926",
   "job": {
     "adapter": "python",
@@ -34,22 +38,22 @@
     "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
     "inputs": {
       ".aide/scripts/tests/test_continuous_worker_host.py": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854",
-      "core/execution/managed_workspace.py": "ee560c1b0b883da2ee865530be6b70324b086f2d93fd36851fca4b46548e6a9f",
-      "core/runtime/continuous_worker/windows_job.py": "e5f7f285a82c9e633243bfe2c22e2c201321180765c5c0dc7abe6c8600f5b8de"
+      "core/execution/managed_workspace.py": "6b4c86a74b1315026497d7bcfed46998bc734a09a35de1fc9c40b7a451092737",
+      "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
     },
     "owner": "AIDE campaign controller",
     "schema": "aide.maintainer-job.v1",
-    "source_commit": "dfc8048bc0053b0646e3cd7762d5e23758c1a7ac",
-    "source_tree": "85d4164fec3dd3b540e01dad9253131f00f4b362",
+    "source_commit": "11226a6e7fd073a599d3f0cb482d6874a6e3d11c",
+    "source_tree": "6ff7a9c6d6b934a1bfb7ee076c52a67034225a16",
     "workunit": "AIDE-CAMPAIGN-RESOURCE-CLEANUP-01"
   },
-  "job_id": "02d7dfeaa1af496da66f41072c214736",
+  "job_id": "2e4563fdf578464792ea872e035b1018",
   "last_capacity": {
-    "commit_free": 62676439040,
+    "commit_free": 62353612800,
     "disk_free": {
-      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 33937047552
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 73768755200
     },
-    "physical_free": 12195823616
+    "physical_free": 13122748416
   },
   "limits": {
     "commit_reserve_bytes": 4294967296,
@@ -63,17 +67,17 @@
     "runtime_seconds": 120,
     "scratch_bytes": 8388608
   },
-  "manifest_digest": "f9fd3870c02930a8e8bc8654b2b2e64a1271b5036b766ad50c5baa16a0ebd0a9",
+  "manifest_digest": "bff2049edaa23e5b0fa90cbae8006aae1dff40ae7cea68eef67ad954597bd4c4",
   "peaks": {
-    "memory_bytes": 59129856,
+    "memory_bytes": 59314176,
     "scratch_bytes": 140
   },
   "phase": "retired",
   "process": {
-    "creation_filetime": 134348683597887441,
-    "job_id": "02d7dfeaa1af496da66f41072c214736",
-    "peak_memory_bytes": 59129856,
-    "pid": 26000,
+    "creation_filetime": 134348703566314554,
+    "job_id": "2e4563fdf578464792ea872e035b1018",
+    "peak_memory_bytes": 59314176,
+    "pid": 42772,
     "stage": "quiescent"
   },
   "reservation_released": true,
@@ -82,16 +86,20 @@
   },
   "result": {
     "bytes": 1434,
-    "creation_filetime": 134348683597887441,
+    "creation_filetime": 134348703566314554,
     "exit_code": 0,
     "io_errors": [],
-    "job_id": "02d7dfeaa1af496da66f41072c214736",
-    "pid": 26000,
+    "job_id": "2e4563fdf578464792ea872e035b1018",
+    "pid": 42772,
     "quiescent": true,
     "reason": "exited"
   },
-  "retained": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\tiny-aide-validation-phwa5n48\\retained\\02d7dfeaa1af496da66f41072c214736",
+  "retained": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\tiny-aide-validation-c82fmrhj\\retained\\2e4563fdf578464792ea872e035b1018",
   "retention_disposition": "bounded log and receipt collected here; tiny fixture retired",
-  "scratch": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\tiny-aide-validation-phwa5n48\\scratch\\02d7dfeaa1af496da66f41072c214736",
-  "scratch_absent": true
+  "scratch": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\tiny-aide-validation-c82fmrhj\\scratch\\2e4563fdf578464792ea872e035b1018",
+  "scratch_absent": true,
+  "scratch_identity": [
+    3781016413010784355,
+    4222124650998430
+  ]
 }

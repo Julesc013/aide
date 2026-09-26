@@ -105,6 +105,79 @@ class ManagedWorkspaceTests(unittest.TestCase):
             self.assertFalse(workspace.inspect(self.config_path)['writes'])
         self.assertEqual(snapshot(), before)
 
+    def declare_canonical(self, relative='.aide/release', amount=2048):
+        path = self.source/relative; path.mkdir(parents=True, exist_ok=True)
+        self.config['limits']['canonical_bytes'] = amount
+        workspace.write_json(self.config_path, self.config)
+        self.job['canonical_outputs'] = {relative: {'volume_id': workspace.volume_identity(path), 'bytes': amount}}
+        return path
+
+    def test_canonical_outputs_have_finite_reservations_and_no_fallback(self):
+        path = self.declare_canonical()
+        for failure in ('unconfigured', 'over_budget', 'wrong_volume', 'unknown', 'missing'):
+            config = json.loads(json.dumps(self.config)); job = json.loads(json.dumps(self.job))
+            if failure == 'unconfigured': del config['limits']['canonical_bytes']
+            elif failure == 'over_budget': config['limits']['canonical_bytes'] = 1
+            elif failure == 'wrong_volume': job['canonical_outputs']['.aide/release']['volume_id'] = 'wrong'
+            elif failure == 'unknown': job['canonical_outputs'] = {'outside': {'bytes': 1}}
+            elif failure == 'missing':
+                job['canonical_outputs'] = {'.aide/evals/runs': job['canonical_outputs']['.aide/release']}
+            with self.subTest(failure=failure), self.assertRaises((OSError, workspace.WorkspaceRefused)):
+                workspace.canonical_roots(config, job, self.source)
+        self.assertFalse((self.source/'.aide/evals/runs').exists())
+        (path/'retained.txt').write_text('keep source output')
+        roots = {**self.roots, **workspace.canonical_roots(self.config, self.job, self.source)}
+        reservations = workspace.admission(self.config, self.roots, self.ample)
+        full = workspace.admission(self.config, roots, self.ample, self.job['canonical_outputs'])
+        volume = workspace.volume_identity(path)
+        self.assertEqual(full[volume]-reservations[volume], 2048)
+        observed = {**self.ample, 'disk_free': {volume: reservations[volume]+self.config['limits']['disk_reserve_bytes']+1024}}
+        with self.assertRaises(workspace.WorkspaceRefused):
+            workspace.admission(self.config, roots, observed, self.job['canonical_outputs'])
+
+    def test_canonical_volume_is_in_capacity_sampling_and_inspection(self):
+        path = self.declare_canonical()
+        def volume(value): return 'canonical-volume' if Path(value) == path else 'scratch-volume'
+        self.job['canonical_outputs']['.aide/release']['volume_id'] = 'canonical-volume'
+        with mock.patch.object(workspace, 'volume_identity', side_effect=volume):
+            roots = {**self.roots, **workspace.canonical_roots(self.config, self.job, self.source)}
+            observed = workspace.capacity(roots)
+            self.assertEqual(set(observed['disk_free']), {'scratch-volume', 'canonical-volume'})
+            observed['disk_free']['canonical-volume'] = 1
+            with self.assertRaises(workspace.WorkspaceRefused):
+                workspace.admission(self.config, roots, observed, self.job['canonical_outputs'])
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
+    def test_canonical_junction_refuses_without_touching_target(self):
+        target = self.root/'unowned'; target.mkdir(); sentinel = target/'keep.txt'; sentinel.write_text('keep')
+        path = self.source/'.aide/release'; path.parent.mkdir(parents=True)
+        child = subprocess.run(['cmd.exe', '/c', 'mklink', '/J', str(path), str(target)], capture_output=True, timeout=5)
+        self.assertEqual(child.returncode, 0, child.stderr)
+        self.addCleanup(lambda: os.rmdir(path) if os.path.lexists(path) else None)
+        self.job['canonical_outputs'] = {'.aide/release': {'volume_id': workspace.volume_identity(target), 'bytes': 2048}}
+        self.config['limits']['canonical_bytes'] = 2048
+        with self.assertRaises(workspace.WorkspaceRefused):
+            workspace.canonical_roots(self.config, self.job, self.source)
+        self.assertEqual(sentinel.read_text(), 'keep')
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
+    def test_quick_canonical_overrun_fails_and_preserves_source_output(self):
+        path = self.declare_canonical(amount=1024)
+        job = self.real_job('from pathlib import Path\nPath(".aide/release/result.bin").write_bytes(b"x"*1025)\n')
+        result = workspace.run(self.config_path, job)
+        self.assertEqual(result['result']['reason'], 'canonical_output_limit_or_identity')
+        self.assertTrue(result['scratch_absent']); self.assertTrue(result['reservation_released'])
+        self.assertEqual((path/'result.bin').stat().st_size, 1025)
+
+    def test_source_generators_require_bound_canonical_output_manifests(self):
+        lite = self.lite_module()
+        record = {'job': {'canonical_outputs': {lite.EXPORT_PACK_PATH: {}, '.aide/release': {}}}}
+        with mock.patch.object(workspace, 'current_context', return_value=record), mock.patch('builtins.print'):
+            self.assertTrue(lite.source_maintainer_job_guard(REPO, packaging=True))
+            self.assertFalse(lite.source_maintainer_job_guard(REPO, canonical_paths=('.aide/evals/runs',)))
+            del record['job']['canonical_outputs']['.aide/release']
+            self.assertFalse(lite.source_maintainer_job_guard(REPO, packaging=True))
+
     def test_git_queries_only_project_reports_when_requested(self):
         lite = self.lite_module()
         args = argparse.Namespace(repo_root=REPO, write_reports=False)

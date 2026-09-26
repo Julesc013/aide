@@ -26,6 +26,12 @@ class WorkspaceRefused(ValueError):
     pass
 
 
+# Existing repository-owned generator/evaluation destinations only. These are
+# retained canonical outputs, never disposable pools or arbitrary caller paths.
+CANONICAL_OUTPUT_PATHS = frozenset(('.aide/export/aide-lite-pack-v0',
+                                  '.aide/release', '.aide/evals/runs'))
+
+
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
@@ -128,6 +134,10 @@ def load_config(path):
             raise WorkspaceRefused('finite positive limit required: ' + key)
     if config['limits']['runtime_seconds'] > 86400 or config['limits']['processes'] > 128:
         raise WorkspaceRefused('runtime/process limit outside maintainer profile')
+    if 'canonical_bytes' in config['limits']:
+        value = config['limits']['canonical_bytes']
+        if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
+            raise WorkspaceRefused('finite positive canonical output limit required')
     working = [root_path(value) for value in config['working_roots']]
     if not working or any(root.is_relative_to(work) for root in roots.values() for work in working):
         raise WorkspaceRefused('storage inside working source refused')
@@ -168,12 +178,15 @@ def capacity(roots):
     return {'disk_free': disks, **memory_capacity()}
 
 
-def admission(config, roots, observed):
+def admission(config, roots, observed, canonical=None):
     limits = config['limits']; reservations = {}
     for key, amount in (('scratch', limits['scratch_bytes'] + limits['log_bytes']),
                         ('retained', limits['retained_bytes'] + limits['log_bytes']), ('control', 1024 * 1024)):
         identity = volume_identity(roots[key])
         reservations[identity] = reservations.get(identity, 0) + amount
+    for relative, declared in (canonical or {}).items():
+        identity = volume_identity(roots['canonical:' + relative])
+        reservations[identity] = reservations.get(identity, 0) + declared['bytes']
     for identity, amount in reservations.items():
         if observed['disk_free'][identity] - amount < limits['disk_reserve_bytes']:
             raise WorkspaceRefused('disk reservation would consume free-space reserve')
@@ -181,6 +194,32 @@ def admission(config, roots, observed):
         if observed[resource] - limits['memory_bytes'] < limits[reserve]:
             raise WorkspaceRefused('memory reservation would consume ' + resource)
     return reservations
+
+
+def canonical_roots(config, job, cwd):
+    declarations = job.get('canonical_outputs', {})
+    if not isinstance(declarations, dict) or any(rel not in CANONICAL_OUTPUT_PATHS for rel in declarations):
+        raise WorkspaceRefused('unknown canonical output destination')
+    roots = {}; total = 0
+    for relative, declared in declarations.items():
+        if not isinstance(declared, dict): raise WorkspaceRefused('canonical output declaration required')
+        amount = declared.get('bytes')
+        if isinstance(amount, bool) or not isinstance(amount, int) or amount <= 0:
+            raise WorkspaceRefused('finite positive canonical reservation required')
+        total += amount
+        path = root_path(str(cwd/relative))
+        if volume_identity(path) != declared.get('volume_id', '').casefold():
+            raise WorkspaceRefused('canonical output volume identity changed')
+        roots['canonical:' + relative] = path
+    if total > config['limits'].get('canonical_bytes', 0):
+        raise WorkspaceRefused('canonical reservation exceeds configured output allowance')
+    return roots
+
+
+def canonical_usage(config, job, roots):
+    return {relative: tree_usage(roots['canonical:' + relative], maximum=declared['bytes'],
+                                max_files=config['limits']['max_files'])
+            for relative, declared in job.get('canonical_outputs', {}).items()}
 
 
 def tree_usage(root, *, maximum, max_files):
@@ -251,9 +290,12 @@ def validate_job(job, working):
 
 def inspect(config_path, job=None):
     config, roots, working = load_config(config_path)
-    if job is not None: validate_job(job, working)
+    if job is not None:
+        cwd = validate_job(job, working)
+        roots.update(canonical_roots(config, job, cwd))
+        canonical_usage(config, job, roots)
     observed = capacity(roots)
-    reservations = admission(config, roots, observed)
+    reservations = admission(config, roots, observed, (job or {}).get('canonical_outputs'))
     active = roots['control'] / 'active.json'
     return {'config_digest': digest(config), 'capacity': observed, 'reservations': reservations,
             'active': read_json(active) if os.path.lexists(active) else None,
@@ -328,7 +370,8 @@ def collect_and_retire(record, config, roots):
     root = owned_scratch(record, roots); limits = config['limits']
     if any(p.name not in ('tmp', 'cache', 'output', 'logs', 'owner.json') for p in root.iterdir()):
         raise WorkspaceRefused('unexpected root output preserved')
-    tree_usage(root, maximum=limits['scratch_bytes'] + limits['log_bytes'] + 1024 * 1024, max_files=limits['max_files'])
+    used = tree_usage(root, maximum=limits['scratch_bytes'] + limits['log_bytes'] + 1024 * 1024, max_files=limits['max_files'])
+    record['peaks']['scratch_bytes'] = max(record['peaks']['scratch_bytes'], used)
     # Output is always retained, including cancellation/crash output. TMP/cache
     # are explicitly disposable; no unique source data belongs in these pools.
     output = root / 'output'
@@ -376,18 +419,21 @@ def collect_and_retire(record, config, roots):
 
 def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity):
     config, roots, working = load_config(config_path); cwd = validate_job(job, working)
+    roots.update(canonical_roots(config, job, cwd))
     host = host or WindowsJobHost(); limits = config['limits']; active = roots['control'] / 'active.json'
     with estate_lock(roots['control']):
         if os.path.lexists(active):
             raise WorkspaceRefused('previous job requires explicit reconciliation')
         if os.path.lexists(active.with_name('active.json.next')):
             raise WorkspaceRefused('interrupted admission staging record requires reconciliation')
-        before = probe(roots); reservations = admission(config, roots, before)
+        canonical_before = canonical_usage(config, job, roots)
+        before = probe(roots); reservations = admission(config, roots, before, job.get('canonical_outputs'))
         job_id = uuid.uuid4().hex; root = roots['scratch'] / job_id
         record = {'job_id': job_id, 'manifest_digest': digest(job), 'config_digest': digest(config),
                   'job': job, 'phase': 'reserved', 'reservations': reservations, 'before': before,
                   'created_at_unix_ns': time.time_ns(), 'limits': limits, 'scratch': str(root),
-                  'reservation_released': False, 'peaks': {'scratch_bytes': 0, 'memory_bytes': 0}}
+                  'reservation_released': False, 'canonical_before': canonical_before,
+                  'peaks': {'scratch_bytes': 0, 'memory_bytes': 0, 'canonical_bytes': canonical_before.copy()}}
         # Durable intent precedes allocation. Crash before owner marker refuses
         # destructive reconciliation instead of inferring ownership from a name.
         write_json(active, record)
@@ -420,6 +466,8 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
             if now >= next_scan:
                 used = tree_usage(root, maximum=limits['scratch_bytes'] + limits['log_bytes'], max_files=limits['max_files'])
                 record['peaks']['scratch_bytes'] = max(record['peaks']['scratch_bytes'], used)
+                for relative, used in canonical_usage(config, job, roots).items():
+                    record['peaks']['canonical_bytes'][relative] = max(record['peaks']['canonical_bytes'][relative], used)
                 next_scan = now + 30.0
             write_json(active, record)
         def checkpoint(stage):
@@ -437,6 +485,15 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
             record['reconciliation'] = host.reconcile(job_id)
         record['phase'] = 'quiescent'; write_json(active, record)
         record['after'] = probe(roots)
+        try:
+            record['canonical_after'] = canonical_usage(config, job, roots)
+            for relative, used in record['canonical_after'].items():
+                record['peaks']['canonical_bytes'][relative] = max(record['peaks']['canonical_bytes'][relative], used)
+        except (OSError, WorkspaceRefused) as exc:
+            # Canonical outputs are retained source state, never scratch cleanup
+            # targets. A quick allocation between scans still fails qualification.
+            record['canonical_after_error'] = str(exc)
+            record['result'] = {'reason': 'canonical_output_limit_or_identity', 'message': str(exc), 'exit_code': None}
         return collect_and_retire(record, config, roots)
 
 
@@ -478,8 +535,14 @@ def current_context(working_root):
     validate_job(record['job'], [root])
     if '.aide/scripts/aide_lite.py' not in record['job']['inputs']:
         raise WorkspaceRefused('source CLI must be a bound input')
+    canonical_roots({'limits': record['limits']}, record['job'], root)
     task_id = record['job']['workunit']
     if not isinstance(task_id, str) or not task_id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for c in task_id):
         raise WorkspaceRefused('bounded WorkUnit identifier required')
     ordinary(root/'.aide/queue'/task_id/'task.yaml')
     return record
+
+
+def require_canonical_outputs(record, paths):
+    if not set(paths).issubset(record['job'].get('canonical_outputs', {})):
+        raise WorkspaceRefused('command requires declared canonical output reservations')
