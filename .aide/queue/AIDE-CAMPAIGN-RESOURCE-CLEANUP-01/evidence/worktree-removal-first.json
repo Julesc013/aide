@@ -1,0 +1,36 @@
+{
+  "before_free": 21531815936,
+  "after_free": 25197305856,
+  "effects": [
+    {
+      "path": "D:\\Projects\\AIDE\\aide-broker-dev-integration",
+      "head": "2ef1fb7476bb350ad2a8da84c6093fa9ae5a7953",
+      "branch": "refs/heads/task/aide-cw-broker-dev-integration-01",
+      "result": "removed_refs_retained",
+      "exit_code": 0,
+      "stderr": "",
+      "ref_after": "2ef1fb7476bb350ad2a8da84c6093fa9ae5a7953",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-broker-pack-refresh",
+      "head": "3f1bc120a10ce8f87d0de24d45cdd447f6800be9",
+      "branch": "refs/heads/task/aide-broker-dev-pack-refresh-01",
+      "result": "removed_refs_retained",
+      "exit_code": 0,
+      "stderr": "",
+      "ref_after": "3f1bc120a10ce8f87d0de24d45cdd447f6800be9",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-distribution-portability-pack-refresh",
+      "head": "4c0da8974daa96022e53212b8d24b5f5660d7926",
+      "branch": "refs/heads/task/aide-distribution-portability-pack-refresh-01",
+      "result": "removed_refs_retained",
+      "exit_code": 0,
+      "stderr": "",
+      "ref_after": "4c0da8974daa96022e53212b8d24b5f5660d7926",
+      "path_absent": true
+    }
+  ]
+}

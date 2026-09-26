@@ -38743,10 +38743,14 @@ def command_checkpoint_plan(args: argparse.Namespace) -> int:
 
 
 def command_git_detect(args: argparse.Namespace) -> int:
-    data, json_result, md_result = write_git_workflow_detection(args.repo_root)
+    write_reports = getattr(args, "write_reports", False)
+    if write_reports:
+        data, json_result, md_result = write_git_workflow_detection(args.repo_root)
+    else:
+        data = collect_git_workflow_detection(args.repo_root)
     aide_plan_result: WriteResult | None = None
     aide_plan_md_result: WriteResult | None = None
-    if (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
+    if write_reports and (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
         _plan, aide_plan_result, aide_plan_md_result = write_aide_dev_main_plan(args.repo_root)
     print("AIDE Lite git detect")
     print(f"result: PASS")
@@ -38756,12 +38760,13 @@ def command_git_detect(args: argparse.Namespace) -> int:
     print(f"canonical_branch: {data.get('canonical_branch')}")
     print(f"integration_branch_detected: {data.get('integration_branch_detected')}")
     print(f"recommended_next_action: {data.get('recommended_next_action')}")
-    print(f"json_report: {GIT_WORKFLOW_DETECTION_JSON_PATH} ({json_result.action})")
-    print(f"markdown_report: {GIT_WORKFLOW_DETECTION_MD_PATH} ({md_result.action})")
+    if write_reports:
+        print(f"json_report: {GIT_WORKFLOW_DETECTION_JSON_PATH} ({json_result.action})")
+        print(f"markdown_report: {GIT_WORKFLOW_DETECTION_MD_PATH} ({md_result.action})")
     if aide_plan_result is not None and aide_plan_md_result is not None:
         print(f"aide_dev_main_plan_json: {AIDE_DEV_MAIN_PLAN_JSON_PATH} ({aide_plan_result.action})")
         print(f"aide_dev_main_plan_markdown: {AIDE_DEV_MAIN_PLAN_MD_PATH} ({aide_plan_md_result.action})")
-    print("non_mutating: true")
+    print(f"non_mutating: {str(not write_reports).lower()}")
     return 0
 
 
@@ -38887,12 +38892,16 @@ def print_git_helper_plan_summary(title: str, plan: dict[str, object], json_resu
 
 def command_git_plan(args: argparse.Namespace) -> int:
     plan = make_git_helper_plan(args.repo_root, "plan", dry_run=True)
-    json_result, md_result = write_git_helper_plan(args.repo_root, plan)
+    write_reports = getattr(args, "write_reports", False)
+    json_result = md_result = None
+    if write_reports:
+        json_result, md_result = write_git_helper_plan(args.repo_root, plan)
     aide_plan_result: WriteResult | None = None
     aide_plan_md_result: WriteResult | None = None
-    if (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
+    if write_reports and (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
         _aide_plan, aide_plan_result, aide_plan_md_result = write_aide_dev_main_plan(args.repo_root)
     print_git_helper_plan_summary("AIDE Lite git plan", plan, json_result, md_result)
+    print(f"reports_written: {str(write_reports).lower()}")
     if aide_plan_result is not None and aide_plan_md_result is not None:
         print(f"aide_dev_main_plan_json: {AIDE_DEV_MAIN_PLAN_JSON_PATH} ({aide_plan_result.action})")
         print(f"aide_dev_main_plan_markdown: {AIDE_DEV_MAIN_PLAN_MD_PATH} ({aide_plan_md_result.action})")
@@ -44074,6 +44083,30 @@ def run_selftest() -> tuple[bool, list[str]]:
     return result
 
 
+def command_managed_job(args: argparse.Namespace) -> int:
+    """Explicit maintainer execution; inspect never projects tracked reports."""
+    root = str(args.repo_root)
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    from core.execution import managed_workspace
+    try:
+        if args.job_command == "recover":
+            result = managed_workspace.recover(args.config)
+        else:
+            job = managed_workspace.read_json(args.manifest) if args.manifest else None
+            if args.job_command == "inspect":
+                result = managed_workspace.inspect(args.config, job)
+            else:
+                result = managed_workspace.run(args.config, job)
+        print(json.dumps(result, sort_keys=True, indent=2))
+        if args.job_command == "run":
+            return 0 if result.get("result", {}).get("exit_code") == 0 and result["result"].get("reason") == "exited" else 1
+        return 0
+    except (OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:
+        print(json.dumps({"result": "REFUSED", "reason": str(exc), "writes": args.job_command != "inspect"}))
+        return 1
+
+
 def command_internal_test(args: argparse.Namespace, label: str) -> int:
     try:
         ok, messages = run_selftest()
@@ -45097,13 +45130,17 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
 
     git_parser = subparsers.add_parser("git")
     git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)
-    git_subparsers.add_parser("detect").set_defaults(handler=command_git_detect)
+    git_detect_parser = git_subparsers.add_parser("detect")
+    git_detect_parser.add_argument("--write-reports", action="store_true", help="Explicitly project tracked reports.")
+    git_detect_parser.set_defaults(handler=command_git_detect)
     git_subparsers.add_parser("doctor").set_defaults(handler=command_git_doctor)
     git_subparsers.add_parser("status").set_defaults(handler=command_git_status)
     git_subparsers.add_parser("workflow").set_defaults(handler=command_git_workflow)
     git_subparsers.add_parser("roles").set_defaults(handler=command_git_roles)
     git_subparsers.add_parser("policy").set_defaults(handler=command_git_policy)
-    git_subparsers.add_parser("plan").set_defaults(handler=command_git_plan)
+    git_plan_parser = git_subparsers.add_parser("plan")
+    git_plan_parser.add_argument("--write-reports", action="store_true", help="Explicitly project tracked reports.")
+    git_plan_parser.set_defaults(handler=command_git_plan)
     git_sync_parser = git_subparsers.add_parser("sync")
     git_sync_parser.add_argument("--dry-run", action="store_true", help="Report only; default behavior.")
     git_sync_parser.add_argument("--apply", action="store_true", help="Apply local sync action explicitly.")
@@ -45256,6 +45293,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     adapter_subparsers.add_parser("generate").set_defaults(handler=command_adapter_generate)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
+    job_parser = subparsers.add_parser("job", help="Bounded maintainer jobs with explicit local storage.")
+    job_subparsers = job_parser.add_subparsers(dest="job_command", required=True)
+    for operation in ("inspect", "run", "recover"):
+        operation_parser = job_subparsers.add_parser(operation)
+        operation_parser.add_argument("--config", required=True, help="Existing machine-local storage policy JSON.")
+        operation_parser.add_argument("--manifest", required=operation == "run", help="Exact source-bound job JSON.")
+        operation_parser.set_defaults(handler=command_managed_job)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
     test_parser = subparsers.add_parser("test")
     test_parser.set_defaults(handler=command_test)

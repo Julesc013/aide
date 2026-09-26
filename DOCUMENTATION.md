@@ -1,5 +1,10 @@
 # AIDE Documentation Index
 
+Campaign maintainer execution uses the explicit bounded job interface in
+[AIDE Lite Test Runner](docs/reference/aide-lite-test-runner.md). Machine
+placement remains local; missing pools refuse allocation. Resource cleanup and
+exact receipts live in `.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/`.
+
 ## Purpose
 
 `DOCUMENTATION.md` is the root guide and index for repository documentation. It defines how documentation should be organized, how authoritative documents relate to each other, and how documentation is kept aligned with reality.

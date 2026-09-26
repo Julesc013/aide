@@ -81,6 +81,8 @@ if os.name == "nt":
     resume = bind("ResumeThread", [W.HANDLE], W.DWORD)
     wait = bind("WaitForSingleObject", [W.HANDLE, W.DWORD], W.DWORD)
     exit_code = bind("GetExitCodeProcess", [W.HANDLE, C.POINTER(W.DWORD)], W.BOOL)
+    process_times = bind("GetProcessTimes", [W.HANDLE, C.POINTER(W.FILETIME), C.POINTER(W.FILETIME),
+                         C.POINTER(W.FILETIME), C.POINTER(W.FILETIME)], W.BOOL)
 
     def check(ok):
         if not ok:
@@ -131,7 +133,8 @@ class WindowsJobHost:
 
     def run(self, argv, *, cwd, input_bytes, output_dir, job_id, timeout,
             output_limit, memory_limit, process_limit, cancelled=lambda: False,
-            checkpoint=lambda stage: None, security=None):
+            checkpoint=lambda stage: None, security=None, environment=None,
+            observed=lambda sample: None):
         self._require(job_id)
         import msvcrt
 
@@ -139,6 +142,12 @@ class WindowsJobHost:
             raise Refused("executable must be a registered absolute file")
         if security is not None:
             security.assert_launch(argv, cwd)
+            if environment is not None:
+                raise Refused("environment override forbidden for protected execution")
+        if environment is not None and (not isinstance(environment, dict) or
+                any(not isinstance(k, str) or not k or '=' in k or '\0' in k or
+                    not isinstance(v, str) or '\0' in v for k, v in environment.items())):
+            raise Refused("invalid process environment")
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=False)
         stdin_path = output_dir / "stdin"
@@ -211,7 +220,8 @@ class WindowsJobHost:
                     if attribute != 0x20009:
                         raise Refused("unexpected security launch attribute")
                     check(update_attr(attrs, 0, attribute, value, length, None, None))
-                env = security.environment() if security is not None else sanitized_environment()
+                env = (security.environment() if security is not None else
+                       environment if environment is not None else sanitized_environment())
                 environment = C.create_unicode_buffer("\0".join(k + "=" + v for k, v in sorted(env.items(), key=lambda x: x[0].upper())) + "\0\0")
                 command = C.create_unicode_buffer(subprocess.list2cmdline([str(v) for v in argv]))
                 if security is not None:
@@ -222,6 +232,11 @@ class WindowsJobHost:
                 check(create_process(str(argv[0]), command, None, None, True,
                                      0x4 | 0x80000 | 0x400 | 0x8000000,
                                      environment, str(cwd), C.byref(si), C.byref(proc)))
+                times = [W.FILETIME() for _ in range(4)]
+                check(process_times(proc.hProcess, *[C.byref(t) for t in times]))
+                created = (times[0].dwHighDateTime << 32) | times[0].dwLowDateTime
+                observed({"pid": proc.dwProcessId, "creation_filetime": created,
+                          "job_id": job_id, "stage": "created_suspended"})
                 checkpoint("created_suspended")
                 if security is not None:
                     security.verify_child(proc.hProcess, job)
@@ -237,7 +252,15 @@ class WindowsJobHost:
                 fds.clear()
                 deadline = time.monotonic() + timeout
                 reason = "exited"
+                next_observation = 0.0
                 while wait(proc.hProcess, 25) == 258:
+                    if time.monotonic() >= next_observation:
+                        usage = EXTENDED_LIMIT()
+                        check(query_job(job, 9, C.byref(usage), C.sizeof(usage), None))
+                        observed({"pid": proc.dwProcessId, "creation_filetime": created,
+                                  "job_id": job_id, "stage": "running",
+                                  "peak_memory_bytes": usage.PeakJobMemoryUsed})
+                        next_observation = time.monotonic() + 1.0
                     if cancelled():
                         reason = "cancelled"
                     elif stop.is_set():
@@ -255,6 +278,11 @@ class WindowsJobHost:
                     time.sleep(.02)
                 if active(job):
                     raise Refused("owned descendants did not quiesce")
+                final_usage = EXTENDED_LIMIT()
+                check(query_job(job, 9, C.byref(final_usage), C.sizeof(final_usage), None))
+                observed({"pid": proc.dwProcessId, "creation_filetime": created,
+                          "job_id": job_id, "stage": "quiescent",
+                          "peak_memory_bytes": final_usage.PeakJobMemoryUsed})
                 code = W.DWORD()
                 check(exit_code(proc.hProcess, C.byref(code)))
                 for thread in readers:
@@ -264,7 +292,8 @@ class WindowsJobHost:
                 if stop.is_set() and reason == "exited":
                     reason = "output_limit_or_io_error"
                 return {"exit_code": code.value, "reason": reason, "quiescent": True,
-                        "bytes": used, "io_errors": reader_errors, "job_id": job_id}
+                        "bytes": used, "io_errors": reader_errors, "job_id": job_id,
+                        "pid": proc.dwProcessId, "creation_filetime": created}
         finally:
             # KILL_ON_JOB_CLOSE is also effective if this interpreter dies abruptly.
             if proc.hThread:
@@ -276,4 +305,5 @@ class WindowsJobHost:
                 delete_attrs(attrs)
             for fd in fds:
                 os.close(fd)
-
+            for thread in readers:
+                thread.join(5)

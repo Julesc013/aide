@@ -1,0 +1,68 @@
+{
+  "acceptance": [
+    "WorkUnit scope is bounded and repo-grounded.",
+    "Rejected unsafe interpretations are recorded.",
+    "Validation and evidence requirements are explicit."
+  ],
+  "allowed_paths": [
+    ".aide/changelog/**",
+    ".aide/queue/<workunit>/**"
+  ],
+  "dependencies": [
+    "repo_policy",
+    "queue_state",
+    "branch_state"
+  ],
+  "evidence": [
+    "changed-files.md",
+    "validation.md",
+    "remaining-risks.md",
+    "intent-compiler-report.md",
+    "preflight-or-blocker-report.md"
+  ],
+  "forbidden_paths": [
+    ".git/**",
+    ".github/**",
+    ".aide.local/**",
+    ".env",
+    "secrets/**",
+    "raw prompt logs",
+    "raw response logs",
+    "target repositories unless target-local queue authorizes work"
+  ],
+  "idempotency": "prompt_hash:56b70b0a8d18170e7908f0eb8cd57f34d45df02d2b6f63cf96f1d30cc0fb82e4; status:draft; compile_only:true",
+  "implementation_outline": [
+    "Reconcile repo state before editing.",
+    "write blocker report and require reviewed authorization before mutation",
+    "Stop at review gates and record evidence before execution."
+  ],
+  "non_goals": [
+    "no raw prompt execution",
+    "no provider/model/network calls",
+    "do not bypass queue, branch, evidence, or policy state",
+    "do not execute raw prompt directly",
+    "do not move or delete roots without inventory and salvage map",
+    "do not publish releases, tags, or assets from prompt alone"
+  ],
+  "objective": "Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
+  "output_schema": ".aide/intake/workunit-draft.schema.json",
+  "preflight": [
+    "git status --short",
+    "py -3 .aide/scripts/aide_lite.py task inspect",
+    "py -3 .aide/scripts/aide_lite.py intent validate"
+  ],
+  "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
+  "risk_class": "destructive",
+  "schema_version": "aide.workunit-draft.v0",
+  "sizing_class": "blocked",
+  "status": "draft",
+  "task_class": "release",
+  "title": "Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation",
+  "validation": [
+    "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py changelog validate",
+    "py -3 .aide/scripts/aide_lite.py intent validate"
+  ],
+  "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
+  "workunit_id": "draft-release-56b70b0a8d18"
+}

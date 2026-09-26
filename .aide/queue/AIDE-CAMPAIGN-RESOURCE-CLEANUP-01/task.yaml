@@ -1,0 +1,35 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
+title: Reclaim owned campaign resources and bound future allocation
+type: implementation
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-26
+updated_at: 2026-09-26
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+objective: Reclaim proven-owned disposable resources without losing unique work, and enforce resource preflight and cleanup in AIDE.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - core/execution/managed_workspace.py
+    - core/runtime/continuous_worker/windows_job.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_managed_workspace.py
+    - .aide.local.example/execution.json
+    - docs/reference/aide-lite-test-runner.md
+  external_resource_root: D:/Projects/AIDE
+  forbidden_operations:
+    - remove primary or active source checkout
+    - delete Git refs or dirty, unknown, or unique local data
+    - delete unrelated projects or terminate unrelated processes
+verification:
+  - exact registered worktree path and unchanged branch object
+  - clean tracked and untracked state; classify ignored generated caches
+  - contained ordinary paths and retained evidence before disposable deletion
+  - before and after disk/RAM observations and effect receipts
+authority: Owner resource-cleanup instruction of 2026-09-26 and campaign delegation of 2026-09-25.

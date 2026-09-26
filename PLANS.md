@@ -4039,3 +4039,10 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   an intent and safely refused replay. This task will add an explicit guarded
   partial reconciliation, preserve older intents as refusal, seek independent
   source review, and qualify newly generated delivered bytes separately.
+
+## 2026-09-26 - Campaign resource cleanup
+
+- `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01` takes priority after the owner reported
+  resource and organization damage. D has 1.81 GB free. Reuse the current
+  checkout, reclaim clean retained-ref worktrees and evidenced disposable
+  payloads, then enforce resource preflight and automatic cleanup in AIDE.

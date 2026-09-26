@@ -1,0 +1,32 @@
+{
+  "memory": {
+    "AvailableBytes": 11586695168,
+    "CommitLimit": 93066825728,
+    "CommittedBytes": 31058178048
+  },
+  "volumes": [
+    {
+      "DriveLetter": "C",
+      "FileSystemLabel": "Windows",
+      "UniqueId": "\\\\?\\Volume{16af7907-a325-4a4a-a3de-43ef76663b7e}\\",
+      "Size": 599395090432,
+      "SizeRemaining": 209067110400
+    },
+    {
+      "DriveLetter": "D",
+      "FileSystemLabel": "Fast",
+      "UniqueId": "\\\\?\\Volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\",
+      "Size": 1500099112960,
+      "SizeRemaining": 47923347456
+    },
+    {
+      "DriveLetter": "E",
+      "FileSystemLabel": "Slow",
+      "UniqueId": "\\\\?\\Volume{e45ec57d-b4ee-4f1f-9760-a1689f2c8fbb}\\",
+      "Size": 2400192557056,
+      "SizeRemaining": 55903629312
+    }
+  ],
+  "observed_at": "2026-09-26T13:58:50.6554498+10:00",
+  "worktrees_remaining": 24
+}

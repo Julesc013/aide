@@ -1,0 +1,344 @@
+[
+  {
+    "path": "D:/Projects/AIDE/aide",
+    "head": "e88b1c2ee6f3206c628f79908e430a7967e9f58c",
+    "branch": "refs/heads/dev",
+    "protected": true
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-broker-dev-integration",
+    "head": "2ef1fb7476bb350ad2a8da84c6093fa9ae5a7953",
+    "branch": "refs/heads/task/aide-cw-broker-dev-integration-01",
+    "status_exit": 0,
+    "status": [],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": true
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-broker-pack-refresh",
+    "head": "3f1bc120a10ce8f87d0de24d45cdd447f6800be9",
+    "branch": "refs/heads/task/aide-broker-dev-pack-refresh-01",
+    "status_exit": 0,
+    "status": [],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": true
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-codex-neutrality-integration",
+    "head": "916d4928373c9889e8a9dac52a329d5a056669f5",
+    "branch": "refs/heads/task/aide-codex-neutrality-integration-01",
+    "status_exit": 0,
+    "status": [],
+    "error": "",
+    "ancestor_dev": false,
+    "ref_matches": true,
+    "eligible": false
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-delivered-pack",
+    "head": "8e1e9a9d724dfc300f7a7a6d8b5201c20068b78f",
+    "branch": "refs/heads/task/aide-delivered-pack-import-closure-01",
+    "status_exit": 0,
+    "status": [
+      "!! .aide/scripts/__pycache__/",
+      "!! .aide/scripts/tests/__pycache__/",
+      "!! core/apply/__pycache__/",
+      "!! core/gateway/__pycache__/",
+      "!! core/providers/__pycache__/"
+    ],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": false
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-delivered-pack-remove",
+    "head": "d1362f912c951ccc6022d0a2a3a527a4d66365f1",
+    "branch": "refs/heads/task/aide-delivered-pack-removal-plan-01",
+    "status_exit": 0,
+    "status": [
+      "!! .aide/scripts/__pycache__/",
+      "!! .aide/scripts/tests/__pycache__/"
+    ],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": false
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-delivered-pack-update",
+    "head": "e642b73a78bef59cdd9452cde0bb988b81cbd5ab",
+    "branch": "refs/heads/task/aide-delivered-pack-safe-update-01",
+    "status_exit": 0,
+    "status": [
+      "!! .aide/scripts/__pycache__/",
+      "!! .aide/scripts/tests/__pycache__/",
+      "!! core/apply/__pycache__/",
+      "!! core/gateway/__pycache__/",
+      "!! core/providers/__pycache__/"
+    ],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": false
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-dev-integration",
+    "head": "5dfa75e632b09f732a8150376db6840bcf149ed3",
+    "branch": "refs/heads/task/aide-removal-dev-integration-01",
+    "status_exit": 0,
+    "status": [
+      "!! .aide/scripts/__pycache__/",
+      "!! .aide/scripts/tests/__pycache__/",
+      "!! core/apply/__pycache__/",
+      "!! core/gateway/__pycache__/",
+      "!! core/providers/__pycache__/",
+      "!! core/runtime/continuous_worker/__pycache__/",
+      "!! core/runtime/integration_broker/__pycache__/"
+    ],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": false
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-distribution-fixture-portability-integration",
+    "head": "6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22",
+    "branch": "refs/heads/task/aide-distribution-fixture-portability-integration-01",
+    "status_exit": 0,
+    "status": [
+      "!! .aide/scripts/tests/__pycache__/",
+      "!! core/distribution/__pycache__/"
+    ],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": false
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-distribution-portability-pack-refresh",
+    "head": "4c0da8974daa96022e53212b8d24b5f5660d7926",
+    "branch": "refs/heads/task/aide-distribution-portability-pack-refresh-01",
+    "status_exit": 0,
+    "status": [],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": true
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-github-target-qualification",
+    "head": "d81d953a767492c4f71bfe9a2334944d51cf5201",
+    "branch": "refs/heads/task/aide-cw-github-target-qualification-01",
+    "status_exit": 0,
+    "status": [
+      "!! .aide/scripts/tests/__pycache__/",
+      "!! core/apply/__pycache__/",
+      "!! core/gateway/__pycache__/",
+      "!! core/providers/__pycache__/",
+      "!! core/runtime/continuous_worker/__pycache__/",
+      "!! core/runtime/integration_broker/__pycache__/"
+    ],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": false
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-historical-commit-dispositions",
+    "head": "7a2305f518940077892729b915734bb766a335e1",
+    "branch": "refs/heads/task/aide-historical-commit-dispositions-01",
+    "status_exit": 0,
+    "status": [
+      "!! .aide/scripts/__pycache__/",
+      "!! .aide/scripts/tests/__pycache__/"
+    ],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": false
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-isolated-host-apiquery",
+    "head": "ad1076a3b165d15bfb68045908dfef1f5acd13c2",
+    "branch": "refs/heads/task/aide-cw-isolated-host-apiquery-01",
+    "status_exit": 0,
+    "status": [
+      "!! .aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/__pycache__/",
+      "!! .aide/scripts/tests/__pycache__/",
+      "!! core/runtime/continuous_worker/__pycache__/"
+    ],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": false
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-lifecycle-combined",
+    "head": "d4b67c96ff81eb10aeecd6763b538331844619c9",
+    "branch": "refs/heads/task/aide-delivered-lifecycle-combined-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-lifecycle-owned-repair",
+    "head": "cdb3bd04f1ae20f4e58529f7132c376fcbdc48c6",
+    "branch": "refs/heads/task/aide-lifecycle-owned-repair-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-lifecycle-removal-apply",
+    "head": "fbd9465344f038ea0069fd65673a09bd9106a6a1",
+    "branch": "refs/heads/task/aide-lifecycle-removal-apply-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-lifecycle-rollback-apply",
+    "head": "33824b369b844b1c7a4304844838bcb424806131",
+    "branch": "refs/heads/task/aide-lifecycle-rollback-apply-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-lifecycle-safe-import",
+    "head": "0dfb2931d32f767db19f5df15f173b6a704be5d3",
+    "branch": "refs/heads/task/aide-lifecycle-safe-import-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-owned-repair-integration",
+    "head": "9a8b08700ef7356ee75b6750f3a53c97a4a56e3e",
+    "branch": "refs/heads/task/aide-owned-repair-dev-integration-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-release-metadata-integrity",
+    "head": "f77ecba287415ebefb24db97b8543d6256963e45",
+    "branch": "refs/heads/task/aide-release-metadata-integrity-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-removal-combined",
+    "head": "2c4c9089a546c04f81db946b3343aa4236ebe406",
+    "branch": "refs/heads/task/aide-removal-combined-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-repair-health",
+    "head": "a32535a2675f191ae3515f39501658e91ef41103",
+    "branch": "refs/heads/task/aide-delivered-pack-repair-health-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-repair-staging-hardening",
+    "head": "10a16afb681edcdd1907af0f178ccbb294ec17ff",
+    "branch": "refs/heads/task/aide-repair-staging-race-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-safe-import-combined",
+    "head": "515ad6b2c07e398e62675a3b39fbee7260ac08b8",
+    "branch": "refs/heads/task/aide-safe-import-combined-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-spec-docs-integration",
+    "head": "be3a854abde73dd1d3498a20c240bd0c0a58c28b",
+    "branch": "refs/heads/task/aide-spec-docs-integration-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-contract-projection",
+    "head": "b3a001befaac2d2d9a596c1d7dc738dd1733bec6",
+    "branch": "refs/heads/task/aide-stable-contract-projection-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-lite-current-projection",
+    "head": "493e3f13c1b2e754dd8fb5f533380ba13a7b8979",
+    "branch": "refs/heads/task/aide-stable-lite-current-projection-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-lite-draft-truth",
+    "head": "59286688dfcead36f39d2bd9a48c376bc98d7b9f",
+    "branch": "refs/heads/task/aide-stable-lite-draft-truth-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-lite-evidence-integration",
+    "head": "d292253b09944f28f0fc794fe3a9679966fe56a0",
+    "branch": "refs/heads/task/aide-stable-lite-consumer-evidence-dev-integration-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-lite-forced-restart",
+    "head": "e88b1c2ee6f3206c628f79908e430a7967e9f58c",
+    "branch": "refs/heads/task/aide-stable-lite-forced-restart-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-lite-partial-import-recovery",
+    "head": "dfc8048bc0053b0646e3cd7762d5e23758c1a7ac",
+    "branch": "refs/heads/task/aide-stable-lite-partial-import-recovery-01",
+    "protected": true
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-lite-qualification",
+    "head": "b45010280e5ea9b628f6191ac9f1959c820444cb",
+    "branch": "refs/heads/task/aide-stable-lite-consumer-qualification-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-lite-target-queue-next",
+    "head": "75406123ccb06febf34fe9c579a6a1f772b0d6c0",
+    "branch": "refs/heads/task/aide-stable-lite-target-queue-next-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-lite-task-truth",
+    "head": "04caefe659865f16e5777f6c76293fb1df8510fd",
+    "branch": "refs/heads/task/aide-stable-lite-task-truth-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-stable-release-contract",
+    "head": "d38e5839fe102fd4b38dc29971877753ccb6e2ec",
+    "branch": "refs/heads/task/aide-stable-release-contract-01",
+    "eligible": false,
+    "error": "read-only check timed out; excluded"
+  },
+  {
+    "path": "D:/Projects/AIDE/aide-three-way-update",
+    "head": "c68077548ee9d18a4167b0b6f5fcdbe5845d1738",
+    "branch": "refs/heads/task/aide-delivered-pack-three-way-update-01",
+    "status_exit": 0,
+    "status": [],
+    "error": "",
+    "ancestor_dev": true,
+    "ref_matches": true,
+    "eligible": true
+  }
+]

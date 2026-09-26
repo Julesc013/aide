@@ -3720,3 +3720,13 @@ items:
     prompt: .aide/queue/AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01/evidence
     description: Add explicit guarded recovery for a partial portable import while preserving old safe refusals.
+  - id: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
+    status: running
+    planning_state: admitted
+    result: PENDING
+    title: Reclaim owned campaign resources and bound future allocation
+    task: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/prompt.md
+    evidence: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence
+    description: Owner-directed contained resource cleanup without deleting unique work or unrelated data.

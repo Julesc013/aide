@@ -1,0 +1,106 @@
+{
+  "effects": [
+    {
+      "path": "D:\\Projects\\AIDE\\aide-delivered-pack",
+      "head": "8e1e9a9d724dfc300f7a7a6d8b5201c20068b78f",
+      "branch": "refs/heads/task/aide-delivered-pack-import-closure-01",
+      "result": "removed_refs_retained",
+      "bytes": 89087518,
+      "files": 10752,
+      "cache_files": 10,
+      "ref_after": "8e1e9a9d724dfc300f7a7a6d8b5201c20068b78f",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-delivered-pack-remove",
+      "head": "d1362f912c951ccc6022d0a2a3a527a4d66365f1",
+      "branch": "refs/heads/task/aide-delivered-pack-removal-plan-01",
+      "result": "removed_refs_retained",
+      "bytes": 107403688,
+      "files": 11202,
+      "cache_files": 3,
+      "ref_after": "d1362f912c951ccc6022d0a2a3a527a4d66365f1",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-delivered-pack-update",
+      "head": "e642b73a78bef59cdd9452cde0bb988b81cbd5ab",
+      "branch": "refs/heads/task/aide-delivered-pack-safe-update-01",
+      "result": "removed_refs_retained",
+      "bytes": 89247976,
+      "files": 10762,
+      "cache_files": 10,
+      "ref_after": "e642b73a78bef59cdd9452cde0bb988b81cbd5ab",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-dev-integration",
+      "head": "5dfa75e632b09f732a8150376db6840bcf149ed3",
+      "branch": "refs/heads/task/aide-removal-dev-integration-01",
+      "result": "removed_refs_retained",
+      "bytes": 109135719,
+      "files": 11377,
+      "cache_files": 40,
+      "ref_after": "5dfa75e632b09f732a8150376db6840bcf149ed3",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-distribution-fixture-portability-integration",
+      "head": "6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22",
+      "branch": "refs/heads/task/aide-distribution-fixture-portability-integration-01",
+      "result": "removed_refs_retained",
+      "bytes": 104587368,
+      "files": 11204,
+      "cache_files": 2,
+      "ref_after": "6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-github-target-qualification",
+      "head": "d81d953a767492c4f71bfe9a2334944d51cf5201",
+      "branch": "refs/heads/task/aide-cw-github-target-qualification-01",
+      "result": "removed_refs_retained",
+      "bytes": 105255160,
+      "files": 11239,
+      "cache_files": 35,
+      "ref_after": "d81d953a767492c4f71bfe9a2334944d51cf5201",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-historical-commit-dispositions",
+      "head": "7a2305f518940077892729b915734bb766a335e1",
+      "branch": "refs/heads/task/aide-historical-commit-dispositions-01",
+      "result": "removed_refs_retained",
+      "bytes": 107488585,
+      "files": 11218,
+      "cache_files": 2,
+      "ref_after": "7a2305f518940077892729b915734bb766a335e1",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-isolated-host-apiquery",
+      "head": "ad1076a3b165d15bfb68045908dfef1f5acd13c2",
+      "branch": "refs/heads/task/aide-cw-isolated-host-apiquery-01",
+      "result": "removed_refs_retained",
+      "bytes": 105132102,
+      "files": 11211,
+      "cache_files": 18,
+      "ref_after": "ad1076a3b165d15bfb68045908dfef1f5acd13c2",
+      "path_absent": true
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\aide-three-way-update",
+      "head": "c68077548ee9d18a4167b0b6f5fcdbe5845d1738",
+      "branch": "refs/heads/task/aide-delivered-pack-three-way-update-01",
+      "result": "removed_refs_retained",
+      "bytes": 105933586,
+      "files": 11423,
+      "cache_files": 0,
+      "ref_after": "c68077548ee9d18a4167b0b6f5fcdbe5845d1738",
+      "path_absent": true
+    }
+  ],
+  "after_free": 33975140352,
+  "mode": "apply",
+  "before_free": 33537646592
+}

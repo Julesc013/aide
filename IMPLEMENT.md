@@ -12091,3 +12091,18 @@ Owner review found a final-write race in the first candidate. The repair now pub
   the reservation, and controls/resolution boundary regressions passed. The
   full suite on the rejected subject was stopped; new exact review remains
   required before running the full suite and projecting archives.
+
+## Campaign resource correction, 2026-09-26
+
+Reused the partial-import checkout for AIDE-CAMPAIGN-RESOURCE-CLEANUP-01.
+Retired twelve inspected inactive checkouts with supported Git removal while
+retaining branch objects; unknown/timed-out resources remain protected. Stopped
+a positively identified abandoned read-only scanner child. Extended the existing
+execution owner and Windows Job host with source-bound maintainer jobs, explicit
+storage/volume identity, finite reservations, one shared OS admission lock,
+code-driven resource monitoring, bounded logs, durable process identity,
+collection and retirement. git detect/plan now inspect without report writes;
+projections require --write-reports. Twelve small Windows regressions passed;
+an actual ten-case AIDE host suite also ran through the bounded path. Exact
+receipts are task-local. Final source review/replay, permanent pool resolution,
+heavy importer qualification and delivered-release proof remain outstanding.

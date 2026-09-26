@@ -1,0 +1,11 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
+status: running
+planning_state: admitted
+result: PENDING
+updated_at: 2026-09-26
+current_slice: bounded_runner_source_candidate
+next_slice: exact_source_review_and_affected_bounded_replay
+review_gate: independent_source_review_pending
+placement: approved_permanent_pool_unresolved_question_pending
+retired_worktrees: 12

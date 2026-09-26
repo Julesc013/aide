@@ -1,0 +1,97 @@
+{
+  "after": {
+    "commit_free": 62735360000,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 33937043456
+    },
+    "physical_free": 12242231296
+  },
+  "before": {
+    "commit_free": 62733742080,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 33937055744
+    },
+    "physical_free": 12244635648
+  },
+  "config_digest": "f31ddef5676f639ed983f97592c6adb06e9d095de57fdd85b519c05dd30c6bfa",
+  "created_at_unix_ns": 1790394759614894000,
+  "environment_digest": "3e696b8ea17a3622d29f7c583bd015659aab46d76b3f203390b0b3cb5a870319",
+  "fixture_parent": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926",
+  "job": {
+    "adapter": "python",
+    "argv": [
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      ".aide/scripts/tests",
+      "-p",
+      "test_continuous_worker_host.py",
+      "-v"
+    ],
+    "cwd": "D:\\Projects\\AIDE\\aide-stable-lite-partial-import-recovery",
+    "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+    "inputs": {
+      ".aide/scripts/tests/test_continuous_worker_host.py": "2051703bc41a52b8d39bd4e5d33372979afd246b90373c4ad7ca8f9d4b566854",
+      "core/execution/managed_workspace.py": "ee560c1b0b883da2ee865530be6b70324b086f2d93fd36851fca4b46548e6a9f",
+      "core/runtime/continuous_worker/windows_job.py": "e5f7f285a82c9e633243bfe2c22e2c201321180765c5c0dc7abe6c8600f5b8de"
+    },
+    "owner": "AIDE campaign controller",
+    "schema": "aide.maintainer-job.v1",
+    "source_commit": "dfc8048bc0053b0646e3cd7762d5e23758c1a7ac",
+    "source_tree": "85d4164fec3dd3b540e01dad9253131f00f4b362",
+    "workunit": "AIDE-CAMPAIGN-RESOURCE-CLEANUP-01"
+  },
+  "job_id": "02d7dfeaa1af496da66f41072c214736",
+  "last_capacity": {
+    "commit_free": 62676439040,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 33937047552
+    },
+    "physical_free": 12195823616
+  },
+  "limits": {
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 65536,
+    "max_files": 1000,
+    "memory_bytes": 536870912,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 16,
+    "retained_bytes": 1048576,
+    "runtime_seconds": 120,
+    "scratch_bytes": 8388608
+  },
+  "manifest_digest": "f9fd3870c02930a8e8bc8654b2b2e64a1271b5036b766ad50c5baa16a0ebd0a9",
+  "peaks": {
+    "memory_bytes": 59129856,
+    "scratch_bytes": 140
+  },
+  "phase": "retired",
+  "process": {
+    "creation_filetime": 134348683597887441,
+    "job_id": "02d7dfeaa1af496da66f41072c214736",
+    "peak_memory_bytes": 59129856,
+    "pid": 26000,
+    "stage": "quiescent"
+  },
+  "reservation_released": true,
+  "reservations": {
+    "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 10616832
+  },
+  "result": {
+    "bytes": 1434,
+    "creation_filetime": 134348683597887441,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "02d7dfeaa1af496da66f41072c214736",
+    "pid": 26000,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "retained": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\tiny-aide-validation-phwa5n48\\retained\\02d7dfeaa1af496da66f41072c214736",
+  "retention_disposition": "bounded log and receipt collected here; tiny fixture retired",
+  "scratch": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\tiny-aide-validation-phwa5n48\\scratch\\02d7dfeaa1af496da66f41072c214736",
+  "scratch_absent": true
+}
