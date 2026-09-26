@@ -2,6 +2,11 @@
 
 ## AIDE-DELIVERED-PACK-CUSTOMIZATION-01: Delivered customization
 
+2026-09-26 follow-up: repair the independently identified predecessor-pack
+feedback output boundary in the existing task checkout. Tiny fixtures and the
+bounded execution owner validate rejection and external output; the original
+8cad56c0 acceptance remains historical, and archive qualification remains open.
+
 - Status: final local candidate `8cad56c0` qualified with 29 import, 18
   release, 11 draft, and 6 governance tests plus extracted ZIP and clean
   44-file replay. Prior `37daa862` is superseded. Dev is unchanged; exact

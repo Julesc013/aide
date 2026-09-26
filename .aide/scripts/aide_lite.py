@@ -41242,13 +41242,16 @@ def explain_import_result(result: dict[str, object], target_root: Path, customiz
     return explanations
 
 
-def write_import_feedback(path: Path, pack_root: Path, target_root: Path, result: dict[str, object], explanations: list[dict[str, str]]) -> None:
+def write_import_feedback(path: Path, pack_root: Path, target_root: Path, result: dict[str, object], explanations: list[dict[str, str]], *, predecessor_pack: Path | None = None) -> None:
     """Create a manual-share packet only at an explicit, external output path."""
     if path.exists() or path.is_symlink() or not path.parent.exists() or not path.parent.is_dir():
         raise ValueError("feedback output must be a new file in an existing directory")
     resolved = path.parent.resolve() / path.name
-    if resolved == target_root or target_root in resolved.parents or resolved == pack_root or pack_root in resolved.parents:
-        raise ValueError("feedback output must be outside the pack and target")
+    protected_roots = [pack_root.resolve(), target_root.resolve()]
+    if predecessor_pack is not None:
+        protected_roots.append(predecessor_pack.resolve())
+    if any(resolved == root or root in resolved.parents for root in protected_roots):
+        raise ValueError("feedback output must be outside all supplied packs and target")
     packet = {
         "schema_version": "aide.import-feedback.v1",
         "pack": import_pack_identity(pack_root),
@@ -43178,7 +43181,7 @@ def command_import_pack(args: argparse.Namespace) -> int:
     if args.feedback_out:
         if result["status"] not in {"PLANNED", "PLANNED_CONFLICT"}:
             raise ValueError("feedback output requires a complete import dry-run plan")
-        write_import_feedback(Path(args.feedback_out), pack_root, target_root, result, explanations)
+        write_import_feedback(Path(args.feedback_out), pack_root, target_root, result, explanations, predecessor_pack=predecessor_pack)
     print("AIDE Lite import-pack")
     print(f"pack: {normalize_rel(pack_root)}")
     print(f"target: {normalize_rel(target_root)}")

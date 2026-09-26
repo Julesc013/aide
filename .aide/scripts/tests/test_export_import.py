@@ -1067,6 +1067,79 @@ class ExportImportTests(unittest.TestCase):
             aide_lite.explain_import_result(aide_lite.apply_import_pack(pack_root, target, dry_run=True), target)
         self.assertEqual(aide_lite.apply_import_pack(pack_root, target)["status"], "NO_CHANGES")
 
+    def test_feedback_boundary_cli_refuses_each_input_root(self) -> None:
+        # Real output checks and packet identity; only the costly plan is injected.
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            incoming, previous, target = (root / name for name in ("incoming", "previous", "target"))
+            for directory in (incoming, previous, target):
+                directory.mkdir()
+                (directory / "manifest.yaml").write_text("pack_id: tiny-boundary\n", encoding="utf-8")
+                (directory / "checksums.json").write_text("{}\n", encoding="utf-8")
+            before = {p: p.read_bytes() for directory in (incoming, previous, target) for p in directory.iterdir()}
+            result = {"status": "PLANNED", "plan_digest": "a" * 64, "mode": "safe",
+                      "operation_count": 0, "operations": [], "conflicts": [], "skipped": [], "written": []}
+            parser = aide_lite.build_parser(REPO_ROOT)
+            for directory in (previous, incoming, target):
+                with self.subTest(directory=directory):
+                    output = directory / "feedback.json"
+                    args = parser.parse_args(["import-pack", "--pack", str(incoming), "--target", str(target),
+                        "--from-pack", str(previous), "--dry-run", "--feedback-out", str(output)])
+                    with mock.patch.object(aide_lite, "apply_import_pack", return_value=result), mock.patch("builtins.print"):
+                        with self.assertRaisesRegex(ValueError, "outside"):
+                            args.handler(args)
+                    self.assertFalse(output.exists())
+            self.assertEqual({p: p.read_bytes() for directory in (incoming, previous, target) for p in directory.iterdir()}, before)
+            output = root / "external-feedback.json"
+            args = parser.parse_args(["import-pack", "--pack", str(incoming), "--target", str(target),
+                "--from-pack", str(previous), "--dry-run", "--feedback-out", str(output)])
+            with mock.patch.object(aide_lite, "apply_import_pack", return_value=result), mock.patch("builtins.print"):
+                self.assertEqual(args.handler(args), 0)
+            self.assertEqual(json.loads(output.read_bytes())["sharing"], "manual_only")
+            self.assertEqual({p: p.read_bytes() for directory in (incoming, previous, target) for p in directory.iterdir()}, before)
+
+    def test_feedback_boundary_external_packet_and_no_overwrite(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            incoming, target = root / "incoming", root / "target"
+            incoming.mkdir(); target.mkdir()
+            (incoming / "manifest.yaml").write_text("pack_id: tiny-boundary\n", encoding="utf-8")
+            (incoming / "checksums.json").write_text("{}\n", encoding="utf-8")
+            result = {"status": "PLANNED", "plan_digest": "a" * 64}
+            output = root / "feedback.json"
+            # Preserve callers that do not supply a predecessor.
+            aide_lite.write_import_feedback(output, incoming, target, result, [])
+            original = output.read_bytes()
+            packet = json.loads(original)
+            self.assertEqual(packet["pack"], aide_lite.import_pack_identity(incoming))
+            self.assertEqual(packet["sharing"], "manual_only")
+            self.assertFalse(packet["network_calls"])
+            with self.assertRaisesRegex(ValueError, "new file"):
+                aide_lite.write_import_feedback(output, incoming, target, result, [])
+            self.assertEqual(output.read_bytes(), original)
+            with self.assertRaisesRegex(ValueError, "existing directory"):
+                aide_lite.write_import_feedback(root / "missing" / "feedback.json", incoming, target, result, [])
+            self.assertFalse((root / "missing").exists())
+
+    @unittest.skipUnless(sys.platform == "win32", "Windows junction boundary")
+    def test_feedback_boundary_predecessor_junction_is_refused(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            previous, incoming, target = (root / name for name in ("previous", "incoming", "target"))
+            for directory in (previous, incoming, target): directory.mkdir()
+            alias = root / "alias"
+            created = subprocess.run(["cmd", "/c", "mklink", "/J", str(alias), str(previous)],
+                                     capture_output=True, text=True, timeout=10)
+            self.assertEqual(created.returncode, 0, created.stderr)
+            try:
+                with self.assertRaisesRegex(ValueError, "outside"):
+                    aide_lite.write_import_feedback(alias / "feedback.json", incoming, target,
+                        {"status": "PLANNED", "plan_digest": "a" * 64}, [], predecessor_pack=previous)
+                self.assertFalse((previous / "feedback.json").exists())
+            finally:
+                # Retire only the fixture junction; do not traverse its target.
+                if alias.is_junction(): alias.rmdir()
+
     def test_changed_target_refuses_an_exact_preview_identity(self) -> None:
         source_root = self.make_source_repo()
         managed_rel = ".aide/prompts/compact-task.md"

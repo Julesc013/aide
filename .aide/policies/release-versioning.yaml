@@ -98,10 +98,12 @@ stable_lite_contract_candidate:
       separately authorized. These are candidate promises requiring final
       delivered-byte qualification, not activated support claims.
   partial_recovery_contract: >
-    Recover only the saved pending import with its exact original plan digest,
+    Continue a partially applied import only from its saved full plan with the exact original plan digest,
     packs, mode, project controls and each original resolution input. Ordinary
     retry does not grant recovery authority. Changed or unsafe inputs and legacy
-    intents without a full saved plan remain retained refusals. The final
+    partial intents without a full saved plan remain retained refusals. Completed
+    and no-effect intents have separate existing reconciliation/retirement paths;
+    those paths do not replay payload writes. The final
     Windows archive must qualify these exact recovery forms before support.
   same_major_rule: >
     Preserve documented supported behavior for declared predecessor versions

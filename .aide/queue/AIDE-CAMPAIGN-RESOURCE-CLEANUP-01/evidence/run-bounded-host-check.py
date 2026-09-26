@@ -19,7 +19,7 @@ from core.execution import managed_workspace as workspace
 parent = workspace.root_path(os.environ['AIDE_RESOURCE_TEST_PARENT'])
 evidence = Path(__file__).parent
 parser = argparse.ArgumentParser()
-parser.add_argument('--suite', choices=('host', 'task-status', 'importer-recovery', 'importer-controls-diagnostic', 'importer-recovery-remaining'), default='host')
+parser.add_argument('--suite', choices=('host', 'task-status', 'feedback-boundary', 'importer-recovery', 'importer-controls-diagnostic', 'importer-recovery-remaining'), default='host')
 parser.add_argument('--diagnostic-child', action='store_true')
 options = parser.parse_args()
 if options.diagnostic_child:
@@ -40,8 +40,9 @@ importer = suite.startswith('importer')
 diagnostic = suite == 'importer-controls-diagnostic'
 remaining = suite == 'importer-recovery-remaining'
 task_status = suite == 'task-status'
-oracle = 'test_x_os_01_task_os_commands.py' if task_status else 'test_export_import.py' if importer else 'test_continuous_worker_host.py'
-result_name = 'bounded-task-status-check' if task_status else 'bounded-importer-recovery-remaining' if remaining else 'bounded-importer-controls-diagnostic' if diagnostic else 'bounded-importer-recovery-check' if importer else 'bounded-host-check'
+feedback = suite == 'feedback-boundary'
+oracle = 'test_x_os_01_task_os_commands.py' if task_status else 'test_export_import.py' if importer or feedback else 'test_continuous_worker_host.py'
+result_name = 'bounded-feedback-boundary-check' if feedback else 'bounded-task-status-check' if task_status else 'bounded-importer-recovery-remaining' if remaining else 'bounded-importer-controls-diagnostic' if diagnostic else 'bounded-importer-recovery-check' if importer else 'bounded-host-check'
 with tempfile.TemporaryDirectory(prefix='tiny-aide-validation-', dir=parent) as temporary:
     fixture = Path(temporary)
     roots = {key: fixture/key for key in ('scratch', 'retained', 'control')}
@@ -61,7 +62,7 @@ with tempfile.TemporaryDirectory(prefix='tiny-aide-validation-', dir=parent) as 
                               text=True, check=True, timeout=15).stdout.strip()
     files = ['core/execution/managed_workspace.py', 'core/runtime/continuous_worker/windows_job.py',
              '.aide/scripts/tests/' + oracle]
-    if task_status:
+    if task_status or feedback:
         files.append('.aide/scripts/aide_lite.py')
     if importer:
         # Bind the source and the actual fixture inputs, not just the test name.
@@ -77,7 +78,9 @@ with tempfile.TemporaryDirectory(prefix='tiny-aide-validation-', dir=parent) as 
     if diagnostic:
         files.append(Path(__file__).relative_to(REPO).as_posix())
     argv = [sys.executable, '-m', 'unittest', 'discover', '-s', '.aide/scripts/tests', '-p', oracle, '-v']
-    if diagnostic:
+    if feedback:
+        argv.extend(['-k', 'feedback_boundary'])
+    elif diagnostic:
         argv = [sys.executable, str(Path(__file__)), '--diagnostic-child']
     elif remaining:
         argv.extend(['-k', 'partial_recovery_refuses', '-k', 'partial_recovery_requires', '-k', 'redigested_partial_intent'])
@@ -85,7 +88,7 @@ with tempfile.TemporaryDirectory(prefix='tiny-aide-validation-', dir=parent) as 
         # Dependency-ready product regressions only; the full importer gate stays open.
         argv.extend(['-k', 'partial_recovery', '-k', 'redigested_partial_intent', '-k', 'missing_controls_guard'])
     job = {'schema': 'aide.maintainer-job.v1', 'owner': 'AIDE campaign controller',
-        'workunit': 'AIDE-CAMPAIGN-RESOURCE-CLEANUP-01', 'adapter': 'python', 'cwd': str(REPO),
+        'workunit': 'AIDE-DELIVERED-PACK-CUSTOMIZATION-01' if feedback else 'AIDE-CAMPAIGN-RESOURCE-CLEANUP-01', 'adapter': 'python', 'cwd': str(REPO),
         'source_commit': git('rev-parse', 'HEAD'), 'source_tree': git('rev-parse', 'HEAD^{tree}'),
         'inputs': {path: workspace.file_digest(REPO/path) for path in files},
         'executable_sha256': workspace.file_digest(sys.executable),

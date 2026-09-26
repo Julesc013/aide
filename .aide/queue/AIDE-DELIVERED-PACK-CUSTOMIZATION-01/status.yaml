@@ -1,9 +1,11 @@
 schema_version: aide.queue-status.v0
 id: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
-status: passed
-planning_state: integrated_dev_remote_observed
-result: PASS_WITH_RETAINED_GATES
-updated_at: 2026-09-25
+status: running
+planning_state: predecessor_feedback_boundary_repair
+result: PENDING
+updated_at: 2026-09-26
+followup_base: f0eabe41265d9ff9a4388ccef4ef5c31c3e49854
+prior_result: accepted_8cad56c0_integrated_dev_original_evidence_preserved
 base_commit: 3bdeb220cb31dfc3177faa6836f5e86c8071d1ef
 source_tests: 29_import_18_release_11_draft_6_governance_passed
 artifact_consumer: final_old_to_new_zip_and_pending_recovery_passed

@@ -1,0 +1,64 @@
+{
+  "workunit": "AIDE-DELIVERED-PACK-CUSTOMIZATION-01",
+  "recorded_at": "2026-09-26T16:23:28.3747143+10:00",
+  "source_base": "f0eabe41265d9ff9a4388ccef4ef5c31c3e49854",
+  "prior_review": "REQUEST_CHANGES",
+  "prior_report_sha256": "0c64a60dfbd53337e5232db2cce16b8f807e2c177b656fc791431e3b813abcd7",
+  "source_change": "Pass supplied predecessor to normalized feedback output guard; no payload/recovery implementation change",
+  "characterization": "Real CLI handler wrote feedback into predecessor before repair; retained failing receipt and raw log",
+  "validation": "3 focused tests PASS, zero skips, 0.082 seconds unittest; 28 CLI forms parse without handler invocation",
+  "oracle_limits": "The expensive import plan is injected; the real CLI, output guard, packet writer and pack identity are used. Junction is real Windows OS behavior. No full archive qualification.",
+  "bindings": [
+    {
+      "path": ".aide/scripts/aide_lite.py",
+      "sha256": "c8e7b6307f95062ee59ff2de11715fb93d4517db4ed04cb2461c79a9fcc2a05d"
+    },
+    {
+      "path": ".aide/scripts/tests/test_export_import.py",
+      "sha256": "46f5fce38c32c60a96e8b473417b8034072710218266be1aab6820fd90587d84"
+    },
+    {
+      "path": ".aide/policies/release-versioning.yaml",
+      "sha256": "2d18331357984e7140a483edf0a2be7c48bc9d41743c70ac6f579506d0a9bc3f"
+    },
+    {
+      "path": "docs/reference/cross-repo-pack-export-import.md",
+      "sha256": "4d6390ae6ca74ade17dd3d70b1d17679e0132c602c19e2b364765b0f288a5631"
+    },
+    {
+      "path": ".aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/run-bounded-host-check.py",
+      "sha256": "c3ba2eaa0cd1d5c57de0d2e7f8363d8082b8fc95e90b574bed8d0b4bfc01106d"
+    },
+    {
+      "path": ".aide/queue/AIDE-DELIVERED-PACK-CUSTOMIZATION-01/evidence/feedback-boundary-before-repair.json",
+      "sha256": "6bdac91f068a500e92460b546f0ac2a9ba803b64d7cfcbb5771e98adbddb89cf"
+    },
+    {
+      "path": ".aide/queue/AIDE-DELIVERED-PACK-CUSTOMIZATION-01/evidence/feedback-boundary-validation.json",
+      "sha256": "1766dd1e1ec2954c00fa9f7ec8063c7fff30fa9aa26fee625640cbdf877d77e7"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/evidence/candidate-cli-check.json",
+      "sha256": "e9420d1ce58b2adbe286a4c1ae5d8cb344ee964ac4c4b04e11d4165376abad6a"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-RELEASE-CONTRACT-01/evidence/review-f0eabe41-request-changes.md",
+      "sha256": "0c64a60dfbd53337e5232db2cce16b8f807e2c177b656fc791431e3b813abcd7"
+    }
+  ],
+  "observed_peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 212582400,
+    "scratch_bytes": 708
+  },
+  "scratch_absent": true,
+  "reservation_released": true,
+  "raw_log": {
+    "bytes": 568,
+    "path": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\bounded-feedback-boundary-check-4276e69ded414efdb56457f7b98cb1ab.log",
+    "sha256": "5c095d823657f699cd3723c87652b2a0c9cb16dd7a37270bf50e2d9ce60d8a4a"
+  },
+  "permanent_pool_configured": false,
+  "final_archive_qualified": false,
+  "release_published": false
+}

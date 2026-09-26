@@ -1,0 +1,39 @@
+fix(import): protect predecessor packs from feedback output
+
+## Summary
+- Repair AIDE-DELIVERED-PACK-CUSTOMIZATION-01 after frozen f0eabe41 review.
+- Correct AIDE-STABLE-RELEASE-CONTRACT-01 partial continuation wording.
+
+## Why
+- Explicit feedback could create a file inside an immutable predecessor pack.
+- Saved-plan refusal guarantees describe partial continuation, not completed reconciliation.
+
+## Changed
+- Pass the supplied predecessor to the shared normalized output guard.
+- Add tiny CLI, external packet, no-overwrite and real Windows junction checks.
+- Reuse the finite AIDE runner and preserve the failed characterization and review.
+- Preserve original 8cad56c0 acceptance and queue the superseding technical review.
+
+## Validation
+- PASS: three affected tests, zero skips, 0.082 seconds unittest execution.
+- PASS: all 28 candidate forms parse with no handlers invoked.
+- PASS: runner scratch retired and reservation released; observed scratch 708 bytes.
+- PASS: git diff --check; changed source and oracle digests bound in the task packet.
+
+## Changelog
+- Fixed: Explicit import feedback refuses every supplied input pack and the target.
+
+## Risks
+- Full importer, final archive qualification and permanent bulk placement remain open.
+- Tiny CLI tests inject the expensive plan; no new payload apply guarantee is claimed.
+
+## Follow-up
+- Obtain exact superseding technical acceptance, then qualify combined delivered bytes.
+- Keep stable publication and the parent campaign incomplete until their gates pass.
+
+AIDE-Task: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
+AIDE-Phase: predecessor-feedback-boundary-repair
+AIDE-Result: PENDING
+AIDE-Scope: feedback-output-guard-and-contract-wording
+AIDE-Token-Impact: three-tiny-managed-tests-no-archive-build
+AIDE-Quality-Gate: superseding-independent-review-pending

@@ -1,5 +1,24 @@
 # ExecPlan: Delivered Pack Customization
 
+## 2026-09-26 feedback boundary follow-up
+
+The independent frozen `f0eabe41` policy review found that explicit feedback
+could write into a supplied predecessor pack. Preserve the original accepted
+`8cad56c0` history and evidence; repair forward in the existing checkout under
+the campaign delegation. The existing script/test/document allowlist applies.
+
+- [x] Characterize predecessor mutation using a tiny real output-path fixture.
+- [x] Reject feedback inside target, incoming pack, or supplied predecessor;
+  retain backwards-compatible helper callers and explicit external creation.
+- [x] Test the CLI forwarding and actual boundary through the bounded runner;
+  no archive generation or permanent storage-pool adoption.
+- [ ] Freeze a superseding candidate and obtain narrow independent review.
+- [ ] Record source qualification separately from final delivered-byte gates.
+
+The policy-only release-contract WorkUnit owns the parallel wording correction:
+exact saved-plan continuation describes partial intents; completed/no-effect
+intents have existing reconciliation paths. No runtime expansion is intended.
+
 ## Objective and scope
 
 Implement one bounded missing consumer journey on the accepted combined dev:

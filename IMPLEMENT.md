@@ -1,5 +1,19 @@
 # AIDE Implementation Log
 
+## 2026-09-26 predecessor feedback boundary repair
+
+The independent f0eabe41 policy review found a genuine source mismatch:
+feedback could write into a supplied predecessor pack. The existing
+customization WorkUnit now passes that pack to the shared output guard,
+normalizes all protected roots, and refuses output inside any supplied pack
+or target. Existing helper callers without a predecessor remain compatible.
+Tiny CLI/path tests use the real writer and input identity with only the
+expensive import plan injected; no full archive is generated. A real Windows
+junction checks the predecessor alias. Original source acceptance remains
+historical; changed bytes require superseding review and delivered qualification.
+The contract WorkUnit scopes saved-plan guarantees to partial continuation,
+preserving completed/no-effect reconciliation without claiming payload replay.
+
 ## Work Item: AIDE-STABLE-RELEASE-CONTRACT-01 (admission only)
 
 Admitted a bounded child of `AIDE-CONVERGENCE-AND-DELIVERY-01` for stable

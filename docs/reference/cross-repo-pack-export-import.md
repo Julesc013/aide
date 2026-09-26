@@ -90,8 +90,8 @@ reconciliation before another update. This bounded apply path is available only
 on Windows; release support requires separate delivered-artifact qualification.
 
 To make a local packet that the project can review and share manually, add
-`--feedback-out <new-path>` to a dry run. The new path must be outside both the
-pack and target. The packet contains paths, digests, ownership decisions, and
+`--feedback-out <new-path>` to a dry run. The new path must be outside the target
+and every supplied pack, including `--from-pack`. The packet contains paths, digests, ownership decisions, and
 any current recorded rationale; review it before sharing. This flag performs
 no network, provider, or model call.
 If a previous import has an unresolved recovery intent, a dry run reports
@@ -106,8 +106,10 @@ interrupted update. An ordinary retry still refuses a partial state. The
 explicit recovery verifies the saved full plan against the pack, predecessor,
 receipt, project controls, resolution bytes, and every target preimage or
 postimage before continuing. It refuses changed, linked, or unsafe files and
-keeps the intent for inspection. Older intents without a full plan snapshot
-also require manual reconciliation. Recovery never takes a new update plan or
+keeps the intent for inspection. Older partially applied intents without a full
+plan snapshot require manual reconciliation. Completed or no-effect intents have
+separate reconciliation/retirement paths that do not replay payload writes.
+Partial continuation never takes a new update plan or
 infers the reason for a project edit.
 Final Windows publication holds existing controls and resolution files against
 write or replacement. If controls are absent, a temporary exclusive filename

@@ -172,3 +172,10 @@ The follow-up also enumerates the accepted saved partial-import recovery
 interface: original digest, packs, mode and resolution files; changed/legacy
 inputs remain refusals. All 28 final candidate forms parse without handlers.
 The earlier 25-form result stays separately bound, not relabeled as 28 cases.
+
+2026-09-26 independent review of frozen f0eabe41 requested two corrections.
+Preserve its report and hash. Repair predecessor-pack feedback protection in
+the existing customization WorkUnit instead of weakening the candidate promise.
+Scope the exact saved-plan/legacy refusal clause to partially applied intents;
+completed/no-effect reconciliation does not replay payload writes. Recheck the
+same 28 parser forms and obtain a superseding narrow source/policy review.
