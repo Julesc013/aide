@@ -12137,3 +12137,12 @@ now select a smaller valid multi-file fixture; their assertions, production
 flushes and Windows handle behavior are unchanged. The missing-controls process
 case needs no pack. Full export/archive/consumer tests retain full fixtures.
 This oracle change requires actual seven-case validation and narrow review.
+
+The frozen e87386e5 oracle received independent ACCEPT_WITH_NOTES; all seven
+admitted cases passed in 25.090s, scratch absent and reservation released.
+Task status now uses its existing context collector without report writes by
+default; --write-reports preserves the existing generators. Two focused tests
+pass (7.978s); a real checkout query returned exit0 with unchanged Git state.
+Parent routing and its existing coverage control now point to the resource and
+partial-import dependencies. No new master specification or permanent layout
+was introduced; full Task OS check and exact query review remain next.

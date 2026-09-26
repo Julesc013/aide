@@ -23,6 +23,9 @@ scope:
     - .aide/scripts/tests/test_export_import.py
     - .aide.local.example/execution.json
     - docs/reference/aide-lite-test-runner.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
   external_resource_root: D:/Projects/AIDE
   forbidden_operations:
     - remove primary or active source checkout

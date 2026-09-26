@@ -4,10 +4,10 @@ status: running
 planning_state: admitted
 result: PENDING
 updated_at: 2026-09-26
-current_slice: focused_recovery_fixture_candidate
-next_slice: admitted_seven_case_validation_and_narrow_oracle_review
-last_product_run: timeout_180s_two_completed_cases_not_suite_pass
-review_gate: b325deea_independent_source_accept_with_notes
+current_slice: task_status_inspection_candidate
+next_slice: bounded_task_os_checks_and_exact_inspection_delta_review
+last_product_run: seven_focused_cases_passed_25_090s_on_e87386e5
+review_gate: resource_b325deea_and_oracle_e87386e5_accepted_query_delta_pending
 placement: approved_permanent_pool_unresolved_question_pending
 retired_worktrees: 34
 remaining_worktrees: 2

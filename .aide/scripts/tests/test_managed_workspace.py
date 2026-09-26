@@ -230,6 +230,24 @@ class ManagedWorkspaceTests(unittest.TestCase):
             lite.command_git_plan(args)
             helper_writer.assert_called_once(); aide_writer.assert_called_once()
 
+    def test_task_status_inspection_preserves_files_and_explicit_reports_work(self):
+        lite = self.lite_module(); args = argparse.Namespace(repo_root=self.source, write_reports=False)
+        index = self.source/'.aide/queue/index.yaml'; index.parent.mkdir(parents=True)
+        index.write_text('schema_version: aide.queue-index.v0\ntasks: []\n')
+        def snapshot():
+            return {p.relative_to(self.source).as_posix(): (p.stat().st_mtime_ns, p.read_bytes())
+                    for p in self.source.rglob('*') if p.is_file()}
+        before = snapshot()
+        with mock.patch('builtins.print'):
+            self.assertEqual(lite.command_task_status(args), 1)
+        self.assertEqual(snapshot(), before)
+        self.assertFalse((self.source/lite.TASK_OS_TASK_STATUS_REPORT_PATH).exists())
+        args.write_reports = True
+        with mock.patch('builtins.print'):
+            self.assertEqual(lite.command_task_status(args), 1)
+        self.assertTrue((self.source/lite.TASK_OS_TASK_STATUS_REPORT_PATH).is_file())
+        self.assertTrue((self.source/lite.TASK_OS_COMMAND_STATUS_REPORT_PATH).is_file())
+
     def test_source_heavy_entrypoints_refuse_outside_owned_job(self):
         lite = self.lite_module(); args = argparse.Namespace(repo_root=REPO)
         with mock.patch.object(workspace, 'current_context', side_effect=workspace.WorkspaceRefused('outside job')), \

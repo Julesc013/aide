@@ -1,0 +1,9 @@
+{
+  "command": "py -3 -B .aide/scripts/aide_lite.py task status",
+  "exit_code": 0,
+  "tracked_untracked_state_unchanged": true,
+  "reported_non_mutating": true,
+  "task_count": "task_count: 387",
+  "source_query_code_sha256": "dd076065f1b59c9587a1fa7a58df17b8cf16f32834529284863392b67c09108e",
+  "fixture_tests": "2 passed in 7.978s including nonwriting state equality and explicit report compatibility"
+}

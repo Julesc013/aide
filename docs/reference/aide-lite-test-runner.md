@@ -31,6 +31,9 @@ py -3 .aide/scripts/aide_lite.py selftest
 Campaign builds, packaging and external unittest processes use the explicit
 maintainer job path. This reuses AIDE's Windows Job process owner; it does not
 activate the autonomous broker or replace the metadata-only TestJob contract.
+`git detect`, `git plan` and `task status` inspect current state without rewriting
+tracked reports by default. Their `--write-reports` option explicitly invokes
+the existing report generators when a projection is required.
 In the AIDE source checkout, `test`, `selftest` and `eval run` require this
 admission. The child proves membership in the exact named Windows Job and
 rechecks the source/CLI input manifest. Setting temporary-directory environment

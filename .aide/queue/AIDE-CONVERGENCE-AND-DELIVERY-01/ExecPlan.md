@@ -162,3 +162,23 @@ local dev at `5ac617b37b5778193b1c2cc7c63e0cc12c98ec09`, tree
 cleared by a narrow evidence-only check. Removal/host source integration and
 mandatory lifecycle apply are next. No main promotion or public release has
 occurred; this programme remains running.
+
+## 2026-09-26 resource correction and live route
+
+Keep persistent Goal 01a0d2e9-769f-7e53-a8ca-1f32d288d976 active. Reuse the
+existing partial-import checkout; do not allocate new clones/worktrees/builds.
+Resource cleanup retired 34 inactive checkouts with all refs retained. Source
+b325deea implements finite job admission/monitoring/collection/retirement and
+canonical generator output reservations; its independent ACCEPT_WITH_NOTES is
+recorded in the resource child. Focused recovery oracle e87386e5 also received
+ACCEPT_WITH_NOTES and seven actual bounded cases pass in 25.090s. The earlier
+180s timeout and full-fixture 112.647s controls PASS are preserved, not replaced.
+
+Finish the small nonwriting task-status delta and its bounded compatibility
+checks. Approved permanent build/test/temp placement remains unknown and the
+owner question remains pending; no historical dump is adopted as that answer.
+Next heavy action after placement resolution is full importer qualification
+through the runner, then batch current-generator source/artifact projection and
+exact integration review. Main, tags, publication and native/hosted guarantees
+remain unqualified. The stale removal-plan route is replaced with this actual
+dependency order; completed candidate integrations must not be repeated.

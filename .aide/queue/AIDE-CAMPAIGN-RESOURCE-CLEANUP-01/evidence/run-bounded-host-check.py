@@ -19,7 +19,7 @@ from core.execution import managed_workspace as workspace
 parent = workspace.root_path(os.environ['AIDE_RESOURCE_TEST_PARENT'])
 evidence = Path(__file__).parent
 parser = argparse.ArgumentParser()
-parser.add_argument('--suite', choices=('host', 'importer-recovery', 'importer-controls-diagnostic', 'importer-recovery-remaining'), default='host')
+parser.add_argument('--suite', choices=('host', 'task-status', 'importer-recovery', 'importer-controls-diagnostic', 'importer-recovery-remaining'), default='host')
 parser.add_argument('--diagnostic-child', action='store_true')
 options = parser.parse_args()
 if options.diagnostic_child:
@@ -36,11 +36,12 @@ if options.diagnostic_child:
     print(json.dumps({'test_elapsed_seconds': time.monotonic()-started}), flush=True)
     raise SystemExit(0 if result.wasSuccessful() else 1)
 suite = options.suite
-importer = suite != 'host'
+importer = suite.startswith('importer')
 diagnostic = suite == 'importer-controls-diagnostic'
 remaining = suite == 'importer-recovery-remaining'
-oracle = 'test_export_import.py' if importer else 'test_continuous_worker_host.py'
-result_name = 'bounded-importer-recovery-remaining' if remaining else 'bounded-importer-controls-diagnostic' if diagnostic else 'bounded-importer-recovery-check' if importer else 'bounded-host-check'
+task_status = suite == 'task-status'
+oracle = 'test_x_os_01_task_os_commands.py' if task_status else 'test_export_import.py' if importer else 'test_continuous_worker_host.py'
+result_name = 'bounded-task-status-check' if task_status else 'bounded-importer-recovery-remaining' if remaining else 'bounded-importer-controls-diagnostic' if diagnostic else 'bounded-importer-recovery-check' if importer else 'bounded-host-check'
 with tempfile.TemporaryDirectory(prefix='tiny-aide-validation-', dir=parent) as temporary:
     fixture = Path(temporary)
     roots = {key: fixture/key for key in ('scratch', 'retained', 'control')}
@@ -60,6 +61,8 @@ with tempfile.TemporaryDirectory(prefix='tiny-aide-validation-', dir=parent) as 
                               text=True, check=True, timeout=15).stdout.strip()
     files = ['core/execution/managed_workspace.py', 'core/runtime/continuous_worker/windows_job.py',
              '.aide/scripts/tests/' + oracle]
+    if task_status:
+        files.append('.aide/scripts/aide_lite.py')
     if importer:
         # Bind the source and the actual fixture inputs, not just the test name.
         import importlib.util

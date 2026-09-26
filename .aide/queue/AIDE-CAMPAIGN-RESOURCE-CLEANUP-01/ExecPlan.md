@@ -140,3 +140,15 @@ is test-oracle scope under the owner resource delegation, not reduced release
 coverage. Extend this task's allowed paths to test_export_import.py. Run these
 seven cases through the bounded path and obtain narrow independent oracle review
 before treating the reduced-fixture evidence as accepted.
+
+The seven-case admitted run on frozen e87386e5 passed in 25.090s, no skips.
+Observed scratch 11,654,822 bytes, Job memory 252,903,424 bytes, 1,383 log
+bytes; scratch absent and reservation released. Narrow oracle review remains
+pending. Preserve earlier timeout/full-fixture diagnostic evidence as history.
+
+Next independent small correction: task status still writes two tracked reports
+despite being an inspection command. Match the already repaired git detect/plan
+interfaces: collect current context without writes by default, and retain the
+existing generator behind --write-reports. Test actual fixture state before and
+after inspection plus explicit report generation; keep Task OS writers/golden
+checks and queue routing behavior intact. No bulk allocation is needed.

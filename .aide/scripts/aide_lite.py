@@ -38535,13 +38535,20 @@ def command_task_inspect(args: argparse.Namespace) -> int:
 
 def command_task_status(args: argparse.Namespace) -> int:
     tasks = queue_task_blocks(args.repo_root)
-    report_result, context = write_task_os_task_status(args.repo_root)
+    write_reports = getattr(args, "write_reports", False)
+    report_result = None
+    if write_reports:
+        report_result, context = write_task_os_task_status(args.repo_root)
+    else:
+        context = task_os_context(args.repo_root)
     print("AIDE Lite task status")
     print(f"task_count: {len(tasks)}")
     for task in tasks:
         print(f"- {task.get('id', '')}: status={task.get('status', 'unknown')} planning_state={task.get('planning_state', 'unknown')}")
     print(f"latest_task_id: {context.get('latest_task_id', '') or 'none'}")
-    print(f"report: {TASK_OS_TASK_STATUS_REPORT_PATH} ({report_result.action})")
+    if report_result is not None:
+        print(f"report: {TASK_OS_TASK_STATUS_REPORT_PATH} ({report_result.action})")
+    print(f"non_mutating: {str(not write_reports).lower()}")
     print("report_only: true")
     return 0 if tasks else 1
 
@@ -44546,7 +44553,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_inspect_parser = task_subparsers.add_parser("inspect")
     task_inspect_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_inspect_parser.set_defaults(handler=command_task_inspect)
-    task_subparsers.add_parser("status").set_defaults(handler=command_task_status)
+    task_status_parser = task_subparsers.add_parser("status")
+    task_status_parser.add_argument("--write-reports", action="store_true", help="Explicitly generate tracked Task OS status reports")
+    task_status_parser.set_defaults(handler=command_task_status)
     task_subparsers.add_parser("classify").set_defaults(handler=command_task_classify)
     task_subparsers.add_parser("repair-plan").set_defaults(handler=command_task_repair_plan)
     task_subparsers.add_parser("requeue-plan").set_defaults(handler=command_task_requeue_plan)

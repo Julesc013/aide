@@ -6,7 +6,9 @@ planning_state: execution_active
 result: PENDING
 review_gate: admitted_by_owner
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
-next_task: AIDE-DELIVERED-PACK-REMOVAL-PLAN-01
+next_task: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
+delivery_dependency: AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01
+resource_placement: permanent_approved_pool_question_pending
 notes:
   - The owner approved continued campaign execution after the exact candidate-bound review packet.
   - AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01 passed and was published.
@@ -23,3 +25,5 @@ notes:
   - The owner's 2026-09-25 campaign delegation is recorded in evidence; routine in-scope owner responses are superseded while substantive technical gates remain.
   - Customization and exact historical disposition source/artifacts reached remote dev 5ac617b37b5778193b1c2cc7c63e0cc12c98ec09; mandatory lifecycle apply and release qualification remain open.
   - Reviewed isolated-host API-query source reached remote dev a55b804bb573f145e0f1f00751d27f9b4f2af195; native and hosted effects remain unqualified.
+  - The 2026-09-26 resource correction retired 34 inactive physical checkouts with exact branch refs and unique evidence retained; primary dev and the current implementation are the only two remaining.
+  - Resource source b325deea and focused oracle e87386e5 have independent source acceptance; seven admitted partial-recovery cases pass in 25.090s with scratch retirement. Full importer, real packaging and stable release gates remain open.
