@@ -73,3 +73,15 @@ cleans it after abrupt process exit. Tests passed for a second-process writer,
 process-exit cleanup, controls writes at both final boundaries, pinned manual
 resolution at retirement, and the existing fresh/update recovery case. The
 full suite on `052a0a92` was stopped; exact rereview precedes its replacement.
+
+Focused independent reviewer /root/partial_recovery_review accepted exact
+dfc8048bc0053b0646e3cd7762d5e23758c1a7ac, tree
+85d4164fec3dd3b540e01dad9253131f00f4b362 with notes. The preserved report
+SHA-256 is 5357b3220aa1a0608545ff5966678ece7b3f30f1b7d6e758e042a7695223809d.
+Its v1 and missing-controls probes passed; v2 was inspected, not runtime
+qualified by that reviewer. This closes the focused source finding only.
+Full importer/lifecycle checks, v2 runtime coverage, combined source and
+delivered-byte proof remain required. These notes cannot authorize integration
+or release in advance of those gates. Owner resource correction now requires
+the bounded runner before heavy testing; approved storage placement remains
+unresolved. The external original is retained unchanged.

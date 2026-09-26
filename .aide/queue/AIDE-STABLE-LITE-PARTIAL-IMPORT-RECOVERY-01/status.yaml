@@ -5,9 +5,12 @@ classification: portable_partial_import_recovery
 planning_state: admitted
 result: PENDING
 updated_at: 2026-09-26
-current_slice: publication_input_handle_guard_repair
-next_slice: independent_source_rereview_then_full_suite
-review_gate: independent_source_rereview_pending
+current_slice: focused_source_review_recorded
+next_slice: full_importer_suite_under_bounded_resource_runner
+review_gate: source_accepted_with_notes_full_suite_and_artifact_gates_open
+reviewed_source: dfc8048bc0053b0646e3cd7762d5e23758c1a7ac
+reviewed_tree: 85d4164fec3dd3b540e01dad9253131f00f4b362
+review_report_sha256: 5357b3220aa1a0608545ff5966678ece7b3f30f1b7d6e758e042a7695223809d
 main_promotion_performed: false
 tag_created: false
 release_published: false
