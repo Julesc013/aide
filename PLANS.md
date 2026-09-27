@@ -4075,6 +4075,18 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   their committed-custody ZIP originals and unique sibling state. Permanent
   storage configuration remains absent; no bulk job or fallback was admitted.
 
+- 2026-09-28 placement continuation: the owner selected exact shared D
+  execution roots beneath `D:\Projects\AIDE\.aide.local\execution` for new
+  jobs. Both existing checkout configs validate against the actual D volume.
+  Collect the already-running E-bound importer attempt with its preserved
+  original config before admitting a D job. Then run changed-source checks,
+  current package generation and delivered-byte consumers in dependency order.
+- E attempt retired after 99 completed importer cases due a live scratch scan
+  race. The D-bound monitor repair passed a red/green regression, 26 runner
+  cases and 9 cache cases. Obtain narrow independent source review, then run
+  the 110 importer cases in bounded partitions on frozen source before current
+  package and delivered-byte qualification.
+
 ## 2026-09-26 - Stable customization contract follow-up
 
 - Resume AIDE-STABLE-RELEASE-CONTRACT-01 in the existing task checkout under

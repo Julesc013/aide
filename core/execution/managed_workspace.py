@@ -243,15 +243,25 @@ def qualify_canonical_outputs(record, config, roots, working):
         record['result'] = {'reason': 'canonical_output_limit_or_identity', 'message': str(exc), 'exit_code': None}
 
 
-def tree_usage(root, *, maximum, max_files):
+def tree_usage(root, *, maximum, max_files, allow_transient_absence=False):
     total = count = 0; pending = [root]
     while pending:
-        directory = pending.pop(); ordinary(directory, directory=True)
-        with os.scandir(directory) as entries:
+        directory = pending.pop()
+        try:
+            ordinary(directory, directory=True)
+            entries = os.scandir(directory)
+        except FileNotFoundError:
+            if allow_transient_absence: continue
+            raise
+        with entries:
             for entry in entries:
                 # Windows DirEntry's cached enumeration omits link/device
                 # identity (st_nlink=0). Use lstat for ownership validation.
-                info = Path(entry.path).lstat()
+                try:
+                    info = Path(entry.path).lstat()
+                except FileNotFoundError:
+                    if allow_transient_absence: continue
+                    raise
                 count += 1
                 if stat.S_ISLNK(info.st_mode) or getattr(info, 'st_file_attributes', 0) & 0x400:
                     raise WorkspaceRefused('linked job member preserved for recovery')
@@ -485,7 +495,8 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
             # Only this owned scratch, every 30 seconds, with bounded enumeration.
             # Disk/memory samples use OS counters and never scan estate/source.
             if now >= next_scan:
-                used = tree_usage(root, maximum=limits['scratch_bytes'] + limits['log_bytes'], max_files=limits['max_files'])
+                used = tree_usage(root, maximum=limits['scratch_bytes'] + limits['log_bytes'],
+                                  max_files=limits['max_files'], allow_transient_absence=True)
                 record['peaks']['scratch_bytes'] = max(record['peaks']['scratch_bytes'], used)
                 for relative, used in canonical_usage(config, job, roots).items():
                     record['peaks']['canonical_bytes'][relative] = max(record['peaks']['canonical_bytes'][relative], used)

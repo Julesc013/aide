@@ -227,3 +227,33 @@ Resource limits: 1 GiB scratch, 64 MiB retained output, 4 MiB logs, 2 GiB Job
 memory, 16 processes, 30,000 entries, 3600s; retain 10 GiB disk and 4 GiB
 physical/commit headroom. Thresholds are monitored; memory uses Windows Job
 enforcement. Exact preflight and config digests are in approved-placement evidence.
+
+## 2026-09-28 exact D placement supersedes E for new jobs
+
+Owner selected `D:\Projects\AIDE\.aide.local\execution\{scratch,retained,control}`
+for new admissions. Both existing checkouts now use this same ignored local
+configuration and actual D volume identity. Finite limits are 1 GiB scratch,
+256 MiB retained, 512 MiB canonical output, 2 GiB job memory, 16 MiB logs,
+3600 seconds, 32 processes and 100,000 entries; preserve 10 GiB disk and
+4 GiB physical/commit reserves. Machine-local placement and old E-job recovery
+identity are retained in D control. The existing full importer attempt remains
+bound to its original E config and frozen source; finish/collect that attempt
+before admitting any intensive D job. Do not replay it merely because its
+original pool was superseded.
+
+Next: collect terminal importer result, reconcile scratch and reservations,
+then run affected source checks and current artifact qualification through D.
+During the bounded wait, correct the cache verifier's false wording for absent
+optional reports in the other existing checkout. Preserve WARN severity and
+all substantive oracles. Validate the changed message and affected test with
+the D runner after the E attempt ends. This tiny diagnosis correction does not
+make old consumer warnings or the current release pass.
+
+The E attempt reached 99 completed importer cases before `tree_usage` raised
+on a temporary file that disappeared between `scandir` and `lstat`. Its error,
+retirement and bit-verified D custody are recorded in task evidence. A red
+one-case D run reproduced the race. The monitor now tolerates transient absence
+only during active scratch observation; evidence and canonical scans stay
+strict. A green one-case run, 26 runner tests and 9 cache tests pass through D
+with scratch retired and reservations released. Freeze and review the scoped
+runner source, then qualify all importer cases in two bounded partitions.

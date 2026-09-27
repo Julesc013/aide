@@ -30306,7 +30306,8 @@ def cache_status_checks(repo_root: Path) -> list[Check]:
         else:
             checks.append(Check("FAIL", f"cache/local-state artifact missing: {rel}"))
     for rel in [CACHE_KEYS_JSON_PATH, CACHE_KEYS_MD_PATH]:
-        checks.append(Check("PASS" if (repo_root / rel).exists() else "WARN", f"cache key report exists: {rel}"))
+        present = (repo_root / rel).exists()
+        checks.append(Check("PASS" if present else "WARN", f"cache key report {'exists' if present else 'missing'}: {rel}"))
     return checks
 
 

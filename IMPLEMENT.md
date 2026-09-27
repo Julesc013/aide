@@ -12228,3 +12228,29 @@ Recorded the owner instruction `use E:\Temporary`, created only AIDE-owned
 subroots there, and configured ignored local execution settings in both remaining
 checkouts. Distinct-root/volume/capacity inspection passes without report writes.
 No runtime code changed; full integrated importer qualification is the next effect.
+
+## Exact D execution placement and diagnostic correction - 2026-09-28
+
+The owner's later explicit selection supersedes E for new jobs. Created only
+`D:\Projects\AIDE\.aide.local\execution\{scratch,retained,control}` and wrote
+identical ignored local configuration in the two existing checkouts. Actual D
+volume identity and capacity passed read-only runner inspection with 10 GiB
+disk and 4 GiB physical/commit reserves, 1 GiB scratch, 256 MiB retained,
+512 MiB canonical, 2 GiB memory, 16 MiB log, 3600 second, 32 process and
+100,000 entry limits. D control retains the exact old E configuration and
+attempt identity for collection; no new intensive job overlaps it.
+
+The installed-consumer warning probe identified a misleading message in
+`cache_status_checks`: it said a cache report exists when the WARN condition
+meant it was absent. The message now reflects actual existence, preserving
+WARN severity. The prior consumer warnings remain unqualified for release;
+At placement setup, changed-source tests and old-attempt collection were pending.
+
+The E full-importer attempt completed 99 cases before active scratch
+observation raced a disappearing test fixture. Its five retained files were
+copied to D with bit-identical SHA-256; E originals remain. The runner now
+permits transient absence only while sampling live scratch. A red one-case
+test reproduced the race; the green one-case test, 26 runner tests and 9 cache
+tests passed through D, each with scratch retirement and reservation release.
+Exact job and receipt identities are in the resource task evidence. Full
+importer and current delivered-byte qualification remain open.

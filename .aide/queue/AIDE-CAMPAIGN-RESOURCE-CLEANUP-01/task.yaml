@@ -28,8 +28,8 @@ scope:
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
   external_resource_root: D:/Projects/AIDE
-  approved_execution_parent: E:/Temporary
-  approved_execution_root: E:/Temporary/AIDE
+  approved_execution_parent: D:/Projects/AIDE/.aide.local/execution
+  approved_execution_root: D:/Projects/AIDE/.aide.local/execution
   forbidden_operations:
     - remove primary or active source checkout
     - delete Git refs or dirty, unknown, or unique local data

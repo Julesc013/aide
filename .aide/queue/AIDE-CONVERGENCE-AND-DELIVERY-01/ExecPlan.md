@@ -224,3 +224,12 @@ Owner selected E:\Temporary. Both remaining checkouts share a volume-bound
 AIDE-owned scratch/retained/control map. Existing runner preflight passes with
 finite reservations. Resume actual integrated importer qualification on the
 existing partial-import branch. No additional physical workspace or model poller.
+
+## 2026-09-28 selected D execution roots
+
+Owner subsequently selected exact shared D execution roots for future jobs.
+Both checkout-local ignored configs validate against the actual D volume and
+finite limits. Collect the already running E-bound importer attempt using its
+preserved original config, then execute further qualification under D through
+the same managed runner. The E selection above is historical, not the current
+admission location. Do not overlap intensive jobs or repeat closed docs work.

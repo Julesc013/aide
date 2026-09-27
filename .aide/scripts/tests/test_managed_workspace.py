@@ -305,6 +305,31 @@ class ManagedWorkspaceTests(unittest.TestCase):
             workspace.tree_usage(self.root, maximum=2**20, max_files=100)
         self.assertEqual((outside/'valuable').read_text(), 'retain')
 
+    def test_usage_scan_tolerates_disappearing_owned_scratch_entries(self):
+        scratch = self.roots['scratch']
+        transient_file = scratch/'transient.txt'
+        transient_file.write_text('temporary', encoding='utf-8')
+        transient_dir = scratch/'transient-dir'
+        transient_dir.mkdir()
+        original_lstat = Path.lstat
+        seen_dir = 0
+
+        def vanishing_lstat(path, *args, **kwargs):
+            nonlocal seen_dir
+            if path == transient_file:
+                raise FileNotFoundError(str(path))
+            if path == transient_dir:
+                seen_dir += 1
+                if seen_dir > 1:
+                    raise FileNotFoundError(str(path))
+            return original_lstat(path, *args, **kwargs)
+
+        with mock.patch.object(Path, 'lstat', vanishing_lstat):
+            with self.assertRaises(FileNotFoundError):
+                workspace.tree_usage(scratch, maximum=1024, max_files=10)
+            self.assertEqual(workspace.tree_usage(scratch, maximum=1024, max_files=10,
+                                                  allow_transient_absence=True), 0)
+
     @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
     def test_success_retires_scratch_and_preserves_output(self):
         job = self.real_job('import os,tempfile\nfrom pathlib import Path\nassert tempfile.gettempdir()==os.environ["AIDE_JOB_TMP"]\nPath(os.environ["AIDE_JOB_OUTPUT"],"unique.txt").write_text("required result")\nprint("small result")\n')
