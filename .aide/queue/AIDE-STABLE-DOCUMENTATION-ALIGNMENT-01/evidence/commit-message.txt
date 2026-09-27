@@ -1,0 +1,38 @@
+docs(policy): align runtime status and adopted specification roles
+
+## Summary
+- Implement AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01 after resumed Goal continuation.
+
+## Why
+- README still described pre-runtime despite integrated source foundations.
+- Blanket bootstrap classification conflicted with the recorded adopted specification index.
+
+## Changed
+- Describe current source and remaining stable/native/hosted qualification precisely.
+- Align specs classification and source-of-truth guidance with existing adoption records.
+- Preserve explicit draft boundaries, review_required and mixed root canonicality.
+- Resume bounded parent routing while permanent bulk placement remains unresolved.
+
+## Validation
+- PASS: seven existing relative documentation links resolve.
+- PASS: all non-specs root/global policy bytes and unchanged field roles preserved.
+- PASS: source code, profile, specs and artifacts unchanged; git diff --check.
+- NOT RUN: optional PyYAML parse, product tests, builds and release qualification.
+
+## Changelog
+- Docs: Align current source status and already adopted specification boundaries.
+
+## Risks
+- The root-authority package remains review_required; no broad adoption is implied.
+- Stored previews and final support remain unqualified; permanent pools are missing.
+
+## Follow-up
+- Obtain exact independent policy/source and source-only dev-effect review.
+- Continue final qualification through the bounded runner when approved locations are supplied.
+
+AIDE-Task: AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
+AIDE-Phase: bounded-status-and-adoption-alignment
+AIDE-Result: PENDING
+AIDE-Scope: current-docs-and-existing-specification-authority
+AIDE-Token-Impact: read-only-structural-checks-no-artifact-regeneration
+AIDE-Quality-Gate: independent-source-and-effect-review-pending

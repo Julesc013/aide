@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
+
+Bounded release documentation alignment follows the resumed Goal; existing source/spec adoption is preserved and heavy qualification stays held.
+
 ## 2026-09-26 dev synchronization checkpoint
 
 Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4;

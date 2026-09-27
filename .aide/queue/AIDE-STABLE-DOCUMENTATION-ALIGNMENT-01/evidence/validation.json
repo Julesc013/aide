@@ -1,0 +1,55 @@
+{
+  "workunit": "AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01",
+  "source_base": "a1fe9fd57ac1f42a548d6c07d4f827eb1b2a30d4",
+  "scope": "Read-only document links and policy invariants; no runtime/consumer/packaging qualification",
+  "policy_non_specs_and_global_bytes_unchanged": true,
+  "review_required_and_mixed_preserved": true,
+  "yaml_parse": "not run: optional PyYAML unavailable; grammar unchanged except two plain scalar values",
+  "relative_links_checked": 7,
+  "source_and_artifact_namespaces_unchanged": [
+    "core",
+    ".aide/scripts",
+    ".aide/profile.yaml",
+    ".aide/export",
+    ".aide/release",
+    "specs"
+  ],
+  "spec_index_not_changed_or_readopted": true,
+  "links": [
+    {
+      "source": "README.md",
+      "target": "specs/control-plane/product/scope-and-profiles.md"
+    },
+    {
+      "source": "README.md",
+      "target": "CONTRIBUTING.md"
+    },
+    {
+      "source": "README.md",
+      "target": "AGENTS.md"
+    },
+    {
+      "source": "README.md",
+      "target": "NOTICE.md"
+    },
+    {
+      "source": "README.md",
+      "target": "TRADEMARKS.md"
+    },
+    {
+      "source": "README.md",
+      "target": "GENERATED_OUTPUTS.md"
+    },
+    {
+      "source": "governance/root-authority.md",
+      "target": "../specs/control-plane/README.md"
+    }
+  ],
+  "bindings": {
+    "README.md": "0ddff33dcd71bdb173aab33388521c0dd18cf3fc65c753e748b56235da5682d4",
+    ".aide/policies/root-authority.yaml": "3c33c345ca05a4e03911d24f5ce9e57abdd8d392d5779e20f4178d0e4ed4e55b",
+    "governance/root-authority.md": "ba34c9c3b961fb5056e377842a62329338f3d6ca19168312c69bb27ed6e673fd",
+    "docs/reference/source-of-truth.md": "8977a7ebb80ee30e6e42ec66866b0ba5aa545188f670ae4cbf3472bed94a163a",
+    "specs/control-plane/README.md": "2d41e9dfe4bb2bb59736a660a00e10dcabd81491cdd7d8dfa85b827d63046bde"
+  }
+}

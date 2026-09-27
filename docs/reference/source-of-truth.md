@@ -13,11 +13,17 @@ This reference distinguishes canonical records, generated outputs, caches, and e
 | Queue task instructions | Each task `task.yaml`, `ExecPlan.md`, and `prompt.md` |
 | Queue evidence | Each task-local `evidence/` directory |
 | Self-hosting policies | `.aide/policies/**` plus `.aide/queue/policy.yaml` |
+| Adopted desired-state specifications | Adopted entries and reviewed source records identified by `specs/control-plane/README.md`; adoption, implementation, verification, activation and support are separate dimensions |
 | Compatibility baseline | `.aide/compat/**` plus `core/compat/**` helpers |
 | Dominium Bridge baseline | `bridges/dominium/**` plus `docs/reference/dominium-bridge.md` |
 | Self-hosting automation policy | `docs/reference/self-hosting-automation.md` plus reviewed Q08 queue evidence |
 | Human explanation | `docs/**`, root docs, and `core/contract/**` references |
-| Bootstrap-era history | Root phase records, `specs/**`, `shared/**`, `hosts/**`, `evals/**`, `governance/**`, `inventory/**`, `matrices/**`, `research/**`, `environments/**`, `labs/**`, and `packaging/**` |
+| Preserved architecture and history | Root phase records and related/legacy records under `specs/**`, `shared/**`, `hosts/**`, `evals/**`, `governance/**`, `inventory/**`, `matrices/**`, `research/**`, `environments/**`, `labs/**`, and `packaging/**`; current declarations and explicitly adopted contracts retain their recorded roles |
+
+Imported draft chapters remain proposed and cannot override adopted contracts.
+Specification adoption grants no tool, mutation, spending, integration or
+publication authority. Current Profile, policies, queue scope, actor authority
+and exact reviews continue to control effects.
 
 ## Generated Outputs
 

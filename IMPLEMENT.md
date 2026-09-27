@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
+
+Resumed the campaign for a bounded current-status/spec-root alignment in the reused checkout; no new storage pool or artifact generation.
+
 ## 2026-09-26 dev synchronization checkpoint
 
 Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4;

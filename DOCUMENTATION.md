@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
+
+Current status and specification roles are being aligned under AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01; global root-policy acceptance and shipping claims remain gated.
+
 ## 2026-09-26 dev synchronization checkpoint
 
 Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4;

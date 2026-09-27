@@ -3301,8 +3301,8 @@ items:
     prompt: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/prompt.md
     evidence: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/evidence
   - id: AIDE-CONVERGENCE-AND-DELIVERY-01
-    status: blocked
-    planning_state: approved_bulk_placement_required
+    status: running
+    planning_state: resumed_source_work_bulk_qualification_held
     result: PENDING
     title: Converge, qualify, and deliver AIDE through bounded reviewed work
     task: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml
@@ -3738,3 +3738,12 @@ items:
     task: .aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/task.yaml
     exec_plan: .aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/ExecPlan.md
     evidence: .aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence
+  - id: AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
+    status: needs_review
+    planning_state: structural_validation_complete_source_review_pending
+    result: PENDING
+    title: Align current status and adopted specification boundaries
+    task: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/prompt.md
+    evidence: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/evidence

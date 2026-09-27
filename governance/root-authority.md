@@ -2,9 +2,10 @@
 
 ## Purpose
 
-This document defines AIDE's current human-readable root authority contract.
-It converts the Track B structure audit into repository law without applying a
-filesystem migration.
+This document records root roles and their existing adoption boundaries.
+The machine root-authority package remains `review_required`; this alignment
+does not adopt its other pending classifications or authorize a filesystem
+migration.
 
 Machine-readable root authority records live in
 `.aide/policies/root-authority.yaml`.
@@ -45,7 +46,15 @@ claims.
 target-repo bridge metadata and adoption expectations. AIDE-side bridge records
 do not mutate target repositories.
 
-`shared/`, `platforms/`, `research/`, and `specs/` remain preserved
+`specs/` contains adopted desired-state contracts, explicitly marked drafts
+and preserved related/legacy specifications. The
+[control-plane index](../specs/control-plane/README.md) identifies the adopted
+foundation and bounded integration-stage contract separately from imported
+drafts. Adoption does not establish implementation, verification, activation
+or support, replace `.aide/` as the self-hosting Profile/queue, or grant effect
+authority. Root classification grants no new adoption or structural authority.
+
+`shared/`, `platforms/`, and `research/` remain preserved
 bootstrap-era or unresolved material until a reviewed fate map assigns their
 future posture.
 

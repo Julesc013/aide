@@ -1,0 +1,35 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
+title: Align implemented status and existing specification adoption boundaries
+type: policy_and_documentation
+status: needs_review
+planning_state: structural_validation_complete_source_review_pending
+result: PENDING
+created_at: 2026-09-27
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_commit: a1fe9fd57ac1f42a548d6c07d4f827eb1b2a30d4
+authority: Existing owner campaign delegation and explicit resumed Goal continuation.
+scope:
+  allowed_paths:
+    - README.md
+    - governance/root-authority.md
+    - .aide/policies/root-authority.yaml
+    - docs/reference/source-of-truth.md
+    - .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  forbidden_operations:
+    - new specification adoption or declaring drafts implemented or supported
+    - root/file moves, deletes or global root-policy adoption
+    - changing runtime, permissions, providers, resource placement or generated authority
+    - artifact regeneration, full tests, main/tag/publication or target effects
+verification:
+  - compare declared adoption to specs/control-plane/README.md and original policy
+  - preserve review_required, mixed canonicality and every non-specs root/global rule
+  - validate relative links and exact source/evidence hashes without bulk allocation
+  - exact independent policy/source and dev-effect review before integration

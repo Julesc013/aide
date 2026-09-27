@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
+status: needs_review
+planning_state: structural_validation_complete_source_review_pending
+result: PENDING
+updated_at: 2026-09-28
+current_slice: documentation_and_existing_authority_alignment
+review_gate: exact_independent_policy_and_effect_review_required
+bulk_qualification: approved_pool_question_pending

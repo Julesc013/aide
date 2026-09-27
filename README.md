@@ -20,7 +20,7 @@ environments can coordinate through one repo-native control plane.
           +----------------------+----------------------+
           |                      |                      |
  +--------v---------+   +--------v---------+   +--------v---------+
- | OKF Knowledge    |   | Runtime /        |   | Conformance      |
+ | OKF Knowledge    |   | Worker runtime   |   | Conformance      |
  | markdown graph   |   | Service later    |   | admission gates  |
  +--------+---------+   +--------+---------+   +--------+---------+
           |                      |                      |
@@ -41,18 +41,23 @@ a RAG system, or a project-management tool.
 
 ## Status
 
-AIDE is protocol-first, repo-native, and pre-runtime.
+AIDE has implemented repo-native control-plane, local Windows lifecycle and
+runtime foundations in `dev`.
 
-The repository currently contains implemented-for-review control-plane and
-protocol slices: the self-hosting queue, AIDE Lite helpers, contract envelope,
-EvidencePacket, WorkUnit, WorkerRun, TestJob, ReferenceID, EventRecord, and a
-deterministic OKF-compatible knowledge bundle projection.
+The source includes the self-hosting queue, context and evidence tools,
+portable import/update, project-owned customization, owned repair,
+rollback/removal and partial-import recovery. A bounded maintainer runner
+provides explicit storage admission, finite resource limits and retirement;
+real build/test use requires configured local pools. Worker, isolation and
+integration-broker foundations also have source and focused test evidence.
 
-Those slices are useful, but they are deliberately narrow. The full runtime,
-test broker, patch engine, scheduler, Service, Commander, Workshop/Workbench,
-provider adapters, live Gateway behavior, automatic promotion, and legacy IDE
-bridges are planned later layers. Do not read this README as a claim that those
-runtime surfaces already exist.
+Stable distribution still requires final integrated and delivered-artifact
+qualification. Current release archives are older previews. Native/hosted
+effects, restricted-principal isolation and model-enabled operation retain
+separate qualification gates. Service, Commander, Workshop/Workbench and
+broader host/provider interfaces remain later work. The candidate local
+Windows Lite profile and its limits are defined in
+[product scope and profiles](specs/control-plane/product/scope-and-profiles.md).
 
 AIDE's short doctrine:
 
@@ -68,7 +73,7 @@ Conformance admits.
 Patch transactions mutate only when authorized.
 Adapters perform only after admission.
 Context packs prevent rediscovery.
-Runtime coordinates later.
+Runtime foundations coordinate bounded work.
 ```
 
 ## Why AIDE Exists

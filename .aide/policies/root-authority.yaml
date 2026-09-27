@@ -152,11 +152,11 @@ root_records:
     mutation_posture: fate_map_required
     notes: Research may inform OKF or references but does not become execution authority.
   - root: specs
-    authority: bootstrap-era human and implementation-facing specifications pending authority split
+    authority: adopted desired-state contracts alongside explicitly marked draft and preserved legacy specifications
     canonicality: mixed
     risk: low
     mutation_posture: fate_map_required
-    notes: Specs remain preserved until an authority split is reviewed.
+    notes: Adoption follows specs/control-plane/README.md and its reviewed source records. Drafts remain proposed; adoption does not prove implementation, verification, activation or support, replace the self-hosting Profile/queue, or grant effect authority. This alignment does not adopt the remaining review_required root-policy package or authorize structural changes.
   - root: environments
     authority: environment and execution-topology records
     canonicality: environment_record
