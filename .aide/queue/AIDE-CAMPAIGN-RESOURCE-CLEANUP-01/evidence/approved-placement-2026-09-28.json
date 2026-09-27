@@ -1,0 +1,61 @@
+{
+  "approved_parent": "E:\\Temporary",
+  "at": "2026-09-28T07:26:00.732264+10:00",
+  "configuration_sha256": "429617ed968d27a7f629b0c8fd603e99f9ea7399366acaefb8b676f22c348d46",
+  "goal_client_observation": "Existing Codex goal was blocked when checked; tools expose no resume operation. User resolved the storage blocker; authorized campaign execution proceeds.",
+  "inspection_writes": false,
+  "limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 4194304,
+    "max_files": 30000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 16,
+    "retained_bytes": 67108864,
+    "runtime_seconds": 3600,
+    "scratch_bytes": 1073741824
+  },
+  "local_configurations": [
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\execution.json",
+    "D:\\Projects\\AIDE\\aide-stable-lite-partial-import-recovery\\.aide.local\\execution.json"
+  ],
+  "next_job": "Complete .aide/scripts/tests/test_export_import.py on frozen integrated source",
+  "owner_instruction": "use E:\\Temporary",
+  "preflight": {
+    "active": null,
+    "capacity": {
+      "commit_free": 60807979008,
+      "disk_free": {
+        "\\\\?\\volume{e45ec57d-b4ee-4f1f-9760-a1689f2c8fbb}\\": 55859666944
+      },
+      "physical_free": 11097227264
+    },
+    "config_digest": "f93494d9b59453e0897d639edea22eb6e287dbe041980c488a8823979efaa37a",
+    "disk_enforcement": "reservation_and_monitored_threshold",
+    "log_enforcement": "bounded_pipe_drain",
+    "memory_enforcement": "Windows_Job_commit_limit",
+    "reservations": {
+      "\\\\?\\volume{e45ec57d-b4ee-4f1f-9760-a1689f2c8fbb}\\": 1150287872
+    },
+    "writes": false
+  },
+  "roots": {
+    "control": "E:\\Temporary\\AIDE\\control",
+    "retained": "E:\\Temporary\\AIDE\\retained",
+    "scratch": "E:\\Temporary\\AIDE\\scratch"
+  },
+  "schema": "aide.execution-placement-activation.v1",
+  "scope": "Existing accepted runner and owner-selected placement; no source/runtime changes or allocation outside approved parent",
+  "volume_ids": {
+    "control": "\\\\?\\volume{e45ec57d-b4ee-4f1f-9760-a1689f2c8fbb}\\",
+    "retained": "\\\\?\\volume{e45ec57d-b4ee-4f1f-9760-a1689f2c8fbb}\\",
+    "scratch": "\\\\?\\volume{e45ec57d-b4ee-4f1f-9760-a1689f2c8fbb}\\"
+  },
+  "working_roots": [
+    "D:\\Projects\\AIDE\\aide",
+    "D:\\Projects\\AIDE\\aide-stable-lite-partial-import-recovery"
+  ],
+  "workunit": "AIDE-CAMPAIGN-RESOURCE-CLEANUP-01"
+}

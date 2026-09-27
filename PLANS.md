@@ -4085,3 +4085,8 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   all 25 declared forms now parse without handlers or fixture allocation.
 - Freeze and independently review this policy/doc delta. Final archive/profile
   qualification and public activation remain gated; permanent bulk pool is absent.
+
+## Owner-selected integrated qualification storage - 2026-09-28
+
+Existing resource-cleanup ExecPlan now activates the owner-selected E:\Temporary
+parent and routes full importer qualification through the accepted bounded runner.

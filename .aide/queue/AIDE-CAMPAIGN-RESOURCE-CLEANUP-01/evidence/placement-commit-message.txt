@@ -1,0 +1,36 @@
+chore(execution): activate owner-selected bounded qualification storage
+
+## Summary
+- Continue AIDE-CAMPAIGN-RESOURCE-CLEANUP-01 using the owner-selected execution parent.
+
+## Why
+- The explicit E:\Temporary instruction resolves the missing placement input.
+
+## Changed
+- Configure ignored machine-local roots with actual volume identities and finite limits.
+- Record owner instruction, read-only preflight and shared control-root placement.
+- Route the campaign to the full integrated importer suite on the reused checkout.
+
+## Validation
+- PASS: existing ordinary parent, distinct roots, volume identities and capacity admission.
+- PASS: shared configurations and read-only inspection with no pending job.
+- PASS: unchanged runtime source, exact message and scoped staged diff checks.
+- NOT RUN: integrated suite, current archives and stable release qualification yet.
+
+## Changelog
+- Internal: Activate bounded execution under the approved Temporary parent.
+
+## Risks
+- Disk occupancy is monitored, not an OS filesystem quota.
+- Existing unrelated Temporary material is outside cleanup and execution scope.
+
+## Follow-up
+- Run the frozen integrated importer suite and preserve actual resource/retirement results.
+- Repair actual failures before generating and qualifying current delivered artifacts.
+
+AIDE-Task: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
+AIDE-Phase: approved-storage-and-integrated-qualification
+AIDE-Result: PASS_WITH_RETAINED_GATES
+AIDE-Scope: local-placement-evidence-and-routing
+AIDE-Token-Impact: deterministic-runner-one-intensive-job
+AIDE-Quality-Gate: existing-accepted-runner-no-source-change

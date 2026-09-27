@@ -217,3 +217,10 @@ requires the existing owner-approved scratch/retained/control paths; neither
 checkout has execution.json. No new pool, bulk job or fallback is authorized by
 this documentation change. Next action is configure and validate those paths,
 then run the actual combined importer/lifecycle suite through the existing runner.
+
+## 2026-09-28 placement blocker resolved
+
+Owner selected E:\Temporary. Both remaining checkouts share a volume-bound
+AIDE-owned scratch/retained/control map. Existing runner preflight passes with
+finite reservations. Resume actual integrated importer qualification on the
+existing partial-import branch. No additional physical workspace or model poller.

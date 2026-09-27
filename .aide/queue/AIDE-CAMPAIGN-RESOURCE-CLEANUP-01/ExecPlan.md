@@ -210,3 +210,20 @@ Other consumers lacking committed custody remain untouched. Read-only proof
 script and compact effect receipt are task-local; they are not a new runner.
 The previously observed remote task ref and capacity receipt are now canonical
 task evidence. Permanent pool remains absent; bulk qualification is still held.
+
+## 2026-09-28 owner-selected execution placement
+
+Owner instruction: `use E:\Temporary`. Use only the AIDE-owned child of that
+existing parent, with distinct scratch/retained/control roots and one shared
+control lock for the two existing checkouts. Machine-local configurations bind
+actual volume identity; no fallback or global environment change. All existing
+Temporary content outside AIDE remains out of scope.
+
+Plan: validate placement/capacity once, freeze exact integrated source and oracle,
+run full importer tests through the existing job owner, collect one bounded log
+and result, verify scratch retirement/reservation release, then route actual
+findings to repairs or current artifact qualification. No new physical checkout.
+Resource limits: 1 GiB scratch, 64 MiB retained output, 4 MiB logs, 2 GiB Job
+memory, 16 processes, 30,000 entries, 3600s; retain 10 GiB disk and 4 GiB
+physical/commit headroom. Thresholds are monitored; memory uses Windows Job
+enforcement. Exact preflight and config digests are in approved-placement evidence.

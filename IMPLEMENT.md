@@ -12221,3 +12221,10 @@ The follow-up also enumerates the accepted saved partial-import recovery
 interface: original digest, packs, mode and resolution files; changed/legacy
 inputs remain refusals. All 28 final candidate forms parse without handlers.
 The earlier 25-form result stays separately bound, not relabeled as 28 cases.
+
+## Resource placement activation - 2026-09-28
+
+Recorded the owner instruction `use E:\Temporary`, created only AIDE-owned
+subroots there, and configured ignored local execution settings in both remaining
+checkouts. Distinct-root/volume/capacity inspection passes without report writes.
+No runtime code changed; full integrated importer qualification is the next effect.

@@ -3302,7 +3302,7 @@ items:
     evidence: .aide/queue/AIDE-FACMAN-ULK-PROMOTION-01/evidence
   - id: AIDE-CONVERGENCE-AND-DELIVERY-01
     status: running
-    planning_state: source_documentation_aligned_bulk_qualification_held
+    planning_state: approved_execution_placement_integrated_qualification_ready
     result: PENDING
     title: Converge, qualify, and deliver AIDE through bounded reviewed work
     task: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml

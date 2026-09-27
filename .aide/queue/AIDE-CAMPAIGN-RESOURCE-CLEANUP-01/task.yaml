@@ -6,7 +6,7 @@ status: running
 planning_state: admitted
 result: PENDING
 created_at: 2026-09-26
-updated_at: 2026-09-26
+updated_at: 2026-09-28
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 objective: Reclaim proven-owned disposable resources without losing unique work, and enforce resource preflight and cleanup in AIDE.
 scope:
@@ -28,6 +28,8 @@ scope:
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
   external_resource_root: D:/Projects/AIDE
+  approved_execution_parent: E:/Temporary
+  approved_execution_root: E:/Temporary/AIDE
   forbidden_operations:
     - remove primary or active source checkout
     - delete Git refs or dirty, unknown, or unique local data

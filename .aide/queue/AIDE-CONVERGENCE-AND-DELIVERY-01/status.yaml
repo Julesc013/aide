@@ -2,14 +2,14 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-CONVERGENCE-AND-DELIVERY-01
 status: running
 classification: admitted
-planning_state: source_documentation_aligned_bulk_qualification_held
+planning_state: approved_execution_placement_integrated_qualification_ready
 result: PENDING
 review_gate: admitted_by_owner
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
-next_task: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
+next_task: AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01
 delivery_dependency: AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01
-resource_placement: permanent_approved_pool_question_pending
-blocking_input: existing_owner_approved_build_test_temp_location
+resource_placement: owner_approved_E_Temporary_activated
+blocking_input: none_for_integrated_importer_qualification
 owned_jobs_remaining: none_observed
 notes:
   - The owner approved continued campaign execution after the exact candidate-bound review packet.
@@ -33,3 +33,4 @@ notes:
   - No further dependency-ready source repair is identified in the current critical path; full importer and real generator qualification require the unresolved existing bulk placement. No arbitrary pool or fallback is adopted.
   - Owner-requested 2026-09-26 dev synchronization integrates reviewed campaign source and preserves historical evidence; this closeout does not resume the Goal or qualify stale release artifacts.
   - The resumed Goal completed bounded documentation alignment at reviewed source 71ef3512 with independent source/dev-effect acceptance; this supersedes only the older report-only stopped route. Permanent approved storage and final qualification remain unresolved.
+  - The owner selected E:\Temporary on 2026-09-28; volume-bound shared execution storage is configured and read-only capacity/admission passes. Earlier placement-blocked statements are historical. Full integrated qualification is next; publication remains unqualified.
