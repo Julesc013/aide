@@ -1,0 +1,15 @@
+{
+  "workunit": "AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01",
+  "authority": "2026-09-25 owner delegation plus resumed active Goal",
+  "candidate": "71ef35127845c09071c73449a70f3f0b647216ae",
+  "tree": "69b586f7345e097d820374517f955ccce4635839",
+  "base_dev": "a1fe9fd57ac1f42a548d6c07d4f827eb1b2a30d4",
+  "source_scope": "README status, specs root authority/notes and aligned human/source-of-truth guidance; no new spec adoption",
+  "protected": "review_required/mixed/global and non-specs roots, original drafts, code/profile/artifacts",
+  "source_review": "exact independent verdict required before dev effect",
+  "planned_effect": "Clean fast-forward dev to accepted source plus evidence-only closeout; normal task/dev push; no main/tag/release or bulk run",
+  "checks": "seven relative links, policy byte invariants, source namespaces unchanged, exact structured message/staged diff",
+  "not_run": "Optional PyYAML parse unavailable; no product tests/builds/packaging",
+  "goal_status": "active; permanent pools still pending",
+  "at": "2026-09-28T00:03:29.9051179+10:00"
+}

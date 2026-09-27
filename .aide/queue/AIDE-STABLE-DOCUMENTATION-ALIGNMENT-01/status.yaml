@@ -1,9 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
-status: needs_review
-planning_state: structural_validation_complete_source_review_pending
-result: PENDING
+status: passed
+planning_state: source_and_dev_effect_accepted_retained_qualification_gates
+result: PASS_WITH_RETAINED_GATES
 updated_at: 2026-09-28
 current_slice: documentation_and_existing_authority_alignment
-review_gate: exact_independent_policy_and_effect_review_required
+review_gate: exact_independent_source_and_effect_accept_with_notes
 bulk_qualification: approved_pool_question_pending
+reviewed_source: 71ef35127845c09071c73449a70f3f0b647216ae
+reviewed_tree: 69b586f7345e097d820374517f955ccce4635839
+review_evidence: evidence/review-closeout.json
+integration_execution: accepted_effect_pending_final_execution_checks

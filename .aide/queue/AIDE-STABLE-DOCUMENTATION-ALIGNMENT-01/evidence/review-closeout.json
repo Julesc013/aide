@@ -1,0 +1,27 @@
+{
+  "workunit": "AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01",
+  "reviewed_source": "71ef35127845c09071c73449a70f3f0b647216ae",
+  "reviewed_tree": "69b586f7345e097d820374517f955ccce4635839",
+  "base_dev": "a1fe9fd57ac1f42a548d6c07d4f827eb1b2a30d4",
+  "actual_reviewer": "/root/partial_recovery_review",
+  "source_verdict": "ACCEPT_WITH_NOTES",
+  "effect_verdict": "ACCEPT_WITH_NOTES",
+  "review_original": "D:\\Projects\\AIDE\\_review_scratch\\stable-lite-forced-restart-20260926\\documentation-alignment-review-71ef3512.md",
+  "review_sha256": "60c4269556870092e4f3cc1d41f4a081a09e4e7e383d4b53ec54b8b35d8835be",
+  "reviewed_effect_sha256": "c7e6a767978552ec6092a0918966c532a6e425e1a4ae12b2c9c560b8fe80abb1",
+  "notes_disposition": "Nonblocking for this bounded documentation/dev effect. Optional YAML parser not run; reviewed scalar syntax and byte invariants suffice for this scope. Permanent pools and full product/artifact qualification remain open.",
+  "closeout_scope": "Evidence and queue routing only; frozen reviewed documents, code, profile, specs and artifacts unchanged.",
+  "effect_state": "accepted; execute only after final clean/ref/message/range checks",
+  "post_effect_receipt": "D:\\Projects\\AIDE\\_recovery\\resource-cleanup-20260926\\documentation-alignment-final-observation.json",
+  "goal": "active, incomplete; approved permanent storage still required for heavy jobs",
+  "not_run": [
+    "product tests",
+    "builds",
+    "artifact regeneration",
+    "main promotion",
+    "tag/publication",
+    "target rollout"
+  ],
+  "stored_effect_sha256": "0b8afc2dc11756acd6dea2714fbdeca9b87978e817bb78ccffa671f1e3c4b292",
+  "stored_effect_note": "Git normalizes the evidence JSON view to LF; the reviewed external CRLF original retains its exact reviewed hash. The independent Markdown review is preserved byte-identically."
+}

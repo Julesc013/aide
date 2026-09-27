@@ -206,3 +206,14 @@ policy/docs, parse all forms with actual unchanged code, and seek narrow frozen
 technical review. No archive regeneration, native effect or new physical
 workspace. Full importer/current-generator/artifact qualification remains the
 critical path after existing approved permanent storage is provided.
+
+## 2026-09-28 resumed documentation checkpoint
+
+The active Goal routed the confirmed README/specs-authority mismatch to bounded
+child AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01. Frozen source 71ef3512 and its dev
+effect received independent ACCEPT_WITH_NOTES. Preserve the review and execute
+only its source/evidence fast-forward and normal sync. Heavy qualification still
+requires the existing owner-approved scratch/retained/control paths; neither
+checkout has execution.json. No new pool, bulk job or fallback is authorized by
+this documentation change. Next action is configure and validate those paths,
+then run the actual combined importer/lifecycle suite through the existing runner.
