@@ -80,3 +80,8 @@ passed fresh install, default no-feedback, explicit local feedback/explanation,
 and missing-dry-run refusal. Its exact hashes and limits are in
 `evidence/dev-and-public-cli-b7f59542.md`. Next run the integrated importer
 suite at current source, then close the exact frozen-profile gaps.
+
+The current-source A–M importer partition passed 54/54 in one D job with
+scratch retired. The earlier O–Z 56/56 result is reused only for unchanged
+importer CLI/oracle/policy inputs, with the changed runner separately qualified.
+Exact hashes and limitations are in `evidence/importer-c6de695f.md`.

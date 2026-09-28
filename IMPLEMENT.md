@@ -12317,3 +12317,10 @@ push. An additional D-managed current ZIP canary passed the public explanation
 and explicit local feedback forms, refused feedback without dry run, retained
 the project-owned file and installed source unchanged, then retired scratch.
 The WorkUnit holds exact manifest, oracle, summary and receipt hashes.
+
+The next current-source importer partition passed 54/54 cases in a D-managed
+job, peaked at 20.7 MB scratch and 248.2 MB memory, and retired cleanly. The
+prior 56/56 partition is reused with identical importer CLI/test hashes,
+Python executable and D configuration; its differing per-job environment
+digest and 11 changed non-importer inputs are explicitly classified in the
+WorkUnit. This is source qualification, not final shipped-byte acceptance.
