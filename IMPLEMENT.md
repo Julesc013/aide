@@ -12359,3 +12359,14 @@ preview qualification and admitted a separate bounded stable release-effect
 WorkUnit. No product source, preview assets, main, tag or public release changed
 in this evidence-only increment. Verified source/tree, external review hash,
 local/remote dev identity, `git diff --check` and queue packet structure.
+
+2026-09-28 first-stable candidate source: added `release stable-build` and
+`stable-validate` to AIDE Lite with version/profile/source-policy binding,
+versioned archives and checksums under the existing release root. Kept Q47/Q48
+previews no-publish. Archive validation now rejects unsafe members and bounded
+size before extraction; the focused regression covers escape/link refusal,
+distinct bytes, deterministic replay, tamper and exact-output recovery. The
+D-managed Q47/Q48 group passed 33 tests in 62.246 seconds, peaked at 3.11 MB
+scratch and retired it; a final focused one-test run also passed. The current
+WorkUnit awaits independent source/security review. Final pack regeneration,
+stable asset consumers, release ACCEPT and external effects are not yet run.

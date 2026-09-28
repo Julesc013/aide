@@ -46,3 +46,10 @@ not a current release gate or a claim that every phase is complete:
 - Q47/Q48 local bundles and drafts remain preview-only, no-publish evidence.
   A later frozen release-effect WorkUnit must verify the published bytes and
   downloaded consumers before a stable claim is complete.
+- `release stable-build --version 1.0.0` creates a separate first-stable
+  **candidate** from a clean validated pack under `.aide/release/stable/`.
+  It embeds version, profile, source and policy identity in the archives and
+  validates their hashes and safe extraction. This command does not publish,
+  create a tag or convert Q47/Q48 preview outputs into public assets. The
+  release-effect WorkUnit must still pass final consumers and independent
+  technical `ACCEPT` before delegated external effects.

@@ -535,3 +535,13 @@ resolutions. Cross-repo import documentation links that candidate contract and
 retains final qualification boundaries. Project-owned customizations and unknown
 rationale remain described in docs/reference/cross-repo-pack-export-import.md.
 This changes desired candidate coverage, not shipping or public activation status.
+
+## 2026-09-28 - Distinct first-stable release candidate path
+
+`docs/reference/aide-lite-release-bundle.md` now describes the source-only,
+D-runner-bound `release stable-build` and `stable-validate` commands. They
+create and validate versioned **candidate** assets beneath
+`.aide/release/stable/` while Q47/Q48 `dist/` outputs remain preview-only.
+`governance/release-policy.md` retains the final independent release and
+downloaded-consumer gates. No main promotion, tag or publication is implied by
+this source path.

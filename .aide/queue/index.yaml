@@ -3767,8 +3767,8 @@ items:
     prompt: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
-    status: running
-    planning_state: admitted_frozen_release_subject_required
+    status: needs_review
+    planning_state: stable_builder_source_candidate_frozen_for_review
     result: PENDING
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml

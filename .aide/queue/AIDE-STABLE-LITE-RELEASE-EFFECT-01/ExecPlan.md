@@ -59,7 +59,13 @@ work. The parent goal remains active until wider mandatory work is fulfilled.
 ## Progress
 
 - [x] Separate WorkUnit admitted after exact local-preview review.
-- [ ] Profile/version and non-preview asset subject frozen.
+- [x] Classify preview `validate` and context warnings without erasing them;
+  classify the Python socket guard as narrower than OS-native isolation.
+- [x] Implement a distinct first-stable candidate builder and archive
+  validator, then run Q47/Q48 and focused recovery/unsafe-member tests under D.
+- [ ] Obtain independent source and archive-safety review of exact candidate.
+- [ ] Profile/version and non-preview asset subject frozen. Separate builder
+  and validator implemented; final current-source pack and asset bytes remain.
 - [ ] Final machine and delivered-byte qualification.
 - [ ] Independent exact release ACCEPT.
 - [ ] Main/tag/publication and downloaded-byte verification.

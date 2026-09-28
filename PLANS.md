@@ -4151,3 +4151,9 @@ freeze, final consumer checks, independent release `ACCEPT`, delegated
 main/tag/publication and downloaded-byte verification. Continue under the
 shared D runner; do not create another physical checkout or relabel Q47/Q48
 preview outputs.
+
+The first source increment adds a distinct stable candidate builder and
+validator while preserving Q47/Q48 preview outputs. It classifies the prior
+installed warning evidence, rejects unsafe archive members before extraction,
+and passes 33 Q47/Q48 tests plus a focused recovery test under the D runner.
+Seek exact source/security review before regenerating pack and asset bytes.
