@@ -202,3 +202,13 @@ source integration. Its source verdict does not qualify a live model turn,
 Codex JSONL result, actual usage, extracted Lite or final release bytes. The
 exact review and test receipt are recorded in
 `evidence/codex-host-binding-qualification-2026-09-29.md`.
+
+## Next delivered boundary: current extracted Lite Codex admission
+
+Objective: extend the existing extracted-ZIP fixture consumer to prove that the
+new Codex adapter is present in delivered Lite and refuses a model turn without
+the separate local permission. Keep the same disposable consumer and D-managed
+runner, without launching a model or generating the canonical release pack.
+Record the exact fixture source and receipt, then seek focused test review.
+This closes delivered admission/refusal only; a live turn and JSONL verdict
+remain separate qualification gates.

@@ -226,8 +226,13 @@ class ExportImportTests(unittest.TestCase):
         target.mkdir()
         fixture = target / "fixture.py"
         fixture.write_text("print('delivered owner ran')\n", encoding="utf-8")
+        packet = target / "task-packet.txt"
+        packet.write_text("Return one bounded fixture result.\n", encoding="utf-8")
+        schema = target / "result-schema.json"
+        schema.write_text('{"type":"object","properties":{"status":{"type":"string"}}}\n', encoding="utf-8")
         (target / ".gitignore").write_text(".aide.local/\n", encoding="utf-8")
-        for command in (["init", "-q"], ["add", "fixture.py", ".gitignore"],
+        for command in (["init", "-q"], ["add", "fixture.py", "task-packet.txt",
+                        "result-schema.json", ".gitignore"],
                         ["-c", "user.name=AIDE fixture", "-c", "user.email=fixture@example.invalid",
                          "commit", "-qm", "test(fixture): pin delivered job input"]):
             subprocess.run(["git", "-C", str(target), *command], check=True,
@@ -258,6 +263,26 @@ class ExportImportTests(unittest.TestCase):
                                capture_output=True, text=True, timeout=30)
         self.assertEqual(setup.returncode, 0, setup.stdout[-500:] + setup.stderr[-500:])
         self.assertEqual(json.loads(setup.stdout)["result"], "CONFIGURED")
+        fake_codex = consumer / "codex.exe"
+        fake_codex.write_bytes(b"MZ synthetic executable; admission only")
+        codex_job = {"schema": "aide.maintainer-job.v1", "owner": "extracted_fixture",
+                     "workunit": "AIDE-LITE-EFFICIENCY-01", "cwd": str(target),
+                     "source_commit": git("HEAD"), "source_tree": git("HEAD^{tree}"),
+                     "adapter": "codex_exec", "argv": [str(fake_codex)],
+                     "executable_sha256": hashlib.sha256(fake_codex.read_bytes()).hexdigest(),
+                     "inputs": {name: hashlib.sha256((target / name).read_bytes()).hexdigest()
+                                for name in ("task-packet.txt", "result-schema.json")},
+                     "prompt_file": "task-packet.txt", "schema_file": "result-schema.json",
+                     "model": "gpt-6-sol", "effort": "medium"}
+        codex_manifest = consumer / "codex-job.json"
+        codex_manifest.write_text(json.dumps(codex_job), encoding="utf-8")
+        refused = subprocess.run([*base, "inspect", "--config", str(config_path),
+                                  "--manifest", str(codex_manifest)],
+                                 capture_output=True, text=True, timeout=30)
+        self.assertEqual(refused.returncode, 1, refused.stdout[-500:] + refused.stderr[-500:])
+        self.assertEqual(json.loads(refused.stdout)["result"], "REFUSED")
+        self.assertIn("local model permission", json.loads(refused.stdout)["reason"])
+        self.assertEqual(list(Path(roots["scratch"]).iterdir()), [])
         job = {"schema": "aide.maintainer-job.v1", "owner": "extracted_fixture",
                "workunit": "AIDE-LITE-EFFICIENCY-01", "cwd": str(target),
                "source_commit": git("HEAD"), "source_tree": git("HEAD^{tree}"),
