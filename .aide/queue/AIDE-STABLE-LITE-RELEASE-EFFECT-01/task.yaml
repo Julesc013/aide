@@ -28,6 +28,7 @@ scope:
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_q47_release_bundle.py
     - .aide/scripts/tests/test_q48_github_release_draft.py
+    - .aide/scripts/tests/test_export_import.py
     - .aide/policies/release-versioning.yaml
     - .aide/export/**
     - .aide/release/**

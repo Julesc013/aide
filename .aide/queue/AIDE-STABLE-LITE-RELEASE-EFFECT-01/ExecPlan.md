@@ -195,3 +195,12 @@ defect and rerun only the affected step.
 Dependency and gate: live model-turn qualification and ten exact historical
 owner decisions remain separate. This refreshed pack is local candidate
 input, not a final release or authority to promote main, tag or publish.
+
+The first refreshed pack at `4efb979e` passed checksums and provenance, but
+the admitted post-commit replay changed its manifest source commit alone.
+Repair this non-circular provenance defect in the existing generator: retain
+the prior source commit only when that pack is valid, its source is an
+unchanged-input ancestor, and regenerated checksummed bytes are identical.
+Otherwise bind the new current source. Add a disposable Git commit/replay
+regression to `test_export_import.py` and rerun the focused D job before
+regenerating the pack. The scope addition is limited to that test file.
