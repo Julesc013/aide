@@ -2642,7 +2642,7 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
                     self.assertFalse((target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH).exists())
 
     @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
-    def test_brownfield_section_interrupted_rename_before_link_retains_evidence(self) -> None:
+    def test_brownfield_section_interrupted_rename_before_link_restores_exact_backup(self) -> None:
         source = self.make_source_repo()
         pack = self.freeze_pack(source, "removal-brownfield-rename-gap-pack")
         target = source.parent / "target-removal-rename-gap"
@@ -2651,6 +2651,10 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
         plan = aide_lite.build_portable_removal_plan(target)
         agents = target / "AGENTS.md"
         preimage = agents.read_bytes()
+        receipt = aide_lite.load_portable_import_receipt(target)
+        expected_postimage = aide_lite.portable_agents_section_postimage(
+            preimage, receipt["managed"]["AGENTS.md"]["installed_digest"])
+        self.assertIsNotNone(expected_postimage)
         backup = target / f".AGENTS.md.aide-import-backup-{plan['plan_digest'][:20]}"
         original_link = aide_lite.windows_link_from_handle
         original_rename = aide_lite.portable_import_rename_open_leaf
@@ -2670,10 +2674,81 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
         self.assertEqual(injected, [True])
         self.assertFalse(os.path.lexists(agents))
         self.assertEqual(backup.read_bytes(), preimage)
-        self.assertEqual(aide_lite.apply_portable_removal(target, plan["plan_digest"])["status"], "RECOVERY_REQUIRED")
+        intent_path = target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH
+        intent = json.loads(intent_path.read_text(encoding="utf-8"))
+        operation = next(item for item in intent["operations"] if item["kind"] == "managed_agents_section")
+        identity = operation.pop("preimage_file_identity")
+        intent["intent_digest"] = aide_lite.portable_import_record_digest(intent, "intent_digest")
+        aide_lite.write_text(intent_path, aide_lite.stable_json_text(intent))
+        legacy_retry = aide_lite.apply_portable_removal(target, plan["plan_digest"])
+        self.assertEqual(legacy_retry["status"], "RECOVERY_REQUIRED")
+        self.assertFalse(os.path.lexists(agents))
         self.assertEqual(backup.read_bytes(), preimage)
-        self.assertTrue((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
-        self.assertTrue((target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH).exists())
+        self.assertTrue(intent_path.is_file())
+        operation["preimage_file_identity"] = identity
+        intent["intent_digest"] = aide_lite.portable_import_record_digest(intent, "intent_digest")
+        aide_lite.write_text(intent_path, aide_lite.stable_json_text(intent))
+        self.assertEqual(aide_lite.apply_portable_removal(target, plan["plan_digest"])["status"], "DETACHED")
+        self.assertEqual(agents.read_bytes(), expected_postimage)
+        self.assertFalse(os.path.lexists(backup))
+        self.assertFalse((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
+        self.assertFalse((target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH).exists())
+
+    @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
+    def test_brownfield_section_rename_gap_refuses_changed_backup_or_rival(self) -> None:
+        source = self.make_source_repo()
+        pack = self.freeze_pack(source, "removal-rename-gap-adversarial-pack")
+        for case in ("changed", "same-byte-substitution", "rival-target"):
+            with self.subTest(case=case):
+                target = source.parent / f"target-removal-gap-{case}"
+                aide_lite.write_text(target / "AGENTS.md", "# Authored guidance\n")
+                self.assertEqual(aide_lite.apply_import_pack(pack, target)["status"], "APPLIED")
+                plan = aide_lite.build_portable_removal_plan(target)
+                agents = target / "AGENTS.md"
+                backup = target / f".AGENTS.md.aide-import-backup-{plan['plan_digest'][:20]}"
+                original_link = aide_lite.windows_link_from_handle
+                original_rename = aide_lite.portable_import_rename_open_leaf
+                interrupted = []
+
+                def fail_link(descriptor, directory_handle, leaf_name):
+                    if leaf_name == "AGENTS.md" and backup.exists():
+                        interrupted.append(True)
+                        raise OSError("injected post-rename pre-link interruption")
+                    return original_link(descriptor, directory_handle, leaf_name)
+
+                def fail_restore(kernel, handle, directory_handle, destination):
+                    if interrupted and str(destination) == str(agents):
+                        raise OSError("injected restore interruption")
+                    return original_rename(kernel, handle, directory_handle, destination)
+
+                with mock.patch.object(aide_lite, "windows_link_from_handle", side_effect=fail_link), mock.patch.object(aide_lite, "portable_import_rename_open_leaf", side_effect=fail_restore):
+                    first = aide_lite.apply_portable_removal(target, plan["plan_digest"])
+                self.assertEqual(first["status"], "RECOVERY_REQUIRED")
+                self.assertEqual(interrupted, [True])
+                self.assertFalse(os.path.lexists(agents))
+                original = backup.read_bytes()
+                if case == "changed":
+                    backup.write_bytes(b"# Changed backup\n")
+                elif case == "same-byte-substitution":
+                    parked = target / "original-backup-preserved-for-test"
+                    backup.rename(parked)
+                    backup.write_bytes(original)
+                else:
+                    agents.write_bytes(b"# Rival project guidance\n")
+                second = aide_lite.apply_portable_removal(target, plan["plan_digest"])
+                self.assertEqual(second["status"], "RECOVERY_REQUIRED")
+                self.assertTrue((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).is_file())
+                self.assertTrue((target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH).is_file())
+                if case == "rival-target":
+                    self.assertEqual(agents.read_bytes(), b"# Rival project guidance\n")
+                    self.assertEqual(backup.read_bytes(), original)
+                if case == "same-byte-substitution":
+                    self.assertEqual(parked.read_bytes(), original)
+
+    def test_removal_rename_gap_legacy_intent_without_file_identity_refuses(self) -> None:
+        self.assertFalse(aide_lite.portable_removal_restore_agents_preimage(
+            Path("unused"), {"kind": "managed_agents_section", "backup_rel": ".AGENTS.md.aide-import-backup-old"}
+        ))
 
     @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
     def test_brownfield_section_rechecksummed_intent_cannot_change_preview_bytes(self) -> None:
