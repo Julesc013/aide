@@ -141,3 +141,9 @@ of a changed manifest digest. Use the current D-managed test owner, preserve the
 exact committed test source and receipt, and review this test-only increment
 before dev integration. No Codex invocation or canonical release rebuild is
 part of this slice. The real host binding and final release bytes remain open.
+
+The committed test-only candidate `3796ad33` passed the exact extracted-pack
+consumer test 1/1 under the D owner. It reattached to the real completed job,
+rejected a changed digest, and retired scratch. The exact receipt and limits
+are in `evidence/delivered-wait-attachment-2026-09-29.md`. Independent review
+remains before dev integration; this is not a live Codex or final asset proof.

@@ -1,5 +1,15 @@
 # AIDE Implementation Log
 
+## 2026-09-29 extracted Lite job attachment qualification
+
+The existing efficiency consumer test now reattaches through delivered
+`job wait` to the real bounded job it ran, verifies the retained receipt and
+source identity, and refuses a changed manifest digest. Test-only candidate
+`3796ad33` passed 1/1 under the shared D owner with scratch retired and its
+reservation released. The exact receipt and limits are in
+`.aide/queue/AIDE-LITE-EFFICIENCY-01/evidence/delivered-wait-attachment-2026-09-29.md`.
+Live Codex mediation and final release bytes remain unqualified.
+
 ## 2026-09-28 live scratch hardlink observation repair
 
 AIDE's managed runner stopped a real interrupted-removal test when its

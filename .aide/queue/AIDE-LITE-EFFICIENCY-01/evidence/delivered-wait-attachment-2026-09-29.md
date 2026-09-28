@@ -1,0 +1,9 @@
+# Extracted Lite job attachment qualification
+
+Date: 2026-09-29. Test-only candidate `3796ad33c7ba957172e8dd279e93d7f73207beae`, tree `4d6735c10a4be6793a6af9f6a1ee8b5af879f74a`, based on `dev@6ae089b4453359d6bbbd74ed1392e8c6e3ad5295`. Product source is unchanged.
+
+The extracted-ZIP consumer test now starts a real bounded Python job through delivered Lite bytes, then invokes the same delivered CLI's `job wait` against the returned job ID and manifest digest. It requires the same terminal receipt hash and source commit, zero observer-started model requests, and refusal of a changed manifest digest. This combines the formerly separate synthetic wait and real job-owner fixtures.
+
+The committed source ran through the configured shared D maintainer owner: `python -m unittest discover -s .aide/scripts/tests -p test_export_import.py -k test_extracted_export_pack_waits_and_runs_job_without_source_checkout -v`. Job `d3179e3787cd407d8f697ca814999e6e`, manifest digest `1008aa05436ad2ee70383b39d11d557544b40f12e09717721049e987d7df5bec`, exit 0, **1/1 PASS** in 17.456 seconds. Receipt SHA-256 `770d3e8f70f6d0b3cf487761700e56df8c725b5b4afac83fbef26813f0541ce7`; config digest `217a27d429c199879648dde2c943026d37ea6fc52d9d80d5add98ad21fed20f1`. The retained stderr has the single passing test. Peak job memory was 255094784 bytes, peak scratch 430 bytes, logs 290 bytes. The receipt says quiescent exit, reservation released and scratch absent; the exact scratch child was independently checked absent. No model call was launched by the test observer.
+
+This is an extracted fixture pack built under the owned test scratch, not final canonical release bytes or a downloaded asset. It does not mediate an actual Codex turn, measure host-wide requests, or discharge the release gate. Independent test/evidence review is pending.
