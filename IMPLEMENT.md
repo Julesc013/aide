@@ -12306,3 +12306,8 @@ then clears readonly attributes before removal. A Windows regression and the
 full 27-test runner suite passed under D; a real Git fixture created three
 readonly objects and the repaired runner retired all three. Independent review
 remains required before integrating this runner source into dev.
+
+Independent exact review later returned ACCEPT_WITH_NOTES for dev integration
+of `cf0c4434`, retaining the external hostile-writer race and missing
+interrupted-chmod regression as notes. The reviewer verified retained D job
+receipts but did not rerun tests; review custody is in the WorkUnit evidence.

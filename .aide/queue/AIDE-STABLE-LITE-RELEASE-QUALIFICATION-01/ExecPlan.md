@@ -69,3 +69,8 @@ the runner cleared all three after retaining its result, retired scratch and
 released the reservation in D job `d93c4a00bf5348f1b38e0fbd109b68e2`.
 Exact hashes and resource measurements are in the WorkUnit evidence. The
 source change still needs independent review before dev integration.
+
+Independent exact source/evidence review returned ACCEPT_WITH_NOTES for dev
+integration only on `cf0c4434`; its external transcription hash and limits are
+recorded in `evidence/runner-review-cf0c4434.md`. This does not close the
+release-qualification WorkUnit or its final consumer/release gates.

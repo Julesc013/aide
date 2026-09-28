@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
 status: running
-planning_state: delivered_consumers_pass_runner_repair_tested_review_pending
+planning_state: delivered_consumers_pass_runner_repair_reviewed_dev_integration_pending
 result: PENDING
 updated_at: 2026-09-28
 current_slice: lifecycle_forced_restart_and_context_commands_passed_cleanup_defect_recovered
-next_slice: independent_runner_repair_review_then_dev_integration
+next_slice: dev_fast_forward_then_remaining_delivered_profile_qualification
 review_gate: runner_source_change_requires_independent_review_before_dev
 main_promotion_performed: false
 tag_created: false
