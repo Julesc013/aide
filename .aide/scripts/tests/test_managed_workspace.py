@@ -135,6 +135,16 @@ class ManagedWorkspaceTests(unittest.TestCase):
             workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
         self.assertEqual(host.run.call_count, 1)
 
+    def test_codex_local_permission_rejects_duplicate_json_keys(self):
+        job = self.codex_job()
+        original = self.config_path.read_text(encoding='utf-8')
+        altered = original.replace('"max_turns": 1', '"max_turns": 1, "max_turns": 99')
+        self.assertNotEqual(altered, original)
+        self.config_path.write_text(altered, encoding='utf-8')
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'duplicate JSON object key'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+
     def test_codex_prompt_is_charged_to_log_limit_and_reservations(self):
         job = self.codex_job()
         prompt_size = (self.source / job['prompt_file']).stat().st_size

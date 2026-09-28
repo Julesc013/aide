@@ -79,7 +79,8 @@ def read_json(path):
     info = ordinary(path)
     if info.st_size > 1024 * 1024:
         raise WorkspaceRefused('record too large')
-    return json.loads(Path(path).read_text(encoding='utf-8'))
+    return json.loads(Path(path).read_text(encoding='utf-8'),
+                      object_pairs_hook=unique_json_object)
 
 
 def write_json(path, value):
@@ -552,11 +553,12 @@ def validate_job(job, working):
     exe = Path(argv[0])
     if not exe.is_absolute():
         raise WorkspaceRefused('absolute executable required')
-    root_path(str(exe.parent))
+    adapter = job.get('adapter')
+    if adapter == 'codex_exec':
+        root_path(str(exe.parent))
     ordinary(exe)
     if file_digest(exe) != job['executable_sha256']:
         raise WorkspaceRefused('executable changed')
-    adapter = job.get('adapter')
     if adapter == 'python':
         if exe.name.casefold() not in ('python.exe', 'python', 'python3'):
             raise WorkspaceRefused('explicit Python executable required')
@@ -852,7 +854,7 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
         dispatch_guard = None
         def checkpoint(stage):
             nonlocal dispatch_guard
-            if stage == 'before_create':
+            if stage == 'before_create' and job['adapter'] == 'codex_exec':
                 # The local executable path is trusted against hostile same-user
                 # mutation; check its ordinary parent chain and bytes again at
                 # the last host checkpoint before CreateProcessW.
