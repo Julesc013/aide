@@ -4190,3 +4190,9 @@ recovery/feedback/validate/task forms. The exact effect manifest and review
 packet are in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. The next gate is the
 stricter independent release ACCEPT, then authorized dev/main/tag/publication
 and downloaded-byte verification. The wider programme remains active.
+
+The isolated-host supported API-set query is now the next bounded native
+qualification slice. The source-level 180-name query is integrated in dev;
+an ordinary-host effect driver and synthetic durable-journal tests are being
+prepared on `task/aide-cw-apiquery-native-qualification-01`. Native mapping,
+physical host bytes and restricted-loader acceptance remain separate gates.

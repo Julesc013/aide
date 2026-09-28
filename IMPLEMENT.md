@@ -12444,3 +12444,9 @@ forms and installed validate/task inspection. Current importer shards passed
 reservations. The release-effect manifest records receipt hashes and the
 remaining warning/offline limits. No main, tag, publication or downloaded
 consumer effect has occurred; independent exact release ACCEPT is next.
+
+Started the isolated-host native API-set effect driver on a task branch from
+current dev. The driver binds exact source and the retained 180-name inventory,
+uses one-use durable output journaling under the managed D runner, and records
+no-replay failures. Synthetic tests and independent effect review are required
+before any native call. The prior two-API resource effect remains consumed.

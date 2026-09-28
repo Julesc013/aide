@@ -500,3 +500,21 @@ permitted tests and closed both findings. No actual query/effect packet is
 prepared or admitted. The published repair commit's non-bulleted `## Why`
 section still requires an exact Git-policy disposition before release or
 changelog readiness.
+
+## 2026-09-28 native API-set query effect preparation
+
+Objective: run the previously unexecuted supported API-set query against the
+retained 180-name dependency inventory on this Windows host. Scope this to
+native name resolution only; no physical host-byte, restricted loader, worker
+isolation, profile, credential, target or broker activation claim follows.
+The previous two-API resource mapping attempt is consumed and will not replay.
+
+Use the existing isolated-host WorkUnit and primary checkout on a bounded task
+branch based on current dev. Add one small effect driver and synthetic tests
+under this task's evidence paths. The driver must pin the inventory and exact
+source inputs, run inside the approved shared D managed runner, use a durable
+one-use output journal, and preserve native refusal without automatic replay.
+Freeze and independently review the exact driver/effect before the first native
+call. The resulting D job must stay within finite runner limits, retire scratch,
+retain bounded output, and report actual host mappings or the first exact
+native refusal. No new physical worktree or C/E output pool.
