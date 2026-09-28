@@ -7,10 +7,12 @@ atomic file creation briefly exposed two hardlink names in owned scratch.
 The quiescent failed job `85fd0fe0b4c44ea99c64b2547046db95` was
 reconciled through AIDE after exact duplicate-temp ownership checks; its
 scratch and reservation were retired. The monitor now counts regular
-multi-link files conservatively during live scratch sampling, while
-collection and cleanup keep strict single-link checks. Focused scanner and
-real end-to-end qualification plus independent review remain the gates for
-this cross-cutting correction.
+multi-link files conservatively during live scratch sampling only when every
+link name is observed within owned scratch; collection and cleanup keep
+strict single-link checks. Initial focused, end-to-end and 28-test suite
+results passed, but independent review rejected the unbounded first exception.
+The narrowed ownership check and outside-link regression require superseding
+validation and review.
 
 ## 2026-09-28 removal rename-gap recovery
 

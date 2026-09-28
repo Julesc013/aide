@@ -321,6 +321,15 @@ class ManagedWorkspaceTests(unittest.TestCase):
         second.unlink()
         self.assertEqual(workspace.tree_usage(scratch, maximum=1024, max_files=10), 4)
 
+    def test_live_usage_refuses_hardlink_to_outside_scratch(self):
+        scratch = self.roots['scratch']
+        outside = self.root/'outside.txt'; outside.write_bytes(b'private')
+        os.link(outside, scratch/'linked.txt')
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'hardlink outside owned scratch'):
+            workspace.tree_usage(scratch, maximum=1024, max_files=10,
+                                 allow_transient_hardlinks=True)
+        self.assertEqual(outside.read_bytes(), b'private')
+
     def test_usage_scan_tolerates_disappearing_owned_scratch_entries(self):
         scratch = self.roots['scratch']
         transient_file = scratch/'transient.txt'

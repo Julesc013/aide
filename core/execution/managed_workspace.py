@@ -246,6 +246,7 @@ def qualify_canonical_outputs(record, config, roots, working):
 def tree_usage(root, *, maximum, max_files, allow_transient_absence=False,
                allow_transient_hardlinks=False):
     total = count = 0; pending = [root]
+    linked_members: dict[tuple[int, int], list[int]] = {}
     while pending:
         directory = pending.pop()
         try:
@@ -273,13 +274,20 @@ def tree_usage(root, *, maximum, max_files, allow_transient_absence=False,
                 ):
                     # During live observation, a job-owned atomic create can
                     # briefly expose its temporary and final names together.
-                    # Count both names conservatively; collection remains
+                    # Require every link name to be inside this scanned root;
+                    # otherwise an outside link could alias external bytes.
+                    # Count each name conservatively. Collection remains
                     # strict once the child is quiescent.
+                    if info.st_nlink > 1:
+                        linked_members.setdefault((info.st_dev, info.st_ino), []).append(info.st_nlink)
                     total += info.st_size
                 else:
                     raise WorkspaceRefused('unexpected job member preserved for recovery')
                 if total > maximum or count > max_files:
                     raise WorkspaceRefused('workspace size/file threshold exceeded')
+    if any(len(counts) != counts[0] or any(value != counts[0] for value in counts)
+           for counts in linked_members.values()):
+        raise WorkspaceRefused('hardlink outside owned scratch or transient link set')
     return total
 
 

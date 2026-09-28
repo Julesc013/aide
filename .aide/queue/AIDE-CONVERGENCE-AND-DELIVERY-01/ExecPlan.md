@@ -316,3 +316,10 @@ single-link checks for output collection, canonical inputs and cleanup;
 keep link/junction rejection during monitoring. Add tiny scanner tests,
 then rerun the exact end-to-end removal case through the D runner. Review
 the runner delta independently before treating it as qualified source.
+
+Initial runner repair `785e2fae` passed two focused scanner tests, one
+end-to-end removal case and the 28-test runner suite, but independent review
+returned REQUEST_CHANGES: live monitoring accepted multi-link files without
+proving every link name stayed in owned scratch. Supersede it with bounded
+inode/link-count accounting across the scanned root and an outside-link
+regression. Keep the failed review and successful test receipts.
