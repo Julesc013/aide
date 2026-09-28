@@ -269,3 +269,14 @@ Main, tag and publication retain the live-model and historical-decision
 gates. The latest disposable consumer passed ten command observations,
 retired scratch and released its reservation; its local output is an input
 to, not a substitute for, the superseding delivered-byte qualification.
+
+The policy source at `20710eac` declares 37 exact forms. Preview `e42d5608`,
+pack `ca0e07a4`, stable assets `5acd32a7`, release view `67874f32` and
+draft closeout `2f32f588` form the source-to-byte chain. Pack, stable,
+preview and draft post-commit replays changed zero tracked files. The new ZIP
+passed ten delivered `job` observations in a fresh disposable Git consumer;
+all six final-byte consumer jobs passed serially with scratch retired, and
+Q47/Q48 passed 36 cases. The superseding effect manifest and the small job
+observation summary are frozen in `evidence/`. Request independent review of
+this exact candidate before any additional integration or release effect.
+Live Codex and ten historical owner decisions remain separate gates.

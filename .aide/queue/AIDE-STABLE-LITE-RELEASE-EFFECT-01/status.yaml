@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
-status: in_progress
-planning_state: reviewed_dev_candidate_publication_repair_required
-result: DEV_INTEGRATION_ACCEPT_PUBLICATION_REQUEST_CHANGES
+status: needs_review
+planning_state: superseding_job_form_effect_frozen_for_independent_review
+result: EXACT_LOCAL_QUALIFICATION_PASS_REVIEW_PENDING
 updated_at: 2026-09-29
-current_slice: dev_integration_then_six_job_form_contract_repair
-next_slice: superseding_effect_review_then_history_and_live_qualification
+current_slice: current_asset_job_forms_and_six_consumers_qualified
+next_slice: exact_effect_review_then_history_and_live_qualification
 review_gate: exact_job_form_coverage_live_model_historical_owner_decisions
 main_promotion_performed: false
 tag_created: false

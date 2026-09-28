@@ -12641,3 +12641,18 @@ also validated and replayed without tracked changes. The current effect
 manifest in the release WorkUnit binds receipts, assets and 28 public forms;
 independent current release review, live one-turn model qualification, ten
 historical owner decisions, main, tag and publication remain pending.
+
+## 2026-09-29 portable Lite job-form effect repair
+
+The exported runner guide described a usable `job` interface that was absent
+from the 28-form stable matrix. Policy source `20710eac` adds nine exact forms
+and option variants, yielding 37. Changelog preview, pack, stable assets,
+release view and draft were regenerated in source order. Their post-commit
+replays changed zero tracked files. The rebuilt ZIP passed ten delivered job
+observations in a fresh disposable Git project under the approved D scratch
+root; six serial final-byte consumers passed fresh/brownfield, lifecycle,
+context/offline, partial, public CLI and forced restart. The focused Q47/Q48
+suite passed 36 tests. Each managed job retired scratch and released its
+reservation. The superseding effect manifest binds current assets, receipts
+and all 37 forms for independent review. Live model execution, main history
+decisions, publication and downloaded-byte qualification remain open.

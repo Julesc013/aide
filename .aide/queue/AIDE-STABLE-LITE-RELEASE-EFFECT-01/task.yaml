@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: current_sourcebound_local_candidate_under_review
-result: PENDING
+planning_state: superseding_job_form_effect_frozen_for_independent_review
+result: EXACT_LOCAL_QUALIFICATION_PASS_REVIEW_PENDING
 created_at: 2026-09-28
 updated_at: 2026-09-29
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

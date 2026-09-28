@@ -4288,3 +4288,10 @@ qualify the live one-turn host path if the owner admits it. The ten exact
 historical message decisions still gate main promotion; release publication
 also requires current technical acceptance, remote-byte and downloaded-byte
 checks. Keep the wider AIDE programme active beyond any bounded Lite release.
+
+The superseding Lite job-form candidate now declares 37 public forms and has
+new local asset and consumer evidence. Ten delivered job observations passed
+in a fresh disposable Git project; six final-byte consumer jobs and the
+36-case release suite passed. Post-commit pack, asset, preview and draft
+replays were unchanged. Next: independent review of the exact superseding
+effect, then the separately gated live turn and historical main decisions.
