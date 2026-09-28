@@ -2731,6 +2731,11 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
                 if case == "same-byte-substitution":
                     self.assertEqual(parked.read_bytes(), original)
 
+    def test_removal_rename_gap_legacy_intent_without_file_identity_refuses(self) -> None:
+        self.assertFalse(aide_lite.portable_removal_restore_agents_preimage(
+            Path("unused"), {"kind": "managed_agents_section", "backup_rel": ".AGENTS.md.aide-import-backup-old"}
+        ))
+
     @unittest.skipUnless(os.name == "nt", "anchored portable removal apply is Windows only")
     def test_brownfield_section_rechecksummed_intent_cannot_change_preview_bytes(self) -> None:
         source_root = self.make_source_repo()

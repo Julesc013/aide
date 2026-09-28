@@ -41953,6 +41953,8 @@ def portable_removal_recovery_observations(target_root: Path, intent: dict[str, 
 
 def portable_removal_restore_agents_preimage(target_root: Path, item: dict[str, object]) -> bool:
     """Restore only the intent-bound authored file parked in the rename gap."""
+    if not isinstance(item.get("preimage_file_identity"), str):
+        return False
     agents = portable_target_path(target_root, "AGENTS.md")
     backup = portable_target_path(target_root, str(item["backup_rel"]))
     if target_file_digest(agents) != "missing" or not os.path.lexists(backup):

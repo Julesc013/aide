@@ -272,3 +272,19 @@ preserved surrounding newlines. Job exit was 1, peak memory 213,348,352 bytes,
 peak scratch 21,850,058 bytes, scratch retired and reservation released. The
 test oracle is corrected to compare against `portable_agents_section_postimage`
 from the installed receipt; rerun only that positive case before broadening.
+
+The corrected positive case passed as D job `338933ad49a54dbc97037b7e3908bd30`
+(one test, 64.121s); adjacent backup-cleanup and interruption cases passed as
+job `626c422a3b1e490ea7009499e476437f` (two tests, 238.101s). Both jobs
+retired scratch and released reservations. During source review preparation,
+one older valid removal-intent shape was found to omit
+`preimage_file_identity`. The new restore helper now returns safe refusal for
+that shape before path/handle access; one tiny focused case will verify it.
+
+Independent `/root/stable_effect_review` returned REQUEST_CHANGES on exact
+`d3b2f0d3` for that missing-identity legacy intent. Other pinned-parent,
+digest, identity and non-replacing rename checks were found coherent in scope.
+The verdict is in `evidence/removal-rename-review-d3b2f0d3.md`, with external
+custody SHA-256 `6bdd377549a3976b8b206bbfddcdfc646355afe20b57fea6c4d87adff437b571`.
+Do not treat the d3 source as accepted; run the new regression and seek an
+exact superseding rereview.
