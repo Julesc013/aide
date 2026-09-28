@@ -44859,7 +44859,7 @@ def summarize_codex_prompt_input(raw: bytes) -> dict[str, object]:
             if not isinstance(part, dict) or not isinstance(part.get("type"), str):
                 raise ValueError("prompt-input content item shape invalid")
             row["parts"] += 1
-            if part["type"] == "text" and isinstance(part.get("text"), str):
+            if part["type"] in ("text", "input_text") and isinstance(part.get("text"), str):
                 row["text_utf8_bytes"] += len(part["text"].encode("utf-8"))
                 row["text_chars"] += len(part["text"])
             else:

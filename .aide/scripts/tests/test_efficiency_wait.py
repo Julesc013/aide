@@ -232,7 +232,7 @@ class EfficiencyWaitTests(unittest.TestCase):
     def test_prompt_input_summary_counts_without_echoing_text(self):
         marker = "private-task-content-do-not-echo"
         raw = json.dumps([
-            {"type": "message", "role": "developer", "content": [{"type": "text", "text": "α"}]},
+            {"type": "message", "role": "developer", "content": [{"type": "input_text", "text": "α"}]},
             {"type": "message", "role": "user", "content": [{"type": "text", "text": marker}]},
         ]).encode("utf-8")
         result = lite.summarize_codex_prompt_input(raw)
