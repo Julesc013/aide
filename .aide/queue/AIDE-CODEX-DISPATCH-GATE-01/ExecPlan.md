@@ -50,3 +50,9 @@ Windows Job host with a bounded output directory under the configured D job.
 Assert suspended-child and resume checkpoints, quiescence and exact CLI output.
 This checks real executable launch compatibility without a model request;
 it does not discharge the live Codex effect or Lite release gates.
+
+Test-only source `6e21e70f` passed 32/32 pipeline cases under the configured
+D runner, including the installed Codex version launch in the existing Job.
+The production `core/runtime/continuous_worker` source remains byte-identical
+to independently accepted `a8c9935e`. Receipt and limits are in
+`evidence/installed-codex-no-model-2026-09-29.md`.
