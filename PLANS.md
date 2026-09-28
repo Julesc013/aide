@@ -4195,5 +4195,6 @@ downloaded-byte verification. The wider programme remains active.
 The resource follow-up in `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01` adds selected-root
 setup to the existing bounded runner. Its final source-input managed suite
 passed 35 cases; the two existing D checkout configs remained unchanged on
-setup. Obtain narrow source review before dev integration, while preserving
-the accepted Lite release bytes.
+setup. Independent review accepted exact source `5152798b` with notes. Keep
+the setup task branch available while preserving the accepted Lite release
+bytes; a prepublication integration requires an exact release delta decision.

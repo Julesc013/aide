@@ -296,3 +296,10 @@ retired and the reservation released. Both existing checkout configs were
 read back as unchanged by `job setup`. Freeze this source for narrow review.
 The Lite release candidate already on `dev` remains unchanged while its
 separate historical main-promotion gate is unresolved.
+
+Commit-bound job `48c84ef70d2c494bb46a4ec7079532d5` passed the same
+35-case suite, retired scratch and released the shared reservation. Reviewer
+`/root/stable_builder_repair_review` accepted exact source `5152798b`
+with notes. Keep it on the task branch while the Lite release is frozen;
+including this runner change in release source would require a new exact
+release delta decision and delivered-byte qualification.

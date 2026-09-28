@@ -12453,5 +12453,7 @@ finite limits and combined config/job disk allowance before publishing one
 machine-local config. Equal existing config is read-only; setup never chooses a
 fallback drive. Six new focused cases and the 35-case managed suite passed in
 the shared D runner (job `4c93fecbc9544747902b5225e0f16db3`); scratch was
-retired and the reservation released. Source review and dev integration are
-pending. The accepted stable Lite dev source/assets were not changed.
+retired and the reservation released. A commit-bound rerun passed the same
+35 cases (job `48c84ef70d2c494bb46a4ec7079532d5`) and independent review
+accepted exact source `5152798b` with notes. Dev integration remains separate
+from the frozen Lite release; its accepted source/assets were not changed.

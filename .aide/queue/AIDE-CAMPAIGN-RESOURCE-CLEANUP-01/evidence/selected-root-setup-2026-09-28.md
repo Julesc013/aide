@@ -24,6 +24,26 @@
 - `git diff --check` passed. `git plan` classified the current dirty task tree
   as requiring classification; all ten changed paths are task-scoped.
 - Limits: tests use tiny synthetic roots and mocked capacity; Windows process
-  and memory monitoring remain existing runner behavior. Exact source review
-  and any release-effect delta review remain open. The frozen 1.0.0 asset
-  hashes and main/tag/publication gates are unchanged.
+  and memory monitoring remain existing runner behavior. The frozen 1.0.0
+  asset hashes and main/tag/publication gates are unchanged.
+
+## Commit-bound result and independent review
+
+- Frozen source `5152798b934a498d9ec6e20986263412a0d7c068`, tree
+  `cb9869a8d64cd3d4f978114a0f014f9375ba2e58`, parent `76e17a4c`.
+  Commit-message check passed; the source commit leaves the worktree clean.
+- Managed D job `48c84ef70d2c494bb46a4ec7079532d5` bound that exact commit,
+  tree and input hashes. The full managed-workspace suite passed **35 tests**
+  in 23.112 seconds, no skips; exit 0, quiescent. Peak Job memory was
+  239,271,936 bytes; peak scratch was 280 bytes. Scratch was retired and the
+  shared reservation released.
+- Independent reviewer `/root/stable_builder_repair_review` gave
+  **ACCEPT_WITH_NOTES** for source integration of that exact commit/tree.
+  It inspected the diff, source, tests and evidence read-only and did not
+  rerun tests. No blocking defect was found. Real checkout setup exercised
+  the unchanged-config path; fresh setup uses tiny synthetic roots.
+- Integration decision: preserve `dev@76e17a4c` and the previously accepted
+  Lite asset freeze while its main-promotion gate remains unresolved. This
+  setup source is qualified on its task branch. If included in the release
+  source before publication, it requires a separate exact release delta
+  decision and current-source asset/consumer qualification.
