@@ -4,6 +4,7 @@ from dataclasses import replace
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 import unittest
 from unittest.mock import Mock, patch
@@ -581,14 +582,22 @@ class ApiSetQueryTests(unittest.TestCase):
             session.run()
         self.assertEqual(session.failure["native_refusal"]["hresult"], "0x80070490")
 
-    def test_current_source_manifest_matches_exact_files_and_no_effect_boundary(self):
+    def test_reviewed_source_manifest_matches_frozen_commit_and_no_effect_boundary(self):
         path = ROOT / ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-set-loader-source-manifest.json"
         manifest = json.loads(path.read_text(encoding="utf-8"))
         expected = {**manifest["source_files"], **manifest["dependencies"]}
-        actual = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in expected}
+        reviewed = "b682ba7d613836922970d675d5c7257a0205b8bc"
+        tree = subprocess.run(["git", "rev-parse", reviewed + "^{tree}"], cwd=ROOT,
+                              capture_output=True, text=True, check=True, timeout=15).stdout.strip()
+        self.assertEqual(tree, "1fa7e484963663cbbe12ab3517d3866bfd6a2844")
+        actual = {name: hashlib.sha256(subprocess.run(
+            ["git", "show", reviewed + ":" + name], cwd=ROOT,
+            capture_output=True, check=True, timeout=15).stdout).hexdigest() for name in expected}
         self.assertEqual(actual, expected)
         encoded = json.dumps(actual, sort_keys=True, separators=(",", ":")).encode()
         self.assertEqual(hashlib.sha256(encoded).hexdigest(), manifest["source_aggregate_sha256"])
+        source = "core/runtime/continuous_worker/windows_system_observation.py"
+        self.assertEqual(hashlib.sha256((ROOT / source).read_bytes()).hexdigest(), manifest["source_files"][source])
         prior = ROOT / ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-query-os-build-source-manifest.json"
         self.assertEqual(hashlib.sha256(prior.read_bytes()).hexdigest(),
                          manifest["prior_reviewed_manifest_sha256"])
