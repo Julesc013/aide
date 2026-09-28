@@ -9,6 +9,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -419,10 +420,38 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
 
     def test_x_os_01_golden_runners_pass(self) -> None:
         definitions = {task.task_id for task in aide_lite.parse_golden_task_catalog(REPO_ROOT)}
-        for task_id in aide_lite.XOS01_GOLDEN_TASK_IDS:
-            self.assertIn(task_id, definitions)
-            result = aide_lite.run_golden_task(REPO_ROOT, task_id)
-            self.assertEqual(result.result, "PASS", result.errors)
+        report_paths = tuple(aide_lite.TASK_OS_COMMAND_REPORT_FILES)
+
+        def source_report_state() -> dict:
+            return {
+                rel: (path.read_bytes(), path.stat().st_mtime_ns) if path.exists() else None
+                for rel in report_paths
+                for path in [REPO_ROOT / rel]
+            }
+
+        before = source_report_state()
+        # Keep the real source context and every golden assertion. Only report
+        # destinations change; the runner pins tempfile to admitted scratch.
+        with tempfile.TemporaryDirectory(prefix="task-os-golden-") as temporary:
+            destinations = {rel: str(Path(temporary) / rel) for rel in report_paths}
+            constants = {
+                name: value for name, value in vars(aide_lite).items()
+                if name.startswith("TASK_OS_") and isinstance(value, str)
+                and value in destinations
+            }
+            self.assertEqual(set(constants.values()), set(report_paths))
+            with contextlib.ExitStack() as patches:
+                for name, value in constants.items():
+                    patches.enter_context(mock.patch.object(aide_lite, name, destinations[value]))
+                patches.enter_context(mock.patch.object(
+                    aide_lite, "TASK_OS_COMMAND_REPORT_FILES",
+                    [destinations[rel] for rel in report_paths],
+                ))
+                for task_id in aide_lite.XOS01_GOLDEN_TASK_IDS:
+                    self.assertIn(task_id, definitions)
+                    result = aide_lite.run_golden_task(REPO_ROOT, task_id)
+                    self.assertEqual(result.result, "PASS", result.errors)
+        self.assertEqual(source_report_state(), before)
 
 
 if __name__ == "__main__":

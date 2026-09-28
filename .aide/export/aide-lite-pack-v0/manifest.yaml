@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 0509e1611b1838c650954c64212ad603f132dada
+source_commit: 84e4a7330ce93e116c8c6af0b181d8756af6f647
 source_dirty_state: false
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -13,6 +13,7 @@ included_files:
   - files/.aide.local.example/README.md
   - files/.aide.local.example/cache/README.md
   - files/.aide.local.example/config.example.yaml
+  - files/.aide.local.example/execution.json
   - files/.aide.local.example/ledgers/README.md
   - files/.aide.local.example/secrets/README.md
   - files/.aide.local.example/traces/README.md

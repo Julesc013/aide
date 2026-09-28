@@ -2,6 +2,12 @@
 
 ## Project customization and update explanation
 
+These existing interfaces are included in the candidate stable Lite contract
+in `.aide/policies/release-versioning.yaml`. Final delivered-byte qualification
+and public compatibility activation remain open; the candidate list is not a
+shipping claim. Explanation and optional local feedback use dry-run forms,
+including predecessor updates and explicit conflict resolution.
+
 The portable importer creates `.aide/profile.yaml` from a template on first
 import. That file belongs to the project thereafter. A later pack preserves its
 bytes. Other project-authored text outside the portable `AGENTS.md` section is
@@ -84,13 +90,32 @@ reconciliation before another update. This bounded apply path is available only
 on Windows; release support requires separate delivered-artifact qualification.
 
 To make a local packet that the project can review and share manually, add
-`--feedback-out <new-path>` to a dry run. The new path must be outside both the
-pack and target. The packet contains paths, digests, ownership decisions, and
+`--feedback-out <new-path>` to a dry run. The new path must be outside the target
+and every supplied pack, including `--from-pack`. The packet contains paths, digests, ownership decisions, and
 any current recorded rationale; review it before sharing. This flag performs
 no network, provider, or model call.
 If a previous import has an unresolved recovery intent, a dry run reports
 `RECOVERY_REQUIRED` without changing that intent or writing feedback. Use the
 explicit recovery path before requesting a fresh update plan.
+
+For a Windows import stopped after some payload writes, inspect the pending
+intent and its `plan_digest`, preserve the target and both packs, and repeat
+the exact original inputs with `--recover-partial --expect-plan <digest>`.
+Include the same `--from-pack`, `--mode`, and each `--resolve` file used for the
+interrupted update. An ordinary retry still refuses a partial state. The
+explicit recovery verifies the saved full plan against the pack, predecessor,
+receipt, project controls, resolution bytes, and every target preimage or
+postimage before continuing. It refuses changed, linked, or unsafe files and
+keeps the intent for inspection. Older partially applied intents without a full
+plan snapshot require manual reconciliation. Completed or no-effect intents have
+separate reconciliation/retirement paths that do not replay payload writes.
+Partial continuation never takes a new update plan or
+infers the reason for a project edit.
+Final Windows publication holds existing controls and resolution files against
+write or replacement. If controls are absent, a temporary exclusive filename
+reservation prevents creation until intent retirement; Windows removes that
+reservation on handle close or process exit. It does not create lasting
+project customization metadata.
 
 ## Purpose
 

@@ -43,7 +43,14 @@ changed-scope review.
 ## Progress
 
 - [x] Dev includes reviewed source; 110 importer methods passed in two D jobs.
-- [ ] Admit and commit the clean projection task.
+- [x] Admit and commit the clean projection task at `84e4a733`.
 - [ ] Generate and qualify current bytes and consumers.
 - [ ] Prove committed replay and receive exact artifact/dev-effect review.
 - [ ] Integrate qualified artifact candidate into dev.
+
+Generation checkpoint: six serial D-managed commands exited zero, retired
+scratch and released reservations. Current ZIP/tar hashes, provenance,
+validation and exact job receipts are in `evidence/generation-84e4a733-20260928.md`.
+Canonical check/inspect commands passed without rewriting source or unrelated
+paths. Derived outputs are uncommitted; post-commit replay and delivered
+consumers remain open. Commit one coherent artifact increment before replay.

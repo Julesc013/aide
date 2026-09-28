@@ -3,78 +3,74 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 0509e1611b1838c650954c64212ad603f132dada
+source_head: 84e4a7330ce93e116c8c6af0b181d8756af6f647
 preview_only: true
 
 ## Highlights
 
-- Security: Rollback no longer accepts a checksum-valid payload through a reparse pack boundary. (33824b369b84)
-- Added: receipt-owned managed-section removal inside authored AGENTS.md on Windows, preserving all outside bytes. (d5b44626d6f9)
-- Added: Local delivered pack evidence for supported rollback, owned removal, and interruption recovery. (db7650536375)
-- Added: Bounded plan for manual portable-pack conflict resolution and disabled-feature preservation. (63484c756197)
-- Added: Manual three-way portable-pack resolution and explicit optional-example disable survival. (acbcb9c8bd62)
-- Added: Inspect the health of a delivered Lite installation without modifying its target. (03c5e7f81c22)
-- Changed: Local release provenance now records clean ancestor status for the lifecycle pack. (0c048b3baeb7)
-- Changed: Recorded local lifecycle release replay evidence. (7e8816b60af7)
-- Changed: Recorded completed lifecycle dev integration evidence and next mandatory product gap. (d4b67c96ff81)
-- Changed: Track installed Lite repair diagnosis as a bounded campaign task. (0aa5a9d23b10)
-- Changed: Keep predecessor-bound import and rollback regressions aligned with the validated receipt contract. (c68077548ee9)
-- Changed: Combine delivered update and read-only repair-health implementation for qualification. (99a9e54da887)
-- Changed: Track the bounded stable release contract as a campaign WorkUnit. (74093ecacb4f)
-- Changed: Define a reviewable candidate for the first stable Lite release contract. (aa3bcfec849e)
-- Changed: Refresh local portable-pack and release-preview outputs for qualified combined source. (d137f936bf0a)
-- Fixed: authored AGENTS backup recovery retains receipt and intent until exact original backup cleanup is reconciled. (2c4c9089a546)
-- Fixed: Pending portable removal now blocks exact-predecessor rollback preview and apply. (1f920ebbf7bf)
-- Fixed: Exact predecessor rollback now accepts an unchanged authored CRLF AGENTS.md managed section. (9a0843c3a763)
-- Fixed: Missing receipt-owned files now conflict instead of being silently recreated. (acbcb9c8bd62)
-- Fixed: Receipt-owned CRLF AGENTS sections update when their upstream managed block changes. (3239530132a6)
-- Fixed: Automatic managed updates now require a validated predecessor baseline instead of a local receipt claim alone. (12758e07373f)
-- Fixed: Reject receipt claims that disagree with the delivered pack during installed health inspection. (486aa2bd0f5f)
-- Fixed: Recognize valid CRLF portable guidance blocks during read-only installed health inspection. (558638203fae)
+- Added: explicit bounded maintainer job inspect/run/recover commands. (5ea1f7cdd53c)
+- Changed: Task OS golden validation leaves source projections unchanged. (e185d2898fb2)
 - Fixed: installed Lite Task OS reports no selected task for an empty queue. (f00d937e2368)
 - Fixed: project-owned Lite target queues no longer receive AIDE source-phase next-work advice. (e88a1468acd2)
 - Fixed: target Task OS routing follows its declared profile even when a queue ID matches an AIDE source task. (b9d2b150c39c)
 - Fixed: target next-work explanation remains accurate even when queue IDs collide with source IDs. (52e1f194ebd2)
 - Fixed: local draft lifecycle claims now match the bounded Windows apply candidates. (bc1867a06933)
+- Fixed: preview effect evidence now identifies its exact commit range and replay state. (6e8af2bd8d16)
+- Fixed: allow explicit Windows recovery of an exact partial portable import without replaying changed project bytes. (547ea2b09235)
+- Fixed: refuse forged partial import ownership and stale controls during recovery. (052a0a926527)
+- Fixed: prevent controls and resolution drift during final partial-import publication. (dfc8048bc005)
+- Fixed: default Git query report churn and lost cleanup after interruption. (5ea1f7cdd53c)
+- Fixed: Source maintainer test and evaluation entrypoints enforce bounded job admission. (11226a6e7fd0)
+- Fixed: Generator source output allocation requires capacity reservations. (8acfecc44e61)
+- Fixed: Recovery cannot bypass source-output resource qualification. (b325deeaca74)
+- Fixed: Task status inspection no longer generates tracked reports by default. (0302b18c724d)
+- Fixed: Candidate stable interface includes requested customization and recovery forms. (f0eabe41265d)
+- Fixed: Explicit import feedback refuses every supplied input pack and the target. (c6d104f665e3)
+- Removed: Two verified duplicate consumer ZIP expansions. (119529d076fd)
+- Docs: preserve focused source review with explicit qualification limits. (36e1a6d54aa0)
+- Docs: retain resource source review and bounded product validation routing. (8aa60c7bb8a2)
+- Docs: Preserve accepted resource and product validation checkpoint. (260139d2d108)
+- Docs: Align current source status and already adopted specification boundaries. (71ef35127845)
+- Tests: avoid full design-family fixture installs for focused partial-recovery boundaries. (e87386e55eda)
 
 ## Validation Summary
 
-- 33824b369b84: New regression before repair: FAIL as expected (ValueError not raised).
-- d5b44626d6f9: PASS: Twenty-two focused removal tests in 428.761 seconds, including interruption, competing writer, junction and repeat behavior.
-- f2be45ea13ce: Primary and contributing worktrees clean before admission; remote dev observed at ea53e319.
-- 2c4c9089a546: PASS: Eight affected authored-section tests in 247.733 seconds.
-- 03f4b0a1ef37: Exact rollback source 33824b36 had independent source ACCEPT; current remote dev observed ea53e319.
-- 1f920ebbf7bf: Red regression FAIL as intended, 1 test in 33.852 s, exit 1; green regression PASS, 1 test in 45.495 s, exit 0.
-- 723322cf07ab: Exact removal source review ACCEPT_WITH_NOTES at 2c4c9089; eight affected author tests and independent backup fault injection passed.
-- 9a0843c3a763: PASS: Red regression reproduced the AGENTS.md baseline error on source 723322cf; green regression passed after repair.
-- db7650536375: PASS: Complete importer suite passed 85/85; affected Q31/Q34/Q47/Q48 suites passed 6/11/18/11.
-- 0c048b3baeb7: PASS: First postcommit bundle, validate, draft, and draft-validate commands exited zero.
+- 2defcad541d0: PASS: Release bundle, validate, draft and draft-validate each exited zero from clean projection commit d0bfa404.
+- b3a001befaac: PASS: Local, origin, ls-remote and GitHub API all observed dev at 2defcad5 after fast-forward and normal push.
+- 5561aecdb608: PASS: Fresh extracted-ZIP safe import applied 816 owned files; installed context, pack and verify exited zero with zero verifier errors.
+- b45010280e5e: PASS: 31 command log hashes and exit codes matched the pinned canary summary.
+- 736e3f9ac027: PASS: git plan returned ready_dry_run before branch creation.
+- a7254d7d4c9c: PASS: task inspect reports complete with zero missing evidence.
+- d292253b0994: PASS: exact candidate checks and four-commit range passed before effect.
+- f00d937e2368: PASS: the new regression failed on unmodified source with incidental X-OS-01 identity.
+- 04caefe65986: PASS: external review report hash matched and source worktree stayed clean before this evidence edit.
+- e88a1468acd2: PASS: one-item target regression failed on old source with X-OS-01 and passed after repair.
 
 ## Known Risks
 
-- 33824b369b84: Hostile concurrent pack mutation and broader rollback path-set changes remain outside this bounded source candidate.
-- d5b44626d6f9: An uncertain failed replacement can leave a recorded backup for manual recovery; non-Windows apply and final artifact qualification remain open.
-- f2be45ea13ce: Authored-section removal source remains under independent review; this admission does not accept it.
-- 2c4c9089a546: Independent source rereview and combined artifact qualification remain pending. Legacy intents without original identity fail closed if a backup remains.
-- 03f4b0a1ef37: Pending-removal rollback interaction still needs a source guard and regression before integration acceptance.
-- 1f920ebbf7bf: Authored-section source and delivered artifacts still require combination and qualification before a dev effect.
-- 723322cf07ab: Source acceptance does not clear stale generated-pack provenance or qualify delivered bytes.
-- 9a0843c3a763: The local archives generated from source 723322cf remain rejected and are not advanced to dev.
-- db7650536375: These are local no-publish artifacts and do not qualify a stable release or hosted/native operation.
-- 0c048b3baeb7: These files are local preview artifacts, not a public release.
+- 2defcad541d0: This metadata commit is not a zero-diff replay result and does not authorize dev or public release effects.
+- b3a001befaac: Synthetic update fixtures and local previews do not establish a shipping support profile or public stable release.
+- 5561aecdb608: Local preview and synthetic packs cannot establish stable release or published-predecessor support.
+- b45010280e5e: This is preview-only evidence; the synthetic rollback successor and in-process interruption do not establish published or hostile-process guarantees.
+- 736e3f9ac027: The Task OS report-truth finding and final released-byte qualifications remain unresolved.
+- a7254d7d4c9c: The evaluation acceptance does not itself authorize dev mutation; the Task OS source defect and stable release gates remain open.
+- d292253b0994: Empty-target Task OS report truth remains defective; synthetic rollback and local preview checks do not qualify a stable release.
+- f00d937e2368: Source tests do not qualify the unchanged preview archives or the eventual published release.
+- 04caefe65986: The reviewed source commit is f00d937e; this later evidence-only commit is not a changed-source review substitute.
+- e88a1468acd2: Old export and release preview bytes do not contain this source repair; canonical provenance is red until regenerated.
 
 ## Follow-up
 
-- 33824b369b84: Obtain independent exact delta rereview; combine with current dev and its removal-intent gate before artifact and consumer qualification.
-- d5b44626d6f9: Obtain independent technical source review, combine with accepted rollback work, regenerate qualified artifacts and verify disposable consumers before a dev effect.
-- f2be45ea13ce: Integrate accepted rollback source, repair any removal review findings, then qualify the combined delivered bytes.
-- 2c4c9089a546: Review this exact source candidate, then regenerate and qualify combined artifacts before dev integration.
-- 03f4b0a1ef37: Add the semantic guard, obtain combined review, then merge only independently accepted authored-section source.
-- 1f920ebbf7bf: Merge independently accepted removal source and run combined lifecycle checks with the current release generator.
-- 723322cf07ab: Run combined tests and independent review, regenerate current artifacts, qualify extracted consumers and replay before any dev effect.
-- 9a0843c3a763: Obtain independent source delta review, regenerate new local pack/release bytes, rerun importer and consumer gates, then review the exact dev effect.
-- db7650536375: Converge release metadata without changing archive bytes, prove a zero-diff replay, obtain independent dev-effect acceptance, and integrate into dev.
-- 0c048b3baeb7: Replay the exact generator from clean HEAD, prove zero changed release files, then obtain independent dev-effect acceptance and integrate.
+- 2defcad541d0: Run the four release commands from this committed candidate, require zero tracked changes, then obtain exact artifact and dev-effect review.
+- b3a001befaac: Qualify final declared Windows lifecycle, restart, offline and context/evidence journeys from frozen bytes, then proceed through separate exact release gates.
+- 5561aecdb608: Finish and independently review lifecycle/restart consumers; implement any real defect in a separate scoped source task.
+- b45010280e5e: Admit a bounded Task OS source repair, regenerate reviewed assets, and recheck installed consumers before final release acceptance.
+- 736e3f9ac027: Freeze the exact integration candidate, run canonical checks, seek independent effect review, then act only on matching refs.
+- a7254d7d4c9c: Run exact candidate checks, freeze an external effect manifest and obtain independent review before a fresh dev preflight.
+- d292253b0994: Independently review and integrate this closeout, then implement and test the bounded Task OS source repair.
+- f00d937e2368: Obtain independent exact source review, then project through the current generator and rerun the installed consumer before a dev effect.
+- 04caefe65986: Admit and implement the target-owned nonempty queue routing repair, review its delta, then regenerate delivered artifacts once.
+- e88a1468acd2: Obtain independent exact source delta review, then regenerate once through the current generator and qualify installed target queues.
 
 ## Warnings
 

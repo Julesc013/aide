@@ -12270,3 +12270,12 @@ range check passed. The remote ref readback matched. Admitted the next bounded
 projection WorkUnit in the existing checkout to regenerate and qualify current
 delivered bytes. No new physical worktree, tag, main promotion or release was
 created by this source integration.
+
+Generated the current portable pack, changelog preview, local release bundle
+and draft from clean `84e4a733` source using six serial D-managed jobs with
+canonical output reservations. All exited zero and retired scratch. Release
+and draft validation report PASS with zero blockers/warnings; pack-status,
+changelog validate/status, release status, doctor and validate also exited
+zero. Current ZIP/tar SHA-256 and all job receipts are in the projection task.
+The bytes are still local preview outputs; committed replay and delivered
+consumer qualification are pending.

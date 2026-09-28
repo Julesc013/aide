@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import argparse
 import builtins
-from contextlib import contextmanager
+from contextlib import ExitStack, contextmanager
 import fnmatch
 import gzip
 import hashlib
@@ -18458,6 +18458,8 @@ def validate_release_files(repo_root: Path, require_outputs: bool = True) -> lis
 
 
 def command_release_bundle(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     try:
         bundle = build_release_bundle_outputs(args.repo_root)
     except ValueError as exc:
@@ -18482,6 +18484,8 @@ def command_release_bundle(args: argparse.Namespace) -> int:
 
 
 def command_release_validate(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     checks = validate_release_files(args.repo_root, require_outputs=True)
     validation = validate_release_artifacts(args.repo_root)
     write_text_if_changed(args.repo_root / RELEASE_VALIDATION_JSON_PATH, stable_json_text(validation))
@@ -19179,6 +19183,8 @@ def build_github_release_draft_outputs(repo_root: Path) -> dict[str, object]:
 
 
 def command_release_draft(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     draft = build_github_release_draft_outputs(args.repo_root)
     validation = github_release_draft_validation_data(args.repo_root)
     assets = draft.get("assets", []) if isinstance(draft.get("assets"), list) else []
@@ -19199,6 +19205,8 @@ def command_release_draft(args: argparse.Namespace) -> int:
 
 
 def command_release_draft_validate(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     validation = github_release_draft_validation_data(args.repo_root)
     write_text_if_changed(args.repo_root / GITHUB_RELEASE_DRAFT_VALIDATION_JSON_PATH, stable_json_text(validation))
     write_text_if_changed(args.repo_root / GITHUB_RELEASE_DRAFT_VALIDATION_MD_PATH, render_github_release_draft_validation_md(validation))
@@ -30298,7 +30306,8 @@ def cache_status_checks(repo_root: Path) -> list[Check]:
         else:
             checks.append(Check("FAIL", f"cache/local-state artifact missing: {rel}"))
     for rel in [CACHE_KEYS_JSON_PATH, CACHE_KEYS_MD_PATH]:
-        checks.append(Check("PASS" if (repo_root / rel).exists() else "WARN", f"cache key report exists: {rel}"))
+        present = (repo_root / rel).exists()
+        checks.append(Check("PASS" if present else "WARN", f"cache key report {'exists' if present else 'missing'}: {rel}"))
     return checks
 
 
@@ -32870,6 +32879,8 @@ def command_eval_list(args: argparse.Namespace) -> int:
 
 
 def command_eval_run(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(".aide/evals/runs",)):
+        return 1
     run = run_golden_tasks(args.repo_root, task_id=args.task)
     json_result, md_result = write_golden_run_reports(args.repo_root, run)
     data = golden_run_to_dict(run)
@@ -38525,13 +38536,20 @@ def command_task_inspect(args: argparse.Namespace) -> int:
 
 def command_task_status(args: argparse.Namespace) -> int:
     tasks = queue_task_blocks(args.repo_root)
-    report_result, context = write_task_os_task_status(args.repo_root)
+    write_reports = getattr(args, "write_reports", False)
+    report_result = None
+    if write_reports:
+        report_result, context = write_task_os_task_status(args.repo_root)
+    else:
+        context = task_os_context(args.repo_root)
     print("AIDE Lite task status")
     print(f"task_count: {len(tasks)}")
     for task in tasks:
         print(f"- {task.get('id', '')}: status={task.get('status', 'unknown')} planning_state={task.get('planning_state', 'unknown')}")
     print(f"latest_task_id: {context.get('latest_task_id', '') or 'none'}")
-    print(f"report: {TASK_OS_TASK_STATUS_REPORT_PATH} ({report_result.action})")
+    if report_result is not None:
+        print(f"report: {TASK_OS_TASK_STATUS_REPORT_PATH} ({report_result.action})")
+    print(f"non_mutating: {str(not write_reports).lower()}")
     print("report_only: true")
     return 0 if tasks else 1
 
@@ -38743,10 +38761,14 @@ def command_checkpoint_plan(args: argparse.Namespace) -> int:
 
 
 def command_git_detect(args: argparse.Namespace) -> int:
-    data, json_result, md_result = write_git_workflow_detection(args.repo_root)
+    write_reports = getattr(args, "write_reports", False)
+    if write_reports:
+        data, json_result, md_result = write_git_workflow_detection(args.repo_root)
+    else:
+        data = collect_git_workflow_detection(args.repo_root)
     aide_plan_result: WriteResult | None = None
     aide_plan_md_result: WriteResult | None = None
-    if (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
+    if write_reports and (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
         _plan, aide_plan_result, aide_plan_md_result = write_aide_dev_main_plan(args.repo_root)
     print("AIDE Lite git detect")
     print(f"result: PASS")
@@ -38756,12 +38778,13 @@ def command_git_detect(args: argparse.Namespace) -> int:
     print(f"canonical_branch: {data.get('canonical_branch')}")
     print(f"integration_branch_detected: {data.get('integration_branch_detected')}")
     print(f"recommended_next_action: {data.get('recommended_next_action')}")
-    print(f"json_report: {GIT_WORKFLOW_DETECTION_JSON_PATH} ({json_result.action})")
-    print(f"markdown_report: {GIT_WORKFLOW_DETECTION_MD_PATH} ({md_result.action})")
+    if write_reports:
+        print(f"json_report: {GIT_WORKFLOW_DETECTION_JSON_PATH} ({json_result.action})")
+        print(f"markdown_report: {GIT_WORKFLOW_DETECTION_MD_PATH} ({md_result.action})")
     if aide_plan_result is not None and aide_plan_md_result is not None:
         print(f"aide_dev_main_plan_json: {AIDE_DEV_MAIN_PLAN_JSON_PATH} ({aide_plan_result.action})")
         print(f"aide_dev_main_plan_markdown: {AIDE_DEV_MAIN_PLAN_MD_PATH} ({aide_plan_md_result.action})")
-    print("non_mutating: true")
+    print(f"non_mutating: {str(not write_reports).lower()}")
     return 0
 
 
@@ -38887,12 +38910,16 @@ def print_git_helper_plan_summary(title: str, plan: dict[str, object], json_resu
 
 def command_git_plan(args: argparse.Namespace) -> int:
     plan = make_git_helper_plan(args.repo_root, "plan", dry_run=True)
-    json_result, md_result = write_git_helper_plan(args.repo_root, plan)
+    write_reports = getattr(args, "write_reports", False)
+    json_result = md_result = None
+    if write_reports:
+        json_result, md_result = write_git_helper_plan(args.repo_root, plan)
     aide_plan_result: WriteResult | None = None
     aide_plan_md_result: WriteResult | None = None
-    if (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
+    if write_reports and (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
         _aide_plan, aide_plan_result, aide_plan_md_result = write_aide_dev_main_plan(args.repo_root)
     print_git_helper_plan_summary("AIDE Lite git plan", plan, json_result, md_result)
+    print(f"reports_written: {str(write_reports).lower()}")
     if aide_plan_result is not None and aide_plan_md_result is not None:
         print(f"aide_dev_main_plan_json: {AIDE_DEV_MAIN_PLAN_JSON_PATH} ({aide_plan_result.action})")
         print(f"aide_dev_main_plan_markdown: {AIDE_DEV_MAIN_PLAN_MD_PATH} ({aide_plan_md_result.action})")
@@ -39410,7 +39437,7 @@ def is_source_only_export_test(rel_path: str) -> bool:
     if not rel.startswith(".aide/scripts/tests/"):
         return False
     name = Path(rel).name
-    return name.startswith("test_continuous_worker") or (
+    return name == "test_managed_workspace.py" or name.startswith("test_continuous_worker") or (
         name.startswith("test_aide_") and rel not in PORTABLE_AIDE_TEST_MODULES
     )
 
@@ -41216,13 +41243,16 @@ def explain_import_result(result: dict[str, object], target_root: Path, customiz
     return explanations
 
 
-def write_import_feedback(path: Path, pack_root: Path, target_root: Path, result: dict[str, object], explanations: list[dict[str, str]]) -> None:
+def write_import_feedback(path: Path, pack_root: Path, target_root: Path, result: dict[str, object], explanations: list[dict[str, str]], *, predecessor_pack: Path | None = None) -> None:
     """Create a manual-share packet only at an explicit, external output path."""
     if path.exists() or path.is_symlink() or not path.parent.exists() or not path.parent.is_dir():
         raise ValueError("feedback output must be a new file in an existing directory")
     resolved = path.parent.resolve() / path.name
-    if resolved == target_root or target_root in resolved.parents or resolved == pack_root or pack_root in resolved.parents:
-        raise ValueError("feedback output must be outside the pack and target")
+    protected_roots = [pack_root.resolve(), target_root.resolve()]
+    if predecessor_pack is not None:
+        protected_roots.append(predecessor_pack.resolve())
+    if any(resolved == root or root in resolved.parents for root in protected_roots):
+        raise ValueError("feedback output must be outside all supplied packs and target")
     packet = {
         "schema_version": "aide.import-feedback.v1",
         "pack": import_pack_identity(pack_root),
@@ -41288,6 +41318,8 @@ def build_portable_import_intent(
     plan_digest: str,
     operations: list[dict[str, str]],
     next_receipt: dict[str, object],
+    skipped: list[dict[str, str]] | None = None,
+    plan_operations: list[dict[str, str]] | None = None,
 ) -> dict[str, object]:
     writes = [
         {
@@ -41308,6 +41340,8 @@ def build_portable_import_intent(
         "operations": writes,
         "next_receipt": next_receipt,
     }
+    if skipped is not None:
+        record["plan_snapshot"] = {"operations": plan_operations if plan_operations is not None else operations, "skipped": skipped}
     record["intent_digest"] = portable_import_record_digest(record, "intent_digest")
     return record
 
@@ -41929,6 +41963,34 @@ def portable_import_verified_leaf(path: Path, expected_digest: str | None, *, wr
         raise
 
 
+@contextmanager
+def portable_import_guard_missing_controls(target_root: Path):
+    """Reserve an absent project controls name until the import intent retires."""
+    if os.name != "nt":
+        raise ValueError("missing-controls reservation requires Windows")
+    import ctypes
+    from ctypes import wintypes
+
+    path = portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD,
+        wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    with windows_pinned_directory(path.parent):
+        # CREATE_NEW refuses a competing project file. DELETE_ON_CLOSE removes
+        # only this owned reservation, including after process termination.
+        handle = kernel.CreateFileW(str(path), 0x00010000 | 0x80 | 0x2, 0,
+            None, 1, 0x04000000 | 0x00200000 | 0x100 | 0x2, None)
+        if handle == ctypes.c_void_p(-1).value or handle is None:
+            raise ctypes.WinError(ctypes.get_last_error())
+        try:
+            yield
+        finally:
+            kernel.CloseHandle(handle)
+
+
 def portable_import_rename_open_leaf(kernel: object, handle: object, directory_handle: object, name: str) -> None:
     import ctypes
     from ctypes import wintypes
@@ -42072,6 +42134,357 @@ def apply_import_operation(pack_root: Path, target_root: Path, operation: dict[s
     return result.action == "written"
 
 
+def recover_partial_import(
+    pack_root: Path,
+    target_root: Path,
+    pending: dict[str, object],
+    recovery: dict[str, object],
+    mode: str,
+    predecessor_pack: Path | None,
+    expected_plan_digest: str,
+    resolutions: dict[str, Path],
+) -> dict[str, object]:
+    """Continue only an exact, snapshot-bound partial Windows import on request."""
+    def refused() -> dict[str, object]:
+        return {
+            "status": "RECOVERY_REQUIRED", "dry_run": False, "mode": mode,
+            "target": normalize_rel(target_root),
+            "operation_count": len(pending.get("operations", [])),
+            "conflicts": [], "skipped": [], "operations": [], "written": [],
+            "recovery": classify_portable_import_recovery(target_root, pending),
+            "plan_digest": pending.get("plan_digest"),
+        }
+
+    def verified_observed_digest(target_rel: str) -> str:
+        target = portable_target_path(target_root, target_rel)
+        observed = target_file_digest(target)
+        if observed not in {"missing", "not-a-file"}:
+            with windows_pinned_directory(target.parent, for_write=False):
+                kernel, handle = portable_import_verified_leaf(target, observed, read_only=True)
+                kernel.CloseHandle(handle)
+        return observed
+
+    if (
+        os.name != "nt"
+        or pending.get("target") != normalize_rel(target_root)
+        or pending.get("pack_id") != EXPORT_PACK_ID
+        or re.fullmatch(r"[0-9a-f]{64}", expected_plan_digest) is None
+        or expected_plan_digest != pending.get("plan_digest")
+        or recovery.get("classification") != "partial"
+        or recovery.get("outstanding_backups")
+    ):
+        return refused()
+    snapshot = pending.get("plan_snapshot")
+    next_receipt = pending.get("next_receipt")
+    if not isinstance(snapshot, dict) or not isinstance(next_receipt, dict):
+        return refused()  # Old intents retain their original safe-refusal behavior.
+    operations = snapshot.get("operations")
+    skipped = snapshot.get("skipped")
+    if not isinstance(operations, list) or not isinstance(skipped, list) or not all(isinstance(item, dict) for item in operations + skipped):
+        return refused()
+    if (
+        next_receipt.get("mode") != mode
+        or next_receipt.get("pack") != import_pack_identity(pack_root)
+        or next_receipt.get("predecessor_pack") != (import_pack_identity(predecessor_pack) if predecessor_pack else None)
+        or next_receipt.get("plan_digest") != expected_plan_digest
+    ):
+        return refused()
+    prior_receipt = load_portable_import_receipt(target_root)
+    if target_file_digest(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH)) != pending.get("receipt_preimage_digest"):
+        return refused()
+    try:
+        disabled, controls_digest = project_update_controls(target_root, prior_receipt)
+        if controls_digest != next_receipt.get("project_controls_digest") or sorted(disabled) != next_receipt.get("disabled_features"):
+            return refused()
+        if import_plan_digest(pack_root, target_root, mode, operations, [], skipped, predecessor_pack, controls_digest) != expected_plan_digest:
+            return refused()
+        if build_portable_import_receipt(pack_root, mode, operations, expected_plan_digest, predecessor_pack, disabled, controls_digest) != next_receipt:
+            return refused()
+        write_actions = {"copy", "update_owned", "resolve_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"}
+        expected_writes = []
+        for item in operations:
+            if item.get("action") not in write_actions or item.get("preimage_digest") == item.get("postimage_digest"):
+                continue
+            relative = Path(item["target"])
+            backup_rel = (
+                (relative.parent / f".{relative.name}.aide-import-backup-{expected_plan_digest[:20]}").as_posix()
+                if item["preimage_digest"] != "missing" else None
+            )
+            expected_writes.append({"target": item["target"], "preimage_digest": item["preimage_digest"],
+                "postimage_digest": item["postimage_digest"], "backup_rel": backup_rel})
+        if expected_writes != pending.get("operations"):
+            return refused()
+        included = set(pack_manifest_list(pack_root, "included_files"))
+        portable_safe_pack_targets(pack_root)
+        if predecessor_pack is not None:
+            portable_safe_pack_targets(predecessor_pack)
+        template_targets = {
+            ".aide/profile.template.yaml": ".aide/profile.yaml",
+            ".aide/memory/project-state.template.md": ".aide/memory/project-state.md",
+            ".aide/memory/decisions.template.md": ".aide/memory/decisions.md",
+            ".aide/memory/open-risks.template.md": ".aide/memory/open-risks.md",
+        }
+        expected_layout: list[tuple[str, str, str]] = []
+        expected_skipped: list[dict[str, str]] = []
+        for source in sorted(path for path in (pack_root / "files").rglob("*") if path.is_file()):
+            source_rel = normalize_rel(source.relative_to(pack_root / "files"))
+            reason = import_scope_skip_reason(source_rel, mode)
+            if reason:
+                expected_skipped.append({"source": source_rel, "reason": reason})
+                continue
+            target_rel = "AGENTS.md" if source_rel == "AGENTS.md.template" else source_rel
+            disabled_feature = next((feature_id for feature_id, prefix in PORTABLE_OPTIONAL_FEATURES.items()
+                if feature_id in disabled and target_rel.startswith(prefix)), None)
+            kind = "disabled_feature" if disabled_feature else "portable_managed_section" if source_rel == "AGENTS.md.template" else "managed_file"
+            expected_layout.append((source_rel, target_rel, kind))
+            if source_rel in template_targets:
+                expected_layout.append((source_rel, template_targets[source_rel], "target_owned_template"))
+        expected_layout.append(("<generated>", ".gitignore", "target_owned_additive"))
+        if skipped != expected_skipped or expected_layout != [
+            (item.get("source"), item.get("target"), item.get("kind")) for item in operations
+        ]:
+            return refused()
+        seen: set[str] = set()
+        resolution_data: dict[str, bytes] = {}
+        resolution_targets = {str(item["target"]) for item in operations if item.get("action") == "resolve_owned"}
+        if set(resolutions) != resolution_targets:
+            return refused()
+        for item in operations:
+            target_rel = item["target"]
+            source_rel = item["source"]
+            action = item["action"]
+            kind = item["kind"]
+            if not isinstance(target_rel, str) or target_rel in seen or "\\" in target_rel or normalize_rel(target_rel) != target_rel:
+                return refused()
+            seen.add(target_rel)
+            portable_target_path(target_root, target_rel)
+            if action not in write_actions | {"unchanged", "preserve", "preserve_local", "preserve_disabled"}:
+                return refused()
+            if source_rel == "<generated>":
+                if target_rel != ".gitignore" or kind != "target_owned_additive" or action not in {"unchanged", "ensure_local_state_ignore"} or item.get("source_digest") != item.get("postimage_digest"):
+                    return refused()
+            else:
+                if not isinstance(source_rel, str) or "\\" in source_rel or normalize_rel(source_rel) != source_rel or "files/" + source_rel not in included:
+                    return refused()
+                source = pack_root / "files" / source_rel
+                if kind == "portable_managed_section":
+                    block = portable_managed_block(read_text(source))
+                    if source_rel != "AGENTS.md.template" or target_rel != "AGENTS.md" or block is None or digest_bytes(block.encode("utf-8")) != item.get("source_digest"):
+                        return refused()
+                elif kind == "target_owned_template":
+                    if template_targets.get(source_rel) != target_rel or action not in {"preserve", "create_from_template"} or sha256_file(source) != item.get("source_digest"):
+                        return refused()
+                elif kind in {"managed_file", "disabled_feature"}:
+                    if source_rel != target_rel or sha256_file(source) != item.get("source_digest"):
+                        return refused()
+                else:
+                    return refused()
+            observed = verified_observed_digest(target_rel)
+            if observed not in {item.get("preimage_digest"), item.get("postimage_digest")}:
+                return refused()
+            preimage = item.get("preimage_digest")
+            postimage = item.get("postimage_digest")
+            source_digest = item.get("source_digest")
+            basis = item.get("ownership_basis")
+            if kind == "managed_file":
+                rows = prior_receipt.get("managed", {}) if prior_receipt else {}
+                prior_row = rows.get(target_rel) if isinstance(rows, dict) else None
+                entry = receipt_managed_entry(prior_receipt, target_rel, source_rel)
+                if prior_row is not None and (entry is None or entry.get("kind") != "managed_file"):
+                    return refused()
+                if action == "copy":
+                    if preimage != "missing" or prior_row is not None or postimage != source_digest or basis != "new_path":
+                        return refused()
+                elif action == "update_owned":
+                    receipt_owned = (
+                        entry is not None and entry.get("kind") == "managed_file"
+                        and entry.get("ownership") == "aide_portable_managed"
+                        and entry.get("local_overlay") is not True
+                        and entry.get("installed_digest") == preimage
+                        and receipt_matches_predecessor_baseline(predecessor_pack, source_rel, "managed_file", entry)
+                    )
+                    unrecorded_baseline = (
+                        prior_receipt is None and predecessor_pack is not None
+                        and predecessor_installed_digest(predecessor_pack, source_rel, "managed_file") == preimage
+                    )
+                    if (not (receipt_owned or unrecorded_baseline) or postimage != source_digest
+                        or basis != ("installed_receipt" if receipt_owned else "validated_predecessor_pack")):
+                        return refused()
+                elif action == "resolve_owned":
+                    if (entry is None or entry.get("kind") != "managed_file" or predecessor_pack is None
+                        or preimage in {"missing", "not-a-file", source_digest}
+                        or source_digest == entry.get("source_digest")
+                        or item.get("base_digest") != entry.get("source_digest")
+                        or predecessor_installed_digest(predecessor_pack, source_rel, "managed_file") != item.get("base_digest")
+                        or postimage != item.get("resolution_digest")
+                        or basis != "project_selected_three_way"):
+                        return refused()
+                elif action == "unchanged":
+                    if preimage != source_digest or postimage != source_digest or basis != "identical_incoming_bytes":
+                        return refused()
+                elif action == "preserve_local":
+                    if (entry is None or entry.get("kind") != "managed_file" or preimage in {"missing", "not-a-file", source_digest}
+                        or postimage != preimage or source_digest != entry.get("source_digest")
+                        or basis != "unchanged_upstream_project_bytes"):
+                        return refused()
+                else:
+                    return refused()
+            elif kind == "disabled_feature":
+                feature = next((feature_id for feature_id, prefix in PORTABLE_OPTIONAL_FEATURES.items()
+                    if feature_id in disabled and target_rel.startswith(prefix)), None)
+                if (feature is None or item.get("feature_id") != feature or action != "preserve_disabled"
+                    or preimage != postimage or basis != f"project_disabled_feature:{feature}"):
+                    return refused()
+            elif kind == "target_owned_template":
+                desired = digest_bytes(text_output_bytes(render_target_template(read_text(source), target_root)))
+                if action == "create_from_template":
+                    if preimage != "missing" or postimage != desired or basis != "target_owned_after_creation":
+                        return refused()
+                elif action == "preserve":
+                    if preimage in {"missing", "not-a-file"} or preimage != postimage or basis != "target_owned_after_creation":
+                        return refused()
+                else:
+                    return refused()
+            elif kind == "portable_managed_section":
+                rows = prior_receipt.get("managed", {}) if prior_receipt else {}
+                prior_row = rows.get(target_rel) if isinstance(rows, dict) else None
+                entry = receipt_managed_entry(prior_receipt, target_rel, source_rel)
+                if prior_row is not None and (entry is None or entry.get("kind") != "portable_managed_section"):
+                    return refused()
+                if action in {"unchanged", "preserve_local"} or observed == preimage:
+                    planned, conflict = agents_operation(source, source_rel,
+                        portable_target_path(target_root, target_rel), target_rel, prior_receipt, predecessor_pack)
+                    if conflict or planned != item:
+                        return refused()
+                elif action in {"merge_agents", "update_owned"}:
+                    current_block = portable_managed_block(read_text(portable_target_path(target_root, target_rel)))
+                    if (current_block is None or digest_bytes(current_block.encode("utf-8")) != source_digest
+                        or item.get("installed_digest") != source_digest or postimage != observed):
+                        return refused()
+                    if action == "merge_agents":
+                        if prior_row is not None or basis != "new_managed_section":
+                            return refused()
+                    elif not (
+                        (entry is not None and entry.get("ownership") == "aide_portable_managed"
+                         and entry.get("local_overlay") is not True
+                         and receipt_matches_predecessor_baseline(predecessor_pack, source_rel, "portable_managed_section", entry)
+                         and basis == "installed_receipt")
+                        or (prior_receipt is None and predecessor_pack is not None
+                            and predecessor_installed_digest(predecessor_pack, source_rel, "portable_managed_section") is not None
+                            and basis == "validated_predecessor_pack")
+                    ):
+                        return refused()
+                else:
+                    return refused()
+            elif kind == "target_owned_additive":
+                if action == "unchanged":
+                    if preimage != postimage or basis != "additive_ignore_rules":
+                        return refused()
+                elif action == "ensure_local_state_ignore":
+                    if basis != "additive_ignore_rules" or postimage != source_digest:
+                        return refused()
+                    if observed == preimage:
+                        existing = read_text(portable_target_path(target_root, target_rel)) if preimage != "missing" else None
+                        if digest_bytes(text_output_bytes(ensure_target_gitignore_text(existing))) != postimage:
+                            return refused()
+                    elif digest_bytes(text_output_bytes(ensure_target_gitignore_text(
+                        read_text(portable_target_path(target_root, target_rel))))) != postimage:
+                        return refused()
+                else:
+                    return refused()
+            if action == "resolve_owned":
+                data = read_portable_resolution_bytes(Path(resolutions[target_rel]), pack_root, target_root)
+                if digest_bytes(data) != item.get("resolution_digest") or digest_bytes(data) != item.get("postimage_digest"):
+                    return refused()
+                resolution_data[target_rel] = data
+
+        def external_inputs_match() -> bool:
+            try:
+                current_disabled, current_controls = project_update_controls(target_root, prior_receipt)
+                if current_disabled != disabled or current_controls != controls_digest:
+                    return False
+                return all(read_portable_resolution_bytes(Path(resolutions[rel]), pack_root, target_root) == body for rel, body in resolution_data.items())
+            except (OSError, RuntimeError, ValueError):
+                return False
+
+        written: list[str] = []
+        for item in operations:
+            if item.get("action") not in write_actions or item.get("preimage_digest") == item.get("postimage_digest"):
+                continue
+            observed = verified_observed_digest(item["target"])
+            if observed == item["postimage_digest"]:
+                continue
+            if observed != item["preimage_digest"] or not external_inputs_match():
+                return refused()
+            try:
+                if apply_import_operation(pack_root, target_root, item, resolution_data):
+                    written.append(item["target"])
+            except (OSError, RuntimeError, ValueError):
+                return refused()
+        if not external_inputs_match() or any(
+            verified_observed_digest(item["target"]) != item["postimage_digest"]
+            for item in operations
+        ):
+            return refused()
+        if target_file_digest(portable_target_path(target_root, PORTABLE_IMPORT_RECEIPT_PATH)) != pending["receipt_preimage_digest"]:
+            return refused()
+        valid, problems = validate_pack_checksums(pack_root)
+        if not valid or problems or import_pack_identity(pack_root) != next_receipt["pack"]:
+            return refused()
+        # Keep every existing postimage regular, single-linked, and immutable
+        # until the receipt and intent have been published/retired.
+        with ExitStack() as guards:
+            for item in operations:
+                postimage = item["postimage_digest"]
+                if postimage == "missing":
+                    continue
+                target = portable_target_path(target_root, item["target"])
+                guards.enter_context(windows_pinned_directory(target.parent, for_write=False))
+                kernel, handle = portable_import_verified_leaf(target, postimage, read_only=True)
+                guards.callback(kernel.CloseHandle, handle)
+            controls_path = portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)
+            if not os.path.lexists(controls_path):
+                if controls_digest != "missing" or disabled:
+                    raise RuntimeError("project controls disappeared before publication")
+                guards.enter_context(portable_import_guard_missing_controls(target_root))
+            else:
+                guards.enter_context(windows_pinned_directory(controls_path.parent, for_write=False))
+                captured_controls: list[bytes] = []
+                kernel, handle = portable_import_verified_leaf(controls_path, None,
+                    read_only=True, max_bytes=65536, capture_out=captured_controls)
+                guards.callback(kernel.CloseHandle, handle)
+                raw_controls = b"".join(captured_controls)
+                controls_record = json.loads(raw_controls.decode("utf-8"))
+                if isinstance(controls_record, dict) and controls_record.get("schema_version") == PROJECT_CUSTOMIZATIONS_SCHEMA_V2:
+                    load_project_customizations(target_root, record_override=controls_record)
+                    guarded_disabled = {item["feature_id"]: item.get("rationale", "unknown")
+                        for item in controls_record["disabled_features"]}
+                    guarded_digest = digest_bytes(raw_controls)
+                else:
+                    guarded_disabled, guarded_digest = {}, "missing"
+                    if prior_receipt and prior_receipt.get("disabled_features"):
+                        raise RuntimeError("disabled-feature controls changed before publication")
+                if guarded_disabled != disabled or guarded_digest != controls_digest:
+                    raise RuntimeError("project controls changed before publication")
+            for target_rel, data in resolution_data.items():
+                resolution_path = Path(os.path.abspath(resolutions[target_rel]))
+                guards.enter_context(windows_pinned_directory(resolution_path.parent, for_write=False))
+                kernel, handle = portable_import_verified_leaf(resolution_path, digest_bytes(data),
+                    read_only=True, max_bytes=4 * 1024 * 1024)
+                guards.callback(kernel.CloseHandle, handle)
+            receipt_bytes = stable_json_text(next_receipt).encode("utf-8")
+            portable_import_write_exact(target_root, PORTABLE_IMPORT_RECEIPT_PATH, receipt_bytes,
+                pending["receipt_preimage_digest"], pending.get("receipt_backup_rel"))
+            portable_import_delete_exact(target_root, PORTABLE_IMPORT_INTENT_PATH, stable_json_text(pending).encode("utf-8"))
+        return {"status": "RECOVERED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root),
+            "operation_count": len(operations), "conflicts": [], "skipped": skipped, "operations": operations,
+            "written": sorted(written), "plan_digest": expected_plan_digest,
+            "receipt": PORTABLE_IMPORT_RECEIPT_PATH, "receipt_written": True,
+            "project_controls_digest": controls_digest}
+    except (KeyError, TypeError, OSError, RuntimeError, ValueError, UnicodeDecodeError):
+        return refused()
+
+
 def _apply_import_pack_unlocked(
     pack_root: Path,
     target_root: Path,
@@ -42081,6 +42494,7 @@ def _apply_import_pack_unlocked(
     expected_plan_digest: str | None = None,
     fail_after_writes: int | None = None,
     resolutions: dict[str, Path] | None = None,
+    recover_partial: bool = False,
 ) -> dict[str, object]:
     pack_root = pack_root.resolve()
     target_root = target_root.resolve()
@@ -42098,11 +42512,16 @@ def _apply_import_pack_unlocked(
             raise ValueError("invalid predecessor pack checksums: " + "; ".join(predecessor_problems))
     if portable_target_path(target_root, PORTABLE_REPAIR_INTENT_PATH).exists():
         raise ValueError("pending portable repair intent requires repair recovery")
+    if recover_partial and (dry_run or expected_plan_digest is None or os.name != "nt"):
+        raise ValueError("partial import recovery requires Windows, apply mode and --expect-plan")
     pending = load_portable_import_intent(target_root)
     if pending is not None:
         recovery = classify_portable_import_recovery(target_root, pending)
         if dry_run:
             return {"status": "RECOVERY_REQUIRED", "dry_run": True, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
+        if recover_partial and recovery["classification"] == "partial":
+            return recover_partial_import(pack_root, target_root, pending, recovery, mode,
+                predecessor_pack, expected_plan_digest, resolutions or {})
         if recovery["classification"] == "completed":
             expected_controls = pending["next_receipt"].get("project_controls_digest")
             if expected_controls not in {None, "missing"} and target_file_digest(portable_target_path(target_root, PROJECT_CUSTOMIZATIONS_PATH)) != expected_controls:
@@ -42127,6 +42546,8 @@ def _apply_import_pack_unlocked(
                 portable_target_path(target_root, PORTABLE_IMPORT_INTENT_PATH).unlink()
         else:
             return {"status": "RECOVERY_REQUIRED", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(pending.get("operations", [])), "conflicts": [], "skipped": [], "operations": [], "written": [], "recovery": recovery, "plan_digest": pending.get("plan_digest")}
+    if recover_partial:
+        raise ValueError("partial import recovery requires a pending intent")
     prior_receipt = load_portable_import_receipt(target_root)
     disabled_features, controls_digest = project_update_controls(target_root, prior_receipt)
     if os.name != "nt" and not dry_run and (resolutions or disabled_features or (prior_receipt and prior_receipt.get("disabled_features"))):
@@ -42145,6 +42566,7 @@ def _apply_import_pack_unlocked(
     resolution_data: dict[str, bytes] = {}
     operations, conflicts, skipped = import_pack_plan(pack_root, target_root, mode=mode, predecessor_pack=predecessor_pack, resolutions=resolutions, resolution_data=resolution_data, disabled_features=disabled_features)
     plan_digest = import_plan_digest(pack_root, target_root, mode, operations, conflicts, skipped, predecessor_pack, controls_digest)
+    plan_operations = [dict(operation) for operation in operations]
     if expected_plan_digest is not None and expected_plan_digest != plan_digest:
         return {"status": "STALE_PLAN", "dry_run": False, "mode": mode, "target": normalize_rel(target_root), "operation_count": len(operations), "conflicts": conflicts, "skipped": skipped, "operations": operations, "written": [], "plan_digest": plan_digest, "expected_plan_digest": expected_plan_digest, "project_controls_digest": controls_digest}
     if dry_run:
@@ -42169,7 +42591,7 @@ def _apply_import_pack_unlocked(
         if operation.get("action") in {"copy", "update_owned", "resolve_owned", "merge_agents", "create_from_template", "ensure_local_state_ignore"} and operation.get("preimage_digest") not in {"missing", operation.get("postimage_digest")}:
             relative = Path(operation["target"])
             operation["backup_rel"] = (relative.parent / f".{relative.name}.aide-import-backup-{plan_digest[:20]}").as_posix()
-    intent = build_portable_import_intent(target_root, plan_digest, operations, next_receipt)
+    intent = build_portable_import_intent(target_root, plan_digest, operations, next_receipt, skipped, plan_operations)
     intent["receipt_preimage_digest"] = receipt_preimage_digest
     intent["receipt_postimage_digest"] = digest_bytes(stable_json_text(next_receipt).encode("utf-8"))
     if receipt_preimage_digest != "missing":
@@ -42276,11 +42698,12 @@ def apply_import_pack(
     expected_plan_digest: str | None = None,
     fail_after_writes: int | None = None,
     resolutions: dict[str, Path] | None = None,
+    recover_partial: bool = False,
 ) -> dict[str, object]:
     if dry_run:
-        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions)
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions, recover_partial)
     with portable_lifecycle_lock(target_root.resolve()):
-        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions)
+        return _apply_import_pack_unlocked(pack_root, target_root, dry_run, mode, predecessor_pack, expected_plan_digest, fail_after_writes, resolutions, recover_partial)
 
 
 def reject_portable_rollback_pack_reparse(pack_root: Path) -> None:
@@ -42714,6 +43137,8 @@ def command_repair_owned_file(args: argparse.Namespace) -> int:
 
 
 def command_export_pack(args: argparse.Namespace) -> int:
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
     pack_root, report = build_export_pack(args.repo_root, name=args.name, output=args.output)
     print("AIDE Lite export-pack")
     print(f"pack: {normalize_rel(pack_root.relative_to(args.repo_root))}")
@@ -42751,12 +43176,13 @@ def command_import_pack(args: argparse.Namespace) -> int:
         predecessor_pack=predecessor_pack,
         expected_plan_digest=args.expect_plan,
         resolutions=resolutions,
+        recover_partial=args.recover_partial,
     )
     explanations = explain_import_result(result, target_root, customizations) if customizations is not None else []
     if args.feedback_out:
         if result["status"] not in {"PLANNED", "PLANNED_CONFLICT"}:
             raise ValueError("feedback output requires a complete import dry-run plan")
-        write_import_feedback(Path(args.feedback_out), pack_root, target_root, result, explanations)
+        write_import_feedback(Path(args.feedback_out), pack_root, target_root, result, explanations, predecessor_pack=predecessor_pack)
     print("AIDE Lite import-pack")
     print(f"pack: {normalize_rel(pack_root)}")
     print(f"target: {normalize_rel(target_root)}")
@@ -43680,7 +44106,53 @@ def run_selftest() -> tuple[bool, list[str]]:
     return result
 
 
+def command_managed_job(args: argparse.Namespace) -> int:
+    """Explicit maintainer execution; inspect never projects tracked reports."""
+    root = str(args.repo_root)
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    from core.execution import managed_workspace
+    try:
+        if args.job_command == "recover":
+            result = managed_workspace.recover(args.config)
+        else:
+            job = managed_workspace.read_json(args.manifest) if args.manifest else None
+            if args.job_command == "inspect":
+                result = managed_workspace.inspect(args.config, job)
+            else:
+                result = managed_workspace.run(args.config, job)
+        print(json.dumps(result, sort_keys=True, indent=2))
+        if args.job_command == "run":
+            return 0 if result.get("result", {}).get("exit_code") == 0 and result["result"].get("reason") == "exited" else 1
+        return 0
+    except (OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:
+        print(json.dumps({"result": "REFUSED", "reason": str(exc), "writes": args.job_command != "inspect"}))
+        return 1
+
+
+def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False, canonical_paths=()) -> bool:
+    # The source-only execution owner is deliberately absent from Lite exports.
+    # Preserve their established consumer selftest/export compatibility.
+    if not (repo_root / "core/execution/managed_workspace.py").is_file():
+        return True
+    if str(repo_root) not in sys.path:
+        sys.path.insert(0, str(repo_root))
+    from core.execution import managed_workspace
+    try:
+        record = managed_workspace.current_context(repo_root)
+        if packaging:
+            canonical_paths = (EXPORT_PACK_PATH, ".aide/release")
+        if canonical_paths:
+            managed_workspace.require_canonical_outputs(record, canonical_paths)
+        return True
+    except (OSError, ValueError, KeyError) as exc:
+        print(f"result: REFUSED\nresource_admission: {exc}")
+        return False
+
+
 def command_internal_test(args: argparse.Namespace, label: str) -> int:
+    if not source_maintainer_job_guard(args.repo_root):
+        return 1
     try:
         ok, messages = run_selftest()
     except AssertionError as exc:
@@ -44085,7 +44557,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_inspect_parser = task_subparsers.add_parser("inspect")
     task_inspect_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_inspect_parser.set_defaults(handler=command_task_inspect)
-    task_subparsers.add_parser("status").set_defaults(handler=command_task_status)
+    task_status_parser = task_subparsers.add_parser("status")
+    task_status_parser.add_argument("--write-reports", action="store_true", help="Explicitly generate tracked Task OS status reports")
+    task_status_parser.set_defaults(handler=command_task_status)
     task_subparsers.add_parser("classify").set_defaults(handler=command_task_classify)
     task_subparsers.add_parser("repair-plan").set_defaults(handler=command_task_repair_plan)
     task_subparsers.add_parser("requeue-plan").set_defaults(handler=command_task_requeue_plan)
@@ -44703,13 +45177,17 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
 
     git_parser = subparsers.add_parser("git")
     git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)
-    git_subparsers.add_parser("detect").set_defaults(handler=command_git_detect)
+    git_detect_parser = git_subparsers.add_parser("detect")
+    git_detect_parser.add_argument("--write-reports", action="store_true", help="Explicitly project tracked reports.")
+    git_detect_parser.set_defaults(handler=command_git_detect)
     git_subparsers.add_parser("doctor").set_defaults(handler=command_git_doctor)
     git_subparsers.add_parser("status").set_defaults(handler=command_git_status)
     git_subparsers.add_parser("workflow").set_defaults(handler=command_git_workflow)
     git_subparsers.add_parser("roles").set_defaults(handler=command_git_roles)
     git_subparsers.add_parser("policy").set_defaults(handler=command_git_policy)
-    git_subparsers.add_parser("plan").set_defaults(handler=command_git_plan)
+    git_plan_parser = git_subparsers.add_parser("plan")
+    git_plan_parser.add_argument("--write-reports", action="store_true", help="Explicitly project tracked reports.")
+    git_plan_parser.set_defaults(handler=command_git_plan)
     git_sync_parser = git_subparsers.add_parser("sync")
     git_sync_parser.add_argument("--dry-run", action="store_true", help="Report only; default behavior.")
     git_sync_parser.add_argument("--apply", action="store_true", help="Apply local sync action explicitly.")
@@ -44809,6 +45287,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     import_parser.add_argument("--from-pack", help="Exact validated predecessor pack required for automatic managed updates, manual resolution, or an unrecorded baseline.")
     import_parser.add_argument("--resolve", nargs=2, action="append", metavar=("TARGET", "FILE"), help="Use FILE's exact bytes as the explicit postimage for a receipt-owned conflict; requires --from-pack and --expect-plan on apply.")
     import_parser.add_argument("--expect-plan", help="Exact plan digest printed by a prior dry-run; changed inputs refuse apply.")
+    import_parser.add_argument("--recover-partial", action="store_true", help="Explicitly reconcile a partial import only from its exact intent, pack, predecessor, inputs and plan.")
     import_parser.add_argument(
         "--mode",
         choices=sorted(IMPORT_MODES),
@@ -44861,6 +45340,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     adapter_subparsers.add_parser("generate").set_defaults(handler=command_adapter_generate)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
+    job_parser = subparsers.add_parser("job", help="Bounded maintainer jobs with explicit local storage.")
+    job_subparsers = job_parser.add_subparsers(dest="job_command", required=True)
+    for operation in ("inspect", "run", "recover"):
+        operation_parser = job_subparsers.add_parser(operation)
+        operation_parser.add_argument("--config", required=True, help="Existing machine-local storage policy JSON.")
+        operation_parser.add_argument("--manifest", required=operation == "run", help="Exact source-bound job JSON.")
+        operation_parser.set_defaults(handler=command_managed_job)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
     test_parser = subparsers.add_parser("test")
     test_parser.set_defaults(handler=command_test)

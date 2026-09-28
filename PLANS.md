@@ -4094,6 +4094,10 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   `AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01` now owns current export,
   release preview, installed consumers and committed replay; public release
   remains a later exact gate.
+- The accepted generator ran six serial D-managed commands from clean
+  `84e4a733` source. Current local ZIP/tar, release validation, draft validation
+  and canonical checks pass. Commit exact outputs, prove post-commit replay,
+  then test delivered bytes in disposable consumers before artifact review.
 
 ## 2026-09-26 - Stable customization contract follow-up
 

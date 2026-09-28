@@ -1,146 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "33824b369b84",
-      "summary": "Obtain independent exact delta rereview; combine with current dev and its removal-intent gate before artifact and consumer qualification."
-    },
-    {
-      "commit": "d5b44626d6f9",
-      "summary": "Obtain independent technical source review, combine with accepted rollback work, regenerate qualified artifacts and verify disposable consumers before a dev effect."
-    },
-    {
-      "commit": "f2be45ea13ce",
-      "summary": "Integrate accepted rollback source, repair any removal review findings, then qualify the combined delivered bytes."
-    },
-    {
-      "commit": "2c4c9089a546",
-      "summary": "Review this exact source candidate, then regenerate and qualify combined artifacts before dev integration."
-    },
-    {
-      "commit": "03f4b0a1ef37",
-      "summary": "Add the semantic guard, obtain combined review, then merge only independently accepted authored-section source."
-    },
-    {
-      "commit": "1f920ebbf7bf",
-      "summary": "Merge independently accepted removal source and run combined lifecycle checks with the current release generator."
-    },
-    {
-      "commit": "723322cf07ab",
-      "summary": "Run combined tests and independent review, regenerate current artifacts, qualify extracted consumers and replay before any dev effect."
-    },
-    {
-      "commit": "9a0843c3a763",
-      "summary": "Obtain independent source delta review, regenerate new local pack/release bytes, rerun importer and consumer gates, then review the exact dev effect."
-    },
-    {
-      "commit": "db7650536375",
-      "summary": "Converge release metadata without changing archive bytes, prove a zero-diff replay, obtain independent dev-effect acceptance, and integrate into dev."
-    },
-    {
-      "commit": "0c048b3baeb7",
-      "summary": "Replay the exact generator from clean HEAD, prove zero changed release files, then obtain independent dev-effect acceptance and integrate."
-    },
-    {
-      "commit": "7e8816b60af7",
-      "summary": "Complete independent artifact/dev-effect review, then fast-forward and observe dev if accepted."
-    },
-    {
-      "commit": "d4b67c96ff81",
-      "summary": "Land this evidence-only closeout, then implement project-supplied three-way update resolution and disabled-feature preservation in a new bounded task."
-    },
-    {
-      "commit": "63484c756197",
-      "summary": "Apply the test-only patch, preserve red results, implement the guarded update contract, then qualify source and delivered bytes."
-    },
-    {
-      "commit": "acbcb9c8bd62",
-      "summary": "Obtain independent review of this exact source commit, run full affected suites, then regenerate and qualify delivered ZIP/tar bytes before dev integration."
-    },
-    {
-      "commit": "acbcb9c8bd62",
-      "summary": "Obtain independent review of this exact source commit, run full affected suites, then regenerate and qualify delivered ZIP/tar bytes before dev integration."
-    },
-    {
-      "commit": "3239530132a6",
-      "summary": "Finish the full importer suite, obtain exact delta review, then regenerate and qualify the combined portable pack and release previews."
-    },
-    {
-      "commit": "12758e07373f",
-      "summary": "Finish the full importer suite, review this exact repair, then qualify regenerated ZIP/tar bytes and dev integration."
-    },
-    {
-      "commit": "0aa5a9d23b10",
-      "summary": "Implement the read-only health command on this branch, test disposable consumers, obtain technical review and integrate only after its upstream task qualifies."
-    },
-    {
-      "commit": "03c5e7f81c22",
-      "summary": "Obtain independent source/security review, combine with the qualified update branch, and validate final delivered bytes before dev integration."
-    },
-    {
-      "commit": "486aa2bd0f5f",
-      "summary": "Obtain scoped independent review of this exact repair, then qualify combined source and artifacts before dev integration."
-    },
-    {
-      "commit": "558638203fae",
-      "summary": "Obtain scoped independent rereview, then combine with the qualified update branch and validate delivered bytes."
-    },
-    {
-      "commit": "c68077548ee9",
-      "summary": "Record the complete rerun, qualify combined source and delivered bytes, and obtain exact integration review."
-    },
-    {
-      "commit": "99a9e54da887",
-      "summary": "Run full combined importer and affected canonical suites, generate once from this source, then obtain artifact and exact dev-effect review."
-    },
-    {
-      "commit": "74093ecacb4f",
-      "summary": "Implement and independently review the exact version, support and campaign-scoped publication contract; route later effects through a separate frozen manifest."
-    },
-    {
-      "commit": "aa3bcfec849e",
-      "summary": "Obtain independent review of this exact contract commit, then integrate qualified policy before final release freeze."
-    },
-    {
-      "commit": "d137f936bf0a",
-      "summary": "Replay generators after this commit with zero derived changes, then obtain exact dev effect review and integrate through observed remote dev."
-    },
-    {
-      "commit": "54b9d45eeaa3",
-      "summary": "Prove four-command zero-change replay and canonical checks, then obtain exact dev effect review."
-    },
-    {
-      "commit": "a32535a2675f",
-      "summary": "Repair the reviewed stable Lite contract candidate against combined dev, qualify the final declared profile, then proceed through exact release gates."
-    },
-    {
-      "commit": "060de47208b3",
-      "summary": "Repair the contract findings, obtain superseding technical review, and use a separate bounded projection task for regenerated artifacts."
-    },
-    {
-      "commit": "4315a8130db2",
-      "summary": "Obtain focused independent source review, regenerate derived artifacts under a separately scoped WorkUnit, and validate the exact combined candidate before dev effect."
-    },
-    {
-      "commit": "d38e5839fe10",
-      "summary": "Obtain a final independent verdict on the exact evidence-corrected contract subject."
-    },
-    {
-      "commit": "7168ee1cfaa8",
-      "summary": "Merge the evidence-only source correction, confirm focused independent source verdict, then generate and validate current artifacts."
-    },
-    {
-      "commit": "d3d9848569a9",
-      "summary": "Confirm the exact technical verdict, then generate and qualify current preview artifacts."
-    },
-    {
-      "commit": "8365aa61b7ca",
-      "summary": "Generate current export and release previews, inspect artifact bytes, and prove committed replay before effect review."
-    },
-    {
-      "commit": "d0bfa4045a3c",
-      "summary": "Prove committed-candidate metadata replay and canonical checks, obtain independent exact artifact and effect verdict, then integrate qualified dev source."
-    },
-    {
       "commit": "2defcad541d0",
       "summary": "Run the four release commands from this committed candidate, require zero tracked changes, then obtain exact artifact and dev-effect review."
     },
@@ -203,169 +63,162 @@
     {
       "commit": "0509e1611b18",
       "summary": "Generate once from this clean committed source, then qualify exact artifacts and effect."
+    },
+    {
+      "commit": "dc8697e336eb",
+      "summary": "Run post-commit release replay, converge metadata if needed, then obtain exact artifact/effect review."
+    },
+    {
+      "commit": "10fd7a207f16",
+      "summary": "Require four-command clean replay, canonical checks and independent exact artifact/effect review."
+    },
+    {
+      "commit": "22257dc6ad9e",
+      "summary": "Freeze this exact candidate, replay once, obtain independent artifact/effect verdict, then perform only qualified dev effect."
+    },
+    {
+      "commit": "6e8af2bd8d16",
+      "summary": "Run the final exact range and clean replay, then request focused independent rereview before dev integration."
+    },
+    {
+      "commit": "493e3f13c1b2",
+      "summary": "Independently review this exact closeout, integrate if qualified, then execute final Lite profile qualification."
+    },
+    {
+      "commit": "5f2441d18772",
+      "summary": "Run abrupt-exit consumers, preserve byte-bound evidence, seek independent technical review and integrate truthful closeout."
+    },
+    {
+      "commit": "f44f3a28fc08",
+      "summary": "Independently review this exact evidence candidate for a dev effect, then implement and qualify bounded partial recovery."
+    },
+    {
+      "commit": "e88b1c2ee6f3",
+      "summary": "Obtain exact focused review; if accepted, perform one-writer dev fast-forward and normal push after fresh checks, then route partial recovery source work."
+    },
+    {
+      "commit": "d4b7657d9c0e",
+      "summary": "Add red adversarial regressions, implement explicit recovery, obtain independent source review, then project and qualify new delivered bytes."
+    },
+    {
+      "commit": "547ea2b09235",
+      "summary": "Finish importer suite, obtain independent source review, then project and qualify new delivered bytes before dev integration."
+    },
+    {
+      "commit": "052a0a926527",
+      "summary": "Finish combined tests, obtain independent exact rereview, then project and qualify new delivered bytes."
+    },
+    {
+      "commit": "dfc8048bc005",
+      "summary": "Obtain exact source rereview, run the final importer suite, then project and qualify the delivered archive."
+    },
+    {
+      "commit": "36e1a6d54aa0",
+      "summary": "Run required importer validation through the bounded runner after storage placement is resolved."
+    },
+    {
+      "commit": "5ea1f7cdd53c",
+      "summary": "Obtain exact technical review, replay affected checks and run importer qualification through approved storage."
+    },
+    {
+      "commit": "5ea1f7cdd53c",
+      "summary": "Obtain exact technical review, replay affected checks and run importer qualification through approved storage."
+    },
+    {
+      "commit": "11226a6e7fd0",
+      "summary": "Run the affected host suite through the runner, obtain exact delta review, qualify packaging placement and continue importer acceptance."
+    },
+    {
+      "commit": "8acfecc44e61",
+      "summary": "Obtain exact delta review, configure the approved pool, run admitted importer and generator qualification and continue delivery."
+    },
+    {
+      "commit": "b325deeaca74",
+      "summary": "Obtain narrow delta acceptance, exercise the corrected mechanism and continue dependency-ready product qualification."
+    },
+    {
+      "commit": "8aa60c7bb8a2",
+      "summary": "Run and collect selected importer regressions through admitted execution, then continue available product work."
+    },
+    {
+      "commit": "e87386e55eda",
+      "summary": "Run the seven changed-scope cases under bounded admission, preserve result and obtain narrow oracle acceptance."
+    },
+    {
+      "commit": "0302b18c724d",
+      "summary": "Run bounded Task OS checks, obtain narrow query review, publish the task candidate and continue placement-ready qualification."
+    },
+    {
+      "commit": "e185d2898fb2",
+      "summary": "Obtain narrow independent test-placement review and preserve the task ref."
+    },
+    {
+      "commit": "260139d2d108",
+      "summary": "Normally push only this task ref and observe its exact remote identity."
+    },
+    {
+      "commit": "119529d076fd",
+      "summary": "Preserve the exact normal task ref; do not promote or publish release bytes."
+    },
+    {
+      "commit": "f0eabe41265d",
+      "summary": "Obtain exact independent policy/doc review, preserve its scoped verdict, then continue qualification."
+    },
+    {
+      "commit": "c6d104f665e3",
+      "summary": "Obtain exact superseding technical acceptance, then qualify combined delivered bytes."
+    },
+    {
+      "commit": "53be4fc43ab2",
+      "summary": "Record the normal task-ref effect, push it and verify the observed remote identity."
+    },
+    {
+      "commit": "a1fe9fd57ac1",
+      "summary": "Normally sync dev and the existing task checkout/remotes and observe exact refs."
+    },
+    {
+      "commit": "71ef35127845",
+      "summary": "Obtain exact independent policy/source and source-only dev-effect review."
+    },
+    {
+      "commit": "1d70597894e3",
+      "summary": "Execute clean fast-forward and normal task/dev pushes, then observe remote identities."
+    },
+    {
+      "commit": "e18f983b0937",
+      "summary": "Run the frozen integrated importer suite and preserve actual resource/retirement results."
+    },
+    {
+      "commit": "8040b10a5d2c",
+      "summary": "Review this exact source candidate, then run all 110 importer cases in bounded partitions through the D runner."
+    },
+    {
+      "commit": "a835cbad6d5b",
+      "summary": "Verify current dev ancestry and integrate the accepted source."
+    },
+    {
+      "commit": "1d3d9fe1bb51",
+      "summary": "Verify dev ancestry, integrate accepted source, and generate current artifacts under bounded canonical-output reservations."
+    },
+    {
+      "commit": "84e4a7330ce9",
+      "summary": "Commit clean admission, run serial D-managed generation with canonical reservations, then qualify bytes and replay."
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Security",
-      "commit": "33824b369b84",
-      "subject": "fix(rollback): reject reparse pack roots before rollback",
-      "summary": "Rollback no longer accepts a checksum-valid payload through a reparse pack boundary."
-    },
-    {
-      "breaking": false,
       "category": "Added",
-      "commit": "d5b44626d6f9",
-      "subject": "feat(removal): detach owned AGENTS section in brownfield projects",
-      "summary": "receipt-owned managed-section removal inside authored AGENTS.md on Windows, preserving all outside bytes."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "db7650536375",
-      "subject": "chore(lifecycle): project reviewed lifecycle source into local pack",
-      "summary": "Local delivered pack evidence for supported rollback, owned removal, and interruption recovery."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "63484c756197",
-      "subject": "chore(update): admit bounded successive project update task",
-      "summary": "Bounded plan for manual portable-pack conflict resolution and disabled-feature preservation."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "acbcb9c8bd62",
-      "subject": "feat(update): preserve project choices across successive packs",
-      "summary": "Manual three-way portable-pack resolution and explicit optional-example disable survival."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "03c5e7f81c22",
-      "subject": "feat(repair): inspect installed Lite pack health",
-      "summary": "Inspect the health of a delivered Lite installation without modifying its target."
+      "commit": "5ea1f7cdd53c",
+      "subject": "feat(execution): bound maintainer jobs and retire owned scratch",
+      "summary": "explicit bounded maintainer job inspect/run/recover commands."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "0c048b3baeb7",
-      "subject": "chore(lifecycle): converge local release metadata after projection",
-      "summary": "Local release provenance now records clean ancestor status for the lifecycle pack."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "7e8816b60af7",
-      "subject": "chore(lifecycle): record zero-diff release replay evidence",
-      "summary": "Recorded local lifecycle release replay evidence."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "d4b67c96ff81",
-      "subject": "chore(lifecycle): record observed dev integration and close task",
-      "summary": "Recorded completed lifecycle dev integration evidence and next mandatory product gap."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "0aa5a9d23b10",
-      "subject": "chore(repair): admit installed Lite health diagnosis task",
-      "summary": "Track installed Lite repair diagnosis as a bounded campaign task."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "c68077548ee9",
-      "subject": "test(import): bind legacy update and rollback oracles",
-      "summary": "Keep predecessor-bound import and rollback regressions aligned with the validated receipt contract."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "99a9e54da887",
-      "subject": "chore(campaign): combine update and repair health candidates",
-      "summary": "Combine delivered update and read-only repair-health implementation for qualification."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "74093ecacb4f",
-      "subject": "chore(release): admit stable contract WorkUnit",
-      "summary": "Track the bounded stable release contract as a campaign WorkUnit."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "aa3bcfec849e",
-      "subject": "chore(release): define stable Lite contract candidate",
-      "summary": "Define a reviewable candidate for the first stable Lite release contract."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "d137f936bf0a",
-      "subject": "chore(pack): refresh combined update and health previews",
-      "summary": "Refresh local portable-pack and release-preview outputs for qualified combined source."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "2c4c9089a546",
-      "subject": "fix(removal): reconcile authored AGENTS backup before receipt retirement",
-      "summary": "authored AGENTS backup recovery retains receipt and intent until exact original backup cleanup is reconciled."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "1f920ebbf7bf",
-      "subject": "fix(rollback): block rollback while removal recovery is pending",
-      "summary": "Pending portable removal now blocks exact-predecessor rollback preview and apply."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "9a0843c3a763",
-      "subject": "fix(lifecycle): accept exact CRLF managed section in rollback",
-      "summary": "Exact predecessor rollback now accepts an unchanged authored CRLF AGENTS.md managed section."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "acbcb9c8bd62",
-      "subject": "feat(update): preserve project choices across successive packs",
-      "summary": "Missing receipt-owned files now conflict instead of being silently recreated."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "3239530132a6",
-      "subject": "fix(update): preserve receipt-owned CRLF managed sections",
-      "summary": "Receipt-owned CRLF AGENTS sections update when their upstream managed block changes."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "12758e07373f",
-      "subject": "fix(update): bind owned updates to the validated predecessor",
-      "summary": "Automatic managed updates now require a validated predecessor baseline instead of a local receipt claim alone."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "486aa2bd0f5f",
-      "subject": "fix(repair): bind health receipt rows to pack baseline",
-      "summary": "Reject receipt claims that disagree with the delivered pack during installed health inspection."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "558638203fae",
-      "subject": "fix(repair): preserve raw CRLF pack block identity",
-      "summary": "Recognize valid CRLF portable guidance blocks during read-only installed health inspection."
+      "commit": "e185d2898fb2",
+      "subject": "test(task-os): isolate golden report writes in admitted scratch",
+      "summary": "Task OS golden validation leaves source projections unchanged."
     },
     {
       "breaking": false,
@@ -401,150 +254,129 @@
       "commit": "bc1867a06933",
       "subject": "fix(release): distinguish lifecycle planners from bounded apply",
       "summary": "local draft lifecycle claims now match the bounded Windows apply candidates."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "6e8af2bd8d16",
+      "subject": "fix(release): bind exact preview effect evidence",
+      "summary": "preview effect evidence now identifies its exact commit range and replay state."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "547ea2b09235",
+      "subject": "feat(import): recover exact partial Windows portable imports",
+      "summary": "allow explicit Windows recovery of an exact partial portable import without replaying changed project bytes."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "052a0a926527",
+      "subject": "fix(import): reject forged partial recovery intents",
+      "summary": "refuse forged partial import ownership and stale controls during recovery."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "dfc8048bc005",
+      "subject": "fix(import): pin recovery inputs through intent retirement",
+      "summary": "prevent controls and resolution drift during final partial-import publication."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "5ea1f7cdd53c",
+      "subject": "feat(execution): bound maintainer jobs and retire owned scratch",
+      "summary": "default Git query report churn and lost cleanup after interruption."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "11226a6e7fd0",
+      "subject": "fix(execution): enforce resource admission on maintainer commands",
+      "summary": "Source maintainer test and evaluation entrypoints enforce bounded job admission."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "8acfecc44e61",
+      "subject": "fix(execution): reserve canonical generator output capacity",
+      "summary": "Generator source output allocation requires capacity reservations."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "b325deeaca74",
+      "subject": "fix(execution): qualify canonical outputs during crash recovery",
+      "summary": "Recovery cannot bypass source-output resource qualification."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "0302b18c724d",
+      "subject": "fix(queue): inspect task status without rewriting reports",
+      "summary": "Task status inspection no longer generates tracked reports by default."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "f0eabe41265d",
+      "subject": "fix(contract): retain customization and partial recovery interfaces",
+      "summary": "Candidate stable interface includes requested customization and recovery forms."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "c6d104f665e3",
+      "subject": "fix(import): protect predecessor packs from feedback output",
+      "summary": "Explicit import feedback refuses every supplied input pack and the target."
+    },
+    {
+      "breaking": false,
+      "category": "Removed",
+      "commit": "119529d076fd",
+      "subject": "chore(resource): retire verified duplicate consumer expansions",
+      "summary": "Two verified duplicate consumer ZIP expansions."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "36e1a6d54aa0",
+      "subject": "docs(recovery): preserve exact input-guard review",
+      "summary": "preserve focused source review with explicit qualification limits."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "8aa60c7bb8a2",
+      "subject": "docs(execution): preserve accepted resource source and bounded routing",
+      "summary": "retain resource source review and bounded product validation routing."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "260139d2d108",
+      "subject": "docs(evidence): preserve accepted bounded execution checkpoint",
+      "summary": "Preserve accepted resource and product validation checkpoint."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "71ef35127845",
+      "subject": "docs(policy): align runtime status and adopted specification roles",
+      "summary": "Align current source status and already adopted specification boundaries."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "e87386e55eda",
+      "subject": "test(import): bound fixtures for partial recovery regressions",
+      "summary": "avoid full design-family fixture installs for focused partial-recovery boundaries."
     }
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "33824b369b84",
-      "summary": "Hostile concurrent pack mutation and broader rollback path-set changes remain outside this bounded source candidate."
-    },
-    {
-      "commit": "d5b44626d6f9",
-      "summary": "An uncertain failed replacement can leave a recorded backup for manual recovery; non-Windows apply and final artifact qualification remain open."
-    },
-    {
-      "commit": "f2be45ea13ce",
-      "summary": "Authored-section removal source remains under independent review; this admission does not accept it."
-    },
-    {
-      "commit": "2c4c9089a546",
-      "summary": "Independent source rereview and combined artifact qualification remain pending. Legacy intents without original identity fail closed if a backup remains."
-    },
-    {
-      "commit": "03f4b0a1ef37",
-      "summary": "Pending-removal rollback interaction still needs a source guard and regression before integration acceptance."
-    },
-    {
-      "commit": "1f920ebbf7bf",
-      "summary": "Authored-section source and delivered artifacts still require combination and qualification before a dev effect."
-    },
-    {
-      "commit": "723322cf07ab",
-      "summary": "Source acceptance does not clear stale generated-pack provenance or qualify delivered bytes."
-    },
-    {
-      "commit": "9a0843c3a763",
-      "summary": "The local archives generated from source 723322cf remain rejected and are not advanced to dev."
-    },
-    {
-      "commit": "db7650536375",
-      "summary": "These are local no-publish artifacts and do not qualify a stable release or hosted/native operation."
-    },
-    {
-      "commit": "0c048b3baeb7",
-      "summary": "These files are local preview artifacts, not a public release."
-    },
-    {
-      "commit": "7e8816b60af7",
-      "summary": "Local preview remains no_publish and does not qualify a stable release."
-    },
-    {
-      "commit": "d4b67c96ff81",
-      "summary": "The local ZIP/tar are no-publish previews; stable release acceptance is still open."
-    },
-    {
-      "commit": "63484c756197",
-      "summary": "The external design note is implementation analysis and does not establish product acceptance."
-    },
-    {
-      "commit": "acbcb9c8bd62",
-      "summary": "The final source has only a focused delta rerun; the full combined importer and delivered-artifact gates remain open."
-    },
-    {
-      "commit": "acbcb9c8bd62",
-      "summary": "The final source has only a focused delta rerun; the full combined importer and delivered-artifact gates remain open."
-    },
-    {
-      "commit": "3239530132a6",
-      "summary": "The source repair is not artifact, dev, native, hosted or stable-release acceptance."
-    },
-    {
-      "commit": "12758e07373f",
-      "summary": "Consumers must retain the exact previous pack for automatic changed-upstream updates; missing history now produces a conflict."
-    },
-    {
-      "commit": "0aa5a9d23b10",
-      "summary": "This admission adds no repair behavior and does not qualify the unfinished upstream update candidate."
-    },
-    {
-      "commit": "03c5e7f81c22",
-      "summary": "The report is a read-only snapshot; effectful repair still rechecks exact pack, receipt, path and plan. Non-Windows observation is not qualified."
-    },
-    {
-      "commit": "486aa2bd0f5f",
-      "summary": "The report is a snapshot and target-local history is not independently authenticated; effectful repair retains its exact rechecks."
-    },
-    {
-      "commit": "558638203fae",
-      "summary": "Health is a snapshot; repair effects still require their own exact plan and effect-time checks."
-    },
-    {
-      "commit": "c68077548ee9",
-      "summary": "This is a test-only adjustment; the ongoing full rerun and independent test-oracle review must still pass before qualification."
-    },
-    {
-      "commit": "99a9e54da887",
-      "summary": "This merge is a local candidate only; neither individual branch result substitutes for combined testing or artifact evidence."
-    },
-    {
-      "commit": "74093ecacb4f",
-      "summary": "No stable version or supported profile is asserted by admission; preview-only release policies remain in force."
-    },
-    {
-      "commit": "aa3bcfec849e",
-      "summary": "No version, tag, asset or shipping profile is selected by this source change; later effect gates remain binding."
-    },
-    {
-      "commit": "d137f936bf0a",
-      "summary": "V2/V3 consumers are synthetic fixtures; these previews do not establish published predecessor, native/hosted, repair/rollback/removal apply or stable-release acceptance."
-    },
-    {
-      "commit": "54b9d45eeaa3",
-      "summary": "This commit changes preview metadata only and does not establish stable release or hosted publication readiness."
-    },
-    {
-      "commit": "a32535a2675f",
-      "summary": "Local preview and synthetic update consumers do not establish a stable supported profile or public release."
-    },
-    {
-      "commit": "060de47208b3",
-      "summary": "Contract policy remains under REQUEST_CHANGES and generated outputs may be stale after its source changes."
-    },
-    {
-      "commit": "4315a8130db2",
-      "summary": "CLI syntax and source review do not qualify delivered archive behavior or clear the provenance failure."
-    },
-    {
-      "commit": "d38e5839fe10",
-      "summary": "Source-only committed export provenance remains stale pending projection."
-    },
-    {
-      "commit": "7168ee1cfaa8",
-      "summary": "Admission does not qualify the source, generated bytes or stable support profile."
-    },
-    {
-      "commit": "d3d9848569a9",
-      "summary": "Existing generated export provenance remains stale until deterministic projection."
-    },
-    {
-      "commit": "8365aa61b7ca",
-      "summary": "Source acceptance alone does not qualify export provenance, archives, dev integration or public release."
-    },
-    {
-      "commit": "d0bfa4045a3c",
-      "summary": "Source-bound generated metadata may require explicit convergence after this commit; current archives are preview-only and synthetic updates are fixture evidence."
-    },
     {
       "commit": "2defcad541d0",
       "summary": "This metadata commit is not a zero-diff replay result and does not authorize dev or public release effects."
@@ -608,152 +440,152 @@
     {
       "commit": "0509e1611b18",
       "summary": "Existing committed export and release preview outputs remain stale until generation."
+    },
+    {
+      "commit": "dc8697e336eb",
+      "summary": "These bytes remain local previews; synthetic update fixtures do not prove a published predecessor path."
+    },
+    {
+      "commit": "10fd7a207f16",
+      "summary": "A successful command exit is not a zero-change replay; that gate must be rerun from this commit."
+    },
+    {
+      "commit": "22257dc6ad9e",
+      "summary": "This evidence-only commit is distinct from source 0509e161, projection dc8697e3 and metadata 10fd7a20."
+    },
+    {
+      "commit": "6e8af2bd8d16",
+      "summary": "This commit changes the effect subject and therefore needs its own exact policy-range receipt and review."
+    },
+    {
+      "commit": "493e3f13c1b2",
+      "summary": "This evidence-only closeout is distinct from the reviewed source/artifact effect commit and requires its own qualified dev effect."
+    },
+    {
+      "commit": "5f2441d18772",
+      "summary": "Current archive is a local preview, and a synthetic successor is not a published predecessor."
+    },
+    {
+      "commit": "f44f3a28fc08",
+      "summary": "Synthetic rollback successor and local preview bytes are not published release qualification."
+    },
+    {
+      "commit": "e88b1c2ee6f3",
+      "summary": "The earlier f44f3a28 effect review remains NO GO; this new commit needs focused review."
+    },
+    {
+      "commit": "d4b7657d9c0e",
+      "summary": "The local ZIP remains a preview and cannot qualify source changes made later."
+    },
+    {
+      "commit": "547ea2b09235",
+      "summary": "Older intents remain safe refusal; this source candidate has not qualified delivered archives or final release."
+    },
+    {
+      "commit": "052a0a926527",
+      "summary": "This remains a source candidate; delivered archives, dev integration and stable release are unqualified."
+    },
+    {
+      "commit": "dfc8048bc005",
+      "summary": "This is a Windows source candidate, not qualified delivered bytes or an integrated release."
+    },
+    {
+      "commit": "36e1a6d54aa0",
+      "summary": "This evidence-only commit does not substitute a new reviewed source subject."
+    },
+    {
+      "commit": "5ea1f7cdd53c",
+      "summary": "Disk limits are monitored thresholds, not filesystem quotas."
+    },
+    {
+      "commit": "5ea1f7cdd53c",
+      "summary": "Disk limits are monitored thresholds, not filesystem quotas."
+    },
+    {
+      "commit": "11226a6e7fd0",
+      "summary": "Disk thresholds are monitored reservations, not filesystem quotas. Permanent pool and packaging placement remain unresolved."
+    },
+    {
+      "commit": "8acfecc44e61",
+      "summary": "Disk thresholds are monitored, not filesystem quotas; permanent bulk pool and real packaging qualification remain open."
+    },
+    {
+      "commit": "b325deeaca74",
+      "summary": "Monitored disk thresholds are not quotas. Approved permanent pool and actual packaging remain unqualified."
+    },
+    {
+      "commit": "8aa60c7bb8a2",
+      "summary": "Permanent approved bulk pool remains unresolved. Source review is not activation or release acceptance."
+    },
+    {
+      "commit": "e87386e55eda",
+      "summary": "Fixture scope requires technical review; full importer, final bytes and permanent storage placement remain open."
+    },
+    {
+      "commit": "0302b18c724d",
+      "summary": "Permanent approved bulk pools, full importer, final artifacts and release remain unqualified."
+    },
+    {
+      "commit": "e185d2898fb2",
+      "summary": "Permanent bulk storage placement is unresolved; no fallback is activated."
+    },
+    {
+      "commit": "260139d2d108",
+      "summary": "Owner-approved permanent bulk placement remains unresolved; no fallback."
+    },
+    {
+      "commit": "119529d076fd",
+      "summary": "Observed free-space increase includes concurrent unrelated activity."
+    },
+    {
+      "commit": "f0eabe41265d",
+      "summary": "Public compatibility and shipping remain inactive; final version is not selected."
+    },
+    {
+      "commit": "c6d104f665e3",
+      "summary": "Full importer, final archive qualification and permanent bulk placement remain open."
+    },
+    {
+      "commit": "53be4fc43ab2",
+      "summary": "Two source worktrees and valuable or unknown material remain protected."
+    },
+    {
+      "commit": "a1fe9fd57ac1",
+      "summary": "Current artifacts remain stale previews; source integration is not stable release acceptance."
+    },
+    {
+      "commit": "71ef35127845",
+      "summary": "The root-authority package remains review_required; no broad adoption is implied."
+    },
+    {
+      "commit": "1d70597894e3",
+      "summary": "Permanent execution roots and final artifact qualification remain open."
+    },
+    {
+      "commit": "e18f983b0937",
+      "summary": "Disk occupancy is monitored, not an OS filesystem quota."
+    },
+    {
+      "commit": "8040b10a5d2c",
+      "summary": "Live scratch enumeration can undercount short-lived files; OS free-space monitoring and strict final evidence scans remain in force."
+    },
+    {
+      "commit": "a835cbad6d5b",
+      "summary": "The two partitions were separate processes, not one single-process suite."
+    },
+    {
+      "commit": "1d3d9fe1bb51",
+      "summary": "The tests were separate processes; release bytes and consumer behavior remain unqualified."
+    },
+    {
+      "commit": "84e4a7330ce9",
+      "summary": "All generated outputs and installed-byte checks remain unqualified until executed and reviewed."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "0509e1611b1838c650954c64212ad603f132dada",
+  "source_head": "84e4a7330ce93e116c8c6af0b181d8756af6f647",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "33824b369b84",
-      "summary": "New regression before repair: FAIL as expected (ValueError not raised)."
-    },
-    {
-      "commit": "d5b44626d6f9",
-      "summary": "PASS: Twenty-two focused removal tests in 428.761 seconds, including interruption, competing writer, junction and repeat behavior."
-    },
-    {
-      "commit": "f2be45ea13ce",
-      "summary": "Primary and contributing worktrees clean before admission; remote dev observed at ea53e319."
-    },
-    {
-      "commit": "2c4c9089a546",
-      "summary": "PASS: Eight affected authored-section tests in 247.733 seconds."
-    },
-    {
-      "commit": "03f4b0a1ef37",
-      "summary": "Exact rollback source 33824b36 had independent source ACCEPT; current remote dev observed ea53e319."
-    },
-    {
-      "commit": "1f920ebbf7bf",
-      "summary": "Red regression FAIL as intended, 1 test in 33.852 s, exit 1; green regression PASS, 1 test in 45.495 s, exit 0."
-    },
-    {
-      "commit": "723322cf07ab",
-      "summary": "Exact removal source review ACCEPT_WITH_NOTES at 2c4c9089; eight affected author tests and independent backup fault injection passed."
-    },
-    {
-      "commit": "9a0843c3a763",
-      "summary": "PASS: Red regression reproduced the AGENTS.md baseline error on source 723322cf; green regression passed after repair."
-    },
-    {
-      "commit": "db7650536375",
-      "summary": "PASS: Complete importer suite passed 85/85; affected Q31/Q34/Q47/Q48 suites passed 6/11/18/11."
-    },
-    {
-      "commit": "0c048b3baeb7",
-      "summary": "PASS: First postcommit bundle, validate, draft, and draft-validate commands exited zero."
-    },
-    {
-      "commit": "7e8816b60af7",
-      "summary": "PASS: Four release commands exited zero from clean HEAD and changed zero of 44 tracked release files."
-    },
-    {
-      "commit": "d4b67c96ff81",
-      "summary": "PASS: Task inspect reports complete with seven evidence files and zero missing required files."
-    },
-    {
-      "commit": "63484c756197",
-      "summary": "PASS: New task inspect classified the WorkUnit as running/partial, with admission evidence and expected unfinished validation records."
-    },
-    {
-      "commit": "acbcb9c8bd62",
-      "summary": "PASS: Two red baseline regressions reproduced the missing resolution API and missing-owned-file conflict."
-    },
-    {
-      "commit": "acbcb9c8bd62",
-      "summary": "PASS: Two red baseline regressions reproduced the missing resolution API and missing-owned-file conflict."
-    },
-    {
-      "commit": "3239530132a6",
-      "summary": "PASS: The new regression failed on the rejected source for both receipt versions, then passed 1/1 on repaired source with both subtests."
-    },
-    {
-      "commit": "12758e07373f",
-      "summary": "PASS: Two red regressions reproduced overwrite decisions on the rejected source; three focused tests passed on repaired source."
-    },
-    {
-      "commit": "0aa5a9d23b10",
-      "summary": "PASS: Task inspect classified the new WorkUnit as partial with its status and admission evidence present."
-    },
-    {
-      "commit": "03c5e7f81c22",
-      "summary": "PASS: Three focused repair-health tests, including extracted CLI and target byte equality, completed in 113.455 seconds."
-    },
-    {
-      "commit": "486aa2bd0f5f",
-      "summary": "PASS: Four repair-health tests including extracted ZIP consumer and forged receipt cases completed in 139.874 seconds."
-    },
-    {
-      "commit": "558638203fae",
-      "summary": "PASS: All five repair-health tests completed in 156.273 seconds, including extracted ZIP and forged-receipt cases."
-    },
-    {
-      "commit": "c68077548ee9",
-      "summary": "PASS: Corrected rollback case passed in 49.054 seconds."
-    },
-    {
-      "commit": "99a9e54da887",
-      "summary": "PASS: git plan reported ready_dry_run before branch mutation."
-    },
-    {
-      "commit": "74093ecacb4f",
-      "summary": "PASS: Intent compile and intent validate completed; broad raw release execution remained blocked and split-required."
-    },
-    {
-      "commit": "aa3bcfec849e",
-      "summary": "PASS: Canonical validate, doctor, task inspect and git diff --check completed on the candidate."
-    },
-    {
-      "commit": "d137f936bf0a",
-      "summary": "PASS: Combined importer suite 100/100; Q31/Q34/Q47/Q48 suites 6/6, 11/11, 18/18 and 11/11."
-    },
-    {
-      "commit": "54b9d45eeaa3",
-      "summary": "PASS: Bundle, release validate, draft and draft validate each exited zero during metadata convergence."
-    },
-    {
-      "commit": "a32535a2675f",
-      "summary": "PASS: Local, origin, ls-remote and GitHub API all observed dev at 54b9d45e after normal fast-forward and push."
-    },
-    {
-      "commit": "060de47208b3",
-      "summary": "PASS: Resolved the only two merge conflicts in PLANS.md and IMPLEMENT.md; git diff --cached --check passed; no unmerged paths remain."
-    },
-    {
-      "commit": "4315a8130db2",
-      "summary": "PASS: Q47 release bundle tests 18 of 18 and Q48 draft tests 11 of 11."
-    },
-    {
-      "commit": "d38e5839fe10",
-      "summary": "PASS: Get-FileHash SHA256 matched all five current table values; git diff --cached --check passed."
-    },
-    {
-      "commit": "7168ee1cfaa8",
-      "summary": "PASS: Git diff --check passed; task inspect recognized the running child and its evidence directory."
-    },
-    {
-      "commit": "d3d9848569a9",
-      "summary": "PASS: Git reported an automatic one-file merge; staged diff whitespace check passed."
-    },
-    {
-      "commit": "8365aa61b7ca",
-      "summary": "PASS: External report SHA256 matched 882d9a18ff1d94dec626e4ae646f27fa74bcadadc125cfe1d43c49280940c38e; reviewed source is an ancestor of this projection branch."
-    },
-    {
-      "commit": "d0bfa4045a3c",
-      "summary": "PASS: Six serial generation and release validation commands exited zero from clean source 8365aa61."
-    },
     {
       "commit": "2defcad541d0",
       "summary": "PASS: Release bundle, validate, draft and draft-validate each exited zero from clean projection commit d0bfa404."
@@ -817,6 +649,146 @@
     {
       "commit": "0509e1611b18",
       "summary": "PASS: dev is an ancestor of source; git plan returned ready_dry_run; git diff --check passed."
+    },
+    {
+      "commit": "dc8697e336eb",
+      "summary": "PASS: six serial generator commands, pack-status, validate, doctor, 18 Q47, 12 Q48 and 11 Task OS tests."
+    },
+    {
+      "commit": "10fd7a207f16",
+      "summary": "PASS: four replay commands exited 0 and ZIP/tar SHA-256 values remained unchanged."
+    },
+    {
+      "commit": "22257dc6ad9e",
+      "summary": "PASS: four release replay commands changed zero paths; archive hashes unchanged."
+    },
+    {
+      "commit": "6e8af2bd8d16",
+      "summary": "PASS: exact 22257dc6 12-commit check, task inspect with eight evidence files and no missing evidence, git diff --check."
+    },
+    {
+      "commit": "493e3f13c1b2",
+      "summary": "PASS: exact effect candidate 6e8af2bd had a 13-commit range pass and clean four-command release replay."
+    },
+    {
+      "commit": "5f2441d18772",
+      "summary": "PASS: canonical repository validate."
+    },
+    {
+      "commit": "f44f3a28fc08",
+      "summary": "PASS: canonical validate, task inspect with four evidence files and zero missing, explicit staged whitespace check."
+    },
+    {
+      "commit": "e88b1c2ee6f3",
+      "summary": "PASS: canonical validate, task inspect with five evidence files and zero missing, explicit staged whitespace check."
+    },
+    {
+      "commit": "d4b7657d9c0e",
+      "summary": "PASS: canonical validate; prior task inspect complete with six evidence files and zero missing."
+    },
+    {
+      "commit": "547ea2b09235",
+      "summary": "PASS: Python compile and staged whitespace check."
+    },
+    {
+      "commit": "052a0a926527",
+      "summary": "PASS: six focused Windows recovery regressions, Python compile and staged whitespace check."
+    },
+    {
+      "commit": "dfc8048bc005",
+      "summary": "PASS: fresh/update recovery test and three guard/resolution tests, including second-process denial and exit-77 cleanup."
+    },
+    {
+      "commit": "36e1a6d54aa0",
+      "summary": "External report SHA-256 identity check: PASS."
+    },
+    {
+      "commit": "5ea1f7cdd53c",
+      "summary": "Tiny Windows resource/recovery regressions: PASS, 12 cases."
+    },
+    {
+      "commit": "5ea1f7cdd53c",
+      "summary": "Tiny Windows resource/recovery regressions: PASS, 12 cases."
+    },
+    {
+      "commit": "11226a6e7fd0",
+      "summary": "PASS: seventeen focused Windows tests, no skips, 22.209 seconds; syntax and diff checks pass."
+    },
+    {
+      "commit": "8acfecc44e61",
+      "summary": "PASS: twenty-two focused Windows tests, no skips, 21.894 seconds; diff check passes."
+    },
+    {
+      "commit": "b325deeaca74",
+      "summary": "PASS: ten affected Windows cases, no skips, 13.276 seconds; syntax and diff checks pass."
+    },
+    {
+      "commit": "8aa60c7bb8a2",
+      "summary": "PASS: independent canonical recovery probe accepted; driver syntax and diff checks pass."
+    },
+    {
+      "commit": "e87386e55eda",
+      "summary": "PASS: isolated original controls case, one test in 112.647 seconds; scratch retired and reservation released."
+    },
+    {
+      "commit": "0302b18c724d",
+      "summary": "PASS: two inspection compatibility cases in 7.978 seconds and actual checkout query with unchanged Git state."
+    },
+    {
+      "commit": "e185d2898fb2",
+      "summary": "PASS: eleven bounded Task OS cases in 8.554 seconds, no skips."
+    },
+    {
+      "commit": "260139d2d108",
+      "summary": "PASS: independent e185d289 ACCEPT_WITH_NOTES, original golden assertions preserved."
+    },
+    {
+      "commit": "119529d076fd",
+      "summary": "PASS: all 1662 ordinary files matched retained archive members and complete directory inventory."
+    },
+    {
+      "commit": "f0eabe41265d",
+      "summary": "PASS: all 28 candidate forms parse with actual unchanged code; no handlers or fixtures."
+    },
+    {
+      "commit": "c6d104f665e3",
+      "summary": "PASS: three affected tests, zero skips, 0.082 seconds unittest execution."
+    },
+    {
+      "commit": "53be4fc43ab2",
+      "summary": "PASS: reviewed source and policy scopes remain identical to c6d104f6."
+    },
+    {
+      "commit": "a1fe9fd57ac1",
+      "summary": "PASS: exact independent dev-effect ACCEPT_WITH_NOTES and clean fast-forward ancestry."
+    },
+    {
+      "commit": "71ef35127845",
+      "summary": "PASS: seven existing relative documentation links resolve."
+    },
+    {
+      "commit": "1d70597894e3",
+      "summary": "PASS: independent source and effect ACCEPT_WITH_NOTES, report/manifest hashes."
+    },
+    {
+      "commit": "e18f983b0937",
+      "summary": "PASS: existing ordinary parent, distinct roots, volume identities and capacity admission."
+    },
+    {
+      "commit": "8040b10a5d2c",
+      "summary": "PASS: red one-case D runner regression reproduced the scan race; green one-case run passed."
+    },
+    {
+      "commit": "a835cbad6d5b",
+      "summary": "PASS: 54/54 and 56/56 importer cases on exact 8040b10a source; zero skips, scratch retired and reservations released."
+    },
+    {
+      "commit": "1d3d9fe1bb51",
+      "summary": "PASS: reviewed 8040b10a source, disjoint 54/56 case partition, zero skips, both D jobs retired and released reservations."
+    },
+    {
+      "commit": "84e4a7330ce9",
+      "summary": "PASS: task inspect locates the WorkUnit and its admission evidence."
     }
   ],
   "warnings": []
