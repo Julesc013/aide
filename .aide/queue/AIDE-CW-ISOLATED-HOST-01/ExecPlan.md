@@ -630,3 +630,8 @@ The reviewer checked source identity and historical provenance and inspected
 the retained 59/59 D-managed result without rerunning it. Future effect pins
 must distinguish checkout line-ending bytes from Git blobs, and the historical
 test requires full Git history. Native effects remain unadmitted.
+
+The clean local `dev` branch fast-forwarded from `46d04d03` to review-closeout
+commit `c3a92154` on 2026-09-29 after the independent decision. The source
+candidate and test repair are unchanged. Remote observation belongs to the
+subsequent push receipt; this local fast-forward alone admits no native effect.
