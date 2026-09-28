@@ -102,3 +102,5 @@ review found a missing-index admission bypass. Superseding `26f343b7` passed
 both the delivered job and missing-index refusal tests in a D-managed job;
 independent review returned ACCEPT for dev source integration. The exact
 receipts and limits are in `evidence/portable-job-owner-qualification-2026-09-29.md`.
+Local and remote `dev` then fast-forwarded to evidence closeout `b9aad160`.
+The real host binding and final canonical release bytes remain open.

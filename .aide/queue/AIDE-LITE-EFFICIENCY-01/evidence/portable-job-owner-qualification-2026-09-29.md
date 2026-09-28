@@ -22,3 +22,7 @@ The second extracted-ZIP consumer configured finite roots in its disposable targ
 ## Boundaries
 
 Safe target import still skips `core/**`; the extracted pack runs the owner against an explicitly configured Git working root. The source guard does not claim resilience to deletion of both source markers, and pack checksums establish payload consistency rather than third-party authenticity. This qualification is Windows-only. It does not establish live Codex dispatch, total model usage, a current canonical release archive, native/hosted operation or stable publication.
+
+## Dev source integration
+
+After the exact review, local and remote `dev` were observed at `31d8dd6c3d1bda7f0b146f0ad6fa2e47ec685c53`, an ancestor of the accepted source. The task branch carried the rejected candidate, the superseding repair and this evidence in ordinary fix-forward ancestry. Its evidence closeout commit was `b9aad1601d3c7323368b3417e3d75b443ebdf107` (tree `913cd9b45d50c31498197002a006e6d62b19f128`). Local `dev` fast-forwarded to it with no conflict; both local and remote task and dev refs were observed at that exact commit. `main` was not changed. The source reviewed at `26f343b7` remained byte-identical in the evidence-only closeout.

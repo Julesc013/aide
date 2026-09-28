@@ -12555,3 +12555,5 @@ Superseding source `26f343b7` requires a validated extracted pack for portable
 admission; the D-managed delivered-job and missing-index regressions passed
 2/2, with scratch retired. Independent review accepted dev source integration.
 This does not qualify a real Codex effect or stable release bytes.
+The accepted source and evidence fast-forwarded local and remote `dev` to
+`b9aad160`; `main` remains at its prior release head.
