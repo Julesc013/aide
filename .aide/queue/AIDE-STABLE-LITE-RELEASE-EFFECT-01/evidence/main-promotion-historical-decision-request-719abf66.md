@@ -6,7 +6,7 @@ That exact command returned **FAIL** across 337 commits: three exact owner
 dispositions applied, and ten other historical commit messages remain
 undispositioned. Main promotion, tag and publication are stopped.
 
-Exact machine packet: `main-promotion-historical-decision-request-719abf66.json`, SHA-256 `faeb20c9fe2e85836e17fadcaec920220f8318b2472bc879416c7847b93b7c36`.
+Exact committed machine packet: `main-promotion-historical-decision-request-719abf66.json`, SHA-256 `c6669882641e83b08bb8fa6b08b6b6c3d9f3decab10d87747fd9e04c350d9e01`. The earlier `faeb20c9fe2e85836e17fadcaec920220f8318b2472bc879416c7847b93b7c36` digest identified the precommit CRLF copy; Git normalized it to LF without changing the packet's records.
 Full range output: approved D control root `release-commit-range-719abf66.log`, SHA-256 `67361d8efd9f176d1144df12f14218a9ee2bc69e9d4a2a4e4299aa3781eee398`.
 The JSON packet pins each full commit object, tree, ordered parents,
 canonical message SHA-256 and every failed checker result.
