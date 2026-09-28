@@ -288,3 +288,10 @@ the ten job observations retain bounded status and stdout hashes without raw
 stdout. Preserve that limitation. Fresh refs and clean integration state must
 be checked before fast-forwarding dev. Main, tag and publication still await
 the live turn, ten historical owner decisions and remaining effect checks.
+
+Fresh local and remote `dev` were `d4898265`; the nine new commits passed the
+range validator. The accepted ancestry fast-forwarded to local and remote
+`dev@3e12aeb0`, tree `c5fd7df5`. The complete `main..dev` check still fails
+at the ten known historical message records; no disposition was invented.
+A supplemental current-source managed workspace suite passed 46 tests with
+retired scratch. The exact integration observation is retained in `evidence/`.

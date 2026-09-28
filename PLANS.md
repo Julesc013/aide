@@ -4293,5 +4293,6 @@ The superseding Lite job-form candidate now declares 37 public forms and has
 new local asset and consumer evidence. Ten delivered job observations passed
 in a fresh disposable Git project; six final-byte consumer jobs and the
 36-case release suite passed. Post-commit pack, asset, preview and draft
-replays were unchanged. Next: independent review of the exact superseding
-effect, then the separately gated live turn and historical main decisions.
+replays were unchanged. Independent exact review accepted the local effect
+and dev integration; local and remote dev now include it. The live turn and
+ten exact historical message decisions remain before main and publication.

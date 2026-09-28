@@ -12656,3 +12656,7 @@ suite passed 36 tests. Each managed job retired scratch and released its
 reservation. The superseding effect manifest binds current assets, receipts
 and all 37 forms for independent review. Live model execution, main history
 decisions, publication and downloaded-byte qualification remain open.
+Independent exact review accepted the local technical effect and dev
+integration. Local and remote dev fast-forwarded to `3e12aeb0`, while main
+remained at `aec53b1d`. A supplemental 46-case managed workspace suite passed.
+The full `main..dev` validator still reports ten historical message failures.
