@@ -304,7 +304,22 @@ class ManagedWorkspaceTests(unittest.TestCase):
         with self.assertRaises(workspace.WorkspaceRefused): workspace.root_path(link)
         with self.assertRaises(workspace.WorkspaceRefused):
             workspace.tree_usage(self.root, maximum=2**20, max_files=100)
+        with self.assertRaises(workspace.WorkspaceRefused):
+            workspace.tree_usage(self.root, maximum=2**20, max_files=100,
+                                 allow_transient_hardlinks=True)
         self.assertEqual((outside/'valuable').read_text(), 'retain')
+
+    def test_live_usage_counts_transient_hardlink_but_collection_refuses_it(self):
+        scratch = self.roots['scratch']
+        first = scratch/'first.txt'; second = scratch/'second.txt'
+        first.write_bytes(b'tiny')
+        os.link(first, second)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'unexpected job member'):
+            workspace.tree_usage(scratch, maximum=1024, max_files=10)
+        self.assertEqual(workspace.tree_usage(scratch, maximum=1024, max_files=10,
+                                              allow_transient_hardlinks=True), 8)
+        second.unlink()
+        self.assertEqual(workspace.tree_usage(scratch, maximum=1024, max_files=10), 4)
 
     def test_usage_scan_tolerates_disappearing_owned_scratch_entries(self):
         scratch = self.roots['scratch']

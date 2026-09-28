@@ -298,3 +298,21 @@ rereview ACCEPTS this exact source for dev integration. The frozen Lite
 1.0.0 release effect remains bound to `dev@2aaee82e`; changing that release
 would need a new artifact and effect review. Preserve this qualified source
 on its task branch until that boundary is resolved.
+
+## 2026-09-28 legacy retry qualification and runner monitor repair
+
+Objective: close the reviewer's direct-helper test limitation through the
+actual removal call. Reuse the interrupted brownfield fixture and run one
+bounded D job. Job `85fd0fe0b4c44ea99c64b2547046db95` instead stopped
+during live scratch observation: an owned fixture temporarily exposed two
+hardlink names for the same 356-byte file. Its process was confirmed
+quiescent; only the duplicate disposable temporary name was retired after
+matching identity and ownership. AIDE recovery retained the failed result,
+retired scratch and released the reservation.
+
+Narrow cross-cutting runner repair: live scratch monitoring may count a
+regular hardlinked file conservatively while it exists. Keep strict
+single-link checks for output collection, canonical inputs and cleanup;
+keep link/junction rejection during monitoring. Add tiny scanner tests,
+then rerun the exact end-to-end removal case through the D runner. Review
+the runner delta independently before treating it as qualified source.

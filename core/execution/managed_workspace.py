@@ -243,7 +243,8 @@ def qualify_canonical_outputs(record, config, roots, working):
         record['result'] = {'reason': 'canonical_output_limit_or_identity', 'message': str(exc), 'exit_code': None}
 
 
-def tree_usage(root, *, maximum, max_files, allow_transient_absence=False):
+def tree_usage(root, *, maximum, max_files, allow_transient_absence=False,
+               allow_transient_hardlinks=False):
     total = count = 0; pending = [root]
     while pending:
         directory = pending.pop()
@@ -267,7 +268,13 @@ def tree_usage(root, *, maximum, max_files, allow_transient_absence=False):
                     raise WorkspaceRefused('linked job member preserved for recovery')
                 if stat.S_ISDIR(info.st_mode):
                     pending.append(Path(entry.path))
-                elif stat.S_ISREG(info.st_mode) and info.st_nlink == 1:
+                elif stat.S_ISREG(info.st_mode) and (
+                    info.st_nlink == 1 or (allow_transient_hardlinks and info.st_nlink > 1)
+                ):
+                    # During live observation, a job-owned atomic create can
+                    # briefly expose its temporary and final names together.
+                    # Count both names conservatively; collection remains
+                    # strict once the child is quiescent.
                     total += info.st_size
                 else:
                     raise WorkspaceRefused('unexpected job member preserved for recovery')
@@ -528,7 +535,8 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
             # Disk/memory samples use OS counters and never scan estate/source.
             if now >= next_scan:
                 used = tree_usage(root, maximum=limits['scratch_bytes'] + limits['log_bytes'],
-                                  max_files=limits['max_files'], allow_transient_absence=True)
+                                  max_files=limits['max_files'], allow_transient_absence=True,
+                                  allow_transient_hardlinks=True)
                 record['peaks']['scratch_bytes'] = max(record['peaks']['scratch_bytes'], used)
                 for relative, used in canonical_usage(config, job, roots).items():
                     record['peaks']['canonical_bytes'][relative] = max(record['peaks']['canonical_bytes'][relative], used)

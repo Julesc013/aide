@@ -1,5 +1,17 @@
 # AIDE Implementation Log
 
+## 2026-09-28 live scratch hardlink observation repair
+
+AIDE's managed runner stopped a real interrupted-removal test when its
+atomic file creation briefly exposed two hardlink names in owned scratch.
+The quiescent failed job `85fd0fe0b4c44ea99c64b2547046db95` was
+reconciled through AIDE after exact duplicate-temp ownership checks; its
+scratch and reservation were retired. The monitor now counts regular
+multi-link files conservatively during live scratch sampling, while
+collection and cleanup keep strict single-link checks. Focused scanner and
+real end-to-end qualification plus independent review remain the gates for
+this cross-cutting correction.
+
 ## 2026-09-28 removal rename-gap recovery
 
 On `task/aide-removal-rename-recovery-01`, the Windows removal retry now
