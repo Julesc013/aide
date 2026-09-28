@@ -22,11 +22,13 @@ import os
 import re
 import shutil
 import stat
+import uuid
 import subprocess
 import sys
 import tarfile
 import tempfile
 import threading
+import time
 import zipfile
 from contextlib import contextmanager
 from dataclasses import dataclass
@@ -2381,6 +2383,16 @@ PORTABLE_SOURCE_FILES = [
     ".aide/templates/portable-apply/README.md",
     ".aide/templates/portable-apply/__init__.py",
     ".aide/scripts/aide_lite.py",
+    "core/execution/__init__.py",
+    "core/execution/provider.py",
+    "core/execution/registered_process.py",
+    "core/execution/managed_workspace.py",
+    "core/protocol/__init__.py",
+    "core/protocol/execution_receipt.py",
+    "core/protocol/process_invocation.py",
+    "core/runtime/continuous_worker/__init__.py",
+    "core/runtime/continuous_worker/state.py",
+    "core/runtime/continuous_worker/windows_job.py",
     ".aide/policies/token-budget.yaml",
     COMMIT_MESSAGE_POLICY_PATH,
     COMMIT_MESSAGE_DISPOSITION_POLICY_PATH,
@@ -43111,6 +43123,46 @@ def portable_safe_pack_targets(pack_root: Path) -> set[str]:
     return targets
 
 
+def portable_rollback_receipt_baseline(
+    current_pack: Path, previous_pack: Path, target_root: Path,
+    current_identity: dict[str, object], previous_identity: dict[str, object],
+) -> tuple[dict[str, object], dict[str, object]]:
+    """Validate the completed safe receipt before a rollback or its recovery."""
+    receipt = load_portable_import_receipt(target_root)
+    if receipt is None or receipt.get("mode") != "safe":
+        raise ValueError("rollback requires a completed safe-mode import receipt")
+    if receipt.get("pack") != current_identity or receipt.get("predecessor_pack") != previous_identity:
+        raise ValueError("rollback packs do not match exact receipt lineage")
+    current_targets, previous_targets = portable_safe_pack_targets(current_pack), portable_safe_pack_targets(previous_pack)
+    if current_targets != previous_targets:
+        raise ValueError("rollback payload paths differ; ownership-aware path changes require separate recovery")
+    if portable_target_path(target_root, PORTABLE_REPAIR_INTENT_PATH).exists():
+        raise ValueError("pending portable repair intent blocks rollback")
+    managed = receipt["managed"]
+    if set(managed) != current_targets:
+        raise ValueError("rollback receipt does not cover exact safe payload targets")
+    for target_rel, entry in managed.items():
+        source_rel = "AGENTS.md.template" if target_rel == "AGENTS.md" else target_rel
+        expected_kind = "portable_managed_section" if target_rel == "AGENTS.md" else "managed_file"
+        source = current_pack / "files" / source_rel
+        if entry["kind"] != expected_kind or entry["source"] != source_rel or not source.is_file():
+            raise ValueError(f"rollback receipt source does not match current pack: {target_rel}")
+        if expected_kind == "managed_file":
+            source_digest = sha256_file(source)
+        else:
+            source_block = portable_managed_block(read_text(source))
+            if source_block is None:
+                raise ValueError("current rollback pack AGENTS template has no managed block")
+            source_digest = digest_bytes(source_block.encode("utf-8"))
+        allowed_installed = {source_digest}
+        if expected_kind == "portable_managed_section":
+            # The authored AGENTS.md newline style is receipt-owned.
+            allowed_installed.add(digest_bytes(source_block.replace("\n", "\r\n").encode("utf-8")))
+        if entry["installed_digest"] not in allowed_installed or entry["source_digest"] != source_digest:
+            raise ValueError(f"rollback receipt baseline differs from current pack: {target_rel}")
+    return receipt, managed
+
+
 def build_portable_rollback_plan(current_pack: Path, previous_pack: Path, target_root: Path) -> dict[str, object]:
     """Preview a receipt-bound return to the exact predecessor payload."""
     reject_portable_rollback_pack_reparse(current_pack)
@@ -43139,42 +43191,21 @@ def build_portable_rollback_plan(current_pack: Path, previous_pack: Path, target
         )
         if pending.get("target") != normalize_rel(target_root) or (next_receipt.get("pack"), next_receipt.get("predecessor_pack")) not in expected_pair:
             raise ValueError("pending import intent belongs to different rollback packs or target")
-        return {"status": "RECOVERY_REQUIRED", "plan_digest": None, "operations": [], "conflicts": [], "preserved": [], "recovery": classify_portable_import_recovery(target_root, pending)}
-    receipt = load_portable_import_receipt(target_root)
-    if receipt is None or receipt.get("mode") != "safe":
-        raise ValueError("rollback requires a completed safe-mode import receipt")
-    if receipt.get("pack") != current_identity or receipt.get("predecessor_pack") != previous_identity:
-        raise ValueError("rollback packs do not match exact receipt lineage")
-    current_targets, previous_targets = portable_safe_pack_targets(current_pack), portable_safe_pack_targets(previous_pack)
-    if current_targets != previous_targets:
-        raise ValueError("rollback payload paths differ; ownership-aware path changes require separate recovery")
-    if portable_target_path(target_root, PORTABLE_REPAIR_INTENT_PATH).exists():
-        raise ValueError("pending portable repair intent blocks rollback")
-    managed = receipt["managed"]
-    if set(managed) != current_targets:
-        raise ValueError("rollback receipt does not cover exact safe payload targets")
+        rollback_pending = (
+            next_receipt.get("pack") == previous_identity
+            and next_receipt.get("predecessor_pack") == current_identity
+            and next_receipt.get("mode") == "safe"
+        )
+        if rollback_pending:
+            portable_rollback_receipt_baseline(current_pack, previous_pack, target_root, current_identity, previous_identity)
+        return {"status": "RECOVERY_REQUIRED", "plan_digest": None,
+            "recovery_plan_digest": pending.get("plan_digest") if rollback_pending else None,
+            "operations": [], "conflicts": [], "preserved": [],
+            "recovery": classify_portable_import_recovery(target_root, pending)}
+    receipt, managed = portable_rollback_receipt_baseline(
+        current_pack, previous_pack, target_root, current_identity, previous_identity)
     changed: list[str] = []
     for target_rel, entry in managed.items():
-        source_rel = "AGENTS.md.template" if target_rel == "AGENTS.md" else target_rel
-        expected_kind = "portable_managed_section" if target_rel == "AGENTS.md" else "managed_file"
-        source = current_pack / "files" / source_rel
-        if entry["kind"] != expected_kind or entry["source"] != source_rel or not source.is_file():
-            raise ValueError(f"rollback receipt source does not match current pack: {target_rel}")
-        if expected_kind == "managed_file":
-            source_digest = sha256_file(source)
-        else:
-            source_block = portable_managed_block(read_text(source))
-            if source_block is None:
-                raise ValueError("current rollback pack AGENTS template has no managed block")
-            source_digest = digest_bytes(source_block.encode("utf-8"))
-        allowed_installed = {source_digest}
-        if expected_kind == "portable_managed_section":
-            # merge_agents_text renders the exact pack block with the authored
-            # AGENTS.md newline style. Its CRLF bytes are receipt-owned even
-            # though the validated pack template uses LF bytes.
-            allowed_installed.add(digest_bytes(source_block.replace("\n", "\r\n").encode("utf-8")))
-        if entry["installed_digest"] not in allowed_installed or entry["source_digest"] != source_digest:
-            raise ValueError(f"rollback receipt baseline differs from current pack: {target_rel}")
         target = portable_target_path(target_root, target_rel)
         if entry["kind"] == "managed_file":
             observed = target_file_digest(target)
@@ -43215,14 +43246,32 @@ def apply_portable_rollback(
     expected_plan_digest: str,
     *,
     fail_after_writes: int | None = None,
+    recover_partial: bool = False,
 ) -> dict[str, object]:
-    """Apply only the previewed equal-payload predecessor rollback on Windows."""
+    """Apply a previewed rollback or explicitly continue its exact partial intent."""
     if os.name != "nt":
         raise ValueError("portable rollback apply requires Windows anchored file handles")
     if re.fullmatch(r"[0-9a-f]{64}", expected_plan_digest or "") is None:
         raise ValueError("portable rollback apply requires an exact preview digest")
     with portable_lifecycle_lock(target_root.resolve()):
         plan = build_portable_rollback_plan(current_pack, previous_pack, target_root)
+        if recover_partial:
+            if plan["status"] != "RECOVERY_REQUIRED":
+                raise ValueError("partial rollback recovery requires a pending rollback intent")
+            recovery_digest = plan.get("recovery_plan_digest")
+            if recovery_digest is None or plan["recovery"]["classification"] != "partial":
+                return plan
+            if expected_plan_digest != recovery_digest:
+                return {"status": "STALE_PLAN", "plan_digest": None,
+                    "recovery_plan_digest": recovery_digest, "written": []}
+            result = _apply_import_pack_unlocked(
+                previous_pack, target_root, mode="safe", predecessor_pack=current_pack,
+                expected_plan_digest=recovery_digest, recover_partial=True,
+            )
+            if result["status"] == "RECOVERED":
+                result["status"] = "ROLLED_BACK_RECOVERED"
+            result["recovery_plan_digest"] = recovery_digest
+            return result
         if plan["status"] == "RECOVERY_REQUIRED":
             return plan
         if plan["plan_digest"] != expected_plan_digest:
@@ -43593,20 +43642,25 @@ def command_rollback_pack(args: argparse.Namespace) -> int:
     current_pack = Path(args.current_pack).resolve()
     previous_pack = Path(args.previous_pack).resolve()
     target_root = Path(args.target).resolve()
+    if args.dry_run and args.recover_partial:
+        raise ValueError("partial rollback recovery requires apply mode")
     if args.dry_run:
         result = build_portable_rollback_plan(current_pack, previous_pack, target_root)
     else:
-        result = apply_portable_rollback(current_pack, previous_pack, target_root, args.expect_plan)
+        result = apply_portable_rollback(current_pack, previous_pack, target_root, args.expect_plan,
+            recover_partial=args.recover_partial)
     if args.json:
         print(json.dumps(result, sort_keys=True, indent=2, ensure_ascii=False))
     else:
         print("AIDE Lite rollback-pack")
         print(f"status: {result['status']}")
         print(f"plan_digest: {result.get('plan_digest') or result.get('rollback_plan_digest') or 'none'}")
+        if result.get("recovery_plan_digest"):
+            print(f"recovery_plan_digest: {result['recovery_plan_digest']}")
         print(f"written: {len(result.get('written', []))}")
         print("provider_or_model_calls: none")
         print("network_calls: none")
-    return 0 if result["status"] in {"PLANNED", "ROLLED_BACK", "NO_CHANGES"} else 2 if result["status"] in {"CONFLICT", "PRESERVATION_REQUIRED"} else 3
+    return 0 if result["status"] in {"PLANNED", "ROLLED_BACK", "ROLLED_BACK_RECOVERED", "NO_CHANGES"} else 2 if result["status"] in {"CONFLICT", "PRESERVATION_REQUIRED"} else 3
 
 
 def command_plan_removal(args: argparse.Namespace) -> int:
@@ -44478,6 +44532,371 @@ def run_selftest() -> tuple[bool, list[str]]:
     return result
 
 
+def _job_wait_read_json(path: Path, maximum: int) -> tuple[dict[str, object], str] | None:
+    """Read one ordinary bounded owner record; absence is distinct from damage."""
+    if not os.path.lexists(path):
+        return None
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > maximum):
+        raise ValueError("job evidence is not an ordinary bounded record")
+    data = path.read_bytes()
+    if len(data) > maximum:
+        raise ValueError("job evidence exceeded the read bound")
+    value = json.loads(data)
+    if not isinstance(value, dict):
+        raise ValueError("job evidence is not an object")
+    return value, hashlib.sha256(data).hexdigest()
+
+
+def _job_wait_root(value: object) -> Path:
+    if not isinstance(value, str) or len(value) > 512:
+        raise ValueError("job observation root is missing or too long")
+    root = Path(value)
+    if not root.is_absolute() or ".." in root.parts or root == Path(root.anchor):
+        raise ValueError("job observation root must be an absolute child")
+    for member in reversed((root, *root.parents)):
+        info = member.lstat()
+        if not stat.S_ISDIR(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+            raise ValueError("job observation root is redirected or not a directory")
+    return root
+
+
+def wait_for_managed_job(config_path: Path, job_id: str, manifest_digest: str,
+                         timeout_seconds: float, interval_seconds: float, *,
+                         clock: Callable[[], float] = time.monotonic,
+                         sleeper: Callable[[float], None] = time.sleep) -> dict[str, object]:
+    """Portable read-only attachment to the existing maintainer job owner."""
+    if not re.fullmatch(r"[0-9a-f]{32}", job_id) or not re.fullmatch(r"[0-9a-f]{64}", manifest_digest):
+        raise ValueError("exact job ID and manifest digest required")
+    if not 0 <= timeout_seconds <= 3600 or not 0.1 <= interval_seconds <= 30:
+        raise ValueError("finite job observation limits required")
+    config_record = _job_wait_read_json(Path(config_path), 65536)
+    if config_record is None or config_record[0].get("schema") != "aide.managed-workspace.local.v1":
+        raise ValueError("managed workspace configuration unavailable")
+    roots = config_record[0].get("roots")
+    if not isinstance(roots, dict):
+        raise ValueError("managed workspace roots unavailable")
+    control, retained = (_job_wait_root(roots.get(name)) for name in ("control", "retained"))
+    receipt_path = retained / job_id / "receipt.json"
+    owner_path = retained / job_id / "owner.json"
+    active_path = control / "active.json"
+    base = {"schema": "aide.job-observation.v1", "job_id": job_id,
+            "manifest_digest": manifest_digest, "model_requests_started_by_observer": 0,
+            "host_model_requests": "unknown", "invocation_control": "observer_only",
+            "receipt_ref": str(receipt_path)}
+    start = clock()
+    observations = unchanged = 0
+    previous_phase: str | None = None
+    while True:
+        observations += 1
+        try:
+            retained_job = retained / job_id
+            if os.path.lexists(retained_job):
+                info = retained_job.lstat()
+                if not stat.S_ISDIR(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+                    raise ValueError("job retention path is redirected")
+            receipt = _job_wait_read_json(receipt_path, 1024 * 1024)
+            if receipt is not None:
+                owner = _job_wait_read_json(owner_path, 65536)
+                record, receipt_sha = receipt
+                if (owner is None or owner[0] != {"job_id": job_id, "manifest_digest": manifest_digest}
+                        or record.get("job_id") != job_id or record.get("manifest_digest") != manifest_digest):
+                    raise ValueError("job receipt ownership or identity mismatch")
+                job = record.get("job")
+                if (not isinstance(job, dict) or hashlib.sha256(json.dumps(job, sort_keys=True,
+                        separators=(",", ":")).encode()).hexdigest() != manifest_digest):
+                    raise ValueError("job receipt manifest changed")
+                if record.get("phase") == "retired":
+                    result = record.get("result")
+                    if not isinstance(result, dict):
+                        raise ValueError("job terminal result missing")
+                    source_commit, source_tree = job.get("source_commit"), job.get("source_tree")
+                    if (not isinstance(source_commit, str) or not re.fullmatch(r"[0-9a-f]{40}", source_commit)
+                            or not isinstance(source_tree, str) or not re.fullmatch(r"[0-9a-f]{40}", source_tree)):
+                        raise ValueError("job source identity missing")
+                    collected = record.get("collected_manifest")
+                    if (not isinstance(collected, dict) or any(not isinstance(collected.get(name), str)
+                            or not re.fullmatch(r"[0-9a-f]{64}", collected[name]) for name in ("output", "logs"))):
+                        raise ValueError("job collected evidence manifest missing")
+                    peaks = record.get("peaks") if isinstance(record.get("peaks"), dict) else {}
+                    passed = (result.get("reason") == "exited" and result.get("exit_code") == 0
+                              and result.get("job_id") == job_id and result.get("quiescent") is True
+                              and record.get("scratch_absent") is True
+                              and record.get("reservation_released") is True)
+                    return {**base, "status": "PASS" if passed else "FAIL", "terminal": True,
+                            "reason": str(result.get("reason", "unknown"))[:80],
+                            "exit_code": result.get("exit_code") if type(result.get("exit_code")) is int else None,
+                            "source_commit": source_commit, "source_tree": source_tree,
+                            "receipt_sha256": receipt_sha, "evidence_status": "receipt_present_outputs_unverified",
+                            "peak_scratch_bytes": peaks.get("scratch_bytes") if type(peaks.get("scratch_bytes")) is int else None,
+                            "peak_memory_bytes": peaks.get("memory_bytes") if type(peaks.get("memory_bytes")) is int else None,
+                            "observations": observations, "unchanged_observations": unchanged}
+            active = _job_wait_read_json(active_path, 1024 * 1024)
+            if active is None:
+                return {**base, "status": "ACTION_REQUIRED" if receipt is not None else "MISSING",
+                        "terminal": False,
+                        "observations": observations, "unchanged_observations": unchanged}
+            record = active[0]
+            if record.get("job_id") != job_id or record.get("manifest_digest") != manifest_digest:
+                return {**base, "status": "OTHER_ATTEMPT", "terminal": False,
+                        "observations": observations, "unchanged_observations": unchanged}
+            active_job = record.get("job")
+            if (not isinstance(active_job, dict) or hashlib.sha256(json.dumps(active_job, sort_keys=True,
+                    separators=(",", ":")).encode()).hexdigest() != manifest_digest):
+                raise ValueError("active job manifest changed")
+            phase = record.get("phase")
+            if not isinstance(phase, str):
+                raise ValueError("job phase missing")
+            if phase == previous_phase:
+                unchanged += 1
+            previous_phase = phase
+            if phase == "collection_recovery_required":
+                return {**base, "status": "ACTION_REQUIRED", "terminal": False,
+                        "reason": "collection_recovery_required", "observations": observations,
+                        "unchanged_observations": unchanged}
+        except (OSError, ValueError, TypeError, KeyError, json.JSONDecodeError):
+            return {**base, "status": "EVIDENCE_UNAVAILABLE", "terminal": False,
+                    "observations": observations, "unchanged_observations": unchanged}
+        remaining = timeout_seconds - (clock() - start)
+        if remaining <= 0:
+            return {**base, "status": "PENDING", "terminal": False,
+                    "observations": observations, "unchanged_observations": unchanged}
+        sleeper(min(interval_seconds, remaining))
+
+
+def command_job_wait(args: argparse.Namespace) -> int:
+    try:
+        result = wait_for_managed_job(Path(args.config), args.job_id, args.manifest_digest,
+                                      args.timeout_seconds, args.interval_seconds)
+    except (OSError, ValueError) as exc:
+        result = {"schema": "aide.job-observation.v1", "status": "REFUSED", "terminal": False,
+                  "reason": str(exc)[:120], "model_requests_started_by_observer": 0,
+                  "host_model_requests": "unknown"}
+    print(json.dumps(result, sort_keys=True, separators=(",", ":")))
+    return 0 if result["status"] == "PASS" else 2 if result["status"] == "PENDING" else 1
+
+
+CODEX_EXEC_USAGE_FIELDS = ("input_tokens", "cached_input_tokens", "output_tokens", "reasoning_output_tokens")
+CODEX_EXEC_MAX_STREAM_BYTES = 16 * 1024 * 1024
+CODEX_EXEC_MAX_LINE_BYTES = 1024 * 1024
+
+
+def _codex_exec_unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("Codex stream contains a duplicate JSON object key")
+        result[key] = value
+    return result
+
+
+def _codex_exec_usage(value: object) -> tuple[dict[str, int | None], list[str]]:
+    if not isinstance(value, dict):
+        return {name: None for name in CODEX_EXEC_USAGE_FIELDS}, ["usage_missing"]
+    usage: dict[str, int | None] = {}
+    gaps = []
+    for name in CODEX_EXEC_USAGE_FIELDS:
+        count = value.get(name)
+        if type(count) is int and count >= 0:
+            usage[name] = count
+        else:
+            usage[name] = None
+            gaps.append(name + "_unknown")
+    if (usage["cached_input_tokens"] is not None and usage["input_tokens"] is not None
+            and usage["cached_input_tokens"] > usage["input_tokens"]):
+        raise ValueError("cached input exceeds reported input")
+    if (usage["reasoning_output_tokens"] is not None and usage["output_tokens"] is not None
+            and usage["reasoning_output_tokens"] > usage["output_tokens"]):
+        raise ValueError("reasoning output exceeds reported output")
+    if set(value) - set(CODEX_EXEC_USAGE_FIELDS):
+        gaps.append("unrecognized_usage_fields")
+    return usage, gaps
+
+
+def _codex_exec_stream(path: Path) -> dict[str, object]:
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > CODEX_EXEC_MAX_STREAM_BYTES):
+        raise ValueError("Codex stream is not an ordinary bounded file")
+    stream_hash = hashlib.sha256()
+    session = None
+    completed = None
+    failed = False
+    started_turns = 0
+    completion_before_start = False
+    duplicate_terminal = 0
+    count = size = 0
+    with path.open("rb") as source:
+        opened = os.fstat(source.fileno())
+        identity = lambda item: (item.st_dev, item.st_ino, item.st_size, item.st_mtime_ns)
+        if identity(opened) != identity(info):
+            raise ValueError("Codex stream changed before read")
+        while line := source.readline(CODEX_EXEC_MAX_LINE_BYTES + 1):
+            size += len(line)
+            count += 1
+            if size > CODEX_EXEC_MAX_STREAM_BYTES or len(line) > CODEX_EXEC_MAX_LINE_BYTES or count > 100000:
+                raise ValueError("Codex stream exceeded read limits")
+            stream_hash.update(line)
+            if not line.strip():
+                continue
+            try:
+                event = json.loads(line, object_pairs_hook=_codex_exec_unique_object)
+            except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+                raise ValueError("Codex stream contains malformed JSONL") from exc
+            if not isinstance(event, dict):
+                raise ValueError("Codex event is not an object")
+            kind = event.get("type")
+            if kind == "thread.started":
+                raw_session = event.get("thread_id")
+                try:
+                    observed = str(uuid.UUID(raw_session))
+                except (ValueError, TypeError, AttributeError) as exc:
+                    raise ValueError("Codex session identity invalid") from exc
+                if session is not None and session != observed:
+                    raise ValueError("multiple Codex sessions in one stream")
+                session = observed
+            elif kind == "turn.started":
+                started_turns += 1
+            elif kind == "turn.completed":
+                if started_turns != 1:
+                    completion_before_start = True
+                if completed is not None:
+                    if completed != event:
+                        raise ValueError("conflicting terminal Codex usage events")
+                    duplicate_terminal += 1
+                else:
+                    completed = event
+            elif kind in ("turn.failed", "error"):
+                failed = True
+        if identity(os.fstat(source.fileno())) != identity(info):
+            raise ValueError("Codex stream changed during read")
+    if identity(path.lstat()) != identity(info):
+        raise ValueError("Codex stream path changed during read")
+    if session is None:
+        raise ValueError("Codex stream lacks session identity")
+    usage, gaps = _codex_exec_usage(completed.get("usage") if completed else None)
+    if failed:
+        gaps.append("turn_failed_or_error")
+    if completed is None:
+        gaps.append("terminal_usage_absent")
+    ambiguous_turn = started_turns != 1 or completion_before_start
+    if ambiguous_turn:
+        gaps.append("turn_boundary_ambiguous")
+    return {"session_id": session, "stream_sha256": stream_hash.hexdigest(),
+            "event_count": count, "duplicate_terminal_events": duplicate_terminal,
+            "terminal_status": "FAILED" if failed else "AMBIGUOUS" if ambiguous_turn else "COMPLETED" if completed else "INCOMPLETE",
+            "usage": usage, "coverage_gaps": sorted(set(gaps))}
+
+
+def summarize_codex_exec_usage(paths: list[Path]) -> dict[str, object]:
+    """Import at most eight Codex exec JSONL files; never retain raw model output."""
+    if not 1 <= len(paths) <= 8:
+        raise ValueError("one to eight Codex streams required")
+    records = []
+    seen_hashes: set[str] = set()
+    duplicates = 0
+    for path in paths:
+        record = _codex_exec_stream(Path(path))
+        if record["stream_sha256"] in seen_hashes:
+            duplicates += 1
+            continue
+        seen_hashes.add(str(record["stream_sha256"]))
+        records.append(record)
+    sessions = [str(record["session_id"]) for record in records]
+    gaps = sorted({gap for record in records for gap in record["coverage_gaps"]})
+    ambiguous_session = len(sessions) != len(set(sessions))
+    ambiguous_turn = any("turn_boundary_ambiguous" in record["coverage_gaps"] for record in records)
+    if ambiguous_session:
+        gaps.append("same_session_multiple_streams_turn_identity_unknown")
+    totals: dict[str, int | None] = {}
+    known_totals: dict[str, int | None] = {}
+    for name in CODEX_EXEC_USAGE_FIELDS:
+        values = [record["usage"][name] for record in records]
+        known_totals[name] = None if ambiguous_session or ambiguous_turn else sum(value for value in values if value is not None)
+        totals[name] = known_totals[name] if not gaps and all(value is not None for value in values) else None
+    return {"schema": "aide.codex-exec-usage.v1", "status": "COMPLETE" if not gaps else "PARTIAL",
+            "source": "codex_exec_jsonl", "model": "unknown", "model_requests": "unknown",
+            "completed_turns": sum(record["terminal_status"] == "COMPLETED" for record in records),
+            "failed_or_incomplete_turns": sum(record["terminal_status"] != "COMPLETED" for record in records),
+            "duplicate_streams_excluded": duplicates, "records": records,
+            "usage_totals": totals, "known_usage_totals": known_totals,
+            "coverage_gaps": gaps, "raw_prompt_or_response_retained": False}
+
+
+def command_job_usage(args: argparse.Namespace) -> int:
+    try:
+        result = summarize_codex_exec_usage([Path(path) for path in args.stream])
+    except (OSError, ValueError) as exc:
+        result = {"schema": "aide.codex-exec-usage.v1", "status": "REFUSED",
+                  "reason": str(exc)[:120], "raw_prompt_or_response_retained": False}
+    print(json.dumps(result, sort_keys=True, separators=(",", ":")))
+    return 0 if result["status"] == "COMPLETE" else 2 if result["status"] == "PARTIAL" else 1
+
+
+CODEX_PROMPT_INPUT_MAX_BYTES = 2 * 1024 * 1024
+CODEX_PROMPT_INPUT_ROLES = {"system", "developer", "user", "assistant", "tool"}
+
+
+def summarize_codex_prompt_input(raw: bytes) -> dict[str, object]:
+    """Count a supplied debugger view in memory; never return its text."""
+    if not raw or len(raw) > CODEX_PROMPT_INPUT_MAX_BYTES:
+        raise ValueError("one nonempty bounded prompt-input stream required")
+    try:
+        messages = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, ValueError, RecursionError) as exc:
+        raise ValueError("malformed prompt-input JSON") from exc
+    if not isinstance(messages, list) or not 1 <= len(messages) <= 128:
+        raise ValueError("bounded prompt-input message list required")
+    roles: dict[str, dict[str, int]] = {}
+    gaps: set[str] = set()
+    for message in messages:
+        if not isinstance(message, dict) or message.get("type") != "message":
+            raise ValueError("unsupported prompt-input message shape")
+        role = message.get("role")
+        if not isinstance(role, str):
+            raise ValueError("prompt-input role required")
+        if role not in CODEX_PROMPT_INPUT_ROLES:
+            role = "other"
+            gaps.add("unknown_role")
+        content = message.get("content")
+        if not isinstance(content, list) or len(content) > 32:
+            raise ValueError("bounded prompt-input content list required")
+        row = roles.setdefault(role, {"messages": 0, "parts": 0, "text_utf8_bytes": 0, "text_chars": 0})
+        row["messages"] += 1
+        for part in content:
+            if not isinstance(part, dict) or not isinstance(part.get("type"), str):
+                raise ValueError("prompt-input content item shape invalid")
+            row["parts"] += 1
+            if part["type"] in ("text", "input_text") and isinstance(part.get("text"), str):
+                row["text_utf8_bytes"] += len(part["text"].encode("utf-8"))
+                row["text_chars"] += len(part["text"])
+            else:
+                gaps.add("non_text_content")
+    return {"schema": "aide.codex-prompt-input-summary.v1",
+            "status": "COMPLETE" if not gaps else "PARTIAL",
+            "source": "supplied_codex_debug_prompt_input_json",
+            "input_json_bytes": len(raw), "message_count": len(messages),
+            "roles": {key: roles[key] for key in sorted(roles)},
+            "visible_text_utf8_bytes": sum(row["text_utf8_bytes"] for row in roles.values()),
+            "coverage_gaps": sorted(gaps), "effective_tokens": None,
+            "tool_definitions": "unknown", "internal_inference": "unknown",
+            "model_requests_started_by_parser": 0, "raw_prompt_or_response_retained": False}
+
+
+def command_job_context(args: argparse.Namespace) -> int:
+    try:
+        if sys.stdin.isatty():
+            raise ValueError("pipe one prompt-input JSON stream on stdin")
+        result = summarize_codex_prompt_input(sys.stdin.buffer.read(CODEX_PROMPT_INPUT_MAX_BYTES + 1))
+    except (OSError, ValueError) as exc:
+        result = {"schema": "aide.codex-prompt-input-summary.v1", "status": "REFUSED",
+                  "reason": str(exc)[:120], "raw_prompt_or_response_retained": False,
+                  "model_requests_started_by_parser": 0}
+    print(json.dumps(result, sort_keys=True, separators=(",", ":")))
+    return 0 if result["status"] == "COMPLETE" else 2 if result["status"] == "PARTIAL" else 1
+
+
 def command_managed_job(args: argparse.Namespace) -> int:
     """Explicit maintainer execution; inspect never projects tracked reports."""
     root = str(args.repo_root)
@@ -44485,17 +44904,26 @@ def command_managed_job(args: argparse.Namespace) -> int:
         sys.path.insert(0, root)
     from core.execution import managed_workspace
     try:
-        if args.job_command == "recover":
+        if args.job_command == "setup":
+            result = managed_workspace.configure(args.config, args.selection, args.approved_parent)
+        elif args.job_command == "recover":
             result = managed_workspace.recover(args.config)
+        elif args.job_command in ("pause-dispatch", "resume-dispatch"):
+            mode = "paused" if args.job_command == "pause-dispatch" else "running"
+            result = managed_workspace.set_dispatch(args.config, mode)
         else:
             job = managed_workspace.read_json(args.manifest) if args.manifest else None
             if args.job_command == "inspect":
                 result = managed_workspace.inspect(args.config, job)
             else:
                 result = managed_workspace.run(args.config, job)
-        print(json.dumps(result, sort_keys=True, indent=2))
         if args.job_command == "run":
-            return 0 if result.get("result", {}).get("exit_code") == 0 and result["result"].get("reason") == "exited" else 1
+            view = wait_for_managed_job(Path(args.config), result["job_id"], result["manifest_digest"], 0, 1)
+            print(json.dumps(result if args.full else view, sort_keys=True,
+                             indent=2 if args.full else None,
+                             separators=None if args.full else (",", ":")))
+            return 0 if view["status"] == "PASS" else 1
+        print(json.dumps(result, sort_keys=True, indent=2))
         return 0
     except (OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:
         print(json.dumps({"result": "REFUSED", "reason": str(exc), "writes": args.job_command != "inspect"}))
@@ -44503,10 +44931,24 @@ def command_managed_job(args: argparse.Namespace) -> int:
 
 
 def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False, canonical_paths=()) -> bool:
-    # The source-only execution owner is deliberately absent from Lite exports.
-    # Preserve their established consumer selftest/export compatibility.
+    # A validated extracted payload can run its portable no-model checks
+    # without source-checkout admission. Missing source state alone is never a
+    # reason to bypass the guard: it may mean the checkout is damaged.
+    if repo_root.name == "files" and repo_root.parent.name == EXPORT_PACK_ID:
+        try:
+            if (pack_manifest_scalars(repo_root.parent).get("pack_id") == EXPORT_PACK_ID
+                    and validate_pack_checksums(repo_root.parent)[0]):
+                return True
+        except (OSError, ValueError, KeyError, TypeError):
+            pass
     if not (repo_root / "core/execution/managed_workspace.py").is_file():
+        if (repo_root / ".aide/queue/index.yaml").is_file():
+            print("result: REFUSED\nsource checkout has no managed job owner")
+            return False
         return True
+    if not (repo_root / ".aide/queue/index.yaml").is_file():
+        print("result: REFUSED\nsource checkout has no canonical queue index")
+        return False
     if str(repo_root) not in sys.path:
         sys.path.insert(0, str(repo_root))
     from core.execution import managed_workspace
@@ -45679,7 +46121,8 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     rollback_pack_parser.add_argument("--previous-pack", required=True)
     rollback_pack_parser.add_argument("--target", required=True)
     rollback_pack_parser.add_argument("--dry-run", action="store_true")
-    rollback_pack_parser.add_argument("--expect-plan", help="Exact rollback preview digest; required for apply.")
+    rollback_pack_parser.add_argument("--expect-plan", help="Rollback preview digest for apply, or reported recovery-plan digest with --recover-partial.")
+    rollback_pack_parser.add_argument("--recover-partial", action="store_true", help="Continue only an exact partial rollback intent with its reported recovery-plan digest.")
     rollback_pack_parser.add_argument("--json", action="store_true")
     rollback_pack_parser.set_defaults(handler=command_rollback_pack)
 
@@ -45720,10 +46163,32 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     job_parser = subparsers.add_parser("job", help="Bounded maintainer jobs with explicit local storage.")
     job_subparsers = job_parser.add_subparsers(dest="job_command", required=True)
+    wait_parser = job_subparsers.add_parser("wait", help="Observe one existing job without model calls or writes.")
+    wait_parser.add_argument("--config", required=True)
+    wait_parser.add_argument("--job-id", required=True)
+    wait_parser.add_argument("--manifest-digest", required=True)
+    wait_parser.add_argument("--timeout-seconds", type=float, default=3600)
+    wait_parser.add_argument("--interval-seconds", type=float, default=1)
+    wait_parser.set_defaults(handler=command_job_wait)
+    usage_parser = job_subparsers.add_parser("usage", help="Import bounded Codex exec JSONL usage without model calls.")
+    usage_parser.add_argument("--stream", required=True, action="append", help="Ordinary Codex exec --json file; repeat at most eight times.")
+    usage_parser.set_defaults(handler=command_job_usage)
+    job_subparsers.add_parser("context", help="Summarize one supplied Codex prompt-input JSON stream without retaining text or starting a model.").set_defaults(handler=command_job_context)
+    setup_parser = job_subparsers.add_parser("setup")
+    setup_parser.add_argument("--config", required=True, help="Machine-local output config in an approved checkout.")
+    setup_parser.add_argument("--selection", required=True, help="Explicit local root, checkout and finite-limit selection JSON.")
+    setup_parser.add_argument("--approved-parent", required=True, help="Existing owner-selected parent containing the storage roots.")
+    setup_parser.set_defaults(handler=command_managed_job)
     for operation in ("inspect", "run", "recover"):
         operation_parser = job_subparsers.add_parser(operation)
         operation_parser.add_argument("--config", required=True, help="Existing machine-local storage policy JSON.")
         operation_parser.add_argument("--manifest", required=operation == "run", help="Exact source-bound job JSON.")
+        if operation == "run":
+            operation_parser.add_argument("--full", action="store_true", help="Print the full result for existing consumers; default is a bounded view.")
+        operation_parser.set_defaults(handler=command_managed_job)
+    for operation in ("pause-dispatch", "resume-dispatch"):
+        operation_parser = job_subparsers.add_parser(operation)
+        operation_parser.add_argument("--config", required=True, help="Existing machine-local storage policy JSON.")
         operation_parser.set_defaults(handler=command_managed_job)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
     test_parser = subparsers.add_parser("test")

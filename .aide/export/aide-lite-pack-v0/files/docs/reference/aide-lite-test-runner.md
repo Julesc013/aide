@@ -37,22 +37,76 @@ the existing report generators when a projection is required.
 In the AIDE source checkout, `test`, `selftest` and `eval run` require this
 admission. The child proves membership in the exact named Windows Job and
 rechecks the source/CLI input manifest. Setting temporary-directory environment
-variables alone cannot satisfy the guard. Portable Lite keeps its existing
-behavior because it does not export the source-only execution owner or tests.
+variables alone cannot satisfy the guard. Extracted Lite carries that same
+Windows owner for explicitly configured jobs, while its portable no-model
+`test` and `selftest` remain usable without source-checkout admission after
+the extracted pack's manifest and payload checksums validate. A source checkout
+with a missing queue index refuses admission rather than bypassing it. The
+exported pack does not include the source checkout's self-hosting queue or
+copy `core/**` into a target through safe import.
 
 ```powershell
+py -3 .aide/scripts/aide_lite.py job setup --config <checkout>/.aide.local/execution.json --selection <local-selection-json> --approved-parent <owner-selected-existing-parent>
 py -3 .aide/scripts/aide_lite.py job inspect --config <local-config> --manifest <job-json>
 py -3 .aide/scripts/aide_lite.py job run --config <local-config> --manifest <job-json>
 py -3 .aide/scripts/aide_lite.py job recover --config <local-config>
+py -3 .aide/scripts/aide_lite.py job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>
+py -3 .aide/scripts/aide_lite.py job usage --stream <codex-exec-jsonl>
+codex debug prompt-input | py -3 .aide/scripts/aide_lite.py job context
 ```
+
+`job run` waits in deterministic code and normally prints one bounded terminal
+view; `--full` prints its detailed result for consumers that need it. The full
+receipt and logs remain under the configured retained root. Portable Lite
+`job wait` can attach to that exact job without importing the runner,
+submitting work, changing reservations or emitting healthy progress
+ticks. It returns `PENDING` on timeout and never treats a missing or malformed
+receipt as success. `job setup`, `job inspect` and `job run` in extracted Lite
+use the shipped Windows owner and require an explicit local configuration,
+finite limits and a source-bound Git working root. They do not activate a
+model or grant authority to modify a target repository. The view reports the
+number of observations and unchanged observations, a retained receipt locator
+and hash, and the exact source. Its
+`model_requests_started_by_observer: 0` describes this CLI only; host model
+requests and internal inference remain unknown until a supported host adapter
+measures them. The observer does not verify all retained output bytes.
+
+Portable `job usage` imports one to eight ordinary Codex `exec --json` files
+without launching a model or printing raw event content. Each stream is bounded
+to 16 MiB and each event line to 1 MiB. Exact duplicate streams and repeated
+identical terminal events count once only when one `turn.started` bounds the
+stream. Missing or multiple turn starts, failed turns, absent usage fields, unknown
+usage keys and multiple distinct streams for the same session remain explicit
+coverage gaps: incomplete totals are `null`, while observed known subtotals
+remain visible. The JSONL format reports completed turns, not the number of
+internal model requests, model identity or usage from unmediated Codex/Work
+sessions. The input files remain with their existing custodian; this command
+writes no ledger or copy of raw prompts and responses.
+
+Portable `job context` accepts one Codex `debug prompt-input` JSON stream on
+stdin, capped at 2 MiB. It reports message/part counts and visible text sizes
+by role without printing or retaining the supplied text. Unknown roles and
+non-text parts remain explicit coverage gaps. The parser starts no model turn;
+the producer command and its permissions are separate. Its byte counts are not
+token counts, and the debugger view does not establish tool-definition size,
+internal inference or the effective context of an existing long-lived thread.
 
 Inspection only reads state. The machine-local configuration belongs in the
 existing `.aide.local/` boundary; `.aide.local.example/execution.json` contains
 placeholders and finite example limits, not an approved machine placement.
+`job setup` takes an explicit local selection using those same root, working
+root and limit fields. It verifies an existing owner-selected parent, creates
+only the selected missing storage children, observes their volume IDs and
+capacity, then writes each checkout's local config once. A matching config is
+an unchanged success. A changed config, redirected path, nonempty unowned
+storage or unavailable capacity is refused without selecting another drive.
+Two existing checkouts can share populated roots when the first already has
+the same validated configuration. Setup does not change global settings.
 `git detect` and `git plan` also inspect without writing by default; their
 existing tracked report projections require explicit `--write-reports`.
-All three storage roots must already exist and match their declared volume
-identities. Missing/unavailable storage refuses admission without fallback.
+All three storage roots must exist and match their declared volume identities
+before `job inspect` or `job run` admits work. Missing/unavailable storage
+refuses admission without fallback.
 All campaign workspaces must share one control root; its OS lock serializes
 heavy jobs and their disk/memory reservations. This is not a global quota for
 unmanaged tools or for jobs configured with another control root.

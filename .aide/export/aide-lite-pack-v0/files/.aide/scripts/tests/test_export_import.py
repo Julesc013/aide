@@ -6,6 +6,7 @@ import tempfile
 import unittest
 import importlib.util
 import json
+import hashlib
 import shutil
 import os
 import zipfile
@@ -135,6 +136,203 @@ class ExportImportTests(unittest.TestCase):
         self.assertIn("included_files:", manifest)
         self.assertIn("excluded_classes:", manifest)
         self.assertIn("raw_prompt_storage: false", manifest)
+
+    def test_extracted_export_pack_waits_and_runs_job_without_source_checkout(self) -> None:
+        source_root = self.make_source_repo()
+        pack_root = self.build_pack(source_root)
+        self.assertTrue(aide_lite.validate_pack_checksums(pack_root)[0])
+        archive = source_root.parent / "lite-efficiency-fixture.zip"
+        with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
+            for path in sorted(pack_root.rglob("*")):
+                if path.is_file():
+                    bundle.write(path, f"{pack_root.name}/{path.relative_to(pack_root).as_posix()}")
+        consumer = source_root.parent / "consumer"
+        with zipfile.ZipFile(archive) as bundle:
+            bundle.extractall(consumer)
+        delivered = consumer / pack_root.name / "files"
+        script = delivered / ".aide/scripts/aide_lite.py"
+        self.assertEqual(script.read_bytes(), MODULE_PATH.read_bytes())
+        self.assertTrue(aide_lite.source_maintainer_job_guard(delivered))
+
+        job_id = "a" * 32
+        job = {"source_commit": "b" * 40, "source_tree": "c" * 40}
+        manifest = hashlib.sha256(json.dumps(job, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        control = consumer / "control"
+        retained = consumer / "retained"
+        control.mkdir()
+        (retained / job_id).mkdir(parents=True)
+        config = consumer / "execution.json"
+        config.write_text(json.dumps({"schema": "aide.managed-workspace.local.v1",
+                                      "roots": {"control": str(control), "retained": str(retained)}}), encoding="utf-8")
+        (retained / job_id / "owner.json").write_text(
+            json.dumps({"job_id": job_id, "manifest_digest": manifest}), encoding="utf-8")
+        (retained / job_id / "receipt.json").write_text(json.dumps({
+            "job_id": job_id, "manifest_digest": manifest, "job": job,
+            "phase": "retired", "scratch_absent": True, "reservation_released": True,
+            "result": {"job_id": job_id, "reason": "exited", "exit_code": 0, "quiescent": True},
+            "collected_manifest": {"output": "d" * 64, "logs": "e" * 64},
+        }), encoding="utf-8")
+        completed = subprocess.run(
+            [sys.executable, "-I", "-B", str(script), "--repo-root", str(delivered),
+             "job", "wait", "--config", str(config), "--job-id", job_id,
+             "--manifest-digest", manifest, "--timeout-seconds", "0"],
+            capture_output=True, text=True, timeout=15)
+        self.assertEqual(completed.returncode, 0, completed.stderr[-500:])
+        outcome = json.loads(completed.stdout)
+        self.assertEqual(outcome["status"], "PASS")
+        self.assertEqual(outcome["model_requests_started_by_observer"], 0)
+        self.assertEqual(outcome["host_model_requests"], "unknown")
+        events = consumer / "codex-events.jsonl"
+        events.write_text("\n".join(json.dumps(event) for event in [
+            {"type": "thread.started", "thread_id": "00000000-0000-0000-0000-000000000001"},
+            {"type": "turn.started"},
+            {"type": "turn.completed", "usage": {"input_tokens": 10, "cached_input_tokens": 2,
+              "output_tokens": 3, "reasoning_output_tokens": 1}},
+        ]) + "\n", encoding="utf-8")
+        imported = subprocess.run(
+            [sys.executable, "-I", "-B", str(script), "--repo-root", str(delivered),
+             "job", "usage", "--stream", str(events)],
+            capture_output=True, text=True, timeout=15)
+        self.assertEqual(imported.returncode, 0, imported.stderr[-500:])
+        usage = json.loads(imported.stdout)
+        self.assertEqual(usage["status"], "COMPLETE")
+        self.assertEqual(usage["usage_totals"]["input_tokens"], 10)
+
+        secret_marker = "AIDE-private-prompt-marker"
+        prompt_input = json.dumps([
+            {"type": "message", "role": "system", "content": [
+                {"type": "input_text", "text": "system context"}]},
+            {"type": "message", "role": "user", "content": [
+                {"type": "input_text", "text": secret_marker}]},
+        ]).encode("utf-8")
+        observed = subprocess.run(
+            [sys.executable, "-I", "-B", str(script), "--repo-root", str(delivered),
+             "job", "context"],
+            input=prompt_input, capture_output=True, timeout=15)
+        self.assertEqual(observed.returncode, 0, observed.stderr[-500:])
+        context = json.loads(observed.stdout)
+        self.assertEqual(context["status"], "COMPLETE")
+        self.assertEqual(context["visible_text_utf8_bytes"],
+                         len("system context".encode()) + len(secret_marker.encode()))
+        self.assertEqual(context["roles"]["user"]["text_utf8_bytes"], len(secret_marker.encode()))
+        self.assertEqual(context["model_requests_started_by_parser"], 0)
+        self.assertFalse(context["raw_prompt_or_response_retained"])
+        self.assertNotIn(secret_marker.encode(), observed.stdout + observed.stderr)
+
+        # The delivered CLI reuses the existing bounded Windows owner. Its
+        # source identity is the disposable target's Git commit, not this
+        # development checkout or an invented identity for extracted bytes.
+        target = consumer / "job-target"
+        target.mkdir()
+        fixture = target / "fixture.py"
+        fixture.write_text("print('delivered owner ran')\n", encoding="utf-8")
+        packet = target / "task-packet.txt"
+        packet.write_text("Return one bounded fixture result.\n", encoding="utf-8")
+        schema = target / "result-schema.json"
+        schema.write_text('{"type":"object","properties":{"status":{"type":"string"}}}\n', encoding="utf-8")
+        (target / ".gitignore").write_text(".aide.local/\n", encoding="utf-8")
+        for command in (["init", "-q"], ["add", "fixture.py", "task-packet.txt",
+                        "result-schema.json", ".gitignore"],
+                        ["-c", "user.name=AIDE fixture", "-c", "user.email=fixture@example.invalid",
+                         "commit", "-qm", "test(fixture): pin delivered job input"]):
+            subprocess.run(["git", "-C", str(target), *command], check=True,
+                           capture_output=True, timeout=15)
+        git = lambda ref: subprocess.run(["git", "-C", str(target), "rev-parse", ref],
+               check=True, capture_output=True, text=True, timeout=15).stdout.strip()
+        pool = consumer / "execution"
+        pool.mkdir()
+        roots = {name: str(pool / name) for name in ("scratch", "retained", "control")}
+        selection = consumer / "selection.json"
+        selection.write_text(json.dumps({
+            "schema": "aide.managed-workspace.local.v1", "roots": roots,
+            "working_roots": [str(target)],
+            "limits": {"disk_reserve_bytes": 10 * 1024**3,
+                       "physical_reserve_bytes": 4 * 1024**3,
+                       "commit_reserve_bytes": 4 * 1024**3,
+                       "scratch_bytes": 8 * 1024**2,
+                       "retained_bytes": 1024**2,
+                       "canonical_bytes": 1024**2,
+                       "memory_bytes": 256 * 1024**2,
+                       "log_bytes": 64 * 1024,
+                       "runtime_seconds": 30, "processes": 4, "max_files": 1000},
+        }), encoding="utf-8")
+        config_path = target / ".aide.local/execution.json"
+        base = [sys.executable, "-I", "-B", str(script), "--repo-root", str(delivered), "job"]
+        setup = subprocess.run([*base, "setup", "--config", str(config_path),
+                                "--selection", str(selection), "--approved-parent", str(pool)],
+                               capture_output=True, text=True, timeout=30)
+        self.assertEqual(setup.returncode, 0, setup.stdout[-500:] + setup.stderr[-500:])
+        self.assertEqual(json.loads(setup.stdout)["result"], "CONFIGURED")
+        fake_codex = consumer / "codex.exe"
+        fake_codex.write_bytes(b"MZ synthetic executable; admission only")
+        codex_job = {"schema": "aide.maintainer-job.v1", "owner": "extracted_fixture",
+                     "workunit": "AIDE-LITE-EFFICIENCY-01", "cwd": str(target),
+                     "source_commit": git("HEAD"), "source_tree": git("HEAD^{tree}"),
+                     "adapter": "codex_exec", "argv": [str(fake_codex)],
+                     "executable_sha256": hashlib.sha256(fake_codex.read_bytes()).hexdigest(),
+                     "inputs": {name: hashlib.sha256((target / name).read_bytes()).hexdigest()
+                                for name in ("task-packet.txt", "result-schema.json")},
+                     "prompt_file": "task-packet.txt", "schema_file": "result-schema.json",
+                     "model": "gpt-6-sol", "effort": "medium"}
+        codex_manifest = consumer / "codex-job.json"
+        codex_manifest.write_text(json.dumps(codex_job), encoding="utf-8")
+        refused = subprocess.run([*base, "run", "--config", str(config_path),
+                                  "--manifest", str(codex_manifest)],
+                                 capture_output=True, text=True, timeout=30)
+        self.assertEqual(refused.returncode, 1, refused.stdout[-500:] + refused.stderr[-500:])
+        self.assertEqual(json.loads(refused.stdout)["result"], "REFUSED")
+        self.assertIn("local model permission", json.loads(refused.stdout)["reason"])
+        self.assertEqual(list(Path(roots["scratch"]).iterdir()), [])
+        job = {"schema": "aide.maintainer-job.v1", "owner": "extracted_fixture",
+               "workunit": "AIDE-LITE-EFFICIENCY-01", "cwd": str(target),
+               "source_commit": git("HEAD"), "source_tree": git("HEAD^{tree}"),
+               "adapter": "python", "argv": [sys.executable, str(fixture)],
+               "executable_sha256": hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest(),
+               "inputs": {"fixture.py": hashlib.sha256(fixture.read_bytes()).hexdigest()},
+               "canonical_outputs": {}}
+        manifest_path = consumer / "job.json"
+        manifest_path.write_text(json.dumps(job), encoding="utf-8")
+        inspect = subprocess.run([*base, "inspect", "--config", str(config_path),
+                                  "--manifest", str(manifest_path)],
+                                 capture_output=True, text=True, timeout=30)
+        self.assertEqual(inspect.returncode, 0, inspect.stdout[-500:] + inspect.stderr[-500:])
+        self.assertIsNone(json.loads(inspect.stdout)["active"])
+        run = subprocess.run([*base, "run", "--config", str(config_path),
+                              "--manifest", str(manifest_path)],
+                             capture_output=True, text=True, timeout=40)
+        self.assertEqual(run.returncode, 0, run.stdout[-500:] + run.stderr[-500:])
+        result = json.loads(run.stdout)
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["source_commit"], git("HEAD"))
+        self.assertFalse((Path(roots["scratch"]) / result["job_id"]).exists())
+        self.assertFalse((Path(roots["control"]) / "active.json").exists())
+        attached = subprocess.run(
+            [*base, "wait", "--config", str(config_path),
+             "--job-id", result["job_id"], "--manifest-digest", result["manifest_digest"],
+             "--timeout-seconds", "0"],
+            capture_output=True, text=True, timeout=15)
+        self.assertEqual(attached.returncode, 0, attached.stdout[-500:] + attached.stderr[-500:])
+        attached_view = json.loads(attached.stdout)
+        self.assertEqual(attached_view["status"], "PASS")
+        self.assertEqual(attached_view["receipt_sha256"], result["receipt_sha256"])
+        self.assertEqual(attached_view["source_commit"], git("HEAD"))
+        self.assertEqual(attached_view["model_requests_started_by_observer"], 0)
+        changed = subprocess.run(
+            [*base, "wait", "--config", str(config_path),
+             "--job-id", result["job_id"], "--manifest-digest", "f" * 64,
+             "--timeout-seconds", "0"],
+            capture_output=True, text=True, timeout=15)
+        self.assertEqual(changed.returncode, 1, changed.stdout[-500:] + changed.stderr[-500:])
+        self.assertEqual(json.loads(changed.stdout)["status"], "EVIDENCE_UNAVAILABLE")
+
+    def test_source_checkout_missing_queue_index_cannot_bypass_job_guard(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / ".aide").mkdir()
+            (root / ".aide/profile.yaml").write_text("schema_version: fixture\n", encoding="utf-8")
+            (root / "core/execution").mkdir(parents=True)
+            (root / "core/execution/managed_workspace.py").write_text("# fixture\n", encoding="utf-8")
+            self.assertFalse(aide_lite.source_maintainer_job_guard(root))
 
     def test_export_excludes_source_state_and_generated_artifacts(self) -> None:
         source_root = self.make_source_repo()
@@ -1547,6 +1745,14 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
             target.mkdir()
             with self.assertRaisesRegex(ValueError, "reparse"):
                 aide_lite.build_portable_rollback_plan(pack_alias, pack, target)
+            cli = subprocess.run(
+                [sys.executable, "-B", str(MODULE_PATH), "--repo-root", str(target),
+                 "rollback-pack", "--current-pack", str(pack_alias),
+                 "--previous-pack", str(pack), "--target", str(target),
+                 "--dry-run", "--json"],
+                capture_output=True, text=True, encoding="utf-8", timeout=15)
+            self.assertNotEqual(cli.returncode, 0)
+            self.assertIn("reparse", cli.stderr)
         finally:
             if pack_alias.is_junction():
                 pack_alias.rmdir()
@@ -1698,6 +1904,8 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
         self.assertEqual(aide_lite.validate_pack_checksums(pack_v1), (True, []))
         target = source_root.parent / "target-rollback-paths"
         self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        aide_lite.write_text(source_root / ".aide/policies/token-budget.yaml", "version: changed-budget\n")
+        aide_lite.write_text(source_root / ".aide/policies/recovery.yaml", "version: changed-recovery\n")
         pack_v2 = self.freeze_pack(source_root, "rollback-paths-v2")
         self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "APPLIED")
         receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
@@ -1705,6 +1913,21 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
             aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
         self.assertTrue((target / added_rel).is_file())
         self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+        generic_reverse = aide_lite.apply_import_pack(pack_v1, target,
+            predecessor_pack=pack_v2, fail_after_writes=1)
+        self.assertEqual(generic_reverse["status"], "INTERRUPTED")
+        self.assertEqual(generic_reverse["recovery"]["classification"], "partial")
+        intent_path = target / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+        intent_before = intent_path.read_bytes()
+        target_before = (target / generic_reverse["written"][0]).read_bytes()
+        with self.assertRaisesRegex(ValueError, "payload paths differ"):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        with self.assertRaisesRegex(ValueError, "payload paths differ"):
+            aide_lite.apply_portable_rollback(pack_v2, pack_v1, target,
+                generic_reverse["plan_digest"], recover_partial=True)
+        self.assertEqual(intent_path.read_bytes(), intent_before)
+        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+        self.assertEqual((target / generic_reverse["written"][0]).read_bytes(), target_before)
 
     @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
     def test_interrupted_rollback_retains_intent_and_requires_reconciliation(self) -> None:
@@ -1732,6 +1955,37 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
         self.assertEqual(retry["status"], "RECOVERY_REQUIRED")
         self.assertEqual(intent_path.read_bytes(), intent_bytes)
         self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+        self.assertEqual(aide_lite.read_text(target / "README.md"), "# Authored\n")
+
+        recovery_preview = aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        self.assertEqual(recovery_preview["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(recovery_preview["recovery"]["classification"], "partial")
+        recovery_digest = recovery_preview["recovery_plan_digest"]
+        self.assertRegex(recovery_digest, r"^[0-9a-f]{64}$")
+        reversed_pair = aide_lite.apply_portable_rollback(
+            pack_v1, pack_v2, target, recovery_digest, recover_partial=True)
+        self.assertEqual(reversed_pair["status"], "RECOVERY_REQUIRED")
+        wrong_digest = aide_lite.apply_portable_rollback(
+            pack_v2, pack_v1, target, "0" * 64, recover_partial=True)
+        self.assertEqual(wrong_digest["status"], "STALE_PLAN")
+        changed_path = target / interrupted["written"][0]
+        written_bytes = changed_path.read_bytes()
+        changed_path.write_bytes(b"rival project edit\n")
+        rival = aide_lite.apply_portable_rollback(
+            pack_v2, pack_v1, target, recovery_digest, recover_partial=True)
+        self.assertEqual(rival["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(intent_path.read_bytes(), intent_bytes)
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+        changed_path.write_bytes(written_bytes)
+        installed_cli = pack_v2 / "files/.aide/scripts/aide_lite.py"
+        command = [sys.executable, "-B", str(installed_cli), "--repo-root", str(target),
+            "rollback-pack", "--current-pack", str(pack_v2), "--previous-pack", str(pack_v1),
+            "--target", str(target), "--recover-partial", "--expect-plan", recovery_digest, "--json"]
+        result = subprocess.run(command, capture_output=True, text=True, encoding="utf-8", timeout=60)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(json.loads(result.stdout)["status"], "ROLLED_BACK_RECOVERED")
+        self.assertFalse(intent_path.exists())
+        self.assertEqual(aide_lite.load_portable_import_receipt(target)["pack"], aide_lite.import_pack_identity(pack_v1))
         self.assertEqual(aide_lite.read_text(target / "README.md"), "# Authored\n")
 
     @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")

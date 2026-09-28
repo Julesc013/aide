@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: d0c8f62ce94465a6c174de4e931db10d1ba451ea
+source_commit: 6c4f615534959d47a4a7a247b05643c346e55730
 source_dirty_state: false
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -686,6 +686,7 @@ included_files:
   - files/.aide/scripts/tests/test_aide_apply_01_managed_sections.py
   - files/.aide/scripts/tests/test_aide_lite.py
   - files/.aide/scripts/tests/test_cache_local_state.py
+  - files/.aide/scripts/tests/test_efficiency_wait.py
   - files/.aide/scripts/tests/test_export_import.py
   - files/.aide/scripts/tests/test_gateway_commands.py
   - files/.aide/scripts/tests/test_golden_tasks.py
@@ -780,12 +781,19 @@ included_files:
   - files/core/apply/README.md
   - files/core/apply/__init__.py
   - files/core/apply/managed_sections.py
+  - files/core/execution/__init__.py
+  - files/core/execution/managed_workspace.py
+  - files/core/execution/provider.py
+  - files/core/execution/registered_process.py
   - files/core/gateway/README.md
   - files/core/gateway/__init__.py
   - files/core/gateway/gateway_status.py
   - files/core/gateway/server.py
   - files/core/gateway/tests/__init__.py
   - files/core/gateway/tests/test_gateway_skeleton.py
+  - files/core/protocol/__init__.py
+  - files/core/protocol/execution_receipt.py
+  - files/core/protocol/process_invocation.py
   - files/core/providers/README.md
   - files/core/providers/__init__.py
   - files/core/providers/contracts.py
@@ -793,6 +801,9 @@ included_files:
   - files/core/providers/status.py
   - files/core/providers/tests/__init__.py
   - files/core/providers/tests/test_provider_contracts.py
+  - files/core/runtime/continuous_worker/__init__.py
+  - files/core/runtime/continuous_worker/state.py
+  - files/core/runtime/continuous_worker/windows_job.py
   - files/docs/reference/aide-install-model.md
   - files/docs/reference/aide-lite-release-bundle.md
   - files/docs/reference/aide-lite-test-runner.md

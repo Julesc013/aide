@@ -1,0 +1,22 @@
+"""Minimal shared protocol helpers for AIDE."""
+
+__all__ = [
+    "adapter_manifest",
+    "capability_manifest",
+    "conformance_profile",
+    "conformance_result",
+    "context_pack_v2",
+    "envelope",
+    "event_record",
+    "execution_host",
+    "evidence_packet",
+    "patch_transaction",
+    "process_invocation",
+    "execution_receipt",
+    "reference_id",
+    "test_job",
+    "trust_authorization",
+    "worker_run",
+    "workunit",
+    "workunit_cli",
+]

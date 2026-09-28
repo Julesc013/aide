@@ -415,7 +415,21 @@ bytes, a local edit to the managed `AGENTS.md` section, or a changed preview
 refuses the rollback before new writes. Project-owned templates and authored
 content outside the managed section stay intact. The existing importer intent
 records the effect; an interrupted or uncertain transaction remains
-`RECOVERY_REQUIRED` and is not silently replayed by the rollback command.
+`RECOVERY_REQUIRED` and is not silently replayed by an ordinary rollback.
+For an exact partial rollback intent, repeat the read-only preview. Its
+`recovery_plan_digest` is the saved import-intent digest, distinct from the
+original rollback preview digest. After preserving the target and both packs,
+continue explicitly with the same pair:
+
+```text
+py -3 -I -B <current-pack>/files/.aide/scripts/aide_lite.py --repo-root <target> rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --recover-partial --expect-plan <recovery-plan-digest> --json
+```
+
+This uses the existing guarded importer recovery, refuses the reverse pack
+direction, changed bytes or an unknown intent, and reports
+`ROLLED_BACK_RECOVERED` only after the receipt and intent reconcile. Completed
+and no-effect interruption states continue through the existing exact importer
+reconciliation path; this option is only for a partial rollback.
 This narrow path cannot restore arbitrary prior bytes without the exact
 predecessor pack or resolve additions and removals between pack payload sets.
 Apply fails closed outside Windows until equivalent anchored effects qualify.
