@@ -44682,6 +44682,15 @@ CODEX_EXEC_MAX_STREAM_BYTES = 16 * 1024 * 1024
 CODEX_EXEC_MAX_LINE_BYTES = 1024 * 1024
 
 
+def _codex_exec_unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("Codex stream contains a duplicate JSON object key")
+        result[key] = value
+    return result
+
+
 def _codex_exec_usage(value: object) -> tuple[dict[str, int | None], list[str]]:
     if not isinstance(value, dict):
         return {name: None for name in CODEX_EXEC_USAGE_FIELDS}, ["usage_missing"]
@@ -44732,7 +44741,7 @@ def _codex_exec_stream(path: Path) -> dict[str, object]:
             if not line.strip():
                 continue
             try:
-                event = json.loads(line)
+                event = json.loads(line, object_pairs_hook=_codex_exec_unique_object)
             except (UnicodeDecodeError, json.JSONDecodeError) as exc:
                 raise ValueError("Codex stream contains malformed JSONL") from exc
             if not isinstance(event, dict):

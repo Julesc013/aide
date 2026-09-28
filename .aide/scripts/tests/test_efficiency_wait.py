@@ -195,6 +195,19 @@ class EfficiencyWaitTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "bounded"):
                 lite.summarize_codex_exec_usage([path])
 
+    def test_codex_usage_import_refuses_duplicate_json_keys(self):
+        path = self.codex_stream("duplicate.jsonl", usage={"input_tokens": 10,
+            "cached_input_tokens": 0, "output_tokens": 2, "reasoning_output_tokens": 0})
+        original = path.read_text(encoding="utf-8")
+        path.write_text(original.replace('"input_tokens": 10',
+                            '"input_tokens": 100, "input_tokens": 10', 1), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "duplicate JSON object key"):
+            lite.summarize_codex_exec_usage([path])
+        path.write_text(original.replace('"type": "turn.completed"',
+                            '"type": "error", "type": "turn.completed"', 1), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "duplicate JSON object key"):
+            lite.summarize_codex_exec_usage([path])
+
     def test_codex_usage_import_marks_resumed_session_ambiguity(self):
         usage = {"input_tokens": 10, "cached_input_tokens": 0,
                  "output_tokens": 2, "reasoning_output_tokens": 0}

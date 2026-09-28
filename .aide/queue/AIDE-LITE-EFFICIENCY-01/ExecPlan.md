@@ -153,3 +153,14 @@ integration** of the exact test commit and evidence-only closeout. The reviewer
 rehashed the retained receipt and checked the delivered attachment and refusal;
 see `evidence/delivered-wait-attachment-review-3796ad33.md`. No test rerun or
 live model effect was claimed.
+
+## 2026-09-29 usage JSON ambiguity repair
+
+Objective: make the existing portable `job usage` importer reject duplicate
+JSON object keys in Codex event lines, including nested token counters. Python's
+default parser otherwise keeps the last value and can report a misleading
+complete usage total. Scope: the existing Lite importer, its focused tests and
+this WorkUnit's evidence. Reproduce with a conflicting duplicate counter and
+event type, repair without adding a parser dependency, run the focused suite
+through the configured D owner, then obtain exact source review before dev.
+This does not launch a model or replace the pending real-host qualification.
