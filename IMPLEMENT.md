@@ -12519,3 +12519,10 @@ resource peaks and limits are in `AIDE-LITE-EFFICIENCY-01/evidence`.
 Independent `/root/stable_effect_review` accepted source integration and the
 bounded local effect. The exported archive, host dispatch/pause boundary,
 total model usage and release bytes remain unqualified.
+
+A targeted export-consumer regression now builds the normal fixture pack,
+validates checksums, extracts its archive and invokes delivered Lite. The first
+D job failed on an incorrect test assumption that portable `core` was absent;
+the delivered observer itself returned PASS. Test-only `45c143de` removed that
+assertion, and a second bounded D job passed 1/1 with scratch retired. Exact
+attempt receipts and the release boundary are in the WorkUnit evidence.

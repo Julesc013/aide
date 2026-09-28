@@ -54,4 +54,5 @@ before broader efficiency claims. FacMan product development stays paused.
   `job run` output the default and retains explicit `--full` compatibility.
 - [x] Six synthetic cases and one actual export-inclusion job passed under the configured D runner; receipts and resource bounds are in `evidence/first-slice-qualification-2026-09-29.md`.
 - [ ] Qualify the actual exported Lite archive and host binding. The copied CLI fixture passed without source checkout, but is narrower than full archive qualification.
+- [x] A generated export-pack fixture was archived, extracted and used as an isolated Lite consumer at test-only `45c143de`; exact D job PASS and a preceding false-test failure are recorded in `evidence/export-consumer-qualification-2026-09-29.md`. Canonical release bytes remain unfrozen.
 - [ ] Continue pause-aware dispatch, usage/outcome accounting and release qualification in bounded increments.
