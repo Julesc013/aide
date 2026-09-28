@@ -4243,3 +4243,8 @@ The next source increment `fe8bca8b` adds bounded import of supplied Codex
 `exec --json` usage. Independent review accepted the repaired turn counting;
 the first version was rejected and remains visible. Qualify a real host stream
 and pause-aware dispatch before claiming measured savings or release readiness.
+
+`AIDE-CODEX-DISPATCH-GATE-01` now owns one source-only Windows worker repair:
+serialize operator pause against the existing suspended-child dispatch point.
+Use synthetic process tests under the D runner; no live model or Lite export
+claim follows. The portable host binding remains a separate release gap.

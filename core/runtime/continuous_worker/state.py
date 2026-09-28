@@ -103,6 +103,13 @@ class State:
         row = self.db.execute("SELECT kind FROM controls WHERE task IS NULL ORDER BY seq DESC LIMIT 1").fetchone()
         return row[0] if row else "resume"
 
+    def dispatch_epoch(self, task):
+        """Controls that can revoke an already prepared process dispatch."""
+        row = self.db.execute("""SELECT COALESCE(MAX(seq), 0) FROM controls
+            WHERE (task IS NULL AND kind IN ('resume','pause-dispatch','emergency-stop'))
+               OR (kind='cancel-task' AND task=?)""", (task,)).fetchone()
+        return row[0]
+
     def cancelled(self, task):
         return self.mode() == "emergency-stop" or bool(self.db.execute(
             "SELECT 1 FROM controls WHERE kind='cancel-task' AND task=?", (task,)).fetchone())
@@ -178,4 +185,3 @@ class State:
                 "tasks": [dict(r) for r in self.db.execute("SELECT id,status,reason FROM tasks")],
                 "unresolved_effects": self.unresolved(),
                 "events": self.db.execute("SELECT COUNT(*) FROM events").fetchone()[0]}
-

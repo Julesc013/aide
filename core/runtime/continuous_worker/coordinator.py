@@ -63,6 +63,7 @@ class Coordinator:
         self.guard(attempt["task"])
         if self.state.mode() == "pause-dispatch":
             raise Paused()
+        dispatch_epoch = self.state.dispatch_epoch(attempt["task"])
         if worker:
             count = self.state.db.execute("SELECT COUNT(*) FROM effects WHERE kind IN ('coding','assurance')").fetchone()[0]
             if count >= self.config["limits"]["max_sessions"]:
@@ -78,6 +79,22 @@ class Coordinator:
             raise Refused("insufficient artifact reservation or input limit exceeded")
         effect = self.state.intent(attempt["id"], phase, request)
         monitor = {"last": 0.0, "reason": ""}
+        launch = {"locked": False}
+        def checkpoint(stage):
+            if stage == "created_suspended":
+                # The child exists but has run no code. Operator control uses
+                # the same SQLite writer lock, so pause and resume serialize.
+                self.state.db.execute("BEGIN IMMEDIATE")
+                launch["locked"] = True
+                if self.state.dispatch_epoch(attempt["task"]) != dispatch_epoch:
+                    raise Paused()
+                if self.state.mode() == "pause-dispatch":
+                    raise Paused()
+                if self.state.cancelled(attempt["task"]):
+                    raise Refused("operator cancellation before dispatch")
+            elif stage == "resumed" and launch["locked"]:
+                self.state.db.execute("COMMIT")
+                launch["locked"] = False
         def stop_requested():
             if self.state.cancelled(attempt["task"]):
                 monitor["reason"] = "operator cancellation"
@@ -91,11 +108,15 @@ class Coordinator:
                     return True
             return False
         # The durable intent precedes CreateProcess. Exceptions leave it uncertain.
-        receipt = self.host.run(command, cwd=workspace, input_bytes=payload.encode(),
-                                output_dir=output, job_id=job_id, timeout=limits["process_seconds"],
-                                output_limit=limits["output_bytes"], memory_limit=limits["memory_bytes"],
-                                process_limit=limits["max_processes"],
-                                cancelled=stop_requested)
+        try:
+            receipt = self.host.run(command, cwd=workspace, input_bytes=payload.encode(),
+                                    output_dir=output, job_id=job_id, timeout=limits["process_seconds"],
+                                    output_limit=limits["output_bytes"], memory_limit=limits["memory_bytes"],
+                                    process_limit=limits["max_processes"],
+                                    cancelled=stop_requested, checkpoint=checkpoint)
+        finally:
+            if launch["locked"] and self.state.db.in_transaction:
+                self.state.db.execute("ROLLBACK")
         receipt["monitor_reason"] = monitor["reason"]
         artifacts = {name: file_hash(output / name) for name in ("stdin", "stdout", "stderr")}
         self.state.observed(effect, {"completed": True, "receipt": receipt, "artifacts": artifacts})
@@ -331,4 +352,3 @@ class Coordinator:
                 stage = "cancelled" if self.state.cancelled(attempt["task"]) else "blocked"
                 self.state.transition(attempt["id"], stage, {"reason": str(exc)})
                 # A local blocker does not prevent another independent ready task.
-

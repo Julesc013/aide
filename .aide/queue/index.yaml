@@ -3794,3 +3794,12 @@ items:
     exec_plan: .aide/queue/AIDE-LITE-EFFICIENCY-01/ExecPlan.md
     prompt: .aide/queue/AIDE-LITE-EFFICIENCY-01/prompt.md
     evidence: .aide/queue/AIDE-LITE-EFFICIENCY-01/evidence
+  - id: AIDE-CODEX-DISPATCH-GATE-01
+    status: running
+    planning_state: admitted_bounded_source
+    result: PENDING
+    title: Prevent stale-pause Codex worker dispatch
+    task: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/prompt.md
+    evidence: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/evidence

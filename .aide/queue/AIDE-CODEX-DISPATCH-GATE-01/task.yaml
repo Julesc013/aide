@@ -1,0 +1,30 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CODEX-DISPATCH-GATE-01
+title: Prevent stale-pause Codex worker dispatch
+type: implementation
+status: running
+planning_state: admitted_bounded_source
+result: PENDING
+created_at: 2026-09-29
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Owner's 2026-09-28 efficiency priority and 2026-09-25 campaign delegation.
+objective: >
+  Prevent the existing Windows Codex worker from running a newly created child
+  when an operator pause or cancellation wins before dispatch.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/**
+    - .aide/queue/index.yaml
+    - core/runtime/continuous_worker/state.py
+    - core/runtime/continuous_worker/coordinator.py
+    - .aide/scripts/tests/test_continuous_worker_pipeline.py
+    - docs/reference/continuous-worker-pilot.md
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_operations:
+    - launch a real model or enable protected native execution
+    - install credentials or modify global Codex settings
+    - claim Lite export or unmediated host control from this source-only repair
+retained_gates:
+  - independent exact source review before dev integration
+  - real host and exported Lite qualification before broad efficiency claims

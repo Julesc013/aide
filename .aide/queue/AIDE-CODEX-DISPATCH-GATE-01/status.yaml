@@ -1,0 +1,10 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CODEX-DISPATCH-GATE-01
+status: running
+planning_state: admitted_bounded_source
+result: PENDING
+updated_at: 2026-09-29
+source_base: 9c3346f11643c32983cc03cb9e55b3d4c20f693c
+branch: task/aide-codex-dispatch-gate-01
+source_review: pending
+native_or_hosted_effect: none

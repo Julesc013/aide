@@ -17,8 +17,8 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 from core.runtime.continuous_worker.contract import file_hash, read_activation, snapshot, changed
-from core.runtime.continuous_worker.coordinator import Coordinator
-from core.runtime.continuous_worker.state import Refused, digest
+from core.runtime.continuous_worker.coordinator import Coordinator, Paused
+from core.runtime.continuous_worker.state import Refused, State, digest
 from core.runtime.continuous_worker.locking import supervisor_lock
 from core.runtime.continuous_worker.windows_job import WindowsJobHost
 
@@ -40,6 +40,10 @@ class SyntheticHost:
         return {"quiescent": True, "observation": "synthetic reconciliation"}
 
     def run(self, command, **options):
+        synthetic = any("synthetic_broker.py" in arg for arg in command) or "exec" in command
+        if synthetic:
+            options["checkpoint"]("created_suspended")
+            options["checkpoint"]("resumed")
         self.jobs.append(options["job_id"])
         output = options["output_dir"]
         payload = options["input_bytes"].decode()
@@ -210,6 +214,41 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual([t["status"] for t in result["tasks"]], ["ready", "ready"])
         runner.state.control("resume")
         self.assertEqual([t["status"] for t in runner.run()["tasks"]], ["succeeded", "succeeded"])
+
+    def _assert_stale_control_refuses_worker(self, controls):
+        state_root = Path(self.config["state_root"])
+        class PausingHost(WindowsJobHost):
+            def run(self, argv, **options):
+                original = options["checkpoint"]
+                def checkpoint(stage):
+                    if stage == "created_suspended":
+                        operator = State(state_root)
+                        try:
+                            for control in controls:
+                                operator.control(control)
+                        finally:
+                            operator.close()
+                    original(stage)
+                return super().run(argv, **(options | {"checkpoint": checkpoint}))
+
+        runner = self.runner(PausingHost())
+        attempt = runner.state.claim(2)
+        marker = self.root / "worker-ran"
+        code = "from pathlib import Path; Path(" + repr(str(marker)) + ").write_text('ran')"
+        with self.assertRaises(Paused):
+            runner.effect(attempt, "coding", [sys.executable, "-c", code],
+                          Path(attempt["spec"]["workspace"]), "", worker=True)
+        self.assertFalse(marker.exists(), "suspended child must not execute")
+        self.assertEqual(runner.state.mode(), controls[-1])
+        self.assertEqual(len(runner.state.unresolved()), 1)
+        runner.recover()
+        self.assertFalse(runner.state.unresolved())
+
+    def test_pause_after_child_creation_prevents_dispatch(self):
+        self._assert_stale_control_refuses_worker(["pause-dispatch"])
+
+    def test_pause_resume_epoch_refuses_stale_dispatch(self):
+        self._assert_stale_control_refuses_worker(["pause-dispatch", "resume"])
 
     def test_cross_ledger_same_workspace_lock_refuses(self):
         runner = self.runner()
@@ -583,4 +622,3 @@ class V1PipelineTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
