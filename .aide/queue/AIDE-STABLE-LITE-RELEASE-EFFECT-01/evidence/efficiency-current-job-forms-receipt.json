@@ -1,0 +1,100 @@
+{
+  "after": {
+    "commit_free": 58257891328,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 70142398464
+    },
+    "physical_free": 11144347648
+  },
+  "before": {
+    "commit_free": 58125307904,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 70142410752
+    },
+    "physical_free": 11094691840
+  },
+  "canonical_after": {},
+  "canonical_before": {},
+  "collected_manifest": {
+    "logs": "d3384ab25ebb5bb82a40464e8c659d55c6bfc2c81685a394ef85bf9f2d70487e",
+    "output": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "config_digest": "41764638abc4a8949b946c0dffd8175e7d50077bc2357ca14c0a9eed86e081f6",
+  "created_at_unix_ns": 1790627942664956900,
+  "environment_digest": "b8fb5d36d195b74b35687ab1e5b25cb9d83dbbf70fd8d8f88fbbe06747cd497f",
+  "job": {
+    "adapter": "python",
+    "argv": [
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "probe.py"
+    ],
+    "canonical_outputs": {},
+    "cwd": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\lite-job-forms-ap7iiy7_\\consumer\\project",
+    "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+    "inputs": {
+      "probe.py": "c38af5d7ada2525c435426465e8debe9246b425ad0e3dc770a6a7432e5d9c88e"
+    },
+    "owner": "AIDE campaign controller",
+    "schema": "aide.maintainer-job.v1",
+    "source_commit": "d300b41da2ee70e59bac47fc85703091bbd6f0c7",
+    "source_tree": "dd735155cbc4cf2814f39d0b98629f27d6dbd6a3",
+    "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+  },
+  "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+  "last_capacity": {
+    "commit_free": 58128355328,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 70142398464
+    },
+    "physical_free": 11096035328
+  },
+  "limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 16777216,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 268435456,
+    "runtime_seconds": 3600,
+    "scratch_bytes": 1073741824
+  },
+  "manifest_digest": "afa0aef39b4d43cefdedc2e2a4ef11df538d66f4d96fee2d91aba778da6a081b",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 16752640,
+    "scratch_bytes": 171
+  },
+  "phase": "retired",
+  "process": {
+    "creation_filetime": 134351015428050976,
+    "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+    "peak_memory_bytes": 16752640,
+    "pid": 7564,
+    "stage": "quiescent"
+  },
+  "reservation_released": true,
+  "reservations": {
+    "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 1378877440
+  },
+  "result": {
+    "bytes": 31,
+    "creation_filetime": 134351015428050976,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+    "pid": 7564,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\lite-job-forms-ap7iiy7_\\consumer\\retained\\39a9b394d48f4c139af120a1ec97b8a5",
+  "scratch": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\lite-job-forms-ap7iiy7_\\consumer\\scratch\\39a9b394d48f4c139af120a1ec97b8a5",
+  "scratch_absent": true,
+  "scratch_identity": [
+    3781016413010784355,
+    8162774327052623
+  ],
+  "scratch_readonly_cleared": 0
+}

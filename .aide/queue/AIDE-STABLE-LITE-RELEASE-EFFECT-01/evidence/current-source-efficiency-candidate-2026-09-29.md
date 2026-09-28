@@ -29,13 +29,15 @@ Six serial delivered-byte consumer jobs passed: fresh
 `cafab263`, lifecycle `c3190aa6`, context/offline `75d1cf50`,
 partial `c8ecefa0`, public CLI `e530711d` and forced restart
 `96bd3a16`. Their ignored local summary is
-`.aide.local/final-consumer-new-policy.json`, SHA-256
+`evidence/efficiency-current-consumer-summary.json`, SHA-256
 `9aceee87b1cb5174e311d8109f993b1aad85de7c1cef882df0393b303bb26731`.
 It records scratch retirement and reservation release. A fresh disposable
 Git consumer observed ten delivered `job` forms with the same ZIP and CLI
-hashes. Its ignored local summary is `.aide.local/current-job-forms.json`,
+hashes. Its retained summary is `evidence/efficiency-current-job-forms.json`,
 SHA-256 `928c17b579cd8e2fdb4d10d19427a77f73736b0756fa90c5bd4c979b4855d87b`;
-its inner fixture source commit is distinct from the AIDE release source.
+its inner fixture source commit is distinct from the AIDE release source. The
+copied inner receipt is `evidence/efficiency-current-job-forms-receipt.json`,
+SHA-256 `2dfb9aa7b1d544e72a7e4a85ccd3caac1f2cd5bdfa7da2a457c491cc1502a576`.
 
 The current Q47/Q48 D-managed job `c367d2f8` passed all 36 tests in
 66.361 seconds, receipt SHA-256

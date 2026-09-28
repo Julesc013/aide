@@ -1,0 +1,201 @@
+{
+  "assets": [
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
+      "sha256": "5bbe1234492c39c4ad26b4d43b2b1fe0193963bf3b4ddb99f108b0405b72c051",
+      "size_bytes": 1113183
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
+      "sha256": "c42617e1a6e4b3ded8dcf036c0ce0a582732a50ffa1bba1b536bd2e70a8223ad",
+      "size_bytes": 779020
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.manifest.json",
+      "sha256": "b6b2c0b17cb256c9df61928062bd6a5363e05695afb8d5da9d59271e8fcb34a2",
+      "size_bytes": 4900
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt",
+      "sha256": "85993ea21636c9f42b3d3d1945fc6ad11c91f52bbf82045d240f5bd1a46f34aa",
+      "size_bytes": 274
+    }
+  ],
+  "effect": {
+    "dev_integration": "fast-forward only after independent exact technical ACCEPT, passing range check and fresh local/remote ref checks",
+    "downloaded_asset_verification": "pending actual publication and authorized acquisition",
+    "main_promotion": "not yet qualified: ten historical owner decisions, live model qualification and exact current release acceptance remain",
+    "no_force_push_or_retag": true,
+    "tag_and_publication": "not yet qualified; no tag, upload or release exists"
+  },
+  "limitations": [
+    "No live Codex model turn or actual model usage was qualified.",
+    "Ten historical message decisions remain pending for main promotion.",
+    "No tag, upload, published release or downloaded-byte verification occurred.",
+    "Consumers were disposable AIDE-owned fixtures, not arbitrary project rollout."
+  ],
+  "prior_accepted_effect": {
+    "commit": "42672db9a43d382c106e324e7c453d27ff3e6a1b",
+    "manifest_sha256": "e270adbe1901bda564beabf8fe88f63c9ca22b03b73ed53ced8edc6e8c3ef554",
+    "scope": "historical dev integration and local effect for earlier assets; no carryover to changed bytes"
+  },
+  "profile": {
+    "disabled_feature_ids": [
+      "local_state_examples"
+    ],
+    "excluded_profiles": [
+      "hosted target effects",
+      "live Codex model turn pending explicit owner permission",
+      "model-enabled autonomous operation",
+      "native isolated-host operation",
+      "non-Windows lifecycle apply"
+    ],
+    "id": "aide-lite-local-windows",
+    "metadata_schemas": [
+      "aide.project-customizations.v1",
+      "aide.project-customizations.v2"
+    ],
+    "offline_scope": "local CLI after archive acquisition; Python socket guard observed, no OS-native network-isolation claim",
+    "platform_qualified": "Windows 10 19045, Python 3.14.7, local CLI",
+    "published_predecessors": [],
+    "support_mode": "companion",
+    "support_tier": "T3"
+  },
+  "programme": "AIDE-CONVERGENCE-AND-DELIVERY-01",
+  "qualification": {
+    "consumers": {
+      "count": 6,
+      "reservations_released": true,
+      "results": [
+        {
+          "id": "cafab263ca2846ab9a33560c523cfd45",
+          "index": 0,
+          "peak_memory_bytes": 298553344,
+          "peak_scratch_bytes": 34740409,
+          "receipt_sha256": "353c03eb4650fedce82fee5e1b79d94a86efacf2f7f4a4c9c216f37aa5d4664d",
+          "runner": "consumer_canary_runner.py"
+        },
+        {
+          "id": "c3190aa692e94c18811dc57e977ca440",
+          "index": 1,
+          "peak_memory_bytes": 241401856,
+          "peak_scratch_bytes": 31408289,
+          "receipt_sha256": "c266d787532af6a5044c0043be6286f4fe81a69ee84a78845a432fed9324aba1",
+          "runner": "lifecycle_canary_runner.py"
+        },
+        {
+          "id": "75d1cf50ea384411b587132202681032",
+          "index": 2,
+          "peak_memory_bytes": 221839360,
+          "peak_scratch_bytes": 15497077,
+          "receipt_sha256": "71b4cf296bbb620fdf44dc161fd13b2a5728fb3cc712a9eeffbf24079a0ed17c",
+          "runner": "context_offline_canary.py"
+        },
+        {
+          "id": "c8ecefa02f3a4b52b3168b3073d37422",
+          "index": 3,
+          "peak_memory_bytes": 298717184,
+          "peak_scratch_bytes": 20783959,
+          "receipt_sha256": "9f4a32c463809911856622d5cf20659fa8834923cb7c286d07a566b827e41df5",
+          "runner": "partial_cli_canary.py"
+        },
+        {
+          "id": "e530711d64794dc1b2f016d34765a600",
+          "index": 4,
+          "peak_memory_bytes": 228036608,
+          "peak_scratch_bytes": 8742913,
+          "receipt_sha256": "df8ff3afa8c5b8f310d62e48e54d9c86fed0fd0ad80aa790d1898d0ab12b0d9a",
+          "runner": "public_cli_canary.py"
+        },
+        {
+          "id": "96bd3a16d37342b1abc153b69118e54d",
+          "index": 5,
+          "peak_memory_bytes": 260870144,
+          "peak_scratch_bytes": 14429074,
+          "receipt_sha256": "98cf43828fc9c939fba4ab582c05814b6e53a2bce65994271d89411473abe612",
+          "runner": "forced_restart_runner.py"
+        }
+      ],
+      "scratch_retired": true,
+      "status": "PASS",
+      "summary": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/efficiency-current-consumer-summary.json",
+      "summary_sha256": "9aceee87b1cb5174e311d8109f993b1aad85de7c1cef882df0393b303bb26731"
+    },
+    "delivered_job_forms": {
+      "asset_sha256": "5bbe1234492c39c4ad26b4d43b2b1fe0193963bf3b4ddb99f108b0405b72c051",
+      "count": 10,
+      "delivered_cli_sha256": "2a356a5df8a157cef5e22a3bc36b6c1da5ab383c3e76da46bba8ad84a259ded1",
+      "inner_receipt": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/efficiency-current-job-forms-receipt.json",
+      "inner_receipt_sha256": "2dfb9aa7b1d544e72a7e4a85ccd3caac1f2cd5bdfa7da2a457c491cc1502a576",
+      "status": "PASS",
+      "summary": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/efficiency-current-job-forms.json",
+      "summary_sha256": "928c17b579cd8e2fdb4d10d19427a77f73736b0756fa90c5bd4c979b4855d87b",
+      "temporary_consumer_retired": true
+    },
+    "local_execution_config_sha256": "019669f8faab4ea4e410079ea96966b16742f0e7c6d2e062246a092f1b862834",
+    "pack": {
+      "export_job": "b4c1fc11fffc47ec95094db57ae2e303",
+      "pack_status": "PASS_checksums_provenance_boundary",
+      "postcommit_replay_job": "351f97bd201d4738aaecfc3c38a06b66",
+      "postcommit_replay_tracked_changes": 0,
+      "source_commit": "65fafcc9f5bed0a32a5f9aaaa0155a815e0f3599"
+    },
+    "q47_q48": {
+      "job_id": "c367d2f802474fbc913f584c4ed685c7",
+      "receipt_sha256": "3828fb837f5be6b8fcdcf91e32573cb0a627823547e5a2afd6f4330f8719c57d",
+      "tests_passed": 36,
+      "tests_skipped": 0
+    },
+    "record": "evidence/current-source-efficiency-candidate-2026-09-29.md",
+    "record_sha256": "2edc4e6dd4fa450b62ce41caf7dd70a102d5593a387c90d718d13cab470dd453",
+    "release_views": {
+      "build_and_validate_jobs": [
+        "8f219e89c4944d2486fe5807fa32bbce",
+        "d3c4489787134d52ac71a5627f2bce23",
+        "c0cd993d786242eba65f86bb290250ff",
+        "abcab6168b3b41cd95919f06b672ff1c"
+      ],
+      "bundle_sha256": "8e7bebccc318350f8c375eb67e76b76142958bac3326b3b7ec396e511bf56071",
+      "draft_sha256": "60ed2ee628f51c47bf8aa899ee7375f8454724833ab7490be7118d17c217471b",
+      "postcommit_replay_jobs": [
+        "2496a4b7f2414c7890cf817a81de3858",
+        "e1205f9655374e66868e28068df525b5"
+      ],
+      "postcommit_replay_tracked_changes": 0,
+      "publication": false
+    },
+    "source_review": {
+      "decision": "ACCEPT_for_dev_source_integration",
+      "focused_tests": "17_of_17_D_managed_PASS",
+      "limitation": "reviewer inspected test evidence but did not rerun tests or execute a model turn",
+      "reviewer": "/root/stable_builder_repair_review",
+      "subject": "46c51f7101c3d4d5018ea8c6b59b132e4bf558a0"
+    },
+    "stable": {
+      "asset_commit": "8f9bd0748fab588e7e2c80468c29fbb706df2625",
+      "build_job": "f430fd62b4694bc48c9e3f8921d046db",
+      "postcommit_replay_job": "b5bebb4d2f7c4478adc6060dd48ec386",
+      "postcommit_replay_tracked_changes": 0,
+      "validate_job": "a3f3d587ffb648d5851deff64ea0ecb4"
+    }
+  },
+  "schema_version": "aide.stable-release-effect.v1",
+  "source": {
+    "asset_commit": "8f9bd0748fab588e7e2c80468c29fbb706df2625",
+    "asset_tree": "479fed368aebd073a1cca2beca0e332dd8d87bad",
+    "expected_dev_before_integration": "8912eab9071cd2599fb4f43721aa0dafea807a8e",
+    "observed_main_before_effect": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+    "pack_projection_commit": "640367a7b92bec7bf3a91e0cd74f47602645f5a2",
+    "pack_source_commit": "65fafcc9f5bed0a32a5f9aaaa0155a815e0f3599",
+    "pack_source_tree": "22d0da7cad7a3e4818d344d9ab9516ead2050fd2",
+    "release_view_commit": "65eaa5550f2e99bc1a2f6bdc6f4146eaf427051d",
+    "review_subject_base": "65eaa5550f2e99bc1a2f6bdc6f4146eaf427051d",
+    "review_subject_base_tree": "5d52976aa4aa7e8544f18669a5c0a7bc45fb7a80",
+    "usage_repair_commit": "46c51f7101c3d4d5018ea8c6b59b132e4bf558a0",
+    "version_policy_sha256": "0a1257b7ae6976f380085a7f40fa5c481cca3d47e349f6f6a92cf7e1484173eb"
+  },
+  "state": "current_source_local_candidate_pending_independent_effect_review_and_live_model_gate",
+  "tag": "aide-lite-v1.0.0",
+  "version": "1.0.0",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+}
