@@ -37,18 +37,23 @@ def delivered_module(pack: Path):
     return module
 
 
-def child(pack: Path, target: Path, plan_digest: str, marker: Path) -> None:
+def child(pack: Path, target: Path, plan_digest: str, marker: Path, exit_after: int) -> None:
     module = delivered_module(pack)
     receipt = module.load_portable_import_receipt(target)
     managed = set(receipt["managed"])
     original = module.windows_unlink_exact_portable_file
+    owned_unlinks = 0
 
     def exit_after_owned_unlink(path, expected, *args, **kwargs):
+        nonlocal owned_unlinks
         result = original(path, expected, *args, **kwargs)
         relative = Path(path).relative_to(target).as_posix()
         if relative in managed and relative not in {"AGENTS.md", module.PORTABLE_REMOVAL_RUNNER_PATH}:
-            marker.write_text(relative + "\n", encoding="utf-8")
-            os._exit(EXIT_AFTER_UNLINK)
+            owned_unlinks += 1
+            if owned_unlinks == exit_after:
+                marker.write_text(json.dumps({"relative": relative, "owned_unlinks": owned_unlinks}) + "\n",
+                                  encoding="utf-8")
+                os._exit(EXIT_AFTER_UNLINK)
         return result
 
     module.windows_unlink_exact_portable_file = exit_after_owned_unlink
@@ -72,7 +77,9 @@ def delivered_cli(pack: Path, target: Path, *args: str) -> dict[str, object]:
     return json.loads(result.stdout)
 
 
-def run(archive: Path, expected_sha256: str) -> None:
+def run(archive: Path, expected_sha256: str, exit_after: int) -> None:
+    if not 1 <= exit_after <= 100:
+        raise ValueError("owned-unlink ordinal must be between 1 and 100")
     scratch = Path(os.environ["AIDE_JOB_TMP"])
     retained = Path(os.environ["AIDE_JOB_OUTPUT"])
     if sha256(archive) != expected_sha256:
@@ -115,6 +122,8 @@ def run(archive: Path, expected_sha256: str) -> None:
             raise AssertionError("delivered brownfield import did not apply")
         receipt = module.load_portable_import_receipt(target)
         managed = set(receipt["managed"])
+        if len(managed) <= exit_after + 2:
+            raise AssertionError("insufficient receipt-owned files for requested interruption")
         expected_agents = module.portable_agents_section_postimage(
             (target / "AGENTS.md").read_bytes(), receipt["managed"]["AGENTS.md"]["installed_digest"])
         if expected_agents is None or not expected_agents.startswith(authored):
@@ -123,12 +132,13 @@ def run(archive: Path, expected_sha256: str) -> None:
         digest = str(plan["plan_digest"])
         marker = out / "first-owned-unlink.txt"
         result = subprocess.run([sys.executable, "-I", "-B", str(Path(__file__).resolve()),
-                                 "--child", str(pack), str(target), digest, str(marker)],
+                                 "--child", str(pack), str(target), digest, str(marker), str(exit_after)],
                                 capture_output=True, text=True, encoding="utf-8", timeout=180)
         if result.returncode != EXIT_AFTER_UNLINK or not marker.is_file():
             raise AssertionError(f"child did not exit after owned unlink: {result.stderr[-1000:]}")
-        first_removed = marker.read_text(encoding="utf-8").strip()
-        if first_removed not in managed or (target / first_removed).exists():
+        interruption = json.loads(marker.read_text(encoding="utf-8"))
+        removed = interruption["relative"]
+        if interruption["owned_unlinks"] != exit_after or removed not in managed or (target / removed).exists():
             raise AssertionError("recorded owned file was not removed")
         if (module.load_portable_removal_intent(target) is None
                 or module.load_portable_import_receipt(target) is None):
@@ -148,7 +158,8 @@ def run(archive: Path, expected_sha256: str) -> None:
             raise AssertionError("authored or project-owned bytes changed after detach")
         summary = {"status": "PASS", "asset_sha256": expected_sha256,
                    "archive_members": len(members), "managed_files": len(managed),
-                   "child_exit": result.returncode, "first_removed": first_removed,
+                   "child_exit": result.returncode, "interrupted_after_owned_unlinks": exit_after,
+                   "interrupted_relative": removed,
                    "intent_and_receipt_retained_after_exit": True,
                    "fresh_cli_resume": resumed["status"],
                    "authored_and_project_owned_preserved": True}
@@ -162,9 +173,9 @@ def run(archive: Path, expected_sha256: str) -> None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 6 and sys.argv[1] == "--child":
-        child(Path(sys.argv[2]), Path(sys.argv[3]), sys.argv[4], Path(sys.argv[5]))
-    elif len(sys.argv) == 3:
-        run(Path(sys.argv[1]), sys.argv[2])
+    if len(sys.argv) == 7 and sys.argv[1] == "--child":
+        child(Path(sys.argv[2]), Path(sys.argv[3]), sys.argv[4], Path(sys.argv[5]), int(sys.argv[6]))
+    elif len(sys.argv) == 4:
+        run(Path(sys.argv[1]), sys.argv[2], int(sys.argv[3]))
     else:
-        raise SystemExit("exact ZIP and SHA, or --child pack target plan marker required")
+        raise SystemExit("exact ZIP, SHA and owned-unlink ordinal, or --child pack target plan marker ordinal required")

@@ -393,3 +393,13 @@ initial unsupported-flag harness attempt remains a recorded failure. The
 frozen asset and dev refs did not change. Preserve this supplemental evidence
 with the reachable post-Lite task branch; it does not clear the historical
 main-promotion decision gate or prove downloaded-asset behavior.
+
+## 2026-09-28 later removal interruption qualification
+
+Use the same frozen ZIP and existing post-Lite campaign evidence canary. Add a
+finite owned-unlink ordinal to interrupt after more than the first receipt-owned
+file, then verify the ordinal, retained intent/receipt, project-owned content
+and fresh-process detach. Run one 50th-unlink case through the configured D
+runner, without regenerating assets or moving dev/main. Record exact job and
+asset identities and seek a narrow review of this new evidence. If the product
+cannot resume, retain the failing job and route an actual lifecycle repair.
