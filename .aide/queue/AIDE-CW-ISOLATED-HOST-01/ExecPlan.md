@@ -622,3 +622,11 @@ with both attempt receipts retained. Exact identities and effect limits are in
 `evidence/h2-api-set-combined-integration-2026-09-29.md`. Obtain independent
 exact integration review before a dev fast-forward. Native query/load effects
 remain unadmitted, and Lite release bytes remain separate.
+
+Independent `/root/native_os_build_review` returned **ACCEPT_WITH_NOTES for
+dev source integration only** against source repair `6b11d413` and evidence
+closeout `f6114fb`; see `evidence/h2-api-set-combined-review-6b11d413.md`.
+The reviewer checked source identity and historical provenance and inspected
+the retained 59/59 D-managed result without rerunning it. Future effect pins
+must distinguish checkout line-ending bytes from Git blobs, and the historical
+test requires full Git history. Native effects remain unadmitted.
