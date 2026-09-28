@@ -5198,10 +5198,10 @@ def make_changelog_preview(
         to_ref=to_ref,
         limit=limit,
     )
-    if to_ref:
+    if revision_range:
+        source_ref = revision_range.rsplit("..", 1)[-1].lstrip(".") or "HEAD"
+    elif to_ref:
         source_ref = to_ref
-    elif revision_range:
-        source_ref = revision_range.rsplit("..", 1)[-1].lstrip(".")
     else:
         source_ref = "HEAD"
     source_head = git_commit_for_ref(repo_root, source_ref)

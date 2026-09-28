@@ -213,3 +213,10 @@ changelog generator and add one Git-fixture regression. Then regenerate the
 preview from the pack's exact source commit and verify binding before any
 release-effect acceptance. Keep prior consumer receipts and asset bytes;
 rebuild only if the repaired source alters pack inputs or validation requires it.
+
+The first exact source review of `7a521066` requested changes: simultaneous
+`--range` and `--to` selected range contents but labelled them with the `--to`
+head, and open-ended ranges recorded an empty head. Treat `--range` as the
+content authority, resolve an open end to HEAD, and extend the fixture to
+cover mixed selectors. Supersede the reviewed source only after focused test
+and another narrow independent review.

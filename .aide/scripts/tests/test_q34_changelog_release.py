@@ -58,6 +58,10 @@ class Q34ChangelogReleaseTests(unittest.TestCase):
             self.assertNotEqual(selected, aide_lite.git_head_commit(root))
             self.assertEqual(aide_lite.make_changelog_preview(root, to_ref=selected, limit=10)["source_head"], selected)
             self.assertEqual(aide_lite.make_changelog_preview(root, revision_range=selected, limit=10)["source_head"], selected)
+            self.assertEqual(aide_lite.make_changelog_preview(root, revision_range=selected, to_ref="HEAD", limit=10)["source_head"], selected)
+            current = aide_lite.git_head_commit(root)
+            self.assertEqual(aide_lite.make_changelog_preview(root, revision_range=f"{selected}..", to_ref=selected, limit=10)["source_head"], current)
+            self.assertEqual(aide_lite.make_changelog_preview(root, revision_range=f"{selected}..HEAD", to_ref=selected, limit=10)["source_head"], current)
 
     def test_parse_valid_conventional_subject(self) -> None:
         parsed = aide_lite.parse_conventional_subject("feat(changelog): add release draft previews")
