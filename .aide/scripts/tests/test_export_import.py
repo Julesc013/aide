@@ -6,6 +6,7 @@ import tempfile
 import unittest
 import importlib.util
 import json
+import hashlib
 import shutil
 import os
 import zipfile
@@ -135,6 +136,52 @@ class ExportImportTests(unittest.TestCase):
         self.assertIn("included_files:", manifest)
         self.assertIn("excluded_classes:", manifest)
         self.assertIn("raw_prompt_storage: false", manifest)
+
+    def test_extracted_export_pack_waits_without_source_checkout(self) -> None:
+        source_root = self.make_source_repo()
+        pack_root = self.build_pack(source_root)
+        self.assertTrue(aide_lite.validate_pack_checksums(pack_root)[0])
+        archive = source_root.parent / "lite-efficiency-fixture.zip"
+        with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
+            for path in sorted(pack_root.rglob("*")):
+                if path.is_file():
+                    bundle.write(path, f"{pack_root.name}/{path.relative_to(pack_root).as_posix()}")
+        consumer = source_root.parent / "consumer"
+        with zipfile.ZipFile(archive) as bundle:
+            bundle.extractall(consumer)
+        delivered = consumer / pack_root.name / "files"
+        script = delivered / ".aide/scripts/aide_lite.py"
+        self.assertEqual(script.read_bytes(), MODULE_PATH.read_bytes())
+
+        job_id = "a" * 32
+        job = {"source_commit": "b" * 40, "source_tree": "c" * 40}
+        manifest = hashlib.sha256(json.dumps(job, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        control = consumer / "control"
+        retained = consumer / "retained"
+        control.mkdir()
+        (retained / job_id).mkdir(parents=True)
+        config = consumer / "execution.json"
+        config.write_text(json.dumps({"schema": "aide.managed-workspace.local.v1",
+                                      "roots": {"control": str(control), "retained": str(retained)}}), encoding="utf-8")
+        (retained / job_id / "owner.json").write_text(
+            json.dumps({"job_id": job_id, "manifest_digest": manifest}), encoding="utf-8")
+        (retained / job_id / "receipt.json").write_text(json.dumps({
+            "job_id": job_id, "manifest_digest": manifest, "job": job,
+            "phase": "retired", "scratch_absent": True, "reservation_released": True,
+            "result": {"job_id": job_id, "reason": "exited", "exit_code": 0, "quiescent": True},
+            "collected_manifest": {"output": "d" * 64, "logs": "e" * 64},
+        }), encoding="utf-8")
+        completed = subprocess.run(
+            [sys.executable, "-I", "-B", str(script), "--repo-root", str(delivered),
+             "job", "wait", "--config", str(config), "--job-id", job_id,
+             "--manifest-digest", manifest, "--timeout-seconds", "0"],
+            capture_output=True, text=True, timeout=15)
+        self.assertEqual(completed.returncode, 0, completed.stderr[-500:])
+        outcome = json.loads(completed.stdout)
+        self.assertEqual(outcome["status"], "PASS")
+        self.assertEqual(outcome["model_requests_started_by_observer"], 0)
+        self.assertEqual(outcome["host_model_requests"], "unknown")
+        self.assertFalse((delivered / "core").exists())
 
     def test_export_excludes_source_state_and_generated_artifacts(self) -> None:
         source_root = self.make_source_repo()

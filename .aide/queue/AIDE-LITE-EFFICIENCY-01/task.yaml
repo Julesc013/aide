@@ -17,6 +17,7 @@ scope:
     - .aide/queue/index.yaml
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_efficiency_wait.py
+    - .aide/scripts/tests/test_export_import.py
     - docs/reference/aide-lite-test-runner.md
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
