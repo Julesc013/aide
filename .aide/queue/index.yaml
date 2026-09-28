@@ -3767,8 +3767,8 @@ items:
     prompt: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
-    status: needs_review
-    planning_state: superseding_archive_safety_source_candidate
+    status: running
+    planning_state: source_review_accepted_current_pack_generation
     result: PENDING
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
