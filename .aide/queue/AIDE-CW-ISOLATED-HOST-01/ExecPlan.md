@@ -540,3 +540,18 @@ control root. Keep this source on its task branch while the accepted Lite
 release effect remains frozen on dev; integrating the changed source into dev
 would require a deliberate release-dependency delta check. No native API-set
 query or worker activation is admitted by this review.
+
+The next task-owned controller source is under
+`evidence/h2_api_query_effect.py`, with seven injected cases in
+`evidence/h2_api_query_effect_tests.py`. It binds the retained exact 180 names,
+source and inventory digests, OS build and expiry; creates one exclusive D
+control journal before backend construction; fsyncs the reservation and every
+pre-call intent; checks journal identity; retains a bounded result or a
+consumed failure; and refuses reuse of the request ID. Managed job
+`b694c2accc0941fa9dc7f92a7f2c0281` passed all seven cases, retired scratch
+and released its reservation. The first test run found only an oracle ordering
+mistake: `ApiSetQueryPlan` intentionally sorts names. The corrected suite is
+green. No actual API-set backend was constructed. Freeze/review this source
+before building the short-lived exact effect manifest. The same-user trusted
+controller and approved D control root are explicit premises, not restricted
+worker isolation proof.

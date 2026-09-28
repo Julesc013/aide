@@ -10,6 +10,10 @@ D runner passed all 53 observation tests and a separate read-only native
 version probe confirmed 19045; both jobs retired scratch and released
 reservations. No API-set host query or operational activation occurred.
 Independent source review and a separately reviewed exact effect remain open.
+The next task-owned one-use query controller now pins the 180-name inventory,
+uses an exclusive durable D control journal and bounds retained output. Six
+injected managed tests pass (seven cases) after correcting a lexical-order test oracle;
+source/effect review and the actual native query remain unperformed.
 
 ## 2026-09-28 stable Lite release-effect policy repair
 

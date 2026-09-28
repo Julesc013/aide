@@ -8,6 +8,9 @@ uses `RtlGetVersion` for the API-set query plan's exact OS build. All 53
 injected observation tests and one read-only managed OS-version probe pass;
 independent source review and the separately admitted 180-name native effect
 remain open. This branch is separate from the frozen Lite release assets.
+The same branch now has a one-use, fsynced API-query controller candidate;
+seven injected cases pass through the bounded D runner, with independent
+controller/effect reviews and the actual native query still open.
 
 ## 2026-09-28 stable Lite release-effect repair
 
