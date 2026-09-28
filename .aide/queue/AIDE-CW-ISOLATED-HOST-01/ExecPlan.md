@@ -565,3 +565,10 @@ native calls. Ten local injected tests cover the original seven plus short
 result write, failed PASS fsync, and failed publication recovery. The
 superseding source candidate still needs a managed postcommit test and scoped
 independent rereview before preparing any actual native effect.
+
+The superseding source `f1c9223e`/tree `8530af9d` passed managed job
+`76c077624f1e49198254e829739440e0`: ten injected tests, exit 0, scratch
+retired, reservation released. The same independent reviewer accepted the
+exact repair for source only. The actual native query still needs a fresh
+manifest, independent effect review and one admitted finite job; source
+acceptance does not qualify host bytes, restricted execution or activation.

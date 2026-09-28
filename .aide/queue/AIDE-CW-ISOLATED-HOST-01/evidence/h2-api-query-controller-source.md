@@ -38,7 +38,15 @@ The external review custody copy has SHA-256
 `68e1a5a252c33b36b66229d92ac5d1d8a7e4aacc783f4b03fc4be74df93b5282`.
 The repair has ten injected cases passing locally, including occupied-output
 zero calls, short staged write, terminal fsync failure and publication
-reconciliation. A managed postcommit run and independent rereview are pending.
+reconciliation. Managed postcommit job `76c077624f1e49198254e829739440e0`
+at `f1c9223e`/tree `8530af9d` passed ten cases in 25.373s, exit 0,
+peak memory 29,417,472 bytes, scratch retired and reservation released.
+Independent `/root/native_os_build_review` returned **ACCEPT for SOURCE only**
+on that exact commit/tree. Its task evidence is
+`h2-api-query-controller-rereview-f1c9223e.md`; the external custody copy has
+SHA-256 `dce376a9c38eb94955d17b5dc65eb1994f02c0927914f535cbfd7a17b9477a76`.
+The reviewer did not rerun the suite or native query. Crash/power-loss
+durability and the actual Windows effect remain unqualified.
 The future effect must freeze a fresh
 request ID, 180-name list, current source and OS identities, a short expiry,
 exact managed job/config hashes, and the D control/output paths. One admitted
