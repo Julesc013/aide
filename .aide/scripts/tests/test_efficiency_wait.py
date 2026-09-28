@@ -157,6 +157,88 @@ class EfficiencyWaitTests(unittest.TestCase):
         path.write_text("\n".join(json.dumps(event) for event in events) + "\n", encoding="utf-8")
         return path
 
+    def attempt_roster(self, name, attempts):
+        path = self.root / name
+        write(path, {"schema": "aide.codex-exec-attempt-roster.v1",
+                     "work_id": "work-1", "attempts": attempts})
+        return path
+
+    def attributed_attempt(self, attempt_id, role, parent, stream):
+        return {"attempt_id": attempt_id, "role": role,
+                "parent_attempt_id": parent,
+                "stream": stream.name if stream else None,
+                "stream_sha256": hashlib.sha256(stream.read_bytes()).hexdigest() if stream else None}
+
+    def test_codex_attempt_roster_attributes_parent_child_review_retry(self):
+        usage = lambda count: {"input_tokens": count, "cached_input_tokens": 0,
+                               "output_tokens": 2, "reasoning_output_tokens": 1}
+        parent = self.codex_stream("parent.jsonl", session=str(uuid.UUID(int=1)), usage=usage(10))
+        child = self.codex_stream("child.jsonl", session=str(uuid.UUID(int=2)), usage=usage(6))
+        review = self.codex_stream("review.jsonl", session=str(uuid.UUID(int=3)), usage=usage(4))
+        retry = self.codex_stream("retry.jsonl", session=str(uuid.UUID(int=4)), usage=usage(3))
+        roster = self.attempt_roster("roster.json", [
+            self.attributed_attempt("parent-1", "parent", None, parent),
+            self.attributed_attempt("child-1", "child", "parent-1", child),
+            self.attributed_attempt("review-1", "review", "parent-1", review),
+            self.attributed_attempt("retry-1", "retry", "child-1", retry)])
+        result = lite.summarize_codex_usage_attempts(roster)
+        self.assertEqual(result["status"], "PARTIAL")
+        self.assertEqual(result["attempt_count"], 4)
+        self.assertEqual(result["supplied_known_usage_totals"]["input_tokens"], 23)
+        self.assertEqual({role: row["input_tokens"] for role, row in
+                          result["role_known_usage_totals"].items()},
+                         {"parent": 10, "child": 6, "review": 4, "retry": 3})
+        self.assertIsNone(result["work_usage_totals"]["input_tokens"])
+        self.assertIn("work_roster_completeness_unverified", result["coverage_gaps"])
+        self.assertEqual(result["model_requests"], "unknown")
+        self.assertFalse(result["raw_prompt_or_response_retained"])
+        self.assertNotIn("parent.jsonl", json.dumps(result))
+        command = [sys.executable, "-I", "-B", str(REPO / ".aide/scripts/aide_lite.py"),
+                   "--repo-root", str(REPO), "job", "usage", "--attempt-set", str(roster)]
+        completed = subprocess.run(command, capture_output=True, text=True, timeout=15)
+        self.assertEqual(completed.returncode, 2, completed.stderr[-500:])
+        self.assertEqual(json.loads(completed.stdout)["attempt_count"], 4)
+
+    def test_codex_attempt_roster_preserves_missing_parent_as_unknown(self):
+        child = self.codex_stream("child.jsonl", session=str(uuid.UUID(int=2)),
+                                  usage={"input_tokens": 6, "cached_input_tokens": 1,
+                                         "output_tokens": 2, "reasoning_output_tokens": 0})
+        roster = self.attempt_roster("missing.json", [
+            self.attributed_attempt("parent-1", "parent", None, None),
+            self.attributed_attempt("child-1", "child", "parent-1", child)])
+        result = lite.summarize_codex_usage_attempts(roster)
+        self.assertIn("attempt_stream_unavailable", result["coverage_gaps"])
+        self.assertIsNone(result["role_known_usage_totals"]["parent"]["input_tokens"])
+        self.assertEqual(result["role_known_usage_totals"]["child"]["input_tokens"], 6)
+        self.assertEqual(result["supplied_known_usage_totals"]["input_tokens"], 6)
+        self.assertIsNone(result["work_usage_totals"]["input_tokens"])
+
+    def test_codex_attempt_roster_refuses_duplicate_and_escaping_streams(self):
+        stream = self.codex_stream("one.jsonl", usage={"input_tokens": 2,
+            "cached_input_tokens": 0, "output_tokens": 1, "reasoning_output_tokens": 0})
+        parent = self.attributed_attempt("parent-1", "parent", None, stream)
+        duplicate = self.attributed_attempt("child-1", "child", "parent-1", stream)
+        roster = self.attempt_roster("duplicate.json", [parent, duplicate])
+        with self.assertRaisesRegex(ValueError, "duplicate stream"):
+            lite.summarize_codex_usage_attempts(roster)
+        escaped = {**duplicate, "stream": "../one.jsonl"}
+        roster = self.attempt_roster("escape.json", [parent, escaped])
+        with self.assertRaisesRegex(ValueError, "stream path"):
+            lite.summarize_codex_usage_attempts(roster)
+
+    def test_codex_attempt_roster_does_not_attribute_same_session_overlap(self):
+        usage = {"input_tokens": 5, "cached_input_tokens": 0,
+                 "output_tokens": 1, "reasoning_output_tokens": 0}
+        parent = self.codex_stream("parent.jsonl", usage=usage)
+        child = self.codex_stream("child.jsonl", usage={**usage, "input_tokens": 7})
+        roster = self.attempt_roster("overlap.json", [
+            self.attributed_attempt("parent-1", "parent", None, parent),
+            self.attributed_attempt("child-1", "child", "parent-1", child)])
+        result = lite.summarize_codex_usage_attempts(roster)
+        self.assertIn("same_session_multiple_streams_turn_identity_unknown", result["coverage_gaps"])
+        self.assertIsNone(result["role_known_usage_totals"]["parent"]["input_tokens"])
+        self.assertIsNone(result["role_known_usage_totals"]["child"]["input_tokens"])
+
     def test_codex_usage_import_deduplicates_exact_stream_and_terminal(self):
         path = self.codex_stream("one.jsonl", usage={"input_tokens": 20, "cached_input_tokens": 5,
             "output_tokens": 7, "reasoning_output_tokens": 2}, repeat=True)

@@ -12731,3 +12731,16 @@ The eight accepted current-byte commits fast-forwarded local and remote dev
 to `d5a84c10`, tree `50058036`; remote identity and clean local state were
 observed. The full `main..dev` check still reports exactly ten unresolved
 historical message failures. No main promotion or publication occurred.
+
+## 2026-09-29 bounded attempt attribution for Lite usage
+
+Extended the existing portable `job usage` importer with a read-only attempt
+roster. It validates role and parent links, bounded relative stream paths and
+SHA-256 identities, then reports known usage subtotals by parent, child,
+review, retry, repair and overhead role. Missing streams and same-session
+ambiguity remain explicit; the command never claims complete work usage or
+internal host model requests from a supplied roster. Four focused new tests
+were red before implementation; the D-managed 22-case suite passed after it.
+The test job retired scratch and released its reservation. Exact source review,
+dev integration, changed-byte release qualification and live host binding are
+still separate gates.

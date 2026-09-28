@@ -259,3 +259,29 @@ The D-managed red run `bdfa68a4` failed only the new regression (17 other
 cases passed). The repaired source passed all 18 cases in job `6da5799b`;
 both jobs retired scratch and released reservations. Independent source review
 and changed-byte release qualification remain pending.
+
+## 2026-09-29 bounded attempt attribution
+
+Objective: add a read-only attempt roster to the existing portable `job usage`
+importer so a completed work outcome can distinguish parent, child, review,
+retry, repair and overhead streams. Use a bounded JSON file with unique attempt
+IDs, explicit parent links and exact stream digests. A missing stream remains
+an explicit gap; supplied roster completeness and internal host requests stay
+unverified. No model call, tariff, billing claim or new storage service.
+
+Scope: `.aide/scripts/aide_lite.py`, focused efficiency regressions, the
+existing Lite runner guide and this WorkUnit. First test missing, duplicate,
+cross-session and role accounting
+cases with synthetic streams; implement against the existing parser and run
+the focused suite through the approved D runner. Obtain independent exact
+source review before dev integration. Refresh release bytes once after the
+coherent efficiency source slice; do not repeat the just-qualified consumer
+matrix for each internal edit. The separate live host permission remains a
+real qualification boundary.
+
+Four new attribution cases produced the expected red result in D-managed job
+`3b4489de` while the earlier 18 cases passed. The implemented importer passed
+all 22 cases in D-managed job `1f2be7e7`; scratch retired and reservation was
+released. Exact source review, dev integration and changed-byte release
+qualification remain pending. Full work usage and live host requests remain
+unknown.
