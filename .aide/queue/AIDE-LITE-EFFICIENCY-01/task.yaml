@@ -11,6 +11,8 @@ authority_basis: Owner's 2026-09-28 execution-efficiency priority and 2026-09-25
 objective: >
   Deliver portable no-model observation and the existing bounded Windows job
   owner in extracted Lite, with truthful compact results and no duplicate runner.
+  Add an explicit one-turn Codex host binding to that same owner, subject to
+  separate model permission, local effect and delivered-byte qualification.
 scope:
   allowed_paths:
     - .aide/queue/AIDE-LITE-EFFICIENCY-01/**
@@ -18,6 +20,8 @@ scope:
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_efficiency_wait.py
     - .aide/scripts/tests/test_export_import.py
+    - .aide/scripts/tests/test_managed_workspace.py
+    - core/execution/managed_workspace.py
     - docs/reference/aide-lite-test-runner.md
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
@@ -26,7 +30,7 @@ scope:
     - DOCUMENTATION.md
   forbidden_operations:
     - submit a job or model request from the observer
-    - change the existing job supervisor or cleanup owner
+    - create a competing job supervisor, allocator or cleanup owner
     - copy raw conversations, credentials or logs into Git
     - mutate FacMan or another target repository
     - claim host-wide model-call control from a CLI observer

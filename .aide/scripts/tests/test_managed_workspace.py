@@ -66,6 +66,63 @@ class ManagedWorkspaceTests(unittest.TestCase):
             inputs={'fixture.py': hashlib.sha256(script.read_bytes()).hexdigest()})
         return self.job
 
+    def codex_job(self):
+        self.real_job('pass\n')
+        prompt = self.source / 'task-packet.txt'
+        schema = self.source / 'result-schema.json'
+        prompt.write_text('Return one bounded result for subject fixture.\n', encoding='utf-8')
+        schema.write_text('{"type":"object","properties":{"status":{"type":"string"}}}\n', encoding='utf-8')
+        subprocess.run(['git', '-C', str(self.source), 'add', '--', prompt.name, schema.name],
+                       capture_output=True, check=True, timeout=10)
+        subprocess.run(['git', '-C', str(self.source), '-c', 'user.name=AIDE Fixture',
+                        '-c', 'user.email=fixture@example.invalid', 'commit', '-m',
+                        'test(fixture): bind one Codex task packet'], capture_output=True,
+                       check=True, timeout=10)
+        executable = self.root / 'codex.exe'
+        executable.write_bytes(b'MZ synthetic executable for captured host only')
+        def git(*args):
+            return subprocess.run(['git', '-C', str(self.source), *args], capture_output=True,
+                                  text=True, check=True, timeout=10).stdout.strip()
+        self.job.update(adapter='codex_exec', argv=[str(executable)],
+            executable_sha256=workspace.file_digest(executable),
+            source_commit=git('rev-parse', 'HEAD'), source_tree=git('rev-parse', 'HEAD^{tree}'),
+            inputs={name: workspace.file_digest(self.source / name)
+                    for name in ('task-packet.txt', 'result-schema.json')},
+            prompt_file=prompt.name, schema_file=schema.name,
+            model='gpt-6-sol', effort='medium')
+        return self.job
+
+    def test_codex_adapter_uses_existing_owner_with_bound_ephemeral_readonly_turn(self):
+        job = self.codex_job()
+        host = mock.Mock()
+        host.run.return_value = {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        result = workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        argv = host.run.call_args.args[0]
+        options = host.run.call_args.kwargs
+        self.assertEqual(argv[:4], [job['argv'][0], 'exec', '--ephemeral', '--ignore-user-config'])
+        self.assertIn('--json', argv)
+        self.assertIn('read-only', argv)
+        self.assertIn('gpt-6-sol', argv)
+        self.assertIn('model_reasoning_effort="medium"', argv)
+        self.assertIn('forced_login_method="chatgpt"', argv)
+        self.assertNotIn('--dangerously-bypass-approvals-and-sandbox', argv)
+        self.assertEqual(options['input_bytes'], (self.source / job['prompt_file']).read_bytes())
+        self.assertEqual(options['cwd'], Path(result['scratch']) / 'tmp')
+        self.assertEqual(result['result']['exit_code'], 0)
+        self.assertTrue(result['scratch_absent'])
+        self.assertTrue(result['reservation_released'])
+
+    def test_codex_adapter_refuses_unbound_or_unbounded_requests_before_allocation(self):
+        job = self.codex_job()
+        for edit in ({'argv': [*job['argv'], '--full-auto']}, {'effort': 'unspecified'},
+                     {'prompt_file': '../outside'}, {'canonical_outputs': {'.aide/release': {}}}):
+            with self.subTest(edit=edit), self.assertRaises(workspace.WorkspaceRefused):
+                workspace.validate_job({**job, **edit}, [self.source])
+        (self.source / job['prompt_file']).write_text('changed after binding\n', encoding='utf-8')
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'source input changed'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+
     def test_disk_and_memory_refusal_allocate_nothing(self):
         for changed in ({'disk_free': {workspace.volume_identity(self.root): 1024}}, {'physical_free': 1024}, {'commit_free': 1024}):
             with self.subTest(changed=changed):

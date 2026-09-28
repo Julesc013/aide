@@ -170,3 +170,24 @@ D-managed job, including conflicting duplicate counter and event type
 regressions. Scratch retired and the reservation was released. Independent
 `/root/stable_effect_review` ACCEPTed dev source integration. Receipt, review
 and limits are in `evidence/codex-usage-duplicate-key-2026-09-29.md`.
+
+## 2026-09-29 one-turn Codex host binding
+
+Objective: admit a single explicit Codex `exec` job through the existing
+managed-workspace Windows Job, reservation, log and retirement owner. The
+current runner admits Python only, so Lite cannot yet demonstrate a supported
+host-applied model path. Extend that owner's job schema with a distinct
+`codex_exec` adapter and bound task-packet/schema inputs; keep ordinary Python
+behavior unchanged. Build a literal, read-only, ephemeral one-turn CLI command
+with explicit ChatGPT account method, model and effort; disable nested agents,
+apps, hooks, remote plugins and web search. Launch in the admitted D scratch,
+send only the bounded packet on stdin and retain bounded JSONL output locally.
+No arbitrary argv, API fallback, global settings change or automatic replay.
+
+First prove refusal of malformed/missing/escaping inputs and capture the exact
+command with a synthetic host under the existing D runner. Then qualify the
+installed host path and a real model turn only when account allowance and
+effect scope are established. Obtain independent source/security review before
+dev integration. Export and downloaded-byte qualification remain later gates.
+This amendment uses the owner's campaign delegation to extend the existing
+owner for the explicit efficiency priority; it does not add a scheduler.

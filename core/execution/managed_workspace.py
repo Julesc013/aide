@@ -13,6 +13,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import stat
 import subprocess
@@ -41,6 +42,15 @@ def file_digest(path):
     with Path(path).open('rb') as stream:
         for chunk in iter(lambda: stream.read(1024 * 1024), b''): value.update(chunk)
     return value.hexdigest()
+
+
+def unique_json_object(pairs):
+    value = {}
+    for key, item in pairs:
+        if key in value:
+            raise WorkspaceRefused('duplicate Codex schema key')
+        value[key] = item
+    return value
 
 
 def ordinary(path, *, directory=False):
@@ -457,10 +467,21 @@ def validate_job(job, working):
         raise WorkspaceRefused('absolute executable required')
     if file_digest(exe) != job['executable_sha256']:
         raise WorkspaceRefused('executable changed')
-    if job.get('adapter') != 'python' or exe.name.casefold() not in ('python.exe', 'python', 'python3'):
-        raise WorkspaceRefused('only explicit Python placement adapter is qualified')
-    if len(argv) < 2 or (argv[1].startswith('-') and (argv[1] != '-m' or len(argv) < 3)):
-        raise WorkspaceRefused('Python module or script command required')
+    adapter = job.get('adapter')
+    if adapter == 'python':
+        if exe.name.casefold() not in ('python.exe', 'python', 'python3'):
+            raise WorkspaceRefused('explicit Python executable required')
+        if len(argv) < 2 or (argv[1].startswith('-') and (argv[1] != '-m' or len(argv) < 3)):
+            raise WorkspaceRefused('Python module or script command required')
+    elif adapter == 'codex_exec':
+        if exe.name.casefold() != 'codex.exe' or len(argv) != 1 or job.get('canonical_outputs'):
+            raise WorkspaceRefused('one explicit Codex executable without canonical outputs required')
+        if not isinstance(job.get('model'), str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,63}', job['model']):
+            raise WorkspaceRefused('explicit bounded Codex model required')
+        if job.get('effort') not in ('low', 'medium', 'high', 'xhigh', 'max', 'ultra'):
+            raise WorkspaceRefused('explicit Codex reasoning effort required')
+    else:
+        raise WorkspaceRefused('qualified placement adapter required')
     inputs = job.get('inputs', {})
     if not inputs:
         raise WorkspaceRefused('source/dependency/oracle inputs required')
@@ -474,10 +495,25 @@ def validate_job(job, working):
             if parent == cwd: break
         if file_digest(path) != expected:
             raise WorkspaceRefused('source input changed: ' + relative)
-    if argv[1] != '-m':
+    if adapter == 'python' and argv[1] != '-m':
         script = Path(argv[1]) if Path(argv[1]).is_absolute() else cwd/argv[1]
         if not script.is_relative_to(cwd) or script.relative_to(cwd).as_posix() not in inputs:
             raise WorkspaceRefused('script must be a bound source input')
+    if adapter == 'codex_exec':
+        for name in ('prompt_file', 'schema_file'):
+            relative = job.get(name)
+            if not isinstance(relative, str) or relative not in inputs:
+                raise WorkspaceRefused(name + ' must be a bound source input')
+            size = ordinary(cwd / relative).st_size
+            if not 0 < size <= 65536:
+                raise WorkspaceRefused(name + ' exceeds the one-turn input limit')
+        try:
+            schema = json.loads((cwd / job['schema_file']).read_text(encoding='utf-8'),
+                                object_pairs_hook=unique_json_object)
+        except (UnicodeError, ValueError) as exc:
+            raise WorkspaceRefused('Codex result schema is malformed') from exc
+        if not isinstance(schema, dict) or schema.get('type') != 'object':
+            raise WorkspaceRefused('Codex result schema must be an object')
     # Small immutable Git identities; no tracked-report generation.
     def git(*args):
         return subprocess.run(['git', '-C', str(cwd), *args], capture_output=True, text=True, timeout=15, check=True).stdout.strip()
@@ -650,6 +686,17 @@ def collect_and_retire(record, config, roots):
 def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity):
     config, roots, working = load_config(config_path); cwd = validate_job(job, working)
     roots.update(canonical_roots(config, job, cwd))
+    codex_input = codex_schema = b''
+    if job['adapter'] == 'codex_exec':
+        with (cwd / job['prompt_file']).open('rb') as stream:
+            codex_input = stream.read(65537)
+        with (cwd / job['schema_file']).open('rb') as stream:
+            codex_schema = stream.read(65537)
+        if not 0 < len(codex_input) <= 65536 or not 0 < len(codex_schema) <= 65536:
+            raise WorkspaceRefused('Codex input exceeded the one-turn limit')
+        if (hashlib.sha256(codex_input).hexdigest() != job['inputs'][job['prompt_file']]
+                or hashlib.sha256(codex_schema).hexdigest() != job['inputs'][job['schema_file']]):
+            raise WorkspaceRefused('Codex input changed before admission')
     host = host or WindowsJobHost(); limits = config['limits']; active = roots['control'] / 'active.json'
     with estate_lock(roots['control']):
         if os.path.lexists(active):
@@ -704,12 +751,28 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
             write_json(active, record)
         def checkpoint(stage):
             record['phase'] = stage; write_json(active, record)
-        # Force Python tempfile's explicit parent: it cannot fall back when the
-        # admitted pool disappears. Tool scripts must use AIDE_JOB_OUTPUT/cache.
-        bootstrap = "import os,sys,tempfile,runpy; tempfile.tempdir=os.environ['AIDE_JOB_TMP']; a=sys.argv[1:]; sys.argv=([a[1],*a[2:]] if a[0]=='-m' else a); runpy.run_module(a[1],run_name='__main__',alter_sys=True) if a[0]=='-m' else runpy.run_path(a[0],run_name='__main__')"
-        argv = [job['argv'][0], '-B', '-u', '-c', bootstrap, *job['argv'][1:]]
+        if job['adapter'] == 'python':
+            # Python tempfile cannot fall back when the admitted pool disappears.
+            bootstrap = "import os,sys,tempfile,runpy; tempfile.tempdir=os.environ['AIDE_JOB_TMP']; a=sys.argv[1:]; sys.argv=([a[1],*a[2:]] if a[0]=='-m' else a); runpy.run_module(a[1],run_name='__main__',alter_sys=True) if a[0]=='-m' else runpy.run_path(a[0],run_name='__main__')"
+            argv = [job['argv'][0], '-B', '-u', '-c', bootstrap, *job['argv'][1:]]
+            input_bytes = b''
+            process_cwd = cwd
+        else:
+            input_bytes = codex_input
+            schema_copy = root / 'tmp' / 'result-schema.json'
+            process_cwd = root / 'tmp'
+            argv = [job['argv'][0], 'exec', '--ephemeral', '--ignore-user-config', '--json',
+                    '--skip-git-repo-check', '--cd', str(process_cwd), '--sandbox', 'read-only',
+                    '--output-schema', str(schema_copy), '--model', job['model'],
+                    '-c', f'model_reasoning_effort="{job["effort"]}"',
+                    '-c', 'approval_policy="never"', '-c', 'forced_login_method="chatgpt"',
+                    '-c', 'agents.enabled=false', '-c', 'features.multi_agent=false',
+                    '-c', 'features.apps=false', '-c', 'features.hooks=false',
+                    '-c', 'features.remote_plugin=false', '-c', 'web_search="disabled"', '-']
         try:
-            record['result'] = host.run(argv, cwd=cwd, input_bytes=b'', output_dir=root/'logs', job_id=job_id,
+            if job['adapter'] == 'codex_exec':
+                schema_copy.write_bytes(codex_schema)
+            record['result'] = host.run(argv, cwd=process_cwd, input_bytes=input_bytes, output_dir=root/'logs', job_id=job_id,
                 timeout=limits['runtime_seconds'], output_limit=limits['log_bytes'], memory_limit=limits['memory_bytes'],
                 process_limit=limits['processes'], cancelled=cancelled, checkpoint=checkpoint, environment=env, observed=observe)
         except BaseException as exc:
