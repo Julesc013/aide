@@ -2,20 +2,14 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 8912eab9071cd2599fb4f43721aa0dafea807a8e latest 50 commits
-source_head: 8912eab9071cd2599fb4f43721aa0dafea807a8e
+source_range: 1dada960cc47189e8a1c21be87b41aed02ea835a latest 50 commits
+source_head: 1dada960cc47189e8a1c21be87b41aed02ea835a
 preview_only: true
 
 ## Highlights
 
-- Added: Explicit one-turn Codex job adapter in the existing Lite runner. (651744c0a428)
 - Added: Include the portable bounded job interface in the Lite release contract. (20710eace078)
 - Added: Portable bounded job commands in the Lite candidate assets. (5acd32a79ab5)
-- Changed: Preserve Codex worker one-turn result qualification. (7eaebe3bec42)
-- Changed: Retain Codex worker result boundary qualification. (9fe9cb485daf)
-- Changed: Record reviewed Codex result boundary integration. (e447e6416b74)
-- Changed: Retain Codex usage import qualification. (e5bb4f8b53ca)
-- Changed: Record portable Codex usage repair integration. (326492ff6df6)
 - Changed: Codex host source qualification and remaining gates. (6281a6b903ca)
 - Changed: Durable dev integration record for Codex host source. (38fbe92266bd)
 - Changed: Extracted Lite fixture covers Codex permission refusal. (1bacae3a9be0)
@@ -25,12 +19,14 @@ preview_only: true
 - Changed: Current Lite pack uses repaired non-circular provenance. (a7ab0223d1ba)
 - Changed: Local Lite 1.0.0 candidate includes current portable source. (b147aa8cf28a)
 - Changed: Preserve the usage repair review verdict. (8912eab9071c)
-- Fixed: Bind worker verdicts and usage to one observed Codex turn. (9dccd27fe2f3)
-- Fixed: Keep the turn-boundary regression focused on refusal. (1497a7e2ad4f)
-- Fixed: Codex worker result binding to the final item and unique JSON fields. (2086e512aeb3)
-- Fixed: Refuse ambiguous Codex usage import fields. (8a12605dc1af)
-- Fixed: Pause-aware one-turn Codex job dispatch. (e9fce7a9c1a4)
-- Fixed: Reject ambiguous Lite job dispatch state. (1105ad98e516)
+- Changed: Refresh preview metadata for the current Lite source. (65fafcc9f5be)
+- Changed: Refresh unpublished Lite candidate views and qualification evidence. (65eaa5550f2e)
+- Changed: Freeze reviewable current Lite candidate evidence. (a3ab41fad425)
+- Changed: Record qualified local Lite candidate integration. (a468f7f038d1)
+- Changed: Clarify current unpublished Lite candidate status. (0cacf2040ce8)
+- Changed: Record qualified bounded execution and owned cleanup closure. (ef938eef1b78)
+- Changed: Record accepted usage subtotal source review. (fe65f48c67a1)
+- Changed: Schedule current usage-source release qualification. (1dada960cc47)
 - Fixed: Bounded Windows checkpoint retry under reader contention. (12ac93c9aeec)
 - Fixed: Codex host admission and bounded retained input. (36c944159c09)
 - Fixed: Setup quota regression expectation. (33151c5ea97c)
@@ -42,47 +38,51 @@ preview_only: true
 - Fixed: Package selected-revision changelog provenance in Lite. (f22f3ec58ed4)
 - Fixed: Include selected-source changelog provenance in the local Lite candidate. (df372b3a6495)
 - Fixed: Portable usage reports unknown instead of false zero or contradictory known totals. (46c51f7101c3)
+- Fixed: Export corrected portable usage accounting. (640367a7b92b)
+- Fixed: Include corrected usage accounting in the unpublished Lite candidate. (8f9bd0748fab)
+- Fixed: Bind public Lite release claims to current candidate evidence. (ae08a6be3b96)
+- Fixed: Preserve valid independent Codex usage subtotals under partial coverage. (9c391d255017)
 - Docs: Refresh the source-bound Lite release preview. (87635e1815b7)
 - Docs: Bind Lite release preview to the accepted source revision. (4491c2cb8b47)
 
 ## Validation Summary
 
-- 9dccd27fe2f3: PASS: AST parse of the three Python files and diff whitespace check.
-- 1497a7e2ad4f: FAIL retained: First D-managed state suite passed 22/23; this assertion alone failed.
-- 7eaebe3bec42: FAIL retained: Initial state suite 22/23 from an over-specific oracle message.
-- 2086e512aeb3: PASS: git diff --check.
-- 9fe9cb485daf: PASS: D-managed state 26/26 and pipeline 32/32 at source 2086e512.
-- e447e6416b74: PASS: git ls-remote matched local and remote-tracking dev at 9fe9cb48.
-- 8a12605dc1af: PASS: git diff --check.
-- e5bb4f8b53ca: PASS: D-managed focused suite 15/15 at source 8a12605d.
-- 326492ff6df6: PASS: git ls-remote matched local and remote-tracking dev at e5bb4f8b.
-- 651744c0a428: PASS: git diff --check.
+- 12ac93c9aeec: FAIL retained: 40/41 D-managed cases at 1105ad98 due to active.json.next contention.
+- 36c944159c09: PASS: git diff --check.
+- 33151c5ea97c: FAIL retained: 44/45 D-managed cases at 36c94415; one stale fixture expectation.
+- 67e1d572d513: PASS: git diff --check.
+- 6281a6b903ca: PASS: final source 67e1d572 D-managed 46/46 synthetic cases, job 5e5972bf; reviewer ACCEPT for dev source only.
+- 38fbe92266bd: PASS: git plan dry-run; commit check dev..HEAD 8/8; remote dev observed at 6281a6b9.
+- 1bacae3a9be0: PASS: git diff --check.
+- 8b0cba063b37: PASS: git diff --check.
+- 12351b07c340: PASS: 1/1 extracted fixture at 8b0cba06 in D job dabd6ae6; reviewer ACCEPT for dev test only.
+- 6c4f61553495: PASS: git diff --check; plan only, generator not yet run.
 
 ## Known Risks
 
-- 9dccd27fe2f3: Live Codex effect and exported Lite behavior remain unqualified.
-- 1497a7e2ad4f: Production worker parser is unchanged by this test-only correction.
-- 7eaebe3bec42: No real Codex turn or Lite export was qualified by these synthetic tests.
-- 2086e512aeb3: Synthetic parser tests do not qualify a live Codex model turn.
-- 9fe9cb485daf: No live Codex model turn or portable Lite release was qualified.
-- e447e6416b74: No live Codex turn or stable release qualification was performed.
-- 8a12605dc1af: Synthetic records do not establish actual host usage coverage.
-- e5bb4f8b53ca: No live host usage or stable release bytes were qualified.
-- 326492ff6df6: No real model call or stable asset qualification was performed.
-- 651744c0a428: No live model effect, pause-aware dispatch or delivered-byte qualification yet.
+- 12ac93c9aeec: Persistent replacement failure still requires explicit recovery and remains a failure.
+- 36c944159c09: The local executable path remains trusted against hostile same-user mutation between the final hash and CreateProcessW.
+- 33151c5ea97c: The full focused suite remains pending after this fixture correction.
+- 67e1d572d513: Same-user hostile mutation between final executable hash and CreateProcessW remains outside this local binding guarantee.
+- 6281a6b903ca: Live Codex turn, JSONL verdict, exported Lite and final release qualification remain open.
+- 38fbe92266bd: This evidence-only closeout does not qualify live model output or final distribution bytes.
+- 1bacae3a9be0: This test does not launch a model or prove a JSONL result.
+- 8b0cba063b37: No live model or JSONL verdict is exercised by this synthetic refusal.
+- 12351b07c340: No live model, JSONL verdict or canonical release bytes were qualified.
+- 6c4f61553495: Live model turn and historical promotion decisions remain pending.
 
 ## Follow-up
 
-- 9dccd27fe2f3: Run state and pipeline suites through the D owner; seek independent exact source review.
-- 1497a7e2ad4f: Rerun exact state suite, then pipeline suite under the D owner.
-- 7eaebe3bec42: Obtain independent exact source and scope review before dev integration.
-- 2086e512aeb3: Run D-managed suites and obtain independent review of this repair before dev integration.
-- 9fe9cb485daf: Integrate accepted source into dev; retain separate real-effect and release gates.
-- e447e6416b74: Qualify the real permitted worker effect and delivered Lite behavior separately.
-- 8a12605dc1af: Run the D-managed focused suite and obtain exact source review before dev.
-- e5bb4f8b53ca: Fast-forward reviewed source into dev and observe the remote ref.
-- 326492ff6df6: Qualify the host binding and current delivered Lite candidate separately.
-- 651744c0a428: Test source under D owner, close pause race and obtain independent review before dev.
+- 12ac93c9aeec: Rerun exact managed suite and seek independent source review.
+- 36c944159c09: Run the D-managed suite, preserve the review result, and qualify the final combined source.
+- 33151c5ea97c: Rerun the D-managed suite and seek scoped independent rereview.
+- 67e1d572d513: Run the D-managed suite and close the exact review before dev integration.
+- 6281a6b903ca: Integrate accepted source in dev and qualify actual combined and delivered behavior.
+- 38fbe92266bd: Qualify the current extracted Lite host path and bounded JSONL verdict.
+- 1bacae3a9be0: Run the exact delivered fixture and retain its result before dev integration.
+- 8b0cba063b37: Rerun the exact consumer and close the narrow review.
+- 12351b07c340: Integrate accepted test and continue actual host/release qualification.
+- 6c4f61553495: Run the admitted export job once, validate and commit coherent generated bytes.
 
 ## Warnings
 
