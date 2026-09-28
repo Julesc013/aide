@@ -1,0 +1,67 @@
+{
+  "archives": {
+    "tar_gz": {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
+      "sha256": "1267223c80788768b5910339f1610c64f1ea1adb0fb9579461af8fefa76ef4d4",
+      "size_bytes": 735179
+    },
+    "zip": {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
+      "sha256": "df91a4845dc7e97b5af0125db4e22242b352a80906450de967f581f131a68f19",
+      "size_bytes": 1064619
+    }
+  },
+  "identity": {
+    "artifact_state": "immutable_release_payload",
+    "intended_channel": "stable",
+    "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
+    "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
+    "predecessor_matrix": [],
+    "profile_id": "aide-lite-local-windows",
+    "public_cli_forms": [
+      "doctor",
+      "validate",
+      "context",
+      "pack --task <task>",
+      "verify --evidence <evidence-path>",
+      "task inspect",
+      "task status",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+      "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+      "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+      "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+      "plan-removal --target <target>",
+      "apply-removal --target <target> --expect-plan <digest>",
+      "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+      "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>"
+    ],
+    "release_axis": "aide_lite_portable_package",
+    "schema_version": "aide.stable-release-identity.v1",
+    "source_commit": "fe44070dfb37ea44dbb61a253d6edbb713717442",
+    "source_pack_checksums_sha256": "db2383039e6f75e92bb3e0155c8c5e34f7e4667ef609d3a768b106721d035b9e",
+    "source_repo": "julesc013/aide",
+    "source_tree": "e9d5d4fac2639bf30795de819836bdf33425713a",
+    "support_mode": "companion",
+    "support_tier_candidate": "T3",
+    "tag": "aide-lite-v1.0.0",
+    "version": "1.0.0",
+    "version_policy_sha256": "2d18331357984e7140a483edf0a2be7c48bc9d41743c70ac6f579506d0a9bc3f"
+  },
+  "publication_evidence": "separate exact effect record required",
+  "review_required": "independent technical ACCEPT for exact release and effect",
+  "schema_version": "aide.stable-release-candidate.v1",
+  "status": "frozen_release_assets"
+}
