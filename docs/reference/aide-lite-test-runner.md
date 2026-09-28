@@ -41,6 +41,7 @@ variables alone cannot satisfy the guard. Portable Lite keeps its existing
 behavior because it does not export the source-only execution owner or tests.
 
 ```powershell
+py -3 .aide/scripts/aide_lite.py job setup --config <checkout>/.aide.local/execution.json --selection <local-selection-json> --approved-parent <owner-selected-existing-parent>
 py -3 .aide/scripts/aide_lite.py job inspect --config <local-config> --manifest <job-json>
 py -3 .aide/scripts/aide_lite.py job run --config <local-config> --manifest <job-json>
 py -3 .aide/scripts/aide_lite.py job recover --config <local-config>
@@ -49,10 +50,19 @@ py -3 .aide/scripts/aide_lite.py job recover --config <local-config>
 Inspection only reads state. The machine-local configuration belongs in the
 existing `.aide.local/` boundary; `.aide.local.example/execution.json` contains
 placeholders and finite example limits, not an approved machine placement.
+`job setup` takes an explicit local selection using those same root, working
+root and limit fields. It verifies an existing owner-selected parent, creates
+only the selected missing storage children, observes their volume IDs and
+capacity, then writes each checkout's local config once. A matching config is
+an unchanged success. A changed config, redirected path, nonempty unowned
+storage or unavailable capacity is refused without selecting another drive.
+Two existing checkouts can share populated roots when the first already has
+the same validated configuration. Setup does not change global settings.
 `git detect` and `git plan` also inspect without writing by default; their
 existing tracked report projections require explicit `--write-reports`.
-All three storage roots must already exist and match their declared volume
-identities. Missing/unavailable storage refuses admission without fallback.
+All three storage roots must exist and match their declared volume identities
+before `job inspect` or `job run` admits work. Missing/unavailable storage
+refuses admission without fallback.
 All campaign workspaces must share one control root; its OS lock serializes
 heavy jobs and their disk/memory reservations. This is not a global quota for
 unmanaged tools or for jobs configured with another control root.

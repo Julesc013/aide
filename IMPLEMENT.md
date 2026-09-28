@@ -12442,5 +12442,18 @@ context/offline, three real child exits, ten installed recovery/feedback
 forms and installed validate/task inspection. Current importer shards passed
 54/54 and 56/56 cases. All listed jobs retired scratch and released their
 reservations. The release-effect manifest records receipt hashes and the
-remaining warning/offline limits. No main, tag, publication or downloaded
-consumer effect has occurred; independent exact release ACCEPT is next.
+remaining warning/offline limits. The candidate subsequently received
+independent ACCEPT and reached dev; main, tag, publication and downloaded
+consumer effects remain gated by historical message dispositions.
+
+2026-09-28 selected-root setup: added `job setup` to the existing managed
+workspace runner. An explicit local selection validates approved parent,
+source boundaries, redirects, actual volume IDs, shared checkout configuration,
+finite limits and combined config/job disk allowance before publishing one
+machine-local config. Equal existing config is read-only; setup never chooses a
+fallback drive. Six new focused cases and the 35-case managed suite passed in
+the shared D runner (job `4c93fecbc9544747902b5225e0f16db3`); scratch was
+retired and the reservation released. A commit-bound rerun passed the same
+35 cases (job `48c84ef70d2c494bb46a4ec7079532d5`) and independent review
+accepted exact source `5152798b` with notes. Dev integration remains separate
+from the frozen Lite release; its accepted source/assets were not changed.

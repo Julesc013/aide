@@ -97,6 +97,122 @@ class ManagedWorkspaceTests(unittest.TestCase):
             self.assertFalse((self.root/'not-created').exists())
             self.assertEqual(list(self.roots['scratch'].iterdir()), [])
 
+    def setup_selection(self, *, roots=None, working=None):
+        selection = {'schema': self.config['schema'],
+            'roots': {key: str(value) for key, value in (roots or self.roots).items()},
+            'working_roots': [str(value) for value in (working or [self.source])],
+            'limits': dict(self.config['limits'])}
+        selection['limits']['canonical_bytes'] = 1024 * 1024
+        path = self.root / 'setup-selection.json'
+        workspace.write_json(path, selection)
+        return path
+
+    def test_selected_root_setup_is_idempotent_and_cli_uses_it(self):
+        roots = {key: self.root / 'owned-pool' / key for key in self.roots}
+        selection = self.setup_selection(roots=roots)
+        destination = self.source / '.aide.local' / 'execution.json'
+        first = workspace.configure(destination, selection, self.root, probe=lambda _: self.ample)
+        self.assertEqual(first['result'], 'CONFIGURED')
+        self.assertTrue(first['writes'])
+        self.assertTrue(all(path.is_dir() for path in roots.values()))
+        config = workspace.read_json(destination)
+        self.assertEqual(config['volume_ids'], {key: workspace.volume_identity(value) for key, value in roots.items()})
+        before = (destination.read_bytes(), destination.stat().st_mtime_ns)
+        second = workspace.configure(destination, selection, self.root, probe=lambda _: self.ample)
+        self.assertEqual(second['result'], 'ALREADY_CONFIGURED')
+        self.assertFalse(second['writes'])
+        self.assertEqual((destination.read_bytes(), destination.stat().st_mtime_ns), before)
+        with mock.patch.object(Path, 'cwd', return_value=self.source):
+            relative = workspace.configure(Path('.aide.local/execution.json'), selection, self.root, probe=lambda _: self.ample)
+        self.assertEqual(relative['result'], 'ALREADY_CONFIGURED')
+        command = [sys.executable, '-B', str(REPO/'.aide/scripts/aide_lite.py'), 'job', 'setup',
+            '--config', str(destination), '--selection', str(selection), '--approved-parent', str(self.root)]
+        result = subprocess.run(command, cwd=REPO, capture_output=True, text=True,
+            env=workspace.sanitized_environment(), timeout=15)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(json.loads(result.stdout)['result'], 'ALREADY_CONFIGURED')
+
+    def test_setup_shares_existing_populated_roots_with_second_checkout(self):
+        second_source = self.root / 'second-source'; second_source.mkdir()
+        selection = self.setup_selection(working=[self.source, second_source])
+        first = self.source / '.aide.local' / 'execution.json'
+        second = second_source / '.aide.local' / 'execution.json'
+        workspace.configure(first, selection, self.root, probe=lambda _: self.ample)
+        (self.roots['retained'] / 'existing-evidence.txt').write_text('preserve', encoding='utf-8')
+        result = workspace.configure(second, selection, self.root, probe=lambda _: self.ample)
+        self.assertEqual(result['result'], 'CONFIGURED')
+        self.assertEqual(workspace.read_json(first), workspace.read_json(second))
+        self.assertEqual((self.roots['retained'] / 'existing-evidence.txt').read_text(), 'preserve')
+
+    def test_setup_refuses_low_capacity_without_creating_selected_roots(self):
+        roots = {key: self.root / 'new-pool' / key for key in self.roots}
+        selection = self.setup_selection(roots=roots)
+        destination = self.source / '.aide.local' / 'execution.json'
+        scarce = {**self.ample, 'disk_free': {workspace.volume_identity(self.root): 1024}}
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'free-space reserve'):
+            workspace.configure(destination, selection, self.root, probe=lambda _: scarce)
+        self.assertFalse((self.root / 'new-pool').exists())
+        self.assertFalse(destination.exists())
+        limits = workspace.read_json(selection)['limits']
+        reserved = limits['scratch_bytes'] + limits['retained_bytes'] + 2 * limits['log_bytes'] + 1024 * 1024
+        near_limit = {**self.ample, 'disk_free': {workspace.volume_identity(self.root):
+            limits['disk_reserve_bytes'] + reserved + 512 * 1024}}
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'local config would consume'):
+            workspace.configure(destination, selection, self.root, probe=lambda _: near_limit)
+        self.assertFalse((self.root / 'new-pool').exists())
+        self.assertFalse(destination.exists())
+
+    def test_setup_retires_only_new_empty_roots_if_capacity_changes(self):
+        roots = {key: self.root / 'new-pool' / key for key in self.roots}
+        selection = self.setup_selection(roots=roots)
+        destination = self.source / '.aide.local' / 'execution.json'
+        scarce = {**self.ample, 'disk_free': {workspace.volume_identity(self.root): 1024}}
+        observations = iter((self.ample, scarce))
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'free-space reserve'):
+            workspace.configure(destination, selection, self.root, probe=lambda _: next(observations))
+        self.assertFalse((self.root / 'new-pool').exists())
+        self.assertFalse(destination.parent.exists())
+
+    def test_setup_refuses_escape_unknown_contents_and_changed_config(self):
+        destination = self.source / '.aide.local' / 'execution.json'
+        roots = dict(self.roots)
+        roots['scratch'] = self.root.parent / 'outside-approved-parent'
+        selection = self.setup_selection(roots=roots)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'escapes approved'):
+            workspace.configure(destination, selection, self.root, probe=lambda _: self.ample)
+        self.assertFalse(destination.exists())
+        with self.assertRaises((OSError, workspace.WorkspaceRefused)):
+            workspace.configure(destination, selection, self.root / 'missing-parent', probe=lambda _: self.ample)
+        self.assertFalse((self.root / 'missing-parent').exists())
+        selection = self.setup_selection()
+        unknown = self.roots['retained'] / 'unknown.txt'; unknown.write_text('unique', encoding='utf-8')
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'nonempty storage'):
+            workspace.configure(destination, selection, self.root, probe=lambda _: self.ample)
+        self.assertEqual(unknown.read_text(), 'unique')
+        unknown.unlink()
+        workspace.configure(destination, selection, self.root, probe=lambda _: self.ample)
+        old = destination.read_bytes()
+        changed = workspace.read_json(selection); changed['limits']['scratch_bytes'] += 1
+        workspace.write_json(selection, changed)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'existing local config differs'):
+            workspace.configure(destination, selection, self.root, probe=lambda _: self.ample)
+        self.assertEqual(destination.read_bytes(), old)
+
+    def test_setup_refuses_reparse_root_without_writing_target(self):
+        target = self.root / 'junction-target'; target.mkdir()
+        link = self.root / 'junction'
+        command = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(target)],
+            capture_output=True, text=True, timeout=10)
+        self.assertEqual(command.returncode, 0, command.stdout + command.stderr)
+        self.addCleanup(lambda: link.rmdir() if link.exists() else None)
+        roots = {key: link / key for key in self.roots}
+        selection = self.setup_selection(roots=roots)
+        destination = self.source / '.aide.local' / 'execution.json'
+        with self.assertRaises(workspace.WorkspaceRefused):
+            workspace.configure(destination, selection, self.root, probe=lambda _: self.ample)
+        self.assertEqual(list(target.iterdir()), [])
+        self.assertFalse(destination.exists())
+
     def test_inspection_is_nonmutating(self):
         def snapshot():
             return {str(p.relative_to(self.root)): (p.stat().st_size, p.stat().st_mtime_ns)

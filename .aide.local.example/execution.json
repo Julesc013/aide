@@ -1,6 +1,6 @@
 {
   "schema": "aide.managed-workspace.local.v1",
-  "roots": {"scratch": "REQUIRED_EXISTING_APPROVED_POOL", "retained": "REQUIRED_EXISTING_EVIDENCE_POOL", "control": "REQUIRED_SHARED_ESTATE_CONTROL_ROOT"},
+  "roots": {"scratch": "REQUIRED_OWNER_SELECTED_SCRATCH_ROOT", "retained": "REQUIRED_OWNER_SELECTED_RETAINED_ROOT", "control": "REQUIRED_OWNER_SELECTED_SHARED_CONTROL_ROOT"},
   "volume_ids": {"scratch": "REQUIRED_ACTUAL_VOLUME_ID", "retained": "REQUIRED_ACTUAL_VOLUME_ID", "control": "REQUIRED_ACTUAL_VOLUME_ID"},
   "working_roots": ["REQUIRED_APPROVED_EXISTING_SOURCE_CHECKOUT"],
   "limits": {
