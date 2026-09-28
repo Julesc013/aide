@@ -1,5 +1,13 @@
 # AIDE Planning Index
 
+## 2026-09-28 stable Lite release-effect repair
+
+Independent review of the exact `d5df63c5` effect returned REQUEST_CHANGES.
+The existing release-effect WorkUnit repairs the version-policy activation
+stage and per-form CLI evidence binding, then regenerates and qualifies exact
+policy-bound bytes before a superseding release ACCEPT. Main/tag/publication
+remain stopped. See its ExecPlan and review evidence.
+
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
 
 Bounded release documentation alignment follows the resumed Goal; existing source/spec adoption is preserved and heavy qualification stays held.

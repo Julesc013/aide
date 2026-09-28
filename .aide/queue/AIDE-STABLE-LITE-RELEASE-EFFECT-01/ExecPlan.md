@@ -76,3 +76,23 @@ work. The parent goal remains active until wider mandatory work is fulfilled.
   bytes and publication remain separate effect checks.
 - [ ] Independent exact release ACCEPT.
 - [ ] Main/tag/publication and downloaded-byte verification.
+
+## 2026-09-28 review repair
+
+Independent `/root/stable_effect_review` returned `REQUEST_CHANGES` for
+`d5df63c5` (tree `dc6ea8b3`, manifest SHA-256 `04de67b3...a11c9`). The exact
+review is retained under the configured D control root at
+`reviews/stable-effect-d5df63c5-review.md` (SHA-256
+`af6d79a609847bd4342dd2eacf43ba6f424bd6604629810e46d24a33d5420524`).
+The reviewer verified all four asset hashes and eleven job receipts, but
+identified two release-policy blockers: missing per-form target/evidence
+binding and a version policy that still marks this contract preview-only.
+Main/tag/publication remain stopped. The owner campaign delegation admits
+this bounded policy repair; `task.yaml` now includes the exact policy path.
+
+Repair the policy's pre-effect and postpublication gates, bind every declared
+CLI form to a target state, environment and actual job output, then regenerate
+the policy-bound current pack and stable bytes. Reuse unchanged source tests
+only when source, dependency and oracle bindings hold. Run focused new-byte
+consumers, post-commit replay and a superseding independent exact release
+review. Preserve Q47/Q48 preview status.

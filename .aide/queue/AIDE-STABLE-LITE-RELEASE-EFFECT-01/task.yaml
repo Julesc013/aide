@@ -28,6 +28,7 @@ scope:
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_q47_release_bundle.py
     - .aide/scripts/tests/test_q48_github_release_draft.py
+    - .aide/policies/release-versioning.yaml
     - .aide/export/**
     - .aide/release/**
     - governance/release-policy.md
@@ -37,7 +38,6 @@ scope:
     - IMPLEMENT.md
     - DOCUMENTATION.md
   read_only_paths:
-    - .aide/policies/release-versioning.yaml
     - .aide/policies/review-gates.yaml
     - .aide/policies/github-release-draft.yaml
     - core/runtime/**

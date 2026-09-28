@@ -1,5 +1,14 @@
 # AIDE Implementation Log
 
+## 2026-09-28 stable Lite release-effect policy repair
+
+Recorded independent REQUEST_CHANGES for `d5df63c5`, widened only the
+release-effect WorkUnit's exact allowed policy path, and split pre-effect
+release acceptance from postpublication downloaded-byte verification. Q47/Q48
+preview and no-publish behavior remains scoped to those projections. The
+stable assets embed the version-policy hash and require regeneration and
+focused new-byte qualification before a superseding exact release review.
+
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
 
 Resumed the campaign for a bounded current-status/spec-root alignment in the reused checkout; no new storage pool or artifact generation.
