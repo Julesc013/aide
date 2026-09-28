@@ -131,3 +131,13 @@ The extracted-ZIP fixture consumer now asserts `job context` from delivered
 bytes and passed 1/1 in D-managed job `680c0a88`. Its scratch was retired and
 the reservation released. This closes the fixture proof; final canonical
 release bytes and a live mediated host binding remain separate gates.
+
+## 2026-09-29 delivered wait attachment qualification
+
+Objective: extend the existing extracted-ZIP consumer to attach to the actual
+job it just ran, using the returned exact job ID and manifest digest. Check the
+retained terminal receipt, zero observer-started model requests, and refusal
+of a changed manifest digest. Use the current D-managed test owner, preserve the
+exact committed test source and receipt, and review this test-only increment
+before dev integration. No Codex invocation or canonical release rebuild is
+part of this slice. The real host binding and final release bytes remain open.

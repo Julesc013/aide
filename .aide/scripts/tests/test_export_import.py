@@ -281,6 +281,24 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(result["source_commit"], git("HEAD"))
         self.assertFalse((Path(roots["scratch"]) / result["job_id"]).exists())
         self.assertFalse((Path(roots["control"]) / "active.json").exists())
+        attached = subprocess.run(
+            [*base, "wait", "--config", str(config_path),
+             "--job-id", result["job_id"], "--manifest-digest", result["manifest_digest"],
+             "--timeout-seconds", "0"],
+            capture_output=True, text=True, timeout=15)
+        self.assertEqual(attached.returncode, 0, attached.stdout[-500:] + attached.stderr[-500:])
+        attached_view = json.loads(attached.stdout)
+        self.assertEqual(attached_view["status"], "PASS")
+        self.assertEqual(attached_view["receipt_sha256"], result["receipt_sha256"])
+        self.assertEqual(attached_view["source_commit"], git("HEAD"))
+        self.assertEqual(attached_view["model_requests_started_by_observer"], 0)
+        changed = subprocess.run(
+            [*base, "wait", "--config", str(config_path),
+             "--job-id", result["job_id"], "--manifest-digest", "f" * 64,
+             "--timeout-seconds", "0"],
+            capture_output=True, text=True, timeout=15)
+        self.assertEqual(changed.returncode, 1, changed.stdout[-500:] + changed.stderr[-500:])
+        self.assertEqual(json.loads(changed.stdout)["status"], "EVIDENCE_UNAVAILABLE")
 
     def test_source_checkout_missing_queue_index_cannot_bypass_job_guard(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
