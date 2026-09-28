@@ -96,3 +96,9 @@ delivered CLI, verify the compact result and retired scratch. No Codex request,
 canonical release rebuild, target-owned rollout or alternative storage pool.
 Review the exact source delta before dev integration. A real host dispatch
 binding, usage coverage and final release bytes remain separate gates.
+
+Source `b117f0f8` passed the first extracted-ZIP consumer case, but independent
+review found a missing-index admission bypass. Superseding `26f343b7` passed
+both the delivered job and missing-index refusal tests in a D-managed job;
+independent review returned ACCEPT for dev source integration. The exact
+receipts and limits are in `evidence/portable-job-owner-qualification-2026-09-29.md`.
