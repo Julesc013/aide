@@ -414,3 +414,11 @@ Independent `/root/stable_effect_review` accepted exact effect subject
 `a681da82`, tree `d9b50264`, manifest SHA-256 `5a51a84e`, for local technical
 effect and dev integration. Record the verdict separately from the frozen
 candidate, then refresh refs and range checks before a fast-forward.
+
+The eleven-commit range from `dev@6e35ea13` passed commit policy. With a clean
+candidate, matching local/remote base and no observed overlapping AIDE writer,
+`dev` fast-forwarded to `b11af55d728d77a19599a35fdc4da8a68282318e`.
+The ordinary push succeeded and remote `dev` returned the same identity.
+`main` remains `aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3`. The local
+release effect is integrated; live-model, historical-decision, promotion and
+publication gates remain open.

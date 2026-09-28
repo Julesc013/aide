@@ -12753,3 +12753,11 @@ The D-managed focused suite passed 24/24 after repair. The original review
 remains `REQUEST_CHANGES`; a scoped superseding review accepted exact source
 `8f10a66b` for dev integration. The reviewer did not rerun tests or qualify
 delivered bytes or live host behavior.
+
+The source-bound Lite 1.0.0 attribution projection was refreshed through the
+existing release generator. The 38-form assets, six disposable current-byte
+consumer journeys, twelve job-form observations, Q47/Q48 36-case suite, and
+zero-change export/stable/bundle/draft replays passed. Independent review
+accepted the exact local effect at `a681da82` for dev integration; the
+eleven-commit range passed policy and remote `dev` was observed at `b11af55d`.
+This is local technical acceptance, not a live model or published release.
