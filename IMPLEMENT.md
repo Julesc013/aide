@@ -12444,3 +12444,13 @@ forms and installed validate/task inspection. Current importer shards passed
 reservations. The release-effect manifest records receipt hashes and the
 remaining warning/offline limits. No main, tag, publication or downloaded
 consumer effect has occurred; independent exact release ACCEPT is next.
+
+2026-09-28 partial rollback continuation: `rollback-pack` now reports the
+saved recovery digest only for a safe-mode rollback-direction intent and
+accepts explicit `--recover-partial` with that exact digest. It delegates to
+the existing guarded importer under the lifecycle lock, returning
+`ROLLED_BACK_RECOVERED` only after receipt/intent reconciliation. The new
+installed-CLI test covers wrong direction/digest, a rival edit and preserved
+authored bytes; eight affected rollback cases and a CLI junction case passed
+under the D runner. This is source work awaiting independent review and
+delivered-byte qualification, not a change to the accepted Lite release.

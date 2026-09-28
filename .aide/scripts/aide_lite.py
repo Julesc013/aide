@@ -43139,7 +43139,15 @@ def build_portable_rollback_plan(current_pack: Path, previous_pack: Path, target
         )
         if pending.get("target") != normalize_rel(target_root) or (next_receipt.get("pack"), next_receipt.get("predecessor_pack")) not in expected_pair:
             raise ValueError("pending import intent belongs to different rollback packs or target")
-        return {"status": "RECOVERY_REQUIRED", "plan_digest": None, "operations": [], "conflicts": [], "preserved": [], "recovery": classify_portable_import_recovery(target_root, pending)}
+        rollback_pending = (
+            next_receipt.get("pack") == previous_identity
+            and next_receipt.get("predecessor_pack") == current_identity
+            and next_receipt.get("mode") == "safe"
+        )
+        return {"status": "RECOVERY_REQUIRED", "plan_digest": None,
+            "recovery_plan_digest": pending.get("plan_digest") if rollback_pending else None,
+            "operations": [], "conflicts": [], "preserved": [],
+            "recovery": classify_portable_import_recovery(target_root, pending)}
     receipt = load_portable_import_receipt(target_root)
     if receipt is None or receipt.get("mode") != "safe":
         raise ValueError("rollback requires a completed safe-mode import receipt")
@@ -43215,14 +43223,32 @@ def apply_portable_rollback(
     expected_plan_digest: str,
     *,
     fail_after_writes: int | None = None,
+    recover_partial: bool = False,
 ) -> dict[str, object]:
-    """Apply only the previewed equal-payload predecessor rollback on Windows."""
+    """Apply a previewed rollback or explicitly continue its exact partial intent."""
     if os.name != "nt":
         raise ValueError("portable rollback apply requires Windows anchored file handles")
     if re.fullmatch(r"[0-9a-f]{64}", expected_plan_digest or "") is None:
         raise ValueError("portable rollback apply requires an exact preview digest")
     with portable_lifecycle_lock(target_root.resolve()):
         plan = build_portable_rollback_plan(current_pack, previous_pack, target_root)
+        if recover_partial:
+            if plan["status"] != "RECOVERY_REQUIRED":
+                raise ValueError("partial rollback recovery requires a pending rollback intent")
+            recovery_digest = plan.get("recovery_plan_digest")
+            if recovery_digest is None or plan["recovery"]["classification"] != "partial":
+                return plan
+            if expected_plan_digest != recovery_digest:
+                return {"status": "STALE_PLAN", "plan_digest": None,
+                    "recovery_plan_digest": recovery_digest, "written": []}
+            result = _apply_import_pack_unlocked(
+                previous_pack, target_root, mode="safe", predecessor_pack=current_pack,
+                expected_plan_digest=recovery_digest, recover_partial=True,
+            )
+            if result["status"] == "RECOVERED":
+                result["status"] = "ROLLED_BACK_RECOVERED"
+            result["recovery_plan_digest"] = recovery_digest
+            return result
         if plan["status"] == "RECOVERY_REQUIRED":
             return plan
         if plan["plan_digest"] != expected_plan_digest:
@@ -43593,20 +43619,25 @@ def command_rollback_pack(args: argparse.Namespace) -> int:
     current_pack = Path(args.current_pack).resolve()
     previous_pack = Path(args.previous_pack).resolve()
     target_root = Path(args.target).resolve()
+    if args.dry_run and args.recover_partial:
+        raise ValueError("partial rollback recovery requires apply mode")
     if args.dry_run:
         result = build_portable_rollback_plan(current_pack, previous_pack, target_root)
     else:
-        result = apply_portable_rollback(current_pack, previous_pack, target_root, args.expect_plan)
+        result = apply_portable_rollback(current_pack, previous_pack, target_root, args.expect_plan,
+            recover_partial=args.recover_partial)
     if args.json:
         print(json.dumps(result, sort_keys=True, indent=2, ensure_ascii=False))
     else:
         print("AIDE Lite rollback-pack")
         print(f"status: {result['status']}")
         print(f"plan_digest: {result.get('plan_digest') or result.get('rollback_plan_digest') or 'none'}")
+        if result.get("recovery_plan_digest"):
+            print(f"recovery_plan_digest: {result['recovery_plan_digest']}")
         print(f"written: {len(result.get('written', []))}")
         print("provider_or_model_calls: none")
         print("network_calls: none")
-    return 0 if result["status"] in {"PLANNED", "ROLLED_BACK", "NO_CHANGES"} else 2 if result["status"] in {"CONFLICT", "PRESERVATION_REQUIRED"} else 3
+    return 0 if result["status"] in {"PLANNED", "ROLLED_BACK", "ROLLED_BACK_RECOVERED", "NO_CHANGES"} else 2 if result["status"] in {"CONFLICT", "PRESERVATION_REQUIRED"} else 3
 
 
 def command_plan_removal(args: argparse.Namespace) -> int:
@@ -45679,7 +45710,8 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     rollback_pack_parser.add_argument("--previous-pack", required=True)
     rollback_pack_parser.add_argument("--target", required=True)
     rollback_pack_parser.add_argument("--dry-run", action="store_true")
-    rollback_pack_parser.add_argument("--expect-plan", help="Exact rollback preview digest; required for apply.")
+    rollback_pack_parser.add_argument("--expect-plan", help="Rollback preview digest for apply, or reported recovery-plan digest with --recover-partial.")
+    rollback_pack_parser.add_argument("--recover-partial", action="store_true", help="Continue only an exact partial rollback intent with its reported recovery-plan digest.")
     rollback_pack_parser.add_argument("--json", action="store_true")
     rollback_pack_parser.set_defaults(handler=command_rollback_pack)
 

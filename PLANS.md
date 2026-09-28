@@ -4190,3 +4190,9 @@ recovery/feedback/validate/task forms. The exact effect manifest and review
 packet are in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. The next gate is the
 stricter independent release ACCEPT, then authorized dev/main/tag/publication
 and downloaded-byte verification. The wider programme remains active.
+
+The bounded `AIDE-DELIVERED-PACK-ROLLBACK-RECOVERY-01` source slice adds an
+explicit continuation for a partial portable rollback through the existing
+guarded importer. The affected eight-case rollback matrix and a CLI junction
+probe pass through the shared D runner. Obtain exact source review before
+integration; the frozen Lite 1.0.0 acceptance remains tied to its older bytes.
