@@ -343,7 +343,7 @@ class ManagedWorkspaceTests(unittest.TestCase):
         self.assertFalse((self.root / 'new-pool').exists())
         self.assertFalse(destination.exists())
         limits = workspace.read_json(selection)['limits']
-        reserved = limits['scratch_bytes'] + limits['retained_bytes'] + 2 * limits['log_bytes'] + 1024 * 1024
+        reserved = limits['scratch_bytes'] + limits['retained_bytes'] + 2 * limits['log_bytes'] + 3 * 1024 * 1024
         near_limit = {**self.ample, 'disk_free': {workspace.volume_identity(self.root):
             limits['disk_reserve_bytes'] + reserved + 512 * 1024}}
         with self.assertRaisesRegex(workspace.WorkspaceRefused, 'local config would consume'):
