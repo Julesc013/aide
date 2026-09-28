@@ -12616,3 +12616,12 @@ passed 46/46 D-managed synthetic tests with retired scratch; independent
 REQUEST_CHANGES and two failed D runs remain in the WorkUnit evidence. No live
 model request, JSONL verdict or final Lite asset was qualified by this source
 increment.
+
+The next extracted Lite fixture now calls the delivered `job run` path with a
+source-bound synthetic Codex manifest. It refuses missing local model
+permission before scratch allocation, then still proves the Python job,
+wait, usage and context paths. Superseding test `8b0cba06` passed 1/1 under
+the D owner with retired scratch and independent dev test ACCEPT. The first
+inspector-only test was rejected as a weak effect oracle; its receipt remains
+in `AIDE-LITE-EFFICIENCY-01/evidence`. This does not qualify a live turn or a
+canonical release asset.

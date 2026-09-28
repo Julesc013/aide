@@ -212,3 +212,10 @@ runner, without launching a model or generating the canonical release pack.
 Record the exact fixture source and receipt, then seek focused test review.
 This closes delivered admission/refusal only; a live turn and JSONL verdict
 remain separate qualification gates.
+
+Frozen `1bacae3a` passed the extracted fixture but independent review
+REQUESTED_CHANGES because it exercised `job inspect`. Superseding `8b0cba06`
+exercises delivered `job run`, passed 1/1 in the D-managed job `dabd6ae6`,
+retired scratch, and received independent ACCEPT for dev test integration.
+The exact receipts and review scope are in
+`evidence/codex-delivered-admission-2026-09-29.md`.
