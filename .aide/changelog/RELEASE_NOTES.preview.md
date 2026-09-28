@@ -3,18 +3,16 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 4b5854f2f9dbeea7cf246946caf02d829a16c757
+source_head: 4c32a8edd8aa8ea129609c6aedb534e6dfcf16f1
 preview_only: true
 
 ## Highlights
 
 - Added: explicit bounded maintainer job inspect/run/recover commands. (5ea1f7cdd53c)
+- Added: Separate first-stable Lite candidate archive generation and validation. (24bd7d0d88c6)
 - Changed: Task OS golden validation leaves source projections unchanged. (e185d2898fb2)
-- Fixed: installed Lite Task OS reports no selected task for an empty queue. (f00d937e2368)
-- Fixed: project-owned Lite target queues no longer receive AIDE source-phase next-work advice. (e88a1468acd2)
-- Fixed: target Task OS routing follows its declared profile even when a queue ID matches an AIDE source task. (b9d2b150c39c)
-- Fixed: target next-work explanation remains accurate even when queue IDs collide with source IDs. (52e1f194ebd2)
-- Fixed: local draft lifecycle claims now match the bounded Windows apply candidates. (bc1867a06933)
+- Changed: Record exact source-review acceptance for the unpublished stable builder. (a6725d83db10)
+- Changed: Refresh portable AIDE Lite pack from accepted dev source. (4c32a8edd8aa)
 - Fixed: preview effect evidence now identifies its exact commit range and replay state. (6e8af2bd8d16)
 - Fixed: allow explicit Windows recovery of an exact partial portable import without replaying changed project bytes. (547ea2b09235)
 - Fixed: refuse forged partial import ownership and stale controls during recovery. (052a0a926527)
@@ -26,6 +24,8 @@ preview_only: true
 - Fixed: Task status inspection no longer generates tracked reports by default. (0302b18c724d)
 - Fixed: Candidate stable interface includes requested customization and recovery forms. (f0eabe41265d)
 - Fixed: Explicit import feedback refuses every supplied input pack and the target. (c6d104f665e3)
+- Fixed: Reject unsafe Windows archive paths in the unpublished stable builder. (34c87052f7e3)
+- Fixed: Bound tar metadata parsing in the unpublished stable release validator. (59db02a0e6c3)
 - Removed: Two verified duplicate consumer ZIP expansions. (119529d076fd)
 - Docs: preserve focused source review with explicit qualification limits. (36e1a6d54aa0)
 - Docs: retain resource source review and bounded product validation routing. (8aa60c7bb8a2)
@@ -35,42 +35,42 @@ preview_only: true
 
 ## Validation Summary
 
-- b3a001befaac: PASS: Local, origin, ls-remote and GitHub API all observed dev at 2defcad5 after fast-forward and normal push.
-- 5561aecdb608: PASS: Fresh extracted-ZIP safe import applied 816 owned files; installed context, pack and verify exited zero with zero verifier errors.
-- b45010280e5e: PASS: 31 command log hashes and exit codes matched the pinned canary summary.
-- 736e3f9ac027: PASS: git plan returned ready_dry_run before branch creation.
-- a7254d7d4c9c: PASS: task inspect reports complete with zero missing evidence.
-- d292253b0994: PASS: exact candidate checks and four-commit range passed before effect.
-- f00d937e2368: PASS: the new regression failed on unmodified source with incidental X-OS-01 identity.
-- 04caefe65986: PASS: external review report hash matched and source worktree stayed clean before this evidence edit.
-- e88a1468acd2: PASS: one-item target regression failed on old source with X-OS-01 and passed after repair.
-- b9d2b150c39c: PASS: copied-ID target regression failed before the role repair and passes afterward.
+- 22257dc6ad9e: PASS: four release replay commands changed zero paths; archive hashes unchanged.
+- 6e8af2bd8d16: PASS: exact 22257dc6 12-commit check, task inspect with eight evidence files and no missing evidence, git diff --check.
+- 493e3f13c1b2: PASS: exact effect candidate 6e8af2bd had a 13-commit range pass and clean four-command release replay.
+- 5f2441d18772: PASS: canonical repository validate.
+- f44f3a28fc08: PASS: canonical validate, task inspect with four evidence files and zero missing, explicit staged whitespace check.
+- e88b1c2ee6f3: PASS: canonical validate, task inspect with five evidence files and zero missing, explicit staged whitespace check.
+- d4b7657d9c0e: PASS: canonical validate; prior task inspect complete with six evidence files and zero missing.
+- 547ea2b09235: PASS: Python compile and staged whitespace check.
+- 052a0a926527: PASS: six focused Windows recovery regressions, Python compile and staged whitespace check.
+- dfc8048bc005: PASS: fresh/update recovery test and three guard/resolution tests, including second-process denial and exit-77 cleanup.
 
 ## Known Risks
 
-- b3a001befaac: Synthetic update fixtures and local previews do not establish a shipping support profile or public stable release.
-- 5561aecdb608: Local preview and synthetic packs cannot establish stable release or published-predecessor support.
-- b45010280e5e: This is preview-only evidence; the synthetic rollback successor and in-process interruption do not establish published or hostile-process guarantees.
-- 736e3f9ac027: The Task OS report-truth finding and final released-byte qualifications remain unresolved.
-- a7254d7d4c9c: The evaluation acceptance does not itself authorize dev mutation; the Task OS source defect and stable release gates remain open.
-- d292253b0994: Empty-target Task OS report truth remains defective; synthetic rollback and local preview checks do not qualify a stable release.
-- f00d937e2368: Source tests do not qualify the unchanged preview archives or the eventual published release.
-- 04caefe65986: The reviewed source commit is f00d937e; this later evidence-only commit is not a changed-source review substitute.
-- e88a1468acd2: Old export and release preview bytes do not contain this source repair; canonical provenance is red until regenerated.
-- b9d2b150c39c: Legacy profile-absent queues retain exact ID fallback; this is not a universal ownership classifier.
+- 22257dc6ad9e: This evidence-only commit is distinct from source 0509e161, projection dc8697e3 and metadata 10fd7a20.
+- 6e8af2bd8d16: This commit changes the effect subject and therefore needs its own exact policy-range receipt and review.
+- 493e3f13c1b2: This evidence-only closeout is distinct from the reviewed source/artifact effect commit and requires its own qualified dev effect.
+- 5f2441d18772: Current archive is a local preview, and a synthetic successor is not a published predecessor.
+- f44f3a28fc08: Synthetic rollback successor and local preview bytes are not published release qualification.
+- e88b1c2ee6f3: The earlier f44f3a28 effect review remains NO GO; this new commit needs focused review.
+- d4b7657d9c0e: The local ZIP remains a preview and cannot qualify source changes made later.
+- 547ea2b09235: Older intents remain safe refusal; this source candidate has not qualified delivered archives or final release.
+- 052a0a926527: This remains a source candidate; delivered archives, dev integration and stable release are unqualified.
+- dfc8048bc005: This is a Windows source candidate, not qualified delivered bytes or an integrated release.
 
 ## Follow-up
 
-- b3a001befaac: Qualify final declared Windows lifecycle, restart, offline and context/evidence journeys from frozen bytes, then proceed through separate exact release gates.
-- 5561aecdb608: Finish and independently review lifecycle/restart consumers; implement any real defect in a separate scoped source task.
-- b45010280e5e: Admit a bounded Task OS source repair, regenerate reviewed assets, and recheck installed consumers before final release acceptance.
-- 736e3f9ac027: Freeze the exact integration candidate, run canonical checks, seek independent effect review, then act only on matching refs.
-- a7254d7d4c9c: Run exact candidate checks, freeze an external effect manifest and obtain independent review before a fresh dev preflight.
-- d292253b0994: Independently review and integrate this closeout, then implement and test the bounded Task OS source repair.
-- f00d937e2368: Obtain independent exact source review, then project through the current generator and rerun the installed consumer before a dev effect.
-- 04caefe65986: Admit and implement the target-owned nonempty queue routing repair, review its delta, then regenerate delivered artifacts once.
-- e88a1468acd2: Obtain independent exact source delta review, then regenerate once through the current generator and qualify installed target queues.
-- b9d2b150c39c: Independently review this exact changed source, then regenerate once and qualify zero- and one-item installed targets.
+- 22257dc6ad9e: Freeze this exact candidate, replay once, obtain independent artifact/effect verdict, then perform only qualified dev effect.
+- 6e8af2bd8d16: Run the final exact range and clean replay, then request focused independent rereview before dev integration.
+- 493e3f13c1b2: Independently review this exact closeout, integrate if qualified, then execute final Lite profile qualification.
+- 5f2441d18772: Run abrupt-exit consumers, preserve byte-bound evidence, seek independent technical review and integrate truthful closeout.
+- f44f3a28fc08: Independently review this exact evidence candidate for a dev effect, then implement and qualify bounded partial recovery.
+- e88b1c2ee6f3: Obtain exact focused review; if accepted, perform one-writer dev fast-forward and normal push after fresh checks, then route partial recovery source work.
+- d4b7657d9c0e: Add red adversarial regressions, implement explicit recovery, obtain independent source review, then project and qualify new delivered bytes.
+- 547ea2b09235: Finish importer suite, obtain independent source review, then project and qualify new delivered bytes before dev integration.
+- 052a0a926527: Finish combined tests, obtain independent exact rereview, then project and qualify new delivered bytes.
+- dfc8048bc005: Obtain exact source rereview, run the final importer suite, then project and qualify the delivered archive.
 
 ## Warnings
 
