@@ -4112,5 +4112,19 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
 
 ## Owner-selected integrated qualification storage - 2026-09-28
 
-Existing resource-cleanup ExecPlan now activates the owner-selected E:\Temporary
-parent and routes full importer qualification through the accepted bounded runner.
+The owner initially selected E:\Temporary. The later explicit D shared-root
+selection superseded that for new jobs. Both existing checkouts now use the
+same configured D scratch/retained/control roots and finite runner limits.
+The incomplete E job was collected; all subsequent importer, generator and
+consumer jobs here used D, with scratch retirement and reservation release.
+
+## 2026-09-28 - Reviewed partial-recovery preview integrated
+
+- AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01 passed committed four-command
+  zero-change replay and a 25-command extracted ZIP/tar fresh/brownfield
+  canary, plus fresh/update explicit partial recovery. The independent exact
+  artifact review accepted local dev integration with notes; local and remote
+  dev reached `e7c1760e`. These are local preview bytes. The parent campaign
+  still owns remaining lifecycle restart points, offline/context qualification,
+  final profile freeze, release review, main/tag/publication and downloaded
+  consumer verification.

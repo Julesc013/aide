@@ -48,8 +48,8 @@ changed-scope review.
 - [x] Admit and commit the clean projection task at `84e4a733`.
 - [x] Generate and qualify current bytes and consumers.
 - [x] Prove committed four-command release replay with zero changes.
-- [ ] Receive exact artifact/dev-effect review.
-- [ ] Integrate qualified artifact candidate into dev.
+- [x] Receive exact artifact/dev-effect review.
+- [x] Integrate qualified artifact candidate into dev.
 
 Generation checkpoint: six serial D-managed commands exited zero, retired
 scratch and released reservations. Current ZIP/tar hashes, provenance,
@@ -78,3 +78,11 @@ passed 25 fresh/brownfield commands and explicit partial recovery after both
 fresh import and successor update. Its one bounded D job retired scratch and
 retained only 2.89 MB of command evidence. Exact artifact/effect review remains
 the next gate before dev integration; this is not stable release acceptance.
+
+Independent focused review of exact `e7c1760e` returned ACCEPT_WITH_NOTES
+for local dev fast-forward only. The final exact-HEAD four-command D replay
+changed zero paths, and the five-commit policy range passed. Normal dev
+fast-forward and push were observed at `e7c1760e` locally and remotely;
+the reviewer transcript hash and effect checks are in
+`evidence/observed-dev-effect-e7c1760e.md`. Final stable profile, main,
+tag, publication, native/hosted and downloaded-byte gates stay with the parent.

@@ -3748,9 +3748,9 @@ items:
     prompt: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/evidence
   - id: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01
-    status: running
-    planning_state: first_postcommit_replay_changed_30_metadata_convergence_pending
-    result: PENDING
+    status: passed_with_notes
+    planning_state: integrated_dev
+    result: PASS_WITH_RETAINED_GATES
     title: Project reviewed partial recovery into current delivered Lite bytes
     task: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/ExecPlan.md

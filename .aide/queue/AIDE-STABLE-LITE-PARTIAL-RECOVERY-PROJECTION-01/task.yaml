@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01
 title: Project reviewed partial recovery into current delivered Lite bytes
 type: integration
-status: running
-planning_state: admitted
-result: PENDING
+status: passed_with_notes
+planning_state: integrated_dev
+result: PASS_WITH_RETAINED_GATES
 created_at: 2026-09-28
 updated_at: 2026-09-28
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

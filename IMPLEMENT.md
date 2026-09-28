@@ -12279,3 +12279,13 @@ changelog validate/status, release status, doctor and validate also exited
 zero. Current ZIP/tar SHA-256 and all job receipts are in the projection task.
 The bytes are still local preview outputs; committed replay and delivered
 consumer qualification are pending.
+
+The current projection subsequently converged release-only metadata at
+`49c7a04a`. Four release commands replayed from clean `e7c1760e` with zero
+tracked/untracked changes; the pack reported `PASS_SOURCE_ANCESTOR`. The frozen
+ZIP/tar hashes are `af8bf103...`/`f0111bd8...`. One D-managed delivered-byte
+job passed 25 fresh/brownfield command oracles and explicit fresh/update
+partial recovery, peaked at 33.3 MB scratch, retained 2.89 MB of logs, retired
+scratch and released its reservation. Independent exact artifact/effect review
+returned ACCEPT_WITH_NOTES for dev only; local and remote dev both read back
+`e7c1760e`, tree `ff4bbfaf`. No main, tag or publication effect occurred.
