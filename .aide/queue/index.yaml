@@ -3796,7 +3796,7 @@ items:
     evidence: .aide/queue/AIDE-LITE-EFFICIENCY-01/evidence
   - id: AIDE-CODEX-DISPATCH-GATE-01
     status: running
-    planning_state: admitted_bounded_source
+    planning_state: source_integrated_real_host_effect_pending
     result: PENDING
     title: Prevent stale-pause Codex worker dispatch
     task: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/task.yaml

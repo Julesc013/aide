@@ -32,3 +32,13 @@ gap explicit; it remains in `AIDE-LITE-EFFICIENCY-01`.
 If the host fails before resume, retain its effect intent for reconciliation;
 do not assume a process started or retry automatically. Existing running jobs
 continue under `pause-dispatch`. No native/hosted activation or release claim.
+
+## Progress
+
+- [x] `a8c9935e` serializes the current control epoch with suspended-child resume.
+- [x] One source-bound D job passed 31/31 pipeline cases and retired scratch.
+- [x] Independent exact source review accepted dev integration; local and remote
+  `dev` were observed at the frozen source. Exact bindings are in
+  `evidence/source-qualification-2026-09-29.md`.
+- [ ] Qualify a real permitted Codex host invocation and exported Lite boundary
+  before claiming end-to-end model-call savings or release acceptance.

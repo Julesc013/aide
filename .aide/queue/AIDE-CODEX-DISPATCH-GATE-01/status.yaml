@@ -1,10 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CODEX-DISPATCH-GATE-01
 status: running
-planning_state: admitted_bounded_source
+planning_state: source_integrated_real_host_effect_pending
 result: PENDING
 updated_at: 2026-09-29
 source_base: 9c3346f11643c32983cc03cb9e55b3d4c20f693c
 branch: task/aide-codex-dispatch-gate-01
-source_review: pending
+source_review: ACCEPT_a8c9935e_dev_source_only
 native_or_hosted_effect: none
+dev_source_integration: a8c9935e_fast_forward_observed
+managed_pipeline: PASS_31_of_31_job_70b2b89c
+real_codex_effect: pending

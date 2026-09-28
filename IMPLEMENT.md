@@ -12539,3 +12539,11 @@ The independently reviewed post-Lite source candidate `28492e00` was
 fast-forwarded from `76e17a4c` into local and remote `dev` on 2026-09-29.
 No merge resolution changed source. The exact effect and remaining release
 qualification are recorded in the efficiency WorkUnit; `main` was untouched.
+
+The Windows continuous worker now serializes operator pause/cancellation with
+the final suspended-child resume in its existing Codex launch path. Source
+`a8c9935e` passed 31 D-managed pipeline cases, including two stale-control
+injections, and received independent dev-only ACCEPT. The reviewed source
+fast-forwarded local and remote `dev`; real Codex and portable Lite host
+effects remain separate qualification work. Exact receipt and limits are in
+`AIDE-CODEX-DISPATCH-GATE-01/evidence`.
