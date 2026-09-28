@@ -276,7 +276,7 @@ class ExportImportTests(unittest.TestCase):
                      "model": "gpt-6-sol", "effort": "medium"}
         codex_manifest = consumer / "codex-job.json"
         codex_manifest.write_text(json.dumps(codex_job), encoding="utf-8")
-        refused = subprocess.run([*base, "inspect", "--config", str(config_path),
+        refused = subprocess.run([*base, "run", "--config", str(config_path),
                                   "--manifest", str(codex_manifest)],
                                  capture_output=True, text=True, timeout=30)
         self.assertEqual(refused.returncode, 1, refused.stdout[-500:] + refused.stderr[-500:])
