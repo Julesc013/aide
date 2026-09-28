@@ -204,3 +204,12 @@ unchanged-input ancestor, and regenerated checksummed bytes are identical.
 Otherwise bind the new current source. Add a disposable Git commit/replay
 regression to `test_export_import.py` and rerun the focused D job before
 regenerating the pack. The scope addition is limited to that test file.
+
+The 2026-09-29 consumer run passed six serial delivered-byte jobs on stable
+assets at `b147aa8c`. Before preview closeout, `changelog preview --to
+86838e44` exposed that `source_head` incorrectly used working HEAD despite
+selecting older commits. Repair the source selection in the existing
+changelog generator and add one Git-fixture regression. Then regenerate the
+preview from the pack's exact source commit and verify binding before any
+release-effect acceptance. Keep prior consumer receipts and asset bytes;
+rebuild only if the repaired source alters pack inputs or validation requires it.

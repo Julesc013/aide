@@ -5056,6 +5056,19 @@ def git_head_commit(repo_root: Path) -> str:
     return result.stdout.strip()
 
 
+def git_commit_for_ref(repo_root: Path, ref: str) -> str:
+    result = subprocess.run(
+        ["git", "rev-parse", "--verify", f"{ref}^{{commit}}"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+    )
+    return result.stdout.strip() if result.returncode == 0 else ""
+
+
 def resolve_changelog_commits(
     repo_root: Path,
     revision_range: str | None = None,
@@ -5185,6 +5198,13 @@ def make_changelog_preview(
         to_ref=to_ref,
         limit=limit,
     )
+    if to_ref:
+        source_ref = to_ref
+    elif revision_range:
+        source_ref = revision_range.rsplit("..", 1)[-1].lstrip(".")
+    else:
+        source_ref = "HEAD"
+    source_head = git_commit_for_ref(repo_root, source_ref)
     grouped: dict[str, list[dict[str, object]]] = {category: [] for category in COMMIT_CHANGELOG_CATEGORIES}
     entries: list[dict[str, object]] = []
     malformed: list[dict[str, object]] = []
@@ -5219,7 +5239,7 @@ def make_changelog_preview(
         "schema_version": CHANGELOG_STRUCTURED_SCHEMA_VERSION,
         "generated_by": GENERATOR_NAME,
         "source_range": source,
-        "source_head": git_head_commit(repo_root),
+        "source_head": source_head,
         "commit_count": len(commits),
         "malformed_count": len(malformed),
         "category_counts": category_counts,
