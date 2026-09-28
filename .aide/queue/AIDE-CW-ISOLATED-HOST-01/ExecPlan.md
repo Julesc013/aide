@@ -599,3 +599,14 @@ its own exact finite manifest, controlled child, durable intent, independent
 source/effect review, admission and result analysis. Returned paths do not
 establish OS provenance, host-byte trust, a restricted loader, or worker
 activation. A suitable alternate AIDE-owned host could supersede this route.
+
+The exact source candidate `b682ba7d`/tree `1fa7e484` passed 59/59
+postcommit injected tests in managed job `e04380a5b4fa48fa93c1efe881391006`.
+Independent `/root/native_os_build_review` returned **ACCEPT for source only**;
+the exact review and limits are in
+`evidence/h2-api-set-loader-source-review-b682ba7d.md`. Its key limitation is
+that an ordinary load can use an already loaded module or side-by-side state
+before the System32 search flag controls directory search. The returned-path
+check is after possible DLL initialization. Keep the actual native effect
+unprepared and unadmitted until a controlled-child effect manifest, review,
+admission and result analysis exist. No worker activation follows this review.
