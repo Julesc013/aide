@@ -233,3 +233,10 @@ finite limits. Collect the already running E-bound importer attempt using its
 preserved original config, then execute further qualification under D through
 the same managed runner. The E selection above is historical, not the current
 admission location. Do not overlap intensive jobs or repeat closed docs work.
+
+The E run ended incomplete after 99 cases due a runner scratch-scan race.
+Reviewed source `8040b10a` repairs it without relaxing strict evidence scans;
+two D jobs now pass all 110 importer methods in disjoint partitions. Preserve
+the independent ACCEPT_WITH_NOTES and exact receipts. Next integrate qualified
+source if ancestry permits, then generate and qualify current artifacts and
+fresh/brownfield installed consumers. Do not call source tests a release.

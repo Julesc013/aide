@@ -4086,6 +4086,10 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   cases and 9 cache cases. Obtain narrow independent source review, then run
   the 110 importer cases in bounded partitions on frozen source before current
   package and delivered-byte qualification.
+- Frozen `8040b10a` received independent ACCEPT_WITH_NOTES. Two D jobs passed
+  all 110 importer methods in disjoint 54/56 partitions, no skips, with
+  scratch retirement and reservation release. Integrate current source after
+  ref validation, then project/qualify current pack and delivered consumers.
 
 ## 2026-09-26 - Stable customization contract follow-up
 

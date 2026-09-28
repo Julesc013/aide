@@ -12254,3 +12254,12 @@ test reproduced the race; the green one-case test, 26 runner tests and 9 cache
 tests passed through D, each with scratch retirement and reservation release.
 Exact job and receipt identities are in the resource task evidence. Full
 importer and current delivered-byte qualification remain open.
+
+Frozen `8040b10a` received a narrow independent ACCEPT_WITH_NOTES. The
+reviewer confirmed live-scratch-only tolerance and strict evidence scans, and
+noted focused queued-directory scan test coverage for follow-up. Two D runner
+jobs covered all 110 importer methods exactly once: 54/54 and 56/56 passed,
+no skips. Both preserved bounded logs, retired scratch and released the shared
+reservation. The source checkout remained clean. Exact manifests, receipts,
+hashes and limits are in the resource task evidence. Current generated pack,
+delivered-byte consumers and stable release are still pending.

@@ -257,3 +257,13 @@ only during active scratch observation; evidence and canonical scans stay
 strict. A green one-case run, 26 runner tests and 9 cache tests pass through D
 with scratch retired and reservations released. Freeze and review the scoped
 runner source, then qualify all importer cases in two bounded partitions.
+
+Frozen `8040b10a` received independent ACCEPT_WITH_NOTES for bounded source
+continuation and integration. The reviewer retained a focused test-strength
+note on deterministic queued-directory and `os.scandir` failure injection;
+neither is a blocking source finding. Two manifest-bound D jobs covered every
+one of the 110 importer methods exactly once: 54/54 and 56/56 passed, no
+skips. Both retired scratch and released reservations. Preserve this as
+partitioned source qualification, not delivered-archive or stable-release
+acceptance. Record exact receipts in task evidence, then integrate the
+qualified source if current dev and remote graph still permit fast-forward.
