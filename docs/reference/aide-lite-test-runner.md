@@ -46,6 +46,7 @@ py -3 .aide/scripts/aide_lite.py job inspect --config <local-config> --manifest 
 py -3 .aide/scripts/aide_lite.py job run --config <local-config> --manifest <job-json>
 py -3 .aide/scripts/aide_lite.py job recover --config <local-config>
 py -3 .aide/scripts/aide_lite.py job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>
+py -3 .aide/scripts/aide_lite.py job usage --stream <codex-exec-jsonl>
 ```
 
 `job run` waits in deterministic code and normally prints one bounded terminal
@@ -59,6 +60,17 @@ observations, a retained receipt locator and hash, and the exact source. Its
 `model_requests_started_by_observer: 0` describes this CLI only; host model
 requests and internal inference remain unknown until a supported host adapter
 measures them. The observer does not verify all retained output bytes.
+
+Portable `job usage` imports one to eight ordinary Codex `exec --json` files
+without launching a model or printing raw event content. Each stream is bounded
+to 16 MiB and each event line to 1 MiB. Exact duplicate streams and repeated
+identical terminal events count once. Failed turns, absent usage fields, unknown
+usage keys and multiple distinct streams for the same session remain explicit
+coverage gaps: incomplete totals are `null`, while observed known subtotals
+remain visible. The JSONL format reports completed turns, not the number of
+internal model requests, model identity or usage from unmediated Codex/Work
+sessions. The input files remain with their existing custodian; this command
+writes no ledger or copy of raw prompts and responses.
 
 Inspection only reads state. The machine-local configuration belongs in the
 existing `.aide.local/` boundary; `.aide.local.example/execution.json` contains

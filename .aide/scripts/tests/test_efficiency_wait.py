@@ -10,6 +10,8 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import uuid
+from unittest import mock
 
 
 REPO = Path(__file__).resolve().parents[3]
@@ -139,6 +141,69 @@ class EfficiencyWaitTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 0, completed.stderr[-500:])
         self.assertEqual(json.loads(completed.stdout)["status"], "PASS")
         self.assertFalse((self.root / "consumer" / "core").exists())
+
+    def codex_stream(self, name, *, session=None, usage=None, failed=False, repeat=False):
+        session = session or str(uuid.UUID(int=1))
+        events = [{"type": "thread.started", "thread_id": session}, {"type": "turn.started"}]
+        if usage is not None:
+            terminal = {"type": "turn.completed", "usage": usage}
+            events.append(terminal)
+            if repeat:
+                events.append(terminal)
+        if failed:
+            events.append({"type": "turn.failed"})
+        path = self.root / name
+        path.write_text("\n".join(json.dumps(event) for event in events) + "\n", encoding="utf-8")
+        return path
+
+    def test_codex_usage_import_deduplicates_exact_stream_and_terminal(self):
+        path = self.codex_stream("one.jsonl", usage={"input_tokens": 20, "cached_input_tokens": 5,
+            "output_tokens": 7, "reasoning_output_tokens": 2}, repeat=True)
+        result = lite.summarize_codex_exec_usage([path, path])
+        self.assertEqual(result["status"], "COMPLETE")
+        self.assertEqual(result["completed_turns"], 1)
+        self.assertEqual(result["duplicate_streams_excluded"], 1)
+        self.assertEqual(result["records"][0]["duplicate_terminal_events"], 1)
+        self.assertEqual(result["usage_totals"]["input_tokens"], 20)
+        self.assertEqual(result["usage_totals"]["reasoning_output_tokens"], 2)
+        self.assertFalse(result["raw_prompt_or_response_retained"])
+
+    def test_codex_usage_import_preserves_failed_and_missing_coverage(self):
+        good = self.codex_stream("good.jsonl", usage={"input_tokens": 10, "output_tokens": 3},
+                                 session=str(uuid.UUID(int=2)))
+        failed = self.codex_stream("failed.jsonl", failed=True, session=str(uuid.UUID(int=3)))
+        result = lite.summarize_codex_exec_usage([good, failed])
+        self.assertEqual(result["status"], "PARTIAL")
+        self.assertIsNone(result["usage_totals"]["input_tokens"])
+        self.assertEqual(result["known_usage_totals"]["input_tokens"], 10)
+        self.assertIn("turn_failed_or_error", result["coverage_gaps"])
+        self.assertIn("cached_input_tokens_unknown", result["coverage_gaps"])
+        self.assertEqual(result["model_requests"], "unknown")
+
+    def test_codex_usage_import_refuses_ambiguous_or_altered_usage(self):
+        path = self.codex_stream("bad.jsonl", usage={"input_tokens": 1, "cached_input_tokens": 2,
+            "output_tokens": 1, "reasoning_output_tokens": 0})
+        with self.assertRaisesRegex(ValueError, "cached input"):
+            lite.summarize_codex_exec_usage([path])
+        path.write_text(path.read_text(encoding="utf-8") + json.dumps({"type": "turn.completed",
+            "usage": {"input_tokens": 2, "output_tokens": 1}}) + "\n", encoding="utf-8")
+        with self.assertRaises(ValueError):
+            lite.summarize_codex_exec_usage([path])
+        path.write_bytes(b"x" * 65)
+        with mock.patch.object(lite, "CODEX_EXEC_MAX_STREAM_BYTES", 64):
+            with self.assertRaisesRegex(ValueError, "bounded"):
+                lite.summarize_codex_exec_usage([path])
+
+    def test_codex_usage_import_marks_resumed_session_ambiguity(self):
+        usage = {"input_tokens": 10, "cached_input_tokens": 0,
+                 "output_tokens": 2, "reasoning_output_tokens": 0}
+        first = self.codex_stream("first.jsonl", usage=usage)
+        second = self.codex_stream("second.jsonl", usage={**usage, "input_tokens": 11})
+        result = lite.summarize_codex_exec_usage([first, second])
+        self.assertEqual(result["status"], "PARTIAL")
+        self.assertIn("same_session_multiple_streams_turn_identity_unknown", result["coverage_gaps"])
+        self.assertIsNone(result["usage_totals"]["input_tokens"])
+        self.assertIsNone(result["known_usage_totals"]["input_tokens"])
 
 
 if __name__ == "__main__":

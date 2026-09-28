@@ -56,3 +56,15 @@ before broader efficiency claims. FacMan product development stays paused.
 - [ ] Qualify the actual exported Lite archive and host binding. The copied CLI fixture passed without source checkout, but is narrower than full archive qualification.
 - [x] A generated export-pack fixture was archived, extracted and used as an isolated Lite consumer at test-only `45c143de`; exact D job PASS and a preceding false-test failure are recorded in `evidence/export-consumer-qualification-2026-09-29.md`. Canonical release bytes remain unfrozen.
 - [ ] Continue pause-aware dispatch, usage/outcome accounting and release qualification in bounded increments.
+
+## Next bounded increment: portable Codex usage import
+
+Add a read-only `job usage` view for up to eight ordinary, bounded Codex
+`exec --json` streams. Count each completed turn once, preserve failed or
+missing-usage coverage as unknown, and report input, cached input, output and
+reasoning output separately. Reject changed/malformed or oversized input;
+never echo raw model messages or start a model. Exercise duplicate, cumulative,
+failed and malformed synthetic streams under the D runner. This is a host
+usage-import boundary, not permission to dispatch or a claim that every Codex
+or Work request passes through AIDE. Exact source review and an actual supported
+host binding remain gates.

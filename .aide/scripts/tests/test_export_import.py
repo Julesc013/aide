@@ -181,6 +181,20 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(outcome["status"], "PASS")
         self.assertEqual(outcome["model_requests_started_by_observer"], 0)
         self.assertEqual(outcome["host_model_requests"], "unknown")
+        events = consumer / "codex-events.jsonl"
+        events.write_text("\n".join(json.dumps(event) for event in [
+            {"type": "thread.started", "thread_id": "00000000-0000-0000-0000-000000000001"},
+            {"type": "turn.completed", "usage": {"input_tokens": 10, "cached_input_tokens": 2,
+              "output_tokens": 3, "reasoning_output_tokens": 1}},
+        ]) + "\n", encoding="utf-8")
+        imported = subprocess.run(
+            [sys.executable, "-I", "-B", str(script), "--repo-root", str(delivered),
+             "job", "usage", "--stream", str(events)],
+            capture_output=True, text=True, timeout=15)
+        self.assertEqual(imported.returncode, 0, imported.stderr[-500:])
+        usage = json.loads(imported.stdout)
+        self.assertEqual(usage["status"], "COMPLETE")
+        self.assertEqual(usage["usage_totals"]["input_tokens"], 10)
 
     def test_export_excludes_source_state_and_generated_artifacts(self) -> None:
         source_root = self.make_source_repo()

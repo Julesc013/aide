@@ -22,6 +22,7 @@ import os
 import re
 import shutil
 import stat
+import uuid
 import subprocess
 import sys
 import tarfile
@@ -44666,6 +44667,144 @@ def command_job_wait(args: argparse.Namespace) -> int:
     return 0 if result["status"] == "PASS" else 2 if result["status"] == "PENDING" else 1
 
 
+CODEX_EXEC_USAGE_FIELDS = ("input_tokens", "cached_input_tokens", "output_tokens", "reasoning_output_tokens")
+CODEX_EXEC_MAX_STREAM_BYTES = 16 * 1024 * 1024
+CODEX_EXEC_MAX_LINE_BYTES = 1024 * 1024
+
+
+def _codex_exec_usage(value: object) -> tuple[dict[str, int | None], list[str]]:
+    if not isinstance(value, dict):
+        return {name: None for name in CODEX_EXEC_USAGE_FIELDS}, ["usage_missing"]
+    usage: dict[str, int | None] = {}
+    gaps = []
+    for name in CODEX_EXEC_USAGE_FIELDS:
+        count = value.get(name)
+        if type(count) is int and count >= 0:
+            usage[name] = count
+        else:
+            usage[name] = None
+            gaps.append(name + "_unknown")
+    if (usage["cached_input_tokens"] is not None and usage["input_tokens"] is not None
+            and usage["cached_input_tokens"] > usage["input_tokens"]):
+        raise ValueError("cached input exceeds reported input")
+    if (usage["reasoning_output_tokens"] is not None and usage["output_tokens"] is not None
+            and usage["reasoning_output_tokens"] > usage["output_tokens"]):
+        raise ValueError("reasoning output exceeds reported output")
+    if set(value) - set(CODEX_EXEC_USAGE_FIELDS):
+        gaps.append("unrecognized_usage_fields")
+    return usage, gaps
+
+
+def _codex_exec_stream(path: Path) -> dict[str, object]:
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > CODEX_EXEC_MAX_STREAM_BYTES):
+        raise ValueError("Codex stream is not an ordinary bounded file")
+    stream_hash = hashlib.sha256()
+    session = None
+    completed = None
+    failed = False
+    duplicate_terminal = 0
+    count = size = 0
+    with path.open("rb") as source:
+        opened = os.fstat(source.fileno())
+        identity = lambda item: (item.st_dev, item.st_ino, item.st_size, item.st_mtime_ns)
+        if identity(opened) != identity(info):
+            raise ValueError("Codex stream changed before read")
+        while line := source.readline(CODEX_EXEC_MAX_LINE_BYTES + 1):
+            size += len(line)
+            count += 1
+            if size > CODEX_EXEC_MAX_STREAM_BYTES or len(line) > CODEX_EXEC_MAX_LINE_BYTES or count > 100000:
+                raise ValueError("Codex stream exceeded read limits")
+            stream_hash.update(line)
+            if not line.strip():
+                continue
+            try:
+                event = json.loads(line)
+            except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+                raise ValueError("Codex stream contains malformed JSONL") from exc
+            if not isinstance(event, dict):
+                raise ValueError("Codex event is not an object")
+            kind = event.get("type")
+            if kind == "thread.started":
+                raw_session = event.get("thread_id")
+                try:
+                    observed = str(uuid.UUID(raw_session))
+                except (ValueError, TypeError, AttributeError) as exc:
+                    raise ValueError("Codex session identity invalid") from exc
+                if session is not None and session != observed:
+                    raise ValueError("multiple Codex sessions in one stream")
+                session = observed
+            elif kind == "turn.completed":
+                if completed is not None:
+                    if completed != event:
+                        raise ValueError("conflicting terminal Codex usage events")
+                    duplicate_terminal += 1
+                else:
+                    completed = event
+            elif kind in ("turn.failed", "error"):
+                failed = True
+        if identity(os.fstat(source.fileno())) != identity(info):
+            raise ValueError("Codex stream changed during read")
+    if identity(path.lstat()) != identity(info):
+        raise ValueError("Codex stream path changed during read")
+    if session is None:
+        raise ValueError("Codex stream lacks session identity")
+    usage, gaps = _codex_exec_usage(completed.get("usage") if completed else None)
+    if failed:
+        gaps.append("turn_failed_or_error")
+    if completed is None:
+        gaps.append("terminal_usage_absent")
+    return {"session_id": session, "stream_sha256": stream_hash.hexdigest(),
+            "event_count": count, "duplicate_terminal_events": duplicate_terminal,
+            "terminal_status": "FAILED" if failed else "COMPLETED" if completed else "INCOMPLETE",
+            "usage": usage, "coverage_gaps": sorted(set(gaps))}
+
+
+def summarize_codex_exec_usage(paths: list[Path]) -> dict[str, object]:
+    """Import at most eight Codex exec JSONL files; never retain raw model output."""
+    if not 1 <= len(paths) <= 8:
+        raise ValueError("one to eight Codex streams required")
+    records = []
+    seen_hashes: set[str] = set()
+    duplicates = 0
+    for path in paths:
+        record = _codex_exec_stream(Path(path))
+        if record["stream_sha256"] in seen_hashes:
+            duplicates += 1
+            continue
+        seen_hashes.add(str(record["stream_sha256"]))
+        records.append(record)
+    sessions = [str(record["session_id"]) for record in records]
+    gaps = sorted({gap for record in records for gap in record["coverage_gaps"]})
+    ambiguous_session = len(sessions) != len(set(sessions))
+    if ambiguous_session:
+        gaps.append("same_session_multiple_streams_turn_identity_unknown")
+    totals: dict[str, int | None] = {}
+    known_totals: dict[str, int | None] = {}
+    for name in CODEX_EXEC_USAGE_FIELDS:
+        values = [record["usage"][name] for record in records]
+        known_totals[name] = None if ambiguous_session else sum(value for value in values if value is not None)
+        totals[name] = known_totals[name] if not gaps and all(value is not None for value in values) else None
+    return {"schema": "aide.codex-exec-usage.v1", "status": "COMPLETE" if not gaps else "PARTIAL",
+            "source": "codex_exec_jsonl", "model": "unknown", "model_requests": "unknown",
+            "completed_turns": sum(record["terminal_status"] == "COMPLETED" for record in records),
+            "failed_or_incomplete_turns": sum(record["terminal_status"] != "COMPLETED" for record in records),
+            "duplicate_streams_excluded": duplicates, "records": records,
+            "usage_totals": totals, "known_usage_totals": known_totals,
+            "coverage_gaps": gaps, "raw_prompt_or_response_retained": False}
+
+
+def command_job_usage(args: argparse.Namespace) -> int:
+    try:
+        result = summarize_codex_exec_usage([Path(path) for path in args.stream])
+    except (OSError, ValueError) as exc:
+        result = {"schema": "aide.codex-exec-usage.v1", "status": "REFUSED",
+                  "reason": str(exc)[:120], "raw_prompt_or_response_retained": False}
+    print(json.dumps(result, sort_keys=True, separators=(",", ":")))
+    return 0 if result["status"] == "COMPLETE" else 2 if result["status"] == "PARTIAL" else 1
+
+
 def command_managed_job(args: argparse.Namespace) -> int:
     """Explicit maintainer execution; inspect never projects tracked reports."""
     root = str(args.repo_root)
@@ -45922,6 +46061,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     wait_parser.add_argument("--timeout-seconds", type=float, default=3600)
     wait_parser.add_argument("--interval-seconds", type=float, default=1)
     wait_parser.set_defaults(handler=command_job_wait)
+    usage_parser = job_subparsers.add_parser("usage", help="Import bounded Codex exec JSONL usage without model calls.")
+    usage_parser.add_argument("--stream", required=True, action="append", help="Ordinary Codex exec --json file; repeat at most eight times.")
+    usage_parser.set_defaults(handler=command_job_usage)
     setup_parser = job_subparsers.add_parser("setup")
     setup_parser.add_argument("--config", required=True, help="Machine-local output config in an approved checkout.")
     setup_parser.add_argument("--selection", required=True, help="Explicit local root, checkout and finite-limit selection JSON.")
