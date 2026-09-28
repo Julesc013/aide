@@ -4300,5 +4300,9 @@ ten exact historical message decisions remain before main and publication.
 One bounded Lite efficiency source repair addresses false zero known-token
 subtotals and contradictory terminal events in `job usage`. Two synthetic
 regressions failed before the change; all 17 focused D-managed cases passed
-after it. Review the exact source delta before integrating or rebuilding the
-current Lite assets; live Codex qualification remains separate.
+after it. Independent source review accepted the exact commit, now in
+`dev@8912eab9`. The current portable pack and unpublished 1.0.0 assets
+were regenerated. Six serial consumers, ten delivered job observations and
+36 Q47/Q48 tests passed. Finish exact view replay and technical effect review
+before integrating those changed assets; live Codex qualification remains
+separate.

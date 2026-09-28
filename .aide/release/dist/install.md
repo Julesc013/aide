@@ -1,6 +1,6 @@
 # AIDE Lite Pack Local Install Notes
 
-- bundle_id: aide-lite-pack-v0-e42d56085d3a35ed
+- bundle_id: aide-lite-pack-v0-65fafcc9f5bed0a3
 - bundle_name: aide-lite-pack-v0
 - source_pack: .aide/export/aide-lite-pack-v0
 - pack_status: PASS_SOURCE_ANCESTOR

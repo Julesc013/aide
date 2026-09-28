@@ -295,3 +295,16 @@ range validator. The accepted ancestry fast-forwarded to local and remote
 at the ten known historical message records; no disposition was invented.
 A supplemental current-source managed workspace suite passed 46 tests with
 retired scratch. The exact integration observation is retained in `evidence/`.
+
+## 2026-09-29 efficiency source release refresh
+
+The reviewed usage-accounting repair reached `dev@8912eab9`. One coherent
+source-to-byte refresh produced current changelog preview, portable pack and
+unpublished 1.0.0 assets. Pack and stable postcommit replays changed zero
+tracked files; six serial delivered-byte consumers, ten extracted `job`
+observations and 36 Q47/Q48 tests passed under the approved D execution
+roots. Local preview bundle and draft generation/validation passed. Exact
+hashes and receipts are in `evidence/current-source-efficiency-candidate-2026-09-29.md`.
+Commit the generated views, replay them, then freeze a superseding effect
+manifest for independent exact review. Main, tag, publication, live model
+permission/qualification and the ten owner decisions remain separate.

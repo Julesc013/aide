@@ -12667,6 +12667,15 @@ The `job usage` parser no longer converts wholly missing token categories
 into a known zero. Completion plus failure in one stream is now a terminal
 conflict and cannot contribute to known subtotals. Two new synthetic cases
 failed against the old behavior, then the 17-case D-managed focused suite
-passed. No model was called. The accepted 1.0.0 asset effect remains pinned to
-the earlier script bytes pending independent source review and regenerated
-delivered-byte qualification.
+passed. No model was called. At that checkpoint, the accepted 1.0.0 asset
+effect remained pinned to the earlier script bytes.
+
+The independent source review accepted the usage repair for dev integration,
+now observed at `dev@8912eab9`. A single source-to-byte refresh built a new
+portable pack and unpublished stable candidate. Pack and stable postcommit
+replays changed zero tracked files; six serial consumers, ten extracted job
+observations and the 36-case Q47/Q48 suite passed under approved D roots.
+Preview bundle and draft jobs validated locally. Current hashes and receipts
+are retained in the release WorkUnit. Exact view replay and independent
+effect review remain before further integration; no model turn or publication
+occurred.
