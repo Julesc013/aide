@@ -191,3 +191,14 @@ effect scope are established. Obtain independent source/security review before
 dev integration. Export and downloaded-byte qualification remain later gates.
 This amendment uses the owner's campaign delegation to extend the existing
 owner for the explicit efficiency priority; it does not add a scheduler.
+
+The initial reviewed host subject `12ac93c9` received REQUEST_CHANGES for
+permission/budget, retained prompt reservation and executable parent identity.
+The intermediate `33151c5e` received REQUEST_CHANGES for ambiguous local JSON
+permission. Final source `67e1d572` passed 46/46 synthetic Windows managed-job
+tests in D: job `5e5972bf`; scratch retired and reservation released.
+Independent `/root/native_os_build_review` ACCEPTed that exact tree for dev
+source integration. Its source verdict does not qualify a live model turn,
+Codex JSONL result, actual usage, extracted Lite or final release bytes. The
+exact review and test receipt are recorded in
+`evidence/codex-host-binding-qualification-2026-09-29.md`.

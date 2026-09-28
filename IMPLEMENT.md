@@ -12603,3 +12603,16 @@ event and nested token-counter records, preventing last-value-wins accounting.
 Source `8a12605d` passed 15 D-managed focused cases with retired scratch and
 received independent dev-only ACCEPT under `AIDE-LITE-EFFICIENCY-01`. Live
 host usage and final release bytes remain separate qualification work.
+
+## 2026-09-29 one-turn Codex host source binding
+
+The existing managed Windows job owner now accepts one bounded `codex_exec`
+adapter. It requires an exact machine-local ChatGPT model/effort permission and
+finite admitted-turn budget, source-bound packet/schema, pause-safe child
+resume, ordinary executable parent, and retained input charged to the log and
+disk reserve. Ambiguous local JSON keys fail closed. Candidate `67e1d572`
+passed 46/46 D-managed synthetic tests with retired scratch; independent
+`/root/native_os_build_review` ACCEPTed dev source integration. Two earlier
+REQUEST_CHANGES and two failed D runs remain in the WorkUnit evidence. No live
+model request, JSONL verdict or final Lite asset was qualified by this source
+increment.

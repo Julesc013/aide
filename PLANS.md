@@ -4259,6 +4259,12 @@ Codex prompt-input JSON stream without launching a model or exposing text.
 The installed-host probe and synthetic privacy/refusal tests run under the
 configured D owner. Exact host-call mediation and release acceptance stay gated.
 
+The one-turn Codex job adapter now reuses the bounded Windows owner. Exact
+`67e1d572` passed 46/46 D-managed synthetic cases and independent source
+review for dev integration. Local model permission, finite admitted turns,
+pause epoch, executable parent, retained input and storage reserves are bound.
+Live turn/JSONL, exported Lite and release-byte qualification remain next.
+
 The campaign's separate mid-removal canary on clean `dev@2aaee82e` passed a
 real child exit after the first owned deletion from the frozen local 1.0.0 ZIP,
 then resumed to `DETACHED` with authored and project-owned bytes preserved.
