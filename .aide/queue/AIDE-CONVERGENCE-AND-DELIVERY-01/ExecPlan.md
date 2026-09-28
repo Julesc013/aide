@@ -367,3 +367,21 @@ member in the second stop remains unknown. Keep this reviewed candidate
 reachable until the frozen Lite release/main history gate is resolved; a
 later dev move still needs fresh exact ref and effect validation. Its source
 review does not qualify new release assets or downloaded consumers.
+
+## 2026-09-28 current-asset mid-removal child-exit canary
+
+Objective: qualify one still-missing Windows lifecycle interruption boundary
+against the **current frozen** Lite 1.0.0 ZIP SHA-256 `a762c816…`, rather
+than relabeling the earlier accepted canary for an older ZIP `0d3ce38d…`.
+Keep product source, dev/main and asset bytes fixed. Add one self-contained
+bounded canary in this campaign's evidence area. The canary must verify the
+archive identity and safe member shape, extract under AIDE's approved scratch,
+install into an authored brownfield target through delivered CLI bytes, exit
+a child immediately after the first receipt-owned file removal, then resume
+through a fresh delivered CLI process. Assert exact intent/receipt retention,
+owned-file absence, authored/project-owned preservation and final detach.
+Run once through the shared finite D runner, retain result/receipt hashes,
+obtain independent review of the exact canary and evidence, and leave the
+frozen release-effect subject unchanged. This is one deletion point, not a
+claim about every timing, hostile concurrency, non-Windows or downloaded
+asset behavior.
