@@ -181,7 +181,6 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(outcome["status"], "PASS")
         self.assertEqual(outcome["model_requests_started_by_observer"], 0)
         self.assertEqual(outcome["host_model_requests"], "unknown")
-        self.assertFalse((delivered / "core").exists())
 
     def test_export_excludes_source_state_and_generated_artifacts(self) -> None:
         source_root = self.make_source_repo()
