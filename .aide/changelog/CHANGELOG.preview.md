@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 8912eab9071cd2599fb4f43721aa0dafea807a8e latest 50 commits
-source_head: 8912eab9071cd2599fb4f43721aa0dafea807a8e
+source_range: HEAD latest 50 commits
+source_head: 2767290ac9d2ccda24615e2bf113ac2924b088a2
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,25 +11,19 @@ release_publishing: false
 
 ## Summary
 
-- Added: 3
-- Changed: 14
-- Fixed: 17
+- Added: 2
+- Changed: 17
+- Fixed: 15
 - Docs: 2
 - Internal: 14
 
 ## Added
 
-- Explicit one-turn Codex job adapter in the existing Lite runner. (651744c0a428 feat(lite): bind one Codex turn to the managed job owner)
 - Include the portable bounded job interface in the Lite release contract. (20710eace078 feat(release): qualify portable Lite job forms for stable contract)
 - Portable bounded job commands in the Lite candidate assets. (5acd32a79ab5 build(release): rebuild Lite assets with portable job contract)
 
 ## Changed
 
-- Preserve Codex worker one-turn result qualification. (7eaebe3bec42 chore(worker): retain one-turn boundary qualification)
-- Retain Codex worker result boundary qualification. (9fe9cb485daf chore(worker): retain reviewed Codex result boundary evidence)
-- Record reviewed Codex result boundary integration. (e447e6416b74 chore(worker): record observed dev result boundary integration)
-- Retain Codex usage import qualification. (e5bb4f8b53ca chore(lite): retain reviewed Codex usage integrity evidence)
-- Record portable Codex usage repair integration. (326492ff6df6 chore(lite): record observed Codex usage integrity integration)
 - Codex host source qualification and remaining gates. (6281a6b903ca docs(lite): record reviewed Codex host source qualification)
 - Durable dev integration record for Codex host source. (38fbe92266bd chore(lite): record observed Codex host dev integration)
 - Extracted Lite fixture covers Codex permission refusal. (1bacae3a9be0 test(lite): prove extracted Codex admission refusal)
@@ -39,17 +33,17 @@ release_publishing: false
 - Current Lite pack uses repaired non-circular provenance. (a7ab0223d1ba build(release): bind repaired Lite pack to current source)
 - Local Lite 1.0.0 candidate includes current portable source. (b147aa8cf28a build(release): freeze current Lite 1.0.0 local assets)
 - Preserve the usage repair review verdict. (8912eab9071c docs(lite): record known usage source acceptance)
+- Refresh preview metadata for the current Lite source. (65fafcc9f5be chore(changelog): refresh current Lite preview)
+- Refresh unpublished Lite candidate views and qualification evidence. (65eaa5550f2e build(release): refresh current Lite release previews)
+- Freeze reviewable current Lite candidate evidence. (a3ab41fad425 docs(release): freeze current Lite efficiency effect)
+- Record qualified local Lite candidate integration. (a468f7f038d1 docs(release): record current Lite dev integration)
+- Clarify current unpublished Lite candidate status. (0cacf2040ce8 docs(campaign): align current Lite release checkpoint)
+- Record qualified bounded execution and owned cleanup closure. (ef938eef1b78 docs(resource): close bounded campaign cleanup)
+- Record accepted usage subtotal source review. (fe65f48c67a1 docs(usage): record accepted turn subtotal review)
+- Schedule current usage-source release qualification. (1dada960cc47 docs(release): plan current usage source refresh)
 
 ## Fixed
 
-- Bind worker verdicts and usage to one observed Codex turn. (9dccd27fe2f3 fix(worker): bind Codex verdict to one completed turn)
-- Keep the turn-boundary regression focused on refusal. (1497a7e2ad4f test(worker): accept any refusal for missing turn start)
-- Codex worker result binding to the final item and unique JSON fields. (2086e512aeb3 fix(worker): reject ambiguous final Codex verdicts)
-- Refuse ambiguous Codex usage import fields. (8a12605dc1af fix(lite): reject duplicate Codex usage JSON keys)
-- Pause-aware one-turn Codex job dispatch. (e9fce7a9c1a4 fix(lite): serialize paused dispatch with Codex child resume)
-- Reject ambiguous Lite job dispatch state. (1105ad98e516 fix(lite): reject ambiguous dispatch-control state)
-- Bounded Windows checkpoint retry under reader contention. (12ac93c9aeec fix(job): retry transient Windows checkpoint replacement)
-- Codex host admission and bounded retained input. (36c944159c09 fix(lite): gate Codex turns and bound retained input)
 - Setup quota regression expectation. (33151c5ea97c test(job): update setup reservation expectation)
 - Ambiguous local Codex model permissions now fail closed. (67e1d572d513 fix(lite): reject ambiguous local Codex permissions)
 - Delivered host refusal oracle now covers run admission. (8b0cba063b37 test(lite): exercise delivered Codex run refusal)
@@ -59,6 +53,12 @@ release_publishing: false
 - Package selected-revision changelog provenance in Lite. (f22f3ec58ed4 build(pack): include reviewed changelog source repair)
 - Include selected-source changelog provenance in the local Lite candidate. (df372b3a6495 build(release): refresh Lite 1.0.0 candidate bytes)
 - Portable usage reports unknown instead of false zero or contradictory known totals. (46c51f7101c3 fix(lite): keep unknown usage subtotals unknown)
+- Export corrected portable usage accounting. (640367a7b92b build(lite): refresh portable pack from accepted source)
+- Include corrected usage accounting in the unpublished Lite candidate. (8f9bd0748fab build(release): refresh Lite 1.0.0 candidate archives)
+- Bind public Lite release claims to current candidate evidence. (ae08a6be3b96 fix(release): bind current Lite public CLI forms)
+- Preserve valid independent Codex usage subtotals under partial coverage. (9c391d255017 fix(usage): retain independent subtotal across ambiguous turns)
+- Include the corrected usage subtotal importer in the portable pack. (061ef259bfca build(pack): refresh Lite export for usage subtotal repair)
+- Carry corrected usage importer into local stable candidate. (2767290ac9d2 build(release): refresh local Lite stable candidate)
 
 ## Docs
 

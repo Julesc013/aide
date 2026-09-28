@@ -1,62 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "9dccd27fe2f3",
-      "summary": "Run state and pipeline suites through the D owner; seek independent exact source review."
-    },
-    {
-      "commit": "1497a7e2ad4f",
-      "summary": "Rerun exact state suite, then pipeline suite under the D owner."
-    },
-    {
-      "commit": "7eaebe3bec42",
-      "summary": "Obtain independent exact source and scope review before dev integration."
-    },
-    {
-      "commit": "2086e512aeb3",
-      "summary": "Run D-managed suites and obtain independent review of this repair before dev integration."
-    },
-    {
-      "commit": "9fe9cb485daf",
-      "summary": "Integrate accepted source into dev; retain separate real-effect and release gates."
-    },
-    {
-      "commit": "e447e6416b74",
-      "summary": "Qualify the real permitted worker effect and delivered Lite behavior separately."
-    },
-    {
-      "commit": "8a12605dc1af",
-      "summary": "Run the D-managed focused suite and obtain exact source review before dev."
-    },
-    {
-      "commit": "e5bb4f8b53ca",
-      "summary": "Fast-forward reviewed source into dev and observe the remote ref."
-    },
-    {
-      "commit": "326492ff6df6",
-      "summary": "Qualify the host binding and current delivered Lite candidate separately."
-    },
-    {
-      "commit": "651744c0a428",
-      "summary": "Test source under D owner, close pause race and obtain independent review before dev."
-    },
-    {
-      "commit": "e9fce7a9c1a4",
-      "summary": "Run D-managed regressions, repair findings and obtain independent review."
-    },
-    {
-      "commit": "1105ad98e516",
-      "summary": "Rerun the D-managed suite and obtain independent host/security source review."
-    },
-    {
-      "commit": "12ac93c9aeec",
-      "summary": "Rerun exact managed suite and seek independent source review."
-    },
-    {
-      "commit": "36c944159c09",
-      "summary": "Run the D-managed suite, preserve the review result, and qualify the final combined source."
-    },
-    {
       "commit": "33151c5ea97c",
       "summary": "Rerun the D-managed suite and seek scoped independent rereview."
     },
@@ -199,16 +143,65 @@
     {
       "commit": "8912eab9071c",
       "summary": "Fast-forward dev after fresh ref checks, then regenerate and qualify current-source assets."
+    },
+    {
+      "commit": "65fafcc9f5be",
+      "summary": "Build and qualify the current portable pack and stable assets."
+    },
+    {
+      "commit": "640367a7b92b",
+      "summary": "Replay export after commit, then build and test the stable archives."
+    },
+    {
+      "commit": "8f9bd0748fab",
+      "summary": "Replay generation from this commit and qualify exact archives."
+    },
+    {
+      "commit": "65eaa5550f2e",
+      "summary": "Replay current generators after commit, freeze an exact effect and obtain technical review."
+    },
+    {
+      "commit": "a3ab41fad425",
+      "summary": "Request one exact technical review, then integrate only the accepted scope."
+    },
+    {
+      "commit": "ae08a6be3b96",
+      "summary": "Obtain exact delta rereview and integrate the accepted candidate into dev."
+    },
+    {
+      "commit": "a468f7f038d1",
+      "summary": "Resolve the retained external gates while keeping the wider programme active."
+    },
+    {
+      "commit": "0cacf2040ce8",
+      "summary": "Execute remaining admitted gates without repeating qualified local consumers."
+    },
+    {
+      "commit": "ef938eef1b78",
+      "summary": "Continue the parent campaign through its existing release and operational gates."
+    },
+    {
+      "commit": "9c391d255017",
+      "summary": "Obtain exact-source review and continue coherent release qualification."
+    },
+    {
+      "commit": "fe65f48c67a1",
+      "summary": "Integrate accepted source with a coherent current-byte release refresh."
+    },
+    {
+      "commit": "1dada960cc47",
+      "summary": "Run D-managed generation and qualification, then freeze exact effect evidence."
+    },
+    {
+      "commit": "061ef259bfca",
+      "summary": "Replay the committed pack and build current stable assets."
+    },
+    {
+      "commit": "2767290ac9d2",
+      "summary": "Replay generation and run serial current-byte qualification."
     }
   ],
   "highlights": [
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "651744c0a428",
-      "subject": "feat(lite): bind one Codex turn to the managed job owner",
-      "summary": "Explicit one-turn Codex job adapter in the existing Lite runner."
-    },
     {
       "breaking": false,
       "category": "Added",
@@ -222,41 +215,6 @@
       "commit": "5acd32a79ab5",
       "subject": "build(release): rebuild Lite assets with portable job contract",
       "summary": "Portable bounded job commands in the Lite candidate assets."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "7eaebe3bec42",
-      "subject": "chore(worker): retain one-turn boundary qualification",
-      "summary": "Preserve Codex worker one-turn result qualification."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "9fe9cb485daf",
-      "subject": "chore(worker): retain reviewed Codex result boundary evidence",
-      "summary": "Retain Codex worker result boundary qualification."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "e447e6416b74",
-      "subject": "chore(worker): record observed dev result boundary integration",
-      "summary": "Record reviewed Codex result boundary integration."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "e5bb4f8b53ca",
-      "subject": "chore(lite): retain reviewed Codex usage integrity evidence",
-      "summary": "Retain Codex usage import qualification."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "326492ff6df6",
-      "subject": "chore(lite): record observed Codex usage integrity integration",
-      "summary": "Record portable Codex usage repair integration."
     },
     {
       "breaking": false,
@@ -323,59 +281,59 @@
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "9dccd27fe2f3",
-      "subject": "fix(worker): bind Codex verdict to one completed turn",
-      "summary": "Bind worker verdicts and usage to one observed Codex turn."
+      "category": "Changed",
+      "commit": "65fafcc9f5be",
+      "subject": "chore(changelog): refresh current Lite preview",
+      "summary": "Refresh preview metadata for the current Lite source."
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "1497a7e2ad4f",
-      "subject": "test(worker): accept any refusal for missing turn start",
-      "summary": "Keep the turn-boundary regression focused on refusal."
+      "category": "Changed",
+      "commit": "65eaa5550f2e",
+      "subject": "build(release): refresh current Lite release previews",
+      "summary": "Refresh unpublished Lite candidate views and qualification evidence."
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "2086e512aeb3",
-      "subject": "fix(worker): reject ambiguous final Codex verdicts",
-      "summary": "Codex worker result binding to the final item and unique JSON fields."
+      "category": "Changed",
+      "commit": "a3ab41fad425",
+      "subject": "docs(release): freeze current Lite efficiency effect",
+      "summary": "Freeze reviewable current Lite candidate evidence."
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "8a12605dc1af",
-      "subject": "fix(lite): reject duplicate Codex usage JSON keys",
-      "summary": "Refuse ambiguous Codex usage import fields."
+      "category": "Changed",
+      "commit": "a468f7f038d1",
+      "subject": "docs(release): record current Lite dev integration",
+      "summary": "Record qualified local Lite candidate integration."
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "e9fce7a9c1a4",
-      "subject": "fix(lite): serialize paused dispatch with Codex child resume",
-      "summary": "Pause-aware one-turn Codex job dispatch."
+      "category": "Changed",
+      "commit": "0cacf2040ce8",
+      "subject": "docs(campaign): align current Lite release checkpoint",
+      "summary": "Clarify current unpublished Lite candidate status."
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "1105ad98e516",
-      "subject": "fix(lite): reject ambiguous dispatch-control state",
-      "summary": "Reject ambiguous Lite job dispatch state."
+      "category": "Changed",
+      "commit": "ef938eef1b78",
+      "subject": "docs(resource): close bounded campaign cleanup",
+      "summary": "Record qualified bounded execution and owned cleanup closure."
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "12ac93c9aeec",
-      "subject": "fix(job): retry transient Windows checkpoint replacement",
-      "summary": "Bounded Windows checkpoint retry under reader contention."
+      "category": "Changed",
+      "commit": "fe65f48c67a1",
+      "subject": "docs(usage): record accepted turn subtotal review",
+      "summary": "Record accepted usage subtotal source review."
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "36c944159c09",
-      "subject": "fix(lite): gate Codex turns and bound retained input",
-      "summary": "Codex host admission and bounded retained input."
+      "category": "Changed",
+      "commit": "1dada960cc47",
+      "subject": "docs(release): plan current usage source refresh",
+      "summary": "Schedule current usage-source release qualification."
     },
     {
       "breaking": false,
@@ -442,6 +400,48 @@
     },
     {
       "breaking": false,
+      "category": "Fixed",
+      "commit": "640367a7b92b",
+      "subject": "build(lite): refresh portable pack from accepted source",
+      "summary": "Export corrected portable usage accounting."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "8f9bd0748fab",
+      "subject": "build(release): refresh Lite 1.0.0 candidate archives",
+      "summary": "Include corrected usage accounting in the unpublished Lite candidate."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "ae08a6be3b96",
+      "subject": "fix(release): bind current Lite public CLI forms",
+      "summary": "Bind public Lite release claims to current candidate evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "9c391d255017",
+      "subject": "fix(usage): retain independent subtotal across ambiguous turns",
+      "summary": "Preserve valid independent Codex usage subtotals under partial coverage."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "061ef259bfca",
+      "subject": "build(pack): refresh Lite export for usage subtotal repair",
+      "summary": "Include the corrected usage subtotal importer in the portable pack."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "2767290ac9d2",
+      "subject": "build(release): refresh local Lite stable candidate",
+      "summary": "Carry corrected usage importer into local stable candidate."
+    },
+    {
+      "breaking": false,
       "category": "Docs",
       "commit": "87635e1815b7",
       "subject": "docs(changelog): project Lite preview at repaired source",
@@ -457,62 +457,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "9dccd27fe2f3",
-      "summary": "Live Codex effect and exported Lite behavior remain unqualified."
-    },
-    {
-      "commit": "1497a7e2ad4f",
-      "summary": "Production worker parser is unchanged by this test-only correction."
-    },
-    {
-      "commit": "7eaebe3bec42",
-      "summary": "No real Codex turn or Lite export was qualified by these synthetic tests."
-    },
-    {
-      "commit": "2086e512aeb3",
-      "summary": "Synthetic parser tests do not qualify a live Codex model turn."
-    },
-    {
-      "commit": "9fe9cb485daf",
-      "summary": "No live Codex model turn or portable Lite release was qualified."
-    },
-    {
-      "commit": "e447e6416b74",
-      "summary": "No live Codex turn or stable release qualification was performed."
-    },
-    {
-      "commit": "8a12605dc1af",
-      "summary": "Synthetic records do not establish actual host usage coverage."
-    },
-    {
-      "commit": "e5bb4f8b53ca",
-      "summary": "No live host usage or stable release bytes were qualified."
-    },
-    {
-      "commit": "326492ff6df6",
-      "summary": "No real model call or stable asset qualification was performed."
-    },
-    {
-      "commit": "651744c0a428",
-      "summary": "No live model effect, pause-aware dispatch or delivered-byte qualification yet."
-    },
-    {
-      "commit": "e9fce7a9c1a4",
-      "summary": "Live Codex effect, interrupted control-write recovery and final Lite bytes remain unqualified."
-    },
-    {
-      "commit": "1105ad98e516",
-      "summary": "Live Codex effect and final delivered-byte qualification remain pending."
-    },
-    {
-      "commit": "12ac93c9aeec",
-      "summary": "Persistent replacement failure still requires explicit recovery and remains a failure."
-    },
-    {
-      "commit": "36c944159c09",
-      "summary": "The local executable path remains trusted against hostile same-user mutation between the final hash and CreateProcessW."
-    },
     {
       "commit": "33151c5ea97c",
       "summary": "The full focused suite remains pending after this fixture correction."
@@ -656,68 +600,68 @@
     {
       "commit": "8912eab9071c",
       "summary": "Existing 1.0.0 assets remain bound to earlier bytes."
+    },
+    {
+      "commit": "65fafcc9f5be",
+      "summary": "Preview notes do not constitute official publication."
+    },
+    {
+      "commit": "640367a7b92b",
+      "summary": "Stable archives and delivered consumers still require changed-byte qualification."
+    },
+    {
+      "commit": "8f9bd0748fab",
+      "summary": "Candidate bytes still require postcommit replay and delivered consumer qualification."
+    },
+    {
+      "commit": "65eaa5550f2e",
+      "summary": "Live model usage, exact technical effect review and main history decisions remain open."
+    },
+    {
+      "commit": "a3ab41fad425",
+      "summary": "Independent technical effect review, live model qualification and ten history decisions remain pending."
+    },
+    {
+      "commit": "ae08a6be3b96",
+      "summary": "Local technical effect still requires scoped independent rereview."
+    },
+    {
+      "commit": "a468f7f038d1",
+      "summary": "Main, tag and publication remain gated by live-model qualification and ten owner decisions."
+    },
+    {
+      "commit": "0cacf2040ce8",
+      "summary": "Ten historical owner decisions and live model qualification still gate main/release."
+    },
+    {
+      "commit": "ef938eef1b78",
+      "summary": "Reservations are monitored application limits, not filesystem quotas."
+    },
+    {
+      "commit": "9c391d255017",
+      "summary": "Full totals remain unknown when coverage is partial."
+    },
+    {
+      "commit": "fe65f48c67a1",
+      "summary": "The current stable assets still bind earlier source bytes."
+    },
+    {
+      "commit": "1dada960cc47",
+      "summary": "Existing assets are not current for the new importer source."
+    },
+    {
+      "commit": "061ef259bfca",
+      "summary": "Stable archives and delivered-byte consumers still require refresh."
+    },
+    {
+      "commit": "2767290ac9d2",
+      "summary": "Current assets still need postcommit replay and delivered-byte consumers."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "8912eab9071cd2599fb4f43721aa0dafea807a8e",
-  "source_range": "8912eab9071cd2599fb4f43721aa0dafea807a8e latest 50 commits",
+  "source_head": "2767290ac9d2ccda24615e2bf113ac2924b088a2",
+  "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "9dccd27fe2f3",
-      "summary": "PASS: AST parse of the three Python files and diff whitespace check."
-    },
-    {
-      "commit": "1497a7e2ad4f",
-      "summary": "FAIL retained: First D-managed state suite passed 22/23; this assertion alone failed."
-    },
-    {
-      "commit": "7eaebe3bec42",
-      "summary": "FAIL retained: Initial state suite 22/23 from an over-specific oracle message."
-    },
-    {
-      "commit": "2086e512aeb3",
-      "summary": "PASS: git diff --check."
-    },
-    {
-      "commit": "9fe9cb485daf",
-      "summary": "PASS: D-managed state 26/26 and pipeline 32/32 at source 2086e512."
-    },
-    {
-      "commit": "e447e6416b74",
-      "summary": "PASS: git ls-remote matched local and remote-tracking dev at 9fe9cb48."
-    },
-    {
-      "commit": "8a12605dc1af",
-      "summary": "PASS: git diff --check."
-    },
-    {
-      "commit": "e5bb4f8b53ca",
-      "summary": "PASS: D-managed focused suite 15/15 at source 8a12605d."
-    },
-    {
-      "commit": "326492ff6df6",
-      "summary": "PASS: git ls-remote matched local and remote-tracking dev at e5bb4f8b."
-    },
-    {
-      "commit": "651744c0a428",
-      "summary": "PASS: git diff --check."
-    },
-    {
-      "commit": "e9fce7a9c1a4",
-      "summary": "PASS: prior bounded runner suite 37/37 at source 651744c0."
-    },
-    {
-      "commit": "1105ad98e516",
-      "summary": "PASS: prior D-managed runner suite 40/40 at source e9fce7a9."
-    },
-    {
-      "commit": "12ac93c9aeec",
-      "summary": "FAIL retained: 40/41 D-managed cases at 1105ad98 due to active.json.next contention."
-    },
-    {
-      "commit": "36c944159c09",
-      "summary": "PASS: git diff --check."
-    },
     {
       "commit": "33151c5ea97c",
       "summary": "FAIL retained: 44/45 D-managed cases at 36c94415; one stale fixture expectation."
@@ -861,6 +805,62 @@
     {
       "commit": "8912eab9071c",
       "summary": "PASS: reviewed source commit 46c51f71, tree ad04943f, accepted for dev source integration."
+    },
+    {
+      "commit": "65fafcc9f5be",
+      "summary": "PASS: changelog preview inspected 50 commits with zero malformed messages."
+    },
+    {
+      "commit": "640367a7b92b",
+      "summary": "PASS: D-managed export job b4c1fc11 exited zero and retired scratch."
+    },
+    {
+      "commit": "8f9bd0748fab",
+      "summary": "PASS: D-managed stable build job f430fd62 exited zero and retired scratch."
+    },
+    {
+      "commit": "65eaa5550f2e",
+      "summary": "PASS: six serial final-byte consumers and ten extracted job observations."
+    },
+    {
+      "commit": "a3ab41fad425",
+      "summary": "PASS: all manifest asset, summary and inner receipt SHA-256 bindings."
+    },
+    {
+      "commit": "ae08a6be3b96",
+      "summary": "PASS: manifest form order exactly matches stable identity.public_cli_forms."
+    },
+    {
+      "commit": "a468f7f038d1",
+      "summary": "PASS: scoped independent technical ACCEPT for ae08a6be and 37 current-byte forms."
+    },
+    {
+      "commit": "0cacf2040ce8",
+      "summary": "PASS: local and remote dev observed at a468f7f0."
+    },
+    {
+      "commit": "ef938eef1b78",
+      "summary": "PASS: selected-root source is an ancestor of current dev."
+    },
+    {
+      "commit": "9c391d255017",
+      "summary": "PASS: new regression failed before repair while 17 existing cases passed."
+    },
+    {
+      "commit": "fe65f48c67a1",
+      "summary": "PASS: reviewed commit and tree matched the recorded candidate."
+    },
+    {
+      "commit": "1dada960cc47",
+      "summary": "PASS: exact accepted source is in local and remote dev."
+    },
+    {
+      "commit": "061ef259bfca",
+      "summary": "PASS: D-managed export job 84a7d4af exited cleanly with retired scratch."
+    },
+    {
+      "commit": "2767290ac9d2",
+      "summary": "PASS: D-managed stable build c3020fe2 completed with retired scratch."
     }
   ],
   "warnings": []
