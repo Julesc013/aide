@@ -531,3 +531,12 @@ job `1ce2695643d04ebf80d729bab956e939` passed all 53 observation cases;
 managed read-only OS-version job `28ed5b32eb6440e3bcee777e5ea0ad3a`
 observed 19045/19045/19041 with no API-set query. Both released reservations
 and retired scratch. The native query effect remains unprepared and unadmitted.
+
+Independent `/root/native_os_build_review` returned **ACCEPT for source
+integration only** on exact `d995783a`/tree `6d8e67ab`, after checking the
+native ABI, current manifest hashes, prior manifest custody and injected
+failure cases. The signed review is in the task evidence and under the D
+control root. Keep this source on its task branch while the accepted Lite
+release effect remains frozen on dev; integrating the changed source into dev
+would require a deliberate release-dependency delta check. No native API-set
+query or worker activation is admitted by this review.

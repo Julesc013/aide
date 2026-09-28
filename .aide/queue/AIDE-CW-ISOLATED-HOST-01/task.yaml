@@ -65,3 +65,4 @@ h2_api_query_scope: supported API-set host query source and injected tests only;
 
 h2_os_build_repair_base: 2aaee82e96d275d83501785a073f6ba73c7b6594
 h2_os_build_repair_scope: correct running-OS build provenance with RtlGetVersion and injected tests; no API-set query or activation
+h2_os_build_repair_branch: task/aide-cw-api-query-effect-01
