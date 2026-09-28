@@ -4194,3 +4194,9 @@ recovery/feedback/validate/task forms. The exact effect manifest and review
 packet are in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. The next gate is the
 stricter independent release ACCEPT, then authorized dev/main/tag/publication
 and downloaded-byte verification. The wider programme remains active.
+
+The Windows 10 host lacks the documented L2 API-set query export. A separate
+ordinary-loader observation source candidate now uses exact contract names,
+System32-only loader search, module-path checks and mandatory release. It
+requires independent source/effect review and an owned finite child before any
+native run; a path observation does not establish host-byte or isolation trust.

@@ -1,0 +1,33 @@
+{
+  "actual_native_load_executed": false,
+  "boundary": "Ordinary DLL loads can run initialization and dependencies; returned names/paths do not qualify host bytes, a restricted loader, protected authority or activation.",
+  "dependencies": {
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "core/runtime/continuous_worker/windows_pe.py": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d",
+    "core/runtime/continuous_worker/windows_python_contract.py": "b95eb3a551b0fdd43d05912f63e8f50b4e1c0c5d851d9b3b276d8699ad627cd9",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+  },
+  "effects": {
+    "acl": false,
+    "api_set_query": false,
+    "network": false,
+    "ordinary_dll_load": false,
+    "profile": false,
+    "worker_activation": false
+  },
+  "limits": {
+    "admitted_api_names_maximum": 256,
+    "loader_calls_per_contract": 1,
+    "module_path_characters": 32768
+  },
+  "method": "LoadLibraryExW(LOAD_LIBRARY_SEARCH_SYSTEM32), GetModuleFileNameW, FreeLibrary",
+  "prior_reviewed_manifest_sha256": "800fded315f7c78619df1724a37baf62c9042e31ae95207b86584f1b80b0e35e",
+  "schema": "aide.host.api-set-loader-source-manifest.v1",
+  "source_aggregate_sha256": "e1fee6fe22c534ec9be6a1caf791c194fdc28934d22bbace2cd835f5185766b1",
+  "source_base": "3954ee4cbc725649269e675ef49ac3573f90f6a8",
+  "source_files": {
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py": "2f976c4a15173e322be090f39e93736e89859f52a1c1b3fec0595a47173e03f1",
+    "core/runtime/continuous_worker/windows_system_observation.py": "9cdfca3b78c33f58be100f502fd08f1076692b69d2e36bd63b75d65664e1fa57"
+  },
+  "status": "source_candidate_pending_independent_review"
+}

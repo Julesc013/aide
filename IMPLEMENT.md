@@ -12430,3 +12430,12 @@ forms and installed validate/task inspection. Current importer shards passed
 reservations. The release-effect manifest records receipt hashes and the
 remaining warning/offline limits. No main, tag, publication or downloaded
 consumer effect has occurred; independent exact release ACCEPT is next.
+
+Prepared a distinct source-only API-set loader observation after the reviewed
+L2 query export was unavailable on Windows 10.0.19045. The adapter uses
+LoadLibraryExW with LOAD_LIBRARY_SEARCH_SYSTEM32, GetModuleFileNameW and
+FreeLibrary, refuses nonphysical or foreign paths, and records numeric native
+refusals. Six new injected cases plus the prior observation suite passed
+59/59 without a real DLL load. The old OS-build manifest remains immutable;
+a new source manifest binds changed files. Actual effect and independent
+review remain open.

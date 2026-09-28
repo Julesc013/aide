@@ -579,3 +579,23 @@ expose `GetApiSetModuleBaseName` here. No name query or one-use reservation
 occurred. The effect remains unprepared and unadmitted. Preserve the accepted
 source branch and seek an identified suitable Windows host or a separately
 reviewed supported method; do not replay the unchanged local blocker.
+
+## 2026-09-28 supported loader observation source
+
+The documented L2 API-set query export is absent on the identified Windows
+10.0.19045 host. Do not retry its unchanged query effect. Microsoft documents
+that ordinary loader operations resolve API-set contracts to host binaries and
+that GetModuleFileNameW returns the loaded module's path. Prepare a separate
+bounded loader-observation source candidate on this task branch; do not alter
+the accepted query controller or claim its native effect succeeded.
+
+Scope: one fixed adapter using LoadLibraryExW with the System32 search flag,
+GetModuleFileNameW and FreeLibrary for exact admitted API-set names, plus
+injected tests for call order, native failure, path/refusal, and release
+failure. Ordinary loads can execute DLL initialization and dependencies; this
+is a different native effect from the failed resource mapping or missing L2
+query. The source candidate alone performs no OS load. An actual effect needs
+its own exact finite manifest, controlled child, durable intent, independent
+source/effect review, admission and result analysis. Returned paths do not
+establish OS provenance, host-byte trust, a restricted loader, or worker
+activation. A suitable alternate AIDE-owned host could supersede this route.
