@@ -42,3 +42,11 @@ continue under `pause-dispatch`. No native/hosted activation or release claim.
   `evidence/source-qualification-2026-09-29.md`.
 - [ ] Qualify a real permitted Codex host invocation and exported Lite boundary
   before claiming end-to-end model-call savings or release acceptance.
+
+## Next no-model host check
+
+Exercise the installed `codex --version` executable through the existing
+Windows Job host with a bounded output directory under the configured D job.
+Assert suspended-child and resume checkpoints, quiescence and exact CLI output.
+This checks real executable launch compatibility without a model request;
+it does not discharge the live Codex effect or Lite release gates.

@@ -250,6 +250,23 @@ class PipelineTests(unittest.TestCase):
     def test_pause_resume_epoch_refuses_stale_dispatch(self):
         self._assert_stale_control_refuses_worker(["pause-dispatch", "resume"])
 
+    @unittest.skipUnless(shutil.which("codex"), "installed Codex CLI required")
+    def test_installed_codex_version_runs_in_owned_job_without_model(self):
+        executable = Path(shutil.which("codex")).resolve()
+        stages = []
+        output = self.root / "codex-version"
+        result = WindowsJobHost().run(
+            [str(executable), "--version"], cwd=self.root, input_bytes=b"",
+            output_dir=output, job_id=uuid.uuid4().hex, timeout=10,
+            output_limit=4096, memory_limit=512 * 1024 * 1024,
+            process_limit=4, checkpoint=stages.append)
+        self.assertEqual(result["exit_code"], 0)
+        self.assertEqual(result["reason"], "exited")
+        self.assertTrue(result["quiescent"])
+        self.assertIn("created_suspended", stages)
+        self.assertIn("resumed", stages)
+        self.assertIn(b"codex-cli", (output / "stdout").read_bytes())
+
     def test_cross_ledger_same_workspace_lock_refuses(self):
         runner = self.runner()
         with supervisor_lock(Path(self.config["tasks"][0]["workspace"]) / ".git"):
