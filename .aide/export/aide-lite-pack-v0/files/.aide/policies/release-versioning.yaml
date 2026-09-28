@@ -20,11 +20,13 @@ artifact_naming:
   changelog_preview: CHANGELOG.preview.md
   release_notes_preview: RELEASE_NOTES.preview.md
 compatibility_statement:
-  public_compatibility_contract: not_established
-  stable_semver: not_established
-  preview_only: true
+  public_compatibility_contract: aide-lite-local-windows-v1
+  stable_semver: established_for_aide_lite_portable_package
+  preview_only: false
+  activation_state: conditional_release_candidate_pending_exact_ACCEPT_and_publication
+  preview_boundary: Q47/Q48 bundles and draft outputs remain preview_only and no_publish
 stable_lite_contract_candidate:
-  status: defined_for_review_not_active_or_shipping
+  status: active_for_exact_release_effect_review_not_yet_published
   release_axis: aide_lite_portable_package
   version_syntax: MAJOR.MINOR.PATCH
   tag_pattern: aide-lite-v<MAJOR.MINOR.PATCH>
@@ -124,9 +126,18 @@ stable_lite_contract_candidate:
     - no host, native, hosted, model-enabled, or non-Windows apply promise
     - no implied support for a predecessor absent from the release compatibility matrix
   activation_gate: >
-    Freeze profile, exact source and tree, version and tag, predecessor matrix,
-    assets and hashes, machine and downloaded-consumer evidence, and an
-    independent technical release ACCEPT in a later release-effect WorkUnit.
-    This first stable release uses the stricter ACCEPT threshold, even though
-    the generic campaign review gate can qualify disposed ACCEPT_WITH_NOTES
-    for other exact source and effect subjects.
+    Before main promotion, tag or publication, freeze profile, exact source
+    and tree, version and tag, predecessor matrix, assets and hashes, local
+    machine and delivered-byte consumer evidence, and an independent technical
+    release ACCEPT for the exact release-effect manifest. The effect manifest
+    must bind every declared public CLI form and option to supported target
+    state, tested environment and exact evidence. This first stable release
+    uses the stricter ACCEPT threshold, even though the generic campaign
+    review gate can qualify disposed ACCEPT_WITH_NOTES for other exact source
+    and effect subjects.
+  postpublication_gate: >
+    Publication is incomplete until remote main/tag/release identities and
+    uploaded asset bytes are observed, all four assets are downloaded and
+    hashed, and fresh and brownfield acquisition/update work from those exact
+    downloaded bytes. Record any failed or uncertain effect before retry;
+    do not retag or replace published bytes.
