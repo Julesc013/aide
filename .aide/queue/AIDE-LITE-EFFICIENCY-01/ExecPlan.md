@@ -147,3 +147,9 @@ consumer test 1/1 under the D owner. It reattached to the real completed job,
 rejected a changed digest, and retired scratch. The exact receipt and limits
 are in `evidence/delivered-wait-attachment-2026-09-29.md`. Independent review
 remains before dev integration; this is not a live Codex or final asset proof.
+
+Independent `/root/stable_effect_review` then **ACCEPTED dev test/evidence
+integration** of the exact test commit and evidence-only closeout. The reviewer
+rehashed the retained receipt and checked the delivered attachment and refusal;
+see `evidence/delivered-wait-attachment-review-3796ad33.md`. No test rerun or
+live model effect was claimed.
