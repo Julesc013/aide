@@ -4253,3 +4253,8 @@ The next Lite efficiency slice exports the existing bounded Windows job owner
 and direct dependencies in extracted Lite. A disposable Git consumer must run
 one finite Python job through those delivered bytes while safe target import
 continues to skip broad `core/**` files. This reuses one owner, not a new pool.
+
+For the host-context efficiency slice, Lite will parse one bounded supplied
+Codex prompt-input JSON stream without launching a model or exposing text.
+The installed-host probe and synthetic privacy/refusal tests run under the
+configured D owner. Exact host-call mediation and release acceptance stay gated.

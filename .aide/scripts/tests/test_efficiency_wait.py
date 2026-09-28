@@ -6,6 +6,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -227,6 +228,54 @@ class EfficiencyWaitTests(unittest.TestCase):
         self.assertEqual(result["completed_turns"], 0)
         self.assertEqual(result["records"][0]["duplicate_terminal_events"], 1)
         self.assertIsNone(result["usage_totals"]["input_tokens"])
+
+    def test_prompt_input_summary_counts_without_echoing_text(self):
+        marker = "private-task-content-do-not-echo"
+        raw = json.dumps([
+            {"type": "message", "role": "developer", "content": [{"type": "text", "text": "α"}]},
+            {"type": "message", "role": "user", "content": [{"type": "text", "text": marker}]},
+        ]).encode("utf-8")
+        result = lite.summarize_codex_prompt_input(raw)
+        self.assertEqual(result["status"], "COMPLETE")
+        self.assertEqual(result["roles"]["developer"]["text_utf8_bytes"], 2)
+        self.assertEqual(result["visible_text_utf8_bytes"], 2 + len(marker))
+        self.assertEqual(result["effective_tokens"], None)
+        self.assertNotIn(marker, json.dumps(result))
+        cli = subprocess.run([sys.executable, "-I", "-B", str(REPO / ".aide/scripts/aide_lite.py"),
+                              "--repo-root", str(REPO), "job", "context"], input=raw,
+                             capture_output=True, timeout=15)
+        self.assertEqual(cli.returncode, 0)
+        self.assertEqual(json.loads(cli.stdout)["visible_text_utf8_bytes"], 2 + len(marker))
+        self.assertNotIn(marker.encode(), cli.stdout + cli.stderr)
+
+    def test_prompt_input_summary_bounds_and_marks_unknown_coverage(self):
+        for raw in (b"", b"not-json", b"{}", b"[]", b"[{}]"):
+            with self.assertRaises(ValueError):
+                lite.summarize_codex_prompt_input(raw)
+        with mock.patch.object(lite, "CODEX_PROMPT_INPUT_MAX_BYTES", 64):
+            with self.assertRaisesRegex(ValueError, "bounded"):
+                lite.summarize_codex_prompt_input(b"x" * 65)
+        raw = json.dumps([{"type": "message", "role": "not-a-role", "content": [
+            {"type": "image", "data": "do-not-echo"}]}]).encode()
+        result = lite.summarize_codex_prompt_input(raw)
+        self.assertEqual(result["status"], "PARTIAL")
+        self.assertEqual(result["coverage_gaps"], ["non_text_content", "unknown_role"])
+        self.assertNotIn("do-not-echo", json.dumps(result))
+
+    @unittest.skipUnless(os.name == "nt" and shutil.which("codex"), "installed Codex debug probe requires Windows Codex")
+    def test_installed_codex_prompt_input_is_summarized_without_model_turn(self):
+        host = shutil.which("codex")
+        command = [host, "debug", "prompt-input", "-c", "features.apps=false",
+                   "-c", "features.hooks=false", "-c", "features.multi_agent=false",
+                   "-c", "features.remote_plugin=false", "AIDE context-size probe; do not run a model."]
+        probe = subprocess.run(command, cwd=REPO, capture_output=True, timeout=20)
+        self.assertEqual(probe.returncode, 0, f"Codex debugger exited {probe.returncode}")
+        self.assertLessEqual(len(probe.stdout), lite.CODEX_PROMPT_INPUT_MAX_BYTES)
+        result = lite.summarize_codex_prompt_input(probe.stdout)
+        self.assertEqual(result["status"], "COMPLETE")
+        self.assertGreater(result["visible_text_utf8_bytes"], 44)
+        self.assertEqual(result["model_requests_started_by_parser"], 0)
+        self.assertFalse(result["raw_prompt_or_response_retained"])
 
 
 if __name__ == "__main__":

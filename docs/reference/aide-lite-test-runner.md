@@ -52,6 +52,7 @@ py -3 .aide/scripts/aide_lite.py job run --config <local-config> --manifest <job
 py -3 .aide/scripts/aide_lite.py job recover --config <local-config>
 py -3 .aide/scripts/aide_lite.py job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>
 py -3 .aide/scripts/aide_lite.py job usage --stream <codex-exec-jsonl>
+codex debug prompt-input | py -3 .aide/scripts/aide_lite.py job context
 ```
 
 `job run` waits in deterministic code and normally prints one bounded terminal
@@ -81,6 +82,14 @@ remain visible. The JSONL format reports completed turns, not the number of
 internal model requests, model identity or usage from unmediated Codex/Work
 sessions. The input files remain with their existing custodian; this command
 writes no ledger or copy of raw prompts and responses.
+
+Portable `job context` accepts one Codex `debug prompt-input` JSON stream on
+stdin, capped at 2 MiB. It reports message/part counts and visible text sizes
+by role without printing or retaining the supplied text. Unknown roles and
+non-text parts remain explicit coverage gaps. The parser starts no model turn;
+the producer command and its permissions are separate. Its byte counts are not
+token counts, and the debugger view does not establish tool-definition size,
+internal inference or the effective context of an existing long-lived thread.
 
 Inspection only reads state. The machine-local configuration belongs in the
 existing `.aide.local/` boundary; `.aide.local.example/execution.json` contains

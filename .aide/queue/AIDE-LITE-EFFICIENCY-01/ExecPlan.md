@@ -109,3 +109,13 @@ A no-model installed-Codex context preflight measured 45639 visible text
 UTF-8 bytes for a fresh debugger input with a 44-byte probe message. This
 does not count tokens or prove an actual worker turn. Exact version, executable
 hash and coverage limits are in `evidence/codex-context-preflight-2026-09-29.md`.
+
+## Next bounded increment: make the context observation repeatable in Lite
+
+Add a read-only `job context` parser for one bounded Codex `debug prompt-input`
+JSON stream on stdin. Count text per role without retaining or printing raw
+prompt material; label tool definitions, effective tokens, internal inference
+and actual model calls unknown. Reject malformed and oversized streams. Test
+synthetic privacy/boundary cases and one installed-host no-model stream under
+the configured D runner. This parser does not launch Codex or qualify the
+pause-aware worker; those gates remain open.

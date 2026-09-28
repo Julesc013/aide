@@ -44825,6 +44825,69 @@ def command_job_usage(args: argparse.Namespace) -> int:
     return 0 if result["status"] == "COMPLETE" else 2 if result["status"] == "PARTIAL" else 1
 
 
+CODEX_PROMPT_INPUT_MAX_BYTES = 2 * 1024 * 1024
+CODEX_PROMPT_INPUT_ROLES = {"system", "developer", "user", "assistant", "tool"}
+
+
+def summarize_codex_prompt_input(raw: bytes) -> dict[str, object]:
+    """Count a supplied debugger view in memory; never return its text."""
+    if not raw or len(raw) > CODEX_PROMPT_INPUT_MAX_BYTES:
+        raise ValueError("one nonempty bounded prompt-input stream required")
+    try:
+        messages = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, ValueError, RecursionError) as exc:
+        raise ValueError("malformed prompt-input JSON") from exc
+    if not isinstance(messages, list) or not 1 <= len(messages) <= 128:
+        raise ValueError("bounded prompt-input message list required")
+    roles: dict[str, dict[str, int]] = {}
+    gaps: set[str] = set()
+    for message in messages:
+        if not isinstance(message, dict) or message.get("type") != "message":
+            raise ValueError("unsupported prompt-input message shape")
+        role = message.get("role")
+        if not isinstance(role, str):
+            raise ValueError("prompt-input role required")
+        if role not in CODEX_PROMPT_INPUT_ROLES:
+            role = "other"
+            gaps.add("unknown_role")
+        content = message.get("content")
+        if not isinstance(content, list) or len(content) > 32:
+            raise ValueError("bounded prompt-input content list required")
+        row = roles.setdefault(role, {"messages": 0, "parts": 0, "text_utf8_bytes": 0, "text_chars": 0})
+        row["messages"] += 1
+        for part in content:
+            if not isinstance(part, dict) or not isinstance(part.get("type"), str):
+                raise ValueError("prompt-input content item shape invalid")
+            row["parts"] += 1
+            if part["type"] == "text" and isinstance(part.get("text"), str):
+                row["text_utf8_bytes"] += len(part["text"].encode("utf-8"))
+                row["text_chars"] += len(part["text"])
+            else:
+                gaps.add("non_text_content")
+    return {"schema": "aide.codex-prompt-input-summary.v1",
+            "status": "COMPLETE" if not gaps else "PARTIAL",
+            "source": "supplied_codex_debug_prompt_input_json",
+            "input_json_bytes": len(raw), "message_count": len(messages),
+            "roles": {key: roles[key] for key in sorted(roles)},
+            "visible_text_utf8_bytes": sum(row["text_utf8_bytes"] for row in roles.values()),
+            "coverage_gaps": sorted(gaps), "effective_tokens": None,
+            "tool_definitions": "unknown", "internal_inference": "unknown",
+            "model_requests_started_by_parser": 0, "raw_prompt_or_response_retained": False}
+
+
+def command_job_context(args: argparse.Namespace) -> int:
+    try:
+        if sys.stdin.isatty():
+            raise ValueError("pipe one prompt-input JSON stream on stdin")
+        result = summarize_codex_prompt_input(sys.stdin.buffer.read(CODEX_PROMPT_INPUT_MAX_BYTES + 1))
+    except (OSError, ValueError) as exc:
+        result = {"schema": "aide.codex-prompt-input-summary.v1", "status": "REFUSED",
+                  "reason": str(exc)[:120], "raw_prompt_or_response_retained": False,
+                  "model_requests_started_by_parser": 0}
+    print(json.dumps(result, sort_keys=True, separators=(",", ":")))
+    return 0 if result["status"] == "COMPLETE" else 2 if result["status"] == "PARTIAL" else 1
+
+
 def command_managed_job(args: argparse.Namespace) -> int:
     """Explicit maintainer execution; inspect never projects tracked reports."""
     root = str(args.repo_root)
@@ -46098,6 +46161,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     usage_parser = job_subparsers.add_parser("usage", help="Import bounded Codex exec JSONL usage without model calls.")
     usage_parser.add_argument("--stream", required=True, action="append", help="Ordinary Codex exec --json file; repeat at most eight times.")
     usage_parser.set_defaults(handler=command_job_usage)
+    job_subparsers.add_parser("context", help="Summarize one supplied Codex prompt-input JSON stream without retaining text or starting a model.").set_defaults(handler=command_job_context)
     setup_parser = job_subparsers.add_parser("setup")
     setup_parser.add_argument("--config", required=True, help="Machine-local output config in an approved checkout.")
     setup_parser.add_argument("--selection", required=True, help="Explicit local root, checkout and finite-limit selection JSON.")

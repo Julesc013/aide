@@ -20,6 +20,9 @@ exact receipts live in `.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/`.
 The runner guide also covers the extracted Lite Windows job owner: explicit
 local configuration admits a bounded job, while safe target import does not
 install that owner in the target repository.
+It also documents a bounded stdin-only Codex prompt-input summary, which
+counts visible text without retaining raw host instructions or claiming actual
+tokens or model-call control.
 The runner guide also documents Lite's bounded job observation and Codex JSONL
 usage import. Their local source and fixture acceptance does not establish
 host-wide dispatch control, billing savings or a qualified release archive.

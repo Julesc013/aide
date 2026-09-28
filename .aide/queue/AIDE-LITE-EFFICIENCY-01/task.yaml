@@ -23,6 +23,7 @@ scope:
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
     - PLANS.md
     - IMPLEMENT.md
+    - DOCUMENTATION.md
   forbidden_operations:
     - submit a job or model request from the observer
     - change the existing job supervisor or cleanup owner
