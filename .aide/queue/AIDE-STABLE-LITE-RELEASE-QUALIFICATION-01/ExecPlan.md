@@ -85,3 +85,10 @@ The current-source A–M importer partition passed 54/54 in one D job with
 scratch retired. The earlier O–Z 56/56 result is reused only for unchanged
 importer CLI/oracle/policy inputs, with the changed runner separately qualified.
 Exact hashes and limitations are in `evidence/importer-c6de695f.md`.
+
+Installed `task status` and `task inspect` were also exercised from the
+frozen ZIP. Empty targets returned honest exit one without mutation; a
+disposable running task returned success and a partial recovery suggestion,
+again without mutation. The first canary had an incorrect empty-state oracle;
+its failure and corrected diagnostics are retained in
+`evidence/task-cli-b94d7ba9.md`.

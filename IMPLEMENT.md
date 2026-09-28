@@ -12324,3 +12324,10 @@ prior 56/56 partition is reused with identical importer CLI/test hashes,
 Python executable and D configuration; its differing per-job environment
 digest and 11 changed non-importer inputs are explicitly classified in the
 WorkUnit. This is source qualification, not final shipped-byte acceptance.
+
+The delivered CLI task forms were exercised in a fresh disposable target.
+The first canary wrongly expected empty-state success, and the corrected
+diagnostic confirmed documented exit one with no mutation. A final D-managed
+job passed empty and populated task status/inspection, including an exact
+project-owned task and non-mutating target snapshot; its scratch retired.
+Exact failed and passing job identities are retained in the WorkUnit.
