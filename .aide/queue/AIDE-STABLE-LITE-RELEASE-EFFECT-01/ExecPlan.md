@@ -132,3 +132,14 @@ and lifecycle consumers. Reuse unchanged evidence only with valid bindings.
 Obtain exact independent release/effect acceptance before `dev` integration
 and main promotion. Preserve the ten-message owner decision gate and the
 old accepted effect as historical evidence; no publication from this plan.
+
+The current pack from clean source `9542f77e` passed checksum, provenance
+and boundary checks. Stable assets committed at `5cef1476` passed managed
+build, exact post-commit zero-change replay, and separate validation. Six
+new-byte consumer jobs passed fresh/brownfield import, lifecycle, context,
+offline, partial recovery, public CLI and forced child exits; current-policy
+Q47/Q48 passed 36 tests. A distinct renewed effect manifest binds all 28
+public forms to 39 current job outputs. The original accepted effect remains
+unchanged. Refresh canonical preview/draft projections and prove their
+post-commit replay before exact independent renewed release review; keep
+main/tag/publication stopped pending that review and historical decisions.

@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: dev_integrated_main_promotion_history_gate_failed
+planning_state: renewed_local_assets_qualified_preview_projection_pending
 result: PENDING
 updated_at: 2026-09-28
-current_slice: exact_owner_decisions_for_ten_historical_messages
-next_slice: structured_dispositions_review_range_recheck_then_main_tag_publication
+current_slice: current_generator_preview_projection_and_renewed_effect_review
+next_slice: qualified_dev_integration_then_historical_dispositions_and_main_release_effects
 review_gate: independent_source_and_archive_safety_review_then_exact_release_ACCEPT
 main_promotion_performed: false
 tag_created: false
