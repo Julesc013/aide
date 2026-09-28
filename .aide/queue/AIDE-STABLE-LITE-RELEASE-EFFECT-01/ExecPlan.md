@@ -395,3 +395,8 @@ Regenerating notes against exact pack source `68192b36` made bundle
 `247ec7fe` and validation `3f00322a` pass. Keep the failed receipt as an
 oracle check. Commit current preview/bundle outputs, replay, then refresh the
 local draft and freeze a 38-form effect packet for independent review.
+
+The committed bundle replay `70c90d87` changed zero tracked files. The
+local draft `e175641a` and draft validation `437a6ac2` passed on those
+source-bound assets. Commit the draft, replay it, then bind the final receipts
+and 38 public forms in the effect record. This remains local and unpublished.
