@@ -44704,6 +44704,8 @@ def _codex_exec_stream(path: Path) -> dict[str, object]:
     session = None
     completed = None
     failed = False
+    started_turns = 0
+    completion_before_start = False
     duplicate_terminal = 0
     count = size = 0
     with path.open("rb") as source:
@@ -44735,7 +44737,11 @@ def _codex_exec_stream(path: Path) -> dict[str, object]:
                 if session is not None and session != observed:
                     raise ValueError("multiple Codex sessions in one stream")
                 session = observed
+            elif kind == "turn.started":
+                started_turns += 1
             elif kind == "turn.completed":
+                if started_turns != 1:
+                    completion_before_start = True
                 if completed is not None:
                     if completed != event:
                         raise ValueError("conflicting terminal Codex usage events")
@@ -44755,9 +44761,12 @@ def _codex_exec_stream(path: Path) -> dict[str, object]:
         gaps.append("turn_failed_or_error")
     if completed is None:
         gaps.append("terminal_usage_absent")
+    ambiguous_turn = started_turns != 1 or completion_before_start
+    if ambiguous_turn:
+        gaps.append("turn_boundary_ambiguous")
     return {"session_id": session, "stream_sha256": stream_hash.hexdigest(),
             "event_count": count, "duplicate_terminal_events": duplicate_terminal,
-            "terminal_status": "FAILED" if failed else "COMPLETED" if completed else "INCOMPLETE",
+            "terminal_status": "FAILED" if failed else "AMBIGUOUS" if ambiguous_turn else "COMPLETED" if completed else "INCOMPLETE",
             "usage": usage, "coverage_gaps": sorted(set(gaps))}
 
 
@@ -44778,13 +44787,14 @@ def summarize_codex_exec_usage(paths: list[Path]) -> dict[str, object]:
     sessions = [str(record["session_id"]) for record in records]
     gaps = sorted({gap for record in records for gap in record["coverage_gaps"]})
     ambiguous_session = len(sessions) != len(set(sessions))
+    ambiguous_turn = any("turn_boundary_ambiguous" in record["coverage_gaps"] for record in records)
     if ambiguous_session:
         gaps.append("same_session_multiple_streams_turn_identity_unknown")
     totals: dict[str, int | None] = {}
     known_totals: dict[str, int | None] = {}
     for name in CODEX_EXEC_USAGE_FIELDS:
         values = [record["usage"][name] for record in records]
-        known_totals[name] = None if ambiguous_session else sum(value for value in values if value is not None)
+        known_totals[name] = None if ambiguous_session or ambiguous_turn else sum(value for value in values if value is not None)
         totals[name] = known_totals[name] if not gaps and all(value is not None for value in values) else None
     return {"schema": "aide.codex-exec-usage.v1", "status": "COMPLETE" if not gaps else "PARTIAL",
             "source": "codex_exec_jsonl", "model": "unknown", "model_requests": "unknown",

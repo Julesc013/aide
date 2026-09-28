@@ -205,6 +205,29 @@ class EfficiencyWaitTests(unittest.TestCase):
         self.assertIsNone(result["usage_totals"]["input_tokens"])
         self.assertIsNone(result["known_usage_totals"]["input_tokens"])
 
+    def test_codex_usage_import_requires_one_started_turn(self):
+        usage = {"input_tokens": 10, "cached_input_tokens": 0,
+                 "output_tokens": 2, "reasoning_output_tokens": 0}
+        missing = self.codex_stream("missing-start.jsonl", usage=usage)
+        events = [json.loads(line) for line in missing.read_text(encoding="utf-8").splitlines()]
+        missing.write_text("\n".join(json.dumps(event) for event in events
+                                     if event["type"] != "turn.started") + "\n", encoding="utf-8")
+        result = lite.summarize_codex_exec_usage([missing])
+        self.assertEqual(result["status"], "PARTIAL")
+        self.assertEqual(result["completed_turns"], 0)
+        self.assertIn("turn_boundary_ambiguous", result["coverage_gaps"])
+        self.assertIsNone(result["known_usage_totals"]["input_tokens"])
+
+        repeated = self.codex_stream("two-turns.jsonl", usage=usage, repeat=True)
+        events = [json.loads(line) for line in repeated.read_text(encoding="utf-8").splitlines()]
+        events.insert(3, {"type": "turn.started"})
+        repeated.write_text("\n".join(json.dumps(event) for event in events) + "\n", encoding="utf-8")
+        result = lite.summarize_codex_exec_usage([repeated])
+        self.assertEqual(result["status"], "PARTIAL")
+        self.assertEqual(result["completed_turns"], 0)
+        self.assertEqual(result["records"][0]["duplicate_terminal_events"], 1)
+        self.assertIsNone(result["usage_totals"]["input_tokens"])
+
 
 if __name__ == "__main__":
     unittest.main()

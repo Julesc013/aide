@@ -184,6 +184,7 @@ class ExportImportTests(unittest.TestCase):
         events = consumer / "codex-events.jsonl"
         events.write_text("\n".join(json.dumps(event) for event in [
             {"type": "thread.started", "thread_id": "00000000-0000-0000-0000-000000000001"},
+            {"type": "turn.started"},
             {"type": "turn.completed", "usage": {"input_tokens": 10, "cached_input_tokens": 2,
               "output_tokens": 3, "reasoning_output_tokens": 1}},
         ]) + "\n", encoding="utf-8")

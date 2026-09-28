@@ -64,7 +64,8 @@ measures them. The observer does not verify all retained output bytes.
 Portable `job usage` imports one to eight ordinary Codex `exec --json` files
 without launching a model or printing raw event content. Each stream is bounded
 to 16 MiB and each event line to 1 MiB. Exact duplicate streams and repeated
-identical terminal events count once. Failed turns, absent usage fields, unknown
+identical terminal events count once only when one `turn.started` bounds the
+stream. Missing or multiple turn starts, failed turns, absent usage fields, unknown
 usage keys and multiple distinct streams for the same session remain explicit
 coverage gaps: incomplete totals are `null`, while observed known subtotals
 remain visible. The JSONL format reports completed turns, not the number of
