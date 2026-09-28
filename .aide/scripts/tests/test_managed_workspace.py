@@ -90,6 +90,9 @@ class ManagedWorkspaceTests(unittest.TestCase):
                     for name in ('task-packet.txt', 'result-schema.json')},
             prompt_file=prompt.name, schema_file=schema.name,
             model='gpt-6-sol', effort='medium')
+        self.config['codex_exec'] = {'account': 'chatgpt', 'model': 'gpt-6-sol',
+                                     'effort': 'medium', 'max_turns': 1}
+        workspace.write_json(self.config_path, self.config)
         return self.job
 
     def test_codex_adapter_uses_existing_owner_with_bound_ephemeral_readonly_turn(self):
@@ -109,8 +112,62 @@ class ManagedWorkspaceTests(unittest.TestCase):
         self.assertEqual(options['input_bytes'], (self.source / job['prompt_file']).read_bytes())
         self.assertEqual(options['cwd'], Path(result['scratch']) / 'tmp')
         self.assertEqual(result['result']['exit_code'], 0)
+        self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 1)
         self.assertTrue(result['scratch_absent'])
         self.assertTrue(result['reservation_released'])
+
+    def test_codex_model_permission_and_turn_budget_refuse_before_allocation(self):
+        job = self.codex_job()
+        del self.config['codex_exec']
+        workspace.write_json(self.config_path, self.config)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'model permission'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.config['codex_exec'] = {'account': 'chatgpt', 'model': 'gpt-6-sol',
+                                     'effort': 'medium', 'max_turns': 1}
+        workspace.write_json(self.config_path, self.config)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'model permission'):
+            workspace.run(self.config_path, {**job, 'model': 'different-model'},
+                          probe=lambda _: self.ample)
+        host = mock.Mock()
+        host.run.return_value = {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'turn budget exhausted'):
+            workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual(host.run.call_count, 1)
+
+    def test_codex_prompt_is_charged_to_log_limit_and_reservations(self):
+        job = self.codex_job()
+        prompt_size = (self.source / job['prompt_file']).stat().st_size
+        self.config['limits']['log_bytes'] = prompt_size
+        workspace.write_json(self.config_path, self.config)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'retained log allowance'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+        self.config['limits']['log_bytes'] = prompt_size + 9
+        workspace.write_json(self.config_path, self.config)
+        reservation = workspace.admission(self.config, self.roots, self.ample)
+        volume = workspace.volume_identity(self.root)
+        limits = self.config['limits']
+        self.assertEqual(reservation[volume], limits['scratch_bytes'] + limits['retained_bytes']
+                         + 2 * limits['log_bytes'] + 3 * 1024 * 1024)
+        host = mock.Mock()
+        host.run.return_value = {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual(host.run.call_args.kwargs['output_limit'], 9)
+
+    def test_codex_executable_reparse_parent_refused_before_allocation(self):
+        job = self.codex_job()
+        target = self.root / 'exe-target'; target.mkdir()
+        (target / 'codex.exe').write_bytes((self.root / 'codex.exe').read_bytes())
+        link = self.root / 'exe-junction'
+        child = subprocess.run(['cmd.exe', '/c', 'mklink', '/J', str(link), str(target)],
+                               capture_output=True, timeout=5)
+        if child.returncode: self.skipTest('junction creation unavailable')
+        self.addCleanup(lambda: os.rmdir(link) if link.exists() else None)
+        job['argv'] = [str(link / 'codex.exe')]
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'link/reparse path refused'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
 
     def test_codex_adapter_refuses_unbound_or_unbounded_requests_before_allocation(self):
         job = self.codex_job()
@@ -130,6 +187,7 @@ class ManagedWorkspaceTests(unittest.TestCase):
         self.assertFalse(workspace.set_dispatch(self.config_path, 'paused')['writes'])
         with self.assertRaisesRegex(workspace.WorkspaceRefused, 'dispatch is paused'):
             workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 0)
         self.assertEqual(list(self.roots['scratch'].iterdir()), [])
         self.assertEqual(workspace.inspect(self.config_path)['dispatch']['mode'], 'paused')
         resumed = workspace.set_dispatch(self.config_path, 'running')

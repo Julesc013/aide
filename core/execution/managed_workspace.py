@@ -157,6 +157,17 @@ def validate_config(config):
         value = config['limits']['canonical_bytes']
         if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
             raise WorkspaceRefused('finite positive canonical output limit required')
+    if 'codex_exec' in config:
+        permission = config['codex_exec']
+        if (not isinstance(permission, dict)
+                or set(permission) != {'account', 'model', 'effort', 'max_turns'}
+                or permission['account'] != 'chatgpt'
+                or not isinstance(permission['model'], str)
+                or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,63}', permission['model'])
+                or permission['effort'] not in ('low', 'medium', 'high', 'xhigh', 'max', 'ultra')
+                or type(permission['max_turns']) is not int
+                or not 0 < permission['max_turns'] <= 100):
+            raise WorkspaceRefused('exact finite local Codex permission required')
     working = [root_path(value) for value in config['working_roots']]
     if not working or any(root.is_relative_to(work) for root in roots.values() for work in working):
         raise WorkspaceRefused('storage inside working source refused')
@@ -353,13 +364,41 @@ def dispatch_state(control):
             raise WorkspaceRefused('dispatch-control record too large')
         value = json.loads(path.read_text(encoding='utf-8'), object_pairs_hook=unique_json_object)
     else:
-        value = {'schema': 'aide.job-dispatch.v1', 'mode': 'running', 'epoch': 0}
-    if (not isinstance(value, dict) or set(value) != {'schema', 'mode', 'epoch'}
+        value = {'schema': 'aide.job-dispatch.v1', 'mode': 'running', 'epoch': 0,
+                 'codex_admitted': 0}
+    if (not isinstance(value, dict)
+            or set(value) not in ({'schema', 'mode', 'epoch'},
+                                  {'schema', 'mode', 'epoch', 'codex_admitted'})
             or value['schema'] != 'aide.job-dispatch.v1'
             or value['mode'] not in ('running', 'paused')
-            or type(value['epoch']) is not int or value['epoch'] < 0):
+            or type(value['epoch']) is not int or value['epoch'] < 0
+            or type(value.get('codex_admitted', 0)) is not int
+            or value.get('codex_admitted', 0) < 0):
         raise WorkspaceRefused('dispatch-control state is invalid')
-    return value
+    return {**value, 'codex_admitted': value.get('codex_admitted', 0)}
+
+
+def require_codex_permission(config, job, dispatch):
+    if job.get('adapter') != 'codex_exec':
+        return
+    permission = config.get('codex_exec')
+    if (not permission or job['model'] != permission['model']
+            or job['effort'] != permission['effort']):
+        raise WorkspaceRefused('Codex job has no matching local model permission')
+    if dispatch['codex_admitted'] >= permission['max_turns']:
+        raise WorkspaceRefused('finite Codex turn budget exhausted')
+
+
+def admit_codex_turn(control, expected, maximum):
+    with estate_lock(control, 'dispatch.lock'):
+        current = dispatch_state(control)
+        if current != expected or current['mode'] != 'running':
+            raise WorkspaceRefused('dispatch epoch changed before Codex admission')
+        if current['codex_admitted'] >= maximum:
+            raise WorkspaceRefused('finite Codex turn budget exhausted')
+        admitted = {**current, 'codex_admitted': current['codex_admitted'] + 1}
+        write_json(control / 'dispatch.json', admitted)
+        return admitted
 
 
 def set_dispatch(config_path, mode):
@@ -382,8 +421,11 @@ def capacity(roots):
 
 def admission(config, roots, observed, canonical=None):
     limits = config['limits']; reservations = {}
-    for key, amount in (('scratch', limits['scratch_bytes'] + limits['log_bytes']),
-                        ('retained', limits['retained_bytes'] + limits['log_bytes']), ('control', 1024 * 1024)):
+    # Collection may temporarily hold both copies on this volume. Include the
+    # metadata/staging allowance that collection and retirement already accept.
+    for key, amount in (('scratch', limits['scratch_bytes'] + limits['log_bytes'] + 1024 * 1024),
+                        ('retained', limits['retained_bytes'] + limits['log_bytes'] + 1024 * 1024),
+                        ('control', 1024 * 1024)):
         identity = volume_identity(roots[key])
         reservations[identity] = reservations.get(identity, 0) + amount
     for relative, declared in (canonical or {}).items():
@@ -507,9 +549,11 @@ def validate_job(job, working):
     argv = job['argv']
     if not isinstance(argv, list) or not argv or any(not isinstance(v, str) or '\0' in v for v in argv):
         raise WorkspaceRefused('literal argv required')
-    exe = Path(argv[0]); ordinary(exe)
+    exe = Path(argv[0])
     if not exe.is_absolute():
         raise WorkspaceRefused('absolute executable required')
+    root_path(str(exe.parent))
+    ordinary(exe)
     if file_digest(exe) != job['executable_sha256']:
         raise WorkspaceRefused('executable changed')
     adapter = job.get('adapter')
@@ -576,9 +620,12 @@ def inspect(config_path, job=None):
     observed = capacity(roots)
     reservations = admission(config, roots, observed, (job or {}).get('canonical_outputs'))
     active = roots['control'] / 'active.json'
+    dispatch = dispatch_state(roots['control'])
+    if job is not None:
+        require_codex_permission(config, job, dispatch)
     return {'config_digest': digest(config), 'capacity': observed, 'reservations': reservations,
             'active': read_json(active) if os.path.lexists(active) else None,
-            'dispatch': dispatch_state(roots['control']),
+            'dispatch': dispatch,
             'writes': False, 'disk_enforcement': 'reservation_and_monitored_threshold',
             'memory_enforcement': 'Windows_Job_commit_limit', 'log_enforcement': 'bounded_pipe_drain'}
 
@@ -716,7 +763,7 @@ def collect_and_retire(record, config, roots):
         collect(output, retained / 'output')
         logs = root / 'logs'
         if logs.exists():
-            tree_usage(logs, maximum=limits['log_bytes'] + 1024 * 1024, max_files=5)
+            tree_usage(logs, maximum=limits['log_bytes'], max_files=5)
             collect(logs, retained / 'logs')
         record['collected_manifest'] = {member: content_digest(retained/member) for member in ('output', 'logs') if (retained/member).exists()}
         record.update(phase='collected', retained=str(retained), reservation_released=False)
@@ -744,11 +791,14 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
                 or hashlib.sha256(codex_schema).hexdigest() != job['inputs'][job['schema_file']]):
             raise WorkspaceRefused('Codex input changed before admission')
     host = host or WindowsJobHost(); limits = config['limits']; active = roots['control'] / 'active.json'
+    if job['adapter'] == 'codex_exec' and len(codex_input) >= limits['log_bytes']:
+        raise WorkspaceRefused('Codex input consumes the finite retained log allowance')
     with estate_lock(roots['control']):
         with estate_lock(roots['control'], 'dispatch.lock'):
             admitted_dispatch = dispatch_state(roots['control'])
             if admitted_dispatch['mode'] != 'running':
                 raise WorkspaceRefused('job dispatch is paused')
+            require_codex_permission(config, job, admitted_dispatch)
         if os.path.lexists(active):
             raise WorkspaceRefused('previous job requires explicit reconciliation')
         if os.path.lexists(active.with_name('active.json.next')):
@@ -802,6 +852,14 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
         dispatch_guard = None
         def checkpoint(stage):
             nonlocal dispatch_guard
+            if stage == 'before_create':
+                # The local executable path is trusted against hostile same-user
+                # mutation; check its ordinary parent chain and bytes again at
+                # the last host checkpoint before CreateProcessW.
+                root_path(str(Path(job['argv'][0]).parent))
+                ordinary(job['argv'][0])
+                if file_digest(job['argv'][0]) != job['executable_sha256']:
+                    raise WorkspaceRefused('executable changed before process creation')
             if stage == 'created_suspended':
                 guard = estate_lock(roots['control'], 'dispatch.lock')
                 guard.__enter__()
@@ -833,9 +891,11 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
                     '-c', 'features.remote_plugin=false', '-c', 'web_search="disabled"', '-']
         try:
             if job['adapter'] == 'codex_exec':
+                admitted_dispatch = admit_codex_turn(roots['control'], admitted_dispatch,
+                                                     config['codex_exec']['max_turns'])
                 schema_copy.write_bytes(codex_schema)
             record['result'] = host.run(argv, cwd=process_cwd, input_bytes=input_bytes, output_dir=root/'logs', job_id=job_id,
-                timeout=limits['runtime_seconds'], output_limit=limits['log_bytes'], memory_limit=limits['memory_bytes'],
+                timeout=limits['runtime_seconds'], output_limit=limits['log_bytes'] - len(input_bytes), memory_limit=limits['memory_bytes'],
                 process_limit=limits['processes'], cancelled=cancelled, checkpoint=checkpoint, environment=env, observed=observe)
         except BaseException as exc:
             record['result'] = {'reason': type(exc).__name__, 'message': str(exc), 'exit_code': None}
