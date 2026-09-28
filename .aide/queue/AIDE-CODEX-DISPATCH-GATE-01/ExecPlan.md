@@ -56,3 +56,16 @@ D runner, including the installed Codex version launch in the existing Job.
 The production `core/runtime/continuous_worker` source remains byte-identical
 to independently accepted `a8c9935e`. Receipt and limits are in
 `evidence/installed-codex-no-model-2026-09-29.md`.
+
+## 2026-09-29 one-turn result boundary
+
+Objective: before the existing worker uses a Codex `exec --json` result, require
+one observed thread start, one turn start and one completion in order. Reject
+duplicate or conflicting completions, missing starts, and malformed session
+identity rather than accepting the last usage or a stale message. Keep normal
+single-turn streams and the existing pause/Job owner unchanged. Add focused
+parser regressions and update the synthetic pipeline stream, then run affected
+state and pipeline tests under the configured D owner. Retain an exact failed
+attempt if one occurs. Obtain independent source review before dev integration.
+No live model turn, worker activation, Lite export, or release acceptance is
+part of this source slice.

@@ -43,6 +43,7 @@ def argv(command, workspace, schema, *, assurance=False, session_id=None, model=
 
 def parse_events(path, expected_identity):
     session = None
+    started = False
     completed = False
     failed = False
     last_message = None
@@ -59,19 +60,34 @@ def parse_events(path, expected_identity):
                 raise Refused("Codex events must be objects")
             kind = event.get("type")
             if kind == "thread.started":
-                if session is not None:
+                if session is not None or started:
                     raise Refused("multiple worker sessions in one invocation")
                 if not isinstance(event.get("thread_id"), str):
                     raise Refused("worker session identity must be a UUID string")
-                session = str(uuid.UUID(event["thread_id"]))
+                try:
+                    session = str(uuid.UUID(event["thread_id"]))
+                except ValueError as exc:
+                    raise Refused("worker session identity is not a UUID") from exc
+                if session != event["thread_id"]:
+                    raise Refused("worker session identity is not canonical")
+            elif kind == "turn.started":
+                if session is None or started or completed:
+                    raise Refused("worker turn start is missing or duplicated")
+                started = True
             elif kind == "turn.completed":
+                if session is None or not started or completed:
+                    raise Refused("worker turn completion is missing or duplicated")
+                if not isinstance(event.get("usage", {}), dict):
+                    raise Refused("worker turn usage is not an object")
                 completed = True
                 usage = event.get("usage", {})
             elif kind in ("turn.failed", "error"):
                 failed = True
             elif kind == "item.completed" and event.get("item", {}).get("type") == "agent_message":
+                if not started or completed:
+                    raise Refused("worker message is outside the active turn")
                 last_message = event["item"].get("text")
-    if not session or not completed or failed or last_message is None:
+    if not session or not started or not completed or failed or last_message is None:
         raise Refused("worker did not produce a completed session")
     try:
         result = json.loads(last_message)
@@ -84,4 +100,3 @@ def parse_events(path, expected_identity):
     if result["subject_identity"] != expected_identity:
         raise Refused("worker verdict is not bound to the observed subject")
     return {"session_id": session, "result": result, "usage": usage}
-

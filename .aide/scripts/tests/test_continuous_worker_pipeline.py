@@ -69,6 +69,7 @@ class SyntheticHost:
             result = {"status": "fail" if self.fail_code else "pass", "summary": "synthetic worker",
                       "subject_identity": identity, "findings": []}
             events = [{"type": "thread.started", "thread_id": session},
+                      {"type": "turn.started"},
                       {"type": "item.completed", "item": {"type": "agent_message", "text": json.dumps(result)}},
                       {"type": "turn.completed", "usage": {"input_tokens": 1, "output_tokens": 1}}]
             text = "\n".join(json.dumps(e) for e in events)

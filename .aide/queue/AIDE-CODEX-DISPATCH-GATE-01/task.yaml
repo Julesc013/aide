@@ -1,6 +1,6 @@
 schema_version: aide.queue-task.v0
 id: AIDE-CODEX-DISPATCH-GATE-01
-title: Prevent stale-pause Codex worker dispatch
+title: Bind Codex worker dispatch and result to one current turn
 type: implementation
 status: running
 planning_state: admitted_bounded_source
@@ -10,13 +10,16 @@ parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Owner's 2026-09-28 efficiency priority and 2026-09-25 campaign delegation.
 objective: >
   Prevent the existing Windows Codex worker from running a newly created child
-  when an operator pause or cancellation wins before dispatch.
+  when an operator pause or cancellation wins before dispatch, and refuse
+  ambiguous completed-turn streams before using a worker verdict or usage.
 scope:
   allowed_paths:
     - .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/**
     - .aide/queue/index.yaml
     - core/runtime/continuous_worker/state.py
     - core/runtime/continuous_worker/coordinator.py
+    - core/runtime/continuous_worker/codex.py
+    - .aide/scripts/tests/test_continuous_worker_state.py
     - .aide/scripts/tests/test_continuous_worker_pipeline.py
     - docs/reference/continuous-worker-pilot.md
     - PLANS.md

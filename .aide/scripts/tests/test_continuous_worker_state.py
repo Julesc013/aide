@@ -137,6 +137,7 @@ class CodexTests(unittest.TestCase):
 
     def events(self):
         return [{"type": "thread.started", "thread_id": str(uuid.uuid4())},
+                {"type": "turn.started"},
                 {"type": "item.completed", "item": {"type": "agent_message", "text": json.dumps({
                     "status": "pass", "summary": "fixture", "findings": [], "subject_identity": "subject"})}},
                 {"type": "turn.completed", "usage": {"input_tokens": 10, "output_tokens": 2}}]
@@ -147,6 +148,27 @@ class CodexTests(unittest.TestCase):
     def test_final_message_without_completed_turn_fails(self):
         with self.assertRaises(Refused):
             self.parse(self.events()[:-1])
+
+    def test_completed_verdict_requires_one_started_turn(self):
+        events = self.events()
+        with self.assertRaisesRegex(Refused, "turn start"):
+            self.parse([events[0], *events[2:]])
+        with self.assertRaisesRegex(Refused, "turn start"):
+            self.parse([events[0], events[1], events[1], *events[2:]])
+
+    def test_second_completion_cannot_replace_usage_or_verdict(self):
+        events = self.events()
+        with self.assertRaisesRegex(Refused, "turn completion"):
+            self.parse([*events, {"type": "turn.completed",
+                                  "usage": {"input_tokens": 9999, "output_tokens": 9999}}])
+        with self.assertRaisesRegex(Refused, "turn start"):
+            self.parse([*events, {"type": "turn.started"}])
+
+    def test_malformed_session_uuid_is_refused_as_worker_result(self):
+        events = self.events()
+        events[0]["thread_id"] = "not-a-uuid"
+        with self.assertRaisesRegex(Refused, "session identity"):
+            self.parse(events)
 
     def test_error_overrides_success_message(self):
         with self.assertRaises(Refused):
@@ -171,11 +193,10 @@ class CodexTests(unittest.TestCase):
 
     def test_scalar_final_refused(self):
         records = self.events()
-        records[1]["item"]["text"] = "null"
+        records[2]["item"]["text"] = "null"
         with self.assertRaises(Refused):
             self.parse(records)
 
 
 if __name__ == "__main__":
     unittest.main()
-
