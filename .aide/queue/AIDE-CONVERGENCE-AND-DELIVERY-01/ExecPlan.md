@@ -403,3 +403,10 @@ and fresh-process detach. Run one 50th-unlink case through the configured D
 runner, without regenerating assets or moving dev/main. Record exact job and
 asset identities and seek a narrow review of this new evidence. If the product
 cannot resume, retain the failing job and route an actual lifecycle repair.
+
+The committed canary `53a9798e` passed the 50th-unlink D job
+`6df070ca795549898536c46e82bade9b` with scratch retirement and reservation
+release. Independent `/root/stable_effect_review` accepted its exact local
+Windows delivered-byte result as additional evidence. See
+`evidence/later-removal-qualification-2026-09-28.md` for bindings and limits.
+The frozen Lite release effect and ten-message main-promotion gate are unchanged.

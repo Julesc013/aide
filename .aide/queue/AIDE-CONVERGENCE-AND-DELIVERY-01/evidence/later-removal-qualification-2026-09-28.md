@@ -1,0 +1,11 @@
+# Frozen-byte later removal interruption
+
+- Canary source: `53a9798e646131fb943d72fa85dd8fa0bb4d9feb`, tree `88937860cc83cf02f1ae6325d86163be92b0f58c`; script SHA-256 `93652941c9df20440dda7362a1a66585f8ad3b09b11e55c18febe074f311fd5b`.
+- Frozen local ZIP: `.aide/release/stable/aide-lite-v1.0.0.zip`, SHA-256 `a762c816295a90e09db97ce7e56443272ce19fd5aa581ffccdb6081e1a75836a`. Product source and asset bytes were unchanged.
+- Exact local job manifest: `.aide.local/later-removal-job.json`, SHA-256 `410a06a08a4e15cddbe99d579231752b8f3d08a2c23aba9f188466cde2bf5df0`; shared D execution configuration digest `217a27d429c199879648dde2c943026d37ea6fc52d9d80d5add98ad21fed20f1`.
+- Command: `py -3 -B .aide/scripts/aide_lite.py job run --config .aide.local/execution.json --manifest .aide.local/later-removal-job.json`. Job `6df070ca795549898536c46e82bade9b`, manifest digest `f1311c7378dbe5555df583c7ee552148f947278b462c238a291c05d3b4021b92`; exit 0, quiescent, scratch absent, reservation released. Peak memory 245,420,032 bytes; peak scratch 8,359,996 bytes.
+- Retained receipt: `D:\Projects\AIDE\.aide.local\execution\retained\6df070ca795549898536c46e82bade9b\receipt.json`, SHA-256 `c37bc66ebfe0ed18b0975b637ba0de37e248d782b741c47559c41376875bbe06`. Result at `output/current-mid-removal-summary.json`, SHA-256 `f35ab9e02045a448d5e26ff7f9ba37f697a90cf0aa5ae183c79c48e8a873ffff`.
+- Result: 835 archive members, 812 installed managed files. Child exited 77 after the 50th successful receipt-owned unlink, `.aide/evals/golden-tasks/branch_role_detection_golden/task.yaml`. Intent and receipt remained; authored and project-owned bytes remained unchanged. A fresh delivered CLI finished `DETACHED` and all receipt-owned files were gone.
+- Independent reviewer `/root/stable_effect_review`: **ACCEPT as additional local Windows delivered-byte evidence** for the exact canary commit/tree and job. The reviewer independently rehashed the script, ZIP, receipt and result and checked the ordinal and recovery assertions; no heavy tests were rerun.
+
+This proves one injected process exit against the exact local ZIP. It does not establish arbitrary crash timing, power-loss durability, downloaded-byte behavior, native isolation or full release acceptance. Main promotion, tag and publication remain subject to their separate gates.
