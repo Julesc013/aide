@@ -48,7 +48,7 @@ def unique_json_object(pairs):
     value = {}
     for key, item in pairs:
         if key in value:
-            raise WorkspaceRefused('duplicate Codex schema key')
+            raise WorkspaceRefused('duplicate JSON object key')
         value[key] = item
     return value
 
@@ -338,8 +338,12 @@ def dispatch_state(control):
     path = control / 'dispatch.json'
     if os.path.lexists(path.with_name('dispatch.json.next')):
         raise WorkspaceRefused('interrupted dispatch-control write requires reconciliation')
-    value = read_json(path) if os.path.lexists(path) else {
-        'schema': 'aide.job-dispatch.v1', 'mode': 'running', 'epoch': 0}
+    if os.path.lexists(path):
+        if ordinary(path).st_size > 1024 * 1024:
+            raise WorkspaceRefused('dispatch-control record too large')
+        value = json.loads(path.read_text(encoding='utf-8'), object_pairs_hook=unique_json_object)
+    else:
+        value = {'schema': 'aide.job-dispatch.v1', 'mode': 'running', 'epoch': 0}
     if (not isinstance(value, dict) or set(value) != {'schema', 'mode', 'epoch'}
             or value['schema'] != 'aide.job-dispatch.v1'
             or value['mode'] not in ('running', 'paused')

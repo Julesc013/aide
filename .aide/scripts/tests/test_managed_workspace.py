@@ -170,6 +170,15 @@ class ManagedWorkspaceTests(unittest.TestCase):
         self.assertEqual(result['result']['exit_code'], 0)
         self.assertEqual(workspace.set_dispatch(self.config_path, 'paused')['mode'], 'paused')
 
+    def test_ambiguous_dispatch_state_fails_closed_before_allocation(self):
+        job = self.codex_job()
+        (self.roots['control'] / 'dispatch.json').write_text(
+            '{"schema":"aide.job-dispatch.v1","mode":"paused",'
+            '"mode":"running","epoch":1}\n', encoding='utf-8')
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'duplicate JSON object key'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+
     def test_disk_and_memory_refusal_allocate_nothing(self):
         for changed in ({'disk_free': {workspace.volume_identity(self.root): 1024}}, {'physical_free': 1024}, {'commit_free': 1024}):
             with self.subTest(changed=changed):
