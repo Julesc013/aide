@@ -143,3 +143,19 @@ public forms to 39 current job outputs. The original accepted effect remains
 unchanged. Refresh canonical preview/draft projections and prove their
 post-commit replay before exact independent renewed release review; keep
 main/tag/publication stopped pending that review and historical decisions.
+
+## 2026-09-28 source-bound release candidate
+
+The first renewed preview bundle correctly rejected a changelog preview
+generated after its pack source. The failed receipt is retained. A clean
+changelog preview was committed first, the pack regenerated from source
+`d0c8f62c`, and stable assets were rebuilt at `3dfb3072`. The local preview
+and draft now pass their validators and exact postcommit zero-change replays.
+Six new-byte fresh/brownfield, lifecycle, context/offline, public CLI and
+forced-exit consumer jobs passed serially; Q47/Q48 passed 36 tests. The
+source-bound manifest and qualification report in this task's evidence bind
+17 successful receipts, 28 declared forms and 39 retained command outputs.
+The original accepted effect and first renewed evidence remain unchanged.
+Seek one independent exact release/effect review of this frozen candidate.
+Main/tag/publication remain stopped pending that verdict and the ten-message
+owner decision packet.

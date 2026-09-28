@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: renewed_local_assets_qualified_preview_projection_pending
+planning_state: sourcebound_local_assets_and_consumers_qualified_pending_exact_review
 result: PENDING
 updated_at: 2026-09-28
-current_slice: current_generator_preview_projection_and_renewed_effect_review
+current_slice: exact_sourcebound_release_effect_review
 next_slice: qualified_dev_integration_then_historical_dispositions_and_main_release_effects
 review_gate: independent_source_and_archive_safety_review_then_exact_release_ACCEPT
 main_promotion_performed: false
