@@ -76,3 +76,10 @@ test-only `1497a7e2` passed 23/23 state and 32/32 pipeline cases in sequential
 D-managed jobs. Scratch and reservations retired. Exact identities, receipts
 and limits are in `evidence/one-turn-result-boundary-2026-09-29.md`. Obtain an
 independent exact source and task-scope review before dev integration.
+
+The first independent review returned REQUEST_CHANGES: later item activity could
+leave a stale `pass`, and duplicate JSON keys could hide `fail`. Superseding
+`2086e512` rejects both ambiguities. Exact D-managed state and pipeline jobs
+passed 26/26 and 32/32; independent rereview ACCEPTed dev source integration.
+The rejected review
+and both new receipts are bound in `evidence/one-turn-result-boundary-2026-09-29.md`.
