@@ -179,6 +179,24 @@ class ManagedWorkspaceTests(unittest.TestCase):
             workspace.run(self.config_path, job, probe=lambda _: self.ample)
         self.assertEqual(list(self.roots['scratch'].iterdir()), [])
 
+    def test_checkpoint_retries_transient_windows_reader_contention(self):
+        path = self.roots['control'] / 'checkpoint.json'
+        workspace.write_json(path, {'phase': 'old'})
+        replace = os.replace
+        calls = []
+        def contested(source, target):
+            calls.append(1)
+            if len(calls) == 1:
+                raise PermissionError(32, 'transient sharing violation')
+            return replace(source, target)
+        with mock.patch.object(workspace.os, 'replace', side_effect=contested), \
+             mock.patch.object(workspace.time, 'sleep') as sleep:
+            workspace.write_json(path, {'phase': 'new'})
+        self.assertEqual(len(calls), 2)
+        sleep.assert_called_once_with(0.05)
+        self.assertEqual(workspace.read_json(path), {'phase': 'new'})
+        self.assertFalse(path.with_name(path.name + '.next').exists())
+
     def test_disk_and_memory_refusal_allocate_nothing(self):
         for changed in ({'disk_free': {workspace.volume_identity(self.root): 1024}}, {'physical_free': 1024}, {'commit_free': 1024}):
             with self.subTest(changed=changed):

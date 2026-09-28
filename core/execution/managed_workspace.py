@@ -90,7 +90,17 @@ def write_json(path, value):
     with temporary.open('x', encoding='utf-8', newline='\n') as stream:
         json.dump(value, stream, sort_keys=True, indent=2)
         stream.write('\n'); stream.flush(); os.fsync(stream.fileno())
-    os.replace(temporary, path)
+    # A Windows reader can briefly deny replacement of the current record.
+    # Retry the same fsynced staging file; persistent failure leaves it for
+    # explicit recovery instead of starting a competing checkpoint write.
+    for attempt in range(21):
+        try:
+            os.replace(temporary, path)
+            return
+        except PermissionError:
+            if attempt == 20:
+                raise
+            time.sleep(0.05)
 
 
 def volume_identity(path):
