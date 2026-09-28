@@ -12687,3 +12687,11 @@ outputs and ten extracted job observations to the exact 37 advertised forms.
 All output paths, digests, exit codes and observed text were checked against
 retained current-byte jobs. This was an evidence-only repair; the six
 consumers and 36 release tests were not repeated.
+
+Scoped independent rereview accepted the repaired local technical effect
+at `ae08a6be`. Six commit messages passed the integration range check;
+local and remote dev fast-forwarded from `8912eab9` to `ae08a6be` without
+force. The remote ref and local tree were observed and retained in the
+release WorkUnit. This is source/artifact integration and local technical
+acceptance only; main, tag, publication, downloaded-byte and live-model
+qualification remain open.
