@@ -323,3 +323,11 @@ returned REQUEST_CHANGES: live monitoring accepted multi-link files without
 proving every link name stayed in owned scratch. Supersede it with bounded
 inode/link-count accounting across the scanned root and an outside-link
 regression. Keep the failed review and successful test receipts.
+
+Superseding `d2b587eb` passed 3 focused scanner tests, all 29 runner tests,
+and the public end-to-end legacy retry in exact-source managed D jobs. All
+scratch was retired and reservations released. Independent scoped rereview
+ACCEPTED the runner source for dev integration with a sampled-scan limitation.
+The exact receipts and both runner review dispositions are recorded in
+`evidence/removal-rename-recovery-2026-09-28.md`. Frozen release assets and
+the main promotion gate remain separate.

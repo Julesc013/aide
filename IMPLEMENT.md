@@ -11,8 +11,12 @@ multi-link files conservatively during live scratch sampling only when every
 link name is observed within owned scratch; collection and cleanup keep
 strict single-link checks. Initial focused, end-to-end and 28-test suite
 results passed, but independent review rejected the unbounded first exception.
-The narrowed ownership check and outside-link regression require superseding
-validation and review.
+The narrowed ownership check and outside-link regression in `d2b587eb`
+passed 3 focused checks, all
+29 runner tests and the public end-to-end removal retry through the managed
+D runner; independent scoped rereview ACCEPTED it for dev source integration.
+The scan remains sampled rather than an OS sandbox. Frozen Lite 1.0.0 assets
+have not changed.
 
 ## 2026-09-28 removal rename-gap recovery
 
