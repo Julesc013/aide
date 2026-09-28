@@ -97,3 +97,19 @@ and wider vision remain separately gated. Read-only remote checks on
 | Stable version, support, promotion, publication and downloaded update | Release generator/draft, campaign release owner | Freeze version/profile/source/assets; final integrated suite and cross-version consumers; independent release review; main/tag/publish; remote byte/download hash and install/update | `dev@e88b1c2e` contains accepted Task OS/Q48 repairs and current local ZIP `68f8b3cc…`/tar `d0b42456…`; 25-command update/customization, four-command Task OS and 31-command lifecycle local canaries passed. Four completed-effect forced exits and one partial safe refusal were independently reviewed with notes on the same ZIP. No stable tag, public asset or downloaded acceptance. | Qualify partial recovery and remaining restart points, OS offline, context/evidence and exact supported command forms from final bytes; freeze version/profile/assets, obtain independent release ACCEPT, promote/publish, then download and retest. |
 
 **Critical path:** partial-import recovery and remaining declared Windows interruption points, offline and context/evidence consumers with frozen version pairs and exact supported command forms → integrated source/asset/profile freeze and independent release ACCEPT → main/tag/publication → remote download/install/update proof. The current `dev` state is a qualified local-preview integration, not stable. TUI, Service, Workbench, Commander, continuous fleet operation, every host/provider, model-enabled native execution and hosted target effects are outside the first bounded Lite profile; each remains a separately gated parent-campaign outcome where requested. No optional label excuses a baseline Lite lifecycle requirement.
+
+**2026-09-29 current checkpoint:** The historical row snapshots above are
+superseded where they show older dev or asset bytes. Local and remote
+`dev@a468f7f038d1906e65c6bcef7ee30c77e5b568fa` include the current
+unpublished Lite candidate. Independent technical rereview accepted its
+37-form current-byte effect manifest (SHA-256
+`d52e1a1462949df34bcc5f44d692bbcd0ed379f68a2b96e69025163416149196`).
+Six serial delivered-byte consumers, ten extracted job observations and
+36 Q47/Q48 tests passed. The ZIP SHA-256 is
+`5bbe1234492c39c4ad26b4d43b2b1fe0193963bf3b4ddb99f108b0405b72c051`;
+the tar SHA-256 is
+`c42617e1a6e4b3ded8dcf036c0ce0a582732a50ffa1bba1b536bd2e70a8223ad`.
+The main range still fails at ten historical message records pending exact
+owner decisions. No live Codex model turn, tag, publication, downloaded-byte
+verification or arbitrary project rollout has occurred. Those are the next
+release gates; wider programme outcomes remain tracked separately.
