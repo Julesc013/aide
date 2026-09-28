@@ -17452,6 +17452,8 @@ RELEASE_PUBLICATION_STATUS = "local_preview_no_publish"
 RELEASE_VALIDATION_MAX_MEMBERS = 10_000
 RELEASE_VALIDATION_MAX_ARCHIVE_BYTES = 128 * 1024 * 1024
 RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
+RELEASE_VALIDATION_MAX_TAR_METADATA_BYTES = 1024 * 1024
+RELEASE_VALIDATION_MAX_TAR_STREAM_BYTES = 640 * 1024 * 1024
 RELEASE_REQUIRED_PACK_FILES = [
     "manifest.yaml",
     "checksums.json",
@@ -18134,6 +18136,33 @@ def archive_member_names(archive_path: Path) -> list[str]:
     return sorted(names)
 
 
+class ReleaseBoundedTarInfo(tarfile.TarInfo):
+    def _proc_member(self, archive: tarfile.TarFile) -> tarfile.TarInfo:
+        # TarInfo processes PAX/GNU metadata before yielding a member. Refuse
+        # oversized declarations before its parser allocates their contents.
+        if self.type == tarfile.GNUTYPE_SPARSE:
+            raise tarfile.ReadError("archive sparse metadata rejected")
+        if self.type in {
+            tarfile.XHDTYPE, tarfile.XGLTYPE, tarfile.SOLARIS_XHDTYPE,
+            tarfile.GNUTYPE_LONGNAME, tarfile.GNUTYPE_LONGLINK,
+        } and self.size > RELEASE_VALIDATION_MAX_TAR_METADATA_BYTES:
+            raise tarfile.ReadError("archive tar metadata exceeds validation limit")
+        return super()._proc_member(archive)
+
+
+class ReleaseBoundedTarReader:
+    def __init__(self, source: object) -> None:
+        self.source = source
+        self.bytes_read = 0
+
+    def read(self, size: int = -1) -> bytes:
+        if size < 0 or size > RELEASE_VALIDATION_MAX_TAR_STREAM_BYTES - self.bytes_read:
+            raise ValueError("archive decompressed tar stream exceeds validation limit")
+        data = self.source.read(size)
+        self.bytes_read += len(data)
+        return data
+
+
 def inspect_release_archive_members(archive_path: Path) -> tuple[list[str], list[str], int]:
     if archive_path.stat().st_size > RELEASE_VALIDATION_MAX_ARCHIVE_BYTES:
         raise ValueError("archive compressed size exceeds validation limit")
@@ -18159,16 +18188,18 @@ def inspect_release_archive_members(archive_path: Path) -> tuple[list[str], list
     elif archive_path.name.endswith(".tar.gz"):
         # Stream headers and stop before decompressing a declared over-limit
         # member; getmembers() would parse the entire untrusted archive first.
-        with tarfile.open(archive_path, "r|gz") as archive:
-            for member in archive:
-                names.append(member.name)
-                if len(names) > RELEASE_VALIDATION_MAX_MEMBERS:
-                    raise ValueError("archive member count exceeds validation limit")
-                if member.size < 0 or member.size > RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES - uncompressed:
-                    raise ValueError("archive uncompressed size exceeds validation limit")
-                uncompressed += member.size
-                if not member.isfile():
-                    unsafe.append(member.name)
+        with gzip.open(archive_path, "rb") as decompressed:
+            bounded = ReleaseBoundedTarReader(decompressed)
+            with tarfile.open(fileobj=bounded, mode="r|", tarinfo=ReleaseBoundedTarInfo) as archive:
+                for member in archive:
+                    names.append(member.name)
+                    if len(names) > RELEASE_VALIDATION_MAX_MEMBERS:
+                        raise ValueError("archive member count exceeds validation limit")
+                    if member.size < 0 or member.size > RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES - uncompressed:
+                        raise ValueError("archive uncompressed size exceeds validation limit")
+                    uncompressed += member.size
+                    if not member.isfile() or member.sparse is not None:
+                        unsafe.append(member.name)
     else:
         raise ValueError("unsupported release archive format")
     return names, unsafe, uncompressed

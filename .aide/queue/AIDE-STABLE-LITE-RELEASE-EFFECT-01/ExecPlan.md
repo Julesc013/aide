@@ -67,6 +67,9 @@ work. The parent goal remains active until wider mandatory work is fulfilled.
 - [x] Repair frozen `24bd7d0d` `REQUEST_CHANGES`: reject Windows ADS,
   ambiguous path and case aliases before extraction, inspect tar metadata
   with finite streaming limits, then seek superseding exact source review.
+- [x] Repair frozen `34c87052` `REQUEST_CHANGES`: bound tar PAX metadata
+  before parser allocation and bound the decompressed stream; 36 Q47/Q48
+  tests passed. A new exact independent review is still required.
 - [ ] Profile/version and non-preview asset subject frozen. Separate builder
   and validator implemented; final current-source pack and asset bytes remain.
 - [ ] Final machine and delivered-byte qualification.

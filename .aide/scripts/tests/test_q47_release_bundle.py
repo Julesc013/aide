@@ -594,6 +594,22 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         self.assertEqual(result["result"], "FAIL")
         self.assertTrue(any("member count exceeds validation limit" in item for item in result["problems"]))
 
+    def test_release_validator_refuses_oversized_pax_before_metadata_parse(self) -> None:
+        root = self.make_repo()
+        archive_path = root / aide_lite.RELEASE_TAR_GZ_PATH
+        archive_path.parent.mkdir(parents=True, exist_ok=True)
+        with tarfile.open(archive_path, "w:gz") as archive:
+            member = tarfile.TarInfo("pax-extended-header")
+            member.type = tarfile.XHDTYPE
+            member.size = 2048
+            archive.addfile(member, io.BytesIO(b"x" * member.size))
+        with mock.patch.object(aide_lite, "RELEASE_VALIDATION_MAX_TAR_METADATA_BYTES", 1024):
+            with mock.patch.object(tarfile.TarInfo, "_proc_pax", side_effect=AssertionError("PAX metadata parsed")):
+                with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+                    result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_TAR_GZ_PATH)
+        self.assertEqual(result["result"], "FAIL")
+        self.assertTrue(any("tar metadata exceeds validation limit" in item for item in result["problems"]))
+
     def test_stable_cli_refuses_portable_consumer_without_managed_source_runner(self) -> None:
         root = self.make_repo()
         for command in ("stable-build", "stable-validate"):
