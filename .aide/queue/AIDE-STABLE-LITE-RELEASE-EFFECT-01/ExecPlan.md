@@ -118,3 +118,17 @@ request one exact owner decision packet for the ten records, then implement
 structured decisions and obtain the required technical review before rerun.
 Do not infer acceptance from A/B/C, rewrite history or change the promotion
 rule to conceal failures.
+
+## 2026-09-28 reviewed removal and runner source projection
+
+Reviewed source `b95a8f9a` adds authored-file rename-gap recovery and an
+owned scratch-monitor correction. Its exact tests and independent ACCEPTs
+are in the campaign's removal-rename evidence; the existing `719abf66`
+release effect does not contain these bytes. Prepare a superseding 1.0.0
+candidate on the reused checkout and bounded D runner: generate the current
+export pack from clean source, commit it, build and validate stable assets,
+commit them, prove zero-change replay, then run changed-byte fresh/brownfield
+and lifecycle consumers. Reuse unchanged evidence only with valid bindings.
+Obtain exact independent release/effect acceptance before `dev` integration
+and main promotion. Preserve the ten-message owner decision gate and the
+old accepted effect as historical evidence; no publication from this plan.
