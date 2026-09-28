@@ -4305,6 +4305,14 @@ after it. Independent source review accepted the exact commit, now in
 and unpublished 1.0.0 assets were regenerated. Six serial consumers, ten
 delivered job observations and 36 Q47/Q48 tests passed. Exact view replay
 changed zero tracked files, and technical rereview accepted the repaired
-37-form current-byte effect. Local and remote `dev@ae08a6be` now include
-the exact qualified candidate. Main promotion, tag and publication remain
-gated by the ten historical decisions and live-model qualification.
+37-form current-byte effect. Local and remote `dev@0cacf204` include the
+exact qualified candidate and its evidence closeout. Main promotion, tag
+and publication remain gated by the ten historical decisions and live-model
+qualification.
+
+The AIDE campaign resource-cleanup child is closed with notes: 34 owned
+worktrees were retired while unique work remained reachable; the reviewed
+selected-root source is in dev; both remaining checkouts share approved D
+configuration; current export, stable-build and release-test jobs passed
+with retired scratch and released reservations. This does not close the
+parent release or remove the per-job resource preflight requirement.

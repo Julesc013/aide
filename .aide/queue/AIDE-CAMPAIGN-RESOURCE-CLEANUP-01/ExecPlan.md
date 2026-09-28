@@ -303,3 +303,14 @@ Commit-bound job `48c84ef70d2c494bb46a4ec7079532d5` passed the same
 with notes. Keep it on the task branch while the Lite release is frozen;
 including this runner change in release source would require a new exact
 release delta decision and delivered-byte qualification.
+
+## 2026-09-29 closeout
+
+Reviewed source `5152798b` is now an ancestor of dev. Both existing
+checkouts use the same approved D config. Current-source export, stable
+build and release tests ran under the shared bounded owner, passed and
+retired scratch/reservations. The exact config, receipts, peak measurements,
+remaining worktrees and limits are in
+`evidence/qualified-runner-closeout-2026-09-29.md`. The owned cleanup and
+bounded execution child is passed with notes; the parent release and wider
+programme remain active.

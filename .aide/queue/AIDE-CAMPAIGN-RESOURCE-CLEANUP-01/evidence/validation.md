@@ -63,3 +63,22 @@ paused; no fallback to C:, working directory or system temp is authorized.
 Next: exact source review and small affected host replay; further proven-safe
 reclamation; then the pending importer suite under the owner-resolved pool.
 Parent goal remains active/incomplete. No dev/main/tag/publication effect.
+
+## 2026-09-29 closure validation
+
+The placement paragraph above is historical. The owner later selected the
+shared D roots, both existing checkouts have identical validated ignored
+configuration, and reviewed setup source `5152798b` is in current dev.
+
+Read-only `git merge-base --is-ancestor 5152798b dev` passed. Both
+`.aide.local/execution.json` files hashed to
+`019669f8faab4ea4e410079ea96966b16742f0e7c6d2e062246a092f1b862834`.
+The current-source D-managed export, stable build and 36-test receipts all
+show quiescent exit 0, scratch absent and released reservations; exact
+identities and observed peaks are in
+`qualified-runner-closeout-2026-09-29.md`. `git worktree list` showed only
+the two preserved checkouts. The approved scratch root had no children.
+`aide_lite.py task inspect --task-id AIDE-CAMPAIGN-RESOURCE-CLEANUP-01`
+reported `classification: complete`, `missing_evidence: 0`, and
+`noop_already_complete` after the required task-local evidence files were
+present. No additional test or resource-intensive job ran for this closeout.

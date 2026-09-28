@@ -3721,9 +3721,9 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01/evidence
     description: Add explicit guarded recovery for a partial portable import while preserving old safe refusals.
   - id: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
-    status: running
-    planning_state: D_runner_source_review_accepted_importer_110_partitioned_pass
-    result: PENDING
+    status: passed
+    planning_state: resource_cleanup_and_bounded_runner_qualified
+    result: PASS_WITH_NOTES
     title: Reclaim owned campaign resources and bound future allocation
     task: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/task.yaml
     exec_plan: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/ExecPlan.md

@@ -12695,3 +12695,11 @@ force. The remote ref and local tree were observed and retained in the
 release WorkUnit. This is source/artifact integration and local technical
 acceptance only; main, tag, publication, downloaded-byte and live-model
 qualification remain open.
+
+Closed the resource-cleanup WorkUnit after verifying reviewed setup source
+`5152798b` in dev, identical machine-local D execution configuration in
+both checkouts and actual bounded export, stable-build and 36-test receipts.
+All three observed jobs exited quiescently with scratch absent and shared
+reservations released. The earlier 34 worktree retirements remain tied to
+their exact receipts. Disk free-space changes were observed, not attributed
+wholly to AIDE; monitored reservations are not filesystem quotas.

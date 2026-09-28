@@ -2,11 +2,11 @@ schema_version: aide.queue-task.v0
 id: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
 title: Reclaim owned campaign resources and bound future allocation
 type: implementation
-status: running
-planning_state: admitted
-result: PENDING
+status: passed
+planning_state: resource_cleanup_and_bounded_runner_qualified
+result: PASS_WITH_NOTES
 created_at: 2026-09-26
-updated_at: 2026-09-28
+updated_at: 2026-09-29
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 objective: Reclaim proven-owned disposable resources without losing unique work, and enforce resource preflight and cleanup in AIDE.
 scope:
