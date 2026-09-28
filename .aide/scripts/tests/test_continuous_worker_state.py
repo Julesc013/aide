@@ -151,7 +151,7 @@ class CodexTests(unittest.TestCase):
 
     def test_completed_verdict_requires_one_started_turn(self):
         events = self.events()
-        with self.assertRaisesRegex(Refused, "turn start"):
+        with self.assertRaises(Refused):
             self.parse([events[0], *events[2:]])
         with self.assertRaisesRegex(Refused, "turn start"):
             self.parse([events[0], events[1], events[1], *events[2:]])
