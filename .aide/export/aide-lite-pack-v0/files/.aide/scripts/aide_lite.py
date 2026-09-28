@@ -40600,6 +40600,19 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
     expected_root = export_pack_root(repo_root, name).resolve()
     if output and pack_root != expected_root:
         raise ValueError(f"Q21 only permits committed export path: {EXPORT_PACK_PATH}")
+    current_source = git_commit_id(repo_root)
+    prior_source = None
+    prior_checksums = None
+    if pack_root.exists() and not source_dirty:
+        prior = pack_manifest_scalars(pack_root)
+        candidate = prior.get("source_commit", "")
+        if (prior.get("source_dirty_state") == "false"
+                and candidate and candidate not in {"unavailable", current_source}
+                and pack_source_ancestor_has_unchanged_inputs(repo_root, candidate, current_source)
+                and validate_pack_checksums(pack_root)[0]
+                and not validate_export_pack_boundary(pack_root)):
+            prior_source = candidate
+            prior_checksums = json.loads(read_text(pack_root / "checksums.json"))
     if pack_root.exists():
         shutil.rmtree(pack_root)
     files_root = pack_root / "files"
@@ -40637,8 +40650,12 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
     write_text_if_changed(pack_root / "import-policy.yaml", read_text(import_policy_source))
 
     manifest_files = sorted(set(copied))
-    write_text_if_changed(pack_root / "manifest.yaml", render_manifest(manifest_files, git_commit_id(repo_root), source_dirty))
+    write_text_if_changed(pack_root / "manifest.yaml", render_manifest(manifest_files, current_source, source_dirty))
     checksums = build_pack_checksums(pack_root)
+    if prior_source is not None and checksums == prior_checksums:
+        # The pack commit changed no portable input or checksummed byte.
+        # Keep the source commit that actually produced those bytes.
+        write_text_if_changed(pack_root / "manifest.yaml", render_manifest(manifest_files, prior_source, False))
     write_text_if_changed(pack_root / "checksums.json", stable_json_text(checksums))
     boundary_violations = validate_export_pack_boundary(pack_root)
     write_text_if_changed(pack_root / "export-report.md", render_export_report(pack_root, manifest_files, boundary_violations))

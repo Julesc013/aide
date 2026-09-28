@@ -434,6 +434,15 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(status, "PASS", problems)
         self.assertFalse(problems)
 
+        subprocess.run(["git", "-C", str(source_root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(source_root), "commit", "--quiet", "-m",
+                        "build(fixture): commit source-bound pack"], check=True)
+        self.build_pack(source_root)
+        self.assertEqual(aide_lite.pack_manifest_scalars(pack_root)["source_commit"], source_commit)
+        replay_status = subprocess.run(["git", "-C", str(source_root), "status", "--porcelain"],
+                                       check=True, capture_output=True, text=True)
+        self.assertEqual(replay_status.stdout, "")
+
     def test_pack_provenance_fails_stale_clean_manifest(self) -> None:
         source_root = self.make_source_repo()
         pack_root = self.build_pack(source_root)
