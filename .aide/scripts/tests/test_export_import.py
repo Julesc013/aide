@@ -1547,6 +1547,14 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
             target.mkdir()
             with self.assertRaisesRegex(ValueError, "reparse"):
                 aide_lite.build_portable_rollback_plan(pack_alias, pack, target)
+            cli = subprocess.run(
+                [sys.executable, "-B", str(MODULE_PATH), "--repo-root", str(target),
+                 "rollback-pack", "--current-pack", str(pack_alias),
+                 "--previous-pack", str(pack), "--target", str(target),
+                 "--dry-run", "--json"],
+                capture_output=True, text=True, encoding="utf-8", timeout=15)
+            self.assertNotEqual(cli.returncode, 0)
+            self.assertIn("reparse", cli.stderr)
         finally:
             if pack_alias.is_junction():
                 pack_alias.rmdir()
@@ -1698,6 +1706,8 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
         self.assertEqual(aide_lite.validate_pack_checksums(pack_v1), (True, []))
         target = source_root.parent / "target-rollback-paths"
         self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        aide_lite.write_text(source_root / ".aide/policies/token-budget.yaml", "version: changed-budget\n")
+        aide_lite.write_text(source_root / ".aide/policies/recovery.yaml", "version: changed-recovery\n")
         pack_v2 = self.freeze_pack(source_root, "rollback-paths-v2")
         self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "APPLIED")
         receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
@@ -1705,6 +1715,21 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
             aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
         self.assertTrue((target / added_rel).is_file())
         self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+        generic_reverse = aide_lite.apply_import_pack(pack_v1, target,
+            predecessor_pack=pack_v2, fail_after_writes=1)
+        self.assertEqual(generic_reverse["status"], "INTERRUPTED")
+        self.assertEqual(generic_reverse["recovery"]["classification"], "partial")
+        intent_path = target / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+        intent_before = intent_path.read_bytes()
+        target_before = (target / generic_reverse["written"][0]).read_bytes()
+        with self.assertRaisesRegex(ValueError, "payload paths differ"):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        with self.assertRaisesRegex(ValueError, "payload paths differ"):
+            aide_lite.apply_portable_rollback(pack_v2, pack_v1, target,
+                generic_reverse["plan_digest"], recover_partial=True)
+        self.assertEqual(intent_path.read_bytes(), intent_before)
+        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+        self.assertEqual((target / generic_reverse["written"][0]).read_bytes(), target_before)
 
     @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
     def test_interrupted_rollback_retains_intent_and_requires_reconciliation(self) -> None:
@@ -1732,6 +1757,37 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
         self.assertEqual(retry["status"], "RECOVERY_REQUIRED")
         self.assertEqual(intent_path.read_bytes(), intent_bytes)
         self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+        self.assertEqual(aide_lite.read_text(target / "README.md"), "# Authored\n")
+
+        recovery_preview = aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        self.assertEqual(recovery_preview["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(recovery_preview["recovery"]["classification"], "partial")
+        recovery_digest = recovery_preview["recovery_plan_digest"]
+        self.assertRegex(recovery_digest, r"^[0-9a-f]{64}$")
+        reversed_pair = aide_lite.apply_portable_rollback(
+            pack_v1, pack_v2, target, recovery_digest, recover_partial=True)
+        self.assertEqual(reversed_pair["status"], "RECOVERY_REQUIRED")
+        wrong_digest = aide_lite.apply_portable_rollback(
+            pack_v2, pack_v1, target, "0" * 64, recover_partial=True)
+        self.assertEqual(wrong_digest["status"], "STALE_PLAN")
+        changed_path = target / interrupted["written"][0]
+        written_bytes = changed_path.read_bytes()
+        changed_path.write_bytes(b"rival project edit\n")
+        rival = aide_lite.apply_portable_rollback(
+            pack_v2, pack_v1, target, recovery_digest, recover_partial=True)
+        self.assertEqual(rival["status"], "RECOVERY_REQUIRED")
+        self.assertEqual(intent_path.read_bytes(), intent_bytes)
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+        changed_path.write_bytes(written_bytes)
+        installed_cli = pack_v2 / "files/.aide/scripts/aide_lite.py"
+        command = [sys.executable, "-B", str(installed_cli), "--repo-root", str(target),
+            "rollback-pack", "--current-pack", str(pack_v2), "--previous-pack", str(pack_v1),
+            "--target", str(target), "--recover-partial", "--expect-plan", recovery_digest, "--json"]
+        result = subprocess.run(command, capture_output=True, text=True, encoding="utf-8", timeout=60)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(json.loads(result.stdout)["status"], "ROLLED_BACK_RECOVERED")
+        self.assertFalse(intent_path.exists())
+        self.assertEqual(aide_lite.load_portable_import_receipt(target)["pack"], aide_lite.import_pack_identity(pack_v1))
         self.assertEqual(aide_lite.read_text(target / "README.md"), "# Authored\n")
 
     @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")

@@ -4198,3 +4198,18 @@ passed 35 cases; the two existing D checkout configs remained unchanged on
 setup. Independent review accepted exact source `5152798b` with notes. Keep
 the setup task branch available while preserving the accepted Lite release
 bytes; a prepublication integration requires an exact release delta decision.
+
+The bounded `AIDE-DELIVERED-PACK-ROLLBACK-RECOVERY-01` source slice adds an
+explicit continuation for a partial portable rollback through the existing
+guarded importer. The affected eight-case rollback matrix and a CLI junction
+probe pass through the shared D runner. Obtain exact source review before
+integration; the frozen Lite 1.0.0 acceptance remains tied to its older bytes.
+
+The first source review requested a path-set and receipt-lineage repair for
+pending rollback. Its regression is now green on the shared baseline check.
+Complete the affected rerun and exact superseding review before considering
+dev integration; the stable asset freeze remains unchanged.
+
+`72d1438e` now has eight passing affected cases and independent source
+ACCEPT. Preserve its reachable task branch while the frozen Lite 1.0.0
+release gate is resolved; then integrate or qualify an exact release delta.

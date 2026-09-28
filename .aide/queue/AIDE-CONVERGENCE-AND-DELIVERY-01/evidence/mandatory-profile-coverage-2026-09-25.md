@@ -1,5 +1,20 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
+**2026-09-28 current gate:** Remote `dev@76e17a4c2101a9f75fa1116b9256d331bd2cedb8`
+retains the source-bound Lite 1.0.0 local release candidate; remote
+`main@aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3` has not been promoted.
+Independent review accepted the exact local release effect recorded in
+`AIDE-STABLE-LITE-RELEASE-EFFECT-01`, but ten other historical `main..dev`
+commit messages still fail the promotion range check. Their exact owner
+decision request is recorded in that WorkUnit; main, tag, publication,
+downloaded-asset and consumer effects have not happened. The separate
+partial-rollback repair source `72d1438e` passed eight affected cases and
+independent source review. Its evidence-only branch head `95bdc903` is
+published and remains outside `dev` and the frozen Lite assets. New delivered
+bytes and consumer qualification are required before claiming that repair in
+a release. Earlier dated checkpoint statements below keep their historical
+source bindings; this paragraph states the current gate.
+
 **2026-09-28 stable effect candidate delta:** The distinct 1.0.0 local ZIP/tar
 at asset commit `92da9573` passed exact-byte fresh/brownfield, lifecycle,
 context/offline, three forced-exit, ten installed partial recovery/feedback,

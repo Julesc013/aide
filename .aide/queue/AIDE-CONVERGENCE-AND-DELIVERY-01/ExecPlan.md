@@ -331,3 +331,19 @@ ACCEPTED the runner source for dev integration with a sampled-scan limitation.
 The exact receipts and both runner review dispositions are recorded in
 `evidence/removal-rename-recovery-2026-09-28.md`. Frozen release assets and
 the main promotion gate remain separate.
+
+## 2026-09-28 post-Lite source integration candidate
+
+Objective: combine the independently accepted owner-selected managed storage
+setup and exact partial rollback recovery without moving frozen `dev@76e17a4c`
+or regenerating Lite 1.0.0 assets. Use the existing primary checkout and one
+task branch; create no physical worktree. Preserve both source ancestries and
+their distinct review subjects. The resource branch merged without conflicts;
+the rollback branch changes separate source regions and only conflicts in the
+append-only `PLANS.md` and `IMPLEMENT.md` checkpoint tails. Resolve those
+tails by preserving the current accepted release state and both streams'
+records. Validate the combined managed runner and rollback behavior under
+the shared finite D runner, obtain independent integration review, then keep
+the candidate reachable until the frozen release gate is resolved. Do not
+present branch-level tests as combined-source results or move `dev` on a
+source-only review.

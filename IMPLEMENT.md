@@ -12457,3 +12457,26 @@ retired and the reservation released. A commit-bound rerun passed the same
 35 cases (job `48c84ef70d2c494bb46a4ec7079532d5`) and independent review
 accepted exact source `5152798b` with notes. Dev integration remains separate
 from the frozen Lite release; its accepted source/assets were not changed.
+
+2026-09-28 partial rollback continuation: `rollback-pack` now reports the
+saved recovery digest only for a safe-mode rollback-direction intent and
+accepts explicit `--recover-partial` with that exact digest. It delegates to
+the existing guarded importer under the lifecycle lock, returning
+`ROLLED_BACK_RECOVERED` only after receipt/intent reconciliation. The new
+installed-CLI test covers wrong direction/digest, a rival edit and preserved
+authored bytes; eight affected rollback cases and a CLI junction case passed
+under the D runner. This is source work awaiting independent review and
+delivered-byte qualification, not a change to the accepted Lite release.
+
+The first independent review requested changes: an interrupted reverse
+import could bypass rollback receipt and path-set checks. A failing
+reverse-import regression reproduced that case. The follow-up shares the
+completed receipt baseline predicate with ordinary rollback and refuses
+partial recovery when safe payload paths differ. The focused regression
+passes; superseding exact review and broader affected tests remain open.
+
+The superseding commit `72d1438e` then passed the eight-case rollback matrix
+under the shared D runner (782.001 seconds, peak memory 263 MB, peak scratch
+22 MB, scratch retired). Independent rereview accepted this exact source for
+dev integration. The branch remains separate while Lite 1.0.0 frozen assets
+await their release gate; delivered-byte qualification is still required.
