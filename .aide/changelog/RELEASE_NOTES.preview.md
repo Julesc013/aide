@@ -2,18 +2,16 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 7a521066 latest 50 commits
-source_head: 7a521066fdd4bf1346434d60c84090b0a63f77b2
+source_range: 2c168ca172ac09d8ff1bc96561461f56d9d6b1d0 latest 50 commits
+source_head: 2c168ca172ac09d8ff1bc96561461f56d9d6b1d0
 preview_only: true
 
 ## Highlights
 
-- Added: Extracted Lite can configure and run the existing bounded Windows job owner. (b117f0f8889e)
 - Added: Portable Lite job context summary from stdin. (6f4b45a6184d)
 - Added: Delivered Lite context observer regression. (f409db677cd2)
 - Added: Installed Codex no-model host regression. (6e21e70f4c32)
 - Added: Explicit one-turn Codex job adapter in the existing Lite runner. (651744c0a428)
-- Changed: Preserve portable Lite job-owner source qualification. (b9aad1601d3c)
 - Changed: Preserve the portable execution dev checkpoint. (648cd8836974)
 - Changed: Current lifecycle evidence and release gate description. (47b0883bb87b)
 - Changed: Host context preflight evidence for Lite efficiency. (764fa8cbcde4)
@@ -41,7 +39,6 @@ preview_only: true
 - Changed: Current-source Lite portable pack candidate. (c22d41112973)
 - Changed: Current Lite pack uses repaired non-circular provenance. (a7ab0223d1ba)
 - Changed: Local Lite 1.0.0 candidate includes current portable source. (b147aa8cf28a)
-- Fixed: Damaged source queue state cannot silently disable job admission. (26f343b7764d)
 - Fixed: Host context regression no longer demands text-only completeness. (1340ecd83e5d)
 - Fixed: Codex prompt-input text byte counts for the observed host schema. (b4f250f7bc9f)
 - Fixed: Preserve immutable native source-review provenance across integration. (6b11d4136e14)
@@ -58,12 +55,11 @@ preview_only: true
 - Fixed: Delivered host refusal oracle now covers run admission. (8b0cba063b37)
 - Fixed: Non-circular portable pack provenance replay. (86838e444162)
 - Fixed: Changelog preview provenance for explicit historical revisions. (7a521066fdd4)
+- Fixed: Range-bound changelog provenance under mixed and open-ended selectors. (46fe61d743f0)
+- Docs: Refresh the source-bound Lite release preview. (87635e1815b7)
 
 ## Validation Summary
 
-- b117f0f8889e: PASS: Python AST parsing and git diff whitespace check.
-- 26f343b7764d: PASS: Python AST parsing and git diff whitespace check.
-- b9aad1601d3c: PASS: Source 26f343b7 passed the 2/2 D-managed extracted-pack and guard regressions.
 - 648cd8836974: PASS: Remote task and dev refs were observed at b9aad160 after fast-forward.
 - 47b0883bb87b: PASS: Three current-source importer lifecycle cases passed under the bounded D runner.
 - 764fa8cbcde4: PASS: Local Codex debug prompt-input exited zero with 47091 bounded JSON bytes.
@@ -71,12 +67,12 @@ preview_only: true
 - 1340ecd83e5d: PASS: Python AST parsing and git diff whitespace check.
 - b4f250f7bc9f: PASS: Local sanitized-environment schema inspection found input_text in six parts.
 - 467b445a48e0: PASS: Superseding b4f250f7 passed 3/3 D-managed prompt-input cases.
+- f409db677cd2: PASS: Staged diff whitespace check.
+- ea80f73d21a9: PASS: D-managed extracted ZIP consumer 1/1, exit 0.
+- 6e21e70f4c32: PASS: Staged diff whitespace check.
 
 ## Known Risks
 
-- b117f0f8889e: Real Codex binding, non-Windows operation and stable release bytes remain unqualified.
-- 26f343b7764d: Delivered Lite and source guard require superseding qualification and review.
-- b9aad1601d3c: Real Codex, final release bytes and non-Windows operation remain unqualified.
 - 648cd8836974: Real host binding, usage coverage and stable release bytes remain open.
 - 47b0883bb87b: Current canonical release assets and downloaded consumers remain unqualified.
 - 764fa8cbcde4: This is not an admitted real Codex turn or measured credit saving.
@@ -84,12 +80,12 @@ preview_only: true
 - 1340ecd83e5d: Unmeasured content remains unknown and prevents a full context claim.
 - b4f250f7bc9f: This remains a no-model debugger view, not complete effective token usage.
 - 467b445a48e0: Extracted-pack assertion and live host usage remain unqualified.
+- f409db677cd2: Final canonical release bytes and live host binding remain unqualified.
+- ea80f73d21a9: Canonical release bytes and live mediated host usage remain unqualified.
+- 6e21e70f4c32: This does not prove a real Codex model turn or exported Lite behavior.
 
 ## Follow-up
 
-- b117f0f8889e: Run the delivered consumer fixture, seek independent source review, and integrate qualified source into dev.
-- 26f343b7764d: Run the focused regressions, obtain independent delta review, and integrate accepted source.
-- b9aad1601d3c: Fast-forward qualified source into dev and verify local and remote identities.
 - 648cd8836974: Continue the efficiency release gate with one qualified host path.
 - 47b0883bb87b: Qualify a coherent current-source release candidate after remaining host and product gates.
 - 764fa8cbcde4: Qualify a version-pinned mediated host path with actual usage and acceptance.
@@ -97,6 +93,9 @@ preview_only: true
 - 1340ecd83e5d: Rerun the focused suite, retain the actual coverage result and seek independent review.
 - b4f250f7bc9f: Requalify, review the source delta and integrate accepted code.
 - 467b445a48e0: Fast-forward accepted source into dev and test delivered bytes at the next artifact boundary.
+- f409db677cd2: Run the bounded delivered-pack test and preserve its receipt.
+- ea80f73d21a9: Integrate the test and evidence into dev; qualify final assets at release freeze.
+- 6e21e70f4c32: Run the bound suite and retain exact receipt before dev integration.
 
 ## Warnings
 

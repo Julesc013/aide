@@ -1,18 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "b117f0f8889e",
-      "summary": "Run the delivered consumer fixture, seek independent source review, and integrate qualified source into dev."
-    },
-    {
-      "commit": "26f343b7764d",
-      "summary": "Run the focused regressions, obtain independent delta review, and integrate accepted source."
-    },
-    {
-      "commit": "b9aad1601d3c",
-      "summary": "Fast-forward qualified source into dev and verify local and remote identities."
-    },
-    {
       "commit": "648cd8836974",
       "summary": "Continue the efficiency release gate with one qualified host path."
     },
@@ -199,16 +187,21 @@
     {
       "commit": "7a521066fdd4",
       "summary": "Regenerate preview at this commit, rebuild current pack and assets, and rerun exact-byte qualification."
+    },
+    {
+      "commit": "87635e1815b7",
+      "summary": "Regenerate the pack from this committed preview, then qualify stable assets and consumer bytes."
+    },
+    {
+      "commit": "46fe61d743f0",
+      "summary": "Obtain narrow source rereview, regenerate preview from this source commit, then rebuild and qualify final assets."
+    },
+    {
+      "commit": "2c168ca172ac",
+      "summary": "Generate the preview at this committed head, rebuild the pack and assets, then qualify their exact bytes."
     }
   ],
   "highlights": [
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "b117f0f8889e",
-      "subject": "feat(lite): ship bounded Windows job owner in export pack",
-      "summary": "Extracted Lite can configure and run the existing bounded Windows job owner."
-    },
     {
       "breaking": false,
       "category": "Added",
@@ -236,13 +229,6 @@
       "commit": "651744c0a428",
       "subject": "feat(lite): bind one Codex turn to the managed job owner",
       "summary": "Explicit one-turn Codex job adapter in the existing Lite runner."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "b9aad1601d3c",
-      "subject": "chore(lite): retain reviewed portable job qualification",
-      "summary": "Preserve portable Lite job-owner source qualification."
     },
     {
       "breaking": false,
@@ -436,13 +422,6 @@
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "26f343b7764d",
-      "subject": "fix(lite): require validated pack before bypassing job admission",
-      "summary": "Damaged source queue state cannot silently disable job admission."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
       "commit": "1340ecd83e5d",
       "subject": "fix(lite): preserve installed-host context coverage gaps",
       "summary": "Host context regression no longer demands text-only completeness."
@@ -551,22 +530,24 @@
       "commit": "7a521066fdd4",
       "subject": "fix(changelog): bind preview to selected source revision",
       "summary": "Changelog preview provenance for explicit historical revisions."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "46fe61d743f0",
+      "subject": "fix(changelog): bind range head to selected commit set",
+      "summary": "Range-bound changelog provenance under mixed and open-ended selectors."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "87635e1815b7",
+      "subject": "docs(changelog): project Lite preview at repaired source",
+      "summary": "Refresh the source-bound Lite release preview."
     }
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "b117f0f8889e",
-      "summary": "Real Codex binding, non-Windows operation and stable release bytes remain unqualified."
-    },
-    {
-      "commit": "26f343b7764d",
-      "summary": "Delivered Lite and source guard require superseding qualification and review."
-    },
-    {
-      "commit": "b9aad1601d3c",
-      "summary": "Real Codex, final release bytes and non-Windows operation remain unqualified."
-    },
     {
       "commit": "648cd8836974",
       "summary": "Real host binding, usage coverage and stable release bytes remain open."
@@ -754,24 +735,24 @@
     {
       "commit": "7a521066fdd4",
       "summary": "The regenerated pack must include this source change; previous consumer receipts remain bound to prior bytes."
+    },
+    {
+      "commit": "87635e1815b7",
+      "summary": "This is a local preview and does not publish a release or validate delivered bytes."
+    },
+    {
+      "commit": "46fe61d743f0",
+      "summary": "Downstream pack, stable assets and consumers need refreshed exact-source qualification."
+    },
+    {
+      "commit": "2c168ca172ac",
+      "summary": "These consumer receipts bind old bytes and do not qualify the repaired packaged script."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "7a521066fdd4bf1346434d60c84090b0a63f77b2",
-  "source_range": "7a521066 latest 50 commits",
+  "source_head": "2c168ca172ac09d8ff1bc96561461f56d9d6b1d0",
+  "source_range": "2c168ca172ac09d8ff1bc96561461f56d9d6b1d0 latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "b117f0f8889e",
-      "summary": "PASS: Python AST parsing and git diff whitespace check."
-    },
-    {
-      "commit": "26f343b7764d",
-      "summary": "PASS: Python AST parsing and git diff whitespace check."
-    },
-    {
-      "commit": "b9aad1601d3c",
-      "summary": "PASS: Source 26f343b7 passed the 2/2 D-managed extracted-pack and guard regressions."
-    },
     {
       "commit": "648cd8836974",
       "summary": "PASS: Remote task and dev refs were observed at b9aad160 after fast-forward."
@@ -959,6 +940,18 @@
     {
       "commit": "7a521066fdd4",
       "summary": "PASS: selected-revision fixture regression, run with TEMP and TMP in the approved D scratch root."
+    },
+    {
+      "commit": "87635e1815b7",
+      "summary": "PASS: changelog preview reports full source_head 7a521066fdd4bf1346434d60c84090b0a63f77b2, 50 commits, and zero malformed commits in its selected range."
+    },
+    {
+      "commit": "46fe61d743f0",
+      "summary": "PASS: focused selected-revision fixture regression under the approved D scratch root."
+    },
+    {
+      "commit": "2c168ca172ac",
+      "summary": "PASS: all six receipt hashes matched retained D outputs; each job exited zero, was quiescent, retired scratch and released its reservation."
     }
   ],
   "warnings": []

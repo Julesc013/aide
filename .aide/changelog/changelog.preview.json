@@ -2,31 +2,6 @@
   "categories": {
     "Added": [
       {
-        "aide_phase": "portable-execution-owner",
-        "aide_result": "SOURCE_CANDIDATE_VALIDATION_PENDING",
-        "breaking": false,
-        "category": "Added",
-        "commit": "b117f0f8889e",
-        "commit_sha": "b117f0f8889eb06374e5936f3f2fd47773c0b673",
-        "entry": "Extracted Lite can configure and run the existing bounded Windows job owner.",
-        "follow_up": "- Run the delivered consumer fixture, seek independent source review, and integrate qualified source into dev.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: portable-execution-owner\nAIDE-Result: SOURCE_CANDIDATE_VALIDATION_PENDING\nAIDE-Scope: lite-export-and-consumer-fixture\nAIDE-Token-Impact: no-model-job-execution\nAIDE-Quality-Gate: managed-consumer-and-independent-review-pending",
-        "risks": "- Real Codex binding, non-Windows operation and stable release bytes remain unqualified.",
-        "scope": "lite",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "feat(lite): ship bounded Windows job owner in export pack",
-        "summary": "Extracted Lite can configure and run the existing bounded Windows job owner.",
-        "type": "feat",
-        "validation": "- PASS: Python AST parsing and git diff whitespace check.\n- PENDING: D-managed extracted-pack consumer qualification on this exact commit."
-      },
-      {
         "aide_phase": "portable-context-measurement",
         "aide_result": "SOURCE_CANDIDATE_VALIDATION_PENDING",
         "breaking": false,
@@ -128,31 +103,6 @@
       }
     ],
     "Changed": [
-      {
-        "aide_phase": "portable-execution-owner-evidence",
-        "aide_result": "SOURCE_ACCEPTED_DEV_INTEGRATION_PENDING",
-        "breaking": false,
-        "category": "Changed",
-        "commit": "b9aad1601d3c",
-        "commit_sha": "b9aad1601d3c7323368b3417e3d75b443ebdf107",
-        "entry": "Preserve portable Lite job-owner source qualification.",
-        "follow_up": "- Fast-forward qualified source into dev and verify local and remote identities.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: portable-execution-owner-evidence\nAIDE-Result: SOURCE_ACCEPTED_DEV_INTEGRATION_PENDING\nAIDE-Scope: evidence-and-execution-log\nAIDE-Token-Impact: no-model-job-execution\nAIDE-Quality-Gate: independent-source-review-and-managed-consumer",
-        "risks": "- Real Codex, final release bytes and non-Windows operation remain unqualified.",
-        "scope": "lite",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "chore(lite): retain reviewed portable job qualification",
-        "summary": "Preserve portable Lite job-owner source qualification.",
-        "type": "chore",
-        "validation": "- PASS: Source 26f343b7 passed the 2/2 D-managed extracted-pack and guard regressions.\n- PASS: Independent reviewer accepted 26f343b7 for dev source integration.\n- PASS: Evidence-only staged diff whitespace check."
-      },
       {
         "aide_phase": "dev-integration-checkpoint",
         "aide_result": "DEV_SOURCE_INTEGRATED_HOST_PENDING",
@@ -829,18 +779,18 @@
         "validation": "- PASS: D-managed stable-build job 921b669d, receipt SHA-256 b95301ff7ea490f8b0e6ca7ca7f29714362aff218a2ebedeec1cd49217c0317d.\n- PASS: builder internal candidate validation; separate post-commit replay and validation pending."
       }
     ],
-    "Fixed": [
+    "Docs": [
       {
-        "aide_phase": "portable-execution-owner-repair",
-        "aide_result": "REPAIR_CANDIDATE_VALIDATION_PENDING",
+        "aide_phase": "source-bound-changelog-preview",
+        "aide_result": "PASS",
         "breaking": false,
-        "category": "Fixed",
-        "commit": "26f343b7764d",
-        "commit_sha": "26f343b7764de3e3eb6396a6fd0c9fe1704c874b",
-        "entry": "Damaged source queue state cannot silently disable job admission.",
-        "follow_up": "- Run the focused regressions, obtain independent delta review, and integrate accepted source.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: portable-execution-owner-repair\nAIDE-Result: REPAIR_CANDIDATE_VALIDATION_PENDING\nAIDE-Scope: source-guard-and-export-consumer\nAIDE-Token-Impact: no-model-job-execution\nAIDE-Quality-Gate: managed-regression-and-independent-review-pending",
-        "risks": "- Delivered Lite and source guard require superseding qualification and review.",
-        "scope": "lite",
+        "category": "Docs",
+        "commit": "87635e1815b7",
+        "commit_sha": "87635e1815b7f24b18fef43b56f2a186aeb24103",
+        "entry": "Refresh the source-bound Lite release preview.",
+        "follow_up": "- Regenerate the pack from this committed preview, then qualify stable assets and consumer bytes.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: source-bound-changelog-preview\nAIDE-Result: PASS\nAIDE-Scope: generated-preview-only\nAIDE-Token-Impact: deterministic-preview\nAIDE-Quality-Gate: changelog-validate-and-postcommit-replay",
+        "risks": "- This is a local preview and does not publish a release or validate delivered bytes.",
+        "scope": "changelog",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -850,11 +800,13 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "fix(lite): require validated pack before bypassing job admission",
-        "summary": "Damaged source queue state cannot silently disable job admission.",
-        "type": "fix",
-        "validation": "- PASS: Python AST parsing and git diff whitespace check.\n- PENDING: D-managed delivered consumer and missing-index regression on this commit."
-      },
+        "subject": "docs(changelog): project Lite preview at repaired source",
+        "summary": "Refresh the source-bound Lite release preview.",
+        "type": "docs",
+        "validation": "- PASS: changelog preview reports full source_head 7a521066fdd4bf1346434d60c84090b0a63f77b2, 50 commits, and zero malformed commits in its selected range.\n- PASS: changelog validate and staged diff whitespace check."
+      }
+    ],
+    "Fixed": [
       {
         "aide_phase": "portable-context-measurement-repair",
         "aide_result": "REPAIR_CANDIDATE_VALIDATION_PENDING",
@@ -1254,91 +1206,70 @@
         "summary": "Changelog preview provenance for explicit historical revisions.",
         "type": "fix",
         "validation": "- PASS: selected-revision fixture regression, run with TEMP and TMP in the approved D scratch root.\n- PASS: git diff --check before commit.\n- Six prior delivered-byte consumer jobs passed for the unchanged b147aa8c asset candidate; they do not test this generator change."
+      },
+      {
+        "aide_phase": "source-bound-preview-review-repair",
+        "aide_result": "REVIEW_PENDING",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "46fe61d743f0",
+        "commit_sha": "46fe61d743f077b4ff28bc58721d4fa1d85ddcc4",
+        "entry": "Range-bound changelog provenance under mixed and open-ended selectors.",
+        "follow_up": "- Obtain narrow source rereview, regenerate preview from this source commit, then rebuild and qualify final assets.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: source-bound-preview-review-repair\nAIDE-Result: REVIEW_PENDING\nAIDE-Scope: changelog-selector-and-fixture\nAIDE-Token-Impact: deterministic-provenance-repair\nAIDE-Quality-Gate: focused-regression-and-independent-rereview",
+        "risks": "- Downstream pack, stable assets and consumers need refreshed exact-source qualification.",
+        "scope": "changelog",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(changelog): bind range head to selected commit set",
+        "summary": "Range-bound changelog provenance under mixed and open-ended selectors.",
+        "type": "fix",
+        "validation": "- PASS: focused selected-revision fixture regression under the approved D scratch root.\n- PASS: staged diff whitespace check before commit.\n- Independent rereview pending for this superseding source."
+      }
+    ],
+    "Internal": [
+      {
+        "aide_phase": "selector-review-evidence",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Internal",
+        "commit": "2c168ca172ac",
+        "commit_sha": "2c168ca172ac09d8ff1bc96561461f56d9d6b1d0",
+        "entry": "Retain intermediate qualification and independent source review provenance.",
+        "follow_up": "- Generate the preview at this committed head, rebuild the pack and assets, then qualify their exact bytes.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: selector-review-evidence\nAIDE-Result: PASS\nAIDE-Scope: bounded-review-and-consumer-records\nAIDE-Token-Impact: concise-evidence\nAIDE-Quality-Gate: receipt-hash-verification-and-independent-source-review",
+        "risks": "- These consumer receipts bind old bytes and do not qualify the repaired packaged script.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "docs(release): retain selector review and consumer receipts",
+        "summary": "Retain intermediate qualification and independent source review provenance.",
+        "type": "docs",
+        "validation": "- PASS: all six receipt hashes matched retained D outputs; each job exited zero, was quiescent, retired scratch and released its reservation.\n- PASS: the b147aa8c ZIP matched SHA-256 6c885b50a33edcb255e68de09998982331a1c67192e17c854331c3e5812fbce5.\n- PASS: staged diff whitespace check before commit."
       }
     ]
   },
   "category_counts": {
-    "Added": 5,
-    "Changed": 28,
-    "Fixed": 17
+    "Added": 4,
+    "Changed": 27,
+    "Docs": 1,
+    "Fixed": 17,
+    "Internal": 1
   },
   "commit_count": 50,
   "entries": [
-    {
-      "aide_phase": "portable-execution-owner",
-      "aide_result": "SOURCE_CANDIDATE_VALIDATION_PENDING",
-      "breaking": false,
-      "category": "Added",
-      "commit": "b117f0f8889e",
-      "commit_sha": "b117f0f8889eb06374e5936f3f2fd47773c0b673",
-      "entry": "Extracted Lite can configure and run the existing bounded Windows job owner.",
-      "follow_up": "- Run the delivered consumer fixture, seek independent source review, and integrate qualified source into dev.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: portable-execution-owner\nAIDE-Result: SOURCE_CANDIDATE_VALIDATION_PENDING\nAIDE-Scope: lite-export-and-consumer-fixture\nAIDE-Token-Impact: no-model-job-execution\nAIDE-Quality-Gate: managed-consumer-and-independent-review-pending",
-      "risks": "- Real Codex binding, non-Windows operation and stable release bytes remain unqualified.",
-      "scope": "lite",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "feat(lite): ship bounded Windows job owner in export pack",
-      "summary": "Extracted Lite can configure and run the existing bounded Windows job owner.",
-      "type": "feat",
-      "validation": "- PASS: Python AST parsing and git diff whitespace check.\n- PENDING: D-managed extracted-pack consumer qualification on this exact commit."
-    },
-    {
-      "aide_phase": "portable-execution-owner-repair",
-      "aide_result": "REPAIR_CANDIDATE_VALIDATION_PENDING",
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "26f343b7764d",
-      "commit_sha": "26f343b7764de3e3eb6396a6fd0c9fe1704c874b",
-      "entry": "Damaged source queue state cannot silently disable job admission.",
-      "follow_up": "- Run the focused regressions, obtain independent delta review, and integrate accepted source.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: portable-execution-owner-repair\nAIDE-Result: REPAIR_CANDIDATE_VALIDATION_PENDING\nAIDE-Scope: source-guard-and-export-consumer\nAIDE-Token-Impact: no-model-job-execution\nAIDE-Quality-Gate: managed-regression-and-independent-review-pending",
-      "risks": "- Delivered Lite and source guard require superseding qualification and review.",
-      "scope": "lite",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "fix(lite): require validated pack before bypassing job admission",
-      "summary": "Damaged source queue state cannot silently disable job admission.",
-      "type": "fix",
-      "validation": "- PASS: Python AST parsing and git diff whitespace check.\n- PENDING: D-managed delivered consumer and missing-index regression on this commit."
-    },
-    {
-      "aide_phase": "portable-execution-owner-evidence",
-      "aide_result": "SOURCE_ACCEPTED_DEV_INTEGRATION_PENDING",
-      "breaking": false,
-      "category": "Changed",
-      "commit": "b9aad1601d3c",
-      "commit_sha": "b9aad1601d3c7323368b3417e3d75b443ebdf107",
-      "entry": "Preserve portable Lite job-owner source qualification.",
-      "follow_up": "- Fast-forward qualified source into dev and verify local and remote identities.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: portable-execution-owner-evidence\nAIDE-Result: SOURCE_ACCEPTED_DEV_INTEGRATION_PENDING\nAIDE-Scope: evidence-and-execution-log\nAIDE-Token-Impact: no-model-job-execution\nAIDE-Quality-Gate: independent-source-review-and-managed-consumer",
-      "risks": "- Real Codex, final release bytes and non-Windows operation remain unqualified.",
-      "scope": "lite",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "chore(lite): retain reviewed portable job qualification",
-      "summary": "Preserve portable Lite job-owner source qualification.",
-      "type": "chore",
-      "validation": "- PASS: Source 26f343b7 passed the 2/2 D-managed extracted-pack and guard regressions.\n- PASS: Independent reviewer accepted 26f343b7 for dev source integration.\n- PASS: Evidence-only staged diff whitespace check."
-    },
     {
       "aide_phase": "dev-integration-checkpoint",
       "aide_result": "DEV_SOURCE_INTEGRATED_HOST_PENDING",
@@ -2513,6 +2444,81 @@
       "summary": "Changelog preview provenance for explicit historical revisions.",
       "type": "fix",
       "validation": "- PASS: selected-revision fixture regression, run with TEMP and TMP in the approved D scratch root.\n- PASS: git diff --check before commit.\n- Six prior delivered-byte consumer jobs passed for the unchanged b147aa8c asset candidate; they do not test this generator change."
+    },
+    {
+      "aide_phase": "source-bound-changelog-preview",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Docs",
+      "commit": "87635e1815b7",
+      "commit_sha": "87635e1815b7f24b18fef43b56f2a186aeb24103",
+      "entry": "Refresh the source-bound Lite release preview.",
+      "follow_up": "- Regenerate the pack from this committed preview, then qualify stable assets and consumer bytes.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: source-bound-changelog-preview\nAIDE-Result: PASS\nAIDE-Scope: generated-preview-only\nAIDE-Token-Impact: deterministic-preview\nAIDE-Quality-Gate: changelog-validate-and-postcommit-replay",
+      "risks": "- This is a local preview and does not publish a release or validate delivered bytes.",
+      "scope": "changelog",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "docs(changelog): project Lite preview at repaired source",
+      "summary": "Refresh the source-bound Lite release preview.",
+      "type": "docs",
+      "validation": "- PASS: changelog preview reports full source_head 7a521066fdd4bf1346434d60c84090b0a63f77b2, 50 commits, and zero malformed commits in its selected range.\n- PASS: changelog validate and staged diff whitespace check."
+    },
+    {
+      "aide_phase": "source-bound-preview-review-repair",
+      "aide_result": "REVIEW_PENDING",
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "46fe61d743f0",
+      "commit_sha": "46fe61d743f077b4ff28bc58721d4fa1d85ddcc4",
+      "entry": "Range-bound changelog provenance under mixed and open-ended selectors.",
+      "follow_up": "- Obtain narrow source rereview, regenerate preview from this source commit, then rebuild and qualify final assets.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: source-bound-preview-review-repair\nAIDE-Result: REVIEW_PENDING\nAIDE-Scope: changelog-selector-and-fixture\nAIDE-Token-Impact: deterministic-provenance-repair\nAIDE-Quality-Gate: focused-regression-and-independent-rereview",
+      "risks": "- Downstream pack, stable assets and consumers need refreshed exact-source qualification.",
+      "scope": "changelog",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(changelog): bind range head to selected commit set",
+      "summary": "Range-bound changelog provenance under mixed and open-ended selectors.",
+      "type": "fix",
+      "validation": "- PASS: focused selected-revision fixture regression under the approved D scratch root.\n- PASS: staged diff whitespace check before commit.\n- Independent rereview pending for this superseding source."
+    },
+    {
+      "aide_phase": "selector-review-evidence",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Internal",
+      "commit": "2c168ca172ac",
+      "commit_sha": "2c168ca172ac09d8ff1bc96561461f56d9d6b1d0",
+      "entry": "Retain intermediate qualification and independent source review provenance.",
+      "follow_up": "- Generate the preview at this committed head, rebuild the pack and assets, then qualify their exact bytes.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: selector-review-evidence\nAIDE-Result: PASS\nAIDE-Scope: bounded-review-and-consumer-records\nAIDE-Token-Impact: concise-evidence\nAIDE-Quality-Gate: receipt-hash-verification-and-independent-source-review",
+      "risks": "- These consumer receipts bind old bytes and do not qualify the repaired packaged script.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "docs(release): retain selector review and consumer receipts",
+      "summary": "Retain intermediate qualification and independent source review provenance.",
+      "type": "docs",
+      "validation": "- PASS: all six receipt hashes matched retained D outputs; each job exited zero, was quiescent, retired scratch and released its reservation.\n- PASS: the b147aa8c ZIP matched SHA-256 6c885b50a33edcb255e68de09998982331a1c67192e17c854331c3e5812fbce5.\n- PASS: staged diff whitespace check before commit."
     }
   ],
   "generated_by": "aide-lite",
@@ -2523,7 +2529,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "7a521066fdd4bf1346434d60c84090b0a63f77b2",
-  "source_range": "7a521066 latest 50 commits",
+  "source_head": "2c168ca172ac09d8ff1bc96561461f56d9d6b1d0",
+  "source_range": "2c168ca172ac09d8ff1bc96561461f56d9d6b1d0 latest 50 commits",
   "warnings": []
 }

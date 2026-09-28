@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 7a521066 latest 50 commits
-source_head: 7a521066fdd4bf1346434d60c84090b0a63f77b2
+source_range: 2c168ca172ac09d8ff1bc96561461f56d9d6b1d0 latest 50 commits
+source_head: 2c168ca172ac09d8ff1bc96561461f56d9d6b1d0
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,13 +11,14 @@ release_publishing: false
 
 ## Summary
 
-- Added: 5
-- Changed: 28
+- Added: 4
+- Changed: 27
 - Fixed: 17
+- Docs: 1
+- Internal: 1
 
 ## Added
 
-- Extracted Lite can configure and run the existing bounded Windows job owner. (b117f0f8889e feat(lite): ship bounded Windows job owner in export pack)
 - Portable Lite job context summary from stdin. (6f4b45a6184d feat(lite): summarize bounded Codex prompt-input streams)
 - Delivered Lite context observer regression. (f409db677cd2 test(lite): verify context summary from extracted pack)
 - Installed Codex no-model host regression. (6e21e70f4c32 test(worker): verify installed Codex binary in owned Job)
@@ -25,7 +26,6 @@ release_publishing: false
 
 ## Changed
 
-- Preserve portable Lite job-owner source qualification. (b9aad1601d3c chore(lite): retain reviewed portable job qualification)
 - Preserve the portable execution dev checkpoint. (648cd8836974 chore(lite): record observed dev integration)
 - Current lifecycle evidence and release gate description. (47b0883bb87b chore(campaign): record current-source lifecycle qualification)
 - Host context preflight evidence for Lite efficiency. (764fa8cbcde4 chore(lite): record bounded Codex context preflight)
@@ -56,7 +56,6 @@ release_publishing: false
 
 ## Fixed
 
-- Damaged source queue state cannot silently disable job admission. (26f343b7764d fix(lite): require validated pack before bypassing job admission)
 - Host context regression no longer demands text-only completeness. (1340ecd83e5d fix(lite): preserve installed-host context coverage gaps)
 - Codex prompt-input text byte counts for the observed host schema. (b4f250f7bc9f fix(lite): count Codex input_text content accurately)
 - Preserve immutable native source-review provenance across integration. (6b11d4136e14 fix(host): bind reviewed loader manifest to frozen source)
@@ -73,6 +72,15 @@ release_publishing: false
 - Delivered host refusal oracle now covers run admission. (8b0cba063b37 test(lite): exercise delivered Codex run refusal)
 - Non-circular portable pack provenance replay. (86838e444162 fix(release): preserve unchanged pack source on replay)
 - Changelog preview provenance for explicit historical revisions. (7a521066fdd4 fix(changelog): bind preview to selected source revision)
+- Range-bound changelog provenance under mixed and open-ended selectors. (46fe61d743f0 fix(changelog): bind range head to selected commit set)
+
+## Docs
+
+- Refresh the source-bound Lite release preview. (87635e1815b7 docs(changelog): project Lite preview at repaired source)
+
+## Internal
+
+- Retain intermediate qualification and independent source review provenance. (2c168ca172ac docs(release): retain selector review and consumer receipts)
 
 ## Malformed Commits
 
