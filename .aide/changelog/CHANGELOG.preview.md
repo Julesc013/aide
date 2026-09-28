@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 6e35ea1379da7d0e447e8973b44205da6df6e662
+source_head: 6a15a7dd5e3b0a8b13bf244badaab6c82f6cdf01
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,9 +11,9 @@ release_publishing: false
 
 ## Summary
 
-- Added: 3
-- Changed: 17
-- Fixed: 14
+- Added: 4
+- Changed: 18
+- Fixed: 12
 - Docs: 2
 - Internal: 14
 
@@ -22,11 +22,10 @@ release_publishing: false
 - Include the portable bounded job interface in the Lite release contract. (20710eace078 feat(release): qualify portable Lite job forms for stable contract)
 - Portable bounded job commands in the Lite candidate assets. (5acd32a79ab5 build(release): rebuild Lite assets with portable job contract)
 - Bounded attempt attribution for supplied Codex usage streams. (cec72cb6f2d7 feat(efficiency): attribute bounded Codex attempt streams)
+- Candidate Lite attempt usage form with partial accounting semantics. (6a15a7dd5e3b feat(release): declare bounded Lite attempt usage form)
 
 ## Changed
 
-- Current Lite pack uses repaired non-circular provenance. (a7ab0223d1ba build(release): bind repaired Lite pack to current source)
-- Local Lite 1.0.0 candidate includes current portable source. (b147aa8cf28a build(release): freeze current Lite 1.0.0 local assets)
 - Preserve the usage repair review verdict. (8912eab9071c docs(lite): record known usage source acceptance)
 - Refresh preview metadata for the current Lite source. (65fafcc9f5be chore(changelog): refresh current Lite preview)
 - Refresh unpublished Lite candidate views and qualification evidence. (65eaa5550f2e build(release): refresh current Lite release previews)
@@ -42,11 +41,12 @@ release_publishing: false
 - Record current local technical effect acceptance. (d5a84c10b1b7 docs(release): record accepted current local effect)
 - Record qualified local Lite effect integration. (dbf216c3e0ce docs(release): record current Lite dev integration)
 - Record accepted portable attempt attribution source review. (6e35ea1379da docs(efficiency): record accepted attempt attribution review)
+- Refresh local Lite attribution release preview. (74c811f3b77e build(release): refresh Lite attribution changelog preview)
+- Refresh local portable Lite pack for attempt attribution. (a233225073e7 build(release): refresh Lite pack with attempt attribution)
+- Refresh local Lite stable candidate assets. (25e74785fedd build(release): refresh unpublished Lite attribution assets)
 
 ## Fixed
 
-- Non-circular portable pack provenance replay. (86838e444162 fix(release): preserve unchanged pack source on replay)
-- Changelog preview provenance for explicit historical revisions. (7a521066fdd4 fix(changelog): bind preview to selected source revision)
 - Range-bound changelog provenance under mixed and open-ended selectors. (46fe61d743f0 fix(changelog): bind range head to selected commit set)
 - Package selected-revision changelog provenance in Lite. (f22f3ec58ed4 build(pack): include reviewed changelog source repair)
 - Include selected-source changelog provenance in the local Lite candidate. (df372b3a6495 build(release): refresh Lite 1.0.0 candidate bytes)

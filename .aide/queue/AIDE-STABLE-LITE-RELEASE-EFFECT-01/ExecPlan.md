@@ -379,3 +379,8 @@ from the candidate form list. Add the exact partial-usage form, qualify this
 policy change independently, then regenerate preview, pack and assets once
 from that combined source. The earlier assets and consumers remain evidence
 for their own bytes, not the final policy-bound candidate.
+
+Independent `/root/stable_effect_review` accepted exact policy source
+`6a15a7dd`, tree `6e8395cf`, for the 38-form candidate list. The review
+requires a new current-byte manifest and effect mapping, including delivered
+attribution and malformed refusal; it is not asset or release acceptance.
