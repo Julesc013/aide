@@ -252,3 +252,7 @@ passed, released its reservation and retired scratch. Exact hashes, result,
 harness and limits are in `evidence/mid-removal-qualification-2026-09-28.md`.
 This is an evidence-only branch from the frozen release head; it is not yet
 part of the reviewed release effect or downloaded-asset proof.
+The independent `/root/stable_effect_review` accepted the exact `42832385`
+canary evidence for this local Windows interruption point. Preserve the task
+branch until an exact release-effect delta admits a changed head, or integrate
+after the frozen effect completes. Do not relabel it as downloaded-asset proof.
