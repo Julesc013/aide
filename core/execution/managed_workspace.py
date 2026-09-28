@@ -116,8 +116,7 @@ def memory_capacity():
     return {'physical_free': mem.physical_free, 'commit_free': (perf.commit_limit - perf.commit) * perf.page_size}
 
 
-def load_config(path):
-    config = read_json(path)
+def validate_config(config):
     if config.get('schema') != 'aide.managed-workspace.local.v1':
         raise WorkspaceRefused('unsupported local workspace config')
     roots = {key: root_path(config['roots'][key]) for key in ('scratch', 'retained', 'control')}
@@ -142,6 +141,154 @@ def load_config(path):
     if not working or any(root.is_relative_to(work) for root in roots.values() for work in working):
         raise WorkspaceRefused('storage inside working source refused')
     return config, roots, working
+
+
+def load_config(path):
+    return validate_config(read_json(path))
+
+
+def configure(config_path, selection_path, approved_parent, *, probe=None):
+    """Create only explicitly selected local roots and one source-local config.
+
+    The selection has the existing config fields; supplied volume IDs are
+    replaced by observed IDs. No machine or process default can select a root.
+    """
+    selection = read_json(selection_path)
+    probe = probe or capacity
+    if not isinstance(selection, dict) or set(selection) - {
+        'schema', 'roots', 'volume_ids', 'working_roots', 'limits'
+    }:
+        raise WorkspaceRefused('unsupported setup selection fields')
+    if selection.get('schema') != 'aide.managed-workspace.local.v1':
+        raise WorkspaceRefused('unsupported local workspace config')
+    if not isinstance(selection.get('roots'), dict) or set(selection['roots']) != {'scratch', 'retained', 'control'}:
+        raise WorkspaceRefused('three exact selected storage roots required')
+    required_limits = {'disk_reserve_bytes', 'physical_reserve_bytes', 'commit_reserve_bytes',
+        'scratch_bytes', 'retained_bytes', 'canonical_bytes', 'memory_bytes', 'log_bytes',
+        'runtime_seconds', 'processes', 'max_files'}
+    limits = selection.get('limits')
+    if not isinstance(limits, dict) or set(limits) != required_limits:
+        raise WorkspaceRefused('exact finite setup limits required')
+    for key, value in limits.items():
+        if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
+            raise WorkspaceRefused('finite positive limit required: ' + key)
+    if limits['runtime_seconds'] > 86400 or limits['processes'] > 128:
+        raise WorkspaceRefused('runtime/process limit outside maintainer profile')
+    selected_working = selection.get('working_roots')
+    if not isinstance(selected_working, list) or not selected_working or any(not isinstance(v, str) for v in selected_working):
+        raise WorkspaceRefused('exact existing working roots required')
+    working = [root_path(value) for value in selected_working]
+    if len(set(working)) != len(working):
+        raise WorkspaceRefused('duplicate working root')
+    parent = root_path(approved_parent)
+    if any(parent.is_relative_to(work) for work in working):
+        raise WorkspaceRefused('approved storage parent inside source')
+    chosen = {}
+    for key, value in selection['roots'].items():
+        if not isinstance(value, str):
+            raise WorkspaceRefused('absolute bounded root required')
+        path = Path(value)
+        if (not path.is_absolute() or '..' in path.parts or path == parent
+                or not path.is_relative_to(parent) or path.resolve() != path
+                or any(path.is_relative_to(work) or work.is_relative_to(path) for work in working)):
+            raise WorkspaceRefused('selected root escapes approved storage parent or source')
+        chosen[key] = path
+    values = list(chosen.values())
+    if any(left.is_relative_to(right) or right.is_relative_to(left)
+           for i, left in enumerate(values) for right in values[i+1:]):
+        raise WorkspaceRefused('storage roots must be distinct and nonoverlapping')
+    supplied_destination = Path(config_path)
+    if '..' in supplied_destination.parts:
+        raise WorkspaceRefused('config path escape refused')
+    destination = supplied_destination if supplied_destination.is_absolute() else Path.cwd() / supplied_destination
+    if not any(destination == work / '.aide.local' / 'execution.json' for work in working):
+        raise WorkspaceRefused('config must be in an approved working root local boundary')
+    if os.path.lexists(destination.parent):
+        root_path(destination.parent)
+    for path in chosen.values():
+        ancestor = path
+        while not os.path.lexists(ancestor):
+            ancestor = ancestor.parent
+        root_path(ancestor)
+        if not ancestor.is_relative_to(parent):
+            raise WorkspaceRefused('selected root lacks approved existing ancestor')
+    # Observe capacity and volume on existing parents before creating anything.
+    proxies = {}
+    for key, path in chosen.items():
+        ancestor = path
+        while not os.path.lexists(ancestor):
+            ancestor = ancestor.parent
+        proxies[key] = ancestor
+    config_ancestor = destination.parent
+    while not os.path.lexists(config_ancestor):
+        config_ancestor = config_ancestor.parent
+    root_path(config_ancestor)
+    proxies['config'] = config_ancestor
+    config = {'schema': selection['schema'], 'roots': {key: str(value) for key, value in chosen.items()},
+        'volume_ids': {key: volume_identity(proxies[key]) for key in chosen},
+        'working_roots': [str(value) for value in working], 'limits': dict(limits)}
+    def check_config_capacity(observed, path, reservations):
+        identity = volume_identity(path)
+        if observed['disk_free'][identity] - reservations.get(identity, 0) - 1024 * 1024 < limits['disk_reserve_bytes']:
+            raise WorkspaceRefused('local config would consume free-space reserve')
+    observed = probe(proxies)
+    reservations = admission(config, proxies, observed)
+    check_config_capacity(observed, config_ancestor, reservations)
+    if os.path.lexists(destination):
+        if read_json(destination) != config:
+            raise WorkspaceRefused('existing local config differs; preserve it for review')
+        validate_config(config)
+        return {'result': 'ALREADY_CONFIGURED', 'writes': False, 'config_digest': digest(config),
+                'volume_ids': config['volume_ids'], 'capacity': observed}
+    existing_populated = any(path.exists() and any(path.iterdir()) for path in chosen.values())
+    if existing_populated:
+        if os.path.lexists(chosen['control'] / 'active.json'):
+            raise WorkspaceRefused('active job prevents shared storage setup')
+        peers = [work / '.aide.local' / 'execution.json' for work in working if work / '.aide.local' / 'execution.json' != destination]
+        if not any(os.path.lexists(peer) and root_path(peer.parent) and read_json(peer) == config for peer in peers):
+            raise WorkspaceRefused('existing nonempty storage lacks matching shared config')
+    created = []
+    try:
+        for path in (*chosen.values(), destination.parent):
+            missing = []
+            ancestor = path
+            while not os.path.lexists(ancestor):
+                missing.append(ancestor); ancestor = ancestor.parent
+            root_path(ancestor)
+            for child in reversed(missing):
+                ordinary(child.parent, directory=True)
+                child.mkdir()
+                ordinary(child, directory=True)
+                created.append(child)
+        config['volume_ids'] = {key: volume_identity(value) for key, value in chosen.items()}
+        if config['volume_ids'] != {key: volume_identity(proxies[key]) for key in chosen}:
+            raise WorkspaceRefused('selected volume identity changed during setup')
+        validate_config(config)
+        observed = probe({**chosen, 'config': destination.parent})
+        reservations = admission(config, chosen, observed)
+        check_config_capacity(observed, destination.parent, reservations)
+        temporary = destination.with_name(destination.name + '.setup-next')
+        with temporary.open('x', encoding='utf-8', newline='\n') as stream:
+            json.dump(config, stream, sort_keys=True, indent=2)
+            stream.write('\n'); stream.flush(); os.fsync(stream.fileno())
+        try:
+            if os.path.lexists(destination):
+                raise WorkspaceRefused('local config appeared during setup')
+            if os.name == 'nt':
+                os.rename(temporary, destination)  # Windows refuses an existing destination.
+            else:
+                os.link(temporary, destination)  # Exclusive publication on POSIX.
+        finally:
+            if os.path.lexists(temporary):
+                ordinary(temporary); temporary.unlink()
+    except BaseException:
+        if not os.path.lexists(destination):
+            for path in reversed(created):
+                try: path.rmdir()  # Only our empty directory; never recursive.
+                except OSError: pass
+        raise
+    return {'result': 'CONFIGURED', 'writes': True, 'config_digest': digest(config),
+            'volume_ids': config['volume_ids'], 'capacity': observed}
 
 
 @contextmanager

@@ -267,3 +267,32 @@ skips. Both retired scratch and released reservations. Preserve this as
 partitioned source qualification, not delivered-archive or stable-release
 acceptance. Record exact receipts in task evidence, then integrate the
 qualified source if current dev and remote graph still permit fast-forward.
+
+## 2026-09-28 selected-root setup follow-up
+
+Owner-selected D roots are configured and working, but an unconfigured AIDE
+checkout still lacks a bounded setup command. On the existing checkout and a
+task branch from frozen `dev@76e17a4c`, add `job setup` to the current
+managed-workspace owner. Its explicit selection uses the existing local
+configuration fields and finite limits; it creates only selected children
+under an explicit existing approved parent, obtains actual volume identities,
+validates placement/capacity, and writes the machine-local config once.
+Existing equal config is a read-only success; mismatch, alias, missing
+capacity or unavailable parent refuses without fallback. No global settings,
+new runner, scheduler, checkout or root family is admitted.
+
+Allowed edits are the existing managed-workspace module, its `job` CLI,
+focused tests, this task's records and the runner reference. Test with tiny
+synthetic roots and mocked capacity, then use setup idempotently against the
+already approved D roots and run one actual bounded AIDE check. Preserve the
+accepted Lite source/asset bytes on `dev`; obtain narrow independent review
+before integrating this changed runner source, and keep release-effect delta
+gates distinct.
+
+The selected-root implementation now has six focused setup cases and the full
+35-case managed-workspace suite passing through the shared D runner. The final
+source-input hashes and receipt are recorded in task evidence; scratch was
+retired and the reservation released. Both existing checkout configs were
+read back as unchanged by `job setup`. Freeze this source for narrow review.
+The Lite release candidate already on `dev` remains unchanged while its
+separate historical main-promotion gate is unresolved.

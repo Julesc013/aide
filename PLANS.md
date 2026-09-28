@@ -4187,6 +4187,13 @@ generated. Stable asset commit `92da9573` passed byte-identical post-commit
 replay and the local Windows delivered-byte matrix: 110 importer tests,
 fresh/brownfield, lifecycle, forced exits, context/offline and installed
 recovery/feedback/validate/task forms. The exact effect manifest and review
-packet are in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. The next gate is the
-stricter independent release ACCEPT, then authorized dev/main/tag/publication
-and downloaded-byte verification. The wider programme remains active.
+packet are in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. The exact Lite candidate
+has since been independently accepted and integrated into dev. Historical
+message dispositions still gate main promotion, tagging, publication and
+downloaded-byte verification. The wider programme remains active.
+
+The resource follow-up in `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01` adds selected-root
+setup to the existing bounded runner. Its final source-input managed suite
+passed 35 cases; the two existing D checkout configs remained unchanged on
+setup. Obtain narrow source review before dev integration, while preserving
+the accepted Lite release bytes.

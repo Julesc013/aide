@@ -44485,7 +44485,9 @@ def command_managed_job(args: argparse.Namespace) -> int:
         sys.path.insert(0, root)
     from core.execution import managed_workspace
     try:
-        if args.job_command == "recover":
+        if args.job_command == "setup":
+            result = managed_workspace.configure(args.config, args.selection, args.approved_parent)
+        elif args.job_command == "recover":
             result = managed_workspace.recover(args.config)
         else:
             job = managed_workspace.read_json(args.manifest) if args.manifest else None
@@ -45720,6 +45722,11 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     job_parser = subparsers.add_parser("job", help="Bounded maintainer jobs with explicit local storage.")
     job_subparsers = job_parser.add_subparsers(dest="job_command", required=True)
+    setup_parser = job_subparsers.add_parser("setup")
+    setup_parser.add_argument("--config", required=True, help="Machine-local output config in an approved checkout.")
+    setup_parser.add_argument("--selection", required=True, help="Explicit local root, checkout and finite-limit selection JSON.")
+    setup_parser.add_argument("--approved-parent", required=True, help="Existing owner-selected parent containing the storage roots.")
+    setup_parser.set_defaults(handler=command_managed_job)
     for operation in ("inspect", "run", "recover"):
         operation_parser = job_subparsers.add_parser(operation)
         operation_parser.add_argument("--config", required=True, help="Existing machine-local storage policy JSON.")
