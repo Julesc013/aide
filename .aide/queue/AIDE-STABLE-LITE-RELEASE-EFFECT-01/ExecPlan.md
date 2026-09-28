@@ -167,3 +167,11 @@ effect acceptance. The review record is retained in this task's evidence.
 It did not perform effects. Integrate the accepted source ancestry by an
 authorized fast-forward and observe remote `dev`; keep main/tag/publication
 gated by the ten exact historical owner decisions and fresh effect checks.
+
+The accepted ancestry fast-forwarded from `dev@2aaee82e` to local and remote
+`dev@e0636ddb`; the task branch remote matches. The source-bound asset and
+manifest hashes stayed fixed. The refreshed `main..dev` range still FAILs
+only the ten requested historical messages. See the integration observation
+in evidence. Await the exact owner decisions, then construct their narrow
+artifacts, obtain the required technical disposition review and rerun the
+range check before any main/tag/publication effect.

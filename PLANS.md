@@ -13,6 +13,14 @@ That ACCEPT arrived for `719abf66` and remote dev now matches. Main/tag/
 publication are blocked by ten exact historical message failures in the
 mandatory `main..dev` commit range. The existing release-effect task holds
 one accountable owner decision packet and the repair sequence.
+On 2026-09-28 the reviewed authored-file recovery entered a superseding
+source-bound Lite 1.0.0 local candidate. Independent exact technical ACCEPT
+was recorded for `aaa53fa5`; local and remote `dev` then fast-forwarded to
+`e0636ddb` with the evidence-only closeout. The stable ZIP/tar and local
+preview/draft passed new-byte consumers and postcommit replay. The same ten
+historical message decisions still gate main promotion; publication and
+downloaded-byte verification have not occurred. The release task's exact
+manifest and integration observation supersede older local-preview summaries.
 
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
 

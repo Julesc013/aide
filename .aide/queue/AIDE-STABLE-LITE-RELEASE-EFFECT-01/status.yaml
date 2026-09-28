@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: in_progress
-planning_state: sourcebound_local_release_accepted_pending_dev_integration
+planning_state: sourcebound_local_release_on_dev_main_history_gate
 result: LOCAL_TECHNICAL_ACCEPT
 updated_at: 2026-09-28
-current_slice: fast_forward_accepted_candidate_into_dev
-next_slice: qualified_dev_integration_then_historical_dispositions_and_main_release_effects
-review_gate: independent_source_and_archive_safety_review_then_exact_release_ACCEPT
+current_slice: ten_exact_historical_owner_message_decisions
+next_slice: disposition_review_then_exact_main_tag_publication_effects
+review_gate: historical_owner_decisions_and_exact_main_effect_validation
 main_promotion_performed: false
 tag_created: false
 release_published: false
