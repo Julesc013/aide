@@ -198,6 +198,27 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(usage["status"], "COMPLETE")
         self.assertEqual(usage["usage_totals"]["input_tokens"], 10)
 
+        secret_marker = "AIDE-private-prompt-marker"
+        prompt_input = json.dumps([
+            {"type": "message", "role": "system", "content": [
+                {"type": "input_text", "text": "system context"}]},
+            {"type": "message", "role": "user", "content": [
+                {"type": "input_text", "text": secret_marker}]},
+        ]).encode("utf-8")
+        observed = subprocess.run(
+            [sys.executable, "-I", "-B", str(script), "--repo-root", str(delivered),
+             "job", "context"],
+            input=prompt_input, capture_output=True, timeout=15)
+        self.assertEqual(observed.returncode, 0, observed.stderr[-500:])
+        context = json.loads(observed.stdout)
+        self.assertEqual(context["status"], "COMPLETE")
+        self.assertEqual(context["visible_text_utf8_bytes"],
+                         len("system context".encode()) + len(secret_marker.encode()))
+        self.assertEqual(context["roles"]["user"]["text_utf8_bytes"], len(secret_marker.encode()))
+        self.assertEqual(context["model_requests_started_by_parser"], 0)
+        self.assertFalse(context["raw_prompt_or_response_retained"])
+        self.assertNotIn(secret_marker.encode(), observed.stdout + observed.stderr)
+
         # The delivered CLI reuses the existing bounded Windows owner. Its
         # source identity is the disposable target's Git commit, not this
         # development checkout or an invented identity for extracted bytes.
