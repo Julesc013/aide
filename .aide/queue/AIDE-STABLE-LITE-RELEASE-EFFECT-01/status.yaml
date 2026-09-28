@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
-status: needs_review
-planning_state: superseding_job_form_effect_frozen_for_independent_review
-result: EXACT_LOCAL_QUALIFICATION_PASS_REVIEW_PENDING
+status: in_progress
+planning_state: exact_local_effect_accepted_dev_integration_pending
+result: DEV_AND_LOCAL_EFFECT_ACCEPT_PUBLICATION_GATED
 updated_at: 2026-09-29
-current_slice: current_asset_job_forms_and_six_consumers_qualified
-next_slice: exact_effect_review_then_history_and_live_qualification
+current_slice: integrate_accepted_source_and_artifacts_into_dev
+next_slice: history_and_live_qualification_then_main_release
 review_gate: exact_job_form_coverage_live_model_historical_owner_decisions
 main_promotion_performed: false
 tag_created: false

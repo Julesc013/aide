@@ -280,3 +280,11 @@ Q47/Q48 passed 36 cases. The superseding effect manifest and the small job
 observation summary are frozen in `evidence/`. Request independent review of
 this exact candidate before any additional integration or release effect.
 Live Codex and ten historical owner decisions remain separate gates.
+
+Independent `/root/stable_effect_review` ACCEPTed exact `42672db9` for dev
+source/artifact integration and local stable technical effect. The reviewer
+verified the copied inner receipt after an initial missing-receipt concern;
+the ten job observations retain bounded status and stdout hashes without raw
+stdout. Preserve that limitation. Fresh refs and clean integration state must
+be checked before fast-forwarding dev. Main, tag and publication still await
+the live turn, ten historical owner decisions and remaining effect checks.
