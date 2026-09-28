@@ -263,3 +263,12 @@ including real rename-gap recovery and adversarial refusals; then the affected
 importer partition and an independent technical review. Preserve any original
 failure and actual resource receipts. Blocker: if the existing handle primitive
 cannot prove non-replacing restoration, retain the safe refusal and report it.
+
+The first focused managed job `f82663ff5b5d4911813e73c1b65e7b08`
+ran two Windows tests; the adversarial cases passed and the exact-backup path
+returned `DETACHED`, but the test incorrectly expected the original one-line
+authored `AGENTS.md` rather than the removal planner's exact postimage with
+preserved surrounding newlines. Job exit was 1, peak memory 213,348,352 bytes,
+peak scratch 21,850,058 bytes, scratch retired and reservation released. The
+test oracle is corrected to compare against `portable_agents_section_postimage`
+from the installed receipt; rerun only that positive case before broadening.

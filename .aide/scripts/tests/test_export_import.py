@@ -2651,6 +2651,10 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
         plan = aide_lite.build_portable_removal_plan(target)
         agents = target / "AGENTS.md"
         preimage = agents.read_bytes()
+        receipt = aide_lite.load_portable_import_receipt(target)
+        expected_postimage = aide_lite.portable_agents_section_postimage(
+            preimage, receipt["managed"]["AGENTS.md"]["installed_digest"])
+        self.assertIsNotNone(expected_postimage)
         backup = target / f".AGENTS.md.aide-import-backup-{plan['plan_digest'][:20]}"
         original_link = aide_lite.windows_link_from_handle
         original_rename = aide_lite.portable_import_rename_open_leaf
@@ -2671,7 +2675,7 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
         self.assertFalse(os.path.lexists(agents))
         self.assertEqual(backup.read_bytes(), preimage)
         self.assertEqual(aide_lite.apply_portable_removal(target, plan["plan_digest"])["status"], "DETACHED")
-        self.assertEqual(agents.read_bytes(), b"# Authored guidance\n")
+        self.assertEqual(agents.read_bytes(), expected_postimage)
         self.assertFalse(os.path.lexists(backup))
         self.assertFalse((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).exists())
         self.assertFalse((target / aide_lite.PORTABLE_REMOVAL_INTENT_PATH).exists())
