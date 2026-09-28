@@ -4157,3 +4157,14 @@ validator while preserving Q47/Q48 preview outputs. It classifies the prior
 installed warning evidence, rejects unsafe archive members before extraction,
 and passes 33 Q47/Q48 tests plus a focused recovery test under the D runner.
 Seek exact source/security review before regenerating pack and asset bytes.
+
+The archive-safety repair received independent source acceptance at
+`59db02a0` and was integrated into dev at `a6725d83`. The current portable
+pack, Q47/Q48 local previews and separate 1.0.0 stable candidate bytes are
+generated. Stable asset commit `92da9573` passed byte-identical post-commit
+replay and the local Windows delivered-byte matrix: 110 importer tests,
+fresh/brownfield, lifecycle, forced exits, context/offline and installed
+recovery/feedback/validate/task forms. The exact effect manifest and review
+packet are in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. The next gate is the
+stricter independent release ACCEPT, then authorized dev/main/tag/publication
+and downloaded-byte verification. The wider programme remains active.

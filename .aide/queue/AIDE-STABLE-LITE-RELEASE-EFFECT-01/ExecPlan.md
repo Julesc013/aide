@@ -70,8 +70,9 @@ work. The parent goal remains active until wider mandatory work is fulfilled.
 - [x] Repair frozen `34c87052` `REQUEST_CHANGES`: bound tar PAX metadata
   before parser allocation and bound the decompressed stream; 36 Q47/Q48
   tests passed. `59db02a0` received independent ACCEPT_WITH_NOTES for dev.
-- [ ] Profile/version and non-preview asset subject frozen. Separate builder
-  and validator implemented; final current-source pack and asset bytes remain.
-- [ ] Final machine and delivered-byte qualification.
+- [x] Profile/version and non-preview asset subject frozen at `92da9573`;
+  current pack, local previews and distinct stable bytes are validated.
+- [x] Final local machine and delivered-byte qualification. Remote downloaded
+  bytes and publication remain separate effect checks.
 - [ ] Independent exact release ACCEPT.
 - [ ] Main/tag/publication and downloaded-byte verification.

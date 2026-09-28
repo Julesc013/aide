@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
-status: running
-planning_state: source_review_accepted_current_pack_generation
+status: needs_review
+planning_state: exact_local_release_effect_candidate_frozen
 result: PENDING
 created_at: 2026-09-28
 updated_at: 2026-09-28

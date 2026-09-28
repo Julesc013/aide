@@ -12370,3 +12370,21 @@ D-managed Q47/Q48 group passed 33 tests in 62.246 seconds, peaked at 3.11 MB
 scratch and retired it; a final focused one-test run also passed. The current
 WorkUnit awaits independent source/security review. Final pack regeneration,
 stable asset consumers, release ACCEPT and external effects are not yet run.
+
+2026-09-28 stable candidate qualification: independent source reviews first
+rejected unsafe NTFS ADS/aliases and pre-parse tar PAX allocation, then
+accepted exact repaired source `59db02a0` for dev. The repaired builder
+rejected crafted ZIP/tar aliases and oversized PAX before extraction; 36
+Q47/Q48 tests passed on its final code. Dev fast-forwarded to `a6725d83`
+and was observed remotely. A current portable pack, committed changelog
+preview and Q47/Q48 no-publish projections were generated through serial D
+jobs; bundle/draft post-commit replay changed zero files. A separate local
+1.0.0 ZIP/tar/manifest/checksum set was frozen at `92da9573`, validated and
+replayed with zero byte changes. Exact stable-byte canaries passed 25
+fresh/brownfield commands, 31 lifecycle commands, fresh/brownfield
+context/offline, three real child exits, ten installed recovery/feedback
+forms and installed validate/task inspection. Current importer shards passed
+54/54 and 56/56 cases. All listed jobs retired scratch and released their
+reservations. The release-effect manifest records receipt hashes and the
+remaining warning/offline limits. No main, tag, publication or downloaded
+consumer effect has occurred; independent exact release ACCEPT is next.

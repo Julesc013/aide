@@ -1,0 +1,63 @@
+{
+  "schema_version": "aide.stable-release-effect.v1",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01",
+  "programme": "AIDE-CONVERGENCE-AND-DELIVERY-01",
+  "state": "candidate_pending_independent_release_ACCEPT",
+  "version": "1.0.0",
+  "tag": "aide-lite-v1.0.0",
+  "profile": {
+    "id": "aide-lite-local-windows",
+    "support_tier": "T3",
+    "support_mode": "companion",
+    "platform_qualified": "Windows 10 19045, Python 3.14.7, local CLI",
+    "metadata_schemas": [
+      "aide.project-customizations.v1",
+      "aide.project-customizations.v2"
+    ],
+    "disabled_feature_ids": ["local_state_examples"],
+    "offline_scope": "local CLI after archive acquisition; Python socket guard observed, no OS-native network-isolation claim",
+    "published_predecessors": [],
+    "excluded_profiles": ["non-Windows lifecycle apply", "native isolated-host operation", "hosted target effects", "model-enabled autonomous operation"]
+  },
+  "source": {
+    "accepted_builder_commit": "59db02a0e6c35ea0e557e8fd3a917248f0ae7256",
+    "asset_commit": "92da95735736f36668f54d2851c9b85242f08a24",
+    "asset_tree": "747678324cb2e912860fe4cfd5e750c374962fc8",
+    "pack_source_commit": "fe44070dfb37ea44dbb61a253d6edbb713717442",
+    "pack_source_tree": "e9d5d4fac2639bf30795de819836bdf33425713a",
+    "expected_preintegration_dev": "a6725d83db101890f8734fcb52a3df1fe7091aa5",
+    "observed_main_before_effect": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3"
+  },
+  "assets": [
+    {"path": ".aide/release/stable/aide-lite-v1.0.0.zip", "sha256": "df91a4845dc7e97b5af0125db4e22242b352a80906450de967f581f131a68f19"},
+    {"path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz", "sha256": "1267223c80788768b5910339f1610c64f1ea1adb0fb9579461af8fefa76ef4d4"},
+    {"path": ".aide/release/stable/aide-lite-v1.0.0.manifest.json", "sha256": "32cf1d190d32c5d0ebd3b73d53aceecf436190e9fc4de605f9f21f9a47a0c66b"},
+    {"path": ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt", "sha256": "6e201f8581e32ca9877ebae255d9e5c739666a6f772b86e986cb27d362ae4100"}
+  ],
+  "qualification": {
+    "managed_config_sha256": "019669f8faab4ea4e410079ea96966b16742f0e7c6d2e062246a092f1b862834",
+    "jobs": [
+      {"kind": "stable_build", "id": "efce0c74375e402382adb71300751205", "receipt_sha256": "985a8718063b27f6d57d1a7240124dedc8f638e99a22cc910c419e46ca59e1cd"},
+      {"kind": "stable_validate", "id": "caaf0248cf78422486594f7c7d56b0e5", "receipt_sha256": "8b550c93e49a2ad176828b4e6f8a19bf39b1ec36121ca2e400f2c4e9967b90c3"},
+      {"kind": "stable_postcommit_replay", "id": "1a14d2d21eea427893dfb90e45d06bd6", "receipt_sha256": "9440b8b913488935b8501002004e6e3ba59800cf553b475277c021502c43bc24"},
+      {"kind": "zip_tar_fresh_brownfield_consumer", "id": "fe8303a16e1741b9b54c90f37eea4dc6", "receipt_sha256": "8cd34f7b041128b3b9f5e05fa93a206a90b3d32864c9adf954ec94f6c61088c5"},
+      {"kind": "lifecycle_consumer", "id": "5484a0215cfe46a880d9e8206cde0cfd", "receipt_sha256": "20de4e0bbd6105c8c425ca6e5485797412fbb4301838a288ed7d9a762b00b980"},
+      {"kind": "context_offline_consumer", "id": "308e4a0b09c547e794ec8d05551c98eb", "receipt_sha256": "1727e61442eaae85ef300433621fcb42aeb31149dbcadfa5354be692c2ec09b5"},
+      {"kind": "importer_tests_a_m_54_pass", "id": "307e9acb58a849c39150e2b83219dd15", "receipt_sha256": "5e821bdb40187b059939cba7c26185d991a7489e2f7b0516227e07e95a0b7547"},
+      {"kind": "importer_tests_o_z_56_pass", "id": "744447e3d26e45299af56a4810e387ab", "receipt_sha256": "bcd4d1fdad0ce24a5853d525e44385bb570968d2bf909eb66056382fb0ac02c2"},
+      {"kind": "forced_child_exit_recovery", "id": "394e250216d84061936776637a486b0a", "receipt_sha256": "be8a3b966d209273d3ac95a6d4ddc93aaa4677201b8f895f85c8118a3cd06b81"},
+      {"kind": "installed_partial_recovery_and_feedback", "id": "df9a9ac40bcb4928beb857837a8d9250", "receipt_sha256": "cd3819ddd031385f63bda41f026d9d74f9141279fccbbf07b763afa1d44d4ca6"},
+      {"kind": "installed_validate_task_and_feedback", "id": "85ec7ee5ebc04c6aac71da3ecb894847", "receipt_sha256": "878e57e177e7d8d188c33aab376dd9f57984c4d7f59c0af255815e7c92b5a957"}
+    ],
+    "warning_disposition": "Installed validate exited zero with two fresh-fixture warnings; verify returned WARN with 15 fresh and 18 brownfield optional/context warnings. Preserve these counts and the exact output; they are not zero-warning claims."
+  },
+  "effect": {
+    "authorization": "owner campaign delegation 2026-09-25; independent exact technical release ACCEPT still required",
+    "source_integration": "fast-forward accepted task branch into dev and observe remote dev",
+    "main_promotion": "fast-forward only after exact acceptance and current ref recheck",
+    "tag": "create immutable aide-lite-v1.0.0 on exact promoted main only if absent",
+    "publication": "upload these four exact assets as the first published stable Lite GitHub Release through the authenticated owner route",
+    "verification": "observe remote refs/tag/release; download four assets; verify SHA-256 and fresh/brownfield consumer acquisition and update from downloaded bytes",
+    "uncertain_effect_recovery": "observe remote state before retry; no force push, retag, or changed bytes under an existing release identity"
+  }
+}

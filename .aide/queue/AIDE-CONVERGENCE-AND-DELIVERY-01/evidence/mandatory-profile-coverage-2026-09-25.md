@@ -1,5 +1,19 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
+**2026-09-28 stable effect candidate delta:** The distinct 1.0.0 local ZIP/tar
+at asset commit `92da9573` passed exact-byte fresh/brownfield, lifecycle,
+context/offline, three forced-exit, ten installed partial recovery/feedback,
+installed validate/task and 110 current importer tests. Both Q47/Q48 preview
+projection and stable asset replay changed zero files after their respective
+commits. The source builder received independent dev-only acceptance at
+`59db02a0`; the stable effect still requires its stricter independent
+technical **ACCEPT**. `AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/` now holds
+the exact asset/effect manifest, receipt bindings, warning dispositions and
+candidate release notes. Dev remains `a6725d83` until that release review;
+main/tag/publication/downloaded-byte consumers have not happened. This delta
+supersedes older *current-state* summaries below without relabeling their
+historical evidence. The broader parent campaign remains active.
+
 **2026-09-28 local-preview review closeout:** Independent reviewer
 `/root/lite_preview_review` returned `ACCEPT_WITH_NOTES` for exact
 `4dcd896b4a9b65ef2bf6e8ecbbd7f60809560637`, tree `b8ae4507`,
