@@ -104,3 +104,8 @@ independent review returned ACCEPT for dev source integration. The exact
 receipts and limits are in `evidence/portable-job-owner-qualification-2026-09-29.md`.
 Local and remote `dev` then fast-forwarded to evidence closeout `b9aad160`.
 The real host binding and final canonical release bytes remain open.
+
+A no-model installed-Codex context preflight measured 45639 visible text
+UTF-8 bytes for a fresh debugger input with a 44-byte probe message. This
+does not count tokens or prove an actual worker turn. Exact version, executable
+hash and coverage limits are in `evidence/codex-context-preflight-2026-09-29.md`.
