@@ -334,3 +334,12 @@ delivered consumers, then freeze exact hashes for independent effect review.
 Reuse unchanged evidence only where source, oracle and environment bindings
 still hold. Keep live model, historical promotion, tag and publication gates
 separate. This is one coherent refresh, not per-document regeneration.
+
+The refreshed pack, stable assets, six serial consumers, ten delivered `job`
+observations and 36 Q47/Q48 tests passed. The first preview bundle correctly
+rejected notes generated after the export source; notes were rebound to exact
+export source `1dada960`, after which bundle/draft validation and both
+postcommit replays passed with zero tracked changes. The new manifest maps all
+37 public forms to 39 retained consumer outputs and ten extracted `job`
+observations. It is a frozen local candidate awaiting independent effect
+review; old accepted effect evidence remains tied to old bytes.

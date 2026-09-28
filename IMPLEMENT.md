@@ -12711,3 +12711,12 @@ red run isolated the regression; all 18 focused tests passed after repair.
 Independent review accepted exact source `9c391d25` for integration. A coherent
 release-byte refresh remains pending; the accepted dev release artifacts still
 bind their earlier source.
+
+The accepted turn-boundary usage repair is in remote `dev@fe65f48c`. A single
+current-source pack and unpublished stable asset refresh passed deterministic
+postcommit replays. Six serial delivered-byte consumers, ten extracted `job`
+forms and 36 release tests passed under approved D execution roots. A preview
+bundle correctly rejected notes from a later source revision; rebinding the
+notes to the export source fixed the local bundle and draft, and their
+postcommit replays changed zero tracked files. The new 37-form effect manifest
+awaits independent review; main and publication gates remain open.
