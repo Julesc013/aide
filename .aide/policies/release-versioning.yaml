@@ -68,6 +68,15 @@ stable_lite_contract_candidate:
     - apply-removal --target <target> --expect-plan <digest>
     - repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run
     - repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>
+    - job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>
+    - job inspect --config <local-config> --manifest <job-json>
+    - job run --config <local-config> --manifest <job-json>
+    - job run --config <local-config> --manifest <job-json> --full
+    - job recover --config <local-config>
+    - job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>
+    - job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>
+    - job usage --stream <codex-exec-jsonl>
+    - job context
   cli_scope_rule: >
     These are candidate command forms, not a shipping claim. The final release
     manifest must pin each supported form and option, supported target state,

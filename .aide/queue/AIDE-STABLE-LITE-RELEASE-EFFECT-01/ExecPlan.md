@@ -254,3 +254,18 @@ matrix; live Codex and ten historical owner decisions also remain open.
 Preserve this two-part verdict. Integrate accepted ancestry, then qualify
 and bind the six forms on superseding exact bytes rather than silently
 excluding the efficiency interface from the release claim.
+
+## 2026-09-29 portable job-form release closure
+
+Objective: reconcile the exported Lite runner guide with the stable public
+CLI matrix on exact delivered bytes. The old `55131eff` effect remains frozen.
+Scope: the existing release policy and WorkUnit, then the derived preview,
+pack, stable assets, release views and one superseding effect record. Use the
+existing D-managed jobs and no new physical workspace. First exercise the
+current ZIP in a disposable Git consumer under the approved D scratch root;
+then add only observed forms, regenerate in source order, replay, validate,
+run affected final-byte consumers and request one independent exact review.
+Main, tag and publication retain the live-model and historical-decision
+gates. The latest disposable consumer passed ten command observations,
+retired scratch and released its reservation; its local output is an input
+to, not a substitute for, the superseding delivered-byte qualification.
