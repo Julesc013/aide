@@ -400,3 +400,12 @@ The committed bundle replay `70c90d87` changed zero tracked files. The
 local draft `e175641a` and draft validation `437a6ac2` passed on those
 source-bound assets. Commit the draft, replay it, then bind the final receipts
 and 38 public forms in the effect record. This remains local and unpublished.
+
+The committed draft replay `b7eee7f2` changed zero tracked files. The
+attribution effect packet binds the 38 declared forms to 39 current-byte
+consumer output observations and 12 delivered job-form observations, including
+PARTIAL attempt-set usage and malformed-parent REFUSED. Six retired consumer
+jobs, Q47/Q48 36/36, pack/stable/bundle/draft receipts, exact asset hashes and
+the unchanged unknown live-model boundary are recorded in the effect manifest.
+Independent effect review precedes dev integration; this packet does not
+authorize main promotion, tag or publication.

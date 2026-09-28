@@ -1,0 +1,100 @@
+{
+  "asset_sha256": "6a56a494affdc66c76b4bb5dcae4e0c01083b8220802279b4cca5485572d370d",
+  "consumer_kind": "fresh disposable Git project under approved D scratch",
+  "delivered_cli_sha256": "f9fcadafc078a9c0143a0fb3305e0bfb59f53578ca820b3adcdef86d6a6d50e1",
+  "forms": [
+    {
+      "exit_code": 0,
+      "label": "job-setup-fresh",
+      "status": "CONFIGURED",
+      "stdout_sha256": "fe42b68f1625bde40ba0c04428a74166c184cd1ce42cda8990bfd460c7128b49"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-setup-existing",
+      "status": "ALREADY_CONFIGURED",
+      "stdout_sha256": "b02f82c15509fdbdcfff0c82e8fa79ec310faf406d8267f69dccb8fcdd845161"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-inspect",
+      "status": "",
+      "stdout_sha256": "2ee8ad55c2e341cc7bac87368c7de0a05037c8e9311055004796c96a34461940"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-run",
+      "status": "PASS",
+      "stdout_sha256": "05fdf8b84bf31c1fd120075b8294c6658c1405b08117b52de72c087bc17e7df8"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-run-full",
+      "status": {
+        "bytes": 31,
+        "creation_filetime": 134351109914080877,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "c88e5534e8f547209b8a9edf811f21a2",
+        "pid": 39976,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "stdout_sha256": "c89b69239888a4615bfc2186ea4c24034096b24319dc293fb09f5079a917a9fd"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-wait",
+      "status": "PASS",
+      "stdout_sha256": "05fdf8b84bf31c1fd120075b8294c6658c1405b08117b52de72c087bc17e7df8"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-wait-default",
+      "status": "PASS",
+      "stdout_sha256": "05fdf8b84bf31c1fd120075b8294c6658c1405b08117b52de72c087bc17e7df8"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-recover",
+      "status": "",
+      "stdout_sha256": "4e99a9a4f866cfbb352b01a3a4ce2dbb45810f10b19409dc9b03e9493bde14ab"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-usage",
+      "status": "COMPLETE",
+      "stdout_sha256": "1ce1509d9e0dde997f980cb81c614c3dbceebb0c726ccd198c1c6bb18fa7f61d"
+    },
+    {
+      "exit_code": 2,
+      "label": "job-usage-attempt-set",
+      "status": "PARTIAL",
+      "stdout_sha256": "fded720abffc69dbe9f3e9dbad90ab56b70d890e781f63d172f11e7de0ffe0a0"
+    },
+    {
+      "exit_code": 1,
+      "label": "job-usage-invalid-parent",
+      "status": "REFUSED",
+      "stdout_sha256": "3e8211a4f209f694827237b4c4b4de00222821f0ddd3260b73a0c3eb992493a2"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-context",
+      "status": "COMPLETE",
+      "stdout_sha256": "ed1c49a715ce5bb619ac2e290e0a7be8dbfe9c1128281a85a4af80043e04853d"
+    }
+  ],
+  "limitations": [
+    "synthetic consumer only; no arbitrary project rollout or live model turn"
+  ],
+  "managed_job_id": "b5287470392d49758411161a9ed2e144",
+  "managed_receipt_sha256": "15d5ab5bfc695cedbddff197242ebc0301d0a0c3b9fb78a10943b2bdd0c98329",
+  "reservation_released": true,
+  "schema": "aide.lite-job-forms-canary.v1",
+  "scratch_retired": true,
+  "source_commit": "6e57636a6f530249f09085cb481f0b4b2c3e396e",
+  "source_tree": "dd735155cbc4cf2814f39d0b98629f27d6dbd6a3",
+  "status": "PASS",
+  "temporary_consumer_retired": true
+}
