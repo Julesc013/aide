@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: in_progress
-planning_state: usage_turn_local_candidate_effect_review_pending_main_gates_pending
-result: LOCAL_QUALIFIED_EFFECT_REVIEW_PENDING
+planning_state: usage_turn_local_effect_accepted_dev_integration_pending
+result: LOCAL_EFFECT_ACCEPT_DEV_PENDING
 updated_at: 2026-09-29
-current_slice: usage_turn_current_byte_effect_manifest_frozen
-next_slice: independent_exact_effect_review_then_dev_integration
+current_slice: usage_turn_current_byte_effect_independent_ACCEPT
+next_slice: fast_forward_dev_then_resolve_external_release_gates
 review_gate: exact_job_form_coverage_live_model_historical_owner_decisions
 main_promotion_performed: false
 tag_created: false

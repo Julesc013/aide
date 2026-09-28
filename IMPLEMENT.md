@@ -12720,3 +12720,9 @@ bundle correctly rejected notes from a later source revision; rebinding the
 notes to the export source fixed the local bundle and draft, and their
 postcommit replays changed zero tracked files. The new 37-form effect manifest
 awaits independent review; main and publication gates remain open.
+
+Independent review accepted exact current-byte effect packet `de308dd7` for
+dev integration and local technical effect. The reviewer verified four assets,
+runner receipts, 37 forms and 49 evidence references, without rerunning tests
+or performing a live model turn. The verdict remains local; external release
+gates are unchanged.

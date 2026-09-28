@@ -343,3 +343,11 @@ postcommit replays passed with zero tracked changes. The new manifest maps all
 37 public forms to 39 retained consumer outputs and ten extracted `job`
 observations. It is a frozen local candidate awaiting independent effect
 review; old accepted effect evidence remains tied to old bytes.
+
+Independent `/root/stable_effect_review` ACCEPTED exact `de308dd7` for dev
+integration and local technical effect. The reviewer checked four asset
+hashes, current-byte receipt identities, all 37 forms and 49 evidence
+references, plus zero-change replays. This verdict does not qualify live
+Codex, ten owner decisions, main promotion, publication or downloaded bytes.
+The following evidence-only record preserves the verdict without changing
+the reviewed candidate.
