@@ -2,20 +2,15 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 2c168ca172ac09d8ff1bc96561461f56d9d6b1d0 latest 50 commits
-source_head: 2c168ca172ac09d8ff1bc96561461f56d9d6b1d0
+source_range: 20710eace0784fa4edf88ee2f4d4a52d19dde78a latest 50 commits
+source_head: 20710eace0784fa4edf88ee2f4d4a52d19dde78a
 preview_only: true
 
 ## Highlights
 
-- Added: Portable Lite job context summary from stdin. (6f4b45a6184d)
-- Added: Delivered Lite context observer regression. (f409db677cd2)
 - Added: Installed Codex no-model host regression. (6e21e70f4c32)
 - Added: Explicit one-turn Codex job adapter in the existing Lite runner. (651744c0a428)
-- Changed: Preserve the portable execution dev checkpoint. (648cd8836974)
-- Changed: Current lifecycle evidence and release gate description. (47b0883bb87b)
-- Changed: Host context preflight evidence for Lite efficiency. (764fa8cbcde4)
-- Changed: Preserve Lite context parser source qualification. (467b445a48e0)
+- Added: Include the portable bounded job interface in the Lite release contract. (20710eace078)
 - Changed: Record portable context observer fixture evidence. (ea80f73d21a9)
 - Changed: Record installed Codex no-model host evidence. (32b9711bec4e)
 - Changed: Preserve Windows delivered-byte mid-removal recovery evidence. (46d04d03bc48)
@@ -39,8 +34,6 @@ preview_only: true
 - Changed: Current-source Lite portable pack candidate. (c22d41112973)
 - Changed: Current Lite pack uses repaired non-circular provenance. (a7ab0223d1ba)
 - Changed: Local Lite 1.0.0 candidate includes current portable source. (b147aa8cf28a)
-- Fixed: Host context regression no longer demands text-only completeness. (1340ecd83e5d)
-- Fixed: Codex prompt-input text byte counts for the observed host schema. (b4f250f7bc9f)
 - Fixed: Preserve immutable native source-review provenance across integration. (6b11d4136e14)
 - Fixed: Bind worker verdicts and usage to one observed Codex turn. (9dccd27fe2f3)
 - Fixed: Keep the turn-boundary regression focused on refusal. (1497a7e2ad4f)
@@ -56,46 +49,49 @@ preview_only: true
 - Fixed: Non-circular portable pack provenance replay. (86838e444162)
 - Fixed: Changelog preview provenance for explicit historical revisions. (7a521066fdd4)
 - Fixed: Range-bound changelog provenance under mixed and open-ended selectors. (46fe61d743f0)
+- Fixed: Package selected-revision changelog provenance in Lite. (f22f3ec58ed4)
+- Fixed: Include selected-source changelog provenance in the local Lite candidate. (df372b3a6495)
 - Docs: Refresh the source-bound Lite release preview. (87635e1815b7)
+- Docs: Bind Lite release preview to the accepted source revision. (4491c2cb8b47)
 
 ## Validation Summary
 
-- 648cd8836974: PASS: Remote task and dev refs were observed at b9aad160 after fast-forward.
-- 47b0883bb87b: PASS: Three current-source importer lifecycle cases passed under the bounded D runner.
-- 764fa8cbcde4: PASS: Local Codex debug prompt-input exited zero with 47091 bounded JSON bytes.
-- 6f4b45a6184d: PASS: Python AST parsing and git diff whitespace check.
-- 1340ecd83e5d: PASS: Python AST parsing and git diff whitespace check.
-- b4f250f7bc9f: PASS: Local sanitized-environment schema inspection found input_text in six parts.
-- 467b445a48e0: PASS: Superseding b4f250f7 passed 3/3 D-managed prompt-input cases.
-- f409db677cd2: PASS: Staged diff whitespace check.
 - ea80f73d21a9: PASS: D-managed extracted ZIP consumer 1/1, exit 0.
 - 6e21e70f4c32: PASS: Staged diff whitespace check.
+- 32b9711bec4e: PASS: D-managed pipeline suite 32/32, exit 0.
+- 46d04d03bc48: PASS: Four reviewed evidence blobs match the task branch byte for byte.
+- 46fd6eb170ce: PASS: Branch-only eight-commit message range check.
+- 6b11d4136e14: FAIL retained: Initial combined D-managed suite had one stale-manifest oracle failure out of 59 cases.
+- f6114fb000a5: PASS: Repaired combined suite 59/59 under D owner; first attempt remains FAIL.
+- c3a92154dd8e: PASS: Independent reviewer checked source identity, historical manifest and whitespace.
+- 6ae089b44533: PASS: Clean fast-forward from origin/dev at 46d04d03 to c3a92154.
+- 3796ad33c7ba: NOT RUN: Source-bound D-managed consumer test follows this commit.
 
 ## Known Risks
 
-- 648cd8836974: Real host binding, usage coverage and stable release bytes remain open.
-- 47b0883bb87b: Current canonical release assets and downloaded consumers remain unqualified.
-- 764fa8cbcde4: This is not an admitted real Codex turn or measured credit saving.
-- 6f4b45a6184d: A debugger stream is not a live worker turn or complete model usage.
-- 1340ecd83e5d: Unmeasured content remains unknown and prevents a full context claim.
-- b4f250f7bc9f: This remains a no-model debugger view, not complete effective token usage.
-- 467b445a48e0: Extracted-pack assertion and live host usage remain unqualified.
-- f409db677cd2: Final canonical release bytes and live host binding remain unqualified.
 - ea80f73d21a9: Canonical release bytes and live mediated host usage remain unqualified.
 - 6e21e70f4c32: This does not prove a real Codex model turn or exported Lite behavior.
+- 32b9711bec4e: No live model turn or Lite release qualification follows from this check.
+- 46d04d03bc48: The canary uses an older local ZIP and does not qualify current source assets or publication.
+- 46fd6eb170ce: Local L2 API-set query export is absent; ordinary loading may execute DLL initialization before path validation. Native effects remain unadmitted.
+- 6b11d4136e14: This source test requires the reviewed Git commit in the local repository; native effects remain unadmitted.
+- f6114fb000a5: Local L2 export is absent and ordinary DLL load remains an unadmitted native effect.
+- c3a92154dd8e: Checkout line endings change raw manifest SHA; future pins must use consumed bytes or Git blobs.
+- 6ae089b44533: Native query and DLL-load effects remain unadmitted; this is source-only.
+- 3796ad33c7ba: This test fixture does not qualify final release assets or live Codex turn mediation.
 
 ## Follow-up
 
-- 648cd8836974: Continue the efficiency release gate with one qualified host path.
-- 47b0883bb87b: Qualify a coherent current-source release candidate after remaining host and product gates.
-- 764fa8cbcde4: Qualify a version-pinned mediated host path with actual usage and acceptance.
-- 6f4b45a6184d: Run bounded tests, obtain independent source review, and integrate qualified source.
-- 1340ecd83e5d: Rerun the focused suite, retain the actual coverage result and seek independent review.
-- b4f250f7bc9f: Requalify, review the source delta and integrate accepted code.
-- 467b445a48e0: Fast-forward accepted source into dev and test delivered bytes at the next artifact boundary.
-- f409db677cd2: Run the bounded delivered-pack test and preserve its receipt.
 - ea80f73d21a9: Integrate the test and evidence into dev; qualify final assets at release freeze.
 - 6e21e70f4c32: Run the bound suite and retain exact receipt before dev integration.
+- 32b9711bec4e: Integrate the test-only delta into dev and retain live host qualification gate.
+- 46d04d03bc48: Requalify current release bytes and preserve the ten historical main-promotion decisions as a separate gate.
+- 46fd6eb170ce: Run affected combined-source tests, obtain independent source integration review, then fast-forward dev only if accepted.
+- 6b11d4136e14: Rerun affected combined suite through the D owner and preserve both receipts.
+- f6114fb000a5: Obtain independent exact integration review before dev sync.
+- c3a92154dd8e: Fast-forward dev after current-ref and clean-tree verification; keep native effects separate.
+- 6ae089b44533: Push and observe dev and task refs; prioritize the AIDE efficiency path.
+- 3796ad33c7ba: Run the exact extracted consumer test through the D owner and retain its receipt.
 
 ## Warnings
 
