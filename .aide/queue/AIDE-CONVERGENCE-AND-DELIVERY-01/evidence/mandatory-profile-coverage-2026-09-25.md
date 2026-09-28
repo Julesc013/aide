@@ -1,5 +1,14 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
+**2026-09-28 local-preview review closeout:** Independent reviewer
+`/root/lite_preview_review` returned `ACCEPT_WITH_NOTES` for exact
+`4dcd896b4a9b65ef2bf6e8ecbbd7f60809560637`, tree `b8ae4507`,
+qualifying the Windows Lite **local preview** checkpoint only. Review custody
+and classified notes are in `AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01`.
+`AIDE-STABLE-LITE-RELEASE-EFFECT-01` now owns the distinct frozen stable
+profile/assets/effect, final independent `ACCEPT`, and downloaded-byte proof.
+No release or whole-programme acceptance follows from the preview verdict.
+
 **2026-09-28 current execution delta:** The table below retains its historical
 source/evidence bindings. Current local/remote dev is `0259f81d8fca993b27781540ebc3f70b0c6fedcb` before this evidence closeout.
 The current local ZIP/tar preview hashes are `af8bf103…`/`f0111bd8…` and

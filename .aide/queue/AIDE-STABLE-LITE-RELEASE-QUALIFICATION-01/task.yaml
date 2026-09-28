@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
 title: Qualify remaining delivered Lite lifecycle and offline journeys
 type: evaluation
-status: running
-planning_state: admitted_current_dev_preview
-result: PENDING
+status: passed_with_notes
+planning_state: independent_local_preview_review_accepted_with_notes
+result: PASS_WITH_RETAINED_RELEASE_GATES
 created_at: 2026-09-28
 updated_at: 2026-09-28
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

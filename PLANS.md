@@ -4138,5 +4138,16 @@ consumer jobs here used D, with scratch retirement and reservation release.
   brownfield installed context/evidence commands also exited zero, but the
   runner could not initially retire readonly Git objects. Exact owned-job
   recovery completed. A narrow runner fix passed 27 focused tests and a real
-  Git-backed cleanup canary under the configured D roots. Independent source
-  review and dev integration precede the remaining release qualification.
+  Git-backed cleanup canary under the configured D roots. The source repair
+  was independently accepted with notes and integrated into dev.
+
+## 2026-09-28 - Local preview closed; stable release subject admitted
+
+The exact local-preview WorkUnit at `4dcd896b` received independent
+`ACCEPT_WITH_NOTES` and closes as `passed_with_notes`. Warnings, offline scope,
+synthetic predecessors and runner limits remain explicit release obligations.
+`AIDE-STABLE-LITE-RELEASE-EFFECT-01` owns a separate non-preview source/asset
+freeze, final consumer checks, independent release `ACCEPT`, delegated
+main/tag/publication and downloaded-byte verification. Continue under the
+shared D runner; do not create another physical checkout or relabel Q47/Q48
+preview outputs.

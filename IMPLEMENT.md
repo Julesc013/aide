@@ -12351,3 +12351,11 @@ disposable V3 fixture. Ordinary replay and a changed resolution input refused;
 the exact saved plan and original resolution recovered while preserving
 project-owned and selected bytes. The final ten-command D job retired scratch
 and is bound in the WorkUnit evidence.
+
+2026-09-28 local-preview review closeout: preserved the independent
+`ACCEPT_WITH_NOTES` for exact `4dcd896b`/`b8ae4507` with external transcription
+SHA-256 and classified notes in the local-preview WorkUnit. Closed only the
+preview qualification and admitted a separate bounded stable release-effect
+WorkUnit. No product source, preview assets, main, tag or public release changed
+in this evidence-only increment. Verified source/tree, external review hash,
+local/remote dev identity, `git diff --check` and queue packet structure.

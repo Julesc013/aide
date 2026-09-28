@@ -38,7 +38,7 @@ do not weaken tests or claim native/hosted effects from Lite consumers.
 - [x] Current preview and dev integrated with independent artifact review.
 - [x] Current-byte Windows lifecycle canary.
 - [x] Current-byte forced restart and Python-guarded offline/context/public CLI coverage.
-- [ ] Honest release obligation checkpoint and next dependency.
+- [x] Honest release obligation checkpoint and next dependency.
 
 ## Readonly Git fixture retirement repair, 2026-09-28
 
@@ -111,3 +111,13 @@ project-selected resolution file: ordinary retry and changed resolution
 refused; exact original resolution recovered. The ten-command job supersedes
 the earlier seven-command public recovery result and is bound in
 `evidence/partial-cli-0259f81d.md`.
+
+## Independent local-preview closeout, 2026-09-28
+
+Reviewer `/root/lite_preview_review` accepted exact commit `4dcd896b`, tree
+`b8ae4507`, with notes for local preview closure only. The external controller
+transcription, SHA-256 and note disposition are in
+`evidence/local-preview-review-4dcd896b.md`. The warnings, native-network
+limit, synthetic predecessor limit, runner risks and final release effects move
+to `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. No main, tag or publication effect
+is approved by this preview verdict.

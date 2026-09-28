@@ -3758,11 +3758,20 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/evidence
     description: Regenerate current Lite preview bytes, qualify delivered consumers and committed replay, then seek exact artifact/dev-effect review.
   - id: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
-    status: running
-    planning_state: admitted_current_dev_preview
-    result: PENDING
+    status: passed_with_notes
+    planning_state: independent_local_preview_review_accepted_with_notes
+    result: PASS_WITH_RETAINED_RELEASE_GATES
     title: Qualify remaining delivered Lite lifecycle and offline journeys
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
+  - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+    status: running
+    planning_state: admitted_frozen_release_subject_required
+    result: PENDING
+    title: Freeze and qualify a publishable AIDE Lite release effect
+    task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/prompt.md
+    evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence

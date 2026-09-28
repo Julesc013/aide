@@ -1,0 +1,55 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+title: Freeze and qualify a publishable AIDE Lite release effect
+type: release
+status: running
+planning_state: admitted_frozen_release_subject_required
+result: PENDING
+created_at: 2026-09-28
+updated_at: 2026-09-28
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_dev: 4dcd896b4a9b65ef2bf6e8ecbbd7f60809560637
+depends_on:
+  - AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
+objective: >
+  Freeze one honest Windows Lite profile and version; build a distinct,
+  non-preview release subject from current source; qualify exact local and
+  downloaded bytes in disposable consumers; obtain independent technical
+  release ACCEPT; execute and verify delegated main/tag/publication effects.
+authority_basis: >
+  Owner campaign delegation of 2026-09-25 and explicit D execution roots of
+  2026-09-28. Preview acceptance is input evidence, not release acceptance.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q47_release_bundle.py
+    - .aide/scripts/tests/test_q48_github_release_draft.py
+    - .aide/export/**
+    - .aide/release/**
+    - governance/release-policy.md
+    - docs/reference/aide-lite-release-bundle.md
+    - docs/reference/aide-lite-release-draft.md
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/policies/release-versioning.yaml
+    - .aide/policies/review-gates.yaml
+    - .aide/policies/github-release-draft.yaml
+    - core/runtime/**
+  forbidden_operations:
+    - relabel Q47/Q48 preview outputs as stable by editing flags or prose
+    - reuse a stale source or approval for changed assets or effects
+    - create physical checkout or storage pool; fall back to C or E
+    - force push, retag, bypass protection or mutate arbitrary target repos
+verification:
+  - fresh history/profile/version and exact source/tree/asset manifest
+  - current generator, validation and zero-change post-commit replay
+  - final integrated and fresh/brownfield downloaded-byte consumer matrix
+  - independent technical ACCEPT for exact stable release subject/effect
+  - observed remote main/tag/release identities, downloaded hashes and consumers
+retained_gates:
+  - native/hosted and broader programme outcomes remain separate unless qualified

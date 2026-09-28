@@ -1,0 +1,12 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+status: running
+planning_state: admitted_frozen_release_subject_required
+result: PENDING
+updated_at: 2026-09-28
+current_slice: resolve_profile_warnings_and_freeze_non_preview_subject
+next_slice: build_validate_and_consumer_qualification
+review_gate: exact_independent_release_ACCEPT_before_main_tag_publication
+main_promotion_performed: false
+tag_created: false
+release_published: false

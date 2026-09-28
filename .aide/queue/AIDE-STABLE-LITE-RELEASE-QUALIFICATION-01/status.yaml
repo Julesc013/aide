@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
-status: running
-planning_state: delivered_exact_forms_pass_final_release_subject_pending
-result: PENDING
+status: passed_with_notes
+planning_state: independent_local_preview_review_accepted_with_notes
+result: PASS_WITH_RETAINED_RELEASE_GATES
 updated_at: 2026-09-28
-current_slice: current_importer_and_delivered_lifecycle_context_task_validate_feedback_and_resolved_recovery_passed
-next_slice: frozen_release_profile_manifest_and_effect_workunit
+current_slice: local_preview_qualified_with_classified_release_obligations
+next_slice: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 review_gate: final_release_effect_requires_independent_ACCEPT
 main_promotion_performed: false
 tag_created: false
