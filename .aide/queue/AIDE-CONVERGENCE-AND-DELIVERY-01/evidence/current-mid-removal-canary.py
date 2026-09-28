@@ -58,10 +58,17 @@ def child(pack: Path, target: Path, plan_digest: str, marker: Path) -> None:
 
 def delivered_cli(pack: Path, target: Path, *args: str) -> dict[str, object]:
     source = pack / "files/.aide/scripts/aide_lite.py"
-    command = [sys.executable, "-I", "-B", str(source), "--repo-root", str(target), *args, "--json"]
+    command = [sys.executable, "-I", "-B", str(source), "--repo-root", str(target), *args]
+    if args[0] != "import-pack":
+        command.append("--json")
     result = subprocess.run(command, capture_output=True, text=True, encoding="utf-8", timeout=180)
     if result.returncode != 0:
         raise AssertionError(f"delivered CLI {args[0]} exited {result.returncode}: {result.stderr[-1000:]}")
+    if args[0] == "import-pack":
+        fields = dict(line.split(": ", 1) for line in result.stdout.splitlines() if ": " in line)
+        if not fields.get("status") or not fields.get("plan_digest"):
+            raise AssertionError("delivered import response lacks status or exact plan digest")
+        return {"status": fields["status"], "plan_digest": fields["plan_digest"]}
     return json.loads(result.stdout)
 
 
