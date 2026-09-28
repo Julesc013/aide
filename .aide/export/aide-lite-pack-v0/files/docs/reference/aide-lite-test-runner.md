@@ -52,6 +52,7 @@ py -3 .aide/scripts/aide_lite.py job run --config <local-config> --manifest <job
 py -3 .aide/scripts/aide_lite.py job recover --config <local-config>
 py -3 .aide/scripts/aide_lite.py job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>
 py -3 .aide/scripts/aide_lite.py job usage --stream <codex-exec-jsonl>
+py -3 .aide/scripts/aide_lite.py job usage --attempt-set <attempt-roster-json>
 codex debug prompt-input | py -3 .aide/scripts/aide_lite.py job context
 ```
 
@@ -82,6 +83,20 @@ remain visible. The JSONL format reports completed turns, not the number of
 internal model requests, model identity or usage from unmediated Codex/Work
 sessions. The input files remain with their existing custodian; this command
 writes no ledger or copy of raw prompts and responses.
+
+`--attempt-set` attributes one to eight supplied streams by `parent`, `child`,
+`review`, `retry`, `repair` or `overhead` role. Its bounded JSON file uses schema
+`aide.codex-exec-attempt-roster.v1`, a short `work_id`, and an `attempts` array.
+Each attempt supplies a unique `attempt_id`, `role`, `parent_attempt_id`, a
+relative `stream` path under the roster directory, and its lowercase SHA-256
+`stream_sha256`. The one parent has a null parent ID. A missing stream uses null
+for both stream fields and remains an explicit gap. The command checks links,
+digests, path containment and duplicate streams before reporting role known
+subtotals. It never prints the stream paths or raw events. A supplied roster
+cannot prove that it includes every attempt, so work totals, work outcome and
+internal model requests remain unknown and the attributed result is always
+`PARTIAL`. Same-session streams with uncertain turn identity suppress known
+subtotals rather than risk double counting.
 
 Portable `job context` accepts one Codex `debug prompt-input` JSON stream on
 stdin, capped at 2 MiB. It reports message/part counts and visible text sizes

@@ -44867,9 +44867,143 @@ def summarize_codex_exec_usage(paths: list[Path]) -> dict[str, object]:
             "coverage_gaps": gaps, "raw_prompt_or_response_retained": False}
 
 
+CODEX_ATTEMPT_ROLES = ("parent", "child", "review", "retry", "repair", "overhead")
+CODEX_ATTEMPT_ROSTER_MAX_BYTES = 64 * 1024
+
+
+def summarize_codex_usage_attempts(path: Path) -> dict[str, object]:
+    """Attribute supplied Codex streams without claiming a complete work roster."""
+    path = Path(path)
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400
+            or info.st_size > CODEX_ATTEMPT_ROSTER_MAX_BYTES):
+        raise ValueError("Codex attempt roster is not an ordinary bounded file")
+    identity = lambda item: (item.st_dev, item.st_ino, item.st_size, item.st_mtime_ns)
+    with path.open("rb") as source:
+        if identity(os.fstat(source.fileno())) != identity(info):
+            raise ValueError("Codex attempt roster changed before read")
+        raw = source.read(CODEX_ATTEMPT_ROSTER_MAX_BYTES + 1)
+        if len(raw) > CODEX_ATTEMPT_ROSTER_MAX_BYTES or identity(os.fstat(source.fileno())) != identity(info):
+            raise ValueError("Codex attempt roster changed or exceeded read limit")
+    if identity(path.lstat()) != identity(info):
+        raise ValueError("Codex attempt roster path changed during read")
+    try:
+        roster = json.loads(raw, object_pairs_hook=_codex_exec_unique_object)
+    except (UnicodeDecodeError, json.JSONDecodeError, RecursionError) as exc:
+        raise ValueError("Codex attempt roster contains malformed JSON") from exc
+    if (not isinstance(roster, dict) or set(roster) != {"schema", "work_id", "attempts"}
+            or roster["schema"] != "aide.codex-exec-attempt-roster.v1"
+            or not isinstance(roster["work_id"], str)
+            or not re.fullmatch(r"[A-Za-z0-9._-]{1,64}", roster["work_id"])):
+        raise ValueError("Codex attempt roster identity or schema invalid")
+    attempts = roster["attempts"]
+    if not isinstance(attempts, list) or not 1 <= len(attempts) <= 8:
+        raise ValueError("Codex attempt roster requires one to eight attempts")
+    by_id = {}
+    paths = []
+    supplied = []
+    expected_hashes = []
+    parent_root = path.parent.resolve()
+    for attempt in attempts:
+        if (not isinstance(attempt, dict)
+                or set(attempt) != {"attempt_id", "role", "parent_attempt_id", "stream", "stream_sha256"}
+                or not isinstance(attempt["attempt_id"], str)
+                or not re.fullmatch(r"[A-Za-z0-9._-]{1,64}", attempt["attempt_id"])
+                or attempt["attempt_id"] in by_id
+                or attempt["role"] not in CODEX_ATTEMPT_ROLES):
+            raise ValueError("Codex attempt roster entry invalid or duplicated")
+        by_id[attempt["attempt_id"]] = attempt
+        stream = attempt["stream"]
+        digest = attempt["stream_sha256"]
+        if stream is None and digest is None:
+            continue
+        if (not isinstance(stream, str) or len(stream) > 240
+                or not re.fullmatch(r"[A-Za-z0-9._/-]+\.jsonl", stream)
+                or any(part in ("", ".", "..") for part in stream.split("/"))):
+            raise ValueError("Codex attempt stream path invalid")
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            raise ValueError("Codex attempt stream digest invalid")
+        stream_path = (parent_root / stream).resolve()
+        if not stream_path.is_relative_to(parent_root):
+            raise ValueError("Codex attempt stream path escapes roster root")
+        paths.append(stream_path)
+        supplied.append(attempt["attempt_id"])
+        expected_hashes.append(digest)
+    if sum(attempt["role"] == "parent" and attempt["parent_attempt_id"] is None
+           for attempt in attempts) != 1:
+        raise ValueError("Codex attempt roster requires one parent root")
+    for attempt in attempts:
+        parent = attempt["parent_attempt_id"]
+        if ((parent is None) != (attempt["role"] == "parent")
+                or (parent is not None and
+                    (not isinstance(parent, str)
+                     or not re.fullmatch(r"[A-Za-z0-9._-]{1,64}", parent)
+                     or parent not in by_id))):
+            raise ValueError("Codex attempt parent link invalid")
+    for attempt in attempts:
+        seen = set()
+        cursor = attempt["attempt_id"]
+        while cursor is not None:
+            if cursor in seen:
+                raise ValueError("Codex attempt parent links contain a cycle")
+            seen.add(cursor)
+            cursor = by_id[cursor]["parent_attempt_id"]
+    if len(expected_hashes) != len(set(expected_hashes)):
+        raise ValueError("Codex attempt roster has duplicate stream identity")
+    if paths:
+        stream_result = summarize_codex_exec_usage(paths)
+        if stream_result["duplicate_streams_excluded"] or len(stream_result["records"]) != len(paths):
+            raise ValueError("Codex attempt roster has duplicate stream content")
+        records = dict(zip(supplied, stream_result["records"]))
+        for attempt_id, expected in zip(supplied, expected_hashes):
+            if records[attempt_id]["stream_sha256"] != expected:
+                raise ValueError("Codex attempt stream digest mismatch")
+    else:
+        stream_result = {"status": "PARTIAL", "records": [],
+                         "known_usage_totals": {name: None for name in CODEX_EXEC_USAGE_FIELDS},
+                         "coverage_gaps": ["no_streams_available"]}
+        records = {}
+    gaps = set(stream_result["coverage_gaps"])
+    gaps.add("work_roster_completeness_unverified")
+    if len(records) != len(attempts):
+        gaps.add("attempt_stream_unavailable")
+    session_overlap = "same_session_multiple_streams_turn_identity_unknown" in gaps
+    role_totals = {}
+    for role in sorted({attempt["role"] for attempt in attempts}):
+        members = [records[attempt["attempt_id"]] for attempt in attempts
+                   if attempt["role"] == role and attempt["attempt_id"] in records]
+        role_totals[role] = {}
+        for name in CODEX_EXEC_USAGE_FIELDS:
+            values = [record["usage"][name] for record in members
+                      if "terminal_conflict" not in record["coverage_gaps"]
+                      and "turn_boundary_ambiguous" not in record["coverage_gaps"]
+                      and record["usage"][name] is not None]
+            role_totals[role][name] = None if session_overlap or not values else sum(values)
+    return {"schema": "aide.codex-exec-attributed-usage.v1", "status": "PARTIAL",
+            "source": "supplied_codex_exec_attempt_roster", "work_id": roster["work_id"],
+            "roster_sha256": hashlib.sha256(raw).hexdigest(), "attempt_count": len(attempts),
+            "stream_count": len(records), "supplied_stream_status": stream_result["status"],
+            "attempts": [{"attempt_id": attempt["attempt_id"], "role": attempt["role"],
+                          "parent_attempt_id": attempt["parent_attempt_id"],
+                          "stream_sha256": records[attempt["attempt_id"]]["stream_sha256"]
+                          if attempt["attempt_id"] in records else None,
+                          "terminal_status": records[attempt["attempt_id"]]["terminal_status"]
+                          if attempt["attempt_id"] in records else "UNAVAILABLE"}
+                         for attempt in attempts],
+            "supplied_known_usage_totals": stream_result["known_usage_totals"],
+            "role_known_usage_totals": role_totals,
+            "work_usage_totals": {name: None for name in CODEX_EXEC_USAGE_FIELDS},
+            "work_outcome": "unknown", "model_requests": "unknown",
+            "coverage_gaps": sorted(gaps), "raw_prompt_or_response_retained": False}
+
+
 def command_job_usage(args: argparse.Namespace) -> int:
     try:
-        result = summarize_codex_exec_usage([Path(path) for path in args.stream])
+        if getattr(args, "attempt_set", None):
+            result = summarize_codex_usage_attempts(Path(args.attempt_set))
+        else:
+            result = summarize_codex_exec_usage([Path(path) for path in args.stream])
     except (OSError, ValueError) as exc:
         result = {"schema": "aide.codex-exec-usage.v1", "status": "REFUSED",
                   "reason": str(exc)[:120], "raw_prompt_or_response_retained": False}
@@ -46214,7 +46348,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     wait_parser.add_argument("--interval-seconds", type=float, default=1)
     wait_parser.set_defaults(handler=command_job_wait)
     usage_parser = job_subparsers.add_parser("usage", help="Import bounded Codex exec JSONL usage without model calls.")
-    usage_parser.add_argument("--stream", required=True, action="append", help="Ordinary Codex exec --json file; repeat at most eight times.")
+    usage_source = usage_parser.add_mutually_exclusive_group(required=True)
+    usage_source.add_argument("--stream", action="append", help="Ordinary Codex exec --json file; repeat at most eight times.")
+    usage_source.add_argument("--attempt-set", help="Bounded attributed attempt roster JSON; complete-work coverage remains unknown.")
     usage_parser.set_defaults(handler=command_job_usage)
     job_subparsers.add_parser("context", help="Summarize one supplied Codex prompt-input JSON stream without retaining text or starting a model.").set_defaults(handler=command_job_context)
     setup_parser = job_subparsers.add_parser("setup")
