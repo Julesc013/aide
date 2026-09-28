@@ -4226,3 +4226,9 @@ and independent combined-source ACCEPT. Keep it reachable as the post-Lite
 integration candidate while exact historical message decisions gate the
 frozen Lite main promotion. Revalidate refs and integrated effects before a
 later dev move; new release bytes require their own qualification.
+
+The current Lite ZIP SHA-256 `a762c816…` now has one accepted local Windows
+mid-removal child-exit canary on `task/aide-post-lite-source-integration-01`.
+It preserves authored brownfield bytes and resumes removal through a fresh
+delivered CLI. This supplemental evidence does not move dev or qualify remote
+download; complete the exact main-history decision and release effect first.

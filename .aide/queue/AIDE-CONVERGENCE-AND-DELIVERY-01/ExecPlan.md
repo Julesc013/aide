@@ -385,3 +385,11 @@ obtain independent review of the exact canary and evidence, and leave the
 frozen release-effect subject unchanged. This is one deletion point, not a
 claim about every timing, hostile concurrency, non-Windows or downloaded
 asset behavior.
+
+The corrected canary at `800d6791` passed D job `539db05c6c2c4c389a42b6d2e8ce186f`
+against the current ZIP SHA-256 `a762c816…`; an independent exact review
+accepted it as one local Windows delivered-byte interruption proof. The
+initial unsupported-flag harness attempt remains a recorded failure. The
+frozen asset and dev refs did not change. Preserve this supplemental evidence
+with the reachable post-Lite task branch; it does not clear the historical
+main-promotion decision gate or prove downloaded-asset behavior.

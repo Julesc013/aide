@@ -12500,3 +12500,13 @@ rollback cases to that exact source. Independent rereview accepted the narrow
 runner diagnostic delta and combined source for later dev integration. The
 two monitor-stopped long jobs remain failed evidence. Dev and frozen Lite
 assets were not changed.
+
+The current frozen Lite ZIP `a762c816…` passed a delivered-byte brownfield
+mid-removal canary under managed D job `539db05c6c2c4c389a42b6d2e8ce186f`.
+After a child exited immediately following one owned unlink, a fresh CLI
+resumed to `DETACHED`; authored and project-owned bytes remained intact.
+Scratch retired and the reservation released. Independent exact review
+accepted this as one local Windows interruption proof only. The first harness
+attempt failed on an unsupported import flag; the corrected canary and its
+receipt hashes are recorded in the campaign evidence. Product source, frozen
+release asset, dev and main were unchanged.
