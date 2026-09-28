@@ -1,5 +1,14 @@
 # AIDE Implementation Log
 
+## 2026-09-29 Codex worker result binding
+
+The existing worker now refuses malformed or ambiguous `codex exec --json`
+turn histories before using a verdict or usage. Source `9dccd27f` and its
+test-only oracle correction `1497a7e2` passed 23 state and 32 pipeline cases
+under the D owner. The initial 22/23 assertion failure remains retained;
+exact receipts are in `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/evidence/one-turn-result-boundary-2026-09-29.md`.
+Independent review and live Codex effect qualification remain open.
+
 ## 2026-09-29 extracted Lite job attachment qualification
 
 The existing efficiency consumer test now reattaches through delivered

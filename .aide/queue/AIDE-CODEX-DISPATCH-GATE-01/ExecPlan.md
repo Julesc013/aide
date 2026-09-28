@@ -69,3 +69,10 @@ state and pipeline tests under the configured D owner. Retain an exact failed
 attempt if one occurs. Obtain independent source review before dev integration.
 No live model turn, worker activation, Lite export, or release acceptance is
 part of this source slice.
+
+The source/parser commit `9dccd27f` had a retained 22/23 failed state-suite
+attempt caused by an over-specific test message assertion. Superseding
+test-only `1497a7e2` passed 23/23 state and 32/32 pipeline cases in sequential
+D-managed jobs. Scratch and reservations retired. Exact identities, receipts
+and limits are in `evidence/one-turn-result-boundary-2026-09-29.md`. Obtain an
+independent exact source and task-scope review before dev integration.
