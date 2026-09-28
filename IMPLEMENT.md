@@ -12461,3 +12461,9 @@ reverse-import regression reproduced that case. The follow-up shares the
 completed receipt baseline predicate with ordinary rollback and refuses
 partial recovery when safe payload paths differ. The focused regression
 passes; superseding exact review and broader affected tests remain open.
+
+The superseding commit `72d1438e` then passed the eight-case rollback matrix
+under the shared D runner (782.001 seconds, peak memory 263 MB, peak scratch
+22 MB, scratch retired). Independent rereview accepted this exact source for
+dev integration. The branch remains separate while Lite 1.0.0 frozen assets
+await their release gate; delivered-byte qualification is still required.

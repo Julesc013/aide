@@ -37,3 +37,9 @@ finding. The repair validates the same receipt baseline before offering the
 saved recovery digest; ordinary rollback uses that shared validation too.
 The focused regression is green. Obtain review of the superseding exact
 source after affected tests, while keeping the frozen Lite release separate.
+
+The superseding source `72d1438e` passed the commit-bound eight-case rollback
+matrix and fresh independent rereview accepted it for dev source integration.
+Its source WorkUnit closes with a delivered-byte/release note. Keep the task
+branch reachable; integrate after the frozen release subject is resolved or
+after an exact release delta replaces that subject with full qualification.

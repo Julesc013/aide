@@ -52,3 +52,21 @@
   partial target bytes. Scratch retired and the reservation was released.
 - The superseding commit, affected regression result and independent rereview
   remain to be recorded. This source is outside the frozen Lite 1.0.0 assets.
+
+## Superseding exact result
+
+- Superseding source commit `72d1438e91f2294bb04c0fa6a0acaf924b35ba82`,
+  tree `31b134b171d70c032bbec98c277f8d278a9bdc28`, passed the
+  structured commit check. Its exact code and test hashes were used by
+  managed job `22f2d9838c874d97bec66573caea94b6`.
+- Affected rollback matrix: **8 passed**, no skips, 782.001 seconds, exit 0.
+  Peak job memory was 263,368,704 bytes; peak scratch 22,190,909 bytes.
+  Scratch was retired and reservation released. Full receipt is retained
+  under the configured D: execution retained root.
+- Fresh independent review of that exact commit/tree returned **ACCEPT for
+  dev source integration**. See `source-review-72d1438e.md`. The earlier
+  REQUEST_CHANGES remains part of history; this verdict supersedes it only
+  for the repaired source.
+- Source remains on its task branch to preserve the separate frozen Lite
+  1.0.0 release subject. New delivered bytes and consumer qualification are
+  required before claiming this behavior in a release.

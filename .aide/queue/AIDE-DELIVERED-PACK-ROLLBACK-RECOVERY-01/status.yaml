@@ -1,8 +1,8 @@
 schema_version: aide.queue-task-status.v0
 id: AIDE-DELIVERED-PACK-ROLLBACK-RECOVERY-01
-status: running
-result: PENDING
-current_step: repair_candidate_after_request_changes
+status: passed_with_notes
+result: SOURCE_ACCEPTED_RELEASE_DELTA_PENDING
+current_step: exact_source_accepted_delivered_byte_qualification_pending
 updated_at: 2026-09-28
 review_required: true
 blockers: []
