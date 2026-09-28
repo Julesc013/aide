@@ -245,3 +245,12 @@ manifest binds 18 successful managed receipts, 28 public CLI forms and 39
 retained command outputs. It explicitly retains the live model qualification,
 ten historical owner decisions, independent current release review, main,
 tag, publication and downloaded-byte checks as pending.
+
+Independent current effect review accepted exact `55131eff` for dev source
+and artifact integration after a fresh ref check. It requested changes for
+stable publication: the exported runner guide and draft claim six portable
+`job` forms, including context, absent from the 28-form stable public CLI
+matrix; live Codex and ten historical owner decisions also remain open.
+Preserve this two-part verdict. Integrate accepted ancestry, then qualify
+and bind the six forms on superseding exact bytes rather than silently
+excluding the efficiency interface from the release claim.
