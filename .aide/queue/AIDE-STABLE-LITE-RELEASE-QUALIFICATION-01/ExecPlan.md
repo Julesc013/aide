@@ -36,8 +36,8 @@ do not weaken tests or claim native/hosted effects from Lite consumers.
 ## Progress
 
 - [x] Current preview and dev integrated with independent artifact review.
-- [ ] Current-byte Windows lifecycle canary.
-- [ ] Current-byte forced restart and offline/context/public CLI coverage.
+- [x] Current-byte Windows lifecycle canary.
+- [x] Current-byte forced restart and Python-guarded offline/context/public CLI coverage.
 - [ ] Honest release obligation checkpoint and next dependency.
 
 ## Readonly Git fixture retirement repair, 2026-09-28
@@ -74,3 +74,9 @@ Independent exact source/evidence review returned ACCEPT_WITH_NOTES for dev
 integration only on `cf0c4434`; its external transcription hash and limits are
 recorded in `evidence/runner-review-cf0c4434.md`. This does not close the
 release-qualification WorkUnit or its final consumer/release gates.
+
+Local and remote dev reached `b7f59542`. A delivered ZIP public CLI job then
+passed fresh install, default no-feedback, explicit local feedback/explanation,
+and missing-dry-run refusal. Its exact hashes and limits are in
+`evidence/dev-and-public-cli-b7f59542.md`. Next run the integrated importer
+suite at current source, then close the exact frozen-profile gaps.

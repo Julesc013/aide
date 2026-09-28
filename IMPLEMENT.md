@@ -12311,3 +12311,9 @@ Independent exact review later returned ACCEPT_WITH_NOTES for dev integration
 of `cf0c4434`, retaining the external hostile-writer race and missing
 interrupted-chmod regression as notes. The reviewer verified retained D job
 receipts but did not rerun tests; review custody is in the WorkUnit evidence.
+
+Local and remote dev were observed at `b7f59542` after a normal fast-forward
+push. An additional D-managed current ZIP canary passed the public explanation
+and explicit local feedback forms, refused feedback without dry run, retained
+the project-owned file and installed source unchanged, then retired scratch.
+The WorkUnit holds exact manifest, oracle, summary and receipt hashes.
