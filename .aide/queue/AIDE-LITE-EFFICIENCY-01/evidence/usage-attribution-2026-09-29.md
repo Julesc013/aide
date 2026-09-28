@@ -14,3 +14,9 @@
 - Red repair regression: D-managed job `80d5b71ef61c4923b6764b08ecd0c61b` ran 24 cases; the two new malformed inputs produced errors. Receipt SHA-256 `0b4945db2e1400ac63a8d274b643b119fce648ffa12f2ecdc7435737d0be6aa6`. An initial intermediate run used insufficient JSON nesting, then a direct bounded parser probe established the deep case.
 - Repair: validate all parent ID types and existence before cycle traversal; catch parser `RecursionError` as malformed JSON. A further intermediate D job `c1937f9975094608bffc25dca800bd0d` found a mistaken test oracle for the CLI's existing `REFUSED` exit code (`1`); product behavior was correct. Receipt SHA-256 `dd5c2481e93553a92521744d963e491d131681735f377b057466376a48dbf3a2`.
 - Green repair: D-managed job `2f84b44b341e4ce79a6e1ca8a67e0dc8` passed 24/24 with receipt SHA-256 `90f3f22758e032051edcff6dcd1268631aaa87c21129e2a9b884f135a03334f5`. Observed peak memory 297,787,392 bytes; scratch 4,403 bytes. Superseding source review remains required.
+
+## Superseding source verdict
+
+- Reviewer: `/root/stable_builder_repair_review`, fresh read-only scoped rereview of exact commit `8f10a66b3f0a32223da92aeb334fb480a72e6643`, tree `d8595bb7386d01a37cf2c2d3a77e999d8a63d721`, parent `cec72cb6f2d7a186b8b930fdf74c41eb3fe02051`, combined against base `dbf216c3e0ce9d03dda9dec8045c21366182ea6e`.
+- Verdict: **ACCEPT** for source integration. The reviewer confirmed all non-null parent IDs are bounded strings and exist before cycle traversal; parser recursion becomes `ValueError`, which the CLI turns into bounded JSON `REFUSED` with exit code 1. List, object, grandparent and deep JSON cases exercise direct and CLI paths. `git diff --check` passed. The reviewer did not rerun the recorded 24 tests, call a model or qualify release/host behavior.
+- This evidence-only closeout does not change either frozen reviewed source commit. Delivered-byte qualification and live-host permission/effect remain open.

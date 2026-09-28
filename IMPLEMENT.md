@@ -12750,4 +12750,6 @@ input crashes: non-string parent links and deeply nested JSON. The new cases
 reproduced both failures; the importer now validates every parent link before
 cycle traversal and converts JSON recursion failure to structured `REFUSED`.
 The D-managed focused suite passed 24/24 after repair. The original review
-remains `REQUEST_CHANGES`; a superseding source review is required.
+remains `REQUEST_CHANGES`; a scoped superseding review accepted exact source
+`8f10a66b` for dev integration. The reviewer did not rerun tests or qualify
+delivered bytes or live host behavior.

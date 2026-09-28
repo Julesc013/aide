@@ -293,3 +293,9 @@ The repair validates all parent IDs before traversing links and converts JSON
 recursion failure to bounded refusal. The 24-case suite passed in job
 `2f84b44b`. The superseding source needs its own scoped review; this does not
 change the live-model or delivered-byte gates.
+
+Scoped independent rereview accepted exact superseding source `8f10a66b`
+for dev integration; its two prior blockers are closed. The reviewer did not
+rerun tests. Record the verdict separately from the frozen source, then verify
+current refs and fast-forward dev. Release projection and live host gates stay
+open.
