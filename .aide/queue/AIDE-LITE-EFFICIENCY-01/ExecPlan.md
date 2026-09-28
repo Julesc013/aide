@@ -119,3 +119,10 @@ and actual model calls unknown. Reject malformed and oversized streams. Test
 synthetic privacy/boundary cases and one installed-host no-model stream under
 the configured D runner. This parser does not launch Codex or qualify the
 pause-aware worker; those gates remain open.
+
+The superseding `b4f250f7` source passed 3/3 synthetic and installed-host
+cases under the D runner after two retained failed attempts exposed the real
+`input_text` schema. Independent source review returned ACCEPT for dev
+integration. The next extracted-pack qualification must assert `job context`
+from delivered bytes. Exact receipts and limits are in
+`evidence/codex-context-parser-qualification-2026-09-29.md`.

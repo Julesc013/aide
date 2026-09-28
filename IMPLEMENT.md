@@ -12557,3 +12557,10 @@ admission; the D-managed delivered-job and missing-index regressions passed
 This does not qualify a real Codex effect or stable release bytes.
 The accepted source and evidence fast-forwarded local and remote `dev` to
 `b9aad160`; `main` remains at its prior release head.
+
+Lite `job context` now summarizes a supplied Codex prompt-input stream without
+echoing raw text or starting a model. Two failed host-oracle attempts exposed
+the installed CLI's `input_text` shape; superseding `b4f250f7` passed three
+D-managed cases including the real no-model debugger stream. Independent
+review accepted dev source integration. Extracted-pack verification and live
+host usage remain open.
