@@ -1,15 +1,22 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
-**2026-09-29 current gate:** Local and remote `dev@648cd88369740cb67c0fc232b2a500ea1ef3fe47`
-include the independently accepted partial-rollback repair `72d1438e` and
-the reviewed Lite execution source. Remote
-`main@aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3` has not been promoted.
-The ten exact historical `main..dev` message decisions still gate promotion;
-their owner request remains in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`.
-No tag, published release, downloaded asset or consumer rollout is recorded.
-The older frozen Lite 1.0.0 local assets do not contain all current source.
-New delivered bytes and consumer qualification are required before claiming
-the integrated repairs in a release.
+**2026-09-29 current gate:** Local and remote
+`dev@3671f2fe4c77c07ee57efd4d6367a04b66ab6307` contain the independently
+accepted 37-form Windows Lite source and local candidate assets. Exact effect
+manifest SHA-256 `e270adbe1901bda564beabf8fe88f63c9ca22b03b73ed53ced8edc6e8c3ef554`
+is accepted for dev integration and local technical release effect. Current
+1.0.0 ZIP SHA-256 `02409a7892c7c3c02488fa2cc4eb94dd5dff06afb2e3bda8a8bcc8f363c3103b`
+and tar SHA-256 `01c21e5a9ed8d014404138412669be8d58cba72c7a35e7d8663190949e8dd7e3`
+passed six serial delivered-byte consumers, ten portable `job` observations,
+36 release cases and zero-change generation replays. Supplemental current
+managed-workspace tests passed 46 cases. The earlier partial-rollback repair
+remains in this ancestry. Remote
+`main@aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3` has not been promoted:
+`main..dev` still fails at ten exact historical message records, requiring
+owner decisions and technical disposition review. A live
+Codex one-turn effect is also unqualified. No tag, publication, downloaded
+asset or actual project rollout is recorded. Older dated checkpoints below
+retain their original source bindings rather than current-state authority.
 
 On this exact combined source/tree `648cd883`/`bdacc4ab`, D-managed job
 `8b0404b6374540418c87459ecca6c6ff` passed **3/3** current lifecycle
