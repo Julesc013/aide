@@ -1,5 +1,16 @@
 # AIDE Implementation Log
 
+## 2026-09-28 isolated-host OS-build source repair
+
+Replaced the API-set query adapter's kernel32-derived `platform_version`
+binding with `RtlGetVersion`, after observing a 19041/19045 discrepancy on the
+qualified Windows host. Added injected success/refusal coverage and a current
+source manifest without modifying the earlier reviewed manifest. The bounded
+D runner passed all 53 observation tests and a separate read-only native
+version probe confirmed 19045; both jobs retired scratch and released
+reservations. No API-set host query or operational activation occurred.
+Independent source review and a separately reviewed exact effect remain open.
+
 ## 2026-09-28 stable Lite release-effect policy repair
 
 Recorded independent REQUEST_CHANGES for `d5df63c5`, widened only the

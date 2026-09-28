@@ -12,7 +12,6 @@ import json
 import math
 import os
 import re
-import sys
 import time
 
 from .state import Refused
@@ -481,6 +480,12 @@ class ObservationSession:
         return output
 
 
+class _RtlOsVersionInfoW(C.Structure):
+    _fields_ = [("dwOSVersionInfoSize", W.DWORD), ("dwMajorVersion", W.DWORD),
+                ("dwMinorVersion", W.DWORD), ("dwBuildNumber", W.DWORD),
+                ("dwPlatformId", W.DWORD), ("szCSDVersion", C.c_wchar * 128)]
+
+
 class NativeApiSetQueryApi:
     """Supported API-set host query; construct only in a reviewed owned probe."""
     def __init__(self):
@@ -492,13 +497,17 @@ class NativeApiSetQueryApi:
             raise Refused("supported API-set query library unavailable") from error
         self._api_query = objects.bind(self._api_query_library, "GetApiSetModuleBaseName",
                                        [C.c_char_p, C.c_uint32, W.LPWSTR, C.POINTER(C.c_uint32)], C.c_long)
+        self._rtl_get_version = objects.bind(objects.N, "RtlGetVersion",
+                                             [C.POINTER(_RtlOsVersionInfoW)], C.c_long)
 
     def os_build(self):
-        version = sys.getwindowsversion()
-        parts = tuple(getattr(version, "platform_version", version)[:3])
-        if len(parts) != 3 or any(type(part) is not int or part < 0 for part in parts):
-            raise Refused("exact Windows platform build unavailable")
-        return _os_build(".".join(str(part) for part in parts))
+        version = _RtlOsVersionInfoW()
+        version.dwOSVersionInfoSize = C.sizeof(version)
+        status = int(self._rtl_get_version(C.byref(version))) & 0xffffffff
+        if (status or version.dwMajorVersion != 10 or version.dwMinorVersion != 0 or
+                version.dwPlatformId != 2 or version.dwBuildNumber < 1):
+            raise Refused("exact Windows OS build unavailable")
+        return _os_build(f"{version.dwMajorVersion}.{version.dwMinorVersion}.{version.dwBuildNumber}")
 
     def api_set_host(self, name):
         name = _name(name)

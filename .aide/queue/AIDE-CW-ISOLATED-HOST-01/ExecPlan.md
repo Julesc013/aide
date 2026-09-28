@@ -500,3 +500,34 @@ permitted tests and closed both findings. No actual query/effect packet is
 prepared or admitted. The published repair commit's non-bulleted `## Why`
 section still requires an exact Git-policy disposition before release or
 changelog readiness.
+
+## H2 native query effect preparation - 2026-09-28
+
+Objective: qualify the retained 180 API-set names with one supported native
+query session, without extending that result to private host bytes or worker
+activation. Base this bounded effect task on current `dev@2aaee82e` and the
+reviewed query source already integrated there; use the current checkout on
+`task/aide-cw-api-query-effect-01`, without another worktree.
+
+Scope: add a task-owned controller/driver and injected tests under this
+WorkUnit. Pin the exact retained inventory and current source/OS identity,
+persist a finite one-use reservation and each pre-call intent under the
+approved D control root, and emit a bounded result or a consumed failure.
+Use the existing managed runner for a later actual effect. Do not create a
+profile, grant ACLs, copy host binaries, run a model, or activate the broker.
+
+Verification: run small injected tests for ordering, wrong inventory/build,
+missing journal acknowledgement, partial failure and no replay. Freeze exact
+source and effect inputs, obtain independent technical source/effect review,
+then run at most one admitted Windows query job and review its retained output.
+The actual native call remains stopped until that review passes; an unavailable
+API or changed OS/input is a recorded refusal, not a reason to widen scope.
+
+Preparation found a concrete OS-build binding defect before the API-set effect:
+on this host `sys.getwindowsversion().build` and WMI report 19045 while
+`platform_version` derives 19041 from kernel32.dll. The source repair uses
+`RtlGetVersion` and refuses failed/inconsistent output. Managed injected test
+job `1ce2695643d04ebf80d729bab956e939` passed all 53 observation cases;
+managed read-only OS-version job `28ed5b32eb6440e3bcee777e5ea0ad3a`
+observed 19045/19045/19041 with no API-set query. Both released reservations
+and retired scratch. The native query effect remains unprepared and unadmitted.

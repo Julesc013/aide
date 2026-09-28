@@ -1,5 +1,14 @@
 # AIDE Planning Index
 
+## 2026-09-28 isolated-host OS-build source repair
+
+The existing isolated-host WorkUnit found that Python's kernel32-derived
+`platform_version` reports 19041 on this 19045 host. A bounded source repair
+uses `RtlGetVersion` for the API-set query plan's exact OS build. All 53
+injected observation tests and one read-only managed OS-version probe pass;
+independent source review and the separately admitted 180-name native effect
+remain open. This branch is separate from the frozen Lite release assets.
+
 ## 2026-09-28 stable Lite release-effect repair
 
 Independent review of the exact `d5df63c5` effect returned REQUEST_CHANGES.

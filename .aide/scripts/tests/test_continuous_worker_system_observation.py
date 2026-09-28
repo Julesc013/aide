@@ -581,8 +581,8 @@ class ApiSetQueryTests(unittest.TestCase):
             session.run()
         self.assertEqual(session.failure["native_refusal"]["hresult"], "0x80070490")
 
-    def test_frozen_source_manifest_matches_exact_files_and_no_effect_boundary(self):
-        path = ROOT / ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-query-source-manifest.json"
+    def test_current_source_manifest_matches_exact_files_and_no_effect_boundary(self):
+        path = ROOT / ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-query-os-build-source-manifest.json"
         manifest = json.loads(path.read_text(encoding="utf-8"))
         expected = {**manifest["source_files"], **manifest["dependencies"]}
         actual = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in expected}
@@ -632,11 +632,32 @@ class NativeAdapterInjectedTests(unittest.TestCase):
         with self.assertRaises(Refused):
             api.api_set_host(API_NAME)
 
-    def test_native_os_build_uses_exact_platform_version(self):
+    def test_native_os_build_uses_running_os_version_not_kernel_dll_version(self):
         api = obs.NativeApiSetQueryApi.__new__(obs.NativeApiSetQueryApi)
-        version = type("Version", (), {"platform_version": (10, 0, 26200)})()
-        with patch.object(obs.sys, "getwindowsversion", return_value=version, create=True):
-            self.assertEqual(api.os_build(), "10.0.26200")
+        def observed(pointer):
+            version = pointer._obj
+            self.assertEqual(version.dwOSVersionInfoSize, obs.C.sizeof(version))
+            version.dwMajorVersion, version.dwMinorVersion = 10, 0
+            version.dwBuildNumber, version.dwPlatformId = 19045, 2
+            return 0
+        api._rtl_get_version = observed
+        self.assertEqual(api.os_build(), "10.0.19045")
+
+    def test_native_os_build_refuses_failed_or_inconsistent_observation(self):
+        api = obs.NativeApiSetQueryApi.__new__(obs.NativeApiSetQueryApi)
+        def observed(*, status=0, major=10, minor=0, build=19045, platform=2):
+            def query(pointer):
+                version = pointer._obj
+                version.dwMajorVersion, version.dwMinorVersion = major, minor
+                version.dwBuildNumber, version.dwPlatformId = build, platform
+                return status
+            return query
+        for parameters in ({"status": 1}, {"major": 6}, {"minor": 1},
+                           {"build": 0}, {"build": 1000000}, {"platform": 1}):
+            with self.subTest(parameters=parameters):
+                api._rtl_get_version = observed(**parameters)
+                with self.assertRaises(Refused):
+                    api.os_build()
 
     def test_only_fixed_resource_flags_and_exact_owned_release(self):
         api = obs.NativeSystemApi.__new__(obs.NativeSystemApi)

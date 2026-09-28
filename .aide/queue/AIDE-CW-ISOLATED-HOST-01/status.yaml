@@ -3,8 +3,8 @@ id: AIDE-CW-ISOLATED-HOST-01
 status: running
 planning_state: execution_active
 result: PENDING
-updated_at: 2026-09-07
-current_slice: h2_supported_api_set_query_source
+updated_at: 2026-09-28
+current_slice: h2_api_query_os_build_source_repair
 local_native_attempt_result: PASS
 local_native_attempt_reason: exact_local_endpoint_missing_internetclient_with_controls
 current_source_review: api_query_source_pass_exact_c_disposition_accepted
@@ -22,4 +22,5 @@ two_api_source_injected_tests: 88
 two_api_actual_effect: failed_retained_no_replay
 api_query_source_tests: 52_direct_144_affected_passed_140_independent_permitted
 api_query_actual_effect: not_prepared_or_admitted
+api_query_os_build_repair: source_and_53_injected_tests_passed_read_only_rtl_probe_19045_pending_independent_review
 source_integration: a55b804bb573f145e0f1f00751d27f9b4f2af195_remote_dev_observed
