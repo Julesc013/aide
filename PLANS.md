@@ -4213,3 +4213,10 @@ dev integration; the stable asset freeze remains unchanged.
 `72d1438e` now has eight passing affected cases and independent source
 ACCEPT. Preserve its reachable task branch while the frozen Lite 1.0.0
 release gate is resolved; then integrate or qualify an exact release delta.
+
+The post-Lite integration candidate preserves both accepted branch histories.
+Its managed suite passed, but the rollback matrix encountered two runner
+monitor refusals, both reconciled without discarding required results.
+Finish narrow runner diagnosis, the remaining combined rollback cases and
+independent review of any changed source before moving `dev`. The frozen
+release candidate remains separate.

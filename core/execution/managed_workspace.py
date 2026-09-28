@@ -429,7 +429,12 @@ def tree_usage(root, *, maximum, max_files, allow_transient_absence=False,
                         linked_members.setdefault((info.st_dev, info.st_ino), []).append(info.st_nlink)
                     total += info.st_size
                 else:
-                    raise WorkspaceRefused('unexpected job member preserved for recovery')
+                    raise WorkspaceRefused(
+                        'unexpected job member preserved for recovery: '
+                        f'{Path(entry.path).relative_to(root)} '
+                        f'mode={info.st_mode:o} nlink={info.st_nlink} '
+                        f'attributes={getattr(info, "st_file_attributes", 0):x}'
+                    )
                 if total > maximum or count > max_files:
                     raise WorkspaceRefused('workspace size/file threshold exceeded')
     if any(len(counts) != counts[0] or any(value != counts[0] for value in counts)

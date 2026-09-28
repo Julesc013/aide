@@ -12480,3 +12480,15 @@ under the shared D runner (782.001 seconds, peak memory 263 MB, peak scratch
 22 MB, scratch retired). Independent rereview accepted this exact source for
 dev integration. The branch remains separate while Lite 1.0.0 frozen assets
 await their release gate; delivered-byte qualification is still required.
+
+The post-Lite integration candidate merged accepted managed setup and
+rollback source without changing frozen dev or release artifacts. Its 35-case
+managed suite passed. The long rollback suite was interrupted by the runner's
+strict scratch-link monitor during an intentional junction fixture; AIDE
+recovered that job after two verified in-scratch junction entries were removed.
+The junction case then passed alone. A seven-case split stopped on an unnamed
+unexpected scratch member after four printed passes; it was retired with a
+failed result. The runner refusal now records the relative member path and
+file attributes without relaxing its safety predicate. A focused scanner
+test passes; identify the member and finish combined qualification before
+claiming this changed source accepted.

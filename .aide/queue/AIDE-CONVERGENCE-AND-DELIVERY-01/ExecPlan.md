@@ -347,3 +347,13 @@ the shared finite D runner, obtain independent integration review, then keep
 the candidate reachable until the frozen release gate is resolved. Do not
 present branch-level tests as combined-source results or move `dev` on a
 source-only review.
+
+The exact merge `e3f126df` passed 35 managed-workspace cases and an
+independent source integration review. The long rollback matrix exposed a
+runner limitation: an intentional junction fixture triggered monitor refusal
+before test cleanup, and a later split run was stopped by an unnamed
+unexpected scratch member. Both owned jobs were reconciled and their scratch
+retired; the junction case passed separately. Add only bounded diagnostic
+detail to the existing refusal, run a focused scanner case, then identify the
+next failure before changing the safety rule. Rereview any changed runner
+source and complete all rollback cases on the final candidate.
