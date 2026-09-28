@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: HEAD latest 50 commits
-source_head: 2767290ac9d2ccda24615e2bf113ac2924b088a2
+source_range: 1dada960cc47189e8a1c21be87b41aed02ea835a latest 50 commits
+source_head: 1dada960cc47189e8a1c21be87b41aed02ea835a
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -44,6 +44,8 @@ release_publishing: false
 
 ## Fixed
 
+- Bounded Windows checkpoint retry under reader contention. (12ac93c9aeec fix(job): retry transient Windows checkpoint replacement)
+- Codex host admission and bounded retained input. (36c944159c09 fix(lite): gate Codex turns and bound retained input)
 - Setup quota regression expectation. (33151c5ea97c test(job): update setup reservation expectation)
 - Ambiguous local Codex model permissions now fail closed. (67e1d572d513 fix(lite): reject ambiguous local Codex permissions)
 - Delivered host refusal oracle now covers run admission. (8b0cba063b37 test(lite): exercise delivered Codex run refusal)
@@ -57,8 +59,6 @@ release_publishing: false
 - Include corrected usage accounting in the unpublished Lite candidate. (8f9bd0748fab build(release): refresh Lite 1.0.0 candidate archives)
 - Bind public Lite release claims to current candidate evidence. (ae08a6be3b96 fix(release): bind current Lite public CLI forms)
 - Preserve valid independent Codex usage subtotals under partial coverage. (9c391d255017 fix(usage): retain independent subtotal across ambiguous turns)
-- Include the corrected usage subtotal importer in the portable pack. (061ef259bfca build(pack): refresh Lite export for usage subtotal repair)
-- Carry corrected usage importer into local stable candidate. (2767290ac9d2 build(release): refresh local Lite stable candidate)
 
 ## Docs
 

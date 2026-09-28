@@ -533,6 +533,56 @@
     ],
     "Fixed": [
       {
+        "aide_phase": "codex-host-checkpoint-repair",
+        "aide_result": "REVIEW_PENDING",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "12ac93c9aeec",
+        "commit_sha": "12ac93c9aeec68c38640082cbcd4541559c03a3d",
+        "entry": "Bounded Windows checkpoint retry under reader contention.",
+        "follow_up": "- Rerun exact managed suite and seek independent source review.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: codex-host-checkpoint-repair\nAIDE-Result: REVIEW_PENDING\nAIDE-Scope: existing-job-checkpoint-and-regression\nAIDE-Token-Impact: no-model-runner-repair\nAIDE-Quality-Gate: D-managed-suite-and-independent-security-review",
+        "risks": "- Persistent replacement failure still requires explicit recovery and remains a failure.",
+        "scope": "job",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(job): retry transient Windows checkpoint replacement",
+        "summary": "Bounded Windows checkpoint retry under reader contention.",
+        "type": "fix",
+        "validation": "- FAIL retained: 40/41 D-managed cases at 1105ad98 due to active.json.next contention.\n- PASS: git diff --check; superseding D suite pending."
+      },
+      {
+        "aide_phase": "codex-host-review-repair",
+        "aide_result": "REVIEW_PENDING",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "36c944159c09",
+        "commit_sha": "36c944159c09124d5f99484b0d0d3187d426be3b",
+        "entry": "Codex host admission and bounded retained input.",
+        "follow_up": "- Run the D-managed suite, preserve the review result, and qualify the final combined source.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: codex-host-review-repair\nAIDE-Result: REVIEW_PENDING\nAIDE-Scope: local-model-gate-storage-and-executable-binding\nAIDE-Token-Impact: finite-turn-budget\nAIDE-Quality-Gate: D-managed-suite-and-independent-security-rereview",
+        "risks": "- The local executable path remains trusted against hostile same-user mutation between the final hash and CreateProcessW.\n- This synthetic host suite does not prove a completed live model turn or JSONL verdict.",
+        "scope": "lite",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(lite): gate Codex turns and bound retained input",
+        "summary": "Codex host admission and bounded retained input.",
+        "type": "fix",
+        "validation": "- PASS: git diff --check.\n- Pending: superseding D-managed focused suite and scoped independent rereview."
+      },
+      {
         "aide_phase": "codex-host-review-repair",
         "aide_result": "REVIEW_PENDING",
         "breaking": false,
@@ -856,56 +906,6 @@
         "summary": "Preserve valid independent Codex usage subtotals under partial coverage.",
         "type": "fix",
         "validation": "- PASS: new regression failed before repair while 17 existing cases passed.\n- PASS: all 18 focused cases passed after repair in the D-managed runner.\n- PASS: both jobs retired scratch and released reservations.\n- PASS: diff check and exact commit-message check."
-      },
-      {
-        "aide_phase": "current-usage-pack",
-        "aide_result": "PASS_WITH_NOTES",
-        "breaking": false,
-        "category": "Fixed",
-        "commit": "061ef259bfca",
-        "commit_sha": "061ef259bfca1045fcfbe3a2ccad59baf4c1264c",
-        "entry": "Include the corrected usage subtotal importer in the portable pack.",
-        "follow_up": "- Replay the committed pack and build current stable assets.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: current-usage-pack\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: portable-pack\nAIDE-Token-Impact: deterministic-no-model\nAIDE-Quality-Gate: managed-export-and-pack-status",
-        "risks": "- Stable archives and delivered-byte consumers still require refresh.",
-        "scope": "pack",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "build(pack): refresh Lite export for usage subtotal repair",
-        "summary": "Include the corrected usage subtotal importer in the portable pack.",
-        "type": "build",
-        "validation": "- PASS: D-managed export job 84a7d4af exited cleanly with retired scratch.\n- PASS: pack-status checksum, provenance and boundary checks.\n- PASS: staged diff and exact commit-message check."
-      },
-      {
-        "aide_phase": "current-usage-assets",
-        "aide_result": "PASS_WITH_NOTES",
-        "breaking": false,
-        "category": "Fixed",
-        "commit": "2767290ac9d2",
-        "commit_sha": "2767290ac9d2ccda24615e2bf113ac2924b088a2",
-        "entry": "Carry corrected usage importer into local stable candidate.",
-        "follow_up": "- Replay generation and run serial current-byte qualification.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: current-usage-assets\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: unpublished-stable-assets\nAIDE-Token-Impact: deterministic-no-model\nAIDE-Quality-Gate: managed-build-and-validation",
-        "risks": "- Current assets still need postcommit replay and delivered-byte consumers.\n- This commit does not publish or promote a release.",
-        "scope": "release",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "build(release): refresh local Lite stable candidate",
-        "summary": "Carry corrected usage importer into local stable candidate.",
-        "type": "build",
-        "validation": "- PASS: D-managed stable build c3020fe2 completed with retired scratch.\n- PASS: D-managed stable validation d4d06671 accepted local candidate.\n- PASS: staged diff and exact commit-message check."
       }
     ],
     "Internal": [
@@ -1270,6 +1270,56 @@
   },
   "commit_count": 50,
   "entries": [
+    {
+      "aide_phase": "codex-host-checkpoint-repair",
+      "aide_result": "REVIEW_PENDING",
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "12ac93c9aeec",
+      "commit_sha": "12ac93c9aeec68c38640082cbcd4541559c03a3d",
+      "entry": "Bounded Windows checkpoint retry under reader contention.",
+      "follow_up": "- Rerun exact managed suite and seek independent source review.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: codex-host-checkpoint-repair\nAIDE-Result: REVIEW_PENDING\nAIDE-Scope: existing-job-checkpoint-and-regression\nAIDE-Token-Impact: no-model-runner-repair\nAIDE-Quality-Gate: D-managed-suite-and-independent-security-review",
+      "risks": "- Persistent replacement failure still requires explicit recovery and remains a failure.",
+      "scope": "job",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(job): retry transient Windows checkpoint replacement",
+      "summary": "Bounded Windows checkpoint retry under reader contention.",
+      "type": "fix",
+      "validation": "- FAIL retained: 40/41 D-managed cases at 1105ad98 due to active.json.next contention.\n- PASS: git diff --check; superseding D suite pending."
+    },
+    {
+      "aide_phase": "codex-host-review-repair",
+      "aide_result": "REVIEW_PENDING",
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "36c944159c09",
+      "commit_sha": "36c944159c09124d5f99484b0d0d3187d426be3b",
+      "entry": "Codex host admission and bounded retained input.",
+      "follow_up": "- Run the D-managed suite, preserve the review result, and qualify the final combined source.\n\nAIDE-Task: AIDE-LITE-EFFICIENCY-01\nAIDE-Phase: codex-host-review-repair\nAIDE-Result: REVIEW_PENDING\nAIDE-Scope: local-model-gate-storage-and-executable-binding\nAIDE-Token-Impact: finite-turn-budget\nAIDE-Quality-Gate: D-managed-suite-and-independent-security-rereview",
+      "risks": "- The local executable path remains trusted against hostile same-user mutation between the final hash and CreateProcessW.\n- This synthetic host suite does not prove a completed live model turn or JSONL verdict.",
+      "scope": "lite",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(lite): gate Codex turns and bound retained input",
+      "summary": "Codex host admission and bounded retained input.",
+      "type": "fix",
+      "validation": "- PASS: git diff --check.\n- Pending: superseding D-managed focused suite and scoped independent rereview."
+    },
     {
       "aide_phase": "codex-host-review-repair",
       "aide_result": "REVIEW_PENDING",
@@ -2469,56 +2519,6 @@
       "summary": "Schedule current usage-source release qualification.",
       "type": "docs",
       "validation": "- PASS: exact accepted source is in local and remote dev.\n- PASS: plan diff and exact commit-message check.\n- NOT RUN: release jobs follow this planning commit."
-    },
-    {
-      "aide_phase": "current-usage-pack",
-      "aide_result": "PASS_WITH_NOTES",
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "061ef259bfca",
-      "commit_sha": "061ef259bfca1045fcfbe3a2ccad59baf4c1264c",
-      "entry": "Include the corrected usage subtotal importer in the portable pack.",
-      "follow_up": "- Replay the committed pack and build current stable assets.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: current-usage-pack\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: portable-pack\nAIDE-Token-Impact: deterministic-no-model\nAIDE-Quality-Gate: managed-export-and-pack-status",
-      "risks": "- Stable archives and delivered-byte consumers still require refresh.",
-      "scope": "pack",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "build(pack): refresh Lite export for usage subtotal repair",
-      "summary": "Include the corrected usage subtotal importer in the portable pack.",
-      "type": "build",
-      "validation": "- PASS: D-managed export job 84a7d4af exited cleanly with retired scratch.\n- PASS: pack-status checksum, provenance and boundary checks.\n- PASS: staged diff and exact commit-message check."
-    },
-    {
-      "aide_phase": "current-usage-assets",
-      "aide_result": "PASS_WITH_NOTES",
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "2767290ac9d2",
-      "commit_sha": "2767290ac9d2ccda24615e2bf113ac2924b088a2",
-      "entry": "Carry corrected usage importer into local stable candidate.",
-      "follow_up": "- Replay generation and run serial current-byte qualification.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: current-usage-assets\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: unpublished-stable-assets\nAIDE-Token-Impact: deterministic-no-model\nAIDE-Quality-Gate: managed-build-and-validation",
-      "risks": "- Current assets still need postcommit replay and delivered-byte consumers.\n- This commit does not publish or promote a release.",
-      "scope": "release",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "build(release): refresh local Lite stable candidate",
-      "summary": "Carry corrected usage importer into local stable candidate.",
-      "type": "build",
-      "validation": "- PASS: D-managed stable build c3020fe2 completed with retired scratch.\n- PASS: D-managed stable validation d4d06671 accepted local candidate.\n- PASS: staged diff and exact commit-message check."
     }
   ],
   "generated_by": "aide-lite",
@@ -2529,7 +2529,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "2767290ac9d2ccda24615e2bf113ac2924b088a2",
-  "source_range": "HEAD latest 50 commits",
+  "source_head": "1dada960cc47189e8a1c21be87b41aed02ea835a",
+  "source_range": "1dada960cc47189e8a1c21be87b41aed02ea835a latest 50 commits",
   "warnings": []
 }

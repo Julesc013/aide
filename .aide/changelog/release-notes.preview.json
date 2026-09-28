@@ -1,6 +1,14 @@
 {
   "follow_up": [
     {
+      "commit": "12ac93c9aeec",
+      "summary": "Rerun exact managed suite and seek independent source review."
+    },
+    {
+      "commit": "36c944159c09",
+      "summary": "Run the D-managed suite, preserve the review result, and qualify the final combined source."
+    },
+    {
       "commit": "33151c5ea97c",
       "summary": "Rerun the D-managed suite and seek scoped independent rereview."
     },
@@ -191,14 +199,6 @@
     {
       "commit": "1dada960cc47",
       "summary": "Run D-managed generation and qualification, then freeze exact effect evidence."
-    },
-    {
-      "commit": "061ef259bfca",
-      "summary": "Replay the committed pack and build current stable assets."
-    },
-    {
-      "commit": "2767290ac9d2",
-      "summary": "Replay generation and run serial current-byte qualification."
     }
   ],
   "highlights": [
@@ -338,6 +338,20 @@
     {
       "breaking": false,
       "category": "Fixed",
+      "commit": "12ac93c9aeec",
+      "subject": "fix(job): retry transient Windows checkpoint replacement",
+      "summary": "Bounded Windows checkpoint retry under reader contention."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "36c944159c09",
+      "subject": "fix(lite): gate Codex turns and bound retained input",
+      "summary": "Codex host admission and bounded retained input."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
       "commit": "33151c5ea97c",
       "subject": "test(job): update setup reservation expectation",
       "summary": "Setup quota regression expectation."
@@ -428,20 +442,6 @@
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "061ef259bfca",
-      "subject": "build(pack): refresh Lite export for usage subtotal repair",
-      "summary": "Include the corrected usage subtotal importer in the portable pack."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "2767290ac9d2",
-      "subject": "build(release): refresh local Lite stable candidate",
-      "summary": "Carry corrected usage importer into local stable candidate."
-    },
-    {
-      "breaking": false,
       "category": "Docs",
       "commit": "87635e1815b7",
       "subject": "docs(changelog): project Lite preview at repaired source",
@@ -457,6 +457,14 @@
   ],
   "preview_only": true,
   "risk_summary": [
+    {
+      "commit": "12ac93c9aeec",
+      "summary": "Persistent replacement failure still requires explicit recovery and remains a failure."
+    },
+    {
+      "commit": "36c944159c09",
+      "summary": "The local executable path remains trusted against hostile same-user mutation between the final hash and CreateProcessW."
+    },
     {
       "commit": "33151c5ea97c",
       "summary": "The full focused suite remains pending after this fixture correction."
@@ -648,20 +656,20 @@
     {
       "commit": "1dada960cc47",
       "summary": "Existing assets are not current for the new importer source."
-    },
-    {
-      "commit": "061ef259bfca",
-      "summary": "Stable archives and delivered-byte consumers still require refresh."
-    },
-    {
-      "commit": "2767290ac9d2",
-      "summary": "Current assets still need postcommit replay and delivered-byte consumers."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "2767290ac9d2ccda24615e2bf113ac2924b088a2",
-  "source_range": "HEAD latest 50 commits",
+  "source_head": "1dada960cc47189e8a1c21be87b41aed02ea835a",
+  "source_range": "1dada960cc47189e8a1c21be87b41aed02ea835a latest 50 commits",
   "validation_summary": [
+    {
+      "commit": "12ac93c9aeec",
+      "summary": "FAIL retained: 40/41 D-managed cases at 1105ad98 due to active.json.next contention."
+    },
+    {
+      "commit": "36c944159c09",
+      "summary": "PASS: git diff --check."
+    },
     {
       "commit": "33151c5ea97c",
       "summary": "FAIL retained: 44/45 D-managed cases at 36c94415; one stale fixture expectation."
@@ -853,14 +861,6 @@
     {
       "commit": "1dada960cc47",
       "summary": "PASS: exact accepted source is in local and remote dev."
-    },
-    {
-      "commit": "061ef259bfca",
-      "summary": "PASS: D-managed export job 84a7d4af exited cleanly with retired scratch."
-    },
-    {
-      "commit": "2767290ac9d2",
-      "summary": "PASS: D-managed stable build c3020fe2 completed with retired scratch."
     }
   ],
   "warnings": []
