@@ -2,13 +2,13 @@
   "archives": {
     "tar_gz": {
       "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
-      "sha256": "9f615f84c213d71161c6921c8526f32c45f8a6dece2d9b344da73610ce5ec81d",
-      "size_bytes": 782277
+      "sha256": "a8fa44bf5cd35db43eed78fc04199af44d571fef6e54d7a0398ee8a0297e571c",
+      "size_bytes": 782363
     },
     "zip": {
       "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
-      "sha256": "06e789483940b8101c36e61cb441ad75f5038eedf7f35d75ef87e8f127a4b656",
-      "size_bytes": 1116074
+      "sha256": "6a56a494affdc66c76b4bb5dcae4e0c01083b8220802279b4cca5485572d370d",
+      "size_bytes": 1116162
     }
   },
   "identity": {
@@ -55,19 +55,20 @@
       "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
       "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
       "job usage --stream <codex-exec-jsonl>",
+      "job usage --attempt-set <attempt-roster-json>",
       "job context"
     ],
     "release_axis": "aide_lite_portable_package",
     "schema_version": "aide.stable-release-identity.v1",
-    "source_commit": "74c811f3b77e7cc4f032750d356bdd1e3659eebb",
-    "source_pack_checksums_sha256": "53aaaec80ee816be8d67d754a0f25e321abbdc7c62dad4545c3fc93b8fa09941",
+    "source_commit": "68192b3696e626fcfe2c3b4c513e777a58c578fd",
+    "source_pack_checksums_sha256": "9808031ec3d2aa9418f4e676a194c37cbdcbb553fb04999fb0579a3e62b78c79",
     "source_repo": "julesc013/aide",
-    "source_tree": "18f1b7548c221e0ec6d8afdc5dcd7e7a6a2899a9",
+    "source_tree": "4fd4b92c727488119a4a95123321dfab21721a4f",
     "support_mode": "companion",
     "support_tier_candidate": "T3",
     "tag": "aide-lite-v1.0.0",
     "version": "1.0.0",
-    "version_policy_sha256": "0a1257b7ae6976f380085a7f40fa5c481cca3d47e349f6f6a92cf7e1484173eb"
+    "version_policy_sha256": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253"
   },
   "publication_evidence": "separate exact effect record required",
   "review_required": "independent technical ACCEPT for exact release and effect",
