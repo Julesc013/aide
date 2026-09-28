@@ -1,0 +1,7 @@
+# Codex usage duplicate-key refusal
+
+Source commit `8a12605dc1af13a414fa09f51e256e8012b952b4`, tree `7f8c51d5ab9263c5ed0099cb8d966721f33d0a72`, parent `dev@e447e6416b746eab654a98cc20dfd66e73097f27`. Python's default JSON parser kept the last duplicate event or nested usage field; that could turn a conflicting counter into an apparently complete total. The portable importer now refuses duplicate object keys in each Codex JSONL line. The regression supplies conflicting `input_tokens` and event `type` keys.
+
+The configured D runner executed `python -m unittest discover -s .aide/scripts/tests -p test_efficiency_wait.py -v` on the exact commit/tree: **15/15 PASS**, exit 0. Job `b8a702b0194d4677981ce16098d6880f`, manifest digest `55a3e24bc13aa5bda63bc3c87badc171bb602e5689cfdfbdd117aa3eef040b39`, receipt SHA-256 `f535fb79c82e9005aa3a5d250b71fb5952d0200121af79f2be9d5d2542281995`. Peak memory was 294,977,536 bytes; peak scratch was 2,768 bytes. The exact scratch child was absent and the receipt records reservation release.
+
+Independent `/root/stable_effect_review` returned **ACCEPT for dev source integration** of the exact commit/tree. The reviewer checked the recursive duplicate-key hook, both conflicting regression forms, diff whitespace, exact receipt hash and scratch retirement. The reviewer did not call a model. This is synthetic no-model source qualification, not live Codex usage coverage, final Lite bytes or stable release acceptance.

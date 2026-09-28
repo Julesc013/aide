@@ -12595,3 +12595,11 @@ the loader route can execute DLL initialization before its returned-path
 check. No API-set query, ordinary-loader effect, restricted worker or
 operational activation is qualified by this merge. Current combined-source
 tests and a source integration review are required before release use.
+
+## 2026-09-29 portable Codex usage JSON integrity
+
+The portable `job usage` importer now rejects duplicate JSON object keys in
+event and nested token-counter records, preventing last-value-wins accounting.
+Source `8a12605d` passed 15 D-managed focused cases with retired scratch and
+received independent dev-only ACCEPT under `AIDE-LITE-EFFICIENCY-01`. Live
+host usage and final release bytes remain separate qualification work.

@@ -164,3 +164,9 @@ this WorkUnit's evidence. Reproduce with a conflicting duplicate counter and
 event type, repair without adding a parser dependency, run the focused suite
 through the configured D owner, then obtain exact source review before dev.
 This does not launch a model or replace the pending real-host qualification.
+
+The exact source candidate `8a12605d` passed 15/15 focused cases in a
+D-managed job, including conflicting duplicate counter and event type
+regressions. Scratch retired and the reservation was released. Independent
+`/root/stable_effect_review` ACCEPTed dev source integration. Receipt, review
+and limits are in `evidence/codex-usage-duplicate-key-2026-09-29.md`.
