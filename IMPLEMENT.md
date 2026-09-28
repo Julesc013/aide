@@ -9,6 +9,15 @@ preview and no-publish behavior remains scoped to those projections. The
 stable assets embed the version-policy hash and require regeneration and
 focused new-byte qualification before a superseding exact release review.
 
+The policy-bound pack was regenerated at `720a9e00` and distinct stable assets
+at `bed505ab`. Managed D jobs passed build, validation, zero-change replay,
+fresh/brownfield import/customization, lifecycle, context/offline, partial
+recovery, public CLI/feedback, forced child exits and 36 current-policy
+Q47/Q48 tests. All scratch retired and reservations released. The revised
+effect manifest binds 28 public forms to 39 retained command logs. Prior
+110 importer passes remain source regression history because six metadata
+inputs changed; they do not replace exact new-byte qualification.
+
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
 
 Resumed the campaign for a bounded current-status/spec-root alignment in the reused checkout; no new storage pool or artifact generation.

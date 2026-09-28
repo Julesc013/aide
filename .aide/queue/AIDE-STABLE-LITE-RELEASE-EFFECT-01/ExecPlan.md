@@ -96,3 +96,13 @@ the policy-bound current pack and stable bytes. Reuse unchanged source tests
 only when source, dependency and oracle bindings hold. Run focused new-byte
 consumers, post-commit replay and a superseding independent exact release
 review. Preserve Q47/Q48 preview status.
+
+Revised policy `545d4cc2`, pack `720a9e00` and stable asset commit `bed505ab`
+are now frozen. Managed build, validate, post-commit replay, six exact-byte
+consumer/recovery jobs and the current-policy 36 Q47/Q48 tests passed with
+scratch retired and reservations released. The effect manifest binds all
+28 declared forms to 39 exact retained command logs; the two prior missing
+combinations have fresh outputs. The old 110 importer cases are retained as
+source regression history because six metadata/policy inputs changed, and
+are not substituted for new-byte evidence. Seek one superseding exact
+independent release ACCEPT. Main, tag and publication remain stopped.
