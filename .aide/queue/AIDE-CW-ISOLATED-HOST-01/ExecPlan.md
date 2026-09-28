@@ -610,3 +610,15 @@ before the System32 search flag controls directory search. The returned-path
 check is after possible DLL initialization. Keep the actual native effect
 unprepared and unadmitted until a controlled-child effect manifest, review,
 admission and result analysis exist. No worker activation follows this review.
+
+## 2026-09-29 combined-source integration candidate
+
+The reviewed native source was merged with current AIDE `dev` ancestry on the
+reused checkout, without moving `dev`. A historical-manifest test first failed
+because later accepted pause-gate source changed `state.py`. The superseding
+oracle checks that manifest against its exact reviewed commit; current loader
+source remains byte-identical. The D-managed combined suite then passed 59/59,
+with both attempt receipts retained. Exact identities and effect limits are in
+`evidence/h2-api-set-combined-integration-2026-09-29.md`. Obtain independent
+exact integration review before a dev fast-forward. Native query/load effects
+remain unadmitted, and Lite release bytes remain separate.
