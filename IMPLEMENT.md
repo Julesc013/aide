@@ -12679,3 +12679,11 @@ Preview bundle and draft jobs validated locally. Current hashes and receipts
 are retained in the release WorkUnit. Exact view replay and independent
 effect review remain before further integration; no model turn or publication
 occurred.
+
+The first current-source effect review accepted dev source/artifact
+integration but requested the 37-form release-policy mapping before local
+technical effect acceptance. The manifest now binds 39 current consumer
+outputs and ten extracted job observations to the exact 37 advertised forms.
+All output paths, digests, exit codes and observed text were checked against
+retained current-byte jobs. This was an evidence-only repair; the six
+consumers and 36 release tests were not repeated.

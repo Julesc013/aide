@@ -140,6 +140,618 @@
       "postcommit_replay_tracked_changes": 0,
       "source_commit": "65fafcc9f5bed0a32a5f9aaaa0155a815e0f3599"
     },
+    "public_cli_form_coverage": {
+      "current_byte_zip_sha256": "5bbe1234492c39c4ad26b4d43b2b1fe0193963bf3b4ddb99f108b0405b72c051",
+      "form_count": 37,
+      "forms": [
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: PASS",
+              "output": "output/fresh-installed-doctor.json",
+              "sha256": "c4a2d9deda4c40805ae5a83db3ed620b40a585261fcae2326d6f72a1cadc26f2"
+            }
+          ],
+          "form": "doctor",
+          "supported_target_state": "installed fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "e530711d64794dc1b2f016d34765a600",
+              "observed": "status: PASS",
+              "output": "output/installed-validate.json",
+              "sha256": "9af5c3ddfc73f2120be5f3bf383be3e3a0e17ae6f7372d9a549dbdee324acade"
+            }
+          ],
+          "form": "validate",
+          "supported_target_state": "installed fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "75d1cf50ea384411b587132202681032",
+              "observed": "",
+              "output": "output/fresh-context.json",
+              "sha256": "f15a48a10f64cb7d29af617d3253d8b9de53fe37c8970e8a0c95e534332455d8"
+            },
+            {
+              "exit_code": 0,
+              "job_id": "75d1cf50ea384411b587132202681032",
+              "observed": "",
+              "output": "output/brownfield-context.json",
+              "sha256": "20bffb719f067ce4dc1572e275b1c2b8f16f7ff4e4bd4646833182a624016c7f"
+            }
+          ],
+          "form": "context",
+          "supported_target_state": "installed fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "75d1cf50ea384411b587132202681032",
+              "observed": "",
+              "output": "output/fresh-pack.json",
+              "sha256": "0a84b963733877f5017c71966f6a30cff24d0ae164678f8a7dc2fdc84f175754"
+            },
+            {
+              "exit_code": 0,
+              "job_id": "75d1cf50ea384411b587132202681032",
+              "observed": "",
+              "output": "output/brownfield-pack.json",
+              "sha256": "df298496e8dee672b5dee68ca31b630fc792576c6328a1d5a270a06ae52b7bdd"
+            }
+          ],
+          "form": "pack --task <task>",
+          "supported_target_state": "installed fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "75d1cf50ea384411b587132202681032",
+              "observed": "result: WARN",
+              "output": "output/fresh-verify.json",
+              "sha256": "43adede43b51e439fca7d6075fdf3fe1376c3b274ffc8e73900d90be989ecfd3"
+            },
+            {
+              "exit_code": 0,
+              "job_id": "75d1cf50ea384411b587132202681032",
+              "observed": "result: WARN",
+              "output": "output/brownfield-verify.json",
+              "sha256": "403dadaeaf4a4828148cdc6399c0fef3089b69b099aba07714bce4c79238cf89"
+            }
+          ],
+          "form": "verify --evidence <evidence-path>",
+          "supported_target_state": "installed fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 1,
+              "job_id": "e530711d64794dc1b2f016d34765a600",
+              "observed": "status: missing",
+              "output": "output/empty-task-inspect.json",
+              "sha256": "dbc0bf1e5705ae36f4d1b76294ee26d5c6f869fff9b019fd3637cd2e0af5cc27"
+            }
+          ],
+          "form": "task inspect",
+          "supported_target_state": "installed target with empty queue; missing classification and exit 1 are expected",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "e530711d64794dc1b2f016d34765a600",
+              "observed": "",
+              "output": "output/task-status.json",
+              "sha256": "ee3660ed61489937cc9a309ed8efe9c932dea24e5b6df5d2fa1bbbb7b3e32ed6"
+            }
+          ],
+          "form": "task status",
+          "supported_target_state": "installed target with empty or populated queue",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "75d1cf50ea384411b587132202681032",
+              "observed": "status: PLANNED",
+              "output": "output/fresh-install-preview.json",
+              "sha256": "28aa2ca3225248c4b7ba9b946a42ab5c41ddda7a91d1fc2f66693362519eb261"
+            },
+            {
+              "exit_code": 0,
+              "job_id": "c3190aa692e94c18811dc57e977ca440",
+              "observed": "status: PLANNED",
+              "output": "output/brown-changed-install-preview.json",
+              "sha256": "4149660ed5b551d32827429ee7b81b688c1b891162a7dc25964b12f9a1a62229"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+          "supported_target_state": "uninstalled fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "75d1cf50ea384411b587132202681032",
+              "observed": "status: APPLIED",
+              "output": "output/fresh-install-apply.json",
+              "sha256": "5a5d2d75623bc179d60f8014a686bbb514cca0953546d23b93da8efa70d3d5d4"
+            },
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: APPLIED",
+              "output": "output/brown-agents-overlay-apply.json",
+              "sha256": "e46abb45fb333b2e304e1e672d1624ac89a467810d65d36cc3d59819f847a532"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+          "supported_target_state": "uninstalled fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: PLANNED",
+              "output": "output/fresh-disabled-v3-preview.json",
+              "sha256": "25f5cf8a6ea6cbca12c2b34efbd0343922e029ac2c9dedb7160af146f5ee4d4c"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+          "supported_target_state": "installed target with synthetic predecessor",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: APPLIED",
+              "output": "output/fresh-disabled-v2-apply.json",
+              "sha256": "c3a5dfe3860e777c9d41e37d252a101546c446ac6f03ce3e2325de4cb4c56557"
+            },
+            {
+              "exit_code": 2,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: CONFLICT",
+              "output": "output/brown-v2-conflict-apply.json",
+              "sha256": "fba3d714c7f50620e961ed0ed416625989d8ce1fd2451fe93ea2f77fc777c0ee"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+          "supported_target_state": "installed target with synthetic predecessor",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: PLANNED",
+              "output": "output/brown-v2-resolved-plain-preview.json",
+              "sha256": "584e0a42ede8519e698cb2bd2ba46e39a57b18196cc36b6fe9dc741f7120ef1f"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+          "supported_target_state": "installed target with synthetic predecessor and project-selected conflict resolution",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: APPLIED",
+              "output": "output/brown-v2-resolved-apply.json",
+              "sha256": "067d654c1d6cf1d240c281b96ae621619998d4c057057ba75d7876f39b140b37"
+            },
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: APPLIED",
+              "output": "output/brown-v3-resolved-apply.json",
+              "sha256": "3ae3aef8a8520116a9a3b70928efe0d2cec65a546da5f3b09669a48adde1cb51"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+          "supported_target_state": "installed target with synthetic predecessor and project-selected conflict resolution",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: PLANNED",
+              "output": "output/brown-agents-overlay-preview.json",
+              "sha256": "dad77acd62dec6eeb631c89cceec3ee625f26a98595df865ac07f7d6643b3f1c"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+          "supported_target_state": "uninstalled fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: PLANNED",
+              "output": "output/fresh-disabled-v2-preview.json",
+              "sha256": "33cbe7de627a842ccb03612a947598b426801c3b6f3120f1fdd63dc9c0213b95"
+            },
+            {
+              "exit_code": 2,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: PLANNED_CONFLICT",
+              "output": "output/brown-v2-conflict-preview.json",
+              "sha256": "a51200ed061b724f159cbdd92fb60069750f310f786c0bed8cc287164b03c440"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+          "supported_target_state": "installed target with synthetic predecessor",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: PLANNED",
+              "output": "output/brown-v3-resolved-preview.json",
+              "sha256": "626d573558c1cf21c0596468ed2daad79089f9ec934c1d3dba615e988a142468"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+          "supported_target_state": "installed target with synthetic predecessor and project-selected conflict resolution",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "e530711d64794dc1b2f016d34765a600",
+              "observed": "status: PLANNED",
+              "output": "output/explicit-feedback.json",
+              "sha256": "3cdc8cbc5d0bc87b4bb623c26f4b5243fe87769fe5e087da87cae0fb0305e5ca"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "supported_target_state": "uninstalled fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "c8ecefa02f3a4b52b3168b3073d37422",
+              "observed": "status: PLANNED",
+              "output": "output/predecessor-feedback-preview.json",
+              "sha256": "9d4150549db1b43968550330c77dc340c83ef93618d860c98037139dc5e8fb4b"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "supported_target_state": "installed target with synthetic predecessor",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: PLANNED",
+              "output": "output/brown-v2-resolved-preview.json",
+              "sha256": "24a57c9cce178d7b09b4d78414ede2cffc28cb96e019b8b4cc33598f3d7e9d7b"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+          "supported_target_state": "installed target with synthetic predecessor and project-selected conflict resolution",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "c8ecefa02f3a4b52b3168b3073d37422",
+              "observed": "status: RECOVERED",
+              "output": "output/fresh-cli-recover.json",
+              "sha256": "d52e22fa4697904a7930f4f2dbb493e3cd4c08642950a4f2504100a831751011"
+            },
+            {
+              "exit_code": 3,
+              "job_id": "c8ecefa02f3a4b52b3168b3073d37422",
+              "observed": "status: RECOVERY_REQUIRED",
+              "output": "output/fresh-wrong-plan-refusal.json",
+              "sha256": "62a72a77140c41b64a6480cda9c408869f6854f83895cc2712704a92d567d3fd"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "supported_target_state": "saved exact partial import with fresh target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "c8ecefa02f3a4b52b3168b3073d37422",
+              "observed": "status: RECOVERED",
+              "output": "output/update-cli-recover.json",
+              "sha256": "6fc02e2352f956113fb1a345e60579a6765b7cb995d784fb53d17b9631ab661b"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "supported_target_state": "saved exact partial import with synthetic predecessor",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "c8ecefa02f3a4b52b3168b3073d37422",
+              "observed": "status: RECOVERED",
+              "output": "output/resolved-cli-recover.json",
+              "sha256": "a36d3fbcd3dfd6d2e7758dda0f5cc5c59e36e9cb39f5736ced4e1a7e906e874f"
+            }
+          ],
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+          "supported_target_state": "saved exact partial import with synthetic predecessor and project resolution",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "c3190aa692e94c18811dc57e977ca440",
+              "observed": "",
+              "output": "output/rollback-preview.json",
+              "sha256": "9fd5653b34a9bf91ac26627e2fec354e1d150dc4105b469dfc87b7ea5b9d4a37"
+            }
+          ],
+          "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+          "supported_target_state": "installed synthetic successor with prior pack",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "c3190aa692e94c18811dc57e977ca440",
+              "observed": "",
+              "output": "output/rollback-apply.json",
+              "sha256": "efabb798379db2e31b38241b5a06a5d0c072c8661b7ea3596ed7dadae665a493"
+            }
+          ],
+          "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+          "supported_target_state": "installed synthetic successor with prior pack",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "c3190aa692e94c18811dc57e977ca440",
+              "observed": "",
+              "output": "output/fresh-removal-preview.json",
+              "sha256": "e028c42385c714a4a8ed4454dd99ec94e90adf129f15f1a0eca169c408cf0612"
+            },
+            {
+              "exit_code": 0,
+              "job_id": "c3190aa692e94c18811dc57e977ca440",
+              "observed": "",
+              "output": "output/brown-removal-preview.json",
+              "sha256": "4d1b1f4c03fe3c293faec9e9ae51028dbd602182dcf2497dee23ec374d8dbf20"
+            }
+          ],
+          "form": "plan-removal --target <target>",
+          "supported_target_state": "installed receipt-owned fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "c3190aa692e94c18811dc57e977ca440",
+              "observed": "",
+              "output": "output/fresh-removal-apply.json",
+              "sha256": "20ddc9f8f31fa800802f8789ce9f0cab047904a33e9dfd4505c10862932ca792"
+            },
+            {
+              "exit_code": 0,
+              "job_id": "c3190aa692e94c18811dc57e977ca440",
+              "observed": "",
+              "output": "output/brown-removal-apply.json",
+              "sha256": "e32ca7ac642e92ae87c9a8f566c8119cde16188059b901295f2bb38015b10459"
+            }
+          ],
+          "form": "apply-removal --target <target> --expect-plan <digest>",
+          "supported_target_state": "installed receipt-owned fresh or existing Git target",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "cafab263ca2846ab9a33560c523cfd45",
+              "observed": "status: PLANNED",
+              "output": "output/fresh-missing-owned-repair-preview.json",
+              "sha256": "5cab4b79d03b6250d6488be3772cd1ec8f0dbc0617330450ae7438b05959586e"
+            }
+          ],
+          "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+          "supported_target_state": "installed receipt-owned file missing or modified",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "c3190aa692e94c18811dc57e977ca440",
+              "observed": "status: APPLIED",
+              "output": "output/repair-apply.json",
+              "sha256": "a83240a9c7c0eedec8533e3f2fc2ff5f5c71a7dc9ad78e891aff92f0e8bb0fce"
+            }
+          ],
+          "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+          "supported_target_state": "installed receipt-owned file missing or modified",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "CONFIGURED",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-setup-fresh",
+              "sha256": "6e55b52ddfe5576984e18084fb9028a28dfb1800bb0ab69cfb7d1e105d88e676"
+            },
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "ALREADY_CONFIGURED",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-setup-existing",
+              "sha256": "3e8c476cea6dea919cbcdc0bf4e8ae940769067b080d4895125d55325f25ada2"
+            }
+          ],
+          "form": "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+          "supported_target_state": "fresh approved local Git project",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-inspect",
+              "sha256": "1fe041819d7c6474489420c1a2786c283d2dd4a86ba14b90ff4bfbd22ed66084"
+            }
+          ],
+          "form": "job inspect --config <local-config> --manifest <job-json>",
+          "supported_target_state": "configured approved local Git project",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "PASS",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-run",
+              "sha256": "77554a7f511963a7e9b9a84e0b4e691cb6f717bc02f8992646795f82d5f0b1ed"
+            }
+          ],
+          "form": "job run --config <local-config> --manifest <job-json>",
+          "supported_target_state": "configured approved local Git project",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "{'bytes': 31, 'creation_filetime': 134351015447800400, 'exit_code': 0, 'io_errors': [], 'job_id': '79e05346256e4281b6389",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-run-full",
+              "sha256": "54c7df286e9bf1b8bcbe858422dec7a464ec2475e60781f546a6c6112e5005d6"
+            }
+          ],
+          "form": "job run --config <local-config> --manifest <job-json> --full",
+          "supported_target_state": "configured approved local Git project",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-recover",
+              "sha256": "4e99a9a4f866cfbb352b01a3a4ce2dbb45810f10b19409dc9b03e9493bde14ab"
+            }
+          ],
+          "form": "job recover --config <local-config>",
+          "supported_target_state": "configured approved local Git project",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "PASS",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-wait-default",
+              "sha256": "77554a7f511963a7e9b9a84e0b4e691cb6f717bc02f8992646795f82d5f0b1ed"
+            }
+          ],
+          "form": "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+          "supported_target_state": "configured approved local Git project",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "PASS",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-wait",
+              "sha256": "77554a7f511963a7e9b9a84e0b4e691cb6f717bc02f8992646795f82d5f0b1ed"
+            }
+          ],
+          "form": "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+          "supported_target_state": "configured approved local Git project",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "COMPLETE",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-usage",
+              "sha256": "1ce1509d9e0dde997f980cb81c614c3dbceebb0c726ccd198c1c6bb18fa7f61d"
+            }
+          ],
+          "form": "job usage --stream <codex-exec-jsonl>",
+          "supported_target_state": "local synthetic Codex stream without model execution",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        },
+        {
+          "evidence": [
+            {
+              "exit_code": 0,
+              "job_id": "39a9b394d48f4c139af120a1ec97b8a5",
+              "observed": "COMPLETE",
+              "output": "evidence/efficiency-current-job-forms.json#forms/job-context",
+              "sha256": "ed1c49a715ce5bb619ac2e290e0a7be8dbfe9c1128281a85a4af80043e04853d"
+            }
+          ],
+          "form": "job context",
+          "supported_target_state": "local synthetic Codex stream without model execution",
+          "tested_environment": "Windows 10.0.19045, Python 3.14.7, delivered ZIP, D-managed consumer"
+        }
+      ],
+      "job_form_observations": 10,
+      "output_observations": 39,
+      "source": "current stable asset manifest identity.public_cli_forms",
+      "warning_rule": "exit zero does not erase classified validate/verify warnings"
+    },
     "q47_q48": {
       "job_id": "c367d2f802474fbc913f584c4ed685c7",
       "receipt_sha256": "3828fb837f5be6b8fcdcf91e32573cb0a627823547e5a2afd6f4330f8719c57d",

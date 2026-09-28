@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: in_progress
-planning_state: superseding_current_source_local_candidate_review_pending
-result: CURRENT_SOURCE_LOCAL_QUALIFIED_REVIEW_PENDING
+planning_state: superseding_current_source_effect_rereview_pending
+result: DEV_ACCEPT_LOCAL_EFFECT_REPAIR_PENDING
 updated_at: 2026-09-29
-current_slice: efficiency_source_integrated_assets_rebuilt_consumers_passed
-next_slice: postcommit_replay_exact_technical_review_then_retained_main_gates
+current_slice: exact_37_form_effect_mapping_repair
+next_slice: narrow_effect_rereview_then_dev_integration
 review_gate: exact_job_form_coverage_live_model_historical_owner_decisions
 main_promotion_performed: false
 tag_created: false
