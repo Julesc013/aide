@@ -4280,3 +4280,11 @@ source passed injected tests and independent source review, but its actual
 load is unadmitted because DLL initialization can precede path validation.
 Run combined-source tests and integration review; keep native effects and
 worker activation separate from the bounded Lite release profile.
+
+The refreshed Lite candidate from the reviewed changelog source has local
+pack, stable-asset, six-consumer and preview/draft checks complete. Review
+the exact current release-effect manifest for dev source integration, then
+qualify the live one-turn host path if the owner admits it. The ten exact
+historical message decisions still gate main promotion; release publication
+also requires current technical acceptance, remote-byte and downloaded-byte
+checks. Keep the wider AIDE programme active beyond any bounded Lite release.

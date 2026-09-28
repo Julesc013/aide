@@ -228,3 +228,20 @@ serial managed consumer jobs passed and retired scratch on the earlier
 intermediate evidence, not final acceptance of the now-changed packaged
 script. Commit these records, then generate one preview bound to that exact
 committed source before rebuilding the pack and stable bytes.
+
+The repaired preview selected `2c168ca1` and replayed without changing
+tracked files. The pack generated from preview commit `4491c2cb`, projected
+at `f22f3ec5`, passed checksums, provenance, boundary and a zero-change
+postcommit replay. Stable assets at `df372b3a` have ZIP SHA-256
+`25504c4ba50951e697a6abd62d1eb3aff648b70322beddbbeb11fc416dad92b5`
+and tar SHA-256
+`d5ea7b9b541b25615c6f45cb98ad8677c588e9e5c8553068177a8980518e68bb`.
+Their build, replay and validation passed. Six serial final-byte consumers
+passed fresh/brownfield, lifecycle, context/offline, partial, public CLI and
+forced restart checks with scratch retired; Q47/Q48 passed 36 tests. The
+source-bound release preview at `c86b7984` and local draft at `085f60c7`
+both passed validation and zero-change postcommit replays. The current effect
+manifest binds 18 successful managed receipts, 28 public CLI forms and 39
+retained command outputs. It explicitly retains the live model qualification,
+ten historical owner decisions, independent current release review, main,
+tag, publication and downloaded-byte checks as pending.

@@ -12625,3 +12625,19 @@ the D owner with retired scratch and independent dev test ACCEPT. The first
 inspector-only test was rejected as a weak effect oracle; its receipt remains
 in `AIDE-LITE-EFFICIENCY-01/evidence`. This does not qualify a live turn or a
 canonical release asset.
+
+## 2026-09-29 current-source Lite candidate refresh
+
+The changelog preview's selected revision now supplies its `source_head`.
+Independent review found and the source repaired mixed `--range`/`--to` and
+open-ended range binding; exact `46fe61d7` received source ACCEPT. A clean
+preview at `4491c2cb` supplied a rebuilt portable pack, whose checksums,
+provenance, boundary and postcommit replay passed. Local 1.0.0 assets at
+`df372b3a` passed bounded build, validation and zero-change replay. Six
+serial exact-byte consumers passed fresh/brownfield, lifecycle,
+context/offline, partial, public CLI and forced restart checks, with scratch
+retired. Current Q47/Q48 passed 36 tests. Local release preview and draft
+also validated and replayed without tracked changes. The current effect
+manifest in the release WorkUnit binds receipts, assets and 28 public forms;
+independent current release review, live one-turn model qualification, ten
+historical owner decisions, main, tag and publication remain pending.
