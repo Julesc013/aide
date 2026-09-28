@@ -12660,3 +12660,13 @@ Independent exact review accepted the local technical effect and dev
 integration. Local and remote dev fast-forwarded to `3e12aeb0`, while main
 remained at `aec53b1d`. A supplemental 46-case managed workspace suite passed.
 The full `main..dev` validator still reports ten historical message failures.
+
+## 2026-09-29 portable usage known-subtotal integrity
+
+The `job usage` parser no longer converts wholly missing token categories
+into a known zero. Completion plus failure in one stream is now a terminal
+conflict and cannot contribute to known subtotals. Two new synthetic cases
+failed against the old behavior, then the 17-case D-managed focused suite
+passed. No model was called. The accepted 1.0.0 asset effect remains pinned to
+the earlier script bytes pending independent source review and regenerated
+delivered-byte qualification.

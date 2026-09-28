@@ -219,3 +219,22 @@ exercises delivered `job run`, passed 1/1 in the D-managed job `dabd6ae6`,
 retired scratch, and received independent ACCEPT for dev test integration.
 The exact receipts and review scope are in
 `evidence/codex-delivered-admission-2026-09-29.md`.
+
+## 2026-09-29 known usage subtotal integrity
+
+Objective: prevent the portable `job usage` result from presenting missing
+token categories as zero, and from counting a stream with conflicting terminal
+events as a known subtotal. Scope: the existing importer in
+`.aide/scripts/aide_lite.py`, its focused regression file and this WorkUnit.
+First assert the current wrong subtotal on synthetic one-turn JSONL, then
+repair the calculation without introducing a parser or storage service. Run
+the affected tests through the approved D owner, obtain narrow independent
+source review and integrate only accepted source. Rebuild exact Lite assets
+later as one coherent changed-source projection; the accepted `42672db9`
+release subject and its local effect remain historical evidence, not a test
+result for changed code. No live Codex request or new workspace is needed.
+
+The red D-managed run failed exactly the two new usage integrity regressions.
+After the parser repair, all 17 focused cases passed in one D-managed job;
+both attempts retired scratch and released reservations. Freeze the source
+with the small receipt record, then request independent review of this delta.

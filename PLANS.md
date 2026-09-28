@@ -4296,3 +4296,9 @@ in a fresh disposable Git project; six final-byte consumer jobs and the
 replays were unchanged. Independent exact review accepted the local effect
 and dev integration; local and remote dev now include it. The live turn and
 ten exact historical message decisions remain before main and publication.
+
+One bounded Lite efficiency source repair addresses false zero known-token
+subtotals and contradictory terminal events in `job usage`. Two synthetic
+regressions failed before the change; all 17 focused D-managed cases passed
+after it. Review the exact source delta before integrating or rebuilding the
+current Lite assets; live Codex qualification remains separate.

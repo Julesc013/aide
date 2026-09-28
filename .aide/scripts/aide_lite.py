@@ -44815,6 +44815,9 @@ def _codex_exec_stream(path: Path) -> dict[str, object]:
     usage, gaps = _codex_exec_usage(completed.get("usage") if completed else None)
     if failed:
         gaps.append("turn_failed_or_error")
+    terminal_conflict = completed is not None and failed
+    if terminal_conflict:
+        gaps.append("terminal_conflict")
     if completed is None:
         gaps.append("terminal_usage_absent")
     ambiguous_turn = started_turns != 1 or completion_before_start
@@ -44822,7 +44825,7 @@ def _codex_exec_stream(path: Path) -> dict[str, object]:
         gaps.append("turn_boundary_ambiguous")
     return {"session_id": session, "stream_sha256": stream_hash.hexdigest(),
             "event_count": count, "duplicate_terminal_events": duplicate_terminal,
-            "terminal_status": "FAILED" if failed else "AMBIGUOUS" if ambiguous_turn else "COMPLETED" if completed else "INCOMPLETE",
+            "terminal_status": "AMBIGUOUS" if terminal_conflict or ambiguous_turn else "FAILED" if failed else "COMPLETED" if completed else "INCOMPLETE",
             "usage": usage, "coverage_gaps": sorted(set(gaps))}
 
 
@@ -44850,7 +44853,10 @@ def summarize_codex_exec_usage(paths: list[Path]) -> dict[str, object]:
     known_totals: dict[str, int | None] = {}
     for name in CODEX_EXEC_USAGE_FIELDS:
         values = [record["usage"][name] for record in records]
-        known_totals[name] = None if ambiguous_session or ambiguous_turn else sum(value for value in values if value is not None)
+        known_values = [record["usage"][name] for record in records
+                        if "terminal_conflict" not in record["coverage_gaps"]
+                        and record["usage"][name] is not None]
+        known_totals[name] = None if ambiguous_session or ambiguous_turn or not known_values else sum(known_values)
         totals[name] = known_totals[name] if not gaps and all(value is not None for value in values) else None
     return {"schema": "aide.codex-exec-usage.v1", "status": "COMPLETE" if not gaps else "PARTIAL",
             "source": "codex_exec_jsonl", "model": "unknown", "model_requests": "unknown",
