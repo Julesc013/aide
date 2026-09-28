@@ -1,14 +1,18 @@
 from __future__ import annotations
 
 import importlib.util
+import io
 import json
 import os
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
+from unittest import mock
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -478,6 +482,141 @@ class Q47ReleaseBundleTests(unittest.TestCase):
             result = self.run_cmd(root, *args)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             self.assertIn("no_publish: true", result.stdout)
+
+    def test_stable_candidate_is_distinct_replayable_and_tamper_checked(self) -> None:
+        root = self.make_repo()
+        subprocess.run(["git", "-C", str(root), "init", "--quiet"], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "user.name", "AIDE fixture"], check=True)
+        subprocess.run(["git", "-C", str(root), "config", "user.email", "fixture@example.invalid"], check=True)
+        subprocess.run(["git", "-C", str(root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", "fixture source"], check=True)
+        source_commit = aide_lite.git_commit_id(root)
+        pack_root = aide_lite.export_pack_root(root)
+        included = aide_lite.pack_manifest_list(pack_root, "included_files")
+        self.write(root, f"{aide_lite.EXPORT_PACK_PATH}/manifest.yaml", aide_lite.render_manifest(included, source_commit, False))
+        self.write(root, f"{aide_lite.EXPORT_PACK_PATH}/checksums.json", aide_lite.stable_json_text(aide_lite.build_pack_checksums(pack_root)))
+        subprocess.run(["git", "-C", str(root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", "fixture clean pack"], check=True)
+        aide_lite.build_release_bundle_outputs(root)
+        preview_zip = (root / aide_lite.RELEASE_ZIP_PATH).read_bytes()
+        subprocess.run(["git", "-C", str(root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", "fixture preview"], check=True)
+
+        with self.assertRaises(ValueError):
+            aide_lite.stable_release_paths("01.0.0")
+        manifest = aide_lite.build_stable_release_candidate(root, "1.0.0")
+        paths = aide_lite.stable_release_paths("1.0.0")
+        self.assertEqual(manifest["identity"]["source_commit"], source_commit)
+        self.assertEqual(manifest["identity"]["artifact_state"], "immutable_release_payload")
+        self.assertEqual(manifest["identity"]["intended_channel"], "stable")
+        self.assertEqual(manifest["identity"]["profile_id"], "aide-lite-local-windows")
+        self.assertEqual(aide_lite.validate_stable_release_candidate(root, "1.0.0")["result"], "PASS")
+        self.assertEqual((root / aide_lite.RELEASE_ZIP_PATH).read_bytes(), preview_zip)
+        self.assertNotEqual((root / paths["zip"]).read_bytes(), preview_zip)
+        with zipfile.ZipFile(root / paths["zip"]) as archive:
+            self.assertIn(f"{aide_lite.RELEASE_ARCHIVE_ROOT}/stable-release.json", archive.namelist())
+
+        subprocess.run(["git", "-C", str(root), "add", "-A"], check=True)
+        subprocess.run(["git", "-C", str(root), "commit", "--quiet", "-m", "fixture stable candidate"], check=True)
+        before = {key: (root / rel).read_bytes() for key, rel in paths.items()}
+        aide_lite.build_stable_release_candidate(root, "1.0.0")
+        self.assertEqual(before, {key: (root / rel).read_bytes() for key, rel in paths.items()})
+        self.assertEqual(aide_lite.git_status_short(root)[1], [])
+        (root / paths["zip"]).write_bytes(b"tampered")
+        self.assertEqual(aide_lite.validate_stable_release_candidate(root, "1.0.0")["result"], "FAIL")
+        aide_lite.build_stable_release_candidate(root, "1.0.0")
+        self.assertEqual(aide_lite.git_status_short(root)[1], [])
+
+    def test_release_validator_refuses_unsafe_members_before_extraction(self) -> None:
+        root = self.make_repo()
+        zip_path = root / aide_lite.RELEASE_ZIP_PATH
+        zip_path.parent.mkdir(parents=True, exist_ok=True)
+        with zipfile.ZipFile(zip_path, "w") as archive:
+            archive.writestr("../outside.txt", "must not extract")
+        tar_path = root / aide_lite.RELEASE_TAR_GZ_PATH
+        with tarfile.open(tar_path, "w:gz") as archive:
+            member = tarfile.TarInfo(f"{aide_lite.RELEASE_ARCHIVE_ROOT}/manifest.yaml")
+            member.type = tarfile.SYMTYPE
+            member.linkname = "../../outside.txt"
+            archive.addfile(member)
+        with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+            zip_result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_ZIP_PATH)
+            tar_result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_TAR_GZ_PATH)
+        self.assertEqual(zip_result["result"], "FAIL")
+        self.assertTrue(zip_result["forbidden_paths"])
+        self.assertEqual(tar_result["result"], "FAIL")
+        self.assertTrue(any("non-regular" in item for item in tar_result["problems"]))
+
+    def test_release_validator_rejects_windows_aliases_and_ads_before_extraction(self) -> None:
+        root = self.make_repo()
+        required = [f"{aide_lite.RELEASE_ARCHIVE_ROOT}/{rel}" for rel in aide_lite.RELEASE_REQUIRED_PACK_FILES]
+        manifest = f"{aide_lite.RELEASE_ARCHIVE_ROOT}/manifest.yaml"
+        cases = (
+            ("ads", f"{manifest}:payload", "forbidden archive paths"),
+            ("case", manifest.upper(), "Windows case-alias"),
+            ("trailing_dot", f"{manifest}.", "forbidden archive paths"),
+        )
+        for kind, alias, expected in cases:
+            for archive_kind in ("zip", "tar"):
+                with self.subTest(kind=kind, archive=archive_kind):
+                    archive_rel = aide_lite.RELEASE_ZIP_PATH if archive_kind == "zip" else aide_lite.RELEASE_TAR_GZ_PATH
+                    archive_path = root / archive_rel
+                    archive_path.parent.mkdir(parents=True, exist_ok=True)
+                    if archive_kind == "zip":
+                        with zipfile.ZipFile(archive_path, "w") as archive:
+                            for name in [*required, alias]:
+                                archive.writestr(name, b"safe")
+                    else:
+                        with tarfile.open(archive_path, "w:gz") as archive:
+                            for name in [*required, alias]:
+                                data = b"safe"
+                                member = tarfile.TarInfo(name)
+                                member.size = len(data)
+                                archive.addfile(member, io.BytesIO(data))
+                    with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+                        result = aide_lite.validate_release_archive(root, archive_rel)
+                    self.assertEqual(result["result"], "FAIL")
+                    self.assertTrue(any(expected in item for item in result["problems"]))
+
+    def test_release_validator_stops_tar_member_scan_at_bound(self) -> None:
+        root = self.make_repo()
+        archive_path = root / aide_lite.RELEASE_TAR_GZ_PATH
+        archive_path.parent.mkdir(parents=True, exist_ok=True)
+        with tarfile.open(archive_path, "w:gz") as archive:
+            for number in range(3):
+                name = f"{aide_lite.RELEASE_ARCHIVE_ROOT}/extra-{number}.txt"
+                member = tarfile.TarInfo(name)
+                member.size = 1
+                archive.addfile(member, io.BytesIO(b"x"))
+        with mock.patch.object(aide_lite, "RELEASE_VALIDATION_MAX_MEMBERS", 2):
+            with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+                result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_TAR_GZ_PATH)
+        self.assertEqual(result["result"], "FAIL")
+        self.assertTrue(any("member count exceeds validation limit" in item for item in result["problems"]))
+
+    def test_release_validator_refuses_oversized_pax_before_metadata_parse(self) -> None:
+        root = self.make_repo()
+        archive_path = root / aide_lite.RELEASE_TAR_GZ_PATH
+        archive_path.parent.mkdir(parents=True, exist_ok=True)
+        with tarfile.open(archive_path, "w:gz") as archive:
+            member = tarfile.TarInfo("pax-extended-header")
+            member.type = tarfile.XHDTYPE
+            member.size = 2048
+            archive.addfile(member, io.BytesIO(b"x" * member.size))
+        with mock.patch.object(aide_lite, "RELEASE_VALIDATION_MAX_TAR_METADATA_BYTES", 1024):
+            with mock.patch.object(tarfile.TarInfo, "_proc_pax", side_effect=AssertionError("PAX metadata parsed")):
+                with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+                    result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_TAR_GZ_PATH)
+        self.assertEqual(result["result"], "FAIL")
+        self.assertTrue(any("tar metadata exceeds validation limit" in item for item in result["problems"]))
+
+    def test_stable_cli_refuses_portable_consumer_without_managed_source_runner(self) -> None:
+        root = self.make_repo()
+        for command in ("stable-build", "stable-validate"):
+            result = self.run_cmd(root, "release", command, "--version", "1.0.0")
+            self.assertEqual(result.returncode, 1)
+            self.assertIn("source-only managed release runner required", result.stdout)
+        self.assertFalse((root / aide_lite.STABLE_RELEASE_DIR).exists())
 
 
 if __name__ == "__main__":

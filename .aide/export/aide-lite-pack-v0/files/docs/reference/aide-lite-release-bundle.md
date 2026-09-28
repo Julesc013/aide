@@ -57,6 +57,33 @@ py -3 .aide/scripts/aide_lite.py release publication-boundary
 Those commands generate review material only. They do not create tags, call
 GitHub APIs, upload assets, or publish releases.
 
+## Separate First-Stable Candidate
+
+The bounded release-effect WorkUnit adds a separate candidate path. From a
+clean source checkout with a validated, clean-provenance export pack, run the
+commands through the owner-configured managed D runner:
+
+```text
+py -3 -B .aide/scripts/aide_lite.py release stable-build --version 1.0.0
+py -3 -B .aide/scripts/aide_lite.py release stable-validate --version 1.0.0
+```
+
+`stable-build` permits only the conditional first stable `1.0.0` candidate;
+the actual version still depends on fresh tag/release history at freeze. It
+does not decide whether to publish. The command writes versioned ZIP/tar,
+an immutable asset manifest and SHA256SUMS under `.aide/release/stable/`,
+leaving Q47/Q48 `dist/` previews untouched. Each archive retains the portable
+pack root and adds `stable-release.json` with version, profile, source commit
+and tree, public CLI forms and version-policy digest. Its pack checksums cover
+the marker. Validation checks archive safety and member identity before any
+extraction; it rejects nonregular, escaping or oversized members.
+
+These files are frozen **candidate bytes**, not evidence of publication.
+The final supported Windows environment, warning disposition, consumer
+qualification, independent release `ACCEPT`, main/tag/publication and
+downloaded-byte verification belong to the separate release-effect record.
+Do not upload the Q47/Q48 preview metadata as stable release evidence.
+
 ## Artifact Layout
 
 Release artifacts are written under:

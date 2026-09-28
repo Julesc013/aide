@@ -17449,6 +17449,11 @@ RELEASE_BUNDLE_NAME = "aide-lite-pack-v0"
 RELEASE_ARCHIVE_ROOT = "aide-lite-pack-v0"
 RELEASE_GENERATED_BY = "aide-lite release bundle q47"
 RELEASE_PUBLICATION_STATUS = "local_preview_no_publish"
+RELEASE_VALIDATION_MAX_MEMBERS = 10_000
+RELEASE_VALIDATION_MAX_ARCHIVE_BYTES = 128 * 1024 * 1024
+RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
+RELEASE_VALIDATION_MAX_TAR_METADATA_BYTES = 1024 * 1024
+RELEASE_VALIDATION_MAX_TAR_STREAM_BYTES = 640 * 1024 * 1024
 RELEASE_REQUIRED_PACK_FILES = [
     "manifest.yaml",
     "checksums.json",
@@ -17642,16 +17647,33 @@ def release_pack_status(repo_root: Path) -> tuple[str, list[str]]:
     return provenance_status, []
 
 
-def release_forbidden_archive_path(name: str) -> bool:
-    rel = normalize_rel(name).lower()
-    parts = [part for part in rel.split("/") if part]
-    if rel.startswith("/") or ".." in parts:
+def release_forbidden_archive_path(name: str | Path) -> bool:
+    # Reject Windows aliases and ADS before archive extraction. A later rglob
+    # cannot observe an NTFS alternate stream written through `file:stream`.
+    if isinstance(name, Path):
+        name = name.as_posix()
+    if not name or "\\" in name or name.startswith("/") or any(ord(char) < 32 for char in name):
         return True
-    if ".git" in parts or ".aide.local" in parts:
+    parts = name.split("/")
+    if any(not part or part in {".", ".."} or part.endswith((".", " ")) for part in parts):
         return True
-    if any(part == ".env" for part in parts):
+    for part in parts:
+        if any(char in '<>:"|?*' for char in part):
+            return True
+        stem = part.split(".", 1)[0].casefold()
+        if stem in {"con", "prn", "aux", "nul", "com¹", "com²", "com³", "lpt¹", "lpt²", "lpt³"}:
+            return True
+        if re.fullmatch(r"(?:com|lpt)[1-9]", stem) or re.search(r"~[0-9]+(?:\.|$)", part):
+            return True
+    rel = name.casefold()
+    if Path(name).is_absolute():
         return True
-    if "secrets" in parts:
+    folded_parts = [part.casefold() for part in parts]
+    if ".git" in folded_parts or ".aide.local" in folded_parts:
+        return True
+    if ".env" in folded_parts:
+        return True
+    if "secrets" in folded_parts:
         return True
     prompt_response_markers = [
         "raw_prompt",
@@ -18110,13 +18132,77 @@ def validate_release_asset_index(repo_root: Path) -> tuple[bool, list[str]]:
 
 
 def archive_member_names(archive_path: Path) -> list[str]:
+    names, _unsafe, _uncompressed = inspect_release_archive_members(archive_path)
+    return sorted(names)
+
+
+class ReleaseBoundedTarInfo(tarfile.TarInfo):
+    def _proc_member(self, archive: tarfile.TarFile) -> tarfile.TarInfo:
+        # TarInfo processes PAX/GNU metadata before yielding a member. Refuse
+        # oversized declarations before its parser allocates their contents.
+        if self.type == tarfile.GNUTYPE_SPARSE:
+            raise tarfile.ReadError("archive sparse metadata rejected")
+        if self.type in {
+            tarfile.XHDTYPE, tarfile.XGLTYPE, tarfile.SOLARIS_XHDTYPE,
+            tarfile.GNUTYPE_LONGNAME, tarfile.GNUTYPE_LONGLINK,
+        } and self.size > RELEASE_VALIDATION_MAX_TAR_METADATA_BYTES:
+            raise tarfile.ReadError("archive tar metadata exceeds validation limit")
+        return super()._proc_member(archive)
+
+
+class ReleaseBoundedTarReader:
+    def __init__(self, source: object) -> None:
+        self.source = source
+        self.bytes_read = 0
+
+    def read(self, size: int = -1) -> bytes:
+        if size < 0 or size > RELEASE_VALIDATION_MAX_TAR_STREAM_BYTES - self.bytes_read:
+            raise ValueError("archive decompressed tar stream exceeds validation limit")
+        data = self.source.read(size)
+        self.bytes_read += len(data)
+        return data
+
+
+def inspect_release_archive_members(archive_path: Path) -> tuple[list[str], list[str], int]:
+    if archive_path.stat().st_size > RELEASE_VALIDATION_MAX_ARCHIVE_BYTES:
+        raise ValueError("archive compressed size exceeds validation limit")
+    names: list[str] = []
+    unsafe: list[str] = []
+    uncompressed = 0
     if archive_path.name.endswith(".zip"):
+        # ZIP central-directory parsing is bounded by the compressed-file cap.
         with zipfile.ZipFile(archive_path, "r") as archive:
-            return sorted(archive.namelist())
-    if archive_path.name.endswith(".tar.gz"):
-        with tarfile.open(archive_path, "r:gz") as archive:
-            return sorted(member.name for member in archive.getmembers())
-    return []
+            entries = (
+                (info.filename, info.file_size, info.is_dir() or stat.S_IFMT(info.external_attr >> 16) not in {0, stat.S_IFREG})
+                for info in archive.infolist()
+            )
+            for name, size, special in entries:
+                names.append(name)
+                if len(names) > RELEASE_VALIDATION_MAX_MEMBERS:
+                    raise ValueError("archive member count exceeds validation limit")
+                if size < 0 or size > RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES - uncompressed:
+                    raise ValueError("archive uncompressed size exceeds validation limit")
+                uncompressed += size
+                if special:
+                    unsafe.append(name)
+    elif archive_path.name.endswith(".tar.gz"):
+        # Stream headers and stop before decompressing a declared over-limit
+        # member; getmembers() would parse the entire untrusted archive first.
+        with gzip.open(archive_path, "rb") as decompressed:
+            bounded = ReleaseBoundedTarReader(decompressed)
+            with tarfile.open(fileobj=bounded, mode="r|", tarinfo=ReleaseBoundedTarInfo) as archive:
+                for member in archive:
+                    names.append(member.name)
+                    if len(names) > RELEASE_VALIDATION_MAX_MEMBERS:
+                        raise ValueError("archive member count exceeds validation limit")
+                    if member.size < 0 or member.size > RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES - uncompressed:
+                        raise ValueError("archive uncompressed size exceeds validation limit")
+                    uncompressed += member.size
+                    if not member.isfile() or member.sparse is not None:
+                        unsafe.append(member.name)
+    else:
+        raise ValueError("unsupported release archive format")
+    return names, unsafe, uncompressed
 
 
 def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, object]:
@@ -18134,14 +18220,23 @@ def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, obj
         result["problems"] = [f"archive missing: {archive_rel}"]
         return result
     try:
-        names = archive_member_names(archive_path)
-    except (OSError, zipfile.BadZipFile, tarfile.TarError) as exc:
+        names, unsafe, _uncompressed = inspect_release_archive_members(archive_path)
+    except (OSError, ValueError, zipfile.BadZipFile, tarfile.TarError) as exc:
         result["problems"] = [f"archive read failed: {exc}"]
         return result
     forbidden = [name for name in names if release_forbidden_archive_path(name)]
     if forbidden:
         problems.append("forbidden archive paths: " + ", ".join(forbidden[:5]))
     root_prefix = f"{RELEASE_ARCHIVE_ROOT}/"
+    outside_root = [name for name in names if not name.startswith(root_prefix)]
+    if outside_root:
+        problems.append("archive members outside pack root: " + ", ".join(outside_root[:5]))
+    if len(names) != len(set(names)):
+        problems.append("duplicate archive member names")
+    if len(names) != len({name.casefold() for name in names}):
+        problems.append("Windows case-alias archive members")
+    if unsafe:
+        problems.append("archive non-regular members rejected: " + ", ".join(unsafe[:5]))
     root_present = any(name.startswith(root_prefix) for name in names)
     if not root_present:
         problems.append(f"archive root missing: {RELEASE_ARCHIVE_ROOT}/")
@@ -18152,6 +18247,14 @@ def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, obj
             required_present.append(rel)
         else:
             problems.append(f"archive missing required file: {member}")
+    if problems:
+        result.update({
+            "root_present": root_present,
+            "required_files_present": required_present,
+            "forbidden_paths": forbidden,
+            "problems": problems,
+        })
+        return result
     with tempfile.TemporaryDirectory(prefix="aide-release-validate-") as temp_name:
         temp_root = Path(temp_name)
         try:
@@ -18160,9 +18263,6 @@ def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, obj
                     archive.extractall(temp_root)
             else:
                 with tarfile.open(archive_path, "r:gz") as archive:
-                    for member in archive.getmembers():
-                        if member.issym() or member.islnk():
-                            problems.append(f"archive link member rejected: {member.name}")
                     archive.extractall(temp_root)
         except (OSError, zipfile.BadZipFile, tarfile.TarError) as exc:
             problems.append(f"fixture extraction failed: {exc}")
@@ -18481,6 +18581,243 @@ def command_release_bundle(args: argparse.Namespace) -> int:
     print("github_release_created: false")
     print("upload_performed: false")
     return 1 if validation.get("result") == "FAIL" else 0
+
+
+STABLE_RELEASE_DIR = ".aide/release/stable"
+STABLE_RELEASE_PROFILE = "aide-lite-local-windows"
+
+
+def stable_release_paths(version: str) -> dict[str, str]:
+    if not re.fullmatch(r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)", version):
+        raise ValueError("stable release version must be MAJOR.MINOR.PATCH without leading zeros")
+    base = f"{STABLE_RELEASE_DIR}/aide-lite-v{version}"
+    return {
+        "zip": f"{base}.zip",
+        "tar_gz": f"{base}.tar.gz",
+        "manifest": f"{base}.manifest.json",
+        "sha256sums": f"{base}.SHA256SUMS.txt",
+    }
+
+
+def stable_release_cli_forms(repo_root: Path) -> list[str]:
+    policy = read_text(repo_root / ".aide/policies/release-versioning.yaml")
+    lines = policy.splitlines()
+    try:
+        start = lines.index("  candidate_public_cli:") + 1
+    except ValueError as exc:
+        raise ValueError("release versioning policy lacks candidate_public_cli") from exc
+    forms: list[str] = []
+    for line in lines[start:]:
+        if line.startswith("    - "):
+            forms.append(line[6:].strip())
+        else:
+            break
+    if len(forms) < 20 or len(forms) != len(set(forms)):
+        raise ValueError("release versioning candidate CLI list is missing or duplicated")
+    return forms
+
+
+def stable_release_source_tree(repo_root: Path, commit: str) -> str:
+    if not re.fullmatch(r"[0-9a-f]{40}", commit):
+        raise ValueError("stable release pack source commit is not a full Git object")
+    result = subprocess.run(
+        ["git", "-C", str(repo_root), "show", "-s", "--format=%T", commit],
+        check=False, capture_output=True, text=True, encoding="utf-8",
+    )
+    tree = result.stdout.strip()
+    if result.returncode != 0 or not re.fullmatch(r"[0-9a-f]{40}", tree):
+        raise ValueError("stable release pack source tree is unavailable")
+    return tree
+
+
+def build_stable_release_candidate(repo_root: Path, version: str) -> dict[str, object]:
+    paths = stable_release_paths(version)
+    if version != "1.0.0":
+        raise ValueError("this first-stable builder requires 1.0.0 and an empty predecessor matrix")
+    existing_tag = subprocess.run(
+        ["git", "-C", str(repo_root), "tag", "--list", f"aide-lite-v{version}"],
+        check=False, capture_output=True, text=True, encoding="utf-8",
+    )
+    if existing_tag.returncode != 0 or existing_tag.stdout.strip():
+        raise ValueError("stable release tag already exists or local tag state is unavailable")
+    output_root = repo_root / STABLE_RELEASE_DIR
+    for path in (repo_root / ".aide", repo_root / ".aide/release", output_root):
+        if path.exists() and (path.is_symlink() or bool(getattr(path, "is_junction", lambda: False)())):
+            raise ValueError("stable release output path is redirected")
+    allowed_outputs = set(paths.values())
+    if output_root.exists():
+        for path in output_root.iterdir():
+            if (not path.is_file() or path.is_symlink()
+                    or bool(getattr(path, "is_junction", lambda: False)())
+                    or path.stat().st_nlink != 1
+                    or normalize_rel(path.relative_to(repo_root)) not in allowed_outputs):
+                raise ValueError("stable release output contains unknown or redirected material")
+    git_ok, changes, _error = git_status_short(repo_root)
+    if not git_ok or any(normalize_rel(path).rstrip("/") not in (allowed_outputs | {STABLE_RELEASE_DIR}) for _status, path in changes):
+        raise ValueError("stable release build requires clean source outside its exact output files")
+    pack_status, problems = release_pack_status(repo_root)
+    if problems or pack_status not in {"PASS", "PASS_SOURCE_ANCESTOR"}:
+        raise ValueError("stable release source pack failed clean provenance: " + "; ".join(problems[:5]))
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    scalars = pack_manifest_scalars(pack_root)
+    if scalars.get("source_dirty_state") != "false":
+        raise ValueError("stable release source pack records dirty source")
+    source_commit = scalars.get("source_commit", "")
+    source_tree = stable_release_source_tree(repo_root, source_commit)
+    policy_path = repo_root / ".aide/policies/release-versioning.yaml"
+    marker = {
+        "schema_version": "aide.stable-release-identity.v1",
+        "artifact_state": "immutable_release_payload",
+        "intended_channel": "stable",
+        "release_axis": "aide_lite_portable_package",
+        "version": version,
+        "tag": f"aide-lite-v{version}",
+        "profile_id": STABLE_RELEASE_PROFILE,
+        "support_tier_candidate": "T3",
+        "support_mode": "companion",
+        "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
+        "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
+        "predecessor_matrix": [],
+        "public_cli_forms": stable_release_cli_forms(repo_root),
+        "version_policy_sha256": sha256_file(policy_path),
+        "source_repo": scalars.get("source_repo", ""),
+        "source_commit": source_commit,
+        "source_tree": source_tree,
+        "source_pack_checksums_sha256": sha256_file(pack_root / "checksums.json"),
+    }
+    output_root.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="aide-stable-pack-") as temp_name:
+        projected = Path(temp_name) / RELEASE_ARCHIVE_ROOT
+        build_release_pack_projection(pack_root, projected)
+        write_text_if_changed(projected / "stable-release.json", stable_json_text(marker))
+        write_text_if_changed(projected / "checksums.json", stable_json_text(build_pack_checksums(projected)))
+        checksum_ok, checksum_problems = validate_pack_checksums(projected)
+        if not checksum_ok:
+            raise ValueError("stable projected pack checksum failure: " + "; ".join(checksum_problems[:5]))
+        write_release_zip(projected, repo_root / paths["zip"])
+        write_release_tar_gz(projected, repo_root / paths["tar_gz"])
+    archives = {
+        key: {"path": paths[key], "sha256": sha256_file(repo_root / paths[key]), "size_bytes": (repo_root / paths[key]).stat().st_size}
+        for key in ("zip", "tar_gz")
+    }
+    manifest = {
+        "schema_version": "aide.stable-release-candidate.v1",
+        "status": "frozen_release_assets",
+        "identity": marker,
+        "archives": archives,
+        "review_required": "independent technical ACCEPT for exact release and effect",
+        "publication_evidence": "separate exact effect record required",
+    }
+    write_text_if_changed(repo_root / paths["manifest"], stable_json_text(manifest))
+    checksum_lines = [
+        f"{sha256_file(repo_root / paths[key])}  {Path(paths[key]).name}"
+        for key in ("zip", "tar_gz", "manifest")
+    ]
+    write_text_if_changed(repo_root / paths["sha256sums"], "\n".join(checksum_lines) + "\n")
+    result = validate_stable_release_candidate(repo_root, version)
+    if result["result"] != "PASS":
+        raise ValueError("stable release candidate validation failed: " + "; ".join(result["problems"][:5]))
+    return manifest
+
+
+def validate_stable_release_candidate(repo_root: Path, version: str) -> dict[str, object]:
+    paths = stable_release_paths(version)
+    problems: list[str] = []
+    try:
+        manifest = json.loads(read_text(repo_root / paths["manifest"]))
+        identity = manifest["identity"]
+        archives = manifest["archives"]
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        return {"result": "FAIL", "problems": [f"stable manifest unavailable or malformed: {exc}"]}
+    if not isinstance(manifest, dict) or not isinstance(identity, dict) or not isinstance(archives, dict):
+        return {"result": "FAIL", "problems": ["stable manifest fields have invalid types"]}
+    if manifest.get("status") != "frozen_release_assets" or identity.get("version") != version:
+        problems.append("stable candidate identity or status mismatch")
+    if identity.get("profile_id") != STABLE_RELEASE_PROFILE or identity.get("artifact_state") != "immutable_release_payload" or identity.get("intended_channel") != "stable":
+        problems.append("stable profile identity mismatch")
+    if identity.get("public_cli_forms") != stable_release_cli_forms(repo_root):
+        problems.append("stable public CLI forms differ from version policy")
+    if identity.get("version_policy_sha256") != sha256_file(repo_root / ".aide/policies/release-versioning.yaml"):
+        problems.append("stable version policy digest mismatch")
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    if identity.get("source_commit") != pack_manifest_scalars(pack_root).get("source_commit"):
+        problems.append("stable source commit differs from current validated pack")
+    try:
+        if identity.get("source_tree") != stable_release_source_tree(repo_root, identity.get("source_commit", "")):
+            problems.append("stable source tree mismatch")
+    except ValueError as exc:
+        problems.append(str(exc))
+    source_checksums_path = pack_root / "checksums.json"
+    if not source_checksums_path.is_file() or identity.get("source_pack_checksums_sha256") != sha256_file(source_checksums_path):
+        problems.append("stable source pack checksum digest mismatch")
+    pack_status, pack_problems = release_pack_status(repo_root)
+    if pack_problems or pack_status not in {"PASS", "PASS_SOURCE_ANCESTOR"}:
+        problems.append("stable source pack provenance no longer passes")
+    for key in ("zip", "tar_gz"):
+        path = repo_root / paths[key]
+        recorded = archives.get(key, {}) if isinstance(archives, dict) else {}
+        if not path.is_file() or recorded.get("path") != paths[key]:
+            problems.append(f"stable {key} asset missing or path mismatch")
+            continue
+        if recorded.get("sha256") != sha256_file(path) or recorded.get("size_bytes") != path.stat().st_size:
+            problems.append(f"stable {key} asset digest or size mismatch")
+        archive_result = validate_release_archive(repo_root, paths[key])
+        if archive_result["result"] != "PASS":
+            problems.extend(f"stable {key}: {item}" for item in archive_result["problems"])
+        marker_name = f"{RELEASE_ARCHIVE_ROOT}/stable-release.json"
+        try:
+            if key == "zip":
+                with zipfile.ZipFile(path) as archive:
+                    embedded = json.loads(archive.read(marker_name))
+            else:
+                with tarfile.open(path, "r:gz") as archive:
+                    member = archive.extractfile(marker_name)
+                    if member is None:
+                        raise ValueError("stable identity member missing")
+                    embedded = json.loads(member.read())
+            if embedded != identity:
+                problems.append(f"stable {key} embedded identity mismatch")
+        except (OSError, ValueError, KeyError, zipfile.BadZipFile, tarfile.TarError) as exc:
+            problems.append(f"stable {key} identity unreadable: {exc}")
+    expected_checksums = "\n".join(
+        f"{sha256_file(repo_root / paths[key])}  {Path(paths[key]).name}"
+        for key in ("zip", "tar_gz", "manifest") if (repo_root / paths[key]).is_file()
+    ) + "\n"
+    if not (repo_root / paths["sha256sums"]).is_file() or read_text(repo_root / paths["sha256sums"]) != expected_checksums:
+        problems.append("stable SHA256SUMS mismatch")
+    return {"result": "FAIL" if problems else "PASS", "problems": problems, "manifest": paths["manifest"]}
+
+
+def command_release_stable_build(args: argparse.Namespace) -> int:
+    if not (args.repo_root / "core/execution/managed_workspace.py").is_file():
+        print("result: REFUSED\nsource-only managed release runner required")
+        return 1
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
+    try:
+        manifest = build_stable_release_candidate(args.repo_root, args.version)
+    except (OSError, ValueError) as exc:
+        print(f"stable release candidate: FAIL\nerror: {exc}")
+        return 1
+    print("stable release candidate: PASS")
+    print(f"version: {args.version}")
+    print(f"source_commit: {manifest['identity']['source_commit']}")
+    print("published: false")
+    return 0
+
+
+def command_release_stable_validate(args: argparse.Namespace) -> int:
+    if not (args.repo_root / "core/execution/managed_workspace.py").is_file():
+        print("result: REFUSED\nsource-only managed release runner required")
+        return 1
+    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+        return 1
+    result = validate_stable_release_candidate(args.repo_root, args.version)
+    print(f"stable release candidate: {result['result']}")
+    for problem in result["problems"]:
+        print(f"- FAIL {problem}")
+    print("published: false")
+    return 0 if result["result"] == "PASS" else 1
 
 
 def command_release_validate(args: argparse.Namespace) -> int:
@@ -44536,6 +44873,12 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     release_parser = subparsers.add_parser("release")
     release_subparsers = release_parser.add_subparsers(dest="release_command", required=True)
     release_subparsers.add_parser("bundle").set_defaults(handler=command_release_bundle)
+    stable_build_parser = release_subparsers.add_parser("stable-build")
+    stable_build_parser.add_argument("--version", required=True)
+    stable_build_parser.set_defaults(handler=command_release_stable_build)
+    stable_validate_parser = release_subparsers.add_parser("stable-validate")
+    stable_validate_parser.add_argument("--version", required=True)
+    stable_validate_parser.set_defaults(handler=command_release_stable_validate)
     release_subparsers.add_parser("validate").set_defaults(handler=command_release_validate)
     release_subparsers.add_parser("status").set_defaults(handler=command_release_status)
     release_subparsers.add_parser("assets").set_defaults(handler=command_release_assets)
