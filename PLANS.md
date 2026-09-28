@@ -4238,3 +4238,8 @@ first Lite increment at `f30bbad2` has accepted source review and local D-runner
 evidence for quiet deterministic job waiting and bounded outcome views. Next
 qualify exact exported Lite bytes, then a supported host binding and actual
 usage/outcome accounting. No new release claim follows from this first slice.
+
+The next source increment `fe8bca8b` adds bounded import of supplied Codex
+`exec --json` usage. Independent review accepted the repaired turn counting;
+the first version was rejected and remains visible. Qualify a real host stream
+and pause-aware dispatch before claiming measured savings or release readiness.

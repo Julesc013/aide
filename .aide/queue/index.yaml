@@ -3787,7 +3787,7 @@ items:
     description: Expose exact rollback partial continuation through the reviewed importer recovery path.
   - id: AIDE-LITE-EFFICIENCY-01
     status: running
-    planning_state: source_review_accepted_export_fixture_passed_host_pending
+    planning_state: usage_import_review_accepted_real_host_pending
     result: PENDING
     title: Make AIDE Lite wait and report bounded job outcomes without model polling
     task: .aide/queue/AIDE-LITE-EFFICIENCY-01/task.yaml

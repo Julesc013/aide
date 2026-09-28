@@ -17,6 +17,9 @@ Campaign maintainer execution uses the explicit bounded job interface in
 [AIDE Lite Test Runner](docs/reference/aide-lite-test-runner.md). Machine
 placement remains local; missing pools refuse allocation. Resource cleanup and
 exact receipts live in `.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/`.
+The runner guide also documents Lite's bounded job observation and Codex JSONL
+usage import. Their local source and fixture acceptance does not establish
+host-wide dispatch control, billing savings or a qualified release archive.
 
 The customization task preserves the predecessor-feedback repair's exact
 source review and focused bounded results. Final pack support requires the

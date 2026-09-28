@@ -12526,3 +12526,11 @@ D job failed on an incorrect test assumption that portable `core` was absent;
 the delivered observer itself returned PASS. Test-only `45c143de` removed that
 assertion, and a second bounded D job passed 1/1 with scratch retired. Exact
 attempt receipts and the release boundary are in the WorkUnit evidence.
+
+Lite now imports bounded Codex `exec --json` usage without a model call or raw
+message echo. The first source `728e61a2` passed its tests but independent
+review found ambiguous turn undercounting. Fix-forward `fe8bca8b` requires one
+turn start, marks ambiguity partial and withholds aggregate totals. Its 11-case
+managed suite and extracted-pack consumer case passed, with scratch retired;
+independent delta review accepted the source. The exact receipts and missing
+real-host/release evidence are in the efficiency WorkUnit.

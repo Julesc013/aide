@@ -422,3 +422,9 @@ savings. Qualify exact exported bytes, then pause-aware host dispatch and
 normalized usage/outcome accounting before an efficiency-qualified release.
 The frozen 1.0.0 acceptance does not cover these changed bytes; the ten exact
 historical-message decisions still gate its old main-promotion path.
+
+The follow-on Lite Codex `exec --json` usage importer at `fe8bca8b` passed
+11 focused cases and one extracted-pack case under the bounded D runner and
+received independent superseding-delta ACCEPT after a rejected first version
+was repaired. This is source and fixture evidence; real host dispatch, usage
+coverage and a new release freeze remain open.

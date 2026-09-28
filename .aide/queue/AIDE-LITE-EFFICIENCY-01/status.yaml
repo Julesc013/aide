@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-EFFICIENCY-01
 status: running
-planning_state: source_review_accepted_export_fixture_passed_host_pending
+planning_state: usage_import_review_accepted_real_host_pending
 result: PENDING
 updated_at: 2026-09-29
 source_base: 190d3f5c2f76143657514d3cb50100622b987608
@@ -10,3 +10,5 @@ first_slice: read_only_wait_bounded_result_real_job
 source_review: ACCEPT_f30bbad2_local_effect_only
 release_inclusion: pending_export_host_and_release_qualification
 export_fixture: PASS_45c143de_not_release_archive
+usage_import_review: ACCEPT_fe8bca8b_source_only
+actual_host_usage: pending

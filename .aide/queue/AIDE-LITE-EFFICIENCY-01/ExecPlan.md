@@ -68,3 +68,10 @@ failed and malformed synthetic streams under the D runner. This is a host
 usage-import boundary, not permission to dispatch or a claim that every Codex
 or Work request passes through AIDE. Exact source review and an actual supported
 host binding remain gates.
+
+Source `728e61a2` passed its first tests but received independent
+REQUEST_CHANGES for missing turn-start accounting. Superseding `fe8bca8b`
+passed 11 focused cases and one extracted-pack case under the D runner;
+independent delta review returned ACCEPT. Exact receipts and limits are in
+`evidence/codex-usage-import-qualification-2026-09-29.md`. Next obtain a real
+host stream and bind pause-aware dispatch before claiming host-level savings.
