@@ -1,0 +1,270 @@
+{
+  "schema_version": "aide.main-promotion-historical-decision-request.v1",
+  "programme": "AIDE-CONVERGENCE-AND-DELIVERY-01",
+  "promotion_range": "main..dev",
+  "main_before": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+  "dev_after": "719abf66da58582e27206e1f1bdfc1fe3a26ef51",
+  "range_result": "FAIL",
+  "failed_commit_count": 10,
+  "already_accepted_disposition_count": 3,
+  "request_scope": "exact historical commit-message nonconformance only; no product/native/hosted/release approval",
+  "records": [
+    {
+      "commit": "0e76df9e10c0fa6d80b363c0990224ef45853062",
+      "tree": "30748cd87ce52c996b733971eefdbfedc211348f",
+      "parents": [
+        "2a44f17eb7232757133df549ac6fc519d535e71b"
+      ],
+      "canonical_message_sha256": "cfc3fb5f81dcbb36de6c664d5b3d308b3fb054607b6410657233bcb0b0cb3437",
+      "subject": "chore(codex): remove repository execution pins",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "0e76df9-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    },
+    {
+      "commit": "91efe8156c4132cc8178e330b43d01db1a678d8c",
+      "tree": "530481b8dcd61318f5753fca9939a0c20b8cac6a",
+      "parents": [
+        "0e76df9e10c0fa6d80b363c0990224ef45853062"
+      ],
+      "canonical_message_sha256": "5fbfd9bd4eae02e42b0eaa75ea4817d211bdf2bbb077a5eb8ba2ff25a37b4c8e",
+      "subject": "audit(queue): close Codex neutrality checkpoint",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "91efe81-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    },
+    {
+      "commit": "4682413df7975b76edb35e783364702c4f0e7e5a",
+      "tree": "80c1b5b241a64eac3e38e0514d439593dafc5642",
+      "parents": [
+        "91efe8156c4132cc8178e330b43d01db1a678d8c"
+      ],
+      "canonical_message_sha256": "4a851634adae1749764f63c16f74cc662a4f8afe457c56e2c3e7f8a385e58143",
+      "subject": "chore(repo): admit hygiene and spec convergence",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "4682413-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    },
+    {
+      "commit": "51cbce9de0eb7d516e4192b34e1b6e0e892275dc",
+      "tree": "40338d8960dca23f1b1e8f3255bbd7e802491549",
+      "parents": [
+        "4682413df7975b76edb35e783364702c4f0e7e5a"
+      ],
+      "canonical_message_sha256": "47dc2600b0f21f2147235a91ec5be180963a718d8766179442a438077bd733eb",
+      "subject": "docs(specs): adopt control-plane foundation",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "51cbce9-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    },
+    {
+      "commit": "386195afd08e5798e227e208a601fb77f4ca0298",
+      "tree": "6c2283af9e3a6b2b3860cdb1f5048bea37c4ce76",
+      "parents": [
+        "51cbce9de0eb7d516e4192b34e1b6e0e892275dc"
+      ],
+      "canonical_message_sha256": "f173d9d79398afa77f13c83d4a26e75db8b49ed28c1514682c58f3135c733717",
+      "subject": "audit(runtime): checkpoint unique broker receipts",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "386195a-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    },
+    {
+      "commit": "477764b0eb8847cc166922329f6eccbb8c0dfcca",
+      "tree": "d66a2e9d4eda82a0ad33c4571fa941e49e9c1729",
+      "parents": [
+        "386195afd08e5798e227e208a601fb77f4ca0298"
+      ],
+      "canonical_message_sha256": "76bb96a9065b0be676cba39785587ac4b10df9e0ad6f621fa5eec6f2afa79c8a",
+      "subject": "audit(facman): checkpoint restartable entry evidence",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "477764b-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    },
+    {
+      "commit": "e3663fe198265a2611dbf7beb4c92d7f93d2a4b3",
+      "tree": "0695cc8ffc8a8be72fbbdfd1a1ca616f3c7ef697",
+      "parents": [
+        "477764b0eb8847cc166922329f6eccbb8c0dfcca"
+      ],
+      "canonical_message_sha256": "10da3e2266eabfbe41da078a3409afd42b98aff35bb11921940080223f952faa",
+      "subject": "audit(runtime): checkpoint isolated-host evidence",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "e3663fe-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    },
+    {
+      "commit": "c4d0305e6b933c4264ddf32eb0e468f9b5dd92f3",
+      "tree": "4a8ce98292bd55f6178c4a98a28784df5122672d",
+      "parents": [
+        "e3663fe198265a2611dbf7beb4c92d7f93d2a4b3"
+      ],
+      "canonical_message_sha256": "f71bdc5279403a8cde8817c7122cba999a49150eb313103e88dc35e7fd98a7b9",
+      "subject": "audit(repo): bind archive-duplicate cleanup candidate",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "c4d0305-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    },
+    {
+      "commit": "83df2b73c96f754561e669080bc4c90108d0bc4b",
+      "tree": "8d5c5d0ba01ec27ec8556a97d0066528d8a0bd63",
+      "parents": [
+        "c4d0305e6b933c4264ddf32eb0e468f9b5dd92f3"
+      ],
+      "canonical_message_sha256": "2a40201cb992db28e56b3e4dd3e2849e9499e8d6a6f9b66375229df777ceada7",
+      "subject": "fix(repo): bind cleanup review to canonical manifest",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "83df2b7-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    },
+    {
+      "commit": "02a15a671d15445288b911532117eba7ebbf1046",
+      "tree": "26951ec98f183370b7f45c5231aa9b42f72483dd",
+      "parents": [
+        "5e3f9240026f6f58825f605f4d1a3d24ca3762c0"
+      ],
+      "canonical_message_sha256": "53f3ea70840aba451a96e15b3f02dde57ddf10c8631ba717f668dd0f4dcfcc71",
+      "subject": "chore(queue): route convergence to docs integration",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Task",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "proposed_disposition_id": "02a15a6-main-promotion-historical-body",
+      "proposed_scope": "historical_commit_message_only",
+      "decision_state": "owner_decision_requested_not_accepted"
+    }
+  ]
+}

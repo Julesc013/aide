@@ -18,6 +18,15 @@ effect manifest binds 28 public forms to 39 retained command logs. Prior
 110 importer passes remain source regression history because six metadata
 inputs changed; they do not replace exact new-byte qualification.
 
+Independent exact release ACCEPT for `719abf66` is retained in D control and
+queue evidence. The task branch and remote dev were observed at that same
+commit after a fast-forward. A mandatory `commit check --range main..dev`
+then returned FAIL for ten 2026-09-21 historical messages; three previously
+accepted owner dispositions applied only to their exact commits. Main, tag
+and publication were not attempted. The ten-record packet binds full Git
+objects, trees, parents, message digests and all 117 failed checker results;
+actual owner decisions remain required before structured dispositions.
+
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
 
 Resumed the campaign for a bounded current-status/spec-root alignment in the reused checkout; no new storage pool or artifact generation.

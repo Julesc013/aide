@@ -106,3 +106,15 @@ combinations have fresh outputs. The old 110 importer cases are retained as
 source regression history because six metadata/policy inputs changed, and
 are not substituted for new-byte evidence. Seek one superseding exact
 independent release ACCEPT. Main, tag and publication remain stopped.
+
+Independent `/root/stable_effect_review` returned strict ACCEPT for exact
+`719abf66` with manifest SHA-256 `b31addc4...fd753a`. The task branch and
+remote `dev` now both equal that reviewed commit; `main` remains `aec53b1d`.
+The active dev-to-main rule requires `commit check --range main..dev`.
+That command failed for ten undispositioned 2026-09-21 historical messages;
+three separate owner records applied. The reviewer classified this new result
+as a hard main/tag/publication gate. Preserve the accepted release candidate,
+request one exact owner decision packet for the ten records, then implement
+structured decisions and obtain the required technical review before rerun.
+Do not infer acceptance from A/B/C, rewrite history or change the promotion
+rule to conceal failures.

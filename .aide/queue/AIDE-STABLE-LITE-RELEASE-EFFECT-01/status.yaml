@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: revised_exact_release_effect_candidate_frozen
+planning_state: dev_integrated_main_promotion_history_gate_failed
 result: PENDING
 updated_at: 2026-09-28
-current_slice: superseding_independent_exact_release_ACCEPT
-next_slice: accepted_dev_main_tag_publication_then_downloaded_consumers
+current_slice: exact_owner_decisions_for_ten_historical_messages
+next_slice: structured_dispositions_review_range_recheck_then_main_tag_publication
 review_gate: independent_source_and_archive_safety_review_then_exact_release_ACCEPT
 main_promotion_performed: false
 tag_created: false

@@ -7,8 +7,12 @@ The existing release-effect WorkUnit repairs the version-policy activation
 stage and per-form CLI evidence binding, then regenerates and qualifies exact
 policy-bound bytes before a superseding release ACCEPT. Main/tag/publication
 remain stopped. See its ExecPlan and review evidence.
-The revised policy-bound candidate at `bed505ab` has passed focused new-byte
-qualification; one superseding exact independent release ACCEPT is next.
+The revised policy-bound candidate at `bed505ab` passed focused new-byte
+qualification and proceeded to superseding exact independent release review.
+That ACCEPT arrived for `719abf66` and remote dev now matches. Main/tag/
+publication are blocked by ten exact historical message failures in the
+mandatory `main..dev` commit range. The existing release-effect task holds
+one accountable owner decision packet and the repair sequence.
 
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
 
