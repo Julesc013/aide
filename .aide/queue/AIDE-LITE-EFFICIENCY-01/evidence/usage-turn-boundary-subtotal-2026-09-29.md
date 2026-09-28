@@ -7,3 +7,10 @@
 - Both receipts report quiescent exit, retired scratch and released reservation. Green peak observed memory: 295,247,872 bytes; scratch: 3,329 bytes.
 - The repair excludes a boundary-ambiguous record from known subtotals. It retains valid distinct-session known usage, the same-session overlap guard, partial status and unknown full totals.
 - No model request was made by this observer. No live model usage, independent source verdict, current-byte release qualification or publication is claimed.
+
+## Independent source review
+
+- Reviewer: `/root/stable_builder_repair_review` (fresh focused review, not a prior reviewer's recovered verdict).
+- Exact reviewed subject: commit `9c391d2550179f55eb6e5db3019fb30d8d87867a`, tree `a4cd6ecb203b2eeb73c7303f35c138f878cbb065`, base `ef938eef1b78218cadb6a5cc97702abe6e8d47e2`.
+- Verdict: **ACCEPT** for source integration. The reviewer inspected the exact diff and evidence read-only, ran `git diff --check`, and confirmed distinct-session known subtotals survive while ambiguous records and same-session overlap remain excluded.
+- The reviewer did not rerun the 18 tests, call a model or assess release readiness. This evidence-only addition does not alter the reviewed source commit.

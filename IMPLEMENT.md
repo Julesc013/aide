@@ -12708,5 +12708,6 @@ Corrected the portable Codex usage importer so an ambiguous turn in one
 session cannot erase the known subtotal of a different, valid session. The
 ambiguous stream remains excluded and full totals remain unknown. A D-managed
 red run isolated the regression; all 18 focused tests passed after repair.
-This changed source is pending independent review and a coherent release-byte
-refresh; the accepted dev release artifacts still bind their earlier source.
+Independent review accepted exact source `9c391d25` for integration. A coherent
+release-byte refresh remains pending; the accepted dev release artifacts still
+bind their earlier source.
