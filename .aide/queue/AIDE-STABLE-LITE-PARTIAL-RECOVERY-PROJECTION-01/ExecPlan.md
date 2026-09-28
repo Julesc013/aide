@@ -46,8 +46,9 @@ changed-scope review.
 
 - [x] Dev includes reviewed source; 110 importer methods passed in two D jobs.
 - [x] Admit and commit the clean projection task at `84e4a733`.
-- [ ] Generate and qualify current bytes and consumers.
-- [ ] Prove committed replay and receive exact artifact/dev-effect review.
+- [x] Generate and qualify current bytes and consumers.
+- [x] Prove committed four-command release replay with zero changes.
+- [ ] Receive exact artifact/dev-effect review.
 - [ ] Integrate qualified artifact candidate into dev.
 
 Generation checkpoint: six serial D-managed commands exited zero, retired
@@ -68,3 +69,12 @@ committed tree after their receipts were retained. The committed four-command
 release replay then exited zero but changed 18 release metadata files as the
 pack was classified `PASS_SOURCE_ANCESTOR`; ZIP/tar bytes stayed unchanged.
 Commit this 18-file convergence and require a clean four-command replay.
+
+Convergence commit `49c7a04a` passed the clean four-command D-managed release
+replay with zero changed files, unchanged ZIP/tar bytes and pack-status
+`PASS_SOURCE_ANCESTOR`. Its exact job receipt and canonical checks are in
+`evidence/delivered-qualification-49c7a04a.md`. An extracted ZIP/tar canary
+passed 25 fresh/brownfield commands and explicit partial recovery after both
+fresh import and successor update. Its one bounded D job retired scratch and
+retained only 2.89 MB of command evidence. Exact artifact/effect review remains
+the next gate before dev integration; this is not stable release acceptance.
