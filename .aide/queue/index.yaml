@@ -3757,3 +3757,12 @@ items:
     prompt: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/evidence
     description: Regenerate current Lite preview bytes, qualify delivered consumers and committed replay, then seek exact artifact/dev-effect review.
+  - id: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
+    status: running
+    planning_state: admitted_current_dev_preview
+    result: PENDING
+    title: Qualify remaining delivered Lite lifecycle and offline journeys
+    task: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/prompt.md
+    evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence

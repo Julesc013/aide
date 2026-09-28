@@ -1,0 +1,50 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
+title: Qualify remaining delivered Lite lifecycle and offline journeys
+type: evaluation
+status: running
+planning_state: admitted_current_dev_preview
+result: PENDING
+created_at: 2026-09-28
+updated_at: 2026-09-28
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_dev: 33abef7fca1547de6a3ca6de54ef0b99bedc6ef1
+depends_on:
+  - AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01
+objective: >
+  Use exact current local preview bytes to exercise remaining declared Windows
+  lifecycle, restart, offline context and public CLI paths. Produce a finite
+  pass/fail release obligation checkpoint without claiming stable acceptance.
+authority_basis: >
+  Owner 2026-09-25 campaign delegation and 2026-09-28 D execution-root selection.
+  This task uses AIDE-owned disposable consumers and existing bounded runner;
+  arbitrary projects, public targets and publication remain outside it.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/scripts/**
+    - core/**
+    - .aide/export/**
+    - .aide/release/**
+    - .aide/policies/**
+    - docs/reference/**
+  forbidden_operations:
+    - alter canonical source or local release bytes to make a canary pass
+    - create another physical checkout or unapproved storage pool
+    - main promotion, tag, upload or publication
+    - mutate an unapproved installed project
+verification:
+  - exact current ZIP digest, source ancestry and bounded D job manifest
+  - fresh and brownfield Windows repair, rollback and removal from extracted bytes
+  - interruption classification and recovery at declared effect boundaries
+  - offline target context/evidence and exact public CLI forms
+  - preserved source/output hashes, retired scratch, bounded retained receipts
+retained_gates:
+  - final version/profile freeze, independent release review and downloaded assets
+  - native/hosted effect guarantees outside the Lite baseline

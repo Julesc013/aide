@@ -2,12 +2,12 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-CONVERGENCE-AND-DELIVERY-01
 status: running
 classification: admitted
-planning_state: approved_execution_placement_integrated_qualification_ready
+planning_state: current_preview_integrated_remaining_release_qualification_running
 result: PENDING
 review_gate: admitted_by_owner
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
-next_task: AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01
-delivery_dependency: AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01
+next_task: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
+delivery_dependency: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
 resource_placement: owner_approved_D_shared_roots_configured
 blocking_input: none_for_integrated_importer_qualification
 owned_jobs_remaining: none_observed_after_E_terminal_and_D_focused_runs
@@ -37,3 +37,4 @@ notes:
   - The owner subsequently selected exact shared D:\Projects\AIDE\.aide.local\execution roots. Both existing checkouts have identical ignored local configuration with actual D volume identity and finite limits; the old E importer attempt retains its exact recovery configuration until terminal collection. No D intensive job may overlap that attempt.
   - The E importer attempt ended after 99 completed cases when its active scratch monitor raced a disappearing fixture; retained result copied bit-identically into D and scratch/reservation retired. D bounded red/green reproduction and 26 runner plus 9 cache tests pass on the repair. Full importer, current artifacts and stable release remain unqualified.
   - Frozen 8040b10a received independent ACCEPT_WITH_NOTES for bounded source integration. Two disjoint D jobs covered all 110 importer methods, 54/54 and 56/56 passing without skips; both retired scratch and released reservations. Current generated assets, delivered consumers and release remain unqualified.
+  - Current partial-recovery preview assets passed four-command committed replay and extracted ZIP/tar fresh/brownfield consumers; independent artifact review ACCEPT_WITH_NOTES permitted dev only. Local and remote dev now read 33abef7f after the evidence-only closeout replay. Stable release, remaining lifecycle/offline coverage and publication are still open.

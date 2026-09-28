@@ -1,0 +1,12 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
+status: running
+planning_state: admitted_current_dev_preview
+result: PENDING
+updated_at: 2026-09-28
+current_slice: bound_existing_lifecycle_canaries_to_current_preview
+next_slice: run_current_zip_windows_lifecycle_through_D_runner
+review_gate: findings_require_scoped_source_repair_and_technical_review
+main_promotion_performed: false
+tag_created: false
+release_published: false

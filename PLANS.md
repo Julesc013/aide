@@ -4128,3 +4128,8 @@ consumer jobs here used D, with scratch retirement and reservation release.
   still owns remaining lifecycle restart points, offline/context qualification,
   final profile freeze, release review, main/tag/publication and downloaded
   consumer verification.
+
+- The next bounded WorkUnit, AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01,
+  reuses the current ZIP and D-managed runner for remaining Windows lifecycle,
+  restart, context and offline release obligations. It will record actual
+  pass/fail evidence before any final version/profile freeze.
