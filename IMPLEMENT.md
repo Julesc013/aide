@@ -12534,3 +12534,8 @@ turn start, marks ambiguity partial and withholds aggregate totals. Its 11-case
 managed suite and extracted-pack consumer case passed, with scratch retired;
 independent delta review accepted the source. The exact receipts and missing
 real-host/release evidence are in the efficiency WorkUnit.
+
+The independently reviewed post-Lite source candidate `28492e00` was
+fast-forwarded from `76e17a4c` into local and remote `dev` on 2026-09-29.
+No merge resolution changed source. The exact effect and remaining release
+qualification are recorded in the efficiency WorkUnit; `main` was untouched.

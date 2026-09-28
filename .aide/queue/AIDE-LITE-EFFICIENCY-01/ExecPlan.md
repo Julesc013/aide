@@ -75,3 +75,8 @@ passed 11 focused cases and one extracted-pack case under the D runner;
 independent delta review returned ACCEPT. Exact receipts and limits are in
 `evidence/codex-usage-import-qualification-2026-09-29.md`. Next obtain a real
 host stream and bind pause-aware dispatch before claiming host-level savings.
+
+The reviewed post-Lite source candidate `28492e00` fast-forwarded local and
+remote `dev` on 2026-09-29. The exact integration review and observed refs are
+in `evidence/dev-source-integration-2026-09-29.md`. Release acceptance remains
+bound to older frozen bytes; qualify a new tree and its delivered consumers.
