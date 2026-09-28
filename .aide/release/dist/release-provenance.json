@@ -1,24 +1,24 @@
 {
   "artifact_hashes": {
-    ".aide/release/dist/CHANGELOG.preview.md": "81bc162e3f9995bf41a1d168a78f3ad1086a1203c692ae5368620a747d182c05",
-    ".aide/release/dist/RELEASE_NOTES.preview.md": "f9c9d1c3a9f67dba9897789dbaf5d847cd904f833377338401efc7b0c7aec1a1",
-    ".aide/release/dist/aide-lite-pack-v0.tar.gz": "f0111bd834eb1aeb0b5b0ea70562ad7e1294c04dea8fa0bd83ab9be5cb294725",
-    ".aide/release/dist/aide-lite-pack-v0.zip": "af8bf103353d72eacbbf1f2f28cea8cef1f11ea0d942872c57f76aee9725a7ff",
-    ".aide/release/dist/install.md": "fd723ca751120d72a074a34166b9cf6d3178a14f61018f16d96f78d0548bcd0b",
-    ".aide/release/dist/manifest.yaml": "4e1a46a8b7f5f43eea14fc6e835715f33d992734eef70beaff1b1bb95f3d5b50"
+    ".aide/release/dist/CHANGELOG.preview.md": "266d5643b16ca4aca24581280bbc37202d2c84db9ed0f453929c386c17489e3d",
+    ".aide/release/dist/RELEASE_NOTES.preview.md": "e55c41006f61c08046a03ca6ab9628b101a00b70e7aaf41bfb4915d8df5dff67",
+    ".aide/release/dist/aide-lite-pack-v0.tar.gz": "3681768e6a0fb0e0393c03064b3dabb1baaffe75aaad3cb10d0fa0fa7fe29184",
+    ".aide/release/dist/aide-lite-pack-v0.zip": "2a121ef77f9bc2cdf480991bf6d01775d265908aa21f25a738afdf847e22245b",
+    ".aide/release/dist/install.md": "de7b51b9006e8a126fa04e092182b7721ac38a82d6d44f5c74355a8c1feba57f",
+    ".aide/release/dist/manifest.yaml": "d38146d4fd584273c0d3f27d88aa4c97d59d6f8da163fe7c442203a1236c731e"
   },
-  "bundle_id": "aide-lite-pack-v0-4b5854f2f9dbeea7",
+  "bundle_id": "aide-lite-pack-v0-fe44070dfb37ea44",
   "dirty_state": false,
   "dirty_state_error": "",
-  "export_pack_checksums_sha256": "d0cebdd31eb071d349991b188bb6d52b859c2117c3f8c46032827ce1d99318cd",
-  "export_pack_manifest_sha256": "f72796a4433ac2292dc29a0b7ab1ea03beaec36f4977bd332225688544422646",
-  "generated_at_or_source_ref": "source_commit:4b5854f2f9dbeea7cf246946caf02d829a16c757",
+  "export_pack_checksums_sha256": "db2383039e6f75e92bb3e0155c8c5e34f7e4667ef609d3a768b106721d035b9e",
+  "export_pack_manifest_sha256": "b36ce21490c4f462dd89f29c9b4fbd252d942f150d92f726f79d7ea7a5910755",
+  "generated_at_or_source_ref": "source_commit:fe44070dfb37ea44dbb61a253d6edbb713717442",
   "generated_by": "aide-lite release bundle q47",
   "no_publish": true,
   "preview_only": true,
   "publication_status": "local_preview_no_publish",
   "schema_version": "aide.release-provenance.v0",
   "source_branch": "not-recorded-in-pack",
-  "source_commit": "4b5854f2f9dbeea7cf246946caf02d829a16c757",
+  "source_commit": "fe44070dfb37ea44dbb61a253d6edbb713717442",
   "source_repo": "julesc013/aide"
 }

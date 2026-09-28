@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 4b5854f2f9dbeea7cf246946caf02d829a16c757
+source_head: 4c32a8edd8aa8ea129609c6aedb534e6dfcf16f1
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,9 +11,9 @@ release_publishing: false
 
 ## Summary
 
-- Added: 1
-- Changed: 1
-- Fixed: 16
+- Added: 2
+- Changed: 3
+- Fixed: 13
 - Removed: 1
 - Docs: 4
 - Tests: 1
@@ -22,18 +22,16 @@ release_publishing: false
 ## Added
 
 - explicit bounded maintainer job inspect/run/recover commands. (5ea1f7cdd53c feat(execution): bound maintainer jobs and retire owned scratch)
+- Separate first-stable Lite candidate archive generation and validation. (24bd7d0d88c6 feat(release): build distinct first-stable Lite candidate assets)
 
 ## Changed
 
 - Task OS golden validation leaves source projections unchanged. (e185d2898fb2 test(task-os): isolate golden report writes in admitted scratch)
+- Record exact source-review acceptance for the unpublished stable builder. (a6725d83db10 docs(release): record accepted exact stable-builder source review)
+- Refresh portable AIDE Lite pack from accepted dev source. (4c32a8edd8aa chore(release): refresh portable pack from accepted dev source)
 
 ## Fixed
 
-- installed Lite Task OS reports no selected task for an empty queue. (f00d937e2368 fix(task-os): keep empty target queue reports truthful)
-- project-owned Lite target queues no longer receive AIDE source-phase next-work advice. (e88a1468acd2 fix(task-os): keep target queue next work project-owned)
-- target Task OS routing follows its declared profile even when a queue ID matches an AIDE source task. (b9d2b150c39c fix(task-os): route target next work by declared profile)
-- target next-work explanation remains accurate even when queue IDs collide with source IDs. (52e1f194ebd2 fix(task-os): keep copied-id target reason truthful)
-- local draft lifecycle claims now match the bounded Windows apply candidates. (bc1867a06933 fix(release): distinguish lifecycle planners from bounded apply)
 - preview effect evidence now identifies its exact commit range and replay state. (6e8af2bd8d16 fix(release): bind exact preview effect evidence)
 - allow explicit Windows recovery of an exact partial portable import without replaying changed project bytes. (547ea2b09235 feat(import): recover exact partial Windows portable imports)
 - refuse forged partial import ownership and stale controls during recovery. (052a0a926527 fix(import): reject forged partial recovery intents)
@@ -45,6 +43,8 @@ release_publishing: false
 - Task status inspection no longer generates tracked reports by default. (0302b18c724d fix(queue): inspect task status without rewriting reports)
 - Candidate stable interface includes requested customization and recovery forms. (f0eabe41265d fix(contract): retain customization and partial recovery interfaces)
 - Explicit import feedback refuses every supplied input pack and the target. (c6d104f665e3 fix(import): protect predecessor packs from feedback output)
+- Reject unsafe Windows archive paths in the unpublished stable builder. (34c87052f7e3 fix(release): reject unsafe Windows archive members before extraction)
+- Bound tar metadata parsing in the unpublished stable release validator. (59db02a0e6c3 fix(release): bound tar PAX metadata before archive parsing)
 
 ## Removed
 
@@ -63,18 +63,6 @@ release_publishing: false
 
 ## Internal
 
-- Close the bounded stable contract source and local-preview dev integration records. (b3a001befaac chore(queue): close stable Lite contract dev integration)
-- Route mandatory delivered Lite consumer checks through a bounded WorkUnit. (5561aecdb608 chore(queue): admit delivered Lite consumer prequalification)
-- preserve bounded local consumer evidence and a reproducible Task OS repair trigger. (b45010280e5e test(lite): record delivered consumer prequalification)
-- create a bounded route for evidence-only dev integration. (736e3f9ac027 chore(queue): admit Lite evidence dev integration)
-- complete a separate evidence-only dev integration review packet. (a7254d7d4c9c chore(queue): freeze Lite evidence integration packet)
-- preserve verified Windows Lite preview evidence integration and unresolved release gates. (d292253b0994 chore(lite): close observed consumer evidence dev effect)
-- preserve independent Task OS source review and its release-blocking follow-up. (04caefe65986 chore(task-os): record exact empty-queue source review)
-- preserve the exact Task OS repaired-source review result. (75406123ccb0 chore(task-os): preserve accepted target routing review)
-- preserve exact Q48 source review and remaining gates. (59286688dfce chore(release): preserve accepted draft source review)
-- admit current Lite preview projection and qualification task. (0509e1611b18 chore(release): admit current Lite artifact projection)
-- refresh local Lite preview assets and bind current source evidence. (dc8697e336eb chore(release): project accepted Lite source into preview assets)
-- converge source-ancestor release metadata without rebuilding assets. (10fd7a207f16 chore(release): converge committed Lite preview metadata)
 - preserve committed Lite preview qualification evidence. (22257dc6ad9e chore(release): preserve committed Lite preview qualification)
 - preserve reviewed Lite dev integration and current release gaps. (493e3f13c1b2 chore(release): record reviewed Lite dev integration)
 - route Windows process-restart qualification through a bounded task. (5f2441d18772 chore(release): admit forced restart qualification)
@@ -90,6 +78,18 @@ release_publishing: false
 - Advance partial-import recovery from source validation to artifact qualification. (1d3d9fe1bb51 docs(import): record complete source suite and artifact gate)
 - Route current-source Lite artifact qualification through a bounded WorkUnit. (84e4a7330ce9 chore(release): admit current Lite artifact projection)
 - Refresh local no-publish Lite preview artifacts from current source. (4b5854f2f9db chore(release): regenerate current Lite preview assets)
+- Converge local preview provenance after the artifact commit. (dcb008e62b46 chore(release): converge post-commit preview metadata)
+- Converge local Lite preview release provenance after commit. (49c7a04a1377 chore(release): converge committed Lite preview metadata)
+- Record local preview qualification without changing product bytes. (e7c1760e8e5b docs(release): record delivered Lite preview qualification)
+- Record local Lite preview integration and remaining release gates. (33abef7fca15 docs(release): record reviewed Lite preview dev effect)
+- Track remaining Lite qualification separately from passed preview integration. (b74923195d0b chore(release): admit remaining Lite qualification)
+- make managed scratch retirement work with ordinary readonly Git objects on Windows. (cf0c4434f260 fix(execution): retire readonly owned Git scratch after custody)
+- Preserve bounded runner review for the dev integration gate. (b7f595424f04 chore(execution): record independent runner repair acceptance)
+- Preserve delivered public CLI qualification checkpoint. (c6de695fbbd8 chore(release): record dev repair integration and public CLI canary)
+- Record partitioned importer source qualification. (b94d7ba940e2 chore(release): bind integrated importer qualification)
+- Bind installed task inspection qualification. (0259f81d8fca chore(release): qualify installed task inspection forms)
+- Preserve exact local preview acceptance and remaining release obligations. (4dcd896b4a9b chore(release): bind exact Lite preview command coverage)
+- Separate accepted local preview from public release effect. (f3f59303e5d0 chore(release): close exact Lite preview and admit stable effect)
 
 ## Malformed Commits
 
