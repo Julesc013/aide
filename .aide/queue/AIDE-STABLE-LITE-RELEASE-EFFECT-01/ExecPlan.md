@@ -64,6 +64,9 @@ work. The parent goal remains active until wider mandatory work is fulfilled.
 - [x] Implement a distinct first-stable candidate builder and archive
   validator, then run Q47/Q48 and focused recovery/unsafe-member tests under D.
 - [ ] Obtain independent source and archive-safety review of exact candidate.
+- [x] Repair frozen `24bd7d0d` `REQUEST_CHANGES`: reject Windows ADS,
+  ambiguous path and case aliases before extraction, inspect tar metadata
+  with finite streaming limits, then seek superseding exact source review.
 - [ ] Profile/version and non-preview asset subject frozen. Separate builder
   and validator implemented; final current-source pack and asset bytes remain.
 - [ ] Final machine and delivered-byte qualification.

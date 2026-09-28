@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import io
 import json
 import os
 import shutil
@@ -545,6 +546,53 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         self.assertTrue(zip_result["forbidden_paths"])
         self.assertEqual(tar_result["result"], "FAIL")
         self.assertTrue(any("non-regular" in item for item in tar_result["problems"]))
+
+    def test_release_validator_rejects_windows_aliases_and_ads_before_extraction(self) -> None:
+        root = self.make_repo()
+        required = [f"{aide_lite.RELEASE_ARCHIVE_ROOT}/{rel}" for rel in aide_lite.RELEASE_REQUIRED_PACK_FILES]
+        manifest = f"{aide_lite.RELEASE_ARCHIVE_ROOT}/manifest.yaml"
+        cases = (
+            ("ads", f"{manifest}:payload", "forbidden archive paths"),
+            ("case", manifest.upper(), "Windows case-alias"),
+            ("trailing_dot", f"{manifest}.", "forbidden archive paths"),
+        )
+        for kind, alias, expected in cases:
+            for archive_kind in ("zip", "tar"):
+                with self.subTest(kind=kind, archive=archive_kind):
+                    archive_rel = aide_lite.RELEASE_ZIP_PATH if archive_kind == "zip" else aide_lite.RELEASE_TAR_GZ_PATH
+                    archive_path = root / archive_rel
+                    archive_path.parent.mkdir(parents=True, exist_ok=True)
+                    if archive_kind == "zip":
+                        with zipfile.ZipFile(archive_path, "w") as archive:
+                            for name in [*required, alias]:
+                                archive.writestr(name, b"safe")
+                    else:
+                        with tarfile.open(archive_path, "w:gz") as archive:
+                            for name in [*required, alias]:
+                                data = b"safe"
+                                member = tarfile.TarInfo(name)
+                                member.size = len(data)
+                                archive.addfile(member, io.BytesIO(data))
+                    with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+                        result = aide_lite.validate_release_archive(root, archive_rel)
+                    self.assertEqual(result["result"], "FAIL")
+                    self.assertTrue(any(expected in item for item in result["problems"]))
+
+    def test_release_validator_stops_tar_member_scan_at_bound(self) -> None:
+        root = self.make_repo()
+        archive_path = root / aide_lite.RELEASE_TAR_GZ_PATH
+        archive_path.parent.mkdir(parents=True, exist_ok=True)
+        with tarfile.open(archive_path, "w:gz") as archive:
+            for number in range(3):
+                name = f"{aide_lite.RELEASE_ARCHIVE_ROOT}/extra-{number}.txt"
+                member = tarfile.TarInfo(name)
+                member.size = 1
+                archive.addfile(member, io.BytesIO(b"x"))
+        with mock.patch.object(aide_lite, "RELEASE_VALIDATION_MAX_MEMBERS", 2):
+            with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+                result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_TAR_GZ_PATH)
+        self.assertEqual(result["result"], "FAIL")
+        self.assertTrue(any("member count exceeds validation limit" in item for item in result["problems"]))
 
     def test_stable_cli_refuses_portable_consumer_without_managed_source_runner(self) -> None:
         root = self.make_repo()

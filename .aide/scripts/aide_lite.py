@@ -17449,7 +17449,8 @@ RELEASE_BUNDLE_NAME = "aide-lite-pack-v0"
 RELEASE_ARCHIVE_ROOT = "aide-lite-pack-v0"
 RELEASE_GENERATED_BY = "aide-lite release bundle q47"
 RELEASE_PUBLICATION_STATUS = "local_preview_no_publish"
-RELEASE_VALIDATION_MAX_MEMBERS = 100_000
+RELEASE_VALIDATION_MAX_MEMBERS = 10_000
+RELEASE_VALIDATION_MAX_ARCHIVE_BYTES = 128 * 1024 * 1024
 RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
 RELEASE_REQUIRED_PACK_FILES = [
     "manifest.yaml",
@@ -17644,16 +17645,33 @@ def release_pack_status(repo_root: Path) -> tuple[str, list[str]]:
     return provenance_status, []
 
 
-def release_forbidden_archive_path(name: str) -> bool:
-    rel = normalize_rel(name).lower()
-    parts = [part for part in rel.split("/") if part]
-    if Path(name).is_absolute() or rel.startswith("/") or re.match(r"^[a-z]:", rel) or ".." in parts:
+def release_forbidden_archive_path(name: str | Path) -> bool:
+    # Reject Windows aliases and ADS before archive extraction. A later rglob
+    # cannot observe an NTFS alternate stream written through `file:stream`.
+    if isinstance(name, Path):
+        name = name.as_posix()
+    if not name or "\\" in name or name.startswith("/") or any(ord(char) < 32 for char in name):
         return True
-    if ".git" in parts or ".aide.local" in parts:
+    parts = name.split("/")
+    if any(not part or part in {".", ".."} or part.endswith((".", " ")) for part in parts):
         return True
-    if any(part == ".env" for part in parts):
+    for part in parts:
+        if any(char in '<>:"|?*' for char in part):
+            return True
+        stem = part.split(".", 1)[0].casefold()
+        if stem in {"con", "prn", "aux", "nul", "com¹", "com²", "com³", "lpt¹", "lpt²", "lpt³"}:
+            return True
+        if re.fullmatch(r"(?:com|lpt)[1-9]", stem) or re.search(r"~[0-9]+(?:\.|$)", part):
+            return True
+    rel = name.casefold()
+    if Path(name).is_absolute():
         return True
-    if "secrets" in parts:
+    folded_parts = [part.casefold() for part in parts]
+    if ".git" in folded_parts or ".aide.local" in folded_parts:
+        return True
+    if ".env" in folded_parts:
+        return True
+    if "secrets" in folded_parts:
         return True
     prompt_response_markers = [
         "raw_prompt",
@@ -18112,13 +18130,48 @@ def validate_release_asset_index(repo_root: Path) -> tuple[bool, list[str]]:
 
 
 def archive_member_names(archive_path: Path) -> list[str]:
+    names, _unsafe, _uncompressed = inspect_release_archive_members(archive_path)
+    return sorted(names)
+
+
+def inspect_release_archive_members(archive_path: Path) -> tuple[list[str], list[str], int]:
+    if archive_path.stat().st_size > RELEASE_VALIDATION_MAX_ARCHIVE_BYTES:
+        raise ValueError("archive compressed size exceeds validation limit")
+    names: list[str] = []
+    unsafe: list[str] = []
+    uncompressed = 0
     if archive_path.name.endswith(".zip"):
+        # ZIP central-directory parsing is bounded by the compressed-file cap.
         with zipfile.ZipFile(archive_path, "r") as archive:
-            return sorted(archive.namelist())
-    if archive_path.name.endswith(".tar.gz"):
-        with tarfile.open(archive_path, "r:gz") as archive:
-            return sorted(member.name for member in archive.getmembers())
-    return []
+            entries = (
+                (info.filename, info.file_size, info.is_dir() or stat.S_IFMT(info.external_attr >> 16) not in {0, stat.S_IFREG})
+                for info in archive.infolist()
+            )
+            for name, size, special in entries:
+                names.append(name)
+                if len(names) > RELEASE_VALIDATION_MAX_MEMBERS:
+                    raise ValueError("archive member count exceeds validation limit")
+                if size < 0 or size > RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES - uncompressed:
+                    raise ValueError("archive uncompressed size exceeds validation limit")
+                uncompressed += size
+                if special:
+                    unsafe.append(name)
+    elif archive_path.name.endswith(".tar.gz"):
+        # Stream headers and stop before decompressing a declared over-limit
+        # member; getmembers() would parse the entire untrusted archive first.
+        with tarfile.open(archive_path, "r|gz") as archive:
+            for member in archive:
+                names.append(member.name)
+                if len(names) > RELEASE_VALIDATION_MAX_MEMBERS:
+                    raise ValueError("archive member count exceeds validation limit")
+                if member.size < 0 or member.size > RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES - uncompressed:
+                    raise ValueError("archive uncompressed size exceeds validation limit")
+                uncompressed += member.size
+                if not member.isfile():
+                    unsafe.append(member.name)
+    else:
+        raise ValueError("unsupported release archive format")
+    return names, unsafe, uncompressed
 
 
 def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, object]:
@@ -18136,8 +18189,8 @@ def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, obj
         result["problems"] = [f"archive missing: {archive_rel}"]
         return result
     try:
-        names = archive_member_names(archive_path)
-    except (OSError, zipfile.BadZipFile, tarfile.TarError) as exc:
+        names, unsafe, _uncompressed = inspect_release_archive_members(archive_path)
+    except (OSError, ValueError, zipfile.BadZipFile, tarfile.TarError) as exc:
         result["problems"] = [f"archive read failed: {exc}"]
         return result
     forbidden = [name for name in names if release_forbidden_archive_path(name)]
@@ -18149,28 +18202,8 @@ def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, obj
         problems.append("archive members outside pack root: " + ", ".join(outside_root[:5]))
     if len(names) != len(set(names)):
         problems.append("duplicate archive member names")
-    if len(names) > RELEASE_VALIDATION_MAX_MEMBERS:
-        problems.append("archive member count exceeds validation limit")
-    try:
-        if archive_path.name.endswith(".zip"):
-            with zipfile.ZipFile(archive_path, "r") as archive:
-                members = archive.infolist()
-                uncompressed_bytes = sum(info.file_size for info in members)
-                unsafe = [
-                    info.filename for info in members
-                    if info.is_dir() or stat.S_IFMT(info.external_attr >> 16) not in {0, stat.S_IFREG}
-                ]
-        else:
-            with tarfile.open(archive_path, "r:gz") as archive:
-                members = archive.getmembers()
-                uncompressed_bytes = sum(member.size for member in members)
-                unsafe = [member.name for member in members if not member.isfile()]
-    except (OSError, zipfile.BadZipFile, tarfile.TarError) as exc:
-        problems.append(f"archive member inspection failed: {exc}")
-        unsafe = []
-        uncompressed_bytes = 0
-    if uncompressed_bytes > RELEASE_VALIDATION_MAX_UNCOMPRESSED_BYTES:
-        problems.append("archive uncompressed size exceeds validation limit")
+    if len(names) != len({name.casefold() for name in names}):
+        problems.append("Windows case-alias archive members")
     if unsafe:
         problems.append("archive non-regular members rejected: " + ", ".join(unsafe[:5]))
     root_present = any(name.startswith(root_prefix) for name in names)

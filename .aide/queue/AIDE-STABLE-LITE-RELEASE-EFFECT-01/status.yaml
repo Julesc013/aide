@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: stable_builder_source_candidate_frozen_for_review
+planning_state: superseding_archive_safety_source_candidate
 result: PENDING
 updated_at: 2026-09-28
-current_slice: stable_builder_and_archive_validation_source_review
-next_slice: current_source_pack_regeneration_and_stable_asset_qualification
+current_slice: freeze_repaired_archive_safety_source_for_independent_review
+next_slice: superseding_exact_source_review_then_current_pack_generation
 review_gate: independent_source_and_archive_safety_review_then_exact_release_ACCEPT
 main_promotion_performed: false
 tag_created: false
