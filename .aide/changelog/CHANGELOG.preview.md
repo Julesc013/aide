@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 84e4a7330ce93e116c8c6af0b181d8756af6f647
+source_head: 4b5854f2f9dbeea7cf246946caf02d829a16c757
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -63,7 +63,6 @@ release_publishing: false
 
 ## Internal
 
-- Converge local preview release metadata without rebuilding archives. (2defcad541d0 chore(release): converge Lite contract preview metadata)
 - Close the bounded stable contract source and local-preview dev integration records. (b3a001befaac chore(queue): close stable Lite contract dev integration)
 - Route mandatory delivered Lite consumer checks through a bounded WorkUnit. (5561aecdb608 chore(queue): admit delivered Lite consumer prequalification)
 - preserve bounded local consumer evidence and a reproducible Task OS repair trigger. (b45010280e5e test(lite): record delivered consumer prequalification)
@@ -90,6 +89,7 @@ release_publishing: false
 - Preserve current-source qualification and remaining delivery gates. (a835cbad6d5b docs(execution): record reviewed runner and importer qualification)
 - Advance partial-import recovery from source validation to artifact qualification. (1d3d9fe1bb51 docs(import): record complete source suite and artifact gate)
 - Route current-source Lite artifact qualification through a bounded WorkUnit. (84e4a7330ce9 chore(release): admit current Lite artifact projection)
+- Refresh local no-publish Lite preview artifacts from current source. (4b5854f2f9db chore(release): regenerate current Lite preview assets)
 
 ## Malformed Commits
 

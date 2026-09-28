@@ -560,31 +560,6 @@
     ],
     "Internal": [
       {
-        "aide_phase": "metadata-convergence",
-        "aide_result": "PENDING",
-        "breaking": false,
-        "category": "Internal",
-        "commit": "2defcad541d0",
-        "commit_sha": "2defcad541d02cd33fabf75e20c48dfd091ffabe",
-        "entry": "Converge local preview release metadata without rebuilding archives.",
-        "follow_up": "- Run the four release commands from this committed candidate, require zero tracked changes, then obtain exact artifact and dev-effect review.\n\nAIDE-Task: AIDE-STABLE-CONTRACT-PROJECTION-01\nAIDE-Phase: metadata-convergence\nAIDE-Result: PENDING\nAIDE-Scope: release metadata and queue evidence\nAIDE-Token-Impact: none\nAIDE-Quality-Gate: second replay pending",
-        "risks": "- This metadata commit is not a zero-diff replay result and does not authorize dev or public release effects.",
-        "scope": "release",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "chore(release): converge Lite contract preview metadata",
-        "summary": "Converge local preview release metadata without rebuilding archives.",
-        "type": "chore",
-        "validation": "- PASS: Release bundle, validate, draft and draft-validate each exited zero from clean projection commit d0bfa404.\n- PASS: ZIP and tar SHA256 values remained unchanged from the passing extracted consumer.\n- WARN: The first replay changed 18 tracked metadata files; a second exact zero-diff replay is required.\n- NOT RUN: Independent artifact/dev-effect review and final stable release gates remain open."
-      },
-      {
         "aide_phase": "dev-integration-closeout",
         "aide_result": "PASS_WITH_WARNINGS",
         "breaking": false,
@@ -1233,6 +1208,31 @@
         "summary": "Route current-source Lite artifact qualification through a bounded WorkUnit.",
         "type": "chore",
         "validation": "- PASS: task inspect locates the WorkUnit and its admission evidence.\n- PASS: local and remote dev matched 1d3d9fe1 before branch creation; scoped diff check passed.\n- NOT RUN: generator, artifact/consumer qualification and release effects."
+      },
+      {
+        "aide_phase": "current-preview-generation",
+        "aide_result": "PASS_WITH_RETAINED_GATES",
+        "breaking": false,
+        "category": "Internal",
+        "commit": "4b5854f2f9db",
+        "commit_sha": "4b5854f2f9dbeea7cf246946caf02d829a16c757",
+        "entry": "Refresh local no-publish Lite preview artifacts from current source.",
+        "follow_up": "- Run exact post-commit replay and resolve only measured metadata drift.\n- Qualify final ZIP/tar bytes in fresh and brownfield disposable consumers, then seek independent artifact/dev-effect review.\n\nAIDE-Task: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01\nAIDE-Phase: current-preview-generation\nAIDE-Result: PASS_WITH_RETAINED_GATES\nAIDE-Scope: derived-pack-changelog-release-preview-and-evidence\nAIDE-Token-Impact: six-serial-bounded-jobs\nAIDE-Quality-Gate: canonical-pass-replay-and-consumers-open",
+        "risks": "- Generated metadata binds the pre-artifact source commit and may require bounded post-commit convergence.\n- Local preview validation does not authorize stable publication.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "chore(release): regenerate current Lite preview assets",
+        "summary": "Refresh local no-publish Lite preview artifacts from current source.",
+        "type": "chore",
+        "validation": "- PASS: six serial D-managed generation and validation jobs exited zero, retired scratch and released reservations.\n- PASS: release and draft validation, pack-status, changelog checks, release status, doctor and validate.\n- PASS: scoped changed paths and staged diff checks.\n- NOT RUN: post-commit zero-change replay and final delivered-byte consumers yet."
       }
     ],
     "Removed": [
@@ -1301,31 +1301,6 @@
   },
   "commit_count": 50,
   "entries": [
-    {
-      "aide_phase": "metadata-convergence",
-      "aide_result": "PENDING",
-      "breaking": false,
-      "category": "Internal",
-      "commit": "2defcad541d0",
-      "commit_sha": "2defcad541d02cd33fabf75e20c48dfd091ffabe",
-      "entry": "Converge local preview release metadata without rebuilding archives.",
-      "follow_up": "- Run the four release commands from this committed candidate, require zero tracked changes, then obtain exact artifact and dev-effect review.\n\nAIDE-Task: AIDE-STABLE-CONTRACT-PROJECTION-01\nAIDE-Phase: metadata-convergence\nAIDE-Result: PENDING\nAIDE-Scope: release metadata and queue evidence\nAIDE-Token-Impact: none\nAIDE-Quality-Gate: second replay pending",
-      "risks": "- This metadata commit is not a zero-diff replay result and does not authorize dev or public release effects.",
-      "scope": "release",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "chore(release): converge Lite contract preview metadata",
-      "summary": "Converge local preview release metadata without rebuilding archives.",
-      "type": "chore",
-      "validation": "- PASS: Release bundle, validate, draft and draft-validate each exited zero from clean projection commit d0bfa404.\n- PASS: ZIP and tar SHA256 values remained unchanged from the passing extracted consumer.\n- WARN: The first replay changed 18 tracked metadata files; a second exact zero-diff replay is required.\n- NOT RUN: Independent artifact/dev-effect review and final stable release gates remain open."
-    },
     {
       "aide_phase": "dev-integration-closeout",
       "aide_result": "PASS_WITH_WARNINGS",
@@ -2575,6 +2550,31 @@
       "summary": "Route current-source Lite artifact qualification through a bounded WorkUnit.",
       "type": "chore",
       "validation": "- PASS: task inspect locates the WorkUnit and its admission evidence.\n- PASS: local and remote dev matched 1d3d9fe1 before branch creation; scoped diff check passed.\n- NOT RUN: generator, artifact/consumer qualification and release effects."
+    },
+    {
+      "aide_phase": "current-preview-generation",
+      "aide_result": "PASS_WITH_RETAINED_GATES",
+      "breaking": false,
+      "category": "Internal",
+      "commit": "4b5854f2f9db",
+      "commit_sha": "4b5854f2f9dbeea7cf246946caf02d829a16c757",
+      "entry": "Refresh local no-publish Lite preview artifacts from current source.",
+      "follow_up": "- Run exact post-commit replay and resolve only measured metadata drift.\n- Qualify final ZIP/tar bytes in fresh and brownfield disposable consumers, then seek independent artifact/dev-effect review.\n\nAIDE-Task: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01\nAIDE-Phase: current-preview-generation\nAIDE-Result: PASS_WITH_RETAINED_GATES\nAIDE-Scope: derived-pack-changelog-release-preview-and-evidence\nAIDE-Token-Impact: six-serial-bounded-jobs\nAIDE-Quality-Gate: canonical-pass-replay-and-consumers-open",
+      "risks": "- Generated metadata binds the pre-artifact source commit and may require bounded post-commit convergence.\n- Local preview validation does not authorize stable publication.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "chore(release): regenerate current Lite preview assets",
+      "summary": "Refresh local no-publish Lite preview artifacts from current source.",
+      "type": "chore",
+      "validation": "- PASS: six serial D-managed generation and validation jobs exited zero, retired scratch and released reservations.\n- PASS: release and draft validation, pack-status, changelog checks, release status, doctor and validate.\n- PASS: scoped changed paths and staged diff checks.\n- NOT RUN: post-commit zero-change replay and final delivered-byte consumers yet."
     }
   ],
   "generated_by": "aide-lite",
@@ -2585,7 +2585,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "84e4a7330ce93e116c8c6af0b181d8756af6f647",
+  "source_head": "4b5854f2f9dbeea7cf246946caf02d829a16c757",
   "source_range": "HEAD latest 50 commits",
   "warnings": []
 }

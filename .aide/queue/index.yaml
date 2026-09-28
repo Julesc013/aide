@@ -3749,7 +3749,7 @@ items:
     evidence: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/evidence
   - id: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01
     status: running
-    planning_state: current_preview_generated_canonical_checks_pass_commit_replay_pending
+    planning_state: first_postcommit_replay_changed_30_metadata_convergence_pending
     result: PENDING
     title: Project reviewed partial recovery into current delivered Lite bytes
     task: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/task.yaml

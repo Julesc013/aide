@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01
 status: running
-planning_state: current_preview_generated_canonical_checks_pass_commit_replay_pending
+planning_state: first_postcommit_replay_changed_30_metadata_convergence_pending
 result: PENDING
 updated_at: 2026-09-28
-current_slice: six_managed_generation_jobs_passed_current_bytes_uncommitted
-next_slice: commit_generated_outputs_prove_replay_then_delivered_consumers
+current_slice: first_replay_all_commands_passed_zero_change_failed_30_metadata_files
+next_slice: commit_bounded_metadata_convergence_then_zero_change_replay
 review_gate: exact_artifact_and_dev_effect_review_required
 main_promotion_performed: false
 tag_created: false

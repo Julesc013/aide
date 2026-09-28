@@ -54,3 +54,10 @@ validation and exact job receipts are in `evidence/generation-84e4a733-20260928.
 Canonical check/inspect commands passed without rewriting source or unrelated
 paths. Derived outputs are uncommitted; post-commit replay and delivered
 consumers remain open. Commit one coherent artifact increment before replay.
+
+Artifact commit `4b5854f2` froze initial ZIP/tar hashes. First clean-HEAD
+replay passed all six commands but changed 30 tracked metadata/derived files;
+zero-change replay therefore failed. Exact external job results and the
+archive-member comparison are in task evidence. Only the archive manifest
+member changed; payload members stayed byte-identical. Commit this bounded
+metadata convergence, then rerun all six commands from the new clean HEAD.

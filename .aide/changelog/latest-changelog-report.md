@@ -1,7 +1,7 @@
 # Latest Changelog Report
 
 source_range: HEAD latest 50 commits
-source_head: 84e4a7330ce93e116c8c6af0b181d8756af6f647
+source_head: 4b5854f2f9dbeea7cf246946caf02d829a16c757
 commit_count: 50
 entry_count: 51
 malformed_count: 0

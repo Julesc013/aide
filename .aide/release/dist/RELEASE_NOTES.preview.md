@@ -3,7 +3,7 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 84e4a7330ce93e116c8c6af0b181d8756af6f647
+source_head: 4b5854f2f9dbeea7cf246946caf02d829a16c757
 preview_only: true
 
 ## Highlights
@@ -35,7 +35,6 @@ preview_only: true
 
 ## Validation Summary
 
-- 2defcad541d0: PASS: Release bundle, validate, draft and draft-validate each exited zero from clean projection commit d0bfa404.
 - b3a001befaac: PASS: Local, origin, ls-remote and GitHub API all observed dev at 2defcad5 after fast-forward and normal push.
 - 5561aecdb608: PASS: Fresh extracted-ZIP safe import applied 816 owned files; installed context, pack and verify exited zero with zero verifier errors.
 - b45010280e5e: PASS: 31 command log hashes and exit codes matched the pinned canary summary.
@@ -45,10 +44,10 @@ preview_only: true
 - f00d937e2368: PASS: the new regression failed on unmodified source with incidental X-OS-01 identity.
 - 04caefe65986: PASS: external review report hash matched and source worktree stayed clean before this evidence edit.
 - e88a1468acd2: PASS: one-item target regression failed on old source with X-OS-01 and passed after repair.
+- b9d2b150c39c: PASS: copied-ID target regression failed before the role repair and passes afterward.
 
 ## Known Risks
 
-- 2defcad541d0: This metadata commit is not a zero-diff replay result and does not authorize dev or public release effects.
 - b3a001befaac: Synthetic update fixtures and local previews do not establish a shipping support profile or public stable release.
 - 5561aecdb608: Local preview and synthetic packs cannot establish stable release or published-predecessor support.
 - b45010280e5e: This is preview-only evidence; the synthetic rollback successor and in-process interruption do not establish published or hostile-process guarantees.
@@ -58,10 +57,10 @@ preview_only: true
 - f00d937e2368: Source tests do not qualify the unchanged preview archives or the eventual published release.
 - 04caefe65986: The reviewed source commit is f00d937e; this later evidence-only commit is not a changed-source review substitute.
 - e88a1468acd2: Old export and release preview bytes do not contain this source repair; canonical provenance is red until regenerated.
+- b9d2b150c39c: Legacy profile-absent queues retain exact ID fallback; this is not a universal ownership classifier.
 
 ## Follow-up
 
-- 2defcad541d0: Run the four release commands from this committed candidate, require zero tracked changes, then obtain exact artifact and dev-effect review.
 - b3a001befaac: Qualify final declared Windows lifecycle, restart, offline and context/evidence journeys from frozen bytes, then proceed through separate exact release gates.
 - 5561aecdb608: Finish and independently review lifecycle/restart consumers; implement any real defect in a separate scoped source task.
 - b45010280e5e: Admit a bounded Task OS source repair, regenerate reviewed assets, and recheck installed consumers before final release acceptance.
@@ -71,6 +70,7 @@ preview_only: true
 - f00d937e2368: Obtain independent exact source review, then project through the current generator and rerun the installed consumer before a dev effect.
 - 04caefe65986: Admit and implement the target-owned nonempty queue routing repair, review its delta, then regenerate delivered artifacts once.
 - e88a1468acd2: Obtain independent exact source delta review, then regenerate once through the current generator and qualify installed target queues.
+- b9d2b150c39c: Independently review this exact changed source, then regenerate once and qualify zero- and one-item installed targets.
 
 ## Warnings
 
