@@ -369,3 +369,13 @@ checks. Record exact source, receipts, asset hashes and postcommit replay;
 request one independent current-byte effect review. Keep ungranted live-model
 permission, ten historical main-range decisions and publication distinct.
 Reuse existing D roots and one intensive job at a time; create no worktree.
+
+The first refreshed assets and 12 delivered job observations passed, with
+Q47/Q48 at 36/36. Six consumer journeys passed across two serial runs: an
+initial context/offline fixture hit its 60-second `git add` timeout, then
+passed with a recorded finite 300-second fixture limit. Before exact effect
+review, the public CLI contract check found `job usage --attempt-set` absent
+from the candidate form list. Add the exact partial-usage form, qualify this
+policy change independently, then regenerate preview, pack and assets once
+from that combined source. The earlier assets and consumers remain evidence
+for their own bytes, not the final policy-bound candidate.

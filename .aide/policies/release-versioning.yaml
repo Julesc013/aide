@@ -76,6 +76,7 @@ stable_lite_contract_candidate:
     - job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>
     - job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>
     - job usage --stream <codex-exec-jsonl>
+    - job usage --attempt-set <attempt-roster-json>
     - job context
   cli_scope_rule: >
     These are candidate command forms, not a shipping claim. The final release
@@ -83,6 +84,8 @@ stable_lite_contract_candidate:
     tested environment, and evidence. Unlisted CLI commands and options,
     including import-pack --mode full, are outside the first
     stable public contract unless separately qualified and added by review.
+    The attempt-set form attributes only supplied streams; complete work usage
+    and internal host model requests remain unknown.
   public_scope: >
     Only the final-manifest-qualified forms from candidate_public_cli for
     aide-lite-local-windows, portable pack interpretation, and ownership/receipt
