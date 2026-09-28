@@ -1,5 +1,30 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
+**2026-09-28 current execution delta:** The table below retains its historical
+source/evidence bindings. Current local/remote dev is `0259f81d8fca993b27781540ebc3f70b0c6fedcb` before this evidence closeout.
+The current local ZIP/tar preview hashes are `af8bf103…`/`f0111bd8…` and
+remain explicitly `no_publish`. The active
+`AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01` WorkUnit now binds the exact
+Windows runner cleanup repair and independent dev-only acceptance; 54 current
+importer cases plus 56 unchanged-oracle prior cases; fresh/brownfield
+lifecycle, forced-exit, context and Python-guarded offline canaries; installed
+task/validate forms; 25 exact safe-mode consumer commands; and ten installed
+CLI partial-recovery/feedback commands covering fresh, predecessor and
+project-resolved updates. Source and fixture proof does not establish a
+published predecessor. Installed `validate` exits zero but warns on missing
+generated task and AGENTS managed content in a fresh fixture.
+
+**Remaining release actions:** freeze one exact supported Windows Lite
+profile, source/tree, version, asset bytes, predecessor matrix and support
+limits; determine whether the current offline proof meets the promised local
+CLI scope without claiming OS-level native network isolation; build and test
+the final non-preview release subject; obtain independent technical release
+ACCEPT; promote main, tag/publish through the delegated permitted route; then
+download, hash and consume the actual remote assets. Native/hosted operation
+and wider vision remain separately gated. Read-only remote checks on
+2026-09-28 found no tags or GitHub Releases; the conditional first stable
+`1.0.0` policy must be rechecked at the final freeze.
+
 **Source binding (2026-09-26 closeout):** reviewed task checkpoint `53be4fc43ab20786de10312d0e5cfaf04e31921a`, tree `7b772d73328959afb31197f194b8c12b23ed9abe`, is fast-forwarded into dev. Final closeout refs are observed externally in `dev-sync-final-observation.json`. Main remains `aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3`. Current artifacts remain older previews from generator source `0509e161`; partial recovery, resource and feedback source acceptance does not qualify those bytes. Owner requested merge/sync/report only; development remains stopped. Exact older evidence below keeps its original source bindings and must not be relabeled as final integrated acceptance.
 
 | Mandatory outcome / applicable profile | Implementation owner and code | Executable acceptance | Exact evidence at this source | Blocker → next action |

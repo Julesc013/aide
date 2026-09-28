@@ -92,3 +92,22 @@ disposable running task returned success and a partial recovery suggestion,
 again without mutation. The first canary had an incorrect empty-state oracle;
 its failure and corrected diagnostics are retained in
 `evidence/task-cli-b94d7ba9.md`.
+
+Current ZIP/tar bytes then passed public CLI partial recovery for fresh and
+predecessor updates, including ordinary and wrong-plan refusals. A
+predecessor-bound local feedback preview produced digest-bound manual-only
+explanations. The seven-command final D job and the superseded six-command
+trial are in `evidence/partial-cli-0259f81d.md`. Remaining work is the exact
+profile gap check and a separate frozen release-effect WorkUnit.
+
+The exact-form 25-command consumer then passed with explicit `--mode safe`
+and resolved-update feedback. Installed `validate` exited zero but reported
+two fresh-fixture warnings. Exact logs, artifact hashes and resource receipts
+are in `evidence/exact-forms-0259f81d.md`. Freeze must assess these warnings
+and must not treat the local preview as a public release asset.
+
+The final missing recovery option ran through the installed CLI with a
+project-selected resolution file: ordinary retry and changed resolution
+refused; exact original resolution recovered. The ten-command job supersedes
+the earlier seven-command public recovery result and is bound in
+`evidence/partial-cli-0259f81d.md`.

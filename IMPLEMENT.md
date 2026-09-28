@@ -12331,3 +12331,23 @@ diagnostic confirmed documented exit one with no mutation. A final D-managed
 job passed empty and populated task status/inspection, including an exact
 project-owned task and non-mutating target snapshot; its scratch retired.
 Exact failed and passing job identities are retained in the WorkUnit.
+
+The delivered ZIP/tar pair also passed a seven-command public partial-import
+recovery canary: fresh and predecessor update each refused ordinary/wrong-plan
+replay and recovered only under the exact original plan digest; a
+predecessor-bound feedback preview created a local manual-only packet with
+digest-bound explanations. The synthetic predecessor is a fixture. The D job
+retired scratch and released its reservation; exact hashes are in the WorkUnit.
+
+An exact-option 25-command extracted ZIP/tar consumer rerun passed with
+explicit safe mode on import paths and an opt-in, digest-bound feedback packet
+for a project-selected resolution. Installed `validate` exited zero in a
+separate fresh-target job but warned about absent generated task and AGENTS
+managed content; those warnings remain visible in WorkUnit release evidence.
+Both D jobs retired scratch and released reservations.
+
+The installed CLI then passed the resolved partial-update recovery form in a
+disposable V3 fixture. Ordinary replay and a changed resolution input refused;
+the exact saved plan and original resolution recovered while preserving
+project-owned and selected bytes. The final ten-command D job retired scratch
+and is bound in the WorkUnit evidence.
