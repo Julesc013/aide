@@ -181,6 +181,35 @@ class EfficiencyWaitTests(unittest.TestCase):
         self.assertIn("cached_input_tokens_unknown", result["coverage_gaps"])
         self.assertEqual(result["model_requests"], "unknown")
 
+    def test_codex_usage_known_subtotal_does_not_turn_missing_into_zero(self):
+        path = self.codex_stream("partial-categories.jsonl", usage={
+            "input_tokens": 10, "output_tokens": 3})
+        result = lite.summarize_codex_exec_usage([path])
+        self.assertEqual(result["status"], "PARTIAL")
+        self.assertEqual(result["known_usage_totals"]["input_tokens"], 10)
+        self.assertEqual(result["known_usage_totals"]["output_tokens"], 3)
+        self.assertIsNone(result["known_usage_totals"]["cached_input_tokens"])
+        self.assertIsNone(result["known_usage_totals"]["reasoning_output_tokens"])
+
+    def test_codex_usage_conflicting_terminal_cannot_contribute_known_subtotal(self):
+        conflicted = self.codex_stream("conflicted.jsonl", usage={
+            "input_tokens": 10, "cached_input_tokens": 2,
+            "output_tokens": 4, "reasoning_output_tokens": 1})
+        conflicted.write_text(conflicted.read_text(encoding="utf-8")
+                              + json.dumps({"type": "turn.failed"}) + "\n", encoding="utf-8")
+        good = self.codex_stream("good-independent.jsonl", session=str(uuid.UUID(int=2)),
+                                 usage={"input_tokens": 6, "cached_input_tokens": 1,
+                                        "output_tokens": 2, "reasoning_output_tokens": 0})
+        result = lite.summarize_codex_exec_usage([conflicted, good])
+        self.assertEqual(result["status"], "PARTIAL")
+        self.assertIn("terminal_conflict", result["coverage_gaps"])
+        self.assertEqual(result["records"][0]["terminal_status"], "AMBIGUOUS")
+        self.assertEqual(result["completed_turns"], 1)
+        self.assertEqual(result["known_usage_totals"]["input_tokens"], 6)
+        self.assertEqual(result["known_usage_totals"]["output_tokens"], 2)
+        conflicted_only = lite.summarize_codex_exec_usage([conflicted])
+        self.assertIsNone(conflicted_only["known_usage_totals"]["input_tokens"])
+
     def test_codex_usage_import_refuses_ambiguous_or_altered_usage(self):
         path = self.codex_stream("bad.jsonl", usage={"input_tokens": 1, "cached_input_tokens": 2,
             "output_tokens": 1, "reasoning_output_tokens": 0})
