@@ -10,6 +10,7 @@ Date: 2026-09-29. WorkUnit: `AIDE-LITE-EFFICIENCY-01`.
 - Intermediate subject `33151c5ea97c05c2e9f10d5e91b96bf1f030ce46`, tree `cbc83880a98dcf2a8160517350ed0988ccb3b2ed`: independent **REQUEST_CHANGES** because the machine-local permission config still accepted duplicate JSON keys; it also noted a Python executable-path compatibility change.
 - Final source subject: `67e1d572d513501b790abe92c60b6c2378198dfc`, tree `20393ddd96fb8e4fd3a2f61d01483223614a213d`.
 - Final independent verdict: **ACCEPT for dev source integration** by `/root/native_os_build_review`, on exact `67e1d572`/`20393ddd`. The reviewer checked the prior blockers and final delta; `git diff --check` passed. This is a source verdict, not a live model or release verdict.
+- Integration: `git plan` reported a task-branch dry run; `dev` was an ancestor, all eight `dev..HEAD` messages passed the commit range check, and the task worktree was clean. Local `dev` fast-forwarded to evidence closeout `6281a6b903ca5193aa6b8b9f15e1172ea4c04af1`. The observed remote `refs/heads/dev` then matched that full commit. No main/tag/release effect occurred.
 
 The adapter extends `core/execution/managed_workspace.py` and the existing Windows Job host. It binds one prompt and result schema by source hash, uses explicit model and effort, and launches a read-only ephemeral Codex turn in owned scratch. A separate machine-local ChatGPT model/effort permission and finite admitted-turn count are required. Admission persists before launch; an uncertain launch consumes its slot. The dispatch lock is held across suspended-child resume. Prompt bytes count against the retained log limit, and the reservation includes collection overhead. Executable ancestors must be ordinary; the executable is hashed again just before process creation. Same-user malicious path mutation between final hash and process creation is outside this binding's guarantee.
 
@@ -29,6 +30,6 @@ The final job recorded peak memory 240,644,096 bytes and peak scratch 32,204 byt
 
 ## Remaining gates
 
-- Combined-source and extracted Lite qualification after accepted integration.
+- Extracted Lite qualification from current combined source after accepted integration.
 - Actual Codex account permission, live turn/JSONL verdict and effective-context/usage evidence; a synthetic host exit does not prove a completed turn.
 - Exact final release assets and promotion gate, separately.
