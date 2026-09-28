@@ -409,3 +409,8 @@ jobs, Q47/Q48 36/36, pack/stable/bundle/draft receipts, exact asset hashes and
 the unchanged unknown live-model boundary are recorded in the effect manifest.
 Independent effect review precedes dev integration; this packet does not
 authorize main promotion, tag or publication.
+
+Independent `/root/stable_effect_review` accepted exact effect subject
+`a681da82`, tree `d9b50264`, manifest SHA-256 `5a51a84e`, for local technical
+effect and dev integration. Record the verdict separately from the frozen
+candidate, then refresh refs and range checks before a fast-forward.
