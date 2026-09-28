@@ -25,17 +25,19 @@ scope:
     - .aide/queue/index.yaml
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - core/execution/managed_workspace.py
+    - .aide/scripts/tests/test_managed_workspace.py
     - PLANS.md
     - IMPLEMENT.md
   read_only_paths:
-    - .aide/scripts/**
-    - core/**
+    - .aide/scripts/aide_lite.py
+    - core/runtime/**
     - .aide/export/**
     - .aide/release/**
     - .aide/policies/**
     - docs/reference/**
   forbidden_operations:
-    - alter canonical source or local release bytes to make a canary pass
+    - alter delivered CLI or local release bytes to make a canary pass
     - create another physical checkout or unapproved storage pool
     - main promotion, tag, upload or publication
     - mutate an unapproved installed project
@@ -45,6 +47,7 @@ verification:
   - interruption classification and recovery at declared effect boundaries
   - offline target context/evidence and exact public CLI forms
   - preserved source/output hashes, retired scratch, bounded retained receipts
+  - focused regression and independent source review of any runner retirement repair
 retained_gates:
   - final version/profile freeze, independent release review and downloaded assets
   - native/hosted effect guarantees outside the Lite baseline

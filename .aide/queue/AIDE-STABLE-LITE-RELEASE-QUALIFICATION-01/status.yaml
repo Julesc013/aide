@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01
 status: running
-planning_state: admitted_current_dev_preview
+planning_state: delivered_consumers_pass_runner_repair_tested_review_pending
 result: PENDING
 updated_at: 2026-09-28
-current_slice: bound_existing_lifecycle_canaries_to_current_preview
-next_slice: run_current_zip_windows_lifecycle_through_D_runner
-review_gate: findings_require_scoped_source_repair_and_technical_review
+current_slice: lifecycle_forced_restart_and_context_commands_passed_cleanup_defect_recovered
+next_slice: independent_runner_repair_review_then_dev_integration
+review_gate: runner_source_change_requires_independent_review_before_dev
 main_promotion_performed: false
 tag_created: false
 release_published: false

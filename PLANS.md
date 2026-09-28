@@ -4133,3 +4133,10 @@ consumer jobs here used D, with scratch retirement and reservation release.
   reuses the current ZIP and D-managed runner for remaining Windows lifecycle,
   restart, context and offline release obligations. It will record actual
   pass/fail evidence before any final version/profile freeze.
+
+- Its current-byte lifecycle and forced-exit canaries passed. Fresh and Git
+  brownfield installed context/evidence commands also exited zero, but the
+  runner could not initially retire readonly Git objects. Exact owned-job
+  recovery completed. A narrow runner fix passed 27 focused tests and a real
+  Git-backed cleanup canary under the configured D roots. Independent source
+  review and dev integration precede the remaining release qualification.

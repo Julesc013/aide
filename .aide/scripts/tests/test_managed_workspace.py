@@ -5,6 +5,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import stat
 import subprocess
 import sys
 import tempfile
@@ -338,6 +339,26 @@ class ManagedWorkspaceTests(unittest.TestCase):
         self.assertTrue(result['scratch_absent']); self.assertTrue(result['reservation_released'])
         self.assertFalse((self.roots['control']/'active.json').exists())
         self.assertEqual((Path(result['retained'])/'output/unique.txt').read_text(), 'required result')
+        self.assertIn('creation_filetime', result['process'])
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows readonly scratch retirement')
+    def test_readonly_disposable_git_object_retires_after_output_custody(self):
+        script = ('import os,stat\nfrom pathlib import Path\n'
+                  'leaf=Path(os.environ["AIDE_JOB_TMP"])/"brownfield/.git/objects/00/object"\n'
+                  'leaf.parent.mkdir(parents=True)\nleaf.write_bytes(b"disposable git fixture")\n'
+                  'leaf.chmod(stat.S_IREAD)\n'
+                  'Path(os.environ["AIDE_JOB_OUTPUT"],"unique.txt").write_text("retained result")\n')
+        job = self.real_job(script)
+        try:
+            result = workspace.run(self.config_path, job)
+        finally:
+            # Keep the tiny fixture removable if a future regression fails.
+            for leaf in self.roots['scratch'].glob('*/tmp/brownfield/.git/objects/00/object'):
+                if leaf.exists(): leaf.chmod(stat.S_IWRITE)
+        self.assertEqual(result['result']['exit_code'], 0, result)
+        self.assertTrue(result['scratch_absent']); self.assertTrue(result['reservation_released'])
+        self.assertGreaterEqual(result['scratch_readonly_cleared'], 1)
+        self.assertEqual((Path(result['retained'])/'output/unique.txt').read_text(), 'retained result')
         self.assertIn('creation_filetime', result['process'])
 
     @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')

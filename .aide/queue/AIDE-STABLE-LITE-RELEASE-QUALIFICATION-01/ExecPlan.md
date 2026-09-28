@@ -39,3 +39,33 @@ do not weaken tests or claim native/hosted effects from Lite consumers.
 - [ ] Current-byte Windows lifecycle canary.
 - [ ] Current-byte forced restart and offline/context/public CLI coverage.
 - [ ] Honest release obligation checkpoint and next dependency.
+
+## Readonly Git fixture retirement repair, 2026-09-28
+
+The current ZIP passed the 31-command lifecycle canary and three forced
+process-exit recoveries under D. A fresh/brownfield context canary also
+completed with child exit zero; both installed targets produced context/task
+packets and `verify --evidence` returned WARN with zero errors. Its runner
+collected output/log custody but could not retire scratch because Windows Git
+loose objects in its disposable brownfield `.git` were readonly. This is a
+runner cleanup defect, not a product command failure. Exact owner/retained
+digests and job quiescence were verified; readonly attributes on 991 ordinary
+single-link files in that one owned scratch tree were cleared, and `job recover`
+retired it and released the reservation. No arbitrary cleanup or replay.
+
+Before another Git-backed consumer job, minimally extend the existing runner
+retirement path to clear readonly attributes only after retained custody and
+scratch ownership/type/link checks. Keep strict link/reparse/hardlink refusal,
+file-count bounds and crash recovery. Add a tiny Windows regression with a
+readonly temporary file, run affected runner tests under D, seek independent
+source review of exact repair, then continue qualification. The portable ZIP
+does not include `core/execution/managed_workspace.py`; its existing bytes stay
+frozen for the consumer evidence already collected.
+
+The focused managed-workspace suite passed 27 tests through D job
+`d6669a3a771b45a1b7e437da1e9de4ea`; scratch retired and the reservation
+was released. A separate real Git fixture created three readonly loose objects;
+the runner cleared all three after retaining its result, retired scratch and
+released the reservation in D job `d93c4a00bf5348f1b38e0fbd109b68e2`.
+Exact hashes and resource measurements are in the WorkUnit evidence. The
+source change still needs independent review before dev integration.

@@ -361,6 +361,37 @@ def content_digest(root):
     return result.hexdigest()
 
 
+def make_owned_scratch_writable(root, *, max_files):
+    """Retire readonly Windows fixtures only after the owned tree is verified."""
+    pending = [root]; readonly = []; count = 0
+    def is_readonly(info):
+        return not info.st_mode & stat.S_IWRITE or bool(
+            getattr(info, 'st_file_attributes', 0) & getattr(stat, 'FILE_ATTRIBUTE_READONLY', 1))
+    while pending:
+        directory = pending.pop()
+        info = ordinary(directory, directory=True)
+        if is_readonly(info):
+            readonly.append((directory, True))
+        for child in directory.iterdir():
+            info = child.lstat(); count += 1
+            if count > max_files:
+                raise WorkspaceRefused('scratch retirement entry limit exceeded')
+            if stat.S_ISDIR(info.st_mode):
+                ordinary(child, directory=True)
+                pending.append(child)
+            else:
+                ordinary(child)
+                if is_readonly(info):
+                    readonly.append((child, False))
+    # No attributes are changed until the whole tree passed type/link checks.
+    for path, directory in readonly:
+        info = ordinary(path, directory=directory)
+        os.chmod(path, info.st_mode | stat.S_IWRITE)
+        if is_readonly(ordinary(path, directory=directory)):
+            raise WorkspaceRefused('scratch readonly attribute could not be cleared')
+    return len(readonly)
+
+
 def finish_collected(record, config, roots):
     """Finish a previously verified collection without recopies or PID killing."""
     limits = config['limits']; retained = roots['retained']/record['job_id']
@@ -390,6 +421,7 @@ def finish_collected(record, config, roots):
                         raise WorkspaceRefused('post-collection output changed')
         for member in ('output', 'logs'):
             if (root/member).exists(): verify_remaining(root/member, retained/member)
+        record['scratch_readonly_cleared'] = make_owned_scratch_writable(root, max_files=limits['max_files'])
         shutil.rmtree(root)
     record.update(phase='retired', scratch_absent=not os.path.lexists(root), reservation_released=True)
     write_json(retained/'receipt.json', record)
