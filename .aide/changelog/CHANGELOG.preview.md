@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 1dada960cc47189e8a1c21be87b41aed02ea835a latest 50 commits
-source_head: 1dada960cc47189e8a1c21be87b41aed02ea835a
+source_range: HEAD latest 50 commits
+source_head: 6e35ea1379da7d0e447e8973b44205da6df6e662
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,9 +11,9 @@ release_publishing: false
 
 ## Summary
 
-- Added: 2
+- Added: 3
 - Changed: 17
-- Fixed: 15
+- Fixed: 14
 - Docs: 2
 - Internal: 14
 
@@ -21,15 +21,10 @@ release_publishing: false
 
 - Include the portable bounded job interface in the Lite release contract. (20710eace078 feat(release): qualify portable Lite job forms for stable contract)
 - Portable bounded job commands in the Lite candidate assets. (5acd32a79ab5 build(release): rebuild Lite assets with portable job contract)
+- Bounded attempt attribution for supplied Codex usage streams. (cec72cb6f2d7 feat(efficiency): attribute bounded Codex attempt streams)
 
 ## Changed
 
-- Codex host source qualification and remaining gates. (6281a6b903ca docs(lite): record reviewed Codex host source qualification)
-- Durable dev integration record for Codex host source. (38fbe92266bd chore(lite): record observed Codex host dev integration)
-- Extracted Lite fixture covers Codex permission refusal. (1bacae3a9be0 test(lite): prove extracted Codex admission refusal)
-- Durable delivered Codex admission test evidence. (12351b07c340 docs(lite): retain delivered Codex refusal qualification)
-- Current Lite pack refresh execution plan. (6c4f61553495 chore(release): bind current Lite source pack refresh)
-- Current-source Lite portable pack candidate. (c22d41112973 build(release): refresh Lite pack from current source)
 - Current Lite pack uses repaired non-circular provenance. (a7ab0223d1ba build(release): bind repaired Lite pack to current source)
 - Local Lite 1.0.0 candidate includes current portable source. (b147aa8cf28a build(release): freeze current Lite 1.0.0 local assets)
 - Preserve the usage repair review verdict. (8912eab9071c docs(lite): record known usage source acceptance)
@@ -41,14 +36,15 @@ release_publishing: false
 - Record qualified bounded execution and owned cleanup closure. (ef938eef1b78 docs(resource): close bounded campaign cleanup)
 - Record accepted usage subtotal source review. (fe65f48c67a1 docs(usage): record accepted turn subtotal review)
 - Schedule current usage-source release qualification. (1dada960cc47 docs(release): plan current usage source refresh)
+- Refresh unpublished release note preview. (24507295db20 docs(changelog): refresh current Lite preview)
+- Refresh unpublished bundle and draft views for current Lite bytes. (91cdd05776ab build(release): refresh bound local bundle and draft)
+- Freeze current unpublished Lite technical effect evidence. (de308dd74462 docs(release): freeze usage turn local effect packet)
+- Record current local technical effect acceptance. (d5a84c10b1b7 docs(release): record accepted current local effect)
+- Record qualified local Lite effect integration. (dbf216c3e0ce docs(release): record current Lite dev integration)
+- Record accepted portable attempt attribution source review. (6e35ea1379da docs(efficiency): record accepted attempt attribution review)
 
 ## Fixed
 
-- Bounded Windows checkpoint retry under reader contention. (12ac93c9aeec fix(job): retry transient Windows checkpoint replacement)
-- Codex host admission and bounded retained input. (36c944159c09 fix(lite): gate Codex turns and bound retained input)
-- Setup quota regression expectation. (33151c5ea97c test(job): update setup reservation expectation)
-- Ambiguous local Codex model permissions now fail closed. (67e1d572d513 fix(lite): reject ambiguous local Codex permissions)
-- Delivered host refusal oracle now covers run admission. (8b0cba063b37 test(lite): exercise delivered Codex run refusal)
 - Non-circular portable pack provenance replay. (86838e444162 fix(release): preserve unchanged pack source on replay)
 - Changelog preview provenance for explicit historical revisions. (7a521066fdd4 fix(changelog): bind preview to selected source revision)
 - Range-bound changelog provenance under mixed and open-ended selectors. (46fe61d743f0 fix(changelog): bind range head to selected commit set)
@@ -59,6 +55,10 @@ release_publishing: false
 - Include corrected usage accounting in the unpublished Lite candidate. (8f9bd0748fab build(release): refresh Lite 1.0.0 candidate archives)
 - Bind public Lite release claims to current candidate evidence. (ae08a6be3b96 fix(release): bind current Lite public CLI forms)
 - Preserve valid independent Codex usage subtotals under partial coverage. (9c391d255017 fix(usage): retain independent subtotal across ambiguous turns)
+- Include the corrected usage subtotal importer in the portable pack. (061ef259bfca build(pack): refresh Lite export for usage subtotal repair)
+- Carry corrected usage importer into local stable candidate. (2767290ac9d2 build(release): refresh local Lite stable candidate)
+- Keep local preview notes bound to the exported source. (a61fc71bdc88 fix(changelog): bind preview to exported source)
+- Malformed attempt rosters now receive bounded refusal. (8f10a66b3f0a fix(efficiency): refuse malformed Codex attempt rosters)
 
 ## Docs
 

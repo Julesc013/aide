@@ -356,3 +356,16 @@ Local and remote `dev` fast-forwarded from `fe65f48c` to `d5a84c10`, tree
 `50058036`; the eight new commit messages passed the range checker and the
 remote ref was observed. The full `main..dev` check still reports exactly ten
 unresolved historical message failures. No main or release effect followed.
+
+## 2026-09-29 attempt-attribution release refresh
+
+Independently accepted portable attempt attribution reached local and remote
+`dev@6e35ea13`; the prior accepted local Lite assets remain bound to earlier
+source. Refresh changelog preview once, then build the portable pack from a
+clean committed source with the existing D-managed export job. Prove the new
+`job usage --attempt-set` path from extracted bytes in a disposable consumer,
+then build/validate stable assets and run affected integrated and delivered
+checks. Record exact source, receipts, asset hashes and postcommit replay;
+request one independent current-byte effect review. Keep ungranted live-model
+permission, ten historical main-range decisions and publication distinct.
+Reuse existing D roots and one intensive job at a time; create no worktree.
