@@ -126,3 +126,8 @@ cases under the D runner after two retained failed attempts exposed the real
 integration. The next extracted-pack qualification must assert `job context`
 from delivered bytes. Exact receipts and limits are in
 `evidence/codex-context-parser-qualification-2026-09-29.md`.
+
+The extracted-ZIP fixture consumer now asserts `job context` from delivered
+bytes and passed 1/1 in D-managed job `680c0a88`. Its scratch was retired and
+the reservation released. This closes the fixture proof; final canonical
+release bytes and a live mediated host binding remain separate gates.
