@@ -12510,3 +12510,12 @@ accepted this as one local Windows interruption proof only. The first harness
 attempt failed on an unsupported import flag; the corrected canary and its
 receipt hashes are recorded in the campaign evidence. Product source, frozen
 release asset, dev and main were unchanged.
+
+The first portable efficiency increment added read-only `job wait` and made
+`job run` emit a compact outcome by default (`--full` retains detailed output).
+Frozen source `f30bbad2` passed six synthetic cases and one actual export
+inclusion case through the bounded D runner; exact receipt hashes, measured
+resource peaks and limits are in `AIDE-LITE-EFFICIENCY-01/evidence`.
+Independent `/root/stable_effect_review` accepted source integration and the
+bounded local effect. The exported archive, host dispatch/pause boundary,
+total model usage and release bytes remain unqualified.

@@ -1,10 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-EFFICIENCY-01
 status: running
-planning_state: portable_observer_implementation
+planning_state: source_review_accepted_export_and_host_pending
 result: PENDING
-updated_at: 2026-09-28
+updated_at: 2026-09-29
 source_base: 190d3f5c2f76143657514d3cb50100622b987608
 branch: task/aide-lite-efficiency-01
 first_slice: read_only_wait_bounded_result_real_job
-release_inclusion: pending_export_and_independent_review
+source_review: ACCEPT_f30bbad2_local_effect_only
+release_inclusion: pending_export_host_and_release_qualification

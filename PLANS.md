@@ -4232,3 +4232,9 @@ mid-removal child-exit canary on `task/aide-post-lite-source-integration-01`.
 It preserves authored brownfield bytes and resumes removal through a fresh
 delivered CLI. This supplemental evidence does not move dev or qualify remote
 download; complete the exact main-history decision and release effect first.
+
+The owner made execution efficiency a release requirement on 2026-09-28. The
+first Lite increment at `f30bbad2` has accepted source review and local D-runner
+evidence for quiet deterministic job waiting and bounded outcome views. Next
+qualify exact exported Lite bytes, then a supported host binding and actual
+usage/outcome accounting. No new release claim follows from this first slice.

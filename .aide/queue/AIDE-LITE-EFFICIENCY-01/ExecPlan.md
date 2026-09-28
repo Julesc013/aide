@@ -47,11 +47,11 @@ before broader efficiency claims. FacMan product development stays paused.
 ## Progress
 
 - [x] Owner priority and current runner/export boundaries characterized.
-- [ ] Portable observer and bounded view implemented.
+- [x] Portable observer and bounded view implemented at frozen source `f30bbad2`; exact independent source integration/local-effect ACCEPT.
 - [x] First source candidate `54b83760` adds portable read-only attachment;
   six D-managed synthetic tests passed on that exact source, and a copied Lite
-  CLI ran without a source checkout. Its first actual `job run` still printed
-  a full receipt, so the next delta makes compact output the default while
-  preserving explicit `--full` compatibility. Retest after that delta.
-- [ ] Synthetic and real-job qualification recorded.
-- [ ] Exported consumer and independent review accepted.
+  CLI ran without a source checkout. The superseding `f30bbad2` makes compact
+  `job run` output the default and retains explicit `--full` compatibility.
+- [x] Six synthetic cases and one actual export-inclusion job passed under the configured D runner; receipts and resource bounds are in `evidence/first-slice-qualification-2026-09-29.md`.
+- [ ] Qualify the actual exported Lite archive and host binding. The copied CLI fixture passed without source checkout, but is narrower than full archive qualification.
+- [ ] Continue pause-aware dispatch, usage/outcome accounting and release qualification in bounded increments.

@@ -410,3 +410,15 @@ release. Independent `/root/stable_effect_review` accepted its exact local
 Windows delivered-byte result as additional evidence. See
 `evidence/later-removal-qualification-2026-09-28.md` for bindings and limits.
 The frozen Lite release effect and ten-message main-promotion gate are unchanged.
+
+## 2026-09-29 execution-efficiency release requirement
+
+The owner's 2026-09-28 priority applies to AIDE and exported Lite. WorkUnit
+`AIDE-LITE-EFFICIENCY-01` has independently accepted source `f30bbad2` for
+quiet deterministic job observation and compact result views. Six synthetic
+cases and one actual export-inclusion test passed under the configured bounded
+D runner. This does not establish host-wide model-call control or credit
+savings. Qualify exact exported bytes, then pause-aware host dispatch and
+normalized usage/outcome accounting before an efficiency-qualified release.
+The frozen 1.0.0 acceptance does not cover these changed bytes; the ten exact
+historical-message decisions still gate its old main-promotion path.
