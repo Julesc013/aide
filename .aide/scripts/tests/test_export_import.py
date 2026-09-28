@@ -1706,6 +1706,8 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
         self.assertEqual(aide_lite.validate_pack_checksums(pack_v1), (True, []))
         target = source_root.parent / "target-rollback-paths"
         self.assertEqual(aide_lite.apply_import_pack(pack_v1, target)["status"], "APPLIED")
+        aide_lite.write_text(source_root / ".aide/policies/token-budget.yaml", "version: changed-budget\n")
+        aide_lite.write_text(source_root / ".aide/policies/recovery.yaml", "version: changed-recovery\n")
         pack_v2 = self.freeze_pack(source_root, "rollback-paths-v2")
         self.assertEqual(aide_lite.apply_import_pack(pack_v2, target, predecessor_pack=pack_v1)["status"], "APPLIED")
         receipt_before = (target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes()
@@ -1713,6 +1715,21 @@ with module.portable_import_guard_missing_controls(Path(sys.argv[2])):
             aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
         self.assertTrue((target / added_rel).is_file())
         self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+        generic_reverse = aide_lite.apply_import_pack(pack_v1, target,
+            predecessor_pack=pack_v2, fail_after_writes=1)
+        self.assertEqual(generic_reverse["status"], "INTERRUPTED")
+        self.assertEqual(generic_reverse["recovery"]["classification"], "partial")
+        intent_path = target / aide_lite.PORTABLE_IMPORT_INTENT_PATH
+        intent_before = intent_path.read_bytes()
+        target_before = (target / generic_reverse["written"][0]).read_bytes()
+        with self.assertRaisesRegex(ValueError, "payload paths differ"):
+            aide_lite.build_portable_rollback_plan(pack_v2, pack_v1, target)
+        with self.assertRaisesRegex(ValueError, "payload paths differ"):
+            aide_lite.apply_portable_rollback(pack_v2, pack_v1, target,
+                generic_reverse["plan_digest"], recover_partial=True)
+        self.assertEqual(intent_path.read_bytes(), intent_before)
+        self.assertEqual((target / aide_lite.PORTABLE_IMPORT_RECEIPT_PATH).read_bytes(), receipt_before)
+        self.assertEqual((target / generic_reverse["written"][0]).read_bytes(), target_before)
 
     @unittest.skipUnless(sys.platform == "win32", "anchored portable rollback apply is Windows only")
     def test_interrupted_rollback_retains_intent_and_requires_reconciliation(self) -> None:

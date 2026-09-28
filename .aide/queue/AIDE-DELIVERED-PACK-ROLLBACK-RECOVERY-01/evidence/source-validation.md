@@ -34,3 +34,21 @@
   delivered-archive qualification. Completed/no-effect interruption states
   still use the existing importer reconciliation path; this new option is
   deliberately limited to an exact partial rollback.
+
+## First review and repair
+
+- Independent reviewer `/root/stable_effect_review` returned REQUEST_CHANGES
+  for source commit `0bc7da3f` (tree `15c15d80`): pending rollback recovery
+  bypassed the ordinary receipt lineage and equal safe payload path-set
+  predicates. This is a substantive source finding, not an acceptance.
+- The added reverse-import regression failed before repair in managed job
+  `a0da9f7b315d41e19bd855b26084c665` (one expected failure, exit 1),
+  confirming that differing payload paths reached the rollback recovery
+  preview. Scratch retired and the reservation was released.
+- A shared receipt-baseline predicate now precedes rollback recovery preview
+  and ordinary rollback target observation. The exact regression passed in
+  managed job `333950e2feef42e39a5ff04906561da5` (one test, exit 0),
+  asserting refusal without changing the pending intent, prior receipt or
+  partial target bytes. Scratch retired and the reservation was released.
+- The superseding commit, affected regression result and independent rereview
+  remain to be recorded. This source is outside the frozen Lite 1.0.0 assets.

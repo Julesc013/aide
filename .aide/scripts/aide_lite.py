@@ -43111,6 +43111,46 @@ def portable_safe_pack_targets(pack_root: Path) -> set[str]:
     return targets
 
 
+def portable_rollback_receipt_baseline(
+    current_pack: Path, previous_pack: Path, target_root: Path,
+    current_identity: dict[str, object], previous_identity: dict[str, object],
+) -> tuple[dict[str, object], dict[str, object]]:
+    """Validate the completed safe receipt before a rollback or its recovery."""
+    receipt = load_portable_import_receipt(target_root)
+    if receipt is None or receipt.get("mode") != "safe":
+        raise ValueError("rollback requires a completed safe-mode import receipt")
+    if receipt.get("pack") != current_identity or receipt.get("predecessor_pack") != previous_identity:
+        raise ValueError("rollback packs do not match exact receipt lineage")
+    current_targets, previous_targets = portable_safe_pack_targets(current_pack), portable_safe_pack_targets(previous_pack)
+    if current_targets != previous_targets:
+        raise ValueError("rollback payload paths differ; ownership-aware path changes require separate recovery")
+    if portable_target_path(target_root, PORTABLE_REPAIR_INTENT_PATH).exists():
+        raise ValueError("pending portable repair intent blocks rollback")
+    managed = receipt["managed"]
+    if set(managed) != current_targets:
+        raise ValueError("rollback receipt does not cover exact safe payload targets")
+    for target_rel, entry in managed.items():
+        source_rel = "AGENTS.md.template" if target_rel == "AGENTS.md" else target_rel
+        expected_kind = "portable_managed_section" if target_rel == "AGENTS.md" else "managed_file"
+        source = current_pack / "files" / source_rel
+        if entry["kind"] != expected_kind or entry["source"] != source_rel or not source.is_file():
+            raise ValueError(f"rollback receipt source does not match current pack: {target_rel}")
+        if expected_kind == "managed_file":
+            source_digest = sha256_file(source)
+        else:
+            source_block = portable_managed_block(read_text(source))
+            if source_block is None:
+                raise ValueError("current rollback pack AGENTS template has no managed block")
+            source_digest = digest_bytes(source_block.encode("utf-8"))
+        allowed_installed = {source_digest}
+        if expected_kind == "portable_managed_section":
+            # The authored AGENTS.md newline style is receipt-owned.
+            allowed_installed.add(digest_bytes(source_block.replace("\n", "\r\n").encode("utf-8")))
+        if entry["installed_digest"] not in allowed_installed or entry["source_digest"] != source_digest:
+            raise ValueError(f"rollback receipt baseline differs from current pack: {target_rel}")
+    return receipt, managed
+
+
 def build_portable_rollback_plan(current_pack: Path, previous_pack: Path, target_root: Path) -> dict[str, object]:
     """Preview a receipt-bound return to the exact predecessor payload."""
     reject_portable_rollback_pack_reparse(current_pack)
@@ -43144,45 +43184,16 @@ def build_portable_rollback_plan(current_pack: Path, previous_pack: Path, target
             and next_receipt.get("predecessor_pack") == current_identity
             and next_receipt.get("mode") == "safe"
         )
+        if rollback_pending:
+            portable_rollback_receipt_baseline(current_pack, previous_pack, target_root, current_identity, previous_identity)
         return {"status": "RECOVERY_REQUIRED", "plan_digest": None,
             "recovery_plan_digest": pending.get("plan_digest") if rollback_pending else None,
             "operations": [], "conflicts": [], "preserved": [],
             "recovery": classify_portable_import_recovery(target_root, pending)}
-    receipt = load_portable_import_receipt(target_root)
-    if receipt is None or receipt.get("mode") != "safe":
-        raise ValueError("rollback requires a completed safe-mode import receipt")
-    if receipt.get("pack") != current_identity or receipt.get("predecessor_pack") != previous_identity:
-        raise ValueError("rollback packs do not match exact receipt lineage")
-    current_targets, previous_targets = portable_safe_pack_targets(current_pack), portable_safe_pack_targets(previous_pack)
-    if current_targets != previous_targets:
-        raise ValueError("rollback payload paths differ; ownership-aware path changes require separate recovery")
-    if portable_target_path(target_root, PORTABLE_REPAIR_INTENT_PATH).exists():
-        raise ValueError("pending portable repair intent blocks rollback")
-    managed = receipt["managed"]
-    if set(managed) != current_targets:
-        raise ValueError("rollback receipt does not cover exact safe payload targets")
+    receipt, managed = portable_rollback_receipt_baseline(
+        current_pack, previous_pack, target_root, current_identity, previous_identity)
     changed: list[str] = []
     for target_rel, entry in managed.items():
-        source_rel = "AGENTS.md.template" if target_rel == "AGENTS.md" else target_rel
-        expected_kind = "portable_managed_section" if target_rel == "AGENTS.md" else "managed_file"
-        source = current_pack / "files" / source_rel
-        if entry["kind"] != expected_kind or entry["source"] != source_rel or not source.is_file():
-            raise ValueError(f"rollback receipt source does not match current pack: {target_rel}")
-        if expected_kind == "managed_file":
-            source_digest = sha256_file(source)
-        else:
-            source_block = portable_managed_block(read_text(source))
-            if source_block is None:
-                raise ValueError("current rollback pack AGENTS template has no managed block")
-            source_digest = digest_bytes(source_block.encode("utf-8"))
-        allowed_installed = {source_digest}
-        if expected_kind == "portable_managed_section":
-            # merge_agents_text renders the exact pack block with the authored
-            # AGENTS.md newline style. Its CRLF bytes are receipt-owned even
-            # though the validated pack template uses LF bytes.
-            allowed_installed.add(digest_bytes(source_block.replace("\n", "\r\n").encode("utf-8")))
-        if entry["installed_digest"] not in allowed_installed or entry["source_digest"] != source_digest:
-            raise ValueError(f"rollback receipt baseline differs from current pack: {target_rel}")
         target = portable_target_path(target_root, target_rel)
         if entry["kind"] == "managed_file":
             observed = target_file_digest(target)

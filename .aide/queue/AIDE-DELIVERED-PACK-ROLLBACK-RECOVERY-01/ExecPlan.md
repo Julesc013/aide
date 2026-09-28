@@ -29,3 +29,11 @@ rollback cases and an additional CLI junction case pass through the D runner.
 Exact job identities and observed limits are in `evidence/source-validation.md`.
 Freeze source for independent review; do not project into the accepted Lite
 release or move dev before an exact release delta decision.
+
+The first independent review of `0bc7da3f` returned REQUEST_CHANGES: a
+rollback-direction import intent bypassed the completed-receipt and equal
+safe-payload-path checks. A differing-path reverse import reproduced the
+finding. The repair validates the same receipt baseline before offering the
+saved recovery digest; ordinary rollback uses that shared validation too.
+The focused regression is green. Obtain review of the superseding exact
+source after affected tests, while keeping the frozen Lite release separate.

@@ -12454,3 +12454,10 @@ installed-CLI test covers wrong direction/digest, a rival edit and preserved
 authored bytes; eight affected rollback cases and a CLI junction case passed
 under the D runner. This is source work awaiting independent review and
 delivered-byte qualification, not a change to the accepted Lite release.
+
+The first independent review requested changes: an interrupted reverse
+import could bypass rollback receipt and path-set checks. A failing
+reverse-import regression reproduced that case. The follow-up shares the
+completed receipt baseline predicate with ordinary rollback and refuses
+partial recovery when safe payload paths differ. The focused regression
+passes; superseding exact review and broader affected tests remain open.
