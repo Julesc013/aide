@@ -19,8 +19,8 @@ artifacts:
     publish_candidate: false
   - path: .aide/release/dist/install.md
     kind: install_notes
-    sha256: a8671664ea0d2731bc20c740a06bde16f886f17ca71695594d2470a38d92d6f2
-    size_bytes: 2418
+    sha256: fd723ca751120d72a074a34166b9cf6d3178a14f61018f16d96f78d0548bcd0b
+    size_bytes: 2434
     publish_candidate: false
   - path: .aide/release/dist/CHANGELOG.preview.md
     kind: changelog_preview_copy

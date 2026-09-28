@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01
 status: running
-planning_state: first_postcommit_replay_changed_30_metadata_convergence_pending
+planning_state: release_ancestor_metadata_convergence_pending
 result: PENDING
 updated_at: 2026-09-28
-current_slice: first_replay_all_commands_passed_zero_change_failed_30_metadata_files
-next_slice: commit_bounded_metadata_convergence_then_zero_change_replay
+current_slice: four_release_commands_passed_zero_change_failed_18_metadata_files
+next_slice: commit_18_release_metadata_files_then_four_command_zero_change_replay
 review_gate: exact_artifact_and_dev_effect_review_required
 main_promotion_performed: false
 tag_created: false

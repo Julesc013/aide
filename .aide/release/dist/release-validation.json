@@ -82,7 +82,7 @@
       "severity": "PASS"
     },
     {
-      "message": "pack-status compatible for release bundle: PASS",
+      "message": "pack-status compatible for release bundle: PASS_SOURCE_ANCESTOR",
       "severity": "PASS"
     }
   ],
@@ -131,7 +131,7 @@
     "result": "PASS"
   },
   "no_publish": true,
-  "pack_status": "PASS",
+  "pack_status": "PASS_SOURCE_ANCESTOR",
   "preview_only": true,
   "result": "PASS",
   "secret_scan": {
