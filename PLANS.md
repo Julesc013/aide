@@ -4258,3 +4258,10 @@ For the host-context efficiency slice, Lite will parse one bounded supplied
 Codex prompt-input JSON stream without launching a model or exposing text.
 The installed-host probe and synthetic privacy/refusal tests run under the
 configured D owner. Exact host-call mediation and release acceptance stay gated.
+
+The campaign's separate mid-removal canary on clean `dev@2aaee82e` passed a
+real child exit after the first owned deletion from the frozen local 1.0.0 ZIP,
+then resumed to `DETACHED` with authored and project-owned bytes preserved.
+The job retired scratch under the approved D runner. Its reviewed evidence is
+now integrated into dev as historical qualification; a new release effect
+must qualify current bytes before publication.

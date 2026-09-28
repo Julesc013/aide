@@ -428,3 +428,21 @@ The follow-on Lite Codex `exec --json` usage importer at `fe8bca8b` passed
 received independent superseding-delta ACCEPT after a rejected first version
 was repaired. This is source and fixture evidence; real host dispatch, usage
 coverage and a new release freeze remain open.
+
+## 2026-09-28 mid-removal delivered-byte qualification
+
+One D-managed job on clean `dev@2aaee82e` exercised the frozen 1.0.0 local ZIP
+in a disposable brownfield consumer. A child exited 77 after the first
+receipt-owned file deletion; the intent and receipt survived, and a fresh
+delivered CLI resumed the exact plan to `DETACHED` while retaining authored
+guidance and project-owned bytes. Job `56478859dfd641a0a1481540fe58b303`
+passed, released its reservation and retired scratch. Exact hashes, result,
+harness and limits are in `evidence/mid-removal-qualification-2026-09-28.md`.
+This evidence came from the frozen local release head and is now integrated
+into dev as historical qualification. It is not current release-asset or
+downloaded-asset proof.
+
+The independent `/root/stable_effect_review` accepted the exact `42832385`
+canary evidence for this local Windows interruption point. Preserve the task
+branch for source custody. A new release effect must qualify the changed dev
+head and current bytes. Do not relabel this as downloaded-asset proof.

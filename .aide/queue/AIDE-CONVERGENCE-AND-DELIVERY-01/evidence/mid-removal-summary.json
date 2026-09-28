@@ -1,0 +1,11 @@
+{
+  "asset_sha256": "0d3ce38d1ab946d40590c8ead55c1ed1805ab12681258e84b792817ee6aec09d",
+  "authored_agents_preserved": true,
+  "child_exit": 77,
+  "first_removed": ".aide.local.example/README.md",
+  "intent_and_receipt_retained_after_exit": true,
+  "member_count": 835,
+  "project_owned_preserved": true,
+  "resume": "DETACHED",
+  "status": "PASS"
+}
