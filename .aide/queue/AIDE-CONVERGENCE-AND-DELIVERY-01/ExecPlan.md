@@ -288,3 +288,13 @@ The verdict is in `evidence/removal-rename-review-d3b2f0d3.md`, with external
 custody SHA-256 `6bdd377549a3976b8b206bbfddcdfc646355afe20b57fea6c4d87adff437b571`.
 Do not treat the d3 source as accepted; run the new regression and seek an
 exact superseding rereview.
+
+The superseding source `526dfb51` (tree `32069c8d`) guards the missing
+identity before path or handle access. Managed D job
+`ff5eeb9bb4e64e7089a7ed2835397c16` passed its one legacy-intent
+regression; peak memory was 212,676,608 bytes, peak scratch 243 bytes,
+scratch was retired and the reservation released. Independent scoped
+rereview ACCEPTS this exact source for dev integration. The frozen Lite
+1.0.0 release effect remains bound to `dev@2aaee82e`; changing that release
+would need a new artifact and effect review. Preserve this qualified source
+on its task branch until that boundary is resolved.

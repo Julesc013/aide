@@ -1,5 +1,16 @@
 # AIDE Implementation Log
 
+## 2026-09-28 removal rename-gap recovery
+
+On `task/aide-removal-rename-recovery-01`, the Windows removal retry now
+restores an exact authored `AGENTS.md` backup after interruption between
+rename and link, provided the backup digest and recorded single-link file
+identity match and the target name is still absent. Legacy intents without
+that identity return safe recovery refusal. The focused and adjacent managed
+D tests passed, and independent scoped rereview ACCEPTED source `526dfb51`
+for dev integration. The frozen Lite 1.0.0 release bytes are unaffected;
+source integration or release inclusion needs its own exact effect handling.
+
 ## 2026-09-28 stable Lite release-effect policy repair
 
 Recorded independent REQUEST_CHANGES for `d5df63c5`, widened only the
