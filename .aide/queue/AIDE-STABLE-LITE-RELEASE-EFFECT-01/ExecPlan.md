@@ -323,3 +323,14 @@ the structured range check. Local and remote dev fast-forwarded from
 The exact result and limitations are in
 `evidence/efficiency-effect-dev-integration-2026-09-29.md`. Main, tag and
 publication retain the live-model and ten historical-decision gates.
+
+## 2026-09-29 turn-subtotal source refresh
+
+The independently accepted usage repair `9c391d25` reached local and remote
+`dev@fe65f48c`. The prior local effect remains evidence for its exact older
+source and assets. Refresh the current portable pack and stable bytes through
+the existing D-managed jobs, serially qualify affected release checks and
+delivered consumers, then freeze exact hashes for independent effect review.
+Reuse unchanged evidence only where source, oracle and environment bindings
+still hold. Keep live model, historical promotion, tag and publication gates
+separate. This is one coherent refresh, not per-document regeneration.
