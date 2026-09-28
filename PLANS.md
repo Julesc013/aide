@@ -4182,3 +4182,10 @@ recovery/feedback/validate/task forms. The exact effect manifest and review
 packet are in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. The next gate is the
 stricter independent release ACCEPT, then authorized dev/main/tag/publication
 and downloaded-byte verification. The wider programme remains active.
+
+The campaign's separate mid-removal canary on clean `dev@2aaee82e` passed a
+real child exit after the first owned deletion from the frozen local 1.0.0 ZIP,
+then resumed to `DETACHED` with authored and project-owned bytes preserved.
+The job retired scratch under the approved D runner. Its evidence is on the
+`task/aide-stable-mid-removal-canary-01` branch pending exact release delta
+handling; it does not alter the frozen source or publication gate.

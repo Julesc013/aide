@@ -240,3 +240,15 @@ two D jobs now pass all 110 importer methods in disjoint partitions. Preserve
 the independent ACCEPT_WITH_NOTES and exact receipts. Next integrate qualified
 source if ancestry permits, then generate and qualify current artifacts and
 fresh/brownfield installed consumers. Do not call source tests a release.
+
+## 2026-09-28 mid-removal delivered-byte qualification
+
+One D-managed job on clean `dev@2aaee82e` exercised the frozen 1.0.0 local ZIP
+in a disposable brownfield consumer. A child exited 77 after the first
+receipt-owned file deletion; the intent and receipt survived, and a fresh
+delivered CLI resumed the exact plan to `DETACHED` while retaining authored
+guidance and project-owned bytes. Job `56478859dfd641a0a1481540fe58b303`
+passed, released its reservation and retired scratch. Exact hashes, result,
+harness and limits are in `evidence/mid-removal-qualification-2026-09-28.md`.
+This is an evidence-only branch from the frozen release head; it is not yet
+part of the reviewed release effect or downloaded-asset proof.
