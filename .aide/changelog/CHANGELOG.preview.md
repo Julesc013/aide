@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 2c168ca172ac09d8ff1bc96561461f56d9d6b1d0 latest 50 commits
-source_head: 2c168ca172ac09d8ff1bc96561461f56d9d6b1d0
+source_range: 20710eace0784fa4edf88ee2f4d4a52d19dde78a latest 50 commits
+source_head: 20710eace0784fa4edf88ee2f4d4a52d19dde78a
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,25 +11,20 @@ release_publishing: false
 
 ## Summary
 
-- Added: 4
-- Changed: 27
+- Added: 3
+- Changed: 23
 - Fixed: 17
-- Docs: 1
-- Internal: 1
+- Docs: 2
+- Internal: 5
 
 ## Added
 
-- Portable Lite job context summary from stdin. (6f4b45a6184d feat(lite): summarize bounded Codex prompt-input streams)
-- Delivered Lite context observer regression. (f409db677cd2 test(lite): verify context summary from extracted pack)
 - Installed Codex no-model host regression. (6e21e70f4c32 test(worker): verify installed Codex binary in owned Job)
 - Explicit one-turn Codex job adapter in the existing Lite runner. (651744c0a428 feat(lite): bind one Codex turn to the managed job owner)
+- Include the portable bounded job interface in the Lite release contract. (20710eace078 feat(release): qualify portable Lite job forms for stable contract)
 
 ## Changed
 
-- Preserve the portable execution dev checkpoint. (648cd8836974 chore(lite): record observed dev integration)
-- Current lifecycle evidence and release gate description. (47b0883bb87b chore(campaign): record current-source lifecycle qualification)
-- Host context preflight evidence for Lite efficiency. (764fa8cbcde4 chore(lite): record bounded Codex context preflight)
-- Preserve Lite context parser source qualification. (467b445a48e0 chore(lite): preserve accepted context parser evidence)
 - Record portable context observer fixture evidence. (ea80f73d21a9 chore(lite): record delivered context fixture qualification)
 - Record installed Codex no-model host evidence. (32b9711bec4e chore(worker): record installed Codex host qualification)
 - Preserve Windows delivered-byte mid-removal recovery evidence. (46d04d03bc48 chore(lifecycle): retain reviewed mid-removal canary in dev)
@@ -56,8 +51,6 @@ release_publishing: false
 
 ## Fixed
 
-- Host context regression no longer demands text-only completeness. (1340ecd83e5d fix(lite): preserve installed-host context coverage gaps)
-- Codex prompt-input text byte counts for the observed host schema. (b4f250f7bc9f fix(lite): count Codex input_text content accurately)
 - Preserve immutable native source-review provenance across integration. (6b11d4136e14 fix(host): bind reviewed loader manifest to frozen source)
 - Bind worker verdicts and usage to one observed Codex turn. (9dccd27fe2f3 fix(worker): bind Codex verdict to one completed turn)
 - Keep the turn-boundary regression focused on refusal. (1497a7e2ad4f test(worker): accept any refusal for missing turn start)
@@ -73,14 +66,21 @@ release_publishing: false
 - Non-circular portable pack provenance replay. (86838e444162 fix(release): preserve unchanged pack source on replay)
 - Changelog preview provenance for explicit historical revisions. (7a521066fdd4 fix(changelog): bind preview to selected source revision)
 - Range-bound changelog provenance under mixed and open-ended selectors. (46fe61d743f0 fix(changelog): bind range head to selected commit set)
+- Package selected-revision changelog provenance in Lite. (f22f3ec58ed4 build(pack): include reviewed changelog source repair)
+- Include selected-source changelog provenance in the local Lite candidate. (df372b3a6495 build(release): refresh Lite 1.0.0 candidate bytes)
 
 ## Docs
 
 - Refresh the source-bound Lite release preview. (87635e1815b7 docs(changelog): project Lite preview at repaired source)
+- Bind Lite release preview to the accepted source revision. (4491c2cb8b47 docs(changelog): freeze repaired Lite source preview)
 
 ## Internal
 
 - Retain intermediate qualification and independent source review provenance. (2c168ca172ac docs(release): retain selector review and consumer receipts)
+- Refresh source-bound Lite preview distribution artifacts. (c86b7984e50b build(release): refresh source-bound Lite preview bundle)
+- Refresh local Lite release draft references. (085f60c76471 docs(release): refresh local Lite publication draft)
+- Freeze a reviewable current Lite candidate with honest release gates. (55131eff4af4 docs(release): freeze current local Lite effect packet)
+- Record the split current Lite release review verdict. (d489826530f0 docs(release): retain current effect review verdict)
 
 ## Malformed Commits
 

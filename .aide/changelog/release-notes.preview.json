@@ -1,38 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "648cd8836974",
-      "summary": "Continue the efficiency release gate with one qualified host path."
-    },
-    {
-      "commit": "47b0883bb87b",
-      "summary": "Qualify a coherent current-source release candidate after remaining host and product gates."
-    },
-    {
-      "commit": "764fa8cbcde4",
-      "summary": "Qualify a version-pinned mediated host path with actual usage and acceptance."
-    },
-    {
-      "commit": "6f4b45a6184d",
-      "summary": "Run bounded tests, obtain independent source review, and integrate qualified source."
-    },
-    {
-      "commit": "1340ecd83e5d",
-      "summary": "Rerun the focused suite, retain the actual coverage result and seek independent review."
-    },
-    {
-      "commit": "b4f250f7bc9f",
-      "summary": "Requalify, review the source delta and integrate accepted code."
-    },
-    {
-      "commit": "467b445a48e0",
-      "summary": "Fast-forward accepted source into dev and test delivered bytes at the next artifact boundary."
-    },
-    {
-      "commit": "f409db677cd2",
-      "summary": "Run the bounded delivered-pack test and preserve its receipt."
-    },
-    {
       "commit": "ea80f73d21a9",
       "summary": "Integrate the test and evidence into dev; qualify final assets at release freeze."
     },
@@ -199,23 +167,41 @@
     {
       "commit": "2c168ca172ac",
       "summary": "Generate the preview at this committed head, rebuild the pack and assets, then qualify their exact bytes."
+    },
+    {
+      "commit": "4491c2cb8b47",
+      "summary": "Build the pack from this preview commit, then qualify its exact stable assets."
+    },
+    {
+      "commit": "f22f3ec58ed4",
+      "summary": "Prove post-commit pack replay changes zero files and rebuild stable assets once."
+    },
+    {
+      "commit": "df372b3a6495",
+      "summary": "Prove zero-change post-commit stable replay, validate assets, then run refreshed consumers and preview projections."
+    },
+    {
+      "commit": "c86b7984e50b",
+      "summary": "Prove zero-change postcommit replay, validate the bundle, and refresh the local publication draft."
+    },
+    {
+      "commit": "085f60c76471",
+      "summary": "Verify zero-change replay and draft validation, then freeze an exact release-effect manifest for independent review."
+    },
+    {
+      "commit": "55131eff4af4",
+      "summary": "Obtain exact independent current effect review; integrate eligible source into dev, then pursue the retained external gates."
+    },
+    {
+      "commit": "d489826530f0",
+      "summary": "Fast-forward accepted ancestry to dev, qualify six documented portable job forms, and seek a superseding exact effect review."
+    },
+    {
+      "commit": "20710eace078",
+      "summary": "Regenerate and qualify exact current bytes, then seek one superseding effect review."
     }
   ],
   "highlights": [
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "6f4b45a6184d",
-      "subject": "feat(lite): summarize bounded Codex prompt-input streams",
-      "summary": "Portable Lite job context summary from stdin."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "f409db677cd2",
-      "subject": "test(lite): verify context summary from extracted pack",
-      "summary": "Delivered Lite context observer regression."
-    },
     {
       "breaking": false,
       "category": "Added",
@@ -232,31 +218,10 @@
     },
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "648cd8836974",
-      "subject": "chore(lite): record observed dev integration",
-      "summary": "Preserve the portable execution dev checkpoint."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "47b0883bb87b",
-      "subject": "chore(campaign): record current-source lifecycle qualification",
-      "summary": "Current lifecycle evidence and release gate description."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "764fa8cbcde4",
-      "subject": "chore(lite): record bounded Codex context preflight",
-      "summary": "Host context preflight evidence for Lite efficiency."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "467b445a48e0",
-      "subject": "chore(lite): preserve accepted context parser evidence",
-      "summary": "Preserve Lite context parser source qualification."
+      "category": "Added",
+      "commit": "20710eace078",
+      "subject": "feat(release): qualify portable Lite job forms for stable contract",
+      "summary": "Include the portable bounded job interface in the Lite release contract."
     },
     {
       "breaking": false,
@@ -422,20 +387,6 @@
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "1340ecd83e5d",
-      "subject": "fix(lite): preserve installed-host context coverage gaps",
-      "summary": "Host context regression no longer demands text-only completeness."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "b4f250f7bc9f",
-      "subject": "fix(lite): count Codex input_text content accurately",
-      "summary": "Codex prompt-input text byte counts for the observed host schema."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
       "commit": "6b11d4136e14",
       "subject": "fix(host): bind reviewed loader manifest to frozen source",
       "summary": "Preserve immutable native source-review provenance across integration."
@@ -540,46 +491,35 @@
     },
     {
       "breaking": false,
+      "category": "Fixed",
+      "commit": "f22f3ec58ed4",
+      "subject": "build(pack): include reviewed changelog source repair",
+      "summary": "Package selected-revision changelog provenance in Lite."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "df372b3a6495",
+      "subject": "build(release): refresh Lite 1.0.0 candidate bytes",
+      "summary": "Include selected-source changelog provenance in the local Lite candidate."
+    },
+    {
+      "breaking": false,
       "category": "Docs",
       "commit": "87635e1815b7",
       "subject": "docs(changelog): project Lite preview at repaired source",
       "summary": "Refresh the source-bound Lite release preview."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "4491c2cb8b47",
+      "subject": "docs(changelog): freeze repaired Lite source preview",
+      "summary": "Bind Lite release preview to the accepted source revision."
     }
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "648cd8836974",
-      "summary": "Real host binding, usage coverage and stable release bytes remain open."
-    },
-    {
-      "commit": "47b0883bb87b",
-      "summary": "Current canonical release assets and downloaded consumers remain unqualified."
-    },
-    {
-      "commit": "764fa8cbcde4",
-      "summary": "This is not an admitted real Codex turn or measured credit saving."
-    },
-    {
-      "commit": "6f4b45a6184d",
-      "summary": "A debugger stream is not a live worker turn or complete model usage."
-    },
-    {
-      "commit": "1340ecd83e5d",
-      "summary": "Unmeasured content remains unknown and prevents a full context claim."
-    },
-    {
-      "commit": "b4f250f7bc9f",
-      "summary": "This remains a no-model debugger view, not complete effective token usage."
-    },
-    {
-      "commit": "467b445a48e0",
-      "summary": "Extracted-pack assertion and live host usage remain unqualified."
-    },
-    {
-      "commit": "f409db677cd2",
-      "summary": "Final canonical release bytes and live host binding remain unqualified."
-    },
     {
       "commit": "ea80f73d21a9",
       "summary": "Canonical release bytes and live mediated host usage remain unqualified."
@@ -747,44 +687,44 @@
     {
       "commit": "2c168ca172ac",
       "summary": "These consumer receipts bind old bytes and do not qualify the repaired packaged script."
+    },
+    {
+      "commit": "4491c2cb8b47",
+      "summary": "These reports remain preview-only and do not qualify the final pack or published release."
+    },
+    {
+      "commit": "f22f3ec58ed4",
+      "summary": "Stable archives and exact-byte consumer qualification must be refreshed after this pack change."
+    },
+    {
+      "commit": "df372b3a6495",
+      "summary": "These are local candidate bytes, not published assets or final release acceptance."
+    },
+    {
+      "commit": "c86b7984e50b",
+      "summary": "These outputs are local previews, not a GitHub Release or publication authorization."
+    },
+    {
+      "commit": "085f60c76471",
+      "summary": "The draft is preview-only; no tag, upload or GitHub Release has been created."
+    },
+    {
+      "commit": "55131eff4af4",
+      "summary": "Live one-turn model qualification and ten historical owner decisions remain pending; no main, tag or published release is claimed."
+    },
+    {
+      "commit": "d489826530f0",
+      "summary": "Stable publication remains REQUEST_CHANGES; this evidence commit does not alter the reviewed source or assets."
+    },
+    {
+      "commit": "20710eace078",
+      "summary": "Derived pack, stable assets and final effect manifest require regeneration and independent rereview."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "2c168ca172ac09d8ff1bc96561461f56d9d6b1d0",
-  "source_range": "2c168ca172ac09d8ff1bc96561461f56d9d6b1d0 latest 50 commits",
+  "source_head": "20710eace0784fa4edf88ee2f4d4a52d19dde78a",
+  "source_range": "20710eace0784fa4edf88ee2f4d4a52d19dde78a latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "648cd8836974",
-      "summary": "PASS: Remote task and dev refs were observed at b9aad160 after fast-forward."
-    },
-    {
-      "commit": "47b0883bb87b",
-      "summary": "PASS: Three current-source importer lifecycle cases passed under the bounded D runner."
-    },
-    {
-      "commit": "764fa8cbcde4",
-      "summary": "PASS: Local Codex debug prompt-input exited zero with 47091 bounded JSON bytes."
-    },
-    {
-      "commit": "6f4b45a6184d",
-      "summary": "PASS: Python AST parsing and git diff whitespace check."
-    },
-    {
-      "commit": "1340ecd83e5d",
-      "summary": "PASS: Python AST parsing and git diff whitespace check."
-    },
-    {
-      "commit": "b4f250f7bc9f",
-      "summary": "PASS: Local sanitized-environment schema inspection found input_text in six parts."
-    },
-    {
-      "commit": "467b445a48e0",
-      "summary": "PASS: Superseding b4f250f7 passed 3/3 D-managed prompt-input cases."
-    },
-    {
-      "commit": "f409db677cd2",
-      "summary": "PASS: Staged diff whitespace check."
-    },
     {
       "commit": "ea80f73d21a9",
       "summary": "PASS: D-managed extracted ZIP consumer 1/1, exit 0."
@@ -952,6 +892,38 @@
     {
       "commit": "2c168ca172ac",
       "summary": "PASS: all six receipt hashes matched retained D outputs; each job exited zero, was quiescent, retired scratch and released its reservation."
+    },
+    {
+      "commit": "4491c2cb8b47",
+      "summary": "PASS: changelog preview reported the full selected source, 50 commits and zero malformed commits in its selected range."
+    },
+    {
+      "commit": "f22f3ec58ed4",
+      "summary": "PASS: D-managed export job d4b2b2278497465fb1b90feb7b12e572 exited zero, with receipt SHA-256 cfa2d4c0444314cb4df4516879c744c8977f0a250c7e881aeebf5e32acc85f45."
+    },
+    {
+      "commit": "df372b3a6495",
+      "summary": "PASS: D-managed stable build job 8a3ba2aa66654599b715fd50249ae1da exited zero; receipt SHA-256 d2edb9508701104066c32a57a6f7b0c3415c1b1023bac457b502b3f1d95c89a1."
+    },
+    {
+      "commit": "c86b7984e50b",
+      "summary": "PASS: D-managed release bundle job a90350ba8fd941bd9f7f632097da471a exited zero; receipt SHA-256 12dfd5673ed30e2b7a4cb12040e378a09809a9045804ae95413c34c7d0f8fbf1."
+    },
+    {
+      "commit": "085f60c76471",
+      "summary": "PASS: D-managed draft job 90ad15e60c384907a53e4eae85fbc811 exited zero; receipt SHA-256 46f23e6a3a385181d459a4deb511c979988f2b47d7a29a065dec4716f032b6e3."
+    },
+    {
+      "commit": "55131eff4af4",
+      "summary": "PASS: six current-byte consumers, 36 Q47/Q48 tests, pack/stable/preview/draft validations and zero-change postcommit replays, bound in the effect manifest."
+    },
+    {
+      "commit": "d489826530f0",
+      "summary": "PASS: reviewer checked four asset hashes, 18 retired receipts, 39 CLI outputs and source/artifact provenance for 55131eff."
+    },
+    {
+      "commit": "20710eace078",
+      "summary": "PASS: current delivered ZIP passed ten command observations in a fresh disposable Git consumer under the approved D scratch root."
     }
   ],
   "warnings": []
