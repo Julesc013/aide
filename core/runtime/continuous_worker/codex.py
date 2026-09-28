@@ -20,6 +20,15 @@ SCHEMA = {
 }
 
 
+def _unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise Refused("duplicate JSON object key in worker result")
+        result[key] = value
+    return result
+
+
 def argv(command, workspace, schema, *, assurance=False, session_id=None, model=None):
     # Never --last, --full-auto, approval bypass, shell interpolation or API key injection.
     args = [*command, "exec"]
@@ -53,7 +62,7 @@ def parse_events(path, expected_identity):
             if not line.strip():
                 continue
             try:
-                event = json.loads(line)
+                event = json.loads(line, object_pairs_hook=_unique_object)
             except (ValueError, TypeError) as exc:
                 raise Refused("malformed Codex event stream") from exc
             if not isinstance(event, dict) or not isinstance(event.get("item", {}), dict):
@@ -83,14 +92,16 @@ def parse_events(path, expected_identity):
                 usage = event.get("usage", {})
             elif kind in ("turn.failed", "error"):
                 failed = True
-            elif kind == "item.completed" and event.get("item", {}).get("type") == "agent_message":
+            elif isinstance(kind, str) and kind.startswith("item."):
                 if not started or completed:
-                    raise Refused("worker message is outside the active turn")
-                last_message = event["item"].get("text")
+                    raise Refused("worker item is outside the active turn")
+                last_message = None
+                if kind == "item.completed" and event["item"].get("type") == "agent_message":
+                    last_message = event["item"].get("text")
     if not session or not started or not completed or failed or last_message is None:
         raise Refused("worker did not produce a completed session")
     try:
-        result = json.loads(last_message)
+        result = json.loads(last_message, object_pairs_hook=_unique_object)
     except (ValueError, TypeError) as exc:
         raise Refused("worker final message violates result schema") from exc
     if (not isinstance(result, dict) or set(result) != set(SCHEMA["required"]) or result["status"] not in ("pass", "blocked", "fail")

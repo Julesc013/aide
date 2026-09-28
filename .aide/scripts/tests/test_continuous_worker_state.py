@@ -129,11 +129,14 @@ class StateTests(unittest.TestCase):
 
 
 class CodexTests(unittest.TestCase):
-    def parse(self, records, expected="subject"):
+    def parse_raw(self, lines, expected="subject"):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "events.jsonl"
-            path.write_text("\n".join(json.dumps(e) for e in records), encoding="utf-8")
+            path.write_text("\n".join(lines), encoding="utf-8")
             return codex.parse_events(path, expected)
+
+    def parse(self, records, expected="subject"):
+        return self.parse_raw([json.dumps(e) for e in records], expected)
 
     def events(self):
         return [{"type": "thread.started", "thread_id": str(uuid.uuid4())},
@@ -173,6 +176,30 @@ class CodexTests(unittest.TestCase):
     def test_error_overrides_success_message(self):
         with self.assertRaises(Refused):
             self.parse(self.events() + [{"type": "error", "message": "quota"}])
+
+    def test_later_item_invalidates_earlier_pass(self):
+        events = self.events()
+        failed_command = {"type": "item.completed", "item": {"type": "command_execution", "exit_code": 1}}
+        with self.assertRaisesRegex(Refused, "completed session"):
+            self.parse([*events[:-1], failed_command, events[-1]])
+        self.assertEqual(self.parse([*events[:-1], failed_command, events[2], events[-1]])["result"]["status"], "pass")
+
+    def test_duplicate_final_status_is_refused(self):
+        events = self.events()
+        events[2]["item"]["text"] = (
+            '{"status":"fail","status":"pass","summary":"ambiguous",'
+            '"subject_identity":"subject","findings":[]}'
+        )
+        with self.assertRaisesRegex(Refused, "duplicate JSON object key"):
+            self.parse(events)
+
+    def test_duplicate_outer_event_type_is_refused(self):
+        events = self.events()
+        lines = [json.dumps(event) for event in events]
+        lines[2] = lines[2].replace('"type": "item.completed"',
+                                    '"type": "error", "type": "item.completed"', 1)
+        with self.assertRaisesRegex(Refused, "duplicate JSON object key"):
+            self.parse_raw(lines)
 
     def test_wrong_subject_fails(self):
         with self.assertRaisesRegex(Refused, "subject"):
