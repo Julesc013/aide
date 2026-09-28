@@ -44890,7 +44890,7 @@ def summarize_codex_usage_attempts(path: Path) -> dict[str, object]:
         raise ValueError("Codex attempt roster path changed during read")
     try:
         roster = json.loads(raw, object_pairs_hook=_codex_exec_unique_object)
-    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+    except (UnicodeDecodeError, json.JSONDecodeError, RecursionError) as exc:
         raise ValueError("Codex attempt roster contains malformed JSON") from exc
     if (not isinstance(roster, dict) or set(roster) != {"schema", "work_id", "attempts"}
             or roster["schema"] != "aide.codex-exec-attempt-roster.v1"
@@ -44936,8 +44936,12 @@ def summarize_codex_usage_attempts(path: Path) -> dict[str, object]:
     for attempt in attempts:
         parent = attempt["parent_attempt_id"]
         if ((parent is None) != (attempt["role"] == "parent")
-                or (parent is not None and parent not in by_id)):
+                or (parent is not None and
+                    (not isinstance(parent, str)
+                     or not re.fullmatch(r"[A-Za-z0-9._-]{1,64}", parent)
+                     or parent not in by_id))):
             raise ValueError("Codex attempt parent link invalid")
+    for attempt in attempts:
         seen = set()
         cursor = attempt["attempt_id"]
         while cursor is not None:

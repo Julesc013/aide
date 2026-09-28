@@ -12744,3 +12744,10 @@ were red before implementation; the D-managed 22-case suite passed after it.
 The test job retired scratch and released its reservation. Exact source review,
 dev integration, changed-byte release qualification and live host binding are
 still separate gates.
+
+Exact-source review of the first attempt-roster candidate found two malformed
+input crashes: non-string parent links and deeply nested JSON. The new cases
+reproduced both failures; the importer now validates every parent link before
+cycle traversal and converts JSON recursion failure to structured `REFUSED`.
+The D-managed focused suite passed 24/24 after repair. The original review
+remains `REQUEST_CHANGES`; a superseding source review is required.

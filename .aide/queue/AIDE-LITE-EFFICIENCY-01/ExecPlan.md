@@ -285,3 +285,11 @@ all 22 cases in D-managed job `1f2be7e7`; scratch retired and reservation was
 released. Exact source review, dev integration and changed-byte release
 qualification remain pending. Full work usage and live host requests remain
 unknown.
+
+Independent exact-source review requested changes to `cec72cb6`: malformed
+parent IDs and deeply nested JSON could crash the CLI rather than produce
+`REFUSED`. Two new cases reproduced the defects in D-managed job `80d5b71e`.
+The repair validates all parent IDs before traversing links and converts JSON
+recursion failure to bounded refusal. The 24-case suite passed in job
+`2f84b44b`. The superseding source needs its own scoped review; this does not
+change the live-model or delivered-byte gates.

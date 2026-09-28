@@ -239,6 +239,38 @@ class EfficiencyWaitTests(unittest.TestCase):
         self.assertIsNone(result["role_known_usage_totals"]["parent"]["input_tokens"])
         self.assertIsNone(result["role_known_usage_totals"]["child"]["input_tokens"])
 
+    def test_codex_attempt_roster_refuses_non_string_parent_with_cli_result(self):
+        roster = self.attempt_roster("invalid-parent.json", [
+            self.attributed_attempt("parent-1", "parent", None, None),
+            {**self.attributed_attempt("child-1", "child", "parent-1", None),
+             "parent_attempt_id": ["parent-1"]}])
+        with self.assertRaisesRegex(ValueError, "parent link"):
+            lite.summarize_codex_usage_attempts(roster)
+        command = [sys.executable, "-I", "-B", str(REPO / ".aide/scripts/aide_lite.py"),
+                   "--repo-root", str(REPO), "job", "usage", "--attempt-set", str(roster)]
+        completed = subprocess.run(command, capture_output=True, text=True, timeout=15)
+        self.assertEqual(completed.returncode, 1, completed.stderr[-500:])
+        self.assertEqual(json.loads(completed.stdout)["status"], "REFUSED")
+
+        roster = self.attempt_roster("invalid-grandparent.json", [
+            self.attributed_attempt("parent-1", "parent", None, None),
+            self.attributed_attempt("child-1", "child", "child-2", None),
+            {**self.attributed_attempt("child-2", "child", "parent-1", None),
+             "parent_attempt_id": {"bad": "parent-1"}}])
+        with self.assertRaisesRegex(ValueError, "parent link"):
+            lite.summarize_codex_usage_attempts(roster)
+
+    def test_codex_attempt_roster_refuses_deep_json_with_cli_result(self):
+        roster = self.root / "deep.json"
+        roster.write_text("[" * 30000 + "0" + "]" * 30000, encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "malformed JSON"):
+            lite.summarize_codex_usage_attempts(roster)
+        command = [sys.executable, "-I", "-B", str(REPO / ".aide/scripts/aide_lite.py"),
+                   "--repo-root", str(REPO), "job", "usage", "--attempt-set", str(roster)]
+        completed = subprocess.run(command, capture_output=True, text=True, timeout=15)
+        self.assertEqual(completed.returncode, 1, completed.stderr[-500:])
+        self.assertEqual(json.loads(completed.stdout)["status"], "REFUSED")
+
     def test_codex_usage_import_deduplicates_exact_stream_and_terminal(self):
         path = self.codex_stream("one.jsonl", usage={"input_tokens": 20, "cached_input_tokens": 5,
             "output_tokens": 7, "reasoning_output_tokens": 2}, repeat=True)
