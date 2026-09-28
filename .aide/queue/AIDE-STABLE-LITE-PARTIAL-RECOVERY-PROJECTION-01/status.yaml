@@ -1,0 +1,12 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01
+status: running
+planning_state: admitted_clean_generator_pending
+result: PENDING
+updated_at: 2026-09-28
+current_slice: current_source_artifact_projection
+next_slice: bounded_generation_then_delivered_consumer_qualification
+review_gate: exact_artifact_and_dev_effect_review_required
+main_promotion_performed: false
+tag_created: false
+release_published: false

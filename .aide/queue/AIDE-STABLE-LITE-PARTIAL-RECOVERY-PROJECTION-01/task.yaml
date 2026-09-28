@@ -1,0 +1,56 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01
+title: Project reviewed partial recovery into current delivered Lite bytes
+type: integration
+status: running
+planning_state: admitted
+result: PENDING
+created_at: 2026-09-28
+updated_at: 2026-09-28
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+base_dev: 1d3d9fe1bb517bb8b9ce18cd26901a00dc9c4c30
+reviewed_runtime_source: 8040b10a5d2c894e4f78b234d6fb55ed9403d391
+objective: >
+  Regenerate and qualify current portable pack, changelog, local release bundle
+  and draft from integrated reviewed source, then prove delivered Windows Lite
+  lifecycle behavior and exact post-commit replay before any dev artifact effect.
+authority_basis: >
+  Owner campaign delegation of 2026-09-25 and explicit D execution selection
+  of 2026-09-28. This WorkUnit applies accepted local generation only; public
+  release effects retain their own exact technical gates.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/**
+    - .aide/queue/index.yaml
+    - .aide/export/**
+    - .aide/release/**
+    - .aide/changelog/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - PLANS.md
+    - IMPLEMENT.md
+  read_only_paths:
+    - .aide/scripts/**
+    - core/**
+    - .aide/policies/**
+    - specs/**
+    - governance/**
+    - docs/reference/**
+  forbidden_paths:
+    - .github/**
+    - .aide.local/**
+    - arbitrary target repositories
+  forbidden_operations:
+    - replace the accepted generator or hand-copy stale artifacts
+    - hide source repair in derived outputs
+    - main promotion, tag, upload or publication
+    - mutate an unapproved installed project
+verification:
+  - clean-source serial generation through shared bounded D runner with canonical output reservations
+  - archive checksums, provenance, canonical checks and committed zero-change replay
+  - fresh and brownfield delivered-byte consumers including exact partial recovery and local intent preservation
+  - independent exact artifact and dev-effect review before fast-forward and normal push
+retained_gates:
+  - source tests do not alone qualify delivered assets or stable release
+  - native, hosted, main, tag, publication and downloaded-asset gates remain separate

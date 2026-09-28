@@ -4090,6 +4090,10 @@ three-way update/disabled-feature workflow from the campaign coverage matrix.
   all 110 importer methods in disjoint 54/56 partitions, no skips, with
   scratch retirement and reservation release. Integrate current source after
   ref validation, then project/qualify current pack and delivered consumers.
+- Source integration reached local and remote `dev@1d3d9fe1`. The bounded
+  `AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01` now owns current export,
+  release preview, installed consumers and committed replay; public release
+  remains a later exact gate.
 
 ## 2026-09-26 - Stable customization contract follow-up
 

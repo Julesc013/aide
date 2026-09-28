@@ -3712,7 +3712,7 @@ items:
     description: Observe exact delivered lifecycle state after a child process exits at durable effect boundaries.
   - id: AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01
     status: running
-    planning_state: admitted
+    planning_state: source_110_partitioned_pass_artifact_qualification_pending
     result: PENDING
     title: Reconcile exact partial portable imports after process exit
     task: .aide/queue/AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01/task.yaml
@@ -3722,7 +3722,7 @@ items:
     description: Add explicit guarded recovery for a partial portable import while preserving old safe refusals.
   - id: AIDE-CAMPAIGN-RESOURCE-CLEANUP-01
     status: running
-    planning_state: admitted
+    planning_state: D_runner_source_review_accepted_importer_110_partitioned_pass
     result: PENDING
     title: Reclaim owned campaign resources and bound future allocation
     task: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/task.yaml
@@ -3747,3 +3747,13 @@ items:
     exec_plan: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/ExecPlan.md
     prompt: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/prompt.md
     evidence: .aide/queue/AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01/evidence
+  - id: AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01
+    status: running
+    planning_state: admitted_clean_generator_pending
+    result: PENDING
+    title: Project reviewed partial recovery into current delivered Lite bytes
+    task: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/prompt.md
+    evidence: .aide/queue/AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01/evidence
+    description: Regenerate current Lite preview bytes, qualify delivered consumers and committed replay, then seek exact artifact/dev-effect review.
