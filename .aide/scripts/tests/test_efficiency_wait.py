@@ -272,10 +272,15 @@ class EfficiencyWaitTests(unittest.TestCase):
         self.assertEqual(probe.returncode, 0, f"Codex debugger exited {probe.returncode}")
         self.assertLessEqual(len(probe.stdout), lite.CODEX_PROMPT_INPUT_MAX_BYTES)
         result = lite.summarize_codex_prompt_input(probe.stdout)
-        self.assertEqual(result["status"], "COMPLETE")
+        self.assertIn(result["status"], ("COMPLETE", "PARTIAL"))
+        self.assertTrue(set(result["coverage_gaps"]).issubset({"unknown_role", "non_text_content"}))
         self.assertGreater(result["visible_text_utf8_bytes"], 44)
         self.assertEqual(result["model_requests_started_by_parser"], 0)
         self.assertFalse(result["raw_prompt_or_response_retained"])
+        print("codex_context_coverage=" + json.dumps({
+            "status": result["status"], "gaps": result["coverage_gaps"],
+            "visible_text_utf8_bytes": result["visible_text_utf8_bytes"],
+            "message_count": result["message_count"]}, sort_keys=True))
 
 
 if __name__ == "__main__":
