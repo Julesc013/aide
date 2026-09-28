@@ -19,6 +19,8 @@ from core.runtime.continuous_worker import windows_system_observation as observa
 SOURCE_REL = "core/runtime/continuous_worker/windows_system_observation.py"
 INVENTORY_REL = ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json"
 RESULT_NAME = "api-query-result.json"
+STAGED_NAME = RESULT_NAME + ".pending"
+PENDING_MARKER = b"AIDE_API_QUERY_PENDING\n"
 
 
 def canonical(value: object) -> bytes:
@@ -130,8 +132,20 @@ class DurableJournal:
         os.close(self.fd)
 
 
-def write_result(output: Path, value: dict) -> None:
+def reserve_result(output: Path) -> None:
+    """Occupy the final name before any native call; it is never success yet."""
     target = safe_directory(output) / RESULT_NAME
+    fd = os.open(target, os.O_CREAT | os.O_EXCL | os.O_WRONLY | os.O_BINARY, 0o600)
+    try:
+        if os.write(fd, PENDING_MARKER) != len(PENDING_MARKER):
+            raise Refused("complete API-set result reservation required")
+        os.fsync(fd)
+    finally:
+        os.close(fd)
+
+
+def stage_result(output: Path, value: dict) -> str:
+    target = safe_directory(output) / STAGED_NAME
     encoded = canonical(value) + b"\n"
     if len(encoded) > observation.MAX_RESULT_BYTES:
         raise Refused("bounded API-set result required")
@@ -142,28 +156,72 @@ def write_result(output: Path, value: dict) -> None:
         os.fsync(fd)
     finally:
         os.close(fd)
+    return sha256(encoded)
+
+
+def terminal_detail(journal_path: Path, plan: observation.ApiSetQueryPlan) -> dict:
+    rows = pinned_file(journal_path, 2 * 1024 * 1024).splitlines()
+    terminal = json.loads(rows[-1]) if rows else {}
+    detail = terminal.get("detail", {})
+    if (terminal.get("kind") != "terminal" or terminal.get("status") != "PASS" or
+            detail.get("request_id") != plan.request_id or
+            detail.get("plan_sha256") != plan.fingerprint):
+        raise Refused("matching terminal PASS required for API-set result")
+    return detail
+
+
+def qualified_result(output: Path, journal_path: Path, plan: observation.ApiSetQueryPlan) -> dict:
+    """A result is usable only with a matching terminal record and byte digest."""
+    detail = terminal_detail(journal_path, plan)
+    encoded = pinned_file(safe_directory(output) / RESULT_NAME, observation.MAX_RESULT_BYTES)
+    if sha256(encoded) != detail.get("result_sha256"):
+        raise Refused("API-set result differs from terminal PASS")
+    result = json.loads(encoded)
+    if result.get("request_id") != plan.request_id or result.get("plan_sha256") != plan.fingerprint:
+        raise Refused("API-set result differs from admitted plan")
+    return result
+
+
+def reconcile_result(output: Path, journal_path: Path, plan: observation.ApiSetQueryPlan) -> dict:
+    """Finish publication after a durable PASS, without replaying native calls."""
+    detail = terminal_detail(journal_path, plan)
+    target = safe_directory(output) / RESULT_NAME
+    current = pinned_file(target, observation.MAX_RESULT_BYTES)
+    if current == PENDING_MARKER:
+        staged = output / STAGED_NAME
+        if sha256(pinned_file(staged, observation.MAX_RESULT_BYTES)) != detail.get("result_sha256"):
+            raise Refused("staged API-set result differs from terminal PASS")
+        os.replace(staged, target)
+    return qualified_result(output, journal_path, plan)
 
 
 def run_effect(manifest: dict, root: Path, control: Path, output: Path, api_factory) -> dict:
     plan = load_plan(manifest, root)
     safe_directory(output)
     journal = DurableJournal(control, plan, sha256(canonical(manifest)))
+    passed = False
     try:
         try:
+            reserve_result(output)
             api = api_factory()
             session = observation.ApiSetQuerySession(plan, api, journal, journal.guard)
             result = json.loads(session.run())
             if journal.sequence != len(plan.api_names):
                 raise Refused("incomplete API-set query sequence")
             journal.guard()
-            write_result(output, result)
+            result_sha256 = stage_result(output, result)
             journal.guard()
             journal.terminal("PASS", {"native_calls": result["native_calls"],
-                                      "query_attempts": result["query_attempts"]})
-            return result
+                                      "query_attempts": result["query_attempts"],
+                                      "request_id": plan.request_id,
+                                      "plan_sha256": plan.fingerprint,
+                                      "result_sha256": result_sha256})
+            passed = True
+            return reconcile_result(output, journal.path, plan)
         except Exception as error:
-            journal.terminal("REFUSED", {"error_type": type(error).__name__,
-                                         "completed_intents": journal.sequence})
+            if not passed:
+                journal.terminal("REFUSED", {"error_type": type(error).__name__,
+                                             "completed_intents": journal.sequence})
             raise
     finally:
         journal.close()

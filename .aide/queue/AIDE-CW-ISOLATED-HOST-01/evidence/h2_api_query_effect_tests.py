@@ -72,6 +72,8 @@ class EffectTests(unittest.TestCase):
                          ["exclusive_request", "session_reservation", "pre_call_intent"])
         self.assertEqual(rows[-1]["status"], "PASS")
         self.assertEqual(json.loads((self.output / effect.RESULT_NAME).read_bytes()), result)
+        self.assertEqual(effect.qualified_result(self.output, self.control / ("api-query-" + self.manifest["request_id"] + ".jsonl"),
+                                                 effect.load_plan(self.manifest, self.root)), result)
         replay = FakeApi()
         with self.assertRaises(FileExistsError):
             effect.run_effect(self.manifest, self.root, self.control, self.output, lambda: replay)
@@ -114,7 +116,7 @@ class EffectTests(unittest.TestCase):
         self.assertEqual([row["kind"] for row in self.journal()],
                          ["exclusive_request", "session_reservation", "terminal"])
         self.assertEqual(self.journal()[-1]["status"], "REFUSED")
-        self.assertFalse((self.output / effect.RESULT_NAME).exists())
+        self.assertEqual((self.output / effect.RESULT_NAME).read_bytes(), effect.PENDING_MARKER)
 
     def test_mid_query_failure_retains_pre_call_intents_and_refuses_replay(self):
         api = FakeApi(fail_at=4)
@@ -123,17 +125,61 @@ class EffectTests(unittest.TestCase):
         self.assertEqual(len(api.calls), 4)
         self.assertEqual(sum(row["kind"] == "pre_call_intent" for row in self.journal()), 4)
         self.assertEqual(self.journal()[-1]["status"], "REFUSED")
-        self.assertFalse((self.output / effect.RESULT_NAME).exists())
+        self.assertEqual((self.output / effect.RESULT_NAME).read_bytes(), effect.PENDING_MARKER)
         with self.assertRaises(FileExistsError):
             effect.run_effect(self.manifest, self.root, self.control, self.output, FakeApi)
 
     def test_existing_result_never_becomes_terminal_success(self):
         path = self.output / effect.RESULT_NAME
         path.write_bytes(b"valuable prior result")
+        api = FakeApi()
         with self.assertRaises(FileExistsError):
-            effect.run_effect(self.manifest, self.root, self.control, self.output, FakeApi)
+            effect.run_effect(self.manifest, self.root, self.control, self.output, lambda: api)
+        self.assertEqual(api.calls, [])
         self.assertEqual(path.read_bytes(), b"valuable prior result")
         self.assertEqual(self.journal()[-1]["status"], "REFUSED")
+
+    def test_short_staged_write_never_publishes_success(self):
+        actual_write = os.write
+
+        def short_result(fd, value):
+            if b'"api_set_query_completed":true' in value:
+                return len(value) - 1
+            return actual_write(fd, value)
+
+        with patch.object(effect.os, "write", side_effect=short_result):
+            with self.assertRaises(effect.Refused):
+                effect.run_effect(self.manifest, self.root, self.control, self.output, FakeApi)
+        self.assertEqual((self.output / effect.RESULT_NAME).read_bytes(), effect.PENDING_MARKER)
+        self.assertEqual(self.journal()[-1]["status"], "REFUSED")
+
+    def test_terminal_flush_failure_never_publishes_success(self):
+        actual_terminal = effect.DurableJournal.terminal
+
+        def fail_pass_flush(journal, status, detail):
+            if status == "PASS":
+                with patch.object(effect.os, "fsync", side_effect=OSError("terminal flush failed")):
+                    return actual_terminal(journal, status, detail)
+            return actual_terminal(journal, status, detail)
+
+        with patch.object(effect.DurableJournal, "terminal", fail_pass_flush):
+            with self.assertRaises(OSError):
+                effect.run_effect(self.manifest, self.root, self.control, self.output, FakeApi)
+        self.assertEqual((self.output / effect.RESULT_NAME).read_bytes(), effect.PENDING_MARKER)
+        self.assertEqual(self.journal()[-1]["status"], "REFUSED")
+
+    def test_pass_publication_failure_reconciles_without_replaying_query(self):
+        with patch.object(effect.os, "replace", side_effect=OSError("publication failed")):
+            with self.assertRaises(OSError):
+                effect.run_effect(self.manifest, self.root, self.control, self.output, FakeApi)
+        self.assertEqual(self.journal()[-1]["status"], "PASS")
+        self.assertEqual((self.output / effect.RESULT_NAME).read_bytes(), effect.PENDING_MARKER)
+        self.assertTrue((self.output / effect.STAGED_NAME).is_file())
+        plan = effect.load_plan(self.manifest, self.root)
+        journal = self.control / ("api-query-" + self.manifest["request_id"] + ".jsonl")
+        result = effect.reconcile_result(self.output, journal, plan)
+        self.assertEqual(result["query_attempts"], 180)
+        self.assertFalse((self.output / effect.STAGED_NAME).exists())
 
 
 if __name__ == "__main__":

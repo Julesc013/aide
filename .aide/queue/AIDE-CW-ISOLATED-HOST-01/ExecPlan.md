@@ -555,3 +555,13 @@ green. No actual API-set backend was constructed. Freeze/review this source
 before building the short-lived exact effect manifest. The same-user trusted
 controller and approved D control root are explicit premises, not restricted
 worker isolation proof.
+
+The independent controller review on `cb87591f` requested two repairs:
+reserve the exact final result name before backend construction, and make
+success publication dependent on a digest-bound fsynced terminal PASS. The
+controller now writes a nonfinal reservation marker, stages the result,
+records PASS with its digest, and reconciles publication without replaying
+native calls. Ten local injected tests cover the original seven plus short
+result write, failed PASS fsync, and failed publication recovery. The
+superseding source candidate still needs a managed postcommit test and scoped
+independent rereview before preparing any actual native effect.

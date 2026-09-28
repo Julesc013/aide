@@ -2,20 +2,19 @@
   "effect_boundary": "one exact future manifest, independent source and effect review, AIDE managed finite job; no replay of consumed request",
   "injected_tests": {
     "failed": 0,
-    "job_id": "b694c2accc0941fa9dc7f92a7f2c0281",
-    "passed": 7,
-    "reservation_released": true,
-    "scratch_absent": true
+    "mode": "precommit_injected",
+    "native_api_set_query_executed": false,
+    "passed": 10
   },
   "native_api_set_query_executed": false,
   "pins": {
     ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json": "a9fef62f0e1431c12b4743cbc42f2039790625dd6ea8e769991512467b6ccce3",
-    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_api_query_effect.py": "1d5e257adf2012e76ae53492274d04bcecb95063e722ab45f604748063aa5f49",
-    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_api_query_effect_tests.py": "110ac0867e4a80cc5b62add161613b8f45922c203c02fcf1f6b7d709bed3c199",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_api_query_effect.py": "2ea771a6bd5a7bd5cb92db4e9aab3a702f55662a1ff7ba0ac38235f15162e952",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_api_query_effect_tests.py": "967a640c3f21b6e84f127b7232e3ec0409291561979b91c0c9ac0d049db760fd",
     "core/runtime/continuous_worker/windows_system_observation.py": "48f9711cc44b79673ba0f5dbabe050bc2c9e2e7ad72b279ad92236b74d5f3f14"
   },
-  "pins_aggregate_sha256": "f216710c83de1f28c877d66322572555ebfffc80feb424f6a1ffc7ef297aa53f",
+  "pins_aggregate_sha256": "f18cef28ee636f7ecf9ce9ca17a0b2e6040527e39b0bf4c72383e9e530facd2d",
   "schema": "aide.host.api-query-controller-source.v1",
-  "source_base": "214f74d2a7f07c3344ed0b29b17d41df41c11c38",
-  "state": "source_candidate_pending_independent_review"
+  "source_base": "cb87591fe374caa45aa07d2dfbc0e72cdb4bc694",
+  "state": "source_repair_pending_independent_rereview"
 }
