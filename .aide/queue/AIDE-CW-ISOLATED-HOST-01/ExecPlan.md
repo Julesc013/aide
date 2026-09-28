@@ -572,3 +572,10 @@ retired, reservation released. The same independent reviewer accepted the
 exact repair for source only. The actual native query still needs a fresh
 manifest, independent effect review and one admitted finite job; source
 acceptance does not qualify host bytes, restricted execution or activation.
+
+Before freezing the native effect, a read-only adapter-construction check on
+this Windows 10.0.19045 host found that the documented L2 API-set DLL does not
+expose `GetApiSetModuleBaseName` here. No name query or one-use reservation
+occurred. The effect remains unprepared and unadmitted. Preserve the accepted
+source branch and seek an identified suitable Windows host or a separately
+reviewed supported method; do not replay the unchanged local blocker.
