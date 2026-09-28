@@ -1,19 +1,25 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
-**2026-09-28 current gate:** Remote `dev@76e17a4c2101a9f75fa1116b9256d331bd2cedb8`
-retains the source-bound Lite 1.0.0 local release candidate; remote
+**2026-09-29 current gate:** Local and remote `dev@648cd88369740cb67c0fc232b2a500ea1ef3fe47`
+include the independently accepted partial-rollback repair `72d1438e` and
+the reviewed Lite execution source. Remote
 `main@aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3` has not been promoted.
-Independent review accepted the exact local release effect recorded in
-`AIDE-STABLE-LITE-RELEASE-EFFECT-01`, but ten other historical `main..dev`
-commit messages still fail the promotion range check. Their exact owner
-decision request is recorded in that WorkUnit; main, tag, publication,
-downloaded-asset and consumer effects have not happened. The separate
-partial-rollback repair source `72d1438e` passed eight affected cases and
-independent source review. Its evidence-only branch head `95bdc903` is
-published and remains outside `dev` and the frozen Lite assets. New delivered
-bytes and consumer qualification are required before claiming that repair in
-a release. Earlier dated checkpoint statements below keep their historical
-source bindings; this paragraph states the current gate.
+The ten exact historical `main..dev` message decisions still gate promotion;
+their owner request remains in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`.
+No tag, published release, downloaded asset or consumer rollout is recorded.
+The older frozen Lite 1.0.0 local assets do not contain all current source.
+New delivered bytes and consumer qualification are required before claiming
+the integrated repairs in a release.
+
+On this exact combined source/tree `648cd883`/`bdacc4ab`, D-managed job
+`8b0404b6374540418c87459ecca6c6ff` passed **3/3** current lifecycle
+cases: explicit fresh/predecessor partial-import recovery, refusal of wrong
+or stale recovery inputs, and interrupted rollback reconciliation. Receipt
+SHA-256: `e8cabf6988d5b364f3d06fd42f3c29bac86dfb330064ecc86dc568278128e5e9`.
+Peak memory was 264790016 bytes and peak scratch 22342442 bytes; scratch was
+retired and the reservation released. This is current source qualification,
+not final delivered-byte or whole lifecycle acceptance. Earlier dated
+checkpoint statements below retain their historical source bindings.
 
 **2026-09-28 stable effect candidate delta:** The distinct 1.0.0 local ZIP/tar
 at asset commit `92da9573` passed exact-byte fresh/brownfield, lifecycle,
