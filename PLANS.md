@@ -4220,3 +4220,9 @@ monitor refusals, both reconciled without discarding required results.
 Finish narrow runner diagnosis, the remaining combined rollback cases and
 independent review of any changed source before moving `dev`. The frozen
 release candidate remains separate.
+
+`f5b77e01` now has 35 passing managed cases, eight passing rollback shards
+and independent combined-source ACCEPT. Keep it reachable as the post-Lite
+integration candidate while exact historical message decisions gate the
+frozen Lite main promotion. Revalidate refs and integrated effects before a
+later dev move; new release bytes require their own qualification.

@@ -357,3 +357,13 @@ retired; the junction case passed separately. Add only bounded diagnostic
 detail to the existing refusal, run a focused scanner case, then identify the
 next failure before changing the safety rule. Rereview any changed runner
 source and complete all rollback cases on the final candidate.
+
+Final post-Lite combined source `f5b77e01` passed 35 managed tests and all
+eight rollback cases as sequential D jobs; all nine final job receipts show
+retired scratch and released reservations. The narrow diagnostic delta and
+full candidate received independent source integration ACCEPT. The earlier
+monitor-stopped jobs remain recorded failures, and the specific transient
+member in the second stop remains unknown. Keep this reviewed candidate
+reachable until the frozen Lite release/main history gate is resolved; a
+later dev move still needs fresh exact ref and effect validation. Its source
+review does not qualify new release assets or downloaded consumers.

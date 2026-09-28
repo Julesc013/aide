@@ -1,0 +1,82 @@
+{
+  "qualified_cases": 8,
+  "receipts": [
+    {
+      "job_id": "9b9e25b4a34c4e32a2e5b8b04a7e75be",
+      "memory_peak_bytes": 243052544,
+      "method": "exact_predecessor_rollback_restores_owned_bytes_and_receipt",
+      "receipt_sha256": "fcbb56d0ed456af5d82004ade90d2e2ec64b552632eccf9ac885e75012535628",
+      "result": "PASS",
+      "scratch_peak_bytes": 17376584,
+      "seconds": 92.264
+    },
+    {
+      "job_id": "de3a62eb49ba4477b79ef192b15e0f6c",
+      "memory_peak_bytes": 264003584,
+      "method": "interrupted_rollback_retains_intent_and_requires_reconciliation",
+      "receipt_sha256": "0b1cfb401e10f4ffcafaee4d31772898984d1269ca1539f26759a9e2035ddae8",
+      "result": "PASS",
+      "scratch_peak_bytes": 21712088,
+      "seconds": 102.488
+    },
+    {
+      "job_id": "63128d9315734289b910236a70d594b2",
+      "memory_peak_bytes": 239448064,
+      "method": "rollback_pack_rejects_reparse_payload_and_pack_roots",
+      "receipt_sha256": "8ac14765cd7d11e16e5a094ea2197d416ae30d68668478a556993823b8888f0e",
+      "result": "PASS",
+      "scratch_peak_bytes": 243,
+      "seconds": 10.148
+    },
+    {
+      "job_id": "25ac5d4c28804e4cbac2037ce0c801af",
+      "memory_peak_bytes": 212750336,
+      "method": "rollback_preserves_authored_crlf_agents_and_rejects_changed_section",
+      "receipt_sha256": "3794c1b2a2c9d605e3dff7e67b751edb87d25a8cdfb9783c08d17e8a9022b74d",
+      "result": "PASS",
+      "scratch_peak_bytes": 20892484,
+      "seconds": 96.217
+    },
+    {
+      "job_id": "bb6633929d0e4027b6768497774a5f46",
+      "memory_peak_bytes": 212582400,
+      "method": "rollback_preserves_authored_edit_and_refuses_stale_or_wrong_lineage",
+      "receipt_sha256": "fcada2d5dc36142a2e024b06703be143e6c5fc69ac340549aae6866301999d59",
+      "result": "PASS",
+      "scratch_peak_bytes": 24821057,
+      "seconds": 100.277
+    },
+    {
+      "job_id": "f39b0ca9333d499dab346d7843e159aa",
+      "memory_peak_bytes": 214568960,
+      "method": "rollback_refuses_changed_payload_path_set",
+      "receipt_sha256": "f5ba2dd561e24adf582a484abc75c6113b19e63aa98fb6c702c93e3d823eed7e",
+      "result": "PASS",
+      "scratch_peak_bytes": 17364033,
+      "seconds": 85.469
+    },
+    {
+      "job_id": "efa73c9346c14e9a9925766c3f7be038",
+      "memory_peak_bytes": 213626880,
+      "method": "rollback_refuses_pending_prior_update_without_touching_intent",
+      "receipt_sha256": "016a73edb65f8c88973a65b9a55344ce6504d90a20d4f238a90706c2029d9835",
+      "result": "PASS",
+      "scratch_peak_bytes": 17114143,
+      "seconds": 81.769
+    },
+    {
+      "job_id": "dfe8725a00704568b61a4ec361b73de0",
+      "memory_peak_bytes": 213499904,
+      "method": "rollback_refuses_pending_removal_before_receipt_or_target_reinterpretation",
+      "receipt_sha256": "7e294423169fd824462a7fc8b8494031a2b7b4459e4a917be89a1d5777b70686",
+      "result": "PASS",
+      "scratch_peak_bytes": 25317068,
+      "seconds": 137.656
+    }
+  ],
+  "runner_config_sha256": "019669f8faab4ea4e410079ea96966b16742f0e7c6d2e062246a092f1b862834",
+  "schema_version": "aide.post-lite-rollback-shards.v1",
+  "skips": 0,
+  "source_commit": "f5b77e019cae382711ea3e5cd4f95e467083a367",
+  "source_tree": "6b85e04e7cc345ae2696d38a0b98ab4456971cff"
+}

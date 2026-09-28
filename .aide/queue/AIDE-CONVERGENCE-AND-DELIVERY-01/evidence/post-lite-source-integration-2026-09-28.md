@@ -31,11 +31,36 @@
   It has **no seven-case test verdict**. AIDE retained the failure, observed
   quiescence, retired scratch and released its reservation. The original
   monitor error lacked path and file-type detail. A narrow diagnostic source
-  change is being prepared so the exact member can be identified before
-  changing the safety rule or replaying the suite.
+  change was made without changing the safety rule. The specific transient
+  member was not recoverable from this older receipt.
 - The diagnostic delta adds the relative scratch path, mode, link count and
   file attributes to that refusal while leaving its predicate and cleanup
   behavior unchanged. D job `7f103f52547b485d97716cee33ad741d` passed
   the focused transient-hardlink scanner case (exit 0, scratch retired,
   reservation released). Its source is not covered by the earlier `e3f126df`
-  integration review; exact delta review is still required.
+  integration review; exact delta review followed.
+
+## Final combined source qualification
+
+- Diagnostic source commit `f5b77e019cae382711ea3e5cd4f95e467083a367`,
+  tree `6b85e04e7cc345ae2696d38a0b98ab4456971cff`, was tested through
+  the shared finite D runner. The 35-case managed-workspace job
+  `0afc65cfde8b475d998798b48cd6824c` passed in 33.730 seconds, exit 0.
+  Peak memory was 239,648,768 bytes and peak scratch 3,511 bytes. Its receipt
+  SHA-256 is `4974283c6f661e46b3fe9e099b0188b28f77bc5a7059d35169a2a5181a246267`;
+  current input hashes match. Scratch retired and reservation released.
+- All **eight distinct rollback cases passed**, no skips, as sequential
+  exact-source D jobs. Each exit, input hash, receipt hash, limit, scratch
+  retirement and reservation release was verified in
+  `post-lite-rollback-shards-f5b77e01.json`. Peak across the eight was
+  264,003,584 bytes of job memory and 25,317,068 bytes of scratch.
+- Independent `/root/stable_effect_review` returned **ACCEPT for combined
+  candidate source integration** at exact `f5b77e01`/`6b85e04e`. The review
+  preserves the earlier `e3f126df` integration findings for unchanged source,
+  checks all eight receipt hashes and keeps dev/release effects separate. See
+  `post-lite-source-integration-review-f5b77e01.md`.
+- The two stopped long jobs remain failures in retained custody. The exact
+  transient member from the second stop was not identified; one-at-a-time
+  shards are the qualified route for this rollback matrix. The runner still
+  refuses unknown or linked members. This limitation and any future real
+  monitor failure must be reported, not silently retried as a pass.

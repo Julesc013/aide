@@ -12492,3 +12492,11 @@ failed result. The runner refusal now records the relative member path and
 file attributes without relaxing its safety predicate. A focused scanner
 test passes; identify the member and finish combined qualification before
 claiming this changed source accepted.
+
+The final combined source `f5b77e01` passed 35 managed-runner cases and all
+eight rollback cases as separately admitted D jobs. Every final job retired
+scratch and released its reservation; a receipt-hash summary binds the eight
+rollback cases to that exact source. Independent rereview accepted the narrow
+runner diagnostic delta and combined source for later dev integration. The
+two monitor-stopped long jobs remain failed evidence. Dev and frozen Lite
+assets were not changed.
