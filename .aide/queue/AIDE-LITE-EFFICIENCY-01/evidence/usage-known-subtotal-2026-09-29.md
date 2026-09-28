@@ -21,7 +21,14 @@ earlier green job `766d6552` is intermediate evidence. All attempts retired
 scratch and released their reservations. The source now marks a contradictory
 terminal stream ambiguous,
 excludes it from known subtotals and leaves categories with no valid source
-value unknown. Independent exact source review remains pending.
+value unknown. Independent `/root/stable_builder_repair_review` inspected the
+exact source commit `46c51f7101c3d4d5018ea8c6b59b132e4bf558a0`, tree
+`ad04943fb40999461fbc8c8298fa9ebccec35999`, on base
+`ebe97afbf9bc1e80f3dc61e7988287e8e5f9a209` and returned **ACCEPT for
+dev source integration**. The reviewer inspected the diff, tests, evidence,
+Git object/state and whitespace check; the reviewer did not rerun the recorded
+17 tests or conduct a live model turn. The verdict covers the parser change
+only, not the existing release assets or final publication.
 
 The accepted local 1.0.0 assets and `42672db9` effect remain bound to the
 prior script bytes. This repair requires a later exact source-to-asset rebuild

@@ -238,3 +238,7 @@ The red D-managed run failed exactly the two new usage integrity regressions.
 After the parser repair, all 17 focused cases passed in one D-managed job;
 both attempts retired scratch and released reservations. Freeze the source
 with the small receipt record, then request independent review of this delta.
+Independent review ACCEPTED exact source `46c51f71` for dev integration. The
+review did not rerun tests or extend acceptance to previously built assets.
+Next: preserve this verdict, integrate source into dev, then refresh the
+current-source release projection and qualify its exact delivered bytes.
