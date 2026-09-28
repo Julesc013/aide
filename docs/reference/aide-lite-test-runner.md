@@ -39,7 +39,9 @@ admission. The child proves membership in the exact named Windows Job and
 rechecks the source/CLI input manifest. Setting temporary-directory environment
 variables alone cannot satisfy the guard. Extracted Lite carries that same
 Windows owner for explicitly configured jobs, while its portable no-model
-`test` and `selftest` remain usable without source-checkout admission. The
+`test` and `selftest` remain usable without source-checkout admission after
+the extracted pack's manifest and payload checksums validate. A source checkout
+with a missing queue index refuses admission rather than bypassing it. The
 exported pack does not include the source checkout's self-hosting queue or
 copy `core/**` into a target through safe import.
 

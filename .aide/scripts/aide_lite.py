@@ -44856,11 +44856,24 @@ def command_managed_job(args: argparse.Namespace) -> int:
 
 
 def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False, canonical_paths=()) -> bool:
-    # Extracted Lite can carry the job owner without a self-hosting queue or
-    # machine-local setup. Keep the source checkout's test admission separate.
-    if (not (repo_root / "core/execution/managed_workspace.py").is_file()
-            or not (repo_root / ".aide/queue/index.yaml").is_file()):
+    # A validated extracted payload can run its portable no-model checks
+    # without source-checkout admission. Missing source state alone is never a
+    # reason to bypass the guard: it may mean the checkout is damaged.
+    if repo_root.name == "files" and repo_root.parent.name == EXPORT_PACK_ID:
+        try:
+            if (pack_manifest_scalars(repo_root.parent).get("pack_id") == EXPORT_PACK_ID
+                    and validate_pack_checksums(repo_root.parent)[0]):
+                return True
+        except (OSError, ValueError, KeyError, TypeError):
+            pass
+    if not (repo_root / "core/execution/managed_workspace.py").is_file():
+        if (repo_root / ".aide/queue/index.yaml").is_file():
+            print("result: REFUSED\nsource checkout has no managed job owner")
+            return False
         return True
+    if not (repo_root / ".aide/queue/index.yaml").is_file():
+        print("result: REFUSED\nsource checkout has no canonical queue index")
+        return False
     if str(repo_root) not in sys.path:
         sys.path.insert(0, str(repo_root))
     from core.execution import managed_workspace

@@ -152,6 +152,7 @@ class ExportImportTests(unittest.TestCase):
         delivered = consumer / pack_root.name / "files"
         script = delivered / ".aide/scripts/aide_lite.py"
         self.assertEqual(script.read_bytes(), MODULE_PATH.read_bytes())
+        self.assertTrue(aide_lite.source_maintainer_job_guard(delivered))
 
         job_id = "a" * 32
         job = {"source_commit": "b" * 40, "source_tree": "c" * 40}
@@ -259,6 +260,15 @@ class ExportImportTests(unittest.TestCase):
         self.assertEqual(result["source_commit"], git("HEAD"))
         self.assertFalse((Path(roots["scratch"]) / result["job_id"]).exists())
         self.assertFalse((Path(roots["control"]) / "active.json").exists())
+
+    def test_source_checkout_missing_queue_index_cannot_bypass_job_guard(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / ".aide").mkdir()
+            (root / ".aide/profile.yaml").write_text("schema_version: fixture\n", encoding="utf-8")
+            (root / "core/execution").mkdir(parents=True)
+            (root / "core/execution/managed_workspace.py").write_text("# fixture\n", encoding="utf-8")
+            self.assertFalse(aide_lite.source_maintainer_job_guard(root))
 
     def test_export_excludes_source_state_and_generated_artifacts(self) -> None:
         source_root = self.make_source_repo()
