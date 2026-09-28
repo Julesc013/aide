@@ -85,3 +85,14 @@ delivered-byte proof remain required. These notes cannot authorize integration
 or release in advance of those gates. Owner resource correction now requires
 the bounded runner before heavy testing; approved storage placement remains
 unresolved. The external original is retained unchanged.
+
+Owner later selected exact shared D execution roots. A first E full-suite
+attempt ended incomplete after 99 cases when the live scratch monitor raced a
+disappearing fixture. Reviewed source `8040b10a` repairs that runner defect;
+two D jobs then passed all 110 importer methods exactly once in 54/56
+partitions, no skips, with scratch retirement and reservation release. The
+resource task holds exact manifests, logs, receipts, independent runner review
+and its focused test-strength note. This closes current-source importer
+qualification, not artifact/consumer qualification. Check dev ancestry and
+integrate only accepted source, then regenerate current delivered bytes and
+run the required consumer and replay checks.
