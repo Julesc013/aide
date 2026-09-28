@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 4c32a8edd8aa8ea129609c6aedb534e6dfcf16f1
+source_head: aab0756968fd8aededc247f5e01f028818068594
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -12,64 +12,57 @@ release_publishing: false
 ## Summary
 
 - Added: 2
-- Changed: 3
-- Fixed: 13
-- Removed: 1
-- Docs: 4
+- Changed: 14
+- Fixed: 9
+- Docs: 2
 - Tests: 1
-- Internal: 27
+- Internal: 22
 
 ## Added
 
-- explicit bounded maintainer job inspect/run/recover commands. (5ea1f7cdd53c feat(execution): bound maintainer jobs and retire owned scratch)
 - Separate first-stable Lite candidate archive generation and validation. (24bd7d0d88c6 feat(release): build distinct first-stable Lite candidate assets)
+- Distinct local AIDE Lite 1.0.0 candidate assets for final qualification. (92da95735736 chore(release): freeze distinct AIDE Lite 1.0.0 candidate bytes)
 
 ## Changed
 
-- Task OS golden validation leaves source projections unchanged. (e185d2898fb2 test(task-os): isolate golden report writes in admitted scratch)
 - Record exact source-review acceptance for the unpublished stable builder. (a6725d83db10 docs(release): record accepted exact stable-builder source review)
 - Refresh portable AIDE Lite pack from accepted dev source. (4c32a8edd8aa chore(release): refresh portable pack from accepted dev source)
+- Refresh local changelog preview for accepted Lite source. (fe44070dfb37 chore(changelog): refresh preview for accepted Lite source)
+- Bind the portable pack manifest to the committed preview source. (339095ee5059 chore(release): bind portable pack to committed preview source)
+- Refresh local no-publish release previews and draft metadata. (3b27b1f790dc chore(release): refresh validated local Lite preview projections)
+- Record local AIDE Lite 1.0.0 candidate qualification and support limits. (d5df63c53c89 docs(release): freeze exact Lite release effect review packet)
+- Stage the AIDE Lite 1.0.0 contract for reviewed release effects. (545d4cc2089e fix(release): stage stable Lite contract activation gates)
+- Rebind the AIDE Lite portable pack to staged stable version policy. (720a9e002a6f build(release): bind portable pack to active Lite policy)
+- Regenerate AIDE Lite 1.0.0 candidate bytes for the staged public contract. (bed505ab15b2 build(release): regenerate policy-bound stable Lite assets)
+- Preserve exact AIDE Lite 1.0.0 release compatibility and evidence map. (719abf66da58 docs(release): freeze revised exact Lite release effect)
+- Record AIDE Lite main promotion gate and exact owner decision request. (ec7fa41a64d7 audit(release): preserve accepted effect and main range blocker)
+- Internal evidence only; no product bytes changed in this commit. (5f307b83c70a docs(campaign): record removal rename-gap source acceptance)
+- Project the reviewed authored-file recovery into the portable Lite pack. (8f0c654c18de build(pack): project reviewed removal source into Lite export)
+- Renewed local Lite release assets with authored AGENTS removal recovery. (5cef1476692e build(release): freeze renewed Lite 1.0.0 local assets)
 
 ## Fixed
 
-- preview effect evidence now identifies its exact commit range and replay state. (6e8af2bd8d16 fix(release): bind exact preview effect evidence)
-- allow explicit Windows recovery of an exact partial portable import without replaying changed project bytes. (547ea2b09235 feat(import): recover exact partial Windows portable imports)
-- refuse forged partial import ownership and stale controls during recovery. (052a0a926527 fix(import): reject forged partial recovery intents)
-- prevent controls and resolution drift during final partial-import publication. (dfc8048bc005 fix(import): pin recovery inputs through intent retirement)
-- default Git query report churn and lost cleanup after interruption. (5ea1f7cdd53c feat(execution): bound maintainer jobs and retire owned scratch)
-- Source maintainer test and evaluation entrypoints enforce bounded job admission. (11226a6e7fd0 fix(execution): enforce resource admission on maintainer commands)
-- Generator source output allocation requires capacity reservations. (8acfecc44e61 fix(execution): reserve canonical generator output capacity)
-- Recovery cannot bypass source-output resource qualification. (b325deeaca74 fix(execution): qualify canonical outputs during crash recovery)
-- Task status inspection no longer generates tracked reports by default. (0302b18c724d fix(queue): inspect task status without rewriting reports)
-- Candidate stable interface includes requested customization and recovery forms. (f0eabe41265d fix(contract): retain customization and partial recovery interfaces)
-- Explicit import feedback refuses every supplied input pack and the target. (c6d104f665e3 fix(import): protect predecessor packs from feedback output)
 - Reject unsafe Windows archive paths in the unpublished stable builder. (34c87052f7e3 fix(release): reject unsafe Windows archive members before extraction)
 - Bound tar metadata parsing in the unpublished stable release validator. (59db02a0e6c3 fix(release): bound tar PAX metadata before archive parsing)
-
-## Removed
-
-- Two verified duplicate consumer ZIP expansions. (119529d076fd chore(resource): retire verified duplicate consumer expansions)
+- Correct historical decision-request evidence digest. (b51594586acc audit(release): correct committed decision packet digest)
+- Release-effect review custody names the committed manifest bytes. (2aaee82e96d2 audit(release): bind reviewed LF manifest bytes)
+- Exact-intent authored AGENTS removal recovery at the rename/link interruption boundary. (1b0497c9845c fix(lifecycle): restore exact authored file in removal rename gap)
+- Rename-gap test oracle for authored surrounding bytes. (d3b2f0d36e92 test(lifecycle): match authored removal postimage oracle)
+- Legacy removal intent safe refusal at authored-file rename recovery. (526dfb5191f3 fix(lifecycle): refuse legacy removal gap without file identity)
+- Live runner monitoring no longer aborts on an owned transient atomic hardlink pair. (785e2faea1ea fix(execution): tolerate transient hardlinks in live scratch scan)
+- Live scratch monitoring accepts only fully observed owned hardlink sets. (d2b587eb3361 fix(execution): prove owned links during scratch monitoring)
 
 ## Docs
 
-- preserve focused source review with explicit qualification limits. (36e1a6d54aa0 docs(recovery): preserve exact input-guard review)
-- retain resource source review and bounded product validation routing. (8aa60c7bb8a2 docs(execution): preserve accepted resource source and bounded routing)
-- Preserve accepted resource and product validation checkpoint. (260139d2d108 docs(evidence): preserve accepted bounded execution checkpoint)
 - Align current source status and already adopted specification boundaries. (71ef35127845 docs(policy): align runtime status and adopted specification roles)
+- Record the superseding local release candidate route. (9542f77e59ff docs(release): plan renewed Lite source projection)
 
 ## Tests
 
-- avoid full design-family fixture installs for focused partial-recovery boundaries. (e87386e55eda test(import): bound fixtures for partial recovery regressions)
+- Cover legacy authored AGENTS rename-gap recovery through the public removal call. (dfe7fdf92022 test(lifecycle): cover legacy removal rename-gap retry)
 
 ## Internal
 
-- preserve committed Lite preview qualification evidence. (22257dc6ad9e chore(release): preserve committed Lite preview qualification)
-- preserve reviewed Lite dev integration and current release gaps. (493e3f13c1b2 chore(release): record reviewed Lite dev integration)
-- route Windows process-restart qualification through a bounded task. (5f2441d18772 chore(release): admit forced restart qualification)
-- record local forced-restart qualification and precise remaining recovery obligation. (f44f3a28fc08 chore(release): record delivered Lite forced restart evidence)
-- repair local forced-restart evidence wording before dev integration. (e88b1c2ee6f3 chore(release): correct forced restart evidence closeout truth)
-- route partial import recovery through a bounded reviewed source task. (d4b7657d9c0e chore(release): admit partial import recovery source work)
-- Preserve reviewed feedback repair and the resource-bound continuation. (53be4fc43ab2 chore(queue): preserve feedback repair review and resource checkpoint)
 - Consolidate dev source and preserve the stopped release/rollout checkpoint. (a1fe9fd57ac1 chore(git): consolidate dev and record release rollout checkpoint)
 - Preserve scoped documentation acceptance and the next qualified dev effect. (1d70597894e3 chore(queue): preserve documentation acceptance and dev effect)
 - Activate bounded execution under the approved Temporary parent. (e18f983b0937 chore(execution): activate owner-selected bounded qualification storage)
@@ -90,6 +83,8 @@ release_publishing: false
 - Bind installed task inspection qualification. (0259f81d8fca chore(release): qualify installed task inspection forms)
 - Preserve exact local preview acceptance and remaining release obligations. (4dcd896b4a9b chore(release): bind exact Lite preview command coverage)
 - Separate accepted local preview from public release effect. (f3f59303e5d0 chore(release): close exact Lite preview and admit stable effect)
+- Durable source and resource-qualification evidence only. (b95a8f9a159e docs(campaign): retain runner rereview and legacy retry evidence)
+- Exact local release qualification and review evidence only. (aab0756968fd audit(release): bind renewed Lite asset and consumer evidence)
 
 ## Malformed Commits
 
