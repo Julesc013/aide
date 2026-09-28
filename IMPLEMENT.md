@@ -12703,3 +12703,10 @@ All three observed jobs exited quiescently with scratch absent and shared
 reservations released. The earlier 34 worktree retirements remain tied to
 their exact receipts. Disk free-space changes were observed, not attributed
 wholly to AIDE; monitored reservations are not filesystem quotas.
+
+Corrected the portable Codex usage importer so an ambiguous turn in one
+session cannot erase the known subtotal of a different, valid session. The
+ambiguous stream remains excluded and full totals remain unknown. A D-managed
+red run isolated the regression; all 18 focused tests passed after repair.
+This changed source is pending independent review and a coherent release-byte
+refresh; the accepted dev release artifacts still bind their earlier source.

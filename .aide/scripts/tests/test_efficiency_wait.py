@@ -271,6 +271,26 @@ class EfficiencyWaitTests(unittest.TestCase):
         self.assertEqual(result["records"][0]["duplicate_terminal_events"], 1)
         self.assertIsNone(result["usage_totals"]["input_tokens"])
 
+    def test_codex_usage_turn_ambiguity_preserves_independent_known_subtotal(self):
+        ambiguous = self.codex_stream("ambiguous-turn.jsonl", usage={
+            "input_tokens": 10, "cached_input_tokens": 2,
+            "output_tokens": 4, "reasoning_output_tokens": 1})
+        events = [json.loads(line) for line in ambiguous.read_text(encoding="utf-8").splitlines()]
+        ambiguous.write_text("\n".join(json.dumps(event) for event in events
+                                       if event["type"] != "turn.started") + "\n", encoding="utf-8")
+        good = self.codex_stream("independent-turn.jsonl", session=str(uuid.UUID(int=2)),
+                                 usage={"input_tokens": 6, "cached_input_tokens": 1,
+                                        "output_tokens": 2, "reasoning_output_tokens": 0})
+        result = lite.summarize_codex_exec_usage([ambiguous, good])
+        self.assertEqual(result["status"], "PARTIAL")
+        self.assertIn("turn_boundary_ambiguous", result["coverage_gaps"])
+        self.assertEqual(result["completed_turns"], 1)
+        self.assertEqual(result["known_usage_totals"]["input_tokens"], 6)
+        self.assertEqual(result["known_usage_totals"]["output_tokens"], 2)
+        self.assertIsNone(result["usage_totals"]["input_tokens"])
+        self.assertIsNone(lite.summarize_codex_exec_usage([ambiguous])
+                          ["known_usage_totals"]["input_tokens"])
+
     def test_prompt_input_summary_counts_without_echoing_text(self):
         marker = "private-task-content-do-not-echo"
         raw = json.dumps([

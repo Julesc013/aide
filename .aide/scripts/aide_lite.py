@@ -44846,7 +44846,6 @@ def summarize_codex_exec_usage(paths: list[Path]) -> dict[str, object]:
     sessions = [str(record["session_id"]) for record in records]
     gaps = sorted({gap for record in records for gap in record["coverage_gaps"]})
     ambiguous_session = len(sessions) != len(set(sessions))
-    ambiguous_turn = any("turn_boundary_ambiguous" in record["coverage_gaps"] for record in records)
     if ambiguous_session:
         gaps.append("same_session_multiple_streams_turn_identity_unknown")
     totals: dict[str, int | None] = {}
@@ -44855,8 +44854,9 @@ def summarize_codex_exec_usage(paths: list[Path]) -> dict[str, object]:
         values = [record["usage"][name] for record in records]
         known_values = [record["usage"][name] for record in records
                         if "terminal_conflict" not in record["coverage_gaps"]
+                        and "turn_boundary_ambiguous" not in record["coverage_gaps"]
                         and record["usage"][name] is not None]
-        known_totals[name] = None if ambiguous_session or ambiguous_turn or not known_values else sum(known_values)
+        known_totals[name] = None if ambiguous_session or not known_values else sum(known_values)
         totals[name] = known_totals[name] if not gaps and all(value is not None for value in values) else None
     return {"schema": "aide.codex-exec-usage.v1", "status": "COMPLETE" if not gaps else "PARTIAL",
             "source": "codex_exec_jsonl", "model": "unknown", "model_requests": "unknown",

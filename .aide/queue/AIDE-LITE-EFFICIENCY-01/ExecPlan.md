@@ -242,3 +242,20 @@ Independent review ACCEPTED exact source `46c51f71` for dev integration. The
 review did not rerun tests or extend acceptance to previously built assets.
 Next: preserve this verdict, integrate source into dev, then refresh the
 current-source release projection and qualify its exact delivered bytes.
+
+## 2026-09-29 turn-boundary subtotal correction
+
+Objective: keep a valid independent session's known usage subtotal when a
+different stream has an ambiguous turn boundary. Scope is the existing usage
+importer, its focused regression test, and this WorkUnit's evidence. First
+prove the failure with a synthetic two-session stream through the configured
+D-managed runner, then exclude only the ambiguous record from the subtotal.
+Retain the global same-session ambiguity guard and unknown full totals. Run the
+focused suite, request exact-source review, and defer changed-byte release
+projection until the next coherent release refresh. No live model call or new
+workspace is needed.
+
+The D-managed red run `bdfa68a4` failed only the new regression (17 other
+cases passed). The repaired source passed all 18 cases in job `6da5799b`;
+both jobs retired scratch and released reservations. Independent source review
+and changed-byte release qualification remain pending.
