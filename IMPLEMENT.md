@@ -12726,3 +12726,8 @@ dev integration and local technical effect. The reviewer verified four assets,
 runner receipts, 37 forms and 49 evidence references, without rerunning tests
 or performing a live model turn. The verdict remains local; external release
 gates are unchanged.
+
+The eight accepted current-byte commits fast-forwarded local and remote dev
+to `d5a84c10`, tree `50058036`; remote identity and clean local state were
+observed. The full `main..dev` check still reports exactly ten unresolved
+historical message failures. No main promotion or publication occurred.

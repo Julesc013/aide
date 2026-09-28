@@ -351,3 +351,8 @@ references, plus zero-change replays. This verdict does not qualify live
 Codex, ten owner decisions, main promotion, publication or downloaded bytes.
 The following evidence-only record preserves the verdict without changing
 the reviewed candidate.
+
+Local and remote `dev` fast-forwarded from `fe65f48c` to `d5a84c10`, tree
+`50058036`; the eight new commit messages passed the range checker and the
+remote ref was observed. The full `main..dev` check still reports exactly ten
+unresolved historical message failures. No main or release effect followed.
