@@ -1,0 +1,31 @@
+{
+  "actual_native_query_executed": false,
+  "dependencies": {
+    "core/runtime/continuous_worker/state.py": "17364b7d04849668006b6682e6758f88d938fb6103c61d6367abe51979792dd2",
+    "core/runtime/continuous_worker/windows_pe.py": "7e53945bd46bfe4a83b40646c5f3951ba5a7315066faa051286f37f769d8981d",
+    "core/runtime/continuous_worker/windows_python_contract.py": "b95eb3a551b0fdd43d05912f63e8f50b4e1c0c5d851d9b3b276d8699ad627cd9",
+    "core/runtime/continuous_worker/windows_security_objects.py": "2f0864118b7e7748fab3e8d48c723a13b9f314cc9a2a327a7d44e84fbea94847"
+  },
+  "effects": {
+    "acl": false,
+    "api_set_query": false,
+    "network": false,
+    "profile": false,
+    "worker_activation": false
+  },
+  "observed_discrepancy": {
+    "python_getwindowsversion_build": 19045,
+    "python_platform_version_build": 19041,
+    "wmi_build": 19045
+  },
+  "prior_reviewed_manifest_sha256": "7b530eb6da8718b0b07097894b6b87e300133d447a05925592339d115bfb75ca",
+  "repair": "Use RtlGetVersion for exact running-OS build; no API-set query performed.",
+  "schema": "aide.host.api-query-os-build-source-manifest.v1",
+  "source_aggregate_sha256": "c5da303e062cac46543fef977a76c2d3792caed8388629210328298ed8cffede",
+  "source_base": "2aaee82e96d275d83501785a073f6ba73c7b6594",
+  "source_files": {
+    ".aide/scripts/tests/test_continuous_worker_system_observation.py": "a486637fc8e5440f615d923b6ba0c2a4559b8719e28d42141479f445febdf0d0",
+    "core/runtime/continuous_worker/windows_system_observation.py": "48f9711cc44b79673ba0f5dbabe050bc2c9e2e7ad72b279ad92236b74d5f3f14"
+  },
+  "status": "source_repair_pending_independent_review"
+}

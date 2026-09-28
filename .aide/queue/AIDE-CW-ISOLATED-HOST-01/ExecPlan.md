@@ -500,3 +500,113 @@ permitted tests and closed both findings. No actual query/effect packet is
 prepared or admitted. The published repair commit's non-bulleted `## Why`
 section still requires an exact Git-policy disposition before release or
 changelog readiness.
+
+## H2 native query effect preparation - 2026-09-28
+
+Objective: qualify the retained 180 API-set names with one supported native
+query session, without extending that result to private host bytes or worker
+activation. Base this bounded effect task on current `dev@2aaee82e` and the
+reviewed query source already integrated there; use the current checkout on
+`task/aide-cw-api-query-effect-01`, without another worktree.
+
+Scope: add a task-owned controller/driver and injected tests under this
+WorkUnit. Pin the exact retained inventory and current source/OS identity,
+persist a finite one-use reservation and each pre-call intent under the
+approved D control root, and emit a bounded result or a consumed failure.
+Use the existing managed runner for a later actual effect. Do not create a
+profile, grant ACLs, copy host binaries, run a model, or activate the broker.
+
+Verification: run small injected tests for ordering, wrong inventory/build,
+missing journal acknowledgement, partial failure and no replay. Freeze exact
+source and effect inputs, obtain independent technical source/effect review,
+then run at most one admitted Windows query job and review its retained output.
+The actual native call remains stopped until that review passes; an unavailable
+API or changed OS/input is a recorded refusal, not a reason to widen scope.
+
+Preparation found a concrete OS-build binding defect before the API-set effect:
+on this host `sys.getwindowsversion().build` and WMI report 19045 while
+`platform_version` derives 19041 from kernel32.dll. The source repair uses
+`RtlGetVersion` and refuses failed/inconsistent output. Managed injected test
+job `1ce2695643d04ebf80d729bab956e939` passed all 53 observation cases;
+managed read-only OS-version job `28ed5b32eb6440e3bcee777e5ea0ad3a`
+observed 19045/19045/19041 with no API-set query. Both released reservations
+and retired scratch. The native query effect remains unprepared and unadmitted.
+
+Independent `/root/native_os_build_review` returned **ACCEPT for source
+integration only** on exact `d995783a`/tree `6d8e67ab`, after checking the
+native ABI, current manifest hashes, prior manifest custody and injected
+failure cases. The signed review is in the task evidence and under the D
+control root. Keep this source on its task branch while the accepted Lite
+release effect remains frozen on dev; integrating the changed source into dev
+would require a deliberate release-dependency delta check. No native API-set
+query or worker activation is admitted by this review.
+
+The next task-owned controller source is under
+`evidence/h2_api_query_effect.py`, with seven injected cases in
+`evidence/h2_api_query_effect_tests.py`. It binds the retained exact 180 names,
+source and inventory digests, OS build and expiry; creates one exclusive D
+control journal before backend construction; fsyncs the reservation and every
+pre-call intent; checks journal identity; retains a bounded result or a
+consumed failure; and refuses reuse of the request ID. Managed job
+`b694c2accc0941fa9dc7f92a7f2c0281` passed all seven cases, retired scratch
+and released its reservation. The first test run found only an oracle ordering
+mistake: `ApiSetQueryPlan` intentionally sorts names. The corrected suite is
+green. No actual API-set backend was constructed. Freeze/review this source
+before building the short-lived exact effect manifest. The same-user trusted
+controller and approved D control root are explicit premises, not restricted
+worker isolation proof.
+
+The independent controller review on `cb87591f` requested two repairs:
+reserve the exact final result name before backend construction, and make
+success publication dependent on a digest-bound fsynced terminal PASS. The
+controller now writes a nonfinal reservation marker, stages the result,
+records PASS with its digest, and reconciles publication without replaying
+native calls. Ten local injected tests cover the original seven plus short
+result write, failed PASS fsync, and failed publication recovery. The
+superseding source candidate still needs a managed postcommit test and scoped
+independent rereview before preparing any actual native effect.
+
+The superseding source `f1c9223e`/tree `8530af9d` passed managed job
+`76c077624f1e49198254e829739440e0`: ten injected tests, exit 0, scratch
+retired, reservation released. The same independent reviewer accepted the
+exact repair for source only. The actual native query still needs a fresh
+manifest, independent effect review and one admitted finite job; source
+acceptance does not qualify host bytes, restricted execution or activation.
+
+Before freezing the native effect, a read-only adapter-construction check on
+this Windows 10.0.19045 host found that the documented L2 API-set DLL does not
+expose `GetApiSetModuleBaseName` here. No name query or one-use reservation
+occurred. The effect remains unprepared and unadmitted. Preserve the accepted
+source branch and seek an identified suitable Windows host or a separately
+reviewed supported method; do not replay the unchanged local blocker.
+
+## 2026-09-28 supported loader observation source
+
+The documented L2 API-set query export is absent on the identified Windows
+10.0.19045 host. Do not retry its unchanged query effect. Microsoft documents
+that ordinary loader operations resolve API-set contracts to host binaries and
+that GetModuleFileNameW returns the loaded module's path. Prepare a separate
+bounded loader-observation source candidate on this task branch; do not alter
+the accepted query controller or claim its native effect succeeded.
+
+Scope: one fixed adapter using LoadLibraryExW with the System32 search flag,
+GetModuleFileNameW and FreeLibrary for exact admitted API-set names, plus
+injected tests for call order, native failure, path/refusal, and release
+failure. Ordinary loads can execute DLL initialization and dependencies; this
+is a different native effect from the failed resource mapping or missing L2
+query. The source candidate alone performs no OS load. An actual effect needs
+its own exact finite manifest, controlled child, durable intent, independent
+source/effect review, admission and result analysis. Returned paths do not
+establish OS provenance, host-byte trust, a restricted loader, or worker
+activation. A suitable alternate AIDE-owned host could supersede this route.
+
+The exact source candidate `b682ba7d`/tree `1fa7e484` passed 59/59
+postcommit injected tests in managed job `e04380a5b4fa48fa93c1efe881391006`.
+Independent `/root/native_os_build_review` returned **ACCEPT for source only**;
+the exact review and limits are in
+`evidence/h2-api-set-loader-source-review-b682ba7d.md`. Its key limitation is
+that an ordinary load can use an already loaded module or side-by-side state
+before the System32 search flag controls directory search. The returned-path
+check is after possible DLL initialization. Keep the actual native effect
+unprepared and unadmitted until a controlled-child effect manifest, review,
+admission and result analysis exist. No worker activation follows this review.

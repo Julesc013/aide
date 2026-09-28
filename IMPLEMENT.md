@@ -12564,3 +12564,15 @@ the installed CLI's `input_text` shape; superseding `b4f250f7` passed three
 D-managed cases including the real no-model debugger stream. Independent
 review accepted dev source integration. Extracted-pack verification and live
 host usage remain open.
+
+## 2026-09-29 isolated-host API-set observation source integration
+
+The reviewed `RtlGetVersion` repair, one-use API-set query controller and
+ordinary-loader observation source are merged from the retained native-host
+task branch into the current AIDE source lineage. Their independent source
+reviews accepted `d995783a`, `f1c9223e` and `b682ba7d` for source only.
+The Windows 10.0.19045 host lacks the documented L2 API-set query export;
+the loader route can execute DLL initialization before its returned-path
+check. No API-set query, ordinary-loader effect, restricted worker or
+operational activation is qualified by this merge. Current combined-source
+tests and a source integration review are required before release use.

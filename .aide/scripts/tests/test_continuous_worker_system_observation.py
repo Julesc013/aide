@@ -581,15 +581,18 @@ class ApiSetQueryTests(unittest.TestCase):
             session.run()
         self.assertEqual(session.failure["native_refusal"]["hresult"], "0x80070490")
 
-    def test_frozen_source_manifest_matches_exact_files_and_no_effect_boundary(self):
-        path = ROOT / ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-query-source-manifest.json"
+    def test_current_source_manifest_matches_exact_files_and_no_effect_boundary(self):
+        path = ROOT / ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-set-loader-source-manifest.json"
         manifest = json.loads(path.read_text(encoding="utf-8"))
         expected = {**manifest["source_files"], **manifest["dependencies"]}
         actual = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in expected}
         self.assertEqual(actual, expected)
         encoded = json.dumps(actual, sort_keys=True, separators=(",", ":")).encode()
         self.assertEqual(hashlib.sha256(encoded).hexdigest(), manifest["source_aggregate_sha256"])
-        self.assertFalse(manifest["actual_native_query_executed"])
+        prior = ROOT / ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-api-query-os-build-source-manifest.json"
+        self.assertEqual(hashlib.sha256(prior.read_bytes()).hexdigest(),
+                         manifest["prior_reviewed_manifest_sha256"])
+        self.assertFalse(manifest["actual_native_load_executed"])
         self.assertTrue(all(value is False for value in manifest["effects"].values()))
 
 
@@ -632,11 +635,32 @@ class NativeAdapterInjectedTests(unittest.TestCase):
         with self.assertRaises(Refused):
             api.api_set_host(API_NAME)
 
-    def test_native_os_build_uses_exact_platform_version(self):
+    def test_native_os_build_uses_running_os_version_not_kernel_dll_version(self):
         api = obs.NativeApiSetQueryApi.__new__(obs.NativeApiSetQueryApi)
-        version = type("Version", (), {"platform_version": (10, 0, 26200)})()
-        with patch.object(obs.sys, "getwindowsversion", return_value=version, create=True):
-            self.assertEqual(api.os_build(), "10.0.26200")
+        def observed(pointer):
+            version = pointer._obj
+            self.assertEqual(version.dwOSVersionInfoSize, obs.C.sizeof(version))
+            version.dwMajorVersion, version.dwMinorVersion = 10, 0
+            version.dwBuildNumber, version.dwPlatformId = 19045, 2
+            return 0
+        api._rtl_get_version = observed
+        self.assertEqual(api.os_build(), "10.0.19045")
+
+    def test_native_os_build_refuses_failed_or_inconsistent_observation(self):
+        api = obs.NativeApiSetQueryApi.__new__(obs.NativeApiSetQueryApi)
+        def observed(*, status=0, major=10, minor=0, build=19045, platform=2):
+            def query(pointer):
+                version = pointer._obj
+                version.dwMajorVersion, version.dwMinorVersion = major, minor
+                version.dwBuildNumber, version.dwPlatformId = build, platform
+                return status
+            return query
+        for parameters in ({"status": 1}, {"major": 6}, {"minor": 1},
+                           {"build": 0}, {"build": 1000000}, {"platform": 1}):
+            with self.subTest(parameters=parameters):
+                api._rtl_get_version = observed(**parameters)
+                with self.assertRaises(Refused):
+                    api.os_build()
 
     def test_only_fixed_resource_flags_and_exact_owned_release(self):
         api = obs.NativeSystemApi.__new__(obs.NativeSystemApi)
@@ -665,6 +689,89 @@ class NativeAdapterInjectedTests(unittest.TestCase):
         for name in ("kernel32.dll", r"C:\bad.dll", API_NAME.upper()):
             with self.subTest(name=name), self.assertRaises(Refused): api.map_resource(name)
         api._load.assert_not_called()
+
+
+class LoaderObservationTests(unittest.TestCase):
+    def setUp(self):
+        self.events = []
+        self.directory = r"C:\Windows\System32"
+        self.module = self.directory + r"\kernelbase.dll"
+        self.load_result = 73
+        self.release_result = 1
+
+        def system_directory(buffer, capacity):
+            self.events.append(("system_directory", capacity))
+            buffer.value = self.directory
+            return len(buffer.value)
+
+        def load(name, unused, flags):
+            self.events.append(("load", name, flags))
+            return self.load_result
+
+        def module_name(handle, buffer, capacity):
+            self.events.append(("module_name", handle, capacity))
+            buffer.value = self.module
+            return len(buffer.value)
+
+        def release(handle):
+            self.events.append(("release", handle))
+            return self.release_result
+
+        functions = {"GetSystemDirectoryW": system_directory, "LoadLibraryExW": load,
+                     "GetModuleFileNameW": module_name, "FreeLibrary": release}
+        self.api = obs.NativeApiSetLoaderApi(
+            kernel=object(), native_bind=lambda unused, name, args, result: functions[name])
+
+    def test_exact_system32_loader_flag_path_and_release(self):
+        result = self.api.load_and_identify(API_NAME)
+        self.assertEqual(result["physical_name"], "kernelbase.dll")
+        self.assertEqual(result["module_path"], self.module)
+        self.assertFalse(result["host_bytes_qualified"])
+        self.assertFalse(result["restricted_loader_qualified"])
+        self.assertEqual([event[0] for event in self.events],
+                         ["system_directory", "load", "module_name", "release"])
+        self.assertEqual(self.events[1], ("load", API_NAME, obs.LOADER_SEARCH_SYSTEM32))
+
+    def test_bad_contract_refuses_before_any_native_call(self):
+        for name in ("kernelbase.dll", r"C:\bad.dll", API_NAME.upper()):
+            with self.subTest(name=name), self.assertRaises(Refused):
+                self.api.load_and_identify(name)
+        self.assertEqual(self.events, [])
+
+    def test_missing_contract_reports_native_error_without_release(self):
+        self.load_result = 0
+        with self.assertRaises(Refused) as caught:
+            self.api.load_and_identify(API_NAME)
+        self.assertEqual(caught.exception.native_evidence["operation"], "LoadLibraryExW")
+        self.assertEqual([event[0] for event in self.events], ["system_directory", "load"])
+
+    def test_foreign_or_nonphysical_host_refuses_and_releases(self):
+        for path in (r"C:\Users\Jules\kernelbase.dll",
+                     self.directory + r"\api-ms-win-core-test-l1-1-0.dll",
+                     r"\\server\share\kernelbase.dll"):
+            self.module = path
+            self.events.clear()
+            with self.subTest(path=path), self.assertRaises(Refused):
+                self.api.load_and_identify(API_NAME)
+            self.assertEqual(self.events[-1], ("release", 73))
+
+    def test_incomplete_path_and_failed_release_cannot_report_success(self):
+        self.module = ""
+        with self.assertRaises(Refused):
+            self.api.load_and_identify(API_NAME)
+        self.assertEqual(self.events[-1], ("release", 73))
+        self.events.clear()
+        self.module = self.directory + r"\kernelbase.dll"
+        self.release_result = 0
+        with self.assertRaises(Refused) as caught:
+            self.api.load_and_identify(API_NAME)
+        self.assertEqual(caught.exception.native_evidence["operation"], "FreeLibrary")
+
+    def test_malformed_system_directory_refuses_before_load(self):
+        self.directory = r"C:\Windows\..\Users"
+        with self.assertRaises(Refused):
+            self.api.load_and_identify(API_NAME)
+        self.assertEqual([event[0] for event in self.events], ["system_directory"])
 
 
 if __name__ == "__main__":

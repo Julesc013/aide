@@ -1,0 +1,20 @@
+{
+  "effect_boundary": "one exact future manifest, independent source and effect review, AIDE managed finite job; no replay of consumed request",
+  "injected_tests": {
+    "failed": 0,
+    "mode": "precommit_injected",
+    "native_api_set_query_executed": false,
+    "passed": 10
+  },
+  "native_api_set_query_executed": false,
+  "pins": {
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-readonly-final.json": "a9fef62f0e1431c12b4743cbc42f2039790625dd6ea8e769991512467b6ccce3",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_api_query_effect.py": "2ea771a6bd5a7bd5cb92db4e9aab3a702f55662a1ff7ba0ac38235f15162e952",
+    ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2_api_query_effect_tests.py": "967a640c3f21b6e84f127b7232e3ec0409291561979b91c0c9ac0d049db760fd",
+    "core/runtime/continuous_worker/windows_system_observation.py": "48f9711cc44b79673ba0f5dbabe050bc2c9e2e7ad72b279ad92236b74d5f3f14"
+  },
+  "pins_aggregate_sha256": "f18cef28ee636f7ecf9ce9ca17a0b2e6040527e39b0bf4c72383e9e530facd2d",
+  "schema": "aide.host.api-query-controller-source.v1",
+  "source_base": "cb87591fe374caa45aa07d2dfbc0e72cdb4bc694",
+  "state": "source_repair_pending_independent_rereview"
+}

@@ -1,0 +1,5 @@
+# Local supported API-set export check
+
+At task branch `9e003679` on 2026-09-28 AEST, a read-only Python check attempted to construct `NativeApiSetQueryApi` before preparing or admitting a one-use effect manifest. The current host had previously reported Windows build `10.0.19045` through `RtlGetVersion` and Python's OS build field. Construction loaded `api-ms-win-core-apiquery-l2-1-0.dll` but binding `GetApiSetModuleBaseName` raised `AttributeError: function 'GetApiSetModuleBaseName' not found`.
+
+The [Microsoft API reference](https://learn.microsoft.com/en-us/windows/win32/api/apiquery2/nf-apiquery2-getapisetmodulebasename) names that L2 API-set DLL for the function. This observation establishes that the required export is unavailable through the documented binding on this host. It does not establish availability or absence on another Windows build. No API-set name was queried, no one-use request/journal was created, and no effect manifest was frozen. Do not retry this unchanged host as if a query were merely transiently blocked; qualification requires an identified suitable host or a separately reviewed supported approach.

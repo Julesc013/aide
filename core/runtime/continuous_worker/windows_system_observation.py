@@ -10,9 +10,9 @@ from ctypes import wintypes as W
 import hashlib
 import json
 import math
+import ntpath
 import os
 import re
-import sys
 import time
 
 from .state import Refused
@@ -28,6 +28,8 @@ CHUNK_BYTES = 65536
 API_QUERY_MAX_PATH = 260
 MAX_API_QUERY_CALLS = MAX_API_SETS + 1
 MAX_RESOURCE_API_SETS = 128
+LOADER_SEARCH_SYSTEM32 = 0x00000800
+LOADER_PATH_CHARS = 32768
 
 
 def _canonical(value):
@@ -481,6 +483,12 @@ class ObservationSession:
         return output
 
 
+class _RtlOsVersionInfoW(C.Structure):
+    _fields_ = [("dwOSVersionInfoSize", W.DWORD), ("dwMajorVersion", W.DWORD),
+                ("dwMinorVersion", W.DWORD), ("dwBuildNumber", W.DWORD),
+                ("dwPlatformId", W.DWORD), ("szCSDVersion", C.c_wchar * 128)]
+
+
 class NativeApiSetQueryApi:
     """Supported API-set host query; construct only in a reviewed owned probe."""
     def __init__(self):
@@ -492,13 +500,17 @@ class NativeApiSetQueryApi:
             raise Refused("supported API-set query library unavailable") from error
         self._api_query = objects.bind(self._api_query_library, "GetApiSetModuleBaseName",
                                        [C.c_char_p, C.c_uint32, W.LPWSTR, C.POINTER(C.c_uint32)], C.c_long)
+        self._rtl_get_version = objects.bind(objects.N, "RtlGetVersion",
+                                             [C.POINTER(_RtlOsVersionInfoW)], C.c_long)
 
     def os_build(self):
-        version = sys.getwindowsversion()
-        parts = tuple(getattr(version, "platform_version", version)[:3])
-        if len(parts) != 3 or any(type(part) is not int or part < 0 for part in parts):
-            raise Refused("exact Windows platform build unavailable")
-        return _os_build(".".join(str(part) for part in parts))
+        version = _RtlOsVersionInfoW()
+        version.dwOSVersionInfoSize = C.sizeof(version)
+        status = int(self._rtl_get_version(C.byref(version))) & 0xffffffff
+        if (status or version.dwMajorVersion != 10 or version.dwMinorVersion != 0 or
+                version.dwPlatformId != 2 or version.dwBuildNumber < 1):
+            raise Refused("exact Windows OS build unavailable")
+        return _os_build(f"{version.dwMajorVersion}.{version.dwMinorVersion}.{version.dwBuildNumber}")
 
     def api_set_host(self, name):
         name = _name(name)
@@ -517,6 +529,73 @@ class NativeApiSetQueryApi:
         if _api_name(host) or host in PRIVATE_NAMES:
             raise Refused("API-set query returned no physical system module")
         return host
+
+
+class NativeApiSetLoaderApi:
+    """Observe a contract's ordinary loader host in an owned finite child.
+
+    Unlike NativeApiSetQueryApi, this loads executable OS code and may run
+    DLL initialization. A returned path is an observation, not trusted host
+    bytes, a protected loader, or permission to activate a worker.
+    """
+
+    def __init__(self, *, kernel=None, native_bind=None):
+        if os.name != "nt" or C.sizeof(C.c_void_p) != 8:
+            raise Refused("native AMD64 Windows loader observer required")
+        kernel = objects.K if kernel is None else kernel
+        bind = objects.bind if native_bind is None else native_bind
+        self._load = bind(kernel, "LoadLibraryExW",
+                          [W.LPCWSTR, W.HANDLE, W.DWORD], W.HMODULE)
+        self._module_name = bind(kernel, "GetModuleFileNameW",
+                                 [W.HMODULE, W.LPWSTR, W.DWORD], W.DWORD)
+        self._system_dir = bind(kernel, "GetSystemDirectoryW",
+                                [W.LPWSTR, W.UINT], W.UINT)
+        self._free = bind(kernel, "FreeLibrary", [W.HMODULE], W.BOOL)
+
+    @staticmethod
+    def _directory(value):
+        if (type(value) is not str or len(value) > LOADER_PATH_CHARS or
+                not re.fullmatch(r"[A-Za-z]:\\[^:\\]+(?:\\[^:\\]+)*", value) or
+                any(part in (".", "..") for part in value.split("\\"))):
+            raise Refused("literal absolute local module path required")
+        return ntpath.normcase(ntpath.normpath(value))
+
+    def load_and_identify(self, name):
+        name = _name(name)
+        if not _api_name(name):
+            raise Refused("literal admitted API-set contract required")
+        root_buffer = C.create_unicode_buffer(API_QUERY_MAX_PATH)
+        root_length = int(self._system_dir(root_buffer, API_QUERY_MAX_PATH))
+        if not 1 <= root_length < API_QUERY_MAX_PATH or root_length != len(root_buffer.value):
+            raise Refused("complete current System32 path required")
+        root = self._directory(root_buffer.value)
+        handle = self._load(name, None, LOADER_SEARCH_SYSTEM32)
+        if not handle:
+            error = Refused("ordinary API-set loader could not resolve contract")
+            error.native_evidence = {"operation": "LoadLibraryExW", "api_name": name,
+                                     "win32_error": int(C.get_last_error())}
+            raise error
+        try:
+            path_buffer = C.create_unicode_buffer(LOADER_PATH_CHARS)
+            path_length = int(self._module_name(handle, path_buffer, LOADER_PATH_CHARS))
+            if not 1 <= path_length < LOADER_PATH_CHARS or path_length != len(path_buffer.value):
+                raise Refused("complete loaded module path required")
+            path = path_buffer.value
+            canonical = self._directory(path)
+            if ntpath.dirname(canonical) != root:
+                raise Refused("loaded API-set host is outside current System32")
+            host = _name(ntpath.basename(canonical))
+            if _api_name(host) or host in PRIVATE_NAMES:
+                raise Refused("loader did not identify one physical system module")
+            return {"api_name": name, "physical_name": host, "module_path": path,
+                    "loader_flags": LOADER_SEARCH_SYSTEM32,
+                    "host_bytes_qualified": False, "restricted_loader_qualified": False}
+        finally:
+            if not self._free(handle):
+                error = Refused("loaded API-set host release failed")
+                error.native_evidence = {"operation": "FreeLibrary", "api_name": name,
+                                         "win32_error": int(C.get_last_error())}
+                raise error
 
 
 class NativeSystemApi:

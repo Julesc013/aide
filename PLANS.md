@@ -4265,3 +4265,12 @@ then resumed to `DETACHED` with authored and project-owned bytes preserved.
 The job retired scratch under the approved D runner. Its reviewed evidence is
 now integrated into dev as historical qualification; a new release effect
 must qualify current bytes before publication.
+
+The retained isolated-host branch contributes source-reviewed OS-build
+provenance, a one-use API-set query controller and an ordinary-loader
+observation adapter to the current dev integration candidate. The local
+Windows 10.0.19045 host lacks the documented L2 query export. The loader
+source passed injected tests and independent source review, but its actual
+load is unadmitted because DLL initialization can precede path validation.
+Run combined-source tests and integration review; keep native effects and
+worker activation separate from the bounded Lite release profile.
