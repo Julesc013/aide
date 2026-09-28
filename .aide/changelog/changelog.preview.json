@@ -552,20 +552,18 @@
         "summary": "Refresh local Lite stable candidate assets.",
         "type": "build",
         "validation": "- PASS: D-managed stable build job 98b9d585 completed and retired scratch.\n- PASS: D-managed stable validate job 0030bc4e completed.\n- PASS: git diff --check.\n- WARN: postcommit replay and delivered-byte consumers remain pending."
-      }
-    ],
-    "Docs": [
+      },
       {
-        "aide_phase": "source-bound-changelog-preview",
-        "aide_result": "PASS",
+        "aide_phase": "attribution-policy-preview",
+        "aide_result": "PASS_WITH_NOTES",
         "breaking": false,
-        "category": "Docs",
-        "commit": "87635e1815b7",
-        "commit_sha": "87635e1815b7f24b18fef43b56f2a186aeb24103",
-        "entry": "Refresh the source-bound Lite release preview.",
-        "follow_up": "- Regenerate the pack from this committed preview, then qualify stable assets and consumer bytes.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: source-bound-changelog-preview\nAIDE-Result: PASS\nAIDE-Scope: generated-preview-only\nAIDE-Token-Impact: deterministic-preview\nAIDE-Quality-Gate: changelog-validate-and-postcommit-replay",
-        "risks": "- This is a local preview and does not publish a release or validate delivered bytes.",
-        "scope": "changelog",
+        "category": "Changed",
+        "commit": "68192b3696e6",
+        "commit_sha": "68192b3696e626fcfe2c3b4c513e777a58c578fd",
+        "entry": "Bind candidate attempt usage form to local Lite preview.",
+        "follow_up": "- Generate and test the final local pack and stable assets.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: attribution-policy-preview\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: reviewed-policy-and-preview\nAIDE-Token-Impact: deterministic-no-model\nAIDE-Quality-Gate: policy-accepted-preview-validated",
+        "risks": "- Prior 37-form effects and asset bytes do not qualify this policy revision.",
+        "scope": "release",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -575,11 +573,13 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "docs(changelog): project Lite preview at repaired source",
-        "summary": "Refresh the source-bound Lite release preview.",
-        "type": "docs",
-        "validation": "- PASS: changelog preview reports full source_head 7a521066fdd4bf1346434d60c84090b0a63f77b2, 50 commits, and zero malformed commits in its selected range.\n- PASS: changelog validate and staged diff whitespace check."
-      },
+        "subject": "build(release): bind reviewed attribution form to preview",
+        "summary": "Bind candidate attempt usage form to local Lite preview.",
+        "type": "build",
+        "validation": "- PASS: independent review accepted policy commit 6a15a7dd.\n- PASS: preview covered 50 commits with zero malformed messages.\n- PASS: changelog validate and git diff --check.\n- WARN: final pack, assets and 38-form effect still need qualification."
+      }
+    ],
+    "Docs": [
       {
         "aide_phase": "accepted-source-changelog-preview",
         "aide_result": "PASS",
@@ -1263,38 +1263,13 @@
   },
   "category_counts": {
     "Added": 4,
-    "Changed": 18,
-    "Docs": 2,
+    "Changed": 19,
+    "Docs": 1,
     "Fixed": 12,
     "Internal": 14
   },
   "commit_count": 50,
   "entries": [
-    {
-      "aide_phase": "source-bound-changelog-preview",
-      "aide_result": "PASS",
-      "breaking": false,
-      "category": "Docs",
-      "commit": "87635e1815b7",
-      "commit_sha": "87635e1815b7f24b18fef43b56f2a186aeb24103",
-      "entry": "Refresh the source-bound Lite release preview.",
-      "follow_up": "- Regenerate the pack from this committed preview, then qualify stable assets and consumer bytes.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: source-bound-changelog-preview\nAIDE-Result: PASS\nAIDE-Scope: generated-preview-only\nAIDE-Token-Impact: deterministic-preview\nAIDE-Quality-Gate: changelog-validate-and-postcommit-replay",
-      "risks": "- This is a local preview and does not publish a release or validate delivered bytes.",
-      "scope": "changelog",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "docs(changelog): project Lite preview at repaired source",
-      "summary": "Refresh the source-bound Lite release preview.",
-      "type": "docs",
-      "validation": "- PASS: changelog preview reports full source_head 7a521066fdd4bf1346434d60c84090b0a63f77b2, 50 commits, and zero malformed commits in its selected range.\n- PASS: changelog validate and staged diff whitespace check."
-    },
     {
       "aide_phase": "source-bound-preview-review-repair",
       "aide_result": "REVIEW_PENDING",
@@ -2519,6 +2494,31 @@
       "summary": "Candidate Lite attempt usage form with partial accounting semantics.",
       "type": "feat",
       "validation": "- PASS: delivered ZIP exercised the form and malformed refusal in 12 observations.\n- PASS: six serial consumer journeys passed on the prior policy bytes.\n- PASS: git diff --check.\n- WARN: this policy change requires new source-bound assets and exact-byte checks."
+    },
+    {
+      "aide_phase": "attribution-policy-preview",
+      "aide_result": "PASS_WITH_NOTES",
+      "breaking": false,
+      "category": "Changed",
+      "commit": "68192b3696e6",
+      "commit_sha": "68192b3696e626fcfe2c3b4c513e777a58c578fd",
+      "entry": "Bind candidate attempt usage form to local Lite preview.",
+      "follow_up": "- Generate and test the final local pack and stable assets.\n\nAIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01\nAIDE-Phase: attribution-policy-preview\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: reviewed-policy-and-preview\nAIDE-Token-Impact: deterministic-no-model\nAIDE-Quality-Gate: policy-accepted-preview-validated",
+      "risks": "- Prior 37-form effects and asset bytes do not qualify this policy revision.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "build(release): bind reviewed attribution form to preview",
+      "summary": "Bind candidate attempt usage form to local Lite preview.",
+      "type": "build",
+      "validation": "- PASS: independent review accepted policy commit 6a15a7dd.\n- PASS: preview covered 50 commits with zero malformed messages.\n- PASS: changelog validate and git diff --check.\n- WARN: final pack, assets and 38-form effect still need qualification."
     }
   ],
   "generated_by": "aide-lite",
@@ -2529,7 +2529,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "6a15a7dd5e3b0a8b13bf244badaab6c82f6cdf01",
-  "source_range": "HEAD latest 50 commits",
+  "source_head": "68192b3696e626fcfe2c3b4c513e777a58c578fd",
+  "source_range": "68192b3696e626fcfe2c3b4c513e777a58c578fd latest 50 commits",
   "warnings": []
 }

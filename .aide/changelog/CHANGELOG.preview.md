@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: HEAD latest 50 commits
-source_head: 6a15a7dd5e3b0a8b13bf244badaab6c82f6cdf01
+source_range: 68192b3696e626fcfe2c3b4c513e777a58c578fd latest 50 commits
+source_head: 68192b3696e626fcfe2c3b4c513e777a58c578fd
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -12,9 +12,9 @@ release_publishing: false
 ## Summary
 
 - Added: 4
-- Changed: 18
+- Changed: 19
 - Fixed: 12
-- Docs: 2
+- Docs: 1
 - Internal: 14
 
 ## Added
@@ -44,6 +44,7 @@ release_publishing: false
 - Refresh local Lite attribution release preview. (74c811f3b77e build(release): refresh Lite attribution changelog preview)
 - Refresh local portable Lite pack for attempt attribution. (a233225073e7 build(release): refresh Lite pack with attempt attribution)
 - Refresh local Lite stable candidate assets. (25e74785fedd build(release): refresh unpublished Lite attribution assets)
+- Bind candidate attempt usage form to local Lite preview. (68192b3696e6 build(release): bind reviewed attribution form to preview)
 
 ## Fixed
 
@@ -62,7 +63,6 @@ release_publishing: false
 
 ## Docs
 
-- Refresh the source-bound Lite release preview. (87635e1815b7 docs(changelog): project Lite preview at repaired source)
 - Bind Lite release preview to the accepted source revision. (4491c2cb8b47 docs(changelog): freeze repaired Lite source preview)
 
 ## Internal

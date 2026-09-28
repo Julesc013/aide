@@ -1,10 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "87635e1815b7",
-      "summary": "Regenerate the pack from this committed preview, then qualify stable assets and consumer bytes."
-    },
-    {
       "commit": "46fe61d743f0",
       "summary": "Obtain narrow source rereview, regenerate preview from this source commit, then rebuild and qualify final assets."
     },
@@ -199,6 +195,10 @@
     {
       "commit": "6a15a7dd5e3b",
       "summary": "Obtain exact policy review, regenerate current preview and final local bytes."
+    },
+    {
+      "commit": "68192b3696e6",
+      "summary": "Generate and test the final local pack and stable assets."
     }
   ],
   "highlights": [
@@ -358,6 +358,13 @@
     },
     {
       "breaking": false,
+      "category": "Changed",
+      "commit": "68192b3696e6",
+      "subject": "build(release): bind reviewed attribution form to preview",
+      "summary": "Bind candidate attempt usage form to local Lite preview."
+    },
+    {
+      "breaking": false,
       "category": "Fixed",
       "commit": "46fe61d743f0",
       "subject": "fix(changelog): bind range head to selected commit set",
@@ -443,13 +450,6 @@
     {
       "breaking": false,
       "category": "Docs",
-      "commit": "87635e1815b7",
-      "subject": "docs(changelog): project Lite preview at repaired source",
-      "summary": "Refresh the source-bound Lite release preview."
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
       "commit": "4491c2cb8b47",
       "subject": "docs(changelog): freeze repaired Lite source preview",
       "summary": "Bind Lite release preview to the accepted source revision."
@@ -457,10 +457,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "87635e1815b7",
-      "summary": "This is a local preview and does not publish a release or validate delivered bytes."
-    },
     {
       "commit": "46fe61d743f0",
       "summary": "Downstream pack, stable assets and consumers need refreshed exact-source qualification."
@@ -656,16 +652,16 @@
     {
       "commit": "6a15a7dd5e3b",
       "summary": "Supplied streams do not prove complete work usage or internal model requests."
+    },
+    {
+      "commit": "68192b3696e6",
+      "summary": "Prior 37-form effects and asset bytes do not qualify this policy revision."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "6a15a7dd5e3b0a8b13bf244badaab6c82f6cdf01",
-  "source_range": "HEAD latest 50 commits",
+  "source_head": "68192b3696e626fcfe2c3b4c513e777a58c578fd",
+  "source_range": "68192b3696e626fcfe2c3b4c513e777a58c578fd latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "87635e1815b7",
-      "summary": "PASS: changelog preview reports full source_head 7a521066fdd4bf1346434d60c84090b0a63f77b2, 50 commits, and zero malformed commits in its selected range."
-    },
     {
       "commit": "46fe61d743f0",
       "summary": "PASS: focused selected-revision fixture regression under the approved D scratch root."
@@ -861,6 +857,10 @@
     {
       "commit": "6a15a7dd5e3b",
       "summary": "PASS: delivered ZIP exercised the form and malformed refusal in 12 observations."
+    },
+    {
+      "commit": "68192b3696e6",
+      "summary": "PASS: independent review accepted policy commit 6a15a7dd."
     }
   ],
   "warnings": []

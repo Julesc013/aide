@@ -2,22 +2,16 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 1dada960cc47189e8a1c21be87b41aed02ea835a latest 50 commits
-source_head: 1dada960cc47189e8a1c21be87b41aed02ea835a
+source_range: 68192b3696e626fcfe2c3b4c513e777a58c578fd latest 50 commits
+source_head: 68192b3696e626fcfe2c3b4c513e777a58c578fd
 preview_only: true
 
 ## Highlights
 
 - Added: Include the portable bounded job interface in the Lite release contract. (20710eace078)
 - Added: Portable bounded job commands in the Lite candidate assets. (5acd32a79ab5)
-- Changed: Codex host source qualification and remaining gates. (6281a6b903ca)
-- Changed: Durable dev integration record for Codex host source. (38fbe92266bd)
-- Changed: Extracted Lite fixture covers Codex permission refusal. (1bacae3a9be0)
-- Changed: Durable delivered Codex admission test evidence. (12351b07c340)
-- Changed: Current Lite pack refresh execution plan. (6c4f61553495)
-- Changed: Current-source Lite portable pack candidate. (c22d41112973)
-- Changed: Current Lite pack uses repaired non-circular provenance. (a7ab0223d1ba)
-- Changed: Local Lite 1.0.0 candidate includes current portable source. (b147aa8cf28a)
+- Added: Bounded attempt attribution for supplied Codex usage streams. (cec72cb6f2d7)
+- Added: Candidate Lite attempt usage form with partial accounting semantics. (6a15a7dd5e3b)
 - Changed: Preserve the usage repair review verdict. (8912eab9071c)
 - Changed: Refresh preview metadata for the current Lite source. (65fafcc9f5be)
 - Changed: Refresh unpublished Lite candidate views and qualification evidence. (65eaa5550f2e)
@@ -27,13 +21,16 @@ preview_only: true
 - Changed: Record qualified bounded execution and owned cleanup closure. (ef938eef1b78)
 - Changed: Record accepted usage subtotal source review. (fe65f48c67a1)
 - Changed: Schedule current usage-source release qualification. (1dada960cc47)
-- Fixed: Bounded Windows checkpoint retry under reader contention. (12ac93c9aeec)
-- Fixed: Codex host admission and bounded retained input. (36c944159c09)
-- Fixed: Setup quota regression expectation. (33151c5ea97c)
-- Fixed: Ambiguous local Codex model permissions now fail closed. (67e1d572d513)
-- Fixed: Delivered host refusal oracle now covers run admission. (8b0cba063b37)
-- Fixed: Non-circular portable pack provenance replay. (86838e444162)
-- Fixed: Changelog preview provenance for explicit historical revisions. (7a521066fdd4)
+- Changed: Refresh unpublished release note preview. (24507295db20)
+- Changed: Refresh unpublished bundle and draft views for current Lite bytes. (91cdd05776ab)
+- Changed: Freeze current unpublished Lite technical effect evidence. (de308dd74462)
+- Changed: Record current local technical effect acceptance. (d5a84c10b1b7)
+- Changed: Record qualified local Lite effect integration. (dbf216c3e0ce)
+- Changed: Record accepted portable attempt attribution source review. (6e35ea1379da)
+- Changed: Refresh local Lite attribution release preview. (74c811f3b77e)
+- Changed: Refresh local portable Lite pack for attempt attribution. (a233225073e7)
+- Changed: Refresh local Lite stable candidate assets. (25e74785fedd)
+- Changed: Bind candidate attempt usage form to local Lite preview. (68192b3696e6)
 - Fixed: Range-bound changelog provenance under mixed and open-ended selectors. (46fe61d743f0)
 - Fixed: Package selected-revision changelog provenance in Lite. (f22f3ec58ed4)
 - Fixed: Include selected-source changelog provenance in the local Lite candidate. (df372b3a6495)
@@ -42,47 +39,50 @@ preview_only: true
 - Fixed: Include corrected usage accounting in the unpublished Lite candidate. (8f9bd0748fab)
 - Fixed: Bind public Lite release claims to current candidate evidence. (ae08a6be3b96)
 - Fixed: Preserve valid independent Codex usage subtotals under partial coverage. (9c391d255017)
-- Docs: Refresh the source-bound Lite release preview. (87635e1815b7)
+- Fixed: Include the corrected usage subtotal importer in the portable pack. (061ef259bfca)
+- Fixed: Carry corrected usage importer into local stable candidate. (2767290ac9d2)
+- Fixed: Keep local preview notes bound to the exported source. (a61fc71bdc88)
+- Fixed: Malformed attempt rosters now receive bounded refusal. (8f10a66b3f0a)
 - Docs: Bind Lite release preview to the accepted source revision. (4491c2cb8b47)
 
 ## Validation Summary
 
-- 12ac93c9aeec: FAIL retained: 40/41 D-managed cases at 1105ad98 due to active.json.next contention.
-- 36c944159c09: PASS: git diff --check.
-- 33151c5ea97c: FAIL retained: 44/45 D-managed cases at 36c94415; one stale fixture expectation.
-- 67e1d572d513: PASS: git diff --check.
-- 6281a6b903ca: PASS: final source 67e1d572 D-managed 46/46 synthetic cases, job 5e5972bf; reviewer ACCEPT for dev source only.
-- 38fbe92266bd: PASS: git plan dry-run; commit check dev..HEAD 8/8; remote dev observed at 6281a6b9.
-- 1bacae3a9be0: PASS: git diff --check.
-- 8b0cba063b37: PASS: git diff --check.
-- 12351b07c340: PASS: 1/1 extracted fixture at 8b0cba06 in D job dabd6ae6; reviewer ACCEPT for dev test only.
-- 6c4f61553495: PASS: git diff --check; plan only, generator not yet run.
+- 46fe61d743f0: PASS: focused selected-revision fixture regression under the approved D scratch root.
+- 2c168ca172ac: PASS: all six receipt hashes matched retained D outputs; each job exited zero, was quiescent, retired scratch and released its reservation.
+- 4491c2cb8b47: PASS: changelog preview reported the full selected source, 50 commits and zero malformed commits in its selected range.
+- f22f3ec58ed4: PASS: D-managed export job d4b2b2278497465fb1b90feb7b12e572 exited zero, with receipt SHA-256 cfa2d4c0444314cb4df4516879c744c8977f0a250c7e881aeebf5e32acc85f45.
+- df372b3a6495: PASS: D-managed stable build job 8a3ba2aa66654599b715fd50249ae1da exited zero; receipt SHA-256 d2edb9508701104066c32a57a6f7b0c3415c1b1023bac457b502b3f1d95c89a1.
+- c86b7984e50b: PASS: D-managed release bundle job a90350ba8fd941bd9f7f632097da471a exited zero; receipt SHA-256 12dfd5673ed30e2b7a4cb12040e378a09809a9045804ae95413c34c7d0f8fbf1.
+- 085f60c76471: PASS: D-managed draft job 90ad15e60c384907a53e4eae85fbc811 exited zero; receipt SHA-256 46f23e6a3a385181d459a4deb511c979988f2b47d7a29a065dec4716f032b6e3.
+- 55131eff4af4: PASS: six current-byte consumers, 36 Q47/Q48 tests, pack/stable/preview/draft validations and zero-change postcommit replays, bound in the effect manifest.
+- d489826530f0: PASS: reviewer checked four asset hashes, 18 retired receipts, 39 CLI outputs and source/artifact provenance for 55131eff.
+- 20710eace078: PASS: current delivered ZIP passed ten command observations in a fresh disposable Git consumer under the approved D scratch root.
 
 ## Known Risks
 
-- 12ac93c9aeec: Persistent replacement failure still requires explicit recovery and remains a failure.
-- 36c944159c09: The local executable path remains trusted against hostile same-user mutation between the final hash and CreateProcessW.
-- 33151c5ea97c: The full focused suite remains pending after this fixture correction.
-- 67e1d572d513: Same-user hostile mutation between final executable hash and CreateProcessW remains outside this local binding guarantee.
-- 6281a6b903ca: Live Codex turn, JSONL verdict, exported Lite and final release qualification remain open.
-- 38fbe92266bd: This evidence-only closeout does not qualify live model output or final distribution bytes.
-- 1bacae3a9be0: This test does not launch a model or prove a JSONL result.
-- 8b0cba063b37: No live model or JSONL verdict is exercised by this synthetic refusal.
-- 12351b07c340: No live model, JSONL verdict or canonical release bytes were qualified.
-- 6c4f61553495: Live model turn and historical promotion decisions remain pending.
+- 46fe61d743f0: Downstream pack, stable assets and consumers need refreshed exact-source qualification.
+- 2c168ca172ac: These consumer receipts bind old bytes and do not qualify the repaired packaged script.
+- 4491c2cb8b47: These reports remain preview-only and do not qualify the final pack or published release.
+- f22f3ec58ed4: Stable archives and exact-byte consumer qualification must be refreshed after this pack change.
+- df372b3a6495: These are local candidate bytes, not published assets or final release acceptance.
+- c86b7984e50b: These outputs are local previews, not a GitHub Release or publication authorization.
+- 085f60c76471: The draft is preview-only; no tag, upload or GitHub Release has been created.
+- 55131eff4af4: Live one-turn model qualification and ten historical owner decisions remain pending; no main, tag or published release is claimed.
+- d489826530f0: Stable publication remains REQUEST_CHANGES; this evidence commit does not alter the reviewed source or assets.
+- 20710eace078: Derived pack, stable assets and final effect manifest require regeneration and independent rereview.
 
 ## Follow-up
 
-- 12ac93c9aeec: Rerun exact managed suite and seek independent source review.
-- 36c944159c09: Run the D-managed suite, preserve the review result, and qualify the final combined source.
-- 33151c5ea97c: Rerun the D-managed suite and seek scoped independent rereview.
-- 67e1d572d513: Run the D-managed suite and close the exact review before dev integration.
-- 6281a6b903ca: Integrate accepted source in dev and qualify actual combined and delivered behavior.
-- 38fbe92266bd: Qualify the current extracted Lite host path and bounded JSONL verdict.
-- 1bacae3a9be0: Run the exact delivered fixture and retain its result before dev integration.
-- 8b0cba063b37: Rerun the exact consumer and close the narrow review.
-- 12351b07c340: Integrate accepted test and continue actual host/release qualification.
-- 6c4f61553495: Run the admitted export job once, validate and commit coherent generated bytes.
+- 46fe61d743f0: Obtain narrow source rereview, regenerate preview from this source commit, then rebuild and qualify final assets.
+- 2c168ca172ac: Generate the preview at this committed head, rebuild the pack and assets, then qualify their exact bytes.
+- 4491c2cb8b47: Build the pack from this preview commit, then qualify its exact stable assets.
+- f22f3ec58ed4: Prove post-commit pack replay changes zero files and rebuild stable assets once.
+- df372b3a6495: Prove zero-change post-commit stable replay, validate assets, then run refreshed consumers and preview projections.
+- c86b7984e50b: Prove zero-change postcommit replay, validate the bundle, and refresh the local publication draft.
+- 085f60c76471: Verify zero-change replay and draft validation, then freeze an exact release-effect manifest for independent review.
+- 55131eff4af4: Obtain exact independent current effect review; integrate eligible source into dev, then pursue the retained external gates.
+- d489826530f0: Fast-forward accepted ancestry to dev, qualify six documented portable job forms, and seek a superseding exact effect review.
+- 20710eace078: Regenerate and qualify exact current bytes, then seek one superseding effect review.
 
 ## Warnings
 

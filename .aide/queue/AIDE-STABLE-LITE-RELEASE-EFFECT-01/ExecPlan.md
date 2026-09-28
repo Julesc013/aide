@@ -384,3 +384,14 @@ Independent `/root/stable_effect_review` accepted exact policy source
 `6a15a7dd`, tree `6e8395cf`, for the 38-form candidate list. The review
 requires a new current-byte manifest and effect mapping, including delivered
 attribution and malformed refusal; it is not asset or release acceptance.
+
+The 38-form pack came from clean source `68192b36` and its committed replay
+changed zero files. Stable asset `e26604f1` passed build, validate and
+postcommit zero-change replay. Twelve extracted job observations, Q47/Q48
+36/36 and six serial current-byte consumers passed; their scratch directories
+retired. The first local bundle `d63e31d9` correctly failed because notes
+were bound to a source before the pack source with intervening evidence edits.
+Regenerating notes against exact pack source `68192b36` made bundle
+`247ec7fe` and validation `3f00322a` pass. Keep the failed receipt as an
+oracle check. Commit current preview/bundle outputs, replay, then refresh the
+local draft and freeze a 38-form effect packet for independent review.

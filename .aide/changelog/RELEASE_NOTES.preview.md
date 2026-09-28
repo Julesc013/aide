@@ -2,8 +2,8 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: HEAD latest 50 commits
-source_head: 6a15a7dd5e3b0a8b13bf244badaab6c82f6cdf01
+source_range: 68192b3696e626fcfe2c3b4c513e777a58c578fd latest 50 commits
+source_head: 68192b3696e626fcfe2c3b4c513e777a58c578fd
 preview_only: true
 
 ## Highlights
@@ -30,6 +30,7 @@ preview_only: true
 - Changed: Refresh local Lite attribution release preview. (74c811f3b77e)
 - Changed: Refresh local portable Lite pack for attempt attribution. (a233225073e7)
 - Changed: Refresh local Lite stable candidate assets. (25e74785fedd)
+- Changed: Bind candidate attempt usage form to local Lite preview. (68192b3696e6)
 - Fixed: Range-bound changelog provenance under mixed and open-ended selectors. (46fe61d743f0)
 - Fixed: Package selected-revision changelog provenance in Lite. (f22f3ec58ed4)
 - Fixed: Include selected-source changelog provenance in the local Lite candidate. (df372b3a6495)
@@ -42,12 +43,10 @@ preview_only: true
 - Fixed: Carry corrected usage importer into local stable candidate. (2767290ac9d2)
 - Fixed: Keep local preview notes bound to the exported source. (a61fc71bdc88)
 - Fixed: Malformed attempt rosters now receive bounded refusal. (8f10a66b3f0a)
-- Docs: Refresh the source-bound Lite release preview. (87635e1815b7)
 - Docs: Bind Lite release preview to the accepted source revision. (4491c2cb8b47)
 
 ## Validation Summary
 
-- 87635e1815b7: PASS: changelog preview reports full source_head 7a521066fdd4bf1346434d60c84090b0a63f77b2, 50 commits, and zero malformed commits in its selected range.
 - 46fe61d743f0: PASS: focused selected-revision fixture regression under the approved D scratch root.
 - 2c168ca172ac: PASS: all six receipt hashes matched retained D outputs; each job exited zero, was quiescent, retired scratch and released its reservation.
 - 4491c2cb8b47: PASS: changelog preview reported the full selected source, 50 commits and zero malformed commits in its selected range.
@@ -57,10 +56,10 @@ preview_only: true
 - 085f60c76471: PASS: D-managed draft job 90ad15e60c384907a53e4eae85fbc811 exited zero; receipt SHA-256 46f23e6a3a385181d459a4deb511c979988f2b47d7a29a065dec4716f032b6e3.
 - 55131eff4af4: PASS: six current-byte consumers, 36 Q47/Q48 tests, pack/stable/preview/draft validations and zero-change postcommit replays, bound in the effect manifest.
 - d489826530f0: PASS: reviewer checked four asset hashes, 18 retired receipts, 39 CLI outputs and source/artifact provenance for 55131eff.
+- 20710eace078: PASS: current delivered ZIP passed ten command observations in a fresh disposable Git consumer under the approved D scratch root.
 
 ## Known Risks
 
-- 87635e1815b7: This is a local preview and does not publish a release or validate delivered bytes.
 - 46fe61d743f0: Downstream pack, stable assets and consumers need refreshed exact-source qualification.
 - 2c168ca172ac: These consumer receipts bind old bytes and do not qualify the repaired packaged script.
 - 4491c2cb8b47: These reports remain preview-only and do not qualify the final pack or published release.
@@ -70,10 +69,10 @@ preview_only: true
 - 085f60c76471: The draft is preview-only; no tag, upload or GitHub Release has been created.
 - 55131eff4af4: Live one-turn model qualification and ten historical owner decisions remain pending; no main, tag or published release is claimed.
 - d489826530f0: Stable publication remains REQUEST_CHANGES; this evidence commit does not alter the reviewed source or assets.
+- 20710eace078: Derived pack, stable assets and final effect manifest require regeneration and independent rereview.
 
 ## Follow-up
 
-- 87635e1815b7: Regenerate the pack from this committed preview, then qualify stable assets and consumer bytes.
 - 46fe61d743f0: Obtain narrow source rereview, regenerate preview from this source commit, then rebuild and qualify final assets.
 - 2c168ca172ac: Generate the preview at this committed head, rebuild the pack and assets, then qualify their exact bytes.
 - 4491c2cb8b47: Build the pack from this preview commit, then qualify its exact stable assets.
@@ -83,6 +82,7 @@ preview_only: true
 - 085f60c76471: Verify zero-change replay and draft validation, then freeze an exact release-effect manifest for independent review.
 - 55131eff4af4: Obtain exact independent current effect review; integrate eligible source into dev, then pursue the retained external gates.
 - d489826530f0: Fast-forward accepted ancestry to dev, qualify six documented portable job forms, and seek a superseding exact effect review.
+- 20710eace078: Regenerate and qualify exact current bytes, then seek one superseding effect review.
 
 ## Warnings
 
