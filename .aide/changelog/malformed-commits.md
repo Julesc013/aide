@@ -1,6 +1,6 @@
 # Malformed Commits
 
-source_range: HEAD latest 50 commits
+source_range: 7a521066 latest 50 commits
 malformed_count: 0
 
 - None.

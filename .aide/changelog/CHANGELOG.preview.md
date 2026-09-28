@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: HEAD latest 50 commits
-source_head: aab0756968fd8aededc247f5e01f028818068594
+source_range: 7a521066 latest 50 commits
+source_head: 7a521066fdd4bf1346434d60c84090b0a63f77b2
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,80 +11,68 @@ release_publishing: false
 
 ## Summary
 
-- Added: 2
-- Changed: 14
-- Fixed: 9
-- Docs: 2
-- Tests: 1
-- Internal: 22
+- Added: 5
+- Changed: 28
+- Fixed: 17
 
 ## Added
 
-- Separate first-stable Lite candidate archive generation and validation. (24bd7d0d88c6 feat(release): build distinct first-stable Lite candidate assets)
-- Distinct local AIDE Lite 1.0.0 candidate assets for final qualification. (92da95735736 chore(release): freeze distinct AIDE Lite 1.0.0 candidate bytes)
+- Extracted Lite can configure and run the existing bounded Windows job owner. (b117f0f8889e feat(lite): ship bounded Windows job owner in export pack)
+- Portable Lite job context summary from stdin. (6f4b45a6184d feat(lite): summarize bounded Codex prompt-input streams)
+- Delivered Lite context observer regression. (f409db677cd2 test(lite): verify context summary from extracted pack)
+- Installed Codex no-model host regression. (6e21e70f4c32 test(worker): verify installed Codex binary in owned Job)
+- Explicit one-turn Codex job adapter in the existing Lite runner. (651744c0a428 feat(lite): bind one Codex turn to the managed job owner)
 
 ## Changed
 
-- Record exact source-review acceptance for the unpublished stable builder. (a6725d83db10 docs(release): record accepted exact stable-builder source review)
-- Refresh portable AIDE Lite pack from accepted dev source. (4c32a8edd8aa chore(release): refresh portable pack from accepted dev source)
-- Refresh local changelog preview for accepted Lite source. (fe44070dfb37 chore(changelog): refresh preview for accepted Lite source)
-- Bind the portable pack manifest to the committed preview source. (339095ee5059 chore(release): bind portable pack to committed preview source)
-- Refresh local no-publish release previews and draft metadata. (3b27b1f790dc chore(release): refresh validated local Lite preview projections)
-- Record local AIDE Lite 1.0.0 candidate qualification and support limits. (d5df63c53c89 docs(release): freeze exact Lite release effect review packet)
-- Stage the AIDE Lite 1.0.0 contract for reviewed release effects. (545d4cc2089e fix(release): stage stable Lite contract activation gates)
-- Rebind the AIDE Lite portable pack to staged stable version policy. (720a9e002a6f build(release): bind portable pack to active Lite policy)
-- Regenerate AIDE Lite 1.0.0 candidate bytes for the staged public contract. (bed505ab15b2 build(release): regenerate policy-bound stable Lite assets)
-- Preserve exact AIDE Lite 1.0.0 release compatibility and evidence map. (719abf66da58 docs(release): freeze revised exact Lite release effect)
-- Record AIDE Lite main promotion gate and exact owner decision request. (ec7fa41a64d7 audit(release): preserve accepted effect and main range blocker)
-- Internal evidence only; no product bytes changed in this commit. (5f307b83c70a docs(campaign): record removal rename-gap source acceptance)
-- Project the reviewed authored-file recovery into the portable Lite pack. (8f0c654c18de build(pack): project reviewed removal source into Lite export)
-- Renewed local Lite release assets with authored AGENTS removal recovery. (5cef1476692e build(release): freeze renewed Lite 1.0.0 local assets)
+- Preserve portable Lite job-owner source qualification. (b9aad1601d3c chore(lite): retain reviewed portable job qualification)
+- Preserve the portable execution dev checkpoint. (648cd8836974 chore(lite): record observed dev integration)
+- Current lifecycle evidence and release gate description. (47b0883bb87b chore(campaign): record current-source lifecycle qualification)
+- Host context preflight evidence for Lite efficiency. (764fa8cbcde4 chore(lite): record bounded Codex context preflight)
+- Preserve Lite context parser source qualification. (467b445a48e0 chore(lite): preserve accepted context parser evidence)
+- Record portable context observer fixture evidence. (ea80f73d21a9 chore(lite): record delivered context fixture qualification)
+- Record installed Codex no-model host evidence. (32b9711bec4e chore(worker): record installed Codex host qualification)
+- Preserve Windows delivered-byte mid-removal recovery evidence. (46d04d03bc48 chore(lifecycle): retain reviewed mid-removal canary in dev)
+- Prepare source-only native-host observation integration. (46fd6eb170ce chore(host): prepare reviewed API-set source integration)
+- Preserve API-set source integration evidence. (f6114fb000a5 chore(host): retain combined API-set integration evidence)
+- Preserve the independent API-set source integration decision. (c3a92154dd8e chore(host): retain independent API-set integration review)
+- Record API-set source integration state. (6ae089b44533 chore(host): record API-set source fast-forward on dev)
+- Extend extracted Lite efficiency consumer coverage. (3796ad33c7ba test(lite): attach to completed job from extracted pack)
+- Preserve extracted Lite job attachment qualification. (1f96e03e7734 chore(lite): retain delivered job attachment evidence)
+- Preserve reviewed Lite job attachment evidence. (31107d1854e6 chore(lite): retain independent delivered wait review)
+- Preserve Codex worker one-turn result qualification. (7eaebe3bec42 chore(worker): retain one-turn boundary qualification)
+- Retain Codex worker result boundary qualification. (9fe9cb485daf chore(worker): retain reviewed Codex result boundary evidence)
+- Record reviewed Codex result boundary integration. (e447e6416b74 chore(worker): record observed dev result boundary integration)
+- Retain Codex usage import qualification. (e5bb4f8b53ca chore(lite): retain reviewed Codex usage integrity evidence)
+- Record portable Codex usage repair integration. (326492ff6df6 chore(lite): record observed Codex usage integrity integration)
+- Codex host source qualification and remaining gates. (6281a6b903ca docs(lite): record reviewed Codex host source qualification)
+- Durable dev integration record for Codex host source. (38fbe92266bd chore(lite): record observed Codex host dev integration)
+- Extracted Lite fixture covers Codex permission refusal. (1bacae3a9be0 test(lite): prove extracted Codex admission refusal)
+- Durable delivered Codex admission test evidence. (12351b07c340 docs(lite): retain delivered Codex refusal qualification)
+- Current Lite pack refresh execution plan. (6c4f61553495 chore(release): bind current Lite source pack refresh)
+- Current-source Lite portable pack candidate. (c22d41112973 build(release): refresh Lite pack from current source)
+- Current Lite pack uses repaired non-circular provenance. (a7ab0223d1ba build(release): bind repaired Lite pack to current source)
+- Local Lite 1.0.0 candidate includes current portable source. (b147aa8cf28a build(release): freeze current Lite 1.0.0 local assets)
 
 ## Fixed
 
-- Reject unsafe Windows archive paths in the unpublished stable builder. (34c87052f7e3 fix(release): reject unsafe Windows archive members before extraction)
-- Bound tar metadata parsing in the unpublished stable release validator. (59db02a0e6c3 fix(release): bound tar PAX metadata before archive parsing)
-- Correct historical decision-request evidence digest. (b51594586acc audit(release): correct committed decision packet digest)
-- Release-effect review custody names the committed manifest bytes. (2aaee82e96d2 audit(release): bind reviewed LF manifest bytes)
-- Exact-intent authored AGENTS removal recovery at the rename/link interruption boundary. (1b0497c9845c fix(lifecycle): restore exact authored file in removal rename gap)
-- Rename-gap test oracle for authored surrounding bytes. (d3b2f0d36e92 test(lifecycle): match authored removal postimage oracle)
-- Legacy removal intent safe refusal at authored-file rename recovery. (526dfb5191f3 fix(lifecycle): refuse legacy removal gap without file identity)
-- Live runner monitoring no longer aborts on an owned transient atomic hardlink pair. (785e2faea1ea fix(execution): tolerate transient hardlinks in live scratch scan)
-- Live scratch monitoring accepts only fully observed owned hardlink sets. (d2b587eb3361 fix(execution): prove owned links during scratch monitoring)
-
-## Docs
-
-- Align current source status and already adopted specification boundaries. (71ef35127845 docs(policy): align runtime status and adopted specification roles)
-- Record the superseding local release candidate route. (9542f77e59ff docs(release): plan renewed Lite source projection)
-
-## Tests
-
-- Cover legacy authored AGENTS rename-gap recovery through the public removal call. (dfe7fdf92022 test(lifecycle): cover legacy removal rename-gap retry)
-
-## Internal
-
-- Consolidate dev source and preserve the stopped release/rollout checkpoint. (a1fe9fd57ac1 chore(git): consolidate dev and record release rollout checkpoint)
-- Preserve scoped documentation acceptance and the next qualified dev effect. (1d70597894e3 chore(queue): preserve documentation acceptance and dev effect)
-- Activate bounded execution under the approved Temporary parent. (e18f983b0937 chore(execution): activate owner-selected bounded qualification storage)
-- Make live scratch observation resilient to transient fixture deletion. (8040b10a5d2c fix(execution): tolerate transient scratch scan disappearance)
-- Preserve current-source qualification and remaining delivery gates. (a835cbad6d5b docs(execution): record reviewed runner and importer qualification)
-- Advance partial-import recovery from source validation to artifact qualification. (1d3d9fe1bb51 docs(import): record complete source suite and artifact gate)
-- Route current-source Lite artifact qualification through a bounded WorkUnit. (84e4a7330ce9 chore(release): admit current Lite artifact projection)
-- Refresh local no-publish Lite preview artifacts from current source. (4b5854f2f9db chore(release): regenerate current Lite preview assets)
-- Converge local preview provenance after the artifact commit. (dcb008e62b46 chore(release): converge post-commit preview metadata)
-- Converge local Lite preview release provenance after commit. (49c7a04a1377 chore(release): converge committed Lite preview metadata)
-- Record local preview qualification without changing product bytes. (e7c1760e8e5b docs(release): record delivered Lite preview qualification)
-- Record local Lite preview integration and remaining release gates. (33abef7fca15 docs(release): record reviewed Lite preview dev effect)
-- Track remaining Lite qualification separately from passed preview integration. (b74923195d0b chore(release): admit remaining Lite qualification)
-- make managed scratch retirement work with ordinary readonly Git objects on Windows. (cf0c4434f260 fix(execution): retire readonly owned Git scratch after custody)
-- Preserve bounded runner review for the dev integration gate. (b7f595424f04 chore(execution): record independent runner repair acceptance)
-- Preserve delivered public CLI qualification checkpoint. (c6de695fbbd8 chore(release): record dev repair integration and public CLI canary)
-- Record partitioned importer source qualification. (b94d7ba940e2 chore(release): bind integrated importer qualification)
-- Bind installed task inspection qualification. (0259f81d8fca chore(release): qualify installed task inspection forms)
-- Preserve exact local preview acceptance and remaining release obligations. (4dcd896b4a9b chore(release): bind exact Lite preview command coverage)
-- Separate accepted local preview from public release effect. (f3f59303e5d0 chore(release): close exact Lite preview and admit stable effect)
-- Durable source and resource-qualification evidence only. (b95a8f9a159e docs(campaign): retain runner rereview and legacy retry evidence)
-- Exact local release qualification and review evidence only. (aab0756968fd audit(release): bind renewed Lite asset and consumer evidence)
+- Damaged source queue state cannot silently disable job admission. (26f343b7764d fix(lite): require validated pack before bypassing job admission)
+- Host context regression no longer demands text-only completeness. (1340ecd83e5d fix(lite): preserve installed-host context coverage gaps)
+- Codex prompt-input text byte counts for the observed host schema. (b4f250f7bc9f fix(lite): count Codex input_text content accurately)
+- Preserve immutable native source-review provenance across integration. (6b11d4136e14 fix(host): bind reviewed loader manifest to frozen source)
+- Bind worker verdicts and usage to one observed Codex turn. (9dccd27fe2f3 fix(worker): bind Codex verdict to one completed turn)
+- Keep the turn-boundary regression focused on refusal. (1497a7e2ad4f test(worker): accept any refusal for missing turn start)
+- Codex worker result binding to the final item and unique JSON fields. (2086e512aeb3 fix(worker): reject ambiguous final Codex verdicts)
+- Refuse ambiguous Codex usage import fields. (8a12605dc1af fix(lite): reject duplicate Codex usage JSON keys)
+- Pause-aware one-turn Codex job dispatch. (e9fce7a9c1a4 fix(lite): serialize paused dispatch with Codex child resume)
+- Reject ambiguous Lite job dispatch state. (1105ad98e516 fix(lite): reject ambiguous dispatch-control state)
+- Bounded Windows checkpoint retry under reader contention. (12ac93c9aeec fix(job): retry transient Windows checkpoint replacement)
+- Codex host admission and bounded retained input. (36c944159c09 fix(lite): gate Codex turns and bound retained input)
+- Setup quota regression expectation. (33151c5ea97c test(job): update setup reservation expectation)
+- Ambiguous local Codex model permissions now fail closed. (67e1d572d513 fix(lite): reject ambiguous local Codex permissions)
+- Delivered host refusal oracle now covers run admission. (8b0cba063b37 test(lite): exercise delivered Codex run refusal)
+- Non-circular portable pack provenance replay. (86838e444162 fix(release): preserve unchanged pack source on replay)
+- Changelog preview provenance for explicit historical revisions. (7a521066fdd4 fix(changelog): bind preview to selected source revision)
 
 ## Malformed Commits
 

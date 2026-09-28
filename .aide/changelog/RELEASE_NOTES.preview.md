@@ -2,79 +2,101 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: HEAD latest 50 commits
-source_head: aab0756968fd8aededc247f5e01f028818068594
+source_range: 7a521066 latest 50 commits
+source_head: 7a521066fdd4bf1346434d60c84090b0a63f77b2
 preview_only: true
 
 ## Highlights
 
-- Added: Separate first-stable Lite candidate archive generation and validation. (24bd7d0d88c6)
-- Added: Distinct local AIDE Lite 1.0.0 candidate assets for final qualification. (92da95735736)
-- Changed: Record exact source-review acceptance for the unpublished stable builder. (a6725d83db10)
-- Changed: Refresh portable AIDE Lite pack from accepted dev source. (4c32a8edd8aa)
-- Changed: Refresh local changelog preview for accepted Lite source. (fe44070dfb37)
-- Changed: Bind the portable pack manifest to the committed preview source. (339095ee5059)
-- Changed: Refresh local no-publish release previews and draft metadata. (3b27b1f790dc)
-- Changed: Record local AIDE Lite 1.0.0 candidate qualification and support limits. (d5df63c53c89)
-- Changed: Stage the AIDE Lite 1.0.0 contract for reviewed release effects. (545d4cc2089e)
-- Changed: Rebind the AIDE Lite portable pack to staged stable version policy. (720a9e002a6f)
-- Changed: Regenerate AIDE Lite 1.0.0 candidate bytes for the staged public contract. (bed505ab15b2)
-- Changed: Preserve exact AIDE Lite 1.0.0 release compatibility and evidence map. (719abf66da58)
-- Changed: Record AIDE Lite main promotion gate and exact owner decision request. (ec7fa41a64d7)
-- Changed: Internal evidence only; no product bytes changed in this commit. (5f307b83c70a)
-- Changed: Project the reviewed authored-file recovery into the portable Lite pack. (8f0c654c18de)
-- Changed: Renewed local Lite release assets with authored AGENTS removal recovery. (5cef1476692e)
-- Fixed: Reject unsafe Windows archive paths in the unpublished stable builder. (34c87052f7e3)
-- Fixed: Bound tar metadata parsing in the unpublished stable release validator. (59db02a0e6c3)
-- Fixed: Correct historical decision-request evidence digest. (b51594586acc)
-- Fixed: Release-effect review custody names the committed manifest bytes. (2aaee82e96d2)
-- Fixed: Exact-intent authored AGENTS removal recovery at the rename/link interruption boundary. (1b0497c9845c)
-- Fixed: Rename-gap test oracle for authored surrounding bytes. (d3b2f0d36e92)
-- Fixed: Legacy removal intent safe refusal at authored-file rename recovery. (526dfb5191f3)
-- Fixed: Live runner monitoring no longer aborts on an owned transient atomic hardlink pair. (785e2faea1ea)
-- Fixed: Live scratch monitoring accepts only fully observed owned hardlink sets. (d2b587eb3361)
-- Docs: Align current source status and already adopted specification boundaries. (71ef35127845)
-- Docs: Record the superseding local release candidate route. (9542f77e59ff)
-- Tests: Cover legacy authored AGENTS rename-gap recovery through the public removal call. (dfe7fdf92022)
+- Added: Extracted Lite can configure and run the existing bounded Windows job owner. (b117f0f8889e)
+- Added: Portable Lite job context summary from stdin. (6f4b45a6184d)
+- Added: Delivered Lite context observer regression. (f409db677cd2)
+- Added: Installed Codex no-model host regression. (6e21e70f4c32)
+- Added: Explicit one-turn Codex job adapter in the existing Lite runner. (651744c0a428)
+- Changed: Preserve portable Lite job-owner source qualification. (b9aad1601d3c)
+- Changed: Preserve the portable execution dev checkpoint. (648cd8836974)
+- Changed: Current lifecycle evidence and release gate description. (47b0883bb87b)
+- Changed: Host context preflight evidence for Lite efficiency. (764fa8cbcde4)
+- Changed: Preserve Lite context parser source qualification. (467b445a48e0)
+- Changed: Record portable context observer fixture evidence. (ea80f73d21a9)
+- Changed: Record installed Codex no-model host evidence. (32b9711bec4e)
+- Changed: Preserve Windows delivered-byte mid-removal recovery evidence. (46d04d03bc48)
+- Changed: Prepare source-only native-host observation integration. (46fd6eb170ce)
+- Changed: Preserve API-set source integration evidence. (f6114fb000a5)
+- Changed: Preserve the independent API-set source integration decision. (c3a92154dd8e)
+- Changed: Record API-set source integration state. (6ae089b44533)
+- Changed: Extend extracted Lite efficiency consumer coverage. (3796ad33c7ba)
+- Changed: Preserve extracted Lite job attachment qualification. (1f96e03e7734)
+- Changed: Preserve reviewed Lite job attachment evidence. (31107d1854e6)
+- Changed: Preserve Codex worker one-turn result qualification. (7eaebe3bec42)
+- Changed: Retain Codex worker result boundary qualification. (9fe9cb485daf)
+- Changed: Record reviewed Codex result boundary integration. (e447e6416b74)
+- Changed: Retain Codex usage import qualification. (e5bb4f8b53ca)
+- Changed: Record portable Codex usage repair integration. (326492ff6df6)
+- Changed: Codex host source qualification and remaining gates. (6281a6b903ca)
+- Changed: Durable dev integration record for Codex host source. (38fbe92266bd)
+- Changed: Extracted Lite fixture covers Codex permission refusal. (1bacae3a9be0)
+- Changed: Durable delivered Codex admission test evidence. (12351b07c340)
+- Changed: Current Lite pack refresh execution plan. (6c4f61553495)
+- Changed: Current-source Lite portable pack candidate. (c22d41112973)
+- Changed: Current Lite pack uses repaired non-circular provenance. (a7ab0223d1ba)
+- Changed: Local Lite 1.0.0 candidate includes current portable source. (b147aa8cf28a)
+- Fixed: Damaged source queue state cannot silently disable job admission. (26f343b7764d)
+- Fixed: Host context regression no longer demands text-only completeness. (1340ecd83e5d)
+- Fixed: Codex prompt-input text byte counts for the observed host schema. (b4f250f7bc9f)
+- Fixed: Preserve immutable native source-review provenance across integration. (6b11d4136e14)
+- Fixed: Bind worker verdicts and usage to one observed Codex turn. (9dccd27fe2f3)
+- Fixed: Keep the turn-boundary regression focused on refusal. (1497a7e2ad4f)
+- Fixed: Codex worker result binding to the final item and unique JSON fields. (2086e512aeb3)
+- Fixed: Refuse ambiguous Codex usage import fields. (8a12605dc1af)
+- Fixed: Pause-aware one-turn Codex job dispatch. (e9fce7a9c1a4)
+- Fixed: Reject ambiguous Lite job dispatch state. (1105ad98e516)
+- Fixed: Bounded Windows checkpoint retry under reader contention. (12ac93c9aeec)
+- Fixed: Codex host admission and bounded retained input. (36c944159c09)
+- Fixed: Setup quota regression expectation. (33151c5ea97c)
+- Fixed: Ambiguous local Codex model permissions now fail closed. (67e1d572d513)
+- Fixed: Delivered host refusal oracle now covers run admission. (8b0cba063b37)
+- Fixed: Non-circular portable pack provenance replay. (86838e444162)
+- Fixed: Changelog preview provenance for explicit historical revisions. (7a521066fdd4)
 
 ## Validation Summary
 
-- a1fe9fd57ac1: PASS: exact independent dev-effect ACCEPT_WITH_NOTES and clean fast-forward ancestry.
-- 71ef35127845: PASS: seven existing relative documentation links resolve.
-- 1d70597894e3: PASS: independent source and effect ACCEPT_WITH_NOTES, report/manifest hashes.
-- e18f983b0937: PASS: existing ordinary parent, distinct roots, volume identities and capacity admission.
-- 8040b10a5d2c: PASS: red one-case D runner regression reproduced the scan race; green one-case run passed.
-- a835cbad6d5b: PASS: 54/54 and 56/56 importer cases on exact 8040b10a source; zero skips, scratch retired and reservations released.
-- 1d3d9fe1bb51: PASS: reviewed 8040b10a source, disjoint 54/56 case partition, zero skips, both D jobs retired and released reservations.
-- 84e4a7330ce9: PASS: task inspect locates the WorkUnit and its admission evidence.
-- 4b5854f2f9db: PASS: six serial D-managed generation and validation jobs exited zero, retired scratch and released reservations.
-- dcb008e62b46: PASS: all six first-replay commands exited zero, retired scratch and released reservations.
+- b117f0f8889e: PASS: Python AST parsing and git diff whitespace check.
+- 26f343b7764d: PASS: Python AST parsing and git diff whitespace check.
+- b9aad1601d3c: PASS: Source 26f343b7 passed the 2/2 D-managed extracted-pack and guard regressions.
+- 648cd8836974: PASS: Remote task and dev refs were observed at b9aad160 after fast-forward.
+- 47b0883bb87b: PASS: Three current-source importer lifecycle cases passed under the bounded D runner.
+- 764fa8cbcde4: PASS: Local Codex debug prompt-input exited zero with 47091 bounded JSON bytes.
+- 6f4b45a6184d: PASS: Python AST parsing and git diff whitespace check.
+- 1340ecd83e5d: PASS: Python AST parsing and git diff whitespace check.
+- b4f250f7bc9f: PASS: Local sanitized-environment schema inspection found input_text in six parts.
+- 467b445a48e0: PASS: Superseding b4f250f7 passed 3/3 D-managed prompt-input cases.
 
 ## Known Risks
 
-- a1fe9fd57ac1: Current artifacts remain stale previews; source integration is not stable release acceptance.
-- 71ef35127845: The root-authority package remains review_required; no broad adoption is implied.
-- 1d70597894e3: Permanent execution roots and final artifact qualification remain open.
-- e18f983b0937: Disk occupancy is monitored, not an OS filesystem quota.
-- 8040b10a5d2c: Live scratch enumeration can undercount short-lived files; OS free-space monitoring and strict final evidence scans remain in force.
-- a835cbad6d5b: The two partitions were separate processes, not one single-process suite.
-- 1d3d9fe1bb51: The tests were separate processes; release bytes and consumer behavior remain unqualified.
-- 84e4a7330ce9: All generated outputs and installed-byte checks remain unqualified until executed and reviewed.
-- 4b5854f2f9db: Generated metadata binds the pre-artifact source commit and may require bounded post-commit convergence.
-- dcb008e62b46: This commit is not final replay acceptance or stable publication.
+- b117f0f8889e: Real Codex binding, non-Windows operation and stable release bytes remain unqualified.
+- 26f343b7764d: Delivered Lite and source guard require superseding qualification and review.
+- b9aad1601d3c: Real Codex, final release bytes and non-Windows operation remain unqualified.
+- 648cd8836974: Real host binding, usage coverage and stable release bytes remain open.
+- 47b0883bb87b: Current canonical release assets and downloaded consumers remain unqualified.
+- 764fa8cbcde4: This is not an admitted real Codex turn or measured credit saving.
+- 6f4b45a6184d: A debugger stream is not a live worker turn or complete model usage.
+- 1340ecd83e5d: Unmeasured content remains unknown and prevents a full context claim.
+- b4f250f7bc9f: This remains a no-model debugger view, not complete effective token usage.
+- 467b445a48e0: Extracted-pack assertion and live host usage remain unqualified.
 
 ## Follow-up
 
-- a1fe9fd57ac1: Normally sync dev and the existing task checkout/remotes and observe exact refs.
-- 71ef35127845: Obtain exact independent policy/source and source-only dev-effect review.
-- 1d70597894e3: Execute clean fast-forward and normal task/dev pushes, then observe remote identities.
-- e18f983b0937: Run the frozen integrated importer suite and preserve actual resource/retirement results.
-- 8040b10a5d2c: Review this exact source candidate, then run all 110 importer cases in bounded partitions through the D runner.
-- a835cbad6d5b: Verify current dev ancestry and integrate the accepted source.
-- 1d3d9fe1bb51: Verify dev ancestry, integrate accepted source, and generate current artifacts under bounded canonical-output reservations.
-- 84e4a7330ce9: Commit clean admission, run serial D-managed generation with canonical reservations, then qualify bytes and replay.
-- 4b5854f2f9db: Run exact post-commit replay and resolve only measured metadata drift.
-- dcb008e62b46: Replay all six commands from this exact clean HEAD and require zero changed files and stable archive hashes.
+- b117f0f8889e: Run the delivered consumer fixture, seek independent source review, and integrate qualified source into dev.
+- 26f343b7764d: Run the focused regressions, obtain independent delta review, and integrate accepted source.
+- b9aad1601d3c: Fast-forward qualified source into dev and verify local and remote identities.
+- 648cd8836974: Continue the efficiency release gate with one qualified host path.
+- 47b0883bb87b: Qualify a coherent current-source release candidate after remaining host and product gates.
+- 764fa8cbcde4: Qualify a version-pinned mediated host path with actual usage and acceptance.
+- 6f4b45a6184d: Run bounded tests, obtain independent source review, and integrate qualified source.
+- 1340ecd83e5d: Rerun the focused suite, retain the actual coverage result and seek independent review.
+- b4f250f7bc9f: Requalify, review the source delta and integrate accepted code.
+- 467b445a48e0: Fast-forward accepted source into dev and test delivered bytes at the next artifact boundary.
 
 ## Warnings
 
