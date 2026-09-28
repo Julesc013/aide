@@ -27,6 +27,7 @@ import sys
 import tarfile
 import tempfile
 import threading
+import time
 import zipfile
 from contextlib import contextmanager
 from dataclasses import dataclass
@@ -44520,6 +44521,143 @@ def run_selftest() -> tuple[bool, list[str]]:
     return result
 
 
+def _job_wait_read_json(path: Path, maximum: int) -> tuple[dict[str, object], str] | None:
+    """Read one ordinary bounded owner record; absence is distinct from damage."""
+    if not os.path.lexists(path):
+        return None
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > maximum):
+        raise ValueError("job evidence is not an ordinary bounded record")
+    data = path.read_bytes()
+    if len(data) > maximum:
+        raise ValueError("job evidence exceeded the read bound")
+    value = json.loads(data)
+    if not isinstance(value, dict):
+        raise ValueError("job evidence is not an object")
+    return value, hashlib.sha256(data).hexdigest()
+
+
+def _job_wait_root(value: object) -> Path:
+    if not isinstance(value, str) or len(value) > 512:
+        raise ValueError("job observation root is missing or too long")
+    root = Path(value)
+    if not root.is_absolute() or ".." in root.parts or root == Path(root.anchor):
+        raise ValueError("job observation root must be an absolute child")
+    for member in reversed((root, *root.parents)):
+        info = member.lstat()
+        if not stat.S_ISDIR(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+            raise ValueError("job observation root is redirected or not a directory")
+    return root
+
+
+def wait_for_managed_job(config_path: Path, job_id: str, manifest_digest: str,
+                         timeout_seconds: float, interval_seconds: float, *,
+                         clock: Callable[[], float] = time.monotonic,
+                         sleeper: Callable[[float], None] = time.sleep) -> dict[str, object]:
+    """Portable read-only attachment to the existing maintainer job owner."""
+    if not re.fullmatch(r"[0-9a-f]{32}", job_id) or not re.fullmatch(r"[0-9a-f]{64}", manifest_digest):
+        raise ValueError("exact job ID and manifest digest required")
+    if not 0 <= timeout_seconds <= 3600 or not 0.1 <= interval_seconds <= 30:
+        raise ValueError("finite job observation limits required")
+    config_record = _job_wait_read_json(Path(config_path), 65536)
+    if config_record is None or config_record[0].get("schema") != "aide.managed-workspace.local.v1":
+        raise ValueError("managed workspace configuration unavailable")
+    roots = config_record[0].get("roots")
+    if not isinstance(roots, dict):
+        raise ValueError("managed workspace roots unavailable")
+    control, retained = (_job_wait_root(roots.get(name)) for name in ("control", "retained"))
+    receipt_path = retained / job_id / "receipt.json"
+    owner_path = retained / job_id / "owner.json"
+    active_path = control / "active.json"
+    base = {"schema": "aide.job-observation.v1", "job_id": job_id,
+            "manifest_digest": manifest_digest, "model_requests_started_by_observer": 0,
+            "host_model_requests": "unknown", "receipt_ref": str(receipt_path)}
+    start = clock()
+    observations = unchanged = 0
+    previous_phase: str | None = None
+    while True:
+        observations += 1
+        try:
+            retained_job = retained / job_id
+            if os.path.lexists(retained_job):
+                info = retained_job.lstat()
+                if not stat.S_ISDIR(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+                    raise ValueError("job retention path is redirected")
+            receipt = _job_wait_read_json(receipt_path, 1024 * 1024)
+            if receipt is not None:
+                owner = _job_wait_read_json(owner_path, 65536)
+                record, receipt_sha = receipt
+                if (owner is None or owner[0] != {"job_id": job_id, "manifest_digest": manifest_digest}
+                        or record.get("job_id") != job_id or record.get("manifest_digest") != manifest_digest):
+                    raise ValueError("job receipt ownership or identity mismatch")
+                job = record.get("job")
+                if (not isinstance(job, dict) or hashlib.sha256(json.dumps(job, sort_keys=True,
+                        separators=(",", ":")).encode()).hexdigest() != manifest_digest):
+                    raise ValueError("job receipt manifest changed")
+                if record.get("phase") == "retired":
+                    result = record.get("result")
+                    if not isinstance(result, dict):
+                        raise ValueError("job terminal result missing")
+                    source_commit, source_tree = job.get("source_commit"), job.get("source_tree")
+                    if (not isinstance(source_commit, str) or not re.fullmatch(r"[0-9a-f]{40}", source_commit)
+                            or not isinstance(source_tree, str) or not re.fullmatch(r"[0-9a-f]{40}", source_tree)):
+                        raise ValueError("job source identity missing")
+                    passed = (result.get("reason") == "exited" and result.get("exit_code") == 0
+                              and result.get("job_id") == job_id and result.get("quiescent") is True
+                              and record.get("scratch_absent") is True
+                              and record.get("reservation_released") is True)
+                    return {**base, "status": "PASS" if passed else "FAIL", "terminal": True,
+                            "reason": str(result.get("reason", "unknown"))[:80],
+                            "exit_code": result.get("exit_code") if type(result.get("exit_code")) is int else None,
+                            "source_commit": source_commit, "source_tree": source_tree,
+                            "receipt_sha256": receipt_sha, "evidence_status": "receipt_present_outputs_unverified",
+                            "observations": observations, "unchanged_observations": unchanged}
+            active = _job_wait_read_json(active_path, 1024 * 1024)
+            if active is None:
+                return {**base, "status": "ACTION_REQUIRED" if receipt is not None else "MISSING",
+                        "terminal": False,
+                        "observations": observations, "unchanged_observations": unchanged}
+            record = active[0]
+            if record.get("job_id") != job_id or record.get("manifest_digest") != manifest_digest:
+                return {**base, "status": "OTHER_ATTEMPT", "terminal": False,
+                        "observations": observations, "unchanged_observations": unchanged}
+            active_job = record.get("job")
+            if (not isinstance(active_job, dict) or hashlib.sha256(json.dumps(active_job, sort_keys=True,
+                    separators=(",", ":")).encode()).hexdigest() != manifest_digest):
+                raise ValueError("active job manifest changed")
+            phase = record.get("phase")
+            if not isinstance(phase, str):
+                raise ValueError("job phase missing")
+            if phase == previous_phase:
+                unchanged += 1
+            previous_phase = phase
+            if phase == "collection_recovery_required":
+                return {**base, "status": "ACTION_REQUIRED", "terminal": False,
+                        "reason": "collection_recovery_required", "observations": observations,
+                        "unchanged_observations": unchanged}
+        except (OSError, ValueError, TypeError, KeyError, json.JSONDecodeError):
+            return {**base, "status": "EVIDENCE_UNAVAILABLE", "terminal": False,
+                    "observations": observations, "unchanged_observations": unchanged}
+        remaining = timeout_seconds - (clock() - start)
+        if remaining <= 0:
+            return {**base, "status": "PENDING", "terminal": False,
+                    "observations": observations, "unchanged_observations": unchanged}
+        sleeper(min(interval_seconds, remaining))
+
+
+def command_job_wait(args: argparse.Namespace) -> int:
+    try:
+        result = wait_for_managed_job(Path(args.config), args.job_id, args.manifest_digest,
+                                      args.timeout_seconds, args.interval_seconds)
+    except (OSError, ValueError) as exc:
+        result = {"schema": "aide.job-observation.v1", "status": "REFUSED", "terminal": False,
+                  "reason": str(exc)[:120], "model_requests_started_by_observer": 0,
+                  "host_model_requests": "unknown"}
+    print(json.dumps(result, sort_keys=True, separators=(",", ":")))
+    return 0 if result["status"] == "PASS" else 2 if result["status"] == "PENDING" else 1
+
+
 def command_managed_job(args: argparse.Namespace) -> int:
     """Explicit maintainer execution; inspect never projects tracked reports."""
     root = str(args.repo_root)
@@ -45765,6 +45903,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     job_parser = subparsers.add_parser("job", help="Bounded maintainer jobs with explicit local storage.")
     job_subparsers = job_parser.add_subparsers(dest="job_command", required=True)
+    wait_parser = job_subparsers.add_parser("wait", help="Observe one existing job without model calls or writes.")
+    wait_parser.add_argument("--config", required=True)
+    wait_parser.add_argument("--job-id", required=True)
+    wait_parser.add_argument("--manifest-digest", required=True)
+    wait_parser.add_argument("--timeout-seconds", type=float, default=3600)
+    wait_parser.add_argument("--interval-seconds", type=float, default=1)
+    wait_parser.set_defaults(handler=command_job_wait)
     setup_parser = job_subparsers.add_parser("setup")
     setup_parser.add_argument("--config", required=True, help="Machine-local output config in an approved checkout.")
     setup_parser.add_argument("--selection", required=True, help="Explicit local root, checkout and finite-limit selection JSON.")

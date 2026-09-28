@@ -3785,3 +3785,12 @@ items:
     prompt: .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-RECOVERY-01/prompt.md
     evidence: .aide/queue/AIDE-DELIVERED-PACK-ROLLBACK-RECOVERY-01/evidence
     description: Expose exact rollback partial continuation through the reviewed importer recovery path.
+  - id: AIDE-LITE-EFFICIENCY-01
+    status: running
+    planning_state: admitted_first_portable_slice
+    result: PENDING
+    title: Make AIDE Lite wait and report bounded job outcomes without model polling
+    task: .aide/queue/AIDE-LITE-EFFICIENCY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LITE-EFFICIENCY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LITE-EFFICIENCY-01/prompt.md
+    evidence: .aide/queue/AIDE-LITE-EFFICIENCY-01/evidence

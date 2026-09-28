@@ -1,0 +1,34 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LITE-EFFICIENCY-01
+title: Make AIDE Lite wait and report bounded job outcomes without model polling
+type: implementation
+status: running
+planning_state: admitted_first_portable_slice
+result: PENDING
+created_at: 2026-09-28
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Owner's 2026-09-28 execution-efficiency priority and 2026-09-25 campaign delegation.
+objective: >
+  Deliver a portable, read-only no-model wait path for the existing AIDE job
+  owner with bounded truthful result views; exercise it on an actual AIDE job.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-LITE-EFFICIENCY-01/**
+    - .aide/queue/index.yaml
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_efficiency_wait.py
+    - docs/reference/aide-lite-test-runner.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_operations:
+    - submit a job or model request from the observer
+    - change the existing job supervisor or cleanup owner
+    - copy raw conversations, credentials or logs into Git
+    - mutate FacMan or another target repository
+    - claim host-wide model-call control from a CLI observer
+retained_gates:
+  - consequential source and release changes need independent exact review
+  - final exported Lite bytes and a real host binding need separate qualification
+  - no main, tag or publication without the existing release gates
