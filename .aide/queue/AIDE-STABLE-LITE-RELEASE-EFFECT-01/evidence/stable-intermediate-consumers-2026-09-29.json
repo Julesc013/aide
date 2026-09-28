@@ -1,0 +1,60 @@
+{
+  "asset_commit": "b147aa8cf28ae47598e3548a7ea49383f95eaa74",
+  "asset_tree": "4617329f36c17edf6629b7db232052be95f40b16",
+  "jobs": [
+    {
+      "exit_code": 0,
+      "id": "e807b9fdd82846ec9ea0f89ddcfabf56",
+      "kind": "fresh_brownfield",
+      "receipt_sha256": "34e73709eab20dd9718652918dcfd8b3783fc03e608423477ce0240ddb431c57",
+      "result": "PASS",
+      "scratch_retired": true
+    },
+    {
+      "exit_code": 0,
+      "id": "16d551e180274a418c6b014a66e3e7ae",
+      "kind": "lifecycle",
+      "receipt_sha256": "da7ac33cf68948937624d3e07774a6b57532848dd824036b84135874fe8dd30e",
+      "result": "PASS",
+      "scratch_retired": true
+    },
+    {
+      "exit_code": 0,
+      "id": "bcb1249332ea42f3ac88de5d87d5f071",
+      "kind": "context_offline",
+      "receipt_sha256": "c585a9b1799de8e65c909048496fa1b3a88753c1a03c787e4006e0ce1002b0fc",
+      "result": "PASS",
+      "scratch_retired": true
+    },
+    {
+      "exit_code": 0,
+      "id": "29d95d7db7834b1c99f943dc1b4d1058",
+      "kind": "partial_cli",
+      "receipt_sha256": "420b2da769962fd14f840a44f63a2e3744b49634abd29eb2abf55cea40b6f2de",
+      "result": "PASS",
+      "scratch_retired": true
+    },
+    {
+      "exit_code": 0,
+      "id": "817747be119f4da2b8d060503e1c1744",
+      "kind": "public_cli",
+      "receipt_sha256": "144987be78f083e68779536edefe271b9686f4f797f6e2eec016a6d122daa25a",
+      "result": "PASS",
+      "scratch_retired": true
+    },
+    {
+      "exit_code": 0,
+      "id": "5962938013a14bd29fcb26a831e87280",
+      "kind": "forced_restart",
+      "receipt_sha256": "1ab2adcda78832812c93ecfd4bf977dd87d8bb42c427507078b8b3a68862ec02",
+      "result": "PASS",
+      "scratch_retired": true
+    }
+  ],
+  "pack_source_commit": "86838e44416226145e400c59bb1ee43ae1178e82",
+  "published": false,
+  "qualification": "intermediate exact-byte consumer evidence; later source repair changes packaged script and requires refreshed delivered-byte qualification",
+  "schema": "aide.lite-intermediate-consumers.v1",
+  "zip_path": ".aide/release/stable/aide-lite-v1.0.0.zip",
+  "zip_sha256": "6c885b50a33edcb255e68de09998982331a1c67192e17c854331c3e5812fbce5"
+}

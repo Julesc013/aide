@@ -220,3 +220,11 @@ head, and open-ended ranges recorded an empty head. Treat `--range` as the
 content authority, resolve an open end to HEAD, and extend the fixture to
 cover mixed selectors. Supersede the reviewed source only after focused test
 and another narrow independent review.
+
+The superseding source `46fe61d7` (tree `c4d2989f`) received independent
+ACCEPT for the selector repair; its review is recorded in evidence. Six
+serial managed consumer jobs passed and retired scratch on the earlier
+`b147aa8c` asset bytes; their exact receipts and hashes are recorded as
+intermediate evidence, not final acceptance of the now-changed packaged
+script. Commit these records, then generate one preview bound to that exact
+committed source before rebuilding the pack and stable bytes.
