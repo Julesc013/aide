@@ -44908,6 +44908,9 @@ def command_managed_job(args: argparse.Namespace) -> int:
             result = managed_workspace.configure(args.config, args.selection, args.approved_parent)
         elif args.job_command == "recover":
             result = managed_workspace.recover(args.config)
+        elif args.job_command in ("pause-dispatch", "resume-dispatch"):
+            mode = "paused" if args.job_command == "pause-dispatch" else "running"
+            result = managed_workspace.set_dispatch(args.config, mode)
         else:
             job = managed_workspace.read_json(args.manifest) if args.manifest else None
             if args.job_command == "inspect":
@@ -46182,6 +46185,10 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
         operation_parser.add_argument("--manifest", required=operation == "run", help="Exact source-bound job JSON.")
         if operation == "run":
             operation_parser.add_argument("--full", action="store_true", help="Print the full result for existing consumers; default is a bounded view.")
+        operation_parser.set_defaults(handler=command_managed_job)
+    for operation in ("pause-dispatch", "resume-dispatch"):
+        operation_parser = job_subparsers.add_parser(operation)
+        operation_parser.add_argument("--config", required=True, help="Existing machine-local storage policy JSON.")
         operation_parser.set_defaults(handler=command_managed_job)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
     test_parser = subparsers.add_parser("test")

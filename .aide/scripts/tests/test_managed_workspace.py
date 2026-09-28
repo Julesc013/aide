@@ -123,6 +123,53 @@ class ManagedWorkspaceTests(unittest.TestCase):
             workspace.run(self.config_path, job, probe=lambda _: self.ample)
         self.assertEqual(list(self.roots['scratch'].iterdir()), [])
 
+    def test_paused_dispatch_refuses_before_allocation_and_is_durable(self):
+        job = self.codex_job()
+        paused = workspace.set_dispatch(self.config_path, 'paused')
+        self.assertEqual((paused['mode'], paused['epoch']), ('paused', 1))
+        self.assertFalse(workspace.set_dispatch(self.config_path, 'paused')['writes'])
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'dispatch is paused'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+        self.assertEqual(workspace.inspect(self.config_path)['dispatch']['mode'], 'paused')
+        resumed = workspace.set_dispatch(self.config_path, 'running')
+        self.assertEqual((resumed['mode'], resumed['epoch']), ('running', 2))
+
+    def test_pause_resume_race_refuses_stale_suspended_codex_child(self):
+        job = self.codex_job()
+        host = mock.Mock()
+        def before_resume(*args, **kwargs):
+            workspace.set_dispatch(self.config_path, 'paused')
+            workspace.set_dispatch(self.config_path, 'running')
+            kwargs['checkpoint']('created_suspended')
+            self.fail('stale child resumed')
+        host.run.side_effect = before_resume
+        host.reconcile.return_value = {'quiescent': True}
+        result = workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual(result['result']['reason'], 'WorkspaceRefused')
+        self.assertIn('dispatch epoch changed', result['result']['message'])
+        self.assertTrue(result['scratch_absent'])
+        self.assertTrue(result['reservation_released'])
+
+    def test_pause_cannot_interleave_suspended_check_and_resume(self):
+        job = self.codex_job()
+        host = mock.Mock()
+        def checked_resume(*args, **kwargs):
+            kwargs['checkpoint']('created_suspended')
+            child = subprocess.run([sys.executable, '-B', str(REPO/'.aide/scripts/aide_lite.py'),
+                                    '--repo-root', str(REPO), 'job', 'pause-dispatch',
+                                    '--config', str(self.config_path)], capture_output=True,
+                                   text=True, timeout=10, env=workspace.sanitized_environment())
+            self.assertEqual(child.returncode, 1, child.stdout + child.stderr)
+            self.assertIn('dispatch control is busy', child.stdout)
+            self.assertEqual(workspace.dispatch_state(self.roots['control'])['mode'], 'running')
+            kwargs['checkpoint']('resumed')
+            return {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        host.run.side_effect = checked_resume
+        result = workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual(result['result']['exit_code'], 0)
+        self.assertEqual(workspace.set_dispatch(self.config_path, 'paused')['mode'], 'paused')
+
     def test_disk_and_memory_refusal_allocate_nothing(self):
         for changed in ({'disk_free': {workspace.volume_identity(self.root): 1024}}, {'physical_free': 1024}, {'commit_free': 1024}):
             with self.subTest(changed=changed):

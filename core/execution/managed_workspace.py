@@ -302,10 +302,12 @@ def configure(config_path, selection_path, approved_parent, *, probe=None):
 
 
 @contextmanager
-def estate_lock(control):
+def estate_lock(control, name='admission.lock'):
     # All admitted campaign workspaces use this one configured control root.
     # OS handle locking survives PID reuse and releases on interpreter death.
-    path = control / 'admission.lock'
+    if name not in ('admission.lock', 'dispatch.lock'):
+        raise WorkspaceRefused('unknown estate lock')
+    path = control / name
     if os.path.lexists(path):
         ordinary(path)
     fd = os.open(path, os.O_CREAT | os.O_RDWR | getattr(os, 'O_NOFOLLOW', 0), 0o600)
@@ -324,10 +326,39 @@ def estate_lock(control):
                 import fcntl
                 fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except OSError as exc:
-            raise WorkspaceRefused('another heavy job owns the estate reservation') from exc
+            reason = ('another heavy job owns the estate reservation' if name == 'admission.lock'
+                      else 'dispatch control is busy')
+            raise WorkspaceRefused(reason) from exc
         yield
     finally:
         os.close(fd)
+
+
+def dispatch_state(control):
+    path = control / 'dispatch.json'
+    if os.path.lexists(path.with_name('dispatch.json.next')):
+        raise WorkspaceRefused('interrupted dispatch-control write requires reconciliation')
+    value = read_json(path) if os.path.lexists(path) else {
+        'schema': 'aide.job-dispatch.v1', 'mode': 'running', 'epoch': 0}
+    if (not isinstance(value, dict) or set(value) != {'schema', 'mode', 'epoch'}
+            or value['schema'] != 'aide.job-dispatch.v1'
+            or value['mode'] not in ('running', 'paused')
+            or type(value['epoch']) is not int or value['epoch'] < 0):
+        raise WorkspaceRefused('dispatch-control state is invalid')
+    return value
+
+
+def set_dispatch(config_path, mode):
+    if mode not in ('running', 'paused'):
+        raise WorkspaceRefused('invalid dispatch mode')
+    _, roots, _ = load_config(config_path)
+    with estate_lock(roots['control'], 'dispatch.lock'):
+        current = dispatch_state(roots['control'])
+        changed = current['mode'] != mode
+        if changed:
+            current = {**current, 'mode': mode, 'epoch': current['epoch'] + 1}
+            write_json(roots['control'] / 'dispatch.json', current)
+        return {**current, 'writes': changed}
 
 
 def capacity(roots):
@@ -533,6 +564,7 @@ def inspect(config_path, job=None):
     active = roots['control'] / 'active.json'
     return {'config_digest': digest(config), 'capacity': observed, 'reservations': reservations,
             'active': read_json(active) if os.path.lexists(active) else None,
+            'dispatch': dispatch_state(roots['control']),
             'writes': False, 'disk_enforcement': 'reservation_and_monitored_threshold',
             'memory_enforcement': 'Windows_Job_commit_limit', 'log_enforcement': 'bounded_pipe_drain'}
 
@@ -699,6 +731,10 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
             raise WorkspaceRefused('Codex input changed before admission')
     host = host or WindowsJobHost(); limits = config['limits']; active = roots['control'] / 'active.json'
     with estate_lock(roots['control']):
+        with estate_lock(roots['control'], 'dispatch.lock'):
+            admitted_dispatch = dispatch_state(roots['control'])
+            if admitted_dispatch['mode'] != 'running':
+                raise WorkspaceRefused('job dispatch is paused')
         if os.path.lexists(active):
             raise WorkspaceRefused('previous job requires explicit reconciliation')
         if os.path.lexists(active.with_name('active.json.next')):
@@ -749,7 +785,19 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
                     record['peaks']['canonical_bytes'][relative] = max(record['peaks']['canonical_bytes'][relative], used)
                 next_scan = now + 30.0
             write_json(active, record)
+        dispatch_guard = None
         def checkpoint(stage):
+            nonlocal dispatch_guard
+            if stage == 'created_suspended':
+                guard = estate_lock(roots['control'], 'dispatch.lock')
+                guard.__enter__()
+                dispatch_guard = guard
+                current = dispatch_state(roots['control'])
+                if current != admitted_dispatch:
+                    raise WorkspaceRefused('dispatch epoch changed before child resume')
+            elif stage == 'resumed' and dispatch_guard is not None:
+                dispatch_guard.__exit__(None, None, None)
+                dispatch_guard = None
             record['phase'] = stage; write_json(active, record)
         if job['adapter'] == 'python':
             # Python tempfile cannot fall back when the admitted pool disappears.
@@ -778,6 +826,9 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
         except BaseException as exc:
             record['result'] = {'reason': type(exc).__name__, 'message': str(exc), 'exit_code': None}
             record['reconciliation'] = host.reconcile(job_id)
+        finally:
+            if dispatch_guard is not None:
+                dispatch_guard.__exit__(None, None, None)
         record['phase'] = 'quiescent'; write_json(active, record)
         record['after'] = probe(roots)
         qualify_canonical_outputs(record, config, roots, working)
