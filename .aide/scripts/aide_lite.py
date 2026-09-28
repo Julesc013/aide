@@ -41951,6 +41951,35 @@ def portable_removal_recovery_observations(target_root: Path, intent: dict[str, 
     return observations
 
 
+def portable_removal_restore_agents_preimage(target_root: Path, item: dict[str, object]) -> bool:
+    """Restore only the intent-bound authored file parked in the rename gap."""
+    agents = portable_target_path(target_root, "AGENTS.md")
+    backup = portable_target_path(target_root, str(item["backup_rel"]))
+    if target_file_digest(agents) != "missing" or not os.path.lexists(backup):
+        return False
+    try:
+        with windows_pinned_directory(agents.parent) as parent:
+            identity: list[str] = []
+            kernel, handle = portable_import_verified_leaf(
+                backup, str(item["preimage_digest"]), identity_out=identity
+            )
+            try:
+                if identity != [item["preimage_file_identity"]] or target_file_digest(agents) != "missing":
+                    return False
+                # replace=False on the open handle refuses a rival target.
+                portable_import_rename_open_leaf(kernel, handle, parent, str(agents))
+            finally:
+                kernel.CloseHandle(handle)
+            restored_identity: list[str] = []
+            kernel, handle = portable_import_verified_leaf(
+                agents, str(item["preimage_digest"]), identity_out=restored_identity
+            )
+            kernel.CloseHandle(handle)
+            return restored_identity == identity and not os.path.lexists(backup)
+    except (OSError, RuntimeError, ValueError):
+        return False
+
+
 def _apply_portable_removal_pinned(
     target_root: Path,
     expected_plan_digest: str,
@@ -42083,6 +42112,10 @@ def _apply_portable_removal_pinned(
             if item["kind"] == "managed_agents_section":
                 agents_path = portable_target_path(target_root, "AGENTS.md")
                 observed = target_file_digest(agents_path)
+                if observed == "missing":
+                    if not portable_removal_restore_agents_preimage(target_root, item):
+                        return {"status": "RECOVERY_REQUIRED", "plan_digest": intent["plan_digest"], "removed": [], "preserved": intent["preserved"], "recovery": portable_removal_recovery_observations(target_root, intent)}
+                    observed = target_file_digest(agents_path)
                 if observed == item["preimage_digest"]:
                     postimage = portable_agents_section_postimage(agents_path.read_bytes(), str(entry["installed_digest"]))
                     if postimage is None or digest_bytes(postimage) != item["postimage_digest"]:

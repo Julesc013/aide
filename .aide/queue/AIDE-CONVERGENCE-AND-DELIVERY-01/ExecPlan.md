@@ -240,3 +240,26 @@ two D jobs now pass all 110 importer methods in disjoint partitions. Preserve
 the independent ACCEPT_WITH_NOTES and exact receipts. Next integrate qualified
 source if ancestry permits, then generate and qualify current artifacts and
 fresh/brownfield installed consumers. Do not call source tests a release.
+
+## 2026-09-28 authored AGENTS rename-gap recovery repair
+
+Objective: resume supported removal after a child exits between renaming an
+authored `AGENTS.md` to its exact bound backup and linking the authored
+postimage. Current code retains the intent and original backup but returns
+`RECOVERY_REQUIRED` indefinitely, even when the backup identity and bytes
+match the admitted removal intent.
+
+Scope: change only the portable Windows removal recovery path and its focused
+tests, plus task evidence and execution records. Under the existing pinned
+root, lock and parent, restore the exact original backup to a still-absent
+`AGENTS.md` only when digest and recorded file identity match; use the
+non-replacing handle rename. Refuse a rival target, changed backup, same-byte
+substitution, missing backup or unsupported ownership. Then resume the
+already admitted exact removal plan. Do not alter the frozen 1.0.0 ZIP or
+promote this source without a separate reviewed release delta.
+
+Verification: run focused Windows injected cases under the approved D runner,
+including real rename-gap recovery and adversarial refusals; then the affected
+importer partition and an independent technical review. Preserve any original
+failure and actual resource receipts. Blocker: if the existing handle primitive
+cannot prove non-replacing restoration, retain the safe refusal and report it.
