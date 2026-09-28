@@ -48,5 +48,10 @@ before broader efficiency claims. FacMan product development stays paused.
 
 - [x] Owner priority and current runner/export boundaries characterized.
 - [ ] Portable observer and bounded view implemented.
+- [x] First source candidate `54b83760` adds portable read-only attachment;
+  six D-managed synthetic tests passed on that exact source, and a copied Lite
+  CLI ran without a source checkout. Its first actual `job run` still printed
+  a full receipt, so the next delta makes compact output the default while
+  preserving explicit `--full` compatibility. Retest after that delta.
 - [ ] Synthetic and real-job qualification recorded.
 - [ ] Exported consumer and independent review accepted.

@@ -44572,7 +44572,8 @@ def wait_for_managed_job(config_path: Path, job_id: str, manifest_digest: str,
     active_path = control / "active.json"
     base = {"schema": "aide.job-observation.v1", "job_id": job_id,
             "manifest_digest": manifest_digest, "model_requests_started_by_observer": 0,
-            "host_model_requests": "unknown", "receipt_ref": str(receipt_path)}
+            "host_model_requests": "unknown", "invocation_control": "observer_only",
+            "receipt_ref": str(receipt_path)}
     start = clock()
     observations = unchanged = 0
     previous_phase: str | None = None
@@ -44603,6 +44604,11 @@ def wait_for_managed_job(config_path: Path, job_id: str, manifest_digest: str,
                     if (not isinstance(source_commit, str) or not re.fullmatch(r"[0-9a-f]{40}", source_commit)
                             or not isinstance(source_tree, str) or not re.fullmatch(r"[0-9a-f]{40}", source_tree)):
                         raise ValueError("job source identity missing")
+                    collected = record.get("collected_manifest")
+                    if (not isinstance(collected, dict) or any(not isinstance(collected.get(name), str)
+                            or not re.fullmatch(r"[0-9a-f]{64}", collected[name]) for name in ("output", "logs"))):
+                        raise ValueError("job collected evidence manifest missing")
+                    peaks = record.get("peaks") if isinstance(record.get("peaks"), dict) else {}
                     passed = (result.get("reason") == "exited" and result.get("exit_code") == 0
                               and result.get("job_id") == job_id and result.get("quiescent") is True
                               and record.get("scratch_absent") is True
@@ -44612,6 +44618,8 @@ def wait_for_managed_job(config_path: Path, job_id: str, manifest_digest: str,
                             "exit_code": result.get("exit_code") if type(result.get("exit_code")) is int else None,
                             "source_commit": source_commit, "source_tree": source_tree,
                             "receipt_sha256": receipt_sha, "evidence_status": "receipt_present_outputs_unverified",
+                            "peak_scratch_bytes": peaks.get("scratch_bytes") if type(peaks.get("scratch_bytes")) is int else None,
+                            "peak_memory_bytes": peaks.get("memory_bytes") if type(peaks.get("memory_bytes")) is int else None,
                             "observations": observations, "unchanged_observations": unchanged}
             active = _job_wait_read_json(active_path, 1024 * 1024)
             if active is None:
@@ -44675,9 +44683,13 @@ def command_managed_job(args: argparse.Namespace) -> int:
                 result = managed_workspace.inspect(args.config, job)
             else:
                 result = managed_workspace.run(args.config, job)
-        print(json.dumps(result, sort_keys=True, indent=2))
         if args.job_command == "run":
-            return 0 if result.get("result", {}).get("exit_code") == 0 and result["result"].get("reason") == "exited" else 1
+            view = wait_for_managed_job(Path(args.config), result["job_id"], result["manifest_digest"], 0, 1)
+            print(json.dumps(result if args.full else view, sort_keys=True,
+                             indent=2 if args.full else None,
+                             separators=None if args.full else (",", ":")))
+            return 0 if view["status"] == "PASS" else 1
+        print(json.dumps(result, sort_keys=True, indent=2))
         return 0
     except (OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:
         print(json.dumps({"result": "REFUSED", "reason": str(exc), "writes": args.job_command != "inspect"}))
@@ -45919,6 +45931,8 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
         operation_parser = job_subparsers.add_parser(operation)
         operation_parser.add_argument("--config", required=True, help="Existing machine-local storage policy JSON.")
         operation_parser.add_argument("--manifest", required=operation == "run", help="Exact source-bound job JSON.")
+        if operation == "run":
+            operation_parser.add_argument("--full", action="store_true", help="Print the full result for existing consumers; default is a bounded view.")
         operation_parser.set_defaults(handler=command_managed_job)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
     test_parser = subparsers.add_parser("test")

@@ -45,7 +45,20 @@ py -3 .aide/scripts/aide_lite.py job setup --config <checkout>/.aide.local/execu
 py -3 .aide/scripts/aide_lite.py job inspect --config <local-config> --manifest <job-json>
 py -3 .aide/scripts/aide_lite.py job run --config <local-config> --manifest <job-json>
 py -3 .aide/scripts/aide_lite.py job recover --config <local-config>
+py -3 .aide/scripts/aide_lite.py job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>
 ```
+
+`job run` waits in deterministic code and normally prints one bounded terminal
+view; `--full` prints its detailed result for consumers that need it. The full
+receipt and logs remain under the configured retained root. Portable Lite
+`job wait` can attach to that exact job without importing the source-only
+runner, submitting work, changing reservations or emitting healthy progress
+ticks. It returns `PENDING` on timeout and never treats a missing or malformed
+receipt as success. The view reports the number of observations and unchanged
+observations, a retained receipt locator and hash, and the exact source. Its
+`model_requests_started_by_observer: 0` describes this CLI only; host model
+requests and internal inference remain unknown until a supported host adapter
+measures them. The observer does not verify all retained output bytes.
 
 Inspection only reads state. The machine-local configuration belongs in the
 existing `.aide.local/` boundary; `.aide.local.example/execution.json` contains

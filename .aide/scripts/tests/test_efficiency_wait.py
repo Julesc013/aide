@@ -55,7 +55,9 @@ class EfficiencyWaitTests(unittest.TestCase):
         write(target / "receipt.json", {"job_id": JOB_ID, "manifest_digest": self.manifest,
              "job": self.job, "phase": phase, "scratch_absent": True,
              "reservation_released": True, "result": {"job_id": JOB_ID, "reason": reason,
-             "exit_code": exit_code, "quiescent": True}, "raw_log": "x" * 3000})
+             "exit_code": exit_code, "quiescent": True},
+             "collected_manifest": {"output": "d" * 64, "logs": "e" * 64},
+             "peaks": {"scratch_bytes": 123, "memory_bytes": 456}, "raw_log": "x" * 3000})
 
     def wait(self, timeout=0, clock=lambda: 0, sleeper=lambda _: None):
         return lite.wait_for_managed_job(self.config, JOB_ID, self.manifest,
@@ -69,6 +71,8 @@ class EfficiencyWaitTests(unittest.TestCase):
         self.assertEqual(first["status"], "PASS")
         self.assertEqual(first["model_requests_started_by_observer"], 0)
         self.assertEqual(first["host_model_requests"], "unknown")
+        self.assertEqual(first["invocation_control"], "observer_only")
+        self.assertEqual(first["peak_scratch_bytes"], 123)
         self.assertEqual(first["evidence_status"], "receipt_present_outputs_unverified")
         self.assertLess(len(json.dumps(first)), 1400)
         self.assertEqual((self.retained / JOB_ID / "receipt.json").read_bytes(), before)
@@ -110,6 +114,10 @@ class EfficiencyWaitTests(unittest.TestCase):
     def test_failure_oversize_and_redirected_root_cannot_pass(self):
         self.receipt(exit_code=1)
         self.assertEqual(self.wait()["status"], "FAIL")
+        bad = json.loads((self.retained / JOB_ID / "receipt.json").read_text(encoding="utf-8"))
+        bad.pop("collected_manifest")
+        write(self.retained / JOB_ID / "receipt.json", bad)
+        self.assertEqual(self.wait()["status"], "EVIDENCE_UNAVAILABLE")
         (self.retained / JOB_ID / "receipt.json").write_bytes(b"x" * (1024 * 1024 + 1))
         self.assertEqual(self.wait()["status"], "EVIDENCE_UNAVAILABLE")
         write(self.config, {"schema": "aide.managed-workspace.local.v1",
