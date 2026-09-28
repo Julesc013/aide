@@ -2383,6 +2383,16 @@ PORTABLE_SOURCE_FILES = [
     ".aide/templates/portable-apply/README.md",
     ".aide/templates/portable-apply/__init__.py",
     ".aide/scripts/aide_lite.py",
+    "core/execution/__init__.py",
+    "core/execution/provider.py",
+    "core/execution/registered_process.py",
+    "core/execution/managed_workspace.py",
+    "core/protocol/__init__.py",
+    "core/protocol/execution_receipt.py",
+    "core/protocol/process_invocation.py",
+    "core/runtime/continuous_worker/__init__.py",
+    "core/runtime/continuous_worker/state.py",
+    "core/runtime/continuous_worker/windows_job.py",
     ".aide/policies/token-budget.yaml",
     COMMIT_MESSAGE_POLICY_PATH,
     COMMIT_MESSAGE_DISPOSITION_POLICY_PATH,
@@ -44846,9 +44856,10 @@ def command_managed_job(args: argparse.Namespace) -> int:
 
 
 def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False, canonical_paths=()) -> bool:
-    # The source-only execution owner is deliberately absent from Lite exports.
-    # Preserve their established consumer selftest/export compatibility.
-    if not (repo_root / "core/execution/managed_workspace.py").is_file():
+    # Extracted Lite can carry the job owner without a self-hosting queue or
+    # machine-local setup. Keep the source checkout's test admission separate.
+    if (not (repo_root / "core/execution/managed_workspace.py").is_file()
+            or not (repo_root / ".aide/queue/index.yaml").is_file()):
         return True
     if str(repo_root) not in sys.path:
         sys.path.insert(0, str(repo_root))

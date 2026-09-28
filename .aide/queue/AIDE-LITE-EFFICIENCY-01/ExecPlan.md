@@ -80,3 +80,19 @@ The reviewed post-Lite source candidate `28492e00` fast-forwarded local and
 remote `dev` on 2026-09-29. The exact integration review and observed refs are
 in `evidence/dev-source-integration-2026-09-29.md`. Release acceptance remains
 bound to older frozen bytes; qualify a new tree and its delivered consumers.
+
+## Next bounded increment: deliver the existing job owner in Lite
+
+Export the existing Windows managed-workspace owner and only its direct Python
+dependencies as payload files. Do not fork its allocator or supervisor. Keep
+safe import from copying broad `core/**` paths into a target repository; the
+operator runs the extracted Lite CLI against an explicit, disposable Git
+consumer. Preserve source-checkout admission for maintainer tests while an
+unconfigured extracted pack can still run its portable no-model selftest.
+
+Add one extracted-ZIP consumer test: configure tiny finite local roots under the
+test's admitted D scratch, inspect and run a source-bound Python job through the
+delivered CLI, verify the compact result and retired scratch. No Codex request,
+canonical release rebuild, target-owned rollout or alternative storage pool.
+Review the exact source delta before dev integration. A real host dispatch
+binding, usage coverage and final release bytes remain separate gates.

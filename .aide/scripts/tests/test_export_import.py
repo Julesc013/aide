@@ -137,7 +137,7 @@ class ExportImportTests(unittest.TestCase):
         self.assertIn("excluded_classes:", manifest)
         self.assertIn("raw_prompt_storage: false", manifest)
 
-    def test_extracted_export_pack_waits_without_source_checkout(self) -> None:
+    def test_extracted_export_pack_waits_and_runs_job_without_source_checkout(self) -> None:
         source_root = self.make_source_repo()
         pack_root = self.build_pack(source_root)
         self.assertTrue(aide_lite.validate_pack_checksums(pack_root)[0])
@@ -196,6 +196,69 @@ class ExportImportTests(unittest.TestCase):
         usage = json.loads(imported.stdout)
         self.assertEqual(usage["status"], "COMPLETE")
         self.assertEqual(usage["usage_totals"]["input_tokens"], 10)
+
+        # The delivered CLI reuses the existing bounded Windows owner. Its
+        # source identity is the disposable target's Git commit, not this
+        # development checkout or an invented identity for extracted bytes.
+        target = consumer / "job-target"
+        target.mkdir()
+        fixture = target / "fixture.py"
+        fixture.write_text("print('delivered owner ran')\n", encoding="utf-8")
+        (target / ".gitignore").write_text(".aide.local/\n", encoding="utf-8")
+        for command in (["init", "-q"], ["add", "fixture.py", ".gitignore"],
+                        ["-c", "user.name=AIDE fixture", "-c", "user.email=fixture@example.invalid",
+                         "commit", "-qm", "test(fixture): pin delivered job input"]):
+            subprocess.run(["git", "-C", str(target), *command], check=True,
+                           capture_output=True, timeout=15)
+        git = lambda ref: subprocess.run(["git", "-C", str(target), "rev-parse", ref],
+               check=True, capture_output=True, text=True, timeout=15).stdout.strip()
+        pool = consumer / "execution"
+        pool.mkdir()
+        roots = {name: str(pool / name) for name in ("scratch", "retained", "control")}
+        selection = consumer / "selection.json"
+        selection.write_text(json.dumps({
+            "schema": "aide.managed-workspace.local.v1", "roots": roots,
+            "working_roots": [str(target)],
+            "limits": {"disk_reserve_bytes": 10 * 1024**3,
+                       "physical_reserve_bytes": 4 * 1024**3,
+                       "commit_reserve_bytes": 4 * 1024**3,
+                       "scratch_bytes": 8 * 1024**2,
+                       "retained_bytes": 1024**2,
+                       "canonical_bytes": 1024**2,
+                       "memory_bytes": 256 * 1024**2,
+                       "log_bytes": 64 * 1024,
+                       "runtime_seconds": 30, "processes": 4, "max_files": 1000},
+        }), encoding="utf-8")
+        config_path = target / ".aide.local/execution.json"
+        base = [sys.executable, "-I", "-B", str(script), "--repo-root", str(delivered), "job"]
+        setup = subprocess.run([*base, "setup", "--config", str(config_path),
+                                "--selection", str(selection), "--approved-parent", str(pool)],
+                               capture_output=True, text=True, timeout=30)
+        self.assertEqual(setup.returncode, 0, setup.stdout[-500:] + setup.stderr[-500:])
+        self.assertEqual(json.loads(setup.stdout)["result"], "CONFIGURED")
+        job = {"schema": "aide.maintainer-job.v1", "owner": "extracted_fixture",
+               "workunit": "AIDE-LITE-EFFICIENCY-01", "cwd": str(target),
+               "source_commit": git("HEAD"), "source_tree": git("HEAD^{tree}"),
+               "adapter": "python", "argv": [sys.executable, str(fixture)],
+               "executable_sha256": hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest(),
+               "inputs": {"fixture.py": hashlib.sha256(fixture.read_bytes()).hexdigest()},
+               "canonical_outputs": {}}
+        manifest_path = consumer / "job.json"
+        manifest_path.write_text(json.dumps(job), encoding="utf-8")
+        inspect = subprocess.run([*base, "inspect", "--config", str(config_path),
+                                  "--manifest", str(manifest_path)],
+                                 capture_output=True, text=True, timeout=30)
+        self.assertEqual(inspect.returncode, 0, inspect.stdout[-500:] + inspect.stderr[-500:])
+        self.assertIsNone(json.loads(inspect.stdout)["active"])
+        run = subprocess.run([*base, "run", "--config", str(config_path),
+                              "--manifest", str(manifest_path)],
+                             capture_output=True, text=True, timeout=40)
+        self.assertEqual(run.returncode, 0, run.stdout[-500:] + run.stderr[-500:])
+        result = json.loads(run.stdout)
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["source_commit"], git("HEAD"))
+        self.assertFalse((Path(roots["scratch"]) / result["job_id"]).exists())
+        self.assertFalse((Path(roots["control"]) / "active.json").exists())
 
     def test_export_excludes_source_state_and_generated_artifacts(self) -> None:
         source_root = self.make_source_repo()

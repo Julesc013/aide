@@ -1,6 +1,6 @@
 schema_version: aide.queue-task.v0
 id: AIDE-LITE-EFFICIENCY-01
-title: Make AIDE Lite wait and report bounded job outcomes without model polling
+title: Deliver bounded Lite job observation and execution without model polling
 type: implementation
 status: running
 planning_state: admitted_first_portable_slice
@@ -9,8 +9,8 @@ created_at: 2026-09-28
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Owner's 2026-09-28 execution-efficiency priority and 2026-09-25 campaign delegation.
 objective: >
-  Deliver a portable, read-only no-model wait path for the existing AIDE job
-  owner with bounded truthful result views; exercise it on an actual AIDE job.
+  Deliver portable no-model observation and the existing bounded Windows job
+  owner in extracted Lite, with truthful compact results and no duplicate runner.
 scope:
   allowed_paths:
     - .aide/queue/AIDE-LITE-EFFICIENCY-01/**

@@ -4248,3 +4248,8 @@ and pause-aware dispatch before claiming measured savings or release readiness.
 serialize operator pause against the existing suspended-child dispatch point.
 Use synthetic process tests under the D runner; no live model or Lite export
 claim follows. The portable host binding remains a separate release gap.
+
+The next Lite efficiency slice exports the existing bounded Windows job owner
+and direct dependencies in extracted Lite. A disposable Git consumer must run
+one finite Python job through those delivered bytes while safe target import
+continues to skip broad `core/**` files. This reuses one owner, not a new pool.

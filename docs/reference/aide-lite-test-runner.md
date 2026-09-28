@@ -37,8 +37,11 @@ the existing report generators when a projection is required.
 In the AIDE source checkout, `test`, `selftest` and `eval run` require this
 admission. The child proves membership in the exact named Windows Job and
 rechecks the source/CLI input manifest. Setting temporary-directory environment
-variables alone cannot satisfy the guard. Portable Lite keeps its existing
-behavior because it does not export the source-only execution owner or tests.
+variables alone cannot satisfy the guard. Extracted Lite carries that same
+Windows owner for explicitly configured jobs, while its portable no-model
+`test` and `selftest` remain usable without source-checkout admission. The
+exported pack does not include the source checkout's self-hosting queue or
+copy `core/**` into a target through safe import.
 
 ```powershell
 py -3 .aide/scripts/aide_lite.py job setup --config <checkout>/.aide.local/execution.json --selection <local-selection-json> --approved-parent <owner-selected-existing-parent>
@@ -52,11 +55,15 @@ py -3 .aide/scripts/aide_lite.py job usage --stream <codex-exec-jsonl>
 `job run` waits in deterministic code and normally prints one bounded terminal
 view; `--full` prints its detailed result for consumers that need it. The full
 receipt and logs remain under the configured retained root. Portable Lite
-`job wait` can attach to that exact job without importing the source-only
-runner, submitting work, changing reservations or emitting healthy progress
+`job wait` can attach to that exact job without importing the runner,
+submitting work, changing reservations or emitting healthy progress
 ticks. It returns `PENDING` on timeout and never treats a missing or malformed
-receipt as success. The view reports the number of observations and unchanged
-observations, a retained receipt locator and hash, and the exact source. Its
+receipt as success. `job setup`, `job inspect` and `job run` in extracted Lite
+use the shipped Windows owner and require an explicit local configuration,
+finite limits and a source-bound Git working root. They do not activate a
+model or grant authority to modify a target repository. The view reports the
+number of observations and unchanged observations, a retained receipt locator
+and hash, and the exact source. Its
 `model_requests_started_by_observer: 0` describes this CLI only; host model
 requests and internal inference remain unknown until a supported host adapter
 measures them. The observer does not verify all retained output bytes.
