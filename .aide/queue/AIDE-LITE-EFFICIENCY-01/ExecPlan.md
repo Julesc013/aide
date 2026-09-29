@@ -468,3 +468,11 @@ model turn was launched. Exact manifest, receipt, output hashes and limits are
 in `evidence/current-zip-host-context-2026-09-29.md`. Obtain a focused
 independent review of the test and result before release-evidence use. The
 separate live-turn permission and owner message decisions remain unresolved.
+
+Independent review of the exact `2d7671ed` evidence subject returned
+**REQUEST_CHANGES** for dev integration. The test committed a user-specific
+Codex path and could hash different prompt bytes from those sent to the
+debugger. Preserve the first D job as a limited observation. Move executable
+selection and its hash to ignored local job arguments; read and hash one
+bounded prompt buffer. Re-run the no-model job against a new exact source
+subject, then seek focused delta review before dev integration.

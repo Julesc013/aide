@@ -19,14 +19,10 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[4]
 ARCHIVE = ROOT / ".aide/release/stable/aide-lite-v1.0.0.zip"
 PROMPT = ROOT / ".aide.local/efficiency-live-host-prompt.txt"
-CODEX = Path(
-    "C:/Users/Jules/.codex/packages/standalone/releases/"
-    "0.145.0-x86_64-pc-windows-msvc/bin/codex.exe"
-)
 MEMBER = "aide-lite-pack-v0/files/.aide/scripts/aide_lite.py"
 ZIP_SHA256 = "27948415530f260479c249b2d8cc956792eff4c77a524f0225f61f1f3f2ef7b1"
-CODEX_SHA256 = "83751f15cb6a0a7b97df67752c001e3fe1c20e18ffbfec3ff63567296205eb6c"
 MAX_DEBUG_BYTES = 2 * 1024 * 1024
+MAX_PROMPT_BYTES = 4096
 
 
 def sha(data: bytes) -> str:
@@ -34,13 +30,25 @@ def sha(data: bytes) -> str:
 
 
 def main() -> int:
+    if len(sys.argv) != 3:
+        raise ValueError("expected locally configured Codex path and SHA-256")
+    codex = Path(sys.argv[1])
+    codex_sha256 = sys.argv[2]
+    if not codex.is_absolute() or not codex.is_file():
+        raise ValueError("locally configured Codex executable is unavailable")
+    if len(codex_sha256) != 64 or any(c not in "0123456789abcdef" for c in codex_sha256):
+        raise ValueError("invalid locally configured Codex SHA-256")
     scratch = Path(os.environ["AIDE_JOB_TMP"])
     output = Path(os.environ["AIDE_JOB_OUTPUT"])
     if sha(ARCHIVE.read_bytes()) != ZIP_SHA256:
         raise ValueError("stable ZIP identity changed")
-    if sha(CODEX.read_bytes()) != CODEX_SHA256:
+    if sha(codex.read_bytes()) != codex_sha256:
         raise ValueError("installed Codex executable changed")
-    prompt = PROMPT.read_text(encoding="utf-8")
+    with PROMPT.open("rb") as prompt_file:
+        prompt_bytes = prompt_file.read(MAX_PROMPT_BYTES + 1)
+    if not 0 < len(prompt_bytes) <= MAX_PROMPT_BYTES:
+        raise ValueError("local prompt changed or exceeds bound")
+    prompt = prompt_bytes.decode("utf-8")
 
     with zipfile.ZipFile(ARCHIVE) as archive:
         info = archive.getinfo(MEMBER)
@@ -54,7 +62,7 @@ def main() -> int:
         cli.parent.mkdir(parents=True)
         cli.write_bytes(cli_bytes)
         debugger = subprocess.run(
-            [str(CODEX), "-c", "features.apps=false", "-c", "features.hooks=false",
+            [str(codex), "-c", "features.apps=false", "-c", "features.hooks=false",
              "-c", "features.multi_agent=false", "-c", "features.remote_plugin=false",
              "-c", "agents.enabled=false", "debug", "prompt-input", prompt],
             cwd=consumer, capture_output=True, timeout=60, check=False,
@@ -84,9 +92,9 @@ def main() -> int:
         "status": "PASS",
         "archive_sha256": ZIP_SHA256,
         "delivered_cli_sha256": sha(cli_bytes),
-        "codex_cli_sha256": CODEX_SHA256,
-        "prompt_sha256": sha(PROMPT.read_bytes()),
-        "prompt_bytes": PROMPT.stat().st_size,
+        "codex_cli_sha256": codex_sha256,
+        "prompt_sha256": sha(prompt_bytes),
+        "prompt_bytes": len(prompt_bytes),
         "host_command": "codex-cli 0.145.0 debug prompt-input",
         "debugger_json_bytes": len(debugger.stdout),
         "delivered_context": summary,
