@@ -673,3 +673,16 @@ The separate live-host model permission and ten historical owner decisions
 remain release gates. If the live-host result changes source, requalify the
 changed dependency closure. Avoid duplicate archive generation for evidence
 or documentation-only edits.
+
+The D export job `03785bb5` passed and retired scratch. `pack-status` passed
+checksum, provenance and boundary checks; the resulting pack commit is
+`350e8037`. Stable build `f27082d2` and validation `431d8862` passed; asset
+commit `b14e6184` holds ZIP SHA-256 `002636e7…` and TAR SHA-256 `0821532c…`.
+Postcommit export replay `bba90883` and stable-build replay `8c98d838`
+changed zero tracked files. Q47/Q48 job `2586592a` passed 36/36. The six
+serial current-byte consumer jobs passed, with matrix summary SHA-256
+`95e1a75b…`, scratch retired and reservations released. Their existing
+oracles do not directly invoke the changed `task next-plan` command. Add one
+small delivered-ZIP canary for default non-mutation and explicit report
+generation before claiming coverage of that changed behavior. This canary
+is a test-only source addition; it does not change the frozen archive bytes.
