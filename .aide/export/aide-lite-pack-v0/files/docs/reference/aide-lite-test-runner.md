@@ -150,6 +150,12 @@ this owner; it does not intercept unmediated Codex or internal host inference.
 Source `export-pack` and release generation/validation require both existing
 canonical output roots in their job manifest, with their actual volume IDs and
 finite byte reservations. Evaluation requires its existing runs destination.
+Default source-checkout `changelog preview` also requires a managed job with
+`.aide/changelog` declared as a finite canonical output. It refuses a direct
+unadmitted source run before writing. An alternate `--output-dir` in the source
+checkout is refused; extracted Lite and fixture repositories retain their
+explicit output-directory behavior. This keeps the current release preview
+inside the same reservation and retirement boundary as its later bundle.
 For example, a packaging manifest adds:
 
 ```json

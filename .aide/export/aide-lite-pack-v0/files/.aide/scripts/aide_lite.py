@@ -33411,6 +33411,14 @@ def command_commit_status(args: argparse.Namespace) -> int:
 
 
 def command_changelog_preview(args: argparse.Namespace) -> int:
+    output_dir = getattr(args, "output_dir", None)
+    if (output_dir not in (None, ".aide/changelog")
+            and (args.repo_root / "core/execution/managed_workspace.py").is_file()
+            and (args.repo_root / ".aide/queue/index.yaml").is_file()):
+        print("result: REFUSED\nsource changelog output must use .aide/changelog")
+        return 1
+    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(".aide/changelog",)):
+        return 1
     output_format = getattr(args, "format", "all") or "all"
     data = write_changelog_preview(
         args.repo_root,
@@ -33418,7 +33426,7 @@ def command_changelog_preview(args: argparse.Namespace) -> int:
         from_ref=getattr(args, "from_ref", None),
         to_ref=getattr(args, "to_ref", None),
         limit=getattr(args, "limit", CHANGELOG_DEFAULT_LIMIT),
-        output_dir=getattr(args, "output_dir", None),
+        output_dir=output_dir,
         output_format=output_format,
     )
     malformed = data.get("malformed_commits", [])

@@ -30,7 +30,8 @@ class WorkspaceRefused(ValueError):
 # Existing repository-owned generator/evaluation destinations only. These are
 # retained canonical outputs, never disposable pools or arbitrary caller paths.
 CANONICAL_OUTPUT_PATHS = frozenset(('.aide/export/aide-lite-pack-v0',
-                                  '.aide/release', '.aide/evals/runs'))
+                                  '.aide/release', '.aide/evals/runs',
+                                  '.aide/changelog'))
 
 
 def digest(value):

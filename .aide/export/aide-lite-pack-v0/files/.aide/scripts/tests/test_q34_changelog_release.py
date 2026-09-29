@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -136,9 +137,13 @@ class Q34ChangelogReleaseTests(unittest.TestCase):
             self.assertTrue(release["preview_only"])
 
     def test_changelog_validate_passes_for_current_repo_outputs(self) -> None:
-        aide_lite.write_changelog_preview(REPO_ROOT, revision_range="HEAD~1..HEAD", limit=1)
-        checks = aide_lite.validate_changelog_outputs(REPO_ROOT)
-        self.assertNotEqual(aide_lite.result_from_checks(checks), "FAIL")
+        # Managed jobs provide an explicit D scratch parent; raw discovery
+        # retains its pre-existing standard temporary-directory behavior.
+        with tempfile.TemporaryDirectory(prefix="q34-preview-", dir=os.environ.get("AIDE_JOB_TMP")) as temp:
+            aide_lite.write_changelog_preview(REPO_ROOT, revision_range="HEAD~1..HEAD",
+                                              limit=1, output_dir=temp)
+            checks = aide_lite.validate_changelog_outputs(REPO_ROOT, output_dir=temp)
+            self.assertNotEqual(aide_lite.result_from_checks(checks), "FAIL")
 
     def test_malformed_report_contains_malformed_fixture(self) -> None:
         malformed = {
