@@ -711,3 +711,11 @@ defect was found. A superseding evidence-only packet now maps all 38 forms to
 observations, with exact job, output and receipt hashes. Verify the map and
 seek a focused delta rereview before dev integration. Keep the existing ZIP
 bytes frozen; do not rerun the six consumers merely to add this evidence map.
+
+The focused independent rereview ACCEPTED exact `e9205021`/tree
+`c1b02790` for local technical release evidence and dev integration. It
+verified all 38 form mappings against current-byte outputs with zero errors.
+The verdict is preserved in
+`evidence/taskos-release-review-e9205021-2026-09-29.md`. Record the review
+without altering its subject, then fast-forward dev only if current refs and
+clean state still permit it. Observe the remote ref after a non-force push.
