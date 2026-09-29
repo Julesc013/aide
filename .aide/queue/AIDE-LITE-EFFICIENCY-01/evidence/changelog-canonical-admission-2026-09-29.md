@@ -51,3 +51,29 @@ managed owner, Lite CLI, two focused test files, runner guide, and root
 planning/implementation records. No archive, stable asset, release effect,
 main ref, tag or external target changed. Seek independent exact source review
 before `dev`; source acceptance would not requalify the frozen 1.0.0 assets.
+
+## First independent review and superseding repair
+
+Reviewer `/root/native_os_build_review` returned **REQUEST_CHANGES** for exact
+`8ee5b4b98c023b02624f432fd3c30ee0b7aafdb5`/tree `cb7dc9d2`.
+The documented raw unittest command lacks `AIDE_JOB_TMP`, so the new test
+raised `KeyError`; its 12/12 managed pass did not cover raw discovery. The
+reviewer also found the ExecPlan's alternate-output sentence stale. The raw
+failure was reproduced with only that one test and no tracked writes. The
+superseding test uses the explicit `AIDE_JOB_TMP` parent under managed jobs
+and retains the prior standard temporary-directory behavior for raw discovery.
+Rerun both modes and record their results before focused rereview. The first
+rejected subject must not be integrated.
+
+The focused raw test then passed **1/1** without `AIDE_JOB_TMP`, with this
+process's `TMP`/`TEMP` explicitly set to the approved D scratch parent. The
+superseding D-managed Q34 suite passed **12/12** in job
+`ba8a9cd6986e4bc7b550ed76f7d4bfbb`, receipt SHA-256
+`f11550981fb616a3f96a679546b9b24a0ebbb4bdf58298d35ff643e1e2c19416`;
+scratch retired and reservation released. Both modes left all six tracked
+changelog previews unchanged. An initial D admission attempt using the old
+base commit/tree correctly refused `source commit/tree changed` before launch;
+the corrected manifest bound the current branch commit and the changed test
+hash. Production runner and CLI bytes did not change after `8ee5b4b9`;
+the prior 52/52 and real preview receipts remain source-valid. Seek focused
+independent rereview of the superseding test/documentation delta.

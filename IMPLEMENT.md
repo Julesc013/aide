@@ -12826,3 +12826,10 @@ zero tracked drift and retired scratch. An existing Q34 test was found to
 rewrite six tracked previews; its output is now isolated under `AIDE_JOB_TMP`,
 and the rerun passed 12/12 with no tracked preview changes. This is source-only
 work awaiting independent review; the accepted 1.0.0 assets remain frozen.
+
+The first independent source review requested changes because the revised Q34
+test required `AIDE_JOB_TMP` and broke documented raw discovery. Its focused
+raw test now passes without that variable, and the D-managed Q34 suite still
+passes 12/12 without tracked preview drift. The production guard and runner
+code are unchanged from the first reviewed subject; a focused rereview is
+pending on the test and documentation repair.

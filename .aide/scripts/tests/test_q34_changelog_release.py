@@ -137,7 +137,9 @@ class Q34ChangelogReleaseTests(unittest.TestCase):
             self.assertTrue(release["preview_only"])
 
     def test_changelog_validate_passes_for_current_repo_outputs(self) -> None:
-        with tempfile.TemporaryDirectory(prefix="q34-preview-", dir=os.environ["AIDE_JOB_TMP"]) as temp:
+        # Managed jobs provide an explicit D scratch parent; raw discovery
+        # retains its pre-existing standard temporary-directory behavior.
+        with tempfile.TemporaryDirectory(prefix="q34-preview-", dir=os.environ.get("AIDE_JOB_TMP")) as temp:
             aide_lite.write_changelog_preview(REPO_ROOT, revision_range="HEAD~1..HEAD",
                                               limit=1, output_dir=temp)
             checks = aide_lite.validate_changelog_outputs(REPO_ROOT, output_dir=temp)

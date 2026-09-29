@@ -383,9 +383,9 @@ The current Lite release run had to invoke `changelog preview` directly because
 the existing D runner refused `.aide/changelog` as an unknown canonical output.
 This source-only slice makes the default source-checkout changelog destination
 an explicitly budgeted canonical root and requires active managed-job custody
-before the default preview writes. An explicitly selected alternative output
-directory retains its existing caller-selected semantics; no silent fallback
-is introduced. Scope is the existing Windows runner, Lite CLI, focused runner
+before the default preview writes. Alternate output directories in the source
+checkout refuse; extracted Lite and fixture repositories retain their existing
+caller-selected behavior. Scope is the existing Windows runner, Lite CLI, focused runner
 tests, this WorkUnit and the runner guide. Reproduce the prior refusal, then
 test admission/reservation, read-only inspection and refusal of an unadmitted
 default preview. Run a zero-change current-source preview in the approved D
@@ -407,3 +407,14 @@ All jobs retired scratch and released reservations. Exact receipts are in
 `evidence/changelog-canonical-admission-2026-09-29.md`. Freeze this source
 for independent review before dev integration. Do not regenerate stable assets
 as part of this source-only slice.
+
+Independent review of exact `8ee5b4b9` returned **REQUEST_CHANGES**: the Q34
+test broke documented raw unittest discovery when `AIDE_JOB_TMP` was absent,
+and one earlier sentence misstated alternate source output behavior. Preserve
+that verdict, repair the test's raw compatibility while retaining explicit D
+scratch under managed jobs, run both paths and seek focused rereview.
+
+The focused raw mode now passes 1/1 with `AIDE_JOB_TMP` absent and D selected
+as process-local `TMP`/`TEMP`; the D-managed Q34 suite passes 12/12 in job
+`ba8a9cd6`. Neither mode rewrites tracked changelog previews. The source code
+is unchanged from first review; request a focused independent delta verdict.
