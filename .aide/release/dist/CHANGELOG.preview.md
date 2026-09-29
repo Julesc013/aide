@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 68192b3696e626fcfe2c3b4c513e777a58c578fd latest 50 commits
-source_head: 68192b3696e626fcfe2c3b4c513e777a58c578fd
+source_range: 816032f1b3e1a0603bd2446349a73abdebc10ed4 latest 50 commits
+source_head: 816032f1b3e1a0603bd2446349a73abdebc10ed4
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,16 +11,13 @@ release_publishing: false
 
 ## Summary
 
-- Added: 4
-- Changed: 19
-- Fixed: 12
-- Docs: 1
-- Internal: 14
+- Added: 2
+- Changed: 34
+- Fixed: 10
+- Internal: 4
 
 ## Added
 
-- Include the portable bounded job interface in the Lite release contract. (20710eace078 feat(release): qualify portable Lite job forms for stable contract)
-- Portable bounded job commands in the Lite candidate assets. (5acd32a79ab5 build(release): rebuild Lite assets with portable job contract)
 - Bounded attempt attribution for supplied Codex usage streams. (cec72cb6f2d7 feat(efficiency): attribute bounded Codex attempt streams)
 - Candidate Lite attempt usage form with partial accounting semantics. (6a15a7dd5e3b feat(release): declare bounded Lite attempt usage form)
 
@@ -45,12 +42,24 @@ release_publishing: false
 - Refresh local portable Lite pack for attempt attribution. (a233225073e7 build(release): refresh Lite pack with attempt attribution)
 - Refresh local Lite stable candidate assets. (25e74785fedd build(release): refresh unpublished Lite attribution assets)
 - Bind candidate attempt usage form to local Lite preview. (68192b3696e6 build(release): bind reviewed attribution form to preview)
+- Export the reviewed 38-form Lite candidate policy. (b58895e80515 build(release): export reviewed 38-form Lite pack)
+- Freeze local 38-form Lite asset candidate. (e26604f1476a build(release): freeze 38-form Lite local assets)
+- Bind local Lite preview bundle to exact pack source. (b65f9ef37598 build(release): bind 38-form preview to pack source)
+- Refresh unpublished Lite 1.0.0 draft for 38 forms. (5dac6c0c25ba docs(release): refresh local 38-form Lite draft)
+- Freeze unpublished Lite 1.0.0 attribution release evidence. (a681da82c1f0 docs(release): freeze current 38-form Lite effect evidence)
+- Record local Lite 1.0.0 attribution effect acceptance. (b11af55d728d docs(release): record independent 38-form effect acceptance)
+- Record unpublished Lite 1.0.0 dev integration. (0a514716d2cb docs(release): checkpoint accepted Lite effect on dev)
+- Record retained branch disposition for Lite release planning. (b0c8dd92e57f docs(release): disposition remaining local task branches)
+- Clarify unpublished Lite 1.0.0 release gate. (167d299f238d docs(release): separate Lite publication from live model gate)
+- Record unpublished Lite profile gate review. (5aed104d3277 docs(release): record independent Lite gate correction review)
+- Prepare AIDE Lite 1.0.0 candidate release notes. (3efcb932dd27 docs(release): prepare exact Lite 1.0.0 public body)
+- Record AIDE Lite 1.0.0 candidate release-body review. (b9f720b51178 docs(release): record independent Lite public-body review)
+- Record AIDE Lite 1.0.0 technical release acceptance. (6795abab31b4 docs(release): record exact Lite technical release ACCEPT)
+- Record portable job evidence parser assurance. (2cd254df7cf2 docs(efficiency): bind exact parser review and managed evidence)
+- Prepare a superseding AIDE Lite 1.0.0 local candidate. (816032f1b3e1 docs(release): plan parser-safe Lite asset supersession)
 
 ## Fixed
 
-- Range-bound changelog provenance under mixed and open-ended selectors. (46fe61d743f0 fix(changelog): bind range head to selected commit set)
-- Package selected-revision changelog provenance in Lite. (f22f3ec58ed4 build(pack): include reviewed changelog source repair)
-- Include selected-source changelog provenance in the local Lite candidate. (df372b3a6495 build(release): refresh Lite 1.0.0 candidate bytes)
 - Portable usage reports unknown instead of false zero or contradictory known totals. (46c51f7101c3 fix(lite): keep unknown usage subtotals unknown)
 - Export corrected portable usage accounting. (640367a7b92b build(lite): refresh portable pack from accepted source)
 - Include corrected usage accounting in the unpublished Lite candidate. (8f9bd0748fab build(release): refresh Lite 1.0.0 candidate archives)
@@ -60,23 +69,10 @@ release_publishing: false
 - Carry corrected usage importer into local stable candidate. (2767290ac9d2 build(release): refresh local Lite stable candidate)
 - Keep local preview notes bound to the exported source. (a61fc71bdc88 fix(changelog): bind preview to exported source)
 - Malformed attempt rosters now receive bounded refusal. (8f10a66b3f0a fix(efficiency): refuse malformed Codex attempt rosters)
-
-## Docs
-
-- Bind Lite release preview to the accepted source revision. (4491c2cb8b47 docs(changelog): freeze repaired Lite source preview)
+- Managed job observation refuses ambiguous receipt JSON. (5b99329a3e56 fix(efficiency): refuse ambiguous managed job evidence)
 
 ## Internal
 
-- Retain intermediate qualification and independent source review provenance. (2c168ca172ac docs(release): retain selector review and consumer receipts)
-- Refresh source-bound Lite preview distribution artifacts. (c86b7984e50b build(release): refresh source-bound Lite preview bundle)
-- Refresh local Lite release draft references. (085f60c76471 docs(release): refresh local Lite publication draft)
-- Freeze a reviewable current Lite candidate with honest release gates. (55131eff4af4 docs(release): freeze current local Lite effect packet)
-- Record the split current Lite release review verdict. (d489826530f0 docs(release): retain current effect review verdict)
-- Bind the current job contract to source preview evidence. (e42d56085d3a docs(changelog): bind portable job contract preview to source)
-- Refresh portable pack inputs for the current Lite candidate. (ca0e07a4d33b build(pack): export Lite job contract from current source)
-- Update local release preview with qualified portable job forms. (67874f32ff63 build(release): refresh Lite preview bundle for job contract)
-- Bind local publication draft to current Lite job-form assets. (6ea1a708e5ed docs(release): refresh Lite publication draft for job forms)
-- Complete the current local draft asset projection. (2f32f5887450 docs(release): bind Lite draft asset inventory)
 - Freeze exact Lite job-form effect evidence for technical review. (42672db9a43d docs(release): freeze superseding Lite job-form effect)
 - Record accepted exact Lite job-form technical review. (3e12aeb0f327 docs(release): retain accepted Lite job-form effect review)
 - Record accepted Lite job-form dev integration and remaining release gates. (3671f2fe4c77 docs(release): record Lite job-form dev integration)
