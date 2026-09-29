@@ -442,3 +442,11 @@ Independent `/root/stable_effect_review` returned **ACCEPT** for exact
 gate-correction commit `167d299f`, tree `60ec7e14`, against `dev@b0c8dd92`.
 This is dev metadata integration only; it does not replace exact Lite release
 acceptance or the ten owner decisions.
+
+Prepare one public Lite 1.0.0 release body from the frozen four assets and
+qualified profile, separate from Q47/Q48's no-publish `aide-lite-pack-v0`
+preview draft. It must describe exact Windows/Python limits, first-install
+preview/apply, no published predecessor, customization and local feedback,
+recovery/removal, offline scope and excluded model/native/hosted profiles.
+The body remains candidate text until exact technical release ACCEPT,
+historical dispositions, main promotion, tag and publication are satisfied.
