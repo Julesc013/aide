@@ -51,7 +51,7 @@ Q47/Q48 preview bundles are not published stable predecessors.
 
 | Asset | SHA-256 |
 | --- | --- |
-| `aide-lite-v1.0.0.zip` | `6a56a494affdc66c76b4bb5dcae4e0c01083b8220802279b4cca5485572d370d` |
-| `aide-lite-v1.0.0.tar.gz` | `a8fa44bf5cd35db43eed78fc04199af44d571fef6e54d7a0398ee8a0297e571c` |
-| `aide-lite-v1.0.0.manifest.json` | `553157338b1211515b500f1c839fa43c2744e4a715852b529fbee3ec517e9941` |
-| `aide-lite-v1.0.0.SHA256SUMS.txt` | `178bb1f6343e540e9fc458f4440304aabc51a10bffd2aa8557cf626c6709c00b` |
+| `aide-lite-v1.0.0.zip` | `95ecee6c422f07005bf25175aae347b500f2f6343d58c702856a6e977126902f` |
+| `aide-lite-v1.0.0.tar.gz` | `16b8c3d19a033d1e6304cad5196a410e7d83d8329c97b54fad0b4602bd1f33a6` |
+| `aide-lite-v1.0.0.manifest.json` | `ef116dad9e69d0dc0bea0f2386815add3e6e8ae95dc2e25588ba1d9c3de6d5f9` |
+| `aide-lite-v1.0.0.SHA256SUMS.txt` | `1fc39d9b92203a5b62edc26b48939a8b7145b27a1b11f6ead787a1fa49a478c5` |
