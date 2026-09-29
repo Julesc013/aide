@@ -317,5 +317,9 @@ nonfinite JSON constants, and converts parser recursion to a bounded refusal.
 It also bounds the read itself and verifies file identity before and after
 reading. The final focused efficiency suite passed 27/27 with temporary files
 under the approved D scratch root.
-Postcommit managed verification and independent source review remain pending;
-the accepted stable assets were not changed.
+Postcommit D job `52700025` passed 27/27, retired scratch and released its
+reservation. Independent `/root/stable_effect_review` returned **ACCEPT for
+dev source integration** of exact `5b99329a`/tree `e6f256af`; details and
+receipt SHA are in `evidence/job-evidence-parser-review-5b99329a.md`.
+The accepted stable assets were not changed. Requalify changed release bytes
+after integration; this review is not release acceptance.
