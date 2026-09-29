@@ -650,3 +650,26 @@ one actual host path must show controlled model dispatch, bounded results,
 honest usage/context coverage and a matched accepted outcome. The current
 synthetic/local candidate does not establish that proof. No main/tag/publication
 effect was attempted.
+
+## 2026-09-29 current-source Task OS projection
+
+Objective: produce a superseding local Lite candidate from clean
+`dev@dcdc9929` after the two independently accepted Task OS changes. The
+existing ZIP `27948415…` remains frozen as a prior candidate and its review
+does not transfer to changed bytes. Keep this in the existing release WorkUnit
+and sole checkout with the approved D execution roots. Do not perform a model,
+native, hosted, main, tag or publication effect in this slice.
+
+Order: commit this plan; run the current deterministic export under the shared
+bounded D runner; commit the resulting pack; build/validate stable assets from
+that exact pack under the same runner; run affected source tests and exact-byte
+consumer checks; prove postcommit generator replay is zero-change; bind the
+new source/tree, asset hashes, job receipts and limitations; seek independent
+technical review before dev integration. Reuse local job manifest names while
+rebinding their source and input hashes, and retire scratch after each job.
+Do not copy old preview outputs or silently inherit the old release ACCEPT.
+
+The separate live-host model permission and ten historical owner decisions
+remain release gates. If the live-host result changes source, requalify the
+changed dependency closure. Avoid duplicate archive generation for evidence
+or documentation-only edits.
