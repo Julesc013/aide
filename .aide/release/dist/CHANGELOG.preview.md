@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 0795eefe1b114ba16514ff3881ec3d68834158ce latest 50 commits
-source_head: 0795eefe1b114ba16514ff3881ec3d68834158ce
+source_range: 6d6cfc61c34517bab7ef88128bea126515528f3a latest 50 commits
+source_head: 6d6cfc61c34517bab7ef88128bea126515528f3a
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,49 +11,18 @@ release_publishing: false
 
 ## Summary
 
-- Added: 1
-- Changed: 11
-- Fixed: 7
-- Docs: 1
-- Internal: 30
-
-## Added
-
-- Bounded source for an optional native API-set loader observation. (36ada987bfe0 feat(host): prepare bounded API-set loader effect source)
-
-## Changed
-
-- Record local Lite 1.0.0 attribution effect acceptance. (b11af55d728d docs(release): record independent 38-form effect acceptance)
-- Record unpublished Lite 1.0.0 dev integration. (0a514716d2cb docs(release): checkpoint accepted Lite effect on dev)
-- Record retained branch disposition for Lite release planning. (b0c8dd92e57f docs(release): disposition remaining local task branches)
-- Clarify unpublished Lite 1.0.0 release gate. (167d299f238d docs(release): separate Lite publication from live model gate)
-- Record unpublished Lite profile gate review. (5aed104d3277 docs(release): record independent Lite gate correction review)
-- Prepare AIDE Lite 1.0.0 candidate release notes. (3efcb932dd27 docs(release): prepare exact Lite 1.0.0 public body)
-- Record AIDE Lite 1.0.0 candidate release-body review. (b9f720b51178 docs(release): record independent Lite public-body review)
-- Record AIDE Lite 1.0.0 technical release acceptance. (6795abab31b4 docs(release): record exact Lite technical release ACCEPT)
-- Record bounded native loader source assurance. (e2854adb5671 docs(host): record loader effect source review and managed tests)
-- Record portable job evidence parser assurance. (2cd254df7cf2 docs(efficiency): bind exact parser review and managed evidence)
-- Prepare a superseding AIDE Lite 1.0.0 local candidate. (816032f1b3e1 docs(release): plan parser-safe Lite asset supersession)
+- Fixed: 4
+- Internal: 46
 
 ## Fixed
 
-- Managed job observation refuses ambiguous receipt JSON. (5b99329a3e56 fix(efficiency): refuse ambiguous managed job evidence)
-- Portable Lite job observation rejects ambiguous evidence. (47a2b2fb3b58 build(pack): refresh Lite export with strict job evidence parsing)
-- Stable candidate includes strict managed-job evidence parsing. (6340cb685759 build(release): freeze parser-safe Lite 1.0.0 local assets)
-- Correct AIDE Lite 1.0.0 candidate release asset identities. (7bdfc7e04a34 docs(release): correct parser-safe Lite public asset hashes)
-- Bind AIDE Lite 1.0.0 candidate public text to current assets. (ab1a797db9ef docs(release): bind corrected Lite public body to effect)
 - Source changelog previews can use finite managed-job storage admission. (8ee5b4b98c02 fix(execution): admit bounded source changelog previews)
 - Q34 validation runs in both managed and documented raw discovery modes. (0063ab234484 test(execution): preserve raw Q34 discovery after isolated preview)
-
-## Docs
-
-- Bind local Lite previews to the current packaged source history. (53c5484a9fd7 docs(changelog): bind parser-safe Lite preview to pack source)
+- Avoid a stale self-hosted next-work recommendation. (3991acf99688 fix(task-os): stop reselecting reviewed lifecycle plan)
+- Prevent Task OS next-plan inspection from rewriting tracked report snapshots. (de5e8d47c511 fix(task-os): make next-plan inspection read-only)
 
 ## Internal
 
-- Refresh local parser-safe Lite preview distribution outputs. (cec6f0c70d8a build(release): refresh parser-safe Lite preview bundle)
-- Refresh local Lite publication draft references. (b6265cdc7373 docs(release): refresh parser-safe Lite local draft)
-- Supersede old local release evidence with parser-safe asset identities. (c9bdab80efbe docs(release): freeze parser-safe Lite effect evidence)
 - Preserve exact AIDE Lite 1.0.0 technical release acceptance. (9a8af184b5e5 docs(release): record parser-safe Lite technical ACCEPT)
 - Record qualified Lite source and evidence on dev. (6f8eb6902f72 docs(release): record parser-safe Lite dev integration)
 - Strengthen the API-set loader effect replay oracle. (81ddce079fc6 test(host): block loader replay through alternate output)
@@ -81,6 +50,25 @@ release_publishing: false
 - Record bounded changelog source acceptance. (c0e07b083040 chore(execution): record accepted changelog admission review)
 - Record source-only bounded changelog integration. (cbe6c78b5047 chore(execution): record reviewed changelog source integration)
 - Prepare current-runner Lite requalification without changing release claims. (0795eefe1b11 chore(release): plan current-runner Lite byte qualification)
+- Prepare current-runner release bytes for distinct qualification. (d906bb2e67cf build(release): refresh Lite pack with bounded changelog source)
+- Prepare new local Lite bytes for consumer qualification. (4d77183fe770 build(release): freeze local Lite current-runner assets)
+- Keep preview release notes bound to current Lite pack source. (ad4a975082bb build(release): bind Lite changelog to current pack source)
+- Prepare local preview metadata for exact technical release review. (8bf41b9374d4 build(release): bind Lite previews to current runner bytes)
+- Bind exact local release evidence; no published release. (222fa60e9b39 build(release): bind current runner Lite candidate)
+- Record current-runner local technical acceptance without publication. (a9e0c5db8d6f chore(release): record current runner technical accept)
+- Preserve qualified dev integration and explicit unreleased state. (9bef74f12f1a chore(release): record current runner dev integration)
+- Bind current-source live-host readiness without activating a turn. (b059f0ad0c64 chore(efficiency): bind live host admission boundary)
+- Preserve current host-context preflight evidence. (f55124041156 chore(efficiency): record current host context visibility)
+- Add delivered context-host qualification canary. (43c5e95e3186 test(efficiency): add current ZIP host context canary)
+- Add no-model delivered host-debugger qualification evidence. (2d7671ed5600 test(efficiency): record delivered host context result)
+- Keep machine-specific host selection outside tracked source. (a706e2e8cf29 test(efficiency): bind host canary to local executable)
+- Preserve exact local host-debugger canary review evidence. (3cd57cb49620 docs(efficiency): close repaired host context review)
+- Close the delivered host context canary integration record. (005c8036683e docs(efficiency): record host context dev integration)
+- Correct the existing stable-profile coverage control. (398d6914c873 docs(release): correct current lifecycle coverage matrix)
+- Remove a stale local customization qualification gap. (0d9741e374f6 docs(release): bind current ZIP customization conflict proof)
+- Record exact Task OS source review evidence without changing product bytes. (56eebf938756 docs(task-os): record stale next-work source verdict)
+- Record Task OS source review without changing product behavior. (dcdc9929a5ad docs(task-os): record read-only next-plan review)
+- Record the current-source Lite qualification plan. (6d6cfc61c345 docs(release): plan current Task OS asset projection)
 
 ## Malformed Commits
 
