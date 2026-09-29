@@ -4,7 +4,7 @@ status: running
 planning_state: execution_active
 result: PENDING
 updated_at: 2026-09-28
-current_slice: h2_api_query_os_build_source_repair
+current_slice: h2_api_set_loader_effect_source_preparation
 local_native_attempt_result: PASS
 local_native_attempt_reason: exact_local_endpoint_missing_internetclient_with_controls
 current_source_review: api_query_source_pass_exact_c_disposition_accepted

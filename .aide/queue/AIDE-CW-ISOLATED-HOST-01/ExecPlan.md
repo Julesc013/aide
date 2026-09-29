@@ -635,3 +635,33 @@ The clean local `dev` branch fast-forwarded from `46d04d03` to review-closeout
 commit `c3a92154` on 2026-09-29 after the independent decision. The source
 candidate and test repair are unchanged. Remote observation belongs to the
 subsequent push receipt; this local fast-forward alone admits no native effect.
+
+## 2026-09-29 bounded loader-effect source preparation
+
+Objective: prepare a distinct one-name ordinary-loader observation effect on
+the existing isolated-host WorkUnit, because the local L2 API-set query export
+is absent. Reuse the accepted one-use control journal and staged hash-bound
+result publication, without conflating loader observations with the failed
+query method. No native load, profile, credential, target or worker effect is
+admitted by source preparation.
+
+Scope: the existing `h2_api_query_effect.py` utility functions and new
+task-local loader effect driver/tests/evidence. Keep the reviewed
+`windows_system_observation.py` adapter byte-identical; the driver obtains the
+running OS build separately through `RtlGetVersion`. Work in the primary checkout on one task branch from
+`dev@6795abab`; no new worktree. Use exact inventory/source/driver hashes,
+one literal API-set contract, OS build, expiry, finite duration, durable
+pre-call intent and a control-root one-use request. Require an externally
+bounded managed child for any future native load. Test missing/malformed,
+duplicate and changed inputs, wrong build, replay, failure after intent,
+short write and interrupted publication using injected backends under the
+approved D runner. Obtain independent source and effect review before any
+native call. Keep the accepted Lite release effect frozen and do not integrate
+changed native source into `dev` until release compatibility is addressed.
+
+Initial injected checks on 2026-09-29: nine loader-effect cases and ten
+unchanged query-effect cases passed. The 59-case system observation suite
+exposed a frozen source-digest guard during a first adapter edit; that edit was
+reverted, the OS-build read moved into this driver, and the suite passed 59/59.
+This is source preparation only. No native loader call or exact effect manifest
+has occurred. Postcommit D-managed verification and independent review remain.

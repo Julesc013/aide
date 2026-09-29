@@ -21,6 +21,8 @@ INVENTORY_REL = ".aide/queue/AIDE-CW-ISOLATED-HOST-01/evidence/h2-delay-system-r
 RESULT_NAME = "api-query-result.json"
 STAGED_NAME = RESULT_NAME + ".pending"
 PENDING_MARKER = b"AIDE_API_QUERY_PENDING\n"
+LOADER_RESULT_NAME = "api-loader-result.json"
+LOADER_PENDING_MARKER = b"AIDE_API_LOADER_PENDING\n"
 
 
 def canonical(value: object) -> bytes:
@@ -80,8 +82,11 @@ def load_plan(manifest: dict, root: Path) -> observation.ApiSetQueryPlan:
 class DurableJournal:
     """Exclusive persistent reservation plus fsynced pre-call intents."""
 
-    def __init__(self, control: Path, plan: observation.ApiSetQueryPlan, manifest_sha256: str):
-        self.path = safe_directory(control) / ("api-query-" + plan.request_id + ".jsonl")
+    def __init__(self, control: Path, plan: observation.ApiSetQueryPlan,
+                 manifest_sha256: str, *, namespace: str = "api-query"):
+        if namespace not in ("api-query", "api-loader"):
+            raise Refused("fixed API-set journal namespace required")
+        self.path = safe_directory(control) / (namespace + "-" + plan.request_id + ".jsonl")
         self.plan = plan
         self.sequence = 0
         self.reserved = False
@@ -132,20 +137,30 @@ class DurableJournal:
         os.close(self.fd)
 
 
-def reserve_result(output: Path) -> None:
+def _result_paths(output: Path, result_name: str) -> tuple[Path, Path]:
+    if result_name not in (RESULT_NAME, LOADER_RESULT_NAME):
+        raise Refused("fixed API-set result name required")
+    root = safe_directory(output)
+    return root / result_name, root / (result_name + ".pending")
+
+
+def reserve_result(output: Path, *, result_name: str = RESULT_NAME,
+                   pending_marker: bytes = PENDING_MARKER) -> None:
     """Occupy the final name before any native call; it is never success yet."""
-    target = safe_directory(output) / RESULT_NAME
+    if pending_marker != (PENDING_MARKER if result_name == RESULT_NAME else LOADER_PENDING_MARKER):
+        raise Refused("fixed API-set result reservation marker required")
+    target, _ = _result_paths(output, result_name)
     fd = os.open(target, os.O_CREAT | os.O_EXCL | os.O_WRONLY | os.O_BINARY, 0o600)
     try:
-        if os.write(fd, PENDING_MARKER) != len(PENDING_MARKER):
+        if os.write(fd, pending_marker) != len(pending_marker):
             raise Refused("complete API-set result reservation required")
         os.fsync(fd)
     finally:
         os.close(fd)
 
 
-def stage_result(output: Path, value: dict) -> str:
-    target = safe_directory(output) / STAGED_NAME
+def stage_result(output: Path, value: dict, *, result_name: str = RESULT_NAME) -> str:
+    _, target = _result_paths(output, result_name)
     encoded = canonical(value) + b"\n"
     if len(encoded) > observation.MAX_RESULT_BYTES:
         raise Refused("bounded API-set result required")
@@ -170,10 +185,12 @@ def terminal_detail(journal_path: Path, plan: observation.ApiSetQueryPlan) -> di
     return detail
 
 
-def qualified_result(output: Path, journal_path: Path, plan: observation.ApiSetQueryPlan) -> dict:
+def qualified_result(output: Path, journal_path: Path, plan: observation.ApiSetQueryPlan,
+                     *, result_name: str = RESULT_NAME) -> dict:
     """A result is usable only with a matching terminal record and byte digest."""
     detail = terminal_detail(journal_path, plan)
-    encoded = pinned_file(safe_directory(output) / RESULT_NAME, observation.MAX_RESULT_BYTES)
+    target, _ = _result_paths(output, result_name)
+    encoded = pinned_file(target, observation.MAX_RESULT_BYTES)
     if sha256(encoded) != detail.get("result_sha256"):
         raise Refused("API-set result differs from terminal PASS")
     result = json.loads(encoded)
@@ -182,17 +199,20 @@ def qualified_result(output: Path, journal_path: Path, plan: observation.ApiSetQ
     return result
 
 
-def reconcile_result(output: Path, journal_path: Path, plan: observation.ApiSetQueryPlan) -> dict:
+def reconcile_result(output: Path, journal_path: Path, plan: observation.ApiSetQueryPlan,
+                     *, result_name: str = RESULT_NAME,
+                     pending_marker: bytes = PENDING_MARKER) -> dict:
     """Finish publication after a durable PASS, without replaying native calls."""
+    if pending_marker != (PENDING_MARKER if result_name == RESULT_NAME else LOADER_PENDING_MARKER):
+        raise Refused("fixed API-set result reconciliation marker required")
     detail = terminal_detail(journal_path, plan)
-    target = safe_directory(output) / RESULT_NAME
+    target, staged = _result_paths(output, result_name)
     current = pinned_file(target, observation.MAX_RESULT_BYTES)
-    if current == PENDING_MARKER:
-        staged = output / STAGED_NAME
+    if current == pending_marker:
         if sha256(pinned_file(staged, observation.MAX_RESULT_BYTES)) != detail.get("result_sha256"):
             raise Refused("staged API-set result differs from terminal PASS")
         os.replace(staged, target)
-    return qualified_result(output, journal_path, plan)
+    return qualified_result(output, journal_path, plan, result_name=result_name)
 
 
 def run_effect(manifest: dict, root: Path, control: Path, output: Path, api_factory) -> dict:
