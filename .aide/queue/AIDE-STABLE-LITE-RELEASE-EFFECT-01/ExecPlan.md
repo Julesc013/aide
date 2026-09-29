@@ -631,3 +631,11 @@ retained in this WorkUnit. Obtain independent exact technical release review
 before moving this candidate to `dev`; the earlier `9cfa91da` ACCEPT remains
 bound only to older bytes. Ten exact historical owner decisions still gate
 main, tag and publication.
+
+Independent `/root/stable_effect_review` **ACCEPTED** exact subject
+`222fa60e`/tree `c8554266` for dev source and artifact integration only.
+The verdict is recorded in
+`evidence/current-runner-technical-review-222fa60e-2026-09-29.md`.
+It does not accept the final release effect or resolve the ten owner-only
+historical message decisions. Recheck refs, fast-forward `dev` if clean, and
+observe the remote identity.

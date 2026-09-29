@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: in_progress
-planning_state: current_runner_exact_byte_release_review
-result: CURRENT_RUNNER_LOCAL_CANDIDATE_QUALIFIED_REVIEW_PENDING
+planning_state: current_runner_dev_integration_ready
+result: CURRENT_RUNNER_EXACT_TECHNICAL_ACCEPT_FOR_DEV
 updated_at: 2026-09-29
-current_slice: current_runner_exact_release_review
-next_slice: independent_review_then_qualified_dev_integration
+current_slice: current_runner_dev_integration
+next_slice: fast_forward_dev_after_ref_recheck
 review_gate: current_byte_release_ACCEPT_recorded_ten_historical_owner_dispositions_before_main
 main_promotion_performed: false
 tag_created: false

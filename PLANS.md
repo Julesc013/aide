@@ -4366,3 +4366,6 @@ six current-byte consumers, 12 delivered job forms and 36 Q47/Q48 cases
 passed under the D owner, with zero-change generator replay. Independent
 technical review is next, then qualified `dev` integration. Main, tag and
 publication still require the ten unresolved exact owner dispositions.
+Independent exact technical review accepted `222fa60e` for dev source and
+artifact integration. Recheck the graph and fast-forward dev; preserve final
+release-effect acceptance and the owner-only main gate separately.

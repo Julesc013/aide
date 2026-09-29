@@ -12845,3 +12845,7 @@ Postcommit export, stable, changelog, bundle and draft replays changed zero
 tracked files. All named jobs retired scratch and released reservations.
 This packet awaits independent exact-byte technical review and `dev`
 integration; it does not establish main promotion or a published release.
+Independent `/root/stable_effect_review` accepted exact `222fa60e`/tree
+`c8554266` for dev integration after read-only evidence and lineage checks.
+Its limits are in the WorkUnit review record; final effect acceptance and
+main/tag/publication remain separate gates.
