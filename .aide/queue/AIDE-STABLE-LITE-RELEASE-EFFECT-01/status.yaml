@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: in_progress
-planning_state: parser_safe_technical_release_accepted
-result: PARSER_SAFE_TECHNICAL_ACCEPT_MAIN_GATED
+planning_state: parser_safe_technical_release_integrated_in_dev
+result: PARSER_SAFE_DEV_INTEGRATED_MAIN_HISTORY_GATED
 updated_at: 2026-09-29
-current_slice: exact_review_ab1a797d_accepted
-next_slice: integrate_accepted_candidate_into_dev_then_owner_history_gate
+current_slice: dev_9a8af184_remote_observed
+next_slice: exact_ten_historical_owner_decisions_then_main_range
 review_gate: ten_historical_owner_dispositions_before_main
 main_promotion_performed: false
 tag_created: false

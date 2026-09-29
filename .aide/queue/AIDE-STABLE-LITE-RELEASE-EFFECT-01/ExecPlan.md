@@ -512,3 +512,11 @@ not rerun bulk tests. Its exact verdict is in
 `evidence/technical-release-accept-ab1a797d.md`. Integrate the accepted
 candidate into `dev` after current ancestry and clean-state checks. The ten
 historical owner decisions still block `main`; no tag or publication followed.
+
+Local `dev` fast-forwarded from `2cd254df` to `9a8af184`, tree `2c2b986f`,
+and the observed remote `dev` matches. The ten new commit messages passed
+their range check. The full `main..dev` check still fails on exactly ten
+undispositioned historical message commits among 523 examined; the three
+earlier A/B/C dispositions remain effective. The exact integration receipt is
+`evidence/parser-safe-dev-integration-2026-09-29.md`. No main, tag or public
+release effect was attempted.
