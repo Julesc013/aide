@@ -432,3 +432,18 @@ hash stayed `798f44df`; no asset regeneration followed this source-only
 integration. The exact integration and unchanged-release limit are in
 `evidence/changelog-canonical-dev-integration-2026-09-29.md`. The full
 `main..dev` check still fails only on the ten owner-only historical records.
+
+## 2026-09-29 current-source live-host admission boundary
+
+Current-runner Lite candidate bytes reached remote `dev@9bef74f1` through
+the stable release WorkUnit. A one-turn read-only Codex qualification job is
+prepared in ignored local state, bound to that exact source and installed
+versioned `codex-cli 0.145.0` bytes. `job inspect` correctly returned
+`REFUSED` with `writes: false` because the selected local configuration has
+no matching model permission. The initial launcher path failed earlier at a
+reparse-point guard; the actual versioned ordinary path resolved that without
+copying the executable. Details and hashes are in
+`evidence/live-host-readiness-2026-09-29.md`. No turn, new worktree or heavy
+job was launched. The next host effect requires the separate explicit local
+model/effort permission; synthetic tests and current delivered-byte consumers
+remain useful but do not replace the live effect or matched outcome proof.
