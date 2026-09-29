@@ -12833,3 +12833,15 @@ raw test now passes without that variable, and the D-managed Q34 suite still
 passes 12/12 without tracked preview drift. The production guard and runner
 code are unchanged from the first reviewed subject; a focused rereview is
 pending on the test and documentation repair.
+
+The accepted bounded changelog source reached `dev@cbe6c78b`. From that
+source, the current-runner release WorkUnit generated and committed the pack,
+four stable 1.0.0 assets, changelog projection and Q47/Q48 preview views.
+The exact local packet is `release-effect-manifest-1.0.0-current-runner.json`;
+ZIP SHA-256 `27948415530f260479c249b2d8cc956792eff4c77a524f0225f61f1f3f2ef7b1`.
+D-managed checks passed: 52/52 runner source tests, 12/12 Q34 cases, 36/36
+Q47/Q48 cases, 12 delivered job forms and six serial current-byte consumers.
+Postcommit export, stable, changelog, bundle and draft replays changed zero
+tracked files. All named jobs retired scratch and released reservations.
+This packet awaits independent exact-byte technical review and `dev`
+integration; it does not establish main promotion or a published release.

@@ -616,3 +616,18 @@ exit, peaks and retirement; no model polling. Prevalidate structured commits
 and stage explicit paths. If generation fails, preserve the failed receipt,
 repair source or projections without weakening the oracle, and requalify the
 changed dependency closure. No extra workspace or archive copy is needed.
+
+The new local candidate is bound in
+`evidence/release-effect-manifest-1.0.0-current-runner.json` and
+`evidence/current-runner-local-candidate-2026-09-29.md`. Pack source
+`0795eefe`, pack projection `d906bb2e`, asset commit `4d77183f`, and
+preview-view commit `8bf41b93` identify the chain. ZIP SHA-256 is
+`27948415530f260479c249b2d8cc956792eff4c77a524f0225f61f1f3f2ef7b1`.
+The D-managed export, stable build and validation, 36/36 Q47/Q48 tests,
+12/12 delivered job forms, and six serial exact-byte consumers passed. Export,
+stable, changelog, bundle and draft postcommit replay each changed zero tracked
+files. The two compact consumer summaries and inner/outer managed receipts are
+retained in this WorkUnit. Obtain independent exact technical release review
+before moving this candidate to `dev`; the earlier `9cfa91da` ACCEPT remains
+bound only to older bytes. Ten exact historical owner decisions still gate
+main, tag and publication.

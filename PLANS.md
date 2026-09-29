@@ -4359,3 +4359,10 @@ regression; the superseding test/docs repair passed raw and D-managed paths.
 Independent source review ACCEPTed exact `0063ab23`, now in remote `dev`
 through `c0e07b08`. The older accepted 1.0.0 asset hash is unchanged; any
 replacement release bytes require their own build and qualification.
+
+The current-runner 1.0.0 candidate now has a new exact local effect packet
+under `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. Its ZIP hash is `27948415`;
+six current-byte consumers, 12 delivered job forms and 36 Q47/Q48 cases
+passed under the D owner, with zero-change generator replay. Independent
+technical review is next, then qualified `dev` integration. Main, tag and
+publication still require the ten unresolved exact owner dispositions.
