@@ -129,6 +129,34 @@ class EfficiencyWaitTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "absolute child"):
             self.wait()
 
+    def test_duplicate_receipt_key_cannot_hide_ambiguous_terminal(self):
+        self.receipt()
+        path = self.retained / JOB_ID / "receipt.json"
+        path.write_text('{"phase":"collected",' + path.read_text(encoding="utf-8")[1:],
+                        encoding="utf-8")
+        self.assertEqual(self.wait()["status"], "EVIDENCE_UNAVAILABLE")
+
+    def test_nonfinite_receipt_number_cannot_pass(self):
+        self.receipt()
+        path = self.retained / JOB_ID / "receipt.json"
+        raw = path.read_text(encoding="utf-8")
+        self.assertIn('"scratch_bytes": 123', raw)
+        path.write_text(raw.replace('"scratch_bytes": 123', '"scratch_bytes": NaN'),
+                        encoding="utf-8")
+        self.assertEqual(self.wait()["status"], "EVIDENCE_UNAVAILABLE")
+
+    def test_parser_recursion_is_bounded_evidence_failure(self):
+        self.receipt()
+        original = json.loads
+
+        def deep_receipt(data, *args, **kwargs):
+            if b'"phase"' in data:
+                raise RecursionError("injected parser depth")
+            return original(data, *args, **kwargs)
+
+        with mock.patch.object(lite.json, "loads", side_effect=deep_receipt):
+            self.assertEqual(self.wait()["status"], "EVIDENCE_UNAVAILABLE")
+
     def test_portable_cli_without_source_checkout(self):
         self.receipt()
         consumer = self.root / "consumer" / ".aide" / "scripts"
