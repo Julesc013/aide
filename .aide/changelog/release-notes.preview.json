@@ -1,58 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "cec72cb6f2d7",
-      "summary": "Obtain exact-source review and integrate into dev."
-    },
-    {
-      "commit": "8f10a66b3f0a",
-      "summary": "Obtain scoped independent review of this superseding commit."
-    },
-    {
-      "commit": "6e35ea1379da",
-      "summary": "Verify current refs, integrate accepted source into dev and qualify delivered bytes."
-    },
-    {
-      "commit": "74c811f3b77e",
-      "summary": "Build the portable pack through the existing D-managed export job."
-    },
-    {
-      "commit": "a233225073e7",
-      "summary": "Recheck postcommit replay and build exact stable assets."
-    },
-    {
-      "commit": "25e74785fedd",
-      "summary": "Run postcommit stable replay and extracted-byte attribution consumer."
-    },
-    {
-      "commit": "6a15a7dd5e3b",
-      "summary": "Obtain exact policy review, regenerate current preview and final local bytes."
-    },
-    {
-      "commit": "68192b3696e6",
-      "summary": "Generate and test the final local pack and stable assets."
-    },
-    {
-      "commit": "b58895e80515",
-      "summary": "Replay the committed pack generator and build stable assets."
-    },
-    {
-      "commit": "e26604f1476a",
-      "summary": "Replay generator and qualify extracted final bytes and effect mapping."
-    },
-    {
-      "commit": "b65f9ef37598",
-      "summary": "Replay committed bundle, then generate and validate local draft."
-    },
-    {
-      "commit": "5dac6c0c25ba",
-      "summary": "Replay draft and freeze exact 38-form technical effect evidence."
-    },
-    {
-      "commit": "a681da82c1f0",
-      "summary": "Obtain independent effect review; integrate accepted source into dev."
-    },
-    {
       "commit": "b11af55d728d",
       "summary": "Recheck refs and range, then fast-forward and observe dev."
     },
@@ -199,99 +147,67 @@
     {
       "commit": "3cc6bf1362ac",
       "summary": "Fast-forward dev after current ancestry validation; requalify changed release bytes separately."
+    },
+    {
+      "commit": "f26fa5b3d5fc",
+      "summary": "Build and validate separate stable assets from this committed pack; qualify exact bytes before release effect."
+    },
+    {
+      "commit": "8e9c1c0c2a14",
+      "summary": "Prove zero-change replay and run bounded current-byte fresh/brownfield and CLI checks."
+    },
+    {
+      "commit": "6861954be306",
+      "summary": "Verify zero-change preview replay and freeze the exact current-byte release effect packet."
+    },
+    {
+      "commit": "9cfa91da710d",
+      "summary": "Obtain exact independent technical release ACCEPT before dev integration, main, tag or publication."
+    },
+    {
+      "commit": "5eac25c21ba3",
+      "summary": "Fast-forward and observe dev; keep release publication gates separate."
+    },
+    {
+      "commit": "2dfc7e986030",
+      "summary": "Await the exact owner decisions before main, tag and publication; continue independent campaign work."
+    },
+    {
+      "commit": "9035550d32f1",
+      "summary": "Continue independent efficiency work while awaiting exact owner decisions."
+    },
+    {
+      "commit": "6f8dee6f12d4",
+      "summary": "Complete the gated release effects after owner decisions; continue wider efficiency work."
+    },
+    {
+      "commit": "8ee5b4b98c02",
+      "summary": "Obtain exact source review before dev integration; keep release effect frozen."
+    },
+    {
+      "commit": "0063ab234484",
+      "summary": "Obtain exact delta review before dev integration."
+    },
+    {
+      "commit": "c0e07b083040",
+      "summary": "Fast-forward dev after exact current-ref checks; retain release byte identities."
+    },
+    {
+      "commit": "cbe6c78b5047",
+      "summary": "Requalify changed bytes only when a coherent new release source is frozen."
+    },
+    {
+      "commit": "0795eefe1b11",
+      "summary": "Build the portable pack under the approved D runner from this clean source."
     }
   ],
   "highlights": [
     {
       "breaking": false,
       "category": "Added",
-      "commit": "cec72cb6f2d7",
-      "subject": "feat(efficiency): attribute bounded Codex attempt streams",
-      "summary": "Bounded attempt attribution for supplied Codex usage streams."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "6a15a7dd5e3b",
-      "subject": "feat(release): declare bounded Lite attempt usage form",
-      "summary": "Candidate Lite attempt usage form with partial accounting semantics."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
       "commit": "36ada987bfe0",
       "subject": "feat(host): prepare bounded API-set loader effect source",
       "summary": "Bounded source for an optional native API-set loader observation."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "6e35ea1379da",
-      "subject": "docs(efficiency): record accepted attempt attribution review",
-      "summary": "Record accepted portable attempt attribution source review."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "74c811f3b77e",
-      "subject": "build(release): refresh Lite attribution changelog preview",
-      "summary": "Refresh local Lite attribution release preview."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "a233225073e7",
-      "subject": "build(release): refresh Lite pack with attempt attribution",
-      "summary": "Refresh local portable Lite pack for attempt attribution."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "25e74785fedd",
-      "subject": "build(release): refresh unpublished Lite attribution assets",
-      "summary": "Refresh local Lite stable candidate assets."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "68192b3696e6",
-      "subject": "build(release): bind reviewed attribution form to preview",
-      "summary": "Bind candidate attempt usage form to local Lite preview."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "b58895e80515",
-      "subject": "build(release): export reviewed 38-form Lite pack",
-      "summary": "Export the reviewed 38-form Lite candidate policy."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "e26604f1476a",
-      "subject": "build(release): freeze 38-form Lite local assets",
-      "summary": "Freeze local 38-form Lite asset candidate."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "b65f9ef37598",
-      "subject": "build(release): bind 38-form preview to pack source",
-      "summary": "Bind local Lite preview bundle to exact pack source."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "5dac6c0c25ba",
-      "subject": "docs(release): refresh local 38-form Lite draft",
-      "summary": "Refresh unpublished Lite 1.0.0 draft for 38 forms."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "a681da82c1f0",
-      "subject": "docs(release): freeze current 38-form Lite effect evidence",
-      "summary": "Freeze unpublished Lite 1.0.0 attribution release evidence."
     },
     {
       "breaking": false,
@@ -373,13 +289,6 @@
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "8f10a66b3f0a",
-      "subject": "fix(efficiency): refuse malformed Codex attempt rosters",
-      "summary": "Malformed attempt rosters now receive bounded refusal."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
       "commit": "5b99329a3e56",
       "subject": "fix(efficiency): refuse ambiguous managed job evidence",
       "summary": "Managed job observation refuses ambiguous receipt JSON."
@@ -414,6 +323,20 @@
     },
     {
       "breaking": false,
+      "category": "Fixed",
+      "commit": "8ee5b4b98c02",
+      "subject": "fix(execution): admit bounded source changelog previews",
+      "summary": "Source changelog previews can use finite managed-job storage admission."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "0063ab234484",
+      "subject": "test(execution): preserve raw Q34 discovery after isolated preview",
+      "summary": "Q34 validation runs in both managed and documented raw discovery modes."
+    },
+    {
+      "breaking": false,
       "category": "Docs",
       "commit": "53c5484a9fd7",
       "subject": "docs(changelog): bind parser-safe Lite preview to pack source",
@@ -422,58 +345,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "cec72cb6f2d7",
-      "summary": "Supplied rosters cannot prove every work attempt or internal host request."
-    },
-    {
-      "commit": "8f10a66b3f0a",
-      "summary": "Complete work usage and live host requests remain unknown."
-    },
-    {
-      "commit": "6e35ea1379da",
-      "summary": "Complete work usage, live host behavior and release assets remain unqualified."
-    },
-    {
-      "commit": "74c811f3b77e",
-      "summary": "Stable bytes, consumers and live host effect remain unqualified for this source."
-    },
-    {
-      "commit": "a233225073e7",
-      "summary": "This is a local pack candidate, not published stable release evidence."
-    },
-    {
-      "commit": "25e74785fedd",
-      "summary": "Local validated files are not a published release or host acceptance."
-    },
-    {
-      "commit": "6a15a7dd5e3b",
-      "summary": "Supplied streams do not prove complete work usage or internal model requests."
-    },
-    {
-      "commit": "68192b3696e6",
-      "summary": "Prior 37-form effects and asset bytes do not qualify this policy revision."
-    },
-    {
-      "commit": "b58895e80515",
-      "summary": "This is a local pack candidate, not a published release."
-    },
-    {
-      "commit": "e26604f1476a",
-      "summary": "These bytes remain local and unpublished; live model usage is unknown."
-    },
-    {
-      "commit": "b65f9ef37598",
-      "summary": "Preview and bundle are local; no tag, upload or release publication occurred."
-    },
-    {
-      "commit": "5dac6c0c25ba",
-      "summary": "Draft generation is not a tag, upload or published release."
-    },
-    {
-      "commit": "a681da82c1f0",
-      "summary": "No live model usage, main promotion, tag, upload or publication is claimed."
-    },
     {
       "commit": "b11af55d728d",
       "summary": "This verdict does not authorize publication or establish complete work usage."
@@ -621,64 +492,64 @@
     {
       "commit": "3cc6bf1362ac",
       "summary": "Live model effects, power-loss behavior and delivered Lite bytes remain unqualified."
+    },
+    {
+      "commit": "f26fa5b3d5fc",
+      "summary": "This is a local export candidate, not accepted stable release bytes or live model qualification."
+    },
+    {
+      "commit": "8e9c1c0c2a14",
+      "summary": "These local assets still need post-commit replay, current-byte consumer qualification and independent effect review."
+    },
+    {
+      "commit": "6861954be306",
+      "summary": "Previews are not stable release acceptance or publication; post-commit replay remains."
+    },
+    {
+      "commit": "9cfa91da710d",
+      "summary": "The changelog projection used the direct deterministic CLI because the bounded runner does not admit that canonical destination."
+    },
+    {
+      "commit": "5eac25c21ba3",
+      "summary": "Ten owner historical decisions and main range validation still gate main, tag and publication."
+    },
+    {
+      "commit": "2dfc7e986030",
+      "summary": "Ten exact owner decisions remain absent; the local candidate is not published."
+    },
+    {
+      "commit": "9035550d32f1",
+      "summary": "Main, tag and publication remain gated by ten historical owner decisions."
+    },
+    {
+      "commit": "6f8dee6f12d4",
+      "summary": "Ten historical owner decisions and publication evidence remain absent."
+    },
+    {
+      "commit": "8ee5b4b98c02",
+      "summary": "Source-checkout alternate output directories now refuse; extracted Lite fixture behavior remains available."
+    },
+    {
+      "commit": "0063ab234484",
+      "summary": "The first source candidate remains rejected until focused independent rereview."
+    },
+    {
+      "commit": "c0e07b083040",
+      "summary": "Frozen stable assets were not rebuilt or reviewed for this newer source."
+    },
+    {
+      "commit": "cbe6c78b5047",
+      "summary": "This source is not included in the previously accepted 1.0.0 archive."
+    },
+    {
+      "commit": "0795eefe1b11",
+      "summary": "New generated bytes must receive their own exact technical review."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "3cc6bf1362aca510aced28ddbab485d4e39317d7",
-  "source_range": "3cc6bf1362aca510aced28ddbab485d4e39317d7 latest 50 commits",
+  "source_head": "0795eefe1b114ba16514ff3881ec3d68834158ce",
+  "source_range": "0795eefe1b114ba16514ff3881ec3d68834158ce latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "cec72cb6f2d7",
-      "summary": "PASS: D-managed red suite exposed four absent-attribution errors."
-    },
-    {
-      "commit": "8f10a66b3f0a",
-      "summary": "PASS: D-managed red repair run exposed two malformed-input errors."
-    },
-    {
-      "commit": "6e35ea1379da",
-      "summary": "PASS: reviewer accepted exact source 8f10a66b against dev dbf216c3."
-    },
-    {
-      "commit": "74c811f3b77e",
-      "summary": "PASS: changelog preview produced 50 commits with zero malformed messages."
-    },
-    {
-      "commit": "a233225073e7",
-      "summary": "PASS: D-managed export job 637334ac exited successfully and retired scratch."
-    },
-    {
-      "commit": "25e74785fedd",
-      "summary": "PASS: D-managed stable build job 98b9d585 completed and retired scratch."
-    },
-    {
-      "commit": "6a15a7dd5e3b",
-      "summary": "PASS: delivered ZIP exercised the form and malformed refusal in 12 observations."
-    },
-    {
-      "commit": "68192b3696e6",
-      "summary": "PASS: independent review accepted policy commit 6a15a7dd."
-    },
-    {
-      "commit": "b58895e80515",
-      "summary": "PASS: D-managed export job d9700fa6 completed and retired scratch."
-    },
-    {
-      "commit": "e26604f1476a",
-      "summary": "PASS: D-managed stable build 27426547 and validate dcce6f75."
-    },
-    {
-      "commit": "b65f9ef37598",
-      "summary": "PASS: changelog preview and validate with zero malformed messages."
-    },
-    {
-      "commit": "5dac6c0c25ba",
-      "summary": "PASS: bundle replay 70c90d87 changed zero tracked files."
-    },
-    {
-      "commit": "a681da82c1f0",
-      "summary": "PASS: 38 policy forms mapped to 39 consumer outputs and 12 job observations."
-    },
     {
       "commit": "b11af55d728d",
       "summary": "PASS: reviewer accepted a681da82 for local technical effect and dev integration."
@@ -826,6 +697,58 @@
     {
       "commit": "3cc6bf1362ac",
       "summary": "PASS: independent reviewer accepted exact superseding source for dev integration."
+    },
+    {
+      "commit": "f26fa5b3d5fc",
+      "summary": "PASS: D-managed export job 8567381c exited zero, retired scratch and released reservation."
+    },
+    {
+      "commit": "8e9c1c0c2a14",
+      "summary": "PASS: D-managed stable build job 427c1d52 exited zero with scratch retired and reservation released."
+    },
+    {
+      "commit": "6861954be306",
+      "summary": "PASS: changelog preview and validate bound source head 3cc6bf13 with 50 commits and zero malformed messages."
+    },
+    {
+      "commit": "9cfa91da710d",
+      "summary": "PASS: six exact-byte consumer jobs, 36 Q47/Q48 tests, 12 delivered job forms and 51 managed-workspace source tests."
+    },
+    {
+      "commit": "5eac25c21ba3",
+      "summary": "PASS: exact subject and base refs matched the review; worktree diff check passed."
+    },
+    {
+      "commit": "2dfc7e986030",
+      "summary": "PASS: five new commit messages, clean fast-forward, remote dev observation and unchanged asset hashes."
+    },
+    {
+      "commit": "9035550d32f1",
+      "summary": "PASS: current effect digest and dev ancestor checked against exact integration evidence."
+    },
+    {
+      "commit": "6f8dee6f12d4",
+      "summary": "PASS: exact verdict, manifest digest, dev integration receipt and asset digest checked."
+    },
+    {
+      "commit": "8ee5b4b98c02",
+      "summary": "PASS: expected red unknown-destination regression, then green focused check."
+    },
+    {
+      "commit": "0063ab234484",
+      "summary": "PASS: focused raw Q34 test without AIDE_JOB_TMP and D process-local temporary roots."
+    },
+    {
+      "commit": "c0e07b083040",
+      "summary": "PASS: reviewed source and test hashes match the recorded subject and D receipt."
+    },
+    {
+      "commit": "cbe6c78b5047",
+      "summary": "PASS: three new structured commits, clean fast-forward, remote dev observation and unchanged ZIP hash."
+    },
+    {
+      "commit": "0795eefe1b11",
+      "summary": "PASS: clean dev base and idle D owner observed before task branch creation."
     }
   ],
   "warnings": []
