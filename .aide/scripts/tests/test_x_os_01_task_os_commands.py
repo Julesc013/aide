@@ -143,6 +143,28 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             parsed = parser.parse_args(command)
             self.assertTrue(callable(getattr(parsed, "handler", None)), command)
 
+    def test_next_plan_inspects_without_rewriting_report_by_default(self) -> None:
+        parser = aide_lite.build_parser(REPO_ROOT)
+        self.assertFalse(parser.parse_args(["task", "next-plan"]).write_report)
+        self.assertTrue(parser.parse_args(["task", "next-plan", "--write-report"]).write_report)
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            report = root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH
+            report.write_text("older retained snapshot\n", encoding="utf-8")
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                exit_code = aide_lite.command_task_next_plan(argparse.Namespace(repo_root=root, write_report=False))
+            self.assertEqual(exit_code, 0)
+            self.assertEqual(report.read_text(encoding="utf-8"), "older retained snapshot\n")
+            self.assertIn("non_mutating: true", output.getvalue())
+            self.assertNotIn("report:", output.getvalue())
+
+            with contextlib.redirect_stdout(io.StringIO()):
+                exit_code = aide_lite.command_task_next_plan(argparse.Namespace(repo_root=root, write_report=True))
+            self.assertEqual(exit_code, 0)
+            self.assertIn("selected_next_workunit:", report.read_text(encoding="utf-8"))
+
     def test_fixture_report_generation_is_no_apply(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

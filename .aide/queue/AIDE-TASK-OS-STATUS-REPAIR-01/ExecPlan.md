@@ -97,3 +97,29 @@ queue now says `Review current AIDE queue WorkUnits`, gives the historical
 `needs_review` reason, and reports lifecycle-plan readiness false. This does
 not infer the next campaign priority or authorize lifecycle apply. Freeze the
 source subject for independent review before any dev or release projection.
+
+## 2026-09-29 non-mutating next-plan inspection
+
+Objective: make `task next-plan` inspection read-only by default, consistent
+with `task status`, while preserving explicit generation of its tracked report.
+The current command writes `.aide/reports/task-os-next-plan.md` even for a
+simple queue query; the tracked snapshot is already older than the current
+selector. This causes avoidable report churn and can confuse snapshot truth
+with live queue truth.
+
+Scope: this WorkUnit, the existing CLI handler/parser, and focused Task OS
+tests. Add a regression showing the default command leaves a sentinel report
+unchanged and an explicit `--write-report` refreshes it. Preserve the direct
+report writer and its other callers. Run the focused suite with process-local
+D scratch, read-only check on the actual queue, source checks and independent
+changed-scope review before dev integration. Keep release bytes frozen until
+the coherent current-source release projection.
+
+The new 12-case suite failed red because the parser had no `write_report`
+option. After the CLI repair, X-OS-01 passed 12/12 and X-OS-00 passed 9/9 with
+process-local D scratch. AST and `git diff --check` passed. An actual
+`task next-plan` query returned the live current-queue review fallback while
+the tracked report hash stayed unchanged. The initial X-OS-00 command used an
+incorrect file pattern and ran zero tests; the corrected command passed 9/9.
+Keep the tracked report as an older snapshot until an explicit release
+projection; do not claim that inspection regenerated it.

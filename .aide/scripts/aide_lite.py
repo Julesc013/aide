@@ -38993,15 +38993,19 @@ def command_task_resume_plan(args: argparse.Namespace) -> int:
 
 
 def command_task_next_plan(args: argparse.Namespace) -> int:
-    result = write_task_os_next_plan(args.repo_root)
+    write_report = getattr(args, "write_report", False)
+    result = write_task_os_next_plan(args.repo_root) if write_report else None
     context = task_os_context(args.repo_root)
     selection = task_os_next_selection(context)
     print("AIDE Lite task next-plan")
     print("result: PASS")
     print(f"selected_next_workunit: {selection.get('task', 'review current task evidence')}")
-    print(f"report: {TASK_OS_NEXT_PLAN_REPORT_PATH} ({result.action})")
+    print(f"reason: {selection.get('reason', '')}")
+    if result is not None:
+        print(f"report: {TASK_OS_NEXT_PLAN_REPORT_PATH} ({result.action})")
     print(f"aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}")
     print(f"lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}")
+    print(f"non_mutating: {str(not write_report).lower()}")
     print("report_only: true")
     print("task_execution: false")
     return 0
@@ -45607,7 +45611,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_subparsers.add_parser("repair-plan").set_defaults(handler=command_task_repair_plan)
     task_subparsers.add_parser("requeue-plan").set_defaults(handler=command_task_requeue_plan)
     task_subparsers.add_parser("resume-plan").set_defaults(handler=command_task_resume_plan)
-    task_subparsers.add_parser("next-plan").set_defaults(handler=command_task_next_plan)
+    task_next_plan_parser = task_subparsers.add_parser("next-plan")
+    task_next_plan_parser.add_argument("--write-report", action="store_true", help="Explicitly refresh the tracked Task OS next-plan report")
+    task_next_plan_parser.set_defaults(handler=command_task_next_plan)
     task_noop_parser = task_subparsers.add_parser("noop-check")
     task_noop_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_noop_parser.set_defaults(handler=command_task_noop_check)
