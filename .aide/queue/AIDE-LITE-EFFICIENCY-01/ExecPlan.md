@@ -369,3 +369,10 @@ exit zero, no skips, scratch absent and reservation released. The final
 manifest, receipt and tested input hashes are appended to the same evidence
 record. Freeze this changed source for scoped independent rereview. The
 unpublished 1.0.0 bytes remain the earlier accepted subject.
+
+Independent `/root/native_os_build_review` accepted exact superseding source
+`48235e9a`/tree `be0db1b9` for `dev` integration after reviewing the alias
+repair and retained receipts. The verdict and limitations are recorded in
+`evidence/codex-repeat-guard-2026-09-29.md`. Integrate the frozen source into
+`dev` after checking the current refs; changed Lite bytes require separate
+delivered-artifact qualification.

@@ -89,3 +89,23 @@ active job. Final tested source SHA-256 values are:
 
 The test manifest also binds the unchanged CLI and Windows Job host hashes
 listed above. No canonical pack or stable assets were rebuilt in this slice.
+
+## Superseding independent source verdict
+
+Reviewer `/root/native_os_build_review` returned **ACCEPT** for `dev` source
+integration of exact superseding commit
+`48235e9a43397e775102979214f0401dc3ccaaf7`, tree
+`be0db1b9ad9212a691a6e15accd549c7e020e686`, against
+`dev@ef0ecf1b6674ccf5ce0694398e37d66e4b3fdd95`. The reviewer
+verified this evidence record's SHA-256
+`538441e431e42575c154814dc477a8bebfa93a72223fdfb4c586d614cbd6029f`,
+committed source/test hashes, a clean diff, and the retained red/green/full
+receipts. The earlier case and trailing-separator bypass is closed by
+filesystem identity for the working directory, content-bound inputs with
+explicit prompt/schema roles, and refusal of duplicate file identities.
+Durable dispatch history remains bounded and fail-closed before host launch.
+
+The verdict applies to mediated `codex_exec` source integration. Live model
+behavior, power-loss durability and delivered Lite release bytes remain
+unqualified. It does not supersede the first candidate's REQUEST_CHANGES or
+authorize model requests, main promotion, tags or publication.
