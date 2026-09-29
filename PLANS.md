@@ -4353,3 +4353,9 @@ rewrote six tracked previews was moved to an isolated D temporary output.
 The source branch passed 52 managed-workspace cases, 12 Q34 cases and a real
 bounded changelog generation with zero tracked drift. Independent source
 review and dev integration remain pending; frozen 1.0.0 assets are unchanged.
+
+The first changelog admission subject was rejected for a raw Q34 test
+regression; the superseding test/docs repair passed raw and D-managed paths.
+Independent source review ACCEPTed exact `0063ab23`, now in remote `dev`
+through `c0e07b08`. The older accepted 1.0.0 asset hash is unchanged; any
+replacement release bytes require their own build and qualification.

@@ -425,3 +425,10 @@ REQUEST_CHANGES. Its exact verdict and limits are recorded in
 `evidence/changelog-canonical-review-0063ab23.md`. Add only an evidence
 closeout, then fast-forward `dev` after current remote and clean-state checks.
 The accepted 1.0.0 release bytes stay frozen and separate.
+
+Local `dev` fast-forwarded from `6f8dee6f` to evidence closeout `c0e07b08`,
+and remote `dev` was observed at the same full object. The existing stable ZIP
+hash stayed `798f44df`; no asset regeneration followed this source-only
+integration. The exact integration and unchanged-release limit are in
+`evidence/changelog-canonical-dev-integration-2026-09-29.md`. The full
+`main..dev` check still fails only on the ten owner-only historical records.
