@@ -455,3 +455,12 @@ Independent `/root/stable_effect_review` accepted exact release-body commit
 `3efcb932`, tree `893085c5`, for dev inclusion. Four asset hashes and the
 embedded installation sequence matched; the review did not grant stable
 release acceptance or publication.
+
+Independent `/root/stable_builder_repair_review` now gives the stricter
+technical release **ACCEPT** required by the version policy for exact dev
+`b9f720b5`, tree `5837a1ca`, effect manifest SHA-256 `747d3b0a` and its
+four frozen assets. This is not merely advisory preflight. The ten exact
+historical owner-message decisions and passing full `main..dev` range are
+still required before promotion; tag/publication and downloaded-byte checks
+remain unperformed. The review record is in
+`evidence/technical-release-accept-b9f720b5.md`.

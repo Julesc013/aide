@@ -1,5 +1,13 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
+**2026-09-29 technical release verdict:** An independent reviewer gave the
+strict technical release **ACCEPT** for exact Windows Lite effect manifest
+SHA-256 `747d3b0a…` at `dev@b9f720b5`, with all four frozen assets and 38
+public forms unchanged. The ten exact historical owner decisions and passing
+full main-range check are now the remaining prepublication gates. Main, tag,
+GitHub Release, downloaded assets and project rollout remain unobserved.
+Changed release bytes or claims require appropriate requalification.
+
 **2026-09-29 later Lite gate correction:** Remote `dev@b0c8dd92` includes the
 reviewed 38-form local effect, ZIP `6a56a494…` and tar `a8fa44bf…`. Six
 current-byte consumers, 12 delivered job observations and Q47/Q48 36/36 are
