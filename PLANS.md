@@ -4320,7 +4320,9 @@ parent release or remove the per-job resource preflight requirement.
 The next bounded efficiency increment guards the mediated Codex launch path
 against a repeated unchanged request. Keep its admitted fingerprints in the
 existing finite dispatch record, refuse unknown legacy request history, and
-require changed bound inputs or model/effort for another turn. Verify with
+require changed bound inputs or model/effort for another turn. Normalize
+Windows path aliases through stable filesystem identity and input content.
+Verify with
 synthetic Windows Job tests, exact source review and a changed-byte Lite
 release qualification before any new stable claim. Live model effects retain
 their separate local permission gate.

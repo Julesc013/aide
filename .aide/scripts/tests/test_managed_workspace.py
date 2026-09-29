@@ -152,6 +152,30 @@ class ManagedWorkspaceTests(unittest.TestCase):
         self.assertEqual(list(self.roots['scratch'].iterdir()), [])
         self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 1)
 
+    def test_codex_windows_path_aliases_cannot_repeat_or_duplicate_inputs(self):
+        job = self.codex_job()
+        self.config['codex_exec']['max_turns'] = 2
+        workspace.write_json(self.config_path, self.config)
+        host = mock.Mock()
+        host.run.return_value = {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        cwd_alias = {**job, 'cwd': job['cwd'].upper() + os.sep}
+        self.assertEqual(workspace.validate_job(cwd_alias, [self.source]), self.source)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'already admitted'):
+            workspace.run(self.config_path, cwd_alias, host=host, probe=lambda _: self.ample)
+        input_alias = {**job, 'prompt_file': job['prompt_file'].upper(),
+                       'schema_file': job['schema_file'].upper(),
+                       'inputs': {name.upper(): value for name, value in job['inputs'].items()}}
+        self.assertEqual(workspace.validate_job(input_alias, [self.source]), self.source)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'already admitted'):
+            workspace.run(self.config_path, input_alias, host=host, probe=lambda _: self.ample)
+        duplicate = {**job, 'inputs': {**job['inputs'],
+            job['prompt_file'].upper(): job['inputs'][job['prompt_file']]}}
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'duplicate Codex input alias'):
+            workspace.run(self.config_path, duplicate, host=host, probe=lambda _: self.ample)
+        self.assertEqual(host.run.call_count, 1)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+
     def test_codex_changed_effort_is_a_new_bound_request(self):
         job = self.codex_job()
         self.config['codex_exec']['max_turns'] = 2

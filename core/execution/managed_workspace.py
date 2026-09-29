@@ -394,9 +394,18 @@ def dispatch_state(control):
 
 
 def codex_request_digest(job):
-    # Labels do not make the same source, context and model a new request.
-    return digest({key: job[key] for key in ('cwd', 'source_commit', 'source_tree',
-        'executable_sha256', 'inputs', 'prompt_file', 'schema_file', 'model', 'effort')})
+    # Windows path spellings can alias the same directory and input files.
+    # Labels and filename casing do not make the same content a new request.
+    cwd_info = ordinary(job['cwd'], directory=True)
+    if cwd_info.st_ino <= 0:
+        raise WorkspaceRefused('Codex request requires stable working-root identity')
+    return digest({'cwd_identity': [cwd_info.st_dev, cwd_info.st_ino],
+        'source_commit': job['source_commit'], 'source_tree': job['source_tree'],
+        'executable_sha256': job['executable_sha256'],
+        'input_sha256s': sorted(set(job['inputs'].values())),
+        'prompt_sha256': job['inputs'][job['prompt_file']],
+        'schema_sha256': job['inputs'][job['schema_file']],
+        'model': job['model'].casefold(), 'effort': job['effort']})
 
 
 def require_codex_permission(config, job, dispatch):
@@ -605,11 +614,19 @@ def validate_job(job, working):
     inputs = job.get('inputs', {})
     if not inputs:
         raise WorkspaceRefused('source/dependency/oracle inputs required')
+    codex_input_identities = set()
     for relative, expected in inputs.items():
         path = cwd / relative
         if not path.is_relative_to(cwd) or '..' in Path(relative).parts or Path(relative).is_absolute():
             raise WorkspaceRefused('source input escape')
-        ordinary(path)
+        info = ordinary(path)
+        if adapter == 'codex_exec':
+            if info.st_ino <= 0:
+                raise WorkspaceRefused('Codex request requires stable input identity')
+            identity = (info.st_dev, info.st_ino)
+            if identity in codex_input_identities:
+                raise WorkspaceRefused('duplicate Codex input alias')
+            codex_input_identities.add(identity)
         for parent in path.parents:
             ordinary(parent, directory=True)
             if parent == cwd: break

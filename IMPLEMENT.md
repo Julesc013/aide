@@ -12787,3 +12787,16 @@ D-managed regression failed because the old owner launched the duplicate;
 the repaired focused Codex suite passed 11/11, and the full managed-workspace
 suite passed 50/50; both retired scratch and released reservations. Independent
 review, delivered bytes and live-model effects remain separate gates.
+
+The first exact source review requested changes: Windows case-only aliases in
+`cwd`, prompt/schema names and input keys produced different raw-string
+fingerprints for the same files. A D-managed alias regression reproduced the
+second turn; the repair binds the working directory by filesystem identity,
+uses input content and prompt/schema roles, and rejects duplicate input file
+identities. The focused alias case passed under the D owner. This supersedes
+the first source candidate; full-suite and exact rereview follow.
+
+The superseding full managed-workspace suite passed 51/51 in one bounded D
+job with no skips, scratch absent and reservation released. The reviewed
+source subject still needs an independent verdict and changed-byte Lite
+qualification; these synthetic hosts made no live model request.

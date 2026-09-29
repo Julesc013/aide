@@ -40,3 +40,52 @@ state without request identities refuses further Codex admission pending
 reconciliation. It does not control internal or unmediated model requests,
 qualify actual usage, or change the frozen 1.0.0 release bytes. Independent
 source review and delivered-byte qualification remain open.
+
+## Windows alias defect and superseding repair
+
+Independent `/root/native_os_build_review` returned **REQUEST_CHANGES** for
+frozen first source `d6581754faa2e59626daf5d12f378abacd8c3e7d`, tree
+`bbc84d377bc192397f86cd580cbfc4d05d2e881c`. The raw fingerprint used
+the spelling of `cwd`, `prompt_file`, `schema_file` and `inputs` keys; Windows
+accepted case-only and trailing-separator aliases for the same files. That
+allowed another turn under a two-turn local budget without new content.
+
+The new case in `test_managed_workspace.py` exercises the same working root
+under another case and separator, case-aliased prompt/schema keys, and a
+duplicate aliased input. On first source, D job
+`f0ca59ae15eb40efb9cb13062c2abb49` failed as expected because the
+second request was admitted; manifest SHA-256
+`bf261877f6ec26515c7f5b094d0c076e3af160e533d5c17d4da4b81b0d4c3428`,
+receipt SHA-256
+`7f33f9cbed98fa6977c3efb4b79c01c41c62bed088df944cc134037a5d2dbdb6`.
+After the repair, D job `25adacce00ea444bb6ff956853eafede` passed the
+one case; manifest SHA-256
+`5fa768c056d81d6e9c7a878abd2d37c31cd6ce5b02892b7b422bc0a7d187be09`,
+receipt SHA-256
+`52674a88cfbb08367fbd953f6a92fab8fb310a4b4d9209660015d110063da08b`.
+The job retired scratch and released its reservation.
+
+The request fingerprint now uses the working-root filesystem identity,
+source/tree, bound content hashes and explicit prompt/schema roles. Distinct
+paths to one input file are rejected within a Codex job; no stable file ID
+means refusal. The original 11/11 and 50/50 passes remain valid for the
+first source only. The superseding source still needs full affected tests and
+independent rereview, followed by changed-byte Lite qualification.
+
+The superseding full managed-workspace command passed **51/51**, no skips,
+in D job `46a3279f2b764476abc2ff2f7d2a0ac1`, exit zero, 69.458 seconds.
+Its local manifest SHA-256 is
+`0449299aa9a58c07f5978ed2437e44549f33736a2b1d78780b0c1b52aedd0a4c`;
+retained receipt SHA-256 is
+`aea7f1d31c501594b7581427cabc7850a38bc1d577722acec55b6314ad6f3a02`.
+Peak Job memory was 239,575,040 bytes and scratch 33,124 bytes. The receipt
+reports scratch absent and reservation released, and shared control has no
+active job. Final tested source SHA-256 values are:
+
+- `core/execution/managed_workspace.py`:
+  `5dbe24b8294fed0ac02bc8e187ad3f4fc1c185bc375b4856204ac9428aa8a0d4`.
+- `.aide/scripts/tests/test_managed_workspace.py`:
+  `c0f0356cae735ca488390ce6740e7b675047dce6ad84a0eea61d0d91df2f7962`.
+
+The test manifest also binds the unchanged CLI and Windows Job host hashes
+listed above. No canonical pack or stable assets were rebuilt in this slice.

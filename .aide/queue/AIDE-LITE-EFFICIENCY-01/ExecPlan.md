@@ -355,3 +355,17 @@ receipt hashes are in `evidence/codex-repeat-guard-2026-09-29.md`. Freeze the
 source candidate, verify these unchanged tested bytes, then obtain independent
 source/security review before `dev`. The existing stable archive has not been
 regenerated or requalified for this change.
+
+Independent `/root/native_os_build_review` returned **REQUEST_CHANGES** for
+first source `d6581754` because raw Windows path spelling could bypass the
+fingerprint. A case/sep alias for `cwd`, prompt/schema case aliases and an
+extra aliased input are now one regression. It failed on `d6581754` in D job
+`f0ca59ae`; after the identity/content repair it passed in D job `25adacce`.
+The first verdict remains rejected; obtain a superseding exact rereview after
+the full affected suite. No real Codex turn was run.
+
+Superseding full managed-workspace suite passed 51/51 in D job `46a3279f`;
+exit zero, no skips, scratch absent and reservation released. The final
+manifest, receipt and tested input hashes are appended to the same evidence
+record. Freeze this changed source for scoped independent rereview. The
+unpublished 1.0.0 bytes remain the earlier accepted subject.
