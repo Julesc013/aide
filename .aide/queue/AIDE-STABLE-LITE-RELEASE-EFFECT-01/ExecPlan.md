@@ -495,3 +495,11 @@ forms, 39 consumer outputs, twelve job-form observations, assets and receipts.
 Seek one independent technical release ACCEPT for that exact evidence subject
 before dev integration. Main, tag and publication remain gated by the ten
 owner dispositions, full range validation and final remote/consumer effects.
+
+Independent review of `c9bdab80` accepted the parser-safe source/evidence for
+dev integration but requested changes for technical release acceptance: the
+prepared public body still listed the old four asset hashes. Corrected its
+four rows at `7bdfc7e0` and mechanically matched each row to current stable
+bytes. The effect manifest now binds the exact public body hash and asset
+table. The stable ZIP/tar, consumer results and managed receipts are unchanged;
+obtain focused rereview of this superseding effect subject.
