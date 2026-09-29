@@ -570,3 +570,13 @@ The bounded runner does not admit `.aide/changelog` as a canonical output,
 so that small projection used the existing direct CLI. Record that launch
 path gap without weakening the current source or asset review. Ten exact
 historical owner decisions still gate `main`; no tag or publication occurred.
+
+Independent `/root/stable_effect_review` returned **ACCEPT** for exact local
+technical subject `9cfa91da`/tree `1caf7de0` and `dev` integration. The
+read-only review matched the four local asset hashes, public body, 38 forms,
+39 retained outputs, current consumer and managed-job receipts and zero-change
+replays; it did not rerun bulk suites. The exact verdict and its limits are in
+`evidence/technical-release-accept-9cfa91da-2026-09-29.md`. Record this in
+an evidence-only commit, then fast-forward and observe `dev` without changing
+the frozen subject. Main/tag/publication remain gated by ten owner decisions
+and a passing complete range check.
