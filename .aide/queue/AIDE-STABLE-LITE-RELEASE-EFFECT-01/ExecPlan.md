@@ -590,3 +590,29 @@ publication effect was attempted. The exact identities and result are in
 `evidence/efficiency-repeat-dev-integration-2026-09-29.md`. The next release
 action depends on the ten owner-only decisions already requested; continue
 other authorized campaign work while that gate is unresolved.
+
+## 2026-09-29 current-runner release requalification
+
+Objective: qualify one superseding local 1.0.0 candidate from clean
+`dev@cbe6c78b`, which includes the independently accepted bounded changelog
+source. The prior local technical ACCEPT remains tied to ZIP `798f44df` and
+must not be transferred to changed bytes. Reuse this WorkUnit, the sole
+checkout, existing D execution roots, current deterministic generator and
+consumer scripts. No new model, native, hosted or target-repo effect is part
+of this slice.
+
+Order: commit this bounded plan; generate and commit the portable pack from
+its clean source; build/validate and commit changed stable assets; generate
+the changelog through the now-admitted D canonical root, then Q47/Q48 preview
+views; test exact new archive bytes in the existing job-form and six serial
+consumer canaries; prove postcommit generator replay changed zero tracked
+files. Bind exact assets, source, tests, receipts and limitations in a new
+effect manifest. Obtain independent exact technical release review before
+`dev` integration. The ten historical owner-only decisions still gate main,
+tag and publication; keep old accepted candidate bytes available in Git.
+
+Verification: each D job records its manifest digest, retained receipt,
+exit, peaks and retirement; no model polling. Prevalidate structured commits
+and stage explicit paths. If generation fails, preserve the failed receipt,
+repair source or projections without weakening the oracle, and requalify the
+changed dependency closure. No extra workspace or archive copy is needed.
