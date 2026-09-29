@@ -12865,3 +12865,11 @@ delivered Lite `job context` parsed 23,093 bytes of real debugger JSON to a
 output. Only the CLI was extracted, scratch was retired and no model turn ran.
 This tests one delivered host-debugger boundary, not actual usage or quality;
 focused technical review remains pending.
+
+The exact first canary evidence subject received REQUEST_CHANGES for a
+committed user-specific executable path and prompt read/hash race. Superseding
+`a706e2e8` repaired both. D job `61a3bb4a` passed against the unchanged ZIP,
+retained one 1,397-byte summary, observed peak memory 379,236,352 bytes and
+peak scratch 1,609 bytes, then retired scratch and released its reservation.
+Independent `/root/stable_effect_review` accepted the repaired exact subject
+for dev integration and limited no-model host evidence. No model turn ran.

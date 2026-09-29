@@ -4383,3 +4383,9 @@ Codex debugger consumer under the D job owner. Only the CLI was extracted;
 the job passed, retained one bounded summary and retired scratch. It made no
 model request. Focused review is next; live turn and measured quality/cost
 still gate the efficiency release claim.
+
+Independent review requested changes to the first host context canary. The
+superseding `a706e2e8` test takes the installed executable from ignored local
+configuration and hashes one bounded prompt buffer. A new D job passed and
+retired scratch. Focused independent delta review accepted that exact source
+for dev integration; actual model use and matched outcome proof remain open.

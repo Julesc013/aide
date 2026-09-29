@@ -476,3 +476,13 @@ debugger. Preserve the first D job as a limited observation. Move executable
 selection and its hash to ignored local job arguments; read and hash one
 bounded prompt buffer. Re-run the no-model job against a new exact source
 subject, then seek focused delta review before dev integration.
+
+The repaired source `a706e2e8` passed D job `61a3bb4a` with the unchanged
+stable ZIP. Its executable selection resides in the ignored local manifest;
+the bounded prompt buffer is also the hashed buffer. The sole 1,397-byte
+summary is bound in `evidence/current-zip-host-context-repair-2026-09-29.md`.
+Scratch was retired and the reservation released. Independent focused delta
+review returned **ACCEPT for dev integration** of the exact `a706e2e8` source
+and this limited no-model evidence. Record that verdict in a distinct
+evidence-only closeout, then validate current refs before dev fast-forward.
+No model turn ran.
