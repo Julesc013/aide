@@ -38,3 +38,6 @@ retained_gates:
   - consequential source and release changes need independent exact review
   - final exported Lite bytes and a real host binding need separate qualification
   - no main, tag or publication without the existing release gates
+
+job_evidence_parser_repair_branch: task/aide-lite-job-evidence-parse-01
+job_evidence_parser_repair_base: 6795abab31b41963b8aa5ab1b0eedcd997f13a26

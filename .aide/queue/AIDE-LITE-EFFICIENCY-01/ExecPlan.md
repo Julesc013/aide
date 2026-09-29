@@ -299,3 +299,23 @@ for dev integration; its two prior blockers are closed. The reviewer did not
 rerun tests. Record the verdict separately from the frozen source, then verify
 current refs and fast-forward dev. Release projection and live host gates stay
 open.
+
+## 2026-09-29 job evidence parser refusal repair
+
+Objective: make the existing read-only `job wait` refuse ambiguous duplicate
+JSON keys and excessively nested owner/config/receipt/active records without a
+traceback or a false terminal PASS. Scope is the current Lite CLI parser,
+focused efficiency tests and this WorkUnit on one reused checkout branch from
+`dev@6795abab`. The first test should reproduce a malformed-record failure;
+then add a unique-key reader and bounded recursion handling. Run focused tests
+under the approved D owner, request exact-source review, and keep current Lite
+assets frozen until a coherent changed-source release candidate is requalified.
+
+The duplicate terminal receipt regression returned a false `PASS` before the
+repair. The reader now rejects duplicate keys at any JSON object depth,
+nonfinite JSON constants, and converts parser recursion to a bounded refusal.
+It also bounds the read itself and verifies file identity before and after
+reading. The final focused efficiency suite passed 27/27 with temporary files
+under the approved D scratch root.
+Postcommit managed verification and independent source review remain pending;
+the accepted stable assets were not changed.

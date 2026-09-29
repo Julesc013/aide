@@ -44569,6 +44569,19 @@ def run_selftest() -> tuple[bool, list[str]]:
     return result
 
 
+def _job_wait_unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    value: dict[str, object] = {}
+    for key, item in pairs:
+        if key in value:
+            raise ValueError("job evidence has duplicate JSON keys")
+        value[key] = item
+    return value
+
+
+def _job_wait_reject_constant(value: str) -> object:
+    raise ValueError("job evidence contains a nonfinite JSON constant")
+
+
 def _job_wait_read_json(path: Path, maximum: int) -> tuple[dict[str, object], str] | None:
     """Read one ordinary bounded owner record; absence is distinct from damage."""
     if not os.path.lexists(path):
@@ -44577,10 +44590,20 @@ def _job_wait_read_json(path: Path, maximum: int) -> tuple[dict[str, object], st
     if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
             or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > maximum):
         raise ValueError("job evidence is not an ordinary bounded record")
-    data = path.read_bytes()
-    if len(data) > maximum:
-        raise ValueError("job evidence exceeded the read bound")
-    value = json.loads(data)
+    identity = lambda item: (item.st_dev, item.st_ino, item.st_size, item.st_mtime_ns)
+    with path.open("rb") as source:
+        if identity(os.fstat(source.fileno())) != identity(info):
+            raise ValueError("job evidence changed before read")
+        data = source.read(maximum + 1)
+        if len(data) > maximum or identity(os.fstat(source.fileno())) != identity(info):
+            raise ValueError("job evidence changed or exceeded the read bound")
+    if identity(path.lstat()) != identity(info):
+        raise ValueError("job evidence changed during read")
+    try:
+        value = json.loads(data, object_pairs_hook=_job_wait_unique_object,
+                           parse_constant=_job_wait_reject_constant)
+    except RecursionError as exc:
+        raise ValueError("job evidence JSON exceeds structural bound") from exc
     if not isinstance(value, dict):
         raise ValueError("job evidence is not an object")
     return value, hashlib.sha256(data).hexdigest()
