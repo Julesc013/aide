@@ -422,3 +422,9 @@ The ordinary push succeeded and remote `dev` returned the same identity.
 `main` remains `aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3`. The local
 release effect is integrated; live-model, historical-decision, promotion and
 publication gates remain open.
+
+The local branch scan found 62 of 64 task branches already ancestral to dev.
+The two unique branches are stale packet evidence and a native driver that
+independent review rejected for source preparation. Their exact dispositions
+are recorded in `evidence/local-branch-disposition-2026-09-29.md`; neither is
+eligible for a wholesale merge into the current release line.
