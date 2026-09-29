@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-CONVERGENCE-AND-DELIVERY-01
 status: running
 classification: admitted
-planning_state: stable_lite_current_effect_accepted_main_release_gates_pending
+planning_state: stable_lite_efficiency_repeat_dev_integrated_main_release_gates_pending
 result: PENDING
 review_gate: admitted_by_owner
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
-current_technical_effect_manifest_sha256: d52e1a1462949df34bcc5f44d692bbcd0ed379f68a2b96e69025163416149196
+current_technical_effect_manifest_sha256: 8c64893c3a9637da20fa2826ed90c5442b6ba299611ae59d172078185a077875
 next_task: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 delivery_dependency: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 resource_placement: owner_approved_D_shared_roots_configured
@@ -14,7 +14,7 @@ blocking_input: ten_exact_historical_owner_decisions_and_live_codex_turn_permiss
 owned_jobs_remaining: none_observed_after_stable_local_qualification
 notes:
   - The owner approved continued campaign execution after the exact candidate-bound review packet.
-  - Current Lite efficiency candidate received independent local technical ACCEPT for all 37 current-byte public forms; local and remote dev a468f7f038d1906e65c6bcef7ee30c77e5b568fa include it. Six delivered consumers, ten job observations and 36 Q47/Q48 tests passed; main/tag/publication and live model usage remain unqualified.
+  - Current Lite efficiency repeat candidate 9cfa91da received independent local technical ACCEPT for 38 current-byte forms; dev integration ancestor 2dfc7e986030c16e73103797d21fc9954025a9ed includes the exact subject and evidence closeout. Six delivered consumers, twelve job observations and 36 Q47/Q48 tests passed. Ten owner-only historical message decisions block main/tag/publication; live model effects remain unqualified. See AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/efficiency-repeat-dev-integration-2026-09-29.md.
   - Resource cleanup child passed with notes after 34 proven-owned worktree retirements and current-source export, stable-build and release-test jobs used the shared D runner with scratch and reservations retired. Future jobs still require finite admission; application reservations are not filesystem quotas.
   - AIDE-CHECKPOINT-CODEX-CONFIG-NEUTRALIZATION-01 passed and was published.
   - Private action-pack integrity and source identity verification passed.
