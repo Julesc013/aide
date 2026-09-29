@@ -686,3 +686,16 @@ its reservation; exact receipts are in
 `evidence/h2-api-loader-alternate-output-replay-2026-09-29.md`. No native
 load occurred. Seek narrow independent review of this guard before preparing
 the finite one-name effect manifest and its separate admission decision.
+
+Independent `/root/native_os_build_review` accepted the alternate-output
+replay regression and closed its prior note; see
+`evidence/h2-api-loader-replay-review-81ddce07.md`. Prepare a one-use,
+one-name loader observation only: exact 180-name inventory membership,
+Windows build `10.0.19045`, `api-ms-win-core-file-l1-1-0.dll`, source and
+driver hashes, finite expiry, 15-second driver budget, and a managed child
+using the existing shared D roots with a 90-second outer timeout. The packet
+`evidence/h2-api-loader-one-name-effect-2026-09-29.json` is prepared, not
+admitted. Obtain separate independent effect review of its exact bytes,
+bounded job and same-user loader risks before any native call. A result can
+only establish one loader observation, not host-byte trust, restricted
+execution, worker activation or resolution of the failed L2 query.

@@ -1,0 +1,12 @@
+{
+  "schema": "aide.host.api-set-loader-effect.v1",
+  "request_id": "3330b55ac3f5450ab5e4cb3a417c8ca5",
+  "os_build": "10.0.19045",
+  "api_name": "api-ms-win-core-file-l1-1-0.dll",
+  "inventory_sha256": "a9fef62f0e1431c12b4743cbc42f2039790625dd6ea8e769991512467b6ccce3",
+  "source_sha256": "9cdfca3b78c33f58be100f502fd08f1076692b69d2e36bd63b75d65664e1fa57",
+  "controller_sha256": "0cec66749638d5fd9eaf2a4665162df62b57e07f211c71d384f00e233770ed36",
+  "driver_sha256": "9bef813ebb0a13175732f07cec94a428007f9ed2b1dbd6804d4a5d91c0eab083",
+  "expires_at": 1790649114,
+  "max_seconds": 15
+}
