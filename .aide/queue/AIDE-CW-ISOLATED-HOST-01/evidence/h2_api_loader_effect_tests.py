@@ -120,6 +120,26 @@ class LoaderEffectTests(unittest.TestCase):
                               lambda: replay)
         self.assertEqual(replay.calls, [])
 
+    def test_same_request_cannot_replay_to_different_output(self):
+        first = effect.run_effect(self.manifest, self.root, self.control,
+                                  self.output, FakeLoader)
+        original_result = (self.output / effect.RESULT_NAME).read_bytes()
+        original_journal = self.journal_path().read_bytes()
+        alternate = self.root.parent / "alternate-output"
+        alternate.mkdir()
+        replay = FakeLoader()
+
+        with self.assertRaises(FileExistsError):
+            effect.run_effect(self.manifest, self.root, self.control,
+                              alternate, lambda: replay)
+
+        self.assertEqual(replay.calls, [])
+        self.assertEqual(list(alternate.iterdir()), [])
+        self.assertEqual((self.output / effect.RESULT_NAME).read_bytes(), original_result)
+        self.assertEqual(self.journal_path().read_bytes(), original_journal)
+        self.assertEqual(effect.reconcile_result(self.output, self.journal_path(),
+                         effect.load_plan(self.manifest, self.root)), first)
+
     def test_changed_or_duplicate_inputs_refuse_before_reservation(self):
         cases = ({"source_sha256": "0" * 64}, {"controller_sha256": "0" * 64},
                  {"driver_sha256": "0" * 64}, {"inventory_sha256": "0" * 64},
