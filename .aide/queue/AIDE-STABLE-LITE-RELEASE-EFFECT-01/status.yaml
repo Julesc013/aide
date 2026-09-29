@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: in_progress
-planning_state: superseding_parser_safe_candidate_qualification
+planning_state: parser_safe_exact_effect_frozen_for_independent_review
 result: OLD_BYTES_TECHNICAL_ACCEPT_NEW_BYTES_PENDING
 updated_at: 2026-09-29
-current_slice: source_dev_2cd254df_parser_safe_release_regeneration
-next_slice: new_exact_asset_and_effect_qualification_then_owner_history_gate
+current_slice: new_asset_95ecee6c_38_form_effect_candidate
+next_slice: exact_technical_release_review_then_dev_integration
 review_gate: new_exact_technical_release_ACCEPT_and_ten_historical_owner_dispositions
 main_promotion_performed: false
 tag_created: false

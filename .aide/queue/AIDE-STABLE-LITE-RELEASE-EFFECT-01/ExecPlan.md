@@ -481,3 +481,17 @@ Record exact source, pack, asset and receipt digests in a superseding effect
 manifest; obtain independent technical acceptance. Preserve the ten historical
 owner-message gate before main, tag or publication. Do not silently reuse the
 old release effect or its frozen asset identities.
+
+The parser-safe pack source is `816032f1`, with stable assets committed at
+`6340cb68`. The new ZIP SHA-256 is `95ecee6c422f07005bf25175aae347b500f2f6343d58c702856a6e977126902f`.
+Pack and stable postcommit replays changed zero tracked files. Six serial
+delivered-byte consumers passed, along with twelve extracted `job` observations
+and 36/36 Q47/Q48 tests. The changelog preview selects exact pack source
+`816032f1`; the local bundle and draft passed managed validation and their
+postcommit replays changed zero tracked files. Their bytes remain local and
+unpublished. The superseding manifest
+`evidence/release-effect-manifest-1.0.0-parser-safe.json` binds 38 declared
+forms, 39 consumer outputs, twelve job-form observations, assets and receipts.
+Seek one independent technical release ACCEPT for that exact evidence subject
+before dev integration. Main, tag and publication remain gated by the ten
+owner dispositions, full range validation and final remote/consumer effects.
