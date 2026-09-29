@@ -549,3 +549,24 @@ changed paths are only this WorkUnit's records and the approved canary harness;
 all four frozen stable asset digests are unchanged. The local integration
 receipt is `evidence/parser-safe-preunlink-dev-integration-2026-09-29.md`.
 Remote `dev` observation and the pending main history gate remain separate.
+
+## 2026-09-29 efficiency-repeat current-byte candidate
+
+Independently accepted source `48235e9a` is now in local and remote
+`dev@3cc6bf13`; its pack source is `3cc6bf13`. The new export pack is
+`f26fa5b3`, local stable assets `8e9c1c0c`, and Q47/Q48 preview views
+`6861954b`. Current ZIP SHA-256 is `798f44df7898072bb763090ce02317614837775f60ac813ee8c25c0188b2ac5d`.
+The pack, stable, changelog, bundle and draft postcommit replays changed zero
+tracked files. Six current-byte consumer jobs, 12 delivered job forms and 36
+Q47/Q48 tests passed; source managed-workspace tests passed 51/51. The exact
+bindings and retained limitations are in
+`evidence/release-effect-manifest-1.0.0-efficiency-repeat.json` and its
+`efficiency-repeat-local-candidate-2026-09-29.md` record. Seek independent
+technical release ACCEPT for this new subject before `dev` integration.
+
+The first Q47 bundle correctly failed on an older changelog source head.
+The deterministic changelog CLI regenerated it; the D-managed rerun passed.
+The bounded runner does not admit `.aide/changelog` as a canonical output,
+so that small projection used the existing direct CLI. Record that launch
+path gap without weakening the current source or asset review. Ten exact
+historical owner decisions still gate `main`; no tag or publication occurred.

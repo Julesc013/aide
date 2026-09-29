@@ -1,0 +1,66 @@
+{
+  "asset_sha256": {
+    "cli": "e2b9890f51f26f14eb66551a7f0193fec02b725ba9582150637be6c4d5433986",
+    "manifest": "5939b831ab68a242c3fdfa689ea9fa390ba2a5d2b8f4cce05e2e89516930927e",
+    "tar": "a91a6f284c48c5795012df370c7d12a0b9558eaa736def124acffffe1740cba6",
+    "zip": "798f44df7898072bb763090ce02317614837775f60ac813ee8c25c0188b2ac5d"
+  },
+  "pack_source_commit": "3cc6bf1362aca510aced28ddbab485d4e39317d7",
+  "reservations_released": true,
+  "results": [
+    {
+      "id": "383f997f02b04adabedc2fc0e4cb449e",
+      "index": 0,
+      "peak_memory_bytes": 298528768,
+      "peak_scratch_bytes": 34904146,
+      "receipt_sha256": "c4ecaae065804155954af65f379f89ab3c1cb2987ada0bb2a8332af5ed3cfbe5",
+      "runner": "consumer_canary_runner.py"
+    },
+    {
+      "id": "63d8848bbbd742c5929badd1f15e75a1",
+      "index": 1,
+      "peak_memory_bytes": 241434624,
+      "peak_scratch_bytes": 31531833,
+      "receipt_sha256": "78d80912d35ed4f02c8928003eb1e7440dc4062482a4dbc5fd24725af7dc197f",
+      "runner": "lifecycle_canary_runner.py"
+    },
+    {
+      "id": "64fa01e465154653b28f03e14a363013",
+      "index": 2,
+      "peak_memory_bytes": 222142464,
+      "peak_scratch_bytes": 15569036,
+      "receipt_sha256": "54c586b27ee95e7f2e8a33a75cafc6fa7a9a14999511815d1da176cfd10139c8",
+      "runner": "context_offline_canary.py"
+    },
+    {
+      "id": "73c05545be0e49c2b7db21fe0599c597",
+      "index": 3,
+      "peak_memory_bytes": 298590208,
+      "peak_scratch_bytes": 20904274,
+      "receipt_sha256": "0058938d8205172bfbe4c9e7f2d8a7aaa062ef6b9ccc086c9dd93dfa039f9a9b",
+      "runner": "partial_cli_canary.py"
+    },
+    {
+      "id": "14b0dfb793ea4327b71760ba5a678c1c",
+      "index": 4,
+      "peak_memory_bytes": 229281792,
+      "peak_scratch_bytes": 8789275,
+      "receipt_sha256": "ebad02525bdfe7ae33da1f3c04d0f00f467b25769142df5010932baa83af0d33",
+      "runner": "public_cli_canary.py"
+    },
+    {
+      "id": "d3f1377091f446ce99dd1f3158a46799",
+      "index": 5,
+      "peak_memory_bytes": 259973120,
+      "peak_scratch_bytes": 17217190,
+      "receipt_sha256": "49a33e69c3d06c0591a6fcba30a5a723c7c26e3cf409d6bf6aeb2cf846fa65a6",
+      "runner": "forced_restart_runner.py"
+    }
+  ],
+  "schema": "aide.lite-current-consumer-matrix.v1",
+  "scratch_retired": true,
+  "source_commit": "8e9c1c0c2a14350570af586089d734b7048248a0",
+  "source_tree": "5485ef0b0f9c7783133dc0dd631747ee9594f4c8",
+  "start_index": 0,
+  "status": "PASS"
+}

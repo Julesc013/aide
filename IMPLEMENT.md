@@ -12800,3 +12800,19 @@ The superseding full managed-workspace suite passed 51/51 in one bounded D
 job with no skips, scratch absent and reservation released. The reviewed
 source subject still needs an independent verdict and changed-byte Lite
 qualification; these synthetic hosts made no live model request.
+
+The reviewer accepted source `48235e9a`/tree `be0db1b9` for dev integration.
+The review closeout fast-forwarded local and remote dev to `3cc6bf13`/tree
+`f55b5859`. An extracted-pack consumer passed 1/1 on that integrated source.
+The new pack commit is `f26fa5b3`; stable assets are `8e9c1c0c`, with ZIP
+SHA-256 `798f44df7898072bb763090ce02317614837775f60ac813ee8c25c0188b2ac5d`.
+Pack and stable postcommit replays changed zero tracked files. Six serial
+current-byte consumer jobs passed with retired scratch and released
+reservations; the delivered job-form canary passed 12 observations and Q47/Q48
+passed 36/36. The preview view commit is `6861954b`; changelog, bundle and
+draft replays changed zero tracked files. A first Q47 bundle failed on a stale
+changelog source head and was repaired by regenerating that projection.
+The D runner refused `.aide/changelog` as an unrecognized canonical output;
+the small changelog command ran directly through the existing deterministic
+CLI. Exact job and asset bindings are in the stable-effect WorkUnit. This is
+a local candidate pending independent release review, not published bytes.

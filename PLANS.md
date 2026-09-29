@@ -4326,3 +4326,12 @@ Verify with
 synthetic Windows Job tests, exact source review and a changed-byte Lite
 release qualification before any new stable claim. Live model effects retain
 their separate local permission gate.
+
+The superseding repeat guard received independent dev-source ACCEPT and is
+observed in remote `dev@3cc6bf13`. Its changed-byte Lite pack, local 1.0.0
+assets and Q47/Q48 previews have been regenerated once, validated and replayed
+without tracked changes. Six exact-byte consumer jobs, 12 delivered job forms
+and 36 Q47/Q48 tests passed. The current candidate is on
+`task/aide-lite-efficiency-release-01` awaiting an exact independent technical
+release review. The ten owner-only historical dispositions gate main; live
+model effects remain a separate wider-campaign qualification.
