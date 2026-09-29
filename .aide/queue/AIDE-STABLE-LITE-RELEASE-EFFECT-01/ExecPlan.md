@@ -520,3 +520,18 @@ undispositioned historical message commits among 523 examined; the three
 earlier A/B/C dispositions remain effective. The exact integration receipt is
 `evidence/parser-safe-dev-integration-2026-09-29.md`. No main, tag or public
 release effect was attempted.
+
+## 2026-09-29 pre-unlink removal recovery qualification
+
+Objective: verify the exact current Lite ZIP after a child exits once the
+durable removal intent exists but before its first receipt-owned deletion.
+Extend the existing bounded removal canary in place, with this WorkUnit owning
+that exact harness path. Preserve its prior first/50th-unlink modes and do not
+change the packaged CLI or release assets. The new mode must prove all managed
+bytes stay unchanged at interruption, the intent and receipt survive, and a
+fresh delivered CLI completes the same plan while retaining authored content.
+Run one source-bound D-managed job in a disposable brownfield consumer; check
+its retained output, resource retirement and exact hashes. Obtain scoped
+independent review of the harness and result before treating this as release
+evidence. This does not clear the ten historical owner decisions or qualify
+unrelated hostile-writer timing.

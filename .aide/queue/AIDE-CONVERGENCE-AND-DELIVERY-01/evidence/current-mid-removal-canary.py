@@ -46,8 +46,14 @@ def child(pack: Path, target: Path, plan_digest: str, marker: Path, exit_after: 
 
     def exit_after_owned_unlink(path, expected, *args, **kwargs):
         nonlocal owned_unlinks
-        result = original(path, expected, *args, **kwargs)
         relative = Path(path).relative_to(target).as_posix()
+        if (exit_after == 0 and relative in managed and
+                relative not in {"AGENTS.md", module.PORTABLE_REMOVAL_RUNNER_PATH}):
+            marker.write_text(json.dumps({"relative": relative, "owned_unlinks": 0,
+                                          "stage": "before_first_owned_unlink"}) + "\n",
+                              encoding="utf-8")
+            os._exit(EXIT_AFTER_UNLINK)
+        result = original(path, expected, *args, **kwargs)
         if relative in managed and relative not in {"AGENTS.md", module.PORTABLE_REMOVAL_RUNNER_PATH}:
             owned_unlinks += 1
             if owned_unlinks == exit_after:
@@ -78,8 +84,8 @@ def delivered_cli(pack: Path, target: Path, *args: str) -> dict[str, object]:
 
 
 def run(archive: Path, expected_sha256: str, exit_after: int) -> None:
-    if not 1 <= exit_after <= 100:
-        raise ValueError("owned-unlink ordinal must be between 1 and 100")
+    if not 0 <= exit_after <= 100:
+        raise ValueError("owned-unlink ordinal must be between 0 and 100")
     scratch = Path(os.environ["AIDE_JOB_TMP"])
     retained = Path(os.environ["AIDE_JOB_OUTPUT"])
     if sha256(archive) != expected_sha256:
@@ -130,6 +136,14 @@ def run(archive: Path, expected_sha256: str, exit_after: int) -> None:
             raise AssertionError("authored AGENTS baseline cannot be recovered")
         plan = delivered_cli(pack, target, "plan-removal", "--target", str(target))
         digest = str(plan["plan_digest"])
+        before_owned = None
+        if exit_after == 0:
+            before_owned = {}
+            for relative in managed:
+                owned_path = target / relative
+                if not stat.S_ISREG(owned_path.lstat().st_mode):
+                    raise AssertionError(f"receipt-owned path is not an ordinary file: {relative}")
+                before_owned[relative] = sha256(owned_path)
         marker = out / "first-owned-unlink.txt"
         result = subprocess.run([sys.executable, "-I", "-B", str(Path(__file__).resolve()),
                                  "--child", str(pack), str(target), digest, str(marker), str(exit_after)],
@@ -138,7 +152,15 @@ def run(archive: Path, expected_sha256: str, exit_after: int) -> None:
             raise AssertionError(f"child did not exit after owned unlink: {result.stderr[-1000:]}")
         interruption = json.loads(marker.read_text(encoding="utf-8"))
         removed = interruption["relative"]
-        if interruption["owned_unlinks"] != exit_after or removed not in managed or (target / removed).exists():
+        if interruption["owned_unlinks"] != exit_after or removed not in managed:
+            raise AssertionError("recorded owned unlink ordinal differs")
+        if exit_after == 0:
+            if interruption.get("stage") != "before_first_owned_unlink" or before_owned is None:
+                raise AssertionError("pre-unlink exit marker differs")
+            for relative, expected_digest in before_owned.items():
+                if not (target / relative).is_file() or sha256(target / relative) != expected_digest:
+                    raise AssertionError(f"receipt-owned bytes changed before first unlink: {relative}")
+        elif (target / removed).exists():
             raise AssertionError("recorded owned file was not removed")
         if (module.load_portable_removal_intent(target) is None
                 or module.load_portable_import_receipt(target) is None):
@@ -160,6 +182,7 @@ def run(archive: Path, expected_sha256: str, exit_after: int) -> None:
                    "archive_members": len(members), "managed_files": len(managed),
                    "child_exit": result.returncode, "interrupted_after_owned_unlinks": exit_after,
                    "interrupted_relative": removed,
+                   "managed_bytes_unchanged_before_effect": before_owned is not None,
                    "intent_and_receipt_retained_after_exit": True,
                    "fresh_cli_resume": resumed["status"],
                    "authored_and_project_owned_preserved": True}

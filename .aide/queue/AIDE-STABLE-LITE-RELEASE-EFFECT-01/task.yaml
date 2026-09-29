@@ -22,6 +22,7 @@ authority_basis: >
 scope:
   allowed_paths:
     - .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/current-mid-removal-canary.py
     - .aide/queue/index.yaml
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/mandatory-profile-coverage-2026-09-25.md
