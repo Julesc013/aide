@@ -418,3 +418,10 @@ The focused raw mode now passes 1/1 with `AIDE_JOB_TMP` absent and D selected
 as process-local `TMP`/`TEMP`; the D-managed Q34 suite passes 12/12 in job
 `ba8a9cd6`. Neither mode rewrites tracked changelog previews. The source code
 is unchanged from first review; request a focused independent delta verdict.
+
+Independent `/root/native_os_build_review` returned **ACCEPT for dev SOURCE
+integration** of exact `0063ab23`/tree `0a43b85a`, after retaining the first
+REQUEST_CHANGES. Its exact verdict and limits are recorded in
+`evidence/changelog-canonical-review-0063ab23.md`. Add only an evidence
+closeout, then fast-forward `dev` after current remote and clean-state checks.
+The accepted 1.0.0 release bytes stay frozen and separate.
