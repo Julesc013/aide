@@ -676,3 +676,13 @@ effect, add an explicit replay regression with a different managed output,
 freeze a one-name effect manifest and D job, and obtain separate effect review.
 Keep this branch out of frozen Lite release acceptance until the release is
 completed or its exact effect is requalified.
+
+The requested different-output replay regression is committed at `81ddce07`,
+tree `c9e4101d`. It retries the same one-use request ID against a separate
+empty output directory after success, and verifies no second backend call,
+output, journal mutation or loss of the original reconcilable result. The
+postcommit D-managed injected suite passed 10/10, retired scratch and released
+its reservation; exact receipts are in
+`evidence/h2-api-loader-alternate-output-replay-2026-09-29.md`. No native
+load occurred. Seek narrow independent review of this guard before preparing
+the finite one-name effect manifest and its separate admission decision.
