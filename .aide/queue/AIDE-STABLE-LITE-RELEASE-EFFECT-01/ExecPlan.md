@@ -719,3 +719,8 @@ The verdict is preserved in
 `evidence/taskos-release-review-e9205021-2026-09-29.md`. Record the review
 without altering its subject, then fast-forward dev only if current refs and
 clean state still permit it. Observe the remote ref after a non-force push.
+
+Local and remote dev reached `92d8db08` by clean fast-forward and non-force
+push. The exact observed integration is recorded in
+`evidence/taskos-dev-integration-2026-09-29.md`. Keep main/tag/publication
+closed until their separate gates pass.
