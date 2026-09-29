@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 3cc6bf1362aca510aced28ddbab485d4e39317d7 latest 50 commits
-source_head: 3cc6bf1362aca510aced28ddbab485d4e39317d7
+source_range: 0795eefe1b114ba16514ff3881ec3d68834158ce latest 50 commits
+source_head: 0795eefe1b114ba16514ff3881ec3d68834158ce
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,30 +11,18 @@ release_publishing: false
 
 ## Summary
 
-- Added: 3
-- Changed: 21
-- Fixed: 6
+- Added: 1
+- Changed: 11
+- Fixed: 7
 - Docs: 1
-- Internal: 19
+- Internal: 30
 
 ## Added
 
-- Bounded attempt attribution for supplied Codex usage streams. (cec72cb6f2d7 feat(efficiency): attribute bounded Codex attempt streams)
-- Candidate Lite attempt usage form with partial accounting semantics. (6a15a7dd5e3b feat(release): declare bounded Lite attempt usage form)
 - Bounded source for an optional native API-set loader observation. (36ada987bfe0 feat(host): prepare bounded API-set loader effect source)
 
 ## Changed
 
-- Record accepted portable attempt attribution source review. (6e35ea1379da docs(efficiency): record accepted attempt attribution review)
-- Refresh local Lite attribution release preview. (74c811f3b77e build(release): refresh Lite attribution changelog preview)
-- Refresh local portable Lite pack for attempt attribution. (a233225073e7 build(release): refresh Lite pack with attempt attribution)
-- Refresh local Lite stable candidate assets. (25e74785fedd build(release): refresh unpublished Lite attribution assets)
-- Bind candidate attempt usage form to local Lite preview. (68192b3696e6 build(release): bind reviewed attribution form to preview)
-- Export the reviewed 38-form Lite candidate policy. (b58895e80515 build(release): export reviewed 38-form Lite pack)
-- Freeze local 38-form Lite asset candidate. (e26604f1476a build(release): freeze 38-form Lite local assets)
-- Bind local Lite preview bundle to exact pack source. (b65f9ef37598 build(release): bind 38-form preview to pack source)
-- Refresh unpublished Lite 1.0.0 draft for 38 forms. (5dac6c0c25ba docs(release): refresh local 38-form Lite draft)
-- Freeze unpublished Lite 1.0.0 attribution release evidence. (a681da82c1f0 docs(release): freeze current 38-form Lite effect evidence)
 - Record local Lite 1.0.0 attribution effect acceptance. (b11af55d728d docs(release): record independent 38-form effect acceptance)
 - Record unpublished Lite 1.0.0 dev integration. (0a514716d2cb docs(release): checkpoint accepted Lite effect on dev)
 - Record retained branch disposition for Lite release planning. (b0c8dd92e57f docs(release): disposition remaining local task branches)
@@ -49,12 +37,13 @@ release_publishing: false
 
 ## Fixed
 
-- Malformed attempt rosters now receive bounded refusal. (8f10a66b3f0a fix(efficiency): refuse malformed Codex attempt rosters)
 - Managed job observation refuses ambiguous receipt JSON. (5b99329a3e56 fix(efficiency): refuse ambiguous managed job evidence)
 - Portable Lite job observation rejects ambiguous evidence. (47a2b2fb3b58 build(pack): refresh Lite export with strict job evidence parsing)
 - Stable candidate includes strict managed-job evidence parsing. (6340cb685759 build(release): freeze parser-safe Lite 1.0.0 local assets)
 - Correct AIDE Lite 1.0.0 candidate release asset identities. (7bdfc7e04a34 docs(release): correct parser-safe Lite public asset hashes)
 - Bind AIDE Lite 1.0.0 candidate public text to current assets. (ab1a797db9ef docs(release): bind corrected Lite public body to effect)
+- Source changelog previews can use finite managed-job storage admission. (8ee5b4b98c02 fix(execution): admit bounded source changelog previews)
+- Q34 validation runs in both managed and documented raw discovery modes. (0063ab234484 test(execution): preserve raw Q34 discovery after isolated preview)
 
 ## Docs
 
@@ -81,6 +70,17 @@ release_publishing: false
 - Prevent duplicate mediated Codex turns on unchanged bound inputs. (d6581754faa2 fix(efficiency): refuse repeated unchanged Codex requests)
 - Prevent repeated mediated Codex requests through Windows file aliases. (48235e9a4339 fix(efficiency): bind Codex repeats to file identity)
 - Record the source integration gate for Codex duplicate-dispatch protection. (3cc6bf1362ac chore(efficiency): record accepted Codex repeat guard review)
+- Carry the reviewed mediated request guard into the Lite pack. (f26fa5b3d5fc build(release): refresh Lite pack with mediated repeat guard)
+- Prepare changed-byte Lite candidate with the accepted efficiency source. (8e9c1c0c2a14 build(release): freeze local Lite efficiency candidate assets)
+- Refresh local release preview evidence for the current pack. (6861954be306 build(release): bind Lite preview views to current pack source)
+- Prepare source-bound technical review evidence for the changed Lite candidate. (9cfa91da710d chore(release): freeze exact Lite efficiency effect packet)
+- Record local technical release acceptance for the current Lite bytes. (5eac25c21ba3 chore(release): record exact Lite efficiency technical acceptance)
+- Record local technical Lite integration and remaining promotion gate. (2dfc7e986030 chore(release): record exact Lite dev integration and main gate)
+- Keep campaign status aligned with current Lite technical acceptance. (9035550d32f1 chore(queue): bind campaign to integrated Lite efficiency effect)
+- Align release navigation with the reviewed efficiency candidate. (6f8dee6f12d4 docs(release): align current Lite coverage and plan checkpoint)
+- Record bounded changelog source acceptance. (c0e07b083040 chore(execution): record accepted changelog admission review)
+- Record source-only bounded changelog integration. (cbe6c78b5047 chore(execution): record reviewed changelog source integration)
+- Prepare current-runner Lite requalification without changing release claims. (0795eefe1b11 chore(release): plan current-runner Lite byte qualification)
 
 ## Malformed Commits
 
