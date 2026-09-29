@@ -709,3 +709,12 @@ initialization and dependencies. No native load occurred. Retain the expired
 packet for custody, integrate eligible source separately, and prepare a new
 host-bound packet only after a disposable host and credential posture are
 identified.
+
+The reviewed task source then merged conflict-free into local `dev` at
+`1482b578`, tree `ba36b35e`, preserving both parents. A D-managed
+combined-source run passed all ten loader/controller injected cases and
+retired its scratch and reservation. Independent `/root/native_os_build_review`
+**ACCEPTED** the exact merge for source-only `dev` integration. Details are in
+`evidence/h2-api-loader-dev-integration-1482b578.md`. The native effect
+remains refused on this host. No Lite release byte changed; remote `dev`
+observation remains a separate step.
