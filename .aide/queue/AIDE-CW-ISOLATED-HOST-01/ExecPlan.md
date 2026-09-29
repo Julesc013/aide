@@ -664,4 +664,15 @@ unchanged query-effect cases passed. The 59-case system observation suite
 exposed a frozen source-digest guard during a first adapter edit; that edit was
 reverted, the OS-build read moved into this driver, and the suite passed 59/59.
 This is source preparation only. No native loader call or exact effect manifest
-has occurred. Postcommit D-managed verification and independent review remain.
+has occurred.
+
+Postcommit D-managed jobs `5471f910` and `24a8adaf` passed 9/9 loader and
+10/10 query cases respectively, each retiring scratch and releasing its
+reservation. Independent `/root/native_os_build_review` returned
+**ACCEPT_WITH_NOTES** for exact source `36ada987`/tree `981631ee`: the
+reviewed adapter remains byte-identical; shared control journal, input pins,
+intent and staged publication preserve one-use semantics. Before any actual
+effect, add an explicit replay regression with a different managed output,
+freeze a one-name effect manifest and D job, and obtain separate effect review.
+Keep this branch out of frozen Lite release acceptance until the release is
+completed or its exact effect is requalified.
