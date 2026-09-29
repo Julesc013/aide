@@ -543,7 +543,9 @@ CLI `DETACHED`. The same changed harness passed its first-unlink regression
 job `51fe41e1`; both jobs retired scratch and released reservations.
 Independent `/root/stable_effect_review` **ACCEPTED** this scoped harness and
 supplemental local recovery evidence. Exact digests and limitations are in
-`evidence/parser-safe-preunlink-recovery-2026-09-29.md`. Keep `dev` and the
-frozen release bytes unchanged while the ten historical owner decisions gate
-main; merge this reviewed harness/evidence when it will not silently change
-the accepted release subject.
+`evidence/parser-safe-preunlink-recovery-2026-09-29.md`. Local `dev` then
+fast-forwarded cleanly from `6f8eb690` to reviewed `694e623f`. The exact
+changed paths are only this WorkUnit's records and the approved canary harness;
+all four frozen stable asset digests are unchanged. The local integration
+receipt is `evidence/parser-safe-preunlink-dev-integration-2026-09-29.md`.
+Remote `dev` observation and the pending main history gate remain separate.
