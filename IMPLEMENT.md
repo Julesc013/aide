@@ -12857,3 +12857,11 @@ the local stable ZIP remains SHA-256 `27948415…`. A full 559-commit
 historical records. No main, tag or publication action was taken. The release
 WorkUnit now records the additional exported efficiency/actual-host proof
 required by the latest owner amendment before final stable acceptance.
+
+The efficiency WorkUnit added a bounded current-ZIP/installed-Codex context
+canary at `43c5e95e`. D job `b55340cb` passed against the frozen ZIP:
+delivered Lite `job context` parsed 23,093 bytes of real debugger JSON to a
+1,397-byte retained summary, with 21,928 visible text bytes and no raw prompt
+output. Only the CLI was extracted, scratch was retired and no model turn ran.
+This tests one delivered host-debugger boundary, not actual usage or quality;
+focused technical review remains pending.

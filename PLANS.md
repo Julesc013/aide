@@ -4377,3 +4377,9 @@ owner-only dispositions. The efficiency-priority amendment adds exported Lite
 and actual-host outcome evidence to final stable acceptance; this candidate's
 synthetic host and local consumer checks do not prove that outcome. Continue
 the existing efficiency WorkUnit without altering the frozen release subject.
+
+The current ZIP's delivered `job context` parser now has one real installed
+Codex debugger consumer under the D job owner. Only the CLI was extracted;
+the job passed, retained one bounded summary and retired scratch. It made no
+model request. Focused review is next; live turn and measured quality/cost
+still gate the efficiency release claim.

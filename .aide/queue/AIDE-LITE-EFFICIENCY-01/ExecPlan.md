@@ -459,3 +459,12 @@ prompt content. Validate complete parsing, no model request, output bound,
 exact archive identity and scratch retirement. This closes only the delivered
 context-parser/host-debugger boundary. Actual model dispatch, effective turn
 tokens, quality/cost comparison, main promotion and publication remain gated.
+
+The committed canary at `43c5e95e` passed once through D job `b55340cb`.
+It used the current ZIP, extracted only the delivered CLI, parsed installed
+Codex debugger JSON, retained one bounded summary and retired scratch. The
+delivered consumer reported `COMPLETE` with 21,928 visible text bytes; no
+model turn was launched. Exact manifest, receipt, output hashes and limits are
+in `evidence/current-zip-host-context-2026-09-29.md`. Obtain a focused
+independent review of the test and result before release-evidence use. The
+separate live-turn permission and owner message decisions remain unresolved.
