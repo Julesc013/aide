@@ -635,3 +635,77 @@ The clean local `dev` branch fast-forwarded from `46d04d03` to review-closeout
 commit `c3a92154` on 2026-09-29 after the independent decision. The source
 candidate and test repair are unchanged. Remote observation belongs to the
 subsequent push receipt; this local fast-forward alone admits no native effect.
+
+## 2026-09-29 bounded loader-effect source preparation
+
+Objective: prepare a distinct one-name ordinary-loader observation effect on
+the existing isolated-host WorkUnit, because the local L2 API-set query export
+is absent. Reuse the accepted one-use control journal and staged hash-bound
+result publication, without conflating loader observations with the failed
+query method. No native load, profile, credential, target or worker effect is
+admitted by source preparation.
+
+Scope: the existing `h2_api_query_effect.py` utility functions and new
+task-local loader effect driver/tests/evidence. Keep the reviewed
+`windows_system_observation.py` adapter byte-identical; the driver obtains the
+running OS build separately through `RtlGetVersion`. Work in the primary checkout on one task branch from
+`dev@6795abab`; no new worktree. Use exact inventory/source/driver hashes,
+one literal API-set contract, OS build, expiry, finite duration, durable
+pre-call intent and a control-root one-use request. Require an externally
+bounded managed child for any future native load. Test missing/malformed,
+duplicate and changed inputs, wrong build, replay, failure after intent,
+short write and interrupted publication using injected backends under the
+approved D runner. Obtain independent source and effect review before any
+native call. Keep the accepted Lite release effect frozen and do not integrate
+changed native source into `dev` until release compatibility is addressed.
+
+Initial injected checks on 2026-09-29: nine loader-effect cases and ten
+unchanged query-effect cases passed. The 59-case system observation suite
+exposed a frozen source-digest guard during a first adapter edit; that edit was
+reverted, the OS-build read moved into this driver, and the suite passed 59/59.
+This is source preparation only. No native loader call or exact effect manifest
+has occurred.
+
+Postcommit D-managed jobs `5471f910` and `24a8adaf` passed 9/9 loader and
+10/10 query cases respectively, each retiring scratch and releasing its
+reservation. Independent `/root/native_os_build_review` returned
+**ACCEPT_WITH_NOTES** for exact source `36ada987`/tree `981631ee`: the
+reviewed adapter remains byte-identical; shared control journal, input pins,
+intent and staged publication preserve one-use semantics. Before any actual
+effect, add an explicit replay regression with a different managed output,
+freeze a one-name effect manifest and D job, and obtain separate effect review.
+Keep this branch out of frozen Lite release acceptance until the release is
+completed or its exact effect is requalified.
+
+The requested different-output replay regression is committed at `81ddce07`,
+tree `c9e4101d`. It retries the same one-use request ID against a separate
+empty output directory after success, and verifies no second backend call,
+output, journal mutation or loss of the original reconcilable result. The
+postcommit D-managed injected suite passed 10/10, retired scratch and released
+its reservation; exact receipts are in
+`evidence/h2-api-loader-alternate-output-replay-2026-09-29.md`. No native
+load occurred. Seek narrow independent review of this guard before preparing
+the finite one-name effect manifest and its separate admission decision.
+
+Independent `/root/native_os_build_review` accepted the alternate-output
+replay regression and closed its prior note; see
+`evidence/h2-api-loader-replay-review-81ddce07.md`. Prepare a one-use,
+one-name loader observation only: exact 180-name inventory membership,
+Windows build `10.0.19045`, `api-ms-win-core-file-l1-1-0.dll`, source and
+driver hashes, finite expiry, 15-second driver budget, and a managed child
+using the existing shared D roots with a 90-second outer timeout. The packet
+`evidence/h2-api-loader-one-name-effect-2026-09-29.json` is prepared, not
+admitted. Obtain separate independent effect review of its exact bytes,
+bounded job and same-user loader risks before any native call. A result can
+only establish one loader observation, not host-byte trust, restricted
+execution, worker activation or resolution of the failed L2 query.
+
+Independent `/root/native_os_build_review` refused effect execution of exact
+`14d5cc10` on `BLACKGLASS-WIN1\Jules`; see
+`evidence/h2-api-loader-effect-review-14d5cc10.md`. The task requires an
+identified disposable real-effect host. A managed child on this ordinary
+Windows installation does not establish that requirement or confine DLL
+initialization and dependencies. No native load occurred. Retain the expired
+packet for custody, integrate eligible source separately, and prepare a new
+host-bound packet only after a disposable host and credential posture are
+identified.
