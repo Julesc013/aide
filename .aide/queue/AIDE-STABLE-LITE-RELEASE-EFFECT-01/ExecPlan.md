@@ -535,3 +535,15 @@ its retained output, resource retirement and exact hashes. Obtain scoped
 independent review of the harness and result before treating this as release
 evidence. This does not clear the ten historical owner decisions or qualify
 unrelated hostile-writer timing.
+
+Exact `202fa0a8` passed the D-managed pre-unlink job `1f6319a9` against the
+current local ZIP: zero owned deletions after child exit 77, all 813 managed
+bytes unchanged, durable intent and receipt retained, then fresh delivered
+CLI `DETACHED`. The same changed harness passed its first-unlink regression
+job `51fe41e1`; both jobs retired scratch and released reservations.
+Independent `/root/stable_effect_review` **ACCEPTED** this scoped harness and
+supplemental local recovery evidence. Exact digests and limitations are in
+`evidence/parser-safe-preunlink-recovery-2026-09-29.md`. Keep `dev` and the
+frozen release bytes unchanged while the ten historical owner decisions gate
+main; merge this reviewed harness/evidence when it will not silently change
+the accepted release subject.
