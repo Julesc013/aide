@@ -447,3 +447,15 @@ copying the executable. Details and hashes are in
 job was launched. The next host effect requires the separate explicit local
 model/effort permission; synthetic tests and current delivered-byte consumers
 remain useful but do not replace the live effect or matched outcome proof.
+
+## Current ZIP plus installed host, no-model context canary
+
+Objective: prove the exact current 1.0.0 ZIP's `job context` command can parse
+the installed Codex debugger's real prompt-input shape outside AIDE's source
+checkout. Use one bounded D-managed Python job, extracting only the delivered
+CLI into owned scratch. The job binds the ZIP, prompt, installed executable,
+source and canary code by hash; it retains only a compact summary, never raw
+prompt content. Validate complete parsing, no model request, output bound,
+exact archive identity and scratch retirement. This closes only the delivered
+context-parser/host-debugger boundary. Actual model dispatch, effective turn
+tokens, quality/cost comparison, main promotion and publication remain gated.
