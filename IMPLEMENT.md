@@ -12873,3 +12873,7 @@ retained one 1,397-byte summary, observed peak memory 379,236,352 bytes and
 peak scratch 1,609 bytes, then retired scratch and released its reservation.
 Independent `/root/stable_effect_review` accepted the repaired exact subject
 for dev integration and limited no-model host evidence. No model turn ran.
+
+The four-commit accepted task lineage fast-forwarded `dev@f5512404` to
+`3cd57cb4`, tree `579366cb5dacf4`, and the remote ref was observed at that
+full commit after a non-force push. The stable ZIP bytes remained unchanged.

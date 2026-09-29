@@ -4389,3 +4389,5 @@ superseding `a706e2e8` test takes the installed executable from ignored local
 configuration and hashes one bounded prompt buffer. A new D job passed and
 retired scratch. Focused independent delta review accepted that exact source
 for dev integration; actual model use and matched outcome proof remain open.
+Remote `dev@3cd57cb4` now contains that limited no-model result with the
+current stable ZIP bytes unchanged.

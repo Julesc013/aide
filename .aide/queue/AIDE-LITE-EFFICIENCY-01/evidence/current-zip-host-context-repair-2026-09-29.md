@@ -51,3 +51,13 @@ of the D rerun receipt and sole output. The reviewer closed both earlier
 REQUEST_CHANGES findings. This is a scoped technical verdict on the no-model
 debugger/parser canary; the reviewer did not run a live model turn or accept
 release publication. This evidence closeout does not alter the reviewed source.
+
+After report-only `git plan`, clean state, one registered worktree, four
+passing new commit-message checks and exact remote `dev@f5512404` were
+observed, local `dev` fast-forwarded to
+`3cd57cb49620f7dadc15ebe207a6a90d25448e62`, tree
+`579366cb5dacf46db004988b813365be2818a0cb`. A non-force push succeeded
+and `git ls-remote` observed the same full `dev` object. Remote `main` stayed
+`aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3`; the stable ZIP SHA-256
+remained `27948415530f260479c249b2d8cc956792eff4c77a524f0225f61f1f3f2ef7b1`.
+This integration receipt is evidence-only and postdates the reviewed source.

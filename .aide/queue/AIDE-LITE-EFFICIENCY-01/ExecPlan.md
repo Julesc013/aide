@@ -486,3 +486,9 @@ review returned **ACCEPT for dev integration** of the exact `a706e2e8` source
 and this limited no-model evidence. Record that verdict in a distinct
 evidence-only closeout, then validate current refs before dev fast-forward.
 No model turn ran.
+
+The accepted task lineage fast-forwarded local `dev` from `f5512404` to
+`3cd57cb4` (tree `579366cb5dacf46db004988b813365be2818a0cb`). Remote
+`dev` was observed at the same full commit after a non-force push. The
+checkout is clean, the stable ZIP SHA-256 remains `27948415…`, and remote
+`main` remains `aec53b1d`. This closes only the no-model host context canary.
