@@ -701,3 +701,13 @@ qualification is bound in
 `evidence/release-effect-manifest-1.0.0-taskos.json`; obtain independent
 technical review of the full changed candidate before dev integration.
 Live-host and historical-decision gates remain open for stable publication.
+
+Independent review of exact `52be8bff` returned REQUEST_CHANGES: the effect
+manifest lacked the 38-form public CLI coverage map required by release policy.
+The frozen verdict is preserved in
+`evidence/taskos-release-review-52be8bff-2026-09-29.md`. No source or asset
+defect was found. A superseding evidence-only packet now maps all 38 forms to
+39 current-byte retained command outputs and 12 current-byte delivered job-form
+observations, with exact job, output and receipt hashes. Verify the map and
+seek a focused delta rereview before dev integration. Keep the existing ZIP
+bytes frozen; do not rerun the six consumers merely to add this evidence map.
