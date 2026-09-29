@@ -40,3 +40,26 @@ explicit local permission for one ChatGPT `gpt-6-sol`/`medium` turn is pending.
 If granted, recheck current source/input/executable hashes, storage capacity,
 dispatch epoch and authentication immediately before the one turn. If denied
 or unavailable, retain this exact blocker and continue only independent work.
+
+## Current prompt visibility without a model turn
+
+After the first evidence-only integration, remote `dev` was observed at
+`b059f0ad0c643513018303c452a1d9fc9525993f`. The ignored local prompt
+was rebound to that head (756 bytes; SHA-256
+`72cbb59d745fdb62ee0ce825144fc37b3679fb87c24f2fb1365de7fcb84c1f13`),
+and the local job JSON SHA-256 became
+`6c86755412a891b00a3eef4128ae3ab862786b814cb28bc6f2b025d40c131e81`.
+`job inspect` still refused solely for the absent matching local model
+permission, with `writes: false`.
+
+The installed `codex-cli 0.145.0` `debug prompt-input` rendered a fresh
+local debugger view for that exact prompt with apps, hooks, multi-agent and
+remote plugins disabled through process-local options. Its raw output was
+piped directly into AIDE's bounded `job context` parser and was neither
+printed nor committed. The parser returned `COMPLETE`: 47,815 input JSON
+bytes, three messages, 46,350 visible UTF-8 text bytes (developer 21,834;
+user 24,516), no content-shape gaps, and zero model requests started by the
+parser. Tool definitions, effective tokens and internal inference remain
+unknown. This debugger view does not establish the exact context of a future
+`exec --ignore-user-config` turn, actual billing or model quality. It shows
+why the 756-byte task packet alone cannot be used as a session-cost claim.
