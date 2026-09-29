@@ -9,7 +9,7 @@ baseline against the current local 1.0.0 ZIP (SHA-256 `27948415…`) on
 | Obtain and run without checkout | Portable export and release builder | Current ZIP/TAR six-consumer matrix in `AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-runner-consumer-summary.json` | Six serial local consumers passed and retired scratch | Download and test the published asset after release. |
 | Initialize new project | `import-pack` | Current ZIP `consumer_canary_runner.py` retained job `1fc7bdf5` | Fresh receipt digest `bfbe4185…`; no feedback created by default | Final downloaded-byte first-run check. |
 | Adopt brownfield safely | `import-pack` and observation | Same current ZIP consumer job | Brownfield receipt digest `3f889770…`; earlier authored-file preservation tests | Final downloaded-byte brownfield check and declared support boundaries. |
-| Customize and explain update | `import-pack` ownership/explanation | `AIDE-DELIVERED-PACK-CUSTOMIZATION-01` source and old-to-new ZIP consumer | Owner-accepted `8cad56c0` and reviewed follow-up `c6d104f6` are in `dev`; current pack declares customization v1/v2 | Qualify the exact current/downloaded bytes across direct edits and a genuine three-way conflict; keep unknown rationale unknown. |
+| Customize and explain update | `import-pack` ownership/explanation | Current ZIP `consumer_canary_runner.py` job `1fc7bdf5`, plus source ancestry | Direct edit gave `PRESERVATION_REQUIRED`; V2 preview/apply refused conflict without changing bytes or receipt, resolved update applied; V3 conflict/resolution also passed. The oracle rejects invented rationale. | Downloaded-byte repeat and real published-successor update remain. |
 | Diagnose and repair | Delivered `repair` apply | Current ZIP `lifecycle_canary_runner.py` retained job `f21eaf88`, output SHA-256 `3486ee10…` | `PASS`; owned-file repair applied and restart returned `RECOVERED` | Final downloaded-byte recovery and supported-environment check. |
 | Roll back | Delivered rollback apply | Same current ZIP lifecycle job | `PASS`; rollback returned `ROLLED_BACK` using a synthetic successor | Qualify the real published predecessor/successor path where promised. |
 | Detach owned material | Delivered removal apply | Same current ZIP lifecycle job | `PASS`; fresh and brownfield `DETACHED`, changed ownership `PARTIAL_REMOVAL` | Final downloaded-byte ownership/preservation check. |
@@ -24,6 +24,12 @@ its `output/summary.json` SHA-256 is
 The summary binds the current ZIP hash, reports `PASS`, and marks its
 synthetic successor as unpublished. This corrects the older planner-only rows;
 it does not claim a published upgrade/rollback path.
+
+The current ZIP customization consumer summary SHA-256 is
+`307036fc99e5acca5a56f3d9fc5a990da20e12d2bb38e8ea936ad326c54313f0`.
+Its bound local oracle checks the direct-edit bytes and receipt before and
+after refused V2 apply, then the resolved V2/V3 paths. The successor packs
+are synthetic fixtures, not published release versions.
 
 Native Windows privilege and separately admitted hosted behavior keep their
 own gates. This matrix does not expand the baseline to every optional surface.
