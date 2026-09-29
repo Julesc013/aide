@@ -1,12 +1,12 @@
-# AIDE Lite Pack v0 Draft (0795eefe1b114ba1)
+# AIDE Lite Pack v0 Draft (6d6cfc61c34517ba)
 
 > Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.
 
 ## Release Metadata
 
-- Suggested tag: `aide-lite-pack-v0-draft-0795eefe1b114ba1`
+- Suggested tag: `aide-lite-pack-v0-draft-6d6cfc61c34517ba`
 - Suggested tag created: no
-- Source commit: `0795eefe1b114ba16514ff3881ec3d68834158ce`
+- Source commit: `6d6cfc61c34517bab7ef88128bea126515528f3a`
 - Source branch: `not-recorded-in-pack`
 - Dirty state recorded: `false`
 - Release type: local draft / not published
@@ -20,18 +20,18 @@
 ## Release Notes Preview
 - # AIDE Release Notes Preview
 - This is a deterministic preview only. It does not publish a release.
-- source_range: 0795eefe1b114ba16514ff3881ec3d68834158ce latest 50 commits
-- source_head: 0795eefe1b114ba16514ff3881ec3d68834158ce
+- source_range: 6d6cfc61c34517bab7ef88128bea126515528f3a latest 50 commits
+- source_head: 6d6cfc61c34517bab7ef88128bea126515528f3a
 - preview_only: true
 - ## Highlights
-- - Added: Bounded source for an optional native API-set loader observation. (36ada987bfe0)
-- - Changed: Record local Lite 1.0.0 attribution effect acceptance. (b11af55d728d)
+- - Fixed: Source changelog previews can use finite managed-job storage admission. (8ee5b4b98c02)
+- - Fixed: Q34 validation runs in both managed and documented raw discovery modes. (0063ab234484)
 
 ## Changelog Preview
 - # AIDE Changelog Preview
 - This file is generated from local Git history and is a preview only.
-- source_range: 0795eefe1b114ba16514ff3881ec3d68834158ce latest 50 commits
-- source_head: 0795eefe1b114ba16514ff3881ec3d68834158ce
+- source_range: 6d6cfc61c34517bab7ef88128bea126515528f3a latest 50 commits
+- source_head: 6d6cfc61c34517bab7ef88128bea126515528f3a
 - commit_count: 50
 - malformed_count: 0
 - preview_only: true
@@ -47,18 +47,18 @@
 
 | Order | Asset | Kind | Size | SHA-256 | Required |
 | --- | --- | --- | ---: | --- | --- |
-| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 1116722 | `03f1736328163aec...` | true |
-| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 783082 | `8e64ecc0be58f798...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `89d02d7270f190b7...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `058cd24fc36177ef...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1406 | `5f3a1d9c72154047...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 2434 | `1bb2878883cbf644...` | true |
-| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 7312 | `ec64815395429e62...` | true |
-| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 4936 | `993ad7c663278366...` | true |
+| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 1117188 | `6f6414c04721db7d...` | true |
+| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 783502 | `6818535c9b033001...` | true |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1132 | `b1ee06ee283c4a70...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 604 | `01c7cf0192484243...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1406 | `de5438d8a85e4101...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 2434 | `b419951cd60cebc3...` | true |
+| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 7283 | `4545f947e4e987c6...` | true |
+| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 3730 | `08ea8ce62126cb69...` | true |
 | 9 | `.aide/release/dist/release-validation.json` | validation_report | 3846 | `a457b73f186db89c...` | false |
 | 10 | `.aide/release/dist/release-validation.md` | validation_report | 238 | `aa0c336c3c2c0ded...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `c9c13cb4cc0494e5...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4080 | `8188e2e14babea8b...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1448 | `7cfad84873ed6eb2...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4080 | `48900e90e78aa44b...` | false |
 
 ## Validation Summary
 
