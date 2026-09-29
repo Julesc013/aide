@@ -580,3 +580,13 @@ replays; it did not rerun bulk suites. The exact verdict and its limits are in
 an evidence-only commit, then fast-forward and observe `dev` without changing
 the frozen subject. Main/tag/publication remain gated by ten owner decisions
 and a passing complete range check.
+
+Local `dev` fast-forwarded from `3cc6bf13` to evidence closeout `5eac25c2`,
+tree `03aadf37`; remote `dev` was observed at the same full commit after push.
+The four local stable asset hashes remained unchanged. Five new commit
+messages passed the base-to-dev range check. The complete `main..dev` check
+failed on exactly ten historical messages among 545 commits, so no main/tag/
+publication effect was attempted. The exact identities and result are in
+`evidence/efficiency-repeat-dev-integration-2026-09-29.md`. The next release
+action depends on the ten owner-only decisions already requested; continue
+other authorized campaign work while that gate is unresolved.
