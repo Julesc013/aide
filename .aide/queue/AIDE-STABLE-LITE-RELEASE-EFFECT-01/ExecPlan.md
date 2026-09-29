@@ -464,3 +464,20 @@ historical owner-message decisions and passing full `main..dev` range are
 still required before promotion; tag/publication and downloaded-byte checks
 remain unperformed. The review record is in
 `evidence/technical-release-accept-b9f720b5.md`.
+## 2026-09-29 superseding parser-safe Lite candidate
+
+Objective: qualify release bytes containing the independently accepted job
+evidence parser repair now on `dev@2cd254df`. The old four assets and strict
+technical ACCEPT remain historical for their exact bytes; a false terminal
+PASS from duplicate receipt keys is a material reason to supersede them before
+publication. Reuse the primary checkout, approved D managed runner, existing
+generator and release WorkUnit. No new worktree, storage pool or live model call.
+
+Order: regenerate the current portable pack from a clean source commit, commit
+its derived outputs, build and validate stable 1.0.0 local assets, commit those
+assets, then prove zero-change replay. Run affected delivered-byte job forms and
+the required existing fresh/brownfield/lifecycle consumers against the new ZIP.
+Record exact source, pack, asset and receipt digests in a superseding effect
+manifest; obtain independent technical acceptance. Preserve the ten historical
+owner-message gate before main, tag or publication. Do not silently reuse the
+old release effect or its frozen asset identities.
