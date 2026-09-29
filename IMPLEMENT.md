@@ -12816,3 +12816,13 @@ The D runner refused `.aide/changelog` as an unrecognized canonical output;
 the small changelog command ran directly through the existing deterministic
 CLI. Exact job and asset bindings are in the stable-effect WorkUnit. This is
 a local candidate pending independent release review, not published bytes.
+
+The subsequent bounded changelog source slice adds `.aide/changelog` to the
+existing runner's finite canonical output roots and guards default source
+preview generation behind admitted Windows Job custody. The first regression
+failed on the old unknown-destination rule; the repair passed 52/52 runner
+tests. A real D-managed preview passed with 191,602 observed canonical bytes,
+zero tracked drift and retired scratch. An existing Q34 test was found to
+rewrite six tracked previews; its output is now isolated under `AIDE_JOB_TMP`,
+and the rerun passed 12/12 with no tracked preview changes. This is source-only
+work awaiting independent review; the accepted 1.0.0 assets remain frozen.

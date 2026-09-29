@@ -21,6 +21,7 @@ scope:
     - .aide/scripts/tests/test_efficiency_wait.py
     - .aide/scripts/tests/test_export_import.py
     - .aide/scripts/tests/test_managed_workspace.py
+    - .aide/scripts/tests/test_q34_changelog_release.py
     - core/execution/managed_workspace.py
     - docs/reference/aide-lite-test-runner.md
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md

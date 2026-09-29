@@ -537,6 +537,24 @@ class ManagedWorkspaceTests(unittest.TestCase):
         with self.assertRaises(workspace.WorkspaceRefused):
             workspace.admission(self.config, roots, observed, self.job['canonical_outputs'])
 
+    def test_changelog_preview_default_needs_budgeted_canonical_custody(self):
+        lite = self.lite_module()
+        path = self.declare_canonical('.aide/changelog', amount=4096)
+        roots = {**self.roots, **workspace.canonical_roots(self.config, self.job, self.source)}
+        volume = workspace.volume_identity(path)
+        without = workspace.admission(self.config, self.roots, self.ample)
+        with_output = workspace.admission(self.config, roots, self.ample,
+                                          self.job['canonical_outputs'])
+        self.assertEqual(with_output[volume] - without[volume], 4096)
+        args = argparse.Namespace(repo_root=REPO, range=None, from_ref=None,
+                                  to_ref=None, limit=1, output_dir=None, format='all')
+        with mock.patch.object(lite, 'write_changelog_preview') as generator, \
+             mock.patch('builtins.print'):
+            self.assertEqual(lite.command_changelog_preview(args), 1)
+            args.output_dir = 'outside'
+            self.assertEqual(lite.command_changelog_preview(args), 1)
+        generator.assert_not_called()
+
     def test_canonical_volume_is_in_capacity_sampling_and_inspection(self):
         path = self.declare_canonical()
         def volume(value): return 'canonical-volume' if Path(value) == path else 'scratch-volume'

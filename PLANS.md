@@ -4345,3 +4345,11 @@ candidate. The full `main..dev` check still fails on ten owner-only historical
 messages, so main/tag/publication/downloaded-byte verification remain next
 release steps after those decisions. Continue separate host and whole-outcome
 efficiency work without changing the frozen 1.0.0 subject silently.
+
+The next source-only efficiency slice repairs the observed changelog runner
+gap. Default source-checkout preview generation now requires an admitted D
+job with a finite `.aide/changelog` canonical reservation. A Q34 test that
+rewrote six tracked previews was moved to an isolated D temporary output.
+The source branch passed 52 managed-workspace cases, 12 Q34 cases and a real
+bounded changelog generation with zero tracked drift. Independent source
+review and dev integration remain pending; frozen 1.0.0 assets are unchanged.
