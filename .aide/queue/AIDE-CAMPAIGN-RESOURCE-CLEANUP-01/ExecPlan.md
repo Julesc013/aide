@@ -314,3 +314,15 @@ remaining worktrees and limits are in
 `evidence/qualified-runner-closeout-2026-09-29.md`. The owned cleanup and
 bounded execution child is passed with notes; the parent release and wider
 programme remain active.
+
+## 2026-09-29 redundant checkout retirement
+
+The clean `aide-stable-lite-partial-import-recovery` checkout had no unique
+commit or untracked work: its exact HEAD was already an ancestor of remote
+`dev`, and its branch and remote ref were retained. Its only ignored content
+was a byte-identical 1 KB local runner configuration and Python bytecode
+caches. No active owned job or command was observed. Git removed the checkout
+without force; the primary ignored runner configuration now names only the
+surviving working root and passed `load_config`. The exact receipt is
+`evidence/final-worktree-retirement-2026-09-29.json`. This retirement changes
+no release source or frozen asset.

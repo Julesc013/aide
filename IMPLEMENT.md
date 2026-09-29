@@ -12761,3 +12761,15 @@ zero-change export/stable/bundle/draft replays passed. Independent review
 accepted the exact local effect at `a681da82` for dev integration; the
 eleven-commit range passed policy and remote `dev` was observed at `b11af55d`.
 This is local technical acceptance, not a live model or published release.
+
+## 2026-09-29 final redundant AIDE checkout retirement
+
+Retired the clean partial-import-recovery physical checkout through `git
+worktree remove` without force. Its exact `e18f983b` branch and remote ref
+remain, and that commit is already in remote `dev`. The checkout contained
+only a duplicate ignored local execution configuration and Python bytecode
+caches beyond tracked files. D: free space increased by 134,991,872 bytes
+during the operation. The surviving ignored configuration now names only the
+primary working root and passed the existing loader. The compact exact
+receipt is under `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/`; no release
+artifact or product source changed.
