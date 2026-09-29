@@ -30,6 +30,8 @@ automatically shared.
 The CLI also provides bounded partial-import recovery, receipt-owned repair,
 rollback and removal for the declared Windows profile. Removal applies only
 to proven owned material; keep the extracted pack and receipts for recovery.
+`task next-plan` inspects live queue state without rewriting its tracked
+report; use `--write-report` when a refreshed report is needed.
 There is no declared published predecessor for this first stable version.
 The `--from-pack` update path requires the exact validated predecessor pack;
 Q47/Q48 preview bundles are not published stable predecessors.
@@ -51,7 +53,7 @@ Q47/Q48 preview bundles are not published stable predecessors.
 
 | Asset | SHA-256 |
 | --- | --- |
-| `aide-lite-v1.0.0.zip` | `27948415530f260479c249b2d8cc956792eff4c77a524f0225f61f1f3f2ef7b1` |
-| `aide-lite-v1.0.0.tar.gz` | `b8f8ca5e961f399cb8991b0ac231c7ad05dfef8d0fce73661d054b239934a032` |
-| `aide-lite-v1.0.0.manifest.json` | `fc8f0aa65c948631ac5ef344086aecdbd72242e82cd225365c8dd25460dec192` |
-| `aide-lite-v1.0.0.SHA256SUMS.txt` | `a56e83a06fde9d378fcd7aa31e5ef0bab7094d64944585af9ddb3dbb9c7d0f9e` |
+| `aide-lite-v1.0.0.zip` | `002636e7732125ceade6bc3fe2d8e6fdb187cc544052360483dcb5b5d77acf97` |
+| `aide-lite-v1.0.0.tar.gz` | `0821532cbd382953c07cf0d4508159b2aa06e0161fbf7568e4ca0f83feac5022` |
+| `aide-lite-v1.0.0.manifest.json` | `79681299012d802543252bd4bb6c927f2f893a9410a2cf18a88b5f994f7e071f` |
+| `aide-lite-v1.0.0.SHA256SUMS.txt` | `ccb314006c642ac076342886af3ab487e789447c09f15fe626952374ce81ac79` |

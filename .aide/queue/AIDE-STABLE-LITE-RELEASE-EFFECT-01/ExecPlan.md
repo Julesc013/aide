@@ -686,3 +686,18 @@ oracles do not directly invoke the changed `task next-plan` command. Add one
 small delivered-ZIP canary for default non-mutation and explicit report
 generation before claiming coverage of that changed behavior. This canary
 is a test-only source addition; it does not change the frozen archive bytes.
+
+Focused delivered Task OS job `6fe1be9c` passed against ZIP `002636e7…`:
+default inspection preserved its sentinel report, and explicit
+`--write-report` refreshed it. The 12 delivered job forms passed in outer D
+job `e862547d`; the local harness used that job's owned scratch and retained
+output, and its exact SHA-256 is bound in the new effect manifest. Final
+postcommit export, stable, changelog, bundle and draft replay jobs
+`dc6523aa`, `e9255eec`, `07a4a868`, `4957ff29` and `4b465447` each passed
+with zero observed tracked changes after the job. Q47/Q48 bundle and draft
+generation plus validation also passed through the D runner. The separate
+public release body now lists the four exact new asset hashes. Exact local
+qualification is bound in
+`evidence/release-effect-manifest-1.0.0-taskos.json`; obtain independent
+technical review of the full changed candidate before dev integration.
+Live-host and historical-decision gates remain open for stable publication.

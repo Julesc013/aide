@@ -1,0 +1,271 @@
+{
+  "assets": [
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
+      "sha256": "002636e7732125ceade6bc3fe2d8e6fdb187cc544052360483dcb5b5d77acf97",
+      "size_bytes": 1118439
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
+      "sha256": "0821532cbd382953c07cf0d4508159b2aa06e0161fbf7568e4ca0f83feac5022",
+      "size_bytes": 784613
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.manifest.json",
+      "sha256": "79681299012d802543252bd4bb6c927f2f893a9410a2cf18a88b5f994f7e071f",
+      "size_bytes": 4955
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt",
+      "sha256": "ccb314006c642ac076342886af3ab487e789447c09f15fe626952374ce81ac79",
+      "size_bytes": 274
+    }
+  ],
+  "effect": {
+    "dev_integration": "pending exact independent technical review",
+    "downloaded_asset_verification": "pending publication",
+    "live_host_qualification": "pending separate local model permission",
+    "main_promotion": "pending ten exact historical owner decisions and current range qualification",
+    "published": false,
+    "tag_created": false,
+    "uploaded": false
+  },
+  "limitations": [
+    "Local Windows disposable consumers only; no arbitrary project rollout.",
+    "Python socket guard is not OS network isolation for child processes.",
+    "No actual Codex model turn, complete usage accounting, or matched host outcome was observed.",
+    "No published predecessor/successor upgrade path was tested.",
+    "The 12-form local canary harness is retained outside Git and bound by hash and job receipts; its observed memory/scratch peaks are samples, not filesystem quotas.",
+    "Prior technical ACCEPT applies only to the old ZIP digest and does not transfer to these bytes."
+  ],
+  "prior_candidate_zip_sha256": "27948415530f260479c249b2d8cc956792eff4c77a524f0225f61f1f3f2ef7b1",
+  "profile": {
+    "id": "aide-lite-local-windows",
+    "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
+    "platform_qualified": "Windows 10 build 19045 with Python 3.14.7",
+    "support_tier": "T3"
+  },
+  "programme": "AIDE-CONVERGENCE-AND-DELIVERY-01",
+  "proposed_tag": "aide-lite-v1.0.0",
+  "public_release_body": {
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/aide-lite-v1.0.0-release-body.md",
+    "sha256": "17dc25fe542c7ac12ada3b188dfc4a000de3f9cf4889e6225fd8db2547a0897e",
+    "state": "candidate_unpublished"
+  },
+  "qualification": {
+    "consumers": {
+      "count": 6,
+      "local_matrix_harness": {
+        "path": ".aide.local/run_current_consumer_matrix.py",
+        "sha256": "c37b9bcb5fa07a1583f15091060fff6d0eb1e3dff5a56998b46938f92dbf04f4"
+      },
+      "reservations_released": true,
+      "scratch_retired": true,
+      "summary_path": ".aide.local/efficiency-release-consumer-matrix.json",
+      "summary_sha256": "95e1a75bddf89a707fad2e0f3854f3a11f187615d76ec68cd584ad0c5b3cbb03"
+    },
+    "delivered_job_forms": {
+      "count": 12,
+      "inner_job_id": "5e11efabb2674e1286626504e16cfa6f",
+      "inner_receipt_sha256": "d32fa91f63e49b348c6eea93de183ccd4d6a2f8ba18ef0f256874fece9930a1e",
+      "local_harness_path": ".aide.local/job_forms_canary.py",
+      "local_harness_sha256": "5ad1c8092d7728e3ea76b4a99e051701b894abae7893b8f45dc275a8ae9b7a09",
+      "outer_job_id": "e862547dc0cd453db9f08e49b5419d07",
+      "summary_sha256": "69dcb439b1f5204c1846570375afd70a77e666506077a82f73b2ff761beec4c1"
+    },
+    "jobs": {
+      "bundle": {
+        "job_id": "1c970cda48c24d3aafa295cef9673beb",
+        "manifest_digest": "98aab22315d85914258f470e3dc25f9b5c9a499a13c48c3d77815761805ba5f8",
+        "receipt_sha256": "bd09c439ff2514c3c879350d3b188eb813b365800a67bcd35215f8161ef08a1f",
+        "source_commit": "b619b0c503f2f8173dbf714cc155b50ddf6cccae"
+      },
+      "bundle_replay_final": {
+        "job_id": "4957ff296efa49f6a94f22427dc1f377",
+        "manifest_digest": "25f1a6a0e454bf556440a1e2dee0afb5ebd2e3488f4127feb97fa1b6001dac7b",
+        "receipt_sha256": "92376c5c6a16226621e61b6c4673794ac003ced3bac44e7e58c41503bce3d8df",
+        "source_commit": "42ea77c13babd5cbef7e47dc78d62184bb62eff5"
+      },
+      "bundle_validate": {
+        "job_id": "915c9bc1920f4a7b83ebff2e2dec12d0",
+        "manifest_digest": "77db86ae1ade6333b7194bb518480a2aa0a3d28eb6a94c72c1ba2af062fe8b16",
+        "receipt_sha256": "fc40dd1668b5a69bc070834404a319aa801fa5e64628c4156a557c1ac404e9f3",
+        "source_commit": "b619b0c503f2f8173dbf714cc155b50ddf6cccae"
+      },
+      "changelog": {
+        "job_id": "4ab6d83c5a89439080997036f3e538a9",
+        "manifest_digest": "2bc9f82d6768197fa96c36941c97c65ddfc6ccbcd83ce3f12a4f29ce110324a7",
+        "receipt_sha256": "b487771ba1bcbd5652b64e74fe3d82021524e747571ac62b72d5cbe1650288c8",
+        "source_commit": "90bca3234983b7f58cc9ca487e6f6518d124f32a"
+      },
+      "changelog_replay_final": {
+        "job_id": "07a4a868206f4b2f8321ce792fa9977d",
+        "manifest_digest": "d38c7a0ab28c0025a83d26f87701f5e09e411a405fc6b1031c86f2bacb5301cd",
+        "receipt_sha256": "8486af1a41eae2cb39953d94cddb7a6a654c099c9f6d0da418c8029375720ba3",
+        "source_commit": "42ea77c13babd5cbef7e47dc78d62184bb62eff5"
+      },
+      "consumer_0": {
+        "job_id": "f506cb4512dd4b8fa6c2c8260c1e9f5a",
+        "manifest_digest": "c464e2d9e85522930d51f9b11cc613324063b292e91436ea4cdc0c1c652a4303",
+        "receipt_sha256": "7a76d22a52b7311011e75581020b3e8588509fcf1e63a4083c24029b70506887",
+        "source_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0"
+      },
+      "consumer_1": {
+        "job_id": "a6f3bbd32302473d8c0c30220c96b138",
+        "manifest_digest": "2677afb356c370d12c7b9f8ac013fade6a4c6479806e158463951be188332f6f",
+        "receipt_sha256": "a07ea9970c86bc5243b3edecc0ff83595319aee00bc959e8716303b00bcf3da2",
+        "source_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0"
+      },
+      "consumer_2": {
+        "job_id": "673add5a33ca4fb299d81a46a6f07b79",
+        "manifest_digest": "677b31cf4fd706c60579e3fbbda93aa7a317350001780bdccd7945555de50d02",
+        "receipt_sha256": "d3836de529dd6d67ac2dc46cebd852475fee972bd8e818c131e6a09782227dba",
+        "source_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0"
+      },
+      "consumer_3": {
+        "job_id": "eb9cafecf0194926b65632c458842067",
+        "manifest_digest": "04b7b0d174a1d5e7d5f182d28da79384525ef4197c636a6f81585794b15d1182",
+        "receipt_sha256": "21a6406f80ac2a363863907c4401da05513aa357af19da1ff85c3a6df20bbe8f",
+        "source_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0"
+      },
+      "consumer_4": {
+        "job_id": "e96fbdf040a649fc88efd41962ec18c1",
+        "manifest_digest": "b79cab507dd5879814dfaf279bd0dba10e906c247de841e8c39d6c8cca45711b",
+        "receipt_sha256": "cd695b5845bc061d2d57430dd116fa426081117804f863976d8347712aae239e",
+        "source_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0"
+      },
+      "consumer_5": {
+        "job_id": "28cfcb99d72d4d5cbafdd9ba3655ee8f",
+        "manifest_digest": "e20eec057cf1ea9903fed3b92658d438953f600483c2dfefa2016b0629d57aac",
+        "receipt_sha256": "fcaee58295af2a0414c0f5309e7f423a330d08c5fcc1bb5022d179c59a19fc3f",
+        "source_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0"
+      },
+      "draft": {
+        "job_id": "11845347fe624517890a29e8398b5dde",
+        "manifest_digest": "a676449a51ab5592959c1405b117e9acc574748d56cb332cf3d04831662064b1",
+        "receipt_sha256": "f69decf1f61ee13d6c2fd00139e870326200a6daad181418036cc3d8fb576dd2",
+        "source_commit": "1b42e465fd05e414d5a7cd2bf4e6a1951c78ec55"
+      },
+      "draft_replay_final": {
+        "job_id": "4b465447cee84e4683eb36a0a9c775e6",
+        "manifest_digest": "b026dfef6ab5d997734ea5bc1981bf88dd366a7480c6304b4a5317cdec2302a1",
+        "receipt_sha256": "7e3eb1c2994c577fbdf2c7f492ceb046de61e0d04d25fd003edc9eaab9203437",
+        "source_commit": "42ea77c13babd5cbef7e47dc78d62184bb62eff5"
+      },
+      "draft_validate": {
+        "job_id": "b1a09bfc634543fc940b8e7c315c537c",
+        "manifest_digest": "c4bc98f8451c8cfd21a30e639c18ff9a616a32f9b965797b40ac07ec87c934af",
+        "receipt_sha256": "b9514cd583b820164e3cef45705c3509b94b81f5100c5b072347c7dc31c1ed39",
+        "source_commit": "1b42e465fd05e414d5a7cd2bf4e6a1951c78ec55"
+      },
+      "export": {
+        "job_id": "03785bb5fe4c46c1899d82aad5435854",
+        "manifest_digest": "3c1f715a47d7b02b1c52dad0276ff7c6cf3013cc392570e7a7be4f073215013b",
+        "receipt_sha256": "6ec14978be24eb50ca7f3614980e577dd40f6dc61ed461f225756f0fb059e804",
+        "source_commit": "6d6cfc61c34517bab7ef88128bea126515528f3a"
+      },
+      "export_replay_final": {
+        "job_id": "dc6523aa6d9e4664b1993bd49de15cec",
+        "manifest_digest": "9535ce7871538ebeb6541cc6fc604b72513f401a00ba210f9da9498ae273008c",
+        "receipt_sha256": "7c87bf97f98aa776ad71cf49c7b3c033e639575e8aa321967aad437136d5e5ca",
+        "source_commit": "42ea77c13babd5cbef7e47dc78d62184bb62eff5"
+      },
+      "export_replay_first": {
+        "job_id": "bba90883fe3b41f882055eea90d3a5c9",
+        "manifest_digest": "bd10d02975bb657f05bfb959ee4bd15a31a8ccb2fde2982d0255dac547c40493",
+        "receipt_sha256": "f3a63964d74b2f4b89abb9bd179be4c7d30125b414ed63689e0edb655acf93b0",
+        "source_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0"
+      },
+      "job_forms_outer": {
+        "job_id": "e862547dc0cd453db9f08e49b5419d07",
+        "manifest_digest": "9dbc75e55e9c58e5281a42a74d604c11816466db5325440a59eb79a4eb1d0e9f",
+        "receipt_sha256": "81fbd51a7dea2c445f7dc157dfe16ec99d9bc2c47a371c7406f64ce62cbc1dc3",
+        "source_commit": "42ea77c13babd5cbef7e47dc78d62184bb62eff5"
+      },
+      "q47_q48_tests": {
+        "job_id": "2586592a66ef44f78c4682d26b9534c4",
+        "manifest_digest": "3784fa20dffc961f5dd828dbe734622c465987071f01c7609219a7d49c59eb5d",
+        "receipt_sha256": "7907cd047bb77a89ae96c4d1725ab38b29c207ca838459fcaed8609c360c3946",
+        "source_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0"
+      },
+      "stable_build": {
+        "job_id": "f27082d2e53441edad26aad006f67cd8",
+        "manifest_digest": "62db67abb0e66eaf23efa9af51973ae12cfc0e5882fb4b4482ea30e7dafc48ab",
+        "receipt_sha256": "2d35fad9ba297ae53119387d52338b34aec2ebb8fcb95243a845022f62951254",
+        "source_commit": "350e8037e616dc4392e1f2bd976cb5d3f8b15196"
+      },
+      "stable_replay_final": {
+        "job_id": "e9255eecd2504b6ba6a031259109ed3a",
+        "manifest_digest": "4055359e73190a0e6ccd24b71bedf4e04ffbcc3121c4ccceffe24566bbc461f0",
+        "receipt_sha256": "9c90a322bc9f2d362ba5581401e960df1d70613a31631910b7759eb3773097e2",
+        "source_commit": "42ea77c13babd5cbef7e47dc78d62184bb62eff5"
+      },
+      "stable_replay_first": {
+        "job_id": "8c98d838a8674eea8b94f50a2975e1fe",
+        "manifest_digest": "b344a9cc4d6bf10c3df4c91d528aa1b5d7f1c5a42e09d0a96c70bbf4153cf5b6",
+        "receipt_sha256": "2517cb0658860afce1df0572b9c5d6d40e26d69bf034013661fc7a0cd86b331d",
+        "source_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0"
+      },
+      "stable_validate": {
+        "job_id": "431d8862635d437a801fd6d904b24d45",
+        "manifest_digest": "364184f6dfa9b81c465319abf01a7d8ac2d1087d1469987a2a6177683b22818a",
+        "receipt_sha256": "606b4ef84058b438e8acc744a6cd5e0083b62fc48fbb7cba476c0f2501b42679",
+        "source_commit": "350e8037e616dc4392e1f2bd976cb5d3f8b15196"
+      },
+      "taskos_delivered": {
+        "job_id": "6fe1be9c28064483a410fd1b21255a2a",
+        "manifest_digest": "2b6d67840a5feeb22bd91f2e844afced5f08842fb2a112297bf7967aa0e25bbc",
+        "receipt_sha256": "63161917c911f51068dcb1c2c030c185bc26f608313b6898c709cfea55b2290f",
+        "source_commit": "90bca3234983b7f58cc9ca487e6f6518d124f32a"
+      }
+    },
+    "local_execution_config_sha256": "73c0b1a4f4bb7cf341c8882806852a9aaea81c81a3d956cde575c1814e3616f6",
+    "pack_status": "PASS checksums, provenance, boundary: zero findings",
+    "q47_q48_tests": {
+      "job_id": "2586592a66ef44f78c4682d26b9534c4",
+      "passed": 36,
+      "skipped": 0
+    },
+    "replay": {
+      "jobs": [
+        "dc6523aa6d9e4664b1993bd49de15cec",
+        "e9255eecd2504b6ba6a031259109ed3a",
+        "07a4a868206f4b2f8321ce792fa9977d",
+        "4957ff296efa49f6a94f22427dc1f377",
+        "4b465447cee84e4683eb36a0a9c775e6"
+      ],
+      "tracked_changes_observed_after_each": 0
+    },
+    "stable_validate": "PASS local unpublished candidate",
+    "taskos_delivered": {
+      "default_report_unchanged": true,
+      "explicit_report_changed": true,
+      "job_id": "6fe1be9c28064483a410fd1b21255a2a",
+      "oracle": {
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/taskos_delivered_canary.py",
+        "sha256": "3fbf7e4a859f98923204a77cdeb70fd3dde690458aa055b23de1176864246183"
+      },
+      "summary_sha256": "e008e5e1cd703fec074258f5483ddd4c1eae3cdf264738610299151e18389b48"
+    }
+  },
+  "schema_version": "aide.stable-release-effect.v1",
+  "source": {
+    "asset_tree": "6df11970ffd43150fcc885afb6beaf7b8ab8c15a",
+    "commits": {
+      "asset_commit": "b14e618408f097d1bbfd9356c1e83cc83319f4f0",
+      "base_dev": "dcdc9929a5ad145c34d198189b303186ba1553d5",
+      "bundle_commit": "1b42e465fd05e414d5a7cd2bf4e6a1951c78ec55",
+      "canary_source": "90bca3234983b7f58cc9ca487e6f6518d124f32a",
+      "changelog_commit": "b619b0c503f2f8173dbf714cc155b50ddf6cccae",
+      "draft_commit": "42ea77c13babd5cbef7e47dc78d62184bb62eff5",
+      "pack_projection": "350e8037e616dc4392e1f2bd976cb5d3f8b15196",
+      "pack_source": "6d6cfc61c34517bab7ef88128bea126515528f3a"
+    },
+    "pack_source_tree": "c76b918577ace073d6f9470be74bc86facd6a855",
+    "review_base_tree": "e3c34640a1fd6a0a7d5f663a82641f6ea688ae3a",
+    "version_policy_sha256": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253"
+  },
+  "state": "local_current_source_candidate_pending_exact_technical_review_and_live_host_gate",
+  "version": "1.0.0",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+}
