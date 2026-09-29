@@ -5812,7 +5812,8 @@ TASK_OS_SOURCE_ROUTING_TASK_IDS = {
     TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID,
     TASK_OS_STATUS_REPAIR_TASK_ID,
 }
-TASK_OS_LIFECYCLE_PLAN_TASK_LABEL = "AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning"
+TASK_OS_LIFECYCLE_PLAN_TASK_ID = "AIDE-APPLY-LIFECYCLE-PLAN-01"
+TASK_OS_LIFECYCLE_PLAN_TASK_LABEL = TASK_OS_LIFECYCLE_PLAN_TASK_ID + " - Apply Lifecycle Planning"
 
 
 def task_os_source_routing_enabled(context: dict[str, object]) -> bool:
@@ -5925,6 +5926,20 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             **post_apply_fields,
         }
     if apply02_accepted_with_notes and task_os_done_local(status_repair_status):
+        lifecycle_plan_status = task_os_status_from_context(context, TASK_OS_LIFECYCLE_PLAN_TASK_ID)
+        if lifecycle_plan_status not in ("missing", "pending"):
+            return {
+                "task": "Review current AIDE queue WorkUnits",
+                "reason": ("The historical lifecycle-plan WorkUnit is already "
+                           + lifecycle_plan_status
+                           + "; inspect current queue status and evidence before selecting another task."),
+                "x_os_01_status": xos01_status,
+                "x_os_02_status": xos02_status,
+                "checkpoint_status": checkpoint_status,
+                "repair_status": repair_status,
+                "aide_apply_00_next_packet_ready": False,
+                **post_apply_fields,
+            }
         return {
             "task": TASK_OS_LIFECYCLE_PLAN_TASK_LABEL,
             "reason": "AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.",

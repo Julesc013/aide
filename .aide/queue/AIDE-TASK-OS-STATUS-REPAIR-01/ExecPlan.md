@@ -70,3 +70,30 @@ If interrupted, inspect `status.yaml`, `evidence/diagnosis.md`, `evidence/valida
 ## Review Gate
 
 End at `needs_review`. This task may recommend `AIDE-APPLY-LIFECYCLE-PLAN-01` as the next planning-only WorkUnit, but it must not authorize lifecycle apply execution.
+
+## 2026-09-29 stale next-work repair
+
+Objective: stop the self-hosted Task OS from recommending the historical
+`AIDE-APPLY-LIFECYCLE-PLAN-01` as a new runnable task once its queue status is
+already `needs_review` or otherwise complete. The read-only selector on clean
+`dev@0d9741e3` currently does so even though later lifecycle source and
+current-ZIP consumers have progressed. Keep this old phase selector honest;
+do not invent a current campaign priority or weaken review gates.
+
+Scope: this WorkUnit, `.aide/scripts/aide_lite.py`, and its focused Task OS
+test. Add a red regression with a completed lifecycle-plan item, then return
+an explicit current-queue review fallback with lifecycle-plan readiness false.
+Preserve the old planning recommendation when that item is genuinely absent or
+pending. Run focused tests and source validation; obtain independent changed
+scope review before dev integration. Keep the frozen release ZIP unchanged and
+route any changed-byte projection through the existing release WorkUnit.
+
+The new fixture failed red: an already `needs_review` lifecycle plan was
+selected again. After the source repair, 11/11 X-OS-01 tests and 9/9 X-OS-00
+tests passed with process-local temporary files under the approved D scratch
+root. Python AST and `git diff --check` passed; `git status` showed only this
+plan, the intended source and test. A read-only selection on the actual AIDE
+queue now says `Review current AIDE queue WorkUnits`, gives the historical
+`needs_review` reason, and reports lifecycle-plan readiness false. This does
+not infer the next campaign priority or authorize lifecycle apply. Freeze the
+source subject for independent review before any dev or release projection.

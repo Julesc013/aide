@@ -412,6 +412,24 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             self.assertIn("lifecycle_apply_authorized: false", next_text)
             self.assertIn("authorizes only planning, not lifecycle apply execution", next_text)
 
+            lifecycle_id = "AIDE-APPLY-LIFECYCLE-PLAN-01"
+            add_queue_task(root, lifecycle_id, status="pending", planning_state="planned")
+            selection = aide_lite.task_os_next_selection(aide_lite.task_os_context(root))
+            self.assertIn(lifecycle_id, str(selection["task"]))
+            self.assertTrue(selection["aide_apply_lifecycle_plan_ready"])
+
+            write_queue_status(root, lifecycle_id, "needs_review", "PASS_WITH_WARNINGS")
+            context = aide_lite.task_os_context(root)
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertEqual(selection["task"], "Review current AIDE queue WorkUnits")
+            self.assertIn("already needs_review", str(selection["reason"]))
+            self.assertFalse(selection["aide_apply_lifecycle_plan_ready"])
+            self.assertFalse(selection["lifecycle_apply_authorized"])
+            self.assertNotIn(
+                "selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01",
+                aide_lite.task_os_render_task_status(context),
+            )
+
     def test_current_repo_validation_registration_passes(self) -> None:
         self.assertEqual(aide_lite.task_os_profile_role(REPO_ROOT), "aide_source")
         checks = aide_lite.validate_task_os_command_files(REPO_ROOT)
