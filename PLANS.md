@@ -4335,3 +4335,13 @@ and 36 Q47/Q48 tests passed. The current candidate is on
 `task/aide-lite-efficiency-release-01` awaiting an exact independent technical
 release review. The ten owner-only historical dispositions gate main; live
 model effects remain a separate wider-campaign qualification.
+
+That exact release subject `9cfa91da` received independent local technical
+**ACCEPT**. It and the evidence closeout reached remote `dev` through
+`2dfc7e98`; the parent campaign now points to current effect manifest SHA-256
+`8c64893c`. Six exact-byte consumers, 12 delivered job observations, 36
+Q47/Q48 cases, 51 source cases and zero-change replays bind this changed-byte
+candidate. The full `main..dev` check still fails on ten owner-only historical
+messages, so main/tag/publication/downloaded-byte verification remain next
+release steps after those decisions. Continue separate host and whole-outcome
+efficiency work without changing the frozen 1.0.0 subject silently.

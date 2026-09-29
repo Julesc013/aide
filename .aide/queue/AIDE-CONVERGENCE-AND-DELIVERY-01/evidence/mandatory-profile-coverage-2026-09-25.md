@@ -1,5 +1,19 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
+**2026-09-29 latest current-byte Lite gate:** Independent technical review
+**ACCEPTED** local effect subject `9cfa91da`/tree `1caf7de0`, manifest
+SHA-256 `8c64893c3a9637da20fa2826ed90c5442b6ba299611ae59d172078185a077875`.
+The accepted four local 1.0.0 assets include ZIP SHA-256 `798f44df…`.
+Current source, pack, assets and evidence are in `dev` through integration
+ancestor `2dfc7e98`; see `AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/
+efficiency-repeat-dev-integration-2026-09-29.md` for the exact full refs and
+qualifications. Six delivered-byte consumers, 12 job observations, 36 Q47/Q48
+cases, 51 source cases and zero-change replays are recorded for this subject.
+Ten exact owner-only historical message decisions still block `main`; no tag,
+publication or downloaded-byte check occurred. Live model/native/hosted
+qualification remains a separate wider-campaign gap. Older checkpoints below
+retain their original subjects and are not current asset pins.
+
 **2026-09-29 technical release verdict:** An independent reviewer gave the
 strict technical release **ACCEPT** for exact Windows Lite effect manifest
 SHA-256 `747d3b0a…` at `dev@b9f720b5`, with all four frozen assets and 38
