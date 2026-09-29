@@ -143,6 +143,28 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             parsed = parser.parse_args(command)
             self.assertTrue(callable(getattr(parsed, "handler", None)), command)
 
+    def test_next_plan_inspects_without_rewriting_report_by_default(self) -> None:
+        parser = aide_lite.build_parser(REPO_ROOT)
+        self.assertFalse(parser.parse_args(["task", "next-plan"]).write_report)
+        self.assertTrue(parser.parse_args(["task", "next-plan", "--write-report"]).write_report)
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            report = root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH
+            report.write_text("older retained snapshot\n", encoding="utf-8")
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                exit_code = aide_lite.command_task_next_plan(argparse.Namespace(repo_root=root, write_report=False))
+            self.assertEqual(exit_code, 0)
+            self.assertEqual(report.read_text(encoding="utf-8"), "older retained snapshot\n")
+            self.assertIn("non_mutating: true", output.getvalue())
+            self.assertNotIn("report:", output.getvalue())
+
+            with contextlib.redirect_stdout(io.StringIO()):
+                exit_code = aide_lite.command_task_next_plan(argparse.Namespace(repo_root=root, write_report=True))
+            self.assertEqual(exit_code, 0)
+            self.assertIn("selected_next_workunit:", report.read_text(encoding="utf-8"))
+
     def test_fixture_report_generation_is_no_apply(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -411,6 +433,24 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             self.assertIn("aide_apply_lifecycle_plan_ready: true", next_text)
             self.assertIn("lifecycle_apply_authorized: false", next_text)
             self.assertIn("authorizes only planning, not lifecycle apply execution", next_text)
+
+            lifecycle_id = "AIDE-APPLY-LIFECYCLE-PLAN-01"
+            add_queue_task(root, lifecycle_id, status="pending", planning_state="planned")
+            selection = aide_lite.task_os_next_selection(aide_lite.task_os_context(root))
+            self.assertIn(lifecycle_id, str(selection["task"]))
+            self.assertTrue(selection["aide_apply_lifecycle_plan_ready"])
+
+            write_queue_status(root, lifecycle_id, "needs_review", "PASS_WITH_WARNINGS")
+            context = aide_lite.task_os_context(root)
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertEqual(selection["task"], "Review current AIDE queue WorkUnits")
+            self.assertIn("already needs_review", str(selection["reason"]))
+            self.assertFalse(selection["aide_apply_lifecycle_plan_ready"])
+            self.assertFalse(selection["lifecycle_apply_authorized"])
+            self.assertNotIn(
+                "selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01",
+                aide_lite.task_os_render_task_status(context),
+            )
 
     def test_current_repo_validation_registration_passes(self) -> None:
         self.assertEqual(aide_lite.task_os_profile_role(REPO_ROOT), "aide_source")

@@ -5812,7 +5812,8 @@ TASK_OS_SOURCE_ROUTING_TASK_IDS = {
     TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID,
     TASK_OS_STATUS_REPAIR_TASK_ID,
 }
-TASK_OS_LIFECYCLE_PLAN_TASK_LABEL = "AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning"
+TASK_OS_LIFECYCLE_PLAN_TASK_ID = "AIDE-APPLY-LIFECYCLE-PLAN-01"
+TASK_OS_LIFECYCLE_PLAN_TASK_LABEL = TASK_OS_LIFECYCLE_PLAN_TASK_ID + " - Apply Lifecycle Planning"
 
 
 def task_os_source_routing_enabled(context: dict[str, object]) -> bool:
@@ -5925,6 +5926,20 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             **post_apply_fields,
         }
     if apply02_accepted_with_notes and task_os_done_local(status_repair_status):
+        lifecycle_plan_status = task_os_status_from_context(context, TASK_OS_LIFECYCLE_PLAN_TASK_ID)
+        if lifecycle_plan_status not in ("missing", "pending"):
+            return {
+                "task": "Review current AIDE queue WorkUnits",
+                "reason": ("The historical lifecycle-plan WorkUnit is already "
+                           + lifecycle_plan_status
+                           + "; inspect current queue status and evidence before selecting another task."),
+                "x_os_01_status": xos01_status,
+                "x_os_02_status": xos02_status,
+                "checkpoint_status": checkpoint_status,
+                "repair_status": repair_status,
+                "aide_apply_00_next_packet_ready": False,
+                **post_apply_fields,
+            }
         return {
             "task": TASK_OS_LIFECYCLE_PLAN_TASK_LABEL,
             "reason": "AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.",
@@ -38978,15 +38993,19 @@ def command_task_resume_plan(args: argparse.Namespace) -> int:
 
 
 def command_task_next_plan(args: argparse.Namespace) -> int:
-    result = write_task_os_next_plan(args.repo_root)
+    write_report = getattr(args, "write_report", False)
+    result = write_task_os_next_plan(args.repo_root) if write_report else None
     context = task_os_context(args.repo_root)
     selection = task_os_next_selection(context)
     print("AIDE Lite task next-plan")
     print("result: PASS")
     print(f"selected_next_workunit: {selection.get('task', 'review current task evidence')}")
-    print(f"report: {TASK_OS_NEXT_PLAN_REPORT_PATH} ({result.action})")
+    print(f"reason: {selection.get('reason', '')}")
+    if result is not None:
+        print(f"report: {TASK_OS_NEXT_PLAN_REPORT_PATH} ({result.action})")
     print(f"aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}")
     print(f"lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}")
+    print(f"non_mutating: {str(not write_report).lower()}")
     print("report_only: true")
     print("task_execution: false")
     return 0
@@ -45592,7 +45611,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_subparsers.add_parser("repair-plan").set_defaults(handler=command_task_repair_plan)
     task_subparsers.add_parser("requeue-plan").set_defaults(handler=command_task_requeue_plan)
     task_subparsers.add_parser("resume-plan").set_defaults(handler=command_task_resume_plan)
-    task_subparsers.add_parser("next-plan").set_defaults(handler=command_task_next_plan)
+    task_next_plan_parser = task_subparsers.add_parser("next-plan")
+    task_next_plan_parser.add_argument("--write-report", action="store_true", help="Explicitly refresh the tracked Task OS next-plan report")
+    task_next_plan_parser.set_defaults(handler=command_task_next_plan)
     task_noop_parser = task_subparsers.add_parser("noop-check")
     task_noop_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_noop_parser.set_defaults(handler=command_task_noop_check)
