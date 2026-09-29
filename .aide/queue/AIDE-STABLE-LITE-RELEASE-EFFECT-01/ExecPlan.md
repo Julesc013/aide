@@ -450,3 +450,8 @@ preview/apply, no published predecessor, customization and local feedback,
 recovery/removal, offline scope and excluded model/native/hosted profiles.
 The body remains candidate text until exact technical release ACCEPT,
 historical dispositions, main promotion, tag and publication are satisfied.
+
+Independent `/root/stable_effect_review` accepted exact release-body commit
+`3efcb932`, tree `893085c5`, for dev inclusion. Four asset hashes and the
+embedded installation sequence matched; the review did not grant stable
+release acceptance or publication.
