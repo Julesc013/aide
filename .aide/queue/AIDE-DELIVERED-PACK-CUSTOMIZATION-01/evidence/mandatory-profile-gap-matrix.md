@@ -1,19 +1,29 @@
 # Mandatory stable-profile obligations (working control)
 
 This tracks the adopted `specs/control-plane/product/scope-and-profiles.md`
-baseline. A source test is not whole-product release evidence.
+baseline against the current local 1.0.0 ZIP (SHA-256 `27948415…`) on
+2026-09-29. A source test or local consumer is not published-release evidence.
 
 | Journey | Code owner | Exact current check | Delivered evidence | Remaining blocker and next action |
 |---|---|---|---|---|
-| Obtain and run without checkout | Portable export and release builder | `test_export_import.py`; `release validate` | ZIP/tar extracted consumer at dev `3bdeb220` | Requalify final integrated bytes, then consumer acquisition from published asset. |
-| Initialize new project | `import-pack` | `test_import_fixture_creates_templates_and_preserves_agents` | Fresh ZIP consumer APPLIED and doctor PASS | Establish full first-run project profile acceptance. |
-| Adopt brownfield safely | `import-pack` and observation | `test_import_preserves_authored_agents_bytes_outside_portable_section` | Brownfield tar consumer preserved owner files | Expand supported brownfield recovery and qualification. |
-| Customize and explain update | `import-pack` ownership/explanation | `test_export_import.py` 29/29 | Final ZIP old-to-new consumer and pending-recovery receipt at `8cad56c0` | Exact queue review and dev integration remain; conflict resolution still needs an explicit workflow. |
-| Diagnose and repair | `repair` planners | Existing repair suite; no final apply test | Planner only | Implement admitted apply behavior and delivered recovery test. |
-| Roll back | `rollback` planners | Existing rollback suite; no final apply test | Planner only | Implement admitted recovery apply behavior and delivered test. |
-| Detach owned material | `uninstall` planner | Existing uninstall suite; no deletion test | Planner only | Implement owner-scoped removal apply and preservation test. |
-| Continue offline | Lite local commands | `doctor`, `validate`, extracted consumer | Local pack consumer, no model/network calls | Qualify final environment and unavailable-capability behavior. |
-| Stable publication and update | Release generator and publication route | `release validate`, deterministic replay | Local assets only | Exact main review, authorized publish, remote-byte and downloaded update proof. |
+| Obtain and run without checkout | Portable export and release builder | Current ZIP/TAR six-consumer matrix in `AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-runner-consumer-summary.json` | Six serial local consumers passed and retired scratch | Download and test the published asset after release. |
+| Initialize new project | `import-pack` | Current ZIP `consumer_canary_runner.py` retained job `1fc7bdf5` | Fresh receipt digest `bfbe4185…`; no feedback created by default | Final downloaded-byte first-run check. |
+| Adopt brownfield safely | `import-pack` and observation | Same current ZIP consumer job | Brownfield receipt digest `3f889770…`; earlier authored-file preservation tests | Final downloaded-byte brownfield check and declared support boundaries. |
+| Customize and explain update | `import-pack` ownership/explanation | `AIDE-DELIVERED-PACK-CUSTOMIZATION-01` source and old-to-new ZIP consumer | Owner-accepted `8cad56c0` and reviewed follow-up `c6d104f6` are in `dev`; current pack declares customization v1/v2 | Qualify the exact current/downloaded bytes across direct edits and a genuine three-way conflict; keep unknown rationale unknown. |
+| Diagnose and repair | Delivered `repair` apply | Current ZIP `lifecycle_canary_runner.py` retained job `f21eaf88`, output SHA-256 `3486ee10…` | `PASS`; owned-file repair applied and restart returned `RECOVERED` | Final downloaded-byte recovery and supported-environment check. |
+| Roll back | Delivered rollback apply | Same current ZIP lifecycle job | `PASS`; rollback returned `ROLLED_BACK` using a synthetic successor | Qualify the real published predecessor/successor path where promised. |
+| Detach owned material | Delivered removal apply | Same current ZIP lifecycle job | `PASS`; fresh and brownfield `DETACHED`, changed ownership `PARTIAL_REMOVAL` | Final downloaded-byte ownership/preservation check. |
+| Continue offline | Lite local commands | Current ZIP `context_offline_canary.py` consumer and local Python socket guard | Local commands passed; no model request in the host-context canary | OS-level offline behavior remains unproven for child processes. |
+| Stable publication and update | Release generator and publication route | Current ZIP SHA-256 `27948415…`; independent local technical acceptance and zero-change replay | Local asset and six-consumer qualification; remote `dev@005c8036` | Live-host efficiency and final effect acceptance, ten owner-only historical dispositions, main/tag/publication, remote-byte and downloaded update proof. |
+
+The current ZIP lifecycle job `f21eaf88b56043f09fde3d83bb85e01a` is
+retained under the approved D job root. Its receipt SHA-256 is
+`222afd022ad4fce186a51936d8109d7aa64e9f627f6ec1a74edd25bec0ee7ee9`;
+its `output/summary.json` SHA-256 is
+`3486ee100782a3fb39b2f251d70f77dfccb83716ab46bd75a3fa1c67a283dfeb`.
+The summary binds the current ZIP hash, reports `PASS`, and marks its
+synthetic successor as unpublished. This corrects the older planner-only rows;
+it does not claim a published upgrade/rollback path.
 
 Native Windows privilege and separately admitted hosted behavior keep their
 own gates. This matrix does not expand the baseline to every optional surface.
