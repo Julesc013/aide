@@ -1,5 +1,14 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
+**2026-09-29 later Lite gate correction:** Remote `dev@b0c8dd92` includes the
+reviewed 38-form local effect, ZIP `6a56a494…` and tar `a8fa44bf…`. Six
+current-byte consumers, 12 delivered job observations and Q47/Q48 36/36 are
+recorded. The first stable Windows Lite profile explicitly excludes live
+model, native and hosted operation; those remain wider campaign gaps, not Lite
+publication prerequisites. Ten exact historical owner decisions and an exact
+technical release ACCEPT still precede main promotion and publication. The
+older checkpoints below retain their dated source and asset identities.
+
 **2026-09-29 current gate:** Local and remote
 `dev@3671f2fe4c77c07ee57efd4d6367a04b66ab6307` contain the independently
 accepted 37-form Windows Lite source and local candidate assets. Exact effect

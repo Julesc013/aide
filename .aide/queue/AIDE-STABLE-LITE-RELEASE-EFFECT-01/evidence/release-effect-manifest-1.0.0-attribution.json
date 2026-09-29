@@ -22,9 +22,9 @@
     }
   ],
   "effect": {
-    "dev_integration": "fast-forward only after independent exact technical ACCEPT, passing range check and fresh local/remote ref checks",
+    "dev_integration": "completed after independent exact local-effect ACCEPT and passing range and ref checks; remote dev observed at b0c8dd92e57f08d970bdfac1d2485db2f70c4394",
     "downloaded_asset_verification": "pending actual publication and authorized acquisition",
-    "main_promotion": "not yet qualified: ten historical owner decisions, live model qualification and exact current release acceptance remain",
+    "main_promotion": "not yet qualified: ten historical owner decisions and exact current Lite technical release ACCEPT remain; live model operation is excluded from the aide-lite-local-windows profile",
     "no_force_push_or_retag": true,
     "tag_and_publication": "not yet qualified; no tag, upload or release exists"
   },
@@ -34,7 +34,8 @@
     "No tag, upload, published release or downloaded-byte verification occurred.",
     "Consumers were disposable AIDE-owned fixtures, not arbitrary project rollout.",
     "Attempt-set known-role subtotals are partial; work totals and host requests remain unknown.",
-    "The 38-form consumer used synthetic Codex streams; no real model billing or model turn was observed."
+    "The 38-form consumer used synthetic Codex streams; no real model billing or model turn was observed.",
+    "Live model qualification remains a separate parent-campaign obligation, not an AIDE Lite local Windows publication prerequisite."
   ],
   "prior_accepted_effect": {
     "commit": "ae08a6be3b96f0b69371fe7c552462ff35e492ca",
@@ -847,6 +848,10 @@
     "asset_commit": "e26604f1476ac9ac4526e20db5cac6d4466fac5c",
     "asset_tree": "f53d847229b77ae582b06d23c63500936179d932",
     "expected_dev_before_integration": "6e35ea1379da7d0e447e8973b44205da6df6e662",
+    "gate_correction_base_commit": "b0c8dd92e57f08d970bdfac1d2485db2f70c4394",
+    "gate_correction_base_tree": "a3a0c8a899f25de53c1e5c5a32ee5f616ebdbec2",
+    "local_effect_review_commit": "a681da82c1f078d49363748020f02638886bcd99",
+    "local_effect_review_manifest_sha256": "5a51a84e09d4368dede58e86a0763a5be8b2d9d844b78c1031524971c615d7f6",
     "observed_main_before_effect": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
     "pack_projection_commit": "b58895e805158adb2aa816e52575567a89f64722",
     "pack_source_commit": "68192b3696e626fcfe2c3b4c513e777a58c578fd",
@@ -863,7 +868,7 @@
     "usage_repair_commit": "8f10a66b3f0a32223da92aeb334fb480a72e6643",
     "version_policy_sha256": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253"
   },
-  "state": "current_38_form_local_candidate_pending_independent_effect_review_and_live_model_gate",
+  "state": "dev_integrated_local_effect_accepted_lite_release_review_and_historical_decisions_pending",
   "tag": "aide-lite-v1.0.0",
   "version": "1.0.0",
   "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"

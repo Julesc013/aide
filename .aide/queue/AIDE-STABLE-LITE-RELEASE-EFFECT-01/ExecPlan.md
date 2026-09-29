@@ -428,3 +428,12 @@ The two unique branches are stale packet evidence and a native driver that
 independent review rejected for source preparation. Their exact dispositions
 are recorded in `evidence/local-branch-disposition-2026-09-29.md`; neither is
 eligible for a wholesale merge into the current release line.
+
+The adopted first stable profile and release version policy explicitly exclude
+model/provider and native/hosted operation from `aide-lite-local-windows`.
+The local effect record and status had incorrectly listed a live Codex turn as
+a Lite main-promotion prerequisite. Correct only that release-gate claim while
+retaining live-model qualification as unfinished parent-campaign work. The
+ten exact historical owner decisions and a stricter independent technical
+release ACCEPT for the corrected effect remain necessary before promotion.
+The same four asset bytes and 38-form consumer evidence are reused unchanged.
