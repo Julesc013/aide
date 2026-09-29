@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: in_progress
-planning_state: parser_safe_public_body_repaired_for_exact_rereview
-result: OLD_BYTES_TECHNICAL_ACCEPT_NEW_BYTES_PENDING
+planning_state: parser_safe_technical_release_accepted
+result: PARSER_SAFE_TECHNICAL_ACCEPT_MAIN_GATED
 updated_at: 2026-09-29
-current_slice: corrected_body_and_rebound_38_form_effect
-next_slice: focused_exact_technical_release_rereview_then_dev_integration
-review_gate: new_exact_technical_release_ACCEPT_and_ten_historical_owner_dispositions
+current_slice: exact_review_ab1a797d_accepted
+next_slice: integrate_accepted_candidate_into_dev_then_owner_history_gate
+review_gate: ten_historical_owner_dispositions_before_main
 main_promotion_performed: false
 tag_created: false
 release_published: false

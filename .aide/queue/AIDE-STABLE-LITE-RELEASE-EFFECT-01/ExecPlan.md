@@ -503,3 +503,12 @@ four rows at `7bdfc7e0` and mechanically matched each row to current stable
 bytes. The effect manifest now binds the exact public body hash and asset
 table. The stable ZIP/tar, consumer results and managed receipts are unchanged;
 obtain focused rereview of this superseding effect subject.
+
+Focused independent rereview returned strict technical release **ACCEPT** for
+exact `ab1a797d`, tree `41d72a28`, effect manifest SHA-256 `36d85352`
+and corrected public body SHA-256 `4018e795`. The reviewer matched all four
+asset hashes and sizes and reused unchanged consumer/replay evidence; it did
+not rerun bulk tests. Its exact verdict is in
+`evidence/technical-release-accept-ab1a797d.md`. Integrate the accepted
+candidate into `dev` after current ancestry and clean-state checks. The ten
+historical owner decisions still block `main`; no tag or publication followed.
