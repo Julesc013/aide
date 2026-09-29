@@ -133,6 +133,16 @@ commands are supported. Python temporary creation is pinned to the admitted
 temporary directory; output belongs in `AIDE_JOB_OUTPUT` and caches in the
 provided process-local cache variables. Additional tool adapters require
 qualification of their actual output/cache placement before admission.
+For the explicit `codex_exec` adapter, the same control record retains a
+bounded fingerprint for every admitted request. It binds the working root,
+source commit/tree, declared input hashes, executable hash, model and effort;
+changing only an owner label does not permit another turn. An exact repeat is
+refused before scratch allocation, including after a failed or interrupted
+host attempt whose effect remains uncertain. A new bound input or model/effort
+choice still requires matching local permission and available turn budget.
+Older positive-count dispatch records without request identities refuse new
+Codex admission until reconciled. This guards only turns launched through
+this owner; it does not intercept unmediated Codex or internal host inference.
 Source `export-pack` and release generation/validation require both existing
 canonical output roots in their job manifest, with their actual volume IDs and
 finite byte reservations. Evaluation requires its existing runs destination.

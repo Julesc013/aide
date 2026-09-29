@@ -135,6 +135,68 @@ class ManagedWorkspaceTests(unittest.TestCase):
             workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
         self.assertEqual(host.run.call_count, 1)
 
+    def test_codex_unchanged_request_refuses_before_second_allocation(self):
+        job = self.codex_job()
+        self.config['codex_exec']['max_turns'] = 2
+        workspace.write_json(self.config_path, self.config)
+        host = mock.Mock()
+        host.run.return_value = {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        first = workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertTrue(first['scratch_absent'])
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'already admitted'):
+            workspace.inspect(self.config_path, job)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'already admitted'):
+            workspace.run(self.config_path, {**job, 'owner': 'renamed_owner'},
+                          host=host, probe=lambda _: self.ample)
+        self.assertEqual(host.run.call_count, 1)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+        self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 1)
+
+    def test_codex_changed_effort_is_a_new_bound_request(self):
+        job = self.codex_job()
+        self.config['codex_exec']['max_turns'] = 2
+        workspace.write_json(self.config_path, self.config)
+        host = mock.Mock()
+        host.run.return_value = {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.config['codex_exec']['effort'] = 'high'
+        workspace.write_json(self.config_path, self.config)
+        workspace.run(self.config_path, {**job, 'effort': 'high'},
+                      host=host, probe=lambda _: self.ample)
+        state = workspace.dispatch_state(self.roots['control'])
+        self.assertEqual(state['codex_admitted'], 2)
+        self.assertEqual(len(set(state['codex_request_digests'])), 2)
+        self.assertEqual(host.run.call_count, 2)
+
+    def test_codex_failed_host_retains_request_identity_before_retry(self):
+        job = self.codex_job()
+        self.config['codex_exec']['max_turns'] = 2
+        workspace.write_json(self.config_path, self.config)
+        host = mock.Mock()
+        host.run.side_effect = RuntimeError('synthetic host failure')
+        host.reconcile.return_value = {'quiescent': True}
+        result = workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual(result['result']['reason'], 'RuntimeError')
+        self.assertTrue(result['scratch_absent'])
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'already admitted'):
+            workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual(host.run.call_count, 1)
+
+    def test_codex_legacy_or_malformed_request_history_refuses(self):
+        job = self.codex_job()
+        self.config['codex_exec']['max_turns'] = 2
+        workspace.write_json(self.config_path, self.config)
+        base = {'schema': 'aide.job-dispatch.v1', 'mode': 'running',
+                'epoch': 0, 'codex_admitted': 1}
+        workspace.write_json(self.roots['control'] / 'dispatch.json', base)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'require reconciliation'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        workspace.write_json(self.roots['control'] / 'dispatch.json',
+                             {**base, 'codex_request_digests': [{}]})
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'request history is invalid'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+
     def test_codex_local_permission_rejects_duplicate_json_keys(self):
         job = self.codex_job()
         original = self.config_path.read_text(encoding='utf-8')

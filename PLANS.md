@@ -4310,9 +4310,17 @@ exact qualified candidate and its evidence closeout. Main promotion, tag
 and publication remain gated by the ten historical decisions and live-model
 qualification.
 
-The AIDE campaign resource-cleanup child is closed with notes: 34 owned
+The AIDE campaign resource-cleanup child is closed with notes: 35 owned
 worktrees were retired while unique work remained reachable; the reviewed
-selected-root source is in dev; both remaining checkouts share approved D
+selected-root source is in dev; the sole remaining checkout uses approved D
 configuration; current export, stable-build and release-test jobs passed
 with retired scratch and released reservations. This does not close the
 parent release or remove the per-job resource preflight requirement.
+
+The next bounded efficiency increment guards the mediated Codex launch path
+against a repeated unchanged request. Keep its admitted fingerprints in the
+existing finite dispatch record, refuse unknown legacy request history, and
+require changed bound inputs or model/effort for another turn. Verify with
+synthetic Windows Job tests, exact source review and a changed-byte Lite
+release qualification before any new stable claim. Live model effects retain
+their separate local permission gate.

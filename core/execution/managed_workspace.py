@@ -366,17 +366,37 @@ def dispatch_state(control):
         value = json.loads(path.read_text(encoding='utf-8'), object_pairs_hook=unique_json_object)
     else:
         value = {'schema': 'aide.job-dispatch.v1', 'mode': 'running', 'epoch': 0,
-                 'codex_admitted': 0}
+                 'codex_admitted': 0, 'codex_request_digests': []}
     if (not isinstance(value, dict)
             or set(value) not in ({'schema', 'mode', 'epoch'},
-                                  {'schema', 'mode', 'epoch', 'codex_admitted'})
+                                  {'schema', 'mode', 'epoch', 'codex_admitted'},
+                                  {'schema', 'mode', 'epoch', 'codex_admitted',
+                                   'codex_request_digests'})
             or value['schema'] != 'aide.job-dispatch.v1'
             or value['mode'] not in ('running', 'paused')
             or type(value['epoch']) is not int or value['epoch'] < 0
             or type(value.get('codex_admitted', 0)) is not int
-            or value.get('codex_admitted', 0) < 0):
+            or not 0 <= value.get('codex_admitted', 0) <= 100):
         raise WorkspaceRefused('dispatch-control state is invalid')
-    return {**value, 'codex_admitted': value.get('codex_admitted', 0)}
+    count = value.get('codex_admitted', 0)
+    # Older positive-count records cannot prove which requests consumed turns.
+    # Preserve that uncertainty instead of silently allowing their replay.
+    requests = value.get('codex_request_digests', [] if count == 0 else None)
+    if requests is not None:
+        if (not isinstance(requests, list) or len(requests) != count
+                or any(not isinstance(item, str)
+                       or not re.fullmatch(r'[0-9a-f]{64}', item) for item in requests)
+                or len(set(requests)) != len(requests)):
+            raise WorkspaceRefused('dispatch-control Codex request history is invalid')
+    elif count == 0:
+        raise WorkspaceRefused('dispatch-control Codex request history is invalid')
+    return {**value, 'codex_admitted': count, 'codex_request_digests': requests}
+
+
+def codex_request_digest(job):
+    # Labels do not make the same source, context and model a new request.
+    return digest({key: job[key] for key in ('cwd', 'source_commit', 'source_tree',
+        'executable_sha256', 'inputs', 'prompt_file', 'schema_file', 'model', 'effort')})
 
 
 def require_codex_permission(config, job, dispatch):
@@ -388,16 +408,25 @@ def require_codex_permission(config, job, dispatch):
         raise WorkspaceRefused('Codex job has no matching local model permission')
     if dispatch['codex_admitted'] >= permission['max_turns']:
         raise WorkspaceRefused('finite Codex turn budget exhausted')
+    if dispatch['codex_request_digests'] is None:
+        raise WorkspaceRefused('prior Codex request identities require reconciliation')
+    if codex_request_digest(job) in dispatch['codex_request_digests']:
+        raise WorkspaceRefused('Codex request already admitted without new bound input')
 
 
-def admit_codex_turn(control, expected, maximum):
+def admit_codex_turn(control, expected, maximum, request_digest):
     with estate_lock(control, 'dispatch.lock'):
         current = dispatch_state(control)
         if current != expected or current['mode'] != 'running':
             raise WorkspaceRefused('dispatch epoch changed before Codex admission')
         if current['codex_admitted'] >= maximum:
             raise WorkspaceRefused('finite Codex turn budget exhausted')
-        admitted = {**current, 'codex_admitted': current['codex_admitted'] + 1}
+        if current['codex_request_digests'] is None:
+            raise WorkspaceRefused('prior Codex request identities require reconciliation')
+        if request_digest in current['codex_request_digests']:
+            raise WorkspaceRefused('Codex request already admitted without new bound input')
+        admitted = {**current, 'codex_admitted': current['codex_admitted'] + 1,
+                    'codex_request_digests': [*current['codex_request_digests'], request_digest]}
         write_json(control / 'dispatch.json', admitted)
         return admitted
 
@@ -894,7 +923,7 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
         try:
             if job['adapter'] == 'codex_exec':
                 admitted_dispatch = admit_codex_turn(roots['control'], admitted_dispatch,
-                                                     config['codex_exec']['max_turns'])
+                    config['codex_exec']['max_turns'], codex_request_digest(job))
                 schema_copy.write_bytes(codex_schema)
             record['result'] = host.run(argv, cwd=process_cwd, input_bytes=input_bytes, output_dir=root/'logs', job_id=job_id,
                 timeout=limits['runtime_seconds'], output_limit=limits['log_bytes'] - len(input_bytes), memory_limit=limits['memory_bytes'],

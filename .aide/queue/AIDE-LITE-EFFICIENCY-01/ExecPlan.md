@@ -323,3 +323,35 @@ dev source integration** of exact `5b99329a`/tree `e6f256af`; details and
 receipt SHA are in `evidence/job-evidence-parser-review-5b99329a.md`.
 The accepted stable assets were not changed. Requalify changed release bytes
 after integration; this review is not release acceptance.
+
+## 2026-09-29 prevent exact repeated Codex dispatch
+
+Objective: extend the existing one-turn Windows job owner's admission record
+so an unchanged Codex request cannot consume another permitted turn merely
+because a controller repeats `job run`. Scope is the current managed-workspace
+owner, its focused tests, this WorkUnit and the runner guide. Reuse its existing
+dispatch lock, state record and finite turn budget; add no scheduler or model
+call. The fingerprint binds working root, source commit/tree, all declared
+input hashes, executable hash, model and effort. Owner labels do not turn an
+identical request into new information.
+
+First reproduce a second accepted identical request under a synthetic host.
+Then reject exact repeats before scratch allocation, retain a bounded durable
+set of admitted fingerprints and refuse legacy positive-count state whose
+prior request identities are unknown. A changed packet/source/model/effort can
+form a new request, subject to the same local permission and finite budget.
+Preserve pause epochs, job recovery and read-only inspection. Exercise repeat,
+changed-request, malformed-state and interrupted-admission cases through the
+approved D runner; obtain independent exact source review before `dev`.
+Current frozen Lite release bytes and live model permission remain separate
+gates. This bounds the mediated `job run` path, not unmediated host turns.
+
+The single synthetic repeat regression failed on the old code in D job
+`561fa2e9`: a second identical request launched despite no changed input.
+After the repair, the focused Codex suite passed 11/11 in D job `87e11716`
+and the full managed-workspace suite passed 50/50 in D job `e0495c70`.
+Both passing jobs retired scratch and released reservations. Exact input and
+receipt hashes are in `evidence/codex-repeat-guard-2026-09-29.md`. Freeze the
+source candidate, verify these unchanged tested bytes, then obtain independent
+source/security review before `dev`. The existing stable archive has not been
+regenerated or requalified for this change.

@@ -12773,3 +12773,17 @@ during the operation. The surviving ignored configuration now names only the
 primary working root and passed the existing loader. The compact exact
 receipt is under `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/`; no release
 artifact or product source changed.
+
+## 2026-09-29 mediated Codex request repeat guard candidate
+
+The existing managed Windows Job owner now records a bounded fingerprint of
+each admitted Codex request in its dispatch state. An unchanged request,
+including one relabeled with another owner or one whose host outcome is
+uncertain, refuses before another scratch allocation or turn admission.
+Prior positive-count dispatch state without request identities also refuses
+Codex admission pending reconciliation. A changed bound model/effort remains
+eligible under matching local permission and finite budget. The first
+D-managed regression failed because the old owner launched the duplicate;
+the repaired focused Codex suite passed 11/11, and the full managed-workspace
+suite passed 50/50; both retired scratch and released reservations. Independent
+review, delivered bytes and live-model effects remain separate gates.
