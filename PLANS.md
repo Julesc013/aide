@@ -4369,3 +4369,11 @@ publication still require the ten unresolved exact owner dispositions.
 Independent exact technical review accepted `222fa60e` for dev source and
 artifact integration. Recheck the graph and fast-forward dev; preserve final
 release-effect acceptance and the owner-only main gate separately.
+
+Remote `dev@a9e0c5db` now contains the accepted current-runner candidate;
+the single checkout is clean and the four asset digests are unchanged. The
+complete `main..dev` commit check still fails on exactly ten historical
+owner-only dispositions. The efficiency-priority amendment adds exported Lite
+and actual-host outcome evidence to final stable acceptance; this candidate's
+synthetic host and local consumer checks do not prove that outcome. Continue
+the existing efficiency WorkUnit without altering the frozen release subject.

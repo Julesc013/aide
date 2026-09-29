@@ -2,17 +2,20 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-CONVERGENCE-AND-DELIVERY-01
 status: running
 classification: admitted
-planning_state: stable_lite_efficiency_repeat_dev_integrated_main_release_gates_pending
+planning_state: current_runner_lite_dev_integrated_efficiency_and_main_gates_pending
 result: PENDING
 review_gate: admitted_by_owner
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
 current_technical_effect_manifest_sha256: 8c64893c3a9637da20fa2826ed90c5442b6ba299611ae59d172078185a077875
-next_task: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+next_task: AIDE-LITE-EFFICIENCY-01
 delivery_dependency: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+current_dev_candidate_manifest_sha256: f93f360411dfc83cc7abf60a586a1b825555890939713e0d16cd8062cefe3ddd
+efficiency_release_gate: exported_Lite_actual_host_and_matched_outcome_unqualified
 resource_placement: owner_approved_D_shared_roots_configured
 blocking_input: ten_exact_historical_owner_decisions_and_live_codex_turn_permission
 owned_jobs_remaining: none_observed_after_stable_local_qualification
 notes:
+  - Current-runner Lite ZIP 27948415 and exact manifest f93f3604 received independent dev-integration ACCEPT; local and remote dev are a9e0c5db/tree 824f6197. The full 559-commit main..dev check still fails on ten exact historical owner-only messages. The latest owner efficiency amendment also requires exported Lite and actual-host measured outcome proof before final stable acceptance; synthetic host tests do not substitute. No main/tag/publication/downloaded-byte effect occurred.
   - Newer bounded changelog source 0063ab23 passed independent review and reached remote dev through c0e07b083040069f9cdfe8c9005f714d4d5df58b. It is source-only; the previously accepted Lite 1.0.0 ZIP hash 798f44df remains unchanged and tied to its older frozen release subject. No replacement archive or release acceptance was inferred.
   - The owner approved continued campaign execution after the exact candidate-bound review packet.
   - Current Lite efficiency repeat candidate 9cfa91da received independent local technical ACCEPT for 38 current-byte forms; dev integration ancestor 2dfc7e986030c16e73103797d21fc9954025a9ed includes the exact subject and evidence closeout. Six delivered consumers, twelve job observations and 36 Q47/Q48 tests passed. Ten owner-only historical message decisions block main/tag/publication; live model effects remain unqualified. See AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/efficiency-repeat-dev-integration-2026-09-29.md.

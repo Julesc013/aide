@@ -12849,3 +12849,11 @@ Independent `/root/stable_effect_review` accepted exact `222fa60e`/tree
 `c8554266` for dev integration after read-only evidence and lineage checks.
 Its limits are in the WorkUnit review record; final effect acceptance and
 main/tag/publication remain separate gates.
+
+Local and remote `dev` fast-forwarded from `cbe6c78b` to `a9e0c5db`/tree
+`824f6197` after the exact technical dev verdict. The checkout is clean and
+the local stable ZIP remains SHA-256 `27948415…`. A full 559-commit
+`main..dev` message check failed on exactly ten pre-existing owner-only
+historical records. No main, tag or publication action was taken. The release
+WorkUnit now records the additional exported efficiency/actual-host proof
+required by the latest owner amendment before final stable acceptance.

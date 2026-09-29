@@ -639,3 +639,14 @@ The verdict is recorded in
 It does not accept the final release effect or resolve the ten owner-only
 historical message decisions. Recheck refs, fast-forward `dev` if clean, and
 observe the remote identity.
+
+Local and remote `dev` were observed at `a9e0c5db`/tree `824f6197` after a
+clean fast-forward and non-force push. The integration receipt is
+`evidence/current-runner-dev-integration-2026-09-29.md`. The full
+`main..dev` check covers 559 commits and fails on exactly ten unchanged
+historical message records; no owner response is inferred. The owner's latest
+efficiency requirement also retains a final release gate: exported Lite and
+one actual host path must show controlled model dispatch, bounded results,
+honest usage/context coverage and a matched accepted outcome. The current
+synthetic/local candidate does not establish that proof. No main/tag/publication
+effect was attempted.

@@ -1,5 +1,21 @@
 # AIDE mandatory-profile coverage control — 2026-09-25 checkpoint
 
+**2026-09-29 current integration and efficiency gate:** Local and remote
+`dev@a9e0c5db8d6f039d6d069b800ac900b2cac8b3ac` contain the current-runner
+Lite 1.0.0 candidate, ZIP SHA-256 `27948415530f260479c249b2d8cc956792eff4c77a524f0225f61f1f3f2ef7b1`.
+Independent technical review accepted exact `222fa60e` for dev source and
+artifact integration only; see the release-effect WorkUnit's current-runner
+manifest (SHA-256 `f93f3604…`) and integration receipt. The full 559-commit
+`main..dev` message check fails on ten exact owner-only historical decisions.
+The owner's efficiency-priority amendment also requires exported Lite and an
+actual supported host path to demonstrate controlled model invocation,
+bounded results, honest usage/context coverage and a matched accepted outcome
+before a stable efficiency claim. Current synthetic Codex checks, 38 delivered
+CLI forms and six exact-byte consumers cover only part of that gate. The
+existing `AIDE-LITE-EFFICIENCY-01` WorkUnit owns the next executable slice;
+live-turn permission remains separately configured. No main, tag or public
+release exists. Older dated checkpoints below retain their original identities.
+
 **2026-09-29 latest current-byte Lite gate:** Independent technical review
 **ACCEPTED** local effect subject `9cfa91da`/tree `1caf7de0`, manifest
 SHA-256 `8c64893c3a9637da20fa2826ed90c5442b6ba299611ae59d172078185a077875`.

@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: in_progress
-planning_state: current_runner_dev_integration_ready
-result: CURRENT_RUNNER_EXACT_TECHNICAL_ACCEPT_FOR_DEV
+planning_state: current_runner_dev_integrated_release_gates_pending
+result: CURRENT_RUNNER_DEV_INTEGRATED_FINAL_EFFECT_PENDING
 created_at: 2026-09-28
 updated_at: 2026-09-29
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
