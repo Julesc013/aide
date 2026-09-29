@@ -699,3 +699,13 @@ admitted. Obtain separate independent effect review of its exact bytes,
 bounded job and same-user loader risks before any native call. A result can
 only establish one loader observation, not host-byte trust, restricted
 execution, worker activation or resolution of the failed L2 query.
+
+Independent `/root/native_os_build_review` refused effect execution of exact
+`14d5cc10` on `BLACKGLASS-WIN1\Jules`; see
+`evidence/h2-api-loader-effect-review-14d5cc10.md`. The task requires an
+identified disposable real-effect host. A managed child on this ordinary
+Windows installation does not establish that requirement or confine DLL
+initialization and dependencies. No native load occurred. Retain the expired
+packet for custody, integrate eligible source separately, and prepare a new
+host-bound packet only after a disposable host and credential posture are
+identified.
