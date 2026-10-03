@@ -1,0 +1,10 @@
+AIDE Lite task inspect
+task_id: AIDE-SCOPED-JOB-DEV-INTEGRATION-01
+status: needs_review
+classification: complete
+task_yaml: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/task.yaml
+status_yaml: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/status.yaml
+evidence_dir: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence
+evidence_files: 9
+missing_evidence: 0
+recovery_suggestion: noop_already_complete
