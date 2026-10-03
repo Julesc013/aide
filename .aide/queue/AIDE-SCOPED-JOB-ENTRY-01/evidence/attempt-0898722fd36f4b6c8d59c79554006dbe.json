@@ -1,0 +1,50 @@
+{
+  "schema": "aide.scoped-entry.attempt.v1",
+  "source_commit": "6428c0f6f265af2b6101d9a75824468f925053f2",
+  "job_id": "0898722fd36f4b6c8d59c79554006dbe",
+  "phase": "retired",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4167045
+    },
+    "memory_bytes": 337915904,
+    "scratch_bytes": 4903033
+  },
+  "qualification": {
+    "model_calls": 0,
+    "outer_session_contained": false,
+    "read_isolation": "unqualified",
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "named_job_membership": true,
+    "unapproved_write_denied": true,
+    "child_unapproved_write_denied": true,
+    "child_probe_exit_code": 19,
+    "config_write_denied": true,
+    "trusted_archive_write_denied": true,
+    "control_write_denied": true,
+    "tests": {
+      "run": 16,
+      "failures": 0,
+      "errors": 1,
+      "skips": 0
+    },
+    "export_exit_code": 0,
+    "validation_exit_code": 0,
+    "validation_seconds": 16.361,
+    "passed": false
+  },
+  "receipt_sha256": "17a710ccaccc29a0585e08765a007f5839dc99b8c9e87eaf59d797ab0112a7ec",
+  "logs": {
+    "stdout": {
+      "bytes": 4894419,
+      "sha256": "00f70fc737b405973d7537c4970e05c2d290667a3e53e888d6fbb457b1a81dd1"
+    },
+    "stderr": {
+      "bytes": 3959,
+      "sha256": "80b43fef098d0480af4c4a246a22f68118ee3aebbed1a2d0096f7f5b4d585329"
+    }
+  },
+  "failure": "One resource test cleanup hit readonly Git fixture object; source export/full validate and all negative write probes passed. Original owner successfully retired scratch including readonly fixture objects."
+}

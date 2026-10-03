@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 7eb559886fbc7b21906c04ffe9a8313f16dac6fb
+source_commit: 6428c0f6f265af2b6101d9a75824468f925053f2
 source_dirty_state: false
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -713,7 +713,6 @@ included_files:
   - files/.aide/scripts/tests/test_q48_github_release_draft.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py
-  - files/.aide/scripts/tests/test_scoped_host.py
   - files/.aide/scripts/tests/test_token_ledger.py
   - files/.aide/scripts/tests/test_verifier.py
   - files/.aide/scripts/tests/test_x_os_00_task_os.py

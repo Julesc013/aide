@@ -85,3 +85,10 @@ then use normal owner recover. No ACL/account change. Disposable test fixtures
 will use ordinary inherited permissions in the already approved parent; test
 bodies/acceptance remain unchanged. Add the existing resource-test file to
 the bounded allowlist for this fixture-only correction.
+
+Attempt 0898722f completed export and unchanged full validation with all write
+probes passing; one unchanged resource test reported its fixture cleanup error
+on a readonly Git object. The managed owner still safely retired all scratch.
+Restore the old TemporaryDirectory cleanup behavior for ordinary single-link
+readonly fixture files, without restoring its private directory ACL: clear only
+the readonly attribute within the exact fixture, and preserve ACL/link failures.

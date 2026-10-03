@@ -36,7 +36,7 @@ class ManagedWorkspaceTests(unittest.TestCase):
         # recover this disposable fixture across sandbox/user identities.
         self.root = parent / ('tiny-runner-' + uuid.uuid4().hex)
         self.root.mkdir()
-        self.addCleanup(shutil.rmtree, self.root)
+        self.addCleanup(self.cleanup_fixture)
         self.roots = {name: self.root / name for name in ('scratch', 'retained', 'control')}
         for path in self.roots.values(): path.mkdir()
         self.source = self.root / 'source'; self.source.mkdir()
@@ -55,6 +55,22 @@ class ManagedWorkspaceTests(unittest.TestCase):
         self.job = {'schema': 'aide.maintainer-job.v1', 'owner': 'synthetic_fixture',
                     'workunit': 'AIDE-CAMPAIGN-RESOURCE-CLEANUP-01', 'cwd': str(self.source),
                     'argv': [sys.executable, 'fixture.py'], 'adapter': 'python'}
+
+    def cleanup_fixture(self):
+        def readonly_file(function, value, exc):
+            path = Path(value)
+            info = path.lstat()
+            if (not isinstance(exc, PermissionError) or not path.is_relative_to(self.root)
+                    or not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+                    or getattr(info, 'st_file_attributes', 0) & 1024
+                    or (info.st_mode & stat.S_IWRITE
+                        and not getattr(info, 'st_file_attributes', 0) & 1)):
+                raise exc
+            # Git's ordinary single-link objects have the readonly attribute.
+            # Clear only that fixture attribute; ACL failures remain failures.
+            path.chmod(stat.S_IREAD | stat.S_IWRITE)
+            function(value)
+        shutil.rmtree(self.root, onexc=readonly_file)
 
     def real_job(self, text):
         script = self.source / 'fixture.py'; script.write_text(text, encoding='utf-8')
