@@ -1,5 +1,15 @@
 # AIDE Implementation Log
 
+## 2026-10-03 scoped command qualification
+
+`AIDE-SESSION-CONTAINMENT-01` records the owner's immediate containment priority
+and a task-local adapter to the existing frozen exported job owner. Initial
+native-sandbox qualification passed process membership and write boundaries,
+but failed the requested supervisor-config read exclusion; the real workload
+was not admitted. Scratch retirement passed. The failed receipt is retained.
+No production runner or release bytes changed. The refreshed compact task
+packet is the minimal cross-cutting generated context change for this child.
+
 ## 2026-09-29 Codex worker result binding
 
 The existing worker now refuses malformed or ambiguous `codex exec --json`

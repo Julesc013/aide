@@ -446,3 +446,12 @@ The independent `/root/stable_effect_review` accepted the exact `42832385`
 canary evidence for this local Windows interruption point. Preserve the task
 branch for source custody. A new release effect must qualify the changed dev
 head and current bytes. Do not relabel this as downloaded-asset proof.
+
+## 2026-10-03 owner priority: execution containment
+
+AIDE-SESSION-CONTAINMENT-01 is the next bounded child. Reuse configured D roots
+and the existing accepted runner; qualify the actual scoped host and one real
+necessary validation. The outer full-access session, independent tool routes
+and aggregate lifetime storage remain explicit gaps. Release owner decisions
+and live-model permission are unchanged; this deterministic qualification does
+not grant either. No new worktree, archive, global settings or target cleanup.

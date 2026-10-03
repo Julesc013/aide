@@ -1,0 +1,51 @@
+schema_version: aide.queue-task.v0
+id: AIDE-SESSION-CONTAINMENT-01
+title: Qualify scoped host execution through the existing managed owner
+type: implementation
+status: running
+planning_state: bounded_host_qualification
+result: PENDING
+created_at: 2026-10-03
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Owner's 2026-10-03 session-containment instruction and existing campaign delegation.
+objective: >
+  Qualify one necessary AIDE validation through the installed scoped command
+  host and the existing pinned process/storage owner. Record actual route
+  coverage, output placement, aggregate observations and retirement. A scoped
+  child does not qualify the unrestricted outer controller or other tools.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/**
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/context/latest-task-packet.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  approved_existing_execution_config: .aide.local/execution.json
+  read_only_runtime: .aide/export/aide-lite-pack-v0/files
+  external_resource_root: D:/Projects/AIDE/.aide.local/execution
+  permitted_local_state: .aide.local/session-containment-01-job.json
+  forbidden_operations:
+    - new worktrees, clones, storage roots or recovery archives
+    - machine-wide ACL, account, quota or Codex-default changes
+    - model calls, provider calls, billing or credential changes
+    - unrelated target mutation or deletion
+    - main promotion, publication or claims of whole-session containment
+branch_plan:
+  observed_base: 1431d39452fa844c35496a75b5eac47922fbb7c3
+  helper: git plan returned ready_dry_run on dev without writes
+  authorized_action: create task/aide-session-containment-01 in the existing checkout
+  integration: independent exact review required; no automatic integration
+verification:
+  - pinned runner and installed executable content identities
+  - tiny allowed/denied file writes within the owned fixture
+  - actual Windows identity and named-job membership
+  - same scoped path performs necessary repository validation and local Git read
+  - aggregate before/after observations, bounded output and verified retirement
+  - explicit uncovered routes and monitored versus enforced limits

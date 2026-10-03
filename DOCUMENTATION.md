@@ -554,3 +554,10 @@ create and validate versioned **candidate** assets beneath
 `governance/release-policy.md` retains the final independent release and
 downloaded-consumer gates. No main promotion, tag or publication is implied by
 this source path.
+
+## 2026-10-03 scoped host qualification
+
+The bounded AIDE-SESSION-CONTAINMENT-01 queue packet records actual host routes,
+permission qualification, pinned execution, resource observations and retirement.
+Its initial native-host failure is preserved; no whole-session containment or
+hard disk quota is claimed. See that task's ExecPlan and evidence.

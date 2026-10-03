@@ -1,5 +1,13 @@
 # AIDE Planning Index
 
+## 2026-10-03 session containment qualification
+
+`AIDE-SESSION-CONTAINMENT-01` follows the owner's priority correction. Qualify
+one necessary validation through the installed scoped command host and existing
+pinned job owner, using configured D storage. Its ExecPlan records the actual
+outer-session, aggregate-budget and tool-route gaps. No new worktree or archive;
+local command qualification does not establish whole-session containment.
+
 ## 2026-09-28 stable Lite release-effect repair
 
 Independent review of the exact `d5df63c5` effect returned REQUEST_CHANGES.

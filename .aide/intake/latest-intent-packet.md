@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 093c508e6332fc2489ed08b433d492e4d72dc18b1c7197f03b24fc66724502fa
-- raw_prompt_excerpt: Admit AIDE-STABLE-RELEASE-CONTRACT-01 under AIDE-CONVERGENCE-AND-DELIVERY-01 to define a reviewed stable version, public compatibility and support profile, and a narrow campaign-scoped publication route; do not select unqualified release...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.
+- raw_prompt_hash: 2633e290d8a0979b57e0c92497eeaabbfa25898e3b68207774b58919d18cda2c
+- raw_prompt_excerpt: Continue AIDE-CONVERGENCE-AND-DELIVERY-01 with bounded end-to-end session containment qualification. Reuse the current checkout, reviewed runner, configured D storage and finite budgets. Qualify installed Codex scoped shell permissions,...
+- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
-- risk_class: release
+- risk_class: high
 - sizing_class: blocked
 - safe_to_execute: false
 - requires_split: true
 - blocked: true
-- blocker_reason: block until release gates, tags, and assets are approved
-- next_action: block until release gates, tags, and assets are approved
+- blocker_reason: write blocker report and require reviewed authorization before mutation
+- next_action: write blocker report and require reviewed authorization before mutation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -40,8 +40,8 @@
 
 ## Branch State Refs
 
-- current_branch:task/aide-stable-release-contract-01
-- current_role:task
+- current_branch:dev
+- current_role:integration
 - workflow:trunk_with_dev_integration
 - worktree_dirty:false
 

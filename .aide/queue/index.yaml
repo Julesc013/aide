@@ -3803,3 +3803,12 @@ items:
     exec_plan: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/ExecPlan.md
     prompt: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/prompt.md
     evidence: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/evidence
+  - id: AIDE-SESSION-CONTAINMENT-01
+    status: running
+    planning_state: bounded_host_qualification
+    result: PENDING
+    title: Qualify scoped host execution through the existing managed owner
+    task: .aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-SESSION-CONTAINMENT-01/prompt.md
+    evidence: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence

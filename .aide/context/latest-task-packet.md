@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - Continue AIDE convergence: preserve the exact 506-file archive-duplicate cleanup gate, continue non-destructive tracked-output retention work, and adopt the next source-dispositioned control-plane specification family.
+UNSPECIFIED - AIDE-SESSION-CONTAINMENT-01: qualify scoped local validation with existing pinned runner and configured D storage; record all uncovered routes
 
 ## GOAL
 
-Continue AIDE convergence: preserve the exact 506-file archive-duplicate cleanup gate, continue non-destructive tracked-output retention work, and adopt the next source-dispositioned control-plane specification family.
+AIDE-SESSION-CONTAINMENT-01: qualify scoped local validation with existing pinned runner and configured D storage; record all uncovered routes
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4498
-- approx_tokens: 1125
+- chars: 4346
+- approx_tokens: 1087
 - budget_status: PASS
 - warnings:
   - none

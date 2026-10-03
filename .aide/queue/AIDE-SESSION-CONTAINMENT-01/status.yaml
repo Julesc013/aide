@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-SESSION-CONTAINMENT-01
+status: running
+planning_state: bounded_host_qualification
+result: PENDING
+updated_at: 2026-10-03
+current_slice: pinned_owner_and_scoped_shell_probe
+whole_session_contained: false
+next_slice: qualify_actual_identity_job_membership_and_required_validation
