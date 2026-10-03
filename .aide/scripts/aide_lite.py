@@ -40637,9 +40637,13 @@ def render_export_report(pack_root: Path, manifest_files: list[str], boundary_vi
 
 def reset_export_contents(pack_root: Path) -> None:
     """Keep the directory carrying the scoped permission and volume binding."""
-    if not pack_root.exists():
+    if not os.path.lexists(pack_root):
         pack_root.mkdir(parents=True)
         return
+    root_info = pack_root.lstat()
+    if (not stat.S_ISDIR(root_info.st_mode) or stat.S_ISLNK(root_info.st_mode)
+            or getattr(root_info, "st_file_attributes", 0) & 1024):
+        raise ValueError("linked or non-directory export root preserved")
     known = {"files", "README.md", "install.md", "import-policy.yaml",
              "manifest.yaml", "checksums.json", "export-report.md"}
     children = list(pack_root.iterdir())

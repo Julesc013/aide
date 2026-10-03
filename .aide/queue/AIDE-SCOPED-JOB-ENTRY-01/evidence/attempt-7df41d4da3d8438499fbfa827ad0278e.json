@@ -1,0 +1,91 @@
+{
+  "schema": "aide.scoped-entry.attempt.v1",
+  "source_commit": "7eb559886fbc7b21906c04ffe9a8313f16dac6fb",
+  "job_id": "7df41d4da3d8438499fbfa827ad0278e",
+  "phase": "retired",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4167045
+    },
+    "memory_bytes": 316239872,
+    "scratch_bytes": 4899325
+  },
+  "canonical_before": {
+    ".aide/export/aide-lite-pack-v0": 4138794
+  },
+  "canonical_after": {
+    ".aide/export/aide-lite-pack-v0": 4167045
+  },
+  "qualification": {
+    "model_calls": 0,
+    "outer_session_contained": false,
+    "read_isolation": "unqualified",
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "named_job_membership": true,
+    "unapproved_write_denied": true,
+    "child_unapproved_write_denied": true,
+    "child_probe_exit_code": 19,
+    "config_write_denied": true,
+    "trusted_archive_write_denied": true,
+    "control_write_denied": true,
+    "tests": {
+      "run": 14,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    "export_exit_code": 0,
+    "validation_exit_code": 0,
+    "validation_seconds": 30.165,
+    "passed": true
+  },
+  "scope": {
+    "aggregate_admission": {
+      "by_pool": {
+        "canonical:.aide/export/aide-lite-pack-v0": 4138794,
+        "control": 13694135,
+        "retained": 172409788,
+        "scratch": 0
+      },
+      "enforcement": "cooperative_admission_and_monitored_growth",
+      "limit_bytes": 268435456,
+      "logical_bytes": 190242717,
+      "reserved_bytes": 69271552
+    },
+    "filesystem": {
+      ":minimal": "read",
+      ":root": "deny",
+      "C:\\Program Files\\Git": "read",
+      "C:\\Users\\Jules\\.codex\\packages\\standalone\\releases\\0.145.0-x86_64-pc-windows-msvc\\bin": "read",
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\control": "deny",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\control\\active.json": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7df41d4da3d8438499fbfa827ad0278e": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7df41d4da3d8438499fbfa827ad0278e\\cache": "write",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7df41d4da3d8438499fbfa827ad0278e\\output": "write",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7df41d4da3d8438499fbfa827ad0278e\\tmp": "write",
+      "D:\\Projects\\AIDE\\aide": "read",
+      "D:\\Projects\\AIDE\\aide\\.aide.local": "deny",
+      "D:\\Projects\\AIDE\\aide\\.aide.local\\scoped-job-entry-01-execution.json": "deny",
+      "D:\\Projects\\AIDE\\aide\\.aide\\export\\aide-lite-pack-v0": "write"
+    },
+    "host_executable_sha256": "83751f15cb6a0a7b97df67752c001e3fe1c20e18ffbfec3ff63567296205eb6c",
+    "network_enabled": false,
+    "outer_session_contained": false,
+    "read_isolation": "unqualified",
+    "schema": "aide.scoped-host.observation.v1"
+  },
+  "receipt_sha256": "160126233a7ab7bd58d7ce3c4892f627b51c72321c0b9ca01d5d993aaacd7ae6",
+  "logs": {
+    "stdout": {
+      "bytes": 4894418,
+      "sha256": "4402f1d8bea7a9af0380fceb2f9c8b3378b4be7631c00646d96968da74d5181c"
+    },
+    "stderr": {
+      "bytes": 2437,
+      "sha256": "f63725efcca869af4ff994a573c85fe837c623b7e36b405020b88daff4cb658d"
+    }
+  }
+}

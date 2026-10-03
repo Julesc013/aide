@@ -2387,6 +2387,7 @@ PORTABLE_SOURCE_FILES = [
     "core/execution/provider.py",
     "core/execution/registered_process.py",
     "core/execution/managed_workspace.py",
+    "core/execution/scoped_host.py",
     "core/protocol/__init__.py",
     "core/protocol/execution_receipt.py",
     "core/protocol/process_invocation.py",
@@ -40634,6 +40635,28 @@ def render_export_report(pack_root: Path, manifest_files: list[str], boundary_vi
     return "\n".join(lines) + "\n"
 
 
+def reset_export_contents(pack_root: Path) -> None:
+    """Keep the directory carrying the scoped permission and volume binding."""
+    if not pack_root.exists():
+        pack_root.mkdir(parents=True)
+        return
+    known = {"files", "README.md", "install.md", "import-policy.yaml",
+             "manifest.yaml", "checksums.json", "export-report.md"}
+    children = list(pack_root.iterdir())
+    for child in children:
+        info = child.lstat()
+        if (child.name not in known or child.is_symlink()
+                or getattr(info, "st_file_attributes", 0) & 1024
+                or (child.name == "files") != child.is_dir()
+                or (child.is_file() and info.st_nlink != 1)):
+            raise ValueError("unknown or linked export member preserved: " + child.name)
+    for child in children:
+        if child.is_dir():
+            shutil.rmtree(child)
+        else:
+            child.unlink()
+
+
 def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str | None = None) -> tuple[Path, dict[str, object]]:
     if name != EXPORT_PACK_ID:
         raise ValueError(f"unsupported pack name: {name}")
@@ -40660,8 +40683,7 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
                 and not validate_export_pack_boundary(pack_root)):
             prior_source = candidate
             prior_checksums = json.loads(read_text(pack_root / "checksums.json"))
-    if pack_root.exists():
-        shutil.rmtree(pack_root)
+    reset_export_contents(pack_root)
     files_root = pack_root / "files"
     files_root.mkdir(parents=True, exist_ok=True)
 
@@ -43622,7 +43644,7 @@ def command_repair_owned_file(args: argparse.Namespace) -> int:
 
 
 def command_export_pack(args: argparse.Namespace) -> int:
-    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(EXPORT_PACK_PATH,)):
         return 1
     pack_root, report = build_export_pack(args.repo_root, name=args.name, output=args.output)
     print("AIDE Lite export-pack")
@@ -45129,8 +45151,22 @@ def command_managed_job(args: argparse.Namespace) -> int:
     root = str(args.repo_root)
     if root not in sys.path:
         sys.path.insert(0, root)
-    from core.execution import managed_workspace
     try:
+        # Do not import edited execution code before selecting a pinned owner.
+        # This command-local option does not change the outer session's access.
+        sys.dont_write_bytecode = True
+        scoped = None
+        config = None
+        if args.job_command != "setup":
+            config = _job_wait_read_json(Path(args.config), 1048576)
+        if config is not None and "execution_host" in config[0]:
+            spec = importlib.util.spec_from_file_location(
+                "aide_scoped_job_host", Path(root) / "core/execution/scoped_host.py")
+            scoped = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(scoped)
+            managed_workspace, scoped_host = scoped.prepare(args.config, args.repo_root)
+        else:
+            from core.execution import managed_workspace
         if args.job_command == "setup":
             result = managed_workspace.configure(args.config, args.selection, args.approved_parent)
         elif args.job_command == "recover":
@@ -45143,7 +45179,8 @@ def command_managed_job(args: argparse.Namespace) -> int:
             if args.job_command == "inspect":
                 result = managed_workspace.inspect(args.config, job)
             else:
-                result = managed_workspace.run(args.config, job)
+                result = (scoped.run(managed_workspace, scoped_host, args.config, job)
+                          if scoped is not None else managed_workspace.run(args.config, job))
         if args.job_command == "run":
             view = wait_for_managed_job(Path(args.config), result["job_id"], result["manifest_digest"], 0, 1)
             print(json.dumps(result if args.full else view, sort_keys=True,
@@ -45152,7 +45189,7 @@ def command_managed_job(args: argparse.Namespace) -> int:
             return 0 if view["status"] == "PASS" else 1
         print(json.dumps(result, sort_keys=True, indent=2))
         return 0
-    except (OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:
+    except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as exc:
         print(json.dumps({"result": "REFUSED", "reason": str(exc), "writes": args.job_command != "inspect"}))
         return 1
 

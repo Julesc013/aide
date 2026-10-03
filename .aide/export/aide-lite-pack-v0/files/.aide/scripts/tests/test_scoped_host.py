@@ -117,18 +117,6 @@ class ScopedHostTests(unittest.TestCase):
         self.assertEqual((root/'unique-work').read_bytes(), b'preserve')
         self.assertEqual((root/'manifest.yaml').read_bytes(), b'generated')
 
-    def test_export_reparse_root_refuses_before_enumeration(self):
-        spec = importlib.util.spec_from_file_location('scoped_reparse_lite', REPO/'.aide/scripts/aide_lite.py')
-        lite = importlib.util.module_from_spec(spec); sys.modules[spec.name] = lite; spec.loader.exec_module(lite)
-        root = self.root/'pack'; root.mkdir()
-        (root/'manifest.yaml').write_bytes(b'preserve')
-        info = mock.Mock(st_mode=root.stat().st_mode, st_file_attributes=1024)
-        with mock.patch.object(Path, 'lstat', return_value=info), mock.patch.object(Path, 'iterdir') as enumerated:
-            with self.assertRaisesRegex(ValueError, 'root preserved'):
-                lite.reset_export_contents(root)
-            enumerated.assert_not_called()
-        self.assertEqual((root/'manifest.yaml').read_bytes(), b'preserve')
-
 
 if __name__ == '__main__':
     unittest.main()
