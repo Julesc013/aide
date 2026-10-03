@@ -60,10 +60,30 @@ class ScopedHostTests(unittest.TestCase):
 
     def test_unqualified_workloads_refuse_without_allocating(self):
         owner = mock.Mock(); host = mock.Mock()
+        host.canonical_outputs = []
         for job in ({'adapter': 'codex_exec'}, {'adapter': 'python', 'canonical_outputs': {'any': {}}}):
-            with self.assertRaisesRegex(scope.ScopeRefused, 'readonly Python'):
+            with self.assertRaisesRegex(scope.ScopeRefused, 'Python checks'):
                 scope.run(owner, host, self.root/'config.json', job)
         owner.run.assert_not_called()
+
+    def test_config_replacement_refuses_before_owner_admission(self):
+        owner = mock.Mock()
+        owner.digest.side_effect = lambda value: json.dumps(value, sort_keys=True)
+        owner.load_config.return_value = ({'limits': {'scratch_bytes': 100}}, {}, [])
+        path = self.root/'config.json'
+        bound = scope.bind_config(owner, path, {'limits': {'scratch_bytes': 16}})
+        with self.assertRaisesRegex(scope.ScopeRefused, 'envelope changed'):
+            bound(path)
+
+    def test_artifact_bytes_and_reservation_are_in_aggregate_budget(self):
+        artifact = self.root/'artifact'; artifact.mkdir()
+        (artifact/'accepted').write_bytes(b'12345678')
+        roots = {**self.roots, 'canonical:.aide/export/aide-lite-pack-v0': artifact}
+        required = 8 + 16 + 8 + 8 + 2*1048576 + 32
+        view = scope.aggregate_admission(roots, self.limits, required, canonical_reservation=32)
+        self.assertEqual(view['logical_bytes'], 8)
+        with self.assertRaisesRegex(scope.ScopeRefused, 'aggregate pool budget'):
+            scope.aggregate_admission(roots, self.limits, required-1, canonical_reservation=32)
 
 
 if __name__ == '__main__':

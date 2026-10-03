@@ -37,3 +37,19 @@ An active or staged job requires existing recovery before new admission. A
 failed pin, incomplete inventory or exhausted aggregate budget refuses launch;
 it never chooses another drive. The owner keeps failure evidence and retires
 only receipt-owned scratch. Preserve the accepted export and previous candidate.
+
+## Validation discovery and bounded amendment
+
+Public job 79843275 passed all nine tests and write/config probes and retired
+scratch, but full validation failed solely on stale portable export provenance
+after the source change. Preserve that failure. Independent review of 97100adc
+requested two repairs: bind configuration snapshots and require exit 19 only
+for PermissionError in the child denial probe.
+
+Load the accepted hash-pinned ZIP directly using zipimport, without extraction,
+copy or new storage. This makes the immutable archive, rather than the affected
+export directory, the executing owner. An explicit checks profile may grant
+only the declared existing export destination; reject overlap with its own
+trusted runtime. Count that artifact's existing bytes and finite reservation
+in aggregate admission. Refresh this affected export before the unchanged
+validation command. The accepted ZIP and original execution config stay intact.

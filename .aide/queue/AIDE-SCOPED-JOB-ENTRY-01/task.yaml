@@ -1,6 +1,6 @@
 schema_version: aide.queue-task.v0
 id: AIDE-SCOPED-JOB-ENTRY-01
-title: Connect readonly scoped execution to the public managed job entry
+title: Connect scoped repository checks to the public managed job entry
 type: implementation
 status: running
 planning_state: admitted_bounded_source
@@ -17,6 +17,7 @@ scope:
   allowed_paths:
     - .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/**
     - core/execution/scoped_host.py
+    - .aide/export/aide-lite-pack-v0/**
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_scoped_host.py
     - docs/reference/aide-lite-test-runner.md
@@ -32,7 +33,8 @@ scope:
     - PLANS.md
     - IMPLEMENT.md
     - DOCUMENTATION.md
-  read_only_runtime: .aide/export/aide-lite-pack-v0/files
+  read_only_runtime: .aide/release/stable/aide-lite-v1.0.0.zip
+  affected_artifact_refresh: exact export pack only under finite canonical declaration; accepted ZIP unchanged
   read_only_config: .aide.local/execution.json
   permitted_local_state:
     - .aide.local/scoped-job-entry-01-execution.json

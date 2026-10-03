@@ -1,4 +1,4 @@
-"""Readonly scoped worker adapter for the existing pinned managed owner.
+"""Scoped repository-check adapter for the existing pinned managed owner.
 
 Placement is delegated to the installed Codex command sandbox; this module
 does not sandbox its caller, promise read isolation, allocate pools or retire
@@ -14,6 +14,8 @@ from pathlib import Path
 import stat
 import sys
 import time
+import types
+import zipfile
 
 
 class ScopeRefused(ValueError):
@@ -56,9 +58,10 @@ def bounded_path(value, *, directory=False):
 def validate_selection(selection, repo):
     expected = {'schema', 'kind', 'codex_executable', 'codex_sha256',
                 'read_roots', 'aggregate_bytes', 'runtime'}
-    if (not isinstance(selection, dict) or set(selection) != expected
+    if (not isinstance(selection, dict) or set(selection) - expected - {'canonical_outputs'}
+            or not expected.issubset(selection)
             or selection['schema'] != 'aide.scoped-host.local.v1'
-            or selection['kind'] != 'codex_sandbox_readonly'):
+            or selection['kind'] not in ('codex_sandbox_readonly', 'codex_sandbox_checks')):
         raise ScopeRefused('exact readonly scoped host selection required')
     cap = selection['aggregate_bytes']
     if type(cap) is not int or cap <= 0:
@@ -72,6 +75,37 @@ def validate_selection(selection, repo):
     for value in reads:
         bounded_path(value, directory=True)
     pin = selection['runtime']
+    if isinstance(pin, dict) and set(pin) == {'archive', 'sha256', 'prefix', 'files'}:
+        archive = bounded_path(str(repo / pin['archive']))
+        if not archive.is_relative_to(repo) or sha(archive) != pin['sha256']:
+            raise ScopeRefused('accepted runtime archive changed or escaped repository')
+        prefix = pin['prefix']
+        if (not isinstance(prefix, str) or not prefix or '\\' in prefix
+                or prefix.startswith('/') or '..' in prefix.split('/')):
+            raise ScopeRefused('bounded runtime archive prefix required')
+        files = pin['files']
+        if not isinstance(files, dict) or not 1 <= len(files) <= 128:
+            raise ScopeRefused('bounded runtime archive dependency closure required')
+        required = {prefix+'/'+p for p in ('core/execution/managed_workspace.py',
+                    'core/runtime/continuous_worker/windows_job.py')}
+        if not required.issubset(files):
+            raise ScopeRefused('archive owner and process host must be pinned')
+        with zipfile.ZipFile(archive) as zipped:
+            members = zipped.namelist()
+            if len(members) != len(set(members)) or len(members) > 10000:
+                raise ScopeRefused('ambiguous runtime archive refused')
+            sources = {name for name in members if name.startswith(prefix+'/core/')
+                       and name.endswith('.py')}
+            if sources != set(files):
+                raise ScopeRefused('unpinned runtime archive source refused')
+            for name, expected_sha in files.items():
+                if zipped.getinfo(name).file_size > 1048576:
+                    raise ScopeRefused('runtime archive source too large')
+                if hashlib.sha256(zipped.read(name)).hexdigest() != expected_sha:
+                    raise ScopeRefused('pinned runtime archive component changed')
+            if any(name.startswith(prefix+'/core/') and name.endswith('.pyc') for name in members):
+                raise ScopeRefused('runtime archive bytecode refused')
+        return Path(str(archive)+'/'+prefix)
     if not isinstance(pin, dict) or set(pin) != {'root', 'files'}:
         raise ScopeRefused('exact pinned execution runtime required')
     relative = Path(pin['root'])
@@ -116,22 +150,47 @@ def load_owner(selection, repo):
         raise ScopeRefused('execution core already loaded; use a fresh job entry process')
     sys.dont_write_bytecode = True
     sys.path.insert(0, str(frozen))
+    if 'archive' in selection['runtime']:
+        # The accepted ZIP contains namespace directories without explicit ZIP
+        # directory entries. Supply namespace paths; zipimport loads the pinned
+        # package/code bytes directly, without another extracted working copy.
+        for name in ('core', 'core.runtime'):
+            module = types.ModuleType(name)
+            module.__path__ = [str(frozen / name.replace('.', '/'))]
+            module.__package__ = name
+            sys.modules[name] = module
+        sys.modules['core'].runtime = sys.modules['core.runtime']
     owner = importlib.import_module('core.execution.managed_workspace')
     for name, module in tuple(sys.modules.items()):
         if name.startswith('core.') and getattr(module, '__file__', None):
             path = Path(module.__file__).resolve()
-            if (not path.is_relative_to(frozen)
-                    or path.relative_to(repo).as_posix() not in selection['runtime']['files']):
+            relative = path.relative_to(frozen).as_posix() if path.is_relative_to(frozen) else ''
+            name = (selection['runtime']['prefix']+'/'+relative if 'archive' in selection['runtime']
+                    else path.relative_to(repo).as_posix() if relative else '')
+            if not relative or name not in selection['runtime']['files']:
                 raise ScopeRefused('runtime import escaped pinned dependency closure')
     return owner
 
 
-def aggregate_admission(roots, limits, ceiling, *, seconds=20):
+def bind_config(owner, config_path, config):
+    """Refuse config replacement between selection, run and locked admission."""
+    expected = owner.digest(config)
+    original = owner.load_config
+    def bound(path):
+        value = original(path)
+        if Path(path).absolute() != config_path or owner.digest(value[0]) != expected:
+            raise ScopeRefused('prepared execution envelope changed')
+        return value
+    owner.load_config = bound
+    return bound
+
+
+def aggregate_admission(roots, limits, ceiling, *, seconds=20, canonical_reservation=0):
     """Complete bounded logical-byte inventory plus worst-case next allocation."""
     began = time.monotonic()
     used = entries = 0
     by_pool = {}
-    for key in ('scratch', 'retained', 'control'):
+    for key in ('scratch', 'retained', 'control', *sorted(k for k in roots if k.startswith('canonical:'))):
         pool_used = 0
         pending = [roots[key]]
         while pending:
@@ -148,7 +207,7 @@ def aggregate_admission(roots, limits, ceiling, *, seconds=20):
         used += pool_used
         by_pool[key] = pool_used
     reserved = (limits['scratch_bytes'] + limits['retained_bytes']
-                + 2 * limits['log_bytes'] + 2 * 1048576)
+                + 2 * limits['log_bytes'] + 2 * 1048576 + canonical_reservation)
     if used + reserved > ceiling:
         raise ScopeRefused('aggregate pool budget cannot admit the next job')
     return {'logical_bytes': used, 'by_pool': by_pool,
@@ -171,17 +230,38 @@ def prepare(config_path, repo):
     config = json.loads(config_path.read_text(encoding='utf-8'), object_pairs_hook=unique)
     selection = config['execution_host']
     owner = load_owner(selection, Path(repo))
+    bound_load = bind_config(owner, config_path, config)
     _, roots, _ = owner.load_config(config_path)
+    allowed = selection.get('canonical_outputs', [])
+    if (not isinstance(allowed, list) or len(allowed) != len(set(allowed))
+            or any(value not in owner.CANONICAL_OUTPUT_PATHS for value in allowed)):
+        raise ScopeRefused('exact known canonical output allowlist required')
+    if selection['kind'] == 'codex_sandbox_readonly' and allowed:
+        raise ScopeRefused('readonly selection cannot grant canonical writes')
 
     class ScopedHost(owner.WindowsJobHost):
         inventory = None
+        canonical_outputs = allowed
+        canonical_reservation = 0
+        trusted_runtime = (Path(repo) / selection['runtime']['archive'] if 'archive' in selection['runtime']
+                           else Path(repo) / selection['runtime']['root'])
+        working_repo = Path(repo)
 
         def admission_probe(self, observed_roots):
             # owner.run calls this first under estate_lock, before allocation.
             # Later samples use OS counters; no repeated pool-wide scans.
             if self.inventory is None:
+                bound_load(config_path)
+                if observed_roots != roots:
+                    # owner.run may add exact declared canonical roots only.
+                    extra = set(observed_roots) - set(roots)
+                    if (any(observed_roots.get(k) != v for k, v in roots.items())
+                            or any(not k.startswith('canonical:')
+                                   or k.removeprefix('canonical:') not in allowed for k in extra)):
+                        raise ScopeRefused('locked admission storage envelope changed')
                 self.inventory = aggregate_admission(
-                    roots, config['limits'], selection['aggregate_bytes'])
+                    observed_roots, config['limits'], selection['aggregate_bytes'],
+                    canonical_reservation=self.canonical_reservation)
             return owner.capacity(observed_roots)
 
         def run(self, argv, **kwargs):
@@ -195,6 +275,17 @@ def prepare(config_path, repo):
                           str(config_path): 'deny', str(roots['control']): 'deny',
                           str(roots['control'] / 'active.json'): 'read',
                           str(scratch): 'read'})
+            active = owner.read_json(roots['control'] / 'active.json')
+            for relative in active['job'].get('canonical_outputs', {}):
+                destination = Path(repo) / relative
+                if relative not in allowed:
+                    raise ScopeRefused('canonical output outside scoped selection')
+                pin = selection['runtime']
+                trusted = (Path(repo) / pin['archive'] if 'archive' in pin
+                           else Path(repo) / pin['root'])
+                if trusted.is_relative_to(destination) or destination.is_relative_to(trusted):
+                    raise ScopeRefused('worker cannot modify its supervising runtime')
+                rules[str(destination)] = 'write'
             for member in ('tmp', 'cache', 'output'):
                 rules[str(scratch / member)] = 'write'
             profile = 'aide_readonly_' + kwargs['job_id']
@@ -213,6 +304,16 @@ def prepare(config_path, repo):
 
 
 def run(owner, host, config_path, job):
-    if job.get('adapter') != 'python' or job.get('canonical_outputs'):
-        raise ScopeRefused('scoped entry currently permits readonly Python checks only')
+    if not isinstance(job, dict) or job.get('adapter') != 'python':
+        raise ScopeRefused('scoped entry requires Python checks and approved canonical outputs')
+    canonical = job.get('canonical_outputs', {})
+    if not isinstance(canonical, dict) or any(path not in host.canonical_outputs for path in canonical):
+        raise ScopeRefused('scoped entry requires Python checks and approved canonical outputs')
+    for relative, value in canonical.items():
+        if not isinstance(value, dict) or type(value.get('bytes')) is not int or value['bytes'] <= 0:
+            raise ScopeRefused('finite positive canonical reservation required')
+        destination = host.working_repo / relative
+        if host.trusted_runtime.is_relative_to(destination) or destination.is_relative_to(host.trusted_runtime):
+            raise ScopeRefused('worker cannot modify its supervising runtime')
+    host.canonical_reservation = sum(value['bytes'] for value in canonical.values())
     return owner.run(config_path, job, host=host, probe=host.admission_probe)

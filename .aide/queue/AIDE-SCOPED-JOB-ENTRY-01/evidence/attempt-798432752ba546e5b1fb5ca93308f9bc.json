@@ -1,0 +1,78 @@
+{
+  "schema": "aide.scoped-entry.attempt.v1",
+  "source_commit": "97100adce3fbe8c289917b625db4c7335254199f",
+  "job_id": "798432752ba546e5b1fb5ca93308f9bc",
+  "phase": "retired",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 268939264,
+    "scratch_bytes": 4898024
+  },
+  "qualification": {
+    "model_calls": 0,
+    "outer_session_contained": false,
+    "read_isolation": "unqualified",
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "named_job_membership": true,
+    "unapproved_write_denied": true,
+    "child_unapproved_write_denied": true,
+    "config_write_denied": true,
+    "tests": {
+      "run": 9,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    "validation_exit_code": 1,
+    "validation_seconds": 15.992,
+    "passed": false
+  },
+  "scope": {
+    "aggregate_admission": {
+      "by_pool": {
+        "control": 13694135,
+        "retained": 162593118,
+        "scratch": 0
+      },
+      "enforcement": "cooperative_admission_and_monitored_growth",
+      "limit_bytes": 268435456,
+      "logical_bytes": 176287253,
+      "reserved_bytes": 69271552
+    },
+    "filesystem": {
+      ":minimal": "read",
+      ":root": "deny",
+      "C:\\Program Files\\Git": "read",
+      "C:\\Users\\Jules\\.codex\\packages\\standalone\\releases\\0.145.0-x86_64-pc-windows-msvc\\bin": "read",
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\control": "deny",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\control\\active.json": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\798432752ba546e5b1fb5ca93308f9bc": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\798432752ba546e5b1fb5ca93308f9bc\\cache": "write",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\798432752ba546e5b1fb5ca93308f9bc\\output": "write",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\798432752ba546e5b1fb5ca93308f9bc\\tmp": "write",
+      "D:\\Projects\\AIDE\\aide": "read",
+      "D:\\Projects\\AIDE\\aide\\.aide.local": "deny",
+      "D:\\Projects\\AIDE\\aide\\.aide.local\\scoped-job-entry-01-execution.json": "deny"
+    },
+    "host_executable_sha256": "83751f15cb6a0a7b97df67752c001e3fe1c20e18ffbfec3ff63567296205eb6c",
+    "network_enabled": false,
+    "outer_session_contained": false,
+    "read_isolation": "unqualified",
+    "schema": "aide.scoped-host.observation.v1"
+  },
+  "receipt_sha256": "548c4ac9b20ca69226250977ecdb2cd94ef675b8115fde823ee7e529d2cf9df2",
+  "logs": {
+    "stdout": {
+      "bytes": 4894248,
+      "sha256": "c1591cb6c52979cc01936b02c8a96414d4821ff69677391b9f6b27ada92549d3"
+    },
+    "stderr": {
+      "bytes": 1572,
+      "sha256": "e991f7e57ac96d3ea6ce727cefeedf82607f38709f6afd69715855c62ce34fa8"
+    }
+  },
+  "failure": "Unchanged validate failed on stale export provenance after source changes. Child-denial probe superseded by specific PermissionError exit marker."
+}
