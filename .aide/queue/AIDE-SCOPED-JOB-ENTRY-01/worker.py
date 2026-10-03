@@ -57,11 +57,7 @@ os.environ['GIT_CONFIG_VALUE_0'] = str(REPO)
 suite = unittest.TestSuite()
 for filename, names in (
     ('test_scoped_host.py', None),
-    ('test_managed_workspace.py', (
-        'test_disk_and_memory_refusal_allocate_nothing',
-        'test_concurrent_reservation_refused_by_os_lock',
-        'test_missing_pool_wrong_volume_and_escape_have_no_fallback',
-        'test_interrupted_retirement_recovers_without_losing_collected_output'))):
+    ('test_managed_workspace.py', None)):
     spec = importlib.util.spec_from_file_location('qualification_'+filename[:-3], REPO/'.aide/scripts/tests'/filename)
     module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
     if names is None:

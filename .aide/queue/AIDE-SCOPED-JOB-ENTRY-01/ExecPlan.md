@@ -92,3 +92,8 @@ on a readonly Git object. The managed owner still safely retired all scratch.
 Restore the old TemporaryDirectory cleanup behavior for ordinary single-link
 readonly fixture files, without restoring its private directory ACL: clear only
 the readonly attribute within the exact fixture, and preserve ACL/link failures.
+
+Fixture setup affects the entire managed-workspace class, so the final worker
+runs that complete unchanged regression class plus scoped tests, then affected
+export refresh and unchanged full validation. This expansion verifies the
+shared fixture correction; it is not an unrelated full-programme rerun.
