@@ -459,3 +459,5 @@ not grant either. No new worktree, archive, global settings or target cleanup.
 ## 2026-10-03 public scoped entry child
 
 Independent exact review accepts 03181610 only as a partial local qualification record. Admit AIDE-SCOPED-JOB-ENTRY-01 under existing delegation to connect the readonly command host to normal job run, pin the accepted owner and add aggregate admission. Keep the same branch, configured D roots and original execution selection. Read isolation and unrestricted outer routes remain open; publication gates are unchanged.
+
+Scoped public entry source 886290be completed ce62387a: 64 regressions, export and full validation passed; scratch retired. Final exact terminal review is next. The outer controller/editor/plugins, failed read exclusion and legacy/unmanaged policy coverage are still open; no whole-session containment or release qualification is inferred.

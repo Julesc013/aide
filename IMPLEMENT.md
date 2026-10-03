@@ -12896,3 +12896,5 @@ full commit after a non-force push. The stable ZIP bytes remained unchanged.
 ## 2026-10-03 scoped worker entry implementation
 
 The normal job entry can select a pinned accepted execution owner and readonly Codex command host. Aggregate pool inventory and reservations use the existing estate lock before allocation; original placement/configuration is preserved. The session qualification record received exact independent PASS_WITH_NOTES for PARTIAL evidence only. Current implementation qualification is pending; outer tools and failed host read isolation remain uncovered.
+
+Public job ce62387a qualified the new entry on 886290be: 64 tests, affected export and full validate passed, with verified retirement. Real execution repaired the export permission mismatch, permission-root deletion and source fixture lifecycle errors. Evidence/outcome.md records exact budgets and uncovered routes. No accepted ZIP/config mutation or whole-session completion claim.

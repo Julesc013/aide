@@ -97,3 +97,7 @@ Fixture setup affects the entire managed-workspace class, so the final worker
 runs that complete unchanged regression class plus scoped tests, then affected
 export refresh and unchanged full validation. This expansion verifies the
 shared fixture correction; it is not an unrelated full-programme rerun.
+
+## Current result
+
+886290be public job ce62387a passed 64 regressions with no skips, affected export and unchanged full validate. All scratch retired and reservation released; original config/archive unchanged. Exact independent source review passed with notes; terminal evidence review is pending. Outer full-access tools and failed read isolation remain open. No unchanged blocker polling or unrelated full suites are required.

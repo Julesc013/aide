@@ -3813,9 +3813,9 @@ items:
     prompt: .aide/queue/AIDE-SESSION-CONTAINMENT-01/prompt.md
     evidence: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence
   - id: AIDE-SCOPED-JOB-ENTRY-01
-    status: running
-    planning_state: admitted_bounded_source
-    result: PENDING
+    status: needs_review
+    planning_state: public_entry_export_validation_and_64_regressions_passed
+    result: PARTIAL_SCOPED_WORKER_PASS
     title: Connect readonly scoped execution to the public managed job entry
     task: .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/task.yaml
     exec_plan: .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/ExecPlan.md
